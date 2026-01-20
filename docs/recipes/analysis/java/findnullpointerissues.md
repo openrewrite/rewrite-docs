@@ -18,6 +18,47 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test() {
+        String s = null;
+        int len = s.length();
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test() {
+        String s = null;
+        int len = /*~~(Definite null pointer dereference)~~>*/s.length();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+    void test() {
+        String s = null;
+-       int len = s.length();
++       int len = /*~~(Definite null pointer dereference)~~>*/s.length();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

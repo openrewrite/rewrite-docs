@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStreamRules)._
+_Refaster rules related to AssertJ assertions over `Stream`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStreamRules)._
 
 ## Recipe source
 
@@ -28,6 +28,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Refaster template `AssertJStreamRules.AssertThatIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatisemptyrecipe)
+* [Refaster template `AssertJStreamRules.AssertThatIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatisnotemptyrecipe)
+* [Refaster template `AssertJStreamRules.AssertThatHasSize`](../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthathassizerecipe)
 * [Refaster template `AssertJStreamRules.AssertThatFilteredOn`](../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatfilteredonrecipe)
 * [Refaster template `AssertJStreamRules.AssertThatNoneMatch`](../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatnonematchrecipe)
 * [Refaster template `AssertJStreamRules.AssertThatAnyMatch`](../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatanymatchrecipe)
@@ -43,8 +46,11 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes
 displayName: `AssertJStreamRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStreamRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStreamRules).
+  Refaster rules related to AssertJ assertions over `Stream`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStreamRules).
 recipeList:
+  - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatHasSizeRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatFilteredOnRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatNoneMatchRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatAnyMatchRecipe
@@ -58,7 +64,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

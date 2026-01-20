@@ -19,7 +19,12 @@ static final class AssertThatStreamContainsOnly<S, T extends S, U extends T> {
     }
     
     @BeforeTemplate
-    ListAssert<T> before2(Stream<S> stream, U[] array, Collector<S, ?, ? extends List<T>> collector) {
+    AbstractCollectionAssert<?, Collection<? extends T>, T, ObjectAssert<T>> before2(Stream<S> stream, U[] array, Collector<S, ?, ? extends Collection<T>> collector) {
+        return assertThat(stream.collect(collector)).containsOnly(array);
+    }
+    
+    @BeforeTemplate
+    ListAssert<T> before3(Stream<S> stream, U[] array, Collector<S, ?, ? extends List<T>> collector) {
         return assertThat(stream.collect(collector)).containsOnly(array);
     }
     

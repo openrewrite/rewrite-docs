@@ -122,6 +122,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPackageName: `org.springframework.boot.flyway.autoconfigure`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.graphql`
+  * newPackageName: `org.springframework.boot.graphql.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.mongo`
   * newPackageName: `org.springframework.boot.mongodb.autoconfigure`
   * recursive: `true`
@@ -304,6 +308,10 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.flyway
       newPackageName: org.springframework.boot.flyway.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.graphql
+      newPackageName: org.springframework.boot.graphql.autoconfigure
       recursive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.mongo

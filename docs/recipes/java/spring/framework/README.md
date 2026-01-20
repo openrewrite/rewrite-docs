@@ -14,13 +14,16 @@ description: Spring Framework OpenRewrite recipes.
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Add Spring Framework modular dependencies](./modularspringframeworkdependencies.md)
+* [Migrate Bean XML properties deprecated in Spring Framework 3.0](./migratedeprecatedbeanxmlproperties.md)
 * [Migrate `DefaultResponseErrorHandler.handleError` method signature](./migratedefaultresponseerrorhandler.md)
 * [Migrate breaking changes in `ResponseStatusException`](./migrateresponsestatusexception.md)
 * [Migrate removed Spring `Assert` methods](./migratespringassert.md)
+* [Migrate to Spring Framework 3.x](./upgradespringframework_3_0.md)
 * [Migrate to Spring Framework 5.0](./upgradespringframework_5_0.md)
 * [Migrate to Spring Framework 5.1](./upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](./upgradespringframework_5_2.md)
-* [Migrate to Spring Framework 5.3](./upgradespringframework_5_3.md)
+* [Migrate to Spring Framework 5.3](./upgradespringframework_5_3-moderne-edition.md)
+* [Migrate to Spring Framework 5.3](./upgradespringframework_5_3-community-edition.md)
 * [Migrate to Spring Framework 6.0](./upgradespringframework_6_0.md)
 * [Migrate to Spring Framework 6.1](./upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)

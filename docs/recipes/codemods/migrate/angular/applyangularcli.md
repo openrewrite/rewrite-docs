@@ -34,6 +34,8 @@ This recipe is used as part of the following composite recipes:
 * [Update to Angular v17](/recipes/codemods/migrate/angular/v17.md)
 * [Update to Angular v18](/recipes/codemods/migrate/angular/v18.md)
 * [Update to Angular v19](/recipes/codemods/migrate/angular/v19.md)
+* [Update to Angular v20](/recipes/codemods/migrate/angular/v20.md)
+* [Update to Angular v21](/recipes/codemods/migrate/angular/v21.md)
 
 
 ## Usage

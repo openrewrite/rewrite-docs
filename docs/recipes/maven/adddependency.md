@@ -27,9 +27,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava` |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. | `29.X` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
-| `String` | scope | *Optional*. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or import dependency. Valid options: `import`, `runtime`, `provided`, `test` | `runtime` |
+| `String` | scope | *Optional*. A scope to use when it is not what can be inferred from usage. Most of the time this will be left empty, but is used when adding a runtime, provided, or test dependency. Valid options: `compile`, `runtime`, `provided`, `test` | `runtime` |
 | `Boolean` | releasesOnly | *Optional*. Whether to exclude snapshots from consideration when using a semver selector |  |
-| `String` | onlyIfUsing | *Optional*. Used to determine if the dependency will be added and in which scope it should be placed. | `org.junit.jupiter.api.*` |
+| `String` | onlyIfUsing | *Optional*. Used to determine if the dependency will be added and in which scope it should be placed. Required for multi-module projects to avoid adding dependencies unnecessarily. | `org.junit.jupiter.api.*` |
 | `String` | type | *Optional*. The type of dependency to add. If omitted Maven defaults to assuming the type is "jar". Valid options: `jar`, `pom`, `war` | `jar` |
 | `String` | classifier | *Optional*. A Maven classifier to add. Most commonly used to select shaded or test variants of a library | `test` |
 | `Boolean` | optional | *Optional*. Set the value of the `<optional>` tag. No `<optional>` tag will be added when this is `null`. |  |

@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ImmutableTableRules.ImmutableTableBuilderBuildOrThrow`](../../../../tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderbuildorthrowrecipe)
 * [Refaster template `ImmutableTableRules.CellToImmutableTable`](../../../../tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes$celltoimmutabletablerecipe)
 * [Refaster template `ImmutableTableRules.ImmutableTableOf`](../../../../tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletableofrecipe)
+* [Refaster template `ImmutableTableRules.ImmutableTableBuilderPut`](../../../../tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderputrecipe)
 
 </TabItem>
 
@@ -49,6 +50,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderBuildOrThrowRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$CellToImmutableTableRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderPutRecipe
 
 ```
 </TabItem>
@@ -58,7 +60,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

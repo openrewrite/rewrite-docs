@@ -44,6 +44,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * annotationType: `io.swagger.v3.oas.annotations.Parameter`
   * attributeName: `allowMultiple`
 * [Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`](../../openapi/swagger/migrateapiparamdefaultvalue)
+* [Migrate `@ApiParam(allowableValues)` to `@Parameter(schema)`](../../openapi/swagger/migrateapiparamallowablevalues)
 
 </TabItem>
 
@@ -71,6 +72,7 @@ recipeList:
       annotationType: io.swagger.v3.oas.annotations.Parameter
       attributeName: allowMultiple
   - org.openrewrite.openapi.swagger.MigrateApiParamDefaultValue
+  - org.openrewrite.openapi.swagger.MigrateApiParamAllowableValues
 
 ```
 </TabItem>

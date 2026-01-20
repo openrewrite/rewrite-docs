@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [ArchUnit 0.x upgrade](/recipes/java/testing/archunit/archunit0to1migration.md)
+* [Change Tapestry 4 packages to Tapestry 5](/recipes/tapestry/changetapestrypackages.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)

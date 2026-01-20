@@ -23,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert API response codes to strings](./convertapiresponsecodestostrings.md)
 * [Convert API response to content annotation](./convertapiresponsetocontent.md)
 * [Migrate `@ApiImplicitParam` to `@Parameter`](./migrateapiimplicitparam.md)
+* [Migrate `@ApiParam(allowableValues)` to `@Parameter(schema)`](./migrateapiparamallowablevalues.md)
 * [Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`](./migrateapiparamdefaultvalue.md)
 * [Migrate from `@Api` to `@Tag`](./migrateapitotag.md)
 * [Migrate from `@ApiModel` to `@Schema`](./migrateapimodeltoschema.md)

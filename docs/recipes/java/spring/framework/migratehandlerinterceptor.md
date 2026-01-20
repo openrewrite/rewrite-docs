@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3.md)
+* [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
 
 ## Example
 

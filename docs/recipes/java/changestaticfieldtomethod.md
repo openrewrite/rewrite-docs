@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate deprecated SystemUtils constants](/recipes/apache/commons/lang3/migratesystemutilsdeprecations.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Prefer `System.lineSeparator()`](/recipes/apache/commons/io/usesystemlineseparator.md)
 * [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/lang3/usestandardcharsets.md)

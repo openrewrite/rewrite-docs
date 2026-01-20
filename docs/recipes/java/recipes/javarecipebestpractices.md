@@ -37,6 +37,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use of `@EqualsAndHashCode` on `Recipe`](../../java/recipes/recipeequalsandhashcodecallsuper)
 * [Recipe classes should be public](../../java/recipes/recipeclassesshouldbepublic)
 * [Reorder `maybeRemoveImport` before `maybeAddImport`](../../java/recipes/removeimportbeforeaddimport)
+* [Replace `getDisplayName()` and `getDescription()` methods with fields](../../java/recipes/usedisplaynameanddescriptionfields)
+* [Replace `getEstimatedEffortPerOccurrence()` method with field](../../java/recipes/useestimatedeffortperoccurrencefield)
+* [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
+* [Replace `getTags()` method with field](../../java/recipes/usetagsfield)
 * [Use `Tree.randomId()` in LST constructors](../../java/recipes/usetreerandomid)
 * [Fix missing braces](../../staticanalysis/needbraces)
 * [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
@@ -66,6 +70,10 @@ recipeList:
   - org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper
   - org.openrewrite.java.recipes.RecipeClassesShouldBePublic
   - org.openrewrite.java.recipes.RemoveImportBeforeAddImport
+  - org.openrewrite.java.recipes.UseDisplayNameAndDescriptionFields
+  - org.openrewrite.java.recipes.UseEstimatedEffortPerOccurrenceField
+  - org.openrewrite.java.recipes.UseStringUtilsRecipes
+  - org.openrewrite.java.recipes.UseTagsField
   - org.openrewrite.java.recipes.UseTreeRandomId
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln

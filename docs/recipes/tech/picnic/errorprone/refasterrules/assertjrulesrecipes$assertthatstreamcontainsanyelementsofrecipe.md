@@ -19,7 +19,12 @@ static final class AssertThatStreamContainsAnyElementsOf<S, T extends S, U exten
     }
     
     @BeforeTemplate
-    ListAssert<T> before2(Stream<S> stream, Iterable<U> iterable, Collector<S, ?, ? extends List<T>> collector) {
+    AbstractCollectionAssert<?, Collection<? extends T>, T, ObjectAssert<T>> before2(Stream<S> stream, Iterable<U> iterable, Collector<S, ?, ? extends Collection<T>> collector) {
+        return assertThat(stream.collect(collector)).containsAnyElementsOf(iterable);
+    }
+    
+    @BeforeTemplate
+    ListAssert<T> before3(Stream<S> stream, Iterable<U> iterable, Collector<S, ?, ? extends List<T>> collector) {
         return assertThat(stream.collect(collector)).containsAnyElementsOf(iterable);
     }
     

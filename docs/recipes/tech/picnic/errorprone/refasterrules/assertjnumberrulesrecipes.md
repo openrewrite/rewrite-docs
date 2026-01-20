@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJNumberRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules)._
+_Refaster rules related to AssertJ assertions over numeric values. [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules)._
 
 ## Recipe source
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes
 displayName: `AssertJNumberRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJNumberRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules).
+  Refaster rules related to AssertJ assertions over numeric values. [Source](https://error-prone.picnic.tech/refasterrules/AssertJNumberRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsPositiveRecipe
   - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsNotPositiveRecipe

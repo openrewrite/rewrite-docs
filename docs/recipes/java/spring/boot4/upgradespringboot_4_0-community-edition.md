@@ -108,6 +108,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `error-handling-spring-boot-starter`
   * newVersion: `5.0.x`
   * overrideManagedVersion: `true`
+* [Add `@AutoConfigureTestRestTemplate` if necessary](../../../java/spring/boot4/addautoconfiguretestresttemplate)
 
 </TabItem>
 
@@ -199,6 +200,7 @@ recipeList:
       artifactId: error-handling-spring-boot-starter
       newVersion: 5.0.x
       overrideManagedVersion: true
+  - org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate
 
 ```
 </TabItem>

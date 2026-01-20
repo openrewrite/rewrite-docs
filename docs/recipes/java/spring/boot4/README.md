@@ -27,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `@AutoConfigureMockMvc` to `@SpringBootTest` classes using `MockMvc`](./addautoconfiguremockmvc.md)
+* [Add `@AutoConfigureTestRestTemplate` if necessary](./addautoconfiguretestresttemplate.md)
 * [Migrate `spring-retry` to Spring Framework resilience](./migratespringretrytospringframework7.md)
 * [Remove `loaderImplementation` from Gradle](./removegradleuberjarloaderimplementationconfig.md)
 * [Replace deprecated `DockerApi`](./replacedeprecateddockerapi.md)

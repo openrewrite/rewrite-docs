@@ -11,6 +11,8 @@ description: Angular OpenRewrite recipes.
 * [Update to Angular v17](./v17.md)
 * [Update to Angular v18](./v18.md)
 * [Update to Angular v19](./v19.md)
+* [Update to Angular v20](./v20.md)
+* [Update to Angular v21](./v21.md)
 * [Upgrade Angular versions](./applyangularcli.md)
 
 

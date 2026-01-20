@@ -44,6 +44,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldPackageName: `com.fasterxml.jackson.module`
   * newPackageName: `tools.jackson.module`
   * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `com.fasterxml.jackson.dataformat`
+  * newPackageName: `tools.jackson.dataformat`
+  * recursive: `true`
 
 </TabItem>
 
@@ -70,6 +74,10 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.fasterxml.jackson.module
       newPackageName: tools.jackson.module
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.fasterxml.jackson.dataformat
+      newPackageName: tools.jackson.dataformat
       recursive: true
 
 ```

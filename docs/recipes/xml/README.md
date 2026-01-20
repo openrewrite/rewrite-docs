@@ -20,6 +20,7 @@ _Basic building blocks for transforming XML._
 * [Add new XML attribute for an Element](./addtagattribute.md)
 * [Add or update child tag](./addorupdatechildtag.md)
 * [Change XML attribute](./changetagattribute.md)
+* [Change XML attribute key](./changetagattributekey.md)
 * [Change XML attribute of a specific resource version](./changenamespacevalue.md)
 * [Change XML tag name](./changetagname.md)
 * [Change XML tag value](./changetagvalue.md)

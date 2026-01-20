@@ -147,6 +147,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace SpringFox Dependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
 * [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
 * [Spring Security 7 modularization](/recipes/java/spring/security7/modularizespringsecurity7.md)
+* [Update Tapestry dependencies](/recipes/tapestry/updatetapestrydependencies.md)
 * [Update the Micronaut Retry support](/recipes/java/micronaut/addmicronautretrydependencyifneeded.md)
 * [Update the Micronaut Websocket support](/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded.md)
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)

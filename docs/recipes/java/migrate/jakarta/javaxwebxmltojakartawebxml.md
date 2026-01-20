@@ -48,7 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * elementName: `web-app`
   * attributeName: `xsi:schemaLocation`
   * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd`
-  * oldValue: `.*xml/ns/javaee.*`
+  * oldValue: `(?s).*xml/ns/javaee.*`
   * regex: `true`
 * [Find and replace](../../../text/findandreplace)
   * find: `javax.`
@@ -89,7 +89,7 @@ recipeList:
       elementName: web-app
       attributeName: xsi:schemaLocation
       newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd
-      oldValue: .*xml/ns/javaee.*
+      oldValue: (?s).*xml/ns/javaee.*
       regex: true
   - org.openrewrite.text.FindAndReplace:
       find: javax.

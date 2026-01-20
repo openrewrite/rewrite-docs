@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJByteRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules)._
+_Refaster rules related to AssertJ assertions over `byte`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules)._
 
 ## Recipe source
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes
 displayName: `AssertJByteRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJByteRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules).
+  Refaster rules related to AssertJ assertions over `byte`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJByteRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToRecipe
@@ -60,7 +60,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

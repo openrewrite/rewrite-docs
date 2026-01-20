@@ -146,6 +146,85 @@ This recipe is used as part of the following composite recipes:
 
 * [Complete migration to OpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
 
+## Examples
+##### Example 1
+`MigrateOpenTracingToOpenTelemetryTest#migrateTracer`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.opentracing.Tracer;
+
+class OpenTracingService {
+    Tracer tracer;
+}
+```
+
+###### After
+```java
+import io.opentelemetry.api.trace.Tracer;
+
+class OpenTracingService {
+    Tracer tracer;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.opentracing.Tracer;
++import io.opentelemetry.api.trace.Tracer;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateOpenTracingToOpenTelemetryTest#migrateTracer`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.opentracing.Tracer;
+
+class OpenTracingService {
+    Tracer tracer;
+}
+```
+
+###### After
+```java
+import io.opentelemetry.api.trace.Tracer;
+
+class OpenTracingService {
+    Tracer tracer;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.opentracing.Tracer;
++import io.opentelemetry.api.trace.Tracer;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

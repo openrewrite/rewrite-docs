@@ -83,7 +83,7 @@ recipeList:
 
 ###### New file
 ```groovy title="Jenkinsfile"
-pipeline {
+/*~~(Parsed as Groovy)~~>*/pipeline {
     agent any
 
     stages {
@@ -116,7 +116,7 @@ pipeline {
 
 ###### New file
 ```groovy title="Jenkinsfile"
-pipeline {
+/*~~(Parsed as Groovy)~~>*/pipeline {
     agent any
 
     stages {

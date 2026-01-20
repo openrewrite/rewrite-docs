@@ -51,6 +51,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `org.springframework.kafka.support.KafkaHeaders.RECEIVED_PARTITION_ID`
   * fullyQualifiedConstantName: `org.springframework.kafka.support.KafkaHeaders.RECEIVED_PARTITION`
+* [Migrates Spring Kafka deprecated error handlers](../../../java/spring/kafka/upgradespringkafka_2_8_errorhandlers)
 
 </TabItem>
 
@@ -85,6 +86,7 @@ recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.springframework.kafka.support.KafkaHeaders.RECEIVED_PARTITION_ID
       fullyQualifiedConstantName: org.springframework.kafka.support.KafkaHeaders.RECEIVED_PARTITION
+  - org.openrewrite.java.spring.kafka.UpgradeSpringKafka_2_8_ErrorHandlers
 
 ```
 </TabItem>

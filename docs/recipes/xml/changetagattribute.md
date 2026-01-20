@@ -35,8 +35,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [Migrate RichFaces tags in `xhtml` files](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
 * [Migrate XJC Bindings to Jakata XML](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Migrate to JSF 2.3](/recipes/java/jsf/migratetojsf_2_3.md)
 * [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Migrate to Struts 6.0 constants](/recipes/java/struts/migrate6/migratestruts6constants.md)
 * [Migrate xmlns entries and javax. packages in `ejb-jar.xml` files](/recipes/java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml.md)

@@ -68,7 +68,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

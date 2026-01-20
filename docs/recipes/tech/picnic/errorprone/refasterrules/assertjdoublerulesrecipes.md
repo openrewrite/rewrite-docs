@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoubleRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules)._
+_Refaster rules related to AssertJ assertions over `double`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules)._
 
 ## Recipe source
 
@@ -45,7 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes
 displayName: `AssertJDoubleRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJDoubleRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
+  Refaster rules related to AssertJ assertions over `double`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToRecipe
@@ -62,7 +62,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

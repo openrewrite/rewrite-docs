@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Spring Boot 2.3](../../../java/spring/boot2/upgradespringboot_2_3)
-* [Migrate to Spring Framework 5.3](../../../java/spring/framework/upgradespringframework_5_3)
+* [Migrate to Spring Framework 5.3](../../../java/spring/framework/upgradespringframework_5_3-community-edition)
 * [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](../../../java/spring/boot2/springboot2junit4to5migration)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`

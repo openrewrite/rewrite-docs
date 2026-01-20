@@ -20,6 +20,100 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 ## Examples
 ##### Example 1
+`ArrayAccessTaintTest#taintedArrayElement`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+
+class Test {
+    void method(HttpServletRequest request) throws Exception {
+        String[] commands = new String[10];
+        commands[0] = request.getParameter("cmd");
+        Runtime.getRuntime().exec(commands[0]);
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+
+class Test {
+    void method(HttpServletRequest request) throws Exception {
+        String[] commands = new String[10];
+        commands[0] = request.getParameter("cmd");
+        /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(commands[0]);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+        String[] commands = new String[10];
+        commands[0] = request.getParameter("cmd");
+-       Runtime.getRuntime().exec(commands[0]);
++       /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(commands[0]);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`CommandInjectionWithStdlibTest#detectsRuntimeExecWithSystemProperty`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class CommandExecutor {
+    void execute() throws Exception {
+        String cmd = System.getProperty("user.command");
+        Runtime.getRuntime().exec(cmd);
+    }
+}
+```
+
+###### After
+```java
+class CommandExecutor {
+    void execute() throws Exception {
+        String cmd = System.getProperty("user.command");
+        /*~~(Command injection risk)~~>*/Runtime.getRuntime().exec(cmd);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+    void execute() throws Exception {
+        String cmd = System.getProperty("user.command");
+-       Runtime.getRuntime().exec(cmd);
++       /*~~(Command injection risk)~~>*/Runtime.getRuntime().exec(cmd);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
 `ContextSensitiveTaintAnalysisTest#contextSensitiveFieldPropagation`
 
 
@@ -55,7 +149,249 @@ public class ContextExample {
 
 ---
 
-##### Example 2
+##### Example 4
+`FindCommandInjectionTest#detectsRuntimeExecWithUserInput`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+
+class CommandExecutor {
+    void execute(HttpServletRequest request) throws Exception {
+        String cmd = request.getParameter("command");
+        Runtime.getRuntime().exec(cmd);
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+
+class CommandExecutor {
+    void execute(HttpServletRequest request) throws Exception {
+        String cmd = request.getParameter("command");
+        /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(cmd);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+    void execute(HttpServletRequest request) throws Exception {
+        String cmd = request.getParameter("command");
+-       Runtime.getRuntime().exec(cmd);
++       /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(cmd);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 5
+`MemberReferenceTaintTest#taintThroughInstanceMethodReference`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.util.function.Consumer;
+
+class CommandProcessor {
+    void process(HttpServletRequest request) throws Exception {
+        String cmd = request.getParameter("command");
+        Consumer<String> executor = Runtime.getRuntime()::exec;
+        executor.accept(cmd);
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.util.function.Consumer;
+
+class CommandProcessor {
+    void process(HttpServletRequest request) throws Exception {
+        String cmd = request.getParameter("command");
+        Consumer<String> executor = Runtime.getRuntime()::exec;
+        /*~~>*/executor.accept(cmd);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+        String cmd = request.getParameter("command");
+        Consumer<String> executor = Runtime.getRuntime()::exec;
+-       executor.accept(cmd);
++       /*~~>*/executor.accept(cmd);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+`MethodReferenceFlowTest#taintFlowThroughInstanceMethodReference`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.List;
+
+class Test {
+    void method(HttpServletRequest request) {
+        List<String> commands = Arrays.asList(
+            request.getParameter("cmd1"),
+            request.getParameter("cmd2")
+        );
+        commands.forEach(this::executeCommand);
+    }
+
+    void executeCommand(String cmd) {
+        try {
+            Runtime.getRuntime().exec(cmd);
+        } catch (Exception e) {
+            // ignore
+        }
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
+import java.util.List;
+
+class Test {
+    void method(HttpServletRequest request) {
+        List<String> commands = Arrays.asList(
+            request.getParameter("cmd1"),
+            request.getParameter("cmd2")
+        );
+        commands.forEach(this::executeCommand);
+    }
+
+    void executeCommand(String cmd) {
+        try {
+            /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(cmd);
+        } catch (Exception e) {
+            // ignore
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -16,1 +16,1 @@
+    void executeCommand(String cmd) {
+        try {
+-           Runtime.getRuntime().exec(cmd);
++           /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(cmd);
+        } catch (Exception e) {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 7
+`NestedMethodCallTest#stepByStep`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.http.HttpServletRequest;
+
+public class StepByStep {
+    public void handleRequest(HttpServletRequest request) throws Exception {
+        // Step 1: Get tainted value
+        String tainted = request.getParameter("cmd");
+
+        // Step 2: Pass through transform
+        String transformed = transform(tainted);
+
+        // Step 3: Use in sink
+        Runtime.getRuntime().exec(transformed);
+    }
+
+    private String transform(String input) {
+        return "cmd " + input;
+    }
+}
+```
+
+###### After
+```java
+import javax.servlet.http.HttpServletRequest;
+
+public class StepByStep {
+    public void handleRequest(HttpServletRequest request) throws Exception {
+        // Step 1: Get tainted value
+        String tainted = request.getParameter("cmd");
+
+        // Step 2: Pass through transform
+        String transformed = transform(tainted);
+
+        // Step 3: Use in sink
+        /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(transformed);
+    }
+
+    private String transform(String input) {
+        return "cmd " + input;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -12,1 +12,1 @@
+
+        // Step 3: Use in sink
+-       Runtime.getRuntime().exec(transformed);
++       /*~~(COMMAND_INJECTION use)~~>*/Runtime.getRuntime().exec(transformed);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 8
 `ReturnValuePropagationTest#chainedMethodCalls`
 
 

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIteratorRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIteratorRules)._
+_Refaster rules related to AssertJ assertions over `Iterator`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIteratorRules)._
 
 ## Recipe source
 
@@ -41,7 +41,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes
 displayName: `AssertJIteratorRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIteratorRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIteratorRules).
+  Refaster rules related to AssertJ assertions over `Iterator`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIteratorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes$AssertThatHasNextRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes$AssertThatIsExhaustedRecipe

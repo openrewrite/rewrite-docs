@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 ```java
 import org.hibernate.annotations.Type;
 
-public class TestApplication {
+class TestApplication {
     @Type(type = "java.util.concurrent.atomic.AtomicBoolean")
     Object a;
 }
@@ -49,7 +49,7 @@ import org.hibernate.annotations.Type;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class TestApplication {
+class TestApplication {
     @Type(AtomicBoolean.class)
     Object a;
 }
@@ -64,10 +64,10 @@ import org.hibernate.annotations.Type;
 
 +import java.util.concurrent.atomic.AtomicBoolean;
 +
-public class TestApplication {
+class TestApplication {
 @@ -4,1 +6,1 @@
 
-public class TestApplication {
+class TestApplication {
 -   @Type(type = "java.util.concurrent.atomic.AtomicBoolean")
 +   @Type(AtomicBoolean.class)
     Object a;

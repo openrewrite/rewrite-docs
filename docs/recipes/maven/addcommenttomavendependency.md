@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Add a comment to a `Maven` dependency"
+sidebar_label: "Add a comment to a `Maven` dependency or plugin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add a comment to a `Maven` dependency
+# Add a comment to a `Maven` dependency or plugin
 
 **org.openrewrite.maven.AddCommentToMavenDependency**
 
-_Adds a comment as the first element in a `Maven` dependency._
+_Adds a comment as the first element in a `Maven` dependency or plugin._
 
 ## Recipe source
 
@@ -118,7 +118,7 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.AddCommentToMavenDependencyExample
-displayName: Add a comment to a `Maven` dependency example
+displayName: Add a comment to a `Maven` dependency or plugin example
 recipeList:
   - org.openrewrite.maven.AddCommentToMavenDependency:
       xPath: /project/dependencies/dependency

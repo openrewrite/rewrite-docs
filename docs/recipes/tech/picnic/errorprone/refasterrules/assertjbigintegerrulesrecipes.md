@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules)._
+_Refaster rules related to AssertJ assertions over `BigInteger`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules)._
 
 ## Recipe source
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes
 displayName: `AssertJBigIntegerRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBigIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
+  Refaster rules related to AssertJ assertions over `BigInteger`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigIntegerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToRecipe
@@ -60,7 +60,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJOptionalRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules)._
+_Refaster rules related to AssertJ assertions over `Optional`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules)._
 
 ## Recipe source
 
@@ -47,7 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes
 displayName: `AssertJOptionalRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJOptionalRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules).
+  Refaster rules related to AssertJ assertions over `Optional`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatOptionalRecipe
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertIsPresentRecipe

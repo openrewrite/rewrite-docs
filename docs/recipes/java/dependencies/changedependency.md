@@ -163,6 +163,7 @@ This recipe is used as part of the following composite recipes:
 * [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
 * [Update Prometheus Pushgateway Dependency Coordinates](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
 * [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+* [Update Tapestry dependencies](/recipes/tapestry/updatetapestrydependencies.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
 * [Upgrade Struts 6.0 dependencies](/recipes/java/struts/migrate6/upgradestruts6dependencies.md)
 * [Upgrade dependencies to Spring Cloud 2022](/recipes/java/spring/cloud2022/dependencyupgrades.md)

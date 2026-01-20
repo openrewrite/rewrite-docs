@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ImmutableListMultimapRules.EntryToImmutableListMultimap`](../../../../tech/picnic/errorprone/refasterrules/immutablelistmultimaprulesrecipes$entrytoimmutablelistmultimaprecipe)
 * [Refaster template `ImmutableListMultimapRules.IterableToImmutableListMultimap`](../../../../tech/picnic/errorprone/refasterrules/immutablelistmultimaprulesrecipes$iterabletoimmutablelistmultimaprecipe)
 * [Refaster template `ImmutableListMultimapRules.TransformMultimapValuesToImmutableListMultimap2`](../../../../tech/picnic/errorprone/refasterrules/immutablelistmultimaprulesrecipes$transformmultimapvaluestoimmutablelistmultimap2recipe)
+* [Refaster template `ImmutableListMultimapRules.ImmutableListMultimapBuilderPut`](../../../../tech/picnic/errorprone/refasterrules/immutablelistmultimaprulesrecipes$immutablelistmultimapbuilderputrecipe)
 
 </TabItem>
 
@@ -53,6 +54,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$EntryToImmutableListMultimapRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$IterableToImmutableListMultimapRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$TransformMultimapValuesToImmutableListMultimap2Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$ImmutableListMultimapBuilderPutRecipe
 
 ```
 </TabItem>
@@ -62,7 +64,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

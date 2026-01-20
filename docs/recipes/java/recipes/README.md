@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate tests to Java 21](./upgradeteststojava21.md)
 * [Recipe nullability best practices](./recipenullabilitybestpractices.md)
 * [Recipe testing best practices](./recipetestingbestpractices.md)
+* [Use `StringUtils` utility methods](./usestringutilsrecipes.md)
 
 ## Recipes
 
@@ -28,10 +29,17 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refactor RewriteTest to use defaults method](./userewritetestdefaults.md)
 * [Refaster template `IsLiteralNull`](./isliteralnullrecipe.md)
 * [Reorder `maybeRemoveImport` before `maybeAddImport`](./removeimportbeforeaddimport.md)
+* [Replace `getDisplayName()` and `getDescription()` methods with fields](./usedisplaynameanddescriptionfields.md)
+* [Replace `getEstimatedEffortPerOccurrence()` method with field](./useestimatedeffortperoccurrencefield.md)
+* [Replace `getTags()` method with field](./usetagsfield.md)
 * [Replace null with RewriteTest.doesNotExist()](./replacenullwithdoesnotexist.md)
 * [RewriteTest classes should not be public](./rewritetestclassesshouldnotbepublic.md)
 * [Show `@DocumentExample`s first](./reordertestmethods.md)
 * [Single `@DocumentExample` per test class](./singledocumentexample.md)
+* [Use `!StringUtils#isBlank(String)`](./usestringutilsrecipes$stringutilsisnotblankrecipe.md)
+* [Use `StringUtils#isBlank(String)`](./usestringutilsrecipes$stringutilsisblankrecipe.md)
+* [Use `StringUtils#isNotEmpty(String)`](./usestringutilsrecipes$stringutilsisnotemptyrecipe.md)
+* [Use `StringUtils#isNullOrEmpty(String)`](./usestringutilsrecipes$stringutilsisnulloremptyrecipe.md)
 * [Use `Tree.randomId()` in LST constructors](./usetreerandomid.md)
 * [Use a standard name for `ExecutionContext`](./executioncontextparametername.md)
 * [Use of `@EqualsAndHashCode` on `Recipe`](./recipeequalsandhashcodecallsuper.md)

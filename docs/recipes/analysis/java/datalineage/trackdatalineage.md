@@ -18,6 +18,69 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.sql.ResultSet;
+import javax.ws.rs.core.Response;
+
+class UserController {
+    public Response getUser(String id, ResultSet rs) throws Exception {
+        String name = rs.getString("name");
+        String email = rs.getString("email");
+
+        User user = new User(name, email);
+        return Response.ok(user).build();
+    }
+
+    class User {
+        String name, email;
+        User(String n, String e) { name = n; email = e; }
+    }
+}
+```
+
+###### After
+```java
+import java.sql.ResultSet;
+import javax.ws.rs.core.Response;
+
+class UserController {
+    public Response getUser(String id, ResultSet rs) throws Exception {
+        String name = rs.getString("name");
+        String email = rs.getString("email");
+
+        User user = new User(name, email);
+        return /*~~(DATA_LINEAGE use)~~>*/Response.ok(user).build();
+    }
+
+    class User {
+        String name, email;
+        User(String n, String e) { name = n; email = e; }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,1 +10,1 @@
+
+        User user = new User(name, email);
+-       return Response.ok(user).build();
++       return /*~~(DATA_LINEAGE use)~~>*/Response.ok(user).build();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

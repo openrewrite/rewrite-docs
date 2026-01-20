@@ -73,10 +73,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newFullyQualifiedTypeName: `tools.jackson.dataformat.ion.IonWriteFeature`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonParseException`
-  * newFullyQualifiedTypeName: `tools.jackson.core.StreamReadException`
+  * newFullyQualifiedTypeName: `tools.jackson.core.exc.StreamReadException`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonGenerationException`
-  * newFullyQualifiedTypeName: `tools.jackson.core.StreamWriteException`
+  * newFullyQualifiedTypeName: `tools.jackson.core.exc.StreamWriteException`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonProcessingException`
   * newFullyQualifiedTypeName: `tools.jackson.core.JacksonException`
@@ -175,10 +175,10 @@ recipeList:
       newFullyQualifiedTypeName: tools.jackson.dataformat.ion.IonWriteFeature
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonParseException
-      newFullyQualifiedTypeName: tools.jackson.core.StreamReadException
+      newFullyQualifiedTypeName: tools.jackson.core.exc.StreamReadException
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonGenerationException
-      newFullyQualifiedTypeName: tools.jackson.core.StreamWriteException
+      newFullyQualifiedTypeName: tools.jackson.core.exc.StreamWriteException
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonProcessingException
       newFullyQualifiedTypeName: tools.jackson.core.JacksonException

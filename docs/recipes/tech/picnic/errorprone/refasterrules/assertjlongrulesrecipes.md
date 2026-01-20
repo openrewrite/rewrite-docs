@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJLongRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules)._
+_Refaster rules related to AssertJ assertions over `long`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules)._
 
 ## Recipe source
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes
 displayName: `AssertJLongRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJLongRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules).
+  Refaster rules related to AssertJ assertions over `long`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJLongRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsNotEqualToRecipe
@@ -60,7 +60,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

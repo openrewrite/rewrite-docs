@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.junit.Assume assume*(String, boolean)`
   * newParameterNames: `[assumption, message]`
   * oldParameterNames: `[message, assumption]`
+* [Transform `Assume` methods to `Assumptions`](../../../java/testing/junit5/assumenotnulltoassumptionsrecipes)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.junit.Assume`
   * newFullyQualifiedTypeName: `org.junit.jupiter.api.Assumptions`
@@ -68,6 +69,7 @@ recipeList:
       methodPattern: org.junit.Assume assume*(String, boolean)
       newParameterNames: [assumption, message]
       oldParameterNames: [message, assumption]
+  - org.openrewrite.java.testing.junit5.AssumeNotNullToAssumptionsRecipes
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.junit.Assume
       newFullyQualifiedTypeName: org.junit.jupiter.api.Assumptions

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJPrimitiveRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules)._
+_Refaster rules related to AssertJ assertions over primitive values. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules)._
 
 ## Recipe source
 
@@ -45,7 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes
 displayName: `AssertJPrimitiveRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJPrimitiveRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules).
+  Refaster rules related to AssertJ assertions over primitive values. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPrimitiveRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsNotEqualToRecipe

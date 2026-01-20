@@ -179,8 +179,8 @@ _Records versions of Java in use_
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source compatibility | The version of Java used to compile the source code |
-| Target compatibility | The version of Java the bytecode is compiled to run on |
+| Source compatibility | The major version of Java used to compile the source code |
+| Target compatibility | The major version of Java the bytecode is compiled to run on |
 
 </TabItem>
 

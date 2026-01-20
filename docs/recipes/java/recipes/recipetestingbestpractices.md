@@ -38,6 +38,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [New line at the end of `SourceSpecs` text blocks](../../java/recipes/sourcespectextblocknewline)
 * [Minimal indentation for `SourceSpecs` text blocks](../../java/recipes/sourcespectextblockindentation)
 * [Refactor RewriteTest to use defaults method](../../java/recipes/userewritetestdefaults)
+* [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
+* [Use `var` for variables initialized with type casts](../../java/migrate/lang/var/usevarfortypecast)
 * [Remove `test` prefix from JUnit 5 tests](../../java/testing/cleanup/removetestprefix)
 * [Remove `public` visibility of JUnit 5 tests](../../java/testing/cleanup/testsshouldnotbepublic)
 * [Fix missing braces](../../staticanalysis/needbraces)
@@ -49,6 +51,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.openrewrite.test.RewriteTest *(..)`
 * [Use static import](../../java/usestaticimport)
   * methodPattern: `org.openrewrite.test.SourceSpecs *(..)`
+* [Change method target to static](../../java/changemethodtargettostatic)
+  * methodPattern: `java.util.Arrays asList(..)`
+  * fullyQualifiedTargetTypeName: `java.util.List`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `java.util.List asList(..)`
+  * newMethodName: `of`
 
 </TabItem>
 
@@ -72,6 +80,8 @@ recipeList:
   - org.openrewrite.java.recipes.SourceSpecTextBlockNewLine
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
   - org.openrewrite.java.recipes.UseRewriteTestDefaults
+  - org.openrewrite.java.recipes.UseStringUtilsRecipes
+  - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
   - org.openrewrite.staticanalysis.NeedBraces
@@ -83,6 +93,12 @@ recipeList:
       methodPattern: org.openrewrite.test.RewriteTest *(..)
   - org.openrewrite.java.UseStaticImport:
       methodPattern: org.openrewrite.test.SourceSpecs *(..)
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: java.util.Arrays asList(..)
+      fullyQualifiedTargetTypeName: java.util.List
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: java.util.List asList(..)
+      newMethodName: of
 
 ```
 </TabItem>

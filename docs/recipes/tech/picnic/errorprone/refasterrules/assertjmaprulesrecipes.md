@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJMapRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules)._
+_Refaster rules related to AssertJ assertions over `Map`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules)._
 
 ## Recipe source
 
@@ -49,7 +49,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes
 displayName: `AssertJMapRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJMapRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules).
+  Refaster rules related to AssertJ assertions over `Map`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertContainsExactlyInAnyOrderEntriesOfRecipe

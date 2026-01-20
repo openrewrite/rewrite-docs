@@ -35,7 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.fasterxml.jackson.core`
   * artifactId: `jackson-annotations`
-  * newVersion: `2.20`
+  * newVersion: `2.21`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.core`
   * oldArtifactId: `jackson-core`
@@ -205,7 +205,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson.core
       artifactId: jackson-annotations
-      newVersion: 2.20
+      newVersion: 2.21
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.core
       oldArtifactId: jackson-core

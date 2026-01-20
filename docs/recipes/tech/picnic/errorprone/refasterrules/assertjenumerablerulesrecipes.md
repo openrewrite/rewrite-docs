@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJEnumerableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules)._
+_Refaster rules related to AssertJ assertions over enumerable objects. [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules)._
 
 ## Recipe source
 
@@ -47,7 +47,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes
 displayName: `AssertJEnumerableRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJEnumerableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules).
+  Refaster rules related to AssertJ assertions over enumerable objects. [Source](https://error-prone.picnic.tech/refasterrules/AssertJEnumerableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsNotEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSizeRecipe

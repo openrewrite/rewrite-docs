@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJCharSequenceRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules)._
+_Refaster rules related to AssertJ assertions over `CharSequence`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules)._
 
 ## Recipe source
 
@@ -42,7 +42,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes
 displayName: `AssertJCharSequenceRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJCharSequenceRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules).
+  Refaster rules related to AssertJ assertions over `CharSequence`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsNotEmptyRecipe

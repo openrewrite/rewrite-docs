@@ -35,6 +35,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `io.swagger`
+  * oldArtifactId: `swagger-jersey2-jaxrs`
+  * newGroupId: `io.swagger.core.v3`
+  * newArtifactId: `swagger-jaxrs2`
+  * newVersion: `2.2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `io.swagger`
+  * oldArtifactId: `swagger-jaxrs`
+  * newGroupId: `io.swagger.core.v3`
+  * newArtifactId: `swagger-jaxrs2`
+  * newVersion: `2.2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `io.swagger`
   * oldArtifactId: `swagger-*`
   * newGroupId: `io.swagger.core.v3`
   * newVersion: `2.2.x`
@@ -68,6 +80,18 @@ tags:
   - openapi
   - swagger
 recipeList:
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: io.swagger
+      oldArtifactId: swagger-jersey2-jaxrs
+      newGroupId: io.swagger.core.v3
+      newArtifactId: swagger-jaxrs2
+      newVersion: 2.2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: io.swagger
+      oldArtifactId: swagger-jaxrs
+      newGroupId: io.swagger.core.v3
+      newArtifactId: swagger-jaxrs2
+      newVersion: 2.2.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: io.swagger
       oldArtifactId: swagger-*

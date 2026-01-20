@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStringRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules)._
+_Refaster rules related to AssertJ assertions over `String`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules)._
 
 ## Recipe source
 
@@ -51,7 +51,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes
 displayName: `AssertJStringRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStringRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules).
+  Refaster rules related to AssertJ assertions over `String`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJStringRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AbstractStringAssertStringIsNotEmptyRecipe

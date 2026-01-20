@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.primefaces`
   * artifactId: `primefaces`
   * newClassifier: `jakarta`
+  * changeManagedDependency: `true`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.primefaces`
   * artifactId: `primefaces`
@@ -49,6 +50,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.primefaces.extensions`
   * artifactId: `primefaces-extensions`
   * newClassifier: `jakarta`
+  * changeManagedDependency: `true`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.primefaces.extensions`
   * artifactId: `primefaces-extensions`
@@ -89,6 +91,7 @@ recipeList:
       groupId: org.primefaces
       artifactId: primefaces
       newClassifier: jakarta
+      changeManagedDependency: true
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.primefaces
       artifactId: primefaces
@@ -97,6 +100,7 @@ recipeList:
       groupId: org.primefaces.extensions
       artifactId: primefaces-extensions
       newClassifier: jakarta
+      changeManagedDependency: true
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.primefaces.extensions
       artifactId: primefaces-extensions

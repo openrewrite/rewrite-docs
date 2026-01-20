@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIterableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules)._
+_Refaster rules related to AssertJ assertions over `Iterable`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules)._
 
 ## Recipe source
 
@@ -43,7 +43,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes
 displayName: `AssertJIterableRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIterableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules).
+  Refaster rules related to AssertJ assertions over `Iterable`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsNotEmptyRecipe

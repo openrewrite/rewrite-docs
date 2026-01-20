@@ -238,6 +238,185 @@ This recipe is used as part of the following composite recipes:
 
 * [Complete migration to OpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
 
+## Examples
+##### Example 1
+`MigrateSleuthAnnotationsToOpenTelemetryTest#migrateNewSpanToWithSpan`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.cloud.sleuth.annotation.NewSpan;
+
+class TracedService {
+    @NewSpan
+    public void tracedMethod() {
+    }
+}
+```
+
+###### After
+```java
+import io.opentelemetry.instrumentation.annotations.WithSpan;
+
+class TracedService {
+    @WithSpan
+    public void tracedMethod() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.cloud.sleuth.annotation.NewSpan;
++import io.opentelemetry.instrumentation.annotations.WithSpan;
+
+@@ -4,1 +4,1 @@
+
+class TracedService {
+-   @NewSpan
++   @WithSpan
+    public void tracedMethod() {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateSleuthApiToMicrometerTracingTest#migrateTracerImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.cloud.sleuth.Tracer;
+
+class TracingService {
+    Tracer tracer;
+}
+```
+
+###### After
+```java
+import io.micrometer.tracing.Tracer;
+
+class TracingService {
+    Tracer tracer;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.cloud.sleuth.Tracer;
++import io.micrometer.tracing.Tracer;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
+`MigrateSleuthAnnotationsToOpenTelemetryTest#migrateNewSpanToWithSpan`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.cloud.sleuth.annotation.NewSpan;
+
+class TracedService {
+    @NewSpan
+    public void tracedMethod() {
+    }
+}
+```
+
+###### After
+```java
+import io.opentelemetry.instrumentation.annotations.WithSpan;
+
+class TracedService {
+    @WithSpan
+    public void tracedMethod() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.cloud.sleuth.annotation.NewSpan;
++import io.opentelemetry.instrumentation.annotations.WithSpan;
+
+@@ -4,1 +4,1 @@
+
+class TracedService {
+-   @NewSpan
++   @WithSpan
+    public void tracedMethod() {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
+`MigrateSleuthApiToMicrometerTracingTest#migrateTracerImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.cloud.sleuth.Tracer;
+
+class TracingService {
+    Tracer tracer;
+}
+```
+
+###### After
+```java
+import io.micrometer.tracing.Tracer;
+
+class TracingService {
+    Tracer tracer;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.cloud.sleuth.Tracer;
++import io.micrometer.tracing.Tracer;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

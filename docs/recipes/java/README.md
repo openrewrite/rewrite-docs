@@ -17,6 +17,7 @@ _Basic building blocks for transforming Java code._
 * [JSpecify](/recipes/java/jspecify)
 * [Jackson](/recipes/java/jackson)
 * [Joda](/recipes/java/joda)
+* [Jsf](/recipes/java/jsf)
 * [Liberty](/recipes/java/liberty)
 * [Logging](/recipes/java/logging)
 * [Micronaut](/recipes/java/micronaut)

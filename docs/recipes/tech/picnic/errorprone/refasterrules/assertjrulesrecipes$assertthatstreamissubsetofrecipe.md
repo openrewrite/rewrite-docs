@@ -24,12 +24,22 @@ static final class AssertThatStreamIsSubsetOf<S, T extends S, U extends T> {
     }
     
     @BeforeTemplate
-    ListAssert<T> before2(Stream<S> stream, Iterable<U> iterable, Collector<S, ?, ? extends List<T>> collector) {
+    AbstractCollectionAssert<?, Collection<? extends T>, T, ObjectAssert<T>> before2(Stream<S> stream, Iterable<U> iterable, Collector<S, ?, ? extends Collection<T>> collector) {
         return assertThat(stream.collect(collector)).isSubsetOf(iterable);
     }
     
     @BeforeTemplate
-    ListAssert<T> before2(Stream<S> stream, U[] iterable, Collector<S, ?, ? extends List<T>> collector) {
+    AbstractCollectionAssert<?, Collection<? extends T>, T, ObjectAssert<T>> before2(Stream<S> stream, U[] iterable, Collector<S, ?, ? extends Collection<T>> collector) {
+        return assertThat(stream.collect(collector)).isSubsetOf(iterable);
+    }
+    
+    @BeforeTemplate
+    ListAssert<T> before3(Stream<S> stream, Iterable<U> iterable, Collector<S, ?, ? extends List<T>> collector) {
+        return assertThat(stream.collect(collector)).isSubsetOf(iterable);
+    }
+    
+    @BeforeTemplate
+    ListAssert<T> before3(Stream<S> stream, U[] iterable, Collector<S, ?, ? extends List<T>> collector) {
         return assertThat(stream.collect(collector)).isSubsetOf(iterable);
     }
     

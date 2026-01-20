@@ -125,6 +125,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
+
 ## Examples
 ##### Example 1
 `ApacheCommonsLang3UseStandardCharsetsTest#convertCharEncodingFieldsToJdk`

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules)._
+_Refaster rules related to AssertJ assertions over `int`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules)._
 
 ## Recipe source
 
@@ -44,7 +44,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes
 displayName: `AssertJIntegerRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJIntegerRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules).
+  Refaster rules related to AssertJ assertions over `int`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIntegerRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsNotEqualToRecipe
@@ -60,7 +60,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

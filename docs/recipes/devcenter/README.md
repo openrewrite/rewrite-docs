@@ -12,12 +12,15 @@ _Recipes that include further recipes, often including the individual recipes be
 * [DevCenter](./devcenterstarter.md)
 * [DevCenter for Apache](./apachedevcenter.md)
 * [DevCenter for Apache Maven](./apachemavendevcenter.md)
+* [DevCenter for Gradle and Maven](./buildtoolstarter.md)
 * [DevCenter for Quarkus](./quarkusdevcenter.md)
+* [DevCenter for Vulnerability Management](./vulnerabilitiesdevcenter.md)
 * [OWASP top ten](./securitystarter.md)
 * [Upgrade to Quarkus 3.26](./upgradequarkus3_x.md)
 
 ## Recipes
 
+* [Build tool](./buildtoolcard.md)
 * [Library upgrade](./libraryupgrade.md)
 * [Move to JUnit 6](./junitjupiterupgrade.md)
 * [Move to a later Java version](./javaversionupgrade.md)

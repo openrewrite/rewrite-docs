@@ -38,6 +38,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ImmutableMapRules.ImmutableMapOf3`](../../../../tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof3recipe)
 * [Refaster template `ImmutableMapRules.ImmutableMapOf4`](../../../../tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof4recipe)
 * [Refaster template `ImmutableMapRules.ImmutableMapOf5`](../../../../tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof5recipe)
+* [Refaster template `ImmutableMapRules.ImmutableMapBuilderPut`](../../../../tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapbuilderputrecipe)
 
 </TabItem>
 
@@ -61,6 +62,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf3Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf4Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf5Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderPutRecipe
 
 ```
 </TabItem>
@@ -70,7 +72,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

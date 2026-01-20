@@ -99,6 +99,7 @@ _A vulnerability report that includes detailed information about the affected ar
 | Base score | The calculated base score. |
 | Depth | Zero for direct dependencies. |
 | CWEs | Common Weakness Enumeration (CWE) identifiers; semicolon separated. |
+| EPSS | EPSS probability score (0.0 to 1.0), or null if no EPSS data available. |
 
 </TabItem>
 

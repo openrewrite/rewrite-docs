@@ -4,14 +4,11 @@ description: Refasterrules OpenRewrite recipes.
 
 # Refasterrules
 
-## Categories
-
-* [Tech](/recipes/tech/picnic/errorprone/refasterrules/tech)
-
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [All Picnic Refaster rules](./allrefasterrules.md)
 * [`AssertJBigIntegerRules` Refaster recipes](./assertjbigintegerrulesrecipes.md)
 * [`AssertJBooleanRules` Refaster recipes](./assertjbooleanrulesrecipes.md)
 * [`AssertJByteRules` Refaster recipes](./assertjbyterulesrecipes.md)
@@ -39,6 +36,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [`ClassRules` Refaster recipes](./classrulesrecipes.md)
 * [`CollectionRules` Refaster recipes](./collectionrulesrecipes.md)
 * [`ComparatorRules` Refaster recipes](./comparatorrulesrecipes.md)
+* [`DequeRules` Refaster recipes](./dequerulesrecipes.md)
 * [`DoubleStreamRules` Refaster recipes](./doublestreamrulesrecipes.md)
 * [`EqualityRules` Refaster recipes](./equalityrulesrecipes.md)
 * [`FileRules` Refaster recipes](./filerulesrecipes.md)
@@ -272,9 +270,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refaster template `AssertJRules.AssertThatStreamDoesNotContainAnyElementsOf`](./assertjrulesrecipes$assertthatstreamdoesnotcontainanyelementsofrecipe.md)
 * [Refaster template `AssertJRules.AssertThatStreamDoesNotContainSequence`](./assertjrulesrecipes$assertthatstreamdoesnotcontainsequencerecipe.md)
 * [Refaster template `AssertJRules.AssertThatStreamHasSameElementsAs`](./assertjrulesrecipes$assertthatstreamhassameelementsasrecipe.md)
-* [Refaster template `AssertJRules.AssertThatStreamHasSize`](./assertjrulesrecipes$assertthatstreamhassizerecipe.md)
-* [Refaster template `AssertJRules.AssertThatStreamIsEmpty`](./assertjrulesrecipes$assertthatstreamisemptyrecipe.md)
-* [Refaster template `AssertJRules.AssertThatStreamIsNotEmpty`](./assertjrulesrecipes$assertthatstreamisnotemptyrecipe.md)
 * [Refaster template `AssertJRules.AssertThatStreamIsSubsetOf`](./assertjrulesrecipes$assertthatstreamissubsetofrecipe.md)
 * [Refaster template `AssertJRules.ObjectEnumerableContainsOneElement`](./assertjrulesrecipes$objectenumerablecontainsoneelementrecipe.md)
 * [Refaster template `AssertJRules.ObjectEnumerableDoesNotContainOneElement`](./assertjrulesrecipes$objectenumerabledoesnotcontainoneelementrecipe.md)
@@ -286,6 +281,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refaster template `AssertJStreamRules.AssertThatAnyMatch`](./assertjstreamrulesrecipes$assertthatanymatchrecipe.md)
 * [Refaster template `AssertJStreamRules.AssertThatCollection`](./assertjstreamrulesrecipes$assertthatcollectionrecipe.md)
 * [Refaster template `AssertJStreamRules.AssertThatFilteredOn`](./assertjstreamrulesrecipes$assertthatfilteredonrecipe.md)
+* [Refaster template `AssertJStreamRules.AssertThatHasSize`](./assertjstreamrulesrecipes$assertthathassizerecipe.md)
+* [Refaster template `AssertJStreamRules.AssertThatIsEmpty`](./assertjstreamrulesrecipes$assertthatisemptyrecipe.md)
+* [Refaster template `AssertJStreamRules.AssertThatIsNotEmpty`](./assertjstreamrulesrecipes$assertthatisnotemptyrecipe.md)
 * [Refaster template `AssertJStreamRules.AssertThatNoneMatch`](./assertjstreamrulesrecipes$assertthatnonematchrecipe.md)
 * [Refaster template `AssertJStringRules.AbstractStringAssertStringIsEmpty`](./assertjstringrulesrecipes$abstractstringassertstringisemptyrecipe.md)
 * [Refaster template `AssertJStringRules.AbstractStringAssertStringIsNotEmpty`](./assertjstringrulesrecipes$abstractstringassertstringisnotemptyrecipe.md)
@@ -404,6 +402,15 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refaster template `ComparatorRules.ThenComparingInt`](./comparatorrulesrecipes$thencomparingintrecipe.md)
 * [Refaster template `ComparatorRules.ThenComparingLong`](./comparatorrulesrecipes$thencomparinglongrecipe.md)
 * [Refaster template `ComparatorRules.ThenComparingReversed`](./comparatorrulesrecipes$thencomparingreversedrecipe.md)
+* [Refaster template `DequeRules.DequeAddFirst`](./dequerulesrecipes$dequeaddfirstrecipe.md)
+* [Refaster template `DequeRules.DequeDescendingIterator`](./dequerulesrecipes$dequedescendingiteratorrecipe.md)
+* [Refaster template `DequeRules.DequeGetFirst`](./dequerulesrecipes$dequegetfirstrecipe.md)
+* [Refaster template `DequeRules.DequeIterator`](./dequerulesrecipes$dequeiteratorrecipe.md)
+* [Refaster template `DequeRules.DequeOfferLast`](./dequerulesrecipes$dequeofferlastrecipe.md)
+* [Refaster template `DequeRules.DequePeekFirst`](./dequerulesrecipes$dequepeekfirstrecipe.md)
+* [Refaster template `DequeRules.DequePollFirst`](./dequerulesrecipes$dequepollfirstrecipe.md)
+* [Refaster template `DequeRules.DequeRemoveFirst`](./dequerulesrecipes$dequeremovefirstrecipe.md)
+* [Refaster template `DequeRules.DequeRemoveFirstOccurrence`](./dequerulesrecipes$dequeremovefirstoccurrencerecipe.md)
 * [Refaster template `DoubleStreamRules.ConcatOneDoubleStream`](./doublestreamrulesrecipes$concatonedoublestreamrecipe.md)
 * [Refaster template `DoubleStreamRules.ConcatTwoDoubleStreams`](./doublestreamrulesrecipes$concattwodoublestreamsrecipe.md)
 * [Refaster template `DoubleStreamRules.DoubleStreamAllMatch`](./doublestreamrulesrecipes$doublestreamallmatchrecipe.md)
@@ -436,6 +443,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refaster template `ImmutableListMultimapRules.EmptyImmutableListMultimap`](./immutablelistmultimaprulesrecipes$emptyimmutablelistmultimaprecipe.md)
 * [Refaster template `ImmutableListMultimapRules.EntryToImmutableListMultimap`](./immutablelistmultimaprulesrecipes$entrytoimmutablelistmultimaprecipe.md)
 * [Refaster template `ImmutableListMultimapRules.ImmutableListMultimapBuilder`](./immutablelistmultimaprulesrecipes$immutablelistmultimapbuilderrecipe.md)
+* [Refaster template `ImmutableListMultimapRules.ImmutableListMultimapBuilderPut`](./immutablelistmultimaprulesrecipes$immutablelistmultimapbuilderputrecipe.md)
 * [Refaster template `ImmutableListMultimapRules.IterableToImmutableListMultimap`](./immutablelistmultimaprulesrecipes$iterabletoimmutablelistmultimaprecipe.md)
 * [Refaster template `ImmutableListMultimapRules.PairToImmutableListMultimap`](./immutablelistmultimaprulesrecipes$pairtoimmutablelistmultimaprecipe.md)
 * [Refaster template `ImmutableListMultimapRules.TransformMultimapValuesToImmutableListMultimap2`](./immutablelistmultimaprulesrecipes$transformmultimapvaluestoimmutablelistmultimap2recipe.md)
@@ -455,6 +463,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refaster template `ImmutableMapRules.EntryToImmutableMap`](./immutablemaprulesrecipes$entrytoimmutablemaprecipe.md)
 * [Refaster template `ImmutableMapRules.ImmutableMapBuilder`](./immutablemaprulesrecipes$immutablemapbuilderrecipe.md)
 * [Refaster template `ImmutableMapRules.ImmutableMapBuilderBuildOrThrow`](./immutablemaprulesrecipes$immutablemapbuilderbuildorthrowrecipe.md)
+* [Refaster template `ImmutableMapRules.ImmutableMapBuilderPut`](./immutablemaprulesrecipes$immutablemapbuilderputrecipe.md)
 * [Refaster template `ImmutableMapRules.ImmutableMapOf`](./immutablemaprulesrecipes$immutablemapofrecipe.md)
 * [Refaster template `ImmutableMapRules.ImmutableMapOf1`](./immutablemaprulesrecipes$immutablemapof1recipe.md)
 * [Refaster template `ImmutableMapRules.ImmutableMapOf2`](./immutablemaprulesrecipes$immutablemapof2recipe.md)
@@ -468,6 +477,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refaster template `ImmutableSetMultimapRules.EmptyImmutableSetMultimap`](./immutablesetmultimaprulesrecipes$emptyimmutablesetmultimaprecipe.md)
 * [Refaster template `ImmutableSetMultimapRules.EntryToImmutableSetMultimap`](./immutablesetmultimaprulesrecipes$entrytoimmutablesetmultimaprecipe.md)
 * [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapBuilder`](./immutablesetmultimaprulesrecipes$immutablesetmultimapbuilderrecipe.md)
+* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapBuilderPut`](./immutablesetmultimaprulesrecipes$immutablesetmultimapbuilderputrecipe.md)
 * [Refaster template `ImmutableSetMultimapRules.IterableToImmutableSetMultimap`](./immutablesetmultimaprulesrecipes$iterabletoimmutablesetmultimaprecipe.md)
 * [Refaster template `ImmutableSetMultimapRules.PairToImmutableSetMultimap`](./immutablesetmultimaprulesrecipes$pairtoimmutablesetmultimaprecipe.md)
 * [Refaster template `ImmutableSetMultimapRules.TransformMultimapValuesToImmutableSetMultimap2`](./immutablesetmultimaprulesrecipes$transformmultimapvaluestoimmutablesetmultimap2recipe.md)
@@ -510,6 +520,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Refaster template `ImmutableTableRules.CellToImmutableTable`](./immutabletablerulesrecipes$celltoimmutabletablerecipe.md)
 * [Refaster template `ImmutableTableRules.ImmutableTableBuilder`](./immutabletablerulesrecipes$immutabletablebuilderrecipe.md)
 * [Refaster template `ImmutableTableRules.ImmutableTableBuilderBuildOrThrow`](./immutabletablerulesrecipes$immutabletablebuilderbuildorthrowrecipe.md)
+* [Refaster template `ImmutableTableRules.ImmutableTableBuilderPut`](./immutabletablerulesrecipes$immutabletablebuilderputrecipe.md)
 * [Refaster template `ImmutableTableRules.ImmutableTableOf`](./immutabletablerulesrecipes$immutabletableofrecipe.md)
 * [Refaster template `InputStreamRules.InputStreamReadAllBytes`](./inputstreamrulesrecipes$inputstreamreadallbytesrecipe.md)
 * [Refaster template `InputStreamRules.InputStreamReadNBytes`](./inputstreamrulesrecipes$inputstreamreadnbytesrecipe.md)

@@ -35,6 +35,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Hibernate CascadeType constants (Moderne Edition)](/recipes/hibernate/update66/migratecascadetypes.md)
 * [Migrate `exactly_once` and `exactly_once_beta` to `exactly_once_v2`](/recipes/kafka/streams/processingguaranteeexactlyoncetov2.md)
 * [Migrate `exactly_once` to `exactly_once_beta`](/recipes/kafka/streams/processingguaranteeexactlyoncetobeta.md)
+* [Migrate deprecated SystemUtils constants](/recipes/apache/commons/lang3/migratesystemutilsdeprecations.md)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
 * [Migrate the use of TaskExecutors with blocking IO](/recipes/java/micronaut/updateblockingtaskexecutors.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJComparableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules)._
+_Refaster rules related to AssertJ assertions over `Comparable`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules)._
 
 ## Recipe source
 
@@ -45,7 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes
 displayName: `AssertJComparableRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJComparableRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules).
+  Refaster rules related to AssertJ assertions over `Comparable`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJComparableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes$AssertThatIsEqualByComparingToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes$AssertThatIsNotEqualByComparingToRecipe

@@ -37,6 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Change SDK Exception types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
 * [Change SDK S3EventNotification types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changes3eventnotificationtypes.md)
 * [Change SDK TransferManager types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
+* [Change Tapestry 4 types to Tapestry 5 equivalents](/recipes/tapestry/changetapestrytypes.md)
 * [Change auth related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeauthtypes.md)
 * [Change config related classes from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeconfigtypes.md)
 * [Change region related classes](/recipes/software/amazon/awssdk/v2migration/changeregiontypes.md)
@@ -69,6 +70,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate OpenSymphony classes to Struts 6.0](/recipes/java/struts/migrate6/migrateopensymphonyclasses.md)
 * [Migrate OpenTracing API to OpenTelemetry API](/recipes/java/spring/opentelemetry/migrateopentracingtoopentelemetry.md)
 * [Migrate Resource Classes](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
+* [Migrate RichFaces 3.x to 4.5](/recipes/java/jsf/richfaces/migraterichfaces_4_5.md)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
@@ -76,6 +78,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](/recipes/kafka/migrateadminlistconsumergroups.md)
 * [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/spring/doc/apiinfobuildertoinfo.md)
 * [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
+* [Migrate `OAuth2AccessTokenResponseClient` from `RestOperations` to `RestClient` based implementations](/recipes/java/spring/security7/migrateoauth2accesstokenresponseclient.md)
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoreclear.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)
@@ -126,9 +129,11 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
+* [Migrate to Spring Kafka 4.0](/recipes/java/spring/kafka/upgradespringkafka_4_0.md)
 * [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
 * [Migrate to testcontainers-java 2.x](/recipes/java/testing/testcontainers/testcontainers2migration.md)
+* [Migrates Spring Kafka deprecated error handlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
@@ -216,6 +221,7 @@ This recipe is used as part of the following composite recipes:
 * [io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage](/recipes/io/quarkus/updates/core/quarkus319/moveaccesstokenannotationtonewpackage.md)
 * [io.quarkus.updates.core.quarkus32.InjectMock](/recipes/io/quarkus/updates/core/quarkus32/injectmock.md)
 * [io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus321/tlsregistrysplitpackagesfix.md)
+* [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix.md)
 
 
 ## Usage

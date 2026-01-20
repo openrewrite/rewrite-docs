@@ -25,6 +25,55 @@ This recipe is used as part of the following composite recipes:
 
 * [Find security vulnerabilities using taint analysis](/recipes/analysis/java/security/findsecurityvulnerabilities.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.sql.PreparedStatement;
+
+class UserDao {
+    void saveUser(PreparedStatement stmt, String ssn, String email) throws Exception {
+        stmt.setString(1, ssn);
+        stmt.setString(2, email);
+        stmt.executeUpdate();
+    }
+}
+```
+
+###### After
+```java
+import java.sql.PreparedStatement;
+
+class UserDao {
+    void saveUser(PreparedStatement stmt, String ssn, String email) throws Exception {
+        /*~~(PII use)~~>*/stmt.setString(1, ssn);
+        /*~~(PII use)~~>*/stmt.setString(2, email);
+        stmt.executeUpdate();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+class UserDao {
+    void saveUser(PreparedStatement stmt, String ssn, String email) throws Exception {
+-       stmt.setString(1, ssn);
+-       stmt.setString(2, email);
++       /*~~(PII use)~~>*/stmt.setString(1, ssn);
++       /*~~(PII use)~~>*/stmt.setString(2, email);
+        stmt.executeUpdate();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

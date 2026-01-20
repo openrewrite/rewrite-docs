@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ImmutableSetMultimapRules.EntryToImmutableSetMultimap`](../../../../tech/picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$entrytoimmutablesetmultimaprecipe)
 * [Refaster template `ImmutableSetMultimapRules.IterableToImmutableSetMultimap`](../../../../tech/picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$iterabletoimmutablesetmultimaprecipe)
 * [Refaster template `ImmutableSetMultimapRules.TransformMultimapValuesToImmutableSetMultimap2`](../../../../tech/picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$transformmultimapvaluestoimmutablesetmultimap2recipe)
+* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapBuilderPut`](../../../../tech/picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapbuilderputrecipe)
 
 </TabItem>
 
@@ -53,6 +54,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$EntryToImmutableSetMultimapRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$IterableToImmutableSetMultimapRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$TransformMultimapValuesToImmutableSetMultimap2Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapBuilderPutRecipe
 
 ```
 </TabItem>
@@ -62,7 +64,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 
 
 ## Usage

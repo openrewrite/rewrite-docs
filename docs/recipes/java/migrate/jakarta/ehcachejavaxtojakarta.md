@@ -36,10 +36,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.ehcache`
   * artifactId: `ehcache`
   * newClassifier: `jakarta`
+  * changeManagedDependency: `true`
 * [Change Maven dependency classifier](../../../maven/changedependencyclassifier)
   * groupId: `org.ehcache`
   * artifactId: `ehcache-transactions`
   * newClassifier: `jakarta`
+  * changeManagedDependency: `true`
 
 </TabItem>
 
@@ -61,10 +63,12 @@ recipeList:
       groupId: org.ehcache
       artifactId: ehcache
       newClassifier: jakarta
+      changeManagedDependency: true
   - org.openrewrite.maven.ChangeDependencyClassifier:
       groupId: org.ehcache
       artifactId: ehcache-transactions
       newClassifier: jakarta
+      changeManagedDependency: true
 
 ```
 </TabItem>
@@ -78,7 +82,7 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
-`EhcacheJavaxtoJakartaTest#migrateEhcacheDependencies`
+`EhcacheJavaxToJakartaTest#migrateEhcacheDependencies`
 
 
 ###### Unchanged
@@ -110,7 +114,7 @@ This recipe is used as part of the following composite recipes:
 ---
 
 ##### Example 2
-`EhcacheJavaxtoJakartaTest#migrateEhcacheDependencies`
+`EhcacheJavaxToJakartaTest#migrateEhcacheDependencies`
 
 
 ###### Unchanged

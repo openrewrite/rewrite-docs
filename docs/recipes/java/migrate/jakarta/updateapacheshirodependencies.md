@@ -32,6 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.shiro`
   * artifactId: `*`
   * newClassifier: `jakarta`
+  * changeManagedDependency: `true`
 * [Change a Gradle dependency classifier](../../../gradle/changedependencyclassifier)
   * groupId: `org.apache.shiro`
   * artifactId: `*`
@@ -84,6 +85,7 @@ recipeList:
       groupId: org.apache.shiro
       artifactId: "*"
       newClassifier: jakarta
+      changeManagedDependency: true
   - org.openrewrite.gradle.ChangeDependencyClassifier:
       groupId: org.apache.shiro
       artifactId: "*"

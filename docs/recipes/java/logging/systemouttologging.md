@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `Boolean` | addLogger | *Optional*. Add a logger field to the class if it isn't already present. |  |
 | `String` | loggerName | *Optional*. The name of the logger to use when generating a field. | `log` |
-| `String` | loggingFramework | *Optional*. The logging framework to use. Valid options: `SLF4J`, `Log4J1`, `Log4J2`, `JUL`, `COMMONS` |  |
+| `String` | loggingFramework | *Optional*. The logging framework to use. Valid options: `SLF4J`, `Log4J1`, `Log4J2`, `JUL`, `COMMONS`, `SYSTEM` |  |
 | `String` | level | *Optional*. The logging level to turn `System.out` print statements into. Valid options: `trace`, `debug`, `info` |  |
 
 

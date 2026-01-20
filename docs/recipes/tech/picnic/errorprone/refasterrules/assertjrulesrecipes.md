@@ -54,9 +54,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJRules.AssertThatStreamHasSameElementsAs`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamhassameelementsasrecipe)
 * [Refaster template `AssertJRules.AssertThatStreamContainsOnly`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsonlyrecipe)
 * [Refaster template `AssertJRules.AssertThatStreamIsSubsetOf`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamissubsetofrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamisemptyrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamisnotemptyrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamHasSize`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamhassizerecipe)
 * [Refaster template `AssertJRules.AssertThatPredicateAccepts`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatpredicateacceptsrecipe)
 * [Refaster template `AssertJRules.AssertThatPredicateRejects`](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatpredicaterejectsrecipe)
 
@@ -98,9 +95,6 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamHasSameElementsAsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsOnlyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsSubsetOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsNotEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamHasSizeRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatPredicateAcceptsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatPredicateRejectsRecipe
 

@@ -51,6 +51,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.commons.lang3.NullArgumentException`
   * newFullyQualifiedTypeName: `java.lang.NullPointerException`
+* [Migrate deprecated SystemUtils constants](../../../apache/commons/lang3/migratesystemutilsdeprecations)
+* [Prefer `java.nio.charset.StandardCharsets`](../../../apache/commons/lang3/usestandardcharsets)
 
 </TabItem>
 
@@ -85,6 +87,8 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.commons.lang3.NullArgumentException
       newFullyQualifiedTypeName: java.lang.NullPointerException
+  - org.openrewrite.apache.commons.lang3.MigrateSystemUtilsDeprecations
+  - org.openrewrite.apache.commons.lang3.UseStandardCharsets
 
 ```
 </TabItem>

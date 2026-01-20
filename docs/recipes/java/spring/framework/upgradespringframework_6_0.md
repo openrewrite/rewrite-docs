@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Spring Framework 5.3](../../../java/spring/framework/upgradespringframework_5_3)
+* [Migrate to Spring Framework 5.3](../../../java/spring/framework/upgradespringframework_5_3-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework`
   * artifactId: `*`

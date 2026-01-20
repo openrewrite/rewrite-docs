@@ -23,7 +23,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | cardName | The display name of the DevCenter card | `Move to Spring Boot 4.0` |
+| `String` | cardName | The display name of the DevCenter card. | `Move to Spring Boot 4.0` |
 | `String` | groupIdPattern | Group glob pattern used to match dependencies. | `com.fasterxml.jackson.module` |
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `jackson-module-*` |
 | `String` | version | The target version of the upgrade. Specify the version out to the desired patch version. | `3.4.1` |

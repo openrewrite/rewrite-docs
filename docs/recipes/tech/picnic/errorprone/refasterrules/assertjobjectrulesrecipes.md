@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJObjectRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules)._
+_Refaster rules related to AssertJ assertions over arbitrary objects. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules)._
 
 ## Recipe source
 
@@ -48,7 +48,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes
 displayName: `AssertJObjectRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJObjectRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
+  Refaster rules related to AssertJ assertions over arbitrary objects. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsInstanceOf2Recipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsIsEqualToRecipe

@@ -32,6 +32,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
 * [Migrate JavaEE Code to Quarkus 2](/recipes/quarkus/migrate/javaee/javaeetoquarkus2codemigration.md)
+* [Migrate Tapestry 4 to Tapestry 5](/recipes/tapestry/migratetapestry4to5.md)
 * [Migrate `@EnableXyz` annotations to Quarkus extensions](/recipes/quarkus/spring/enableannotationstoquarkusdependencies.md)
 * [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
 * [Migrate to Hibernate 7.0.x (Moderne Edition)](/recipes/hibernate/migratetohibernate70-moderne-edition.md)

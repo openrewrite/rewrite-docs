@@ -30,7 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Quarkus Updates Aggregate 3.17.0](../quarkus/migratetoquarkus_v3_17_0)
 * [io.quarkus.updates.core.quarkus318.RemoveFlywayCleanOnValidationError](../io/quarkus/updates/core/quarkus318/removeflywaycleanonvalidationerror)
-* [Migrates `camel 4.10` application to `camel 4.10.4`](../io/quarkus/updates/camel/camel410/camelquarkusmigrationrecipe)
+* [Migrates `camel 4.9` application to `camel 4.10`](../io/quarkus/updates/camel/camel410/camelquarkusmigrationrecipe)
 
 </TabItem>
 

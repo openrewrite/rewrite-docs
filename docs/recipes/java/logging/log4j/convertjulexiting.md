@@ -35,7 +35,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-import java.util.logging.Logger;
+import java.util.logging.Logger; // ChangeType will handle import
 
 class Test {
     void method(Logger logger) {
@@ -47,7 +47,7 @@ class Test {
 
 ###### After
 ```java
-import java.util.logging.Logger;
+import java.util.logging.Logger; // ChangeType will handle import
 
 class Test {
     void method(Logger logger) {

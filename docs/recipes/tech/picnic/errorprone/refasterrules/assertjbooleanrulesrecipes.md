@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes**
 
-_Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBooleanRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules)._
+_Refaster rules related to AssertJ assertions over `boolean`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules)._
 
 ## Recipe source
 
@@ -45,7 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes
 displayName: `AssertJBooleanRules` Refaster recipes
 description: |
-  Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJBooleanRules`. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules).
+  Refaster rules related to AssertJ assertions over `boolean`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBooleanRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsNotEqualToRecipe

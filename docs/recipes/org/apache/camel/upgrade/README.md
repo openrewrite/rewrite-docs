@@ -16,6 +16,7 @@ description: Upgrade OpenRewrite recipes.
 * [Camel414](/recipes/org/apache/camel/upgrade/camel414)
 * [Camel415](/recipes/org/apache/camel/upgrade/camel415)
 * [Camel416](/recipes/org/apache/camel/upgrade/camel416)
+* [Camel417](/recipes/org/apache/camel/upgrade/camel417)
 * [Camel42](/recipes/org/apache/camel/upgrade/camel42)
 * [Camel43](/recipes/org/apache/camel/upgrade/camel43)
 * [Camel44](/recipes/org/apache/camel/upgrade/camel44)
