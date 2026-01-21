@@ -1,7 +1,5 @@
 package com.yourorg;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 import org.jspecify.annotations.NonNull;
@@ -14,8 +12,9 @@ import org.openrewrite.java.tree.J;
  * A simple recipe that adds a hello() method to a specified class.
  *
  * This example demonstrates:
- * - Basic recipe structure with @Value and @EqualsAndHashCode
- * - Using @Option for configurable parameters
+ * - Basic recipe structure with @EqualsAndHashCode and @Value (in that order)
+ * - Using properties for displayName and description (not override methods)
+ * - Using @Option for configurable parameters with Lombok handling serialization
  * - Using JavaTemplate for code generation
  * - Checking preconditions before making changes
  * - Following the "do no harm" principle
@@ -23,9 +22,12 @@ import org.openrewrite.java.tree.J;
  * Based on the official OpenRewrite tutorial:
  * https://docs.openrewrite.org/authoring-recipes/writing-a-java-refactoring-recipe
  */
-@Value
 @EqualsAndHashCode(callSuper = false)
+@Value
 public class SayHelloRecipe extends Recipe {
+
+    String displayName = "Say 'Hello'";
+    String description = "Adds a \"hello\" method to the specified class.";
 
     @Option(
         displayName = "Fully Qualified Class Name",
@@ -34,21 +36,6 @@ public class SayHelloRecipe extends Recipe {
     )
     @NonNull
     String fullyQualifiedClassName;
-
-    @JsonCreator
-    public SayHelloRecipe(@NonNull @JsonProperty("fullyQualifiedClassName") String fullyQualifiedClassName) {
-        this.fullyQualifiedClassName = fullyQualifiedClassName;
-    }
-
-    @Override
-    public String getDisplayName() {
-        return "Say 'Hello'";
-    }
-
-    @Override
-    public String getDescription() {
-        return "Adds a \"hello\" method to the specified class.";
-    }
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {

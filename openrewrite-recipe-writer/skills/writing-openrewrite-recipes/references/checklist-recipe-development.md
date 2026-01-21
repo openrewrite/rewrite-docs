@@ -54,12 +54,10 @@ Use this checklist to ensure you've covered all important aspects of recipe deve
 ## Implementation Phase
 
 ### Recipe Class Structure
-- [ ] Used `@Value` and `@EqualsAndHashCode(callSuper = false)` for immutability
+- [ ] Used `@EqualsAndHashCode(callSuper = false)` followed by `@Value` (in that order) for immutability
+- [ ] Declared `displayName` and `description` as properties (not override methods)
 - [ ] All fields are final (via Lombok or manual implementation)
-- [ ] Added `@JsonCreator` constructor with `@JsonProperty` annotations
 - [ ] Defined `@Option` fields with clear descriptions and examples
-- [ ] Implemented `getDisplayName()` with sentence-case name
-- [ ] Implemented `getDescription()` with clear, period-ending description
 - [ ] `getVisitor()` returns NEW instance (never cached)
 
 ### Visitor Implementation
@@ -80,6 +78,12 @@ Use this checklist to ensure you've covered all important aspects of recipe deve
 - [ ] Added classpath dependencies or stubs as needed
 - [ ] Used context-free templates (default) when possible
 - [ ] Only used `.contextSensitive()` when necessary
+
+### JavaParser Classpath Configuration (if applicable)
+- [ ] For recipe JavaTemplates: used `classpathFromResources(ctx, ...)` for target types
+- [ ] For tests: configured parser with appropriate classpath for source types
+- [ ] Added dependencies to `recipeDependencies { parserClasspath(...) }` in build.gradle.kts
+- [ ] Ran `./gradlew :createTypeTable` to generate type table files
 
 ### Advanced Features (if applicable)
 - [ ] Added preconditions with `Preconditions.check()`
