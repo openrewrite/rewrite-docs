@@ -13,7 +13,7 @@ _Prefer using the constant `BigDecimal#ONE` when possible._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalOneRecipe),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalOneRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

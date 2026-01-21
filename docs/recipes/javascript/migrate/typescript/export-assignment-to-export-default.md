@@ -13,7 +13,7 @@ _Converts TypeScript `export =` syntax to ES module `export default` syntax for 
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default),
+[GitHub: org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

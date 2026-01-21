@@ -13,7 +13,7 @@ _Using 'WaitAll' with a single task may result in performance loss, await or ret
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/DoNotUseWhenAllOrWaitAllWithSingleArgumentCA1843.java),
+[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/DoNotUseWhenAllOrWaitAllWithSingleArgumentCA1843.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

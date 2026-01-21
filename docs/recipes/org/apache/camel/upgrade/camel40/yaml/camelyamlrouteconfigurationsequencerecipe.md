@@ -13,7 +13,7 @@ _Camel YAML changes. route-configuration children sequence is replaced with  map
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel40.yaml.CamelYamlRouteConfigurationSequenceRecipe),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel40.yaml.CamelYamlRouteConfigurationSequenceRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

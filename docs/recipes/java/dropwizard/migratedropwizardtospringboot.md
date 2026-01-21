@@ -13,7 +13,7 @@ _Apply various changes to migrate Dropwizard applications to Spring Boot._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/resources/META-INF/rewrite/dropwizard-to-spring-boot.yml),
+[GitHub: dropwizard-to-spring-boot.yml](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/resources/META-INF/rewrite/dropwizard-to-spring-boot.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 

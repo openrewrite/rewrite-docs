@@ -13,7 +13,7 @@ _Removes the Spring Boot 3.x starter parent POM from Maven projects._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/RemoveSpringBootParent.java),
+[GitHub: rewrite-spring-to-quarkus-0.4.3.jar](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/RemoveSpringBootParent.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 

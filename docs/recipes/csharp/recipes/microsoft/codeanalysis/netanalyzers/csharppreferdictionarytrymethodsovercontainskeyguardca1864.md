@@ -13,7 +13,7 @@ _Prefer a 'TryAdd' call over an 'Add' call guarded by a 'ContainsKey' check. 'Tr
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1864.java),
+[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1864.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

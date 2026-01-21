@@ -13,7 +13,7 @@ _Change v1 Maven/Gradle dependencies to v2._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.UpgradeSdkDependencies),
+[GitHub: upgrade-sdk-dependencies.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.UpgradeSdkDependencies),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

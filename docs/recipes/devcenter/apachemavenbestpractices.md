@@ -13,7 +13,7 @@ _A collection of recipes that apply best practices to Maven POMs. Some of these 
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/apache-maven-devcenter.yml),
+[GitHub: apache-maven-devcenter.yml](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/apache-maven-devcenter.yml),
 [Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 

@@ -13,7 +13,7 @@ _In Micronaut 2.x a reflection-based strategy was used to retrieve that informat
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/TypeRequiresIntrospection.java),
+[GitHub: rewrite-micronaut-2.31.1.jar](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/TypeRequiresIntrospection.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 

@@ -13,7 +13,7 @@ _Transfer @JsonSerialize annotation arguments (using, contentUsing, keyUsing, nu
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/TransferJsonSerializeArgumentsFromCodehausToFasterXML.java),
+[GitHub: rewrite-jackson-1.15.0.jar](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/TransferJsonSerializeArgumentsFromCodehausToFasterXML.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 

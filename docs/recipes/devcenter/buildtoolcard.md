@@ -13,7 +13,7 @@ _Track build tool versions across repositories._
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/BuildToolCard.java),
+[GitHub: rewrite-devcenter-1.15.0.jar](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/BuildToolCard.java),
 [Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 

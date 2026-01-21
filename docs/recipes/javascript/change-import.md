@@ -13,7 +13,7 @@ _Changes an import from one module/member to another, updating all type attribut
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.change-import),
+[GitHub: org.openrewrite.javascript.change-import](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.change-import),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

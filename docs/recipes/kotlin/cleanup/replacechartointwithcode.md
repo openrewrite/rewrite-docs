@@ -13,7 +13,7 @@ _Replace the usage of the deprecated `Char#toInt()` with `Char#code`. Please ens
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/ReplaceCharToIntWithCode.java),
+[GitHub: rewrite-kotlin-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/ReplaceCharToIntWithCode.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 

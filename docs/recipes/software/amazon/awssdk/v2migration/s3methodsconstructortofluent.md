@@ -13,7 +13,7 @@ _Change S3 method constructors to fluent builder calls._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent),
+[GitHub: s3-methods-constructor-to-fluent.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

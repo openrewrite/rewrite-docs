@@ -13,7 +13,7 @@ _Migrate `@ApiParam(defaultValue)` to `@Parameter(schema = @Schema(defaultValue)
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiParamDefaultValue.java),
+[GitHub: rewrite-openapi-0.29.0.jar](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiParamDefaultValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 

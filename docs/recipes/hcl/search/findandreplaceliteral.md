@@ -13,7 +13,7 @@ _Find and replace literal values in HCL files. This recipe parses the source fil
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/search/FindAndReplaceLiteral.java),
+[GitHub: rewrite-hcl-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/search/FindAndReplaceLiteral.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/)
 

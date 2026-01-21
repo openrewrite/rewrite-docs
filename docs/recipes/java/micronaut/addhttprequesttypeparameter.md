@@ -13,7 +13,7 @@ _Add an `HttpRequest` type parameter to a class `implements` statement for inter
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddHttpRequestTypeParameter.java),
+[GitHub: rewrite-micronaut-2.31.1.jar](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/AddHttpRequestTypeParameter.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 

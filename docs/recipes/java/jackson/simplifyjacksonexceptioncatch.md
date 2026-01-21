@@ -17,7 +17,7 @@ _In Jackson 3, `JacksonException` and its subtypes extend `RuntimeException`. Th
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/SimplifyJacksonExceptionCatch.java),
+[GitHub: rewrite-jackson-1.15.0.jar](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/SimplifyJacksonExceptionCatch.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 

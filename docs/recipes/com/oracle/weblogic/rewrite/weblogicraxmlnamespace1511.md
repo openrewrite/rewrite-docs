@@ -20,7 +20,7 @@ _This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLo
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

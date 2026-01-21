@@ -18,7 +18,7 @@ _Enforce consistent linebreak style for operators  See [rule details](https://es
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/stylistic.yml),
+[GitHub: stylistic.yml](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/resources/META-INF/rewrite/stylistic.yml),
 [Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 

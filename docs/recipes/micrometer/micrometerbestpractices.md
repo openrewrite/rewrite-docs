@@ -13,7 +13,7 @@ _This recipe will apply a set of best practice refactorings for Micrometer, like
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/resources/META-INF/rewrite/micrometer.yml),
+[GitHub: micrometer.yml](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/resources/META-INF/rewrite/micrometer.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 

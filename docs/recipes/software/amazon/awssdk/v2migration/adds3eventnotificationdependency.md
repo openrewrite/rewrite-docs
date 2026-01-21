@@ -18,7 +18,7 @@ _This recipe will add the Java v2 S3 Event Notification dependency if v1 S3Event
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddS3EventNotificationDependency),
+[GitHub: add-s3-event-notification-dependency.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.AddS3EventNotificationDependency),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

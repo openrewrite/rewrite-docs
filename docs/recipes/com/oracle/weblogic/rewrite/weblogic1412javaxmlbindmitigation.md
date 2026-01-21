@@ -19,7 +19,7 @@ _This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

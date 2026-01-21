@@ -13,7 +13,7 @@ _Replace `intVariation` invocations for feature key with value, and simplify con
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/RemoveIntVariation.java),
+[GitHub: rewrite-feature-flags-1.18.1.jar](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/RemoveIntVariation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 

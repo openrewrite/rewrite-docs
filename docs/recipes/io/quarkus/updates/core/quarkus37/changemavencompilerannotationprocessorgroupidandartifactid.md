@@ -13,7 +13,7 @@ _Change the groupId, artifactId and/or the version of a specified Maven Compiler
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

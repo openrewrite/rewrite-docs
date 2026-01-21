@@ -13,7 +13,7 @@ _Upgrades Quarkus dependencies to version 3.26.x, including core, extensions, an
 
 ## Recipe source
 
-[GitHub](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/quarkus-devcenter.yml),
+[GitHub: quarkus-devcenter.yml](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/resources/META-INF/rewrite/quarkus-devcenter.yml),
 [Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 

@@ -13,7 +13,7 @@ _Migrates `camel 4.12` Quarkus application to `camel 4.13`._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=io.quarkus.updates.camel.camel413.CamelQuarkusMigrationRecipe),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=io.quarkus.updates.camel.camel413.CamelQuarkusMigrationRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

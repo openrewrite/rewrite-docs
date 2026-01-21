@@ -13,7 +13,7 @@ _Prefer the Java standard library over third-party usage of Joda Time._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/java/org/openrewrite/java/joda/time/JodaTime.java),
+[GitHub: rewrite-joda-0.6.0.jar](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/java/org/openrewrite/java/joda/time/JodaTime.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-joda/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-joda/)
 

@@ -20,7 +20,7 @@ _These recipes help with Migration to Jakarta EE 9.1, flagging and updating depr
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.JakartaEE9_1),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.JakartaEE9_1),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

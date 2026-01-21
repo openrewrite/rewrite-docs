@@ -13,7 +13,7 @@ _Change v1 enum getters to v2._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.EnumGettersToV2),
+[GitHub: change-enum-getters.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.EnumGettersToV2),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

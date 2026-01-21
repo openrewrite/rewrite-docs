@@ -13,7 +13,7 @@ _Applies Wicket best practices such as minimizing anonymous inner classes and up
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.apache.wicket.BestPractices),
+[GitHub: wicket.yml](https://github.com/search?type=code&q=org.apache.wicket.BestPractices),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

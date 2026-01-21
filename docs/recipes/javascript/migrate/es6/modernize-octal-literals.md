@@ -13,7 +13,7 @@ _Convert old-style octal literals (e.g., `0777`) to modern ES6 syntax (e.g., `0o
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.es6.modernize-octal-literals),
+[GitHub: org.openrewrite.javascript.migrate.es6.modernize-octal-literals](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.es6.modernize-octal-literals),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

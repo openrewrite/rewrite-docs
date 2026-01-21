@@ -13,7 +13,7 @@ _Change the groupId and the artifactId of an artifactItem in the configuration s
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

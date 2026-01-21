@@ -13,7 +13,7 @@ _Replace Spring Boot's `SpringApplication.run()` method calls with Quarkus's `Qu
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/SpringApplicationRunToQuarkusRun.java),
+[GitHub: rewrite-spring-to-quarkus-0.4.3.jar](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/SpringApplicationRunToQuarkusRun.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 

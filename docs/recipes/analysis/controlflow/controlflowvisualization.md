@@ -13,7 +13,7 @@ _Visualize the control flow of a Java program._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java),
+[GitHub: rewrite-analysis-2.31.2.jar](https://github.com/openrewrite/rewrite-analysis/blob/main/src/main/java/org/openrewrite/analysis/controlflow/ControlFlowVisualization.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.meta/rewrite-analysis/)
 

@@ -18,7 +18,7 @@ _Upgrade to Cucumber-JVM 2.x from any previous version._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml),
+[GitHub: cucumber.yml](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/)
 

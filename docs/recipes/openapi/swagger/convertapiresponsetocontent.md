@@ -13,7 +13,7 @@ _Add `content = @Content(mediaType = ...)` and `schema` to `@ApiResponse`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/ConvertApiResponseToContent.java),
+[GitHub: rewrite-openapi-0.29.0.jar](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/ConvertApiResponseToContent.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 

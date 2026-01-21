@@ -17,7 +17,7 @@ _Before Java 8, Java lacked a robust date and time library, leading to the wides
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/resources/META-INF/rewrite/no-joda-time.yml),
+[GitHub: no-joda-time.yml](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/resources/META-INF/rewrite/no-joda-time.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-joda/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-joda/)
 

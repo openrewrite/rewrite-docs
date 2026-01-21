@@ -13,7 +13,7 @@ _In Groovy [GStrings](https://docs.groovy-lang.org/latest/html/api/groovy/lang/G
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/GStringCurlyBraces.java),
+[GitHub: rewrite-groovy-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-groovy/src/main/java/org/openrewrite/groovy/format/GStringCurlyBraces.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-groovy/)
 

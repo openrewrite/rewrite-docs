@@ -13,7 +13,7 @@ _Adds the radix parameter (base 10) to `parseInt()` calls that are missing it, p
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.add-parse-int-radix),
+[GitHub: org.openrewrite.javascript.cleanup.add-parse-int-radix](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.add-parse-int-radix),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

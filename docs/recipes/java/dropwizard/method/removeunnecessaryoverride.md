@@ -13,7 +13,7 @@ _Removes `@Override` annotations from methods that don't actually override or im
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/method/RemoveUnnecessaryOverride.java),
+[GitHub: rewrite-dropwizard-0.8.5.jar](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/method/RemoveUnnecessaryOverride.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 

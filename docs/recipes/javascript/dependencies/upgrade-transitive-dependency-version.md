@@ -13,7 +13,7 @@ _Upgrades the version of a transitive dependency by adding override/resolution e
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version),
+[GitHub: org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

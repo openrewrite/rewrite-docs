@@ -13,7 +13,7 @@ _Migration file to upgrade from an Axon Framework Javax-specific project to Jaka
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.axonframework.migration.UpgradeAxonFramework_4_Jakarta),
+[GitHub: axon-jakarta-4.yml](https://github.com/search?type=code&q=org.axonframework.migration.UpgradeAxonFramework_4_Jakarta),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

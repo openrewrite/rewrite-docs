@@ -13,7 +13,7 @@ _Reorders `maybeAddImport` and `maybeRemoveImport` calls so that imports are rem
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/RemoveImportBeforeAddImport.java),
+[GitHub: rewrite-rewrite-0.19.0.jar](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/RemoveImportBeforeAddImport.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 

@@ -13,7 +13,7 @@ _Quarkus update recipes to upgrade your application to 3.8.3._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_8_3),
+[GitHub: quarkus-consolidated.yml](https://github.com/search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_8_3),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

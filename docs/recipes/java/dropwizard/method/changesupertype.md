@@ -13,7 +13,7 @@ _Changes the superclass of a specified class to a new superclass._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/method/ChangeSuperType.java),
+[GitHub: rewrite-dropwizard-0.8.5.jar](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/method/ChangeSuperType.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 

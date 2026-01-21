@@ -13,7 +13,7 @@ _Transform usage of V1 S3 streaming requests such as PutObject to V2._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3StreamingRequestToV2),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3StreamingRequestToV2),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

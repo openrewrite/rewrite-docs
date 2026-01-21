@@ -17,7 +17,7 @@ _In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are bu
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/RemoveBuiltInModuleRegistrations.java),
+[GitHub: rewrite-jackson-1.15.0.jar](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/RemoveBuiltInModuleRegistrations.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 

@@ -21,7 +21,7 @@ _Detects async callbacks passed to array methods like .some(), .every(), .filter
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method),
+[GitHub: org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

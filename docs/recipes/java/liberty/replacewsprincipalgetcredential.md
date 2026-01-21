@@ -13,7 +13,7 @@ _Replaces `WSCredential credential = WSPrincipal.getCredential();` with a `null`
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ReplaceWSPrincipalGetCredential.java),
+[GitHub: rewrite-liberty-1.23.5.jar](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ReplaceWSPrincipalGetCredential.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-liberty/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-liberty/)
 

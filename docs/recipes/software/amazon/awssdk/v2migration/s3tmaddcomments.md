@@ -13,7 +13,7 @@ _Add imports and comments to unsupported S3 transfer manager transforms._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3TmAddComments),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3TmAddComments),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

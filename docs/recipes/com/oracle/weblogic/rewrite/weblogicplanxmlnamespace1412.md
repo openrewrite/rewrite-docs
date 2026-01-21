@@ -19,7 +19,7 @@ _Migrate xmlns entries in WebLogic Plan schema files to WebLogic 14.1.2_
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

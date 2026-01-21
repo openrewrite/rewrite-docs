@@ -13,7 +13,7 @@ _Remove duplicate keys in object literals, keeping only the last occurrence (las
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys),
+[GitHub: org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

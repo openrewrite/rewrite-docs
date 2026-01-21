@@ -13,7 +13,7 @@ _Automatically generated recipes to inline method calls based on `@InlineMe` ann
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/inline-log4j-api-methods.yml),
+[GitHub: inline-log4j-api-methods.yml](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/resources/META-INF/rewrite/inline-log4j-api-methods.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 

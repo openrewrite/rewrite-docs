@@ -13,7 +13,7 @@ _Record the presence of LSTs with duplicate paths, indicating that the same file
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-all/blob/main/src/main/java/org/openrewrite/FindDuplicateSourceFiles.java),
+[GitHub: rewrite-all-1.23.5.jar](https://github.com/openrewrite/rewrite-all/blob/main/src/main/java/org/openrewrite/FindDuplicateSourceFiles.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-all/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-all/)
 

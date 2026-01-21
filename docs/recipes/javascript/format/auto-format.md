@@ -13,7 +13,7 @@ _Format JavaScript and TypeScript code using formatting rules auto-detected from
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.format.auto-format),
+[GitHub: org.openrewrite.javascript.format.auto-format](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.format.auto-format),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

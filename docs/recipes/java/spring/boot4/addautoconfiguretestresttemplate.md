@@ -13,7 +13,7 @@ _Adds `@AutoConfigureTestRestTemplate` to test classes annotated with `@SpringBo
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot4/AddAutoConfigureTestRestTemplate.java),
+[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot4/AddAutoConfigureTestRestTemplate.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

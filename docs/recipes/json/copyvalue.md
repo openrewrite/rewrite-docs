@@ -13,7 +13,7 @@ _Copies a JSON value from one key to another. The existing key/value pair remain
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/CopyValue.java),
+[GitHub: rewrite-json-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/CopyValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 

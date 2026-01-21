@@ -13,7 +13,7 @@ _Adds the `FetchType` to jakarta annotations and deletes `@LazyCollection`._
 
 ## Recipe source
 
-[GitHub](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/ReplaceLazyCollectionAnnotation.java),
+[GitHub: rewrite-hibernate-2.17.1.jar](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/ReplaceLazyCollectionAnnotation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 

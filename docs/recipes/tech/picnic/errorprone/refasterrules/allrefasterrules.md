@@ -13,7 +13,7 @@ _Collection of all Refaster rules from Picnic's error-prone-contrib project._
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AllRefasterRules),
+[GitHub: picnic.yml](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AllRefasterRules),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

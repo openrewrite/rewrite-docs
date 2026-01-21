@@ -13,7 +13,7 @@ _Prefer a method reference to `Comparators#min(Comparable, Comparable)` over cal
 
 ## Recipe source
 
-[GitHub](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMinRecipe),
+[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMinRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
