@@ -13,7 +13,7 @@ _As of Micronaut 3.x the `@Factory` annotation is required for creating beans fr
 
 ## Recipe source
 
-[GitHub: rewrite-micronaut-2.31.1.jar](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ProviderImplementationsToMicronautFactories.java),
+[GitHub: ProviderImplementationsToMicronautFactories.java](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ProviderImplementationsToMicronautFactories.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 

@@ -13,7 +13,7 @@ _Prefer `Optional#filter(Predicate)` over `Optional#map(Function)` when converti
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$MapOptionalToBooleanRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$MapOptionalToBooleanRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$MapOptionalToBooleanRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

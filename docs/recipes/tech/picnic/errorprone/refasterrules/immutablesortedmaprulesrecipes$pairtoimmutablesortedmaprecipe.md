@@ -13,7 +13,7 @@ _Prefer `ImmutableSortedMap#of(Object, Object)` over more contrived alternatives
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$PairToImmutableSortedMapRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$PairToImmutableSortedMapRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$PairToImmutableSortedMapRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

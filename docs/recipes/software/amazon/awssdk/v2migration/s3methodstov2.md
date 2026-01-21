@@ -13,7 +13,7 @@ _Change S3 methods to v2._
 
 ## Recipe source
 
-[GitHub: change-s3-methods.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsToV2),
+[GitHub: search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsToV2](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3MethodsToV2),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

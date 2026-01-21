@@ -13,7 +13,7 @@ _The spacing around a comma is incorrect, within a C# code file._
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/TokenSpacingSA1001.java),
+[GitHub: TokenSpacingSA1001.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/TokenSpacingSA1001.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

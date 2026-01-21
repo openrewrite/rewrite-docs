@@ -13,7 +13,7 @@ _Prefer `ImmutableSortedMap#naturalOrder()` over the alternative that requires e
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapNaturalOrderBuilderRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapNaturalOrderBuilderRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapNaturalOrderBuilderRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

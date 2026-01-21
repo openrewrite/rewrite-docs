@@ -13,7 +13,7 @@ _Replaces the version of Timefold_
 
 ## Recipe source
 
-[GitHub: ChangeVersion.yml](https://github.com/search?type=code&q=ai.timefold.solver.migration.ChangeVersion),
+[GitHub: search?type=code&q=ai.timefold.solver.migration.ChangeVersion](https://github.com/search?type=code&q=ai.timefold.solver.migration.ChangeVersion),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

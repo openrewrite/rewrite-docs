@@ -13,7 +13,7 @@ _Add a GitLab component to an existing list, or add a new list where none was pr
 
 ## Recipe source
 
-[GitHub: rewrite-gitlab-0.17.5.jar](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java),
+[GitHub: AddComponent.java](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddComponent.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 

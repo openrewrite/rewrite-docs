@@ -13,7 +13,7 @@ _Prefer `Locale.of(..)` over `new Locale(..)` in Java 19 or higher._
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/UseLocaleOf.java),
+[GitHub: UseLocaleOf.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/UseLocaleOf.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

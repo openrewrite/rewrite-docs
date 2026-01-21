@@ -13,7 +13,7 @@ _When registering a RoutedEvent register containing type as owner type._
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/UseContainingTypeFixWPF0101.java),
+[GitHub: UseContainingTypeFixWPF0101.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/UseContainingTypeFixWPF0101.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

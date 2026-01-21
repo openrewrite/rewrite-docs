@@ -13,7 +13,7 @@ _Replace `String.indexOf(String str, int fromIndex)` with `String.indexOf(String
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/StringRules.java),
+[GitHub: StringRules.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/StringRules.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

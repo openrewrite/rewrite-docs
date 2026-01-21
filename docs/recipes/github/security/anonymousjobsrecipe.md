@@ -13,7 +13,7 @@ _Find jobs that lack descriptive names, making them harder to identify in workfl
 
 ## Recipe source
 
-[GitHub: rewrite-github-actions-3.18.0.jar](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/security/AnonymousJobs.java),
+[GitHub: AnonymousJobs.java](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/security/AnonymousJobs.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 

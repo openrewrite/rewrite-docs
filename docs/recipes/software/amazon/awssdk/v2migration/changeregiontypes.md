@@ -13,7 +13,7 @@ _Change region related classes from v1 to v2._
 
 ## Recipe source
 
-[GitHub: change-region-types.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeRegionTypes),
+[GitHub: search?type=code&q=software.amazon.awssdk.v2migration.ChangeRegionTypes](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeRegionTypes),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

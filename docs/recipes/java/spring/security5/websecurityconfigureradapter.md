@@ -13,7 +13,7 @@ _The Spring Security `WebSecurityConfigurerAdapter` was deprecated 5.7, this rec
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security5/WebSecurityConfigurerAdapter.java),
+[GitHub: WebSecurityConfigurerAdapter.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security5/WebSecurityConfigurerAdapter.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

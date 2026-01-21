@@ -13,7 +13,7 @@ _Constant arrays passed as arguments are not reused when called repeatedly, whic
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/AvoidConstArraysCA1861.java),
+[GitHub: AvoidConstArraysCA1861.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/AvoidConstArraysCA1861.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

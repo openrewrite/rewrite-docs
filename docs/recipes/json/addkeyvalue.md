@@ -13,7 +13,7 @@ _Adds a `value` at the specified `keyPath` with the specified `key`, if the key 
 
 ## Recipe source
 
-[GitHub: rewrite-json-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/AddKeyValue.java),
+[GitHub: AddKeyValue.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/AddKeyValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 

@@ -17,7 +17,7 @@ _Checks that any combination of String literals is on the left side of an `equal
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/EqualsAvoidsNull.java),
+[GitHub: EqualsAvoidsNull.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/EqualsAvoidsNull.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

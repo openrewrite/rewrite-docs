@@ -13,7 +13,7 @@ _The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Re
 
 ## Recipe source
 
-[GitHub: rewrite-quarkus-2.28.5.jar](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/quarkus2/GrpcServiceAnnotationToGrpcClient.java),
+[GitHub: GrpcServiceAnnotationToGrpcClient.java](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/quarkus2/GrpcServiceAnnotationToGrpcClient.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 

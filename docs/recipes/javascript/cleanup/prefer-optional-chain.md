@@ -13,7 +13,7 @@ _Converts ternary expressions like `foo ? foo.bar : undefined` to use optional c
 
 ## Recipe source
 
-[GitHub: org.openrewrite.javascript.cleanup.prefer-optional-chain](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.prefer-optional-chain),
+[GitHub: rewrite+org.openrewrite.javascript.cleanup.prefer-optional-chain](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.prefer-optional-chain),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

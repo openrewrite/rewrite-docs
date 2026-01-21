@@ -13,7 +13,7 @@ _Don't unnecessarily use `Multimap#entries()`._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.MultimapRulesRecipes$MultimapKeysStreamRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.MultimapRulesRecipes$MultimapKeysStreamRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.MultimapRulesRecipes$MultimapKeysStreamRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

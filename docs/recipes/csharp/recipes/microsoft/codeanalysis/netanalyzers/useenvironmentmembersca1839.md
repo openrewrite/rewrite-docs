@@ -13,7 +13,7 @@ _'Environment.ProcessPath' is simpler and faster than 'Process.GetCurrentProcess
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/UseEnvironmentMembersCA1839.java),
+[GitHub: UseEnvironmentMembersCA1839.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/UseEnvironmentMembersCA1839.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

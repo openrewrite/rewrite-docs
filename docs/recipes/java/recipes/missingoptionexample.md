@@ -13,7 +13,7 @@ _Find `@Option` annotations that are missing `example` values for documentation.
 
 ## Recipe source
 
-[GitHub: rewrite-rewrite-0.19.0.jar](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/MissingOptionExample.java),
+[GitHub: MissingOptionExample.java](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/MissingOptionExample.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 

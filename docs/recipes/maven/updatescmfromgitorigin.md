@@ -13,7 +13,7 @@ _Updates or adds the Maven `<scm>` tag based on the Git remote origin. By defaul
 
 ## Recipe source
 
-[GitHub: rewrite-maven-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateScmFromGitOrigin.java),
+[GitHub: UpdateScmFromGitOrigin.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateScmFromGitOrigin.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

@@ -19,7 +19,7 @@ _This recipe will update the `xmlns` entries in `weblogic-pubsub.xml` files to W
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

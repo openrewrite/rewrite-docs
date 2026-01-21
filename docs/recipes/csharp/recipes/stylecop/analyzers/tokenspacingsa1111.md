@@ -13,7 +13,7 @@ _The closing parenthesis or bracket in a call to or declaration of a C# method/i
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/TokenSpacingSA1111.java),
+[GitHub: TokenSpacingSA1111.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/TokenSpacingSA1111.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

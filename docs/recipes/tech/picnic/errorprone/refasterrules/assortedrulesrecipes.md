@@ -13,7 +13,7 @@ _Assorted Refaster rules that do not (yet) belong in one of the other classes wi
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

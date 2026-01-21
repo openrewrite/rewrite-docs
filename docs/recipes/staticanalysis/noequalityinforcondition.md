@@ -17,7 +17,7 @@ _Testing for loop termination using an equality operator (`==` and `!=`) is dang
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NoEqualityInForCondition.java),
+[GitHub: NoEqualityInForCondition.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/NoEqualityInForCondition.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

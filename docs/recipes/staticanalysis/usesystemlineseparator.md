@@ -13,7 +13,7 @@ _Replace calls to `System.getProperty("line.separator")` with `System.lineSepara
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseSystemLineSeparator.java),
+[GitHub: UseSystemLineSeparator.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseSystemLineSeparator.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

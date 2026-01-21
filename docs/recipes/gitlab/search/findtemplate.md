@@ -13,7 +13,7 @@ _Find a GitLab Template in use._
 
 ## Recipe source
 
-[GitHub: rewrite-gitlab-0.17.5.jar](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindTemplate.java),
+[GitHub: FindTemplate.java](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/search/FindTemplate.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 

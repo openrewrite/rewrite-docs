@@ -13,7 +13,7 @@ _Change the log level of SLF4J log statements._
 
 ## Recipe source
 
-[GitHub: rewrite-logging-frameworks-3.22.0.jar](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java),
+[GitHub: ChangeLogLevel.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/ChangeLogLevel.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 

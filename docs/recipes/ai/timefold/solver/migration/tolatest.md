@@ -13,7 +13,7 @@ _Replace all your calls to deleted/deprecated types and methods of Timefold Solv
 
 ## Recipe source
 
-[GitHub: ToLatest.yml](https://github.com/search?type=code&q=ai.timefold.solver.migration.ToLatest),
+[GitHub: search?type=code&q=ai.timefold.solver.migration.ToLatest](https://github.com/search?type=code&q=ai.timefold.solver.migration.ToLatest),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

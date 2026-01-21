@@ -13,7 +13,7 @@ _Replace `isEnabled()` invocations for `featureKey` with `replacementValue`, and
 
 ## Recipe source
 
-[GitHub: rewrite-feature-flags-1.18.1.jar](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/quarkus/RemoveIsEnabled.java),
+[GitHub: RemoveIsEnabled.java](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/quarkus/RemoveIsEnabled.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 

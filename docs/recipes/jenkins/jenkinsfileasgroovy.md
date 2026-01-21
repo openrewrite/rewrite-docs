@@ -13,7 +13,7 @@ _Parse any `Jenkinsfile` as Groovy code._
 
 ## Recipe source
 
-[GitHub: rewrite-jenkins-0.34.0.jar](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/JenkinsfileAsGroovy.java),
+[GitHub: JenkinsfileAsGroovy.java](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/JenkinsfileAsGroovy.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 

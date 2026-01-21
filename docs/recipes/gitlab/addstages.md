@@ -13,7 +13,7 @@ _Add or Update the set of stages defined in `.gitlab-ci.yml`._
 
 ## Recipe source
 
-[GitHub: rewrite-gitlab-0.17.5.jar](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddStages.java),
+[GitHub: AddStages.java](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/AddStages.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 

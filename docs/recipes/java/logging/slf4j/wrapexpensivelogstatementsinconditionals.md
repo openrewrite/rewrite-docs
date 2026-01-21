@@ -13,7 +13,7 @@ _When trace, debug and info log statements use methods for constructing log mess
 
 ## Recipe source
 
-[GitHub: rewrite-logging-frameworks-3.22.0.jar](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/WrapExpensiveLogStatementsInConditionals.java),
+[GitHub: WrapExpensiveLogStatementsInConditionals.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/WrapExpensiveLogStatementsInConditionals.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 

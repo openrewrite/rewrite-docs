@@ -13,7 +13,7 @@ _The `schedule` [event](https://docs.github.com/en/actions/reference/events-that
 
 ## Recipe source
 
-[GitHub: rewrite-github-actions-3.18.0.jar](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/AddCronTrigger.java),
+[GitHub: AddCronTrigger.java](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/AddCronTrigger.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 

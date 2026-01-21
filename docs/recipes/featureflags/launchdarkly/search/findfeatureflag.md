@@ -13,7 +13,7 @@ _Find a LaunchDarkly feature flag._
 
 ## Recipe source
 
-[GitHub: rewrite-feature-flags-1.18.1.jar](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/search/FindFeatureFlag.java),
+[GitHub: FindFeatureFlag.java](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/search/FindFeatureFlag.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 

@@ -13,7 +13,7 @@ _Apply the specified executions to a Maven plugin. Will not add the plugin if it
 
 ## Recipe source
 
-[GitHub: rewrite-maven-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java),
+[GitHub: ChangePluginExecutions.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ChangePluginExecutions.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

@@ -13,7 +13,7 @@ _The .NET Framework class library provides methods for retrieving custom attribu
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/AvoidUnsealedAttributesCA1813.java),
+[GitHub: AvoidUnsealedAttributesCA1813.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/AvoidUnsealedAttributesCA1813.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

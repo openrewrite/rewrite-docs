@@ -13,7 +13,7 @@ _Removes the `Enclosed` specification from a class, with `Nested` added to its i
 
 ## Recipe source
 
-[GitHub: rewrite-testing-frameworks-3.26.0.jar](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/EnclosedToNested.java),
+[GitHub: EnclosedToNested.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/EnclosedToNested.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 

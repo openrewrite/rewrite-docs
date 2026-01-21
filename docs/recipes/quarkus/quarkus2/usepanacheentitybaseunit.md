@@ -13,7 +13,7 @@ _The `persist()` and `persistAndFlush()` methods now return an `Uni<T extends Pa
 
 ## Recipe source
 
-[GitHub: rewrite-quarkus-2.28.5.jar](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/quarkus2/UsePanacheEntityBaseUniT.java),
+[GitHub: UsePanacheEntityBaseUniT.java](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/quarkus2/UsePanacheEntityBaseUniT.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
 

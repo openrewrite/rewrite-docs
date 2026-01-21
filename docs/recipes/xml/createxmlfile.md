@@ -13,7 +13,7 @@ _Create a new XML file._
 
 ## Recipe source
 
-[GitHub: rewrite-xml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/CreateXmlFile.java),
+[GitHub: CreateXmlFile.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/CreateXmlFile.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 

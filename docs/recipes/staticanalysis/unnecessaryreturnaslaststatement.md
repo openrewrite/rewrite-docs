@@ -13,7 +13,7 @@ _Removes `return` from a `void` method if it's the last statement._
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnnecessaryReturnAsLastStatement.java),
+[GitHub: UnnecessaryReturnAsLastStatement.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnnecessaryReturnAsLastStatement.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

@@ -13,7 +13,7 @@ _Adds annotation if class extends or implements any of the specified target type
 
 ## Recipe source
 
-[GitHub: rewrite-dropwizard-0.8.5.jar](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/annotation/AddClassAnnotationIfSuperTypeExists.java),
+[GitHub: AddClassAnnotationIfSuperTypeExists.java](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/annotation/AddClassAnnotationIfSuperTypeExists.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 

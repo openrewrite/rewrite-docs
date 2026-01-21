@@ -13,7 +13,7 @@ _Remove the Maven annotation processor path that matches the given groupId and a
 
 ## Recipe source
 
-[GitHub: rewrite-micronaut-2.31.1.jar](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/RemoveAnnotationProcessorPath.java),
+[GitHub: RemoveAnnotationProcessorPath.java](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/RemoveAnnotationProcessorPath.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 

@@ -13,7 +13,7 @@ _Sort imports by category and module path. Categories: side-effect, namespace, d
 
 ## Recipe source
 
-[GitHub: org.openrewrite.javascript.cleanup.order-imports](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.order-imports),
+[GitHub: rewrite+org.openrewrite.javascript.cleanup.order-imports](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.order-imports),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

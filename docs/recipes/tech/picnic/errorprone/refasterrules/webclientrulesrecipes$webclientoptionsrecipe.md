@@ -13,7 +13,7 @@ _Prefer `WebClient#options()` over `WebClient#method(HttpMethod)` with `HttpMeth
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientOptionsRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientOptionsRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientOptionsRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

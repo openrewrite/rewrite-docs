@@ -13,7 +13,7 @@ _As of Boot 3.0 `@ConstructorBinding` is no longer needed at the type level on `
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/RemoveConstructorBindingAnnotation.java),
+[GitHub: RemoveConstructorBindingAnnotation.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/RemoveConstructorBindingAnnotation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

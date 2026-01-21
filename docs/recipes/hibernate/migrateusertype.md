@@ -13,7 +13,7 @@ _With Hibernate 6 the `UserType` interface received a type parameter making it m
 
 ## Recipe source
 
-[GitHub: rewrite-hibernate-2.17.1.jar](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateUserType.java),
+[GitHub: MigrateUserType.java](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/java/org/openrewrite/hibernate/MigrateUserType.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
 

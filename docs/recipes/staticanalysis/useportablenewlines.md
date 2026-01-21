@@ -17,7 +17,7 @@ _Format strings should use %n rather than \n to produce platform-specific line s
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UsePortableNewlines.java),
+[GitHub: UsePortableNewlines.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UsePortableNewlines.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

@@ -17,7 +17,7 @@ _This recipe will apply changes commonly needed when migrating to Java 17. Speci
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.UpgradeToJava17),
+[GitHub: search?type=code&q=io.quarkus.updates.core.quarkus37.UpgradeToJava17](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus37.UpgradeToJava17),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

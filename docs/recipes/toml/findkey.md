@@ -13,7 +13,7 @@ _Find TOML keys matching a path expression._
 
 ## Recipe source
 
-[GitHub: rewrite-toml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/FindKey.java),
+[GitHub: FindKey.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/FindKey.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 

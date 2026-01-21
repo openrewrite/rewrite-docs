@@ -13,7 +13,7 @@ _Some annotations accept arguments. This recipe sets an existing argument to the
 
 ## Recipe source
 
-[GitHub: rewrite-java-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java),
+[GitHub: AddOrUpdateAnnotationAttribute.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddOrUpdateAnnotationAttribute.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 

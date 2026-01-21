@@ -13,7 +13,7 @@ _Refaster template recipes for `org.openrewrite.apache.maven.shared.MavenSharedS
 
 ## Recipe source
 
-[GitHub: rewrite-apache-2.21.0.jar](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/maven/shared/MavenSharedStringUtils.java),
+[GitHub: MavenSharedStringUtils.java](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/maven/shared/MavenSharedStringUtils.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 

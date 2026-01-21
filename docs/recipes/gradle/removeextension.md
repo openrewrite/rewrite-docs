@@ -13,7 +13,7 @@ _Remove a Gradle build extension from `settings.gradle(.kts)` or `build.gradle(.
 
 ## Recipe source
 
-[GitHub: rewrite-gradle-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveExtension.java),
+[GitHub: RemoveExtension.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/RemoveExtension.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 

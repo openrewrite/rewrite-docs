@@ -17,7 +17,7 @@ _Prefer `A.class::isInstance` over `Predicates.instanceOf(A.class)`._
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaPredicatesInstanceOf.java),
+[GitHub: NoGuavaPredicatesInstanceOf.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/guava/NoGuavaPredicatesInstanceOf.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

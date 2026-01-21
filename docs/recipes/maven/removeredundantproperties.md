@@ -13,7 +13,7 @@ _Remove properties when a parent POM specifies the same property._
 
 ## Recipe source
 
-[GitHub: rewrite-maven-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRedundantProperties.java),
+[GitHub: RemoveRedundantProperties.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/RemoveRedundantProperties.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

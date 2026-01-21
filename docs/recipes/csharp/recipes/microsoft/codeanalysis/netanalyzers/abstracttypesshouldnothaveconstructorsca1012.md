@@ -13,7 +13,7 @@ _Constructors on abstract types can be called only by derived types. Because pub
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/AbstractTypesShouldNotHaveConstructorsCA1012.java),
+[GitHub: AbstractTypesShouldNotHaveConstructorsCA1012.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/AbstractTypesShouldNotHaveConstructorsCA1012.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

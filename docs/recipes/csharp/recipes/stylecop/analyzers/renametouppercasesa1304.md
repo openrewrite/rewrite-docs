@@ -13,7 +13,7 @@ _The name of a non-private readonly C# field should being with an upper-case let
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/RenameToUpperCaseSA1304.java),
+[GitHub: RenameToUpperCaseSA1304.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/RenameToUpperCaseSA1304.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

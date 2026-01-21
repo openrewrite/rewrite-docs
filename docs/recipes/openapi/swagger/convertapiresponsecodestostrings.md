@@ -13,7 +13,7 @@ _Convert API response codes to strings._
 
 ## Recipe source
 
-[GitHub: rewrite-openapi-0.29.0.jar](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/ConvertApiResponseCodesToStrings.java),
+[GitHub: ConvertApiResponseCodesToStrings.java](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/ConvertApiResponseCodesToStrings.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 

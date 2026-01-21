@@ -13,7 +13,7 @@ _Find XML root elements that do not have a specific Namespace URI, optionally re
 
 ## Recipe source
 
-[GitHub: rewrite-xml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/DoesNotUseNamespaceUri.java),
+[GitHub: DoesNotUseNamespaceUri.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/DoesNotUseNamespaceUri.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 

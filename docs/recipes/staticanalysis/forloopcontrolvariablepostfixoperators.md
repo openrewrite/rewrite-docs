@@ -13,7 +13,7 @@ _Replace `for` loop control variables using pre-increment (`++i`) or pre-decreme
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ForLoopControlVariablePostfixOperators.java),
+[GitHub: ForLoopControlVariablePostfixOperators.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ForLoopControlVariablePostfixOperators.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

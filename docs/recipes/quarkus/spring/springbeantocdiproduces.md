@@ -13,7 +13,7 @@ _Transform Spring `@Bean` methods to CDI `@Produces` methods with appropriate sc
 
 ## Recipe source
 
-[GitHub: rewrite-spring-to-quarkus-0.4.3.jar](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/SpringBeanToCdiProduces.java),
+[GitHub: SpringBeanToCdiProduces.java](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/SpringBeanToCdiProduces.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 

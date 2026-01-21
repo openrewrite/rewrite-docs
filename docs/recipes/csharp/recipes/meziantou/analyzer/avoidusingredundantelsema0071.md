@@ -13,7 +13,7 @@ _The 'if' block contains a jump statement (break, continue, goto, return, throw,
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/meziantou/analyzer/AvoidUsingRedundantElseMA0071.java),
+[GitHub: AvoidUsingRedundantElseMA0071.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/meziantou/analyzer/AvoidUsingRedundantElseMA0071.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

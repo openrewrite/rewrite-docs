@@ -17,7 +17,7 @@ _Remove redundant `@JsonFormat` annotations on `java.time` types that specify IS
 
 ## Recipe source
 
-[GitHub: rewrite-jackson-1.15.0.jar](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/UseModernDateTimeSerialization.java),
+[GitHub: UseModernDateTimeSerialization.java](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/UseModernDateTimeSerialization.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 

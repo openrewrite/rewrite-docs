@@ -13,7 +13,7 @@ _Migrates Wicket 9.x to Wicket 10.x, as well as Java 17 and Jakarta._
 
 ## Recipe source
 
-[GitHub: wicket.yml](https://github.com/search?type=code&q=org.apache.wicket.MigrateToWicket10),
+[GitHub: search?type=code&q=org.apache.wicket.MigrateToWicket10](https://github.com/search?type=code&q=org.apache.wicket.MigrateToWicket10),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

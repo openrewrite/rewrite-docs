@@ -13,7 +13,7 @@ _In `ItemWriter` the signature of the `write()` method has changed in spring-bat
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/MigrateItemWriterWrite.java),
+[GitHub: MigrateItemWriterWrite.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/batch/MigrateItemWriterWrite.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

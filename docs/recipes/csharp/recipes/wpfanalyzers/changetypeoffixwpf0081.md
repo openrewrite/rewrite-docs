@@ -13,7 +13,7 @@ _MarkupExtensionReturnType must use correct return type._
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/ChangeTypeofFixWPF0081.java),
+[GitHub: ChangeTypeofFixWPF0081.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/ChangeTypeofFixWPF0081.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

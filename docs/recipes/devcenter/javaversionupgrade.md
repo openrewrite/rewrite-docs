@@ -13,7 +13,7 @@ _Determine the current state of a repository relative to a desired Java version 
 
 ## Recipe source
 
-[GitHub: rewrite-devcenter-1.15.0.jar](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/JavaVersionUpgrade.java),
+[GitHub: JavaVersionUpgrade.java](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/JavaVersionUpgrade.java),
 [Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 

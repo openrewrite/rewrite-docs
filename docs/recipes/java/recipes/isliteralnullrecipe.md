@@ -28,7 +28,7 @@ public class IsLiteralNull {
 
 ## Recipe source
 
-[GitHub: rewrite-rewrite-0.19.0.jar](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/IsLiteralNull.java),
+[GitHub: IsLiteralNull.java](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/IsLiteralNull.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 

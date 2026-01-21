@@ -13,7 +13,7 @@ _Finds dependencies in a project's `package.json`. Can find both direct dependen
 
 ## Recipe source
 
-[GitHub: org.openrewrite.javascript.dependencies.find-dependency](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.dependencies.find-dependency),
+[GitHub: rewrite+org.openrewrite.javascript.dependencies.find-dependency](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.dependencies.find-dependency),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

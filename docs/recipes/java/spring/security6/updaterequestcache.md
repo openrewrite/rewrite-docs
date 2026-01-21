@@ -13,7 +13,7 @@ _By default, Spring Security 5 queries the saved request on every request, which
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/UpdateRequestCache.java),
+[GitHub: UpdateRequestCache.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security6/UpdateRequestCache.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

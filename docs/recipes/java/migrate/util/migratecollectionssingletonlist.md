@@ -13,7 +13,7 @@ _Prefer `List.of(..)` instead of using `Collections.singletonList()` in Java 9 o
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonList.java),
+[GitHub: MigrateCollectionsSingletonList.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonList.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

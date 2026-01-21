@@ -13,7 +13,7 @@ _Find a Gradle repository by url._
 
 ## Recipe source
 
-[GitHub: rewrite-gradle-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java),
+[GitHub: FindRepository.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepository.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 

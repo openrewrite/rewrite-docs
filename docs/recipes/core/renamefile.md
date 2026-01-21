@@ -13,7 +13,7 @@ _Rename a file while keeping it in the same directory._
 
 ## Recipe source
 
-[GitHub: rewrite-core-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/RenameFile.java),
+[GitHub: RenameFile.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/RenameFile.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 

@@ -13,7 +13,7 @@ _Recipes are value objects, so should use `@EqualsAndHashCode(callSuper = false)
 
 ## Recipe source
 
-[GitHub: rewrite-rewrite-0.19.0.jar](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/RecipeEqualsAndHashCodeCallSuper.java),
+[GitHub: RecipeEqualsAndHashCodeCallSuper.java](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/RecipeEqualsAndHashCodeCallSuper.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 

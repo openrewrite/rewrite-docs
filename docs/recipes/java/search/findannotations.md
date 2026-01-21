@@ -13,7 +13,7 @@ _Find all annotations matching the annotation pattern._
 
 ## Recipe source
 
-[GitHub: rewrite-java-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java),
+[GitHub: FindAnnotations.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 

@@ -13,7 +13,7 @@ _List the committers on a repository._
 
 ## Recipe source
 
-[GitHub: rewrite-core-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindCommitters.java),
+[GitHub: FindCommitters.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/search/FindCommitters.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 

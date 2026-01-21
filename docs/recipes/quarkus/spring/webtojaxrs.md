@@ -13,7 +13,7 @@ _Converts Spring Web annotations such as `@RestController`, `@RequestMapping`, `
 
 ## Recipe source
 
-[GitHub: rewrite-spring-to-quarkus-0.4.3.jar](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/WebToJaxRs.java),
+[GitHub: WebToJaxRs.java](https://github.com/openrewrite/rewrite-spring-to-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/spring/WebToJaxRs.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring-to-quarkus/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring-to-quarkus/)
 

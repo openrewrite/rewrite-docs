@@ -13,7 +13,7 @@ _Replace String literals with `org.springframework.http.MediaType` constants._
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/http/ReplaceStringLiteralsWithMediaTypeConstants.java),
+[GitHub: ReplaceStringLiteralsWithMediaTypeConstants.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/http/ReplaceStringLiteralsWithMediaTypeConstants.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

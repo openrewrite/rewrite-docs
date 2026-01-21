@@ -13,7 +13,7 @@ _Set a file's read, write and executable permission attributes._
 
 ## Recipe source
 
-[GitHub: rewrite-core-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/SetFilePermissions.java),
+[GitHub: SetFilePermissions.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/SetFilePermissions.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 

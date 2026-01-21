@@ -19,7 +19,7 @@ _Add `implicit.tld` file with taglib 3.0 to `src/main/webapp/WEB-INF/tags`._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

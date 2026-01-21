@@ -17,7 +17,7 @@ _Replaces Netty's `new *EventLoopGroup` with `new MultiThreadIoEventLoopGroup(*I
 
 ## Recipe source
 
-[GitHub: rewrite-netty-0.6.5.jar](https://github.com/openrewrite/rewrite-netty/blob/main/src/main/java/org/openrewrite/java/netty/EventLoopGroupToMultiThreadIoEventLoopGroup.java),
+[GitHub: EventLoopGroupToMultiThreadIoEventLoopGroup.java](https://github.com/openrewrite/rewrite-netty/blob/main/src/main/java/org/openrewrite/java/netty/EventLoopGroupToMultiThreadIoEventLoopGroup.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-netty/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-netty/)
 

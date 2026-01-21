@@ -13,7 +13,7 @@ _Prefer `Collection#iterator()` over more contrived or less efficient alternativ
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIteratorRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIteratorRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIteratorRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

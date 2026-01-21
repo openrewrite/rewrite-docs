@@ -13,7 +13,7 @@ _Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`._
 
 ## Recipe source
 
-[GitHub: rewrite-openapi-0.29.0.jar](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateSwaggerDefinitionToOpenAPIDefinition.java),
+[GitHub: MigrateSwaggerDefinitionToOpenAPIDefinition.java](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateSwaggerDefinitionToOpenAPIDefinition.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 

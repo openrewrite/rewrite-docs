@@ -13,7 +13,7 @@ _Upgrades the version of java specified in Jenkins groovy scripts. Will not down
 
 ## Recipe source
 
-[GitHub: rewrite-jenkins-0.34.0.jar](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeJavaVersion.java),
+[GitHub: UpgradeJavaVersion.java](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/UpgradeJavaVersion.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 

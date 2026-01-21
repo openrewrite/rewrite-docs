@@ -13,7 +13,7 @@ _Adds [Jenkins plugins BOM](https://www.jenkins.io/doc/developer/plugin-developm
 
 ## Recipe source
 
-[GitHub: rewrite-jenkins-0.34.0.jar](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/AddPluginsBom.java),
+[GitHub: AddPluginsBom.java](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/AddPluginsBom.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 

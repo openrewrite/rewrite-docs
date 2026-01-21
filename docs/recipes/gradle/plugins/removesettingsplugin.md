@@ -13,7 +13,7 @@ _Remove plugin from Gradle settings file `plugins` block by id._
 
 ## Recipe source
 
-[GitHub: rewrite-gradle-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/RemoveSettingsPlugin.java),
+[GitHub: RemoveSettingsPlugin.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/RemoveSettingsPlugin.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 

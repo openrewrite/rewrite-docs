@@ -13,7 +13,7 @@ _Changes the selected Gradle plugin to the new plugin._
 
 ## Recipe source
 
-[GitHub: rewrite-gradle-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/ChangePlugin.java),
+[GitHub: ChangePlugin.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/plugins/ChangePlugin.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 

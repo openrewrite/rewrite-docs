@@ -13,7 +13,7 @@ _Avoid unnecessary `Optional` to `Stream` conversion when filtering a value of t
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFilterRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFilterRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFilterRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

@@ -13,7 +13,7 @@ _Migrates Apache Camel application to 4.10.6._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.Camel410LTSMigrationRecipe),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.Camel410LTSMigrationRecipe](https://github.com/search?type=code&q=org.apache.camel.upgrade.Camel410LTSMigrationRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

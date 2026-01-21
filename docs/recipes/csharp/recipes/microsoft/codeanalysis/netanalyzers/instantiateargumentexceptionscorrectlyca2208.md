@@ -13,7 +13,7 @@ _A call is made to the default (parameterless) constructor of an exception type 
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/InstantiateArgumentExceptionsCorrectlyCA2208.java),
+[GitHub: InstantiateArgumentExceptionsCorrectlyCA2208.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/InstantiateArgumentExceptionsCorrectlyCA2208.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

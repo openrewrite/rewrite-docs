@@ -13,7 +13,7 @@ _Prefer a 'TryGetValue' call over a Dictionary indexer access guarded by a 'Cont
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1854.java),
+[GitHub: CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1854.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferDictionaryTryMethodsOverContainsKeyGuardCA1854.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

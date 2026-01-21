@@ -13,7 +13,7 @@ _The oldest dependency version in use is the lowest dependency version in use in
 
 ## Recipe source
 
-[GitHub: rewrite-java-dependencies-1.50.0.jar](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumDependencyVersion.java),
+[GitHub: FindMinimumDependencyVersion.java](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/FindMinimumDependencyVersion.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 

@@ -17,7 +17,7 @@ _Avoid vacuous invocations of `Flux#ignoreElements()`._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenMonoRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenMonoRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenMonoRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

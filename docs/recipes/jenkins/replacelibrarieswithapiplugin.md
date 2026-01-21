@@ -13,7 +13,7 @@ _Prefer Jenkins API plugins over bundling libraries for slimmer plugins._
 
 ## Recipe source
 
-[GitHub: rewrite-jenkins-0.34.0.jar](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java),
+[GitHub: ReplaceLibrariesWithApiPlugin.java](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/ReplaceLibrariesWithApiPlugin.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 

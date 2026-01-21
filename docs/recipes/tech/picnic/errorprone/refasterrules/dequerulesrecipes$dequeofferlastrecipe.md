@@ -13,7 +13,7 @@ _Prefer `Deque#offerLast(Object)` over less clear alternatives._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeOfferLastRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeOfferLastRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeOfferLastRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

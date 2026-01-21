@@ -17,7 +17,7 @@ _Order POM elements according to the [recommended](https://maven.apache.org/deve
 
 ## Recipe source
 
-[GitHub: rewrite-maven-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/OrderPomElements.java),
+[GitHub: OrderPomElements.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/OrderPomElements.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

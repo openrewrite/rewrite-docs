@@ -13,7 +13,7 @@ _Transform the creation of a class using 'new' to builder pattern._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.NewClassToBuilderPattern),
+[GitHub: search?type=code&q=software.amazon.awssdk.v2migration.NewClassToBuilderPattern](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.NewClassToBuilderPattern),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

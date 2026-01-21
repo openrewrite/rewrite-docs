@@ -13,7 +13,7 @@ _Adds a new method parameter to an existing method declaration._
 
 ## Recipe source
 
-[GitHub: rewrite-java-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddMethodParameter.java),
+[GitHub: AddMethodParameter.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/AddMethodParameter.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 

@@ -13,7 +13,7 @@ _Replace a TOML table row with new content. If a row with the same identifying p
 
 ## Recipe source
 
-[GitHub: rewrite-toml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/ReplaceTableRow.java),
+[GitHub: ReplaceTableRow.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/ReplaceTableRow.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 

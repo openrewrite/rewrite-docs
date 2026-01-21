@@ -13,7 +13,7 @@ _Delete a TOML table._
 
 ## Recipe source
 
-[GitHub: rewrite-toml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/DeleteTable.java),
+[GitHub: DeleteTable.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/DeleteTable.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 

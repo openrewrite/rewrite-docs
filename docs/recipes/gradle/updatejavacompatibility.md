@@ -13,7 +13,7 @@ _Find and updates the Java compatibility for the Gradle project._
 
 ## Recipe source
 
-[GitHub: rewrite-gradle-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateJavaCompatibility.java),
+[GitHub: UpdateJavaCompatibility.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/UpdateJavaCompatibility.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 

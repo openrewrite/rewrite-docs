@@ -13,7 +13,7 @@ _Change S3EventNotification methods to v2._
 
 ## Recipe source
 
-[GitHub: change-s3-event-notification-methods.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3EventNotificationMethodsToV2),
+[GitHub: search?type=code&q=software.amazon.awssdk.v2migration.S3EventNotificationMethodsToV2](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.S3EventNotificationMethodsToV2),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

@@ -13,7 +13,7 @@ _Create a new, empty Java class._
 
 ## Recipe source
 
-[GitHub: rewrite-java-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/CreateEmptyJavaClass.java),
+[GitHub: CreateEmptyJavaClass.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/CreateEmptyJavaClass.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 

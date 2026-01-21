@@ -13,7 +13,7 @@ _With Spring 6 `HttpStatus` was replaced by `HttpStatusCode` in most method sign
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/MigrateResponseEntityExceptionHandlerHttpStatusToHttpStatusCode.java),
+[GitHub: MigrateResponseEntityExceptionHandlerHttpStatusToHttpStatusCode.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/MigrateResponseEntityExceptionHandlerHttpStatusToHttpStatusCode.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

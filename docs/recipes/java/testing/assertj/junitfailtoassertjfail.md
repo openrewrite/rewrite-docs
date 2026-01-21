@@ -13,7 +13,7 @@ _Convert JUnit-style `fail()` to AssertJ's `fail()`._
 
 ## Recipe source
 
-[GitHub: rewrite-testing-frameworks-3.26.0.jar](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitFailToAssertJFail.java),
+[GitHub: JUnitFailToAssertJFail.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/JUnitFailToAssertJFail.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 

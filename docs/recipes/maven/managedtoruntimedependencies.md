@@ -13,7 +13,7 @@ _This recipe processes Maven POMs, converting all `<dependencyManagement>` entri
 
 ## Recipe source
 
-[GitHub: rewrite-maven-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ManagedToRuntimeDependencies.java),
+[GitHub: ManagedToRuntimeDependencies.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/ManagedToRuntimeDependencies.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

@@ -13,7 +13,7 @@ _For non-empty collections, Count() and LongCount() enumerate the entire sequenc
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpDoNotUseCountWhenAnyCanBeUsedCA1827.java),
+[GitHub: CSharpDoNotUseCountWhenAnyCanBeUsedCA1827.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpDoNotUseCountWhenAnyCanBeUsedCA1827.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

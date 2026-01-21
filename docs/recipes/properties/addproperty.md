@@ -13,7 +13,7 @@ _Adds a new property to a property file. Attempts to place the new property in a
 
 ## Recipe source
 
-[GitHub: rewrite-properties-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java),
+[GitHub: AddProperty.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/AddProperty.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
 

@@ -13,7 +13,7 @@ _Replace method invocations for feature key with value, and simplify constant if
 
 ## Recipe source
 
-[GitHub: rewrite-feature-flags-1.18.1.jar](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/RemoveBooleanFlag.java),
+[GitHub: RemoveBooleanFlag.java](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/RemoveBooleanFlag.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 

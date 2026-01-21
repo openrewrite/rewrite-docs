@@ -13,7 +13,7 @@ _Find direct and transitive npm dependencies matching a package name pattern. Re
 
 ## Recipe source
 
-[GitHub: rewrite-javascript-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-javascript/src/main/java/org/openrewrite/javascript/search/DependencyInsight.java),
+[GitHub: DependencyInsight.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-javascript/src/main/java/org/openrewrite/javascript/search/DependencyInsight.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

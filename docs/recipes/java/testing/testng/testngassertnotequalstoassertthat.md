@@ -13,7 +13,7 @@ _Convert TestNG-style `assertNotEquals()` to AssertJ's `assertThat().isNotEqualT
 
 ## Recipe source
 
-[GitHub: rewrite-testing-frameworks-3.26.0.jar](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/testng/TestNgAssertNotEqualsToAssertThat.java),
+[GitHub: TestNgAssertNotEqualsToAssertThat.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/testng/TestNgAssertNotEqualsToAssertThat.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 

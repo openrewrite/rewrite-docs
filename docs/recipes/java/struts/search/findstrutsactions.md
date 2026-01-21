@@ -13,7 +13,7 @@ _Find actions and their associated definitions._
 
 ## Recipe source
 
-[GitHub: rewrite-struts-0.23.5.jar](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsActions.java),
+[GitHub: FindStrutsActions.java](https://github.com/openrewrite/rewrite-struts/blob/main/src/main/java/org/openrewrite/java/struts/search/FindStrutsActions.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-struts/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-struts/)
 

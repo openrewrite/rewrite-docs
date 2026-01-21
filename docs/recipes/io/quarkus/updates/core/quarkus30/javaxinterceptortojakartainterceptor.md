@@ -13,7 +13,7 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxInterceptorToJakartaInterceptor),
+[GitHub: search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxInterceptorToJakartaInterceptor](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxInterceptorToJakartaInterceptor),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

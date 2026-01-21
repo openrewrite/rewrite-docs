@@ -13,7 +13,7 @@ _Refaster rules related to AssertJ assertions over `Map`s. [Source](https://erro
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

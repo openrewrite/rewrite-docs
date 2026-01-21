@@ -13,7 +13,7 @@ _Replaces field and static access of deprecated fields in `LoggingSystemProperti
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateLoggingSystemPropertyConstants.java),
+[GitHub: MigrateLoggingSystemPropertyConstants.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot2/MigrateLoggingSystemPropertyConstants.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

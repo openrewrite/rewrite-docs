@@ -13,7 +13,7 @@ _Migrates custom Log4j 2.x Appender components to `logback-classic`. This recipe
 
 ## Recipe source
 
-[GitHub: rewrite-logging-frameworks-3.22.0.jar](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jAppenderToLogback.java),
+[GitHub: Log4jAppenderToLogback.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jAppenderToLogback.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 

@@ -13,7 +13,7 @@ _Find XML tags by XPath expression._
 
 ## Recipe source
 
-[GitHub: rewrite-xml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/FindTags.java),
+[GitHub: FindTags.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/FindTags.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 

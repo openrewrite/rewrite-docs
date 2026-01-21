@@ -13,7 +13,7 @@ _Some JUnit 4 `@RunWith` annotations do not require replacement with an equivale
 
 ## Recipe source
 
-[GitHub: rewrite-testing-frameworks-3.26.0.jar](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveObsoleteRunners.java),
+[GitHub: RemoveObsoleteRunners.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/RemoveObsoleteRunners.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 

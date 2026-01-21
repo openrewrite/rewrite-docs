@@ -13,7 +13,7 @@ _Remove explicit dependencies that are already provided transitively by a specif
 
 ## Recipe source
 
-[GitHub: rewrite-java-dependencies-1.50.0.jar](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveRedundantDependencies.java),
+[GitHub: RemoveRedundantDependencies.java](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/RemoveRedundantDependencies.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 

@@ -13,7 +13,7 @@ _Backing field for a RoutedCommand should be static and readonly._
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/MakeFieldStaticReadonlyFixWPF0123.java),
+[GitHub: MakeFieldStaticReadonlyFixWPF0123.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/MakeFieldStaticReadonlyFixWPF0123.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

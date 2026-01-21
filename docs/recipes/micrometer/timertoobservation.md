@@ -13,7 +13,7 @@ _Convert Micrometer `Timer` to `Observations` to instrument once, and get multip
 
 ## Recipe source
 
-[GitHub: rewrite-micrometer-0.28.2.jar](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/TimerToObservation.java),
+[GitHub: TimerToObservation.java](https://github.com/openrewrite/rewrite-micrometer/blob/main/src/main/java/org/openrewrite/micrometer/TimerToObservation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micrometer/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micrometer/)
 

@@ -13,7 +13,7 @@ _Removes calls to `super(...)` or `super.someMethod(...)` if the class does not 
 
 ## Recipe source
 
-[GitHub: rewrite-dropwizard-0.8.5.jar](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/method/RemoveUnnecessarySuperCalls.java),
+[GitHub: RemoveUnnecessarySuperCalls.java](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/method/RemoveUnnecessarySuperCalls.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 

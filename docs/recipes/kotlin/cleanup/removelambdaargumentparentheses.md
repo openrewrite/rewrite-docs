@@ -13,7 +13,7 @@ _For example, convert `1.let({ it + 1 })` to `1.let { it + 1 }`._
 
 ## Recipe source
 
-[GitHub: rewrite-kotlin-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/RemoveLambdaArgumentParentheses.java),
+[GitHub: RemoveLambdaArgumentParentheses.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/RemoveLambdaArgumentParentheses.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
 

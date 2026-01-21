@@ -13,7 +13,7 @@ _By convention, identifier names do not contain the underscore (_) character. Th
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpIdentifiersShouldNotContainUnderscoresCA1707.java),
+[GitHub: CSharpIdentifiersShouldNotContainUnderscoresCA1707.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpIdentifiersShouldNotContainUnderscoresCA1707.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

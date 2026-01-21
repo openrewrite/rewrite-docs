@@ -13,7 +13,7 @@ _Change an attributes key on XML elements using an XPath expression._
 
 ## Recipe source
 
-[GitHub: rewrite-xml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttributeKey.java),
+[GitHub: ChangeTagAttributeKey.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/ChangeTagAttributeKey.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 

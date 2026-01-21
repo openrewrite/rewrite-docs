@@ -13,7 +13,7 @@ _Migrates custom Log4j 2.x Layout components to `logback-classic`. This recipe o
 
 ## Recipe source
 
-[GitHub: rewrite-logging-frameworks-3.22.0.jar](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jLayoutToLogback.java),
+[GitHub: Log4jLayoutToLogback.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/logback/Log4jLayoutToLogback.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 

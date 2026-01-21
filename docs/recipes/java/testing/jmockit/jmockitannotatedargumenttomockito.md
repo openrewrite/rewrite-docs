@@ -13,7 +13,7 @@ _Convert JMockit `@Mocked` and `@Injectable` annotated arguments into Mockito st
 
 ## Recipe source
 
-[GitHub: rewrite-testing-frameworks-3.26.0.jar](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/jmockit/JMockitAnnotatedArgumentToMockito.java),
+[GitHub: JMockitAnnotatedArgumentToMockito.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/jmockit/JMockitAnnotatedArgumentToMockito.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 

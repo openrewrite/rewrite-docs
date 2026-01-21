@@ -13,7 +13,7 @@ _Find YAML entries that match the specified [JsonPath](https://docs.openrewrite.
 
 ## Recipe source
 
-[GitHub: rewrite-yaml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/search/FindKey.java),
+[GitHub: FindKey.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/search/FindKey.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-yaml/)
 

@@ -13,7 +13,7 @@ _'ContainsKey' is usually O(1), while 'Keys.Contains' may be O(n) in some cases.
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferDictionaryContainsMethodsCA1841.java),
+[GitHub: CSharpPreferDictionaryContainsMethodsCA1841.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpPreferDictionaryContainsMethodsCA1841.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

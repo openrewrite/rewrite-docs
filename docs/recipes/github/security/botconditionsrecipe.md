@@ -13,7 +13,7 @@ _Find workflow conditions that check for bot actors in ways that can be spoofed.
 
 ## Recipe source
 
-[GitHub: rewrite-github-actions-3.18.0.jar](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/security/BotConditions.java),
+[GitHub: BotConditions.java](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/security/BotConditions.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 

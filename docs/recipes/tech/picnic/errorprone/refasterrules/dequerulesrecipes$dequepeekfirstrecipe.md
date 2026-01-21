@@ -13,7 +13,7 @@ _Prefer `Deque#peekFirst()` over less clear alternatives._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequePeekFirstRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequePeekFirstRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequePeekFirstRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

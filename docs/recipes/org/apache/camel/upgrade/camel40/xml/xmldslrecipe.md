@@ -13,7 +13,7 @@ _Apache Camel XML DSL migration from version 3.20 or higher to 4.0._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel40.xml.XmlDslRecipe),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel40.xml.XmlDslRecipe](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel40.xml.XmlDslRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

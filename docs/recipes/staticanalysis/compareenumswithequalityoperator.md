@@ -17,7 +17,7 @@ _Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/CompareEnumsWithEqualityOperator.java),
+[GitHub: CompareEnumsWithEqualityOperator.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/CompareEnumsWithEqualityOperator.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

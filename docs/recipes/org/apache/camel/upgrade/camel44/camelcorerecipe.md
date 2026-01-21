@@ -13,7 +13,7 @@ _Apache Camel Core migration from version 4.3 to 4.4._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel44.CamelCoreRecipe),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel44.CamelCoreRecipe](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel44.CamelCoreRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

@@ -13,7 +13,7 @@ _Change a value in a TOML table row when the identifying property matches the sp
 
 ## Recipe source
 
-[GitHub: rewrite-toml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/ChangeTableRowValue.java),
+[GitHub: ChangeTableRowValue.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-toml/src/main/java/org/openrewrite/toml/ChangeTableRowValue.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-toml/)
 

@@ -13,7 +13,7 @@ _Automatically internationalizes React applications by extracting hardcoded stri
 
 ## Recipe source
 
-[GitHub: rewrite-codemods-0.24.1.jar](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ReactI18Next.java),
+[GitHub: ReactI18Next.java](https://github.com/moderneinc/rewrite-codemods/blob/main/src/main/java/org/openrewrite/codemods/ReactI18Next.java),
 [Issue Tracker](https://github.com/moderneinc/rewrite-codemods/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-codemods/)
 

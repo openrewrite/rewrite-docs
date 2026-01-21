@@ -13,7 +13,7 @@ _The Tag Enum containing constants for tagging spans has been deprecated. Instea
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel41.TracingTag),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel41.TracingTag](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel41.TracingTag),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

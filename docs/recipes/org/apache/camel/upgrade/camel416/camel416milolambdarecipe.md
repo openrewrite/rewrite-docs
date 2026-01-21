@@ -13,7 +13,7 @@ _Milo: The monitored item data value listener API has changed._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel416.Camel416MiloLambdaRecipe),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel416.Camel416MiloLambdaRecipe](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel416.Camel416MiloLambdaRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

@@ -13,7 +13,7 @@ _Converts `@Api` to `@Tag` annotation and converts the directly mappable attribu
 
 ## Recipe source
 
-[GitHub: rewrite-openapi-0.29.0.jar](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiToTag.java),
+[GitHub: MigrateApiToTag.java](https://github.com/openrewrite/rewrite-openapi/blob/main/src/main/java/org/openrewrite/openapi/swagger/MigrateApiToTag.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-openapi/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-openapi/)
 

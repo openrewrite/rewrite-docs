@@ -13,7 +13,7 @@ _Replace calls to `Objects.isNull(..)` and `Objects.nonNull(..)` with a simple n
 
 ## Recipe source
 
-[GitHub: rewrite-java-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveObjectsIsNull.java),
+[GitHub: RemoveObjectsIsNull.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveObjectsIsNull.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 

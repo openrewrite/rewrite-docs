@@ -13,7 +13,7 @@ _This recipe substitutes Faces Managed Beans, which were deprecated in JavaServe
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.FacesManagedBeansRemoved3),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.jakarta.FacesManagedBeansRemoved3](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.FacesManagedBeansRemoved3),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

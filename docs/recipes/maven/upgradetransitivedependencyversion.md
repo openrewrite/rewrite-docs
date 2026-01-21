@@ -13,7 +13,7 @@ _Upgrades the version of a transitive dependency in a Maven pom file. Leaves dir
 
 ## Recipe source
 
-[GitHub: rewrite-maven-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeTransitiveDependencyVersion.java),
+[GitHub: UpgradeTransitiveDependencyVersion.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpgradeTransitiveDependencyVersion.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

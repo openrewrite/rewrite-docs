@@ -13,7 +13,7 @@ _In Apache Http Client 5.x migration, the shortened form of the `write(byte[])` 
 
 ## Recipe source
 
-[GitHub: rewrite-apache-2.21.0.jar](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/OutputBufferWriteAddOffsetAndLengthArguments.java),
+[GitHub: OutputBufferWriteAddOffsetAndLengthArguments.java](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/OutputBufferWriteAddOffsetAndLengthArguments.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 

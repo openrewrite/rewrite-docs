@@ -13,7 +13,7 @@ _Convert old-style octal escape sequences (e.g., `\0`, `\123`) to modern hex esc
 
 ## Recipe source
 
-[GitHub: org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences),
+[GitHub: rewrite+org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

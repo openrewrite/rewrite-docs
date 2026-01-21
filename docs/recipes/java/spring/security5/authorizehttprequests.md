@@ -13,7 +13,7 @@ _Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 w
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security5/AuthorizeHttpRequests.java),
+[GitHub: AuthorizeHttpRequests.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/security5/AuthorizeHttpRequests.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

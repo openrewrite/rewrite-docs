@@ -13,7 +13,7 @@ _Ensures that classes extending Recipe are declared as public for proper visibil
 
 ## Recipe source
 
-[GitHub: rewrite-rewrite-0.19.0.jar](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/RecipeClassesShouldBePublic.java),
+[GitHub: RecipeClassesShouldBePublic.java](https://github.com/openrewrite/rewrite-rewrite/blob/main/src/main/java/org/openrewrite/java/recipes/RecipeClassesShouldBePublic.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-rewrite/)
 

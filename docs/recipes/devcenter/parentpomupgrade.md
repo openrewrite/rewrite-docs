@@ -13,7 +13,7 @@ _Determine the current state of a repository relative to a desired parent POM up
 
 ## Recipe source
 
-[GitHub: rewrite-devcenter-1.15.0.jar](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/ParentPomUpgrade.java),
+[GitHub: ParentPomUpgrade.java](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/ParentPomUpgrade.java),
 [Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 

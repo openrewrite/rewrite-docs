@@ -13,7 +13,7 @@ _`HttpResponse::getStatusLine()` was deprecated in 4.x, so we replace it for `ne
 
 ## Recipe source
 
-[GitHub: rewrite-apache-2.21.0.jar](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/NewStatusLine.java),
+[GitHub: NewStatusLine.java](https://github.com/openrewrite/rewrite-apache/blob/main/src/main/java/org/openrewrite/apache/httpclient5/NewStatusLine.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-apache/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-apache/)
 

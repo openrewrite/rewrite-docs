@@ -20,7 +20,7 @@ _Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

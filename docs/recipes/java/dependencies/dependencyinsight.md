@@ -13,7 +13,7 @@ _Finds dependencies, including transitive dependencies, in both Gradle and Maven
 
 ## Recipe source
 
-[GitHub: rewrite-java-dependencies-1.50.0.jar](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java),
+[GitHub: DependencyInsight.java](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/DependencyInsight.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 

@@ -13,7 +13,7 @@ _Prefer the `!=` operator (with `null` as the second operand) over `Objects#nonN
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

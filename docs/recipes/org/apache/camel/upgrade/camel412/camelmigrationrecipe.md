@@ -13,7 +13,7 @@ _Migrates `camel 4.11` application to `camel 4.12`._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel412.CamelMigrationRecipe),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel412.CamelMigrationRecipe](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel412.CamelMigrationRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

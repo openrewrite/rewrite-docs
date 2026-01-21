@@ -19,7 +19,7 @@ _Change cacheManager to use the SimpleCacheManager._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

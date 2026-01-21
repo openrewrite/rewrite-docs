@@ -13,7 +13,7 @@ _Simplifies object properties where the property name and value/variable name ar
 
 ## Recipe source
 
-[GitHub: org.openrewrite.javascript.cleanup.use-object-property-shorthand](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.use-object-property-shorthand),
+[GitHub: rewrite+org.openrewrite.javascript.cleanup.use-object-property-shorthand](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.cleanup.use-object-property-shorthand),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
 

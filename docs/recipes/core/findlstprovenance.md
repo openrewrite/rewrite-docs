@@ -13,7 +13,7 @@ _Produces a data table showing what versions of OpenRewrite/Moderne tooling was 
 
 ## Recipe source
 
-[GitHub: rewrite-core-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindLstProvenance.java),
+[GitHub: FindLstProvenance.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindLstProvenance.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
 

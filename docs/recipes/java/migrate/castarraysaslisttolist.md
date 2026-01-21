@@ -13,7 +13,7 @@ _Convert code like `(Integer[]) Arrays.asList(1, 2, 3).toArray()` to `Arrays.asL
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/CastArraysAsListToList.java),
+[GitHub: CastArraysAsListToList.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/CastArraysAsListToList.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

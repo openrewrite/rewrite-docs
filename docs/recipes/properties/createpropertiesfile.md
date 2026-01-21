@@ -13,7 +13,7 @@ _Create a new Properties file._
 
 ## Recipe source
 
-[GitHub: rewrite-properties-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/CreatePropertiesFile.java),
+[GitHub: CreatePropertiesFile.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/CreatePropertiesFile.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
 

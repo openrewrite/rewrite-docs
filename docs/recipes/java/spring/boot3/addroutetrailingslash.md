@@ -13,7 +13,7 @@ _This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Frame
 
 ## Recipe source
 
-[GitHub: rewrite-spring-6.23.0.jar](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/AddRouteTrailingSlash.java),
+[GitHub: AddRouteTrailingSlash.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/AddRouteTrailingSlash.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 

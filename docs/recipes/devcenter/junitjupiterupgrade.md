@@ -13,7 +13,7 @@ _Move to JUnit Jupiter._
 
 ## Recipe source
 
-[GitHub: rewrite-devcenter-1.15.0.jar](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/JUnitJupiterUpgrade.java),
+[GitHub: JUnitJupiterUpgrade.java](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/JUnitJupiterUpgrade.java),
 [Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 

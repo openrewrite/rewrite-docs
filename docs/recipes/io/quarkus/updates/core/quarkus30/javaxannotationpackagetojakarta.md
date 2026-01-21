@@ -19,7 +19,7 @@ _Change type of classes in the `javax.annotation` package to jakarta._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta),
+[GitHub: search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta](https://github.com/search?type=code&q=io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

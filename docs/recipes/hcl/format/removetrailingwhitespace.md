@@ -13,7 +13,7 @@ _Remove any extra trailing whitespace from the end of each line._
 
 ## Recipe source
 
-[GitHub: rewrite-hcl-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/RemoveTrailingWhitespace.java),
+[GitHub: RemoveTrailingWhitespace.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/format/RemoveTrailingWhitespace.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-hcl/)
 

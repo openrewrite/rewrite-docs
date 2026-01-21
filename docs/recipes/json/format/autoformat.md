@@ -13,7 +13,7 @@ _Format JSON code using a standard comprehensive set of JSON formatting recipes.
 
 ## Recipe source
 
-[GitHub: rewrite-json-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/format/AutoFormat.java),
+[GitHub: AutoFormat.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-json/src/main/java/org/openrewrite/json/format/AutoFormat.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-json/)
 

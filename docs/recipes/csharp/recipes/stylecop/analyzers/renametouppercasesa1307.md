@@ -13,7 +13,7 @@ _The name of a public or internal field in C# does not begin with an upper-case 
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/RenameToUpperCaseSA1307.java),
+[GitHub: RenameToUpperCaseSA1307.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/stylecop/analyzers/RenameToUpperCaseSA1307.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

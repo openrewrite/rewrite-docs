@@ -13,7 +13,7 @@ _Update the Slack GitHub Action to use version 2.0._
 
 ## Recipe source
 
-[GitHub: rewrite-github-actions-3.18.0.jar](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/UpgradeSlackNotificationVersion2.java),
+[GitHub: UpgradeSlackNotificationVersion2.java](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/UpgradeSlackNotificationVersion2.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 

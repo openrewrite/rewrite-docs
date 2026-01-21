@@ -13,7 +13,7 @@ _Change SDK Exception types from v1 to v2._
 
 ## Recipe source
 
-[GitHub: change-exception-types.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeExceptionTypes),
+[GitHub: search?type=code&q=software.amazon.awssdk.v2migration.ChangeExceptionTypes](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeExceptionTypes),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

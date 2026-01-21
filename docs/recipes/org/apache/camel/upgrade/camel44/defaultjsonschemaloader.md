@@ -13,7 +13,7 @@ _Replaces deprecated class with its successor._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel44.DefaultJsonSchemaLoader),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel44.DefaultJsonSchemaLoader](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel44.DefaultJsonSchemaLoader),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

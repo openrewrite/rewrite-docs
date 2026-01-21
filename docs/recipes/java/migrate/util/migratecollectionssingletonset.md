@@ -13,7 +13,7 @@ _Prefer `Set.Of(..)` instead of using `Collections.singleton()` in Java 9 or hig
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java),
+[GitHub: MigrateCollectionsSingletonSet.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

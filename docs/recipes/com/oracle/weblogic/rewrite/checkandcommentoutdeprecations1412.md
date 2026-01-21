@@ -13,7 +13,7 @@ _This recipe will check and comment out deprecations on WebLogic version 14.1.2.
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1412),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1412](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1412),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

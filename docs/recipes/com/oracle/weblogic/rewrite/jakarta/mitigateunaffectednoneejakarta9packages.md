@@ -19,7 +19,7 @@ _Mitigate Unaffected Non-EE Jakarta 9 Packages. Reference: [https://github.com/j
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

@@ -13,7 +13,7 @@ _Find XML namespace URIs, optionally restricting the search by a XPath expressio
 
 ## Recipe source
 
-[GitHub: rewrite-xml-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/HasNamespaceUri.java),
+[GitHub: HasNamespaceUri.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/search/HasNamespaceUri.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
 

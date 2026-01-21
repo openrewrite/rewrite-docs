@@ -13,7 +13,7 @@ _Replace calls to `java.util.logging.Logger.log(Level.FINE, String)` with `Logge
 
 ## Recipe source
 
-[GitHub: rewrite-logging-frameworks-3.22.0.jar](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/jul/LoggerLevelArgumentToMethod.java),
+[GitHub: LoggerLevelArgumentToMethod.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/jul/LoggerLevelArgumentToMethod.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 

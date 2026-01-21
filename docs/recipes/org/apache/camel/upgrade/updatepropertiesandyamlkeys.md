@@ -13,7 +13,7 @@ _Update properties and yaml configurations file._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.UpdatePropertiesAndYamlKeys),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.UpdatePropertiesAndYamlKeys](https://github.com/search?type=code&q=org.apache.camel.upgrade.UpdatePropertiesAndYamlKeys),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

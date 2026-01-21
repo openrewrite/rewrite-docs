@@ -13,7 +13,7 @@ _Consistently use either Windows style (CRLF) or Linux style (LF) line breaks. I
 
 ## Recipe source
 
-[GitHub: rewrite-java-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/NormalizeLineBreaks.java),
+[GitHub: NormalizeLineBreaks.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/format/NormalizeLineBreaks.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 

@@ -13,7 +13,7 @@ _Removes class-level variables from classes in the specified package._
 
 ## Recipe source
 
-[GitHub: rewrite-dropwizard-0.8.5.jar](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/general/RemoveVariablesByPackage.java),
+[GitHub: RemoveVariablesByPackage.java](https://github.com/openrewrite/rewrite-dropwizard/blob/main/src/main/java/org/openrewrite/java/dropwizard/general/RemoveVariablesByPackage.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-dropwizard/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-dropwizard/)
 

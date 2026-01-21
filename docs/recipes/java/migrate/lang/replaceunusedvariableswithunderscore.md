@@ -13,7 +13,7 @@ _Replace unused variable declarations with underscore (_) for Java 22+. This inc
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/ReplaceUnusedVariablesWithUnderscore.java),
+[GitHub: ReplaceUnusedVariablesWithUnderscore.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/lang/ReplaceUnusedVariablesWithUnderscore.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

@@ -13,7 +13,7 @@ _Replace `System.out.print()`, `System.out.println()` with `IO.print()` and `IO.
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/io/ReplaceSystemOutWithIOPrint.java),
+[GitHub: ReplaceSystemOutWithIOPrint.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/io/ReplaceSystemOutWithIOPrint.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

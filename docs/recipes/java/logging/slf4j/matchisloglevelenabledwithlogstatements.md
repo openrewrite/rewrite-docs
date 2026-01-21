@@ -13,7 +13,7 @@ _Change any `if (is*Enabled())` statements that do not match the maximum log lev
 
 ## Recipe source
 
-[GitHub: rewrite-logging-frameworks-3.22.0.jar](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/MatchIsLogLevelEnabledWithLogStatements.java),
+[GitHub: MatchIsLogLevelEnabledWithLogStatements.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/MatchIsLogLevelEnabledWithLogStatements.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
 

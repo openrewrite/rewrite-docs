@@ -13,7 +13,7 @@ _Don't use the ternary operator to create an optionally-absent string._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

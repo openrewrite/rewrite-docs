@@ -13,7 +13,7 @@ _Change the version of a GitHub Action in any workflow._
 
 ## Recipe source
 
-[GitHub: rewrite-github-actions-3.18.0.jar](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java),
+[GitHub: ChangeActionVersion.java](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/ChangeActionVersion.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
 

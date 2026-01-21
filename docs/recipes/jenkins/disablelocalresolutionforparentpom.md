@@ -13,7 +13,7 @@ _Explicitly sets `<relativePath/>` to disable file resolution, as recommended in
 
 ## Recipe source
 
-[GitHub: rewrite-jenkins-0.34.0.jar](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/DisableLocalResolutionForParentPom.java),
+[GitHub: DisableLocalResolutionForParentPom.java](https://github.com/openrewrite/rewrite-jenkins/blob/main/src/main/java/org/openrewrite/jenkins/DisableLocalResolutionForParentPom.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jenkins/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jenkins/)
 

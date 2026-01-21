@@ -24,7 +24,7 @@ If none of these properties are in use and the maven compiler plugin is not othe
 
 ## Recipe source
 
-[GitHub: rewrite-maven-8.72.1.jar](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenProjectPropertyJavaVersion.java),
+[GitHub: UpdateMavenProjectPropertyJavaVersion.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/UpdateMavenProjectPropertyJavaVersion.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 

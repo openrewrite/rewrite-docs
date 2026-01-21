@@ -13,7 +13,7 @@ _Counts the number of lines of the various kinds of source code and data formats
 
 ## Recipe source
 
-[GitHub: rewrite-all-1.23.5.jar](https://github.com/openrewrite/rewrite-all/blob/main/src/main/java/org/openrewrite/LanguageComposition.java),
+[GitHub: LanguageComposition.java](https://github.com/openrewrite/rewrite-all/blob/main/src/main/java/org/openrewrite/LanguageComposition.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-all/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-all/)
 

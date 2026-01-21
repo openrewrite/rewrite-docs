@@ -13,7 +13,7 @@ _Removal of maven dependencies for extension, which are no longer part of Camel 
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.openrewrite.java.camel.migrate.removedExtensions),
+[GitHub: search?type=code&q=org.openrewrite.java.camel.migrate.removedExtensions](https://github.com/search?type=code&q=org.openrewrite.java.camel.migrate.removedExtensions),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

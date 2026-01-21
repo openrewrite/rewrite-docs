@@ -13,7 +13,7 @@ _Strip regex prefix and suffix from step annotation expressions arguments where 
 
 ## Recipe source
 
-[GitHub: rewrite-cucumber-jvm-2.11.5.jar](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/RegexToCucumberExpression.java),
+[GitHub: RegexToCucumberExpression.java](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/RegexToCucumberExpression.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/)
 

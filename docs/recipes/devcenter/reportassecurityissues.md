@@ -13,7 +13,7 @@ _Look for results produced by recipes in the same recipe list that this recipe i
 
 ## Recipe source
 
-[GitHub: rewrite-devcenter-1.15.0.jar](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/ReportAsSecurityIssues.java),
+[GitHub: ReportAsSecurityIssues.java](https://github.com/moderneinc/rewrite-devcenter/blob/main/src/main/java/io/moderne/devcenter/ReportAsSecurityIssues.java),
 [Issue Tracker](https://github.com/moderneinc/rewrite-devcenter/issues),
 [Maven Central](https://central.sonatype.com/artifact/io.moderne.recipe/rewrite-devcenter/)
 

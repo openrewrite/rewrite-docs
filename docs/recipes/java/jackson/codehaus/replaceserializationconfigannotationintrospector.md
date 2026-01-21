@@ -13,7 +13,7 @@ _Migrate serialization annotation processor to use the codehaus config method._
 
 ## Recipe source
 
-[GitHub: rewrite-jackson-1.15.0.jar](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/ReplaceSerializationConfigAnnotationIntrospector.java),
+[GitHub: ReplaceSerializationConfigAnnotationIntrospector.java](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/ReplaceSerializationConfigAnnotationIntrospector.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 

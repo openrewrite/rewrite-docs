@@ -13,7 +13,7 @@ _Backing member for a RoutedEvent should be static and readonly._
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/MakeFieldStaticReadonlyFixWPF0107.java),
+[GitHub: MakeFieldStaticReadonlyFixWPF0107.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/wpfanalyzers/MakeFieldStaticReadonlyFixWPF0107.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

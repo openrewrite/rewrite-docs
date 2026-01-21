@@ -13,7 +13,7 @@ _Prefer `Instant#EPOCH` over alternative representations._
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.TimeRulesRecipes$EpochInstantRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.TimeRulesRecipes$EpochInstantRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.TimeRulesRecipes$EpochInstantRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

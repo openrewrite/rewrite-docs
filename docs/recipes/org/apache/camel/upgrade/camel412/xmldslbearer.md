@@ -13,7 +13,7 @@ _Rest definition in XML DSL with security constraints, then bearer in YAML and X
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel412.xmlDslBearer),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel412.xmlDslBearer](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel412.xmlDslBearer),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

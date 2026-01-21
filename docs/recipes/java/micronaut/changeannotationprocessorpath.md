@@ -13,7 +13,7 @@ _Change the groupId, artifactId, and version of a Maven annotation processor pat
 
 ## Recipe source
 
-[GitHub: rewrite-micronaut-2.31.1.jar](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java),
+[GitHub: ChangeAnnotationProcessorPath.java](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/ChangeAnnotationProcessorPath.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 

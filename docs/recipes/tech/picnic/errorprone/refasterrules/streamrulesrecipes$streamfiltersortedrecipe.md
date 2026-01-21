@@ -13,7 +13,7 @@ _Apply `Stream#filter(Predicate)` before `Stream#sorted()` to reduce the number 
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

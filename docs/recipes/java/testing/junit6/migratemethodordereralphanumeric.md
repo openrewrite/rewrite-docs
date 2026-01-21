@@ -13,7 +13,7 @@ _JUnit 6 removed the `MethodOrderer.Alphanumeric` class. This recipe migrates us
 
 ## Recipe source
 
-[GitHub: rewrite-testing-frameworks-3.26.0.jar](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit6/MigrateMethodOrdererAlphanumeric.java),
+[GitHub: MigrateMethodOrdererAlphanumeric.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit6/MigrateMethodOrdererAlphanumeric.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 

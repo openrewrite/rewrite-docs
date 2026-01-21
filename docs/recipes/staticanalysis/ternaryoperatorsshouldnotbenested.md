@@ -17,7 +17,7 @@ _Nested ternary operators can be hard to read quickly. Prefer simpler constructs
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/TernaryOperatorsShouldNotBeNested.java),
+[GitHub: TernaryOperatorsShouldNotBeNested.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/TernaryOperatorsShouldNotBeNested.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

@@ -13,7 +13,7 @@ _Move Codehaus' `@JsonSerialize.include` argument to FasterXMLs `@JsonInclude` a
 
 ## Recipe source
 
-[GitHub: rewrite-jackson-1.15.0.jar](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/JsonIncludeAnnotation.java),
+[GitHub: JsonIncludeAnnotation.java](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/codehaus/JsonIncludeAnnotation.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 

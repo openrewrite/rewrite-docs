@@ -13,7 +13,7 @@ _For a Gradle project, add a gradle dependency to a `build.gradle` file in the c
 
 ## Recipe source
 
-[GitHub: rewrite-java-dependencies-1.50.0.jar](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java),
+[GitHub: AddDependency.java](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/AddDependency.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
 

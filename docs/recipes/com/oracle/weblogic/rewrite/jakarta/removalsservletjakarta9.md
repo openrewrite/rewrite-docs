@@ -13,7 +13,7 @@ _This recipe replaces the classes and methods deprecated in Jakarta Servlet 5.0_
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.RemovalsServletJakarta9),
+[GitHub: search?type=code&q=com.oracle.weblogic.rewrite.jakarta.RemovalsServletJakarta9](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.jakarta.RemovalsServletJakarta9),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

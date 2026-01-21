@@ -13,7 +13,7 @@ _Change SDK TransferManager types from v1 to v2._
 
 ## Recipe source
 
-[GitHub: change-transfer-manager-types.yml](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeTransferManagerTypes),
+[GitHub: search?type=code&q=software.amazon.awssdk.v2migration.ChangeTransferManagerTypes](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeTransferManagerTypes),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 

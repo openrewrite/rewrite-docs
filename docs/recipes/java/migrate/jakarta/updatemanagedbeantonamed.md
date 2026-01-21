@@ -19,7 +19,7 @@ _Faces ManagedBean was deprecated in JSF 2.3 (EE8) and removed in Jakarta Faces 
 
 ## Recipe source
 
-[GitHub: rewrite-migrate-java-3.26.0.jar](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/jakarta/UpdateManagedBeanToNamed.java),
+[GitHub: UpdateManagedBeanToNamed.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/jakarta/UpdateManagedBeanToNamed.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 

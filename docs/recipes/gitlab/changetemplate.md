@@ -13,7 +13,7 @@ _Change a GitLab template in use._
 
 ## Recipe source
 
-[GitHub: rewrite-gitlab-0.17.5.jar](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/ChangeTemplate.java),
+[GitHub: ChangeTemplate.java](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/java/org/openrewrite/gitlab/ChangeTemplate.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 

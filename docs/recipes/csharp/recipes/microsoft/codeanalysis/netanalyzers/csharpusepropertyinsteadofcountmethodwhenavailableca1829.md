@@ -13,7 +13,7 @@ _Enumerable.Count() potentially enumerates the sequence while a Length/Count pro
 
 ## Recipe source
 
-[GitHub: rewrite-csharp-0.27.27.jar](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpUsePropertyInsteadOfCountMethodWhenAvailableCA1829.java),
+[GitHub: CSharpUsePropertyInsteadOfCountMethodWhenAvailableCA1829.java](https://github.com/openrewrite/rewrite-csharp/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/recipes/microsoft/codeanalysis/netanalyzers/CSharpUsePropertyInsteadOfCountMethodWhenAvailableCA1829.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-csharp/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 

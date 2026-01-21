@@ -13,7 +13,7 @@ _Replace `LambdaGlue` hook definitions with new annotated methods with the same 
 
 ## Recipe source
 
-[GitHub: rewrite-cucumber-jvm-2.11.5.jar](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/CucumberJava8HookDefinitionToCucumberJava.java),
+[GitHub: CucumberJava8HookDefinitionToCucumberJava.java](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/java/org/openrewrite/cucumber/jvm/CucumberJava8HookDefinitionToCucumberJava.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/)
 

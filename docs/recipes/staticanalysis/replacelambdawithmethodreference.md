@@ -17,7 +17,7 @@ _Replaces the single statement lambdas `o -> o instanceOf X`, `o -> (A) o`, `o -
 
 ## Recipe source
 
-[GitHub: rewrite-static-analysis-2.26.0.jar](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceLambdaWithMethodReference.java),
+[GitHub: ReplaceLambdaWithMethodReference.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceLambdaWithMethodReference.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 

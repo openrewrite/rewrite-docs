@@ -13,7 +13,7 @@ _BasicAuthenticationHttpClientConfigurer is renamed to DefaultAuthenticationHttp
 
 ## Recipe source
 
-[GitHub: rewrite-third-party-0.34.0.jar](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer),
+[GitHub: search?type=code&q=org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel413.authenticationHttpClientConfigurer),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
