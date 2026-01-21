@@ -104,24 +104,17 @@ Navigate to the right example based on your needs:
 ### 1. Set Up Recipe Class
 
 ```java
-@Value
 @EqualsAndHashCode(callSuper = false)
+@Value
 public class YourRecipe extends Recipe {
+
+    String displayName = "Your recipe name";
+    String description = "What this recipe does.";
 
     @Option(displayName = "Display Name",
             description = "Clear description.",
             example = "com.example.Type")
     String parameterName;
-
-    @Override
-    public String getDisplayName() {
-        return "Your recipe name";
-    }
-
-    @Override
-    public String getDescription() {
-        return "What this recipe does.";
-    }
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
@@ -132,8 +125,8 @@ public class YourRecipe extends Recipe {
 
 **Key Points:**
 
-- Use `@Value` and `@EqualsAndHashCode(callSuper = false)` for immutability
-- Ensure all recipes are serializable
+- Use `@EqualsAndHashCode(callSuper = false)` followed by `@Value` (in that order) for immutability
+- Declare `displayName` and `description` as properties (not override methods)
 - Define configurable parameters using `@Option` fields
 - Return a NEW instance from `getVisitor()` each time (no caching)
 
@@ -186,13 +179,44 @@ classDecl = template.apply(
 **Template Tips:**
 
 - Use `#{}` for string parameters
-- Use `#{any(Type)}` for typed LST elements
+- Use `#{any()}` for typed LST elements provided by a non-null parameter
+- Use `#{any(Type)}` for typed LST elements when the type can be null
 - Declare imports: `.imports("java.util.List")`
 - Add classpath: `.javaParser(JavaParser.fromJavaVersion().classpath("library-name"))`
 - Prefer context-free templates (default) as they are faster
 - Use `.contextSensitive()` only when referencing local scope
 
-### 4. Add Preconditions (Performance)
+### 4. JavaParser Classpath Configuration
+
+When JavaTemplates reference types that aren't in the core Java library, you need to configure the classpath:
+
+**Two approaches:**
+
+1. **`classpathFromResources(ctx, "lib-version")`** - Loads from .tsv.gz type tables
+   - Use when your recipe needs to support multiple versions of a library
+   - Type tables are configured in build.gradle.kts and generated with `./gradlew :createTypeTable`
+   - Example: `JavaParser.fromJavaVersion().classpathFromResources(ctx, "spring-web-6")`
+
+2. **`classpath("lib-name")`** - Loads from runtime classpath
+   - Use when only one version is needed
+   - Simpler setup but less flexible for multi-version support
+   - Example: `JavaParser.fromJavaVersion().classpath("spring-web")`
+
+**Recipe vs Test distinction:**
+- Recipe JavaTemplates reference types being migrated **TO** (target version)
+- Tests need type attribution for types being migrated **FROM** (source version)
+- Tests typically configure parser classpath in `defaults(RecipeSpec spec)` method
+
+**build.gradle.kts configuration:**
+```kotlin
+recipeDependencies {
+    parserClasspath("org.springframework:spring-web:6.1.+")
+}
+```
+
+Then run `./gradlew :createTypeTable` to generate the `.tsv.gz` type table files used by `classpathFromResources()`.
+
+### 5. Add Preconditions (Performance)
 
 ```java
 @Override
@@ -274,9 +298,12 @@ Use when you need to:
 - Share data across multiple files
 
 ```java
-@Value
 @EqualsAndHashCode(callSuper = false)
+@Value
 public class YourScanningRecipe extends ScanningRecipe<YourAccumulator> {
+
+    String displayName = "Your scanning recipe name";
+    String description = "What this recipe does.";
 
     public static class YourAccumulator {
         Map<JavaProject, Boolean> projectData = new HashMap<>();

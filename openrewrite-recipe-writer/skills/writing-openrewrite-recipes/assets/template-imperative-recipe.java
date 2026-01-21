@@ -1,7 +1,5 @@
 package com.yourorg;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 import org.jspecify.annotations.NonNull;
@@ -22,9 +20,12 @@ import org.openrewrite.java.tree.J;
  *       parameterName: value
  * ```
  */
-@Value
 @EqualsAndHashCode(callSuper = false)
+@Value
 public class YourRecipeName extends Recipe {
+
+    String displayName = "Your recipe display name";
+    String description = "A clear description of what this recipe does. Use sentence case and end with a period.";
 
     /**
      * TODO: Add options for recipe configuration
@@ -41,27 +42,6 @@ public class YourRecipeName extends Recipe {
     // Add more @Option fields as needed
     // @Option(displayName = "Another Parameter", ...)
     // String anotherParameter;
-
-    /**
-     * All recipes must be serializable via Jackson.
-     * Use @JsonCreator and @JsonProperty annotations.
-     */
-    @JsonCreator
-    public YourRecipeName(
-        @NonNull @JsonProperty("parameterName") String parameterName
-    ) {
-        this.parameterName = parameterName;
-    }
-
-    @Override
-    public String getDisplayName() {
-        return "Your recipe display name";
-    }
-
-    @Override
-    public String getDescription() {
-        return "A clear description of what this recipe does. Use sentence case and end with a period.";
-    }
 
     /**
      * Optional: Add preconditions to improve performance
@@ -90,10 +70,15 @@ public class YourRecipeName extends Recipe {
         /**
          * Optional: Create JavaTemplates for complex code generation
          * Templates are parsed once and can be reused
+         *
+         * For types not in core Java, configure classpath:
+         * - classpathFromResources(ctx, "lib-version") for multi-version support
+         * - classpath("lib-name") for single version
          */
         // private final JavaTemplate template = JavaTemplate
         //     .builder("your.code.template(#{any(String)})")
         //     .imports("your.imports.Here")
+        //     .javaParser(JavaParser.fromJavaVersion().classpathFromResources(ctx, "library-name"))
         //     .build();
 
         /**

@@ -15,6 +15,7 @@ import java.util.Map;
  *
  * This example demonstrates:
  * - ScanningRecipe with accumulator pattern
+ * - Using properties for displayName and description (not override methods)
  * - Three-phase execution: scan, generate (optional), edit
  * - Tracking per-project information with Map<JavaProject, T>
  * - Using accumulator data to inform editing decisions
@@ -26,9 +27,12 @@ import java.util.Map;
  * - Share data across multiple files
  * - Make decisions based on project-wide information
  */
-@Value
 @EqualsAndHashCode(callSuper = false)
+@Value
 public class ScanningRecipeExample extends ScanningRecipe<ScanningRecipeExample.Accumulator> {
+
+    String displayName = "Mark classes in projects using target type";
+    String description = "Marks classes with SearchResult only if the project uses a specific type.";
 
     /**
      * The accumulator stores data collected during the scanning phase.
@@ -43,16 +47,6 @@ public class ScanningRecipeExample extends ScanningRecipe<ScanningRecipeExample.
         // You can store any data structure you need
         // Map<JavaProject, Set<String>> projectClasses = new HashMap<>();
         // Map<JavaProject, List<MethodInfo>> projectMethods = new HashMap<>();
-    }
-
-    @Override
-    public String getDisplayName() {
-        return "Mark classes in projects using target type";
-    }
-
-    @Override
-    public String getDescription() {
-        return "Marks classes with SearchResult only if the project uses a specific type.";
     }
 
     /**
@@ -194,22 +188,15 @@ public class ScanningRecipeExample extends ScanningRecipe<ScanningRecipeExample.
 /*
 Here's a simpler ScanningRecipe that counts classes per project:
 
-@Value
 @EqualsAndHashCode(callSuper = false)
+@Value
 public class CountClasses extends ScanningRecipe<CountClasses.Accumulator> {
+
+    String displayName = "Count classes per project";
+    String description = "Counts the number of classes in each project.";
 
     public static class Accumulator {
         Map<JavaProject, Integer> classCounts = new HashMap<>();
-    }
-
-    @Override
-    public String getDisplayName() {
-        return "Count classes per project";
-    }
-
-    @Override
-    public String getDescription() {
-        return "Counts the number of classes in each project.";
     }
 
     @Override
