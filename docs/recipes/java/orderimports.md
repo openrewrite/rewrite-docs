@@ -24,6 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `Boolean` | removeUnused | *Optional*. Remove unnecessary imports. |  |
+| `String` | style | *Optional*. An OpenRewrite [style](https://docs.openrewrite.org/concepts-and-explanations/styles) formatted in YAML. | <pre>type: specs.openrewrite.org/v1beta/style<br />name: com.yourorg.CustomImportLayout<br />styleConfigs:<br />  - org.openrewrite.java.style.ImportLayoutStyle:<br />      classCountToUseStarImport: 999<br />      nameCountToUseStarImport: 999<br />      layout:<br />        - 'import java.*'<br />        - 'import javax.*'<br />        - '\<blank line>'<br />        - 'import all other imports'<br />        - '\<blank line>'<br />        - 'import static all other imports'<br />      packagesToFold:<br />        - 'import java.awt.*'<br />        - 'import static org.junit.jupiter.api.Assertions.*</pre> |
 
 
 ## Used by

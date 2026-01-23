@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.yaml.CopyValue**
 
-_Copies a YAML value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to merge the copied value into the new key if it already exists. Attempts to create the new key if it does not exist._
+_Copies a YAML value from one key to another. The existing key/value pair remains unaffected by this change. Attempts to merge the copied value into the new key if it already exists. By default, attempts to create the new key if it does not exist._
 
 ## Recipe source
 
@@ -27,6 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldFilePath | *Optional*. The file path to the YAML file to copy the value from. If `null` then the value will be copied from any yaml file it appears within. | `src/main/resources/application.yaml` |
 | `String` | newKey | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression defining where the value should be written. | `$.dest.kind` |
 | `String` | newFilePath | *Optional*. The file path to the YAML file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.yaml` |
+| `Boolean` | createNewKeys | *Optional*. When the key path does _not_ match any keys, create new keys on the spot. Default is `true`. |  |
 
 
 ## Used by
@@ -44,6 +45,7 @@ This recipe is used as part of the following composite recipes:
 |oldFilePath|`null`|
 |newKey|`$.destination`|
 |newFilePath|`null`|
+|createNewKeys||
 
 
 <Tabs groupId="beforeAfter">

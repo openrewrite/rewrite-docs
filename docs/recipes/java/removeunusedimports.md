@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.RemoveUnusedImports**
 
-_Remove imports for types that are not referenced. As a precaution against incorrect changes no imports will be removed from any source where unknown types are referenced. The most common cause of unknown types is the use of annotation processors not supported by OpenRewrite, such as lombok._
+_Remove imports for types that are not referenced. As a precaution against incorrect changes no imports will be removed from any source where unknown types are referenced._
 
 ### Tags
 

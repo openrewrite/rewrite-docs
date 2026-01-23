@@ -15,5 +15,6 @@ description: Javascript OpenRewrite recipes.
 ## Recipes
 
 * [Change import](./change-import.md)
+* [Change import](./change-import.md)
 
 
