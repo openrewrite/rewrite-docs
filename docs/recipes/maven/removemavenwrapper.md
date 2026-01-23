@@ -1,74 +1,69 @@
 ---
-sidebar_label: "Delete files"
+sidebar_label: "Remove Maven wrapper"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Delete files
+# Remove Maven wrapper
 
-**org.openrewrite.DeleteSourceFiles**
+**org.openrewrite.maven.RemoveMavenWrapper**
 
-_Delete files by source path._
+_Remove Maven wrapper files from a project. This includes the `mvnw` and `mvnw.cmd` scripts, and the `.mvn/wrapper` directory._
 
 ## Recipe source
 
-[GitHub: DeleteSourceFiles.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/DeleteSourceFiles.java),
+[GitHub: maven.yml](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/resources/META-INF/rewrite/maven.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Options
 
-| Type | Name | Description | Example |
-| --- | --- | --- | --- |
-| `String` | filePattern | A glob expression representing a file path to delete (relative to the project root). | `.github/workflows/*.yml` |
+## Definition
 
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Delete files](../core/deletesourcefiles)
+  * filePattern: `**/mvnw`
+* [Delete files](../core/deletesourcefiles)
+  * filePattern: `**/mvnw.cmd`
+* [Delete files](../core/deletesourcefiles)
+  * filePattern: `**/.mvn/wrapper/**`
 
-## Used by
+</TabItem>
 
-This recipe is used as part of the following composite recipes:
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
 
-* [Remove Maven wrapper](/recipes/maven/removemavenwrapper.md)
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.maven.RemoveMavenWrapper
+displayName: Remove Maven wrapper
+description: |
+  Remove Maven wrapper files from a project. This includes the `mvnw` and `mvnw.cmd` scripts, and the `.mvn/wrapper` directory.
+recipeList:
+  - org.openrewrite.DeleteSourceFiles:
+      filePattern: **/mvnw
+  - org.openrewrite.DeleteSourceFiles:
+      filePattern: **/mvnw.cmd
+  - org.openrewrite.DeleteSourceFiles:
+      filePattern: **/.mvn/wrapper/**
 
+```
+</TabItem>
+</Tabs>
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteSourceFilesExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.DeleteSourceFilesExample
-displayName: Delete files example
-recipeList:
-  - org.openrewrite.DeleteSourceFiles:
-      filePattern: .github/workflows/*.yml
-```
-
-Now that `com.yourorg.DeleteSourceFilesExample` has been defined, activate it in your build file:
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 <Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
 
-1. Add the following to your `build.gradle` file:
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.DeleteSourceFilesExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
+<TabItem value="maven" label="Maven POM">
 
 1. Add the following to your `pom.xml` file:
 
@@ -83,7 +78,7 @@ repositories {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.DeleteSourceFilesExample</recipe>
+            <recipe>org.openrewrite.maven.RemoveMavenWrapper</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -91,19 +86,30 @@ repositories {
   </build>
 </project>
 ```
+
 2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.maven.RemoveMavenWrapper -Drewrite.exportDatatables=true
+```
+
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DeleteSourceFiles --recipe-option "filePattern=.github/workflows/*.yml"
+mod run . --recipe RemoveMavenWrapper
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}
+mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
 ```
 </TabItem>
 </Tabs>
@@ -112,7 +118,7 @@ mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENRE
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.DeleteSourceFiles" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.RemoveMavenWrapper" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

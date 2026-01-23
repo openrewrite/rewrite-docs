@@ -20,6 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Apache Maven best practices](./bestpractices.md)
 * [Migrate to Maven 4](./migratetomaven4.md)
+* [Remove Maven wrapper](./removemavenwrapper.md)
 * [Replace deprecated lifecycle phases](./replacedeprecatedlifecyclephases.md)
 * [Replace modules with subprojects](./replacemoduleswithsubprojects.md)
 * [Replace removed root directory properties](./replaceremovedrootdirectoryproperties.md)
