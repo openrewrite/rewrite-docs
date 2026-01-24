@@ -123,6 +123,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
 * [Migrate deprecated `org.glassfish.javax.el` packages to `jakarta.el`](/recipes/com/oracle/weblogic/rewrite/jakarta/orgglassfishjavaxeltojakartael.md)
 * [Migrate dropWizard dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratedropwizarddependencies.md)
+* [Migrate from Acegi Security 1.0.x to Spring Security 5.0](/recipes/java/spring/security/migrateacegitospringsecurity_5_0.md)
 * [Migrate from Java Faker to Datafaker](/recipes/java/testing/datafaker/javafakertodatafaker.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
 * [Migrate from Swagger to OpenAPI](/recipes/openapi/swagger/swaggertoopenapi.md)

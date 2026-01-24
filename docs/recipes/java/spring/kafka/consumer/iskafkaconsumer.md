@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate Bean XML properties deprecated in Spring Framework 3.0"
+sidebar_label: "Is likely a Kafka consumer module"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Bean XML properties deprecated in Spring Framework 3.0
+# Is likely a Kafka consumer module
 
-**io.moderne.java.spring.framework.MigrateDeprecatedBeanXmlProperties**
+**io.moderne.java.spring.kafka.consumer.IsKafkaConsumer**
 
-_Migrate Bean XML properties that were deprecated in Spring Framework 3.0._
+_Marks the project if it's likely a Kafka consumer module._
 
 ## Recipe source
 
@@ -17,120 +17,6 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
-
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate to Spring Framework 3.x](/recipes/java/spring/framework/upgradespringframework_3_0.md)
-
-## Examples
-##### Example 1
-`MigrateDeprecatedBeanXmlPropertiesTest#migrateRefLocalToBean`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
-
-
-###### Before
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="myBean" class="com.example.MyBean">
-        <property name="dependency">
-            <ref local="otherBean"/>
-        </property>
-    </bean>
-</beans>
-```
-
-###### After
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="myBean" class="com.example.MyBean">
-        <property name="dependency">
-            <ref bean="otherBean"/>
-        </property>
-    </bean>
-</beans>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -8,1 +8,1 @@
-    <bean id="myBean" class="com.example.MyBean">
-        <property name="dependency">
--           <ref local="otherBean"/>
-+           <ref bean="otherBean"/>
-        </property>
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-`MigrateDeprecatedBeanXmlPropertiesTest#migrateRefLocalToBean`
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="xml" label="xml">
-
-
-###### Before
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="myBean" class="com.example.MyBean">
-        <property name="dependency">
-            <ref local="otherBean"/>
-        </property>
-    </bean>
-</beans>
-```
-
-###### After
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="myBean" class="com.example.MyBean">
-        <property name="dependency">
-            <ref bean="otherBean"/>
-        </property>
-    </bean>
-</beans>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -8,1 +8,1 @@
-    <bean id="myBean" class="com.example.MyBean">
-        <property name="dependency">
--           <ref local="otherBean"/>
-+           <ref bean="otherBean"/>
-        </property>
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage
@@ -144,7 +30,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateDeprecatedBeanXmlProperties
+mod run . --recipe IsKafkaConsumer
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -158,7 +44,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-spring:{{VERSION_IO_MOD
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.framework.MigrateDeprecatedBeanXmlProperties" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.java.spring.kafka.consumer.IsKafkaConsumer" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
