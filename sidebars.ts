@@ -79,6 +79,7 @@ const sidebars: SidebarsConfig = {
         'authoring-recipes/writing-recipes-over-multiple-source-file-types',
         'authoring-recipes/estimated-time-saved',
         'authoring-recipes/multiple-versions',
+        'authoring-recipes/contributing-to-openrewrite',
         {
           type: 'link',
           label: 'Recipe authoring workshop',
