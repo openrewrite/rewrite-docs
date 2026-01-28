@@ -118,6 +118,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 11](/recipes/java/migrate/jakarta/jakartaee11.md)
 * [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Migrate to Struts 7.0](/recipes/java/struts/migrate7/migratestruts7.md)
 
 ## Examples
 ##### Example 1

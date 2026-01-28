@@ -8,6 +8,7 @@ description: Struts OpenRewrite recipes.
 
 * [Search](/recipes/java/struts/search)
 * [Struts 6.0](/recipes/java/struts/migrate6)
+* [Struts 7.0](/recipes/java/struts/migrate7)
 
 ## Recipes
 

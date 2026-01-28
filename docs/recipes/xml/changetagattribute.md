@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Align Struts XML constants for Struts 7](/recipes/java/struts/migrate7/updatestruts7constants.md)
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
 * [Migrate RichFaces tags in `xhtml` files](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
 * [Migrate XJC Bindings to Jakata XML](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)

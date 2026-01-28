@@ -37,6 +37,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.struts`
   * artifactId: `*`
   * newVersion: `6.x`
+* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
+  * groupId: `org.apache.struts`
+  * artifactId: `struts2-sitegraph-plugin`
 
 </TabItem>
 
@@ -59,6 +62,9 @@ recipeList:
       groupId: org.apache.struts
       artifactId: "*"
       newVersion: 6.x
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: org.apache.struts
+      artifactId: struts2-sitegraph-plugin
 
 ```
 </TabItem>

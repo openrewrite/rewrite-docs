@@ -53,7 +53,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
-* [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
 * [Migrate from Zipkin to OpenTelemetry OTLP](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
@@ -102,6 +101,7 @@ This recipe is used as part of the following composite recipes:
 * [Update Tapestry dependencies](/recipes/tapestry/updatetapestrydependencies.md)
 * [Update jakarta annotations dependency](/recipes/java/micronaut/updatejakartaannotations.md)
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
+* [Upgrade Struts 6.0 dependencies](/recipes/java/struts/migrate6/upgradestruts6dependencies.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [io.quarkus.updates.core.quarkus31.RemoveMockitoInline](/recipes/io/quarkus/updates/core/quarkus31/removemockitoinline.md)
 

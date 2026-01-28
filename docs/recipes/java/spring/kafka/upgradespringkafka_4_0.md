@@ -120,6 +120,173 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Framework 7.0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
 
+## Examples
+##### Example 1
+`UpgradeSpringKafka40Test#migrateJackson2ToJackson3`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.support.*;
+import org.springframework.kafka.support.converter.*;
+import org.springframework.kafka.support.mapping.*;
+import org.springframework.kafka.support.serializer.*;
+
+class Test {
+    DefaultKafkaHeaderMapper mapper = new DefaultKafkaHeaderMapper();
+    JsonMessageConverter converter = new JsonMessageConverter();
+    ProjectingMessageConverter projectingConverter = new ProjectingMessageConverter();
+    ByteArrayJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJsonMessageConverter();
+    BytesJsonMessageConverter bytesJsonMessageConverter = new BytesJsonMessageConverter();
+    StringJsonMessageConverter stringJsonMessageConverter = new StringJsonMessageConverter();
+    DefaultJackson2JavaTypeMapper typeMapper = new DefaultJackson2JavaTypeMapper();
+    JsonDeserializer<String> deserializer = new JsonDeserializer<>();
+    JsonSerde<String> serde = new JsonSerde<>();
+    JsonSerializer<String> serializer = new JsonSerializer<>();
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.support.*;
+import org.springframework.kafka.support.converter.*;
+import org.springframework.kafka.support.mapping.*;
+import org.springframework.kafka.support.serializer.*;
+
+class Test {
+    JsonKafkaHeaderMapper mapper = new JsonKafkaHeaderMapper();
+    JacksonJsonMessageConverter converter = new JacksonJsonMessageConverter();
+    JacksonProjectingMessageConverter projectingConverter = new JacksonProjectingMessageConverter();
+    ByteArrayJacksonJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJacksonJsonMessageConverter();
+    BytesJacksonJsonMessageConverter bytesJsonMessageConverter = new BytesJacksonJsonMessageConverter();
+    StringJacksonJsonMessageConverter stringJsonMessageConverter = new StringJacksonJsonMessageConverter();
+    DefaultJacksonJavaTypeMapper typeMapper = new DefaultJacksonJavaTypeMapper();
+    JacksonJsonDeserializer<String> deserializer = new JacksonJsonDeserializer<>();
+    JacksonJsonSerde<String> serde = new JacksonJsonSerde<>();
+    JacksonJsonSerializer<String> serializer = new JacksonJsonSerializer<>();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,10 +7,10 @@
+
+class Test {
+-   DefaultKafkaHeaderMapper mapper = new DefaultKafkaHeaderMapper();
+-   JsonMessageConverter converter = new JsonMessageConverter();
+-   ProjectingMessageConverter projectingConverter = new ProjectingMessageConverter();
+-   ByteArrayJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJsonMessageConverter();
+-   BytesJsonMessageConverter bytesJsonMessageConverter = new BytesJsonMessageConverter();
+-   StringJsonMessageConverter stringJsonMessageConverter = new StringJsonMessageConverter();
+-   DefaultJackson2JavaTypeMapper typeMapper = new DefaultJackson2JavaTypeMapper();
+-   JsonDeserializer<String> deserializer = new JsonDeserializer<>();
+-   JsonSerde<String> serde = new JsonSerde<>();
+-   JsonSerializer<String> serializer = new JsonSerializer<>();
++   JsonKafkaHeaderMapper mapper = new JsonKafkaHeaderMapper();
++   JacksonJsonMessageConverter converter = new JacksonJsonMessageConverter();
++   JacksonProjectingMessageConverter projectingConverter = new JacksonProjectingMessageConverter();
++   ByteArrayJacksonJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJacksonJsonMessageConverter();
++   BytesJacksonJsonMessageConverter bytesJsonMessageConverter = new BytesJacksonJsonMessageConverter();
++   StringJacksonJsonMessageConverter stringJsonMessageConverter = new StringJacksonJsonMessageConverter();
++   DefaultJacksonJavaTypeMapper typeMapper = new DefaultJacksonJavaTypeMapper();
++   JacksonJsonDeserializer<String> deserializer = new JacksonJsonDeserializer<>();
++   JacksonJsonSerde<String> serde = new JacksonJsonSerde<>();
++   JacksonJsonSerializer<String> serializer = new JacksonJsonSerializer<>();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeSpringKafka40Test#migrateJackson2ToJackson3`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.support.*;
+import org.springframework.kafka.support.converter.*;
+import org.springframework.kafka.support.mapping.*;
+import org.springframework.kafka.support.serializer.*;
+
+class Test {
+    DefaultKafkaHeaderMapper mapper = new DefaultKafkaHeaderMapper();
+    JsonMessageConverter converter = new JsonMessageConverter();
+    ProjectingMessageConverter projectingConverter = new ProjectingMessageConverter();
+    ByteArrayJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJsonMessageConverter();
+    BytesJsonMessageConverter bytesJsonMessageConverter = new BytesJsonMessageConverter();
+    StringJsonMessageConverter stringJsonMessageConverter = new StringJsonMessageConverter();
+    DefaultJackson2JavaTypeMapper typeMapper = new DefaultJackson2JavaTypeMapper();
+    JsonDeserializer<String> deserializer = new JsonDeserializer<>();
+    JsonSerde<String> serde = new JsonSerde<>();
+    JsonSerializer<String> serializer = new JsonSerializer<>();
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.support.*;
+import org.springframework.kafka.support.converter.*;
+import org.springframework.kafka.support.mapping.*;
+import org.springframework.kafka.support.serializer.*;
+
+class Test {
+    JsonKafkaHeaderMapper mapper = new JsonKafkaHeaderMapper();
+    JacksonJsonMessageConverter converter = new JacksonJsonMessageConverter();
+    JacksonProjectingMessageConverter projectingConverter = new JacksonProjectingMessageConverter();
+    ByteArrayJacksonJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJacksonJsonMessageConverter();
+    BytesJacksonJsonMessageConverter bytesJsonMessageConverter = new BytesJacksonJsonMessageConverter();
+    StringJacksonJsonMessageConverter stringJsonMessageConverter = new StringJacksonJsonMessageConverter();
+    DefaultJacksonJavaTypeMapper typeMapper = new DefaultJacksonJavaTypeMapper();
+    JacksonJsonDeserializer<String> deserializer = new JacksonJsonDeserializer<>();
+    JacksonJsonSerde<String> serde = new JacksonJsonSerde<>();
+    JacksonJsonSerializer<String> serializer = new JacksonJsonSerializer<>();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,10 +7,10 @@
+
+class Test {
+-   DefaultKafkaHeaderMapper mapper = new DefaultKafkaHeaderMapper();
+-   JsonMessageConverter converter = new JsonMessageConverter();
+-   ProjectingMessageConverter projectingConverter = new ProjectingMessageConverter();
+-   ByteArrayJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJsonMessageConverter();
+-   BytesJsonMessageConverter bytesJsonMessageConverter = new BytesJsonMessageConverter();
+-   StringJsonMessageConverter stringJsonMessageConverter = new StringJsonMessageConverter();
+-   DefaultJackson2JavaTypeMapper typeMapper = new DefaultJackson2JavaTypeMapper();
+-   JsonDeserializer<String> deserializer = new JsonDeserializer<>();
+-   JsonSerde<String> serde = new JsonSerde<>();
+-   JsonSerializer<String> serializer = new JsonSerializer<>();
++   JsonKafkaHeaderMapper mapper = new JsonKafkaHeaderMapper();
++   JacksonJsonMessageConverter converter = new JacksonJsonMessageConverter();
++   JacksonProjectingMessageConverter projectingConverter = new JacksonProjectingMessageConverter();
++   ByteArrayJacksonJsonMessageConverter byteArrayJsonMessageConverter = new ByteArrayJacksonJsonMessageConverter();
++   BytesJacksonJsonMessageConverter bytesJsonMessageConverter = new BytesJacksonJsonMessageConverter();
++   StringJacksonJsonMessageConverter stringJsonMessageConverter = new StringJacksonJsonMessageConverter();
++   DefaultJacksonJavaTypeMapper typeMapper = new DefaultJacksonJavaTypeMapper();
++   JacksonJsonDeserializer<String> deserializer = new JacksonJsonDeserializer<>();
++   JacksonJsonSerde<String> serde = new JacksonJsonSerde<>();
++   JacksonJsonSerializer<String> serializer = new JacksonJsonSerializer<>();
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

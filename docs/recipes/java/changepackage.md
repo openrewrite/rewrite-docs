@@ -127,6 +127,7 @@ This recipe is used as part of the following composite recipes:
 * [Mitigate Unaffected Non-EE Jakarta 9 Packages](/recipes/com/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Rename OpenSymphony / XWork classes to Struts 7 packages](/recipes/java/struts/migrate7/renameopensymphonytostruts2.md)
 * [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
 * [Replace `com.sun.net.ssl` package](/recipes/java/migrate/sunnetsslpackageunavailable.md)
 * [Replace deprecated `org.springframework.boot.autoconfigure.mongo` API](/recipes/java/spring/boot4/replacedeprecatedautoconfiguremongoapi.md)

@@ -42,9 +42,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * propertyKey: `swagger.description`
 * [Delete a spring configuration property](../../java/spring/deletespringproperty)
   * propertyKey: `swagger.contact`
-* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
-  * groupId: `io.swagger.core.v3`
-  * artifactId: `swagger-annotations`
 * [Remove annotation](../../java/removeannotation)
   * annotationPattern: `@springfox.documentation.swagger2.annotations.EnableSwagger2`
 * [Migrate `Docket` to `GroupedOpenAPI`](../../java/spring/doc/migratedocketbeantogroupedopenapibean)
@@ -73,9 +70,6 @@ recipeList:
       propertyKey: swagger.description
   - org.openrewrite.java.spring.DeleteSpringProperty:
       propertyKey: swagger.contact
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: io.swagger.core.v3
-      artifactId: swagger-annotations
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @springfox.documentation.swagger2.annotations.EnableSwagger2
   - org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean

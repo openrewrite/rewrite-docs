@@ -54,6 +54,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Normalize Spring `application*.properties` properties to kebab-case](./propertiestokebabcaseproperties.md)
 * [Normalize Spring `application*.{yml,yaml}` properties to kebab-case](./propertiestokebabcaseyaml.md)
 * [Remove `@RequestMapping` annotations](./norequestmappingannotation.md)
+* [Remove `HttpExchange` annotations](./nohttpexchangeannotation.md)
 * [Remove implicit web annotation names](./implicitwebannotationnames.md)
 * [Remove the `@Autowired` annotation on inferred constructor](./noautowiredonconstructor.md)
 * [Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface](./norepoannotationonrepointerface.md)

@@ -23,8 +23,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a managed dependency coordinate `com.google.guava:guava:VERSION`. | `org.openrewrite.recipe` |
-| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a managed dependency coordinate `com.google.guava:guava:VERSION`. | `rewrite-testing-frameworks` |
+| `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a managed dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `org.openrewrite.recipe` |
+| `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a managed dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `rewrite-testing-frameworks` |
 | `String` | newGroupId | The new groupId to use. | `corp.internal.openrewrite.recipe` |
 | `String` | newArtifactId | The new artifactId to use. | `rewrite-testing-frameworks` |
 | `String` | newVersion | *Optional*. The new version to use. | `2.0.0` |

@@ -144,6 +144,7 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `java.util.function.Function`](/recipes/java/migrate/guava/preferjavautilfunction.md)
 * [Prefer `java.util.function.Supplier`](/recipes/java/migrate/guava/preferjavautilsupplier.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Rename OpenSymphony / XWork classes to Struts 7 packages](/recipes/java/struts/migrate7/renameopensymphonytostruts2.md)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)](/recipes/hibernate/typedescriptortotype.md)
 * [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/authenticationhttpclientconfigurer.md)
 * [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/org/apache/camel/upgrade/camel413/furyjava.md)

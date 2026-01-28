@@ -26,6 +26,54 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.resttestclient.TestRestTemplate;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ExampleTest {
+    TestRestTemplate testRestTemplate;
+}
+```
+
+###### After
+```java
+import org.springframework.boot.resttestclient.TestRestTemplate;
+import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureTestRestTemplate;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@AutoConfigureTestRestTemplate
+@SpringBootTest
+class ExampleTest {
+    TestRestTemplate testRestTemplate;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import org.springframework.boot.resttestclient.TestRestTemplate;
++import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureTestRestTemplate;
+import org.springframework.boot.test.context.SpringBootTest;
+@@ -4,0 +5,1 @@
+import org.springframework.boot.test.context.SpringBootTest;
+
++@AutoConfigureTestRestTemplate
+@SpringBootTest
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

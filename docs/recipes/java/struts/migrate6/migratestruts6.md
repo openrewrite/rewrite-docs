@@ -33,8 +33,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate OpenSymphony classes to Struts 6.0](../../../java/struts/migrate6/migrateopensymphonyclasses)
 * [Upgrade Struts 6.0 dependencies](../../../java/struts/migrate6/upgradestruts6dependencies)
 * [Migrate to Struts 6.0 constants](../../../java/struts/migrate6/migratestruts6constants)
+* [Migrate Struts date tag format patterns](../../../java/struts/migrate6/migratedatetagformat)
+* [Remove deprecated Freemarker `?html` built-in](../../../java/struts/migrate6/removefreemarkerhtmlbuiltin)
 * [Migrate DTD to a specific Struts version](../../../java/struts/migratestrutsdtd)
   * strutsVersion: `6.0`
+* [Migrate static OGNL method access to action wrapper methods](../../../java/struts/migrate6/migratestaticognlmethodaccess)
 
 </TabItem>
 
@@ -53,8 +56,11 @@ recipeList:
   - org.openrewrite.java.struts.migrate6.MigrateOpenSymphonyClasses
   - org.openrewrite.java.struts.migrate6.UpgradeStruts6Dependencies
   - org.openrewrite.java.struts.migrate6.MigrateStruts6Constants
+  - org.openrewrite.java.struts.migrate6.MigrateDateTagFormat
+  - org.openrewrite.java.struts.migrate6.RemoveFreemarkerHtmlBuiltin
   - org.openrewrite.java.struts.MigrateStrutsDtd:
       strutsVersion: 6.0
+  - org.openrewrite.java.struts.migrate6.MigrateStaticOgnlMethodAccess
 
 ```
 </TabItem>
@@ -261,6 +267,22 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.struts.table.StaticOgnlMethodAccess" label="StaticOgnlMethodAccess">
+
+### Static OGNL method access
+**org.openrewrite.java.struts.table.StaticOgnlMethodAccess**
+
+_Locations where OGNL expressions use static method access, which is disabled by default in Struts 6._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file containing the OGNL expression. |
+| OGNL expression | The full OGNL expression containing the static method access. |
+| Static class | The fully qualified class name being accessed statically. |
+| Static method | The static method being called. |
 
 </TabItem>
 

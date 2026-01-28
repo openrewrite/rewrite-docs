@@ -26,6 +26,7 @@ _Basic building blocks for transforming Java code._
 * [Recipes](/recipes/java/recipes)
 * [Search](/recipes/java/search)
 * [Security](/recipes/java/security)
+* [Server](/recipes/java/server)
 * [Spring](/recipes/java/spring)
 * [Springdoc](/recipes/java/springdoc)
 * [Struts](/recipes/java/struts)

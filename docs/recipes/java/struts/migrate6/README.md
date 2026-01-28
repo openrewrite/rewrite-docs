@@ -19,5 +19,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Migrate Dynamic Method Invocation to explicit action mappings](./migratedynamicmethodinvocation.md)
+* [Migrate Struts date tag format patterns](./migratedatetagformat.md)
+* [Migrate static OGNL method access to action wrapper methods](./migratestaticognlmethodaccess.md)
+* [Remove deprecated Freemarker `?html` built-in](./removefreemarkerhtmlbuiltin.md)
 
 
