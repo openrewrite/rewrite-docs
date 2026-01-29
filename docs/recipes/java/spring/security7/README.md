@@ -13,4 +13,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove throws exception in `SecurityConfigurer` methods `init` and `configure`](./securityconfigurerremovethrowsexception.md)
 * [Spring Security 7 modularization](./modularizespringsecurity7.md)
 
+## Recipes
+
+* [Migrate `MvcRequestMatcher` to `PathPatternRequestMatcher`](./migratemvcrequestmatcher.md)
+* [Migrate OAuth2 token response client from `RestOperations` to `RestClient`](./migrateoauth2restoperationstorestclient.md)
+
 

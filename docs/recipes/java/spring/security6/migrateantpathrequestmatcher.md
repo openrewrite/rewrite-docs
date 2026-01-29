@@ -24,6 +24,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Security 6.5](/recipes/java/spring/security6/upgradespringsecurity_6_5-moderne-edition.md)
+* [Spring Security 7 modularization](/recipes/java/spring/security7/modularizespringsecurity7.md)
 
 ## Example
 

@@ -36,6 +36,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Align Struts XML constants for Struts 7](/recipes/java/struts/migrate7/updatestruts7constants.md)
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [Migrate JSF variable-resolver to el-resolver](/recipes/java/spring/framework/jsf23/migratefacesconfig.md)
 * [Migrate RichFaces tags in `xhtml` files](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
 * [Migrate XJC Bindings to Jakata XML](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](/recipes/java/spring/security/migrateacegitospringsecurity_5_0.md)

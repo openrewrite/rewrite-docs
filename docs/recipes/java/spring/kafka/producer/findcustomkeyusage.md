@@ -18,6 +18,65 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyProducer {
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    public MyProducer(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void send(String key, String message) {
+        kafkaTemplate.send("my-topic", key, message);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyProducer {
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    public MyProducer(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void send(String key, String message) {
+        /*~~(KafkaTemplate.send() with custom key - review partition distribution strategy)~~>*/kafkaTemplate.send("my-topic", key, message);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -13,1 +13,1 @@
+
+    public void send(String key, String message) {
+-       kafkaTemplate.send("my-topic", key, message);
++       /*~~(KafkaTemplate.send() with custom key - review partition distribution strategy)~~>*/kafkaTemplate.send("my-topic", key, message);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -18,6 +18,60 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyConsumer {
+
+    @KafkaListener(topics = "my-topic")
+    public void consume(String message) {
+        System.out.println(message);
+    }
+}
+```
+
+###### After
+```java
+/*~~(Module is likely a Kafka consumer)~~>*/import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyConsumer {
+
+    @KafkaListener(topics = "my-topic")
+    public void consume(String message) {
+        System.out.println(message);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.kafka.annotation.KafkaListener;
++/*~~(Module is likely a Kafka consumer)~~>*/import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
 
 ## Usage
 

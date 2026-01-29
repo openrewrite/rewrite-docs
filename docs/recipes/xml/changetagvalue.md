@@ -36,6 +36,7 @@ This recipe is used as part of the following composite recipes:
 * [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](/recipes/com/oracle/weblogic/rewrite/jakarta/facesjndinameschanged3.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
+* [Migrate JSF variable-resolver to el-resolver](/recipes/java/spring/framework/jsf23/migratefacesconfig.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](/recipes/java/spring/security/migrateacegitospringsecurity_5_0.md)
 * [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
 * [Removed OpenJPA providers in the persistence.xml file](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)

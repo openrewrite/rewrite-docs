@@ -23,6 +23,89 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Examples
+##### Example 1
+`MigrateEnvironmentPostProcessorPackageTest#migrateEnvironmentPostProcessorImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.env.EnvironmentPostProcessor;
+
+class MyConfig {
+    void configure(EnvironmentPostProcessor processor) {
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.boot.EnvironmentPostProcessor;
+
+class MyConfig {
+    void configure(EnvironmentPostProcessor processor) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.boot.env.EnvironmentPostProcessor;
++import org.springframework.boot.EnvironmentPostProcessor;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateEnvironmentPostProcessorPackageTest#migrateEnvironmentPostProcessorImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.env.EnvironmentPostProcessor;
+
+class MyConfig {
+    void configure(EnvironmentPostProcessor processor) {
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.boot.EnvironmentPostProcessor;
+
+class MyConfig {
+    void configure(EnvironmentPostProcessor processor) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.boot.env.EnvironmentPostProcessor;
++import org.springframework.boot.EnvironmentPostProcessor;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

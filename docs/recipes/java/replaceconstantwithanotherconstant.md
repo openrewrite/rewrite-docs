@@ -33,6 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
 * [Migrate Hibernate CascadeType constants (Moderne Edition)](/recipes/hibernate/update66/migratecascadetypes.md)
+* [Migrate `HttpStatus` enum values to RFC 9110 names](/recipes/java/spring/framework7/migratehttpstatustorfc9110.md)
 * [Migrate `exactly_once` and `exactly_once_beta` to `exactly_once_v2`](/recipes/kafka/streams/processingguaranteeexactlyoncetov2.md)
 * [Migrate `exactly_once` to `exactly_once_beta`](/recipes/kafka/streams/processingguaranteeexactlyoncetobeta.md)
 * [Migrate deprecated SystemUtils constants](/recipes/apache/commons/lang3/migratesystemutilsdeprecations.md)
@@ -44,6 +45,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
 * [Prefer `java.nio.charset.StandardCharsets`](/recipes/apache/commons/io/usestandardcharsets.md)
+* [Rename MemberCategory field constants for Spring Framework 7.0](/recipes/java/spring/framework7/renamemembercategoryconstants.md)
+* [Rename `RequestContext.jstPresent` to `JSTL_PRESENT`](/recipes/java/spring/framework7/renamerequestcontextjstlpresent.md)
 * [Renamed classes for API](/recipes/org/apache/camel/upgrade/camel49/renamedapis.md)
 * [Renamed constants in camel-smb](/recipes/org/apache/camel/upgrade/camel410/camelsmb.md)
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](/recipes/java/migrate/jakarta/removeduicomponentconstant.md)

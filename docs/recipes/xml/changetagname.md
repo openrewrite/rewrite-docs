@@ -33,6 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Change dataformat fury to fury in xml/java dsl.](/recipes/org/apache/camel/upgrade/camel413/furydsl.md)
 * [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
+* [Migrate JSF variable-resolver to el-resolver](/recipes/java/spring/framework/jsf23/migratefacesconfig.md)
 * [Migrate RichFaces tags in `xhtml` files](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
 * [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
 * [Replace modules with subprojects](/recipes/maven/replacemoduleswithsubprojects.md)

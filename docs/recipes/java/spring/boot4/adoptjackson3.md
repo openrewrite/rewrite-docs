@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Adopt jackson 3"
+sidebar_label: "Adopt Jackson 3"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Adopt jackson 3
+# Adopt Jackson 3
 
 **io.moderne.java.spring.boot4.AdoptJackson3**
 

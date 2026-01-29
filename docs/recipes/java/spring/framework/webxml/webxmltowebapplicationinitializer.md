@@ -22,7 +22,7 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `boolean` | useJakartaEE | If true, the recipe will migrate to Jakarta EE 9+ namespaces. If false, it will use the javax.servlet namespace. | `true` |
+| `Boolean` | useJakartaEE | *Optional*. If true, the recipe will migrate to Jakarta EE 9+ namespaces. If false, it will use the javax.servlet namespace. If not set, the recipe will auto-detect based on the Spring Framework version: Spring 6+ uses Jakarta EE, Spring 5.x and earlier uses javax. | `true` |
 
 
 ## Used by
@@ -79,27 +79,16 @@ main
 
 ## Usage
 
-This recipe has required configuration parameters and can only be run by users of Moderne.
-To run this recipe, you will need to provide the Moderne CLI run command with the required options. 
-Or, if you'd like to create a declarative recipe, please see the below example of a `rewrite.yml` file:
-
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.WebXmlToWebApplicationInitializerExample
-displayName: Migrate `web.xml` to `WebApplicationInitializer` example
-recipeList:
-  - io.moderne.java.spring.framework.webxml.WebXmlToWebApplicationInitializer: 
-      useJakartaEE: false
-```
-
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
+
+
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe WebXmlToWebApplicationInitializer --recipe-option "useJakartaEE=false"
+mod run . --recipe WebXmlToWebApplicationInitializer
 ```
 
 If the recipe is not available locally, then you can install it using:

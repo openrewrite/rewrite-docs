@@ -7,6 +7,7 @@ description: Spring Framework OpenRewrite recipes.
 ## Categories
 
 * [Beansxml](/recipes/java/spring/framework/beansxml)
+* [Jsf23](/recipes/java/spring/framework/jsf23)
 * [Webxml](/recipes/java/spring/framework/webxml)
 
 ## Composite Recipes
@@ -28,16 +29,21 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Framework 6.1](./upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)
 * [Migrate to Spring Framework 7.0](./upgradespringframework_7_0.md)
+* [Remove path extension content negotiation methods](./removepathextensioncontentnegotiation.md)
 
 ## Recipes
 
 * [`@Bean` methods may not return `void`](./beanmethodreturnnull.md)
 * [Add `@Nullable` to optional Spring web parameters](./nullablespringwebparameters.md)
+* [Add `setUseSuffixPatternMatch(true)` in Spring MVC configuration](./addsetusesuffixpatternmatch.md)
 * [Convert `InstantiationAwareBeanPostProcessorAdapter` to `SmartInstantiationAwareBeanPostProcessor`](./migrateinstantiationawarebeanpostprocessoradapter.md)
 * [Convert JAX-RS annotations to Spring Web](./jaxrstospringweb.md)
+* [Find deprecated `PathMatcher` usage](./finddeprecatedpathmatcherusage.md)
 * [Is likely a Spring Framework project](./islikelyspringframework.md)
+* [Migrate `Filter` to `OncePerRequestFilter`](./migratefiltertoonceperrequestfilter.md)
 * [Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`](./migratehandlerinterceptor.md)
 * [Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`](./migratehandlerresulthasexceptionhandlermethod.md)
+* [Migrate `HttpHeaders` methods removed when `MultiValueMap` contract was dropped](./migratehttpheadersmultivaluemapmethods.md)
 * [Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`](./migratemethodargumentnotvalidexceptionerrormethod.md)
 * [Migrate `ResourceHttpMessageWriter.addHeaders`](./migrateresourcehttpmessagewriteraddheadersmethod.md)
 * [Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode](./migrateresponseentityexceptionhandlerhttpstatustohttpstatuscode.md)
@@ -46,9 +52,11 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`](./migrateuricomponentsbuildermethods.md)
 * [Migrate `WebExchangeBindException.resolveErrorMessages`](./migratewebexchangebindexceptionresolveerrormethod.md)
 * [Migrate deprecated Spring Web UTF8 `MediaType` enums](./migrateutf8mediatypes.md)
+* [Migrate `handleError` method invocations to new signature](./migratehandleerrormethodinvocations.md)
 * [Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`](./migratebase64utils.md)
 * [Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method](./migratehandlerresultsetexceptionhandlermethod.md)
 * [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](./httpcomponentsclienthttprequestfactoryreadtimeout.md)
+* [Remove deprecated `setPathMatcher()` calls](./removesetpathmatchercall.md)
 * [Remove `public` from `@Bean` methods](./beanmethodsnotpublic.md)
 * [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](./migratewebmvcconfigureradapter.md)
 * [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](./migrateclienthttpresponsegetrawstatuscodemethod.md)

@@ -47,6 +47,7 @@ This recipe is used as part of the following composite recipes:
 * [Remove `Thread.countStackFrames()` method](/recipes/java/migrate/deprecatedcountstackframesmethod.md)
 * [Remove `Thread.destroy()` and `Thread.stop(Throwable)`](/recipes/java/migrate/threadstopdestroy.md)
 * [Remove `getComment` and `getVersion` methods](/recipes/java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
+* [Remove path extension content negotiation methods](/recipes/java/spring/framework/removepathextensioncontentnegotiation.md)
 * [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
 * [Resolve Deprecations in Spring Boot 3.3](/recipes/java/spring/boot3/resolvedeprecationsspringboot_3_3.md)
 

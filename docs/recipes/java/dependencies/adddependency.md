@@ -56,6 +56,7 @@ This recipe is used as part of the following composite recipes:
 * [Add `javax.validation-api` dependency](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)
 * [Add `org.hamcrest:hamcrest` if it is used](/recipes/java/testing/hamcrest/addhamcrestifused.md)
 * [Add `spring-boot-starter-flyway` if using Flyway](/recipes/java/spring/boot4/addspringbootstarterflyway.md)
+* [Add `spring-boot-starter-validation` dependency](/recipes/java/spring/boot4/addvalidationstarterdependency.md)
 * [Add explicit Common Annotations dependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
 * [Add explicit Inject dependencies](/recipes/java/migrate/javax/addinjectdependencies.md)
 * [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)

@@ -41,6 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
 * [Migrate OpenTracing API to OpenTelemetry API](/recipes/java/spring/opentelemetry/migrateopentracingtoopentelemetry.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+* [Migrate Spring Session Hazelcast to Hazelcast Spring Session](/recipes/java/spring/boot4/migratehazelcastspringsession.md)
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `cucumber-java8` to `cucumber-java`](/recipes/cucumber/jvm/cucumberjava8tojava.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)

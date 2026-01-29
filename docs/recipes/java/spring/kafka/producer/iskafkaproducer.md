@@ -18,6 +18,68 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyProducer {
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    public MyProducer(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void send(String message) {
+        this.kafkaTemplate.send("my-topic", message);
+    }
+}
+```
+
+###### After
+```java
+/*~~(Module is likely a Kafka producer)~~>*/import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyProducer {
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    public MyProducer(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void send(String message) {
+        this.kafkaTemplate.send("my-topic", message);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.kafka.core.KafkaTemplate;
++/*~~(Module is likely a Kafka producer)~~>*/import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
 
 ## Usage
 

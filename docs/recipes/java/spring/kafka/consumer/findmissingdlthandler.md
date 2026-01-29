@@ -24,6 +24,66 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | --- | --- | --- | --- |
 | `Boolean` | flagNoDltStrategy | *Optional*. When enabled, also flags `@RetryableTopic` methods configured with `dltProcessingFailureStrategy = DltStrategy.NO_DLT`, which disables the Dead Letter Topic entirely. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|flagNoDltStrategy|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.RetryableTopic;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyConsumer {
+
+    @RetryableTopic
+    @KafkaListener(topics = "my-topic")
+    public void consume(String message) {
+        System.out.println(message);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.annotation.RetryableTopic;
+import org.springframework.stereotype.Service;
+
+@Service
+class MyConsumer {
+
+    /*~~(Missing @DltHandler for @RetryableTopic)~~>*/@RetryableTopic
+    @KafkaListener(topics = "my-topic")
+    public void consume(String message) {
+        System.out.println(message);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+class MyConsumer {
+
+-   @RetryableTopic
++   /*~~(Missing @DltHandler for @RetryableTopic)~~>*/@RetryableTopic
+    @KafkaListener(topics = "my-topic")
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

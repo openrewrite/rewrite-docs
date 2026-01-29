@@ -32,7 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt jackson 3](/recipes/java/spring/boot4/adoptjackson3.md)
+* [Adopt Jackson 3](/recipes/java/spring/boot4/adoptjackson3.md)
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 * [Change SDK Exception types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
 * [Change SDK S3EventNotification types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changes3eventnotificationtypes.md)
@@ -73,6 +73,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate RichFaces 3.x to 4.5](/recipes/java/jsf/richfaces/migraterichfaces_4_5.md)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+* [Migrate Spring WS Axiom to SAAJ](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
 * [Migrate TaskMetadata and ThreadMetadata](/recipes/kafka/streams/migratetaskandthreadmetadata.md)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](/recipes/kafka/migrateadminlistconsumergroups.md)
