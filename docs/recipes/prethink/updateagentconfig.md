@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Export context files"
+sidebar_label: "Update agent configuration files"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Export context files
+# Update agent configuration files
 
-**org.openrewrite.prethink.ExportContext**
+**org.openrewrite.prethink.UpdateAgentConfig**
 
-_Export DataTables to CSV files in `.moderne/context/` along with a markdown description file. The markdown file describes the context and includes schema information for each data table._
+_Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/._
 
 ## Recipe source
 
-[GitHub: ExportContext.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/ExportContext.java),
+[GitHub: UpdateAgentConfig.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/UpdateAgentConfig.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
 
@@ -23,37 +23,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | displayName | The display name for this context, shown in agent configurations. | `Test Coverage` |
-| `String` | shortDescription | A brief description of what context this provides to the model. | `Maps test methods to implementation methods they verify` |
-| `String` | longDescription | A detailed description of the context and how to use it. | `This context maps each test method to the implementation methods it calls...` |
-| `List` | dataTables | Fully qualified class names of DataTables to export to CSV. | `org.openrewrite.prethink.table.TestMapping` |
+| `String` | targetConfigFile | *Optional*. Which agent config file to update. If not specified, updates all found files. | `CLAUDE.md` |
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context](/recipes/prethink/updateprethinkcontext-community-edition.md)
+* [Update Prethink context](/recipes/prethink/updateprethinkcontext.md)
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ExportContextExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ExportContextExample
-displayName: Export context files example
-recipeList:
-  - org.openrewrite.prethink.ExportContext:
-      displayName: Test Coverage
-      shortDescription: Maps test methods to implementation methods they verify
-      longDescription: This context maps each test method to the implementation methods it calls...
-      dataTables: org.openrewrite.prethink.table.TestMapping
-```
-
-Now that `com.yourorg.ExportContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}` in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-prethink` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -65,7 +47,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.ExportContextExample")
+    activeRecipe("org.openrewrite.prethink.UpdateAgentConfig")
     setExportDatatables(true)
 }
 
@@ -77,9 +59,48 @@ dependencies {
     rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
 }
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-<TabItem value="maven" label="Maven">
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.prethink.UpdateAgentConfig")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
 
 1. Add the following to your `pom.xml` file:
 
@@ -94,7 +115,7 @@ dependencies {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.ExportContextExample</recipe>
+            <recipe>org.openrewrite.prethink.UpdateAgentConfig</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -109,14 +130,23 @@ dependencies {
   </build>
 </project>
 ```
+
 2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=org.openrewrite.prethink.UpdateAgentConfig -Drewrite.exportDatatables=true
+```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ExportContext --recipe-option "displayName=Test Coverage" --recipe-option "shortDescription=Maps test methods to implementation methods they verify" --recipe-option "longDescription=This context maps each test method to the implementation methods it calls..." --recipe-option "dataTables=org.openrewrite.prethink.table.TestMapping"
+mod run . --recipe UpdateAgentConfig
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -130,7 +160,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.ExportContext" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.UpdateAgentConfig" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -138,6 +168,21 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.prethink.table.ContextRegistry" label="ContextRegistry">
+
+### Context registry
+**org.openrewrite.prethink.table.ContextRegistry**
+
+_Registry of available context files for coding agents._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Display name | The display name of the context. |
+| Short description | A brief description of what context this provides. |
+| Context file | Path to the markdown file describing this context. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

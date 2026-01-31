@@ -32,8 +32,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoai.md)
-* [Update Prethink context](/recipes/prethink/updateprethinkcontext-moderne-edition.md)
+* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoaistarter.md)
+* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
 
 
 ## Usage

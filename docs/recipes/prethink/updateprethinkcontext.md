@@ -1,37 +1,71 @@
 ---
-sidebar_label: "Update agent configuration files"
+sidebar_label: "Update Prethink context"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update agent configuration files
+# Update Prethink context
 
-**io.moderne.prethink.UpdateAgentConfig**
+**org.openrewrite.prethink.UpdatePrethinkContext**
 
-_Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/._
+_Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite._
 
 ## Recipe source
 
-[GitHub: UpdateAgentConfig.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/UpdateAgentConfig.java),
+[GitHub: UpdatePrethinkContext.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/UpdatePrethinkContext.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-## Options
 
-| Type | Name | Description | Example |
-| --- | --- | --- | --- |
-| `String` | targetConfigFile | *Optional*. Which agent config file to update. If not specified, updates all found files. | `CLAUDE.md` |
+## Definition
 
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Generate CALM architecture](../prethink/calm/generatecalmarchitecture)
+* [Export context files](../prethink/exportcontext)
+  * displayName: `Architecture`
+  * shortDescription: `FINOS CALM architecture diagram`
+  * longDescription: `FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.`
+  * dataTables: `[org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]`
+* [Update agent configuration files](../prethink/updateagentconfig)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.prethink.UpdatePrethinkContext
+displayName: Update Prethink context
+description: |
+  Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
+recipeList:
+  - org.openrewrite.prethink.calm.GenerateCalmArchitecture
+  - org.openrewrite.prethink.ExportContext:
+      displayName: Architecture
+      shortDescription: FINOS CALM architecture diagram
+      longDescription: FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.
+      dataTables: [org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]
+  - org.openrewrite.prethink.UpdateAgentConfig
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoai.md)
-* [Update Prethink context](/recipes/prethink/updateprethinkcontext-moderne-edition.md)
+* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoaistarter.md)
+* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
 
 
 ## Usage
@@ -48,7 +82,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("io.moderne.prethink.UpdateAgentConfig")
+    activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
     setExportDatatables(true)
 }
 
@@ -81,7 +115,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
     }
     rewrite {
-        activeRecipe("io.moderne.prethink.UpdateAgentConfig")
+        activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -116,7 +150,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>io.moderne.prethink.UpdateAgentConfig</recipe>
+            <recipe>org.openrewrite.prethink.UpdatePrethinkContext</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -139,7 +173,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=io.moderne.prethink.UpdateAgentConfig -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=org.openrewrite.prethink.UpdatePrethinkContext -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -147,7 +181,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdateAgentConfig
+mod run . --recipe UpdatePrethinkContext
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -161,7 +195,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.UpdateAgentConfig" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.UpdatePrethinkContext" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -169,21 +203,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="io.moderne.prethink.table.ContextRegistry" label="ContextRegistry">
-
-### Context registry
-**io.moderne.prethink.table.ContextRegistry**
-
-_Registry of available context files for coding agents._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Display name | The display name of the context. |
-| Short description | A brief description of what context this provides. |
-| Context file | Path to the markdown file describing this context. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

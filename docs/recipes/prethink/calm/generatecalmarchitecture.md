@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context](/recipes/prethink/updateprethinkcontext-community-edition.md)
+* [Update Prethink context](/recipes/prethink/updateprethinkcontext.md)
 
 
 ## Usage

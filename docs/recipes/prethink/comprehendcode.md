@@ -13,11 +13,10 @@ _Use an LLM to generate descriptions for classes and methods in the codebase. De
 
 ## Recipe source
 
-[GitHub: ComprehendCode.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/ComprehendCode.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
+This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
 ## Options
 
@@ -34,117 +33,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context](/recipes/prethink/updateprethinkcontext-moderne-edition.md)
+* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-prethink` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
 <Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
 
-1. Add the following to your `build.gradle` file:
 
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("io.moderne.prethink.ComprehendCode")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
-}
-```
-
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-
-<TabItem value="gradle-init-script" label="Gradle init script">
-
-1. Create a file named `init.gradle` in the root of your project.
-
-```groovy title="init.gradle"
-initscript {
-    repositories {
-        maven { url "https://plugins.gradle.org/m2" }
-    }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
-}
-rootProject {
-    plugins.apply(org.openrewrite.gradle.RewritePlugin)
-    dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
-    }
-    rewrite {
-        activeRecipe("io.moderne.prethink.ComprehendCode")
-        setExportDatatables(true)
-    }
-    afterEvaluate {
-        if (repositories.isEmpty()) {
-            repositories {
-                mavenCentral()
-            }
-        }
-    }
-}
-```
-
-2. Run the recipe.
-
-```shell title="shell"
-gradle --init-script init.gradle rewriteRun
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven POM">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>io.moderne.prethink.ComprehendCode</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-prethink</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=io.moderne.prethink.ComprehendCode -Drewrite.exportDatatables=true
-```
-</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -155,7 +52,7 @@ mod run . --recipe ComprehendCode
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}
+mod config recipes jar install io.moderne.recipe:rewrite-prethink:{{VERSION_IO_MODERNE_RECIPE_REWRITE_PRETHINK}}
 ```
 </TabItem>
 </Tabs>
@@ -177,20 +74,22 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ### Method descriptions
 **io.moderne.prethink.table.MethodDescriptions**
 
-_AI-generated descriptions of methods in the codebase._
+_AI-generated descriptions of methods in the codebase with inference time and token usage metrics._
 
 | Column Name | Description |
 | ----------- | ----------- |
 | Source path | The path to the source file containing the method. |
 | Class name | The fully qualified name of the class containing the method. |
-| Signature | The method signature. |
-| Checksum | SHA-256 checksum of the method source text for incremental updates. |
+| Signature | The method signature including parameter types. |
+| Checksum | SHA-256 checksum of the method source code for cache validation. |
 | Description | AI-generated description of what the method does. |
 | Return value description | AI-generated description of what the method returns. |
-| Technique 1 | First technique or library used by this method. |
-| Technique 2 | Second technique or library used by this method. |
-| Technique 3 | Third technique or library used by this method. |
-| Inference time (ms) | Time taken to generate the description in milliseconds. |
+| Technique 1 | First programming technique or pattern used in the method. |
+| Technique 2 | Second programming technique or pattern used in the method. |
+| Technique 3 | Third programming technique or pattern used in the method. |
+| Inference time (ms) | Time taken for the LLM to generate the description, in milliseconds. |
+| Input tokens | Number of tokens in the input prompt sent to the LLM. |
+| Output tokens | Number of tokens in the response generated by the LLM. |
 
 </TabItem>
 
@@ -199,19 +98,21 @@ _AI-generated descriptions of methods in the codebase._
 ### Class descriptions
 **io.moderne.prethink.table.ClassDescriptions**
 
-_AI-generated descriptions of classes in the codebase._
+_AI-generated descriptions of classes in the codebase with inference time and token usage metrics._
 
 | Column Name | Description |
 | ----------- | ----------- |
 | Source path | The path to the source file containing the class. |
 | Class name | The fully qualified name of the class. |
-| Checksum | SHA-256 checksum of the class source text for incremental updates. |
+| Checksum | SHA-256 checksum of the class source code for cache validation. |
 | Description | AI-generated description of what the class does. |
-| Responsibility | The primary responsibility or purpose of the class (2-3 words). |
-| Pattern 1 | First architectural pattern used by this class. |
-| Pattern 2 | Second architectural pattern used by this class. |
-| Pattern 3 | Third architectural pattern used by this class. |
-| Inference time (ms) | Time taken to generate the description in milliseconds. |
+| Responsibility | AI-generated description of the class's responsibility in the system. |
+| Pattern 1 | First architectural pattern identified in the class. |
+| Pattern 2 | Second architectural pattern identified in the class. |
+| Pattern 3 | Third architectural pattern identified in the class. |
+| Inference time (ms) | Time taken for the LLM to generate the description, in milliseconds. |
+| Input tokens | Number of tokens in the input prompt sent to the LLM. |
+| Output tokens | Number of tokens in the response generated by the LLM. |
 
 </TabItem>
 

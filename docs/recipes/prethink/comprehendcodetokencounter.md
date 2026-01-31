@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Find test coverage mapping"
+sidebar_label: "Estimate comprehension token usage"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find test coverage mapping
+# Estimate comprehension token usage
 
-**io.moderne.prethink.FindTestCoverage**
+**io.moderne.prethink.ComprehendCodeTokenCounter**
 
-_Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured._
+_Estimate the input token counts that would be sent to an LLM for method comprehension, without actually calling a model. Uses OpenAI's tokenizer locally. Outputs to the MethodDescriptions table with blank descriptions._
 
 ## Recipe source
 
@@ -18,23 +18,12 @@ This recipe is only available to users of [Moderne](https://docs.moderne.io/).
 
 This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
 
-## Options
-
-| Type | Name | Description | Example |
-| --- | --- | --- | --- |
-| `String` | provider | *Optional*. LLM provider for generating test summaries: openai, gemini, or poolside. | `poolside` |
-| `String` | apiKey | *Optional*. API key for the LLM provider. | `sk-...` |
-| `String` | model | *Optional*. Model name to use for generating test summaries. | `malibu` |
-| `String` | baseUrl | *Optional*. Custom base URL for the LLM provider. | `https://divers.poolsi.de/openai/v1/` |
-| `Integer` | requestsPerMinute | *Optional*. Rate limit for LLM requests. | `60` |
-
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
 * [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoaistarter.md)
-* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
 
 
 ## Usage
@@ -48,7 +37,7 @@ This recipe has no required configuration options. Users of Moderne can run it v
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindTestCoverage
+mod run . --recipe ComprehendCodeTokenCounter
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -62,7 +51,7 @@ mod config recipes jar install io.moderne.recipe:rewrite-prethink:{{VERSION_IO_M
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.FindTestCoverage" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.ComprehendCodeTokenCounter" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -70,24 +59,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="io.moderne.prethink.table.TestMapping" label="TestMapping">
+<TabItem value="io.moderne.prethink.table.MethodDescriptions" label="MethodDescriptions">
 
-### Test mapping
-**io.moderne.prethink.table.TestMapping**
+### Method descriptions
+**io.moderne.prethink.table.MethodDescriptions**
 
-_Maps test methods to implementation methods with optional AI-generated summaries and inference metrics._
+_AI-generated descriptions of methods in the codebase with inference time and token usage metrics._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Test source path | The path to the source file containing the test. |
-| Test class | The fully qualified name of the test class. |
-| Test method | The signature of the test method. |
-| Implementation source path | The path to the source file containing the implementation. |
-| Implementation class | The fully qualified name of the implementation class. |
-| Implementation method | The signature of the implementation method being tested. |
-| Test summary | AI-generated summary of what the test is verifying. |
-| Test checksum | SHA-256 checksum of the test method source code for cache validation. |
-| Inference time (ms) | Time taken for the LLM to generate the summary, in milliseconds. |
+| Source path | The path to the source file containing the method. |
+| Class name | The fully qualified name of the class containing the method. |
+| Signature | The method signature including parameter types. |
+| Checksum | SHA-256 checksum of the method source code for cache validation. |
+| Description | AI-generated description of what the method does. |
+| Return value description | AI-generated description of what the method returns. |
+| Technique 1 | First programming technique or pattern used in the method. |
+| Technique 2 | Second programming technique or pattern used in the method. |
+| Technique 3 | Third programming technique or pattern used in the method. |
+| Inference time (ms) | Time taken for the LLM to generate the description, in milliseconds. |
 | Input tokens | Number of tokens in the input prompt sent to the LLM. |
 | Output tokens | Number of tokens in the response generated by the LLM. |
 

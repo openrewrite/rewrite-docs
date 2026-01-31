@@ -7,13 +7,13 @@ import TabItem from '@theme/TabItem';
 
 # Export context files
 
-**io.moderne.prethink.ExportContext**
+**org.openrewrite.prethink.ExportContext**
 
 _Export DataTables to CSV files in `.moderne/context/` along with a markdown description file. The markdown file describes the context and includes schema information for each data table._
 
 ## Recipe source
 
-[GitHub: ExportContext.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/ExportContext.java),
+[GitHub: ExportContext.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/ExportContext.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
 
@@ -26,15 +26,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | displayName | The display name for this context, shown in agent configurations. | `Test Coverage` |
 | `String` | shortDescription | A brief description of what context this provides to the model. | `Maps test methods to implementation methods they verify` |
 | `String` | longDescription | A detailed description of the context and how to use it. | `This context maps each test method to the implementation methods it calls...` |
-| `List` | dataTables | Fully qualified class names of DataTables to export to CSV. | `io.moderne.context.table.TestMapping` |
+| `List` | dataTables | Fully qualified class names of DataTables to export to CSV. | `org.openrewrite.prethink.table.TestMapping` |
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoai.md)
-* [Update Prethink context](/recipes/prethink/updateprethinkcontext-moderne-edition.md)
+* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoaistarter.md)
+* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
+* [Update Prethink context](/recipes/prethink/updateprethinkcontext.md)
 
 
 ## Usage
@@ -47,11 +48,11 @@ type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.ExportContextExample
 displayName: Export context files example
 recipeList:
-  - io.moderne.prethink.ExportContext:
+  - org.openrewrite.prethink.ExportContext:
       displayName: Test Coverage
       shortDescription: Maps test methods to implementation methods they verify
       longDescription: This context maps each test method to the implementation methods it calls...
-      dataTables: io.moderne.context.table.TestMapping
+      dataTables: org.openrewrite.prethink.table.TestMapping
 ```
 
 Now that `com.yourorg.ExportContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}` in your build file:
@@ -117,7 +118,7 @@ dependencies {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ExportContext --recipe-option "displayName=Test Coverage" --recipe-option "shortDescription=Maps test methods to implementation methods they verify" --recipe-option "longDescription=This context maps each test method to the implementation methods it calls..." --recipe-option "dataTables=io.moderne.context.table.TestMapping"
+mod run . --recipe ExportContext --recipe-option "displayName=Test Coverage" --recipe-option "shortDescription=Maps test methods to implementation methods they verify" --recipe-option "longDescription=This context maps each test method to the implementation methods it calls..." --recipe-option "dataTables=org.openrewrite.prethink.table.TestMapping"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -131,7 +132,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.ExportContext" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.ExportContext" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
