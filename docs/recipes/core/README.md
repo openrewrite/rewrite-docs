@@ -24,5 +24,6 @@ description: Core OpenRewrite recipes.
 * [Rename a file](./renamefile.md)
 * [Set file permission attributes](./setfilepermissions.md)
 * [Show Git source control metadata](./findgitprovenance.md)
+* [Singleton](./singleton.md)
 
 

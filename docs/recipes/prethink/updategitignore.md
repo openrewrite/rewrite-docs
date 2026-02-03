@@ -1,73 +1,30 @@
 ---
-sidebar_label: "Update Prethink context"
+sidebar_label: "Update .gitignore for Prethink context"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update Prethink context
+# Update .gitignore for Prethink context
 
-**org.openrewrite.prethink.UpdatePrethinkContext**
+**org.openrewrite.prethink.UpdateGitignore**
 
-_Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite._
+_Updates .gitignore to allow committing the `.moderne/context/` directory while ignoring other files in `.moderne/`. Transforms `.moderne/` into `.moderne/*` with an exception for `!.moderne/context/`._
 
 ## Recipe source
 
-[GitHub: UpdatePrethinkContext.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/UpdatePrethinkContext.java),
+[GitHub: UpdateGitignore.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/UpdateGitignore.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Generate CALM architecture](../prethink/calm/generatecalmarchitecture)
-* [Export context files](../prethink/exportcontext)
-  * displayName: `Architecture`
-  * shortDescription: `FINOS CALM architecture diagram`
-  * longDescription: `FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.`
-  * dataTables: `[org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]`
-* [Update agent configuration files](../prethink/updateagentconfig)
-* [Update .gitignore for Prethink context](../prethink/updategitignore)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.prethink.UpdatePrethinkContext
-displayName: Update Prethink context
-description: |
-  Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
-recipeList:
-  - org.openrewrite.prethink.calm.GenerateCalmArchitecture
-  - org.openrewrite.prethink.ExportContext:
-      displayName: Architecture
-      shortDescription: FINOS CALM architecture diagram
-      longDescription: FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.
-      dataTables: [org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]
-  - org.openrewrite.prethink.UpdateAgentConfig
-  - org.openrewrite.prethink.UpdateGitignore
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoaistarter.md)
-* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
+* [Update Prethink context](/recipes/prethink/updateprethinkcontext.md)
 
 
 ## Usage
@@ -84,7 +41,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
+    activeRecipe("org.openrewrite.prethink.UpdateGitignore")
     setExportDatatables(true)
 }
 
@@ -117,7 +74,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
+        activeRecipe("org.openrewrite.prethink.UpdateGitignore")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -152,7 +109,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.prethink.UpdatePrethinkContext</recipe>
+            <recipe>org.openrewrite.prethink.UpdateGitignore</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -175,7 +132,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=org.openrewrite.prethink.UpdatePrethinkContext -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=org.openrewrite.prethink.UpdateGitignore -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -183,7 +140,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdatePrethinkContext
+mod run . --recipe UpdateGitignore
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -197,7 +154,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.UpdatePrethinkContext" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.UpdateGitignore" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

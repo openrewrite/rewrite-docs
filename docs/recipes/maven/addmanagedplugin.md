@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Add an annotation processor to `maven-compiler-plugin`"
+sidebar_label: "Add Managed Maven plugin"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add an annotation processor to `maven-compiler-plugin`
+# Add Managed Maven plugin
 
-**org.openrewrite.maven.AddAnnotationProcessor**
+**org.openrewrite.maven.AddManagedPlugin**
 
-_Add an annotation processor path to the `maven-compiler-plugin` configuration. For modules with an in-reactor parent, adds to the parent's `build/pluginManagement/plugins` section. For modules without a parent or with a parent outside the reactor, adds directly to `build/plugins`. Updates the annotation processor version if a newer version is specified._
+_Add the specified Maven plugin to the Plugin Managed of the pom.xml._
 
 ## Recipe source
 
-[GitHub: AddAnnotationProcessor.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddAnnotationProcessor.java),
+[GitHub: AddManagedPlugin.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedPlugin.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
@@ -23,133 +23,36 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | groupId | The first part of the coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. | `org.projectlombok` |
-| `String` | artifactId | The second part of a coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. | `lombok-mapstruct-binding` |
-| `String` | version | The third part of a coordinate 'org.projectlombok:lombok-mapstruct-binding:0.2.0' of the processor to add. Note that an exact version is expected | `0.2.0` |
-
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|groupId|`org.projectlombok`|
-|artifactId|`lombok-mapstruct-binding`|
-|version|`0.2.0`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                        </path>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-
-###### After
-```xml title="pom.xml"
-<project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany.app</groupId>
-    <artifactId>my-app</artifactId>
-    <version>1</version>
-
-    <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                        </path>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </path>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok-mapstruct-binding</artifactId>
-                            <version>0.2.0</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -21,0 +21,5 @@
-                            <artifactId>lombok</artifactId>
-                        </path>
-+                       <path>
-+                           <groupId>org.projectlombok</groupId>
-+                           <artifactId>lombok-mapstruct-binding</artifactId>
-+                           <version>0.2.0</version>
-+                       </path>
-                    </annotationProcessorPaths>
-```
-</TabItem>
-</Tabs>
+| `String` | groupId | The first part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `org.openrewrite.maven` |
+| `String` | artifactId | The second part of a dependency coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION'. | `rewrite-maven-plugin` |
+| `String` | version | *Optional*. A fixed version of the plugin to add. | `1.0.0` |
+| `String` | configuration | *Optional*. Optional plugin configuration provided as raw XML | `<configuration><foo>foo</foo></configuration>` |
+| `String` | dependencies | *Optional*. Optional plugin dependencies provided as raw XML. | `<dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>` |
+| `String` | executions | *Optional*. Optional executions provided as raw XML. | `<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>` |
+| `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*-parent/grpc-*/pom.xml` |
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddAnnotationProcessorExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AddManagedPluginExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.AddAnnotationProcessorExample
-displayName: Add an annotation processor to `maven-compiler-plugin` example
+name: com.yourorg.AddManagedPluginExample
+displayName: Add Managed Maven plugin example
 recipeList:
-  - org.openrewrite.maven.AddAnnotationProcessor:
-      groupId: org.projectlombok
-      artifactId: lombok-mapstruct-binding
-      version: 0.2.0
+  - org.openrewrite.maven.AddManagedPlugin:
+      groupId: org.openrewrite.maven
+      artifactId: rewrite-maven-plugin
+      version: 1.0.0
+      configuration: <configuration><foo>foo</foo></configuration>
+      dependencies: <dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>
+      executions: <executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>
+      filePattern: '**/*-parent/grpc-*/pom.xml'
 ```
 
-Now that `com.yourorg.AddAnnotationProcessorExample` has been defined, activate it in your build file:
+Now that `com.yourorg.AddManagedPluginExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 
 <TabItem value="maven" label="Maven">
@@ -167,7 +70,7 @@ Now that `com.yourorg.AddAnnotationProcessorExample` has been defined, activate 
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.AddAnnotationProcessorExample</recipe>
+            <recipe>com.yourorg.AddManagedPluginExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -182,7 +85,7 @@ Now that `com.yourorg.AddAnnotationProcessorExample` has been defined, activate 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe AddAnnotationProcessor --recipe-option "groupId=org.projectlombok" --recipe-option "artifactId=lombok-mapstruct-binding" --recipe-option "version=0.2.0"
+mod run . --recipe AddManagedPlugin --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "version=1.0.0" --recipe-option "configuration=<configuration><foo>foo</foo></configuration>" --recipe-option "dependencies=<dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>" --recipe-option "executions=<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>" --recipe-option "filePattern='**/*-parent/grpc-*/pom.xml'"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -196,7 +99,7 @@ mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENR
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.AddAnnotationProcessor" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.AddManagedPlugin" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

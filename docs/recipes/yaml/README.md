@@ -14,6 +14,7 @@ _Basic building blocks for transforming YAML._
 
 ## Recipes
 
+* [Add comment to a YAML property](./addcommenttoproperty.md)
 * [Append to sequence](./appendtosequence.md)
 * [Change YAML property](./changepropertyvalue.md)
 * [Change key](./changekey.md)

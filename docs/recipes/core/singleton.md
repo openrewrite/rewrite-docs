@@ -1,78 +1,77 @@
 ---
-sidebar_label: "Update Prethink context"
+sidebar_label: "Singleton"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update Prethink context
+# Singleton
 
-**org.openrewrite.prethink.UpdatePrethinkContext**
+**org.openrewrite.Singleton**
 
-_Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite._
+Used as a precondition to ensure that a recipe attempts to make changes only once. Accidentally including multiple copies/instances of the same large composite recipes is a common mistake. If those recipes are marked with this precondition the performance penalty is limited. This recipe does nothing useful run on its own.
 
-## Recipe source
+## Usage in YAML recipes
 
-[GitHub: UpdatePrethinkContext.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/UpdatePrethinkContext.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
-
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Generate CALM architecture](../prethink/calm/generatecalmarchitecture)
-* [Export context files](../prethink/exportcontext)
-  * displayName: `Architecture`
-  * shortDescription: `FINOS CALM architecture diagram`
-  * longDescription: `FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.`
-  * dataTables: `[org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]`
-* [Update agent configuration files](../prethink/updateagentconfig)
-* [Update .gitignore for Prethink context](../prethink/updategitignore)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+Add `org.openrewrite.Singleton` as a precondition:
 
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.prethink.UpdatePrethinkContext
-displayName: Update Prethink context
-description: |
-  Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
+name: com.example.Append
+displayName: My recipe
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.prethink.calm.GenerateCalmArchitecture
-  - org.openrewrite.prethink.ExportContext:
-      displayName: Architecture
-      shortDescription: FINOS CALM architecture diagram
-      longDescription: FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.
-      dataTables: [org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]
-  - org.openrewrite.prethink.UpdateAgentConfig
-  - org.openrewrite.prethink.UpdateGitignore
+  - org.openrewrite.text.AppendToTextFile:
+      relativeFileName: report.txt
+      content: 'Recipe executed'
+```## Usage in Java recipes
 
+Wrap visitors with `Singleton.singleton(this, visitor)` to ensure only the first *equivalent* recipe instance makes changes:
+
+```java
+@Override
+public TreeVisitor<?, ExecutionContext> getVisitor(Accumulator acc) {
+    return singleton(this, new TreeVisitor<Tree, ExecutionContext>() {
+        @Override
+        public Tree visit(@Nullable Tree tree, ExecutionContext ctx) {
+            // Your transformation logic
+            return tree;
+        }
+    });
+}
+@Override
+public Collection<SourceFile> generate(Accumulator acc, ExecutionContext ctx) {
+    if (!isSingleton(this, ctx)) {
+        return Collections.emptyList();
+    }
+    // Generate new sources
+    return results;
+}
+
+@Override
+public TreeVisitor<?, ExecutionContext> getVisitor(Accumulator acc) {
+    return singleton(this, new TreeVisitor<Tree, ExecutionContext>() {
+        // Visitor logic
+    });
+}
 ```
-</TabItem>
-</Tabs>
 
-## Used by
+**Note:** Singleton status is determined by the recipe's `equals()` and `hashCode()` methods. If equivalent instances of a recipe are not considered singletons, ensure your recipe class correctly implements these methods. The easiest way is to use Lombok's `@Value` annotation on your recipe class, which automatically generates correct `equals()` and `hashCode()` implementations based on all fields.
 
-This recipe is used as part of the following composite recipes:
+## Recipe source
 
-* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoaistarter.md)
-* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
+[GitHub: Singleton.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/Singleton.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-prethink` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -84,7 +83,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
+    activeRecipe("org.openrewrite.Singleton")
     setExportDatatables(true)
 }
 
@@ -92,11 +91,7 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
-}
 ```
-
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
 
@@ -109,15 +104,15 @@ initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+    dependencies { classpath("org.openrewrite:plugin:latest.release") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
+        rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
+        activeRecipe("org.openrewrite.Singleton")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -135,7 +130,6 @@ rootProject {
 ```shell title="shell"
 gradle --init-script init.gradle rewriteRun
 ```
-
 </TabItem>
 <TabItem value="maven" label="Maven POM">
 
@@ -152,16 +146,9 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.prethink.UpdatePrethinkContext</recipe>
+            <recipe>org.openrewrite.Singleton</recipe>
           </activeRecipes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-prethink</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}</version>
-          </dependency>
-        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -172,23 +159,25 @@ gradle --init-script init.gradle rewriteRun
 </TabItem>
 
 <TabItem value="maven-command-line" label="Maven Command Line">
+
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=org.openrewrite.prethink.UpdatePrethinkContext -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.Singleton -Drewrite.exportDatatables=true
 ```
+
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdatePrethinkContext
+mod run . --recipe Singleton
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}
+mod config recipes jar install org.openrewrite:rewrite-core:{{VERSION_ORG_OPENREWRITE_REWRITE_CORE}}
 ```
 </TabItem>
 </Tabs>
@@ -197,7 +186,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.UpdatePrethinkContext" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.Singleton" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

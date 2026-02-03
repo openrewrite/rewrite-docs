@@ -28,6 +28,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add Managed Maven plugin](./addmanagedplugin.md)
 * [Add Maven dependency](./adddependency.md)
 * [Add Maven parent](./addparentpom.md)
 * [Add Maven plugin](./addplugin.md)
