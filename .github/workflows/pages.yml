@@ -3,6 +3,10 @@ name: Deploy OpenRewrite docs to Pages
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["update-docs"]
+    types:
+      - completed
   push:
     branches:
       - master
