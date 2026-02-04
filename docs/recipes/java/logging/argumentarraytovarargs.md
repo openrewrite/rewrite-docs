@@ -5,7 +5,7 @@ sidebar_label: "Unpack Logger method `new Object[] {...}` into varargs"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Unpack Logger method `new Object[] {...}` into varargs
+# Unpack Logger method `new Object[] \{...\}` into varargs
 
 **org.openrewrite.java.logging.ArgumentArrayToVarargs**
 

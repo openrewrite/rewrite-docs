@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from Elasticsearch 8 to 9](/recipes/elastic/elastic9/migratetoelasticsearch9.md)
+* [Migrate from Elasticsearch 8 to 9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/elastic/elastic9/migratetoelasticsearch9)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 
 ## Example

@@ -161,7 +161,7 @@ _Table collecting any LST deserialization errors._
 | Minimum CLI version required by language | Minimum CLI version required to be able to successfully ingest sources of this language. |
 | Actual CLI version used for ingestion | Actual CLI version used to ingest this source. |
 | Timestamp (epoch millis) | UTC timestamp describing when the LST was produced, in milliseconds since the unix epoch. |
-| Timestamp | UTC timestamp describing when the LST was produced, in ISO-8601 format. e.g.: "2023‐08‐07T22:24:06+00:00 UTC+00:00" |
+| Timestamp | UTC timestamp describing when the LST was produced, in ISO-8601 format. e.g.: &quot;2023‐08‐07T22:24:06+00:00 UTC+00:00&quot; |
 
 </TabItem>
 

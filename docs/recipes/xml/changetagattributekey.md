@@ -31,8 +31,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Bean XML properties deprecated in Spring Framework 3.0](/recipes/java/spring/framework/migratedeprecatedbeanxmlproperties.md)
-* [Migrate RichFaces tags in `xhtml` files](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
+* [Migrate Bean XML properties deprecated in Spring Framework 3.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratedeprecatedbeanxmlproperties)
+* [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
 
 
 ## Usage

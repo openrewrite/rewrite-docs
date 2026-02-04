@@ -34,7 +34,7 @@ jobs:
           repository: 'openrewrite/rewrite-recipe-markdown-generator'
           path: 'rewrite-recipe-markdown-generator'
       - name: Generate Markdown
-        run: ./gradlew ${{ env.GRADLE_SWITCHES }} run -PlatestVersionsOnly=${{ github.event.inputs.latest-versions-only == 'true' }}
+        run: ./gradlew run -PlatestVersionsOnly=${{ github.event.inputs.latest-versions-only == 'true' }}
         working-directory: rewrite-recipe-markdown-generator
 
       # Checkout docs repository
@@ -50,26 +50,46 @@ jobs:
           git config user.email "team@moderne.io"
           git config user.name "team-moderne[bot]"
 
-      # Conditionally replace latest versions, as recipe runs lack certain language modules
+      # Conditionally replace latest versions only
       - name: Replace latest versions
         if: ${{ inputs.latest-versions-only }}
         working-directory: rewrite-docs
         run: |
-          cp ../rewrite-recipe-markdown-generator/build/docs/*.md docs/reference/
-          cp ../rewrite-recipe-markdown-generator/build/docs/*.js src/plugins/
+          cp ../rewrite-recipe-markdown-generator/build/docs/latest-versions-of-every-openrewrite-module.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/latest-versions.js src/plugins/
           git add docs/reference/latest-versions-of-every-openrewrite-module.md src/plugins/latest-versions.js
 
-      # Otherwise replace recipes only
-      - name: Replace recipes
+      # Full recipe update - replace recipes and all reference files
+      - name: Replace recipes and reference files
         if: ${{ !inputs.latest-versions-only }}
         working-directory: rewrite-docs
         run: |
+          # Replace recipes directory (contains all 5,000+ individual recipe markdown files)
           rm -rf docs/recipes/
           cp -r ../rewrite-recipe-markdown-generator/build/docs/recipes docs/recipes
-          git add docs/recipes
+
+          # Copy reference/list files
+          cp ../rewrite-recipe-markdown-generator/build/docs/all-recipes.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/recipes-by-tag.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/recipes-with-data-tables.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/scanning-recipes.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/standalone-recipes.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/moderne-recipes.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/latest-versions-of-every-openrewrite-module.md docs/reference/
+
+          # Copy JS plugin file
+          cp ../rewrite-recipe-markdown-generator/build/docs/latest-versions.js src/plugins/
+
+          # Copy static HTML redirect pages for proprietary recipes -> Moderne
+          # These are served at old recipe URLs and redirect to Moderne docs
+          rm -rf static/recipes/
+          cp -r ../rewrite-recipe-markdown-generator/build/docs/static/recipes static/recipes
+
+          # Stage all changes
+          git add docs/recipes docs/reference src/plugins/latest-versions.js static/recipes
 
       # Commit and push changes
       - name: Commit and push
         working-directory: rewrite-docs
         run: |
-          git diff --quiet HEAD || (git commit -m "[Auto] Latest versions as of $(date +'%Y-%m-%dT%H%M')" && git push origin master)
+          git diff --quiet HEAD || (git commit -m "[Auto] Update docs as of $(date +'%Y-%m-%dT%H%M')" && git push origin master)

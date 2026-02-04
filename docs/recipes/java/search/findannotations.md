@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Find vulnerable uses of Jackson `@JsonTypeInfo`](/recipes/java/security/search/findvulnerablejacksonjsontypeinfo.md)
+* [Find vulnerable uses of Jackson `@JsonTypeInfo`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findvulnerablejacksonjsontypeinfo)
 
 
 ## Usage

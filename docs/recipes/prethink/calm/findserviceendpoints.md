@@ -172,7 +172,7 @@ _REST/HTTP endpoints exposed by the application._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Entity ID | Unique identifier for this endpoint entity (format: endpoint:{className}#{methodSignature}). |
+| Entity ID | Unique identifier for this endpoint entity (format: endpoint:\{className\}#\{methodSignature\}). |
 | Source path | The path to the source file containing the endpoint. |
 | Service class | The fully qualified name of the controller or resource class. |
 | Method name | The name of the endpoint method. |

@@ -29,8 +29,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
-* [Java security best practices](/recipes/java/security/javasecuritybestpractices.md)
-* [Remediate OWASP A03:2021 Injection](/recipes/java/security/owaspa03.md)
+* [Java security best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/javasecuritybestpractices)
+* [Remediate OWASP A03:2021 Injection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa03)
 
 ## Example
 

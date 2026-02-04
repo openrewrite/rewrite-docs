@@ -67,7 +67,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
-* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
 
 

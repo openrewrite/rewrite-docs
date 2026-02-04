@@ -172,7 +172,7 @@ _Database connections and data access patterns in the application._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Entity ID | Unique identifier for this database entity (format: repository:{className} or entity:{className}). |
+| Entity ID | Unique identifier for this database entity (format: repository:\{className\} or entity:\{className\}). |
 | Source path | The path to the source file containing the database access. |
 | Entity/Table name | The name of the entity or table being accessed. |
 | Entity class | The fully qualified name of the entity class (if applicable). |

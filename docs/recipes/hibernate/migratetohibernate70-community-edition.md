@@ -68,7 +68,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 7.0.x (Moderne Edition)](/recipes/hibernate/migratetohibernate70-moderne-edition.md)
+* [Migrate to Hibernate 7.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate70-moderne-edition)
 * [Migrate to Hibernate 7.1.x (Community Edition)](/recipes/hibernate/migratetohibernate71-community-edition.md)
 
 

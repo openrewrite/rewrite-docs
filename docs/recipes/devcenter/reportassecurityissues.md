@@ -32,7 +32,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [OWASP top ten](/recipes/devcenter/securitystarter.md)
-* [Post quantum cryptography](/recipes/cryptography/postquantumcryptography.md)
+* [Post quantum cryptography](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/postquantumcryptography)
 
 
 ## Usage

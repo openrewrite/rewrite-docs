@@ -5,7 +5,7 @@ sidebar_label: "Replace `context.${method}(*)` with `context.getCamelContextExte
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`
+# Replace `context.$\{method\}(*)` with `context.getCamelContextExtension().$\{method\}(*)`
 
 **org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters**
 

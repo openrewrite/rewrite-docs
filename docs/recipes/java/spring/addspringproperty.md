@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Add MongoDB representation properties for UUID and BigDecimal](/recipes/java/spring/boot4/addmongodbrepresentationproperties.md)
+* [Add MongoDB representation properties for UUID and BigDecimal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmongodbrepresentationproperties)
 * [Enable Virtual Threads on Java 21](/recipes/java/spring/boot3/enablevirtualthreads.md)
 
 ## Example

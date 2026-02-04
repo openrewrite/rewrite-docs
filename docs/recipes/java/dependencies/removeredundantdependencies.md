@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace Spring Framework dependencies with Spring Boot starters](/recipes/java/spring/boot/replacespringframeworkdepswithbootstarters.md)
+* [Replace Spring Framework dependencies with Spring Boot starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot/replacespringframeworkdepswithbootstarters)
 
 ## Example
 

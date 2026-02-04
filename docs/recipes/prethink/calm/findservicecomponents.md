@@ -172,7 +172,7 @@ _Service layer components (@Service, @Component, @Named) in the application._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Entity ID | Unique identifier for this service component (format: service:{className}). |
+| Entity ID | Unique identifier for this service component (format: service:\{className\}). |
 | Source path | The path to the source file containing the service component. |
 | Class name | The fully qualified name of the service component class. |
 | Simple name | The simple class name without package. |

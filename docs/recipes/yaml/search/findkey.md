@@ -32,8 +32,8 @@ This recipe is used as part of the following composite recipes:
 
 * [Find GitLab Component](/recipes/gitlab/search/findcomponent.md)
 * [Find GitLab Template](/recipes/gitlab/search/findtemplate.md)
-* [Find pinned resources by type](/recipes/concourse/search/findpinnedresource.md)
-* [Find privileged `resource_type` definitions](/recipes/concourse/search/findprivilegedresourcetype.md)
+* [Find pinned resources by type](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/concourse/search/findpinnedresource)
+* [Find privileged `resource_type` definitions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/concourse/search/findprivilegedresourcetype)
 
 ## Example
 

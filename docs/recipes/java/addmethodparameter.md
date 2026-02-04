@@ -33,7 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate `DefaultResponseErrorHandler.handleError` method signature](/recipes/java/spring/framework/migratedefaultresponseerrorhandler.md)
+* [Migrate `DefaultResponseErrorHandler.handleError` method signature](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratedefaultresponseerrorhandler)
 
 ## Example
 

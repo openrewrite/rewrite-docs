@@ -35,8 +35,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Hibernate CascadeType constants (Moderne Edition)](/recipes/hibernate/update66/migratecascadetypes.md)
-* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](/recipes/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname.md)
+* [Migrate Hibernate CascadeType constants (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update66/migratecascadetypes)
+* [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname)
 
 
 ## Usage

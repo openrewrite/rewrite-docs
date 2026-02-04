@@ -63,7 +63,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
-* [Upgrade MyBatis to Spring Boot 3.4](/recipes/java/spring/boot3/upgrademybatistospringboot_3_4.md)
+* [Upgrade MyBatis to Spring Boot 3.4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgrademybatistospringboot_3_4)
 
 
 ## Usage

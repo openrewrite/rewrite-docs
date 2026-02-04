@@ -5,7 +5,7 @@ sidebar_label: "Prefer the spread operator over `Array.from()`, `Array#concat()`
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`
+# Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferSpread**
 
