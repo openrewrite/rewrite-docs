@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Find project metadata"
+sidebar_label: "Generate architecture mermaid diagram"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find project metadata
+# Generate architecture mermaid diagram
 
-**io.moderne.prethink.calm.FindProjectMetadata**
+**io.moderne.prethink.calm.GenerateCalmMermaidDiagram**
 
-_Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files._
+_Generate a markdown file with a mermaid architecture diagram from discovered service endpoints, database connections, external service calls, and messaging connections._
 
 ## Recipe source
 
-[GitHub: FindProjectMetadata.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/calm/FindProjectMetadata.java),
+[GitHub: GenerateCalmMermaidDiagram.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/calm/GenerateCalmMermaidDiagram.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
 
@@ -42,7 +42,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("io.moderne.prethink.calm.FindProjectMetadata")
+    activeRecipe("io.moderne.prethink.calm.GenerateCalmMermaidDiagram")
     setExportDatatables(true)
 }
 
@@ -75,7 +75,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
     }
     rewrite {
-        activeRecipe("io.moderne.prethink.calm.FindProjectMetadata")
+        activeRecipe("io.moderne.prethink.calm.GenerateCalmMermaidDiagram")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>io.moderne.prethink.calm.FindProjectMetadata</recipe>
+            <recipe>io.moderne.prethink.calm.GenerateCalmMermaidDiagram</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -133,7 +133,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=io.moderne.prethink.calm.FindProjectMetadata -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=io.moderne.prethink.calm.GenerateCalmMermaidDiagram -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -141,7 +141,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindProjectMetadata
+mod run . --recipe GenerateCalmMermaidDiagram
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -155,7 +155,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.calm.FindProjectMetadata" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.calm.GenerateCalmMermaidDiagram" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -163,24 +163,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.prethink.table.ProjectMetadata" label="ProjectMetadata">
-
-### Project metadata
-**org.openrewrite.prethink.table.ProjectMetadata**
-
-_Project identification including artifact ID, group ID, and name._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source path | The path to the build file (pom.xml or build.gradle). |
-| Artifact ID | The project's artifact ID (Maven) or project name (Gradle). |
-| Group ID | The project's group ID. |
-| Name | The project's display name. |
-| Description | The project's description. |
-| Version | The project's version. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

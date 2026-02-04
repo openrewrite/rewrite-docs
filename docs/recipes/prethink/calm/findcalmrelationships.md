@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Find project metadata"
+sidebar_label: "Find CALM relationships"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find project metadata
+# Find CALM relationships
 
-**io.moderne.prethink.calm.FindProjectMetadata**
+**io.moderne.prethink.calm.FindCalmRelationships**
 
-_Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files._
+_Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships._
 
 ## Recipe source
 
-[GitHub: FindProjectMetadata.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/calm/FindProjectMetadata.java),
+[GitHub: FindCalmRelationships.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/calm/FindCalmRelationships.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
 
@@ -42,7 +42,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("io.moderne.prethink.calm.FindProjectMetadata")
+    activeRecipe("io.moderne.prethink.calm.FindCalmRelationships")
     setExportDatatables(true)
 }
 
@@ -75,7 +75,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
     }
     rewrite {
-        activeRecipe("io.moderne.prethink.calm.FindProjectMetadata")
+        activeRecipe("io.moderne.prethink.calm.FindCalmRelationships")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -110,7 +110,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>io.moderne.prethink.calm.FindProjectMetadata</recipe>
+            <recipe>io.moderne.prethink.calm.FindCalmRelationships</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -133,7 +133,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=io.moderne.prethink.calm.FindProjectMetadata -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=io.moderne.prethink.calm.FindCalmRelationships -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -141,7 +141,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindProjectMetadata
+mod run . --recipe FindCalmRelationships
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -155,7 +155,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.calm.FindProjectMetadata" />
+<RecipeCallout link="https://app.moderne.io/recipes/io.moderne.prethink.calm.FindCalmRelationships" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -163,21 +163,22 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.prethink.table.ProjectMetadata" label="ProjectMetadata">
+<TabItem value="org.openrewrite.prethink.table.CalmRelationships" label="CalmRelationships">
 
-### Project metadata
-**org.openrewrite.prethink.table.ProjectMetadata**
+### CALM relationships
+**org.openrewrite.prethink.table.CalmRelationships**
 
-_Project identification including artifact ID, group ID, and name._
+_Method call graph for discovering relationships between architectural entities. Records all method calls within the repository with entity markers for graph traversal._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Source path | The path to the build file (pom.xml or build.gradle). |
-| Artifact ID | The project's artifact ID (Maven) or project name (Gradle). |
-| Group ID | The project's group ID. |
-| Name | The project's display name. |
-| Description | The project's description. |
-| Version | The project's version. |
+| From class | Fully qualified name of the calling class (enables hash lookup). |
+| From method signature | Full signature of the calling method. |
+| To class | Fully qualified name of the called class (enables hash lookup). |
+| To method signature | Full signature of the called method. |
+| Caller entity ID | Entity ID if the calling class is a known entity, null otherwise. |
+| Called entity ID | Entity ID if the called class is a known entity, null otherwise. |
+| Source path | The source file where the method call was found. |
 
 </TabItem>
 

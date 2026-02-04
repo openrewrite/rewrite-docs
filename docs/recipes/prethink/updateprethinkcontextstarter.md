@@ -13,10 +13,15 @@ _Generate Moderne Prethink context files with AI-generated code comprehension, t
 
 ## Recipe source
 
-This recipe is only available to users of [Moderne](https://docs.moderne.io/).
+[GitHub: UpdatePrethinkContextStarter.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/io/moderne/prethink/UpdatePrethinkContextStarter.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
-This recipe is available under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 ## Options
 
@@ -29,12 +34,253 @@ This recipe is available under the [Moderne Proprietary License](https://docs.mo
 | `Integer` | requestsPerMinute | *Optional*. Rate limit for LLM requests. | `60` |
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Find project metadata](../prethink/calm/findprojectmetadata)
+* [Find service endpoints](../prethink/calm/findserviceendpoints)
+* [Find database connections](../prethink/calm/finddatabaseconnections)
+* [Find external service calls](../prethink/calm/findexternalservicecalls)
+* [Find messaging connections](../prethink/calm/findmessagingconnections)
+* [Find server configuration](../prethink/calm/findserverconfiguration)
+* [Find data assets](../prethink/calm/finddataassets)
+* [Find deployment artifacts](../prethink/calm/finddeploymentartifacts)
+* [Find security configuration](../prethink/calm/findsecurityconfiguration)
+* [Find service components](../prethink/calm/findservicecomponents)
+* [Extract coding conventions](../prethink/extractcodingconventions)
+* [Extract error handling patterns](../prethink/extracterrorpatterns)
+* [Extract dependency usage patterns](../prethink/extractdependencyusage)
+* [Export context files](../prethink/exportcontext)
+  * displayName: `Coding Conventions`
+  * shortDescription: `Naming patterns, import organization, and coding style`
+  * longDescription: `Detected coding conventions including naming patterns (class suffixes, method prefixes), import organization, and documentation coverage. Use this to write code that matches the existing style of the codebase.`
+  * dataTables: `[org.openrewrite.prethink.table.CodingConventions]`
+* [Export context files](../prethink/exportcontext)
+  * displayName: `Error Handling`
+  * shortDescription: `Exception handling strategies and logging patterns`
+  * longDescription: `Error handling patterns detected in the codebase including try-catch usage, exception types, handling strategies (log, rethrow, wrap, recover), and logging frameworks. Use this to handle errors consistently with existing patterns.`
+  * dataTables: `[org.openrewrite.prethink.table.ErrorHandlingPatterns]`
+* [Export context files](../prethink/exportcontext)
+  * displayName: `Library Usage`
+  * shortDescription: `How external libraries and frameworks are used`
+  * longDescription: `Patterns of how external libraries are used throughout the codebase. Shows which classes are commonly imported from each library and typical usage patterns. Use this to use libraries consistently with existing code.`
+  * dataTables: `[org.openrewrite.prethink.table.DependencyUsage]`
+* [Find CALM relationships](../prethink/calm/findcalmrelationships)
+* [Comprehend code with AI](../prethink/comprehendcode)
+  * provider: `poolside`
+  * model: `Malibu-v2.20251021`
+* [Export context files](../prethink/exportcontext)
+  * displayName: `Code Comprehension`
+  * shortDescription: `AI-generated descriptions for classes and methods`
+  * longDescription: `AI-generated descriptions of classes and methods. Use this to quickly understand what code does without reading every line. Particularly helpful for unfamiliar parts of the codebase.`
+  * dataTables: `[io.moderne.prethink.table.MethodDescriptions, io.moderne.prethink.table.ClassDescriptions]`
+* [Find test coverage mapping](../prethink/findtestcoverage)
+  * provider: `poolside`
+  * model: `Malibu-v2.20251021`
+* [Export context files](../prethink/exportcontext)
+  * displayName: `Test Coverage`
+  * shortDescription: `Maps test methods to implementation methods they verify`
+  * longDescription: `Maps test methods to the implementation methods they exercise. Use this to find existing tests for code you're modifying, understand what behaviors are already tested, and identify gaps in test coverage. When an LLM provider is configured, includes AI-generated summaries of what each test verifies.`
+  * dataTables: `[io.moderne.prethink.table.TestMapping]`
+* [Dependency report](../java/dependencies/dependencylist)
+  * scope: `TestRuntime`
+  * includeTransitive: `true`
+  * validateResolvable: `false`
+* [Export context files](../prethink/exportcontext)
+  * displayName: `Dependencies`
+  * shortDescription: `Project dependencies including transitive dependencies`
+  * longDescription: `Complete dependency tree including transitive dependencies. Use this to understand what libraries the project uses and avoid suggesting dependencies that conflict with existing ones.`
+  * dataTables: `[org.openrewrite.java.dependencies.table.DependencyListReport]`
+* [Update Prethink context](../prethink/updateprethinkcontext)
+* [Generate architecture mermaid diagram](../prethink/calm/generatecalmmermaiddiagram)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: io.moderne.prethink.UpdatePrethinkContextStarter
+displayName: Update Prethink context (with AI)
+description: |
+  Generate Moderne Prethink context files with AI-generated code comprehension, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. Maps tests to implementation methods and optionally generates AI summaries of what each test verifies when LLM provider is configured.
+
+
+
+
+
+recipeList:
+  - io.moderne.prethink.calm.FindProjectMetadata
+  - io.moderne.prethink.calm.FindServiceEndpoints
+  - io.moderne.prethink.calm.FindDatabaseConnections
+  - io.moderne.prethink.calm.FindExternalServiceCalls
+  - io.moderne.prethink.calm.FindMessagingConnections
+  - io.moderne.prethink.calm.FindServerConfiguration
+  - io.moderne.prethink.calm.FindDataAssets
+  - io.moderne.prethink.calm.FindDeploymentArtifacts
+  - io.moderne.prethink.calm.FindSecurityConfiguration
+  - io.moderne.prethink.calm.FindServiceComponents
+  - io.moderne.prethink.ExtractCodingConventions
+  - io.moderne.prethink.ExtractErrorPatterns
+  - io.moderne.prethink.ExtractDependencyUsage
+  - org.openrewrite.prethink.ExportContext:
+      displayName: Coding Conventions
+      shortDescription: Naming patterns, import organization, and coding style
+      longDescription: Detected coding conventions including naming patterns (class suffixes, method prefixes), import organization, and documentation coverage. Use this to write code that matches the existing style of the codebase.
+      dataTables: [org.openrewrite.prethink.table.CodingConventions]
+  - org.openrewrite.prethink.ExportContext:
+      displayName: Error Handling
+      shortDescription: Exception handling strategies and logging patterns
+      longDescription: Error handling patterns detected in the codebase including try-catch usage, exception types, handling strategies (log, rethrow, wrap, recover), and logging frameworks. Use this to handle errors consistently with existing patterns.
+      dataTables: [org.openrewrite.prethink.table.ErrorHandlingPatterns]
+  - org.openrewrite.prethink.ExportContext:
+      displayName: Library Usage
+      shortDescription: How external libraries and frameworks are used
+      longDescription: Patterns of how external libraries are used throughout the codebase. Shows which classes are commonly imported from each library and typical usage patterns. Use this to use libraries consistently with existing code.
+      dataTables: [org.openrewrite.prethink.table.DependencyUsage]
+  - io.moderne.prethink.calm.FindCalmRelationships
+  - io.moderne.prethink.ComprehendCode:
+      provider: poolside
+      model: Malibu-v2.20251021
+  - org.openrewrite.prethink.ExportContext:
+      displayName: Code Comprehension
+      shortDescription: AI-generated descriptions for classes and methods
+      longDescription: AI-generated descriptions of classes and methods. Use this to quickly understand what code does without reading every line. Particularly helpful for unfamiliar parts of the codebase.
+      dataTables: [io.moderne.prethink.table.MethodDescriptions, io.moderne.prethink.table.ClassDescriptions]
+  - io.moderne.prethink.FindTestCoverage:
+      provider: poolside
+      model: Malibu-v2.20251021
+  - org.openrewrite.prethink.ExportContext:
+      displayName: Test Coverage
+      shortDescription: Maps test methods to implementation methods they verify
+      longDescription: Maps test methods to the implementation methods they exercise. Use this to find existing tests for code you're modifying, understand what behaviors are already tested, and identify gaps in test coverage. When an LLM provider is configured, includes AI-generated summaries of what each test verifies.
+      dataTables: [io.moderne.prethink.table.TestMapping]
+  - org.openrewrite.java.dependencies.DependencyList:
+      scope: TestRuntime
+      includeTransitive: true
+      validateResolvable: false
+  - org.openrewrite.prethink.ExportContext:
+      displayName: Dependencies
+      shortDescription: Project dependencies including transitive dependencies
+      longDescription: Complete dependency tree including transitive dependencies. Use this to understand what libraries the project uses and avoid suggesting dependencies that conflict with existing ones.
+      dataTables: [org.openrewrite.java.dependencies.table.DependencyListReport]
+  - org.openrewrite.prethink.UpdatePrethinkContext
+  - io.moderne.prethink.calm.GenerateCalmMermaidDiagram
+
+```
+</TabItem>
+</Tabs>
+
 ## Usage
 
-This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-prethink` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
+<TabItem value="gradle" label="Gradle">
 
+1. Add the following to your `build.gradle` file:
 
+```groovy title="build.gradle"
+plugins {
+    id("org.openrewrite.rewrite") version("latest.release")
+}
+
+rewrite {
+    activeRecipe("io.moderne.prethink.UpdatePrethinkContextStarter")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
+}
+```
+
+2. Run `gradle rewriteRun` to run the recipe.
+</TabItem>
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
+    }
+    rewrite {
+        activeRecipe("io.moderne.prethink.UpdatePrethinkContextStarter")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
+
+1. Add the following to your `pom.xml` file:
+
+```xml title="pom.xml"
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.openrewrite.maven</groupId>
+        <artifactId>rewrite-maven-plugin</artifactId>
+        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <configuration>
+          <exportDatatables>true</exportDatatables>
+          <activeRecipes>
+            <recipe>io.moderne.prethink.UpdatePrethinkContextStarter</recipe>
+          </activeRecipes>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.openrewrite.recipe</groupId>
+            <artifactId>rewrite-prethink</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=io.moderne.prethink.UpdatePrethinkContextStarter -Drewrite.exportDatatables=true
+```
+</TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
@@ -45,7 +291,7 @@ mod run . --recipe UpdatePrethinkContextStarter
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install io.moderne.recipe:rewrite-prethink:{{VERSION_IO_MODERNE_RECIPE_REWRITE_PRETHINK}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}
 ```
 </TabItem>
 </Tabs>
