@@ -7,6 +7,5 @@ description: Format OpenRewrite recipes.
 ## Recipes
 
 * [Auto-format JavaScript/TypeScript code](./auto-format.md)
-* [Auto-format JavaScript/TypeScript code](./auto-format.md)
 
 
