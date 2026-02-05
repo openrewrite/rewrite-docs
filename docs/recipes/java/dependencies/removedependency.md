@@ -63,6 +63,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 5.3](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Remove JavaEE dependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
+* [Remove Spring Pulsar Reactive support](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringpulsarreactive)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](/recipes/java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot.md)
 * [Remove spring-jcl dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/removespringjcl)
 * [Remove unnecessary dependencies](/recipes/java/micronaut/removeunnecessarydependencies.md)

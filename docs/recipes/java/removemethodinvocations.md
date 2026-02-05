@@ -32,6 +32,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Avoid using the deprecated empty `finalize()` method in `java.desktop`](/recipes/java/migrate/deletedeprecatedfinalize.md)
 * [Migrate Spring Boot 3.4 deprecated classes and methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/springboot34deprecations)
+* [Migrate deprecated path mapping options](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/removedeprecatedpathmappingoptions)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
@@ -40,6 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
 * [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
+* [Migrate trailing slash matching to explicit routes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratetrailingslashmatch)
 * [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
 * [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
 * [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)
