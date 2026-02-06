@@ -62,8 +62,8 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Remediate OWASP A01:2021 Broken access control](/recipes/java/security/owaspa01.md)
-* [Remediate OWASP A02:2021 Cryptographic failures](/recipes/java/security/owaspa02.md)
+* [Remediate OWASP A01:2021 Broken access control](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa01)
+* [Remediate OWASP A02:2021 Cryptographic failures](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa02)
 
 
 ## Usage

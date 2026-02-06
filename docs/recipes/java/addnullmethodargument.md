@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace deprecated RequestMatcherProvider with new API](/recipes/java/spring/boot4/replacedeprecatedrequestmatcherprovider.md)
+* [Replace deprecated RequestMatcherProvider with new API](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedrequestmatcherprovider)
 
 
 ## Usage

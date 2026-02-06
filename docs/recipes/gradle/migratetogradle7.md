@@ -63,7 +63,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 8 from Gradle 7](/recipes/gradle/migratetogradle8.md)
-* [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](/recipes/java/spring/boot3/upgradegradle7spring34.md)
+* [Upgrade Gradle to 7.6.4+ for Spring Boot 3.4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradegradle7spring34)
 
 
 ## Usage

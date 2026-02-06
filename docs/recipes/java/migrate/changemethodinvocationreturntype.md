@@ -57,7 +57,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate `ConsumerGroupState` to `GroupState`](/recipes/kafka/migrateconsumergroupstatetogroupstate.md)
+* [Migrate `ConsumerGroupState` to `GroupState`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migrateconsumergroupstatetogroupstate)
 
 ## Example
 

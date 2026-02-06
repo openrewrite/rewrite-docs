@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Find Jackson default type mapping enablement](/recipes/java/security/search/findjacksondefaulttypemapping.md)
+* [Find Jackson default type mapping enablement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findjacksondefaulttypemapping)
 * [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
 * [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
 * [Finds uses of `Encryptors.queryableText()`](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)

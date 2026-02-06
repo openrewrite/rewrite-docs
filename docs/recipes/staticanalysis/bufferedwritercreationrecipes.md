@@ -58,7 +58,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Java security best practices](/recipes/java/security/javasecuritybestpractices.md)
+* [Java security best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/javasecuritybestpractices)
 
 ## Example
 

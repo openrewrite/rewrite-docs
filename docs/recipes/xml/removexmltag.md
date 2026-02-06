@@ -33,8 +33,8 @@ This recipe is used as part of the following composite recipes:
 
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
 * [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
-* [Migrate RichFaces tags in `xhtml` files](/recipes/java/jsf/richfaces/update45/updatexhtmltags.md)
-* [Migrate to Spring Boot 4.0 (Moderne Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-moderne-edition.md)
+* [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Remove withJansi Logback configuration](/recipes/java/micronaut/removewithjansilogbackconfiguration.md)
 * [Update Default Servlet Handler for Spring Framework if empty](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)

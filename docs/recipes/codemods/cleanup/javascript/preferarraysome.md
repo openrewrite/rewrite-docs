@@ -5,7 +5,7 @@ sidebar_label: "Prefer `.some()` over `.filter().length` check and `.{find,findL
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`
+# Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`
 
 **org.openrewrite.codemods.cleanup.javascript.PreferArraySome**
 

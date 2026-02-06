@@ -41,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
-* [Migrate to Spring ORM to 5](/recipes/java/spring/orm/springorm5.md)
+* [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
 * [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
 * [Prefer `Integer#compare`](/recipes/java/migrate/guava/preferintegercompare.md)
 * [Prefer `Integer#divideUnsigned`](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)

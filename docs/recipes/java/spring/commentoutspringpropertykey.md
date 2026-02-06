@@ -46,12 +46,12 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Boot properties to 3.4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
 * [Migrate Spring Boot properties to 3.5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
 * [Migrate Spring Boot properties to 4.0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
-* [Migrate Spring Cloud properties to 2020](/recipes/java/spring/cloud2020/springcloudproperties_2020.md)
-* [Migrate Spring Cloud properties to 2021](/recipes/java/spring/cloud2021/springcloudproperties_2021.md)
-* [Migrate Spring Cloud properties to 2022](/recipes/java/spring/cloud2022/springcloudproperties_2022.md)
-* [Migrate Spring Cloud properties to 2023](/recipes/java/spring/cloud2023/springcloudproperties_2023.md)
-* [Migrate Spring Cloud properties to 2024](/recipes/java/spring/cloud2024/springcloudproperties_2024.md)
-* [Migrate Spring Cloud properties to 2025](/recipes/java/spring/cloud2025/springcloudproperties_2025.md)
+* [Migrate Spring Cloud properties to 2020](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2020/springcloudproperties_2020)
+* [Migrate Spring Cloud properties to 2021](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2021/springcloudproperties_2021)
+* [Migrate Spring Cloud properties to 2022](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2022/springcloudproperties_2022)
+* [Migrate Spring Cloud properties to 2023](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2023/springcloudproperties_2023)
+* [Migrate Spring Cloud properties to 2024](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2024/springcloudproperties_2024)
+* [Migrate Spring Cloud properties to 2025](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2025/springcloudproperties_2025)
 
 ## Example
 

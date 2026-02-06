@@ -158,7 +158,7 @@ _Table showing which tools were used to produce LSTs._
 | Build tool version | The version of the build tool which produced the LST. |
 | LST serializer version | The version of LST serializer which produced the LST. |
 | Timestamp (epoch millis) | UTC timestamp describing when the LST was produced, in milliseconds since the unix epoch. |
-| Timestamp | UTC timestamp describing when the LST was produced, in ISO-8601 format. e.g.: "2023‐08‐07T22:24:06+00:00 UTC+00:00" |
+| Timestamp | UTC timestamp describing when the LST was produced, in ISO-8601 format. e.g.: &quot;2023‐08‐07T22:24:06+00:00 UTC+00:00&quot; |
 
 </TabItem>
 

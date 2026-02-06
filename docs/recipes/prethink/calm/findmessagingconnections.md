@@ -172,7 +172,7 @@ _Message queue producers and consumers in the application._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Entity ID | Unique identifier for this messaging entity (format: messaging:{className}#{methodName}:{role}). |
+| Entity ID | Unique identifier for this messaging entity (format: messaging:\{className\}#\{methodName\}:\{role\}). |
 | Source path | The path to the source file containing the messaging component. |
 | Class name | The fully qualified name of the class containing the listener/producer. |
 | Method name | The name of the method that handles or sends messages. |

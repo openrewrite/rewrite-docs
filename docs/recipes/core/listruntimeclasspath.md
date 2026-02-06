@@ -155,7 +155,7 @@ _Contains a report of the runtime classpath and any other jars found inside each
 | Column Name | Description |
 | ----------- | ----------- |
 | Classpath entry URI | The URI where a particular classpath entry can be found. May point to a jar or a directory containing class files. Local to the system running the recipe. |
-| Classpath entry resource | Path within a classpath entry to a jar file it contains. Resources not ending in "jar" are ignored. |
+| Classpath entry resource | Path within a classpath entry to a jar file it contains. Resources not ending in &quot;jar&quot; are ignored. |
 
 </TabItem>
 

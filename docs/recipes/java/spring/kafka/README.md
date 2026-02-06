@@ -4,11 +4,6 @@ description: Spring Kafka OpenRewrite recipes.
 
 # Spring Kafka
 
-## Categories
-
-* [Consumer](/recipes/java/spring/kafka/consumer)
-* [Producer](/recipes/java/spring/kafka/producer)
-
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

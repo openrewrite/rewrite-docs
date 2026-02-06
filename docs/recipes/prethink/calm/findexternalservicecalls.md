@@ -172,7 +172,7 @@ _Outbound HTTP/REST calls to external services._
 
 | Column Name | Description |
 | ----------- | ----------- |
-| Entity ID | Unique identifier for this external service entity (format: external:{className}). |
+| Entity ID | Unique identifier for this external service entity (format: external:\{className\}). |
 | Source path | The path to the source file containing the external service call. |
 | Client class | The fully qualified name of the class making the external call. |
 | Target service | The name or URL of the target external service. |

@@ -77,7 +77,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
-* [Migrate to Spring Kafka 3.3](/recipes/java/spring/boot3/upgradespringkafka_3_3.md)
+* [Migrate to Spring Kafka 3.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringkafka_3_3)
 
 ## Examples
 ##### Example 1

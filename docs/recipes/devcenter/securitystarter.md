@@ -28,13 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Remediate OWASP A01:2021 Broken access control](../java/security/owaspa01)
-* [Remediate OWASP A02:2021 Cryptographic failures](../java/security/owaspa02)
-* [Remediate OWASP A03:2021 Injection](../java/security/owaspa03)
-* [Remediate OWASP A08:2021 Software and data integrity failures](../java/security/owaspa08)
-* [Regular Expression Denial of Service (ReDOS)](../java/security/regularexpressiondenialofservice)
-* [Zip slip](../java/security/zipslip)
-* [Use secure temporary file creation](../java/security/securetempfilecreation)
+* [Remediate OWASP A01:2021 Broken access control](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa01)
+* [Remediate OWASP A02:2021 Cryptographic failures](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa02)
+* [Remediate OWASP A03:2021 Injection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa03)
+* [Remediate OWASP A08:2021 Software and data integrity failures](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa08)
+* [Regular Expression Denial of Service (ReDOS)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/regularexpressiondenialofservice)
+* [Zip slip](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/zipslip)
+* [Use secure temporary file creation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/securetempfilecreation)
 * [Report as security issues](../devcenter/reportassecurityissues)
   * fixRecipe: `org.openrewrite.java.security.OwaspTopTen`
 

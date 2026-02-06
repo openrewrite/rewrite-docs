@@ -264,7 +264,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Reactor Best Practices](/recipes/reactive/reactor/reactorbestpractices.md)
+* [Reactor Best Practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/reactive/reactor/reactorbestpractices)
 
 
 ## Usage

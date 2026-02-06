@@ -6,9 +6,6 @@ description: Hibernate OpenRewrite recipes.
 
 ## Categories
 
-* [Search](/recipes/hibernate/search)
-* [Update66](/recipes/hibernate/update66)
-* [Update70](/recipes/hibernate/update70)
 * [Validator](/recipes/hibernate/validator)
 
 ## Composite Recipes
@@ -23,13 +20,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Hibernate 6.3.x (Community Edition)](./migratetohibernate63.md)
 * [Migrate to Hibernate 6.4.x (Community Edition)](./migratetohibernate64.md)
 * [Migrate to Hibernate 6.5.x (Community Edition)](./migratetohibernate65.md)
-* [Migrate to Hibernate 6.6.x (Moderne Edition)](./migratetohibernate66-moderne-edition.md)
 * [Migrate to Hibernate 6.6.x (Community Edition)](./migratetohibernate66-community-edition.md)
-* [Migrate to Hibernate 7.0.x (Moderne Edition)](./migratetohibernate70-moderne-edition.md)
 * [Migrate to Hibernate 7.0.x (Community Edition)](./migratetohibernate70-community-edition.md)
-* [Migrate to Hibernate 7.1.x (Moderne Edition)](./migratetohibernate71-moderne-edition.md)
 * [Migrate to Hibernate 7.1.x (Community Edition)](./migratetohibernate71-community-edition.md)
-* [Migrate to Hibernate 7.2.x (Moderne Edition)](./migratetohibernate72.md)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)](./typedescriptortotype.md)
 
 ## Recipes

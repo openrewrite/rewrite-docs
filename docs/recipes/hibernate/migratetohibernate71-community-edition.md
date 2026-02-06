@@ -60,7 +60,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 7.1.x (Moderne Edition)](/recipes/hibernate/migratetohibernate71-moderne-edition.md)
+* [Migrate to Hibernate 7.1.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate71-moderne-edition)
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
 

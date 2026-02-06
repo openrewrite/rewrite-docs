@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Kubernetes API v1.29](/recipes/kubernetes/migrate/migratetoapiv1_29.md)
+* [Migrate to Kubernetes API v1.29](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_29)
 * [Renamed streamCaching to streamCache on the route](/recipes/org/apache/camel/upgrade/camel46/yamstreamcaching.md)
 * [Update Apache Camel configurations keys](/recipes/org/apache/camel/upgrade/customrecipes/propertiesandyamlkeyupdate.md)
 * [io.quarkus.updates.core.quarkus30.ApplicationYml](/recipes/io/quarkus/updates/core/quarkus30/applicationyml.md)

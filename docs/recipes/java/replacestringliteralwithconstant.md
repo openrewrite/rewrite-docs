@@ -31,7 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Kafka 4.1](/recipes/kafka/migratetokafka41.md)
+* [Migrate to Kafka 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka41)
 * [Replace String literals with `HttpHeaders` constants](/recipes/java/spring/http/replacestringliteralswithhttpheadersconstants.md)
 * [Replace String literals with `MediaType` constants](/recipes/java/spring/http/replacestringliteralswithmediatypeconstants.md)
 
