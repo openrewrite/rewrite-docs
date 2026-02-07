@@ -15,6 +15,7 @@ description: Search OpenRewrite recipes.
 * [Find Gradle repository](./findrepository.md)
 * [Find Gradle wrappers](./findgradlewrapper.md)
 * [Gradle dependency insight](./dependencyinsight.md)
+* [Gradle repository order](./findrepositoryorder.md)
 * [List effective Gradle plugin repositories](./effectivegradlepluginrepositories.md)
 * [List effective Gradle project repositories](./effectivegradlerepositories.md)
 * [Module has dependency](./modulehasdependency.md)

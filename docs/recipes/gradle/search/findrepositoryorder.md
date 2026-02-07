@@ -1,87 +1,23 @@
 ---
-sidebar_label: "Use `String` notation for Gradle dependency declarations"
+sidebar_label: "Gradle repository order"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Use `String` notation for Gradle dependency declarations
+# Gradle repository order
 
-**org.openrewrite.gradle.DependencyUseStringNotation**
+**org.openrewrite.gradle.search.FindRepositoryOrder**
 
-_In Gradle, dependencies can be expressed as a `String` like `"groupId:artifactId:version"`, or equivalently as a `Map` like `group: 'groupId', name: 'artifactId', version: 'version'`, or as positional parameters like `("groupId", "artifactId", "version")`. This recipe replaces dependencies represented as `Maps` or positional parameters with an equivalent dependency represented as a `String`, as recommended per the [Gradle best practices for dependencies to use a single GAV](https://docs.gradle.org/8.14.2/userguide/best_practices_dependencies.html#single-gav-string)._
+_Determine the order in which dependencies will be resolved for each `build.gradle` based on its defined repositories as determined when the LST was produced._
 
 ## Recipe source
 
-[GitHub: DependencyUseStringNotation.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/DependencyUseStringNotation.java),
+[GitHub: FindRepositoryOrder.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/search/FindRepositoryOrder.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
-
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="build.gradle" label="build.gradle">
-
-
-###### Before
-```groovy title="build.gradle"
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    api(group: 'org.openrewrite', name: 'rewrite-core', version: 'latest.release')
-    implementation group: 'org.openrewrite', name: 'rewrite-core', version: 'latest.release'
-}
-```
-
-###### After
-```groovy title="build.gradle"
-plugins {
-    id 'java-library'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    api("org.openrewrite:rewrite-core:latest.release")
-    implementation "org.openrewrite:rewrite-core:latest.release"
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- build.gradle
-+++ build.gradle
-@@ -10,2 +10,2 @@
-
-dependencies {
--   api(group: 'org.openrewrite', name: 'rewrite-core', version: 'latest.release')
--   implementation group: 'org.openrewrite', name: 'rewrite-core', version: 'latest.release'
-+   api("org.openrewrite:rewrite-core:latest.release")
-+   implementation "org.openrewrite:rewrite-core:latest.release"
-}
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage
@@ -98,7 +34,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.gradle.DependencyUseStringNotation")
+    activeRecipe("org.openrewrite.gradle.search.FindRepositoryOrder")
     setExportDatatables(true)
 }
 
@@ -127,7 +63,7 @@ rootProject {
         rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.openrewrite.gradle.DependencyUseStringNotation")
+        activeRecipe("org.openrewrite.gradle.search.FindRepositoryOrder")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -152,7 +88,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DependencyUseStringNotation
+mod run . --recipe FindRepositoryOrder
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -166,7 +102,7 @@ mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPEN
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.DependencyUseStringNotation" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.search.FindRepositoryOrder" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -174,6 +110,22 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenRepositoryOrder" label="MavenRepositoryOrder">
+
+### Maven repository order
+**org.openrewrite.maven.table.MavenRepositoryOrder**
+
+_The order in which dependencies will be resolved for each `pom.xml` based on its defined repositories and effective `settings.xml`._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Repository ID | The ID of the repository. Note that projects may define the same physical repository with different IDs. |
+| Repository URI | The URI of the repository. |
+| Known to exist | If the repository is provably reachable. If false, does not guarantee that the repository does not exist. |
+| Rank | The index order of this repository in the repository list. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

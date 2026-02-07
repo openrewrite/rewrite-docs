@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4756
+Total recipes: 4717
 
 
 ## io.moderne.recipe:rewrite-devcenter
@@ -1818,155 +1818,80 @@ _8 recipes_
 
 _License: Moderne Source Available License_
 
-_50 recipes_
+_25 recipes_
 
 * [io.moderne.prethink.ComprehendCode](/recipes/prethink/comprehendcode.md)
   * **Comprehend code with AI**
   * Use an LLM to generate descriptions for classes and methods in the codebase. Descriptions are cached based on source code checksums to avoid regenerating descriptions for unchanged code.
-* [io.moderne.prethink.ComprehendCode](/recipes/prethink/comprehendcode.md)
-  * **Comprehend code with AI**
-  * Use an LLM to generate descriptions for classes and methods in the codebase. Descriptions are cached based on source code checksums to avoid regenerating descriptions for unchanged code.
-* [io.moderne.prethink.ComprehendCodeTokenCounter](/recipes/prethink/comprehendcodetokencounter.md)
-  * **Estimate comprehension token usage**
-  * Estimate the input token counts that would be sent to an LLM for method comprehension, without actually calling a model. Uses OpenAI's tokenizer locally. Outputs to the MethodDescriptions table with blank descriptions.
 * [io.moderne.prethink.ComprehendCodeTokenCounter](/recipes/prethink/comprehendcodetokencounter.md)
   * **Estimate comprehension token usage**
   * Estimate the input token counts that would be sent to an LLM for method comprehension, without actually calling a model. Uses OpenAI's tokenizer locally. Outputs to the MethodDescriptions table with blank descriptions.
 * [io.moderne.prethink.ExtractCodingConventions](/recipes/prethink/extractcodingconventions.md)
   * **Extract coding conventions**
   * Analyze the codebase to extract coding conventions including naming patterns, import organization, and documentation patterns.
-* [io.moderne.prethink.ExtractCodingConventions](/recipes/prethink/extractcodingconventions.md)
-  * **Extract coding conventions**
-  * Analyze the codebase to extract coding conventions including naming patterns, import organization, and documentation patterns.
-* [io.moderne.prethink.ExtractDependencyUsage](/recipes/prethink/extractdependencyusage.md)
-  * **Extract dependency usage patterns**
-  * Analyze the codebase to extract dependency usage patterns by examining which types from external libraries are actually used in the code.
 * [io.moderne.prethink.ExtractDependencyUsage](/recipes/prethink/extractdependencyusage.md)
   * **Extract dependency usage patterns**
   * Analyze the codebase to extract dependency usage patterns by examining which types from external libraries are actually used in the code.
 * [io.moderne.prethink.ExtractErrorPatterns](/recipes/prethink/extracterrorpatterns.md)
   * **Extract error handling patterns**
   * Analyze the codebase to extract error handling patterns including exception types, handling strategies, and logging frameworks used.
-* [io.moderne.prethink.ExtractErrorPatterns](/recipes/prethink/extracterrorpatterns.md)
-  * **Extract error handling patterns**
-  * Analyze the codebase to extract error handling patterns including exception types, handling strategies, and logging frameworks used.
-* [io.moderne.prethink.FindTestCoverage](/recipes/prethink/findtestcoverage.md)
-  * **Find test coverage mapping**
-  * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured.
 * [io.moderne.prethink.FindTestCoverage](/recipes/prethink/findtestcoverage.md)
   * **Find test coverage mapping**
   * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured.
 * [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](/recipes/prethink/updateprethinkcontextnoaistarter.md)
   * **Update Prethink context (no AI)**
   * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. This recipe does not require an LLM provider - use UpdatePrethinkContextStarter if you want AI-generated code comprehension and test summaries.
-* [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](/recipes/prethink/updateprethinkcontextnoaistarter.md)
-  * **Update Prethink context (no AI)**
-  * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. This recipe does not require an LLM provider - use UpdatePrethinkContextStarter if you want AI-generated code comprehension and test summaries.
-* [io.moderne.prethink.UpdatePrethinkContextStarter](/recipes/prethink/updateprethinkcontextstarter.md)
-  * **Update Prethink context (with AI)**
-  * Generate Moderne Prethink context files with AI-generated code comprehension, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. Maps tests to implementation methods and optionally generates AI summaries of what each test verifies when LLM provider is configured.
 * [io.moderne.prethink.UpdatePrethinkContextStarter](/recipes/prethink/updateprethinkcontextstarter.md)
   * **Update Prethink context (with AI)**
   * Generate Moderne Prethink context files with AI-generated code comprehension, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. Maps tests to implementation methods and optionally generates AI summaries of what each test verifies when LLM provider is configured.
 * [io.moderne.prethink.calm.FindCalmRelationships](/recipes/prethink/calm/findcalmrelationships.md)
   * **Find CALM relationships**
   * Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships.
-* [io.moderne.prethink.calm.FindCalmRelationships](/recipes/prethink/calm/findcalmrelationships.md)
-  * **Find CALM relationships**
-  * Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships.
-* [io.moderne.prethink.calm.FindDataAssets](/recipes/prethink/calm/finddataassets.md)
-  * **Find data assets**
-  * Identify data assets including JPA entities, MongoDB documents, Java records, and DTOs in the application.
 * [io.moderne.prethink.calm.FindDataAssets](/recipes/prethink/calm/finddataassets.md)
   * **Find data assets**
   * Identify data assets including JPA entities, MongoDB documents, Java records, and DTOs in the application.
 * [io.moderne.prethink.calm.FindDatabaseConnections](/recipes/prethink/calm/finddatabaseconnections.md)
   * **Find database connections**
   * Identify database connections and data access patterns in the application. Detects JPA entities, Spring Data repositories, JDBC templates, and MyBatis mappers.
-* [io.moderne.prethink.calm.FindDatabaseConnections](/recipes/prethink/calm/finddatabaseconnections.md)
-  * **Find database connections**
-  * Identify database connections and data access patterns in the application. Detects JPA entities, Spring Data repositories, JDBC templates, and MyBatis mappers.
-* [io.moderne.prethink.calm.FindDeploymentArtifacts](/recipes/prethink/calm/finddeploymentartifacts.md)
-  * **Find deployment artifacts**
-  * Identify deployment artifacts including Dockerfiles, docker-compose files, and Kubernetes manifests.
 * [io.moderne.prethink.calm.FindDeploymentArtifacts](/recipes/prethink/calm/finddeploymentartifacts.md)
   * **Find deployment artifacts**
   * Identify deployment artifacts including Dockerfiles, docker-compose files, and Kubernetes manifests.
 * [io.moderne.prethink.calm.FindExternalServiceCalls](/recipes/prethink/calm/findexternalservicecalls.md)
   * **Find external service calls**
   * Identify outbound HTTP calls to external services. Detects RestTemplate, WebClient, Feign clients, Apache HttpClient, OkHttp, and JAX-RS clients.
-* [io.moderne.prethink.calm.FindExternalServiceCalls](/recipes/prethink/calm/findexternalservicecalls.md)
-  * **Find external service calls**
-  * Identify outbound HTTP calls to external services. Detects RestTemplate, WebClient, Feign clients, Apache HttpClient, OkHttp, and JAX-RS clients.
-* [io.moderne.prethink.calm.FindMessagingConnections](/recipes/prethink/calm/findmessagingconnections.md)
-  * **Find messaging connections**
-  * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, and AWS SQS messaging.
 * [io.moderne.prethink.calm.FindMessagingConnections](/recipes/prethink/calm/findmessagingconnections.md)
   * **Find messaging connections**
   * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, and AWS SQS messaging.
 * [io.moderne.prethink.calm.FindProjectMetadata](/recipes/prethink/calm/findprojectmetadata.md)
   * **Find project metadata**
   * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
-* [io.moderne.prethink.calm.FindProjectMetadata](/recipes/prethink/calm/findprojectmetadata.md)
-  * **Find project metadata**
-  * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
-* [io.moderne.prethink.calm.FindSecurityConfiguration](/recipes/prethink/calm/findsecurityconfiguration.md)
-  * **Find security configuration**
-  * Identify security configurations including Spring Security, OAuth2, and CORS settings.
 * [io.moderne.prethink.calm.FindSecurityConfiguration](/recipes/prethink/calm/findsecurityconfiguration.md)
   * **Find security configuration**
   * Identify security configurations including Spring Security, OAuth2, and CORS settings.
 * [io.moderne.prethink.calm.FindServerConfiguration](/recipes/prethink/calm/findserverconfiguration.md)
   * **Find server configuration**
   * Extract server configuration (port, SSL, context path) from application.properties and application.yml files.
-* [io.moderne.prethink.calm.FindServerConfiguration](/recipes/prethink/calm/findserverconfiguration.md)
-  * **Find server configuration**
-  * Extract server configuration (port, SSL, context path) from application.properties and application.yml files.
-* [io.moderne.prethink.calm.FindServiceComponents](/recipes/prethink/calm/findservicecomponents.md)
-  * **Find service components**
-  * Identify service layer components (@Service, @Component, @Named) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
 * [io.moderne.prethink.calm.FindServiceComponents](/recipes/prethink/calm/findservicecomponents.md)
   * **Find service components**
   * Identify service layer components (@Service, @Component, @Named) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
 * [io.moderne.prethink.calm.FindServiceEndpoints](/recipes/prethink/calm/findserviceendpoints.md)
   * **Find service endpoints**
   * Identify all REST/HTTP service endpoints exposed by the application. Supports Spring MVC, JAX-RS, Micronaut, and Quarkus REST endpoints.
-* [io.moderne.prethink.calm.FindServiceEndpoints](/recipes/prethink/calm/findserviceendpoints.md)
-  * **Find service endpoints**
-  * Identify all REST/HTTP service endpoints exposed by the application. Supports Spring MVC, JAX-RS, Micronaut, and Quarkus REST endpoints.
-* [io.moderne.prethink.calm.GenerateCalmMermaidDiagram](/recipes/prethink/calm/generatecalmmermaiddiagram.md)
-  * **Generate architecture mermaid diagram**
-  * Generate a markdown file with a mermaid architecture diagram from discovered service endpoints, database connections, external service calls, and messaging connections.
 * [io.moderne.prethink.calm.GenerateCalmMermaidDiagram](/recipes/prethink/calm/generatecalmmermaiddiagram.md)
   * **Generate architecture mermaid diagram**
   * Generate a markdown file with a mermaid architecture diagram from discovered service endpoints, database connections, external service calls, and messaging connections.
 * [org.openrewrite.prethink.ExportContext](/recipes/prethink/exportcontext.md)
   * **Export context files**
   * Export DataTables to CSV files in `.moderne/context/` along with a markdown description file. The markdown file describes the context and includes schema information for each data table.
-* [org.openrewrite.prethink.ExportContext](/recipes/prethink/exportcontext.md)
-  * **Export context files**
-  * Export DataTables to CSV files in `.moderne/context/` along with a markdown description file. The markdown file describes the context and includes schema information for each data table.
-* [org.openrewrite.prethink.UpdateAgentConfig](/recipes/prethink/updateagentconfig.md)
-  * **Update agent configuration files**
-  * Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/.
 * [org.openrewrite.prethink.UpdateAgentConfig](/recipes/prethink/updateagentconfig.md)
   * **Update agent configuration files**
   * Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/.
 * [org.openrewrite.prethink.UpdateGitignore](/recipes/prethink/updategitignore.md)
   * **Update .gitignore for Prethink context**
   * Updates .gitignore to allow committing the `.moderne/context/` directory while ignoring other files in `.moderne/`. Transforms `.moderne/` into `.moderne/*` with an exception for `!.moderne/context/`.
-* [org.openrewrite.prethink.UpdateGitignore](/recipes/prethink/updategitignore.md)
-  * **Update .gitignore for Prethink context**
-  * Updates .gitignore to allow committing the `.moderne/context/` directory while ignoring other files in `.moderne/`. Transforms `.moderne/` into `.moderne/*` with an exception for `!.moderne/context/`.
 * [org.openrewrite.prethink.UpdatePrethinkContext](/recipes/prethink/updateprethinkcontext.md)
   * **Update Prethink context**
   * Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
-* [org.openrewrite.prethink.UpdatePrethinkContext](/recipes/prethink/updateprethinkcontext.md)
-  * **Update Prethink context**
-  * Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
-* [org.openrewrite.prethink.calm.GenerateCalmArchitecture](/recipes/prethink/calm/generatecalmarchitecture.md)
-  * **Generate CALM architecture**
-  * Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections.
 * [org.openrewrite.prethink.calm.GenerateCalmArchitecture](/recipes/prethink/calm/generatecalmarchitecture.md)
   * **Generate CALM architecture**
   * Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections.
@@ -9713,7 +9638,7 @@ _570 recipes_
 
 _License: Apache License Version 2.0_
 
-_52 recipes_
+_53 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -9756,7 +9681,7 @@ _52 recipes_
   * In Gradle, dependencies can be expressed as a `String` like `&quot;groupId:artifactId:version&quot;`, or equivalently as a `Map` like `group: 'groupId', name: 'artifactId', version: 'version'` (groovy) or `group = &quot;groupId&quot;, name = &quot;artifactId&quot;, version = &quot;version&quot;` (kotlin). This recipe replaces dependencies represented as `Strings` with an equivalent dependency represented as a `Map`.
 * [org.openrewrite.gradle.DependencyUseStringNotation](/recipes/gradle/dependencyusestringnotation.md)
   * **Use `String` notation for Gradle dependency declarations**
-  * In Gradle, dependencies can be expressed as a `String` like `&quot;groupId:artifactId:version&quot;`, or equivalently as a `Map` like `group: 'groupId', name: 'artifactId', version: 'version'`. This recipe replaces dependencies represented as `Maps` with an equivalent dependency represented as a `String`, as recommended per the [Gradle best practices for dependencies to use a single GAV](https://docs.gradle.org/8.14.2/userguide/best_practices_dependencies.html#single-gav-string).
+  * In Gradle, dependencies can be expressed as a `String` like `&quot;groupId:artifactId:version&quot;`, or equivalently as a `Map` like `group: 'groupId', name: 'artifactId', version: 'version'`, or as positional parameters like `(&quot;groupId&quot;, &quot;artifactId&quot;, &quot;version&quot;)`. This recipe replaces dependencies represented as `Maps` or positional parameters with an equivalent dependency represented as a `String`, as recommended per the [Gradle best practices for dependencies to use a single GAV](https://docs.gradle.org/8.14.2/userguide/best_practices_dependencies.html#single-gav-string).
 * [org.openrewrite.gradle.EnableDevelocityBuildCache](/recipes/gradle/enabledevelocitybuildcache.md)
   * **Enable Develocity build cache**
   * Adds `buildCache` configuration to `develocity` where not yet present.
@@ -9862,6 +9787,9 @@ _52 recipes_
 * [org.openrewrite.gradle.search.FindRepository](/recipes/gradle/search/findrepository.md)
   * **Find Gradle repository**
   * Find a Gradle repository by url.
+* [org.openrewrite.gradle.search.FindRepositoryOrder](/recipes/gradle/search/findrepositoryorder.md)
+  * **Gradle repository order**
+  * Determine the order in which dependencies will be resolved for each `build.gradle` based on its defined repositories as determined when the LST was produced.
 * [org.openrewrite.gradle.search.ModuleHasDependency](/recipes/gradle/search/modulehasdependency.md)
   * **Module has dependency**
   * Searches for Gradle Projects (modules) that have a dependency matching the specified id or implementing class. Places a `SearchResult` marker on all sources within a project with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file that use the dependency, use the `FindDependency` recipe instead.
@@ -10775,7 +10703,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1276 recipes_
+_1261 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -14011,90 +13939,45 @@ _1276 recipes_
 * [org.openrewrite.javascript.change-import](/recipes/javascript/change-import.md)
   * **Change import**
   * Changes an import from one module/member to another, updating all type attributions.
-* [org.openrewrite.javascript.change-import](/recipes/javascript/change-import.md)
-  * **Change import**
-  * Changes an import from one module/member to another, updating all type attributions.
-* [org.openrewrite.javascript.cleanup.add-parse-int-radix](/recipes/javascript/cleanup/add-parse-int-radix.md)
-  * **Add radix to `parseInt`**
-  * Adds the radix parameter (base 10) to `parseInt()` calls that are missing it, preventing potential parsing issues.
 * [org.openrewrite.javascript.cleanup.add-parse-int-radix](/recipes/javascript/cleanup/add-parse-int-radix.md)
   * **Add radix to `parseInt`**
   * Adds the radix parameter (base 10) to `parseInt()` calls that are missing it, preventing potential parsing issues.
 * [org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method](/recipes/javascript/cleanup/async-callback-in-sync-array-method.md)
   * **Detect async callbacks in synchronous array methods**
   * Detects async callbacks passed to array methods like .some(), .every(), .filter() which don't await promises. This is a common bug where Promise objects are always truthy.
-* [org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method](/recipes/javascript/cleanup/async-callback-in-sync-array-method.md)
-  * **Detect async callbacks in synchronous array methods**
-  * Detects async callbacks passed to array methods like .some(), .every(), .filter() which don't await promises. This is a common bug where Promise objects are always truthy.
-* [org.openrewrite.javascript.cleanup.order-imports](/recipes/javascript/cleanup/order-imports.md)
-  * **Order imports**
-  * Sort imports by category and module path. Categories: side-effect, namespace, default, named, type. Within each category, imports are sorted alphabetically by module path. Named specifiers within each import are also sorted alphabetically.
 * [org.openrewrite.javascript.cleanup.order-imports](/recipes/javascript/cleanup/order-imports.md)
   * **Order imports**
   * Sort imports by category and module path. Categories: side-effect, namespace, default, named, type. Within each category, imports are sorted alphabetically by module path. Named specifiers within each import are also sorted alphabetically.
 * [org.openrewrite.javascript.cleanup.prefer-optional-chain](/recipes/javascript/cleanup/prefer-optional-chain.md)
   * **Prefer optional chaining**
   * Converts ternary expressions like `foo ? foo.bar : undefined` to use optional chaining syntax `foo?.bar`.
-* [org.openrewrite.javascript.cleanup.prefer-optional-chain](/recipes/javascript/cleanup/prefer-optional-chain.md)
-  * **Prefer optional chaining**
-  * Converts ternary expressions like `foo ? foo.bar : undefined` to use optional chaining syntax `foo?.bar`.
-* [org.openrewrite.javascript.cleanup.use-object-property-shorthand](/recipes/javascript/cleanup/use-object-property-shorthand.md)
-  * **Use object property shorthand**
-  * Simplifies object properties where the property name and value/variable name are the same (e.g., `\{ x: x \}` becomes `\{ x \}`). Applies to both destructuring patterns and object literals.
 * [org.openrewrite.javascript.cleanup.use-object-property-shorthand](/recipes/javascript/cleanup/use-object-property-shorthand.md)
   * **Use object property shorthand**
   * Simplifies object properties where the property name and value/variable name are the same (e.g., `\{ x: x \}` becomes `\{ x \}`). Applies to both destructuring patterns and object literals.
 * [org.openrewrite.javascript.dependencies.add-dependency](/recipes/javascript/dependencies/add-dependency.md)
   * **Add npm dependency**
   * Adds a new dependency to `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.add-dependency](/recipes/javascript/dependencies/add-dependency.md)
-  * **Add npm dependency**
-  * Adds a new dependency to `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.find-dependency](/recipes/javascript/dependencies/find-dependency.md)
-  * **Find Node.js dependency**
-  * Finds dependencies in a project's `package.json`. Can find both direct dependencies and dependencies that transitively include the target package. This recipe is commonly used as a precondition for other recipes.
 * [org.openrewrite.javascript.dependencies.find-dependency](/recipes/javascript/dependencies/find-dependency.md)
   * **Find Node.js dependency**
   * Finds dependencies in a project's `package.json`. Can find both direct dependencies and dependencies that transitively include the target package. This recipe is commonly used as a precondition for other recipes.
 * [org.openrewrite.javascript.dependencies.upgrade-dependency-version](/recipes/javascript/dependencies/upgrade-dependency-version.md)
   * **Upgrade npm dependency version**
   * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](/recipes/javascript/dependencies/upgrade-dependency-version.md)
-  * **Upgrade npm dependency version**
-  * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](/recipes/javascript/dependencies/upgrade-transitive-dependency-version.md)
-  * **Upgrade transitive npm dependency version**
-  * Upgrades the version of a transitive dependency by adding override/resolution entries to `package.json` and updates the lock file by running the package manager.
 * [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](/recipes/javascript/dependencies/upgrade-transitive-dependency-version.md)
   * **Upgrade transitive npm dependency version**
   * Upgrades the version of a transitive dependency by adding override/resolution entries to `package.json` and updates the lock file by running the package manager.
 * [org.openrewrite.javascript.format.auto-format](/recipes/javascript/format/auto-format.md)
   * **Auto-format JavaScript/TypeScript code**
   * Format JavaScript and TypeScript code using formatting rules auto-detected from the project's existing code style.
-* [org.openrewrite.javascript.format.auto-format](/recipes/javascript/format/auto-format.md)
-  * **Auto-format JavaScript/TypeScript code**
-  * Format JavaScript and TypeScript code using formatting rules auto-detected from the project's existing code style.
-* [org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences](/recipes/javascript/migrate/es6/modernize-octal-escape-sequences.md)
-  * **Modernize octal escape sequences**
-  * Convert old-style octal escape sequences (e.g., `\0`, `\123`) to modern hex escape sequences (e.g., `\x00`, `\x53`) or Unicode escape sequences (e.g., `\u0000`, `\u0053`).
 * [org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences](/recipes/javascript/migrate/es6/modernize-octal-escape-sequences.md)
   * **Modernize octal escape sequences**
   * Convert old-style octal escape sequences (e.g., `\0`, `\123`) to modern hex escape sequences (e.g., `\x00`, `\x53`) or Unicode escape sequences (e.g., `\u0000`, `\u0053`).
 * [org.openrewrite.javascript.migrate.es6.modernize-octal-literals](/recipes/javascript/migrate/es6/modernize-octal-literals.md)
   * **Modernize octal literals**
   * Convert old-style octal literals (e.g., `0777`) to modern ES6 syntax (e.g., `0o777`).
-* [org.openrewrite.javascript.migrate.es6.modernize-octal-literals](/recipes/javascript/migrate/es6/modernize-octal-literals.md)
-  * **Modernize octal literals**
-  * Convert old-style octal literals (e.g., `0777`) to modern ES6 syntax (e.g., `0o777`).
 * [org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys](/recipes/javascript/migrate/es6/remove-duplicate-object-keys.md)
   * **Remove duplicate object keys**
   * Remove duplicate keys in object literals, keeping only the last occurrence (last-wins semantics).
-* [org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys](/recipes/javascript/migrate/es6/remove-duplicate-object-keys.md)
-  * **Remove duplicate object keys**
-  * Remove duplicate keys in object literals, keeping only the last occurrence (last-wins semantics).
-* [org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default](/recipes/javascript/migrate/typescript/export-assignment-to-export-default.md)
-  * **Convert `export =` to `export default`**
-  * Converts TypeScript `export =` syntax to ES module `export default` syntax for compatibility with ECMAScript modules.
 * [org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default](/recipes/javascript/migrate/typescript/export-assignment-to-export-default.md)
   * **Convert `export =` to `export default`**
   * Converts TypeScript `export =` syntax to ES module `export default` syntax for compatibility with ECMAScript modules.

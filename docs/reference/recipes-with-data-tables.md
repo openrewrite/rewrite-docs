@@ -512,6 +512,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.gradle.table.JVMTestSuitesDefined**: *The Gradle `JVMTestSuites` that are configured in a build.*
 
 
+### [org.openrewrite.gradle.search.FindRepositoryOrder](/recipes/gradle/search/findrepositoryorder.md)
+  * **Gradle repository order**
+  * Determine the order in which dependencies will be resolved for each `build.gradle` based on its defined repositories as determined when the LST was produced.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenRepositoryOrder**: *The order in which dependencies will be resolved for each `pom.xml` based on its defined repositories and effective `settings.xml`.*
+
+
 ### [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
   * Add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used.
@@ -4556,169 +4565,6 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-### [io.moderne.prethink.ExtractCodingConventions](/recipes/prethink/extractcodingconventions.md)
-  * **Extract coding conventions**
-  * Analyze the codebase to extract coding conventions including naming patterns, import organization, and documentation patterns.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.CodingConventions**: *Coding conventions and patterns detected in the codebase.*
-
-
-### [io.moderne.prethink.ExtractDependencyUsage](/recipes/prethink/extractdependencyusage.md)
-  * **Extract dependency usage patterns**
-  * Analyze the codebase to extract dependency usage patterns by examining which types from external libraries are actually used in the code.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.DependencyUsage**: *External library dependencies and how they are used in the codebase.*
-
-
-### [io.moderne.prethink.ExtractErrorPatterns](/recipes/prethink/extracterrorpatterns.md)
-  * **Extract error handling patterns**
-  * Analyze the codebase to extract error handling patterns including exception types, handling strategies, and logging frameworks used.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.ErrorHandlingPatterns**: *Error and exception handling patterns detected in the codebase.*
-
-
-### [io.moderne.prethink.calm.FindDataAssets](/recipes/prethink/calm/finddataassets.md)
-  * **Find data assets**
-  * Identify data assets including JPA entities, MongoDB documents, Java records, and DTOs in the application.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.DataAssets**: *Data entities, DTOs, and records that represent the application's data model.*
-
-
-### [io.moderne.prethink.calm.FindDatabaseConnections](/recipes/prethink/calm/finddatabaseconnections.md)
-  * **Find database connections**
-  * Identify database connections and data access patterns in the application. Detects JPA entities, Spring Data repositories, JDBC templates, and MyBatis mappers.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.DatabaseConnections**: *Database connections and data access patterns in the application.*
-
-
-### [io.moderne.prethink.calm.FindDeploymentArtifacts](/recipes/prethink/calm/finddeploymentartifacts.md)
-  * **Find deployment artifacts**
-  * Identify deployment artifacts including Dockerfiles, docker-compose files, and Kubernetes manifests.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.DeploymentArtifacts**: *Deployment configuration files (Dockerfile, Kubernetes manifests, docker-compose).*
-
-
-### [io.moderne.prethink.calm.FindExternalServiceCalls](/recipes/prethink/calm/findexternalservicecalls.md)
-  * **Find external service calls**
-  * Identify outbound HTTP calls to external services. Detects RestTemplate, WebClient, Feign clients, Apache HttpClient, OkHttp, and JAX-RS clients.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.ExternalServiceCalls**: *Outbound HTTP/REST calls to external services.*
-
-
-### [io.moderne.prethink.calm.FindMessagingConnections](/recipes/prethink/calm/findmessagingconnections.md)
-  * **Find messaging connections**
-  * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, and AWS SQS messaging.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.MessagingConnections**: *Message queue producers and consumers in the application.*
-
-
-### [io.moderne.prethink.calm.FindProjectMetadata](/recipes/prethink/calm/findprojectmetadata.md)
-  * **Find project metadata**
-  * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.ProjectMetadata**: *Project identification including artifact ID, group ID, and name.*
-
-
-### [io.moderne.prethink.calm.FindSecurityConfiguration](/recipes/prethink/calm/findsecurityconfiguration.md)
-  * **Find security configuration**
-  * Identify security configurations including Spring Security, OAuth2, and CORS settings.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.SecurityConfiguration**: *Security configuration including authentication methods, CORS settings, and OAuth2 configuration.*
-
-
-### [io.moderne.prethink.calm.FindServerConfiguration](/recipes/prethink/calm/findserverconfiguration.md)
-  * **Find server configuration**
-  * Extract server configuration (port, SSL, context path) from application.properties and application.yml files.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.ServerConfiguration**: *Server configuration properties extracted from application.properties/yml.*
-
-
-### [io.moderne.prethink.calm.FindServiceComponents](/recipes/prethink/calm/findservicecomponents.md)
-  * **Find service components**
-  * Identify service layer components (@Service, @Component, @Named) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.ServiceComponents**: *Service layer components (@Service, @Component, @Named) in the application.*
-
-
-### [io.moderne.prethink.calm.FindServiceEndpoints](/recipes/prethink/calm/findserviceendpoints.md)
-  * **Find service endpoints**
-  * Identify all REST/HTTP service endpoints exposed by the application. Supports Spring MVC, JAX-RS, Micronaut, and Quarkus REST endpoints.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.ServiceEndpoints**: *REST/HTTP endpoints exposed by the application.*
-
-
-### [io.moderne.prethink.ComprehendCode](/recipes/prethink/comprehendcode.md)
-  * **Comprehend code with AI**
-  * Use an LLM to generate descriptions for classes and methods in the codebase. Descriptions are cached based on source code checksums to avoid regenerating descriptions for unchanged code.
-
-#### Data tables:
-
-  * **io.moderne.prethink.table.MethodDescriptions**: *AI-generated descriptions of methods in the codebase with inference time and token usage metrics.*
-  * **io.moderne.prethink.table.ClassDescriptions**: *AI-generated descriptions of classes in the codebase with inference time and token usage metrics.*
-
-
-### [io.moderne.prethink.ComprehendCodeTokenCounter](/recipes/prethink/comprehendcodetokencounter.md)
-  * **Estimate comprehension token usage**
-  * Estimate the input token counts that would be sent to an LLM for method comprehension, without actually calling a model. Uses OpenAI's tokenizer locally. Outputs to the MethodDescriptions table with blank descriptions.
-
-#### Data tables:
-
-  * **io.moderne.prethink.table.MethodDescriptions**: *AI-generated descriptions of methods in the codebase with inference time and token usage metrics.*
-
-
-### [io.moderne.prethink.FindTestCoverage](/recipes/prethink/findtestcoverage.md)
-  * **Find test coverage mapping**
-  * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured.
-
-#### Data tables:
-
-  * **io.moderne.prethink.table.TestMapping**: *Maps test methods to implementation methods with optional AI-generated summaries and inference metrics.*
-
-
-### [io.moderne.prethink.calm.FindCalmRelationships](/recipes/prethink/calm/findcalmrelationships.md)
-  * **Find CALM relationships**
-  * Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.CalmRelationships**: *Method call graph for discovering relationships between architectural entities. Records all method calls within the repository with entity markers for graph traversal.*
-
-
-### [org.openrewrite.prethink.UpdateAgentConfig](/recipes/prethink/updateagentconfig.md)
-  * **Update agent configuration files**
-  * Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/.
-
-#### Data tables:
-
-  * **org.openrewrite.prethink.table.ContextRegistry**: *Registry of available context files for coding agents.*
 
 
 ### [org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration](/recipes/quarkus/migrate/javaee/javaeetoquarkus2migration.md)
