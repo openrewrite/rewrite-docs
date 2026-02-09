@@ -1,84 +1,42 @@
 ---
-sidebar_label: "Find uses of docker base images"
+sidebar_label: "Use exec form for `ENTRYPOINT` and `CMD`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find uses of docker base images
+# Use exec form for `ENTRYPOINT` and `CMD`
 
-**org.openrewrite.docker.search.FindDockerImageUses**
+**org.openrewrite.docker.UseExecFormEntrypoint**
 
-_Produce an impact analysis of base images used in Dockerfiles, .gitlab-ci files, Kubernetes Deployment file, etc._
+_Converts shell form `ENTRYPOINT` and `CMD` instructions to exec form (JSON array). Exec form is preferred because it runs the command as PID 1, allowing it to receive Unix signals properly. Shell form wraps commands in `/bin/sh -c` which can cause signal handling issues._
 
 ## Recipe source
 
-[GitHub: FindDockerImageUses.java](https://github.com/openrewrite/rewrite-docker/blob/main/src/main/java/org/openrewrite/docker/search/FindDockerImageUses.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-docker/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-docker/)
+[GitHub: UseExecFormEntrypoint.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/docker/UseExecFormEntrypoint.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Example
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `Boolean` | convertEntrypoint | *Optional*. Whether to convert ENTRYPOINT instructions. Defaults to true. |  |
+| `Boolean` | convertCmd | *Optional*. Whether to convert CMD instructions. Defaults to true. |  |
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="yaml" label="yaml">
+## Used by
 
+This recipe is used as part of the following composite recipes:
 
-###### Before
-```yaml
-test:
-  image: golang:1.7.3
-
-accp:
-  image: golang:1.7.0
-
-prod:
-  image: golang:1.7.0
-```
-
-###### After
-```yaml
-test:
-  image: ~~(golang:1.7.3)~~>golang:1.7.3
-
-accp:
-  image: ~~(golang:1.7.0)~~>golang:1.7.0
-
-prod:
-  image: ~~(golang:1.7.0)~~>golang:1.7.0
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,1 +2,1 @@
-test:
-- image: golang:1.7.3
-+ image: ~~(golang:1.7.3)~~>golang:1.7.3
-
-@@ -5,1 +5,1 @@
-
-accp:
-- image: golang:1.7.0
-+ image: ~~(golang:1.7.0)~~>golang:1.7.0
-
-@@ -8,1 +8,1 @@
-
-prod:
-- image: golang:1.7.0
-+ image: ~~(golang:1.7.0)~~>golang:1.7.0
-
-```
-</TabItem>
-</Tabs>
+* [Apply Docker best practices](/recipes/docker/dockerbestpractices.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-docker` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite:rewrite-docker` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -90,7 +48,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.docker.search.FindDockerImageUses")
+    activeRecipe("org.openrewrite.docker.UseExecFormEntrypoint")
     setExportDatatables(true)
 }
 
@@ -99,7 +57,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-docker:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}")
+    rewrite("org.openrewrite:rewrite-docker:{{VERSION_ORG_OPENREWRITE_REWRITE_DOCKER}}")
 }
 ```
 
@@ -120,10 +78,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-docker:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}")
+        rewrite("org.openrewrite:rewrite-docker:{{VERSION_ORG_OPENREWRITE_REWRITE_DOCKER}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.docker.search.FindDockerImageUses")
+        activeRecipe("org.openrewrite.docker.UseExecFormEntrypoint")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -158,14 +116,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.docker.search.FindDockerImageUses</recipe>
+            <recipe>org.openrewrite.docker.UseExecFormEntrypoint</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
+            <groupId>org.openrewrite</groupId>
             <artifactId>rewrite-docker</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}</version>
+            <version>{{VERSION_ORG_OPENREWRITE_REWRITE_DOCKER}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -181,7 +139,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-docker:RELEASE -Drewrite.activeRecipes=org.openrewrite.docker.search.FindDockerImageUses -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite:rewrite-docker:RELEASE -Drewrite.activeRecipes=org.openrewrite.docker.UseExecFormEntrypoint -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -189,12 +147,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindDockerImageUses
+mod run . --recipe UseExecFormEntrypoint
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-docker:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DOCKER}}
+mod config recipes jar install org.openrewrite:rewrite-docker:{{VERSION_ORG_OPENREWRITE_REWRITE_DOCKER}}
 ```
 </TabItem>
 </Tabs>
@@ -203,7 +161,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-docker:{{VERSION_O
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.docker.search.FindDockerImageUses" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.docker.UseExecFormEntrypoint" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -211,21 +169,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.docker.table.DockerBaseImages" label="DockerBaseImages">
-
-### Uses of docker images as bases
-**org.openrewrite.docker.table.DockerBaseImages**
-
-_Records the `FROM` block of Dockerfiles._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source path | The source file containing the image reference. |
-| Image name | The full name of the image. |
-| Tag | The tag, if any. If no tag is specified, this will be empty. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
