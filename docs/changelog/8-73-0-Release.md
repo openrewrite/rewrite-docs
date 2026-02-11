@@ -19,34 +19,6 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 * rewrite-prethink
 
-## Removed Artifacts
-
-* rewrite-ai
-* rewrite-ai-search
-* rewrite-android
-* rewrite-angular
-* rewrite-azul
-* rewrite-circleci
-* rewrite-codemods-ng
-* rewrite-compiled-analysis
-* rewrite-concourse
-* rewrite-cryptography
-* rewrite-dotnet
-* rewrite-elastic
-* rewrite-jasperreports
-* rewrite-java-security
-* rewrite-kafka
-* rewrite-kubernetes
-* rewrite-nodejs
-* rewrite-program-analysis
-* rewrite-react
-* rewrite-reactive-streams
-* rewrite-sql
-* rewrite-struts
-* rewrite-tapestry
-* rewrite-terraform
-* rewrite-vulncheck
-
 ## New Recipes
 
 * [com.oracle.weblogic.rewrite.ReportDeprecated](https://docs.openrewrite.org/recipes/com/oracle/weblogic/rewrite/reportdeprecated): This recipe will report uses of Java types that have been deprecated or removed in WebLogic. 
