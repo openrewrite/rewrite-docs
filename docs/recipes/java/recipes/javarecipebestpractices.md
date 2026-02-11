@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add a blank line around fields with annotations](../../java/recipes/blanklinesaroundfieldswithannotations)
 * [Correctly spaced descriptions](../../java/recipes/correctlyspaceddescriptions)
 * [Use a standard name for `ExecutionContext`](../../java/recipes/executioncontextparametername)
-* [Refaster template `IsLiteralNull`](../../java/recipes/isliteralnullrecipe)
+* [Use `J.Literal.isLiteralValue(expression, null)`](../../java/recipes/isliteralnullrecipe)
 * [Find missing `@Option` `example` values](../../java/recipes/missingoptionexample)
 * [Recipe classes should not have mutable `static` fields](../../java/recipes/nomutablestaticfieldsinrecipes)
 * [Use of `@EqualsAndHashCode` on `Recipe`](../../java/recipes/recipeequalsandhashcodecallsuper)

@@ -106,7 +106,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
 * [Adds Mockito extensions to Mockito tests](../../../java/testing/mockito/addmockitoextensionifannotationsused)
-* [Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners](../../../java/testing/mockito/removeinitmocksifrunnersspecified)
+* [Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified](../../../java/testing/mockito/removeinitmocksifrunnersspecified)
 * [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.mockito`

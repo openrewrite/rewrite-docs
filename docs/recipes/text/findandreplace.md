@@ -87,7 +87,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate xmlns entries in `webservices.xml` files.](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
 * [OmniFaces Namespace Migration](/recipes/java/migrate/jakarta/omnifacesnamespacemigration.md)
 * [Relocate Launcher Classes](/recipes/java/spring/boot3/relocatelauncherclasses.md)
-* [Remove deprecated Freemarker `?html` built-in](/recipes/java/struts/migrate6/removefreemarkerhtmlbuiltin.md)
+* [Remove deprecated Freemarker `?html` built-in](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/removefreemarkerhtmlbuiltin)
 * [io.quarkus.updates.core.quarkus30.JavaxToJakartaCodestartsTests](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartacodestartstests.md)
 * [io.quarkus.updates.core.quarkus30.JavaxToJakartaCodestarts](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartacodestarts.md)
 * [io.quarkus.updates.core.quarkus30.JavaxToJakartaDocumentationAdoc](/recipes/io/quarkus/updates/core/quarkus30/javaxtojakartadocumentationadoc.md)

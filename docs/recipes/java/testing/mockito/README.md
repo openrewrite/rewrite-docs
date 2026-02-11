@@ -24,7 +24,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Close unclosed static mocks](./closeunclosedstaticmocks.md)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](./mockitojunitrunnersilenttoextension.md)
 * [Remove `Mockito.times(0)` and `Mockito.times(1)`](./removetimeszeroandone.md)
-* [Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners](./removeinitmocksifrunnersspecified.md)
+* [Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified](./removeinitmocksifrunnersspecified.md)
 * [Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension](./mockitojunitrunnertoextension.md)
 * [Replace Mockito 1.x `anyString()` with `nullable(String.class)`](./anystringtonullable.md)
 * [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](./anytonullable.md)
@@ -34,5 +34,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `PowerMockito.whenNew` with Mockito counterpart](./powermockitowhennewtomockito.md)
 * [Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`](./verifyzerotonomoreinteractions.md)
 * [Use static form of Mockito `MockUtil`](./mockutilstostatic.md)
+* [Wrap `MockedConstruction` in try-with-resources](./mockconstructiontotrywithresources.md)
 
 

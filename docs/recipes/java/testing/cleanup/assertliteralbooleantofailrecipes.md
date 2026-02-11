@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`"
+sidebar_label: "Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`
+# Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`
 
 **org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes**
 
@@ -28,8 +28,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertLiteralBooleanToFail.WithMessage`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes$withmessagerecipe)
-* [Refaster template `AssertLiteralBooleanToFail.WithoutMessage`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes$withoutmessagerecipe)
+* [Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes$withmessagerecipe)
+* [Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes$withoutmessagerecipe)
 
 </TabItem>
 
@@ -39,7 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes
-displayName: Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`
+displayName: Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`
 description: |
   Using fail is more direct and clear.
 recipeList:

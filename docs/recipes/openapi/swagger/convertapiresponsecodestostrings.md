@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings**
 
-_Convert API response codes to strings._
+_Convert API response codes to strings. Handles literal integers, local constant references, and external constant field accesses._
 
 ## Recipe source
 
@@ -25,6 +25,49 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from `@ApiResponses` to `@ApiResponses`](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.http.ResponseEntity;
+
+class A {
+    @ApiResponse(responseCode = 200, description = "OK")
+    ResponseEntity<User> method() { return null; }
+}
+```
+
+###### After
+```java
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.http.ResponseEntity;
+
+class A {
+    @ApiResponse(responseCode = "200", description = "OK")
+    ResponseEntity<User> method() { return null; }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+
+class A {
+-   @ApiResponse(responseCode = 200, description = "OK")
++   @ApiResponse(responseCode = "200", description = "OK")
+    ResponseEntity<User> method() { return null; }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

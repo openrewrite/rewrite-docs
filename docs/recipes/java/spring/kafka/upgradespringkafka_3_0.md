@@ -33,6 +33,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.kafka`
+  * artifactId: `spring-kafka`
+  * newVersion: `3.0.x`
 * [Change `KafkaOperations.send*` return type to `CompletableFuture`](../../../java/spring/kafka/kafkaoperationssendreturntype)
 * [Use `Duration` in `KafkaTestUtils`](../../../java/spring/kafka/kafkatestutilsduration)
 * [Change type](../../../java/changetype)
@@ -68,6 +72,10 @@ tags:
   - spring
   - kafka
 recipeList:
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.kafka
+      artifactId: spring-kafka
+      newVersion: 3.0.x
   - org.openrewrite.java.spring.kafka.KafkaOperationsSendReturnType
   - org.openrewrite.java.spring.kafka.KafkaTestUtilsDuration
   - org.openrewrite.java.ChangeType:

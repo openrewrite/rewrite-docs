@@ -64,6 +64,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion)
   * pluginIdPattern: `org.springframework.boot`
   * newVersion: `4.0.x`
+* [Update Gradle wrapper](../../../gradle/updategradlewrapper)
+  * version: `^8.14`
+  * addIfMissing: `false`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-oauth2-authorization-server`
@@ -109,6 +112,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `5.0.x`
   * overrideManagedVersion: `true`
 * [Add `@AutoConfigureTestRestTemplate` if necessary](../../../java/spring/boot4/addautoconfiguretestresttemplate)
+* [Add `@AutoConfigureWebTestClient` if necessary](../../../java/spring/boot4/addautoconfigurewebtestclient)
 
 </TabItem>
 
@@ -156,6 +160,9 @@ recipeList:
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: org.springframework.boot
       newVersion: 4.0.x
+  - org.openrewrite.gradle.UpdateGradleWrapper:
+      version: ^8.14
+      addIfMissing: false
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-oauth2-authorization-server
@@ -201,6 +208,7 @@ recipeList:
       newVersion: 5.0.x
       overrideManagedVersion: true
   - org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate
+  - org.openrewrite.java.spring.boot4.AddAutoConfigureWebTestClient
 
 ```
 </TabItem>
@@ -414,25 +422,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

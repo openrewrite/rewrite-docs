@@ -1,30 +1,15 @@
 ---
-sidebar_label: "Refaster template `IsLiteralNull`"
+sidebar_label: "Use `J.Literal.isLiteralValue(expression, null)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster template `IsLiteralNull`
+# Use `J.Literal.isLiteralValue(expression, null)`
 
 **org.openrewrite.java.recipes.IsLiteralNullRecipe**
 
-Recipe created for the following Refaster template:
-```java
-public class IsLiteralNull {
-    
-    @BeforeTemplate
-    boolean before(Expression expression) {
-        return expression instanceof J.Literal && ((J.Literal)expression).getValue() == null;
-    }
-    
-    @AfterTemplate
-    boolean after(Expression expression) {
-        return J.Literal.isLiteralValue(expression, null);
-    }
-}
-```
-.
+_Replace `expression instanceof J.Literal && ((J.Literal) expression).getValue() == null` with `J.Literal.isLiteralValue(expression, null)`._
 
 ## Recipe source
 

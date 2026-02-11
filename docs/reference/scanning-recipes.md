@@ -66,6 +66,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.dependencies.UpgradeTransitiveDependencyVersion](/recipes/java/dependencies/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Gradle or Maven dependencies**
   * Upgrades the version of a transitive dependency in a Maven pom.xml or Gradle build.gradle. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+* [org.openrewrite.java.dependencies.search.FindDuplicateClasses](/recipes/java/dependencies/search/findduplicateclasses.md)
+  * **Find duplicate classes on the classpath**
+  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven duplicate-finder-maven-plugin does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
 * [org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion](/recipes/java/dependencies/search/findminimumdependencyversion.md)
   * **Find the oldest matching dependency version in use**
   * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11.
@@ -151,6 +154,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Plan a Java version migration**
   * Study the set of Java versions and associated tools in use across many repositories.
 
+## org.openrewrite.recipe:rewrite-openapi
+
+* [org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings](/recipes/openapi/swagger/convertapiresponsecodestostrings.md)
+  * **Convert API response codes to strings**
+  * Convert API response codes to strings. Handles literal integers, local constant references, and external constant field accesses.
+
 ## org.openrewrite.recipe:rewrite-prethink
 
 * [io.moderne.prethink.ComprehendCode](/recipes/prethink/comprehendcode.md)
@@ -183,6 +192,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.recipes.ExamplesExtractor](/recipes/java/recipes/examplesextractor.md)
   * **Extract documentation examples from tests**
   * Extract the before/after sources from tests annotated with `@DocumentExample`, and generate a YAML file with those examples to be shown in the documentation to show usage.
+* [org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes](/recipes/java/recipes/generatedeprecatedmethodrecipes.md)
+  * **Generate `InlineMethodCalls` recipes for deprecated delegating methods**
+  * Finds `@Deprecated` method declarations whose body is a single delegation call to another method in the same class, and generates a declarative YAML recipe file containing `InlineMethodCalls` entries for each.
 
 ## org.openrewrite.recipe:rewrite-spring
 
@@ -234,12 +246,6 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.staticanalysis.MethodNameCasing](/recipes/staticanalysis/methodnamecasing.md)
   * **Standardize method name casing**
   * Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`.
-
-## org.openrewrite.recipe:rewrite-struts
-
-* [org.openrewrite.java.struts.migrate6.MigrateStaticOgnlMethodAccess](/recipes/java/struts/migrate6/migratestaticognlmethodaccess.md)
-  * **Migrate static OGNL method access to action wrapper methods**
-  * Migrates OGNL expressions using static method access (e.g., `@com.app.Util@makeCode()`) to use action wrapper methods instead. Static method access is disabled by default in Struts 6 for security reasons.
 
 ## org.openrewrite.recipe:rewrite-testing-frameworks
 
@@ -2061,6 +2067,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.search.HasMinimumJavaVersion](/recipes/java/search/hasminimumjavaversion.md)
   * **Find the oldest Java version in use**
   * The oldest Java version in use is the lowest Java version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Java 8, but a test source set uses Java 17. In this case, the oldest Java version in use is Java 8.
+* [org.openrewrite.java.search.ModuleContainsFile](/recipes/java/search/modulecontainsfile.md)
+  * **Module contains file**
+  * Intended to be used primarily as a precondition for other recipes, this recipe checks if a module contains a specific file or files matching a pattern. Only files belonging to modules containing the specified file are marked with a `SearchResult` marker. This is more specific than `RepositoryContainsFile` which marks all files in the repository if any file matches.
+* [org.openrewrite.java.search.ModuleUsesType](/recipes/java/search/moduleusestype.md)
+  * **Module uses type**
+  * Intended to be used primarily as a precondition for other recipes, this recipe checks if a module uses a specified type. Only files belonging to modules that use the specified type are marked with a `SearchResult` marker. This is more specific than `UsesType` which only marks the files that directly use the type.
 
 ## org.openrewrite:rewrite-json
 

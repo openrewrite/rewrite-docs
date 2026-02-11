@@ -36,6 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove `@RequestMapping` annotations](../../../java/spring/norequestmappingannotation)
 * [Remove `@SpringExtension`](../../../java/spring/boot2/unnecessaryspringextension)
 * [Remove the `@Autowired` annotation on inferred constructor](../../../java/spring/noautowiredonconstructor)
+* [Add missing `@Configuration` annotation](../../../java/spring/boot2/addconfigurationannotationifbeanspresent)
+* [Migrate multi-condition `@ConditionalOnBean` annotations](../../../java/spring/boot2/conditionalonbeananynestedcondition)
 * [Migrate `RestTemplateBuilder`](../../../java/spring/boot2/resttemplatebuilderrequestfactory)
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](../../../java/spring/boot2/replacedeprecatedenvironmenttestutils)
 * [Separate `application.properties` by profile](../../../java/spring/separateapplicationpropertiesbyprofile)
@@ -59,6 +61,8 @@ recipeList:
   - org.openrewrite.java.spring.NoRequestMappingAnnotation
   - org.openrewrite.java.spring.boot2.UnnecessarySpringExtension
   - org.openrewrite.java.spring.NoAutowiredOnConstructor
+  - org.openrewrite.java.spring.boot2.AddConfigurationAnnotationIfBeansPresent
+  - org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition
   - org.openrewrite.java.spring.boot2.RestTemplateBuilderRequestFactory
   - org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils
   - org.openrewrite.java.spring.SeparateApplicationPropertiesByProfile

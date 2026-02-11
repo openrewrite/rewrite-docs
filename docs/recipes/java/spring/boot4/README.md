@@ -18,5 +18,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `@AutoConfigureTestRestTemplate` if necessary](./addautoconfiguretestresttemplate.md)
+* [Add `@AutoConfigureWebTestClient` if necessary](./addautoconfigurewebtestclient.md)
 
 

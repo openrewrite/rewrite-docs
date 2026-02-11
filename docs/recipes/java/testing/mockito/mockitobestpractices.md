@@ -38,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * annotationPattern: `@org.mockito.junit.jupiter.MockitoSettings(strictness=org.mockito.quality.Strictness.WARN)`
 * [Remove `Mockito.times(0)` and `Mockito.times(1)`](../../../java/testing/mockito/removetimeszeroandone)
 * [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](../../../java/testing/mockito/simplifymockitoverifywhengiven)
+* [Wrap `MockedConstruction` in try-with-resources](../../../java/testing/mockito/mockconstructiontotrywithresources)
 
 </TabItem>
 
@@ -59,6 +60,7 @@ recipeList:
       annotationPattern: @org.mockito.junit.jupiter.MockitoSettings(strictness=org.mockito.quality.Strictness.WARN)
   - org.openrewrite.java.testing.mockito.RemoveTimesZeroAndOne
   - org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven
+  - org.openrewrite.java.testing.mockito.MockConstructionToTryWithResources
 
 ```
 </TabItem>

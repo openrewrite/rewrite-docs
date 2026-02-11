@@ -55,6 +55,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newMethodName: `assertArrayEquals`
 * [JUnit 4 `Assert` To JUnit Jupiter `Assertions`](../../../java/testing/junit5/asserttoassertions)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](../../../java/testing/junit5/categorytotag)
+* [Migrate JUnit 4 assertion failure exceptions to JUnit Jupiter](../../../java/testing/junit5/migrateassertionfailederror)
 * [Cleanup JUnit imports](../../../java/testing/junit5/cleanupjunitimports)
 * [Use JUnit Jupiter `@TempDir`](../../../java/testing/junit5/temporaryfoldertotempdir)
 * [Make `@TempDir` fields non final](../../../java/testing/junit5/tempdirnonfinal)
@@ -146,6 +147,7 @@ recipeList:
       newMethodName: assertArrayEquals
   - org.openrewrite.java.testing.junit5.AssertToAssertions
   - org.openrewrite.java.testing.junit5.CategoryToTag
+  - org.openrewrite.java.testing.junit5.MigrateAssertionFailedError
   - org.openrewrite.java.testing.junit5.CleanupJUnitImports
   - org.openrewrite.java.testing.junit5.TemporaryFolderToTempDir
   - org.openrewrite.java.testing.junit5.TempDirNonFinal

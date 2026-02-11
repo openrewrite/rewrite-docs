@@ -17,6 +17,10 @@ __
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
@@ -25,6 +29,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin](../../../../../io/quarkus/updates/core/quarkus331/addextensionstruetoquarkusmavenplugin)
+* [Add @{argLine} to maven-surefire-plugin and maven-failsafe-plugin](../../../../../io/quarkus/updates/core/quarkus331/addarglinetosurefirefailsafeplugins)
 
 </TabItem>
 
@@ -39,6 +44,7 @@ description: |
   
 recipeList:
   - io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin
+  - io.quarkus.updates.core.quarkus331.AddArglineToSurefireFailsafePlugins
 
 ```
 </TabItem>

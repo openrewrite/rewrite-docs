@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead](../../../java/spring/batch/listenersupportclasstointerface)
 * [Migrate `JobBuilderFactory` to `JobBuilder`](../../../java/spring/batch/migratejobbuilderfactory)
 * [Migrate `StepBuilderFactory` to `StepBuilder`](../../../java/spring/batch/migratestepbuilderfactory)
+* [Add `PlatformTransactionManager` to `tasklet()` and `chunk()` calls](../../../java/spring/batch/addtransactionmanagertotaskletandchunk)
 * [Migrate `ItemWriter`](../../../java/spring/batch/migrateitemwriterwrite)
 * [Remove `DefaultBatchConfigurer`](../../../java/spring/batch/removedefaultbatchconfigurer)
 * [Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`](../../../java/spring/batch/upgradeskippolicyparametertype)
@@ -54,9 +55,13 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.configuration.annotation.ScopeConfiguration`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.configuration.support.ScopeConfiguration`
 * [Convert receive type in some invocation of StepExecution.xx()](../../../java/spring/batch/convertreceivetypewhencallstepexecutionmethod)
+* [Migrate `Date` to `LocalDateTime` for Spring Batch timestamp methods](../../../java/spring/batch/migratestepexecutiontimestamptypes)
 * [Migration invocation of JobParameter.toString to JobParameter.getValue.toString](../../../java/spring/batch/jobparametertostring)
 * [Add class argument to `JobParameters`](../../../java/spring/batch/migratejobparameter)
 * [Migrate method when it annotated by Spring Batch API](../../../java/spring/batch/migratemethodannotatedbybatchapi)
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor`
+  * newFullyQualifiedTypeName: `org.springframework.batch.core.configuration.support.JobRegistrySmartInitializingSingleton`
 
 </TabItem>
 
@@ -81,6 +86,7 @@ recipeList:
   - org.openrewrite.java.spring.batch.ListenerSupportClassToInterface
   - org.openrewrite.java.spring.batch.MigrateJobBuilderFactory
   - org.openrewrite.java.spring.batch.MigrateStepBuilderFactory
+  - org.openrewrite.java.spring.batch.AddTransactionManagerToTaskletAndChunk
   - org.openrewrite.java.spring.batch.MigrateItemWriterWrite
   - org.openrewrite.java.spring.batch.RemoveDefaultBatchConfigurer
   - org.openrewrite.java.spring.batch.UpgradeSkipPolicyParameterType
@@ -94,9 +100,13 @@ recipeList:
       oldFullyQualifiedTypeName: org.springframework.batch.core.configuration.annotation.ScopeConfiguration
       newFullyQualifiedTypeName: org.springframework.batch.core.configuration.support.ScopeConfiguration
   - org.openrewrite.java.spring.batch.ConvertReceiveTypeWhenCallStepExecutionMethod
+  - org.openrewrite.java.spring.batch.MigrateStepExecutionTimestampTypes
   - org.openrewrite.java.spring.batch.JobParameterToString
   - org.openrewrite.java.spring.batch.MigrateJobParameter
   - org.openrewrite.java.spring.batch.MigrateMethodAnnotatedByBatchAPI
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor
+      newFullyQualifiedTypeName: org.springframework.batch.core.configuration.support.JobRegistrySmartInitializingSingleton
 
 ```
 </TabItem>

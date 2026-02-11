@@ -63,6 +63,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Report uses of Java types deprecated or removed in WebLogic](/recipes/com/oracle/weblogic/rewrite/reportdeprecated.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

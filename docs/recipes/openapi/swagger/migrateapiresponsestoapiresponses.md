@@ -52,6 +52,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newAttributeName: `description`
 * [Convert API response codes to strings](../../openapi/swagger/convertapiresponsecodestostrings)
 * [Convert API response to content annotation](../../openapi/swagger/convertapiresponsetocontent)
+* [Convert API responseHeaders to headers](../../openapi/swagger/convertapiresponseheaderstoheaders)
 
 </TabItem>
 
@@ -84,6 +85,7 @@ recipeList:
       newAttributeName: description
   - org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings
   - org.openrewrite.openapi.swagger.ConvertApiResponseToContent
+  - org.openrewrite.openapi.swagger.ConvertApiResponseHeadersToHeaders
 
 ```
 </TabItem>

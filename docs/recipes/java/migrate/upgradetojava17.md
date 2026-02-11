@@ -42,6 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add explicit import for `Record` classes](../../java/migrate/lang/explicitrecordimport)
 * [Use text blocks](../../java/migrate/lang/usetextblocks)
   * convertStringsWithoutNewlines: `false`
+  * avoidLineContinuations: `false`
 * [Prefer `String.formatted(Object...)`](../../java/migrate/lang/stringformatted)
   * addParentheses: `false`
 * [Use `java.security.cert` instead of `javax.security.cert`](../../java/migrate/deprecatedjavaxsecuritycert)
@@ -101,6 +102,7 @@ recipeList:
   - org.openrewrite.java.migrate.lang.ExplicitRecordImport
   - org.openrewrite.java.migrate.lang.UseTextBlocks:
       convertStringsWithoutNewlines: false
+      avoidLineContinuations: false
   - org.openrewrite.java.migrate.lang.StringFormatted:
       addParentheses: false
   - org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert
@@ -144,9 +146,10 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Dropwizard 5.0.x from 4.x](/recipes/java/dropwizard/migratetodropwizard5.md)
 * [Migrate to Java 21](/recipes/java/migrate/upgradetojava21.md)
 * [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
-* [Migrate to Struts 7.0](/recipes/java/struts/migrate7/migratestruts7.md)
+* [Migrate to Struts 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/migratestruts7)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
 
 ## Examples
@@ -552,25 +555,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

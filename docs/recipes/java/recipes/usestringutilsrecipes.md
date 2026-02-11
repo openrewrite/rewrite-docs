@@ -61,6 +61,51 @@ This recipe is used as part of the following composite recipes:
 * [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    boolean test(String str) {
+        return str != null && !str.isEmpty();
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.internal.StringUtils;
+
+class Test {
+    boolean test(String str) {
+        return StringUtils.isNotEmpty(str);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,2 @@
++import org.openrewrite.internal.StringUtils;
++
+class Test {
+@@ -3,1 +5,1 @@
+class Test {
+    boolean test(String str) {
+-       return str != null && !str.isEmpty();
++       return StringUtils.isNotEmpty(str);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

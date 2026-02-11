@@ -195,47 +195,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.maven.table.DependenciesInUse" label="DependenciesInUse">
-
-### Dependencies in use
-**org.openrewrite.maven.table.DependenciesInUse**
-
-_Direct and transitive dependencies in use._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Project name | The name of the project that contains the dependency. |
-| Source set | The source set that contains the dependency. |
-| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| Version | The resolved version. |
-| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
-| Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
-| Count | How many times does this dependency appear. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.ExplainDependenciesInUse" label="ExplainDependenciesInUse">
-
-### Explain dependencies in use
-**org.openrewrite.maven.table.ExplainDependenciesInUse**
-
-_A dependency graph explainer similar to that shown by `gradle dependencyInsight` for each matching dependency. This table will contain a row per matching dependency per configuration per (sub)project._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Project name | The name of the project that contains the dependency. |
-| Source set | The source set that contains the dependency. |
-| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
-| Version | The resolved version. |
-| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
-| Scope | Dependency scope. This will be `compile` if the dependency is direct and a scope is not explicitly specified in the POM. |
-| Count | How many times does this dependency appear. |
-| Dependency graph | The dependency paths that requested the dependency. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

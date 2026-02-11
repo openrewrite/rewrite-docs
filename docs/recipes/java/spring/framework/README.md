@@ -18,6 +18,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Framework 6.1](./upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)
 * [Migrate to Spring Framework 7.0](./upgradespringframework_7_0.md)
+* [Use `ObjectUtils#isEmpty(Object)`](./useobjectutilsisempty.md)
 
 ## Recipes
 
@@ -35,12 +36,12 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated Spring Web UTF8 `MediaType` enums](./migrateutf8mediatypes.md)
 * [Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`](./migratebase64utils.md)
 * [Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method](./migratehandlerresultsetexceptionhandlermethod.md)
+* [Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`](./httpcomponentsclienthttprequestfactoryconnecttimeout.md)
 * [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](./httpcomponentsclienthttprequestfactoryreadtimeout.md)
 * [Remove `public` from `@Bean` methods](./beanmethodsnotpublic.md)
 * [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](./migratewebmvcconfigureradapter.md)
 * [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](./migrateclienthttpresponsegetrawstatuscodemethod.md)
 * [Use `Environment#acceptsProfiles(Profiles)`](./environmentacceptsprofiles.md)
-* [Use `ObjectUtils#isEmpty(Object)`](./useobjectutilsisempty.md)
 * [Use varargs equivalents for deprecated JdbcTemplate signatures](./jdbctemplateobjectarrayargtovarargs.md)
 
 

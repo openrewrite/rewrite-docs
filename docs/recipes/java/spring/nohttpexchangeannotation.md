@@ -19,6 +19,51 @@ _Replace method declaration `@HttpExchange` annotations with `@GetExchange`, `@P
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.web.service.annotation.HttpExchange;
+
+interface UserApi {
+    @HttpExchange(method = "GET", value = "/api/users")
+    String getUsers();
+}
+```
+
+###### After
+```java
+import org.springframework.web.service.annotation.GetExchange;
+
+interface UserApi {
+    @GetExchange("/api/users")
+    String getUsers();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.web.service.annotation.HttpExchange;
++import org.springframework.web.service.annotation.GetExchange;
+
+@@ -4,1 +4,1 @@
+
+interface UserApi {
+-   @HttpExchange(method = "GET", value = "/api/users")
++   @GetExchange("/api/users")
+    String getUsers();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

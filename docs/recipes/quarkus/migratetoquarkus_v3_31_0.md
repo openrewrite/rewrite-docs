@@ -31,6 +31,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Quarkus Updates Aggregate 3.30.0](../quarkus/migratetoquarkus_v3_30_0)
 * [io.quarkus.updates.core.quarkus331.CoreUpdate331](../io/quarkus/updates/core/quarkus331/coreupdate331)
 * [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](../io/quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix)
+* [io.quarkus.updates.core.quarkus331.JUnitRelocations](../io/quarkus/updates/core/quarkus331/junitrelocations)
+* [io.quarkus.updates.core.quarkus331.Testcontainers2](../io/quarkus/updates/core/quarkus331/testcontainers2)
+* [io.quarkus.updates.core.quarkus331.OpenTelemetryTracingPackageTypoFix](../io/quarkus/updates/core/quarkus331/opentelemetrytracingpackagetypofix)
 * [Migrates `camel 4.16` application to `camel 4.17`](../io/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe)
 
 </TabItem>
@@ -48,6 +51,9 @@ recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_30_0
   - io.quarkus.updates.core.quarkus331.CoreUpdate331
   - io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix
+  - io.quarkus.updates.core.quarkus331.JUnitRelocations
+  - io.quarkus.updates.core.quarkus331.Testcontainers2
+  - io.quarkus.updates.core.quarkus331.OpenTelemetryTracingPackageTypoFix
   - io.quarkus.updates.camel.camel417.CamelQuarkusMigrationRecipe
 
 ```

@@ -51,7 +51,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.impl.nio.reactor.IOReactorConfig.Builder`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.reactor.IOReactorConfig.Builder`
-* [Changes an argument to a `TimeValue` for matched method invocations](../../apache/httpclient5/changeargumenttotimevalue)
+* [Changes an argument (or pair of arguments) to a `TimeValue` for matched method invocations](../../apache/httpclient5/changeargumenttotimevalue)
   * methodPattern: `org.apache.hc.core5.reactor.IOReactorConfig.Builder setSelectInterval(long)`
 * [Remove method invocations](../../java/removemethodinvocations)
   * methodPattern: `org.apache.hc.core5.reactor.IOReactorConfig.Builder setShutdownGracePeriod(long)`
@@ -63,6 +63,18 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.apache.hc.core5.reactor.IOReactorConfig.Builder setSoLinger(int)`
 * [Remove method invocations](../../java/removemethodinvocations)
   * methodPattern: `org.apache.hc.core5.reactor.IOReactorConfig.Builder setConnectTimeout(int)`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.nio.reactor.ConnectingIOReactor`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.reactor.ConnectionInitiator`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.impl.nio.reactor.DefaultConnectingIOReactor`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.reactor.DefaultConnectingIOReactor`
+* [Add comment to import statement](../../java/addcommenttoimport)
+  * comment: `NByteArrayEntity replaced with BasicAsyncEntityProducer - constructor and usage differs, manual migration required`
+  * typePattern: `org.apache.http.nio.entity.NByteArrayEntity`
+* [Add comment to import statement](../../java/addcommenttoimport)
+  * comment: `NStringEntity replaced with StringAsyncEntityProducer - constructor and usage differs, manual migration required`
+  * typePattern: `org.apache.http.nio.entity.NStringEntity`
 
 </TabItem>
 
@@ -111,6 +123,18 @@ recipeList:
       methodPattern: org.apache.hc.core5.reactor.IOReactorConfig.Builder setSoLinger(int)
   - org.openrewrite.java.RemoveMethodInvocations:
       methodPattern: org.apache.hc.core5.reactor.IOReactorConfig.Builder setConnectTimeout(int)
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.nio.reactor.ConnectingIOReactor
+      newFullyQualifiedTypeName: org.apache.hc.core5.reactor.ConnectionInitiator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.impl.nio.reactor.DefaultConnectingIOReactor
+      newFullyQualifiedTypeName: org.apache.hc.core5.reactor.DefaultConnectingIOReactor
+  - org.openrewrite.java.AddCommentToImport:
+      comment: NByteArrayEntity replaced with BasicAsyncEntityProducer - constructor and usage differs, manual migration required
+      typePattern: org.apache.http.nio.entity.NByteArrayEntity
+  - org.openrewrite.java.AddCommentToImport:
+      comment: NStringEntity replaced with StringAsyncEntityProducer - constructor and usage differs, manual migration required
+      typePattern: org.apache.http.nio.entity.NStringEntity
 
 ```
 </TabItem>
@@ -124,6 +148,64 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`MigrateApacheHttpAsyncClientTest#migratesPoolingNHttpClientConnectionManagerToBuilder`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager;
+import org.apache.http.nio.reactor.ConnectingIOReactor;
+
+class A {
+    void method(ConnectingIOReactor ioReactor) {
+        PoolingNHttpClientConnectionManager cm = new PoolingNHttpClientConnectionManager(ioReactor);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManager;
+import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManagerBuilder;
+import org.apache.hc.core5.reactor.ConnectionInitiator;
+
+class A {
+    void method(ConnectionInitiator ioReactor) {
+        PoolingAsyncClientConnectionManager cm = PoolingAsyncClientConnectionManagerBuilder.create().build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager;
+-import org.apache.http.nio.reactor.ConnectingIOReactor;
++import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManager;
++import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManagerBuilder;
++import org.apache.hc.core5.reactor.ConnectionInitiator;
+
+@@ -5,2 +6,2 @@
+
+class A {
+-   void method(ConnectingIOReactor ioReactor) {
+-       PoolingNHttpClientConnectionManager cm = new PoolingNHttpClientConnectionManager(ioReactor);
++   void method(ConnectionInitiator ioReactor) {
++       PoolingAsyncClientConnectionManager cm = PoolingAsyncClientConnectionManagerBuilder.create().build();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
 `MigrateApacheHttpCoreNioTest#migratesIOReactorConfig`
 
 
@@ -229,7 +311,65 @@ class A {
 
 ---
 
-##### Example 2
+##### Example 3
+`MigrateApacheHttpAsyncClientTest#migratesPoolingNHttpClientConnectionManagerToBuilder`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager;
+import org.apache.http.nio.reactor.ConnectingIOReactor;
+
+class A {
+    void method(ConnectingIOReactor ioReactor) {
+        PoolingNHttpClientConnectionManager cm = new PoolingNHttpClientConnectionManager(ioReactor);
+    }
+}
+```
+
+###### After
+```java
+import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManager;
+import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManagerBuilder;
+import org.apache.hc.core5.reactor.ConnectionInitiator;
+
+class A {
+    void method(ConnectionInitiator ioReactor) {
+        PoolingAsyncClientConnectionManager cm = PoolingAsyncClientConnectionManagerBuilder.create().build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager;
+-import org.apache.http.nio.reactor.ConnectingIOReactor;
++import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManager;
++import org.apache.hc.client5.http.impl.nio.PoolingAsyncClientConnectionManagerBuilder;
++import org.apache.hc.core5.reactor.ConnectionInitiator;
+
+@@ -5,2 +6,2 @@
+
+class A {
+-   void method(ConnectingIOReactor ioReactor) {
+-       PoolingNHttpClientConnectionManager cm = new PoolingNHttpClientConnectionManager(ioReactor);
++   void method(ConnectionInitiator ioReactor) {
++       PoolingAsyncClientConnectionManager cm = PoolingAsyncClientConnectionManagerBuilder.create().build();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
 `MigrateApacheHttpCoreNioTest#migratesIOReactorConfig`
 
 

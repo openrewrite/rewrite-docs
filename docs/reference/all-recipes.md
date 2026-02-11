@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4734
+Total recipes: 4755
 
 
 ## io.moderne.recipe:rewrite-devcenter
@@ -76,7 +76,7 @@ _3 recipes_
 
 _License: Moderne Source Available License_
 
-_78 recipes_
+_80 recipes_
 
 * [org.openrewrite.apache.commons.codec.ApacheBase64ToJavaBase64](/recipes/apache/commons/codec/apachebase64tojavabase64.md)
   * **Prefer `java.util.Base64`**
@@ -166,14 +166,17 @@ _78 recipes_
   * **Adds a TimeUnit argument to the matched method invocations**
   * In Apache Http Client 5.x migration, an extra TimeUnit argument is required in the timeout and duration methods. Previously in 4.x, all these methods were implicitly having the timeout or duration expressed in milliseconds, but in 5.x the unit of the timeout or duration is required. So, by default this recipe adds `TimeUnit.MILLISECONDS`, it is possible to specify this as a parameter. Since all affected methods of the Apache Http Client 5.x migration only have one integer/long argument, the recipe applies with matched method invocations of exactly one parameter.
 * [org.openrewrite.apache.httpclient5.ChangeArgumentToTimeValue](/recipes/apache/httpclient5/changeargumenttotimevalue.md)
-  * **Changes an argument to a `TimeValue` for matched method invocations**
-  * In Apache Http Client 5.x migration, some methods that previously took a single long argument have changed to take a `TimeValue`. Previously in 4.x, all these methods were implicitly having the value expressed in milliseconds. By default this recipe uses `TimeUnit.MILLISECONDS` for the `TimeUnit` when creating a `TimeValue`. It is possible to specify this as a parameter. Since all affected methods of the Apache Http Client 5.x migration only have one long argument, the recipe applies with matched method invocations of exactly one parameter.
+  * **Changes an argument (or pair of arguments) to a `TimeValue` for matched method invocations**
+  * In Apache Http Client 5.x migration, some methods that previously took a single `long` argument, or a pair of arguments of type `long` and `TimeUnit` respectively, have changed to take a `TimeValue`. Previously in 4.x, all these single `long` argument methods were implicitly having the value expressed in milliseconds. By default this recipe uses `TimeUnit.MILLISECONDS` for the `TimeUnit` when creating a `TimeValue`. It is possible to specify this as a option. The `timeUnit` option will be ignored for cases matching `*(long, TimeUnit).
 * [org.openrewrite.apache.httpclient5.InputBufferReadAddOffsetAndLengthArguments](/recipes/apache/httpclient5/inputbufferreadaddoffsetandlengtharguments.md)
   * **Adds offset and length arguments to the read method of SharedInputBuffer**
   * In Apache Http Client 5.x migration, the shortened form of the `read(byte[])` has been removed.
 * [org.openrewrite.apache.httpclient5.MigrateAuthScope](/recipes/apache/httpclient5/migrateauthscope.md)
   * **Replaces `AuthScope.ANY`**
   * Replace removed constant `org.apache.http.auth.AuthScope.AuthScope.ANY` with `new org.apache.hc.client5.http.auth.AuthScope(null, -1)`.
+* [org.openrewrite.apache.httpclient5.MigratePoolingNHttpClientConnectionManager](/recipes/apache/httpclient5/migratepoolingnhttpclientconnectionmanager.md)
+  * **Migrate `PoolingNHttpClientConnectionManager` to `PoolingAsyncClientConnectionManager`**
+  * Migrates `PoolingNHttpClientConnectionManager` from Apache HttpAsyncClient 4.x to `PoolingAsyncClientConnectionManager` in HttpClient 5.x using the builder pattern.
 * [org.openrewrite.apache.httpclient5.MigrateRequestConfig](/recipes/apache/httpclient5/migraterequestconfig.md)
   * **Migrate `RequestConfig` to httpclient5**
   * Migrate `RequestConfig` to httpclient5.
@@ -195,6 +198,9 @@ _78 recipes_
 * [org.openrewrite.apache.httpclient5.RemoveByteBufferAllocators](/recipes/apache/httpclient5/removebytebufferallocators.md)
   * **Remove ByteBufferAllocator implementations**
   * In Apache Http Client 5.x migration, both implementations of `ByteBufferAllocator` have been removed. This recipe will remove usage of said classes in favour of direct static calls to `ByteBuffer`.
+* [org.openrewrite.apache.httpclient5.UsePoolingAsyncClientConnectionManagerBuilder](/recipes/apache/httpclient5/usepoolingasyncclientconnectionmanagerbuilder.md)
+  * **Use `PoolingAsyncClientConnectionManagerBuilder` for configuration**
+  * Moves method calls that exist on both `PoolingAsyncClientConnectionManager` and `PoolingAsyncClientConnectionManagerBuilder` into the builder chain.
 * [org.openrewrite.apache.httpclient5.UsernamePasswordCredentials](/recipes/apache/httpclient5/usernamepasswordcredentials.md)
   * **Migrate `UsernamePasswordCredentials` to httpclient5**
   * Change the password argument going into `UsernamePasswordCredentials` to be a `char[]`.
@@ -364,7 +370,7 @@ _5 recipes_
 
 _License: Apache License Version 2.0_
 
-_9 recipes_
+_10 recipes_
 
 * [org.openrewrite.java.dropwizard.annotation.AddClassAnnotationIfAnnotationExists](/recipes/java/dropwizard/annotation/addclassannotationifannotationexists.md)
   * **Add annotation if target annotations exist**
@@ -381,6 +387,9 @@ _9 recipes_
 * [org.openrewrite.java.dropwizard.general.RemoveVariablesByPackage](/recipes/java/dropwizard/general/removevariablesbypackage.md)
   * **Remove class variables matching package filter**
   * Removes class-level variables from classes in the specified package.
+* [org.openrewrite.java.dropwizard.jetty.MigrateJettyHandlerSignature](/recipes/java/dropwizard/jetty/migratejettyhandlersignature.md)
+  * **Migrate Jetty `AbstractHandler` to Jetty 12 `Handler.Abstract`**
+  * Migrates custom Jetty handler implementations from Jetty 11's `AbstractHandler` (used in Dropwizard 4.x) to Jetty 12's `Handler.Abstract` (used in Dropwizard 5.x). This changes the `handle` method signature and updates `baseRequest.setHandled(true)` to use `Callback` and return `true`.
 * [org.openrewrite.java.dropwizard.method.ChangeSuperType](/recipes/java/dropwizard/method/changesupertype.md)
   * **Change superclass**
   * Changes the superclass of a specified class to a new superclass.
@@ -696,7 +705,7 @@ _14 recipes_
   * **Simplify catch clauses for Jackson exceptions**
   * In Jackson 3, `JacksonException` and its subtypes extend `RuntimeException`. This recipe simplifies multi-catch clauses by removing Jackson exception types when `RuntimeException` is also caught, since catching both is redundant. For example, `catch (JacksonException | RuntimeException e)` becomes `catch (RuntimeException e)`.
 * [org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration](/recipes/java/jackson/updateserializationinclusionconfiguration.md)
-  * **Update configuration of serialization inclusion in ObjectMapper for Jackson 3**
+  * **Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3**
   * In Jackson 3, `mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)` is no longer supported and should be replaced by `changeDefaultPropertyInclusion()` for both `valueInclusion` and `contentInclusion`.
 * [org.openrewrite.java.jackson.UseFormatAlignedObjectMappers](/recipes/java/jackson/useformatalignedobjectmappers.md)
   * **Use format alignment `ObjectMappers`**
@@ -724,7 +733,7 @@ _14 recipes_
 
 _License: Apache License Version 2.0_
 
-_16 recipes_
+_18 recipes_
 
 * [org.openrewrite.java.dependencies.AddDependency](/recipes/java/dependencies/adddependency.md)
   * **Add Gradle or Maven dependency**
@@ -744,6 +753,9 @@ _16 recipes_
 * [org.openrewrite.java.dependencies.FindDependency](/recipes/java/dependencies/finddependency.md)
   * **Find Maven and Gradle dependencies**
   * Finds direct dependencies declared in Maven and Gradle build files. This does *not* search transitive dependencies. To detect both direct and transitive dependencies use `org.openrewrite.java.dependencies.DependencyInsight` This recipe works for both Maven and Gradle projects.
+* [org.openrewrite.java.dependencies.FindRepositoryOrder](/recipes/java/dependencies/findrepositoryorder.md)
+  * **Maven repository order**
+  * Determine the order in which dependencies will be resolved for each `pom.xml` or `build.gradle` based on its defined repositories and effective settings.
 * [org.openrewrite.java.dependencies.RelocatedDependencyCheck](/recipes/java/dependencies/relocateddependencycheck.md)
   * **Find relocated dependencies**
   * Find Maven and Gradle dependencies and Maven plugins that have relocated to a new `groupId` or `artifactId`. Relocation information comes from the [oga-maven-plugin](https://github.com/jonathanlermitage/oga-maven-plugin/) maintained by Jonathan Lermitage, Filipe Roque and others.  This recipe makes no changes to any source file by default. Add `changeDependencies=true` to change dependencies, but note that you might need to run additional recipes to update imports and adopt other breaking changes.
@@ -762,6 +774,9 @@ _16 recipes_
 * [org.openrewrite.java.dependencies.search.DoesNotIncludeDependency](/recipes/java/dependencies/search/doesnotincludedependency.md)
   * **Does not include dependency for Gradle and Maven**
   * A precondition which returns false if visiting a Gradle file / Maven pom which includes the specified dependency in the classpath of some Gradle configuration / Maven scope. For compatibility with multimodule projects, this should most often be applied as a precondition.
+* [org.openrewrite.java.dependencies.search.FindDuplicateClasses](/recipes/java/dependencies/search/findduplicateclasses.md)
+  * **Find duplicate classes on the classpath**
+  * Detects classes that appear in multiple dependencies on the classpath. This is similar to what the Maven duplicate-finder-maven-plugin does. Duplicate classes can cause runtime issues when different versions of the same class are loaded.
 * [org.openrewrite.java.dependencies.search.FindMinimumDependencyVersion](/recipes/java/dependencies/search/findminimumdependencyversion.md)
   * **Find the oldest matching dependency version in use**
   * The oldest dependency version in use is the lowest dependency version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Jackson 2.11, but a test source set uses Jackson 2.16. In this case, the oldest Jackson version in use is Java 2.11.
@@ -1244,7 +1259,7 @@ _19 recipes_
 
 _License: Moderne Source Available License_
 
-_169 recipes_
+_173 recipes_
 
 * [org.openrewrite.java.migrate.AddJDeprScanPlugin](/recipes/java/migrate/addjdeprscanplugin.md)
   * **Add `JDeprScan` Maven Plug-in**
@@ -1291,6 +1306,9 @@ _169 recipes_
 * [org.openrewrite.java.migrate.MXBeanRule](/recipes/java/migrate/mxbeanrule.md)
   * **MBean and MXBean interfaces must be public**
   * Sets visibility of MBean and MXBean interfaces to public.
+* [org.openrewrite.java.migrate.MigrateGraalVMResourceConfig](/recipes/java/migrate/migrategraalvmresourceconfig.md)
+  * **Migrate GraalVM resource-config.json to glob patterns**
+  * Migrates GraalVM native-image resource-config.json files from the legacy regex pattern format (JDK 21 and earlier) to the new glob pattern format (JDK 23+). Converts `pattern` entries to `glob` entries and restructures the format. Note: `excludes` are no longer supported in the new format and will be removed.
 * [org.openrewrite.java.migrate.ReferenceCloneMethod](/recipes/java/migrate/referenceclonemethod.md)
   * **Replace `java.lang.ref.Reference.clone()` with constructor call**
   * The recipe replaces any clone calls that may resolve to a `java.lang.ref.Reference.clone()` or any of its known subclasses: `java.lang.ref.PhantomReference`, `java.lang.ref.SoftReference`, and `java.lang.ref.WeakReference` with a constructor call passing in the referent and reference queue as parameters.
@@ -1315,6 +1333,9 @@ _169 recipes_
 * [org.openrewrite.java.migrate.UpdateSdkMan](/recipes/java/migrate/updatesdkman.md)
   * **Update SDKMan Java version**
   * Update the SDKMAN JDK version in the `.sdkmanrc` file. Given a major release (e.g., 17), the recipe will update the current distribution to the current default SDKMAN version of the specified major release. The distribution option can be used to specify a specific JVM distribution. Note that these must correspond to valid SDKMAN distributions.
+* [org.openrewrite.java.migrate.UpgradeDockerImageVersion](/recipes/java/migrate/upgradedockerimageversion.md)
+  * **Upgrade Docker image Java version**
+  * Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin.
 * [org.openrewrite.java.migrate.UpgradeJavaVersion](/recipes/java/migrate/upgradejavaversion.md)
   * **Upgrade Java version**
   * Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
@@ -1747,12 +1768,18 @@ _169 recipes_
 * [org.openrewrite.java.migrate.util.UseEnumSetOf](/recipes/java/migrate/util/useenumsetof.md)
   * **Prefer `EnumSet of(..)`**
   * Prefer `EnumSet of(..)` instead of using `Set of(..)` when the arguments are enums in Java 9 or higher.
+* [org.openrewrite.java.migrate.util.UseListOf](/recipes/java/migrate/util/uselistof.md)
+  * **Prefer `List.of(..)`**
+  * Prefer `List.of(..)` instead of using `java.util.List#add(..)` in anonymous ArrayList initializers in Java 10 or higher. This recipe will not modify code where the List is later mutated since `List.of` returns an immutable list.
 * [org.openrewrite.java.migrate.util.UseLocaleOf](/recipes/java/migrate/util/uselocaleof.md)
   * **Prefer `Locale.of(..)` over `new Locale(..)`**
   * Prefer `Locale.of(..)` over `new Locale(..)` in Java 19 or higher.
 * [org.openrewrite.java.migrate.util.UseMapOf](/recipes/java/migrate/util/usemapof.md)
   * **Prefer `Map.of(..)`**
   * Prefer `Map.of(..)` instead of using `java.util.Map#put(..)` in Java 10 or higher.
+* [org.openrewrite.java.migrate.util.UseSetOf](/recipes/java/migrate/util/usesetof.md)
+  * **Prefer `Set.of(..)`**
+  * Prefer `Set.of(..)` instead of using `java.util.Set#add(..)` in anonymous HashSet initializers in Java 10 or higher. This recipe will not modify code where the Set is later mutated since `Set.of` returns an immutable set.
 
 ## org.openrewrite.recipe:rewrite-netty
 
@@ -1777,11 +1804,14 @@ _4 recipes_
 
 _License: Apache License Version 2.0_
 
-_8 recipes_
+_9 recipes_
 
 * [org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings](/recipes/openapi/swagger/convertapiresponsecodestostrings.md)
   * **Convert API response codes to strings**
-  * Convert API response codes to strings.
+  * Convert API response codes to strings. Handles literal integers, local constant references, and external constant field accesses.
+* [org.openrewrite.openapi.swagger.ConvertApiResponseHeadersToHeaders](/recipes/openapi/swagger/convertapiresponseheaderstoheaders.md)
+  * **Convert API responseHeaders to headers**
+  * Add `headers = @Header(name = ...)` to `@ApiResponse`.
 * [org.openrewrite.openapi.swagger.ConvertApiResponseToContent](/recipes/openapi/swagger/convertapiresponsetocontent.md)
   * **Convert API response to content annotation**
   * Add `content = @Content(mediaType = ...)` and `schema` to `@ApiResponse`.
@@ -1948,14 +1978,17 @@ _17 recipes_
 
 _License: Moderne Source Available License_
 
-_28 recipes_
+_31 recipes_
 
 * [org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations](/recipes/java/recipes/blanklinesaroundfieldswithannotations.md)
   * **Add a blank line around fields with annotations**
   * Fields with annotations should have a blank line before them to clearly separate them from the field above. If another field follows, it should also have a blank line after so that the field with the annotation has space on either side of it, visually distinguishing it from its neighbors.
 * [org.openrewrite.java.recipes.CorrectlySpacedDescriptions](/recipes/java/recipes/correctlyspaceddescriptions.md)
   * **Correctly spaced descriptions**
-  * Recipe descriptions should be cleanly formatted. This recipe forces correct spacing in multiline descriptions. In a multi line description the lines should not start with whitespace and end with a single space except for the last line which should end with a &quot;.&quot; (e.g. ```   return &quot;This is a correct &quot; +     &quot;multi line description&quot;; ``` ).
+  * Recipe descriptions should be cleanly formatted. This recipe forces correct spacing in multiline descriptions. In a multi line description the lines should not start with whitespace and end with a single space except for the last line which should end with a &quot;.&quot; (e.g. ```   return &quot;This is a correct &quot; +    &quot;multi line description&quot;; ``` ).
+* [org.openrewrite.java.recipes.DeclarativeSingleton](/recipes/java/recipes/declarativesingleton.md)
+  * **Make declarative recipes singletons**
+  * Adds the `org.openrewrite.Singleton` precondition to declarative YAML recipes to ensure they only execute once, even when included multiple times.
 * [org.openrewrite.java.recipes.ExamplesExtractor](/recipes/java/recipes/examplesextractor.md)
   * **Extract documentation examples from tests**
   * Extract the before/after sources from tests annotated with `@DocumentExample`, and generate a YAML file with those examples to be shown in the documentation to show usage.
@@ -1965,15 +1998,18 @@ _28 recipes_
 * [org.openrewrite.java.recipes.FindRecipes](/recipes/java/recipes/findrecipes.md)
   * **Find OpenRewrite recipes**
   * This recipe finds all OpenRewrite recipes, primarily to produce a data table that is being used to experiment with fine-tuning a large language model to produce more recipes.
+* [org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes](/recipes/java/recipes/generatedeprecatedmethodrecipes.md)
+  * **Generate `InlineMethodCalls` recipes for deprecated delegating methods**
+  * Finds `@Deprecated` method declarations whose body is a single delegation call to another method in the same class, and generates a declarative YAML recipe file containing `InlineMethodCalls` entries for each.
 * [org.openrewrite.java.recipes.IsLiteralNullRecipe](/recipes/java/recipes/isliteralnullrecipe.md)
-  * **Refaster template `IsLiteralNull`**
-  * Recipe created for the following Refaster template: ```java public class IsLiteralNull \{          @BeforeTemplate     boolean before(Expression expression) \{         return expression instanceof J.Literal &amp;&amp; ((J.Literal)expression).getValue() == null;     \}          @AfterTemplate     boolean after(Expression expression) \{         return J.Literal.isLiteralValue(expression, null);     \} \} ``` .
+  * **Use `J.Literal.isLiteralValue(expression, null)`**
+  * Replace `expression instanceof J.Literal &amp;&amp; ((J.Literal) expression).getValue() == null` with `J.Literal.isLiteralValue(expression, null)`.
 * [org.openrewrite.java.recipes.MissingOptionExample](/recipes/java/recipes/missingoptionexample.md)
   * **Find missing `@Option` `example` values**
   * Find `@Option` annotations that are missing `example` values for documentation.
 * [org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes](/recipes/java/recipes/nomutablestaticfieldsinrecipes.md)
   * **Recipe classes should not have mutable `static` fields**
-  * Remove mutable static fields from Recipe classes to discourage their use.
+  * Add the `final` keyword to mutable static fields in Recipe classes.
 * [org.openrewrite.java.recipes.RecipeClassesShouldBePublic](/recipes/java/recipes/recipeclassesshouldbepublic.md)
   * **Recipe classes should be public**
   * Ensures that classes extending Recipe are declared as public for proper visibility and accessibility.
@@ -1983,6 +2019,9 @@ _28 recipes_
 * [org.openrewrite.java.recipes.RemoveImportBeforeAddImport](/recipes/java/recipes/removeimportbeforeaddimport.md)
   * **Reorder `maybeRemoveImport` before `maybeAddImport`**
   * Reorders `maybeAddImport` and `maybeRemoveImport` calls so that imports are removed before new imports are added. This ordering prevents potential conflicts when the import being added and the import being removed resolve to the same simple class name.
+* [org.openrewrite.java.recipes.RemoveToBeRemoved](/recipes/java/recipes/removetoberemoved.md)
+  * **Remove elements annotated with `@ToBeRemoved` past their date**
+  * Removes class, method and variable declarations annotated with `org.openrewrite.internal.ToBeRemoved` whose `after` date has passed. This does not remove invocations or references to such methods or variables. Those must be handled separately, e.g. with `org.openrewrite.java.InlineMethodCalls`.
 * [org.openrewrite.java.recipes.ReorderTestMethods](/recipes/java/recipes/reordertestmethods.md)
   * **Show `@DocumentExample`s first**
   * Reorders `RewriteTest` methods to place `defaults` first, followed by any `@DocumentExample`s.
@@ -2039,7 +2078,7 @@ _28 recipes_
 
 _License: Moderne Source Available License_
 
-_139 recipes_
+_143 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -2101,6 +2140,9 @@ _139 recipes_
 * [org.openrewrite.java.spring.amqp.UseTlsAmqpConnectionString](/recipes/java/spring/amqp/usetlsamqpconnectionstring.md)
   * **Use TLS for AMQP connection strings**
   * Use TLS for AMQP connection strings.
+* [org.openrewrite.java.spring.batch.AddTransactionManagerToTaskletAndChunk](/recipes/java/spring/batch/addtransactionmanagertotaskletandchunk.md)
+  * **Add `PlatformTransactionManager` to `tasklet()` and `chunk()` calls**
+  * Spring Batch 5.0 requires a `PlatformTransactionManager` as the second argument to `StepBuilder.tasklet(Tasklet)` and `StepBuilder.chunk(int)` / `StepBuilder.chunk(CompletionPolicy)`. This recipe adds the `transactionManager` argument and injects it as a method parameter if needed.
 * [org.openrewrite.java.spring.batch.ConvertReceiveTypeWhenCallStepExecutionMethod](/recipes/java/spring/batch/convertreceivetypewhencallstepexecutionmethod.md)
   * **Convert receive type in some invocation of StepExecution.xx()**
   * Convert receive type in some invocation of StepExecution.xx().
@@ -2122,6 +2164,9 @@ _139 recipes_
 * [org.openrewrite.java.spring.batch.MigrateStepBuilderFactory](/recipes/java/spring/batch/migratestepbuilderfactory.md)
   * **Migrate `StepBuilderFactory` to `StepBuilder`**
   * `StepBuilderFactory` was deprecated in spring-batch 5.x. It is replaced by `StepBuilder`.
+* [org.openrewrite.java.spring.batch.MigrateStepExecutionTimestampTypes](/recipes/java/spring/batch/migratestepexecutiontimestamptypes.md)
+  * **Migrate `Date` to `LocalDateTime` for Spring Batch timestamp methods**
+  * In Spring Batch 5.0, `StepExecution` and `JobExecution` timestamp methods (`getStartTime()`, `getEndTime()`, `getCreateTime()`, `getLastUpdated()`) return `java.time.LocalDateTime` instead of `java.util.Date`. This recipe updates variable declarations accordingly.
 * [org.openrewrite.java.spring.batch.RemoveDefaultBatchConfigurer](/recipes/java/spring/batch/removedefaultbatchconfigurer.md)
   * **Remove `DefaultBatchConfigurer`**
   * Remove `extends DefaultBatchConfigurer` and `@Override` from associated methods.
@@ -2263,6 +2308,9 @@ _139 recipes_
 * [org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate](/recipes/java/spring/boot4/addautoconfiguretestresttemplate.md)
   * **Add `@AutoConfigureTestRestTemplate` if necessary**
   * Adds `@AutoConfigureTestRestTemplate` to test classes annotated with `@SpringBootTest` that use `TestRestTemplate` since this bean is no longer auto-configured as described in the [Spring Boot 4 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#using-webclient-or-testresttemplate-and-springboottest).
+* [org.openrewrite.java.spring.boot4.AddAutoConfigureWebTestClient](/recipes/java/spring/boot4/addautoconfigurewebtestclient.md)
+  * **Add `@AutoConfigureWebTestClient` if necessary**
+  * Adds `@AutoConfigureWebTestClient` to test classes annotated with `@SpringBootTest` that use `WebTestClient` since this bean is no longer auto-configured as described in the [Spring Boot 4 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#using-webclient-or-testresttemplate-and-springboottest).
 * [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
   * **Add logging.pattern.level for traceId and spanId**
   * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
@@ -2311,6 +2359,9 @@ _139 recipes_
 * [org.openrewrite.java.spring.framework.EnvironmentAcceptsProfiles](/recipes/java/spring/framework/environmentacceptsprofiles.md)
   * **Use `Environment#acceptsProfiles(Profiles)`**
   * `Environment#acceptsProfiles(String...)` was deprecated in Spring Framework 5.1.
+* [org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryConnectTimeout](/recipes/java/spring/framework/httpcomponentsclienthttprequestfactoryconnecttimeout.md)
+  * **Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`**
+  * `setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7.0. This recipe adds a comment directing users to migrate to `ConnectionConfig.setConnectTimeout()` on the `PoolingHttpClientConnectionManager`.
 * [org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryReadTimeout](/recipes/java/spring/framework/httpcomponentsclienthttprequestfactoryreadtimeout.md)
   * **Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`**
   * `setReadTimeout(..)` was removed in Spring Framework 6.1.
@@ -2983,39 +3034,11 @@ _163 recipes_
   * **Remove non-ASCII characters from Javadoc**
   * Maven's javadoc-plugin configuration does not support non-ASCII characters. What makes it tricky is the error is very ambiguous and doesn't help in any way. This recipe removes those non-ASCII characters.
 
-## org.openrewrite.recipe:rewrite-struts
-
-_License: Moderne Source Available License_
-
-_7 recipes_
-
-* [org.openrewrite.java.struts.MigrateStrutsDtd](/recipes/java/struts/migratestrutsdtd.md)
-  * **Migrate DTD to a specific Struts version**
-  * Update Struts DTD to reflect the specified version.
-* [org.openrewrite.java.struts.migrate6.MigrateDateTagFormat](/recipes/java/struts/migrate6/migratedatetagformat.md)
-  * **Migrate Struts date tag format patterns**
-  * Converts SimpleDateFormat patterns in `&lt;s:date&gt;` tags to DateTimeFormatter-compatible patterns. Struts 6.0 uses DateTimeFormatter instead of SimpleDateFormat, which has different pattern letter meanings.
-* [org.openrewrite.java.struts.migrate6.MigrateDynamicMethodInvocation](/recipes/java/struts/migrate6/migratedynamicmethodinvocation.md)
-  * **Migrate Dynamic Method Invocation to explicit action mappings**
-  * Identifies Struts configurations using Dynamic Method Invocation (DMI) and marks them for migration, as DMI is disabled by default in Struts 6 for security reasons.
-* [org.openrewrite.java.struts.migrate6.MigrateStaticOgnlMethodAccess](/recipes/java/struts/migrate6/migratestaticognlmethodaccess.md)
-  * **Migrate static OGNL method access to action wrapper methods**
-  * Migrates OGNL expressions using static method access (e.g., `@com.app.Util@makeCode()`) to use action wrapper methods instead. Static method access is disabled by default in Struts 6 for security reasons.
-* [org.openrewrite.java.struts.search.FindStaticOgnlMethodAccess](/recipes/java/struts/search/findstaticognlmethodaccess.md)
-  * **Find static OGNL method access**
-  * Find OGNL expressions that use static method access (e.g., `@com.app.Util@makeCode()`), which is disabled by default in Struts 6 for security reasons. These expressions need to be migrated to use action instance methods instead.
-* [org.openrewrite.java.struts.search.FindStrutsActions](/recipes/java/struts/search/findstrutsactions.md)
-  * **Find Struts actions**
-  * Find actions and their associated definitions.
-* [org.openrewrite.java.struts.search.FindStrutsXml](/recipes/java/struts/search/findstrutsxml.md)
-  * **Find struts XML files**
-  * Struts XML files may have any name, and may be outside a resources directory, so the true test is to look at the content of the file.
-
 ## org.openrewrite.recipe:rewrite-testing-frameworks
 
 _License: Moderne Source Available License_
 
-_169 recipes_
+_173 recipes_
 
 * [org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation](/recipes/java/testing/arquillian/replacearquillianinsequenceannotation.md)
   * **Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`**
@@ -3197,6 +3220,9 @@ _169 recipes_
 * [org.openrewrite.java.testing.assertj.JUnitTryFailToAssertThatThrownBy](/recipes/java/testing/assertj/junittryfailtoassertthatthrownby.md)
   * **Convert try-catch-fail blocks to AssertJ's assertThatThrownBy**
   * Replace try-catch blocks where the try block ends with a `fail()` statement and the catch block optionally contains assertions, with AssertJ's `assertThatThrownBy()`.
+* [org.openrewrite.java.testing.assertj.ReturnActual](/recipes/java/testing/assertj/returnactual.md)
+  * **Collapse `assertThat` followed by `return` into single statement**
+  * Collapse an `assertThat` statement followed by a `return` of the same object into a single `return assertThat(...).assertions().actual()` statement.
 * [org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion](/recipes/java/testing/assertj/simplifyassertjassertion.md)
   * **Simplify AssertJ assertions with literal arguments**
   * Simplify AssertJ assertions by replacing them with more expressive dedicated assertions.
@@ -3234,14 +3260,14 @@ _169 recipes_
   * **Remove JUnit `assertTrue(true)` and `assertFalse(false)`**
   * These assertions are redundant and do not provide any value. They can be safely removed.
 * [org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes](/recipes/java/testing/cleanup/assertliteralbooleantofailrecipes.md)
-  * **Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`**
+  * **Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`**
   * Using fail is more direct and clear.
 * [org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes$WithMessageRecipe](/recipes/java/testing/cleanup/assertliteralbooleantofailrecipes$withmessagerecipe.md)
-  * **Refaster template `AssertLiteralBooleanToFail.WithMessage`**
-  * Recipe created for the following Refaster template: ```java static class WithMessage \{          @BeforeTemplate     void assertFalseBefore(String message) \{         assertFalse(true, message);     \}          @BeforeTemplate     void assertTrueBefore(String message) \{         assertTrue(false, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(String message) \{         fail(message);     \} \} ``` .
+  * **Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`**
+  * Using fail is more direct and clear.
 * [org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes$WithoutMessageRecipe](/recipes/java/testing/cleanup/assertliteralbooleantofailrecipes$withoutmessagerecipe.md)
-  * **Refaster template `AssertLiteralBooleanToFail.WithoutMessage`**
-  * Recipe created for the following Refaster template: ```java static class WithoutMessage \{          @BeforeTemplate     void assertFalseBefore() \{         assertFalse(true);     \}          @BeforeTemplate     void assertTrueBefore() \{         assertTrue(false);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after() \{         fail();     \} \} ``` .
+  * **Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`**
+  * Using fail is more direct and clear.
 * [org.openrewrite.java.testing.cleanup.AssertNotEqualsBooleanToAssertBoolean](/recipes/java/testing/cleanup/assertnotequalsbooleantoassertboolean.md)
   * **Replace JUnit `assertNotEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`**
   * Using `assertFalse` or `assertTrue` is simpler and more clear.
@@ -3362,6 +3388,9 @@ _169 recipes_
 * [org.openrewrite.java.testing.junit5.CleanupJUnitImports](/recipes/java/testing/junit5/cleanupjunitimports.md)
   * **Cleanup JUnit imports**
   * Removes unused `org.junit` import symbols.
+* [org.openrewrite.java.testing.junit5.CleanupKotlinJUnit5AssertionImports](/recipes/java/testing/junit5/cleanupkotlinjunit5assertionimports.md)
+  * **Remove JUnit 5 static Assertions imports in Kotlin when wildcard import is present**
+  * In Kotlin, when both `import org.junit.jupiter.api.*` and static imports from `org.junit.jupiter.api.Assertions` are present, there is overload resolution ambiguity between the Java static methods and the Kotlin extension functions. This recipe removes the static Assertions imports when the wildcard import is present, allowing the Kotlin extension functions to be used instead.
 * [org.openrewrite.java.testing.junit5.CsvSourceToValueSource](/recipes/java/testing/junit5/csvsourcetovaluesource.md)
   * **Replace `@CsvSource` with `@ValueSource` for single method arguments**
   * Replaces JUnit 5's `@CsvSource` annotation with `@ValueSource` when the parameterized test has only a single method argument.
@@ -3425,6 +3454,9 @@ _169 recipes_
 * [org.openrewrite.java.testing.junit5.UpdateMockWebServer](/recipes/java/testing/junit5/updatemockwebserver.md)
   * **OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`**
   * Replace usages of okhttp3 3.x `@Rule` MockWebServer with 4.x `MockWebServer`.
+* [org.openrewrite.java.testing.junit5.UpdateMockWebServerMockResponse](/recipes/java/testing/junit5/updatemockwebservermockresponse.md)
+  * **OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`**
+  * Replace usages of OkHttp MockWebServer `MockResponse` with 5.x MockWebServer3 `MockResponse` and it's `Builder`.
 * [org.openrewrite.java.testing.junit5.UpdateTestAnnotation](/recipes/java/testing/junit5/updatetestannotation.md)
   * **Migrate JUnit 4 `@Test` annotations to JUnit 5**
   * Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit 5's `org.junit.jupiter.api.Test` annotation.
@@ -3464,6 +3496,9 @@ _169 recipes_
 * [org.openrewrite.java.testing.mockito.CloseUnclosedStaticMocks](/recipes/java/testing/mockito/closeunclosedstaticmocks.md)
   * **Close unclosed static mocks**
   * Ensures that all `mockStatic` calls are properly closed. If `mockStatic` is in lifecycle methods like `@BeforeEach` or `@BeforeAll`, creates a class variable and closes it in `@AfterEach` or `@AfterAll`. If `mockStatic` is inside a test method, wraps it in a try-with-resources block.
+* [org.openrewrite.java.testing.mockito.MockConstructionToTryWithResources](/recipes/java/testing/mockito/mockconstructiontotrywithresources.md)
+  * **Wrap `MockedConstruction` in try-with-resources**
+  * Wraps `MockedConstruction` variable declarations that have explicit `.close()` calls into try-with-resources blocks, removing the explicit close call. This ensures proper resource management and makes the code cleaner.
 * [org.openrewrite.java.testing.mockito.MockUtilsToStatic](/recipes/java/testing/mockito/mockutilstostatic.md)
   * **Use static form of Mockito `MockUtil`**
   * Best-effort attempt to remove Mockito `MockUtil` instances.
@@ -3483,8 +3518,8 @@ _169 recipes_
   * **Replace `PowerMockito.whenNew` with Mockito counterpart**
   * Replaces `PowerMockito.whenNew` calls with respective `Mockito.whenConstructed` calls.
 * [org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified](/recipes/java/testing/mockito/removeinitmocksifrunnersspecified.md)
-  * **Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners**
-  * Remove `MockitoAnnotations.initMocks(this)` if specified class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)`.
+  * **Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified**
+  * Remove `MockitoAnnotations.initMocks(this)` and `MockitoAnnotations.openMocks(this)` if class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)` are specified. These manual initialization calls are redundant when using Mockito's JUnit integration.
 * [org.openrewrite.java.testing.mockito.RemoveTimesZeroAndOne](/recipes/java/testing/mockito/removetimeszeroandone.md)
   * **Remove `Mockito.times(0)` and `Mockito.times(1)`**
   * Remove `Mockito.times(0)` and `Mockito.times(1)` from `Mockito.verify()` calls.
@@ -3529,7 +3564,7 @@ _169 recipes_
 
 _License: Apache License Version 2.0_
 
-_1428 recipes_
+_1437 recipes_
 
 * [com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope](/recipes/com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
   * **Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.**
@@ -3541,11 +3576,11 @@ _1428 recipes_
   * **Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.**
   * This recipe will change the jakarta.ws.rs-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.ws.rs-api jar from being deployed to WebLogic which can cause class conflicts.
 * [com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1412](/recipes/com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1412.md)
-  * **Check and Comment Out Deprecations removed on WebLogic version 14.1.2**
-  * This recipe will check and comment out deprecations on WebLogic version 14.1.2.
+  * **Report types deprecated or removed in WebLogic version 14.1.2**
+  * This recipe will report Java types that have been deprecated or removed in WebLogic version 14.1.2. This is an alias to prevent breaking existing recipes.
 * [com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1511](/recipes/com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1511.md)
-  * **Check and Comment Out Deprecations removed on WebLogic version 15.1.1**
-  * This recipe will check and comment out deprecations on WebLogic version 15.1.1.
+  * **Report types deprecated or removed in WebLogic version 15.1.1**
+  * This recipe will report Java types that have been deprecated or removed in WebLogic version 15.1.1. This is an alias to prevent breaking existing recipes.
 * [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
   * Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
@@ -3561,12 +3596,24 @@ _1428 recipes_
 * [com.oracle.weblogic.rewrite.OutputRecipeVersion](/recipes/com/oracle/weblogic/rewrite/outputrecipeversion.md)
   * **Output Recipe Version**
   * Displays the version of the recipe after it runs.
+* [com.oracle.weblogic.rewrite.ReportDeprecated](/recipes/com/oracle/weblogic/rewrite/reportdeprecated.md)
+  * **Report uses of Java types deprecated or removed in WebLogic**
+  * This recipe will report uses of Java types that have been deprecated or removed in WebLogic.
+* [com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1412](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1412.md)
+  * **Report types deprecated or removed in WebLogic version 14.1.2**
+  * This recipe will report Java types that have been deprecated or removed in WebLogic version 14.1.2.
+* [com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1511](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1511.md)
+  * **Report types deprecated or removed in WebLogic version 15.1.1**
+  * This recipe will report Java types that have been deprecated or removed in WebLogic version 15.1.1.
 * [com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1412](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
   * **Update the WebLogic version to 14.1.2**
   * This recipe will update the WebLogic version to 14.1.2 for Maven build.
 * [com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1511](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
   * **Update the WebLogic version to 15.1.1**
   * This recipe will update the WebLogic version to 15.1.1 for Maven build.
+* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/com/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
+  * **Upgrade Jakarta JPA to 3.1 and Hibernate 6.6**
+  * This recipe upgrades Jakarta JPA to 3.1 and Hibernate to 6.6 (compatible with Jakarta EE 10).
 * [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
   * **Migrate to WebLogic 14.1.1**
   * This recipe will apply changes required for migrating to WebLogic 14.1.1
@@ -3708,6 +3755,9 @@ _1428 recipes_
 * [com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
   * **Migrate to Hibernate for Jakarta EE 9**
   * Upgrade hibernate libraries to Jakarta EE9 versions.
+* [com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66](/recipes/com/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
+  * **Upgrade Hibernate to 6.6**
+  * This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta EE 10 and JPA 3.1. It also upgrades a few of the commonly used Hibernate add-ons.
 * [com.oracle.weblogic.rewrite.jakarta.AddJakartaEE9ServletDependencyIfUsingServletContext](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
   * **Add Jakarta EE 9 Servlet Dependency**
   * Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext
@@ -4179,14 +4229,26 @@ _1428 recipes_
 * [io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact](/recipes/io/quarkus/updates/core/quarkus33/graalvmsubstitutionsartifact.md)
   * **io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact**
   * 
+* [io.quarkus.updates.core.quarkus331.AddArglineToSurefireFailsafePlugins](/recipes/io/quarkus/updates/core/quarkus331/addarglinetosurefirefailsafeplugins.md)
+  * **Add @{argLine} to maven-surefire-plugin and maven-failsafe-plugin**
+  * Add or update &lt;argLine&gt; in maven-surefire-plugin and maven-failsafe-plugin configuration to include @\{argLine\} placeholder.
 * [io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin](/recipes/io/quarkus/updates/core/quarkus331/addextensionstruetoquarkusmavenplugin.md)
   * **Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin**
   * Add &lt;extensions&gt;true&lt;/extensions&gt; to the quarkus-maven-plugin configuration if not already present.
 * [io.quarkus.updates.core.quarkus331.CoreUpdate331](/recipes/io/quarkus/updates/core/quarkus331/coreupdate331.md)
   * **io.quarkus.updates.core.quarkus331.CoreUpdate331**
   * 
+* [io.quarkus.updates.core.quarkus331.JUnitRelocations](/recipes/io/quarkus/updates/core/quarkus331/junitrelocations.md)
+  * **io.quarkus.updates.core.quarkus331.JUnitRelocations**
+  * 
 * [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix.md)
   * **io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix**
+  * 
+* [io.quarkus.updates.core.quarkus331.OpenTelemetryTracingPackageTypoFix](/recipes/io/quarkus/updates/core/quarkus331/opentelemetrytracingpackagetypofix.md)
+  * **io.quarkus.updates.core.quarkus331.OpenTelemetryTracingPackageTypoFix**
+  * 
+* [io.quarkus.updates.core.quarkus331.Testcontainers2](/recipes/io/quarkus/updates/core/quarkus331/testcontainers2.md)
+  * **io.quarkus.updates.core.quarkus331.Testcontainers2**
   * 
 * [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](/recipes/io/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith.md)
   * **io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith**
@@ -9905,7 +9967,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_96 recipes_
+_98 recipes_
 
 * [org.openrewrite.java.AddCommentToImport](/recipes/java/addcommenttoimport.md)
   * **Add comment to import statement**
@@ -10192,6 +10254,12 @@ _96 recipes_
 * [org.openrewrite.java.search.IsLikelyTest](/recipes/java/search/islikelytest.md)
   * **Find sources that are likely tests**
   * Sources that contain indicators of being, or being exclusively for the use in tests. This recipe is not exhaustive, but is intended to be a good starting point for finding test sources. Looks at the source set name, and types in use; for example looks for uses of JUnit &amp; TestNG annotations/assertions.
+* [org.openrewrite.java.search.ModuleContainsFile](/recipes/java/search/modulecontainsfile.md)
+  * **Module contains file**
+  * Intended to be used primarily as a precondition for other recipes, this recipe checks if a module contains a specific file or files matching a pattern. Only files belonging to modules containing the specified file are marked with a `SearchResult` marker. This is more specific than `RepositoryContainsFile` which marks all files in the repository if any file matches.
+* [org.openrewrite.java.search.ModuleUsesType](/recipes/java/search/moduleusestype.md)
+  * **Module uses type**
+  * Intended to be used primarily as a precondition for other recipes, this recipe checks if a module uses a specified type. Only files belonging to modules that use the specified type are marked with a `SearchResult` marker. This is more specific than `UsesType` which only marks the files that directly use the type.
 * [org.openrewrite.java.search.ResultOfMethodCallIgnored](/recipes/java/search/resultofmethodcallignored.md)
   * **Result of method call ignored**
   * Find locations where the result of the method call is being ignored.
@@ -10745,7 +10813,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1264 recipes_
+_1260 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -10803,7 +10871,7 @@ _1264 recipes_
   * Recipes to analyze and manage dependency vulnerabilities using Moderne DevCenter.
 * [org.apache.logging.log4j.InlineLog4jApiMethods](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
   * **Inline `log4j-api-2` methods annotated with `@InlineMe`**
-  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
+  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.preconditions: - org.openrewrite.Singleton
 * [org.apache.wicket.BestPractices](/recipes/org/apache/wicket/bestpractices.md)
   * **Wicket best practices**
   * Applies Wicket best practices such as minimizing anonymous inner classes and upgrading to the latest version.
@@ -10864,6 +10932,9 @@ _1264 recipes_
 * [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
   * **Migrate to ApacheHttpClient 5.x**
   * Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_AsyncClientClassMapping](/recipes/apache/httpclient5/upgradeapachehttpclient_5_asyncclientclassmapping.md)
+  * **Migrate Apache HttpAsyncClient 4.x classes to HttpClient 5.x**
+  * Migrates classes from Apache HttpAsyncClient 4.x `httpasyncclient` to their equivalents in HttpClient 5.x.
 * [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
   * **Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x**
   * Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x.
@@ -12418,6 +12489,9 @@ _1264 recipes_
 * [org.openrewrite.java.dropwizard.MigrateTests](/recipes/java/dropwizard/migratetests.md)
   * **Migrate Health Checks to Spring Boot**
   * Converts Dropwizard tests to Spring Boot format.
+* [org.openrewrite.java.dropwizard.MigrateToDropwizard5](/recipes/java/dropwizard/migratetodropwizard5.md)
+  * **Migrate to Dropwizard 5.0.x from 4.x**
+  * Apply changes required to upgrade a Dropwizard 4.x application to 5.0.x. This includes upgrading dependencies, removing deprecated configuration options, and migrating Jetty handler implementations. Includes required migrations to Java 17, Jakarta EE 10, JUnit 5.14, Jackson 2.x, and Hibernate 6.6. See [the upgrade guide](https://www.dropwizard.io/en/stable/manual/upgrade-notes/upgrade-notes-5_0_x.html).
 * [org.openrewrite.java.dropwizard.ModifyDropwizardHealthChecksToSpringVariants](/recipes/java/dropwizard/modifydropwizardhealthcheckstospringvariants.md)
   * **Convert Health Check Implementations**
   * Transforms Dropwizard HealthCheck classes to Spring Boot HealthIndicator.
@@ -12643,6 +12717,9 @@ _1264 recipes_
 * [org.openrewrite.java.migrate.DeprecatedLogRecordThreadID](/recipes/java/migrate/deprecatedlogrecordthreadid.md)
   * **Adopt `setLongThreadID` in `java.util.logging.LogRecord`**
   * Avoid using the deprecated methods in `java.util.logging.LogRecord`.
+* [org.openrewrite.java.migrate.EnableLombokAnnotationProcessor](/recipes/java/migrate/enablelombokannotationprocessor.md)
+  * **Enable Lombok annotation processor**
+  * With Java 23 the encapsulation of JDK internals made it necessary to configure annotation processors like Lombok explicitly. The change is valid for older versions as well.
 * [org.openrewrite.java.migrate.IBMJDKtoOracleJDK](/recipes/java/migrate/ibmjdktooraclejdk.md)
   * **Migrate from IBM Runtimes to Oracle Runtimes**
   * This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions necessary for migrating from IBM Runtimes to Oracle Runtimes.
@@ -13732,6 +13809,9 @@ _1264 recipes_
 * [org.openrewrite.java.spring.opentelemetry.MigrateToOpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
   * **Complete migration to OpenTelemetry**
   * Comprehensive migration to OpenTelemetry including dependencies, configuration properties, and Java code changes. This recipe handles migration from Spring Cloud Sleuth, Brave/Zipkin, and OpenTracing to OpenTelemetry.
+* [org.openrewrite.java.spring.security.SpringSecurityBestPractices](/recipes/java/spring/security/springsecuritybestpractices.md)
+  * **Spring security best practices**
+  * Applies security best practices to Spring applications, including TLS for database and message broker connections.
 * [org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
   * **Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`**
   * Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`.
@@ -13804,33 +13884,6 @@ _1264 recipes_
 * [org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
   * **Upgrade to SpringDoc 3.0**
   * Upgrade to SpringDoc v3.0.
-* [org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces](/recipes/java/struts/migrate6/migrateawareinterfaces.md)
-  * **Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces**
-  * These types have moved to a new package in Struts 6.0 and their methods have been renamed from set* to with*.
-* [org.openrewrite.java.struts.migrate6.MigrateOpenSymphonyClasses](/recipes/java/struts/migrate6/migrateopensymphonyclasses.md)
-  * **Migrate OpenSymphony classes to Struts 6.0**
-  * Migrate classes from `com.opensymphony.xwork2` to their replacements in `org.apache.struts2`.
-* [org.openrewrite.java.struts.migrate6.MigrateStruts6](/recipes/java/struts/migrate6/migratestruts6.md)
-  * **Migrate to Struts 6.0**
-  * Migrate Struts 2.x to Struts 6.0.
-* [org.openrewrite.java.struts.migrate6.MigrateStruts6Constants](/recipes/java/struts/migrate6/migratestruts6constants.md)
-  * **Migrate to Struts 6.0 constants**
-  * All Xwork constants had been already deprecated, with this version all of them have been removed and Struts constants have been used instead.
-* [org.openrewrite.java.struts.migrate6.RemoveFreemarkerHtmlBuiltin](/recipes/java/struts/migrate6/removefreemarkerhtmlbuiltin.md)
-  * **Remove deprecated Freemarker `?html` built-in**
-  * Removes the deprecated `?html` built-in from Freemarker templates. After migrating to Struts 6 with the latest Freemarker (which enables auto-escaping by default), the `?html` built-in is no longer needed and should be removed. See the [Struts 2.5 to 6.0 migration guide](https://cwiki.apache.org/confluence/display/WW/Struts+2.5+to+6.0.0+migration#Struts2.5to6.0.0migration-Tagescapebehaviour).
-* [org.openrewrite.java.struts.migrate6.UpgradeStruts6Dependencies](/recipes/java/struts/migrate6/upgradestruts6dependencies.md)
-  * **Upgrade Struts 6.0 dependencies**
-  * Upgrade Struts 2.x dependencies to Struts 6.0.
-* [org.openrewrite.java.struts.migrate7.MigrateStruts7](/recipes/java/struts/migrate7/migratestruts7.md)
-  * **Migrate to Struts 7.0**
-  * Migrate Struts 6.x to Struts 7.x.
-* [org.openrewrite.java.struts.migrate7.RenameOpenSymphonyToStruts2](/recipes/java/struts/migrate7/renameopensymphonytostruts2.md)
-  * **Rename OpenSymphony / XWork classes to Struts 7 packages**
-  * Updates classes moved from com.opensymphony.xwork2.* to their new org.apache.struts2.* packages in Struts 7.
-* [org.openrewrite.java.struts.migrate7.UpdateStruts7Constants](/recipes/java/struts/migrate7/updatestruts7constants.md)
-  * **Align Struts XML constants for Struts 7**
-  * Updates Struts XML constants that were renamed or tightened in Struts 7.
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
   * Upgrade ArchUnit from 0.x to 1.x.
@@ -13909,6 +13962,9 @@ _1264 recipes_
 * [org.openrewrite.java.testing.junit5.JUnit5BestPractices](/recipes/java/testing/junit5/junit5bestpractices.md)
   * **JUnit 5 best practices**
   * Applies best practices to tests.
+* [org.openrewrite.java.testing.junit5.MigrateAssertionFailedError](/recipes/java/testing/junit5/migrateassertionfailederror.md)
+  * **Migrate JUnit 4 assertion failure exceptions to JUnit Jupiter**
+  * Replace JUnit 4's `junit.framework.AssertionFailedError` and `org.junit.ComparisonFailure` with JUnit Jupiter's `org.opentest4j.AssertionFailedError`.
 * [org.openrewrite.java.testing.junit5.MigrateAssumptions](/recipes/java/testing/junit5/migrateassumptions.md)
   * **Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`**
   * Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`.

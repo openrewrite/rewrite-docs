@@ -28,6 +28,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `Integer` | port | The TLS-enabled port to use. | `1234` |
 | `String` | attribute | A connection attribute, if any, indicating to the JDBC provider that this is a TLS connection. | `sslConnection=true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Spring security best practices](/recipes/java/spring/security/springsecuritybestpractices.md)
+
 ## Example
 
 ###### Parameters

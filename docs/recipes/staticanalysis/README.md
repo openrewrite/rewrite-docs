@@ -17,11 +17,15 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Code cleanup](./codecleanup.md)
 * [Common static analysis issues](./commonstaticanalysis.md)
+* [Java API best practices](./javaapibestpractices.md)
 * [Modernize `BufferedWriter` creation &amp; prevent file descriptor leaks](./bufferedwritercreationrecipes.md)
+* [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
+* [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
 * [Simplify ternary expressions](./simplifyternaryrecipes.md)
 * [URL Equals and Hash Code](./urlequalshashcoderecipes.md)
+* [Use `Map#containsKey`](./usemapcontainskey.md)
 
 ## Recipes
 
@@ -68,7 +72,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Hidden field](./hiddenfield.md)
 * [Hide utility class constructor](./hideutilityclassconstructor.md)
 * [Inline variable](./inlinevariable.md)
-* [Java API best practices](./javaapibestpractices.md)
 * [Jump statements should not be redundant](./noredundantjumpstatements.md)
 * [Mask credit card numbers](./maskcreditcardnumbers.md)
 * [Modifier order](./modifierorder.md)
@@ -84,7 +87,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer increment/decrement and compound assignment operators](./preferincrementoperator.md)
 * [Prefer `while` over `for` loops](./whileinsteadoffor.md)
 * [Properly use declaration-site type variance](./declarationsitetypevariance.md)
-* [Properly use declaration-site type variance for well-known types](./commondeclarationsitetypevariances.md)
 * [Redundant file creation](./redundantfilecreation.md)
 * [Reformat local variable names to camelCase](./renamelocalvariablestocamelcase.md)
 * [Reformat private field names to camelCase](./renameprivatefieldstocamelcase.md)
@@ -120,7 +122,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `StringBuilder#append` with `String`](./replacestringbuilderwithstring.md)
 * [Replace `booleanExpression ? false : true` with `!booleanExpression`](./simplifyternaryrecipes$simplifyternaryfalsetruerecipe.md)
 * [Replace `booleanExpression ? true : false` with `booleanExpression`](./simplifyternaryrecipes$simplifyternarytruefalserecipe.md)
-* [Replace calls to `Thread.run()` with `Thread.start()`](./replacethreadrunwiththreadstart.md)
 * [Replace `catch(Exception)` with specific declared exceptions thrown in the try block](./onlycatchdeclaredexceptions.md)
 * [Replace deprecated `Runtime#exec()` methods](./replacedeprecatedruntimeexecmethods.md)
 * [Replace duplicate `String` literals](./replaceduplicatestringliterals.md)
@@ -164,7 +165,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `Collection#isEmpty()` instead of comparing `size()`](./isemptycalloncollections.md)
 * [Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`](./noemptycollectionwithrawtype.md)
 * [Use Empty Array for `Collection.toArray()`](./replacecollectiontoarrayargwithemptyarray.md)
-* [Use `Map#containsKey`](./usemapcontainskey.md)
 * [Use `StandardCharset` constants](./usestandardcharset.md)
 * [Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`](./equalstocontentequals.md)
 * [Use `String.equals()` on `String` literals](./stringliteralequality.md)

@@ -24,6 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `boolean` | convertStringsWithoutNewlines | *Optional*. Whether or not strings without newlines should be converted to text block when processing code. The default value is true. | `true` |
+| `boolean` | avoidLineContinuations | *Optional*. When enabled, the recipe avoids using `\` line continuation escapes in text blocks where the content contains newlines. Non-newline-joined strings are placed on the same text block line instead. The default value is false. | `true` |
 
 
 ## Used by

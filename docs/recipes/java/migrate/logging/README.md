@@ -8,6 +8,7 @@ description: java.util.logging APIs OpenRewrite recipes.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Use `java.lang.management.PlatformLoggingMXBean`](./migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
 * [Use modernized `java.util.logging` APIs](./javaloggingapis.md)
 
 ## Recipes
@@ -16,6 +17,5 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `Logger#getGlobal()`](./migrateloggerglobaltogetglobal.md)
 * [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](./migrateloggerlogrbtouseresourcebundle.md)
 * [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](./migrategetloggingmxbeantogetplatformmxbean.md)
-* [Use `java.lang.management.PlatformLoggingMXBean`](./migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
 
 

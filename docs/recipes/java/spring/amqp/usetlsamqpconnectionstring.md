@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | tlsPropertyKey | *Optional*. The Spring property key to enable default TLS mode against. If this value is specified, the specified property will be used when updating the default TLS mode, otherwise a default of `spring.rabbitmq.ssl.enabled` will be used instead. | `spring.rabbitmq.ssl.enabled` |
 | `List` | pathExpressions | *Optional*. Each value in this list represents a glob expression that is used to match which files will be modified. If this value is not present, this recipe will query the execution context for reasonable defaults. ("**/application.yml", "**/application.yaml", and "**/application.properties". | `**/application.yml` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Spring security best practices](/recipes/java/spring/security/springsecuritybestpractices.md)
+
 ## Example
 
 ###### Parameters

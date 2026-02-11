@@ -48,6 +48,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove Security SecurityManager](../../java/migrate/removesecuritymanager)
 * [Replace `System.getSecurityManager()` with `null`](../../java/migrate/systemgetsecuritymanagertonull)
 * [Use `ZipException` instead of `ZipError`](../../java/migrate/migrateziperrortozipexception)
+* [Enable Lombok annotation processor](../../java/migrate/enablelombokannotationprocessor)
+* [Migrate GraalVM resource-config.json to glob patterns](../../java/migrate/migrategraalvmresourceconfig)
 
 </TabItem>
 
@@ -79,10 +81,111 @@ recipeList:
   - org.openrewrite.java.migrate.RemoveSecurityManager
   - org.openrewrite.java.migrate.SystemGetSecurityManagerToNull
   - org.openrewrite.java.migrate.MigrateZipErrorToZipException
+  - org.openrewrite.java.migrate.EnableLombokAnnotationProcessor
+  - org.openrewrite.java.migrate.MigrateGraalVMResourceConfig
 
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`UpgradeToJava25Test#updateCompilerVersion`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <properties>
+        <maven.compiler.release>25</maven.compiler.release>
+    </properties>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,1 +6,1 @@
+    <version>1</version>
+    <properties>
+-       <maven.compiler.release>17</maven.compiler.release>
++       <maven.compiler.release>25</maven.compiler.release>
+    </properties>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeToJava25Test#updateCompilerVersion`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <properties>
+        <maven.compiler.release>25</maven.compiler.release>
+    </properties>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,1 +6,1 @@
+    <version>1</version>
+    <properties>
+-       <maven.compiler.release>17</maven.compiler.release>
++       <maven.compiler.release>25</maven.compiler.release>
+    </properties>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
@@ -285,25 +388,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

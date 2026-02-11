@@ -46,6 +46,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.apache.log4j.Priority isGreaterOrEqual(org.apache.log4j.Priority)`
   * newMethodName: `isMoreSpecificThan`
   * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.log4j.Category isEnabledFor(org.apache.log4j.Priority)`
+  * newMethodName: `isEnabled`
+  * matchOverrides: `true`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.log4j.Priority`
   * newFullyQualifiedTypeName: `org.apache.logging.log4j.Level`
@@ -133,6 +137,10 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.log4j.Priority isGreaterOrEqual(org.apache.log4j.Priority)
       newMethodName: isMoreSpecificThan
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.log4j.Category isEnabledFor(org.apache.log4j.Priority)
+      newMethodName: isEnabled
       matchOverrides: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.log4j.Priority

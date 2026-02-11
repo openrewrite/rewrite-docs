@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Update the WebLogic version to 14.1.2](../../../../com/oracle/weblogic/rewrite/updatebuildtoweblogic1412)
-* [Check and Comment Out Deprecations removed on WebLogic version 14.1.2](../../../../com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1412)
+* [Report types deprecated or removed in WebLogic version 14.1.2](../../../../com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1412)
 * [JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older](../../../../com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x)
 * [Migrate WebLogic Schemas to 14.1.2](../../../../com/oracle/weblogic/rewrite/migrateweblogicschemasto1412)
 * [Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2](../../../../com/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation)
@@ -284,6 +284,21 @@ _Attempts to resolve maven metadata that failed._
 | Snapshots | Does the repository support snapshots. |
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.table.TypeUses" label="TypeUses">
+
+### Type uses
+**org.openrewrite.java.table.TypeUses**
+
+_The source code of matching type uses._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Source | The source code of the type use. |
+| Concrete type | The concrete type in use, which may be a subtype of a searched type. |
 
 </TabItem>
 

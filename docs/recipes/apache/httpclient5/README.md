@@ -11,6 +11,7 @@ _Recipes for migrating to [Apache HttpClient 5.x](https://hc.apache.org/httpcomp
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Adds `TimeUnit` to timeouts and duration methods](./upgradeapachehttpclient_5_timeunit.md)
+* [Migrate Apache HttpAsyncClient 4.x classes to HttpClient 5.x](./upgradeapachehttpclient_5_asyncclientclassmapping.md)
 * [Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x](./upgradeapachehttpcore_5_nioinputbuffers.md)
 * [Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x](./upgradeapachehttpcore_5_niooutputbuffers.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](./credentialsstoreclear.md)
@@ -29,7 +30,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Adds a TimeUnit argument to the matched method invocations](./addtimeunitargument.md)
 * [Adds offset and length arguments to the read method of SharedInputBuffer](./inputbufferreadaddoffsetandlengtharguments.md)
 * [Adds offset and length arguments to the write method of SharedOutputBuffer](./outputbufferwriteaddoffsetandlengtharguments.md)
-* [Changes an argument to a `TimeValue` for matched method invocations](./changeargumenttotimevalue.md)
+* [Changes an argument (or pair of arguments) to a `TimeValue` for matched method invocations](./changeargumenttotimevalue.md)
+* [Migrate `PoolingNHttpClientConnectionManager` to `PoolingAsyncClientConnectionManager`](./migratepoolingnhttpclientconnectionmanager.md)
 * [Migrate `RequestConfig` to httpclient5](./migraterequestconfig.md)
 * [Migrate `UsernamePasswordCredentials` to httpclient5](./usernamepasswordcredentials.md)
 * [Migrate deprecated `SSLConnectionSocketFactory` to `DefaultClientTlsStrategy`](./migratesslconnectionsocketfactory.md)
@@ -38,5 +40,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replaces `AuthScope.ANY`](./migrateauthscope.md)
 * [Replaces deprecated `HttpRequestBase::getRequestLine()`](./newrequestline.md)
 * [Replaces deprecated `HttpResponse::getStatusLine()`](./newstatusline.md)
+* [Use `PoolingAsyncClientConnectionManagerBuilder` for configuration](./usepoolingasyncclientconnectionmanagerbuilder.md)
 
 

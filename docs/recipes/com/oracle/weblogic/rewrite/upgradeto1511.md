@@ -35,7 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Output Recipe Version](../../../../com/oracle/weblogic/rewrite/outputrecipeversion)
 * [Update the WebLogic version to 15.1.1](../../../../com/oracle/weblogic/rewrite/updatebuildtoweblogic1511)
-* [Check and Comment Out Deprecations removed on WebLogic version 15.1.1](../../../../com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1511)
+* [Report types deprecated or removed in WebLogic version 15.1.1](../../../../com/oracle/weblogic/rewrite/reportdeprecatedorremoved1511)
 * [Migrate WebLogic Schemas to 15.1.1](../../../../com/oracle/weblogic/rewrite/migrateweblogicschemasto1511)
 * [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](../../../../com/oracle/weblogic/rewrite/changejakartainjectapidependencyscope)
 * [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](../../../../com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope)
@@ -58,7 +58,7 @@ tags:
 recipeList:
   - com.oracle.weblogic.rewrite.OutputRecipeVersion
   - com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1511
-  - com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1511
+  - com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1511
   - com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511
   - com.oracle.weblogic.rewrite.ChangeJakartaInjectAPIDependencyScope
   - com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope
@@ -288,6 +288,21 @@ _Attempts to resolve maven metadata that failed._
 | Snapshots | Does the repository support snapshots. |
 | Releases | Does the repository support releases. |
 | Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.table.TypeUses" label="TypeUses">
+
+### Type uses
+**org.openrewrite.java.table.TypeUses**
+
+_The source code of matching type uses._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Source | The source code of the type use. |
+| Concrete type | The concrete type in use, which may be a subtype of a searched type. |
 
 </TabItem>
 
