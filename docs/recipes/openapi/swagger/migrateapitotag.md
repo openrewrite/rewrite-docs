@@ -20,6 +20,36 @@ _Converts `@Api` to `@Tag` annotation and converts the directly mappable attribu
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `io.swagger.annotations.Api`
+  * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.tags.Tag`
+  * ignoreDefinition: `true`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.openapi.swagger.MigrateApiToTag
+displayName: Migrate from `@Api` to `@Tag`
+description: |
+  Converts `@Api` to `@Tag` annotation and converts the directly mappable attributes and removes the others.
+recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: io.swagger.annotations.Api
+      newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.tags.Tag
+      ignoreDefinition: true
+
+```
+</TabItem>
+</Tabs>
+
 ## Used by
 
 This recipe is used as part of the following composite recipes:

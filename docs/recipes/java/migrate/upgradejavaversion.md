@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * allowDowngrade: `false`
 * [Update SDKMan Java version](../../java/migrate/updatesdkman)
   * newVersion: `null`
+* [Upgrade Docker image Java version](../../java/migrate/upgradedockerimageversion)
 
 </TabItem>
 
@@ -62,6 +63,7 @@ recipeList:
       allowDowngrade: false
   - org.openrewrite.java.migrate.UpdateSdkMan:
       newVersion: null
+  - org.openrewrite.java.migrate.UpgradeDockerImageVersion
 
 ```
 </TabItem>

@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrates to ApacheHttpClient 4.5.x](../../apache/httpclient4/upgradeapachehttpclient_4_5)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](../../apache/httpclient5/upgradeapachehttpclientdependencies)
+* [Migrate Apache HttpAsyncClient 4.x classes to HttpClient 5.x](../../apache/httpclient5/upgradeapachehttpclient_5_asyncclientclassmapping)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](../../apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping)
 * [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 * [Migrate `RequestConfig` to httpclient5](../../apache/httpclient5/migraterequestconfig)
@@ -45,6 +46,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Adds `TimeUnit` to timeouts and duration methods](../../apache/httpclient5/upgradeapachehttpclient_5_timeunit)
 * [Replaces `AuthScope.ANY`](../../apache/httpclient5/migrateauthscope)
 * [Migrate deprecated `SSLConnectionSocketFactory` to `DefaultClientTlsStrategy`](../../apache/httpclient5/migratesslconnectionsocketfactory)
+* [Change method target to static](../../java/changemethodtargettostatic)
+  * methodPattern: `org.apache.http.conn.ssl.SSLConnectionSocketFactory getDefaultHostnameVerifier()`
+  * fullyQualifiedTargetTypeName: `org.apache.hc.client5.http.ssl.HttpsSupport`
+* [Change method target to static](../../java/changemethodtargettostatic)
+  * methodPattern: `org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory getDefaultHostnameVerifier()`
+  * fullyQualifiedTargetTypeName: `org.apache.hc.client5.http.ssl.HttpsSupport`
 * [Delete method argument](../../java/deletemethodargument)
   * methodPattern: `org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)`
   * argumentIndex: `0`
@@ -69,6 +76,7 @@ tags:
 recipeList:
   - org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies
+  - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_AsyncClientClassMapping
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioClassMapping
   - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.apache.httpclient5.MigrateRequestConfig
@@ -79,6 +87,12 @@ recipeList:
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit
   - org.openrewrite.apache.httpclient5.MigrateAuthScope
   - org.openrewrite.apache.httpclient5.MigrateSSLConnectionSocketFactory
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.apache.http.conn.ssl.SSLConnectionSocketFactory getDefaultHostnameVerifier()
+      fullyQualifiedTargetTypeName: org.apache.hc.client5.http.ssl.HttpsSupport
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory getDefaultHostnameVerifier()
+      fullyQualifiedTargetTypeName: org.apache.hc.client5.http.ssl.HttpsSupport
   - org.openrewrite.java.DeleteMethodArgument:
       methodPattern: org.apache.hc.client5.http.impl.auth.BasicSchemeFactory <constructor>(java.nio.charset.Charset)
       argumentIndex: 0

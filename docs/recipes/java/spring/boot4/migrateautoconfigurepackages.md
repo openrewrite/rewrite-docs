@@ -129,6 +129,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `org.springframework.boot.autoconfigure.mongo`
   * newPackageName: `org.springframework.boot.mongodb.autoconfigure`
   * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.kafka.StreamsBuilderFactoryBeanCustomizer`
+  * newFullyQualifiedTypeName: `org.springframework.kafka.config.StreamsBuilderFactoryBeanConfigurer`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.kafka`
   * newPackageName: `org.springframework.boot.kafka.autoconfigure`
@@ -202,6 +205,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.test.web.client`
   * newPackageName: `org.springframework.boot.resttestclient`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.actuate.health`
+  * newPackageName: `org.springframework.boot.health.contributor`
   * recursive: `true`
 
 </TabItem>
@@ -317,6 +324,9 @@ recipeList:
       oldPackageName: org.springframework.boot.autoconfigure.mongo
       newPackageName: org.springframework.boot.mongodb.autoconfigure
       recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.kafka.StreamsBuilderFactoryBeanCustomizer
+      newFullyQualifiedTypeName: org.springframework.kafka.config.StreamsBuilderFactoryBeanConfigurer
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.kafka
       newPackageName: org.springframework.boot.kafka.autoconfigure
@@ -390,6 +400,10 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.test.web.client
       newPackageName: org.springframework.boot.resttestclient
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.actuate.health
+      newPackageName: org.springframework.boot.health.contributor
       recursive: true
 
 ```

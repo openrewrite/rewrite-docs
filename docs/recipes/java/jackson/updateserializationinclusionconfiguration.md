@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Update configuration of serialization inclusion in ObjectMapper for Jackson 3"
+sidebar_label: "Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update configuration of serialization inclusion in ObjectMapper for Jackson 3
+# Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3
 
 **org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration**
 

@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`](../../../java/spring/framework/migrateuricomponentsbuildermethods)
 * [Migrate `WebExchangeBindException.resolveErrorMessages`](../../../java/spring/framework/migratewebexchangebindexceptionresolveerrormethod)
 * [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](../../../java/spring/framework/migrateclienthttpresponsegetrawstatuscodemethod)
+* [Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryconnecttimeout)
 * [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME`
   * fullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME`
@@ -85,6 +86,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.MigrateUriComponentsBuilderMethods
   - org.openrewrite.java.spring.framework.MigrateWebExchangeBindExceptionResolveErrorMethod
   - org.openrewrite.java.spring.framework.MigrateClientHttpResponseGetRawStatusCodeMethod
+  - org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryConnectTimeout
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.springframework.http.client.observation.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME
       fullyQualifiedConstantName: org.springframework.http.client.observation.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME

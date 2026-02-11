@@ -8,10 +8,7 @@ description: Spring Cloud 2023 OpenRewrite recipes.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Upgrade dependencies to Spring Cloud 2023](./dependencyupgrades.md)
-
-## Recipes
-
 * [Migrate to Spring Cloud 2023](./upgradespringcloud_2023.md)
+* [Upgrade dependencies to Spring Cloud 2023](./dependencyupgrades.md)
 
 

@@ -269,6 +269,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPropertyKey: `spring.session.redis.save-mode`
   * newPropertyKey: `spring.session.data.redis.save-mode`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.session.mongodb.collection-name`
+  * newPropertyKey: `spring.session.data.mongodb.collection-name`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.test.mockmvc.webclient.enabled`
   * newPropertyKey: `spring.test.mockmvc.htmlunit.webclient.enabled`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
@@ -699,6 +702,9 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.session.redis.save-mode
       newPropertyKey: spring.session.data.redis.save-mode
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.session.mongodb.collection-name
+      newPropertyKey: spring.session.data.mongodb.collection-name
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.test.mockmvc.webclient.enabled
       newPropertyKey: spring.test.mockmvc.htmlunit.webclient.enabled

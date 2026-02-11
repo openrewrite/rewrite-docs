@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 Recipe descriptions should be cleanly formatted. This recipe forces correct spacing in multiline descriptions. In a multi line description the lines should not start with whitespace and end with a single space except for the last line which should end with a "." (e.g.
 ```
-  return "This is a correct " + 
+  return "This is a correct " +
    "multi line description";
 ```
 ).

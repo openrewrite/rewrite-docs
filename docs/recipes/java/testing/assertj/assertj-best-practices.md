@@ -80,6 +80,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJStringRules` Refaster recipes](../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes)
 * [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes)
 * [Collapse consecutive `assertThat` statements](../../../java/testing/assertj/collapseconsecutiveassertthatstatements)
+* [Collapse `assertThat` followed by `return` into single statement](../../../java/testing/assertj/returnactual)
 * [Simplify redundant AssertJ assertion chains](../../../java/testing/assertj/simplifyredundantassertjchains)
 * [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports)
 
@@ -145,6 +146,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes
   - org.openrewrite.java.testing.assertj.CollapseConsecutiveAssertThatStatements
+  - org.openrewrite.java.testing.assertj.ReturnActual
   - org.openrewrite.java.testing.assertj.SimplifyRedundantAssertJChains
   - org.openrewrite.java.testing.assertj.StaticImports
 

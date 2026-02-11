@@ -19,6 +19,53 @@ _Finds usages of locale-based date/time formatting APIs that may be affected by 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.text.DateFormat;
+import java.util.Date;
+
+class Test {
+    void test() {
+        DateFormat df = DateFormat.getTimeInstance();
+        String formatted = df.format(new Date());
+    }
+}
+```
+
+###### After
+```java
+import java.text.DateFormat;
+import java.util.Date;
+
+class Test {
+    void test() {
+        DateFormat df = /*~~(JDK 20+ CLDR: may use NNBSP before AM/PM)~~>*/DateFormat.getTimeInstance();
+        String formatted = df.format(new Date());
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class Test {
+    void test() {
+-       DateFormat df = DateFormat.getTimeInstance();
++       DateFormat df = /*~~(JDK 20+ CLDR: may use NNBSP before AM/PM)~~>*/DateFormat.getTimeInstance();
+        String formatted = df.format(new Date());
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

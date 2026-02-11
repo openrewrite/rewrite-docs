@@ -39,6 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Bean methods should return concrete types](../../../java/spring/boot3/precisebeantype)
 * [Replace String literals with Spring constants](../../../java/spring/boot3/replacestringliteralswithconstants)
 * [Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface](../../../java/spring/norepoannotationonrepointerface)
+* [Spring security best practices](../../../java/spring/security/springsecuritybestpractices)
 
 </TabItem>
 
@@ -61,6 +62,7 @@ recipeList:
   - org.openrewrite.java.spring.boot3.PreciseBeanType
   - org.openrewrite.java.spring.boot3.ReplaceStringLiteralsWithConstants
   - org.openrewrite.java.spring.NoRepoAnnotationOnRepoInterface
+  - org.openrewrite.java.spring.security.SpringSecurityBestPractices
 
 ```
 </TabItem>

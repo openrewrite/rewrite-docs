@@ -26,6 +26,93 @@ This recipe is used as part of the following composite recipes:
 
 * [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import lombok.Value;
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
+
+import java.util.Set;
+
+@Value
+public class MyRecipe extends Recipe {
+    @Override
+    public String getDisplayName() {
+        return "My Recipe";
+    }
+
+    @Override
+    public String getDescription() {
+        return "My description.";
+    }
+
+    @Override
+    public Set<String> getTags() {
+        return Set.of("tag1", "tag2");
+    }
+
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return TreeVisitor.noop();
+    }
+}
+```
+
+###### After
+```java
+import lombok.Value;
+import org.openrewrite.ExecutionContext;
+import org.openrewrite.Recipe;
+import org.openrewrite.TreeVisitor;
+
+import java.util.Set;
+
+@Value
+public class MyRecipe extends Recipe {
+    @Override
+    public String getDisplayName() {
+        return "My Recipe";
+    }
+
+    @Override
+    public String getDescription() {
+        return "My description.";
+    }
+
+    Set<String> tags = Set.of("tag1", "tag2");
+
+    @Override
+    public TreeVisitor<?, ExecutionContext> getVisitor() {
+        return TreeVisitor.noop();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -20,4 +20,1 @@
+    }
+
+-   @Override
+-   public Set<String> getTags() {
+-       return Set.of("tag1", "tag2");
+-   }
++   Set<String> tags = Set.of("tag1", "tag2");
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

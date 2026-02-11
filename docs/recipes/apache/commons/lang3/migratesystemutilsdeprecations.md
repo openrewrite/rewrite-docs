@@ -110,6 +110,113 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 
+## Examples
+##### Example 1
+`MigrateSystemUtilsDeprecationsTest#fileSeparator`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.lang3.SystemUtils;
+
+class Test {
+    String f = SystemUtils.FILE_SEPARATOR;
+    String p = SystemUtils.PATH_SEPARATOR;
+    String l = SystemUtils.LINE_SEPARATOR;
+}
+```
+
+###### After
+```java
+import java.io.File;
+
+class Test {
+    String f = File.separator;
+    String p = File.pathSeparator;
+    String l = System.lineSeparator();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.commons.lang3.SystemUtils;
++import java.io.File;
+
+@@ -4,3 +4,3 @@
+
+class Test {
+-   String f = SystemUtils.FILE_SEPARATOR;
+-   String p = SystemUtils.PATH_SEPARATOR;
+-   String l = SystemUtils.LINE_SEPARATOR;
++   String f = File.separator;
++   String p = File.pathSeparator;
++   String l = System.lineSeparator();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateSystemUtilsDeprecationsTest#fileSeparator`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.lang3.SystemUtils;
+
+class Test {
+    String f = SystemUtils.FILE_SEPARATOR;
+    String p = SystemUtils.PATH_SEPARATOR;
+    String l = SystemUtils.LINE_SEPARATOR;
+}
+```
+
+###### After
+```java
+import java.io.File;
+
+class Test {
+    String f = File.separator;
+    String p = File.pathSeparator;
+    String l = System.lineSeparator();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.apache.commons.lang3.SystemUtils;
++import java.io.File;
+
+@@ -4,3 +4,3 @@
+
+class Test {
+-   String f = SystemUtils.FILE_SEPARATOR;
+-   String p = SystemUtils.PATH_SEPARATOR;
+-   String l = SystemUtils.LINE_SEPARATOR;
++   String f = File.separator;
++   String p = File.pathSeparator;
++   String l = System.lineSeparator();
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

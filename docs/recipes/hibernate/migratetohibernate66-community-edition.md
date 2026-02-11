@@ -60,8 +60,10 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Dropwizard 5.0.x from 4.x](/recipes/java/dropwizard/migratetodropwizard5.md)
 * [Migrate to Hibernate 6.6.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate66-moderne-edition)
 * [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
+* [Upgrade Hibernate to 6.6](/recipes/com/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
 
 
 ## Usage

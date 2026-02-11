@@ -35,7 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](./replacestreamwritecapability.md)
 * [Simplify catch clauses for Jackson exceptions](./simplifyjacksonexceptioncatch.md)
-* [Update configuration of serialization inclusion in ObjectMapper for Jackson 3](./updateserializationinclusionconfiguration.md)
+* [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](./updateserializationinclusionconfiguration.md)
 * [Use format alignment `ObjectMappers`](./useformatalignedobjectmappers.md)
 * [Use modern date/time serialization defaults](./usemoderndatetimeserialization.md)
 

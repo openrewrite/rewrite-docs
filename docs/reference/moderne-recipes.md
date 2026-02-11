@@ -264,6 +264,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-hibernate
 
+* [io.moderne.hibernate.MigrateToHibernate40](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate40)
+  * **Migrate to Hibernate 4.0.x (Moderne Edition)**
+  * This recipe will apply changes commonly needed when migrating from Hibernate 3.x to 4.0.x, including migration of collection annotations to their JPA 2.0 equivalents.
 * [io.moderne.hibernate.MigrateToHibernate66](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate66-moderne-edition)
   * **Migrate to Hibernate 6.6.x (Moderne Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.6.x.
@@ -279,6 +282,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.hibernate.search.FindJPQLDefinitions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/search/findjpqldefinitions)
   * **Find JPQL definitions (Moderne Edition)**
   * Find Java Persistence Query Language definitions in the codebase.
+* [io.moderne.hibernate.update40.MigrateJoinTableToCollectionTable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update40/migratejointabletocollectiontable)
+  * **Migrate `@JoinTable` to `@CollectionTable` for element collections (Moderne Edition)**
+  * Replaces `@JoinTable` with `@CollectionTable` when used alongside `@CollectionOfElements` or `@ElementCollection`. `@CollectionTable` is the JPA 2.0 standard for defining the table that stores element collections.
 * [io.moderne.hibernate.update66.FixConflictingClassTypeAnnotations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update66/fixconflictingclasstypeannotations)
   * **Fix conflicting class type annotation Hibernate 6.6 (Moderne Edition)**
   * Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`. For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table) but still accepted and therefore stays.
@@ -367,6 +373,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.jasperreports.v5.MigrateExporterSetParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/jasperreports/v5/migrateexportersetparameter)
   * **Migrate JasperReports exporter setParameter to new API**
   * Migrates deprecated `setParameter` calls on JasperReports exporters to the new API using `setExporterInput` and `setExporterOutput`.
+* [io.moderne.jasperreports.v5.MigratePrintServiceExporterConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/jasperreports/v5/migrateprintserviceexporterconfiguration)
+  * **Migrate JRPrintServiceExporterParameter to SimplePrintServiceExporterConfiguration**
+  * Migrates `JRPrintServiceExporterParameter` setParameter calls to use `SimplePrintServiceExporterConfiguration`.
 
 
 ## rewrite-java-application-server
@@ -404,7 +413,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-02-02T1114.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-02-09T1116.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -582,6 +591,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.spring.PreventClickjacking](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/spring/preventclickjacking)
   * **Prevent clickjacking**
   * The `frame-ancestors` directive can be used in a Content-Security-Policy HTTP response header to indicate whether or not a browser should be allowed to render a page in a `&lt;frame&gt;` or `&lt;iframe&gt;`. Sites can use this to avoid Clickjacking attacks by ensuring that their content is not embedded into other sites.
+* [org.openrewrite.recipe.rewrite-java-security.InlineDeprecatedMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-java-security/inlinedeprecatedmethods)
+  * **Inline deprecated delegating methods**
+  * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
 * [org.openrewrite.text.FindHardcodedLoopbackAddresses](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/text/findhardcodedloopbackaddresses)
   * **Find hard-coded loopback IPv4 addresses**
   * Locates mentions of hard-coded IPv4 addresses from the loopback IP range. The loopback IP range includes `127.0.0.0` to `127.255.255.255`. This detects the entire localhost/loopback subnet range, not just the commonly used `127.0.0.1`.
@@ -882,6 +894,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.nodejs.search.UtilityInsights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/utilityinsights)
   * **Javascript utility library insights**
   * Discover which popular javascript utility libraries (Lodash, Moment.js, Date-fns, etc.) are being used in your projects.
+* [org.openrewrite.recipe.rewrite-nodejs.InlineDeprecatedMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-nodejs/inlinedeprecatedmethods)
+  * **Inline deprecated delegating methods**
+  * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
 
 
 ## rewrite-program-analysis
@@ -1165,9 +1180,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.AddAutoConfigureMockMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addautoconfiguremockmvc)
   * **Add `@AutoConfigureMockMvc` to `@SpringBootTest` classes using `MockMvc`**
   * Adds `@AutoConfigureMockMvc` annotation to classes annotated with `@SpringBootTest` that use `MockMvc`.
+* [io.moderne.java.spring.boot4.AddFlywayStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addflywaystarters)
+  * **Add Flyway starters**
+  * Adds spring-boot-starter-flyway and spring-boot-starter-flyway-test dependencies when Flyway usage is detected in the module.
 * [io.moderne.java.spring.boot4.AddJackson2ForJerseyJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addjackson2forjerseyjson)
   * **Add Jackson2 for Jersey using JSON**
   * Check whether a module uses Jersey on combination with JSON and adds the needed `spring-boot-jackson` dependency and conditionally `spring-boot-jackson2` dependency.
+* [io.moderne.java.spring.boot4.AddLiquibaseStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addliquibasestarters)
+  * **Add Liquibase starters**
+  * Adds spring-boot-starter-liquibase and spring-boot-starter-liquibase-test dependencies when Liquibase usage is detected in the module.
 * [io.moderne.java.spring.boot4.AddModularStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmodularstarters)
   * **Add Spring Boot 4.0 modular starters**
   * Add Spring Boot 4.0 starter dependencies based on package usage. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
@@ -1201,12 +1222,21 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.ModuleStarterRelocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulestarterrelocations)
   * **Spring Boot 4.0 Module Starter Relocations**
   * Relocate types and packages for Spring Boot 4.0 modular starters.
+* [io.moderne.java.spring.boot4.ModuleUsesFlyway](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesflyway)
+  * **Module uses Flyway**
+  * Precondition that marks all files in a module if Flyway usage is detected. Detection is based on having a Flyway dependency, using Flyway types, or having migration files.
+* [io.moderne.java.spring.boot4.ModuleUsesLiquibase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesliquibase)
+  * **Module uses Liquibase**
+  * Precondition that marks all files in a module if Liquibase usage is detected. Detection is based on having a Liquibase dependency, using Liquibase types, or having changelog files.
 * [io.moderne.java.spring.boot4.RemoveContentNegotiationFavorPathExtension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removecontentnegotiationfavorpathextension)
   * **Remove `ContentNegotiationConfigurer.favorPathExtension()` calls**
   * Spring Framework 7 removed `favorPathExtension()` from `ContentNegotiationConfigurer`. Path extension content negotiation is no longer supported. This recipe removes calls to `favorPathExtension()`.
 * [io.moderne.java.spring.boot4.RemoveGradleUberJarLoaderImplementationConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removegradleuberjarloaderimplementationconfig)
   * **Remove `loaderImplementation` from Gradle**
   * Removes the Spring Boot Uber-Jar `loaderImplementation` configuration from Gradle build files.
+* [io.moderne.java.spring.boot4.RemoveHttpMessageConvertersAutoConfigurationReferences](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removehttpmessageconvertersautoconfigurationreferences)
+  * **Remove `HttpMessageConvertersAutoConfiguration` references**
+  * Removes references to the deprecated `HttpMessageConvertersAutoConfiguration` class which was removed in Spring Boot 4.0. For `@AutoConfigureAfter` and `@AutoConfigureBefore` annotations, the reference is removed. For `@Import` annotations, a TODO comment is added since manual migration may be required.
 * [io.moderne.java.spring.boot4.RemoveSpringPulsarReactive](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringpulsarreactive)
   * **Remove Spring Pulsar Reactive support**
   * Spring Boot 4.0 removed support for Spring Pulsar Reactive as it is no longer maintained. This recipe removes the Spring Pulsar Reactive dependencies.
@@ -1457,6 +1487,76 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.sql.search.FindFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/search/findfunction)
   * **Find SQL function**
   * Find SQL functions by name.
+
+
+## rewrite-struts
+
+* [org.openrewrite.java.struts.MigrateStrutsDtd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migratestrutsdtd)
+  * **Migrate DTD to a specific Struts version**
+  * Update Struts DTD to reflect the specified version.
+* [org.openrewrite.java.struts.migrate2.MigrateActionClass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migrateactionclass)
+  * **Migrate Struts 1 Action to Struts 2 ActionSupport**
+  * Migrates Struts 1.x Action classes to Struts 2.x ActionSupport, transforming the execute method signature and return statements.
+* [org.openrewrite.java.struts.migrate2.MigrateJspTaglib](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratejsptaglib)
+  * **Migrate JSP taglib directives for Struts 2**
+  * Update Struts 1 taglib directives to Struts 2 taglib.
+* [org.openrewrite.java.struts.migrate2.MigrateJspTags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratejsptags)
+  * **Migrate Struts 1 JSP tags to Struts 2**
+  * Transforms Struts 1 JSP tags (`html:`, `bean:`, `logic:`) to Struts 2 tags (`s:`).
+* [org.openrewrite.java.struts.migrate2.MigrateStruts2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratestruts2)
+  * **Migrate to Struts 2.x from Struts 1.x**
+  * Comprehensive migration from Struts 1.x to Struts 2.x framework.
+* [org.openrewrite.java.struts.migrate2.MigrateStrutsConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratestrutsconfig)
+  * **Migrate `struts-config.xml` to `struts.xml`**
+  * Transforms Struts 1.x `struts-config.xml` to Struts 2.x `struts.xml` format.
+* [org.openrewrite.java.struts.migrate2.MigrateWebXml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratewebxml)
+  * **Migrate web.xml from Struts 1 to Struts 2**
+  * Converts Struts 1 ActionServlet configuration to Struts 2 StrutsPrepareAndExecuteFilter.
+* [org.openrewrite.java.struts.migrate6.MigrateAwareInterfaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migrateawareinterfaces)
+  * **Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces**
+  * These types have moved to a new package in Struts 6.0 and their methods have been renamed from set* to with*.
+* [org.openrewrite.java.struts.migrate6.MigrateDateTagFormat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migratedatetagformat)
+  * **Migrate Struts date tag format patterns**
+  * Converts SimpleDateFormat patterns in `&lt;s:date&gt;` tags to DateTimeFormatter-compatible patterns. Struts 6.0 uses DateTimeFormatter instead of SimpleDateFormat, which has different pattern letter meanings.
+* [org.openrewrite.java.struts.migrate6.MigrateDynamicMethodInvocation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migratedynamicmethodinvocation)
+  * **Migrate Dynamic Method Invocation to explicit action mappings**
+  * Identifies Struts configurations using Dynamic Method Invocation (DMI) and marks them for migration, as DMI is disabled by default in Struts 6 for security reasons.
+* [org.openrewrite.java.struts.migrate6.MigrateOpenSymphonyClasses](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migrateopensymphonyclasses)
+  * **Migrate OpenSymphony classes to Struts 6.0**
+  * Migrate classes from `com.opensymphony.xwork2` to their replacements in `org.apache.struts2`.
+* [org.openrewrite.java.struts.migrate6.MigrateStaticOgnlMethodAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migratestaticognlmethodaccess)
+  * **Migrate static OGNL method access to action wrapper methods**
+  * Migrates OGNL expressions using static method access (e.g., `@com.app.Util@makeCode()`) to use action wrapper methods instead. Static method access is disabled by default in Struts 6 for security reasons.
+* [org.openrewrite.java.struts.migrate6.MigrateStruts6](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migratestruts6)
+  * **Migrate to Struts 6.0**
+  * Migrate Struts 2.x to Struts 6.0.
+* [org.openrewrite.java.struts.migrate6.MigrateStruts6Constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migratestruts6constants)
+  * **Migrate to Struts 6.0 constants**
+  * All Xwork constants had been already deprecated, with this version all of them have been removed and Struts constants have been used instead.
+* [org.openrewrite.java.struts.migrate6.MigrateValidatorDtd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migratevalidatordtd)
+  * **Migrate `xwork-validator` DTD to 1.0.4**
+  * Update `xwork-validator` DTD from 1.0.3 to 1.0.4 for Struts 6 compatibility.
+* [org.openrewrite.java.struts.migrate6.RemoveFreemarkerHtmlBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/removefreemarkerhtmlbuiltin)
+  * **Remove deprecated Freemarker `?html` built-in**
+  * Removes the deprecated `?html` built-in from Freemarker templates. After migrating to Struts 6 with the latest Freemarker (which enables auto-escaping by default), the `?html` built-in is no longer needed and should be removed. See the [Struts 2.5 to 6.0 migration guide](https://cwiki.apache.org/confluence/display/WW/Struts+2.5+to+6.0.0+migration#Struts2.5to6.0.0migration-Tagescapebehaviour).
+* [org.openrewrite.java.struts.migrate6.UpgradeStruts6Dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/upgradestruts6dependencies)
+  * **Upgrade Struts 6.0 dependencies**
+  * Upgrade Struts 2.x dependencies to Struts 6.0.
+* [org.openrewrite.java.struts.migrate7.MigrateStruts7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/migratestruts7)
+  * **Migrate to Struts 7.0**
+  * Migrate Struts 6.x to Struts 7.x.
+* [org.openrewrite.java.struts.migrate7.RenameOpenSymphonyToStruts2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/renameopensymphonytostruts2)
+  * **Rename OpenSymphony / XWork classes to Struts 7 packages**
+  * Updates classes moved from com.opensymphony.xwork2.* to their new org.apache.struts2.* packages in Struts 7.
+* [org.openrewrite.java.struts.migrate7.UpdateStruts7Constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/updatestruts7constants)
+  * **Align Struts XML constants for Struts 7**
+  * Updates Struts XML constants that were renamed or tightened in Struts 7.
+* [org.openrewrite.java.struts.search.FindStaticOgnlMethodAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/search/findstaticognlmethodaccess)
+  * **Find static OGNL method access**
+  * Find OGNL expressions that use static method access (e.g., `@com.app.Util@makeCode()`), which is disabled by default in Struts 6 for security reasons. These expressions need to be migrated to use action instance methods instead.
+* [org.openrewrite.java.struts.search.FindStrutsActions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/search/findstrutsactions)
+  * **Find Struts actions**
+  * Find actions and their associated definitions.
 
 
 ## rewrite-tapestry

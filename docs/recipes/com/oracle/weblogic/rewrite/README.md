@@ -20,7 +20,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartainjectapidependencyscope.md)
 * [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartawebservicersapidependencyscope.md)
 * [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejaxbbindapidependencyscope.md)
-* [Check and Comment Out Deprecations removed on WebLogic version 14.1.2](./checkandcommentoutdeprecations1412.md)
 * [Migrate WebLogic Schemas to 14.1.2](./migrateweblogicschemasto1412.md)
 * [Migrate WebLogic Schemas to 15.1.1](./migrateweblogicschemasto1511.md)
 * [Migrate to Jakarta EE 9.1](./jakartaee9_1.md)
@@ -60,15 +59,20 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate xmlns entries in `weblogic.xml` files to WebLogic 14.1.2](./weblogicxmlwebappnamespace1412.md)
 * [Migrate xmlns entries in `weblogic.xml` files to WebLogic 15.1.1](./weblogicxmlwebappnamespace1511.md)
 * [Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2](./weblogic1412javaxmlbindmitigation.md)
+* [Report types deprecated or removed in WebLogic version 14.1.2](./reportdeprecatedorremoved1412.md)
+* [Report types deprecated or removed in WebLogic version 15.1.1](./reportdeprecatedorremoved1511.md)
+* [Report uses of Java types deprecated or removed in WebLogic](./reportdeprecated.md)
 * [Update the WebLogic version to 14.1.2](./updatebuildtoweblogic1412.md)
 * [Update the WebLogic version to 15.1.1](./updatebuildtoweblogic1511.md)
+* [Upgrade Jakarta JPA to 3.1 and Hibernate 6.6](./upgradejpato31hibernateto66.md)
 
 ## Recipes
 
-* [Check and Comment Out Deprecations removed on WebLogic version 15.1.1](./checkandcommentoutdeprecations1511.md)
 * [Create `weblogic.xml` if it does not exist](./weblogicxmlcreateifnotexists1511.md)
 * [JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older](./facesmigrationtojakartafaces2x.md)
 * [Output Recipe Version](./outputrecipeversion.md)
+* [Report types deprecated or removed in WebLogic version 14.1.2](./checkandcommentoutdeprecations1412.md)
+* [Report types deprecated or removed in WebLogic version 15.1.1](./checkandcommentoutdeprecations1511.md)
 * [Upgrade `weblogic.version` Maven property](./upgradeweblogicmavenpropertyversion.md)
 
 

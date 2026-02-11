@@ -34,15 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Rename package name](../../../java/changepackage)
-  * oldPackageName: `okhttp3.mockwebserver`
-  * newPackageName: `mockwebserver3`
-  * recursive: `true`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.squareup.okhttp3`
   * oldArtifactId: `mockwebserver`
-  * newArtifactId: `mockwebserver3-junit5`
+  * newArtifactId: `mockwebserver3`
   * newVersion: `5.x`
+* [OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`](../../../java/testing/junit5/updatemockwebservermockresponse)
 
 </TabItem>
 
@@ -60,15 +57,12 @@ tags:
   - testing
   - okhttp
 recipeList:
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: okhttp3.mockwebserver
-      newPackageName: mockwebserver3
-      recursive: true
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.squareup.okhttp3
       oldArtifactId: mockwebserver
-      newArtifactId: mockwebserver3-junit5
+      newArtifactId: mockwebserver3
       newVersion: 5.x
+  - org.openrewrite.java.testing.junit5.UpdateMockWebServerMockResponse
 
 ```
 </TabItem>
@@ -85,44 +79,6 @@ This recipe is used as part of the following composite recipes:
 `UpgradeOkHttpMockWebServerTest#shouldUpgradeMavenDependency`
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import okhttp3.mockwebserver.MockWebServer;
-
-class Test {
-    void test() {
-        MockWebServer server = new MockWebServer();
-    }
-}
-```
-
-###### After
-```java
-import mockwebserver3.MockWebServer;
-
-class Test {
-    void test() {
-        MockWebServer server = new MockWebServer();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import okhttp3.mockwebserver.MockWebServer;
-+import mockwebserver3.MockWebServer;
-
-```
-</TabItem>
-</Tabs>
-
 ###### Unchanged
 ```mavenProject
 project
@@ -140,6 +96,7 @@ project
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>mockwebserver</artifactId>
       <version>4.10.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>
@@ -151,44 +108,6 @@ project
 `UpgradeOkHttpMockWebServerTest#shouldUpgradeMavenDependency`
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import okhttp3.mockwebserver.MockWebServer;
-
-class Test {
-    void test() {
-        MockWebServer server = new MockWebServer();
-    }
-}
-```
-
-###### After
-```java
-import mockwebserver3.MockWebServer;
-
-class Test {
-    void test() {
-        MockWebServer server = new MockWebServer();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import okhttp3.mockwebserver.MockWebServer;
-+import mockwebserver3.MockWebServer;
-
-```
-</TabItem>
-</Tabs>
-
 ###### Unchanged
 ```mavenProject
 project
@@ -206,6 +125,7 @@ project
       <groupId>com.squareup.okhttp3</groupId>
       <artifactId>mockwebserver</artifactId>
       <version>4.10.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

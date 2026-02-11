@@ -25,6 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Adopt AssertJ Duration assertions](./adoptassertjdurationassertions.md)
+* [Collapse `assertThat` followed by `return` into single statement](./returnactual.md)
 * [Collapse consecutive `assertThat` statements](./collapseconsecutiveassertthatstatements.md)
 * [Convert try-catch-fail blocks to AssertJ's assertThatThrownBy](./junittryfailtoassertthatthrownby.md)
 * [JUnit AssertThrows to AssertJ exceptionType](./junitassertthrowstoassertexceptiontype.md)

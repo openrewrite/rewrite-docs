@@ -29,9 +29,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Inline methods annotated with `@InlineMe`](../../recipes/rewrite/inlinemethods)
+* [Generate `InlineMethodCalls` recipes for deprecated delegating methods](../../java/recipes/generatedeprecatedmethodrecipes)
 * [Java Recipe best practices](../../java/recipes/javarecipebestpractices)
 * [Recipe testing best practices](../../java/recipes/recipetestingbestpractices)
 * [Recipe nullability best practices](../../java/recipes/recipenullabilitybestpractices)
+* [Remove elements annotated with `@ToBeRemoved` past their date](../../java/recipes/removetoberemoved)
 * [Migrate tests to Java 21](../../java/recipes/upgradeteststojava21)
 * [Extract documentation examples from tests](../../java/recipes/examplesextractor)
 * [Order imports](../../java/orderimports)
@@ -70,9 +72,11 @@ description: |
   Best practices for OpenRewrite recipe development.
 recipeList:
   - org.openrewrite.recipes.rewrite.InlineMethods
+  - org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes
   - org.openrewrite.java.recipes.JavaRecipeBestPractices
   - org.openrewrite.java.recipes.RecipeTestingBestPractices
   - org.openrewrite.java.recipes.RecipeNullabilityBestPractices
+  - org.openrewrite.java.recipes.RemoveToBeRemoved
   - org.openrewrite.java.recipes.UpgradeTestsToJava21
   - org.openrewrite.java.recipes.ExamplesExtractor
   - org.openrewrite.java.OrderImports

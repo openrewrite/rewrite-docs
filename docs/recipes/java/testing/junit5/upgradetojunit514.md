@@ -136,6 +136,7 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit 5 best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
+* [Migrate to Dropwizard 5.0.x from 4.x](/recipes/java/dropwizard/migratetodropwizard5.md)
 
 ## Examples
 ##### Example 1

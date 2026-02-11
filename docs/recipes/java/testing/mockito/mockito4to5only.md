@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `net.bytebuddy`
   * artifactId: `byte-buddy*`
-  * newVersion: `1.15.x`
+  * newVersion: `1.17.x`
 * [Remove duplicate Maven dependencies](../../../maven/removeduplicatedependencies)
 
 </TabItem>
@@ -75,7 +75,7 @@ recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: net.bytebuddy
       artifactId: byte-buddy*
-      newVersion: 1.15.x
+      newVersion: 1.17.x
   - org.openrewrite.maven.RemoveDuplicateDependencies
 
 ```

@@ -17,6 +17,7 @@ description: Dependencies OpenRewrite recipes.
 * [Dependency resolution diagnostic](./dependencyresolutiondiagnostic.md)
 * [Find Maven and Gradle dependencies](./finddependency.md)
 * [Find relocated dependencies](./relocateddependencycheck.md)
+* [Maven repository order](./findrepositoryorder.md)
 * [Remove a Gradle or Maven dependency](./removedependency.md)
 * [Remove redundant explicit dependencies](./removeredundantdependencies.md)
 * [Upgrade Gradle or Maven dependency versions](./upgradedependencyversion.md)

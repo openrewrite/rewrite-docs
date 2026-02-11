@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners"
+sidebar_label: "Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Remove `MockitoAnnotations.initMocks(this)` if specified JUnit runners
+# Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified
 
 **org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified**
 
-_Remove `MockitoAnnotations.initMocks(this)` if specified class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)`._
+_Remove `MockitoAnnotations.initMocks(this)` and `MockitoAnnotations.openMocks(this)` if class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)` are specified. These manual initialization calls are redundant when using Mockito's JUnit integration._
 
 ## Recipe source
 

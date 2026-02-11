@@ -48,6 +48,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `javax.validation`
   * newPackageName: `jakarta.validation`
   * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.sun.istack.NotNull`
+  * newFullyQualifiedTypeName: `jakarta.validation.constraints.NotNull`
 * [Rename a file](../../../core/renamefile)
   * fileMatcher: `**/javax.validation.ConstraintValidator`
   * fileName: `jakarta.validation.ConstraintValidator`
@@ -86,6 +89,9 @@ recipeList:
       oldPackageName: javax.validation
       newPackageName: jakarta.validation
       recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.sun.istack.NotNull
+      newFullyQualifiedTypeName: jakarta.validation.constraints.NotNull
   - org.openrewrite.RenameFile:
       fileMatcher: **/javax.validation.ConstraintValidator
       fileName: jakarta.validation.ConstraintValidator
@@ -103,6 +109,89 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+
+## Examples
+##### Example 1
+`JavaxValidationMigrationToJakartaValidationTest#javaxValidationToJakartaValidation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.validation.constraints.NotNull;
+
+public class Example {
+    @NotNull
+    private String name;
+}
+```
+
+###### After
+```java
+import jakarta.validation.constraints.NotNull;
+
+public class Example {
+    @NotNull
+    private String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.validation.constraints.NotNull;
++import jakarta.validation.constraints.NotNull;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`JavaxValidationMigrationToJakartaValidationTest#javaxValidationToJakartaValidation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.validation.constraints.NotNull;
+
+public class Example {
+    @NotNull
+    private String name;
+}
+```
+
+###### After
+```java
+import jakarta.validation.constraints.NotNull;
+
+public class Example {
+    @NotNull
+    private String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.validation.constraints.NotNull;
++import jakarta.validation.constraints.NotNull;
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

@@ -1,36 +1,15 @@
 ---
-sidebar_label: "Refaster template `AssertLiteralBooleanToFail.WithoutMessage`"
+sidebar_label: "Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Refaster template `AssertLiteralBooleanToFail.WithoutMessage`
+# Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`
 
 **org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes$WithoutMessageRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static class WithoutMessage {
-    
-    @BeforeTemplate
-    void assertFalseBefore() {
-        assertFalse(true);
-    }
-    
-    @BeforeTemplate
-    void assertTrueBefore() {
-        assertTrue(false);
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after() {
-        fail();
-    }
-}
-```
-.
+_Using fail is more direct and clear._
 
 ## Recipe source
 
@@ -45,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace JUnit `assertTrue(false, &quot;reason&quot;)` and `assertFalse(true, &quot;reason&quot;)` with `fail(&quot;reason&quot;)`](/recipes/java/testing/cleanup/assertliteralbooleantofailrecipes.md)
+* [Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`](/recipes/java/testing/cleanup/assertliteralbooleantofailrecipes.md)
 
 
 ## Usage

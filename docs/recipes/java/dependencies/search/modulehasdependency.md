@@ -30,6 +30,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | invertMarking | *Optional*. If `true`, will invert the check for whether to mark a file. Defaults to `false`. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Module uses Flyway](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesflyway)
+* [Module uses Liquibase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesliquibase)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ModuleHasDependencyExample`.

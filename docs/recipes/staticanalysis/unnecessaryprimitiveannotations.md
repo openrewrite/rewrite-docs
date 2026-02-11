@@ -52,7 +52,6 @@ class A {
 ###### After
 ```java
 class A {
-
     public int getCount(int val) {
         return val;
     }
@@ -67,12 +66,11 @@ class A {
 -import javax.annotation.CheckForNull;
 -import javax.annotation.Nullable;
 class A {
-@@ -4,2 +2,2 @@
+@@ -4,2 +2,1 @@
 import javax.annotation.Nullable;
 class A {
 -   @CheckForNull
 -   public int getCount(@Nullable int val) {
-+
 +   public int getCount(int val) {
         return val;
 ```
