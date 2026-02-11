@@ -869,7 +869,7 @@ _License: Moderne Source Available License_
 _101 recipes_
 
 * [org.openrewrite.java.logging.ArgumentArrayToVarargs](/recipes/java/logging/argumentarraytovarargs.md)
-  * **Unpack Logger method `new Object[] {...}` into varargs**
+  * **Unpack Logger method `new Object[] \{...\}` into varargs**
   * For Logger methods that support varargs, convert any final explicit `Object[]` arguments into their unpacked values.
 * [org.openrewrite.java.logging.CatchBlockLogLevel](/recipes/java/logging/catchblockloglevel.md)
   * **Catch block log level**
@@ -2123,7 +2123,7 @@ _143 recipes_
   * **Normalize Spring `application*.properties` properties to kebab-case**
   * Normalize Spring `application*.properties` properties to kebab-case.
 * [org.openrewrite.java.spring.PropertiesToKebabCaseYaml](/recipes/java/spring/propertiestokebabcaseyaml.md)
-  * **Normalize Spring `application*.{yml,yaml}` properties to kebab-case**
+  * **Normalize Spring `application*.\{yml,yaml\}` properties to kebab-case**
   * Normalize Spring `application*.\{yml,yaml\}` properties to kebab-case.
 * [org.openrewrite.java.spring.RenameBean](/recipes/java/spring/renamebean.md)
   * **Rename bean**
@@ -3431,7 +3431,7 @@ _173 recipes_
   * **Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement**
   * Some JUnit 4 `@RunWith` annotations do not require replacement with an equivalent JUnit Jupiter `@ExtendsWith` annotation. This can be used to remove those runners that either do not have a JUnit Jupiter equivalent or do not require a replacement as part of JUnit 4 to 5 migration.
 * [org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks](/recipes/java/testing/junit5/removetrycatchfailblocks.md)
-  * **Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`**
+  * **Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`**
   * Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(String)` statement with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`.
 * [org.openrewrite.java.testing.junit5.RunnerToExtension](/recipes/java/testing/junit5/runnertoextension.md)
   * **JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`**
@@ -4230,7 +4230,7 @@ _1437 recipes_
   * **io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact**
   * 
 * [io.quarkus.updates.core.quarkus331.AddArglineToSurefireFailsafePlugins](/recipes/io/quarkus/updates/core/quarkus331/addarglinetosurefirefailsafeplugins.md)
-  * **Add `@{argLine}` to maven-surefire-plugin and maven-failsafe-plugin**
+  * **Add @\{argLine\} to maven-surefire-plugin and maven-failsafe-plugin**
   * Add or update &lt;argLine&gt; in maven-surefire-plugin and maven-failsafe-plugin configuration to include @\{argLine\} placeholder.
 * [io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin](/recipes/io/quarkus/updates/core/quarkus331/addextensionstruetoquarkusmavenplugin.md)
   * **Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin**
@@ -4563,7 +4563,7 @@ _1437 recipes_
   * **Replace 'camel.main.backlogTracing' with `camel.trace.enabled'**
   * 
 * [org.apache.camel.upgrade.camel45.UseExtendedCamelContextGetters](/recipes/org/apache/camel/upgrade/camel45/useextendedcamelcontextgetters.md)
-  * **Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`**
+  * **Replace `context.$\{method\}(*)` with `context.getCamelContextExtension().$\{method\}(*)`**
   * 
 * [org.apache.camel.upgrade.camel45.renamedClasses](/recipes/org/apache/camel/upgrade/camel45/renamedclasses.md)
   * **Renamed classes for elasticsearch,opensearch and spring regis**
@@ -11173,10 +11173,10 @@ _1260 recipes_
   * **Prefer `.flatMap()` over `.map().flat()`**
   * Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferArrayIndexOf](/recipes/codemods/cleanup/javascript/preferarrayindexof.md)
-  * **Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item**
+  * **Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item**
   * Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-index-of.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferArraySome](/recipes/codemods/cleanup/javascript/preferarraysome.md)
-  * **Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`**
+  * **Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`**
   * Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback](/recipes/codemods/cleanup/javascript/preferarrowcallback.md)
   * **Require using arrow functions for callbacks**
@@ -11278,7 +11278,7 @@ _1260 recipes_
   * **Prefer using `Set#size` instead of `Array#length`**
   * Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferSpread](/recipes/codemods/cleanup/javascript/preferspread.md)
-  * **Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`**
+  * **Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`**
   * Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll](/recipes/codemods/cleanup/javascript/preferstringreplaceall.md)
   * **Prefer `String#replaceAll()` over regex searches with the global flag**

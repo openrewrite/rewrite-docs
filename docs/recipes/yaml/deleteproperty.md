@@ -23,7 +23,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | propertyKey | The key to be deleted. | `management.metrics.binders.files.enabled` |
+| `String` | propertyKey | The key to be deleted. Supports glob patterns. | `management.metrics.binders.files.*` |
 | `Boolean` | coalesce | *Optional*. (Deprecated: in a future version, this recipe will always use the `false` behavior) Simplify nested map hierarchies into their simplest dot separated property form. |  |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |  |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
@@ -63,7 +63,7 @@ name: com.yourorg.DeletePropertyExample
 displayName: Delete property example
 recipeList:
   - org.openrewrite.yaml.DeleteProperty:
-      propertyKey: management.metrics.binders.files.enabled
+      propertyKey: management.metrics.binders.files.*
       filePattern: .github/workflows/*.yml
 ```
 
@@ -118,7 +118,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DeleteProperty --recipe-option "propertyKey=management.metrics.binders.files.enabled" --recipe-option "filePattern=.github/workflows/*.yml"
+mod run . --recipe DeleteProperty --recipe-option "propertyKey=management.metrics.binders.files.*" --recipe-option "filePattern=.github/workflows/*.yml"
 ```
 
 If the recipe is not available locally, then you can install it using:

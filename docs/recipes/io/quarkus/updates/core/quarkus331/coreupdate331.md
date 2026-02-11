@@ -29,7 +29,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin](../../../../../io/quarkus/updates/core/quarkus331/addextensionstruetoquarkusmavenplugin)
-* [Add `@{argLine}` to maven-surefire-plugin and maven-failsafe-plugin](../../../../../io/quarkus/updates/core/quarkus331/addarglinetosurefirefailsafeplugins)
+* [Add @\{argLine\} to maven-surefire-plugin and maven-failsafe-plugin](../../../../../io/quarkus/updates/core/quarkus331/addarglinetosurefirefailsafeplugins)
 
 </TabItem>
 

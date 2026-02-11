@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Normalize Spring `application*.{yml,yaml}` properties to kebab-case](../../java/spring/propertiestokebabcaseyaml)
+* [Normalize Spring `application*.\{yml,yaml\}` properties to kebab-case](../../java/spring/propertiestokebabcaseyaml)
 * [Normalize Spring `application*.properties` properties to kebab-case](../../java/spring/propertiestokebabcaseproperties)
 
 </TabItem>

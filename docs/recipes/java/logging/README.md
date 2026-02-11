@@ -26,7 +26,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Catch block log level](./catchblockloglevel.md)
 * [Change logger fields to `private`](./changeloggerstoprivate.md)
 * [Parameterize logging statements](./parameterizedlogging.md)
-* [Unpack Logger method `new Object[] {...}` into varargs](./argumentarraytovarargs.md)
+* [Unpack Logger method `new Object[] \{...\}` into varargs](./argumentarraytovarargs.md)
 * [Use logger instead of `System.err` print statements](./systemerrtologging.md)
 * [Use logger instead of `System.out` print statements](./systemouttologging.md)
 * [Use logger instead of `printStackTrace()`](./printstacktracetologerror.md)

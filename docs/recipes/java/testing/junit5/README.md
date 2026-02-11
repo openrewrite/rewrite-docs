@@ -63,7 +63,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove JUnit 5 static Assertions imports in Kotlin when wildcard import is present](./cleanupkotlinjunit5assertionimports.md)
 * [Remove duplicates uses of @TestTemplate implementations for a single method](./removeduplicatetesttemplates.md)
 * [Replace `@CsvSource` with `@ValueSource` for single method arguments](./csvsourcetovaluesource.md)
-* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`](./removetrycatchfailblocks.md)
+* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`](./removetrycatchfailblocks.md)
 * [Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`](./assumenotnulltoassumptionsrecipes$singleargrecipe.md)
 * [Transform variadic `assumeNotNull(objects...)` to a stream of `assumeFalse(object == null)`](./assumenotnulltoassumptionsrecipes$varargsrecipe.md)
 * [Use JUnit Jupiter `@TempDir`](./temporaryfoldertotempdir.md)

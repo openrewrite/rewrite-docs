@@ -47,7 +47,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Test methods should have void return type](../../../java/testing/cleanup/testmethodsshouldbevoid)
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](../../../java/testing/junit5/addparameterizedtestannotation)
 * [Remove duplicates uses of @TestTemplate implementations for a single method](../../../java/testing/junit5/removeduplicatetesttemplates)
-* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`](../../../java/testing/junit5/removetrycatchfailblocks)
+* [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`](../../../java/testing/junit5/removetrycatchfailblocks)
 * [Make lifecycle methods non private](../../../java/testing/junit5/lifecyclenonprivate)
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](../../../java/testing/junit5/assertthrowsonlaststatement)
 * [`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)

@@ -274,4 +274,21 @@ _Statistics used in analyzing the performance of recipes._
 
 </TabItem>
 
+<TabItem value="org.openrewrite.java.table.MethodCalls" label="MethodCalls">
+
+### Method calls
+**org.openrewrite.java.table.MethodCalls**
+
+_The text of matching method invocations._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Method call | The text of the method call. |
+| Class name | The class name of the method call. |
+| Method name | The method name of the method call. |
+| Argument types | The argument types of the method call. |
+
+</TabItem>
+
 </Tabs>

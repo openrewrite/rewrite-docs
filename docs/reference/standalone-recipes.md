@@ -3429,10 +3429,10 @@ Total standalone recipes: 1575
   * **Prefer `.flatMap()` over `.map().flat()`**
   * Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferArrayIndexOf](/recipes/codemods/cleanup/javascript/preferarrayindexof.md)
-  * **Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item**
+  * **Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item**
   * Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-index-of.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferArraySome](/recipes/codemods/cleanup/javascript/preferarraysome.md)
-  * **Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`**
+  * **Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`**
   * Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback](/recipes/codemods/cleanup/javascript/preferarrowcallback.md)
   * **Require using arrow functions for callbacks**
@@ -3534,7 +3534,7 @@ Total standalone recipes: 1575
   * **Prefer using `Set#size` instead of `Array#length`**
   * Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferSpread](/recipes/codemods/cleanup/javascript/preferspread.md)
-  * **Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`**
+  * **Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`**
   * Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md).
 * [org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll](/recipes/codemods/cleanup/javascript/preferstringreplaceall.md)
   * **Prefer `String#replaceAll()` over regex searches with the global flag**

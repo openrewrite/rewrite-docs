@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Unpack Logger method `new Object[] {...}` into varargs](../../../java/logging/argumentarraytovarargs)
+* [Unpack Logger method `new Object[] \{...\}` into varargs](../../../java/logging/argumentarraytovarargs)
 * [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass)
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
 * [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
