@@ -4230,7 +4230,7 @@ _1437 recipes_
   * **io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact**
   * 
 * [io.quarkus.updates.core.quarkus331.AddArglineToSurefireFailsafePlugins](/recipes/io/quarkus/updates/core/quarkus331/addarglinetosurefirefailsafeplugins.md)
-  * **Add @{argLine} to maven-surefire-plugin and maven-failsafe-plugin**
+  * **Add `@{argLine}` to maven-surefire-plugin and maven-failsafe-plugin**
   * Add or update &lt;argLine&gt; in maven-surefire-plugin and maven-failsafe-plugin configuration to include @\{argLine\} placeholder.
 * [io.quarkus.updates.core.quarkus331.AddExtensionsTrueToQuarkusMavenPlugin](/recipes/io/quarkus/updates/core/quarkus331/addextensionstruetoquarkusmavenplugin.md)
   * **Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin**

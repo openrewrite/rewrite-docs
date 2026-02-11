@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add @{argLine} to maven-surefire-plugin and maven-failsafe-plugin"
+sidebar_label: "Add `@{argLine}` to maven-surefire-plugin and maven-failsafe-plugin"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 **io.quarkus.updates.core.quarkus331.AddArglineToSurefireFailsafePlugins**
 
 ```
-Add or update <argLine> in maven-surefire-plugin and maven-failsafe-plugin configuration to include @{argLine} placeholder.
+Add or update `<argLine>` in maven-surefire-plugin and maven-failsafe-plugin configuration to include `@{argLine}` placeholder.
 ```
 
 
