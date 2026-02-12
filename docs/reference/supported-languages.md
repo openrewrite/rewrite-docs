@@ -1,5 +1,5 @@
 ---
-description: A list of what languages, formats, build tools, and frameworks are supported by OpenRewrite.
+description: A list of what languages, formats, build tools, and frameworks supported by OpenRewrite.
 ---
 
 # Supported languages
