@@ -18,7 +18,7 @@ Let's assume the existence of two projects, `A` and `B`, in different repositori
 
 First, apply an OpenRewrite build plugin per the [Quickstart: Maven and Gradle guide](../getting-started.md).
 
-With a OpenRewrite build plugin applied, the next step is to create a `rewrite.yml` file at the project root that defines the recipe:
+With an OpenRewrite build plugin applied, the next step is to create a `rewrite.yml` file at the project root that defines the recipe:
 
 ```yaml title="A/rewrite.yml"
 ---

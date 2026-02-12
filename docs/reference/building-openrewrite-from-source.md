@@ -29,7 +29,7 @@ Please try running the following command in the `rewrite` directory to disable G
 git config commit.gpgsign false
 ```
 
-After this succeeds, please re-run the build. You should not longer see the error. This error is due to the fact that there are some tests that use the [JGit](https://projects.eclipse.org/projects/technology.jgit) library to run git commands, which at the time of writing does not support SSH-based signed commits. See [this bug](https://bugs.eclipse.org/bugs/show\_bug.cgi?id=581483) for more information.
+After this succeeds, please re-run the build. You should no longer see the error. This error is due to the fact that there are some tests that use the [JGit](https://projects.eclipse.org/projects/technology.jgit) library to run git commands, which at the time of writing does not support SSH-based signed commits. See [this bug](https://bugs.eclipse.org/bugs/show\_bug.cgi?id=581483) for more information.
 
 </details>
 

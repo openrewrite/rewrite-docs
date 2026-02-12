@@ -20,7 +20,7 @@ If you want to see what recipes have data tables and what those tables are, chec
 
 ## Writing a recipe that produces a data table
 
-_All of the code in the below steps can be found in the [rewrite-recipe-start project](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/ClassHierarchy.java)._
+_All of the code in the below steps can be found in the [rewrite-recipe-starter project](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/ClassHierarchy.java)._
 
 ### Step 1: Define your data table
 

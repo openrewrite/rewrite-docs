@@ -14,8 +14,8 @@ The OpenRewrite Maven plugin offers these goals:
 
 * `mvn rewrite:run` - Run the configured recipes and apply the changes locally.
 * `mvn rewrite:runNoFork` - Run the configured recipes and apply the changes locally. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
-* `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder.
-* `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each maven modules' `target` folder. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
+* `mvn rewrite:dryRun` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each Maven module's `target` folder.
+* `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each Maven module's `target` folder. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
 * `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
 * `mvn rewrite:typetable` - [Generate a type table](/authoring-recipes/multiple-versions#typetable-generation-for-maven-projects) to support multiple versions of a single library.
 
@@ -218,7 +218,7 @@ In the very rare cases where the Maven plugin is unable to write to its on-disk 
 
 * Check if the folder is writable by the Maven process. The default folder location is under the user's home folder (`~/.rewrite-cache`) and you can choose an alternate location by using the plugin's `pomCacheDirectory` configuration property.
 * It is safe to simply delete all of the contents within the cache folder. The first time the plugin is executed after deleting the cache, it will download and re-populate this cache folder.
-* The `pomCacheEnabled` can be set to `false` in which case the plugin will use an in-memory cache instead. This will make running recipes slower when a project had deep dependency trees.
+* The `pomCacheEnabled` can be set to `false` in which case the plugin will use an in-memory cache instead. This will make running recipes slower when a project has deep dependency trees.
 
 ## Links
 

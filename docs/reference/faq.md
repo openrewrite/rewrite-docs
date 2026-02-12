@@ -14,7 +14,7 @@ import TabItem from '@theme/TabItem';
 
 ## Does OpenRewrite collect any data from our projects?
 
-**No**. The [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) and [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin) run locally on your machine, without any connections to Moderne or OpenRewrite. The plugins calls out to Maven Central (or a locally configured mirror) to check for new dependencies. Other than that, you should not see any other outbound traffic. 
+**No**. The [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) and [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin) run locally on your machine, without any connections to Moderne or OpenRewrite. The plugin calls out to Maven Central (or a locally configured mirror) to check for new dependencies. Other than that, you should not see any other outbound traffic. 
 
 ## What is the difference between OpenRewrite and Moderne?
 
@@ -146,7 +146,7 @@ Yes – [we describe how in our preconditions doc](./yaml-format-reference.md#us
 
 ## Can I create a report or summary of the changes made through OpenRewrite?
 
-When recipes run with the OSS Maven and Gradle plugins, they produce a summary of what files where changes by which recipes.
+When recipes run with the OSS Maven and Gradle plugins, they produce a summary of what files were changed by which recipes.
 If you'd like more information, then you can look at the data tables additionally produced through [getting started with data tables guide](../running-recipes/data-tables.md) for OpenRewrite.
 
 Moderne offers this functionality through the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) and the [Moderne Platform](https://app.moderne.io/getting-started).

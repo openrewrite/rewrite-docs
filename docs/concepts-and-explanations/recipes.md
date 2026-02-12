@@ -327,7 +327,7 @@ The execution pipeline dictates how a recipe is applied to a set of source files
 
 The top-level recipe (the one that initiates the execution pipeline) and any subsequent recipes that have been chained together will all participate in the execution pipeline. Recipes are composable and therefore, nested steps may contribute additional nested recipes to the pipeline as well.
 
-Each recipe will, in turn, will be executed as a step within the pipeline and step execution consists of the following:
+Each recipe will, in turn, be executed as a step within the pipeline and step execution consists of the following:
 
 1. A recipe's `validate()` method is called to ensure it has been configured properly. OpenRewrite is not opinionated about how validation errors are handled and by default, it will skip a recipe that fails validation. This behavior can be changed by the introduction of an error handler into the pipeline via the execution context.
 2. If a recipe has an associated visitor, the recipe will delegate to its associated visitor to process all source files that have been fed to the pipeline. It is this specific stage that concurrency can be introduced to process the source LSTs in parallel.
