@@ -420,7 +420,7 @@ Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these c
 
 Your codebase may also have custom JUnit 4 Rules or Runners that will not be migrated automatically by our recipes. If your codebase has a lot of customized JUnit 4 extensions, consider [writing your own recipe](../../authoring-recipes/writing-a-java-refactoring-recipe.md) to handle those and running it alongside this migration.
 
-If you discover a shortcoming of this migration that should be covered, file an issue or submit a pull request on the [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) github project.
+If you discover a shortcoming of this migration that should be covered, file an issue or submit a pull request on the [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) GitHub project.
 
 ## See how this recipe works across multiple open-source repositories
 

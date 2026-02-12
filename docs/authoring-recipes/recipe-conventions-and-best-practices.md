@@ -180,13 +180,13 @@ Because of that, whenever shared state is needed within a single visitor or reci
 
 ### Remember multi-module projects exist
 
-One common mistake we see is people writing recipes that behaves as if there is only ever one project/module in a repository.
+One common mistake we see is people writing recipes that behave as if there is only ever one project/module in a repository.
 
 In reality, there are numerous repositories that have multiple projects in them. Each project has its own code and dependencies. They _may_ have a relationship with one another, but they also may have none.
 
 This typically isn't an issue for recipes that operate on only a single file at a time, but `ScanningRecipe`s can unintentionally conflate repository-level information with project-level information.
 
-Unit tests won't catch this mistake because you won't write a test for it unless you're already thinking about it.=
+Unit tests won't catch this mistake because you won't write a test for it unless you're already thinking about it.
 
 The `JavaProject` marker exists to help differentiate which project/module a particular `SourceFile` is associated with. These markers are added at parse time by the build plugins. In unit tests, however, they must be placed manually by the test author. Within a scanning recipe it is common to make a map of `Map<JavaProject, T>` to keep track of per-project information of type `T`.
 

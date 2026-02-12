@@ -135,7 +135,7 @@ This tutorial uses Java for tests, but which language you use is a matter of pre
 
 ## Sample recipe
 
-With the dependencies set up, we now need a recipe that we can write tests for. For the sake of an example, let's assume we have an imperative recipes that ensures a class's package declaration is all lowercase (a [declarative recipe example](#declarative-recipe-testing) can be found later on).
+With the dependencies set up, we now need a recipe that we can write tests for. For the sake of an example, let's assume we have an imperative recipe that ensures a class's package declaration is all lowercase (a [declarative recipe example](#declarative-recipe-testing) can be found later on).
 
 ```java
 package com.yourorg;

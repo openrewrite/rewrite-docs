@@ -331,7 +331,7 @@ public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName)
 
 ### Build the template for the `setCustomerInfo()` method body
 
-The next thing we need to do with our recipe is add a body to our `setCustomerInfo()` method. As before, we will use a `JavaTemplate` to add build up the method body.
+The next thing we need to do with our recipe is add a body to our `setCustomerInfo()` method. As before, we will use a `JavaTemplate` to build up the method body.
 
 For this recipe, we want to add a `MethodBody` to our `setCustomerInfo()` method. However, if we started trying to add statements to it, we'd get a `NullPointerException` as the `MethodBody` has not been instantiated.
 

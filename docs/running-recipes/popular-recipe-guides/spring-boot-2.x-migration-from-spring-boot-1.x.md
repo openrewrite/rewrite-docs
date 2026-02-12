@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Migrate to Spring Boot 2 from Spring Boot 1
 
-In this guide we'll look at using OpenRewrite to perform an automated migration from SpringBoot 1 to SpringBoot 2.
+In this guide we'll look at using OpenRewrite to perform an automated migration from Spring Boot 1 to Spring Boot 2.
 
 ## Example Configuration
 

@@ -10,7 +10,7 @@ Markers annotate [LST](./lossless-semantic-trees.md) elements with metadata. [Vi
 
 ### Adding Markers to an LST Element
 
-LST implementations providing Markers have at last two methods to add Markers. LST elements are immutable, and that includes their metadata, so these methods return a copy of the LST element with the specified Markers.
+LST implementations providing Markers have at least two methods to add Markers. LST elements are immutable, and that includes their metadata, so these methods return a copy of the LST element with the specified Markers.
 
 ```java
 // Returns the existing Markers

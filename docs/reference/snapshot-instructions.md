@@ -90,7 +90,7 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 
 ## Maven Command Line instructions
 
-To use snapshot versions via the Maven command line, follow the same logic as in the above `Maven insructions` for the rewrite-maven-plugin and the recipe versions.
+To use snapshot versions via the Maven command line, follow the same logic as in the above `Maven instructions` for the rewrite-maven-plugin and the recipe versions.
 
 The first step is to update your `pom.xml` file by modifying the `repositories` section to include the location of the OpenRewrite snapshots:
 
@@ -112,7 +112,7 @@ The first step is to update your `pom.xml` file by modifying the `repositories` 
 ```
 
 Next, you have to update the version numbers specified in the command line.
-For instance, if the latest release of the `rewrite-maven-plugin` is `6.21.1`, the snapshot version would be `6.22.0-SNAPSHOT`. And if the latest release of the  `rewrite-migrate-java` recipe is `3.19.0`, , the snapshot version would be `3.20.0-SNAPSHOT`.
+For instance, if the latest release of the `rewrite-maven-plugin` is `6.21.1`, the snapshot version would be `6.22.0-SNAPSHOT`. And if the latest release of the  `rewrite-migrate-java` recipe is `3.19.0`, the snapshot version would be `3.20.0-SNAPSHOT`.
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"

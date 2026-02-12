@@ -280,7 +280,7 @@ Another useful example that doesn't involve Refaster recipes is our [JavaTemplat
 
 ## Semantics class shortcut
 
-If you're looking for a more concise way to define JavaTemplates, the [Semantics class](https://github.com/openrewrite/rewrite-templating/blob/main/src/main/java/org/openrewrite/java/template/Semantics.java) offers a powerful alternative. Instead of writing the raw template string yourself, you can define the desired expression or statement directly in Java, and a annotation processor will automatically generate the corresponding template code for you.
+If you're looking for a more concise way to define JavaTemplates, the [Semantics class](https://github.com/openrewrite/rewrite-templating/blob/main/src/main/java/org/openrewrite/java/template/Semantics.java) offers a powerful alternative. Instead of writing the raw template string yourself, you can define the desired expression or statement directly in Java, and an annotation processor will automatically generate the corresponding template code for you.
 
 This approach helps you avoid dealing with the syntax of raw templates and lets the compiler validate your logic directly.
 
