@@ -75,7 +75,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate RichFaces 3.x to 4.5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/migraterichfaces_4_5)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
-* [Migrate Spring WS Axiom to SAAJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
+* [Migrate Spring WS Axiom to SAAJ](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
 * [Migrate Struts 1 Action to Struts 2 ActionSupport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migrateactionclass)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migrateawareinterfaces)
 * [Migrate TaskMetadata and ThreadMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/migratetaskandthreadmetadata)

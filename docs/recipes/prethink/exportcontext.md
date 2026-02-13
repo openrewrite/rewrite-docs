@@ -33,8 +33,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Update Prethink context (no AI)](/recipes/prethink/updateprethinkcontextnoaistarter.md)
-* [Update Prethink context (with AI)](/recipes/prethink/updateprethinkcontextstarter.md)
+* [Update Prethink context (no AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
+* [Update Prethink context (with AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
 * [Update Prethink context](/recipes/prethink/updateprethinkcontext.md)
 
 

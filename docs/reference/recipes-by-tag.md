@@ -6446,7 +6446,7 @@ _12 recipes_
 
 ## spring
 
-_123 recipes_
+_125 recipes_
 
 * [org.openrewrite.java.spring.batch.SpringBatch4To5Migration](/recipes/java/spring/batch/springbatch4to5migration.md)
   * **Migrate to Spring Batch 5.0 from 4.3**
@@ -6700,6 +6700,12 @@ _123 recipes_
 * [org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
   * **Migrate to Spring Security 7.0**
   * Migrate applications to the latest Spring Security 7.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
+  * **Migrate Spring WS Axiom to SAAJ**
+  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
+* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
+  * **Migrate to Spring WS 4.0**
+  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 * [org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
   * **Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)**
   * This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application.

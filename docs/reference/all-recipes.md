@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4755
+Total recipes: 4737
 
 
 ## io.moderne.recipe:rewrite-devcenter
@@ -1838,68 +1838,8 @@ _9 recipes_
 
 _License: Moderne Source Available License_
 
-_25 recipes_
+_5 recipes_
 
-* [io.moderne.prethink.ComprehendCode](/recipes/prethink/comprehendcode.md)
-  * **Comprehend code with AI**
-  * Use an LLM to generate descriptions for classes and methods in the codebase. Descriptions are cached based on source code checksums to avoid regenerating descriptions for unchanged code.
-* [io.moderne.prethink.ComprehendCodeTokenCounter](/recipes/prethink/comprehendcodetokencounter.md)
-  * **Estimate comprehension token usage**
-  * Estimate the input token counts that would be sent to an LLM for method comprehension, without actually calling a model. Uses OpenAI's tokenizer locally. Outputs to the MethodDescriptions table with blank descriptions.
-* [io.moderne.prethink.ExtractCodingConventions](/recipes/prethink/extractcodingconventions.md)
-  * **Extract coding conventions**
-  * Analyze the codebase to extract coding conventions including naming patterns, import organization, and documentation patterns.
-* [io.moderne.prethink.ExtractDependencyUsage](/recipes/prethink/extractdependencyusage.md)
-  * **Extract dependency usage patterns**
-  * Analyze the codebase to extract dependency usage patterns by examining which types from external libraries are actually used in the code.
-* [io.moderne.prethink.ExtractErrorPatterns](/recipes/prethink/extracterrorpatterns.md)
-  * **Extract error handling patterns**
-  * Analyze the codebase to extract error handling patterns including exception types, handling strategies, and logging frameworks used.
-* [io.moderne.prethink.FindTestCoverage](/recipes/prethink/findtestcoverage.md)
-  * **Find test coverage mapping**
-  * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured.
-* [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](/recipes/prethink/updateprethinkcontextnoaistarter.md)
-  * **Update Prethink context (no AI)**
-  * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. This recipe does not require an LLM provider - use UpdatePrethinkContextStarter if you want AI-generated code comprehension and test summaries.
-* [io.moderne.prethink.UpdatePrethinkContextStarter](/recipes/prethink/updateprethinkcontextstarter.md)
-  * **Update Prethink context (with AI)**
-  * Generate Moderne Prethink context files with AI-generated code comprehension, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. Maps tests to implementation methods and optionally generates AI summaries of what each test verifies when LLM provider is configured.
-* [io.moderne.prethink.calm.FindCalmRelationships](/recipes/prethink/calm/findcalmrelationships.md)
-  * **Find CALM relationships**
-  * Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships.
-* [io.moderne.prethink.calm.FindDataAssets](/recipes/prethink/calm/finddataassets.md)
-  * **Find data assets**
-  * Identify data assets including JPA entities, MongoDB documents, Java records, and DTOs in the application.
-* [io.moderne.prethink.calm.FindDatabaseConnections](/recipes/prethink/calm/finddatabaseconnections.md)
-  * **Find database connections**
-  * Identify database connections and data access patterns in the application. Detects JPA entities, Spring Data repositories, JDBC templates, and MyBatis mappers.
-* [io.moderne.prethink.calm.FindDeploymentArtifacts](/recipes/prethink/calm/finddeploymentartifacts.md)
-  * **Find deployment artifacts**
-  * Identify deployment artifacts including Dockerfiles, docker-compose files, and Kubernetes manifests.
-* [io.moderne.prethink.calm.FindExternalServiceCalls](/recipes/prethink/calm/findexternalservicecalls.md)
-  * **Find external service calls**
-  * Identify outbound HTTP calls to external services. Detects RestTemplate, WebClient, Feign clients, Apache HttpClient, OkHttp, and JAX-RS clients.
-* [io.moderne.prethink.calm.FindMessagingConnections](/recipes/prethink/calm/findmessagingconnections.md)
-  * **Find messaging connections**
-  * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, and AWS SQS messaging.
-* [io.moderne.prethink.calm.FindProjectMetadata](/recipes/prethink/calm/findprojectmetadata.md)
-  * **Find project metadata**
-  * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
-* [io.moderne.prethink.calm.FindSecurityConfiguration](/recipes/prethink/calm/findsecurityconfiguration.md)
-  * **Find security configuration**
-  * Identify security configurations including Spring Security, OAuth2, and CORS settings.
-* [io.moderne.prethink.calm.FindServerConfiguration](/recipes/prethink/calm/findserverconfiguration.md)
-  * **Find server configuration**
-  * Extract server configuration (port, SSL, context path) from application.properties and application.yml files.
-* [io.moderne.prethink.calm.FindServiceComponents](/recipes/prethink/calm/findservicecomponents.md)
-  * **Find service components**
-  * Identify service layer components (@Service, @Component, @Named) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
-* [io.moderne.prethink.calm.FindServiceEndpoints](/recipes/prethink/calm/findserviceendpoints.md)
-  * **Find service endpoints**
-  * Identify all REST/HTTP service endpoints exposed by the application. Supports Spring MVC, JAX-RS, Micronaut, and Quarkus REST endpoints.
-* [io.moderne.prethink.calm.GenerateCalmMermaidDiagram](/recipes/prethink/calm/generatecalmmermaiddiagram.md)
-  * **Generate architecture mermaid diagram**
-  * Generate a markdown file with a mermaid architecture diagram from discovered service endpoints, database connections, external service calls, and messaging connections.
 * [org.openrewrite.prethink.ExportContext](/recipes/prethink/exportcontext.md)
   * **Export context files**
   * Export DataTables to CSV files in `.moderne/context/` along with a markdown description file. The markdown file describes the context and includes schema information for each data table.
@@ -10813,7 +10753,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1260 recipes_
+_1262 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -13854,6 +13794,12 @@ _1260 recipes_
 * [org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
   * **Migrate to Spring Security 7.0**
   * Migrate applications to the latest Spring Security 7.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
+  * **Migrate Spring WS Axiom to SAAJ**
+  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
+* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
+  * **Migrate to Spring WS 4.0**
+  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 * [org.openrewrite.java.springdoc.MigrateSpringdocCommon](/recipes/java/springdoc/migratespringdoccommon.md)
   * **Migrate from springdoc-openapi-common to springdoc-openapi-starter-common**
   * Migrate from springdoc-openapi-common to springdoc-openapi-starter-common.

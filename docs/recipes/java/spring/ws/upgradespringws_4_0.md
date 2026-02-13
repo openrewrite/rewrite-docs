@@ -1,21 +1,26 @@
 ---
-sidebar_label: "Update Prethink context"
+sidebar_label: "Migrate to Spring WS 4.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Update Prethink context
+# Migrate to Spring WS 4.0
 
-**org.openrewrite.prethink.UpdatePrethinkContext**
+**org.openrewrite.java.spring.ws.UpgradeSpringWs\_4\_0**
 
-_Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite._
+_Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred._
+
+### Tags
+
+* [spring](/reference/recipes-by-tag#spring)
+* [spring-ws](/reference/recipes-by-tag#spring)
 
 ## Recipe source
 
-[GitHub: UpdatePrethinkContext.java](https://github.com/openrewrite/rewrite-prethink/blob/main/src/main/java/org/openrewrite/prethink/UpdatePrethinkContext.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-prethink/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-prethink/)
+[GitHub: spring-ws-4.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-ws-4.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
@@ -28,14 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Generate CALM architecture](../prethink/calm/generatecalmarchitecture)
-* [Export context files](../prethink/exportcontext)
-  * displayName: `Architecture`
-  * shortDescription: `FINOS CALM architecture diagram`
-  * longDescription: `FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.`
-  * dataTables: `[org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]`
-* [Update agent configuration files](../prethink/updateagentconfig)
-* [Update .gitignore for Prethink context](../prethink/updategitignore)
+* [Migrate Spring WS Axiom to SAAJ](../../../java/spring/ws/migrateaxiomtosaaj)
 
 </TabItem>
 
@@ -44,35 +42,23 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.prethink.UpdatePrethinkContext
-displayName: Update Prethink context
+name: org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0
+displayName: Migrate to Spring WS 4.0
 description: |
-  Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
+  Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
+tags:
+  - spring
+  - spring-ws
 recipeList:
-  - org.openrewrite.prethink.calm.GenerateCalmArchitecture
-  - org.openrewrite.prethink.ExportContext:
-      displayName: Architecture
-      shortDescription: FINOS CALM architecture diagram
-      longDescription: FINOS CALM (Common Architecture Language Model) architecture diagram showing services, databases, external integrations, and messaging connections. Use this to understand the high-level system architecture and component relationships.
-      dataTables: [org.openrewrite.prethink.table.ServiceEndpoints, org.openrewrite.prethink.table.DatabaseConnections, org.openrewrite.prethink.table.ExternalServiceCalls, org.openrewrite.prethink.table.MessagingConnections, org.openrewrite.prethink.table.ServerConfiguration, org.openrewrite.prethink.table.DataAssets, org.openrewrite.prethink.table.ProjectMetadata, org.openrewrite.prethink.table.SecurityConfiguration, org.openrewrite.prethink.table.DeploymentArtifacts]
-  - org.openrewrite.prethink.UpdateAgentConfig
-  - org.openrewrite.prethink.UpdateGitignore
+  - org.openrewrite.java.spring.ws.MigrateAxiomToSaaj
 
 ```
 </TabItem>
 </Tabs>
 
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Update Prethink context (no AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
-* [Update Prethink context (with AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
-
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-prethink` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-spring` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -84,7 +70,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
+    activeRecipe("org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0")
     setExportDatatables(true)
 }
 
@@ -93,7 +79,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
+    rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
 }
 ```
 
@@ -114,10 +100,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
+        rewrite("org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.prethink.UpdatePrethinkContext")
+        activeRecipe("org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -152,14 +138,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.prethink.UpdatePrethinkContext</recipe>
+            <recipe>org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-prethink</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}</version>
+            <artifactId>rewrite-spring</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -175,7 +161,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-prethink:RELEASE -Drewrite.activeRecipes=org.openrewrite.prethink.UpdatePrethinkContext -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -183,12 +169,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpdatePrethinkContext
+mod run . --recipe UpgradeSpringWs_4_0
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
 ```
 </TabItem>
 </Tabs>
@@ -197,7 +183,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.prethink.UpdatePrethinkContext" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

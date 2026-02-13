@@ -50,7 +50,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate OpenTracing API to OpenTelemetry API](/recipes/java/spring/opentelemetry/migrateopentracingtoopentelemetry.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
-* [Migrate Spring WS Axiom to SAAJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
+* [Migrate Spring WS Axiom to SAAJ](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)

@@ -899,6 +899,70 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
 
 
+## rewrite-prethink
+
+* [io.moderne.prethink.ComprehendCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/comprehendcode)
+  * **Comprehend code with AI**
+  * Use an LLM to generate descriptions for classes and methods in the codebase. Descriptions are cached based on source code checksums to avoid regenerating descriptions for unchanged code.
+* [io.moderne.prethink.ComprehendCodeTokenCounter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/comprehendcodetokencounter)
+  * **Estimate comprehension token usage**
+  * Estimate the input token counts that would be sent to an LLM for method comprehension, without actually calling a model. Uses OpenAI's tokenizer locally. Outputs to the MethodDescriptions table with blank descriptions.
+* [io.moderne.prethink.ExtractCodingConventions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extractcodingconventions)
+  * **Extract coding conventions**
+  * Analyze the codebase to extract coding conventions including naming patterns, import organization, and documentation patterns.
+* [io.moderne.prethink.ExtractDependencyUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extractdependencyusage)
+  * **Extract dependency usage patterns**
+  * Analyze the codebase to extract dependency usage patterns by examining which types from external libraries are actually used in the code.
+* [io.moderne.prethink.ExtractErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extracterrorpatterns)
+  * **Extract error handling patterns**
+  * Analyze the codebase to extract error handling patterns including exception types, handling strategies, and logging frameworks used.
+* [io.moderne.prethink.FindTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findtestcoverage)
+  * **Find test coverage mapping**
+  * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured.
+* [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
+  * **Update Prethink context (no AI)**
+  * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. This recipe does not require an LLM provider - use UpdatePrethinkContextStarter if you want AI-generated code comprehension and test summaries.
+* [io.moderne.prethink.UpdatePrethinkContextStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
+  * **Update Prethink context (with AI)**
+  * Generate Moderne Prethink context files with AI-generated code comprehension, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. Maps tests to implementation methods and optionally generates AI summaries of what each test verifies when LLM provider is configured.
+* [io.moderne.prethink.calm.FindCalmRelationships](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findcalmrelationships)
+  * **Find CALM relationships**
+  * Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships.
+* [io.moderne.prethink.calm.FindDataAssets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddataassets)
+  * **Find data assets**
+  * Identify data assets including JPA entities, MongoDB documents, Java records, and DTOs in the application.
+* [io.moderne.prethink.calm.FindDatabaseConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddatabaseconnections)
+  * **Find database connections**
+  * Identify database connections and data access patterns in the application. Detects JPA entities, Spring Data repositories, JDBC templates, and MyBatis mappers.
+* [io.moderne.prethink.calm.FindDeploymentArtifacts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddeploymentartifacts)
+  * **Find deployment artifacts**
+  * Identify deployment artifacts including Dockerfiles, docker-compose files, and Kubernetes manifests.
+* [io.moderne.prethink.calm.FindExternalServiceCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findexternalservicecalls)
+  * **Find external service calls**
+  * Identify outbound HTTP calls to external services. Detects RestTemplate, WebClient, Feign clients, Apache HttpClient, OkHttp, and JAX-RS clients.
+* [io.moderne.prethink.calm.FindMessagingConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmessagingconnections)
+  * **Find messaging connections**
+  * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, and AWS SQS messaging.
+* [io.moderne.prethink.calm.FindProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findprojectmetadata)
+  * **Find project metadata**
+  * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
+* [io.moderne.prethink.calm.FindSecurityConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsecurityconfiguration)
+  * **Find security configuration**
+  * Identify security configurations including Spring Security, OAuth2, and CORS settings.
+* [io.moderne.prethink.calm.FindServerConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findserverconfiguration)
+  * **Find server configuration**
+  * Extract server configuration (port, SSL, context path) from application.properties and application.yml files.
+* [io.moderne.prethink.calm.FindServiceComponents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findservicecomponents)
+  * **Find service components**
+  * Identify service layer components (@Service, @Component, @Named) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
+* [io.moderne.prethink.calm.FindServiceEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findserviceendpoints)
+  * **Find service endpoints**
+  * Identify all REST/HTTP service endpoints exposed by the application. Supports Spring MVC, JAX-RS, Micronaut, and Quarkus REST endpoints.
+* [io.moderne.prethink.calm.GenerateCalmMermaidDiagram](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/generatecalmmermaiddiagram)
+  * **Generate architecture mermaid diagram**
+  * Generate a markdown file with a mermaid architecture diagram from discovered service endpoints, database connections, external service calls, and messaging connections.
+
+
 ## rewrite-program-analysis
 
 * [org.openrewrite.analysis.java.FindNullPointerIssues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/findnullpointerissues)
@@ -946,6 +1010,25 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.analysis.java.security.FindXxeVulnerability](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findxxevulnerability)
   * **Find XXE vulnerabilities**
   * Locates XML parsers that are not configured to prevent XML External Entity (XXE) attacks.
+
+
+## rewrite-python
+
+* [org.openrewrite.python.AddDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/adddependency)
+  * **Add Python dependency**
+  * Add a dependency to the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.RemoveDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/removedependency)
+  * **Remove Python dependency**
+  * Remove a dependency from the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/upgradedependencyversion)
+  * **Upgrade Python dependency version**
+  * Upgrade the version constraint for a dependency in `[project].dependencies` in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.format.PythonSpaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/format/pythonspaces)
+  * **Formats spaces in Python code**
+  * Standardizes spaces in Python code. Currently limited to formatting method arguments.
+* [org.openrewrite.python.search.DependencyInsight](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/search/dependencyinsight)
+  * **Python dependency insight**
+  * Find direct and transitive Python dependencies matching a package name pattern. Results include dependencies that either directly match or transitively include a matching dependency.
 
 
 ## rewrite-react
@@ -1444,12 +1527,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.security7.ModularizeSpringSecurity7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/modularizespringsecurity7)
   * **Spring Security 7 modularization**
   * Spring Security Core was modularized in version 7, deprecated classes that are still a crucial part of some applications are moved to `spring-security-access`.
-* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
-  * **Migrate Spring WS Axiom to SAAJ**
-  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
-* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/upgradespringws_4_0)
-  * **Migrate to Spring WS 4.0**
-  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 
 
 ## rewrite-sql
