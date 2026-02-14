@@ -847,6 +847,445 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Swap out an IP address with another one in `Service` `externalIP` settings.
 
 
+## rewrite-migrate-python
+
+* [org.openrewrite.python.migrate.FindAifcModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaifcmodule)
+  * **Find deprecated `aifc` module usage**
+  * The `aifc` module was deprecated in Python 3.11 and removed in Python 3.13. Use third-party audio libraries instead.
+* [org.openrewrite.python.migrate.FindAsyncioCoroutineDecorator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findasynciocoroutinedecorator)
+  * **Find deprecated `@asyncio.coroutine` decorator**
+  * Find usage of the deprecated `@asyncio.coroutine` decorator which was removed in Python 3.11. Convert to `async def` syntax with `await` instead of `yield from`.
+* [org.openrewrite.python.migrate.FindAudioopModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaudioopmodule)
+  * **Find deprecated `audioop` module usage**
+  * The `audioop` module was deprecated in Python 3.11 and removed in Python 3.13. Use pydub, numpy, or scipy for audio operations.
+* [org.openrewrite.python.migrate.FindCgiModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgimodule)
+  * **Find deprecated `cgi` module usage**
+  * The `cgi` module was deprecated in Python 3.11 and removed in Python 3.13. Use `urllib.parse` for query string parsing, `html.escape()` for escaping, and web frameworks or `email.message` for form handling.
+* [org.openrewrite.python.migrate.FindCgiParseQs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgiparseqs)
+  * **Find removed `cgi.parse_qs()` usage**
+  * `cgi.parse_qs()` was removed in Python 3.8. Use `urllib.parse.parse_qs()` instead.
+* [org.openrewrite.python.migrate.FindCgiParseQsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgiparseqsl)
+  * **Find removed `cgi.parse_qsl()` usage**
+  * `cgi.parse_qsl()` was removed in Python 3.8. Use `urllib.parse.parse_qsl()` instead.
+* [org.openrewrite.python.migrate.FindCgitbModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgitbmodule)
+  * **Find deprecated `cgitb` module usage**
+  * The `cgitb` module was deprecated in Python 3.11 and removed in Python 3.13. Use the standard `logging` and `traceback` modules for error handling.
+* [org.openrewrite.python.migrate.FindChunkModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findchunkmodule)
+  * **Find deprecated `chunk` module usage**
+  * The `chunk` module was deprecated in Python 3.11 and removed in Python 3.13. Implement IFF chunk reading manually or use specialized libraries.
+* [org.openrewrite.python.migrate.FindCryptModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcryptmodule)
+  * **Find deprecated `crypt` module usage**
+  * The `crypt` module was deprecated in Python 3.11 and removed in Python 3.13. Use `bcrypt`, `argon2-cffi`, or `passlib` instead.
+* [org.openrewrite.python.migrate.FindDistutilsUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finddistutilsusage)
+  * **Find deprecated distutils module usage**
+  * Find imports of the deprecated `distutils` module which was removed in Python 3.12. Migrate to `setuptools` or other modern build tools.
+* [org.openrewrite.python.migrate.FindElementGetchildren](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findelementgetchildren)
+  * **Find deprecated `Element.getchildren()` usage**
+  * Find usage of `getchildren()` method on XML Element objects. Deprecated in Python 3.9. Use `list(element)` instead.
+* [org.openrewrite.python.migrate.FindFunctoolsCmpToKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfunctoolscmptokey)
+  * **Find `functools.cmp_to_key()` usage**
+  * Find usage of `functools.cmp_to_key()` which is a Python 2 compatibility function. Consider using a key function directly.
+* [org.openrewrite.python.migrate.FindHtmlParserUnescape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findhtmlparserunescape)
+  * **Find removed `HTMLParser.unescape()` usage**
+  * `HTMLParser.unescape()` was removed in Python 3.9. Use `html.unescape()` instead.
+* [org.openrewrite.python.migrate.FindImghdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimghdrmodule)
+  * **Find deprecated `imghdr` module usage**
+  * The `imghdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype`, `python-magic`, or `Pillow` instead.
+* [org.openrewrite.python.migrate.FindImpUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimpusage)
+  * **Find deprecated imp module usage**
+  * Find imports of the deprecated `imp` module which was removed in Python 3.12. Migrate to `importlib`.
+* [org.openrewrite.python.migrate.FindLocaleGetdefaultlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findlocalegetdefaultlocale)
+  * **Find deprecated `locale.getdefaultlocale()` usage**
+  * `locale.getdefaultlocale()` was deprecated in Python 3.11. Use `locale.setlocale()`, `locale.getlocale()`, or `locale.getpreferredencoding(False)` instead.
+* [org.openrewrite.python.migrate.FindMacpathModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmacpathmodule)
+  * **Find removed `macpath` module usage**
+  * The `macpath` module was removed in Python 3.8. Use `os.path` instead.
+* [org.openrewrite.python.migrate.FindMailcapModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmailcapmodule)
+  * **Find deprecated `mailcap` module usage**
+  * The `mailcap` module was deprecated in Python 3.11 and removed in Python 3.13. Use `mimetypes` module for MIME type handling.
+* [org.openrewrite.python.migrate.FindMsilibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmsilibmodule)
+  * **Find deprecated `msilib` module usage**
+  * The `msilib` module was deprecated in Python 3.11 and removed in Python 3.13. Use platform-specific tools for MSI creation.
+* [org.openrewrite.python.migrate.FindNisModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnismodule)
+  * **Find deprecated `nis` module usage**
+  * The `nis` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindNntplibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnntplibmodule)
+  * **Find deprecated `nntplib` module usage**
+  * The `nntplib` module was deprecated in Python 3.11 and removed in Python 3.13. NNTP is largely obsolete; consider alternatives if needed.
+* [org.openrewrite.python.migrate.FindOsPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findospopen)
+  * **Find deprecated `os.popen()` usage**
+  * `os.popen()` has been deprecated since Python 3.6. Use `subprocess.run()` or `subprocess.Popen()` instead for better control over process creation and output handling.
+* [org.openrewrite.python.migrate.FindOsSpawn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findosspawn)
+  * **Find deprecated `os.spawn*()` usage**
+  * The `os.spawn*()` family of functions are deprecated. Use `subprocess.run()` or `subprocess.Popen()` instead.
+* [org.openrewrite.python.migrate.FindOssaudiodevModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findossaudiodevmodule)
+  * **Find deprecated `ossaudiodev` module usage**
+  * The `ossaudiodev` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindPathlibLinkTo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpathliblinkto)
+  * **Find deprecated `Path.link_to()` usage**
+  * Find usage of `Path.link_to()` which was deprecated in Python 3.10 and removed in 3.12. Use `hardlink_to()` instead (note: argument order is reversed).
+* [org.openrewrite.python.migrate.FindPipesModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpipesmodule)
+  * **Find deprecated `pipes` module usage**
+  * The `pipes` module was deprecated in Python 3.11 and removed in Python 3.13. Use subprocess with shlex.quote() for shell escaping.
+* [org.openrewrite.python.migrate.FindPlatformPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findplatformpopen)
+  * **Find removed `platform.popen()` usage**
+  * `platform.popen()` was removed in Python 3.8. Use `os.popen()` or `subprocess.run()` instead.
+* [org.openrewrite.python.migrate.FindReTemplate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findretemplate)
+  * **Find deprecated `re.template()` / `re.TEMPLATE` usage**
+  * `re.template()` and `re.TEMPLATE` were deprecated in Python 3.11 and removed in 3.13.
+* [org.openrewrite.python.migrate.FindRemovedModules312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findremovedmodules312)
+  * **Find modules removed in Python 3.12**
+  * Find imports of modules that were removed in Python 3.12, including asynchat, asyncore, and smtpd.
+* [org.openrewrite.python.migrate.FindShutilRmtreeOnerror](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findshutilrmtreeonerror)
+  * **Find deprecated `shutil.rmtree(onerror=...)` parameter**
+  * The `onerror` parameter of `shutil.rmtree()` was deprecated in Python 3.12 in favor of `onexc`. The `onexc` callback receives the exception object directly rather than an exc_info tuple.
+* [org.openrewrite.python.migrate.FindSndhdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsndhdrmodule)
+  * **Find deprecated `sndhdr` module usage**
+  * The `sndhdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype` or audio libraries like `pydub` instead.
+* [org.openrewrite.python.migrate.FindSocketGetFQDN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsocketgetfqdn)
+  * **Find `socket.getfqdn()` usage**
+  * Find usage of `socket.getfqdn()` which can be slow and unreliable. Consider using `socket.gethostname()` instead.
+* [org.openrewrite.python.migrate.FindSpwdModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findspwdmodule)
+  * **Find deprecated `spwd` module usage**
+  * The `spwd` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindSslMatchHostname](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsslmatchhostname)
+  * **Find deprecated `ssl.match_hostname()`**
+  * Find usage of the deprecated `ssl.match_hostname()` function which was removed in Python 3.12. Use `ssl.SSLContext.check_hostname` instead.
+* [org.openrewrite.python.migrate.FindSunauModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsunaumodule)
+  * **Find deprecated `sunau` module usage**
+  * The `sunau` module was deprecated in Python 3.11 and removed in Python 3.13. Use `soundfile` or `pydub` instead.
+* [org.openrewrite.python.migrate.FindSysCoroutineWrapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsyscoroutinewrapper)
+  * **Find removed `sys.set_coroutine_wrapper()` / `sys.get_coroutine_wrapper()`**
+  * `sys.set_coroutine_wrapper()` and `sys.get_coroutine_wrapper()` were deprecated in Python 3.7 and removed in Python 3.8.
+* [org.openrewrite.python.migrate.FindSysLastExcInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsyslastexcinfo)
+  * **Find deprecated `sys.last_type` / `sys.last_value` / `sys.last_traceback`**
+  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. Use `sys.last_exc` instead.
+* [org.openrewrite.python.migrate.FindTarfileFilemode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtarfilefilemode)
+  * **Find removed `tarfile.filemode` usage**
+  * `tarfile.filemode` was removed in Python 3.8. Use `stat.filemode()` instead.
+* [org.openrewrite.python.migrate.FindTelnetlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtelnetlibmodule)
+  * **Find deprecated `telnetlib` module usage**
+  * The `telnetlib` module was deprecated in Python 3.11 and removed in Python 3.13. Consider using `telnetlib3` from PyPI, direct socket usage, or SSH-based alternatives like paramiko.
+* [org.openrewrite.python.migrate.FindTempfileMktemp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtempfilemktemp)
+  * **Find deprecated `tempfile.mktemp()` usage**
+  * Find usage of `tempfile.mktemp()` which is deprecated due to security concerns (race condition). Use `mkstemp()` or `NamedTemporaryFile()` instead.
+* [org.openrewrite.python.migrate.FindUrllibParseSplitFunctions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsesplitfunctions)
+  * **Find deprecated urllib.parse split functions**
+  * Find usage of deprecated urllib.parse split functions (splithost, splitport, etc.) removed in Python 3.14. Use urlparse() instead.
+* [org.openrewrite.python.migrate.FindUrllibParseToBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsetobytes)
+  * **Find deprecated `urllib.parse.to_bytes()` usage**
+  * Find usage of `urllib.parse.to_bytes()` which was deprecated in Python 3.8 and removed in 3.14. Use str.encode() directly.
+* [org.openrewrite.python.migrate.FindUuModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finduumodule)
+  * **Find deprecated `uu` module usage**
+  * The `uu` module was deprecated in Python 3.11 and removed in Python 3.13. Use `base64` module instead for encoding binary data.
+* [org.openrewrite.python.migrate.FindXdrlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findxdrlibmodule)
+  * **Find deprecated `xdrlib` module usage**
+  * The `xdrlib` module was deprecated in Python 3.11 and removed in Python 3.13. Use `struct` module for binary packing/unpacking.
+* [org.openrewrite.python.migrate.MigrateAsyncioCoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migrateasynciocoroutine)
+  * **Migrate `@asyncio.coroutine` to `async def`**
+  * Migrate functions using the deprecated `@asyncio.coroutine` decorator to use `async def` syntax. Also transforms `yield from` to `await`. The decorator was removed in Python 3.11.
+* [org.openrewrite.python.migrate.ReplaceArrayFromstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearrayfromstring)
+  * **Replace `array.fromstring()` with `array.frombytes()`**
+  * Replace `fromstring()` with `frombytes()` on array objects. The fromstring() method was deprecated in Python 3.2 and removed in 3.14.
+* [org.openrewrite.python.migrate.ReplaceArrayTostring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearraytostring)
+  * **Replace `array.tostring()` with `array.tobytes()`**
+  * Replace `tostring()` with `tobytes()` on array objects. The tostring() method was deprecated in Python 3.2 and removed in 3.14.
+* [org.openrewrite.python.migrate.ReplaceAstBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastbytes)
+  * **Replace `ast.Bytes` with `ast.Constant`**
+  * The `ast.Bytes` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, bytes)`.
+* [org.openrewrite.python.migrate.ReplaceAstEllipsis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastellipsis)
+  * **Replace `ast.Ellipsis` with `ast.Constant`**
+  * The `ast.Ellipsis` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value is ...`.
+* [org.openrewrite.python.migrate.ReplaceAstNameConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnameconstant)
+  * **Replace `ast.NameConstant` with `ast.Constant`**
+  * The `ast.NameConstant` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value in (True, False, None)`.
+* [org.openrewrite.python.migrate.ReplaceAstNum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnum)
+  * **Replace `ast.Num` with `ast.Constant`**
+  * The `ast.Num` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, (int, float, complex))`.
+* [org.openrewrite.python.migrate.ReplaceAstStr](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceaststr)
+  * **Replace `ast.Str` with `ast.Constant`**
+  * The `ast.Str` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, str)`.
+* [org.openrewrite.python.migrate.ReplaceBase64Decodestring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacebase64decodestring)
+  * **Replace `base64.decodestring()` with `base64.decodebytes()`**
+  * Replace `base64.decodestring()` with `base64.decodebytes()`. The decodestring() method was deprecated in Python 3.1 and removed in 3.9.
+* [org.openrewrite.python.migrate.ReplaceBase64Encodestring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacebase64encodestring)
+  * **Replace `base64.encodestring()` with `base64.encodebytes()`**
+  * Replace `base64.encodestring()` with `base64.encodebytes()`. The encodestring() method was deprecated in Python 3.1 and removed in 3.9.
+* [org.openrewrite.python.migrate.ReplaceCalendarConstants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecalendarconstants)
+  * **Replace deprecated calendar constants with uppercase**
+  * Replace deprecated mixed-case calendar constants like `calendar.January` with their uppercase equivalents like `calendar.JANUARY`. The mixed-case constants were deprecated in Python 3.12.
+* [org.openrewrite.python.migrate.ReplaceCgiEscape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiescape)
+  * **Replace `cgi.escape()` with `html.escape()`**
+  * Replace `cgi.escape()` with `html.escape()`. cgi.escape() was deprecated in Python 3.2 and removed in Python 3.8.
+* [org.openrewrite.python.migrate.ReplaceCollectionsAbcImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecollectionsabcimports)
+  * **Replace `collections` ABC imports with `collections.abc`**
+  * Migrate deprecated abstract base class imports from `collections` to `collections.abc`. These imports were deprecated in Python 3.3 and removed in Python 3.10.
+* [org.openrewrite.python.migrate.ReplaceConditionNotifyAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconditionnotifyall)
+  * **Replace `Condition.notifyAll()` with `Condition.notify_all()`**
+  * Replace `notifyAll()` method calls with `notify_all()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceConfigparserReadfp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparserreadfp)
+  * **Replace `ConfigParser.readfp()` with `read_file()`**
+  * The `ConfigParser.readfp()` method was deprecated in Python 3.2 and removed in Python 3.13. Replace with `read_file()`.
+* [org.openrewrite.python.migrate.ReplaceConfigparserSafeConfigParser](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparsersafeconfigparser)
+  * **Replace `configparser.SafeConfigParser` with `ConfigParser`**
+  * The `configparser.SafeConfigParser` class was deprecated in Python 3.2 and removed in Python 3.12. Replace with `configparser.ConfigParser`.
+* [org.openrewrite.python.migrate.ReplaceDatetimeUtcFromTimestamp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcfromtimestamp)
+  * **Replace `datetime.utcfromtimestamp()` with `datetime.fromtimestamp(ts, UTC)`**
+  * The `datetime.utcfromtimestamp()` method is deprecated in Python 3.12. Replace it with `datetime.fromtimestamp(ts, datetime.UTC)` for timezone-aware datetime objects.
+* [org.openrewrite.python.migrate.ReplaceDatetimeUtcNow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcnow)
+  * **Replace `datetime.utcnow()` with `datetime.now(UTC)`**
+  * The `datetime.utcnow()` method is deprecated in Python 3.12. Replace it with `datetime.now(datetime.UTC)` for timezone-aware datetime objects.
+* [org.openrewrite.python.migrate.ReplaceDistutilsVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedistutilsversion)
+  * **Replace deprecated distutils.version usage**
+  * Detect usage of deprecated `distutils.version.LooseVersion` and `distutils.version.StrictVersion`. These should be migrated to `packaging.version.Version`. Note: Manual migration is required as `packaging.version.Version` is not a drop-in replacement.
+* [org.openrewrite.python.migrate.ReplaceElementGetiterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetiterator)
+  * **Replace `Element.getiterator()` with `Element.iter()`**
+  * Replace `getiterator()` with `iter()` on XML Element objects. The getiterator() method was deprecated in Python 3.9.
+* [org.openrewrite.python.migrate.ReplaceEventIsSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceeventisset)
+  * **Replace `Event.isSet()` with `Event.is_set()`**
+  * Replace `isSet()` method calls with `is_set()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceFractionsGcd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacefractionsgcd)
+  * **Replace `fractions.gcd()` with `math.gcd()`**
+  * Replace `fractions.gcd()` with `math.gcd()`. fractions.gcd() was deprecated in Python 3.5 and removed in 3.9.
+* [org.openrewrite.python.migrate.ReplaceGettextDeprecations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacegettextdeprecations)
+  * **Replace deprecated gettext l*gettext() functions**
+  * Replace deprecated gettext functions like `lgettext()` with their modern equivalents like `gettext()`. The l*gettext() functions were removed in Python 3.11.
+* [org.openrewrite.python.migrate.ReplaceImpImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceimpimport)
+  * **Replace `import imp` with `import importlib`**
+  * Replace `import imp` with `import importlib` for code that only uses imp.reload(). Also replaces `from imp import reload`.
+* [org.openrewrite.python.migrate.ReplaceImpReload](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceimpreload)
+  * **Replace `imp.reload()` with `importlib.reload()`**
+  * Replace `imp.reload()` with `importlib.reload()`. This is a direct 1:1 replacement with identical behavior.
+* [org.openrewrite.python.migrate.ReplaceInspectGetargspec](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceinspectgetargspec)
+  * **Replace `inspect.getargspec()` with `inspect.getfullargspec()`**
+  * The `inspect.getargspec()` function was deprecated in Python 3.0 and removed in Python 3.11. Replace with `inspect.getfullargspec()`. Note that code accessing the `keywords` field must be updated to use `varkw`.
+* [org.openrewrite.python.migrate.ReplaceLocaleResetlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacelocaleresetlocale)
+  * **Replace `locale.resetlocale()` with `locale.setlocale(LC_ALL, '')`**
+  * The `locale.resetlocale()` function was deprecated in Python 3.11 and removed in Python 3.13. Replace with `locale.setlocale(locale.LC_ALL, '')`.
+* [org.openrewrite.python.migrate.ReplaceLoggingWarn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceloggingwarn)
+  * **Replace `logging.warn()` with `logging.warning()`**
+  * Replace `warn()` calls with `warning()`. The warn() method was deprecated in Python 3.3.
+* [org.openrewrite.python.migrate.ReplacePercentFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepercentformatwithfstring)
+  * **Replace `%` formatting with f-string**
+  * Replace `&quot;...&quot; % (...)` expressions with f-strings (Python 3.6+). Only converts `%s` and `%r` specifiers where the format string is a literal and the conversion is safe.
+* [org.openrewrite.python.migrate.ReplacePkgutilFindLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilfindloader)
+  * **Replace `pkgutil.find_loader()` with `importlib.util.find_spec()`**
+  * The `pkgutil.find_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
+* [org.openrewrite.python.migrate.ReplacePkgutilGetLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilgetloader)
+  * **Replace `pkgutil.get_loader()` with `importlib.util.find_spec()`**
+  * The `pkgutil.get_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
+* [org.openrewrite.python.migrate.ReplaceStrFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacestrformatwithfstring)
+  * **Replace `str.format()` with f-string**
+  * Replace `&quot;...&quot;.format(...)` calls with f-strings (Python 3.6+). Only converts cases where the format string is a literal and the conversion is safe.
+* [org.openrewrite.python.migrate.ReplaceSysGetCheckInterval](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacesysgetcheckinterval)
+  * **Replace `sys.getcheckinterval()` with `sys.getswitchinterval()`**
+  * Replace `sys.getcheckinterval()` with `sys.getswitchinterval()`. Deprecated in Python 3.2 and removed in 3.9.
+* [org.openrewrite.python.migrate.ReplaceSysSetCheckInterval](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacesyssetcheckinterval)
+  * **Replace `sys.setcheckinterval()` with `sys.setswitchinterval()`**
+  * Replace `sys.setcheckinterval()` with `sys.setswitchinterval()`. Deprecated in Python 3.2 and removed in 3.9. Note: The semantics differ — check interval was in bytecode instructions, switch interval is in seconds.
+* [org.openrewrite.python.migrate.ReplaceThreadGetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadgetname)
+  * **Replace `Thread.getName()` with `Thread.name`**
+  * Replace `getName()` method calls with the `name` property. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadIsAlive](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisalive)
+  * **Replace `Thread.isAlive()` with `Thread.is_alive()`**
+  * Replace `isAlive()` method calls with `is_alive()`. Deprecated in Python 3.1 and removed in 3.9.
+* [org.openrewrite.python.migrate.ReplaceThreadIsDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisdaemon)
+  * **Replace `Thread.isDaemon()` with `Thread.daemon`**
+  * Replace `isDaemon()` method calls with the `daemon` property. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadSetDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetdaemon)
+  * **Replace `Thread.setDaemon()` with `Thread.daemon = ...`**
+  * Replace `setDaemon()` method calls with `daemon` property assignment. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadSetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetname)
+  * **Replace `Thread.setName()` with `Thread.name = ...`**
+  * Replace `setName()` method calls with `name` property assignment. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadingActiveCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingactivecount)
+  * **Replace `threading.activeCount()` with `threading.active_count()`**
+  * Replace `threading.activeCount()` with `threading.active_count()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadingCurrentThread](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingcurrentthread)
+  * **Replace `threading.currentThread()` with `threading.current_thread()`**
+  * Replace `threading.currentThread()` with `threading.current_thread()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceTimeClock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetimeclock)
+  * **Replace `time.clock()` with `time.perf_counter()`**
+  * Replace `time.clock()` with `time.perf_counter()`. time.clock() was deprecated in Python 3.3 and removed in 3.8.
+* [org.openrewrite.python.migrate.ReplaceTypingAbstractSetWithCollectionsAbcSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingabstractsetwithcollectionsabcset)
+  * **Replace `typing.AbstractSet` with `collections.abc.Set`**
+  * Replace `typing.AbstractSet` with `collections.abc.Set`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingAsyncContextManagerWithContextlib](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingasynccontextmanagerwithcontextlib)
+  * **Replace `typing.AsyncContextManager` with `contextlib.AbstractAsyncContextManager`**
+  * Replace `typing.AsyncContextManager` with `contextlib.AbstractAsyncContextManager`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingAsyncGeneratorWithCollectionsAbcAsyncGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingasyncgeneratorwithcollectionsabcasyncgenerator)
+  * **Replace `typing.AsyncGenerator` with `collections.abc.AsyncGenerator`**
+  * Replace `typing.AsyncGenerator` with `collections.abc.AsyncGenerator`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingAsyncIterableWithCollectionsAbcAsyncIterable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingasynciterablewithcollectionsabcasynciterable)
+  * **Replace `typing.AsyncIterable` with `collections.abc.AsyncIterable`**
+  * Replace `typing.AsyncIterable` with `collections.abc.AsyncIterable`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingAsyncIteratorWithCollectionsAbcAsyncIterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingasynciteratorwithcollectionsabcasynciterator)
+  * **Replace `typing.AsyncIterator` with `collections.abc.AsyncIterator`**
+  * Replace `typing.AsyncIterator` with `collections.abc.AsyncIterator`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingAwaitableWithCollectionsAbcAwaitable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingawaitablewithcollectionsabcawaitable)
+  * **Replace `typing.Awaitable` with `collections.abc.Awaitable`**
+  * Replace `typing.Awaitable` with `collections.abc.Awaitable`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingCallableWithCollectionsAbcCallable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcallablewithcollectionsabccallable)
+  * **Replace `typing.Callable` with `collections.abc.Callable`**
+  * PEP 585 deprecated `typing.Callable` in Python 3.9. Replace with `collections.abc.Callable` for type annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingChainMapWithCollectionsChainMap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingchainmapwithcollectionschainmap)
+  * **Replace `typing.ChainMap` with `collections.ChainMap`**
+  * Replace `typing.ChainMap` with `collections.ChainMap`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingCollectionWithCollectionsAbcCollection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcollectionwithcollectionsabccollection)
+  * **Replace `typing.Collection` with `collections.abc.Collection`**
+  * Replace `typing.Collection` with `collections.abc.Collection`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingContainerWithCollectionsAbcContainer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcontainerwithcollectionsabccontainer)
+  * **Replace `typing.Container` with `collections.abc.Container`**
+  * Replace `typing.Container` with `collections.abc.Container`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingContextManagerWithContextlib](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcontextmanagerwithcontextlib)
+  * **Replace `typing.ContextManager` with `contextlib.AbstractContextManager`**
+  * Replace `typing.ContextManager` with `contextlib.AbstractContextManager`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingCoroutineWithCollectionsAbcCoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcoroutinewithcollectionsabccoroutine)
+  * **Replace `typing.Coroutine` with `collections.abc.Coroutine`**
+  * Replace `typing.Coroutine` with `collections.abc.Coroutine`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingCounterWithCollectionsCounter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcounterwithcollectionscounter)
+  * **Replace `typing.Counter` with `collections.Counter`**
+  * Replace `typing.Counter` with `collections.Counter`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingDefaultDictWithCollectionsDefaultdict](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdefaultdictwithcollectionsdefaultdict)
+  * **Replace `typing.DefaultDict` with `collections.defaultdict`**
+  * Replace `typing.DefaultDict` with `collections.defaultdict`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingDequeWithCollectionsDeque](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdequewithcollectionsdeque)
+  * **Replace `typing.Deque` with `collections.deque`**
+  * Replace `typing.Deque` with `collections.deque`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingDictWithBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdictwithbuiltin)
+  * **Replace `typing.Dict` with `dict`**
+  * Replace `typing.Dict` with the built-in `dict` type. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingDictWithDict](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdictwithdict)
+  * **Replace `typing.Dict` with `dict`**
+  * PEP 585 deprecated `typing.Dict` in Python 3.9. Replace with the built-in `dict` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingFrozenSetWithBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingfrozensetwithbuiltin)
+  * **Replace `typing.FrozenSet` with `frozenset`**
+  * Replace `typing.FrozenSet` with the built-in `frozenset` type. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingGeneratorWithCollectionsAbcGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypinggeneratorwithcollectionsabcgenerator)
+  * **Replace `typing.Generator` with `collections.abc.Generator`**
+  * Replace `typing.Generator` with `collections.abc.Generator`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingItemsViewWithCollectionsAbcItemsView](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingitemsviewwithcollectionsabcitemsview)
+  * **Replace `typing.ItemsView` with `collections.abc.ItemsView`**
+  * Replace `typing.ItemsView` with `collections.abc.ItemsView`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingIterableWithCollectionsAbcIterable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingiterablewithcollectionsabciterable)
+  * **Replace `typing.Iterable` with `collections.abc.Iterable`**
+  * Replace `typing.Iterable` with `collections.abc.Iterable`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingIteratorWithCollectionsAbcIterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingiteratorwithcollectionsabciterator)
+  * **Replace `typing.Iterator` with `collections.abc.Iterator`**
+  * Replace `typing.Iterator` with `collections.abc.Iterator`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingKeysViewWithCollectionsAbcKeysView](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingkeysviewwithcollectionsabckeysview)
+  * **Replace `typing.KeysView` with `collections.abc.KeysView`**
+  * Replace `typing.KeysView` with `collections.abc.KeysView`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingListWithBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypinglistwithbuiltin)
+  * **Replace `typing.List` with `list`**
+  * Replace `typing.List` with the built-in `list` type. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingListWithList](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypinglistwithlist)
+  * **Replace `typing.List` with `list`**
+  * PEP 585 deprecated `typing.List` in Python 3.9. Replace with the built-in `list` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingMappingViewWithCollectionsAbcMappingView](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingmappingviewwithcollectionsabcmappingview)
+  * **Replace `typing.MappingView` with `collections.abc.MappingView`**
+  * Replace `typing.MappingView` with `collections.abc.MappingView`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingMappingWithCollectionsAbcMapping](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingmappingwithcollectionsabcmapping)
+  * **Replace `typing.Mapping` with `collections.abc.Mapping`**
+  * Replace `typing.Mapping` with `collections.abc.Mapping`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingMatchWithReMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingmatchwithrematch)
+  * **Replace `typing.Match` with `re.Match`**
+  * Replace `typing.Match` with `re.Match`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingMutableMappingWithCollectionsAbcMutableMapping](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingmutablemappingwithcollectionsabcmutablemapping)
+  * **Replace `typing.MutableMapping` with `collections.abc.MutableMapping`**
+  * Replace `typing.MutableMapping` with `collections.abc.MutableMapping`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingMutableSequenceWithCollectionsAbcMutableSequence](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingmutablesequencewithcollectionsabcmutablesequence)
+  * **Replace `typing.MutableSequence` with `collections.abc.MutableSequence`**
+  * Replace `typing.MutableSequence` with `collections.abc.MutableSequence`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingMutableSetWithCollectionsAbcMutableSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingmutablesetwithcollectionsabcmutableset)
+  * **Replace `typing.MutableSet` with `collections.abc.MutableSet`**
+  * Replace `typing.MutableSet` with `collections.abc.MutableSet`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingOptionalWithUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingoptionalwithunion)
+  * **Replace `typing.Optional[X]` with `X | None`**
+  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Optional[X]` with the more concise `X | None` syntax.
+* [org.openrewrite.python.migrate.ReplaceTypingOrderedDictWithCollectionsOrderedDict](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingordereddictwithcollectionsordereddict)
+  * **Replace `typing.OrderedDict` with `collections.OrderedDict`**
+  * Replace `typing.OrderedDict` with `collections.OrderedDict`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingPatternWithRePattern](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingpatternwithrepattern)
+  * **Replace `typing.Pattern` with `re.Pattern`**
+  * Replace `typing.Pattern` with `re.Pattern`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingReversibleWithCollectionsAbcReversible](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingreversiblewithcollectionsabcreversible)
+  * **Replace `typing.Reversible` with `collections.abc.Reversible`**
+  * Replace `typing.Reversible` with `collections.abc.Reversible`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingSequenceWithCollectionsAbcSequence](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingsequencewithcollectionsabcsequence)
+  * **Replace `typing.Sequence` with `collections.abc.Sequence`**
+  * Replace `typing.Sequence` with `collections.abc.Sequence`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingSetWithBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingsetwithbuiltin)
+  * **Replace `typing.Set` with `set`**
+  * Replace `typing.Set` with the built-in `set` type. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingSetWithSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingsetwithset)
+  * **Replace `typing.Set` with `set`**
+  * PEP 585 deprecated `typing.Set` in Python 3.9. Replace with the built-in `set` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingText](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtext)
+  * **Replace `typing.Text` with `str`**
+  * `typing.Text` is deprecated as of Python 3.11. It was an alias for `str` for Python 2/3 compatibility. Replace with `str`.
+* [org.openrewrite.python.migrate.ReplaceTypingTupleWithBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtuplewithbuiltin)
+  * **Replace `typing.Tuple` with `tuple`**
+  * Replace `typing.Tuple` with the built-in `tuple` type. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingTupleWithTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtuplewithtuple)
+  * **Replace `typing.Tuple` with `tuple`**
+  * PEP 585 deprecated `typing.Tuple` in Python 3.9. Replace with the built-in `tuple` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingTypeWithBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtypewithbuiltin)
+  * **Replace `typing.Type` with `type`**
+  * Replace `typing.Type` with the built-in `type` type. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceTypingUnionWithPipe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingunionwithpipe)
+  * **Replace `typing.Union[X, Y]` with `X | Y`**
+  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Union[X, Y, ...]` with the more concise `X | Y | ...` syntax.
+* [org.openrewrite.python.migrate.ReplaceTypingValuesViewWithCollectionsAbcValuesView](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingvaluesviewwithcollectionsabcvaluesview)
+  * **Replace `typing.ValuesView` with `collections.abc.ValuesView`**
+  * Replace `typing.ValuesView` with `collections.abc.ValuesView`. Available in Python 3.9+ (PEP 585).
+* [org.openrewrite.python.migrate.ReplaceUnittestDeprecatedAliases](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceunittestdeprecatedaliases)
+  * **Replace deprecated unittest method aliases**
+  * Replace deprecated unittest.TestCase method aliases like `assertEquals` with their modern equivalents like `assertEqual`. These aliases were removed in Python 3.11/3.12.
+* [org.openrewrite.python.migrate.UpgradeToPython310](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython310)
+  * **Upgrade to Python 3.10**
+  * Migrate deprecated APIs and adopt new syntax for Python 3.10 compatibility. This includes adopting PEP 604 union type syntax (`X | Y`) and other modernizations between Python 3.9 and 3.10.
+* [org.openrewrite.python.migrate.UpgradeToPython311](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython311)
+  * **Upgrade to Python 3.11**
+  * Migrate deprecated and removed APIs for Python 3.11 compatibility. This includes handling removed modules, deprecated functions, and API changes between Python 3.10 and 3.11.
+* [org.openrewrite.python.migrate.UpgradeToPython312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython312)
+  * **Upgrade to Python 3.12**
+  * Migrate deprecated and removed APIs for Python 3.12 compatibility. This includes detecting usage of the removed `imp` module and other legacy modules that were removed in Python 3.12.
+* [org.openrewrite.python.migrate.UpgradeToPython313](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython313)
+  * **Upgrade to Python 3.13**
+  * Migrate deprecated and removed APIs for Python 3.13 compatibility. This includes detecting usage of modules removed in PEP 594 ('dead batteries') and other API changes between Python 3.12 and 3.13.
+* [org.openrewrite.python.migrate.UpgradeToPython314](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython314)
+  * **Upgrade to Python 3.14**
+  * Migrate deprecated and removed APIs for Python 3.14 compatibility. This includes replacing deprecated AST node types with `ast.Constant` and other API changes between Python 3.13 and 3.14.
+* [org.openrewrite.python.migrate.UpgradeToPython38](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython38)
+  * **Upgrade to Python 3.8**
+  * Migrate deprecated APIs and detect legacy patterns for Python 3.8 compatibility.
+* [org.openrewrite.python.migrate.UpgradeToPython39](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython39)
+  * **Upgrade to Python 3.9**
+  * Migrate deprecated APIs for Python 3.9 compatibility. This includes PEP 585 built-in generics, removed base64 functions, and deprecated XML Element methods.
+* [org.openrewrite.python.migrate.langchain.FindDeprecatedLangchainAgents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/finddeprecatedlangchainagents)
+  * **Find deprecated LangChain agent patterns**
+  * Find usage of deprecated LangChain agent patterns including `initialize_agent`, `AgentExecutor`, and `LLMChain`. These were deprecated in LangChain v0.2 and removed in v1.0.
+* [org.openrewrite.python.migrate.langchain.FindLangchainCreateReactAgent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/findlangchaincreatereactagent)
+  * **Find `create_react_agent` usage (replace with `create_agent`)**
+  * Find `from langgraph.prebuilt import create_react_agent` which should be replaced with `from langchain.agents import create_agent` in LangChain v1.0.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainClassicImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainclassicimports)
+  * **Replace `langchain` legacy imports with `langchain_classic`**
+  * Migrate legacy chain, retriever, and indexing imports from `langchain` to `langchain_classic`. These were moved in LangChain v1.0.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainCommunityImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchaincommunityimports)
+  * **Replace `langchain` imports with `langchain_community`**
+  * Migrate third-party integration imports from `langchain` to `langchain_community`. These integrations were moved in LangChain v0.2.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainProviderImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainproviderimports)
+  * **Replace `langchain_community` imports with provider packages**
+  * Migrate provider-specific imports from `langchain_community` to dedicated provider packages like `langchain_openai`, `langchain_anthropic`, etc.
+* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain02](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain02)
+  * **Upgrade to LangChain 0.2**
+  * Migrate to LangChain 0.2 by updating imports from `langchain` to `langchain_community` and provider-specific packages.
+* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain1)
+  * **Upgrade to LangChain 1.0**
+  * Migrate to LangChain 1.0 by applying all v0.2 migrations and then moving legacy functionality to `langchain_classic`.
+
+
 ## rewrite-nodejs
 
 * [org.openrewrite.nodejs.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/dependencyvulnerabilitycheck)
@@ -1017,12 +1456,21 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.AddDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/adddependency)
   * **Add Python dependency**
   * Add a dependency to the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.ChangeDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changedependency)
+  * **Change Python dependency**
+  * Change a dependency to a different package in `pyproject.toml`. Searches all dependency arrays. When `uv` is available, the `uv.lock` file is regenerated.
 * [org.openrewrite.python.RemoveDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/removedependency)
   * **Remove Python dependency**
   * Remove a dependency from the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.RemovePass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/removepass)
+  * **Remove redundant pass statements**
+  * Remove redundant `pass` statements from Python code when there are other executable statements in the block.
 * [org.openrewrite.python.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/upgradedependencyversion)
   * **Upgrade Python dependency version**
   * Upgrade the version constraint for a dependency in `[project].dependencies` in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.UpgradeTransitiveDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/upgradetransitivedependencyversion)
+  * **Upgrade transitive Python dependency version**
+  * Pin a transitive dependency version using the appropriate strategy for the detected package manager: uv uses `[tool.uv].constraint-dependencies`, PDM uses `[tool.pdm.overrides]`, and other managers add a direct dependency.
 * [org.openrewrite.python.format.PythonSpaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/format/pythonspaces)
   * **Formats spaces in Python code**
   * Standardizes spaces in Python code. Currently limited to formatting method arguments.
