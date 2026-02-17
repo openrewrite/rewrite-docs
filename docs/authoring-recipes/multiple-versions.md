@@ -68,20 +68,20 @@ For Maven projects, we've updated the [rewrite-maven-plugin](https://github.com/
                     <groupId>org.openrewrite.maven</groupId>
                     <artifactId>rewrite-maven-plugin</artifactId>
                     <version>6.9.0-SNAPSHOT</version>
-                    <configuration>
-                        <recipeArtifactCoordinates>
-                            junit:junit:3.8.1,
-                            junit:junit:4.13.2,
-                            org.mockito:mockito-core:2.16.0,
-                            org.mockito:mockito-core:3.12.4
-                        </recipeArtifactCoordinates>
-                    </configuration>
                     <executions>
                         <execution>
                             <goals>
                                 <goal>typetable</goal>
                             </goals>
                             <phase>generate-resources</phase>
+                            <configuration>
+                                <recipeArtifactCoordinates>
+                                    junit:junit:3.8.1,
+                                    junit:junit:4.13.2,
+                                    org.mockito:mockito-core:2.16.0,
+                                    org.mockito:mockito-core:3.12.4
+                                </recipeArtifactCoordinates>
+                            </configuration>
                         </execution>
                     </executions>
                 </plugin>
