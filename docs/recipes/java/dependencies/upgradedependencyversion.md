@@ -217,6 +217,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade dependencies to Spring Cloud 2024](/recipes/java/spring/cloud2024/dependencyupgrades.md)
 * [Upgrade dependencies to Spring Cloud 2025](/recipes/java/spring/cloud2025/dependencyupgrades.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
+* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
 * [Upgrade to JUnit 5.13](/recipes/java/testing/junit5/upgradetojunit513.md)
 * [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)

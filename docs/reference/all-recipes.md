@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4740
+Total recipes: 4742
 
 
 ## io.moderne.recipe:rewrite-devcenter
@@ -10756,7 +10756,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1264 recipes_
+_1266 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -12780,6 +12780,9 @@ _1264 recipes_
 * [org.openrewrite.java.migrate.UpgradePluginsForJava21](/recipes/java/migrate/upgradepluginsforjava21.md)
   * **Upgrade plugins to Java 21 compatible versions**
   * Updates plugins and dependencies to version compatible with Java 21.
+* [org.openrewrite.java.migrate.UpgradePluginsForJava25](/recipes/java/migrate/upgradepluginsforjava25.md)
+  * **Upgrade plugins to Java 25 compatible versions**
+  * Updates plugins and dependencies to versions compatible with Java 25.
 * [org.openrewrite.java.migrate.UpgradeToJava17](/recipes/java/migrate/upgradetojava17.md)
   * **Migrate to Java 17**
   * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
@@ -13140,6 +13143,9 @@ _1264 recipes_
 * [org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
   * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9**
   * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
+  * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
+  * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
 * [org.openrewrite.java.migrate.jakarta.ServletCookieBehaviorChangeRFC6265](/recipes/java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
   * **Remove `getComment` and `getVersion` methods**
   * Jakarta Servlet methods have been deprecated for removal in Jakarta Servlet 6.0 to align with RFC 6265. In addition, the behavior of these methods has been changed so the setters no longer have any effect, the getComment methods return null, and the getVersion method returns 0. The deprecated methods are removed.

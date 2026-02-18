@@ -4422,6 +4422,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+### [org.openrewrite.java.migrate.UpgradePluginsForJava25](/recipes/java/migrate/upgradepluginsforjava25.md)
+  * **Upgrade plugins to Java 25 compatible versions**
+  * Updates plugins and dependencies to versions compatible with Java 25.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 ### [org.openrewrite.java.migrate.UpgradeToJava6](/recipes/java/migrate/upgradetojava6.md)
   * **Migrate to Java 6**
   * This recipe will apply changes commonly needed when upgrading to Java 6. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.

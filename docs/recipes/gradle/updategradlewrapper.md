@@ -49,6 +49,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Android Gradle Plugin (AGP) version](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/upgradeandroidgradlepluginversion)
 * [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
+* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 
 ## Example

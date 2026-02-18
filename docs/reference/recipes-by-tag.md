@@ -2889,7 +2889,7 @@ _1 recipe_
 
 ## jakarta
 
-_101 recipes_
+_102 recipes_
 
 * [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
@@ -3155,6 +3155,9 @@ _101 recipes_
 * [org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration](/recipes/java/migrate/jakarta/omnifacesnamespacemigration.md)
   * **OmniFaces Namespace Migration**
   * Find and replace legacy OmniFaces namespaces.
+* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
+  * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
+  * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
 * [org.openrewrite.java.migrate.jakarta.UpdateManagedBeanToNamed](/recipes/java/migrate/jakarta/updatemanagedbeantonamed.md)
   * **Update Faces `@ManagedBean` to use CDI `@Named`**
   * Faces ManagedBean was deprecated in JSF 2.3 (EE8) and removed in Jakarta Faces 4.0 (EE10). Replace `@ManagedBean` with `@Named` for CDI-based bean management.
@@ -3467,7 +3470,7 @@ _11 recipes_
 
 ## java25
 
-_5 recipes_
+_6 recipes_
 
 * [org.openrewrite.java.migrate.AccessController](/recipes/java/migrate/accesscontroller.md)
   * **Remove Security AccessController**
@@ -3481,6 +3484,9 @@ _5 recipes_
 * [org.openrewrite.java.migrate.SystemGetSecurityManagerToNull](/recipes/java/migrate/systemgetsecuritymanagertonull.md)
   * **Replace `System.getSecurityManager()` with `null`**
   * The Security Manager API is unsupported in Java 24. This recipe will replace `System.getSecurityManager()` with `null` to make its behavior more obvious and try to simplify execution paths afterwards.
+* [org.openrewrite.java.migrate.UpgradePluginsForJava25](/recipes/java/migrate/upgradepluginsforjava25.md)
+  * **Upgrade plugins to Java 25 compatible versions**
+  * Updates plugins and dependencies to versions compatible with Java 25.
 * [org.openrewrite.java.migrate.UpgradeToJava25](/recipes/java/migrate/upgradetojava25.md)
   * **Migrate to Java 25**
   * This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
@@ -3557,7 +3563,7 @@ _1 recipe_
 
 ## javax
 
-_36 recipes_
+_37 recipes_
 
 * [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
@@ -3643,6 +3649,9 @@ _36 recipes_
 * [org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
   * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
+  * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
+  * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
 * [org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
   * **Add explicit Common Annotations dependencies**
   * Add the necessary `annotation-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
@@ -3670,7 +3679,7 @@ _36 recipes_
 
 ## jaxb
 
-_11 recipes_
+_12 recipes_
 
 * [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
   * **Migrate xmlns entries in `*.xjb` files.**
@@ -3690,6 +3699,9 @@ _11 recipes_
 * [org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
   * **Migrate XJC Bindings to Jakata XML**
   * Java EE has been rebranded to Jakarta EE, migrates the namespace and version in XJC bindings.
+* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
+  * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
+  * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
 * [org.openrewrite.java.migrate.javax.AddJaxbAPIDependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
   * **Add explicit JAXB API dependencies**
   * This recipe will add explicit API dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.

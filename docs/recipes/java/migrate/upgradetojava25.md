@@ -35,8 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Java 21](../../java/migrate/upgradetojava21)
 * [Upgrade Java version](../../java/migrate/upgradejavaversion)
   * version: `25`
-* [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
-  * minimumJavaMajorVersion: `25`
+* [Upgrade plugins to Java 25 compatible versions](../../java/migrate/upgradepluginsforjava25)
 * [Migrate `System.out.print` to Java 25 IO utility class](../../java/migrate/io/replacesystemoutwithioprint)
 * [Migrate `public static void main(String[] args)` to instance `void main()`](../../java/migrate/lang/migratemainmethodtoinstancemain)
 * [Use `Process#waitFor(Duration)`](../../java/migrate/lang/migrateprocesswaitforduration)
@@ -68,8 +67,7 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava21
   - org.openrewrite.java.migrate.UpgradeJavaVersion:
       version: 25
-  - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
-      minimumJavaMajorVersion: 25
+  - org.openrewrite.java.migrate.UpgradePluginsForJava25
   - org.openrewrite.java.migrate.io.ReplaceSystemOutWithIOPrint
   - org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain
   - org.openrewrite.java.migrate.lang.MigrateProcessWaitForDuration

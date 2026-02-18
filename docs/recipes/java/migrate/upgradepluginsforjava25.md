@@ -1,25 +1,23 @@
 ---
-sidebar_label: "Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`"
+sidebar_label: "Upgrade plugins to Java 25 compatible versions"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`
+# Upgrade plugins to Java 25 compatible versions
 
-**org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind**
+**org.openrewrite.java.migrate.UpgradePluginsForJava25**
 
-_Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
+_Updates plugins and dependencies to versions compatible with Java 25._
 
 ### Tags
 
-* [jaxb](/reference/recipes-by-tag#jaxb)
-* [javax](/reference/recipes-by-tag#javax)
-* [jakarta](/reference/recipes-by-tag#jakarta)
+* [java25](/reference/recipes-by-tag#java25)
 
 ## Recipe source
 
-[GitHub: jakarta-ee-9.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml),
+[GitHub: java-version-25.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-25.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
@@ -34,40 +32,27 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
-  * oldGroupId: `javax.xml.bind`
-  * oldArtifactId: `jaxb-api`
-  * newGroupId: `jakarta.xml.bind`
-  * newArtifactId: `jakarta.xml.bind-api`
-  * newVersion: `3.0.x`
-* [Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present](../../../java/migrate/jakarta/retainjaxbapiforjackson)
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `jakarta.xml.bind`
-  * artifactId: `jakarta.xml.bind-api`
-  * newVersion: `3.0.x`
-* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
-  * oldGroupId: `com.sun.xml.bind`
-  * oldArtifactId: `jaxb-impl`
-  * newGroupId: `org.glassfish.jaxb`
-  * newArtifactId: `jaxb-runtime`
-  * newVersion: `3.0.x`
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `org.glassfish.jaxb`
-  * artifactId: `jaxb-runtime`
-  * newVersion: `3.0.x`
-* [Rename package name](../../../java/changepackage)
-  * oldPackageName: `javax.xml.bind`
-  * newPackageName: `jakarta.xml.bind`
-  * recursive: `true`
-* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
-  * groupId: `org.codehaus.mojo`
-  * artifactId: `jaxb2-maven-plugin`
-  * newVersion: `3.x`
-* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
-  * groupId: `org.jvnet.jaxb`
-  * artifactId: `jaxb-maven-plugin`
-  * newVersion: `3.x`
-* [Migrate XJC Bindings to Jakata XML](../../../java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding)
+* [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
+  * minimumJavaMajorVersion: `25`
+* [Update Gradle wrapper](../../gradle/updategradlewrapper)
+  * version: `9.1`
+  * addIfMissing: `false`
+* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
+  * groupId: `org.apache.maven.plugins`
+  * artifactId: `maven-compiler-plugin`
+  * newVersion: `3.15.x`
+* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
+  * groupId: `org.apache.maven.plugins`
+  * artifactId: `maven-surefire-plugin`
+  * newVersion: `3.1.x`
+* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
+  * groupId: `org.apache.maven.plugins`
+  * artifactId: `maven-failsafe-plugin`
+  * newVersion: `3.1.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `net.bytebuddy`
+  * artifactId: `byte-buddy*`
+  * newVersion: `1.17.x`
 
 </TabItem>
 
@@ -76,49 +61,34 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind
-displayName: Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`
+name: org.openrewrite.java.migrate.UpgradePluginsForJava25
+displayName: Upgrade plugins to Java 25 compatible versions
 description: |
-  Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+  Updates plugins and dependencies to versions compatible with Java 25.
 tags:
-  - jaxb
-  - javax
-  - jakarta
+  - java25
 recipeList:
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: javax.xml.bind
-      oldArtifactId: jaxb-api
-      newGroupId: jakarta.xml.bind
-      newArtifactId: jakarta.xml.bind-api
-      newVersion: 3.0.x
-  - org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: jakarta.xml.bind
-      artifactId: jakarta.xml.bind-api
-      newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: com.sun.xml.bind
-      oldArtifactId: jaxb-impl
-      newGroupId: org.glassfish.jaxb
-      newArtifactId: jaxb-runtime
-      newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.glassfish.jaxb
-      artifactId: jaxb-runtime
-      newVersion: 3.0.x
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: javax.xml.bind
-      newPackageName: jakarta.xml.bind
-      recursive: true
+  - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
+      minimumJavaMajorVersion: 25
+  - org.openrewrite.gradle.UpdateGradleWrapper:
+      version: 9.1
+      addIfMissing: false
   - org.openrewrite.maven.UpgradePluginVersion:
-      groupId: org.codehaus.mojo
-      artifactId: jaxb2-maven-plugin
-      newVersion: 3.x
+      groupId: org.apache.maven.plugins
+      artifactId: maven-compiler-plugin
+      newVersion: 3.15.x
   - org.openrewrite.maven.UpgradePluginVersion:
-      groupId: org.jvnet.jaxb
-      artifactId: jaxb-maven-plugin
-      newVersion: 3.x
-  - org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding
+      groupId: org.apache.maven.plugins
+      artifactId: maven-surefire-plugin
+      newVersion: 3.1.x
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.apache.maven.plugins
+      artifactId: maven-failsafe-plugin
+      newVersion: 3.1.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: net.bytebuddy
+      artifactId: byte-buddy*
+      newVersion: 1.17.x
 
 ```
 </TabItem>
@@ -128,7 +98,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+* [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
 
 
 ## Usage
@@ -145,7 +115,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind")
+    activeRecipe("org.openrewrite.java.migrate.UpgradePluginsForJava25")
     setExportDatatables(true)
 }
 
@@ -178,7 +148,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind")
+        activeRecipe("org.openrewrite.java.migrate.UpgradePluginsForJava25")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -213,7 +183,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind</recipe>
+            <recipe>org.openrewrite.java.migrate.UpgradePluginsForJava25</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -236,7 +206,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.UpgradePluginsForJava25 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -244,7 +214,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JavaxXmlBindMigrationToJakartaXmlBind
+mod run . --recipe UpgradePluginsForJava25
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -258,7 +228,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VER
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpgradePluginsForJava25" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -78,6 +78,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](./removeduicomponentconstant.md)
 * [Replace `ResourceResolver` with `ResourceHandler`](./removedjakartafacesresourceresolver.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](./wswsocservercontainerdeprecation.md)
+* [Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present](./retainjaxbapiforjackson.md)
 * [Substitute removed Faces Managed Beans](./facesmanagedbeansremoved.md)
 * [Update Apache Commons Email to Email2 for Jakarta](./updateapachecommonsemaildependencies.md)
 * [Update Apache Commons FileUpload2 package for EE10](./updatefileupload2dependencies.md)

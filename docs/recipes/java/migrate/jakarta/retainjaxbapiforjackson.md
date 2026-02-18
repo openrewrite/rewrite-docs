@@ -1,62 +1,83 @@
 ---
-sidebar_label: "Module has dependency"
+sidebar_label: "Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Module has dependency
+# Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present
 
-**org.openrewrite.java.dependencies.search.ModuleHasDependency**
+**org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson**
 
-_Searches for both Gradle and Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) or pom.xml file applying the plugin, use the `FindDependency` recipe instead._
+_When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`._
+
+### Tags
+
+* [jaxb](/reference/recipes-by-tag#jaxb)
+* [javax](/reference/recipes-by-tag#javax)
+* [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
 
-[GitHub: ModuleHasDependency.java](https://github.com/openrewrite/rewrite-java-dependencies/blob/main/src/main/java/org/openrewrite/java/dependencies/search/ModuleHasDependency.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-java-dependencies/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-java-dependencies/)
+[GitHub: jakarta-ee-9.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
-## Options
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-| Type | Name | Description | Example |
-| --- | --- | --- | --- |
-| `String` | groupIdPattern | Group glob pattern used to match dependencies. | `com.fasterxml.jackson.module` |
-| `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `jackson-module-*` |
-| `String` | scope | *Optional*. Match dependencies with the specified scope. All scopes are searched by default. Valid options: `compile`, `test`, `runtime`, `provided`, `system` | `compile` |
-| `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
-| `Boolean` | invertMarking | *Optional*. If `true`, will invert the check for whether to mark a file. Defaults to `false`. |  |
 
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `javax.xml.bind`
+  * artifactId: `jaxb-api`
+  * version: `2.3.x`
+  * scope: `runtime`
+  * acceptTransitive: `true`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson
+displayName: Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present
+description: |
+  When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
+tags:
+  - jaxb
+  - javax
+  - jakarta
+recipeList:
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: javax.xml.bind
+      artifactId: jaxb-api
+      version: 2.3.x
+      scope: runtime
+      acceptTransitive: true
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Module has monolithic Spring Boot starter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulehasmonolithicstarter)
-* [Module uses Flyway](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesflyway)
-* [Module uses Liquibase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesliquibase)
+* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ModuleHasDependencyExample`.
-Here's how you can define and customize such a recipe within your rewrite.yml:
-```yaml title="rewrite.yml"
----
-type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ModuleHasDependencyExample
-displayName: Module has dependency example
-recipeList:
-  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
-      groupIdPattern: com.fasterxml.jackson.module
-      artifactIdPattern: jackson-module-*
-      scope: compile
-      version: 1.x
-```
-
-Now that `com.yourorg.ModuleHasDependencyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}` in your build file:
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -68,7 +89,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.ModuleHasDependencyExample")
+    activeRecipe("org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson")
     setExportDatatables(true)
 }
 
@@ -77,12 +98,51 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}")
+    rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
 }
 ```
+
 2. Run `gradle rewriteRun` to run the recipe.
 </TabItem>
-<TabItem value="maven" label="Maven">
+
+<TabItem value="gradle-init-script" label="Gradle init script">
+
+1. Create a file named `init.gradle` in the root of your project.
+
+```groovy title="init.gradle"
+initscript {
+    repositories {
+        maven { url "https://plugins.gradle.org/m2" }
+    }
+    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin)
+    dependencies {
+        rewrite("org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}")
+    }
+    rewrite {
+        activeRecipe("org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson")
+        setExportDatatables(true)
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}
+```
+
+2. Run the recipe.
+
+```shell title="shell"
+gradle --init-script init.gradle rewriteRun
+```
+
+</TabItem>
+<TabItem value="maven" label="Maven POM">
 
 1. Add the following to your `pom.xml` file:
 
@@ -97,14 +157,14 @@ dependencies {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.ModuleHasDependencyExample</recipe>
+            <recipe>org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-java-dependencies</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}</version>
+            <artifactId>rewrite-migrate-java</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -112,19 +172,28 @@ dependencies {
   </build>
 </project>
 ```
+
 2. Run `mvn rewrite:run` to run the recipe.
+</TabItem>
+
+<TabItem value="maven-command-line" label="Maven Command Line">
+You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
+
+```shell title="shell"
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson -Drewrite.exportDatatables=true
+```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
 
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ModuleHasDependency --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "scope=compile" --recipe-option "version=1.x"
+mod run . --recipe RetainJaxbApiForJackson
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -133,7 +202,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-java-dependencies:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.dependencies.search.ModuleHasDependency" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

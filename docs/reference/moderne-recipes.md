@@ -1726,6 +1726,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.AddMongoDbRepresentationProperties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmongodbrepresentationproperties)
   * **Add MongoDB representation properties for UUID and BigDecimal**
   * Adds the 'spring.mongodb.representation.uuid' property with value 'standard' and the 'spring.data.mongodb.representation.big-decimal' property with the value 'decimal128' to Spring configuration files when a MongoDB dependency is detected.
+* [io.moderne.java.spring.boot4.AddMssqlKerberosJaasConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmssqlkerberosjaasconfig)
+  * **Add `useDefaultJaasConfig=true` to MSSQL Kerberos JDBC URLs**
+  * For MSSQL JDBC connections using Kerberos authentication (`authenticationScheme=JavaKerberos` or `integratedSecurity=true`), adds `useDefaultJaasConfig=true` to the connection string. This is required for compatibility with Keycloak 26.4+ which changes JAAS configuration handling.
 * [io.moderne.java.spring.boot4.AddValidationStarterDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addvalidationstarterdependency)
   * **Add `spring-boot-starter-validation` dependency**
   * In Spring Boot 4, validation is no longer auto-included from the web starter. This recipe adds the `spring-boot-starter-validation` dependency when Jakarta Validation annotations are used in the project.
@@ -1750,6 +1753,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.MigrateToModularStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters-moderne-edition)
   * **Migrate to Spring Boot 4.0 modular starters**
   * Remove monolithic starters and adds the necessary Spring Boot 4.0 starter dependencies based on package usage, where any spring-boot-starter was used previously.
+* [io.moderne.java.spring.boot4.ModuleHasMonolithicStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulehasmonolithicstarter)
+  * **Module has monolithic Spring Boot starter**
+  * Precondition that matches modules with the monolithic Spring Boot starters that need to be migrated to modular starters. Matches the production monolithic spring-boot-starter and spring-boot-starter-classic, but not specific modular starters like spring-boot-starter-test or spring-boot-starter-ldap.
 * [io.moderne.java.spring.boot4.ModuleStarterRelocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulestarterrelocations)
   * **Spring Boot 4.0 Module Starter Relocations**
   * Relocate types and packages for Spring Boot 4.0 modular starters.
@@ -1836,7 +1842,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Migrates classes that implement `javax.servlet.Filter` (or `jakarta.servlet.Filter`) to extend `org.springframework.web.filter.OncePerRequestFilter`. This transformation renames `doFilter` to `doFilterInternal`, changes parameter types to HTTP variants, removes manual casting, and removes empty `init()` and `destroy()` methods.
 * [io.moderne.java.spring.framework.MigrateHandleErrorMethodInvocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratehandleerrormethodinvocations)
   * **Migrate `handleError` method invocations to new signature**
-  * Updates invocations of `handleError(ClientHttpResponse)` to the new `handleError(URI, HttpMethod, ClientHttpResponse)` signature introduced in Spring Framework 7.0. Callers are updated to pass `null` for the `URI` and `HttpMethod` parameters when the actual values are not available.
+  * Updates invocations of `handleError(ClientHttpResponse)` to the new `handleError(URI, HttpMethod, ClientHttpResponse)` signature introduced in Spring Framework 7.0. In test sources, example values are used. In main sources, `null` is passed with a TODO comment.
 * [io.moderne.java.spring.framework.MigrateHttpHeadersMultiValueMapMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratehttpheadersmultivaluemapmethods)
   * **Migrate `HttpHeaders` methods removed when `MultiValueMap` contract was dropped**
   * Spring Framework 7.0 changed `HttpHeaders` to no longer implement `MultiValueMap`. This recipe replaces removed inherited method calls: `containsKey()` with `containsHeader()`, `keySet()` with `headerNames()`, and `entrySet()` with `headerSet()`.
@@ -2126,9 +2132,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.terraform.AddConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/addconfiguration)
   * **Add Terraform configuration**
   * If the configuration has a different value, leave it alone. If it is missing, add it.
+* [org.openrewrite.terraform.ChangeResourceAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/changeresourceattribute)
+  * **Change Terraform resource attribute**
+  * Change the value of a Terraform resource attribute if it matches a given pattern.
+* [org.openrewrite.terraform.MoveProviderVersionToRequiredProviders](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/moveproviderversiontorequiredproviders)
+  * **Move provider version to `required_providers`**
+  * In Terraform 0.13+, version constraints should be specified in the `terraform \{ required_providers \{ ... \} \}` block instead of the `provider` block. This recipe removes the `version` attribute from `provider` blocks and adds it to `required_providers`.
 * [org.openrewrite.terraform.SecureRandom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/securerandom)
   * **Use a long enough byte length for `random` resources**
   * Use a long enough byte length for `random` resources.
+* [org.openrewrite.terraform.UpgradeTerraformTo0_14](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/upgradeterraformto0_14)
+  * **Upgrade Terraform to 0.14**
+  * Migrate Terraform configuration from 0.13 to 0.14. Moves version constraints from `provider` blocks to `terraform \{ required_providers \{ ... \} \}`.
 * [org.openrewrite.terraform.aws.AWSBestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/aws/awsbestpractices)
   * **Best practices for AWS**
   * Securely operate on Amazon Web Services.
@@ -2276,6 +2291,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.terraform.aws.ImmutableECRTags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/aws/immutableecrtags)
   * **Make ECR tags immutable**
   * Amazon ECR supports immutable tags, preventing image tags from being overwritten. In the past, ECR tags could have been overwritten, this could be overcome by requiring users to uniquely identify an image using a naming convention.
+* [org.openrewrite.terraform.aws.UpgradeAwsAuroraMySqlToV3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/aws/upgradeawsauroramysqltov3)
+  * **Upgrade AWS Aurora MySQL to version 3 (MySQL 8.0)**
+  * Upgrade `engine_version` to Aurora MySQL version 3 (MySQL 8.0 compatible) on `aws_rds_cluster` resources and set `allow_major_version_upgrade = true` to permit the major version change.
+* [org.openrewrite.terraform.aws.UpgradeAwsAuroraPostgresToV17](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/aws/upgradeawsaurorapostgrestov17)
+  * **Upgrade AWS Aurora PostgreSQL to 17**
+  * Upgrade `engine_version` to Aurora PostgreSQL 17 on `aws_rds_cluster` resources and set `allow_major_version_upgrade = true` to permit the major version change.
+* [org.openrewrite.terraform.aws.UpgradeAwsRdsMySqlToV8_4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/aws/upgradeawsrdsmysqltov8_4)
+  * **Upgrade AWS RDS MySQL to 8.4**
+  * Upgrade `engine_version` to MySQL 8.4 on `aws_db_instance` resources and set `allow_major_version_upgrade = true` to permit the major version change.
+* [org.openrewrite.terraform.aws.UpgradeAwsRdsPostgresToV17](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/aws/upgradeawsrdspostgrestov17)
+  * **Upgrade AWS RDS PostgreSQL to 17**
+  * Upgrade `engine_version` to PostgreSQL 17 on `aws_db_instance` resources and set `allow_major_version_upgrade = true` to permit the major version change.
 * [org.openrewrite.terraform.aws.UseHttpsForCloudfrontDistribution](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/aws/usehttpsforcloudfrontdistribution)
   * **Use HTTPS for Cloudfront distribution**
   * Secure communication by default.
@@ -2477,6 +2504,30 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.terraform.search.FindResource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/search/findresource)
   * **Find Terraform resource**
   * Find a Terraform resource by resource type.
+* [org.openrewrite.terraform.terraform012.RemoveInterpolationOnlyExpressions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform012/removeinterpolationonlyexpressions)
+  * **Remove interpolation-only expressions**
+  * Remove unnecessary interpolation expressions like `&quot;$\{var.foo\}&quot;` in favor of first-class expression syntax `var.foo`, as supported in Terraform 0.12+.
+* [org.openrewrite.terraform.terraform012.ReplaceDeprecatedCollectionFunctions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform012/replacedeprecatedcollectionfunctions)
+  * **Replace deprecated `list()` and `map()` functions**
+  * In Terraform 0.12+, the `list()` function is replaced by `[...]` tuple syntax and the `map()` function is replaced by `\{...\}` object syntax.
+* [org.openrewrite.terraform.terraform012.UnquoteTypeConstraints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform012/unquotetypeconstraints)
+  * **Unquote variable type constraints**
+  * In Terraform 0.12+, variable type constraints should be bare types instead of quoted strings. For example, `type = &quot;string&quot;` becomes `type = string`.
+* [org.openrewrite.terraform.terraform012.UpgradeTerraformTo0_12](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform012/upgradeterraformto0_12)
+  * **Upgrade Terraform to 0.12**
+  * Migrate Terraform configuration from 0.11 (HCL1) to 0.12 (HCL2) syntax. Removes interpolation-only expressions, unquotes type constraints, replaces deprecated collection functions, and fixes legacy index syntax.
+* [org.openrewrite.terraform.terraform013.UpgradeRequiredProvidersSyntax](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform013/upgraderequiredproviderssyntax)
+  * **Upgrade `required_providers` to object syntax**
+  * In Terraform 0.13+, `required_providers` entries should use the object syntax with explicit `source` and `version` attributes instead of a plain version string. For example, `aws = &quot;~&gt; 3.0&quot;` becomes `aws = \{ source = &quot;hashicorp/aws&quot;, version = &quot;~&gt; 3.0&quot; \}`.
+* [org.openrewrite.terraform.terraform013.UpgradeTerraformTo0_13](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform013/upgradeterraformto0_13)
+  * **Upgrade Terraform to 0.13**
+  * Migrate Terraform configuration from 0.12 to 0.13 syntax. Upgrades `required_providers` entries from shorthand version strings to the object syntax with explicit `source` and `version` attributes.
+* [org.openrewrite.terraform.terraform015.FindRemovedProvisioners](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform015/findremovedprovisioners)
+  * **Find removed provisioners**
+  * Find usage of provisioners that were removed in Terraform 0.15: `chef`, `habitat`, `puppet`, and `salt-masterless`.
+* [org.openrewrite.terraform.terraform015.UpgradeTerraformTo0_15](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform015/upgradeterraformto0_15)
+  * **Upgrade Terraform to 0.15**
+  * Migrate Terraform configuration from 0.14 to 0.15. Finds usage of provisioners that were removed in Terraform 0.15: `chef`, `habitat`, `puppet`, and `salt-masterless`.
 
 
 ## rewrite-vulncheck

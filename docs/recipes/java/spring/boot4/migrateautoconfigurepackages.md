@@ -207,6 +207,13 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPackageName: `org.springframework.boot.resttestclient`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.actuate.autoconfigure.security.servlet`
+  * newPackageName: `org.springframework.boot.security.autoconfigure.actuate.web.servlet`
+  * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpoint`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpoint`
+* [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.actuate.health`
   * newPackageName: `org.springframework.boot.health.contributor`
   * recursive: `true`
@@ -401,6 +408,13 @@ recipeList:
       oldPackageName: org.springframework.boot.test.web.client
       newPackageName: org.springframework.boot.resttestclient
       recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.actuate.autoconfigure.security.servlet
+      newPackageName: org.springframework.boot.security.autoconfigure.actuate.web.servlet
+      recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpoint
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpoint
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.actuate.health
       newPackageName: org.springframework.boot.health.contributor

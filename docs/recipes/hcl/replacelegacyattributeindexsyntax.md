@@ -19,6 +19,13 @@ _Replace legacy attribute index syntax (`.0`) with the new syntax (`[0]`)._
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade Terraform to 0.12](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/terraform012/upgradeterraformto0_12)
+
 ## Example
 
 
