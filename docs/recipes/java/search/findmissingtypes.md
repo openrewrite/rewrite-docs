@@ -25,6 +25,52 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `boolean` | checkDocumentation | *Optional*. When set to `true` any references in documentation (i.e. Javadoc for Java) will also be checked. Default is `false`. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|checkDocumentation|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.Test;
+
+class ATest {
+    @Test
+    void foo() {}
+}
+```
+
+###### After
+```java
+import org.junit.Test;
+
+class ATest {
+    @/*~~(Identifier type is missing or malformed)~~>*/Test
+    void foo() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+
+class ATest {
+-   @Test
++   @/*~~(Identifier type is missing or malformed)~~>*/Test
+    void foo() {}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -38,6 +38,63 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Hibernate CascadeType constants (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update66/migratecascadetypes)
 * [Use bean name `applicationTaskExecutor` instead of `taskExecutor`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|annotationType|`org.example.Foo`|
+|attributeName|`null`|
+|attributeValue|`hello`|
+|oldAttributeValue|`null`|
+|addOnly|`null`|
+|appendArray|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.example.Foo;
+
+@Foo
+public class A {
+}
+```
+
+###### After
+```java
+import org.example.Foo;
+
+@Foo("hello")
+public class A {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import org.example.Foo;
+
+-@Foo
++@Foo("hello")
+public class A {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+package org.example;
+public @interface Foo {
+    String value() default "";
+}
+```
+
 
 ## Usage
 

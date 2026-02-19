@@ -41,6 +41,66 @@ This recipe is used as part of the following composite recipes:
 * [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
 * [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|annotationPattern|`@java.lang.Deprecated`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+
+@Deprecated
+public class Test {
+    @Deprecated
+    void test() {
+        @Deprecated int n;
+    }
+}
+```
+
+###### After
+```java
+import java.util.List;
+
+public class Test {
+    void test() {
+        int n;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+import java.util.List;
+
+-@Deprecated
+public class Test {
+@@ -5,1 +4,0 @@
+@Deprecated
+public class Test {
+-   @Deprecated
+    void test() {
+@@ -7,1 +5,1 @@
+    @Deprecated
+    void test() {
+-       @Deprecated int n;
++       int n;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

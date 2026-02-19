@@ -28,6 +28,46 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | overwriteExisting | *Optional*. If true, overwrite the label if it already exists. If false, skip if exists. Defaults to true. |  |
 | `String` | stageName | *Optional*. Only add the label to this build stage. If null, adds to the final stage only. | `final` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|key|`version`|
+|value|`1.0.0`|
+|overwriteExisting|`null`|
+|stageName|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:22.04
+RUN apt-get update
+```
+
+###### After
+```docker
+FROM ubuntu:22.04
+LABEL version=1.0.0
+RUN apt-get update
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+FROM ubuntu:22.04
++LABEL version=1.0.0
+RUN apt-get update
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

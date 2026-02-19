@@ -34,6 +34,54 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | licenses | *Optional*. License(s) under which contained software is distributed as a SPDX License Expression (org.opencontainers.image.licenses). | `Apache-2.0` |
 | `String` | authors | *Optional*. Contact details of the people or organization responsible (org.opencontainers.image.authors). | `maintainers@example.com` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|title|`MyApplication`|
+|description|`null`|
+|version|`1.0.0`|
+|created|`null`|
+|revision|`null`|
+|source|`null`|
+|url|`null`|
+|vendor|`null`|
+|licenses|`null`|
+|authors|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:22.04
+RUN apt-get update
+```
+
+###### After
+```docker
+FROM ubuntu:22.04
+LABEL org.opencontainers.image.title=MyApplication
+LABEL org.opencontainers.image.version=1.0.0
+RUN apt-get update
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,2 @@
+FROM ubuntu:22.04
++LABEL org.opencontainers.image.title=MyApplication
++LABEL org.opencontainers.image.version=1.0.0
+RUN apt-get update
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

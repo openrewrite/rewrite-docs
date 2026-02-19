@@ -26,6 +26,54 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add(..)` |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`A a(int)`|
+|matchOverrides|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    void a(int n) {
+      a(1);
+    }
+    void a(String s) {
+    }
+}
+```
+
+###### After
+```java
+class A {
+    /*~~>*/void a(int n) {
+      a(1);
+    }
+    void a(String s) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class A {
+-   void a(int n) {
++   /*~~>*/void a(int n) {
+      a(1);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

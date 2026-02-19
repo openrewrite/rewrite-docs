@@ -23,6 +23,37 @@ _Find empty classes without annotations that do not implement an interface or ex
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class IsEmpty {
+}
+```
+
+###### After
+```java
+/*~~>*/class IsEmpty {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class IsEmpty {
++/*~~>*/class IsEmpty {
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

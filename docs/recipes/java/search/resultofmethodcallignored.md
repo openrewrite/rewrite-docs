@@ -26,6 +26,65 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.io.File mkdir*()` |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`java.io.File mkdir*()`|
+|matchOverrides|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.File;
+class Test {
+    void test() {
+        new File("dir").mkdirs();
+        new File("dir").mkdir();
+        boolean b1 = new File("dir").mkdirs();
+        if(!new File("dir").mkdirs()) {
+            throw new IllegalStateException("oops");
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.io.File;
+class Test {
+    void test() {
+        /*~~>*/new File("dir").mkdirs();
+        /*~~>*/new File("dir").mkdir();
+        boolean b1 = new File("dir").mkdirs();
+        if(!new File("dir").mkdirs()) {
+            throw new IllegalStateException("oops");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,2 +4,2 @@
+class Test {
+    void test() {
+-       new File("dir").mkdirs();
+-       new File("dir").mkdir();
++       /*~~>*/new File("dir").mkdirs();
++       /*~~>*/new File("dir").mkdir();
+        boolean b1 = new File("dir").mkdirs();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -32,6 +32,49 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newDigest | *Optional*. The new digest. If null, preserves the existing digest. If empty, removes the digest. | `sha256:abc123...` |
 | `String` | newPlatform | *Optional*. The new platform. If null, preserves the existing platform. If empty, removes the platform flag. | `linux/arm64` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldImageName|`ubuntu`|
+|oldTag|`20.04`|
+|oldDigest|`null`|
+|oldPlatform|`null`|
+|newImageName|`ubuntu`|
+|newTag|`22.04`|
+|newDigest|`null`|
+|newPlatform|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:20.04
+RUN apt-get update
+```
+
+###### After
+```docker
+FROM ubuntu:22.04
+RUN apt-get update
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-FROM ubuntu:20.04
++FROM ubuntu:22.04
+RUN apt-get update
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

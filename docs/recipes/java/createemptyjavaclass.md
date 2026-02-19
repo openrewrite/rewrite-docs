@@ -30,6 +30,29 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | overwriteExisting | *Optional*. If there is an existing file, should it be overwritten. |  |
 | `String` | relativePath | *Optional*. Directory path of new class. | `foo/bar` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|sourceRoot|`src/main/java`|
+|packageName|`org.openrewrite.example`|
+|modifier|`public`|
+|className|`ExampleClass`|
+|overwriteExisting|`null`|
+|relativePath|`foo/bar/`|
+
+
+
+###### New file
+```java title="foo/bar/src/main/java/org/openrewrite/example/ExampleClass.java"
+package org.openrewrite.example;
+
+public class ExampleClass {
+}
+```
+
+
 
 ## Usage
 

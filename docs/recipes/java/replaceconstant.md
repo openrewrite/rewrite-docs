@@ -27,6 +27,52 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | constantName | The name of the constant field to replace. | `UTF_8` |
 | `String` | literalValue | The literal value to replace. | `UTF_8` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|owningType|`com.google.common.base.Charsets`|
+|constantName|`UTF_8`|
+|literalValue|`"UTF_8"`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.base.Charsets;
+class Test {
+    Object o = Charsets.UTF_8;
+}
+```
+
+###### After
+```java
+class Test {
+    Object o = "UTF_8";
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import com.google.common.base.Charsets;
+class Test {
+@@ -3,1 +2,1 @@
+import com.google.common.base.Charsets;
+class Test {
+-   Object o = Charsets.UTF_8;
++   Object o = "UTF_8";
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

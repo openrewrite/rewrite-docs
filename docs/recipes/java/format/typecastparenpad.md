@@ -19,6 +19,61 @@ _Fixes whitespace padding between a typecast type identifier and the enclosing l
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    static void method() {
+        long m = 0L;
+        int n = (int) m;
+        n = ( int) m;
+        n = (int ) m;
+        n = ( int ) m;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    static void method() {
+        long m = 0L;
+        int n = ( int ) m;
+        n = ( int ) m;
+        n = ( int ) m;
+        n = ( int ) m;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,3 +4,1 @@
+    static void method() {
+        long m = 0L;
+-       int n = (int) m;
+-       n = ( int) m;
+-       n = (int ) m;
++       int n = ( int ) m;
+        n = ( int ) m;
+@@ -8,0 +6,2 @@
+        n = (int ) m;
+        n = ( int ) m;
++       n = ( int ) m;
++       n = ( int ) m;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

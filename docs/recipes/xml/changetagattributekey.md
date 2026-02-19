@@ -34,6 +34,55 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Bean XML properties deprecated in Spring Framework 3.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratedeprecatedbeanxmlproperties)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|xPath|`/html/body/a4j:ajax/@reRender`|
+|newAttributeName|`render`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="xml" label="xml">
+
+
+###### Before
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a4j="http://richfaces.org/a4j">
+    <body>
+        <a4j:ajax reRender="form:output" event="change"/>
+    </body>
+</html>
+```
+
+###### After
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:a4j="http://richfaces.org/a4j">
+    <body>
+        <a4j:ajax render="form:output" event="change"/>
+    </body>
+</html>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+      xmlns:a4j="http://richfaces.org/a4j">
+    <body>
+-       <a4j:ajax reRender="form:output" event="change"/>
++       <a4j:ajax render="form:output" event="change"/>
+    </body>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -25,6 +25,45 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | pattern | A regular expression pattern to match literals against. | `file://` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|pattern|`Hello.*`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    String s = "Hello Jonathan";
+}
+```
+
+###### After
+```java
+class Test {
+    String s = /*~~>*/"Hello Jonathan";
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Test {
+-   String s = "Hello Jonathan";
++   String s = /*~~>*/"Hello Jonathan";
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

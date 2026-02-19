@@ -28,6 +28,45 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | digestPattern | *Optional*. A glob pattern to match against image digests. If not specified, all digests are matched. | `sha256:*` |
 | `String` | platformPattern | *Optional*. A glob pattern to match against platform flags. If not specified, all platforms are matched. | `linux/amd64` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|imageNamePattern|`null`|
+|tagPattern|`null`|
+|digestPattern|`null`|
+|platformPattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:22.04
+RUN apt-get update
+```
+
+###### After
+```docker
+~~(ubuntu:22.04)~~>FROM ubuntu:22.04
+RUN apt-get update
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-FROM ubuntu:22.04
++~~(ubuntu:22.04)~~>FROM ubuntu:22.04
+RUN apt-get update
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

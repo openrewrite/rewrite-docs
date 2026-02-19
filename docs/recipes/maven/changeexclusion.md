@@ -28,6 +28,95 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. | `org.springframework.boot` |
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. | `spring-boot-starter-web` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldGroupId|`org.springframework`|
+|oldArtifactId|`spring-web*`|
+|newGroupId|`org.springframework.boot`|
+|newArtifactId|`spring-boot-starter-web`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0.0</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.13.0</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1.0.0</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.13.0</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -13,2 +13,2 @@
+                <exclusions>
+                    <exclusion>
+-                       <groupId>org.springframework</groupId>
+-                       <artifactId>spring-web</artifactId>
++                       <groupId>org.springframework.boot</groupId>
++                       <artifactId>spring-boot-starter-web</artifactId>
+                    </exclusion>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -35,6 +35,98 @@ This recipe is used as part of the following composite recipes:
 * [Set visibility of `premain` and `agentmain` methods to `public`](/recipes/io/quarkus/updates/core/quarkus37/jre17agentmainpremainpublic.md)
 * [Set visibility of `premain` and `agentmain` methods to `public`](/recipes/java/migrate/jre17agentmainpremainpublic.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`com.abc.A aMethod(..)`|
+|newAccessLevel|`private`|
+|matchOverrides|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.abc;
+
+class A {
+    @SuppressWarnings("ALL") // comment
+    public void aMethod(String s) {
+    }
+
+    // comment
+    @SuppressWarnings("ALL")
+    public void aMethod() {
+    }
+
+    // comment
+    public void aMethod(Integer i) {
+    }
+
+    public void aMethod(Double i) {
+    }
+}
+```
+
+###### After
+```java
+package com.abc;
+
+class A {
+    @SuppressWarnings("ALL") // comment
+    private void aMethod(String s) {
+    }
+
+    // comment
+    @SuppressWarnings("ALL")
+    private void aMethod() {
+    }
+
+    // comment
+    private void aMethod(Integer i) {
+    }
+
+    private void aMethod(Double i) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class A {
+    @SuppressWarnings("ALL") // comment
+-   public void aMethod(String s) {
++   private void aMethod(String s) {
+    }
+@@ -10,1 +10,1 @@
+    // comment
+    @SuppressWarnings("ALL")
+-   public void aMethod() {
++   private void aMethod() {
+    }
+@@ -14,1 +14,1 @@
+
+    // comment
+-   public void aMethod(Integer i) {
++   private void aMethod(Integer i) {
+    }
+@@ -17,1 +17,1 @@
+    }
+
+-   public void aMethod(Double i) {
++   private void aMethod(Double i) {
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

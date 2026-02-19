@@ -31,6 +31,78 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | executions | *Optional*. Optional executions provided as raw XML. | `<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>` |
 | `String` | filePattern | *Optional*. A glob expression that can be used to constrain which directories or source files should be searched. Multiple patterns may be specified, separated by a semicolon `;`. If multiple patterns are supplied any of the patterns matching will be interpreted as a match. When not set, all source files are searched.  | `**/*-parent/grpc-*/pom.xml` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupId|`org.openrewrite.maven`|
+|artifactId|`rewrite-maven-plugin`|
+|version|`100.0`|
+|configuration|`null`|
+|dependencies|`null`|
+|executions|`null`|
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.openrewrite.maven</groupId>
+          <artifactId>rewrite-maven-plugin</artifactId>
+          <version>100.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,0 +5,11 @@
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <build>
++   <pluginManagement>
++     <plugins>
++       <plugin>
++         <groupId>org.openrewrite.maven</groupId>
++         <artifactId>rewrite-maven-plugin</artifactId>
++         <version>100.0</version>
++       </plugin>
++     </plugins>
++   </pluginManagement>
++ </build>
+</project>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -36,6 +36,43 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace deprecated RequestMatcherProvider with new API](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedrequestmatcherprovider)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`B foo(Integer, Integer)`|
+|argumentIndex|`1`|
+|parameterType|`java.lang.Integer`|
+|parameterName|`n2`|
+|explicitCast|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {{ B.foo(0, 1); }}
+```
+
+###### After
+```java
+class A {{ B.foo(0, null, 1); }}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class A {{ B.foo(0, 1); }}
++class A {{ B.foo(0, null, 1); }}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

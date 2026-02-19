@@ -19,6 +19,106 @@ _Format tabs and indents in Java code._
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Examples
+##### Example 1
+`NormalizeFormatTest#removeAnnotationFromMethod`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    @Deprecated
+    public void method(Test t) {
+    }
+}
+```
+
+###### After
+```java
+class Test {
+
+    public void method(Test t) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Test {
+-   @Deprecated
++
+    public void method(Test t) {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`TabsAndIndentsTest#rspec3973`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {{
+    if (true == false)
+    doTheThing();
+
+    doTheOtherThing();
+    somethingElseEntirely();
+
+    foo();
+}
+    public static void doTheThing() {}
+    public static void doTheOtherThing() {}
+    public static void somethingElseEntirely() {}
+    public static void foo() {}
+}
+```
+
+###### After
+```java
+class Test {{
+    if (true == false)
+        doTheThing();
+
+    doTheOtherThing();
+    somethingElseEntirely();
+
+    foo();
+}
+    public static void doTheThing() {}
+    public static void doTheOtherThing() {}
+    public static void somethingElseEntirely() {}
+    public static void foo() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class Test {{
+    if (true == false)
+-   doTheThing();
++       doTheThing();
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -233,6 +233,41 @@ This recipe is used as part of the following composite recipes:
 * [io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus321/tlsregistrysplitpackagesfix.md)
 * [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldFullyQualifiedTypeName|`java.lang.Integer`|
+|newFullyQualifiedTypeName|`java.lang.Long`|
+|ignoreDefinition|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+public class ThinkPositive { private Integer fred = 1;}
+```
+
+###### After
+```java
+public class ThinkPositive { private Long fred = 1;}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-public class ThinkPositive { private Integer fred = 1;}
++public class ThinkPositive { private Long fred = 1;}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

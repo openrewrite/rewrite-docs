@@ -45,21 +45,21 @@ This recipe is used as part of the following composite recipes:
 |oldFilePath|`null`|
 |newKey|`$.destination`|
 |newFilePath|`null`|
-|createNewKeys||
+|createNewKeys|`null`|
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="a.yml" label="a.yml">
+<TabItem value="yaml" label="yaml">
 
 
 ###### Before
-```yaml title="a.yml"
+```yaml
 source: value
 destination: original
 ```
 
 ###### After
-```yaml title="a.yml"
+```yaml
 source: value
 destination: value
 ```
@@ -68,8 +68,6 @@ destination: value
 <TabItem value="diff" label="Diff" >
 
 ```diff
---- a.yml
-+++ a.yml
 @@ -2,1 +2,1 @@
 source: value
 -destination: original

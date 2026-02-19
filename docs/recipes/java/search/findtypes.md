@@ -35,6 +35,44 @@ This recipe is used as part of the following composite recipes:
 * [Report types deprecated or removed in WebLogic version 14.1.2](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1412.md)
 * [Report types deprecated or removed in WebLogic version 15.1.1](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1511.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|fullyQualifiedTypeName|`a.A1`|
+|checkAssignability|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import a.A1;
+public class B extends A1 {}
+```
+
+###### After
+```java
+import a.A1;
+public class B extends /*~~>*/A1 {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import a.A1;
+-public class B extends A1 {}
++public class B extends /*~~>*/A1 {}
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

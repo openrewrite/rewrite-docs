@@ -36,6 +36,53 @@ This recipe is used as part of the following composite recipes:
 * [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
 * [Finds uses of `Encryptors.queryableText()`](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`A <constructor>(String)`|
+|matchOverrides|`false`|
+
+
+###### Unchanged
+```java
+class A {
+    public A(String s) {}
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    A a = new A("test");
+}
+```
+
+###### After
+```java
+class Test {
+    A a = /*~~>*/new A("test");
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Test {
+-   A a = new A("test");
++   A a = /*~~>*/new A("test");
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -26,6 +26,49 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fullyQualifiedTypeName | A fully-qualified Java type name, that is used to find matching fields. | `org.slf4j.api.Logger` |
 | `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|fullyQualifiedTypeName|`java.lang.String`|
+|matchInherited|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.*;
+public class A {
+   private String[] s;
+}
+```
+
+###### After
+```java
+import java.util.*;
+public class A {
+   /*~~>*/private String[] s;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import java.util.*;
+public class A {
+-  private String[] s;
++  /*~~>*/private String[] s;
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

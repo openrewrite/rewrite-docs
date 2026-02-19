@@ -159,6 +159,55 @@ This recipe is used as part of the following composite recipes:
 * [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](/recipes/io/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith.md)
 * [io.quarkus.updates.core.quarkus35.MutinyUniMemoizeAtLeast](/recipes/io/quarkus/updates/core/quarkus35/mutinyunimemoizeatleast.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`com.abc.B singleArg(String)`|
+|newMethodName|`bar`|
+|matchOverrides|`null`|
+|ignoreDefinition|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.abc;
+class A {
+   public void test() {
+       new B().singleArg("boo");
+   }
+}
+```
+
+###### After
+```java
+package com.abc;
+class A {
+   public void test() {
+       new B().bar("boo");
+   }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+class A {
+   public void test() {
+-      new B().singleArg("boo");
++      new B().bar("boo");
+   }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

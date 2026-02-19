@@ -32,6 +32,73 @@ This recipe is used as part of the following composite recipes:
 
 * [Find plain text secrets](/recipes/java/search/findsecrets.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|patterns|`List.of("test", "12.*")`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+// not this one
+// test
+// not this one, either
+// comment 123
+class Test {
+    int n = 123;
+    String s = "test";
+    String s = "mytest";
+}
+```
+
+###### After
+```java
+// not this one
+/*~~>*/// test
+// not this one, either
+/*~~>*/// comment 123
+class Test {
+    int n = /*~~>*/123;
+    String s = /*~~>*/"test";
+    String s = /*~~>*/"mytest";
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+// not this one
+-// test
++/*~~>*/// test
+// not this one, either
+@@ -4,1 +4,1 @@
+// test
+// not this one, either
+-// comment 123
++/*~~>*/// comment 123
+class Test {
+@@ -6,3 +6,3 @@
+// comment 123
+class Test {
+-   int n = 123;
+-   String s = "test";
+-   String s = "mytest";
++   int n = /*~~>*/123;
++   String s = /*~~>*/"test";
++   String s = /*~~>*/"mytest";
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

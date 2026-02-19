@@ -19,6 +19,39 @@ _Write `// hi` instead of `//hi`._
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+//hi
+class Test {
+}
+```
+
+###### After
+```java
+// hi
+class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-//hi
++// hi
+class Test {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

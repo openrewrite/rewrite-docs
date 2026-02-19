@@ -619,15 +619,6 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-### [org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId](/recipes/maven/changedependencygroupidandartifactid.md)
-  * **Change Maven dependency**
-  * Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `&lt;dependencyManagement&gt;` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates will also be updated to match the new coordinates.
-
-#### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
 ### [org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId](/recipes/maven/changemanageddependencygroupidandartifactid.md)
   * **Change Maven managed dependency groupId, artifactId and optionally the version**
   * Change the groupId, artifactId and optionally the version of a specified Maven managed dependency.
@@ -749,6 +740,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ### [org.openrewrite.maven.AddManagedDependency](/recipes/maven/addmanageddependency.md)
   * **Add managed Maven dependency**
   * Add a managed Maven dependency to a `pom.xml` file.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId](/recipes/maven/changedependencygroupidandartifactid.md)
+  * **Change Maven dependency**
+  * Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `&lt;dependencyManagement&gt;` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates will also be updated to match the new coordinates.
 
 #### Data tables:
 

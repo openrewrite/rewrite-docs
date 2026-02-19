@@ -26,6 +26,86 @@ This recipe is used as part of the following composite recipes:
 
 * [Code cleanup](/recipes/staticanalysis/codecleanup.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+enum E {
+    E1()
+}
+
+class B {
+}
+
+class A extends B {
+    A() {
+        super();
+    }
+
+    static void method(int x, int y) {
+        A a = new A();
+        method(0, 1);
+    }
+}
+```
+
+###### After
+```java
+enum E {
+    E1 ()
+}
+
+class B {
+}
+
+class A extends B {
+    A () {
+        super ();
+    }
+
+    static void method (int x, int y) {
+        A a = new A ();
+        method (0, 1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+enum E {
+-   E1()
++   E1 ()
+}
+@@ -9,2 +9,2 @@
+
+class A extends B {
+-   A() {
+-       super();
++   A () {
++       super ();
+    }
+@@ -13,3 +13,3 @@
+    }
+
+-   static void method(int x, int y) {
+-       A a = new A();
+-       method(0, 1);
++   static void method (int x, int y) {
++       A a = new A ();
++       method (0, 1);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

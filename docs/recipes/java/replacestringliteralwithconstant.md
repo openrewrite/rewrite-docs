@@ -35,6 +35,51 @@ This recipe is used as part of the following composite recipes:
 * [Replace String literals with `HttpHeaders` constants](/recipes/java/spring/http/replacestringliteralswithhttpheadersconstants.md)
 * [Replace String literals with `MediaType` constants](/recipes/java/spring/http/replacestringliteralswithmediatypeconstants.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|literalValue|`EXAMPLE_STRING_CONSTANT`|
+|fullyQualifiedConstantName|`EXAMPLE_STRING_FQN`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.openrewrite.java;
+
+class Test {
+    Object o = "Hello World!";
+}
+```
+
+###### After
+```java
+package org.openrewrite.java;
+
+class Test {
+    Object o = ReplaceStringLiteralWithConstantTest.EXAMPLE_STRING_CONSTANT;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+
+class Test {
+-   Object o = "Hello World!";
++   Object o = ReplaceStringLiteralWithConstantTest.EXAMPLE_STRING_CONSTANT;
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

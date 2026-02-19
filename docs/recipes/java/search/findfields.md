@@ -27,6 +27,47 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |  |
 | `String` | fieldName | The name of a field on the type. | `QUOTE_FIELD_NAMES` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|fullyQualifiedTypeName|`java.nio.charset.StandardCharsets`|
+|matchInherited|`null`|
+|fieldName|`UTF_8`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    Object o = java.nio.charset.StandardCharsets.UTF_8;
+}
+```
+
+###### After
+```java
+class Test {
+    Object o = /*~~>*/java.nio.charset.StandardCharsets.UTF_8;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Test {
+-   Object o = java.nio.charset.StandardCharsets.UTF_8;
++   Object o = /*~~>*/java.nio.charset.StandardCharsets.UTF_8;
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

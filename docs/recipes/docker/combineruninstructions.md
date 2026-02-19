@@ -32,6 +32,45 @@ This recipe is used as part of the following composite recipes:
 
 * [Optimize Docker builds](/recipes/docker/dockerbuildoptimization.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|separator|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get install -y curl
+```
+
+###### After
+```docker
+FROM ubuntu:22.04
+RUN apt-get update && apt-get install -y curl
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,2 +2,1 @@
+FROM ubuntu:22.04
+-RUN apt-get update
+-RUN apt-get install -y curl
++RUN apt-get update && apt-get install -y curl
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

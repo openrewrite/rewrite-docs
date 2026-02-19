@@ -26,6 +26,47 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | interfaceType | The fully qualified name of the interface to remove. | `java.io.Serializable` |
 | `String` | filter | *Optional*. Only apply the interface removal to classes with fully qualified names that begin with this filter. `null` or empty matches all classes. | `com.yourorg.` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|interfaceType|`java.io.Serializable`|
+|filter|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.Serializable;
+
+class A implements Serializable {
+}
+```
+
+###### After
+```java
+class A {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,3 +1,1 @@
+-import java.io.Serializable;
+-
+-class A implements Serializable {
++class A {
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -33,6 +33,55 @@ This recipe is used as part of the following composite recipes:
 
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|removeUnused|`false`|
+|style||
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import java.util.Objects;
+import java.util.Set;
+import java.util.Map;
+```
+
+###### After
+```java
+import java.util.*;
+import java.util.regex.Pattern;
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,1 @@
+-import java.util.List;
+-import java.util.ArrayList;
++import java.util.*;
+import java.util.regex.Pattern;
+@@ -4,3 +3,0 @@
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+-import java.util.Objects;
+-import java.util.Set;
+-import java.util.Map;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

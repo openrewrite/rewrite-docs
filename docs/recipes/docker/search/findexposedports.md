@@ -25,6 +25,43 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | portPattern | *Optional*. A glob pattern to filter ports. For example, '80*' to find ports starting with 80. If not specified, all `EXPOSE` instructions are matched. | `80*` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|portPattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM nginx:latest
+EXPOSE 80
+```
+
+###### After
+```docker
+FROM nginx:latest
+~~(80)~~>EXPOSE 80
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+FROM nginx:latest
+-EXPOSE 80
++~~(80)~~>EXPOSE 80
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

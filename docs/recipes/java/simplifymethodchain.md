@@ -37,6 +37,62 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](/recipes/apache/httpclient5/statusline.md)
 * [Use `Map#containsKey`](/recipes/staticanalysis/usemapcontainskey.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPatternChain|`List.of("A b()", "B c()")`|
+|newMethodName|`c2`|
+|matchOverrides|`false`|
+
+
+###### Unchanged
+```java
+class A {
+    static B b() { return new B(); }
+    static C c2() { return new C(); }
+}
+
+class B {
+    C c() { return new C(); }
+}
+
+class C {
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    C c = A.b().c();
+}
+```
+
+###### After
+```java
+class Test {
+    C c = A.c2();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Test {
+-   C c = A.b().c();
++   C c = A.c2();
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

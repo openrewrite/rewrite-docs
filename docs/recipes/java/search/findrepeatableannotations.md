@@ -19,6 +19,100 @@ _Java 8 introduced the concept of `@Repeatable` annotations._
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.mapstruct.*;
+class Test {
+    @ValueMappings({
+            @ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+            @ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+    })
+    void test() {
+    }
+}
+```
+
+###### After
+```java
+import org.mapstruct.*;
+class Test {
+    @ValueMappings({
+            /*~~>*/@ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+            /*~~>*/@ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+    })
+    void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,2 +4,2 @@
+class Test {
+    @ValueMappings({
+-           @ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
+-           @ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
++           /*~~>*/@ValueMapping(source = "UNKNOWN", target = MappingConstants.NULL),
++           /*~~>*/@ValueMapping(source = "UNRECOGNIZED", target = MappingConstants.NULL)
+    })
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+package org.mapstruct;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Repeatable(ValueMappings.class)
+@Retention(RetentionPolicy.CLASS)
+@Target(ElementType.METHOD)
+public @interface ValueMapping {
+    String source();
+
+    String target();
+}
+```
+
+###### Unchanged
+```java
+package org.mapstruct;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target({ElementType.METHOD})
+@Retention(RetentionPolicy.CLASS)
+public @interface ValueMappings {
+    ValueMapping[] value();
+}
+```
+
+###### Unchanged
+```java
+package org.mapstruct;
+
+public class MappingConstants {
+    public static final String NULL = "null";
+}
+```
+
 
 ## Usage
 

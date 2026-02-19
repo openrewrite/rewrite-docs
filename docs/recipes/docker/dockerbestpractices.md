@@ -63,6 +63,101 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`DockerBestPracticesTest#appliesBestPractices`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:22.04
+ADD app.jar /app/
+RUN apt-get update
+RUN apt-get install -y curl
+ENTRYPOINT /app/start.sh
+```
+
+###### After
+```docker
+~~(EOL: ubuntu:22.04 (ended 2024-09-30, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:22.04
+COPY app.jar /app/
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+ENTRYPOINT ["/app/start.sh"]
+USER appuser
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-FROM ubuntu:22.04
+-ADD app.jar /app/
+-RUN apt-get update
+-RUN apt-get install -y curl
+-ENTRYPOINT /app/start.sh
++~~(EOL: ubuntu:22.04 (ended 2024-09-30, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:22.04
++COPY app.jar /app/
++RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
++ENTRYPOINT ["/app/start.sh"]
++USER appuser
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`DockerBestPracticesTest#appliesBestPractices`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:22.04
+ADD app.jar /app/
+RUN apt-get update
+RUN apt-get install -y curl
+ENTRYPOINT /app/start.sh
+```
+
+###### After
+```docker
+~~(EOL: ubuntu:22.04 (ended 2024-09-30, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:22.04
+COPY app.jar /app/
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+ENTRYPOINT ["/app/start.sh"]
+USER appuser
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-FROM ubuntu:22.04
+-ADD app.jar /app/
+-RUN apt-get update
+-RUN apt-get install -y curl
+-ENTRYPOINT /app/start.sh
++~~(EOL: ubuntu:22.04 (ended 2024-09-30, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:22.04
++COPY app.jar /app/
++RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
++ENTRYPOINT ["/app/start.sh"]
++USER appuser
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

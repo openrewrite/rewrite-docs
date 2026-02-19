@@ -26,6 +26,38 @@ This recipe is used as part of the following composite recipes:
 
 * [Apply Docker security best practices](/recipes/docker/dockersecuritybestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:22.04
+ADD app.jar /app/
+```
+
+###### After
+```docker
+FROM ubuntu:22.04
+COPY app.jar /app/
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+FROM ubuntu:22.04
+-ADD app.jar /app/
++COPY app.jar /app/
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

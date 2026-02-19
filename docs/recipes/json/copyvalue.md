@@ -36,7 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- |
 |sourceKeyPath|`$.source`|
 |sourceFilePath|`null`|
-|destinationKeyPath|`$.`|
+|destinationKeyPath|`$`|
 |destinationKey|`copiedValue`|
 |destinationFilePath|`null`|
 

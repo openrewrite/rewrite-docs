@@ -26,6 +26,55 @@ This recipe is used as part of the following composite recipes:
 
 * [Code cleanup](/recipes/staticanalysis/codecleanup.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    int m;
+
+    static void method() {
+        new Test()
+                .m = 2;
+        new Test() .m = 2;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    int m;
+
+    static void method() {
+        new Test().m = 2;
+        new Test().m = 2;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,3 +5,2 @@
+
+    static void method() {
+-       new Test()
+-               .m = 2;
+-       new Test() .m = 2;
++       new Test().m = 2;
++       new Test().m = 2;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

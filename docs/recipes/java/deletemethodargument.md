@@ -40,6 +40,40 @@ This recipe is used as part of the following composite recipes:
 * [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`B foo(int, int, int)`|
+|argumentIndex|`1`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+public class A {{ B.foo(0, 1, 2); }}
+```
+
+###### After
+```java
+public class A {{ B.foo(0, 2); }}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-public class A {{ B.foo(0, 1, 2); }}
++public class A {{ B.foo(0, 2); }}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

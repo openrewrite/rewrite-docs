@@ -154,6 +154,46 @@ This recipe is used as part of the following composite recipes:
 * [io.quarkus.updates.core.quarkus331.OpenTelemetryTracingPackageTypoFix](/recipes/io/quarkus/updates/core/quarkus331/opentelemetrytracingpackagetypofix.md)
 * [io.quarkus.updates.core.quarkus37.HibernateSearchOutboxPolling](/recipes/io/quarkus/updates/core/quarkus37/hibernatesearchoutboxpolling.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldPackageName|`org.openrewrite`|
+|newPackageName|`openrewrite`|
+|recursive|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.Foo;
+class Test {
+}
+```
+
+###### After
+```java
+import openrewrite.Foo;
+class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.openrewrite.Foo;
++import openrewrite.Foo;
+class Test {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

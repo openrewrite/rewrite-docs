@@ -36,6 +36,74 @@ This recipe is used as part of the following composite recipes:
 * [Statically import JUnit Jupiter assertions](/recipes/java/testing/junit5/staticimports.md)
 * [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`org.junit.jupiter.api.Assertions assert*(..)`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package org.openrewrite;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
+
+class SampleTest {
+    @Test
+    void sample() {
+        Assertions.assertEquals(42, 21*2);
+    }
+}
+```
+
+###### After
+```java
+package org.openrewrite;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class SampleTest {
+    @Test
+    void sample() {
+        assertEquals(42, 21*2);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,0 @@
+
+import org.junit.jupiter.api.Test;
+-import org.junit.jupiter.api.Assertions;
+
+@@ -6,0 +5,2 @@
+import org.junit.jupiter.api.Assertions;
+
++import static org.junit.jupiter.api.Assertions.assertEquals;
++
+class SampleTest {
+@@ -9,1 +10,1 @@
+    @Test
+    void sample() {
+-       Assertions.assertEquals(42, 21*2);
++       assertEquals(42, 21*2);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

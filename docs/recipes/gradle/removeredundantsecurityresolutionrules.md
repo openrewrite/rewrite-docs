@@ -115,7 +115,7 @@ dependencies {
 ###### Before
 ```buildGradleKts
 plugins {
-    java
+    id("java")
 }
 repositories { mavenCentral() }
 configurations.all {
@@ -135,7 +135,7 @@ dependencies {
 ###### After
 ```buildGradleKts
 plugins {
-    java
+    id("java")
 }
 repositories { mavenCentral() }
 dependencies {

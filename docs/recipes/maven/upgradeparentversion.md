@@ -80,11 +80,7 @@ This recipe is used as part of the following composite recipes:
 |onlyExternal|`null`|
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <project>
   <parent>
@@ -97,37 +93,6 @@ This recipe is used as part of the following composite recipes:
   <version>1</version>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<project>
-  <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
-https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
-      <groupId>org.jenkins-ci.plugins</groupId>
-      <artifactId>credentials</artifactId>
-      <version>2.3.0</version>
-  </parent>
-  <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
-  <version>1</version>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -2,1 +2,2 @@
-<project>
-- <parent>
-+ <!--~~(org.jenkins-ci.plugins:credentials failed. Unable to download metadata. Tried repositories:
-+https://repo.maven.apache.org/maven2: HTTP 404)~~>--><parent>
-      <groupId>org.jenkins-ci.plugins</groupId>
-```
-</TabItem>
-</Tabs>
 
 ---
 

@@ -40,7 +40,9 @@ This recipe is used as part of the following composite recipes:
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 
-## Example
+## Examples
+##### Example 1
+`SingleAnnotation#withTwoAttributesOnSingleLine`
 
 ###### Parameters
 | Parameter | Value |
@@ -73,6 +75,46 @@ class SomeClass {}
 -@TestAnnotation(attributeA = "attributeValue", deletedAttribute = "deletedAttributeValue")
 +@TestAnnotation(attributeA = "attributeValue")
 class SomeClass {}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RemoveAnnotationAttributeTest#removeNamedAttribute`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|annotationType|`java.lang.Deprecated`|
+|attributeName|`since`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+@Deprecated(since = "1.0", forRemoval = true)
+class A {}
+```
+
+###### After
+```java
+@Deprecated(forRemoval = true)
+class A {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-@Deprecated(since = "1.0", forRemoval = true)
++@Deprecated(forRemoval = true)
+class A {}
 ```
 </TabItem>
 </Tabs>

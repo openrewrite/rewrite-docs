@@ -19,6 +19,49 @@ _Determine the order in which dependencies will be resolved for each `build.grad
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+
+repositories {
+    maven { url 'https://repo.spring.io/milestone' }
+}
+```
+
+###### After
+```groovy title="build.gradle"
+/*~~(https://repo.spring.io/milestone)~~>*/plugins {
+    id 'java'
+}
+
+repositories {
+    maven { url 'https://repo.spring.io/milestone' }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -1,1 +1,1 @@
+-plugins {
++/*~~(https://repo.spring.io/milestone)~~>*/plugins {
+    id 'java'
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

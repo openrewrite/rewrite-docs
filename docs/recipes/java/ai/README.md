@@ -1,8 +1,10 @@
 ---
-description: Ai OpenRewrite recipes.
+description: AI OpenRewrite recipes.
 ---
 
 # AI
+
+_Recipes supporting AI code generation and analysis._
 
 ## Recipes
 

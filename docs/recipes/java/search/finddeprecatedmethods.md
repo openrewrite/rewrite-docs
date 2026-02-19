@@ -33,6 +33,57 @@ This recipe is used as part of the following composite recipes:
 
 * [Find uses of deprecated classes, methods, and fields](/recipes/java/search/finddeprecateduses.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`null`|
+|ignoreDeprecatedScopes|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    @Deprecated
+    void test(int n) {
+        if(n == 1) {
+            test(n + 1);
+        }
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    @Deprecated
+    void test(int n) {
+        if(n == 1) {
+            /*~~>*/test(n + 1);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+    void test(int n) {
+        if(n == 1) {
+-           test(n + 1);
++           /*~~>*/test(n + 1);
+        }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

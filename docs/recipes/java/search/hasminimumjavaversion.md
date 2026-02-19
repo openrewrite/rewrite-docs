@@ -26,6 +26,49 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | version | An exact version number or node-style semver selector used to select the version number. | `17.X` |
 | `Boolean` | checkTargetCompatibility | *Optional*. The source and target compatibility versions can be different. This option allows you to check against the target compatibility version instead of the source compatibility version. | `17.X` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|version|`8-21`|
+|checkTargetCompatibility|`false`|
+
+
+###### Unchanged
+```java
+class Higher {
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+}
+```
+
+###### After
+```java
+/*~~(Java version 8)~~>*/class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class Test {
++/*~~(Java version 8)~~>*/class Test {
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

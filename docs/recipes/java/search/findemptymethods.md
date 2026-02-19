@@ -29,6 +29,54 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|matchOverrides|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Collection;
+
+class Test implements Collection<String> {
+    @Override
+    public boolean isEmpty() {
+    }
+}
+```
+
+###### After
+```java
+import java.util.Collection;
+
+class Test implements Collection<String> {
+    /*~~>*/@Override
+    public boolean isEmpty() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+
+class Test implements Collection<String> {
+-   @Override
++   /*~~>*/@Override
+    public boolean isEmpty() {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -28,6 +28,49 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |  |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|propertyKey|`management.metrics.enabled`|
+|comment|`This property is deprecated`|
+|relaxedBinding|`null`|
+|filePattern|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="yaml" label="yaml">
+
+
+###### Before
+```yaml
+management:
+  metrics:
+    enabled: true
+```
+
+###### After
+```yaml
+management:
+  metrics:
+    # This property is deprecated
+    enabled: true
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,1 @@
+management:
+  metrics:
++   # This property is deprecated
+    enabled: true
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

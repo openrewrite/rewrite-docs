@@ -32,6 +32,42 @@ This recipe is used as part of the following composite recipes:
 
 * [Apply Docker security best practices](/recipes/docker/dockersecuritybestpractices.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|includeApproaching|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM debian:buster
+RUN apt-get update
+```
+
+###### After
+```docker
+~~(EOL: debian:buster (ended 2024-06-30, suggest trixie (13) or bookworm (12)))~~>FROM debian:buster
+RUN apt-get update
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-FROM debian:buster
++~~(EOL: debian:buster (ended 2024-06-30, suggest trixie (13) or bookworm (12)))~~>FROM debian:buster
+RUN apt-get update
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

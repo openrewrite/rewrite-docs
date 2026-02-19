@@ -35,6 +35,42 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate removed Spring `Assert` methods](/recipes/java/spring/framework/migratespringassert.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`B foo(int, int)`|
+|argumentIndex|`1`|
+|literal|`-1`|
+|primitiveType|`int`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {{ B.foo(0, 1); }}
+```
+
+###### After
+```java
+class A {{ B.foo(0, -1, 1); }}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class A {{ B.foo(0, 1); }}
++class A {{ B.foo(0, -1, 1); }}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -41,6 +41,48 @@ This recipe is used as part of the following composite recipes:
 * [Replace deprecated `kotlinx-coroutines-core` methods](/recipes/org/jetbrains/kotlinx/replacedeprecatedkotlinxcoroutinescore1methods.md)
 * [Replace deprecated `kotlinx-serialization-core` methods](/recipes/org/jetbrains/kotlinx/replacedeprecatedkotlinxserializationcore1methods.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`kotlin.Char toInt()`|
+|replacement|`code`|
+|imports|`null`|
+|classpathFromResources|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+fun test(c: Char): Int {
+    return c.toInt()
+}
+```
+
+###### After
+```kotlin
+fun test(c: Char): Int {
+    return c.code
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+fun test(c: Char): Int {
+-   return c.toInt()
++   return c.code
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

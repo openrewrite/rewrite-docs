@@ -26,6 +26,45 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | typePattern | *Optional*. A type pattern that is used to find matching field uses. | `org.springframework..*` |
 | `Boolean` | matchInherited | *Optional*. When enabled, find types that inherit from a deprecated type. |  |
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|typePattern|`java.util..*`|
+|matchInherited|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.concurrent.atomic.AtomicBoolean;
+class Test {
+}
+```
+
+###### After
+```java
+/*~~>*/import java.util.concurrent.atomic.AtomicBoolean;
+class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.concurrent.atomic.AtomicBoolean;
++/*~~>*/import java.util.concurrent.atomic.AtomicBoolean;
+class Test {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

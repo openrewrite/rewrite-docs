@@ -33,6 +33,49 @@ This recipe is used as part of the following composite recipes:
 
 * [Find vulnerable uses of Jackson `@JsonTypeInfo`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findvulnerablejacksonjsontypeinfo)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|annotationPattern|`@org.jspecify.annotations.Nullable`|
+|matchMetaAnnotations|`true`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.internal.lang.Nullable;
+public class Test {
+    @Nullable String name;
+}
+```
+
+###### After
+```java
+import org.openrewrite.internal.lang.Nullable;
+public class Test {
+    /*~~>*/@Nullable String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import org.openrewrite.internal.lang.Nullable;
+public class Test {
+-   @Nullable String name;
++   /*~~>*/@Nullable String name;
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

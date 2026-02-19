@@ -32,6 +32,48 @@ This recipe is used as part of the following composite recipes:
 
 * [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|typeName|`java.lang.Runnable`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test implements Runnable {
+    @Override
+    public void run() {
+    }
+}
+```
+
+###### After
+```java
+/*~~>*/class Test implements Runnable {
+    @Override
+    public void run() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class Test implements Runnable {
++/*~~>*/class Test implements Runnable {
+    @Override
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

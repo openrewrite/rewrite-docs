@@ -26,6 +26,49 @@ This recipe is used as part of the following composite recipes:
 
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+
+    public void method(Test t) {  
+    }  
+}  
+```
+
+###### After
+```java
+class Test {
+
+    public void method(Test t) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,3 +3,3 @@
+class Test {
+
+-   public void method(Test t) {  
+-   }  
+-}  
++   public void method(Test t) {
++   }
++}
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

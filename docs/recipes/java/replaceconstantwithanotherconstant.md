@@ -56,6 +56,77 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade to JUnit 5.13](/recipes/java/testing/junit5/upgradetojunit513.md)
 * [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7](/recipes/io/quarkus/updates/core/quarkus324/migratefromhibernateormvariousremovedin7.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|existingFullyQualifiedConstantName|`java.io.File.pathSeparator`|
+|fullyQualifiedConstantName|`java.io.File.separator`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.File;
+
+import static java.io.File.pathSeparator;
+
+class Test {
+    Object o = File.pathSeparator;
+    void foo() {
+        System.out.println(pathSeparator);
+        System.out.println(java.io.File.pathSeparator);
+    }
+}
+```
+
+###### After
+```java
+import java.io.File;
+
+import static java.io.File.separator;
+
+class Test {
+    Object o = File.separator;
+    void foo() {
+        System.out.println(separator);
+        System.out.println(File.separator);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import java.io.File;
+
+-import static java.io.File.pathSeparator;
++import static java.io.File.separator;
+
+@@ -6,1 +6,1 @@
+
+class Test {
+-   Object o = File.pathSeparator;
++   Object o = File.separator;
+    void foo() {
+@@ -8,2 +8,2 @@
+    Object o = File.pathSeparator;
+    void foo() {
+-       System.out.println(pathSeparator);
+-       System.out.println(java.io.File.pathSeparator);
++       System.out.println(separator);
++       System.out.println(File.separator);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

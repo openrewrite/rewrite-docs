@@ -34,6 +34,54 @@ This recipe is used as part of the following composite recipes:
 
 * [Find uses of deprecated classes, methods, and fields](/recipes/java/search/finddeprecateduses.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|typePattern|`org.old.types..*`|
+|matchInherited|`null`|
+|ignoreDeprecatedScopes|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.old.types.D;
+class Test {
+    void test(int n) {
+        System.out.println(D.FIELD);
+    }
+}
+```
+
+###### After
+```java
+import org.old.types.D;
+class Test {
+    void test(int n) {
+        System.out.println(D./*~~>*/FIELD);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+class Test {
+    void test(int n) {
+-       System.out.println(D.FIELD);
++       System.out.println(D./*~~>*/FIELD);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -33,7 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|keyPath|`$.`|
+|keyPath|`$`|
 |key|`key`|
 |value|`"val"`|
 |prepend|`false`|

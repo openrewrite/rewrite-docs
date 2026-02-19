@@ -26,6 +26,37 @@ This recipe is used as part of the following composite recipes:
 
 * [Apply Docker security best practices](/recipes/docker/dockersecuritybestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM ubuntu:latest
+RUN apt-get update
+```
+
+###### After
+```docker
+~~(Uses 'latest' tag)~~>FROM ubuntu:latest
+RUN apt-get update
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-FROM ubuntu:latest
++~~(Uses 'latest' tag)~~>FROM ubuntu:latest
+RUN apt-get update
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

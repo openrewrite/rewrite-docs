@@ -42,6 +42,44 @@ This recipe is used as part of the following composite recipes:
 * [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|annotationType|`java.lang.Deprecated`|
+|oldAttributeName|`since`|
+|newAttributeName|`asOf`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+@Deprecated(since = "1.0")
+class A {}
+```
+
+###### After
+```java
+@Deprecated(asOf = "1.0")
+class A {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-@Deprecated(since = "1.0")
++@Deprecated(asOf = "1.0")
+class A {}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

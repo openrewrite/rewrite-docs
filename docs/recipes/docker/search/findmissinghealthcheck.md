@@ -26,6 +26,37 @@ This recipe is used as part of the following composite recipes:
 
 * [Apply Docker security best practices](/recipes/docker/dockersecuritybestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="docker" label="docker">
+
+
+###### Before
+```docker
+FROM alpine:3.18
+CMD ["./app"]
+```
+
+###### After
+```docker
+~~(Missing HEALTHCHECK instruction)~~>FROM alpine:3.18
+CMD ["./app"]
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-FROM alpine:3.18
++~~(Missing HEALTHCHECK instruction)~~>FROM alpine:3.18
+CMD ["./app"]
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

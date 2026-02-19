@@ -19,7 +19,9 @@ _Compile errors result in a particular LST structure that can be searched for._
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Example
+## Examples
+##### Example 1
+`FindCompileErrorsTest#javaVisitorHandlesErroneousNodes`
 
 
 <Tabs groupId="beforeAfter">
@@ -54,6 +56,126 @@ class A {
 -       owner
 +       /*~~>*/owner
     }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`JavaParserTest#erroneousVariableDeclarations`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.demo;
+class Bar {
+    pet
+    public void test() {
+    }
+}
+```
+
+###### After
+```java
+package com.example.demo;
+class Bar {
+    /*~~>*/pet
+    public void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package com.example.demo;
+class Bar {
+-   pet
++   /*~~>*/pet
+    public void test() {
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.demo;
+class Baz {
+    -pet
+    public void test() {
+    }
+}
+```
+
+###### After
+```java
+package com.example.demo;
+class Baz {
+    /*~~>*/-/*~~>*/pet
+    public void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package com.example.demo;
+class Baz {
+-   -pet
++   /*~~>*/-/*~~>*/pet
+    public void test() {
+```
+</TabItem>
+</Tabs>
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.demo;
+class Foo {
+    /pet
+    public void test() {
+    }
+}
+```
+
+###### After
+```java
+package com.example.demo;
+class Foo {
+    /*~~>*///*~~>*/pet
+    public void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package com.example.demo;
+class Foo {
+-   /pet
++   /*~~>*///*~~>*/pet
+    public void test() {
 ```
 </TabItem>
 </Tabs>
