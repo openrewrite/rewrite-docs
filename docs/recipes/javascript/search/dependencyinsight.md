@@ -27,6 +27,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | scope | *Optional*. Match dependencies in the specified scope. All scopes are searched by default. Valid options: `dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`, `bundledDependencies` | `dependencies` |
 | `Boolean` | onlyDirect | *Optional*. If enabled, transitive dependencies will not be considered. All dependencies are searched by default. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update Prethink context (no AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
+* [Update Prethink context (with AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
+
 ## Example
 
 ###### Parameters

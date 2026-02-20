@@ -23,6 +23,12 @@ This recipe is composed of more than one recipe. If you want to customize the se
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | targetConfigFile | *Optional*. Which agent config file to update. If not specified, updates all found files. | `CLAUDE.md` |
+
 
 ## Definition
 
@@ -48,6 +54,7 @@ name: org.openrewrite.prethink.UpdatePrethinkContext
 displayName: Update Prethink context
 description: |
   Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
+
 recipeList:
   - org.openrewrite.prethink.calm.GenerateCalmArchitecture
   - org.openrewrite.prethink.ExportContext:
