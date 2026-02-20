@@ -179,7 +179,7 @@ const config: Config = {
     announcementBar: {
       id: "openrewrite_training",
       content:
-        'Want to learn about OpenRewrite directly from the team? Sign up for a <a href="https://www.moderne.ai/moderne-openrewrite-training-hub">free training session</a>.',
+        '<strong><a href="https://coderemix.ai/?utm_source=docs&utm_medium=referral&utm_campaign=26_crs_banner">Code Remix Summit is back</a></strong> ✦ May 11–13',
     },
     image: "img/moderne-poster-logo.svg",
     colorMode: {
