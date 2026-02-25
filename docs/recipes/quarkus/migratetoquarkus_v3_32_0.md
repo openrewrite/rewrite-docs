@@ -1,87 +1,58 @@
 ---
-sidebar_label: "Custom import order"
+sidebar_label: "Quarkus Updates Aggregate 3.32.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Custom import order
+# Quarkus Updates Aggregate 3.32.0
 
-**org.openrewrite.staticanalysis.CustomImportOrder**
+**org.openrewrite.quarkus.MigrateToQuarkus\_v3\_32\_0**
 
-_Updates and reorders Java import declarations according to group and order settings compatible with the Checkstyle 'CustomImportOrder' check._
+_Quarkus update recipes to upgrade your application to 3.32.0._
 
 ## Recipe source
 
-[GitHub: CustomImportOrder.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/CustomImportOrder.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
+[GitHub: search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0](https://github.com/search?type=code&q=org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
-* [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
-
-## Example
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+## Definition
 
-
-###### Before
-```java
-package com.example;
-
-import org.apache.commons.lang3.StringUtils;
-import java.util.Collections;
-import static java.util.Collections.*;
-
-class Test {}
-```
-
-###### After
-```java
-package com.example;
-
-import static java.util.Collections.*;
-
-import java.util.Collections;
-import org.apache.commons.lang3.StringUtils;
-
-class Test {}
-```
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Quarkus Updates Aggregate 3.31.0](../quarkus/migratetoquarkus_v3_31_0)
+* [Migrates `camel 4.17` application to `camel 4.18`](../io/quarkus/updates/camel/camel418/camelquarkusmigrationrecipe)
 
 </TabItem>
-<TabItem value="diff" label="Diff" >
 
-```diff
-@@ -3,2 +3,0 @@
-package com.example;
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
 
--import org.apache.commons.lang3.StringUtils;
--import java.util.Collections;
-import static java.util.Collections.*;
-@@ -7,0 +5,3 @@
-import static java.util.Collections.*;
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0
+displayName: Quarkus Updates Aggregate 3.32.0
+description: |
+  Quarkus update recipes to upgrade your application to 3.32.0.
+recipeList:
+  - org.openrewrite.quarkus.MigrateToQuarkus_v3_31_0
+  - io.quarkus.updates.camel.camel418.CamelQuarkusMigrationRecipe
 
-+import java.util.Collections;
-+import org.apache.commons.lang3.StringUtils;
-+
-class Test {}
 ```
 </TabItem>
 </Tabs>
 
-
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-third-party` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -93,7 +64,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.CustomImportOrder")
+    activeRecipe("org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0")
     setExportDatatables(true)
 }
 
@@ -102,7 +73,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
+    rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
 }
 ```
 
@@ -123,10 +94,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
+        rewrite("org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.staticanalysis.CustomImportOrder")
+        activeRecipe("org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -161,14 +132,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.staticanalysis.CustomImportOrder</recipe>
+            <recipe>org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
+            <artifactId>rewrite-third-party</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -184,7 +155,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.CustomImportOrder -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-third-party:RELEASE -Drewrite.activeRecipes=org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0 -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -192,12 +163,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe CustomImportOrder
+mod run . --recipe MigrateToQuarkus_v3_32_0
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}
 ```
 </TabItem>
 </Tabs>
@@ -206,7 +177,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.CustomImportOrder" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -280,6 +251,25 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

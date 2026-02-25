@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Build tool](./buildtoolcard.md)
+* [Find organization statistics](./findorganizationstatistics.md)
 * [Library upgrade](./libraryupgrade.md)
 * [Move to JUnit 6](./junitjupiterupgrade.md)
 * [Move to a later Java version](./javaversionupgrade.md)

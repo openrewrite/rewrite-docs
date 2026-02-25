@@ -11,6 +11,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](./springfoxtospringdoc.md)
 * [Migrate from Swagger to SpringDoc and OpenAPI](./swaggertospringdoc.md)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](./migratespringdoccommon.md)
+* [Remove remaining Springfox dead code](./cleanupremainingspringfox.md)
 * [Replace SpringFox Dependencies](./replacespringfoxdependencies.md)
 * [Upgrade to SpringDoc 2.1](./upgradespringdoc_2.md)
 * [Upgrade to SpringDoc 2.2](./upgradespringdoc_2_2.md)

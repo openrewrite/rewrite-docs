@@ -11,6 +11,8 @@ _Recipes for [Apache POI](https://poi.apache.org/) spreadsheet library._
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrates to Apache POI 3.17](./upgradeapachepoi_3_17.md)
+* [Migrates to Apache POI 4.1.2](./upgradeapachepoi_4_1.md)
+* [Migrates to Apache POI 5.x](./upgradeapachepoi_5.md)
 
 ## Recipes
 

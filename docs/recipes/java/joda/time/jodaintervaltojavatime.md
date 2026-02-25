@@ -1,19 +1,19 @@
 ---
-sidebar_label: "Migrate Joda-Time to Java time"
+sidebar_label: "Migrate Joda-Time `Interval` to Java time"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Joda-Time to Java time
+# Migrate Joda-Time `Interval` to Java time
 
-**org.openrewrite.java.joda.time.JodaTimeRecipe**
+**org.openrewrite.java.joda.time.JodaIntervalToJavaTime**
 
-_Prefer the Java standard library over third-party usage of Joda Time._
+_Migrates `org.joda.time.Interval` constructors and methods to their Java time equivalents using ThreeTen-Extra._
 
 ## Recipe source
 
-[GitHub: JodaTime.java](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/java/org/openrewrite/java/joda/time/JodaTime.java),
+[GitHub: JodaIntervalToJavaTime.java](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/java/org/openrewrite/java/joda/time/JodaIntervalToJavaTime.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-joda/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-joda/)
 
@@ -25,57 +25,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import org.joda.time.DateTime;
-
-class A {
-    public void foo() {
-        DateTime dt = new DateTime();
-        System.out.println(dt.toDateTime());
-    }
-}
-```
-
-###### After
-```java
-import java.time.ZonedDateTime;
-
-class A {
-    public void foo() {
-        ZonedDateTime dt = ZonedDateTime.now();
-        System.out.println(dt);
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--import org.joda.time.DateTime;
-+import java.time.ZonedDateTime;
-
-@@ -5,2 +5,2 @@
-class A {
-    public void foo() {
--       DateTime dt = new DateTime();
--       System.out.println(dt.toDateTime());
-+       ZonedDateTime dt = ZonedDateTime.now();
-+       System.out.println(dt);
-    }
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage
@@ -92,7 +41,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.joda.time.JodaTimeRecipe")
+    activeRecipe("org.openrewrite.java.joda.time.JodaIntervalToJavaTime")
     setExportDatatables(true)
 }
 
@@ -125,7 +74,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.joda.time.JodaTimeRecipe")
+        activeRecipe("org.openrewrite.java.joda.time.JodaIntervalToJavaTime")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -160,7 +109,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.joda.time.JodaTimeRecipe</recipe>
+            <recipe>org.openrewrite.java.joda.time.JodaIntervalToJavaTime</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -183,7 +132,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-joda:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.joda.time.JodaTimeRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-joda:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.joda.time.JodaIntervalToJavaTime -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -191,7 +140,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JodaTimeRecipe
+mod run . --recipe JodaIntervalToJavaTime
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -205,7 +154,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.joda.time.JodaTimeRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.joda.time.JodaIntervalToJavaTime" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

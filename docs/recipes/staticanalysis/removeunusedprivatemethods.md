@@ -29,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
+* [Remove remaining Springfox dead code](/recipes/java/springdoc/cleanupremainingspringfox.md)
 
 ## Example
 

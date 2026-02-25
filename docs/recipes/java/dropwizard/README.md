@@ -13,6 +13,7 @@ _Recipes for upgrading and patching [Dropwizard](https://dropwizard.io/) applica
 * [General](/recipes/java/dropwizard/general)
 * [Jetty](/recipes/java/dropwizard/jetty)
 * [Method](/recipes/java/dropwizard/method)
+* [Test](/recipes/java/dropwizard/test)
 
 ## Composite Recipes
 

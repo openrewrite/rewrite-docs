@@ -37,6 +37,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * groupId: `io.dropwizard`
   * artifactId: `dropwizard-testing`
 * [JUnit Jupiter migration from JUnit 4.x](../../java/testing/junit5/junit4to5migration)
+* [Replace Dropwizard rules with Spring Boot test configuration](../../java/dropwizard/test/dropwizardrulesjunit4tospringboot)
+* [Convert dropwizard appRule to restTemplate](../../java/dropwizard/test/transformdropwizardruleinvocations)
+* [Convert Mockito mock() to @MockBean](../../java/dropwizard/test/mockitovariabletomockbean)
+* [Extract lambda expressions](../../java/dropwizard/test/methodlambdaextractor)
+  * preconditionType: `io.dropwizard.testing.junit.DAOTestRule`
+  * matchingPattern: `*..DAOTestRule inTransaction(..)`
 
 </TabItem>
 
@@ -59,6 +65,12 @@ recipeList:
       groupId: io.dropwizard
       artifactId: dropwizard-testing
   - org.openrewrite.java.testing.junit5.JUnit4to5Migration
+  - org.openrewrite.java.dropwizard.test.DropwizardRulesJUnit4ToSpringBoot
+  - org.openrewrite.java.dropwizard.test.TransformDropwizardRuleInvocations
+  - org.openrewrite.java.dropwizard.test.MockitoVariableToMockBean
+  - org.openrewrite.java.dropwizard.test.MethodLambdaExtractor:
+      preconditionType: io.dropwizard.testing.junit.DAOTestRule
+      matchingPattern: *..DAOTestRule inTransaction(..)
 
 ```
 </TabItem>

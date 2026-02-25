@@ -1,21 +1,21 @@
 ---
-sidebar_label: "Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`"
+sidebar_label: "Migrate Joda-Time `Instant` to Java time"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`
+# Migrate Joda-Time `Instant` to Java time
 
-**org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe**
+**org.openrewrite.java.joda.time.JodaInstantToJavaTime**
 
-_Replace calls to `java.util.logging.Logger.getLogger(Some.class.getCanonicalName())` with `org.slf4j.LoggerFactory.getLogger(Some.class)`._
+_Migrates `org.joda.time.Instant` constructor calls to `java.time.Instant.now()`._
 
 ## Recipe source
 
-[GitHub: JulGetLoggerToLoggerFactory.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulGetLoggerToLoggerFactory.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
+[GitHub: JodaInstantToJavaTime.java](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/java/org/openrewrite/java/joda/time/JodaInstantToJavaTime.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-joda/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-joda/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -24,12 +24,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace JUL Logger creation with SLF4J LoggerFactory](/recipes/java/logging/slf4j/julgetloggertologgerfactoryrecipes.md)
+* [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-joda` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -41,7 +41,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe")
+    activeRecipe("org.openrewrite.java.joda.time.JodaInstantToJavaTime")
     setExportDatatables(true)
 }
 
@@ -50,7 +50,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
+    rewrite("org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}")
 }
 ```
 
@@ -71,10 +71,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
+        rewrite("org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe")
+        activeRecipe("org.openrewrite.java.joda.time.JodaInstantToJavaTime")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -109,14 +109,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe</recipe>
+            <recipe>org.openrewrite.java.joda.time.JodaInstantToJavaTime</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}</version>
+            <artifactId>rewrite-joda</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,7 +132,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-joda:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.joda.time.JodaInstantToJavaTime -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -140,12 +140,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe
+mod run . --recipe JodaInstantToJavaTime
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-joda:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JODA}}
 ```
 </TabItem>
 </Tabs>
@@ -154,7 +154,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.joda.time.JodaInstantToJavaTime" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

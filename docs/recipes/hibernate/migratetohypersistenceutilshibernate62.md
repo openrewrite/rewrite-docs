@@ -59,7 +59,6 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 6.2.x (Community Edition)](/recipes/hibernate/migratetohibernate62.md)
-* [Migrate to Hibernate 6.3.x (Community Edition)](/recipes/hibernate/migratetohibernate63.md)
 
 
 ## Usage

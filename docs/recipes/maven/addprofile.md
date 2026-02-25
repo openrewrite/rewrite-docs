@@ -33,6 +33,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Configure Quarkus Native Build Support](/recipes/quarkus/spring/configurenativebuild.md)
+* [Customize Quarkus Maven Plugin Goals](/recipes/quarkus/spring/customizequarkusplugingoals.md)
 * [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
 
 ## Example

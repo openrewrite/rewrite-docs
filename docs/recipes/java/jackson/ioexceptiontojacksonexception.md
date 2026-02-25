@@ -1,35 +1,102 @@
 ---
-sidebar_label: "Replace JUL `Logger.getLogger(Some.class.getName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`"
+sidebar_label: "Replace `IOException` with `JacksonException` in catch clauses"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace JUL `Logger.getLogger(Some.class.getName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`
+# Replace `IOException` with `JacksonException` in catch clauses
 
-**org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe**
+**org.openrewrite.java.jackson.IOExceptionToJacksonException**
 
-_Replace calls to `java.util.logging.Logger.getLogger(Some.class.getName())` with `org.slf4j.LoggerFactory.getLogger(Some.class)`._
+_In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`._
+
+### Tags
+
+* [jackson-3](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 
-[GitHub: JulGetLoggerToLoggerFactory.java](https://github.com/openrewrite/rewrite-logging-frameworks/blob/main/src/main/java/org/openrewrite/java/logging/slf4j/JulGetLoggerToLoggerFactory.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-logging-frameworks/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-logging-frameworks/)
+[GitHub: IOExceptionToJacksonException.java](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/IOExceptionToJacksonException.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace JUL Logger creation with SLF4J LoggerFactory](/recipes/java/logging/slf4j/julgetloggertologgerfactoryrecipes.md)
+* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+class Test {
+    void deserialize(byte[] data) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.readValue(data, String.class);
+        } catch (IOException e) {
+            throw new RuntimeException("IO exception", e);
+        }
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+
+class Test {
+    void deserialize(byte[] data) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.readValue(data, String.class);
+        } catch (JacksonException e) {
+            throw new RuntimeException("IO exception", e);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+@@ -3,0 +2,1 @@
+import java.io.IOException;
+import com.fasterxml.jackson.databind.ObjectMapper;
++import tools.jackson.core.JacksonException;
+
+@@ -9,1 +9,1 @@
+        try {
+            objectMapper.readValue(data, String.class);
+-       } catch (IOException e) {
++       } catch (JacksonException e) {
+            throw new RuntimeException("IO exception", e);
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-logging-frameworks` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -41,7 +108,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe")
+    activeRecipe("org.openrewrite.java.jackson.IOExceptionToJacksonException")
     setExportDatatables(true)
 }
 
@@ -50,7 +117,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
+    rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
 }
 ```
 
@@ -71,10 +138,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}")
+        rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe")
+        activeRecipe("org.openrewrite.java.jackson.IOExceptionToJacksonException")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -109,14 +176,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe</recipe>
+            <recipe>org.openrewrite.java.jackson.IOExceptionToJacksonException</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}</version>
+            <artifactId>rewrite-jackson</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -132,7 +199,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-logging-frameworks:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.IOExceptionToJacksonException -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -140,12 +207,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe
+mod run . --recipe IOExceptionToJacksonException
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}
 ```
 </TabItem>
 </Tabs>
@@ -154,7 +221,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.IOExceptionToJacksonException" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

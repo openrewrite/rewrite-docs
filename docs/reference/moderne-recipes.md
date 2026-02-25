@@ -267,6 +267,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.hibernate.MigrateToHibernate40](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate40)
   * **Migrate to Hibernate 4.0.x (Moderne Edition)**
   * This recipe will apply changes commonly needed when migrating from Hibernate 3.x to 4.0.x, including migration of collection annotations to their JPA 2.0 equivalents.
+* [io.moderne.hibernate.MigrateToHibernate60](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate60-moderne-edition)
+  * **Migrate to Hibernate 6.0.x (Moderne Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x.
 * [io.moderne.hibernate.MigrateToHibernate66](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate66-moderne-edition)
   * **Migrate to Hibernate 6.6.x (Moderne Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.6.x.
@@ -380,16 +383,28 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-java-application-server
 
-* [io.moderne.java.server.jboss.DeleteJBossDescriptors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/deletejbossdescriptors)
-  * **Delete JBoss deployment descriptor files**
-  * Removes jboss-web.xml and jboss-deployment-structure.xml files as they are no longer needed after a migration.
+* [io.moderne.java.server.jboss.ModuleHasJBossDescriptor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/modulehasjbossdescriptor)
+  * **Module has JBoss descriptor**
+  * Searches for modules containing JBoss descriptor files (`jboss-web.xml`, `jboss-deployment-structure.xml`). Places a `SearchResult` marker on all source files within a module with a JBoss descriptor. This recipe is intended to be used as a precondition for other recipes.
+* [io.moderne.java.server.jboss.MoveWebXml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/movewebxml)
+  * **Move `web.xml` to resources**
+  * Moves `src/main/webapp/WEB-INF/web.xml` to `src/main/resources/web.xml`.
 * [io.moderne.java.server.jboss.PlanJBossMigration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/planjbossmigration)
   * **Plan JBoss migration**
   * Analyzes the repository to plan a JBoss migration, identifying JBoss descriptor files (jboss-web.xml, jboss-deployment-structure.xml) and recording them in a data table.
-* [io.moderne.java.server.jboss.migrate.jetty.MigrateJBossToJetty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/migrate/jetty/migratejbosstojetty)
+* [io.moderne.java.server.jboss.jetty.CreateJettyEnvXml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/createjettyenvxml)
+  * **Create Jetty environment XML**
+  * Creates a `jetty-env.xml` file for projects containing JBoss descriptor files.
+* [io.moderne.java.server.jboss.jetty.CreateJettyFilesInPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/createjettyfilesinpath)
   * **Migrate JBoss to Jetty**
   * Comprehensive migration from JBoss to Jetty.
-* [io.moderne.java.server.jboss.migrate.jetty.devcenter.JBossToJettyMigrationCard$Scanner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/migrate/jetty/devcenter/jbosstojettymigrationcard$scanner)
+* [io.moderne.java.server.jboss.jetty.CreateJettySourceFile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/createjettysourcefile)
+  * **Create Jetty server source file**
+  * Creates a `JettyServer.java` source file for projects containing JBoss descriptor files.
+* [io.moderne.java.server.jboss.jetty.MigrateJBossToJetty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/migratejbosstojetty)
+  * **Migrate JBoss to Jetty**
+  * Comprehensive migration from JBoss to Jetty.
+* [io.moderne.java.server.jboss.jetty.devcenter.JBossToJettyMigrationCard$Scanner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/devcenter/jbosstojettymigrationcard$scanner)
   * **JBoss to Jetty migration scanner**
   * Scans for JBoss and Jetty configuration files.
 
@@ -868,6 +883,100 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Swap out an IP address with another one in `Service` `externalIP` settings.
 
 
+## rewrite-migrate-kotlin
+
+* [androidx.compose.animation.ReplaceDeprecatedAnimationCore1Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/androidx/compose/animation/replacedeprecatedanimationcore1methods)
+  * **Replace deprecated `animation-core` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [androidx.compose.material.ReplaceDeprecatedMaterial1Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/androidx/compose/material/replacedeprecatedmaterial1methods)
+  * **Replace deprecated `material` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [androidx.compose.material3.ReplaceDeprecatedMaterial31Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/androidx/compose/material3/replacedeprecatedmaterial31methods)
+  * **Replace deprecated `material3` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [androidx.compose.runtime.ReplaceDeprecatedRuntime1Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/androidx/compose/runtime/replacedeprecatedruntime1methods)
+  * **Replace deprecated `runtime` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxCollectionsImmutable0Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/org/jetbrains/kotlinx/replacedeprecatedkotlinxcollectionsimmutable0methods)
+  * **Replace deprecated `kotlinx-collections-immutable` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxCoroutinesCore1Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/org/jetbrains/kotlinx/replacedeprecatedkotlinxcoroutinescore1methods)
+  * **Replace deprecated `kotlinx-coroutines-core` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxDatetime0Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/org/jetbrains/kotlinx/replacedeprecatedkotlinxdatetime0methods)
+  * **Replace deprecated `kotlinx-datetime` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxIoCore0Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/org/jetbrains/kotlinx/replacedeprecatedkotlinxiocore0methods)
+  * **Replace deprecated `kotlinx-io-core` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/org/jetbrains/kotlinx/replacedeprecatedkotlinxserializationcore1methods)
+  * **Replace deprecated `kotlinx-serialization-core` methods**
+  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.openrewrite.kotlin.compose.ReplaceDeprecatedComposeMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/compose/replacedeprecatedcomposemethods)
+  * **Replace deprecated Jetpack Compose methods**
+  * Replace deprecated Jetpack Compose method calls with their recommended replacements, based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.openrewrite.kotlin.exposed.ExposedChangeMethodNames](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/exposed/exposedchangemethodnames)
+  * **Rename Exposed deprecated methods for 1.0**
+  * Rename deprecated Exposed method and property references to their 1.0 replacements.
+* [org.openrewrite.kotlin.exposed.ExposedChangeTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/exposed/exposedchangetypes)
+  * **Migrate Exposed type references to 1.0 packages**
+  * Change fully qualified type references from Exposed 0.x packages to Exposed 1.0 packages. The 1.0 release reorganized all packages under `org.jetbrains.exposed.v1.*` and split classes across `core`, `jdbc`, and `dao` modules.
+* [org.openrewrite.kotlin.exposed.ExposedUpgradeGradleDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/exposed/exposedupgradegradledependencies)
+  * **Upgrade Exposed Gradle dependencies to 1.0**
+  * Update JetBrains Exposed Gradle dependencies for the 1.0.0 migration. Upgrades dependency versions and handles the `exposed-migration` module split.
+* [org.openrewrite.kotlin.exposed.UpgradeToExposed_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/exposed/upgradetoexposed_1)
+  * **Migrate to JetBrains Exposed 1.0**
+  * Migrate from JetBrains Exposed 0.x to 1.0.0. This includes package reorganization (adding `v1` prefix), type moves between modules, class renames, method renames, and Gradle dependency updates. Some changes require manual intervention and are not covered by this recipe: `Table.uuid()` should be changed to `Table.javaUUID()` for `java.util.UUID` values, `DateColumnType` with constructor parameter `time=false` or `time=true` should be split into `JodaLocalDateColumnType` or `JodaLocalDateTimeColumnType`, `SqlExpressionBuilder.*` usages should be replaced with top-level function imports, and `Statement.execute()` calls should use `BlockingExecutable` wrapping.
+* [org.openrewrite.kotlin.kotlinx.ReplaceDeprecatedKotlinxMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/kotlinx/replacedeprecatedkotlinxmethods)
+  * **Replace deprecated `kotlinx` methods**
+  * Replace deprecated Kotlin extension library method calls with their recommended replacements, based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+* [org.openrewrite.kotlin.migrate.RemoveDeprecatedKotlinGradleProperties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/removedeprecatedkotlingradleproperties)
+  * **Remove deprecated Kotlin Gradle properties**
+  * Remove deprecated Kotlin Gradle properties from `gradle.properties`. `kotlin.experimental.coroutines` was removed in Kotlin 2.x.
+* [org.openrewrite.kotlin.migrate.RemoveRedundantKotlinStdlib](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/removeredundantkotlinstdlib)
+  * **Remove redundant kotlin-stdlib dependencies**
+  * Remove explicit `kotlin-stdlib`, `kotlin-stdlib-jdk7`, `kotlin-stdlib-jdk8`, and `kotlin-stdlib-common` dependencies. The Kotlin Gradle plugin has automatically included the stdlib since Kotlin 1.4, making explicit declarations redundant.
+* [org.openrewrite.kotlin.migrate.ReplaceDeprecatedAppendln](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replacedeprecatedappendln)
+  * **Replace deprecated `appendln` with `appendLine`**
+  * Replace `appendln()` with `appendLine()`. This was deprecated in Kotlin 1.4 and becomes an error in Kotlin 2.1.
+* [org.openrewrite.kotlin.migrate.ReplaceDeprecatedCapitalizeAndDecapitalize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replacedeprecatedcapitalizeanddecapitalize)
+  * **Replace deprecated `capitalize` and `decapitalize`**
+  * Replace `String.capitalize()` with `String.replaceFirstChar \{ if (it.isLowerCase()) it.titlecase() else it.toString() \}` and `String.decapitalize()` with `String.replaceFirstChar \{ it.lowercase() \}`. These were deprecated in Kotlin 1.5 and become errors in Kotlin 2.1.
+* [org.openrewrite.kotlin.migrate.ReplaceDeprecatedCharCaseConversions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replacedeprecatedcharcaseconversions)
+  * **Replace deprecated Char case conversions**
+  * Replace `Char.toLowerCase()` with `Char.lowercaseChar()` and `Char.toUpperCase()` with `Char.uppercaseChar()`. These were deprecated in Kotlin 1.5 and become errors in Kotlin 2.1.
+* [org.openrewrite.kotlin.migrate.ReplaceDeprecatedStringCaseConversions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replacedeprecatedstringcaseconversions)
+  * **Replace deprecated String case conversions**
+  * Replace `String.toLowerCase()` with `String.lowercase()` and `String.toUpperCase()` with `String.uppercase()`. These were deprecated in Kotlin 1.5 and become errors in Kotlin 2.1.
+* [org.openrewrite.kotlin.migrate.ReplaceEnumValuesFunctionWithEnumEntries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replaceenumvaluesfunctionwithenumentries)
+  * **Replace `enumValues&lt;T&gt;()` with `enumEntries&lt;T&gt;()`**
+  * Replace calls to `enumValues&lt;T&gt;()` with `enumEntries&lt;T&gt;()`. The `enumEntries` function returns an efficient immutable list instead of creating a new array. Deprecated since Kotlin 1.9, recommended replacement for Kotlin 2.x.
+* [org.openrewrite.kotlin.migrate.ReplaceEnumValuesWithEntries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replaceenumvalueswithentries)
+  * **Replace `Enum.values()` with `Enum.entries`**
+  * Replace calls to `Enum.values()` with the `Enum.entries` property. The `entries` property returns an efficient immutable list instead of creating a new array on each call. Deprecated since Kotlin 1.9, recommended replacement for Kotlin 2.x.
+* [org.openrewrite.kotlin.migrate.ReplaceKotlinOptionsWithCompilerOptions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replacekotlinoptionswithcompileroptions)
+  * **Replace `kotlinOptions` with `compilerOptions` in Gradle build files**
+  * Rename the deprecated `kotlinOptions` DSL block to `compilerOptions` in Gradle build files. The `kotlinOptions` DSL was deprecated in Kotlin 2.0 and removed in Kotlin 2.2.
+* [org.openrewrite.kotlin.migrate.UpgradeKotlinGradlePlugins](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlingradleplugins)
+  * **Upgrade Kotlin Gradle plugins to 2.x**
+  * Upgrade all `org.jetbrains.kotlin.*` Gradle plugins to Kotlin 2.x. This includes the core kotlin-jvm plugin as well as all official Kotlin Gradle plugins such as serialization, Spring, allopen, noarg, JPA, and parcelize.
+* [org.openrewrite.kotlin.migrate.UpgradeKotlinxCoroutines_1_10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxcoroutines_1_10)
+  * **Upgrade to `kotlinx-coroutines` 1.10**
+  * Upgrade kotlinx-coroutines to 1.10.x and replace deprecated method calls.
+* [org.openrewrite.kotlin.migrate.UpgradeKotlinxDatetime_0_7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxdatetime_0_7)
+  * **Migrate to `kotlinx-datetime` 0.7**
+  * Migrate from kotlinx-datetime 0.6.x to 0.7.x. This includes replacing `kotlinx.datetime.Instant` and `kotlinx.datetime.Clock` with their `kotlin.time` equivalents and replacing deprecated method calls.
+* [org.openrewrite.kotlin.migrate.UpgradeKotlinxSerialization_1_8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxserialization_1_8)
+  * **Upgrade to `kotlinx-serialization` 1.8**
+  * Upgrade kotlinx-serialization to 1.8.x and replace deprecated method calls.
+* [org.openrewrite.kotlin.migrate.UpgradeToKotlin2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradetokotlin2)
+  * **Migrate to Kotlin 2**
+  * Migrate deprecated Kotlin 1.x APIs to their Kotlin 2.x replacements and update Gradle build files for Kotlin 2.x compatibility. Deprecated APIs were deprecated in Kotlin 1.4-1.5 and become errors in Kotlin 2.1.
+* [org.openrewrite.kotlin.replace.ReplaceKotlinMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/replace/replacekotlinmethod)
+  * **Replace Kotlin method**
+  * Replaces Kotlin method calls based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
+
+
 ## rewrite-migrate-python
 
 * [org.openrewrite.python.migrate.FindAifcModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaifcmodule)
@@ -906,6 +1015,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.FindFunctoolsCmpToKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfunctoolscmptokey)
   * **Find `functools.cmp_to_key()` usage**
   * Find usage of `functools.cmp_to_key()` which is a Python 2 compatibility function. Consider using a key function directly.
+* [org.openrewrite.python.migrate.FindFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfutureimports)
+  * **Find `__future__` imports**
+  * Find `__future__` imports and add a search marker.
 * [org.openrewrite.python.migrate.FindHtmlParserUnescape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findhtmlparserunescape)
   * **Find removed `HTMLParser.unescape()` usage**
   * `HTMLParser.unescape()` was removed in Python 3.9. Use `html.unescape()` instead.
@@ -1005,6 +1117,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.MigrateAsyncioCoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migrateasynciocoroutine)
   * **Migrate `@asyncio.coroutine` to `async def`**
   * Migrate functions using the deprecated `@asyncio.coroutine` decorator to use `async def` syntax. Also transforms `yield from` to `await`. The decorator was removed in Python 3.11.
+* [org.openrewrite.python.migrate.MigrateToPyprojectToml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migratetopyprojecttoml)
+  * **Migrate to `pyproject.toml`**
+  * Migrate Python projects from `requirements.txt` and/or `setup.cfg` to `pyproject.toml` with `hatchling` build backend.
 * [org.openrewrite.python.migrate.ReplaceArrayFromstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearrayfromstring)
   * **Replace `array.fromstring()` with `array.frombytes()`**
   * Replace `fromstring()` with `frombytes()` on array objects. The fromstring() method was deprecated in Python 3.2 and removed in 3.14.
@@ -1317,6 +1432,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-program-analysis
 
+* [io.moderne.recipe.rewrite-program-analysis.InlineDeprecatedMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-program-analysis/inlinedeprecatedmethods)
+  * **Inline deprecated delegating methods**
+  * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
 * [org.openrewrite.analysis.java.FindNullPointerIssues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/findnullpointerissues)
   * **Find null pointer issues**
   * Detects potential null pointer dereferences using path-sensitive analysis to distinguish between definite NPEs, possible NPEs, and safe dereferences.
@@ -1369,15 +1487,36 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.AddDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/adddependency)
   * **Add Python dependency**
   * Add a dependency to the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.AddLiteralMethodArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/addliteralmethodargument)
+  * **Add literal method argument**
+  * Add a literal argument to method invocations matching a pattern.
 * [org.openrewrite.python.ChangeDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changedependency)
   * **Change Python dependency**
   * Change a dependency to a different package in `pyproject.toml`. Searches all dependency arrays. When `uv` is available, the `uv.lock` file is regenerated.
+* [org.openrewrite.python.ChangeImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changeimport)
+  * **Change import**
+  * Change a Python import from one module/name to another, updating all type attributions.
+* [org.openrewrite.python.ChangeMethodName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changemethodname)
+  * **Change method name**
+  * Rename method invocations matching a pattern.
+* [org.openrewrite.python.ChangePackage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changepackage)
+  * **Change package**
+  * Change package/module references from one name to another.
+* [org.openrewrite.python.ChangeType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changetype)
+  * **Change type**
+  * Change a type reference from one fully qualified name to another.
+* [org.openrewrite.python.DeleteMethodArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/deletemethodargument)
+  * **Delete method argument**
+  * Remove an argument from method invocations matching a pattern.
 * [org.openrewrite.python.RemoveDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/removedependency)
   * **Remove Python dependency**
   * Remove a dependency from the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
 * [org.openrewrite.python.RemovePass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/removepass)
   * **Remove redundant pass statements**
   * Remove redundant `pass` statements from Python code when there are other executable statements in the block.
+* [org.openrewrite.python.ReorderMethodArguments](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/reordermethodarguments)
+  * **Reorder method arguments**
+  * Reorder arguments in method invocations matching a pattern.
 * [org.openrewrite.python.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/upgradedependencyversion)
   * **Upgrade Python dependency version**
   * Upgrade the version constraint for a dependency in `[project].dependencies` in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
@@ -1657,15 +1796,30 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.MigrateHazelcastSpringSession](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratehazelcastspringsession)
   * **Migrate Spring Session Hazelcast to Hazelcast Spring Session**
   * Spring Boot 4.0 removed direct support for Spring Session Hazelcast. The Hazelcast team now maintains their own Spring Session integration. This recipe changes the dependency from `org.springframework.session:spring-session-hazelcast` to `com.hazelcast.spring:hazelcast-spring-session` and updates the package from `org.springframework.session.hazelcast` to `com.hazelcast.spring.session`.
+* [io.moderne.java.spring.boot4.MigrateMockMvcToAssertJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratemockmvctoassertj)
+  * **Migrate MockMvc to AssertJ assertions**
+  * Migrates Spring MockMvc tests from Hamcrest-style `andExpect()` assertions to AssertJ-style fluent assertions. Changes `MockMvc` to `MockMvcTester` and converts assertion chains.
+* [io.moderne.java.spring.boot4.MigrateRestAssured](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migraterestassured)
+  * **Add explicit version for REST Assured**
+  * REST Assured is no longer managed by Spring Boot 4.0. This recipe adds an explicit version to REST Assured dependencies.
 * [io.moderne.java.spring.boot4.MigrateSpringRetry](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
   * **Migrate Spring Retry to Spring Resilience**
-  * Handle spring-retry not longer managed by Spring Boot and the possible migration to Spring Core Resilience.
+  * Handle spring-retry no longer managed by Spring Boot and the possible migration to Spring Core Resilience.
 * [io.moderne.java.spring.boot4.MigrateSpringRetryToSpringFramework7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretrytospringframework7)
   * **Migrate `spring-retry` to Spring Framework resilience**
   * Migrate `spring-retry`s `@Retryable` and `@Backoff` annotation to Spring Framework 7 Resilience annotations.
 * [io.moderne.java.spring.boot4.MigrateToModularStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters-moderne-edition)
   * **Migrate to Spring Boot 4.0 modular starters**
   * Remove monolithic starters and adds the necessary Spring Boot 4.0 starter dependencies based on package usage, where any spring-boot-starter was used previously.
+* [io.moderne.java.spring.boot4.MockMvcAssertionsToAssertJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/mockmvcassertionstoassertj)
+  * **Migrate MockMvc `andExpect()` chains to AssertJ assertions**
+  * Converts MockMvc Hamcrest-style `andExpect()` assertion chains to AssertJ-style fluent assertions using `assertThat()`. Handles status, content, JSON path, header, redirect, and forward assertions.
+* [io.moderne.java.spring.boot4.MockMvcRequestBuildersToMockMvcTester](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/mockmvcrequestbuilderstomockmvctester)
+  * **Migrate `MockMvcRequestBuilders` to `MockMvcTester` request methods**
+  * Converts `mockMvcTester.perform(get(&quot;/api&quot;).param(&quot;k&quot;,&quot;v&quot;))` to `mockMvcTester.get().uri(&quot;/api&quot;).param(&quot;k&quot;,&quot;v&quot;)`, removing the `perform()` wrapper and `MockMvcRequestBuilders` static method calls.
+* [io.moderne.java.spring.boot4.MockMvcToMockMvcTester](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/mockmvctomockmvctester)
+  * **Migrate `MockMvc` to `MockMvcTester`**
+  * Converts `MockMvc` fields and initialization to `MockMvcTester`. Changes field types, renames fields from `mockMvc` to `mockMvcTester`, and converts `MockMvcBuilders.standaloneSetup().build()` to `MockMvcTester.of()` and `MockMvcBuilders.webAppContextSetup().build()` to `MockMvcTester.from()`.
 * [io.moderne.java.spring.boot4.ModuleHasMonolithicStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulehasmonolithicstarter)
   * **Module has monolithic Spring Boot starter**
   * Precondition that matches modules with the monolithic Spring Boot starters that need to be migrated to modular starters. Matches the production monolithic spring-boot-starter and spring-boot-starter-classic, but not specific modular starters like spring-boot-starter-test or spring-boot-starter-ldap.
@@ -1687,9 +1841,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.RemoveHttpMessageConvertersAutoConfigurationReferences](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removehttpmessageconvertersautoconfigurationreferences)
   * **Remove `HttpMessageConvertersAutoConfiguration` references**
   * Removes references to the deprecated `HttpMessageConvertersAutoConfiguration` class which was removed in Spring Boot 4.0. For `@AutoConfigureAfter` and `@AutoConfigureBefore` annotations, the reference is removed. For `@Import` annotations, a TODO comment is added since manual migration may be required.
+* [io.moderne.java.spring.boot4.RemoveKafkaPropertiesSslBundlesParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removekafkapropertiessslbundlesparameter)
+  * **Remove `SslBundles` parameter from `KafkaProperties` build methods**
+  * In Spring Boot 4.0, the `SslBundles` parameter was removed from `KafkaProperties.buildProducerProperties`, `buildConsumerProperties`, `buildAdminProperties`, and `buildStreamsProperties`. This recipe removes the argument from method calls.
 * [io.moderne.java.spring.boot4.RemoveSpringPulsarReactive](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringpulsarreactive)
   * **Remove Spring Pulsar Reactive support**
   * Spring Boot 4.0 removed support for Spring Pulsar Reactive as it is no longer maintained. This recipe removes the Spring Pulsar Reactive dependencies.
+* [io.moderne.java.spring.boot4.RemoveZipkinAutoConfigurationExclude](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removezipkinautoconfigurationexclude)
+  * **Remove `ZipkinAutoConfiguration`**
+  * Zipkin is no longer auto-configured by default in Spring Boot 4.0; remove references to it from exclusions on annotations.
 * [io.moderne.java.spring.boot4.ReplaceDeprecatedAutoconfigureMongoApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedautoconfiguremongoapi)
   * **Replace deprecated `org.springframework.boot.autoconfigure.mongo` API**
   * Replace deprecated `org.springframework.boot.autoconfigure.mongo` API.
@@ -1732,6 +1892,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework.AddSetUseSuffixPatternMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/addsetusesuffixpatternmatch)
   * **Add `setUseSuffixPatternMatch(true)` in Spring MVC configuration**
   * In Spring Framework 5.2.4 and earlier, suffix pattern matching was enabled by default. This meant a controller method mapped to `/users` would also match `/users.json`, `/users.xml`, etc. Spring Framework 5.3 deprecated this behavior and changed the default to false. This recipe adds `setUseSuffixPatternMatch(true)` to `WebMvcConfigurer` implementations to preserve the legacy behavior during migration. Note: This only applies to Spring MVC; Spring WebFlux does not support suffix pattern matching.
+* [io.moderne.java.spring.framework.AddSetUseSuffixPatternMatchIfPreSpring53](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/addsetusesuffixpatternmatchifprespring53)
+  * **Add `setUseSuffixPatternMatch(true)` for pre-Spring Framework 5.3 projects**
+  * Only adds `setUseSuffixPatternMatch(true)` when the project is on Spring Framework &lt; 5.3, where suffix pattern matching was enabled by default. Projects already on 5.3+ have been running with the new default (false) and should not get this configuration added.
 * [io.moderne.java.spring.framework.FindDeprecatedPathMatcherUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/finddeprecatedpathmatcherusage)
   * **Find deprecated `PathMatcher` usage**
   * In Spring Framework 7.0, `PathMatcher` and `AntPathMatcher` are deprecated in favor of `PathPatternParser`. This recipe finds usages of the deprecated `AntPathMatcher` class that may require manual migration to `PathPatternParser`.

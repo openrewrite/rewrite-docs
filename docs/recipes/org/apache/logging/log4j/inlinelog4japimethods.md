@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.apache.logging.log4j.InlineLog4jApiMethods**
 
-_Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.preconditions: - org.openrewrite.Singleton_
+_Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table._
 
 ## Recipe source
 
@@ -61,7 +61,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.apache.logging.log4j.InlineLog4jApiMethods
 displayName: Inline `log4j-api-2` methods annotated with `@InlineMe`
 description: |
-  Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.preconditions: - org.openrewrite.Singleton
+  Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 recipeList:
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)

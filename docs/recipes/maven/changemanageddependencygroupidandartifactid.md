@@ -25,8 +25,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | oldGroupId | The old groupId to replace. The groupId is the first part of a managed dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `org.openrewrite.recipe` |
 | `String` | oldArtifactId | The old artifactId to replace. The artifactId is the second part of a managed dependency coordinate `com.google.guava:guava:VERSION`. Supports glob expressions. | `rewrite-testing-frameworks` |
-| `String` | newGroupId | The new groupId to use. | `corp.internal.openrewrite.recipe` |
-| `String` | newArtifactId | The new artifactId to use. | `rewrite-testing-frameworks` |
+| `String` | newGroupId | *Optional*. The new groupId to use. Defaults to the existing group id. | `corp.internal.openrewrite.recipe` |
+| `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. | `rewrite-testing-frameworks` |
 | `String` | newVersion | *Optional*. The new version to use. | `2.0.0` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 

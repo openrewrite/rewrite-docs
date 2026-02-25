@@ -54,6 +54,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace Spring `@Value` with CDI `@ConfigProperty`](../../quarkus/spring/valuetocdiconfigproperty)
 * [Convert Spring Web annotations to JAX-RS](../../quarkus/spring/webtojaxrs)
 * [Remove Spring Boot 3.x parent POM](../../quarkus/spring/removespringbootparent)
+* [Migrate Spring Validation to Quarkus](../../quarkus/spring/migratespringvalidation)
+* [Migrate Spring Boot Actuator to Quarkus Health and Metrics](../../quarkus/spring/migratespringactuator)
+* [Migrate Spring Boot Testing to Quarkus Testing](../../quarkus/spring/migratespringtesting)
+* [Migrate @ConfigurationProperties to Quarkus @ConfigMapping](../../quarkus/spring/migrateconfigurationproperties)
+* [Migrate Spring @Transactional to Jakarta @Transactional](../../quarkus/spring/migratespringtransactional)
+* [Migrate Spring Events to CDI Events](../../quarkus/spring/migratespringevents)
+* [Migrate JPA Entities to Panache Entities](../../quarkus/spring/migrateentitiestopanache)
+* [Migrate Spring Data MongoDB to Quarkus Panache MongoDB](../../quarkus/spring/migratespringdatamongodb)
+* [Migrate Spring Cloud Config Client to Quarkus Config](../../quarkus/spring/migratespringcloudconfig)
+* [Migrate Additional Spring Web Parameter Annotations](../../quarkus/spring/migraterequestparameteredgecases)
+* [Migrate Spring Cloud Service Discovery to Quarkus](../../quarkus/spring/migratespringcloudservicediscovery)
+* [Remove Spring Boot DevTools](../../quarkus/spring/migratespringbootdevtools)
+* [Customize Quarkus BOM Version](../../quarkus/spring/customizequarkusversion)
 
 </TabItem>
 
@@ -91,6 +104,19 @@ recipeList:
   - org.openrewrite.quarkus.spring.ValueToCdiConfigProperty
   - org.openrewrite.quarkus.spring.WebToJaxRs
   - org.openrewrite.quarkus.spring.RemoveSpringBootParent
+  - org.openrewrite.quarkus.spring.MigrateSpringValidation
+  - org.openrewrite.quarkus.spring.MigrateSpringActuator
+  - org.openrewrite.quarkus.spring.MigrateSpringTesting
+  - org.openrewrite.quarkus.spring.MigrateConfigurationProperties
+  - org.openrewrite.quarkus.spring.MigrateSpringTransactional
+  - org.openrewrite.quarkus.spring.MigrateSpringEvents
+  - org.openrewrite.quarkus.spring.MigrateEntitiesToPanache
+  - org.openrewrite.quarkus.spring.MigrateSpringDataMongodb
+  - org.openrewrite.quarkus.spring.MigrateSpringCloudConfig
+  - org.openrewrite.quarkus.spring.MigrateRequestParameterEdgeCases
+  - org.openrewrite.quarkus.spring.MigrateSpringCloudServiceDiscovery
+  - org.openrewrite.quarkus.spring.MigrateSpringBootDevTools
+  - org.openrewrite.quarkus.spring.CustomizeQuarkusVersion
 
 ```
 </TabItem>

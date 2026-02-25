@@ -36,12 +36,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+* [Customize Quarkus BOM Version](/recipes/quarkus/spring/customizequarkusversion.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
 * [Migrate to 4.10.6](/recipes/org/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
-* [Migrate to 4.14.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.18.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrate to Java 17](/recipes/io/quarkus/updates/core/quarkus37/upgradetojava17.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to Java 17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)

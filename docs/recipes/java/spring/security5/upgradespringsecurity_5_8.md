@@ -48,6 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Convert `ServerHttpSecurity` chained calls into Lambda DSL](../../../java/spring/boot2/serverhttpsecuritylambdadsl)
 * [Convert `HeadersConfigurer` chained calls into Lambda DSL](../../../java/spring/boot2/headersconfigurerlambdadsl)
 * [Replace `HttpSecurity.authorizeRequests(...)` with `HttpSecurity.authorizeHttpRequests(...)` and `ExpressionUrlAuthorizationConfigurer`, `AbstractInterceptUrlConfigurer` with `AuthorizeHttpRequestsConfigurer`, etc](../../../java/spring/security5/authorizehttprequests)
+* [Convert `requestMatchers` chain to `securityMatcher`](../../../java/spring/security5/convertsecuritymatcherstosecuritymatcher)
 * [Use the new `requestMatchers` methods](../../../java/spring/security5/usenewrequestmatchers)
 * [Use the new `securityMatcher()` method](../../../java/spring/security5/usenewsecuritymatchers)
 * [Use new `Pbkdf2PasswordEncoder` factory methods](../../../java/spring/security5/updatepbkdf2passwordencoder)
@@ -87,6 +88,7 @@ recipeList:
   - org.openrewrite.java.spring.boot2.ServerHttpSecurityLambdaDsl
   - org.openrewrite.java.spring.boot2.HeadersConfigurerLambdaDsl
   - org.openrewrite.java.spring.security5.AuthorizeHttpRequests
+  - org.openrewrite.java.spring.security5.ConvertSecurityMatchersToSecurityMatcher
   - org.openrewrite.java.spring.security5.UseNewRequestMatchers
   - org.openrewrite.java.spring.security5.UseNewSecurityMatchers
   - org.openrewrite.java.spring.security5.UpdatePbkdf2PasswordEncoder

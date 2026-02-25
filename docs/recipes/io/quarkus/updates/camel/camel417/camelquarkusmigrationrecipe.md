@@ -17,6 +17,10 @@ _Migrates `camel 4.16` Quarkus application to `camel 4.17`._
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
@@ -25,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrates `camel 4.16` application to `camel 4.17`](../../../../../org/apache/camel/upgrade/camel417/camelmigrationrecipe)
+* [Rename package name](../../../../../java/changepackage)
+  * oldPackageName: `org.apache.camel.test.junit5`
+  * newPackageName: `org.apache.camel.test.junit6`
+* [Change Gradle or Maven dependency](../../../../../java/dependencies/changedependency)
+  * oldGroupId: `org.apache.camel.quarkus`
+  * oldArtifactId: `camel-quarkus-junit5`
+  * newArtifactId: `camel-quarkus-junit`
 
 </TabItem>
 
@@ -39,6 +50,13 @@ description: |
   Migrates `camel 4.16` Quarkus application to `camel 4.17`.
 recipeList:
   - org.apache.camel.upgrade.camel417.CamelMigrationRecipe
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.camel.test.junit5
+      newPackageName: org.apache.camel.test.junit6
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.apache.camel.quarkus
+      oldArtifactId: camel-quarkus-junit5
+      newArtifactId: camel-quarkus-junit
 
 ```
 </TabItem>

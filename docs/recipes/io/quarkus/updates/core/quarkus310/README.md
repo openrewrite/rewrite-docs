@@ -8,9 +8,6 @@ description: Quarkus310 OpenRewrite recipes.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [io.quarkus.updates.core.quarkus310.FlywayDb2](./flywaydb2.md)
-* [io.quarkus.updates.core.quarkus310.FlywayDerby](./flywayderby.md)
-* [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](./flywaypostgresql.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageSimpleProperties](./updateconfigpackagesimpleproperties.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar](./updateconfigpackagetypefastjar.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeJar](./updateconfigpackagetypejar.md)
@@ -22,6 +19,9 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Adjust the package properties](./adjustpackageproperty.md)
+* [io.quarkus.updates.core.quarkus310.FlywayDb2](./flywaydb2.md)
+* [io.quarkus.updates.core.quarkus310.FlywayDerby](./flywayderby.md)
+* [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](./flywaypostgresql.md)
 * [io.quarkus.updates.core.quarkus310.SyncHibernateJpaModelgenVersionWithBOM](./synchibernatejpamodelgenversionwithbom.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackagePom](./updateconfigpackagepom.md)
 

@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newArtifactId | The new artifactId to use. | `jackson-custom` |
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. | `api` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade Exposed Gradle dependencies to 1.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/exposed/exposedupgradegradledependencies)
+
 ## Example
 
 ###### Parameters

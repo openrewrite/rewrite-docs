@@ -39,6 +39,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * upgradeRecipe: `org.openrewrite.java.migrate.UpgradeToJava25`
 * [Move to JUnit 6](../devcenter/junitjupiterupgrade)
 * [OWASP top ten](../devcenter/securitystarter)
+* [Find organization statistics](../devcenter/findorganizationstatistics)
+* [Find committers on repositories](../search/findcommitters)
 
 </TabItem>
 
@@ -63,6 +65,8 @@ recipeList:
       upgradeRecipe: org.openrewrite.java.migrate.UpgradeToJava25
   - io.moderne.devcenter.JUnitJupiterUpgrade
   - io.moderne.devcenter.SecurityStarter
+  - io.moderne.devcenter.FindOrganizationStatistics
+  - org.openrewrite.search.FindCommitters
 
 ```
 </TabItem>
@@ -316,6 +320,51 @@ _Security issues in the repository._
 | ----------- | ----------- |
 | Ordinal | The ordinal position of this issue relative to other issues. |
 | Issue name | The name of the security issue. |
+
+</TabItem>
+
+<TabItem value="io.moderne.devcenter.table.OrganizationStatistics" label="OrganizationStatistics">
+
+### Organization statistics
+**io.moderne.devcenter.table.OrganizationStatistics**
+
+_Per-repository statistics aggregated at the organization level._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Line count | The number of lines of code in this repository. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.DistinctCommitters" label="DistinctCommitters">
+
+### Repository committers
+**org.openrewrite.table.DistinctCommitters**
+
+_The distinct set of committers per repository._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Name | The name of the committer. |
+| Email | The email of the committer. |
+| Last commit | The date of this committer's last commit. |
+| Number of commits | The number of commits made by this committer. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.CommitsByDay" label="CommitsByDay">
+
+### Commits by day
+**org.openrewrite.table.CommitsByDay**
+
+_The commit activity by day by committer._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Name | The name of the committer. |
+| Email | The email of the committer. |
+| Date | The date of the day. |
+| Number of commits | The number of commits made by this committer on this day. |
 
 </TabItem>
 

@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-compiler-plugin`
   * newVersion: `3.6.2`
+  * addVersionIfMissing: `true`
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
   * minimumJavaMajorVersion: `11`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
@@ -69,6 +70,7 @@ recipeList:
       groupId: org.apache.maven.plugins
       artifactId: maven-compiler-plugin
       newVersion: 3.6.2
+      addVersionIfMissing: true
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
       minimumJavaMajorVersion: 11
   - org.openrewrite.maven.UpgradePluginVersion:
