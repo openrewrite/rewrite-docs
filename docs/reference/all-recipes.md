@@ -6,14 +6,14 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4740
+Total recipes: 4795
 
 
 ## io.moderne.recipe:rewrite-devcenter
 
 _License: Moderne Source Available License_
 
-_7 recipes_
+_8 recipes_
 
 * [io.moderne.devcenter.BuildToolCard](/recipes/devcenter/buildtoolcard.md)
   * **Build tool**
@@ -21,6 +21,9 @@ _7 recipes_
 * [io.moderne.devcenter.DependencyVulnerabilityCheck](/recipes/devcenter/dependencyvulnerabilitycheck.md)
   * **Vulnerabilities status**
   * Determine the current state of a repository relative to its vulnerabilities.
+* [io.moderne.devcenter.FindOrganizationStatistics](/recipes/devcenter/findorganizationstatistics.md)
+  * **Find organization statistics**
+  * Counts lines of code per repository for organization-level statistics.
 * [io.moderne.devcenter.JUnitJupiterUpgrade](/recipes/devcenter/junitjupiterupgrade.md)
   * **Move to JUnit 6**
   * Move to JUnit Jupiter.
@@ -370,7 +373,7 @@ _5 recipes_
 
 _License: Apache License Version 2.0_
 
-_10 recipes_
+_14 recipes_
 
 * [org.openrewrite.java.dropwizard.annotation.AddClassAnnotationIfAnnotationExists](/recipes/java/dropwizard/annotation/addclassannotationifannotationexists.md)
   * **Add annotation if target annotations exist**
@@ -402,6 +405,18 @@ _10 recipes_
 * [org.openrewrite.java.dropwizard.method.RemoveUnnecessarySuperCalls](/recipes/java/dropwizard/method/removeunnecessarysupercalls.md)
   * **Remove `super` calls when the class does not extend another class**
   * Removes calls to `super(...)` or `super.someMethod(...)` if the class does not have a real superclass besides `java.lang.Object`.
+* [org.openrewrite.java.dropwizard.test.DropwizardRulesJUnit4ToSpringBoot](/recipes/java/dropwizard/test/dropwizardrulesjunit4tospringboot.md)
+  * **Replace Dropwizard rules with Spring Boot test configuration**
+  * Remove Dropwizard JUnit4 rules and add Spring Boot test annotations and extensions.
+* [org.openrewrite.java.dropwizard.test.MethodLambdaExtractor](/recipes/java/dropwizard/test/methodlambdaextractor.md)
+  * **Extract lambda expressions**
+  * Extracts the body of lambda expressions and inlines them into the surrounding code.
+* [org.openrewrite.java.dropwizard.test.MockitoVariableToMockBean](/recipes/java/dropwizard/test/mockitovariabletomockbean.md)
+  * **Convert Mockito mock() to @MockBean**
+  * Converts static final Mockito mock fields to Spring Boot @MockBean fields.
+* [org.openrewrite.java.dropwizard.test.TransformDropwizardRuleInvocations](/recipes/java/dropwizard/test/transformdropwizardruleinvocations.md)
+  * **Convert dropwizard appRule to restTemplate**
+  * Transforms Dropwizard AppRule testing calls to their equivalent RestTemplate calls.
 
 ## org.openrewrite.recipe:rewrite-feature-flags
 
@@ -622,7 +637,7 @@ _42 recipes_
 
 _License: Moderne Source Available License_
 
-_8 recipes_
+_10 recipes_
 
 * [org.openrewrite.gitlab.AddComponent](/recipes/gitlab/addcomponent.md)
   * **Add GitLab component**
@@ -645,6 +660,12 @@ _8 recipes_
 * [org.openrewrite.gitlab.search.FindComponent](/recipes/gitlab/search/findcomponent.md)
   * **Find GitLab Component**
   * Find a GitLab Component in use.
+* [org.openrewrite.gitlab.search.FindDeprecatedExcept](/recipes/gitlab/search/finddeprecatedexcept.md)
+  * **Find deprecated `except` keyword**
+  * Find usages of the deprecated `except` keyword in `.gitlab-ci.yml`. The `except` keyword is deprecated in favor of `rules`.
+* [org.openrewrite.gitlab.search.FindDeprecatedOnly](/recipes/gitlab/search/finddeprecatedonly.md)
+  * **Find deprecated `only` keyword**
+  * Find usages of the deprecated `only` keyword in `.gitlab-ci.yml`. The `only` keyword is deprecated in favor of `rules`.
 * [org.openrewrite.gitlab.search.FindTemplate](/recipes/gitlab/search/findtemplate.md)
   * **Find GitLab Template**
   * Find a GitLab Template in use.
@@ -684,8 +705,11 @@ _8 recipes_
 
 _License: Apache License Version 2.0_
 
-_14 recipes_
+_16 recipes_
 
+* [org.openrewrite.java.jackson.IOExceptionToJacksonException](/recipes/java/jackson/ioexceptiontojacksonexception.md)
+  * **Replace `IOException` with `JacksonException` in catch clauses**
+  * In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`.
 * [org.openrewrite.java.jackson.Jackson3JsonNodeFieldIterators](/recipes/java/jackson/jackson3jsonnodefielditerators.md)
   * **Migrate `JSONNode` field iterator for Jackson 3**
   * `JSONNode` fields are using `Collections` instead of `Iterator` singe Jackson 3. To mimic Jackson 2s behavior an additional call to `Collection#iterator()`is needed.
@@ -698,6 +722,9 @@ _14 recipes_
 * [org.openrewrite.java.jackson.RemoveRedundantJsonPropertyValue](/recipes/java/jackson/removeredundantjsonpropertyvalue.md)
   * **Remove redundant `@JsonProperty` argument**
   * Remove `@JsonProperty` annotation or value attribute when the value matches the argument name.
+* [org.openrewrite.java.jackson.ReplaceJsonIgnoreWithJsonSetter](/recipes/java/jackson/replacejsonignorewithjsonsetter.md)
+  * **Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields**
+  * In Jackson 3, `@JsonIgnore` on fields initialized with empty collections causes the field value to become `null` instead of maintaining the empty collection. This recipe replaces `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on `Map` and `Collection` fields that have an empty collection initializer.
 * [org.openrewrite.java.jackson.ReplaceStreamWriteCapability](/recipes/java/jackson/replacestreamwritecapability.md)
   * **Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`**
   * In Jackson 3, `JsonGenerator.canWriteBinaryNatively()` and `canWriteFormattedNumbers()` were removed and replaced with the `StreamWriteCapability` enum. This recipe updates these method calls to use `getWriteCapabilities().isEnabled(StreamWriteCapability.*)` instead.
@@ -831,11 +858,41 @@ _10 recipes_
 
 _License: Moderne Source Available License_
 
-_1 recipe_
+_11 recipes_
 
-* [org.openrewrite.java.joda.time.JodaTimeRecipe](/recipes/java/joda/time/jodatimerecipe.md)
-  * **Migrate Joda-Time to Java time**
-  * Prefer the Java standard library over third-party usage of Joda Time.
+* [org.openrewrite.java.joda.time.JodaAbstractInstantToJavaTime](/recipes/java/joda/time/jodaabstractinstanttojavatime.md)
+  * **Migrate Joda-Time `AbstractInstant` to Java time**
+  * Migrates Joda-Time `AbstractInstant` method calls to their Java time equivalents.
+* [org.openrewrite.java.joda.time.JodaDateMidnightToJavaTime](/recipes/java/joda/time/jodadatemidnighttojavatime.md)
+  * **Migrate Joda-Time `DateMidnight` to Java time**
+  * Migrates `org.joda.time.DateMidnight` constructor and `now()` calls to `java.time.LocalDate.now().atStartOfDay(...)`.
+* [org.openrewrite.java.joda.time.JodaDateTimeToJavaTime](/recipes/java/joda/time/jodadatetimetojavatime.md)
+  * **Migrate Joda-Time `DateTime` to `java.time.ZonedDateTime`**
+  * Migrates Joda-Time `DateTime` constructors and instance methods to the equivalent `java.time.ZonedDateTime` calls.
+* [org.openrewrite.java.joda.time.JodaDateTimeZoneToJavaTime](/recipes/java/joda/time/jodadatetimezonetojavatime.md)
+  * **Migrate Joda-Time `DateTimeZone` to Java time**
+  * Migrates `org.joda.time.DateTimeZone` method calls to `java.time.ZoneOffset` and `java.time.ZoneId`.
+* [org.openrewrite.java.joda.time.JodaDurationToJavaTime](/recipes/java/joda/time/jodadurationtojavatime.md)
+  * **Migrate Joda-Time `Duration` to Java time**
+  * Migrates `org.joda.time.Duration` constructor and method calls to `java.time.Duration`.
+* [org.openrewrite.java.joda.time.JodaFormatterToJavaTime](/recipes/java/joda/time/jodaformattertojavatime.md)
+  * **Migrate Joda-Time formatter to Java time**
+  * Migrates Joda-Time `DateTimeFormatter` and `DateTimeFormat` method calls to their Java time equivalents.
+* [org.openrewrite.java.joda.time.JodaInstantToJavaTime](/recipes/java/joda/time/jodainstanttojavatime.md)
+  * **Migrate Joda-Time `Instant` to Java time**
+  * Migrates `org.joda.time.Instant` constructor calls to `java.time.Instant.now()`.
+* [org.openrewrite.java.joda.time.JodaIntervalToJavaTime](/recipes/java/joda/time/jodaintervaltojavatime.md)
+  * **Migrate Joda-Time `Interval` to Java time**
+  * Migrates `org.joda.time.Interval` constructors and methods to their Java time equivalents using ThreeTen-Extra.
+* [org.openrewrite.java.joda.time.JodaLocalDateToJavaTime](/recipes/java/joda/time/jodalocaldatetojavatime.md)
+  * **Migrate Joda-Time `LocalDate` to `java.time.LocalDate`**
+  * Migrates Joda-Time `LocalDate` constructors and instance methods to the equivalent `java.time.LocalDate` calls.
+* [org.openrewrite.java.joda.time.JodaLocalTimeToJavaTime](/recipes/java/joda/time/jodalocaltimetojavatime.md)
+  * **Migrate Joda-Time `LocalTime` to `java.time.LocalTime`**
+  * Migrates Joda-Time `LocalTime` constructors and instance methods to the equivalent `java.time.LocalTime` calls.
+* [org.openrewrite.java.joda.time.JodaTimePeriodToJavaTime](/recipes/java/joda/time/jodatimeperiodtojavatime.md)
+  * **Migrate Joda-Time `Days`, `Hours`, `Minutes`, `Seconds` to Java time**
+  * Migrates `org.joda.time.Days`, `Hours`, `Minutes`, and `Seconds` to `java.time.temporal.ChronoUnit` and `java.time.Duration`.
 
 ## org.openrewrite.recipe:rewrite-liberty
 
@@ -866,7 +923,7 @@ _6 recipes_
 
 _License: Moderne Source Available License_
 
-_101 recipes_
+_99 recipes_
 
 * [org.openrewrite.java.logging.ArgumentArrayToVarargs](/recipes/java/logging/argumentarraytovarargs.md)
   * **Unpack Logger method `new Object[] \{...\}` into varargs**
@@ -1012,15 +1069,9 @@ _101 recipes_
 * [org.openrewrite.java.logging.slf4j.CompleteExceptionLogging](/recipes/java/logging/slf4j/completeexceptionlogging.md)
   * **Enhances logging of exceptions by including the full stack trace in addition to the exception message**
   * It is a common mistake to call `Exception.getMessage()` when passing an exception into a log method. Not all exception types have useful messages, and even if the message is useful this omits the stack trace. Including a complete stack trace of the error along with the exception message in the log allows developers to better understand the context of the exception and identify the source of the error more quickly and accurately.  If the method invocation includes any call to `Exception.getMessage()` or `Exception.getLocalizedMessage()` and not an exception is already passed as the last parameter to the log method, then we will append the exception as the last parameter in the log method.
-* [org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes](/recipes/java/logging/slf4j/julgetloggertologgerfactoryrecipes.md)
+* [org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactory](/recipes/java/logging/slf4j/julgetloggertologgerfactory.md)
   * **Replace JUL Logger creation with SLF4J LoggerFactory**
-  * Replace calls to `Logger.getLogger` with `LoggerFactory.getLogger`.
-* [org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassCanonicalNameToLoggerFactoryRecipe](/recipes/java/logging/slf4j/julgetloggertologgerfactoryrecipes$getloggerclasscanonicalnametologgerfactoryrecipe.md)
-  * **Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`**
-  * Replace calls to `java.util.logging.Logger.getLogger(Some.class.getCanonicalName())` with `org.slf4j.LoggerFactory.getLogger(Some.class)`.
-* [org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes$GetLoggerClassNameToLoggerFactoryRecipe](/recipes/java/logging/slf4j/julgetloggertologgerfactoryrecipes$getloggerclassnametologgerfactoryrecipe.md)
-  * **Replace JUL `Logger.getLogger(Some.class.getName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`**
-  * Replace calls to `java.util.logging.Logger.getLogger(Some.class.getName())` with `org.slf4j.LoggerFactory.getLogger(Some.class)`.
+  * Replace calls to `Logger.getLogger(Some.class.getName())` and `Logger.getLogger(Some.class.getCanonicalName())` with `LoggerFactory.getLogger(Some.class)`.
 * [org.openrewrite.java.logging.slf4j.JulIsLoggableToIsEnabledRecipes](/recipes/java/logging/slf4j/julisloggabletoisenabledrecipes.md)
   * **Replace JUL active Level check with corresponding SLF4J method calls**
   * Replace calls to `Logger.isLoggable(Level)` with the corresponding SLF4J method calls.
@@ -2018,7 +2069,7 @@ _31 recipes_
 
 _License: Moderne Source Available License_
 
-_143 recipes_
+_145 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -2226,7 +2277,7 @@ _143 recipes_
   * This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default value set to false. This means that previously, a controller `@GetMapping(&quot;/some/greeting&quot;)` would match both `GET /some/greeting` and `GET /some/greeting/`, but it doesn't match `GET /some/greeting/` anymore by default and will result in an HTTP 404 error. This recipe is to maintain trailing slash in all HTTP url mappings.
 * [org.openrewrite.java.spring.boot3.MigrateHooksToReactorContextProperty](/recipes/java/spring/boot3/migratehookstoreactorcontextproperty.md)
   * **Use `spring.reactor.context-propagation` property**
-  * Replace `Hooks.enableAutomaticContextPropagation()` with `spring.reactor.context-propagation=true`.
+  * Replace `Hooks.enableAutomaticContextPropagation()` with `spring.reactor.context-propagation=auto`.
 * [org.openrewrite.java.spring.boot3.MigrateWebMvcTagsToObservationConvention](/recipes/java/spring/boot3/migratewebmvctagstoobservationconvention.md)
   * **Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`**
   * Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention` as part of Spring Boot 3.2 removals.
@@ -2272,6 +2323,9 @@ _143 recipes_
 * [org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository](/recipes/java/spring/data/migratequerydsljparepository.md)
   * **Use `QuerydslPredicateExecutor&lt;T&gt;`**
   * `QuerydslJpaRepository&lt;T, ID extends Serializable&gt;` was deprecated in Spring Data 2.1.
+* [org.openrewrite.java.spring.data.MigrateRepositoryRestConfigurerAdapter](/recipes/java/spring/data/migraterepositoryrestconfigureradapter.md)
+  * **Replace `RepositoryRestConfigurerAdapter` with `RepositoryRestConfigurer`**
+  * Since 3.1, implement RepositoryRestConfigurer directly.
 * [org.openrewrite.java.spring.data.RefactorSimpleMongoDbFactory](/recipes/java/spring/data/refactorsimplemongodbfactory.md)
   * **Use `new SimpleMongoClientDbFactory(String)`**
   * Replace usage of deprecated `new SimpleMongoDbFactory(new MongoClientURI(String))` with `new SimpleMongoClientDbFactory(String)`.
@@ -2389,6 +2443,9 @@ _143 recipes_
 * [org.openrewrite.java.spring.security5.AuthorizeHttpRequests](/recipes/java/spring/security5/authorizehttprequests.md)
   * **Replace `HttpSecurity.authorizeRequests(...)` with `HttpSecurity.authorizeHttpRequests(...)` and `ExpressionUrlAuthorizationConfigurer`, `AbstractInterceptUrlConfigurer` with `AuthorizeHttpRequestsConfigurer`, etc**
   * Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 with `HttpSecurity.authorizeHttpRequests(...)` and all method calls on the resultant object respectively. Replace deprecated `AbstractInterceptUrlConfigurer` and its deprecated subclasses with `AuthorizeHttpRequestsConfigurer` and its corresponding subclasses.
+* [org.openrewrite.java.spring.security5.ConvertSecurityMatchersToSecurityMatcher](/recipes/java/spring/security5/convertsecuritymatcherstosecuritymatcher.md)
+  * **Convert `requestMatchers` chain to `securityMatcher`**
+  * Converts `HttpSecurity.requestMatchers().antMatchers(...)` and similar patterns to `HttpSecurity.securityMatcher(...)`. The no-arg `requestMatchers()` method returns a `RequestMatcherConfigurer` that is not a configurer in the lambda DSL sense, so it should be replaced with the `securityMatcher()` method introduced in Spring Security 5.8.
 * [org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurity](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurity.md)
   * **Replace global method security with method security**
   * `@EnableGlobalMethodSecurity` and `&lt;global-method-security&gt;` are deprecated in favor of `@EnableMethodSecurity` and `&lt;method-security&gt;`, respectively. The new annotation and XML element activate Spring’s pre-post annotations by default and use AuthorizationManager internally.
@@ -2454,11 +2511,14 @@ _143 recipes_
 
 _License: Moderne Source Available License_
 
-_7 recipes_
+_10 recipes_
 
 * [org.openrewrite.quarkus.spring.AddQuarkusMavenPlugin](/recipes/quarkus/spring/addquarkusmavenplugin.md)
   * **Add Quarkus Maven plugin**
   * Adds the Quarkus Maven plugin using the same version as the quarkus-bom in dependency management.
+* [org.openrewrite.quarkus.spring.JpaEntityToPanacheEntity](/recipes/quarkus/spring/jpaentitytopanacheentity.md)
+  * **Convert JPA Entity to Panache Entity**
+  * Transforms standard JPA entities to extend Quarkus PanacheEntity, enabling the Active Record pattern with built-in CRUD operations.
 * [org.openrewrite.quarkus.spring.RemoveSpringBootParent](/recipes/quarkus/spring/removespringbootparent.md)
   * **Remove Spring Boot 3.x parent POM**
   * Removes the Spring Boot 3.x starter parent POM from Maven projects.
@@ -2471,6 +2531,12 @@ _7 recipes_
 * [org.openrewrite.quarkus.spring.SpringBeanToCdiProduces](/recipes/quarkus/spring/springbeantocdiproduces.md)
   * **Replace Spring `@Bean` with CDI `@Produces`**
   * Transform Spring `@Bean` methods to CDI `@Produces` methods with appropriate scope annotations.
+* [org.openrewrite.quarkus.spring.SpringEventListenerToObserves](/recipes/quarkus/spring/springeventlistenertoobserves.md)
+  * **Convert Spring @EventListener to CDI @Observes**
+  * Transforms Spring's @EventListener method annotation to CDI's @Observes parameter annotation pattern.
+* [org.openrewrite.quarkus.spring.SpringHealthIndicatorToQuarkus](/recipes/quarkus/spring/springhealthindicatortoquarkus.md)
+  * **Convert Spring HealthIndicator to Quarkus HealthCheck**
+  * Transforms Spring Boot Actuator `HealthIndicator` implementations to MicroProfile Health `HealthCheck` pattern used by Quarkus.
 * [org.openrewrite.quarkus.spring.ValueToCdiConfigProperty](/recipes/quarkus/spring/valuetocdiconfigproperty.md)
   * **Replace Spring `@Value` with CDI `@ConfigProperty`**
   * Transform Spring `@Value` annotations to MicroProfile `@ConfigProperty` with proper parameter mapping.
@@ -2482,7 +2548,7 @@ _7 recipes_
 
 _License: Moderne Source Available License_
 
-_163 recipes_
+_164 recipes_
 
 * [org.openrewrite.staticanalysis.AbstractClassPublicConstructor](/recipes/staticanalysis/abstractclasspublicconstructor.md)
   * **Constructors of an `abstract` class should not be declared `public`**
@@ -2556,9 +2622,6 @@ _163 recipes_
 * [org.openrewrite.staticanalysis.CovariantEquals](/recipes/staticanalysis/covariantequals.md)
   * **Covariant equals**
   * Checks that classes and records which define a covariant `equals()` method also override method `equals(Object)`. Covariant `equals()` means a method that is similar to `equals(Object)`, but with a covariant parameter type (any subtype of `Object`).
-* [org.openrewrite.staticanalysis.CustomImportOrder](/recipes/staticanalysis/customimportorder.md)
-  * **Custom import order**
-  * Updates and reorders Java import declarations according to group and order settings compatible with the Checkstyle 'CustomImportOrder' check.
 * [org.openrewrite.staticanalysis.DeclarationSiteTypeVariance](/recipes/staticanalysis/declarationsitetypevariance.md)
   * **Properly use declaration-site type variance**
   * Currently, Java requires use-site type variance, so if someone has `Function&lt;IN, OUT&gt;` method parameter, it should rather be `Function&lt;? super IN, ? extends OUT&gt;`. Unfortunately, it is not easy to notice that `? super` and `? extends` is missing, so this recipe adds it where that would improve the situation.
@@ -2763,6 +2826,9 @@ _163 recipes_
 * [org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances](/recipes/staticanalysis/removetostringcallsfromarrayinstances.md)
   * **Remove `toString()` calls on arrays**
   * The result from `toString()` calls on arrays is largely useless. The output does not actually reflect the contents of the array. `Arrays.toString(array)` should be used instead as it gives the contents of the array.
+* [org.openrewrite.staticanalysis.RemoveTrailingWhitespace](/recipes/staticanalysis/removetrailingwhitespace.md)
+  * **Remove trailing whitespace**
+  * Remove trailing whitespace from the end of each line. Trailing whitespace is simply useless and should not stay in code. It may generate noise when comparing different versions of the same file.
 * [org.openrewrite.staticanalysis.RemoveUnneededAssertion](/recipes/staticanalysis/removeunneededassertion.md)
   * **Remove unneeded assertions**
   * Remove unneeded assertions like `assert true`, `assertTrue(true)`, or `assertFalse(false)`.
@@ -2862,6 +2928,9 @@ _163 recipes_
 * [org.openrewrite.staticanalysis.SimplifyElseBranch](/recipes/staticanalysis/simplifyelsebranch.md)
   * **Simplify `else` branch if it only has a single `if`**
   * Simplify `else` branch if it only has a single `if`.
+* [org.openrewrite.staticanalysis.SimplifyForLoopBoundaryComparison](/recipes/staticanalysis/simplifyforloopboundarycomparison.md)
+  * **Simplify for loop boundary comparisons**
+  * Replace `&lt;=` with `&lt;` in for loop conditions by adjusting the comparison operands. For example, `i &lt;= n - 1` simplifies to `i &lt; n`, and `i &lt;= n` becomes `i &lt; n + 1`.
 * [org.openrewrite.staticanalysis.SimplifyTernaryRecipes](/recipes/staticanalysis/simplifyternaryrecipes.md)
   * **Simplify ternary expressions**
   * Simplifies various types of ternary expressions to improve code readability.
@@ -2978,7 +3047,7 @@ _163 recipes_
 
 _License: Moderne Source Available License_
 
-_173 recipes_
+_176 recipes_
 
 * [org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation](/recipes/java/testing/arquillian/replacearquillianinsequenceannotation.md)
   * **Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`**
@@ -3259,6 +3328,15 @@ _173 recipes_
 * [org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ](/recipes/java/testing/hamcrest/assertthatbooleantoassertj.md)
   * **Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ**
   * Replace Hamcrest `assertThat(String, boolean)` with AssertJ `assertThat(boolean).as(String).isTrue()`.
+* [org.openrewrite.java.testing.hamcrest.HamcrestEveryItemToAssertJ](/recipes/java/testing/hamcrest/hamcresteveryitemtoassertj.md)
+  * **Migrate Hamcrest `everyItem` to AssertJ**
+  * Migrate Hamcrest `everyItem` to AssertJ `allSatisfy` or `hasOnlyElementsOfType`.
+* [org.openrewrite.java.testing.hamcrest.HamcrestHasItemMatcherToAssertJ](/recipes/java/testing/hamcrest/hamcresthasitemmatchertoassertj.md)
+  * **Migrate Hamcrest `hasItem(Matcher)` to AssertJ**
+  * Migrate Hamcrest `hasItem(Matcher)` to AssertJ `hasAtLeastOneElementOfType` or `anySatisfy`.
+* [org.openrewrite.java.testing.hamcrest.HamcrestHasPropertyToAssertJ](/recipes/java/testing/hamcrest/hamcresthaspropertytoassertj.md)
+  * **Migrate Hamcrest `hasProperty` to AssertJ**
+  * Migrate Hamcrest `hasProperty` to AssertJ `hasFieldOrProperty` and `hasFieldOrPropertyWithValue`.
 * [org.openrewrite.java.testing.hamcrest.HamcrestInstanceOfToJUnit5](/recipes/java/testing/hamcrest/hamcrestinstanceoftojunit5.md)
   * **Migrate from Hamcrest `instanceOf` matcher to JUnit 5**
   * Migrate from Hamcrest `instanceOf` and `isA` matcher to JUnit5 `assertInstanceOf` assertion.
@@ -3504,7 +3582,7 @@ _173 recipes_
 
 _License: Apache License Version 2.0_
 
-_1437 recipes_
+_1439 recipes_
 
 * [com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope](/recipes/com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
   * **Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.**
@@ -3887,6 +3965,9 @@ _1437 recipes_
 * [io.quarkus.updates.camel.camel417.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.16` application to `camel 4.17`**
   * Migrates `camel 4.16` Quarkus application to `camel 4.17`.
+* [io.quarkus.updates.camel.camel418.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel418/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.17` application to `camel 4.18`**
+  * Migrates `camel 4.17` Quarkus application to `camel 4.18`.
 * [io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.0` application to `camel 4.4`**
   * Migrates `camel 4.0` quarkus application to `camel 4.4`.
@@ -4293,8 +4374,8 @@ _1437 recipes_
   * **Migrate to 4.10.6**
   * Migrates Apache Camel application to 4.10.6.
 * [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.14.0**
-  * Migrates Apache Camel application to 4.14.0.
+  * **Migrate to 4.18.0**
+  * Migrates Apache Camel application to 4.18.0.
 * [org.apache.camel.upgrade.JavaVersion17](/recipes/org/apache/camel/upgrade/javaversion17.md)
   * **Change Maven Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
@@ -4466,6 +4547,9 @@ _1437 recipes_
 * [org.apache.camel.upgrade.camel417.YamlTransform417Recipe](/recipes/org/apache/camel/upgrade/camel417/yamltransform417recipe.md)
   * **Camel YML transform changes**
   * Apache Camel YML DSL migration from version 4.16 o 4.17.
+* [org.apache.camel.upgrade.camel418.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel418/camelmigrationrecipe.md)
+  * **Migrates `camel 4.17` application to `camel 4.18`**
+  * Migrates `camel 4.17` application to `camel 4.18`.
 * [org.apache.camel.upgrade.camel42.CamelMainDebugger](/recipes/org/apache/camel/upgrade/camel42/camelmaindebugger.md)
   * **The option camel.main.debugger has been renamed**
   * The option camel.main.debugger has been renamed to camel.debug.enabled.
@@ -7818,6 +7902,31 @@ _1437 recipes_
   * **Refaster template `WebClientRules.WebClientPut`**
   * Prefer `WebClient#put()` over `WebClient#method(HttpMethod)` with `HttpMethod#PUT`.
 
+## org.openrewrite:rewrite-cobol
+
+_License: Moderne Source Available License_
+
+_6 recipes_
+
+* [org.openrewrite.cobol.cleanup.RemoveWithDebuggingMode](/recipes/cobol/cleanup/removewithdebuggingmode.md)
+  * **Remove with debugging mode**
+  * Remove debugging mode from SOURCE-COMPUTER paragraphs.
+* [org.openrewrite.cobol.search.FindCopybook](/recipes/cobol/search/findcopybook.md)
+  * **Find copybook usage**
+  * Find all copy statements with the copybook name.
+* [org.openrewrite.cobol.search.FindIndicators](/recipes/cobol/search/findindicators.md)
+  * **Find indicators**
+  * Find matching indicators. Currently, this recipe will not mark indicators on copybook code.
+* [org.openrewrite.cobol.search.FindReference](/recipes/cobol/search/findreference.md)
+  * **Find matching identifiers in COBOL, copybooks, and JCL**
+  * Finds an identifier by an exact match or regex pattern in COBOL, copybooks, and/or JCL.
+* [org.openrewrite.cobol.search.FindRelationships](/recipes/cobol/search/findrelationships.md)
+  * **Find COBOL relationships**
+  * Build a list of relationships for diagramming and exploration.
+* [org.openrewrite.cobol.search.FindWord](/recipes/cobol/search/findword.md)
+  * **Find matching words in the source code**
+  * Search for COBOL words based on a search term.
+
 ## org.openrewrite:rewrite-core
 
 _License: Apache License Version 2.0_
@@ -10344,7 +10453,7 @@ _78 recipes_
   * Add or alter the classifier of the specified dependency.
 * [org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId](/recipes/maven/changedependencygroupidandartifactid.md)
   * **Change Maven dependency**
-  * Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `&lt;dependencyManagement&gt;` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates will also be updated to match the new coordinates.
+  * Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `&lt;dependencyManagement&gt;` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates are preserved, and a sibling exclusion for the new coordinates is added alongside them.
 * [org.openrewrite.maven.ChangeDependencyScope](/recipes/maven/changedependencyscope.md)
   * **Change Maven dependency scope**
   * Add or alter the scope of the specified dependency.
@@ -10401,7 +10510,7 @@ _78 recipes_
   * Order POM elements according to the [recommended](https://maven.apache.org/developers/conventions/code.html#pom-code-convention) order.
 * [org.openrewrite.maven.RemoveDependency](/recipes/maven/removedependency.md)
   * **Remove Maven dependency**
-  * Removes a single dependency from the &lt;dependencies&gt; section of the pom.xml.
+  * Removes a single dependency from the &lt;dependencies&gt; section of the pom.xml. Does not remove usage of the dependency classes, nor guard against the resulting compilation errors.
 * [org.openrewrite.maven.RemoveDuplicateDependencies](/recipes/maven/removeduplicatedependencies.md)
   * **Remove duplicate Maven dependencies**
   * Removes duplicated dependencies in the `&lt;dependencies&gt;` and `&lt;dependencyManagement&gt;` sections of the `pom.xml`.
@@ -10756,7 +10865,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1264 recipes_
+_1285 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -10814,7 +10923,7 @@ _1264 recipes_
   * Recipes to analyze and manage dependency vulnerabilities using Moderne DevCenter.
 * [org.apache.logging.log4j.InlineLog4jApiMethods](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
   * **Inline `log4j-api-2` methods annotated with `@InlineMe`**
-  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.preconditions: - org.openrewrite.Singleton
+  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 * [org.apache.wicket.BestPractices](/recipes/org/apache/wicket/bestpractices.md)
   * **Wicket best practices**
   * Applies Wicket best practices such as minimizing anonymous inner classes and upgrading to the latest version.
@@ -10905,6 +11014,12 @@ _1264 recipes_
 * [org.openrewrite.apache.poi.UpgradeApachePoi_3_17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
   * **Migrates to Apache POI 3.17**
   * Migrates to the last Apache POI 3.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
+* [org.openrewrite.apache.poi.UpgradeApachePoi_4_1](/recipes/apache/poi/upgradeapachepoi_4_1.md)
+  * **Migrates to Apache POI 4.1.2**
+  * Migrates to the last Apache POI 4.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
+* [org.openrewrite.apache.poi.UpgradeApachePoi_5](/recipes/apache/poi/upgradeapachepoi_5.md)
+  * **Migrates to Apache POI 5.x**
+  * Migrates to the latest Apache POI 5.x release. This recipe modifies build files to account for artifact renames and upgrades dependency versions. It also chains the 4.1 recipe to handle all prior API migrations.
 * [org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle](/recipes/codemods/cleanup/javascript/arrowbodystyle.md)
   * **Require braces around arrow function bodies**
   * Require braces around arrow function bodies See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style).
@@ -12309,6 +12424,9 @@ _1264 recipes_
 * [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
   * **GitHub Actions security insights**
   * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
+* [org.openrewrite.gitlab.search.FindDeprecatedSyntax](/recipes/gitlab/search/finddeprecatedsyntax.md)
+  * **Find deprecated GitLab CI syntax**
+  * Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. These keywords are deprecated in favor of `rules`.
 * [org.openrewrite.gradle.AddJUnitPlatformLauncher](/recipes/gradle/addjunitplatformlauncher.md)
   * **Add JUnit Platform Launcher**
   * Add the JUnit Platform Launcher to the buildscript dependencies.
@@ -12339,7 +12457,7 @@ _1264 recipes_
 * [org.openrewrite.gradle.plugins.RemoveDevelocity](/recipes/gradle/plugins/removedevelocity.md)
   * **Remove Develocity**
   * Remove the Develocity plugin and configuration from the Gradle build and settings files.
-* [org.openrewrite.hibernate.MigrateToHibernate60](/recipes/hibernate/migratetohibernate60.md)
+* [org.openrewrite.hibernate.MigrateToHibernate60](/recipes/hibernate/migratetohibernate60-community-edition.md)
   * **Migrate to Hibernate 6.0.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
 * [org.openrewrite.hibernate.MigrateToHibernate61](/recipes/hibernate/migratetohibernate61.md)
@@ -13809,6 +13927,9 @@ _1264 recipes_
 * [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
   * **Migrate to Spring WS 4.0**
   * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
+* [org.openrewrite.java.springdoc.CleanupRemainingSpringfox](/recipes/java/springdoc/cleanupremainingspringfox.md)
+  * **Remove remaining Springfox dead code**
+  * Removes unused private methods left behind after SpringFoxToSpringDoc migration. When Docket beans are removed, private helper methods (e.g., `appInfo()`) become dead code but are not cleaned up, causing compilation errors.
 * [org.openrewrite.java.springdoc.MigrateSpringdocCommon](/recipes/java/springdoc/migratespringdoccommon.md)
   * **Migrate from springdoc-openapi-common to springdoc-openapi-starter-common**
   * Migrate from springdoc-openapi-common to springdoc-openapi-starter-common.
@@ -14289,6 +14410,9 @@ _1264 recipes_
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_31_0](/recipes/quarkus/migratetoquarkus_v3_31_0.md)
   * **Quarkus Updates Aggregate 3.31.0**
   * Quarkus update recipes to upgrade your application to 3.31.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0](/recipes/quarkus/migratetoquarkus_v3_32_0.md)
+  * **Quarkus Updates Aggregate 3.32.0**
+  * Quarkus update recipes to upgrade your application to 3.32.0.
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
   * **Quarkus Updates Aggregate 3.3.0**
   * Quarkus update recipes to upgrade your application to 3.3.0.
@@ -14334,6 +14458,15 @@ _1264 recipes_
 * [org.openrewrite.quarkus.spring.AddSpringCompatibilityExtensions](/recipes/quarkus/spring/addspringcompatibilityextensions.md)
   * **Add Spring compatibility extensions for commonly used annotations**
   * Adds Quarkus Spring compatibility extensions when Spring annotations are detected in the codebase.
+* [org.openrewrite.quarkus.spring.ConfigureNativeBuild](/recipes/quarkus/spring/configurenativebuild.md)
+  * **Configure Quarkus Native Build Support**
+  * Adds configuration and dependencies required for Quarkus native image compilation with GraalVM. Includes native profile configuration and reflection hints where needed.
+* [org.openrewrite.quarkus.spring.CustomizeQuarkusPluginGoals](/recipes/quarkus/spring/customizequarkusplugingoals.md)
+  * **Customize Quarkus Maven Plugin Goals**
+  * Allows customization of Quarkus Maven plugin goals. Adds or modifies the executions and goals for the quarkus-maven-plugin.
+* [org.openrewrite.quarkus.spring.CustomizeQuarkusVersion](/recipes/quarkus/spring/customizequarkusversion.md)
+  * **Customize Quarkus BOM Version**
+  * Allows customization of the Quarkus BOM version used in the migration. By default uses 3.x (latest 3.x version), but can be configured to use a specific version.
 * [org.openrewrite.quarkus.spring.DerbyDriverToQuarkus](/recipes/quarkus/spring/derbydrivertoquarkus.md)
   * **Replace Derby driver with Quarkus JDBC Derby**
   * Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope).
@@ -14352,12 +14485,48 @@ _1264 recipes_
 * [org.openrewrite.quarkus.spring.MigrateBootStarters](/recipes/quarkus/spring/migratebootstarters.md)
   * **Replace Spring Boot starter dependencies with Quarkus equivalents**
   * Migrates Spring Boot starter dependencies to their Quarkus equivalents, removing version tags as Quarkus manages versions through its BOM.
+* [org.openrewrite.quarkus.spring.MigrateConfigurationProperties](/recipes/quarkus/spring/migrateconfigurationproperties.md)
+  * **Migrate @ConfigurationProperties to Quarkus @ConfigMapping**
+  * Migrates Spring Boot @ConfigurationProperties to Quarkus @ConfigMapping. This recipe converts configuration property classes to the native Quarkus pattern.
 * [org.openrewrite.quarkus.spring.MigrateDatabaseDrivers](/recipes/quarkus/spring/migratedatabasedrivers.md)
   * **Migrate database drivers to Quarkus JDBC extensions**
   * Replaces Spring Boot database driver dependencies with their Quarkus JDBC extension equivalents.
+* [org.openrewrite.quarkus.spring.MigrateEntitiesToPanache](/recipes/quarkus/spring/migrateentitiestopanache.md)
+  * **Migrate JPA Entities to Panache Entities**
+  * Converts standard JPA entities to Quarkus Panache entities using the Active Record pattern. Entities will extend PanacheEntity and gain built-in CRUD operations.
 * [org.openrewrite.quarkus.spring.MigrateMavenPlugin](/recipes/quarkus/spring/migratemavenplugin.md)
   * **Add or replace Spring Boot build plugin with Quarkus build plugin**
   * Remove Spring Boot Maven plugin if present and add Quarkus Maven plugin using the same version as the quarkus-bom.
+* [org.openrewrite.quarkus.spring.MigrateRequestParameterEdgeCases](/recipes/quarkus/spring/migraterequestparameteredgecases.md)
+  * **Migrate Additional Spring Web Parameter Annotations**
+  * Migrates additional Spring Web parameter annotations not covered by the main WebToJaxRs recipe. Includes @MatrixVariable, @CookieValue, and other edge cases.
+* [org.openrewrite.quarkus.spring.MigrateSpringActuator](/recipes/quarkus/spring/migratespringactuator.md)
+  * **Migrate Spring Boot Actuator to Quarkus Health and Metrics**
+  * Migrates Spring Boot Actuator to Quarkus SmallRye Health and Metrics extensions. Converts HealthIndicator implementations to Quarkus HealthCheck pattern.
+* [org.openrewrite.quarkus.spring.MigrateSpringBootDevTools](/recipes/quarkus/spring/migratespringbootdevtools.md)
+  * **Remove Spring Boot DevTools**
+  * Removes Spring Boot DevTools dependency and configuration. Quarkus has built-in dev mode with hot reload that replaces DevTools functionality.
+* [org.openrewrite.quarkus.spring.MigrateSpringCloudConfig](/recipes/quarkus/spring/migratespringcloudconfig.md)
+  * **Migrate Spring Cloud Config Client to Quarkus Config**
+  * Migrates Spring Cloud Config Client to Quarkus configuration sources. Converts bootstrap.yml/properties patterns to Quarkus config.
+* [org.openrewrite.quarkus.spring.MigrateSpringCloudServiceDiscovery](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
+  * **Migrate Spring Cloud Service Discovery to Quarkus**
+  * Migrates Spring Cloud Service Discovery annotations and configurations to Quarkus equivalents. Converts @EnableDiscoveryClient and related patterns to Quarkus Stork service discovery.
+* [org.openrewrite.quarkus.spring.MigrateSpringDataMongodb](/recipes/quarkus/spring/migratespringdatamongodb.md)
+  * **Migrate Spring Data MongoDB to Quarkus Panache MongoDB**
+  * Migrates Spring Data MongoDB repositories to Quarkus MongoDB with Panache. Converts MongoRepository interfaces to PanacheMongoRepository pattern.
+* [org.openrewrite.quarkus.spring.MigrateSpringEvents](/recipes/quarkus/spring/migratespringevents.md)
+  * **Migrate Spring Events to CDI Events**
+  * Migrates Spring's event mechanism to CDI events. Converts ApplicationEventPublisher to CDI Event and @EventListener to @Observes.
+* [org.openrewrite.quarkus.spring.MigrateSpringTesting](/recipes/quarkus/spring/migratespringtesting.md)
+  * **Migrate Spring Boot Testing to Quarkus Testing**
+  * Migrates Spring Boot test annotations and utilities to Quarkus test equivalents. Converts @SpringBootTest to @QuarkusTest, @MockBean to @InjectMock, etc.
+* [org.openrewrite.quarkus.spring.MigrateSpringTransactional](/recipes/quarkus/spring/migratespringtransactional.md)
+  * **Migrate Spring @Transactional to Jakarta @Transactional**
+  * Migrates Spring's @Transactional annotation to Jakarta's @Transactional. Maps propagation attributes to TxType and removes Spring-specific attributes.
+* [org.openrewrite.quarkus.spring.MigrateSpringValidation](/recipes/quarkus/spring/migratespringvalidation.md)
+  * **Migrate Spring Validation to Quarkus**
+  * Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarkus-hibernate-validator dependency and handles validation annotation imports.
 * [org.openrewrite.quarkus.spring.ReplaceSpringBootApplication](/recipes/quarkus/spring/replacespringbootapplication.md)
   * **Replace `@SpringBootApplication` with Quarkus equivalent**
   * Replace `@SpringBootApplication` annotation with `@QuarkusMain`, `SpringApplication.run()` calls.
@@ -14451,6 +14620,9 @@ _1264 recipes_
 * [org.openrewrite.quarkus.spring.StereotypeAnnotationsToCDI](/recipes/quarkus/spring/stereotypeannotationstocdi.md)
   * **Migrate Spring annotations to CDI**
   * Replace Spring stereotype and injection annotations with CDI equivalents.
+* [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
+  * **Inline deprecated delegating methods**
+  * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
 * [org.openrewrite.recipes.rewrite.InlineMethods](/recipes/recipes/rewrite/inlinemethods.md)
   * **Inline methods annotated with `@InlineMe`**
   * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.

@@ -69,6 +69,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
 
 
+### [io.moderne.devcenter.FindOrganizationStatistics](/recipes/devcenter/findorganizationstatistics.md)
+  * **Find organization statistics**
+  * Counts lines of code per repository for organization-level statistics.
+
+#### Data tables:
+
+  * **io.moderne.devcenter.table.OrganizationStatistics**: *Per-repository statistics aggregated at the organization level.*
+
+
 ### [io.moderne.devcenter.ApacheDevCenter](/recipes/devcenter/apachedevcenter.md)
   * **DevCenter for Apache**
   * A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices.
@@ -117,6 +126,9 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **io.moderne.devcenter.table.UpgradesAndMigrations**: *Progress towards organizational objectives on library or language migrations and upgrades.*
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **io.moderne.devcenter.table.SecurityIssues**: *Security issues in the repository.*
+  * **io.moderne.devcenter.table.OrganizationStatistics**: *Per-repository statistics aggregated at the organization level.*
+  * **org.openrewrite.table.DistinctCommitters**: *The distinct set of committers per repository.*
+  * **org.openrewrite.table.CommitsByDay**: *The commit activity by day by committer.*
 
 
 ### [io.moderne.devcenter.SecurityStarter](/recipes/devcenter/securitystarter.md)
@@ -158,13 +170,49 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **io.moderne.devcenter.table.UpgradesAndMigrations**: *Progress towards organizational objectives on library or language migrations and upgrades.*
 
 
-### [org.openrewrite.prethink.UpdateAgentConfig](/recipes/prethink/updateagentconfig.md)
-  * **Update agent configuration files**
-  * Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/.
+### [org.openrewrite.cobol.search.FindCopybook](/recipes/cobol/search/findcopybook.md)
+  * **Find copybook usage**
+  * Find all copy statements with the copybook name.
 
 #### Data tables:
 
-  * **org.openrewrite.prethink.table.ContextRegistry**: *Registry of available context files for coding agents.*
+  * **org.openrewrite.cobol.table.CopybookSource**: *Information about copybook references in a COBOL source.*
+
+
+### [org.openrewrite.cobol.search.FindIndicators](/recipes/cobol/search/findindicators.md)
+  * **Find indicators**
+  * Find matching indicators. Currently, this recipe will not mark indicators on copybook code.
+
+#### Data tables:
+
+  * **org.openrewrite.cobol.table.IndicatorSearchResult**: *Indicator area matches found in COBOL source code.*
+
+
+### [org.openrewrite.cobol.search.FindReference](/recipes/cobol/search/findreference.md)
+  * **Find matching identifiers in COBOL, copybooks, and JCL**
+  * Finds an identifier by an exact match or regex pattern in COBOL, copybooks, and/or JCL.
+
+#### Data tables:
+
+  * **org.openrewrite.cobol.table.ReferenceSearchResult**: *Identifier references found in COBOL, copybook, and JCL sources.*
+
+
+### [org.openrewrite.cobol.search.FindRelationships](/recipes/cobol/search/findrelationships.md)
+  * **Find COBOL relationships**
+  * Build a list of relationships for diagramming and exploration.
+
+#### Data tables:
+
+  * **org.openrewrite.cobol.table.CobolRelationships**: *Relationships between different COBOL resources.*
+
+
+### [org.openrewrite.cobol.search.FindWord](/recipes/cobol/search/findword.md)
+  * **Find matching words in the source code**
+  * Search for COBOL words based on a search term.
+
+#### Data tables:
+
+  * **org.openrewrite.cobol.table.WordSearchResult**: *Words in COBOL source code that match the search criteria.*
 
 
 ### [org.openrewrite.FindCollidingSourceFiles](/recipes/core/findcollidingsourcefiles.md)
@@ -757,7 +805,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### [org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId](/recipes/maven/changedependencygroupidandartifactid.md)
   * **Change Maven dependency**
-  * Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `&lt;dependencyManagement&gt;` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates will also be updated to match the new coordinates.
+  * Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `&lt;dependencyManagement&gt;` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates are preserved, and a sibling exclusion for the new coordinates is added alongside them.
 
 #### Data tables:
 
@@ -4521,6 +4569,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+### [org.openrewrite.prethink.UpdateAgentConfig](/recipes/prethink/updateagentconfig.md)
+  * **Update agent configuration files**
+  * Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/.
+
+#### Data tables:
+
+  * **org.openrewrite.prethink.table.ContextRegistry**: *Registry of available context files for coding agents.*
+
+
 ### [org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration](/recipes/quarkus/migrate/javaee/javaeetoquarkus2migration.md)
   * **Migrate JavaEE to Quarkus 2**
   * These recipes help with the migration of a JavaEE application using EJBs and Hibernate to Quarkus 2. Additional transformations like JSF, JMS, Quarkus Tests may be necessary.
@@ -4796,6 +4853,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ### [org.openrewrite.quarkus.spring.SpringBootToQuarkus](/recipes/quarkus/spring/springboottoquarkus.md)
   * **Migrate Spring Boot to Quarkus**
   * Replace Spring Boot with Quarkus.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [org.openrewrite.quarkus.spring.CustomizeQuarkusVersion](/recipes/quarkus/spring/customizequarkusversion.md)
+  * **Customize Quarkus BOM Version**
+  * Allows customization of the Quarkus BOM version used in the migration. By default uses 3.x (latest 3.x version), but can be configured to use a specific version.
 
 #### Data tables:
 
@@ -5129,6 +5195,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ### [org.openrewrite.quarkus.MigrateToQuarkus_v3_31_0](/recipes/quarkus/migratetoquarkus_v3_31_0.md)
   * **Quarkus Updates Aggregate 3.31.0**
   * Quarkus update recipes to upgrade your application to 3.31.0.
+
+#### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+### [org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0](/recipes/quarkus/migratetoquarkus_v3_32_0.md)
+  * **Quarkus Updates Aggregate 3.32.0**
+  * Quarkus update recipes to upgrade your application to 3.32.0.
 
 #### Data tables:
 
@@ -5777,8 +5852,8 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 ### [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.14.0**
-  * Migrates Apache Camel application to 4.14.0.
+  * **Migrate to 4.18.0**
+  * Migrates Apache Camel application to 4.18.0.
 
 #### Data tables:
 
