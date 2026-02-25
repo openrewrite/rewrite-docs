@@ -130,6 +130,119 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 
+## Examples
+##### Example 1
+`JavaxXmlBindMigrationToJakartaXmlBindTest#dontRetainJaxbApiWhenJacksonNotPresent`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "javax.xml.bind:jaxb-api:2.3.1"
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.xml.bind.annotation.XmlElement;
+
+public class Test {
+    @XmlElement
+    private String name;
+}
+```
+
+###### After
+```java
+import jakarta.xml.bind.annotation.XmlElement;
+
+public class Test {
+    @XmlElement
+    private String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.xml.bind.annotation.XmlElement;
++import jakarta.xml.bind.annotation.XmlElement;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`JavaxXmlBindMigrationToJakartaXmlBindTest#dontRetainJaxbApiWhenJacksonNotPresent`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id "java-library"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "javax.xml.bind:jaxb-api:2.3.1"
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.xml.bind.annotation.XmlElement;
+
+public class Test {
+    @XmlElement
+    private String name;
+}
+```
+
+###### After
+```java
+import jakarta.xml.bind.annotation.XmlElement;
+
+public class Test {
+    @XmlElement
+    private String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.xml.bind.annotation.XmlElement;
++import jakarta.xml.bind.annotation.XmlElement;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

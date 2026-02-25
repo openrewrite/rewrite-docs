@@ -11,24 +11,19 @@ _Best practices for JUnit Jupiter tests._
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Clean Up Assertions](./cleanupassertions.md)
-* [Exclude JUnit 4, unless Testcontainers is used](./excludejunit4unlessusingtestcontainers.md)
 * [JUnit 5 best practices](./junit5bestpractices.md)
 * [JUnit Jupiter migration from JUnit 4.x](./junit4to5migration.md)
 * [Migrate JUnit 4 assertion failure exceptions to JUnit Jupiter](./migrateassertionfailederror.md)
 * [OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`](./updatemockwebservermockresponse.md)
-* [Statically import JUnit Jupiter assertions](./staticimports.md)
 * [Transform `Assume` methods to `Assumptions`](./assumenotnulltoassumptionsrecipes.md)
 * [Upgrade Surefire Plugin](./upgradesurefireplugin.md)
 * [Upgrade to JUnit 5.13](./upgradetojunit513.md)
 * [Upgrade to JUnit 5.14](./upgradetojunit514.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](./migrateassumptions.md)
-* [Use JUnit Jupiter `@Disabled`](./ignoretodisabled.md)
-* [Use JUnit Jupiter `Executable`](./throwingrunnabletoexecutable.md)
 * [Use `MatcherAssert#assertThat(..)`](./usehamcrestassertthat.md)
 * [Use Mockito JUnit Jupiter extension](./usemockitoextension.md)
 * [Use OkHttp 3 MockWebServer for JUnit 5](./upgradeokhttpmockwebserver.md)
 * [Use Vert.x JUnit 5 Extension](./vertxunittovertxjunit5.md)
-* [Use XMLUnit Legacy for JUnit 5](./usexmlunitlegacy.md)
 
 ## Recipes
 
@@ -38,6 +33,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](./addparameterizedtestannotation.md)
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](./assertthrowsonlaststatement.md)
 * [Cleanup JUnit imports](./cleanupjunitimports.md)
+* [Exclude JUnit 4, unless Testcontainers is used](./excludejunit4unlessusingtestcontainers.md)
 * [Gradle `Test` use JUnit Jupiter](./gradleusejunitjupiter.md)
 * [Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)](./handleexternalresourcerules.md)
 * [JUnit 4 `@Category` to JUnit Jupiter `@Tag`](./categorytotag.md)
@@ -64,10 +60,14 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove duplicates uses of @TestTemplate implementations for a single method](./removeduplicatetesttemplates.md)
 * [Replace `@CsvSource` with `@ValueSource` for single method arguments](./csvsourcetovaluesource.md)
 * [Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`](./removetrycatchfailblocks.md)
+* [Statically import JUnit Jupiter assertions](./staticimports.md)
 * [Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`](./assumenotnulltoassumptionsrecipes$singleargrecipe.md)
 * [Transform variadic `assumeNotNull(objects...)` to a stream of `assumeFalse(object == null)`](./assumenotnulltoassumptionsrecipes$varargsrecipe.md)
+* [Use JUnit Jupiter `@Disabled`](./ignoretodisabled.md)
 * [Use JUnit Jupiter `@TempDir`](./temporaryfoldertotempdir.md)
+* [Use JUnit Jupiter `Executable`](./throwingrunnabletoexecutable.md)
 * [Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`](./useassertsame.md)
+* [Use XMLUnit Legacy for JUnit 5](./usexmlunitlegacy.md)
 * [Use wiremock extension](./usewiremockextension.md)
 * [`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`](./asserttrueinstanceoftoassertinstanceof.md)
 

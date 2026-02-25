@@ -17,9 +17,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add `prefer-application-packages` for JPA in `weblogic.xml`](./weblogicxmlpreferapplicationpackagesjpa.md)
 * [Add `prefer-application-packages` for SLF4J in `weblogic.xml`](./weblogicxmlpreferapplicationpackagesslf4j.md)
-* [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartainjectapidependencyscope.md)
-* [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartawebservicersapidependencyscope.md)
-* [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejaxbbindapidependencyscope.md)
 * [Migrate WebLogic Schemas to 14.1.2](./migrateweblogicschemasto1412.md)
 * [Migrate WebLogic Schemas to 15.1.1](./migrateweblogicschemasto1511.md)
 * [Migrate to Jakarta EE 9.1](./jakartaee9_1.md)
@@ -68,6 +65,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartainjectapidependencyscope.md)
+* [Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejakartawebservicersapidependencyscope.md)
+* [Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.](./changejaxbbindapidependencyscope.md)
 * [Create `weblogic.xml` if it does not exist](./weblogicxmlcreateifnotexists1511.md)
 * [JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older](./facesmigrationtojakartafaces2x.md)
 * [Output Recipe Version](./outputrecipeversion.md)

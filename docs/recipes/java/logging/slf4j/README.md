@@ -10,7 +10,6 @@ _Recipes related to [Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
-* [Add JBoss LogManager's SLF4J provider](./addjbosslogmanagerslf4jproviderdependency.md)
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](./commonslogging1toslf4j1.md)
 * [Migrate JBoss Logging to SLF4J](./jbossloggingtoslf4j.md)
 * [Migrate JUL to SLF4J](./jultoslf4j.md)
@@ -18,7 +17,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Log4j 2.x to SLF4J 1.x](./log4j2toslf4j1.md)
 * [Migrate Log4j to SLF4J](./log4jtoslf4j.md)
 * [Parameterize SLF4J's logging statements](./parameterizedlogging.md)
-* [Replace JUL Logger creation with SLF4J LoggerFactory](./julgetloggertologgerfactoryrecipes.md)
 * [Replace JUL active Level check with corresponding SLF4J method calls](./julisloggabletoisenabledrecipes.md)
 * [Replace JUL active Level check with corresponding SLF4J method calls](./jultoslf4jlambdasupplierrecipes.md)
 * [Replace JUL `log(Level, String, Throwable)` with corresponding SLF4J method calls](./jultoslf4jsimplecallswiththrowablerecipes.md)
@@ -27,18 +25,18 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add JBoss LogManager's SLF4J provider](./addjbosslogmanagerslf4jproviderdependency.md)
 * [Change SLF4J log level](./changeloglevel.md)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](./completeexceptionlogging.md)
 * [Loggers should be named for their enclosing classes](./loggersnamedforenclosingclass.md)
 * [Match `if (is*Enabled())` with logging statements](./matchisloglevelenabledwithlogstatements.md)
 * [Optimize log statements](./wrapexpensivelogstatementsinconditionals.md)
 * [Replace JUL `Level.ALL` logging with SLF4J's trace level](./jullevelalltotracerecipe.md)
+* [Replace JUL Logger creation with SLF4J LoggerFactory](./julgetloggertologgerfactory.md)
 * [Replace JUL `Logger.config(Supplier&lt;String&gt;)` with SLF4J's `Logger.atInfo().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierconfigrecipe.md)
 * [Replace JUL `Logger.fine(Supplier&lt;String&gt;)` with SLF4J's `Logger.atDebug().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerecipe.md)
 * [Replace JUL `Logger.finer(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinerrecipe.md)
 * [Replace JUL `Logger.finest(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierfinestrecipe.md)
-* [Replace JUL `Logger.getLogger(Some.class.getCanonicalName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`](./julgetloggertologgerfactoryrecipes$getloggerclasscanonicalnametologgerfactoryrecipe.md)
-* [Replace JUL `Logger.getLogger(Some.class.getName())` with SLF4J's `LoggerFactory.getLogger(Some.class)`](./julgetloggertologgerfactoryrecipes$getloggerclassnametologgerfactoryrecipe.md)
 * [Replace JUL `Logger.info(Supplier&lt;String&gt;)` with SLF4J's `Logger.atInfo().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierrecipes$jultoslf4jsupplierinforecipe.md)
 * [Replace JUL `Logger.isLoggable(Level.ALL)` with SLF4J's `Logger.isTraceEnabled`](./julisloggabletoisenabledrecipes$loggerisloggablelevelallrecipe.md)
 * [Replace JUL `Logger.isLoggable(Level.CONFIG)` with SLF4J's `Logger.isInfoEnabled()`](./julisloggabletoisenabledrecipes$loggerisloggablelevelconfigrecipe.md)

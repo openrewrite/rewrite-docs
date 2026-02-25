@@ -49,7 +49,7 @@ public class SimpleExpectedExceptionTest {
 
 ###### After
 ```java
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 public class SimpleExpectedExceptionTest {
     public void throwsExceptionWithSpecificType() {
@@ -67,7 +67,7 @@ public class SimpleExpectedExceptionTest {
 ```diff
 @@ -1,1 +1,1 @@
 -import static org.junit.jupiter.api.Assertions.assertThrows;
-+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
++import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 @@ -5,1 +5,1 @@
 public class SimpleExpectedExceptionTest {

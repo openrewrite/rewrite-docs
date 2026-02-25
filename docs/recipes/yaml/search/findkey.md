@@ -32,6 +32,8 @@ This recipe is used as part of the following composite recipes:
 
 * [Find GitLab Component](/recipes/gitlab/search/findcomponent.md)
 * [Find GitLab Template](/recipes/gitlab/search/findtemplate.md)
+* [Find deprecated `except` keyword](/recipes/gitlab/search/finddeprecatedexcept.md)
+* [Find deprecated `only` keyword](/recipes/gitlab/search/finddeprecatedonly.md)
 * [Find pinned resources by type](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/concourse/search/findpinnedresource)
 * [Find privileged `resource_type` definitions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/concourse/search/findprivilegedresourcetype)
 

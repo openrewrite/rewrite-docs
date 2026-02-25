@@ -18,7 +18,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Spring Framework 6.1](./upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)
 * [Migrate to Spring Framework 7.0](./upgradespringframework_7_0.md)
-* [Use `ObjectUtils#isEmpty(Object)`](./useobjectutilsisempty.md)
 
 ## Recipes
 
@@ -42,6 +41,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](./migratewebmvcconfigureradapter.md)
 * [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](./migrateclienthttpresponsegetrawstatuscodemethod.md)
 * [Use `Environment#acceptsProfiles(Profiles)`](./environmentacceptsprofiles.md)
+* [Use `ObjectUtils#isEmpty(Object)`](./useobjectutilsisempty.md)
 * [Use varargs equivalents for deprecated JdbcTemplate signatures](./jdbctemplateobjectarrayargtovarargs.md)
 
 

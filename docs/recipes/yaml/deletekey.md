@@ -33,6 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate `astral-sh/setup-uv` from v6 to v7](/recipes/github/migratesetupuvv6tov7.md)
 * [Migrate to Dropwizard 5.0.x from 4.x](/recipes/java/dropwizard/migratetodropwizard5.md)
+* [Remove Spring Boot DevTools](/recipes/quarkus/spring/migratespringbootdevtools.md)
 * [Update relocated Micronaut Security config yaml keys](/recipes/java/micronaut/updatesecurityyamlifneeded.md)
 
 ## Example

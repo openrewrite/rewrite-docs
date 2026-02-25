@@ -26,6 +26,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | fromDate | *Optional*. Optional. Take into account only commits since this date (inclusive). Default will be the entire history. | `2023-01-01` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [DevCenter](/recipes/devcenter/devcenterstarter.md)
+
+
 ## Usage
 
 This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.

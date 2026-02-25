@@ -35,6 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Customize Quarkus BOM Version](/recipes/quarkus/spring/customizequarkusversion.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](/recipes/io/quarkus/updates/core/quarkus30/restassuredjavaxtojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](/recipes/io/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
 * [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
@@ -65,7 +66,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate to 4.10.6](/recipes/org/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
-* [Migrate to 4.14.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.18.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to Struts 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/migratestruts7)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)

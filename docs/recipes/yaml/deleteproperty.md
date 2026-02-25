@@ -28,13 +28,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |  |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Removed deprecated property camel.main.lightweight](/recipes/org/apache/camel/upgrade/camel411/removedlightweight.md)
-
 ## Example
 
 ###### Parameters

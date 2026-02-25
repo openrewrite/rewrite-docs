@@ -33,6 +33,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
+* [Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields](./replacejsonignorewithjsonsetter.md)
+* [Replace `IOException` with `JacksonException` in catch clauses](./ioexceptiontojacksonexception.md)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](./replacestreamwritecapability.md)
 * [Simplify catch clauses for Jackson exceptions](./simplifyjacksonexceptioncatch.md)
 * [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](./updateserializationinclusionconfiguration.md)

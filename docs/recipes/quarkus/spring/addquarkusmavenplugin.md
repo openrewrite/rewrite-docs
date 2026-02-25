@@ -65,6 +65,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Add or replace Spring Boot build plugin with Quarkus build plugin](/recipes/quarkus/spring/migratemavenplugin.md)
+* [Configure Quarkus Native Build Support](/recipes/quarkus/spring/configurenativebuild.md)
 
 ## Example
 

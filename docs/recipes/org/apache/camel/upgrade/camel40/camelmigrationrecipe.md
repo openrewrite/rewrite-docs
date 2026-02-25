@@ -78,7 +78,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate `camel3` application to `camel4.`](/recipes/io/quarkus/updates/camel/camel40/camelquarkusmigrationrecipe.md)
 * [Migrate to 4.10.6](/recipes/org/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
-* [Migrate to 4.14.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.18.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
 
 
 ## Usage

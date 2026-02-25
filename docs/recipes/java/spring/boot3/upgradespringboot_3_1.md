@@ -57,6 +57,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `3.1.x`
 * [Migrate to Spring Security 6.1](../../../java/spring/security6/upgradespringsecurity_6_1)
 * [Migrate Spring Boot properties to 3.1](../../../java/spring/boot3/springbootproperties_3_1)
+* [Replace `RepositoryRestConfigurerAdapter` with `RepositoryRestConfigurer`](../../../java/spring/data/migraterepositoryrestconfigureradapter)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springdoc`
   * artifactId: `*`
@@ -104,6 +105,7 @@ recipeList:
       newVersion: 3.1.x
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_1
+  - org.openrewrite.java.spring.data.MigrateRepositoryRestConfigurerAdapter
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springdoc
       artifactId: "*"

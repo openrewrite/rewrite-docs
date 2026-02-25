@@ -100,7 +100,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Structural equality tests should use `==` or `!=`](../kotlin/cleanup/equalsmethodusage)
 * [`it` shouldn't be used as a lambda parameter name](../kotlin/cleanup/implicitparameterinlambda)
 * [Replace `Char#toInt()` with `Char#code`](../kotlin/cleanup/replacechartointwithcode)
-* [Custom import order](../staticanalysis/customimportorder)
+* [Order imports](../java/orderimports)
 
 </TabItem>
 
@@ -186,7 +186,7 @@ recipeList:
   - org.openrewrite.kotlin.cleanup.EqualsMethodUsage
   - org.openrewrite.kotlin.cleanup.ImplicitParameterInLambda
   - org.openrewrite.kotlin.cleanup.ReplaceCharToIntWithCode
-  - org.openrewrite.staticanalysis.CustomImportOrder
+  - org.openrewrite.java.OrderImports
 
 ```
 </TabItem>

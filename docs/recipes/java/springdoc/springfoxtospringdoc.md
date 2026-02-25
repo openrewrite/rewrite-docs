@@ -38,11 +38,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add comment to method invocations](../../java/addcommenttomethodinvocations)
   * comment: `TODO: The transformation of Docket to OpenAPI is too complex to be adequately handled in a recipe. See https://springdoc.org/migrating-from-springfox.html for guidance.`
   * methodPattern: `springfox.documentation.spring.web.plugins.Docket <constructor>(..)`
+* [Add comment to method invocations](../../java/addcommenttomethodinvocations)
+  * comment: `TODO: springfox.documentation.spring.web.json types have no SpringDoc equivalent. Remove this Springfox-internal code and use Jackson ObjectMapper directly if JSON serialization is still needed. See https://springdoc.org/migrating-from-springfox.html for guidance.`
+  * methodPattern: `springfox.documentation.spring.web.json.Json* *(..)`
 * [Migrate from Swagger to SpringDoc and OpenAPI](../../java/springdoc/swaggertospringdoc)
 * [Replace SpringFox Dependencies](../../java/springdoc/replacespringfoxdependencies)
 * [Migrate `ApiInfoBuilder` to `Info`](../../java/spring/doc/apiinfobuildertoinfo)
 * [Replace elements of SpringFox's security with Swagger's security models](../../java/spring/doc/securitycontexttosecurityscheme)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](../../java/springdoc/migratespringdoccommon)
+* [Remove remaining Springfox dead code](../../java/springdoc/cleanupremainingspringfox)
 
 </TabItem>
 
@@ -64,11 +68,15 @@ recipeList:
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO: The transformation of Docket to OpenAPI is too complex to be adequately handled in a recipe. See https://springdoc.org/migrating-from-springfox.html for guidance.
       methodPattern: springfox.documentation.spring.web.plugins.Docket <constructor>(..)
+  - org.openrewrite.java.AddCommentToMethodInvocations:
+      comment: TODO: springfox.documentation.spring.web.json types have no SpringDoc equivalent. Remove this Springfox-internal code and use Jackson ObjectMapper directly if JSON serialization is still needed. See https://springdoc.org/migrating-from-springfox.html for guidance.
+      methodPattern: springfox.documentation.spring.web.json.Json* *(..)
   - org.openrewrite.java.springdoc.SwaggerToSpringDoc
   - org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies
   - org.openrewrite.java.spring.doc.ApiInfoBuilderToInfo
   - org.openrewrite.java.spring.doc.SecurityContextToSecurityScheme
   - org.openrewrite.java.springdoc.MigrateSpringdocCommon
+  - org.openrewrite.java.springdoc.CleanupRemainingSpringfox
 
 ```
 </TabItem>
@@ -79,6 +87,109 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
+
+## Examples
+##### Example 1
+`SpringFoxToSpringDocJsonTypesTest#addTodoCommentToJsonSerializerConstructor`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import springfox.documentation.spring.web.json.JacksonModuleRegistrar;
+import springfox.documentation.spring.web.json.JsonSerializer;
+import java.util.List;
+
+class SwaggerConfig {
+
+    public JsonSerializer jsonSerializer(List<JacksonModuleRegistrar> registrars) {
+        return new JsonSerializer(registrars);
+    }
+}
+```
+
+###### After
+```java
+import springfox.documentation.spring.web.json.JacksonModuleRegistrar;
+import springfox.documentation.spring.web.json.JsonSerializer;
+import java.util.List;
+
+class SwaggerConfig {
+
+    public JsonSerializer jsonSerializer(List<JacksonModuleRegistrar> registrars) {
+        return /* TODO: springfox.documentation.spring.web.json types have no SpringDoc equivalent. Remove this Springfox-internal code and use Jackson ObjectMapper directly if JSON serialization is still needed. See https://springdoc.org/migrating-from-springfox.html for guidance. */ new JsonSerializer(registrars);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+
+    public JsonSerializer jsonSerializer(List<JacksonModuleRegistrar> registrars) {
+-       return new JsonSerializer(registrars);
++       return /* TODO: springfox.documentation.spring.web.json types have no SpringDoc equivalent. Remove this Springfox-internal code and use Jackson ObjectMapper directly if JSON serialization is still needed. See https://springdoc.org/migrating-from-springfox.html for guidance. */ new JsonSerializer(registrars);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SpringFoxToSpringDocJsonTypesTest#addTodoCommentToJsonSerializerConstructor`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import springfox.documentation.spring.web.json.JacksonModuleRegistrar;
+import springfox.documentation.spring.web.json.JsonSerializer;
+import java.util.List;
+
+class SwaggerConfig {
+
+    public JsonSerializer jsonSerializer(List<JacksonModuleRegistrar> registrars) {
+        return new JsonSerializer(registrars);
+    }
+}
+```
+
+###### After
+```java
+import springfox.documentation.spring.web.json.JacksonModuleRegistrar;
+import springfox.documentation.spring.web.json.JsonSerializer;
+import java.util.List;
+
+class SwaggerConfig {
+
+    public JsonSerializer jsonSerializer(List<JacksonModuleRegistrar> registrars) {
+        return /* TODO: springfox.documentation.spring.web.json types have no SpringDoc equivalent. Remove this Springfox-internal code and use Jackson ObjectMapper directly if JSON serialization is still needed. See https://springdoc.org/migrating-from-springfox.html for guidance. */ new JsonSerializer(registrars);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+
+    public JsonSerializer jsonSerializer(List<JacksonModuleRegistrar> registrars) {
+-       return new JsonSerializer(registrars);
++       return /* TODO: springfox.documentation.spring.web.json types have no SpringDoc equivalent. Remove this Springfox-internal code and use Jackson ObjectMapper directly if JSON serialization is still needed. See https://springdoc.org/migrating-from-springfox.html for guidance. */ new JsonSerializer(registrars);
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

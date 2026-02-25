@@ -34,7 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Replace JUL Logger creation with SLF4J LoggerFactory](../../../java/logging/slf4j/julgetloggertologgerfactoryrecipes)
+* [Replace JUL Logger creation with SLF4J LoggerFactory](../../../java/logging/slf4j/julgetloggertologgerfactory)
 * [Replace JUL active Level check with corresponding SLF4J method calls](../../../java/logging/slf4j/julisloggabletoisenabledrecipes)
 * [Replace parameterized JUL level call with corresponding SLF4J method calls](../../../java/logging/slf4j/julparameterizedarguments)
 * [Replace JUL active Level check with corresponding SLF4J method calls](../../../java/logging/slf4j/jultoslf4jlambdasupplierrecipes)
@@ -60,7 +60,7 @@ tags:
   - java-util-logging
   - logging
 recipeList:
-  - org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactoryRecipes
+  - org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactory
   - org.openrewrite.java.logging.slf4j.JulIsLoggableToIsEnabledRecipes
   - org.openrewrite.java.logging.slf4j.JulParameterizedArguments
   - org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes

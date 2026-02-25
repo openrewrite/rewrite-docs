@@ -24,30 +24,6 @@ _Update Jakarta EE annotation Dependencies to 2.1.x._
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2
-displayName: Update Jakarta EE annotation Dependencies to 2.1.x
-description: |
-  Update Jakarta EE annotation Dependencies to 2.1.x.
-tags:
-  - deprecated
-recipeList:
-
-```
-</TabItem>
-</Tabs>
-
 ## Usage
 
 This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-migrate-java` in your build file or by running a shell command (in which case no build changes are needed):

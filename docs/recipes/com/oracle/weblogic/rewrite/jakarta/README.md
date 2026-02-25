@@ -9,7 +9,6 @@ description: Jakarta OpenRewrite recipes.
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Change artifacts for a Maven plugin configuration](./upgrademavenpluginconfigurationartifacts.md)
-* [Faces XHTML migration for Jakarta EE 9](./jakartafaces3xhtml.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`.](./facesjndinameschanged3.md)
 * [JSF 2.x to Jakarta Server Faces 3.x](./faces2xmigrationtojakartafaces3x.md)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](./javaxannotationmigrationtojakarta9annotation.md)
@@ -49,6 +48,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add Jakarta EE 9 Servlet Dependency](./addjakartaee9servletdependencyifusingservletcontext.md)
 * [ChangeJakartaFacesMethodCalls](./changejakartafacesmethodcalls.md)
+* [Faces XHTML migration for Jakarta EE 9](./jakartafaces3xhtml.md)
 * [Migrate Tag Libraries to 2.0 (Jakarta EE 9)](./migratetaglibstojakartaee9.md)
 * [Migrate javax.javaee-web-api to jakarta.jakartaee-web-api (Jakarta EE 9)](./migratejavaxwebtojakartaweb9.md)
 * [Migrate javax.jms to jakarta.jms on MDB](./javaxjmstojakartajmsonmdb.md)

@@ -27,6 +27,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactId | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. This can be a glob expression. | `jackson-module*` |
 | `String` | configuration | *Optional*. The dependency configuration to remove from. | `api` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Remove redundant kotlin-stdlib dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/removeredundantkotlinstdlib)
+
 ## Example
 
 ###### Parameters

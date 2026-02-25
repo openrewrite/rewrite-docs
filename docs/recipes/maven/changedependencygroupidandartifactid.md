@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.maven.ChangeDependencyGroupIdAndArtifactId**
 
-_Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `<dependencyManagement>` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates will also be updated to match the new coordinates._
+_Change a Maven dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. Matching `<dependencyManagement>` coordinates are also updated if a `newVersion` or `versionPattern` is provided. Exclusions that reference the old dependency coordinates are preserved, and a sibling exclusion for the new coordinates is added alongside them._
 
 ## Recipe source
 

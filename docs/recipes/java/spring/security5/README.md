@@ -19,6 +19,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Convert `requestMatchers` chain to `securityMatcher`](./convertsecuritymatcherstosecuritymatcher.md)
 * [Replace `HttpSecurity.authorizeRequests(...)` with `HttpSecurity.authorizeHttpRequests(...)` and `ExpressionUrlAuthorizationConfigurer`, `AbstractInterceptUrlConfigurer` with `AuthorizeHttpRequestsConfigurer`, etc](./authorizehttprequests.md)
 * [Replace global method security with method security](./replaceglobalmethodsecuritywithmethodsecurity.md)
 * [Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean](./websecurityconfigureradapter.md)

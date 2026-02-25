@@ -9,7 +9,6 @@ description: Recipes OpenRewrite recipes.
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Java Recipe best practices](./javarecipebestpractices.md)
-* [Migrate tests to Java 21](./upgradeteststojava21.md)
 * [Recipe nullability best practices](./recipenullabilitybestpractices.md)
 * [Recipe testing best practices](./recipetestingbestpractices.md)
 * [Use `StringUtils` utility methods](./usestringutilsrecipes.md)
@@ -24,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find missing `@Option` `example` values](./missingoptionexample.md)
 * [Generate `InlineMethodCalls` recipes for deprecated delegating methods](./generatedeprecatedmethodrecipes.md)
 * [Make declarative recipes singletons](./declarativesingleton.md)
+* [Migrate tests to Java 21](./upgradeteststojava21.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)
 * [New line at the end of `SourceSpecs` text blocks](./sourcespectextblocknewline.md)
 * [Recipe classes should be public](./recipeclassesshouldbepublic.md)
