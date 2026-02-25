@@ -556,6 +556,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
+### [org.openrewrite.java.search.FindSymbols](/recipes/java/search/findsymbols.md)
+  * **Find symbols**
+  * Lists all symbols (classes, methods, fields, etc.) declared in the codebase. Results are emitted into a data table with symbol kind, name, parent type, signature, and visibility.
+
+#### Data tables:
+
+  * **org.openrewrite.java.table.SymbolsTable**: *All symbols (classes, methods, fields) declared in the codebase.*
+
+
 ### [org.openrewrite.java.search.FindTypes](/recipes/java/search/findtypes.md)
   * **Find types**
   * Find type references by name.

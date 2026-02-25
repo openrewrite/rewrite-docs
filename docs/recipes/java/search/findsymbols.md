@@ -1,74 +1,30 @@
 ---
-sidebar_label: "Replace deprecated `kotlinx-serialization-core` methods"
+sidebar_label: "Find symbols"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace deprecated `kotlinx-serialization-core` methods
+# Find symbols
 
-**org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods**
+**org.openrewrite.java.search.FindSymbols**
 
-_Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations._
+_Lists all symbols (classes, methods, fields, etc.) declared in the codebase. Results are emitted into a data table with symbol kind, name, parent type, signature, and visibility._
 
 ## Recipe source
 
-[GitHub: kotlin-deprecations-kotlinx-serialization-core-1.yml](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/resources/META-INF/rewrite/kotlin-deprecations-kotlinx-serialization-core-1.yml),
+[GitHub: FindSymbols.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindSymbols.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-kotlin/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
+## Options
 
-## Definition
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | sourcePath | *Optional*. Optional source path to limit the search to a single file. | `src/main/java/com/example/MyClass.java` |
 
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Replace Kotlin method](../../../kotlin/replace/replacekotlinmethod)
-  * methodPattern: `kotlinx.serialization.modules.PolymorphicModuleBuilder default(kotlin.Function1)`
-  * replacement: `defaultDeserializer(defaultSerializerProvider)`
-  * classpathFromResources: `[kotlinx-serialization-core-jvm-1]`
-* [Replace Kotlin method](../../../kotlin/replace/replacekotlinmethod)
-  * methodPattern: `kotlinx.serialization.modules.SerializersModule getContextual(kotlin.reflect.KClass)`
-  * replacement: `getContextual(kclass)`
-  * classpathFromResources: `[kotlinx-serialization-core-jvm-1]`
-* [Replace Kotlin method](../../../kotlin/replace/replacekotlinmethod)
-  * methodPattern: `kotlinx.serialization.modules.SerializersModuleCollector polymorphicDefault(kotlin.reflect.KClass, kotlin.Function1)`
-  * replacement: `polymorphicDefaultDeserializer(baseClass, defaultDeserializerProvider)`
-  * classpathFromResources: `[kotlinx-serialization-core-jvm-1]`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods
-displayName: Replace deprecated `kotlinx-serialization-core` methods
-description: |
-  Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
-recipeList:
-  - org.openrewrite.kotlin.replace.ReplaceKotlinMethod:
-      methodPattern: kotlinx.serialization.modules.PolymorphicModuleBuilder default(kotlin.Function1)
-      replacement: defaultDeserializer(defaultSerializerProvider)
-      classpathFromResources: [kotlinx-serialization-core-jvm-1]
-  - org.openrewrite.kotlin.replace.ReplaceKotlinMethod:
-      methodPattern: kotlinx.serialization.modules.SerializersModule getContextual(kotlin.reflect.KClass)
-      replacement: getContextual(kclass)
-      classpathFromResources: [kotlinx-serialization-core-jvm-1]
-  - org.openrewrite.kotlin.replace.ReplaceKotlinMethod:
-      methodPattern: kotlinx.serialization.modules.SerializersModuleCollector polymorphicDefault(kotlin.reflect.KClass, kotlin.Function1)
-      replacement: polymorphicDefaultDeserializer(baseClass, defaultDeserializerProvider)
-      classpathFromResources: [kotlinx-serialization-core-jvm-1]
-
-```
-</TabItem>
-</Tabs>
 
 ## Usage
 
@@ -84,7 +40,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods")
+    activeRecipe("org.openrewrite.java.search.FindSymbols")
     setExportDatatables(true)
 }
 
@@ -113,7 +69,7 @@ rootProject {
         rewrite("org.openrewrite:rewrite-java")
     }
     rewrite {
-        activeRecipe("org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods")
+        activeRecipe("org.openrewrite.java.search.FindSymbols")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -147,7 +103,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods</recipe>
+            <recipe>org.openrewrite.java.search.FindSymbols</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -164,7 +120,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=org.openrewrite.java.search.FindSymbols -Drewrite.exportDatatables=true
 ```
 
 </TabItem>
@@ -173,12 +129,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.activeRecipes=or
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReplaceDeprecatedKotlinxSerializationCore1Methods
+mod run . --recipe FindSymbols
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN}}
+mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
 ```
 </TabItem>
 </Tabs>
@@ -187,7 +143,7 @@ mod config recipes jar install org.openrewrite:rewrite-kotlin:{{VERSION_ORG_OPEN
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.search.FindSymbols" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -195,6 +151,24 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.table.SymbolsTable" label="SymbolsTable">
+
+### Symbols overview
+**org.openrewrite.java.table.SymbolsTable**
+
+_All symbols (classes, methods, fields) declared in the codebase._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path to the source file containing this symbol. |
+| Symbol kind | The kind of symbol: CLASS, INTERFACE, ENUM, RECORD, ANNOTATION, METHOD, CONSTRUCTOR, or FIELD. |
+| Name | The simple name of the symbol. |
+| Parent type | The fully qualified name of the enclosing type, if any. |
+| Signature | For methods: the method signature. For fields: the field type. |
+| Visibility | The access modifier: PUBLIC, PROTECTED, PRIVATE, or PACKAGE_PRIVATE. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

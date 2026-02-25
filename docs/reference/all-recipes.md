@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4742
+Total recipes: 4740
 
 
 ## io.moderne.recipe:rewrite-devcenter
@@ -9907,7 +9907,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_98 recipes_
+_99 recipes_
 
 * [org.openrewrite.java.AddCommentToImport](/recipes/java/addcommenttoimport.md)
   * **Add comment to import statement**
@@ -10164,6 +10164,9 @@ _98 recipes_
 * [org.openrewrite.java.search.FindRepeatableAnnotations](/recipes/java/search/findrepeatableannotations.md)
   * **Find uses of `@Repeatable` annotations**
   * Java 8 introduced the concept of `@Repeatable` annotations.
+* [org.openrewrite.java.search.FindSymbols](/recipes/java/search/findsymbols.md)
+  * **Find symbols**
+  * Lists all symbols (classes, methods, fields, etc.) declared in the codebase. Results are emitted into a data table with symbol kind, name, parent type, signature, and visibility.
 * [org.openrewrite.java.search.FindTypeMappings](/recipes/java/search/findtypemappings.md)
   * **Find type mappings**
   * Study the frequency of `J` types and their `JavaType` type attribution.
@@ -10255,7 +10258,7 @@ _10 recipes_
 
 _License: Apache License Version 2.0_
 
-_12 recipes_
+_11 recipes_
 
 * [org.openrewrite.kotlin.FindKotlinSources](/recipes/kotlin/findkotlinsources.md)
   * **Find Kotlin sources and collect data metrics**
@@ -10290,9 +10293,6 @@ _12 recipes_
 * [org.openrewrite.kotlin.format.AutoFormat](/recipes/kotlin/format/autoformat.md)
   * **Format Kotlin code**
   * Format Kotlin code using a standard comprehensive set of Kotlin formatting recipes.
-* [org.openrewrite.kotlin.replace.ReplaceKotlinMethod](/recipes/kotlin/replace/replacekotlinmethod.md)
-  * **Replace Kotlin method**
-  * Replaces Kotlin method calls based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
 
 ## org.openrewrite:rewrite-maven
 
@@ -10756,7 +10756,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1266 recipes_
+_1264 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -10827,12 +10827,6 @@ _1266 recipes_
 * [org.axonframework.migration.UpgradeAxonFramework_4_Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
   * **Upgrade to Axonframework 4.x Javax**
   * Migration file to upgrade an Axon Framework Javax-specific project and remain on Javax.
-* [org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxCoroutinesCore1Methods](/recipes/org/jetbrains/kotlinx/replacedeprecatedkotlinxcoroutinescore1methods.md)
-  * **Replace deprecated `kotlinx-coroutines-core` methods**
-  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
-* [org.jetbrains.kotlinx.ReplaceDeprecatedKotlinxSerializationCore1Methods](/recipes/org/jetbrains/kotlinx/replacedeprecatedkotlinxserializationcore1methods.md)
-  * **Replace deprecated `kotlinx-serialization-core` methods**
-  * Automatically generated recipes to replace deprecated Kotlin methods based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
 * [org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
   * **Migrates to Apache Commons Collections 4.x**
   * Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
