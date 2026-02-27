@@ -22,3 +22,5 @@ yarn-error.log*
 # IDEs
 .idea/
 .vscode/
+
+.claude/settings.local.json 
