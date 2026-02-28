@@ -45,7 +45,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ```properties title="gradle/wrapper/gradle-wrapper.properties"
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
-distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
+distributionUrl=https\\://downloads.gradle.org/distributions/gradle-7.4-all.zip
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 ```
@@ -54,7 +54,7 @@ zipStorePath=wrapper/dists
 ```properties title="gradle/wrapper/gradle-wrapper.properties"
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
-~~>distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
+~~>distributionUrl=https\\://downloads.gradle.org/distributions/gradle-7.4-all.zip
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 ```
@@ -68,8 +68,8 @@ zipStorePath=wrapper/dists
 @@ -3,1 +3,1 @@
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
--distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
-+~~>distributionUrl=https\\://services.gradle.org/distributions/gradle-7.4-all.zip
+-distributionUrl=https\\://downloads.gradle.org/distributions/gradle-7.4-all.zip
++~~>distributionUrl=https\\://downloads.gradle.org/distributions/gradle-7.4-all.zip
 zipStoreBase=GRADLE_USER_HOME
 ```
 </TabItem>

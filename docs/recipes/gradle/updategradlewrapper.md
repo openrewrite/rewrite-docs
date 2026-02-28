@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.gradle.UpdateGradleWrapper**
 
-_Update the version of Gradle used in an existing Gradle wrapper. Queries services.gradle.org to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as services.gradle.org, then the recipe may suggest a version which is not available in your artifact repository._
+_Update the version of Gradle used in an existing Gradle wrapper. Queries `downloads.gradle.org` to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as `downloads.gradle.org`, then the recipe may suggest a version which is not available in your artifact repository._
 
 ## Recipe source
 
@@ -23,10 +23,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. Defaults to the latest release available from services.gradle.org if not specified. | `7.x` |
+| `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. Defaults to the latest release available from `downloads.gradle.org` if not specified. | `7.x` |
 | `String` | distribution | *Optional*. The distribution of Gradle to use. "bin" includes Gradle binaries. "all" includes Gradle binaries, source code, and documentation. Defaults to "bin". Valid options: `bin`, `all` |  |
 | `Boolean` | addIfMissing | *Optional*. Add a Gradle wrapper, if it's missing. Defaults to `true`. |  |
-| `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution.<br />Specifies a custom location from which to download the Gradle wrapper scripts (gradlew, gradlew.bat, etc.). This is useful for setting up the Gradle wrapper without relying on Gradle's official distribution services.<br /><br />When this option is set, the version and distribution fields must not be specified — only one source of truth is allowed. The URI should point to a valid and reachable Gradle wrapper distribution (typically a .zip archive containing the wrapper files).<br />This is particularly helpful in environments where access to Gradle's central services is restricted or where custom Gradle wrapper setups are required.<br />If the URI is inaccessible, the recipe will leave the existing wrapper files in the repository unchanged, as they are generally compatible with various Gradle versions. | `https://services.gradle.org/distributions/gradle-8.5-bin.zip` |
+| `String` | wrapperUri | *Optional*. The URI of the Gradle wrapper distribution.<br />Specifies a custom location from which to download the Gradle wrapper scripts (gradlew, gradlew.bat, etc.). This is useful for setting up the Gradle wrapper without relying on Gradle's official distribution services.<br /><br />When this option is set, the version and distribution fields must not be specified — only one source of truth is allowed. The URI should point to a valid and reachable Gradle wrapper distribution (typically a .zip archive containing the wrapper files).<br />This is particularly helpful in environments where access to Gradle's central services is restricted or where custom Gradle wrapper setups are required.<br />If the URI is inaccessible, the recipe will leave the existing wrapper files in the repository unchanged, as they are generally compatible with various Gradle versions. | `https://downloads.gradle.org/distributions/gradle-8.5-bin.zip` |
 | `String` | distributionChecksum | *Optional*. The SHA-256 checksum of the Gradle distribution. If specified, the recipe will add the checksum along with the custom distribution URL. | `29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda` |
 
 
@@ -72,7 +72,7 @@ This recipe is used as part of the following composite recipes:
 ```properties
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
+distributionUrl=https\://downloads.gradle.org/distributions/gradle-7.4-bin.zip
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 ```
@@ -81,7 +81,7 @@ zipStorePath=wrapper/dists
 ```properties
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
-distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+distributionUrl=https\://downloads.gradle.org/distributions/gradle-7.4.2-bin.zip
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda
@@ -94,8 +94,8 @@ distributionSha256Sum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec
 @@ -3,1 +3,1 @@
 distributionBase=GRADLE_USER_HOME
 distributionPath=wrapper/dists
--distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
-+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4.2-bin.zip
+-distributionUrl=https\://downloads.gradle.org/distributions/gradle-7.4-bin.zip
++distributionUrl=https\://downloads.gradle.org/distributions/gradle-7.4.2-bin.zip
 zipStoreBase=GRADLE_USER_HOME
 @@ -6,0 +6,1 @@
 zipStoreBase=GRADLE_USER_HOME

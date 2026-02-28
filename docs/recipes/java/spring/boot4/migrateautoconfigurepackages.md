@@ -142,10 +142,39 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `org.springframework.boot.autoconfigure.security.SecurityProperties.DEFAULT_FILTER_ORDER`
   * fullyQualifiedConstantName: `org.springframework.boot.security.autoconfigure.web.servlet.SecurityFilterProperties.DEFAULT_FILTER_ORDER`
-* [Rename package name](../../../java/changepackage)
-  * oldPackageName: `org.springframework.boot.autoconfigure.security`
-  * newPackageName: `org.springframework.boot.security.autoconfigure`
-  * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.SecurityAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.UserDetailsServiceAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.servlet.PathRequest`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.servlet.PathRequest`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.servlet.SecurityFilterAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.servlet.StaticResourceRequest`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.ConditionalOnDefaultWebSecurity`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.servlet.ConditionalOnDefaultWebSecurity`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.DefaultWebSecurityCondition`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.servlet.DefaultWebSecurityCondition`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.StaticResourceLocation`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.StaticResourceLocation`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.reactive.PathRequest`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.reactive.PathRequest`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.ReactiveUserDetailsServiceAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.security.reactive.StaticResourceRequest`
+  * newFullyQualifiedTypeName: `org.springframework.boot.security.autoconfigure.web.reactive.StaticResourceRequest`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.security.oauth2.server.servlet`
   * newPackageName: `org.springframework.boot.security.oauth2.server.authorization.autoconfigure.servlet`
@@ -157,6 +186,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.security.oauth2.resource`
   * newPackageName: `org.springframework.boot.security.oauth2.server.resource.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.security.saml2`
+  * newPackageName: `org.springframework.boot.security.saml2.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.security`
+  * newPackageName: `org.springframework.boot.security.autoconfigure`
   * recursive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.validation`
@@ -344,10 +381,39 @@ recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.springframework.boot.autoconfigure.security.SecurityProperties.DEFAULT_FILTER_ORDER
       fullyQualifiedConstantName: org.springframework.boot.security.autoconfigure.web.servlet.SecurityFilterProperties.DEFAULT_FILTER_ORDER
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: org.springframework.boot.autoconfigure.security
-      newPackageName: org.springframework.boot.security.autoconfigure
-      recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.SecurityAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.UserDetailsServiceAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.servlet.PathRequest
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.servlet.PathRequest
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.servlet.SecurityFilterAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.servlet.StaticResourceRequest
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.ConditionalOnDefaultWebSecurity
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.servlet.ConditionalOnDefaultWebSecurity
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.DefaultWebSecurityCondition
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.servlet.DefaultWebSecurityCondition
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.StaticResourceLocation
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.StaticResourceLocation
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.reactive.PathRequest
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.reactive.PathRequest
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.ReactiveUserDetailsServiceAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.security.reactive.StaticResourceRequest
+      newFullyQualifiedTypeName: org.springframework.boot.security.autoconfigure.web.reactive.StaticResourceRequest
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.security.oauth2.server.servlet
       newPackageName: org.springframework.boot.security.oauth2.server.authorization.autoconfigure.servlet
@@ -359,6 +425,14 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.security.oauth2.resource
       newPackageName: org.springframework.boot.security.oauth2.server.resource.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.security.saml2
+      newPackageName: org.springframework.boot.security.saml2.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.security
+      newPackageName: org.springframework.boot.security.autoconfigure
       recursive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.validation

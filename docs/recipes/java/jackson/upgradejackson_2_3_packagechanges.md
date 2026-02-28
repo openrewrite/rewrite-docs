@@ -48,6 +48,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldPackageName: `com.fasterxml.jackson.dataformat`
   * newPackageName: `tools.jackson.dataformat`
   * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `com.fasterxml.jackson.datatype.jsr310`
+  * newPackageName: `tools.jackson.databind.ext.javatime`
+  * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `com.fasterxml.jackson.datatype.jdk8`
+  * newPackageName: `tools.jackson.databind.ext.jdk8`
+  * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `com.fasterxml.jackson.datatype`
+  * newPackageName: `tools.jackson.datatype`
+  * recursive: `true`
 
 </TabItem>
 
@@ -78,6 +90,18 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.fasterxml.jackson.dataformat
       newPackageName: tools.jackson.dataformat
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.fasterxml.jackson.datatype.jsr310
+      newPackageName: tools.jackson.databind.ext.javatime
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.fasterxml.jackson.datatype.jdk8
+      newPackageName: tools.jackson.databind.ext.jdk8
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.fasterxml.jackson.datatype
+      newPackageName: tools.jackson.datatype
       recursive: true
 
 ```

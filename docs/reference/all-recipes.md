@@ -9861,7 +9861,7 @@ _53 recipes_
   * Removes a repository from Gradle build scripts. Named repositories include &quot;jcenter&quot;, &quot;mavenCentral&quot;, &quot;mavenLocal&quot;, and &quot;google&quot;.
 * [org.openrewrite.gradle.UpdateGradleWrapper](/recipes/gradle/updategradlewrapper.md)
   * **Update Gradle wrapper**
-  * Update the version of Gradle used in an existing Gradle wrapper. Queries services.gradle.org to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as services.gradle.org, then the recipe may suggest a version which is not available in your artifact repository.
+  * Update the version of Gradle used in an existing Gradle wrapper. Queries `downloads.gradle.org` to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as `downloads.gradle.org`, then the recipe may suggest a version which is not available in your artifact repository.
 * [org.openrewrite.gradle.UpdateJavaCompatibility](/recipes/gradle/updatejavacompatibility.md)
   * **Update Gradle project Java compatibility**
   * Find and updates the Java compatibility for the Gradle project.
