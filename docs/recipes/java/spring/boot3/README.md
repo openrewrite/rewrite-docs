@@ -14,7 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Spring Boot properties to 3.1](./springbootproperties_3_1.md)
 * [Migrate Spring Boot properties to 3.2](./springbootproperties_3_2.md)
 * [Migrate Spring Boot properties to 3.3](./springbootproperties_3_3.md)
-* [Migrate Spring Boot properties to 3.4](./springbootproperties_3_4-community-edition.md)
+* [Migrate Spring Boot properties to 3.4 (Community Edition)](./springbootproperties_3_4-community-edition.md)
 * [Migrate Spring Boot properties to 3.5](./springbootproperties_3_5.md)
 * [Migrate dropWizard dependencies to Spring Boot 3.x](./migratedropwizarddependencies.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](./migratethymeleafdependencies.md)

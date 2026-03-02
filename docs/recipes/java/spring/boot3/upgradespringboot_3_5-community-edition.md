@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Spring Boot properties to 3.5](../../../java/spring/boot3/springbootproperties_3_5)
 * [Migrate to Spring Cloud 2025](../../../java/spring/cloud2025/upgradespringcloud_2025)
 * [Update Prometheus Pushgateway Dependency Coordinates](../../../java/spring/boot3/updateprometheuspushgateway)
-* [Migrate to Spring Security 6.5](../../../java/spring/security6/upgradespringsecurity_6_5-community-edition)
+* [Migrate to Spring Security 6.5 (Community Edition)](../../../java/spring/security6/upgradespringsecurity_6_5-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -280,7 +280,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeSpringBoot_3_5
+mod run . --recipe org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5
 ```
 
 If the recipe is not available locally, then you can install it using:

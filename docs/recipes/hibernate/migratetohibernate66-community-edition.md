@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.5.x (Community Edition)](../hibernate/migratetohibernate65)
+* [Migrate to Hibernate 6.5.x](../hibernate/migratetohibernate65)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
   * artifactId: `*`
@@ -179,7 +179,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToHibernate66
+mod run . --recipe org.openrewrite.hibernate.MigrateToHibernate66
 ```
 
 If the recipe is not available locally, then you can install it using:

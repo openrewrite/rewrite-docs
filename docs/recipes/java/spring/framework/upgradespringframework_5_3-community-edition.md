@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Spring Framework 5.3"
+sidebar_label: "Migrate to Spring Framework 5.3 (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Framework 5.3
+# Migrate to Spring Framework 5.3 (Community Edition)
 
 **org.openrewrite.java.spring.framework.UpgradeSpringFramework\_5\_3**
 
@@ -68,7 +68,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3
-displayName: Migrate to Spring Framework 5.3
+displayName: Migrate to Spring Framework 5.3 (Community Edition)
 description: |
   Migrate applications to the latest Spring Framework 5.3 release.
 recipeList:
@@ -113,7 +113,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
-* [Migrate to Spring Framework 5.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_3-moderne-edition)
+* [Migrate to Spring Framework 5.3 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_3-moderne-edition)
 * [Migrate to Spring Framework 6.0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
 
 
@@ -230,7 +230,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe UpgradeSpringFramework_5_3
+mod run . --recipe org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3
 ```
 
 If the recipe is not available locally, then you can install it using:

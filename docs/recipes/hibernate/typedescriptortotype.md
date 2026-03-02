@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)"
+sidebar_label: "Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)
+# Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`
 
 **org.openrewrite.hibernate.TypeDescriptorToType**
 
@@ -43,7 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.TypeDescriptorToType
-displayName: Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)
+displayName: Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`
 description: |
   Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
 recipeList:

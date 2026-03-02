@@ -430,7 +430,7 @@ _49 recipes_
   * **Migrate Spring Boot properties to 2.7**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
-  * **Migrate from Spring Boot 1.x to 2.0**
+  * **Migrate from Spring Boot 1.x to 2.0 (Community Edition)**
   * Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
   * **Migrate to Spring Boot 2.1**
@@ -493,7 +493,7 @@ _49 recipes_
   * **Migrate Spring Boot properties to 3.3**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
-  * **Migrate Spring Boot properties to 3.4**
+  * **Migrate Spring Boot properties to 3.4 (Community Edition)**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
   * **Migrate Enabled to Access Spring Boot Properties**
@@ -6621,7 +6621,7 @@ _38 recipes_
   * **Migrate to Spring Security 6.4**
   * Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
-  * **Migrate to Spring Security 6.5**
+  * **Migrate to Spring Security 6.5 (Community Edition)**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
   * **Remove throws exception in `SecurityConfigurer` methods `init` and `configure`**
@@ -6751,7 +6751,7 @@ _140 recipes_
   * **Migrate Spring Boot properties to 2.7**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
-  * **Migrate from Spring Boot 1.x to 2.0**
+  * **Migrate from Spring Boot 1.x to 2.0 (Community Edition)**
   * Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
   * **Migrate to Spring Boot 2.1**
@@ -6814,7 +6814,7 @@ _140 recipes_
   * **Migrate Spring Boot properties to 3.3**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
-  * **Migrate Spring Boot properties to 3.4**
+  * **Migrate Spring Boot properties to 3.4 (Community Edition)**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
   * **Migrate Enabled to Access Spring Boot Properties**
@@ -6958,7 +6958,7 @@ _140 recipes_
   * **Migrate to Spring Security 6.4**
   * Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
-  * **Migrate to Spring Security 6.5**
+  * **Migrate to Spring Security 6.5 (Community Edition)**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
   * **Remove throws exception in `SecurityConfigurer` methods `init` and `configure`**

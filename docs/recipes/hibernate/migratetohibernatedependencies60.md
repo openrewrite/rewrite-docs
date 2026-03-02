@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate Hibernate dependencies to 6.0.x (Community Edition)"
+sidebar_label: "Migrate Hibernate dependencies to 6.0.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Hibernate dependencies to 6.0.x (Community Edition)
+# Migrate Hibernate dependencies to 6.0.x
 
 **org.openrewrite.hibernate.MigrateToHibernateDependencies60**
 
@@ -196,7 +196,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.MigrateToHibernateDependencies60
-displayName: Migrate Hibernate dependencies to 6.0.x (Community Edition)
+displayName: Migrate Hibernate dependencies to 6.0.x
 description: |
   This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
 recipeList:

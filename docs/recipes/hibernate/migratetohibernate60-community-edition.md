@@ -28,15 +28,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate Hibernate dependencies to 6.0.x (Community Edition)](../hibernate/migratetohibernatedependencies60)
-* [AddScalarPreferStandardBasicTypesForHibernate5 (Community Edition)](../hibernate/addscalarpreferstandardbasictypes)
-* [Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector` (Community Edition)](../hibernate/emptyinterceptortointerface)
-* [Replace boolean type mappings with converters (Community Edition)](../hibernate/migratebooleanmappings)
-* [`@Type` annotation type parameter migration (Community Edition)](../hibernate/typeannotationparameter)
-* [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)](../hibernate/typedescriptortotype)
+* [Migrate Hibernate dependencies to 6.0.x](../hibernate/migratetohibernatedependencies60)
+* [AddScalarPreferStandardBasicTypesForHibernate5](../hibernate/addscalarpreferstandardbasictypes)
+* [Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector`](../hibernate/emptyinterceptortointerface)
+* [Replace boolean type mappings with converters](../hibernate/migratebooleanmappings)
+* [`@Type` annotation type parameter migration](../hibernate/typeannotationparameter)
+* [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](../hibernate/typedescriptortotype)
 * [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](../java/migrate/jakarta/javaxpersistencetojakartapersistence)
 * [Migrate xmlns entries in `persistence.xml` files](../java/migrate/jakarta/javaxpersistencexmltojakartapersistencexml)
-* [Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate60)
+* [Migrate Hibernate Types to Hypersistence Utils 6.0](../hibernate/migratetohypersistenceutilshibernate60)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 6.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate60-moderne-edition)
-* [Migrate to Hibernate 6.1.x (Community Edition)](/recipes/hibernate/migratetohibernate61.md)
+* [Migrate to Hibernate 6.1.x](/recipes/hibernate/migratetohibernate61.md)
 
 ## Examples
 ##### Example 1
@@ -424,7 +424,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToHibernate60
+mod run . --recipe org.openrewrite.hibernate.MigrateToHibernate60
 ```
 
 If the recipe is not available locally, then you can install it using:

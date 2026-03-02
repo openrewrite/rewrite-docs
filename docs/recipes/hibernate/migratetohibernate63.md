@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Hibernate 6.3.x (Community Edition)"
+sidebar_label: "Migrate to Hibernate 6.3.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Hibernate 6.3.x (Community Edition)
+# Migrate to Hibernate 6.3.x
 
 **org.openrewrite.hibernate.MigrateToHibernate63**
 
@@ -28,8 +28,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.2.x (Community Edition)](../hibernate/migratetohibernate62)
-* [Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)](../hibernate/migratetohypersistenceutilshibernate63)
+* [Migrate to Hibernate 6.2.x](../hibernate/migratetohibernate62)
+* [Migrate Hibernate Types to Hypersistence Utils 6.3](../hibernate/migratetohypersistenceutilshibernate63)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
   * artifactId: `*`
@@ -43,7 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.MigrateToHibernate63
-displayName: Migrate to Hibernate 6.3.x (Community Edition)
+displayName: Migrate to Hibernate 6.3.x
 description: |
   This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
 recipeList:
@@ -62,7 +62,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.4.x (Community Edition)](/recipes/hibernate/migratetohibernate64.md)
+* [Migrate to Hibernate 6.4.x](/recipes/hibernate/migratetohibernate64.md)
 
 
 ## Usage

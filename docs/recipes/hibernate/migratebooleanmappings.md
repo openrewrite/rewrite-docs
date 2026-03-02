@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Replace boolean type mappings with converters (Community Edition)"
+sidebar_label: "Replace boolean type mappings with converters"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Replace boolean type mappings with converters (Community Edition)
+# Replace boolean type mappings with converters
 
 **org.openrewrite.hibernate.MigrateBooleanMappings**
 

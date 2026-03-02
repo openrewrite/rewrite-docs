@@ -265,7 +265,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 ## rewrite-hibernate
 
 * [io.moderne.hibernate.MigrateToHibernate40](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate40)
-  * **Migrate to Hibernate 4.0.x (Moderne Edition)**
+  * **Migrate to Hibernate 4.0.x**
   * This recipe will apply changes commonly needed when migrating from Hibernate 3.x to 4.0.x, including migration of collection annotations to their JPA 2.0 equivalents.
 * [io.moderne.hibernate.MigrateToHibernate60](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate60-moderne-edition)
   * **Migrate to Hibernate 6.0.x (Moderne Edition)**
@@ -280,82 +280,82 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Migrate to Hibernate 7.1.x (Moderne Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x.
 * [io.moderne.hibernate.MigrateToHibernate72](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate72)
-  * **Migrate to Hibernate 7.2.x (Moderne Edition)**
+  * **Migrate to Hibernate 7.2.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate 7.2.x.
 * [io.moderne.hibernate.search.FindJPQLDefinitions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/search/findjpqldefinitions)
-  * **Find JPQL definitions (Moderne Edition)**
+  * **Find JPQL definitions**
   * Find Java Persistence Query Language definitions in the codebase.
 * [io.moderne.hibernate.update40.MigrateJoinTableToCollectionTable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update40/migratejointabletocollectiontable)
-  * **Migrate `@JoinTable` to `@CollectionTable` for element collections (Moderne Edition)**
+  * **Migrate `@JoinTable` to `@CollectionTable` for element collections**
   * Replaces `@JoinTable` with `@CollectionTable` when used alongside `@CollectionOfElements` or `@ElementCollection`. `@CollectionTable` is the JPA 2.0 standard for defining the table that stores element collections.
 * [io.moderne.hibernate.update66.FixConflictingClassTypeAnnotations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update66/fixconflictingclasstypeannotations)
-  * **Fix conflicting class type annotation Hibernate 6.6 (Moderne Edition)**
+  * **Fix conflicting class type annotation Hibernate 6.6**
   * Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`. For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table) but still accepted and therefore stays.
 * [io.moderne.hibernate.update66.MigrateCascadeTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update66/migratecascadetypes)
-  * **Migrate Hibernate CascadeType constants (Moderne Edition)**
+  * **Migrate Hibernate CascadeType constants**
   * Moving away from deprecated Hibernate CascadeType constants. CascadeType.SAVE_UPDATE -&gt; CascadeType.PERSIST and/or CascadeType.MERGE, CascadeType.DELETE -&gt; CascadeType.REMOVE.
 * [io.moderne.hibernate.update66.RemoveTableFromInheritedEntity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update66/removetablefrominheritedentity)
-  * **Remove table from single table inherited entity (Moderne Edition)**
+  * **Remove table from single table inherited entity**
   * For Single Table Inherited Entities Hibernate ignores the `@Table` annotation on child entities. From Version 6.6 it is considered an error.
 * [io.moderne.hibernate.update70.AddCascadePersistToIdMappedAssociations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/addcascadepersisttoidmappedassociations)
-  * **Migrate implicit cascade=PERSIST for @Id and @MapsId associations (Moderne Edition)**
+  * **Migrate implicit cascade=PERSIST for @Id and @MapsId associations**
   * Hibernate used to automatically enable cascade=PERSIST for association fields annotated @Id or @MapsId. This was undocumented and unexpected behavior, and no longer supported in Hibernate 7. Existing code which relies on this behavior will be modified by addition of explicit cascade=PERSIST to the association fields.
 * [io.moderne.hibernate.update70.CompositeUserTypeSessionFactoryImplementor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/compositeusertypesessionfactoryimplementor)
-  * **Remove leaking of SessionFactoryImplementor from `org.hibernate.usertype.CompositeUserType` invocations and implementations (Moderne Edition)**
+  * **Remove leaking of SessionFactoryImplementor from `org.hibernate.usertype.CompositeUserType` invocations and implementations**
   * Remove leaking of SessionFactoryImplementor from `org.hibernate.usertype.CompositeUserType` invocations and implementations.
 * [io.moderne.hibernate.update70.MigrateConfigurableToGeneratorCreationContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migrateconfigurabletogeneratorcreationcontext)
-  * **Migrate `Configurable.configure()` to use `GeneratorCreationContext` (Moderne Edition)**
+  * **Migrate `Configurable.configure()` to use `GeneratorCreationContext`**
   * In Hibernate 7.0, `Configurable.configure()` now takes a `GeneratorCreationContext` parameter instead of `ServiceRegistry`. This recipe migrates method signatures and call sites.
 * [io.moderne.hibernate.update70.MigrateIntegratorMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migrateintegratormethod)
-  * **Migrate Hibernate `Integrator#integrate` method (Moderne Edition)**
+  * **Migrate Hibernate `Integrator#integrate` method**
   * Migrate Hibernate `Integrator#integrate` method from deprecated signature to Hibernate 7 compatible signature. Changes `integrate(Metadata, SessionFactoryImplementor, SessionFactoryServiceRegistry)` to `integrate(Metadata, BootstrapContext, SessionFactoryImplementor)`.
 * [io.moderne.hibernate.update70.MigrateJdbcTypeToJdbcTypeCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejdbctypetojdbctypecode)
-  * **Migrate @JdbcType to @JdbcTypeCode (Moderne Edition)**
+  * **Migrate @JdbcType to @JdbcTypeCode**
   * In Hibernate 7.0, various JDBC types were moved to internal packages. Use @JdbcTypeCode with SqlTypes constants instead of @JdbcType with specific classes.
 * [io.moderne.hibernate.update70.MigrateLockOptionsToDirectParameters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratelockoptionstodirectparameters)
-  * **Migrate LockOptions to direct parameters (Moderne Edition)**
+  * **Migrate LockOptions to direct parameters**
   * Migrates deprecated `LockOptions` usage to direct parameters in method calls. As of JPA 3.2 and Hibernate 7, `LockMode`, `Timeout`, and `PessimisticLockScope` are passed directly to `find()`, `refresh()`, and `lock()` methods instead of being wrapped in a `LockOptions` object.
 * [io.moderne.hibernate.update70.MigrateMetamodelImplementor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratemetamodelimplementor)
-  * **Migrate `MetamodelImplementor` to Hibernate 7.0 (Moderne Edition)**
+  * **Migrate `MetamodelImplementor` to Hibernate 7.0**
   * In Hibernate 7.0, `MetamodelImplementor` has been split into `MappingMetamodel` for ORM-specific operations and `JpaMetamodel` for JPA-standard operations. This recipe migrates the usage based on which methods are called.
 * [io.moderne.hibernate.update70.MigrateNaturalIdLoadAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratenaturalidloadaccess)
-  * **Migrate NaturalIdLoadAccess method calls (Moderne Edition)**
+  * **Migrate NaturalIdLoadAccess method calls**
   * Migrates NaturalIdLoadAccess#using(Object...) to using(Map.of(...)) variants for Hibernate 7.0.
 * [io.moderne.hibernate.update70.MigrateNaturalIdMultiLoadAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratenaturalidmultiloadaccess)
-  * **Migrate NaturalIdMultiLoadAccess method calls (Moderne Edition)**
+  * **Migrate NaturalIdMultiLoadAccess method calls**
   * Migrates NaturalIdMultiLoadAccess#compoundValue(Object...) to Map.of(...) variants for Hibernate 7.0.
 * [io.moderne.hibernate.update70.MigrateSessionInterface](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratesessioninterface)
-  * **Migrate Session interface method calls (Moderne Edition)**
+  * **Migrate Session interface method calls**
   * Migrates code using deprecated Session interface methods to their Hibernate 7.0 replacements.
 * [io.moderne.hibernate.update70.MigrateSessionToDeferToJPA](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratesessiontodefertojpa)
-  * **Migrate Session save/update/delete method calls (Moderne Edition)**
+  * **Migrate Session save/update/delete method calls**
   * Migrates code using deprecated Session load/get/refresh/save/update/delete methods to their Hibernate 7.0 replacements.
 * [io.moderne.hibernate.update70.MigrateSetFlushModeToSetQueryFlushMode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratesetflushmodetosetqueryflushmode)
-  * **Migrate `setFlushMode()` to `setQueryFlushMode()` (Moderne Edition)**
+  * **Migrate `setFlushMode()` to `setQueryFlushMode()`**
   * In Hibernate 7.0, `CommonQueryContract.setFlushMode(FlushModeType)` has been replaced with `setQueryFlushMode(QueryFlushMode)`. This recipe migrates the method call and converts `FlushModeType` parameters to their `QueryFlushMode` equivalents.
 * [io.moderne.hibernate.update70.MigrateToHibernate7JFR](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratetohibernate7jfr)
-  * **Migrate to Hibernate 7 JFR APIs (Moderne Edition)**
+  * **Migrate to Hibernate 7 JFR APIs**
   * Migrates deprecated JFR integration APIs to their Hibernate 7 replacements. `EventManager` becomes `EventMonitor` and `HibernateMonitoringEvent` becomes `DiagnosticEvent`.
 * [io.moderne.hibernate.update70.MigrateToTargetEmbeddable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratetotargetembeddable)
-  * **Migrate to @TargetEmbeddable (Moderne Edition)**
+  * **Migrate to @TargetEmbeddable**
   * Migrates code using removed @Target to to Hibernate 7.0's @TargetEmbeddable equivalent. Removes misused @Target annotations.
 * [io.moderne.hibernate.update70.RemoveUnnecessaryCastToSession](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/removeunnecessarycasttosession)
-  * **Remove unnecessary cast to `Session` for `SessionFactory.createEntityManager()` (Moderne Edition)**
+  * **Remove unnecessary cast to `Session` for `SessionFactory.createEntityManager()`**
   * In Hibernate 7.0, `SessionFactory.createEntityManager()` explicitly returns Session, making casts to Session unnecessary.
 * [io.moderne.hibernate.update70.ReplaceHibernateWithJakartaAnnotations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/replacehibernatewithjakartaannotations)
-  * **Replace hibernate annotations with Jakarta variants (Moderne Edition)**
+  * **Replace hibernate annotations with Jakarta variants**
   * Tries to replaces annotations that have been removed in Hibernate 7.0 with its Jakarta equivalent, such as Table, @Where, @OrderBy, etc. If a annotation is used with arguments that do not have a direct replacement, the annotation is not replaced at all.
 * [io.moderne.hibernate.update70.ReplaceSessionLockRequest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/replacesessionlockrequest)
-  * **Replace Session.buildLockRequest with LockOptions (Moderne Edition)**
+  * **Replace Session.buildLockRequest with LockOptions**
   * Migrates Session.buildLockRequest(LockOptions.X) calls to use session.lock(entity, new LockOptions(LockMode.X)) in Hibernate 7.0.
 * [io.moderne.hibernate.update70.UnboxingTransactionTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/unboxingtransactiontimeout)
-  * **Null safe Transaction#getTimeout() (Moderne Edition)**
+  * **Null safe Transaction#getTimeout()**
   * JPA 3.2 adds `#getTimeout` but uses `Integer` whereas Hibernate has historically used `int`. Note that this raises the possibility of a `NullPointerException` during migration if, e.g., performing direct comparisons on the timeout value against an in (auto unboxing). This recipe adds ternary operators where `Transaction#getTimeout()` is used and a negative value will be used if the `getTimeout()` resulted in a null value.
 * [io.moderne.hibernate.update70.UserTypeNullSafeGetSharedSessionContractImplementorRecipe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/usertypenullsafegetsharedsessioncontractimplementorrecipe)
-  * **Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` invocations (Moderne Edition)**
+  * **Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` invocations**
   * Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` invocations.
 * [io.moderne.hibernate.update70.UserTypeSharedSessionContractImplementor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/usertypesharedsessioncontractimplementor)
-  * **Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` implementations (Moderne Edition)**
+  * **Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` implementations**
   * Remove leaking of SharedSessionContractImplementor from `org.hibernate.usertype.UserType` implementations.
 
 
@@ -1659,7 +1659,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Migrate Spring Framework to Spring Boot**
   * Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application's build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin.
 * [io.moderne.java.spring.boot2.UpgradeSpringBoot_2_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot2/upgradespringboot_2_0-moderne-edition)
-  * **Migrate to Spring Boot 2.0**
+  * **Migrate to Spring Boot 2.0 (Moderne Edition)**
   * Migrate applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [io.moderne.java.spring.boot3.AddValidToConfigurationPropertiesFields](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/addvalidtoconfigurationpropertiesfields)
   * **Add `@Valid` annotation to fields**
@@ -1734,7 +1734,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Spring Boot 3.5 best practices**
   * Applies best practices to Spring Boot 3.5+ applications.
 * [io.moderne.java.spring.boot3.SpringBootProperties_3_4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/springbootproperties_3_4-moderne-edition)
-  * **Migrate `@Endpoint` Security properties to 3.4**
+  * **Migrate `@Endpoint` Security properties to 3.4 (Moderne Edition)**
   * Migrate the settings for Spring Boot Management Endpoint Security from `true`|`false` to `read-only`|`none`.
 * [io.moderne.java.spring.boot3.UpdateOpenTelemetryResourceAttributes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/updateopentelemetryresourceattributes)
   * **Update OpenTelemetry resource attributes**
@@ -1809,7 +1809,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Migrate `spring-retry` to Spring Framework resilience**
   * Migrate `spring-retry`s `@Retryable` and `@Backoff` annotation to Spring Framework 7 Resilience annotations.
 * [io.moderne.java.spring.boot4.MigrateToModularStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters-moderne-edition)
-  * **Migrate to Spring Boot 4.0 modular starters**
+  * **Migrate to Spring Boot 4.0 modular starters (Moderne Edition)**
   * Remove monolithic starters and adds the necessary Spring Boot 4.0 starter dependencies based on package usage, where any spring-boot-starter was used previously.
 * [io.moderne.java.spring.boot4.MockMvcAssertionsToAssertJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/mockmvcassertionstoassertj)
   * **Migrate MockMvc `andExpect()` chains to AssertJ assertions**
@@ -1947,7 +1947,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Migrate to Spring Framework 3.x**
   * Migrate applications to the latest Spring Framework 3 release, pulling in additional proprietary Moderne recipes.
 * [io.moderne.java.spring.framework.UpgradeSpringFramework_5_3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_3-moderne-edition)
-  * **Migrate to Spring Framework 5.3**
+  * **Migrate to Spring Framework 5.3 (Moderne Edition)**
   * Migrate applications to the latest Spring Framework 5.3 release, pulling in additional proprietary Moderne recipes.
 * [io.moderne.java.spring.framework.beansxml.BeansXmlToConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/beansxml/beansxmltoconfiguration)
   * **Migrate `beans.xml` to Spring Framework configuration class**
@@ -2043,7 +2043,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Migrate antPathRequestMatcher to pathPatternRequestMatcher**
   * In Spring Security 6.5, `AntPathRequestMatcher` is deprecated in favor of `PathPatternRequestMatcher`. This recipe migrates static method calls and constructor usage to the new pattern.
 * [io.moderne.java.spring.security6.UpgradeSpringSecurity_6_5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security6/upgradespringsecurity_6_5-moderne-edition)
-  * **Migrate to Spring Security 6.5**
+  * **Migrate to Spring Security 6.5 (Moderne Edition)**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [io.moderne.java.spring.security7.MigrateMvcRequestMatcher](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/migratemvcrequestmatcher)
   * **Migrate `MvcRequestMatcher` to `PathPatternRequestMatcher`**

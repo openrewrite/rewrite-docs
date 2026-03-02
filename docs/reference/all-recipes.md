@@ -677,28 +677,28 @@ _License: Moderne Source Available License_
 _8 recipes_
 
 * [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes.md)
-  * **AddScalarPreferStandardBasicTypesForHibernate5 (Community Edition)**
+  * **AddScalarPreferStandardBasicTypesForHibernate5**
   * Prefer the use of `StandardBasicTypes.*` in `NativeQuery.addScalar(...)` invocations.
 * [org.openrewrite.hibernate.EmptyInterceptorToInterface](/recipes/hibernate/emptyinterceptortointerface.md)
-  * **Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector` (Community Edition)**
+  * **Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector`**
   * In Hibernate 6.0 the `Interceptor` interface received default implementations therefore the NOOP implementation that could be extended was no longer needed. This recipe migrates 5.x `Interceptor#onPrepareStatement(String)` to 6.0 `StatementInspector#inspect()`.
 * [org.openrewrite.hibernate.MigrateBooleanMappings](/recipes/hibernate/migratebooleanmappings.md)
-  * **Replace boolean type mappings with converters (Community Edition)**
+  * **Replace boolean type mappings with converters**
   * Replaces type mapping of booleans with appropriate attribute converters.
 * [org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation](/recipes/hibernate/migrateresultcheckstyletoexpectation.md)
-  * **Migration of `ResultCheckStyle` to `Expectation` (Community Edition)**
+  * **Migration of `ResultCheckStyle` to `Expectation`**
   * Will migrate the usage of `org.hibernate.annotations.ResultCheckStyle` to `org.hibernate.jdbc.Expectation` in `@SQLInsert`, `@SqlUpdate`, `@SqlDelete` and `@SqlDeleteAll` annotations.
 * [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype.md)
-  * **Migrate `UserType` to Hibernate 6 (Community Edition)**
+  * **Migrate `UserType` to Hibernate 6**
   * With Hibernate 6 the `UserType` interface received a type parameter making it more strictly typed. This recipe applies the changes required to adhere to this change.
 * [org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation](/recipes/hibernate/removeinvalidhibernategeneratedvalueannotation.md)
-  * **Remove invalid `@GeneratedValue` annotation (Community Edition)**
+  * **Remove invalid `@GeneratedValue` annotation**
   * Removes `@GeneratedValue` annotation from fields that are not also annotated with `@Id`.
 * [org.openrewrite.hibernate.ReplaceLazyCollectionAnnotation](/recipes/hibernate/replacelazycollectionannotation.md)
-  * **Replace `@LazyCollection` with `jakarta.persistence.FetchType` (Community Edition)**
+  * **Replace `@LazyCollection` with `jakarta.persistence.FetchType`**
   * Adds the `FetchType` to jakarta annotations and deletes `@LazyCollection`.
 * [org.openrewrite.hibernate.TypeAnnotationParameter](/recipes/hibernate/typeannotationparameter.md)
-  * **`@Type` annotation type parameter migration (Community Edition)**
+  * **`@Type` annotation type parameter migration**
   * Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type class.
 
 ## org.openrewrite.recipe:rewrite-jackson
@@ -12461,19 +12461,19 @@ _1285 recipes_
   * **Migrate to Hibernate 6.0.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
 * [org.openrewrite.hibernate.MigrateToHibernate61](/recipes/hibernate/migratetohibernate61.md)
-  * **Migrate to Hibernate 6.1.x (Community Edition)**
+  * **Migrate to Hibernate 6.1.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.1.x. The hibernate dependencies will   be updated to use the new org.hibernate.orm group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
 * [org.openrewrite.hibernate.MigrateToHibernate62](/recipes/hibernate/migratetohibernate62.md)
-  * **Migrate to Hibernate 6.2.x (Community Edition)**
+  * **Migrate to Hibernate 6.2.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x.
 * [org.openrewrite.hibernate.MigrateToHibernate63](/recipes/hibernate/migratetohibernate63.md)
-  * **Migrate to Hibernate 6.3.x (Community Edition)**
+  * **Migrate to Hibernate 6.3.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
 * [org.openrewrite.hibernate.MigrateToHibernate64](/recipes/hibernate/migratetohibernate64.md)
-  * **Migrate to Hibernate 6.4.x (Community Edition)**
+  * **Migrate to Hibernate 6.4.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.4.x.
 * [org.openrewrite.hibernate.MigrateToHibernate65](/recipes/hibernate/migratetohibernate65.md)
-  * **Migrate to Hibernate 6.5.x (Community Edition)**
+  * **Migrate to Hibernate 6.5.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
 * [org.openrewrite.hibernate.MigrateToHibernate66](/recipes/hibernate/migratetohibernate66-community-edition.md)
   * **Migrate to Hibernate 6.6.x (Community Edition)**
@@ -12485,22 +12485,22 @@ _1285 recipes_
   * **Migrate to Hibernate 7.1.x (Community Edition)**
   * This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x.
 * [org.openrewrite.hibernate.MigrateToHibernateDependencies60](/recipes/hibernate/migratetohibernatedependencies60.md)
-  * **Migrate Hibernate dependencies to 6.0.x (Community Edition)**
+  * **Migrate Hibernate dependencies to 6.0.x**
   * This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
 * [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
-  * **Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)**
+  * **Migrate Hibernate Types to Hypersistence Utils 6.0**
   * This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
 * [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62](/recipes/hibernate/migratetohypersistenceutilshibernate62.md)
-  * **Migrate Hibernate Types to Hypersistence Utils 6.2 (Community Edition)**
+  * **Migrate Hibernate Types to Hypersistence Utils 6.2**
   * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`.
 * [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63](/recipes/hibernate/migratetohypersistenceutilshibernate63.md)
-  * **Migrate Hibernate Types to Hypersistence Utils 6.3 (Community Edition)**
+  * **Migrate Hibernate Types to Hypersistence Utils 6.3**
   * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
 * [org.openrewrite.hibernate.TypeDescriptorToType](/recipes/hibernate/typedescriptortotype.md)
-  * **Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` (Community Edition)**
+  * **Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`**
   * Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
 * [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
-  * **Migrate to Hibernate Validator 8.0.x (Community Edition)**
+  * **Migrate to Hibernate Validator 8.0.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
 * [org.openrewrite.java.AddApache2LicenseHeader](/recipes/java/addapache2licenseheader.md)
   * **Add ASLv2 license header**
@@ -13589,7 +13589,7 @@ _1285 recipes_
   * **Upgrade Spock to a Groovy 3 compatible variant**
   * Upgrade Spock dependencies to a Groovy 3 compatible 2.0 variant when Groovy 3 is on the classpath.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
-  * **Migrate from Spring Boot 1.x to 2.0**
+  * **Migrate from Spring Boot 1.x to 2.0 (Community Edition)**
   * Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
   * **Migrate to Spring Boot 2.1**
@@ -13667,7 +13667,7 @@ _1285 recipes_
   * **Migrate Spring Boot properties to 3.3**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
-  * **Migrate Spring Boot properties to 3.4**
+  * **Migrate Spring Boot properties to 3.4 (Community Edition)**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
   * **Migrate Enabled to Access Spring Boot Properties**
@@ -13733,7 +13733,7 @@ _1285 recipes_
   * **Migrate packages to modular starters**
   * Migrate to new packages used for autoconfiguration by Spring Boot 4.0 modules.
 * [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
-  * **Migrate to Spring Boot 4.0 modular starters**
+  * **Migrate to Spring Boot 4.0 modular starters (Community Edition)**
   * Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
 * [org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
   * **Replace `@MockBean` and `@SpyBean`**
@@ -13826,7 +13826,7 @@ _1285 recipes_
   * **Migrate to Spring Framework 5.2**
   * Migrate applications to the latest Spring Framework 5.2 release.
 * [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
-  * **Migrate to Spring Framework 5.3**
+  * **Migrate to Spring Framework 5.3 (Community Edition)**
   * Migrate applications to the latest Spring Framework 5.3 release.
 * [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
   * **Migrate to Spring Framework 6.0**
@@ -13913,7 +13913,7 @@ _1285 recipes_
   * **Migrate to Spring Security 6.4**
   * Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
-  * **Migrate to Spring Security 6.5**
+  * **Migrate to Spring Security 6.5 (Community Edition)**
   * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
   * **Remove throws exception in `SecurityConfigurer` methods `init` and `configure`**

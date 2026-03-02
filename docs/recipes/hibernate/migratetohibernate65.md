@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Hibernate 6.5.x (Community Edition)"
+sidebar_label: "Migrate to Hibernate 6.5.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Hibernate 6.5.x (Community Edition)
+# Migrate to Hibernate 6.5.x
 
 **org.openrewrite.hibernate.MigrateToHibernate65**
 
@@ -28,12 +28,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Migrate to Hibernate 6.4.x (Community Edition)](../hibernate/migratetohibernate64)
+* [Migrate to Hibernate 6.4.x](../hibernate/migratetohibernate64)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
   * artifactId: `*`
   * newVersion: `6.5.x`
-* [Migration of `ResultCheckStyle` to `Expectation` (Community Edition)](../hibernate/migrateresultcheckstyletoexpectation)
+* [Migration of `ResultCheckStyle` to `Expectation`](../hibernate/migrateresultcheckstyletoexpectation)
 
 </TabItem>
 
@@ -43,7 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.MigrateToHibernate65
-displayName: Migrate to Hibernate 6.5.x (Community Edition)
+displayName: Migrate to Hibernate 6.5.x
 description: |
   This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
 recipeList:

@@ -185,7 +185,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToHibernate70
+mod run . --recipe org.openrewrite.hibernate.MigrateToHibernate70
 ```
 
 If the recipe is not available locally, then you can install it using:

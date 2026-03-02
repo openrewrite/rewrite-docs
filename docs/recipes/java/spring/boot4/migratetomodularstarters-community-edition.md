@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Spring Boot 4.0 modular starters"
+sidebar_label: "Migrate to Spring Boot 4.0 modular starters (Community Edition)"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Spring Boot 4.0 modular starters
+# Migrate to Spring Boot 4.0 modular starters (Community Edition)
 
 **org.openrewrite.java.spring.boot4.MigrateToModularStarters**
 
@@ -109,7 +109,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.boot4.MigrateToModularStarters
-displayName: Migrate to Spring Boot 4.0 modular starters
+displayName: Migrate to Spring Boot 4.0 modular starters (Community Edition)
 description: |
   Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
 recipeList:
@@ -355,7 +355,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe MigrateToModularStarters
+mod run . --recipe org.openrewrite.java.spring.boot4.MigrateToModularStarters
 ```
 
 If the recipe is not available locally, then you can install it using:

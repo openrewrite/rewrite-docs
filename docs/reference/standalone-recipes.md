@@ -237,7 +237,7 @@ Total standalone recipes: 1583
 ## org.openrewrite.recipe:rewrite-hibernate
 
 * [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype.md)
-  * **Migrate `UserType` to Hibernate 6 (Community Edition)**
+  * **Migrate `UserType` to Hibernate 6**
   * With Hibernate 6 the `UserType` interface received a type parameter making it more strictly typed. This recipe applies the changes required to adhere to this change.
 
 ## org.openrewrite.recipe:rewrite-java-dependencies
@@ -4566,7 +4566,7 @@ Total standalone recipes: 1583
   * **Remove Develocity**
   * Remove the Develocity plugin and configuration from the Gradle build and settings files.
 * [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
-  * **Migrate to Hibernate Validator 8.0.x (Community Edition)**
+  * **Migrate to Hibernate Validator 8.0.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
 * [org.openrewrite.java.AddApache2LicenseHeader](/recipes/java/addapache2licenseheader.md)
   * **Add ASLv2 license header**

@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)"
+sidebar_label: "Migrate Hibernate Types to Hypersistence Utils 6.0"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)
+# Migrate Hibernate Types to Hypersistence Utils 6.0
 
 **org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60**
 
@@ -77,7 +77,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60
-displayName: Migrate Hibernate Types to Hypersistence Utils 6.0 (Community Edition)
+displayName: Migrate Hibernate Types to Hypersistence Utils 6.0
 description: |
   This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
 recipeList:

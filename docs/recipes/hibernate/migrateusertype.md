@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate `UserType` to Hibernate 6 (Community Edition)"
+sidebar_label: "Migrate `UserType` to Hibernate 6"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate `UserType` to Hibernate 6 (Community Edition)
+# Migrate `UserType` to Hibernate 6
 
 **org.openrewrite.hibernate.MigrateUserType**
 

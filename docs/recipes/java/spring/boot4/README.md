@@ -11,7 +11,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Spring Boot properties to 4.0](./springbootproperties_4_0.md)
 * [Migrate packages to modular starters](./migrateautoconfigurepackages.md)
 * [Migrate to Spring Boot 4.0 (Community Edition)](./upgradespringboot_4_0-community-edition.md)
-* [Migrate to Spring Boot 4.0 modular starters](./migratetomodularstarters-community-edition.md)
+* [Migrate to Spring Boot 4.0 modular starters (Community Edition)](./migratetomodularstarters-community-edition.md)
 * [Replace `@MockBean` and `@SpyBean`](./replacemockbeanandspybean.md)
 
 ## Recipes

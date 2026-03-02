@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migration of `ResultCheckStyle` to `Expectation` (Community Edition)"
+sidebar_label: "Migration of `ResultCheckStyle` to `Expectation`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migration of `ResultCheckStyle` to `Expectation` (Community Edition)
+# Migration of `ResultCheckStyle` to `Expectation`
 
 **org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation**
 
@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 6.5.x (Community Edition)](/recipes/hibernate/migratetohibernate65.md)
+* [Migrate to Hibernate 6.5.x](/recipes/hibernate/migratetohibernate65.md)
 
 ## Example
 

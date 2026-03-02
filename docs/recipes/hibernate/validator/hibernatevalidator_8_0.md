@@ -1,11 +1,11 @@
 ---
-sidebar_label: "Migrate to Hibernate Validator 8.0.x (Community Edition)"
+sidebar_label: "Migrate to Hibernate Validator 8.0.x"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate to Hibernate Validator 8.0.x (Community Edition)
+# Migrate to Hibernate Validator 8.0.x
 
 **org.openrewrite.hibernate.validator.HibernateValidator\_8\_0**
 
@@ -38,7 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.validator.HibernateValidator_8_0
-displayName: Migrate to Hibernate Validator 8.0.x (Community Edition)
+displayName: Migrate to Hibernate Validator 8.0.x
 description: |
   This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
 recipeList:

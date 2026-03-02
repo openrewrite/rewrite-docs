@@ -1,11 +1,11 @@
 ---
-sidebar_label: "`@Type` annotation type parameter migration (Community Edition)"
+sidebar_label: "`@Type` annotation type parameter migration"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# `@Type` annotation type parameter migration (Community Edition)
+# `@Type` annotation type parameter migration
 
 **org.openrewrite.hibernate.TypeAnnotationParameter**
 
