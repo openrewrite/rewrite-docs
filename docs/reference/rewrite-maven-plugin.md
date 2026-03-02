@@ -18,7 +18,7 @@ The OpenRewrite Maven plugin offers these goals:
 * `mvn rewrite:dryRunNoFork` - Generate warnings to the console for any recipe that would make changes and generates a diff file in each Maven module's `target` folder. This variant does not fork the Maven life cycle and can be a more efficient choice when using Rewrite within a CI workflow when combined with other Maven goals.
 * `mvn rewrite:discover` - Generate a report of available recipes found on the classpath.
 * `mvn rewrite:typetable` - [Generate a type table](/authoring-recipes/multiple-versions#typetable-generation-for-maven-projects) to support multiple versions of a single library.
-* `mvn rewrite:generateRecipeCsv` - Generate a `recipes.csv` marketplace file from the recipes found in this project.
+* `mvn rewrite:recipeCsvGenerate` - Generate a `recipes.csv` marketplace file from the recipes found in this project.
 
 :::info
 _`rewrite`_ name-spaced properties can be used for substituting plugin properties:
@@ -139,9 +139,9 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
 To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
 :::
 
-## The "GenerateRecipeCsv" goal
+## The "recipeCsvGenerate" goal
 
-Execute `mvn rewrite:generateRecipeCsv` to generate a `recipes.csv` marketplace file from the recipes found in this project. This is the Maven equivalent of the Gradle `recipeCsvGenerate` task provided by the [OpenRewrite Gradle build plugin](https://github.com/openrewrite/rewrite-build-gradle-plugin).
+Execute `mvn rewrite:recipeCsvGenerate` to generate a `recipes.csv` marketplace file from the recipes found in this project. This is the Maven equivalent of the Gradle `recipeCsvGenerate` task provided by the [OpenRewrite Gradle build plugin](https://github.com/openrewrite/rewrite-build-gradle-plugin).
 
 The goal scans compiled classes and resources in `target/classes/` for recipe definitions (both Java class-based and YAML declarative recipes) and writes the result to `src/main/resources/META-INF/rewrite/recipes.csv`. If an existing `recipes.csv` is present, generated data is merged into it, preserving any manually added entries such as custom category assignments.
 
