@@ -139,9 +139,13 @@ Note. the plugin scans the `compile`, `provided`, and `test` scopes for visitors
 To find out what recipes a rewrite module provides, see its documentation and the output of the `rewrite:discover` goal.
 :::
 
+## The "TypeTable" goal
+
+Execute `mvn rewrite:typetable` to [generate a type table](/authoring-recipes/multiple-versions#typetable-generation-for-maven-projects) to support multiple versions of a single library.
+
 ## The "recipeCsvGenerate" goal
 
-Execute `mvn rewrite:recipeCsvGenerate` to generate a `recipes.csv` marketplace file from the recipes found in this project. This is the Maven equivalent of the Gradle `recipeCsvGenerate` task provided by the [OpenRewrite Gradle build plugin](https://github.com/openrewrite/rewrite-build-gradle-plugin).
+Execute `mvn rewrite:recipeCsvGenerate` to generate a `recipes.csv` [marketplace](https://docs.moderne.io/user-documentation/moderne-cli/references/recipes-csv/) file from the recipes found in this project. This is the Maven equivalent of the Gradle `recipeCsvGenerate` task provided by the [OpenRewrite Gradle build plugin](https://github.com/openrewrite/rewrite-build-gradle-plugin).
 
 The goal scans compiled classes and resources in `target/classes/` for recipe definitions (both Java class-based and YAML declarative recipes) and writes the result to `src/main/resources/META-INF/rewrite/recipes.csv`. If an existing `recipes.csv` is present, generated data is merged into it, preserving any manually added entries such as custom category assignments.
 
@@ -150,10 +154,6 @@ The goal automatically forks the Maven lifecycle to `process-classes`, so classe
 :::info
 For more details on the CSV format and how it is used by the Moderne CLI, see the [Moderne docs on the CSV recipe marketplace](https://docs.moderne.io/user-documentation/moderne-cli/references/recipes-csv).
 :::
-
-## The "TypeTable" goal
-
-Execute `mvn rewrite:typetable` to [generate a type table](/authoring-recipes/multiple-versions#typetable-generation-for-maven-projects) to support multiple versions of a single library.
 
 ## The "Run" goal
 
