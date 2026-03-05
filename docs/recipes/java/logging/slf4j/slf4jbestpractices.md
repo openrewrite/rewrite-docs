@@ -36,6 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Unpack Logger method `new Object[] \{...\}` into varargs](../../../java/logging/argumentarraytovarargs)
 * [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass)
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
+* [`String.format()` in logging statements should use SLF4J parameterized logging](../../../java/logging/slf4j/stringformattoparameterizedlogging)
+* [`MessageFormat.format()` in logging statements should use SLF4J parameterized logging](../../../java/logging/slf4j/messageformattoparameterizedlogging)
 * [Parameterize SLF4J's logging statements](../../../java/logging/slf4j/parameterizedlogging)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](../../../java/logging/slf4j/completeexceptionlogging)
 * [Catch block log level](../../../java/logging/catchblockloglevel)
@@ -43,6 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Match `if (is*Enabled())` with logging statements](../../../java/logging/slf4j/matchisloglevelenabledwithlogstatements)
 * [Optimize log statements](../../../java/logging/slf4j/wrapexpensivelogstatementsinconditionals)
 * [Strip `toString()` from arguments](../../../java/logging/slf4j/striptostringfromarguments)
+* [Remove unnecessary log level guards](../../../java/logging/slf4j/removeunnecessaryloglevelguards)
 
 </TabItem>
 
@@ -62,6 +65,8 @@ recipeList:
   - org.openrewrite.java.logging.ArgumentArrayToVarargs
   - org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass
   - org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant
+  - org.openrewrite.java.logging.slf4j.StringFormatToParameterizedLogging
+  - org.openrewrite.java.logging.slf4j.MessageFormatToParameterizedLogging
   - org.openrewrite.java.logging.slf4j.ParameterizedLogging
   - org.openrewrite.java.logging.slf4j.CompleteExceptionLogging
   - org.openrewrite.java.logging.CatchBlockLogLevel
@@ -69,6 +74,7 @@ recipeList:
   - org.openrewrite.java.logging.slf4j.MatchIsLogLevelEnabledWithLogStatements
   - org.openrewrite.java.logging.slf4j.WrapExpensiveLogStatementsInConditionals
   - org.openrewrite.java.logging.slf4j.StripToStringFromArguments
+  - org.openrewrite.java.logging.slf4j.RemoveUnnecessaryLogLevelGuards
 
 ```
 </TabItem>

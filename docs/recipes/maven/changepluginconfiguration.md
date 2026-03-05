@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | groupId | The first part of the coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION' of the plugin to modify. | `org.openrewrite.maven` |
 | `String` | artifactId | The second part of a coordinate 'org.openrewrite.maven:rewrite-maven-plugin:VERSION' of the plugin to modify. | `rewrite-maven-plugin` |
-| `String` | configuration | *Optional*. Plugin configuration provided as raw XML overriding any existing configuration. Configuration inside `<executions>` blocks will not be altered. Supplying `null` will remove any existing configuration. | `<foo>bar</foo>` |
+| `String` | configuration | *Optional*. Plugin configuration provided as raw XML overriding any existing configuration. Configuration inside `<executions>` blocks will not be altered. Supplying `null` will remove any existing configuration. To include a literal `${...}` property reference in the configuration (e.g. a Maven property like `${java.version}`), escape it as `\${...}` in your recipe YAML to prevent it from being resolved as a recipe placeholder. | `<foo>bar</foo>` |
 
 ## Example
 

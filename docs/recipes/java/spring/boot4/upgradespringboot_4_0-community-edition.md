@@ -67,6 +67,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update Gradle wrapper](../../../gradle/updategradlewrapper)
   * version: `^8.14`
   * addIfMissing: `false`
+* [Rename Spring Boot 4.0 starters with managed versions](../../../java/spring/boot4/renamedeprecatedstartersmanagedversions)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-oauth2-authorization-server`
@@ -163,6 +164,7 @@ recipeList:
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: ^8.14
       addIfMissing: false
+  - org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot
       oldArtifactId: spring-boot-starter-oauth2-authorization-server

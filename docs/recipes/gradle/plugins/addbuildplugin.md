@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | apply | *Optional*. Immediate apply the plugin. Defaults to `true`. Valid options: `true`, `false` |  |
 | `Boolean` | acceptTransitive | *Optional*. Some plugins apply other plugins. When this is set to true no plugin declaration will be added if the plugin is already applied transitively. When this is set to false the plugin will be added explicitly even if it is already applied transitively. Defaults to `true`. Valid options: `true`, `false` |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate JBoss to Jetty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/migratejbosstojetty)
+
 ## Example
 
 ###### Parameters

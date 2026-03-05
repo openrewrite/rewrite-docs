@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Replace PowerMock dependencies with Mockito equivalents](../../../java/testing/mockito/replacepowermockdependencies)
 * [Remove annotation](../../../java/removeannotation)
   * annotationPattern: `@org.powermock.core.classloader.annotations.PowerMockIgnore`
 * [Change method target to static](../../../java/changemethodtargettostatic)
@@ -56,10 +57,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Cleanup PowerMock imports](../../../java/testing/mockito/cleanuppowermockimports)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.powermock`
-  * artifactId: `powermock-api-mockito*`
-* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
+  * artifactId: `powermock*`
+* [Remove Maven managed dependency](../../../maven/removemanageddependency)
   * groupId: `org.powermock`
-  * artifactId: `powermock-core`
+  * artifactId: `powermock*`
 
 </TabItem>
 
@@ -76,6 +77,7 @@ tags:
   - testing
   - mockito
 recipeList:
+  - org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.powermock.core.classloader.annotations.PowerMockIgnore
   - org.openrewrite.java.ChangeMethodTargetToStatic:
@@ -99,10 +101,10 @@ recipeList:
   - org.openrewrite.java.testing.mockito.CleanupPowerMockImports
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.powermock
-      artifactId: powermock-api-mockito*
-  - org.openrewrite.java.dependencies.RemoveDependency:
+      artifactId: powermock*
+  - org.openrewrite.maven.RemoveManagedDependency:
       groupId: org.powermock
-      artifactId: powermock-core
+      artifactId: powermock*
 
 ```
 </TabItem>

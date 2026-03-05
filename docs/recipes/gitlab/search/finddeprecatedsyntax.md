@@ -19,7 +19,7 @@ _Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. The
 
 ## Recipe source
 
-[GitHub: deprecated-syntax.yml](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/resources/META-INF/rewrite/deprecated-syntax.yml),
+[GitHub: best-practices.yml](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/resources/META-INF/rewrite/best-practices.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 

@@ -246,6 +246,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.testing.mockito.AnyToNullable](/recipes/java/testing/mockito/anytonullable.md)
   * **Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`**
   * Since Mockito 2.10 `anyString()` and `any()` no longer matches null values. Use `nullable(Class)` instead.
+* [org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies](/recipes/java/testing/mockito/replacepowermockdependencies.md)
+  * **Replace PowerMock dependencies with Mockito equivalents**
+  * Replaces PowerMock API dependencies with `mockito-inline` when `mockStatic()`, `whenNew()`, or `@PrepareForTest` usage is detected, or `mockito-core` otherwise. PowerMock features like static mocking, constructor mocking, and final class mocking require the inline mock maker which is bundled in `mockito-inline` for Mockito 3.x/4.x.
 * [org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions](/recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
   * **Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`**
   * Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version &lt; 3.x.

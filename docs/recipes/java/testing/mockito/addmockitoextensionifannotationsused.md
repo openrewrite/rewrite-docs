@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed**
 
-_Adds `@ExtendWith(MockitoExtension.class)` to tests using `@Mock` or `@Captor`._
+_Adds `@ExtendWith(MockitoExtension.class)` to JUnit 5 tests or `@RunWith(MockitoJUnitRunner.class)` to JUnit 4 tests using Mockito annotations like `@Mock` or `@Captor`._
 
 ## Recipe source
 

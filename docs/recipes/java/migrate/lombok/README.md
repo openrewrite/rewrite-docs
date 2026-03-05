@@ -26,6 +26,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `final var` over `lombok.val`](./lombokvaltofinalvar.md)
 * [Rename getter methods to fit Lombok](./adoptlombokgettermethodnames.md)
 * [Rename setter methods to fit Lombok](./adoptlomboksettermethodnames.md)
+* [Use `@AllArgsConstructor` where applicable](./useallargsconstructor.md)
 * [Use `@NoArgsConstructor` where applicable](./usenoargsconstructor.md)
+* [Use `@RequiredArgsConstructor` where applicable](./userequiredargsconstructor.md)
 
 

@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4795
+Total recipes: 4818
 
 
 ## io.moderne.recipe:rewrite-devcenter
@@ -458,8 +458,8 @@ _25 recipes_
   * **Remove LaunchDarkly's `intVariation` for feature key**
   * Replace `intVariation` invocations for feature key with value, and simplify constant if branch execution.
 * [org.openrewrite.featureflags.launchdarkly.RemoveStringVariation](/recipes/featureflags/launchdarkly/removestringvariation.md)
-  * **Remove LaunchDarkly's `boolVariation` for feature key**
-  * Replace `boolVariation` invocations for feature key with value, and simplify constant if branch execution.
+  * **Remove LaunchDarkly's `stringVariation` for feature key**
+  * Replace `stringVariation` invocations for feature key with value, and simplify constant if branch execution.
 * [org.openrewrite.featureflags.launchdarkly.search.FindFeatureFlag](/recipes/featureflags/launchdarkly/search/findfeatureflag.md)
   * **Find a LaunchDarkly feature flag**
   * Find a LaunchDarkly feature flag.
@@ -637,17 +637,38 @@ _42 recipes_
 
 _License: Moderne Source Available License_
 
-_10 recipes_
+_17 recipes_
 
+* [org.openrewrite.gitlab.AddArtifactsExpireIn](/recipes/gitlab/addartifactsexpirein.md)
+  * **Add artifacts expire_in**
+  * Set `artifacts:expire_in` in `.gitlab-ci.yml` to prevent storage bloat from indefinitely stored artifacts.
+* [org.openrewrite.gitlab.AddCache](/recipes/gitlab/addcache.md)
+  * **Add cache configuration**
+  * Add `cache` configuration to `.gitlab-ci.yml` for faster builds.
 * [org.openrewrite.gitlab.AddComponent](/recipes/gitlab/addcomponent.md)
   * **Add GitLab component**
   * Add a GitLab component to an existing list, or add a new list where none was present.
+* [org.openrewrite.gitlab.AddDefaultKeyword](/recipes/gitlab/adddefaultkeyword.md)
+  * **Add default keyword**
+  * Add or update a keyword in the `default` section of `.gitlab-ci.yml`.
+* [org.openrewrite.gitlab.AddInterruptible](/recipes/gitlab/addinterruptible.md)
+  * **Add interruptible**
+  * Set `interruptible: true` in `.gitlab-ci.yml` to allow pipelines to be cancelled when superseded.
+* [org.openrewrite.gitlab.AddRetry](/recipes/gitlab/addretry.md)
+  * **Add retry configuration**
+  * Add `retry` configuration to `.gitlab-ci.yml` for resilience against infrastructure failures.
 * [org.openrewrite.gitlab.AddStages](/recipes/gitlab/addstages.md)
   * **Add GitLab stages**
   * Add or Update the set of stages defined in `.gitlab-ci.yml`.
 * [org.openrewrite.gitlab.AddTemplate](/recipes/gitlab/addtemplate.md)
   * **Add GitLab template**
   * Add a GitLab template to an existing list, or add a new list where none was present.
+* [org.openrewrite.gitlab.AddTimeout](/recipes/gitlab/addtimeout.md)
+  * **Add job timeout**
+  * Set `timeout` in `.gitlab-ci.yml` to prevent jobs from hanging indefinitely.
+* [org.openrewrite.gitlab.AddWorkflowRules](/recipes/gitlab/addworkflowrules.md)
+  * **Add workflow rules**
+  * Add `workflow:rules` to `.gitlab-ci.yml` to control pipeline creation.
 * [org.openrewrite.gitlab.ChangeComponent](/recipes/gitlab/changecomponent.md)
   * **Change GitLab Component**
   * Change a GitLab Component in use.
@@ -923,7 +944,7 @@ _6 recipes_
 
 _License: Moderne Source Available License_
 
-_99 recipes_
+_102 recipes_
 
 * [org.openrewrite.java.logging.ArgumentArrayToVarargs](/recipes/java/logging/argumentarraytovarargs.md)
   * **Unpack Logger method `new Object[] \{...\}` into varargs**
@@ -1213,9 +1234,18 @@ _99 recipes_
 * [org.openrewrite.java.logging.slf4j.MatchIsLogLevelEnabledWithLogStatements](/recipes/java/logging/slf4j/matchisloglevelenabledwithlogstatements.md)
   * **Match `if (is*Enabled())` with logging statements**
   * Change any `if (is*Enabled())` statements that do not match the maximum log level used in the `then` part to use the matching `is*Enabled()` method for that log level. This ensures that the logging condition is consistent with the actual logging statements.
+* [org.openrewrite.java.logging.slf4j.MessageFormatToParameterizedLogging](/recipes/java/logging/slf4j/messageformattoparameterizedlogging.md)
+  * **`MessageFormat.format()` in logging statements should use SLF4J parameterized logging**
+  * Replace `MessageFormat.format()` calls in SLF4J logging statements with parameterized placeholders for improved performance.
+* [org.openrewrite.java.logging.slf4j.RemoveUnnecessaryLogLevelGuards](/recipes/java/logging/slf4j/removeunnecessaryloglevelguards.md)
+  * **Remove unnecessary log level guards**
+  * Remove `if` statement guards around SLF4J logging calls when parameterized logging makes them unnecessary.
 * [org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant](/recipes/java/logging/slf4j/slf4jlogshouldbeconstant.md)
   * **SLF4J logging statements should begin with constants**
   * Logging statements shouldn't begin with `String#format`, calls to `toString()`, etc.
+* [org.openrewrite.java.logging.slf4j.StringFormatToParameterizedLogging](/recipes/java/logging/slf4j/stringformattoparameterizedlogging.md)
+  * **`String.format()` in logging statements should use SLF4J parameterized logging**
+  * Replace `String.format()` calls in SLF4J logging statements with parameterized placeholders for improved performance.
 * [org.openrewrite.java.logging.slf4j.StripToStringFromArguments](/recipes/java/logging/slf4j/striptostringfromarguments.md)
   * **Strip `toString()` from arguments**
   * Remove `.toString()` from logger call arguments; SLF4J will automatically call `toString()` on an argument when not a string, and do so only if the log level is enabled.
@@ -1310,7 +1340,7 @@ _19 recipes_
 
 _License: Moderne Source Available License_
 
-_173 recipes_
+_175 recipes_
 
 * [org.openrewrite.java.migrate.AddJDeprScanPlugin](/recipes/java/migrate/addjdeprscanplugin.md)
   * **Add `JDeprScan` Maven Plug-in**
@@ -1696,6 +1726,9 @@ _173 recipes_
 * [org.openrewrite.java.migrate.lombok.LombokValueToRecord](/recipes/java/migrate/lombok/lombokvaluetorecord.md)
   * **Convert `@lombok.Value` class to Record**
   * Convert Lombok `@Value` annotated classes to standard Java Records.
+* [org.openrewrite.java.migrate.lombok.UseAllArgsConstructor](/recipes/java/migrate/lombok/useallargsconstructor.md)
+  * **Use `@AllArgsConstructor` where applicable**
+  * Prefer the Lombok `@AllArgsConstructor` annotation over explicitly written out constructors that assign all non-static fields.
 * [org.openrewrite.java.migrate.lombok.UseLombokGetter](/recipes/java/migrate/lombok/uselombokgetter.md)
   * **Convert getter methods to annotations**
   * Convert trivial getter methods to `@Getter` annotations on their respective fields.
@@ -1705,6 +1738,9 @@ _173 recipes_
 * [org.openrewrite.java.migrate.lombok.UseNoArgsConstructor](/recipes/java/migrate/lombok/usenoargsconstructor.md)
   * **Use `@NoArgsConstructor` where applicable**
   * Prefer the Lombok `@NoArgsConstructor` annotation over explicitly written out constructors.
+* [org.openrewrite.java.migrate.lombok.UseRequiredArgsConstructor](/recipes/java/migrate/lombok/userequiredargsconstructor.md)
+  * **Use `@RequiredArgsConstructor` where applicable**
+  * Prefer the Lombok `@RequiredArgsConstructor` annotation over explicitly written out constructors that only assign final fields.
 * [org.openrewrite.java.migrate.lombok.log.UseCommonsLog](/recipes/java/migrate/lombok/log/usecommonslog.md)
   * **Use `@CommonsLog` instead of explicit fields**
   * Prefer the lombok annotation `@CommonsLog` over explicitly written out `org.apache.commons.logging.Log` fields.
@@ -3047,7 +3083,7 @@ _164 recipes_
 
 _License: Moderne Source Available License_
 
-_176 recipes_
+_178 recipes_
 
 * [org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation](/recipes/java/testing/arquillian/replacearquillianinsequenceannotation.md)
   * **Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`**
@@ -3498,7 +3534,7 @@ _176 recipes_
   * JUnit 6 removed the `interceptDynamicTest(Invocation, ExtensionContext)` method from `InvocationInterceptor`. This recipe removes implementations of this deprecated method.
 * [org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed](/recipes/java/testing/mockito/addmockitoextensionifannotationsused.md)
   * **Adds Mockito extensions to Mockito tests**
-  * Adds `@ExtendWith(MockitoExtension.class)` to tests using `@Mock` or `@Captor`.
+  * Adds `@ExtendWith(MockitoExtension.class)` to JUnit 5 tests or `@RunWith(MockitoJUnitRunner.class)` to JUnit 4 tests using Mockito annotations like `@Mock` or `@Captor`.
 * [org.openrewrite.java.testing.mockito.AnyStringToNullable](/recipes/java/testing/mockito/anystringtonullable.md)
   * **Replace Mockito 1.x `anyString()` with `nullable(String.class)`**
   * Since Mockito 2.10 `anyString()` no longer matches null values. Use `nullable(Class)` instead.
@@ -3544,6 +3580,12 @@ _176 recipes_
 * [org.openrewrite.java.testing.mockito.ReplaceInitMockToOpenMock](/recipes/java/testing/mockito/replaceinitmocktoopenmock.md)
   * **Replace `MockitoAnnotations.initMocks(this)` to `MockitoAnnotations.openMocks(this)`**
   * Replace `MockitoAnnotations.initMocks(this)` to `MockitoAnnotations.openMocks(this)` and generate `AutoCloseable` mocks.
+* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListener](/recipes/java/testing/mockito/replacemockitotestexecutionlistener.md)
+  * **Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization**
+  * Replace `@TestExecutionListeners(MockitoTestExecutionListener.class)` with the appropriate Mockito initialization for the test framework in use: `@ExtendWith(MockitoExtension.class)` for JUnit 5, `@RunWith(MockitoJUnitRunner.class)` for JUnit 4, or `MockitoAnnotations.openMocks(this)` for TestNG.
+* [org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies](/recipes/java/testing/mockito/replacepowermockdependencies.md)
+  * **Replace PowerMock dependencies with Mockito equivalents**
+  * Replaces PowerMock API dependencies with `mockito-inline` when `mockStatic()`, `whenNew()`, or `@PrepareForTest` usage is detected, or `mockito-core` otherwise. PowerMock features like static mocking, constructor mocking, and final class mocking require the inline mock maker which is bundled in `mockito-inline` for Mockito 3.x/4.x.
 * [org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven](/recipes/java/testing/mockito/simplifymockitoverifywhengiven.md)
   * **Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified**
   * Fixes Sonar issue `java:S6068`: Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified.
@@ -10865,7 +10907,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1285 recipes_
+_1294 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -12424,6 +12466,9 @@ _1285 recipes_
 * [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
   * **GitHub Actions security insights**
   * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
+* [org.openrewrite.gitlab.BestPractices](/recipes/gitlab/bestpractices.md)
+  * **GitLab CI best practices**
+  * Apply GitLab CI/CD best practices to `.gitlab-ci.yml`. This includes adding `workflow:rules` to prevent duplicate pipelines, setting `interruptible: true` and `retry` in the `default` section, configuring `artifacts:expire_in`, and setting a job `timeout`.
 * [org.openrewrite.gitlab.search.FindDeprecatedSyntax](/recipes/gitlab/search/finddeprecatedsyntax.md)
   * **Find deprecated GitLab CI syntax**
   * Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. These keywords are deprecated in favor of `rules`.
@@ -13735,6 +13780,9 @@ _1285 recipes_
 * [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
   * **Migrate to Spring Boot 4.0 modular starters (Community Edition)**
   * Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
+* [org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions](/recipes/java/spring/boot4/renamedeprecatedstartersmanagedversions.md)
+  * **Rename Spring Boot 4.0 starters with managed versions**
+  * Renames deprecated Spring Boot starters to their new names without adding explicit versions, for use in projects where the `io.spring.dependency-management` plugin manages versions via BOM.
 * [org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
   * **Replace `@MockBean` and `@SpyBean`**
   * Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`.
@@ -14233,12 +14281,21 @@ _1285 recipes_
 * [org.openrewrite.node.migrate.buffer.replace-slow-buffer](/recipes/node/migrate/buffer/replace-slow-buffer.md)
   * **Replace deprecated `SlowBuffer` with `Buffer.allocUnsafeSlow()`**
   * Replace deprecated `new SlowBuffer(size)` calls with `Buffer.allocUnsafeSlow(size)`. SlowBuffer was used to create un-pooled Buffer instances, but has been removed in favor of the explicit Buffer.allocUnsafeSlow() method.
+* [org.openrewrite.node.migrate.crypto.find-create-cipher](/recipes/node/migrate/crypto/find-create-cipher.md)
+  * **Find deprecated `crypto.createCipher()` and `crypto.createDecipher()` usage**
+  * `crypto.createCipher()` and `crypto.createDecipher()` were deprecated in Node.js 10 (DEP0106) and removed in Node.js 22. Use `crypto.createCipheriv()` and `crypto.createDecipheriv()` instead.
 * [org.openrewrite.node.migrate.crypto.replace-crypto-fips](/recipes/node/migrate/crypto/replace-crypto-fips.md)
   * **Replace deprecated `crypto.fips` with `crypto.getFips()` and `crypto.setFips()`**
   * Replace deprecated `crypto.fips` property access with `crypto.getFips()` for reads and `crypto.setFips(value)` for writes.
 * [org.openrewrite.node.migrate.crypto.replace-hash-constructor](/recipes/node/migrate/crypto/replace-hash-constructor.md)
   * **Replace deprecated `new crypto.Hash()` and `new crypto.Hmac()` with factory methods**
   * Replace deprecated `new crypto.Hash(algorithm)` constructor calls with `crypto.createHash(algorithm)` and `new crypto.Hmac(algorithm, key)` with `crypto.createHmac(algorithm, key)` factory methods.
+* [org.openrewrite.node.migrate.find-process-assert](/recipes/node/migrate/find-process-assert.md)
+  * **Find deprecated `process.assert()` usage**
+  * `process.assert()` was deprecated in Node.js 10 (DEP0100) and removed in Node.js 23. Use the `assert` module instead.
+* [org.openrewrite.node.migrate.find-punycode-usage](/recipes/node/migrate/find-punycode-usage.md)
+  * **Find deprecated `punycode` module usage**
+  * The `punycode` built-in module was deprecated in Node.js 21 (DEP0040). Use the userland `punycode` package from npm or `url.domainToASCII`/`url.domainToUnicode` instead.
 * [org.openrewrite.node.migrate.fs.replace-dirent-path](/recipes/node/migrate/fs/replace-dirent-path.md)
   * **Replace `dirent.path` with `dirent.parentPath`**
   * Replaces deprecated `dirent.path` property access with `dirent.parentPath` on `fs.Dirent` instances to address DEP0178 deprecation.
@@ -14254,6 +14311,12 @@ _1285 recipes_
 * [org.openrewrite.node.migrate.http.replace-outgoing-message-headers](/recipes/node/migrate/http/replace-outgoing-message-headers.md)
   * **Replace `OutgoingMessage._headers` and `._headerNames` with public methods**
   * Replace deprecated `OutgoingMessage.prototype._headers` with `getHeaders()`, `setHeader()`, `removeHeader()` and `OutgoingMessage.prototype._headerNames` with `getHeaderNames()` to address DEP0066 deprecation.
+* [org.openrewrite.node.migrate.increase-node-engine-version](/recipes/node/migrate/increase-node-engine-version.md)
+  * **Increase Node.js engine version**
+  * Increases the upper bound of the `engines.node` version range in package.json to allow the specified Node.js version.
+* [org.openrewrite.node.migrate.increase-node-engine-version-in-github-actions](/recipes/node/migrate/increase-node-engine-version-in-github-actions.md)
+  * **Increase Node.js version in GitHub Actions**
+  * Increases `node-version` in `actions/setup-node` steps in GitHub Actions workflows. Only modifies plain major version values (e.g. `20`) and x-ranges (e.g. `20.x`). Never decreases the version.
 * [org.openrewrite.node.migrate.net.remove-set-simultaneous-accepts](/recipes/node/migrate/net/remove-set-simultaneous-accepts.md)
   * **Remove deprecated `net._setSimultaneousAccepts()`**
   * Remove calls to deprecated `net._setSimultaneousAccepts()` which was an undocumented internal function that is no longer necessary.
@@ -14266,6 +14329,12 @@ _1285 recipes_
 * [org.openrewrite.node.migrate.stream.replace-internal-modules](/recipes/node/migrate/stream/replace-internal-modules.md)
   * **Replace deprecated `node:_stream_*` with `node:stream`**
   * Replace deprecated internal stream module imports like `require('node:_stream_readable')` with the public `node:stream` module.
+* [org.openrewrite.node.migrate.timers.find-timers-active](/recipes/node/migrate/timers/find-timers-active.md)
+  * **Find deprecated `timers.active()` and `timers._unrefActive()` usage**
+  * `timers.active()` (DEP0126) and `timers._unrefActive()` (DEP0127) were deprecated and removed in Node.js 24. Use `timeout.refresh()` instead.
+* [org.openrewrite.node.migrate.tls.find-tls-secure-pair](/recipes/node/migrate/tls/find-tls-secure-pair.md)
+  * **Find deprecated `tls.SecurePair` and `tls.createSecurePair()` usage**
+  * `tls.SecurePair` (DEP0043) and `tls.createSecurePair()` (DEP0064) were deprecated and removed in Node.js 24. Use `tls.TLSSocket` instead.
 * [org.openrewrite.node.migrate.tls.replace-internal-modules](/recipes/node/migrate/tls/replace-internal-modules.md)
   * **Replace deprecated `node:_tls_common` and `node:_tls_wrap` with `node:tls`**
   * Replace deprecated internal TLS module imports `require('node:_tls_common')` and `require('node:_tls_wrap')` with the public `node:tls` module.

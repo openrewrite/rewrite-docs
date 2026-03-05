@@ -174,7 +174,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.JobParametersValidator`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.JobParametersValidator`
 * [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.springframework.batch.core.job.launch.support.RunIdIncrementer`
+  * oldFullyQualifiedTypeName: `org.springframework.batch.core.launch.support.RunIdIncrementer`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.job.parameters.RunIdIncrementer`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.job.launch.support.DataFieldMaxValueJobParametersIncrementer`
@@ -381,7 +381,7 @@ recipeList:
       oldFullyQualifiedTypeName: org.springframework.batch.core.JobParametersValidator
       newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.JobParametersValidator
   - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.springframework.batch.core.job.launch.support.RunIdIncrementer
+      oldFullyQualifiedTypeName: org.springframework.batch.core.launch.support.RunIdIncrementer
       newFullyQualifiedTypeName: org.springframework.batch.core.job.parameters.RunIdIncrementer
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.job.launch.support.DataFieldMaxValueJobParametersIncrementer

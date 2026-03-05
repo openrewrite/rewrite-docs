@@ -47,6 +47,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
 * [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
 * [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
+* [If-else-if-else to switch](../../java/migrate/lang/ifelseifconstructtoswitch)
 * [Adopt switch pattern matching (JEP 441)](../../java/migrate/switchpatternmatching)
 * [Add null check to existing switch cases](../../java/migrate/lang/nullcheckasswitchcase)
 
@@ -79,6 +80,7 @@ recipeList:
   - org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression
   - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
   - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
+  - org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch
   - org.openrewrite.java.migrate.SwitchPatternMatching
   - org.openrewrite.java.migrate.lang.NullCheckAsSwitchCase
 

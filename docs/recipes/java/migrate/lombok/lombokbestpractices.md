@@ -33,6 +33,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Convert getter methods to annotations](../../../java/migrate/lombok/uselombokgetter)
 * [Convert setter methods to annotations](../../../java/migrate/lombok/uselomboksetter)
 * [Use `@NoArgsConstructor` where applicable](../../../java/migrate/lombok/usenoargsconstructor)
+* [Use `@RequiredArgsConstructor` where applicable](../../../java/migrate/lombok/userequiredargsconstructor)
+* [Use `@AllArgsConstructor` where applicable](../../../java/migrate/lombok/useallargsconstructor)
 * [Change Maven dependency scope](../../../maven/changedependencyscope)
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
@@ -62,6 +64,8 @@ recipeList:
   - org.openrewrite.java.migrate.lombok.UseLombokGetter
   - org.openrewrite.java.migrate.lombok.UseLombokSetter
   - org.openrewrite.java.migrate.lombok.UseNoArgsConstructor
+  - org.openrewrite.java.migrate.lombok.UseRequiredArgsConstructor
+  - org.openrewrite.java.migrate.lombok.UseAllArgsConstructor
   - org.openrewrite.maven.ChangeDependencyScope:
       groupId: org.projectlombok
       artifactId: lombok

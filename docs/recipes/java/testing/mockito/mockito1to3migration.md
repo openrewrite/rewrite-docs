@@ -106,6 +106,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
 * [Adds Mockito extensions to Mockito tests](../../../java/testing/mockito/addmockitoextensionifannotationsused)
+* [Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization](../../../java/testing/mockito/replacemockitotestexecutionlistener)
 * [Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified](../../../java/testing/mockito/removeinitmocksifrunnersspecified)
 * [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
@@ -213,6 +214,7 @@ recipeList:
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
   - org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed
+  - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListener
   - org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified
   - org.openrewrite.java.testing.mockito.ReplacePowerMockito
   - org.openrewrite.java.dependencies.ChangeDependency:
