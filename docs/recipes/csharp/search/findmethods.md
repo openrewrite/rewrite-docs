@@ -1,23 +1,23 @@
 ---
-sidebar_label: "Delete method argument"
+sidebar_label: "Find method usages"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Delete method argument
+# Find method usages
 
-**org.openrewrite.java.DeleteMethodArgument**
+**org.openrewrite.java.search.FindMethods**
 
-_Delete an argument from method invocations._
+_Find method calls by pattern._
 
 :::info
-This Java recipe works on C# code.
+This Java recipe works on Csharp code.
 :::
 
 ## Recipe source
 
-[GitHub: DeleteMethodArgument.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java),
+[GitHub: FindMethods.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindMethods.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -27,32 +27,34 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `com.yourorg.A foo(int, int)` |
-| `int` | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. | `0` |
+| `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `java.util.List add(..)` |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioinputbuffers.md)
-* [Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
-* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
-* [Migrate to Hibernate 7.2.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate72)
-* [Migrate to Kafka 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka40)
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
-* [Remove `SslBundles` parameter from `KafkaProperties` build methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removekafkapropertiessslbundlesparameter)
-* [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
-* [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+* [Find Jackson default type mapping enablement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findjacksondefaulttypemapping)
+* [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
+* [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
+* [Finds uses of `Encryptors.queryableText()`](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
 
 ## Example
 
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|methodPattern|`B foo(int, int, int)`|
-|argumentIndex|`1`|
+|methodPattern|`A <constructor>(String)`|
+|matchOverrides|`false`|
 
+
+###### Unchanged
+```java
+class A {
+    public A(String s) {}
+}
+```
 
 <Tabs groupId="beforeAfter">
 <TabItem value="java" label="java">
@@ -60,21 +62,27 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```java
-public class A {{ B.foo(0, 1, 2); }}
+class Test {
+    A a = new A("test");
+}
 ```
 
 ###### After
 ```java
-public class A {{ B.foo(0, 2); }}
+class Test {
+    A a = /*~~>*/new A("test");
+}
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,1 @@
--public class A {{ B.foo(0, 1, 2); }}
-+public class A {{ B.foo(0, 2); }}
+@@ -2,1 +2,1 @@
+class Test {
+-   A a = new A("test");
++   A a = /*~~>*/new A("test");
+}
 ```
 </TabItem>
 </Tabs>
@@ -82,20 +90,19 @@ public class A {{ B.foo(0, 2); }}
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindMethodsExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.DeleteMethodArgumentExample
-displayName: Delete method argument example
+name: com.yourorg.FindMethodsExample
+displayName: Find method usages example
 recipeList:
-  - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: com.yourorg.A foo(int, int)
-      argumentIndex: 0
+  - org.openrewrite.java.search.FindMethods:
+      methodPattern: java.util.List add(..)
 ```
 
-Now that `com.yourorg.DeleteMethodArgumentExample` has been defined, activate it in your build file:
+Now that `com.yourorg.FindMethodsExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -106,7 +113,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.DeleteMethodArgumentExample")
+    activeRecipe("com.yourorg.FindMethodsExample")
     setExportDatatables(true)
 }
 
@@ -131,7 +138,7 @@ repositories {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.DeleteMethodArgumentExample</recipe>
+            <recipe>com.yourorg.FindMethodsExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -146,7 +153,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe DeleteMethodArgument --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0"
+mod run . --recipe FindMethods --recipe-option "methodPattern=java.util.List add(..)"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -160,7 +167,7 @@ mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENRE
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.DeleteMethodArgument" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.search.FindMethods" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -168,6 +175,23 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.table.MethodCalls" label="MethodCalls">
+
+### Method calls
+**org.openrewrite.java.table.MethodCalls**
+
+_The text of matching method invocations._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Method call | The text of the method call. |
+| Class name | The class name of the method call. |
+| Method name | The method name of the method call. |
+| Argument types | The argument types of the method call. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

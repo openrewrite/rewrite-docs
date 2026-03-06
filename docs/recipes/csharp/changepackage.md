@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 _A recipe that will rename a package name in package statements, imports, and fully-qualified types._
 
 :::info
-This Java recipe works on C# code.
+This Java recipe works on Csharp code.
 :::
 
 ## Recipe source

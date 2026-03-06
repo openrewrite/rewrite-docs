@@ -4,9 +4,11 @@ description: C# OpenRewrite recipes.
 
 # `C#`
 
+_Recipes for C# codebases._
+
 ## Categories
 
-* [Search](/recipes/c#/search)
+* [Search](/recipes/csharp/search)
 
 ## Recipes
 

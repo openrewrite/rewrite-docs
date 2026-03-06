@@ -1,23 +1,23 @@
 ---
-sidebar_label: "Reorder method arguments"
+sidebar_label: "Delete method argument"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Reorder method arguments
+# Delete method argument
 
-**org.openrewrite.java.ReorderMethodArguments**
+**org.openrewrite.java.DeleteMethodArgument**
 
-_Reorder method arguments into the specified order._
+_Delete an argument from method invocations._
 
 :::info
-This Java recipe works on C# code.
+This Java recipe works on Csharp code.
 :::
 
 ## Recipe source
 
-[GitHub: ReorderMethodArguments.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java),
+[GitHub: DeleteMethodArgument.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/DeleteMethodArgument.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -27,44 +27,75 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `com.yourorg.A foo(String, Integer, Integer)` |
-| `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. | `[foo, bar, baz]` |
-| `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. | `[baz, bar, foo]` |
-| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |
-| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
+| `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `com.yourorg.A foo(int, int)` |
+| `int` | argumentIndex | A zero-based index that indicates which argument will be removed from the method invocation. | `0` |
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
-* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
-* [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
+* [Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioinputbuffers.md)
+* [Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
+* [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
+* [Migrate to Hibernate 7.2.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate72)
+* [Migrate to Kafka 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka40)
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
-* [Reorder the arguments of `RequestBody.create()`](/recipes/okhttp/reorderrequestbodycreatearguments.md)
+* [Remove `SslBundles` parameter from `KafkaProperties` build methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removekafkapropertiessslbundlesparameter)
 * [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
 * [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
-* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|methodPattern|`B foo(int, int, int)`|
+|argumentIndex|`1`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+public class A {{ B.foo(0, 1, 2); }}
+```
+
+###### After
+```java
+public class A {{ B.foo(0, 2); }}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-public class A {{ B.foo(0, 1, 2); }}
++public class A {{ B.foo(0, 2); }}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.DeleteMethodArgumentExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.ReorderMethodArgumentsExample
-displayName: Reorder method arguments example
+name: com.yourorg.DeleteMethodArgumentExample
+displayName: Delete method argument example
 recipeList:
-  - org.openrewrite.java.ReorderMethodArguments:
-      methodPattern: com.yourorg.A foo(String, Integer, Integer)
-      newParameterNames: [foo, bar, baz]
-      oldParameterNames: [baz, bar, foo]
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: com.yourorg.A foo(int, int)
+      argumentIndex: 0
 ```
 
-Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined, activate it in your build file:
+Now that `com.yourorg.DeleteMethodArgumentExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -75,7 +106,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.ReorderMethodArgumentsExample")
+    activeRecipe("com.yourorg.DeleteMethodArgumentExample")
     setExportDatatables(true)
 }
 
@@ -100,7 +131,7 @@ repositories {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.ReorderMethodArgumentsExample</recipe>
+            <recipe>com.yourorg.DeleteMethodArgumentExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -115,7 +146,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe ReorderMethodArguments --recipe-option "methodPattern=com.yourorg.A foo(String, Integer, Integer)" --recipe-option "newParameterNames=[foo, bar, baz]" --recipe-option "oldParameterNames=[baz, bar, foo]"
+mod run . --recipe DeleteMethodArgument --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -129,7 +160,7 @@ mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENRE
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.ReorderMethodArguments" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.DeleteMethodArgument" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

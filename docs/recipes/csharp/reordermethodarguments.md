@@ -1,23 +1,23 @@
 ---
-sidebar_label: "Find types"
+sidebar_label: "Reorder method arguments"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Find types
+# Reorder method arguments
 
-**org.openrewrite.java.search.FindTypes**
+**org.openrewrite.java.ReorderMethodArguments**
 
-_Find type references by name._
+_Reorder method arguments into the specified order._
 
 :::info
-This Java recipe works on C# code.
+This Java recipe works on Csharp code.
 :::
 
 ## Recipe source
 
-[GitHub: FindTypes.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindTypes.java),
+[GitHub: ReorderMethodArguments.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ReorderMethodArguments.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
 
@@ -27,72 +27,44 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | fullyQualifiedTypeName | A fully-qualified type name, that is used to find matching type references. Supports glob expressions. `java..*` finds every type from every subpackage of the `java` package. | `java.util.List` |
-| `Boolean` | checkAssignability | *Optional*. When enabled, find type references that are assignable to the provided type. |  |
+| `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `com.yourorg.A foo(String, Integer, Integer)` |
+| `String[]` | newParameterNames | An array of parameter names that indicates the new order in which those arguments should be arranged. | `[foo, bar, baz]` |
+| `String[]` | oldParameterNames | *Optional*. If the original method signature is not type-attributed, this is an optional list that indicates the original order in which the arguments were arranged. | `[baz, bar, foo]` |
+| `Boolean` | ignoreDefinition | *Optional*. When set to `true` the definition of the old type will be left untouched. This is useful when you're replacing usage of a class but don't want to rename it. |  |
+| `Boolean` | matchOverrides | *Optional*. When enabled, find methods that are overrides of the method pattern. |  |
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Find deprecated `PathMatcher` usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/finddeprecatedpathmatcherusage)
-* [Report types deprecated or removed in WebLogic version 14.1.2](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1412.md)
-* [Report types deprecated or removed in WebLogic version 15.1.1](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1511.md)
-
-## Example
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|fullyQualifiedTypeName|`a.A1`|
-|checkAssignability|`false`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import a.A1;
-public class B extends A1 {}
-```
-
-###### After
-```java
-import a.A1;
-public class B extends /*~~>*/A1 {}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,1 +2,1 @@
-import a.A1;
--public class B extends A1 {}
-+public class B extends /*~~>*/A1 {}
-
-```
-</TabItem>
-</Tabs>
+* [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+* [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
+* [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
+* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Reorder the arguments of `RequestBody.create()`](/recipes/okhttp/reorderrequestbodycreatearguments.md)
+* [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
+* [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+* [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
 
 
 ## Usage
 
-This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.FindTypesExample`.
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ReorderMethodArgumentsExample`.
 Here's how you can define and customize such a recipe within your rewrite.yml:
 ```yaml title="rewrite.yml"
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: com.yourorg.FindTypesExample
-displayName: Find types example
+name: com.yourorg.ReorderMethodArgumentsExample
+displayName: Reorder method arguments example
 recipeList:
-  - org.openrewrite.java.search.FindTypes:
-      fullyQualifiedTypeName: java.util.List
+  - org.openrewrite.java.ReorderMethodArguments:
+      methodPattern: com.yourorg.A foo(String, Integer, Integer)
+      newParameterNames: [foo, bar, baz]
+      oldParameterNames: [baz, bar, foo]
 ```
 
-Now that `com.yourorg.FindTypesExample` has been defined, activate it in your build file:
+Now that `com.yourorg.ReorderMethodArgumentsExample` has been defined, activate it in your build file:
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -103,7 +75,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("com.yourorg.FindTypesExample")
+    activeRecipe("com.yourorg.ReorderMethodArgumentsExample")
     setExportDatatables(true)
 }
 
@@ -128,7 +100,7 @@ repositories {
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>com.yourorg.FindTypesExample</recipe>
+            <recipe>com.yourorg.ReorderMethodArgumentsExample</recipe>
           </activeRecipes>
         </configuration>
       </plugin>
@@ -143,7 +115,7 @@ repositories {
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe FindTypes --recipe-option "fullyQualifiedTypeName=java.util.List"
+mod run . --recipe ReorderMethodArguments --recipe-option "methodPattern=com.yourorg.A foo(String, Integer, Integer)" --recipe-option "newParameterNames=[foo, bar, baz]" --recipe-option "oldParameterNames=[baz, bar, foo]"
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -157,7 +129,7 @@ mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENRE
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.search.FindTypes" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.ReorderMethodArguments" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -165,21 +137,6 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
-<TabItem value="org.openrewrite.java.table.TypeUses" label="TypeUses">
-
-### Type uses
-**org.openrewrite.java.table.TypeUses**
-
-_The source code of matching type uses._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The source file that the method call occurred in. |
-| Source | The source code of the type use. |
-| Concrete type | The concrete type in use, which may be a subtype of a searched type. |
-
-</TabItem>
-
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

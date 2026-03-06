@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 _Change a given type to another._
 
 :::info
-This Java recipe works on C# code.
+This Java recipe works on Csharp code.
 :::
 
 ## Recipe source
