@@ -6,15 +6,10 @@ description: Javascript OpenRewrite recipes.
 
 ## Categories
 
-* [Cleanup](/recipes/javascript/cleanup)
-* [Dependencies](/recipes/javascript/dependencies)
-* [Format](/recipes/javascript/format)
-* [Migrate](/recipes/javascript/migrate)
 * [Search](/recipes/javascript/search)
 
 ## Recipes
 
-* [Change import](./change-import.md)
 * [Change method name](./changemethodname.md)
 * [Change type](./changetype.md)
 * [Delete method argument](./deletemethodargument.md)
