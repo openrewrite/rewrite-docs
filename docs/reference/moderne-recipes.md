@@ -1397,6 +1397,99 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-nodejs
 
+* [org.openrewrite.node.dependency-vulnerability-check](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/dependency-vulnerability-check)
+  * **Find and fix vulnerable npm dependencies**
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the GitHub Security Advisory Database.
+* [org.openrewrite.node.migrate.buffer.replace-deprecated-slice](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/buffer/replace-deprecated-slice)
+  * **Replace deprecated `Buffer.slice()` with `Buffer.subarray()`**
+  * Replace deprecated `buffer.slice()` calls with `buffer.subarray()` for compatibility with Uint8Array.prototype.slice().
+* [org.openrewrite.node.migrate.buffer.replace-slow-buffer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/buffer/replace-slow-buffer)
+  * **Replace deprecated `SlowBuffer` with `Buffer.allocUnsafeSlow()`**
+  * Replace deprecated `new SlowBuffer(size)` calls with `Buffer.allocUnsafeSlow(size)`. SlowBuffer was used to create un-pooled Buffer instances, but has been removed in favor of the explicit Buffer.allocUnsafeSlow() method.
+* [org.openrewrite.node.migrate.crypto.find-create-cipher](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/find-create-cipher)
+  * **Find deprecated `crypto.createCipher()` and `crypto.createDecipher()` usage**
+  * `crypto.createCipher()` and `crypto.createDecipher()` were deprecated in Node.js 10 (DEP0106) and removed in Node.js 22. Use `crypto.createCipheriv()` and `crypto.createDecipheriv()` instead.
+* [org.openrewrite.node.migrate.crypto.replace-crypto-fips](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/replace-crypto-fips)
+  * **Replace deprecated `crypto.fips` with `crypto.getFips()` and `crypto.setFips()`**
+  * Replace deprecated `crypto.fips` property access with `crypto.getFips()` for reads and `crypto.setFips(value)` for writes.
+* [org.openrewrite.node.migrate.crypto.replace-hash-constructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/replace-hash-constructor)
+  * **Replace deprecated `new crypto.Hash()` and `new crypto.Hmac()` with factory methods**
+  * Replace deprecated `new crypto.Hash(algorithm)` constructor calls with `crypto.createHash(algorithm)` and `new crypto.Hmac(algorithm, key)` with `crypto.createHmac(algorithm, key)` factory methods.
+* [org.openrewrite.node.migrate.find-process-assert](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/find-process-assert)
+  * **Find deprecated `process.assert()` usage**
+  * `process.assert()` was deprecated in Node.js 10 (DEP0100) and removed in Node.js 23. Use the `assert` module instead.
+* [org.openrewrite.node.migrate.find-punycode-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/find-punycode-usage)
+  * **Find deprecated `punycode` module usage**
+  * The `punycode` built-in module was deprecated in Node.js 21 (DEP0040). Use the userland `punycode` package from npm or `url.domainToASCII`/`url.domainToUnicode` instead.
+* [org.openrewrite.node.migrate.fs.replace-dirent-path](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-dirent-path)
+  * **Replace `dirent.path` with `dirent.parentPath`**
+  * Replaces deprecated `dirent.path` property access with `dirent.parentPath` on `fs.Dirent` instances to address DEP0178 deprecation.
+* [org.openrewrite.node.migrate.fs.replace-fs-access-constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-fs-access-constants)
+  * **Replace deprecated `fs.F_OK`, `fs.R_OK`, `fs.W_OK`, `fs.X_OK` with `fs.constants.*`**
+  * Replace deprecated file access constants (`fs.F_OK`, `fs.R_OK`, `fs.W_OK`, `fs.X_OK`) with their equivalents from `fs.constants`. These constants were removed in Node.js v24+ and should be accessed through the constants namespace.
+* [org.openrewrite.node.migrate.fs.replace-fs-truncate-fd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-fs-truncate-fd)
+  * **Replace `fs.truncate()` with file descriptor to `fs.ftruncate()`**
+  * Replace deprecated `fs.truncate(fd, ...)` and `fs.truncateSync(fd, ...)` calls with `fs.ftruncate(fd, ...)` and `fs.ftruncateSync(fd, ...)` when the first argument is a file descriptor (number).
+* [org.openrewrite.node.migrate.fs.replace-stats-constructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-stats-constructor)
+  * **Replace deprecated `fs.Stats` constructor with object literal**
+  * Replace deprecated `new fs.Stats()` constructor calls with an object literal containing Stats properties initialized to undefined.
+* [org.openrewrite.node.migrate.http.replace-outgoing-message-headers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/http/replace-outgoing-message-headers)
+  * **Replace `OutgoingMessage._headers` and `._headerNames` with public methods**
+  * Replace deprecated `OutgoingMessage.prototype._headers` with `getHeaders()`, `setHeader()`, `removeHeader()` and `OutgoingMessage.prototype._headerNames` with `getHeaderNames()` to address DEP0066 deprecation.
+* [org.openrewrite.node.migrate.increase-node-engine-version](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/increase-node-engine-version)
+  * **Increase Node.js engine version**
+  * Increases the upper bound of the `engines.node` version range in package.json to allow the specified Node.js version.
+* [org.openrewrite.node.migrate.increase-node-engine-version-in-github-actions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/increase-node-engine-version-in-github-actions)
+  * **Increase Node.js version in GitHub Actions**
+  * Increases `node-version` in `actions/setup-node` steps in GitHub Actions workflows. Only modifies plain major version values (e.g. `20`) and x-ranges (e.g. `20.x`). Never decreases the version.
+* [org.openrewrite.node.migrate.net.remove-set-simultaneous-accepts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/net/remove-set-simultaneous-accepts)
+  * **Remove deprecated `net._setSimultaneousAccepts()`**
+  * Remove calls to deprecated `net._setSimultaneousAccepts()` which was an undocumented internal function that is no longer necessary.
+* [org.openrewrite.node.migrate.process.coerce-process-exit-code](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/process/coerce-process-exit-code)
+  * **Coerce `process.exit()` and `process.exitCode` to integer**
+  * Wraps non-integer values passed to `process.exit()` or assigned to `process.exitCode` with `Math.trunc()` to avoid the DEP0164 deprecation warning about implicit coercion to integer.
+* [org.openrewrite.node.migrate.process.remove-usage-of-features-tls-underscore_constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/process/remove-usage-of-features-tls-underscore_constants)
+  * **Remove usage of deprecated `process.features.tls_*` properties**
+  * Remove references to deprecated `process.features.tls_*` properties, replace with `process.features.tls`.
+* [org.openrewrite.node.migrate.stream.replace-internal-modules](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/stream/replace-internal-modules)
+  * **Replace deprecated `node:_stream_*` with `node:stream`**
+  * Replace deprecated internal stream module imports like `require('node:_stream_readable')` with the public `node:stream` module.
+* [org.openrewrite.node.migrate.timers.find-timers-active](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/timers/find-timers-active)
+  * **Find deprecated `timers.active()` and `timers._unrefActive()` usage**
+  * `timers.active()` (DEP0126) and `timers._unrefActive()` (DEP0127) were deprecated and removed in Node.js 24. Use `timeout.refresh()` instead.
+* [org.openrewrite.node.migrate.tls.find-tls-secure-pair](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/tls/find-tls-secure-pair)
+  * **Find deprecated `tls.SecurePair` and `tls.createSecurePair()` usage**
+  * `tls.SecurePair` (DEP0043) and `tls.createSecurePair()` (DEP0064) were deprecated and removed in Node.js 24. Use `tls.TLSSocket` instead.
+* [org.openrewrite.node.migrate.tls.replace-internal-modules](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/tls/replace-internal-modules)
+  * **Replace deprecated `node:_tls_common` and `node:_tls_wrap` with `node:tls`**
+  * Replace deprecated internal TLS module imports `require('node:_tls_common')` and `require('node:_tls_wrap')` with the public `node:tls` module.
+* [org.openrewrite.node.migrate.upgrade-node-22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/upgrade-node-22)
+  * **Upgrade to Node.js 22**
+  * Migrate deprecated APIs for Node.js 22 compatibility. Addresses Node 22 runtime deprecations and deprecations from earlier versions.
+* [org.openrewrite.node.migrate.upgrade-node-24](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/upgrade-node-24)
+  * **Upgrade to Node.js 24**
+  * Migrate deprecated APIs for Node.js 24 compatibility. Includes all migrations from Node.js 22, plus Node 23 and Node 24 deprecations.
+* [org.openrewrite.node.migrate.util.remove-promisify-on-promise](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/remove-promisify-on-promise)
+  * **Remove unnecessary `util.promisify()` on Promise-returning functions**
+  * Removes `util.promisify()` calls on functions that already return a Promise. Since Node.js v17.0.0, calling promisify on a function that returns a Promise emits a runtime deprecation warning (DEP0174).
+* [org.openrewrite.node.migrate.util.replace-is-webassembly-compiled-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-is-webassembly-compiled-module)
+  * **Replace deprecated `util.types.isWebAssemblyCompiledModule()`**
+  * Replace `util.types.isWebAssemblyCompiledModule(value)` with `value instanceof WebAssembly.Module`.
+* [org.openrewrite.node.migrate.util.replace-util-extend](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-util-extend)
+  * **Replace deprecated `util._extend()` with `Object.assign()`**
+  * Replace deprecated `util._extend(target, source)` calls with `Object.assign(target, source)` which preserves the mutation behavior.
+* [org.openrewrite.node.migrate.util.replace-util-log](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-util-log)
+  * **Replace deprecated `util.log()` with `console.log()`**
+  * Replace deprecated `util.log()` calls with `console.log()`. Note: `util.log()` included timestamps, but `console.log()` does not.
+* [org.openrewrite.node.migrate.util.use-native-type-checking-methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/use-native-type-checking-methods)
+  * **Replace deprecated `util.isX()` methods with native JavaScript**
+  * The `util` module's type-checking methods have been removed in Node 22.
+* [org.openrewrite.node.migrate.zlib.replace-bytes-read](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/zlib/replace-bytes-read)
+  * **Replace deprecated `zlib.bytesRead` with `zlib.bytesWritten`**
+  * Replace deprecated `bytesRead` property on zlib streams with `bytesWritten`.
+* [org.openrewrite.node.security.remove-redundant-overrides](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/security/remove-redundant-overrides)
+  * **Remove redundant dependency overrides**
+  * Removes overrides/resolutions from package.json that are redundant because the dependency tree already resolves to the overridden version or higher.
 * [org.openrewrite.nodejs.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable npm dependencies**
   * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe **only** upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this recipe will not make any changes. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.
