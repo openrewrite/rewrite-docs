@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4217
+Total recipes: 4202
 
 
 ## io.moderne.recipe:rewrite-devcenter
@@ -9190,7 +9190,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1263 recipes_
+_1248 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -12450,51 +12450,6 @@ _1263 recipes_
 * [org.openrewrite.java.testing.truth.MigrateTruthToAssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
   * **Migrate Google Truth to AssertJ**
   * Migrate Google Truth assertions to AssertJ assertions.
-* [org.openrewrite.javascript.change-import](/recipes/javascript/change-import.md)
-  * **Change import**
-  * Changes an import from one module/member to another, updating all type attributions.
-* [org.openrewrite.javascript.cleanup.add-parse-int-radix](/recipes/javascript/cleanup/add-parse-int-radix.md)
-  * **Add radix to `parseInt`**
-  * Adds the radix parameter (base 10) to `parseInt()` calls that are missing it, preventing potential parsing issues.
-* [org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method](/recipes/javascript/cleanup/async-callback-in-sync-array-method.md)
-  * **Detect async callbacks in synchronous array methods**
-  * Detects async callbacks passed to array methods like .some(), .every(), .filter() which don't await promises. This is a common bug where Promise objects are always truthy.
-* [org.openrewrite.javascript.cleanup.order-imports](/recipes/javascript/cleanup/order-imports.md)
-  * **Order imports**
-  * Sort imports by category and module path. Categories: side-effect, namespace, default, named, type. Within each category, imports are sorted alphabetically by module path. Named specifiers within each import are also sorted alphabetically.
-* [org.openrewrite.javascript.cleanup.prefer-optional-chain](/recipes/javascript/cleanup/prefer-optional-chain.md)
-  * **Prefer optional chaining**
-  * Converts ternary expressions like `foo ? foo.bar : undefined` to use optional chaining syntax `foo?.bar`.
-* [org.openrewrite.javascript.cleanup.use-object-property-shorthand](/recipes/javascript/cleanup/use-object-property-shorthand.md)
-  * **Use object property shorthand**
-  * Simplifies object properties where the property name and value/variable name are the same (e.g., `\{ x: x \}` becomes `\{ x \}`). Applies to both destructuring patterns and object literals.
-* [org.openrewrite.javascript.dependencies.add-dependency](/recipes/javascript/dependencies/add-dependency.md)
-  * **Add npm dependency**
-  * Adds a new dependency to `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.find-dependency](/recipes/javascript/dependencies/find-dependency.md)
-  * **Find Node.js dependency**
-  * Finds dependencies in a project's `package.json`. Can find both direct dependencies and dependencies that transitively include the target package. This recipe is commonly used as a precondition for other recipes.
-* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](/recipes/javascript/dependencies/upgrade-dependency-version.md)
-  * **Upgrade npm dependency version**
-  * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](/recipes/javascript/dependencies/upgrade-transitive-dependency-version.md)
-  * **Upgrade transitive npm dependency version**
-  * Upgrades the version of a transitive dependency by adding override/resolution entries to `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.format.auto-format](/recipes/javascript/format/auto-format.md)
-  * **Auto-format JavaScript/TypeScript code**
-  * Format JavaScript and TypeScript code using formatting rules auto-detected from the project's existing code style.
-* [org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences](/recipes/javascript/migrate/es6/modernize-octal-escape-sequences.md)
-  * **Modernize octal escape sequences**
-  * Convert old-style octal escape sequences (e.g., `\0`, `\123`) to modern hex escape sequences (e.g., `\x00`, `\x53`) or Unicode escape sequences (e.g., `\u0000`, `\u0053`).
-* [org.openrewrite.javascript.migrate.es6.modernize-octal-literals](/recipes/javascript/migrate/es6/modernize-octal-literals.md)
-  * **Modernize octal literals**
-  * Convert old-style octal literals (e.g., `0777`) to modern ES6 syntax (e.g., `0o777`).
-* [org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys](/recipes/javascript/migrate/es6/remove-duplicate-object-keys.md)
-  * **Remove duplicate object keys**
-  * Remove duplicate keys in object literals, keeping only the last occurrence (last-wins semantics).
-* [org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default](/recipes/javascript/migrate/typescript/export-assignment-to-export-default.md)
-  * **Convert `export =` to `export default`**
-  * Converts TypeScript `export =` syntax to ES module `export default` syntax for compatibility with ECMAScript modules.
 * [org.openrewrite.jenkins.CommonsLang3ToApiPlugin](/recipes/jenkins/commonslang3toapiplugin.md)
   * **Use commons-lang3 API Plugin**
   * Updates `pom.xml` to depend on `commons-lang3-api` and exclude `commons-lang3` where it is brought in transitively.
