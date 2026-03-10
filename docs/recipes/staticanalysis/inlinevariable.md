@@ -13,7 +13,7 @@ _Inline variables when they are immediately used to return or throw. Supports bo
 
 ### Tags
 
-* [RSPEC-S1488](https://sonarsource.github.io/rspec/#/rspec/S1488)
+* [RSPEC-S1488](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1488)
 
 ## Recipe source
 

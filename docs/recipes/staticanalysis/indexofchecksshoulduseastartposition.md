@@ -13,7 +13,7 @@ _Replaces `indexOf(String)` in binary operations if the compared value is an int
 
 ### Tags
 
-* [RSPEC-S2912](https://sonarsource.github.io/rspec/#/rspec/S2912)
+* [RSPEC-S2912](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2912)
 
 ## Recipe source
 

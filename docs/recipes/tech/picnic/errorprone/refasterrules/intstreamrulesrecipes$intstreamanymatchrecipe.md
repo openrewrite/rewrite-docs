@@ -13,7 +13,7 @@ _Prefer `IntStream#anyMatch(IntPredicate)` over more contrived alternatives._
 
 ### Tags
 
-* [RSPEC-S4034](https://sonarsource.github.io/rspec/#/rspec/S4034)
+* [RSPEC-S4034](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4034)
 
 ## Recipe source
 

@@ -29,7 +29,7 @@ static final class StreamReduce<T> {
 
 ### Tags
 
-* [RSPEC-S4266](https://sonarsource.github.io/rspec/#/rspec/S4266)
+* [RSPEC-S4266](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4266)
 
 ## Recipe source
 

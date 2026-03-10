@@ -13,7 +13,7 @@ _Remove static modifier from nested enum types since they are implicitly static.
 
 ### Tags
 
-* [RSPEC-S2786](https://sonarsource.github.io/rspec/#/rspec/S2786)
+* [RSPEC-S2786](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2786)
 
 ## Recipe source
 

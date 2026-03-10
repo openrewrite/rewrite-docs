@@ -13,7 +13,7 @@ _Removes unnecessary type casts. Does not currently check casts in lambdas and c
 
 ### Tags
 
-* [RSPEC-S1905](https://sonarsource.github.io/rspec/#/rspec/S1905)
+* [RSPEC-S1905](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1905)
 
 ## Recipe source
 

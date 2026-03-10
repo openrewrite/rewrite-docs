@@ -13,8 +13,8 @@ _Replace `List`, `Map`, and `Set` double brace initialization with an initializa
 
 ### Tags
 
-* [RSPEC-S1171](https://sonarsource.github.io/rspec/#/rspec/S1171)
-* [RSPEC-S3599](https://sonarsource.github.io/rspec/#/rspec/S3599)
+* [RSPEC-S1171](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1171)
+* [RSPEC-S3599](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3599)
 
 ## Recipe source
 

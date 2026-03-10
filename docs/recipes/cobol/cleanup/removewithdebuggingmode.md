@@ -13,7 +13,7 @@ _Remove debugging mode from SOURCE-COMPUTER paragraphs._
 
 ### Tags
 
-* [RSPEC-4057](https://sonarsource.github.io/rspec/#/rspec/S4057)
+* [RSPEC-4057](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4057)
 
 ## Recipe source
 

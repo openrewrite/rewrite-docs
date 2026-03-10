@@ -13,7 +13,7 @@ _Find methods with empty bodies and single public no arg constructors._
 
 ### Tags
 
-* [RSPEC-S1186](https://sonarsource.github.io/rspec/#/rspec/S1186)
+* [RSPEC-S1186](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1186)
 
 ## Recipe source
 

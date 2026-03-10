@@ -13,7 +13,7 @@ _Remove `public` and optionally `protected` modifiers from methods with `@Test`,
 
 ### Tags
 
-* [RSPEC-S5786](https://sonarsource.github.io/rspec/#/rspec/S5786)
+* [RSPEC-S5786](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS5786)
 
 ## Recipe source
 

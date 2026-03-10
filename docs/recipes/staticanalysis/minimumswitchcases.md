@@ -13,7 +13,7 @@ _`switch` statements are useful when many code paths branch depending on the val
 
 ### Tags
 
-* [RSPEC-S1301](https://sonarsource.github.io/rspec/#/rspec/S1301)
+* [RSPEC-S1301](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1301)
 
 ## Recipe source
 

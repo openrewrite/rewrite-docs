@@ -13,7 +13,7 @@ _`Thread.run()` should not be called directly._
 
 ### Tags
 
-* [RSPEC-S1217](https://sonarsource.github.io/rspec/#/rspec/S1217)
+* [RSPEC-S1217](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1217)
 
 ## Recipe source
 

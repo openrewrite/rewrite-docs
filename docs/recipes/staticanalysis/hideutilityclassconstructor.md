@@ -13,7 +13,7 @@ _Ensures utility classes (classes containing only static methods or fields in th
 
 ### Tags
 
-* [RSPEC-S1118](https://sonarsource.github.io/rspec/#/rspec/S1118)
+* [RSPEC-S1118](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1118)
 
 ## Recipe source
 

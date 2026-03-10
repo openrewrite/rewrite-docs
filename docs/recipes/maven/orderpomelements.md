@@ -13,7 +13,7 @@ _Order POM elements according to the [recommended](https://maven.apache.org/deve
 
 ### Tags
 
-* [RSPEC-S3423](https://sonarsource.github.io/rspec/#/rspec/S3423)
+* [RSPEC-S3423](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3423)
 
 ## Recipe source
 

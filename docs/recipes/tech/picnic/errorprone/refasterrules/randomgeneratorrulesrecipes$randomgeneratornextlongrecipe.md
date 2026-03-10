@@ -13,7 +13,7 @@ _Additionally, for large bounds, the unnecessary floating point arithmetic preve
 
 ### Tags
 
-* [RSPEC-S1905](https://sonarsource.github.io/rspec/#/rspec/S1905)
+* [RSPEC-S1905](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1905)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Static methods do not need to be declared final because they cannot be overridd
 
 ### Tags
 
-* [RSPEC-S2333](https://sonarsource.github.io/rspec/#/rspec/S2333)
+* [RSPEC-S2333](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2333)
 
 ## Recipe source
 

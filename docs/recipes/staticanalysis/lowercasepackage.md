@@ -13,7 +13,7 @@ _By convention all Java package names should contain only lowercase letters, num
 
 ### Tags
 
-* [RSPEC-S120](https://sonarsource.github.io/rspec/#/rspec/S120)
+* [RSPEC-S120](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS120)
 
 ## Recipe source
 

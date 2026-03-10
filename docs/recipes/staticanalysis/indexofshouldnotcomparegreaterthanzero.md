@@ -13,7 +13,7 @@ _Replaces `String#indexOf(String) > 0` and `List#indexOf(Object) > 0` with `>=1`
 
 ### Tags
 
-* [RSPEC-S2692](https://sonarsource.github.io/rspec/#/rspec/S2692)
+* [RSPEC-S2692](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2692)
 
 ## Recipe source
 

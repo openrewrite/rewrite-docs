@@ -13,7 +13,7 @@ _Applies De Morgan's laws to simplify boolean expressions with negation. Transfo
 
 ### Tags
 
-* [RSPEC-1125](https://sonarsource.github.io/rspec/#/rspec/S1125)
+* [RSPEC-1125](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1125)
 
 ## Recipe source
 

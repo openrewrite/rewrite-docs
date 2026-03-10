@@ -13,7 +13,7 @@ _Fixes method names that do not follow standard naming conventions. For example,
 
 ### Tags
 
-* [RSPEC-S100](https://sonarsource.github.io/rspec/#/rspec/S100)
+* [RSPEC-S100](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS100)
 
 ## Recipe source
 

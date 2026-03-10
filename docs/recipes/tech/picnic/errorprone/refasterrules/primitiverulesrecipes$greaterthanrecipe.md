@@ -13,7 +13,7 @@ _Avoid contrived ways of expressing the "greater than" relationship._
 
 ### Tags
 
-* [RSPEC-S1940](https://sonarsource.github.io/rspec/#/rspec/S1940)
+* [RSPEC-S1940](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1940)
 
 ## Recipe source
 

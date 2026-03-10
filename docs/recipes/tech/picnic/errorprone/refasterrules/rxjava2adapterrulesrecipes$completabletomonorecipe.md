@@ -13,7 +13,7 @@ _Use the fluent API style when using `RxJava2Adapter#completableToMono`._
 
 ### Tags
 
-* [RSPEC-S4968](https://sonarsource.github.io/rspec/#/rspec/S4968)
+* [RSPEC-S4968](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4968)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _There should be no `A.class.isInstance(a)`, it should be replaced by `a instanc
 
 ### Tags
 
-* [RSPEC-S6202](https://sonarsource.github.io/rspec/#/rspec/S6202)
+* [RSPEC-S6202](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS6202)
 
 ## Recipe source
 

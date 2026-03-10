@@ -13,7 +13,7 @@ _Prefer `Collection#isEmpty()` over alternatives that consult the collection's s
 
 ### Tags
 
-* [RSPEC-S1155](https://sonarsource.github.io/rspec/#/rspec/S1155)
+* [RSPEC-S1155](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1155)
 
 ## Recipe source
 

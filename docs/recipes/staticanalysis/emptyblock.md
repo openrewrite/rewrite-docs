@@ -13,7 +13,7 @@ _Remove empty blocks that effectively do nothing._
 
 ### Tags
 
-* [RSPEC-S108](https://sonarsource.github.io/rspec/#/rspec/S108)
+* [RSPEC-S108](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS108)
 
 ## Recipe source
 

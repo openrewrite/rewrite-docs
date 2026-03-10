@@ -13,7 +13,7 @@ _Avoid unnecessary creation of new empty `String` objects; use the empty string 
 
 ### Tags
 
-* [RSPEC-S2129](https://sonarsource.github.io/rspec/#/rspec/S2129)
+* [RSPEC-S2129](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2129)
 
 ## Recipe source
 

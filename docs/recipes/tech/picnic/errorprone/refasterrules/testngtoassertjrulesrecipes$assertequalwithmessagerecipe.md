@@ -200,7 +200,7 @@ static final class AssertEqualWithMessage {
 
 ### Tags
 
-* [RSPEC-S1448](https://sonarsource.github.io/rspec/#/rspec/S1448)
+* [RSPEC-S1448](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1448)
 
 ## Recipe source
 

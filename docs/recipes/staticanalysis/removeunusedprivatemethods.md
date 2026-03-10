@@ -13,7 +13,7 @@ _`private` methods that are never executed are dead code and should be removed._
 
 ### Tags
 
-* [RSPEC-S1144](https://sonarsource.github.io/rspec/#/rspec/S1144)
+* [RSPEC-S1144](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1144)
 
 ## Recipe source
 

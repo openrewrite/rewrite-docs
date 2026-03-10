@@ -13,7 +13,7 @@ _Adds the `final` modifier to classes that expose no public or package-private c
 
 ### Tags
 
-* [RSPEC-S2974](https://sonarsource.github.io/rspec/#/rspec/S2974)
+* [RSPEC-S2974](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2974)
 
 ## Recipe source
 

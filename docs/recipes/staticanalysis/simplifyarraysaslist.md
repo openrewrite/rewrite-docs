@@ -13,7 +13,7 @@ _Simplifies `Arrays.asList()` method calls that use explicit array creation to u
 
 ### Tags
 
-* [RSPEC-S3878](https://sonarsource.github.io/rspec/#/rspec/S3878)
+* [RSPEC-S3878](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3878)
 
 ## Recipe source
 

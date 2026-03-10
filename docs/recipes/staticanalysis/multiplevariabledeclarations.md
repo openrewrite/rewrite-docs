@@ -13,7 +13,7 @@ _Places each variable declaration in its own statement and on its own line. Usin
 
 ### Tags
 
-* [RSPEC-S1659](https://sonarsource.github.io/rspec/#/rspec/S1659)
+* [RSPEC-S1659](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1659)
 
 ## Recipe source
 

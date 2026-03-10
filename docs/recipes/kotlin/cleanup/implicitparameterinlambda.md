@@ -13,7 +13,7 @@ _`it` is a special identifier that allows you to refer to the current parameter 
 
 ### Tags
 
-* [RSPEC-S6558](https://sonarsource.github.io/rspec/#/rspec/S6558)
+* [RSPEC-S6558](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS6558)
 
 ## Recipe source
 

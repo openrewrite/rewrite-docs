@@ -13,7 +13,7 @@ _Combine catches in a try that contain semantically equivalent blocks. No change
 
 ### Tags
 
-* [RSPEC-S2147](https://sonarsource.github.io/rspec/#/rspec/S2147)
+* [RSPEC-S2147](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2147)
 
 ## Recipe source
 

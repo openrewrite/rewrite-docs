@@ -13,7 +13,7 @@ _When only the condition expression is defined in a for loop, and the initializa
 
 ### Tags
 
-* [RSPEC-S1264](https://sonarsource.github.io/rspec/#/rspec/S1264)
+* [RSPEC-S1264](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1264)
 
 ## Recipe source
 

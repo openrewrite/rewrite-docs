@@ -13,7 +13,7 @@ _Constructors of `abstract` classes can only be called in constructors of their 
 
 ### Tags
 
-* [RSPEC-S5993](https://sonarsource.github.io/rspec/#/rspec/S5993)
+* [RSPEC-S5993](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS5993)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Nested ternary operators can be hard to read quickly. Prefer simpler constructs
 
 ### Tags
 
-* [RSPEC-S3358](https://sonarsource.github.io/rspec/#/rspec/S3358)
+* [RSPEC-S3358](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3358)
 
 ## Recipe source
 

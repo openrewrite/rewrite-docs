@@ -13,7 +13,7 @@ _Note that `File#createTempFile` treats the given prefix as a path, and ignores 
 
 ### Tags
 
-* [RSPEC-S5443](https://sonarsource.github.io/rspec/#/rspec/S5443)
+* [RSPEC-S5443](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS5443)
 
 ## Recipe source
 

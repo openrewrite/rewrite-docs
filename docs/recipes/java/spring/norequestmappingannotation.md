@@ -13,7 +13,7 @@ _Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@
 
 ### Tags
 
-* [RSPEC-S4488](https://sonarsource.github.io/rspec/#/rspec/S4488)
+* [RSPEC-S4488](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4488)
 
 ## Recipe source
 

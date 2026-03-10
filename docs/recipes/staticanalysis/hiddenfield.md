@@ -13,7 +13,7 @@ _Refactor local variables or parameters which shadow a field defined in the same
 
 ### Tags
 
-* [RSPEC-S1117](https://sonarsource.github.io/rspec/#/rspec/S1117)
+* [RSPEC-S1117](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1117)
 
 ## Recipe source
 

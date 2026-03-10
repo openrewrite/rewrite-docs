@@ -13,7 +13,7 @@ _Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!
 
 ### Tags
 
-* [RSPEC-S4551](https://sonarsource.github.io/rspec/#/rspec/S4551)
+* [RSPEC-S4551](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4551)
 
 ## Recipe source
 

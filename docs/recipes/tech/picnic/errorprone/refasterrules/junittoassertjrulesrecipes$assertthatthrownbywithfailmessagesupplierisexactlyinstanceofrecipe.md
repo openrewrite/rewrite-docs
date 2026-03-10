@@ -30,7 +30,7 @@ static final class AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOf<
 
 ### Tags
 
-* [RSPEC-S4449](https://sonarsource.github.io/rspec/#/rspec/S4449)
+* [RSPEC-S4449](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4449)
 
 ## Recipe source
 

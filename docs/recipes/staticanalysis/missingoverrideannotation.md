@@ -13,7 +13,7 @@ _Adds `@Override` to methods overriding superclass methods or implementing inter
 
 ### Tags
 
-* [RSPEC-S1161](https://sonarsource.github.io/rspec/#/rspec/S1161)
+* [RSPEC-S1161](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1161)
 
 ## Recipe source
 

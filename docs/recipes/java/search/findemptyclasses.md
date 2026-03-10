@@ -13,7 +13,7 @@ _Find empty classes without annotations that do not implement an interface or ex
 
 ### Tags
 
-* [RSPEC-S2094](https://sonarsource.github.io/rspec/#/rspec/S2094)
+* [RSPEC-S2094](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2094)
 
 ## Recipe source
 

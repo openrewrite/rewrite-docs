@@ -13,7 +13,7 @@ _Remove unnecessary `AutoCloseable#close()` statements in try-with-resources._
 
 ### Tags
 
-* [RSPEC-S4087](https://sonarsource.github.io/rspec/#/rspec/S4087)
+* [RSPEC-S4087](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4087)
 
 ## Recipe source
 

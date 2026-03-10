@@ -13,7 +13,7 @@ _Remove calls to `com.google.common.base.Optional#toJavaUtil()`._
 
 ### Tags
 
-* [RSPEC-S4738](https://sonarsource.github.io/rspec/#/rspec/S4738)
+* [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4738)
 * [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source

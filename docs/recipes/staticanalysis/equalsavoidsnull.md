@@ -13,7 +13,7 @@ _Checks that any combination of String literals is on the left side of an `equal
 
 ### Tags
 
-* [RSPEC-S1132](https://sonarsource.github.io/rspec/#/rspec/S1132)
+* [RSPEC-S1132](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1132)
 
 ## Recipe source
 

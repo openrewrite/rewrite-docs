@@ -13,7 +13,7 @@ _Simplifies Boolean expressions by removing redundancies. For example, `a && tru
 
 ### Tags
 
-* [RSPEC-S1126](https://sonarsource.github.io/rspec/#/rspec/S1126)
+* [RSPEC-S1126](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1126)
 
 ## Recipe source
 

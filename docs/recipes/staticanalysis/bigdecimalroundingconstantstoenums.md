@@ -13,7 +13,7 @@ _Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
 
 ### Tags
 
-* [RSPEC-S2111](https://sonarsource.github.io/rspec/#/rspec/S2111)
+* [RSPEC-S2111](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2111)
 
 ## Recipe source
 

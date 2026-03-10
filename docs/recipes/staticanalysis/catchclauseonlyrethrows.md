@@ -13,7 +13,7 @@ _A `catch` clause that only rethrows the caught exception is unnecessary. Lettin
 
 ### Tags
 
-* [RSPEC-S2737](https://sonarsource.github.io/rspec/#/rspec/S2737)
+* [RSPEC-S2737](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2737)
 
 ## Recipe source
 

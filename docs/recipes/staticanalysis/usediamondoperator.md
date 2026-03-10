@@ -13,7 +13,7 @@ _The diamond operator (`<>`) should be used. Java 7 introduced the diamond opera
 
 ### Tags
 
-* [RSPEC-S2293](https://sonarsource.github.io/rspec/#/rspec/S2293)
+* [RSPEC-S2293](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2293)
 
 ## Recipe source
 

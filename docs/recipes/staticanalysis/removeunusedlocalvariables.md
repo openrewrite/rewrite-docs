@@ -13,7 +13,7 @@ _If a local variable is declared but not used, it is dead code and should be rem
 
 ### Tags
 
-* [RSPEC-S1481](https://sonarsource.github.io/rspec/#/rspec/S1481)
+* [RSPEC-S1481](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1481)
 
 ## Recipe source
 

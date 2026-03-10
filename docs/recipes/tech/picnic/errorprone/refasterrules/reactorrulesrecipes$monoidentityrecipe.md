@@ -13,8 +13,8 @@ _Don't unnecessarily transform a `Mono` to an equivalent instance._
 
 ### Tags
 
-* [RSPEC-S4968](https://sonarsource.github.io/rspec/#/rspec/S4968)
-* [RSPEC-S2637](https://sonarsource.github.io/rspec/#/rspec/S2637)
+* [RSPEC-S4968](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4968)
+* [RSPEC-S2637](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2637)
 
 ## Recipe source
 

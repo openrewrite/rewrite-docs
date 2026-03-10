@@ -13,7 +13,7 @@ _Using upper case literal suffixes for declaring literals is less ambiguous, e.g
 
 ### Tags
 
-* [RSPEC-S818](https://sonarsource.github.io/rspec/#/rspec/S818)
+* [RSPEC-S818](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS818)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Testing for loop termination using an equality operator (`==` and `!=`) is dang
 
 ### Tags
 
-* [RSPEC-S888](https://sonarsource.github.io/rspec/#/rspec/S888)
+* [RSPEC-S888](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS888)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Replaces `Collections#EMPTY_...` with methods that return generic types._
 
 ### Tags
 
-* [RSPEC-S1596](https://sonarsource.github.io/rspec/#/rspec/S1596)
+* [RSPEC-S1596](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1596)
 
 ## Recipe source
 

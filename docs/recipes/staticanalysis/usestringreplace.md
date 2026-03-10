@@ -13,7 +13,7 @@ _When `String::replaceAll` is used, the first argument should be a real regular 
 
 ### Tags
 
-* [RSPEC-S5361](https://sonarsource.github.io/rspec/#/rspec/S5361)
+* [RSPEC-S5361](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS5361)
 
 ## Recipe source
 

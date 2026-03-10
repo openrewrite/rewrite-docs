@@ -13,7 +13,7 @@ _Instantiating a `StringBuilder` or a `StringBuffer` with a `Character` results 
 
 ### Tags
 
-* [RSPEC-S1317](https://sonarsource.github.io/rspec/#/rspec/S1317)
+* [RSPEC-S1317](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1317)
 
 ## Recipe source
 

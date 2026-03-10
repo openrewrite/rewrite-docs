@@ -13,7 +13,7 @@ _Remove trailing whitespace from the end of each line. Trailing whitespace is si
 
 ### Tags
 
-* [RSPEC-S1131](https://sonarsource.github.io/rspec/#/rspec/S1131)
+* [RSPEC-S1131](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1131)
 
 ## Recipe source
 

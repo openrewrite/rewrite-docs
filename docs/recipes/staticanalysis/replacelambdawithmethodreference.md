@@ -13,7 +13,7 @@ _Replaces the single statement lambdas `o -> o instanceOf X`, `o -> (A) o`, `o -
 
 ### Tags
 
-* [RSPEC-S1612](https://sonarsource.github.io/rspec/#/rspec/S1612)
+* [RSPEC-S1612](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1612)
 
 ## Recipe source
 

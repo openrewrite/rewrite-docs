@@ -13,7 +13,7 @@ _If a private field is declared but not used in the program, it can be considere
 
 ### Tags
 
-* [RSPEC-S1068](https://sonarsource.github.io/rspec/#/rspec/S1068)
+* [RSPEC-S1068](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1068)
 
 ## Recipe source
 

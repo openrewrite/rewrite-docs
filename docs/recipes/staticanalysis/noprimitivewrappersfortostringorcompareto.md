@@ -13,7 +13,7 @@ _Primitive wrappers should not be instantiated only for `#toString()` or `#compa
 
 ### Tags
 
-* [RSPEC-S1158](https://sonarsource.github.io/rspec/#/rspec/S1158)
+* [RSPEC-S1158](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1158)
 
 ## Recipe source
 

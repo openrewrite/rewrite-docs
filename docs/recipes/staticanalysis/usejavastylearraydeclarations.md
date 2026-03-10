@@ -13,7 +13,7 @@ _Change C-Style array declarations `int i[];` to `int[] i;`._
 
 ### Tags
 
-* [RSPEC-S1197](https://sonarsource.github.io/rspec/#/rspec/S1197)
+* [RSPEC-S1197](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1197)
 
 ## Recipe source
 

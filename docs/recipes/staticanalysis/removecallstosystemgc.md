@@ -13,7 +13,7 @@ _Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage colle
 
 ### Tags
 
-* [RSPEC-S1215](https://sonarsource.github.io/rspec/#/rspec/S1215)
+* [RSPEC-S1215](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1215)
 
 ## Recipe source
 

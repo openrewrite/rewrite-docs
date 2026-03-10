@@ -18,7 +18,7 @@ Remove unnecessary `throws` declarations. This recipe will only remove unused, c
 
 ### Tags
 
-* [RSPEC-S1130](https://sonarsource.github.io/rspec/#/rspec/S1130)
+* [RSPEC-S1130](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1130)
 
 ## Recipe source
 

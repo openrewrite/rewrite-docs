@@ -13,7 +13,7 @@ _Prefer `String#isEmpty()` over alternatives that consult the string's length._
 
 ### Tags
 
-* [RSPEC-S7158](https://sonarsource.github.io/rspec/#/rspec/S7158)
+* [RSPEC-S7158](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS7158)
 
 ## Recipe source
 

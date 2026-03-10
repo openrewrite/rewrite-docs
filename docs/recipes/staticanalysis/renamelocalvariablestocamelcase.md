@@ -13,7 +13,7 @@ _Reformat local variable and method parameter names to camelCase to comply with 
 
 ### Tags
 
-* [RSPEC-S117](https://sonarsource.github.io/rspec/#/rspec/S117)
+* [RSPEC-S117](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS117)
 
 ## Recipe source
 

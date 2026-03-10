@@ -13,7 +13,7 @@ _Remove calls to `Object.finalize()`. This method is called during garbage colle
 
 ### Tags
 
-* [RSPEC-S1111](https://sonarsource.github.io/rspec/#/rspec/S1111)
+* [RSPEC-S1111](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1111)
 
 ## Recipe source
 

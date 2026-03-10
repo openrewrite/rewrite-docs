@@ -13,7 +13,7 @@ _A `serialVersionUID` field is strongly recommended in all `Serializable` classe
 
 ### Tags
 
-* [RSPEC-S2057](https://sonarsource.github.io/rspec/#/rspec/S2057)
+* [RSPEC-S2057](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2057)
 
 ## Recipe source
 

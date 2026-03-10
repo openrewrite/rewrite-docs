@@ -13,7 +13,7 @@ _Primitives can't be null anyway, so these annotations are not useful in this co
 
 ### Tags
 
-* [RSPEC-S4682](https://sonarsource.github.io/rspec/#/rspec/S4682)
+* [RSPEC-S4682](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4682)
 
 ## Recipe source
 

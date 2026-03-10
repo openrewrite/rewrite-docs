@@ -13,7 +13,7 @@ _Checks that classes and records which define a covariant `equals()` method also
 
 ### Tags
 
-* [RSPEC-S2162](https://sonarsource.github.io/rspec/#/rspec/S2162)
+* [RSPEC-S2162](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2162)
 
 ## Recipe source
 
