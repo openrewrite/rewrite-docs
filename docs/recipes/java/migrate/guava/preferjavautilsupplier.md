@@ -13,7 +13,7 @@ _Prefer `java.util.function.Supplier` instead of using `com.google.common.base.S
 
 ### Tags
 
-* [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4738)
+* [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4738&open=java%3AS4738)
 * [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source

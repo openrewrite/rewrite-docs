@@ -13,7 +13,7 @@ _The increment should be moved to the loop's increment clause if possible._
 
 ### Tags
 
-* [RSPEC-S1994](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1994)
+* [RSPEC-S1994](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1994&open=java%3AS1994)
 
 ## Recipe source
 

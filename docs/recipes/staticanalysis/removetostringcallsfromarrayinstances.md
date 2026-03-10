@@ -13,7 +13,7 @@ _The result from `toString()` calls on arrays is largely useless. The output doe
 
 ### Tags
 
-* [RSPEC-S2116](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2116)
+* [RSPEC-S2116](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2116&open=java%3AS2116)
 
 ## Recipe source
 

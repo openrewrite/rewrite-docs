@@ -13,7 +13,7 @@ _Checks for fall-through in switch statements, adding `break` statements in loca
 
 ### Tags
 
-* [RSPEC-S128](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS128)
+* [RSPEC-S128](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S128&open=java%3AS128)
 
 ## Recipe source
 

@@ -17,7 +17,7 @@ Removes explicit initializations where they aren't necessary.
 
 ### Tags
 
-* [RSPEC-S3052](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3052)
+* [RSPEC-S3052](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3052&open=java%3AS3052)
 
 ## Recipe source
 

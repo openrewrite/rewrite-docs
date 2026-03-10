@@ -13,7 +13,7 @@ _Developers may not recognize octal values as such, mistaking them instead for d
 
 ### Tags
 
-* [RSPEC-S1314](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1314)
+* [RSPEC-S1314](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1314&open=java%3AS1314)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Fixes Sonar issue `java:S6068`: Call to Mockito method "verify", "when" or "giv
 
 ### Tags
 
-* [RSPEC-6068](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS6068)
+* [RSPEC-6068](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6068&open=java%3AS6068)
 
 ## Recipe source
 

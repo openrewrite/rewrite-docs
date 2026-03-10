@@ -13,7 +13,7 @@ _In Kotlin, `==` means structural equality and `!=` structural inequality and bo
 
 ### Tags
 
-* [RSPEC-S6519](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS6519)
+* [RSPEC-S6519](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6519&open=java%3AS6519)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _`String.equals()` should be used when checking value equality on String literal
 
 ### Tags
 
-* [RSPEC-S4973](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4973)
+* [RSPEC-S4973](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4973&open=java%3AS4973)
 
 ## Recipe source
 

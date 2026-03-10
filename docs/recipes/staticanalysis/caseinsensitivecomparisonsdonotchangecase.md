@@ -13,7 +13,7 @@ _Remove `String#toLowerCase()` or `String#toUpperCase()` from `String#equalsIgno
 
 ### Tags
 
-* [RSPEC-S1157](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1157)
+* [RSPEC-S1157](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1157&open=java%3AS1157)
 
 ## Recipe source
 

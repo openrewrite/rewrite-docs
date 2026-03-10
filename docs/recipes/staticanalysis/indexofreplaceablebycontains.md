@@ -13,7 +13,7 @@ _Checking if a value is included in a `String` or `List` using `indexOf(value)>-
 
 ### Tags
 
-* [RSPEC-S2692](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2692)
+* [RSPEC-S2692](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2692&open=java%3AS2692)
 
 ## Recipe source
 

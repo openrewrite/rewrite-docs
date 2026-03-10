@@ -13,7 +13,7 @@ _Replaces Guava `Files#createTempDir()` with Java `Files#createTempDirectory(..)
 
 ### Tags
 
-* [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4738)
+* [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4738&open=java%3AS4738)
 * [guava](/reference/recipes-by-tag#guava)
 
 ## Recipe source

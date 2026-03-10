@@ -13,8 +13,8 @@ _Removes unnecessary parentheses from code where extra parentheses pairs are red
 
 ### Tags
 
-* [RSPEC-S1110](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1110)
-* [RSPEC-S1611](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1611)
+* [RSPEC-S1110](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1110&open=java%3AS1110)
+* [RSPEC-S1611](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1611&open=java%3AS1611)
 
 ## Recipe source
 

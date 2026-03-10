@@ -13,8 +13,8 @@ _Don't negate an inequality test or use the ternary operator to compare two bool
 
 ### Tags
 
-* [RSPEC-S1244](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1244)
-* [RSPEC-S1940](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1940)
+* [RSPEC-S1244](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1244&open=java%3AS1244)
+* [RSPEC-S1940](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1940&open=java%3AS1940)
 
 ## Recipe source
 

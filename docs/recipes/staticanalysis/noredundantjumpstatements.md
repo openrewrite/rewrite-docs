@@ -13,7 +13,7 @@ _Jump statements such as return and continue let you change the default flow of 
 
 ### Tags
 
-* [RSPEC-S3626](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3626)
+* [RSPEC-S3626](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3626&open=java%3AS3626)
 
 ## Recipe source
 

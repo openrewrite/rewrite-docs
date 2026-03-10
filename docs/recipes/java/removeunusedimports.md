@@ -13,7 +13,7 @@ _Remove imports for types that are not referenced. As a precaution against incor
 
 ### Tags
 
-* [RSPEC-S1128](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1128)
+* [RSPEC-S1128](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1128&open=java%3AS1128)
 
 ## Recipe source
 

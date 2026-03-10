@@ -13,7 +13,7 @@ _Prefer `String#startsWith(String, int)` over less efficient alternatives._
 
 ### Tags
 
-* [RSPEC-S4635](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4635)
+* [RSPEC-S4635](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4635&open=java%3AS4635)
 
 ## Recipe source
 

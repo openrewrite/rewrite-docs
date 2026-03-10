@@ -13,7 +13,7 @@ _Avoid vacuous invocations of `Mono#ignoreElement()`._
 
 ### Tags
 
-* [RSPEC-S4968](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4968)
+* [RSPEC-S4968](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4968&open=java%3AS4968)
 
 ## Recipe source
 

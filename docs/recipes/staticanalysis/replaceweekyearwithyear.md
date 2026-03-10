@@ -13,7 +13,7 @@ _For most dates Week Year (YYYY) and Year (yyyy) yield the same results. However
 
 ### Tags
 
-* [RSPEC-S3986](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3986)
+* [RSPEC-S3986](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3986&open=java%3AS3986)
 
 ## Recipe source
 

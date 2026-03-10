@@ -13,8 +13,8 @@ _Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternati
 
 ### Tags
 
-* [RSPEC-S1943](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1943)
-* [RSPEC-S2095](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2095)
+* [RSPEC-S1943](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1943&open=java%3AS1943)
+* [RSPEC-S2095](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2095&open=java%3AS2095)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object,
 
 ### Tags
 
-* [RSPEC-S107](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS107)
+* [RSPEC-S107](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S107&open=java%3AS107)
 
 ## Recipe source
 

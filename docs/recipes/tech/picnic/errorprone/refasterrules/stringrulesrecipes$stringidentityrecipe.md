@@ -13,7 +13,7 @@ _Avoid unnecessary creation of new `String` objects._
 
 ### Tags
 
-* [RSPEC-S2129](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2129)
+* [RSPEC-S2129](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2129&open=java%3AS2129)
 
 ## Recipe source
 

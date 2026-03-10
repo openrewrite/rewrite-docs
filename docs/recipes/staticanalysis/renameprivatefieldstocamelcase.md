@@ -13,8 +13,8 @@ _Reformat private field names to camelCase to comply with Java naming convention
 
 ### Tags
 
-* [RSPEC-S116](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS116)
-* [RSPEC-S3008](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3008)
+* [RSPEC-S116](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S116&open=java%3AS116)
+* [RSPEC-S3008](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3008&open=java%3AS3008)
 
 ## Recipe source
 

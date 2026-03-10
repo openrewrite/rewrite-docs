@@ -13,7 +13,7 @@ _Adds explicit types on lambda arguments, which are otherwise optional. This can
 
 ### Tags
 
-* [RSPEC-S2211](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2211)
+* [RSPEC-S2211](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2211&open=java%3AS2211)
 
 ## Recipe source
 

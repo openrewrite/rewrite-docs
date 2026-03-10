@@ -200,7 +200,7 @@ static final class AssertEqual {
 
 ### Tags
 
-* [RSPEC-S1448](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1448)
+* [RSPEC-S1448](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1448&open=java%3AS1448)
 
 ## Recipe source
 

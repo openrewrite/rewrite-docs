@@ -13,7 +13,7 @@ _Removes redundant null checks before instanceof operations since instanceof ret
 
 ### Tags
 
-* [RSPEC-S1697](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1697)
+* [RSPEC-S1697](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1697&open=java%3AS1697)
 
 ## Recipe source
 

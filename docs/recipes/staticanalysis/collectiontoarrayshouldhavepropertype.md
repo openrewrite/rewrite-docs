@@ -13,7 +13,7 @@ _Using `Collection.toArray()` without parameters returns an `Object[]`, which re
 
 ### Tags
 
-* [RSPEC-S3020](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3020)
+* [RSPEC-S3020](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3020&open=java%3AS3020)
 
 ## Recipe source
 

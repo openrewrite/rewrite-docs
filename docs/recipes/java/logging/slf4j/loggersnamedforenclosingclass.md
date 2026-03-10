@@ -13,7 +13,7 @@ _Ensure `LoggerFactory#getLogger(Class)` is called with the enclosing class as a
 
 ### Tags
 
-* [RSPEC-S3416](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3416)
+* [RSPEC-S3416](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3416&open=java%3AS3416)
 * [slf4j](/reference/recipes-by-tag#slf4j)
 * [logging](/reference/recipes-by-tag#logging)
 

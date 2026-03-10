@@ -13,7 +13,7 @@ _Prefer `BigDecimal#valueOf(double)` over the associated constructor._
 
 ### Tags
 
-* [RSPEC-S2111](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2111)
+* [RSPEC-S2111](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2111&open=java%3AS2111)
 
 ## Recipe source
 

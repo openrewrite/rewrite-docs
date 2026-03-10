@@ -13,7 +13,7 @@ _Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequenc
 
 ### Tags
 
-* [RSPEC-S7158](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS7158)
+* [RSPEC-S7158](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S7158&open=java%3AS7158)
 
 ## Recipe source
 

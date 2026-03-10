@@ -13,7 +13,7 @@ _Avoid double negations; this is not Javascript._
 
 ### Tags
 
-* [RSPEC-S2761](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2761)
+* [RSPEC-S2761](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2761&open=java%3AS2761)
 
 ## Recipe source
 

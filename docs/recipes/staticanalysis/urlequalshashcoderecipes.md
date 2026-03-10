@@ -13,7 +13,7 @@ _Uses of `equals()` and `hashCode()` cause `java.net.URL` to make blocking inter
 
 ### Tags
 
-* [RSPEC-2112](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2112)
+* [RSPEC-2112](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2112&open=java%3AS2112)
 
 ## Recipe source
 

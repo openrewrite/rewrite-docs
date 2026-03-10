@@ -13,7 +13,7 @@ _Using `==` or `!=` compares object references, not the equality of two objects.
 
 ### Tags
 
-* [RSPEC-S1698](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1698)
+* [RSPEC-S1698](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1698&open=java%3AS1698)
 
 ## Recipe source
 

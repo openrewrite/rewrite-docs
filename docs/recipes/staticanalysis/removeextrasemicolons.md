@@ -16,8 +16,8 @@ Removes not needed semicolons. Semicolons are considered not needed:
 
 ### Tags
 
-* [RSPEC-S1116](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1116)
-* [RSPEC-S2959](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2959)
+* [RSPEC-S1116](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1116&open=java%3AS1116)
+* [RSPEC-S2959](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2959&open=java%3AS2959)
 
 ## Recipe source
 

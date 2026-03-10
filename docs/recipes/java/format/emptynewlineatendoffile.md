@@ -13,7 +13,7 @@ _Some tools work better when files end with an empty line._
 
 ### Tags
 
-* [RSPEC-S113](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS113)
+* [RSPEC-S113](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S113&open=java%3AS113)
 
 ## Recipe source
 

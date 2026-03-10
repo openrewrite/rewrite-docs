@@ -13,7 +13,7 @@ _Overrides of `Object#finalize()` should call super._
 
 ### Tags
 
-* [RSPEC-S1114](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1114)
+* [RSPEC-S1114](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1114&open=java%3AS1114)
 
 ## Recipe source
 

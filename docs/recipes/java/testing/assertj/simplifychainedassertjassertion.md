@@ -13,7 +13,7 @@ _Many AssertJ chained assertions have dedicated assertions that function the sam
 
 ### Tags
 
-* [RSPEC-S5838](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS5838)
+* [RSPEC-S5838](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S5838&open=java%3AS5838)
 
 ## Recipe source
 

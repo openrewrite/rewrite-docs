@@ -13,7 +13,7 @@ _Assertions such as `org.junit.Assert.assertEquals` expect the first argument to
 
 ### Tags
 
-* [RSPEC-S3415](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3415)
+* [RSPEC-S3415](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3415&open=java%3AS3415)
 
 ## Recipe source
 

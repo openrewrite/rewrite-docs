@@ -13,7 +13,7 @@ _When using a method parameter like `Function<IN, OUT>`, it should rather be `Fu
 
 ### Tags
 
-* [RSPEC-S1217](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1217)
+* [RSPEC-S1217](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1217&open=java%3AS1217)
 
 ## Recipe source
 

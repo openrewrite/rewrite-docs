@@ -13,7 +13,7 @@ _Use `Deque`, `List`, `Map`, `ConcurrentMap`, `Queue`, and `Set` instead of impl
 
 ### Tags
 
-* [RSPEC-S1319](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1319)
+* [RSPEC-S1319](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1319&open=java%3AS1319)
 
 ## Recipe source
 

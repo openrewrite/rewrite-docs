@@ -13,7 +13,7 @@ _Fix `String#format` and `String#formatted` expressions by replacing `\n` newlin
 
 ### Tags
 
-* [RSPEC-S3457](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3457)
+* [RSPEC-S3457](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3457&open=java%3AS3457)
 
 ## Recipe source
 

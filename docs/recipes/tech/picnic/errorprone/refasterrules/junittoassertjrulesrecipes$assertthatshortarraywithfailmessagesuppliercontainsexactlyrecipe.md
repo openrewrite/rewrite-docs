@@ -30,7 +30,7 @@ static final class AssertThatShortArrayWithFailMessageSupplierContainsExactly {
 
 ### Tags
 
-* [RSPEC-S4449](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4449)
+* [RSPEC-S4449](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4449&open=java%3AS4449)
 
 ## Recipe source
 

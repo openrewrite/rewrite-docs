@@ -13,7 +13,7 @@ _`Externalizable` classes handle both serialization and deserialization and must
 
 ### Tags
 
-* [RSPEC-S2060](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2060)
+* [RSPEC-S2060](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2060&open=java%3AS2060)
 
 ## Recipe source
 

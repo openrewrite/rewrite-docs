@@ -13,7 +13,7 @@ _Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(S
 
 ### Tags
 
-* [RSPEC-S3658](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3658)
+* [RSPEC-S3658](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3658&open=java%3AS3658)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Replaces `catch(Exception e)` blocks with a multi-catch block (`catch (Specific
 
 ### Tags
 
-* [RSPEC-S2221](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2221)
+* [RSPEC-S2221](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2221&open=java%3AS2221)
 * [CWE-396](/reference/recipes-by-tag#cwe)
 
 ## Recipe source

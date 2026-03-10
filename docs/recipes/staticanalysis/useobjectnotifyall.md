@@ -13,7 +13,7 @@ _`Object.notifyAll()` and `Object.notify()` both wake up sleeping threads, but `
 
 ### Tags
 
-* [RSPEC-S2446](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2446)
+* [RSPEC-S2446](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2446&open=java%3AS2446)
 
 ## Recipe source
 

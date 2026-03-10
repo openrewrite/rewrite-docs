@@ -13,7 +13,7 @@ _For tests not having any assertions, wrap the statements with JUnit Jupiter's `
 
 ### Tags
 
-* [RSPEC-S2699](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2699)
+* [RSPEC-S2699](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2699&open=java%3AS2699)
 
 ## Recipe source
 

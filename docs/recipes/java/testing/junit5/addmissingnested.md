@@ -13,7 +13,7 @@ _Adds `@Nested` to inner classes that contain JUnit 5 tests._
 
 ### Tags
 
-* [RSPEC-S5790](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS5790)
+* [RSPEC-S5790](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S5790&open=java%3AS5790)
 
 ## Recipe source
 

@@ -13,10 +13,10 @@ _Format line wraps and braces in Java code._
 
 ### Tags
 
-* [RSPEC-S121](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS121)
-* [RSPEC-S2681](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2681)
-* [RSPEC-S3972](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3972)
-* [RSPEC-S3973](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3973)
+* [RSPEC-S121](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S121&open=java%3AS121)
+* [RSPEC-S2681](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2681&open=java%3AS2681)
+* [RSPEC-S3972](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3972&open=java%3AS3972)
+* [RSPEC-S3973](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3973&open=java%3AS3973)
 
 ## Recipe source
 

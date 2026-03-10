@@ -13,7 +13,7 @@ _Finalizers are deprecated. Use of `finalize()` can lead to performance issues, 
 
 ### Tags
 
-* [RSPEC-S1111](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1111)
+* [RSPEC-S1111](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1111&open=java%3AS1111)
 
 ## Recipe source
 

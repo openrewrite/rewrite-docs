@@ -13,7 +13,7 @@ _Checks for overly complicated boolean expressions, such as `if (b == true)`, `b
 
 ### Tags
 
-* [RSPEC-1125](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1125)
+* [RSPEC-1125](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1125&open=java%3AS1125)
 
 ## Recipe source
 

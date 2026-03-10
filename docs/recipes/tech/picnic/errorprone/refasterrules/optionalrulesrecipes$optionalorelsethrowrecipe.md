@@ -13,7 +13,7 @@ _Prefer `Optional#orElseThrow()` over the less explicit `Optional#get()`._
 
 ### Tags
 
-* [RSPEC-S3655](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3655)
+* [RSPEC-S3655](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3655&open=java%3AS3655)
 
 ## Recipe source
 

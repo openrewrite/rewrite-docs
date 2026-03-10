@@ -13,7 +13,7 @@ _Ensure the `default` case comes last after all the cases in a switch statement.
 
 ### Tags
 
-* [RSPEC-S4524](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4524)
+* [RSPEC-S4524](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4524&open=java%3AS4524)
 
 ## Recipe source
 

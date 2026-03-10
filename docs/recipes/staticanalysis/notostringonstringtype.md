@@ -13,7 +13,7 @@ _Remove unnecessary `String#toString` invocations on objects which are already a
 
 ### Tags
 
-* [RSPEC-S1858](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1858)
+* [RSPEC-S1858](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1858&open=java%3AS1858)
 
 ## Recipe source
 

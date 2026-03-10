@@ -13,8 +13,8 @@ _Also check for _not_ `isEmpty()` when testing for not equal to zero size._
 
 ### Tags
 
-* [RSPEC-S1155](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1155)
-* [RSPEC-S3981](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3981)
+* [RSPEC-S1155](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1155&open=java%3AS1155)
+* [RSPEC-S3981](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3981&open=java%3AS3981)
 
 ## Recipe source
 

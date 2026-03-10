@@ -13,7 +13,7 @@ _Program flow control statements like `if`, `while`, and `for` can omit curly br
 
 ### Tags
 
-* [RSPEC-S2681](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2681)
+* [RSPEC-S2681](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2681&open=java%3AS2681)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Under certain conditions the `java.lang.Boolean` type is used as an expression,
 
 ### Tags
 
-* [RSPEC-S5411](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS5411)
+* [RSPEC-S5411](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S5411&open=java%3AS5411)
 
 ## Recipe source
 

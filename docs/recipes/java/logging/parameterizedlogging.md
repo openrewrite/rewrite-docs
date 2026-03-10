@@ -13,8 +13,8 @@ _Transform logging statements using concatenation for messages and variables int
 
 ### Tags
 
-* [RSPEC-S2629](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2629)
-* [RSPEC-S3457](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS3457)
+* [RSPEC-S2629](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2629&open=java%3AS2629)
+* [RSPEC-S3457](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3457&open=java%3AS3457)
 
 ## Recipe source
 

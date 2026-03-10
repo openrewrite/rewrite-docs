@@ -13,7 +13,7 @@ _Modifiers should be declared in the correct order as recommended by the JLS._
 
 ### Tags
 
-* [RSPEC-S1124](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1124)
+* [RSPEC-S1124](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1124&open=java%3AS1124)
 
 ## Recipe source
 

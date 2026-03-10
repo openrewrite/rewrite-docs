@@ -13,7 +13,7 @@ _Replace inefficient string concatenation patterns like `"" + ...` with `String.
 
 ### Tags
 
-* [RSPEC-S1153](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1153)
+* [RSPEC-S1153](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1153&open=java%3AS1153)
 
 ## Recipe source
 

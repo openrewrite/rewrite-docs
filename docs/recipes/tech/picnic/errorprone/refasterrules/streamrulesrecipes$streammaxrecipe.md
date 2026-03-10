@@ -29,7 +29,7 @@ static final class StreamMax<T> {
 
 ### Tags
 
-* [RSPEC-S4266](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4266)
+* [RSPEC-S4266](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4266&open=java%3AS4266)
 
 ## Recipe source
 

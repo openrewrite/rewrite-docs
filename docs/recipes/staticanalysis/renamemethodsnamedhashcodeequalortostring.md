@@ -13,7 +13,7 @@ _Methods should not be named `hashcode`, `equal`, or `tostring`. Any of these ar
 
 ### Tags
 
-* [RSPEC-S1221](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1221)
+* [RSPEC-S1221](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1221&open=java%3AS1221)
 
 ## Recipe source
 

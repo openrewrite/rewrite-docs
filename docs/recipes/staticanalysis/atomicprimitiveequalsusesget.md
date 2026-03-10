@@ -13,7 +13,7 @@ _`AtomicBoolean#equals(Object)`, `AtomicInteger#equals(Object)` and `AtomicLong#
 
 ### Tags
 
-* [RSPEC-S2204](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2204)
+* [RSPEC-S2204](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2204&open=java%3AS2204)
 
 ## Recipe source
 

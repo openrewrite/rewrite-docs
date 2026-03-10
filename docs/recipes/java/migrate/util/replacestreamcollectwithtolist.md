@@ -13,7 +13,7 @@ _Replace `Stream.collect(Collectors.toUnmodifiableList())` with Java 16+ `Stream
 
 ### Tags
 
-* [RSPEC-S6204](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS6204)
+* [RSPEC-S6204](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6204&open=java%3AS6204)
 
 ## Recipe source
 

@@ -13,7 +13,7 @@ _Don't unnecessarily repeat boolean expressions._
 
 ### Tags
 
-* [RSPEC-S2589](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS2589)
+* [RSPEC-S2589](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2589&open=java%3AS2589)
 
 ## Recipe source
 

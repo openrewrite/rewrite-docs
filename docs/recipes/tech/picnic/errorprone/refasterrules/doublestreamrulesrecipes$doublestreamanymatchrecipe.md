@@ -13,7 +13,7 @@ _Prefer `DoubleStream#anyMatch(DoublePredicate)` over more contrived alternative
 
 ### Tags
 
-* [RSPEC-S4034](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS4034)
+* [RSPEC-S4034](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4034&open=java%3AS4034)
 
 ## Recipe source
 

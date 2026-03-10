@@ -13,7 +13,7 @@ _Removes empty methods with a `@Test` annotation if the body does not have comme
 
 ### Tags
 
-* [RSPEC-S1186](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&open=java%3AS1186)
+* [RSPEC-S1186](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1186&open=java%3AS1186)
 
 ## Recipe source
 
