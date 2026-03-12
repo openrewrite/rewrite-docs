@@ -174,8 +174,12 @@ recipeList:
       argumentIndex: 1
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: jakarta.servlet.ServletContext log(Exception, String)
-      newParameterNames: [ex, str]
-      oldParameterNames: [str, ex]
+      newParameterNames:
+        - ex
+        - str
+      oldParameterNames:
+        - str
+        - ex
       matchOverrides: true
   - org.openrewrite.java.migrate.jakarta.UpdateGetRealPath
   - org.openrewrite.java.DeleteMethodArgument:
@@ -186,8 +190,12 @@ recipeList:
       argumentIndex: 1
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: jakarta.servlet.UnavailableException <constructor>(int, String)
-      newParameterNames: [str, in]
-      oldParameterNames: [in, str]
+      newParameterNames:
+        - str
+        - in
+      oldParameterNames:
+        - in
+        - str
       matchOverrides: true
 
 ```

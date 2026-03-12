@@ -43,8 +43,12 @@ description: |
 recipeList:
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: okhttp3.RequestBody create(okhttp3.MediaType, java.lang.String)
-      newParameterNames: [contentType, content]
-      oldParameterNames: [content, contentType]
+      newParameterNames:
+        - contentType
+        - content
+      oldParameterNames:
+        - content
+        - contentType
 
 ```
 </TabItem>

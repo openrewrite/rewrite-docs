@@ -95,7 +95,8 @@ name: com.yourorg.AddStagesExample
 displayName: Add GitLab stages example
 recipeList:
   - org.openrewrite.gitlab.AddStages:
-      stages: build,test,deploy
+      stages:
+        - build,test,deploy
 ```
 
 Now that `com.yourorg.AddStagesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}` in your build file:

@@ -230,7 +230,8 @@ recipeList:
       oldRelativePath: ../../pom.xml
       newRelativePath: ../pom.xml
       versionPattern: '-jre'
-      except: com.jcraft:jsch
+      except:
+        - com.jcraft:jsch
 ```
 
 Now that `com.yourorg.ChangeParentPomExample` has been defined, activate it in your build file:

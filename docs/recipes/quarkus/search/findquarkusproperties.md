@@ -43,7 +43,8 @@ recipeList:
       propertyKey: quarkus.http.port
       profile: dev
       searchAllProfiles: false
-      pathExpressions: ["**/application.yaml"]
+      pathExpressions:
+        - ["**/application.yaml"]
 ```
 
 Now that `com.yourorg.FindQuarkusPropertiesExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}` in your build file:

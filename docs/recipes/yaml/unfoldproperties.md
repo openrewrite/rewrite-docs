@@ -117,8 +117,10 @@ name: com.yourorg.UnfoldPropertiesExample
 displayName: Unfold YAML properties example
 recipeList:
   - org.openrewrite.yaml.UnfoldProperties:
-      exclusions: $..[org.springframework.security]
-      applyTo: $..[org.springframework.security]
+      exclusions:
+        - $..[org.springframework.security]
+      applyTo:
+        - $..[org.springframework.security]
 ```
 
 Now that `com.yourorg.UnfoldPropertiesExample` has been defined, activate it in your build file:

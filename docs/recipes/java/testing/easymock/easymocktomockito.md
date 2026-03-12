@@ -268,8 +268,12 @@ recipeList:
       newMethodName: mock
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.easymock.EasyMock mock(String, Class)
-      newParameterNames: [classToMock, name]
-      oldParameterNames: [name, classToMock]
+      newParameterNames:
+        - classToMock
+        - name
+      oldParameterNames:
+        - name
+        - classToMock
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.easymock.EasyMock lt(..)
       fullyQualifiedTargetTypeName: org.mockito.AdditionalMatchers

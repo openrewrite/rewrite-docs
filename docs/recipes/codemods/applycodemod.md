@@ -148,7 +148,8 @@ recipeList:
       transform: '-t path/to/transform/optimus-prime'
       executable: '@next/codemod/bin/next-codemod.js'
       fileFilter: '**/*.(j|t)sx'
-      codemodArgs: --force --jscodeshift='--parser=${parser}'
+      codemodArgs:
+        - --force --jscodeshift='--parser=${parser}'
 ```
 
 Now that `com.yourorg.ApplyCodemodExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-codemods:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS}}` in your build file:

@@ -54,7 +54,8 @@ recipeList:
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-annotation-processor
       newVersion: micronaut.validation
-      exclusions: io.micronaut:micronaut-inject
+      exclusions:
+        - io.micronaut:micronaut-inject
 ```
 
 Now that `com.yourorg.ChangeAnnotationProcessorPathExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}` in your build file:

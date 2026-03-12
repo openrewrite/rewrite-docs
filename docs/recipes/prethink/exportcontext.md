@@ -52,7 +52,8 @@ recipeList:
       displayName: Test Coverage
       shortDescription: Maps test methods to implementation methods they verify
       longDescription: This context maps each test method to the implementation methods it calls...
-      dataTables: org.openrewrite.prethink.table.TestMapping
+      dataTables:
+        - org.openrewrite.prethink.table.TestMapping
 ```
 
 Now that `com.yourorg.ExportContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}` in your build file:

@@ -37,7 +37,8 @@ name: com.yourorg.ExcludeFileFromGitignoreExample
 displayName: Remove ignoral of files or directories from .gitignore example
 recipeList:
   - org.openrewrite.ExcludeFileFromGitignore:
-      paths: /folder/file.txt
+      paths:
+        - /folder/file.txt
 ```
 
 Now that `com.yourorg.ExcludeFileFromGitignoreExample` has been defined, activate it in your build file:

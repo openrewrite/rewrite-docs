@@ -54,7 +54,8 @@ recipeList:
       oldValue: read-sync
       profile: dev
       changeAllProfiles: false
-      pathExpressions: ["**/application.yaml"]
+      pathExpressions:
+        - ["**/application.yaml"]
 ```
 
 Now that `com.yourorg.ChangeQuarkusPropertyValueExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}` in your build file:

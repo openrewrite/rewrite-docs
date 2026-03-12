@@ -67,8 +67,12 @@ recipeList:
   - org.openrewrite.java.testing.hamcrest.ConsistentHamcrestMatcherImports
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.hamcrest.MatcherAssert assertThat(java.lang.String, boolean)
-      newParameterNames: [assertion, reason]
-      oldParameterNames: [reason, assertion]
+      newParameterNames:
+        - assertion
+        - reason
+      oldParameterNames:
+        - reason
+        - assertion
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.hamcrest.MatcherAssert assertThat(boolean, String)
       newMethodName: assertTrue

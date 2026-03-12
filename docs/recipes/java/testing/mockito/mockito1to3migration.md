@@ -189,8 +189,12 @@ recipeList:
       argumentIndex: 0
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.mockito.MockedStatic verify(org.mockito.verification.VerificationMode, org.mockito.MockedStatic.Verification)
-      newParameterNames: [verification, mode]
-      oldParameterNames: [mode, verification]
+      newParameterNames:
+        - verification
+        - mode
+      oldParameterNames:
+        - mode
+        - verification
   - org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.mockito.Mockito verifyZeroInteractions(..)

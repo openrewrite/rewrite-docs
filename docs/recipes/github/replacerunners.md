@@ -86,7 +86,8 @@ displayName: Replace runners for a job example
 recipeList:
   - org.openrewrite.github.ReplaceRunners:
       jobName: build
-      runners: ubuntu-latest
+      runners:
+        - ubuntu-latest
 ```
 
 Now that `com.yourorg.ReplaceRunnersExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}` in your build file:

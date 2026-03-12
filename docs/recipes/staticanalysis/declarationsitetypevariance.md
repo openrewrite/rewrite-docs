@@ -98,8 +98,10 @@ name: com.yourorg.DeclarationSiteTypeVarianceExample
 displayName: Properly use declaration-site type variance example
 recipeList:
   - org.openrewrite.staticanalysis.DeclarationSiteTypeVariance:
-      variantTypes: java.util.function.Function<IN, OUT>
-      excludedBounds: java.lang.*
+      variantTypes:
+        - java.util.function.Function<IN, OUT>
+      excludedBounds:
+        - java.lang.*
 ```
 
 Now that `com.yourorg.DeclarationSiteTypeVarianceExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}` in your build file:

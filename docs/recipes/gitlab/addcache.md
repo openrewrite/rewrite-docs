@@ -105,7 +105,8 @@ displayName: Add cache configuration example
 recipeList:
   - org.openrewrite.gitlab.AddCache:
       key: $CI_COMMIT_REF_SLUG
-      paths: .cache/,vendor/
+      paths:
+        - .cache/,vendor/
       policy: pull-push
       jobName: build_job
 ```

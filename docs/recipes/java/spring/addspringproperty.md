@@ -121,7 +121,8 @@ recipeList:
       property: management.metrics.enable.process.files
       value: true
       comment: This is a comment
-      pathExpressions: ["**/application.yml"]
+      pathExpressions:
+        - ["**/application.yml"]
 ```
 
 Now that `com.yourorg.AddSpringPropertyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}` in your build file:

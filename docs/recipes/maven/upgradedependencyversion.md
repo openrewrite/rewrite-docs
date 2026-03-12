@@ -256,7 +256,8 @@ recipeList:
       artifactId: jackson-module*
       newVersion: 29.X
       versionPattern: '-jre'
-      retainVersions: com.jcraft:jsch
+      retainVersions:
+        - com.jcraft:jsch
 ```
 
 Now that `com.yourorg.UpgradeDependencyVersionExample` has been defined, activate it in your build file:

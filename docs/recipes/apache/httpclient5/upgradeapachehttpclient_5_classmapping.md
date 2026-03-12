@@ -873,16 +873,36 @@ recipeList:
       newFullyQualifiedTypeName: org.apache.hc.core5.http.HttpEntityContainer
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.apache.hc.core5.http.HttpHost <constructor>(java.lang.String, int, java.lang.String)
-      newParameterNames: [scheme, hostname, port]
-      oldParameterNames: [hostname, port, scheme]
+      newParameterNames:
+        - scheme
+        - hostname
+        - port
+      oldParameterNames:
+        - hostname
+        - port
+        - scheme
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.apache.hc.core5.http.HttpHost <constructor>(java.net.InetAddress, int, java.lang.String)
-      newParameterNames: [scheme, address, port]
-      oldParameterNames: [address, port, scheme]
+      newParameterNames:
+        - scheme
+        - address
+        - port
+      oldParameterNames:
+        - address
+        - port
+        - scheme
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.apache.hc.core5.http.HttpHost <constructor>(java.net.InetAddress, java.lang.String, int, java.lang.String)
-      newParameterNames: [scheme, address, hostname, port]
-      oldParameterNames: [address, hostname, port, scheme]
+      newParameterNames:
+        - scheme
+        - address
+        - hostname
+        - port
+      oldParameterNames:
+        - address
+        - hostname
+        - port
+        - scheme
 
 ```
 </TabItem>

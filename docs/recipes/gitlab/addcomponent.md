@@ -131,7 +131,8 @@ recipeList:
   - org.openrewrite.gitlab.AddComponent:
       newComponent: $CI_SERVER_FQDN/components/opentofu/full-pipeline
       version: 0.10.0
-      inputs: opentofu_version: 1.6.1
+      inputs:
+        - opentofu_version: 1.6.1
 ```
 
 Now that `com.yourorg.AddComponentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-gitlab:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB}}` in your build file:

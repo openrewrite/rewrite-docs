@@ -132,7 +132,8 @@ recipeList:
       oldPort: 1234
       port: 1234
       tlsPropertyKey: spring.rabbitmq.ssl.enabled
-      pathExpressions: **/application.yml
+      pathExpressions:
+        - **/application.yml
 ```
 
 Now that `com.yourorg.UseTlsAmqpConnectionStringExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}` in your build file:

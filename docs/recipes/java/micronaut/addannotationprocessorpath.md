@@ -52,7 +52,8 @@ recipeList:
       artifactId: my-new-annotation-processor
       version: ${micronaut.validation}
       onlyIfUsing: jakarta.validation.constraints.*
-      exclusions: io.micronaut:micronaut-inject
+      exclusions:
+        - io.micronaut:micronaut-inject
 ```
 
 Now that `com.yourorg.AddAnnotationProcessorPathExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}` in your build file:

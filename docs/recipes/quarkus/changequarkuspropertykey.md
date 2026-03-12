@@ -59,7 +59,8 @@ recipeList:
       newPropertyKey: quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy
       profile: dev
       changeAllProfiles: false
-      pathExpressions: ["**/application.yaml"]
+      pathExpressions:
+        - ["**/application.yaml"]
 ```
 
 Now that `com.yourorg.ChangeQuarkusPropertyKeyExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}` in your build file:

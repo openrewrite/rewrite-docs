@@ -1849,6 +1849,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgrademybatistospringboot_3_4)
   * **Upgrade MyBatis to Spring Boot 3.4**
   * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.4.
+* [io.moderne.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgrademybatistospringboot_3_5)
+  * **Upgrade MyBatis to Spring Boot 3.5**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.5.
 * [io.moderne.java.spring.boot3.UpgradeSpringBoot_3_4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_4-moderne-edition)
   * **Migrate to Spring Boot 3.4 (Moderne Edition)**
   * Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4.
@@ -1963,6 +1966,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.ReplaceDeprecatedThreadPoolTaskSchedulerBuilderApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedthreadpooltaskschedulerbuilderapi)
   * **Replace deprecated `ThreadPoolTaskSchedulerBuilder` constructor**
   * Replaces the deprecated 5-argument constructor of `ThreadPoolTaskSchedulerBuilder` with the builder pattern.
+* [io.moderne.java.spring.boot4.SpringBoot4BestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/springboot4bestpractices)
+  * **Spring Boot 4.0 best practices**
+  * Applies best practices to Spring Boot 4.+ applications.
+* [io.moderne.java.spring.boot4.UpgradeMyBatisToSpringBoot_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgrademybatistospringboot_4_0)
+  * **Upgrade MyBatis to Spring Boot 4.0**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 4.0.
 * [io.moderne.java.spring.boot4.UpgradeSpringBoot_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
   * **Migrate to Spring Boot 4.0 (Moderne Edition)**
   * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 4.0.
@@ -2025,7 +2034,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Spring Framework 7.0 changed `HttpHeaders` to no longer implement `MultiValueMap`. This recipe replaces removed inherited method calls: `containsKey()` with `containsHeader()`, `keySet()` with `headerNames()`, and `entrySet()` with `headerSet()`.
 * [io.moderne.java.spring.framework.MigrateTrailingSlashMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratetrailingslashmatch)
   * **Migrate trailing slash matching to explicit routes**
-  * Migrates deprecated `setUseTrailingSlashMatch(true)` configuration by adding explicit trailing slash routes to controller methods, then removing the deprecated configuration call. This ensures applications that relied on automatic trailing slash matching continue to work after upgrading to Spring Framework 7.0.
+  * Migrates deprecated `setUseTrailingSlashMatch()` configuration removed in Spring Framework 7.0. Only adds explicit trailing slash routes when the project previously enabled trailing slash matching via `setUseTrailingSlashMatch(true)`. The deprecated configuration calls are always removed.
 * [io.moderne.java.spring.framework.ModularSpringFrameworkDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/modularspringframeworkdependencies)
   * **Add Spring Framework modular dependencies**
   * Adds Spring Framework modular dependencies based on package usage, replacing legacy monolithic `org.springframework:spring`.

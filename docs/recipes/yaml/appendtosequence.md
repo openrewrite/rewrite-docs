@@ -87,7 +87,8 @@ recipeList:
   - org.openrewrite.yaml.AppendToSequence:
       sequencePath: $.universe.planets
       value: earth
-      existingSequenceValues: existingValue1
+      existingSequenceValues:
+        - existingValue1
       matchExistingSequenceValuesInAnyOrder: true
 ```
 

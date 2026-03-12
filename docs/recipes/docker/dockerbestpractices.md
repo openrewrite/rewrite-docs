@@ -13,8 +13,6 @@ _Apply a set of Docker best practices to Dockerfiles. This recipe applies securi
 
 ### Tags
 
-* [security](/reference/recipes-by-tag#security)
-* [best-practices](/reference/recipes-by-tag#best)
 * [docker](/reference/recipes-by-tag#docker)
 
 ## Recipe source
@@ -51,8 +49,6 @@ displayName: Apply Docker best practices
 description: |
   Apply a set of Docker best practices to Dockerfiles. This recipe applies security hardening, build optimization, and maintainability improvements based on CIS Docker Benchmark and industry best practices.
 tags:
-  - security
-  - best-practices
   - docker
 recipeList:
   - org.openrewrite.docker.DockerSecurityBestPractices

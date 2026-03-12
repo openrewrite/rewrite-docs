@@ -48,7 +48,8 @@ recipeList:
   - org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange:
       oldPropertyKey: TODO Provide a usage example for the docs
       newPrefix: TODO Provide a usage example for the docs
-      exclusions: camel.springboot.main-run-controller
+      exclusions:
+        - camel.springboot.main-run-controller
 ```
 
 Now that `com.yourorg.ChangePropertyKeyWithCaseChangeExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-third-party:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY}}` in your build file:

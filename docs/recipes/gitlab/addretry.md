@@ -108,7 +108,8 @@ displayName: Add retry configuration example
 recipeList:
   - org.openrewrite.gitlab.AddRetry:
       max: 2
-      when: runner_system_failure,stuck_or_timeout_failure
+      when:
+        - runner_system_failure,stuck_or_timeout_failure
       jobName: build_job
 ```
 
