@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Simplifies various types of ternary expressions to improve code readability._
 
+### Tags
+
+* [RSPEC-S1125](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1125&open=java%3AS1125)
+
 ## Recipe source
 
 [GitHub: SimplifyTernary.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyTernary.java),
@@ -42,6 +46,8 @@ name: org.openrewrite.staticanalysis.SimplifyTernaryRecipes
 displayName: Simplify ternary expressions
 description: |
   Simplifies various types of ternary expressions to improve code readability.
+tags:
+  - RSPEC-S1125
 recipeList:
   - org.openrewrite.staticanalysis.SimplifyTernaryRecipes$SimplifyTernaryTrueFalseRecipe
   - org.openrewrite.staticanalysis.SimplifyTernaryRecipes$SimplifyTernaryFalseTrueRecipe

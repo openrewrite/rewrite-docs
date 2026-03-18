@@ -38,7 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method](../../../java/spring/framework/migratehandlerresultsetexceptionhandlermethod)
 * [Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`](../../../java/spring/framework/migratemethodargumentnotvalidexceptionerrormethod)
 * [Migrate `ResourceHttpMessageWriter.addHeaders`](../../../java/spring/framework/migrateresourcehttpmessagewriteraddheadersmethod)
-* [Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`](../../../java/spring/framework/migrateuricomponentsbuildermethods)
+* [Migrate deprecated `UriComponentsBuilder` methods](../../../java/spring/framework/migrateuricomponentsbuildermethods)
 * [Migrate `WebExchangeBindException.resolveErrorMessages`](../../../java/spring/framework/migratewebexchangebindexceptionresolveerrormethod)
 * [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](../../../java/spring/framework/migrateclienthttpresponsegetrawstatuscodemethod)
 * [Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryconnecttimeout)

@@ -15,6 +15,10 @@ From the Javadoc of `Stack`:
 ```
 
 
+### Tags
+
+* [RSPEC-S1149](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1149&open=java%3AS1149)
+
 ## Recipe source
 
 [GitHub: ReplaceStackWithDeque.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceStackWithDeque.java),

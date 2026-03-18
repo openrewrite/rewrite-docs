@@ -72,10 +72,10 @@ This recipe is used as part of the following composite recipes:
 ###### Parameters
 | Parameter | Value |
 | --- | --- |
-|rules|`"- if: $CI_PIPELINE_SOURCE == 'merge_request_event'\n" +
-            "- if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS\n" +
-            "  when: never\n" +
-            "- if: $CI_COMMIT_BRANCH"`|
+|rules|`- if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+- if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+  when: never
+- if: $CI_COMMIT_BRANCH`|
 |acceptTheirs|`null`|
 
 

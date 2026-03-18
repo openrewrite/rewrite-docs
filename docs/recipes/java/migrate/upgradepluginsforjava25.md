@@ -35,7 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
   * minimumJavaMajorVersion: `25`
 * [Update Gradle wrapper](../../gradle/updategradlewrapper)
-  * version: `9.1`
+  * version: `9.1.0`
   * addIfMissing: `false`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
@@ -44,12 +44,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * addVersionIfMissing: `true`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
-  * artifactId: `maven-surefire-plugin`
-  * newVersion: `3.1.x`
+  * artifactId: `maven-surefire-*`
+  * newVersion: `3.5.x`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-failsafe-plugin`
-  * newVersion: `3.1.x`
+  * newVersion: `3.5.x`
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `net.bytebuddy`
   * artifactId: `byte-buddy*`
@@ -72,7 +72,7 @@ recipeList:
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
       minimumJavaMajorVersion: 25
   - org.openrewrite.gradle.UpdateGradleWrapper:
-      version: 9.1
+      version: 9.1.0
       addIfMissing: false
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
@@ -81,12 +81,12 @@ recipeList:
       addVersionIfMissing: true
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
-      artifactId: maven-surefire-plugin
-      newVersion: 3.1.x
+      artifactId: maven-surefire-*
+      newVersion: 3.5.x
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-failsafe-plugin
-      newVersion: 3.1.x
+      newVersion: 3.5.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: net.bytebuddy
       artifactId: byte-buddy*

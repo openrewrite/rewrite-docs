@@ -28,8 +28,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
+* [Apache Maven best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavenbestpractices)
 * [Clean up various issues with the code](/recipes/java/dropwizard/codecleanup.md)
 
 ## Example

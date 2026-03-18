@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Adds pattern variables to `instanceof` expressions wherever the same (side effect free) expression is referenced in a corresponding type cast expression within the flow scope of the `instanceof`. Currently, this recipe supports `if` statements and ternary operator expressions._
 
+### Tags
+
+* [RSPEC-S6201](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6201&open=java%3AS6201)
+
 ## Recipe source
 
 [GitHub: InstanceOfPatternMatch.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/InstanceOfPatternMatch.java),

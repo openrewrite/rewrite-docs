@@ -47,7 +47,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove Security SecurityManager](../../java/migrate/removesecuritymanager)
 * [Replace `System.getSecurityManager()` with `null`](../../java/migrate/systemgetsecuritymanagertonull)
 * [Use `ZipException` instead of `ZipError`](../../java/migrate/migrateziperrortozipexception)
-* [Enable Lombok annotation processor](../../java/migrate/enablelombokannotationprocessor)
 * [Migrate GraalVM resource-config.json to glob patterns](../../java/migrate/migrategraalvmresourceconfig)
 
 </TabItem>
@@ -79,7 +78,6 @@ recipeList:
   - org.openrewrite.java.migrate.RemoveSecurityManager
   - org.openrewrite.java.migrate.SystemGetSecurityManagerToNull
   - org.openrewrite.java.migrate.MigrateZipErrorToZipException
-  - org.openrewrite.java.migrate.EnableLombokAnnotationProcessor
   - org.openrewrite.java.migrate.MigrateGraalVMResourceConfig
 
 ```

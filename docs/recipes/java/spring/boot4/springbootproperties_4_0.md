@@ -239,6 +239,51 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPropertyKey: `spring.jackson.write`
   * newPropertyKey: `spring.jackson.json.write`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-dates-as-timestamps`
+  * newPropertyKey: `spring.jackson.datatype.datetime.write-dates-as-timestamps`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-date-keys-as-timestamps`
+  * newPropertyKey: `spring.jackson.datatype.datetime.write-date-keys-as-timestamps`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-dates-with-zone-id`
+  * newPropertyKey: `spring.jackson.datatype.datetime.write-dates-with-zone-id`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-dates-with-context-time-zone`
+  * newPropertyKey: `spring.jackson.datatype.datetime.write-dates-with-context-time-zone`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-durations-as-timestamps`
+  * newPropertyKey: `spring.jackson.datatype.datetime.write-durations-as-timestamps`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-date-timestamps-as-nanoseconds`
+  * newPropertyKey: `spring.jackson.datatype.datetime.write-date-timestamps-as-nanoseconds`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.deserialization.adjust-dates-to-context-time-zone`
+  * newPropertyKey: `spring.jackson.datatype.datetime.adjust-dates-to-context-time-zone`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.deserialization.read-date-timestamps-as-nanoseconds`
+  * newPropertyKey: `spring.jackson.datatype.datetime.read-date-timestamps-as-nanoseconds`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-enums-using-to-string`
+  * newPropertyKey: `spring.jackson.datatype.enum.write-enums-using-to-string`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-enums-using-index`
+  * newPropertyKey: `spring.jackson.datatype.enum.write-enums-using-index`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.serialization.write-enum-keys-using-index`
+  * newPropertyKey: `spring.jackson.datatype.enum.write-enum-keys-using-index`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.deserialization.fail-on-numbers-for-enums`
+  * newPropertyKey: `spring.jackson.datatype.enum.fail-on-numbers-for-enums`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.deserialization.read-enums-using-to-string`
+  * newPropertyKey: `spring.jackson.datatype.enum.read-enums-using-to-string`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.deserialization.read-unknown-enum-values-as-null`
+  * newPropertyKey: `spring.jackson.datatype.enum.read-unknown-enum-values-as-null`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
+  * oldPropertyKey: `spring.jackson.deserialization.read-unknown-enum-values-using-default-value`
+  * newPropertyKey: `spring.jackson.datatype.enum.read-unknown-enum-values-using-default-value`
+* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.kafka.retry.topic.backoff.random`
   * newPropertyKey: `spring.kafka.retry.topic.backoff.jitter`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
@@ -672,6 +717,51 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.jackson.write
       newPropertyKey: spring.jackson.json.write
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-dates-as-timestamps
+      newPropertyKey: spring.jackson.datatype.datetime.write-dates-as-timestamps
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-date-keys-as-timestamps
+      newPropertyKey: spring.jackson.datatype.datetime.write-date-keys-as-timestamps
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-dates-with-zone-id
+      newPropertyKey: spring.jackson.datatype.datetime.write-dates-with-zone-id
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-dates-with-context-time-zone
+      newPropertyKey: spring.jackson.datatype.datetime.write-dates-with-context-time-zone
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-durations-as-timestamps
+      newPropertyKey: spring.jackson.datatype.datetime.write-durations-as-timestamps
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-date-timestamps-as-nanoseconds
+      newPropertyKey: spring.jackson.datatype.datetime.write-date-timestamps-as-nanoseconds
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.deserialization.adjust-dates-to-context-time-zone
+      newPropertyKey: spring.jackson.datatype.datetime.adjust-dates-to-context-time-zone
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.deserialization.read-date-timestamps-as-nanoseconds
+      newPropertyKey: spring.jackson.datatype.datetime.read-date-timestamps-as-nanoseconds
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-enums-using-to-string
+      newPropertyKey: spring.jackson.datatype.enum.write-enums-using-to-string
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-enums-using-index
+      newPropertyKey: spring.jackson.datatype.enum.write-enums-using-index
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.serialization.write-enum-keys-using-index
+      newPropertyKey: spring.jackson.datatype.enum.write-enum-keys-using-index
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.deserialization.fail-on-numbers-for-enums
+      newPropertyKey: spring.jackson.datatype.enum.fail-on-numbers-for-enums
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.deserialization.read-enums-using-to-string
+      newPropertyKey: spring.jackson.datatype.enum.read-enums-using-to-string
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.deserialization.read-unknown-enum-values-as-null
+      newPropertyKey: spring.jackson.datatype.enum.read-unknown-enum-values-as-null
+  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
+      oldPropertyKey: spring.jackson.deserialization.read-unknown-enum-values-using-default-value
+      newPropertyKey: spring.jackson.datatype.enum.read-unknown-enum-values-using-default-value
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.kafka.retry.topic.backoff.random
       newPropertyKey: spring.kafka.retry.topic.backoff.jitter

@@ -13,7 +13,6 @@ _Apply best practices for using Jackson library, including upgrade to Jackson 2.
 
 ### Tags
 
-* [best practices](/reference/recipes-by-tag#best-practices)
 * [jackson-2](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
@@ -52,7 +51,6 @@ displayName: Jackson best practices
 description: |
   Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
 tags:
-  - best practices
   - jackson-2
 recipeList:
   - org.openrewrite.java.jackson.RemoveRedundantJsonPropertyValue

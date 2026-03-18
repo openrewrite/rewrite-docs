@@ -34,6 +34,9 @@ This recipe is used as part of the following composite recipes:
 
 * [ArchUnit 0.x upgrade](/recipes/java/testing/archunit/archunit0to1migration.md)
 * [Change Tapestry 4 packages to Tapestry 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/tapestry/changetapestrypackages)
+* [DataNucleus 4.0 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_4_0.md)
+* [DataNucleus 5.0 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_0.md)
+* [DataNucleus 5.2 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_2.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.0](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)

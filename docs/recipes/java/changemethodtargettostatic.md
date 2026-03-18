@@ -37,6 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
 * [Change `javax.tools.ToolProvider` methods calls to static](/recipes/java/migrate/removedtoolproviderconstructor.md)
 * [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+* [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JUL to Log4j 2.x API](/recipes/java/logging/log4j/jultolog4j.md)
 * [Migrate Log4j 1.x to Log4j 2.x](/recipes/java/logging/log4j/log4j1tolog4j2.md)
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)

@@ -33,6 +33,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [DataNucleus 4.0 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_4_0.md)
+* [DataNucleus 5.0 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_0.md)
+* [DataNucleus 5.1 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_1.md)
+* [DataNucleus 5.2 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_2.md)
 * [Migrate Spring Boot Actuator to Quarkus Health and Metrics](/recipes/quarkus/spring/migratespringactuator.md)
 * [Migrate Spring Cloud Config Client to Quarkus Config](/recipes/quarkus/spring/migratespringcloudconfig.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)

@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate `only`/`except` to `rules`](../gitlab/migratetorules)
 * [Add workflow rules](../gitlab/addworkflowrules)
   * rules: `- if: $CI_PIPELINE_SOURCE == 'merge_request_event' - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS   when: never - if: $CI_COMMIT_BRANCH`
 * [Add interruptible](../gitlab/addinterruptible)
@@ -59,6 +60,7 @@ tags:
   - ci
   - gitlab
 recipeList:
+  - org.openrewrite.gitlab.MigrateToRules
   - org.openrewrite.gitlab.AddWorkflowRules:
       rules: - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
 - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS

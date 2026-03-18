@@ -31,6 +31,197 @@ This recipe is used as part of the following composite recipes:
 
 * [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+
+class Test {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Test.class);
+    private static final Marker MARKER = MarkerFactory.getMarker("TEST");
+
+    void test(String name, int count, Exception ex) {
+        // all log levels
+        if (LOGGER.isTraceEnabled()) {
+            LOGGER.trace("Trace: {} count={}", name, count);
+        }
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("Debug: {} count={}", name, count);
+        }
+        if (LOGGER.isInfoEnabled()) {
+            LOGGER.info("Info: {} count={}", name, count);
+        }
+        if (LOGGER.isWarnEnabled()) {
+            LOGGER.warn("Warning: {} count={}", name, count);
+        }
+        if (LOGGER.isErrorEnabled()) {
+            LOGGER.error("Error: {} count={}", name, count);
+        }
+
+        // multiple statements in guard
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("First message: {}", name);
+            LOGGER.debug("Second message: {}", count);
+            LOGGER.debug("Third message");
+        }
+
+        // guard with marker
+        if (LOGGER.isDebugEnabled(MARKER)) {
+            LOGGER.debug(MARKER, "Message: {}", name);
+        }
+
+        // exception.getMessage() allowed
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("Error: {}", ex.getMessage());
+        }
+        if (LOGGER.isErrorEnabled()) {
+            LOGGER.error("Failed: {}", ex.getMessage(), ex);
+        }
+
+        // single statement without braces
+        if (LOGGER.isDebugEnabled())
+            LOGGER.debug("No braces: {}", name);
+
+        // mixed log levels in guard
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("Debug: {}", name);
+            LOGGER.info("Also info: {}", name);
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+
+class Test {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Test.class);
+    private static final Marker MARKER = MarkerFactory.getMarker("TEST");
+
+    void test(String name, int count, Exception ex) {
+        // all log levels
+        LOGGER.trace("Trace: {} count={}", name, count);
+        LOGGER.debug("Debug: {} count={}", name, count);
+        LOGGER.info("Info: {} count={}", name, count);
+        LOGGER.warn("Warning: {} count={}", name, count);
+        LOGGER.error("Error: {} count={}", name, count);
+
+        // multiple statements in guard
+        LOGGER.debug("First message: {}", name);
+        LOGGER.debug("Second message: {}", count);
+        LOGGER.debug("Third message");
+
+        // guard with marker
+        LOGGER.debug(MARKER, "Message: {}", name);
+
+        // exception.getMessage() allowed
+        LOGGER.debug("Error: {}", ex.getMessage());
+        LOGGER.error("Failed: {}", ex.getMessage(), ex);
+
+        // single statement without braces
+        LOGGER.debug("No braces: {}", name);
+
+        // mixed log levels in guard
+        LOGGER.debug("Debug: {}", name);
+        LOGGER.info("Also info: {}", name);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -12,15 +12,5 @@
+    void test(String name, int count, Exception ex) {
+        // all log levels
+-       if (LOGGER.isTraceEnabled()) {
+-           LOGGER.trace("Trace: {} count={}", name, count);
+-       }
+-       if (LOGGER.isDebugEnabled()) {
+-           LOGGER.debug("Debug: {} count={}", name, count);
+-       }
+-       if (LOGGER.isInfoEnabled()) {
+-           LOGGER.info("Info: {} count={}", name, count);
+-       }
+-       if (LOGGER.isWarnEnabled()) {
+-           LOGGER.warn("Warning: {} count={}", name, count);
+-       }
+-       if (LOGGER.isErrorEnabled()) {
+-           LOGGER.error("Error: {} count={}", name, count);
+-       }
++       LOGGER.trace("Trace: {} count={}", name, count);
++       LOGGER.debug("Debug: {} count={}", name, count);
++       LOGGER.info("Info: {} count={}", name, count);
++       LOGGER.warn("Warning: {} count={}", name, count);
++       LOGGER.error("Error: {} count={}", name, count);
+
+@@ -29,5 +19,3 @@
+
+        // multiple statements in guard
+-       if (LOGGER.isDebugEnabled()) {
+-           LOGGER.debug("First message: {}", name);
+-           LOGGER.debug("Second message: {}", count);
+-           LOGGER.debug("Third message");
+-       }
++       LOGGER.debug("First message: {}", name);
++       LOGGER.debug("Second message: {}", count);
++       LOGGER.debug("Third message");
+
+@@ -36,3 +24,1 @@
+
+        // guard with marker
+-       if (LOGGER.isDebugEnabled(MARKER)) {
+-           LOGGER.debug(MARKER, "Message: {}", name);
+-       }
++       LOGGER.debug(MARKER, "Message: {}", name);
+
+@@ -41,6 +27,2 @@
+
+        // exception.getMessage() allowed
+-       if (LOGGER.isDebugEnabled()) {
+-           LOGGER.debug("Error: {}", ex.getMessage());
+-       }
+-       if (LOGGER.isErrorEnabled()) {
+-           LOGGER.error("Failed: {}", ex.getMessage(), ex);
+-       }
++       LOGGER.debug("Error: {}", ex.getMessage());
++       LOGGER.error("Failed: {}", ex.getMessage(), ex);
+
+@@ -49,2 +31,1 @@
+
+        // single statement without braces
+-       if (LOGGER.isDebugEnabled())
+-           LOGGER.debug("No braces: {}", name);
++       LOGGER.debug("No braces: {}", name);
+
+@@ -53,4 +34,2 @@
+
+        // mixed log levels in guard
+-       if (LOGGER.isDebugEnabled()) {
+-           LOGGER.debug("Debug: {}", name);
+-           LOGGER.info("Also info: {}", name);
+-       }
++       LOGGER.debug("Debug: {}", name);
++       LOGGER.info("Also info: {}", name);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

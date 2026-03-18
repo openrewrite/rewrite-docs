@@ -9,6 +9,7 @@ _Modernize your code to best use the project's current JDK version. Take advanta
 ## Categories
 
 * [Cobertura](/recipes/java/migrate/cobertura)
+* [DataNucleus](/recipes/java/migrate/datanucleus)
 * [Guava](/recipes/java/migrate/guava)
 * [JaCoCo](/recipes/java/migrate/jacoco)
 * [Jakarta](/recipes/java/migrate/jakarta)

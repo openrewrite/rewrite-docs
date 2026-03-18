@@ -101,7 +101,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove redundant null checks before instanceof](./removeredundantnullcheckbeforeinstanceof.md)
 * [Remove redundant null checks before literal equals](./removeredundantnullcheckbeforeliteralequals.md)
 * [Remove `toString()` calls on arrays](./removetostringcallsfromarrayinstances.md)
-* [Remove trailing whitespace](./removetrailingwhitespace.md)
 * [Remove unnecessary parentheses](./unnecessaryparentheses.md)
 * [Remove unneeded assertions](./removeunneededassertion.md)
 * [Remove unneeded block](./removeunneededblock.md)

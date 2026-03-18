@@ -36,6 +36,10 @@ This recipe is used as part of the following composite recipes:
 
 * [Align Struts XML constants for Struts 7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/updatestruts7constants)
 * [Change cacheManager to use the SimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [DataNucleus 4.0 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_4_0.md)
+* [DataNucleus 5.0 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_0.md)
+* [DataNucleus 5.1 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_1.md)
+* [DataNucleus 5.2 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_2.md)
 * [Migrate Bean XML properties deprecated in Spring Framework 3.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratedeprecatedbeanxmlproperties)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)

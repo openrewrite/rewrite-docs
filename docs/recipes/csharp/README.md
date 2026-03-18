@@ -6,16 +6,11 @@ description: C# OpenRewrite recipes.
 
 _Recipes for C# codebases._
 
-## Categories
-
-* [Search](/recipes/csharp/search)
-
 ## Recipes
 
-* [Change method name](./changemethodname.md)
-* [Change type](./changetype.md)
-* [Delete method argument](./deletemethodargument.md)
-* [Rename package name](./changepackage.md)
-* [Reorder method arguments](./reordermethodarguments.md)
+* [Add NuGet package reference](./addnugetpackagereference.md)
+* [Change .NET target framework](./changedotnettargetframework.md)
+* [Remove NuGet package reference](./removenugetpackagereference.md)
+* [Upgrade NuGet package version](./upgradenugetpackageversion.md)
 
 

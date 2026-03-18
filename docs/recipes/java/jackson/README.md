@@ -17,6 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Jackson best practices](./jacksonbestpractices.md)
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](./codehausclassestofasterxml.md)
 * [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](./codehaustofasterxml.md)
+* [Migrate relocated feature constants to DateTimeFeature and EnumFeature](./upgradejackson_2_3_relocatedfeatureconstants.md)
 * [Migrates from Jackson 2.x to Jackson 3.x](./upgradejackson_2_3.md)
 * [Remove redundant Jackson 3 feature flag configurations](./upgradejackson_2_3_removeredundantfeatureflags.md)
 * [Rename Jackson 2.x methods to 3.x equivalents](./upgradejackson_2_3_methodrenames.md)
@@ -29,15 +30,18 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add `@JsonCreator` to non-public constructors](./addjsoncreatortoprivateconstructors.md)
 * [Migrate `JSONNode` field iterator for Jackson 3](./jackson3jsonnodefielditerators.md)
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
 * [Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields](./replacejsonignorewithjsonsetter.md)
 * [Replace `IOException` with `JacksonException` in catch clauses](./ioexceptiontojacksonexception.md)
+* [Replace `null` type in `StdDeserializer` constructor with actual type](./stddeserializernullconstructor.md)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](./replacestreamwritecapability.md)
 * [Simplify catch clauses for Jackson exceptions](./simplifyjacksonexceptioncatch.md)
 * [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](./updateserializationinclusionconfiguration.md)
+* [Update `lombok.config` for Jackson 3 compatibility](./lombokjacksonizedconfig.md)
 * [Use format alignment `ObjectMappers`](./useformatalignedobjectmappers.md)
 * [Use modern date/time serialization defaults](./usemoderndatetimeserialization.md)
 

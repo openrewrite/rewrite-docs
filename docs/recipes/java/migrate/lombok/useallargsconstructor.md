@@ -26,6 +26,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {
+    private final String name;
+    private int age;
+
+    public A(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+###### After
+```java
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+class A {
+    private final String name;
+    private int age;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,0 +1,3 @@
++import lombok.AllArgsConstructor;
++
++@AllArgsConstructor
+class A {
+@@ -4,5 +7,0 @@
+    private final String name;
+    private int age;
+-
+-   public A(String name, int age) {
+-       this.name = name;
+-       this.age = age;
+-   }
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

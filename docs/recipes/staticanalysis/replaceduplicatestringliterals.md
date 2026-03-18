@@ -13,8 +13,8 @@ _Replaces `String` literals with a length of 5 or greater repeated a minimum of 
 
 ### Tags
 
-* [RSPEC-1192](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1192&open=java%3AS1192)
-* [RSPEC-1889](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1889&open=java%3AS1889)
+* [RSPEC-S1192](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1192&open=java%3AS1192)
+* [RSPEC-S1889](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1889&open=java%3AS1889)
 
 ## Recipe source
 

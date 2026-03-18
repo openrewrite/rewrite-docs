@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Java 8 introduced the concept of `@Repeatable` annotations, making the wrapper annotation unnecessary._
 
+### Tags
+
+* [RSPEC-S1710](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1710&open=java%3AS1710)
+
 ## Recipe source
 
 [GitHub: UnwrapRepeatableAnnotations.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnwrapRepeatableAnnotations.java),

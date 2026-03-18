@@ -19,12 +19,78 @@ _Replace `@TestExecutionListeners(MockitoTestExecutionListener.class)` with the 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | targetFramework | *Optional*. The test framework to use when imports alone cannot determine the framework. Typically set by wrapper recipes that check project dependencies. Valid options: `jupiter`, `junit4`, `testng` |  |
+
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
+* [Replace `MockitoTestExecutionListener` (JUnit 4 projects)](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjunit4.md)
+* [Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjupiter.md)
+* [Replace `MockitoTestExecutionListener` (TestNG projects)](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerfortestng.md)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|targetFramework|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener;
+import org.junit.jupiter.api.Test;
+
+@TestExecutionListeners(mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS, listeners = {MockitoTestExecutionListener.class})
+public class SampleTest {
+    @Test
+    void test() {}
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.junit.jupiter.api.Test;
+
+@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+    @Test
+    void test() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.springframework.test.context.TestExecutionListeners;
+-import org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.junit.jupiter.MockitoExtension;
+import org.junit.jupiter.api.Test;
+@@ -5,1 +5,1 @@
+import org.junit.jupiter.api.Test;
+
+-@TestExecutionListeners(mergeMode = TestExecutionListeners.MergeMode.MERGE_WITH_DEFAULTS, listeners = {MockitoTestExecutionListener.class})
++@ExtendWith(MockitoExtension.class)
+public class SampleTest {
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

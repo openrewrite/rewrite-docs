@@ -43,6 +43,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.jboss.logging.Logger fatal(..)`
   * newMethodName: `error`
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `org.jboss.logging.Logger getLogger(java.lang.Class)`
+  * fullyQualifiedTargetTypeName: `org.slf4j.LoggerFactory`
+  * returnType: `org.slf4j.Logger`
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `org.jboss.logging.Logger getLogger(java.lang.String)`
+  * fullyQualifiedTargetTypeName: `org.slf4j.LoggerFactory`
+  * returnType: `org.slf4j.Logger`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.jboss.logging.Logger`
   * newFullyQualifiedTypeName: `org.slf4j.Logger`
@@ -72,6 +80,14 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.jboss.logging.Logger fatal(..)
       newMethodName: error
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.jboss.logging.Logger getLogger(java.lang.Class)
+      fullyQualifiedTargetTypeName: org.slf4j.LoggerFactory
+      returnType: org.slf4j.Logger
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.jboss.logging.Logger getLogger(java.lang.String)
+      fullyQualifiedTargetTypeName: org.slf4j.LoggerFactory
+      returnType: org.slf4j.Logger
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.jboss.logging.Logger
       newFullyQualifiedTypeName: org.slf4j.Logger

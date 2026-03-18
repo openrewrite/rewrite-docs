@@ -168,7 +168,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Upgrade to Quarkus 3.26](/recipes/devcenter/upgradequarkus3_x.md)
+* [Upgrade to Quarkus 3.26](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgradequarkus3_x)
 
 ## Examples
 ##### Example 1

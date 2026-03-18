@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Removes `return` from a `void` method if it's the last statement._
 
+### Tags
+
+* [RSPEC-S3626](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3626&open=java%3AS3626)
+
 ## Recipe source
 
 [GitHub: UnnecessaryReturnAsLastStatement.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UnnecessaryReturnAsLastStatement.java),

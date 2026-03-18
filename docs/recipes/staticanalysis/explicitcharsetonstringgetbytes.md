@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option._
 
+### Tags
+
+* [RSPEC-S4719](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4719&open=java%3AS4719)
+
 ## Recipe source
 
 [GitHub: ExplicitCharsetOnStringGetBytes.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ExplicitCharsetOnStringGetBytes.java),

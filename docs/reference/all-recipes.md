@@ -6,39 +6,8 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4217
+Total recipes: 4220
 
-
-## io.moderne.recipe:rewrite-devcenter
-
-_License: Moderne Source Available License_
-
-_8 recipes_
-
-* [io.moderne.devcenter.BuildToolCard](/recipes/devcenter/buildtoolcard.md)
-  * **Build tool**
-  * Track build tool versions across repositories.
-* [io.moderne.devcenter.DependencyVulnerabilityCheck](/recipes/devcenter/dependencyvulnerabilitycheck.md)
-  * **Vulnerabilities status**
-  * Determine the current state of a repository relative to its vulnerabilities.
-* [io.moderne.devcenter.FindOrganizationStatistics](/recipes/devcenter/findorganizationstatistics.md)
-  * **Find organization statistics**
-  * Counts lines of code per repository for organization-level statistics.
-* [io.moderne.devcenter.JUnitJupiterUpgrade](/recipes/devcenter/junitjupiterupgrade.md)
-  * **Move to JUnit 6**
-  * Move to JUnit Jupiter.
-* [io.moderne.devcenter.JavaVersionUpgrade](/recipes/devcenter/javaversionupgrade.md)
-  * **Move to a later Java version**
-  * Determine the current state of a repository relative to a desired Java version upgrade.
-* [io.moderne.devcenter.LibraryUpgrade](/recipes/devcenter/libraryupgrade.md)
-  * **Library upgrade**
-  * Determine the current state of a repository relative to a desired library upgrade.
-* [io.moderne.devcenter.ParentPomUpgrade](/recipes/devcenter/parentpomupgrade.md)
-  * **Parent POM upgrade**
-  * Determine the current state of a repository relative to a desired parent POM upgrade.
-* [io.moderne.devcenter.ReportAsSecurityIssues](/recipes/devcenter/reportassecurityissues.md)
-  * **Report as security issues**
-  * Look for results produced by recipes in the same recipe list that this recipe is part of, and report them as security issues in DevCenter.
 
 ## org.openrewrite.meta:rewrite-analysis
 
@@ -637,7 +606,7 @@ _42 recipes_
 
 _License: Moderne Source Available License_
 
-_17 recipes_
+_18 recipes_
 
 * [org.openrewrite.gitlab.AddArtifactsExpireIn](/recipes/gitlab/addartifactsexpirein.md)
   * **Add artifacts expire_in**
@@ -675,6 +644,9 @@ _17 recipes_
 * [org.openrewrite.gitlab.ChangeTemplate](/recipes/gitlab/changetemplate.md)
   * **Change GitLab template**
   * Change a GitLab template in use.
+* [org.openrewrite.gitlab.MigrateToRules](/recipes/gitlab/migratetorules.md)
+  * **Migrate `only`/`except` to `rules`**
+  * Replace the deprecated `only` and `except` keywords with equivalent `rules` in `.gitlab-ci.yml` job definitions. When both `only` and `except` are present, they are combined into a single `rules` block. Handles simple ref list forms; complex object forms with `refs`, `variables`, or `changes` sub-keys are left unchanged.
 * [org.openrewrite.gitlab.RemoveTemplate](/recipes/gitlab/removetemplate.md)
   * **Remove GitLab template**
   * Remove a GitLab template from use.
@@ -726,14 +698,20 @@ _8 recipes_
 
 _License: Apache License Version 2.0_
 
-_16 recipes_
+_19 recipes_
 
+* [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
+  * **Add `@JsonCreator` to non-public constructors**
+  * Jackson 3 strictly enforces creator visibility rules. Non-public constructors in Jackson-annotated classes that were auto-detected in Jackson 2 need an explicit `@JsonCreator` annotation to work for deserialization in Jackson 3.
 * [org.openrewrite.java.jackson.IOExceptionToJacksonException](/recipes/java/jackson/ioexceptiontojacksonexception.md)
   * **Replace `IOException` with `JacksonException` in catch clauses**
   * In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`.
 * [org.openrewrite.java.jackson.Jackson3JsonNodeFieldIterators](/recipes/java/jackson/jackson3jsonnodefielditerators.md)
   * **Migrate `JSONNode` field iterator for Jackson 3**
   * `JSONNode` fields are using `Collections` instead of `Iterator` singe Jackson 3. To mimic Jackson 2s behavior an additional call to `Collection#iterator()`is needed.
+* [org.openrewrite.java.jackson.LombokJacksonizedConfig](/recipes/java/jackson/lombokjacksonizedconfig.md)
+  * **Update `lombok.config` for Jackson 3 compatibility**
+  * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion = 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
 * [org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations](/recipes/java/jackson/removebuiltinmoduleregistrations.md)
   * **Remove registrations of modules built-in to Jackson 3**
   * In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules.
@@ -752,6 +730,9 @@ _16 recipes_
 * [org.openrewrite.java.jackson.SimplifyJacksonExceptionCatch](/recipes/java/jackson/simplifyjacksonexceptioncatch.md)
   * **Simplify catch clauses for Jackson exceptions**
   * In Jackson 3, `JacksonException` and its subtypes extend `RuntimeException`. This recipe simplifies multi-catch clauses by removing Jackson exception types when `RuntimeException` is also caught, since catching both is redundant. For example, `catch (JacksonException | RuntimeException e)` becomes `catch (RuntimeException e)`.
+* [org.openrewrite.java.jackson.StdDeserializerNullConstructor](/recipes/java/jackson/stddeserializernullconstructor.md)
+  * **Replace `null` type in `StdDeserializer` constructor with actual type**
+  * In Jackson 3, `StdDeserializer` no longer accepts `null` for the handled type parameter. This recipe replaces `this(null)` and `super((Class&lt;?&gt;) null)` in `StdDeserializer` subclass constructors with the actual type parameter from the class declaration.
 * [org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration](/recipes/java/jackson/updateserializationinclusionconfiguration.md)
   * **Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3**
   * In Jackson 3, `mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)` is no longer supported and should be replaced by `changeDefaultPropertyInclusion()` for both `valueInclusion` and `contentInclusion`.
@@ -2105,7 +2086,7 @@ _31 recipes_
 
 _License: Moderne Source Available License_
 
-_145 recipes_
+_146 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -2223,10 +2204,13 @@ _145 recipes_
   * Converts `HttpSecurity` chained call from Spring Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods.
 * [org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md)
   * **Merge Spring `bootstrap.yml` with `application.yml`**
-  * In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties should be merged with `application.yml`.
+  * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency.
 * [org.openrewrite.java.spring.boot2.MigrateActuatorMediaTypeToApiVersion](/recipes/java/spring/boot2/migrateactuatormediatypetoapiversion.md)
   * **Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`**
   * Spring Boot `ActuatorMediaType` was deprecated in 2.5 in favor of `ApiVersion#getProducedMimeType()`. Replace `MediaType.parseMediaType(ActuatorMediaType.Vx_JSON)` with `MediaType.asMediaType(ApiVersion.Vx.getProducedMimeType())`.
+* [org.openrewrite.java.spring.boot2.MigrateArtemisProperties](/recipes/java/spring/boot2/migrateartemisproperties.md)
+  * **Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`**
+  * Combines `spring.artemis.host` and `spring.artemis.port` into `spring.artemis.broker-url` in the format `tcp://host:port`.
 * [org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName](/recipes/java/spring/boot2/migrateconfigurationpropertiesbindingpostprocessorvalidatorbeanname.md)
   * **Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`**
   * Replaces field and static access of `ConfigurationPropertiesBindingPostProcessor.VALIDATOR_BEAN_NAME` with `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`. Deprecated in 2.2.x.
@@ -2427,13 +2411,13 @@ _145 recipes_
   * With Spring 6 `HttpStatus` was replaced by `HttpStatusCode` in most method signatures in the `ResponseEntityExceptionHandler`.
 * [org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetRawStatusCodeMethod](/recipes/java/spring/framework/migrateresponsestatusexceptiongetrawstatuscodemethod.md)
   * **Migrate `ResponseStatusException#getRawStatusCode()` to `getStatusCode().value()`**
-  * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()`.
+  * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()`. Also handles `RestClientResponseException` and its subclasses such as `HttpServerErrorException`.
 * [org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetStatusCodeMethod](/recipes/java/spring/framework/migrateresponsestatusexceptiongetstatuscodemethod.md)
   * **Migrate `ResponseStatusException#getStatus()` to `getStatusCode()`**
   * Migrate Spring Framework 5.3's `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()`.
 * [org.openrewrite.java.spring.framework.MigrateUriComponentsBuilderMethods](/recipes/java/spring/framework/migrateuricomponentsbuildermethods.md)
-  * **Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`**
-  * The `fromHttpRequest` and `parseForwardedFor` methods in `org.springframework.web.util.UriComponentsBuilder` were deprecated, in favor of `org.springframework.web.util.ForwardedHeaderUtils`.
+  * **Migrate deprecated `UriComponentsBuilder` methods**
+  * Migrates deprecated methods in `org.springframework.web.util.UriComponentsBuilder`: `fromHttpRequest` and `parseForwardedFor` to `ForwardedHeaderUtils`, and `fromHttpUrl` to `fromUriString`.
 * [org.openrewrite.java.spring.framework.MigrateUtf8MediaTypes](/recipes/java/spring/framework/migrateutf8mediatypes.md)
   * **Migrate deprecated Spring Web UTF8 `MediaType` enums**
   * Spring Web `MediaType#APPLICATION_JSON_UTF8` and `MediaType#APPLICATION_PROBLEM_JSON_UTF8` were deprecated in 5.2.
@@ -2584,7 +2568,7 @@ _10 recipes_
 
 _License: Moderne Source Available License_
 
-_164 recipes_
+_163 recipes_
 
 * [org.openrewrite.staticanalysis.AbstractClassPublicConstructor](/recipes/staticanalysis/abstractclasspublicconstructor.md)
   * **Constructors of an `abstract` class should not be declared `public`**
@@ -2862,9 +2846,6 @@ _164 recipes_
 * [org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances](/recipes/staticanalysis/removetostringcallsfromarrayinstances.md)
   * **Remove `toString()` calls on arrays**
   * The result from `toString()` calls on arrays is largely useless. The output does not actually reflect the contents of the array. `Arrays.toString(array)` should be used instead as it gives the contents of the array.
-* [org.openrewrite.staticanalysis.RemoveTrailingWhitespace](/recipes/staticanalysis/removetrailingwhitespace.md)
-  * **Remove trailing whitespace**
-  * Remove trailing whitespace from the end of each line. Trailing whitespace is simply useless and should not stay in code. It may generate noise when comparing different versions of the same file.
 * [org.openrewrite.staticanalysis.RemoveUnneededAssertion](/recipes/staticanalysis/removeunneededassertion.md)
   * **Remove unneeded assertions**
   * Remove unneeded assertions like `assert true`, `assertTrue(true)`, or `assertFalse(false)`.
@@ -8060,6 +8041,25 @@ _28 recipes_
   * **Remove byte order mark (BOM)**
   * Removes UTF-8 byte order marks from the beginning of files.  The BOM character (U+FEFF) is generally unnecessary in UTF-8 files and can cause issues with some tools.
 
+## org.openrewrite:rewrite-csharp
+
+_License: Moderne Source Available License_
+
+_4 recipes_
+
+* [org.openrewrite.csharp.AddNuGetPackageReference](/recipes/csharp/addnugetpackagereference.md)
+  * **Add NuGet package reference**
+  * Adds a `&lt;PackageReference&gt;` element to .csproj files if not already present.
+* [org.openrewrite.csharp.ChangeDotNetTargetFramework](/recipes/csharp/changedotnettargetframework.md)
+  * **Change .NET target framework**
+  * Changes the `&lt;TargetFramework&gt;` or `&lt;TargetFrameworks&gt;` value in .csproj files. For multi-TFM projects, replaces the matching framework within the semicolon-delimited list.
+* [org.openrewrite.csharp.RemoveNuGetPackageReference](/recipes/csharp/removenugetpackagereference.md)
+  * **Remove NuGet package reference**
+  * Removes a `&lt;PackageReference&gt;` element from .csproj files.
+* [org.openrewrite.csharp.UpgradeNuGetPackageVersion](/recipes/csharp/upgradenugetpackageversion.md)
+  * **Upgrade NuGet package version**
+  * Upgrades the version of a NuGet `&lt;PackageReference&gt;` or `&lt;PackageVersion&gt;` in .csproj and Directory.Packages.props files. Handles property references by updating the property value instead of the version attribute. Supports semver version selectors.
+
 ## org.openrewrite:rewrite-docker
 
 _License: Apache License Version 2.0_
@@ -9190,7 +9190,7 @@ _18 recipes_
 
 _License: Unknown_
 
-_1263 recipes_
+_1266 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -9204,48 +9204,6 @@ _1263 recipes_
 * [com.google.guava.InlineGuavaMethods](/recipes/com/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
   * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
-* [io.moderne.devcenter.ApacheDevCenter](/recipes/devcenter/apachedevcenter.md)
-  * **DevCenter for Apache**
-  * A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices.
-* [io.moderne.devcenter.ApacheMavenBestPractices](/recipes/devcenter/apachemavenbestpractices.md)
-  * **Apache Maven best practices**
-  * A collection of recipes that apply best practices to Maven POMs. Some of these recipes affect build stability, so they are reported as security issues in the DevCenter card.
-* [io.moderne.devcenter.ApacheMavenDevCenter](/recipes/devcenter/apachemavendevcenter.md)
-  * **DevCenter for Apache Maven**
-  * A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices. This DevCenter includes recipes to upgrade the parent POMs of Apache Maven, as well as a collection of best practices for Maven POMs.
-* [io.moderne.devcenter.BuildToolStarter](/recipes/devcenter/buildtoolstarter.md)
-  * **DevCenter for Gradle and Maven**
-  * Track and automate upgrades for Gradle, Maven, and Java versions.
-* [io.moderne.devcenter.DevCenterStarter](/recipes/devcenter/devcenterstarter.md)
-  * **DevCenter**
-  * This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
-* [io.moderne.devcenter.QuarkusDevCenter](/recipes/devcenter/quarkusdevcenter.md)
-  * **DevCenter for Quarkus**
-  * A DevCenter that tracks the latest Quarkus framework versions and applies best practices. This DevCenter includes recipes to upgrade Quarkus versions, migrate from deprecated APIs, and ensure compatibility with the latest Java versions and testing frameworks.
-* [io.moderne.devcenter.SecurityStarter](/recipes/devcenter/securitystarter.md)
-  * **OWASP top ten**
-  * This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
-* [io.moderne.devcenter.UpgradeApacheParent](/recipes/devcenter/upgradeapacheparent.md)
-  * **Upgrade Apache Parent POM**
-  * Upgrades the Apache parent POM to the latest version.
-* [io.moderne.devcenter.UpgradeMavenParent](/recipes/devcenter/upgrademavenparent.md)
-  * **Upgrade Apache Maven Parent**
-  * Upgrades the Apache Maven parent POM to the latest version.
-* [io.moderne.devcenter.UpgradeMavenPluginsParent](/recipes/devcenter/upgrademavenpluginsparent.md)
-  * **Upgrade Maven Plugins Parent**
-  * Upgrades the Apache Maven parent POM to the latest version.
-* [io.moderne.devcenter.UpgradeMavenSharedParent](/recipes/devcenter/upgrademavensharedparent.md)
-  * **Upgrade Maven Shared Parent**
-  * Upgrades the Apache Maven parent POM to the latest version.
-* [io.moderne.devcenter.UpgradeQuarkus3_x](/recipes/devcenter/upgradequarkus3_x.md)
-  * **Upgrade to Quarkus 3.26**
-  * Upgrades Quarkus dependencies to version 3.26.x, including core, extensions, and tooling.
-* [io.moderne.devcenter.UpgradeQuarkusUniverseBom](/recipes/devcenter/upgradequarkusuniversebom.md)
-  * **Upgrade Quarkus Universe BOM**
-  * Upgrades the Quarkus Universe BOM parent to the latest version.
-* [io.moderne.devcenter.VulnerabilitiesDevCenter](/recipes/devcenter/vulnerabilitiesdevcenter.md)
-  * **DevCenter for Vulnerability Management**
-  * Recipes to analyze and manage dependency vulnerabilities using Moderne DevCenter.
 * [org.apache.logging.log4j.InlineLog4jApiMethods](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
   * **Inline `log4j-api-2` methods annotated with `@InlineMe`**
   * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
@@ -10932,6 +10890,9 @@ _1263 recipes_
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges](/recipes/java/jackson/upgradejackson_2_3_packagechanges.md)
   * **Update Jackson package names from 2.x to 3.x**
   * Update Jackson package imports from `com.fasterxml.jackson` to `tools.jackson`.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_RelocatedFeatureConstants](/recipes/java/jackson/upgradejackson_2_3_relocatedfeatureconstants.md)
+  * **Migrate relocated feature constants to DateTimeFeature and EnumFeature**
+  * Jackson 3 moved date/time-related feature constants from `SerializationFeature` and `DeserializationFeature` into `DateTimeFeature`, and enum-related constants into `EnumFeature`.
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags](/recipes/java/jackson/upgradejackson_2_3_removeredundantfeatureflags.md)
   * **Remove redundant Jackson 3 feature flag configurations**
   * Remove `ObjectMapper` feature flag configurations that are now defaults in Jackson 3.
@@ -11271,6 +11232,45 @@ _1263 recipes_
 * [org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
   * **Use `AtomicReference#weakCompareAndSetPlain(T, T)`**
   * Use `AtomicReference#weakCompareAndSetPlain(T, T)` instead of the deprecated `AtomicReference#weakCompareAndSet(T, T)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_4_0](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_4_0.md)
+  * **DataNucleus 4.0 package moves**
+  * Relocate packages that were moved in DataNucleus 4.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_5_0](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_0.md)
+  * **DataNucleus 5.0 package moves**
+  * Relocate packages that were moved in DataNucleus 5.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_5_2](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_2.md)
+  * **DataNucleus 5.2 package moves**
+  * Relocate packages that were moved in DataNucleus 5.2.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_4_0](/recipes/java/migrate/datanucleus/datanucleusproperties_4_0.md)
+  * **DataNucleus 4.0 property migrations**
+  * Rename property keys that changed in DataNucleus 4.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_0](/recipes/java/migrate/datanucleus/datanucleusproperties_5_0.md)
+  * **DataNucleus 5.0 property migrations**
+  * Rename property keys that changed in DataNucleus 5.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_1](/recipes/java/migrate/datanucleus/datanucleusproperties_5_1.md)
+  * **DataNucleus 5.1 property migrations**
+  * Rename property keys that changed in DataNucleus 5.1.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_2](/recipes/java/migrate/datanucleus/datanucleusproperties_5_2.md)
+  * **DataNucleus 5.2 property migrations**
+  * Rename property keys that changed in DataNucleus 5.2.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusTypeChanges_4_0](/recipes/java/migrate/datanucleus/datanucleustypechanges_4_0.md)
+  * **DataNucleus 4.0 type changes**
+  * Rename types that were changed in DataNucleus 4.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusTypeChanges_5_0](/recipes/java/migrate/datanucleus/datanucleustypechanges_5_0.md)
+  * **DataNucleus 5.0 type changes**
+  * Rename types that were changed in DataNucleus 5.0.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_4_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_4_0.md)
+  * **Migrate to DataNucleus 4.0**
+  * Migrate DataNucleus 3.x applications to 4.0. This recipe handles package relocations, type renames, property key changes, and dependency updates introduced in AccessPlatform 4.0.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_0.md)
+  * **Migrate to DataNucleus 5.0**
+  * Migrate DataNucleus 4.x applications to 5.0. This recipe handles package relocations, type renames, property key changes, and dependency updates.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_1](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_1.md)
+  * **Migrate to DataNucleus 5.1**
+  * Migrate DataNucleus applications to 5.1. This recipe first applies the 5.0 migration, then handles the transaction namespace reorganization and other property renames introduced in 5.1.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_2](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_2.md)
+  * **Migrate to DataNucleus 5.2**
+  * Migrate DataNucleus applications to 5.2. This recipe first applies the 5.1 migration, then handles the column mapping package move and query-related property renames introduced in 5.2.
 * [org.openrewrite.java.migrate.guava.NoGuava](/recipes/java/migrate/guava/noguava.md)
   * **Prefer the Java standard library instead of Guava**
   * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
@@ -12423,6 +12423,15 @@ _1263 recipes_
 * [org.openrewrite.java.testing.mockito.MockitoBestPractices](/recipes/java/testing/mockito/mockitobestpractices.md)
   * **Mockito best practices**
   * Applies best practices for Mockito tests.
+* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJUnit4](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjunit4.md)
+  * **Replace `MockitoTestExecutionListener` (JUnit 4 projects)**
+  * Replace `MockitoTestExecutionListener` in projects that have JUnit 4 as a dependency. Uses `@RunWith(MockitoJUnitRunner.class)` as the replacement.
+* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJupiter](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjupiter.md)
+  * **Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)**
+  * Replace `MockitoTestExecutionListener` in projects that have JUnit Jupiter as a dependency. Uses `@ExtendWith(MockitoExtension.class)` as the replacement.
+* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForTestNG](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerfortestng.md)
+  * **Replace `MockitoTestExecutionListener` (TestNG projects)**
+  * Replace `MockitoTestExecutionListener` in projects that have TestNG as a dependency. Uses `MockitoAnnotations.openMocks(this)` with `@BeforeMethod`/`@AfterMethod` as the replacement.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
   * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.

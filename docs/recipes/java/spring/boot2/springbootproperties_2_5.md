@@ -33,12 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.artemis.host`
-  * newPropertyKey: `spring.artemis.broker-url`
-* [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
-  * oldPropertyKey: `spring.artemis.port`
-  * newPropertyKey: `spring.artemis.broker-url`
+* [Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`](../../../java/spring/boot2/migrateartemisproperties)
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.initialize-schema`
   * newPropertyKey: `spring.batch.jdbc.initialize-schema`
@@ -253,12 +248,7 @@ tags:
   - spring
   - boot
 recipeList:
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.artemis.host
-      newPropertyKey: spring.artemis.broker-url
-  - org.openrewrite.java.spring.ChangeSpringPropertyKey:
-      oldPropertyKey: spring.artemis.port
-      newPropertyKey: spring.artemis.broker-url
+  - org.openrewrite.java.spring.boot2.MigrateArtemisProperties
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.batch.initialize-schema
       newPropertyKey: spring.batch.jdbc.initialize-schema

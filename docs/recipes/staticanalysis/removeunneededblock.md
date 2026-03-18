@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Flatten blocks into inline statements when possible._
 
+### Tags
+
+* [RSPEC-S1199](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1199&open=java%3AS1199)
+
 ## Recipe source
 
 [GitHub: RemoveUnneededBlock.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveUnneededBlock.java),

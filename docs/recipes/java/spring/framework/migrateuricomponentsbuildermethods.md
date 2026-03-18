@@ -1,15 +1,15 @@
 ---
-sidebar_label: "Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`"
+sidebar_label: "Migrate deprecated `UriComponentsBuilder` methods"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migrate `UriComponentsBuilder.fromHttpRequest` and `parseForwardedFor`
+# Migrate deprecated `UriComponentsBuilder` methods
 
 **org.openrewrite.java.spring.framework.MigrateUriComponentsBuilderMethods**
 
-_The `fromHttpRequest` and `parseForwardedFor` methods in `org.springframework.web.util.UriComponentsBuilder` were deprecated, in favor of `org.springframework.web.util.ForwardedHeaderUtils`._
+_Migrates deprecated methods in `org.springframework.web.util.UriComponentsBuilder`: `fromHttpRequest` and `parseForwardedFor` to `ForwardedHeaderUtils`, and `fromHttpUrl` to `fromUriString`._
 
 ## Recipe source
 

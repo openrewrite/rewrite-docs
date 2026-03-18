@@ -38,6 +38,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `exactly_once` to `exactly_once_beta`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/processingguaranteeexactlyoncetobeta)
 * [Migrate deprecated SystemUtils constants](/recipes/apache/commons/lang3/migratesystemutilsdeprecations.md)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
+* [Migrate relocated feature constants to DateTimeFeature and EnumFeature](/recipes/java/jackson/upgradejackson_2_3_relocatedfeatureconstants.md)
 * [Migrate the use of TaskExecutors with blocking IO](/recipes/java/micronaut/updateblockingtaskexecutors.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 * [Migrate to Hibernate 4.0.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate40)

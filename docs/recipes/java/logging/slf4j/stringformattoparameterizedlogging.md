@@ -31,6 +31,181 @@ This recipe is used as part of the following composite recipes:
 
 * [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+
+class Test {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Test.class);
+    private static final Marker MARKER = MarkerFactory.getMarker("TEST");
+
+    void method(String username, int count, double value, String message) {
+        Exception exception = new Exception();
+
+        LOGGER.trace(String.format("Trace %s", username));
+        LOGGER.debug(String.format("Debug %s", username));
+        LOGGER.info(String.format("User %s logged in", username));
+        LOGGER.warn(String.format("Warning %s", username));
+        LOGGER.error(String.format("Error %s", username));
+
+        LOGGER.info(String.format("Count: %d", count));
+        LOGGER.info(String.format("Value: %f", value));
+        LOGGER.info(String.format("User %s has %d items", username, count));
+        LOGGER.info(String.format("User %s has %d items worth $%f", username, count, value));
+
+        LOGGER.info(String.format("String: %s", username));
+        LOGGER.info(String.format("Decimal: %d", count));
+        LOGGER.info(String.format("Hex: %x", count));
+        LOGGER.info(String.format("Octal: %o", count));
+        LOGGER.info(String.format("Float: %f", value));
+        LOGGER.info(String.format("Boolean: %b", true));
+        LOGGER.info(String.format("Char: %c", 'x'));
+
+        LOGGER.info(MARKER, String.format("Message %s", message));
+        LOGGER.error(String.format("Failed: %s", message), exception);
+        LOGGER.error(MARKER, String.format("Failed: %s", message), exception);
+
+        LOGGER.info(String.format("User %s"
+                + " logged in", username));
+        LOGGER.info(String.format("isHTML"
+                + " '%s', body: %s", username, message));
+        LOGGER.info(String.format("part1"
+                + " part2"
+                + " %s", username));
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+
+class Test {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Test.class);
+    private static final Marker MARKER = MarkerFactory.getMarker("TEST");
+
+    void method(String username, int count, double value, String message) {
+        Exception exception = new Exception();
+
+        LOGGER.trace("Trace {}", username);
+        LOGGER.debug("Debug {}", username);
+        LOGGER.info("User {} logged in", username);
+        LOGGER.warn("Warning {}", username);
+        LOGGER.error("Error {}", username);
+
+        LOGGER.info("Count: {}", count);
+        LOGGER.info("Value: {}", value);
+        LOGGER.info("User {} has {} items", username, count);
+        LOGGER.info("User {} has {} items worth ${}", username, count, value);
+
+        LOGGER.info("String: {}", username);
+        LOGGER.info("Decimal: {}", count);
+        LOGGER.info("Hex: {}", count);
+        LOGGER.info("Octal: {}", count);
+        LOGGER.info("Float: {}", value);
+        LOGGER.info("Boolean: {}", true);
+        LOGGER.info("Char: {}", 'x');
+
+        LOGGER.info(MARKER, "Message {}", message);
+        LOGGER.error("Failed: {}", message, exception);
+        LOGGER.error(MARKER, "Failed: {}", message, exception);
+
+        LOGGER.info("User {} logged in", username);
+        LOGGER.info("isHTML '{}', body: {}", username, message);
+        LOGGER.info("part1 part2 {}", username);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -13,5 +13,5 @@
+        Exception exception = new Exception();
+
+-       LOGGER.trace(String.format("Trace %s", username));
+-       LOGGER.debug(String.format("Debug %s", username));
+-       LOGGER.info(String.format("User %s logged in", username));
+-       LOGGER.warn(String.format("Warning %s", username));
+-       LOGGER.error(String.format("Error %s", username));
++       LOGGER.trace("Trace {}", username);
++       LOGGER.debug("Debug {}", username);
++       LOGGER.info("User {} logged in", username);
++       LOGGER.warn("Warning {}", username);
++       LOGGER.error("Error {}", username);
+
+@@ -19,4 +19,4 @@
+        LOGGER.error(String.format("Error %s", username));
+
+-       LOGGER.info(String.format("Count: %d", count));
+-       LOGGER.info(String.format("Value: %f", value));
+-       LOGGER.info(String.format("User %s has %d items", username, count));
+-       LOGGER.info(String.format("User %s has %d items worth $%f", username, count, value));
++       LOGGER.info("Count: {}", count);
++       LOGGER.info("Value: {}", value);
++       LOGGER.info("User {} has {} items", username, count);
++       LOGGER.info("User {} has {} items worth ${}", username, count, value);
+
+@@ -24,7 +24,7 @@
+        LOGGER.info(String.format("User %s has %d items worth $%f", username, count, value));
+
+-       LOGGER.info(String.format("String: %s", username));
+-       LOGGER.info(String.format("Decimal: %d", count));
+-       LOGGER.info(String.format("Hex: %x", count));
+-       LOGGER.info(String.format("Octal: %o", count));
+-       LOGGER.info(String.format("Float: %f", value));
+-       LOGGER.info(String.format("Boolean: %b", true));
+-       LOGGER.info(String.format("Char: %c", 'x'));
++       LOGGER.info("String: {}", username);
++       LOGGER.info("Decimal: {}", count);
++       LOGGER.info("Hex: {}", count);
++       LOGGER.info("Octal: {}", count);
++       LOGGER.info("Float: {}", value);
++       LOGGER.info("Boolean: {}", true);
++       LOGGER.info("Char: {}", 'x');
+
+@@ -32,3 +32,3 @@
+        LOGGER.info(String.format("Char: %c", 'x'));
+
+-       LOGGER.info(MARKER, String.format("Message %s", message));
+-       LOGGER.error(String.format("Failed: %s", message), exception);
+-       LOGGER.error(MARKER, String.format("Failed: %s", message), exception);
++       LOGGER.info(MARKER, "Message {}", message);
++       LOGGER.error("Failed: {}", message, exception);
++       LOGGER.error(MARKER, "Failed: {}", message, exception);
+
+@@ -36,7 +36,3 @@
+        LOGGER.error(MARKER, String.format("Failed: %s", message), exception);
+
+-       LOGGER.info(String.format("User %s"
+-               + " logged in", username));
+-       LOGGER.info(String.format("isHTML"
+-               + " '%s', body: %s", username, message));
+-       LOGGER.info(String.format("part1"
+-               + " part2"
+-               + " %s", username));
++       LOGGER.info("User {} logged in", username);
++       LOGGER.info("isHTML '{}', body: {}", username, message);
++       LOGGER.info("part1 part2 {}", username);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

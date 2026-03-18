@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Single-line statement lambdas returning a value can be replaced with expression lambdas._
 
+### Tags
+
+* [RSPEC-S1602](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1602&open=java%3AS1602)
+
 ## Recipe source
 
 [GitHub: LambdaBlockToExpression.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/LambdaBlockToExpression.java),

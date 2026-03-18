@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml**
 
-_In Spring Boot 2.4, support for `bootstrap.yml` was removed. It's properties should be merged with `application.yml`._
+_In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency._
 
 ## Recipe source
 

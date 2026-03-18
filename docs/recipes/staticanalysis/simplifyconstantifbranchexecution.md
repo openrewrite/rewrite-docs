@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Checks for if expressions that are always `true` or `false` and simplifies them._
 
+### Tags
+
+* [RSPEC-S6646](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6646&open=java%3AS6646)
+
 ## Recipe source
 
 [GitHub: SimplifyConstantIfBranchExecution.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SimplifyConstantIfBranchExecution.java),

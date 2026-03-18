@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _String concatenation within calls to `StringBuilder.append()` causes unnecessary memory allocation. Except for concatenations of String literals, which are joined together at compile time. Replaces inefficient concatenations with chained calls to `StringBuilder.append()`._
 
+### Tags
+
+* [RSPEC-S3024](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S3024&open=java%3AS3024)
+
 ## Recipe source
 
 [GitHub: ChainStringBuilderAppendCalls.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ChainStringBuilderAppendCalls.java),

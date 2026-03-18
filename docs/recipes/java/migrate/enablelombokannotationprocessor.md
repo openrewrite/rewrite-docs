@@ -70,7 +70,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 
 
 ## Usage

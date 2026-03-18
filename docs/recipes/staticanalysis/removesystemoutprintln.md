@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Print statements are often left accidentally after debugging an issue. This recipe removes all `System.out#println` and `System.err#println` statements from the code._
 
+### Tags
+
+* [RSPEC-S106](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S106&open=java%3AS106)
+
 ## Recipe source
 
 [GitHub: RemoveSystemOutPrintln.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveSystemOutPrintln.java),

@@ -99,12 +99,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## rewrite-angular
 
-* [org.openrewrite.angular.UpgradeToAngular19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular19)
-  * **Upgrade to Angular 19**
-  * Migrates Angular 18.x applications to Angular 19. This includes updating Angular package versions, adjusting the standalone default, renaming `ExperimentalPendingTasks` to `PendingTasks`, and updating `zone.js`.
-* [org.openrewrite.angular.UpgradeToAngular20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular20)
-  * **Upgrade to Angular 20**
-  * Migrates Angular 19.x applications to Angular 20. This includes running the Angular 19 migration first, then updating Angular package versions, renaming experimental APIs promoted to stable, and upgrading TypeScript to 5.8.x.
 * [org.openrewrite.angular.search.FindAngularComponent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/findangularcomponent)
   * **Find Angular component**
   * Locates usages of Angular components across the codebase including template elements and other references. If `componentName` is `null`, finds all Angular components.
@@ -197,6 +191,76 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.cryptography.PostQuantumCryptography](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/postquantumcryptography)
   * **Post quantum cryptography**
   * This recipe searches for instances in code that may be impacted by post quantum cryptography. Applications may need to support larger key sizes, different algorithms, or use crypto agility to handle the migration. The recipe includes detection of hardcoded values that affect behavior in a post-quantum world, programmatic configuration that may prevent algorithm changes, and general cryptographic usage patterns that should be reviewed.
+
+
+## rewrite-devcenter
+
+* [io.moderne.devcenter.ApacheDevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachedevcenter)
+  * **DevCenter for Apache**
+  * A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices.
+* [io.moderne.devcenter.ApacheMavenBestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavenbestpractices)
+  * **Apache Maven best practices**
+  * A collection of recipes that apply best practices to Maven POMs. Some of these recipes affect build stability, so they are reported as security issues in the DevCenter card.
+* [io.moderne.devcenter.ApacheMavenDevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavendevcenter)
+  * **DevCenter for Apache Maven**
+  * A DevCenter that tracks the latest Apache Maven parent POM versions and applies best practices. This DevCenter includes recipes to upgrade the parent POMs of Apache Maven, as well as a collection of best practices for Maven POMs.
+* [io.moderne.devcenter.BuildToolCard](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/buildtoolcard)
+  * **Build tool**
+  * Track build tool versions across repositories.
+* [io.moderne.devcenter.BuildToolStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/buildtoolstarter)
+  * **DevCenter for Gradle and Maven**
+  * Track and automate upgrades for Gradle, Maven, and Java versions.
+* [io.moderne.devcenter.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/dependencyvulnerabilitycheck)
+  * **Vulnerabilities status**
+  * Determine the current state of a repository relative to its vulnerabilities.
+* [io.moderne.devcenter.DevCenterStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterstarter)
+  * **DevCenter**
+  * This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
+* [io.moderne.devcenter.FindOrganizationStatistics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/findorganizationstatistics)
+  * **Find organization statistics**
+  * Counts lines of code per repository for organization-level statistics.
+* [io.moderne.devcenter.JUnitJupiterUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/junitjupiterupgrade)
+  * **Move to JUnit 6**
+  * Move to JUnit Jupiter.
+* [io.moderne.devcenter.JavaVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/javaversionupgrade)
+  * **Move to a later Java version**
+  * Determine the current state of a repository relative to a desired Java version upgrade.
+* [io.moderne.devcenter.LibraryUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/libraryupgrade)
+  * **Library upgrade**
+  * Determine the current state of a repository relative to a desired library upgrade.
+* [io.moderne.devcenter.ParentPomUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/parentpomupgrade)
+  * **Parent POM upgrade**
+  * Determine the current state of a repository relative to a desired parent POM upgrade.
+* [io.moderne.devcenter.QuarkusDevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/quarkusdevcenter)
+  * **DevCenter for Quarkus**
+  * A DevCenter that tracks the latest Quarkus framework versions and applies best practices. This DevCenter includes recipes to upgrade Quarkus versions, migrate from deprecated APIs, and ensure compatibility with the latest Java versions and testing frameworks.
+* [io.moderne.devcenter.ReportAsSecurityIssues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/reportassecurityissues)
+  * **Report as security issues**
+  * Look for results produced by recipes in the same recipe list that this recipe is part of, and report them as security issues in DevCenter.
+* [io.moderne.devcenter.SecurityStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/securitystarter)
+  * **OWASP top ten**
+  * This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
+* [io.moderne.devcenter.UpgradeApacheParent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgradeapacheparent)
+  * **Upgrade Apache Parent POM**
+  * Upgrades the Apache parent POM to the latest version.
+* [io.moderne.devcenter.UpgradeMavenParent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgrademavenparent)
+  * **Upgrade Apache Maven Parent**
+  * Upgrades the Apache Maven parent POM to the latest version.
+* [io.moderne.devcenter.UpgradeMavenPluginsParent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgrademavenpluginsparent)
+  * **Upgrade Maven Plugins Parent**
+  * Upgrades the Apache Maven parent POM to the latest version.
+* [io.moderne.devcenter.UpgradeMavenSharedParent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgrademavensharedparent)
+  * **Upgrade Maven Shared Parent**
+  * Upgrades the Apache Maven parent POM to the latest version.
+* [io.moderne.devcenter.UpgradeQuarkus3_x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgradequarkus3_x)
+  * **Upgrade to Quarkus 3.26**
+  * Upgrades Quarkus dependencies to version 3.26.x, including core, extensions, and tooling.
+* [io.moderne.devcenter.UpgradeQuarkusUniverseBom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgradequarkusuniversebom)
+  * **Upgrade Quarkus Universe BOM**
+  * Upgrades the Quarkus Universe BOM parent to the latest version.
+* [io.moderne.devcenter.VulnerabilitiesDevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/vulnerabilitiesdevcenter)
+  * **DevCenter for Vulnerability Management**
+  * Recipes to analyze and manage dependency vulnerabilities using Moderne DevCenter.
 
 
 ## rewrite-dotnet
@@ -436,7 +500,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-03-02T1113.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-03-12T0841.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -999,12 +1063,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.FindCgiModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgimodule)
   * **Find deprecated `cgi` module usage**
   * The `cgi` module was deprecated in Python 3.11 and removed in Python 3.13. Use `urllib.parse` for query string parsing, `html.escape()` for escaping, and web frameworks or `email.message` for form handling.
-* [org.openrewrite.python.migrate.FindCgiParseQs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgiparseqs)
-  * **Find removed `cgi.parse_qs()` usage**
-  * `cgi.parse_qs()` was removed in Python 3.8. Use `urllib.parse.parse_qs()` instead.
-* [org.openrewrite.python.migrate.FindCgiParseQsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgiparseqsl)
-  * **Find removed `cgi.parse_qsl()` usage**
-  * `cgi.parse_qsl()` was removed in Python 3.8. Use `urllib.parse.parse_qsl()` instead.
 * [org.openrewrite.python.migrate.FindCgitbModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgitbmodule)
   * **Find deprecated `cgitb` module usage**
   * The `cgitb` module was deprecated in Python 3.11 and removed in Python 3.13. Use the standard `logging` and `traceback` modules for error handling.
@@ -1017,18 +1075,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.FindDistutilsUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finddistutilsusage)
   * **Find deprecated distutils module usage**
   * Find imports of the deprecated `distutils` module which was removed in Python 3.12. Migrate to `setuptools` or other modern build tools.
-* [org.openrewrite.python.migrate.FindElementGetchildren](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findelementgetchildren)
-  * **Find deprecated `Element.getchildren()` usage**
-  * Find usage of `getchildren()` method on XML Element objects. Deprecated in Python 3.9. Use `list(element)` instead.
 * [org.openrewrite.python.migrate.FindFunctoolsCmpToKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfunctoolscmptokey)
   * **Find `functools.cmp_to_key()` usage**
   * Find usage of `functools.cmp_to_key()` which is a Python 2 compatibility function. Consider using a key function directly.
 * [org.openrewrite.python.migrate.FindFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfutureimports)
   * **Find `__future__` imports**
   * Find `__future__` imports and add a search marker.
-* [org.openrewrite.python.migrate.FindHtmlParserUnescape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findhtmlparserunescape)
-  * **Find removed `HTMLParser.unescape()` usage**
-  * `HTMLParser.unescape()` was removed in Python 3.9. Use `html.unescape()` instead.
 * [org.openrewrite.python.migrate.FindImghdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimghdrmodule)
   * **Find deprecated `imghdr` module usage**
   * The `imghdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype`, `python-magic`, or `Pillow` instead.
@@ -1068,12 +1120,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.FindPipesModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpipesmodule)
   * **Find deprecated `pipes` module usage**
   * The `pipes` module was deprecated in Python 3.11 and removed in Python 3.13. Use subprocess with shlex.quote() for shell escaping.
-* [org.openrewrite.python.migrate.FindPlatformPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findplatformpopen)
-  * **Find removed `platform.popen()` usage**
-  * `platform.popen()` was removed in Python 3.8. Use `os.popen()` or `subprocess.run()` instead.
-* [org.openrewrite.python.migrate.FindReTemplate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findretemplate)
-  * **Find deprecated `re.template()` / `re.TEMPLATE` usage**
-  * `re.template()` and `re.TEMPLATE` were deprecated in Python 3.11 and removed in 3.13.
 * [org.openrewrite.python.migrate.FindRemovedModules312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findremovedmodules312)
   * **Find modules removed in Python 3.12**
   * Find imports of modules that were removed in Python 3.12, including asynchat, asyncore, and smtpd.
@@ -1098,12 +1144,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.FindSysCoroutineWrapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsyscoroutinewrapper)
   * **Find removed `sys.set_coroutine_wrapper()` / `sys.get_coroutine_wrapper()`**
   * `sys.set_coroutine_wrapper()` and `sys.get_coroutine_wrapper()` were deprecated in Python 3.7 and removed in Python 3.8.
-* [org.openrewrite.python.migrate.FindSysLastExcInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsyslastexcinfo)
-  * **Find deprecated `sys.last_type` / `sys.last_value` / `sys.last_traceback`**
-  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. Use `sys.last_exc` instead.
-* [org.openrewrite.python.migrate.FindTarfileFilemode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtarfilefilemode)
-  * **Find removed `tarfile.filemode` usage**
-  * `tarfile.filemode` was removed in Python 3.8. Use `stat.filemode()` instead.
 * [org.openrewrite.python.migrate.FindTelnetlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtelnetlibmodule)
   * **Find deprecated `telnetlib` module usage**
   * The `telnetlib` module was deprecated in Python 3.11 and removed in Python 3.13. Consider using `telnetlib3` from PyPI, direct socket usage, or SSH-based alternatives like paramiko.
@@ -1128,6 +1168,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.MigrateToPyprojectToml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migratetopyprojecttoml)
   * **Migrate to `pyproject.toml`**
   * Migrate Python projects from `requirements.txt` and/or `setup.cfg` to `pyproject.toml` with `hatchling` build backend.
+* [org.openrewrite.python.migrate.RemoveFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/removefutureimports)
+  * **Remove obsolete `__future__` imports**
+  * Remove `from __future__ import ...` statements for features that are enabled by default in Python 3.
 * [org.openrewrite.python.migrate.ReplaceArrayFromstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearrayfromstring)
   * **Replace `array.fromstring()` with `array.frombytes()`**
   * Replace `fromstring()` with `frombytes()` on array objects. The fromstring() method was deprecated in Python 3.2 and removed in 3.14.
@@ -1152,6 +1195,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.ReplaceCalendarConstants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecalendarconstants)
   * **Replace deprecated calendar constants with uppercase**
   * Replace deprecated mixed-case calendar constants like `calendar.January` with their uppercase equivalents like `calendar.JANUARY`. The mixed-case constants were deprecated in Python 3.12.
+* [org.openrewrite.python.migrate.ReplaceCgiParseQs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqs)
+  * **Replace `cgi.parse_qs()` with `urllib.parse.parse_qs()`**
+  * `cgi.parse_qs()` was removed in Python 3.8. Use `urllib.parse.parse_qs()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
+* [org.openrewrite.python.migrate.ReplaceCgiParseQsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqsl)
+  * **Replace `cgi.parse_qsl()` with `urllib.parse.parse_qsl()`**
+  * `cgi.parse_qsl()` was removed in Python 3.8. Use `urllib.parse.parse_qsl()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
 * [org.openrewrite.python.migrate.ReplaceCollectionsAbcImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecollectionsabcimports)
   * **Replace `collections` ABC imports with `collections.abc`**
   * Migrate deprecated abstract base class imports from `collections` to `collections.abc`. These imports were deprecated in Python 3.3 and removed in Python 3.10.
@@ -1173,6 +1222,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.ReplaceDistutilsVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedistutilsversion)
   * **Replace deprecated distutils.version usage**
   * Detect usage of deprecated `distutils.version.LooseVersion` and `distutils.version.StrictVersion`. These should be migrated to `packaging.version.Version`. Note: Manual migration is required as `packaging.version.Version` is not a drop-in replacement.
+* [org.openrewrite.python.migrate.ReplaceElementGetchildren](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetchildren)
+  * **Replace `Element.getchildren()` with `list(element)`**
+  * Replace `getchildren()` with `list(element)` on XML Element objects. Deprecated in Python 3.9.
 * [org.openrewrite.python.migrate.ReplaceElementGetiterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetiterator)
   * **Replace `Element.getiterator()` with `Element.iter()`**
   * Replace `getiterator()` with `iter()` on XML Element objects. The getiterator() method was deprecated in Python 3.9.
@@ -1182,6 +1234,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.ReplaceGettextDeprecations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacegettextdeprecations)
   * **Replace deprecated gettext l*gettext() functions**
   * Replace deprecated gettext functions like `lgettext()` with their modern equivalents like `gettext()`. The l*gettext() functions were removed in Python 3.11.
+* [org.openrewrite.python.migrate.ReplaceHtmlParserUnescape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacehtmlparserunescape)
+  * **Replace `HTMLParser.unescape()` with `html.unescape()`**
+  * `HTMLParser.unescape()` was removed in Python 3.9. Use `html.unescape()` instead.
 * [org.openrewrite.python.migrate.ReplaceLocaleResetlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacelocaleresetlocale)
   * **Replace `locale.resetlocale()` with `locale.setlocale(LC_ALL, '')`**
   * The `locale.resetlocale()` function was deprecated in Python 3.11 and removed in Python 3.13. Replace with `locale.setlocale(locale.LC_ALL, '')`.
@@ -1194,9 +1249,21 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.ReplacePkgutilGetLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilgetloader)
   * **Replace `pkgutil.get_loader()` with `importlib.util.find_spec()`**
   * The `pkgutil.get_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
+* [org.openrewrite.python.migrate.ReplacePlatformPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceplatformpopen)
+  * **Replace `platform.popen()` with `subprocess.check_output()`**
+  * `platform.popen()` was removed in Python 3.8. Use `subprocess.check_output(cmd, shell=True)` instead. Note: this rewrites call sites but does not manage imports.
+* [org.openrewrite.python.migrate.ReplaceReTemplate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceretemplate)
+  * **Replace `re.template()` with `re.compile()` and flag `re.TEMPLATE`/`re.T`**
+  * `re.template()` was deprecated in Python 3.11 and removed in 3.13. Calls are auto-replaced with `re.compile()`. `re.TEMPLATE`/`re.T` flags have no direct replacement and are flagged for manual review.
 * [org.openrewrite.python.migrate.ReplaceStrFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacestrformatwithfstring)
   * **Replace `str.format()` with f-string**
   * Replace `&quot;...&quot;.format(...)` calls with f-strings (Python 3.6+). Only converts cases where the format string is a literal and the conversion is safe.
+* [org.openrewrite.python.migrate.ReplaceSysLastExcInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacesyslastexcinfo)
+  * **Replace `sys.last_value` with `sys.last_exc` and flag `sys.last_type` / `sys.last_traceback`**
+  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. `sys.last_value` is auto-replaced with `sys.last_exc`; `sys.last_type` and `sys.last_traceback` are flagged for manual review.
+* [org.openrewrite.python.migrate.ReplaceTarfileFilemode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetarfilefilemode)
+  * **Replace `tarfile.filemode` with `stat.filemode`**
+  * `tarfile.filemode` was removed in Python 3.8. Use `stat.filemode()` instead.
 * [org.openrewrite.python.migrate.ReplaceThreadGetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadgetname)
   * **Replace `Thread.getName()` with `Thread.name`**
   * Replace `getName()` method calls with the `name` property. Deprecated in Python 3.10, removed in 3.12.
@@ -1511,6 +1578,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findprojectmetadata)
   * **Find project metadata**
   * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
+* [io.moderne.prethink.calm.FindPythonProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythonprojectmetadata)
+  * **Find Python project metadata**
+  * Extract project metadata (name, version, description) from Python pyproject.toml files.
 * [io.moderne.prethink.calm.FindSecurityConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsecurityconfiguration)
   * **Find security configuration**
   * Identify security configurations including Spring Security, OAuth2, and CORS settings.

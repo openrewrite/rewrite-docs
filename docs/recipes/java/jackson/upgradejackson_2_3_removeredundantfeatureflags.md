@@ -180,6 +180,72 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`KotlinUpgradeJackson_2_3Test#removeRedundantFeatureFlagsFromChain`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.SerializationFeature
+import java.util.TimeZone
+
+class Test {
+    fun objectMapper(): ObjectMapper {
+        return ObjectMapper()
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .setTimeZone(TimeZone.getDefault())
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    }
+}
+```
+
+###### After
+```kotlin
+import com.fasterxml.jackson.databind.ObjectMapper
+import java.util.TimeZone
+
+class Test {
+    fun objectMapper(): ObjectMapper {
+        return ObjectMapper()
+                .setTimeZone(TimeZone.getDefault())
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+@@ -3,1 +2,0 @@
+import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+-import com.fasterxml.jackson.databind.SerializationFeature
+import java.util.TimeZone
+@@ -9,1 +7,0 @@
+    fun objectMapper(): ObjectMapper {
+        return ObjectMapper()
+-               .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .setTimeZone(TimeZone.getDefault())
+@@ -11,1 +8,0 @@
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .setTimeZone(TimeZone.getDefault())
+-               .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
 `RemoveRedundantFeatureFlagsTest#removeEnableSortPropertiesAlphabetically`
 
 
@@ -229,7 +295,73 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 ---
 
-##### Example 2
+##### Example 3
+`KotlinUpgradeJackson_2_3Test#removeRedundantFeatureFlagsFromChain`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.SerializationFeature
+import java.util.TimeZone
+
+class Test {
+    fun objectMapper(): ObjectMapper {
+        return ObjectMapper()
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .setTimeZone(TimeZone.getDefault())
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    }
+}
+```
+
+###### After
+```kotlin
+import com.fasterxml.jackson.databind.ObjectMapper
+import java.util.TimeZone
+
+class Test {
+    fun objectMapper(): ObjectMapper {
+        return ObjectMapper()
+                .setTimeZone(TimeZone.getDefault())
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,0 @@
+-import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+@@ -3,1 +2,0 @@
+import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+-import com.fasterxml.jackson.databind.SerializationFeature
+import java.util.TimeZone
+@@ -9,1 +7,0 @@
+    fun objectMapper(): ObjectMapper {
+        return ObjectMapper()
+-               .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .setTimeZone(TimeZone.getDefault())
+@@ -11,1 +8,0 @@
+                .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
+                .setTimeZone(TimeZone.getDefault())
+-               .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
 `RemoveRedundantFeatureFlagsTest#removeEnableSortPropertiesAlphabetically`
 
 

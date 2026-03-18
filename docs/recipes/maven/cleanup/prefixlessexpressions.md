@@ -86,8 +86,8 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Apache Maven best practices](/recipes/devcenter/apachemavenbestpractices.md)
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
+* [Apache Maven best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavenbestpractices)
 * [Migrate to Maven 4](/recipes/maven/migratetomaven4.md)
 
 ## Examples

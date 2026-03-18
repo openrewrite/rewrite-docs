@@ -31,6 +31,145 @@ This recipe is used as part of the following composite recipes:
 
 * [SLF4J best practices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+import java.text.MessageFormat;
+
+class Test {
+    private static final Logger logger = LoggerFactory.getLogger(Test.class);
+    private static final Marker marker = MarkerFactory.getMarker("TEST");
+
+    void method(String username, int count, String message) {
+        Exception exception = new Exception();
+
+        logger.trace(MessageFormat.format("Trace {0}", username));
+        logger.debug(MessageFormat.format("Debug {0}", username));
+        logger.info(MessageFormat.format("User {0} logged in", username));
+        logger.warn(MessageFormat.format("Warning {0}", username));
+        logger.error(MessageFormat.format("Error {0}", username));
+
+        logger.info(MessageFormat.format("User {0} has {1} items", username, count));
+        logger.info(MessageFormat.format("Values: {0}, {1}, {2}", "a", "b", "c"));
+
+        logger.info(marker, MessageFormat.format("Message {0}", message));
+        logger.error(MessageFormat.format("Failed: {0}", message), exception);
+        logger.error(marker, MessageFormat.format("Failed: {0}", message), exception);
+
+        logger.info(MessageFormat.format("User {0}"
+                + " logged in", username));
+        logger.info(MessageFormat.format("isHTML"
+                + " ''{0}'', body: {1}", username, message));
+        logger.info(MessageFormat.format("part1"
+                + " part2"
+                + " {0}", username));
+    }
+}
+```
+
+###### After
+```java
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+
+class Test {
+    private static final Logger logger = LoggerFactory.getLogger(Test.class);
+    private static final Marker marker = MarkerFactory.getMarker("TEST");
+
+    void method(String username, int count, String message) {
+        Exception exception = new Exception();
+
+        logger.trace("Trace {}", username);
+        logger.debug("Debug {}", username);
+        logger.info("User {} logged in", username);
+        logger.warn("Warning {}", username);
+        logger.error("Error {}", username);
+
+        logger.info("User {} has {} items", username, count);
+        logger.info("Values: {}, {}, {}", "a", "b", "c");
+
+        logger.info(marker, "Message {}", message);
+        logger.error("Failed: {}", message, exception);
+        logger.error(marker, "Failed: {}", message, exception);
+
+        logger.info("User {} logged in", username);
+        logger.info("isHTML ''{}'', body: {}", username, message);
+        logger.info("part1 part2 {}", username);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,0 @@
+import org.slf4j.Marker;
+import org.slf4j.MarkerFactory;
+-import java.text.MessageFormat;
+
+@@ -14,5 +13,5 @@
+        Exception exception = new Exception();
+
+-       logger.trace(MessageFormat.format("Trace {0}", username));
+-       logger.debug(MessageFormat.format("Debug {0}", username));
+-       logger.info(MessageFormat.format("User {0} logged in", username));
+-       logger.warn(MessageFormat.format("Warning {0}", username));
+-       logger.error(MessageFormat.format("Error {0}", username));
++       logger.trace("Trace {}", username);
++       logger.debug("Debug {}", username);
++       logger.info("User {} logged in", username);
++       logger.warn("Warning {}", username);
++       logger.error("Error {}", username);
+
+@@ -20,2 +19,2 @@
+        logger.error(MessageFormat.format("Error {0}", username));
+
+-       logger.info(MessageFormat.format("User {0} has {1} items", username, count));
+-       logger.info(MessageFormat.format("Values: {0}, {1}, {2}", "a", "b", "c"));
++       logger.info("User {} has {} items", username, count);
++       logger.info("Values: {}, {}, {}", "a", "b", "c");
+
+@@ -23,3 +22,3 @@
+        logger.info(MessageFormat.format("Values: {0}, {1}, {2}", "a", "b", "c"));
+
+-       logger.info(marker, MessageFormat.format("Message {0}", message));
+-       logger.error(MessageFormat.format("Failed: {0}", message), exception);
+-       logger.error(marker, MessageFormat.format("Failed: {0}", message), exception);
++       logger.info(marker, "Message {}", message);
++       logger.error("Failed: {}", message, exception);
++       logger.error(marker, "Failed: {}", message, exception);
+
+@@ -27,7 +26,3 @@
+        logger.error(marker, MessageFormat.format("Failed: {0}", message), exception);
+
+-       logger.info(MessageFormat.format("User {0}"
+-               + " logged in", username));
+-       logger.info(MessageFormat.format("isHTML"
+-               + " ''{0}'', body: {1}", username, message));
+-       logger.info(MessageFormat.format("part1"
+-               + " part2"
+-               + " {0}", username));
++       logger.info("User {} logged in", username);
++       logger.info("isHTML ''{}'', body: {}", username, message);
++       logger.info("part1 part2 {}", username);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

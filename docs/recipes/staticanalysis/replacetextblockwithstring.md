@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Replace text block with a regular multi-line string._
 
+### Tags
+
+* [RSPEC-S5663](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S5663&open=java%3AS5663)
+
 ## Recipe source
 
 [GitHub: ReplaceTextBlockWithString.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceTextBlockWithString.java),

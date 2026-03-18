@@ -11,6 +11,10 @@ import TabItem from '@theme/TabItem';
 
 _Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharset` constant._
 
+### Tags
+
+* [RSPEC-S4719](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4719&open=java%3AS4719)
+
 ## Recipe source
 
 [GitHub: UseStandardCharset.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/UseStandardCharset.java),
