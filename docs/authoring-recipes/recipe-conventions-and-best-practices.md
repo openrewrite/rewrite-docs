@@ -4,6 +4,10 @@ description: A list of important conventions and best practices to keep in mind 
 
 # Recipe conventions and best practices
 
+:::info[Free Workshop]
+Take your recipes further. [Join our free advanced workshop on March 24 →](https://www.moderne.ai/training/advanced-openrewrite-march-2026)
+:::
+
 To help you create reliable and scalable recipes, this document will describe an assortment of conventions and best practices to keep in mind when making new recipes.
 
 ## Prerequisites

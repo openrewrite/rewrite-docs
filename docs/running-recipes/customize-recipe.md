@@ -5,6 +5,10 @@ description: How to customize recipes to meet your needs.
 
 # How to customize recipes to meet your needs
 
+:::info[Free Training]
+Want to learn how recipes work? [Join our free training on April 28 →](https://www.moderne.ai/training/introduction-to-openrewrite-training-april-session)
+:::
+
 OpenRewrite recipes are **opinionated** – meaning that they encourage certain conventions, patterns, or practices. The idea behind this is to provide sensible defaults that work for _most_ people _most_ of the time without requiring any fiddling. 
 
 However, what if you run into a situation where you would like recipes to behave differently? Your first instinct might be that you need to copy the existing recipe and modify it to meet your needs.
