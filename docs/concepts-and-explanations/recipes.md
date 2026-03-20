@@ -6,6 +6,10 @@ import ReactPlayer from 'react-player'
 
 # Recipes
 
+:::info[Free Training]
+Want to learn how recipes work? [Join our free training on April 28 →](https://www.moderne.ai/training/introduction-to-openrewrite-training-april-session)
+:::
+
 A recipe represents a group of search and refactoring operations that can be applied to a [Lossless Semantic Tree](./lossless-semantic-trees.md). A recipe can represent a single, stand-alone operation or it can be linked together with other recipes to accomplish a larger goal such as a framework migration.
 
 OpenRewrite provides a managed environment for discovering, instantiating and configuring recipes. To implement a search or refactoring operation, a recipe delegates to a [visitor](./visitors.md) which handles the LST traversal and manipulation.

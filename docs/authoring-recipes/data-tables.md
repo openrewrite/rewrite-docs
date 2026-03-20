@@ -7,6 +7,10 @@ import TabItem from '@theme/TabItem';
 
 # Creating recipes with data tables
 
+:::info[Free Workshop]
+Want to build scanning recipes, generate code, and use traits? [Join our free advanced workshop on March 24 →](https://www.moderne.ai/training/advanced-openrewrite-march-2026)
+:::
+
 Traditionally, recipes either tried to fix an issue by updating the code directly or they helped you find pieces of code based on a query. However, what if you wanted to extract some specific attributes or inferences from the code? For example, what if you wanted to know details about the vulnerabilities that exist in one of your repositories?
 
 This is where data tables come in. In addition to modifying the code directly, recipes can generate tabular data that people can use for analysis purposes. Taking the security vulnerability scenario as an example, a recipe could fix certain vulnerabilities and produce a table containing vital information about what vulnerabilities exist in your repository. This information could include a summary of the CVE, the severity of the issue, and whether or not a version update could address the vulnerability.
