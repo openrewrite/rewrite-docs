@@ -151,7 +151,7 @@ _4 recipes_
 
 _License: Apache License Version 2.0_
 
-_15 recipes_
+_18 recipes_
 
 * [org.openrewrite.docker.AddAptGetCleanup](/recipes/docker/addaptgetcleanup.md)
   * **Add apt-get cleanup**
@@ -171,6 +171,15 @@ _15 recipes_
 * [org.openrewrite.docker.CombineRunInstructions](/recipes/docker/combineruninstructions.md)
   * **Combine consecutive `RUN` instructions**
   * Combines consecutive `RUN` instructions into a single instruction to reduce image layers. Only shell form `RUN` instructions without flags are combined.
+* [org.openrewrite.docker.DockerBestPractices](/recipes/docker/dockerbestpractices.md)
+  * **Apply Docker best practices**
+  * Apply a set of Docker best practices to Dockerfiles. This recipe applies security hardening, build optimization, and maintainability improvements based on CIS Docker Benchmark and industry best practices.
+* [org.openrewrite.docker.DockerBuildOptimization](/recipes/docker/dockerbuildoptimization.md)
+  * **Optimize Docker builds**
+  * Apply build optimization best practices to Dockerfiles. This includes combining RUN instructions to reduce layers and adding cleanup commands to reduce image size.
+* [org.openrewrite.docker.DockerSecurityBestPractices](/recipes/docker/dockersecuritybestpractices.md)
+  * **Apply Docker security best practices**
+  * Apply security-focused Docker best practices to Dockerfiles. This includes running as a non-root user (CIS 4.1) and using COPY instead of ADD where appropriate (CIS 4.9).
 * [org.openrewrite.docker.NormalizeDockerHubImageName](/recipes/docker/normalizedockerhubimagename.md)
   * **Normalize Docker Hub image names**
   * Normalizes Docker Hub image names to their canonical short form by removing redundant registry prefixes like `docker.io/library/` or `index.docker.io/`.
@@ -203,11 +212,14 @@ _15 recipes_
 
 _License: Apache License Version 2.0_
 
-_53 recipes_
+_63 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
   * Add a gradle dependency to a `build.gradle` file in the correct configuration based on where it is used.
+* [org.openrewrite.gradle.AddJUnitPlatformLauncher](/recipes/gradle/addjunitplatformlauncher.md)
+  * **Add JUnit Platform Launcher**
+  * Add the JUnit Platform Launcher to the buildscript dependencies.
 * [org.openrewrite.gradle.AddPlatformDependency](/recipes/gradle/addplatformdependency.md)
   * **Add Gradle platform dependency**
   * Add a gradle platform dependency to a `build.gradle` file in the correct configuration based on where it is used.
@@ -250,9 +262,33 @@ _53 recipes_
 * [org.openrewrite.gradle.EnableDevelocityBuildCache](/recipes/gradle/enabledevelocitybuildcache.md)
   * **Enable Develocity build cache**
   * Adds `buildCache` configuration to `develocity` where not yet present.
+* [org.openrewrite.gradle.EnableGradleBuildCache](/recipes/gradle/enablegradlebuildcache.md)
+  * **Enable Gradle build cache**
+  * Enable the Gradle build cache. By enabling build cache the build outputs are stored externally and fetched from the cache when it is determined that those inputs have no changed, avoiding the expensive work of regenerating them. See the [Gradle Build Cache](https://docs.gradle.org/current/userguide/build_cache.html) for more information.
+* [org.openrewrite.gradle.EnableGradleParallelExecution](/recipes/gradle/enablegradleparallelexecution.md)
+  * **Enable Gradle parallel execution**
+  * Most builds consist of more than one project and some of those projects are usually independent of one another. Yet Gradle will only run one task at a time by default, regardless of the project structure. By using the `--parallel` switch, you can force Gradle to execute tasks in parallel as long as those tasks are in different projects. See the [Gradle performance documentation](https://docs.gradle.org/current/userguide/performance.html#parallel_execution) for more information.
+* [org.openrewrite.gradle.GradleBestPractices](/recipes/gradle/gradlebestpractices.md)
+  * **Apply Gradle best practices**
+  * Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and ideomatic builds.
 * [org.openrewrite.gradle.MigrateDependenciesToVersionCatalog](/recipes/gradle/migratedependenciestoversioncatalog.md)
   * **Migrate Gradle project dependencies to version catalog**
   * Migrates Gradle project dependencies to use the [version catalog](https://docs.gradle.org/current/userguide/platforms.html) feature. Supports migrating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`  * Property references: `&quot;group:artifact:$version&quot;` or `&quot;group:artifact:$\{version\}&quot;`  The recipe will:  * Create a `gradle/libs.versions.toml` file with version declarations  * Replace dependency declarations with catalog references (e.g., `libs.springCore`)  * Migrate version properties from `gradle.properties` to the version catalog  * Preserve project dependencies unchanged  **Note:** If a version catalog already exists, the recipe will not modify it.
+* [org.openrewrite.gradle.MigrateToGradle5](/recipes/gradle/migratetogradle5.md)
+  * **Migrate to Gradle 5 from Gradle 4**
+  * Migrate to version 5.x. See the Gradle upgrade guide from [version 4.x to 5.0](https://docs.gradle.org/current/userguide/upgrading_version_4.html) for more information.
+* [org.openrewrite.gradle.MigrateToGradle6](/recipes/gradle/migratetogradle6.md)
+  * **Migrate to Gradle 6 from Gradle 5**
+  * Migrate to version 6.x. See the Gradle upgrade guide from [version 5.x to 6.0](https://docs.gradle.org/current/userguide/upgrading_version_5.html) for more information.
+* [org.openrewrite.gradle.MigrateToGradle7](/recipes/gradle/migratetogradle7.md)
+  * **Migrate to Gradle 7 from Gradle 6**
+  * Migrate to version 7.x. See the Gradle upgrade guide from [version 6.x to 7.0](https://docs.gradle.org/current/userguide/upgrading_version_6.html) for more information.
+* [org.openrewrite.gradle.MigrateToGradle8](/recipes/gradle/migratetogradle8.md)
+  * **Migrate to Gradle 8 from Gradle 7**
+  * Migrate to version 8.x. See the Gradle upgrade guide from [version 7.x to 8.0](https://docs.gradle.org/current/userguide/upgrading_version_7.html) and [version 8.x to latest](https://docs.gradle.org/current/userguide/upgrading_version_8.html) for more information.
+* [org.openrewrite.gradle.MigrateToGradle9](/recipes/gradle/migratetogradle9.md)
+  * **Migrate to Gradle 9 from Gradle 8**
+  * Migrate to version 9.x. See the Gradle upgrade guide from [version 8.x to 9.0](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
 * [org.openrewrite.gradle.RemoveDependency](/recipes/gradle/removedependency.md)
   * **Remove a Gradle dependency**
   * Removes a single dependency from the dependencies section of the `build.gradle`.
@@ -310,6 +346,9 @@ _53 recipes_
 * [org.openrewrite.gradle.plugins.RemoveBuildPlugin](/recipes/gradle/plugins/removebuildplugin.md)
   * **Remove Gradle plugin**
   * Remove plugin from Gradle `plugins` block by its id. Does not remove plugins from the `buildscript` block.
+* [org.openrewrite.gradle.plugins.RemoveDevelocity](/recipes/gradle/plugins/removedevelocity.md)
+  * **Remove Develocity**
+  * Remove the Develocity plugin and configuration from the Gradle build and settings files.
 * [org.openrewrite.gradle.plugins.RemoveDevelocityConfiguration](/recipes/gradle/plugins/removedevelocityconfiguration.md)
   * **Remove Develocity configuration**
   * Remove the Develocity Gradle plugin and associated configuration.
@@ -428,8 +467,11 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_99 recipes_
+_101 recipes_
 
+* [org.openrewrite.java.AddApache2LicenseHeader](/recipes/java/addapache2licenseheader.md)
+  * **Add ASLv2 license header**
+  * Adds the Apache Software License Version 2.0 to Java source files which are missing a license header.
 * [org.openrewrite.java.AddCommentToImport](/recipes/java/addcommenttoimport.md)
   * **Add comment to import statement**
   * Add a comment to an import statement in a Java source file.
@@ -685,6 +727,9 @@ _99 recipes_
 * [org.openrewrite.java.search.FindRepeatableAnnotations](/recipes/java/search/findrepeatableannotations.md)
   * **Find uses of `@Repeatable` annotations**
   * Java 8 introduced the concept of `@Repeatable` annotations.
+* [org.openrewrite.java.search.FindSecrets](/recipes/java/search/findsecrets.md)
+  * **Find plain text secrets**
+  * Find secrets stored in plain text in code.
 * [org.openrewrite.java.search.FindSymbols](/recipes/java/search/findsymbols.md)
   * **Find symbols**
   * Lists all symbols (classes, methods, fields, etc.) declared in the codebase. Results are emitted into a data table with symbol kind, name, parent type, signature, and visibility.
@@ -732,8 +777,53 @@ _99 recipes_
 
 _License: Moderne Source Available License_
 
-_1 recipe_
+_16 recipes_
 
+* [org.openrewrite.javascript.change-import](/recipes/javascript/change-import.md)
+  * **Change import**
+  * Changes an import from one module/member to another, updating all type attributions.
+* [org.openrewrite.javascript.cleanup.add-parse-int-radix](/recipes/javascript/cleanup/add-parse-int-radix.md)
+  * **Add radix to `parseInt`**
+  * Adds the radix parameter (base 10) to `parseInt()` calls that are missing it, preventing potential parsing issues.
+* [org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method](/recipes/javascript/cleanup/async-callback-in-sync-array-method.md)
+  * **Detect async callbacks in synchronous array methods**
+  * Detects async callbacks passed to array methods like .some(), .every(), .filter() which don't await promises. This is a common bug where Promise objects are always truthy.
+* [org.openrewrite.javascript.cleanup.order-imports](/recipes/javascript/cleanup/order-imports.md)
+  * **Order imports**
+  * Sort imports by category and module path. Categories: side-effect, namespace, default, named, type. Within each category, imports are sorted alphabetically by module path. Named specifiers within each import are also sorted alphabetically.
+* [org.openrewrite.javascript.cleanup.prefer-optional-chain](/recipes/javascript/cleanup/prefer-optional-chain.md)
+  * **Prefer optional chaining**
+  * Converts ternary expressions like `foo ? foo.bar : undefined` to use optional chaining syntax `foo?.bar`.
+* [org.openrewrite.javascript.cleanup.use-object-property-shorthand](/recipes/javascript/cleanup/use-object-property-shorthand.md)
+  * **Use object property shorthand**
+  * Simplifies object properties where the property name and value/variable name are the same (e.g., `\{ x: x \}` becomes `\{ x \}`). Applies to both destructuring patterns and object literals.
+* [org.openrewrite.javascript.dependencies.add-dependency](/recipes/javascript/dependencies/add-dependency.md)
+  * **Add npm dependency**
+  * Adds a new dependency to `package.json` and updates the lock file by running the package manager.
+* [org.openrewrite.javascript.dependencies.find-dependency](/recipes/javascript/dependencies/find-dependency.md)
+  * **Find Node.js dependency**
+  * Finds dependencies in a project's `package.json`. Can find both direct dependencies and dependencies that transitively include the target package. This recipe is commonly used as a precondition for other recipes.
+* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](/recipes/javascript/dependencies/upgrade-dependency-version.md)
+  * **Upgrade npm dependency version**
+  * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager.
+* [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](/recipes/javascript/dependencies/upgrade-transitive-dependency-version.md)
+  * **Upgrade transitive npm dependency version**
+  * Upgrades the version of a transitive dependency by adding override/resolution entries to `package.json` and updates the lock file by running the package manager.
+* [org.openrewrite.javascript.format.auto-format](/recipes/javascript/format/auto-format.md)
+  * **Auto-format JavaScript/TypeScript code**
+  * Format JavaScript and TypeScript code using formatting rules auto-detected from the project's existing code style.
+* [org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences](/recipes/javascript/migrate/es6/modernize-octal-escape-sequences.md)
+  * **Modernize octal escape sequences**
+  * Convert old-style octal escape sequences (e.g., `\0`, `\123`) to modern hex escape sequences (e.g., `\x00`, `\x53`) or Unicode escape sequences (e.g., `\u0000`, `\u0053`).
+* [org.openrewrite.javascript.migrate.es6.modernize-octal-literals](/recipes/javascript/migrate/es6/modernize-octal-literals.md)
+  * **Modernize octal literals**
+  * Convert old-style octal literals (e.g., `0777`) to modern ES6 syntax (e.g., `0o777`).
+* [org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys](/recipes/javascript/migrate/es6/remove-duplicate-object-keys.md)
+  * **Remove duplicate object keys**
+  * Remove duplicate keys in object literals, keeping only the last occurrence (last-wins semantics).
+* [org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default](/recipes/javascript/migrate/typescript/export-assignment-to-export-default.md)
+  * **Convert `export =` to `export default`**
+  * Converts TypeScript `export =` syntax to ES module `export default` syntax for compatibility with ECMAScript modules.
 * [org.openrewrite.javascript.search.DependencyInsight](/recipes/javascript/search/dependencyinsight.md)
   * **Node.js dependency insight**
   * Find direct and transitive npm dependencies matching a package name pattern. Results include dependencies that either directly match or transitively include a matching dependency.
@@ -819,7 +909,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_78 recipes_
+_86 recipes_
 
 * [org.openrewrite.maven.AddAnnotationProcessor](/recipes/maven/addannotationprocessor.md)
   * **Add an annotation processor to `maven-compiler-plugin`**
@@ -860,6 +950,9 @@ _78 recipes_
 * [org.openrewrite.maven.AddRuntimeConfig](/recipes/maven/addruntimeconfig.md)
   * **Add a configuration option for the Maven runtime**
   * Add a new configuration option for the Maven runtime if not already present.
+* [org.openrewrite.maven.BestPractices](/recipes/maven/bestpractices.md)
+  * **Apache Maven best practices**
+  * Applies best practices to Maven POMs.
 * [org.openrewrite.maven.ChangeDependencyClassifier](/recipes/maven/changedependencyclassifier.md)
   * **Change Maven dependency classifier**
   * Add or alter the classifier of the specified dependency.
@@ -914,6 +1007,9 @@ _78 recipes_
 * [org.openrewrite.maven.ManagedToRuntimeDependencies](/recipes/maven/managedtoruntimedependencies.md)
   * **Convert managed dependencies to runtime dependencies**
   * This recipe processes Maven POMs, converting all `&lt;dependencyManagement&gt;` entries into runtime scoped `&lt;dependencies&gt;` entries. Import scoped BOMs (like jackson-bom) are left unmodified in `&lt;dependencyManagement&gt;`. Some style guidelines prefer that `&lt;dependencyManagement&gt;` be used only for BOMs. This maintain that style while avoiding introducing new symbols onto the compile classpath unintentionally.
+* [org.openrewrite.maven.MigrateToMaven4](/recipes/maven/migratetomaven4.md)
+  * **Migrate to Maven 4**
+  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, lifecycle phases, removes duplicate plugin declarations, and replaces removed properties to ensure compatibility with Maven 4.
 * [org.openrewrite.maven.ModernizeObsoletePoms](/recipes/maven/modernizeobsoletepoms.md)
   * **Modernize obsolete Maven poms**
   * Very old Maven poms are no longer supported by current versions of Maven. This recipe updates poms with `&lt;pomVersion&gt;3&lt;/pomVersion&gt;` to `&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;` of the Maven pom schema. This does not attempt to upgrade old dependencies or plugins and is best regarded as the starting point of a migration rather than an end-point.
@@ -935,6 +1031,9 @@ _78 recipes_
 * [org.openrewrite.maven.RemoveManagedDependency](/recipes/maven/removemanageddependency.md)
   * **Remove Maven managed dependency**
   * Removes a single managed dependency from the &lt;dependencyManagement&gt;&lt;dependencies&gt; section of the pom.xml.
+* [org.openrewrite.maven.RemoveMavenWrapper](/recipes/maven/removemavenwrapper.md)
+  * **Remove Maven wrapper**
+  * Remove Maven wrapper files from a project. This includes the `mvnw` and `mvnw.cmd` scripts, and the `.mvn/wrapper` directory.
 * [org.openrewrite.maven.RemovePlugin](/recipes/maven/removeplugin.md)
   * **Remove Maven plugin**
   * Remove the specified Maven plugin from the POM.
@@ -959,6 +1058,15 @@ _78 recipes_
 * [org.openrewrite.maven.RenamePropertyKey](/recipes/maven/renamepropertykey.md)
   * **Rename Maven property key**
   * Rename the specified Maven project property key leaving the value unchanged.
+* [org.openrewrite.maven.ReplaceDeprecatedLifecyclePhases](/recipes/maven/replacedeprecatedlifecyclephases.md)
+  * **Replace deprecated lifecycle phases**
+  * Maven 4 deprecated all `pre-*` and `post-*` lifecycle phases in favor of the `before:` and `after:` syntax. This recipe updates plugin phase declarations to use the new syntax, including `pre-clean` → `before:clean`, `pre-site` → `before:site`, `pre-integration-test` → `before:integration-test`, and their `post-*` equivalents.
+* [org.openrewrite.maven.ReplaceModulesWithSubprojects](/recipes/maven/replacemoduleswithsubprojects.md)
+  * **Replace modules with subprojects**
+  * Maven 4 model version 4.1.0 deprecates the `&lt;modules&gt;` element in favor of `&lt;subprojects&gt;` to eliminate confusion with Java's Platform Module System (JPMS). This recipe renames `&lt;modules&gt;` to `&lt;subprojects&gt;` and `&lt;module&gt;` children to `&lt;subproject&gt;`.
+* [org.openrewrite.maven.ReplaceRemovedRootDirectoryProperties](/recipes/maven/replaceremovedrootdirectoryproperties.md)
+  * **Replace removed root directory properties**
+  * Maven 4 removed support for deprecated root directory properties. This recipe replaces `$\{executionRootDirectory\}` with `$\{session.rootDirectory\}` and `$\{multiModuleProjectDirectory\}` with `$\{project.rootDirectory\}`.
 * [org.openrewrite.maven.UpdateMavenProjectPropertyJavaVersion](/recipes/maven/updatemavenprojectpropertyjavaversion.md)
   * **Update Maven Java project properties**
   * The Java version is determined by several project properties, including:   * `java.version`  * `jdk.version`  * `javaVersion`  * `jdkVersion`  * `maven.compiler.source`  * `maven.compiler.target`  * `maven.compiler.release`  * `release.version`  If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
@@ -977,6 +1085,9 @@ _78 recipes_
 * [org.openrewrite.maven.UpgradePluginVersion](/recipes/maven/upgradepluginversion.md)
   * **Upgrade Maven plugin version**
   * Upgrade the version of a plugin using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
+* [org.openrewrite.maven.UpgradeToModelVersion410](/recipes/maven/upgradetomodelversion410.md)
+  * **Upgrade to Maven model version 4.1.0**
+  * Upgrades Maven POMs from model version 4.0.0 to 4.1.0, enabling new Maven 4 features like `&lt;subprojects&gt;`, `bom` packaging, and automatic version inference. This recipe updates the `&lt;modelVersion&gt;` element, `xmlns` namespace, and `xsi:schemaLocation` from 4.0.0 to 4.1.0.
 * [org.openrewrite.maven.UpgradeTransitiveDependencyVersion](/recipes/maven/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Maven dependencies**
   * Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
@@ -998,6 +1109,9 @@ _78 recipes_
 * [org.openrewrite.maven.cleanup.ExplicitPluginVersion](/recipes/maven/cleanup/explicitpluginversion.md)
   * **Add explicit plugin versions**
   * Add explicit plugin versions to POMs for reproducibility, as [MNG-4173](https://issues.apache.org/jira/browse/MNG-4173) removes automatic version resolution for POM plugins.
+* [org.openrewrite.maven.cleanup.PrefixlessExpressions](/recipes/maven/cleanup/prefixlessexpressions.md)
+  * **Drop prefixless expressions in POM**
+  * MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing.
 * [org.openrewrite.maven.plugin.DependencyPluginGoalResolveSources](/recipes/maven/plugin/dependencyplugingoalresolvesources.md)
   * **Migrate to `maven-dependency-plugin` goal `resolve-sources`**
   * Migrate from `sources` to `resolve-sources` for the `maven-dependency-plugin`.
@@ -1318,11 +1432,14 @@ _3 recipes_
 
 _License: Moderne Source Available License_
 
-_80 recipes_
+_108 recipes_
 
 * [org.openrewrite.apache.commons.codec.ApacheBase64ToJavaBase64](/recipes/apache/commons/codec/apachebase64tojavabase64.md)
   * **Prefer `java.util.Base64`**
   * Prefer the Java standard library's `java.util.Base64` over third-party usage of apache's `apache.commons.codec.binary.Base64`.
+* [org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
+  * **Migrates to Apache Commons Collections 4.x**
+  * Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
 * [org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes](/recipes/apache/commons/io/apachecommonsfileutilsrecipes.md)
   * **`ApacheCommonsFileUtils` Refaster recipes**
   * Refaster template recipes for `org.openrewrite.apache.commons.io.ApacheCommonsFileUtils`.
@@ -1338,6 +1455,15 @@ _80 recipes_
 * [org.openrewrite.apache.commons.io.ApacheIOUtilsUseExplicitCharset](/recipes/apache/commons/io/apacheioutilsuseexplicitcharset.md)
   * **Use IOUtils method that include  their charset encoding**
   * Use `IOUtils` method invocations that include the charset encoding instead of using the deprecated versions that do not include a charset encoding. (e.g. converts `IOUtils.readLines(inputStream)` to `IOUtils.readLines(inputStream, StandardCharsets.UTF_8)`.
+* [org.openrewrite.apache.commons.io.RelocateApacheCommonsIo](/recipes/apache/commons/io/relocateapachecommonsio.md)
+  * **Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`**
+  * The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`.
+* [org.openrewrite.apache.commons.io.UseStandardCharsets](/recipes/apache/commons/io/usestandardcharsets.md)
+  * **Prefer `java.nio.charset.StandardCharsets`**
+  * Prefer the Java standard library's `java.nio.charset.StandardCharsets` over third-party usage of apache's `org.apache.commons.io.Charsets`.
+* [org.openrewrite.apache.commons.io.UseSystemLineSeparator](/recipes/apache/commons/io/usesystemlineseparator.md)
+  * **Prefer `System.lineSeparator()`**
+  * Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`.
 * [org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes](/recipes/apache/commons/lang/apachecommonsstringutilsrecipes.md)
   * **`ApacheCommonsStringUtils` Refaster recipes**
   * Refaster template recipes for `org.openrewrite.apache.commons.lang.ApacheCommonsStringUtils`.
@@ -1401,15 +1527,42 @@ _80 recipes_
 * [org.openrewrite.apache.commons.lang.IsNotEmptyToJdk](/recipes/apache/commons/lang/isnotemptytojdk.md)
   * **Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)**
   * Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == null || s.isEmpty()` and `s != null &amp;&amp; !s.isEmpty()`.
+* [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
+  * **Migrates to Apache Commons Lang 3.x**
+  * Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
+* [org.openrewrite.apache.commons.lang.WordUtilsToCommonsText](/recipes/apache/commons/lang/wordutilstocommonstext.md)
+  * **Migrate `WordUtils` to Apache Commons Text**
+  * Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUtils` and add the Commons Text dependency.
+* [org.openrewrite.apache.commons.lang3.MigrateSystemUtilsDeprecations](/recipes/apache/commons/lang3/migratesystemutilsdeprecations.md)
+  * **Migrate deprecated SystemUtils constants**
+  * Replaces deprecated constants in org.apache.commons.lang3.SystemUtils with their recommended replacements (e.g., File.separator, System.lineSeparator()).
+* [org.openrewrite.apache.commons.lang3.UseStandardCharsets](/recipes/apache/commons/lang3/usestandardcharsets.md)
+  * **Prefer `java.nio.charset.StandardCharsets`**
+  * Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`.
+* [org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md)
+  * **Migrates to Apache Commons Math 3.x**
+  * Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+* [org.openrewrite.apache.httpclient4.MappingDeprecatedClasses](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
+  * **Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements**
+  * Uses new classes/methods instead of the deprecated ones.
 * [org.openrewrite.apache.httpclient4.MigrateDefaultHttpClient](/recipes/apache/httpclient4/migratedefaulthttpclient.md)
   * **Migrates deprecated `DefaultHttpClient`**
   * Since `DefaultHttpClient` is deprecated, we need to change it to the `CloseableHttpClient`. It only covers the default scenario with no custom `HttpParams` or `ConnectionManager`.  Of note: the `DefaultHttpClient` [does not support TLS 1.2](https://find-sec-bugs.github.io/bugs.htm#DEFAULT_HTTP_CLIENT).  References:  - [Find Sec Bugs](https://find-sec-bugs.github.io/bugs.htm#DEFAULT_HTTP_CLIENT).  - [IBM Support Pages](https://www.ibm.com/support/pages/im-using-apache-httpclient-make-outbound-call-my-web-application-running-websphere-application-server-traditional-and-im-getting-ssl-handshake-error-how-can-i-debug).
+* [org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
+  * **Migrates to ApacheHttpClient 4.5.x**
+  * Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
 * [org.openrewrite.apache.httpclient5.AddTimeUnitArgument](/recipes/apache/httpclient5/addtimeunitargument.md)
   * **Adds a TimeUnit argument to the matched method invocations**
   * In Apache Http Client 5.x migration, an extra TimeUnit argument is required in the timeout and duration methods. Previously in 4.x, all these methods were implicitly having the timeout or duration expressed in milliseconds, but in 5.x the unit of the timeout or duration is required. So, by default this recipe adds `TimeUnit.MILLISECONDS`, it is possible to specify this as a parameter. Since all affected methods of the Apache Http Client 5.x migration only have one integer/long argument, the recipe applies with matched method invocations of exactly one parameter.
 * [org.openrewrite.apache.httpclient5.ChangeArgumentToTimeValue](/recipes/apache/httpclient5/changeargumenttotimevalue.md)
   * **Changes an argument (or pair of arguments) to a `TimeValue` for matched method invocations**
   * In Apache Http Client 5.x migration, some methods that previously took a single `long` argument, or a pair of arguments of type `long` and `TimeUnit` respectively, have changed to take a `TimeValue`. Previously in 4.x, all these single `long` argument methods were implicitly having the value expressed in milliseconds. By default this recipe uses `TimeUnit.MILLISECONDS` for the `TimeUnit` when creating a `TimeValue`. It is possible to specify this as a option. The `timeUnit` option will be ignored for cases matching `*(long, TimeUnit).
+* [org.openrewrite.apache.httpclient5.CredentialsStoreClear](/recipes/apache/httpclient5/credentialsstoreclear.md)
+  * **Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`**
+  * Migrates `BasicCredentialsProvider` methods`clear` to the new `CredentialsStore` interface.
+* [org.openrewrite.apache.httpclient5.CredentialsStoreSetCredentials](/recipes/apache/httpclient5/credentialsstoresetcredentials.md)
+  * **Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`**
+  * Migrates `BasicCredentialsProvider` methods`setCredentials` to the new `CredentialsStore` interface.
 * [org.openrewrite.apache.httpclient5.InputBufferReadAddOffsetAndLengthArguments](/recipes/apache/httpclient5/inputbufferreadaddoffsetandlengtharguments.md)
   * **Adds offset and length arguments to the read method of SharedInputBuffer**
   * In Apache Http Client 5.x migration, the shortened form of the `read(byte[])` has been removed.
@@ -1440,6 +1593,42 @@ _80 recipes_
 * [org.openrewrite.apache.httpclient5.RemoveByteBufferAllocators](/recipes/apache/httpclient5/removebytebufferallocators.md)
   * **Remove ByteBufferAllocator implementations**
   * In Apache Http Client 5.x migration, both implementations of `ByteBufferAllocator` have been removed. This recipe will remove usage of said classes in favour of direct static calls to `ByteBuffer`.
+* [org.openrewrite.apache.httpclient5.StatusLine](/recipes/apache/httpclient5/statusline.md)
+  * **Migrate to ApacheHttpClient 5.x deprecated methods from 4.x**
+  * Migrates deprecated methods to their equivalent ones in 5.x.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
+  * **Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies**
+  * Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
+  * **Migrate to ApacheHttpClient 5.x**
+  * Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_AsyncClientClassMapping](/recipes/apache/httpclient5/upgradeapachehttpclient_5_asyncclientclassmapping.md)
+  * **Migrate Apache HttpAsyncClient 4.x classes to HttpClient 5.x**
+  * Migrates classes from Apache HttpAsyncClient 4.x `httpasyncclient` to their equivalents in HttpClient 5.x.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
+  * **Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x**
+  * Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods](/recipes/apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods.md)
+  * **Migrate to ApacheHttpClient 5.x deprecated methods from 4.x**
+  * Migrates deprecated methods to their equivalent ones in 5.x.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit](/recipes/apache/httpclient5/upgradeapachehttpclient_5_timeunit.md)
+  * **Adds `TimeUnit` to timeouts and duration methods**
+  * Apache HttpClient 5.x Timeout and duration methods need an extra the TimeUnit argument. This recipe uses milliseconds as a default unit.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCoreNioDependencies](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
+  * **Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency**
+  * Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioClassMapping](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
+  * **Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x**
+  * Mapping of all the compatible classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioInputBuffers](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioinputbuffers.md)
+  * **Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x**
+  * Mapping of specifically `*InputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioOutputBuffers](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
+  * **Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x**
+  * Mapping of specifically `*OutputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
+* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioUtilMapping](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioutilmapping.md)
+  * **Migrate to Apache HttpCore Nio Util Classes to Apache HttpCore 5.x**
+  * Mapping of all the compatible utility classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
 * [org.openrewrite.apache.httpclient5.UsePoolingAsyncClientConnectionManagerBuilder](/recipes/apache/httpclient5/usepoolingasyncclientconnectionmanagerbuilder.md)
   * **Use `PoolingAsyncClientConnectionManagerBuilder` for configuration**
   * Moves method calls that exist on both `PoolingAsyncClientConnectionManager` and `PoolingAsyncClientConnectionManagerBuilder` into the builder chain.
@@ -1497,6 +1686,15 @@ _80 recipes_
 * [org.openrewrite.apache.poi.ReplaceSetCellType](/recipes/apache/poi/replacesetcelltype.md)
   * **Apache POI use `Cell.setCellType(CellType)`**
   * `Cell.setCellType()` can be configured with either an integer or a the `CellType` enumeration. It is clearer and less error-prone to use the `CellType` enumeration, so this recipe converts all `setCellType()` calls to use it.
+* [org.openrewrite.apache.poi.UpgradeApachePoi_3_17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
+  * **Migrates to Apache POI 3.17**
+  * Migrates to the last Apache POI 3.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
+* [org.openrewrite.apache.poi.UpgradeApachePoi_4_1](/recipes/apache/poi/upgradeapachepoi_4_1.md)
+  * **Migrates to Apache POI 4.1.2**
+  * Migrates to the last Apache POI 4.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
+* [org.openrewrite.apache.poi.UpgradeApachePoi_5](/recipes/apache/poi/upgradeapachepoi_5.md)
+  * **Migrates to Apache POI 5.x**
+  * Migrates to the latest Apache POI 5.x release. This recipe modifies build files to account for artifact renames and upgrades dependency versions. It also chains the 4.1 recipe to handle all prior API migrations.
 * [org.openrewrite.codehaus.plexus.AbstractLogEnabledToSlf4j](/recipes/codehaus/plexus/abstractlogenabledtoslf4j.md)
   * **Migrate from Plexus `AbstractLogEnabled` to SLF4J**
   * Introduce a SLF4J `Logger` field and replace calls to `getLogger()` with calls to the field.
@@ -1565,7 +1763,7 @@ _80 recipes_
 
 _License: Moderne Source Available License_
 
-_6 recipes_
+_454 recipes_
 
 * [org.openrewrite.codemods.ApplyCodemod](/recipes/codemods/applycodemod.md)
   * **Applies a codemod to all source files**
@@ -1585,12 +1783,1356 @@ _6 recipes_
 * [org.openrewrite.codemods.UI5](/recipes/codemods/ui5.md)
   * **Lint UI5 projects with UI5 linter**
   * Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings.
+* [org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle](/recipes/codemods/cleanup/javascript/arrowbodystyle.md)
+  * **Require braces around arrow function bodies**
+  * Require braces around arrow function bodies See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style).
+* [org.openrewrite.codemods.cleanup.javascript.BetterRegex](/recipes/codemods/cleanup/javascript/betterregex.md)
+  * **Improve regexes by making them shorter, consistent, and safer**
+  * Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md).
+* [org.openrewrite.codemods.cleanup.javascript.CapitalizedComments](/recipes/codemods/cleanup/javascript/capitalizedcomments.md)
+  * **Enforce or disallow capitalization of the first letter of a comment**
+  * Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments).
+* [org.openrewrite.codemods.cleanup.javascript.CatchErrorName](/recipes/codemods/cleanup/javascript/catcherrorname.md)
+  * **Enforce a specific parameter name in catch clauses**
+  * Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md).
+* [org.openrewrite.codemods.cleanup.javascript.ConsistentDestructuring](/recipes/codemods/cleanup/javascript/consistentdestructuring.md)
+  * **Use destructured variables over properties**
+  * Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md).
+* [org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle](/recipes/codemods/cleanup/javascript/consistenttypespecifierstyle.md)
+  * **Enforce or ban the use of inline type-only markers for named imports**
+  * Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md).
+* [org.openrewrite.codemods.cleanup.javascript.Curly](/recipes/codemods/cleanup/javascript/curly.md)
+  * **Enforce consistent brace style for all control statements**
+  * Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly).
+* [org.openrewrite.codemods.cleanup.javascript.CustomErrorDefinition](/recipes/codemods/cleanup/javascript/customerrordefinition.md)
+  * **Enforce correct `Error` subclassing**
+  * Enforce correct `Error` subclassing. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/custom-error-definition.md).
+* [org.openrewrite.codemods.cleanup.javascript.DotNotation](/recipes/codemods/cleanup/javascript/dotnotation.md)
+  * **Enforce dot notation whenever possible**
+  * Enforce dot notation whenever possible  See [rule details](https://eslint.org/docs/latest/rules/dot-notation).
+* [org.openrewrite.codemods.cleanup.javascript.EmptyBraceSpaces](/recipes/codemods/cleanup/javascript/emptybracespaces.md)
+  * **Enforce no spaces between braces**
+  * Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md).
+* [org.openrewrite.codemods.cleanup.javascript.Eqeqeq](/recipes/codemods/cleanup/javascript/eqeqeq.md)
+  * **Require the use of `===` and `!==`**
+  * Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq).
+* [org.openrewrite.codemods.cleanup.javascript.EscapeCase](/recipes/codemods/cleanup/javascript/escapecase.md)
+  * **Require escape sequences to use uppercase values**
+  * Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md).
+* [org.openrewrite.codemods.cleanup.javascript.ExplicitLengthCheck](/recipes/codemods/cleanup/javascript/explicitlengthcheck.md)
+  * **Enforce explicitly comparing the length or size property of a value**
+  * Enforce explicitly comparing the length or size property of a value. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/explicit-length-check.md).
+* [org.openrewrite.codemods.cleanup.javascript.First](/recipes/codemods/cleanup/javascript/first.md)
+  * **Ensure all imports appear before other statements**
+  * Ensure all imports appear before other statements See rule details for [import/first](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/first.md).
+* [org.openrewrite.codemods.cleanup.javascript.LogicalAssignmentOperators](/recipes/codemods/cleanup/javascript/logicalassignmentoperators.md)
+  * **Require or disallow logical assignment operator shorthand**
+  * Require or disallow logical assignment operator shorthand  See [rule details](https://eslint.org/docs/latest/rules/logical-assignment-operators).
+* [org.openrewrite.codemods.cleanup.javascript.MultilineCommentStyle](/recipes/codemods/cleanup/javascript/multilinecommentstyle.md)
+  * **Enforce a particular style for multiline comments**
+  * Enforce a particular style for multiline comments  See [rule details](https://eslint.org/docs/latest/rules/multiline-comment-style).
+* [org.openrewrite.codemods.cleanup.javascript.NewForBuiltins](/recipes/codemods/cleanup/javascript/newforbuiltins.md)
+  * **Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`**
+  * Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/new-for-builtins.md).
+* [org.openrewrite.codemods.cleanup.javascript.NewlineAfterImport](/recipes/codemods/cleanup/javascript/newlineafterimport.md)
+  * **Enforce a newline after import statements**
+  * Enforce a newline after import statements See rule details for [import/newline-after-import](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/newline-after-import.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoAbsolutePath](/recipes/codemods/cleanup/javascript/noabsolutepath.md)
+  * **Forbid import of modules using absolute paths**
+  * Forbid import of modules using absolute paths See rule details for [import/no-absolute-path](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-absolute-path.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoArrayForEach](/recipes/codemods/cleanup/javascript/noarrayforeach.md)
+  * **Prefer `for…of` over the `forEach` method**
+  * Prefer `for…of` over the `forEach` method. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoArrayMethodThisArgument](/recipes/codemods/cleanup/javascript/noarraymethodthisargument.md)
+  * **Disallow using the `this` argument in array methods**
+  * Disallow using the `this` argument in array methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-method-this-argument.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoArrayPushPush](/recipes/codemods/cleanup/javascript/noarraypushpush.md)
+  * **Enforce combining multiple `Array#push()` into one call**
+  * Enforce combining multiple `Array#push()` into one call. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoAwaitExpressionMember](/recipes/codemods/cleanup/javascript/noawaitexpressionmember.md)
+  * **Disallow member access from `await` expression**
+  * Disallow member access from `await` expression. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoConsoleSpaces](/recipes/codemods/cleanup/javascript/noconsolespaces.md)
+  * **Do not use leading/trailing space between `console.log` parameters**
+  * Do not use leading/trailing space between `console.log` parameters. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-console-spaces.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoDivRegex](/recipes/codemods/cleanup/javascript/nodivregex.md)
+  * **Disallow equal signs explicitly at the beginning of regular expressions**
+  * Disallow equal signs explicitly at the beginning of regular expressions  See [rule details](https://eslint.org/docs/latest/rules/no-div-regex).
+* [org.openrewrite.codemods.cleanup.javascript.NoDuplicates](/recipes/codemods/cleanup/javascript/noduplicates.md)
+  * **Forbid repeated import of the same module in multiple places**
+  * Forbid repeated import of the same module in multiple places See rule details for [import/no-duplicates](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-duplicates.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoElseReturn](/recipes/codemods/cleanup/javascript/noelsereturn.md)
+  * **Disallow else blocks after return statements in if statements**
+  * Disallow else blocks after return statements in if statements  See [rule details](https://eslint.org/docs/latest/rules/no-else-return).
+* [org.openrewrite.codemods.cleanup.javascript.NoEmptyNamedBlocks](/recipes/codemods/cleanup/javascript/noemptynamedblocks.md)
+  * **Forbid empty named import**
+  * Forbid empty named import See rule details for [import/no-empty-named-blocks](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-empty-named-blocks.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoExtraBind](/recipes/codemods/cleanup/javascript/noextrabind.md)
+  * **Disallow unnecessary calls to `.bind()`**
+  * Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind).
+* [org.openrewrite.codemods.cleanup.javascript.NoExtraLabel](/recipes/codemods/cleanup/javascript/noextralabel.md)
+  * **Disallow unnecessary labels**
+  * Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label).
+* [org.openrewrite.codemods.cleanup.javascript.NoForLoop](/recipes/codemods/cleanup/javascript/noforloop.md)
+  * **Do not use a `for` loop that can be replaced with a `for-of` loop**
+  * Do not use a `for` loop that can be replaced with a `for-of` loop. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoHexEscape](/recipes/codemods/cleanup/javascript/nohexescape.md)
+  * **Enforce the use of Unicode escapes instead of hexadecimal escapes**
+  * Enforce the use of Unicode escapes instead of hexadecimal escapes. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-hex-escape.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoImplicitCoercion](/recipes/codemods/cleanup/javascript/noimplicitcoercion.md)
+  * **Disallow shorthand type conversions**
+  * Disallow shorthand type conversions  See [rule details](https://eslint.org/docs/latest/rules/no-implicit-coercion).
+* [org.openrewrite.codemods.cleanup.javascript.NoImportModuleExports](/recipes/codemods/cleanup/javascript/noimportmoduleexports.md)
+  * **Forbid import statements with CommonJS module.exports**
+  * Forbid import statements with CommonJS module.exports See rule details for [import/no-import-module-exports](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-import-module-exports.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoInstanceofArray](/recipes/codemods/cleanup/javascript/noinstanceofarray.md)
+  * **Require `Array.isArray()` instead of `instanceof Array`**
+  * Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoLonelyIf](/recipes/codemods/cleanup/javascript/nolonelyif.md)
+  * **Disallow if statements as the only statement in else blocks**
+  * Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if).
+* [org.openrewrite.codemods.cleanup.javascript.NoNamespace](/recipes/codemods/cleanup/javascript/nonamespace.md)
+  * **Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports**
+  * Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoNegatedCondition](/recipes/codemods/cleanup/javascript/nonegatedcondition.md)
+  * **Disallow negated conditions**
+  * Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoNestedTernary](/recipes/codemods/cleanup/javascript/nonestedternary.md)
+  * **Disallow nested ternary expressions**
+  * Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoNewArray](/recipes/codemods/cleanup/javascript/nonewarray.md)
+  * **Disallow `new Array()`**
+  * Disallow `new Array()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-array.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoNewBuffer](/recipes/codemods/cleanup/javascript/nonewbuffer.md)
+  * **Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`**
+  * Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-buffer.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoNull](/recipes/codemods/cleanup/javascript/nonull.md)
+  * **Disallow the use of the `null` literal**
+  * Disallow the use of the `null` literal. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-null.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoRelativePackages](/recipes/codemods/cleanup/javascript/norelativepackages.md)
+  * **Forbid importing packages through relative paths**
+  * Forbid importing packages through relative paths See rule details for [import/no-relative-packages](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-relative-packages.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoStaticOnlyClass](/recipes/codemods/cleanup/javascript/nostaticonlyclass.md)
+  * **Disallow classes that only have static members**
+  * Disallow classes that only have static members. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-static-only-class.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoTypeofUndefined](/recipes/codemods/cleanup/javascript/notypeofundefined.md)
+  * **Disallow comparing `undefined` using `typeof`**
+  * Disallow comparing `undefined` using `typeof`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-typeof-undefined.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUndefInit](/recipes/codemods/cleanup/javascript/noundefinit.md)
+  * **Disallow initializing variables to undefined**
+  * Disallow initializing variables to undefined  See [rule details](https://eslint.org/docs/latest/rules/no-undef-init).
+* [org.openrewrite.codemods.cleanup.javascript.NoUnnecessaryAwait](/recipes/codemods/cleanup/javascript/nounnecessaryawait.md)
+  * **Disallow awaiting non-promise values**
+  * Disallow awaiting non-promise values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unnecessary-await.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary](/recipes/codemods/cleanup/javascript/nounneededternary.md)
+  * **Disallow ternary operators when simpler alternatives exist**
+  * Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary).
+* [org.openrewrite.codemods.cleanup.javascript.NoUnreadableArrayDestructuring](/recipes/codemods/cleanup/javascript/nounreadablearraydestructuring.md)
+  * **Disallow unreadable array destructuring**
+  * Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessComputedKey](/recipes/codemods/cleanup/javascript/nouselesscomputedkey.md)
+  * **Disallow unnecessary computed property keys in objects and classes**
+  * Disallow unnecessary computed property keys in objects and classes  See [rule details](https://eslint.org/docs/latest/rules/no-useless-computed-key).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessFallbackInSpread](/recipes/codemods/cleanup/javascript/nouselessfallbackinspread.md)
+  * **Disallow useless fallback when spreading in object literals**
+  * Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessLengthCheck](/recipes/codemods/cleanup/javascript/nouselesslengthcheck.md)
+  * **Disallow useless array `length` check**
+  * Disallow useless array `length` check. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments](/recipes/codemods/cleanup/javascript/nouselesspathsegments.md)
+  * **Forbid unnecessary path segments in import and require statements**
+  * Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessPromiseResolveReject](/recipes/codemods/cleanup/javascript/nouselesspromiseresolvereject.md)
+  * **Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks**
+  * Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-promise-resolve-reject.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessRename](/recipes/codemods/cleanup/javascript/nouselessrename.md)
+  * **Disallow renaming import, export, and destructured assignments to the same name**
+  * Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessReturn](/recipes/codemods/cleanup/javascript/nouselessreturn.md)
+  * **Disallow redundant return statements**
+  * Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessSpread](/recipes/codemods/cleanup/javascript/nouselessspread.md)
+  * **Disallow unnecessary spread**
+  * Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoUselessUndefined](/recipes/codemods/cleanup/javascript/nouselessundefined.md)
+  * **Disallow useless `undefined`**
+  * Disallow useless `undefined`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md).
+* [org.openrewrite.codemods.cleanup.javascript.NoVar](/recipes/codemods/cleanup/javascript/novar.md)
+  * **Require `let` or `const` instead of `var`**
+  * Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var).
+* [org.openrewrite.codemods.cleanup.javascript.NoZeroFractions](/recipes/codemods/cleanup/javascript/nozerofractions.md)
+  * **Disallow number literals with zero fractions or dangling dots**
+  * Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md).
+* [org.openrewrite.codemods.cleanup.javascript.NumberLiteralCase](/recipes/codemods/cleanup/javascript/numberliteralcase.md)
+  * **Enforce proper case for numeric literals**
+  * Enforce proper case for numeric literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md).
+* [org.openrewrite.codemods.cleanup.javascript.NumericSeparatorsStyle](/recipes/codemods/cleanup/javascript/numericseparatorsstyle.md)
+  * **Enforce the style of numeric separators by correctly grouping digits**
+  * Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md).
+* [org.openrewrite.codemods.cleanup.javascript.ObjectShorthand](/recipes/codemods/cleanup/javascript/objectshorthand.md)
+  * **Require or disallow method and property shorthand syntax for object literals**
+  * Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand).
+* [org.openrewrite.codemods.cleanup.javascript.OneVar](/recipes/codemods/cleanup/javascript/onevar.md)
+  * **Enforce variables to be declared either together or separately in functions**
+  * Enforce variables to be declared either together or separately in functions  See [rule details](https://eslint.org/docs/latest/rules/one-var).
+* [org.openrewrite.codemods.cleanup.javascript.OperatorAssignment](/recipes/codemods/cleanup/javascript/operatorassignment.md)
+  * **Require or disallow assignment operator shorthand where possible**
+  * Require or disallow assignment operator shorthand where possible  See [rule details](https://eslint.org/docs/latest/rules/operator-assignment).
+* [org.openrewrite.codemods.cleanup.javascript.Order](/recipes/codemods/cleanup/javascript/order.md)
+  * **Enforce a convention in module import order**
+  * Enforce a convention in module import order See rule details for [import/order](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/order.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferAddEventListener](/recipes/codemods/cleanup/javascript/preferaddeventlistener.md)
+  * **Prefer `.addEventListener()` and `.removeEventListener()` over on-functions**
+  * Prefer `.addEventListener()` and `.removeEventListener()` over on-functions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-add-event-listener.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFind](/recipes/codemods/cleanup/javascript/preferarrayfind.md)
+  * **Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`**
+  * Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlat](/recipes/codemods/cleanup/javascript/preferarrayflat.md)
+  * **Prefer `Array#flat()` over legacy techniques to flatten arrays**
+  * Prefer `Array#flat()` over legacy techniques to flatten arrays. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlatMap](/recipes/codemods/cleanup/javascript/preferarrayflatmap.md)
+  * **Prefer `.flatMap()` over `.map().flat()`**
+  * Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrayIndexOf](/recipes/codemods/cleanup/javascript/preferarrayindexof.md)
+  * **Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item**
+  * Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-index-of.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferArraySome](/recipes/codemods/cleanup/javascript/preferarraysome.md)
+  * **Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`**
+  * Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback](/recipes/codemods/cleanup/javascript/preferarrowcallback.md)
+  * **Require using arrow functions for callbacks**
+  * Require using arrow functions for callbacks  See [rule details](https://eslint.org/docs/latest/rules/prefer-arrow-callback).
+* [org.openrewrite.codemods.cleanup.javascript.PreferAt](/recipes/codemods/cleanup/javascript/preferat.md)
+  * **Prefer `.at()` method for index access and `String#charAt()`**
+  * Prefer `.at()` method for index access and `String#charAt()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferConst](/recipes/codemods/cleanup/javascript/preferconst.md)
+  * **Require const declarations for variables that are never reassigned after declared**
+  * Require const declarations for variables that are never reassigned after declared  See [rule details](https://eslint.org/docs/latest/rules/prefer-const).
+* [org.openrewrite.codemods.cleanup.javascript.PreferDateNow](/recipes/codemods/cleanup/javascript/preferdatenow.md)
+  * **Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch**
+  * Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferDefaultParameters](/recipes/codemods/cleanup/javascript/preferdefaultparameters.md)
+  * **Prefer default parameters over reassignment**
+  * Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferDestructuring](/recipes/codemods/cleanup/javascript/preferdestructuring.md)
+  * **Require destructuring from arrays and/or objects**
+  * Require destructuring from arrays and/or objects  See [rule details](https://eslint.org/docs/latest/rules/prefer-destructuring).
+* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeAppend](/recipes/codemods/cleanup/javascript/preferdomnodeappend.md)
+  * **Prefer `Node#append()` over `Node#appendChild()`**
+  * Prefer `Node#append()` over `Node#appendChild()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-append.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeDataset](/recipes/codemods/cleanup/javascript/preferdomnodedataset.md)
+  * **Prefer using `.dataset` on DOM elements over calling attribute methods**
+  * Prefer using `.dataset` on DOM elements over calling attribute methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-dataset.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeRemove](/recipes/codemods/cleanup/javascript/preferdomnoderemove.md)
+  * **Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`**
+  * Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-remove.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferExponentiationOperator](/recipes/codemods/cleanup/javascript/preferexponentiationoperator.md)
+  * **Disallow the use of `Math.pow` in favor of the ** operator**
+  * Disallow the use of `Math.pow` in favor of the ** operator  See [rule details](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator).
+* [org.openrewrite.codemods.cleanup.javascript.PreferExportFrom](/recipes/codemods/cleanup/javascript/preferexportfrom.md)
+  * **Prefer `export…from` when re-exporting**
+  * Prefer `export…from` when re-exporting. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-export-from.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferIncludes](/recipes/codemods/cleanup/javascript/preferincludes.md)
+  * **Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence**
+  * Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-includes.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferJsonParseBuffer](/recipes/codemods/cleanup/javascript/preferjsonparsebuffer.md)
+  * **Prefer reading a JSON file as a buffer**
+  * Prefer reading a JSON file as a buffer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferKeyboardEventKey](/recipes/codemods/cleanup/javascript/preferkeyboardeventkey.md)
+  * **Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`**
+  * Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferMathTrunc](/recipes/codemods/cleanup/javascript/prefermathtrunc.md)
+  * **Enforce the use of `Math.trunc()` instead of bitwise operators**
+  * Enforce the use of `Math.trunc()` instead of bitwise operators. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-math-trunc.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferModernDomApis](/recipes/codemods/cleanup/javascript/prefermoderndomapis.md)
+  * **Prefer `.before()` over `.insertBefore()`, `.replaceWith()` over `.replaceChild()`, prefer one of `.before()`, `.after()`, `.append()` or `.prepend()` over `insertAdjacentText()` and `insertAdjacentElement()`**
+  * Prefer `.before()` over `.insertBefore()`, `.replaceWith()` over `.replaceChild()`, prefer one of `.before()`, `.after()`, `.append()` or `.prepend()` over `insertAdjacentText()` and `insertAdjacentElement()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-dom-apis.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferModernMathApis](/recipes/codemods/cleanup/javascript/prefermodernmathapis.md)
+  * **Prefer modern Math APIs over legacy patterns**
+  * Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferModule](/recipes/codemods/cleanup/javascript/prefermodule.md)
+  * **Prefer JavaScript modules (ESM) over CommonJS**
+  * Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferNativeCoercionFunctions](/recipes/codemods/cleanup/javascript/prefernativecoercionfunctions.md)
+  * **Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly**
+  * Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-native-coercion-functions.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferNegativeIndex](/recipes/codemods/cleanup/javascript/prefernegativeindex.md)
+  * **Prefer negative index over `.length - index` when possible**
+  * Prefer negative index over `.length - index` when possible. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-negative-index.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferNodeProtocol](/recipes/codemods/cleanup/javascript/prefernodeprotocol.md)
+  * **Prefer using the `node:` protocol when importing Node.js builtin modules**
+  * Prefer using the `node:` protocol when importing Node.js builtin modules. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferNumberProperties](/recipes/codemods/cleanup/javascript/prefernumberproperties.md)
+  * **Prefer `Number` static properties over global ones**
+  * Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals](/recipes/codemods/cleanup/javascript/prefernumericliterals.md)
+  * **Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals**
+  * Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals).
+* [org.openrewrite.codemods.cleanup.javascript.PreferObjectFromEntries](/recipes/codemods/cleanup/javascript/preferobjectfromentries.md)
+  * **Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object**
+  * Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn](/recipes/codemods/cleanup/javascript/preferobjecthasown.md)
+  * **Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)**
+  * Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own).
+* [org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread](/recipes/codemods/cleanup/javascript/preferobjectspread.md)
+  * **Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead**
+  * Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread).
+* [org.openrewrite.codemods.cleanup.javascript.PreferOptionalCatchBinding](/recipes/codemods/cleanup/javascript/preferoptionalcatchbinding.md)
+  * **Prefer omitting the catch binding parameter**
+  * Prefer omitting the catch binding parameter. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferPrototypeMethods](/recipes/codemods/cleanup/javascript/preferprototypemethods.md)
+  * **Prefer borrowing methods from the prototype instead of the instance**
+  * Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferQuerySelector](/recipes/codemods/cleanup/javascript/preferqueryselector.md)
+  * **Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`**
+  * Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-query-selector.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferReflectApply](/recipes/codemods/cleanup/javascript/preferreflectapply.md)
+  * **Prefer `Reflect.apply()` over `Function#apply()`**
+  * Prefer `Reflect.apply()` over `Function#apply()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-reflect-apply.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferRegexpTest](/recipes/codemods/cleanup/javascript/preferregexptest.md)
+  * **Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`**
+  * Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferSetHas](/recipes/codemods/cleanup/javascript/prefersethas.md)
+  * **Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence**
+  * Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferSetSize](/recipes/codemods/cleanup/javascript/prefersetsize.md)
+  * **Prefer using `Set#size` instead of `Array#length`**
+  * Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferSpread](/recipes/codemods/cleanup/javascript/preferspread.md)
+  * **Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`**
+  * Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll](/recipes/codemods/cleanup/javascript/preferstringreplaceall.md)
+  * **Prefer `String#replaceAll()` over regex searches with the global flag**
+  * Prefer `String#replaceAll()` over regex searches with the global flag. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringSlice](/recipes/codemods/cleanup/javascript/preferstringslice.md)
+  * **Prefer `String#slice()` over `String#substr()` and `String#substring()`**
+  * Prefer `String#slice()` over `String#substr()` and `String#substring()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-slice.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringStartsEndsWith](/recipes/codemods/cleanup/javascript/preferstringstartsendswith.md)
+  * **Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`**
+  * Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferStringTrimStartEnd](/recipes/codemods/cleanup/javascript/preferstringtrimstartend.md)
+  * **Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`**
+  * Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-trim-start-end.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferSwitch](/recipes/codemods/cleanup/javascript/preferswitch.md)
+  * **Prefer `switch` over multiple `else-if`**
+  * Prefer `switch` over multiple `else-if`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferTemplate](/recipes/codemods/cleanup/javascript/prefertemplate.md)
+  * **Require template literals instead of string concatenation**
+  * Require template literals instead of string concatenation  See [rule details](https://eslint.org/docs/latest/rules/prefer-template).
+* [org.openrewrite.codemods.cleanup.javascript.PreferTernary](/recipes/codemods/cleanup/javascript/preferternary.md)
+  * **Prefer ternary expressions over simple `if-else` statements**
+  * Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreferTypeError](/recipes/codemods/cleanup/javascript/prefertypeerror.md)
+  * **Enforce throwing `TypeError` in type checking conditions**
+  * Enforce throwing `TypeError` in type checking conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md).
+* [org.openrewrite.codemods.cleanup.javascript.PreventAbbreviations](/recipes/codemods/cleanup/javascript/preventabbreviations.md)
+  * **Prevent abbreviations**
+  * Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md).
+* [org.openrewrite.codemods.cleanup.javascript.RelativeUrlStyle](/recipes/codemods/cleanup/javascript/relativeurlstyle.md)
+  * **Enforce consistent relative URL style**
+  * Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md).
+* [org.openrewrite.codemods.cleanup.javascript.RequireArrayJoinSeparator](/recipes/codemods/cleanup/javascript/requirearrayjoinseparator.md)
+  * **Enforce using the separator argument with `Array#join()`**
+  * Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md).
+* [org.openrewrite.codemods.cleanup.javascript.RequireNumberToFixedDigitsArgument](/recipes/codemods/cleanup/javascript/requirenumbertofixeddigitsargument.md)
+  * **Enforce using the digits argument with `Number#toFixed()`**
+  * Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md).
+* [org.openrewrite.codemods.cleanup.javascript.SortImports](/recipes/codemods/cleanup/javascript/sortimports.md)
+  * **Enforce sorted import declarations within modules**
+  * Enforce sorted import declarations within modules  See [rule details](https://eslint.org/docs/latest/rules/sort-imports).
+* [org.openrewrite.codemods.cleanup.javascript.SortVars](/recipes/codemods/cleanup/javascript/sortvars.md)
+  * **Require variables within the same declaration block to be sorted**
+  * Require variables within the same declaration block to be sorted  See [rule details](https://eslint.org/docs/latest/rules/sort-vars).
+* [org.openrewrite.codemods.cleanup.javascript.Strict](/recipes/codemods/cleanup/javascript/strict.md)
+  * **Require or disallow strict mode directives**
+  * Require or disallow strict mode directives  See [rule details](https://eslint.org/docs/latest/rules/strict).
+* [org.openrewrite.codemods.cleanup.javascript.StringContent](/recipes/codemods/cleanup/javascript/stringcontent.md)
+  * **Enforce better string content**
+  * Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md).
+* [org.openrewrite.codemods.cleanup.javascript.SwitchCaseBraces](/recipes/codemods/cleanup/javascript/switchcasebraces.md)
+  * **Enforce consistent brace style for case clauses**
+  * Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md).
+* [org.openrewrite.codemods.cleanup.javascript.TemplateIndent](/recipes/codemods/cleanup/javascript/templateindent.md)
+  * **Fix whitespace-insensitive template indentation**
+  * Fix whitespace-insensitive template indentation. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md).
+* [org.openrewrite.codemods.cleanup.javascript.TextEncodingIdentifierCase](/recipes/codemods/cleanup/javascript/textencodingidentifiercase.md)
+  * **Enforce consistent case for text encoding identifiers**
+  * Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md).
+* [org.openrewrite.codemods.cleanup.javascript.ThrowNewError](/recipes/codemods/cleanup/javascript/thrownewerror.md)
+  * **Require `new` when throwing an error**
+  * Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md).
+* [org.openrewrite.codemods.cleanup.javascript.UnicodeBom](/recipes/codemods/cleanup/javascript/unicodebom.md)
+  * **Require or disallow Unicode byte order mark (BOM)**
+  * Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom).
+* [org.openrewrite.codemods.cleanup.javascript.Yoda](/recipes/codemods/cleanup/javascript/yoda.md)
+  * **Require or disallow &quot;Yoda&quot; conditions**
+  * Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda).
+* [org.openrewrite.codemods.cleanup.jest.ConsistentTestIt](/recipes/codemods/cleanup/jest/consistenttestit.md)
+  * **Enforce test and it usage conventions**
+  * Enforce test and it usage conventions See rule details for [jest/consistent-test-it](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/consistent-test-it.md).
+* [org.openrewrite.codemods.cleanup.jest.NoAliasMethods](/recipes/codemods/cleanup/jest/noaliasmethods.md)
+  * **Disallow alias methods**
+  * Disallow alias methods See rule details for [jest/no-alias-methods](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-alias-methods.md).
+* [org.openrewrite.codemods.cleanup.jest.NoDeprecatedFunctions27](/recipes/codemods/cleanup/jest/nodeprecatedfunctions27.md)
+  * **Disallow use of deprecated functions from before version 27**
+  * Disallow use of deprecated functions from before version 27 See rule details for [jest/no-deprecated-functions](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-deprecated-functions.md).
+* [org.openrewrite.codemods.cleanup.jest.NoJasmineGlobals](/recipes/codemods/cleanup/jest/nojasmineglobals.md)
+  * **Disallow Jasmine globals**
+  * Disallow Jasmine globals See rule details for [jest/no-jasmine-globals](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-jasmine-globals.md).
+* [org.openrewrite.codemods.cleanup.jest.NoTestPrefixes](/recipes/codemods/cleanup/jest/notestprefixes.md)
+  * **Require using .only and .skip over f and x**
+  * Require using .only and .skip over f and x See rule details for [jest/no-test-prefixes](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-prefixes.md).
+* [org.openrewrite.codemods.cleanup.jest.NoUntypedMockFactory](/recipes/codemods/cleanup/jest/nountypedmockfactory.md)
+  * **Disallow using jest.mock() factories without an explicit type parameter**
+  * Disallow using jest.mock() factories without an explicit type parameter See rule details for [jest/no-untyped-mock-factory](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-untyped-mock-factory.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferComparisonMatcher](/recipes/codemods/cleanup/jest/prefercomparisonmatcher.md)
+  * **Suggest using the built-in comparison matchers**
+  * Suggest using the built-in comparison matchers See rule details for [jest/prefer-comparison-matcher](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-comparison-matcher.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferExpectResolves](/recipes/codemods/cleanup/jest/preferexpectresolves.md)
+  * **Prefer await expect(...).resolves over expect(await ...) syntax**
+  * Prefer await expect(...).resolves over expect(await ...) syntax See rule details for [jest/prefer-expect-resolves](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-expect-resolves.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferLowercaseTitle](/recipes/codemods/cleanup/jest/preferlowercasetitle.md)
+  * **Enforce lowercase test names**
+  * Enforce lowercase test names See rule details for [jest/prefer-lowercase-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-lowercase-title.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferMockPromiseShorthand](/recipes/codemods/cleanup/jest/prefermockpromiseshorthand.md)
+  * **Prefer mock resolved/rejected shorthands for promises**
+  * Prefer mock resolved/rejected shorthands for promises See rule details for [jest/prefer-mock-promise-shorthand](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-mock-promise-shorthand.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferSpyOn](/recipes/codemods/cleanup/jest/preferspyon.md)
+  * **Suggest using jest.spyOn()**
+  * Suggest using jest.spyOn() See rule details for [jest/prefer-spy-on](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferToBe](/recipes/codemods/cleanup/jest/prefertobe.md)
+  * **Suggest using toBe() for primitive literals**
+  * Suggest using toBe() for primitive literals See rule details for [jest/prefer-to-be](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-be.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferToContain](/recipes/codemods/cleanup/jest/prefertocontain.md)
+  * **Suggest using toContain()**
+  * Suggest using toContain() See rule details for [jest/prefer-to-contain](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-contain.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferToHaveLength](/recipes/codemods/cleanup/jest/prefertohavelength.md)
+  * **Suggest using toHaveLength()**
+  * Suggest using toHaveLength() See rule details for [jest/prefer-to-have-length](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-have-length.md).
+* [org.openrewrite.codemods.cleanup.jest.PreferTodo](/recipes/codemods/cleanup/jest/prefertodo.md)
+  * **Suggest using test.todo**
+  * Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md).
+* [org.openrewrite.codemods.cleanup.jest.RecommendedJestCodeCleanup](/recipes/codemods/cleanup/jest/recommendedjestcodecleanup.md)
+  * **Recommended Jest code cleanup**
+  * Collection of cleanup ESLint rules that are recommended by [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest).
+* [org.openrewrite.codemods.cleanup.jest.ValidTitle](/recipes/codemods/cleanup/jest/validtitle.md)
+  * **Enforce valid titles**
+  * Enforce valid titles See rule details for [jest/valid-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/valid-title.md).
+* [org.openrewrite.codemods.cleanup.react.DestructuringAssignment](/recipes/codemods/cleanup/react/destructuringassignment.md)
+  * **Enforce consistent usage of destructuring assignment of props, state, and context**
+  * Enforce consistent usage of destructuring assignment of props, state, and context See rule details for [react/destructuring-assignment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/destructuring-assignment.md).
+* [org.openrewrite.codemods.cleanup.react.FunctionComponentDefinition](/recipes/codemods/cleanup/react/functioncomponentdefinition.md)
+  * **Enforce a specific function type for function components**
+  * Enforce a specific function type for function components See rule details for [react/function-component-definition](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/function-component-definition.md).
+* [org.openrewrite.codemods.cleanup.react.JsxBooleanValue](/recipes/codemods/cleanup/react/jsxbooleanvalue.md)
+  * **Enforce boolean attributes notation in JSX**
+  * Enforce boolean attributes notation in JSX See rule details for [react/jsx-boolean-value](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-boolean-value.md).
+* [org.openrewrite.codemods.cleanup.react.JsxClosingBracketLocation](/recipes/codemods/cleanup/react/jsxclosingbracketlocation.md)
+  * **Enforce closing bracket location in JSX**
+  * Enforce closing bracket location in JSX See rule details for [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-bracket-location.md).
+* [org.openrewrite.codemods.cleanup.react.JsxClosingTagLocation](/recipes/codemods/cleanup/react/jsxclosingtaglocation.md)
+  * **Enforce closing tag location for multiline JSX**
+  * Enforce closing tag location for multiline JSX See rule details for [react/jsx-closing-tag-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-tag-location.md).
+* [org.openrewrite.codemods.cleanup.react.JsxCurlyBracePresence](/recipes/codemods/cleanup/react/jsxcurlybracepresence.md)
+  * **Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes**
+  * Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes See rule details for [react/jsx-curly-brace-presence](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-brace-presence.md).
+* [org.openrewrite.codemods.cleanup.react.JsxCurlyNewline](/recipes/codemods/cleanup/react/jsxcurlynewline.md)
+  * **Enforce consistent linebreaks in curly braces in JSX attributes and expressions**
+  * Enforce consistent linebreaks in curly braces in JSX attributes and expressions See rule details for [react/jsx-curly-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-newline.md).
+* [org.openrewrite.codemods.cleanup.react.JsxCurlySpacing](/recipes/codemods/cleanup/react/jsxcurlyspacing.md)
+  * **Enforce or disallow spaces inside of curly braces in JSX attributes and expressions**
+  * Enforce or disallow spaces inside of curly braces in JSX attributes and expressions See rule details for [react/jsx-curly-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-spacing.md).
+* [org.openrewrite.codemods.cleanup.react.JsxEqualsSpacing](/recipes/codemods/cleanup/react/jsxequalsspacing.md)
+  * **Enforce or disallow spaces around equal signs in JSX attributes**
+  * Enforce or disallow spaces around equal signs in JSX attributes See rule details for [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-equals-spacing.md).
+* [org.openrewrite.codemods.cleanup.react.JsxFirstPropNewLine](/recipes/codemods/cleanup/react/jsxfirstpropnewline.md)
+  * **Enforce proper position of the first property in JSX**
+  * Enforce proper position of the first property in JSX See rule details for [react/jsx-first-prop-new-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-first-prop-new-line.md).
+* [org.openrewrite.codemods.cleanup.react.JsxFragments](/recipes/codemods/cleanup/react/jsxfragments.md)
+  * **Enforce shorthand or standard form for React fragments**
+  * Enforce shorthand or standard form for React fragments See rule details for [react/jsx-fragments](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-fragments.md).
+* [org.openrewrite.codemods.cleanup.react.JsxIndent](/recipes/codemods/cleanup/react/jsxindent.md)
+  * **Enforce JSX indentation**
+  * Enforce JSX indentation See rule details for [react/jsx-indent](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent.md).
+* [org.openrewrite.codemods.cleanup.react.JsxIndentProps](/recipes/codemods/cleanup/react/jsxindentprops.md)
+  * **Enforce props indentation in JSX**
+  * Enforce props indentation in JSX See rule details for [react/jsx-indent-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent-props.md).
+* [org.openrewrite.codemods.cleanup.react.JsxMaxPropsPerLine](/recipes/codemods/cleanup/react/jsxmaxpropsperline.md)
+  * **Enforce maximum of props on a single line in JSX**
+  * Enforce maximum of props on a single line in JSX See rule details for [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-max-props-per-line.md).
+* [org.openrewrite.codemods.cleanup.react.JsxNewline](/recipes/codemods/cleanup/react/jsxnewline.md)
+  * **Require or prevent a new line after jsx elements and expressions**
+  * Require or prevent a new line after jsx elements and expressions See rule details for [react/jsx-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-newline.md).
+* [org.openrewrite.codemods.cleanup.react.JsxNoLeakedRender](/recipes/codemods/cleanup/react/jsxnoleakedrender.md)
+  * **Disallow problematic leaked values from being rendered**
+  * Disallow problematic leaked values from being rendered See rule details for [react/jsx-no-leaked-render](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-leaked-render.md).
+* [org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank](/recipes/codemods/cleanup/react/jsxnotargetblank.md)
+  * **Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;**
+  * Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot; See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md).
+* [org.openrewrite.codemods.cleanup.react.JsxNoUselessFragment](/recipes/codemods/cleanup/react/jsxnouselessfragment.md)
+  * **Disallow unnecessary fragments**
+  * Disallow unnecessary fragments See rule details for [react/jsx-no-useless-fragment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-useless-fragment.md).
+* [org.openrewrite.codemods.cleanup.react.JsxOneExpressionPerLine](/recipes/codemods/cleanup/react/jsxoneexpressionperline.md)
+  * **Require one JSX element per line**
+  * Require one JSX element per line See rule details for [react/jsx-one-expression-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-one-expression-per-line.md).
+* [org.openrewrite.codemods.cleanup.react.JsxPropsNoMultiSpaces](/recipes/codemods/cleanup/react/jsxpropsnomultispaces.md)
+  * **Disallow multiple spaces between inline JSX props**
+  * Disallow multiple spaces between inline JSX props See rule details for [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-props-no-multi-spaces.md).
+* [org.openrewrite.codemods.cleanup.react.JsxSortProps](/recipes/codemods/cleanup/react/jsxsortprops.md)
+  * **Enforce props alphabetical sorting**
+  * Enforce props alphabetical sorting See rule details for [react/jsx-sort-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-sort-props.md).
+* [org.openrewrite.codemods.cleanup.react.JsxSpaceBeforeClosing](/recipes/codemods/cleanup/react/jsxspacebeforeclosing.md)
+  * **Enforce spacing before closing bracket in JSX**
+  * Enforce spacing before closing bracket in JSX See rule details for [react/jsx-space-before-closing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-space-before-closing.md).
+* [org.openrewrite.codemods.cleanup.react.JsxTagSpacing](/recipes/codemods/cleanup/react/jsxtagspacing.md)
+  * **Enforce whitespace in and around the JSX opening and closing brackets**
+  * Enforce whitespace in and around the JSX opening and closing brackets See rule details for [react/jsx-tag-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-tag-spacing.md).
+* [org.openrewrite.codemods.cleanup.react.JsxWrapMultilines](/recipes/codemods/cleanup/react/jsxwrapmultilines.md)
+  * **Disallow missing parentheses around multiline JSX**
+  * Disallow missing parentheses around multiline JSX See rule details for [react/jsx-wrap-multilines](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-wrap-multilines.md).
+* [org.openrewrite.codemods.cleanup.react.NoArrowFunctionLifecycle](/recipes/codemods/cleanup/react/noarrowfunctionlifecycle.md)
+  * **Lifecycle methods should be methods on the prototype, not class fields**
+  * Lifecycle methods should be methods on the prototype, not class fields See rule details for [react/no-arrow-function-lifecycle](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-arrow-function-lifecycle.md).
+* [org.openrewrite.codemods.cleanup.react.NoUnknownProperty](/recipes/codemods/cleanup/react/nounknownproperty.md)
+  * **Disallow usage of unknown DOM property**
+  * Disallow usage of unknown DOM property See rule details for [react/no-unknown-property](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-unknown-property.md).
+* [org.openrewrite.codemods.cleanup.react.PreferReadOnlyProps](/recipes/codemods/cleanup/react/preferreadonlyprops.md)
+  * **Enforce that props are read-only**
+  * Enforce that props are read-only See rule details for [react/prefer-read-only-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/prefer-read-only-props.md).
+* [org.openrewrite.codemods.cleanup.react.SelfClosingComp](/recipes/codemods/cleanup/react/selfclosingcomp.md)
+  * **Disallow extra closing tags for components without children**
+  * Disallow extra closing tags for components without children See rule details for [react/self-closing-comp](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/self-closing-comp.md).
+* [org.openrewrite.codemods.cleanup.react.SortPropTypes](/recipes/codemods/cleanup/react/sortproptypes.md)
+  * **Enforce propTypes declarations alphabetical sorting**
+  * Enforce propTypes declarations alphabetical sorting See rule details for [react/sort-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/sort-prop-types.md).
+* [org.openrewrite.codemods.cleanup.storybook.AwaitInteractions](/recipes/codemods/cleanup/storybook/awaitinteractions.md)
+  * **Interactions should be awaited**
+  * Interactions should be awaited See rule details for [storybook/await-interactions](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md).
+* [org.openrewrite.codemods.cleanup.storybook.DefaultExports](/recipes/codemods/cleanup/storybook/defaultexports.md)
+  * **Story files should have a default export**
+  * Story files should have a default export See rule details for [storybook/default-exports](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md).
+* [org.openrewrite.codemods.cleanup.storybook.HierarchySeparator](/recipes/codemods/cleanup/storybook/hierarchyseparator.md)
+  * **Deprecated hierarchy separator in title property**
+  * Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md).
+* [org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName](/recipes/codemods/cleanup/storybook/noredundantstoryname.md)
+  * **A story should not have a redundant name property**
+  * A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md).
+* [org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta](/recipes/codemods/cleanup/storybook/notitlepropertyinmeta.md)
+  * **Do not define a title in meta**
+  * Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md).
+* [org.openrewrite.codemods.cleanup.storybook.PreferPascalCase](/recipes/codemods/cleanup/storybook/preferpascalcase.md)
+  * **Stories should use PascalCase**
+  * Stories should use PascalCase See rule details for [storybook/prefer-pascal-case](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md).
+* [org.openrewrite.codemods.cleanup.storybook.RecommendedStorybookCodeCleanup](/recipes/codemods/cleanup/storybook/recommendedstorybookcodecleanup.md)
+  * **Recommended Storybook code cleanup**
+  * Collection of cleanup ESLint rules from [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme).
+* [org.openrewrite.codemods.cleanup.storybook.UseStorybookExpect](/recipes/codemods/cleanup/storybook/usestorybookexpect.md)
+  * **Use expect from @storybook/jest**
+  * Use expect from @storybook/jest See rule details for [storybook/use-storybook-expect](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-expect.md).
+* [org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary](/recipes/codemods/cleanup/storybook/usestorybooktestinglibrary.md)
+  * **Do not use testing-library directly on stories**
+  * Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md).
+* [org.openrewrite.codemods.cleanup.svelte.FirstAttributeLinebreak](/recipes/codemods/cleanup/svelte/firstattributelinebreak.md)
+  * **Enforce the location of first attribute**
+  * Enforce the location of first attribute See rule details for [svelte/first-attribute-linebreak](https://sveltejs.github.io/eslint-plugin-svelte/rules/first-attribute-linebreak/).
+* [org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
+  * **Require or disallow a space before tag's closing brackets**
+  * Require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/).
+* [org.openrewrite.codemods.cleanup.svelte.HtmlQuotes](/recipes/codemods/cleanup/svelte/htmlquotes.md)
+  * **Enforce quotes style of HTML attributes**
+  * Enforce quotes style of HTML attributes See rule details for [svelte/html-quotes](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-quotes/).
+* [org.openrewrite.codemods.cleanup.svelte.HtmlSelfClosing](/recipes/codemods/cleanup/svelte/htmlselfclosing.md)
+  * **Enforce self-closing style**
+  * Enforce self-closing style See rule details for [svelte/html-self-closing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-self-closing/).
+* [org.openrewrite.codemods.cleanup.svelte.Indent](/recipes/codemods/cleanup/svelte/indent.md)
+  * **Enforce consistent indentation**
+  * Enforce consistent indentation See rule details for [svelte/indent](https://sveltejs.github.io/eslint-plugin-svelte/rules/indent/).
+* [org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine](/recipes/codemods/cleanup/svelte/maxattributesperline.md)
+  * **Enforce the maximum number of attributes per line**
+  * Enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/).
+* [org.openrewrite.codemods.cleanup.svelte.MustacheSpacing](/recipes/codemods/cleanup/svelte/mustachespacing.md)
+  * **Enforce unified spacing in mustache**
+  * Enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/).
+* [org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName](/recipes/codemods/cleanup/svelte/nodynamicslotname.md)
+  * **Disallow dynamic slot name**
+  * Disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/).
+* [org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute](/recipes/codemods/cleanup/svelte/nospacesaroundequalsignsinattribute.md)
+  * **Disallow spaces around equal signs in attribute**
+  * Disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/).
+* [org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches](/recipes/codemods/cleanup/svelte/nouselessmustaches.md)
+  * **Disallow unnecessary mustache interpolations**
+  * Disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/).
+* [org.openrewrite.codemods.cleanup.svelte.PreferClassDirective](/recipes/codemods/cleanup/svelte/preferclassdirective.md)
+  * **Require class directives instead of ternary expressions**
+  * Require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/).
+* [org.openrewrite.codemods.cleanup.svelte.PreferStyleDirective](/recipes/codemods/cleanup/svelte/preferstyledirective.md)
+  * **Require style directives instead of style attribute**
+  * Require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/).
+* [org.openrewrite.codemods.cleanup.svelte.RecommendedsvelteCodeCleanup](/recipes/codemods/cleanup/svelte/recommendedsveltecodecleanup.md)
+  * **Recommended svelte code cleanup**
+  * Collection of cleanup ESLint rules from [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte).
+* [org.openrewrite.codemods.cleanup.svelte.RequireStoreReactiveAccess](/recipes/codemods/cleanup/svelte/requirestorereactiveaccess.md)
+  * **Disallow to use of the store itself as an operand. Need to use $ prefix or get function**
+  * Disallow to use of the store itself as an operand. Need to use $ prefix or get function. See rule details for [svelte/require-store-reactive-access](https://sveltejs.github.io/eslint-plugin-svelte/rules/require-store-reactive-access/).
+* [org.openrewrite.codemods.cleanup.svelte.ShorthandAttribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md)
+  * **Enforce use of shorthand syntax in attribute**
+  * Enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/).
+* [org.openrewrite.codemods.cleanup.svelte.ShorthandDirective](/recipes/codemods/cleanup/svelte/shorthanddirective.md)
+  * **Enforce use of shorthand syntax in directives**
+  * Enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/).
+* [org.openrewrite.codemods.cleanup.svelte.SortAttributes](/recipes/codemods/cleanup/svelte/sortattributes.md)
+  * **Enforce order of attributes**
+  * Enforce order of attributes See rule details for [svelte/sort-attributes](https://sveltejs.github.io/eslint-plugin-svelte/rules/sort-attributes/).
+* [org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment](/recipes/codemods/cleanup/svelte/spacedhtmlcomment.md)
+  * **Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment**
+  * Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/).
+* [org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline](/recipes/codemods/cleanup/vue/arraybracketnewline.md)
+  * **Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`**
+  * Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html).
+* [org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing](/recipes/codemods/cleanup/vue/arraybracketspacing.md)
+  * **Enforce consistent spacing inside array brackets in `&lt;template&gt;`**
+  * Enforce consistent spacing inside array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.ArrayElementNewline](/recipes/codemods/cleanup/vue/arrayelementnewline.md)
+  * **Enforce line breaks after each array element in `&lt;template&gt;`**
+  * Enforce line breaks after each array element in `&lt;template&gt;` See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html).
+* [org.openrewrite.codemods.cleanup.vue.ArrowSpacing](/recipes/codemods/cleanup/vue/arrowspacing.md)
+  * **Enforce consistent spacing before and after the arrow in arrow functions in `&lt;template&gt;`**
+  * Enforce consistent spacing before and after the arrow in arrow functions in `&lt;template&gt;` See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.AttributesOrder](/recipes/codemods/cleanup/vue/attributesorder.md)
+  * **Enforce order of attributes**
+  * Enforce order of attributes See rule details for [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order.html).
+* [org.openrewrite.codemods.cleanup.vue.BlockOrder](/recipes/codemods/cleanup/vue/blockorder.md)
+  * **Enforce order of component top-level elements**
+  * Enforce order of component top-level elements See rule details for [vue/block-order](https://eslint.vuejs.org/rules/block-order.html).
+* [org.openrewrite.codemods.cleanup.vue.BlockSpacing](/recipes/codemods/cleanup/vue/blockspacing.md)
+  * **Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`**
+  * Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;` See rule details for [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.BlockTagNewline](/recipes/codemods/cleanup/vue/blocktagnewline.md)
+  * **Enforce line breaks after opening and before closing block-level tags**
+  * Enforce line breaks after opening and before closing block-level tags See rule details for [vue/block-tag-newline](https://eslint.vuejs.org/rules/block-tag-newline.html).
+* [org.openrewrite.codemods.cleanup.vue.BraceStyle](/recipes/codemods/cleanup/vue/bracestyle.md)
+  * **Enforce consistent brace style for blocks in `&lt;template&gt;`**
+  * Enforce consistent brace style for blocks in `&lt;template&gt;` See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-style.html).
+* [org.openrewrite.codemods.cleanup.vue.CommaDangle](/recipes/codemods/cleanup/vue/commadangle.md)
+  * **Require or disallow trailing commas in `&lt;template&gt;`**
+  * Require or disallow trailing commas in `&lt;template&gt;` See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html).
+* [org.openrewrite.codemods.cleanup.vue.CommaSpacing](/recipes/codemods/cleanup/vue/commaspacing.md)
+  * **Enforce consistent spacing before and after commas in `&lt;template&gt;`**
+  * Enforce consistent spacing before and after commas in `&lt;template&gt;` See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.CommaStyle](/recipes/codemods/cleanup/vue/commastyle.md)
+  * **Enforce consistent comma style in `&lt;template&gt;`**
+  * Enforce consistent comma style in `&lt;template&gt;` See rule details for [vue/comma-style](https://eslint.vuejs.org/rules/comma-style.html).
+* [org.openrewrite.codemods.cleanup.vue.ComponentNameInTemplateCasing](/recipes/codemods/cleanup/vue/componentnameintemplatecasing.md)
+  * **Enforce specific casing for the component naming style in template**
+  * Enforce specific casing for the component naming style in template See rule details for [vue/component-name-in-template-casing](https://eslint.vuejs.org/rules/component-name-in-template-casing.html).
+* [org.openrewrite.codemods.cleanup.vue.ComponentOptionsNameCasing](/recipes/codemods/cleanup/vue/componentoptionsnamecasing.md)
+  * **Enforce the casing of component name in components options**
+  * Enforce the casing of component name in components options See rule details for [vue/component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html).
+* [org.openrewrite.codemods.cleanup.vue.ComponentTagsOrder](/recipes/codemods/cleanup/vue/componenttagsorder.md)
+  * **Enforce order of component top-level elements**
+  * Enforce order of component top-level elements See rule details for [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html).
+* [org.openrewrite.codemods.cleanup.vue.DefineMacrosOrder](/recipes/codemods/cleanup/vue/definemacrosorder.md)
+  * **Enforce order of defineEmits and defineProps compiler macros**
+  * Enforce order of defineEmits and defineProps compiler macros See rule details for [vue/define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html).
+* [org.openrewrite.codemods.cleanup.vue.DotLocation](/recipes/codemods/cleanup/vue/dotlocation.md)
+  * **Enforce consistent newlines before and after dots in `&lt;template&gt;`**
+  * Enforce consistent newlines before and after dots in `&lt;template&gt;` See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html).
+* [org.openrewrite.codemods.cleanup.vue.DotNotation](/recipes/codemods/cleanup/vue/dotnotation.md)
+  * **Enforce dot notation whenever possible in `&lt;template&gt;`**
+  * Enforce dot notation whenever possible in `&lt;template&gt;` See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html).
+* [org.openrewrite.codemods.cleanup.vue.Eqeqeq](/recipes/codemods/cleanup/vue/eqeqeq.md)
+  * **Require the use of === and !== in `&lt;template&gt;`**
+  * Require the use of === and !== in `&lt;template&gt;` See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html).
+* [org.openrewrite.codemods.cleanup.vue.FuncCallSpacing](/recipes/codemods/cleanup/vue/funccallspacing.md)
+  * **Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`**
+  * Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;` See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentNewline](/recipes/codemods/cleanup/vue/htmlcommentcontentnewline.md)
+  * **Enforce unified line brake in HTML comments**
+  * Enforce unified line brake in HTML comments See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html).
+* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentSpacing](/recipes/codemods/cleanup/vue/htmlcommentcontentspacing.md)
+  * **Enforce unified spacing in HTML comments**
+  * Enforce unified spacing in HTML comments See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.HtmlCommentIndent](/recipes/codemods/cleanup/vue/htmlcommentindent.md)
+  * **Enforce consistent indentation in HTML comments**
+  * Enforce consistent indentation in HTML comments See rule details for [vue/html-comment-indent](https://eslint.vuejs.org/rules/html-comment-indent.html).
+* [org.openrewrite.codemods.cleanup.vue.KeySpacing](/recipes/codemods/cleanup/vue/keyspacing.md)
+  * **Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;`**
+  * Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;` See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.KeywordSpacing](/recipes/codemods/cleanup/vue/keywordspacing.md)
+  * **Enforce consistent spacing before and after keywords in `&lt;template&gt;`**
+  * Enforce consistent spacing before and after keywords in `&lt;template&gt;` See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keyword-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.MultilineTernary](/recipes/codemods/cleanup/vue/multilineternary.md)
+  * **Enforce newlines between operands of ternary expressions in `&lt;template&gt;`**
+  * Enforce newlines between operands of ternary expressions in `&lt;template&gt;` See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html).
+* [org.openrewrite.codemods.cleanup.vue.NewLineBetweenMultiLineProperty](/recipes/codemods/cleanup/vue/newlinebetweenmultilineproperty.md)
+  * **Enforce new lines between multi-line properties in Vue components**
+  * Enforce new lines between multi-line properties in Vue components See rule details for [vue/new-line-between-multi-line-property](https://eslint.vuejs.org/rules/new-line-between-multi-line-property.html).
+* [org.openrewrite.codemods.cleanup.vue.NextTickStyle](/recipes/codemods/cleanup/vue/nexttickstyle.md)
+  * **Enforce Promise or callback style in nextTick**
+  * Enforce Promise or callback style in nextTick See rule details for [vue/next-tick-style](https://eslint.vuejs.org/rules/next-tick-style.html).
+* [org.openrewrite.codemods.cleanup.vue.NoExtraParens](/recipes/codemods/cleanup/vue/noextraparens.md)
+  * **Disallow unnecessary parentheses in `&lt;template&gt;`**
+  * Disallow unnecessary parentheses in `&lt;template&gt;` See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html).
+* [org.openrewrite.codemods.cleanup.vue.NoRequiredPropWithDefault](/recipes/codemods/cleanup/vue/norequiredpropwithdefault.md)
+  * **Enforce props with default values to be optional**
+  * Enforce props with default values to be optional See rule details for [vue/no-required-prop-with-default](https://eslint.vuejs.org/rules/no-required-prop-with-default.html).
+* [org.openrewrite.codemods.cleanup.vue.NoUnsupportedFeatures](/recipes/codemods/cleanup/vue/nounsupportedfeatures.md)
+  * **Disallow unsupported Vue.js syntax on the specified version**
+  * Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html).
+* [org.openrewrite.codemods.cleanup.vue.NoUselessMustaches](/recipes/codemods/cleanup/vue/nouselessmustaches.md)
+  * **Disallow unnecessary mustache interpolations**
+  * Disallow unnecessary mustache interpolations See rule details for [vue/no-useless-mustaches](https://eslint.vuejs.org/rules/no-useless-mustaches.html).
+* [org.openrewrite.codemods.cleanup.vue.NoUselessVBind](/recipes/codemods/cleanup/vue/nouselessvbind.md)
+  * **Disallow unnecessary v-bind directives**
+  * Disallow unnecessary v-bind directives See rule details for [vue/no-useless-v-bind](https://eslint.vuejs.org/rules/no-useless-v-bind.html).
+* [org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline](/recipes/codemods/cleanup/vue/objectcurlynewline.md)
+  * **Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`**
+  * Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;` See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html).
+* [org.openrewrite.codemods.cleanup.vue.ObjectCurlySpacing](/recipes/codemods/cleanup/vue/objectcurlyspacing.md)
+  * **Enforce consistent spacing inside braces in `&lt;template&gt;`**
+  * Enforce consistent spacing inside braces in `&lt;template&gt;` See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/object-curly-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline](/recipes/codemods/cleanup/vue/objectpropertynewline.md)
+  * **Enforce placing object properties on separate lines in `&lt;template&gt;`**
+  * Enforce placing object properties on separate lines in `&lt;template&gt;` See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html).
+* [org.openrewrite.codemods.cleanup.vue.ObjectShorthand](/recipes/codemods/cleanup/vue/objectshorthand.md)
+  * **Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;`**
+  * Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;` See rule details for [vue/object-shorthand](https://eslint.vuejs.org/rules/object-shorthand.html).
+* [org.openrewrite.codemods.cleanup.vue.OperatorLinebreak](/recipes/codemods/cleanup/vue/operatorlinebreak.md)
+  * **Enforce consistent linebreak style for operators in `&lt;template&gt;`**
+  * Enforce consistent linebreak style for operators in `&lt;template&gt;` See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html).
+* [org.openrewrite.codemods.cleanup.vue.OrderInComponents](/recipes/codemods/cleanup/vue/orderincomponents.md)
+  * **Enforce order of properties in components**
+  * Enforce order of properties in components See rule details for [vue/order-in-components](https://eslint.vuejs.org/rules/order-in-components.html).
+* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenBlocks](/recipes/codemods/cleanup/vue/paddinglinebetweenblocks.md)
+  * **Require or disallow padding lines between blocks**
+  * Require or disallow padding lines between blocks See rule details for [vue/padding-line-between-blocks](https://eslint.vuejs.org/rules/padding-line-between-blocks.html).
+* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenTags](/recipes/codemods/cleanup/vue/paddinglinebetweentags.md)
+  * **Require or disallow newlines between sibling tags in template**
+  * Require or disallow newlines between sibling tags in template See rule details for [vue/padding-line-between-tags](https://eslint.vuejs.org/rules/padding-line-between-tags.html).
+* [org.openrewrite.codemods.cleanup.vue.PaddingLinesInComponentDefinition](/recipes/codemods/cleanup/vue/paddinglinesincomponentdefinition.md)
+  * **Require or disallow padding lines in component definition**
+  * Require or disallow padding lines in component definition See rule details for [vue/padding-lines-in-component-definition](https://eslint.vuejs.org/rules/padding-lines-in-component-definition.html).
+* [org.openrewrite.codemods.cleanup.vue.PreferDefineOptions](/recipes/codemods/cleanup/vue/preferdefineoptions.md)
+  * **Enforce use of defineOptions instead of default export**
+  * Enforce use of defineOptions instead of default export. See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html).
+* [org.openrewrite.codemods.cleanup.vue.PreferSeparateStaticClass](/recipes/codemods/cleanup/vue/preferseparatestaticclass.md)
+  * **Require static class names in template to be in a separate class attribute**
+  * Require static class names in template to be in a separate class attribute See rule details for [vue/prefer-separate-static-class](https://eslint.vuejs.org/rules/prefer-separate-static-class.html).
+* [org.openrewrite.codemods.cleanup.vue.PreferTemplate](/recipes/codemods/cleanup/vue/prefertemplate.md)
+  * **Require template literals instead of string concatenation in `&lt;template&gt;`**
+  * Require template literals instead of string concatenation in `&lt;template&gt;` See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html).
+* [org.openrewrite.codemods.cleanup.vue.QuoteProps](/recipes/codemods/cleanup/vue/quoteprops.md)
+  * **Require quotes around object literal property names in `&lt;template&gt;`**
+  * Require quotes around object literal property names in `&lt;template&gt;` See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html).
+* [org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup](/recipes/codemods/cleanup/vue/recommendedvuecodecleanup.md)
+  * **Recommended vue code cleanup**
+  * Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuejs.org/).
+* [org.openrewrite.codemods.cleanup.vue.ScriptIndent](/recipes/codemods/cleanup/vue/scriptindent.md)
+  * **Enforce consistent indentation in `&lt;script&gt;`**
+  * Enforce consistent indentation in `&lt;script&gt;` See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html).
+* [org.openrewrite.codemods.cleanup.vue.SpaceInParens](/recipes/codemods/cleanup/vue/spaceinparens.md)
+  * **Enforce consistent spacing inside parentheses in `&lt;template&gt;`**
+  * Enforce consistent spacing inside parentheses in `&lt;template&gt;` See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-in-parens.html).
+* [org.openrewrite.codemods.cleanup.vue.SpaceInfixOps](/recipes/codemods/cleanup/vue/spaceinfixops.md)
+  * **Require spacing around infix operators in `&lt;template&gt;`**
+  * Require spacing around infix operators in `&lt;template&gt;` See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html).
+* [org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps](/recipes/codemods/cleanup/vue/spaceunaryops.md)
+  * **Enforce consistent spacing before or after unary operators in `&lt;template&gt;`**
+  * Enforce consistent spacing before or after unary operators in `&lt;template&gt;` See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html).
+* [org.openrewrite.codemods.cleanup.vue.StaticClassNamesOrder](/recipes/codemods/cleanup/vue/staticclassnamesorder.md)
+  * **Enforce static class names order**
+  * Enforce static class names order See rule details for [vue/static-class-names-order](https://eslint.vuejs.org/rules/static-class-names-order.html).
+* [org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing](/recipes/codemods/cleanup/vue/templatecurlyspacing.md)
+  * **Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;`**
+  * Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;` See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html).
+* [org.openrewrite.codemods.cleanup.vue.ThisInTemplate](/recipes/codemods/cleanup/vue/thisintemplate.md)
+  * **Disallow usage of this in template**
+  * Disallow usage of this in template See rule details for [vue/this-in-template](https://eslint.vuejs.org/rules/this-in-template.html).
+* [org.openrewrite.codemods.cleanup.vue.VForDelimiterStyle](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md)
+  * **Enforce v-for directive's delimiter style**
+  * Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html).
+* [org.openrewrite.codemods.cleanup.vue.VIfElseKey](/recipes/codemods/cleanup/vue/vifelsekey.md)
+  * **Require key attribute for conditionally rendered repeated components**
+  * Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html).
+* [org.openrewrite.codemods.cleanup.vue.VOnHandlerStyle](/recipes/codemods/cleanup/vue/vonhandlerstyle.md)
+  * **Enforce writing style for handlers in v-on directives**
+  * Enforce writing style for handlers in v-on directives See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html).
+* [org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices](/recipes/codemods/ecmascript/5to6/ecmascript6bestpractices.md)
+  * **Upgrade ECMAScript 5 to ECMAScript 6**
+  * A collection of common ECMAScript 5 to ECMAScript 6 updates.
+* [org.openrewrite.codemods.ecmascript.5to6.amdToEsm](/recipes/codemods/ecmascript/5to6/amdtoesm.md)
+  * **Transform AMD style `define()` calls to ES6 `import` statements**
+  * Transform AMD style `define()` calls to ES6 `import` statements.
+* [org.openrewrite.codemods.ecmascript.5to6.cjsToEsm](/recipes/codemods/ecmascript/5to6/cjstoesm.md)
+  * **Transform CommonJS style `require()` calls to ES6 `import` statements**
+  * Transform CommonJS style `require()` calls to ES6 `import` statements.
+* [org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration](/recipes/codemods/ecmascript/5to6/namedexportgeneration.md)
+  * **Generate named exports from CommonJS modules**
+  * Generate named exports from CommonJS modules.
+* [org.openrewrite.codemods.ecmascript.5to6.noStrict](/recipes/codemods/ecmascript/5to6/nostrict.md)
+  * **Remove &quot;use strict&quot; directives**
+  * Remove &quot;use strict&quot; directives.
+* [org.openrewrite.codemods.ecmascript.5to6.simpleArrow](/recipes/codemods/ecmascript/5to6/simplearrow.md)
+  * **Replace all function expressions with only `return` statement with simple arrow**
+  * Replace all function expressions with only `return` statement with simple arrow function.
+* [org.openrewrite.codemods.ecmascript.5to6.varToLet](/recipes/codemods/ecmascript/5to6/vartolet.md)
+  * **Convert `var` to `let`**
+  * Convert `var` to `let`.
+* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptDefaults](/recipes/codemods/ecmascript/eslinttypescriptdefaults.md)
+  * **Lint TypeScript code using ESLint**
+  * The default config includes the `@typescript-eslint` plugin and the corresponding `plugin:@typescript-eslint/recommended` extend.
+* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptPrettier](/recipes/codemods/ecmascript/eslinttypescriptprettier.md)
+  * **Format TypeScript using ESLint Prettier plugin**
+  * Formats all TypeScript source code using the ESLint Prettier plugin.
+* [org.openrewrite.codemods.format.ArrayBracketNewline](/recipes/codemods/format/arraybracketnewline.md)
+  * **Enforce linebreaks after opening and before closing array brackets**
+  * Enforce linebreaks after opening and before closing array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-newline).
+* [org.openrewrite.codemods.format.ArrayBracketSpacing](/recipes/codemods/format/arraybracketspacing.md)
+  * **Enforce consistent spacing inside array brackets**
+  * Enforce consistent spacing inside array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-spacing).
+* [org.openrewrite.codemods.format.ArrayElementNewline](/recipes/codemods/format/arrayelementnewline.md)
+  * **Enforce line breaks after each array element**
+  * Enforce line breaks after each array element  See [rule details](https://eslint.style/rules/default/array-element-newline).
+* [org.openrewrite.codemods.format.ArrowParens](/recipes/codemods/format/arrowparens.md)
+  * **Require parentheses around arrow function arguments**
+  * Require parentheses around arrow function arguments  See [rule details](https://eslint.style/rules/default/arrow-parens).
+* [org.openrewrite.codemods.format.ArrowSpacing](/recipes/codemods/format/arrowspacing.md)
+  * **Enforce consistent spacing before and after the arrow in arrow functions**
+  * Enforce consistent spacing before and after the arrow in arrow functions  See [rule details](https://eslint.style/rules/default/arrow-spacing).
+* [org.openrewrite.codemods.format.BlockSpacing](/recipes/codemods/format/blockspacing.md)
+  * **Disallow or enforce spaces inside of blocks after opening block and before closing block**
+  * Disallow or enforce spaces inside of blocks after opening block and before closing block  See [rule details](https://eslint.style/rules/default/block-spacing).
+* [org.openrewrite.codemods.format.BraceStyle](/recipes/codemods/format/bracestyle.md)
+  * **Enforce consistent brace style for blocks**
+  * Enforce consistent brace style for blocks  See [rule details](https://eslint.style/rules/default/brace-style).
+* [org.openrewrite.codemods.format.CommaDangle](/recipes/codemods/format/commadangle.md)
+  * **Require or disallow trailing commas**
+  * Require or disallow trailing commas  See [rule details](https://eslint.style/rules/default/comma-dangle).
+* [org.openrewrite.codemods.format.CommaSpacing](/recipes/codemods/format/commaspacing.md)
+  * **Enforce consistent spacing before and after commas**
+  * Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing).
+* [org.openrewrite.codemods.format.CommaStyle](/recipes/codemods/format/commastyle.md)
+  * **Enforce consistent comma style**
+  * Enforce consistent comma style  See [rule details](https://eslint.style/rules/default/comma-style).
+* [org.openrewrite.codemods.format.ComputedPropertySpacing](/recipes/codemods/format/computedpropertyspacing.md)
+  * **Enforce consistent spacing inside computed property brackets**
+  * Enforce consistent spacing inside computed property brackets  See [rule details](https://eslint.style/rules/default/computed-property-spacing).
+* [org.openrewrite.codemods.format.DotLocation](/recipes/codemods/format/dotlocation.md)
+  * **Enforce consistent newlines before and after dots**
+  * Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location).
+* [org.openrewrite.codemods.format.EolLast](/recipes/codemods/format/eollast.md)
+  * **Require or disallow newline at the end of files**
+  * Require or disallow newline at the end of files  See [rule details](https://eslint.style/rules/default/eol-last).
+* [org.openrewrite.codemods.format.FuncCallSpacing](/recipes/codemods/format/funccallspacing.md)
+  * **Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;**
+  * Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;.  See [rule details](https://eslint.style/rules/default/func-call-spacing).
+* [org.openrewrite.codemods.format.FunctionCallArgumentNewline](/recipes/codemods/format/functioncallargumentnewline.md)
+  * **Enforce line breaks between arguments of a function call**
+  * Enforce line breaks between arguments of a function call  See [rule details](https://eslint.style/rules/default/function-call-argument-newline).
+* [org.openrewrite.codemods.format.FunctionCallSpacing](/recipes/codemods/format/functioncallspacing.md)
+  * **Require or disallow spacing between function identifiers and their invocations**
+  * Require or disallow spacing between function identifiers and their invocations  See [rule details](https://eslint.style/rules/default/function-call-spacing).
+* [org.openrewrite.codemods.format.FunctionParenNewline](/recipes/codemods/format/functionparennewline.md)
+  * **Enforce consistent line breaks inside function parentheses**
+  * Enforce consistent line breaks inside function parentheses  See [rule details](https://eslint.style/rules/default/function-paren-newline).
+* [org.openrewrite.codemods.format.GeneratorStarSpacing](/recipes/codemods/format/generatorstarspacing.md)
+  * **Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions**
+  * Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions  See [rule details](https://eslint.style/rules/default/generator-star-spacing).
+* [org.openrewrite.codemods.format.ImplicitArrowLinebreak](/recipes/codemods/format/implicitarrowlinebreak.md)
+  * **Enforce the location of arrow function bodies**
+  * Enforce the location of arrow function bodies  See [rule details](https://eslint.style/rules/default/implicit-arrow-linebreak).
+* [org.openrewrite.codemods.format.Indent](/recipes/codemods/format/indent.md)
+  * **Enforce consistent indentation**
+  * Enforce consistent indentation  See [rule details](https://eslint.style/rules/default/indent).
+* [org.openrewrite.codemods.format.IndentBinaryOps](/recipes/codemods/format/indentbinaryops.md)
+  * **Indentation for binary operators**
+  * Indentation for binary operators  See [rule details](https://eslint.style/rules/default/indent-binary-ops).
+* [org.openrewrite.codemods.format.JsxClosingBracketLocation](/recipes/codemods/format/jsxclosingbracketlocation.md)
+  * **Enforce closing bracket location in JSX**
+  * Enforce closing bracket location in JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-bracket-location).
+* [org.openrewrite.codemods.format.JsxClosingTagLocation](/recipes/codemods/format/jsxclosingtaglocation.md)
+  * **Enforce closing tag location for multiline JSX**
+  * Enforce closing tag location for multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-tag-location).
+* [org.openrewrite.codemods.format.JsxCurlyBracePresence](/recipes/codemods/format/jsxcurlybracepresence.md)
+  * **Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes**
+  * Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes  See [rule details](https://eslint.style/rules/default/jsx-curly-brace-presence).
+* [org.openrewrite.codemods.format.JsxCurlyNewline](/recipes/codemods/format/jsxcurlynewline.md)
+  * **Enforce consistent linebreaks in curly braces in JSX attributes and expressions**
+  * Enforce consistent linebreaks in curly braces in JSX attributes and expressions  See [rule details](https://eslint.style/rules/default/jsx-curly-newline).
+* [org.openrewrite.codemods.format.JsxCurlySpacing](/recipes/codemods/format/jsxcurlyspacing.md)
+  * **Enforce or disallow spaces inside of curly braces in JSX attributes and expressions**
+  * Enforce or disallow spaces inside of curly braces in JSX attributes and expressions  See [rule details](https://eslint.style/rules/default/jsx-curly-spacing).
+* [org.openrewrite.codemods.format.JsxEqualsSpacing](/recipes/codemods/format/jsxequalsspacing.md)
+  * **Enforce or disallow spaces around equal signs in JSX attributes**
+  * Enforce or disallow spaces around equal signs in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-equals-spacing).
+* [org.openrewrite.codemods.format.JsxFirstPropNewLine](/recipes/codemods/format/jsxfirstpropnewline.md)
+  * **Enforce proper position of the first property in JSX**
+  * Enforce proper position of the first property in JSX  See [rule details](https://eslint.style/rules/default/jsx-first-prop-new-line).
+* [org.openrewrite.codemods.format.JsxIndent](/recipes/codemods/format/jsxindent.md)
+  * **Enforce JSX indentation**
+  * Enforce JSX indentation  See [rule details](https://eslint.style/rules/default/jsx-indent).
+* [org.openrewrite.codemods.format.JsxIndentProps](/recipes/codemods/format/jsxindentprops.md)
+  * **Enforce props indentation in JSX**
+  * Enforce props indentation in JSX  See [rule details](https://eslint.style/rules/default/jsx-indent-props).
+* [org.openrewrite.codemods.format.JsxMaxPropsPerLine](/recipes/codemods/format/jsxmaxpropsperline.md)
+  * **Enforce maximum of props on a single line in JSX**
+  * Enforce maximum of props on a single line in JSX  See [rule details](https://eslint.style/rules/default/jsx-max-props-per-line).
+* [org.openrewrite.codemods.format.JsxNewline](/recipes/codemods/format/jsxnewline.md)
+  * **Require or prevent a new line after jsx elements and expressions**
+  * Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline).
+* [org.openrewrite.codemods.format.JsxOneExpressionPerLine](/recipes/codemods/format/jsxoneexpressionperline.md)
+  * **Require one JSX element per line**
+  * Require one JSX element per line  See [rule details](https://eslint.style/rules/default/jsx-one-expression-per-line).
+* [org.openrewrite.codemods.format.JsxPascalCase](/recipes/codemods/format/jsxpascalcase.md)
+  * **Enforce PascalCase for user-defined JSX components**
+  * Enforce PascalCase for user-defined JSX components  See [rule details](https://eslint.style/rules/default/jsx-pascal-case).
+* [org.openrewrite.codemods.format.JsxPropsNoMultiSpaces](/recipes/codemods/format/jsxpropsnomultispaces.md)
+  * **Disallow multiple spaces between inline JSX props**
+  * Disallow multiple spaces between inline JSX props  See [rule details](https://eslint.style/rules/default/jsx-props-no-multi-spaces).
+* [org.openrewrite.codemods.format.JsxQuotes](/recipes/codemods/format/jsxquotes.md)
+  * **Enforce the consistent use of either double or single quotes in JSX attributes**
+  * Enforce the consistent use of either double or single quotes in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-quotes).
+* [org.openrewrite.codemods.format.JsxSelfClosingComp](/recipes/codemods/format/jsxselfclosingcomp.md)
+  * **Disallow extra closing tags for components without children**
+  * Disallow extra closing tags for components without children  See [rule details](https://eslint.style/rules/default/jsx-self-closing-comp).
+* [org.openrewrite.codemods.format.JsxSortProps](/recipes/codemods/format/jsxsortprops.md)
+  * **Enforce props alphabetical sorting**
+  * Enforce props alphabetical sorting  See [rule details](https://eslint.style/rules/default/jsx-sort-props).
+* [org.openrewrite.codemods.format.JsxTagSpacing](/recipes/codemods/format/jsxtagspacing.md)
+  * **Enforce whitespace in and around the JSX opening and closing brackets**
+  * Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing).
+* [org.openrewrite.codemods.format.JsxWrapMultilines](/recipes/codemods/format/jsxwrapmultilines.md)
+  * **Disallow missing parentheses around multiline JSX**
+  * Disallow missing parentheses around multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-wrap-multilines).
+* [org.openrewrite.codemods.format.KeySpacing](/recipes/codemods/format/keyspacing.md)
+  * **Enforce consistent spacing between keys and values in object literal properties**
+  * Enforce consistent spacing between keys and values in object literal properties  See [rule details](https://eslint.style/rules/default/key-spacing).
+* [org.openrewrite.codemods.format.KeywordSpacing](/recipes/codemods/format/keywordspacing.md)
+  * **Enforce consistent spacing before and after keywords**
+  * Enforce consistent spacing before and after keywords  See [rule details](https://eslint.style/rules/default/keyword-spacing).
+* [org.openrewrite.codemods.format.LinebreakStyle](/recipes/codemods/format/linebreakstyle.md)
+  * **Enforce consistent linebreak style**
+  * Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style).
+* [org.openrewrite.codemods.format.LinesAroundComment](/recipes/codemods/format/linesaroundcomment.md)
+  * **Require empty lines around comments**
+  * Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment).
+* [org.openrewrite.codemods.format.LinesBetweenClassMembers](/recipes/codemods/format/linesbetweenclassmembers.md)
+  * **Require or disallow an empty line between class members**
+  * Require or disallow an empty line between class members  See [rule details](https://eslint.style/rules/default/lines-between-class-members).
+* [org.openrewrite.codemods.format.MemberDelimiterStyle](/recipes/codemods/format/memberdelimiterstyle.md)
+  * **Require a specific member delimiter style for interfaces and type literals**
+  * Require a specific member delimiter style for interfaces and type literals  See [rule details](https://eslint.style/rules/default/member-delimiter-style).
+* [org.openrewrite.codemods.format.MultilineTernary](/recipes/codemods/format/multilineternary.md)
+  * **Enforce newlines between operands of ternary expressions**
+  * Enforce newlines between operands of ternary expressions  See [rule details](https://eslint.style/rules/default/multiline-ternary).
+* [org.openrewrite.codemods.format.NewParens](/recipes/codemods/format/newparens.md)
+  * **Enforce or disallow parentheses when invoking a constructor with no arguments**
+  * Enforce or disallow parentheses when invoking a constructor with no arguments  See [rule details](https://eslint.style/rules/default/new-parens).
+* [org.openrewrite.codemods.format.NewlinePerChainedCall](/recipes/codemods/format/newlineperchainedcall.md)
+  * **Require a newline after each call in a method chain**
+  * Require a newline after each call in a method chain  See [rule details](https://eslint.style/rules/default/newline-per-chained-call).
+* [org.openrewrite.codemods.format.NoConfusingArrow](/recipes/codemods/format/noconfusingarrow.md)
+  * **Disallow arrow functions where they could be confused with comparisons**
+  * Disallow arrow functions where they could be confused with comparisons  See [rule details](https://eslint.style/rules/default/no-confusing-arrow).
+* [org.openrewrite.codemods.format.NoExtraParens](/recipes/codemods/format/noextraparens.md)
+  * **Disallow unnecessary parentheses**
+  * Disallow unnecessary parentheses  See [rule details](https://eslint.style/rules/default/no-extra-parens).
+* [org.openrewrite.codemods.format.NoExtraSemi](/recipes/codemods/format/noextrasemi.md)
+  * **Disallow unnecessary semicolons**
+  * Disallow unnecessary semicolons  See [rule details](https://eslint.style/rules/default/no-extra-semi).
+* [org.openrewrite.codemods.format.NoFloatingDecimal](/recipes/codemods/format/nofloatingdecimal.md)
+  * **Disallow leading or trailing decimal points in numeric literals**
+  * Disallow leading or trailing decimal points in numeric literals  See [rule details](https://eslint.style/rules/default/no-floating-decimal).
+* [org.openrewrite.codemods.format.NoMultiSpaces](/recipes/codemods/format/nomultispaces.md)
+  * **Disallow multiple spaces**
+  * Disallow multiple spaces  See [rule details](https://eslint.style/rules/default/no-multi-spaces).
+* [org.openrewrite.codemods.format.NoMultipleEmptyLines](/recipes/codemods/format/nomultipleemptylines.md)
+  * **Disallow multiple empty lines**
+  * Disallow multiple empty lines  See [rule details](https://eslint.style/rules/default/no-multiple-empty-lines).
+* [org.openrewrite.codemods.format.NoTrailingSpaces](/recipes/codemods/format/notrailingspaces.md)
+  * **Disallow trailing whitespace at the end of lines**
+  * Disallow trailing whitespace at the end of lines  See [rule details](https://eslint.style/rules/default/no-trailing-spaces).
+* [org.openrewrite.codemods.format.NoWhitespaceBeforeProperty](/recipes/codemods/format/nowhitespacebeforeproperty.md)
+  * **Disallow whitespace before properties**
+  * Disallow whitespace before properties  See [rule details](https://eslint.style/rules/default/no-whitespace-before-property).
+* [org.openrewrite.codemods.format.NonblockStatementBodyPosition](/recipes/codemods/format/nonblockstatementbodyposition.md)
+  * **Enforce the location of single-line statements**
+  * Enforce the location of single-line statements  See [rule details](https://eslint.style/rules/default/nonblock-statement-body-position).
+* [org.openrewrite.codemods.format.ObjectCurlyNewline](/recipes/codemods/format/objectcurlynewline.md)
+  * **Enforce consistent line breaks after opening and before closing braces**
+  * Enforce consistent line breaks after opening and before closing braces  See [rule details](https://eslint.style/rules/default/object-curly-newline).
+* [org.openrewrite.codemods.format.ObjectCurlySpacing](/recipes/codemods/format/objectcurlyspacing.md)
+  * **Enforce consistent spacing inside braces**
+  * Enforce consistent spacing inside braces  See [rule details](https://eslint.style/rules/default/object-curly-spacing).
+* [org.openrewrite.codemods.format.ObjectPropertyNewline](/recipes/codemods/format/objectpropertynewline.md)
+  * **Enforce placing object properties on separate lines**
+  * Enforce placing object properties on separate lines  See [rule details](https://eslint.style/rules/default/object-property-newline).
+* [org.openrewrite.codemods.format.OneVarDeclarationPerLine](/recipes/codemods/format/onevardeclarationperline.md)
+  * **Require or disallow newlines around variable declarations**
+  * Require or disallow newlines around variable declarations  See [rule details](https://eslint.style/rules/default/one-var-declaration-per-line).
+* [org.openrewrite.codemods.format.OperatorLinebreak](/recipes/codemods/format/operatorlinebreak.md)
+  * **Enforce consistent linebreak style for operators**
+  * Enforce consistent linebreak style for operators  See [rule details](https://eslint.style/rules/default/operator-linebreak).
+* [org.openrewrite.codemods.format.PaddedBlocks](/recipes/codemods/format/paddedblocks.md)
+  * **Require or disallow padding within blocks**
+  * Require or disallow padding within blocks  See [rule details](https://eslint.style/rules/default/padded-blocks).
+* [org.openrewrite.codemods.format.PaddingLineBetweenStatements](/recipes/codemods/format/paddinglinebetweenstatements.md)
+  * **Require or disallow padding lines between statements**
+  * Require or disallow padding lines between statements  See [rule details](https://eslint.style/rules/default/padding-line-between-statements).
+* [org.openrewrite.codemods.format.QuoteProps](/recipes/codemods/format/quoteprops.md)
+  * **Require quotes around object literal property names**
+  * Require quotes around object literal property names  See [rule details](https://eslint.style/rules/default/quote-props).
+* [org.openrewrite.codemods.format.Quotes](/recipes/codemods/format/quotes.md)
+  * **Enforce the consistent use of either backticks, double, or single quotes**
+  * Enforce the consistent use of either backticks, double, or single quotes  See [rule details](https://eslint.style/rules/default/quotes).
+* [org.openrewrite.codemods.format.RecommendedESLintStyling](/recipes/codemods/format/recommendedeslintstyling.md)
+  * **Recommended ESLint Styling**
+  * Collection of stylistic ESLint rules that are recommended by the [ESLint Style.](https://eslint.style/).
+* [org.openrewrite.codemods.format.RestSpreadSpacing](/recipes/codemods/format/restspreadspacing.md)
+  * **Enforce spacing between rest and spread operators and their expressions**
+  * Enforce spacing between rest and spread operators and their expressions  See [rule details](https://eslint.style/rules/default/rest-spread-spacing).
+* [org.openrewrite.codemods.format.Semi](/recipes/codemods/format/semi.md)
+  * **Require or disallow semicolons instead of ASI**
+  * Require or disallow semicolons instead of ASI  See [rule details](https://eslint.style/rules/default/semi).
+* [org.openrewrite.codemods.format.SemiSpacing](/recipes/codemods/format/semispacing.md)
+  * **Enforce consistent spacing before and after semicolons**
+  * Enforce consistent spacing before and after semicolons  See [rule details](https://eslint.style/rules/default/semi-spacing).
+* [org.openrewrite.codemods.format.SemiStyle](/recipes/codemods/format/semistyle.md)
+  * **Enforce location of semicolons**
+  * Enforce location of semicolons  See [rule details](https://eslint.style/rules/default/semi-style).
+* [org.openrewrite.codemods.format.SpaceBeforeBlocks](/recipes/codemods/format/spacebeforeblocks.md)
+  * **Enforce consistent spacing before blocks**
+  * Enforce consistent spacing before blocks  See [rule details](https://eslint.style/rules/default/space-before-blocks).
+* [org.openrewrite.codemods.format.SpaceBeforeFunctionParen](/recipes/codemods/format/spacebeforefunctionparen.md)
+  * **Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis**
+  * Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren).
+* [org.openrewrite.codemods.format.SpaceInParens](/recipes/codemods/format/spaceinparens.md)
+  * **Enforce consistent spacing inside parentheses**
+  * Enforce consistent spacing inside parentheses  See [rule details](https://eslint.style/rules/default/space-in-parens).
+* [org.openrewrite.codemods.format.SpaceInfixOps](/recipes/codemods/format/spaceinfixops.md)
+  * **Require spacing around infix operators**
+  * Require spacing around infix operators  See [rule details](https://eslint.style/rules/default/space-infix-ops).
+* [org.openrewrite.codemods.format.SpaceUnaryOps](/recipes/codemods/format/spaceunaryops.md)
+  * **Enforce consistent spacing before or after unary operators**
+  * Enforce consistent spacing before or after unary operators  See [rule details](https://eslint.style/rules/default/space-unary-ops).
+* [org.openrewrite.codemods.format.SpacedComment](/recipes/codemods/format/spacedcomment.md)
+  * **Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment**
+  * Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment).
+* [org.openrewrite.codemods.format.SwitchColonSpacing](/recipes/codemods/format/switchcolonspacing.md)
+  * **Enforce spacing around colons of switch statements**
+  * Enforce spacing around colons of switch statements  See [rule details](https://eslint.style/rules/default/switch-colon-spacing).
+* [org.openrewrite.codemods.format.TemplateCurlySpacing](/recipes/codemods/format/templatecurlyspacing.md)
+  * **Require or disallow spacing around embedded expressions of template strings**
+  * Require or disallow spacing around embedded expressions of template strings  See [rule details](https://eslint.style/rules/default/template-curly-spacing).
+* [org.openrewrite.codemods.format.TemplateTagSpacing](/recipes/codemods/format/templatetagspacing.md)
+  * **Require or disallow spacing between template tags and their literals**
+  * Require or disallow spacing between template tags and their literals  See [rule details](https://eslint.style/rules/default/template-tag-spacing).
+* [org.openrewrite.codemods.format.TypeAnnotationSpacing](/recipes/codemods/format/typeannotationspacing.md)
+  * **Require consistent spacing around type annotations**
+  * Require consistent spacing around type annotations  See [rule details](https://eslint.style/rules/default/type-annotation-spacing).
+* [org.openrewrite.codemods.format.TypeGenericSpacing](/recipes/codemods/format/typegenericspacing.md)
+  * **Enforces consistent spacing inside TypeScript type generics**
+  * Enforces consistent spacing inside TypeScript type generics  See [rule details](https://eslint.style/rules/default/type-generic-spacing).
+* [org.openrewrite.codemods.format.TypeNamedTupleSpacing](/recipes/codemods/format/typenamedtuplespacing.md)
+  * **Expect space before the type declaration in the named tuple**
+  * Expect space before the type declaration in the named tuple  See [rule details](https://eslint.style/rules/default/type-named-tuple-spacing).
+* [org.openrewrite.codemods.format.WrapIife](/recipes/codemods/format/wrapiife.md)
+  * **Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations**
+  * Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife).
+* [org.openrewrite.codemods.format.WrapRegex](/recipes/codemods/format/wrapregex.md)
+  * **Require parenthesis around regex literals**
+  * Require parenthesis around regex literals  See [rule details](https://eslint.style/rules/default/wrap-regex).
+* [org.openrewrite.codemods.format.YieldStarSpacing](/recipes/codemods/format/yieldstarspacing.md)
+  * **Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions**
+  * Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing).
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreArray](/recipes/codemods/migrate/lodash/lodashunderscorearray.md)
+  * **Replace lodash and underscore array functions with native JavaScript**
+  * - `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`.
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreFunction](/recipes/codemods/migrate/lodash/lodashunderscorefunction.md)
+  * **Replace lodash and underscore function functions with native JavaScript**
+  * - `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`.
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreObjects](/recipes/codemods/migrate/lodash/lodashunderscoreobjects.md)
+  * **Replace lodash and underscore object functions with native JavaScript**
+  * - `_.clone(x)` -&gt; `\{ ...x \}` - `_.extend(\{\}, x, y)` -&gt; `\{ ...x, ...y \}` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`.
+* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreUtil](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md)
+  * **Replace lodash and underscore utility functions with native JavaScript**
+  * - `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`.
+* [org.openrewrite.codemods.migrate.mui.AdapterV](/recipes/codemods/migrate/mui/adapterv.md)
+  * **Converts components to use the v4 adapter module**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#adapter-v4).
+* [org.openrewrite.codemods.migrate.mui.All](/recipes/codemods/migrate/mui/all.md)
+  * **Combination of all deprecations**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#all).
+* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameCloseicon](/recipes/codemods/migrate/mui/autocompleterenamecloseicon.md)
+  * **Renames `closeIcon` prop to `closeButtonIcon`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#autocomplete-rename-closeicon).
+* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameOption](/recipes/codemods/migrate/mui/autocompleterenameoption.md)
+  * **Renames `option` prop to `getOptionLabel`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#autocomplete-rename-option).
+* [org.openrewrite.codemods.migrate.mui.AvatarCircleCircular](/recipes/codemods/migrate/mui/avatarcirclecircular.md)
+  * **Updates `circle` prop to `variant=&quot;circular&quot;`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#avatar-circle-circular).
+* [org.openrewrite.codemods.migrate.mui.BadgeOverlapValue](/recipes/codemods/migrate/mui/badgeoverlapvalue.md)
+  * **Updates `overlap` prop to `variant=&quot;dot&quot;`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#badge-overlap-value).
+* [org.openrewrite.codemods.migrate.mui.BaseHookImports](/recipes/codemods/migrate/mui/basehookimports.md)
+  * **Converts base imports to use React hooks**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-hook-imports).
+* [org.openrewrite.codemods.migrate.mui.BaseRemoveComponentProp](/recipes/codemods/migrate/mui/baseremovecomponentprop.md)
+  * **Removes `component` prop from base components**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-remove-component-prop).
+* [org.openrewrite.codemods.migrate.mui.BaseRemoveUnstyledSuffix](/recipes/codemods/migrate/mui/baseremoveunstyledsuffix.md)
+  * **Removes `Unstyled` suffix from base components**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-remove-unstyled-suffix).
+* [org.openrewrite.codemods.migrate.mui.BaseRenameComponentsToSlots](/recipes/codemods/migrate/mui/baserenamecomponentstoslots.md)
+  * **Renames base components to slots**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-rename-components-to-slots).
+* [org.openrewrite.codemods.migrate.mui.BaseUseNamedExports](/recipes/codemods/migrate/mui/baseusenamedexports.md)
+  * **Updates base imports to use named exports**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-use-named-exports).
+* [org.openrewrite.codemods.migrate.mui.BoxBorderradiusValues](/recipes/codemods/migrate/mui/boxborderradiusvalues.md)
+  * **Updates `borderRadius` prop values**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-borderradius-values).
+* [org.openrewrite.codemods.migrate.mui.BoxRenameCss](/recipes/codemods/migrate/mui/boxrenamecss.md)
+  * **Renames CSS properties for Box component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-rename-css).
+* [org.openrewrite.codemods.migrate.mui.BoxRenameGap](/recipes/codemods/migrate/mui/boxrenamegap.md)
+  * **Renames `gap` prop to `spacing`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-rename-gap).
+* [org.openrewrite.codemods.migrate.mui.BoxSxProp](/recipes/codemods/migrate/mui/boxsxprop.md)
+  * **Converts `sx` prop to `sx` style prop**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-sx-prop).
+* [org.openrewrite.codemods.migrate.mui.ButtonColorProp](/recipes/codemods/migrate/mui/buttoncolorprop.md)
+  * **Renames `color` prop to `colorOverride`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#button-color-prop).
+* [org.openrewrite.codemods.migrate.mui.ChipVariantProp](/recipes/codemods/migrate/mui/chipvariantprop.md)
+  * **Updates `variant` prop for Chip component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#chip-variant-prop).
+* [org.openrewrite.codemods.migrate.mui.CircularprogressVariant](/recipes/codemods/migrate/mui/circularprogressvariant.md)
+  * **Updates `variant` prop for CircularProgress component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#circularprogress-variant).
+* [org.openrewrite.codemods.migrate.mui.CollapseRenameCollapsedheight](/recipes/codemods/migrate/mui/collapserenamecollapsedheight.md)
+  * **Renames `collapsedHeight` prop to `transitionCollapsedHeight`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#collapse-rename-collapsedheight).
+* [org.openrewrite.codemods.migrate.mui.ComponentRenameProp](/recipes/codemods/migrate/mui/componentrenameprop.md)
+  * **Renames `component` prop to `as`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#component-rename-prop).
+* [org.openrewrite.codemods.migrate.mui.CoreStylesImport](/recipes/codemods/migrate/mui/corestylesimport.md)
+  * **Updates import paths for core styles**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#core-styles-import).
+* [org.openrewrite.codemods.migrate.mui.CreateTheme](/recipes/codemods/migrate/mui/createtheme.md)
+  * **Updates createMuiTheme usage**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#create-theme).
+* [org.openrewrite.codemods.migrate.mui.DatePickersMovedToX](/recipes/codemods/migrate/mui/datepickersmovedtox.md)
+  * **Moves date pickers to `@mui/x-date-picker`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#date-pickers-moved-to-x).
+* [org.openrewrite.codemods.migrate.mui.DialogProps](/recipes/codemods/migrate/mui/dialogprops.md)
+  * **Updates props for Dialog component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#dialog-props).
+* [org.openrewrite.codemods.migrate.mui.DialogTitleProps](/recipes/codemods/migrate/mui/dialogtitleprops.md)
+  * **Updates props for DialogTitle component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#dialog-title-props).
+* [org.openrewrite.codemods.migrate.mui.EmotionPrependCache](/recipes/codemods/migrate/mui/emotionprependcache.md)
+  * **Prepends emotion cache**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#emotion-prepend-cache).
+* [org.openrewrite.codemods.migrate.mui.ExpansionPanelComponent](/recipes/codemods/migrate/mui/expansionpanelcomponent.md)
+  * **Converts ExpansionPanel to use ExpansionPanel component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#expansion-panel-component).
+* [org.openrewrite.codemods.migrate.mui.FabVariant](/recipes/codemods/migrate/mui/fabvariant.md)
+  * **Updates `variant` prop for Fab component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#fab-variant).
+* [org.openrewrite.codemods.migrate.mui.FadeRenameAlpha](/recipes/codemods/migrate/mui/faderenamealpha.md)
+  * **Renames `alpha` prop to `opacity`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#fade-rename-alpha).
+* [org.openrewrite.codemods.migrate.mui.GridJustifyJustifycontent](/recipes/codemods/migrate/mui/gridjustifyjustifycontent.md)
+  * **Updates `justify` prop to `justifyContent` for Grid component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-justify-justifycontent).
+* [org.openrewrite.codemods.migrate.mui.GridListComponent](/recipes/codemods/migrate/mui/gridlistcomponent.md)
+  * **Converts GridList to use Grid component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-list-component).
+* [org.openrewrite.codemods.migrate.mui.GridVProps](/recipes/codemods/migrate/mui/gridvprops.md)
+  * **Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-v2-props).
+* [org.openrewrite.codemods.migrate.mui.HiddenDownProps](/recipes/codemods/migrate/mui/hiddendownprops.md)
+  * **Updates `down` prop for Hidden component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#hidden-down-props).
+* [org.openrewrite.codemods.migrate.mui.IconButtonSize](/recipes/codemods/migrate/mui/iconbuttonsize.md)
+  * **Updates `size` prop for IconButton component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#icon-button-size).
+* [org.openrewrite.codemods.migrate.mui.JoyAvatarRemoveImgprops](/recipes/codemods/migrate/mui/joyavatarremoveimgprops.md)
+  * **Removes `imgProps` prop from Avatar component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-avatar-remove-imgProps).
+* [org.openrewrite.codemods.migrate.mui.JoyRenameClassnamePrefix](/recipes/codemods/migrate/mui/joyrenameclassnameprefix.md)
+  * **Renames `Mui` classname prefix**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-classname-prefix).
+* [org.openrewrite.codemods.migrate.mui.JoyRenameComponentsToSlots](/recipes/codemods/migrate/mui/joyrenamecomponentstoslots.md)
+  * **Renames components to slots**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-components-to-slots).
+* [org.openrewrite.codemods.migrate.mui.JoyRenameRowProp](/recipes/codemods/migrate/mui/joyrenamerowprop.md)
+  * **Renames `row` prop to `flexDirection=&quot;row&quot;`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-row-prop).
+* [org.openrewrite.codemods.migrate.mui.JoyTextFieldToInput](/recipes/codemods/migrate/mui/joytextfieldtoinput.md)
+  * **Renames `TextField` to `Input`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-text-field-to-input).
+* [org.openrewrite.codemods.migrate.mui.JssToStyled](/recipes/codemods/migrate/mui/jsstostyled.md)
+  * **Converts JSS styles to styled-components**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#jss-to-styled).
+* [org.openrewrite.codemods.migrate.mui.JssToTssReact](/recipes/codemods/migrate/mui/jsstotssreact.md)
+  * **Converts JSS to TypeScript in React components**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#jss-to-tss-react).
+* [org.openrewrite.codemods.migrate.mui.LinkUnderlineHover](/recipes/codemods/migrate/mui/linkunderlinehover.md)
+  * **Updates link underline on hover**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#link-underline-hover).
+* [org.openrewrite.codemods.migrate.mui.MaterialUiStyles](/recipes/codemods/migrate/mui/materialuistyles.md)
+  * **Updates usage of `@mui/styles`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#material-ui-styles).
+* [org.openrewrite.codemods.migrate.mui.MaterialUiTypes](/recipes/codemods/migrate/mui/materialuitypes.md)
+  * **Updates usage of `@mui/types`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#material-ui-types).
+* [org.openrewrite.codemods.migrate.mui.ModalProps](/recipes/codemods/migrate/mui/modalprops.md)
+  * **Updates props for Modal component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#modal-props).
+* [org.openrewrite.codemods.migrate.mui.MovedLabModules](/recipes/codemods/migrate/mui/movedlabmodules.md)
+  * **Moves lab modules to `@mui/material`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#moved-lab-modules).
+* [org.openrewrite.codemods.migrate.mui.MuiReplace](/recipes/codemods/migrate/mui/muireplace.md)
+  * **Replaces `@mui` imports with `@mui/material`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#mui-replace).
+* [org.openrewrite.codemods.migrate.mui.OptimalImports](/recipes/codemods/migrate/mui/optimalimports.md)
+  * **Optimizes imports**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#optimal-imports).
+* [org.openrewrite.codemods.migrate.mui.PaginationRoundCircular](/recipes/codemods/migrate/mui/paginationroundcircular.md)
+  * **Updates `circular` prop to `variant=&quot;circular&quot;`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#pagination-round-circular).
+* [org.openrewrite.codemods.migrate.mui.PresetSafe](/recipes/codemods/migrate/mui/presetsafe.md)
+  * **Ensures presets are safe to use**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#preset-safe).
+* [org.openrewrite.codemods.migrate.mui.RenameCssVariables](/recipes/codemods/migrate/mui/renamecssvariables.md)
+  * **Renames CSS variables**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#rename-css-variables).
+* [org.openrewrite.codemods.migrate.mui.RootRef](/recipes/codemods/migrate/mui/rootref.md)
+  * **Converts `rootRef` to `ref`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#root-ref).
+* [org.openrewrite.codemods.migrate.mui.SkeletonVariant](/recipes/codemods/migrate/mui/skeletonvariant.md)
+  * **Updates `variant` prop for Skeleton component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#skeleton-variant).
+* [org.openrewrite.codemods.migrate.mui.Styled](/recipes/codemods/migrate/mui/styled.md)
+  * **Updates the usage of `styled` from `@mui/system@v5` to be compatible with` @pigment-css/react`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#styled).
+* [org.openrewrite.codemods.migrate.mui.StyledEngineProvider](/recipes/codemods/migrate/mui/styledengineprovider.md)
+  * **Updates usage of styled engine provider**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#styled-engine-provider).
+* [org.openrewrite.codemods.migrate.mui.SxProp](/recipes/codemods/migrate/mui/sxprop.md)
+  * **Update the usage of the `sx` prop to be compatible with `@pigment-css/react`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#sx-prop).
+* [org.openrewrite.codemods.migrate.mui.SystemProps](/recipes/codemods/migrate/mui/systemprops.md)
+  * **Remove system props and add them to the `sx` prop**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#system-props).
+* [org.openrewrite.codemods.migrate.mui.TableProps](/recipes/codemods/migrate/mui/tableprops.md)
+  * **Updates props for Table component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#table-props).
+* [org.openrewrite.codemods.migrate.mui.TabsScrollButtons](/recipes/codemods/migrate/mui/tabsscrollbuttons.md)
+  * **Updates scroll buttons for Tabs component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#tabs-scroll-buttons).
+* [org.openrewrite.codemods.migrate.mui.TextareaMinmaxRows](/recipes/codemods/migrate/mui/textareaminmaxrows.md)
+  * **Updates `minRows` and `maxRows` props for TextareaAutosize component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#textarea-minmax-rows).
+* [org.openrewrite.codemods.migrate.mui.ThemeAugment](/recipes/codemods/migrate/mui/themeaugment.md)
+  * **Adds `DefaultTheme` module augmentation to typescript projects**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-augment).
+* [org.openrewrite.codemods.migrate.mui.ThemeBreakpoints](/recipes/codemods/migrate/mui/themebreakpoints.md)
+  * **Updates theme breakpoints**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-breakpoints).
+* [org.openrewrite.codemods.migrate.mui.ThemeBreakpointsWidth](/recipes/codemods/migrate/mui/themebreakpointswidth.md)
+  * **Updates `width` values for theme breakpoints**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-breakpoints-width).
+* [org.openrewrite.codemods.migrate.mui.ThemeOptions](/recipes/codemods/migrate/mui/themeoptions.md)
+  * **Updates theme options**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-options).
+* [org.openrewrite.codemods.migrate.mui.ThemePaletteMode](/recipes/codemods/migrate/mui/themepalettemode.md)
+  * **Updates theme palette mode**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-palette-mode).
+* [org.openrewrite.codemods.migrate.mui.ThemeProvider](/recipes/codemods/migrate/mui/themeprovider.md)
+  * **Updates usage of ThemeProvider**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-provider).
+* [org.openrewrite.codemods.migrate.mui.ThemeSpacing](/recipes/codemods/migrate/mui/themespacing.md)
+  * **Updates theme spacing**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-spacing).
+* [org.openrewrite.codemods.migrate.mui.ThemeSpacingApi](/recipes/codemods/migrate/mui/themespacingapi.md)
+  * **Updates theme spacing API**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-spacing-api).
+* [org.openrewrite.codemods.migrate.mui.ThemeTypographyRound](/recipes/codemods/migrate/mui/themetypographyround.md)
+  * **Updates `round` values for theme typography**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-typography-round).
+* [org.openrewrite.codemods.migrate.mui.ThemeV](/recipes/codemods/migrate/mui/themev.md)
+  * **Update the theme creation from `@mui/system@v5` to be compatible with `@pigment-css/react`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-v6).
+* [org.openrewrite.codemods.migrate.mui.TopLevelImports](/recipes/codemods/migrate/mui/toplevelimports.md)
+  * **Converts all `@mui/material` submodule imports to the root module**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#top-level-imports).
+* [org.openrewrite.codemods.migrate.mui.Transitions](/recipes/codemods/migrate/mui/transitions.md)
+  * **Updates usage of transitions**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#transitions).
+* [org.openrewrite.codemods.migrate.mui.TreeViewMovedToX](/recipes/codemods/migrate/mui/treeviewmovedtox.md)
+  * **Moves tree view to `@mui/x-tree-view`**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#tree-view-moved-to-x).
+* [org.openrewrite.codemods.migrate.mui.UseAutocomplete](/recipes/codemods/migrate/mui/useautocomplete.md)
+  * **Updates usage of useAutocomplete**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#use-autocomplete).
+* [org.openrewrite.codemods.migrate.mui.UseTransitionprops](/recipes/codemods/migrate/mui/usetransitionprops.md)
+  * **Updates usage of useTransitionProps**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#use-transitionprops).
+* [org.openrewrite.codemods.migrate.mui.VariantProp](/recipes/codemods/migrate/mui/variantprop.md)
+  * **Updates `variant` prop usage**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#variant-prop).
+* [org.openrewrite.codemods.migrate.mui.WithMobileDialog](/recipes/codemods/migrate/mui/withmobiledialog.md)
+  * **Updates withMobileDialog higher-order component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#with-mobile-dialog).
+* [org.openrewrite.codemods.migrate.mui.WithWidth](/recipes/codemods/migrate/mui/withwidth.md)
+  * **Updates withWidth higher-order component**
+  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#with-width).
+* [org.openrewrite.codemods.migrate.nextjs.NextJsCodemods](/recipes/codemods/migrate/nextjs/nextjscodemods.md)
+  * **Next.js Codemods for API Updates**
+  * Next.js provides Codemod transformations to help upgrade your [Next.js](https://nextjs.org/) codebase when an API is updated or deprecated.
+* [org.openrewrite.codemods.migrate.nextjs.v10.AddMissingReactImport](/recipes/codemods/migrate/nextjs/v10/addmissingreactimport.md)
+  * **Add React imports**
+  * Transforms files that do not import `React` to include the import in order for the new React JSX transform to work.
+* [org.openrewrite.codemods.migrate.nextjs.v11.CraToNext](/recipes/codemods/migrate/nextjs/v11/cratonext.md)
+  * **Rename Next Image Imports**
+  * Safely renames `next/image` imports in existing Next.js `10` `11` or `12` applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`.
+* [org.openrewrite.codemods.migrate.nextjs.v13_0.NewLink](/recipes/codemods/migrate/nextjs/v13_0/newlink.md)
+  * **Remove `&lt;a&gt;` Tags From Link Components**
+  * Remove `&amp;lt;a&amp;gt;` tags inside Link Components or add a `legacyBehavior` prop to Links that cannot be auto-fixed.
+* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageExperimental](/recipes/codemods/migrate/nextjs/v13_0/nextimageexperimental.md)
+  * **Migrate to the New Image Component**
+  * Dangerously migrates from `next/legacy/image` to the new `next/image` by adding inline styles and removing unused props.
+* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageToLegacyImage](/recipes/codemods/migrate/nextjs/v13_0/nextimagetolegacyimage.md)
+  * **Rename Next Image Imports**
+  * Safely renames `next/image` imports in existing Next.js `10` `11` or `12` applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`.
+* [org.openrewrite.codemods.migrate.nextjs.v13_2.BuiltInNextFont](/recipes/codemods/migrate/nextjs/v13_2/builtinnextfont.md)
+  * **Use Built-in Font**
+  * This codemod uninstalls the `@next/font` package and transforms `@next/font` imports into the built-in `next/font`.
+* [org.openrewrite.codemods.migrate.nextjs.v14_0.MetadataToViewportExport](/recipes/codemods/migrate/nextjs/v14_0/metadatatoviewportexport.md)
+  * **Use `viewport` export**
+  * This codemod migrates certain viewport metadata to `viewport` export.
+* [org.openrewrite.codemods.migrate.nextjs.v14_0.NextOgImport](/recipes/codemods/migrate/nextjs/v14_0/nextogimport.md)
+  * **Migrate `ImageResponse` imports**
+  * This codemod moves transforms imports from `next/server` to `next/og` for usage of Dynamic OG Image Generation.
+* [org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter](/recipes/codemods/migrate/nextjs/v6/urltowithrouter.md)
+  * **Use `withRouter`**
+  * Transforms the deprecated automatically injected url property on top-level pages to using `withRouter` and the `router` property it injects. Read more [here](https://nextjs.org/docs/messages/url-deprecated).
+* [org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig](/recipes/codemods/migrate/nextjs/v8/withamptoconfig.md)
+  * **Transform AMP HOC into page config**
+  * Transforms the `withAmp` HOC into Next.js 9 page configuration.
+* [org.openrewrite.codemods.migrate.nextjs.v9.NameDefaultComponent](/recipes/codemods/migrate/nextjs/v9/namedefaultcomponent.md)
+  * **Transform Anonymous Components into Named Components**
+  * Transforms anonymous components into named components to make sure they work with Fast Refresh. The component will have a camel-cased name based on the name of the file, and it also works with arrow functions.
 
 ### rewrite-cucumber-jvm
 
 _License: Moderne Source Available License_
 
-_5 recipes_
+_10 recipes_
 
 * [org.openrewrite.cucumber.jvm.CucumberAnnotationToSuite](/recipes/cucumber/jvm/cucumberannotationtosuite.md)
   * **Replace `@Cucumber` with `@Suite`**
@@ -1601,25 +3143,94 @@ _5 recipes_
 * [org.openrewrite.cucumber.jvm.CucumberJava8StepDefinitionToCucumberJava](/recipes/cucumber/jvm/cucumberjava8stepdefinitiontocucumberjava.md)
   * **Replace `cucumber-java8` step definitions with `cucumber-java`**
   * Replace `StepDefinitionBody` methods with `StepDefinitionAnnotations` on new methods with the same body.
+* [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](/recipes/cucumber/jvm/cucumberjava8tojava.md)
+  * **Migrate `cucumber-java8` to `cucumber-java`**
+  * Migrates `cucumber-java8` step definitions and `LambdaGlue` hooks to `cucumber-java` annotated methods.
+* [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+  * **Cucumber to JUnit test `@Suite`**
+  * Migrates Cucumber tests to JUnit test `@Suite`.
 * [org.openrewrite.cucumber.jvm.DropSummaryPrinter](/recipes/cucumber/jvm/dropsummaryprinter.md)
   * **Drop `SummaryPrinter`**
   * Replace `SummaryPrinter` with `Plugin`, if not already present.
 * [org.openrewrite.cucumber.jvm.RegexToCucumberExpression](/recipes/cucumber/jvm/regextocucumberexpression.md)
   * **Replace `cucumber-java` step definition regexes with Cucumber expressions**
   * Strip regex prefix and suffix from step annotation expressions arguments where possible.
+* [org.openrewrite.cucumber.jvm.UpgradeCucumber2x](/recipes/cucumber/jvm/upgradecucumber2x.md)
+  * **Upgrade to Cucumber-JVM 2.x**
+  * Upgrade to Cucumber-JVM 2.x from any previous version.
+* [org.openrewrite.cucumber.jvm.UpgradeCucumber5x](/recipes/cucumber/jvm/upgradecucumber5x.md)
+  * **Upgrade to Cucumber-JVM 5.x**
+  * Upgrade to Cucumber-JVM 5.x from any previous version.
+* [org.openrewrite.cucumber.jvm.UpgradeCucumber7x](/recipes/cucumber/jvm/upgradecucumber7x.md)
+  * **Upgrade to Cucumber-JVM 7.x**
+  * Upgrade to Cucumber-JVM 7.x from any previous version.
 
 ### rewrite-dropwizard
 
 _License: Apache License Version 2.0_
 
-_14 recipes_
+_32 recipes_
 
+* [org.openrewrite.java.dropwizard.AddActuatorConfiguration](/recipes/java/dropwizard/addactuatorconfiguration.md)
+  * **Add Spring Boot Actuator Configuration**
+  * Configures Spring Boot Actuator endpoints and health checks in application.properties.
+* [org.openrewrite.java.dropwizard.AddCoreExampleProperties](/recipes/java/dropwizard/addcoreexampleproperties.md)
+  * **Add Core Example Properties**
+  * Adds core example properties to the application.properties file.
+* [org.openrewrite.java.dropwizard.AddHibernateConfiguration](/recipes/java/dropwizard/addhibernateconfiguration.md)
+  * **Add Hibernate Configuration**
+  * Configures Spring Boot Hibernate and JPA settings in application.properties.
+* [org.openrewrite.java.dropwizard.AddJerseyConfiguration](/recipes/java/dropwizard/addjerseyconfiguration.md)
+  * **Add Jersey Configuration**
+  * Configures essential Jersey properties in Spring Boot that complement the JerseyConfig class.
+* [org.openrewrite.java.dropwizard.AddMissingApplicationProperties](/recipes/java/dropwizard/addmissingapplicationproperties.md)
+  * **Add application.properties if missing**
+  * This recipe creates an application.properties file in the resources folder if it does not exist.
+* [org.openrewrite.java.dropwizard.CodeCleanup](/recipes/java/dropwizard/codecleanup.md)
+  * **Clean up various issues with the code**
+  * Shorten references, remove unused imports, and remove Dropwizard-specific code constructs.
+* [org.openrewrite.java.dropwizard.CoreSetup](/recipes/java/dropwizard/coresetup.md)
+  * **Create Spring Boot Application Entry Point**
+  * Creates the main Spring Boot application class.
+* [org.openrewrite.java.dropwizard.MigrateConfigurationClass](/recipes/java/dropwizard/migrateconfigurationclass.md)
+  * **Migrate Configuration Class**
+  * Converts Dropwizard Configuration to Spring Boot format.
+* [org.openrewrite.java.dropwizard.MigrateDropwizardToSpringBoot](/recipes/java/dropwizard/migratedropwizardtospringboot.md)
+  * **Migrate Dropwizard to Spring Boot**
+  * Apply various changes to migrate Dropwizard applications to Spring Boot.
+* [org.openrewrite.java.dropwizard.MigrateHealthChecksAndMetrics](/recipes/java/dropwizard/migratehealthchecksandmetrics.md)
+  * **Add Spring Boot Actuator**
+  * Configures Spring Boot Actuator with basic health endpoints.
+* [org.openrewrite.java.dropwizard.MigrateHibernate](/recipes/java/dropwizard/migratehibernate.md)
+  * **Migrate Hibernate**
+  * Converts Dropwizard Resources to Spring Boot format.
+* [org.openrewrite.java.dropwizard.MigrateResourcesToSpringJersey](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
+  * **Migrate Resource Classes**
+  * Converts Dropwizard Resources to Spring Boot format.
+* [org.openrewrite.java.dropwizard.MigrateSecurity](/recipes/java/dropwizard/migratesecurity.md)
+  * **Migrate Health Checks to Spring Boot**
+  * Converts Dropwizard health checks to Spring Boot format.
+* [org.openrewrite.java.dropwizard.MigrateTasksAndCommands](/recipes/java/dropwizard/migratetasksandcommands.md)
+  * **Migrate `PostBodyTask` and `ConfiguredCommand`**
+  * Remove or change the superclasses of `PostBodyTask` and `ConfiguredCommand`.
+* [org.openrewrite.java.dropwizard.MigrateTests](/recipes/java/dropwizard/migratetests.md)
+  * **Migrate Health Checks to Spring Boot**
+  * Converts Dropwizard tests to Spring Boot format.
+* [org.openrewrite.java.dropwizard.MigrateToDropwizard5](/recipes/java/dropwizard/migratetodropwizard5.md)
+  * **Migrate to Dropwizard 5.0.x from 4.x**
+  * Apply changes required to upgrade a Dropwizard 4.x application to 5.0.x. This includes upgrading dependencies, removing deprecated configuration options, and migrating Jetty handler implementations. Includes required migrations to Java 17, Jakarta EE 10, JUnit 5.14, Jackson 2.x, and Hibernate 6.6. See [the upgrade guide](https://www.dropwizard.io/en/stable/manual/upgrade-notes/upgrade-notes-5_0_x.html).
+* [org.openrewrite.java.dropwizard.ModifyDropwizardHealthChecksToSpringVariants](/recipes/java/dropwizard/modifydropwizardhealthcheckstospringvariants.md)
+  * **Convert Health Check Implementations**
+  * Transforms Dropwizard HealthCheck classes to Spring Boot HealthIndicator.
 * [org.openrewrite.java.dropwizard.annotation.AddClassAnnotationIfAnnotationExists](/recipes/java/dropwizard/annotation/addclassannotationifannotationexists.md)
   * **Add annotation if target annotations exist**
   * Adds annotation if class has any of the specified target annotations.
 * [org.openrewrite.java.dropwizard.annotation.AddClassAnnotationIfSuperTypeExists](/recipes/java/dropwizard/annotation/addclassannotationifsupertypeexists.md)
   * **Add annotation if target supertypes exist**
   * Adds annotation if class extends or implements any of the specified target types.
+* [org.openrewrite.java.dropwizard.annotation.micrometer.CodahaleTimedToMicrometerTimed](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
+  * **Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)**
+  * Replaces Dropwizard's `@Timed` annotation with Micrometer's `@Timed` annotation, preserving name (mapped to value), absolute, and description attributes.
 * [org.openrewrite.java.dropwizard.config.RemoveAndExcludeDependency](/recipes/java/dropwizard/config/removeandexcludedependency.md)
   * **Combined dependency management to remove and exclude**
   * Combines excluding transitive dependencies and removing direct dependencies.
@@ -1661,7 +3272,7 @@ _14 recipes_
 
 _License: Moderne Source Available License_
 
-_25 recipes_
+_27 recipes_
 
 * [org.openrewrite.featureflags.RemoveBooleanFlag](/recipes/featureflags/removebooleanflag.md)
   * **Remove a boolean feature flag for feature key**
@@ -1699,6 +3310,12 @@ _25 recipes_
 * [org.openrewrite.featureflags.launchdarkly.RemoveStringVariation](/recipes/featureflags/launchdarkly/removestringvariation.md)
   * **Remove LaunchDarkly's `stringVariation` for feature key**
   * Replace `stringVariation` invocations for feature key with value, and simplify constant if branch execution.
+* [org.openrewrite.featureflags.launchdarkly.UpgradeLaunchDarkly6](/recipes/featureflags/launchdarkly/upgradelaunchdarkly6.md)
+  * **Migrate to LaunchDarkly 6.x**
+  * This recipe will apply changes commonly needed when migrating to LaunchDarkly 6.x.
+* [org.openrewrite.featureflags.launchdarkly.UpgradeLaunchDarkly7](/recipes/featureflags/launchdarkly/upgradelaunchdarkly7.md)
+  * **Migrate to LaunchDarkly 7.x**
+  * This recipe will apply changes commonly needed when migrating to LaunchDarkly 7.x.
 * [org.openrewrite.featureflags.launchdarkly.search.FindFeatureFlag](/recipes/featureflags/launchdarkly/search/findfeatureflag.md)
   * **Find a LaunchDarkly feature flag**
   * Find a LaunchDarkly feature flag.
@@ -1743,7 +3360,7 @@ _25 recipes_
 
 _License: Moderne Source Available License_
 
-_42 recipes_
+_52 recipes_
 
 * [org.openrewrite.github.AddCronTrigger](/recipes/github/addcrontrigger.md)
   * **Add cron workflow trigger**
@@ -1751,6 +3368,9 @@ _42 recipes_
 * [org.openrewrite.github.AddDependabotCooldown](/recipes/github/adddependabotcooldown.md)
   * **Add cooldown periods to Dependabot configuration**
   * Adds a `cooldown` section to each update configuration in Dependabot files. Supports `default-days`, `semver-major-days`, `semver-minor-days`, `semver-patch-days`, `include`, and `exclude` options. This implements a security best practice where dependencies are not immediately adopted upon release, allowing time for security vendors to identify potential supply chain compromises. Cooldown applies only to version updates, not security updates. [Read more about dependency cooldowns](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns). [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
+* [org.openrewrite.github.AddManualTrigger](/recipes/github/addmanualtrigger.md)
+  * **Add manual workflow trigger**
+  * You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event.
 * [org.openrewrite.github.AutoCancelInProgressWorkflow](/recipes/github/autocancelinprogressworkflow.md)
   * **Cancel in-progress workflow when it is triggered again**
   * When a workflow is already running and would be triggered again, cancel the existing workflow. See [`styfle/cancel-workflow-action`](https://github.com/styfle/cancel-workflow-action) for details.
@@ -1763,12 +3383,27 @@ _42 recipes_
 * [org.openrewrite.github.ChangeDependabotScheduleInterval](/recipes/github/changedependabotscheduleinterval.md)
   * **Change dependabot schedule interval**
   * Change the schedule interval for a given package-ecosystem in a `dependabot.yml` configuration file. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
+* [org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily](/recipes/github/dependabotcheckforgithubactionsupdatesdaily.md)
+  * **Check for github-actions updates daily**
+  * Set dependabot to check for github-actions updates daily.
+* [org.openrewrite.github.DependabotCheckForGithubActionsUpdatesWeekly](/recipes/github/dependabotcheckforgithubactionsupdatesweekly.md)
+  * **Check for github-actions updates weekly**
+  * Set dependabot to check for github-actions updates weekly.
+* [org.openrewrite.github.FindGitHubActionSecretReferences](/recipes/github/findgithubactionsecretreferences.md)
+  * **Find GitHub action secret references**
+  * Help identify and inventory your GitHub secrets that are being used in GitHub actions.
 * [org.openrewrite.github.FindMissingTimeout](/recipes/github/findmissingtimeout.md)
   * **Find jobs missing timeout**
   * Find GitHub Actions jobs missing a timeout.
 * [org.openrewrite.github.IsGitHubActionsWorkflow](/recipes/github/isgithubactionsworkflow.md)
   * **Is GitHub Actions Workflow**
   * Checks if the file is a GitHub Actions workflow file.
+* [org.openrewrite.github.MigrateSetupUvV6ToV7](/recipes/github/migratesetupuvv6tov7.md)
+  * **Migrate `astral-sh/setup-uv` from v6 to v7**
+  * Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and removes the deprecated `server-url` input. See the [v7.0.0 release notes](https://github.com/astral-sh/setup-uv/releases/tag/v7.0.0) for breaking changes.
+* [org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions](/recipes/github/migratetibdexgithubapptokentoactions.md)
+  * **Migrate from tibdex/github-app-token to actions/create-github-app-token**
+  * Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case.
 * [org.openrewrite.github.PreferSecretsInheritWorkflow](/recipes/github/prefersecretsinheritworkflow.md)
   * **Use `secrets: inherit` if possible**
   * Pass all secrets to a reusable workflow using `secrets: inherit`. See [Simplify using secrets with reusable workflows](https://github.blog/changelog/2022-05-03-github-actions-simplify-using-secrets-with-reusable-workflows/) for details.
@@ -1784,6 +3419,9 @@ _42 recipes_
 * [org.openrewrite.github.RemoveWorkflowInputArgument](/recipes/github/removeworkflowinputargument.md)
   * **Remove workflow input argument**
   * Remove a specific input argument from calls to a reusable workflow.
+* [org.openrewrite.github.ReplaceOssrhSecretsWithSonatype](/recipes/github/replaceossrhsecretswithsonatype.md)
+  * **Replace OSSRH secrets with Sonatype secrets**
+  * Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite's GitHub organization.
 * [org.openrewrite.github.ReplaceRunners](/recipes/github/replacerunners.md)
   * **Replace runners for a job**
   * Replaces the runners of a given job.
@@ -1814,6 +3452,12 @@ _42 recipes_
 * [org.openrewrite.github.UpgradeSlackNotificationVersion2](/recipes/github/upgradeslacknotificationversion2.md)
   * **Upgrade `slackapi/slack-github-action`**
   * Update the Slack GitHub Action to use version 2.0.
+* [org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle](/recipes/github/gradle/renamegradlebuildactiontosetupgradle.md)
+  * **Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`**
+  * Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v3`.
+* [org.openrewrite.github.gradle.RenameWrapperValidationAction](/recipes/github/gradle/renamewrappervalidationaction.md)
+  * **Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`**
+  * Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v3`.
 * [org.openrewrite.github.security.AnonymousJobsRecipe](/recipes/github/security/anonymousjobsrecipe.md)
   * **Find jobs without descriptive names**
   * Find jobs that lack descriptive names, making them harder to identify in workflow runs. Jobs without `name` properties default to their job ID, which may not be descriptive. Based on [zizmor's anonymous-definition audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/anonymous_definition.rs).
@@ -1835,6 +3479,9 @@ _42 recipes_
 * [org.openrewrite.github.security.ForbiddenUsesRecipe](/recipes/github/security/forbiddenusesrecipe.md)
   * **Find forbidden action usage**
   * Find usage of forbidden or dangerous GitHub Actions that have known security vulnerabilities or follow suspicious patterns. Based on [zizmor's forbidden-uses audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/forbidden_uses.rs).
+* [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
+  * **GitHub Actions security insights**
+  * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
 * [org.openrewrite.github.security.GitHubEnvRecipe](/recipes/github/security/githubenvrecipe.md)
   * **Find dangerous GITHUB_ENV usage**
   * Detects dangerous usage of `GITHUB_ENV` and `GITHUB_PATH` environment files in workflows with risky triggers like `pull_request_target` or `workflow_run`. Writing to these files can allow code injection when the content includes user-controlled data. Based on [zizmor's github-env audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/github_env.rs).
@@ -1876,7 +3523,7 @@ _42 recipes_
 
 _License: Moderne Source Available License_
 
-_18 recipes_
+_20 recipes_
 
 * [org.openrewrite.gitlab.AddArtifactsExpireIn](/recipes/gitlab/addartifactsexpirein.md)
   * **Add artifacts expire_in**
@@ -1908,6 +3555,9 @@ _18 recipes_
 * [org.openrewrite.gitlab.AddWorkflowRules](/recipes/gitlab/addworkflowrules.md)
   * **Add workflow rules**
   * Add `workflow:rules` to `.gitlab-ci.yml` to control pipeline creation.
+* [org.openrewrite.gitlab.BestPractices](/recipes/gitlab/bestpractices.md)
+  * **GitLab CI best practices**
+  * Apply GitLab CI/CD best practices to `.gitlab-ci.yml`. This includes adding `workflow:rules` to prevent duplicate pipelines, setting `interruptible: true` and `retry` in the `default` section, configuring `artifacts:expire_in`, and setting a job `timeout`.
 * [org.openrewrite.gitlab.ChangeComponent](/recipes/gitlab/changecomponent.md)
   * **Change GitLab Component**
   * Change a GitLab Component in use.
@@ -1929,6 +3579,9 @@ _18 recipes_
 * [org.openrewrite.gitlab.search.FindDeprecatedOnly](/recipes/gitlab/search/finddeprecatedonly.md)
   * **Find deprecated `only` keyword**
   * Find usages of the deprecated `only` keyword in `.gitlab-ci.yml`. The `only` keyword is deprecated in favor of `rules`.
+* [org.openrewrite.gitlab.search.FindDeprecatedSyntax](/recipes/gitlab/search/finddeprecatedsyntax.md)
+  * **Find deprecated GitLab CI syntax**
+  * Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. These keywords are deprecated in favor of `rules`.
 * [org.openrewrite.gitlab.search.FindTemplate](/recipes/gitlab/search/findtemplate.md)
   * **Find GitLab Template**
   * Find a GitLab Template in use.
@@ -1937,7 +3590,7 @@ _18 recipes_
 
 _License: Moderne Source Available License_
 
-_8 recipes_
+_23 recipes_
 
 * [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes.md)
   * **AddScalarPreferStandardBasicTypesForHibernate5**
@@ -1951,6 +3604,45 @@ _8 recipes_
 * [org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation](/recipes/hibernate/migrateresultcheckstyletoexpectation.md)
   * **Migration of `ResultCheckStyle` to `Expectation`**
   * Will migrate the usage of `org.hibernate.annotations.ResultCheckStyle` to `org.hibernate.jdbc.Expectation` in `@SQLInsert`, `@SqlUpdate`, `@SqlDelete` and `@SqlDeleteAll` annotations.
+* [org.openrewrite.hibernate.MigrateToHibernate60](/recipes/hibernate/migratetohibernate60-community-edition.md)
+  * **Migrate to Hibernate 6.0.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
+* [org.openrewrite.hibernate.MigrateToHibernate61](/recipes/hibernate/migratetohibernate61.md)
+  * **Migrate to Hibernate 6.1.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.1.x. The hibernate dependencies will   be updated to use the new org.hibernate.orm group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
+* [org.openrewrite.hibernate.MigrateToHibernate62](/recipes/hibernate/migratetohibernate62.md)
+  * **Migrate to Hibernate 6.2.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x.
+* [org.openrewrite.hibernate.MigrateToHibernate63](/recipes/hibernate/migratetohibernate63.md)
+  * **Migrate to Hibernate 6.3.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
+* [org.openrewrite.hibernate.MigrateToHibernate64](/recipes/hibernate/migratetohibernate64.md)
+  * **Migrate to Hibernate 6.4.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.4.x.
+* [org.openrewrite.hibernate.MigrateToHibernate65](/recipes/hibernate/migratetohibernate65.md)
+  * **Migrate to Hibernate 6.5.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
+* [org.openrewrite.hibernate.MigrateToHibernate66](/recipes/hibernate/migratetohibernate66-community-edition.md)
+  * **Migrate to Hibernate 6.6.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 6.6.x.
+* [org.openrewrite.hibernate.MigrateToHibernate70](/recipes/hibernate/migratetohibernate70-community-edition.md)
+  * **Migrate to Hibernate 7.0.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x.
+* [org.openrewrite.hibernate.MigrateToHibernate71](/recipes/hibernate/migratetohibernate71-community-edition.md)
+  * **Migrate to Hibernate 7.1.x (Community Edition)**
+  * This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x.
+* [org.openrewrite.hibernate.MigrateToHibernateDependencies60](/recipes/hibernate/migratetohibernatedependencies60.md)
+  * **Migrate Hibernate dependencies to 6.0.x**
+  * This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
+  * **Migrate Hibernate Types to Hypersistence Utils 6.0**
+  * This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62](/recipes/hibernate/migratetohypersistenceutilshibernate62.md)
+  * **Migrate Hibernate Types to Hypersistence Utils 6.2**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`.
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63](/recipes/hibernate/migratetohypersistenceutilshibernate63.md)
+  * **Migrate Hibernate Types to Hypersistence Utils 6.3**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
 * [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype.md)
   * **Migrate `UserType` to Hibernate 6**
   * With Hibernate 6 the `UserType` interface received a type parameter making it more strictly typed. This recipe applies the changes required to adhere to this change.
@@ -1963,22 +3655,37 @@ _8 recipes_
 * [org.openrewrite.hibernate.TypeAnnotationParameter](/recipes/hibernate/typeannotationparameter.md)
   * **`@Type` annotation type parameter migration**
   * Hibernate 6.x has 'type' parameter of type String replaced with 'value' of type class.
+* [org.openrewrite.hibernate.TypeDescriptorToType](/recipes/hibernate/typedescriptortotype.md)
+  * **Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`**
+  * Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
+* [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
+  * **Migrate to Hibernate Validator 8.0.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
 
 ### rewrite-jackson
 
 _License: Apache License Version 2.0_
 
-_21 recipes_
+_34 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
   * Jackson 3 strictly enforces creator visibility rules. Non-public constructors in Jackson-annotated classes that were auto-detected in Jackson 2 need an explicit `@JsonCreator` annotation to work for deserialization in Jackson 3.
+* [org.openrewrite.java.jackson.CodehausClassesToFasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
+  * **Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML**
+  * In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
+* [org.openrewrite.java.jackson.CodehausToFasterXML](/recipes/java/jackson/codehaustofasterxml.md)
+  * **Migrate from Jackson Codehaus (legacy) to Jackson FasterXML**
+  * In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
 * [org.openrewrite.java.jackson.IOExceptionToJacksonException](/recipes/java/jackson/ioexceptiontojacksonexception.md)
   * **Replace `IOException` with `JacksonException` in catch clauses**
   * In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`.
 * [org.openrewrite.java.jackson.Jackson3JsonNodeFieldIterators](/recipes/java/jackson/jackson3jsonnodefielditerators.md)
   * **Migrate `JSONNode` field iterator for Jackson 3**
   * `JSONNode` fields are using `Collections` instead of `Iterator` singe Jackson 3. To mimic Jackson 2s behavior an additional call to `Collection#iterator()`is needed.
+* [org.openrewrite.java.jackson.JacksonBestPractices](/recipes/java/jackson/jacksonbestpractices.md)
+  * **Jackson best practices**
+  * Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
 * [org.openrewrite.java.jackson.LombokJacksonizedConfig](/recipes/java/jackson/lombokjacksonizedconfig.md)
   * **Update `lombok.config` for Jackson 3 compatibility**
   * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion = 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
@@ -2012,6 +3719,36 @@ _21 recipes_
 * [org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration](/recipes/java/jackson/updateserializationinclusionconfiguration.md)
   * **Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3**
   * In Jackson 3, `mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)` is no longer supported and should be replaced by `changeDefaultPropertyInclusion()` for both `valueInclusion` and `contentInclusion`.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3](/recipes/java/jackson/upgradejackson_2_3.md)
+  * **Migrates from Jackson 2.x to Jackson 3.x**
+  * Migrate applications to the latest Jackson 3.x release. This recipe handles package changes (`com.fasterxml.jackson` -&gt; `tools.jackson`), dependency updates, core class renames, exception renames, and method renames (e.g., `JsonGenerator.writeObject()` -&gt; `writePOJO()`, `JsonParser.getCurrentValue()` -&gt; `currentValue()`).
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
+  * **Upgrade Jackson 2.x dependencies to 3.x**
+  * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsongeneratormethodrenames.md)
+  * **Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator**
+  * Rename JsonGenerator methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsonnodemethodrenames.md)
+  * **Rename Jackson 2.x methods to 3.x equivalents for JsonNode**
+  * Rename JsonNode methods that were renamed in 3.x (e.g., `elements()` to `values()`, `fields()` to `entries()`).
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsonparsermethodrenames.md)
+  * **Rename Jackson 2.x methods to 3.x equivalents for JsonParser**
+  * Rename JsonParser methods that were renamed in 3.x (e.g., `getTextCharacters()` to `getStringCharacters()`, `getCurrentValue()` to `currentValue()`).
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
+  * **Rename Jackson 2.x methods to 3.x equivalents**
+  * Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges](/recipes/java/jackson/upgradejackson_2_3_packagechanges.md)
+  * **Update Jackson package names from 2.x to 3.x**
+  * Update Jackson package imports from `com.fasterxml.jackson` to `tools.jackson`.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_RelocatedFeatureConstants](/recipes/java/jackson/upgradejackson_2_3_relocatedfeatureconstants.md)
+  * **Migrate relocated feature constants to DateTimeFeature and EnumFeature**
+  * Jackson 3 moved date/time-related feature constants from `SerializationFeature` and `DeserializationFeature` into `DateTimeFeature`, and enum-related constants into `EnumFeature`.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags](/recipes/java/jackson/upgradejackson_2_3_removeredundantfeatureflags.md)
+  * **Remove redundant Jackson 3 feature flag configurations**
+  * Remove `ObjectMapper` feature flag configurations that are now defaults in Jackson 3.
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
+  * **Update Jackson 2.x types to 3.x**
+  * Update Jackson type names including exception types and core class renames.
 * [org.openrewrite.java.jackson.UseFormatAlignedObjectMappers](/recipes/java/jackson/useformatalignedobjectmappers.md)
   * **Use format alignment `ObjectMappers`**
   * Replace wrapping `ObjectMapper` calls with their format aligned implementation.
@@ -2099,26 +3836,47 @@ _18 recipes_
 
 _License: Moderne Source Available License_
 
-_10 recipes_
+_18 recipes_
 
+* [org.openrewrite.java.testing.htmlunit.UpgradeHtmlUnit_3](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
+  * **Migrate to HtmlUnit 3.x**
+  * Automates the HtmlUnit [migration guide](https://htmlunit.sourceforge.io/migration.html) from 2.x to 3.x.
 * [org.openrewrite.jenkins.AddJellyXmlDeclaration](/recipes/jenkins/addjellyxmldeclaration.md)
   * **Add XML declaration to Jelly files**
   * Ensure the XML declaration `&lt;?jelly escape-by-default='true'?&gt;` is present in all `.jelly` files.
 * [org.openrewrite.jenkins.AddPluginsBom](/recipes/jenkins/addpluginsbom.md)
   * **Add or correct Jenkins plugins BOM**
   * Adds [Jenkins plugins BOM](https://www.jenkins.io/doc/developer/plugin-development/dependency-management/#jenkins-plugin-bom) at the latest release if the project depends on any managed versions or an outdated BOM is present. BOMs are expected to be synchronized to Jenkins LTS versions, so this will also remove any mismatched BOMs (Such as using Jenkins 2.387.3, but importing bom-2.319.x). If the expected BOM is already added, the version will not be upgraded.
+* [org.openrewrite.jenkins.CommonsLang3ToApiPlugin](/recipes/jenkins/commonslang3toapiplugin.md)
+  * **Use commons-lang3 API Plugin**
+  * Updates `pom.xml` to depend on `commons-lang3-api` and exclude `commons-lang3` where it is brought in transitively.
 * [org.openrewrite.jenkins.CreateIndexJelly](/recipes/jenkins/createindexjelly.md)
   * **Create `index.jelly` if it doesn't exist**
   * Jenkins tooling [requires](https://github.com/jenkinsci/maven-hpi-plugin/pull/302) `src/main/resources/index.jelly` exists with a description.
+* [org.openrewrite.jenkins.CreateJenkinsfile](/recipes/jenkins/createjenkinsfile.md)
+  * **Create Jenkinsfile**
+  * Creates a simple base Jenkinsfile in Groovy for a Declarative Pipeline - located in the root of the project.
 * [org.openrewrite.jenkins.DisableLocalResolutionForParentPom](/recipes/jenkins/disablelocalresolutionforparentpom.md)
   * **Disables local file resolution for parent POM**
   * Explicitly sets `&lt;relativePath/&gt;` to disable file resolution, as recommended in the [plugin development guide](https://www.jenkins.io/doc/developer/plugin-development/updating-parent/).
 * [org.openrewrite.jenkins.IsJenkinsPlugin](/recipes/jenkins/isjenkinsplugin.md)
   * **Is the project a Jenkins plugin?**
   * Checks if the project is a Jenkins plugin by the presence of a managed version of `jenkins-core`.
+* [org.openrewrite.jenkins.JavaxAnnotationsToSpotbugs](/recipes/jenkins/javaxannotationstospotbugs.md)
+  * **Migrate `javax.annotations` to SpotBugs annotations**
+  * SpotBugs is the [preferred replacement](https://www.jenkins.io/doc/developer/tutorial-improve/replace-jsr-305-annotations/) of JSR-305 annotations for Jenkins plugins.
 * [org.openrewrite.jenkins.JenkinsfileAsGroovy](/recipes/jenkins/jenkinsfileasgroovy.md)
   * **Parse `Jenkinsfile` as Groovy**
   * Parse any `Jenkinsfile` as Groovy code.
+* [org.openrewrite.jenkins.ModernizeJenkinsfile](/recipes/jenkins/modernizejenkinsfile.md)
+  * **Modernize Jenkinsfile**
+  * Updates `Jenkinsfile` to build with recommended Java versions, platforms, and settings.
+* [org.openrewrite.jenkins.ModernizePlugin](/recipes/jenkins/modernizeplugin.md)
+  * **Modernize a Jenkins plugin to the latest recommended versions**
+  * This recipe is intended to change over time to reflect the recommended tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/).
+* [org.openrewrite.jenkins.ModernizePluginForJava8](/recipes/jenkins/modernizepluginforjava8.md)
+  * **Modernize a Jenkins plugin to the latest versions supported by Java 8**
+  * This recipe is intended to break down the modernization of very old plugins into distinct steps. It allows modernizing all tooling up to the last versions that supported Java 8. This can then be followed by another recipe that makes the jump to Java 11.
 * [org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin](/recipes/jenkins/replacelibrarieswithapiplugin.md)
   * **Use Jenkins API plugin instead of libraries**
   * Prefer Jenkins API plugins over bundling libraries for slimmer plugins.
@@ -2131,12 +3889,15 @@ _10 recipes_
 * [org.openrewrite.jenkins.github.AddTeamToCodeowners](/recipes/jenkins/github/addteamtocodeowners.md)
   * **Add plugin developer team to CODEOWNERS**
   * Adds the `\{artifactId\}-plugin-developers` team to all files in `.github/CODEOWNERS` if absent.
+* [org.openrewrite.jenkins.migrate.hudson.UtilGetPastTimeStringToGetTimeSpanString](/recipes/jenkins/migrate/hudson/utilgetpasttimestringtogettimespanstring.md)
+  * **Replace `hudson.Util.getPastTimeString` with `getTimeSpanString`**
+  * `hudson.Util.getPastTimeString` has been [deprecated](https://github.com/jenkinsci/jenkins/pull/4174) since the [2.204.1 LTS release](https://www.jenkins.io/changelog-stable/#v2.204.1) on 2019-12-18.
 
 ### rewrite-joda
 
 _License: Moderne Source Available License_
 
-_11 recipes_
+_12 recipes_
 
 * [org.openrewrite.java.joda.time.JodaAbstractInstantToJavaTime](/recipes/java/joda/time/jodaabstractinstanttojavatime.md)
   * **Migrate Joda-Time `AbstractInstant` to Java time**
@@ -2171,13 +3932,19 @@ _11 recipes_
 * [org.openrewrite.java.joda.time.JodaTimePeriodToJavaTime](/recipes/java/joda/time/jodatimeperiodtojavatime.md)
   * **Migrate Joda-Time `Days`, `Hours`, `Minutes`, `Seconds` to Java time**
   * Migrates `org.joda.time.Days`, `Hours`, `Minutes`, and `Seconds` to `java.time.temporal.ChronoUnit` and `java.time.Duration`.
+* [org.openrewrite.java.joda.time.NoJodaTime](/recipes/java/joda/time/nojodatime.md)
+  * **Prefer the Java standard library instead of Joda-Time**
+  * Before Java 8, Java lacked a robust date and time library, leading to the widespread use of Joda-Time to fill this gap. With the release of Java 8, the `java.time` package was introduced, incorporating most of Joda-Time's concepts. Features deemed too specialized or bulky for `java.time` were included in the ThreeTen-Extra library.  This recipe migrates Joda-Time types to `java.time` and `threeten-extra` types.
 
 ### rewrite-liberty
 
 _License: Apache License Version 2.0_
 
-_6 recipes_
+_13 recipes_
 
+* [org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty](/recipes/java/liberty/migratefromwebspheretoliberty.md)
+  * **Migrate from WebSphere traditional to Liberty**
+  * Use this category of rules to identify code changes needed when migrating from WebSphere Application Server traditional to Liberty.
 * [org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup](/recipes/java/liberty/removewas2libertynonportablejndilookup.md)
   * **Removes invalid JNDI properties**
   * Remove the use of invalid JNDI properties from Hashtable.
@@ -2190,19 +3957,40 @@ _6 recipes_
 * [org.openrewrite.java.liberty.WebSphereUnavailableSSOCookieMethod](/recipes/java/liberty/websphereunavailablessocookiemethod.md)
   * **Replace `revokeSSOCookies` with `logout`**
   * Replace `WSSecurityHelper.revokeSSOCookies(request, response)` with `request.logout()`.
+* [org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods](/recipes/java/liberty/websphereunavailablessomethods.md)
+  * **Use `getSSOCookieFromSSOToken` and `logout`**
+  * This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application Server Version 8.5 and might be removed in a future release. They are not available on Liberty.
+* [org.openrewrite.maven.liberty.AddOpenLibertyPlugin](/recipes/maven/liberty/addopenlibertyplugin.md)
+  * **Add Liberty Maven plugin**
+  * This recipe adds the Liberty Maven plugin, which provides several goals for managing a Liberty server and applications.
+* [org.openrewrite.xml.liberty.AppDDNamespaceRule](/recipes/xml/liberty/appddnamespacerule.md)
+  * **Use correct application namespace values**
+  * Namespace values in application.xml must be consistent with the descriptor version.
+* [org.openrewrite.xml.liberty.ConnectorDDNamespaceRule](/recipes/xml/liberty/connectorddnamespacerule.md)
+  * **Use correct connector namespace values**
+  * Namespace values in ra.xml must be consistent with the descriptor version.
+* [org.openrewrite.xml.liberty.EJBDDNamespaceRule](/recipes/xml/liberty/ejbddnamespacerule.md)
+  * **Use correct ejb-jar namespace values**
+  * Namespace values in ejb-jar.xml must be consistent with the descriptor version.
 * [org.openrewrite.xml.liberty.PersistenceXmlLocationRule](/recipes/xml/liberty/persistencexmllocationrule.md)
   * **Move persistence.xml file**
   * This recipes moves persistence.xml files into the root META-INF directory in source folder.
 * [org.openrewrite.xml.liberty.WebBeansXmlRule](/recipes/xml/liberty/webbeansxmlrule.md)
   * **Replace beans.xml file**
   * This Recipe replaces OpenWebBeans schema in every beans.xml with the standard CDI schema.
+* [org.openrewrite.xml.liberty.WebDDNamespaceRule](/recipes/xml/liberty/webddnamespacerule.md)
+  * **Use correct web-app namespace values**
+  * Namespace values in web.xml must be consistent with the descriptor version.
 
 ### rewrite-logging-frameworks
 
 _License: Moderne Source Available License_
 
-_102 recipes_
+_120 recipes_
 
+* [org.apache.logging.log4j.InlineLog4jApiMethods](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
+  * **Inline `log4j-api-2` methods annotated with `@InlineMe`**
+  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
 * [org.openrewrite.java.logging.ArgumentArrayToVarargs](/recipes/java/logging/argumentarraytovarargs.md)
   * **Unpack Logger method `new Object[] \{...\}` into varargs**
   * For Logger methods that support varargs, convert any final explicit `Object[]` arguments into their unpacked values.
@@ -2269,6 +4057,9 @@ _102 recipes_
 * [org.openrewrite.java.logging.jboss.FormattedArgumentsToVMethodRecipes$WarnToVWarnWithThrowableRecipe](/recipes/java/logging/jboss/formattedargumentstovmethodrecipes$warntovwarnwiththrowablerecipe.md)
   * **Refaster template `FormattedArgumentsToVMethod.WarnToVWarnWithThrowable`**
   * Recipe created for the following Refaster template: ```java public static class WarnToVWarnWithThrowable \{          @BeforeTemplate     void before(Logger logger, String message, Object[] args, Throwable t) \{         logger.warn((Object)message, args, t);     \}          @AfterTemplate     void after(Logger logger, String message, Object[] args, Throwable t) \{         logger.warnv(message, args, t);     \} \} ``` .
+* [org.openrewrite.java.logging.jboss.JBossLoggingBestPractices](/recipes/java/logging/jboss/jbossloggingbestpractices.md)
+  * **JBoss Logging Best Practices**
+  * This recipe applies best practices for logging in JBoss applications. It includes converting argument arrays to varargs for better readability and performance.
 * [org.openrewrite.java.logging.jboss.LoggerLevelArgumentToMethod](/recipes/java/logging/jboss/loggerlevelargumenttomethod.md)
   * **Replace JBoss Logging Level arguments with the corresponding eponymous level method calls**
   * Replace calls to `Logger.log(Level, ...)` with the corresponding eponymous level method calls. For example `Logger.log(Level.INFO, ...)` to `Logger.info(...)`.
@@ -2317,21 +4108,39 @@ _102 recipes_
 * [org.openrewrite.java.logging.jul.LoggerLevelArgumentToMethodRecipes$LogLevelWarningToMethodRecipe](/recipes/java/logging/jul/loggerlevelargumenttomethodrecipes$loglevelwarningtomethodrecipe.md)
   * **Replace JUL `Logger.log(Level.WARNING, String)` with `Logger.warning(String)`**
   * Replace calls to `java.util.logging.Logger.log(Level.WARNING, String)` with `Logger.warning(String)`.
+* [org.openrewrite.java.logging.log4j.CommonsLoggingToLog4j](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
+  * **Migrate JCL to Log4j 2.x API**
+  * Transforms code written using Apache Commons Logging to use Log4j 2.x API.
 * [org.openrewrite.java.logging.log4j.ConvertJulEntering](/recipes/java/logging/log4j/convertjulentering.md)
   * **Rewrites JUL's Logger#entering method to Log4j API**
   * Replaces JUL's Logger#entering method calls to Log4j API Logger#traceEntry calls.
 * [org.openrewrite.java.logging.log4j.ConvertJulExiting](/recipes/java/logging/log4j/convertjulexiting.md)
   * **Rewrites JUL's Logger#exiting method to Log4j API**
   * Replaces JUL's Logger#exiting method calls to Log4j API Logger#traceEntry calls.
+* [org.openrewrite.java.logging.log4j.JulToLog4j](/recipes/java/logging/log4j/jultolog4j.md)
+  * **Migrate JUL to Log4j 2.x API**
+  * Transforms code written using `java.util.logging` to use Log4j 2.x API.
+* [org.openrewrite.java.logging.log4j.Log4j1ToLog4j2](/recipes/java/logging/log4j/log4j1tolog4j2.md)
+  * **Migrate Log4j 1.x to Log4j 2.x**
+  * Migrates Log4j 1.x to Log4j 2.x.
 * [org.openrewrite.java.logging.log4j.LoggerSetLevelToConfiguratorRecipe](/recipes/java/logging/log4j/loggersetleveltoconfiguratorrecipe.md)
   * **Convert Log4j `Logger.setLevel` to Log4j2 `Configurator.setLevel`**
   * Converts `org.apache.log4j.Logger.setLevel` to `org.apache.logging.log4j.core.config.Configurator.setLevel`.
 * [org.openrewrite.java.logging.log4j.LoggingExceptionConcatenationRecipe](/recipes/java/logging/log4j/loggingexceptionconcatenationrecipe.md)
   * **Log exceptions as parameters rather than as string concatenations**
   * By using the exception as another parameter you get the whole stack trace.
+* [org.openrewrite.java.logging.log4j.ParameterizedLogging](/recipes/java/logging/log4j/parameterizedlogging.md)
+  * **Parameterize Log4j 2.x logging statements**
+  * Use Log4j 2.x parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
 * [org.openrewrite.java.logging.log4j.PrependRandomName](/recipes/java/logging/log4j/prependrandomname.md)
   * **Prepend a random name to each Log4J statement**
   * To make finding the callsite of a logging statement easier in code search.
+* [org.openrewrite.java.logging.log4j.Slf4jToLog4j](/recipes/java/logging/log4j/slf4jtolog4j.md)
+  * **Migrate SLF4J to Log4j 2.x API**
+  * Transforms code written using SLF4J to use Log4j 2.x API.
+* [org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
+  * **Upgrade Log4j 2.x dependency version**
+  * Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a).
 * [org.openrewrite.java.logging.logback.ConfigureLoggerLevel](/recipes/java/logging/logback/configureloggerlevel.md)
   * **Configure logback logger level**
   * Within logback.xml configuration files sets the specified log level for a particular class. Will not create a logback.xml if one does not already exist.
@@ -2341,12 +4150,24 @@ _102 recipes_
 * [org.openrewrite.java.logging.logback.Log4jLayoutToLogback](/recipes/java/logging/logback/log4jlayouttologback.md)
   * **Migrate Log4j 2.x Layout to logback-classic equivalents**
   * Migrates custom Log4j 2.x Layout components to `logback-classic`. This recipe operates on the following assumptions: 1. A logback-classic layout must extend the `LayoutBase&lt;ILoggingEvent&gt;` class. 2. log4j's `format()` is renamed to `doLayout()` in a logback-classic layout. 3. LoggingEvent `getRenderedMessage()` is converted to LoggingEvent `getMessage()`. 4. The log4j ignoresThrowable() method is not needed and has no equivalent in logback-classic. 5. The activateOptions() method merits further discussion. In log4j, a layout will have its activateOptions() method invoked by log4j configurators, that is PropertyConfigurator or DOMConfigurator just after all the options of the layout have been set. Thus, the layout will have an opportunity to check that its options are coherent and if so, proceed to fully initialize itself. 6. In logback-classic, layouts must implement the LifeCycle interface which includes a method called start(). The start() method is the equivalent of log4j's activateOptions() method. For more details, see this page from logback: [`Migration from log4j`](http://logback.qos.ch/manual/migrationFromLog4j.html).
+* [org.openrewrite.java.logging.logback.Log4jToLogback](/recipes/java/logging/logback/log4jtologback.md)
+  * **Migrate Log4j 2.x to Logback**
+  * Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementation directly. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.AddJBossLogManagerSlf4jProviderDependency](/recipes/java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency.md)
+  * **Add JBoss LogManager's SLF4J provider**
+  * When JBoss LogManager is the logging backend, add its SLF4J provider so we can migrate to SLF4J as a logging facade.
 * [org.openrewrite.java.logging.slf4j.ChangeLogLevel](/recipes/java/logging/slf4j/changeloglevel.md)
   * **Change SLF4J log level**
   * Change the log level of SLF4J log statements.
+* [org.openrewrite.java.logging.slf4j.CommonsLogging1ToSlf4j1](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
+  * **Migrate Apache Commons Logging 1.x to SLF4J 1.x**
+  * Transforms usages of Apache Commons Logging 1.x to leveraging SLF4J 1.x directly.
 * [org.openrewrite.java.logging.slf4j.CompleteExceptionLogging](/recipes/java/logging/slf4j/completeexceptionlogging.md)
   * **Enhances logging of exceptions by including the full stack trace in addition to the exception message**
   * It is a common mistake to call `Exception.getMessage()` when passing an exception into a log method. Not all exception types have useful messages, and even if the message is useful this omits the stack trace. Including a complete stack trace of the error along with the exception message in the log allows developers to better understand the context of the exception and identify the source of the error more quickly and accurately.  If the method invocation includes any call to `Exception.getMessage()` or `Exception.getLocalizedMessage()` and not an exception is already passed as the last parameter to the log method, then we will append the exception as the last parameter in the log method.
+* [org.openrewrite.java.logging.slf4j.JBossLoggingToSlf4j](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
+  * **Migrate JBoss Logging to SLF4J**
+  * Migrates usage of the JBoss Logging facade to using SLF4J.
 * [org.openrewrite.java.logging.slf4j.JulGetLoggerToLoggerFactory](/recipes/java/logging/slf4j/julgetloggertologgerfactory.md)
   * **Replace JUL Logger creation with SLF4J LoggerFactory**
   * Replace calls to `Logger.getLogger(Some.class.getName())` and `Logger.getLogger(Some.class.getCanonicalName())` with `LoggerFactory.getLogger(Some.class)`.
@@ -2383,6 +4204,9 @@ _102 recipes_
 * [org.openrewrite.java.logging.slf4j.JulParameterizedArguments](/recipes/java/logging/slf4j/julparameterizedarguments.md)
   * **Replace parameterized JUL level call with corresponding SLF4J method calls**
   * Replace calls to parameterized `Logger.log(Level,String,…)` call with the corresponding slf4j method calls transforming the formatter and parameter lists.
+* [org.openrewrite.java.logging.slf4j.JulToSlf4j](/recipes/java/logging/slf4j/jultoslf4j.md)
+  * **Migrate JUL to SLF4J**
+  * Migrates usage of Java Util Logging (JUL) to using SLF4J directly.
 * [org.openrewrite.java.logging.slf4j.JulToSlf4jLambdaSupplierRecipes](/recipes/java/logging/slf4j/jultoslf4jlambdasupplierrecipes.md)
   * **Replace JUL active Level check with corresponding SLF4J method calls**
   * Replace calls to `Logger.isLoggable(Level)` with the corresponding SLF4J method calls.
@@ -2485,6 +4309,15 @@ _102 recipes_
 * [org.openrewrite.java.logging.slf4j.JulToSlf4jSimpleCallsWithThrowableRecipes$JulToSlf4jSupplierWarningRecipe](/recipes/java/logging/slf4j/jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
   * **Replace JUL `logger.log(Level.WARNING, String message, Throwable e)` with SLF4J's `Logger.warn(message, e)`**
   * Replace calls to `java.util.logging.Logger.log(Level.WARNING, String message, Throwable e)` with `org.slf4j.Logger.warn(message, e)`.
+* [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
+  * **Migrate Log4j 1.x to SLF4J 1.x**
+  * Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1](/recipes/java/logging/slf4j/log4j2toslf4j1.md)
+  * **Migrate Log4j 2.x to SLF4J 1.x**
+  * Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](/recipes/java/logging/slf4j/log4jtoslf4j.md)
+  * **Migrate Log4j to SLF4J**
+  * Migrates usage of Apache Log4j to using SLF4J directly. Use of the traditional Log4j to SLF4J bridge can result in loss of performance, as the Log4j messages must be formatted before they can be passed to SLF4J. Note, this currently does not modify `log4j.properties` files.
 * [org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass](/recipes/java/logging/slf4j/loggersnamedforenclosingclass.md)
   * **Loggers should be named for their enclosing classes**
   * Ensure `LoggerFactory#getLogger(Class)` is called with the enclosing class as argument.
@@ -2494,9 +4327,15 @@ _102 recipes_
 * [org.openrewrite.java.logging.slf4j.MessageFormatToParameterizedLogging](/recipes/java/logging/slf4j/messageformattoparameterizedlogging.md)
   * **`MessageFormat.format()` in logging statements should use SLF4J parameterized logging**
   * Replace `MessageFormat.format()` calls in SLF4J logging statements with parameterized placeholders for improved performance.
+* [org.openrewrite.java.logging.slf4j.ParameterizedLogging](/recipes/java/logging/slf4j/parameterizedlogging.md)
+  * **Parameterize SLF4J's logging statements**
+  * Use SLF4J's parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
 * [org.openrewrite.java.logging.slf4j.RemoveUnnecessaryLogLevelGuards](/recipes/java/logging/slf4j/removeunnecessaryloglevelguards.md)
   * **Remove unnecessary log level guards**
   * Remove `if` statement guards around SLF4J logging calls when parameterized logging makes them unnecessary.
+* [org.openrewrite.java.logging.slf4j.Slf4jBestPractices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
+  * **SLF4J best practices**
+  * Applies best practices to logging with SLF4J.
 * [org.openrewrite.java.logging.slf4j.Slf4jLogShouldBeConstant](/recipes/java/logging/slf4j/slf4jlogshouldbeconstant.md)
   * **SLF4J logging statements should begin with constants**
   * Logging statements shouldn't begin with `String#format`, calls to `toString()`, etc.
@@ -2514,17 +4353,26 @@ _102 recipes_
 
 _License: Moderne Source Available License_
 
-_4 recipes_
+_7 recipes_
 
+* [org.openrewrite.micrometer.MicrometerBestPractices](/recipes/micrometer/micrometerbestpractices.md)
+  * **Micrometer best practices**
+  * This recipe will apply a set of best practice refactorings for Micrometer, like adopting `Observations` instead of `Timers`.
 * [org.openrewrite.micrometer.TimerToObservation](/recipes/micrometer/timertoobservation.md)
   * **Convert Micrometer `Timer` to `Observations`**
   * Convert Micrometer `Timer` to `Observations` to instrument once, and get multiple benefits out of it.
+* [org.openrewrite.micrometer.UpgradeMicrometer_1_13](/recipes/micrometer/upgrademicrometer_1_13.md)
+  * **Migrate to Micrometer 1.13**
+  * Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide).
 * [org.openrewrite.micrometer.dropwizard.FindDropwizardMetrics](/recipes/micrometer/dropwizard/finddropwizardmetrics.md)
   * **Find Dropwizard metrics**
   * Find uses of Dropwizard metrics that could be converted to a more modern metrics instrumentation library.
 * [org.openrewrite.micrometer.misk.MigrateEmptyLabelMiskCounter](/recipes/micrometer/misk/migrateemptylabelmiskcounter.md)
   * **Migrate Misk counter to Micrometer**
   * Convert a Misk (Prometheus) counter to a Micrometer counter.
+* [org.openrewrite.micrometer.misk.MigrateMiskToMicrometer](/recipes/micrometer/misk/migratemisktomicrometer.md)
+  * **Migrate Misk metrics to Micrometer**
+  * This recipe will move Misk metrics to Micrometer, where that is possible to do without a loss of fidelity.
 * [org.openrewrite.micrometer.misk.NoExplicitEmptyLabelList](/recipes/micrometer/misk/noexplicitemptylabellist.md)
   * **Don't use an explicit empty label list**
   * `listOf()` is the default argument for the `labels` parameter.
@@ -2533,7 +4381,7 @@ _4 recipes_
 
 _License: Apache License Version 2.0_
 
-_19 recipes_
+_36 recipes_
 
 * [org.openrewrite.java.micronaut.AddAnnotationProcessorPath](/recipes/java/micronaut/addannotationprocessorpath.md)
   * **Add Maven annotation processor path**
@@ -2541,6 +4389,12 @@ _19 recipes_
 * [org.openrewrite.java.micronaut.AddHttpRequestTypeParameter](/recipes/java/micronaut/addhttprequesttypeparameter.md)
   * **Add `HttpRequest` type parameter for implemented interfaces**
   * Add an `HttpRequest` type parameter to a class `implements` statement for interfaces that have been generically parameterized where they previously specified `HttpRequest` explicitly.
+* [org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded](/recipes/java/micronaut/addmicronautretrydependencyifneeded.md)
+  * **Update the Micronaut Retry support**
+  * This recipe will add the explicit Micronaut Retry dependency if needed.
+* [org.openrewrite.java.micronaut.AddMicronautWebsocketDependencyIfNeeded](/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded.md)
+  * **Update the Micronaut Websocket support**
+  * This recipe will add the explicit Micronaut Websocket dependency if needed.
 * [org.openrewrite.java.micronaut.AddSnakeYamlDependencyIfNeeded](/recipes/java/micronaut/addsnakeyamldependencyifneeded.md)
   * **Add `snakeyaml` dependency if needed**
   * This recipe will add the `snakeyaml` dependency to a Micronaut 4 application that uses yaml configuration.
@@ -2565,6 +4419,12 @@ _19 recipes_
 * [org.openrewrite.java.micronaut.FixDeprecatedExceptionHandlerConstructors](/recipes/java/micronaut/fixdeprecatedexceptionhandlerconstructors.md)
   * **Fix deprecated no-arg `ExceptionHandler` constructors**
   * Adds `ErrorResponseProcessor` argument to deprecated no-arg `ExceptionHandler` constructors.
+* [org.openrewrite.java.micronaut.Micronaut2to3Migration](/recipes/java/micronaut/micronaut2to3migration.md)
+  * **Migrate from Micronaut 2.x to 3.x**
+  * This recipe will apply changes required for migrating from Micronaut 2 to Micronaut 3.
+* [org.openrewrite.java.micronaut.Micronaut3to4Migration](/recipes/java/micronaut/micronaut3to4migration.md)
+  * **Migrate from Micronaut 3.x to 4.x**
+  * This recipe will apply changes required for migrating from Micronaut 3 to Micronaut 4.
 * [org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter](/recipes/java/micronaut/onceperrequesthttpserverfiltertohttpserverfilter.md)
   * **Convert `OncePerRequestServerFilter` extensions to `HttpServerFilter`**
   * Starting in Micronaut 3.0 all filters are executed once per request. Directly implement `HttpServerFilter` instead of extending `OncePerRequestHttpServerFilter` and replace any usages of `micronaut.once` attributes with a custom attribute name.
@@ -2574,12 +4434,51 @@ _19 recipes_
 * [org.openrewrite.java.micronaut.RemoveAnnotationProcessorPath](/recipes/java/micronaut/removeannotationprocessorpath.md)
   * **Remove Maven annotation processor path**
   * Remove the Maven annotation processor path that matches the given groupId and artifactId.
+* [org.openrewrite.java.micronaut.RemoveUnnecessaryDependencies](/recipes/java/micronaut/removeunnecessarydependencies.md)
+  * **Remove unnecessary dependencies**
+  * This recipe will remove dependencies that are no longer explicitly needed.
+* [org.openrewrite.java.micronaut.RemoveWithJansiLogbackConfiguration](/recipes/java/micronaut/removewithjansilogbackconfiguration.md)
+  * **Remove withJansi Logback configuration**
+  * This recipe will remove the withJansi configuration tag from logback.xml.
 * [org.openrewrite.java.micronaut.SubclassesReturnedFromFactoriesNotInjectable](/recipes/java/micronaut/subclassesreturnedfromfactoriesnotinjectable.md)
   * **Change factory method return types to reflect their resolved return type**
   * As of Micronaut 3.x It is no longer possible to inject the internal implementation type from beans produced via factories. Factory method return types are changed to reflect the resolved return type if the method returns a single non-null type that does not match the method declaration return type.
 * [org.openrewrite.java.micronaut.TypeRequiresIntrospection](/recipes/java/micronaut/typerequiresintrospection.md)
   * **Add `@Introspected` to classes requiring a map representation**
   * In Micronaut 2.x a reflection-based strategy was used to retrieve that information if the class was not annotated with `@Introspected`. As of Micronaut 3.x it is required to annotate classes with `@Introspected` that are used in this way.
+* [org.openrewrite.java.micronaut.UpdateBlockingTaskExecutors](/recipes/java/micronaut/updateblockingtaskexecutors.md)
+  * **Migrate the use of TaskExecutors with blocking IO**
+  * This recipe will any usage of TaskExecutors.IO to TaskExecutors.BLOCKING in order to be compatible with virtual threads.
+* [org.openrewrite.java.micronaut.UpdateBuildPlugins](/recipes/java/micronaut/updatebuildplugins.md)
+  * **Add Micronaut build plugins to 4.x**
+  * This recipe will update the shadow jar plugin to 8.x and the Micronaut build plugins to 4.x for a Gradle build.
+* [org.openrewrite.java.micronaut.UpdateBuildToMicronaut4Version](/recipes/java/micronaut/updatebuildtomicronaut4version.md)
+  * **Update the Micronaut version to 4.x**
+  * This recipe will update the Micronaut version to 4.x for a Gradle or Maven build.
+* [org.openrewrite.java.micronaut.UpdateJakartaAnnotations](/recipes/java/micronaut/updatejakartaannotations.md)
+  * **Update jakarta annotations dependency**
+  * This recipe will remove jakarta annotations dependency as it is a transitive dependency of micronaut-inject, and migrate from javax.annotation if needed.
+* [org.openrewrite.java.micronaut.UpdateMavenAnnotationProcessors](/recipes/java/micronaut/updatemavenannotationprocessors.md)
+  * **Update the version of core annotation processors**
+  * This recipe will update the version of Maven-configured annotation processors from Micronaut Core.
+* [org.openrewrite.java.micronaut.UpdateMicronautData](/recipes/java/micronaut/updatemicronautdata.md)
+  * **Update the Micronaut Data library**
+  * This recipe will make the necessary updates for using Micronaut Data with Micronaut Framework 4.
+* [org.openrewrite.java.micronaut.UpdateMicronautEmail](/recipes/java/micronaut/updatemicronautemail.md)
+  * **Update to Micronaut Email 2.x**
+  * This recipe will migrate from javax.validation if needed, and update packages in for the Postmark integration if needed.
+* [org.openrewrite.java.micronaut.UpdateMicronautPlatformBom](/recipes/java/micronaut/updatemicronautplatformbom.md)
+  * **Update to Micronaut 4.x platform BOM**
+  * This recipe will update a Gradle or Maven build to reference the Micronaut 4 platform BOM.
+* [org.openrewrite.java.micronaut.UpdateMicronautSecurity](/recipes/java/micronaut/updatemicronautsecurity.md)
+  * **Update the Micronaut Security library**
+  * This recipe will update imports for relocated classes and update configuration files with renamed keys.
+* [org.openrewrite.java.micronaut.UpdateMicronautSession](/recipes/java/micronaut/updatemicronautsession.md)
+  * **Update the Micronaut Session support**
+  * This recipe will update the Micronaut Session dependency if needed.
+* [org.openrewrite.java.micronaut.UpdateMicronautValidation](/recipes/java/micronaut/updatemicronautvalidation.md)
+  * **Update to Micronaut Validation 4.x**
+  * This recipe will add jakarta validation dependency if needed, migrate from javax.validation if needed, and update micronaut validation dependencies.
 * [org.openrewrite.java.micronaut.UpdateSecurityPropertiesIfNeeded](/recipes/java/micronaut/updatesecuritypropertiesifneeded.md)
   * **Update relocated Micronaut Security config properties**
   * This recipe will update relocated security config keys in Micronaut configuration property files.
@@ -2597,11 +4496,47 @@ _19 recipes_
 
 _License: Moderne Source Available License_
 
-_175 recipes_
+_440 recipes_
 
+* [com.google.guava.InlineGuavaMethods](/recipes/com/google/guava/inlineguavamethods.md)
+  * **Inline `guava` methods annotated with `@InlineMe`**
+  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
+* [org.openrewrite.java.jspecify.JSpecifyBestPractices](/recipes/java/jspecify/jspecifybestpractices.md)
+  * **JSpecify best practices**
+  * Apply JSpecify best practices, such as migrating off of alternatives, and adding missing `@Nullable` annotations.
+* [org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
+  * **Migrate from Jakarta annotation API to JSpecify**
+  * Migrate from Jakarta annotation API to JSpecify.
+* [org.openrewrite.java.jspecify.MigrateFromJavaxAnnotationApi](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
+  * **Migrate from javax annotation API to JSpecify**
+  * Migrate from javax annotation API to JSpecify.
+* [org.openrewrite.java.jspecify.MigrateFromJetbrainsAnnotations](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
+  * **Migrate from JetBrains annotations to JSpecify**
+  * Migrate from JetBrains annotations to JSpecify.
+* [org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations](/recipes/java/jspecify/migratefrommicrometerannotations.md)
+  * **Migrate from Micrometer annotations to JSpecify**
+  * Migrate from Micrometer annotations to JSpecify.
+* [org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations](/recipes/java/jspecify/migratefrommicronautannotations.md)
+  * **Migrate from Micronaut Framework annotations to JSpecify**
+  * Migrate from Micronaut Framework annotations to JSpecify.
+* [org.openrewrite.java.jspecify.MigrateFromSpringFrameworkAnnotations](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
+  * **Migrate from Spring Framework annotations to JSpecify**
+  * Migrate from Spring Framework annotations to JSpecify.
+* [org.openrewrite.java.jspecify.MigrateToJSpecify](/recipes/java/jspecify/migratetojspecify.md)
+  * **Migrate to JSpecify**
+  * This recipe will migrate to JSpecify annotations from various other nullability annotation standards.
+* [org.openrewrite.java.migrate.AccessController](/recipes/java/migrate/accesscontroller.md)
+  * **Remove Security AccessController**
+  * The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.AccessController`.
 * [org.openrewrite.java.migrate.AddJDeprScanPlugin](/recipes/java/migrate/addjdeprscanplugin.md)
   * **Add `JDeprScan` Maven Plug-in**
   * Add the `JDeprScan` Maven plugin to scan class files for uses of deprecated APIs.
+* [org.openrewrite.java.migrate.AddLombokMapstructBinding](/recipes/java/migrate/addlombokmapstructbinding.md)
+  * **Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used**
+  * Add the `lombok-mapstruct-binding` annotation processor as needed when both MapStruct and Lombok are used.
+* [org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly](/recipes/java/migrate/addlombokmapstructbindingmavendependencyonly.md)
+  * **Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used**
+  * Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
 * [org.openrewrite.java.migrate.AddMissingMethodImplementation](/recipes/java/migrate/addmissingmethodimplementation.md)
   * **Adds missing method implementations**
   * Check for missing methods required by interfaces and adds them.
@@ -2620,6 +4555,12 @@ _175 recipes_
 * [org.openrewrite.java.migrate.BeansXmlNamespace](/recipes/java/migrate/beansxmlnamespace.md)
   * **Change `beans.xml` `schemaLocation` to match XML namespace**
   * Set the `schemaLocation` that corresponds to the `xmlns` set in `beans.xml` files.
+* [org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md)
+  * **Migrate Bouncy Castle to `jdk18on`**
+  * This recipe will upgrade Bouncy Castle dependencies from `-jdk15on` or `-jdk15to18` to `-jdk18on`.
+* [org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md)
+  * **Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8**
+  * This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8.
 * [org.openrewrite.java.migrate.CastArraysAsListToList](/recipes/java/migrate/castarraysaslisttolist.md)
   * **Remove explicit casts on `Arrays.asList(..).toArray()`**
   * Convert code like `(Integer[]) Arrays.asList(1, 2, 3).toArray()` to `Arrays.asList(1, 2, 3).toArray(new Integer[0])`.
@@ -2629,33 +4570,132 @@ _175 recipes_
 * [org.openrewrite.java.migrate.ChangeMethodInvocationReturnType](/recipes/java/migrate/changemethodinvocationreturntype.md)
   * **Change method invocation return type**
   * Changes the return type of a method invocation.
+* [org.openrewrite.java.migrate.ComIntelliJAnnotationsToOrgJetbrainsAnnotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
+  * **Migrate com.intellij:annotations to org.jetbrains:annotations**
+  * This recipe will upgrade old dependency of com.intellij:annotations to the newer org.jetbrains:annotations.
+* [org.openrewrite.java.migrate.DeleteDeprecatedFinalize](/recipes/java/migrate/deletedeprecatedfinalize.md)
+  * **Avoid using the deprecated empty `finalize()` method in `java.desktop`**
+  * The java.desktop module had a few implementations of finalize() that did nothing and have been removed. This recipe will remove these methods.
+* [org.openrewrite.java.migrate.DeprecatedCountStackFramesMethod](/recipes/java/migrate/deprecatedcountstackframesmethod.md)
+  * **Remove `Thread.countStackFrames()` method**
+  * `Thread.countStackFrames()` has been removed in Java SE 14 and has been changed in this release to unconditionally throw `UnsupportedOperationException`  This recipe removes the usage of this method in your application as long as the method is not assigned to a variable.  For more information on the Java SE 14 deprecation of this method, see https://bugs.java.com/bugdatabase/view_bug?bug_id=8205132.
+* [org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert](/recipes/java/migrate/deprecatedjavaxsecuritycert.md)
+  * **Use `java.security.cert` instead of `javax.security.cert`**
+  * The `javax.security.cert` package has been deprecated for removal.
+* [org.openrewrite.java.migrate.DeprecatedLogRecordThreadID](/recipes/java/migrate/deprecatedlogrecordthreadid.md)
+  * **Adopt `setLongThreadID` in `java.util.logging.LogRecord`**
+  * Avoid using the deprecated methods in `java.util.logging.LogRecord`.
 * [org.openrewrite.java.migrate.DontOverfetchDto](/recipes/java/migrate/dontoverfetchdto.md)
   * **Replace DTO method parameters with data elements**
   * Replace method parameters that have DTOs with their data elements when only the specified data element is used.
+* [org.openrewrite.java.migrate.EnableLombokAnnotationProcessor](/recipes/java/migrate/enablelombokannotationprocessor.md)
+  * **Enable Lombok annotation processor**
+  * With Java 23 the encapsulation of JDK internals made it necessary to configure annotation processors like Lombok explicitly. The change is valid for older versions as well.
+* [org.openrewrite.java.migrate.IBMJDKtoOracleJDK](/recipes/java/migrate/ibmjdktooraclejdk.md)
+  * **Migrate from IBM Runtimes to Oracle Runtimes**
+  * This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions necessary for migrating from IBM Runtimes to Oracle Runtimes.
+* [org.openrewrite.java.migrate.IBMSemeru](/recipes/java/migrate/ibmsemeru.md)
+  * **Migrate to IBM Semeru Runtimes**
+  * This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions only available in IBM Semeru Runtimes.
 * [org.openrewrite.java.migrate.IllegalArgumentExceptionToAlreadyConnectedException](/recipes/java/migrate/illegalargumentexceptiontoalreadyconnectedexception.md)
   * **Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method**
   * Replace `IllegalArgumentException` with `AlreadyConnectedException` for DatagramChannel.send() to ensure compatibility with Java 11+.
+* [org.openrewrite.java.migrate.InternalBindPackages](/recipes/java/migrate/internalbindpackages.md)
+  * **Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`**
+  * Do not use APIs from `com.sun.xml.internal.bind.*` packages.
+* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslAPIs](/recipes/java/migrate/jredonotusesunnetsslapis.md)
+  * **Use `javax.net.ssl` instead of `com.sun.net.ssl`**
+  * Do not use APIs from `com.sun.net.ssl` packages.
+* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalSslProvider](/recipes/java/migrate/jredonotusesunnetsslinternalsslprovider.md)
+  * **Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`**
+  * Do not use the `com.sun.net.ssl.internal.ssl.Provider` class.
+* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol](/recipes/java/migrate/jredonotusesunnetsslinternalwwwprotocol.md)
+  * **Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`**
+  * Do not use the `com.sun.net.ssl.internal.www.protocol` package.
+* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocolHttpsHandler](/recipes/java/migrate/jredonotusesunnetsslinternalwwwprotocolhttpshandler.md)
+  * **Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`**
+  * Do not use the `com.sun.net.ssl.internal.www.protocol.https.Handler` class.
+* [org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
+  * **Adds missing JDBC interface methods**
+  * Add method implementations stubs to classes that implement JDBC interfaces.
 * [org.openrewrite.java.migrate.JREThrowableFinalMethods](/recipes/java/migrate/jrethrowablefinalmethods.md)
   * **Rename final method declarations `getSuppressed()` and `addSuppressed(Throwable exception)` in classes that extend `Throwable`**
   * The recipe renames  `getSuppressed()` and `addSuppressed(Throwable exception)` methods  in classes that extend `java.lang.Throwable` to `myGetSuppressed` and `myAddSuppressed(Throwable)`. These methods were added to Throwable in Java 7 and are marked final which cannot be overridden.
+* [org.openrewrite.java.migrate.JREWrapperInterface](/recipes/java/migrate/jrewrapperinterface.md)
+  * **Add missing `isWrapperFor` and `unwrap` methods**
+  * Add method implementations stubs to classes that implement `java.sql.Wrapper`.
+* [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
+  * **Migrate to Java 11**
+  * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
 * [org.openrewrite.java.migrate.JpaCacheProperties](/recipes/java/migrate/jpacacheproperties.md)
   * **Disable the persistence unit second-level cache**
   * Sets an explicit value for the shared cache mode.
+* [org.openrewrite.java.migrate.Jre17AgentMainPreMainPublic](/recipes/java/migrate/jre17agentmainpremainpublic.md)
+  * **Set visibility of `premain` and `agentmain` methods to `public`**
+  * Check for a behavior change in Java agents.
+* [org.openrewrite.java.migrate.Krb5LoginModuleClass](/recipes/java/migrate/krb5loginmoduleclass.md)
+  * **Use `com.sun.security.auth.module.Krb5LoginModule` instead of `com.ibm.security.auth.module.Krb5LoginModule`**
+  * Do not use the `com.ibm.security.auth.module.Krb5LoginModule` class.
 * [org.openrewrite.java.migrate.MXBeanRule](/recipes/java/migrate/mxbeanrule.md)
   * **MBean and MXBean interfaces must be public**
   * Sets visibility of MBean and MXBean interfaces to public.
 * [org.openrewrite.java.migrate.MigrateGraalVMResourceConfig](/recipes/java/migrate/migrategraalvmresourceconfig.md)
   * **Migrate GraalVM resource-config.json to glob patterns**
   * Migrates GraalVM native-image resource-config.json files from the legacy regex pattern format (JDK 21 and earlier) to the new glob pattern format (JDK 23+). Converts `pattern` entries to `glob` entries and restructures the format. Note: `excludes` are no longer supported in the new format and will be removed.
+* [org.openrewrite.java.migrate.MigrateZipErrorToZipException](/recipes/java/migrate/migrateziperrortozipexception.md)
+  * **Use `ZipException` instead of `ZipError`**
+  * Use `ZipException` instead of the deprecated `ZipError` in Java 9 or higher.
 * [org.openrewrite.java.migrate.ReferenceCloneMethod](/recipes/java/migrate/referenceclonemethod.md)
   * **Replace `java.lang.ref.Reference.clone()` with constructor call**
   * The recipe replaces any clone calls that may resolve to a `java.lang.ref.Reference.clone()` or any of its known subclasses: `java.lang.ref.PhantomReference`, `java.lang.ref.SoftReference`, and `java.lang.ref.WeakReference` with a constructor call passing in the referent and reference queue as parameters.
 * [org.openrewrite.java.migrate.RemoveIllegalSemicolons](/recipes/java/migrate/removeillegalsemicolons.md)
   * **Remove illegal semicolons**
   * Remove semicolons after package declarations and imports, no longer accepted in Java 21 as of [JDK-8027682](https://bugs.openjdk.org/browse/JDK-8027682).
+* [org.openrewrite.java.migrate.RemoveSecurityManager](/recipes/java/migrate/removesecuritymanager.md)
+  * **Remove Security SecurityManager**
+  * The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.SecurityManager`.
+* [org.openrewrite.java.migrate.RemoveSecurityPolicy](/recipes/java/migrate/removesecuritypolicy.md)
+  * **Remove Security Policy**
+  * The Security Manager API is unsupported in Java 24. This recipe will remove the use of `java.security.Policy`.
+* [org.openrewrite.java.migrate.RemovedFileIOFinalizeMethods](/recipes/java/migrate/removedfileiofinalizemethods.md)
+  * **Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`**
+  * The `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream` is no longer available in Java SE 12 and later. The recipe replaces it with the `close` method.
+* [org.openrewrite.java.migrate.RemovedJavaXMLWSModuleProvided](/recipes/java/migrate/removedjavaxmlwsmoduleprovided.md)
+  * **Do not package `java.xml.ws` module in WebSphere Liberty applications**
+  * The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe updates the `javax.xml.ws` dependency to use the `provided` scope to avoid class loading issues.
+* [org.openrewrite.java.migrate.RemovedJaxBModuleProvided](/recipes/java/migrate/removedjaxbmoduleprovided.md)
+  * **Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications**
+  * The `java.xml.bind` and `java.activation` modules were removed in Java11. Websphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe updates the `javax.xml.bind` and `javax.activation` dependencies to use the `provided` scope to avoid class loading issues.
+* [org.openrewrite.java.migrate.RemovedLegacySunJSSEProviderName](/recipes/java/migrate/removedlegacysunjsseprovidername.md)
+  * **Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`**
+  * The `com.sun.net.ssl.internal.ssl.Provider` provider name was removed.
+* [org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
+  * **Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static**
+  * The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be  static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes.
+* [org.openrewrite.java.migrate.RemovedPolicy](/recipes/java/migrate/removedpolicy.md)
+  * **Replace `javax.security.auth.Policy` with `java.security.Policy`**
+  * The `javax.security.auth.Policy` class is not available from Java SE 11 onwards.
+* [org.openrewrite.java.migrate.RemovedRMIConnectorServerCredentialTypesConstant](/recipes/java/migrate/removedrmiconnectorservercredentialtypesconstant.md)
+  * **Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant**
+  * This recipe replaces the `RMIConnectorServer.CREDENTIAL_TYPES` constant with the `RMIConnectorServer.CREDENTIALS_FILTER_PATTERN` constant.
+* [org.openrewrite.java.migrate.RemovedRuntimeTraceMethods](/recipes/java/migrate/removedruntimetracemethods.md)
+  * **Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods**
+  * The `traceInstructions` and `traceMethodCalls` methods in `java.lang.Runtime` were deprecated in Java SE 9 and are no longer available in Java SE 13 and later. The recipe removes the invocations of these methods since the method invocations do nothing functionally.
+* [org.openrewrite.java.migrate.RemovedSSLSessionGetPeerCertificateChainMethodImpl](/recipes/java/migrate/removedsslsessiongetpeercertificatechainmethodimpl.md)
+  * **Replace `SSLSession.getPeerCertificateChain()` method**
+  * The `javax.net.ssl.SSLSession.getPeerCertificateChain()` method implementation was removed from the SunJSSE provider and HTTP client implementation in Java SE 15. The default implementation will now throw an `UnsupportedOperationException`. Applications using this method should be updated to use the `javax.net.ssl.SSLSession.getPeerCertificates()` method instead.
 * [org.openrewrite.java.migrate.RemovedSecurityManagerMethods](/recipes/java/migrate/removedsecuritymanagermethods.md)
   * **Replace deprecated methods in`SecurityManager`**
   * Replace `SecurityManager` methods `checkAwtEventQueueAccess()`, `checkSystemClipboardAccess()`, `checkMemberAccess()` and `checkTopLevelWindow()` deprecated in Java SE 11 by `checkPermission(new java.security.AllPermission())`.
+* [org.openrewrite.java.migrate.RemovedSubjectMethods](/recipes/java/migrate/removedsubjectmethods.md)
+  * **Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`**
+  * Replaces the `javax.security.auth.Subject.getSubject()` and `javax.security.auth.Subject.doAs()` methods with `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()`.
+* [org.openrewrite.java.migrate.RemovedToolProviderConstructor](/recipes/java/migrate/removedtoolproviderconstructor.md)
+  * **Change `javax.tools.ToolProvider` methods calls to static**
+  * The `javax.tools.ToolProvider()` constructor has been removed in Java SE 16 since the class only contains static methods. The recipe converts `javax.tools.ToolProvider getSystemJavaCompiler()`, `javax.tools.ToolProvider getSystemDocumentationTool()` and `javax.tools.ToolProvider getSystemToolClassLoader()` to static methods.
+* [org.openrewrite.java.migrate.RemovedZipFinalizeMethods](/recipes/java/migrate/removedzipfinalizemethods.md)
+  * **Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`**
+  * The `finalize` method in `java.util.zip.ZipFile` is replaced with the `close` method and is replaced by the `end` method in  `java.util.zip.Inflater` and `java.util.zip.Deflater` as it is no longer available in Java SE 12 and later.
 * [org.openrewrite.java.migrate.ReplaceAWTGetPeerMethod](/recipes/java/migrate/replaceawtgetpeermethod.md)
   * **Replace AWT `getPeer()` method**
   * This recipe replaces the use of `getPeer()` method in `java.awt.*` classes. `component.getPeer() != null` is replaced with `component.isDisplayable()` and `component.getPeer() instanceof LightweightPeer` is replaced with `component.isLightweight()`.
@@ -2668,21 +4708,144 @@ _175 recipes_
 * [org.openrewrite.java.migrate.ReplaceStringLiteralValue](/recipes/java/migrate/replacestringliteralvalue.md)
   * **Replace `String` literal**
   * Replace the value of a complete `String` literal.
+* [org.openrewrite.java.migrate.SunNetSslPackageUnavailable](/recipes/java/migrate/sunnetsslpackageunavailable.md)
+  * **Replace `com.sun.net.ssl` package**
+  * The internal API `com.sun.net.ssl` is removed. The package was intended for internal use only and replacement APIs can be found in the `javax.net.ssl` package.
+* [org.openrewrite.java.migrate.SwitchPatternMatching](/recipes/java/migrate/switchpatternmatching.md)
+  * **Adopt switch pattern matching (JEP 441)**
+  * [JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable.
+* [org.openrewrite.java.migrate.SystemGetSecurityManagerToNull](/recipes/java/migrate/systemgetsecuritymanagertonull.md)
+  * **Replace `System.getSecurityManager()` with `null`**
+  * The Security Manager API is unsupported in Java 24. This recipe will replace `System.getSecurityManager()` with `null` to make its behavior more obvious and try to simplify execution paths afterwards.
+* [org.openrewrite.java.migrate.ThreadStopDestroy](/recipes/java/migrate/threadstopdestroy.md)
+  * **Remove `Thread.destroy()` and `Thread.stop(Throwable)`**
+  * The `java.lang.Thread.destroy()` method was never implemented, and the `java.lang.Thread.stop(java.lang.Throwable)` method has been unusable since Java SE 8. This recipe removes any usage of these methods from your application.
 * [org.openrewrite.java.migrate.UpdateSdkMan](/recipes/java/migrate/updatesdkman.md)
   * **Update SDKMan Java version**
   * Update the SDKMAN JDK version in the `.sdkmanrc` file. Given a major release (e.g., 17), the recipe will update the current distribution to the current default SDKMAN version of the specified major release. The distribution option can be used to specify a specific JVM distribution. Note that these must correspond to valid SDKMAN distributions.
+* [org.openrewrite.java.migrate.UpgradeBuildToJava11](/recipes/java/migrate/upgradebuildtojava11.md)
+  * **Upgrade build to Java 11**
+  * Updates build files to use Java 11 as the target/source.
+* [org.openrewrite.java.migrate.UpgradeBuildToJava17](/recipes/java/migrate/upgradebuildtojava17.md)
+  * **Upgrade build to Java 17**
+  * Updates build files to use Java 17 as the target/source.
+* [org.openrewrite.java.migrate.UpgradeBuildToJava21](/recipes/java/migrate/upgradebuildtojava21.md)
+  * **Upgrade build to Java 21**
+  * Updates build files to use Java 21 as the target/source.
 * [org.openrewrite.java.migrate.UpgradeDockerImageVersion](/recipes/java/migrate/upgradedockerimageversion.md)
   * **Upgrade Docker image Java version**
   * Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin.
 * [org.openrewrite.java.migrate.UpgradeJavaVersion](/recipes/java/migrate/upgradejavaversion.md)
   * **Upgrade Java version**
   * Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
+* [org.openrewrite.java.migrate.UpgradePluginsForJava11](/recipes/java/migrate/upgradepluginsforjava11.md)
+  * **Upgrade plugins to Java 11 compatible versions**
+  * Updates plugins to version compatible with Java 11.
+* [org.openrewrite.java.migrate.UpgradePluginsForJava17](/recipes/java/migrate/upgradepluginsforjava17.md)
+  * **Upgrade plugins to Java 17 compatible versions**
+  * Updates plugins to version compatible with Java 17.
+* [org.openrewrite.java.migrate.UpgradePluginsForJava21](/recipes/java/migrate/upgradepluginsforjava21.md)
+  * **Upgrade plugins to Java 21 compatible versions**
+  * Updates plugins and dependencies to version compatible with Java 21.
+* [org.openrewrite.java.migrate.UpgradePluginsForJava25](/recipes/java/migrate/upgradepluginsforjava25.md)
+  * **Upgrade plugins to Java 25 compatible versions**
+  * Updates plugins and dependencies to versions compatible with Java 25.
+* [org.openrewrite.java.migrate.UpgradeToJava17](/recipes/java/migrate/upgradetojava17.md)
+  * **Migrate to Java 17**
+  * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
+* [org.openrewrite.java.migrate.UpgradeToJava21](/recipes/java/migrate/upgradetojava21.md)
+  * **Migrate to Java 21**
+  * This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
+* [org.openrewrite.java.migrate.UpgradeToJava25](/recipes/java/migrate/upgradetojava25.md)
+  * **Migrate to Java 25**
+  * This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
+* [org.openrewrite.java.migrate.UpgradeToJava6](/recipes/java/migrate/upgradetojava6.md)
+  * **Migrate to Java 6**
+  * This recipe will apply changes commonly needed when upgrading to Java 6. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
+* [org.openrewrite.java.migrate.UpgradeToJava7](/recipes/java/migrate/upgradetojava7.md)
+  * **Migrate to Java 7**
+  * This recipe will apply changes commonly needed when upgrading to Java 7. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
+* [org.openrewrite.java.migrate.UpgradeToJava8](/recipes/java/migrate/upgradetojava8.md)
+  * **Migrate to Java 8**
+  * This recipe will apply changes commonly needed when upgrading to Java 8. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
 * [org.openrewrite.java.migrate.UseJavaUtilBase64](/recipes/java/migrate/usejavautilbase64.md)
   * **Prefer `java.util.Base64` instead of `sun.misc`**
   * Prefer `java.util.Base64` instead of using `sun.misc` in Java 8 or higher. `sun.misc` is not exported by the Java module system and accessing this class will result in a warning in Java 11 and an error in Java 17.
 * [org.openrewrite.java.migrate.UseTabsOrSpaces](/recipes/java/migrate/usetabsorspaces.md)
   * **Force indentation to either tabs or spaces**
   * This is useful for one-off migrations of a codebase that has mixed indentation styles, while preserving all other auto-detected formatting rules.
+* [org.openrewrite.java.migrate.WasDevMvnChangeParentArtifactId](/recipes/java/migrate/wasdevmvnchangeparentartifactid.md)
+  * **Change `net.wasdev.maven.parent:java8-parent` to `:parent`**
+  * This recipe changes the artifactId of the `&lt;parent&gt;` tag in the `pom.xml` from `java8-parent` to `parent`.
+* [org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin](/recipes/java/migrate/cobertura/removecoberturamavenplugin.md)
+  * **Remove Cobertura Maven plugin**
+  * This recipe will remove Cobertura, as it is not compatible with Java 11.
+* [org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs](/recipes/java/migrate/concurrent/javaconcurrentapis.md)
+  * **Use modernized `java.util.concurrent` APIs**
+  * The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe update an application to replace the deprecated APIs with their modern alternatives.
+* [org.openrewrite.java.migrate.concurrent.MigrateAtomicBooleanWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
+  * **Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`**
+  * Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)` instead of the deprecated `AtomicBoolean#weakCompareAndSet(boolean, boolean)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerArrayWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicintegerarrayweakcompareandsettoweakcompareandsetplain.md)
+  * **Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)`**
+  * Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)` instead of the deprecated `AtomicIntegerArray#weakCompareAndSet(int, int, int)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)
+  * **Use `AtomicInteger#weakCompareAndSetPlain(int, int)`**
+  * Use `AtomicInteger#weakCompareAndSetPlain(int, int)` instead of the deprecated `AtomicInteger#weakCompareAndSet(int, int)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
+  * **Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`**
+  * Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)` instead of the deprecated `AtomicLongArray#weakCompareAndSet(int, long, long)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.concurrent.MigrateAtomicLongWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomiclongweakcompareandsettoweakcompareandsetplain.md)
+  * **Use `AtomicLong#weakCompareAndSetPlain(long, long)`**
+  * Use `AtomicLong#weakCompareAndSetPlain(long, long)` instead of the deprecated `AtomicLong#weakCompareAndSet(long, long)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
+  * **Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`**
+  * Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)` instead of the deprecated `AtomicReferenceArray#weakCompareAndSet(int, T, T)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
+  * **Use `AtomicReference#weakCompareAndSetPlain(T, T)`**
+  * Use `AtomicReference#weakCompareAndSetPlain(T, T)` instead of the deprecated `AtomicReference#weakCompareAndSet(T, T)` in Java 9 or higher.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_4_0](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_4_0.md)
+  * **DataNucleus 4.0 package moves**
+  * Relocate packages that were moved in DataNucleus 4.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_5_0](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_0.md)
+  * **DataNucleus 5.0 package moves**
+  * Relocate packages that were moved in DataNucleus 5.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_5_2](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_2.md)
+  * **DataNucleus 5.2 package moves**
+  * Relocate packages that were moved in DataNucleus 5.2.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_4_0](/recipes/java/migrate/datanucleus/datanucleusproperties_4_0.md)
+  * **DataNucleus 4.0 property migrations**
+  * Rename property keys that changed in DataNucleus 4.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_0](/recipes/java/migrate/datanucleus/datanucleusproperties_5_0.md)
+  * **DataNucleus 5.0 property migrations**
+  * Rename property keys that changed in DataNucleus 5.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_1](/recipes/java/migrate/datanucleus/datanucleusproperties_5_1.md)
+  * **DataNucleus 5.1 property migrations**
+  * Rename property keys that changed in DataNucleus 5.1.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_2](/recipes/java/migrate/datanucleus/datanucleusproperties_5_2.md)
+  * **DataNucleus 5.2 property migrations**
+  * Rename property keys that changed in DataNucleus 5.2.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusTypeChanges_4_0](/recipes/java/migrate/datanucleus/datanucleustypechanges_4_0.md)
+  * **DataNucleus 4.0 type changes**
+  * Rename types that were changed in DataNucleus 4.0.
+* [org.openrewrite.java.migrate.datanucleus.DataNucleusTypeChanges_5_0](/recipes/java/migrate/datanucleus/datanucleustypechanges_5_0.md)
+  * **DataNucleus 5.0 type changes**
+  * Rename types that were changed in DataNucleus 5.0.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_4_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_4_0.md)
+  * **Migrate to DataNucleus 4.0**
+  * Migrate DataNucleus 3.x applications to 4.0. This recipe handles package relocations, type renames, property key changes, and dependency updates introduced in AccessPlatform 4.0.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_0.md)
+  * **Migrate to DataNucleus 5.0**
+  * Migrate DataNucleus 4.x applications to 5.0. This recipe handles package relocations, type renames, property key changes, and dependency updates.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_1](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_1.md)
+  * **Migrate to DataNucleus 5.1**
+  * Migrate DataNucleus applications to 5.1. This recipe first applies the 5.0 migration, then handles the transaction namespace reorganization and other property renames introduced in 5.1.
+* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_2](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_2.md)
+  * **Migrate to DataNucleus 5.2**
+  * Migrate DataNucleus applications to 5.2. This recipe first applies the 5.1 migration, then handles the column mapping package move and query-related property renames introduced in 5.2.
+* [org.openrewrite.java.migrate.guava.NoGuava](/recipes/java/migrate/guava/noguava.md)
+  * **Prefer the Java standard library instead of Guava**
+  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
 * [org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference](/recipes/java/migrate/guava/noguavaatomicsnewreference.md)
   * **Prefer `new AtomicReference&lt;&gt;()`**
   * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
@@ -2716,6 +4879,12 @@ _175 recipes_
 * [org.openrewrite.java.migrate.guava.NoGuavaIterablesTransform](/recipes/java/migrate/guava/noguavaiterablestransform.md)
   * **Prefer `Collection.stream().map(Function)` over `Iterables.transform`**
   * Prefer `Collection.stream().map(Function)` over `Iterables.transform(Collection, Function)`.
+* [org.openrewrite.java.migrate.guava.NoGuavaJava11](/recipes/java/migrate/guava/noguavajava11.md)
+  * **Prefer the Java 11 standard library instead of Guava**
+  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
+* [org.openrewrite.java.migrate.guava.NoGuavaJava21](/recipes/java/migrate/guava/noguavajava21.md)
+  * **Prefer the Java 21 standard library instead of Guava**
+  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
 * [org.openrewrite.java.migrate.guava.NoGuavaListsNewArrayList](/recipes/java/migrate/guava/noguavalistsnewarraylist.md)
   * **Prefer `new ArrayList&lt;&gt;()`**
   * Prefer the Java standard library over third-party usage of Guava in simple cases like this.
@@ -2785,15 +4954,93 @@ _175 recipes_
 * [org.openrewrite.java.migrate.guava.NoMapsAndSetsWithExpectedSize](/recipes/java/migrate/guava/nomapsandsetswithexpectedsize.md)
   * **Prefer JDK methods for Maps and Sets of an expected size**
   * Prefer Java 19+ methods to create Maps and Sets of an expected size instead of using Guava methods.
+* [org.openrewrite.java.migrate.guava.PreferCharCompare](/recipes/java/migrate/guava/prefercharcompare.md)
+  * **Prefer `java.lang.Char#compare`**
+  * Prefer `java.lang.Char#compare` instead of using `com.google.common.primitives.Chars#compare`.
+* [org.openrewrite.java.migrate.guava.PreferIntegerCompare](/recipes/java/migrate/guava/preferintegercompare.md)
+  * **Prefer `Integer#compare`**
+  * Prefer `java.lang.Integer#compare` instead of using `com.google.common.primitives.Ints#compare`.
+* [org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
+  * **Prefer `Integer#compareUnsigned`**
+  * Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare` or `com.google.common.primitives.UnsignedInts#compareUnsigned`.
+* [org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
+  * **Prefer `Integer#divideUnsigned`**
+  * Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide` or `com.google.common.primitives.UnsignedInts#divideUnsigned`.
+* [org.openrewrite.java.migrate.guava.PreferIntegerParseUnsignedInt](/recipes/java/migrate/guava/preferintegerparseunsignedint.md)
+  * **Prefer `Integer#parseUnsignedInt`**
+  * Prefer `java.lang.Integer#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedInts#parseUnsignedInt`.
+* [org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned](/recipes/java/migrate/guava/preferintegerremainderunsigned.md)
+  * **Prefer `Integer#remainderUnsigned`**
+  * Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainderUnsigned`.
+* [org.openrewrite.java.migrate.guava.PreferJavaNioCharsetStandardCharsets](/recipes/java/migrate/guava/preferjavaniocharsetstandardcharsets.md)
+  * **Prefer `java.nio.charset.StandardCharsets`**
+  * Prefer `java.nio.charset.StandardCharsets` instead of using `com.google.common.base.Charsets`.
 * [org.openrewrite.java.migrate.guava.PreferJavaStringJoin](/recipes/java/migrate/guava/preferjavastringjoin.md)
   * **Prefer `String#join()` over Guava `Joiner#join()`**
   * Replaces supported calls to `com.google.common.base.Joiner#join()` with `java.lang.String#join()`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsSynchronizedNavigableMap](/recipes/java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap.md)
+  * **Prefer `java.util.Collections#synchronizedNavigableMap`**
+  * Prefer `java.util.Collections#synchronizedNavigableMap` instead of using `com.google.common.collect.Maps#synchronizedNavigableMap`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsUnmodifiableNavigableMap](/recipes/java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap.md)
+  * **Prefer `java.util.Collections#unmodifiableNavigableMap`**
+  * Prefer `java.util.Collections#unmodifiableNavigableMap` instead of using `com.google.common.collect.Maps#unmodifiableNavigableMap`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilFunction](/recipes/java/migrate/guava/preferjavautilfunction.md)
+  * **Prefer `java.util.function.Function`**
+  * Prefer `java.util.function.Function` instead of using `com.google.common.base.Function`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsEquals](/recipes/java/migrate/guava/preferjavautilobjectsequals.md)
+  * **Prefer `java.util.Objects#equals`**
+  * Prefer `java.util.Objects#equals` instead of using `com.google.common.base.Objects#equal`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsHashCode](/recipes/java/migrate/guava/preferjavautilobjectshashcode.md)
+  * **Prefer `java.util.Objects#hash`**
+  * Prefer `java.util.Objects#hash` instead of using `com.google.common.base.Objects#hashCode` or `com.google.common.base.Objects hash(..)`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsRequireNonNullElse](/recipes/java/migrate/guava/preferjavautilobjectsrequirenonnullelse.md)
+  * **Prefer `java.util.Objects#requireNonNullElse`**
+  * Prefer `java.util.Objects#requireNonNullElse` instead of using `com.google.common.base.MoreObjects#firstNonNull`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilOptional](/recipes/java/migrate/guava/preferjavautiloptional.md)
+  * **Prefer `java.util.Optional`**
+  * Prefer `java.util.Optional` instead of using `com.google.common.base.Optional`.
 * [org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrElseNull](/recipes/java/migrate/guava/preferjavautiloptionalorelsenull.md)
   * **Prefer `java.util.Optional#orElse(null)` over `com.google.common.base.Optional#orNull()`**
   * Replaces `com.google.common.base.Optional#orNull()` with `java.util.Optional#orElse(null)`.
 * [org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrSupplier](/recipes/java/migrate/guava/preferjavautiloptionalorsupplier.md)
   * **Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`**
   * Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)` over `com.google.common.base.Optional#or(com.google.common.base.Optional).
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate](/recipes/java/migrate/guava/preferjavautilpredicate.md)
+  * **Prefer `java.util.function.Predicate`**
+  * Prefer `java.util.function.Predicate` instead of using `com.google.common.base.Predicate`.
+* [org.openrewrite.java.migrate.guava.PreferJavaUtilSupplier](/recipes/java/migrate/guava/preferjavautilsupplier.md)
+  * **Prefer `java.util.function.Supplier`**
+  * Prefer `java.util.function.Supplier` instead of using `com.google.common.base.Supplier`.
+* [org.openrewrite.java.migrate.guava.PreferLongCompare](/recipes/java/migrate/guava/preferlongcompare.md)
+  * **Prefer `Long#compare`**
+  * Prefer `java.lang.Long#compare` instead of using `com.google.common.primitives.Longs#compare`.
+* [org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
+  * **Prefer `Long#compareUnsigned`**
+  * Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare` or `com.google.common.primitives.UnsignedLongs#compareUnsigned`.
+* [org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned](/recipes/java/migrate/guava/preferlongdivideunsigned.md)
+  * **Prefer `Long#divideUnsigned`**
+  * Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide` or `com.google.common.primitives.UnsignedLongs#divideUnsigned`.
+* [org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
+  * **Prefer `Long#parseUnsignedInt`**
+  * Prefer `java.lang.Long#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedInt`.
+* [org.openrewrite.java.migrate.guava.PreferLongRemainderUnsigned](/recipes/java/migrate/guava/preferlongremainderunsigned.md)
+  * **Prefer `Long#remainderUnsigned`**
+  * Prefer `java.lang.Long#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#remainderUnsigned`.
+* [org.openrewrite.java.migrate.guava.PreferMathAddExact](/recipes/java/migrate/guava/prefermathaddexact.md)
+  * **Prefer `Math#addExact`**
+  * Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd` or `com.google.common.math.IntMath#addExact`.
+* [org.openrewrite.java.migrate.guava.PreferMathClamp](/recipes/java/migrate/guava/prefermathclamp.md)
+  * **Prefer `Math#clamp`**
+  * Prefer `java.lang.Math#clamp` instead of using `com.google.common.primitives.*#constrainToRange`.
+* [org.openrewrite.java.migrate.guava.PreferMathMultiplyExact](/recipes/java/migrate/guava/prefermathmultiplyexact.md)
+  * **Prefer `Math#multiplyExact`**
+  * Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.primitives.IntMath#checkedMultiply` or `com.google.common.primitives.IntMath#multiplyExact`.
+* [org.openrewrite.java.migrate.guava.PreferMathSubtractExact](/recipes/java/migrate/guava/prefermathsubtractexact.md)
+  * **Prefer `Math#subtractExact`**
+  * Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.primitives.IntMath#checkedSubtract` or `com.google.common.primitives.IntMath#subtractExact`.
+* [org.openrewrite.java.migrate.guava.PreferShortCompare](/recipes/java/migrate/guava/prefershortcompare.md)
+  * **Prefer `Short#compare`**
+  * Prefer `java.lang.Short#compare` instead of using `com.google.common.primitives.Shorts#compare`.
 * [org.openrewrite.java.migrate.io.AddInputStreamBulkReadMethod](/recipes/java/migrate/io/addinputstreambulkreadmethod.md)
   * **Add bulk read method to `InputStream` implementations**
   * Adds a `read(byte[], int, int)` method to `InputStream` subclasses that only override the single-byte `read()` method. Java's default `InputStream.read(byte[], int, int)` implementation calls the single-byte `read()` method in a loop, which can cause severe performance degradation (up to 350x slower) for bulk reads. This recipe detects `InputStream` implementations that delegate to another stream and adds the missing bulk read method to delegate bulk reads as well.
@@ -2803,39 +5050,363 @@ _175 recipes_
 * [org.openrewrite.java.migrate.io.ReplaceSystemOutWithIOPrint](/recipes/java/migrate/io/replacesystemoutwithioprint.md)
   * **Migrate `System.out.print` to Java 25 IO utility class**
   * Replace `System.out.print()`, `System.out.println()` with `IO.print()` and `IO.println()`. Migrates to the new IO utility class introduced in Java 25.
+* [org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
+  * **Upgrade JaCoCo**
+  * This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions.
 * [org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted](/recipes/java/migrate/jakarta/applicationpathwildcardnolongeraccepted.md)
   * **Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values**
   * Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values.
+* [org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
+  * **Remove deprecated API's not supported in CDI4.0**
+  * Deprecated APIs have been removed in CDI 4.0. This recipe removes and updates the corresponding deprecated methods.
+* [org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
+  * **Migrate Ehcache from javax to jakarta namespace**
+  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Ehcache dependencies with their counterparts that are compatible with Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
+  * **JSF 2.x to Jakarta Faces 3.x**
+  * Jakarta EE 9 uses Faces 3.0, a major upgrade to Jakarta packages and XML namespaces.
+* [org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x](/recipes/java/migrate/jakarta/faces3xmigrationtofaces4x.md)
+  * **Upgrade to Jakarta Faces 4.x**
+  * Jakarta EE 10 uses Faces 4.0.
+* [org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x](/recipes/java/migrate/jakarta/faces4xmigrationtofaces41x.md)
+  * **Jakarta Faces 4.0 to 4.1**
+  * Jakarta EE 11 uses Faces 4.1 a minor upgrade.
+* [org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
+  * **JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`**
+  * The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys.
+* [org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
+  * **Substitute removed Faces Managed Beans**
+  * This recipe substitutes Faces Managed Beans, which were deprecated in JavaServer Faces 2.3 and have been removed from Jakarta Faces 4.0.
+* [org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
+  * **Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`**
+  * Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`.
 * [org.openrewrite.java.migrate.jakarta.HasNoJakartaAnnotations](/recipes/java/migrate/jakarta/hasnojakartaannotations.md)
   * **Project has no Jakarta annotations**
   * Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present.
+* [org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
+  * **Migrate Jackson from javax to jakarta namespace**
+  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.JakartaEE10](/recipes/java/migrate/jakarta/jakartaee10.md)
+  * **Migrate to Jakarta EE 10**
+  * These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
+* [org.openrewrite.java.migrate.jakarta.JakartaEE11](/recipes/java/migrate/jakarta/jakartaee11.md)
+  * **Migrate to Jakarta EE 11**
+  * These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
+* [org.openrewrite.java.migrate.jakarta.JakartaFacesConfigXml4](/recipes/java/migrate/jakarta/jakartafacesconfigxml4.md)
+  * **Migrate xmlns entries in `faces-config.xml` files**
+  * Jakarta EE 10 uses Faces version 4.
+* [org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript](/recipes/java/migrate/jakarta/jakartafacesecmascript.md)
+  * **Migrate JSF values inside EcmaScript files**
+  * Convert JSF to Faces values inside JavaScript,TypeScript, and Properties files.
+* [org.openrewrite.java.migrate.jakarta.JakartaFacesTagLibraryXml4](/recipes/java/migrate/jakarta/jakartafacestaglibraryxml4.md)
+  * **Migrate xmlns entries in `taglib.xml` files**
+  * Faces 4 uses facelet-taglib 4.0.
+* [org.openrewrite.java.migrate.jakarta.JakartaFacesXhtmlEE10](/recipes/java/migrate/jakarta/jakartafacesxhtmlee10.md)
+  * **Faces XHTML migration for Jakarta EE 10**
+  * Find and replace legacy JSF namespace URIs with Jakarta Faces URNs in XHTML files.
+* [org.openrewrite.java.migrate.jakarta.JakartaFacesXhtmlEE9](/recipes/java/migrate/jakarta/jakartafacesxhtmlee9.md)
+  * **Faces XHTML migration for Jakarta EE 9**
+  * Find and replace javax references to jakarta in XHTML files.
+* [org.openrewrite.java.migrate.jakarta.JakartaWebFragmentXml6](/recipes/java/migrate/jakarta/jakartawebfragmentxml6.md)
+  * **Migrate xmlns entries in `web-fragment.xml` files**
+  * Faces 4 uses web-fragment 6.0.
+* [org.openrewrite.java.migrate.jakarta.JakartaWebXml6](/recipes/java/migrate/jakarta/jakartawebxml6.md)
+  * **Migrate xmlns entries in `web.xml` files**
+  * Faces 4 uses web-app 6.0.
+* [org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
+  * **Migrate deprecated `javax.activation` packages to `jakarta.activation`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/java/migrate/jakarta/javaxannotationmigrationtojakartaannotation.md)
+  * **Migrate deprecated `javax.annotation` to `jakarta.annotation`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication.md)
+  * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/java/migrate/jakarta/javaxauthorizationmigrationtojakartaauthorization.md)
+  * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxBatchMigrationToJakartaBatch](/recipes/java/migrate/jakarta/javaxbatchmigrationtojakartabatch.md)
+  * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxBeanValidationXmlToJakartaBeanValidationXml](/recipes/java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml.md)
+  * **Migrate xmlns entries and javax. packages in `validation.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxBeansXmlToJakartaBeansXml](/recipes/java/migrate/jakarta/javaxbeansxmltojakartabeansxml.md)
+  * **Migrate xmlns entries in `beans.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxDecoratorToJakartaDecorator](/recipes/java/migrate/jakarta/javaxdecoratortojakartadecorator.md)
+  * **Migrate deprecated `javax.decorator` packages to `jakarta.decorator`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxEEApiToJakarta](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
+  * **Migrate deprecated `javaee-api` dependencies to `jakarta.platform`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxEjbJarXmlToJakartaEjbJarXml](/recipes/java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml.md)
+  * **Migrate xmlns entries and javax. packages in `ejb-jar.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb](/recipes/java/migrate/jakarta/javaxejbtojakartaejb.md)
+  * **Migrate deprecated `javax.ejb` packages to `jakarta.ejb`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxElToJakartaEl](/recipes/java/migrate/jakarta/javaxeltojakartael.md)
+  * **Migrate deprecated `javax.el` packages to `jakarta.el`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise](/recipes/java/migrate/jakarta/javaxenterprisetojakartaenterprise.md)
+  * **Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxFacesConfigXmlToJakartaFacesConfigXml](/recipes/java/migrate/jakarta/javaxfacesconfigxmltojakartafacesconfigxml.md)
+  * **Migrate xmlns entries in `faces-config.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxFacesTagLibraryXmlToJakartaFacesTagLibraryXml](/recipes/java/migrate/jakarta/javaxfacestaglibraryxmltojakartafacestaglibraryxml.md)
+  * **Migrate xmlns entries in `taglib.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject](/recipes/java/migrate/jakarta/javaxinjectmigrationtojakartainject.md)
+  * **Migrate deprecated `javax.inject` packages to `jakarta.inject`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxInterceptorToJakartaInterceptor](/recipes/java/migrate/jakarta/javaxinterceptortojakartainterceptor.md)
+  * **Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxJmsToJakartaJms](/recipes/java/migrate/jakarta/javaxjmstojakartajms.md)
+  * **Migrate deprecated `javax.jms` packages to `jakarta.jms`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxJsonToJakartaJson](/recipes/java/migrate/jakarta/javaxjsontojakartajson.md)
+  * **Migrate deprecated `javax.json` packages to `jakarta.json`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxJspToJakartaJsp](/recipes/java/migrate/jakarta/javaxjsptojakartajsp.md)
+  * **Migrate deprecated `javax.jsp` packages to `jakarta.jsp`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxJwsToJakartaJws](/recipes/java/migrate/jakarta/javaxjwstojakartajws.md)
+  * **Migrate deprecated `javax.jws` packages to `jakarta.jws`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxMailToJakartaMail](/recipes/java/migrate/jakarta/javaxmailtojakartamail.md)
+  * **Migrate deprecated `javax.mail` packages to `jakarta.mail`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+  * **Migrate to Jakarta EE 9**
+  * Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace.
+* [org.openrewrite.java.migrate.jakarta.JavaxOrmXmlToJakartaOrmXml](/recipes/java/migrate/jakarta/javaxormxmltojakartaormxml.md)
+  * **Migrate xmlns entries in `orm.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence](/recipes/java/migrate/jakarta/javaxpersistencetojakartapersistence.md)
+  * **Migrate deprecated `javax.persistence` packages to `jakarta.persistence`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml](/recipes/java/migrate/jakarta/javaxpersistencexmltojakartapersistencexml.md)
+  * **Migrate xmlns entries in `persistence.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxResourceToJakartaResource](/recipes/java/migrate/jakarta/javaxresourcetojakartaresource.md)
+  * **Migrate deprecated `javax.resource` packages to `jakarta.resource`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxSecurityToJakartaSecurity](/recipes/java/migrate/jakarta/javaxsecuritytojakartasecurity.md)
+  * **Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet](/recipes/java/migrate/jakarta/javaxservlettojakartaservlet.md)
+  * **Migrate deprecated `javax.servlet` packages to `jakarta.servlet`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions](/recipes/java/migrate/jakarta/javaxtojakartacdiextensions.md)
+  * **Rename CDI Extension to Jakarta**
+  * Rename `javax.enterprise.inject.spi.Extension` to `jakarta.enterprise.inject.spi.Extension`.
+* [org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction](/recipes/java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
+  * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxValidationMigrationToJakartaValidation](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
+  * **Migrate deprecated `javax.validation` packages to `jakarta.validation`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml](/recipes/java/migrate/jakarta/javaxwebfragmentxmltojakartawebfragmentxml.md)
+  * **Migrate xmlns entries in `web-fragment.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxWebXmlToJakartaWebXml](/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml.md)
+  * **Migrate xmlns entries in `web.xml` files**
+  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxWebsocketToJakartaWebsocket](/recipes/java/migrate/jakarta/javaxwebsockettojakartawebsocket.md)
+  * **Migrate deprecated `javax.websocket` packages to `jakarta.websocket`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxWsToJakartaWs](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
+  * **Migrate deprecated `javax.ws` packages to `jakarta.ws`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
+  * **Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxXmlSoapToJakartaXmlSoap](/recipes/java/migrate/jakarta/javaxxmlsoaptojakartaxmlsoap.md)
+  * **Migrate deprecated `javax.soap` packages to `jakarta.soap`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
+  * **Migrate XJC Bindings to Jakata XML**
+  * Java EE has been rebranded to Jakarta EE, migrates the namespace and version in XJC bindings.
+* [org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
+  * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
+  * **Update Jetty EE9 to Jetty EE10**
+  * Update Jetty dependencies from EE9 to EE10, changing the groupId and artifactIds as needed.
+* [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE9](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
+  * **Update Jetty9 to Jetty12**
+  * Update Jetty dependencies from version 9 to version 12.
+* [org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
+  * **Migrate Johnzon from javax to jakarta namespace**
+  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Johnzon dependencies with their counterparts that are compatible with Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.MigrateFastjsonForJakarta10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
+  * **Update Fastjson for Jakarta EE 10**
+  * Update Fastjson to be compatible with Jakarta EE 10.
+* [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
+  * **Update Plugins for Jakarta EE 10**
+  * Update plugin to be compatible with Jakarta EE 10.
+* [org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
+  * **Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions**
+  * Jakarta EE 10 updates some apis compared to Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration](/recipes/java/migrate/jakarta/omnifacesnamespacemigration.md)
+  * **OmniFaces Namespace Migration**
+  * Find and replace legacy OmniFaces namespaces.
+* [org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
+  * **Replace  deprecated Jakarta Servlet methods and classes**
+  * This recipe replaces the classes and methods deprecated in Jakarta Servlet 6.0.
 * [org.openrewrite.java.migrate.jakarta.RemoveBeanIsNullable](/recipes/java/migrate/jakarta/removebeanisnullable.md)
   * **Remove `Bean.isNullable()`**
   * `Bean.isNullable()` has been removed in CDI 4.0.0, and now always returns `false`.
+* [org.openrewrite.java.migrate.jakarta.RemoveJakartaAnnotationDependencyWhenManagedBySpringBoot](/recipes/java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot.md)
+  * **Remove `jakarta.annotation-api` dependency when managed by Spring Boot**
+  * Best practice recipe to cleanup a direct dependency which also comes transitively for Spring Boot applications.
+* [org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod](/recipes/java/migrate/jakarta/removedisparmetersprovidedmethod.md)
+  * **Use `isParametersProvided()`**
+  * Expression Language prior to 5.0 provides the deprecated MethodExpression.isParmetersProvided() method, with the word 'parameter' misspelled in the method name. This method is unavailable in Jakarta Expression Language 5.0. Use the correctly spelled MethodExpression.isParametersProvided() method instead.
+* [org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesExpressionLanguageClasses](/recipes/java/migrate/jakarta/removedjakartafacesexpressionlanguageclasses.md)
+  * **Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`**
+  * Several classes were removed and replaced in Jakarta Faces 3.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface.
+* [org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver](/recipes/java/migrate/jakarta/removedjakartafacesresourceresolver.md)
+  * **Replace `ResourceResolver` with `ResourceHandler`**
+  * The `ResourceResolver` class was removed in Jakarta Faces 3.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
+* [org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory](/recipes/java/migrate/jakarta/removedsoapelementfactory.md)
+  * **Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`**
+  * XML Web Services prior to 4.0 provides the deprecated SOAPElementFactory class, which is removed in XML Web Services 4.0. The recommended replacement is to use jakarta.xml.soap.SOAPFactory to create SOAPElements.
+* [org.openrewrite.java.migrate.jakarta.RemovedStateManagerMethods](/recipes/java/migrate/jakarta/removedstatemanagermethods.md)
+  * **Use `StateManagementStrategy`**
+  * Faces 3.0 introduced using `StateManagementStrategy` in favor of `StateManager`, which was later removed in Faces 4.0.
+* [org.openrewrite.java.migrate.jakarta.RemovedUIComponentConstant](/recipes/java/migrate/jakarta/removeduicomponentconstant.md)
+  * **Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`**
+  * Replace `jakarta.faces.component.UIComponent.CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` constants with `jakarta.faces.component.UIComponent.getCurrentComponent()` and `getCurrentCompositeComponent()`. that were added in JSF 2.0.
+* [org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
+  * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9**
+  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
+  * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
+  * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
+* [org.openrewrite.java.migrate.jakarta.ServletCookieBehaviorChangeRFC6265](/recipes/java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
+  * **Remove `getComment` and `getVersion` methods**
+  * Jakarta Servlet methods have been deprecated for removal in Jakarta Servlet 6.0 to align with RFC 6265. In addition, the behavior of these methods has been changed so the setters no longer have any effect, the getComment methods return null, and the getVersion method returns 0. The deprecated methods are removed.
 * [org.openrewrite.java.migrate.jakarta.UpdateAddAnnotatedTypes](/recipes/java/migrate/jakarta/updateaddannotatedtypes.md)
   * **Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`**
   * `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` is deprecated in CDI 1.1. It is Replaced by `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType, String)`.
 * [org.openrewrite.java.migrate.jakarta.UpdateAnnotationAttributeJavaxToJakarta](/recipes/java/migrate/jakarta/updateannotationattributejavaxtojakarta.md)
   * **Update annotation attributes using `javax` to `jakarta`**
   * Replace `javax` with `jakarta` in annotation attributes for matching annotation signatures.
+* [org.openrewrite.java.migrate.jakarta.UpdateApacheCommonsEmailDependencies](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
+  * **Update Apache Commons Email to Email2 for Jakarta**
+  * Update Apache Commons Email to Email2 for Jakarta.
+* [org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
+  * **Update Apache Shiro Dependencies to 2.0.x**
+  * Update Apache Shiro Dependencies to 2.0.x.
+* [org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
+  * **Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages**
+  * Java EE has been rebranded to Jakarta EE.  This recipe replaces Apache security packages to migrate to Apache `wss4j`.
 * [org.openrewrite.java.migrate.jakarta.UpdateBeanManagerMethods](/recipes/java/migrate/jakarta/updatebeanmanagermethods.md)
   * **Update `fireEvent()` and `createInjectionTarget()` calls**
   * Updates `BeanManager.fireEvent()` or `BeanManager.createInjectionTarget()`.
+* [org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies](/recipes/java/migrate/jakarta/updateeclipselinkdependencies.md)
+  * **Update EclipseLink Dependencies to 4.x**
+  * Update EclipseLink Dependencies to 4.x.
+* [org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
+  * **Update Apache Commons FileUpload2 package for EE10**
+  * Update Apache Commons FileUpload2 package for EE10.
 * [org.openrewrite.java.migrate.jakarta.UpdateGetRealPath](/recipes/java/migrate/jakarta/updategetrealpath.md)
   * **Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`**
   * Updates `getRealPath()` for `jakarta.servlet.ServletRequest` and `jakarta.servlet.ServletRequestWrapper` to use `ServletContext.getRealPath(String)`.
+* [org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2](/recipes/java/migrate/jakarta/updatejakartaannotations2.md)
+  * **Update Jakarta EE annotation Dependencies to 2.1.x**
+  * Update Jakarta EE annotation Dependencies to 2.1.x.
+* [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi3](/recipes/java/migrate/jakarta/updatejakartafacesapi3.md)
+  * **Migrate deprecated `javax.faces` packages to `jakarta.faces`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation and upgrade.
+* [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4](/recipes/java/migrate/jakarta/updatejakartafacesapi4.md)
+  * **Update Jakarta EE Java Faces Dependencies to 4.0.x**
+  * Update Jakarta EE Java Faces Dependencies to 4.0.x.
+* [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41](/recipes/java/migrate/jakarta/updatejakartafacesapi41.md)
+  * **Update Jakarta EE Java Faces Dependencies to 4.1.x**
+  * Update Jakarta EE Java Faces Dependencies to 4.1.x.
+* [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform10](/recipes/java/migrate/jakarta/updatejakartaplatform10.md)
+  * **Update Jakarta EE Platform Dependencies to 10.0.0**
+  * Update Jakarta EE Platform Dependencies to 10.0.0.
+* [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform11](/recipes/java/migrate/jakarta/updatejakartaplatform11.md)
+  * **Update Jakarta EE Platform Dependencies to 11.0.x**
+  * Update Jakarta EE Platform Dependencies to 11.0.x.
+* [org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
+  * **Update Jakarta EE XML Web Services Dependencies for EE 10**
+  * Update Jakarta EE XML Web Services Dependencies for EE 10.
+* [org.openrewrite.java.migrate.jakarta.UpdateJerseyDependencies](/recipes/java/migrate/jakarta/updatejerseydependencies.md)
+  * **Update GlassFish Jersey Dependencies to 3.1.x**
+  * Update GlassFish Jersey Dependencies to 3.1.x.
 * [org.openrewrite.java.migrate.jakarta.UpdateManagedBeanToNamed](/recipes/java/migrate/jakarta/updatemanagedbeantonamed.md)
   * **Update Faces `@ManagedBean` to use CDI `@Named`**
   * Faces ManagedBean was deprecated in JSF 2.3 (EE8) and removed in Jakarta Faces 4.0 (EE10). Replace `@ManagedBean` with `@Named` for CDI-based bean management.
+* [org.openrewrite.java.migrate.jakarta.UpdateRestLet2_6](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+  * **Update RestLet to 2.6.0**
+  * Update RestLet to 2.6.0.
+* [org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies](/recipes/java/migrate/jakarta/updateyassondependencies.md)
+  * **Update Eclipse Yasson Dependencies to 3.0.x**
+  * Update Eclipse Yasson Dependencies to 3.0.x.
+* [org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
+* [org.openrewrite.java.migrate.jakarta.UpgradeFaces41OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces41opensourcelibraries.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions.
+* [org.openrewrite.java.migrate.jakarta.UpgradeFaces4OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
+  * **Upgrade Faces open source libraries**
+  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE10 versions.
+* [org.openrewrite.java.migrate.jakarta.WsWsocServerContainerDeprecation](/recipes/java/migrate/jakarta/wswsocservercontainerdeprecation.md)
+  * **Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`**
+  * Deprecated `WsWsocServerContainer.doUpgrade(..)` is replaced by the Jakarta WebSocket 2.1 specification `ServerContainer.upgradeHttpToWebSocket(..)`.
+* [org.openrewrite.java.migrate.javaee6](/recipes/java/migrate/javaee6.md)
+  * **Migrate to JavaEE6**
+  * These recipes help with the Migration to Java EE 6, flagging and updating deprecated methods.
+* [org.openrewrite.java.migrate.javaee7](/recipes/java/migrate/javaee7-recipe.md)
+  * **Migrate to JavaEE7**
+  * These recipes help with the Migration to Java EE 7, flagging and updating deprecated methods.
+* [org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
+  * **Removed OpenJPA providers in the persistence.xml file**
+  * When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml.
+* [org.openrewrite.java.migrate.javaee8](/recipes/java/migrate/javaee8-recipe.md)
+  * **Migrate to JavaEE8**
+  * These recipes help with the Migration to Java EE 8, flagging and updating deprecated methods.
+* [org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
+  * **Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references**
+  * This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1.
+* [org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL](/recipes/java/migrate/javaee8/servletisrequestedsessionidfromurl.md)
+  * **Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`**
+  * The  method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in JavaEE8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
 * [org.openrewrite.java.migrate.javax.AddColumnAnnotation](/recipes/java/migrate/javax/addcolumnannotation.md)
   * **`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation**
   * When an attribute is annotated with `@ElementCollection`, a separate table is created for the attribute that includes the attribute  ID and value. In OpenJPA, the column for the annotated attribute is named element, whereas EclipseLink names the column based on  the name of the attribute. To remain compatible with tables that were created with OpenJPA, add a `@Column` annotation with the name  attribute set to element.
+* [org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
+  * **Add explicit Common Annotations dependencies**
+  * Add the necessary `annotation-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
 * [org.openrewrite.java.migrate.javax.AddDefaultConstructorToEntityClass](/recipes/java/migrate/javax/adddefaultconstructortoentityclass.md)
   * **`@Entity` objects with constructors must also have a default constructor**
   * When a Java Persistence API (JPA) entity class has a constructor with arguments, the class must also have a default, no-argument constructor. The OpenJPA implementation automatically generates the no-argument constructor, but the EclipseLink implementation does not.
+* [org.openrewrite.java.migrate.javax.AddInjectDependencies](/recipes/java/migrate/javax/addinjectdependencies.md)
+  * **Add explicit Inject dependencies**
+  * Add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
+* [org.openrewrite.java.migrate.javax.AddJaxbAPIDependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
+  * **Add explicit JAXB API dependencies**
+  * This recipe will add explicit API dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
+* [org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithRuntime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
+  * **Add explicit JAXB API dependencies and runtime**
+  * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
+* [org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithoutRuntime](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md)
+  * **Add explicit JAXB API dependencies and remove runtimes**
+  * This recipe will add explicit API dependencies without runtime dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing API dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. All JAXB runtime implementation dependencies are removed.
 * [org.openrewrite.java.migrate.javax.AddJaxbRuntime](/recipes/java/migrate/javax/addjaxbruntime.md)
   * **Use latest JAXB API and runtime for Jakarta EE 8**
   * Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+* [org.openrewrite.java.migrate.javax.AddJaxwsDependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
+  * **Add explicit JAX-WS dependencies**
+  * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAX-WS. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
 * [org.openrewrite.java.migrate.javax.AddJaxwsRuntime](/recipes/java/migrate/javax/addjaxwsruntime.md)
   * **Use the latest JAX-WS API and runtime for Jakarta EE 8**
   * Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
@@ -2863,6 +5434,57 @@ _175 recipes_
 * [org.openrewrite.java.migrate.javax.HttpSessionInvalidate](/recipes/java/migrate/javax/httpsessioninvalidate.md)
   * **Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0**
   * Do not rely on HttpSession `invalidate` method for programmatic security logout. Add the HttpServletRequest `logout` method which was introduced in Java EE 6 as part of the Servlet 3.0 specification.
+* [org.openrewrite.java.migrate.javax.JavaxLangModelUtil](/recipes/java/migrate/javax/javaxlangmodelutil.md)
+  * **Use modernized `javax.lang.model.util` APIs**
+  * Certain `javax.lang.model.util` APIs have become deprecated and their usages changed, necessitating usage changes.
+* [org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs](/recipes/java/migrate/javax/javaxmanagementmonitorapis.md)
+  * **Use modernized `javax.management.monitor` APIs**
+  * Certain `javax.management.monitor` APIs have become deprecated and their usages changed, necessitating usage changes.
+* [org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs](/recipes/java/migrate/javax/javaxxmlstreamapis.md)
+  * **Use modernized `javax.xml.stream` APIs**
+  * Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes.
+* [org.openrewrite.java.migrate.javax.MigrateAbstractAnnotationValueVisitor6To9](/recipes/java/migrate/javax/migrateabstractannotationvaluevisitor6to9.md)
+  * **Use `javax.lang.model.util.AbstractAnnotationValueVisitor9`**
+  * Use `javax.lang.model.util.AbstractAnnotationValueVisitor9` instead of the deprecated `javax.lang.model.util.AbstractAnnotationValueVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateAbstractElementVisitor6To9](/recipes/java/migrate/javax/migrateabstractelementvisitor6to9.md)
+  * **Use `javax.lang.model.util.AbstractElementVisitor9`**
+  * Use `javax.lang.model.util.AbstractElementVisitor9` instead of the deprecated `javax.lang.model.util.AbstractElementVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateAbstractTypeVisitor6To9](/recipes/java/migrate/javax/migrateabstracttypevisitor6to9.md)
+  * **Use `javax.lang.model.util.AbstractTypeVisitor9`**
+  * Use `javax.lang.model.util.AbstractTypeVisitor9` instead of the deprecated `javax.lang.model.util.AbstractTypeVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThresholdToSetInitThreshold](/recipes/java/migrate/javax/migratecountermonitorsetthresholdtosetinitthreshold.md)
+  * **Use `javax.management.monitor.CounterMonitor#setInitThreshold`**
+  * Use `javax.management.monitor.CounterMonitor#setInitThreshold` instead of the deprecated `javax.management.monitor.CounterMonitor#setThreshold` in JMX 1.2 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateElementKindVisitor6To9](/recipes/java/migrate/javax/migrateelementkindvisitor6to9.md)
+  * **Use `javax.lang.model.util.ElementKindVisitor9`**
+  * Use `javax.lang.model.util.ElementKindVisitor9` instead of the deprecated `javax.lang.model.util.ElementKindVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateElementScanner6To9](/recipes/java/migrate/javax/migrateelementscanner6to9.md)
+  * **Use `javax.lang.model.util.ElementScanner9`**
+  * Use `javax.lang.model.util.ElementScanner9` instead of the deprecated `javax.lang.model.util.ElementScanner6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
+  * **Migrate JAXB-WS Plugin**
+  * Upgrade the JAXB-WS Maven plugin to be compatible with Java 11.
+* [org.openrewrite.java.migrate.javax.MigrateSimpleAnnotationValueVisitor6To9](/recipes/java/migrate/javax/migratesimpleannotationvaluevisitor6to9.md)
+  * **Use `javax.lang.model.util.SimpleAnnotationValueVisitor9`**
+  * Use `javax.lang.model.util.SimpleAnnotationValueVisitor9` instead of the deprecated `javax.lang.model.util.SimpleAnnotationValueVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateSimpleElementVisitor6To9](/recipes/java/migrate/javax/migratesimpleelementvisitor6to9.md)
+  * **Use `javax.lang.model.util.SimpleElementVisitor9`**
+  * Use `javax.lang.model.util.SimpleElementVisitor9` instead of the deprecated `javax.lang.model.util.SimpleElementVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateSimpleTypeVisitor6To9](/recipes/java/migrate/javax/migratesimpletypevisitor6to9.md)
+  * **Use `javax.lang.model.util.SimpleTypeVisitor9`**
+  * Use `javax.lang.model.util.SimpleTypeVisitor9` instead of the deprecated `javax.lang.model.util.SimpleTypeVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateTypeKindVisitor6To9](/recipes/java/migrate/javax/migratetypekindvisitor6to9.md)
+  * **Use `javax.lang.model.util.TypeKindVisitor9`**
+  * Use `javax.lang.model.util.TypeKindVisitor9` instead of the deprecated `javax.lang.model.util.TypeKindVisitor6` in Java 9 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateXMLEventFactoryNewInstanceToNewFactory](/recipes/java/migrate/javax/migratexmleventfactorynewinstancetonewfactory.md)
+  * **Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`**
+  * Use `javax.xml.stream.XMLEventFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLEventFactory#newInstance` in Java 7 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateXMLInputFactoryNewInstanceToNewFactory](/recipes/java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory.md)
+  * **Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`**
+  * Use `javax.xml.stream.XMLInputFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLInputFactory#newInstance` in Java 7 or higher.
+* [org.openrewrite.java.migrate.javax.MigrateXMLOutputFactoryNewInstanceToNewFactory](/recipes/java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory.md)
+  * **Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`**
+  * Use `javax.xml.stream.XMLOutputFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLOutputFactory#newInstance` in Java 7 or higher.
 * [org.openrewrite.java.migrate.javax.RemoveEmbeddableId](/recipes/java/migrate/javax/removeembeddableid.md)
   * **`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation**
   * According to the Java Persistence API (JPA) specification, if an entity defines an attribute with an `@EmbeddedId` annotation, the embeddable class cannot contain an attribute with an `@Id` annotation. If both the `@EmbeddedId` annotation and the `@Id` annotation are defined, OpenJPA ignores the `@Id` annotation, whereas EclipseLink throws an exception.
@@ -2872,12 +5494,33 @@ _175 recipes_
 * [org.openrewrite.java.migrate.javax.UseJoinColumnForMapping](/recipes/java/migrate/javax/usejoincolumnformapping.md)
   * **`@JoinColumn` annotations must be used with relationship mappings**
   * In OpenJPA, when a relationship attribute has either a `@OneToOne` or a `@ManyToOne` annotation with a `@Column` annotation, the `@Column` annotation is treated as a `@JoinColumn` annotation. EclipseLink throws an exception that indicates that the entity class must use `@JoinColumn` instead of `@Column` to map a relationship attribute.
+* [org.openrewrite.java.migrate.javax.openJPAToEclipseLink](/recipes/java/migrate/javax/openjpatoeclipselink.md)
+  * **Migrate from OpenJPA to EclipseLink JPA**
+  * These recipes help migrate Java Persistence applications using OpenJPA to EclipseLink JPA.
 * [org.openrewrite.java.migrate.lang.ExplicitRecordImport](/recipes/java/migrate/lang/explicitrecordimport.md)
   * **Add explicit import for `Record` classes**
   * Add explicit import for `Record` classes when upgrading past Java 14+, to avoid conflicts with `java.lang.Record`.
+* [org.openrewrite.java.migrate.lang.FindNonVirtualExecutors](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
+  * **Find non-virtual `ExecutorService` creation**
+  * Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
+* [org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
+  * **Find Virtual Thread opportunities**
+  * Find opportunities to convert existing code to use Virtual Threads.
 * [org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch](/recipes/java/migrate/lang/ifelseifconstructtoswitch.md)
   * **If-else-if-else to switch**
   * Replace if-else-if-else with switch statements. In order to be replaced with a switch, all conditions must be on the same variable and there must be at least three cases.
+* [org.openrewrite.java.migrate.lang.JavaLangAPIs](/recipes/java/migrate/lang/javalangapis.md)
+  * **Use modernized `java.lang` APIs**
+  * Certain Java lang APIs have become deprecated and their usages changed, necessitating usage changes.
+* [org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterOrDigitToIsJavaIdentifierPart](/recipes/java/migrate/lang/migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
+  * **Use `Character#isJavaIdentifierPart(char)`**
+  * Use `Character#isJavaIdentifierPart(char)` instead of the deprecated `Character#isJavaLetterOrDigit(char)` in Java 1.1 or higher.
+* [org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterToIsJavaIdentifierStart](/recipes/java/migrate/lang/migratecharacterisjavalettertoisjavaidentifierstart.md)
+  * **Use `Character#isJavaIdentifierStart(char)`**
+  * Use `Character#isJavaIdentifierStart(char)` instead of the deprecated `Character#isJavaLetter(char)` in Java 1.1 or higher.
+* [org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace](/recipes/java/migrate/lang/migratecharacterisspacetoiswhitespace.md)
+  * **Use `Character#isWhitespace(char)`**
+  * Use `Character#isWhitespace(char)` instead of the deprecated `Character#isSpace(char)` in Java 1.1 or higher.
 * [org.openrewrite.java.migrate.lang.MigrateClassLoaderDefineClass](/recipes/java/migrate/lang/migrateclassloaderdefineclass.md)
   * **Use `ClassLoader#defineClass(String, byte[], int, int)`**
   * Use `ClassLoader#defineClass(String, byte[], int, int)` instead of the deprecated `ClassLoader#defineClass(byte[], int, int)` in Java 1.1 or higher.
@@ -2890,6 +5533,15 @@ _175 recipes_
 * [org.openrewrite.java.migrate.lang.MigrateProcessWaitForDuration](/recipes/java/migrate/lang/migrateprocesswaitforduration.md)
   * **Use `Process#waitFor(Duration)`**
   * Use `Process#waitFor(Duration)` instead of `Process#waitFor(long, TimeUnit)` in Java 25 or higher.
+* [org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMajorToFeature](/recipes/java/migrate/lang/migrateruntimeversionmajortofeature.md)
+  * **Use `Runtime.Version#feature()`**
+  * Use `Runtime.Version#feature()` instead of the deprecated `Runtime.Version#major()` in Java 10 or higher.
+* [org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim](/recipes/java/migrate/lang/migrateruntimeversionminortointerim.md)
+  * **Use `Runtime.Version#interim()`**
+  * Use `Runtime.Version#interim()` instead of the deprecated `Runtime.Version#minor()` in Java 10 or higher.
+* [org.openrewrite.java.migrate.lang.MigrateRuntimeVersionSecurityToUpdate](/recipes/java/migrate/lang/migrateruntimeversionsecuritytoupdate.md)
+  * **Use `Runtime.Version#update()`**
+  * Use `Runtime.Version#update()` instead of the deprecated `Runtime.Version#security()` in Java 10 or higher.
 * [org.openrewrite.java.migrate.lang.MigrateSecurityManagerMulticast](/recipes/java/migrate/lang/migratesecuritymanagermulticast.md)
   * **Use `SecurityManager#checkMulticast(InetAddress)`**
   * Use `SecurityManager#checkMulticast(InetAddress)` instead of the deprecated `SecurityManager#checkMulticast(InetAddress, byte)` in Java 1.4 or higher.
@@ -2941,6 +5593,9 @@ _175 recipes_
 * [org.openrewrite.java.migrate.lang.UseTextBlocks](/recipes/java/migrate/lang/usetextblocks.md)
   * **Use text blocks**
   * Text blocks are easier to read than concatenated strings.
+* [org.openrewrite.java.migrate.lang.UseVar](/recipes/java/migrate/lang/usevar.md)
+  * **Use local variable type inference**
+  * Apply local variable type inference (`var`) for primitives and objects. These recipes can cause unused imports, be advised to run `org.openrewrite.java.RemoveUnusedImports afterwards.
 * [org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations](/recipes/java/migrate/lang/var/usevarforgenericmethodinvocations.md)
   * **Apply `var` to generic method invocations**
   * Apply `var` to variables initialized by invocations of generic methods. This recipe ignores generic factory methods without parameters, because open rewrite cannot handle them correctly ATM.
@@ -2956,9 +5611,15 @@ _175 recipes_
 * [org.openrewrite.java.migrate.lang.var.UseVarForTypeCast](/recipes/java/migrate/lang/var/usevarfortypecast.md)
   * **Use `var` for variables initialized with type casts**
   * Apply local variable type inference `var` to variables that are initialized by a cast expression where the cast type matches the declared variable type. This removes the redundant type duplication. For example, `String s = (String) obj;` becomes `var s = (String) obj;`.
+* [org.openrewrite.java.migrate.logging.JavaLoggingAPIs](/recipes/java/migrate/logging/javaloggingapis.md)
+  * **Use modernized `java.util.logging` APIs**
+  * Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes.
 * [org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean](/recipes/java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean.md)
   * **Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`**
   * Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)` instead of the deprecated `LogManager#getLoggingMXBean()` in Java 9 or higher.
+* [org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean](/recipes/java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
+  * **Use `java.lang.management.PlatformLoggingMXBean`**
+  * Use `java.lang.management.PlatformLoggingMXBean` instead of the deprecated `java.util.logging.LoggingMXBean` in Java 9 or higher.
 * [org.openrewrite.java.migrate.logging.MigrateLogRecordSetMillisToSetInstant](/recipes/java/migrate/logging/migratelogrecordsetmillistosetinstant.md)
   * **Use `LogRecord#setInstant(Instant)`**
   * Use `LogRecord#setInstant(Instant)` instead of the deprecated `LogRecord#setMillis(long)` in Java 9 or higher.
@@ -2974,6 +5635,9 @@ _175 recipes_
 * [org.openrewrite.java.migrate.lombok.AdoptLombokSetterMethodNames](/recipes/java/migrate/lombok/adoptlomboksettermethodnames.md)
   * **Rename setter methods to fit Lombok**
   * Rename methods that are effectively setter to the name Lombok would give them. Limitations:  - If two methods in a class are effectively the same setter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() \{ return ba; \} int getBa() \{ return foo; \}` stays as it is.
+* [org.openrewrite.java.migrate.lombok.LombokBestPractices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+  * **Lombok Best Practices**
+  * Applies all recipes that enforce best practices for using Lombok.
 * [org.openrewrite.java.migrate.lombok.LombokOnXToOnX_](/recipes/java/migrate/lombok/lombokonxtoonx_.md)
   * **Migrate Lombok's `@__` syntax to `onX_` for Java 8+**
   * Migrates Lombok's `onX` annotations from the Java 7 style using `@__` to the Java 8+ style using `onX_`. For example, `@Getter(onMethod=@__(\{@Id\}))` becomes `@Getter(onMethod_=\{@Id\})`.
@@ -2983,6 +5647,9 @@ _175 recipes_
 * [org.openrewrite.java.migrate.lombok.LombokValueToRecord](/recipes/java/migrate/lombok/lombokvaluetorecord.md)
   * **Convert `@lombok.Value` class to Record**
   * Convert Lombok `@Value` annotated classes to standard Java Records.
+* [org.openrewrite.java.migrate.lombok.UpdateLombokToJava11](/recipes/java/migrate/lombok/updatelomboktojava11.md)
+  * **Migrate Lombok to a Java 11 compatible version**
+  * Update Lombok dependency to a version that is compatible with Java 11 and migrate experimental Lombok types that have been promoted.
 * [org.openrewrite.java.migrate.lombok.UseAllArgsConstructor](/recipes/java/migrate/lombok/useallargsconstructor.md)
   * **Use `@AllArgsConstructor` where applicable**
   * Prefer the Lombok `@AllArgsConstructor` annotation over explicitly written out constructors that assign all non-static fields.
@@ -3010,6 +5677,9 @@ _175 recipes_
 * [org.openrewrite.java.migrate.lombok.log.UseLog4j2](/recipes/java/migrate/lombok/log/uselog4j2.md)
   * **Use `@Log4j2` instead of explicit fields**
   * Prefer the lombok annotation `@Log4j2` over explicitly written out `org.apache.logging.log4j.Logger` fields.
+* [org.openrewrite.java.migrate.lombok.log.UseLombokLogAnnotations](/recipes/java/migrate/lombok/log/uselomboklogannotations.md)
+  * **Use Lombok logger annotations instead of explicit fields**
+  * Applies all recipes that replace logger declarations with class level annotations.
 * [org.openrewrite.java.migrate.lombok.log.UseSlf4j](/recipes/java/migrate/lombok/log/useslf4j.md)
   * **Use `@Slf4` instead of explicit fields**
   * Prefer the lombok annotation `@Slf4` over explicitly written out `org.slf4j.Logger` fields.
@@ -3022,9 +5692,15 @@ _175 recipes_
 * [org.openrewrite.java.migrate.metrics.SimplifyMicrometerMeterTags](/recipes/java/migrate/metrics/simplifymicrometermetertags.md)
   * **Simplify Micrometer meter tags**
   * Use the simplest method to add new tags.
+* [org.openrewrite.java.migrate.net.JavaNetAPIs](/recipes/java/migrate/net/javanetapis.md)
+  * **Use modernized `java.net` APIs**
+  * Certain Java networking APIs have become deprecated and their usages changed, necessitating usage changes.
 * [org.openrewrite.java.migrate.net.MigrateHttpURLConnectionHttpServerErrorToHttpInternalError](/recipes/java/migrate/net/migratehttpurlconnectionhttpservererrortohttpinternalerror.md)
   * **Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`**
   * Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR` instead of the deprecated `java.net.HttpURLConnection.HTTP_SERVER_ERROR`.
+* [org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive](/recipes/java/migrate/net/migratemulticastsocketgetttltogettimetolive.md)
+  * **Use `java.net.MulticastSocket#getTimeToLive()`**
+  * Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher.
 * [org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive](/recipes/java/migrate/net/migratemulticastsocketsetttltosettimetolive.md)
   * **Use `java.net.MulticastSocket#setTimeToLive(int)`**
   * Use `java.net.MulticastSocket#setTimeToLive(int)` instead of the deprecated `java.net.MulticastSocket#setTTL(byte)` in Java 1.2 or higher.
@@ -3040,6 +5716,9 @@ _175 recipes_
 * [org.openrewrite.java.migrate.net.URLConstructorsToNewURI](/recipes/java/migrate/net/urlconstructorstonewuri.md)
   * **Convert `new URL(String, ..)` to `new URI(String, ..).toURL()`**
   * Converts `new URL(String, ..)` constructors to `new URI(String, ..).toURL()`.
+* [org.openrewrite.java.migrate.nio.file.PathsGetToPathOf](/recipes/java/migrate/nio/file/pathsgettopathof.md)
+  * **Replace `Paths.get` with `Path.of`**
+  * The `java.nio.file.Paths.get` method was introduced in Java SE 7. The `java.nio.file.Path.of` method was introduced in Java SE 11. This recipe replaces all usages of `Paths.get` with `Path.of` for consistency.
 * [org.openrewrite.java.migrate.search.AboutJavaVersion](/recipes/java/migrate/search/aboutjavaversion.md)
   * **Find which Java version is in use**
   * A diagnostic for studying the distribution of Java language version levels (both source and target compatibility across files and source sets).
@@ -3061,12 +5740,18 @@ _175 recipes_
 * [org.openrewrite.java.migrate.search.PlanJavaMigration](/recipes/java/migrate/search/planjavamigration.md)
   * **Plan a Java version migration**
   * Study the set of Java versions and associated tools in use across many repositories.
+* [org.openrewrite.java.migrate.sql.JavaSqlAPIs](/recipes/java/migrate/sql/javasqlapis.md)
+  * **Use modernized `java.sql` APIs**
+  * Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes.
 * [org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream](/recipes/java/migrate/sql/migratedrivermanagersetlogstream.md)
   * **Use `DriverManager#setLogWriter(java.io.PrintWriter)`**
   * Use `DriverManager#setLogWriter(java.io.PrintWriter)` instead of the deprecated `DriverManager#setLogStream(java.io.PrintStream)` in Java 1.2 or higher.
 * [org.openrewrite.java.migrate.util.IteratorNext](/recipes/java/migrate/util/iteratornext.md)
   * **Replace `iterator().next()` with `getFirst()`**
   * Replace `SequencedCollection.iterator().next()` with `getFirst()`.
+* [org.openrewrite.java.migrate.util.JavaUtilAPIs](/recipes/java/migrate/util/javautilapis.md)
+  * **Use modernized `java.util` APIs**
+  * Certain java util APIs have been introduced and are favored over previous APIs.
 * [org.openrewrite.java.migrate.util.ListFirstAndLast](/recipes/java/migrate/util/listfirstandlast.md)
   * **Replace `List.get(int)`, `add(int, Object)`, and `remove(int)` with `SequencedCollection` `*First` and `*Last` methods**
   * Replace `list.get(0)` with `list.getFirst()`, `list.get(list.size() - 1)` with `list.getLast()`, and similar for `add(int, E)` and `remove(int)`.
@@ -3085,6 +5770,9 @@ _175 recipes_
 * [org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet](/recipes/java/migrate/util/migratecollectionsunmodifiableset.md)
   * **Prefer `Set.of(..)`**
   * Prefer `Set.Of(..)` instead of using `unmodifiableSet(java.util.Set(java.util.Arrays asList(&lt;args&gt;)))` in Java 9 or higher.
+* [org.openrewrite.java.migrate.util.MigrateInflaterDeflaterToClose](/recipes/java/migrate/util/migrateinflaterdeflatertoclose.md)
+  * **Replace `Inflater` and `Deflater` `end()` calls with `close()`**
+  * Replace `end()` method calls with `close()` method calls for `Inflater` and `Deflater` classes in Java 25+, as they now implement AutoCloseable.
 * [org.openrewrite.java.migrate.util.MigrateStringReaderToReaderOf](/recipes/java/migrate/util/migratestringreadertoreaderof.md)
   * **Use `Reader.of(CharSequence)` for non-synchronized readers**
   * Migrate `new StringReader(String)` to `Reader.of(CharSequence)` in Java 25+. This only applies when assigning to `Reader` variables or returning from methods that return `Reader`. The new method creates non-synchronized readers which are more efficient when thread-safety is not required.
@@ -3106,6 +5794,9 @@ _175 recipes_
 * [org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList](/recipes/java/migrate/util/replacestreamcollectwithtolist.md)
   * **Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`**
   * Replace `Stream.collect(Collectors.toUnmodifiableList())` with Java 16+ `Stream.toList()`. Also replaces `Stream.collect(Collectors.toList())` if `convertToList` is set to `true`.
+* [org.openrewrite.java.migrate.util.SequencedCollection](/recipes/java/migrate/util/sequencedcollection.md)
+  * **Adopt `SequencedCollection`**
+  * Replace older code patterns with `SequencedCollection` methods, as per https://openjdk.org/jeps/431.
 * [org.openrewrite.java.migrate.util.StreamFindFirst](/recipes/java/migrate/util/streamfindfirst.md)
   * **Use `getFirst()` instead of `stream().findFirst().orElseThrow()`**
   * For SequencedCollections, use `collection.getFirst()` instead of `collection.stream().findFirst().orElseThrow()`.
@@ -3124,12 +5815,15 @@ _175 recipes_
 * [org.openrewrite.java.migrate.util.UseSetOf](/recipes/java/migrate/util/usesetof.md)
   * **Prefer `Set.of(..)`**
   * Prefer `Set.of(..)` instead of using `java.util.Set#add(..)` in anonymous HashSet initializers in Java 10 or higher. This recipe will not modify code where the Set is later mutated since `Set.of` returns an immutable set.
+* [org.openrewrite.scala.migrate.UpgradeScala_2_12](/recipes/scala/migrate/upgradescala_2_12.md)
+  * **Migrate to Scala 2.12.+**
+  * Upgrade the Scala version for compatibility with newer Java versions.
 
 ### rewrite-netty
 
 _License: Apache License Version 2.0_
 
-_4 recipes_
+_5 recipes_
 
 * [org.openrewrite.java.netty.EventLoopGroupToMultiThreadIoEventLoopGroupRecipes](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes.md)
   * **Replace all `EventLoopGroup`s with `MultiThreadIoEventLoopGroup`**
@@ -3143,12 +5837,52 @@ _4 recipes_
 * [org.openrewrite.java.netty.EventLoopGroupToMultiThreadIoEventLoopGroupRecipes$NioEventLoopGroupFactoryRecipe](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes$nioeventloopgroupfactoryrecipe.md)
   * **Replace `NioEventLoopGroup` with `MultiThreadIoEventLoopGroup`**
   * Replace `new NioEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory())`.
+* [org.openrewrite.netty.UpgradeNetty_4_1_to_4_2](/recipes/netty/upgradenetty_4_1_to_4_2.md)
+  * **Migrates from Netty 4.1.x to Netty 4.2.x**
+  * Migrate applications to the latest Netty 4.2.x release.
+
+### rewrite-okhttp
+
+_License: Unknown_
+
+_10 recipes_
+
+* [org.openrewrite.okhttp.ReorderRequestBodyCreateArguments](/recipes/okhttp/reorderrequestbodycreatearguments.md)
+  * **Reorder the arguments of `RequestBody.create()`**
+  * Reorder the arguments of `RequestBody.create()` to put the `MediaType` argument after the `String` body.
+* [org.openrewrite.okhttp.UpgradeMockWebServer3](/recipes/okhttp/upgrademockwebserver3.md)
+  * **Migrate to MockWebServer3 (core module)**
+  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3` core module without JUnit dependency.
+* [org.openrewrite.okhttp.UpgradeMockWebServer3JUnit4](/recipes/okhttp/upgrademockwebserver3junit4.md)
+  * **Migrate to MockWebServer3 with JUnit 4**
+  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3-junit4` with JUnit 4 integration.
+* [org.openrewrite.okhttp.UpgradeMockWebServer3JUnit5](/recipes/okhttp/upgrademockwebserver3junit5.md)
+  * **Migrate to MockWebServer3 with JUnit 5**
+  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3-junit5` with JUnit 5 integration.
+* [org.openrewrite.okhttp.UpgradeOkHttp4](/recipes/okhttp/upgradeokhttp4.md)
+  * **Migrate to OkHttp 4.x**
+  * This recipe will apply changes commonly needed when migrating to OkHttp 4.x.
+* [org.openrewrite.okhttp.UpgradeOkHttp4Dependencies](/recipes/okhttp/upgradeokhttp4dependencies.md)
+  * **Migrate OkHttp dependencies to 4.x**
+  * Migrate OkHttp dependencies to 4.x.
+* [org.openrewrite.okhttp.UpgradeOkHttp5](/recipes/okhttp/upgradeokhttp5.md)
+  * **Migrate to OkHttp 5.x**
+  * This recipe will apply changes commonly needed when migrating to OkHttp 5.x.
+* [org.openrewrite.okhttp.UpgradeOkHttp5Dependencies](/recipes/okhttp/upgradeokhttp5dependencies.md)
+  * **Migrate OkHttp dependencies to 5.x**
+  * Migrate OkHttp dependencies to 5.x.
+* [org.openrewrite.okio.UpgradeOkio3](/recipes/okio/upgradeokio3.md)
+  * **Migrate to Okio 3.x**
+  * This recipe will apply changes commonly needed when migrating to Okio 3.x.
+* [org.openrewrite.okio.UpgradeOkio3Dependencies](/recipes/okio/upgradeokio3dependencies.md)
+  * **Migrate Okio dependencies to 3.x**
+  * Migrate Okio dependencies to 3.x.
 
 ### rewrite-openapi
 
 _License: Apache License Version 2.0_
 
-_9 recipes_
+_16 recipes_
 
 * [org.openrewrite.openapi.swagger.ConvertApiResponseCodesToStrings](/recipes/openapi/swagger/convertapiresponsecodestostrings.md)
   * **Convert API response codes to strings**
@@ -3162,21 +5896,42 @@ _9 recipes_
 * [org.openrewrite.openapi.swagger.MigrateApiImplicitParam](/recipes/openapi/swagger/migrateapiimplicitparam.md)
   * **Migrate `@ApiImplicitParam` to `@Parameter`**
   * Migrate `@ApiImplicitParam` to `@Parameter`.
+* [org.openrewrite.openapi.swagger.MigrateApiImplicitParamsToParameters](/recipes/openapi/swagger/migrateapiimplicitparamstoparameters.md)
+  * **Migrate from `@ApiImplicitParams`  to `@Parameters`**
+  * Converts `@ApiImplicitParams` to `@Parameters` and the `@ApiImplicitParam` annotation to `@Parameter` and converts the directly mappable attributes and removes the others.
+* [org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema](/recipes/openapi/swagger/migrateapimodelpropertytoschema.md)
+  * **Migrate from `@ApiModelProperty` to `@Schema`**
+  * Converts the `@ApiModelProperty` annotation to `@Schema` and converts the &quot;value&quot; attribute to &quot;description&quot;.
 * [org.openrewrite.openapi.swagger.MigrateApiModelToSchema](/recipes/openapi/swagger/migrateapimodeltoschema.md)
   * **Migrate from `@ApiModel` to `@Schema`**
   * Converts the `@ApiModel` annotation to `@Schema` and converts the &quot;value&quot; attribute to &quot;name&quot;.
+* [org.openrewrite.openapi.swagger.MigrateApiOperationToOperation](/recipes/openapi/swagger/migrateapioperationtooperation.md)
+  * **Migrate from `@ApiOperation` to `@Operation`**
+  * Converts the `@ApiOperation` annotation to `@Operation` and converts the directly mappable attributes and removes the others.
 * [org.openrewrite.openapi.swagger.MigrateApiParamAllowableValues](/recipes/openapi/swagger/migrateapiparamallowablevalues.md)
   * **Migrate `@ApiParam(allowableValues)` to `@Parameter(schema)`**
   * Migrate `@ApiParam(allowableValues)` to `@Parameter(schema = @Schema(allowableValues))`.
 * [org.openrewrite.openapi.swagger.MigrateApiParamDefaultValue](/recipes/openapi/swagger/migrateapiparamdefaultvalue.md)
   * **Migrate `@ApiParam(defaultValue)` to `@Parameter(schema)`**
   * Migrate `@ApiParam(defaultValue)` to `@Parameter(schema = @Schema(defaultValue))`.
+* [org.openrewrite.openapi.swagger.MigrateApiParamToParameter](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
+  * **Migrate from `@ApiParam` to `@Parameter`**
+  * Converts the `@ApiParam` annotation to `@Parameter` and converts the directly mappable attributes.
+* [org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
+  * **Migrate from `@ApiResponses` to `@ApiResponses`**
+  * Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -&gt; responseCode, message -&gt; description, response -&gt; content).
 * [org.openrewrite.openapi.swagger.MigrateApiToTag](/recipes/openapi/swagger/migrateapitotag.md)
   * **Migrate from `@Api` to `@Tag`**
   * Converts `@Api` to `@Tag` annotation and converts the directly mappable attributes and removes the others.
 * [org.openrewrite.openapi.swagger.MigrateSwaggerDefinitionToOpenAPIDefinition](/recipes/openapi/swagger/migrateswaggerdefinitiontoopenapidefinition.md)
   * **Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`**
   * Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`.
+* [org.openrewrite.openapi.swagger.SwaggerToOpenAPI](/recipes/openapi/swagger/swaggertoopenapi.md)
+  * **Migrate from Swagger to OpenAPI**
+  * Migrate from Swagger to OpenAPI.
+* [org.openrewrite.openapi.swagger.UseJakartaSwaggerArtifacts](/recipes/openapi/swagger/usejakartaswaggerartifacts.md)
+  * **Use Jakarta Swagger Artifacts**
+  * Migrate from javax Swagger artifacts to Jakarta versions.
 
 ### rewrite-prethink
 
@@ -3204,7 +5959,7 @@ _5 recipes_
 
 _License: Apache License Version 2.0_
 
-_17 recipes_
+_24 recipes_
 
 * [org.openrewrite.quarkus.AddQuarkusProperty](/recipes/quarkus/addquarkusproperty.md)
   * **Add a Quarkus configuration property**
@@ -3230,12 +5985,33 @@ _17 recipes_
 * [org.openrewrite.quarkus.MultiTransformHotStreamToMultiHotStream](/recipes/quarkus/multitransformhotstreamtomultihotstream.md)
   * **Use Mutiny `multi.toHotStream()`**
   * Replace Mutiny API usages of `multi.transform().toHotStream()` with `multi.toHotStream()`.
+* [org.openrewrite.quarkus.Quarkus1to1_13Migration](/recipes/quarkus/quarkus1to1_13migration.md)
+  * **Quarkus 1.13 migration from Quarkus 1.11**
+  * Migrates Quarkus 1.11 to 1.13.
 * [org.openrewrite.quarkus.Slf4jToQuarkusLogger](/recipes/quarkus/slf4jtoquarkuslogger.md)
   * **Migrate SLF4J Logger injection and usage to Quarkus static `Log`**
   * Removes usage of SLF4J Logger fields, adjusts imports, and replaces logger method calls with static Quarkus Log calls, including message formatting and method renaming for parameterized logging.
+* [org.openrewrite.quarkus.migrate.javaee.AddQuarkus2Dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
+  * **Add Quarkus 2 dependencies**
+  * Add Quarkus 2 dependencies to the project.
+* [org.openrewrite.quarkus.migrate.javaee.AddQuarkus2MavenPlugins](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
+  * **Migrate JavaEE Maven Dependencies to Quarkus 2**
+  * Upgrade Standard JavaEE dependencies to Quarkus 2 dependencies.
+* [org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2CodeMigration](/recipes/quarkus/migrate/javaee/javaeetoquarkus2codemigration.md)
+  * **Migrate JavaEE Code to Quarkus 2**
+  * Migrate Standard JavaEE Code to Quarkus 2.
+* [org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration](/recipes/quarkus/migrate/javaee/javaeetoquarkus2migration.md)
+  * **Migrate JavaEE to Quarkus 2**
+  * These recipes help with the migration of a JavaEE application using EJBs and Hibernate to Quarkus 2. Additional transformations like JSF, JMS, Quarkus Tests may be necessary.
+* [org.openrewrite.quarkus.migrate.javaee.RemoveJavaEEDependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
+  * **Remove JavaEE dependencies**
+  * Remove JavaEE dependencies from the project.
 * [org.openrewrite.quarkus.quarkus2.GrpcServiceAnnotationToGrpcClient](/recipes/quarkus/quarkus2/grpcserviceannotationtogrpcclient.md)
   * **Use `@GrpcClient`**
   * The `@GrpcService` annotation is replaced with `@GrpcClient` in Quarkus 2.x. Removes the optional `@GrpcClient.value()` unless the service name is different from the name of annotated element.
+* [org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+  * **Quarkus 2.x migration from Quarkus 1.x**
+  * Migrates Quarkus 1.x to 2.x.
 * [org.openrewrite.quarkus.quarkus2.RemoveAvroMavenPlugin](/recipes/quarkus/quarkus2/removeavromavenplugin.md)
   * **Remove `avro-maven-plugin`**
   * Removes the `avro-maven-plugin` if the `quarkus-maven-plugin` is found in the project's `pom.xml`. Avro has been integrated with the Quarkus code generation mechanism. This replaces the need to use the Avro plugin.
@@ -3262,8 +6038,11 @@ _17 recipes_
 
 _License: Moderne Source Available License_
 
-_31 recipes_
+_38 recipes_
 
+* [org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
+  * **Migrate from OpenRewrite annotations to JSpecify**
+  * Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify.
 * [org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations](/recipes/java/recipes/blanklinesaroundfieldswithannotations.md)
   * **Add a blank line around fields with annotations**
   * Fields with annotations should have a blank line before them to clearly separate them from the field above. If another field follows, it should also have a blank line after so that the field with the annotation has space on either side of it, visually distinguishing it from its neighbors.
@@ -3288,6 +6067,9 @@ _31 recipes_
 * [org.openrewrite.java.recipes.IsLiteralNullRecipe](/recipes/java/recipes/isliteralnullrecipe.md)
   * **Use `J.Literal.isLiteralValue(expression, null)`**
   * Replace `expression instanceof J.Literal &amp;&amp; ((J.Literal) expression).getValue() == null` with `J.Literal.isLiteralValue(expression, null)`.
+* [org.openrewrite.java.recipes.JavaRecipeBestPractices](/recipes/java/recipes/javarecipebestpractices.md)
+  * **Java Recipe best practices**
+  * Best practices for Java recipe development.
 * [org.openrewrite.java.recipes.MissingOptionExample](/recipes/java/recipes/missingoptionexample.md)
   * **Find missing `@Option` `example` values**
   * Find `@Option` annotations that are missing `example` values for documentation.
@@ -3300,6 +6082,12 @@ _31 recipes_
 * [org.openrewrite.java.recipes.RecipeEqualsAndHashCodeCallSuper](/recipes/java/recipes/recipeequalsandhashcodecallsuper.md)
   * **Use of `@EqualsAndHashCode` on `Recipe`**
   * Recipes are value objects, so should use `@EqualsAndHashCode(callSuper = false)`. While in most cases recipes do not extend other classes and so the option is moot, as a matter of stylistic consistency and to enforce the idea that recipes are value objects, this value should be set to `false`.
+* [org.openrewrite.java.recipes.RecipeNullabilityBestPractices](/recipes/java/recipes/recipenullabilitybestpractices.md)
+  * **Recipe nullability best practices**
+  * Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
+* [org.openrewrite.java.recipes.RecipeTestingBestPractices](/recipes/java/recipes/recipetestingbestpractices.md)
+  * **Recipe testing best practices**
+  * Best practices for testing recipes.
 * [org.openrewrite.java.recipes.RemoveImportBeforeAddImport](/recipes/java/recipes/removeimportbeforeaddimport.md)
   * **Reorder `maybeRemoveImport` before `maybeAddImport`**
   * Reorders `maybeAddImport` and `maybeRemoveImport` calls so that imports are removed before new imports are added. This ordering prevents potential conflicts when the import being added and the import being removed resolve to the same simple class name.
@@ -3327,6 +6115,9 @@ _31 recipes_
 * [org.openrewrite.java.recipes.SourceSpecTextBlockNewLine](/recipes/java/recipes/sourcespectextblocknewline.md)
   * **New line at the end of `SourceSpecs` text blocks**
   * Text blocks that assert before and after source code should have a new line after it is closed.
+* [org.openrewrite.java.recipes.UpgradeTestsToJava21](/recipes/java/recipes/upgradeteststojava21.md)
+  * **Migrate tests to Java 21**
+  * Use Java 21 features in tests.
 * [org.openrewrite.java.recipes.UseDisplayNameAndDescriptionFields](/recipes/java/recipes/usedisplaynameanddescriptionfields.md)
   * **Replace `getDisplayName()` and `getDescription()` methods with fields**
   * Recipe classes that return a simple string literal (or concatenation of string literals) from `getDisplayName()` or `getDescription()` can use Lombok annotated fields instead.
@@ -3357,16 +6148,37 @@ _31 recipes_
 * [org.openrewrite.java.recipes.UseTreeRandomId](/recipes/java/recipes/usetreerandomid.md)
   * **Use `Tree.randomId()` in LST constructors**
   * Replaces occurrences of `UUID.randomUUID()` with `Tree.randomId()` when passed as an argument to a constructor call for LST elements.
+* [org.openrewrite.recipes.rewrite.InlineMethods](/recipes/recipes/rewrite/inlinemethods.md)
+  * **Inline methods annotated with `@InlineMe`**
+  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
+* [org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
+  * **OpenRewrite recipe best practices**
+  * Best practices for OpenRewrite recipe development.
 
 ### rewrite-spring
 
-_License: Moderne Source Available License_
+_License: Unknown_
 
-_146 recipes_
+_309 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
   * Prior to Spring Boot 2.0 the dependency management plugin was applied automatically as part of the overall spring boot plugin. Afterwards the dependency-management plugin must be applied explicitly, or Gradle's `platform()` feature may be used instead. This recipe makes usage of io-spring.dependency-management explicit in anticipation of upgrade to Spring Boot 2.0 or later.
+* [org.openrewrite.java.flyway.AddFlywayModuleMySQL](/recipes/java/flyway/addflywaymodulemysql.md)
+  * **Add missing Flyway module for MySQL**
+  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-mysql` dependency if you are using MySQL with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+* [org.openrewrite.java.flyway.AddFlywayModuleOracle](/recipes/java/flyway/addflywaymoduleoracle.md)
+  * **Add missing Flyway module for Oracle**
+  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-database-oracle` dependency if you are using Oracle with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+* [org.openrewrite.java.flyway.AddFlywayModulePostgreSQL](/recipes/java/flyway/addflywaymodulepostgresql.md)
+  * **Add missing Flyway module for PostgreSQL**
+  * Database modules for Flyway 10 have been split out in to separate modules for maintainability. Add the `flyway-database-postgresql` dependency if you are using PostgreSQL with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+* [org.openrewrite.java.flyway.AddFlywayModuleSqlServer](/recipes/java/flyway/addflywaymodulesqlserver.md)
+  * **Add missing Flyway module for SQL Server**
+  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-sqlserver` dependency if you are using SQL Server with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
+* [org.openrewrite.java.flyway.MigrateToFlyway10](/recipes/java/flyway/migratetoflyway10.md)
+  * **Migrate to Flyway 10**
+  * Migrate to Flyway 10. See details at [Flyway V10 has landed](https://documentation.red-gate.com/fd/flyway-v10-has-landed-222627771.html).
 * [org.openrewrite.java.spring.AddSpringProperty](/recipes/java/spring/addspringproperty.md)
   * **Add a spring configuration property**
   * Add a spring configuration property to a configuration file if it does not already exist in that file.
@@ -3403,6 +6215,9 @@ _146 recipes_
 * [org.openrewrite.java.spring.NoRequestMappingAnnotation](/recipes/java/spring/norequestmappingannotation.md)
   * **Remove `@RequestMapping` annotations**
   * Replace method declaration `@RequestMapping` annotations with `@GetMapping`, `@PostMapping`, etc. when possible.
+* [org.openrewrite.java.spring.PropertiesToKebabCase](/recipes/java/spring/propertiestokebabcase.md)
+  * **Normalize Spring properties to kebab-case**
+  * Normalize Spring properties to use lowercase and hyphen-separated syntax.  For example, changing `spring.main.showBanner` to `spring.main.show-banner`.  With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding),  `kebab-case` may be used in properties files and still be converted to configuration beans.  Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value(&quot;$\{anExampleValue\}&quot;)` will not match `an-example-value`.  [The Spring reference documentation recommends using `kebab-case` for properties where possible](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding).
 * [org.openrewrite.java.spring.PropertiesToKebabCaseProperties](/recipes/java/spring/propertiestokebabcaseproperties.md)
   * **Normalize Spring `application*.properties` properties to kebab-case**
   * Normalize Spring `application*.properties` properties to kebab-case.
@@ -3433,6 +6248,9 @@ _146 recipes_
 * [org.openrewrite.java.spring.batch.JobParameterToString](/recipes/java/spring/batch/jobparametertostring.md)
   * **Migration invocation of JobParameter.toString to JobParameter.getValue.toString**
   * JobParameter.toString() logic is quite different in spring batch 5, need take JobParameter.getValue.toString replace the JobParameter.toString.
+* [org.openrewrite.java.spring.batch.ListenerSupportClassToInterface](/recipes/java/spring/batch/listenersupportclasstointerface.md)
+  * **Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead**
+  * As of 5.0 `*Listener` interfaces default methods (made possible by a Java 8 baseline) can be implemented directly without the need for the adapter.
 * [org.openrewrite.java.spring.batch.MigrateItemWriterWrite](/recipes/java/spring/batch/migrateitemwriterwrite.md)
   * **Migrate `ItemWriter`**
   * In `ItemWriter` the signature of the `write()` method has changed in spring-batch 5.x.
@@ -3457,6 +6275,15 @@ _146 recipes_
 * [org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface](/recipes/java/spring/batch/replacesupportclasswithitsinterface.md)
   * **Transform classes that extend a given Class to implement the given Interface instead**
   * As of spring-batch 5.x Listeners has default methods (made possible by a Java 8 baseline) and can be implemented directly without the need for this adapter.
+* [org.openrewrite.java.spring.batch.SpringBatch4To5Migration](/recipes/java/spring/batch/springbatch4to5migration.md)
+  * **Migrate to Spring Batch 5.0 from 4.3**
+  * Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release.
+* [org.openrewrite.java.spring.batch.SpringBatch5To6Migration](/recipes/java/spring/batch/springbatch5to6migration.md)
+  * **Migrate to Spring Batch 6.0 from 5.2**
+  * Migrate applications built on Spring Batch 5.2 to the latest Spring Batch 6.0 release.
+* [org.openrewrite.java.spring.batch.UpgradeSkipPolicyParameterType](/recipes/java/spring/batch/upgradeskippolicyparametertype.md)
+  * **Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`**
+  * The `skipCount` parameter in `org.springframework.batch.core.step.skip.SkipPolicy#shouldSkip` has been changed from `int` to `long`, this recipe updates the parameter type in the implementing classes.
 * [org.openrewrite.java.spring.boot2.AddConfigurationAnnotationIfBeansPresent](/recipes/java/spring/boot2/addconfigurationannotationifbeanspresent.md)
   * **Add missing `@Configuration` annotation**
   * Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added.
@@ -3466,6 +6293,9 @@ _146 recipes_
 * [org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition](/recipes/java/spring/boot2/conditionalonbeananynestedcondition.md)
   * **Migrate multi-condition `@ConditionalOnBean` annotations**
   * Migrate multi-condition `@ConditionalOnBean` annotations to `AnyNestedCondition`.
+* [org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering](/recipes/java/spring/boot2/databasecomponentandbeaninitializationordering.md)
+  * **Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`**
+  * Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more.
 * [org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrderingUnconditionally](/recipes/java/spring/boot2/databasecomponentandbeaninitializationorderingunconditionally.md)
   * **Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`**
   * Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more. This recipe will not check if the `@DependsOnDatabaseInitialization` annotation is on the classpath. This recipe is best combined with a precondition, as seen in `DatabaseComponentAndBeanInitializationOrdering`.
@@ -3478,18 +6308,30 @@ _146 recipes_
 * [org.openrewrite.java.spring.boot2.HttpSecurityLambdaDsl](/recipes/java/spring/boot2/httpsecuritylambdadsl.md)
   * **Convert `HttpSecurity` chained calls into Lambda DSL**
   * Converts `HttpSecurity` chained call from Spring Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods.
+* [org.openrewrite.java.spring.boot2.MaybeAddJavaxValidationApi](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)
+  * **Add `javax.validation-api` dependency**
+  * Conditional on the application using a version of Spring Boot which uses javax but provides a hibernate-validator version which exports the jakarta.validation-api instead.
+* [org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
+  * **Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`**
+  * Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`.
 * [org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md)
   * **Merge Spring `bootstrap.yml` with `application.yml`**
   * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency.
 * [org.openrewrite.java.spring.boot2.MigrateActuatorMediaTypeToApiVersion](/recipes/java/spring/boot2/migrateactuatormediatypetoapiversion.md)
   * **Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`**
   * Spring Boot `ActuatorMediaType` was deprecated in 2.5 in favor of `ApiVersion#getProducedMimeType()`. Replace `MediaType.parseMediaType(ActuatorMediaType.Vx_JSON)` with `MediaType.asMediaType(ApiVersion.Vx.getProducedMimeType())`.
+* [org.openrewrite.java.spring.boot2.MigrateApplicationHealthIndicatorToPingHealthIndicator](/recipes/java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator.md)
+  * **Use `PingHealthIndicator`**
+  * `org.springframework.boot.actuate.health.ApplicationHealthIndicator` was deprecated in 2.2.
 * [org.openrewrite.java.spring.boot2.MigrateArtemisProperties](/recipes/java/spring/boot2/migrateartemisproperties.md)
   * **Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`**
   * Combines `spring.artemis.host` and `spring.artemis.port` into `spring.artemis.broker-url` in the format `tcp://host:port`.
 * [org.openrewrite.java.spring.boot2.MigrateConfigurationPropertiesBindingPostProcessorValidatorBeanName](/recipes/java/spring/boot2/migrateconfigurationpropertiesbindingpostprocessorvalidatorbeanname.md)
   * **Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`**
   * Replaces field and static access of `ConfigurationPropertiesBindingPostProcessor.VALIDATOR_BEAN_NAME` with `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`. Deprecated in 2.2.x.
+* [org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials](/recipes/java/spring/boot2/migratedatabasecredentials.md)
+  * **Migrate flyway and liquibase credentials**
+  * If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans.
 * [org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolProperties](/recipes/java/spring/boot2/migratedatabasecredentialsfortoolproperties.md)
   * **Migrate null credentials**
   * Migrate null credentials.
@@ -3499,12 +6341,21 @@ _146 recipes_
 * [org.openrewrite.java.spring.boot2.MigrateDiskSpaceHealthIndicatorConstructor](/recipes/java/spring/boot2/migratediskspacehealthindicatorconstructor.md)
   * **Use `DiskSpaceHealthIndicator(File, DataSize)`**
   * `DiskSpaceHealthIndicator(File, long)` was deprecated in Spring Data 2.1 for removal in 2.2.
+* [org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName](/recipes/java/spring/boot2/migrateerrorcontrollerpackagename.md)
+  * **Use `org.springframework.boot.web.servlet.error.ErrorController`**
+  * Use `org.springframework.boot.web.servlet.error.ErrorController` instead of the deprecated `org.springframework.boot.autoconfigure.web.ErrorController` in Spring Boot 2.0 or higher.
 * [org.openrewrite.java.spring.boot2.MigrateErrorPropertiesIncludeStackTraceConstants](/recipes/java/spring/boot2/migrateerrorpropertiesincludestacktraceconstants.md)
   * **Use `ErrorProperties#IncludeStacktrace.ON_PARAM`**
   * `ErrorProperties#IncludeStacktrace.ON_TRACE_PARAM` was deprecated in 2.3.x and removed in 2.5.0.
+* [org.openrewrite.java.spring.boot2.MigrateHibernateConstraintsToJavax](/recipes/java/spring/boot2/migratehibernateconstraintstojavax.md)
+  * **Use `javax.validation.constraints`**
+  * Use `javax.validation.constraints` instead of the deprecated `org.hibernate.validator.constraints` in Spring Boot 2.0 or higher.
 * [org.openrewrite.java.spring.boot2.MigrateHsqlEmbeddedDatabaseConnection](/recipes/java/spring/boot2/migratehsqlembeddeddatabaseconnection.md)
   * **Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`**
   * Spring-Boot `EmbeddedDatabaseConnection.HSQL` was deprecated in favor of `EmbeddedDatabaseConnection.HSQLDB` in 2.4.
+* [org.openrewrite.java.spring.boot2.MigrateHttpMessageConvertersPackageName](/recipes/java/spring/boot2/migratehttpmessageconverterspackagename.md)
+  * **Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`**
+  * Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters` instead of the deprecated `org.springframework.boot.autoconfigure.web.HttpMessageConverters` in Spring Boot 2.0 or higher.
 * [org.openrewrite.java.spring.boot2.MigrateLocalServerPortAnnotation](/recipes/java/spring/boot2/migratelocalserverportannotation.md)
   * **Use `org.springframework.boot.web.server.LocalServerPort`**
   * Updates the package and adds the necessary dependency if `LocalServerPort` is in use. The package of `LocalServerPort` was changed in Spring Boot 2.0, necessitating changes.
@@ -3514,15 +6365,39 @@ _146 recipes_
 * [org.openrewrite.java.spring.boot2.MigrateMultipartConfigFactory](/recipes/java/spring/boot2/migratemultipartconfigfactory.md)
   * **Use `MultipartConfigFactory` with `DataSize` arguments**
   * Methods to set `DataSize` with primitive arguments were deprecated in 2.1 and removed in 2.2.
+* [org.openrewrite.java.spring.boot2.MigrateRestClientBuilderCustomizerPackageName](/recipes/java/spring/boot2/migraterestclientbuildercustomizerpackagename.md)
+  * **Use `RestClientBuilderCustomizer`**
+  * `org.springframework.boot.autoconfigure.elasticsearch.rest.RestClientBuilderCustomizer` was deprecated in 2.3.
+* [org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderBasicAuthorization](/recipes/java/spring/boot2/migrateresttemplatebuilderbasicauthorization.md)
+  * **Use `RestTemplateBuilder#basicAuthentication`**
+  * `RestTemplateBuilder#basicAuthorization` was deprecated in 2.1.
 * [org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderTimeoutByInt](/recipes/java/spring/boot2/migrateresttemplatebuildertimeoutbyint.md)
   * **Use `RestTemplateBuilder#setConnectTimeout(Duration)` and `RestTemplateBuilder#setReadTimeout(Duration)`**
   * `RestTemplateBuilder#setConnectTimeout(int)` and `RestTemplateBuilder#setReadTimeout(int)` were deprecated in Spring Boot 2.1.
+* [org.openrewrite.java.spring.boot2.MigrateSpringBootServletInitializerPackageName](/recipes/java/spring/boot2/migratespringbootservletinitializerpackagename.md)
+  * **Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`**
+  * Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer` instead of the deprecated `org.springframework.boot.web.support.SpringBootServletInitializer` in Spring Boot 1.4 or higher.
+* [org.openrewrite.java.spring.boot2.MigrateToWebServerFactoryCustomizer](/recipes/java/spring/boot2/migratetowebserverfactorycustomizer.md)
+  * **Use `WebServerFactoryCustomizer`**
+  * Use `WebServerFactoryCustomizer` instead of the deprecated `EmbeddedServletContainerCustomizer` in Spring Boot 2.0 or higher. This recipe will replace look for any classes that implement `EmbeddedServletContainerCustomizer` and change the interface to `WebServerFactoryCustomizer&lt;ConfigurableServletWebServerFactory&gt;`. This recipe also adjusts the types used in the `customize()` method from `*EmbeddedServletContainerFactory` to their `*ServletWebServerFactory` counterparts.
+* [org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactoryIsEagerInitFilters](/recipes/java/spring/boot2/migrateundertowservletwebserverfactoryiseagerinitfilters.md)
+  * **Use `isEagerFilterInit()`**
+  * `org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory#isEagerInitFilters` was deprecated in 2.4 and are removed in 2.6.
+* [org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactorySetEagerInitFilters](/recipes/java/spring/boot2/migrateundertowservletwebserverfactoryseteagerinitfilters.md)
+  * **Use `setEagerFilterInit(boolean)`**
+  * `org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory#setEagerInitFilters` was deprecated in 2.4 and are removed in 2.6.
+* [org.openrewrite.java.spring.boot2.MigrateWebTestClientBuilderCustomizerPackageName](/recipes/java/spring/boot2/migratewebtestclientbuildercustomizerpackagename.md)
+  * **Use `WebTestClientBuilderCustomizer`**
+  * `org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientBuilderCustomizer` was deprecated in 2.2.
 * [org.openrewrite.java.spring.boot2.MoveAutoConfigurationToImportsFile](/recipes/java/spring/boot2/moveautoconfigurationtoimportsfile.md)
   * **Use `AutoConfiguration#imports`**
   * Use `AutoConfiguration#imports` instead of the deprecated entry `EnableAutoConfiguration` in `spring.factories` when defining autoconfiguration classes.
 * [org.openrewrite.java.spring.boot2.OutputCaptureExtension](/recipes/java/spring/boot2/outputcaptureextension.md)
   * **Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`**
   * Use the JUnit Jupiter extension instead of JUnit 4 rule.
+* [org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners](/recipes/java/spring/boot2/removeobsoletespringrunners.md)
+  * **Remove obsolete Spring JUnit runners**
+  * Remove obsolete classpath runners.
 * [org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils](/recipes/java/spring/boot2/replacedeprecatedenvironmenttestutils.md)
   * **Replace `EnvironmentTestUtils` with `TestPropertyValues`**
   * Replaces any references to the deprecated `EnvironmentTestUtils` with `TestPropertyValues` and the appropriate functionality.
@@ -3538,21 +6413,90 @@ _146 recipes_
 * [org.openrewrite.java.spring.boot2.ServerHttpSecurityLambdaDsl](/recipes/java/spring/boot2/serverhttpsecuritylambdadsl.md)
   * **Convert `ServerHttpSecurity` chained calls into Lambda DSL**
   * Converts `ServerHttpSecurity` chained call from Spring Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods.
+* [org.openrewrite.java.spring.boot2.SpringBoot2BestPractices](/recipes/java/spring/boot2/springboot2bestpractices.md)
+  * **Spring Boot 2.x best practices**
+  * Applies best practices to Spring Boot 2 applications.
+* [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
+  * **Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4**
+  * This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations.
 * [org.openrewrite.java.spring.boot2.SpringBootMavenPluginMigrateAgentToAgents](/recipes/java/spring/boot2/springbootmavenpluginmigrateagenttoagents.md)
   * **Use `spring-boot.run.agents` configuration key in `spring-boot-maven-plugin`**
   * Migrate the `spring-boot.run.agent` Maven plugin configuration key to `spring-boot.run.agents`. Deprecated in 2.2.x.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_0](/recipes/java/spring/boot2/springbootproperties_2_0.md)
+  * **Migrate Spring Boot properties to 2.0**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_1](/recipes/java/spring/boot2/springbootproperties_2_1.md)
+  * **Migrate Spring Boot properties to 2.1**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_2](/recipes/java/spring/boot2/springbootproperties_2_2.md)
+  * **Migrate Spring Boot properties to 2.2**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_3](/recipes/java/spring/boot2/springbootproperties_2_3.md)
+  * **Migrate Spring Boot properties to 2.3**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_4](/recipes/java/spring/boot2/springbootproperties_2_4.md)
+  * **Migrate Spring Boot properties to 2.4**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_5](/recipes/java/spring/boot2/springbootproperties_2_5.md)
+  * **Migrate Spring Boot properties to 2.5**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_6](/recipes/java/spring/boot2/springbootproperties_2_6.md)
+  * **Migrate Spring Boot properties to 2.6**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_7](/recipes/java/spring/boot2/springbootproperties_2_7.md)
+  * **Migrate Spring Boot properties to 2.7**
+  * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot2.UnnecessarySpringExtension](/recipes/java/spring/boot2/unnecessaryspringextension.md)
   * **Remove `@SpringExtension`**
   * `@SpringBootTest` and all test slice annotations already applies `@SpringExtension` as of Spring Boot 2.1.0.
+* [org.openrewrite.java.spring.boot2.UnnecessarySpringRunWith](/recipes/java/spring/boot2/unnecessaryspringrunwith.md)
+  * **Remove unnecessary Spring `@RunWith`**
+  * Remove `@RunWith` annotations on Spring tests.
+* [org.openrewrite.java.spring.boot2.UpgradeSpockToGroovy3](/recipes/java/spring/boot2/upgradespocktogroovy3.md)
+  * **Upgrade Spock to a Groovy 3 compatible variant**
+  * Upgrade Spock dependencies to a Groovy 3 compatible 2.0 variant when Groovy 3 is on the classpath.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
+  * **Migrate from Spring Boot 1.x to 2.0 (Community Edition)**
+  * Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
+  * **Migrate to Spring Boot 2.1**
+  * Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
+  * **Migrate to Spring Boot 2.2**
+  * Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+  * **Migrate to Spring Boot 2.3**
+  * Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
+  * **Migrate to Spring Boot 2.4**
+  * Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
+  * **Upgrade to Spring Boot 2.5**
+  * Upgrade to Spring Boot 2.5 from any prior 2.x version.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
+  * **Migrate to Spring Boot 2.6**
+  * Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6.
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+  * **Migrate to Spring Boot 2.7**
+  * Upgrade to Spring Boot 2.7.
 * [org.openrewrite.java.spring.boot2.search.CustomizingJooqDefaultConfiguration](/recipes/java/spring/boot2/search/customizingjooqdefaultconfiguration.md)
   * **In Spring Boot 2.5 a `DefaultConfigurationCustomizer` can now be used in favour of defining one or more `*Provider` beans**
   * To streamline the customization of jOOQ’s `DefaultConfiguration`, a bean that implements `DefaultConfigurationCustomizer` can now be defined. This customizer callback should be used in favour of defining one or more `*Provider` beans, the support for which has now been deprecated. See [Spring Boot 2.5 jOOQ customization](https://docs.spring.io/spring-boot/docs/2.5.x/reference/htmlsingle/#features.sql.jooq.customizing).
+* [org.openrewrite.java.spring.boot2.search.FindUpgradeRequirementsSpringBoot_2_5](/recipes/java/spring/boot2/search/findupgraderequirementsspringboot_2_5.md)
+  * **Find patterns that require updating for Spring Boot 2.5**
+  * Looks for a series of patterns that have not yet had auto-remediation recipes developed for.
 * [org.openrewrite.java.spring.boot2.search.IntegrationSchedulerPoolRecipe](/recipes/java/spring/boot2/search/integrationschedulerpoolrecipe.md)
   * **Integration scheduler pool size**
   * Spring Integration now reuses an available `TaskScheduler` rather than configuring its own. In a typical application setup relying on the auto-configuration, this means that Spring Integration uses the auto-configured task scheduler that has a pool size of 1. To restore Spring Integration’s default of 10 threads, use the `spring.task.scheduling.pool.size` property.
 * [org.openrewrite.java.spring.boot2.search.LoggingShutdownHooks](/recipes/java/spring/boot2/search/loggingshutdownhooks.md)
   * **Applications using logging shutdown hooks**
   * Spring Boot registers a logging shutdown hook by default for JAR-based applications to ensure that logging resources are released when the JVM exits. If your application is deployed as a WAR then the shutdown hook is not registered since the servlet container usually handles logging concerns.   Most applications will want the shutdown hook. However, if your application has complex context hierarchies, then you may need to disable it. You can use the `logging.register-shutdown-hook` property to do that.
+* [org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView](/recipes/java/spring/boot2/search/messagesinthedefaulterrorview.md)
+  * **Find projects affected by changes to the default error view message attribute**
+  * As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included.
+* [org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization](/recipes/java/spring/boot3/actuatorendpointsanitization.md)
+  * **Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points**
+  * Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228.
 * [org.openrewrite.java.spring.boot3.AddRouteTrailingSlash](/recipes/java/spring/boot3/addroutetrailingslash.md)
   * **Add trailing slash to Spring routes**
   * This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default value set to false. This means that previously, a controller `@GetMapping(&quot;/some/greeting&quot;)` would match both `GET /some/greeting` and `GET /some/greeting/`, but it doesn't match `GET /some/greeting/` anymore by default and will result in an HTTP 404 error. This recipe is to add declaration of additional route explicitly on the controller handler (like `@GetMapping(&quot;/some/greeting&quot;, &quot;/some/greeting/&quot;)`.
@@ -3562,24 +6506,45 @@ _146 recipes_
 * [org.openrewrite.java.spring.boot3.AddValidToNestedConfigProperties](/recipes/java/spring/boot3/addvalidtonestedconfigproperties.md)
   * **Add `@Valid` to nested properties in `@ConfigurationProperties`**
   * Adds `@Valid` annotation to fields in `@ConfigurationProperties` classes that contain nested properties with validation constraints.
+* [org.openrewrite.java.spring.boot3.ChangeCassandraGroupId](/recipes/java/spring/boot3/changecassandragroupid.md)
+  * **Change `com.datastax.oss` to `org.apache.cassandra`**
+  * Change `groupId` from `com.datastax.oss` to `org.apache.cassandra` and adopt the Spring Boot 3.3 managed version.
 * [org.openrewrite.java.spring.boot3.ConfigurationOverEnableSecurity](/recipes/java/spring/boot3/configurationoverenablesecurity.md)
   * **Add `@Configuration` to classes with `@EnableXXXSecurity` annotations**
   * Prior to Spring Security 6, `@EnableXXXSecurity` implicitly had `@Configuration`. `Configuration` was removed from the definitions of the `@EnableSecurity` definitions in Spring Security 6. Consequently classes annotated with `@EnableXXXSecurity` coming from pre-Boot 3 should have `@Configuration` annotation added.
 * [org.openrewrite.java.spring.boot3.DowngradeServletApiWhenUsingJetty](/recipes/java/spring/boot3/downgradeservletapiwhenusingjetty.md)
   * **Downgrade Jakarta Servlet API to 5.0 when using Jetty**
   * Jetty does not yet support Servlet 6.0. This recipe will detect the presence of the `spring-boot-starter-jetty` as a first-order dependency and will add the maven property `jakarta-servlet.version` setting it's value to `5.0.0`. This will downgrade the `jakarta-servlet` artifact if the pom's parent extends from the spring-boot-parent.
+* [org.openrewrite.java.spring.boot3.EnableVirtualThreads](/recipes/java/spring/boot3/enablevirtualthreads.md)
+  * **Enable Virtual Threads on Java 21**
+  * Set `spring.threads.virtual.enabled` to `true` in `application.properties` or `application.yml`.
 * [org.openrewrite.java.spring.boot3.MaintainTrailingSlashURLMappings](/recipes/java/spring/boot3/maintaintrailingslashurlmappings.md)
   * **Maintain trailing slash URL mappings**
   * This is part of Spring MVC and WebFlux URL Matching Changes, as of Spring Framework 6.0, the trailing slash matching configuration option has been deprecated and its default value set to false. This means that previously, a controller `@GetMapping(&quot;/some/greeting&quot;)` would match both `GET /some/greeting` and `GET /some/greeting/`, but it doesn't match `GET /some/greeting/` anymore by default and will result in an HTTP 404 error. This recipe is to maintain trailing slash in all HTTP url mappings.
+* [org.openrewrite.java.spring.boot3.MigrateDropWizardDependencies](/recipes/java/spring/boot3/migratedropwizarddependencies.md)
+  * **Migrate dropWizard dependencies to Spring Boot 3.x**
+  * Migrate dropWizard dependencies to the new artifactId, since these are changed with Spring Boot 3.
 * [org.openrewrite.java.spring.boot3.MigrateHooksToReactorContextProperty](/recipes/java/spring/boot3/migratehookstoreactorcontextproperty.md)
   * **Use `spring.reactor.context-propagation` property**
   * Replace `Hooks.enableAutomaticContextPropagation()` with `spring.reactor.context-propagation=auto`.
+* [org.openrewrite.java.spring.boot3.MigrateMaxHttpHeaderSize](/recipes/java/spring/boot3/migratemaxhttpheadersize.md)
+  * **Rename `server.max-http-header-size` to `server.max-http-request-header-size`**
+  * Previously, the server.max-http-header-size was treated inconsistently across the four supported embedded web servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size. When using Tomcat it would configure the max HTTP request and response header sizes. The renamed property is used to configure the http request header size in Spring Boot 3.0. **To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such a setting), use a `WebServerFactoryCustomizer`**.
+* [org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md)
+  * **Migrate SAP cloud foundry logging support to Spring Boot 3.x**
+  * Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3.
+* [org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
+  * **Migrate thymeleaf dependencies to Spring Boot 3.x**
+  * Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3.
 * [org.openrewrite.java.spring.boot3.MigrateWebMvcTagsToObservationConvention](/recipes/java/spring/boot3/migratewebmvctagstoobservationconvention.md)
   * **Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`**
   * Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention` as part of Spring Boot 3.2 removals.
 * [org.openrewrite.java.spring.boot3.PreciseBeanType](/recipes/java/spring/boot3/precisebeantype.md)
   * **Bean methods should return concrete types**
   * Replace Bean method return types with concrete types being returned. This is required for Spring 6 AOT.
+* [org.openrewrite.java.spring.boot3.RelocateLauncherClasses](/recipes/java/spring/boot3/relocatelauncherclasses.md)
+  * **Relocate Launcher Classes**
+  * Relocate classes that have been moved to different packages in Spring Boot 3.2.
 * [org.openrewrite.java.spring.boot3.RemoveConstructorBindingAnnotation](/recipes/java/spring/boot3/removeconstructorbindingannotation.md)
   * **Remove Unnecessary `@ConstructorBinding`**
   * As of Boot 3.0 `@ConstructorBinding` is no longer needed at the type level on `@ConfigurationProperties` classes and should be removed.
@@ -3589,21 +6554,171 @@ _146 recipes_
 * [org.openrewrite.java.spring.boot3.RemoveSolrAutoConfigurationExclude](/recipes/java/spring/boot3/removesolrautoconfigurationexclude.md)
   * **Remove `SolrAutoConfiguration`**
   * `SolrAutoConfiguration` was removed in Spring Boot 3; remove references to it from exclusions on annotations.
+* [org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods](/recipes/java/spring/boot3/replaceresttemplatebuildermethods.md)
+  * **Replace deprecated setters in `RestTemplateBuilder`**
+  * Replaces `setConnectTimeout`, `setReadTimeout`, and `setSslBundle` method invocations with `connectTimeout`, `readTimeout`, and `sslBundle` respectively.
 * [org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderRequestFactoryMethod](/recipes/java/spring/boot3/replaceresttemplatebuilderrequestfactorymethod.md)
   * **Replace `RestTemplateBuilder.requestFactory(Function)` with `requestFactoryBuilder`**
   * `RestTemplateBuilder.requestFactory(java.util.function.Function)` was deprecated since Spring Boot 3.4, in favor of `requestFactoryBuilder(ClientHttpRequestFactoryBuilder)`.
+* [org.openrewrite.java.spring.boot3.ReplaceStringLiteralsWithConstants](/recipes/java/spring/boot3/replacestringliteralswithconstants.md)
+  * **Replace String literals with Spring constants**
+  * Replace String literals with Spring constants where applicable.
+* [org.openrewrite.java.spring.boot3.SpringBoot33BestPractices](/recipes/java/spring/boot3/springboot33bestpractices.md)
+  * **Spring Boot 3.3 best practices**
+  * Applies best practices to Spring Boot 3 applications.
+* [org.openrewrite.java.spring.boot3.SpringBoot3BestPracticesOnly](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
+  * **Spring Boot 3.3 best practices (only)**
+  * Applies best practices to Spring Boot 3 applications, without chaining in upgrades to Spring Boot.
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_0](/recipes/java/spring/boot3/springbootproperties_3_0.md)
+  * **Migrate Spring Boot properties to 3.0**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_1](/recipes/java/spring/boot3/springbootproperties_3_1.md)
+  * **Migrate Spring Boot properties to 3.1**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_2](/recipes/java/spring/boot3/springbootproperties_3_2.md)
+  * **Migrate Spring Boot properties to 3.2**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_3](/recipes/java/spring/boot3/springbootproperties_3_3.md)
+  * **Migrate Spring Boot properties to 3.3**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
+  * **Migrate Spring Boot properties to 3.4 (Community Edition)**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
+  * **Migrate Enabled to Access Spring Boot Properties**
+  * Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'.
+* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
+  * **Migrate Spring Boot properties to 3.5**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
+  * **Update Prometheus Pushgateway Dependency Coordinates**
+  * Update the Prometheus Pushgateway artifact ID for Spring Boot 3.5 compatibility.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
+  * **Upgrade MyBatis to Spring Boot 2.0**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.0.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_1](/recipes/java/spring/boot3/upgrademybatistospringboot_2_1.md)
+  * **Upgrade MyBatis to Spring Boot 2.1**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.1.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_2](/recipes/java/spring/boot3/upgrademybatistospringboot_2_2.md)
+  * **Upgrade MyBatis to Spring Boot 2.2**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.2.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_3](/recipes/java/spring/boot3/upgrademybatistospringboot_2_3.md)
+  * **Upgrade MyBatis to Spring Boot 2.3**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.3.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_4](/recipes/java/spring/boot3/upgrademybatistospringboot_2_4.md)
+  * **Upgrade MyBatis to Spring Boot 2.4**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.4.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_5](/recipes/java/spring/boot3/upgrademybatistospringboot_2_5.md)
+  * **Upgrade MyBatis to Spring Boot 2.5**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.5.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_6](/recipes/java/spring/boot3/upgrademybatistospringboot_2_6.md)
+  * **Upgrade MyBatis to Spring Boot 2.6**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.6.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_7](/recipes/java/spring/boot3/upgrademybatistospringboot_2_7.md)
+  * **Upgrade MyBatis to Spring Boot 2.7**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.7.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_0](/recipes/java/spring/boot3/upgrademybatistospringboot_3_0.md)
+  * **Upgrade MyBatis to Spring Boot 3.0**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.0.
+* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_2](/recipes/java/spring/boot3/upgrademybatistospringboot_3_2.md)
+  * **Upgrade MyBatis to Spring Boot 3.2**
+  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.2.
+* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+  * **Migrate to Spring Boot 3.0**
+  * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
+* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
+  * **Migrate to Spring Boot 3.1**
+  * Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
+* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
+  * **Migrate to Spring Boot 3.2**
+  * Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
+* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
+  * **Migrate to Spring Boot 3.3**
+  * Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
+* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
+  * **Migrate to Spring Boot 3.4 (Community Edition)**
+  * Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
+* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
+  * **Migrate to Spring Boot 3.5 (Community Edition)**
+  * Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
 * [org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate](/recipes/java/spring/boot4/addautoconfiguretestresttemplate.md)
   * **Add `@AutoConfigureTestRestTemplate` if necessary**
   * Adds `@AutoConfigureTestRestTemplate` to test classes annotated with `@SpringBootTest` that use `TestRestTemplate` since this bean is no longer auto-configured as described in the [Spring Boot 4 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#using-webclient-or-testresttemplate-and-springboottest).
 * [org.openrewrite.java.spring.boot4.AddAutoConfigureWebTestClient](/recipes/java/spring/boot4/addautoconfigurewebtestclient.md)
   * **Add `@AutoConfigureWebTestClient` if necessary**
   * Adds `@AutoConfigureWebTestClient` to test classes annotated with `@SpringBootTest` that use `WebTestClient` since this bean is no longer auto-configured as described in the [Spring Boot 4 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#using-webclient-or-testresttemplate-and-springboottest).
+* [org.openrewrite.java.spring.boot4.AddSpringBootStarterFlyway](/recipes/java/spring/boot4/addspringbootstarterflyway.md)
+  * **Add `spring-boot-starter-flyway` if using Flyway**
+  * Adds the necessary Spring Boot 4.0 Flyway starter for autoconfiguration based on dependency usage.
+* [org.openrewrite.java.spring.boot4.MigrateAutoconfigurePackages](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
+  * **Migrate packages to modular starters**
+  * Migrate to new packages used for autoconfiguration by Spring Boot 4.0 modules.
+* [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
+  * **Migrate to Spring Boot 4.0 modular starters (Community Edition)**
+  * Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
+* [org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions](/recipes/java/spring/boot4/renamedeprecatedstartersmanagedversions.md)
+  * **Rename Spring Boot 4.0 starters with managed versions**
+  * Renames deprecated Spring Boot starters to their new names without adding explicit versions, for use in projects where the `io.spring.dependency-management` plugin manages versions via BOM.
+* [org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
+  * **Replace `@MockBean` and `@SpyBean`**
+  * Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`.
+* [org.openrewrite.java.spring.boot4.SpringBootProperties_4_0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
+  * **Migrate Spring Boot properties to 4.0**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
+  * **Migrate to Spring Boot 4.0 (Community Edition)**
+  * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
 * [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
   * **Add logging.pattern.level for traceId and spanId**
   * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
+* [org.openrewrite.java.spring.cloud2022.DependencyUpgrades](/recipes/java/spring/cloud2022/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2022**
+  * Upgrade dependencies to Spring Cloud 2022 from prior 2021.x version.
+* [org.openrewrite.java.spring.cloud2022.MigrateCloudSleuthToMicrometerTracing](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+  * **Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0**
+  * Spring Cloud Sleuth has been discontinued and only compatible with Spring Boot 2.x.
 * [org.openrewrite.java.spring.cloud2022.MigrateRequestMappingOnFeignClient](/recipes/java/spring/cloud2022/migraterequestmappingonfeignclient.md)
   * **Migrate `@RequestMapping` on `FeignClient` to `@FeignClient` path attribute**
   * Support for `@RequestMapping` over a `FeignClient` interface was removed in Spring Cloud OpenFeign 2.2.10.RELEASE.
+* [org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022](/recipes/java/spring/cloud2022/upgradespringcloud_2022.md)
+  * **Migrate to Spring Cloud 2022**
+  * Migrate applications to the latest Spring Cloud 2022 (Kilburn) release.
+* [org.openrewrite.java.spring.cloud2023.DependencyUpgrades](/recipes/java/spring/cloud2023/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2023**
+  * Upgrade dependencies to Spring Cloud 2023 from prior 2022.x version.
+* [org.openrewrite.java.spring.cloud2023.UpgradeSpringCloud_2023](/recipes/java/spring/cloud2023/upgradespringcloud_2023.md)
+  * **Migrate to Spring Cloud 2023**
+  * Migrate applications to the latest Spring Cloud 2023 (Leyton) release.
+* [org.openrewrite.java.spring.cloud2024.DependencyUpgrades](/recipes/java/spring/cloud2024/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2024**
+  * Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version.
+* [org.openrewrite.java.spring.cloud2024.UpgradeSpringCloud_2024](/recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
+  * **Migrate to Spring Cloud 2024**
+  * Migrate applications to the latest Spring Cloud 2024 (Moorgate) release.
+* [org.openrewrite.java.spring.cloud2025.DependencyUpgrades](/recipes/java/spring/cloud2025/dependencyupgrades.md)
+  * **Upgrade dependencies to Spring Cloud 2025**
+  * Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version.
+* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayDeprecatedModulesAndStarters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
+  * **Migrate to New Spring Cloud Gateway Modules and Starters**
+  * Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025.
+* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProperties](/recipes/java/spring/cloud2025/springcloudgatewayproperties.md)
+  * **Migrate Spring Cloud Gateway Properties**
+  * Migrate Spring Cloud Gateway properties for Spring Cloud 2025 release.
+* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebMvcProperties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebmvcproperties.md)
+  * **Migrate Spring Cloud Gateway Proxy WebMvc Properties**
+  * Migrate Spring Cloud Gateway Proxy WebMvc properties for Spring Cloud 2025 release.
+* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebfluxProperties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebfluxproperties.md)
+  * **Migrate Spring Cloud Gateway Proxy Webflux Properties**
+  * Migrate Spring Cloud Gateway Proxy Webflux properties for Spring Cloud 2025 release.
+* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayWebMvcProperties](/recipes/java/spring/cloud2025/springcloudgatewaywebmvcproperties.md)
+  * **Migrate Spring Cloud Gateway WebMvc Properties**
+  * Migrate Spring Cloud Gateway WebMvc properties for Spring Cloud 2025 release.
+* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayWebfluxProperties](/recipes/java/spring/cloud2025/springcloudgatewaywebfluxproperties.md)
+  * **Migrate Spring Cloud Gateway Webflux Properties**
+  * Migrate Spring Cloud Gateway Webflux properties for Spring Cloud 2025 release.
+* [org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025](/recipes/java/spring/cloud2025/upgradespringcloud_2025.md)
+  * **Migrate to Spring Cloud 2025**
+  * Migrate applications to the latest Spring Cloud 2025 (Northfields) release.
 * [org.openrewrite.java.spring.data.JdbcTemplateQueryForLongMigration](/recipes/java/spring/data/jdbctemplatequeryforlongmigration.md)
   * **Convert `JdbcTemplate.queryForLong(..)` to `queryForObject(..)`**
   * Replaces calls to `JdbcTemplate.queryForLong(..)` with `queryForObject(String, Class, Object...)`.
@@ -3625,6 +6740,27 @@ _146 recipes_
 * [org.openrewrite.java.spring.data.RefactorSimpleMongoDbFactory](/recipes/java/spring/data/refactorsimplemongodbfactory.md)
   * **Use `new SimpleMongoClientDbFactory(String)`**
   * Replace usage of deprecated `new SimpleMongoDbFactory(new MongoClientURI(String))` with `new SimpleMongoClientDbFactory(String)`.
+* [org.openrewrite.java.spring.data.UpgradeSpringData_2_3](/recipes/java/spring/data/upgradespringdata_2_3.md)
+  * **Migrate to Spring Data 2.3**
+  * Migrate applications to the latest Spring Data 2.3 release.
+* [org.openrewrite.java.spring.data.UpgradeSpringData_2_5](/recipes/java/spring/data/upgradespringdata_2_5.md)
+  * **Migrate to Spring Data JPA 2.5**
+  * Migrate applications to the latest Spring Data 2.5 release.
+* [org.openrewrite.java.spring.data.UpgradeSpringData_2_7](/recipes/java/spring/data/upgradespringdata_2_7.md)
+  * **Migrate to Spring Data JPA 2.7**
+  * Migrate applications to the latest Spring Data JPA 2.7 release.
+* [org.openrewrite.java.spring.data.UpgradeSpringData_3_4](/recipes/java/spring/data/upgradespringdata_3_4.md)
+  * **Migrate to Spring Data JPA 3.4**
+  * Migrate applications to the latest Spring Data JPA 3.4 release.
+* [org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch](/recipes/java/spring/data/usejparepositorydeleteallinbatch.md)
+  * **Use `JpaRepository#deleteAllInBatch(Iterable&lt;T&gt; entities)`**
+  * `JpaRepository#deleteInBatch(Iterable)` was deprecated in 2.5.
+* [org.openrewrite.java.spring.data.UseJpaRepositoryGetById](/recipes/java/spring/data/usejparepositorygetbyid.md)
+  * **Use `JpaRepository#getById(ID id)`**
+  * `JpaRepository#getOne(ID)` was deprecated in 2.5.
+* [org.openrewrite.java.spring.data.UseJpaRepositoryGetReferenceById](/recipes/java/spring/data/usejparepositorygetreferencebyid.md)
+  * **Use `JpaRepository#getReferenceById(ID id)`**
+  * `JpaRepository#getOne(ID)` was deprecated in 2.5 and `JpaRepository#getById(ID)` was deprecated in 2.7.
 * [org.openrewrite.java.spring.data.UseTlsJdbcConnectionString](/recipes/java/spring/data/usetlsjdbcconnectionstring.md)
   * **Use TLS for JDBC connection strings**
   * Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/default/files/2022-06/End_User_Briefing_Supplementing_Data_Security_UPDATED_FINAL.pdf)), JDBC connection strings should be TLS-enabled. This recipe will update the port and optionally add a connection attribute to indicate that the connection is TLS-enabled.
@@ -3685,12 +6821,18 @@ _146 recipes_
 * [org.openrewrite.java.spring.framework.MigrateResponseEntityExceptionHandlerHttpStatusToHttpStatusCode](/recipes/java/spring/framework/migrateresponseentityexceptionhandlerhttpstatustohttpstatuscode.md)
   * **Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode**
   * With Spring 6 `HttpStatus` was replaced by `HttpStatusCode` in most method signatures in the `ResponseEntityExceptionHandler`.
+* [org.openrewrite.java.spring.framework.MigrateResponseStatusException](/recipes/java/spring/framework/migrateresponsestatusexception.md)
+  * **Migrate breaking changes in `ResponseStatusException`**
+  * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()` and `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()` .
 * [org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetRawStatusCodeMethod](/recipes/java/spring/framework/migrateresponsestatusexceptiongetrawstatuscodemethod.md)
   * **Migrate `ResponseStatusException#getRawStatusCode()` to `getStatusCode().value()`**
   * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()`. Also handles `RestClientResponseException` and its subclasses such as `HttpServerErrorException`.
 * [org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetStatusCodeMethod](/recipes/java/spring/framework/migrateresponsestatusexceptiongetstatuscodemethod.md)
   * **Migrate `ResponseStatusException#getStatus()` to `getStatusCode()`**
   * Migrate Spring Framework 5.3's `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()`.
+* [org.openrewrite.java.spring.framework.MigrateSpringAssert](/recipes/java/spring/framework/migratespringassert.md)
+  * **Migrate removed Spring `Assert` methods**
+  * Assert methods without a message argument have been removed in Spring Framework 6.0.
 * [org.openrewrite.java.spring.framework.MigrateUriComponentsBuilderMethods](/recipes/java/spring/framework/migrateuricomponentsbuildermethods.md)
   * **Migrate deprecated `UriComponentsBuilder` methods**
   * Migrates deprecated methods in `org.springframework.web.util.UriComponentsBuilder`: `fromHttpRequest` and `parseForwardedFor` to `ForwardedHeaderUtils`, and `fromHttpUrl` to `fromUriString`.
@@ -3703,6 +6845,33 @@ _146 recipes_
 * [org.openrewrite.java.spring.framework.MigrateWebMvcConfigurerAdapter](/recipes/java/spring/framework/migratewebmvcconfigureradapter.md)
   * **Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`**
   * As of 5.0 `WebMvcConfigurer` has default methods (made possible by a Java 8 baseline) and can be implemented directly without the need for this adapter.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_0](/recipes/java/spring/framework/upgradespringframework_5_0.md)
+  * **Migrate to Spring Framework 5.0**
+  * Migrate applications to the latest Spring Framework 5.0 release.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
+  * **Migrate to Spring Framework 5.1**
+  * Migrate applications to the latest Spring Framework 5.1 release.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
+  * **Migrate to Spring Framework 5.2**
+  * Migrate applications to the latest Spring Framework 5.2 release.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
+  * **Migrate to Spring Framework 5.3 (Community Edition)**
+  * Migrate applications to the latest Spring Framework 5.3 release.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
+  * **Migrate to Spring Framework 6.0**
+  * Migrate applications to the latest Spring Framework 6.0 release.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
+  * **Migrate to Spring Framework 6.1**
+  * Migrate applications to the latest Spring Framework 6.1 release.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+  * **Migrate to Spring Framework 6.2**
+  * Migrate applications to the latest Spring Framework 6.2 release.
+* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
+  * **Migrate to Spring Framework 7.0**
+  * Migrate applications to the latest Spring Framework 7.0 release.
+* [org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty](/recipes/java/spring/framework/useobjectutilsisempty.md)
+  * **Use `ObjectUtils#isEmpty(Object)`**
+  * `StringUtils#isEmpty(Object)` was deprecated in 5.3.
 * [org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants](/recipes/java/spring/http/replacestringliteralswithhttpheadersconstants.md)
   * **Replace String literals with `HttpHeaders` constants**
   * Replace String literals with `org.springframework.http.HttpHeaders` constants.
@@ -3715,6 +6884,9 @@ _146 recipes_
 * [org.openrewrite.java.spring.http.SimplifyWebTestClientCalls](/recipes/java/spring/http/simplifywebtestclientcalls.md)
   * **Simplify WebTestClient expressions**
   * Simplifies various types of WebTestClient expressions to improve code readability.
+* [org.openrewrite.java.spring.http.SpringWebDependency](/recipes/java/spring/http/springwebdependency.md)
+  * **Find Spring Web dependency**
+  * Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
 * [org.openrewrite.java.spring.kafka.KafkaOperationsSendReturnType](/recipes/java/spring/kafka/kafkaoperationssendreturntype.md)
   * **Change `KafkaOperations.send*` return type to `CompletableFuture`**
   * Send operations used to return a `ListenableFuture` but as of 3.0 return a `CompletableFuture`. Adjust the usage to use `CompletableFuture` instead.
@@ -3724,6 +6896,36 @@ _146 recipes_
 * [org.openrewrite.java.spring.kafka.RemoveUsingCompletableFuture](/recipes/java/spring/kafka/removeusingcompletablefuture.md)
   * **Remove `KafkaOperations.usingCompletableFuture()`**
   * Remove the `KafkaOperations.usingCompletableFuture()` bridge during Spring Kafka 2.9 to 3.0 migration.
+* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_2_8_ErrorHandlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
+  * **Migrates Spring Kafka deprecated error handlers**
+  * Migrate error handlers deprecated in Spring Kafka `2.8.x` to their replacements.
+* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_3_0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
+  * **Migrate to Spring Kafka 3.0**
+  * Migrate applications to the latest Spring Kafka 3.0 release.
+* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_4_0](/recipes/java/spring/kafka/upgradespringkafka_4_0.md)
+  * **Migrate to Spring Kafka 4.0**
+  * Migrate applications to the latest Spring Kafka 4.0 release.
+* [org.openrewrite.java.spring.opentelemetry.MigrateBraveToOpenTelemetry](/recipes/java/spring/opentelemetry/migratebravetoopentelemetry.md)
+  * **Migrate Brave API to OpenTelemetry API**
+  * Migrate Java code using Brave (Zipkin) tracing API to OpenTelemetry API. This recipe handles the migration of Brave Tracer, Span, and related classes to OpenTelemetry equivalents.
+* [org.openrewrite.java.spring.opentelemetry.MigrateDatadogToOpenTelemetry](/recipes/java/spring/opentelemetry/migratedatadogtoopentelemetry.md)
+  * **Migrate Datadog tracing to OpenTelemetry**
+  * Migrate from Datadog Java tracing annotations to OpenTelemetry annotations. Replace Datadog @Trace annotations with @WithSpan annotations.
+* [org.openrewrite.java.spring.opentelemetry.MigrateFromZipkinToOpenTelemetry](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
+  * **Migrate from Zipkin to OpenTelemetry OTLP**
+  * Migrate from Zipkin tracing to OpenTelemetry OTLP. This recipe replaces Zipkin dependencies with OpenTelemetry OTLP exporter and updates the related configuration properties.
+* [org.openrewrite.java.spring.opentelemetry.MigrateNewRelicToOpenTelemetry](/recipes/java/spring/opentelemetry/migratenewrelictoopentelemetry.md)
+  * **Migrate New Relic Agent to OpenTelemetry**
+  * Migrate from New Relic Java Agent annotations to OpenTelemetry annotations. Replace @Trace annotations with @WithSpan annotations.
+* [org.openrewrite.java.spring.opentelemetry.MigrateOpenTracingToOpenTelemetry](/recipes/java/spring/opentelemetry/migrateopentracingtoopentelemetry.md)
+  * **Migrate OpenTracing API to OpenTelemetry API**
+  * Migrate Java code using OpenTracing API to OpenTelemetry API. OpenTracing has been superseded by OpenTelemetry and is no longer actively maintained.
+* [org.openrewrite.java.spring.opentelemetry.MigrateSleuthToOpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
+  * **Migrate from Spring Cloud Sleuth to OpenTelemetry**
+  * Migrate from Spring Cloud Sleuth to OpenTelemetry. [Spring Cloud Sleuth has been deprecated](https://github.com/spring-cloud/spring-cloud-sleuth#spring-cloud-sleuth) and is replaced by Micrometer Tracing with OpenTelemetry as a backend. This recipe removes Sleuth dependencies and adds OpenTelemetry instrumentation.
+* [org.openrewrite.java.spring.opentelemetry.MigrateToOpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
+  * **Complete migration to OpenTelemetry**
+  * Comprehensive migration to OpenTelemetry including dependencies, configuration properties, and Java code changes. This recipe handles migration from Spring Cloud Sleuth, Brave/Zipkin, and OpenTracing to OpenTelemetry.
 * [org.openrewrite.java.spring.search.FindApiCalls](/recipes/java/spring/search/findapicalls.md)
   * **Find HTTP API calls via `RestTemplate`**
   * Find outbound HTTP API calls made via Spring's `RestTemplate` class.
@@ -3736,13 +6938,22 @@ _146 recipes_
 * [org.openrewrite.java.spring.search.FindSpringComponents](/recipes/java/spring/search/findspringcomponents.md)
   * **Find Spring components**
   * Find Spring components, including controllers, services, repositories, return types of `@Bean` annotated methods, etc.
+* [org.openrewrite.java.spring.security.SpringSecurityBestPractices](/recipes/java/spring/security/springsecuritybestpractices.md)
+  * **Spring security best practices**
+  * Applies security best practices to Spring applications, including TLS for database and message broker connections.
 * [org.openrewrite.java.spring.security5.AuthorizeHttpRequests](/recipes/java/spring/security5/authorizehttprequests.md)
   * **Replace `HttpSecurity.authorizeRequests(...)` with `HttpSecurity.authorizeHttpRequests(...)` and `ExpressionUrlAuthorizationConfigurer`, `AbstractInterceptUrlConfigurer` with `AuthorizeHttpRequestsConfigurer`, etc**
   * Replace `HttpSecurity.authorizeRequests(...)` deprecated in Spring Security 6 with `HttpSecurity.authorizeHttpRequests(...)` and all method calls on the resultant object respectively. Replace deprecated `AbstractInterceptUrlConfigurer` and its deprecated subclasses with `AuthorizeHttpRequestsConfigurer` and its corresponding subclasses.
 * [org.openrewrite.java.spring.security5.ConvertSecurityMatchersToSecurityMatcher](/recipes/java/spring/security5/convertsecuritymatcherstosecuritymatcher.md)
   * **Convert `requestMatchers` chain to `securityMatcher`**
   * Converts `HttpSecurity.requestMatchers().antMatchers(...)` and similar patterns to `HttpSecurity.securityMatcher(...)`. The no-arg `requestMatchers()` method returns a `RequestMatcherConfigurer` that is not a configurer in the lambda DSL sense, so it should be replaced with the `securityMatcher()` method introduced in Spring Security 5.8.
+* [org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
+  * **Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`**
+  * Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`.
 * [org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurity](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurity.md)
+  * **Replace global method security with method security**
+  * `@EnableGlobalMethodSecurity` and `&lt;global-method-security&gt;` are deprecated in favor of `@EnableMethodSecurity` and `&lt;method-security&gt;`, respectively. The new annotation and XML element activate Spring’s pre-post annotations by default and use AuthorizationManager internally.
+* [org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurityXml](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
   * **Replace global method security with method security**
   * `@EnableGlobalMethodSecurity` and `&lt;global-method-security&gt;` are deprecated in favor of `@EnableMethodSecurity` and `&lt;method-security&gt;`, respectively. The new annotation and XML element activate Spring’s pre-post annotations by default and use AuthorizationManager internally.
 * [org.openrewrite.java.spring.security5.UpdateArgon2PasswordEncoder](/recipes/java/spring/security5/updateargon2passwordencoder.md)
@@ -3754,6 +6965,12 @@ _146 recipes_
 * [org.openrewrite.java.spring.security5.UpdateSCryptPasswordEncoder](/recipes/java/spring/security5/updatescryptpasswordencoder.md)
   * **Use new `SCryptPasswordEncoder` factory methods**
   * In Spring Security 5.8 some `SCryptPasswordEncoder` constructors have been deprecated in favor of factory methods. Refer to the [ Spring Security migration docs](https://docs.spring.io/spring-security/reference/5.8/migration/index.html#_update_scryptpasswordencoder) for more information.
+* [org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
+  * **Migrate to Spring Security 5.7**
+  * Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md)
+  * **Migrate to Spring Security 5.8**
+  * Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security5.UseNewRequestMatchers](/recipes/java/spring/security5/usenewrequestmatchers.md)
   * **Use the new `requestMatchers` methods**
   * In Spring Security 5.8, the `antMatchers`, `mvcMatchers`, and `regexMatchers` methods were deprecated in favor of new `requestMatchers` methods. Refer to the [Spring Security docs](https://docs.spring.io/spring-security/reference/5.8/migration/servlet/config.html#use-new-requestmatchers) for more information.
@@ -3763,6 +6980,9 @@ _146 recipes_
 * [org.openrewrite.java.spring.security5.WebSecurityConfigurerAdapter](/recipes/java/spring/security5/websecurityconfigureradapter.md)
   * **Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean**
   * The Spring Security `WebSecurityConfigurerAdapter` was deprecated 5.7, this recipe will transform `WebSecurityConfigurerAdapter` classes by using a component based approach. Check out the [spring-security-without-the-websecurityconfigureradapter](https://spring.io/blog/2022/02/21/spring-security-without-the-websecurityconfigureradapter) blog for more details.
+* [org.openrewrite.java.spring.security5.search.FindEncryptorsQueryableTextUses](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
+  * **Finds uses of `Encryptors.queryableText()`**
+  * `Encryptors.queryableText()` is insecure and is removed in Spring Security 6.
 * [org.openrewrite.java.spring.security6.ApplyToWithLambdaDsl](/recipes/java/spring/security6/applytowithlambdadsl.md)
   * **Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL**
   * Converts `HttpSecurity::apply` chained call from Spring Security pre 6.2.x into new lambda DSL style calls and removes `and()` methods.
@@ -3775,6 +6995,9 @@ _146 recipes_
 * [org.openrewrite.java.spring.security6.RemoveOauth2LoginConfig](/recipes/java/spring/security6/removeoauth2loginconfig.md)
   * **Remove unneeded `oauth2Login` config when upgrading to Spring Security 6**
   * `oauth2Login()` is a Spring Security feature that allows users to authenticate with an OAuth2 or OpenID Connect 1.0 provider. When a user is authenticated using this feature, they are granted a set of authorities that determines what actions they are allowed to perform within the application.  In Spring Security 5, the default authority given to a user authenticated with an OAuth2 or OpenID Connect 1.0 provider via `oauth2Login()` is `ROLE_USER`. This means that the user is allowed to access the application's resources as a regular user.  However, in Spring Security 6, the default authority given to a user authenticated with an OAuth2 provider is `OAUTH2_USER`, and the default authority given to a user authenticated with an OpenID Connect 1.0 provider is `OIDC_USER`. These authorities are more specific and allow for better customization of the user's permissions within the application.  If you are upgrading to Spring Security 6 and you have previously configured a `GrantedAuthoritiesMapper` to handle the authorities of users authenticated via `oauth2Login()`, you can remove it completely as the new default authorities should be sufficient.
+* [org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager](/recipes/java/spring/security6/removeuseauthorizationmanager.md)
+  * **Remove unnecessary `use-authorization-manager` for message security in Spring security 6**
+  * In Spring Security 6, `&lt;websocket-message-broker&gt;` defaults `use-authorization-manager` to `true`. So, the `use-authorization-manager` attribute for message security is no longer needed and can be removed.
 * [org.openrewrite.java.spring.security6.RequireExplicitSavingOfSecurityContextRepository](/recipes/java/spring/security6/requireexplicitsavingofsecuritycontextrepository.md)
   * **Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in**
   * Remove explicit `SecurityContextConfigurer.requireExplicitSave(true)` opt-in as that is the new default in Spring Security 6. See the corresponding [Sprint Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/session-management.html#_require_explicit_saving_of_securitycontextrepository) for details.
@@ -3784,6 +7007,24 @@ _146 recipes_
 * [org.openrewrite.java.spring.security6.UpdateRequestCache](/recipes/java/spring/security6/updaterequestcache.md)
   * **Keep the default RequestCache querying behavior in Spring Security 5**
   * By default, Spring Security 5 queries the saved request on every request, which means that in a typical setup, the HttpSession is queried on every request to use the RequestCache. In Spring Security 6, the default behavior has changed, and RequestCache will only be queried for a cached request if the HTTP parameter &quot;continue&quot; is defined. To maintain the same default behavior as Spring Security 5, either explicitly add the HTTP parameter &quot;continue&quot; to every request or use NullRequestCache to override the default behavior.
+* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md)
+  * **Migrate to Spring Security 6.0**
+  * Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md)
+  * **Migrate to Spring Security 6.1**
+  * Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md)
+  * **Migrate to Spring Security 6.2**
+  * Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md)
+  * **Migrate to Spring Security 6.3**
+  * Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
+  * **Migrate to Spring Security 6.4**
+  * Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
+* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
+  * **Migrate to Spring Security 6.5 (Community Edition)**
+  * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.security6.UseSha256InRememberMe](/recipes/java/spring/security6/usesha256inrememberme.md)
   * **Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`**
   * As of Spring Security 6.0 the SHA-256 algorithm is the default for the encoding and matching algorithm used by `TokenBasedRememberMeServices` and does thus no longer need to be explicitly configured. See the corresponding [Sprint Security 6.0 migration step](https://docs.spring.io/spring-security/reference/6.0.0/migration/servlet/authentication.html#servlet-opt-in-sha256-rememberme) for details.
@@ -3796,9 +7037,54 @@ _146 recipes_
 * [org.openrewrite.java.spring.security6.oauth2.server.resource.OAuth2ResourceServerLambdaDsl](/recipes/java/spring/security6/oauth2/server/resource/oauth2resourceserverlambdadsl.md)
   * **Convert `OAuth2ResourceServerConfigurer` chained calls into Lambda DSL**
   * Converts `OAuth2ResourceServerConfigurer` chained call from Spring Security pre 5.2.x into new lambda DSL style calls and removes `and()` methods.
+* [org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
+  * **Remove throws exception in `SecurityConfigurer` methods `init` and `configure`**
+  * Remove throws exception in `SecurityConfigurer` methods `init` and `configure`.
+* [org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
+  * **Migrate to Spring Security 7.0**
+  * Migrate applications to the latest Spring Security 7.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 * [org.openrewrite.java.spring.test.SpringRulesToJUnitExtension](/recipes/java/spring/test/springrulestojunitextension.md)
   * **Replace `SpringClassRule` and `SpringMethodRule` with JUnit 5 `SpringExtension`**
   * Replace JUnit 4's `SpringClassRule` and `SpringMethodRule` with JUnit 5's `SpringExtension` or rely on an existing `@SpringBootTest`.
+* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
+  * **Migrate Spring WS Axiom to SAAJ**
+  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
+* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
+  * **Migrate to Spring WS 4.0**
+  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
+* [org.openrewrite.java.springdoc.CleanupRemainingSpringfox](/recipes/java/springdoc/cleanupremainingspringfox.md)
+  * **Remove remaining Springfox dead code**
+  * Removes unused private methods left behind after SpringFoxToSpringDoc migration. When Docket beans are removed, private helper methods (e.g., `appInfo()`) become dead code but are not cleaned up, causing compilation errors.
+* [org.openrewrite.java.springdoc.MigrateSpringdocCommon](/recipes/java/springdoc/migratespringdoccommon.md)
+  * **Migrate from springdoc-openapi-common to springdoc-openapi-starter-common**
+  * Migrate from springdoc-openapi-common to springdoc-openapi-starter-common.
+* [org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
+  * **Replace SpringFox Dependencies**
+  * Replace SpringFox Dependencies.
+* [org.openrewrite.java.springdoc.SpringFoxToSpringDoc](/recipes/java/springdoc/springfoxtospringdoc.md)
+  * **Migrate from SpringFox Swagger to SpringDoc and OpenAPI**
+  * Migrate from SpringFox Swagger to SpringDoc and OpenAPI.
+* [org.openrewrite.java.springdoc.SwaggerToSpringDoc](/recipes/java/springdoc/swaggertospringdoc.md)
+  * **Migrate from Swagger to SpringDoc and OpenAPI**
+  * Migrate from Swagger to SpringDoc and OpenAPI.
+* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2](/recipes/java/springdoc/upgradespringdoc_2.md)
+  * **Upgrade to SpringDoc 2.1**
+  * Upgrade to SpringDoc v2.1, as described in the [upgrade guide](https://springdoc.org/#migrating-from-springdoc-v1).
+* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_2](/recipes/java/springdoc/upgradespringdoc_2_2.md)
+  * **Upgrade to SpringDoc 2.2**
+  * Upgrade to SpringDoc v2.2.
+* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_5](/recipes/java/springdoc/upgradespringdoc_2_5.md)
+  * **Upgrade to SpringDoc 2.5**
+  * Upgrade to SpringDoc v2.5.
+* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_6](/recipes/java/springdoc/upgradespringdoc_2_6.md)
+  * **Upgrade to SpringDoc 2.6**
+  * Upgrade to SpringDoc v2.6.
+* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_8](/recipes/java/springdoc/upgradespringdoc_2_8.md)
+  * **Upgrade to SpringDoc 2.8**
+  * Upgrade to SpringDoc v2.8.
+* [org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
+  * **Upgrade to SpringDoc 3.0**
+  * Upgrade to SpringDoc v3.0.
 * [org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies](/recipes/maven/spring/upgradeexplicitspringbootdependencies.md)
   * **Upgrade Spring dependencies**
   * Upgrades dependencies according to the specified version of spring boot. Spring boot has many direct and transitive dependencies. When a module has an explicit dependency on one of these it may also need to be upgraded to match the version used by spring boot.
@@ -3807,17 +7093,92 @@ _146 recipes_
 
 _License: Moderne Source Available License_
 
-_10 recipes_
+_65 recipes_
 
 * [org.openrewrite.quarkus.spring.AddQuarkusMavenPlugin](/recipes/quarkus/spring/addquarkusmavenplugin.md)
   * **Add Quarkus Maven plugin**
   * Adds the Quarkus Maven plugin using the same version as the quarkus-bom in dependency management.
+* [org.openrewrite.quarkus.spring.AddSpringCompatibilityExtensions](/recipes/quarkus/spring/addspringcompatibilityextensions.md)
+  * **Add Spring compatibility extensions for commonly used annotations**
+  * Adds Quarkus Spring compatibility extensions when Spring annotations are detected in the codebase.
+* [org.openrewrite.quarkus.spring.ConfigureNativeBuild](/recipes/quarkus/spring/configurenativebuild.md)
+  * **Configure Quarkus Native Build Support**
+  * Adds configuration and dependencies required for Quarkus native image compilation with GraalVM. Includes native profile configuration and reflection hints where needed.
+* [org.openrewrite.quarkus.spring.CustomizeQuarkusPluginGoals](/recipes/quarkus/spring/customizequarkusplugingoals.md)
+  * **Customize Quarkus Maven Plugin Goals**
+  * Allows customization of Quarkus Maven plugin goals. Adds or modifies the executions and goals for the quarkus-maven-plugin.
+* [org.openrewrite.quarkus.spring.CustomizeQuarkusVersion](/recipes/quarkus/spring/customizequarkusversion.md)
+  * **Customize Quarkus BOM Version**
+  * Allows customization of the Quarkus BOM version used in the migration. By default uses 3.x (latest 3.x version), but can be configured to use a specific version.
+* [org.openrewrite.quarkus.spring.DerbyDriverToQuarkus](/recipes/quarkus/spring/derbydrivertoquarkus.md)
+  * **Replace Derby driver with Quarkus JDBC Derby**
+  * Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope).
+* [org.openrewrite.quarkus.spring.DerbyTestDriverToQuarkus](/recipes/quarkus/spring/derbytestdrivertoquarkus.md)
+  * **Replace Derby test driver with Quarkus JDBC Derby (test scope)**
+  * Migrates `org.apache.derby:derby` with test scope to `io.quarkus:quarkus-jdbc-derby` with test scope.
+* [org.openrewrite.quarkus.spring.EnableAnnotationsToQuarkusDependencies](/recipes/quarkus/spring/enableannotationstoquarkusdependencies.md)
+  * **Migrate `@EnableXyz` annotations to Quarkus extensions**
+  * Removes Spring `@EnableXyz` annotations and adds the corresponding Quarkus extensions as dependencies.
+* [org.openrewrite.quarkus.spring.H2DriverToQuarkus](/recipes/quarkus/spring/h2drivertoquarkus.md)
+  * **Replace H2 driver with Quarkus JDBC H2**
+  * Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test scope).
+* [org.openrewrite.quarkus.spring.H2TestDriverToQuarkus](/recipes/quarkus/spring/h2testdrivertoquarkus.md)
+  * **Replace H2 test driver with Quarkus JDBC H2 (test scope)**
+  * Migrates `com.h2database:h2` with test scope to `io.quarkus:quarkus-jdbc-h2` with test scope.
 * [org.openrewrite.quarkus.spring.JpaEntityToPanacheEntity](/recipes/quarkus/spring/jpaentitytopanacheentity.md)
   * **Convert JPA Entity to Panache Entity**
   * Transforms standard JPA entities to extend Quarkus PanacheEntity, enabling the Active Record pattern with built-in CRUD operations.
+* [org.openrewrite.quarkus.spring.MigrateBootStarters](/recipes/quarkus/spring/migratebootstarters.md)
+  * **Replace Spring Boot starter dependencies with Quarkus equivalents**
+  * Migrates Spring Boot starter dependencies to their Quarkus equivalents, removing version tags as Quarkus manages versions through its BOM.
+* [org.openrewrite.quarkus.spring.MigrateConfigurationProperties](/recipes/quarkus/spring/migrateconfigurationproperties.md)
+  * **Migrate @ConfigurationProperties to Quarkus @ConfigMapping**
+  * Migrates Spring Boot @ConfigurationProperties to Quarkus @ConfigMapping. This recipe converts configuration property classes to the native Quarkus pattern.
+* [org.openrewrite.quarkus.spring.MigrateDatabaseDrivers](/recipes/quarkus/spring/migratedatabasedrivers.md)
+  * **Migrate database drivers to Quarkus JDBC extensions**
+  * Replaces Spring Boot database driver dependencies with their Quarkus JDBC extension equivalents.
+* [org.openrewrite.quarkus.spring.MigrateEntitiesToPanache](/recipes/quarkus/spring/migrateentitiestopanache.md)
+  * **Migrate JPA Entities to Panache Entities**
+  * Converts standard JPA entities to Quarkus Panache entities using the Active Record pattern. Entities will extend PanacheEntity and gain built-in CRUD operations.
+* [org.openrewrite.quarkus.spring.MigrateMavenPlugin](/recipes/quarkus/spring/migratemavenplugin.md)
+  * **Add or replace Spring Boot build plugin with Quarkus build plugin**
+  * Remove Spring Boot Maven plugin if present and add Quarkus Maven plugin using the same version as the quarkus-bom.
+* [org.openrewrite.quarkus.spring.MigrateRequestParameterEdgeCases](/recipes/quarkus/spring/migraterequestparameteredgecases.md)
+  * **Migrate Additional Spring Web Parameter Annotations**
+  * Migrates additional Spring Web parameter annotations not covered by the main WebToJaxRs recipe. Includes @MatrixVariable, @CookieValue, and other edge cases.
+* [org.openrewrite.quarkus.spring.MigrateSpringActuator](/recipes/quarkus/spring/migratespringactuator.md)
+  * **Migrate Spring Boot Actuator to Quarkus Health and Metrics**
+  * Migrates Spring Boot Actuator to Quarkus SmallRye Health and Metrics extensions. Converts HealthIndicator implementations to Quarkus HealthCheck pattern.
+* [org.openrewrite.quarkus.spring.MigrateSpringBootDevTools](/recipes/quarkus/spring/migratespringbootdevtools.md)
+  * **Remove Spring Boot DevTools**
+  * Removes Spring Boot DevTools dependency and configuration. Quarkus has built-in dev mode with hot reload that replaces DevTools functionality.
+* [org.openrewrite.quarkus.spring.MigrateSpringCloudConfig](/recipes/quarkus/spring/migratespringcloudconfig.md)
+  * **Migrate Spring Cloud Config Client to Quarkus Config**
+  * Migrates Spring Cloud Config Client to Quarkus configuration sources. Converts bootstrap.yml/properties patterns to Quarkus config.
+* [org.openrewrite.quarkus.spring.MigrateSpringCloudServiceDiscovery](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
+  * **Migrate Spring Cloud Service Discovery to Quarkus**
+  * Migrates Spring Cloud Service Discovery annotations and configurations to Quarkus equivalents. Converts @EnableDiscoveryClient and related patterns to Quarkus Stork service discovery.
+* [org.openrewrite.quarkus.spring.MigrateSpringDataMongodb](/recipes/quarkus/spring/migratespringdatamongodb.md)
+  * **Migrate Spring Data MongoDB to Quarkus Panache MongoDB**
+  * Migrates Spring Data MongoDB repositories to Quarkus MongoDB with Panache. Converts MongoRepository interfaces to PanacheMongoRepository pattern.
+* [org.openrewrite.quarkus.spring.MigrateSpringEvents](/recipes/quarkus/spring/migratespringevents.md)
+  * **Migrate Spring Events to CDI Events**
+  * Migrates Spring's event mechanism to CDI events. Converts ApplicationEventPublisher to CDI Event and @EventListener to @Observes.
+* [org.openrewrite.quarkus.spring.MigrateSpringTesting](/recipes/quarkus/spring/migratespringtesting.md)
+  * **Migrate Spring Boot Testing to Quarkus Testing**
+  * Migrates Spring Boot test annotations and utilities to Quarkus test equivalents. Converts @SpringBootTest to @QuarkusTest, @MockBean to @InjectMock, etc.
+* [org.openrewrite.quarkus.spring.MigrateSpringTransactional](/recipes/quarkus/spring/migratespringtransactional.md)
+  * **Migrate Spring @Transactional to Jakarta @Transactional**
+  * Migrates Spring's @Transactional annotation to Jakarta's @Transactional. Maps propagation attributes to TxType and removes Spring-specific attributes.
+* [org.openrewrite.quarkus.spring.MigrateSpringValidation](/recipes/quarkus/spring/migratespringvalidation.md)
+  * **Migrate Spring Validation to Quarkus**
+  * Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarkus-hibernate-validator dependency and handles validation annotation imports.
 * [org.openrewrite.quarkus.spring.RemoveSpringBootParent](/recipes/quarkus/spring/removespringbootparent.md)
   * **Remove Spring Boot 3.x parent POM**
   * Removes the Spring Boot 3.x starter parent POM from Maven projects.
+* [org.openrewrite.quarkus.spring.ReplaceSpringBootApplication](/recipes/quarkus/spring/replacespringbootapplication.md)
+  * **Replace `@SpringBootApplication` with Quarkus equivalent**
+  * Replace `@SpringBootApplication` annotation with `@QuarkusMain`, `SpringApplication.run()` calls.
 * [org.openrewrite.quarkus.spring.ResponseEntityToJaxRsResponse](/recipes/quarkus/spring/responseentitytojaxrsresponse.md)
   * **Convert Spring `ResponseEntity` to JAX-RS `Response`**
   * Transforms Spring `ResponseEntity` patterns to JAX-RS `Response` API equivalents.
@@ -3827,12 +7188,102 @@ _10 recipes_
 * [org.openrewrite.quarkus.spring.SpringBeanToCdiProduces](/recipes/quarkus/spring/springbeantocdiproduces.md)
   * **Replace Spring `@Bean` with CDI `@Produces`**
   * Transform Spring `@Bean` methods to CDI `@Produces` methods with appropriate scope annotations.
+* [org.openrewrite.quarkus.spring.SpringBootActiveMQToQuarkus](/recipes/quarkus/spring/springbootactivemqtoquarkus.md)
+  * **Replace Spring Boot ActiveMQ with Quarkus Artemis JMS**
+  * Migrates `spring-boot-starter-activemq` to `quarkus-artemis-jms`.
+* [org.openrewrite.quarkus.spring.SpringBootActuatorToQuarkus](/recipes/quarkus/spring/springbootactuatortoquarkus.md)
+  * **Replace Spring Boot Actuator with Quarkus SmallRye Health**
+  * Migrates `spring-boot-starter-actuator` to `quarkus-smallrye-health`.
+* [org.openrewrite.quarkus.spring.SpringBootAmqpToQuarkusClassic](/recipes/quarkus/spring/springbootamqptoquarkusclassic.md)
+  * **Replace Spring Boot AMQP with Quarkus Messaging RabbitMQ**
+  * Migrates `spring-boot-starter-amqp` to `quarkus-messaging-rabbitmq` when no reactor dependencies are present.
+* [org.openrewrite.quarkus.spring.SpringBootAmqpToQuarkusReactive](/recipes/quarkus/spring/springbootamqptoquarkusreactive.md)
+  * **Replace Spring Boot AMQP with Quarkus Messaging AMQP**
+  * Migrates `spring-boot-starter-amqp` to `quarkus-messaging-amqp` when reactor dependencies are present.
+* [org.openrewrite.quarkus.spring.SpringBootArtemisToQuarkus](/recipes/quarkus/spring/springbootartemistoquarkus.md)
+  * **Replace Spring Boot Artemis with Quarkus Artemis JMS**
+  * Migrates `spring-boot-starter-artemis` to `quarkus-artemis-jms`.
+* [org.openrewrite.quarkus.spring.SpringBootBatchToQuarkus](/recipes/quarkus/spring/springbootbatchtoquarkus.md)
+  * **Replace Spring Boot Batch with Quarkus Scheduler**
+  * Migrates `spring-boot-starter-batch` to `quarkus-scheduler`.
+* [org.openrewrite.quarkus.spring.SpringBootCacheToQuarkus](/recipes/quarkus/spring/springbootcachetoquarkus.md)
+  * **Replace Spring Boot Cache with Quarkus Cache**
+  * Migrates `spring-boot-starter-cache` to `quarkus-cache`.
+* [org.openrewrite.quarkus.spring.SpringBootDataJpaToQuarkus](/recipes/quarkus/spring/springbootdatajpatoquarkus.md)
+  * **Replace Spring Boot Data JPA with Quarkus Hibernate ORM Panache**
+  * Migrates `spring-boot-starter-data-jpa` to `quarkus-hibernate-orm-panache`.
+* [org.openrewrite.quarkus.spring.SpringBootDataMongoToQuarkus](/recipes/quarkus/spring/springbootdatamongotoquarkus.md)
+  * **Replace Spring Boot Data MongoDB with Quarkus MongoDB Panache**
+  * Migrates `spring-boot-starter-data-mongodb` to `quarkus-mongodb-panache`.
+* [org.openrewrite.quarkus.spring.SpringBootDataRedisToQuarkus](/recipes/quarkus/spring/springbootdataredistoquarkus.md)
+  * **Replace Spring Boot Data Redis with Quarkus Redis Client**
+  * Migrates `spring-boot-starter-data-redis` to `quarkus-redis-client`.
+* [org.openrewrite.quarkus.spring.SpringBootDataRestToQuarkus](/recipes/quarkus/spring/springbootdataresttoquarkus.md)
+  * **Replace Spring Boot Data REST with Quarkus REST**
+  * Migrates `spring-boot-starter-data-rest` to `quarkus-rest-jackson`.
+* [org.openrewrite.quarkus.spring.SpringBootElasticsearchToQuarkus](/recipes/quarkus/spring/springbootelasticsearchtoquarkus.md)
+  * **Replace Spring Boot Elasticsearch with Quarkus Elasticsearch REST Client**
+  * Migrates `spring-boot-starter-data-elasticsearch` to `quarkus-elasticsearch-rest-client`.
+* [org.openrewrite.quarkus.spring.SpringBootIntegrationToQuarkus](/recipes/quarkus/spring/springbootintegrationtoquarkus.md)
+  * **Replace Spring Boot Integration with Camel Quarkus**
+  * Migrates `spring-boot-starter-integration` to `camel-quarkus-core`.
+* [org.openrewrite.quarkus.spring.SpringBootJdbcToQuarkus](/recipes/quarkus/spring/springbootjdbctoquarkus.md)
+  * **Replace Spring Boot JDBC with Quarkus Agroal**
+  * Migrates `spring-boot-starter-jdbc` to `quarkus-agroal`.
+* [org.openrewrite.quarkus.spring.SpringBootMailToQuarkus](/recipes/quarkus/spring/springbootmailtoquarkus.md)
+  * **Replace Spring Boot Mail with Quarkus Mailer**
+  * Migrates `spring-boot-starter-mail` to `quarkus-mailer`.
+* [org.openrewrite.quarkus.spring.SpringBootOAuth2ClientToQuarkus](/recipes/quarkus/spring/springbootoauth2clienttoquarkus.md)
+  * **Replace Spring Boot OAuth2 Client with Quarkus OIDC Client**
+  * Migrates spring-boot-starter-oauth2-client` to `quarkus-oidc-client`.
+* [org.openrewrite.quarkus.spring.SpringBootOAuth2ResourceServerToQuarkus](/recipes/quarkus/spring/springbootoauth2resourceservertoquarkus.md)
+  * **Replace Spring Boot OAuth2 Resource Server with Quarkus OIDC**
+  * Migrates `spring-boot-starter-oauth2-resource-server` to `quarkus-oidc`.
+* [org.openrewrite.quarkus.spring.SpringBootQuartzToQuarkus](/recipes/quarkus/spring/springbootquartztoquarkus.md)
+  * **Replace Spring Boot Quartz with Quarkus Quartz**
+  * Migrates `spring-boot-starter-quartz` to `quarkus-quartz`.
+* [org.openrewrite.quarkus.spring.SpringBootSecurityToQuarkus](/recipes/quarkus/spring/springbootsecuritytoquarkus.md)
+  * **Replace Spring Boot Security with Quarkus Security**
+  * Migrates `spring-boot-starter-security` to `quarkus-security`.
+* [org.openrewrite.quarkus.spring.SpringBootTestToQuarkus](/recipes/quarkus/spring/springboottesttoquarkus.md)
+  * **Replace Spring Boot Test with Quarkus JUnit 5**
+  * Migrates `spring-boot-starter-test` to `quarkus-junit5`.
+* [org.openrewrite.quarkus.spring.SpringBootThymeleafToQuarkus](/recipes/quarkus/spring/springbootthymeleaftoquarkus.md)
+  * **Replace Spring Boot Thymeleaf with Quarkus Qute**
+  * Migrates `spring-boot-starter-thymeleaf` to `quarkus-qute`.
+* [org.openrewrite.quarkus.spring.SpringBootToQuarkus](/recipes/quarkus/spring/springboottoquarkus.md)
+  * **Migrate Spring Boot to Quarkus**
+  * Replace Spring Boot with Quarkus.
+* [org.openrewrite.quarkus.spring.SpringBootValidationToQuarkus](/recipes/quarkus/spring/springbootvalidationtoquarkus.md)
+  * **Replace Spring Boot Validation with Quarkus Hibernate Validator**
+  * Migrates `spring-boot-starter-validation` to `quarkus-hibernate-validator`.
+* [org.openrewrite.quarkus.spring.SpringBootWebFluxToQuarkusReactive](/recipes/quarkus/spring/springbootwebfluxtoquarkusreactive.md)
+  * **Replace Spring Boot WebFlux with Quarkus REST Client**
+  * Migrates `spring-boot-starter-webflux` to `quarkus-rest-client-jackson` when reactor dependencies are present.
+* [org.openrewrite.quarkus.spring.SpringBootWebSocketToQuarkus](/recipes/quarkus/spring/springbootwebsockettoquarkus.md)
+  * **Replace Spring Boot WebSocket with Quarkus WebSockets**
+  * Migrates `spring-boot-starter-websocket` to `quarkus-websockets`.
+* [org.openrewrite.quarkus.spring.SpringBootWebToQuarkusClassic](/recipes/quarkus/spring/springbootwebtoquarkusclassic.md)
+  * **Replace Spring Boot Web with Quarkus RESTEasy Classic**
+  * Migrates `spring-boot-starter-web` to `quarkus-resteasy-jackson` when no reactor dependencies are present.
+* [org.openrewrite.quarkus.spring.SpringBootWebToQuarkusReactive](/recipes/quarkus/spring/springbootwebtoquarkusreactive.md)
+  * **Replace Spring Boot Web with Quarkus REST**
+  * Migrates `spring-boot-starter-web` to `quarkus-rest-jackson` when reactor dependencies are present.
 * [org.openrewrite.quarkus.spring.SpringEventListenerToObserves](/recipes/quarkus/spring/springeventlistenertoobserves.md)
   * **Convert Spring @EventListener to CDI @Observes**
   * Transforms Spring's @EventListener method annotation to CDI's @Observes parameter annotation pattern.
 * [org.openrewrite.quarkus.spring.SpringHealthIndicatorToQuarkus](/recipes/quarkus/spring/springhealthindicatortoquarkus.md)
   * **Convert Spring HealthIndicator to Quarkus HealthCheck**
   * Transforms Spring Boot Actuator `HealthIndicator` implementations to MicroProfile Health `HealthCheck` pattern used by Quarkus.
+* [org.openrewrite.quarkus.spring.SpringKafkaToQuarkusClassic](/recipes/quarkus/spring/springkafkatoquarkusclassic.md)
+  * **Replace Spring Kafka with Quarkus Kafka Client**
+  * Migrates `spring-kafka` to `quarkus-kafka-client` when no reactor dependencies are present.
+* [org.openrewrite.quarkus.spring.SpringKafkaToQuarkusReactive](/recipes/quarkus/spring/springkafkatoquarkusreactive.md)
+  * **Replace Spring Kafka with Quarkus Messaging Kafka**
+  * Migrates `spring-kafka` to `quarkus-messaging-kafka` when reactor dependencies are present.
+* [org.openrewrite.quarkus.spring.StereotypeAnnotationsToCDI](/recipes/quarkus/spring/stereotypeannotationstocdi.md)
+  * **Migrate Spring annotations to CDI**
+  * Replace Spring stereotype and injection annotations with CDI equivalents.
 * [org.openrewrite.quarkus.spring.ValueToCdiConfigProperty](/recipes/quarkus/spring/valuetocdiconfigproperty.md)
   * **Replace Spring `@Value` with CDI `@ConfigProperty`**
   * Transform Spring `@Value` annotations to MicroProfile `@ConfigProperty` with proper parameter mapping.
@@ -3844,8 +7295,11 @@ _10 recipes_
 
 _License: Moderne Source Available License_
 
-_165 recipes_
+_174 recipes_
 
+* [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
+  * **Inline deprecated delegating methods**
+  * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
 * [org.openrewrite.staticanalysis.AbstractClassPublicConstructor](/recipes/staticanalysis/abstractclasspublicconstructor.md)
   * **Constructors of an `abstract` class should not be declared `public`**
   * Constructors of `abstract` classes can only be called in constructors of their subclasses. Therefore the visibility of `public` constructors are reduced to `protected`.
@@ -3903,12 +7357,21 @@ _165 recipes_
 * [org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls](/recipes/staticanalysis/chainstringbuilderappendcalls.md)
   * **Chain `StringBuilder.append()` calls**
   * String concatenation within calls to `StringBuilder.append()` causes unnecessary memory allocation. Except for concatenations of String literals, which are joined together at compile time. Replaces inefficient concatenations with chained calls to `StringBuilder.append()`.
+* [org.openrewrite.staticanalysis.CodeCleanup](/recipes/staticanalysis/codecleanup.md)
+  * **Code cleanup**
+  * Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions.
 * [org.openrewrite.staticanalysis.CollectionToArrayShouldHaveProperType](/recipes/staticanalysis/collectiontoarrayshouldhavepropertype.md)
   * **'Collection.toArray()' should be passed an array of the proper type**
   * Using `Collection.toArray()` without parameters returns an `Object[]`, which requires casting. It is more efficient and clearer to use `Collection.toArray(new T[0])` instead.
 * [org.openrewrite.staticanalysis.CombineSemanticallyEqualCatchBlocks](/recipes/staticanalysis/combinesemanticallyequalcatchblocks.md)
   * **Combine semantically equal catch blocks**
   * Combine catches in a try that contain semantically equivalent blocks. No change will be made when a caught exception exists if combining catches may change application behavior or type attribution is missing.
+* [org.openrewrite.staticanalysis.CommonDeclarationSiteTypeVariances](/recipes/staticanalysis/commondeclarationsitetypevariances.md)
+  * **Properly use declaration-site type variance for well-known types**
+  * When using a method parameter like `Function&lt;IN, OUT&gt;`, it should rather be `Function&lt;? super IN, ? extends OUT&gt;`. This recipe checks for method parameters of well-known types.
+* [org.openrewrite.staticanalysis.CommonStaticAnalysis](/recipes/staticanalysis/commonstaticanalysis.md)
+  * **Common static analysis issues**
+  * Resolve common static analysis issues (also known as SAST issues).
 * [org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator](/recipes/staticanalysis/compareenumswithequalityoperator.md)
   * **Enum values should be compared with &quot;==&quot;**
   * Replaces `Enum equals(java.lang.Object)` with `Enum == java.lang.Object`. An `!Enum equals(java.lang.Object)` will change to `!=`.
@@ -3993,6 +7456,9 @@ _165 recipes_
 * [org.openrewrite.staticanalysis.IsEmptyCallOnCollections](/recipes/staticanalysis/isemptycalloncollections.md)
   * **Use `Collection#isEmpty()` instead of comparing `size()`**
   * Also check for _not_ `isEmpty()` when testing for not equal to zero size.
+* [org.openrewrite.staticanalysis.JavaApiBestPractices](/recipes/staticanalysis/javaapibestpractices.md)
+  * **Java API best practices**
+  * Use the Java standard library in a way that is most idiomatic.
 * [org.openrewrite.staticanalysis.LambdaBlockToExpression](/recipes/staticanalysis/lambdablocktoexpression.md)
   * **Simplify lambda blocks to expressions**
   * Single-line statement lambdas returning a value can be replaced with expression lambdas.
@@ -4158,6 +7624,9 @@ _165 recipes_
 * [org.openrewrite.staticanalysis.ReorderAnnotations](/recipes/staticanalysis/reorderannotations.md)
   * **Reorder annotations alphabetically**
   * Consistently order annotations by comparing their simple name.
+* [org.openrewrite.staticanalysis.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull](/recipes/staticanalysis/replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
+  * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
+  * Replace `org.apache.commons.lang3.Validate.notNull(..)` with `Objects.requireNonNull(..)`.
 * [org.openrewrite.staticanalysis.ReplaceClassIsInstanceWithInstanceof](/recipes/staticanalysis/replaceclassisinstancewithinstanceof.md)
   * **Replace `A.class.isInstance(a)` with `a instanceof A`**
   * There should be no `A.class.isInstance(a)`, it should be replaced by `a instanceof A`.
@@ -4191,6 +7660,12 @@ _165 recipes_
 * [org.openrewrite.staticanalysis.ReplaceTextBlockWithString](/recipes/staticanalysis/replacetextblockwithstring.md)
   * **Replace text block with regular string**
   * Replace text block with a regular multi-line string.
+* [org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart](/recipes/staticanalysis/replacethreadrunwiththreadstart.md)
+  * **Replace calls to `Thread.run()` with `Thread.start()`**
+  * `Thread.run()` should not be called directly.
+* [org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull](/recipes/staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
+  * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
+  * Replace `org.apache.commons.lang3.Validate.notNull(Object)` with `Objects.requireNonNull(Object)`.
 * [org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull](/recipes/staticanalysis/replacevalidatenotnullhavingvarargswithobjectsrequirenonnull.md)
   * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
   * Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` with `Objects.requireNonNull(Object, String)`.
@@ -4311,6 +7786,9 @@ _165 recipes_
 * [org.openrewrite.staticanalysis.UseListSort](/recipes/staticanalysis/uselistsort.md)
   * **Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`**
   * The `java.util.Collections#sort(..)` implementation defers to the `java.util.List#sort(Comparator)`, replaced it with the `java.util.List#sort(Comparator)` implementation for better readability.
+* [org.openrewrite.staticanalysis.UseMapContainsKey](/recipes/staticanalysis/usemapcontainskey.md)
+  * **Use `Map#containsKey`**
+  * `map.keySet().contains(a)` can be simplified to `map.containsKey(a)`.
 * [org.openrewrite.staticanalysis.UseObjectNotifyAll](/recipes/staticanalysis/useobjectnotifyall.md)
   * **Replaces `Object.notify()` with `Object.notifyAll()`**
   * `Object.notifyAll()` and `Object.notify()` both wake up sleeping threads, but `Object.notify()` only rouses one while `Object.notifyAll()` rouses all of them. Since `Object.notify()` might not wake up the right thread, `Object.notifyAll()` should be used instead. See [this](https://wiki.sei.cmu.edu/confluence/display/java/THI02-J.+Notify+all+waiting+threads+rather+than+a+single+thread) for more information.
@@ -4346,8 +7824,14 @@ _165 recipes_
 
 _License: Moderne Source Available License_
 
-_178 recipes_
+_233 recipes_
 
+* [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
+  * **ArchUnit 0.x upgrade**
+  * Upgrade ArchUnit from 0.x to 1.x.
+* [org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
+  * **Use Arquillian JUnit 5 Extension**
+  * Migrates Arquillian JUnit 4 to JUnit 5.
 * [org.openrewrite.java.testing.arquillian.ReplaceArquillianInSequenceAnnotation](/recipes/java/testing/arquillian/replacearquillianinsequenceannotation.md)
   * **Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`**
   * Transforms the Arquillian JUnit 4 `@InSequence` to the JUnit Jupiter `@Order`.
@@ -4486,9 +7970,15 @@ _178 recipes_
 * [org.openrewrite.java.testing.assertj.AssertJShortRulesRecipes$AbstractShortAssertIsZeroRecipe](/recipes/java/testing/assertj/assertjshortrulesrecipes$abstractshortassertiszerorecipe.md)
   * **Replace `isEqualTo(0)` with `isZero()`**
   * Replace `isEqualTo(0)` with `isZero()`.
+* [org.openrewrite.java.testing.assertj.Assertj](/recipes/java/testing/assertj/assertj-best-practices.md)
+  * **AssertJ best practices**
+  * Migrates JUnit asserts to AssertJ and applies best practices to assertions.
 * [org.openrewrite.java.testing.assertj.CollapseConsecutiveAssertThatStatements](/recipes/java/testing/assertj/collapseconsecutiveassertthatstatements.md)
   * **Collapse consecutive `assertThat` statements**
   * Collapse consecutive `assertThat` statements into single `assertThat` chained statement. This recipe ignores `assertThat` statements that have method invocation as parameter.
+* [org.openrewrite.java.testing.assertj.FestToAssertj](/recipes/java/testing/assertj/festtoassertj.md)
+  * **Migrate Fest 2.x to AssertJ**
+  * AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts Fest 2.x imports to AssertJ imports.
 * [org.openrewrite.java.testing.assertj.IsEqualToIgnoringMillisToIsCloseToRecipe](/recipes/java/testing/assertj/isequaltoignoringmillistoisclosetorecipe.md)
   * **Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`**
   * `isEqualToIgnoringMillis()` is deprecated in favor of `isCloseTo()`.
@@ -4525,6 +8015,9 @@ _178 recipes_
 * [org.openrewrite.java.testing.assertj.JUnitFailToAssertJFail](/recipes/java/testing/assertj/junitfailtoassertjfail.md)
   * **JUnit fail to AssertJ**
   * Convert JUnit-style `fail()` to AssertJ's `fail()`.
+* [org.openrewrite.java.testing.assertj.JUnitToAssertj](/recipes/java/testing/assertj/junittoassertj.md)
+  * **Migrate JUnit asserts to AssertJ**
+  * AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts assertions from `org.junit.jupiter.api.Assertions` to `org.assertj.core.api.Assertions`. Will convert JUnit 4 to JUnit Jupiter if necessary to match and modify assertions.
 * [org.openrewrite.java.testing.assertj.JUnitTryFailToAssertThatThrownBy](/recipes/java/testing/assertj/junittryfailtoassertthatthrownby.md)
   * **Convert try-catch-fail blocks to AssertJ's assertThatThrownBy**
   * Replace try-catch blocks where the try block ends with a `fail()` statement and the catch block optionally contains assertions, with AssertJ's `assertThatThrownBy()`.
@@ -4534,9 +8027,15 @@ _178 recipes_
 * [org.openrewrite.java.testing.assertj.SimplifyAssertJAssertion](/recipes/java/testing/assertj/simplifyassertjassertion.md)
   * **Simplify AssertJ assertions with literal arguments**
   * Simplify AssertJ assertions by replacing them with more expressive dedicated assertions.
+* [org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions](/recipes/java/testing/assertj/simplifyassertjassertions.md)
+  * **Shorten AssertJ assertions**
+  * Replace AssertJ assertions where a dedicated assertion is available for the same actual value.
 * [org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion](/recipes/java/testing/assertj/simplifychainedassertjassertion.md)
   * **Simplify AssertJ chained assertions**
   * Many AssertJ chained assertions have dedicated assertions that function the same. It is best to use the dedicated assertions.
+* [org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions](/recipes/java/testing/assertj/simplifychainedassertjassertions.md)
+  * **Simplify AssertJ chained assertions**
+  * Replace AssertJ assertions where a method is called on the actual value with a dedicated assertion.
 * [org.openrewrite.java.testing.assertj.SimplifyHasSizeAssertion](/recipes/java/testing/assertj/simplifyhassizeassertion.md)
   * **Simplify AssertJ assertions with `hasSize` argument**
   * Simplify AssertJ assertions by replacing `hasSize` with `hasSameSizeAs` dedicated assertions.
@@ -4549,6 +8048,12 @@ _178 recipes_
 * [org.openrewrite.java.testing.assertj.SimplifyStreamMapToExtracting](/recipes/java/testing/assertj/simplifystreammaptoextracting.md)
   * **Simplify `assertThat(collection.stream().map(...))` to `assertThat(collection).extracting(...)`**
   * Simplifies AssertJ assertions that use `stream().map()` to extract values from a collection by using the dedicated `extracting()` method instead. This makes the assertion more readable and leverages AssertJ's built-in extraction capabilities.
+* [org.openrewrite.java.testing.assertj.StaticImports](/recipes/java/testing/assertj/staticimports.md)
+  * **Statically import AssertJ's `assertThat`**
+  * Consistently use a static import rather than inlining the `Assertions` class name in tests.
+* [org.openrewrite.java.testing.byteman.BytemanJUnit4ToBytemanJUnit5](/recipes/java/testing/byteman/bytemanjunit4tobytemanjunit5.md)
+  * **Use Byteman JUnit 5 dependency**
+  * Migrates Byteman JUnit 4 to JUnit 5.
 * [org.openrewrite.java.testing.cleanup.AssertEqualsBooleanToAssertBoolean](/recipes/java/testing/cleanup/assertequalsbooleantoassertboolean.md)
   * **Replace JUnit `assertEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`**
   * Using `assertFalse` or `assertTrue` is simpler and more clear.
@@ -4594,6 +8099,9 @@ _178 recipes_
 * [org.openrewrite.java.testing.cleanup.AssertionsArgumentOrder](/recipes/java/testing/cleanup/assertionsargumentorder.md)
   * **Assertion arguments should be passed in the correct order**
   * Assertions such as `org.junit.Assert.assertEquals` expect the first argument to be the expected value and the second argument to be the actual value; for `org.testng.Assert`, it’s the other way around.  This recipe detects `J.Literal`, `J.NewArray`, and `java.util.Iterable` arguments swapping them if necessary so that the error messages won't be confusing.
+* [org.openrewrite.java.testing.cleanup.BestPractices](/recipes/java/testing/cleanup/bestpractices.md)
+  * **Testing best practices**
+  * Applies best practices to tests.
 * [org.openrewrite.java.testing.cleanup.KotlinTestMethodsShouldReturnUnit](/recipes/java/testing/cleanup/kotlintestmethodsshouldreturnunit.md)
   * **Kotlin test methods should have return type `Unit`**
   * Kotlin test methods annotated with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestTemplate` should have `Unit` return type. Other return types can cause test discovery issues, and warnings as of JUnit 5.13+. This recipe changes the return type to `Unit` and removes `return` statements.
@@ -4615,18 +8123,33 @@ _178 recipes_
 * [org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic](/recipes/java/testing/cleanup/testsshouldnotbepublic.md)
   * **Remove `public` visibility of JUnit 5 tests**
   * Remove `public` and optionally `protected` modifiers from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestFactory`, `@BeforeEach`, `@AfterEach`, `@BeforeAll`, or `@AfterAll`. They no longer have to be public visibility to be usable by JUnit 5.
+* [org.openrewrite.java.testing.datafaker.JavaFakerToDataFaker](/recipes/java/testing/datafaker/javafakertodatafaker.md)
+  * **Migrate from Java Faker to Datafaker**
+  * Change imports and dependencies related to Java Faker to Datafaker replacements.
 * [org.openrewrite.java.testing.dbrider.ExecutionListenerToDbRiderAnnotation](/recipes/java/testing/dbrider/executionlistenertodbriderannotation.md)
   * **Migrate the `DBRiderTestExecutionListener` to the `@DBRider` annotation**
   * Migrate the `DBRiderTestExecutionListener` to the `@DBRider` annotation. This recipe is useful when migrating from JUnit 4 `dbrider-spring` to JUnit 5 `dbrider-junit5`.
+* [org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
+  * **Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)**
+  * This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application.
+* [org.openrewrite.java.testing.easymock.EasyMockToMockito](/recipes/java/testing/easymock/easymocktomockito.md)
+  * **Migrate from EasyMock to Mockito**
+  * This recipe will apply changes commonly needed when migrating from EasyMock to Mockito.
 * [org.openrewrite.java.testing.easymock.EasyMockVerifyToMockitoVerify](/recipes/java/testing/easymock/easymockverifytomockitoverify.md)
   * **Replace EasyMock `verify` calls with Mockito `verify` calls**
   * Replace `EasyMock.verify(dependency)` with individual `Mockito.verify(dependency).method()` calls based on expected methods.
 * [org.openrewrite.java.testing.easymock.RemoveExtendsEasyMockSupport](/recipes/java/testing/easymock/removeextendseasymocksupport.md)
   * **Migrate Test classes that extend `org.easymock.EasyMockSupport` to use Mockito**
   * Modify test classes by removing extends EasyMockSupport and replacing EasyMock methods with Mockito equivalents.
+* [org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed](/recipes/java/testing/hamcrest/addhamcrestifused.md)
+  * **Add `org.hamcrest:hamcrest` if it is used**
+  * JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency.
 * [org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ](/recipes/java/testing/hamcrest/assertthatbooleantoassertj.md)
   * **Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ**
   * Replace Hamcrest `assertThat(String, boolean)` with AssertJ `assertThat(boolean).as(String).isTrue()`.
+* [org.openrewrite.java.testing.hamcrest.ConsistentHamcrestMatcherImports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
+  * **Use consistent Hamcrest matcher imports**
+  * Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)` calls ahead of further changes.
 * [org.openrewrite.java.testing.hamcrest.HamcrestEveryItemToAssertJ](/recipes/java/testing/hamcrest/hamcresteveryitemtoassertj.md)
   * **Migrate Hamcrest `everyItem` to AssertJ**
   * Migrate Hamcrest `everyItem` to AssertJ `allSatisfy` or `hasOnlyElementsOfType`.
@@ -4654,6 +8177,12 @@ _178 recipes_
 * [org.openrewrite.java.testing.hamcrest.HamcrestOfMatchersToAssertJ](/recipes/java/testing/hamcrest/hamcrestofmatcherstoassertj.md)
   * **Migrate `anyOf` Hamcrest Matcher to AssertJ**
   * Migrate the `anyOf` Hamcrest Matcher to AssertJ's `satisfiesAnyOf` assertion.
+* [org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
+  * **Migrate Hamcrest assertions to AssertJ**
+  * Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`.
+* [org.openrewrite.java.testing.hamcrest.MigrateHamcrestToJUnit5](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
+  * **Migrate Hamcrest assertions to JUnit Jupiter**
+  * Migrate Hamcrest `assertThat(..)` to JUnit Jupiter `Assertions`.
 * [org.openrewrite.java.testing.hamcrest.RemoveIsMatcher](/recipes/java/testing/hamcrest/removeismatcher.md)
   * **Remove Hamcrest `is(Matcher)`**
   * Remove Hamcrest `is(Matcher)` ahead of migration.
@@ -4666,6 +8195,15 @@ _178 recipes_
 * [org.openrewrite.java.testing.jmockit.JMockitMockUpToMockito](/recipes/java/testing/jmockit/jmockitmockuptomockito.md)
   * **Rewrite JMockit MockUp to Mockito statements**
   * Rewrites JMockit `MockUp` blocks to Mockito statements. This recipe will not rewrite private methods in MockUp.
+* [org.openrewrite.java.testing.jmockit.JMockitToMockito](/recipes/java/testing/jmockit/jmockittomockito.md)
+  * **Migrate from JMockit to Mockito**
+  * This recipe will apply changes commonly needed when migrating from JMockit to Mockito.
+* [org.openrewrite.java.testing.junit.JUnit6BestPractices](/recipes/java/testing/junit/junit6bestpractices.md)
+  * **JUnit 6 best practices**
+  * Applies best practices to tests.
+* [org.openrewrite.java.testing.junit.JupiterBestPractices](/recipes/java/testing/junit/jupiterbestpractices.md)
+  * **JUnit Jupiter best practices**
+  * Applies best practices to tests.
 * [org.openrewrite.java.testing.junit5.AddHamcrestJUnitDependency](/recipes/java/testing/junit5/addhamcrestjunitdependency.md)
   * **Add Hamcrest JUnit dependency**
   * Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is used.
@@ -4702,6 +8240,9 @@ _178 recipes_
 * [org.openrewrite.java.testing.junit5.CategoryToTag](/recipes/java/testing/junit5/categorytotag.md)
   * **JUnit 4 `@Category` to JUnit Jupiter `@Tag`**
   * Transforms the JUnit 4 `@Category`, which can list multiple categories, into one `@Tag` annotation per category listed.
+* [org.openrewrite.java.testing.junit5.CleanupAssertions](/recipes/java/testing/junit5/cleanupassertions.md)
+  * **Clean Up Assertions**
+  * Simplifies JUnit Jupiter assertions to their most-direct equivalents.
 * [org.openrewrite.java.testing.junit5.CleanupJUnitImports](/recipes/java/testing/junit5/cleanupjunitimports.md)
   * **Cleanup JUnit imports**
   * Removes unused `org.junit` import symbols.
@@ -4717,6 +8258,9 @@ _178 recipes_
 * [org.openrewrite.java.testing.junit5.EnvironmentVariables](/recipes/java/testing/junit5/environmentvariables.md)
   * **Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension**
   * Replaces usage of the JUnit 4 `@Rule EnvironmentVariables` with the JUnit 5-compatible `SystemStubsExtension` and `@SystemStub EnvironmentVariables` from the System Stubs library.
+* [org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
+  * **Exclude JUnit 4, unless Testcontainers is used**
+  * Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used.
 * [org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows](/recipes/java/testing/junit5/expectedexceptiontoassertthrows.md)
   * **JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`**
   * Replace usages of JUnit 4's `@Rule ExpectedException` with JUnit 5's `Assertions.assertThrows()`.
@@ -4726,12 +8270,27 @@ _178 recipes_
 * [org.openrewrite.java.testing.junit5.HandleExternalResourceRules](/recipes/java/testing/junit5/handleexternalresourcerules.md)
   * **Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)**
   * Handles the usage of the ExternalResourceRule fields by adding the @ExtendWith(ExternalResourceSupport.class) annotation to the test class.
+* [org.openrewrite.java.testing.junit5.IgnoreToDisabled](/recipes/java/testing/junit5/ignoretodisabled.md)
+  * **Use JUnit Jupiter `@Disabled`**
+  * Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`.
+* [org.openrewrite.java.testing.junit5.JUnit4to5Migration](/recipes/java/testing/junit5/junit4to5migration.md)
+  * **JUnit Jupiter migration from JUnit 4.x**
+  * Migrates JUnit 4.x tests to JUnit Jupiter.
+* [org.openrewrite.java.testing.junit5.JUnit5BestPractices](/recipes/java/testing/junit5/junit5bestpractices.md)
+  * **JUnit 5 best practices**
+  * Applies best practices to tests.
 * [org.openrewrite.java.testing.junit5.JUnitParamsRunnerToParameterized](/recipes/java/testing/junit5/junitparamsrunnertoparameterized.md)
   * **Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests**
   * Convert Pragmatists Parameterized test to the JUnit Jupiter ParameterizedTest equivalent.
 * [org.openrewrite.java.testing.junit5.LifecycleNonPrivate](/recipes/java/testing/junit5/lifecyclenonprivate.md)
   * **Make lifecycle methods non private**
   * Make JUnit 5's `@AfterAll`, `@AfterEach`, `@BeforeAll` and `@BeforeEach` non private.
+* [org.openrewrite.java.testing.junit5.MigrateAssertionFailedError](/recipes/java/testing/junit5/migrateassertionfailederror.md)
+  * **Migrate JUnit 4 assertion failure exceptions to JUnit Jupiter**
+  * Replace JUnit 4's `junit.framework.AssertionFailedError` and `org.junit.ComparisonFailure` with JUnit Jupiter's `org.opentest4j.AssertionFailedError`.
+* [org.openrewrite.java.testing.junit5.MigrateAssumptions](/recipes/java/testing/junit5/migrateassumptions.md)
+  * **Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`**
+  * Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`.
 * [org.openrewrite.java.testing.junit5.MigrateJUnitTestCase](/recipes/java/testing/junit5/migratejunittestcase.md)
   * **Migrate JUnit 4 `TestCase` to JUnit Jupiter**
   * Convert JUnit 4 `TestCase` to JUnit Jupiter.
@@ -4753,6 +8312,9 @@ _178 recipes_
 * [org.openrewrite.java.testing.junit5.RunnerToExtension](/recipes/java/testing/junit5/runnertoextension.md)
   * **JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`**
   * Replace runners with the JUnit Jupiter extension equivalent.
+* [org.openrewrite.java.testing.junit5.StaticImports](/recipes/java/testing/junit5/staticimports.md)
+  * **Statically import JUnit Jupiter assertions**
+  * Always use a static import for assertion methods.
 * [org.openrewrite.java.testing.junit5.TempDirNonFinal](/recipes/java/testing/junit5/tempdirnonfinal.md)
   * **Make `@TempDir` fields non final**
   * Make JUnit 5's `org.junit.jupiter.api.io.TempDir` fields non final.
@@ -4762,6 +8324,9 @@ _178 recipes_
 * [org.openrewrite.java.testing.junit5.TestRuleToTestInfo](/recipes/java/testing/junit5/testruletotestinfo.md)
   * **JUnit TestName @Rule to JUnit Jupiter TestInfo**
   * Replace usages of JUnit 4's `@Rule TestName` with JUnit 5's TestInfo.
+* [org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable](/recipes/java/testing/junit5/throwingrunnabletoexecutable.md)
+  * **Use JUnit Jupiter `Executable`**
+  * Migrates JUnit 4.x `ThrowingRunnable` to JUnit Jupiter `Executable`.
 * [org.openrewrite.java.testing.junit5.TimeoutRuleToClassAnnotation](/recipes/java/testing/junit5/timeoutruletoclassannotation.md)
   * **JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`**
   * Replace usages of JUnit 4's `@Rule Timeout` with JUnit 5 `Timeout` class annotation.
@@ -4777,15 +8342,42 @@ _178 recipes_
 * [org.openrewrite.java.testing.junit5.UpdateTestAnnotation](/recipes/java/testing/junit5/updatetestannotation.md)
   * **Migrate JUnit 4 `@Test` annotations to JUnit 5**
   * Update usages of JUnit 4's `@org.junit.Test` annotation to JUnit 5's `org.junit.jupiter.api.Test` annotation.
+* [org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
+  * **Use OkHttp 3 MockWebServer for JUnit 5**
+  * Migrates OkHttp 3 `MockWebServer` to enable JUnit Jupiter Extension support.
+* [org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin](/recipes/java/testing/junit5/upgradesurefireplugin.md)
+  * **Upgrade Surefire Plugin**
+  * Upgrades the Maven Surefire Plugin to the latest version if still using an older Maven version.
+* [org.openrewrite.java.testing.junit5.UpgradeToJUnit513](/recipes/java/testing/junit5/upgradetojunit513.md)
+  * **Upgrade to JUnit 5.13**
+  * Upgrades JUnit 5 to 5.13.x and migrates all deprecated APIs.
+* [org.openrewrite.java.testing.junit5.UpgradeToJUnit514](/recipes/java/testing/junit5/upgradetojunit514.md)
+  * **Upgrade to JUnit 5.14**
+  * Upgrades JUnit 5 to 5.14.x and migrates all deprecated APIs.
 * [org.openrewrite.java.testing.junit5.UseAssertSame](/recipes/java/testing/junit5/useassertsame.md)
   * **Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`**
   * Prefers the usage of `assertSame` or `assertNotSame` methods instead of using of vanilla `assertTrue` or `assertFalse` with a boolean comparison.
+* [org.openrewrite.java.testing.junit5.UseHamcrestAssertThat](/recipes/java/testing/junit5/usehamcrestassertthat.md)
+  * **Use `MatcherAssert#assertThat(..)`**
+  * JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter.
+* [org.openrewrite.java.testing.junit5.UseMockitoExtension](/recipes/java/testing/junit5/usemockitoextension.md)
+  * **Use Mockito JUnit Jupiter extension**
+  * Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`.
 * [org.openrewrite.java.testing.junit5.UseTestMethodOrder](/recipes/java/testing/junit5/usetestmethodorder.md)
   * **Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`**
   * JUnit optionally allows test method execution order to be specified. This replaces JUnit 4 test execution ordering annotations with JUnit 5 replacements.
 * [org.openrewrite.java.testing.junit5.UseWiremockExtension](/recipes/java/testing/junit5/usewiremockextension.md)
   * **Use wiremock extension**
   * As of 2.31.0, wiremock [supports JUnit 5](https://wiremock.org/docs/junit-jupiter/) via an extension.
+* [org.openrewrite.java.testing.junit5.UseXMLUnitLegacy](/recipes/java/testing/junit5/usexmlunitlegacy.md)
+  * **Use XMLUnit Legacy for JUnit 5**
+  * Migrates XMLUnit 1.x to XMLUnit legacy 2.x.
+* [org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
+  * **Use Vert.x JUnit 5 Extension**
+  * Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
+* [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
+  * **JUnit 6 migration from JUnit 5.x**
+  * Migrates JUnit 5.x tests to JUnit 6.x.
 * [org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric](/recipes/java/testing/junit6/migratemethodordereralphanumeric.md)
   * **Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`**
   * JUnit 6 removed the `MethodOrderer.Alphanumeric` class. This recipe migrates usages to `MethodOrderer.MethodName` which provides similar functionality.
@@ -4819,6 +8411,21 @@ _178 recipes_
 * [org.openrewrite.java.testing.mockito.MockUtilsToStatic](/recipes/java/testing/mockito/mockutilstostatic.md)
   * **Use static form of Mockito `MockUtil`**
   * Best-effort attempt to remove Mockito `MockUtil` instances.
+* [org.openrewrite.java.testing.mockito.Mockito1to3Migration](/recipes/java/testing/mockito/mockito1to3migration.md)
+  * **Mockito 3.x migration from 1.x**
+  * Upgrade Mockito from 1.x to 3.x.
+* [org.openrewrite.java.testing.mockito.Mockito1to4Migration](/recipes/java/testing/mockito/mockito1to4migration.md)
+  * **Mockito 4.x upgrade**
+  * Upgrade Mockito from 1.x to 4.x.
+* [org.openrewrite.java.testing.mockito.Mockito1to5Migration](/recipes/java/testing/mockito/mockito1to5migration.md)
+  * **Mockito 5.x upgrade**
+  * Upgrade Mockito from 1.x to 5.x.
+* [org.openrewrite.java.testing.mockito.Mockito4to5Only](/recipes/java/testing/mockito/mockito4to5only.md)
+  * **Mockito 4 to 5.x upgrade only**
+  * Upgrade Mockito from 4.x to 5.x. Does not include 1.x to 4.x migration.
+* [org.openrewrite.java.testing.mockito.MockitoBestPractices](/recipes/java/testing/mockito/mockitobestpractices.md)
+  * **Mockito best practices**
+  * Applies best practices for Mockito tests.
 * [org.openrewrite.java.testing.mockito.MockitoJUnitRunnerSilentToExtension](/recipes/java/testing/mockito/mockitojunitrunnersilenttoextension.md)
   * **JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings**
   * Replace `@RunWith(MockitoJUnitRunner.Silent.class)` with `@ExtendWith(MockitoExtension.class)` and `@MockitoSettings(strictness = Strictness.LENIENT)`.
@@ -4846,9 +8453,21 @@ _178 recipes_
 * [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListener](/recipes/java/testing/mockito/replacemockitotestexecutionlistener.md)
   * **Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization**
   * Replace `@TestExecutionListeners(MockitoTestExecutionListener.class)` with the appropriate Mockito initialization for the test framework in use: `@ExtendWith(MockitoExtension.class)` for JUnit 5, `@RunWith(MockitoJUnitRunner.class)` for JUnit 4, or `MockitoAnnotations.openMocks(this)` for TestNG.
+* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJUnit4](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjunit4.md)
+  * **Replace `MockitoTestExecutionListener` (JUnit 4 projects)**
+  * Replace `MockitoTestExecutionListener` in projects that have JUnit 4 as a dependency. Uses `@RunWith(MockitoJUnitRunner.class)` as the replacement.
+* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJupiter](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjupiter.md)
+  * **Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)**
+  * Replace `MockitoTestExecutionListener` in projects that have JUnit Jupiter as a dependency. Uses `@ExtendWith(MockitoExtension.class)` as the replacement.
+* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForTestNG](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerfortestng.md)
+  * **Replace `MockitoTestExecutionListener` (TestNG projects)**
+  * Replace `MockitoTestExecutionListener` in projects that have TestNG as a dependency. Uses `MockitoAnnotations.openMocks(this)` with `@BeforeMethod`/`@AfterMethod` as the replacement.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies](/recipes/java/testing/mockito/replacepowermockdependencies.md)
   * **Replace PowerMock dependencies with Mockito equivalents**
   * Replaces PowerMock API dependencies with `mockito-inline` when `mockStatic()`, `whenNew()`, or `@PrepareForTest` usage is detected, or `mockito-core` otherwise. PowerMock features like static mocking, constructor mocking, and final class mocking require the inline mock maker which is bundled in `mockito-inline` for Mockito 3.x/4.x.
+* [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
+  * **Replace PowerMock with raw Mockito**
+  * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.
 * [org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven](/recipes/java/testing/mockito/simplifymockitoverifywhengiven.md)
   * **Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified**
   * Fixes Sonar issue `java:S6068`: Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified.
@@ -4864,12 +8483,36 @@ _178 recipes_
 * [org.openrewrite.java.testing.testcontainers.ExplicitContainerImage](/recipes/java/testing/testcontainers/explicitcontainerimage.md)
   * **Add image argument to container constructor**
   * Set the image to use for a container explicitly if unset, rather than relying on the default image for the container class.
+* [org.openrewrite.java.testing.testcontainers.ExplicitContainerImages](/recipes/java/testing/testcontainers/explicitcontainerimages.md)
+  * **Explicit container images and versions**
+  * Replace implicit default container images and versions with explicit versions.
+* [org.openrewrite.java.testing.testcontainers.GetHostMigration](/recipes/java/testing/testcontainers/gethostmigration.md)
+  * **Replace `ContainerState.getContainerIpAddress()` with `getHost()`**
+  * Replace `org.testcontainers.containers.ContainerState.getContainerIpAddress()` with `getHost()`.
+* [org.openrewrite.java.testing.testcontainers.TestContainersBestPractices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
+  * **Testcontainers best practices**
+  * Apply best practices to Testcontainers usage.
+* [org.openrewrite.java.testing.testcontainers.Testcontainers2ContainerClasses](/recipes/java/testing/testcontainers/testcontainers2containerclasses.md)
+  * **Testcontainers 2 container classes**
+  * Change Testcontainers container classes to their new package locations in Testcontainers 2.x.
+* [org.openrewrite.java.testing.testcontainers.Testcontainers2Dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
+  * **Rename Testcontainers dependencies**
+  * Change Testcontainers dependencies to adopt the new consistent `testcontainers-` prefix.
+* [org.openrewrite.java.testing.testcontainers.Testcontainers2Migration](/recipes/java/testing/testcontainers/testcontainers2migration.md)
+  * **Migrate to testcontainers-java 2.x**
+  * Change dependencies and types to migrate to testcontainers-java 2.x.
 * [org.openrewrite.java.testing.testng.TestNgAssertEqualsToAssertThat](/recipes/java/testing/testng/testngassertequalstoassertthat.md)
   * **TestNG `assertEquals` to AssertJ**
   * Convert TestNG-style `assertEquals()` to AssertJ's `assertThat().isEqualTo()`.
 * [org.openrewrite.java.testing.testng.TestNgAssertNotEqualsToAssertThat](/recipes/java/testing/testng/testngassertnotequalstoassertthat.md)
   * **TestNG `assertNotEquals` to AssertJ**
   * Convert TestNG-style `assertNotEquals()` to AssertJ's `assertThat().isNotEqualTo()`.
+* [org.openrewrite.java.testing.testng.TestNgToAssertj](/recipes/java/testing/testng/testngtoassertj.md)
+  * **Migrate TestNG assertions to AssertJ**
+  * Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions`.
+* [org.openrewrite.java.testing.truth.MigrateTruthToAssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
+  * **Migrate Google Truth to AssertJ**
+  * Migrate Google Truth assertions to AssertJ assertions.
 * [org.openrewrite.java.testing.truth.TruthAssertToAssertThat](/recipes/java/testing/truth/truthasserttoassertthat.md)
   * **Convert Truth `assert_()` to AssertJ**
   * Converts Google Truth's `assert_()` method to AssertJ's standard assertion pattern.
@@ -4887,8 +8530,17 @@ _178 recipes_
 
 _License: Apache License Version 2.0_
 
-_1439 recipes_
+_1493 recipes_
 
+* [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
+  * **Change the Timefold version**
+  * Replaces the version of Timefold
+* [ai.timefold.solver.migration.FromOptaPlannerToTimefoldSolver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+  * **Migrate from OptaPlanner to Timefold Solver**
+  * Replaces your method/field calls, GAVs, etc. To replace deprecated methods too, use the recipe ToLatest
+* [ai.timefold.solver.migration.ToLatest](/recipes/ai/timefold/solver/migration/tolatest.md)
+  * **Upgrade to the latest Timefold Solver**
+  * Replace all your calls to deleted/deprecated types and methods of Timefold Solver with their proper alternatives.
 * [com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope](/recipes/com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
   * **Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.**
   * This recipe will change the jakarta.xml.bind-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.xml.bind-api jar from being deployed to WebLogic which can cause class conflicts.
@@ -5984,24 +9636,159 @@ _1439 recipes_
 * [org.apache.camel.upgrade.customRecipes.ReplacePropertyInDataFormatYaml](/recipes/org/apache/camel/upgrade/customrecipes/replacepropertyindataformatyaml.md)
   * **Renames property of the component**
   * ARenames property of the component.
+* [org.apache.wicket.BestPractices](/recipes/org/apache/wicket/bestpractices.md)
+  * **Wicket best practices**
+  * Applies Wicket best practices such as minimizing anonymous inner classes and upgrading to the latest version.
+* [org.apache.wicket.MigrateToWicket10](/recipes/org/apache/wicket/migratetowicket10.md)
+  * **Migrate to Wicket 10.x**
+  * Migrates Wicket 9.x to Wicket 10.x, as well as Java 17 and Jakarta.
+* [org.axonframework.migration.UpgradeAxonFramework_4_Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
+  * **Upgrade to Axonframework 4.x Jakarta**
+  * Migration file to upgrade from an Axon Framework Javax-specific project to Jakarta.
+* [org.axonframework.migration.UpgradeAxonFramework_4_Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
+  * **Upgrade to Axonframework 4.x Javax**
+  * Migration file to upgrade an Axon Framework Javax-specific project and remain on Javax.
 * [org.openrewrite.java.camel.migrate.removedExtensions](/recipes/java/camel/migrate/removedextensions.md)
   * **Remove non existing camel-quarkus extensions**
   * Removal of maven dependencies for extension, which are no longer part of Camel 3.x.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_0_0](/recipes/quarkus/migratetoquarkus_v3_0_0.md)
+  * **Quarkus Updates Aggregate 3.0.0**
+  * Quarkus update recipes to upgrade your application to 3.0.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_10_0](/recipes/quarkus/migratetoquarkus_v3_10_0.md)
+  * **Quarkus Updates Aggregate 3.10.0**
+  * Quarkus update recipes to upgrade your application to 3.10.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_11_0](/recipes/quarkus/migratetoquarkus_v3_11_0.md)
+  * **Quarkus Updates Aggregate 3.11.0**
+  * Quarkus update recipes to upgrade your application to 3.11.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_12_0](/recipes/quarkus/migratetoquarkus_v3_12_0.md)
+  * **Quarkus Updates Aggregate 3.12.0**
+  * Quarkus update recipes to upgrade your application to 3.12.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_13_0](/recipes/quarkus/migratetoquarkus_v3_13_0.md)
+  * **Quarkus Updates Aggregate 3.13.0**
+  * Quarkus update recipes to upgrade your application to 3.13.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_15_0](/recipes/quarkus/migratetoquarkus_v3_15_0.md)
+  * **Quarkus Updates Aggregate 3.15.0**
+  * Quarkus update recipes to upgrade your application to 3.15.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_17_0](/recipes/quarkus/migratetoquarkus_v3_17_0.md)
+  * **Quarkus Updates Aggregate 3.17.0**
+  * Quarkus update recipes to upgrade your application to 3.17.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_18_0](/recipes/quarkus/migratetoquarkus_v3_18_0.md)
+  * **Quarkus Updates Aggregate 3.18.0**
+  * Quarkus update recipes to upgrade your application to 3.18.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_19_0](/recipes/quarkus/migratetoquarkus_v3_19_0.md)
+  * **Quarkus Updates Aggregate 3.19.0**
+  * Quarkus update recipes to upgrade your application to 3.19.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0](/recipes/quarkus/migratetoquarkus_v3_1_0.md)
+  * **Quarkus Updates Aggregate 3.1.0**
+  * Quarkus update recipes to upgrade your application to 3.1.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_20_1](/recipes/quarkus/migratetoquarkus_v3_20_1.md)
+  * **Quarkus Updates Aggregate 3.20.1**
+  * Quarkus update recipes to upgrade your application to 3.20.1.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_21_0](/recipes/quarkus/migratetoquarkus_v3_21_0.md)
+  * **Quarkus Updates Aggregate 3.21.0**
+  * Quarkus update recipes to upgrade your application to 3.21.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_22_0](/recipes/quarkus/migratetoquarkus_v3_22_0.md)
+  * **Quarkus Updates Aggregate 3.22.0**
+  * Quarkus update recipes to upgrade your application to 3.22.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_23_0](/recipes/quarkus/migratetoquarkus_v3_23_0.md)
+  * **Quarkus Updates Aggregate 3.23.0**
+  * Quarkus update recipes to upgrade your application to 3.23.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_24_0](/recipes/quarkus/migratetoquarkus_v3_24_0.md)
+  * **Quarkus Updates Aggregate 3.24.0**
+  * Quarkus update recipes to upgrade your application to 3.24.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_25_0](/recipes/quarkus/migratetoquarkus_v3_25_0.md)
+  * **Quarkus Updates Aggregate 3.25.0**
+  * Quarkus update recipes to upgrade your application to 3.25.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_26_0](/recipes/quarkus/migratetoquarkus_v3_26_0.md)
+  * **Quarkus Updates Aggregate 3.26.0**
+  * Quarkus update recipes to upgrade your application to 3.26.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_29_0](/recipes/quarkus/migratetoquarkus_v3_29_0.md)
+  * **Quarkus Updates Aggregate 3.29.0**
+  * Quarkus update recipes to upgrade your application to 3.29.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0](/recipes/quarkus/migratetoquarkus_v3_2_0.md)
+  * **Quarkus Updates Aggregate 3.2.0**
+  * Quarkus update recipes to upgrade your application to 3.2.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_30_0](/recipes/quarkus/migratetoquarkus_v3_30_0.md)
+  * **Quarkus Updates Aggregate 3.30.0**
+  * Quarkus update recipes to upgrade your application to 3.30.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_31_0](/recipes/quarkus/migratetoquarkus_v3_31_0.md)
+  * **Quarkus Updates Aggregate 3.31.0**
+  * Quarkus update recipes to upgrade your application to 3.31.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0](/recipes/quarkus/migratetoquarkus_v3_32_0.md)
+  * **Quarkus Updates Aggregate 3.32.0**
+  * Quarkus update recipes to upgrade your application to 3.32.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
+  * **Quarkus Updates Aggregate 3.3.0**
+  * Quarkus update recipes to upgrade your application to 3.3.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_5_0](/recipes/quarkus/migratetoquarkus_v3_5_0.md)
+  * **Quarkus Updates Aggregate 3.5.0**
+  * Quarkus update recipes to upgrade your application to 3.5.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_6_0](/recipes/quarkus/migratetoquarkus_v3_6_0.md)
+  * **Quarkus Updates Aggregate 3.6.0**
+  * Quarkus update recipes to upgrade your application to 3.6.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_7_0](/recipes/quarkus/migratetoquarkus_v3_7_0.md)
+  * **Quarkus Updates Aggregate 3.7.0**
+  * Quarkus update recipes to upgrade your application to 3.7.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_8_0](/recipes/quarkus/migratetoquarkus_v3_8_0.md)
+  * **Quarkus Updates Aggregate 3.8.0**
+  * Quarkus update recipes to upgrade your application to 3.8.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_8_3](/recipes/quarkus/migratetoquarkus_v3_8_3.md)
+  * **Quarkus Updates Aggregate 3.8.3**
+  * Quarkus update recipes to upgrade your application to 3.8.3.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_9_0](/recipes/quarkus/migratetoquarkus_v3_9_0.md)
+  * **Quarkus Updates Aggregate 3.9.0**
+  * Quarkus update recipes to upgrade your application to 3.9.0.
 * [software.amazon.awssdk.v2migration.AddCommentToMethod](/recipes/software/amazon/awssdk/v2migration/addcommenttomethod.md)
   * **Add a comment to a method**
   * Add a comment to a method.
+* [software.amazon.awssdk.v2migration.AddS3EventNotificationDependency](/recipes/software/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
+  * **Add AWS SDK for Java v2 S3 Event Notification dependency if needed**
+  * This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used
+* [software.amazon.awssdk.v2migration.AddTransferManagerDependency](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
+  * **Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed**
+  * This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer Manager is used
+* [software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
+  * **Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2**
+  * This recipe will apply changes required for migrating from the AWS SDK for Java v1 to the AWS SDK for Java v2.
 * [software.amazon.awssdk.v2migration.ByteBufferToSdkBytes](/recipes/software/amazon/awssdk/v2migration/bytebuffertosdkbytes.md)
   * **Convert ByteBuffer to SdkBytes**
   * Convert ByteBuffer to SdkBytes by calling SdkBytes#fromByteBuffer
+* [software.amazon.awssdk.v2migration.ChangeAuthTypes](/recipes/software/amazon/awssdk/v2migration/changeauthtypes.md)
+  * **Change auth related classes from v1 to v2**
+  * Change auth related classes from v1 to v2.
+* [software.amazon.awssdk.v2migration.ChangeConfigTypes](/recipes/software/amazon/awssdk/v2migration/changeconfigtypes.md)
+  * **Change config related classes from v1 to v2**
+  * Change config related classes from v1 to v2.
+* [software.amazon.awssdk.v2migration.ChangeExceptionTypes](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
+  * **Change SDK Exception types from v1 to v2**
+  * Change SDK Exception types from v1 to v2.
+* [software.amazon.awssdk.v2migration.ChangeRegionTypes](/recipes/software/amazon/awssdk/v2migration/changeregiontypes.md)
+  * **Change region related classes**
+  * Change region related classes from v1 to v2.
+* [software.amazon.awssdk.v2migration.ChangeS3EventNotificationTypes](/recipes/software/amazon/awssdk/v2migration/changes3eventnotificationtypes.md)
+  * **Change SDK S3EventNotification types from v1 to v2**
+  * Change SDK S3EventNotification types from v1 to v2.
+* [software.amazon.awssdk.v2migration.ChangeSdkCoreTypes](/recipes/software/amazon/awssdk/v2migration/changesdkcoretypes.md)
+  * **Change SDK core types from v1 to v2**
+  * Change SDK core types from v1 to v2.
 * [software.amazon.awssdk.v2migration.ChangeSdkType](/recipes/software/amazon/awssdk/v2migration/changesdktype.md)
   * **Change AWS SDK for Java v1 types to v2 equivalents**
   * Change AWS SDK for Java v1 types to v2 equivalents.
+* [software.amazon.awssdk.v2migration.ChangeTransferManagerSimpleMethods](/recipes/software/amazon/awssdk/v2migration/changetransfermanagersimplemethods.md)
+  * **Change TransferManager simple methods to v2.**
+  * Change TransferManager simple methods to v2.
+* [software.amazon.awssdk.v2migration.ChangeTransferManagerTypes](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
+  * **Change SDK TransferManager types from v1 to v2**
+  * Change SDK TransferManager types from v1 to v2.
 * [software.amazon.awssdk.v2migration.DateToInstant](/recipes/software/amazon/awssdk/v2migration/datetoinstant.md)
   * **Convert Date to Instant**
   * Convert Date to Instant by calling Date#toInstant
 * [software.amazon.awssdk.v2migration.EnumCasingToV2](/recipes/software/amazon/awssdk/v2migration/enumcasingtov2.md)
   * **V1 Enum Casing to V2**
   * Transforms V1 enum constants from pascal case to screaming snake case for v2.
+* [software.amazon.awssdk.v2migration.EnumGettersToV2](/recipes/software/amazon/awssdk/v2migration/enumgetterstov2.md)
+  * **Change v1 enum getters to v2**
+  * Change v1 enum getters to v2.
 * [software.amazon.awssdk.v2migration.HttpSettingsToHttpClient](/recipes/software/amazon/awssdk/v2migration/httpsettingstohttpclient.md)
   * **Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for sync and NettyNioAsyncHttpClient for async**
   * Move HTTP settings from the ClientOverrideConfiguration to ApacheHttpClient for sync SDK client and NettyNioAsyncHttpClient for async SDK client.
@@ -6023,6 +9810,15 @@ _1439 recipes_
 * [software.amazon.awssdk.v2migration.S3EventNotificationMethodToV2](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodtov2.md)
   * **S3 Event Notification method to v2**
   * S3 Event Notification method to v2
+* [software.amazon.awssdk.v2migration.S3EventNotificationMethodsToV2](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
+  * **Change S3EventNotification methods to v2.**
+  * Change S3EventNotification methods to v2.
+* [software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent](/recipes/software/amazon/awssdk/v2migration/s3methodsconstructortofluent.md)
+  * **Change S3 method constructors to fluent builder calls**
+  * Change S3 method constructors to fluent builder calls.
+* [software.amazon.awssdk.v2migration.S3MethodsToV2](/recipes/software/amazon/awssdk/v2migration/s3methodstov2.md)
+  * **Change S3 methods to v2.**
+  * Change S3 methods to v2.
 * [software.amazon.awssdk.v2migration.S3NonStreamingRequestToV2](/recipes/software/amazon/awssdk/v2migration/s3nonstreamingrequesttov2.md)
   * **V1 S3 non-streaming requests to V2**
   * Transform usage of V1 S3 non-streaming requests to V2.
@@ -6044,6 +9840,9 @@ _1439 recipes_
 * [software.amazon.awssdk.v2migration.S3TmAddComments](/recipes/software/amazon/awssdk/v2migration/s3tmaddcomments.md)
   * **Add imports and comments to unsupported S3 transfer manager transforms.**
   * Add imports and comments to unsupported S3 transfer manager transforms.
+* [software.amazon.awssdk.v2migration.S3TypesToV2](/recipes/software/amazon/awssdk/v2migration/s3typestov2.md)
+  * **Change S3 types to v2.**
+  * Change S3 types to v2.
 * [software.amazon.awssdk.v2migration.S3UriToV2](/recipes/software/amazon/awssdk/v2migration/s3uritov2.md)
   * **Convert v1 AmazonS3URI to v2 S3Uri**
   * Convert v1 AmazonS3URI to v2 S3Uri
@@ -6059,6 +9858,9 @@ _1439 recipes_
 * [software.amazon.awssdk.v2migration.TransferManagerMethodsToV2](/recipes/software/amazon/awssdk/v2migration/transfermanagermethodstov2.md)
   * **Transfer Manager Methods to V2**
   * Transfer Manager Methods to V2
+* [software.amazon.awssdk.v2migration.UpgradeSdkDependencies](/recipes/software/amazon/awssdk/v2migration/upgradesdkdependencies.md)
+  * **Change v1 Maven/Gradle dependencies to v2**
+  * Change v1 Maven/Gradle dependencies to v2.
 * [software.amazon.awssdk.v2migration.V1BuilderVariationsToV2Builder](/recipes/software/amazon/awssdk/v2migration/v1buildervariationstov2builder.md)
   * **V1 client builder variations to builder()**
   * Transforms V1 builder variations to builder()
@@ -6071,6 +9873,9 @@ _1439 recipes_
 * [software.amazon.awssdk.v2migration.WrapSdkClientBuilderRegionStr](/recipes/software/amazon/awssdk/v2migration/wrapsdkclientbuilderregionstr.md)
   * **Wrap the region string provided on the SDK client builder with Region.of**
   * Wrap the region string provided on the SDK client builder with Region.of.
+* [tech.picnic.errorprone.refasterrules.AllRefasterRules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
+  * **All Picnic Refaster rules**
+  * Collection of all Refaster rules from Picnic's error-prone-contrib project.
 * [tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes](/recipes/tech/picnic/errorprone/refasterrules/assertjbigdecimalrulesrecipes.md)
   * **Refaster rules related to AssertJ assertions over `BigDecimal`s**
   * Note that, contrary to collections of Refaster rules for other `org.assertj.core.api.NumberAssert` subtypes, these rules do not rewrite to/from `BigDecimalAssert#isEqualTo(Object)` and `BigDecimalAssert#isNotEqualTo(Object)`. This is  because `BigDecimal#equals(Object)` considers not only the numeric value of compared  instances, but also their scale. As a result various seemingly straightforward transformations  would actually subtly change the assertion's semantics. [Source](https://error-prone.picnic.tech/refasterrules/AssertJBigDecimalRules).
@@ -9206,3811 +13011,3 @@ _1439 recipes_
 * [tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPutRecipe](/recipes/tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientputrecipe.md)
   * **Refaster template `WebClientRules.WebClientPut`**
   * Prefer `WebClient#put()` over `WebClient#method(HttpMethod)` with `HttpMethod#PUT`.
-
-## other
-
-
-### unknown
-
-_License: Unknown_
-
-_1266 recipes_
-
-* [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
-  * **Change the Timefold version**
-  * Replaces the version of Timefold
-* [ai.timefold.solver.migration.FromOptaPlannerToTimefoldSolver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
-  * **Migrate from OptaPlanner to Timefold Solver**
-  * Replaces your method/field calls, GAVs, etc. To replace deprecated methods too, use the recipe ToLatest
-* [ai.timefold.solver.migration.ToLatest](/recipes/ai/timefold/solver/migration/tolatest.md)
-  * **Upgrade to the latest Timefold Solver**
-  * Replace all your calls to deleted/deprecated types and methods of Timefold Solver with their proper alternatives.
-* [com.google.guava.InlineGuavaMethods](/recipes/com/google/guava/inlineguavamethods.md)
-  * **Inline `guava` methods annotated with `@InlineMe`**
-  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
-* [org.apache.logging.log4j.InlineLog4jApiMethods](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
-  * **Inline `log4j-api-2` methods annotated with `@InlineMe`**
-  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
-* [org.apache.wicket.BestPractices](/recipes/org/apache/wicket/bestpractices.md)
-  * **Wicket best practices**
-  * Applies Wicket best practices such as minimizing anonymous inner classes and upgrading to the latest version.
-* [org.apache.wicket.MigrateToWicket10](/recipes/org/apache/wicket/migratetowicket10.md)
-  * **Migrate to Wicket 10.x**
-  * Migrates Wicket 9.x to Wicket 10.x, as well as Java 17 and Jakarta.
-* [org.axonframework.migration.UpgradeAxonFramework_4_Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
-  * **Upgrade to Axonframework 4.x Jakarta**
-  * Migration file to upgrade from an Axon Framework Javax-specific project to Jakarta.
-* [org.axonframework.migration.UpgradeAxonFramework_4_Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
-  * **Upgrade to Axonframework 4.x Javax**
-  * Migration file to upgrade an Axon Framework Javax-specific project and remain on Javax.
-* [org.openrewrite.apache.commons.collections.UpgradeApacheCommonsCollections_3_4](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
-  * **Migrates to Apache Commons Collections 4.x**
-  * Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
-* [org.openrewrite.apache.commons.io.RelocateApacheCommonsIo](/recipes/apache/commons/io/relocateapachecommonsio.md)
-  * **Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`**
-  * The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`.
-* [org.openrewrite.apache.commons.io.UseStandardCharsets](/recipes/apache/commons/io/usestandardcharsets.md)
-  * **Prefer `java.nio.charset.StandardCharsets`**
-  * Prefer the Java standard library's `java.nio.charset.StandardCharsets` over third-party usage of apache's `org.apache.commons.io.Charsets`.
-* [org.openrewrite.apache.commons.io.UseSystemLineSeparator](/recipes/apache/commons/io/usesystemlineseparator.md)
-  * **Prefer `System.lineSeparator()`**
-  * Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`.
-* [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
-  * **Migrates to Apache Commons Lang 3.x**
-  * Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
-* [org.openrewrite.apache.commons.lang.WordUtilsToCommonsText](/recipes/apache/commons/lang/wordutilstocommonstext.md)
-  * **Migrate `WordUtils` to Apache Commons Text**
-  * Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUtils` and add the Commons Text dependency.
-* [org.openrewrite.apache.commons.lang3.MigrateSystemUtilsDeprecations](/recipes/apache/commons/lang3/migratesystemutilsdeprecations.md)
-  * **Migrate deprecated SystemUtils constants**
-  * Replaces deprecated constants in org.apache.commons.lang3.SystemUtils with their recommended replacements (e.g., File.separator, System.lineSeparator()).
-* [org.openrewrite.apache.commons.lang3.UseStandardCharsets](/recipes/apache/commons/lang3/usestandardcharsets.md)
-  * **Prefer `java.nio.charset.StandardCharsets`**
-  * Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`.
-* [org.openrewrite.apache.commons.math.UpgradeApacheCommonsMath_2_3](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md)
-  * **Migrates to Apache Commons Math 3.x**
-  * Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
-* [org.openrewrite.apache.httpclient4.MappingDeprecatedClasses](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
-  * **Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements**
-  * Uses new classes/methods instead of the deprecated ones.
-* [org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
-  * **Migrates to ApacheHttpClient 4.5.x**
-  * Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
-* [org.openrewrite.apache.httpclient5.CredentialsStoreClear](/recipes/apache/httpclient5/credentialsstoreclear.md)
-  * **Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`**
-  * Migrates `BasicCredentialsProvider` methods`clear` to the new `CredentialsStore` interface.
-* [org.openrewrite.apache.httpclient5.CredentialsStoreSetCredentials](/recipes/apache/httpclient5/credentialsstoresetcredentials.md)
-  * **Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`**
-  * Migrates `BasicCredentialsProvider` methods`setCredentials` to the new `CredentialsStore` interface.
-* [org.openrewrite.apache.httpclient5.StatusLine](/recipes/apache/httpclient5/statusline.md)
-  * **Migrate to ApacheHttpClient 5.x deprecated methods from 4.x**
-  * Migrates deprecated methods to their equivalent ones in 5.x.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
-  * **Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies**
-  * Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
-  * **Migrate to ApacheHttpClient 5.x**
-  * Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_AsyncClientClassMapping](/recipes/apache/httpclient5/upgradeapachehttpclient_5_asyncclientclassmapping.md)
-  * **Migrate Apache HttpAsyncClient 4.x classes to HttpClient 5.x**
-  * Migrates classes from Apache HttpAsyncClient 4.x `httpasyncclient` to their equivalents in HttpClient 5.x.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_ClassMapping](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
-  * **Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x**
-  * Mapping of all the compatible classes of ApacheHttpClient 5.x from 4.x.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_DeprecatedMethods](/recipes/apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods.md)
-  * **Migrate to ApacheHttpClient 5.x deprecated methods from 4.x**
-  * Migrates deprecated methods to their equivalent ones in 5.x.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClient_5_TimeUnit](/recipes/apache/httpclient5/upgradeapachehttpclient_5_timeunit.md)
-  * **Adds `TimeUnit` to timeouts and duration methods**
-  * Apache HttpClient 5.x Timeout and duration methods need an extra the TimeUnit argument. This recipe uses milliseconds as a default unit.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCoreNioDependencies](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
-  * **Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency**
-  * Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioClassMapping](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
-  * **Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x**
-  * Mapping of all the compatible classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioInputBuffers](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioinputbuffers.md)
-  * **Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x**
-  * Mapping of specifically `*InputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioOutputBuffers](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
-  * **Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x**
-  * Mapping of specifically `*OutputBuffer` classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
-* [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCore_5_NioUtilMapping](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioutilmapping.md)
-  * **Migrate to Apache HttpCore Nio Util Classes to Apache HttpCore 5.x**
-  * Mapping of all the compatible utility classes of Apache HttpCore 5.x from Apache HttpCore Nio 4.4.x.
-* [org.openrewrite.apache.poi.UpgradeApachePoi_3_17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
-  * **Migrates to Apache POI 3.17**
-  * Migrates to the last Apache POI 3.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
-* [org.openrewrite.apache.poi.UpgradeApachePoi_4_1](/recipes/apache/poi/upgradeapachepoi_4_1.md)
-  * **Migrates to Apache POI 4.1.2**
-  * Migrates to the last Apache POI 4.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions.
-* [org.openrewrite.apache.poi.UpgradeApachePoi_5](/recipes/apache/poi/upgradeapachepoi_5.md)
-  * **Migrates to Apache POI 5.x**
-  * Migrates to the latest Apache POI 5.x release. This recipe modifies build files to account for artifact renames and upgrades dependency versions. It also chains the 4.1 recipe to handle all prior API migrations.
-* [org.openrewrite.codemods.cleanup.javascript.ArrowBodyStyle](/recipes/codemods/cleanup/javascript/arrowbodystyle.md)
-  * **Require braces around arrow function bodies**
-  * Require braces around arrow function bodies See [rule details](https://eslint.org/docs/latest/rules/arrow-body-style).
-* [org.openrewrite.codemods.cleanup.javascript.BetterRegex](/recipes/codemods/cleanup/javascript/betterregex.md)
-  * **Improve regexes by making them shorter, consistent, and safer**
-  * Improve regexes by making them shorter, consistent, and safer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/better-regex.md).
-* [org.openrewrite.codemods.cleanup.javascript.CapitalizedComments](/recipes/codemods/cleanup/javascript/capitalizedcomments.md)
-  * **Enforce or disallow capitalization of the first letter of a comment**
-  * Enforce or disallow capitalization of the first letter of a comment  See [rule details](https://eslint.org/docs/latest/rules/capitalized-comments).
-* [org.openrewrite.codemods.cleanup.javascript.CatchErrorName](/recipes/codemods/cleanup/javascript/catcherrorname.md)
-  * **Enforce a specific parameter name in catch clauses**
-  * Enforce a specific parameter name in catch clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/catch-error-name.md).
-* [org.openrewrite.codemods.cleanup.javascript.ConsistentDestructuring](/recipes/codemods/cleanup/javascript/consistentdestructuring.md)
-  * **Use destructured variables over properties**
-  * Use destructured variables over properties. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/consistent-destructuring.md).
-* [org.openrewrite.codemods.cleanup.javascript.ConsistentTypeSpecifierStyle](/recipes/codemods/cleanup/javascript/consistenttypespecifierstyle.md)
-  * **Enforce or ban the use of inline type-only markers for named imports**
-  * Enforce or ban the use of inline type-only markers for named imports See rule details for [import/consistent-type-specifier-style](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/consistent-type-specifier-style.md).
-* [org.openrewrite.codemods.cleanup.javascript.Curly](/recipes/codemods/cleanup/javascript/curly.md)
-  * **Enforce consistent brace style for all control statements**
-  * Enforce consistent brace style for all control statements  See [rule details](https://eslint.org/docs/latest/rules/curly).
-* [org.openrewrite.codemods.cleanup.javascript.CustomErrorDefinition](/recipes/codemods/cleanup/javascript/customerrordefinition.md)
-  * **Enforce correct `Error` subclassing**
-  * Enforce correct `Error` subclassing. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/custom-error-definition.md).
-* [org.openrewrite.codemods.cleanup.javascript.DotNotation](/recipes/codemods/cleanup/javascript/dotnotation.md)
-  * **Enforce dot notation whenever possible**
-  * Enforce dot notation whenever possible  See [rule details](https://eslint.org/docs/latest/rules/dot-notation).
-* [org.openrewrite.codemods.cleanup.javascript.EmptyBraceSpaces](/recipes/codemods/cleanup/javascript/emptybracespaces.md)
-  * **Enforce no spaces between braces**
-  * Enforce no spaces between braces. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md).
-* [org.openrewrite.codemods.cleanup.javascript.Eqeqeq](/recipes/codemods/cleanup/javascript/eqeqeq.md)
-  * **Require the use of `===` and `!==`**
-  * Require the use of `===` and `!==`  See [rule details](https://eslint.org/docs/latest/rules/eqeqeq).
-* [org.openrewrite.codemods.cleanup.javascript.EscapeCase](/recipes/codemods/cleanup/javascript/escapecase.md)
-  * **Require escape sequences to use uppercase values**
-  * Require escape sequences to use uppercase values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/escape-case.md).
-* [org.openrewrite.codemods.cleanup.javascript.ExplicitLengthCheck](/recipes/codemods/cleanup/javascript/explicitlengthcheck.md)
-  * **Enforce explicitly comparing the length or size property of a value**
-  * Enforce explicitly comparing the length or size property of a value. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/explicit-length-check.md).
-* [org.openrewrite.codemods.cleanup.javascript.First](/recipes/codemods/cleanup/javascript/first.md)
-  * **Ensure all imports appear before other statements**
-  * Ensure all imports appear before other statements See rule details for [import/first](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/first.md).
-* [org.openrewrite.codemods.cleanup.javascript.LogicalAssignmentOperators](/recipes/codemods/cleanup/javascript/logicalassignmentoperators.md)
-  * **Require or disallow logical assignment operator shorthand**
-  * Require or disallow logical assignment operator shorthand  See [rule details](https://eslint.org/docs/latest/rules/logical-assignment-operators).
-* [org.openrewrite.codemods.cleanup.javascript.MultilineCommentStyle](/recipes/codemods/cleanup/javascript/multilinecommentstyle.md)
-  * **Enforce a particular style for multiline comments**
-  * Enforce a particular style for multiline comments  See [rule details](https://eslint.org/docs/latest/rules/multiline-comment-style).
-* [org.openrewrite.codemods.cleanup.javascript.NewForBuiltins](/recipes/codemods/cleanup/javascript/newforbuiltins.md)
-  * **Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`**
-  * Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/new-for-builtins.md).
-* [org.openrewrite.codemods.cleanup.javascript.NewlineAfterImport](/recipes/codemods/cleanup/javascript/newlineafterimport.md)
-  * **Enforce a newline after import statements**
-  * Enforce a newline after import statements See rule details for [import/newline-after-import](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/newline-after-import.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoAbsolutePath](/recipes/codemods/cleanup/javascript/noabsolutepath.md)
-  * **Forbid import of modules using absolute paths**
-  * Forbid import of modules using absolute paths See rule details for [import/no-absolute-path](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-absolute-path.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoArrayForEach](/recipes/codemods/cleanup/javascript/noarrayforeach.md)
-  * **Prefer `for…of` over the `forEach` method**
-  * Prefer `for…of` over the `forEach` method. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-for-each.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoArrayMethodThisArgument](/recipes/codemods/cleanup/javascript/noarraymethodthisargument.md)
-  * **Disallow using the `this` argument in array methods**
-  * Disallow using the `this` argument in array methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-method-this-argument.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoArrayPushPush](/recipes/codemods/cleanup/javascript/noarraypushpush.md)
-  * **Enforce combining multiple `Array#push()` into one call**
-  * Enforce combining multiple `Array#push()` into one call. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-array-push-push.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoAwaitExpressionMember](/recipes/codemods/cleanup/javascript/noawaitexpressionmember.md)
-  * **Disallow member access from `await` expression**
-  * Disallow member access from `await` expression. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-await-expression-member.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoConsoleSpaces](/recipes/codemods/cleanup/javascript/noconsolespaces.md)
-  * **Do not use leading/trailing space between `console.log` parameters**
-  * Do not use leading/trailing space between `console.log` parameters. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-console-spaces.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoDivRegex](/recipes/codemods/cleanup/javascript/nodivregex.md)
-  * **Disallow equal signs explicitly at the beginning of regular expressions**
-  * Disallow equal signs explicitly at the beginning of regular expressions  See [rule details](https://eslint.org/docs/latest/rules/no-div-regex).
-* [org.openrewrite.codemods.cleanup.javascript.NoDuplicates](/recipes/codemods/cleanup/javascript/noduplicates.md)
-  * **Forbid repeated import of the same module in multiple places**
-  * Forbid repeated import of the same module in multiple places See rule details for [import/no-duplicates](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-duplicates.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoElseReturn](/recipes/codemods/cleanup/javascript/noelsereturn.md)
-  * **Disallow else blocks after return statements in if statements**
-  * Disallow else blocks after return statements in if statements  See [rule details](https://eslint.org/docs/latest/rules/no-else-return).
-* [org.openrewrite.codemods.cleanup.javascript.NoEmptyNamedBlocks](/recipes/codemods/cleanup/javascript/noemptynamedblocks.md)
-  * **Forbid empty named import**
-  * Forbid empty named import See rule details for [import/no-empty-named-blocks](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-empty-named-blocks.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoExtraBind](/recipes/codemods/cleanup/javascript/noextrabind.md)
-  * **Disallow unnecessary calls to `.bind()`**
-  * Disallow unnecessary calls to `.bind()`  See [rule details](https://eslint.org/docs/latest/rules/no-extra-bind).
-* [org.openrewrite.codemods.cleanup.javascript.NoExtraLabel](/recipes/codemods/cleanup/javascript/noextralabel.md)
-  * **Disallow unnecessary labels**
-  * Disallow unnecessary labels  See [rule details](https://eslint.org/docs/latest/rules/no-extra-label).
-* [org.openrewrite.codemods.cleanup.javascript.NoForLoop](/recipes/codemods/cleanup/javascript/noforloop.md)
-  * **Do not use a `for` loop that can be replaced with a `for-of` loop**
-  * Do not use a `for` loop that can be replaced with a `for-of` loop. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-for-loop.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoHexEscape](/recipes/codemods/cleanup/javascript/nohexescape.md)
-  * **Enforce the use of Unicode escapes instead of hexadecimal escapes**
-  * Enforce the use of Unicode escapes instead of hexadecimal escapes. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-hex-escape.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoImplicitCoercion](/recipes/codemods/cleanup/javascript/noimplicitcoercion.md)
-  * **Disallow shorthand type conversions**
-  * Disallow shorthand type conversions  See [rule details](https://eslint.org/docs/latest/rules/no-implicit-coercion).
-* [org.openrewrite.codemods.cleanup.javascript.NoImportModuleExports](/recipes/codemods/cleanup/javascript/noimportmoduleexports.md)
-  * **Forbid import statements with CommonJS module.exports**
-  * Forbid import statements with CommonJS module.exports See rule details for [import/no-import-module-exports](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-import-module-exports.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoInstanceofArray](/recipes/codemods/cleanup/javascript/noinstanceofarray.md)
-  * **Require `Array.isArray()` instead of `instanceof Array`**
-  * Require `Array.isArray()` instead of `instanceof Array`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-instanceof-array.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoLonelyIf](/recipes/codemods/cleanup/javascript/nolonelyif.md)
-  * **Disallow if statements as the only statement in else blocks**
-  * Disallow if statements as the only statement in else blocks  See [rule details](https://eslint.org/docs/latest/rules/no-lonely-if).
-* [org.openrewrite.codemods.cleanup.javascript.NoNamespace](/recipes/codemods/cleanup/javascript/nonamespace.md)
-  * **Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports**
-  * Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports. See rule details for [import/no-namespace](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-namespace.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNegatedCondition](/recipes/codemods/cleanup/javascript/nonegatedcondition.md)
-  * **Disallow negated conditions**
-  * Disallow negated conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-negated-condition.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNestedTernary](/recipes/codemods/cleanup/javascript/nonestedternary.md)
-  * **Disallow nested ternary expressions**
-  * Disallow nested ternary expressions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNewArray](/recipes/codemods/cleanup/javascript/nonewarray.md)
-  * **Disallow `new Array()`**
-  * Disallow `new Array()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-array.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNewBuffer](/recipes/codemods/cleanup/javascript/nonewbuffer.md)
-  * **Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`**
-  * Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-new-buffer.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoNull](/recipes/codemods/cleanup/javascript/nonull.md)
-  * **Disallow the use of the `null` literal**
-  * Disallow the use of the `null` literal. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-null.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoRelativePackages](/recipes/codemods/cleanup/javascript/norelativepackages.md)
-  * **Forbid importing packages through relative paths**
-  * Forbid importing packages through relative paths See rule details for [import/no-relative-packages](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-relative-packages.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoStaticOnlyClass](/recipes/codemods/cleanup/javascript/nostaticonlyclass.md)
-  * **Disallow classes that only have static members**
-  * Disallow classes that only have static members. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-static-only-class.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoTypeofUndefined](/recipes/codemods/cleanup/javascript/notypeofundefined.md)
-  * **Disallow comparing `undefined` using `typeof`**
-  * Disallow comparing `undefined` using `typeof`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-typeof-undefined.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUndefInit](/recipes/codemods/cleanup/javascript/noundefinit.md)
-  * **Disallow initializing variables to undefined**
-  * Disallow initializing variables to undefined  See [rule details](https://eslint.org/docs/latest/rules/no-undef-init).
-* [org.openrewrite.codemods.cleanup.javascript.NoUnnecessaryAwait](/recipes/codemods/cleanup/javascript/nounnecessaryawait.md)
-  * **Disallow awaiting non-promise values**
-  * Disallow awaiting non-promise values. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unnecessary-await.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUnneededTernary](/recipes/codemods/cleanup/javascript/nounneededternary.md)
-  * **Disallow ternary operators when simpler alternatives exist**
-  * Disallow ternary operators when simpler alternatives exist  See [rule details](https://eslint.org/docs/latest/rules/no-unneeded-ternary).
-* [org.openrewrite.codemods.cleanup.javascript.NoUnreadableArrayDestructuring](/recipes/codemods/cleanup/javascript/nounreadablearraydestructuring.md)
-  * **Disallow unreadable array destructuring**
-  * Disallow unreadable array destructuring. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-unreadable-array-destructuring.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessComputedKey](/recipes/codemods/cleanup/javascript/nouselesscomputedkey.md)
-  * **Disallow unnecessary computed property keys in objects and classes**
-  * Disallow unnecessary computed property keys in objects and classes  See [rule details](https://eslint.org/docs/latest/rules/no-useless-computed-key).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessFallbackInSpread](/recipes/codemods/cleanup/javascript/nouselessfallbackinspread.md)
-  * **Disallow useless fallback when spreading in object literals**
-  * Disallow useless fallback when spreading in object literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-fallback-in-spread.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessLengthCheck](/recipes/codemods/cleanup/javascript/nouselesslengthcheck.md)
-  * **Disallow useless array `length` check**
-  * Disallow useless array `length` check. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-length-check.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessPathSegments](/recipes/codemods/cleanup/javascript/nouselesspathsegments.md)
-  * **Forbid unnecessary path segments in import and require statements**
-  * Forbid unnecessary path segments in import and require statements See rule details for [import/no-useless-path-segments](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/no-useless-path-segments.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessPromiseResolveReject](/recipes/codemods/cleanup/javascript/nouselesspromiseresolvereject.md)
-  * **Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks**
-  * Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-promise-resolve-reject.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessRename](/recipes/codemods/cleanup/javascript/nouselessrename.md)
-  * **Disallow renaming import, export, and destructured assignments to the same name**
-  * Disallow renaming import, export, and destructured assignments to the same name See [rule details](https://eslint.org/docs/latest/rules/no-useless-rename).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessReturn](/recipes/codemods/cleanup/javascript/nouselessreturn.md)
-  * **Disallow redundant return statements**
-  * Disallow redundant return statements  See [rule details](https://eslint.org/docs/latest/rules/no-useless-return).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessSpread](/recipes/codemods/cleanup/javascript/nouselessspread.md)
-  * **Disallow unnecessary spread**
-  * Disallow unnecessary spread. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-spread.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoUselessUndefined](/recipes/codemods/cleanup/javascript/nouselessundefined.md)
-  * **Disallow useless `undefined`**
-  * Disallow useless `undefined`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-useless-undefined.md).
-* [org.openrewrite.codemods.cleanup.javascript.NoVar](/recipes/codemods/cleanup/javascript/novar.md)
-  * **Require `let` or `const` instead of `var`**
-  * Require `let` or `const` instead of `var`  See [rule details](https://eslint.org/docs/latest/rules/no-var).
-* [org.openrewrite.codemods.cleanup.javascript.NoZeroFractions](/recipes/codemods/cleanup/javascript/nozerofractions.md)
-  * **Disallow number literals with zero fractions or dangling dots**
-  * Disallow number literals with zero fractions or dangling dots. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-zero-fractions.md).
-* [org.openrewrite.codemods.cleanup.javascript.NumberLiteralCase](/recipes/codemods/cleanup/javascript/numberliteralcase.md)
-  * **Enforce proper case for numeric literals**
-  * Enforce proper case for numeric literals. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md).
-* [org.openrewrite.codemods.cleanup.javascript.NumericSeparatorsStyle](/recipes/codemods/cleanup/javascript/numericseparatorsstyle.md)
-  * **Enforce the style of numeric separators by correctly grouping digits**
-  * Enforce the style of numeric separators by correctly grouping digits. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/numeric-separators-style.md).
-* [org.openrewrite.codemods.cleanup.javascript.ObjectShorthand](/recipes/codemods/cleanup/javascript/objectshorthand.md)
-  * **Require or disallow method and property shorthand syntax for object literals**
-  * Require or disallow method and property shorthand syntax for object literals  See [rule details](https://eslint.org/docs/latest/rules/object-shorthand).
-* [org.openrewrite.codemods.cleanup.javascript.OneVar](/recipes/codemods/cleanup/javascript/onevar.md)
-  * **Enforce variables to be declared either together or separately in functions**
-  * Enforce variables to be declared either together or separately in functions  See [rule details](https://eslint.org/docs/latest/rules/one-var).
-* [org.openrewrite.codemods.cleanup.javascript.OperatorAssignment](/recipes/codemods/cleanup/javascript/operatorassignment.md)
-  * **Require or disallow assignment operator shorthand where possible**
-  * Require or disallow assignment operator shorthand where possible  See [rule details](https://eslint.org/docs/latest/rules/operator-assignment).
-* [org.openrewrite.codemods.cleanup.javascript.Order](/recipes/codemods/cleanup/javascript/order.md)
-  * **Enforce a convention in module import order**
-  * Enforce a convention in module import order See rule details for [import/order](https://github.com/import-js/eslint-plugin-import/blob/HEAD/docs/rules/order.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferAddEventListener](/recipes/codemods/cleanup/javascript/preferaddeventlistener.md)
-  * **Prefer `.addEventListener()` and `.removeEventListener()` over on-functions**
-  * Prefer `.addEventListener()` and `.removeEventListener()` over on-functions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-add-event-listener.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFind](/recipes/codemods/cleanup/javascript/preferarrayfind.md)
-  * **Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`**
-  * Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-find.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlat](/recipes/codemods/cleanup/javascript/preferarrayflat.md)
-  * **Prefer `Array#flat()` over legacy techniques to flatten arrays**
-  * Prefer `Array#flat()` over legacy techniques to flatten arrays. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayFlatMap](/recipes/codemods/cleanup/javascript/preferarrayflatmap.md)
-  * **Prefer `.flatMap()` over `.map().flat()`**
-  * Prefer `.flatMap()` over `.map().flat()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-flat-map.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrayIndexOf](/recipes/codemods/cleanup/javascript/preferarrayindexof.md)
-  * **Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item**
-  * Prefer `Array#\{indexOf,lastIndexOf\}()` over `Array#\{findIndex,findLastIndex\}()` when looking for the index of an item. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-index-of.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArraySome](/recipes/codemods/cleanup/javascript/preferarraysome.md)
-  * **Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`**
-  * Prefer `.some()` over `.filter().length` check and `.\{find,findLast\}()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-array-some.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferArrowCallback](/recipes/codemods/cleanup/javascript/preferarrowcallback.md)
-  * **Require using arrow functions for callbacks**
-  * Require using arrow functions for callbacks  See [rule details](https://eslint.org/docs/latest/rules/prefer-arrow-callback).
-* [org.openrewrite.codemods.cleanup.javascript.PreferAt](/recipes/codemods/cleanup/javascript/preferat.md)
-  * **Prefer `.at()` method for index access and `String#charAt()`**
-  * Prefer `.at()` method for index access and `String#charAt()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-at.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferConst](/recipes/codemods/cleanup/javascript/preferconst.md)
-  * **Require const declarations for variables that are never reassigned after declared**
-  * Require const declarations for variables that are never reassigned after declared  See [rule details](https://eslint.org/docs/latest/rules/prefer-const).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDateNow](/recipes/codemods/cleanup/javascript/preferdatenow.md)
-  * **Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch**
-  * Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-date-now.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDefaultParameters](/recipes/codemods/cleanup/javascript/preferdefaultparameters.md)
-  * **Prefer default parameters over reassignment**
-  * Prefer default parameters over reassignment. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-default-parameters.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDestructuring](/recipes/codemods/cleanup/javascript/preferdestructuring.md)
-  * **Require destructuring from arrays and/or objects**
-  * Require destructuring from arrays and/or objects  See [rule details](https://eslint.org/docs/latest/rules/prefer-destructuring).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeAppend](/recipes/codemods/cleanup/javascript/preferdomnodeappend.md)
-  * **Prefer `Node#append()` over `Node#appendChild()`**
-  * Prefer `Node#append()` over `Node#appendChild()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-append.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeDataset](/recipes/codemods/cleanup/javascript/preferdomnodedataset.md)
-  * **Prefer using `.dataset` on DOM elements over calling attribute methods**
-  * Prefer using `.dataset` on DOM elements over calling attribute methods. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-dataset.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferDomNodeRemove](/recipes/codemods/cleanup/javascript/preferdomnoderemove.md)
-  * **Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`**
-  * Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-dom-node-remove.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferExponentiationOperator](/recipes/codemods/cleanup/javascript/preferexponentiationoperator.md)
-  * **Disallow the use of `Math.pow` in favor of the ** operator**
-  * Disallow the use of `Math.pow` in favor of the ** operator  See [rule details](https://eslint.org/docs/latest/rules/prefer-exponentiation-operator).
-* [org.openrewrite.codemods.cleanup.javascript.PreferExportFrom](/recipes/codemods/cleanup/javascript/preferexportfrom.md)
-  * **Prefer `export…from` when re-exporting**
-  * Prefer `export…from` when re-exporting. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-export-from.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferIncludes](/recipes/codemods/cleanup/javascript/preferincludes.md)
-  * **Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence**
-  * Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-includes.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferJsonParseBuffer](/recipes/codemods/cleanup/javascript/preferjsonparsebuffer.md)
-  * **Prefer reading a JSON file as a buffer**
-  * Prefer reading a JSON file as a buffer. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-json-parse-buffer.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferKeyboardEventKey](/recipes/codemods/cleanup/javascript/preferkeyboardeventkey.md)
-  * **Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`**
-  * Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-keyboard-event-key.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferMathTrunc](/recipes/codemods/cleanup/javascript/prefermathtrunc.md)
-  * **Enforce the use of `Math.trunc()` instead of bitwise operators**
-  * Enforce the use of `Math.trunc()` instead of bitwise operators. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-math-trunc.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferModernDomApis](/recipes/codemods/cleanup/javascript/prefermoderndomapis.md)
-  * **Prefer `.before()` over `.insertBefore()`, `.replaceWith()` over `.replaceChild()`, prefer one of `.before()`, `.after()`, `.append()` or `.prepend()` over `insertAdjacentText()` and `insertAdjacentElement()`**
-  * Prefer `.before()` over `.insertBefore()`, `.replaceWith()` over `.replaceChild()`, prefer one of `.before()`, `.after()`, `.append()` or `.prepend()` over `insertAdjacentText()` and `insertAdjacentElement()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-dom-apis.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferModernMathApis](/recipes/codemods/cleanup/javascript/prefermodernmathapis.md)
-  * **Prefer modern Math APIs over legacy patterns**
-  * Prefer modern Math APIs over legacy patterns. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-modern-math-apis.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferModule](/recipes/codemods/cleanup/javascript/prefermodule.md)
-  * **Prefer JavaScript modules (ESM) over CommonJS**
-  * Prefer JavaScript modules (ESM) over CommonJS. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNativeCoercionFunctions](/recipes/codemods/cleanup/javascript/prefernativecoercionfunctions.md)
-  * **Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly**
-  * Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-native-coercion-functions.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNegativeIndex](/recipes/codemods/cleanup/javascript/prefernegativeindex.md)
-  * **Prefer negative index over `.length - index` when possible**
-  * Prefer negative index over `.length - index` when possible. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-negative-index.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNodeProtocol](/recipes/codemods/cleanup/javascript/prefernodeprotocol.md)
-  * **Prefer using the `node:` protocol when importing Node.js builtin modules**
-  * Prefer using the `node:` protocol when importing Node.js builtin modules. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-node-protocol.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNumberProperties](/recipes/codemods/cleanup/javascript/prefernumberproperties.md)
-  * **Prefer `Number` static properties over global ones**
-  * Prefer `Number` static properties over global ones. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-number-properties.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferNumericLiterals](/recipes/codemods/cleanup/javascript/prefernumericliterals.md)
-  * **Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals**
-  * Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals  See [rule details](https://eslint.org/docs/latest/rules/prefer-numeric-literals).
-* [org.openrewrite.codemods.cleanup.javascript.PreferObjectFromEntries](/recipes/codemods/cleanup/javascript/preferobjectfromentries.md)
-  * **Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object**
-  * Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-object-from-entries.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferObjectHasOwn](/recipes/codemods/cleanup/javascript/preferobjecthasown.md)
-  * **Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)**
-  * Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-has-own).
-* [org.openrewrite.codemods.cleanup.javascript.PreferObjectSpread](/recipes/codemods/cleanup/javascript/preferobjectspread.md)
-  * **Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead**
-  * Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead  See [rule details](https://eslint.org/docs/latest/rules/prefer-object-spread).
-* [org.openrewrite.codemods.cleanup.javascript.PreferOptionalCatchBinding](/recipes/codemods/cleanup/javascript/preferoptionalcatchbinding.md)
-  * **Prefer omitting the catch binding parameter**
-  * Prefer omitting the catch binding parameter. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-optional-catch-binding.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferPrototypeMethods](/recipes/codemods/cleanup/javascript/preferprototypemethods.md)
-  * **Prefer borrowing methods from the prototype instead of the instance**
-  * Prefer borrowing methods from the prototype instead of the instance. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-prototype-methods.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferQuerySelector](/recipes/codemods/cleanup/javascript/preferqueryselector.md)
-  * **Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`**
-  * Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-query-selector.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferReflectApply](/recipes/codemods/cleanup/javascript/preferreflectapply.md)
-  * **Prefer `Reflect.apply()` over `Function#apply()`**
-  * Prefer `Reflect.apply()` over `Function#apply()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-reflect-apply.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferRegexpTest](/recipes/codemods/cleanup/javascript/preferregexptest.md)
-  * **Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`**
-  * Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-regexp-test.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSetHas](/recipes/codemods/cleanup/javascript/prefersethas.md)
-  * **Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence**
-  * Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-has.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSetSize](/recipes/codemods/cleanup/javascript/prefersetsize.md)
-  * **Prefer using `Set#size` instead of `Array#length`**
-  * Prefer using `Set#size` instead of `Array#length`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-set-size.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSpread](/recipes/codemods/cleanup/javascript/preferspread.md)
-  * **Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`**
-  * Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#\{slice,toSpliced\}()` and `String#split('')`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-spread.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringReplaceAll](/recipes/codemods/cleanup/javascript/preferstringreplaceall.md)
-  * **Prefer `String#replaceAll()` over regex searches with the global flag**
-  * Prefer `String#replaceAll()` over regex searches with the global flag. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-replace-all.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringSlice](/recipes/codemods/cleanup/javascript/preferstringslice.md)
-  * **Prefer `String#slice()` over `String#substr()` and `String#substring()`**
-  * Prefer `String#slice()` over `String#substr()` and `String#substring()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-slice.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringStartsEndsWith](/recipes/codemods/cleanup/javascript/preferstringstartsendswith.md)
-  * **Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`**
-  * Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-starts-ends-with.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferStringTrimStartEnd](/recipes/codemods/cleanup/javascript/preferstringtrimstartend.md)
-  * **Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`**
-  * Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-string-trim-start-end.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferSwitch](/recipes/codemods/cleanup/javascript/preferswitch.md)
-  * **Prefer `switch` over multiple `else-if`**
-  * Prefer `switch` over multiple `else-if`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-switch.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferTemplate](/recipes/codemods/cleanup/javascript/prefertemplate.md)
-  * **Require template literals instead of string concatenation**
-  * Require template literals instead of string concatenation  See [rule details](https://eslint.org/docs/latest/rules/prefer-template).
-* [org.openrewrite.codemods.cleanup.javascript.PreferTernary](/recipes/codemods/cleanup/javascript/preferternary.md)
-  * **Prefer ternary expressions over simple `if-else` statements**
-  * Prefer ternary expressions over simple `if-else` statements. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-ternary.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreferTypeError](/recipes/codemods/cleanup/javascript/prefertypeerror.md)
-  * **Enforce throwing `TypeError` in type checking conditions**
-  * Enforce throwing `TypeError` in type checking conditions. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-type-error.md).
-* [org.openrewrite.codemods.cleanup.javascript.PreventAbbreviations](/recipes/codemods/cleanup/javascript/preventabbreviations.md)
-  * **Prevent abbreviations**
-  * Prevent abbreviations. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prevent-abbreviations.md).
-* [org.openrewrite.codemods.cleanup.javascript.RelativeUrlStyle](/recipes/codemods/cleanup/javascript/relativeurlstyle.md)
-  * **Enforce consistent relative URL style**
-  * Enforce consistent relative URL style. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/relative-url-style.md).
-* [org.openrewrite.codemods.cleanup.javascript.RequireArrayJoinSeparator](/recipes/codemods/cleanup/javascript/requirearrayjoinseparator.md)
-  * **Enforce using the separator argument with `Array#join()`**
-  * Enforce using the separator argument with `Array#join()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-array-join-separator.md).
-* [org.openrewrite.codemods.cleanup.javascript.RequireNumberToFixedDigitsArgument](/recipes/codemods/cleanup/javascript/requirenumbertofixeddigitsargument.md)
-  * **Enforce using the digits argument with `Number#toFixed()`**
-  * Enforce using the digits argument with `Number#toFixed()`. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/require-number-to-fixed-digits-argument.md).
-* [org.openrewrite.codemods.cleanup.javascript.SortImports](/recipes/codemods/cleanup/javascript/sortimports.md)
-  * **Enforce sorted import declarations within modules**
-  * Enforce sorted import declarations within modules  See [rule details](https://eslint.org/docs/latest/rules/sort-imports).
-* [org.openrewrite.codemods.cleanup.javascript.SortVars](/recipes/codemods/cleanup/javascript/sortvars.md)
-  * **Require variables within the same declaration block to be sorted**
-  * Require variables within the same declaration block to be sorted  See [rule details](https://eslint.org/docs/latest/rules/sort-vars).
-* [org.openrewrite.codemods.cleanup.javascript.Strict](/recipes/codemods/cleanup/javascript/strict.md)
-  * **Require or disallow strict mode directives**
-  * Require or disallow strict mode directives  See [rule details](https://eslint.org/docs/latest/rules/strict).
-* [org.openrewrite.codemods.cleanup.javascript.StringContent](/recipes/codemods/cleanup/javascript/stringcontent.md)
-  * **Enforce better string content**
-  * Enforce better string content. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/string-content.md).
-* [org.openrewrite.codemods.cleanup.javascript.SwitchCaseBraces](/recipes/codemods/cleanup/javascript/switchcasebraces.md)
-  * **Enforce consistent brace style for case clauses**
-  * Enforce consistent brace style for case clauses. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/switch-case-braces.md).
-* [org.openrewrite.codemods.cleanup.javascript.TemplateIndent](/recipes/codemods/cleanup/javascript/templateindent.md)
-  * **Fix whitespace-insensitive template indentation**
-  * Fix whitespace-insensitive template indentation. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/template-indent.md).
-* [org.openrewrite.codemods.cleanup.javascript.TextEncodingIdentifierCase](/recipes/codemods/cleanup/javascript/textencodingidentifiercase.md)
-  * **Enforce consistent case for text encoding identifiers**
-  * Enforce consistent case for text encoding identifiers. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/text-encoding-identifier-case.md).
-* [org.openrewrite.codemods.cleanup.javascript.ThrowNewError](/recipes/codemods/cleanup/javascript/thrownewerror.md)
-  * **Require `new` when throwing an error**
-  * Require `new` when throwing an error. See [rule details](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/throw-new-error.md).
-* [org.openrewrite.codemods.cleanup.javascript.UnicodeBom](/recipes/codemods/cleanup/javascript/unicodebom.md)
-  * **Require or disallow Unicode byte order mark (BOM)**
-  * Require or disallow Unicode byte order mark (BOM)  See [rule details](https://eslint.org/docs/latest/rules/unicode-bom).
-* [org.openrewrite.codemods.cleanup.javascript.Yoda](/recipes/codemods/cleanup/javascript/yoda.md)
-  * **Require or disallow &quot;Yoda&quot; conditions**
-  * Require or disallow &quot;Yoda&quot; conditions See [rule details](https://eslint.org/docs/latest/rules/yoda).
-* [org.openrewrite.codemods.cleanup.jest.ConsistentTestIt](/recipes/codemods/cleanup/jest/consistenttestit.md)
-  * **Enforce test and it usage conventions**
-  * Enforce test and it usage conventions See rule details for [jest/consistent-test-it](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/consistent-test-it.md).
-* [org.openrewrite.codemods.cleanup.jest.NoAliasMethods](/recipes/codemods/cleanup/jest/noaliasmethods.md)
-  * **Disallow alias methods**
-  * Disallow alias methods See rule details for [jest/no-alias-methods](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-alias-methods.md).
-* [org.openrewrite.codemods.cleanup.jest.NoDeprecatedFunctions27](/recipes/codemods/cleanup/jest/nodeprecatedfunctions27.md)
-  * **Disallow use of deprecated functions from before version 27**
-  * Disallow use of deprecated functions from before version 27 See rule details for [jest/no-deprecated-functions](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-deprecated-functions.md).
-* [org.openrewrite.codemods.cleanup.jest.NoJasmineGlobals](/recipes/codemods/cleanup/jest/nojasmineglobals.md)
-  * **Disallow Jasmine globals**
-  * Disallow Jasmine globals See rule details for [jest/no-jasmine-globals](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-jasmine-globals.md).
-* [org.openrewrite.codemods.cleanup.jest.NoTestPrefixes](/recipes/codemods/cleanup/jest/notestprefixes.md)
-  * **Require using .only and .skip over f and x**
-  * Require using .only and .skip over f and x See rule details for [jest/no-test-prefixes](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-test-prefixes.md).
-* [org.openrewrite.codemods.cleanup.jest.NoUntypedMockFactory](/recipes/codemods/cleanup/jest/nountypedmockfactory.md)
-  * **Disallow using jest.mock() factories without an explicit type parameter**
-  * Disallow using jest.mock() factories without an explicit type parameter See rule details for [jest/no-untyped-mock-factory](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/no-untyped-mock-factory.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferComparisonMatcher](/recipes/codemods/cleanup/jest/prefercomparisonmatcher.md)
-  * **Suggest using the built-in comparison matchers**
-  * Suggest using the built-in comparison matchers See rule details for [jest/prefer-comparison-matcher](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-comparison-matcher.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferExpectResolves](/recipes/codemods/cleanup/jest/preferexpectresolves.md)
-  * **Prefer await expect(...).resolves over expect(await ...) syntax**
-  * Prefer await expect(...).resolves over expect(await ...) syntax See rule details for [jest/prefer-expect-resolves](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-expect-resolves.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferLowercaseTitle](/recipes/codemods/cleanup/jest/preferlowercasetitle.md)
-  * **Enforce lowercase test names**
-  * Enforce lowercase test names See rule details for [jest/prefer-lowercase-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-lowercase-title.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferMockPromiseShorthand](/recipes/codemods/cleanup/jest/prefermockpromiseshorthand.md)
-  * **Prefer mock resolved/rejected shorthands for promises**
-  * Prefer mock resolved/rejected shorthands for promises See rule details for [jest/prefer-mock-promise-shorthand](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-mock-promise-shorthand.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferSpyOn](/recipes/codemods/cleanup/jest/preferspyon.md)
-  * **Suggest using jest.spyOn()**
-  * Suggest using jest.spyOn() See rule details for [jest/prefer-spy-on](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-spy-on.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferToBe](/recipes/codemods/cleanup/jest/prefertobe.md)
-  * **Suggest using toBe() for primitive literals**
-  * Suggest using toBe() for primitive literals See rule details for [jest/prefer-to-be](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-be.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferToContain](/recipes/codemods/cleanup/jest/prefertocontain.md)
-  * **Suggest using toContain()**
-  * Suggest using toContain() See rule details for [jest/prefer-to-contain](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-contain.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferToHaveLength](/recipes/codemods/cleanup/jest/prefertohavelength.md)
-  * **Suggest using toHaveLength()**
-  * Suggest using toHaveLength() See rule details for [jest/prefer-to-have-length](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-to-have-length.md).
-* [org.openrewrite.codemods.cleanup.jest.PreferTodo](/recipes/codemods/cleanup/jest/prefertodo.md)
-  * **Suggest using test.todo**
-  * Suggest using test.todo See rule details for [jest/prefer-todo](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/prefer-todo.md).
-* [org.openrewrite.codemods.cleanup.jest.RecommendedJestCodeCleanup](/recipes/codemods/cleanup/jest/recommendedjestcodecleanup.md)
-  * **Recommended Jest code cleanup**
-  * Collection of cleanup ESLint rules that are recommended by [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest).
-* [org.openrewrite.codemods.cleanup.jest.ValidTitle](/recipes/codemods/cleanup/jest/validtitle.md)
-  * **Enforce valid titles**
-  * Enforce valid titles See rule details for [jest/valid-title](https://github.com/jest-community/eslint-plugin-jest/blob/HEAD/docs/rules/valid-title.md).
-* [org.openrewrite.codemods.cleanup.react.DestructuringAssignment](/recipes/codemods/cleanup/react/destructuringassignment.md)
-  * **Enforce consistent usage of destructuring assignment of props, state, and context**
-  * Enforce consistent usage of destructuring assignment of props, state, and context See rule details for [react/destructuring-assignment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/destructuring-assignment.md).
-* [org.openrewrite.codemods.cleanup.react.FunctionComponentDefinition](/recipes/codemods/cleanup/react/functioncomponentdefinition.md)
-  * **Enforce a specific function type for function components**
-  * Enforce a specific function type for function components See rule details for [react/function-component-definition](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/function-component-definition.md).
-* [org.openrewrite.codemods.cleanup.react.JsxBooleanValue](/recipes/codemods/cleanup/react/jsxbooleanvalue.md)
-  * **Enforce boolean attributes notation in JSX**
-  * Enforce boolean attributes notation in JSX See rule details for [react/jsx-boolean-value](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-boolean-value.md).
-* [org.openrewrite.codemods.cleanup.react.JsxClosingBracketLocation](/recipes/codemods/cleanup/react/jsxclosingbracketlocation.md)
-  * **Enforce closing bracket location in JSX**
-  * Enforce closing bracket location in JSX See rule details for [react/jsx-closing-bracket-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-bracket-location.md).
-* [org.openrewrite.codemods.cleanup.react.JsxClosingTagLocation](/recipes/codemods/cleanup/react/jsxclosingtaglocation.md)
-  * **Enforce closing tag location for multiline JSX**
-  * Enforce closing tag location for multiline JSX See rule details for [react/jsx-closing-tag-location](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-closing-tag-location.md).
-* [org.openrewrite.codemods.cleanup.react.JsxCurlyBracePresence](/recipes/codemods/cleanup/react/jsxcurlybracepresence.md)
-  * **Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes**
-  * Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes See rule details for [react/jsx-curly-brace-presence](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-brace-presence.md).
-* [org.openrewrite.codemods.cleanup.react.JsxCurlyNewline](/recipes/codemods/cleanup/react/jsxcurlynewline.md)
-  * **Enforce consistent linebreaks in curly braces in JSX attributes and expressions**
-  * Enforce consistent linebreaks in curly braces in JSX attributes and expressions See rule details for [react/jsx-curly-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-newline.md).
-* [org.openrewrite.codemods.cleanup.react.JsxCurlySpacing](/recipes/codemods/cleanup/react/jsxcurlyspacing.md)
-  * **Enforce or disallow spaces inside of curly braces in JSX attributes and expressions**
-  * Enforce or disallow spaces inside of curly braces in JSX attributes and expressions See rule details for [react/jsx-curly-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-curly-spacing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxEqualsSpacing](/recipes/codemods/cleanup/react/jsxequalsspacing.md)
-  * **Enforce or disallow spaces around equal signs in JSX attributes**
-  * Enforce or disallow spaces around equal signs in JSX attributes See rule details for [react/jsx-equals-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-equals-spacing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxFirstPropNewLine](/recipes/codemods/cleanup/react/jsxfirstpropnewline.md)
-  * **Enforce proper position of the first property in JSX**
-  * Enforce proper position of the first property in JSX See rule details for [react/jsx-first-prop-new-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-first-prop-new-line.md).
-* [org.openrewrite.codemods.cleanup.react.JsxFragments](/recipes/codemods/cleanup/react/jsxfragments.md)
-  * **Enforce shorthand or standard form for React fragments**
-  * Enforce shorthand or standard form for React fragments See rule details for [react/jsx-fragments](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-fragments.md).
-* [org.openrewrite.codemods.cleanup.react.JsxIndent](/recipes/codemods/cleanup/react/jsxindent.md)
-  * **Enforce JSX indentation**
-  * Enforce JSX indentation See rule details for [react/jsx-indent](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent.md).
-* [org.openrewrite.codemods.cleanup.react.JsxIndentProps](/recipes/codemods/cleanup/react/jsxindentprops.md)
-  * **Enforce props indentation in JSX**
-  * Enforce props indentation in JSX See rule details for [react/jsx-indent-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-indent-props.md).
-* [org.openrewrite.codemods.cleanup.react.JsxMaxPropsPerLine](/recipes/codemods/cleanup/react/jsxmaxpropsperline.md)
-  * **Enforce maximum of props on a single line in JSX**
-  * Enforce maximum of props on a single line in JSX See rule details for [react/jsx-max-props-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-max-props-per-line.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNewline](/recipes/codemods/cleanup/react/jsxnewline.md)
-  * **Require or prevent a new line after jsx elements and expressions**
-  * Require or prevent a new line after jsx elements and expressions See rule details for [react/jsx-newline](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-newline.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNoLeakedRender](/recipes/codemods/cleanup/react/jsxnoleakedrender.md)
-  * **Disallow problematic leaked values from being rendered**
-  * Disallow problematic leaked values from being rendered See rule details for [react/jsx-no-leaked-render](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-leaked-render.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNoTargetBlank](/recipes/codemods/cleanup/react/jsxnotargetblank.md)
-  * **Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;**
-  * Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot; See rule details for [react/jsx-no-target-blank](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-target-blank.md).
-* [org.openrewrite.codemods.cleanup.react.JsxNoUselessFragment](/recipes/codemods/cleanup/react/jsxnouselessfragment.md)
-  * **Disallow unnecessary fragments**
-  * Disallow unnecessary fragments See rule details for [react/jsx-no-useless-fragment](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-no-useless-fragment.md).
-* [org.openrewrite.codemods.cleanup.react.JsxOneExpressionPerLine](/recipes/codemods/cleanup/react/jsxoneexpressionperline.md)
-  * **Require one JSX element per line**
-  * Require one JSX element per line See rule details for [react/jsx-one-expression-per-line](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-one-expression-per-line.md).
-* [org.openrewrite.codemods.cleanup.react.JsxPropsNoMultiSpaces](/recipes/codemods/cleanup/react/jsxpropsnomultispaces.md)
-  * **Disallow multiple spaces between inline JSX props**
-  * Disallow multiple spaces between inline JSX props See rule details for [react/jsx-props-no-multi-spaces](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-props-no-multi-spaces.md).
-* [org.openrewrite.codemods.cleanup.react.JsxSortProps](/recipes/codemods/cleanup/react/jsxsortprops.md)
-  * **Enforce props alphabetical sorting**
-  * Enforce props alphabetical sorting See rule details for [react/jsx-sort-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-sort-props.md).
-* [org.openrewrite.codemods.cleanup.react.JsxSpaceBeforeClosing](/recipes/codemods/cleanup/react/jsxspacebeforeclosing.md)
-  * **Enforce spacing before closing bracket in JSX**
-  * Enforce spacing before closing bracket in JSX See rule details for [react/jsx-space-before-closing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-space-before-closing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxTagSpacing](/recipes/codemods/cleanup/react/jsxtagspacing.md)
-  * **Enforce whitespace in and around the JSX opening and closing brackets**
-  * Enforce whitespace in and around the JSX opening and closing brackets See rule details for [react/jsx-tag-spacing](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-tag-spacing.md).
-* [org.openrewrite.codemods.cleanup.react.JsxWrapMultilines](/recipes/codemods/cleanup/react/jsxwrapmultilines.md)
-  * **Disallow missing parentheses around multiline JSX**
-  * Disallow missing parentheses around multiline JSX See rule details for [react/jsx-wrap-multilines](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/jsx-wrap-multilines.md).
-* [org.openrewrite.codemods.cleanup.react.NoArrowFunctionLifecycle](/recipes/codemods/cleanup/react/noarrowfunctionlifecycle.md)
-  * **Lifecycle methods should be methods on the prototype, not class fields**
-  * Lifecycle methods should be methods on the prototype, not class fields See rule details for [react/no-arrow-function-lifecycle](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-arrow-function-lifecycle.md).
-* [org.openrewrite.codemods.cleanup.react.NoUnknownProperty](/recipes/codemods/cleanup/react/nounknownproperty.md)
-  * **Disallow usage of unknown DOM property**
-  * Disallow usage of unknown DOM property See rule details for [react/no-unknown-property](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/no-unknown-property.md).
-* [org.openrewrite.codemods.cleanup.react.PreferReadOnlyProps](/recipes/codemods/cleanup/react/preferreadonlyprops.md)
-  * **Enforce that props are read-only**
-  * Enforce that props are read-only See rule details for [react/prefer-read-only-props](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/prefer-read-only-props.md).
-* [org.openrewrite.codemods.cleanup.react.SelfClosingComp](/recipes/codemods/cleanup/react/selfclosingcomp.md)
-  * **Disallow extra closing tags for components without children**
-  * Disallow extra closing tags for components without children See rule details for [react/self-closing-comp](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/self-closing-comp.md).
-* [org.openrewrite.codemods.cleanup.react.SortPropTypes](/recipes/codemods/cleanup/react/sortproptypes.md)
-  * **Enforce propTypes declarations alphabetical sorting**
-  * Enforce propTypes declarations alphabetical sorting See rule details for [react/sort-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/blob/HEAD/docs/rules/sort-prop-types.md).
-* [org.openrewrite.codemods.cleanup.storybook.AwaitInteractions](/recipes/codemods/cleanup/storybook/awaitinteractions.md)
-  * **Interactions should be awaited**
-  * Interactions should be awaited See rule details for [storybook/await-interactions](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md).
-* [org.openrewrite.codemods.cleanup.storybook.DefaultExports](/recipes/codemods/cleanup/storybook/defaultexports.md)
-  * **Story files should have a default export**
-  * Story files should have a default export See rule details for [storybook/default-exports](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md).
-* [org.openrewrite.codemods.cleanup.storybook.HierarchySeparator](/recipes/codemods/cleanup/storybook/hierarchyseparator.md)
-  * **Deprecated hierarchy separator in title property**
-  * Deprecated hierarchy separator in title property See rule details for [storybook/hierarchy-separator](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md).
-* [org.openrewrite.codemods.cleanup.storybook.NoRedundantStoryName](/recipes/codemods/cleanup/storybook/noredundantstoryname.md)
-  * **A story should not have a redundant name property**
-  * A story should not have a redundant name property See rule details for [storybook/no-redundant-story-name](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md).
-* [org.openrewrite.codemods.cleanup.storybook.NoTitlePropertyInMeta](/recipes/codemods/cleanup/storybook/notitlepropertyinmeta.md)
-  * **Do not define a title in meta**
-  * Do not define a title in meta See rule details for [storybook/no-title-property-in-meta](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md).
-* [org.openrewrite.codemods.cleanup.storybook.PreferPascalCase](/recipes/codemods/cleanup/storybook/preferpascalcase.md)
-  * **Stories should use PascalCase**
-  * Stories should use PascalCase See rule details for [storybook/prefer-pascal-case](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md).
-* [org.openrewrite.codemods.cleanup.storybook.RecommendedStorybookCodeCleanup](/recipes/codemods/cleanup/storybook/recommendedstorybookcodecleanup.md)
-  * **Recommended Storybook code cleanup**
-  * Collection of cleanup ESLint rules from [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook#readme).
-* [org.openrewrite.codemods.cleanup.storybook.UseStorybookExpect](/recipes/codemods/cleanup/storybook/usestorybookexpect.md)
-  * **Use expect from @storybook/jest**
-  * Use expect from @storybook/jest See rule details for [storybook/use-storybook-expect](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-expect.md).
-* [org.openrewrite.codemods.cleanup.storybook.UseStorybookTestingLibrary](/recipes/codemods/cleanup/storybook/usestorybooktestinglibrary.md)
-  * **Do not use testing-library directly on stories**
-  * Do not use testing-library directly on stories See rule details for [storybook/use-storybook-testing-library](https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md).
-* [org.openrewrite.codemods.cleanup.svelte.FirstAttributeLinebreak](/recipes/codemods/cleanup/svelte/firstattributelinebreak.md)
-  * **Enforce the location of first attribute**
-  * Enforce the location of first attribute See rule details for [svelte/first-attribute-linebreak](https://sveltejs.github.io/eslint-plugin-svelte/rules/first-attribute-linebreak/).
-* [org.openrewrite.codemods.cleanup.svelte.HtmlClosingBracketSpacing](/recipes/codemods/cleanup/svelte/htmlclosingbracketspacing.md)
-  * **Require or disallow a space before tag's closing brackets**
-  * Require or disallow a space before tag's closing brackets See rule details for [svelte/html-closing-bracket-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-closing-bracket-spacing/).
-* [org.openrewrite.codemods.cleanup.svelte.HtmlQuotes](/recipes/codemods/cleanup/svelte/htmlquotes.md)
-  * **Enforce quotes style of HTML attributes**
-  * Enforce quotes style of HTML attributes See rule details for [svelte/html-quotes](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-quotes/).
-* [org.openrewrite.codemods.cleanup.svelte.HtmlSelfClosing](/recipes/codemods/cleanup/svelte/htmlselfclosing.md)
-  * **Enforce self-closing style**
-  * Enforce self-closing style See rule details for [svelte/html-self-closing](https://sveltejs.github.io/eslint-plugin-svelte/rules/html-self-closing/).
-* [org.openrewrite.codemods.cleanup.svelte.Indent](/recipes/codemods/cleanup/svelte/indent.md)
-  * **Enforce consistent indentation**
-  * Enforce consistent indentation See rule details for [svelte/indent](https://sveltejs.github.io/eslint-plugin-svelte/rules/indent/).
-* [org.openrewrite.codemods.cleanup.svelte.MaxAttributesPerLine](/recipes/codemods/cleanup/svelte/maxattributesperline.md)
-  * **Enforce the maximum number of attributes per line**
-  * Enforce the maximum number of attributes per line See rule details for [svelte/max-attributes-per-line](https://sveltejs.github.io/eslint-plugin-svelte/rules/max-attributes-per-line/).
-* [org.openrewrite.codemods.cleanup.svelte.MustacheSpacing](/recipes/codemods/cleanup/svelte/mustachespacing.md)
-  * **Enforce unified spacing in mustache**
-  * Enforce unified spacing in mustache See rule details for [svelte/mustache-spacing](https://sveltejs.github.io/eslint-plugin-svelte/rules/mustache-spacing/).
-* [org.openrewrite.codemods.cleanup.svelte.NoDynamicSlotName](/recipes/codemods/cleanup/svelte/nodynamicslotname.md)
-  * **Disallow dynamic slot name**
-  * Disallow dynamic slot name See rule details for [svelte/no-dynamic-slot-name](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-dynamic-slot-name/).
-* [org.openrewrite.codemods.cleanup.svelte.NoSpacesAroundEqualSignsInAttribute](/recipes/codemods/cleanup/svelte/nospacesaroundequalsignsinattribute.md)
-  * **Disallow spaces around equal signs in attribute**
-  * Disallow spaces around equal signs in attribute See rule details for [svelte/no-spaces-around-equal-signs-in-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-spaces-around-equal-signs-in-attribute/).
-* [org.openrewrite.codemods.cleanup.svelte.NoUselessMustaches](/recipes/codemods/cleanup/svelte/nouselessmustaches.md)
-  * **Disallow unnecessary mustache interpolations**
-  * Disallow unnecessary mustache interpolations See rule details for [svelte/no-useless-mustaches](https://sveltejs.github.io/eslint-plugin-svelte/rules/no-useless-mustaches/).
-* [org.openrewrite.codemods.cleanup.svelte.PreferClassDirective](/recipes/codemods/cleanup/svelte/preferclassdirective.md)
-  * **Require class directives instead of ternary expressions**
-  * Require class directives instead of ternary expressions See rule details for [svelte/prefer-class-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-class-directive/).
-* [org.openrewrite.codemods.cleanup.svelte.PreferStyleDirective](/recipes/codemods/cleanup/svelte/preferstyledirective.md)
-  * **Require style directives instead of style attribute**
-  * Require style directives instead of style attribute See rule details for [svelte/prefer-style-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/prefer-style-directive/).
-* [org.openrewrite.codemods.cleanup.svelte.RecommendedsvelteCodeCleanup](/recipes/codemods/cleanup/svelte/recommendedsveltecodecleanup.md)
-  * **Recommended svelte code cleanup**
-  * Collection of cleanup ESLint rules from [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte).
-* [org.openrewrite.codemods.cleanup.svelte.RequireStoreReactiveAccess](/recipes/codemods/cleanup/svelte/requirestorereactiveaccess.md)
-  * **Disallow to use of the store itself as an operand. Need to use $ prefix or get function**
-  * Disallow to use of the store itself as an operand. Need to use $ prefix or get function. See rule details for [svelte/require-store-reactive-access](https://sveltejs.github.io/eslint-plugin-svelte/rules/require-store-reactive-access/).
-* [org.openrewrite.codemods.cleanup.svelte.ShorthandAttribute](/recipes/codemods/cleanup/svelte/shorthandattribute.md)
-  * **Enforce use of shorthand syntax in attribute**
-  * Enforce use of shorthand syntax in attribute See rule details for [svelte/shorthand-attribute](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-attribute/).
-* [org.openrewrite.codemods.cleanup.svelte.ShorthandDirective](/recipes/codemods/cleanup/svelte/shorthanddirective.md)
-  * **Enforce use of shorthand syntax in directives**
-  * Enforce use of shorthand syntax in directives See rule details for [svelte/shorthand-directive](https://sveltejs.github.io/eslint-plugin-svelte/rules/shorthand-directive/).
-* [org.openrewrite.codemods.cleanup.svelte.SortAttributes](/recipes/codemods/cleanup/svelte/sortattributes.md)
-  * **Enforce order of attributes**
-  * Enforce order of attributes See rule details for [svelte/sort-attributes](https://sveltejs.github.io/eslint-plugin-svelte/rules/sort-attributes/).
-* [org.openrewrite.codemods.cleanup.svelte.SpacedHtmlComment](/recipes/codemods/cleanup/svelte/spacedhtmlcomment.md)
-  * **Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment**
-  * Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment See rule details for [svelte/spaced-html-comment](https://sveltejs.github.io/eslint-plugin-svelte/rules/spaced-html-comment/).
-* [org.openrewrite.codemods.cleanup.vue.ArrayBracketNewline](/recipes/codemods/cleanup/vue/arraybracketnewline.md)
-  * **Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`**
-  * Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-newline](https://eslint.vuejs.org/rules/array-bracket-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ArrayBracketSpacing](/recipes/codemods/cleanup/vue/arraybracketspacing.md)
-  * **Enforce consistent spacing inside array brackets in `&lt;template&gt;`**
-  * Enforce consistent spacing inside array brackets in `&lt;template&gt;` See rule details for [vue/array-bracket-spacing](https://eslint.vuejs.org/rules/array-bracket-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.ArrayElementNewline](/recipes/codemods/cleanup/vue/arrayelementnewline.md)
-  * **Enforce line breaks after each array element in `&lt;template&gt;`**
-  * Enforce line breaks after each array element in `&lt;template&gt;` See rule details for [vue/array-element-newline](https://eslint.vuejs.org/rules/array-element-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ArrowSpacing](/recipes/codemods/cleanup/vue/arrowspacing.md)
-  * **Enforce consistent spacing before and after the arrow in arrow functions in `&lt;template&gt;`**
-  * Enforce consistent spacing before and after the arrow in arrow functions in `&lt;template&gt;` See rule details for [vue/arrow-spacing](https://eslint.vuejs.org/rules/arrow-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.AttributesOrder](/recipes/codemods/cleanup/vue/attributesorder.md)
-  * **Enforce order of attributes**
-  * Enforce order of attributes See rule details for [vue/attributes-order](https://eslint.vuejs.org/rules/attributes-order.html).
-* [org.openrewrite.codemods.cleanup.vue.BlockOrder](/recipes/codemods/cleanup/vue/blockorder.md)
-  * **Enforce order of component top-level elements**
-  * Enforce order of component top-level elements See rule details for [vue/block-order](https://eslint.vuejs.org/rules/block-order.html).
-* [org.openrewrite.codemods.cleanup.vue.BlockSpacing](/recipes/codemods/cleanup/vue/blockspacing.md)
-  * **Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`**
-  * Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;` See rule details for [vue/block-spacing](https://eslint.vuejs.org/rules/block-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.BlockTagNewline](/recipes/codemods/cleanup/vue/blocktagnewline.md)
-  * **Enforce line breaks after opening and before closing block-level tags**
-  * Enforce line breaks after opening and before closing block-level tags See rule details for [vue/block-tag-newline](https://eslint.vuejs.org/rules/block-tag-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.BraceStyle](/recipes/codemods/cleanup/vue/bracestyle.md)
-  * **Enforce consistent brace style for blocks in `&lt;template&gt;`**
-  * Enforce consistent brace style for blocks in `&lt;template&gt;` See rule details for [vue/brace-style](https://eslint.vuejs.org/rules/brace-style.html).
-* [org.openrewrite.codemods.cleanup.vue.CommaDangle](/recipes/codemods/cleanup/vue/commadangle.md)
-  * **Require or disallow trailing commas in `&lt;template&gt;`**
-  * Require or disallow trailing commas in `&lt;template&gt;` See rule details for [vue/comma-dangle](https://eslint.vuejs.org/rules/comma-dangle.html).
-* [org.openrewrite.codemods.cleanup.vue.CommaSpacing](/recipes/codemods/cleanup/vue/commaspacing.md)
-  * **Enforce consistent spacing before and after commas in `&lt;template&gt;`**
-  * Enforce consistent spacing before and after commas in `&lt;template&gt;` See rule details for [vue/comma-spacing](https://eslint.vuejs.org/rules/comma-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.CommaStyle](/recipes/codemods/cleanup/vue/commastyle.md)
-  * **Enforce consistent comma style in `&lt;template&gt;`**
-  * Enforce consistent comma style in `&lt;template&gt;` See rule details for [vue/comma-style](https://eslint.vuejs.org/rules/comma-style.html).
-* [org.openrewrite.codemods.cleanup.vue.ComponentNameInTemplateCasing](/recipes/codemods/cleanup/vue/componentnameintemplatecasing.md)
-  * **Enforce specific casing for the component naming style in template**
-  * Enforce specific casing for the component naming style in template See rule details for [vue/component-name-in-template-casing](https://eslint.vuejs.org/rules/component-name-in-template-casing.html).
-* [org.openrewrite.codemods.cleanup.vue.ComponentOptionsNameCasing](/recipes/codemods/cleanup/vue/componentoptionsnamecasing.md)
-  * **Enforce the casing of component name in components options**
-  * Enforce the casing of component name in components options See rule details for [vue/component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html).
-* [org.openrewrite.codemods.cleanup.vue.ComponentTagsOrder](/recipes/codemods/cleanup/vue/componenttagsorder.md)
-  * **Enforce order of component top-level elements**
-  * Enforce order of component top-level elements See rule details for [vue/component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html).
-* [org.openrewrite.codemods.cleanup.vue.DefineMacrosOrder](/recipes/codemods/cleanup/vue/definemacrosorder.md)
-  * **Enforce order of defineEmits and defineProps compiler macros**
-  * Enforce order of defineEmits and defineProps compiler macros See rule details for [vue/define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html).
-* [org.openrewrite.codemods.cleanup.vue.DotLocation](/recipes/codemods/cleanup/vue/dotlocation.md)
-  * **Enforce consistent newlines before and after dots in `&lt;template&gt;`**
-  * Enforce consistent newlines before and after dots in `&lt;template&gt;` See rule details for [vue/dot-location](https://eslint.vuejs.org/rules/dot-location.html).
-* [org.openrewrite.codemods.cleanup.vue.DotNotation](/recipes/codemods/cleanup/vue/dotnotation.md)
-  * **Enforce dot notation whenever possible in `&lt;template&gt;`**
-  * Enforce dot notation whenever possible in `&lt;template&gt;` See rule details for [vue/dot-notation](https://eslint.vuejs.org/rules/dot-notation.html).
-* [org.openrewrite.codemods.cleanup.vue.Eqeqeq](/recipes/codemods/cleanup/vue/eqeqeq.md)
-  * **Require the use of === and !== in `&lt;template&gt;`**
-  * Require the use of === and !== in `&lt;template&gt;` See rule details for [vue/eqeqeq](https://eslint.vuejs.org/rules/eqeqeq.html).
-* [org.openrewrite.codemods.cleanup.vue.FuncCallSpacing](/recipes/codemods/cleanup/vue/funccallspacing.md)
-  * **Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`**
-  * Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;` See rule details for [vue/func-call-spacing](https://eslint.vuejs.org/rules/func-call-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentNewline](/recipes/codemods/cleanup/vue/htmlcommentcontentnewline.md)
-  * **Enforce unified line brake in HTML comments**
-  * Enforce unified line brake in HTML comments See rule details for [vue/html-comment-content-newline](https://eslint.vuejs.org/rules/html-comment-content-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.HtmlCommentContentSpacing](/recipes/codemods/cleanup/vue/htmlcommentcontentspacing.md)
-  * **Enforce unified spacing in HTML comments**
-  * Enforce unified spacing in HTML comments See rule details for [vue/html-comment-content-spacing](https://eslint.vuejs.org/rules/html-comment-content-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.HtmlCommentIndent](/recipes/codemods/cleanup/vue/htmlcommentindent.md)
-  * **Enforce consistent indentation in HTML comments**
-  * Enforce consistent indentation in HTML comments See rule details for [vue/html-comment-indent](https://eslint.vuejs.org/rules/html-comment-indent.html).
-* [org.openrewrite.codemods.cleanup.vue.KeySpacing](/recipes/codemods/cleanup/vue/keyspacing.md)
-  * **Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;`**
-  * Enforce consistent spacing between keys and values in object literal properties in `&lt;template&gt;` See rule details for [vue/key-spacing](https://eslint.vuejs.org/rules/key-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.KeywordSpacing](/recipes/codemods/cleanup/vue/keywordspacing.md)
-  * **Enforce consistent spacing before and after keywords in `&lt;template&gt;`**
-  * Enforce consistent spacing before and after keywords in `&lt;template&gt;` See rule details for [vue/keyword-spacing](https://eslint.vuejs.org/rules/keyword-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.MultilineTernary](/recipes/codemods/cleanup/vue/multilineternary.md)
-  * **Enforce newlines between operands of ternary expressions in `&lt;template&gt;`**
-  * Enforce newlines between operands of ternary expressions in `&lt;template&gt;` See rule details for [vue/multiline-ternary](https://eslint.vuejs.org/rules/multiline-ternary.html).
-* [org.openrewrite.codemods.cleanup.vue.NewLineBetweenMultiLineProperty](/recipes/codemods/cleanup/vue/newlinebetweenmultilineproperty.md)
-  * **Enforce new lines between multi-line properties in Vue components**
-  * Enforce new lines between multi-line properties in Vue components See rule details for [vue/new-line-between-multi-line-property](https://eslint.vuejs.org/rules/new-line-between-multi-line-property.html).
-* [org.openrewrite.codemods.cleanup.vue.NextTickStyle](/recipes/codemods/cleanup/vue/nexttickstyle.md)
-  * **Enforce Promise or callback style in nextTick**
-  * Enforce Promise or callback style in nextTick See rule details for [vue/next-tick-style](https://eslint.vuejs.org/rules/next-tick-style.html).
-* [org.openrewrite.codemods.cleanup.vue.NoExtraParens](/recipes/codemods/cleanup/vue/noextraparens.md)
-  * **Disallow unnecessary parentheses in `&lt;template&gt;`**
-  * Disallow unnecessary parentheses in `&lt;template&gt;` See rule details for [vue/no-extra-parens](https://eslint.vuejs.org/rules/no-extra-parens.html).
-* [org.openrewrite.codemods.cleanup.vue.NoRequiredPropWithDefault](/recipes/codemods/cleanup/vue/norequiredpropwithdefault.md)
-  * **Enforce props with default values to be optional**
-  * Enforce props with default values to be optional See rule details for [vue/no-required-prop-with-default](https://eslint.vuejs.org/rules/no-required-prop-with-default.html).
-* [org.openrewrite.codemods.cleanup.vue.NoUnsupportedFeatures](/recipes/codemods/cleanup/vue/nounsupportedfeatures.md)
-  * **Disallow unsupported Vue.js syntax on the specified version**
-  * Disallow unsupported Vue.js syntax on the specified version See rule details for [vue/no-unsupported-features](https://eslint.vuejs.org/rules/no-unsupported-features.html).
-* [org.openrewrite.codemods.cleanup.vue.NoUselessMustaches](/recipes/codemods/cleanup/vue/nouselessmustaches.md)
-  * **Disallow unnecessary mustache interpolations**
-  * Disallow unnecessary mustache interpolations See rule details for [vue/no-useless-mustaches](https://eslint.vuejs.org/rules/no-useless-mustaches.html).
-* [org.openrewrite.codemods.cleanup.vue.NoUselessVBind](/recipes/codemods/cleanup/vue/nouselessvbind.md)
-  * **Disallow unnecessary v-bind directives**
-  * Disallow unnecessary v-bind directives See rule details for [vue/no-useless-v-bind](https://eslint.vuejs.org/rules/no-useless-v-bind.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectCurlyNewline](/recipes/codemods/cleanup/vue/objectcurlynewline.md)
-  * **Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`**
-  * Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;` See rule details for [vue/object-curly-newline](https://eslint.vuejs.org/rules/object-curly-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectCurlySpacing](/recipes/codemods/cleanup/vue/objectcurlyspacing.md)
-  * **Enforce consistent spacing inside braces in `&lt;template&gt;`**
-  * Enforce consistent spacing inside braces in `&lt;template&gt;` See rule details for [vue/object-curly-spacing](https://eslint.vuejs.org/rules/object-curly-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectPropertyNewline](/recipes/codemods/cleanup/vue/objectpropertynewline.md)
-  * **Enforce placing object properties on separate lines in `&lt;template&gt;`**
-  * Enforce placing object properties on separate lines in `&lt;template&gt;` See rule details for [vue/object-property-newline](https://eslint.vuejs.org/rules/object-property-newline.html).
-* [org.openrewrite.codemods.cleanup.vue.ObjectShorthand](/recipes/codemods/cleanup/vue/objectshorthand.md)
-  * **Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;`**
-  * Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;` See rule details for [vue/object-shorthand](https://eslint.vuejs.org/rules/object-shorthand.html).
-* [org.openrewrite.codemods.cleanup.vue.OperatorLinebreak](/recipes/codemods/cleanup/vue/operatorlinebreak.md)
-  * **Enforce consistent linebreak style for operators in `&lt;template&gt;`**
-  * Enforce consistent linebreak style for operators in `&lt;template&gt;` See rule details for [vue/operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html).
-* [org.openrewrite.codemods.cleanup.vue.OrderInComponents](/recipes/codemods/cleanup/vue/orderincomponents.md)
-  * **Enforce order of properties in components**
-  * Enforce order of properties in components See rule details for [vue/order-in-components](https://eslint.vuejs.org/rules/order-in-components.html).
-* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenBlocks](/recipes/codemods/cleanup/vue/paddinglinebetweenblocks.md)
-  * **Require or disallow padding lines between blocks**
-  * Require or disallow padding lines between blocks See rule details for [vue/padding-line-between-blocks](https://eslint.vuejs.org/rules/padding-line-between-blocks.html).
-* [org.openrewrite.codemods.cleanup.vue.PaddingLineBetweenTags](/recipes/codemods/cleanup/vue/paddinglinebetweentags.md)
-  * **Require or disallow newlines between sibling tags in template**
-  * Require or disallow newlines between sibling tags in template See rule details for [vue/padding-line-between-tags](https://eslint.vuejs.org/rules/padding-line-between-tags.html).
-* [org.openrewrite.codemods.cleanup.vue.PaddingLinesInComponentDefinition](/recipes/codemods/cleanup/vue/paddinglinesincomponentdefinition.md)
-  * **Require or disallow padding lines in component definition**
-  * Require or disallow padding lines in component definition See rule details for [vue/padding-lines-in-component-definition](https://eslint.vuejs.org/rules/padding-lines-in-component-definition.html).
-* [org.openrewrite.codemods.cleanup.vue.PreferDefineOptions](/recipes/codemods/cleanup/vue/preferdefineoptions.md)
-  * **Enforce use of defineOptions instead of default export**
-  * Enforce use of defineOptions instead of default export. See rule details for [vue/prefer-define-options](https://eslint.vuejs.org/rules/prefer-define-options.html).
-* [org.openrewrite.codemods.cleanup.vue.PreferSeparateStaticClass](/recipes/codemods/cleanup/vue/preferseparatestaticclass.md)
-  * **Require static class names in template to be in a separate class attribute**
-  * Require static class names in template to be in a separate class attribute See rule details for [vue/prefer-separate-static-class](https://eslint.vuejs.org/rules/prefer-separate-static-class.html).
-* [org.openrewrite.codemods.cleanup.vue.PreferTemplate](/recipes/codemods/cleanup/vue/prefertemplate.md)
-  * **Require template literals instead of string concatenation in `&lt;template&gt;`**
-  * Require template literals instead of string concatenation in `&lt;template&gt;` See rule details for [vue/prefer-template](https://eslint.vuejs.org/rules/prefer-template.html).
-* [org.openrewrite.codemods.cleanup.vue.QuoteProps](/recipes/codemods/cleanup/vue/quoteprops.md)
-  * **Require quotes around object literal property names in `&lt;template&gt;`**
-  * Require quotes around object literal property names in `&lt;template&gt;` See rule details for [vue/quote-props](https://eslint.vuejs.org/rules/quote-props.html).
-* [org.openrewrite.codemods.cleanup.vue.RecommendedVueCodeCleanup](/recipes/codemods/cleanup/vue/recommendedvuecodecleanup.md)
-  * **Recommended vue code cleanup**
-  * Collection of cleanup ESLint rules from [eslint-plugin-vue](https://eslint.vuejs.org/).
-* [org.openrewrite.codemods.cleanup.vue.ScriptIndent](/recipes/codemods/cleanup/vue/scriptindent.md)
-  * **Enforce consistent indentation in `&lt;script&gt;`**
-  * Enforce consistent indentation in `&lt;script&gt;` See rule details for [vue/script-indent](https://eslint.vuejs.org/rules/script-indent.html).
-* [org.openrewrite.codemods.cleanup.vue.SpaceInParens](/recipes/codemods/cleanup/vue/spaceinparens.md)
-  * **Enforce consistent spacing inside parentheses in `&lt;template&gt;`**
-  * Enforce consistent spacing inside parentheses in `&lt;template&gt;` See rule details for [vue/space-in-parens](https://eslint.vuejs.org/rules/space-in-parens.html).
-* [org.openrewrite.codemods.cleanup.vue.SpaceInfixOps](/recipes/codemods/cleanup/vue/spaceinfixops.md)
-  * **Require spacing around infix operators in `&lt;template&gt;`**
-  * Require spacing around infix operators in `&lt;template&gt;` See rule details for [vue/space-infix-ops](https://eslint.vuejs.org/rules/space-infix-ops.html).
-* [org.openrewrite.codemods.cleanup.vue.SpaceUnaryOps](/recipes/codemods/cleanup/vue/spaceunaryops.md)
-  * **Enforce consistent spacing before or after unary operators in `&lt;template&gt;`**
-  * Enforce consistent spacing before or after unary operators in `&lt;template&gt;` See rule details for [vue/space-unary-ops](https://eslint.vuejs.org/rules/space-unary-ops.html).
-* [org.openrewrite.codemods.cleanup.vue.StaticClassNamesOrder](/recipes/codemods/cleanup/vue/staticclassnamesorder.md)
-  * **Enforce static class names order**
-  * Enforce static class names order See rule details for [vue/static-class-names-order](https://eslint.vuejs.org/rules/static-class-names-order.html).
-* [org.openrewrite.codemods.cleanup.vue.TemplateCurlySpacing](/recipes/codemods/cleanup/vue/templatecurlyspacing.md)
-  * **Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;`**
-  * Require or disallow spacing around embedded expressions of template strings in `&lt;template&gt;` See rule details for [vue/template-curly-spacing](https://eslint.vuejs.org/rules/template-curly-spacing.html).
-* [org.openrewrite.codemods.cleanup.vue.ThisInTemplate](/recipes/codemods/cleanup/vue/thisintemplate.md)
-  * **Disallow usage of this in template**
-  * Disallow usage of this in template See rule details for [vue/this-in-template](https://eslint.vuejs.org/rules/this-in-template.html).
-* [org.openrewrite.codemods.cleanup.vue.VForDelimiterStyle](/recipes/codemods/cleanup/vue/vfordelimiterstyle.md)
-  * **Enforce v-for directive's delimiter style**
-  * Enforce v-for directive's delimiter style See rule details for [vue/v-for-delimiter-style](https://eslint.vuejs.org/rules/v-for-delimiter-style.html).
-* [org.openrewrite.codemods.cleanup.vue.VIfElseKey](/recipes/codemods/cleanup/vue/vifelsekey.md)
-  * **Require key attribute for conditionally rendered repeated components**
-  * Require key attribute for conditionally rendered repeated components See rule details for [vue/v-if-else-key](https://eslint.vuejs.org/rules/v-if-else-key.html).
-* [org.openrewrite.codemods.cleanup.vue.VOnHandlerStyle](/recipes/codemods/cleanup/vue/vonhandlerstyle.md)
-  * **Enforce writing style for handlers in v-on directives**
-  * Enforce writing style for handlers in v-on directives See rule details for [vue/v-on-handler-style](https://eslint.vuejs.org/rules/v-on-handler-style.html).
-* [org.openrewrite.codemods.ecmascript.5to6.ECMAScript6BestPractices](/recipes/codemods/ecmascript/5to6/ecmascript6bestpractices.md)
-  * **Upgrade ECMAScript 5 to ECMAScript 6**
-  * A collection of common ECMAScript 5 to ECMAScript 6 updates.
-* [org.openrewrite.codemods.ecmascript.5to6.amdToEsm](/recipes/codemods/ecmascript/5to6/amdtoesm.md)
-  * **Transform AMD style `define()` calls to ES6 `import` statements**
-  * Transform AMD style `define()` calls to ES6 `import` statements.
-* [org.openrewrite.codemods.ecmascript.5to6.cjsToEsm](/recipes/codemods/ecmascript/5to6/cjstoesm.md)
-  * **Transform CommonJS style `require()` calls to ES6 `import` statements**
-  * Transform CommonJS style `require()` calls to ES6 `import` statements.
-* [org.openrewrite.codemods.ecmascript.5to6.namedExportGeneration](/recipes/codemods/ecmascript/5to6/namedexportgeneration.md)
-  * **Generate named exports from CommonJS modules**
-  * Generate named exports from CommonJS modules.
-* [org.openrewrite.codemods.ecmascript.5to6.noStrict](/recipes/codemods/ecmascript/5to6/nostrict.md)
-  * **Remove &quot;use strict&quot; directives**
-  * Remove &quot;use strict&quot; directives.
-* [org.openrewrite.codemods.ecmascript.5to6.simpleArrow](/recipes/codemods/ecmascript/5to6/simplearrow.md)
-  * **Replace all function expressions with only `return` statement with simple arrow**
-  * Replace all function expressions with only `return` statement with simple arrow function.
-* [org.openrewrite.codemods.ecmascript.5to6.varToLet](/recipes/codemods/ecmascript/5to6/vartolet.md)
-  * **Convert `var` to `let`**
-  * Convert `var` to `let`.
-* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptDefaults](/recipes/codemods/ecmascript/eslinttypescriptdefaults.md)
-  * **Lint TypeScript code using ESLint**
-  * The default config includes the `@typescript-eslint` plugin and the corresponding `plugin:@typescript-eslint/recommended` extend.
-* [org.openrewrite.codemods.ecmascript.ESLintTypeScriptPrettier](/recipes/codemods/ecmascript/eslinttypescriptprettier.md)
-  * **Format TypeScript using ESLint Prettier plugin**
-  * Formats all TypeScript source code using the ESLint Prettier plugin.
-* [org.openrewrite.codemods.format.ArrayBracketNewline](/recipes/codemods/format/arraybracketnewline.md)
-  * **Enforce linebreaks after opening and before closing array brackets**
-  * Enforce linebreaks after opening and before closing array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-newline).
-* [org.openrewrite.codemods.format.ArrayBracketSpacing](/recipes/codemods/format/arraybracketspacing.md)
-  * **Enforce consistent spacing inside array brackets**
-  * Enforce consistent spacing inside array brackets  See [rule details](https://eslint.style/rules/default/array-bracket-spacing).
-* [org.openrewrite.codemods.format.ArrayElementNewline](/recipes/codemods/format/arrayelementnewline.md)
-  * **Enforce line breaks after each array element**
-  * Enforce line breaks after each array element  See [rule details](https://eslint.style/rules/default/array-element-newline).
-* [org.openrewrite.codemods.format.ArrowParens](/recipes/codemods/format/arrowparens.md)
-  * **Require parentheses around arrow function arguments**
-  * Require parentheses around arrow function arguments  See [rule details](https://eslint.style/rules/default/arrow-parens).
-* [org.openrewrite.codemods.format.ArrowSpacing](/recipes/codemods/format/arrowspacing.md)
-  * **Enforce consistent spacing before and after the arrow in arrow functions**
-  * Enforce consistent spacing before and after the arrow in arrow functions  See [rule details](https://eslint.style/rules/default/arrow-spacing).
-* [org.openrewrite.codemods.format.BlockSpacing](/recipes/codemods/format/blockspacing.md)
-  * **Disallow or enforce spaces inside of blocks after opening block and before closing block**
-  * Disallow or enforce spaces inside of blocks after opening block and before closing block  See [rule details](https://eslint.style/rules/default/block-spacing).
-* [org.openrewrite.codemods.format.BraceStyle](/recipes/codemods/format/bracestyle.md)
-  * **Enforce consistent brace style for blocks**
-  * Enforce consistent brace style for blocks  See [rule details](https://eslint.style/rules/default/brace-style).
-* [org.openrewrite.codemods.format.CommaDangle](/recipes/codemods/format/commadangle.md)
-  * **Require or disallow trailing commas**
-  * Require or disallow trailing commas  See [rule details](https://eslint.style/rules/default/comma-dangle).
-* [org.openrewrite.codemods.format.CommaSpacing](/recipes/codemods/format/commaspacing.md)
-  * **Enforce consistent spacing before and after commas**
-  * Enforce consistent spacing before and after commas  See [rule details](https://eslint.style/rules/default/comma-spacing).
-* [org.openrewrite.codemods.format.CommaStyle](/recipes/codemods/format/commastyle.md)
-  * **Enforce consistent comma style**
-  * Enforce consistent comma style  See [rule details](https://eslint.style/rules/default/comma-style).
-* [org.openrewrite.codemods.format.ComputedPropertySpacing](/recipes/codemods/format/computedpropertyspacing.md)
-  * **Enforce consistent spacing inside computed property brackets**
-  * Enforce consistent spacing inside computed property brackets  See [rule details](https://eslint.style/rules/default/computed-property-spacing).
-* [org.openrewrite.codemods.format.DotLocation](/recipes/codemods/format/dotlocation.md)
-  * **Enforce consistent newlines before and after dots**
-  * Enforce consistent newlines before and after dots  See [rule details](https://eslint.style/rules/default/dot-location).
-* [org.openrewrite.codemods.format.EolLast](/recipes/codemods/format/eollast.md)
-  * **Require or disallow newline at the end of files**
-  * Require or disallow newline at the end of files  See [rule details](https://eslint.style/rules/default/eol-last).
-* [org.openrewrite.codemods.format.FuncCallSpacing](/recipes/codemods/format/funccallspacing.md)
-  * **Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;**
-  * Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;.  See [rule details](https://eslint.style/rules/default/func-call-spacing).
-* [org.openrewrite.codemods.format.FunctionCallArgumentNewline](/recipes/codemods/format/functioncallargumentnewline.md)
-  * **Enforce line breaks between arguments of a function call**
-  * Enforce line breaks between arguments of a function call  See [rule details](https://eslint.style/rules/default/function-call-argument-newline).
-* [org.openrewrite.codemods.format.FunctionCallSpacing](/recipes/codemods/format/functioncallspacing.md)
-  * **Require or disallow spacing between function identifiers and their invocations**
-  * Require or disallow spacing between function identifiers and their invocations  See [rule details](https://eslint.style/rules/default/function-call-spacing).
-* [org.openrewrite.codemods.format.FunctionParenNewline](/recipes/codemods/format/functionparennewline.md)
-  * **Enforce consistent line breaks inside function parentheses**
-  * Enforce consistent line breaks inside function parentheses  See [rule details](https://eslint.style/rules/default/function-paren-newline).
-* [org.openrewrite.codemods.format.GeneratorStarSpacing](/recipes/codemods/format/generatorstarspacing.md)
-  * **Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions**
-  * Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions  See [rule details](https://eslint.style/rules/default/generator-star-spacing).
-* [org.openrewrite.codemods.format.ImplicitArrowLinebreak](/recipes/codemods/format/implicitarrowlinebreak.md)
-  * **Enforce the location of arrow function bodies**
-  * Enforce the location of arrow function bodies  See [rule details](https://eslint.style/rules/default/implicit-arrow-linebreak).
-* [org.openrewrite.codemods.format.Indent](/recipes/codemods/format/indent.md)
-  * **Enforce consistent indentation**
-  * Enforce consistent indentation  See [rule details](https://eslint.style/rules/default/indent).
-* [org.openrewrite.codemods.format.IndentBinaryOps](/recipes/codemods/format/indentbinaryops.md)
-  * **Indentation for binary operators**
-  * Indentation for binary operators  See [rule details](https://eslint.style/rules/default/indent-binary-ops).
-* [org.openrewrite.codemods.format.JsxClosingBracketLocation](/recipes/codemods/format/jsxclosingbracketlocation.md)
-  * **Enforce closing bracket location in JSX**
-  * Enforce closing bracket location in JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-bracket-location).
-* [org.openrewrite.codemods.format.JsxClosingTagLocation](/recipes/codemods/format/jsxclosingtaglocation.md)
-  * **Enforce closing tag location for multiline JSX**
-  * Enforce closing tag location for multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-closing-tag-location).
-* [org.openrewrite.codemods.format.JsxCurlyBracePresence](/recipes/codemods/format/jsxcurlybracepresence.md)
-  * **Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes**
-  * Disallow unnecessary JSX expressions when literals alone are sufficient or enforce JSX expressions on literals in JSX children or attributes  See [rule details](https://eslint.style/rules/default/jsx-curly-brace-presence).
-* [org.openrewrite.codemods.format.JsxCurlyNewline](/recipes/codemods/format/jsxcurlynewline.md)
-  * **Enforce consistent linebreaks in curly braces in JSX attributes and expressions**
-  * Enforce consistent linebreaks in curly braces in JSX attributes and expressions  See [rule details](https://eslint.style/rules/default/jsx-curly-newline).
-* [org.openrewrite.codemods.format.JsxCurlySpacing](/recipes/codemods/format/jsxcurlyspacing.md)
-  * **Enforce or disallow spaces inside of curly braces in JSX attributes and expressions**
-  * Enforce or disallow spaces inside of curly braces in JSX attributes and expressions  See [rule details](https://eslint.style/rules/default/jsx-curly-spacing).
-* [org.openrewrite.codemods.format.JsxEqualsSpacing](/recipes/codemods/format/jsxequalsspacing.md)
-  * **Enforce or disallow spaces around equal signs in JSX attributes**
-  * Enforce or disallow spaces around equal signs in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-equals-spacing).
-* [org.openrewrite.codemods.format.JsxFirstPropNewLine](/recipes/codemods/format/jsxfirstpropnewline.md)
-  * **Enforce proper position of the first property in JSX**
-  * Enforce proper position of the first property in JSX  See [rule details](https://eslint.style/rules/default/jsx-first-prop-new-line).
-* [org.openrewrite.codemods.format.JsxIndent](/recipes/codemods/format/jsxindent.md)
-  * **Enforce JSX indentation**
-  * Enforce JSX indentation  See [rule details](https://eslint.style/rules/default/jsx-indent).
-* [org.openrewrite.codemods.format.JsxIndentProps](/recipes/codemods/format/jsxindentprops.md)
-  * **Enforce props indentation in JSX**
-  * Enforce props indentation in JSX  See [rule details](https://eslint.style/rules/default/jsx-indent-props).
-* [org.openrewrite.codemods.format.JsxMaxPropsPerLine](/recipes/codemods/format/jsxmaxpropsperline.md)
-  * **Enforce maximum of props on a single line in JSX**
-  * Enforce maximum of props on a single line in JSX  See [rule details](https://eslint.style/rules/default/jsx-max-props-per-line).
-* [org.openrewrite.codemods.format.JsxNewline](/recipes/codemods/format/jsxnewline.md)
-  * **Require or prevent a new line after jsx elements and expressions**
-  * Require or prevent a new line after jsx elements and expressions.  See [rule details](https://eslint.style/rules/default/jsx-newline).
-* [org.openrewrite.codemods.format.JsxOneExpressionPerLine](/recipes/codemods/format/jsxoneexpressionperline.md)
-  * **Require one JSX element per line**
-  * Require one JSX element per line  See [rule details](https://eslint.style/rules/default/jsx-one-expression-per-line).
-* [org.openrewrite.codemods.format.JsxPascalCase](/recipes/codemods/format/jsxpascalcase.md)
-  * **Enforce PascalCase for user-defined JSX components**
-  * Enforce PascalCase for user-defined JSX components  See [rule details](https://eslint.style/rules/default/jsx-pascal-case).
-* [org.openrewrite.codemods.format.JsxPropsNoMultiSpaces](/recipes/codemods/format/jsxpropsnomultispaces.md)
-  * **Disallow multiple spaces between inline JSX props**
-  * Disallow multiple spaces between inline JSX props  See [rule details](https://eslint.style/rules/default/jsx-props-no-multi-spaces).
-* [org.openrewrite.codemods.format.JsxQuotes](/recipes/codemods/format/jsxquotes.md)
-  * **Enforce the consistent use of either double or single quotes in JSX attributes**
-  * Enforce the consistent use of either double or single quotes in JSX attributes  See [rule details](https://eslint.style/rules/default/jsx-quotes).
-* [org.openrewrite.codemods.format.JsxSelfClosingComp](/recipes/codemods/format/jsxselfclosingcomp.md)
-  * **Disallow extra closing tags for components without children**
-  * Disallow extra closing tags for components without children  See [rule details](https://eslint.style/rules/default/jsx-self-closing-comp).
-* [org.openrewrite.codemods.format.JsxSortProps](/recipes/codemods/format/jsxsortprops.md)
-  * **Enforce props alphabetical sorting**
-  * Enforce props alphabetical sorting  See [rule details](https://eslint.style/rules/default/jsx-sort-props).
-* [org.openrewrite.codemods.format.JsxTagSpacing](/recipes/codemods/format/jsxtagspacing.md)
-  * **Enforce whitespace in and around the JSX opening and closing brackets**
-  * Enforce whitespace in and around the JSX opening and closing brackets  See [rule details](https://eslint.style/rules/default/jsx-tag-spacing).
-* [org.openrewrite.codemods.format.JsxWrapMultilines](/recipes/codemods/format/jsxwrapmultilines.md)
-  * **Disallow missing parentheses around multiline JSX**
-  * Disallow missing parentheses around multiline JSX  See [rule details](https://eslint.style/rules/default/jsx-wrap-multilines).
-* [org.openrewrite.codemods.format.KeySpacing](/recipes/codemods/format/keyspacing.md)
-  * **Enforce consistent spacing between keys and values in object literal properties**
-  * Enforce consistent spacing between keys and values in object literal properties  See [rule details](https://eslint.style/rules/default/key-spacing).
-* [org.openrewrite.codemods.format.KeywordSpacing](/recipes/codemods/format/keywordspacing.md)
-  * **Enforce consistent spacing before and after keywords**
-  * Enforce consistent spacing before and after keywords  See [rule details](https://eslint.style/rules/default/keyword-spacing).
-* [org.openrewrite.codemods.format.LinebreakStyle](/recipes/codemods/format/linebreakstyle.md)
-  * **Enforce consistent linebreak style**
-  * Enforce consistent linebreak style  See [rule details](https://eslint.style/rules/default/linebreak-style).
-* [org.openrewrite.codemods.format.LinesAroundComment](/recipes/codemods/format/linesaroundcomment.md)
-  * **Require empty lines around comments**
-  * Require empty lines around comments  See [rule details](https://eslint.style/rules/default/lines-around-comment).
-* [org.openrewrite.codemods.format.LinesBetweenClassMembers](/recipes/codemods/format/linesbetweenclassmembers.md)
-  * **Require or disallow an empty line between class members**
-  * Require or disallow an empty line between class members  See [rule details](https://eslint.style/rules/default/lines-between-class-members).
-* [org.openrewrite.codemods.format.MemberDelimiterStyle](/recipes/codemods/format/memberdelimiterstyle.md)
-  * **Require a specific member delimiter style for interfaces and type literals**
-  * Require a specific member delimiter style for interfaces and type literals  See [rule details](https://eslint.style/rules/default/member-delimiter-style).
-* [org.openrewrite.codemods.format.MultilineTernary](/recipes/codemods/format/multilineternary.md)
-  * **Enforce newlines between operands of ternary expressions**
-  * Enforce newlines between operands of ternary expressions  See [rule details](https://eslint.style/rules/default/multiline-ternary).
-* [org.openrewrite.codemods.format.NewParens](/recipes/codemods/format/newparens.md)
-  * **Enforce or disallow parentheses when invoking a constructor with no arguments**
-  * Enforce or disallow parentheses when invoking a constructor with no arguments  See [rule details](https://eslint.style/rules/default/new-parens).
-* [org.openrewrite.codemods.format.NewlinePerChainedCall](/recipes/codemods/format/newlineperchainedcall.md)
-  * **Require a newline after each call in a method chain**
-  * Require a newline after each call in a method chain  See [rule details](https://eslint.style/rules/default/newline-per-chained-call).
-* [org.openrewrite.codemods.format.NoConfusingArrow](/recipes/codemods/format/noconfusingarrow.md)
-  * **Disallow arrow functions where they could be confused with comparisons**
-  * Disallow arrow functions where they could be confused with comparisons  See [rule details](https://eslint.style/rules/default/no-confusing-arrow).
-* [org.openrewrite.codemods.format.NoExtraParens](/recipes/codemods/format/noextraparens.md)
-  * **Disallow unnecessary parentheses**
-  * Disallow unnecessary parentheses  See [rule details](https://eslint.style/rules/default/no-extra-parens).
-* [org.openrewrite.codemods.format.NoExtraSemi](/recipes/codemods/format/noextrasemi.md)
-  * **Disallow unnecessary semicolons**
-  * Disallow unnecessary semicolons  See [rule details](https://eslint.style/rules/default/no-extra-semi).
-* [org.openrewrite.codemods.format.NoFloatingDecimal](/recipes/codemods/format/nofloatingdecimal.md)
-  * **Disallow leading or trailing decimal points in numeric literals**
-  * Disallow leading or trailing decimal points in numeric literals  See [rule details](https://eslint.style/rules/default/no-floating-decimal).
-* [org.openrewrite.codemods.format.NoMultiSpaces](/recipes/codemods/format/nomultispaces.md)
-  * **Disallow multiple spaces**
-  * Disallow multiple spaces  See [rule details](https://eslint.style/rules/default/no-multi-spaces).
-* [org.openrewrite.codemods.format.NoMultipleEmptyLines](/recipes/codemods/format/nomultipleemptylines.md)
-  * **Disallow multiple empty lines**
-  * Disallow multiple empty lines  See [rule details](https://eslint.style/rules/default/no-multiple-empty-lines).
-* [org.openrewrite.codemods.format.NoTrailingSpaces](/recipes/codemods/format/notrailingspaces.md)
-  * **Disallow trailing whitespace at the end of lines**
-  * Disallow trailing whitespace at the end of lines  See [rule details](https://eslint.style/rules/default/no-trailing-spaces).
-* [org.openrewrite.codemods.format.NoWhitespaceBeforeProperty](/recipes/codemods/format/nowhitespacebeforeproperty.md)
-  * **Disallow whitespace before properties**
-  * Disallow whitespace before properties  See [rule details](https://eslint.style/rules/default/no-whitespace-before-property).
-* [org.openrewrite.codemods.format.NonblockStatementBodyPosition](/recipes/codemods/format/nonblockstatementbodyposition.md)
-  * **Enforce the location of single-line statements**
-  * Enforce the location of single-line statements  See [rule details](https://eslint.style/rules/default/nonblock-statement-body-position).
-* [org.openrewrite.codemods.format.ObjectCurlyNewline](/recipes/codemods/format/objectcurlynewline.md)
-  * **Enforce consistent line breaks after opening and before closing braces**
-  * Enforce consistent line breaks after opening and before closing braces  See [rule details](https://eslint.style/rules/default/object-curly-newline).
-* [org.openrewrite.codemods.format.ObjectCurlySpacing](/recipes/codemods/format/objectcurlyspacing.md)
-  * **Enforce consistent spacing inside braces**
-  * Enforce consistent spacing inside braces  See [rule details](https://eslint.style/rules/default/object-curly-spacing).
-* [org.openrewrite.codemods.format.ObjectPropertyNewline](/recipes/codemods/format/objectpropertynewline.md)
-  * **Enforce placing object properties on separate lines**
-  * Enforce placing object properties on separate lines  See [rule details](https://eslint.style/rules/default/object-property-newline).
-* [org.openrewrite.codemods.format.OneVarDeclarationPerLine](/recipes/codemods/format/onevardeclarationperline.md)
-  * **Require or disallow newlines around variable declarations**
-  * Require or disallow newlines around variable declarations  See [rule details](https://eslint.style/rules/default/one-var-declaration-per-line).
-* [org.openrewrite.codemods.format.OperatorLinebreak](/recipes/codemods/format/operatorlinebreak.md)
-  * **Enforce consistent linebreak style for operators**
-  * Enforce consistent linebreak style for operators  See [rule details](https://eslint.style/rules/default/operator-linebreak).
-* [org.openrewrite.codemods.format.PaddedBlocks](/recipes/codemods/format/paddedblocks.md)
-  * **Require or disallow padding within blocks**
-  * Require or disallow padding within blocks  See [rule details](https://eslint.style/rules/default/padded-blocks).
-* [org.openrewrite.codemods.format.PaddingLineBetweenStatements](/recipes/codemods/format/paddinglinebetweenstatements.md)
-  * **Require or disallow padding lines between statements**
-  * Require or disallow padding lines between statements  See [rule details](https://eslint.style/rules/default/padding-line-between-statements).
-* [org.openrewrite.codemods.format.QuoteProps](/recipes/codemods/format/quoteprops.md)
-  * **Require quotes around object literal property names**
-  * Require quotes around object literal property names  See [rule details](https://eslint.style/rules/default/quote-props).
-* [org.openrewrite.codemods.format.Quotes](/recipes/codemods/format/quotes.md)
-  * **Enforce the consistent use of either backticks, double, or single quotes**
-  * Enforce the consistent use of either backticks, double, or single quotes  See [rule details](https://eslint.style/rules/default/quotes).
-* [org.openrewrite.codemods.format.RecommendedESLintStyling](/recipes/codemods/format/recommendedeslintstyling.md)
-  * **Recommended ESLint Styling**
-  * Collection of stylistic ESLint rules that are recommended by the [ESLint Style.](https://eslint.style/).
-* [org.openrewrite.codemods.format.RestSpreadSpacing](/recipes/codemods/format/restspreadspacing.md)
-  * **Enforce spacing between rest and spread operators and their expressions**
-  * Enforce spacing between rest and spread operators and their expressions  See [rule details](https://eslint.style/rules/default/rest-spread-spacing).
-* [org.openrewrite.codemods.format.Semi](/recipes/codemods/format/semi.md)
-  * **Require or disallow semicolons instead of ASI**
-  * Require or disallow semicolons instead of ASI  See [rule details](https://eslint.style/rules/default/semi).
-* [org.openrewrite.codemods.format.SemiSpacing](/recipes/codemods/format/semispacing.md)
-  * **Enforce consistent spacing before and after semicolons**
-  * Enforce consistent spacing before and after semicolons  See [rule details](https://eslint.style/rules/default/semi-spacing).
-* [org.openrewrite.codemods.format.SemiStyle](/recipes/codemods/format/semistyle.md)
-  * **Enforce location of semicolons**
-  * Enforce location of semicolons  See [rule details](https://eslint.style/rules/default/semi-style).
-* [org.openrewrite.codemods.format.SpaceBeforeBlocks](/recipes/codemods/format/spacebeforeblocks.md)
-  * **Enforce consistent spacing before blocks**
-  * Enforce consistent spacing before blocks  See [rule details](https://eslint.style/rules/default/space-before-blocks).
-* [org.openrewrite.codemods.format.SpaceBeforeFunctionParen](/recipes/codemods/format/spacebeforefunctionparen.md)
-  * **Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis**
-  * Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis  See [rule details](https://eslint.style/rules/default/space-before-function-paren).
-* [org.openrewrite.codemods.format.SpaceInParens](/recipes/codemods/format/spaceinparens.md)
-  * **Enforce consistent spacing inside parentheses**
-  * Enforce consistent spacing inside parentheses  See [rule details](https://eslint.style/rules/default/space-in-parens).
-* [org.openrewrite.codemods.format.SpaceInfixOps](/recipes/codemods/format/spaceinfixops.md)
-  * **Require spacing around infix operators**
-  * Require spacing around infix operators  See [rule details](https://eslint.style/rules/default/space-infix-ops).
-* [org.openrewrite.codemods.format.SpaceUnaryOps](/recipes/codemods/format/spaceunaryops.md)
-  * **Enforce consistent spacing before or after unary operators**
-  * Enforce consistent spacing before or after unary operators  See [rule details](https://eslint.style/rules/default/space-unary-ops).
-* [org.openrewrite.codemods.format.SpacedComment](/recipes/codemods/format/spacedcomment.md)
-  * **Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment**
-  * Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment  See [rule details](https://eslint.style/rules/default/spaced-comment).
-* [org.openrewrite.codemods.format.SwitchColonSpacing](/recipes/codemods/format/switchcolonspacing.md)
-  * **Enforce spacing around colons of switch statements**
-  * Enforce spacing around colons of switch statements  See [rule details](https://eslint.style/rules/default/switch-colon-spacing).
-* [org.openrewrite.codemods.format.TemplateCurlySpacing](/recipes/codemods/format/templatecurlyspacing.md)
-  * **Require or disallow spacing around embedded expressions of template strings**
-  * Require or disallow spacing around embedded expressions of template strings  See [rule details](https://eslint.style/rules/default/template-curly-spacing).
-* [org.openrewrite.codemods.format.TemplateTagSpacing](/recipes/codemods/format/templatetagspacing.md)
-  * **Require or disallow spacing between template tags and their literals**
-  * Require or disallow spacing between template tags and their literals  See [rule details](https://eslint.style/rules/default/template-tag-spacing).
-* [org.openrewrite.codemods.format.TypeAnnotationSpacing](/recipes/codemods/format/typeannotationspacing.md)
-  * **Require consistent spacing around type annotations**
-  * Require consistent spacing around type annotations  See [rule details](https://eslint.style/rules/default/type-annotation-spacing).
-* [org.openrewrite.codemods.format.TypeGenericSpacing](/recipes/codemods/format/typegenericspacing.md)
-  * **Enforces consistent spacing inside TypeScript type generics**
-  * Enforces consistent spacing inside TypeScript type generics  See [rule details](https://eslint.style/rules/default/type-generic-spacing).
-* [org.openrewrite.codemods.format.TypeNamedTupleSpacing](/recipes/codemods/format/typenamedtuplespacing.md)
-  * **Expect space before the type declaration in the named tuple**
-  * Expect space before the type declaration in the named tuple  See [rule details](https://eslint.style/rules/default/type-named-tuple-spacing).
-* [org.openrewrite.codemods.format.WrapIife](/recipes/codemods/format/wrapiife.md)
-  * **Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations**
-  * Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations  See [rule details](https://eslint.style/rules/default/wrap-iife).
-* [org.openrewrite.codemods.format.WrapRegex](/recipes/codemods/format/wrapregex.md)
-  * **Require parenthesis around regex literals**
-  * Require parenthesis around regex literals  See [rule details](https://eslint.style/rules/default/wrap-regex).
-* [org.openrewrite.codemods.format.YieldStarSpacing](/recipes/codemods/format/yieldstarspacing.md)
-  * **Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions**
-  * Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions  See [rule details](https://eslint.style/rules/default/yield-star-spacing).
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreArray](/recipes/codemods/migrate/lodash/lodashunderscorearray.md)
-  * **Replace lodash and underscore array functions with native JavaScript**
-  * - `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`.
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreFunction](/recipes/codemods/migrate/lodash/lodashunderscorefunction.md)
-  * **Replace lodash and underscore function functions with native JavaScript**
-  * - `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`.
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreObjects](/recipes/codemods/migrate/lodash/lodashunderscoreobjects.md)
-  * **Replace lodash and underscore object functions with native JavaScript**
-  * - `_.clone(x)` -&gt; `\{ ...x \}` - `_.extend(\{\}, x, y)` -&gt; `\{ ...x, ...y \}` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`.
-* [org.openrewrite.codemods.migrate.lodash.LodashUnderscoreUtil](/recipes/codemods/migrate/lodash/lodashunderscoreutil.md)
-  * **Replace lodash and underscore utility functions with native JavaScript**
-  * - `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`.
-* [org.openrewrite.codemods.migrate.mui.AdapterV](/recipes/codemods/migrate/mui/adapterv.md)
-  * **Converts components to use the v4 adapter module**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#adapter-v4).
-* [org.openrewrite.codemods.migrate.mui.All](/recipes/codemods/migrate/mui/all.md)
-  * **Combination of all deprecations**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#all).
-* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameCloseicon](/recipes/codemods/migrate/mui/autocompleterenamecloseicon.md)
-  * **Renames `closeIcon` prop to `closeButtonIcon`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#autocomplete-rename-closeicon).
-* [org.openrewrite.codemods.migrate.mui.AutocompleteRenameOption](/recipes/codemods/migrate/mui/autocompleterenameoption.md)
-  * **Renames `option` prop to `getOptionLabel`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#autocomplete-rename-option).
-* [org.openrewrite.codemods.migrate.mui.AvatarCircleCircular](/recipes/codemods/migrate/mui/avatarcirclecircular.md)
-  * **Updates `circle` prop to `variant=&quot;circular&quot;`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#avatar-circle-circular).
-* [org.openrewrite.codemods.migrate.mui.BadgeOverlapValue](/recipes/codemods/migrate/mui/badgeoverlapvalue.md)
-  * **Updates `overlap` prop to `variant=&quot;dot&quot;`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#badge-overlap-value).
-* [org.openrewrite.codemods.migrate.mui.BaseHookImports](/recipes/codemods/migrate/mui/basehookimports.md)
-  * **Converts base imports to use React hooks**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-hook-imports).
-* [org.openrewrite.codemods.migrate.mui.BaseRemoveComponentProp](/recipes/codemods/migrate/mui/baseremovecomponentprop.md)
-  * **Removes `component` prop from base components**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-remove-component-prop).
-* [org.openrewrite.codemods.migrate.mui.BaseRemoveUnstyledSuffix](/recipes/codemods/migrate/mui/baseremoveunstyledsuffix.md)
-  * **Removes `Unstyled` suffix from base components**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-remove-unstyled-suffix).
-* [org.openrewrite.codemods.migrate.mui.BaseRenameComponentsToSlots](/recipes/codemods/migrate/mui/baserenamecomponentstoslots.md)
-  * **Renames base components to slots**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-rename-components-to-slots).
-* [org.openrewrite.codemods.migrate.mui.BaseUseNamedExports](/recipes/codemods/migrate/mui/baseusenamedexports.md)
-  * **Updates base imports to use named exports**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#base-use-named-exports).
-* [org.openrewrite.codemods.migrate.mui.BoxBorderradiusValues](/recipes/codemods/migrate/mui/boxborderradiusvalues.md)
-  * **Updates `borderRadius` prop values**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-borderradius-values).
-* [org.openrewrite.codemods.migrate.mui.BoxRenameCss](/recipes/codemods/migrate/mui/boxrenamecss.md)
-  * **Renames CSS properties for Box component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-rename-css).
-* [org.openrewrite.codemods.migrate.mui.BoxRenameGap](/recipes/codemods/migrate/mui/boxrenamegap.md)
-  * **Renames `gap` prop to `spacing`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-rename-gap).
-* [org.openrewrite.codemods.migrate.mui.BoxSxProp](/recipes/codemods/migrate/mui/boxsxprop.md)
-  * **Converts `sx` prop to `sx` style prop**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#box-sx-prop).
-* [org.openrewrite.codemods.migrate.mui.ButtonColorProp](/recipes/codemods/migrate/mui/buttoncolorprop.md)
-  * **Renames `color` prop to `colorOverride`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#button-color-prop).
-* [org.openrewrite.codemods.migrate.mui.ChipVariantProp](/recipes/codemods/migrate/mui/chipvariantprop.md)
-  * **Updates `variant` prop for Chip component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#chip-variant-prop).
-* [org.openrewrite.codemods.migrate.mui.CircularprogressVariant](/recipes/codemods/migrate/mui/circularprogressvariant.md)
-  * **Updates `variant` prop for CircularProgress component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#circularprogress-variant).
-* [org.openrewrite.codemods.migrate.mui.CollapseRenameCollapsedheight](/recipes/codemods/migrate/mui/collapserenamecollapsedheight.md)
-  * **Renames `collapsedHeight` prop to `transitionCollapsedHeight`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#collapse-rename-collapsedheight).
-* [org.openrewrite.codemods.migrate.mui.ComponentRenameProp](/recipes/codemods/migrate/mui/componentrenameprop.md)
-  * **Renames `component` prop to `as`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#component-rename-prop).
-* [org.openrewrite.codemods.migrate.mui.CoreStylesImport](/recipes/codemods/migrate/mui/corestylesimport.md)
-  * **Updates import paths for core styles**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#core-styles-import).
-* [org.openrewrite.codemods.migrate.mui.CreateTheme](/recipes/codemods/migrate/mui/createtheme.md)
-  * **Updates createMuiTheme usage**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#create-theme).
-* [org.openrewrite.codemods.migrate.mui.DatePickersMovedToX](/recipes/codemods/migrate/mui/datepickersmovedtox.md)
-  * **Moves date pickers to `@mui/x-date-picker`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#date-pickers-moved-to-x).
-* [org.openrewrite.codemods.migrate.mui.DialogProps](/recipes/codemods/migrate/mui/dialogprops.md)
-  * **Updates props for Dialog component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#dialog-props).
-* [org.openrewrite.codemods.migrate.mui.DialogTitleProps](/recipes/codemods/migrate/mui/dialogtitleprops.md)
-  * **Updates props for DialogTitle component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#dialog-title-props).
-* [org.openrewrite.codemods.migrate.mui.EmotionPrependCache](/recipes/codemods/migrate/mui/emotionprependcache.md)
-  * **Prepends emotion cache**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#emotion-prepend-cache).
-* [org.openrewrite.codemods.migrate.mui.ExpansionPanelComponent](/recipes/codemods/migrate/mui/expansionpanelcomponent.md)
-  * **Converts ExpansionPanel to use ExpansionPanel component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#expansion-panel-component).
-* [org.openrewrite.codemods.migrate.mui.FabVariant](/recipes/codemods/migrate/mui/fabvariant.md)
-  * **Updates `variant` prop for Fab component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#fab-variant).
-* [org.openrewrite.codemods.migrate.mui.FadeRenameAlpha](/recipes/codemods/migrate/mui/faderenamealpha.md)
-  * **Renames `alpha` prop to `opacity`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#fade-rename-alpha).
-* [org.openrewrite.codemods.migrate.mui.GridJustifyJustifycontent](/recipes/codemods/migrate/mui/gridjustifyjustifycontent.md)
-  * **Updates `justify` prop to `justifyContent` for Grid component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-justify-justifycontent).
-* [org.openrewrite.codemods.migrate.mui.GridListComponent](/recipes/codemods/migrate/mui/gridlistcomponent.md)
-  * **Converts GridList to use Grid component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-list-component).
-* [org.openrewrite.codemods.migrate.mui.GridVProps](/recipes/codemods/migrate/mui/gridvprops.md)
-  * **Updates the usage of the `@mui/material/Grid2`, `@mui/system/Grid`, and `@mui/joy/Grid` components to their updated APIs**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#grid-v2-props).
-* [org.openrewrite.codemods.migrate.mui.HiddenDownProps](/recipes/codemods/migrate/mui/hiddendownprops.md)
-  * **Updates `down` prop for Hidden component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#hidden-down-props).
-* [org.openrewrite.codemods.migrate.mui.IconButtonSize](/recipes/codemods/migrate/mui/iconbuttonsize.md)
-  * **Updates `size` prop for IconButton component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#icon-button-size).
-* [org.openrewrite.codemods.migrate.mui.JoyAvatarRemoveImgprops](/recipes/codemods/migrate/mui/joyavatarremoveimgprops.md)
-  * **Removes `imgProps` prop from Avatar component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-avatar-remove-imgProps).
-* [org.openrewrite.codemods.migrate.mui.JoyRenameClassnamePrefix](/recipes/codemods/migrate/mui/joyrenameclassnameprefix.md)
-  * **Renames `Mui` classname prefix**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-classname-prefix).
-* [org.openrewrite.codemods.migrate.mui.JoyRenameComponentsToSlots](/recipes/codemods/migrate/mui/joyrenamecomponentstoslots.md)
-  * **Renames components to slots**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-components-to-slots).
-* [org.openrewrite.codemods.migrate.mui.JoyRenameRowProp](/recipes/codemods/migrate/mui/joyrenamerowprop.md)
-  * **Renames `row` prop to `flexDirection=&quot;row&quot;`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-rename-row-prop).
-* [org.openrewrite.codemods.migrate.mui.JoyTextFieldToInput](/recipes/codemods/migrate/mui/joytextfieldtoinput.md)
-  * **Renames `TextField` to `Input`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#joy-text-field-to-input).
-* [org.openrewrite.codemods.migrate.mui.JssToStyled](/recipes/codemods/migrate/mui/jsstostyled.md)
-  * **Converts JSS styles to styled-components**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#jss-to-styled).
-* [org.openrewrite.codemods.migrate.mui.JssToTssReact](/recipes/codemods/migrate/mui/jsstotssreact.md)
-  * **Converts JSS to TypeScript in React components**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#jss-to-tss-react).
-* [org.openrewrite.codemods.migrate.mui.LinkUnderlineHover](/recipes/codemods/migrate/mui/linkunderlinehover.md)
-  * **Updates link underline on hover**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#link-underline-hover).
-* [org.openrewrite.codemods.migrate.mui.MaterialUiStyles](/recipes/codemods/migrate/mui/materialuistyles.md)
-  * **Updates usage of `@mui/styles`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#material-ui-styles).
-* [org.openrewrite.codemods.migrate.mui.MaterialUiTypes](/recipes/codemods/migrate/mui/materialuitypes.md)
-  * **Updates usage of `@mui/types`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#material-ui-types).
-* [org.openrewrite.codemods.migrate.mui.ModalProps](/recipes/codemods/migrate/mui/modalprops.md)
-  * **Updates props for Modal component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#modal-props).
-* [org.openrewrite.codemods.migrate.mui.MovedLabModules](/recipes/codemods/migrate/mui/movedlabmodules.md)
-  * **Moves lab modules to `@mui/material`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#moved-lab-modules).
-* [org.openrewrite.codemods.migrate.mui.MuiReplace](/recipes/codemods/migrate/mui/muireplace.md)
-  * **Replaces `@mui` imports with `@mui/material`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#mui-replace).
-* [org.openrewrite.codemods.migrate.mui.OptimalImports](/recipes/codemods/migrate/mui/optimalimports.md)
-  * **Optimizes imports**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#optimal-imports).
-* [org.openrewrite.codemods.migrate.mui.PaginationRoundCircular](/recipes/codemods/migrate/mui/paginationroundcircular.md)
-  * **Updates `circular` prop to `variant=&quot;circular&quot;`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#pagination-round-circular).
-* [org.openrewrite.codemods.migrate.mui.PresetSafe](/recipes/codemods/migrate/mui/presetsafe.md)
-  * **Ensures presets are safe to use**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#preset-safe).
-* [org.openrewrite.codemods.migrate.mui.RenameCssVariables](/recipes/codemods/migrate/mui/renamecssvariables.md)
-  * **Renames CSS variables**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#rename-css-variables).
-* [org.openrewrite.codemods.migrate.mui.RootRef](/recipes/codemods/migrate/mui/rootref.md)
-  * **Converts `rootRef` to `ref`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#root-ref).
-* [org.openrewrite.codemods.migrate.mui.SkeletonVariant](/recipes/codemods/migrate/mui/skeletonvariant.md)
-  * **Updates `variant` prop for Skeleton component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#skeleton-variant).
-* [org.openrewrite.codemods.migrate.mui.Styled](/recipes/codemods/migrate/mui/styled.md)
-  * **Updates the usage of `styled` from `@mui/system@v5` to be compatible with` @pigment-css/react`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#styled).
-* [org.openrewrite.codemods.migrate.mui.StyledEngineProvider](/recipes/codemods/migrate/mui/styledengineprovider.md)
-  * **Updates usage of styled engine provider**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#styled-engine-provider).
-* [org.openrewrite.codemods.migrate.mui.SxProp](/recipes/codemods/migrate/mui/sxprop.md)
-  * **Update the usage of the `sx` prop to be compatible with `@pigment-css/react`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#sx-prop).
-* [org.openrewrite.codemods.migrate.mui.SystemProps](/recipes/codemods/migrate/mui/systemprops.md)
-  * **Remove system props and add them to the `sx` prop**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#system-props).
-* [org.openrewrite.codemods.migrate.mui.TableProps](/recipes/codemods/migrate/mui/tableprops.md)
-  * **Updates props for Table component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#table-props).
-* [org.openrewrite.codemods.migrate.mui.TabsScrollButtons](/recipes/codemods/migrate/mui/tabsscrollbuttons.md)
-  * **Updates scroll buttons for Tabs component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#tabs-scroll-buttons).
-* [org.openrewrite.codemods.migrate.mui.TextareaMinmaxRows](/recipes/codemods/migrate/mui/textareaminmaxrows.md)
-  * **Updates `minRows` and `maxRows` props for TextareaAutosize component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#textarea-minmax-rows).
-* [org.openrewrite.codemods.migrate.mui.ThemeAugment](/recipes/codemods/migrate/mui/themeaugment.md)
-  * **Adds `DefaultTheme` module augmentation to typescript projects**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-augment).
-* [org.openrewrite.codemods.migrate.mui.ThemeBreakpoints](/recipes/codemods/migrate/mui/themebreakpoints.md)
-  * **Updates theme breakpoints**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-breakpoints).
-* [org.openrewrite.codemods.migrate.mui.ThemeBreakpointsWidth](/recipes/codemods/migrate/mui/themebreakpointswidth.md)
-  * **Updates `width` values for theme breakpoints**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-breakpoints-width).
-* [org.openrewrite.codemods.migrate.mui.ThemeOptions](/recipes/codemods/migrate/mui/themeoptions.md)
-  * **Updates theme options**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-options).
-* [org.openrewrite.codemods.migrate.mui.ThemePaletteMode](/recipes/codemods/migrate/mui/themepalettemode.md)
-  * **Updates theme palette mode**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-palette-mode).
-* [org.openrewrite.codemods.migrate.mui.ThemeProvider](/recipes/codemods/migrate/mui/themeprovider.md)
-  * **Updates usage of ThemeProvider**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-provider).
-* [org.openrewrite.codemods.migrate.mui.ThemeSpacing](/recipes/codemods/migrate/mui/themespacing.md)
-  * **Updates theme spacing**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-spacing).
-* [org.openrewrite.codemods.migrate.mui.ThemeSpacingApi](/recipes/codemods/migrate/mui/themespacingapi.md)
-  * **Updates theme spacing API**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-spacing-api).
-* [org.openrewrite.codemods.migrate.mui.ThemeTypographyRound](/recipes/codemods/migrate/mui/themetypographyround.md)
-  * **Updates `round` values for theme typography**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-typography-round).
-* [org.openrewrite.codemods.migrate.mui.ThemeV](/recipes/codemods/migrate/mui/themev.md)
-  * **Update the theme creation from `@mui/system@v5` to be compatible with `@pigment-css/react`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#theme-v6).
-* [org.openrewrite.codemods.migrate.mui.TopLevelImports](/recipes/codemods/migrate/mui/toplevelimports.md)
-  * **Converts all `@mui/material` submodule imports to the root module**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#top-level-imports).
-* [org.openrewrite.codemods.migrate.mui.Transitions](/recipes/codemods/migrate/mui/transitions.md)
-  * **Updates usage of transitions**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#transitions).
-* [org.openrewrite.codemods.migrate.mui.TreeViewMovedToX](/recipes/codemods/migrate/mui/treeviewmovedtox.md)
-  * **Moves tree view to `@mui/x-tree-view`**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#tree-view-moved-to-x).
-* [org.openrewrite.codemods.migrate.mui.UseAutocomplete](/recipes/codemods/migrate/mui/useautocomplete.md)
-  * **Updates usage of useAutocomplete**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#use-autocomplete).
-* [org.openrewrite.codemods.migrate.mui.UseTransitionprops](/recipes/codemods/migrate/mui/usetransitionprops.md)
-  * **Updates usage of useTransitionProps**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#use-transitionprops).
-* [org.openrewrite.codemods.migrate.mui.VariantProp](/recipes/codemods/migrate/mui/variantprop.md)
-  * **Updates `variant` prop usage**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#variant-prop).
-* [org.openrewrite.codemods.migrate.mui.WithMobileDialog](/recipes/codemods/migrate/mui/withmobiledialog.md)
-  * **Updates withMobileDialog higher-order component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#with-mobile-dialog).
-* [org.openrewrite.codemods.migrate.mui.WithWidth](/recipes/codemods/migrate/mui/withwidth.md)
-  * **Updates withWidth higher-order component**
-  * See Material UI codemod projects for more [details](https://github.com/mui/material-ui/tree/master/packages/mui-codemod#with-width).
-* [org.openrewrite.codemods.migrate.nextjs.NextJsCodemods](/recipes/codemods/migrate/nextjs/nextjscodemods.md)
-  * **Next.js Codemods for API Updates**
-  * Next.js provides Codemod transformations to help upgrade your [Next.js](https://nextjs.org/) codebase when an API is updated or deprecated.
-* [org.openrewrite.codemods.migrate.nextjs.v10.AddMissingReactImport](/recipes/codemods/migrate/nextjs/v10/addmissingreactimport.md)
-  * **Add React imports**
-  * Transforms files that do not import `React` to include the import in order for the new React JSX transform to work.
-* [org.openrewrite.codemods.migrate.nextjs.v11.CraToNext](/recipes/codemods/migrate/nextjs/v11/cratonext.md)
-  * **Rename Next Image Imports**
-  * Safely renames `next/image` imports in existing Next.js `10` `11` or `12` applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`.
-* [org.openrewrite.codemods.migrate.nextjs.v13_0.NewLink](/recipes/codemods/migrate/nextjs/v13_0/newlink.md)
-  * **Remove `&lt;a&gt;` Tags From Link Components**
-  * Remove `&amp;lt;a&amp;gt;` tags inside Link Components or add a `legacyBehavior` prop to Links that cannot be auto-fixed.
-* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageExperimental](/recipes/codemods/migrate/nextjs/v13_0/nextimageexperimental.md)
-  * **Migrate to the New Image Component**
-  * Dangerously migrates from `next/legacy/image` to the new `next/image` by adding inline styles and removing unused props.
-* [org.openrewrite.codemods.migrate.nextjs.v13_0.NextImageToLegacyImage](/recipes/codemods/migrate/nextjs/v13_0/nextimagetolegacyimage.md)
-  * **Rename Next Image Imports**
-  * Safely renames `next/image` imports in existing Next.js `10` `11` or `12` applications to `next/legacy/image` in Next.js 13. Also renames `next/future/image` to `next/image`.
-* [org.openrewrite.codemods.migrate.nextjs.v13_2.BuiltInNextFont](/recipes/codemods/migrate/nextjs/v13_2/builtinnextfont.md)
-  * **Use Built-in Font**
-  * This codemod uninstalls the `@next/font` package and transforms `@next/font` imports into the built-in `next/font`.
-* [org.openrewrite.codemods.migrate.nextjs.v14_0.MetadataToViewportExport](/recipes/codemods/migrate/nextjs/v14_0/metadatatoviewportexport.md)
-  * **Use `viewport` export**
-  * This codemod migrates certain viewport metadata to `viewport` export.
-* [org.openrewrite.codemods.migrate.nextjs.v14_0.NextOgImport](/recipes/codemods/migrate/nextjs/v14_0/nextogimport.md)
-  * **Migrate `ImageResponse` imports**
-  * This codemod moves transforms imports from `next/server` to `next/og` for usage of Dynamic OG Image Generation.
-* [org.openrewrite.codemods.migrate.nextjs.v6.UrlToWithrouter](/recipes/codemods/migrate/nextjs/v6/urltowithrouter.md)
-  * **Use `withRouter`**
-  * Transforms the deprecated automatically injected url property on top-level pages to using `withRouter` and the `router` property it injects. Read more [here](https://nextjs.org/docs/messages/url-deprecated).
-* [org.openrewrite.codemods.migrate.nextjs.v8.WithampToConfig](/recipes/codemods/migrate/nextjs/v8/withamptoconfig.md)
-  * **Transform AMP HOC into page config**
-  * Transforms the `withAmp` HOC into Next.js 9 page configuration.
-* [org.openrewrite.codemods.migrate.nextjs.v9.NameDefaultComponent](/recipes/codemods/migrate/nextjs/v9/namedefaultcomponent.md)
-  * **Transform Anonymous Components into Named Components**
-  * Transforms anonymous components into named components to make sure they work with Fast Refresh. The component will have a camel-cased name based on the name of the file, and it also works with arrow functions.
-* [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](/recipes/cucumber/jvm/cucumberjava8tojava.md)
-  * **Migrate `cucumber-java8` to `cucumber-java`**
-  * Migrates `cucumber-java8` step definitions and `LambdaGlue` hooks to `cucumber-java` annotated methods.
-* [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
-  * **Cucumber to JUnit test `@Suite`**
-  * Migrates Cucumber tests to JUnit test `@Suite`.
-* [org.openrewrite.cucumber.jvm.UpgradeCucumber2x](/recipes/cucumber/jvm/upgradecucumber2x.md)
-  * **Upgrade to Cucumber-JVM 2.x**
-  * Upgrade to Cucumber-JVM 2.x from any previous version.
-* [org.openrewrite.cucumber.jvm.UpgradeCucumber5x](/recipes/cucumber/jvm/upgradecucumber5x.md)
-  * **Upgrade to Cucumber-JVM 5.x**
-  * Upgrade to Cucumber-JVM 5.x from any previous version.
-* [org.openrewrite.cucumber.jvm.UpgradeCucumber7x](/recipes/cucumber/jvm/upgradecucumber7x.md)
-  * **Upgrade to Cucumber-JVM 7.x**
-  * Upgrade to Cucumber-JVM 7.x from any previous version.
-* [org.openrewrite.docker.DockerBestPractices](/recipes/docker/dockerbestpractices.md)
-  * **Apply Docker best practices**
-  * Apply a set of Docker best practices to Dockerfiles. This recipe applies security hardening, build optimization, and maintainability improvements based on CIS Docker Benchmark and industry best practices.
-* [org.openrewrite.docker.DockerBuildOptimization](/recipes/docker/dockerbuildoptimization.md)
-  * **Optimize Docker builds**
-  * Apply build optimization best practices to Dockerfiles. This includes combining RUN instructions to reduce layers and adding cleanup commands to reduce image size.
-* [org.openrewrite.docker.DockerSecurityBestPractices](/recipes/docker/dockersecuritybestpractices.md)
-  * **Apply Docker security best practices**
-  * Apply security-focused Docker best practices to Dockerfiles. This includes running as a non-root user (CIS 4.1) and using COPY instead of ADD where appropriate (CIS 4.9).
-* [org.openrewrite.featureflags.launchdarkly.UpgradeLaunchDarkly6](/recipes/featureflags/launchdarkly/upgradelaunchdarkly6.md)
-  * **Migrate to LaunchDarkly 6.x**
-  * This recipe will apply changes commonly needed when migrating to LaunchDarkly 6.x.
-* [org.openrewrite.featureflags.launchdarkly.UpgradeLaunchDarkly7](/recipes/featureflags/launchdarkly/upgradelaunchdarkly7.md)
-  * **Migrate to LaunchDarkly 7.x**
-  * This recipe will apply changes commonly needed when migrating to LaunchDarkly 7.x.
-* [org.openrewrite.github.AddManualTrigger](/recipes/github/addmanualtrigger.md)
-  * **Add manual workflow trigger**
-  * You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event.
-* [org.openrewrite.github.DependabotCheckForGithubActionsUpdatesDaily](/recipes/github/dependabotcheckforgithubactionsupdatesdaily.md)
-  * **Check for github-actions updates daily**
-  * Set dependabot to check for github-actions updates daily.
-* [org.openrewrite.github.DependabotCheckForGithubActionsUpdatesWeekly](/recipes/github/dependabotcheckforgithubactionsupdatesweekly.md)
-  * **Check for github-actions updates weekly**
-  * Set dependabot to check for github-actions updates weekly.
-* [org.openrewrite.github.FindGitHubActionSecretReferences](/recipes/github/findgithubactionsecretreferences.md)
-  * **Find GitHub action secret references**
-  * Help identify and inventory your GitHub secrets that are being used in GitHub actions.
-* [org.openrewrite.github.MigrateSetupUvV6ToV7](/recipes/github/migratesetupuvv6tov7.md)
-  * **Migrate `astral-sh/setup-uv` from v6 to v7**
-  * Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and removes the deprecated `server-url` input. See the [v7.0.0 release notes](https://github.com/astral-sh/setup-uv/releases/tag/v7.0.0) for breaking changes.
-* [org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions](/recipes/github/migratetibdexgithubapptokentoactions.md)
-  * **Migrate from tibdex/github-app-token to actions/create-github-app-token**
-  * Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case.
-* [org.openrewrite.github.ReplaceOssrhSecretsWithSonatype](/recipes/github/replaceossrhsecretswithsonatype.md)
-  * **Replace OSSRH secrets with Sonatype secrets**
-  * Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite's GitHub organization.
-* [org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle](/recipes/github/gradle/renamegradlebuildactiontosetupgradle.md)
-  * **Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`**
-  * Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v3`.
-* [org.openrewrite.github.gradle.RenameWrapperValidationAction](/recipes/github/gradle/renamewrappervalidationaction.md)
-  * **Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`**
-  * Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v3`.
-* [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
-  * **GitHub Actions security insights**
-  * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
-* [org.openrewrite.gitlab.BestPractices](/recipes/gitlab/bestpractices.md)
-  * **GitLab CI best practices**
-  * Apply GitLab CI/CD best practices to `.gitlab-ci.yml`. This includes adding `workflow:rules` to prevent duplicate pipelines, setting `interruptible: true` and `retry` in the `default` section, configuring `artifacts:expire_in`, and setting a job `timeout`.
-* [org.openrewrite.gitlab.search.FindDeprecatedSyntax](/recipes/gitlab/search/finddeprecatedsyntax.md)
-  * **Find deprecated GitLab CI syntax**
-  * Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. These keywords are deprecated in favor of `rules`.
-* [org.openrewrite.gradle.AddJUnitPlatformLauncher](/recipes/gradle/addjunitplatformlauncher.md)
-  * **Add JUnit Platform Launcher**
-  * Add the JUnit Platform Launcher to the buildscript dependencies.
-* [org.openrewrite.gradle.EnableGradleBuildCache](/recipes/gradle/enablegradlebuildcache.md)
-  * **Enable Gradle build cache**
-  * Enable the Gradle build cache. By enabling build cache the build outputs are stored externally and fetched from the cache when it is determined that those inputs have no changed, avoiding the expensive work of regenerating them. See the [Gradle Build Cache](https://docs.gradle.org/current/userguide/build_cache.html) for more information.
-* [org.openrewrite.gradle.EnableGradleParallelExecution](/recipes/gradle/enablegradleparallelexecution.md)
-  * **Enable Gradle parallel execution**
-  * Most builds consist of more than one project and some of those projects are usually independent of one another. Yet Gradle will only run one task at a time by default, regardless of the project structure. By using the `--parallel` switch, you can force Gradle to execute tasks in parallel as long as those tasks are in different projects. See the [Gradle performance documentation](https://docs.gradle.org/current/userguide/performance.html#parallel_execution) for more information.
-* [org.openrewrite.gradle.GradleBestPractices](/recipes/gradle/gradlebestpractices.md)
-  * **Apply Gradle best practices**
-  * Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and ideomatic builds.
-* [org.openrewrite.gradle.MigrateToGradle5](/recipes/gradle/migratetogradle5.md)
-  * **Migrate to Gradle 5 from Gradle 4**
-  * Migrate to version 5.x. See the Gradle upgrade guide from [version 4.x to 5.0](https://docs.gradle.org/current/userguide/upgrading_version_4.html) for more information.
-* [org.openrewrite.gradle.MigrateToGradle6](/recipes/gradle/migratetogradle6.md)
-  * **Migrate to Gradle 6 from Gradle 5**
-  * Migrate to version 6.x. See the Gradle upgrade guide from [version 5.x to 6.0](https://docs.gradle.org/current/userguide/upgrading_version_5.html) for more information.
-* [org.openrewrite.gradle.MigrateToGradle7](/recipes/gradle/migratetogradle7.md)
-  * **Migrate to Gradle 7 from Gradle 6**
-  * Migrate to version 7.x. See the Gradle upgrade guide from [version 6.x to 7.0](https://docs.gradle.org/current/userguide/upgrading_version_6.html) for more information.
-* [org.openrewrite.gradle.MigrateToGradle8](/recipes/gradle/migratetogradle8.md)
-  * **Migrate to Gradle 8 from Gradle 7**
-  * Migrate to version 8.x. See the Gradle upgrade guide from [version 7.x to 8.0](https://docs.gradle.org/current/userguide/upgrading_version_7.html) and [version 8.x to latest](https://docs.gradle.org/current/userguide/upgrading_version_8.html) for more information.
-* [org.openrewrite.gradle.MigrateToGradle9](/recipes/gradle/migratetogradle9.md)
-  * **Migrate to Gradle 9 from Gradle 8**
-  * Migrate to version 9.x. See the Gradle upgrade guide from [version 8.x to 9.0](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
-* [org.openrewrite.gradle.plugins.RemoveDevelocity](/recipes/gradle/plugins/removedevelocity.md)
-  * **Remove Develocity**
-  * Remove the Develocity plugin and configuration from the Gradle build and settings files.
-* [org.openrewrite.hibernate.MigrateToHibernate60](/recipes/hibernate/migratetohibernate60-community-edition.md)
-  * **Migrate to Hibernate 6.0.x (Community Edition)**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
-* [org.openrewrite.hibernate.MigrateToHibernate61](/recipes/hibernate/migratetohibernate61.md)
-  * **Migrate to Hibernate 6.1.x**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 6.1.x. The hibernate dependencies will   be updated to use the new org.hibernate.orm group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
-* [org.openrewrite.hibernate.MigrateToHibernate62](/recipes/hibernate/migratetohibernate62.md)
-  * **Migrate to Hibernate 6.2.x**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 6.2.x.
-* [org.openrewrite.hibernate.MigrateToHibernate63](/recipes/hibernate/migratetohibernate63.md)
-  * **Migrate to Hibernate 6.3.x**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 6.3.x.
-* [org.openrewrite.hibernate.MigrateToHibernate64](/recipes/hibernate/migratetohibernate64.md)
-  * **Migrate to Hibernate 6.4.x**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 6.4.x.
-* [org.openrewrite.hibernate.MigrateToHibernate65](/recipes/hibernate/migratetohibernate65.md)
-  * **Migrate to Hibernate 6.5.x**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
-* [org.openrewrite.hibernate.MigrateToHibernate66](/recipes/hibernate/migratetohibernate66-community-edition.md)
-  * **Migrate to Hibernate 6.6.x (Community Edition)**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 6.6.x.
-* [org.openrewrite.hibernate.MigrateToHibernate70](/recipes/hibernate/migratetohibernate70-community-edition.md)
-  * **Migrate to Hibernate 7.0.x (Community Edition)**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 7.0.x.
-* [org.openrewrite.hibernate.MigrateToHibernate71](/recipes/hibernate/migratetohibernate71-community-edition.md)
-  * **Migrate to Hibernate 7.1.x (Community Edition)**
-  * This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x.
-* [org.openrewrite.hibernate.MigrateToHibernateDependencies60](/recipes/hibernate/migratetohibernatedependencies60.md)
-  * **Migrate Hibernate dependencies to 6.0.x**
-  * This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
-* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
-  * **Migrate Hibernate Types to Hypersistence Utils 6.0**
-  * This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
-* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62](/recipes/hibernate/migratetohypersistenceutilshibernate62.md)
-  * **Migrate Hibernate Types to Hypersistence Utils 6.2**
-  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`.
-* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63](/recipes/hibernate/migratetohypersistenceutilshibernate63.md)
-  * **Migrate Hibernate Types to Hypersistence Utils 6.3**
-  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
-* [org.openrewrite.hibernate.TypeDescriptorToType](/recipes/hibernate/typedescriptortotype.md)
-  * **Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`**
-  * Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
-* [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
-  * **Migrate to Hibernate Validator 8.0.x**
-  * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
-* [org.openrewrite.java.AddApache2LicenseHeader](/recipes/java/addapache2licenseheader.md)
-  * **Add ASLv2 license header**
-  * Adds the Apache Software License Version 2.0 to Java source files which are missing a license header.
-* [org.openrewrite.java.dropwizard.AddActuatorConfiguration](/recipes/java/dropwizard/addactuatorconfiguration.md)
-  * **Add Spring Boot Actuator Configuration**
-  * Configures Spring Boot Actuator endpoints and health checks in application.properties.
-* [org.openrewrite.java.dropwizard.AddCoreExampleProperties](/recipes/java/dropwizard/addcoreexampleproperties.md)
-  * **Add Core Example Properties**
-  * Adds core example properties to the application.properties file.
-* [org.openrewrite.java.dropwizard.AddHibernateConfiguration](/recipes/java/dropwizard/addhibernateconfiguration.md)
-  * **Add Hibernate Configuration**
-  * Configures Spring Boot Hibernate and JPA settings in application.properties.
-* [org.openrewrite.java.dropwizard.AddJerseyConfiguration](/recipes/java/dropwizard/addjerseyconfiguration.md)
-  * **Add Jersey Configuration**
-  * Configures essential Jersey properties in Spring Boot that complement the JerseyConfig class.
-* [org.openrewrite.java.dropwizard.AddMissingApplicationProperties](/recipes/java/dropwizard/addmissingapplicationproperties.md)
-  * **Add application.properties if missing**
-  * This recipe creates an application.properties file in the resources folder if it does not exist.
-* [org.openrewrite.java.dropwizard.CodeCleanup](/recipes/java/dropwizard/codecleanup.md)
-  * **Clean up various issues with the code**
-  * Shorten references, remove unused imports, and remove Dropwizard-specific code constructs.
-* [org.openrewrite.java.dropwizard.CoreSetup](/recipes/java/dropwizard/coresetup.md)
-  * **Create Spring Boot Application Entry Point**
-  * Creates the main Spring Boot application class.
-* [org.openrewrite.java.dropwizard.MigrateConfigurationClass](/recipes/java/dropwizard/migrateconfigurationclass.md)
-  * **Migrate Configuration Class**
-  * Converts Dropwizard Configuration to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateDropwizardToSpringBoot](/recipes/java/dropwizard/migratedropwizardtospringboot.md)
-  * **Migrate Dropwizard to Spring Boot**
-  * Apply various changes to migrate Dropwizard applications to Spring Boot.
-* [org.openrewrite.java.dropwizard.MigrateHealthChecksAndMetrics](/recipes/java/dropwizard/migratehealthchecksandmetrics.md)
-  * **Add Spring Boot Actuator**
-  * Configures Spring Boot Actuator with basic health endpoints.
-* [org.openrewrite.java.dropwizard.MigrateHibernate](/recipes/java/dropwizard/migratehibernate.md)
-  * **Migrate Hibernate**
-  * Converts Dropwizard Resources to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateResourcesToSpringJersey](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
-  * **Migrate Resource Classes**
-  * Converts Dropwizard Resources to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateSecurity](/recipes/java/dropwizard/migratesecurity.md)
-  * **Migrate Health Checks to Spring Boot**
-  * Converts Dropwizard health checks to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateTasksAndCommands](/recipes/java/dropwizard/migratetasksandcommands.md)
-  * **Migrate `PostBodyTask` and `ConfiguredCommand`**
-  * Remove or change the superclasses of `PostBodyTask` and `ConfiguredCommand`.
-* [org.openrewrite.java.dropwizard.MigrateTests](/recipes/java/dropwizard/migratetests.md)
-  * **Migrate Health Checks to Spring Boot**
-  * Converts Dropwizard tests to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateToDropwizard5](/recipes/java/dropwizard/migratetodropwizard5.md)
-  * **Migrate to Dropwizard 5.0.x from 4.x**
-  * Apply changes required to upgrade a Dropwizard 4.x application to 5.0.x. This includes upgrading dependencies, removing deprecated configuration options, and migrating Jetty handler implementations. Includes required migrations to Java 17, Jakarta EE 10, JUnit 5.14, Jackson 2.x, and Hibernate 6.6. See [the upgrade guide](https://www.dropwizard.io/en/stable/manual/upgrade-notes/upgrade-notes-5_0_x.html).
-* [org.openrewrite.java.dropwizard.ModifyDropwizardHealthChecksToSpringVariants](/recipes/java/dropwizard/modifydropwizardhealthcheckstospringvariants.md)
-  * **Convert Health Check Implementations**
-  * Transforms Dropwizard HealthCheck classes to Spring Boot HealthIndicator.
-* [org.openrewrite.java.dropwizard.annotation.micrometer.CodahaleTimedToMicrometerTimed](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
-  * **Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)**
-  * Replaces Dropwizard's `@Timed` annotation with Micrometer's `@Timed` annotation, preserving name (mapped to value), absolute, and description attributes.
-* [org.openrewrite.java.flyway.AddFlywayModuleMySQL](/recipes/java/flyway/addflywaymodulemysql.md)
-  * **Add missing Flyway module for MySQL**
-  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-mysql` dependency if you are using MySQL with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
-* [org.openrewrite.java.flyway.AddFlywayModuleOracle](/recipes/java/flyway/addflywaymoduleoracle.md)
-  * **Add missing Flyway module for Oracle**
-  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-database-oracle` dependency if you are using Oracle with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
-* [org.openrewrite.java.flyway.AddFlywayModulePostgreSQL](/recipes/java/flyway/addflywaymodulepostgresql.md)
-  * **Add missing Flyway module for PostgreSQL**
-  * Database modules for Flyway 10 have been split out in to separate modules for maintainability. Add the `flyway-database-postgresql` dependency if you are using PostgreSQL with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
-* [org.openrewrite.java.flyway.AddFlywayModuleSqlServer](/recipes/java/flyway/addflywaymodulesqlserver.md)
-  * **Add missing Flyway module for SQL Server**
-  * Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-sqlserver` dependency if you are using SQL Server with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
-* [org.openrewrite.java.flyway.MigrateToFlyway10](/recipes/java/flyway/migratetoflyway10.md)
-  * **Migrate to Flyway 10**
-  * Migrate to Flyway 10. See details at [Flyway V10 has landed](https://documentation.red-gate.com/fd/flyway-v10-has-landed-222627771.html).
-* [org.openrewrite.java.jackson.CodehausClassesToFasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
-  * **Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML**
-  * In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
-* [org.openrewrite.java.jackson.CodehausToFasterXML](/recipes/java/jackson/codehaustofasterxml.md)
-  * **Migrate from Jackson Codehaus (legacy) to Jackson FasterXML**
-  * In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
-* [org.openrewrite.java.jackson.JacksonBestPractices](/recipes/java/jackson/jacksonbestpractices.md)
-  * **Jackson best practices**
-  * Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3](/recipes/java/jackson/upgradejackson_2_3.md)
-  * **Migrates from Jackson 2.x to Jackson 3.x**
-  * Migrate applications to the latest Jackson 3.x release. This recipe handles package changes (`com.fasterxml.jackson` -&gt; `tools.jackson`), dependency updates, core class renames, exception renames, and method renames (e.g., `JsonGenerator.writeObject()` -&gt; `writePOJO()`, `JsonParser.getCurrentValue()` -&gt; `currentValue()`).
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
-  * **Upgrade Jackson 2.x dependencies to 3.x**
-  * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs.
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsongeneratormethodrenames.md)
-  * **Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator**
-  * Rename JsonGenerator methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonNodeMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsonnodemethodrenames.md)
-  * **Rename Jackson 2.x methods to 3.x equivalents for JsonNode**
-  * Rename JsonNode methods that were renamed in 3.x (e.g., `elements()` to `values()`, `fields()` to `entries()`).
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonParserMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsonparsermethodrenames.md)
-  * **Rename Jackson 2.x methods to 3.x equivalents for JsonParser**
-  * Rename JsonParser methods that were renamed in 3.x (e.g., `getTextCharacters()` to `getStringCharacters()`, `getCurrentValue()` to `currentValue()`).
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
-  * **Rename Jackson 2.x methods to 3.x equivalents**
-  * Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges](/recipes/java/jackson/upgradejackson_2_3_packagechanges.md)
-  * **Update Jackson package names from 2.x to 3.x**
-  * Update Jackson package imports from `com.fasterxml.jackson` to `tools.jackson`.
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_RelocatedFeatureConstants](/recipes/java/jackson/upgradejackson_2_3_relocatedfeatureconstants.md)
-  * **Migrate relocated feature constants to DateTimeFeature and EnumFeature**
-  * Jackson 3 moved date/time-related feature constants from `SerializationFeature` and `DeserializationFeature` into `DateTimeFeature`, and enum-related constants into `EnumFeature`.
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags](/recipes/java/jackson/upgradejackson_2_3_removeredundantfeatureflags.md)
-  * **Remove redundant Jackson 3 feature flag configurations**
-  * Remove `ObjectMapper` feature flag configurations that are now defaults in Jackson 3.
-* [org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
-  * **Update Jackson 2.x types to 3.x**
-  * Update Jackson type names including exception types and core class renames.
-* [org.openrewrite.java.joda.time.NoJodaTime](/recipes/java/joda/time/nojodatime.md)
-  * **Prefer the Java standard library instead of Joda-Time**
-  * Before Java 8, Java lacked a robust date and time library, leading to the widespread use of Joda-Time to fill this gap. With the release of Java 8, the `java.time` package was introduced, incorporating most of Joda-Time's concepts. Features deemed too specialized or bulky for `java.time` were included in the ThreeTen-Extra library.  This recipe migrates Joda-Time types to `java.time` and `threeten-extra` types.
-* [org.openrewrite.java.jspecify.JSpecifyBestPractices](/recipes/java/jspecify/jspecifybestpractices.md)
-  * **JSpecify best practices**
-  * Apply JSpecify best practices, such as migrating off of alternatives, and adding missing `@Nullable` annotations.
-* [org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi](/recipes/java/jspecify/migratefromjakartaannotationapi.md)
-  * **Migrate from Jakarta annotation API to JSpecify**
-  * Migrate from Jakarta annotation API to JSpecify.
-* [org.openrewrite.java.jspecify.MigrateFromJavaxAnnotationApi](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
-  * **Migrate from javax annotation API to JSpecify**
-  * Migrate from javax annotation API to JSpecify.
-* [org.openrewrite.java.jspecify.MigrateFromJetbrainsAnnotations](/recipes/java/jspecify/migratefromjetbrainsannotations.md)
-  * **Migrate from JetBrains annotations to JSpecify**
-  * Migrate from JetBrains annotations to JSpecify.
-* [org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations](/recipes/java/jspecify/migratefrommicrometerannotations.md)
-  * **Migrate from Micrometer annotations to JSpecify**
-  * Migrate from Micrometer annotations to JSpecify.
-* [org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations](/recipes/java/jspecify/migratefrommicronautannotations.md)
-  * **Migrate from Micronaut Framework annotations to JSpecify**
-  * Migrate from Micronaut Framework annotations to JSpecify.
-* [org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
-  * **Migrate from OpenRewrite annotations to JSpecify**
-  * Migrate from OpenRewrite's JSR-305 meta-annotations to JSpecify.
-* [org.openrewrite.java.jspecify.MigrateFromSpringFrameworkAnnotations](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
-  * **Migrate from Spring Framework annotations to JSpecify**
-  * Migrate from Spring Framework annotations to JSpecify.
-* [org.openrewrite.java.jspecify.MigrateToJSpecify](/recipes/java/jspecify/migratetojspecify.md)
-  * **Migrate to JSpecify**
-  * This recipe will migrate to JSpecify annotations from various other nullability annotation standards.
-* [org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty](/recipes/java/liberty/migratefromwebspheretoliberty.md)
-  * **Migrate from WebSphere traditional to Liberty**
-  * Use this category of rules to identify code changes needed when migrating from WebSphere Application Server traditional to Liberty.
-* [org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods](/recipes/java/liberty/websphereunavailablessomethods.md)
-  * **Use `getSSOCookieFromSSOToken` and `logout`**
-  * This recipe replaces `LTPACookieFromSSOToken()` with  `getSSOCookieFromSSOToken`  and `revokeSSOCookies` with `logout`. The two methods are  deprecated in traditional WebSphere Application Server Version 8.5 and might be removed in a future release. They are not available on Liberty.
-* [org.openrewrite.java.logging.jboss.JBossLoggingBestPractices](/recipes/java/logging/jboss/jbossloggingbestpractices.md)
-  * **JBoss Logging Best Practices**
-  * This recipe applies best practices for logging in JBoss applications. It includes converting argument arrays to varargs for better readability and performance.
-* [org.openrewrite.java.logging.log4j.CommonsLoggingToLog4j](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
-  * **Migrate JCL to Log4j 2.x API**
-  * Transforms code written using Apache Commons Logging to use Log4j 2.x API.
-* [org.openrewrite.java.logging.log4j.JulToLog4j](/recipes/java/logging/log4j/jultolog4j.md)
-  * **Migrate JUL to Log4j 2.x API**
-  * Transforms code written using `java.util.logging` to use Log4j 2.x API.
-* [org.openrewrite.java.logging.log4j.Log4j1ToLog4j2](/recipes/java/logging/log4j/log4j1tolog4j2.md)
-  * **Migrate Log4j 1.x to Log4j 2.x**
-  * Migrates Log4j 1.x to Log4j 2.x.
-* [org.openrewrite.java.logging.log4j.ParameterizedLogging](/recipes/java/logging/log4j/parameterizedlogging.md)
-  * **Parameterize Log4j 2.x logging statements**
-  * Use Log4j 2.x parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
-* [org.openrewrite.java.logging.log4j.Slf4jToLog4j](/recipes/java/logging/log4j/slf4jtolog4j.md)
-  * **Migrate SLF4J to Log4j 2.x API**
-  * Transforms code written using SLF4J to use Log4j 2.x API.
-* [org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
-  * **Upgrade Log4j 2.x dependency version**
-  * Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a).
-* [org.openrewrite.java.logging.logback.Log4jToLogback](/recipes/java/logging/logback/log4jtologback.md)
-  * **Migrate Log4j 2.x to Logback**
-  * Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementation directly. Note, this currently does not modify `log4j.properties` files.
-* [org.openrewrite.java.logging.slf4j.AddJBossLogManagerSlf4jProviderDependency](/recipes/java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency.md)
-  * **Add JBoss LogManager's SLF4J provider**
-  * When JBoss LogManager is the logging backend, add its SLF4J provider so we can migrate to SLF4J as a logging facade.
-* [org.openrewrite.java.logging.slf4j.CommonsLogging1ToSlf4j1](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
-  * **Migrate Apache Commons Logging 1.x to SLF4J 1.x**
-  * Transforms usages of Apache Commons Logging 1.x to leveraging SLF4J 1.x directly.
-* [org.openrewrite.java.logging.slf4j.JBossLoggingToSlf4j](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
-  * **Migrate JBoss Logging to SLF4J**
-  * Migrates usage of the JBoss Logging facade to using SLF4J.
-* [org.openrewrite.java.logging.slf4j.JulToSlf4j](/recipes/java/logging/slf4j/jultoslf4j.md)
-  * **Migrate JUL to SLF4J**
-  * Migrates usage of Java Util Logging (JUL) to using SLF4J directly.
-* [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
-  * **Migrate Log4j 1.x to SLF4J 1.x**
-  * Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
-* [org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1](/recipes/java/logging/slf4j/log4j2toslf4j1.md)
-  * **Migrate Log4j 2.x to SLF4J 1.x**
-  * Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
-* [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](/recipes/java/logging/slf4j/log4jtoslf4j.md)
-  * **Migrate Log4j to SLF4J**
-  * Migrates usage of Apache Log4j to using SLF4J directly. Use of the traditional Log4j to SLF4J bridge can result in loss of performance, as the Log4j messages must be formatted before they can be passed to SLF4J. Note, this currently does not modify `log4j.properties` files.
-* [org.openrewrite.java.logging.slf4j.ParameterizedLogging](/recipes/java/logging/slf4j/parameterizedlogging.md)
-  * **Parameterize SLF4J's logging statements**
-  * Use SLF4J's parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
-* [org.openrewrite.java.logging.slf4j.Slf4jBestPractices](/recipes/java/logging/slf4j/slf4jbestpractices.md)
-  * **SLF4J best practices**
-  * Applies best practices to logging with SLF4J.
-* [org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded](/recipes/java/micronaut/addmicronautretrydependencyifneeded.md)
-  * **Update the Micronaut Retry support**
-  * This recipe will add the explicit Micronaut Retry dependency if needed.
-* [org.openrewrite.java.micronaut.AddMicronautWebsocketDependencyIfNeeded](/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded.md)
-  * **Update the Micronaut Websocket support**
-  * This recipe will add the explicit Micronaut Websocket dependency if needed.
-* [org.openrewrite.java.micronaut.Micronaut2to3Migration](/recipes/java/micronaut/micronaut2to3migration.md)
-  * **Migrate from Micronaut 2.x to 3.x**
-  * This recipe will apply changes required for migrating from Micronaut 2 to Micronaut 3.
-* [org.openrewrite.java.micronaut.Micronaut3to4Migration](/recipes/java/micronaut/micronaut3to4migration.md)
-  * **Migrate from Micronaut 3.x to 4.x**
-  * This recipe will apply changes required for migrating from Micronaut 3 to Micronaut 4.
-* [org.openrewrite.java.micronaut.RemoveUnnecessaryDependencies](/recipes/java/micronaut/removeunnecessarydependencies.md)
-  * **Remove unnecessary dependencies**
-  * This recipe will remove dependencies that are no longer explicitly needed.
-* [org.openrewrite.java.micronaut.RemoveWithJansiLogbackConfiguration](/recipes/java/micronaut/removewithjansilogbackconfiguration.md)
-  * **Remove withJansi Logback configuration**
-  * This recipe will remove the withJansi configuration tag from logback.xml.
-* [org.openrewrite.java.micronaut.UpdateBlockingTaskExecutors](/recipes/java/micronaut/updateblockingtaskexecutors.md)
-  * **Migrate the use of TaskExecutors with blocking IO**
-  * This recipe will any usage of TaskExecutors.IO to TaskExecutors.BLOCKING in order to be compatible with virtual threads.
-* [org.openrewrite.java.micronaut.UpdateBuildPlugins](/recipes/java/micronaut/updatebuildplugins.md)
-  * **Add Micronaut build plugins to 4.x**
-  * This recipe will update the shadow jar plugin to 8.x and the Micronaut build plugins to 4.x for a Gradle build.
-* [org.openrewrite.java.micronaut.UpdateBuildToMicronaut4Version](/recipes/java/micronaut/updatebuildtomicronaut4version.md)
-  * **Update the Micronaut version to 4.x**
-  * This recipe will update the Micronaut version to 4.x for a Gradle or Maven build.
-* [org.openrewrite.java.micronaut.UpdateJakartaAnnotations](/recipes/java/micronaut/updatejakartaannotations.md)
-  * **Update jakarta annotations dependency**
-  * This recipe will remove jakarta annotations dependency as it is a transitive dependency of micronaut-inject, and migrate from javax.annotation if needed.
-* [org.openrewrite.java.micronaut.UpdateMavenAnnotationProcessors](/recipes/java/micronaut/updatemavenannotationprocessors.md)
-  * **Update the version of core annotation processors**
-  * This recipe will update the version of Maven-configured annotation processors from Micronaut Core.
-* [org.openrewrite.java.micronaut.UpdateMicronautData](/recipes/java/micronaut/updatemicronautdata.md)
-  * **Update the Micronaut Data library**
-  * This recipe will make the necessary updates for using Micronaut Data with Micronaut Framework 4.
-* [org.openrewrite.java.micronaut.UpdateMicronautEmail](/recipes/java/micronaut/updatemicronautemail.md)
-  * **Update to Micronaut Email 2.x**
-  * This recipe will migrate from javax.validation if needed, and update packages in for the Postmark integration if needed.
-* [org.openrewrite.java.micronaut.UpdateMicronautPlatformBom](/recipes/java/micronaut/updatemicronautplatformbom.md)
-  * **Update to Micronaut 4.x platform BOM**
-  * This recipe will update a Gradle or Maven build to reference the Micronaut 4 platform BOM.
-* [org.openrewrite.java.micronaut.UpdateMicronautSecurity](/recipes/java/micronaut/updatemicronautsecurity.md)
-  * **Update the Micronaut Security library**
-  * This recipe will update imports for relocated classes and update configuration files with renamed keys.
-* [org.openrewrite.java.micronaut.UpdateMicronautSession](/recipes/java/micronaut/updatemicronautsession.md)
-  * **Update the Micronaut Session support**
-  * This recipe will update the Micronaut Session dependency if needed.
-* [org.openrewrite.java.micronaut.UpdateMicronautValidation](/recipes/java/micronaut/updatemicronautvalidation.md)
-  * **Update to Micronaut Validation 4.x**
-  * This recipe will add jakarta validation dependency if needed, migrate from javax.validation if needed, and update micronaut validation dependencies.
-* [org.openrewrite.java.migrate.AccessController](/recipes/java/migrate/accesscontroller.md)
-  * **Remove Security AccessController**
-  * The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.AccessController`.
-* [org.openrewrite.java.migrate.AddLombokMapstructBinding](/recipes/java/migrate/addlombokmapstructbinding.md)
-  * **Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used**
-  * Add the `lombok-mapstruct-binding` annotation processor as needed when both MapStruct and Lombok are used.
-* [org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly](/recipes/java/migrate/addlombokmapstructbindingmavendependencyonly.md)
-  * **Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used**
-  * Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
-* [org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md)
-  * **Migrate Bouncy Castle to `jdk18on`**
-  * This recipe will upgrade Bouncy Castle dependencies from `-jdk15on` or `-jdk15to18` to `-jdk18on`.
-* [org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md)
-  * **Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8**
-  * This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8.
-* [org.openrewrite.java.migrate.ComIntelliJAnnotationsToOrgJetbrainsAnnotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
-  * **Migrate com.intellij:annotations to org.jetbrains:annotations**
-  * This recipe will upgrade old dependency of com.intellij:annotations to the newer org.jetbrains:annotations.
-* [org.openrewrite.java.migrate.DeleteDeprecatedFinalize](/recipes/java/migrate/deletedeprecatedfinalize.md)
-  * **Avoid using the deprecated empty `finalize()` method in `java.desktop`**
-  * The java.desktop module had a few implementations of finalize() that did nothing and have been removed. This recipe will remove these methods.
-* [org.openrewrite.java.migrate.DeprecatedCountStackFramesMethod](/recipes/java/migrate/deprecatedcountstackframesmethod.md)
-  * **Remove `Thread.countStackFrames()` method**
-  * `Thread.countStackFrames()` has been removed in Java SE 14 and has been changed in this release to unconditionally throw `UnsupportedOperationException`  This recipe removes the usage of this method in your application as long as the method is not assigned to a variable.  For more information on the Java SE 14 deprecation of this method, see https://bugs.java.com/bugdatabase/view_bug?bug_id=8205132.
-* [org.openrewrite.java.migrate.DeprecatedJavaxSecurityCert](/recipes/java/migrate/deprecatedjavaxsecuritycert.md)
-  * **Use `java.security.cert` instead of `javax.security.cert`**
-  * The `javax.security.cert` package has been deprecated for removal.
-* [org.openrewrite.java.migrate.DeprecatedLogRecordThreadID](/recipes/java/migrate/deprecatedlogrecordthreadid.md)
-  * **Adopt `setLongThreadID` in `java.util.logging.LogRecord`**
-  * Avoid using the deprecated methods in `java.util.logging.LogRecord`.
-* [org.openrewrite.java.migrate.EnableLombokAnnotationProcessor](/recipes/java/migrate/enablelombokannotationprocessor.md)
-  * **Enable Lombok annotation processor**
-  * With Java 23 the encapsulation of JDK internals made it necessary to configure annotation processors like Lombok explicitly. The change is valid for older versions as well.
-* [org.openrewrite.java.migrate.IBMJDKtoOracleJDK](/recipes/java/migrate/ibmjdktooraclejdk.md)
-  * **Migrate from IBM Runtimes to Oracle Runtimes**
-  * This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions necessary for migrating from IBM Runtimes to Oracle Runtimes.
-* [org.openrewrite.java.migrate.IBMSemeru](/recipes/java/migrate/ibmsemeru.md)
-  * **Migrate to IBM Semeru Runtimes**
-  * This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions only available in IBM Semeru Runtimes.
-* [org.openrewrite.java.migrate.InternalBindPackages](/recipes/java/migrate/internalbindpackages.md)
-  * **Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`**
-  * Do not use APIs from `com.sun.xml.internal.bind.*` packages.
-* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslAPIs](/recipes/java/migrate/jredonotusesunnetsslapis.md)
-  * **Use `javax.net.ssl` instead of `com.sun.net.ssl`**
-  * Do not use APIs from `com.sun.net.ssl` packages.
-* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalSslProvider](/recipes/java/migrate/jredonotusesunnetsslinternalsslprovider.md)
-  * **Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`**
-  * Do not use the `com.sun.net.ssl.internal.ssl.Provider` class.
-* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol](/recipes/java/migrate/jredonotusesunnetsslinternalwwwprotocol.md)
-  * **Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`**
-  * Do not use the `com.sun.net.ssl.internal.www.protocol` package.
-* [org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocolHttpsHandler](/recipes/java/migrate/jredonotusesunnetsslinternalwwwprotocolhttpshandler.md)
-  * **Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`**
-  * Do not use the `com.sun.net.ssl.internal.www.protocol.https.Handler` class.
-* [org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods](/recipes/java/migrate/jrejdbcinterfacenewmethods.md)
-  * **Adds missing JDBC interface methods**
-  * Add method implementations stubs to classes that implement JDBC interfaces.
-* [org.openrewrite.java.migrate.JREWrapperInterface](/recipes/java/migrate/jrewrapperinterface.md)
-  * **Add missing `isWrapperFor` and `unwrap` methods**
-  * Add method implementations stubs to classes that implement `java.sql.Wrapper`.
-* [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
-  * **Migrate to Java 11**
-  * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
-* [org.openrewrite.java.migrate.Jre17AgentMainPreMainPublic](/recipes/java/migrate/jre17agentmainpremainpublic.md)
-  * **Set visibility of `premain` and `agentmain` methods to `public`**
-  * Check for a behavior change in Java agents.
-* [org.openrewrite.java.migrate.Krb5LoginModuleClass](/recipes/java/migrate/krb5loginmoduleclass.md)
-  * **Use `com.sun.security.auth.module.Krb5LoginModule` instead of `com.ibm.security.auth.module.Krb5LoginModule`**
-  * Do not use the `com.ibm.security.auth.module.Krb5LoginModule` class.
-* [org.openrewrite.java.migrate.MigrateZipErrorToZipException](/recipes/java/migrate/migrateziperrortozipexception.md)
-  * **Use `ZipException` instead of `ZipError`**
-  * Use `ZipException` instead of the deprecated `ZipError` in Java 9 or higher.
-* [org.openrewrite.java.migrate.RemoveSecurityManager](/recipes/java/migrate/removesecuritymanager.md)
-  * **Remove Security SecurityManager**
-  * The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.SecurityManager`.
-* [org.openrewrite.java.migrate.RemoveSecurityPolicy](/recipes/java/migrate/removesecuritypolicy.md)
-  * **Remove Security Policy**
-  * The Security Manager API is unsupported in Java 24. This recipe will remove the use of `java.security.Policy`.
-* [org.openrewrite.java.migrate.RemovedFileIOFinalizeMethods](/recipes/java/migrate/removedfileiofinalizemethods.md)
-  * **Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`**
-  * The `finalize` method in `java.io.FileInputStream` and `java.io.FileOutputStream` is no longer available in Java SE 12 and later. The recipe replaces it with the `close` method.
-* [org.openrewrite.java.migrate.RemovedJavaXMLWSModuleProvided](/recipes/java/migrate/removedjavaxmlwsmoduleprovided.md)
-  * **Do not package `java.xml.ws` module in WebSphere Liberty applications**
-  * The `java.xml.ws` module was removed in Java11. Websphere Liberty provides its own implementation of the module, which can be used by specifying the `jaxws-2.2` feature in the server.xml file. This recipe updates the `javax.xml.ws` dependency to use the `provided` scope to avoid class loading issues.
-* [org.openrewrite.java.migrate.RemovedJaxBModuleProvided](/recipes/java/migrate/removedjaxbmoduleprovided.md)
-  * **Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications**
-  * The `java.xml.bind` and `java.activation` modules were removed in Java11. Websphere Liberty provides its own implementation of the modules, which can be used by specifying the `jaxb-2.2` feature in the server.xml file. This recipe updates the `javax.xml.bind` and `javax.activation` dependencies to use the `provided` scope to avoid class loading issues.
-* [org.openrewrite.java.migrate.RemovedLegacySunJSSEProviderName](/recipes/java/migrate/removedlegacysunjsseprovidername.md)
-  * **Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`**
-  * The `com.sun.net.ssl.internal.ssl.Provider` provider name was removed.
-* [org.openrewrite.java.migrate.RemovedModifierAndConstantBootstrapsConstructors](/recipes/java/migrate/removedmodifierandconstantbootstrapsconstructors.md)
-  * **Change `java.lang.reflect.Modifier` and ` java.lang.invoke.ConstantBootstraps` method calls to static**
-  * The `java.lang.reflect.Modifier()` and `java.lang.invoke.ConstantBootstraps()` constructors have been removed in Java SE 15 because both classes only contain static methods. This recipe converts the usage of all methods in the two classes to be  static. See https://docs.oracle.com/en/java/javase/15/migrate/index.html#GUID-233853B8-0782-429E-BEF7-7532EE610E63 for more information on these changes.
-* [org.openrewrite.java.migrate.RemovedPolicy](/recipes/java/migrate/removedpolicy.md)
-  * **Replace `javax.security.auth.Policy` with `java.security.Policy`**
-  * The `javax.security.auth.Policy` class is not available from Java SE 11 onwards.
-* [org.openrewrite.java.migrate.RemovedRMIConnectorServerCredentialTypesConstant](/recipes/java/migrate/removedrmiconnectorservercredentialtypesconstant.md)
-  * **Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant**
-  * This recipe replaces the `RMIConnectorServer.CREDENTIAL_TYPES` constant with the `RMIConnectorServer.CREDENTIALS_FILTER_PATTERN` constant.
-* [org.openrewrite.java.migrate.RemovedRuntimeTraceMethods](/recipes/java/migrate/removedruntimetracemethods.md)
-  * **Remove `Runtime.traceInstructions(boolean)` and `Runtime.traceMethodCalls` methods**
-  * The `traceInstructions` and `traceMethodCalls` methods in `java.lang.Runtime` were deprecated in Java SE 9 and are no longer available in Java SE 13 and later. The recipe removes the invocations of these methods since the method invocations do nothing functionally.
-* [org.openrewrite.java.migrate.RemovedSSLSessionGetPeerCertificateChainMethodImpl](/recipes/java/migrate/removedsslsessiongetpeercertificatechainmethodimpl.md)
-  * **Replace `SSLSession.getPeerCertificateChain()` method**
-  * The `javax.net.ssl.SSLSession.getPeerCertificateChain()` method implementation was removed from the SunJSSE provider and HTTP client implementation in Java SE 15. The default implementation will now throw an `UnsupportedOperationException`. Applications using this method should be updated to use the `javax.net.ssl.SSLSession.getPeerCertificates()` method instead.
-* [org.openrewrite.java.migrate.RemovedSubjectMethods](/recipes/java/migrate/removedsubjectmethods.md)
-  * **Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`**
-  * Replaces the `javax.security.auth.Subject.getSubject()` and `javax.security.auth.Subject.doAs()` methods with `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()`.
-* [org.openrewrite.java.migrate.RemovedToolProviderConstructor](/recipes/java/migrate/removedtoolproviderconstructor.md)
-  * **Change `javax.tools.ToolProvider` methods calls to static**
-  * The `javax.tools.ToolProvider()` constructor has been removed in Java SE 16 since the class only contains static methods. The recipe converts `javax.tools.ToolProvider getSystemJavaCompiler()`, `javax.tools.ToolProvider getSystemDocumentationTool()` and `javax.tools.ToolProvider getSystemToolClassLoader()` to static methods.
-* [org.openrewrite.java.migrate.RemovedZipFinalizeMethods](/recipes/java/migrate/removedzipfinalizemethods.md)
-  * **Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`**
-  * The `finalize` method in `java.util.zip.ZipFile` is replaced with the `close` method and is replaced by the `end` method in  `java.util.zip.Inflater` and `java.util.zip.Deflater` as it is no longer available in Java SE 12 and later.
-* [org.openrewrite.java.migrate.SunNetSslPackageUnavailable](/recipes/java/migrate/sunnetsslpackageunavailable.md)
-  * **Replace `com.sun.net.ssl` package**
-  * The internal API `com.sun.net.ssl` is removed. The package was intended for internal use only and replacement APIs can be found in the `javax.net.ssl` package.
-* [org.openrewrite.java.migrate.SwitchPatternMatching](/recipes/java/migrate/switchpatternmatching.md)
-  * **Adopt switch pattern matching (JEP 441)**
-  * [JEP 441](https://openjdk.org/jeps/441) describes how some switch statements can be improved with pattern matching. This recipe applies some of those improvements where applicable.
-* [org.openrewrite.java.migrate.SystemGetSecurityManagerToNull](/recipes/java/migrate/systemgetsecuritymanagertonull.md)
-  * **Replace `System.getSecurityManager()` with `null`**
-  * The Security Manager API is unsupported in Java 24. This recipe will replace `System.getSecurityManager()` with `null` to make its behavior more obvious and try to simplify execution paths afterwards.
-* [org.openrewrite.java.migrate.ThreadStopDestroy](/recipes/java/migrate/threadstopdestroy.md)
-  * **Remove `Thread.destroy()` and `Thread.stop(Throwable)`**
-  * The `java.lang.Thread.destroy()` method was never implemented, and the `java.lang.Thread.stop(java.lang.Throwable)` method has been unusable since Java SE 8. This recipe removes any usage of these methods from your application.
-* [org.openrewrite.java.migrate.UpgradeBuildToJava11](/recipes/java/migrate/upgradebuildtojava11.md)
-  * **Upgrade build to Java 11**
-  * Updates build files to use Java 11 as the target/source.
-* [org.openrewrite.java.migrate.UpgradeBuildToJava17](/recipes/java/migrate/upgradebuildtojava17.md)
-  * **Upgrade build to Java 17**
-  * Updates build files to use Java 17 as the target/source.
-* [org.openrewrite.java.migrate.UpgradeBuildToJava21](/recipes/java/migrate/upgradebuildtojava21.md)
-  * **Upgrade build to Java 21**
-  * Updates build files to use Java 21 as the target/source.
-* [org.openrewrite.java.migrate.UpgradePluginsForJava11](/recipes/java/migrate/upgradepluginsforjava11.md)
-  * **Upgrade plugins to Java 11 compatible versions**
-  * Updates plugins to version compatible with Java 11.
-* [org.openrewrite.java.migrate.UpgradePluginsForJava17](/recipes/java/migrate/upgradepluginsforjava17.md)
-  * **Upgrade plugins to Java 17 compatible versions**
-  * Updates plugins to version compatible with Java 17.
-* [org.openrewrite.java.migrate.UpgradePluginsForJava21](/recipes/java/migrate/upgradepluginsforjava21.md)
-  * **Upgrade plugins to Java 21 compatible versions**
-  * Updates plugins and dependencies to version compatible with Java 21.
-* [org.openrewrite.java.migrate.UpgradePluginsForJava25](/recipes/java/migrate/upgradepluginsforjava25.md)
-  * **Upgrade plugins to Java 25 compatible versions**
-  * Updates plugins and dependencies to versions compatible with Java 25.
-* [org.openrewrite.java.migrate.UpgradeToJava17](/recipes/java/migrate/upgradetojava17.md)
-  * **Migrate to Java 17**
-  * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
-* [org.openrewrite.java.migrate.UpgradeToJava21](/recipes/java/migrate/upgradetojava21.md)
-  * **Migrate to Java 21**
-  * This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
-* [org.openrewrite.java.migrate.UpgradeToJava25](/recipes/java/migrate/upgradetojava25.md)
-  * **Migrate to Java 25**
-  * This recipe will apply changes commonly needed when migrating to Java 25. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 25 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 25.
-* [org.openrewrite.java.migrate.UpgradeToJava6](/recipes/java/migrate/upgradetojava6.md)
-  * **Migrate to Java 6**
-  * This recipe will apply changes commonly needed when upgrading to Java 6. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
-* [org.openrewrite.java.migrate.UpgradeToJava7](/recipes/java/migrate/upgradetojava7.md)
-  * **Migrate to Java 7**
-  * This recipe will apply changes commonly needed when upgrading to Java 7. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
-* [org.openrewrite.java.migrate.UpgradeToJava8](/recipes/java/migrate/upgradetojava8.md)
-  * **Migrate to Java 8**
-  * This recipe will apply changes commonly needed when upgrading to Java 8. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
-* [org.openrewrite.java.migrate.WasDevMvnChangeParentArtifactId](/recipes/java/migrate/wasdevmvnchangeparentartifactid.md)
-  * **Change `net.wasdev.maven.parent:java8-parent` to `:parent`**
-  * This recipe changes the artifactId of the `&lt;parent&gt;` tag in the `pom.xml` from `java8-parent` to `parent`.
-* [org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin](/recipes/java/migrate/cobertura/removecoberturamavenplugin.md)
-  * **Remove Cobertura Maven plugin**
-  * This recipe will remove Cobertura, as it is not compatible with Java 11.
-* [org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs](/recipes/java/migrate/concurrent/javaconcurrentapis.md)
-  * **Use modernized `java.util.concurrent` APIs**
-  * The Java concurrent APIs were updated in Java 9 and those changes resulted in certain APIs being deprecated. This recipe update an application to replace the deprecated APIs with their modern alternatives.
-* [org.openrewrite.java.migrate.concurrent.MigrateAtomicBooleanWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicbooleanweakcompareandsettoweakcompareandsetplain.md)
-  * **Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`**
-  * Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)` instead of the deprecated `AtomicBoolean#weakCompareAndSet(boolean, boolean)` in Java 9 or higher.
-* [org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerArrayWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicintegerarrayweakcompareandsettoweakcompareandsetplain.md)
-  * **Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)`**
-  * Use `AtomicIntegerArray#weakCompareAndSetPlain(int, int, int)` instead of the deprecated `AtomicIntegerArray#weakCompareAndSet(int, int, int)` in Java 9 or higher.
-* [org.openrewrite.java.migrate.concurrent.MigrateAtomicIntegerWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicintegerweakcompareandsettoweakcompareandsetplain.md)
-  * **Use `AtomicInteger#weakCompareAndSetPlain(int, int)`**
-  * Use `AtomicInteger#weakCompareAndSetPlain(int, int)` instead of the deprecated `AtomicInteger#weakCompareAndSet(int, int)` in Java 9 or higher.
-* [org.openrewrite.java.migrate.concurrent.MigrateAtomicLongArrayWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomiclongarrayweakcompareandsettoweakcompareandsetplain.md)
-  * **Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)`**
-  * Use `AtomicLongArray#weakCompareAndSetPlain(int, long, long)` instead of the deprecated `AtomicLongArray#weakCompareAndSet(int, long, long)` in Java 9 or higher.
-* [org.openrewrite.java.migrate.concurrent.MigrateAtomicLongWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomiclongweakcompareandsettoweakcompareandsetplain.md)
-  * **Use `AtomicLong#weakCompareAndSetPlain(long, long)`**
-  * Use `AtomicLong#weakCompareAndSetPlain(long, long)` instead of the deprecated `AtomicLong#weakCompareAndSet(long, long)` in Java 9 or higher.
-* [org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicreferencearrayweakcompareandsettoweakcompareandsetplain.md)
-  * **Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`**
-  * Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)` instead of the deprecated `AtomicReferenceArray#weakCompareAndSet(int, T, T)` in Java 9 or higher.
-* [org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceWeakCompareAndSetToWeakCompareAndSetPlain](/recipes/java/migrate/concurrent/migrateatomicreferenceweakcompareandsettoweakcompareandsetplain.md)
-  * **Use `AtomicReference#weakCompareAndSetPlain(T, T)`**
-  * Use `AtomicReference#weakCompareAndSetPlain(T, T)` instead of the deprecated `AtomicReference#weakCompareAndSet(T, T)` in Java 9 or higher.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_4_0](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_4_0.md)
-  * **DataNucleus 4.0 package moves**
-  * Relocate packages that were moved in DataNucleus 4.0.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_5_0](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_0.md)
-  * **DataNucleus 5.0 package moves**
-  * Relocate packages that were moved in DataNucleus 5.0.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusPackageMoves_5_2](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_2.md)
-  * **DataNucleus 5.2 package moves**
-  * Relocate packages that were moved in DataNucleus 5.2.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_4_0](/recipes/java/migrate/datanucleus/datanucleusproperties_4_0.md)
-  * **DataNucleus 4.0 property migrations**
-  * Rename property keys that changed in DataNucleus 4.0.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_0](/recipes/java/migrate/datanucleus/datanucleusproperties_5_0.md)
-  * **DataNucleus 5.0 property migrations**
-  * Rename property keys that changed in DataNucleus 5.0.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_1](/recipes/java/migrate/datanucleus/datanucleusproperties_5_1.md)
-  * **DataNucleus 5.1 property migrations**
-  * Rename property keys that changed in DataNucleus 5.1.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusProperties_5_2](/recipes/java/migrate/datanucleus/datanucleusproperties_5_2.md)
-  * **DataNucleus 5.2 property migrations**
-  * Rename property keys that changed in DataNucleus 5.2.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusTypeChanges_4_0](/recipes/java/migrate/datanucleus/datanucleustypechanges_4_0.md)
-  * **DataNucleus 4.0 type changes**
-  * Rename types that were changed in DataNucleus 4.0.
-* [org.openrewrite.java.migrate.datanucleus.DataNucleusTypeChanges_5_0](/recipes/java/migrate/datanucleus/datanucleustypechanges_5_0.md)
-  * **DataNucleus 5.0 type changes**
-  * Rename types that were changed in DataNucleus 5.0.
-* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_4_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_4_0.md)
-  * **Migrate to DataNucleus 4.0**
-  * Migrate DataNucleus 3.x applications to 4.0. This recipe handles package relocations, type renames, property key changes, and dependency updates introduced in AccessPlatform 4.0.
-* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_0.md)
-  * **Migrate to DataNucleus 5.0**
-  * Migrate DataNucleus 4.x applications to 5.0. This recipe handles package relocations, type renames, property key changes, and dependency updates.
-* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_1](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_1.md)
-  * **Migrate to DataNucleus 5.1**
-  * Migrate DataNucleus applications to 5.1. This recipe first applies the 5.0 migration, then handles the transaction namespace reorganization and other property renames introduced in 5.1.
-* [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_2](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_2.md)
-  * **Migrate to DataNucleus 5.2**
-  * Migrate DataNucleus applications to 5.2. This recipe first applies the 5.1 migration, then handles the column mapping package move and query-related property renames introduced in 5.2.
-* [org.openrewrite.java.migrate.guava.NoGuava](/recipes/java/migrate/guava/noguava.md)
-  * **Prefer the Java standard library instead of Guava**
-  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
-* [org.openrewrite.java.migrate.guava.NoGuavaJava11](/recipes/java/migrate/guava/noguavajava11.md)
-  * **Prefer the Java 11 standard library instead of Guava**
-  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
-* [org.openrewrite.java.migrate.guava.NoGuavaJava21](/recipes/java/migrate/guava/noguavajava21.md)
-  * **Prefer the Java 21 standard library instead of Guava**
-  * Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
-* [org.openrewrite.java.migrate.guava.PreferCharCompare](/recipes/java/migrate/guava/prefercharcompare.md)
-  * **Prefer `java.lang.Char#compare`**
-  * Prefer `java.lang.Char#compare` instead of using `com.google.common.primitives.Chars#compare`.
-* [org.openrewrite.java.migrate.guava.PreferIntegerCompare](/recipes/java/migrate/guava/preferintegercompare.md)
-  * **Prefer `Integer#compare`**
-  * Prefer `java.lang.Integer#compare` instead of using `com.google.common.primitives.Ints#compare`.
-* [org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
-  * **Prefer `Integer#compareUnsigned`**
-  * Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare` or `com.google.common.primitives.UnsignedInts#compareUnsigned`.
-* [org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
-  * **Prefer `Integer#divideUnsigned`**
-  * Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide` or `com.google.common.primitives.UnsignedInts#divideUnsigned`.
-* [org.openrewrite.java.migrate.guava.PreferIntegerParseUnsignedInt](/recipes/java/migrate/guava/preferintegerparseunsignedint.md)
-  * **Prefer `Integer#parseUnsignedInt`**
-  * Prefer `java.lang.Integer#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedInts#parseUnsignedInt`.
-* [org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned](/recipes/java/migrate/guava/preferintegerremainderunsigned.md)
-  * **Prefer `Integer#remainderUnsigned`**
-  * Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainderUnsigned`.
-* [org.openrewrite.java.migrate.guava.PreferJavaNioCharsetStandardCharsets](/recipes/java/migrate/guava/preferjavaniocharsetstandardcharsets.md)
-  * **Prefer `java.nio.charset.StandardCharsets`**
-  * Prefer `java.nio.charset.StandardCharsets` instead of using `com.google.common.base.Charsets`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsSynchronizedNavigableMap](/recipes/java/migrate/guava/preferjavautilcollectionssynchronizednavigablemap.md)
-  * **Prefer `java.util.Collections#synchronizedNavigableMap`**
-  * Prefer `java.util.Collections#synchronizedNavigableMap` instead of using `com.google.common.collect.Maps#synchronizedNavigableMap`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilCollectionsUnmodifiableNavigableMap](/recipes/java/migrate/guava/preferjavautilcollectionsunmodifiablenavigablemap.md)
-  * **Prefer `java.util.Collections#unmodifiableNavigableMap`**
-  * Prefer `java.util.Collections#unmodifiableNavigableMap` instead of using `com.google.common.collect.Maps#unmodifiableNavigableMap`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilFunction](/recipes/java/migrate/guava/preferjavautilfunction.md)
-  * **Prefer `java.util.function.Function`**
-  * Prefer `java.util.function.Function` instead of using `com.google.common.base.Function`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsEquals](/recipes/java/migrate/guava/preferjavautilobjectsequals.md)
-  * **Prefer `java.util.Objects#equals`**
-  * Prefer `java.util.Objects#equals` instead of using `com.google.common.base.Objects#equal`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsHashCode](/recipes/java/migrate/guava/preferjavautilobjectshashcode.md)
-  * **Prefer `java.util.Objects#hash`**
-  * Prefer `java.util.Objects#hash` instead of using `com.google.common.base.Objects#hashCode` or `com.google.common.base.Objects hash(..)`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsRequireNonNullElse](/recipes/java/migrate/guava/preferjavautilobjectsrequirenonnullelse.md)
-  * **Prefer `java.util.Objects#requireNonNullElse`**
-  * Prefer `java.util.Objects#requireNonNullElse` instead of using `com.google.common.base.MoreObjects#firstNonNull`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilOptional](/recipes/java/migrate/guava/preferjavautiloptional.md)
-  * **Prefer `java.util.Optional`**
-  * Prefer `java.util.Optional` instead of using `com.google.common.base.Optional`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilPredicate](/recipes/java/migrate/guava/preferjavautilpredicate.md)
-  * **Prefer `java.util.function.Predicate`**
-  * Prefer `java.util.function.Predicate` instead of using `com.google.common.base.Predicate`.
-* [org.openrewrite.java.migrate.guava.PreferJavaUtilSupplier](/recipes/java/migrate/guava/preferjavautilsupplier.md)
-  * **Prefer `java.util.function.Supplier`**
-  * Prefer `java.util.function.Supplier` instead of using `com.google.common.base.Supplier`.
-* [org.openrewrite.java.migrate.guava.PreferLongCompare](/recipes/java/migrate/guava/preferlongcompare.md)
-  * **Prefer `Long#compare`**
-  * Prefer `java.lang.Long#compare` instead of using `com.google.common.primitives.Longs#compare`.
-* [org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
-  * **Prefer `Long#compareUnsigned`**
-  * Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare` or `com.google.common.primitives.UnsignedLongs#compareUnsigned`.
-* [org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned](/recipes/java/migrate/guava/preferlongdivideunsigned.md)
-  * **Prefer `Long#divideUnsigned`**
-  * Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide` or `com.google.common.primitives.UnsignedLongs#divideUnsigned`.
-* [org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
-  * **Prefer `Long#parseUnsignedInt`**
-  * Prefer `java.lang.Long#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedInt`.
-* [org.openrewrite.java.migrate.guava.PreferLongRemainderUnsigned](/recipes/java/migrate/guava/preferlongremainderunsigned.md)
-  * **Prefer `Long#remainderUnsigned`**
-  * Prefer `java.lang.Long#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#remainderUnsigned`.
-* [org.openrewrite.java.migrate.guava.PreferMathAddExact](/recipes/java/migrate/guava/prefermathaddexact.md)
-  * **Prefer `Math#addExact`**
-  * Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd` or `com.google.common.math.IntMath#addExact`.
-* [org.openrewrite.java.migrate.guava.PreferMathClamp](/recipes/java/migrate/guava/prefermathclamp.md)
-  * **Prefer `Math#clamp`**
-  * Prefer `java.lang.Math#clamp` instead of using `com.google.common.primitives.*#constrainToRange`.
-* [org.openrewrite.java.migrate.guava.PreferMathMultiplyExact](/recipes/java/migrate/guava/prefermathmultiplyexact.md)
-  * **Prefer `Math#multiplyExact`**
-  * Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.primitives.IntMath#checkedMultiply` or `com.google.common.primitives.IntMath#multiplyExact`.
-* [org.openrewrite.java.migrate.guava.PreferMathSubtractExact](/recipes/java/migrate/guava/prefermathsubtractexact.md)
-  * **Prefer `Math#subtractExact`**
-  * Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.primitives.IntMath#checkedSubtract` or `com.google.common.primitives.IntMath#subtractExact`.
-* [org.openrewrite.java.migrate.guava.PreferShortCompare](/recipes/java/migrate/guava/prefershortcompare.md)
-  * **Prefer `Short#compare`**
-  * Prefer `java.lang.Short#compare` instead of using `com.google.common.primitives.Shorts#compare`.
-* [org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
-  * **Upgrade JaCoCo**
-  * This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions.
-* [org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
-  * **Remove deprecated API's not supported in CDI4.0**
-  * Deprecated APIs have been removed in CDI 4.0. This recipe removes and updates the corresponding deprecated methods.
-* [org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
-  * **Migrate Ehcache from javax to jakarta namespace**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Ehcache dependencies with their counterparts that are compatible with Jakarta EE 9.
-* [org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
-  * **JSF 2.x to Jakarta Faces 3.x**
-  * Jakarta EE 9 uses Faces 3.0, a major upgrade to Jakarta packages and XML namespaces.
-* [org.openrewrite.java.migrate.jakarta.Faces3xMigrationToFaces4x](/recipes/java/migrate/jakarta/faces3xmigrationtofaces4x.md)
-  * **Upgrade to Jakarta Faces 4.x**
-  * Jakarta EE 10 uses Faces 4.0.
-* [org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x](/recipes/java/migrate/jakarta/faces4xmigrationtofaces41x.md)
-  * **Jakarta Faces 4.0 to 4.1**
-  * Jakarta EE 11 uses Faces 4.1 a minor upgrade.
-* [org.openrewrite.java.migrate.jakarta.FacesJNDINamesChanged](/recipes/java/migrate/jakarta/facesjndinameschanged.md)
-  * **JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`**
-  * The `jsf/ClientSideSecretKey` JNDI name has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`. The JNDI keys that have been renamed are updated to allow use of the keys.
-* [org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
-  * **Substitute removed Faces Managed Beans**
-  * This recipe substitutes Faces Managed Beans, which were deprecated in JavaServer Faces 2.3 and have been removed from Jakarta Faces 4.0.
-* [org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
-  * **Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`**
-  * Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`.
-* [org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
-  * **Migrate Jackson from javax to jakarta namespace**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
-* [org.openrewrite.java.migrate.jakarta.JakartaEE10](/recipes/java/migrate/jakarta/jakartaee10.md)
-  * **Migrate to Jakarta EE 10**
-  * These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
-* [org.openrewrite.java.migrate.jakarta.JakartaEE11](/recipes/java/migrate/jakarta/jakartaee11.md)
-  * **Migrate to Jakarta EE 11**
-  * These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
-* [org.openrewrite.java.migrate.jakarta.JakartaFacesConfigXml4](/recipes/java/migrate/jakarta/jakartafacesconfigxml4.md)
-  * **Migrate xmlns entries in `faces-config.xml` files**
-  * Jakarta EE 10 uses Faces version 4.
-* [org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript](/recipes/java/migrate/jakarta/jakartafacesecmascript.md)
-  * **Migrate JSF values inside EcmaScript files**
-  * Convert JSF to Faces values inside JavaScript,TypeScript, and Properties files.
-* [org.openrewrite.java.migrate.jakarta.JakartaFacesTagLibraryXml4](/recipes/java/migrate/jakarta/jakartafacestaglibraryxml4.md)
-  * **Migrate xmlns entries in `taglib.xml` files**
-  * Faces 4 uses facelet-taglib 4.0.
-* [org.openrewrite.java.migrate.jakarta.JakartaFacesXhtmlEE10](/recipes/java/migrate/jakarta/jakartafacesxhtmlee10.md)
-  * **Faces XHTML migration for Jakarta EE 10**
-  * Find and replace legacy JSF namespace URIs with Jakarta Faces URNs in XHTML files.
-* [org.openrewrite.java.migrate.jakarta.JakartaFacesXhtmlEE9](/recipes/java/migrate/jakarta/jakartafacesxhtmlee9.md)
-  * **Faces XHTML migration for Jakarta EE 9**
-  * Find and replace javax references to jakarta in XHTML files.
-* [org.openrewrite.java.migrate.jakarta.JakartaWebFragmentXml6](/recipes/java/migrate/jakarta/jakartawebfragmentxml6.md)
-  * **Migrate xmlns entries in `web-fragment.xml` files**
-  * Faces 4 uses web-fragment 6.0.
-* [org.openrewrite.java.migrate.jakarta.JakartaWebXml6](/recipes/java/migrate/jakarta/jakartawebxml6.md)
-  * **Migrate xmlns entries in `web.xml` files**
-  * Faces 4 uses web-app 6.0.
-* [org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
-  * **Migrate deprecated `javax.activation` packages to `jakarta.activation`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/java/migrate/jakarta/javaxannotationmigrationtojakartaannotation.md)
-  * **Migrate deprecated `javax.annotation` to `jakarta.annotation`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication.md)
-  * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/java/migrate/jakarta/javaxauthorizationmigrationtojakartaauthorization.md)
-  * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxBatchMigrationToJakartaBatch](/recipes/java/migrate/jakarta/javaxbatchmigrationtojakartabatch.md)
-  * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxBeanValidationXmlToJakartaBeanValidationXml](/recipes/java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml.md)
-  * **Migrate xmlns entries and javax. packages in `validation.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxBeansXmlToJakartaBeansXml](/recipes/java/migrate/jakarta/javaxbeansxmltojakartabeansxml.md)
-  * **Migrate xmlns entries in `beans.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxDecoratorToJakartaDecorator](/recipes/java/migrate/jakarta/javaxdecoratortojakartadecorator.md)
-  * **Migrate deprecated `javax.decorator` packages to `jakarta.decorator`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxEEApiToJakarta](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
-  * **Migrate deprecated `javaee-api` dependencies to `jakarta.platform`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxEjbJarXmlToJakartaEjbJarXml](/recipes/java/migrate/jakarta/javaxejbjarxmltojakartaejbjarxml.md)
-  * **Migrate xmlns entries and javax. packages in `ejb-jar.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb](/recipes/java/migrate/jakarta/javaxejbtojakartaejb.md)
-  * **Migrate deprecated `javax.ejb` packages to `jakarta.ejb`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxElToJakartaEl](/recipes/java/migrate/jakarta/javaxeltojakartael.md)
-  * **Migrate deprecated `javax.el` packages to `jakarta.el`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise](/recipes/java/migrate/jakarta/javaxenterprisetojakartaenterprise.md)
-  * **Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxFacesConfigXmlToJakartaFacesConfigXml](/recipes/java/migrate/jakarta/javaxfacesconfigxmltojakartafacesconfigxml.md)
-  * **Migrate xmlns entries in `faces-config.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxFacesTagLibraryXmlToJakartaFacesTagLibraryXml](/recipes/java/migrate/jakarta/javaxfacestaglibraryxmltojakartafacestaglibraryxml.md)
-  * **Migrate xmlns entries in `taglib.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject](/recipes/java/migrate/jakarta/javaxinjectmigrationtojakartainject.md)
-  * **Migrate deprecated `javax.inject` packages to `jakarta.inject`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxInterceptorToJakartaInterceptor](/recipes/java/migrate/jakarta/javaxinterceptortojakartainterceptor.md)
-  * **Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxJmsToJakartaJms](/recipes/java/migrate/jakarta/javaxjmstojakartajms.md)
-  * **Migrate deprecated `javax.jms` packages to `jakarta.jms`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxJsonToJakartaJson](/recipes/java/migrate/jakarta/javaxjsontojakartajson.md)
-  * **Migrate deprecated `javax.json` packages to `jakarta.json`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxJspToJakartaJsp](/recipes/java/migrate/jakarta/javaxjsptojakartajsp.md)
-  * **Migrate deprecated `javax.jsp` packages to `jakarta.jsp`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxJwsToJakartaJws](/recipes/java/migrate/jakarta/javaxjwstojakartajws.md)
-  * **Migrate deprecated `javax.jws` packages to `jakarta.jws`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxMailToJakartaMail](/recipes/java/migrate/jakarta/javaxmailtojakartamail.md)
-  * **Migrate deprecated `javax.mail` packages to `jakarta.mail`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
-  * **Migrate to Jakarta EE 9**
-  * Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace.
-* [org.openrewrite.java.migrate.jakarta.JavaxOrmXmlToJakartaOrmXml](/recipes/java/migrate/jakarta/javaxormxmltojakartaormxml.md)
-  * **Migrate xmlns entries in `orm.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxPersistenceToJakartaPersistence](/recipes/java/migrate/jakarta/javaxpersistencetojakartapersistence.md)
-  * **Migrate deprecated `javax.persistence` packages to `jakarta.persistence`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersistenceXml](/recipes/java/migrate/jakarta/javaxpersistencexmltojakartapersistencexml.md)
-  * **Migrate xmlns entries in `persistence.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxResourceToJakartaResource](/recipes/java/migrate/jakarta/javaxresourcetojakartaresource.md)
-  * **Migrate deprecated `javax.resource` packages to `jakarta.resource`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxSecurityToJakartaSecurity](/recipes/java/migrate/jakarta/javaxsecuritytojakartasecurity.md)
-  * **Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxServletToJakartaServlet](/recipes/java/migrate/jakarta/javaxservlettojakartaservlet.md)
-  * **Migrate deprecated `javax.servlet` packages to `jakarta.servlet`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions](/recipes/java/migrate/jakarta/javaxtojakartacdiextensions.md)
-  * **Rename CDI Extension to Jakarta**
-  * Rename `javax.enterprise.inject.spi.Extension` to `jakarta.enterprise.inject.spi.Extension`.
-* [org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction](/recipes/java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
-  * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxValidationMigrationToJakartaValidation](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
-  * **Migrate deprecated `javax.validation` packages to `jakarta.validation`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml](/recipes/java/migrate/jakarta/javaxwebfragmentxmltojakartawebfragmentxml.md)
-  * **Migrate xmlns entries in `web-fragment.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxWebXmlToJakartaWebXml](/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml.md)
-  * **Migrate xmlns entries in `web.xml` files**
-  * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxWebsocketToJakartaWebsocket](/recipes/java/migrate/jakarta/javaxwebsockettojakartawebsocket.md)
-  * **Migrate deprecated `javax.websocket` packages to `jakarta.websocket`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxWsToJakartaWs](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
-  * **Migrate deprecated `javax.ws` packages to `jakarta.ws`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
-  * **Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxXmlSoapToJakartaXmlSoap](/recipes/java/migrate/jakarta/javaxxmlsoaptojakartaxmlsoap.md)
-  * **Migrate deprecated `javax.soap` packages to `jakarta.soap`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JavaxXmlToJakartaXmlXJCBinding](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
-  * **Migrate XJC Bindings to Jakata XML**
-  * Java EE has been rebranded to Jakarta EE, migrates the namespace and version in XJC bindings.
-* [org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
-  * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
-  * **Update Jetty EE9 to Jetty EE10**
-  * Update Jetty dependencies from EE9 to EE10, changing the groupId and artifactIds as needed.
-* [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE9](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
-  * **Update Jetty9 to Jetty12**
-  * Update Jetty dependencies from version 9 to version 12.
-* [org.openrewrite.java.migrate.jakarta.JohnzonJavaxToJakarta](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
-  * **Migrate Johnzon from javax to jakarta namespace**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Johnzon dependencies with their counterparts that are compatible with Jakarta EE 9.
-* [org.openrewrite.java.migrate.jakarta.MigrateFastjsonForJakarta10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
-  * **Update Fastjson for Jakarta EE 10**
-  * Update Fastjson to be compatible with Jakarta EE 10.
-* [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
-  * **Update Plugins for Jakarta EE 10**
-  * Update plugin to be compatible with Jakarta EE 10.
-* [org.openrewrite.java.migrate.jakarta.MigrationToJakarta10Apis](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
-  * **Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions**
-  * Jakarta EE 10 updates some apis compared to Jakarta EE 9.
-* [org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration](/recipes/java/migrate/jakarta/omnifacesnamespacemigration.md)
-  * **OmniFaces Namespace Migration**
-  * Find and replace legacy OmniFaces namespaces.
-* [org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
-  * **Replace  deprecated Jakarta Servlet methods and classes**
-  * This recipe replaces the classes and methods deprecated in Jakarta Servlet 6.0.
-* [org.openrewrite.java.migrate.jakarta.RemoveJakartaAnnotationDependencyWhenManagedBySpringBoot](/recipes/java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot.md)
-  * **Remove `jakarta.annotation-api` dependency when managed by Spring Boot**
-  * Best practice recipe to cleanup a direct dependency which also comes transitively for Spring Boot applications.
-* [org.openrewrite.java.migrate.jakarta.RemovedIsParmetersProvidedMethod](/recipes/java/migrate/jakarta/removedisparmetersprovidedmethod.md)
-  * **Use `isParametersProvided()`**
-  * Expression Language prior to 5.0 provides the deprecated MethodExpression.isParmetersProvided() method, with the word 'parameter' misspelled in the method name. This method is unavailable in Jakarta Expression Language 5.0. Use the correctly spelled MethodExpression.isParametersProvided() method instead.
-* [org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesExpressionLanguageClasses](/recipes/java/migrate/jakarta/removedjakartafacesexpressionlanguageclasses.md)
-  * **Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`**
-  * Several classes were removed and replaced in Jakarta Faces 3.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface.
-* [org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver](/recipes/java/migrate/jakarta/removedjakartafacesresourceresolver.md)
-  * **Replace `ResourceResolver` with `ResourceHandler`**
-  * The `ResourceResolver` class was removed in Jakarta Faces 3.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
-* [org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory](/recipes/java/migrate/jakarta/removedsoapelementfactory.md)
-  * **Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`**
-  * XML Web Services prior to 4.0 provides the deprecated SOAPElementFactory class, which is removed in XML Web Services 4.0. The recommended replacement is to use jakarta.xml.soap.SOAPFactory to create SOAPElements.
-* [org.openrewrite.java.migrate.jakarta.RemovedStateManagerMethods](/recipes/java/migrate/jakarta/removedstatemanagermethods.md)
-  * **Use `StateManagementStrategy`**
-  * Faces 3.0 introduced using `StateManagementStrategy` in favor of `StateManager`, which was later removed in Faces 4.0.
-* [org.openrewrite.java.migrate.jakarta.RemovedUIComponentConstant](/recipes/java/migrate/jakarta/removeduicomponentconstant.md)
-  * **Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`**
-  * Replace `jakarta.faces.component.UIComponent.CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` constants with `jakarta.faces.component.UIComponent.getCurrentComponent()` and `getCurrentCompositeComponent()`. that were added in JSF 2.0.
-* [org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
-  * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
-* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
-  * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
-  * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
-* [org.openrewrite.java.migrate.jakarta.ServletCookieBehaviorChangeRFC6265](/recipes/java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
-  * **Remove `getComment` and `getVersion` methods**
-  * Jakarta Servlet methods have been deprecated for removal in Jakarta Servlet 6.0 to align with RFC 6265. In addition, the behavior of these methods has been changed so the setters no longer have any effect, the getComment methods return null, and the getVersion method returns 0. The deprecated methods are removed.
-* [org.openrewrite.java.migrate.jakarta.UpdateApacheCommonsEmailDependencies](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
-  * **Update Apache Commons Email to Email2 for Jakarta**
-  * Update Apache Commons Email to Email2 for Jakarta.
-* [org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
-  * **Update Apache Shiro Dependencies to 2.0.x**
-  * Update Apache Shiro Dependencies to 2.0.x.
-* [org.openrewrite.java.migrate.jakarta.UpdateApacheWSSecurityPackages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
-  * **Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages**
-  * Java EE has been rebranded to Jakarta EE.  This recipe replaces Apache security packages to migrate to Apache `wss4j`.
-* [org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies](/recipes/java/migrate/jakarta/updateeclipselinkdependencies.md)
-  * **Update EclipseLink Dependencies to 4.x**
-  * Update EclipseLink Dependencies to 4.x.
-* [org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
-  * **Update Apache Commons FileUpload2 package for EE10**
-  * Update Apache Commons FileUpload2 package for EE10.
-* [org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2](/recipes/java/migrate/jakarta/updatejakartaannotations2.md)
-  * **Update Jakarta EE annotation Dependencies to 2.1.x**
-  * Update Jakarta EE annotation Dependencies to 2.1.x.
-* [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi3](/recipes/java/migrate/jakarta/updatejakartafacesapi3.md)
-  * **Migrate deprecated `javax.faces` packages to `jakarta.faces`**
-  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation and upgrade.
-* [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4](/recipes/java/migrate/jakarta/updatejakartafacesapi4.md)
-  * **Update Jakarta EE Java Faces Dependencies to 4.0.x**
-  * Update Jakarta EE Java Faces Dependencies to 4.0.x.
-* [org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi41](/recipes/java/migrate/jakarta/updatejakartafacesapi41.md)
-  * **Update Jakarta EE Java Faces Dependencies to 4.1.x**
-  * Update Jakarta EE Java Faces Dependencies to 4.1.x.
-* [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform10](/recipes/java/migrate/jakarta/updatejakartaplatform10.md)
-  * **Update Jakarta EE Platform Dependencies to 10.0.0**
-  * Update Jakarta EE Platform Dependencies to 10.0.0.
-* [org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform11](/recipes/java/migrate/jakarta/updatejakartaplatform11.md)
-  * **Update Jakarta EE Platform Dependencies to 11.0.x**
-  * Update Jakarta EE Platform Dependencies to 11.0.x.
-* [org.openrewrite.java.migrate.jakarta.UpdateJakartaXmlWsEE10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
-  * **Update Jakarta EE XML Web Services Dependencies for EE 10**
-  * Update Jakarta EE XML Web Services Dependencies for EE 10.
-* [org.openrewrite.java.migrate.jakarta.UpdateJerseyDependencies](/recipes/java/migrate/jakarta/updatejerseydependencies.md)
-  * **Update GlassFish Jersey Dependencies to 3.1.x**
-  * Update GlassFish Jersey Dependencies to 3.1.x.
-* [org.openrewrite.java.migrate.jakarta.UpdateRestLet2_6](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
-  * **Update RestLet to 2.6.0**
-  * Update RestLet to 2.6.0.
-* [org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies](/recipes/java/migrate/jakarta/updateyassondependencies.md)
-  * **Update Eclipse Yasson Dependencies to 3.0.x**
-  * Update Eclipse Yasson Dependencies to 3.0.x.
-* [org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
-  * **Upgrade Faces open source libraries**
-  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [org.openrewrite.java.migrate.jakarta.UpgradeFaces41OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces41opensourcelibraries.md)
-  * **Upgrade Faces open source libraries**
-  * Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions.
-* [org.openrewrite.java.migrate.jakarta.UpgradeFaces4OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
-  * **Upgrade Faces open source libraries**
-  * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE10 versions.
-* [org.openrewrite.java.migrate.jakarta.WsWsocServerContainerDeprecation](/recipes/java/migrate/jakarta/wswsocservercontainerdeprecation.md)
-  * **Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`**
-  * Deprecated `WsWsocServerContainer.doUpgrade(..)` is replaced by the Jakarta WebSocket 2.1 specification `ServerContainer.upgradeHttpToWebSocket(..)`.
-* [org.openrewrite.java.migrate.javaee6](/recipes/java/migrate/javaee6.md)
-  * **Migrate to JavaEE6**
-  * These recipes help with the Migration to Java EE 6, flagging and updating deprecated methods.
-* [org.openrewrite.java.migrate.javaee7](/recipes/java/migrate/javaee7-recipe.md)
-  * **Migrate to JavaEE7**
-  * These recipes help with the Migration to Java EE 7, flagging and updating deprecated methods.
-* [org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
-  * **Removed OpenJPA providers in the persistence.xml file**
-  * When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml.
-* [org.openrewrite.java.migrate.javaee8](/recipes/java/migrate/javaee8-recipe.md)
-  * **Migrate to JavaEE8**
-  * These recipes help with the Migration to Java EE 8, flagging and updating deprecated methods.
-* [org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
-  * **Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references**
-  * This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1.
-* [org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL](/recipes/java/migrate/javaee8/servletisrequestedsessionidfromurl.md)
-  * **Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`**
-  * The  method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in JavaEE8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
-* [org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
-  * **Add explicit Common Annotations dependencies**
-  * Add the necessary `annotation-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
-* [org.openrewrite.java.migrate.javax.AddInjectDependencies](/recipes/java/migrate/javax/addinjectdependencies.md)
-  * **Add explicit Inject dependencies**
-  * Add the necessary `inject-api` dependency from Jakarta EE 8 to maintain compatibility with Java version 11 or greater.
-* [org.openrewrite.java.migrate.javax.AddJaxbAPIDependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
-  * **Add explicit JAXB API dependencies**
-  * This recipe will add explicit API dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
-* [org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithRuntime](/recipes/java/migrate/javax/addjaxbdependencieswithruntime.md)
-  * **Add explicit JAXB API dependencies and runtime**
-  * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. Running a full javax to Jakarta migration using `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` will update to versions greater than 3.x which necessitates the package change as well.
-* [org.openrewrite.java.migrate.javax.AddJaxbDependenciesWithoutRuntime](/recipes/java/migrate/javax/addjaxbdependencieswithoutruntime.md)
-  * **Add explicit JAXB API dependencies and remove runtimes**
-  * This recipe will add explicit API dependencies without runtime dependencies for Jakarta EE 8 when a Java 8 application is using JAXB. Any existing API dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 version 2.x which allows for the continued use of the `javax.xml.bind` namespace. All JAXB runtime implementation dependencies are removed.
-* [org.openrewrite.java.migrate.javax.AddJaxwsDependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
-  * **Add explicit JAX-WS dependencies**
-  * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAX-WS. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
-* [org.openrewrite.java.migrate.javax.JavaxLangModelUtil](/recipes/java/migrate/javax/javaxlangmodelutil.md)
-  * **Use modernized `javax.lang.model.util` APIs**
-  * Certain `javax.lang.model.util` APIs have become deprecated and their usages changed, necessitating usage changes.
-* [org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs](/recipes/java/migrate/javax/javaxmanagementmonitorapis.md)
-  * **Use modernized `javax.management.monitor` APIs**
-  * Certain `javax.management.monitor` APIs have become deprecated and their usages changed, necessitating usage changes.
-* [org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs](/recipes/java/migrate/javax/javaxxmlstreamapis.md)
-  * **Use modernized `javax.xml.stream` APIs**
-  * Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes.
-* [org.openrewrite.java.migrate.javax.MigrateAbstractAnnotationValueVisitor6To9](/recipes/java/migrate/javax/migrateabstractannotationvaluevisitor6to9.md)
-  * **Use `javax.lang.model.util.AbstractAnnotationValueVisitor9`**
-  * Use `javax.lang.model.util.AbstractAnnotationValueVisitor9` instead of the deprecated `javax.lang.model.util.AbstractAnnotationValueVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateAbstractElementVisitor6To9](/recipes/java/migrate/javax/migrateabstractelementvisitor6to9.md)
-  * **Use `javax.lang.model.util.AbstractElementVisitor9`**
-  * Use `javax.lang.model.util.AbstractElementVisitor9` instead of the deprecated `javax.lang.model.util.AbstractElementVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateAbstractTypeVisitor6To9](/recipes/java/migrate/javax/migrateabstracttypevisitor6to9.md)
-  * **Use `javax.lang.model.util.AbstractTypeVisitor9`**
-  * Use `javax.lang.model.util.AbstractTypeVisitor9` instead of the deprecated `javax.lang.model.util.AbstractTypeVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThresholdToSetInitThreshold](/recipes/java/migrate/javax/migratecountermonitorsetthresholdtosetinitthreshold.md)
-  * **Use `javax.management.monitor.CounterMonitor#setInitThreshold`**
-  * Use `javax.management.monitor.CounterMonitor#setInitThreshold` instead of the deprecated `javax.management.monitor.CounterMonitor#setThreshold` in JMX 1.2 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateElementKindVisitor6To9](/recipes/java/migrate/javax/migrateelementkindvisitor6to9.md)
-  * **Use `javax.lang.model.util.ElementKindVisitor9`**
-  * Use `javax.lang.model.util.ElementKindVisitor9` instead of the deprecated `javax.lang.model.util.ElementKindVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateElementScanner6To9](/recipes/java/migrate/javax/migrateelementscanner6to9.md)
-  * **Use `javax.lang.model.util.ElementScanner9`**
-  * Use `javax.lang.model.util.ElementScanner9` instead of the deprecated `javax.lang.model.util.ElementScanner6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
-  * **Migrate JAXB-WS Plugin**
-  * Upgrade the JAXB-WS Maven plugin to be compatible with Java 11.
-* [org.openrewrite.java.migrate.javax.MigrateSimpleAnnotationValueVisitor6To9](/recipes/java/migrate/javax/migratesimpleannotationvaluevisitor6to9.md)
-  * **Use `javax.lang.model.util.SimpleAnnotationValueVisitor9`**
-  * Use `javax.lang.model.util.SimpleAnnotationValueVisitor9` instead of the deprecated `javax.lang.model.util.SimpleAnnotationValueVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateSimpleElementVisitor6To9](/recipes/java/migrate/javax/migratesimpleelementvisitor6to9.md)
-  * **Use `javax.lang.model.util.SimpleElementVisitor9`**
-  * Use `javax.lang.model.util.SimpleElementVisitor9` instead of the deprecated `javax.lang.model.util.SimpleElementVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateSimpleTypeVisitor6To9](/recipes/java/migrate/javax/migratesimpletypevisitor6to9.md)
-  * **Use `javax.lang.model.util.SimpleTypeVisitor9`**
-  * Use `javax.lang.model.util.SimpleTypeVisitor9` instead of the deprecated `javax.lang.model.util.SimpleTypeVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateTypeKindVisitor6To9](/recipes/java/migrate/javax/migratetypekindvisitor6to9.md)
-  * **Use `javax.lang.model.util.TypeKindVisitor9`**
-  * Use `javax.lang.model.util.TypeKindVisitor9` instead of the deprecated `javax.lang.model.util.TypeKindVisitor6` in Java 9 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateXMLEventFactoryNewInstanceToNewFactory](/recipes/java/migrate/javax/migratexmleventfactorynewinstancetonewfactory.md)
-  * **Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`**
-  * Use `javax.xml.stream.XMLEventFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLEventFactory#newInstance` in Java 7 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateXMLInputFactoryNewInstanceToNewFactory](/recipes/java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory.md)
-  * **Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`**
-  * Use `javax.xml.stream.XMLInputFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLInputFactory#newInstance` in Java 7 or higher.
-* [org.openrewrite.java.migrate.javax.MigrateXMLOutputFactoryNewInstanceToNewFactory](/recipes/java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory.md)
-  * **Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`**
-  * Use `javax.xml.stream.XMLOutputFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLOutputFactory#newInstance` in Java 7 or higher.
-* [org.openrewrite.java.migrate.javax.openJPAToEclipseLink](/recipes/java/migrate/javax/openjpatoeclipselink.md)
-  * **Migrate from OpenJPA to EclipseLink JPA**
-  * These recipes help migrate Java Persistence applications using OpenJPA to EclipseLink JPA.
-* [org.openrewrite.java.migrate.lang.FindNonVirtualExecutors](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
-  * **Find non-virtual `ExecutorService` creation**
-  * Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
-* [org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
-  * **Find Virtual Thread opportunities**
-  * Find opportunities to convert existing code to use Virtual Threads.
-* [org.openrewrite.java.migrate.lang.JavaLangAPIs](/recipes/java/migrate/lang/javalangapis.md)
-  * **Use modernized `java.lang` APIs**
-  * Certain Java lang APIs have become deprecated and their usages changed, necessitating usage changes.
-* [org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterOrDigitToIsJavaIdentifierPart](/recipes/java/migrate/lang/migratecharacterisjavaletterordigittoisjavaidentifierpart.md)
-  * **Use `Character#isJavaIdentifierPart(char)`**
-  * Use `Character#isJavaIdentifierPart(char)` instead of the deprecated `Character#isJavaLetterOrDigit(char)` in Java 1.1 or higher.
-* [org.openrewrite.java.migrate.lang.MigrateCharacterIsJavaLetterToIsJavaIdentifierStart](/recipes/java/migrate/lang/migratecharacterisjavalettertoisjavaidentifierstart.md)
-  * **Use `Character#isJavaIdentifierStart(char)`**
-  * Use `Character#isJavaIdentifierStart(char)` instead of the deprecated `Character#isJavaLetter(char)` in Java 1.1 or higher.
-* [org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace](/recipes/java/migrate/lang/migratecharacterisspacetoiswhitespace.md)
-  * **Use `Character#isWhitespace(char)`**
-  * Use `Character#isWhitespace(char)` instead of the deprecated `Character#isSpace(char)` in Java 1.1 or higher.
-* [org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMajorToFeature](/recipes/java/migrate/lang/migrateruntimeversionmajortofeature.md)
-  * **Use `Runtime.Version#feature()`**
-  * Use `Runtime.Version#feature()` instead of the deprecated `Runtime.Version#major()` in Java 10 or higher.
-* [org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim](/recipes/java/migrate/lang/migrateruntimeversionminortointerim.md)
-  * **Use `Runtime.Version#interim()`**
-  * Use `Runtime.Version#interim()` instead of the deprecated `Runtime.Version#minor()` in Java 10 or higher.
-* [org.openrewrite.java.migrate.lang.MigrateRuntimeVersionSecurityToUpdate](/recipes/java/migrate/lang/migrateruntimeversionsecuritytoupdate.md)
-  * **Use `Runtime.Version#update()`**
-  * Use `Runtime.Version#update()` instead of the deprecated `Runtime.Version#security()` in Java 10 or higher.
-* [org.openrewrite.java.migrate.lang.UseVar](/recipes/java/migrate/lang/usevar.md)
-  * **Use local variable type inference**
-  * Apply local variable type inference (`var`) for primitives and objects. These recipes can cause unused imports, be advised to run `org.openrewrite.java.RemoveUnusedImports afterwards.
-* [org.openrewrite.java.migrate.logging.JavaLoggingAPIs](/recipes/java/migrate/logging/javaloggingapis.md)
-  * **Use modernized `java.util.logging` APIs**
-  * Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes.
-* [org.openrewrite.java.migrate.logging.MigrateInterfaceLoggingMXBeanToPlatformLoggingMXBean](/recipes/java/migrate/logging/migrateinterfaceloggingmxbeantoplatformloggingmxbean.md)
-  * **Use `java.lang.management.PlatformLoggingMXBean`**
-  * Use `java.lang.management.PlatformLoggingMXBean` instead of the deprecated `java.util.logging.LoggingMXBean` in Java 9 or higher.
-* [org.openrewrite.java.migrate.lombok.LombokBestPractices](/recipes/java/migrate/lombok/lombokbestpractices.md)
-  * **Lombok Best Practices**
-  * Applies all recipes that enforce best practices for using Lombok.
-* [org.openrewrite.java.migrate.lombok.UpdateLombokToJava11](/recipes/java/migrate/lombok/updatelomboktojava11.md)
-  * **Migrate Lombok to a Java 11 compatible version**
-  * Update Lombok dependency to a version that is compatible with Java 11 and migrate experimental Lombok types that have been promoted.
-* [org.openrewrite.java.migrate.lombok.log.UseLombokLogAnnotations](/recipes/java/migrate/lombok/log/uselomboklogannotations.md)
-  * **Use Lombok logger annotations instead of explicit fields**
-  * Applies all recipes that replace logger declarations with class level annotations.
-* [org.openrewrite.java.migrate.net.JavaNetAPIs](/recipes/java/migrate/net/javanetapis.md)
-  * **Use modernized `java.net` APIs**
-  * Certain Java networking APIs have become deprecated and their usages changed, necessitating usage changes.
-* [org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive](/recipes/java/migrate/net/migratemulticastsocketgetttltogettimetolive.md)
-  * **Use `java.net.MulticastSocket#getTimeToLive()`**
-  * Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher.
-* [org.openrewrite.java.migrate.nio.file.PathsGetToPathOf](/recipes/java/migrate/nio/file/pathsgettopathof.md)
-  * **Replace `Paths.get` with `Path.of`**
-  * The `java.nio.file.Paths.get` method was introduced in Java SE 7. The `java.nio.file.Path.of` method was introduced in Java SE 11. This recipe replaces all usages of `Paths.get` with `Path.of` for consistency.
-* [org.openrewrite.java.migrate.sql.JavaSqlAPIs](/recipes/java/migrate/sql/javasqlapis.md)
-  * **Use modernized `java.sql` APIs**
-  * Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes.
-* [org.openrewrite.java.migrate.util.JavaUtilAPIs](/recipes/java/migrate/util/javautilapis.md)
-  * **Use modernized `java.util` APIs**
-  * Certain java util APIs have been introduced and are favored over previous APIs.
-* [org.openrewrite.java.migrate.util.MigrateInflaterDeflaterToClose](/recipes/java/migrate/util/migrateinflaterdeflatertoclose.md)
-  * **Replace `Inflater` and `Deflater` `end()` calls with `close()`**
-  * Replace `end()` method calls with `close()` method calls for `Inflater` and `Deflater` classes in Java 25+, as they now implement AutoCloseable.
-* [org.openrewrite.java.migrate.util.SequencedCollection](/recipes/java/migrate/util/sequencedcollection.md)
-  * **Adopt `SequencedCollection`**
-  * Replace older code patterns with `SequencedCollection` methods, as per https://openjdk.org/jeps/431.
-* [org.openrewrite.java.recipes.JavaRecipeBestPractices](/recipes/java/recipes/javarecipebestpractices.md)
-  * **Java Recipe best practices**
-  * Best practices for Java recipe development.
-* [org.openrewrite.java.recipes.RecipeNullabilityBestPractices](/recipes/java/recipes/recipenullabilitybestpractices.md)
-  * **Recipe nullability best practices**
-  * Use JSpecify nullable annotations; drop Nonnull annotations; use `NullMarked` on `package-info.java` instead.
-* [org.openrewrite.java.recipes.RecipeTestingBestPractices](/recipes/java/recipes/recipetestingbestpractices.md)
-  * **Recipe testing best practices**
-  * Best practices for testing recipes.
-* [org.openrewrite.java.recipes.UpgradeTestsToJava21](/recipes/java/recipes/upgradeteststojava21.md)
-  * **Migrate tests to Java 21**
-  * Use Java 21 features in tests.
-* [org.openrewrite.java.search.FindSecrets](/recipes/java/search/findsecrets.md)
-  * **Find plain text secrets**
-  * Find secrets stored in plain text in code.
-* [org.openrewrite.java.spring.PropertiesToKebabCase](/recipes/java/spring/propertiestokebabcase.md)
-  * **Normalize Spring properties to kebab-case**
-  * Normalize Spring properties to use lowercase and hyphen-separated syntax.  For example, changing `spring.main.showBanner` to `spring.main.show-banner`.  With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding),  `kebab-case` may be used in properties files and still be converted to configuration beans.  Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value(&quot;$\{anExampleValue\}&quot;)` will not match `an-example-value`.  [The Spring reference documentation recommends using `kebab-case` for properties where possible](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding).
-* [org.openrewrite.java.spring.batch.ListenerSupportClassToInterface](/recipes/java/spring/batch/listenersupportclasstointerface.md)
-  * **Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead**
-  * As of 5.0 `*Listener` interfaces default methods (made possible by a Java 8 baseline) can be implemented directly without the need for the adapter.
-* [org.openrewrite.java.spring.batch.SpringBatch4To5Migration](/recipes/java/spring/batch/springbatch4to5migration.md)
-  * **Migrate to Spring Batch 5.0 from 4.3**
-  * Migrate applications built on Spring Batch 4.3 to the latest Spring Batch 5.0 release.
-* [org.openrewrite.java.spring.batch.SpringBatch5To6Migration](/recipes/java/spring/batch/springbatch5to6migration.md)
-  * **Migrate to Spring Batch 6.0 from 5.2**
-  * Migrate applications built on Spring Batch 5.2 to the latest Spring Batch 6.0 release.
-* [org.openrewrite.java.spring.batch.UpgradeSkipPolicyParameterType](/recipes/java/spring/batch/upgradeskippolicyparametertype.md)
-  * **Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`**
-  * The `skipCount` parameter in `org.springframework.batch.core.step.skip.SkipPolicy#shouldSkip` has been changed from `int` to `long`, this recipe updates the parameter type in the implementing classes.
-* [org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering](/recipes/java/spring/boot2/databasecomponentandbeaninitializationordering.md)
-  * **Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`**
-  * Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more.
-* [org.openrewrite.java.spring.boot2.MaybeAddJavaxValidationApi](/recipes/java/spring/boot2/maybeaddjavaxvalidationapi.md)
-  * **Add `javax.validation-api` dependency**
-  * Conditional on the application using a version of Spring Boot which uses javax but provides a hibernate-validator version which exports the jakarta.validation-api instead.
-* [org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator](/recipes/java/spring/boot2/maybeaddspringbootstarteractuator.md)
-  * **Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`**
-  * Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`.
-* [org.openrewrite.java.spring.boot2.MigrateApplicationHealthIndicatorToPingHealthIndicator](/recipes/java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator.md)
-  * **Use `PingHealthIndicator`**
-  * `org.springframework.boot.actuate.health.ApplicationHealthIndicator` was deprecated in 2.2.
-* [org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials](/recipes/java/spring/boot2/migratedatabasecredentials.md)
-  * **Migrate flyway and liquibase credentials**
-  * If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans.
-* [org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName](/recipes/java/spring/boot2/migrateerrorcontrollerpackagename.md)
-  * **Use `org.springframework.boot.web.servlet.error.ErrorController`**
-  * Use `org.springframework.boot.web.servlet.error.ErrorController` instead of the deprecated `org.springframework.boot.autoconfigure.web.ErrorController` in Spring Boot 2.0 or higher.
-* [org.openrewrite.java.spring.boot2.MigrateHibernateConstraintsToJavax](/recipes/java/spring/boot2/migratehibernateconstraintstojavax.md)
-  * **Use `javax.validation.constraints`**
-  * Use `javax.validation.constraints` instead of the deprecated `org.hibernate.validator.constraints` in Spring Boot 2.0 or higher.
-* [org.openrewrite.java.spring.boot2.MigrateHttpMessageConvertersPackageName](/recipes/java/spring/boot2/migratehttpmessageconverterspackagename.md)
-  * **Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`**
-  * Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters` instead of the deprecated `org.springframework.boot.autoconfigure.web.HttpMessageConverters` in Spring Boot 2.0 or higher.
-* [org.openrewrite.java.spring.boot2.MigrateRestClientBuilderCustomizerPackageName](/recipes/java/spring/boot2/migraterestclientbuildercustomizerpackagename.md)
-  * **Use `RestClientBuilderCustomizer`**
-  * `org.springframework.boot.autoconfigure.elasticsearch.rest.RestClientBuilderCustomizer` was deprecated in 2.3.
-* [org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderBasicAuthorization](/recipes/java/spring/boot2/migrateresttemplatebuilderbasicauthorization.md)
-  * **Use `RestTemplateBuilder#basicAuthentication`**
-  * `RestTemplateBuilder#basicAuthorization` was deprecated in 2.1.
-* [org.openrewrite.java.spring.boot2.MigrateSpringBootServletInitializerPackageName](/recipes/java/spring/boot2/migratespringbootservletinitializerpackagename.md)
-  * **Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`**
-  * Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer` instead of the deprecated `org.springframework.boot.web.support.SpringBootServletInitializer` in Spring Boot 1.4 or higher.
-* [org.openrewrite.java.spring.boot2.MigrateToWebServerFactoryCustomizer](/recipes/java/spring/boot2/migratetowebserverfactorycustomizer.md)
-  * **Use `WebServerFactoryCustomizer`**
-  * Use `WebServerFactoryCustomizer` instead of the deprecated `EmbeddedServletContainerCustomizer` in Spring Boot 2.0 or higher. This recipe will replace look for any classes that implement `EmbeddedServletContainerCustomizer` and change the interface to `WebServerFactoryCustomizer&lt;ConfigurableServletWebServerFactory&gt;`. This recipe also adjusts the types used in the `customize()` method from `*EmbeddedServletContainerFactory` to their `*ServletWebServerFactory` counterparts.
-* [org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactoryIsEagerInitFilters](/recipes/java/spring/boot2/migrateundertowservletwebserverfactoryiseagerinitfilters.md)
-  * **Use `isEagerFilterInit()`**
-  * `org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory#isEagerInitFilters` was deprecated in 2.4 and are removed in 2.6.
-* [org.openrewrite.java.spring.boot2.MigrateUndertowServletWebServerFactorySetEagerInitFilters](/recipes/java/spring/boot2/migrateundertowservletwebserverfactoryseteagerinitfilters.md)
-  * **Use `setEagerFilterInit(boolean)`**
-  * `org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory#setEagerInitFilters` was deprecated in 2.4 and are removed in 2.6.
-* [org.openrewrite.java.spring.boot2.MigrateWebTestClientBuilderCustomizerPackageName](/recipes/java/spring/boot2/migratewebtestclientbuildercustomizerpackagename.md)
-  * **Use `WebTestClientBuilderCustomizer`**
-  * `org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientBuilderCustomizer` was deprecated in 2.2.
-* [org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners](/recipes/java/spring/boot2/removeobsoletespringrunners.md)
-  * **Remove obsolete Spring JUnit runners**
-  * Remove obsolete classpath runners.
-* [org.openrewrite.java.spring.boot2.SpringBoot2BestPractices](/recipes/java/spring/boot2/springboot2bestpractices.md)
-  * **Spring Boot 2.x best practices**
-  * Applies best practices to Spring Boot 2 applications.
-* [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
-  * **Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4**
-  * This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUnit 5. This spring-specific migration includes conversion of Spring Test runners to Spring Test extensions and awareness of the composable Spring Test annotations.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_0](/recipes/java/spring/boot2/springbootproperties_2_0.md)
-  * **Migrate Spring Boot properties to 2.0**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_1](/recipes/java/spring/boot2/springbootproperties_2_1.md)
-  * **Migrate Spring Boot properties to 2.1**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_2](/recipes/java/spring/boot2/springbootproperties_2_2.md)
-  * **Migrate Spring Boot properties to 2.2**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_3](/recipes/java/spring/boot2/springbootproperties_2_3.md)
-  * **Migrate Spring Boot properties to 2.3**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_4](/recipes/java/spring/boot2/springbootproperties_2_4.md)
-  * **Migrate Spring Boot properties to 2.4**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_5](/recipes/java/spring/boot2/springbootproperties_2_5.md)
-  * **Migrate Spring Boot properties to 2.5**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_6](/recipes/java/spring/boot2/springbootproperties_2_6.md)
-  * **Migrate Spring Boot properties to 2.6**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.SpringBootProperties_2_7](/recipes/java/spring/boot2/springbootproperties_2_7.md)
-  * **Migrate Spring Boot properties to 2.7**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot2.UnnecessarySpringRunWith](/recipes/java/spring/boot2/unnecessaryspringrunwith.md)
-  * **Remove unnecessary Spring `@RunWith`**
-  * Remove `@RunWith` annotations on Spring tests.
-* [org.openrewrite.java.spring.boot2.UpgradeSpockToGroovy3](/recipes/java/spring/boot2/upgradespocktogroovy3.md)
-  * **Upgrade Spock to a Groovy 3 compatible variant**
-  * Upgrade Spock dependencies to a Groovy 3 compatible 2.0 variant when Groovy 3 is on the classpath.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
-  * **Migrate from Spring Boot 1.x to 2.0 (Community Edition)**
-  * Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
-  * **Migrate to Spring Boot 2.1**
-  * Migrate applications to the latest Spring Boot 2.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.1.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
-  * **Migrate to Spring Boot 2.2**
-  * Migrate applications to the latest Spring Boot 2.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.2.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
-  * **Migrate to Spring Boot 2.3**
-  * Migrate applications to the latest Spring Boot 2.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.3.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
-  * **Migrate to Spring Boot 2.4**
-  * Migrate applications to the latest Spring Boot 2.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.4.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
-  * **Upgrade to Spring Boot 2.5**
-  * Upgrade to Spring Boot 2.5 from any prior 2.x version.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
-  * **Migrate to Spring Boot 2.6**
-  * Migrate applications to the latest Spring Boot 2.6 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.6.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
-  * **Migrate to Spring Boot 2.7**
-  * Upgrade to Spring Boot 2.7.
-* [org.openrewrite.java.spring.boot2.search.FindUpgradeRequirementsSpringBoot_2_5](/recipes/java/spring/boot2/search/findupgraderequirementsspringboot_2_5.md)
-  * **Find patterns that require updating for Spring Boot 2.5**
-  * Looks for a series of patterns that have not yet had auto-remediation recipes developed for.
-* [org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView](/recipes/java/spring/boot2/search/messagesinthedefaulterrorview.md)
-  * **Find projects affected by changes to the default error view message attribute**
-  * As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included.
-* [org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization](/recipes/java/spring/boot3/actuatorendpointsanitization.md)
-  * **Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points**
-  * Spring Boot 3.0 removed the key-based sanitization mechanism used in Spring Boot 2.x in favor of a unified approach. See https://github.com/openrewrite/rewrite-spring/issues/228.
-* [org.openrewrite.java.spring.boot3.ChangeCassandraGroupId](/recipes/java/spring/boot3/changecassandragroupid.md)
-  * **Change `com.datastax.oss` to `org.apache.cassandra`**
-  * Change `groupId` from `com.datastax.oss` to `org.apache.cassandra` and adopt the Spring Boot 3.3 managed version.
-* [org.openrewrite.java.spring.boot3.EnableVirtualThreads](/recipes/java/spring/boot3/enablevirtualthreads.md)
-  * **Enable Virtual Threads on Java 21**
-  * Set `spring.threads.virtual.enabled` to `true` in `application.properties` or `application.yml`.
-* [org.openrewrite.java.spring.boot3.MigrateDropWizardDependencies](/recipes/java/spring/boot3/migratedropwizarddependencies.md)
-  * **Migrate dropWizard dependencies to Spring Boot 3.x**
-  * Migrate dropWizard dependencies to the new artifactId, since these are changed with Spring Boot 3.
-* [org.openrewrite.java.spring.boot3.MigrateMaxHttpHeaderSize](/recipes/java/spring/boot3/migratemaxhttpheadersize.md)
-  * **Rename `server.max-http-header-size` to `server.max-http-request-header-size`**
-  * Previously, the server.max-http-header-size was treated inconsistently across the four supported embedded web servers. When using Jetty, Netty, or Undertow it would configure the max HTTP request header size. When using Tomcat it would configure the max HTTP request and response header sizes. The renamed property is used to configure the http request header size in Spring Boot 3.0. **To limit the max header size of an HTTP response on Tomcat or Jetty (the only two servers that support such a setting), use a `WebServerFactoryCustomizer`**.
-* [org.openrewrite.java.spring.boot3.MigrateSapCfJavaLoggingSupport](/recipes/java/spring/boot3/migratesapcfjavaloggingsupport.md)
-  * **Migrate SAP cloud foundry logging support to Spring Boot 3.x**
-  * Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3.
-* [org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
-  * **Migrate thymeleaf dependencies to Spring Boot 3.x**
-  * Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3.
-* [org.openrewrite.java.spring.boot3.RelocateLauncherClasses](/recipes/java/spring/boot3/relocatelauncherclasses.md)
-  * **Relocate Launcher Classes**
-  * Relocate classes that have been moved to different packages in Spring Boot 3.2.
-* [org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods](/recipes/java/spring/boot3/replaceresttemplatebuildermethods.md)
-  * **Replace deprecated setters in `RestTemplateBuilder`**
-  * Replaces `setConnectTimeout`, `setReadTimeout`, and `setSslBundle` method invocations with `connectTimeout`, `readTimeout`, and `sslBundle` respectively.
-* [org.openrewrite.java.spring.boot3.ReplaceStringLiteralsWithConstants](/recipes/java/spring/boot3/replacestringliteralswithconstants.md)
-  * **Replace String literals with Spring constants**
-  * Replace String literals with Spring constants where applicable.
-* [org.openrewrite.java.spring.boot3.SpringBoot33BestPractices](/recipes/java/spring/boot3/springboot33bestpractices.md)
-  * **Spring Boot 3.3 best practices**
-  * Applies best practices to Spring Boot 3 applications.
-* [org.openrewrite.java.spring.boot3.SpringBoot3BestPracticesOnly](/recipes/java/spring/boot3/springboot3bestpracticesonly.md)
-  * **Spring Boot 3.3 best practices (only)**
-  * Applies best practices to Spring Boot 3 applications, without chaining in upgrades to Spring Boot.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_0](/recipes/java/spring/boot3/springbootproperties_3_0.md)
-  * **Migrate Spring Boot properties to 3.0**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_1](/recipes/java/spring/boot3/springbootproperties_3_1.md)
-  * **Migrate Spring Boot properties to 3.1**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_2](/recipes/java/spring/boot3/springbootproperties_3_2.md)
-  * **Migrate Spring Boot properties to 3.2**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_3](/recipes/java/spring/boot3/springbootproperties_3_3.md)
-  * **Migrate Spring Boot properties to 3.3**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4](/recipes/java/spring/boot3/springbootproperties_3_4-community-edition.md)
-  * **Migrate Spring Boot properties to 3.4 (Community Edition)**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
-  * **Migrate Enabled to Access Spring Boot Properties**
-  * Migrate properties found in `application.properties` and `application.yml`, specifically converting 'enabled' to 'access'.
-* [org.openrewrite.java.spring.boot3.SpringBootProperties_3_5](/recipes/java/spring/boot3/springbootproperties_3_5.md)
-  * **Migrate Spring Boot properties to 3.5**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
-  * **Update Prometheus Pushgateway Dependency Coordinates**
-  * Update the Prometheus Pushgateway artifact ID for Spring Boot 3.5 compatibility.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
-  * **Upgrade MyBatis to Spring Boot 2.0**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.0.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_1](/recipes/java/spring/boot3/upgrademybatistospringboot_2_1.md)
-  * **Upgrade MyBatis to Spring Boot 2.1**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.1.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_2](/recipes/java/spring/boot3/upgrademybatistospringboot_2_2.md)
-  * **Upgrade MyBatis to Spring Boot 2.2**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.2.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_3](/recipes/java/spring/boot3/upgrademybatistospringboot_2_3.md)
-  * **Upgrade MyBatis to Spring Boot 2.3**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.3.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_4](/recipes/java/spring/boot3/upgrademybatistospringboot_2_4.md)
-  * **Upgrade MyBatis to Spring Boot 2.4**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.4.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_5](/recipes/java/spring/boot3/upgrademybatistospringboot_2_5.md)
-  * **Upgrade MyBatis to Spring Boot 2.5**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.5.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_6](/recipes/java/spring/boot3/upgrademybatistospringboot_2_6.md)
-  * **Upgrade MyBatis to Spring Boot 2.6**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.6.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_7](/recipes/java/spring/boot3/upgrademybatistospringboot_2_7.md)
-  * **Upgrade MyBatis to Spring Boot 2.7**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 2.7.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_0](/recipes/java/spring/boot3/upgrademybatistospringboot_3_0.md)
-  * **Upgrade MyBatis to Spring Boot 3.0**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.0.
-* [org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_2](/recipes/java/spring/boot3/upgrademybatistospringboot_3_2.md)
-  * **Upgrade MyBatis to Spring Boot 3.2**
-  * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.2.
-* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
-  * **Migrate to Spring Boot 3.0**
-  * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
-* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
-  * **Migrate to Spring Boot 3.1**
-  * Migrate applications to the latest Spring Boot 3.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.0.
-* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
-  * **Migrate to Spring Boot 3.2**
-  * Migrate applications to the latest Spring Boot 3.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.1.
-* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
-  * **Migrate to Spring Boot 3.3**
-  * Migrate applications to the latest Spring Boot 3.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.2.
-* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_4](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
-  * **Migrate to Spring Boot 3.4 (Community Edition)**
-  * Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
-* [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
-  * **Migrate to Spring Boot 3.5 (Community Edition)**
-  * Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
-* [org.openrewrite.java.spring.boot4.AddSpringBootStarterFlyway](/recipes/java/spring/boot4/addspringbootstarterflyway.md)
-  * **Add `spring-boot-starter-flyway` if using Flyway**
-  * Adds the necessary Spring Boot 4.0 Flyway starter for autoconfiguration based on dependency usage.
-* [org.openrewrite.java.spring.boot4.MigrateAutoconfigurePackages](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
-  * **Migrate packages to modular starters**
-  * Migrate to new packages used for autoconfiguration by Spring Boot 4.0 modules.
-* [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
-  * **Migrate to Spring Boot 4.0 modular starters (Community Edition)**
-  * Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
-* [org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions](/recipes/java/spring/boot4/renamedeprecatedstartersmanagedversions.md)
-  * **Rename Spring Boot 4.0 starters with managed versions**
-  * Renames deprecated Spring Boot starters to their new names without adding explicit versions, for use in projects where the `io.spring.dependency-management` plugin manages versions via BOM.
-* [org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
-  * **Replace `@MockBean` and `@SpyBean`**
-  * Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`.
-* [org.openrewrite.java.spring.boot4.SpringBootProperties_4_0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
-  * **Migrate Spring Boot properties to 4.0**
-  * Migrate properties found in `application.properties` and `application.yml`.
-* [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
-  * **Migrate to Spring Boot 4.0 (Community Edition)**
-  * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
-* [org.openrewrite.java.spring.cloud2022.DependencyUpgrades](/recipes/java/spring/cloud2022/dependencyupgrades.md)
-  * **Upgrade dependencies to Spring Cloud 2022**
-  * Upgrade dependencies to Spring Cloud 2022 from prior 2021.x version.
-* [org.openrewrite.java.spring.cloud2022.MigrateCloudSleuthToMicrometerTracing](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
-  * **Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0**
-  * Spring Cloud Sleuth has been discontinued and only compatible with Spring Boot 2.x.
-* [org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022](/recipes/java/spring/cloud2022/upgradespringcloud_2022.md)
-  * **Migrate to Spring Cloud 2022**
-  * Migrate applications to the latest Spring Cloud 2022 (Kilburn) release.
-* [org.openrewrite.java.spring.cloud2023.DependencyUpgrades](/recipes/java/spring/cloud2023/dependencyupgrades.md)
-  * **Upgrade dependencies to Spring Cloud 2023**
-  * Upgrade dependencies to Spring Cloud 2023 from prior 2022.x version.
-* [org.openrewrite.java.spring.cloud2023.UpgradeSpringCloud_2023](/recipes/java/spring/cloud2023/upgradespringcloud_2023.md)
-  * **Migrate to Spring Cloud 2023**
-  * Migrate applications to the latest Spring Cloud 2023 (Leyton) release.
-* [org.openrewrite.java.spring.cloud2024.DependencyUpgrades](/recipes/java/spring/cloud2024/dependencyupgrades.md)
-  * **Upgrade dependencies to Spring Cloud 2024**
-  * Upgrade dependencies to Spring Cloud 2024 from prior 2023.x version.
-* [org.openrewrite.java.spring.cloud2024.UpgradeSpringCloud_2024](/recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
-  * **Migrate to Spring Cloud 2024**
-  * Migrate applications to the latest Spring Cloud 2024 (Moorgate) release.
-* [org.openrewrite.java.spring.cloud2025.DependencyUpgrades](/recipes/java/spring/cloud2025/dependencyupgrades.md)
-  * **Upgrade dependencies to Spring Cloud 2025**
-  * Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version.
-* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayDeprecatedModulesAndStarters](/recipes/java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters.md)
-  * **Migrate to New Spring Cloud Gateway Modules and Starters**
-  * Migrate to new Spring Cloud Gateway modules and starters for Spring Cloud 2025.
-* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProperties](/recipes/java/spring/cloud2025/springcloudgatewayproperties.md)
-  * **Migrate Spring Cloud Gateway Properties**
-  * Migrate Spring Cloud Gateway properties for Spring Cloud 2025 release.
-* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebMvcProperties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebmvcproperties.md)
-  * **Migrate Spring Cloud Gateway Proxy WebMvc Properties**
-  * Migrate Spring Cloud Gateway Proxy WebMvc properties for Spring Cloud 2025 release.
-* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayProxyWebfluxProperties](/recipes/java/spring/cloud2025/springcloudgatewayproxywebfluxproperties.md)
-  * **Migrate Spring Cloud Gateway Proxy Webflux Properties**
-  * Migrate Spring Cloud Gateway Proxy Webflux properties for Spring Cloud 2025 release.
-* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayWebMvcProperties](/recipes/java/spring/cloud2025/springcloudgatewaywebmvcproperties.md)
-  * **Migrate Spring Cloud Gateway WebMvc Properties**
-  * Migrate Spring Cloud Gateway WebMvc properties for Spring Cloud 2025 release.
-* [org.openrewrite.java.spring.cloud2025.SpringCloudGatewayWebfluxProperties](/recipes/java/spring/cloud2025/springcloudgatewaywebfluxproperties.md)
-  * **Migrate Spring Cloud Gateway Webflux Properties**
-  * Migrate Spring Cloud Gateway Webflux properties for Spring Cloud 2025 release.
-* [org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025](/recipes/java/spring/cloud2025/upgradespringcloud_2025.md)
-  * **Migrate to Spring Cloud 2025**
-  * Migrate applications to the latest Spring Cloud 2025 (Northfields) release.
-* [org.openrewrite.java.spring.data.UpgradeSpringData_2_3](/recipes/java/spring/data/upgradespringdata_2_3.md)
-  * **Migrate to Spring Data 2.3**
-  * Migrate applications to the latest Spring Data 2.3 release.
-* [org.openrewrite.java.spring.data.UpgradeSpringData_2_5](/recipes/java/spring/data/upgradespringdata_2_5.md)
-  * **Migrate to Spring Data JPA 2.5**
-  * Migrate applications to the latest Spring Data 2.5 release.
-* [org.openrewrite.java.spring.data.UpgradeSpringData_2_7](/recipes/java/spring/data/upgradespringdata_2_7.md)
-  * **Migrate to Spring Data JPA 2.7**
-  * Migrate applications to the latest Spring Data JPA 2.7 release.
-* [org.openrewrite.java.spring.data.UpgradeSpringData_3_4](/recipes/java/spring/data/upgradespringdata_3_4.md)
-  * **Migrate to Spring Data JPA 3.4**
-  * Migrate applications to the latest Spring Data JPA 3.4 release.
-* [org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch](/recipes/java/spring/data/usejparepositorydeleteallinbatch.md)
-  * **Use `JpaRepository#deleteAllInBatch(Iterable&lt;T&gt; entities)`**
-  * `JpaRepository#deleteInBatch(Iterable)` was deprecated in 2.5.
-* [org.openrewrite.java.spring.data.UseJpaRepositoryGetById](/recipes/java/spring/data/usejparepositorygetbyid.md)
-  * **Use `JpaRepository#getById(ID id)`**
-  * `JpaRepository#getOne(ID)` was deprecated in 2.5.
-* [org.openrewrite.java.spring.data.UseJpaRepositoryGetReferenceById](/recipes/java/spring/data/usejparepositorygetreferencebyid.md)
-  * **Use `JpaRepository#getReferenceById(ID id)`**
-  * `JpaRepository#getOne(ID)` was deprecated in 2.5 and `JpaRepository#getById(ID)` was deprecated in 2.7.
-* [org.openrewrite.java.spring.framework.MigrateResponseStatusException](/recipes/java/spring/framework/migrateresponsestatusexception.md)
-  * **Migrate breaking changes in `ResponseStatusException`**
-  * Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()` and `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()` .
-* [org.openrewrite.java.spring.framework.MigrateSpringAssert](/recipes/java/spring/framework/migratespringassert.md)
-  * **Migrate removed Spring `Assert` methods**
-  * Assert methods without a message argument have been removed in Spring Framework 6.0.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_0](/recipes/java/spring/framework/upgradespringframework_5_0.md)
-  * **Migrate to Spring Framework 5.0**
-  * Migrate applications to the latest Spring Framework 5.0 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
-  * **Migrate to Spring Framework 5.1**
-  * Migrate applications to the latest Spring Framework 5.1 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
-  * **Migrate to Spring Framework 5.2**
-  * Migrate applications to the latest Spring Framework 5.2 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
-  * **Migrate to Spring Framework 5.3 (Community Edition)**
-  * Migrate applications to the latest Spring Framework 5.3 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
-  * **Migrate to Spring Framework 6.0**
-  * Migrate applications to the latest Spring Framework 6.0 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
-  * **Migrate to Spring Framework 6.1**
-  * Migrate applications to the latest Spring Framework 6.1 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
-  * **Migrate to Spring Framework 6.2**
-  * Migrate applications to the latest Spring Framework 6.2 release.
-* [org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
-  * **Migrate to Spring Framework 7.0**
-  * Migrate applications to the latest Spring Framework 7.0 release.
-* [org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty](/recipes/java/spring/framework/useobjectutilsisempty.md)
-  * **Use `ObjectUtils#isEmpty(Object)`**
-  * `StringUtils#isEmpty(Object)` was deprecated in 5.3.
-* [org.openrewrite.java.spring.http.SpringWebDependency](/recipes/java/spring/http/springwebdependency.md)
-  * **Find Spring Web dependency**
-  * Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
-* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_2_8_ErrorHandlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
-  * **Migrates Spring Kafka deprecated error handlers**
-  * Migrate error handlers deprecated in Spring Kafka `2.8.x` to their replacements.
-* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_3_0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
-  * **Migrate to Spring Kafka 3.0**
-  * Migrate applications to the latest Spring Kafka 3.0 release.
-* [org.openrewrite.java.spring.kafka.UpgradeSpringKafka_4_0](/recipes/java/spring/kafka/upgradespringkafka_4_0.md)
-  * **Migrate to Spring Kafka 4.0**
-  * Migrate applications to the latest Spring Kafka 4.0 release.
-* [org.openrewrite.java.spring.opentelemetry.MigrateBraveToOpenTelemetry](/recipes/java/spring/opentelemetry/migratebravetoopentelemetry.md)
-  * **Migrate Brave API to OpenTelemetry API**
-  * Migrate Java code using Brave (Zipkin) tracing API to OpenTelemetry API. This recipe handles the migration of Brave Tracer, Span, and related classes to OpenTelemetry equivalents.
-* [org.openrewrite.java.spring.opentelemetry.MigrateDatadogToOpenTelemetry](/recipes/java/spring/opentelemetry/migratedatadogtoopentelemetry.md)
-  * **Migrate Datadog tracing to OpenTelemetry**
-  * Migrate from Datadog Java tracing annotations to OpenTelemetry annotations. Replace Datadog @Trace annotations with @WithSpan annotations.
-* [org.openrewrite.java.spring.opentelemetry.MigrateFromZipkinToOpenTelemetry](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
-  * **Migrate from Zipkin to OpenTelemetry OTLP**
-  * Migrate from Zipkin tracing to OpenTelemetry OTLP. This recipe replaces Zipkin dependencies with OpenTelemetry OTLP exporter and updates the related configuration properties.
-* [org.openrewrite.java.spring.opentelemetry.MigrateNewRelicToOpenTelemetry](/recipes/java/spring/opentelemetry/migratenewrelictoopentelemetry.md)
-  * **Migrate New Relic Agent to OpenTelemetry**
-  * Migrate from New Relic Java Agent annotations to OpenTelemetry annotations. Replace @Trace annotations with @WithSpan annotations.
-* [org.openrewrite.java.spring.opentelemetry.MigrateOpenTracingToOpenTelemetry](/recipes/java/spring/opentelemetry/migrateopentracingtoopentelemetry.md)
-  * **Migrate OpenTracing API to OpenTelemetry API**
-  * Migrate Java code using OpenTracing API to OpenTelemetry API. OpenTracing has been superseded by OpenTelemetry and is no longer actively maintained.
-* [org.openrewrite.java.spring.opentelemetry.MigrateSleuthToOpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
-  * **Migrate from Spring Cloud Sleuth to OpenTelemetry**
-  * Migrate from Spring Cloud Sleuth to OpenTelemetry. [Spring Cloud Sleuth has been deprecated](https://github.com/spring-cloud/spring-cloud-sleuth#spring-cloud-sleuth) and is replaced by Micrometer Tracing with OpenTelemetry as a backend. This recipe removes Sleuth dependencies and adds OpenTelemetry instrumentation.
-* [org.openrewrite.java.spring.opentelemetry.MigrateToOpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
-  * **Complete migration to OpenTelemetry**
-  * Comprehensive migration to OpenTelemetry including dependencies, configuration properties, and Java code changes. This recipe handles migration from Spring Cloud Sleuth, Brave/Zipkin, and OpenTracing to OpenTelemetry.
-* [org.openrewrite.java.spring.security.SpringSecurityBestPractices](/recipes/java/spring/security/springsecuritybestpractices.md)
-  * **Spring security best practices**
-  * Applies security best practices to Spring applications, including TLS for database and message broker connections.
-* [org.openrewrite.java.spring.security5.RenameNimbusdsJsonObjectPackageName](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
-  * **Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`**
-  * Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`.
-* [org.openrewrite.java.spring.security5.ReplaceGlobalMethodSecurityWithMethodSecurityXml](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
-  * **Replace global method security with method security**
-  * `@EnableGlobalMethodSecurity` and `&lt;global-method-security&gt;` are deprecated in favor of `@EnableMethodSecurity` and `&lt;method-security&gt;`, respectively. The new annotation and XML element activate Spring’s pre-post annotations by default and use AuthorizationManager internally.
-* [org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
-  * **Migrate to Spring Security 5.7**
-  * Migrate applications to the latest Spring Security 5.7 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security5.UpgradeSpringSecurity_5_8](/recipes/java/spring/security5/upgradespringsecurity_5_8.md)
-  * **Migrate to Spring Security 5.8**
-  * Migrate applications to the latest Spring Security 5.8 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security5.search.FindEncryptorsQueryableTextUses](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
-  * **Finds uses of `Encryptors.queryableText()`**
-  * `Encryptors.queryableText()` is insecure and is removed in Spring Security 6.
-* [org.openrewrite.java.spring.security6.RemoveUseAuthorizationManager](/recipes/java/spring/security6/removeuseauthorizationmanager.md)
-  * **Remove unnecessary `use-authorization-manager` for message security in Spring security 6**
-  * In Spring Security 6, `&lt;websocket-message-broker&gt;` defaults `use-authorization-manager` to `true`. So, the `use-authorization-manager` attribute for message security is no longer needed and can be removed.
-* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0](/recipes/java/spring/security6/upgradespringsecurity_6_0.md)
-  * **Migrate to Spring Security 6.0**
-  * Migrate applications to the latest Spring Security 6.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_1](/recipes/java/spring/security6/upgradespringsecurity_6_1.md)
-  * **Migrate to Spring Security 6.1**
-  * Migrate applications to the latest Spring Security 6.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_2](/recipes/java/spring/security6/upgradespringsecurity_6_2.md)
-  * **Migrate to Spring Security 6.2**
-  * Migrate applications to the latest Spring Security 6.2 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_3](/recipes/java/spring/security6/upgradespringsecurity_6_3.md)
-  * **Migrate to Spring Security 6.3**
-  * Migrate applications to the latest Spring Security 6.3 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
-  * **Migrate to Spring Security 6.4**
-  * Migrate applications to the latest Spring Security 6.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_5](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
-  * **Migrate to Spring Security 6.5 (Community Edition)**
-  * Migrate applications to the latest Spring Security 6.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
-  * **Remove throws exception in `SecurityConfigurer` methods `init` and `configure`**
-  * Remove throws exception in `SecurityConfigurer` methods `init` and `configure`.
-* [org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
-  * **Migrate to Spring Security 7.0**
-  * Migrate applications to the latest Spring Security 7.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
-* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
-  * **Migrate Spring WS Axiom to SAAJ**
-  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
-* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
-  * **Migrate to Spring WS 4.0**
-  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
-* [org.openrewrite.java.springdoc.CleanupRemainingSpringfox](/recipes/java/springdoc/cleanupremainingspringfox.md)
-  * **Remove remaining Springfox dead code**
-  * Removes unused private methods left behind after SpringFoxToSpringDoc migration. When Docket beans are removed, private helper methods (e.g., `appInfo()`) become dead code but are not cleaned up, causing compilation errors.
-* [org.openrewrite.java.springdoc.MigrateSpringdocCommon](/recipes/java/springdoc/migratespringdoccommon.md)
-  * **Migrate from springdoc-openapi-common to springdoc-openapi-starter-common**
-  * Migrate from springdoc-openapi-common to springdoc-openapi-starter-common.
-* [org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies](/recipes/java/springdoc/replacespringfoxdependencies.md)
-  * **Replace SpringFox Dependencies**
-  * Replace SpringFox Dependencies.
-* [org.openrewrite.java.springdoc.SpringFoxToSpringDoc](/recipes/java/springdoc/springfoxtospringdoc.md)
-  * **Migrate from SpringFox Swagger to SpringDoc and OpenAPI**
-  * Migrate from SpringFox Swagger to SpringDoc and OpenAPI.
-* [org.openrewrite.java.springdoc.SwaggerToSpringDoc](/recipes/java/springdoc/swaggertospringdoc.md)
-  * **Migrate from Swagger to SpringDoc and OpenAPI**
-  * Migrate from Swagger to SpringDoc and OpenAPI.
-* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2](/recipes/java/springdoc/upgradespringdoc_2.md)
-  * **Upgrade to SpringDoc 2.1**
-  * Upgrade to SpringDoc v2.1, as described in the [upgrade guide](https://springdoc.org/#migrating-from-springdoc-v1).
-* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_2](/recipes/java/springdoc/upgradespringdoc_2_2.md)
-  * **Upgrade to SpringDoc 2.2**
-  * Upgrade to SpringDoc v2.2.
-* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_5](/recipes/java/springdoc/upgradespringdoc_2_5.md)
-  * **Upgrade to SpringDoc 2.5**
-  * Upgrade to SpringDoc v2.5.
-* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_6](/recipes/java/springdoc/upgradespringdoc_2_6.md)
-  * **Upgrade to SpringDoc 2.6**
-  * Upgrade to SpringDoc v2.6.
-* [org.openrewrite.java.springdoc.UpgradeSpringDoc_2_8](/recipes/java/springdoc/upgradespringdoc_2_8.md)
-  * **Upgrade to SpringDoc 2.8**
-  * Upgrade to SpringDoc v2.8.
-* [org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
-  * **Upgrade to SpringDoc 3.0**
-  * Upgrade to SpringDoc v3.0.
-* [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
-  * **ArchUnit 0.x upgrade**
-  * Upgrade ArchUnit from 0.x to 1.x.
-* [org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
-  * **Use Arquillian JUnit 5 Extension**
-  * Migrates Arquillian JUnit 4 to JUnit 5.
-* [org.openrewrite.java.testing.assertj.Assertj](/recipes/java/testing/assertj/assertj-best-practices.md)
-  * **AssertJ best practices**
-  * Migrates JUnit asserts to AssertJ and applies best practices to assertions.
-* [org.openrewrite.java.testing.assertj.FestToAssertj](/recipes/java/testing/assertj/festtoassertj.md)
-  * **Migrate Fest 2.x to AssertJ**
-  * AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts Fest 2.x imports to AssertJ imports.
-* [org.openrewrite.java.testing.assertj.JUnitToAssertj](/recipes/java/testing/assertj/junittoassertj.md)
-  * **Migrate JUnit asserts to AssertJ**
-  * AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts assertions from `org.junit.jupiter.api.Assertions` to `org.assertj.core.api.Assertions`. Will convert JUnit 4 to JUnit Jupiter if necessary to match and modify assertions.
-* [org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions](/recipes/java/testing/assertj/simplifyassertjassertions.md)
-  * **Shorten AssertJ assertions**
-  * Replace AssertJ assertions where a dedicated assertion is available for the same actual value.
-* [org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions](/recipes/java/testing/assertj/simplifychainedassertjassertions.md)
-  * **Simplify AssertJ chained assertions**
-  * Replace AssertJ assertions where a method is called on the actual value with a dedicated assertion.
-* [org.openrewrite.java.testing.assertj.StaticImports](/recipes/java/testing/assertj/staticimports.md)
-  * **Statically import AssertJ's `assertThat`**
-  * Consistently use a static import rather than inlining the `Assertions` class name in tests.
-* [org.openrewrite.java.testing.byteman.BytemanJUnit4ToBytemanJUnit5](/recipes/java/testing/byteman/bytemanjunit4tobytemanjunit5.md)
-  * **Use Byteman JUnit 5 dependency**
-  * Migrates Byteman JUnit 4 to JUnit 5.
-* [org.openrewrite.java.testing.cleanup.BestPractices](/recipes/java/testing/cleanup/bestpractices.md)
-  * **Testing best practices**
-  * Applies best practices to tests.
-* [org.openrewrite.java.testing.datafaker.JavaFakerToDataFaker](/recipes/java/testing/datafaker/javafakertodatafaker.md)
-  * **Migrate from Java Faker to Datafaker**
-  * Change imports and dependencies related to Java Faker to Datafaker replacements.
-* [org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
-  * **Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)**
-  * This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application.
-* [org.openrewrite.java.testing.easymock.EasyMockToMockito](/recipes/java/testing/easymock/easymocktomockito.md)
-  * **Migrate from EasyMock to Mockito**
-  * This recipe will apply changes commonly needed when migrating from EasyMock to Mockito.
-* [org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed](/recipes/java/testing/hamcrest/addhamcrestifused.md)
-  * **Add `org.hamcrest:hamcrest` if it is used**
-  * JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency.
-* [org.openrewrite.java.testing.hamcrest.ConsistentHamcrestMatcherImports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
-  * **Use consistent Hamcrest matcher imports**
-  * Use consistent imports for Hamcrest matchers, and remove wrapping `is(Matcher)` calls ahead of further changes.
-* [org.openrewrite.java.testing.hamcrest.MigrateHamcrestToAssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
-  * **Migrate Hamcrest assertions to AssertJ**
-  * Migrate Hamcrest `assertThat(..)` to AssertJ `Assertions`.
-* [org.openrewrite.java.testing.hamcrest.MigrateHamcrestToJUnit5](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
-  * **Migrate Hamcrest assertions to JUnit Jupiter**
-  * Migrate Hamcrest `assertThat(..)` to JUnit Jupiter `Assertions`.
-* [org.openrewrite.java.testing.htmlunit.UpgradeHtmlUnit_3](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
-  * **Migrate to HtmlUnit 3.x**
-  * Automates the HtmlUnit [migration guide](https://htmlunit.sourceforge.io/migration.html) from 2.x to 3.x.
-* [org.openrewrite.java.testing.jmockit.JMockitToMockito](/recipes/java/testing/jmockit/jmockittomockito.md)
-  * **Migrate from JMockit to Mockito**
-  * This recipe will apply changes commonly needed when migrating from JMockit to Mockito.
-* [org.openrewrite.java.testing.junit.JUnit6BestPractices](/recipes/java/testing/junit/junit6bestpractices.md)
-  * **JUnit 6 best practices**
-  * Applies best practices to tests.
-* [org.openrewrite.java.testing.junit.JupiterBestPractices](/recipes/java/testing/junit/jupiterbestpractices.md)
-  * **JUnit Jupiter best practices**
-  * Applies best practices to tests.
-* [org.openrewrite.java.testing.junit5.CleanupAssertions](/recipes/java/testing/junit5/cleanupassertions.md)
-  * **Clean Up Assertions**
-  * Simplifies JUnit Jupiter assertions to their most-direct equivalents.
-* [org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
-  * **Exclude JUnit 4, unless Testcontainers is used**
-  * Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used.
-* [org.openrewrite.java.testing.junit5.IgnoreToDisabled](/recipes/java/testing/junit5/ignoretodisabled.md)
-  * **Use JUnit Jupiter `@Disabled`**
-  * Migrates JUnit 4.x `@Ignore` to JUnit Jupiter `@Disabled`.
-* [org.openrewrite.java.testing.junit5.JUnit4to5Migration](/recipes/java/testing/junit5/junit4to5migration.md)
-  * **JUnit Jupiter migration from JUnit 4.x**
-  * Migrates JUnit 4.x tests to JUnit Jupiter.
-* [org.openrewrite.java.testing.junit5.JUnit5BestPractices](/recipes/java/testing/junit5/junit5bestpractices.md)
-  * **JUnit 5 best practices**
-  * Applies best practices to tests.
-* [org.openrewrite.java.testing.junit5.MigrateAssertionFailedError](/recipes/java/testing/junit5/migrateassertionfailederror.md)
-  * **Migrate JUnit 4 assertion failure exceptions to JUnit Jupiter**
-  * Replace JUnit 4's `junit.framework.AssertionFailedError` and `org.junit.ComparisonFailure` with JUnit Jupiter's `org.opentest4j.AssertionFailedError`.
-* [org.openrewrite.java.testing.junit5.MigrateAssumptions](/recipes/java/testing/junit5/migrateassumptions.md)
-  * **Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`**
-  * Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`.
-* [org.openrewrite.java.testing.junit5.StaticImports](/recipes/java/testing/junit5/staticimports.md)
-  * **Statically import JUnit Jupiter assertions**
-  * Always use a static import for assertion methods.
-* [org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable](/recipes/java/testing/junit5/throwingrunnabletoexecutable.md)
-  * **Use JUnit Jupiter `Executable`**
-  * Migrates JUnit 4.x `ThrowingRunnable` to JUnit Jupiter `Executable`.
-* [org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
-  * **Use OkHttp 3 MockWebServer for JUnit 5**
-  * Migrates OkHttp 3 `MockWebServer` to enable JUnit Jupiter Extension support.
-* [org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin](/recipes/java/testing/junit5/upgradesurefireplugin.md)
-  * **Upgrade Surefire Plugin**
-  * Upgrades the Maven Surefire Plugin to the latest version if still using an older Maven version.
-* [org.openrewrite.java.testing.junit5.UpgradeToJUnit513](/recipes/java/testing/junit5/upgradetojunit513.md)
-  * **Upgrade to JUnit 5.13**
-  * Upgrades JUnit 5 to 5.13.x and migrates all deprecated APIs.
-* [org.openrewrite.java.testing.junit5.UpgradeToJUnit514](/recipes/java/testing/junit5/upgradetojunit514.md)
-  * **Upgrade to JUnit 5.14**
-  * Upgrades JUnit 5 to 5.14.x and migrates all deprecated APIs.
-* [org.openrewrite.java.testing.junit5.UseHamcrestAssertThat](/recipes/java/testing/junit5/usehamcrestassertthat.md)
-  * **Use `MatcherAssert#assertThat(..)`**
-  * JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter.
-* [org.openrewrite.java.testing.junit5.UseMockitoExtension](/recipes/java/testing/junit5/usemockitoextension.md)
-  * **Use Mockito JUnit Jupiter extension**
-  * Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`.
-* [org.openrewrite.java.testing.junit5.UseXMLUnitLegacy](/recipes/java/testing/junit5/usexmlunitlegacy.md)
-  * **Use XMLUnit Legacy for JUnit 5**
-  * Migrates XMLUnit 1.x to XMLUnit legacy 2.x.
-* [org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5](/recipes/java/testing/junit5/vertxunittovertxjunit5.md)
-  * **Use Vert.x JUnit 5 Extension**
-  * Migrates Vert.x `@RunWith` `VertxUnitRunner` to the JUnit Jupiter `@ExtendWith` `VertxExtension`.
-* [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
-  * **JUnit 6 migration from JUnit 5.x**
-  * Migrates JUnit 5.x tests to JUnit 6.x.
-* [org.openrewrite.java.testing.mockito.Mockito1to3Migration](/recipes/java/testing/mockito/mockito1to3migration.md)
-  * **Mockito 3.x migration from 1.x**
-  * Upgrade Mockito from 1.x to 3.x.
-* [org.openrewrite.java.testing.mockito.Mockito1to4Migration](/recipes/java/testing/mockito/mockito1to4migration.md)
-  * **Mockito 4.x upgrade**
-  * Upgrade Mockito from 1.x to 4.x.
-* [org.openrewrite.java.testing.mockito.Mockito1to5Migration](/recipes/java/testing/mockito/mockito1to5migration.md)
-  * **Mockito 5.x upgrade**
-  * Upgrade Mockito from 1.x to 5.x.
-* [org.openrewrite.java.testing.mockito.Mockito4to5Only](/recipes/java/testing/mockito/mockito4to5only.md)
-  * **Mockito 4 to 5.x upgrade only**
-  * Upgrade Mockito from 4.x to 5.x. Does not include 1.x to 4.x migration.
-* [org.openrewrite.java.testing.mockito.MockitoBestPractices](/recipes/java/testing/mockito/mockitobestpractices.md)
-  * **Mockito best practices**
-  * Applies best practices for Mockito tests.
-* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJUnit4](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjunit4.md)
-  * **Replace `MockitoTestExecutionListener` (JUnit 4 projects)**
-  * Replace `MockitoTestExecutionListener` in projects that have JUnit 4 as a dependency. Uses `@RunWith(MockitoJUnitRunner.class)` as the replacement.
-* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJupiter](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerforjupiter.md)
-  * **Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)**
-  * Replace `MockitoTestExecutionListener` in projects that have JUnit Jupiter as a dependency. Uses `@ExtendWith(MockitoExtension.class)` as the replacement.
-* [org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForTestNG](/recipes/java/testing/mockito/replacemockitotestexecutionlistenerfortestng.md)
-  * **Replace `MockitoTestExecutionListener` (TestNG projects)**
-  * Replace `MockitoTestExecutionListener` in projects that have TestNG as a dependency. Uses `MockitoAnnotations.openMocks(this)` with `@BeforeMethod`/`@AfterMethod` as the replacement.
-* [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
-  * **Replace PowerMock with raw Mockito**
-  * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.
-* [org.openrewrite.java.testing.testcontainers.ExplicitContainerImages](/recipes/java/testing/testcontainers/explicitcontainerimages.md)
-  * **Explicit container images and versions**
-  * Replace implicit default container images and versions with explicit versions.
-* [org.openrewrite.java.testing.testcontainers.GetHostMigration](/recipes/java/testing/testcontainers/gethostmigration.md)
-  * **Replace `ContainerState.getContainerIpAddress()` with `getHost()`**
-  * Replace `org.testcontainers.containers.ContainerState.getContainerIpAddress()` with `getHost()`.
-* [org.openrewrite.java.testing.testcontainers.TestContainersBestPractices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
-  * **Testcontainers best practices**
-  * Apply best practices to Testcontainers usage.
-* [org.openrewrite.java.testing.testcontainers.Testcontainers2ContainerClasses](/recipes/java/testing/testcontainers/testcontainers2containerclasses.md)
-  * **Testcontainers 2 container classes**
-  * Change Testcontainers container classes to their new package locations in Testcontainers 2.x.
-* [org.openrewrite.java.testing.testcontainers.Testcontainers2Dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
-  * **Rename Testcontainers dependencies**
-  * Change Testcontainers dependencies to adopt the new consistent `testcontainers-` prefix.
-* [org.openrewrite.java.testing.testcontainers.Testcontainers2Migration](/recipes/java/testing/testcontainers/testcontainers2migration.md)
-  * **Migrate to testcontainers-java 2.x**
-  * Change dependencies and types to migrate to testcontainers-java 2.x.
-* [org.openrewrite.java.testing.testng.TestNgToAssertj](/recipes/java/testing/testng/testngtoassertj.md)
-  * **Migrate TestNG assertions to AssertJ**
-  * Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions`.
-* [org.openrewrite.java.testing.truth.MigrateTruthToAssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
-  * **Migrate Google Truth to AssertJ**
-  * Migrate Google Truth assertions to AssertJ assertions.
-* [org.openrewrite.javascript.change-import](/recipes/javascript/change-import.md)
-  * **Change import**
-  * Changes an import from one module/member to another, updating all type attributions.
-* [org.openrewrite.javascript.cleanup.add-parse-int-radix](/recipes/javascript/cleanup/add-parse-int-radix.md)
-  * **Add radix to `parseInt`**
-  * Adds the radix parameter (base 10) to `parseInt()` calls that are missing it, preventing potential parsing issues.
-* [org.openrewrite.javascript.cleanup.async-callback-in-sync-array-method](/recipes/javascript/cleanup/async-callback-in-sync-array-method.md)
-  * **Detect async callbacks in synchronous array methods**
-  * Detects async callbacks passed to array methods like .some(), .every(), .filter() which don't await promises. This is a common bug where Promise objects are always truthy.
-* [org.openrewrite.javascript.cleanup.order-imports](/recipes/javascript/cleanup/order-imports.md)
-  * **Order imports**
-  * Sort imports by category and module path. Categories: side-effect, namespace, default, named, type. Within each category, imports are sorted alphabetically by module path. Named specifiers within each import are also sorted alphabetically.
-* [org.openrewrite.javascript.cleanup.prefer-optional-chain](/recipes/javascript/cleanup/prefer-optional-chain.md)
-  * **Prefer optional chaining**
-  * Converts ternary expressions like `foo ? foo.bar : undefined` to use optional chaining syntax `foo?.bar`.
-* [org.openrewrite.javascript.cleanup.use-object-property-shorthand](/recipes/javascript/cleanup/use-object-property-shorthand.md)
-  * **Use object property shorthand**
-  * Simplifies object properties where the property name and value/variable name are the same (e.g., `\{ x: x \}` becomes `\{ x \}`). Applies to both destructuring patterns and object literals.
-* [org.openrewrite.javascript.dependencies.add-dependency](/recipes/javascript/dependencies/add-dependency.md)
-  * **Add npm dependency**
-  * Adds a new dependency to `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.find-dependency](/recipes/javascript/dependencies/find-dependency.md)
-  * **Find Node.js dependency**
-  * Finds dependencies in a project's `package.json`. Can find both direct dependencies and dependencies that transitively include the target package. This recipe is commonly used as a precondition for other recipes.
-* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](/recipes/javascript/dependencies/upgrade-dependency-version.md)
-  * **Upgrade npm dependency version**
-  * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](/recipes/javascript/dependencies/upgrade-transitive-dependency-version.md)
-  * **Upgrade transitive npm dependency version**
-  * Upgrades the version of a transitive dependency by adding override/resolution entries to `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.format.auto-format](/recipes/javascript/format/auto-format.md)
-  * **Auto-format JavaScript/TypeScript code**
-  * Format JavaScript and TypeScript code using formatting rules auto-detected from the project's existing code style.
-* [org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences](/recipes/javascript/migrate/es6/modernize-octal-escape-sequences.md)
-  * **Modernize octal escape sequences**
-  * Convert old-style octal escape sequences (e.g., `\0`, `\123`) to modern hex escape sequences (e.g., `\x00`, `\x53`) or Unicode escape sequences (e.g., `\u0000`, `\u0053`).
-* [org.openrewrite.javascript.migrate.es6.modernize-octal-literals](/recipes/javascript/migrate/es6/modernize-octal-literals.md)
-  * **Modernize octal literals**
-  * Convert old-style octal literals (e.g., `0777`) to modern ES6 syntax (e.g., `0o777`).
-* [org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys](/recipes/javascript/migrate/es6/remove-duplicate-object-keys.md)
-  * **Remove duplicate object keys**
-  * Remove duplicate keys in object literals, keeping only the last occurrence (last-wins semantics).
-* [org.openrewrite.javascript.migrate.typescript.export-assignment-to-export-default](/recipes/javascript/migrate/typescript/export-assignment-to-export-default.md)
-  * **Convert `export =` to `export default`**
-  * Converts TypeScript `export =` syntax to ES module `export default` syntax for compatibility with ECMAScript modules.
-* [org.openrewrite.jenkins.CommonsLang3ToApiPlugin](/recipes/jenkins/commonslang3toapiplugin.md)
-  * **Use commons-lang3 API Plugin**
-  * Updates `pom.xml` to depend on `commons-lang3-api` and exclude `commons-lang3` where it is brought in transitively.
-* [org.openrewrite.jenkins.CreateJenkinsfile](/recipes/jenkins/createjenkinsfile.md)
-  * **Create Jenkinsfile**
-  * Creates a simple base Jenkinsfile in Groovy for a Declarative Pipeline - located in the root of the project.
-* [org.openrewrite.jenkins.JavaxAnnotationsToSpotbugs](/recipes/jenkins/javaxannotationstospotbugs.md)
-  * **Migrate `javax.annotations` to SpotBugs annotations**
-  * SpotBugs is the [preferred replacement](https://www.jenkins.io/doc/developer/tutorial-improve/replace-jsr-305-annotations/) of JSR-305 annotations for Jenkins plugins.
-* [org.openrewrite.jenkins.ModernizeJenkinsfile](/recipes/jenkins/modernizejenkinsfile.md)
-  * **Modernize Jenkinsfile**
-  * Updates `Jenkinsfile` to build with recommended Java versions, platforms, and settings.
-* [org.openrewrite.jenkins.ModernizePlugin](/recipes/jenkins/modernizeplugin.md)
-  * **Modernize a Jenkins plugin to the latest recommended versions**
-  * This recipe is intended to change over time to reflect the recommended tooling and [recommended Jenkins baseline](https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/).
-* [org.openrewrite.jenkins.ModernizePluginForJava8](/recipes/jenkins/modernizepluginforjava8.md)
-  * **Modernize a Jenkins plugin to the latest versions supported by Java 8**
-  * This recipe is intended to break down the modernization of very old plugins into distinct steps. It allows modernizing all tooling up to the last versions that supported Java 8. This can then be followed by another recipe that makes the jump to Java 11.
-* [org.openrewrite.jenkins.migrate.hudson.UtilGetPastTimeStringToGetTimeSpanString](/recipes/jenkins/migrate/hudson/utilgetpasttimestringtogettimespanstring.md)
-  * **Replace `hudson.Util.getPastTimeString` with `getTimeSpanString`**
-  * `hudson.Util.getPastTimeString` has been [deprecated](https://github.com/jenkinsci/jenkins/pull/4174) since the [2.204.1 LTS release](https://www.jenkins.io/changelog-stable/#v2.204.1) on 2019-12-18.
-* [org.openrewrite.maven.BestPractices](/recipes/maven/bestpractices.md)
-  * **Apache Maven best practices**
-  * Applies best practices to Maven POMs.
-* [org.openrewrite.maven.MigrateToMaven4](/recipes/maven/migratetomaven4.md)
-  * **Migrate to Maven 4**
-  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, lifecycle phases, removes duplicate plugin declarations, and replaces removed properties to ensure compatibility with Maven 4.
-* [org.openrewrite.maven.RemoveMavenWrapper](/recipes/maven/removemavenwrapper.md)
-  * **Remove Maven wrapper**
-  * Remove Maven wrapper files from a project. This includes the `mvnw` and `mvnw.cmd` scripts, and the `.mvn/wrapper` directory.
-* [org.openrewrite.maven.ReplaceDeprecatedLifecyclePhases](/recipes/maven/replacedeprecatedlifecyclephases.md)
-  * **Replace deprecated lifecycle phases**
-  * Maven 4 deprecated all `pre-*` and `post-*` lifecycle phases in favor of the `before:` and `after:` syntax. This recipe updates plugin phase declarations to use the new syntax, including `pre-clean` → `before:clean`, `pre-site` → `before:site`, `pre-integration-test` → `before:integration-test`, and their `post-*` equivalents.
-* [org.openrewrite.maven.ReplaceModulesWithSubprojects](/recipes/maven/replacemoduleswithsubprojects.md)
-  * **Replace modules with subprojects**
-  * Maven 4 model version 4.1.0 deprecates the `&lt;modules&gt;` element in favor of `&lt;subprojects&gt;` to eliminate confusion with Java's Platform Module System (JPMS). This recipe renames `&lt;modules&gt;` to `&lt;subprojects&gt;` and `&lt;module&gt;` children to `&lt;subproject&gt;`.
-* [org.openrewrite.maven.ReplaceRemovedRootDirectoryProperties](/recipes/maven/replaceremovedrootdirectoryproperties.md)
-  * **Replace removed root directory properties**
-  * Maven 4 removed support for deprecated root directory properties. This recipe replaces `$\{executionRootDirectory\}` with `$\{session.rootDirectory\}` and `$\{multiModuleProjectDirectory\}` with `$\{project.rootDirectory\}`.
-* [org.openrewrite.maven.UpgradeToModelVersion410](/recipes/maven/upgradetomodelversion410.md)
-  * **Upgrade to Maven model version 4.1.0**
-  * Upgrades Maven POMs from model version 4.0.0 to 4.1.0, enabling new Maven 4 features like `&lt;subprojects&gt;`, `bom` packaging, and automatic version inference. This recipe updates the `&lt;modelVersion&gt;` element, `xmlns` namespace, and `xsi:schemaLocation` from 4.0.0 to 4.1.0.
-* [org.openrewrite.maven.cleanup.PrefixlessExpressions](/recipes/maven/cleanup/prefixlessexpressions.md)
-  * **Drop prefixless expressions in POM**
-  * MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing.
-* [org.openrewrite.maven.liberty.AddOpenLibertyPlugin](/recipes/maven/liberty/addopenlibertyplugin.md)
-  * **Add Liberty Maven plugin**
-  * This recipe adds the Liberty Maven plugin, which provides several goals for managing a Liberty server and applications.
-* [org.openrewrite.micrometer.MicrometerBestPractices](/recipes/micrometer/micrometerbestpractices.md)
-  * **Micrometer best practices**
-  * This recipe will apply a set of best practice refactorings for Micrometer, like adopting `Observations` instead of `Timers`.
-* [org.openrewrite.micrometer.UpgradeMicrometer_1_13](/recipes/micrometer/upgrademicrometer_1_13.md)
-  * **Migrate to Micrometer 1.13**
-  * Migrate applications to the latest Micrometer 1.13 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions as described in the [Micrometer 1.13 migration guide](https://github.com/micrometer-metrics/micrometer/wiki/1.13-Migration-Guide).
-* [org.openrewrite.micrometer.misk.MigrateMiskToMicrometer](/recipes/micrometer/misk/migratemisktomicrometer.md)
-  * **Migrate Misk metrics to Micrometer**
-  * This recipe will move Misk metrics to Micrometer, where that is possible to do without a loss of fidelity.
-* [org.openrewrite.netty.UpgradeNetty_4_1_to_4_2](/recipes/netty/upgradenetty_4_1_to_4_2.md)
-  * **Migrates from Netty 4.1.x to Netty 4.2.x**
-  * Migrate applications to the latest Netty 4.2.x release.
-* [org.openrewrite.okhttp.ReorderRequestBodyCreateArguments](/recipes/okhttp/reorderrequestbodycreatearguments.md)
-  * **Reorder the arguments of `RequestBody.create()`**
-  * Reorder the arguments of `RequestBody.create()` to put the `MediaType` argument after the `String` body.
-* [org.openrewrite.okhttp.UpgradeMockWebServer3](/recipes/okhttp/upgrademockwebserver3.md)
-  * **Migrate to MockWebServer3 (core module)**
-  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3` core module without JUnit dependency.
-* [org.openrewrite.okhttp.UpgradeMockWebServer3JUnit4](/recipes/okhttp/upgrademockwebserver3junit4.md)
-  * **Migrate to MockWebServer3 with JUnit 4**
-  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3-junit4` with JUnit 4 integration.
-* [org.openrewrite.okhttp.UpgradeMockWebServer3JUnit5](/recipes/okhttp/upgrademockwebserver3junit5.md)
-  * **Migrate to MockWebServer3 with JUnit 5**
-  * Migrate from the legacy `mockwebserver` artifact to `mockwebserver3-junit5` with JUnit 5 integration.
-* [org.openrewrite.okhttp.UpgradeOkHttp4](/recipes/okhttp/upgradeokhttp4.md)
-  * **Migrate to OkHttp 4.x**
-  * This recipe will apply changes commonly needed when migrating to OkHttp 4.x.
-* [org.openrewrite.okhttp.UpgradeOkHttp4Dependencies](/recipes/okhttp/upgradeokhttp4dependencies.md)
-  * **Migrate OkHttp dependencies to 4.x**
-  * Migrate OkHttp dependencies to 4.x.
-* [org.openrewrite.okhttp.UpgradeOkHttp5](/recipes/okhttp/upgradeokhttp5.md)
-  * **Migrate to OkHttp 5.x**
-  * This recipe will apply changes commonly needed when migrating to OkHttp 5.x.
-* [org.openrewrite.okhttp.UpgradeOkHttp5Dependencies](/recipes/okhttp/upgradeokhttp5dependencies.md)
-  * **Migrate OkHttp dependencies to 5.x**
-  * Migrate OkHttp dependencies to 5.x.
-* [org.openrewrite.okio.UpgradeOkio3](/recipes/okio/upgradeokio3.md)
-  * **Migrate to Okio 3.x**
-  * This recipe will apply changes commonly needed when migrating to Okio 3.x.
-* [org.openrewrite.okio.UpgradeOkio3Dependencies](/recipes/okio/upgradeokio3dependencies.md)
-  * **Migrate Okio dependencies to 3.x**
-  * Migrate Okio dependencies to 3.x.
-* [org.openrewrite.openapi.swagger.MigrateApiImplicitParamsToParameters](/recipes/openapi/swagger/migrateapiimplicitparamstoparameters.md)
-  * **Migrate from `@ApiImplicitParams`  to `@Parameters`**
-  * Converts `@ApiImplicitParams` to `@Parameters` and the `@ApiImplicitParam` annotation to `@Parameter` and converts the directly mappable attributes and removes the others.
-* [org.openrewrite.openapi.swagger.MigrateApiModelPropertyToSchema](/recipes/openapi/swagger/migrateapimodelpropertytoschema.md)
-  * **Migrate from `@ApiModelProperty` to `@Schema`**
-  * Converts the `@ApiModelProperty` annotation to `@Schema` and converts the &quot;value&quot; attribute to &quot;description&quot;.
-* [org.openrewrite.openapi.swagger.MigrateApiOperationToOperation](/recipes/openapi/swagger/migrateapioperationtooperation.md)
-  * **Migrate from `@ApiOperation` to `@Operation`**
-  * Converts the `@ApiOperation` annotation to `@Operation` and converts the directly mappable attributes and removes the others.
-* [org.openrewrite.openapi.swagger.MigrateApiParamToParameter](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
-  * **Migrate from `@ApiParam` to `@Parameter`**
-  * Converts the `@ApiParam` annotation to `@Parameter` and converts the directly mappable attributes.
-* [org.openrewrite.openapi.swagger.MigrateApiResponsesToApiResponses](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
-  * **Migrate from `@ApiResponses` to `@ApiResponses`**
-  * Changes the namespace of the `@ApiResponses` and `@ApiResponse` annotations and converts its attributes (ex. code -&gt; responseCode, message -&gt; description, response -&gt; content).
-* [org.openrewrite.openapi.swagger.SwaggerToOpenAPI](/recipes/openapi/swagger/swaggertoopenapi.md)
-  * **Migrate from Swagger to OpenAPI**
-  * Migrate from Swagger to OpenAPI.
-* [org.openrewrite.openapi.swagger.UseJakartaSwaggerArtifacts](/recipes/openapi/swagger/usejakartaswaggerartifacts.md)
-  * **Use Jakarta Swagger Artifacts**
-  * Migrate from javax Swagger artifacts to Jakarta versions.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_0_0](/recipes/quarkus/migratetoquarkus_v3_0_0.md)
-  * **Quarkus Updates Aggregate 3.0.0**
-  * Quarkus update recipes to upgrade your application to 3.0.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_10_0](/recipes/quarkus/migratetoquarkus_v3_10_0.md)
-  * **Quarkus Updates Aggregate 3.10.0**
-  * Quarkus update recipes to upgrade your application to 3.10.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_11_0](/recipes/quarkus/migratetoquarkus_v3_11_0.md)
-  * **Quarkus Updates Aggregate 3.11.0**
-  * Quarkus update recipes to upgrade your application to 3.11.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_12_0](/recipes/quarkus/migratetoquarkus_v3_12_0.md)
-  * **Quarkus Updates Aggregate 3.12.0**
-  * Quarkus update recipes to upgrade your application to 3.12.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_13_0](/recipes/quarkus/migratetoquarkus_v3_13_0.md)
-  * **Quarkus Updates Aggregate 3.13.0**
-  * Quarkus update recipes to upgrade your application to 3.13.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_15_0](/recipes/quarkus/migratetoquarkus_v3_15_0.md)
-  * **Quarkus Updates Aggregate 3.15.0**
-  * Quarkus update recipes to upgrade your application to 3.15.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_17_0](/recipes/quarkus/migratetoquarkus_v3_17_0.md)
-  * **Quarkus Updates Aggregate 3.17.0**
-  * Quarkus update recipes to upgrade your application to 3.17.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_18_0](/recipes/quarkus/migratetoquarkus_v3_18_0.md)
-  * **Quarkus Updates Aggregate 3.18.0**
-  * Quarkus update recipes to upgrade your application to 3.18.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_19_0](/recipes/quarkus/migratetoquarkus_v3_19_0.md)
-  * **Quarkus Updates Aggregate 3.19.0**
-  * Quarkus update recipes to upgrade your application to 3.19.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0](/recipes/quarkus/migratetoquarkus_v3_1_0.md)
-  * **Quarkus Updates Aggregate 3.1.0**
-  * Quarkus update recipes to upgrade your application to 3.1.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_20_1](/recipes/quarkus/migratetoquarkus_v3_20_1.md)
-  * **Quarkus Updates Aggregate 3.20.1**
-  * Quarkus update recipes to upgrade your application to 3.20.1.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_21_0](/recipes/quarkus/migratetoquarkus_v3_21_0.md)
-  * **Quarkus Updates Aggregate 3.21.0**
-  * Quarkus update recipes to upgrade your application to 3.21.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_22_0](/recipes/quarkus/migratetoquarkus_v3_22_0.md)
-  * **Quarkus Updates Aggregate 3.22.0**
-  * Quarkus update recipes to upgrade your application to 3.22.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_23_0](/recipes/quarkus/migratetoquarkus_v3_23_0.md)
-  * **Quarkus Updates Aggregate 3.23.0**
-  * Quarkus update recipes to upgrade your application to 3.23.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_24_0](/recipes/quarkus/migratetoquarkus_v3_24_0.md)
-  * **Quarkus Updates Aggregate 3.24.0**
-  * Quarkus update recipes to upgrade your application to 3.24.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_25_0](/recipes/quarkus/migratetoquarkus_v3_25_0.md)
-  * **Quarkus Updates Aggregate 3.25.0**
-  * Quarkus update recipes to upgrade your application to 3.25.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_26_0](/recipes/quarkus/migratetoquarkus_v3_26_0.md)
-  * **Quarkus Updates Aggregate 3.26.0**
-  * Quarkus update recipes to upgrade your application to 3.26.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_29_0](/recipes/quarkus/migratetoquarkus_v3_29_0.md)
-  * **Quarkus Updates Aggregate 3.29.0**
-  * Quarkus update recipes to upgrade your application to 3.29.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_2_0](/recipes/quarkus/migratetoquarkus_v3_2_0.md)
-  * **Quarkus Updates Aggregate 3.2.0**
-  * Quarkus update recipes to upgrade your application to 3.2.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_30_0](/recipes/quarkus/migratetoquarkus_v3_30_0.md)
-  * **Quarkus Updates Aggregate 3.30.0**
-  * Quarkus update recipes to upgrade your application to 3.30.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_31_0](/recipes/quarkus/migratetoquarkus_v3_31_0.md)
-  * **Quarkus Updates Aggregate 3.31.0**
-  * Quarkus update recipes to upgrade your application to 3.31.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0](/recipes/quarkus/migratetoquarkus_v3_32_0.md)
-  * **Quarkus Updates Aggregate 3.32.0**
-  * Quarkus update recipes to upgrade your application to 3.32.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
-  * **Quarkus Updates Aggregate 3.3.0**
-  * Quarkus update recipes to upgrade your application to 3.3.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_5_0](/recipes/quarkus/migratetoquarkus_v3_5_0.md)
-  * **Quarkus Updates Aggregate 3.5.0**
-  * Quarkus update recipes to upgrade your application to 3.5.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_6_0](/recipes/quarkus/migratetoquarkus_v3_6_0.md)
-  * **Quarkus Updates Aggregate 3.6.0**
-  * Quarkus update recipes to upgrade your application to 3.6.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_7_0](/recipes/quarkus/migratetoquarkus_v3_7_0.md)
-  * **Quarkus Updates Aggregate 3.7.0**
-  * Quarkus update recipes to upgrade your application to 3.7.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_8_0](/recipes/quarkus/migratetoquarkus_v3_8_0.md)
-  * **Quarkus Updates Aggregate 3.8.0**
-  * Quarkus update recipes to upgrade your application to 3.8.0.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_8_3](/recipes/quarkus/migratetoquarkus_v3_8_3.md)
-  * **Quarkus Updates Aggregate 3.8.3**
-  * Quarkus update recipes to upgrade your application to 3.8.3.
-* [org.openrewrite.quarkus.MigrateToQuarkus_v3_9_0](/recipes/quarkus/migratetoquarkus_v3_9_0.md)
-  * **Quarkus Updates Aggregate 3.9.0**
-  * Quarkus update recipes to upgrade your application to 3.9.0.
-* [org.openrewrite.quarkus.Quarkus1to1_13Migration](/recipes/quarkus/quarkus1to1_13migration.md)
-  * **Quarkus 1.13 migration from Quarkus 1.11**
-  * Migrates Quarkus 1.11 to 1.13.
-* [org.openrewrite.quarkus.migrate.javaee.AddQuarkus2Dependencies](/recipes/quarkus/migrate/javaee/addquarkus2dependencies.md)
-  * **Add Quarkus 2 dependencies**
-  * Add Quarkus 2 dependencies to the project.
-* [org.openrewrite.quarkus.migrate.javaee.AddQuarkus2MavenPlugins](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
-  * **Migrate JavaEE Maven Dependencies to Quarkus 2**
-  * Upgrade Standard JavaEE dependencies to Quarkus 2 dependencies.
-* [org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2CodeMigration](/recipes/quarkus/migrate/javaee/javaeetoquarkus2codemigration.md)
-  * **Migrate JavaEE Code to Quarkus 2**
-  * Migrate Standard JavaEE Code to Quarkus 2.
-* [org.openrewrite.quarkus.migrate.javaee.JavaEEtoQuarkus2Migration](/recipes/quarkus/migrate/javaee/javaeetoquarkus2migration.md)
-  * **Migrate JavaEE to Quarkus 2**
-  * These recipes help with the migration of a JavaEE application using EJBs and Hibernate to Quarkus 2. Additional transformations like JSF, JMS, Quarkus Tests may be necessary.
-* [org.openrewrite.quarkus.migrate.javaee.RemoveJavaEEDependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
-  * **Remove JavaEE dependencies**
-  * Remove JavaEE dependencies from the project.
-* [org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
-  * **Quarkus 2.x migration from Quarkus 1.x**
-  * Migrates Quarkus 1.x to 2.x.
-* [org.openrewrite.quarkus.spring.AddSpringCompatibilityExtensions](/recipes/quarkus/spring/addspringcompatibilityextensions.md)
-  * **Add Spring compatibility extensions for commonly used annotations**
-  * Adds Quarkus Spring compatibility extensions when Spring annotations are detected in the codebase.
-* [org.openrewrite.quarkus.spring.ConfigureNativeBuild](/recipes/quarkus/spring/configurenativebuild.md)
-  * **Configure Quarkus Native Build Support**
-  * Adds configuration and dependencies required for Quarkus native image compilation with GraalVM. Includes native profile configuration and reflection hints where needed.
-* [org.openrewrite.quarkus.spring.CustomizeQuarkusPluginGoals](/recipes/quarkus/spring/customizequarkusplugingoals.md)
-  * **Customize Quarkus Maven Plugin Goals**
-  * Allows customization of Quarkus Maven plugin goals. Adds or modifies the executions and goals for the quarkus-maven-plugin.
-* [org.openrewrite.quarkus.spring.CustomizeQuarkusVersion](/recipes/quarkus/spring/customizequarkusversion.md)
-  * **Customize Quarkus BOM Version**
-  * Allows customization of the Quarkus BOM version used in the migration. By default uses 3.x (latest 3.x version), but can be configured to use a specific version.
-* [org.openrewrite.quarkus.spring.DerbyDriverToQuarkus](/recipes/quarkus/spring/derbydrivertoquarkus.md)
-  * **Replace Derby driver with Quarkus JDBC Derby**
-  * Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope).
-* [org.openrewrite.quarkus.spring.DerbyTestDriverToQuarkus](/recipes/quarkus/spring/derbytestdrivertoquarkus.md)
-  * **Replace Derby test driver with Quarkus JDBC Derby (test scope)**
-  * Migrates `org.apache.derby:derby` with test scope to `io.quarkus:quarkus-jdbc-derby` with test scope.
-* [org.openrewrite.quarkus.spring.EnableAnnotationsToQuarkusDependencies](/recipes/quarkus/spring/enableannotationstoquarkusdependencies.md)
-  * **Migrate `@EnableXyz` annotations to Quarkus extensions**
-  * Removes Spring `@EnableXyz` annotations and adds the corresponding Quarkus extensions as dependencies.
-* [org.openrewrite.quarkus.spring.H2DriverToQuarkus](/recipes/quarkus/spring/h2drivertoquarkus.md)
-  * **Replace H2 driver with Quarkus JDBC H2**
-  * Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test scope).
-* [org.openrewrite.quarkus.spring.H2TestDriverToQuarkus](/recipes/quarkus/spring/h2testdrivertoquarkus.md)
-  * **Replace H2 test driver with Quarkus JDBC H2 (test scope)**
-  * Migrates `com.h2database:h2` with test scope to `io.quarkus:quarkus-jdbc-h2` with test scope.
-* [org.openrewrite.quarkus.spring.MigrateBootStarters](/recipes/quarkus/spring/migratebootstarters.md)
-  * **Replace Spring Boot starter dependencies with Quarkus equivalents**
-  * Migrates Spring Boot starter dependencies to their Quarkus equivalents, removing version tags as Quarkus manages versions through its BOM.
-* [org.openrewrite.quarkus.spring.MigrateConfigurationProperties](/recipes/quarkus/spring/migrateconfigurationproperties.md)
-  * **Migrate @ConfigurationProperties to Quarkus @ConfigMapping**
-  * Migrates Spring Boot @ConfigurationProperties to Quarkus @ConfigMapping. This recipe converts configuration property classes to the native Quarkus pattern.
-* [org.openrewrite.quarkus.spring.MigrateDatabaseDrivers](/recipes/quarkus/spring/migratedatabasedrivers.md)
-  * **Migrate database drivers to Quarkus JDBC extensions**
-  * Replaces Spring Boot database driver dependencies with their Quarkus JDBC extension equivalents.
-* [org.openrewrite.quarkus.spring.MigrateEntitiesToPanache](/recipes/quarkus/spring/migrateentitiestopanache.md)
-  * **Migrate JPA Entities to Panache Entities**
-  * Converts standard JPA entities to Quarkus Panache entities using the Active Record pattern. Entities will extend PanacheEntity and gain built-in CRUD operations.
-* [org.openrewrite.quarkus.spring.MigrateMavenPlugin](/recipes/quarkus/spring/migratemavenplugin.md)
-  * **Add or replace Spring Boot build plugin with Quarkus build plugin**
-  * Remove Spring Boot Maven plugin if present and add Quarkus Maven plugin using the same version as the quarkus-bom.
-* [org.openrewrite.quarkus.spring.MigrateRequestParameterEdgeCases](/recipes/quarkus/spring/migraterequestparameteredgecases.md)
-  * **Migrate Additional Spring Web Parameter Annotations**
-  * Migrates additional Spring Web parameter annotations not covered by the main WebToJaxRs recipe. Includes @MatrixVariable, @CookieValue, and other edge cases.
-* [org.openrewrite.quarkus.spring.MigrateSpringActuator](/recipes/quarkus/spring/migratespringactuator.md)
-  * **Migrate Spring Boot Actuator to Quarkus Health and Metrics**
-  * Migrates Spring Boot Actuator to Quarkus SmallRye Health and Metrics extensions. Converts HealthIndicator implementations to Quarkus HealthCheck pattern.
-* [org.openrewrite.quarkus.spring.MigrateSpringBootDevTools](/recipes/quarkus/spring/migratespringbootdevtools.md)
-  * **Remove Spring Boot DevTools**
-  * Removes Spring Boot DevTools dependency and configuration. Quarkus has built-in dev mode with hot reload that replaces DevTools functionality.
-* [org.openrewrite.quarkus.spring.MigrateSpringCloudConfig](/recipes/quarkus/spring/migratespringcloudconfig.md)
-  * **Migrate Spring Cloud Config Client to Quarkus Config**
-  * Migrates Spring Cloud Config Client to Quarkus configuration sources. Converts bootstrap.yml/properties patterns to Quarkus config.
-* [org.openrewrite.quarkus.spring.MigrateSpringCloudServiceDiscovery](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
-  * **Migrate Spring Cloud Service Discovery to Quarkus**
-  * Migrates Spring Cloud Service Discovery annotations and configurations to Quarkus equivalents. Converts @EnableDiscoveryClient and related patterns to Quarkus Stork service discovery.
-* [org.openrewrite.quarkus.spring.MigrateSpringDataMongodb](/recipes/quarkus/spring/migratespringdatamongodb.md)
-  * **Migrate Spring Data MongoDB to Quarkus Panache MongoDB**
-  * Migrates Spring Data MongoDB repositories to Quarkus MongoDB with Panache. Converts MongoRepository interfaces to PanacheMongoRepository pattern.
-* [org.openrewrite.quarkus.spring.MigrateSpringEvents](/recipes/quarkus/spring/migratespringevents.md)
-  * **Migrate Spring Events to CDI Events**
-  * Migrates Spring's event mechanism to CDI events. Converts ApplicationEventPublisher to CDI Event and @EventListener to @Observes.
-* [org.openrewrite.quarkus.spring.MigrateSpringTesting](/recipes/quarkus/spring/migratespringtesting.md)
-  * **Migrate Spring Boot Testing to Quarkus Testing**
-  * Migrates Spring Boot test annotations and utilities to Quarkus test equivalents. Converts @SpringBootTest to @QuarkusTest, @MockBean to @InjectMock, etc.
-* [org.openrewrite.quarkus.spring.MigrateSpringTransactional](/recipes/quarkus/spring/migratespringtransactional.md)
-  * **Migrate Spring @Transactional to Jakarta @Transactional**
-  * Migrates Spring's @Transactional annotation to Jakarta's @Transactional. Maps propagation attributes to TxType and removes Spring-specific attributes.
-* [org.openrewrite.quarkus.spring.MigrateSpringValidation](/recipes/quarkus/spring/migratespringvalidation.md)
-  * **Migrate Spring Validation to Quarkus**
-  * Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarkus-hibernate-validator dependency and handles validation annotation imports.
-* [org.openrewrite.quarkus.spring.ReplaceSpringBootApplication](/recipes/quarkus/spring/replacespringbootapplication.md)
-  * **Replace `@SpringBootApplication` with Quarkus equivalent**
-  * Replace `@SpringBootApplication` annotation with `@QuarkusMain`, `SpringApplication.run()` calls.
-* [org.openrewrite.quarkus.spring.SpringBootActiveMQToQuarkus](/recipes/quarkus/spring/springbootactivemqtoquarkus.md)
-  * **Replace Spring Boot ActiveMQ with Quarkus Artemis JMS**
-  * Migrates `spring-boot-starter-activemq` to `quarkus-artemis-jms`.
-* [org.openrewrite.quarkus.spring.SpringBootActuatorToQuarkus](/recipes/quarkus/spring/springbootactuatortoquarkus.md)
-  * **Replace Spring Boot Actuator with Quarkus SmallRye Health**
-  * Migrates `spring-boot-starter-actuator` to `quarkus-smallrye-health`.
-* [org.openrewrite.quarkus.spring.SpringBootAmqpToQuarkusClassic](/recipes/quarkus/spring/springbootamqptoquarkusclassic.md)
-  * **Replace Spring Boot AMQP with Quarkus Messaging RabbitMQ**
-  * Migrates `spring-boot-starter-amqp` to `quarkus-messaging-rabbitmq` when no reactor dependencies are present.
-* [org.openrewrite.quarkus.spring.SpringBootAmqpToQuarkusReactive](/recipes/quarkus/spring/springbootamqptoquarkusreactive.md)
-  * **Replace Spring Boot AMQP with Quarkus Messaging AMQP**
-  * Migrates `spring-boot-starter-amqp` to `quarkus-messaging-amqp` when reactor dependencies are present.
-* [org.openrewrite.quarkus.spring.SpringBootArtemisToQuarkus](/recipes/quarkus/spring/springbootartemistoquarkus.md)
-  * **Replace Spring Boot Artemis with Quarkus Artemis JMS**
-  * Migrates `spring-boot-starter-artemis` to `quarkus-artemis-jms`.
-* [org.openrewrite.quarkus.spring.SpringBootBatchToQuarkus](/recipes/quarkus/spring/springbootbatchtoquarkus.md)
-  * **Replace Spring Boot Batch with Quarkus Scheduler**
-  * Migrates `spring-boot-starter-batch` to `quarkus-scheduler`.
-* [org.openrewrite.quarkus.spring.SpringBootCacheToQuarkus](/recipes/quarkus/spring/springbootcachetoquarkus.md)
-  * **Replace Spring Boot Cache with Quarkus Cache**
-  * Migrates `spring-boot-starter-cache` to `quarkus-cache`.
-* [org.openrewrite.quarkus.spring.SpringBootDataJpaToQuarkus](/recipes/quarkus/spring/springbootdatajpatoquarkus.md)
-  * **Replace Spring Boot Data JPA with Quarkus Hibernate ORM Panache**
-  * Migrates `spring-boot-starter-data-jpa` to `quarkus-hibernate-orm-panache`.
-* [org.openrewrite.quarkus.spring.SpringBootDataMongoToQuarkus](/recipes/quarkus/spring/springbootdatamongotoquarkus.md)
-  * **Replace Spring Boot Data MongoDB with Quarkus MongoDB Panache**
-  * Migrates `spring-boot-starter-data-mongodb` to `quarkus-mongodb-panache`.
-* [org.openrewrite.quarkus.spring.SpringBootDataRedisToQuarkus](/recipes/quarkus/spring/springbootdataredistoquarkus.md)
-  * **Replace Spring Boot Data Redis with Quarkus Redis Client**
-  * Migrates `spring-boot-starter-data-redis` to `quarkus-redis-client`.
-* [org.openrewrite.quarkus.spring.SpringBootDataRestToQuarkus](/recipes/quarkus/spring/springbootdataresttoquarkus.md)
-  * **Replace Spring Boot Data REST with Quarkus REST**
-  * Migrates `spring-boot-starter-data-rest` to `quarkus-rest-jackson`.
-* [org.openrewrite.quarkus.spring.SpringBootElasticsearchToQuarkus](/recipes/quarkus/spring/springbootelasticsearchtoquarkus.md)
-  * **Replace Spring Boot Elasticsearch with Quarkus Elasticsearch REST Client**
-  * Migrates `spring-boot-starter-data-elasticsearch` to `quarkus-elasticsearch-rest-client`.
-* [org.openrewrite.quarkus.spring.SpringBootIntegrationToQuarkus](/recipes/quarkus/spring/springbootintegrationtoquarkus.md)
-  * **Replace Spring Boot Integration with Camel Quarkus**
-  * Migrates `spring-boot-starter-integration` to `camel-quarkus-core`.
-* [org.openrewrite.quarkus.spring.SpringBootJdbcToQuarkus](/recipes/quarkus/spring/springbootjdbctoquarkus.md)
-  * **Replace Spring Boot JDBC with Quarkus Agroal**
-  * Migrates `spring-boot-starter-jdbc` to `quarkus-agroal`.
-* [org.openrewrite.quarkus.spring.SpringBootMailToQuarkus](/recipes/quarkus/spring/springbootmailtoquarkus.md)
-  * **Replace Spring Boot Mail with Quarkus Mailer**
-  * Migrates `spring-boot-starter-mail` to `quarkus-mailer`.
-* [org.openrewrite.quarkus.spring.SpringBootOAuth2ClientToQuarkus](/recipes/quarkus/spring/springbootoauth2clienttoquarkus.md)
-  * **Replace Spring Boot OAuth2 Client with Quarkus OIDC Client**
-  * Migrates spring-boot-starter-oauth2-client` to `quarkus-oidc-client`.
-* [org.openrewrite.quarkus.spring.SpringBootOAuth2ResourceServerToQuarkus](/recipes/quarkus/spring/springbootoauth2resourceservertoquarkus.md)
-  * **Replace Spring Boot OAuth2 Resource Server with Quarkus OIDC**
-  * Migrates `spring-boot-starter-oauth2-resource-server` to `quarkus-oidc`.
-* [org.openrewrite.quarkus.spring.SpringBootQuartzToQuarkus](/recipes/quarkus/spring/springbootquartztoquarkus.md)
-  * **Replace Spring Boot Quartz with Quarkus Quartz**
-  * Migrates `spring-boot-starter-quartz` to `quarkus-quartz`.
-* [org.openrewrite.quarkus.spring.SpringBootSecurityToQuarkus](/recipes/quarkus/spring/springbootsecuritytoquarkus.md)
-  * **Replace Spring Boot Security with Quarkus Security**
-  * Migrates `spring-boot-starter-security` to `quarkus-security`.
-* [org.openrewrite.quarkus.spring.SpringBootTestToQuarkus](/recipes/quarkus/spring/springboottesttoquarkus.md)
-  * **Replace Spring Boot Test with Quarkus JUnit 5**
-  * Migrates `spring-boot-starter-test` to `quarkus-junit5`.
-* [org.openrewrite.quarkus.spring.SpringBootThymeleafToQuarkus](/recipes/quarkus/spring/springbootthymeleaftoquarkus.md)
-  * **Replace Spring Boot Thymeleaf with Quarkus Qute**
-  * Migrates `spring-boot-starter-thymeleaf` to `quarkus-qute`.
-* [org.openrewrite.quarkus.spring.SpringBootToQuarkus](/recipes/quarkus/spring/springboottoquarkus.md)
-  * **Migrate Spring Boot to Quarkus**
-  * Replace Spring Boot with Quarkus.
-* [org.openrewrite.quarkus.spring.SpringBootValidationToQuarkus](/recipes/quarkus/spring/springbootvalidationtoquarkus.md)
-  * **Replace Spring Boot Validation with Quarkus Hibernate Validator**
-  * Migrates `spring-boot-starter-validation` to `quarkus-hibernate-validator`.
-* [org.openrewrite.quarkus.spring.SpringBootWebFluxToQuarkusReactive](/recipes/quarkus/spring/springbootwebfluxtoquarkusreactive.md)
-  * **Replace Spring Boot WebFlux with Quarkus REST Client**
-  * Migrates `spring-boot-starter-webflux` to `quarkus-rest-client-jackson` when reactor dependencies are present.
-* [org.openrewrite.quarkus.spring.SpringBootWebSocketToQuarkus](/recipes/quarkus/spring/springbootwebsockettoquarkus.md)
-  * **Replace Spring Boot WebSocket with Quarkus WebSockets**
-  * Migrates `spring-boot-starter-websocket` to `quarkus-websockets`.
-* [org.openrewrite.quarkus.spring.SpringBootWebToQuarkusClassic](/recipes/quarkus/spring/springbootwebtoquarkusclassic.md)
-  * **Replace Spring Boot Web with Quarkus RESTEasy Classic**
-  * Migrates `spring-boot-starter-web` to `quarkus-resteasy-jackson` when no reactor dependencies are present.
-* [org.openrewrite.quarkus.spring.SpringBootWebToQuarkusReactive](/recipes/quarkus/spring/springbootwebtoquarkusreactive.md)
-  * **Replace Spring Boot Web with Quarkus REST**
-  * Migrates `spring-boot-starter-web` to `quarkus-rest-jackson` when reactor dependencies are present.
-* [org.openrewrite.quarkus.spring.SpringKafkaToQuarkusClassic](/recipes/quarkus/spring/springkafkatoquarkusclassic.md)
-  * **Replace Spring Kafka with Quarkus Kafka Client**
-  * Migrates `spring-kafka` to `quarkus-kafka-client` when no reactor dependencies are present.
-* [org.openrewrite.quarkus.spring.SpringKafkaToQuarkusReactive](/recipes/quarkus/spring/springkafkatoquarkusreactive.md)
-  * **Replace Spring Kafka with Quarkus Messaging Kafka**
-  * Migrates `spring-kafka` to `quarkus-messaging-kafka` when reactor dependencies are present.
-* [org.openrewrite.quarkus.spring.StereotypeAnnotationsToCDI](/recipes/quarkus/spring/stereotypeannotationstocdi.md)
-  * **Migrate Spring annotations to CDI**
-  * Replace Spring stereotype and injection annotations with CDI equivalents.
-* [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
-  * **Inline deprecated delegating methods**
-  * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
-* [org.openrewrite.recipes.rewrite.InlineMethods](/recipes/recipes/rewrite/inlinemethods.md)
-  * **Inline methods annotated with `@InlineMe`**
-  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
-* [org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
-  * **OpenRewrite recipe best practices**
-  * Best practices for OpenRewrite recipe development.
-* [org.openrewrite.scala.migrate.UpgradeScala_2_12](/recipes/scala/migrate/upgradescala_2_12.md)
-  * **Migrate to Scala 2.12.+**
-  * Upgrade the Scala version for compatibility with newer Java versions.
-* [org.openrewrite.staticanalysis.CodeCleanup](/recipes/staticanalysis/codecleanup.md)
-  * **Code cleanup**
-  * Automatically cleanup code, e.g. remove unnecessary parentheses, simplify expressions.
-* [org.openrewrite.staticanalysis.CommonDeclarationSiteTypeVariances](/recipes/staticanalysis/commondeclarationsitetypevariances.md)
-  * **Properly use declaration-site type variance for well-known types**
-  * When using a method parameter like `Function&lt;IN, OUT&gt;`, it should rather be `Function&lt;? super IN, ? extends OUT&gt;`. This recipe checks for method parameters of well-known types.
-* [org.openrewrite.staticanalysis.CommonStaticAnalysis](/recipes/staticanalysis/commonstaticanalysis.md)
-  * **Common static analysis issues**
-  * Resolve common static analysis issues (also known as SAST issues).
-* [org.openrewrite.staticanalysis.JavaApiBestPractices](/recipes/staticanalysis/javaapibestpractices.md)
-  * **Java API best practices**
-  * Use the Java standard library in a way that is most idiomatic.
-* [org.openrewrite.staticanalysis.ReplaceApacheCommonsLang3ValidateNotNullWithObjectsRequireNonNull](/recipes/staticanalysis/replaceapachecommonslang3validatenotnullwithobjectsrequirenonnull.md)
-  * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
-  * Replace `org.apache.commons.lang3.Validate.notNull(..)` with `Objects.requireNonNull(..)`.
-* [org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart](/recipes/staticanalysis/replacethreadrunwiththreadstart.md)
-  * **Replace calls to `Thread.run()` with `Thread.start()`**
-  * `Thread.run()` should not be called directly.
-* [org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithObjectsRequireNonNull](/recipes/staticanalysis/replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
-  * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
-  * Replace `org.apache.commons.lang3.Validate.notNull(Object)` with `Objects.requireNonNull(Object)`.
-* [org.openrewrite.staticanalysis.UseMapContainsKey](/recipes/staticanalysis/usemapcontainskey.md)
-  * **Use `Map#containsKey`**
-  * `map.keySet().contains(a)` can be simplified to `map.containsKey(a)`.
-* [org.openrewrite.xml.liberty.AppDDNamespaceRule](/recipes/xml/liberty/appddnamespacerule.md)
-  * **Use correct application namespace values**
-  * Namespace values in application.xml must be consistent with the descriptor version.
-* [org.openrewrite.xml.liberty.ConnectorDDNamespaceRule](/recipes/xml/liberty/connectorddnamespacerule.md)
-  * **Use correct connector namespace values**
-  * Namespace values in ra.xml must be consistent with the descriptor version.
-* [org.openrewrite.xml.liberty.EJBDDNamespaceRule](/recipes/xml/liberty/ejbddnamespacerule.md)
-  * **Use correct ejb-jar namespace values**
-  * Namespace values in ejb-jar.xml must be consistent with the descriptor version.
-* [org.openrewrite.xml.liberty.WebDDNamespaceRule](/recipes/xml/liberty/webddnamespacerule.md)
-  * **Use correct web-app namespace values**
-  * Namespace values in web.xml must be consistent with the descriptor version.
-* [software.amazon.awssdk.v2migration.AddS3EventNotificationDependency](/recipes/software/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
-  * **Add AWS SDK for Java v2 S3 Event Notification dependency if needed**
-  * This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used
-* [software.amazon.awssdk.v2migration.AddTransferManagerDependency](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
-  * **Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed**
-  * This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer Manager is used
-* [software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
-  * **Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2**
-  * This recipe will apply changes required for migrating from the AWS SDK for Java v1 to the AWS SDK for Java v2.
-* [software.amazon.awssdk.v2migration.ChangeAuthTypes](/recipes/software/amazon/awssdk/v2migration/changeauthtypes.md)
-  * **Change auth related classes from v1 to v2**
-  * Change auth related classes from v1 to v2.
-* [software.amazon.awssdk.v2migration.ChangeConfigTypes](/recipes/software/amazon/awssdk/v2migration/changeconfigtypes.md)
-  * **Change config related classes from v1 to v2**
-  * Change config related classes from v1 to v2.
-* [software.amazon.awssdk.v2migration.ChangeExceptionTypes](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
-  * **Change SDK Exception types from v1 to v2**
-  * Change SDK Exception types from v1 to v2.
-* [software.amazon.awssdk.v2migration.ChangeRegionTypes](/recipes/software/amazon/awssdk/v2migration/changeregiontypes.md)
-  * **Change region related classes**
-  * Change region related classes from v1 to v2.
-* [software.amazon.awssdk.v2migration.ChangeS3EventNotificationTypes](/recipes/software/amazon/awssdk/v2migration/changes3eventnotificationtypes.md)
-  * **Change SDK S3EventNotification types from v1 to v2**
-  * Change SDK S3EventNotification types from v1 to v2.
-* [software.amazon.awssdk.v2migration.ChangeSdkCoreTypes](/recipes/software/amazon/awssdk/v2migration/changesdkcoretypes.md)
-  * **Change SDK core types from v1 to v2**
-  * Change SDK core types from v1 to v2.
-* [software.amazon.awssdk.v2migration.ChangeTransferManagerSimpleMethods](/recipes/software/amazon/awssdk/v2migration/changetransfermanagersimplemethods.md)
-  * **Change TransferManager simple methods to v2.**
-  * Change TransferManager simple methods to v2.
-* [software.amazon.awssdk.v2migration.ChangeTransferManagerTypes](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
-  * **Change SDK TransferManager types from v1 to v2**
-  * Change SDK TransferManager types from v1 to v2.
-* [software.amazon.awssdk.v2migration.EnumGettersToV2](/recipes/software/amazon/awssdk/v2migration/enumgetterstov2.md)
-  * **Change v1 enum getters to v2**
-  * Change v1 enum getters to v2.
-* [software.amazon.awssdk.v2migration.S3EventNotificationMethodsToV2](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
-  * **Change S3EventNotification methods to v2.**
-  * Change S3EventNotification methods to v2.
-* [software.amazon.awssdk.v2migration.S3MethodsConstructorToFluent](/recipes/software/amazon/awssdk/v2migration/s3methodsconstructortofluent.md)
-  * **Change S3 method constructors to fluent builder calls**
-  * Change S3 method constructors to fluent builder calls.
-* [software.amazon.awssdk.v2migration.S3MethodsToV2](/recipes/software/amazon/awssdk/v2migration/s3methodstov2.md)
-  * **Change S3 methods to v2.**
-  * Change S3 methods to v2.
-* [software.amazon.awssdk.v2migration.S3TypesToV2](/recipes/software/amazon/awssdk/v2migration/s3typestov2.md)
-  * **Change S3 types to v2.**
-  * Change S3 types to v2.
-* [software.amazon.awssdk.v2migration.UpgradeSdkDependencies](/recipes/software/amazon/awssdk/v2migration/upgradesdkdependencies.md)
-  * **Change v1 Maven/Gradle dependencies to v2**
-  * Change v1 Maven/Gradle dependencies to v2.
-* [tech.picnic.errorprone.refasterrules.AllRefasterRules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
-  * **All Picnic Refaster rules**
-  * Collection of all Refaster rules from Picnic's error-prone-contrib project.
