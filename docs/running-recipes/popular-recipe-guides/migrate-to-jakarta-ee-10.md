@@ -4,6 +4,7 @@ description: How to migrate to Jakarta EE 10.0.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Migrate to Jakarta EE 10.0
 
@@ -11,7 +12,15 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration to [Ja
 
 ## Configuration
 
-The migrate to Jakarta EE 10 recipe can be applied by adding OpenRewrite's plugin to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java). See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/migrate/jakarta/jakartaee10.md). This is also where you can find the full list of changes it will make.
+<RunRecipe
+  recipeName="org.openrewrite.java.migrate.jakarta.JakartaEE10"
+  displayName="Migrate to Jakarta EE 10"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-migrate-java"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+/>
+
+For the full list of changes this recipe will make, see the [recipe reference page](../../recipes/java/migrate/jakarta/jakartaee10.md).
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -155,20 +164,6 @@ This recipe will also remove `javax` implementations from a `build.gradle` file 
 dependencies {
     implementation "javax.servlet:javax.servlet-api:4.0.1"
 }
-```
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.migrate.jakarta.JakartaEE10
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
 ```
 
 ## See how this recipe works across multiple open-source repositories

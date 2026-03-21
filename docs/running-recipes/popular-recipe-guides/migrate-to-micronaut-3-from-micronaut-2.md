@@ -5,6 +5,7 @@ description: How to automatically migrate from Micronaut 2 to Micronaut 3.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Migrate to Micronaut 3 from Micronaut 2
 
@@ -12,7 +13,15 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 
 ## Configuration
 
-See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/micronaut/micronaut2to3migration.md). This is also where you can find the full list of changes it will make.
+<RunRecipe
+  recipeName="org.openrewrite.java.micronaut.Micronaut2to3Migration"
+  displayName="Micronaut 2 to 3 migration"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-micronaut"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT"
+/>
+
+For the full list of changes this recipe will make, see the [recipe reference page](../../recipes/java/micronaut/micronaut2to3migration.md).
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -134,20 +143,6 @@ public class Order {
 ```
 </TabItem>
 </Tabs>
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.micronaut.Micronaut2to3Migration
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-micronaut:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT}}
-```
 
 ## Known Limitations
 

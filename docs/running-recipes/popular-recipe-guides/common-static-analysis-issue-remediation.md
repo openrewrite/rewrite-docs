@@ -4,6 +4,7 @@ description: How to automatically resolve common static analysis issues.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Common static analysis issue remediation
 
@@ -13,54 +14,13 @@ In this guide we'll look at using OpenRewrite to perform an automated remediatio
 
 The [Common Static Analysis Recipe](../../recipes/staticanalysis/commonstaticanalysis.md) consists of more than 50 types of issues and can be applied by including OpenRewrite's plugin to your project and configuring the recipe:
 
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-```groovy title="build.gradle"
-plugins {
-    id("java")
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.CommonStaticAnalysis")
-}
-
-repositories {
-    mavenCentral() // rewrite is published to Maven Central
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
-}
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-```xml title="pom.xml"
-<plugin>
-    <groupId>org.openrewrite.maven</groupId>
-    <artifactId>rewrite-maven-plugin</artifactId>
-    <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-    <configuration>
-    <activeRecipes>
-        <recipe>org.openrewrite.staticanalysis.CommonStaticAnalysis</recipe>
-    </activeRecipes>
-    </configuration>
-    <dependencies>
-    <dependency>
-        <groupId>org.openrewrite.recipe</groupId>
-        <artifactId>rewrite-static-analysis</artifactId>
-        <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
-    </dependency>
-    </dependencies>
-</plugin>
-```
-
-</TabItem>
-
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.staticanalysis.CommonStaticAnalysis"
+  displayName="Common static analysis"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-static-analysis"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
+/>
 
 At this point, you're ready to fix common static analysis issues by running `mvn rewrite:run` or `gradlew rewriteRun`.
 
@@ -153,20 +113,6 @@ public class MessageExtBatch implements Serializable {
 ```
 	</TabItem>
 </Tabs>
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.staticanalysis.CommonStaticAnalysis
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
-```
 
 ## Known Limitations
 

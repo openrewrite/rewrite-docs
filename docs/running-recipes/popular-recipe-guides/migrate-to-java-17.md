@@ -3,8 +3,7 @@ keywords: [OpenRewrite, Java, Java 17, Java Migration]
 description: How to automatically migrate from Java 8 to 17.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Migrate to Java 17
 
@@ -20,61 +19,13 @@ This recipe covers the following themes:
 
 The Java 17 migration recipe can be applied by including OpenRewrite's plugin to your project and including a dependency on [rewrite-migrate-java](https://github.com/openrewrite/rewrite-migrate-java):
 
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-```groovy title="build.gradle"
-  plugins {
-      id("java")
-      id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-  }
-  
-  rewrite {
-      activeRecipe("org.openrewrite.java.migrate.UpgradeToJava17")
-  }
-  
-  repositories {
-      mavenCentral() // rewrite-spring is published to Maven Central
-  }
-  
-  dependencies {
-      rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-      rewrite("org.openrewrite.recipe:rewrite-migrate-java")
-  
-      // Other project dependencies
-  }
-```
-
-</TabItem>
-
-<TabItem value="maven" label="Maven">
-```xml title="pom.xml"
-<build>
-  <plugins>
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.migrate.UpgradeToJava17</recipe>
-        </activeRecipes>
-      </configuration>
-      <dependencies>
-        <dependency>
-          <groupId>org.openrewrite.recipe</groupId>
-          <artifactId>rewrite-migrate-java</artifactId>
-          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}</version>
-        </dependency>
-      </dependencies>
-    </plugin>
-  </plugins>
-</build>
-```
-
-</TabItem>
-
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.java.migrate.UpgradeToJava17"
+  displayName="Upgrade to Java 17"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-migrate-java"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+/>
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -252,20 +203,6 @@ The JAXB and JAX-WS dependencies will only be added to the project if types from
 :::info
 Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
 :::
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.migrate.UpgradeToJava17
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-migrate-java:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA}}
-```
 
 ## Known Limitations
 

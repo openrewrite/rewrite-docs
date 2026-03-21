@@ -5,6 +5,7 @@ description: How to automatically migrate from Quarkus 1 to Quarkus 2.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Migrate to Quarkus 2 from Quarkus 1
 
@@ -12,7 +13,15 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 
 ## Example Configuration
 
-See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/quarkus/quarkus2/quarkus1to2migration.md). This is also where you can find the full list of changes it will make.
+<RunRecipe
+  recipeName="org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration"
+  displayName="Quarkus 1 to 2 migration"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-quarkus"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS"
+/>
+
+For the full list of changes this recipe will make, see the [recipe reference page](../../recipes/quarkus/quarkus2/quarkus1to2migration.md).
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -224,20 +233,6 @@ quarkus.neo4j.pool.metrics.enabled=true
 ```
 </TabItem>
 </Tabs>
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.quarkus.quarkus2.Quarkus1to2Migration
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-quarkus:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS}}
-```
 
 ## Known Limitations
 
