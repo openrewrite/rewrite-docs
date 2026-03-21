@@ -7,9 +7,19 @@ description: How to migrate from Hamcrest to AssertJ.
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from [Hamcrest](https://hamcrest.org/JavaHamcrest/) to [AssertJ](https://assertj.github.io/doc/#assertj-overview). AssertJ is more actively maintained than Hamcrest and is generally favored for testing assertions. 
 
+import RunRecipe from '@site/src/components/RunRecipe';
+
 ## Configuration
 
-Configure your repository according to the instructions on the [reference page](../../recipes/java/testing/assertj/assertj-best-practices.md). This is also where you'll find the full list of changes this recipe will make.
+<RunRecipe
+  recipeName="org.openrewrite.java.testing.assertj.Assertj"
+  displayName="AssertJ best practices"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-testing-frameworks"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
+/>
+
+For the full list of changes this recipe will make, see the [reference page](../../recipes/java/testing/assertj/assertj-best-practices.md).
 
 # Before and After
 
@@ -74,20 +84,6 @@ public class BiscuitTest {
         assertThat(baz).hasSize(concurrency * maxPerTask);
     }
 }
-```
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.testing.assertj.Assertj
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
 ```
 
 ## See how this recipe works across multiple open-source repositories

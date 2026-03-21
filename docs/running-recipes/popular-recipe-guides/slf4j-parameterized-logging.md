@@ -4,6 +4,7 @@ description: How to automatically refactor logging statements to use SLF4J param
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Use SLF4J Parameterized Logging
 
@@ -13,60 +14,13 @@ In this guide we'll look at using OpenRewrite to automatically refactor logging 
 
 The [ParameterizedLogging](../../recipes/java/logging/slf4j/parameterizedlogging.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-logging-frameworks](https://github.com/openrewrite/rewrite-logging-frameworks) in your build file:
 
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.logging.slf4j.ParameterizedLogging")
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-    rewrite("org.openrewrite.recipe:rewrite-logging-frameworks")
-}
-```
-
-</TabItem>
-
-<TabItem value="maven" label="Maven">
-
-```xml title="pom.xml"
-  <project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.logging.slf4j.ParameterizedLogging</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-logging-frameworks</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.java.logging.slf4j.ParameterizedLogging"
+  displayName="SLF4J parameterized logging"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-logging-frameworks"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS"
+/>
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -121,20 +75,6 @@ class Example {
 ```
 </TabItem>
 </Tabs>
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.logging.slf4j.ParameterizedLogging
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}
-```
 
 ## See how this recipe works across multiple open-source repositories
 

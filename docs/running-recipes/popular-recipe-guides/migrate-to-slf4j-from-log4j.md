@@ -5,6 +5,7 @@ description: How to automatically migrate from Log4j to SLF4J.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Migrate to SLF4J from Log4j
 
@@ -12,7 +13,15 @@ In this guide, we'll use OpenRewrite to perform an automated migration from Apac
 
 ## Example Configuration
 
-See various ways you can configure your project to run this recipe on the [recipe reference page](../../recipes/java/logging/slf4j/log4jtoslf4j.md). This is also where you can find the full list of changes it will make.
+<RunRecipe
+  recipeName="org.openrewrite.java.logging.slf4j.Log4jToSlf4j"
+  displayName="Log4j to SLF4J"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-logging-frameworks"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS"
+/>
+
+For the full list of changes this recipe will make, see the [recipe reference page](../../recipes/java/logging/slf4j/log4jtoslf4j.md).
 
 Once you've configured your project, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -175,20 +184,6 @@ class Example {
 </Tabs>
 
 For the full list of changes, see the recipe's [reference documentation](../../recipes/java/logging/slf4j/parameterizedlogging.md).
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.logging.slf4j.Log4jToSlf4j
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-logging-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS}}
-```
 
 ## Known Limitations
 

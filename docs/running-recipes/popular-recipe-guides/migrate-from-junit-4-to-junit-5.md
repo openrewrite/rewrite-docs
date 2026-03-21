@@ -5,6 +5,7 @@ description: How to automatically migrate from JUnit 4 to JUnit 5.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Migrate to JUnit 5 from JUnit 4
 
@@ -12,125 +13,29 @@ In this tutorial, we'll use OpenRewrite to perform an automated migration from t
 
 ## Example Configuration
 
-If your project is a Spring or Spring-Boot project, add a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) and activate the [SpringBoot2JUnit4to5Migration](../../recipes/java/spring/boot2/springboot2junit4to5migration.md) recipe:
+If your project is a Spring or Spring-Boot project, activate the [SpringBoot2JUnit4to5Migration](../../recipes/java/spring/boot2/springboot2junit4to5migration.md) recipe:
 
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-```groovy title="build.gradle"
-    plugins {
-        id("java")
-        id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-    }
-    
-    rewrite {
-        activeRecipe("org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration")
-    }
-    
-    repositories {
-        mavenCentral() // rewrite-spring is published to Maven Central
-    }
-    
-    dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-        rewrite("org.openrewrite.recipe:rewrite-spring")
-    
-        // Other project dependencies
-    }
-```
-
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-```xml title="pom.xml"
-<build>
-  <plugins>
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
-        </activeRecipes>
-      </configuration>
-      <dependencies>
-        <dependency>
-          <groupId>org.openrewrite.recipe</groupId>
-          <artifactId>rewrite-spring</artifactId>
-          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
-        </dependency>
-      </dependencies>
-    </plugin>
-  </plugins>
-</build>
-```
-
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration"
+  displayName="Spring Boot 2 JUnit 4 to 5 migration"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-spring"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
+/>
 
 :::info
 `SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
 :::
 
-If your project is _not_ a Spring or Spring-Boot project take a dependency on [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks) and activate the [JUnit5BestPractices](../../recipes/java/testing/junit5/junit5bestpractices.md) recipe:
+If your project is _not_ a Spring or Spring-Boot project, activate the [JUnit5BestPractices](../../recipes/java/testing/junit5/junit5bestpractices.md) recipe:
 
-<Tabs groupId="projectType">
-
-<TabItem value="gradle" label="Gradle">
-
-```groovy title="build.gradle"
-    plugins {
-        id("java")
-        id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-    }
-    
-    rewrite {
-        activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
-    }
-    
-    repositories {
-        mavenCentral() // rewrite-testing-frameworks is published to Maven Central
-    }
-    
-    dependencies {
-        rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-        rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
-    
-        // Other project dependencies
-    }
-```
-
-</TabItem>
-
-<TabItem value="maven" label="Maven">
-
-```xml title="pom.xml"
-<build>
-  <plugins>
-    <plugin>
-      <groupId>org.openrewrite.maven</groupId>
-      <artifactId>rewrite-maven-plugin</artifactId>
-      <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-      <configuration>
-        <activeRecipes>
-          <recipe>org.openrewrite.java.testing.junit5.JUnit5BestPractices</recipe>
-        </activeRecipes>
-      </configuration>
-      <dependencies>
-        <dependency>
-          <groupId>org.openrewrite.recipe</groupId>
-          <artifactId>rewrite-testing-frameworks</artifactId>
-          <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}</version>
-        </dependency>
-      </dependencies>
-    </plugin>
-  </plugins>
-</build>
-```
-</TabItem>
-
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.java.testing.junit5.JUnit5BestPractices"
+  displayName="JUnit 5 best practices"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-testing-frameworks"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
+/>
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -391,20 +296,6 @@ public class ExampleJunitTestClass {
 :::info
 Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
 :::
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.testing.junit5.JUnit5BestPractices
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-testing-frameworks:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS}}
-```
 
 ## Known Limitations
 

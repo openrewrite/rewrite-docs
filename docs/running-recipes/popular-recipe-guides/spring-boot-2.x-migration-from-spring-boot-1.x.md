@@ -5,6 +5,7 @@ description: How to automatically migrate from Spring Boot 1 to Spring Boot 2.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Migrate to Spring Boot 2 from Spring Boot 1
 
@@ -14,72 +15,13 @@ In this guide we'll look at using OpenRewrite to perform an automated migration 
 
 The [UpgradeSpringBoot_2_7](../../recipes/java/spring/boot2/upgradespringboot_2_7.md) recipe has no required configuration options and can be activated directly after taking a dependency on [rewrite-spring](https://github.com/openrewrite/rewrite-spring) in your build file:
 
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("{{VERSION_REWRITE_GRADLE_PLUGIN}}")
-}
-
-rewrite {
-    activeRecipe("org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7")
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-    rewrite("org.openrewrite.recipe:rewrite-spring")
-}
-```
-
-</TabItem>
-
-<TabItem value="maven" label="Maven">
-
-```xml title="pom.xml"
-<project>  
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <activeRecipes>
-            <recipe>org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-</TabItem>
-
-<TabItem value="maven-command-line" label="Maven Command Line">
-
-You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
-
-```shell
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-spring:LATEST \
-  -Drewrite.activeRecipes=org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
-```
-
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7"
+  displayName="Upgrade Spring Boot 2.7"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-spring"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
+/>
 
 At this point, you're ready to execute the migration by running `mvn rewrite:run` or `gradlew rewriteRun`. After running the migration you can inspect the results with `git diff` (or equivalent), manually fix anything that wasn't able to be migrated automatically, and commit the results.
 
@@ -282,20 +224,6 @@ public class SchoolConfig {
 ```
 </TabItem>
 </Tabs>
-
-## Running this recipe with the Moderne CLI
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command:
-
-```shell title="shell"
-mod run . --recipe org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
-```
-
-If the recipe is not available locally, then you can install it using:
-
-```shell title="shell"
-mod config recipes jar install org.openrewrite.recipe:rewrite-spring:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}
-```
 
 ## Known Limitations
 
