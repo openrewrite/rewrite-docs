@@ -3,6 +3,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import latestVersions from '@site/src/plugins/latest-versions';
 
 interface RunRecipeProps {
   recipeName: string;
@@ -37,6 +38,13 @@ export default function RunRecipe({
 }: RunRecipeProps) {
   const { siteConfig } = useDocusaurusContext();
   const isModerneDocs = siteConfig.customFields?.isModerneDocs === true;
+
+  // Replace {{VERSION_...}} placeholders with actual version numbers
+  const resolveVersions = (text: string): string => {
+    return text.replace(/\{\{(\w+)\}\}/g, (match) => {
+      return (latestVersions as Record<string, string>)[match] || match;
+    });
+  };
 
   // On Moderne docs, only show CLI tab
   const effectiveShowGradle = isModerneDocs ? false : showGradle;
@@ -103,6 +111,11 @@ export default function RunRecipe({
         ? undefined // Intro text for requiresConfiguration is rendered inline in the markdown before this component
         : `This recipe has no required configuration options. It can be activated by adding a dependency on \`${groupId}:${artifactId}\` in your build file or by running a shell command (in which case no build changes are needed):`;
 
+  // Version string helper
+  const version = versionKey ? resolveVersions(`{{${versionKey}}}`) : '';
+  const gradlePluginVersion = resolveVersions('{{VERSION_REWRITE_GRADLE_PLUGIN}}');
+  const mavenPluginVersion = resolveVersions('{{VERSION_REWRITE_MAVEN_PLUGIN}}');
+
   // Gradle build.gradle snippet
   const gradleBuild = `plugins {
     id("org.openrewrite.rewrite") version("latest.release")
@@ -115,19 +128,19 @@ rewrite {
 repositories {
     mavenCentral()
 }
-${hasDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:{{${versionKey}}}")\n}\n` : ''}`;
+${hasDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${version}")\n}\n` : ''}`;
 
   // Gradle init script snippet
   const gradleInit = `initscript {
     repositories {
         maven { url "https://plugins.gradle.org/m2" }
     }
-    dependencies { classpath("org.openrewrite:plugin:{{VERSION_REWRITE_GRADLE_PLUGIN}}") }
+    dependencies { classpath("org.openrewrite:plugin:${gradlePluginVersion}") }
 }
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("${hasDependency ? `${groupId}:${artifactId}:{{${versionKey}}}` : 'org.openrewrite:rewrite-java'}")
+        rewrite("${hasDependency ? `${groupId}:${artifactId}:${version}` : 'org.openrewrite:rewrite-java'}")
     }
     rewrite {
         activeRecipe("${activeRecipeName}")${dataTableGradleConfig}
@@ -148,7 +161,7 @@ rootProject {
       <plugin>
         <groupId>org.openrewrite.maven</groupId>
         <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
+        <version>${mavenPluginVersion}</version>
         <configuration>
           ${dataTableMavenConfig}<activeRecipes>
             <recipe>${activeRecipeName}</recipe>
@@ -158,7 +171,7 @@ rootProject {
           <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>${artifactId}</artifactId>
-            <version>{{${versionKey}}}</version>
+            <version>${version}</version>
           </dependency>
         </dependencies>` : ''}
       </plugin>
@@ -175,7 +188,7 @@ rootProject {
       {requiresConfiguration && !isModerneDocs && hasDependency && (
         <p>
           Now that <code>{wrapperRecipeName(recipeName)}</code> has been defined, activate it and take a dependency on{' '}
-          <code>{groupId}:{artifactId}:{`{{${versionKey}}}`}</code> in your build file:
+          <code>{groupId}:{artifactId}:{version}</code> in your build file:
         </p>
       )}
       {requiresConfiguration && !isModerneDocs && !hasDependency && (
@@ -252,7 +265,7 @@ rootProject {
             <>
               <p>If the recipe is not available locally, then you can install it using:</p>
               <CodeBlock language="shell">
-                {`mod config recipes jar install ${groupId}:${artifactId}:{{${versionKey}}}`}
+                {`mod config recipes jar install ${groupId}:${artifactId}:${version}`}
               </CodeBlock>
             </>
           )}
