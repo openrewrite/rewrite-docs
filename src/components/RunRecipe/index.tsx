@@ -2,7 +2,6 @@ import React from 'react';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import latestVersions from '@site/src/plugins/latest-versions';
 
 interface RunRecipeProps {
@@ -36,19 +35,12 @@ export default function RunRecipe({
   npmPackage,
   pipPackage,
 }: RunRecipeProps) {
-  const { siteConfig } = useDocusaurusContext();
-  const isModerneDocs = siteConfig.customFields?.isModerneDocs === true;
-
   // Replace {{VERSION_...}} placeholders with actual version numbers
   const resolveVersions = (text: string): string => {
     return text.replace(/\{\{(\w+)\}\}/g, (match) => {
       return (latestVersions as Record<string, string>)[match] || match;
     });
   };
-
-  // On Moderne docs, only show CLI tab
-  const effectiveShowGradle = isModerneDocs ? false : showGradle;
-  const effectiveShowMaven = isModerneDocs ? false : showMaven;
 
   const hasDependency = !!(groupId && artifactId);
   const activeRecipeName = requiresConfiguration ? wrapperRecipeName(recipeName) : recipeName;
@@ -103,13 +95,11 @@ export default function RunRecipe({
   }
 
   // Intro text
-  const introText = isModerneDocs
-    ? 'This recipe has no required configuration options. Users of Moderne can run it via the Moderne CLI.'
-    : !hasDependency
-      ? 'This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.'
-      : requiresConfiguration
-        ? undefined // Intro text for requiresConfiguration is rendered inline in the markdown before this component
-        : `This recipe has no required configuration options. It can be activated by adding a dependency on \`${groupId}:${artifactId}\` in your build file or by running a shell command (in which case no build changes are needed):`;
+  const introText = !hasDependency
+    ? 'This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.'
+    : requiresConfiguration
+      ? undefined // Intro text for requiresConfiguration is rendered inline in the markdown before this component
+      : `This recipe has no required configuration options. It can be activated by adding a dependency on \`${groupId}:${artifactId}\` in your build file or by running a shell command (in which case no build changes are needed):`;
 
   // Version string helper
   const version = versionKey ? resolveVersions(`{{${versionKey}}}`) : '';
@@ -185,19 +175,19 @@ rootProject {
   return (
     <>
       {introText && <p>{introText}</p>}
-      {requiresConfiguration && !isModerneDocs && hasDependency && (
+      {requiresConfiguration && hasDependency && (
         <p>
           Now that <code>{wrapperRecipeName(recipeName)}</code> has been defined, activate it and take a dependency on{' '}
           <code>{groupId}:{artifactId}:{version}</code> in your build file:
         </p>
       )}
-      {requiresConfiguration && !isModerneDocs && !hasDependency && (
+      {requiresConfiguration && !hasDependency && (
         <p>
           Now that <code>{wrapperRecipeName(recipeName)}</code> has been defined, activate it in your build file:
         </p>
       )}
       <Tabs groupId="projectType">
-        {effectiveShowGradle && (
+        {showGradle && (
           <TabItem value="gradle" label="Gradle">
             <ol>
               <li>
@@ -210,7 +200,7 @@ rootProject {
             </ol>
           </TabItem>
         )}
-        {effectiveShowGradle && !requiresConfiguration && (
+        {showGradle && !requiresConfiguration && (
           <TabItem value="gradle-init-script" label="Gradle init script">
             <ol>
               <li>
@@ -228,7 +218,7 @@ rootProject {
             </ol>
           </TabItem>
         )}
-        {effectiveShowMaven && (
+        {showMaven && (
           <TabItem value="maven" label="Maven POM">
             <ol>
               <li>
@@ -241,7 +231,7 @@ rootProject {
             </ol>
           </TabItem>
         )}
-        {effectiveShowMaven && !requiresConfiguration && (
+        {showMaven && !requiresConfiguration && (
           <TabItem value="maven-command-line" label="Maven Command Line">
             <p>
               You will need to have <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your machine
