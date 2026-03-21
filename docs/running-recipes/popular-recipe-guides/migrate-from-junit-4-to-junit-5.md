@@ -1,15 +1,15 @@
 ---
-sidebar_label: Migrate to JUnit 5
-description: How to automatically migrate from JUnit 4 to JUnit 5.
+sidebar_label: Migrate to JUnit Jupiter
+description: How to automatically migrate from JUnit 4 to JUnit Jupiter.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate to JUnit 5 from JUnit 4
+# Migrate to JUnit Jupiter from JUnit 4
 
-In this tutorial, we'll use OpenRewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit 5](https://junit.org/junit5/). JUnit is a popular tool that many other libraries and frameworks interact with. OpenRewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
+In this tutorial, we'll use OpenRewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit Jupiter](https://junit.org/junit5/). JUnit is a popular tool that many other libraries and frameworks interact with. OpenRewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
 
 ## Example Configuration
 
@@ -24,7 +24,7 @@ If your project is a Spring or Spring-Boot project, activate the [SpringBoot2JUn
 />
 
 :::info
-`SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to 5 and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
+`SpringBoot2JUnit4to5Migration` is a superset of the normal JUnit 4 to JUnit Jupiter and Mockito 1 to 3 recipes, with some additional Spring-specific functionality. If you activate this recipe it is not necessary to also activate the base JUnit or Mockito migration recipes.
 :::
 
 If your project is _not_ a Spring or Spring-Boot project, activate the [JUnit5BestPractices](../../recipes/java/testing/junit5/junit5bestpractices.md) recipe:
@@ -121,7 +121,7 @@ public class ExampleJunitTestClass {
 ```
 </TabItem>
 
-<TabItem value="junit-5-test-class-after" label="JUnit 5 Test Class (After)">
+<TabItem value="junit-5-test-class-after" label="JUnit Jupiter Test Class (After)">
 
 ```java
 package org.openrewrite.example;
@@ -299,12 +299,12 @@ Dependency management for Gradle is not currently available but this feature is 
 
 ## Known Limitations
 
-Not every JUnit 4 feature or library has a direct JUnit 5 equivalent. In these cases, manual changes will be required after the automation has run. This list is not exhaustive. See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).
+Not every JUnit 4 feature or library has a direct JUnit Jupiter equivalent. In these cases, manual changes will be required after the automation has run. This list is not exhaustive. See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).
 
 | Unsupported Functionality                                                     |
 | ----------------------------------------------------------------------------- |
-| [PowerMock](https://github.com/powermock/powermock) has no JUnit 5 equivalent |
-| The JUnit5 equivalent to JUnit4 ClassPathSuite is not yet released            |
+| [PowerMock](https://github.com/powermock/powermock) has no JUnit Jupiter equivalent |
+| The JUnit Jupiter equivalent to JUnit 4 ClassPathSuite is not yet released            |
 | org.junit.ComparisonFailure                                                   |
 | org.junit.MethodRule                                                          |
 | TestRule, TestWatcher, and Description                                        |
