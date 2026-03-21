@@ -51,7 +51,7 @@ recipeList:
   recipeName="org.openrewrite.gradle.plugins.AddSettingsPlugin"
   displayName="Add Gradle settings plugin"
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginId=com.jfrog.bintray" --recipe-option "version=3.x" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "pluginId=com.jfrog.bintray" --recipe-option "version=3.x" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}
   hasDataTables
 />

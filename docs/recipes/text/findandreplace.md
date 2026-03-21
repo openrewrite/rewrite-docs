@@ -118,7 +118,7 @@ recipeList:
   recipeName="org.openrewrite.text.FindAndReplace"
   displayName="Find and replace"
   requiresConfiguration
-  cliOptions={' --recipe-option "find=blacklist" --recipe-option "replace=denylist" --recipe-option "filePattern='**/*.java'"'}
+  cliOptions={' --recipe-option "find=blacklist" --recipe-option "replace=denylist" --recipe-option "filePattern=\'**/*.java\'"'}
   hasDataTables
 />
 

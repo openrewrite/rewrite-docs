@@ -114,7 +114,7 @@ recipeList:
   artifactId="rewrite-gitlab"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
-  cliOptions={' --recipe-option "rules='- if: $CI_PIPELINE_SOURCE == 'merge_request_event'\n- if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS\n  when: never\n- if: $CI_COMMIT_BRANCH'"'}
+  cliOptions={' --recipe-option "rules=\'- if: $CI_PIPELINE_SOURCE == \'merge_request_event\'\\n- if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS\\n  when: never\\n- if: $CI_COMMIT_BRANCH\'"'}
   hasDataTables
 />
 

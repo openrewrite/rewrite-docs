@@ -139,7 +139,7 @@ recipeList:
   recipeName="org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId"
   displayName="Change Maven managed dependency groupId, artifactId and optionally the version"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=rewrite-testing-frameworks" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=rewrite-testing-frameworks" --recipe-option "newVersion=2.0.0" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=rewrite-testing-frameworks" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=rewrite-testing-frameworks" --recipe-option "newVersion=2.0.0" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}
   hasDataTables
 />

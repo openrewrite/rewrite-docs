@@ -104,7 +104,7 @@ recipeList:
   recipeName="org.openrewrite.toml.ReplaceTableRow"
   displayName="Replace TOML table row"
   requiresConfiguration
-  cliOptions={' --recipe-option "tableName=package.contributors" --recipe-option "row=name = "Alice Smith"\nemail = "alice@example.com"" --recipe-option "identifyingKey=name"'}
+  cliOptions={' --recipe-option "tableName=package.contributors" --recipe-option "row=name = "Alice Smith"\\nemail = "alice@example.com"" --recipe-option "identifyingKey=name"'}
   hasDataTables
 />
 

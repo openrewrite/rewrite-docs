@@ -110,7 +110,7 @@ recipeList:
   artifactId="rewrite-dropwizard"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_DROPWIZARD"
   requiresConfiguration
-  cliOptions={' --recipe-option "preconditionType=io.dropwizard.testing.junit.DAOTestRule" --recipe-option "matchingPattern='*..DAOTestRule inTransaction(..)'"'}
+  cliOptions={' --recipe-option "preconditionType=io.dropwizard.testing.junit.DAOTestRule" --recipe-option "matchingPattern=\'*..DAOTestRule inTransaction(..)\'"'}
   hasDataTables
 />
 

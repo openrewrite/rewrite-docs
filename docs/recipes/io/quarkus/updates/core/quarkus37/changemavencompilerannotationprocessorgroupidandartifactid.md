@@ -70,7 +70,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.hibernate" --recipe-option "oldArtifactId=hibernate-jpamodelgen" --recipe-option "newGroupId=org.hibernate.orm" --recipe-option "newArtifactId=hibernate-jpamodelgen" --recipe-option "newVersion=29.X" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "oldGroupId=org.hibernate" --recipe-option "oldArtifactId=hibernate-jpamodelgen" --recipe-option "newGroupId=org.hibernate.orm" --recipe-option "newArtifactId=hibernate-jpamodelgen" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
   hasDataTables
 />
 

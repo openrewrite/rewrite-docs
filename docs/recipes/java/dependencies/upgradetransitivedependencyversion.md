@@ -66,7 +66,7 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.apache.logging.log4j" --recipe-option "artifactId=log4j-bom" --recipe-option "version=latest.release" --recipe-option "scope=import" --recipe-option "type=pom" --recipe-option "classifier=test" --recipe-option "versionPattern='-jre'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyIfUsing=org.apache.logging.log4j:log4j*"'}
+  cliOptions={' --recipe-option "groupId=org.apache.logging.log4j" --recipe-option "artifactId=log4j-bom" --recipe-option "version=latest.release" --recipe-option "scope=import" --recipe-option "type=pom" --recipe-option "classifier=test" --recipe-option "versionPattern=\'-jre\'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyIfUsing=org.apache.logging.log4j:log4j*"'}
   hasDataTables
 />
 

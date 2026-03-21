@@ -49,7 +49,7 @@ recipeList:
   recipeName="org.openrewrite.MoveFile"
   displayName="Move a file"
   requiresConfiguration
-  cliOptions={' --recipe-option "folder=src/main/resources/" --recipe-option "fileMatcher='**/*.yml'" --recipe-option "moveTo=../yamls/"'}
+  cliOptions={' --recipe-option "folder=src/main/resources/" --recipe-option "fileMatcher=\'**/*.yml\'" --recipe-option "moveTo=../yamls/"'}
   hasDataTables
 />
 

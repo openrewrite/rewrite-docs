@@ -138,8 +138,7 @@ recipeList:
   recipeName="org.openrewrite.yaml.MergeYaml"
   displayName="Merge YAML snippet"
   requiresConfiguration
-  cliOptions={' --recipe-option "key=$.metadata" --recipe-option "yaml='labels:
-  label-one: "value-one"'" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml" --recipe-option "insertProperty=some-key"'}
+  cliOptions={' --recipe-option "key=$.metadata" --recipe-option "yaml=\'labels:\n  label-one: "value-one"\'" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml" --recipe-option "insertProperty=some-key"'}
   hasDataTables
 />
 

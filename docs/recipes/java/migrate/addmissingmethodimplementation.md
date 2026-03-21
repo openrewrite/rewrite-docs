@@ -105,7 +105,7 @@ recipeList:
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
   requiresConfiguration
-  cliOptions={' --recipe-option "fullyQualifiedClassName=com.yourorg.FooBar" --recipe-option "methodPattern='*..* hello(..)'" --recipe-option "methodTemplateString=public String hello() { return \"Hello from #{}!\"; }"'}
+  cliOptions={' --recipe-option "fullyQualifiedClassName=com.yourorg.FooBar" --recipe-option "methodPattern=\'*..* hello(..)\'" --recipe-option "methodTemplateString=public String hello() { return \\"Hello from #{}!\\"; }"'}
   hasDataTables
 />
 

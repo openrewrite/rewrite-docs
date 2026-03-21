@@ -99,7 +99,7 @@ recipeList:
   recipeName="org.openrewrite.maven.ChangeProjectVersion"
   displayName="Change Maven Project Version"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId='*'" --recipe-option "newVersion=8.4.2"'}
+  cliOptions={' --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId=\'*\'" --recipe-option "newVersion=8.4.2"'}
   showGradle={false}
   hasDataTables
 />

@@ -123,7 +123,7 @@ recipeList:
   recipeName="org.openrewrite.gradle.UpgradeTransitiveDependencyVersion"
   displayName="Upgrade transitive Gradle dependencies"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "version=29.X" --recipe-option "versionPattern='-jre'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyForConfigurations=implementation, runtimeOnly"'}
+  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyForConfigurations=implementation, runtimeOnly"'}
   showMaven={false}
   hasDataTables
 />

@@ -60,10 +60,7 @@ recipeList:
   recipeName="org.openrewrite.xml.CreateXmlFile"
   displayName="Create XML file"
   requiresConfiguration
-  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.xml" --recipe-option "fileContents=>
-        <?xml version="1.0" encoding="UTF-8"?>
-        <root>
-            <child>1</child></root>"'}
+  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.xml" --recipe-option "fileContents=>\n        <?xml version="1.0" encoding="UTF-8"?>\n        <root>\n            <child>1</child></root>"'}
   hasDataTables
 />
 

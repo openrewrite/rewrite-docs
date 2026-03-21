@@ -79,7 +79,7 @@ recipeList:
   recipeName="org.openrewrite.gradle.plugins.AddBuildPlugin"
   displayName="Add Gradle plugin"
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginId=com.jfrog.bintray" --recipe-option "version=3.x" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "pluginId=com.jfrog.bintray" --recipe-option "version=3.x" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}
   hasDataTables
 />

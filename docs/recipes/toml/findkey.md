@@ -84,7 +84,7 @@ recipeList:
   recipeName="org.openrewrite.toml.FindKey"
   displayName="Find TOML keys"
   requiresConfiguration
-  cliOptions={' --recipe-option "keyPath='**.name'"'}
+  cliOptions={' --recipe-option "keyPath=\'**.name\'"'}
   hasDataTables
 />
 

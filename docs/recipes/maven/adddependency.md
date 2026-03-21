@@ -235,7 +235,7 @@ recipeList:
   recipeName="org.openrewrite.maven.AddDependency"
   displayName="Add Maven dependency"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern='-jre'" --recipe-option "scope=runtime" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "type=jar" --recipe-option "classifier=test" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"'}
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "scope=runtime" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "type=jar" --recipe-option "classifier=test" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"'}
   showGradle={false}
   hasDataTables
 />

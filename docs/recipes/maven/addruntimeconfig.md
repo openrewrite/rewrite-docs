@@ -51,7 +51,7 @@ recipeList:
   recipeName="org.openrewrite.maven.AddRuntimeConfig"
   displayName="Add a configuration option for the Maven runtime"
   requiresConfiguration
-  cliOptions={' --recipe-option "relativeConfigFileName=maven.config" --recipe-option "flag='-T'" --recipe-option "argument=3" --recipe-option "separator=="'}
+  cliOptions={' --recipe-option "relativeConfigFileName=maven.config" --recipe-option "flag=\'-T\'" --recipe-option "argument=3" --recipe-option "separator=="'}
   showGradle={false}
   hasDataTables
 />

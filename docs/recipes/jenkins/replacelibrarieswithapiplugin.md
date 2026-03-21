@@ -191,8 +191,7 @@ artifactId: commons-text
   artifactId="rewrite-jenkins"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS"
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginGroupId=io.jenkins.plugins" --recipe-option "pluginArtifactId=jackson2-api" --recipe-option "pluginVersion=1981.v17df70e84a_a_1" --recipe-option "replaces=groupId: org.apache.commons
-artifactId: commons-text"'}
+  cliOptions={' --recipe-option "pluginGroupId=io.jenkins.plugins" --recipe-option "pluginArtifactId=jackson2-api" --recipe-option "pluginVersion=1981.v17df70e84a_a_1" --recipe-option "replaces=groupId: org.apache.commons\nartifactId: commons-text"'}
   hasDataTables
 />
 

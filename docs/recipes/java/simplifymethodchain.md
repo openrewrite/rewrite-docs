@@ -116,7 +116,7 @@ recipeList:
   recipeName="org.openrewrite.java.SimplifyMethodChain"
   displayName="Simplify a call chain"
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPatternChain=['java.util.Map keySet()', 'java.util.Set contains(..)']" --recipe-option "newMethodName=containsKey" --recipe-option "matchOverrides=false"'}
+  cliOptions={' --recipe-option "methodPatternChain=[\'java.util.Map keySet()\', \'java.util.Set contains(..)\']" --recipe-option "newMethodName=containsKey" --recipe-option "matchOverrides=false"'}
   hasDataTables
 />
 

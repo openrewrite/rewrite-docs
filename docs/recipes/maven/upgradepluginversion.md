@@ -171,7 +171,7 @@ recipeList:
   recipeName="org.openrewrite.maven.UpgradePluginVersion"
   displayName="Upgrade Maven plugin version"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "newVersion=29.X" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}
   hasDataTables
 />

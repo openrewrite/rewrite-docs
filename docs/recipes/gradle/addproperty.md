@@ -59,7 +59,7 @@ recipeList:
   recipeName="org.openrewrite.gradle.AddProperty"
   displayName="Add Gradle property"
   requiresConfiguration
-  cliOptions={' --recipe-option "key=org.gradle.caching" --recipe-option "value=true" --recipe-option "overwrite=true" --recipe-option "filePattern='**/*.properties'"'}
+  cliOptions={' --recipe-option "key=org.gradle.caching" --recipe-option "value=true" --recipe-option "overwrite=true" --recipe-option "filePattern=\'**/*.properties\'"'}
   showMaven={false}
   hasDataTables
 />

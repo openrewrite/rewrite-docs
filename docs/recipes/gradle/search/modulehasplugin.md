@@ -149,7 +149,7 @@ recipeList:
   recipeName="org.openrewrite.gradle.search.ModuleHasPlugin"
   displayName="Module has plugin"
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginId='`com.jfrog.bintray`'" --recipe-option "pluginClass=com.jfrog.bintray.gradle.BintrayPlugin"'}
+  cliOptions={' --recipe-option "pluginId=\'`com.jfrog.bintray`\'" --recipe-option "pluginClass=com.jfrog.bintray.gradle.BintrayPlugin"'}
   showMaven={false}
   hasDataTables
 />

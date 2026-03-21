@@ -120,7 +120,7 @@ recipeList:
   recipeName="org.openrewrite.maven.search.FindManagedDependency"
   displayName="Find Maven dependency management entry"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=3.0.0" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=3.0.0" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}
   hasDataTables
 />

@@ -51,7 +51,7 @@ recipeList:
   recipeName="org.openrewrite.SetFilePermissions"
   displayName="Set file permission attributes"
   requiresConfiguration
-  cliOptions={' --recipe-option "fileMatcher='**/gradlew.bat'" --recipe-option "isReadable=null" --recipe-option "isWritable=null" --recipe-option "isExecutable=null"'}
+  cliOptions={' --recipe-option "fileMatcher=\'**/gradlew.bat\'" --recipe-option "isReadable=null" --recipe-option "isWritable=null" --recipe-option "isExecutable=null"'}
   hasDataTables
 />
 

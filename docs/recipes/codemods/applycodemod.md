@@ -160,7 +160,7 @@ recipeList:
   artifactId="rewrite-codemods"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CODEMODS"
   requiresConfiguration
-  cliOptions={' --recipe-option "transform='-t path/to/transform/optimus-prime'" --recipe-option "executable='@next/codemod/bin/next-codemod.js'" --recipe-option "fileFilter='**/*.(j|t)sx'" --recipe-option "codemodArgs=--force --jscodeshift='--parser=${parser}'"'}
+  cliOptions={' --recipe-option "transform=\'-t path/to/transform/optimus-prime\'" --recipe-option "executable=\'@next/codemod/bin/next-codemod.js\'" --recipe-option "fileFilter=\'**/*.(j|t)sx\'" --recipe-option "codemodArgs=--force --jscodeshift=\'--parser=${parser}\'"'}
   hasDataTables
 />
 

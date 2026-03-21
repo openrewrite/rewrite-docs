@@ -95,7 +95,7 @@ recipeList:
   recipeName="org.openrewrite.xml.XsltTransformation"
   displayName="XSLT transformation"
   requiresConfiguration
-  cliOptions={' --recipe-option "xslt=<xsl:stylesheet ...>...</xsl:stylesheet>" --recipe-option "xsltResource=/changePlugin.xslt" --recipe-option "filePattern='**/*.xml'"'}
+  cliOptions={' --recipe-option "xslt=<xsl:stylesheet ...>...</xsl:stylesheet>" --recipe-option "xsltResource=/changePlugin.xslt" --recipe-option "filePattern=\'**/*.xml\'"'}
   hasDataTables
 />
 

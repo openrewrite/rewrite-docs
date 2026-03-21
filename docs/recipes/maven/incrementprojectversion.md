@@ -97,7 +97,7 @@ recipeList:
   recipeName="org.openrewrite.maven.IncrementProjectVersion"
   displayName="Increment Maven project version"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId='*'" --recipe-option "digit=PATCH"'}
+  cliOptions={' --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId=\'*\'" --recipe-option "digit=PATCH"'}
   showGradle={false}
   hasDataTables
 />

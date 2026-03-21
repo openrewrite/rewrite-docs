@@ -54,11 +54,7 @@ recipeList:
   recipeName="org.openrewrite.yaml.CreateYamlFile"
   displayName="Create YAML file"
   requiresConfiguration
-  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.yaml" --recipe-option "fileContents=>
-        a:
-          property: value
-        another:
-          property: value" --recipe-option "fileContentsUrl=http://foo.bar/baz.yaml"'}
+  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.yaml" --recipe-option "fileContents=>\n        a:\n          property: value\n        another:\n          property: value" --recipe-option "fileContentsUrl=http://foo.bar/baz.yaml"'}
   hasDataTables
 />
 

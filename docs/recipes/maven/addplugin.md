@@ -145,7 +145,7 @@ recipeList:
   recipeName="org.openrewrite.maven.AddPlugin"
   displayName="Add Maven plugin"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "version=1.0.0" --recipe-option "configuration=<configuration><foo>foo</foo></configuration>" --recipe-option "dependencies=<dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>" --recipe-option "executions=<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>" --recipe-option "filePattern='**/*-parent/grpc-*/pom.xml'"'}
+  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "version=1.0.0" --recipe-option "configuration=<configuration><foo>foo</foo></configuration>" --recipe-option "dependencies=<dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>" --recipe-option "executions=<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>" --recipe-option "filePattern=\'**/*-parent/grpc-*/pom.xml\'"'}
   showGradle={false}
   hasDataTables
 />

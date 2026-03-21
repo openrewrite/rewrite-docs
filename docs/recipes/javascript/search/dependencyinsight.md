@@ -107,7 +107,7 @@ recipeList:
   recipeName="org.openrewrite.javascript.search.DependencyInsight"
   displayName="Node.js dependency insight"
   requiresConfiguration
-  cliOptions={' --recipe-option "packageNamePattern='@types/*'" --recipe-option "scope=dependencies" --recipe-option "onlyDirect=true"'}
+  cliOptions={' --recipe-option "packageNamePattern=\'@types/*\'" --recipe-option "scope=dependencies" --recipe-option "onlyDirect=true"'}
   hasDataTables
 />
 

@@ -120,7 +120,7 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=3.0.0" --recipe-option "versionPattern='-jre'" --recipe-option "configuration=api"'}
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=3.0.0" --recipe-option "versionPattern=\'-jre\'" --recipe-option "configuration=api"'}
   hasDataTables
 />
 

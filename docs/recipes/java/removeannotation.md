@@ -126,7 +126,7 @@ recipeList:
   recipeName="org.openrewrite.java.RemoveAnnotation"
   displayName="Remove annotation"
   requiresConfiguration
-  cliOptions={' --recipe-option "annotationPattern='@java.lang.SuppressWarnings("deprecation")'"'}
+  cliOptions={' --recipe-option "annotationPattern=\'@java.lang.SuppressWarnings("deprecation")\'"'}
   hasDataTables
 />
 

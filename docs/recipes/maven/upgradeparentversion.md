@@ -177,7 +177,7 @@ recipeList:
   recipeName="org.openrewrite.maven.UpgradeParentVersion"
   displayName="Upgrade Maven parent project version"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-parent" --recipe-option "newVersion=29.X" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-parent" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}
   hasDataTables
 />

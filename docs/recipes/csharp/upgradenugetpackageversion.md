@@ -52,7 +52,7 @@ recipeList:
   artifactId="rewrite-csharp"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
   requiresConfiguration
-  cliOptions={' --recipe-option "packageName=Newtonsoft.Json" --recipe-option "newVersion=latest.release" --recipe-option "versionPattern='-jre'"'}
+  cliOptions={' --recipe-option "packageName=Newtonsoft.Json" --recipe-option "newVersion=latest.release" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}
   showMaven={false}
   hasDataTables
