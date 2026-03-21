@@ -4,6 +4,7 @@ sidebar_label: "Remove workflow input argument"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Remove workflow input argument
 
@@ -98,78 +99,16 @@ recipeList:
       inputArgumentName: myInputToRemove
 ```
 
-Now that `com.yourorg.RemoveWorkflowInputArgumentExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}` in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.RemoveWorkflowInputArgumentExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}")
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.RemoveWorkflowInputArgumentExample</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-github-actions</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe RemoveWorkflowInputArgument --recipe-option "workflowReference=org/repo/.github/workflows/myWorkflow.yml" --recipe-option "version=v1.2.3" --recipe-option "inputArgumentName=myInputToRemove"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-github-actions:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.github.RemoveWorkflowInputArgument"
+  displayName="Remove workflow input argument"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-github-actions"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
+  requiresConfiguration
+  cliOptions={' --recipe-option "workflowReference=org/repo/.github/workflows/myWorkflow.yml" --recipe-option "version=v1.2.3" --recipe-option "inputArgumentName=myInputToRemove"'}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

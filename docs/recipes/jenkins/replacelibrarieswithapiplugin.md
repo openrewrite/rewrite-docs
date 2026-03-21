@@ -4,6 +4,7 @@ sidebar_label: "Use Jenkins API plugin instead of libraries"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Use Jenkins API plugin instead of libraries
 
@@ -183,79 +184,17 @@ recipeList:
 artifactId: commons-text
 ```
 
-Now that `com.yourorg.ReplaceLibrariesWithApiPluginExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}` in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.ReplaceLibrariesWithApiPluginExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}")
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.ReplaceLibrariesWithApiPluginExample</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-jenkins</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-            <TabItem value="moderne-cli" label="Moderne CLI">
-
-            You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-            ```shell title="shell"
-            mod run . --recipe ReplaceLibrariesWithApiPlugin --recipe-option "pluginGroupId=io.jenkins.plugins" --recipe-option "pluginArtifactId=jackson2-api" --recipe-option "pluginVersion=1981.v17df70e84a_a_1" --recipe-option "replaces=groupId: org.apache.commons
-artifactId: commons-text"
-            ```
-
-            If the recipe is not available locally, then you can install it using:
-            ```shell
-            mod config recipes jar install org.openrewrite.recipe:rewrite-jenkins:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS}}
-            ```
-            </TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.jenkins.ReplaceLibrariesWithApiPlugin"
+  displayName="Use Jenkins API plugin instead of libraries"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-jenkins"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS"
+  requiresConfiguration
+  cliOptions={' --recipe-option "pluginGroupId=io.jenkins.plugins" --recipe-option "pluginArtifactId=jackson2-api" --recipe-option "pluginVersion=1981.v17df70e84a_a_1" --recipe-option "replaces=groupId: org.apache.commons
+artifactId: commons-text"'}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

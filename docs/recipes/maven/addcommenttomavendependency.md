@@ -4,6 +4,7 @@ sidebar_label: "Add a comment to a `Maven` dependency or plugin"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Add a comment to a `Maven` dependency or plugin
 
@@ -127,48 +128,14 @@ recipeList:
       commentText: This is excluded due to CVE <X> and will be removed when we upgrade the next version is available.
 ```
 
-Now that `com.yourorg.AddCommentToMavenDependencyExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.AddCommentToMavenDependencyExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe AddCommentToMavenDependency --recipe-option "xPath=/project/dependencies/dependency" --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "commentText=This is excluded due to CVE <X> and will be removed when we upgrade the next version is available."
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.maven.AddCommentToMavenDependency"
+  displayName="Add a comment to a `Maven` dependency or plugin"
+  requiresConfiguration
+  cliOptions={' --recipe-option "xPath=/project/dependencies/dependency" --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "commentText=This is excluded due to CVE <X> and will be removed when we upgrade the next version is available."'}
+  showGradle={false}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

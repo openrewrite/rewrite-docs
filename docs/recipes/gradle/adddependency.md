@@ -4,6 +4,7 @@ sidebar_label: "Add Gradle dependency"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Add Gradle dependency
 
@@ -68,42 +69,14 @@ recipeList:
       acceptTransitive: true
 ```
 
-Now that `com.yourorg.AddDependencyExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.AddDependencyExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe AddDependency --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern='-jre'" --recipe-option "configuration=implementation" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "extension=jar" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-gradle:{{VERSION_ORG_OPENREWRITE_REWRITE_GRADLE}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.gradle.AddDependency"
+  displayName="Add Gradle dependency"
+  requiresConfiguration
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern='-jre'" --recipe-option "configuration=implementation" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "extension=jar" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"'}
+  showMaven={false}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

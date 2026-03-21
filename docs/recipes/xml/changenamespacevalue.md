@@ -4,6 +4,7 @@ sidebar_label: "Change XML attribute of a specific resource version"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Change XML attribute of a specific resource version
 
@@ -113,66 +114,13 @@ recipeList:
       newSchemaLocation: newfoo.bar.attribute.value.string
 ```
 
-Now that `com.yourorg.ChangeNamespaceValueExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.ChangeNamespaceValueExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.ChangeNamespaceValueExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe ChangeNamespaceValue --recipe-option "elementName=property" --recipe-option "oldValue=newfoo.bar.attribute.value.string" --recipe-option "newValue=newfoo.bar.attribute.value.string" --recipe-option "versionMatcher=1.1" --recipe-option "searchAllNamespaces=true" --recipe-option "newVersion=2.0" --recipe-option "newSchemaLocation=newfoo.bar.attribute.value.string"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-xml:{{VERSION_ORG_OPENREWRITE_REWRITE_XML}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.xml.ChangeNamespaceValue"
+  displayName="Change XML attribute of a specific resource version"
+  requiresConfiguration
+  cliOptions={' --recipe-option "elementName=property" --recipe-option "oldValue=newfoo.bar.attribute.value.string" --recipe-option "newValue=newfoo.bar.attribute.value.string" --recipe-option "versionMatcher=1.1" --recipe-option "searchAllNamespaces=true" --recipe-option "newVersion=2.0" --recipe-option "newSchemaLocation=newfoo.bar.attribute.value.string"'}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

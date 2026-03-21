@@ -4,6 +4,7 @@ sidebar_label: "Append to sequence"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Append to sequence
 
@@ -92,66 +93,13 @@ recipeList:
       matchExistingSequenceValuesInAnyOrder: true
 ```
 
-Now that `com.yourorg.AppendToSequenceExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.AppendToSequenceExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.AppendToSequenceExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe AppendToSequence --recipe-option "sequencePath=$.universe.planets" --recipe-option "value=earth" --recipe-option "existingSequenceValues=existingValue1" --recipe-option "matchExistingSequenceValuesInAnyOrder=true"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_ORG_OPENREWRITE_REWRITE_YAML}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.yaml.AppendToSequence"
+  displayName="Append to sequence"
+  requiresConfiguration
+  cliOptions={' --recipe-option "sequencePath=$.universe.planets" --recipe-option "value=earth" --recipe-option "existingSequenceValues=existingValue1" --recipe-option "matchExistingSequenceValuesInAnyOrder=true"'}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

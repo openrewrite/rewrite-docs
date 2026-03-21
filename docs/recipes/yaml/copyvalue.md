@@ -4,6 +4,7 @@ sidebar_label: "Copy YAML value"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Copy YAML value
 
@@ -95,66 +96,13 @@ recipeList:
       newFilePath: src/main/resources/application.yaml
 ```
 
-Now that `com.yourorg.CopyValueExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.CopyValueExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.CopyValueExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe CopyValue --recipe-option "oldKeyPath=$.source.kind" --recipe-option "oldFilePath=src/main/resources/application.yaml" --recipe-option "newKey=$.dest.kind" --recipe-option "newFilePath=src/main/resources/application.yaml"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-yaml:{{VERSION_ORG_OPENREWRITE_REWRITE_YAML}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.yaml.CopyValue"
+  displayName="Copy YAML value"
+  requiresConfiguration
+  cliOptions={' --recipe-option "oldKeyPath=$.source.kind" --recipe-option "oldFilePath=src/main/resources/application.yaml" --recipe-option "newKey=$.dest.kind" --recipe-option "newFilePath=src/main/resources/application.yaml"'}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

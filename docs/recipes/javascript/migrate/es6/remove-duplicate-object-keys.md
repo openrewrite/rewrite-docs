@@ -4,6 +4,7 @@ sidebar_label: "Remove duplicate object keys"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Remove duplicate object keys
 
@@ -22,17 +23,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ## Usage
 
-In order to run JavaScript recipes, you will need to use the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro).
-For JavaScript specific configuration instructions, please see our [configuring JavaScript guide](https://docs.moderne.io/user-documentation/moderne-cli/how-to-guides/javascript).
-
-Once the CLI is installed, you can install this JavaScript recipe package by running the following command:
-
-```shell title="Install the recipe package"
-mod config recipes npm install @openrewrite/rewrite
-```
-
-Then, you can run the recipe via:
-
-```shell title="Run the recipe"
-mod run . --recipe org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys
-```
+<RunRecipe
+  recipeName="org.openrewrite.javascript.migrate.es6.remove-duplicate-object-keys"
+  displayName="Remove duplicate object keys"
+  npmPackage="@openrewrite/rewrite"
+/>

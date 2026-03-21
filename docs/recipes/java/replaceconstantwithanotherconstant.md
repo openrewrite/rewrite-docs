@@ -4,6 +4,7 @@ sidebar_label: "Replace constant with another constant"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Replace constant with another constant
 
@@ -145,66 +146,13 @@ recipeList:
       fullyQualifiedConstantName: org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 ```
 
-Now that `com.yourorg.ReplaceConstantWithAnotherConstantExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.ReplaceConstantWithAnotherConstantExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.ReplaceConstantWithAnotherConstantExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe ReplaceConstantWithAnotherConstant --recipe-option "existingFullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE" --recipe-option "fullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-java:{{VERSION_ORG_OPENREWRITE_REWRITE_JAVA}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.java.ReplaceConstantWithAnotherConstant"
+  displayName="Replace constant with another constant"
+  requiresConfiguration
+  cliOptions={' --recipe-option "existingFullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE" --recipe-option "fullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE"'}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

@@ -4,6 +4,7 @@ sidebar_label: "Export context files"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Export context files
 
@@ -56,78 +57,16 @@ recipeList:
         - org.openrewrite.prethink.table.TestMapping
 ```
 
-Now that `com.yourorg.ExportContextExample` has been defined, activate it and take a dependency on `org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}` in your build file:
-<Tabs groupId="projectType">
-<TabItem value="gradle" label="Gradle">
-
-1. Add the following to your `build.gradle` file:
-
-```groovy title="build.gradle"
-plugins {
-    id("org.openrewrite.rewrite") version("latest.release")
-}
-
-rewrite {
-    activeRecipe("com.yourorg.ExportContextExample")
-    setExportDatatables(true)
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}")
-}
-```
-2. Run `gradle rewriteRun` to run the recipe.
-</TabItem>
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.ExportContextExample</recipe>
-          </activeRecipes>
-        </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-prethink</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe ExportContext --recipe-option "displayName=Test Coverage" --recipe-option "shortDescription=Maps test methods to implementation methods they verify" --recipe-option "longDescription=This context maps each test method to the implementation methods it calls..." --recipe-option "dataTables=org.openrewrite.prethink.table.TestMapping"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-prethink:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.prethink.ExportContext"
+  displayName="Export context files"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-prethink"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK"
+  requiresConfiguration
+  cliOptions={' --recipe-option "displayName=Test Coverage" --recipe-option "shortDescription=Maps test methods to implementation methods they verify" --recipe-option "longDescription=This context maps each test method to the implementation methods it calls..." --recipe-option "dataTables=org.openrewrite.prethink.table.TestMapping"'}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

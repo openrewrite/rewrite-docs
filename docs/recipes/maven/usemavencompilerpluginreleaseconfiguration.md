@@ -4,6 +4,7 @@ sidebar_label: "Use Maven compiler plugin release configuration"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Use Maven compiler plugin release configuration
 
@@ -130,48 +131,14 @@ recipeList:
       releaseVersion: 11
 ```
 
-Now that `com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.UseMavenCompilerPluginReleaseConfigurationExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe UseMavenCompilerPluginReleaseConfiguration --recipe-option "releaseVersion=11"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration"
+  displayName="Use Maven compiler plugin release configuration"
+  requiresConfiguration
+  cliOptions={' --recipe-option "releaseVersion=11"'}
+  showGradle={false}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 

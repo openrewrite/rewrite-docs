@@ -4,6 +4,7 @@ sidebar_label: "Add an annotation processor to `maven-compiler-plugin`"
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
 
 # Add an annotation processor to `maven-compiler-plugin`
 
@@ -150,48 +151,14 @@ recipeList:
       version: 0.2.0
 ```
 
-Now that `com.yourorg.AddAnnotationProcessorExample` has been defined, activate it in your build file:
-<Tabs groupId="projectType">
-
-<TabItem value="maven" label="Maven">
-
-1. Add the following to your `pom.xml` file:
-
-```xml title="pom.xml"
-<project>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.openrewrite.maven</groupId>
-        <artifactId>rewrite-maven-plugin</artifactId>
-        <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
-        <configuration>
-          <exportDatatables>true</exportDatatables>
-          <activeRecipes>
-            <recipe>com.yourorg.AddAnnotationProcessorExample</recipe>
-          </activeRecipes>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-2. Run `mvn rewrite:run` to run the recipe.
-</TabItem>
-<TabItem value="moderne-cli" label="Moderne CLI">
-
-You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
-
-```shell title="shell"
-mod run . --recipe AddAnnotationProcessor --recipe-option "groupId=org.projectlombok" --recipe-option "artifactId=lombok-mapstruct-binding" --recipe-option "version=0.2.0"
-```
-
-If the recipe is not available locally, then you can install it using:
-```shell
-mod config recipes jar install org.openrewrite:rewrite-maven:{{VERSION_ORG_OPENREWRITE_REWRITE_MAVEN}}
-```
-</TabItem>
-</Tabs>
+<RunRecipe
+  recipeName="org.openrewrite.maven.AddAnnotationProcessor"
+  displayName="Add an annotation processor to `maven-compiler-plugin`"
+  requiresConfiguration
+  cliOptions={' --recipe-option "groupId=org.projectlombok" --recipe-option "artifactId=lombok-mapstruct-binding" --recipe-option "version=0.2.0"'}
+  showGradle={false}
+  hasDataTables
+/>
 
 ## See how this recipe works across multiple open-source repositories
 
