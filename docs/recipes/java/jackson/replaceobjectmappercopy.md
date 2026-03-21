@@ -1,74 +1,39 @@
 ---
-sidebar_label: "Hidden field"
+sidebar_label: "Replace `ObjectMapper.copy()` with `rebuild().build()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Hidden field
+# Replace `ObjectMapper.copy()` with `rebuild().build()`
 
-**org.openrewrite.staticanalysis.HiddenField**
+**org.openrewrite.java.jackson.ReplaceObjectMapperCopy**
 
-_Refactor local variables or parameters which shadow a field defined in the same class._
+_In Jackson 3, `ObjectMapper.copy()` was removed. Use `mapper.rebuild().build()` instead._
 
 ### Tags
 
-* [RSPEC-S1117](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1117&open=java%3AS1117)
-* [RSPEC-S2387](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2387&open=java%3AS2387)
+* [jackson-3](/reference/recipes-by-tag#jackson)
 
 ## Recipe source
 
-[GitHub: HiddenField.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/HiddenField.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
+[GitHub: ReplaceObjectMapperCopy.java](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/ReplaceObjectMapperCopy.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
-
-## Example
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+## Used by
 
+This recipe is used as part of the following composite recipes:
 
-###### Before
-```java
-public class A {
-    private String field;
-
-    public A(String field) {
-    }
-}
-```
-
-###### After
-```java
-public class A {
-    private String field;
-
-    public A(String field1) {
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -4,1 +4,1 @@
-    private String field;
-
--   public A(String field) {
-+   public A(String field1) {
-    }
-```
-</TabItem>
-</Tabs>
+* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
 
 ## Usage
 
-This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-static-analysis` in your build file or by running a shell command (in which case no build changes are needed):
+This recipe has no required configuration options. It can be activated by adding a dependency on `org.openrewrite.recipe:rewrite-jackson` in your build file or by running a shell command (in which case no build changes are needed):
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -80,7 +45,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.HiddenField")
+    activeRecipe("org.openrewrite.java.jackson.ReplaceObjectMapperCopy")
     setExportDatatables(true)
 }
 
@@ -89,7 +54,7 @@ repositories {
 }
 
 dependencies {
-    rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
+    rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
 }
 ```
 
@@ -110,10 +75,10 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
+        rewrite("org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.staticanalysis.HiddenField")
+        activeRecipe("org.openrewrite.java.jackson.ReplaceObjectMapperCopy")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -148,14 +113,14 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.staticanalysis.HiddenField</recipe>
+            <recipe>org.openrewrite.java.jackson.ReplaceObjectMapperCopy</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-static-analysis</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}</version>
+            <artifactId>rewrite-jackson</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -171,7 +136,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.HiddenField -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE -Drewrite.activeRecipes=org.openrewrite.java.jackson.ReplaceObjectMapperCopy -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -179,12 +144,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe HiddenField
+mod run . --recipe ReplaceObjectMapperCopy
 ```
 
 If the recipe is not available locally, then you can install it using:
 ```shell
-mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}
+mod config recipes jar install org.openrewrite.recipe:rewrite-jackson:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}
 ```
 </TabItem>
 </Tabs>
@@ -193,7 +158,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.HiddenField" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.jackson.ReplaceObjectMapperCopy" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

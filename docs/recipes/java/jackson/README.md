@@ -32,11 +32,13 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add `@JsonCreator` to non-public constructors](./addjsoncreatortoprivateconstructors.md)
 * [Migrate `JSONNode` field iterator for Jackson 3](./jackson3jsonnodefielditerators.md)
+* [Migrate `JsonMapper` setter calls to builder pattern](./migratemappersetterstobuilder.md)
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
 * [Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields](./replacejsonignorewithjsonsetter.md)
 * [Replace `IOException` with `JacksonException` in catch clauses](./ioexceptiontojacksonexception.md)
+* [Replace `ObjectMapper.copy()` with `rebuild().build()`](./replaceobjectmappercopy.md)
 * [Replace `null` type in `StdDeserializer` constructor with actual type](./stddeserializernullconstructor.md)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](./replacestreamwritecapability.md)
 * [Simplify catch clauses for Jackson exceptions](./simplifyjacksonexceptioncatch.md)

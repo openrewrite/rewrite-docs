@@ -2744,7 +2744,7 @@ _1 recipe_
 
 ## jackson
 
-_23 recipes_
+_25 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -2766,6 +2766,10 @@ _23 recipes_
   * **Jackson best practices**
   * Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
   * Tags: jackson-2
+* [org.openrewrite.java.jackson.MigrateMapperSettersToBuilder](/recipes/java/jackson/migratemappersetterstobuilder.md)
+  * **Migrate `JsonMapper` setter calls to builder pattern**
+  * In Jackson 3, `JsonMapper` is immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
+  * Tags: jackson-3
 * [org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations](/recipes/java/jackson/removebuiltinmoduleregistrations.md)
   * **Remove registrations of modules built-in to Jackson 3**
   * In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules.
@@ -2781,6 +2785,10 @@ _23 recipes_
 * [org.openrewrite.java.jackson.ReplaceJsonIgnoreWithJsonSetter](/recipes/java/jackson/replacejsonignorewithjsonsetter.md)
   * **Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields**
   * In Jackson 3, `@JsonIgnore` on fields initialized with empty collections causes the field value to become `null` instead of maintaining the empty collection. This recipe replaces `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on `Map` and `Collection` fields that have an empty collection initializer.
+  * Tags: jackson-3
+* [org.openrewrite.java.jackson.ReplaceObjectMapperCopy](/recipes/java/jackson/replaceobjectmappercopy.md)
+  * **Replace `ObjectMapper.copy()` with `rebuild().build()`**
+  * In Jackson 3, `ObjectMapper.copy()` was removed. Use `mapper.rebuild().build()` instead.
   * Tags: jackson-3
 * [org.openrewrite.java.jackson.ReplaceStreamWriteCapability](/recipes/java/jackson/replacestreamwritecapability.md)
   * **Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`**
@@ -5763,7 +5771,7 @@ _1 recipe_
 
 ## RSPEC
 
-_206 recipes_
+_208 recipes_
 
 * [org.openrewrite.cobol.cleanup.RemoveWithDebuggingMode](/recipes/cobol/cleanup/removewithdebuggingmode.md)
   * **Remove with debugging mode**
@@ -6000,7 +6008,7 @@ _206 recipes_
 * [org.openrewrite.staticanalysis.HiddenField](/recipes/staticanalysis/hiddenfield.md)
   * **Hidden field**
   * Refactor local variables or parameters which shadow a field defined in the same class.
-  * Tags: RSPEC-S1117
+  * Tags: RSPEC-S1117, RSPEC-S2387
 * [org.openrewrite.staticanalysis.HideUtilityClassConstructor](/recipes/staticanalysis/hideutilityclassconstructor.md)
   * **Hide utility class constructor**
   * Ensures utility classes (classes containing only static methods or fields in their API) do not have a public constructor.
@@ -6037,6 +6045,10 @@ _206 recipes_
   * **Rename packages to lowercase**
   * By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase.
   * Tags: RSPEC-S120
+* [org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates](/recipes/staticanalysis/membernamecaseinsensitiveduplicates.md)
+  * **Members should not have names differing only by capitalization**
+  * Looking at the set of methods and fields in a class and all of its parents, no two members should have names that differ only in capitalization. This rule will not report if a method overrides a parent method.
+  * Tags: RSPEC-S1845
 * [org.openrewrite.staticanalysis.MethodNameCasing](/recipes/staticanalysis/methodnamecasing.md)
   * **Standardize method name casing**
   * Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`.
@@ -6317,6 +6329,10 @@ _206 recipes_
   * **Use `String::replace()` when first parameter is not a real regular expression**
   * When `String::replaceAll` is used, the first argument should be a real regular expression. If it’s not the case, `String::replace` does exactly the same thing as `String::replaceAll` without the performance drawback of the regex.
   * Tags: RSPEC-S5361
+* [org.openrewrite.staticanalysis.UseTryWithResources](/recipes/staticanalysis/usetrywithresources.md)
+  * **Use try-with-resources**
+  * Refactor try/finally blocks to use try-with-resources when the finally block only closes an `AutoCloseable` resource.
+  * Tags: RSPEC-S2093
 * [org.openrewrite.staticanalysis.WhileInsteadOfFor](/recipes/staticanalysis/whileinsteadoffor.md)
   * **Prefer `while` over `for` loops**
   * When only the condition expression is defined in a for loop, and the initialization and increment expressions are missing, a while loop should be used instead to increase readability.

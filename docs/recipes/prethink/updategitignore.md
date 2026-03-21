@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 **org.openrewrite.prethink.UpdateGitignore**
 
-_Updates .gitignore to allow committing the `.moderne/context/` directory while ignoring other files in `.moderne/`. Transforms `.moderne/` into `.moderne/*` with an exception for `!.moderne/context/`._
+_Updates .gitignore to allow committing the `.moderne/context/` directory while ignoring other files in `.moderne/`. Only modifies .gitignore when context files exist in `.moderne/context/`. Transforms `.moderne/` into `.moderne/*` with an exception for `!.moderne/context/`._
 
 ## Recipe source
 

@@ -31,7 +31,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.websocket`
   * oldArtifactId: `websocket-api`
-  * newArtifactId: `jetty-websocket-jetty-api`
+  * newGroupId: `org.eclipse.jetty.ee9.websocket`
+  * newArtifactId: `jetty-ee9-websocket-jetty-api`
   * newVersion: `12.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.websocket`
@@ -48,12 +49,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.websocket`
   * oldArtifactId: `javax-websocket-server-impl`
-  * newArtifactId: `websocket-javax-server`
+  * newGroupId: `org.eclipse.jetty.ee9.websocket`
+  * newArtifactId: `jetty-ee9-websocket-jakarta-server`
   * newVersion: `12.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.websocket`
   * oldArtifactId: `javax-websocket-client-impl`
-  * newArtifactId: `websocket-javax-client`
+  * newGroupId: `org.eclipse.jetty.ee9.websocket`
+  * newArtifactId: `jetty-ee9-websocket-jakarta-client`
   * newVersion: `12.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty`
@@ -113,7 +116,8 @@ recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.websocket
       oldArtifactId: websocket-api
-      newArtifactId: jetty-websocket-jetty-api
+      newGroupId: org.eclipse.jetty.ee9.websocket
+      newArtifactId: jetty-ee9-websocket-jetty-api
       newVersion: 12.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.websocket
@@ -130,12 +134,14 @@ recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.websocket
       oldArtifactId: javax-websocket-server-impl
-      newArtifactId: websocket-javax-server
+      newGroupId: org.eclipse.jetty.ee9.websocket
+      newArtifactId: jetty-ee9-websocket-jakarta-server
       newVersion: 12.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.websocket
       oldArtifactId: javax-websocket-client-impl
-      newArtifactId: websocket-javax-client
+      newGroupId: org.eclipse.jetty.ee9.websocket
+      newArtifactId: jetty-ee9-websocket-jakarta-client
       newVersion: 12.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty

@@ -44,12 +44,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade plugins to Java 21 compatible versions](../../java/migrate/upgradepluginsforjava21)
 * [Avoid using the deprecated empty `finalize()` method in `java.desktop`](../../java/migrate/deletedeprecatedfinalize)
 * [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`](../../java/migrate/removedsubjectmethods)
+* [If-else-if-else to switch](../../java/migrate/lang/ifelseifconstructtoswitch)
+* [Add null check to existing switch cases](../../java/migrate/lang/nullcheckasswitchcase)
 * [Convert assigning Switch statements to Switch expressions](../../java/migrate/lang/switchcaseassignmentstoswitchexpression)
 * [Convert switch cases where every case returns into a returned switch expression](../../java/migrate/lang/switchcasereturnstoswitchexpression)
 * [Convert switch expression yield to arrow](../../java/migrate/lang/switchexpressionyieldtoarrow)
-* [If-else-if-else to switch](../../java/migrate/lang/ifelseifconstructtoswitch)
 * [Adopt switch pattern matching (JEP 441)](../../java/migrate/switchpatternmatching)
-* [Add null check to existing switch cases](../../java/migrate/lang/nullcheckasswitchcase)
 
 </TabItem>
 
@@ -77,12 +77,12 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradePluginsForJava21
   - org.openrewrite.java.migrate.DeleteDeprecatedFinalize
   - org.openrewrite.java.migrate.RemovedSubjectMethods
+  - org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch
+  - org.openrewrite.java.migrate.lang.NullCheckAsSwitchCase
   - org.openrewrite.java.migrate.lang.SwitchCaseAssignmentsToSwitchExpression
   - org.openrewrite.java.migrate.lang.SwitchCaseReturnsToSwitchExpression
   - org.openrewrite.java.migrate.lang.SwitchExpressionYieldToArrow
-  - org.openrewrite.java.migrate.lang.IfElseIfConstructToSwitch
   - org.openrewrite.java.migrate.SwitchPatternMatching
-  - org.openrewrite.java.migrate.lang.NullCheckAsSwitchCase
 
 ```
 </TabItem>

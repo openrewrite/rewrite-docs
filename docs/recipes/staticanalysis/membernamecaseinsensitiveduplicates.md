@@ -1,69 +1,27 @@
 ---
-sidebar_label: "Hidden field"
+sidebar_label: "Members should not have names differing only by capitalization"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Hidden field
+# Members should not have names differing only by capitalization
 
-**org.openrewrite.staticanalysis.HiddenField**
+**org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates**
 
-_Refactor local variables or parameters which shadow a field defined in the same class._
+_Looking at the set of methods and fields in a class and all of its parents, no two members should have names that differ only in capitalization. This rule will not report if a method overrides a parent method._
 
 ### Tags
 
-* [RSPEC-S1117](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1117&open=java%3AS1117)
-* [RSPEC-S2387](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2387&open=java%3AS2387)
+* [RSPEC-S1845](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1845&open=java%3AS1845)
 
 ## Recipe source
 
-[GitHub: HiddenField.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/HiddenField.java),
+[GitHub: MemberNameCaseInsensitiveDuplicates.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/MemberNameCaseInsensitiveDuplicates.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-public class A {
-    private String field;
-
-    public A(String field) {
-    }
-}
-```
-
-###### After
-```java
-public class A {
-    private String field;
-
-    public A(String field1) {
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -4,1 +4,1 @@
-    private String field;
-
--   public A(String field) {
-+   public A(String field1) {
-    }
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage
@@ -80,7 +38,7 @@ plugins {
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.staticanalysis.HiddenField")
+    activeRecipe("org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates")
     setExportDatatables(true)
 }
 
@@ -113,7 +71,7 @@ rootProject {
         rewrite("org.openrewrite.recipe:rewrite-static-analysis:{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS}}")
     }
     rewrite {
-        activeRecipe("org.openrewrite.staticanalysis.HiddenField")
+        activeRecipe("org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates")
         setExportDatatables(true)
     }
     afterEvaluate {
@@ -148,7 +106,7 @@ gradle --init-script init.gradle rewriteRun
         <configuration>
           <exportDatatables>true</exportDatatables>
           <activeRecipes>
-            <recipe>org.openrewrite.staticanalysis.HiddenField</recipe>
+            <recipe>org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
@@ -171,7 +129,7 @@ gradle --init-script init.gradle rewriteRun
 You will need to have [Maven](https://maven.apache.org/download.cgi) installed on your machine before you can run the following command.
 
 ```shell title="shell"
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.HiddenField -Drewrite.exportDatatables=true
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE -Drewrite.activeRecipes=org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates -Drewrite.exportDatatables=true
 ```
 </TabItem>
 <TabItem value="moderne-cli" label="Moderne CLI">
@@ -179,7 +137,7 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:run -Drewrite.recipeArtifactCo
 You will need to have configured the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) on your machine before you can run the following command.
 
 ```shell title="shell"
-mod run . --recipe HiddenField
+mod run . --recipe MemberNameCaseInsensitiveDuplicates
 ```
 
 If the recipe is not available locally, then you can install it using:
@@ -193,7 +151,7 @@ mod config recipes jar install org.openrewrite.recipe:rewrite-static-analysis:{{
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.HiddenField" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

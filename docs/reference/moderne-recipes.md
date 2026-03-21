@@ -500,7 +500,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-03-12T0841.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-03-19T1924.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -528,6 +528,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.Owasp2025A02](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a02)
   * **Remediate OWASP A02:2025 Security misconfiguration**
   * OWASP [A02:2025](https://owasp.org/Top10/2025/A02_2025-Security_Misconfiguration/) describes failures related to security misconfiguration. Previously A05:2021, this category moved up to #2 in 2025.
+* [org.openrewrite.java.security.Owasp2025A03](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a03)
+  * **Remediate OWASP A03:2025 Software supply chain failures**
+  * OWASP [A03:2025](https://owasp.org/Top10/2025/A03_2025-Software_Supply_Chain_Failures/) describes failures related to the software supply chain, including vulnerable and outdated components. Expanded from A06:2021 Vulnerable and Outdated Components.
 * [org.openrewrite.java.security.OwaspA01](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa01)
   * **Remediate OWASP A01:2021 Broken access control**
   * OWASP [A01:2021](https://owasp.org/Top10/A01_2021-Broken_Access_Control/) describes failures related to broken access control.
@@ -1521,6 +1524,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.FindTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findtestcoverage)
   * **Find test coverage mapping**
   * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured.
+* [io.moderne.prethink.FindTestGaps](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findtestgaps)
+  * **Find test coverage gaps**
+  * Identify public non-trivial methods that lack test coverage. Reports gaps with cyclomatic complexity and risk scores to help prioritize where to add tests.
 * [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
   * **Update Prethink context (no AI)**
   * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. This recipe does not require an LLM provider - use UpdatePrethinkContextStarter if you want AI-generated code comprehension and test summaries.
@@ -1539,12 +1545,27 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindDeploymentArtifacts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddeploymentartifacts)
   * **Find deployment artifacts**
   * Identify deployment artifacts including Dockerfiles, docker-compose files, and Kubernetes manifests.
+* [io.moderne.prethink.calm.FindDjangoEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddjangoendpoints)
+  * **Find Django endpoints**
+  * Identify REST/HTTP endpoints in Django and Django REST Framework applications. Detects class-based views, function-based views with @api_view, and regular Django views with @require_http_methods decorators.
 * [io.moderne.prethink.calm.FindExpressEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findexpressendpoints)
   * **Find Express endpoints**
   * Identify REST/HTTP endpoints in Express and Fastify applications. Detects app.get(), router.post(), and similar route definition patterns.
 * [io.moderne.prethink.calm.FindExternalServiceCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findexternalservicecalls)
   * **Find external service calls**
   * Identify outbound HTTP calls to external services. Detects RestTemplate, WebClient, Feign clients, Apache HttpClient, OkHttp, and JAX-RS clients.
+* [io.moderne.prethink.calm.FindFastAPIEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findfastapiendpoints)
+  * **Find FastAPI endpoints**
+  * Identify REST/HTTP endpoints in FastAPI applications. Detects @app.get(), @router.post(), and similar route decorator patterns.
+* [io.moderne.prethink.calm.FindFlaskEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findflaskendpoints)
+  * **Find Flask endpoints**
+  * Identify REST/HTTP endpoints in Flask applications. Detects @app.route(), @blueprint.route(), and Flask 2.0+ shortcut decorators like @app.get() and @app.post().
+* [io.moderne.prethink.calm.FindGraphQLEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgraphqlendpoints)
+  * **Find GraphQL endpoints**
+  * Identify GraphQL endpoints exposed by the application. Supports Spring GraphQL, Netflix DGS, and GraphQL Java (graphql-java-tools).
+* [io.moderne.prethink.calm.FindGrpcServices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgrpcservices)
+  * **Find gRPC services**
+  * Identify gRPC service implementations in the application. Detects classes extending generated ImplBase classes and @GrpcService annotations.
 * [io.moderne.prethink.calm.FindMessagingConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmessagingconnections)
   * **Find messaging connections**
   * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, and AWS SQS messaging.
@@ -1581,6 +1602,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindPythonProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythonprojectmetadata)
   * **Find Python project metadata**
   * Extract project metadata (name, version, description) from Python pyproject.toml files.
+* [io.moderne.prethink.calm.FindPythonTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythontestcoverage)
+  * **Find Python test coverage**
+  * Identify test methods in Python test files. Detects pytest test functions/classes and unittest.TestCase subclasses, and populates the TestMapping table.
+* [io.moderne.prethink.calm.FindSQLAlchemyModels](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsqlalchemymodels)
+  * **Find SQLAlchemy and Django ORM models**
+  * Identify ORM model classes in Python applications. Detects SQLAlchemy models with DeclarativeBase inheritance, Flask-SQLAlchemy models with db.Model, and Django ORM models extending models.Model.
+* [io.moderne.prethink.calm.FindScheduledTasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findscheduledtasks)
+  * **Find scheduled tasks**
+  * Identify scheduled tasks and background jobs in the application. Supports Spring @Scheduled, Quartz Job, and Jakarta/Javax EJB Timer annotations.
 * [io.moderne.prethink.calm.FindSecurityConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsecurityconfiguration)
   * **Find security configuration**
   * Identify security configurations including Spring Security, OAuth2, and CORS settings.
@@ -1596,9 +1626,24 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindTypeORMEntities](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findtypeormentities)
   * **Find TypeORM entities**
   * Identify TypeORM entities in Node.js applications. Detects @Entity() decorator on classes and populates the DatabaseConnections table.
+* [io.moderne.prethink.calm.FindWebSocketEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findwebsocketendpoints)
+  * **Find WebSocket endpoints**
+  * Identify WebSocket endpoints in the application. Supports Spring WebSocket, Spring STOMP messaging, and Jakarta/Javax WebSocket.
 * [io.moderne.prethink.calm.GenerateCalmMermaidDiagram](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/generatecalmmermaiddiagram)
   * **Generate architecture mermaid diagram**
   * Generate a markdown file with a mermaid architecture diagram from discovered service endpoints, database connections, external service calls, and messaging connections.
+* [io.moderne.prethink.quality.FindClassMetrics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findclassmetrics)
+  * **Find class quality metrics**
+  * Compute per-class code quality metrics including WMC, LCOM4, TCC, CBO, and maintainability index.
+* [io.moderne.prethink.quality.FindCodeSmells](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findcodesmells)
+  * **Find code smells**
+  * Detect code smells including God Class, Feature Envy, and Data Class using composite metric thresholds with severity ratings.
+* [io.moderne.prethink.quality.FindMethodComplexity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findmethodcomplexity)
+  * **Find method complexity**
+  * Compute per-method code quality metrics including cyclomatic complexity, cognitive complexity, max nesting depth, line count, parameter count, ABC metric, and Halstead measures.
+* [io.moderne.prethink.quality.FindPackageMetrics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findpackagemetrics)
+  * **Find package quality metrics**
+  * Compute per-package architectural quality metrics including afferent/efferent coupling, instability, abstractness, distance from the main sequence, and dependency cycle detection using Tarjan's strongly connected components algorithm.
 
 
 ## rewrite-program-analysis
@@ -2045,6 +2090,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.UpgradeSpringBoot_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
   * **Migrate to Spring Boot 4.0 (Moderne Edition)**
   * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 4.0.
+* [io.moderne.java.spring.boot4.UpgradeSpringKafka_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringkafka_4_0)
+  * **Migrate to Spring Kafka 4.0**
+  * Migrate applications to Spring Kafka 4.0. This includes removing deprecated configuration options that are no longer supported.
 * [io.moderne.java.spring.cloud2020.SpringCloudProperties_2020](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2020/springcloudproperties_2020)
   * **Migrate Spring Cloud properties to 2020**
   * Migrate properties found in `application.properties` and `application.yml`.
@@ -2171,6 +2219,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework7.MigrateListenableFuture](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratelistenablefuture)
   * **Migrate `ListenableFuture` to `CompletableFuture`**
   * Spring Framework 6.0 deprecated `ListenableFuture` in favor of `CompletableFuture`. Spring Framework 7.0 removes `ListenableFuture` entirely. This recipe migrates usages of `ListenableFuture` and its callbacks to use `CompletableFuture` and `BiConsumer` instead.
+* [io.moderne.java.spring.framework7.MigrateResponseEntityGetStatusCodeValueMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migrateresponseentitygetstatuscodevaluemethod)
+  * **Migrate `ResponseEntity#getStatusCodeValue()` to `getStatusCode().value()`**
+  * Replaces calls to `ResponseEntity#getStatusCodeValue()` which was deprecated in Spring Framework 6.0 and removed in Spring Framework 7.0 with `getStatusCode().value()`.
 * [io.moderne.java.spring.framework7.RemoveSpringJcl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/removespringjcl)
   * **Remove spring-jcl dependency**
   * The `spring-jcl` module has been removed in Spring Framework 7.0 in favor of Apache Commons Logging 1.3.0. This recipe removes any explicit dependency on `org.springframework:spring-jcl`. The change should be transparent for most applications, as spring-jcl was typically a transitive dependency and the logging API calls (`org.apache.commons.logging.*`) remain unchanged.

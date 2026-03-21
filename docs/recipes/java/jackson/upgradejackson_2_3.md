@@ -46,11 +46,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Update `lombok.config` for Jackson 3 compatibility](../../java/jackson/lombokjacksonizedconfig)
 * [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](../../java/jackson/updateserializationinclusionconfiguration)
 * [Use format alignment `ObjectMappers`](../../java/jackson/useformatalignedobjectmappers)
+* [Migrate `JsonMapper` setter calls to builder pattern](../../java/jackson/migratemappersetterstobuilder)
 * [Upgrade Jackson 2.x dependencies to 3.x](../../java/jackson/upgradejackson_2_3_dependencies)
 * [Update Jackson 2.x types to 3.x](../../java/jackson/upgradejackson_2_3_typechanges)
 * [Rename Jackson 2.x methods to 3.x equivalents](../../java/jackson/upgradejackson_2_3_methodrenames)
 * [Remove redundant Jackson 3 feature flag configurations](../../java/jackson/upgradejackson_2_3_removeredundantfeatureflags)
 * [Migrate relocated feature constants to DateTimeFeature and EnumFeature](../../java/jackson/upgradejackson_2_3_relocatedfeatureconstants)
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `com.fasterxml.jackson.core.JsonToken.FIELD_NAME`
+  * fullyQualifiedConstantName: `com.fasterxml.jackson.core.JsonToken.PROPERTY_NAME`
+* [Replace `ObjectMapper.copy()` with `rebuild().build()`](../../java/jackson/replaceobjectmappercopy)
 * [Remove registrations of modules built-in to Jackson 3](../../java/jackson/removebuiltinmoduleregistrations)
 * [Use modern date/time serialization defaults](../../java/jackson/usemoderndatetimeserialization)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](../../java/jackson/replacestreamwritecapability)
@@ -90,11 +95,16 @@ recipeList:
   - org.openrewrite.java.jackson.LombokJacksonizedConfig
   - org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration
   - org.openrewrite.java.jackson.UseFormatAlignedObjectMappers
+  - org.openrewrite.java.jackson.MigrateMapperSettersToBuilder
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RelocatedFeatureConstants
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.fasterxml.jackson.core.JsonToken.FIELD_NAME
+      fullyQualifiedConstantName: com.fasterxml.jackson.core.JsonToken.PROPERTY_NAME
+  - org.openrewrite.java.jackson.ReplaceObjectMapperCopy
   - org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations
   - org.openrewrite.java.jackson.UseModernDateTimeSerialization
   - org.openrewrite.java.jackson.ReplaceStreamWriteCapability

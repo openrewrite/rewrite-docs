@@ -26,6 +26,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | interfaceType | The fully qualified name of the interface to remove. | `java.io.Serializable` |
 | `String` | filter | *Optional*. Only apply the interface removal to classes with fully qualified names that begin with this filter. `null` or empty matches all classes. | `com.yourorg.` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Update Jackson 2.x types to 3.x](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
+
 ## Example
 
 ###### Parameters
