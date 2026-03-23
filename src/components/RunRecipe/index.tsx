@@ -50,7 +50,7 @@ export default function RunRecipe({
 
   const dataTableMavenConfig = hasDataTables ? '<exportDatatables>true</exportDatatables>\n          ' : '';
   const dataTableGradleConfig = hasDataTables ? '\n    setExportDatatables(true)' : '';
-  const dataTableCliFlag = hasDataTables ? ' -Drewrite.exportDatatables=true' : '';
+  const dataTableCliFlag = hasDataTables ? ' --define rewrite.exportDatatables=true' : '';
 
   // JavaScript recipes
   if (npmPackage) {
@@ -170,7 +170,7 @@ rootProject {
 </project>`;
 
   // Maven CLI snippet
-  const mavenCli = `mvn -U org.openrewrite.maven:rewrite-maven-plugin:run${hasDependency ? ` -Drewrite.recipeArtifactCoordinates=${groupId}:${artifactId}:RELEASE` : ''} -Drewrite.activeRecipes=${activeRecipeName}${dataTableCliFlag}`;
+  const mavenCli = `mvn -U org.openrewrite.maven:rewrite-maven-plugin:run${hasDependency ? ` --define rewrite.recipeArtifactCoordinates=${groupId}:${artifactId}:RELEASE` : ''} --define rewrite.activeRecipes=${activeRecipeName}${dataTableCliFlag}`;
 
   return (
     <>
