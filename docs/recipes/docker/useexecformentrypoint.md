@@ -14,7 +14,7 @@ _Converts shell form `ENTRYPOINT` and `CMD` instructions to exec form (JSON arra
 
 ## Recipe source
 
-[GitHub: UseExecFormEntrypoint.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/docker/UseExecFormEntrypoint.java),
+[GitHub: UseExecFormEntrypoint.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-docker/src/main/java/org/openrewrite/docker/UseExecFormEntrypoint.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
 
@@ -78,9 +78,6 @@ FROM ubuntu:22.04
 <RunRecipe
   recipeName="org.openrewrite.docker.UseExecFormEntrypoint"
   displayName="Use exec form for `ENTRYPOINT` and `CMD`"
-  groupId="org.openrewrite"
-  artifactId="rewrite-docker"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   hasDataTables
 />
 

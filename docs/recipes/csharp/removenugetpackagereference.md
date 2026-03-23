@@ -14,7 +14,7 @@ _Removes a `<PackageReference>` element from .csproj files._
 
 ## Recipe source
 
-[GitHub: RemoveNuGetPackageReference.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/csharp/RemoveNuGetPackageReference.java),
+[GitHub: RemoveNuGetPackageReference.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/RemoveNuGetPackageReference.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 
@@ -44,9 +44,6 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.csharp.RemoveNuGetPackageReference"
   displayName="Remove NuGet package reference"
-  groupId="org.openrewrite"
-  artifactId="rewrite-csharp"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
   requiresConfiguration
   cliOptions={' --recipe-option "packageName=Newtonsoft.Json"'}
   showGradle={false}

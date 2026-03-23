@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add explicit dependency versions](../maven/cleanup/explicitdependencyversion)
 * [Add explicit `groupId` to Maven plugins](../maven/cleanup/explicitplugingroupid)
 * [Add explicit plugin versions](../maven/cleanup/explicitpluginversion)
+* [Dependencies should not have `system` scope](../maven/cleanup/nosystemscopedependencies)
 * [Drop prefixless expressions in POM](../maven/cleanup/prefixlessexpressions)
 * [Order POM elements](../maven/orderpomelements)
 * [Remove duplicate Maven dependencies](../maven/removeduplicatedependencies)
@@ -56,6 +57,7 @@ recipeList:
   - org.openrewrite.maven.cleanup.ExplicitDependencyVersion
   - org.openrewrite.maven.cleanup.ExplicitPluginGroupId
   - org.openrewrite.maven.cleanup.ExplicitPluginVersion
+  - org.openrewrite.maven.cleanup.NoSystemScopeDependencies
   - org.openrewrite.maven.cleanup.PrefixlessExpressions
   - org.openrewrite.maven.OrderPomElements
   - org.openrewrite.maven.RemoveDuplicateDependencies

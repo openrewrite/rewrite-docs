@@ -14,7 +14,7 @@ _Changes the `<TargetFramework>` or `<TargetFrameworks>` value in .csproj files.
 
 ## Recipe source
 
-[GitHub: ChangeDotNetTargetFramework.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/csharp/ChangeDotNetTargetFramework.java),
+[GitHub: ChangeDotNetTargetFramework.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/ChangeDotNetTargetFramework.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 
@@ -46,9 +46,6 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.csharp.ChangeDotNetTargetFramework"
   displayName="Change .NET target framework"
-  groupId="org.openrewrite"
-  artifactId="rewrite-csharp"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
   requiresConfiguration
   cliOptions={' --recipe-option "oldTargetFramework=net8.0" --recipe-option "newTargetFramework=net9.0"'}
   showGradle={false}

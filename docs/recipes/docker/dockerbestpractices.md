@@ -18,7 +18,7 @@ _Apply a set of Docker best practices to Dockerfiles. This recipe applies securi
 
 ## Recipe source
 
-[GitHub: docker.yml](https://github.com/openrewrite/rewrite/blob/main/src/main/resources/META-INF/rewrite/docker.yml),
+[GitHub: docker.yml](https://github.com/openrewrite/rewrite/blob/main/rewrite-docker/src/main/resources/META-INF/rewrite/docker.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
 
@@ -161,9 +161,6 @@ USER appuser
 <RunRecipe
   recipeName="org.openrewrite.docker.DockerBestPractices"
   displayName="Apply Docker best practices"
-  groupId="org.openrewrite"
-  artifactId="rewrite-docker"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   hasDataTables
 />
 

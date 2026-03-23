@@ -14,7 +14,7 @@ _Upgrades the version of a NuGet `<PackageReference>` or `<PackageVersion>` in .
 
 ## Recipe source
 
-[GitHub: UpgradeNuGetPackageVersion.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/csharp/UpgradeNuGetPackageVersion.java),
+[GitHub: UpgradeNuGetPackageVersion.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-csharp/src/main/java/org/openrewrite/csharp/UpgradeNuGetPackageVersion.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-csharp/)
 
@@ -48,9 +48,6 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.csharp.UpgradeNuGetPackageVersion"
   displayName="Upgrade NuGet package version"
-  groupId="org.openrewrite"
-  artifactId="rewrite-csharp"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
   requiresConfiguration
   cliOptions={' --recipe-option "packageName=Newtonsoft.Json" --recipe-option "newVersion=latest.release" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}

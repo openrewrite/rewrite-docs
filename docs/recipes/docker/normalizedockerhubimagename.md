@@ -14,7 +14,7 @@ _Normalizes Docker Hub image names to their canonical short form by removing red
 
 ## Recipe source
 
-[GitHub: NormalizeDockerHubImageName.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/docker/NormalizeDockerHubImageName.java),
+[GitHub: NormalizeDockerHubImageName.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-docker/src/main/java/org/openrewrite/docker/NormalizeDockerHubImageName.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
 
@@ -64,9 +64,6 @@ RUN apt-get update
 <RunRecipe
   recipeName="org.openrewrite.docker.NormalizeDockerHubImageName"
   displayName="Normalize Docker Hub image names"
-  groupId="org.openrewrite"
-  artifactId="rewrite-docker"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   hasDataTables
 />
 

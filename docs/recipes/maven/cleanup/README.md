@@ -15,6 +15,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add explicit dependency versions](./explicitdependencyversion.md)
 * [Add explicit `groupId` to Maven plugins](./explicitplugingroupid.md)
 * [Add explicit plugin versions](./explicitpluginversion.md)
+* [Dependencies should not have `system` scope](./nosystemscopedependencies.md)
 * [Dependency management dependencies should have a version](./dependencymanagementdependencyrequiresversion.md)
 
 

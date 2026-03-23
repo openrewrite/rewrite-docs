@@ -1,86 +1,39 @@
 ---
-sidebar_label: "Apply Docker security best practices"
+sidebar_label: "Dependencies should not have `system` scope"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Apply Docker security best practices
+# Dependencies should not have `system` scope
 
-**org.openrewrite.docker.DockerSecurityBestPractices**
+**org.openrewrite.maven.cleanup.NoSystemScopeDependencies**
 
-_Apply security-focused Docker best practices to Dockerfiles. This includes running as a non-root user (CIS 4.1) and using COPY instead of ADD where appropriate (CIS 4.9)._
-
-### Tags
-
-* [security](/reference/recipes-by-tag#security)
-* [docker](/reference/recipes-by-tag#docker)
+_Replaces `<scope>system</scope>` with the default compile scope and removes `<systemPath>` for dependencies that are available in configured repositories._
 
 ## Recipe source
 
-[GitHub: docker.yml](https://github.com/openrewrite/rewrite/blob/main/rewrite-docker/src/main/resources/META-INF/rewrite/docker.yml),
+[GitHub: NoSystemScopeDependencies.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/cleanup/NoSystemScopeDependencies.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-maven/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Add `USER` instruction](../docker/adduserinstruction)
-  * userName: `appuser`
-* [Replace `ADD` with `COPY`](../docker/replaceaddwithcopy)
-* [Find containers running as root](../docker/search/findrootuser)
-* [Find unpinned base images](../docker/search/findunpinnedbaseimages)
-* [Find end-of-life Docker base images](../docker/search/findendoflifeimages)
-* [Find missing `HEALTHCHECK`](../docker/search/findmissinghealthcheck)
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.docker.DockerSecurityBestPractices
-displayName: Apply Docker security best practices
-description: |
-  Apply security-focused Docker best practices to Dockerfiles. This includes running as a non-root user (CIS 4.1) and using COPY instead of ADD where appropriate (CIS 4.9).
-tags:
-  - security
-  - docker
-recipeList:
-  - org.openrewrite.docker.AddUserInstruction:
-      userName: appuser
-  - org.openrewrite.docker.ReplaceAddWithCopy
-  - org.openrewrite.docker.search.FindRootUser
-  - org.openrewrite.docker.search.FindUnpinnedBaseImages
-  - org.openrewrite.docker.search.FindEndOfLifeImages
-  - org.openrewrite.docker.search.FindMissingHealthcheck
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Apply Docker best practices](/recipes/docker/dockerbestpractices.md)
+* [Apache Maven best practices](/recipes/maven/bestpractices.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.docker.DockerSecurityBestPractices"
-  displayName="Apply Docker security best practices"
+  recipeName="org.openrewrite.maven.cleanup.NoSystemScopeDependencies"
+  displayName="Dependencies should not have `system` scope"
+  showGradle={false}
   hasDataTables
 />
 
@@ -88,7 +41,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.docker.DockerSecurityBestPractices" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.maven.cleanup.NoSystemScopeDependencies" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -162,24 +115,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.docker.table.EolDockerImages" label="EolDockerImages">
-
-### End-of-life Docker images
-**org.openrewrite.docker.table.EolDockerImages**
-
-_Records Docker base images that have reached end-of-life._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The Dockerfile containing the EOL base image. |
-| Stage name | The build stage name (from AS clause), if specified. |
-| Image name | The name of the base image. |
-| Tag | The image tag. |
-| EOL date | The date when the image reached end-of-life. |
-| Suggested replacement | Recommended newer version to migrate to. |
 
 </TabItem>
 

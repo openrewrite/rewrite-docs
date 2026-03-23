@@ -19,7 +19,7 @@ _Apply build optimization best practices to Dockerfiles. This includes combining
 
 ## Recipe source
 
-[GitHub: docker.yml](https://github.com/openrewrite/rewrite/blob/main/src/main/resources/META-INF/rewrite/docker.yml),
+[GitHub: docker.yml](https://github.com/openrewrite/rewrite/blob/main/rewrite-docker/src/main/resources/META-INF/rewrite/docker.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
 
@@ -71,9 +71,6 @@ This recipe is used as part of the following composite recipes:
 <RunRecipe
   recipeName="org.openrewrite.docker.DockerBuildOptimization"
   displayName="Optimize Docker builds"
-  groupId="org.openrewrite"
-  artifactId="rewrite-docker"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   hasDataTables
 />
 

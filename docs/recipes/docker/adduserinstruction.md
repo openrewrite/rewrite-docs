@@ -14,7 +14,7 @@ _Adds a `USER` instruction to run the container as a non-root user (CIS Docker B
 
 ## Recipe source
 
-[GitHub: AddUserInstruction.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/docker/AddUserInstruction.java),
+[GitHub: AddUserInstruction.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-docker/src/main/java/org/openrewrite/docker/AddUserInstruction.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
 
@@ -97,9 +97,6 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.docker.AddUserInstruction"
   displayName="Add `USER` instruction"
-  groupId="org.openrewrite"
-  artifactId="rewrite-docker"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   requiresConfiguration
   cliOptions={' --recipe-option "userName=appuser" --recipe-option "groupName=appgroup" --recipe-option "stageName=final"'}
   hasDataTables

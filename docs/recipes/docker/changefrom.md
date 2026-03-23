@@ -14,7 +14,7 @@ _Change the base image in a Dockerfile FROM instruction._
 
 ## Recipe source
 
-[GitHub: ChangeFrom.java](https://github.com/openrewrite/rewrite/blob/main/src/main/java/org/openrewrite/docker/ChangeFrom.java),
+[GitHub: ChangeFrom.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-docker/src/main/java/org/openrewrite/docker/ChangeFrom.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-docker/)
 
@@ -101,9 +101,6 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.docker.ChangeFrom"
   displayName="Change Docker FROM"
-  groupId="org.openrewrite"
-  artifactId="rewrite-docker"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   requiresConfiguration
   cliOptions={' --recipe-option "oldImageName=ubuntu" --recipe-option "oldTag=20.*" --recipe-option "oldDigest=sha256:*" --recipe-option "oldPlatform=linux/amd64" --recipe-option "newImageName=ubuntu" --recipe-option "newTag=22.04" --recipe-option "newDigest=sha256:abc123..." --recipe-option "newPlatform=linux/arm64"'}
   hasDataTables

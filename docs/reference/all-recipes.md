@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4224
+Total recipes: 4225
 
 
 ## org.openrewrite
@@ -909,7 +909,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_86 recipes_
+_87 recipes_
 
 * [org.openrewrite.maven.AddAnnotationProcessor](/recipes/maven/addannotationprocessor.md)
   * **Add an annotation processor to `maven-compiler-plugin`**
@@ -1109,6 +1109,9 @@ _86 recipes_
 * [org.openrewrite.maven.cleanup.ExplicitPluginVersion](/recipes/maven/cleanup/explicitpluginversion.md)
   * **Add explicit plugin versions**
   * Add explicit plugin versions to POMs for reproducibility, as [MNG-4173](https://issues.apache.org/jira/browse/MNG-4173) removes automatic version resolution for POM plugins.
+* [org.openrewrite.maven.cleanup.NoSystemScopeDependencies](/recipes/maven/cleanup/nosystemscopedependencies.md)
+  * **Dependencies should not have `system` scope**
+  * Replaces `&lt;scope&gt;system&lt;/scope&gt;` with the default compile scope and removes `&lt;systemPath&gt;` for dependencies that are available in configured repositories.
 * [org.openrewrite.maven.cleanup.PrefixlessExpressions](/recipes/maven/cleanup/prefixlessexpressions.md)
   * **Drop prefixless expressions in POM**
   * MNG-7404 drops support for prefixless in POMs. This recipe will add the `project.` prefix where missing.
