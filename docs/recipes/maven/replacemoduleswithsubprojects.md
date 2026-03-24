@@ -71,6 +71,10 @@ This recipe is used as part of the following composite recipes:
 <RunRecipe
   recipeName="org.openrewrite.maven.ReplaceModulesWithSubprojects"
   displayName="Replace modules with subprojects"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   showGradle={false}
   hasDataTables
 />

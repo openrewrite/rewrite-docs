@@ -77,6 +77,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.toml.CreateTomlFile"
   displayName="Create TOML file"
+  groupId="org.openrewrite"
+  artifactId="rewrite-toml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_TOML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "relativeFileName=pyproject.toml" --recipe-option "fileContents=>\n        [tool.poetry]\n        name = "my-project"\n        version = "0.1.0"" --recipe-option "fileContentsUrl=https://raw.githubusercontent.com/example/repo/main/pyproject.toml"'}
   hasDataTables

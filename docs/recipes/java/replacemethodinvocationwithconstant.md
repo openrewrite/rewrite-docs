@@ -53,6 +53,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ReplaceMethodInvocationWithConstant"
   displayName="Replace method invocation with constant"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.lang.StringBuilder append(java.lang.String)" --recipe-option "replacement=null"'}
   hasDataTables

@@ -97,6 +97,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ChangeMethodTargetToStatic"
   displayName="Change method target to static"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=com.google.common.collect.ImmutableSet of(..)" --recipe-option "fullyQualifiedTargetTypeName=java.util.Set" --recipe-option "returnType=java.util.Set"'}
   hasDataTables

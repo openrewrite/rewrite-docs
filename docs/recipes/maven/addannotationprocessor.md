@@ -154,6 +154,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddAnnotationProcessor"
   displayName="Add an annotation processor to `maven-compiler-plugin`"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.projectlombok" --recipe-option "artifactId=lombok-mapstruct-binding" --recipe-option "version=0.2.0"'}
   showGradle={false}

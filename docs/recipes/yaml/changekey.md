@@ -98,6 +98,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.yaml.ChangeKey"
   displayName="Change key"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldKeyPath=$.subjects.kind" --recipe-option "newKey=kind"'}
   hasDataTables

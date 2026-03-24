@@ -74,6 +74,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.properties.CreatePropertiesFile"
   displayName="Create Properties file"
+  groupId="org.openrewrite"
+  artifactId="rewrite-properties"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.properties" --recipe-option "fileContents=a.property=value"'}
   hasDataTables

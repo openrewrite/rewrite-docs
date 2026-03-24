@@ -69,6 +69,10 @@ This recipe is used as part of the following composite recipes:
 <RunRecipe
   recipeName="org.openrewrite.gradle.MigrateToGradle9"
   displayName="Migrate to Gradle 9 from Gradle 8"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

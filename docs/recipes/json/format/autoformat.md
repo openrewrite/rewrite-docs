@@ -67,6 +67,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.json.format.AutoFormat"
   displayName="Format JSON"
+  groupId="org.openrewrite"
+  artifactId="rewrite-json"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JSON"
+  isCoreLibrary
   hasDataTables
 />
 

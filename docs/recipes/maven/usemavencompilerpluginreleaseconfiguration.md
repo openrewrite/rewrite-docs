@@ -134,6 +134,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration"
   displayName="Use Maven compiler plugin release configuration"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "releaseVersion=11"'}
   showGradle={false}

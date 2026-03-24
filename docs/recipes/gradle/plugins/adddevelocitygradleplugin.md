@@ -37,6 +37,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin"
   displayName="Add the Develocity Gradle plugin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

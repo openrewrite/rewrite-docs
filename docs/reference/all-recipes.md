@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4225
+Total recipes: 4226
 
 
 ## org.openrewrite
@@ -212,7 +212,7 @@ _18 recipes_
 
 _License: Apache License Version 2.0_
 
-_63 recipes_
+_64 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -250,6 +250,9 @@ _63 recipes_
 * [org.openrewrite.gradle.ChangeManagedDependency](/recipes/gradle/changemanageddependency.md)
   * **Change Gradle managed dependency**
   * Change a Gradle managed dependency coordinates. The `newGroupId` or `newArtifactId` **MUST** be different from before. For now, only Spring Dependency Management Plugin entries are supported and no other forms of managed dependencies (yet).
+* [org.openrewrite.gradle.ChangeTaskToTasksRegister](/recipes/gradle/changetasktotasksregister.md)
+  * **Change Gradle task eager creation to lazy registration**
+  * Changes eager task creation `task exampleName(type: ExampleType)` to lazy registration `tasks.register(&quot;exampleName&quot;, ExampleType)`. Also supports Kotlin DSL: `task&lt;ExampleType&gt;(&quot;exampleName&quot;)` to `tasks.register&lt;ExampleType&gt;(&quot;exampleName&quot;)`.
 * [org.openrewrite.gradle.DependencyConstraintToRule](/recipes/gradle/dependencyconstrainttorule.md)
   * **Dependency constraint to resolution rule**
   * Gradle [dependency constraints](https://docs.gradle.org/current/userguide/dependency_constraints.html#dependency-constraints) are useful for managing the versions of transitive dependencies. Some plugins, such as the Spring Dependency Management plugin, do not respect these constraints. This recipe converts constraints into [resolution rules](https://docs.gradle.org/current/userguide/resolution_rules.html), which can achieve similar effects to constraints but are harder for plugins to ignore.

@@ -60,6 +60,10 @@ fun method(arg1: String,
 <RunRecipe
   recipeName="org.openrewrite.kotlin.cleanup.RemoveTrailingComma"
   displayName="Remove trailing comma in Kotlin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   hasDataTables
 />
 

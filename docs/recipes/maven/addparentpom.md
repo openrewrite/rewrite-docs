@@ -114,6 +114,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddParentPom"
   displayName="Add Maven parent"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-starter-parent" --recipe-option "version=29.X" --recipe-option "relativePath=../pom.xml" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}

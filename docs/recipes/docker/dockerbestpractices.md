@@ -161,6 +161,10 @@ USER appuser
 <RunRecipe
   recipeName="org.openrewrite.docker.DockerBestPractices"
   displayName="Apply Docker best practices"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   hasDataTables
 />
 

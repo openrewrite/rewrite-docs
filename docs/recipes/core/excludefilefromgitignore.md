@@ -45,6 +45,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.ExcludeFileFromGitignore"
   displayName="Remove ignoral of files or directories from .gitignore"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "paths=/folder/file.txt"'}
   hasDataTables

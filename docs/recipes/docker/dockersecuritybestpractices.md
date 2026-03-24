@@ -81,6 +81,10 @@ This recipe is used as part of the following composite recipes:
 <RunRecipe
   recipeName="org.openrewrite.docker.DockerSecurityBestPractices"
   displayName="Apply Docker security best practices"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   hasDataTables
 />
 

@@ -129,6 +129,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddDevelocityMavenExtension"
   displayName="Add the Develocity Maven extension"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "version=1.17.4" --recipe-option "server=https://scans.gradle.com/" --recipe-option "allowUntrustedServer=true" --recipe-option "fileFingerprints=true" --recipe-option "uploadInBackground=false" --recipe-option "publishCriteria=Always"'}
   showGradle={false}

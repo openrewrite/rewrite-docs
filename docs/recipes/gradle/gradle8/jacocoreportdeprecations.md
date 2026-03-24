@@ -110,6 +110,10 @@ jacocoTestReport {
 <RunRecipe
   recipeName="org.openrewrite.gradle.gradle8.JacocoReportDeprecations"
   displayName="Replace Gradle 8 introduced deprecations in JaCoCo report task"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

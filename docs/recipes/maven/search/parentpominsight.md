@@ -117,6 +117,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.search.ParentPomInsight"
   displayName="Maven parent insight"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupIdPattern=org.springframework.boot" --recipe-option "artifactIdPattern=spring-boot-starter-*" --recipe-option "version=1.x"'}
   showGradle={false}

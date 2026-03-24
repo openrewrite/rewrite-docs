@@ -64,6 +64,10 @@ RUN apt-get update
 <RunRecipe
   recipeName="org.openrewrite.docker.search.FindUnpinnedBaseImages"
   displayName="Find unpinned base images"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   hasDataTables
 />
 

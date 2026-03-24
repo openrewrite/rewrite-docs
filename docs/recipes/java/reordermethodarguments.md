@@ -64,6 +64,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ReorderMethodArguments"
   displayName="Reorder method arguments"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(String, Integer, Integer)" --recipe-option "newParameterNames=[foo, bar, baz]" --recipe-option "oldParameterNames=[baz, bar, foo]"'}
   hasDataTables

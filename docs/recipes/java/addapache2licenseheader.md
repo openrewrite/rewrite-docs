@@ -70,6 +70,10 @@ limitations under the License.
 <RunRecipe
   recipeName="org.openrewrite.java.AddApache2LicenseHeader"
   displayName="Add ASLv2 license header"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   hasDataTables
 />
 

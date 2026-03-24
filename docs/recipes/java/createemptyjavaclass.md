@@ -76,6 +76,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.CreateEmptyJavaClass"
   displayName="Create Java class"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "sourceRoot=src/main/java" --recipe-option "packageName=org.openrewrite.example" --recipe-option "modifier=public" --recipe-option "className=ExampleClass" --recipe-option "relativePath=foo/bar"'}
   hasDataTables

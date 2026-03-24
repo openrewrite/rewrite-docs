@@ -50,6 +50,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddRuntimeConfig"
   displayName="Add a configuration option for the Maven runtime"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "relativeConfigFileName=maven.config" --recipe-option "flag=\'-T\'" --recipe-option "argument=3" --recipe-option "separator=="'}
   showGradle={false}

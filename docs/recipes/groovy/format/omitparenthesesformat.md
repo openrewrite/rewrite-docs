@@ -26,6 +26,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.groovy.format.OmitParenthesesFormat"
   displayName="Stylize Groovy code to omit parentheses"
+  groupId="org.openrewrite"
+  artifactId="rewrite-groovy"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GROOVY"
+  isCoreLibrary
   hasDataTables
 />
 

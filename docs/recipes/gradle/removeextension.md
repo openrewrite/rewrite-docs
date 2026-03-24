@@ -51,6 +51,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.RemoveExtension"
   displayName="Remove build extension by name"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodName=buildCache"'}
   showMaven={false}

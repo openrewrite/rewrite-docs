@@ -238,6 +238,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.ChangeParentPom"
   displayName="Change Maven parent"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldGroupId=org.springframework.boot" --recipe-option "newGroupId=org.springframework.boot" --recipe-option "oldArtifactId=spring-boot-starter-parent" --recipe-option "newArtifactId=spring-boot-starter-parent" --recipe-option "newVersion=29.X" --recipe-option "oldRelativePath=../../pom.xml" --recipe-option "newRelativePath=../pom.xml" --recipe-option "versionPattern=\'-jre\'" --recipe-option "except=com.jcraft:jsch"'}
   showGradle={false}

@@ -185,6 +185,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.AddCommentToImport"
   displayName="Add comment to import statement"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "comment=This is a comment." --recipe-option "typePattern=org.springframework..*"'}
   hasDataTables

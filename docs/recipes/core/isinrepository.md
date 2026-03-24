@@ -44,6 +44,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.IsInRepository"
   displayName="Is in repository"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "allowedRepositories=rewrite"'}
   hasDataTables

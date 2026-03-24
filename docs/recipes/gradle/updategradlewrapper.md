@@ -113,6 +113,10 @@ zipStorePath=wrapper/dists
 <RunRecipe
   recipeName="org.openrewrite.gradle.UpdateGradleWrapper"
   displayName="Update Gradle wrapper"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

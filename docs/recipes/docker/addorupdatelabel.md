@@ -89,6 +89,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.docker.AddOrUpdateLabel"
   displayName="Add Docker LABEL instruction"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "key=org.opencontainers.image.version" --recipe-option "value=1.0.0" --recipe-option "stageName=final"'}
   hasDataTables

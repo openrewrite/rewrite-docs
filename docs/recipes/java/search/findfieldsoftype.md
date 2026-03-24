@@ -88,6 +88,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.FindFieldsOfType"
   displayName="Find fields of type"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fullyQualifiedTypeName=org.slf4j.api.Logger"'}
   hasDataTables

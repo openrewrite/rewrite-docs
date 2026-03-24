@@ -80,6 +80,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.xml.security.RemoveOwaspSuppressions"
   displayName="Remove out-of-date OWASP suppressions"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   hasDataTables
 />
 

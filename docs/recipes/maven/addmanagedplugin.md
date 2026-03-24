@@ -128,6 +128,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddManagedPlugin"
   displayName="Add Managed Maven plugin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "version=1.0.0" --recipe-option "configuration=<configuration><foo>foo</foo></configuration>" --recipe-option "dependencies=<dependencies><dependency><groupId>com.yourorg</groupId><artifactId>core-lib</artifactId><version>1.0.0</version></dependency></dependencies>" --recipe-option "executions=<executions><execution><phase>generate-sources</phase><goals><goal>add-source</goal></goals></execution></executions>" --recipe-option "filePattern=\'**/*-parent/grpc-*/pom.xml\'"'}
   showGradle={false}

@@ -83,6 +83,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.toml.ChangeKey"
   displayName="Change TOML key"
+  groupId="org.openrewrite"
+  artifactId="rewrite-toml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_TOML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldKeyPath=package.name" --recipe-option "newKey=project-name"'}
   hasDataTables

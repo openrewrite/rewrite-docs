@@ -150,6 +150,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.ChangeDependencyClassifier"
   displayName="Change Maven dependency classifier"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "newClassifier=jar" --recipe-option "changeManagedDependency=true"'}
   showGradle={false}

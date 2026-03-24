@@ -59,6 +59,10 @@ class Test {
 <RunRecipe
   recipeName="org.openrewrite.java.format.SingleLineComments"
   displayName="Single line comments begin with a whitespace"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   hasDataTables
 />
 

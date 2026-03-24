@@ -101,6 +101,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.properties.AddProperty"
   displayName="Add a new property"
+  groupId="org.openrewrite"
+  artifactId="rewrite-properties"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "property=management.metrics.enable.process.files" --recipe-option "value=newPropValue" --recipe-option "comment=This is a comment" --recipe-option "delimiter=:" --recipe-option "orderedInsertion=false"'}
   hasDataTables

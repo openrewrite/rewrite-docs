@@ -26,6 +26,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.yaml.format.Indents"
   displayName="YAML indent"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   hasDataTables
 />
 

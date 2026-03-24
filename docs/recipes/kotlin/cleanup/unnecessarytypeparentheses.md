@@ -59,6 +59,10 @@ val y : Int = 42
 <RunRecipe
   recipeName="org.openrewrite.kotlin.cleanup.UnnecessaryTypeParentheses"
   displayName="Remove unnecessary parentheses on Kotlin types"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   hasDataTables
 />
 

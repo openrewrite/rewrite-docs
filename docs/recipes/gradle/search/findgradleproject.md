@@ -44,6 +44,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.search.FindGradleProject"
   displayName="Find Gradle projects"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "searchCriteria=Marker"'}
   showMaven={false}

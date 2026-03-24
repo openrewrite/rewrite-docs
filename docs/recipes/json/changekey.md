@@ -91,6 +91,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.json.ChangeKey"
   displayName="Change key"
+  groupId="org.openrewrite"
+  artifactId="rewrite-json"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JSON"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldKeyPath=$.subjects.kind" --recipe-option "newKey=kind"'}
   hasDataTables

@@ -67,6 +67,10 @@ locals {
 <RunRecipe
   recipeName="org.openrewrite.hcl.ReplaceLegacyAttributeIndexSyntax"
   displayName="Replace legacy attribute index syntax"
+  groupId="org.openrewrite"
+  artifactId="rewrite-hcl"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_HCL"
+  isCoreLibrary
   hasDataTables
 />
 

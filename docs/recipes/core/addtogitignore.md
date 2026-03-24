@@ -49,6 +49,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.AddToGitignore"
   displayName="Add entries to `.gitignore`"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "entries=>\n        *.tmp\n        .DS_Store\n        target/" --recipe-option "filePattern=.gitignore"'}
   hasDataTables

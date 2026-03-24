@@ -97,6 +97,10 @@ repositories { mavenCentral() }
 <RunRecipe
   recipeName="org.openrewrite.gradle.DependencyConstraintToRule"
   displayName="Dependency constraint to resolution rule"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

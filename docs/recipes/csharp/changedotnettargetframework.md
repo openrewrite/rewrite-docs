@@ -46,6 +46,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.csharp.ChangeDotNetTargetFramework"
   displayName="Change .NET target framework"
+  groupId="org.openrewrite"
+  artifactId="rewrite-csharp"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldTargetFramework=net8.0" --recipe-option "newTargetFramework=net9.0"'}
   showGradle={false}

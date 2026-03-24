@@ -67,6 +67,10 @@ This recipe is used as part of the following composite recipes:
 <RunRecipe
   recipeName="org.openrewrite.yaml.cleanup.RemoveUnused"
   displayName="Remove unused YAML"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   hasDataTables
 />
 

@@ -89,6 +89,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.yaml.search.FindProperty"
   displayName="Find YAML properties"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "propertyValue=false"'}
   hasDataTables

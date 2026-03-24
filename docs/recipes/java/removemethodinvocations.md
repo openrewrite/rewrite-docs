@@ -71,6 +71,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.RemoveMethodInvocations"
   displayName="Remove method invocations"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.lang.StringBuilder append(java.lang.String)"'}
   hasDataTables

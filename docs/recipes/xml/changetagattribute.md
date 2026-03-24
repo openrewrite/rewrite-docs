@@ -169,6 +169,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.ChangeTagAttribute"
   displayName="Change XML attribute"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "elementName=property" --recipe-option "attributeName=name" --recipe-option "newValue=newfoo.bar.attribute.value.string" --recipe-option "oldValue=foo.bar.attribute.value.string"'}
   hasDataTables

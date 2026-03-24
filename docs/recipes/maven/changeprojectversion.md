@@ -98,6 +98,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.ChangeProjectVersion"
   displayName="Change Maven Project Version"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId=\'*\'" --recipe-option "newVersion=8.4.2"'}
   showGradle={false}

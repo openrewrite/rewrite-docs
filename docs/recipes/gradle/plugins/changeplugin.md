@@ -91,6 +91,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.plugins.ChangePlugin"
   displayName="Change a Gradle plugin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "pluginId=org.openrewrite.rewrite" --recipe-option "newPluginId=org.openrewrite.rewrite" --recipe-option "newVersion=7.x"'}
   showMaven={false}

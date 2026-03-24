@@ -48,6 +48,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.MoveFile"
   displayName="Move a file"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "folder=src/main/resources/" --recipe-option "fileMatcher=\'**/*.yml\'" --recipe-option "moveTo=../yamls/"'}
   hasDataTables

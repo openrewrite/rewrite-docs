@@ -93,6 +93,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.FindImplementations"
   displayName="Find implementing classes"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "typeName=org.openrewrite.Recipe"'}
   hasDataTables

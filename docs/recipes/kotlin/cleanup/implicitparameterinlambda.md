@@ -75,6 +75,10 @@ fun method() {
 <RunRecipe
   recipeName="org.openrewrite.kotlin.cleanup.ImplicitParameterInLambda"
   displayName="`it` shouldn't be used as a lambda parameter name"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   hasDataTables
 />
 

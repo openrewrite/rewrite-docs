@@ -84,6 +84,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.hcl.DeleteContent"
   displayName="Delete content"
+  groupId="org.openrewrite"
+  artifactId="rewrite-hcl"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_HCL"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "contentPath=$.provider"'}
   hasDataTables

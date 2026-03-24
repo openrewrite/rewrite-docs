@@ -75,6 +75,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.Singleton"
   displayName="Singleton"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   hasDataTables
 />
 

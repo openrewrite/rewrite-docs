@@ -91,6 +91,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.AddTagAttribute"
   displayName="Add new XML attribute for an Element"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "elementName=//beans/bean" --recipe-option "attributeName=attribute-name" --recipe-option "newValue=value-to-add"'}
   hasDataTables

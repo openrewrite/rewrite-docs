@@ -78,6 +78,10 @@ FROM ubuntu:22.04
 <RunRecipe
   recipeName="org.openrewrite.docker.UseExecFormEntrypoint"
   displayName="Use exec form for `ENTRYPOINT` and `CMD`"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   hasDataTables
 />
 

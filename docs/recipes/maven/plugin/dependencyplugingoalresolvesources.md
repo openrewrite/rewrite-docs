@@ -114,6 +114,10 @@ foo
 <RunRecipe
   recipeName="org.openrewrite.maven.plugin.DependencyPluginGoalResolveSources"
   displayName="Migrate to `maven-dependency-plugin` goal `resolve-sources`"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   showGradle={false}
   hasDataTables
 />

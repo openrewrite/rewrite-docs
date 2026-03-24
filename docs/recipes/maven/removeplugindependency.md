@@ -153,6 +153,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.RemovePluginDependency"
   displayName="Remove Maven plugin dependency"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "pluginGroupId=org.openrewrite.maven" --recipe-option "pluginArtifactId=rewrite-maven-plugin" --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava"'}
   showGradle={false}

@@ -91,6 +91,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.search.FindPlugins"
   displayName="Find Gradle plugin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "pluginId=\'`com.jfrog.bintray`\'" --recipe-option "pluginClass=com.jfrog.bintray.gradle.BintrayPlugin"'}
   showMaven={false}

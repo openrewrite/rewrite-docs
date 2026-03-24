@@ -134,6 +134,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddProfile"
   displayName="Add Maven profile"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "id=default" --recipe-option "activation=<activation><foo>foo</foo></activation>" --recipe-option "properties=<properties><foo>foo</foo><bar>bar</bar></properties>" --recipe-option "build=<build><foo>foo</foo></build>"'}
   showGradle={false}

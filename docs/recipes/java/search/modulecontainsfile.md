@@ -40,6 +40,10 @@ This recipe is used as part of the following composite recipes:
 <RunRecipe
   recipeName="org.openrewrite.java.search.ModuleContainsFile"
   displayName="Module contains file"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   hasDataTables
 />
 

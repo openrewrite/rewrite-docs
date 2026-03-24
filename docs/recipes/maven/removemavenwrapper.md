@@ -64,6 +64,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.RemoveMavenWrapper"
   displayName="Remove Maven wrapper"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   showGradle={false}
   hasDataTables
 />

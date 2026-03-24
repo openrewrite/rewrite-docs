@@ -114,6 +114,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddProperty"
   displayName="Add Maven project property"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "key=junit.version" --recipe-option "value=4.13"'}
   showGradle={false}

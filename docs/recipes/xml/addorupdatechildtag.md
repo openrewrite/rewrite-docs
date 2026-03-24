@@ -59,6 +59,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.AddOrUpdateChildTag"
   displayName="Add or update child tag"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "parentXPath=/project//plugin//configuration" --recipe-option "newChildTag=<skip>true</skip>"'}
   hasDataTables

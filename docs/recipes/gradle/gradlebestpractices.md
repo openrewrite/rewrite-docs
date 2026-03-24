@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate to Gradle 9 from Gradle 8](../gradle/migratetogradle9)
 * [Enable Gradle build cache](../gradle/enablegradlebuildcache)
 * [Enable Gradle parallel execution](../gradle/enablegradleparallelexecution)
+* [Change Gradle task eager creation to lazy registration](../gradle/changetasktotasksregister)
 
 </TabItem>
 
@@ -48,6 +49,7 @@ recipeList:
   - org.openrewrite.gradle.MigrateToGradle9
   - org.openrewrite.gradle.EnableGradleBuildCache
   - org.openrewrite.gradle.EnableGradleParallelExecution
+  - org.openrewrite.gradle.ChangeTaskToTasksRegister
 
 ```
 </TabItem>
@@ -58,6 +60,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.GradleBestPractices"
   displayName="Apply Gradle best practices"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

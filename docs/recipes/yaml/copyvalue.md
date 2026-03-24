@@ -99,6 +99,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.yaml.CopyValue"
   displayName="Copy YAML value"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldKeyPath=$.source.kind" --recipe-option "oldFilePath=src/main/resources/application.yaml" --recipe-option "newKey=$.dest.kind" --recipe-option "newFilePath=src/main/resources/application.yaml"'}
   hasDataTables

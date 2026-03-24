@@ -110,6 +110,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.RemoveProperty"
   displayName="Remove Maven project property"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "propertyName=junit.version"'}
   showGradle={false}

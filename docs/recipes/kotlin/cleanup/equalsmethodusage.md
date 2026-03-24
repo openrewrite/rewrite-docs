@@ -71,6 +71,10 @@ fun isSame(obj1 : String, obj2: String) : Boolean {
 <RunRecipe
   recipeName="org.openrewrite.kotlin.cleanup.EqualsMethodUsage"
   displayName="Structural equality tests should use `==` or `!=`"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   hasDataTables
 />
 

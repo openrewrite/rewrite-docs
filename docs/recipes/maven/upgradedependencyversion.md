@@ -264,6 +264,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.UpgradeDependencyVersion"
   displayName="Upgrade Maven dependency version"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "retainVersions=com.jcraft:jsch"'}
   showGradle={false}

@@ -107,6 +107,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.RemoveMethodThrows"
   displayName="Remove elements from a method declaration `throws` clause"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.util.List add(..)" --recipe-option "exceptionTypePattern=java.io.IOException"'}
   hasDataTables

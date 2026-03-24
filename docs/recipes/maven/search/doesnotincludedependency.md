@@ -116,6 +116,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.search.DoesNotIncludeDependency"
   displayName="Does not include Maven dependency"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=1.x" --recipe-option "onlyDirect=true" --recipe-option "scope=compile"'}
   showGradle={false}

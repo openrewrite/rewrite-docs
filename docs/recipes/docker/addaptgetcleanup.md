@@ -76,6 +76,10 @@ FROM ubuntu:22.04
 <RunRecipe
   recipeName="org.openrewrite.docker.AddAptGetCleanup"
   displayName="Add apt-get cleanup"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   hasDataTables
 />
 

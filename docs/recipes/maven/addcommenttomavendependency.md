@@ -131,6 +131,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddCommentToMavenDependency"
   displayName="Add a comment to a `Maven` dependency or plugin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "xPath=/project/dependencies/dependency" --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "commentText=This is excluded due to CVE <X> and will be removed when we upgrade the next version is available."'}
   showGradle={false}

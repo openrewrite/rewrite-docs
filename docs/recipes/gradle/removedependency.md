@@ -115,6 +115,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.RemoveDependency"
   displayName="Remove a Gradle dependency"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "configuration=api"'}
   showMaven={false}

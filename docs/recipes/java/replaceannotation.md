@@ -108,6 +108,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ReplaceAnnotation"
   displayName="Replace annotation"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "annotationPatternToReplace=\'@org.jetbrains.annotations.NotNull("Test")\'" --recipe-option "annotationTemplateToInsert=\'@org.jetbrains.annotations.NotNull("Null not permitted")\'" --recipe-option "classpathResourceName=annotations"'}
   hasDataTables

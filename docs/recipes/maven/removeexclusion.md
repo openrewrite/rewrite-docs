@@ -132,6 +132,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.RemoveExclusion"
   displayName="Remove exclusion"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "exclusionGroupId=com.google.guava" --recipe-option "exclusionArtifactId=guava"'}
   showGradle={false}

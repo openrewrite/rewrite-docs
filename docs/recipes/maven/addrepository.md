@@ -128,6 +128,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddRepository"
   displayName="Add repository"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "id=repo-id" --recipe-option "url=http://myrepo.maven.com/repo" --recipe-option "repoName=My Great Repo Name" --recipe-option "layout=default" --recipe-option "snapshotsChecksumPolicy=warn" --recipe-option "snapshotsUpdatePolicy=always" --recipe-option "releasesChecksumPolicy=fail" --recipe-option "releasesUpdatePolicy=never" --recipe-option "type=Repository"'}
   showGradle={false}

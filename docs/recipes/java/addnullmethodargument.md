@@ -96,6 +96,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.AddNullMethodArgument"
   displayName="Add a `null` method argument"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0" --recipe-option "parameterType=java.lang.String" --recipe-option "parameterName=name" --recipe-option "explicitCast=true"'}
   hasDataTables

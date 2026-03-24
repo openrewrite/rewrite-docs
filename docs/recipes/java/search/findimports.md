@@ -72,6 +72,10 @@ class Test {
 <RunRecipe
   recipeName="org.openrewrite.java.search.FindImports"
   displayName="Find source files with imports"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   hasDataTables
 />
 

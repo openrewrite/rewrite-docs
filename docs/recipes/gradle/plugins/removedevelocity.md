@@ -129,6 +129,10 @@ gradleEnterprise {
 <RunRecipe
   recipeName="org.openrewrite.gradle.plugins.RemoveDevelocity"
   displayName="Remove Develocity"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

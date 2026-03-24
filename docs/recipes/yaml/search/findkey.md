@@ -98,6 +98,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.yaml.search.FindKey"
   displayName="Find YAML entries"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "key=$.subjects.kind"'}
   hasDataTables

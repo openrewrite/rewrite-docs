@@ -89,6 +89,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.xml.format.AutoFormat"
   displayName="Format XML"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   hasDataTables
 />
 

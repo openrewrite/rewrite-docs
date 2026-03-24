@@ -64,6 +64,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.yaml.DeleteProperty"
   displayName="Delete property"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "propertyKey=management.metrics.binders.files.*" --recipe-option "filePattern=.github/workflows/*.yml"'}
   hasDataTables

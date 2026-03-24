@@ -100,6 +100,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.yaml.CommentOutProperty"
   displayName="Comment out property"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "propertyKey=applicability.singleSource" --recipe-option "commentText=The `foo` property is deprecated, please migrate" --recipe-option "commentOutProperty=true"'}
   hasDataTables

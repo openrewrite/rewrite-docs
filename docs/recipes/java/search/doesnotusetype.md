@@ -45,6 +45,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.DoesNotUseType"
   displayName="Check whether a type is **not** in use"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fullyQualifiedTypeName=java.util.List"'}
   hasDataTables

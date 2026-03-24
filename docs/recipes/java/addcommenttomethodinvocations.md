@@ -124,6 +124,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.AddCommentToMethodInvocations"
   displayName="Add comment to method invocations"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "comment=This is a comment." --recipe-option "methodPattern=java.util.List add*(..)"'}
   hasDataTables

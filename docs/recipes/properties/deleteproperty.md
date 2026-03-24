@@ -72,6 +72,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.properties.DeleteProperty"
   displayName="Delete property by key"
+  groupId="org.openrewrite"
+  artifactId="rewrite-properties"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "propertyKey=management.metrics.binders.files.enabled or management.metrics.*"'}
   hasDataTables

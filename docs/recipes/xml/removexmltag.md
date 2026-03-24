@@ -102,6 +102,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.RemoveXmlTag"
   displayName="Remove XML tag"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "xPath=/project/dependencies/dependency" --recipe-option "fileMatcher=\'**/application-*.xml\'"'}
   hasDataTables

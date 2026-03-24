@@ -46,6 +46,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.HasJavaVersion"
   displayName="Find files compiled at a specific Java version"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "version=17.X" --recipe-option "checkTargetCompatibility=17.X"'}
   hasDataTables

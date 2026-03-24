@@ -118,6 +118,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.ChangeDependencyClassifier"
   displayName="Change a Gradle dependency classifier"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newClassifier=sources" --recipe-option "configuration=api"'}
   showMaven={false}

@@ -150,6 +150,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.UpgradeTransitiveDependencyVersion"
   displayName="Upgrade transitive Maven dependencies"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.apache.logging.log4j" --recipe-option "artifactId=log4j-bom" --recipe-option "version=latest.release" --recipe-option "scope=import" --recipe-option "type=pom" --recipe-option "classifier=test" --recipe-option "versionPattern=\'-jre\'" --recipe-option "onlyIfUsing=org.apache.logging.log4j:log4j*" --recipe-option "because=CVE-2021-1234"'}
   showGradle={false}

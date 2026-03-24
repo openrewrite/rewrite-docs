@@ -111,6 +111,10 @@ resource "aws_ebs_volume" {
 <RunRecipe
   recipeName="org.openrewrite.hcl.format.AutoFormat"
   displayName="Format HCL code"
+  groupId="org.openrewrite"
+  artifactId="rewrite-hcl"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_HCL"
+  isCoreLibrary
   hasDataTables
 />
 

@@ -131,6 +131,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.RemoveRepository"
   displayName="Remove repository"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "id=repo-id" --recipe-option "url=http://myrepo.maven.com/repo"'}
   showGradle={false}

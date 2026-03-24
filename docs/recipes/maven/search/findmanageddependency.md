@@ -119,6 +119,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.search.FindManagedDependency"
   displayName="Find Maven dependency management entry"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=3.0.0" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}

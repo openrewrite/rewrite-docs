@@ -103,6 +103,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.ChangeTagAttributeKey"
   displayName="Change XML attribute key"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "xPath=//a4j:ajax/@reRender" --recipe-option "newAttributeName=render"'}
   hasDataTables

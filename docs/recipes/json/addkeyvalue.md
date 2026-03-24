@@ -96,6 +96,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.json.AddKeyValue"
   displayName="Add value to JSON Object"
+  groupId="org.openrewrite"
+  artifactId="rewrite-json"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JSON"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "keyPath=\'$.subjects.*\' or \'$.\' or \'$.x[1].y.*\' etc." --recipe-option "key=myKey" --recipe-option "value=\'`"myValue"` or `{"a": 1}` or `[ 123 ]`\'"'}
   hasDataTables

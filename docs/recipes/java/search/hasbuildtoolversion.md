@@ -46,6 +46,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.HasBuildToolVersion"
   displayName="Find files with a particular build tool version"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "type=Maven" --recipe-option "version=3.6.0-9999"'}
   hasDataTables

@@ -135,6 +135,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.search.FindPlugin"
   displayName="Find Maven plugin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin"'}
   showGradle={false}

@@ -66,6 +66,10 @@ repositories {
 <RunRecipe
   recipeName="org.openrewrite.gradle.security.UseHttpsForRepositories"
   displayName="Use HTTPS for repositories"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

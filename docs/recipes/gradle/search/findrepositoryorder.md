@@ -69,6 +69,10 @@ repositories {
 <RunRecipe
   recipeName="org.openrewrite.gradle.search.FindRepositoryOrder"
   displayName="Gradle repository order"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

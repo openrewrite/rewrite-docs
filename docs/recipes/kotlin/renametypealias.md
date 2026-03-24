@@ -87,6 +87,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.kotlin.RenameTypeAlias"
   displayName="Rename type alias"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "aliasName=OldAlias" --recipe-option "newName=NewAlias" --recipe-option "fullyQualifiedAliasedType=org.junit.Assume"'}
   hasDataTables

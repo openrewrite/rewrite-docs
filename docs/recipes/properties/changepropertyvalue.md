@@ -96,6 +96,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.properties.ChangePropertyValue"
   displayName="Change property value"
+  groupId="org.openrewrite"
+  artifactId="rewrite-properties"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "newValue=newValue" --recipe-option "oldValue=oldValue"'}
   hasDataTables

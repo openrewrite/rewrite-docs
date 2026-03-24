@@ -203,6 +203,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.UpgradeDependencyVersion"
   displayName="Upgrade Gradle dependency versions"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}

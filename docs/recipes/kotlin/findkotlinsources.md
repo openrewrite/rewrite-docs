@@ -66,6 +66,10 @@ class A
 <RunRecipe
   recipeName="org.openrewrite.kotlin.FindKotlinSources"
   displayName="Find Kotlin sources and collect data metrics"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   hasDataTables
 />
 

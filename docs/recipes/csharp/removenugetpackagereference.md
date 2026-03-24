@@ -44,6 +44,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.csharp.RemoveNuGetPackageReference"
   displayName="Remove NuGet package reference"
+  groupId="org.openrewrite"
+  artifactId="rewrite-csharp"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "packageName=Newtonsoft.Json"'}
   showGradle={false}

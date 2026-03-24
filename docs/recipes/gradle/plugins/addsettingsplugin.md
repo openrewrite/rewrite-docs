@@ -50,6 +50,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.plugins.AddSettingsPlugin"
   displayName="Add Gradle settings plugin"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "pluginId=com.jfrog.bintray" --recipe-option "version=3.x" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}

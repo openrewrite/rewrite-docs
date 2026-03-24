@@ -26,6 +26,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion"
   displayName="Dependency management dependencies should have a version"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   showGradle={false}
   hasDataTables
 />

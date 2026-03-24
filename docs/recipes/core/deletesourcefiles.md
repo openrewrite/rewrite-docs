@@ -52,6 +52,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.DeleteSourceFiles"
   displayName="Delete files"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "filePattern=.github/workflows/*.yml"'}
   hasDataTables

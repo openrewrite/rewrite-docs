@@ -178,6 +178,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.search.ModuleHasDependency"
   displayName="Module has dependency"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "scope=compile" --recipe-option "version=1.x" --recipe-option "onlyDirect=true"'}
   showGradle={false}

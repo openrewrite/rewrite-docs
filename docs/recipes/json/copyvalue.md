@@ -99,6 +99,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.json.CopyValue"
   displayName="Copy JSON value"
+  groupId="org.openrewrite"
+  artifactId="rewrite-json"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JSON"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "sourceKeyPath=$.source.kind" --recipe-option "sourceFilePath=src/main/resources/application.json" --recipe-option "destinationKeyPath=\'$.subjects.*\' or \'$.\' or \'$.x[1].y.*\' etc." --recipe-option "destinationKey=myKey" --recipe-option "destinationFilePath=src/main/resources/application.json"'}
   hasDataTables

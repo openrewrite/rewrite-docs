@@ -26,6 +26,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.text.EndOfLineAtEndOfFile"
   displayName="End of Line @ End of File (EOL @ EOF)"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   hasDataTables
 />
 

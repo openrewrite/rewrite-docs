@@ -65,6 +65,10 @@ FROM ubuntu:22.04
 <RunRecipe
   recipeName="org.openrewrite.docker.ReplaceAddWithCopy"
   displayName="Replace `ADD` with `COPY`"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   hasDataTables
 />
 

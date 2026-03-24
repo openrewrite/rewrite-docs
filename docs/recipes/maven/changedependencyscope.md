@@ -133,6 +133,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.ChangeDependencyScope"
   displayName="Change Maven dependency scope"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "newScope=compile"'}
   showGradle={false}

@@ -94,6 +94,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ReplaceConstant"
   displayName="Replace constant with literal value"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "owningType=com.google.common.base.Charsets" --recipe-option "constantName=UTF_8" --recipe-option "literalValue=UTF_8"'}
   hasDataTables

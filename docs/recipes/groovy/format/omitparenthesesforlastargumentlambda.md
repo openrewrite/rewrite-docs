@@ -26,6 +26,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <RunRecipe
   recipeName="org.openrewrite.groovy.format.OmitParenthesesForLastArgumentLambda"
   displayName="Move a closure which is the last argument of a method invocation out of parentheses"
+  groupId="org.openrewrite"
+  artifactId="rewrite-groovy"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GROOVY"
+  isCoreLibrary
   hasDataTables
 />
 

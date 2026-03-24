@@ -117,6 +117,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.AddOrUpdateAnnotationAttribute"
   displayName="Add or update annotation attribute"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "annotationType=org.junit.Test" --recipe-option "attributeName=timeout" --recipe-option "attributeValue=500" --recipe-option "oldAttributeValue=400"'}
   hasDataTables

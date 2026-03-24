@@ -54,6 +54,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.AddPlatformDependency"
   displayName="Add Gradle platform dependency"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "configuration=implementation" --recipe-option "enforced=true"'}
   showMaven={false}

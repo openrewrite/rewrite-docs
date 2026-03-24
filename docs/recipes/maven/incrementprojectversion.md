@@ -96,6 +96,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.IncrementProjectVersion"
   displayName="Increment Maven project version"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId=\'*\'" --recipe-option "digit=PATCH"'}
   showGradle={false}

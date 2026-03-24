@@ -45,6 +45,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.HasMethod"
   displayName="Find files that have at least one use of a method"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.util.List add(..)"'}
   hasDataTables

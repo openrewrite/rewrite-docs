@@ -49,6 +49,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ChangeMethodTargetToVariable"
   displayName="Change method target to variable"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=org.mycorp.A method(..)" --recipe-option "variableName=foo" --recipe-option "variableType=java.lang.String"'}
   hasDataTables

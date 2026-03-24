@@ -101,6 +101,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.RemoveEnableFeaturePreview"
   displayName="Remove an enabled Gradle preview feature"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "previewFeatureName=ONE_LOCKFILE_PER_PROJECT"'}
   showMaven={false}

@@ -105,6 +105,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.gradle.ChangeExtraProperty"
   displayName="Change Extra Property"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "key=foo" --recipe-option "value=bar"'}
   showMaven={false}

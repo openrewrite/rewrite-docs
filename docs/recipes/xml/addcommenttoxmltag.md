@@ -126,6 +126,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.AddCommentToXmlTag"
   displayName="Add a comment to an XML tag"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "xPath=/project/dependencies/dependency" --recipe-option "commentText=This is excluded due to CVE <X> and will be removed when we upgrade the next version is available."'}
   hasDataTables

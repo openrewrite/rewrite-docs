@@ -303,6 +303,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ChangeType"
   displayName="Change type"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldFullyQualifiedTypeName=org.junit.Assume" --recipe-option "newFullyQualifiedTypeName=org.junit.jupiter.api.Assumptions"'}
   hasDataTables

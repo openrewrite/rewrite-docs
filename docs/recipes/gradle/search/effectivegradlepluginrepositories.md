@@ -98,6 +98,10 @@ rootProject.name = 'my-project'
 <RunRecipe
   recipeName="org.openrewrite.gradle.search.EffectiveGradlePluginRepositories"
   displayName="List effective Gradle plugin repositories"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

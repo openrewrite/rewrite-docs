@@ -48,6 +48,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.csharp.UpgradeNuGetPackageVersion"
   displayName="Upgrade NuGet package version"
+  groupId="org.openrewrite"
+  artifactId="rewrite-csharp"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "packageName=Newtonsoft.Json" --recipe-option "newVersion=latest.release" --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}

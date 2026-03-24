@@ -48,6 +48,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.text.FindMultiselect"
   displayName="Experimental find text with multiselect"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "find=blacklist" --recipe-option "filePattern=\'**/*.java\'"'}
   hasDataTables

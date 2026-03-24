@@ -1,26 +1,22 @@
 ---
-sidebar_label: "Remove unused imports"
+sidebar_label: "Change Gradle task eager creation to lazy registration"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Remove unused imports
+# Change Gradle task eager creation to lazy registration
 
-**org.openrewrite.java.RemoveUnusedImports**
+**org.openrewrite.gradle.ChangeTaskToTasksRegister**
 
-_Remove imports for types that are not referenced. As a precaution against incorrect changes no imports will be removed from any source where unknown types are referenced._
-
-### Tags
-
-* [RSPEC-S1128](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1128&open=java%3AS1128)
+_Changes eager task creation `task exampleName(type: ExampleType)` to lazy registration `tasks.register("exampleName", ExampleType)`. Also supports Kotlin DSL: `task<ExampleType>("exampleName")` to `tasks.register<ExampleType>("exampleName")`._
 
 ## Recipe source
 
-[GitHub: RemoveUnusedImports.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/RemoveUnusedImports.java),
+[GitHub: ChangeTaskToTasksRegister.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/ChangeTaskToTasksRegister.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -29,39 +25,81 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Clean up various issues with the code](/recipes/java/dropwizard/codecleanup.md)
-* [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
-* [Upgrade to the latest Timefold Solver](/recipes/ai/timefold/solver/migration/tolatest.md)
+* [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
 
-## Example
+## Examples
+##### Example 1
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
+<TabItem value="build.gradle" label="build.gradle">
 
 
 ###### Before
-```java
-import java.util.List;
-class A {}
+```groovy title="build.gradle"
+task exampleName(type: Copy) {
+    from 'src/main/resources'
+    into 'build/generated-resources'
+}
 ```
 
 ###### After
-```java
-class A {}
+```groovy title="build.gradle"
+tasks.register("exampleName", Copy) {
+    from 'src/main/resources'
+    into 'build/generated-resources'
+}
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,1 +1,0 @@
--import java.util.List;
-class A {}
-@@ -3,1 +2,0 @@
-import java.util.List;
-class A {}
--
+--- build.gradle
++++ build.gradle
+@@ -1,1 +1,1 @@
+-task exampleName(type: Copy) {
++tasks.register("exampleName", Copy) {
+    from 'src/main/resources'
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle.kts" label="build.gradle.kts">
+
+
+###### Before
+```kotlin title="build.gradle.kts"
+task<Copy>("exampleName") {
+    from("src")
+    into("dest")
+}
+```
+
+###### After
+```kotlin title="build.gradle.kts"
+tasks.register<Copy>("exampleName") {
+    from("src")
+    into("dest")
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle.kts
++++ build.gradle.kts
+@@ -1,1 +1,1 @@
+-task<Copy>("exampleName") {
++tasks.register<Copy>("exampleName") {
+    from("src")
 ```
 </TabItem>
 </Tabs>
@@ -70,12 +108,13 @@ class A {}
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.java.RemoveUnusedImports"
-  displayName="Remove unused imports"
+  recipeName="org.openrewrite.gradle.ChangeTaskToTasksRegister"
+  displayName="Change Gradle task eager creation to lazy registration"
   groupId="org.openrewrite"
-  artifactId="rewrite-java"
-  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  showMaven={false}
   hasDataTables
 />
 
@@ -83,7 +122,7 @@ class A {}
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.RemoveUnusedImports" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gradle.ChangeTaskToTasksRegister" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

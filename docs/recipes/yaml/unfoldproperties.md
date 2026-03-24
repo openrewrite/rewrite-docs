@@ -127,6 +127,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.yaml.UnfoldProperties"
   displayName="Unfold YAML properties"
+  groupId="org.openrewrite"
+  artifactId="rewrite-yaml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "exclusions=$..[org.springframework.security]" --recipe-option "applyTo=$..[org.springframework.security]"'}
   hasDataTables

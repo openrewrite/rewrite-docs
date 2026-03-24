@@ -93,6 +93,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.AddLiteralMethodArgument"
   displayName="Add a literal method argument"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0" --recipe-option "literal=abc" --recipe-option "primitiveType=String"'}
   hasDataTables

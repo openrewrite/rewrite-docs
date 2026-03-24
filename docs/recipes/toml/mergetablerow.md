@@ -102,6 +102,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.toml.MergeTableRow"
   displayName="Merge TOML table row"
+  groupId="org.openrewrite"
+  artifactId="rewrite-toml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_TOML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "tableName=package.contributors" --recipe-option "row=name = "Alice Smith"\\nemail = "alice@example.com"" --recipe-option "identifyingKey=name"'}
   hasDataTables

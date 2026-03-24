@@ -70,6 +70,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.search.DoesNotUseNamespaceUri"
   displayName="Find files without Namespace URI"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "namespaceUri=http://www.w3.org/2001/XMLSchema-instance"'}
   hasDataTables

@@ -141,6 +141,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.AddPluginDependency"
   displayName="Add Maven plugin dependencies"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "pluginGroupId=org.openrewrite.maven" --recipe-option "pluginArtifactId=rewrite-maven-plugin" --recipe-option "groupId=org.openrewrite.recipe" --recipe-option "artifactId=org.openrewrite.recipe" --recipe-option "version=org.openrewrite.recipe"'}
   showGradle={false}

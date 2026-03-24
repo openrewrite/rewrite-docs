@@ -100,6 +100,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ReplaceStringLiteralWithConstant"
   displayName="Replace String literal with constant"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "literalValue=application/json" --recipe-option "fullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE"'}
   hasDataTables

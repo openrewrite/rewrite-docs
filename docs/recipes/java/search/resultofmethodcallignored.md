@@ -104,6 +104,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.ResultOfMethodCallIgnored"
   displayName="Result of method call ignored"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.io.File mkdir*()"'}
   hasDataTables

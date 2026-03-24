@@ -95,6 +95,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.hcl.search.FindAndReplaceLiteral"
   displayName="Find and replace literals in HCL files"
+  groupId="org.openrewrite"
+  artifactId="rewrite-hcl"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_HCL"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "find=blacklist" --recipe-option "replace=denylist"'}
   hasDataTables

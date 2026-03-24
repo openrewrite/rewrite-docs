@@ -83,6 +83,10 @@ dependencies {
 <RunRecipe
   recipeName="org.openrewrite.gradle.DependencyUseMapNotation"
   displayName="Use `Map` notation for Gradle dependency declarations"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

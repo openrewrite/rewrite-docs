@@ -147,6 +147,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ChangeMethodAccessLevel"
   displayName="Change method access level"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=org.mockito.Matchers anyVararg()" --recipe-option "newAccessLevel=public"'}
   hasDataTables

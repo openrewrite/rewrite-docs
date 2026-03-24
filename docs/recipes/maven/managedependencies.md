@@ -133,6 +133,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.ManageDependencies"
   displayName="Manage dependencies"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupPattern=com.google.*" --recipe-option "artifactPattern=guava*"'}
   showGradle={false}

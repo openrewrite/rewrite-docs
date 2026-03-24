@@ -120,6 +120,10 @@ public class MappingConstants {
 <RunRecipe
   recipeName="org.openrewrite.java.search.FindRepeatableAnnotations"
   displayName="Find uses of `@Repeatable` annotations"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   hasDataTables
 />
 

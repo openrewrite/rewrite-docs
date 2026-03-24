@@ -106,6 +106,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.javascript.search.DependencyInsight"
   displayName="Node.js dependency insight"
+  groupId="org.openrewrite"
+  artifactId="rewrite-javascript"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVASCRIPT"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "packageNamePattern=\'@types/*\'" --recipe-option "scope=dependencies" --recipe-option "onlyDirect=true"'}
   hasDataTables

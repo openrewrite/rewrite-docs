@@ -74,6 +74,10 @@ fun decimalDigitalNumber(c : Char) : Int? {
 <RunRecipe
   recipeName="org.openrewrite.kotlin.cleanup.ReplaceCharToIntWithCode"
   displayName="Replace `Char#toInt()` with `Char#code`"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   hasDataTables
 />
 

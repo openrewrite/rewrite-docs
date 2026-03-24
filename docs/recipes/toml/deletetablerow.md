@@ -106,6 +106,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.toml.DeleteTableRow"
   displayName="Delete TOML table row"
+  groupId="org.openrewrite"
+  artifactId="rewrite-toml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_TOML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "tableName=package.contributors" --recipe-option "identifyingKey=name" --recipe-option "identifyingValue=example-*"'}
   hasDataTables

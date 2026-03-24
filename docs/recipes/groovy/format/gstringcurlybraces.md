@@ -58,6 +58,10 @@ def name = 'world'
 <RunRecipe
   recipeName="org.openrewrite.groovy.format.GStringCurlyBraces"
   displayName="Groovy GString curly braces"
+  groupId="org.openrewrite"
+  artifactId="rewrite-groovy"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GROOVY"
+  isCoreLibrary
   hasDataTables
 />
 

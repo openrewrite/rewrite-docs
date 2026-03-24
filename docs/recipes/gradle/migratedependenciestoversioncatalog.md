@@ -194,6 +194,10 @@ h2 = { group = "com.h2database", name = "h2", version.ref = "h2" }
 <RunRecipe
   recipeName="org.openrewrite.gradle.MigrateDependenciesToVersionCatalog"
   displayName="Migrate Gradle project dependencies to version catalog"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

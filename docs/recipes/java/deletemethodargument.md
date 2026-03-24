@@ -95,6 +95,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.DeleteMethodArgument"
   displayName="Delete method argument"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0"'}
   hasDataTables

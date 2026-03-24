@@ -149,6 +149,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.ReplaceConstantWithAnotherConstant"
   displayName="Replace constant with another constant"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "existingFullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE" --recipe-option "fullyQualifiedConstantName=org.springframework.http.MediaType.APPLICATION_JSON_VALUE"'}
   hasDataTables

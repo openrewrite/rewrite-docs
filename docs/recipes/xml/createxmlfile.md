@@ -59,6 +59,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.xml.CreateXmlFile"
   displayName="Create XML file"
+  groupId="org.openrewrite"
+  artifactId="rewrite-xml"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.xml" --recipe-option "fileContents=>\n        <?xml version="1.0" encoding="UTF-8"?>\n        <root>\n            <child>1</child></root>"'}
   hasDataTables

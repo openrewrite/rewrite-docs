@@ -73,6 +73,10 @@ import reactor.core.publisher.Mono
 <RunRecipe
   recipeName="org.openrewrite.kotlin.OrderImports"
   displayName="Order Kotlin imports"
+  groupId="org.openrewrite"
+  artifactId="rewrite-kotlin"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
+  isCoreLibrary
   hasDataTables
 />
 

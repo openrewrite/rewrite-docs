@@ -45,6 +45,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.java.search.HasType"
   displayName="Find files that have at least one use of a type"
+  groupId="org.openrewrite"
+  artifactId="rewrite-java"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fullyQualifiedTypeName=java.util.List"'}
   hasDataTables

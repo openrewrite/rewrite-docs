@@ -82,6 +82,10 @@ zipStoreBase=GRADLE_USER_HOME
 <RunRecipe
   recipeName="org.openrewrite.gradle.search.FindGradleWrapper"
   displayName="Find Gradle wrappers"
+  groupId="org.openrewrite"
+  artifactId="rewrite-gradle"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
+  isCoreLibrary
   showMaven={false}
   hasDataTables
 />

@@ -46,6 +46,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.csharp.AddNuGetPackageReference"
   displayName="Add NuGet package reference"
+  groupId="org.openrewrite"
+  artifactId="rewrite-csharp"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CSHARP"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "packageName=Newtonsoft.Json" --recipe-option "version=13.0.3"'}
   showGradle={false}

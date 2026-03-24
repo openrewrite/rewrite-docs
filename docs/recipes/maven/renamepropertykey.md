@@ -137,6 +137,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.maven.RenamePropertyKey"
   displayName="Rename Maven property key"
+  groupId="org.openrewrite"
+  artifactId="rewrite-maven"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldKey=junit.version" --recipe-option "newKey=version.org.junit"'}
   showGradle={false}

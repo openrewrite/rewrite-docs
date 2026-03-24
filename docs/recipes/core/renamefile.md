@@ -56,6 +56,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.RenameFile"
   displayName="Rename a file"
+  groupId="org.openrewrite"
+  artifactId="rewrite-core"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fileMatcher=\'**/application-*.yml\'" --recipe-option "fileName=application.yml"'}
   hasDataTables

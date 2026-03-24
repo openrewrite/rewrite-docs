@@ -97,6 +97,10 @@ recipeList:
 <RunRecipe
   recipeName="org.openrewrite.docker.AddUserInstruction"
   displayName="Add `USER` instruction"
+  groupId="org.openrewrite"
+  artifactId="rewrite-docker"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
+  isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "userName=appuser" --recipe-option "groupName=appgroup" --recipe-option "stageName=final"'}
   hasDataTables

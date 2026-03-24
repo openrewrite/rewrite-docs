@@ -33,6 +33,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Change Gradle dependency artifact](./changedependencyartifactid.md)
 * [Change Gradle dependency group](./changedependencygroupid.md)
 * [Change Gradle managed dependency](./changemanageddependency.md)
+* [Change Gradle task eager creation to lazy registration](./changetasktotasksregister.md)
 * [Change a Gradle dependency classifier](./changedependencyclassifier.md)
 * [Change a Gradle dependency configuration](./changedependencyconfiguration.md)
 * [Change a Gradle dependency extension](./changedependencyextension.md)
