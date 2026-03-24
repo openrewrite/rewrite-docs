@@ -16,6 +16,7 @@ interface RunRecipeProps {
   showMaven?: boolean;
   hasDataTables?: boolean;
   useFullyQualifiedCliName?: boolean;
+  isCoreLibrary?: boolean;
   npmPackage?: string;
   pipPackage?: string;
 }
@@ -32,6 +33,7 @@ export default function RunRecipe({
   showMaven = true,
   hasDataTables = false,
   useFullyQualifiedCliName = false,
+  isCoreLibrary = false,
   npmPackage,
   pipPackage,
 }: RunRecipeProps) {
@@ -43,6 +45,7 @@ export default function RunRecipe({
   };
 
   const hasDependency = !!(groupId && artifactId);
+  const needsDependency = hasDependency && !isCoreLibrary;
   const activeRecipeName = requiresConfiguration ? wrapperRecipeName(recipeName) : recipeName;
   const cliRecipeName = useFullyQualifiedCliName
     ? recipeName
@@ -95,7 +98,7 @@ export default function RunRecipe({
   }
 
   // Intro text
-  const introText = !hasDependency
+  const introText = isCoreLibrary
     ? 'This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.'
     : requiresConfiguration
       ? undefined // Intro text for requiresConfiguration is rendered inline in the markdown before this component
@@ -118,7 +121,7 @@ rewrite {
 repositories {
     mavenCentral()
 }
-${hasDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${version}")\n}\n` : ''}`;
+${needsDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${version}")\n}\n` : ''}`;
 
   // Gradle init script snippet
   const gradleInit = `initscript {
@@ -130,7 +133,7 @@ ${hasDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${ver
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin)
     dependencies {
-        rewrite("${hasDependency ? `${groupId}:${artifactId}:${version}` : 'org.openrewrite:rewrite-java'}")
+        rewrite("${needsDependency ? `${groupId}:${artifactId}:${version}` : 'org.openrewrite:rewrite-java'}")
     }
     rewrite {
         activeRecipe("${activeRecipeName}")${dataTableGradleConfig}
@@ -156,7 +159,7 @@ rootProject {
           ${dataTableMavenConfig}<activeRecipes>
             <recipe>${activeRecipeName}</recipe>
           </activeRecipes>
-        </configuration>${hasDependency ? `
+        </configuration>${needsDependency ? `
         <dependencies>
           <dependency>
             <groupId>${groupId}</groupId>
@@ -170,18 +173,18 @@ rootProject {
 </project>`;
 
   // Maven CLI snippet
-  const mavenCli = `mvn -U org.openrewrite.maven:rewrite-maven-plugin:run${hasDependency ? ` --define rewrite.recipeArtifactCoordinates=${groupId}:${artifactId}:RELEASE` : ''} --define rewrite.activeRecipes=${activeRecipeName}${dataTableCliFlag}`;
+  const mavenCli = `mvn -U org.openrewrite.maven:rewrite-maven-plugin:run${needsDependency ? ` --define rewrite.recipeArtifactCoordinates=${groupId}:${artifactId}:RELEASE` : ''} --define rewrite.activeRecipes=${activeRecipeName}${dataTableCliFlag}`;
 
   return (
     <>
       {introText && <p>{introText}</p>}
-      {requiresConfiguration && hasDependency && (
+      {requiresConfiguration && needsDependency && (
         <p>
           Now that <code>{wrapperRecipeName(recipeName)}</code> has been defined, activate it and take a dependency on{' '}
           <code>{groupId}:{artifactId}:{version}</code> in your build file:
         </p>
       )}
-      {requiresConfiguration && !hasDependency && (
+      {requiresConfiguration && !needsDependency && (
         <p>
           Now that <code>{wrapperRecipeName(recipeName)}</code> has been defined, activate it in your build file:
         </p>
