@@ -5,10 +5,6 @@ description: How to create recipes that contain and use multiple visitors.
 
 # Creating multiple visitors in one recipe
 
-:::info[Free Workshop]
-Take your recipes further. [Join our free advanced workshop on March 24 →](https://www.moderne.ai/training/advanced-openrewrite-march-2026)
-:::
-
 As you begin to write increasingly complex recipes, you will find that it is often necessary to have more than one visitor. This is because significant changes often require you to visit many types of [Lossless Semantic Trees](../concepts-and-explanations/lossless-semantic-trees.md) (LSTs) to figure out whether or not a change should be made.
 
 For instance, let's say that you wanted to write a recipe that adds the `final` modifier to any local variables that aren't reassigned. To do that, you would first need to make a visitor that visits all of the `VariableDeclarations` and runs some checks on them (such as determining if they already have the `final` modifier). Once you found all potential variables, you would then need to visit all of the places they could be used to see if they are reassigned. If they were reassigned, you would need to keep track of that across visits, too. Both of those issues can be solved by adding a second visitor to your recipe.

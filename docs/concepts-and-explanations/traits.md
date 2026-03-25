@@ -7,10 +7,6 @@ import ReactPlayer from 'react-player';
 
 # Traits
 
-:::info[Free Workshop]
-Want to build scanning recipes, generate code, and use traits? [Join our free advanced workshop on March 24 →](https://www.moderne.ai/training/advanced-openrewrite-march-2026)
-:::
-
 In OpenRewrite, traits are high-level abstractions that simplify accessing and modifying [LST elements](./lst-examples.md). They can greatly simplify recipe development by offering methods to retrieve values or match elements without needing to fully understand the underlying types or code structure.
 
 In this doc, we'll explain how traits came to be, provide some examples, and then show you recipes that use them. By the end, you should have a good idea how to work with traits.

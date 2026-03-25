@@ -9,10 +9,6 @@ import TabItem from '@theme/TabItem';
 
 # Writing a Java refactoring recipe
 
-:::info[Free Workshop]
-Take your recipes further. [Join our free advanced workshop on March 24 →](https://www.moderne.ai/training/advanced-openrewrite-march-2026)
-:::
-
 To help you get started with writing recipes, this guide will walk you through all the steps needed to create a basic refactoring recipe. This `SayHelloRecipe` will add a `hello()` method to a user specified class if that class does not already have one.
 
 For example, it would take a class like this:
