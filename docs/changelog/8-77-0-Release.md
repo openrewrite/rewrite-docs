@@ -10,10 +10,6 @@ _Total recipe count: 4244_
 This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
 :::
 
-## Corresponding CLI version
-
-* Stable CLI version `v3.57.16`
-* Staging CLI version: `v3.57.16`
 
 ## Removed Artifacts
 
