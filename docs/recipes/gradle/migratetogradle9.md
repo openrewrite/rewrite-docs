@@ -63,6 +63,121 @@ This recipe is used as part of the following composite recipes:
 
 * [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
 
+## Examples
+##### Example 1
+`MigrateToGradle9Test#multipleSubRecipesApplyTogether`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.google.guava:guava:31.1-jre"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -11,1 +11,1 @@
+
+dependencies {
+-   implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
++   implementation "com.google.guava:guava:31.1-jre"
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateToGradle9Test#multipleSubRecipesApplyTogether`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.google.guava:guava:31.1-jre"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -11,1 +11,1 @@
+
+dependencies {
+-   implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
++   implementation "com.google.guava:guava:31.1-jre"
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

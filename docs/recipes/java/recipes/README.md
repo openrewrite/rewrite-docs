@@ -29,6 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Recipe classes should be public](./recipeclassesshouldbepublic.md)
 * [Recipe classes should not have mutable `static` fields](./nomutablestaticfieldsinrecipes.md)
 * [Refactor RewriteTest to use defaults method](./userewritetestdefaults.md)
+* [Remove `@NlsRewrite` annotations from `Recipe` classes](./removenlsrewriteannotations.md)
 * [Remove elements annotated with `@ToBeRemoved` past their date](./removetoberemoved.md)
 * [Reorder `maybeRemoveImport` before `maybeAddImport`](./removeimportbeforeaddimport.md)
 * [Replace `getDisplayName()` and `getDescription()` methods with fields](./usedisplaynameanddescriptionfields.md)
@@ -46,5 +47,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `Tree.randomId()` in LST constructors](./usetreerandomid.md)
 * [Use a standard name for `ExecutionContext`](./executioncontextparametername.md)
 * [Use of `@EqualsAndHashCode` on `Recipe`](./recipeequalsandhashcodecallsuper.md)
+* [Use `visit` with parent cursor when calling from another visitor](./usevisitwithparentcursor.md)
 
 

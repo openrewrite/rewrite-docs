@@ -14,6 +14,7 @@ description: Properties OpenRewrite recipes.
 * [Add comment before property key](./addpropertycomment.md)
 * [Change property key](./changepropertykey.md)
 * [Change property value](./changepropertyvalue.md)
+* [Copy property value](./copyvalue.md)
 * [Create Properties file](./createpropertiesfile.md)
 * [Delete property by key](./deleteproperty.md)
 

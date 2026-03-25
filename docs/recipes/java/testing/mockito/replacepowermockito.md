@@ -53,6 +53,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.powermock.api.mockito.PowerMockito when(..)`
   * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
+* [Replace `@PowerMockRunnerDelegate` with `@RunWith`](../../../java/testing/mockito/powermockrunnerdelegatetorunwith)
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](../../../java/testing/mockito/powermockitomockstatictomockito)
 * [Replace `PowerMockito.whenNew` with Mockito counterpart](../../../java/testing/mockito/powermockitowhennewtomockito)
 * [Cleanup PowerMock imports](../../../java/testing/mockito/cleanuppowermockimports)
@@ -97,6 +98,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.powermock.api.mockito.PowerMockito when(..)
       fullyQualifiedTargetTypeName: org.mockito.Mockito
+  - org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith
   - org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito
   - org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito
   - org.openrewrite.java.testing.mockito.CleanupPowerMockImports

@@ -29,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Java best practices](/recipes/java/migrate/javabestpractices.md)
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 
 ## Example

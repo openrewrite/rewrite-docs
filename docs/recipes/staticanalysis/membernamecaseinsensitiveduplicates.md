@@ -24,6 +24,47 @@ _Looking at the set of methods and fields in a class and all of its parents, no 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Child extends Parent {
+    int Name;
+}
+```
+
+###### After
+```java
+class Child extends Parent {
+    int /*~~(Rename this member to not match other members differing only by capitalization)~~>*/Name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+class Child extends Parent {
+-   int Name;
++   int /*~~(Rename this member to not match other members differing only by capitalization)~~>*/Name;
+}
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+class Parent {
+    int name;
+}
+```
+
 
 ## Usage
 

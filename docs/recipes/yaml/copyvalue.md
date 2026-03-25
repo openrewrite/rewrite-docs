@@ -30,13 +30,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newFilePath | *Optional*. The file path to the YAML file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.yaml` |
 | `Boolean` | createNewKeys | *Optional*. When the key path does _not_ match any keys, create new keys on the spot. Default is `true`. |  |
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Update relocated Micronaut Security config yaml keys](/recipes/java/micronaut/updatesecurityyamlifneeded.md)
-
 ## Example
 
 ###### Parameters

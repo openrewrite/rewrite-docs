@@ -177,6 +177,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ### rewrite-properties
 
+* [org.openrewrite.properties.CopyValue](/recipes/properties/copyvalue.md)
+  * **Copy property value**
+  * Copies a property value from one key to another. The existing key/value pair remains unaffected by this change. If the destination key already exists, its value will be replaced. By default, creates the destination key if it does not exist.
 * [org.openrewrite.properties.CreatePropertiesFile](/recipes/properties/createpropertiesfile.md)
   * **Create Properties file**
   * Create a new Properties file.
@@ -453,6 +456,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.testing.junit5.AddJupiterDependencies](/recipes/java/testing/junit5/addjupiterdependencies.md)
   * **Add JUnit Jupiter dependencies**
   * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present.
+* [org.openrewrite.java.testing.mockito.AddMockitoJupiterDependency](/recipes/java/testing/mockito/addmockitojupiterdependency.md)
+  * **Add mockito-junit-jupiter dependency**
+  * Adds `org.mockito:mockito-junit-jupiter` dependency if `@ExtendWith(MockitoExtension.class)` will be added to any test class, i.e. when Mockito annotations are used in JUnit 5 tests without the extension already present.
 * [org.openrewrite.java.testing.mockito.AnyToNullable](/recipes/java/testing/mockito/anytonullable.md)
   * **Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`**
   * Since Mockito 2.10 `anyString()` and `any()` no longer matches null values. Use `nullable(Class)` instead.

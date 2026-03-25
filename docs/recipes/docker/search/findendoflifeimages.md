@@ -53,7 +53,7 @@ RUN apt-get update
 
 ###### After
 ```docker
-~~(EOL: debian:buster (ended 2024-06-30, suggest trixie (13) or bookworm (12)))~~>FROM debian:buster
+~~(EOL: debian:buster (ended 2022-09-10, suggest trixie (13)))~~>FROM debian:buster
 RUN apt-get update
 ```
 
@@ -63,7 +63,7 @@ RUN apt-get update
 ```diff
 @@ -1,1 +1,1 @@
 -FROM debian:buster
-+~~(EOL: debian:buster (ended 2024-06-30, suggest trixie (13) or bookworm (12)))~~>FROM debian:buster
++~~(EOL: debian:buster (ended 2022-09-10, suggest trixie (13)))~~>FROM debian:buster
 RUN apt-get update
 ```
 </TabItem>

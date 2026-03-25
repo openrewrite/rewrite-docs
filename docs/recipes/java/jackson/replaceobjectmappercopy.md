@@ -31,6 +31,49 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+class Test {
+    ObjectMapper copy(ObjectMapper mapper) {
+        return mapper.copy();
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+class Test {
+    ObjectMapper copy(ObjectMapper mapper) {
+        return mapper.rebuild().build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class Test {
+    ObjectMapper copy(ObjectMapper mapper) {
+-       return mapper.copy();
++       return mapper.rebuild().build();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

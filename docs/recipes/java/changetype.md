@@ -62,6 +62,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Exposed type references to 1.0 packages](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/exposed/exposedchangetypes)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
 * [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
+* [Migrate JAX-RS MediaType to Spring MVC MediaType](/recipes/java/spring/mvc/jaxrstospringmvcmediatype.md)
+* [Migrate JAX-RS Response to Spring MVC ResponseEntity](/recipes/java/spring/mvc/jaxrstospringmvcresponseentity.md)
 * [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
 * [Migrate JRXlsExporter to JRXlsxExporter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/jasperreports/migratexlstoxlsxexporter)

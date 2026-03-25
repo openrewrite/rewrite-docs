@@ -44,6 +44,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Do not package `java.xml.bind` and `java.activation` modules in WebSphere Liberty applications](./removedjaxbmoduleprovided.md)
 * [Do not package `java.xml.ws` module in WebSphere Liberty applications](./removedjavaxmlwsmoduleprovided.md)
 * [Enable Lombok annotation processor](./enablelombokannotationprocessor.md)
+* [Java best practices](./javabestpractices.md)
 * [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](./bouncycastlefromjdk15ontojdk15to18.md)
 * [Migrate Bouncy Castle to `jdk18on`](./bouncecastlefromjdk15ontojdk18on.md)
 * [Migrate to IBM Semeru Runtimes](./ibmsemeru.md)

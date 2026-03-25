@@ -45,6 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `jakarta.faces.bean.ManagedProperty`
   * newFullyQualifiedTypeName: `jakarta.faces.annotation.ManagedProperty`
   * ignoreDefinition: `true`
+* [Remove annotation attribute](../../../java/removeannotationattribute)
+  * annotationType: `jakarta.faces.annotation.ManagedProperty`
+  * attributeName: `name`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.bean.NoneScoped`
   * newFullyQualifiedTypeName: `jakarta.enterprise.context.Dependent`
@@ -107,6 +110,9 @@ recipeList:
       oldFullyQualifiedTypeName: jakarta.faces.bean.ManagedProperty
       newFullyQualifiedTypeName: jakarta.faces.annotation.ManagedProperty
       ignoreDefinition: true
+  - org.openrewrite.java.RemoveAnnotationAttribute:
+      annotationType: jakarta.faces.annotation.ManagedProperty
+      attributeName: name
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.bean.NoneScoped
       newFullyQualifiedTypeName: jakarta.enterprise.context.Dependent

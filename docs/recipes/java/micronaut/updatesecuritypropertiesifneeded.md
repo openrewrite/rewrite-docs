@@ -18,76 +18,8 @@ _This recipe will update relocated security config keys in Micronaut configurati
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
 
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
-
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-* [Change property key](../../properties/changepropertykey)
-  * oldPropertyKey: `micronaut.security.token.jwt.generator.access-token.expiration`
-  * newPropertyKey: `micronaut.security.token.generator.access-token.expiration`
-* [Change property key](../../properties/changepropertykey)
-  * oldPropertyKey: `micronaut.security.token.jwt.cookie.enabled`
-  * newPropertyKey: `micronaut.security.token.cookie.enabled`
-* [Change property key](../../properties/changepropertykey)
-  * oldPropertyKey: `micronaut.security.token.jwt.cookie.cookie-max-age`
-  * newPropertyKey: `micronaut.security.token.cookie.cookie-max-age`
-* [Change property key](../../properties/changepropertykey)
-  * oldPropertyKey: `micronaut.security.token.jwt.cookie.cookie-path`
-  * newPropertyKey: `micronaut.security.token.cookie.cookie-path`
-* [Change property key](../../properties/changepropertykey)
-  * oldPropertyKey: `micronaut.security.token.jwt.cookie.cookie-domain`
-  * newPropertyKey: `micronaut.security.token.cookie.cookie-domain`
-* [Change property key](../../properties/changepropertykey)
-  * oldPropertyKey: `micronaut.security.token.jwt.cookie.cookie-same-site`
-  * newPropertyKey: `micronaut.security.token.cookie.cookie-same-site`
-* [Change property key](../../properties/changepropertykey)
-  * oldPropertyKey: `micronaut.security.token.jwt.bearer.enabled`
-  * newPropertyKey: `micronaut.security.token.bearer.enabled`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.micronaut.UpdateSecurityPropertiesIfNeeded
-displayName: Update relocated Micronaut Security config properties
-description: |
-  This recipe will update relocated security config keys in Micronaut configuration property files.
-recipeList:
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: micronaut.security.token.jwt.generator.access-token.expiration
-      newPropertyKey: micronaut.security.token.generator.access-token.expiration
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: micronaut.security.token.jwt.cookie.enabled
-      newPropertyKey: micronaut.security.token.cookie.enabled
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: micronaut.security.token.jwt.cookie.cookie-max-age
-      newPropertyKey: micronaut.security.token.cookie.cookie-max-age
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: micronaut.security.token.jwt.cookie.cookie-path
-      newPropertyKey: micronaut.security.token.cookie.cookie-path
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: micronaut.security.token.jwt.cookie.cookie-domain
-      newPropertyKey: micronaut.security.token.cookie.cookie-domain
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: micronaut.security.token.jwt.cookie.cookie-same-site
-      newPropertyKey: micronaut.security.token.cookie.cookie-same-site
-  - org.openrewrite.properties.ChangePropertyKey:
-      oldPropertyKey: micronaut.security.token.jwt.bearer.enabled
-      newPropertyKey: micronaut.security.token.bearer.enabled
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 

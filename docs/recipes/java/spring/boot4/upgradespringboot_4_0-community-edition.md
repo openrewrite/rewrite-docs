@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Spring Boot 3.5 (Community Edition)](../../../java/spring/boot3/upgradespringboot_3_5-community-edition)
+* [Migrate to Spring Cloud 2025.1](../../../java/spring/cloud2025/upgradespringcloud_2025_1)
 * [Migrate to Spring Framework 7.0](../../../java/spring/framework/upgradespringframework_7_0)
 * [Migrate to Spring Security 7.0](../../../java/spring/security7/upgradespringsecurity_7_0)
 * [Migrate to Spring Batch 6.0 from 5.2](../../../java/spring/batch/springbatch5to6migration)
@@ -132,6 +133,7 @@ tags:
   - boot
 recipeList:
   - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5
+  - org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025_1
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0
   - org.openrewrite.java.spring.security7.UpgradeSpringSecurity_7_0
   - org.openrewrite.java.spring.batch.SpringBatch5To6Migration

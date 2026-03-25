@@ -22,6 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add explicit import for `Record` classes](./explicitrecordimport.md)
 * [Add null check to existing switch cases](./nullcheckasswitchcase.md)
+* [Convert Javadoc to Markdown documentation comments](./javadoctomarkdowndoccomment.md)
 * [Convert assigning Switch statements to Switch expressions](./switchcaseassignmentstoswitchexpression.md)
 * [Convert switch cases where every case returns into a returned switch expression](./switchcasereturnstoswitchexpression.md)
 * [Convert switch expression yield to arrow](./switchexpressionyieldtoarrow.md)

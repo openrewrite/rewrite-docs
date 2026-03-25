@@ -20,5 +20,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add `@AutoConfigureTestRestTemplate` if necessary](./addautoconfiguretestresttemplate.md)
 * [Add `@AutoConfigureWebTestClient` if necessary](./addautoconfigurewebtestclient.md)
 * [Add `spring-boot-starter-flyway` if using Flyway](./addspringbootstarterflyway.md)
+* [Unwrap `@MockBeans` and `@SpyBeans` container annotations](./unwrapmockandspybeancontainers.md)
 
 

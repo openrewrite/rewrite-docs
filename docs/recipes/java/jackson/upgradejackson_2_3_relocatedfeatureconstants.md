@@ -149,6 +149,115 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Examples
+##### Example 1
+`RelocatedFeatureConstantsTest#serializationFeatureToDateTimeFeature`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+class Test {
+    void configure() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.cfg.DateTimeFeature;
+
+class Test {
+    void configure() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+-import com.fasterxml.jackson.databind.SerializationFeature;
++import tools.jackson.databind.cfg.DateTimeFeature;
+
+@@ -7,1 +7,1 @@
+    void configure() {
+        ObjectMapper mapper = new ObjectMapper();
+-       mapper.enable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
++       mapper.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RelocatedFeatureConstantsTest#serializationFeatureToDateTimeFeature`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
+class Test {
+    void configure() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.cfg.DateTimeFeature;
+
+class Test {
+    void configure() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+-import com.fasterxml.jackson.databind.SerializationFeature;
++import tools.jackson.databind.cfg.DateTimeFeature;
+
+@@ -7,1 +7,1 @@
+    void configure() {
+        ObjectMapper mapper = new ObjectMapper();
+-       mapper.enable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
++       mapper.enable(DateTimeFeature.WRITE_DATES_AS_TIMESTAMPS);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

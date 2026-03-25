@@ -29,14 +29,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `boolean` | validateResolvable | *Optional*. When enabled the recipe will attempt to download every dependency it encounters, reporting on any failures. This can be useful for identifying dependencies that have become unavailable since an LST was produced.Defaults to false. Valid options: `true`, `false` | `true` |
 
 
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Update Prethink context (no AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
-* [Update Prethink context (with AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
-
-
 ## Usage
 
 <RunRecipe

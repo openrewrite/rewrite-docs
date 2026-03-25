@@ -40,6 +40,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `7.0.x`
   * overrideManagedVersion: `false`
 * [Remove throws exception in `SecurityConfigurer` methods `init` and `configure`](../../../java/spring/security7/securityconfigurerremovethrowsexception)
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.security.authorization.AuthorizationManager check(..)`
+  * newMethodName: `authorize`
+  * matchOverrides: `true`
 
 </TabItem>
 
@@ -62,6 +66,10 @@ recipeList:
       newVersion: 7.0.x
       overrideManagedVersion: false
   - org.openrewrite.java.spring.security7.SecurityConfigurerRemoveThrowsException
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.security.authorization.AuthorizationManager check(..)
+      newMethodName: authorize
+      matchOverrides: true
 
 ```
 </TabItem>
@@ -72,6 +80,101 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
+
+## Examples
+##### Example 1
+`UpgradeSpringSecurity70Test#migrateAuthorizationManagerCheckToAuthorize`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.security.authorization.AuthorizationManager;
+import org.springframework.security.authorization.AuthorizationDecision;
+
+class MyAuthz {
+    void test(AuthorizationManager<Object> manager) {
+        AuthorizationDecision decision = manager.check(null, null);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.security.authorization.AuthorizationManager;
+import org.springframework.security.authorization.AuthorizationDecision;
+
+class MyAuthz {
+    void test(AuthorizationManager<Object> manager) {
+        AuthorizationDecision decision = manager.authorize(null, null);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class MyAuthz {
+    void test(AuthorizationManager<Object> manager) {
+-       AuthorizationDecision decision = manager.check(null, null);
++       AuthorizationDecision decision = manager.authorize(null, null);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeSpringSecurity70Test#migrateAuthorizationManagerCheckToAuthorize`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.security.authorization.AuthorizationManager;
+import org.springframework.security.authorization.AuthorizationDecision;
+
+class MyAuthz {
+    void test(AuthorizationManager<Object> manager) {
+        AuthorizationDecision decision = manager.check(null, null);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.security.authorization.AuthorizationManager;
+import org.springframework.security.authorization.AuthorizationDecision;
+
+class MyAuthz {
+    void test(AuthorizationManager<Object> manager) {
+        AuthorizationDecision decision = manager.authorize(null, null);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+class MyAuthz {
+    void test(AuthorizationManager<Object> manager) {
+-       AuthorizationDecision decision = manager.check(null, null);
++       AuthorizationDecision decision = manager.authorize(null, null);
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

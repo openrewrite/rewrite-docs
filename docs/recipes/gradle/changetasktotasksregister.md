@@ -27,8 +27,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
 
-## Examples
-##### Example 1
+## Example
 
 
 <Tabs groupId="beforeAfter">
@@ -37,7 +36,7 @@ This recipe is used as part of the following composite recipes:
 
 ###### Before
 ```groovy title="build.gradle"
-task exampleName(type: Copy) {
+task taskName(type: Copy) {
     from 'src/main/resources'
     into 'build/generated-resources'
 }
@@ -45,7 +44,7 @@ task exampleName(type: Copy) {
 
 ###### After
 ```groovy title="build.gradle"
-tasks.register("exampleName", Copy) {
+tasks.register("taskName", Copy) {
     from 'src/main/resources'
     into 'build/generated-resources'
 }
@@ -58,48 +57,9 @@ tasks.register("exampleName", Copy) {
 --- build.gradle
 +++ build.gradle
 @@ -1,1 +1,1 @@
--task exampleName(type: Copy) {
-+tasks.register("exampleName", Copy) {
+-task taskName(type: Copy) {
++tasks.register("taskName", Copy) {
     from 'src/main/resources'
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="build.gradle.kts" label="build.gradle.kts">
-
-
-###### Before
-```kotlin title="build.gradle.kts"
-task<Copy>("exampleName") {
-    from("src")
-    into("dest")
-}
-```
-
-###### After
-```kotlin title="build.gradle.kts"
-tasks.register<Copy>("exampleName") {
-    from("src")
-    into("dest")
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- build.gradle.kts
-+++ build.gradle.kts
-@@ -1,1 +1,1 @@
--task<Copy>("exampleName") {
-+tasks.register<Copy>("exampleName") {
-    from("src")
 ```
 </TabItem>
 </Tabs>
