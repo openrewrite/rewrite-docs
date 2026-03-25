@@ -36,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Use `var` for reference-typed variables](../../../java/migrate/lang/var/usevarforobject)
-* [Use `var` for primitive-typed variables](../../../java/migrate/lang/var/usevarforprimitive)
+* [Use `var` for primitive and String variables](../../../java/migrate/lang/var/usevarforprimitive)
 * [Apply `var` to Generic Constructors](../../../java/migrate/lang/var/usevarforgenericsconstructors)
 * [Apply `var` to generic method invocations](../../../java/migrate/lang/var/usevarforgenericmethodinvocations)
 

@@ -40,6 +40,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Minimal indentation for `SourceSpecs` text blocks](../../java/recipes/sourcespectextblockindentation)
 * [Refactor RewriteTest to use defaults method](../../java/recipes/userewritetestdefaults)
 * [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
+* [Use `var` for constructor call assignments](../../java/migrate/lang/var/usevarforconstructors)
+* [Use `var` for primitive and String variables](../../java/migrate/lang/var/usevarforprimitive)
 * [Use `var` for variables initialized with type casts](../../java/migrate/lang/var/usevarfortypecast)
 * [Remove `test` prefix from JUnit 5 tests](../../java/testing/cleanup/removetestprefix)
 * [Remove `public` visibility of JUnit 5 tests](../../java/testing/cleanup/testsshouldnotbepublic)
@@ -82,6 +84,8 @@ recipeList:
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
   - org.openrewrite.java.recipes.UseRewriteTestDefaults
   - org.openrewrite.java.recipes.UseStringUtilsRecipes
+  - org.openrewrite.java.migrate.lang.var.UseVarForConstructors
+  - org.openrewrite.java.migrate.lang.var.UseVarForPrimitive
   - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast
   - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
   - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic

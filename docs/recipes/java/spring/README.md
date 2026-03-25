@@ -13,6 +13,7 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 * [Cloud2025](/recipes/java/spring/cloud2025)
 * [Doc](/recipes/java/spring/doc)
 * [Http](/recipes/java/spring/http)
+* [Mvc](/recipes/java/spring/mvc)
 * [Opentelemetry](/recipes/java/spring/opentelemetry)
 * [Search](/recipes/java/spring/search)
 * [Security](/recipes/java/spring/security)

@@ -62,6 +62,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Java best practices](/recipes/java/migrate/javabestpractices.md)
+
 ## Examples
 ##### Example 1
 `JSpecifyBestPracticesTest#migrateFromJavaxAnnotationApiToJspecify`

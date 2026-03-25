@@ -25,6 +25,70 @@ _Refactor try/finally blocks to use try-with-resources when the finally block on
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.*;
+
+class Test {
+    void method() throws IOException {
+        InputStream in = new FileInputStream("file.txt");
+        try {
+            int data = in.read();
+        } finally {
+            in.close();
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.io.*;
+
+class Test {
+    void method() throws IOException {
+        try (InputStream in = new FileInputStream("file.txt")) {
+            int data = in.read();
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,1 @@
+class Test {
+    void method() throws IOException {
+-       InputStream in = new FileInputStream("file.txt");
+-       try {
++       try (InputStream in = new FileInputStream("file.txt")) {
+            int data = in.read();
+@@ -8,2 +7,0 @@
+        try {
+            int data = in.read();
+-       } finally {
+-           in.close();
+        }
+```
+</TabItem>
+</Tabs>
+
+
 ## Usage
 
 <RunRecipe

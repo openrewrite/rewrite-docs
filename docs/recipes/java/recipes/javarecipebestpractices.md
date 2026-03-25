@@ -43,12 +43,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
 * [Replace `getTags()` method with field](../../java/recipes/usetagsfield)
 * [Use `Tree.randomId()` in LST constructors](../../java/recipes/usetreerandomid)
+* [Use `visit` with parent cursor when calling from another visitor](../../java/recipes/usevisitwithparentcursor)
 * [Fix missing braces](../../staticanalysis/needbraces)
 * [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
-* [Remove annotation](../../java/removeannotation)
-  * annotationPattern: `@org.openrewrite.NlsRewrite.DisplayName`
-* [Remove annotation](../../java/removeannotation)
-  * annotationPattern: `@org.openrewrite.NlsRewrite.Description`
+* [Remove `@NlsRewrite` annotations from `Recipe` classes](../../java/recipes/removenlsrewriteannotations)
 
 </TabItem>
 
@@ -76,12 +74,10 @@ recipeList:
   - org.openrewrite.java.recipes.UseStringUtilsRecipes
   - org.openrewrite.java.recipes.UseTagsField
   - org.openrewrite.java.recipes.UseTreeRandomId
+  - org.openrewrite.java.recipes.UseVisitWithParentCursor
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
-  - org.openrewrite.java.RemoveAnnotation:
-      annotationPattern: @org.openrewrite.NlsRewrite.DisplayName
-  - org.openrewrite.java.RemoveAnnotation:
-      annotationPattern: @org.openrewrite.NlsRewrite.Description
+  - org.openrewrite.java.recipes.RemoveNlsRewriteAnnotations
 
 ```
 </TabItem>

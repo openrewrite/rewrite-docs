@@ -1,16 +1,16 @@
 ---
-sidebar_label: "Use `var` for primitive-typed variables"
+sidebar_label: "Use `var` for primitive and String variables"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Use `var` for primitive-typed variables
+# Use `var` for primitive and String variables
 
 **org.openrewrite.java.migrate.lang.var.UseVarForPrimitive**
 
-_Try to apply local variable type inference `var` to primitive variables where possible. This recipe will not touch variable declarations with initializers containing ternary operators._
+_Try to apply local variable type inference `var` to primitive and String literal variables where possible. This recipe will not touch variable declarations with initializers containing ternary operators._
 
 ## Recipe source
 
@@ -25,6 +25,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Java best practices](/recipes/java/migrate/javabestpractices.md)
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 * [Use local variable type inference](/recipes/java/migrate/lang/usevar.md)
 
 ## Example
@@ -75,7 +77,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.lang.var.UseVarForPrimitive"
-  displayName="Use `var` for primitive-typed variables"
+  displayName="Use `var` for primitive and String variables"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

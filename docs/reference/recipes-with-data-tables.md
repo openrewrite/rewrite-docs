@@ -57,6 +57,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.cobol.table.WordSearchResult**: *Words in COBOL source code that match the search criteria.*
 
 
+#### [org.openrewrite.jcl.search.FindWord](/recipes/jcl/search/findword.md)
+  * **Find matching words in JCL source code**
+  * Search for JCL words based on a search term.
+
+##### Data tables:
+
+  * **org.openrewrite.jcl.table.JclWordSearchResult**: *Words in JCL source code that match the search criteria.*
+
+
 
 ### rewrite-core
 
@@ -4204,6 +4213,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
   * **Migrate to Java 11**
   * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.JavaBestPractices](/recipes/java/migrate/javabestpractices.md)
+  * **Java best practices**
+  * Applies opinionated best practices for Java projects targeting Java 25. This recipe includes the full Java 25 upgrade chain plus additional improvements to code style, API usage, and third-party dependency reduction that go beyond what the version migration recipes apply.
 
 ##### Data tables:
 

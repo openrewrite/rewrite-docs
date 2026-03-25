@@ -36,6 +36,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Apache HttpCore Nio Input Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioinputbuffers.md)
 * [Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_niooutputbuffers.md)
 * [Migrate `Joined.named()` to `Joined.as()`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/migratejoinednamemethod)
+* [Migrate `RestTemplate` to `RestClient`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migrateresttemplatetorestclient)
 * [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/springfoxtospringdoc.md)
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 * [Replace deprecated RequestMatcherProvider with new API](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedrequestmatcherprovider)

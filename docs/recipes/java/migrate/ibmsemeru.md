@@ -75,7 +75,7 @@ recipeList:
 
 ###### Before
 ```java
-import com.sun.net.ssl.internal.www.protocol.https.*;  //do NOT flag this
+import com.sun.net.ssl.internal.www.protocol.https.*;
 
 class Foo{
   void bar() {
@@ -102,7 +102,6 @@ class Foo{
 ###### After
 ```java
 import com.ibm.net.ssl.www2.protocol.https.Handler;
-import com.sun.net.ssl.internal.www.protocol.https.*;  //do NOT flag this
 
 class Foo{
   void bar() {
@@ -130,10 +129,11 @@ class Foo{
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,0 +1,1 @@
+@@ -1,1 +1,1 @@
+-import com.sun.net.ssl.internal.www.protocol.https.*;
 +import com.ibm.net.ssl.www2.protocol.https.Handler;
-import com.sun.net.ssl.internal.www.protocol.https.*;  //do NOT flag this
-@@ -5,2 +6,2 @@
+
+@@ -5,2 +5,2 @@
 class Foo{
   void bar() {
 -     com.sun.net.ssl.internal.www.protocol.https.Handler handler_1 =           //flag
@@ -141,13 +141,13 @@ class Foo{
 +     Handler handler_1 =           //flag
 +         new Handler();            //flag
       Handler handler_2 =   new Handler("String", 1); //flag (2)
-@@ -10,1 +11,1 @@
+@@ -10,1 +10,1 @@
       testMethod(handler_1);
       testMethod(handler_2);
 -     if (handler_1 instanceof com.sun.net.ssl.internal.www.protocol.https.Handler){ //flag
 +     if (handler_1 instanceof Handler){ //flag
           //do nothing
-@@ -19,1 +20,1 @@
+@@ -19,1 +19,1 @@
   }
 
 - public static com.sun.net.ssl.internal.www.protocol.https.Handler testMethod(Handler handler){ //flag (2)
@@ -169,7 +169,7 @@ class Foo{
 
 ###### Before
 ```java
-import com.sun.net.ssl.internal.www.protocol.https.*;  //do NOT flag this
+import com.sun.net.ssl.internal.www.protocol.https.*;
 
 class Foo{
   void bar() {
@@ -196,7 +196,6 @@ class Foo{
 ###### After
 ```java
 import com.ibm.net.ssl.www2.protocol.https.Handler;
-import com.sun.net.ssl.internal.www.protocol.https.*;  //do NOT flag this
 
 class Foo{
   void bar() {
@@ -224,10 +223,11 @@ class Foo{
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,0 +1,1 @@
+@@ -1,1 +1,1 @@
+-import com.sun.net.ssl.internal.www.protocol.https.*;
 +import com.ibm.net.ssl.www2.protocol.https.Handler;
-import com.sun.net.ssl.internal.www.protocol.https.*;  //do NOT flag this
-@@ -5,2 +6,2 @@
+
+@@ -5,2 +5,2 @@
 class Foo{
   void bar() {
 -     com.sun.net.ssl.internal.www.protocol.https.Handler handler_1 =           //flag
@@ -235,13 +235,13 @@ class Foo{
 +     Handler handler_1 =           //flag
 +         new Handler();            //flag
       Handler handler_2 =   new Handler("String", 1); //flag (2)
-@@ -10,1 +11,1 @@
+@@ -10,1 +10,1 @@
       testMethod(handler_1);
       testMethod(handler_2);
 -     if (handler_1 instanceof com.sun.net.ssl.internal.www.protocol.https.Handler){ //flag
 +     if (handler_1 instanceof Handler){ //flag
           //do nothing
-@@ -19,1 +20,1 @@
+@@ -19,1 +19,1 @@
   }
 
 - public static com.sun.net.ssl.internal.www.protocol.https.Handler testMethod(Handler handler){ //flag (2)

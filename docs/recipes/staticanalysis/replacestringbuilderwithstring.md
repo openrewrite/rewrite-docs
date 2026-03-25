@@ -27,6 +27,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Code cleanup](/recipes/staticanalysis/codecleanup.md)
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Java best practices](/recipes/java/migrate/javabestpractices.md)
 
 ## Example
 

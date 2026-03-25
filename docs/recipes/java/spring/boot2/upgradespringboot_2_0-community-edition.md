@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x](../../../java/spring/boot2/conditionalonbeananynestedconditionboot1)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -108,6 +109,7 @@ tags:
   - spring
   - boot
 recipeList:
+  - org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedConditionBoot1
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: "*"

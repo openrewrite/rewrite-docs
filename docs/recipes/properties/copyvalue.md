@@ -1,0 +1,187 @@
+---
+sidebar_label: "Copy property value"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
+
+# Copy property value
+
+**org.openrewrite.properties.CopyValue**
+
+_Copies a property value from one key to another. The existing key/value pair remains unaffected by this change. If the destination key already exists, its value will be replaced. By default, creates the destination key if it does not exist._
+
+## Recipe source
+
+[GitHub: CopyValue.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/CopyValue.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | oldPropertyKey | The property key to copy the value from. Supports glob patterns. | `app.source.property` |
+| `String` | oldFilePath | *Optional*. The file path to the properties file to copy the value from. If `null` then the value will be copied from any properties file it appears within. | `src/main/resources/application.properties` |
+| `String` | newPropertyKey | The property key to copy the value to. | `app.destination.property` |
+| `String` | newFilePath | *Optional*. The file path to the properties file to copy the value to. If `null` then the value will be copied only into the same file it was found in. | `src/main/resources/application.properties` |
+| `Boolean` | createNewKeys | *Optional*. When the destination key does _not_ already exist, create it. Default is `true`. |  |
+| `Boolean` | relaxedBinding | *Optional*. Whether to match the `oldPropertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Default is `true`. Set to `false` to use exact matching. |  |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|oldPropertyKey|`source.key`|
+|oldFilePath|`null`|
+|newPropertyKey|`destination.key`|
+|newFilePath|`null`|
+|createNewKeys|`null`|
+|relaxedBinding|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+source.key=myValue
+destination.key=original
+```
+
+###### After
+```properties
+source.key=myValue
+destination.key=myValue
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,1 @@
+source.key=myValue
+-destination.key=original
++destination.key=myValue
+
+```
+</TabItem>
+</Tabs>
+
+
+## Usage
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.CopyValueExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.CopyValueExample
+displayName: Copy property value example
+recipeList:
+  - org.openrewrite.properties.CopyValue:
+      oldPropertyKey: app.source.property
+      oldFilePath: src/main/resources/application.properties
+      newPropertyKey: app.destination.property
+      newFilePath: src/main/resources/application.properties
+```
+
+<RunRecipe
+  recipeName="org.openrewrite.properties.CopyValue"
+  displayName="Copy property value"
+  groupId="org.openrewrite"
+  artifactId="rewrite-properties"
+  versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
+  isCoreLibrary
+  requiresConfiguration
+  cliOptions={' --recipe-option "oldPropertyKey=app.source.property" --recipe-option "oldFilePath=src/main/resources/application.properties" --recipe-option "newPropertyKey=app.destination.property" --recipe-option "newFilePath=src/main/resources/application.properties"'}
+  hasDataTables
+/>
+
+## See how this recipe works across multiple open-source repositories
+
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.properties.CopyValue" />
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+</Tabs>

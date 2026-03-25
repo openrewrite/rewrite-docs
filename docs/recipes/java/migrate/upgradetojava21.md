@@ -96,6 +96,149 @@ This recipe is used as part of the following composite recipes:
 * [Migrate tests to Java 21](/recipes/java/recipes/upgradeteststojava21.md)
 * [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
 
+## Examples
+##### Example 1
+`UpgradeToJava21Test#ifElseIfAssignmentToSwitchExpressionInOnePass`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    private static double convertToDouble(Object value) {
+        double dValue;
+        if (value instanceof String string) {
+            dValue = Double.parseDouble(string);
+        } else if (value instanceof Integer integer) {
+            dValue = integer.doubleValue();
+        } else if (value instanceof Long long1) {
+            dValue = long1.doubleValue();
+        } else {
+            dValue = (double) value;
+        }
+        return dValue;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    private static double convertToDouble(Object value) {
+        return switch (value) {
+            case String string -> Double.parseDouble(string);
+            case Integer integer -> integer.doubleValue();
+            case Long long1 -> long1.doubleValue();
+            case null, default -> (double) value;
+        };
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,11 +3,6 @@
+class Test {
+    private static double convertToDouble(Object value) {
+-       double dValue;
+-       if (value instanceof String string) {
+-           dValue = Double.parseDouble(string);
+-       } else if (value instanceof Integer integer) {
+-           dValue = integer.doubleValue();
+-       } else if (value instanceof Long long1) {
+-           dValue = long1.doubleValue();
+-       } else {
+-           dValue = (double) value;
+-       }
+-       return dValue;
++       return switch (value) {
++           case String string -> Double.parseDouble(string);
++           case Integer integer -> integer.doubleValue();
++           case Long long1 -> long1.doubleValue();
++           case null, default -> (double) value;
++       };
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeToJava21Test#ifElseIfAssignmentToSwitchExpressionInOnePass`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    private static double convertToDouble(Object value) {
+        double dValue;
+        if (value instanceof String string) {
+            dValue = Double.parseDouble(string);
+        } else if (value instanceof Integer integer) {
+            dValue = integer.doubleValue();
+        } else if (value instanceof Long long1) {
+            dValue = long1.doubleValue();
+        } else {
+            dValue = (double) value;
+        }
+        return dValue;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    private static double convertToDouble(Object value) {
+        return switch (value) {
+            case String string -> Double.parseDouble(string);
+            case Integer integer -> integer.doubleValue();
+            case Long long1 -> long1.doubleValue();
+            case null, default -> (double) value;
+        };
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,11 +3,6 @@
+class Test {
+    private static double convertToDouble(Object value) {
+-       double dValue;
+-       if (value instanceof String string) {
+-           dValue = Double.parseDouble(string);
+-       } else if (value instanceof Integer integer) {
+-           dValue = integer.doubleValue();
+-       } else if (value instanceof Long long1) {
+-           dValue = long1.doubleValue();
+-       } else {
+-           dValue = (double) value;
+-       }
+-       return dValue;
++       return switch (value) {
++           case String string -> Double.parseDouble(string);
++           case Integer integer -> integer.doubleValue();
++           case Long long1 -> long1.doubleValue();
++           case null, default -> (double) value;
++       };
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

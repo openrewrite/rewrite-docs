@@ -30,6 +30,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `javax.enterprise.concurrent`
+  * oldArtifactId: `javax.enterprise.concurrent-api`
+  * newGroupId: `jakarta.enterprise.concurrent`
+  * newArtifactId: `jakarta.enterprise.concurrent-api`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.enterprise.concurrent`
+  * artifactId: `jakarta.enterprise.concurrent-api`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.enterprise`
   * oldArtifactId: `cdi-api`
   * newGroupId: `jakarta.enterprise`
@@ -56,6 +65,15 @@ displayName: Migrate deprecated `javax.enterprise` packages to `jakarta.enterpri
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 recipeList:
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax.enterprise.concurrent
+      oldArtifactId: javax.enterprise.concurrent-api
+      newGroupId: jakarta.enterprise.concurrent
+      newArtifactId: jakarta.enterprise.concurrent-api
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.enterprise.concurrent
+      artifactId: jakarta.enterprise.concurrent-api
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.enterprise
       oldArtifactId: cdi-api

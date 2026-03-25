@@ -48,6 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add explicit Common Annotations dependencies](../../java/migrate/javax/addcommonannotationsdependencies)
 * [`BigDecimal` rounding constants to `RoundingMode` enums](../../staticanalysis/bigdecimalroundingconstantstoenums)
 * [Use primitive wrapper `valueOf` method](../../staticanalysis/primitivewrapperclassconstructortovalueof)
+* [Use try-with-resources](../../staticanalysis/usetrywithresources)
 * [Use modernized `java.util.concurrent` APIs](../../java/migrate/concurrent/javaconcurrentapis)
 * [Use modernized `java.lang` APIs](../../java/migrate/lang/javalangapis)
 * [Remove method invocations](../../java/removemethodinvocations)
@@ -121,6 +122,7 @@ recipeList:
   - org.openrewrite.java.migrate.javax.AddCommonAnnotationsDependencies
   - org.openrewrite.staticanalysis.BigDecimalRoundingConstantsToEnums
   - org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf
+  - org.openrewrite.staticanalysis.UseTryWithResources
   - org.openrewrite.java.migrate.concurrent.JavaConcurrentAPIs
   - org.openrewrite.java.migrate.lang.JavaLangAPIs
   - org.openrewrite.java.RemoveMethodInvocations:

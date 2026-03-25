@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `Integer` | semverPatchDays | *Optional*. The number of days to wait for patch version updates (1-90). Only applies to package managers that support semantic versioning. | `3` |
 | `List` | include | *Optional*. List of up to 150 dependencies to apply cooldown to. Supports wildcard patterns with `*`. If not specified, cooldown applies to all dependencies. | `lodash, react*` |
 | `List` | exclude | *Optional*. List of up to 150 dependencies to exempt from cooldown. Supports wildcard patterns with `*`. Exclude list takes precedence over include list. | `critical-security-package` |
+| `List` | excludeEcosystems | *Optional*. List of ecosystems to be excluded | `github-actions` |
 
 ## Example
 
@@ -49,6 +50,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 |semverPatchDays|`null`|
 |include|`null`|
 |exclude|`null`|
+|excludeEcosystems|`null`|
 
 
 <Tabs groupId="beforeAfter">

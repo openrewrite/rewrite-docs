@@ -47,7 +47,6 @@ This recipe is used as part of the following composite recipes:
 * [Replace 'camel.main.routeController' with `camel.routecontroller'](/recipes/org/apache/camel/upgrade/camel44/routecontrollerproperties.md)
 * [The option camel.main.debugger has been renamed](/recipes/org/apache/camel/upgrade/camel42/camelmaindebugger.md)
 * [Update Apache Camel configurations keys](/recipes/org/apache/camel/upgrade/customrecipes/propertiesandyamlkeyupdate.md)
-* [Update relocated Micronaut Security config properties](/recipes/java/micronaut/updatesecuritypropertiesifneeded.md)
 * [Upgrade to the latest Timefold Solver](/recipes/ai/timefold/solver/migration/tolatest.md)
 * [io.quarkus.updates.core.quarkus30.ApplicationProperties](/recipes/io/quarkus/updates/core/quarkus30/applicationproperties.md)
 * [io.quarkus.updates.core.quarkus32.ApplicationProperties](/recipes/io/quarkus/updates/core/quarkus32/applicationproperties.md)

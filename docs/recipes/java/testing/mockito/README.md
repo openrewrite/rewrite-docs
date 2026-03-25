@@ -17,14 +17,17 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add mockito-junit-jupiter dependency](./addmockitojupiterdependency.md)
 * [Adds Mockito extensions to Mockito tests](./addmockitoextensionifannotationsused.md)
 * [Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified](./simplifymockitoverifywhengiven.md)
 * [Cleanup Mockito imports](./cleanupmockitoimports.md)
 * [Cleanup PowerMock imports](./cleanuppowermockimports.md)
 * [Close unclosed static mocks](./closeunclosedstaticmocks.md)
+* [Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda](./argumentmatchertolambda.md)
 * [JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings](./mockitojunitrunnersilenttoextension.md)
 * [Remove `Mockito.times(0)` and `Mockito.times(1)`](./removetimeszeroandone.md)
 * [Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified](./removeinitmocksifrunnersspecified.md)
+* [Replace `@PowerMockRunnerDelegate` with `@RunWith`](./powermockrunnerdelegatetorunwith.md)
 * [Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension](./mockitojunitrunnertoextension.md)
 * [Replace Mockito 1.x `anyString()` with `nullable(String.class)`](./anystringtonullable.md)
 * [Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`](./anytonullable.md)

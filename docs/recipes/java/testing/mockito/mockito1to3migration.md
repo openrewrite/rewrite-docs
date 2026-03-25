@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.mockito.Matchers`
   * newFullyQualifiedTypeName: `org.mockito.ArgumentMatchers`
+* [Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda](../../../java/testing/mockito/argumentmatchertolambda)
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.mockito.ArgumentMatchers anyVararg()`
   * newMethodName: `any`
@@ -107,6 +108,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
 * [Adds Mockito extensions to Mockito tests](../../../java/testing/mockito/addmockitoextensionifannotationsused)
+* [Add mockito-junit-jupiter dependency](../../../java/testing/mockito/addmockitojupiterdependency)
 * [Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)](../../../java/testing/mockito/replacemockitotestexecutionlistenerforjupiter)
 * [Replace `MockitoTestExecutionListener` (JUnit 4 projects)](../../../java/testing/mockito/replacemockitotestexecutionlistenerforjunit4)
 * [Replace `MockitoTestExecutionListener` (TestNG projects)](../../../java/testing/mockito/replacemockitotestexecutionlistenerfortestng)
@@ -151,6 +153,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.mockito.Matchers
       newFullyQualifiedTypeName: org.mockito.ArgumentMatchers
+  - org.openrewrite.java.testing.mockito.ArgumentMatcherToLambda
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.mockito.ArgumentMatchers anyVararg()
       newMethodName: any
@@ -221,6 +224,7 @@ recipeList:
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
   - org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed
+  - org.openrewrite.java.testing.mockito.AddMockitoJupiterDependency
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJupiter
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJUnit4
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForTestNG

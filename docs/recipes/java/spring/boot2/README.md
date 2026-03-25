@@ -50,6 +50,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`](./migrateactuatormediatypetoapiversion.md)
 * [Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`](./migratehsqlembeddeddatabaseconnection.md)
 * [Migrate multi-condition `@ConditionalOnBean` annotations](./conditionalonbeananynestedcondition.md)
+* [Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x](./conditionalonbeananynestedconditionboot1.md)
 * [Migrate null credentials](./migratedatabasecredentialsfortoolproperties.md)
 * [Migrate null credentials](./migratedatabasecredentialsfortoolyaml.md)
 * [Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`](./migrateartemisproperties.md)
