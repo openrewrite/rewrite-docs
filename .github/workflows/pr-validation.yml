@@ -1,0 +1,57 @@
+name: PR validation
+
+on:
+  pull_request:
+    branches: [master]
+
+concurrency:
+  group: pr-validation-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Check file types
+        run: node scripts/check-file-types.js
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
+
+      - name: TypeScript type check
+        run: yarn typecheck
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build site
+        run: |
+          set -o pipefail
+          yarn build 2>&1 | { grep -v "^Generated markdown file:" || true; }
+        env:
+          CI_STRICT_LINKS: "1"
+          NODE_OPTIONS: --max-old-space-size=8192
+          DOCUSAURUS_IGNORE_SSG_WARNINGS: true
