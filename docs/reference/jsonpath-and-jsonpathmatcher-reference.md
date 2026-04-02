@@ -64,34 +64,6 @@ The supported operators of a filter expression are shown below:
 | `=~` | Matches a [JavaScript regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions). For example, `[?(@.uses =~ 'actions/setup-java@v2.*')]` matches items which `uses` starts with `actions/setup-java@v2`, and so would include `actions/setup-java@v2.1.1`. |
 | `!` | Negation. Inverts the result of an existence check or a comparison. Can negate a property existence check, such as `[?(!@.optional)]` to match items that do **not** have the `optional` property. Can also negate a parenthesized comparison, such as `[?(!(@.kind == 'ServiceAccount'))]` to match items where `kind` is **not** `ServiceAccount`. Negation can be combined with logical operators, such as `[?(!@.disabled && @.kind == 'Deployment')]`. |
 
-#### Negation examples
-
-Negation with `!` can be used in two forms:
-
-**Negated existence** — matches array elements that do _not_ have a given property:
-
-```text
-$.items[?(!@.optional)]
-```
-
-This selects all elements under `items` that do not have an `optional` property.
-
-**Negated comparison** — wraps a comparison in parentheses and negates it:
-
-```text
-$.subjects[?(!(@.kind == 'ServiceAccount'))]
-```
-
-This selects all elements under `subjects` where `kind` is not equal to `ServiceAccount`.
-
-**Combined with logical operators** — negation can be mixed with `&&` and `||`:
-
-```text
-$.items[?(!@.disabled && @.kind == 'Deployment')]
-```
-
-This selects elements that do not have a `disabled` property **and** whose `kind` equals `Deployment`.
-
 ## Configuring recipes using JsonPath expressions
 Recipes that take JsonPath expressions as arguments take them as strings. In YAML, that looks like this:
 
