@@ -62,6 +62,7 @@ The supported operators of a filter expression are shown below:
 | :--- | :--- |
 | `==` | Equals to. String values should be enclosed in single quotes. For example, `[?(@.kind == 'Deployment')]`. |
 | `=~` | Matches a [JavaScript regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions). For example, `[?(@.uses =~ 'actions/setup-java@v2.*')]` matches items which `uses` starts with `actions/setup-java@v2`, and so would include `actions/setup-java@v2.1.1`. |
+| `!` | Negation. Inverts the result of an existence check or a comparison. Can negate a property existence check, such as `[?(!@.optional)]` to match items that do **not** have the `optional` property. Can also negate a parenthesized comparison, such as `[?(!(@.kind == 'ServiceAccount'))]` to match items where `kind` is **not** `ServiceAccount`. Negation can be combined with logical operators, such as `[?(!@.disabled && @.kind == 'Deployment')]`. |
 
 ## Configuring recipes using JsonPath expressions
 Recipes that take JsonPath expressions as arguments take them as strings. In YAML, that looks like this:
