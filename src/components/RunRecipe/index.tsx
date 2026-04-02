@@ -47,9 +47,9 @@ export default function RunRecipe({
   const hasDependency = !!(groupId && artifactId);
   const needsDependency = hasDependency && !isCoreLibrary;
   const activeRecipeName = requiresConfiguration ? wrapperRecipeName(recipeName) : recipeName;
-  const cliRecipeName = useFullyQualifiedCliName
-    ? recipeName
-    : recipeName.substring(recipeName.lastIndexOf('.') + 1);
+  const cliRecipeName = useFullyQualifiedCliName ?
+    recipeName :
+    recipeName.substring(recipeName.lastIndexOf('.') + 1);
 
   const dataTableMavenConfig = hasDataTables ? '<exportDatatables>true</exportDatatables>\n          ' : '';
   const dataTableGradleConfig = hasDataTables ? '\n    setExportDatatables(true)' : '';
@@ -98,10 +98,10 @@ export default function RunRecipe({
   }
 
   // Intro text
-  const introText = isCoreLibrary
-    ? 'This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.'
-    : requiresConfiguration
-      ? undefined // Intro text for requiresConfiguration is rendered inline in the markdown before this component
+  const introText = isCoreLibrary ?
+    'This recipe has no required configuration parameters and comes from a rewrite core library. It can be activated directly without adding any dependencies.' :
+    requiresConfiguration ?
+      undefined // Intro text for requiresConfiguration is rendered inline in the markdown before this component
       : `This recipe has no required configuration options. It can be activated by adding a dependency on \`${groupId}:${artifactId}\` in your build file or by running a shell command (in which case no build changes are needed):`;
 
   // Version string helper
