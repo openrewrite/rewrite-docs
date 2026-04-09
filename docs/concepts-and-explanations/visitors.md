@@ -53,72 +53,9 @@ The parameterized type `T` represents the type of LSTs upon which the visitor wi
 
 All visitors have access to a `Cursor` which keeps track of a visitor's position within the LST while it is being traversed. Since LSTs are acyclic and therefore do not contain references to their parent element, the `Cursor` is the primary mechanism by which parent or sibling LSTs may be accessed.
 
-Logically a `Cursor` is a stack. Whenever an LST is visited, a `Cursor` pointing to it is pushed on top of the stack. When the visit for the LST completes, its `Cursor` is removed from the stack. In this way, the `Cursor` keeps track of the visitor's current position within the LST.
+Logically a `Cursor` is a stack. Whenever an LST is visited, a `Cursor` pointing to it is pushed on top of the stack. When the visit for the LST completes, its `Cursor` is removed from the stack. Each cursor also carries a message map that enables communication between different visit methods during traversal. Messages are discarded when visiting completes, so there is no risk of them affecting other visitors or recipes.
 
-As an example of how the `Cursor` can be helpful, imagine a visitor that is tasked with traversing a Java LST and marking only the top-level class as "final". The [compilation unit](./lst-examples.md#compilationunit) may include a class that has several nested classes. Visiting such a tree would result in the `visitClassDeclaration()` method being called multiple times, once for each class declaration. The `Cursor` can be used to determine which [class declaration](./lst-examples.md#classdeclaration) represents the top-level class:
-
-```java
-@Override
-public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext context) {
-    // The base class provides the language-specific navigation of sub-elements
-    // Without this invocation, sub-elements such as inner classes will never be visited
-    J.ClassDeclaration classDeclaration = (J.ClassDeclaration) super.visitClassDeclaration(cd, context);
-
-    // Visitors must always decline to make an unnecessary change
-    if (classDeclaration.hasModifier(J.Modifier.Type.Final)) {
-        return classDeclaration;
-    }
-
-    // If the current class declaration is not enclosed by another class declaration,
-    // it must be the top-level class.
-    if (getCursor().getParentOrThrow().firstEnclosing(J.ClassDeclaration.class) == null) {
-        classDeclaration = classDeclaration.withModifiers(ListUtils.concat(classDeclaration.getModifiers(),
-                new J.Modifier(Tree.randomId(), Space.EMPTY, Markers.EMPTY,
-                        J.Modifier.Type.Final, Collections.emptyList())));
-
-        // Ensure modifiers are in the idiomatic order
-        classDeclaration = (J.ClassDeclaration) new ModifierOrder().getVisitor()
-                .visitNonNull(classDeclaration, context);
-
-        // Format only the method declaration, stopping after the modifiers
-        // Making the most minimal possible change makes changes easier for reviewers to accept
-        classDeclaration = autoFormat(classDeclaration, classDeclaration.getName(), context, getCursor().getParentOrThrow());
-    }
-
-    return classDeclaration;
-}
-```
-
-Each `Cursor` within the stack has a `Map` into which arbitrary data may be read from or written to. This data is thrown away (along with the `Cursor` which contains it) once the visit is over. The purpose of this mechanism is to facilitate communication between different visit methods. Because this information is discarded when visiting is complete, there is no need to worry about it affecting any other visitor or recipe in the run.
-
-For example, imagine you wanted to make a visitor which needs to change to a class declaration based on something it finds within a method declaration. You could freely add information to the cursor without worry that this would affect any other visitors or recipes:
-
-```java
-public class ChangesClassBasedOnMethod extends JavaIsoVisitor<ExecutionContext> {
-    @Override
-    public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration cd, ExecutionContext ctx) {
-        // Traverses down into sub-elements of the current class declaration
-        J.ClassDeclaration classDeclaration = (J.ClassDeclaration) super.visitClassDeclaration(cd, ctx);
-
-        J.MethodInvocation methodInvocation = getCursor().pollMessage("FOUND_METHOD");
-        if (methodInvocation != null) {
-            // Do something with the information which has been provided via the cursor
-        }
-
-        return classDeclaration;
-    }
-
-    @Override
-    public J.MethodDeclaration visitMethodDeclaration(J.MethodDeclaration methodDeclaration, ExecutionContext ctx) {
-        if (/* methodDeclaration meets some criteria */) {
-            // Puts the message on the cursor corresponding to the element this message will be read from
-            getCursor().putMessageOnFirstEnclosing(J.ClassDeclaration.class, "FOUND_METHOD", methodDeclaration);
-        }
-
-        return methodDeclaration;
-    }
-}
-```
+For a comprehensive guide to cursor navigation, messaging, and common patterns, see the [Cursors](./cursors.md) documentation.
 
 ## Language-specific visitors
 

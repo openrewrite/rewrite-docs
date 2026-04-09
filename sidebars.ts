@@ -177,6 +177,7 @@ const sidebars: SidebarsConfig = {
         'concepts-and-explanations/styles',
         'concepts-and-explanations/traits',
         'concepts-and-explanations/visitors',
+        'concepts-and-explanations/cursors',
       ],
     },
     {
