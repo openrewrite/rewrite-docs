@@ -73,7 +73,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update Gradle wrapper](../../../gradle/updategradlewrapper)
   * version: `^7.4`
   * addIfMissing: `false`
-* [Migrate to Jakarta EE 10](../../../java/migrate/jakarta/jakartaee10)
+* [Migrate to Spring Framework 6.0](../../../java/spring/framework/upgradespringframework_6_0)
 * [Remove Unnecessary `@ConstructorBinding`](../../../java/spring/boot3/removeconstructorbindingannotation)
 * [Use `AutoConfiguration#imports`](../../../java/spring/boot2/moveautoconfigurationtoimportsfile)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](../../../java/spring/boot3/actuatorendpointsanitization)
@@ -88,7 +88,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`](../../../java/spring/boot3/migratewebmvctagstoobservationconvention)
 * [`@Bean` methods may not return `void`](../../../java/spring/framework/beanmethodreturnnull)
 * [Migrate to Spring Batch 5.0 from 4.3](../../../java/spring/batch/springbatch4to5migration)
-* [Migrate to Spring Framework 6.0](../../../java/spring/framework/upgradespringframework_6_0)
 * [Migrate to Spring Kafka 3.0](../../../java/spring/kafka/upgradespringkafka_3_0)
 * [Migrate to Spring Security 6.0](../../../java/spring/security6/upgradespringsecurity_6_0)
 * [Migrate to Spring Cloud 2022](../../../java/spring/cloud2022/upgradespringcloud_2022)
@@ -151,7 +150,7 @@ recipeList:
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: ^7.4
       addIfMissing: false
-  - org.openrewrite.java.migrate.jakarta.JakartaEE10
+  - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0
   - org.openrewrite.java.spring.boot3.RemoveConstructorBindingAnnotation
   - org.openrewrite.java.spring.boot2.MoveAutoConfigurationToImportsFile
   - org.openrewrite.java.spring.boot3.ActuatorEndpointSanitization
@@ -166,7 +165,6 @@ recipeList:
   - org.openrewrite.java.spring.boot3.MigrateWebMvcTagsToObservationConvention
   - org.openrewrite.java.spring.framework.BeanMethodReturnNull
   - org.openrewrite.java.spring.batch.SpringBatch4To5Migration
-  - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0
   - org.openrewrite.java.spring.kafka.UpgradeSpringKafka_3_0
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_0
   - org.openrewrite.java.spring.cloud2022.UpgradeSpringCloud_2022

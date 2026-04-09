@@ -104,8 +104,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.mockito.runners.MockitoJUnitRunner`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
+* [Replace undeclared checked exceptions in `thenThrow` with `RuntimeException`](../../../java/testing/mockito/thenthrowcheckedexceptiontoruntimeexception)
 * [Cleanup Mockito imports](../../../java/testing/mockito/cleanupmockitoimports)
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
+* [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
 * [Adds Mockito extensions to Mockito tests](../../../java/testing/mockito/addmockitoextensionifannotationsused)
 * [Add mockito-junit-jupiter dependency](../../../java/testing/mockito/addmockitojupiterdependency)
@@ -113,7 +115,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `MockitoTestExecutionListener` (JUnit 4 projects)](../../../java/testing/mockito/replacemockitotestexecutionlistenerforjunit4)
 * [Replace `MockitoTestExecutionListener` (TestNG projects)](../../../java/testing/mockito/replacemockitotestexecutionlistenerfortestng)
 * [Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified](../../../java/testing/mockito/removeinitmocksifrunnersspecified)
-* [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
+* [Remove `doNothing()` for void methods on `@Mock` fields](../../../java/testing/mockito/removedonothingfordefaultmocks)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.mockito`
   * oldArtifactId: `mockito-all`
@@ -220,8 +222,10 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.mockito.runners.MockitoJUnitRunner
       newFullyQualifiedTypeName: org.mockito.junit.MockitoJUnitRunner
+  - org.openrewrite.java.testing.mockito.ThenThrowCheckedExceptionToRuntimeException
   - org.openrewrite.java.testing.mockito.CleanupMockitoImports
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
+  - org.openrewrite.java.testing.mockito.ReplacePowerMockito
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
   - org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed
   - org.openrewrite.java.testing.mockito.AddMockitoJupiterDependency
@@ -229,7 +233,7 @@ recipeList:
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJUnit4
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForTestNG
   - org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified
-  - org.openrewrite.java.testing.mockito.ReplacePowerMockito
+  - org.openrewrite.java.testing.mockito.RemoveDoNothingForDefaultMocks
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.mockito
       oldArtifactId: mockito-all

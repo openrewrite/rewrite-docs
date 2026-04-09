@@ -39,6 +39,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.el`
   * artifactId: `jakarta.el-api`
   * newVersion: `4.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.el`
+  * artifactId: `jakarta.el-api`
+  * version: `4.0.x`
+  * onlyIfUsing: `javax.el..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.el`
   * newPackageName: `jakarta.el`
@@ -66,6 +72,12 @@ recipeList:
       groupId: jakarta.el
       artifactId: jakarta.el-api
       newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.el
+      artifactId: jakarta.el-api
+      version: 4.0.x
+      onlyIfUsing: javax.el..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.el
       newPackageName: jakarta.el

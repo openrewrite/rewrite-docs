@@ -127,6 +127,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
 * [Migrates `camel 4.16` application to `camel 4.17`](/recipes/io/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
+* [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)

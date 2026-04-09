@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove empty tests without comments](./removeemptytests.md)
 * [Remove `public` visibility of JUnit 5 tests](./testsshouldnotbepublic.md)
 * [Remove `test` prefix from JUnit 5 tests](./removetestprefix.md)
+* [Remove unnecessary `assertEquals` delta argument for integral types](./assertequalsintegraldeltatoassertequals.md)
 * [Replace JUnit `assertEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`](./assertequalsbooleantoassertboolean.md)
 * [Replace JUnit `assertFalse(!&lt;boolean&gt;)` to `assertTrue(&lt;boolean&gt;)`](./assertfalsenegationtoasserttrue.md)
 * [Replace JUnit `assertFalse(a == null)` to `assertNotNull(a)`](./assertfalsenulltoassertnotnull.md)

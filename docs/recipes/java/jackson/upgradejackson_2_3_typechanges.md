@@ -139,6 +139,24 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy`
   * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy`
+  * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy.UpperCamelCaseStrategy`
+  * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies.UpperCamelCaseStrategy`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerCamelCaseStrategy`
+  * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies.LowerCamelCaseStrategy`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy.KebabCaseStrategy`
+  * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies.KebabCaseStrategy`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerDotCaseStrategy`
+  * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies.LowerDotCaseStrategy`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerCaseStrategy`
+  * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies.LowerCaseStrategy`
 
 </TabItem>
 
@@ -260,6 +278,24 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy
       newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy
+      newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy.UpperCamelCaseStrategy
+      newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies.UpperCamelCaseStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerCamelCaseStrategy
+      newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies.LowerCamelCaseStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy.KebabCaseStrategy
+      newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies.KebabCaseStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerDotCaseStrategy
+      newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies.LowerDotCaseStrategy
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy.LowerCaseStrategy
+      newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies.LowerCaseStrategy
 
 ```
 </TabItem>

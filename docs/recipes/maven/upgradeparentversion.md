@@ -52,7 +52,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
 * [Migrate to Spring Boot 3.5 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
-* [Migrate to Spring Cloud 2025.1](/recipes/java/spring/cloud2025/upgradespringcloud_2025_1.md)
 * [Migrate to WebLogic 14.1.1](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
 * [Update the WebLogic version to 14.1.2](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
 * [Update the WebLogic version to 15.1.1](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)

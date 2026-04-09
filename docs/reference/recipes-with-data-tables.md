@@ -3927,81 +3927,6 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 
-### rewrite-dropwizard
-
-#### [org.openrewrite.java.dropwizard.CoreSetup](/recipes/java/dropwizard/coresetup.md)
-  * **Create Spring Boot Application Entry Point**
-  * Creates the main Spring Boot application class.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.java.dropwizard.MigrateDropwizardToSpringBoot](/recipes/java/dropwizard/migratedropwizardtospringboot.md)
-  * **Migrate Dropwizard to Spring Boot**
-  * Apply various changes to migrate Dropwizard applications to Spring Boot.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.java.dropwizard.MigrateHealthChecksAndMetrics](/recipes/java/dropwizard/migratehealthchecksandmetrics.md)
-  * **Add Spring Boot Actuator**
-  * Configures Spring Boot Actuator with basic health endpoints.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.java.dropwizard.MigrateHibernate](/recipes/java/dropwizard/migratehibernate.md)
-  * **Migrate Hibernate**
-  * Converts Dropwizard Resources to Spring Boot format.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.java.dropwizard.MigrateResourcesToSpringJersey](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
-  * **Migrate Resource Classes**
-  * Converts Dropwizard Resources to Spring Boot format.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.java.dropwizard.MigrateSecurity](/recipes/java/dropwizard/migratesecurity.md)
-  * **Migrate Health Checks to Spring Boot**
-  * Converts Dropwizard health checks to Spring Boot format.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.java.dropwizard.MigrateTests](/recipes/java/dropwizard/migratetests.md)
-  * **Migrate Health Checks to Spring Boot**
-  * Converts Dropwizard tests to Spring Boot format.
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-#### [org.openrewrite.java.dropwizard.MigrateToDropwizard5](/recipes/java/dropwizard/migratetodropwizard5.md)
-  * **Migrate to Dropwizard 5.0.x from 4.x**
-  * Apply changes required to upgrade a Dropwizard 4.x application to 5.0.x. This includes upgrading dependencies, removing deprecated configuration options, and migrating Jetty handler implementations. Includes required migrations to Java 17, Jakarta EE 10, JUnit 5.14, Jackson 2.x, and Hibernate 6.6. See [the upgrade guide](https://www.dropwizard.io/en/stable/manual/upgrade-notes/upgrade-notes-5_0_x.html).
-
-##### Data tables:
-
-  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
-
-
-
 ### rewrite-github-actions
 
 #### [org.openrewrite.github.FindGitHubActionSecretReferences](/recipes/github/findgithubactionsecretreferences.md)
@@ -4444,6 +4369,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
+#### [org.openrewrite.java.migrate.lombok.LombokBestPractices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+  * **Lombok Best Practices**
+  * Applies all recipes that enforce best practices for using Lombok.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.search.AboutJavaVersion](/recipes/java/migrate/search/aboutjavaversion.md)
   * **Find which Java version is in use**
   * A diagnostic for studying the distribution of Java language version levels (both source and target compatibility across files and source sets).
@@ -4487,6 +4421,18 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.java.migrate.table.JavaVersionMigrationPlan**: *A per-repository view of the current state of Java versions and associated build tools*
+
+
+
+### rewrite-netty
+
+#### [org.openrewrite.netty.UpgradeNetty_3_2_to_4_1](/recipes/netty/upgradenetty_3_2_to_4_1.md)
+  * **Migrates from Netty 3.2.x to Netty 4.1.x**
+  * Migrate applications to the latest Netty 4.1.x release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
 
@@ -4543,6 +4489,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.table.RewriteRecipeSource**: *This table contains the source code of recipes along with their metadata for use in an experiment fine-tuning large language models to produce more recipes.*
 
 
+#### [org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes](/recipes/java/recipes/generatedeprecatedmethodrecipes.md)
+  * **Generate `InlineMethodCalls` recipes for deprecated delegating methods**
+  * Finds `@Deprecated` method declarations whose body is a single delegation call to another method in the same class, and generates a declarative YAML recipe file containing `InlineMethodCalls` entries for each.
+
+##### Data tables:
+
+  * **org.openrewrite.java.recipes.DeprecatedMethodDelegations**: *Deprecated methods that delegate to another method in the same class, suitable for inlining via `InlineMethodCalls`.*
+
+
+#### [org.openrewrite.java.recipes.RecipeTestingBestPractices](/recipes/java/recipes/recipetestingbestpractices.md)
+  * **Recipe testing best practices**
+  * Best practices for testing recipes.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.recipes.UpgradeTestsToJava21](/recipes/java/recipes/upgradeteststojava21.md)
   * **Migrate tests to Java 21**
   * Use Java 21 features in tests.
@@ -4558,6 +4522,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ##### Data tables:
 
+  * **org.openrewrite.java.recipes.DeprecatedMethodDelegations**: *Deprecated methods that delegate to another method in the same class, suitable for inlining via `InlineMethodCalls`.*
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
@@ -4711,6 +4676,51 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
   * **Migrate to Spring Boot 4.0 (Community Edition)**
   * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2025.AddSpringCloudDependenciesBom](/recipes/java/spring/cloud2025/addspringclouddependenciesbom.md)
+  * **Add Spring Cloud dependencies BOM**
+  * Adds the Spring Cloud dependencies BOM as a managed import, but only when the project already uses a Spring Cloud dependency. Prevents accidentally introducing the BOM into unrelated projects.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025_1](/recipes/java/spring/cloud2025/upgradespringcloud_2025_1.md)
+  * **Migrate to Spring Cloud 2025.1**
+  * Migrate applications to the latest Spring Cloud 2025.1 release, compatible with Spring Boot 4.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
+  * **Migrate to Spring Framework 6.0**
+  * Migrate applications to the latest Spring Framework 6.0 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
+  * **Migrate to Spring Framework 6.1**
+  * Migrate applications to the latest Spring Framework 6.1 release.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+  * **Migrate to Spring Framework 6.2**
+  * Migrate applications to the latest Spring Framework 6.2 release.
 
 ##### Data tables:
 
@@ -4967,6 +4977,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
   * **Change artifacts for a Maven plugin configuration**
   * Change artifacts for a Maven plugin configuration artifacts.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
+  * **Migrate to Spring Framework 6.2 for WebLogic 15.1.1**
+  * Migrate applications to the Spring Framework 6.2 release and compatibility with WebLogic 15.1.1.
 
 ##### Data tables:
 

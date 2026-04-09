@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate Spring annotations to CDI](/recipes/quarkus/spring/stereotypeannotationstocdi.md)
+* [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
 * [Use Byteman JUnit 5 dependency](/recipes/java/testing/byteman/bytemanjunit4tobytemanjunit5.md)
 
 ## Example

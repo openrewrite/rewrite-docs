@@ -14,9 +14,13 @@ _Migrate applications to the latest Spring Data JPA 2.7 release._
 
 ## Recipe source
 
-[GitHub: spring-data-27.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-27.yml),
+[GitHub: spring-data-2.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-2.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -25,7 +29,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Use `JpaRepository#getReferenceById(ID id)`](../../../java/spring/data/usejparepositorygetreferencebyid)
+* [Migrate to Spring Data JPA 2.5](../../../java/spring/data/upgradespringdata_2_5)
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.data.jpa.repository.JpaRepository getById(..)`
+  * newMethodName: `getReferenceById`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.data.jpa.repository.JpaRepository getOne(..)`
+  * newMethodName: `getReferenceById`
+  * matchOverrides: `true`
 
 </TabItem>
 
@@ -39,7 +51,15 @@ displayName: Migrate to Spring Data JPA 2.7
 description: |
   Migrate applications to the latest Spring Data JPA 2.7 release.
 recipeList:
-  - org.openrewrite.java.spring.data.UseJpaRepositoryGetReferenceById
+  - org.openrewrite.java.spring.data.UpgradeSpringData_2_5
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.data.jpa.repository.JpaRepository getById(..)
+      newMethodName: getReferenceById
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.data.jpa.repository.JpaRepository getOne(..)
+      newMethodName: getReferenceById
+      matchOverrides: true
 
 ```
 </TabItem>
@@ -50,7 +70,135 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+* [Migrate to Spring Data 3.0](/recipes/java/spring/data/upgradespringdata_3_0.md)
 * [Migrate to Spring Framework 6.2 for WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
+
+## Examples
+##### Example 1
+`UseJpaRepositoryGetReferenceByIdTest#matchAndUpdateReferences`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import foo.*;
+class A {
+    BookRepository repo;
+    void method(Long id) {
+        repo.getById(id);
+        repo.getOne(id);
+    }
+}
+```
+
+###### After
+```java
+import foo.*;
+class A {
+    BookRepository repo;
+    void method(Long id) {
+        repo.getReferenceById(id);
+        repo.getReferenceById(id);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+    BookRepository repo;
+    void method(Long id) {
+-       repo.getById(id);
+-       repo.getOne(id);
++       repo.getReferenceById(id);
++       repo.getReferenceById(id);
+    }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+package foo;
+import org.springframework.data.jpa.repository.JpaRepository;
+public interface BookRepository extends JpaRepository<Book, Long> {
+}
+```
+
+###### Unchanged
+```java
+package foo;
+public class Book {}
+```
+
+---
+
+##### Example 2
+`UseJpaRepositoryGetReferenceByIdTest#matchAndUpdateReferences`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import foo.*;
+class A {
+    BookRepository repo;
+    void method(Long id) {
+        repo.getById(id);
+        repo.getOne(id);
+    }
+}
+```
+
+###### After
+```java
+import foo.*;
+class A {
+    BookRepository repo;
+    void method(Long id) {
+        repo.getReferenceById(id);
+        repo.getReferenceById(id);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+    BookRepository repo;
+    void method(Long id) {
+-       repo.getById(id);
+-       repo.getOne(id);
++       repo.getReferenceById(id);
++       repo.getReferenceById(id);
+    }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+package foo;
+import org.springframework.data.jpa.repository.JpaRepository;
+public interface BookRepository extends JpaRepository<Book, Long> {
+}
+```
+
+###### Unchanged
+```java
+package foo;
+public class Book {}
+```
 
 
 ## Usage

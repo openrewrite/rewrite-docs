@@ -39,6 +39,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.xml.soap`
   * artifactId: `jakarta.xml.soap-api`
   * newVersion: `2.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.xml.soap`
+  * artifactId: `jakarta.xml.soap-api`
+  * version: `2.0.x`
+  * onlyIfUsing: `javax.xml.soap..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.xml.soap`
   * newPackageName: `jakarta.xml.soap`
@@ -66,6 +72,12 @@ recipeList:
       groupId: jakarta.xml.soap
       artifactId: jakarta.xml.soap-api
       newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.xml.soap
+      artifactId: jakarta.xml.soap-api
+      version: 2.0.x
+      onlyIfUsing: javax.xml.soap..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.xml.soap
       newPackageName: jakarta.xml.soap

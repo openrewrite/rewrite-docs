@@ -49,7 +49,22 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Use format alignment `ObjectMappers`](../../java/jackson/useformatalignedobjectmappers)
 * [Remove redundant Jackson 3 feature flag configurations](../../java/jackson/upgradejackson_2_3_removeredundantfeatureflags)
 * [Remove registrations of modules built-in to Jackson 3](../../java/jackson/removebuiltinmoduleregistrations)
-* [Migrate `JsonMapper` setter calls to builder pattern](../../java/jackson/migratemappersetterstobuilder)
+* [Migrate mapper setter calls to builder pattern](../../java/jackson/migratemappersetterstobuilder)
+* [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](../../java/jackson/updateserializationinclusionconfiguration)
+* [Replace `disable(MapperFeature.AUTO_DETECT_*)` with `changeDefaultVisibility()` for Jackson 3](../../java/jackson/updateautodetectvisibilityconfiguration)
+* [Reorder method arguments](../../java/reordermethodarguments)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerationException <constructor>(String, com.fasterxml.jackson.core.JsonGenerator)`
+  * newParameterNames: `[gen, msg]`
+  * oldParameterNames: `[msg, gen]`
+* [Reorder method arguments](../../java/reordermethodarguments)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerationException <constructor>(Throwable, com.fasterxml.jackson.core.JsonGenerator)`
+  * newParameterNames: `[gen, cause]`
+  * oldParameterNames: `[cause, gen]`
+* [Reorder method arguments](../../java/reordermethodarguments)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerationException <constructor>(String, Throwable, com.fasterxml.jackson.core.JsonGenerator)`
+  * newParameterNames: `[gen, msg, cause]`
+  * oldParameterNames: `[msg, cause, gen]`
+* [Add missing Jackson dataformat dependencies](../../java/jackson/addmissingjacksondependencies)
 * [Upgrade Jackson 2.x dependencies to 3.x](../../java/jackson/upgradejackson_2_3_dependencies)
 * [Update Jackson 2.x types to 3.x](../../java/jackson/upgradejackson_2_3_typechanges)
 * [Rename Jackson 2.x methods to 3.x equivalents](../../java/jackson/upgradejackson_2_3_methodrenames)
@@ -68,6 +83,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add comment to method invocations](../../java/addcommenttomethodinvocations)
   * comment: `TODO canDeserialize was removed in Jackson 3 with no replacement (see https://github.com/FasterXML/jackson-databind/issues/1917). Attempt serialization/deserialization and catch exceptions instead.`
   * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper canDeserialize(..)`
+* [Add comment to SimpleModule method calls on modules that no longer extend SimpleModule](../../java/jackson/commentoutsimplemodulemethodcalls)
+* [Add comment to method invocations](../../java/addcommenttomethodinvocations)
+  * comment: `TODO serializationConfig() is not to be used by application code in Jackson 3 (see https://github.com/FasterXML/jackson-databind/blob/3.x/src/main/java/tools/jackson/databind/ObjectMapper.java#L417). Consider using builder configuration instead.`
+  * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper serializationConfig()`
+* [Add comment to method invocations](../../java/addcommenttomethodinvocations)
+  * comment: `TODO deserializationConfig() is not to be used by application code in Jackson 3 (see https://github.com/FasterXML/jackson-databind/blob/3.x/src/main/java/tools/jackson/databind/ObjectMapper.java#L427). Consider using builder configuration instead.`
+  * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper deserializationConfig()`
 * [Update Jackson package names from 2.x to 3.x](../../java/jackson/upgradejackson_2_3_packagechanges)
 * [Simplify catch clauses for Jackson exceptions](../../java/jackson/simplifyjacksonexceptioncatch)
 
@@ -99,6 +121,35 @@ recipeList:
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags
   - org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations
   - org.openrewrite.java.jackson.MigrateMapperSettersToBuilder
+  - org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration
+  - org.openrewrite.java.jackson.UpdateAutoDetectVisibilityConfiguration
+  - org.openrewrite.java.ReorderMethodArguments:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerationException <constructor>(String, com.fasterxml.jackson.core.JsonGenerator)
+      newParameterNames:
+        - gen
+        - msg
+      oldParameterNames:
+        - msg
+        - gen
+  - org.openrewrite.java.ReorderMethodArguments:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerationException <constructor>(Throwable, com.fasterxml.jackson.core.JsonGenerator)
+      newParameterNames:
+        - gen
+        - cause
+      oldParameterNames:
+        - cause
+        - gen
+  - org.openrewrite.java.ReorderMethodArguments:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerationException <constructor>(String, Throwable, com.fasterxml.jackson.core.JsonGenerator)
+      newParameterNames:
+        - gen
+        - msg
+        - cause
+      oldParameterNames:
+        - msg
+        - cause
+        - gen
+  - org.openrewrite.java.jackson.AddMissingJacksonDependencies
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames
@@ -117,6 +168,13 @@ recipeList:
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO canDeserialize was removed in Jackson 3 with no replacement (see https://github.com/FasterXML/jackson-databind/issues/1917). Attempt serialization/deserialization and catch exceptions instead.
       methodPattern: com.fasterxml.jackson.databind.ObjectMapper canDeserialize(..)
+  - org.openrewrite.java.jackson.CommentOutSimpleModuleMethodCalls
+  - org.openrewrite.java.AddCommentToMethodInvocations:
+      comment: TODO serializationConfig() is not to be used by application code in Jackson 3 (see https://github.com/FasterXML/jackson-databind/blob/3.x/src/main/java/tools/jackson/databind/ObjectMapper.java#L417). Consider using builder configuration instead.
+      methodPattern: com.fasterxml.jackson.databind.ObjectMapper serializationConfig()
+  - org.openrewrite.java.AddCommentToMethodInvocations:
+      comment: TODO deserializationConfig() is not to be used by application code in Jackson 3 (see https://github.com/FasterXML/jackson-databind/blob/3.x/src/main/java/tools/jackson/databind/ObjectMapper.java#L427). Consider using builder configuration instead.
+      methodPattern: com.fasterxml.jackson.databind.ObjectMapper deserializationConfig()
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges
   - org.openrewrite.java.jackson.SimplifyJacksonExceptionCatch
 
@@ -435,6 +493,60 @@ class Test {
 ---
 
 ##### Example 7
+`ReorderStreamWriteExceptionArgumentsTest#reorderStringAndGenerator`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonGenerator;
+
+class Test {
+    void example(JsonGenerator gen) {
+        throw new JsonGenerationException("message", gen);
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.core.exc.StreamWriteException;
+
+class Test {
+    void example(JsonGenerator gen) {
+        throw new StreamWriteException(gen, "message");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import com.fasterxml.jackson.core.JsonGenerationException;
+-import com.fasterxml.jackson.core.JsonGenerator;
++import tools.jackson.core.JsonGenerator;
++import tools.jackson.core.exc.StreamWriteException;
+
+@@ -6,1 +6,1 @@
+class Test {
+    void example(JsonGenerator gen) {
+-       throw new JsonGenerationException("message", gen);
++       throw new StreamWriteException(gen, "message");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 8
 `StdDeserializerNullConstructorTest#stdDeserializerThisNullPattern`
 
 
@@ -520,7 +632,7 @@ class MyDeserializer extends StdDeserializer<String> {
 
 ---
 
-##### Example 8
+##### Example 9
 `TypeFactoryDefaultInstanceTest#typeFactoryDefaultInstanceRenamed`
 
 
@@ -574,7 +686,7 @@ class Test {
 
 ---
 
-##### Example 9
+##### Example 10
 `UpgradeJackson_2_3Test#jacksonUpgradeToVersion3`
 
 
@@ -687,7 +799,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 ---
 
-##### Example 10
+##### Example 11
 `Jackson3DependenciesTest#jacksonAnnotations`
 
 
@@ -747,7 +859,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 ---
 
-##### Example 11
+##### Example 12
 `Jackson3MethodRenamesTest#jsonGeneratorWriteObject`
 
 
@@ -797,7 +909,7 @@ class Test {
 
 ---
 
-##### Example 12
+##### Example 13
 `Jackson3TypeChangesTest#jsonFactory`
 
 
@@ -843,7 +955,7 @@ class Test {
 
 ---
 
-##### Example 13
+##### Example 14
 `LombokJacksonizedConfigTest#addJacksonVersionToLombokConfig`
 
 
@@ -864,7 +976,7 @@ class MyDto {
 
 ---
 
-##### Example 14
+##### Example 15
 `RemoveThrowsIOExceptionFromJacksonOverridesTest#removeThrowsIOExceptionFromSerializer`
 
 
@@ -932,7 +1044,7 @@ class MySerializer extends JsonSerializer<String> {
 
 ---
 
-##### Example 15
+##### Example 16
 `RenameJsonTokenFieldNameTest#renameFieldNameToPropertyName`
 
 
@@ -990,7 +1102,61 @@ class Test {
 
 ---
 
-##### Example 16
+##### Example 17
+`ReorderStreamWriteExceptionArgumentsTest#reorderStringAndGenerator`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.JsonGenerator;
+
+class Test {
+    void example(JsonGenerator gen) {
+        throw new JsonGenerationException("message", gen);
+    }
+}
+```
+
+###### After
+```java
+import tools.jackson.core.JsonGenerator;
+import tools.jackson.core.exc.StreamWriteException;
+
+class Test {
+    void example(JsonGenerator gen) {
+        throw new StreamWriteException(gen, "message");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import com.fasterxml.jackson.core.JsonGenerationException;
+-import com.fasterxml.jackson.core.JsonGenerator;
++import tools.jackson.core.JsonGenerator;
++import tools.jackson.core.exc.StreamWriteException;
+
+@@ -6,1 +6,1 @@
+class Test {
+    void example(JsonGenerator gen) {
+-       throw new JsonGenerationException("message", gen);
++       throw new StreamWriteException(gen, "message");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 18
 `StdDeserializerNullConstructorTest#stdDeserializerThisNullPattern`
 
 
@@ -1076,7 +1242,7 @@ class MyDeserializer extends StdDeserializer<String> {
 
 ---
 
-##### Example 17
+##### Example 19
 `TypeFactoryDefaultInstanceTest#typeFactoryDefaultInstanceRenamed`
 
 
@@ -1130,7 +1296,7 @@ class Test {
 
 ---
 
-##### Example 18
+##### Example 20
 `UpgradeJackson_2_3Test#jacksonUpgradeToVersion3`
 
 

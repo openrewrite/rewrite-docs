@@ -42,6 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `getEstimatedEffortPerOccurrence()` method with field](../../java/recipes/useestimatedeffortperoccurrencefield)
 * [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
 * [Replace `getTags()` method with field](../../java/recipes/usetagsfield)
+* [Use `JavaTemplate.apply()` static method](../../java/recipes/usejavatemplatestaticapply)
 * [Use `Tree.randomId()` in LST constructors](../../java/recipes/usetreerandomid)
 * [Use `visit` with parent cursor when calling from another visitor](../../java/recipes/usevisitwithparentcursor)
 * [Fix missing braces](../../staticanalysis/needbraces)
@@ -73,6 +74,7 @@ recipeList:
   - org.openrewrite.java.recipes.UseEstimatedEffortPerOccurrenceField
   - org.openrewrite.java.recipes.UseStringUtilsRecipes
   - org.openrewrite.java.recipes.UseTagsField
+  - org.openrewrite.java.recipes.UseJavaTemplateStaticApply
   - org.openrewrite.java.recipes.UseTreeRandomId
   - org.openrewrite.java.recipes.UseVisitWithParentCursor
   - org.openrewrite.staticanalysis.NeedBraces

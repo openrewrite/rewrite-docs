@@ -34,16 +34,19 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `spring-boot-starter-cache-test`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.boot.test.autoconfigure.core.AutoConfigureCache`
+  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-data-cassandra-test`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.boot.test.autoconfigure.data.cassandra.*`
+  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-data-jpa-test`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.boot.test.autoconfigure.orm.jpa.*`
+  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-jdbc-test`
@@ -80,26 +83,31 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `spring-boot-starter-webmvc-test`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.boot.test.autoconfigure.web.servlet.*`
+  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-restclient`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.web.client.*`
+  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-restclient`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.boot.web.client.*`
+  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-restclient-test`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.boot.test.autoconfigure.web.client.*`
+  * acceptTransitive: `true`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-resttestclient`
   * version: `4.0.x`
   * onlyIfUsing: `org.springframework.boot.test.web.client.*`
+  * acceptTransitive: `true`
 * [Migrate packages to modular starters](../../../java/spring/boot4/migrateautoconfigurepackages)
 
 </TabItem>
@@ -119,16 +127,19 @@ recipeList:
       artifactId: spring-boot-starter-cache-test
       version: 4.0.x
       onlyIfUsing: org.springframework.boot.test.autoconfigure.core.AutoConfigureCache
+      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-data-cassandra-test
       version: 4.0.x
       onlyIfUsing: org.springframework.boot.test.autoconfigure.data.cassandra.*
+      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-data-jpa-test
       version: 4.0.x
       onlyIfUsing: org.springframework.boot.test.autoconfigure.orm.jpa.*
+      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-jdbc-test
@@ -165,26 +176,31 @@ recipeList:
       artifactId: spring-boot-starter-webmvc-test
       version: 4.0.x
       onlyIfUsing: org.springframework.boot.test.autoconfigure.web.servlet.*
+      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-restclient
       version: 4.0.x
       onlyIfUsing: org.springframework.web.client.*
+      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-restclient
       version: 4.0.x
       onlyIfUsing: org.springframework.boot.web.client.*
+      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-restclient-test
       version: 4.0.x
       onlyIfUsing: org.springframework.boot.test.autoconfigure.web.client.*
+      acceptTransitive: true
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-resttestclient
       version: 4.0.x
       onlyIfUsing: org.springframework.boot.test.web.client.*
+      acceptTransitive: true
   - org.openrewrite.java.spring.boot4.MigrateAutoconfigurePackages
 
 ```

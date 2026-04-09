@@ -75,13 +75,14 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
-* [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
 * [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
 * [Upgrade Java to 11+ for Kafka clients](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkaclients)
 * [Upgrade Java to 17+ for Kafka broker/tools](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkabroker)
 * [Upgrade build to Java 11](/recipes/java/migrate/upgradebuildtojava11.md)
 * [Upgrade build to Java 17](/recipes/java/migrate/upgradebuildtojava17.md)
 * [Upgrade build to Java 21](/recipes/java/migrate/upgradebuildtojava21.md)
+* [Upgrade build to Java 24 for Kotlin &lt;2.3](/recipes/java/migrate/upgradebuildtojava24.md)
+* [Upgrade build to Java 25 (default)](/recipes/java/migrate/upgradebuildtojava25.md)
 
 ## Example
 

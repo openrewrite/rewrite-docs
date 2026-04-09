@@ -38,6 +38,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Hamcrest assertions to JUnit Jupiter](/recipes/java/testing/hamcrest/migratehamcresttojunit5.md)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
+* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Reorder the arguments of `RequestBody.create()`](/recipes/okhttp/reorderrequestbodycreatearguments.md)
 * [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)

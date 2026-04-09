@@ -24,7 +24,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | jobName | The name of the job to update | `build` |
+| `String` | jobName | The name of the job to update, use * to affect all the workflow jobs | `build` |
 | `List` | runners | The new list of runners to set | `ubuntu-latest` |
 
 ## Example

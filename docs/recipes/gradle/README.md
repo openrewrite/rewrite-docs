@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate to Gradle 7 from Gradle 6](./migratetogradle7.md)
 * [Migrate to Gradle 8 from Gradle 7](./migratetogradle8.md)
 * [Migrate to Gradle 9 from Gradle 8](./migratetogradle9.md)
+* [Use `=` assignment syntax for well-known Gradle properties](./useassignmentforpropertysyntax.md)
 
 ## Recipes
 
@@ -49,10 +50,13 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove redundant explicit dependencies and versions](./removeredundantdependencyversions.md)
 * [Remove redundant security resolution rules](./removeredundantsecurityresolutionrules.md)
 * [Remove repository](./removerepository.md)
+* [Sort Gradle dependencies](./sortdependencies.md)
+* [Sync Gradle ext properties with BOM](./syncgradleextpropertieswithbom.md)
 * [Update Gradle project Java compatibility](./updatejavacompatibility.md)
 * [Update Gradle wrapper](./updategradlewrapper.md)
 * [Upgrade Gradle dependency versions](./upgradedependencyversion.md)
 * [Upgrade transitive Gradle dependencies](./upgradetransitivedependencyversion.md)
+* [Use `=` assignment syntax for Gradle properties](./usepropertyassignmentsyntax.md)
 * [Use `Map` notation for Gradle dependency declarations](./dependencyusemapnotation.md)
 * [Use `String` notation for Gradle dependency declarations](./dependencyusestringnotation.md)
 

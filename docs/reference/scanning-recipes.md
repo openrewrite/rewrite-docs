@@ -43,12 +43,6 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Create text file**
   * Creates a new plain text file.
 
-### rewrite-csharp
-
-* [org.openrewrite.csharp.UpgradeNuGetPackageVersion](/recipes/csharp/upgradenugetpackageversion.md)
-  * **Upgrade NuGet package version**
-  * Upgrades the version of a NuGet `&lt;PackageReference&gt;` or `&lt;PackageVersion&gt;` in .csproj and Directory.Packages.props files. Handles property references by updating the property value instead of the version attribute. Supports semver version selectors.
-
 ### rewrite-gradle
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
@@ -254,7 +248,7 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 * [org.openrewrite.java.jackson.LombokJacksonizedConfig](/recipes/java/jackson/lombokjacksonizedconfig.md)
   * **Update `lombok.config` for Jackson 3 compatibility**
-  * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion = 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
+  * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion += 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
 
 ### rewrite-java-dependencies
 

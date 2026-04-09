@@ -45,6 +45,11 @@ This recipe is used as part of the following composite recipes:
 
 
 ###### Unchanged
+```mavenProject
+project
+```
+
+###### Unchanged
 ```properties
 server.servlet-path=/tmp/my-server-path
 ```

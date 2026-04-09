@@ -97,6 +97,7 @@ const config: Config = {
       {
         docs: {
           routeBasePath: "/",
+          exclude: ['**/_*.{js,jsx,ts,tsx,md,mdx}'],
           sidebarCollapsible: true,
           sidebarPath: "./sidebars.ts",
           editUrl: "https://github.com/openrewrite/rewrite-docs/edit/master",

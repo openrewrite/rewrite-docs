@@ -39,6 +39,24 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.faces`
   * artifactId: `jakarta.faces-api`
   * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `com.sun.faces`
+  * oldArtifactId: `jsf-api`
+  * newGroupId: `jakarta.faces`
+  * newArtifactId: `jakarta.faces-api`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `com.sun.faces`
+  * oldArtifactId: `jsf-impl`
+  * newGroupId: `org.glassfish`
+  * newArtifactId: `jakarta.faces`
+  * newVersion: `3.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.glassfish`
+  * oldArtifactId: `javax.faces`
+  * newGroupId: `org.glassfish`
+  * newArtifactId: `jakarta.faces`
+  * newVersion: `3.0.x`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.faces`
   * newPackageName: `jakarta.faces`
@@ -69,6 +87,24 @@ recipeList:
       groupId: jakarta.faces
       artifactId: jakarta.faces-api
       newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.sun.faces
+      oldArtifactId: jsf-api
+      newGroupId: jakarta.faces
+      newArtifactId: jakarta.faces-api
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.sun.faces
+      oldArtifactId: jsf-impl
+      newGroupId: org.glassfish
+      newArtifactId: jakarta.faces
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.glassfish
+      oldArtifactId: javax.faces
+      newGroupId: org.glassfish
+      newArtifactId: jakarta.faces
+      newVersion: 3.0.x
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.faces
       newPackageName: jakarta.faces
@@ -86,6 +122,49 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JSF 2.x to Jakarta Faces 3.x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
+
+## Examples
+##### Example 1
+`Faces3#migrateSunFacesJsfApi`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>jsf-app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.2.20</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`Faces3#migrateSunFacesJsfApi`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>jsf-app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.faces</groupId>
+            <artifactId>jsf-api</artifactId>
+            <version>2.2.20</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 
 ## Usage

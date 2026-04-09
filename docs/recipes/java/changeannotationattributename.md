@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
 * [Migrate from `@ApiImplicitParams`  to `@Parameters`](/recipes/openapi/swagger/migrateapiimplicitparamstoparameters.md)
 * [Migrate from `@ApiModelProperty` to `@Schema`](/recipes/openapi/swagger/migrateapimodelpropertytoschema.md)
 * [Migrate from `@ApiOperation` to `@Operation`](/recipes/openapi/swagger/migrateapioperationtooperation.md)
@@ -40,7 +41,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from `@ApiResponses` to `@ApiResponses`](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
 * [Migrate to Hibernate 4.0.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate40)
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
-* [Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
 * [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
 
 ## Example

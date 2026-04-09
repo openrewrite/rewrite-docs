@@ -36,6 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Use `var` for reference-typed variables](../../../java/migrate/lang/var/usevarforobject)
+* [Use `var` for variables initialized with type casts](../../../java/migrate/lang/var/usevarfortypecast)
+* [Use `var` for constructor call assignments](../../../java/migrate/lang/var/usevarforconstructors)
 * [Use `var` for primitive and String variables](../../../java/migrate/lang/var/usevarforprimitive)
 * [Apply `var` to Generic Constructors](../../../java/migrate/lang/var/usevarforgenericsconstructors)
 * [Apply `var` to generic method invocations](../../../java/migrate/lang/var/usevarforgenericmethodinvocations)
@@ -57,6 +59,8 @@ tags:
   - java10
 recipeList:
   - org.openrewrite.java.migrate.lang.var.UseVarForObject
+  - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast
+  - org.openrewrite.java.migrate.lang.var.UseVarForConstructors
   - org.openrewrite.java.migrate.lang.var.UseVarForPrimitive
   - org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors
   - org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations

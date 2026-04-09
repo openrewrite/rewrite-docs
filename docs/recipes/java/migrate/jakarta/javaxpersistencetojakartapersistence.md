@@ -45,6 +45,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.persistence`
   * artifactId: `jakarta.persistence-api`
   * newVersion: `3.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.persistence`
+  * artifactId: `jakarta.persistence-api`
+  * version: `3.0.x`
+  * onlyIfUsing: `javax.persistence..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.persistence`
   * newPackageName: `jakarta.persistence`
@@ -78,6 +84,12 @@ recipeList:
       groupId: jakarta.persistence
       artifactId: jakarta.persistence-api
       newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.persistence
+      artifactId: jakarta.persistence-api
+      version: 3.0.x
+      onlyIfUsing: javax.persistence..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.persistence
       newPackageName: jakarta.persistence
@@ -94,6 +106,121 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 * [Migrate to Hibernate 6.0.x (Community Edition)](/recipes/hibernate/migratetohibernate60-community-edition.md)
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+
+## Examples
+##### Example 1
+`JavaxPersistenceToJakartaPersistenceTest#switchesJavaxPersistenceApiDependencyToJakartaPersistenceApiDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.persistence.EntityManagerFactory;
+public class TestApplication {
+}
+```
+
+###### After
+```java
+import jakarta.persistence.EntityManagerFactory;
+public class TestApplication {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.persistence.EntityManagerFactory;
++import jakarta.persistence.EntityManagerFactory;
+public class TestApplication {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+Sample
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`JavaxPersistenceToJakartaPersistenceTest#switchesJavaxPersistenceApiDependencyToJakartaPersistenceApiDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.persistence.EntityManagerFactory;
+public class TestApplication {
+}
+```
+
+###### After
+```java
+import jakarta.persistence.EntityManagerFactory;
+public class TestApplication {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.persistence.EntityManagerFactory;
++import jakarta.persistence.EntityManagerFactory;
+public class TestApplication {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+Sample
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 
 ## Usage

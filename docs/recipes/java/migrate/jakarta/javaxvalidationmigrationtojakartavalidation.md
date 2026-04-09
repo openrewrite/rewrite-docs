@@ -45,6 +45,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.validation`
   * artifactId: `jakarta.validation-api`
   * newVersion: `3.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.validation`
+  * artifactId: `jakarta.validation-api`
+  * version: `3.0.x`
+  * onlyIfUsing: `javax.validation..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.validation`
   * newPackageName: `jakarta.validation`
@@ -86,6 +92,12 @@ recipeList:
       groupId: jakarta.validation
       artifactId: jakarta.validation-api
       newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.validation
+      artifactId: jakarta.validation-api
+      version: 3.0.x
+      onlyIfUsing: javax.validation..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.validation
       newPackageName: jakarta.validation

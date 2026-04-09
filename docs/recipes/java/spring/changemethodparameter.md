@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`](/recipes/java/spring/batch/upgradeskippolicyparametertype.md)
+* [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
 
 ## Example
 

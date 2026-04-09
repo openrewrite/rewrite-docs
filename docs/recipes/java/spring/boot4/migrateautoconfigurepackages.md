@@ -249,8 +249,56 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPackageName: `org.springframework.boot.security.autoconfigure.actuate.web.servlet`
   * recursive: `true`
 * [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.AdditionalHealthEndpointPath`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.AdditionalHealthEndpointPath`
+* [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpoint`
   * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpoint`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpointGroup`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpointGroup`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpointGroups`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpointGroups`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpointGroupsPostProcessor`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpointGroupsPostProcessor`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpointSupport`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpointSupport`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpointWebExtension`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpointWebExtension`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpointWebExtensionRuntimeHints`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpointWebExtensionRuntimeHints`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HttpCodeStatusMapper`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HttpCodeStatusMapper`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.ReactiveHealthEndpointWebExtension`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.ReactiveHealthEndpointWebExtension`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.SimpleHttpCodeStatusMapper`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.SimpleHttpCodeStatusMapper`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.SimpleStatusAggregator`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.SimpleStatusAggregator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.StatusAggregator`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.StatusAggregator`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.DefaultHealthContributorRegistry`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.registry.DefaultHealthContributorRegistry`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.DefaultReactiveHealthContributorRegistry`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.registry.DefaultReactiveHealthContributorRegistry`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthContributorRegistry`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.registry.HealthContributorRegistry`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.ReactiveHealthContributorRegistry`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.registry.ReactiveHealthContributorRegistry`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.actuate.health`
   * newPackageName: `org.springframework.boot.health.contributor`
@@ -488,8 +536,56 @@ recipeList:
       newPackageName: org.springframework.boot.security.autoconfigure.actuate.web.servlet
       recursive: true
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.AdditionalHealthEndpointPath
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.AdditionalHealthEndpointPath
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpoint
       newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpoint
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpointGroup
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpointGroup
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpointGroups
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpointGroups
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpointGroupsPostProcessor
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpointGroupsPostProcessor
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpointSupport
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpointSupport
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpointWebExtension
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpointWebExtension
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpointWebExtensionRuntimeHints
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpointWebExtensionRuntimeHints
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HttpCodeStatusMapper
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HttpCodeStatusMapper
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.ReactiveHealthEndpointWebExtension
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.ReactiveHealthEndpointWebExtension
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.SimpleHttpCodeStatusMapper
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.SimpleHttpCodeStatusMapper
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.SimpleStatusAggregator
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.SimpleStatusAggregator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.StatusAggregator
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.StatusAggregator
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.DefaultHealthContributorRegistry
+      newFullyQualifiedTypeName: org.springframework.boot.health.registry.DefaultHealthContributorRegistry
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.DefaultReactiveHealthContributorRegistry
+      newFullyQualifiedTypeName: org.springframework.boot.health.registry.DefaultReactiveHealthContributorRegistry
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthContributorRegistry
+      newFullyQualifiedTypeName: org.springframework.boot.health.registry.HealthContributorRegistry
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.ReactiveHealthContributorRegistry
+      newFullyQualifiedTypeName: org.springframework.boot.health.registry.ReactiveHealthContributorRegistry
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.actuate.health
       newPackageName: org.springframework.boot.health.contributor

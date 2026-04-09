@@ -212,7 +212,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JUnit 5 best practices](/recipes/java/testing/junit5/junit5bestpractices.md)
-* [Migrate Health Checks to Spring Boot](/recipes/java/dropwizard/migratetests.md)
+* [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
 * [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
 
 ## Examples

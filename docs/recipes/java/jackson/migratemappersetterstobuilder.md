@@ -1,16 +1,16 @@
 ---
-sidebar_label: "Migrate `JsonMapper` setter calls to builder pattern"
+sidebar_label: "Migrate mapper setter calls to builder pattern"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate `JsonMapper` setter calls to builder pattern
+# Migrate mapper setter calls to builder pattern
 
 **org.openrewrite.java.jackson.MigrateMapperSettersToBuilder**
 
-_In Jackson 3, `JsonMapper` is immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible._
+_In Jackson 3, `JsonMapper` and other format-aligned mappers are immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible._
 
 ### Tags
 
@@ -331,7 +331,7 @@ class A {
 
 <RunRecipe
   recipeName="org.openrewrite.java.jackson.MigrateMapperSettersToBuilder"
-  displayName="Migrate `JsonMapper` setter calls to builder pattern"
+  displayName="Migrate mapper setter calls to builder pattern"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-jackson"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON"

@@ -76,6 +76,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * propertyKey: `junit.jupiter.tempdir.scope`
 * [Delete property by key](../../../properties/deleteproperty)
   * propertyKey: `junit.jupiter.params.arguments.conversion.locale.format`
+* [Upgrade WireMock to 3.x](../../../java/testing/wiremock/upgradewiremockdependencyversion)
 
 </TabItem>
 
@@ -134,6 +135,7 @@ recipeList:
       propertyKey: junit.jupiter.tempdir.scope
   - org.openrewrite.properties.DeleteProperty:
       propertyKey: junit.jupiter.params.arguments.conversion.locale.format
+  - org.openrewrite.java.testing.wiremock.UpgradeWiremockDependencyVersion
 
 ```
 </TabItem>

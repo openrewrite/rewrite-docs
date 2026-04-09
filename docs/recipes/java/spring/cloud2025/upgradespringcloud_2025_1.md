@@ -39,10 +39,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `5.0.x`
   * overrideManagedVersion: `false`
-* [Upgrade Maven parent project version](../../../maven/upgradeparentversion)
-  * groupId: `org.springframework.cloud`
-  * artifactId: `spring-cloud-starter-parent`
-  * newVersion: `2025.1.x`
+* [Change Maven parent](../../../maven/changeparentpom)
+  * oldGroupId: `org.springframework.cloud`
+  * newGroupId: `org.springframework.boot`
+  * oldArtifactId: `spring-cloud-starter-parent`
+  * newArtifactId: `spring-boot-starter-parent`
+  * newVersion: `4.0.x`
+  * allowVersionDowngrades: `true`
+* [Add Spring Cloud dependencies BOM](../../../java/spring/cloud2025/addspringclouddependenciesbom)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-dependencies`
@@ -69,10 +73,14 @@ recipeList:
       artifactId: "*"
       newVersion: 5.0.x
       overrideManagedVersion: false
-  - org.openrewrite.maven.UpgradeParentVersion:
-      groupId: org.springframework.cloud
-      artifactId: spring-cloud-starter-parent
-      newVersion: 2025.1.x
+  - org.openrewrite.maven.ChangeParentPom:
+      oldGroupId: org.springframework.cloud
+      newGroupId: org.springframework.boot
+      oldArtifactId: spring-cloud-starter-parent
+      newArtifactId: spring-boot-starter-parent
+      newVersion: 4.0.x
+      allowVersionDowngrades: true
+  - org.openrewrite.java.spring.cloud2025.AddSpringCloudDependenciesBom
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.cloud
       artifactId: spring-cloud-dependencies
@@ -117,6 +125,12 @@ project
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+    </dependencies>
 </project>
 ```
 
@@ -149,6 +163,12 @@ project
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+    </dependencies>
 </project>
 ```
 
@@ -242,6 +262,25 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

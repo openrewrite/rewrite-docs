@@ -39,6 +39,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove JUnit 5 static Assertions imports in Kotlin when wildcard import is present](../../../java/testing/junit5/cleanupkotlinjunit5assertionimports)
 * [Clean Up Assertions](../../../java/testing/junit5/cleanupassertions)
 * [Replace `@CsvSource` with `@ValueSource` for single method arguments](../../../java/testing/junit5/csvsourcetovaluesource)
+* [Remove unnecessary `assertEquals` delta argument for integral types](../../../java/testing/cleanup/assertequalsintegraldeltatoassertequals)
 * [Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`](../../../java/testing/cleanup/assertliteralbooleantofailrecipes)
 * [Remove JUnit `assertTrue(true)` and `assertFalse(false)`](../../../java/testing/cleanup/assertliteralbooleanremovedrecipe)
 * [Kotlin test methods should have return type `Unit`](../../../java/testing/cleanup/kotlintestmethodsshouldreturnunit)
@@ -74,6 +75,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.CleanupKotlinJUnit5AssertionImports
   - org.openrewrite.java.testing.junit5.CleanupAssertions
   - org.openrewrite.java.testing.junit5.CsvSourceToValueSource
+  - org.openrewrite.java.testing.cleanup.AssertEqualsIntegralDeltaToAssertEquals
   - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanToFailRecipes
   - org.openrewrite.java.testing.cleanup.AssertLiteralBooleanRemovedRecipe
   - org.openrewrite.java.testing.cleanup.KotlinTestMethodsShouldReturnUnit

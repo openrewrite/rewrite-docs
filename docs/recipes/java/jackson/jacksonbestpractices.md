@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Remove redundant `@JsonProperty` argument](../../java/jackson/removeredundantjsonpropertyvalue)
+* [Replace deprecated `PropertyNamingStrategy` inner classes and constants](../../java/jackson/replacepropertynamingstrategyconstants)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `com.fasterxml.jackson*`
   * artifactId: `*`
@@ -55,6 +56,7 @@ tags:
   - jackson-2
 recipeList:
   - org.openrewrite.java.jackson.RemoveRedundantJsonPropertyValue
+  - org.openrewrite.java.jackson.ReplacePropertyNamingStrategyConstants
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.fasterxml.jackson*
       artifactId: "*"

@@ -37,10 +37,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace PowerMock dependencies with Mockito equivalents](../../../java/testing/mockito/replacepowermockdependencies)
 * [Remove annotation](../../../java/removeannotation)
   * annotationPattern: `@org.powermock.core.classloader.annotations.PowerMockIgnore`
+* [Remove annotation](../../../java/removeannotation)
+  * annotationPattern: `@org.powermock.core.classloader.annotations.SuppressStaticInitializationFor`
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.powermock.api.mockito.PowerMockito mockStatic(..)`
   * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
   * returnType: `org.mockito.MockedStatic`
+* [Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing](../../../java/testing/mockito/powermockitodostubbingtomockito)
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.powermock.api.mockito.PowerMockito do*(..)`
   * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
@@ -53,9 +56,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.powermock.api.mockito.PowerMockito when(..)`
   * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-* [Replace `@PowerMockRunnerDelegate` with `@RunWith`](../../../java/testing/mockito/powermockrunnerdelegatetorunwith)
+* [Replace PowerMock runner with JUnit `@RunWith`](../../../java/testing/mockito/powermockrunnerdelegatetorunwith)
+* [Remove PowerMock class extensions](../../../java/testing/mockito/removepowermockclassextensions)
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](../../../java/testing/mockito/powermockitomockstatictomockito)
 * [Replace `PowerMockito.whenNew` with Mockito counterpart](../../../java/testing/mockito/powermockitowhennewtomockito)
+* [Replace PowerMock `Whitebox` with Java reflection](../../../java/testing/mockito/powermockwhiteboxtojavareflection)
 * [Cleanup PowerMock imports](../../../java/testing/mockito/cleanuppowermockimports)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.powermock`
@@ -82,10 +87,13 @@ recipeList:
   - org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @org.powermock.core.classloader.annotations.PowerMockIgnore
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: @org.powermock.core.classloader.annotations.SuppressStaticInitializationFor
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.powermock.api.mockito.PowerMockito mockStatic(..)
       fullyQualifiedTargetTypeName: org.mockito.Mockito
       returnType: org.mockito.MockedStatic
+  - org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingToMockito
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.powermock.api.mockito.PowerMockito do*(..)
       fullyQualifiedTargetTypeName: org.mockito.Mockito
@@ -99,8 +107,10 @@ recipeList:
       methodPattern: org.powermock.api.mockito.PowerMockito when(..)
       fullyQualifiedTargetTypeName: org.mockito.Mockito
   - org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith
+  - org.openrewrite.java.testing.mockito.RemovePowerMockClassExtensions
   - org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito
   - org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito
+  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection
   - org.openrewrite.java.testing.mockito.CleanupPowerMockImports
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.powermock

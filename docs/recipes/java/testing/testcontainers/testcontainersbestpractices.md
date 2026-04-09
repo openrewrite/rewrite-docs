@@ -18,6 +18,10 @@ _Apply best practices to Testcontainers usage._
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -25,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate from `oracle-xe` to `oracle-free`](../../../java/testing/testcontainers/migratetooraclefree)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 
 </TabItem>
@@ -39,6 +44,7 @@ displayName: Testcontainers best practices
 description: |
   Apply best practices to Testcontainers usage.
 recipeList:
+  - org.openrewrite.java.testing.testcontainers.MigrateToOracleFree
   - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
 
 ```

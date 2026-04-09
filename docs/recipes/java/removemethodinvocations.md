@@ -33,6 +33,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Avoid using the deprecated empty `finalize()` method in `java.desktop`](/recipes/java/migrate/deletedeprecatedfinalize.md)
 * [Migrate Spring Boot 3.4 deprecated classes and methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/springboot34deprecations)
+* [Migrate `PropertyMapper` API for Spring Boot 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratepropertymapper)
 * [Migrate deprecated path mapping options](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/removedeprecatedpathmappingoptions)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)

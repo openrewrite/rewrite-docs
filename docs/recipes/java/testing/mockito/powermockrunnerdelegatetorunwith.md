@@ -1,16 +1,16 @@
 ---
-sidebar_label: "Replace `@PowerMockRunnerDelegate` with `@RunWith`"
+sidebar_label: "Replace PowerMock runner with JUnit `@RunWith`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Replace `@PowerMockRunnerDelegate` with `@RunWith`
+# Replace PowerMock runner with JUnit `@RunWith`
 
 **org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith**
 
-_Replaces `@PowerMockRunnerDelegate(X.class)` by promoting the delegate runner to `@RunWith(X.class)` and removing the PowerMock-specific annotation._
+_Replaces `@RunWith(PowerMockRunner.class)`. If `@PowerMockRunnerDelegate(X.class)` is present, promotes the delegate runner to `@RunWith(X.class)`. Otherwise, removes the `@RunWith(PowerMockRunner.class)` annotation entirely._
 
 ## Recipe source
 
@@ -117,7 +117,7 @@ public class SpringJUnit4ClassRunner extends org.junit.runner.Runner {
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith"
-  displayName="Replace `@PowerMockRunnerDelegate` with `@RunWith`"
+  displayName="Replace PowerMock runner with JUnit `@RunWith`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
