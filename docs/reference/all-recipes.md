@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4244
+Total recipes: 4240
 
 
 ## org.openrewrite
@@ -131,25 +131,6 @@ _28 recipes_
   * **Remove byte order mark (BOM)**
   * Removes UTF-8 byte order marks from the beginning of files.  The BOM character (U+FEFF) is generally unnecessary in UTF-8 files and can cause issues with some tools.
 
-### rewrite-csharp
-
-_License: Moderne Source Available License_
-
-_4 recipes_
-
-* [org.openrewrite.csharp.AddNuGetPackageReference](/recipes/csharp/addnugetpackagereference.md)
-  * **Add NuGet package reference**
-  * Adds a `&lt;PackageReference&gt;` element to .csproj files if not already present.
-* [org.openrewrite.csharp.ChangeDotNetTargetFramework](/recipes/csharp/changedotnettargetframework.md)
-  * **Change .NET target framework**
-  * Changes the `&lt;TargetFramework&gt;` or `&lt;TargetFrameworks&gt;` value in .csproj files. For multi-TFM projects, replaces the matching framework within the semicolon-delimited list.
-* [org.openrewrite.csharp.RemoveNuGetPackageReference](/recipes/csharp/removenugetpackagereference.md)
-  * **Remove NuGet package reference**
-  * Removes a `&lt;PackageReference&gt;` element from .csproj files.
-* [org.openrewrite.csharp.UpgradeNuGetPackageVersion](/recipes/csharp/upgradenugetpackageversion.md)
-  * **Upgrade NuGet package version**
-  * Upgrades the version of a NuGet `&lt;PackageReference&gt;` or `&lt;PackageVersion&gt;` in .csproj and Directory.Packages.props files. Handles property references by updating the property value instead of the version attribute. Supports semver version selectors.
-
 ### rewrite-docker
 
 _License: Apache License Version 2.0_
@@ -215,7 +196,7 @@ _18 recipes_
 
 _License: Apache License Version 2.0_
 
-_64 recipes_
+_68 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -313,6 +294,12 @@ _64 recipes_
 * [org.openrewrite.gradle.RemoveRepository](/recipes/gradle/removerepository.md)
   * **Remove repository**
   * Removes a repository from Gradle build scripts. Named repositories include &quot;jcenter&quot;, &quot;mavenCentral&quot;, &quot;mavenLocal&quot;, and &quot;google&quot;.
+* [org.openrewrite.gradle.SortDependencies](/recipes/gradle/sortdependencies.md)
+  * **Sort Gradle dependencies**
+  * Sort dependencies in `build.gradle` and `build.gradle.kts` files. Dependencies are sorted alphabetically by configuration name (e.g. `api`, `implementation`), then by groupId, then by artifactId.
+* [org.openrewrite.gradle.SyncGradleExtPropertiesWithBom](/recipes/gradle/syncgradleextpropertieswithbom.md)
+  * **Sync Gradle ext properties with BOM**
+  * Downloads a BOM and compares its properties against Gradle ext properties. When the BOM defines a higher version for a property, the ext property is updated to match (or removed if `removeRedundantOverrides` is enabled).
 * [org.openrewrite.gradle.UpdateGradleWrapper](/recipes/gradle/updategradlewrapper.md)
   * **Update Gradle wrapper**
   * Update the version of Gradle used in an existing Gradle wrapper. Queries `downloads.gradle.org` to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as `downloads.gradle.org`, then the recipe may suggest a version which is not available in your artifact repository.
@@ -325,6 +312,12 @@ _64 recipes_
 * [org.openrewrite.gradle.UpgradeTransitiveDependencyVersion](/recipes/gradle/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Gradle dependencies**
   * Upgrades the version of a transitive dependency in a Gradle build file. There are many ways to do this in Gradle, so the mechanism for upgrading a transitive dependency must be considered carefully depending on your style of dependency management.
+* [org.openrewrite.gradle.UseAssignmentForPropertySyntax](/recipes/gradle/useassignmentforpropertysyntax.md)
+  * **Use `=` assignment syntax for well-known Gradle properties**
+  * Converts deprecated Groovy DSL property assignment syntax from space/method-call form (e.g., `description 'text'` or `description('text')`) to assignment form (`description = 'text'`) for well-known Gradle project and task properties. See the [Gradle 8.14 upgrade guide](https://docs.gradle.org/8.14/userguide/upgrading_version_8.html#groovy_space_assignment_syntax) for more information.
+* [org.openrewrite.gradle.UsePropertyAssignmentSyntax](/recipes/gradle/usepropertyassignmentsyntax.md)
+  * **Use `=` assignment syntax for Gradle properties**
+  * Converts deprecated Groovy DSL property assignment syntax from space/method-call form (e.g., `description 'text'` or `description('text')`) to assignment form (`description = 'text'`). Addresses Gradle 8.14 deprecation: &quot;Properties should be assigned using the 'propName = value' syntax.&quot;.
 * [org.openrewrite.gradle.gradle8.JacocoReportDeprecations](/recipes/gradle/gradle8/jacocoreportdeprecations.md)
   * **Replace Gradle 8 introduced deprecations in JaCoCo report task**
   * Set the `enabled` to `required` and the `destination` to `outputLocation` for Reports deprecations that were removed in gradle 8. See [the gradle docs on this topic](https://docs.gradle.org/current/userguide/upgrading_version_7.html#report_and_testreport_api_cleanup).
@@ -811,7 +804,7 @@ _16 recipes_
   * Finds dependencies in a project's `package.json`. Can find both direct dependencies and dependencies that transitively include the target package. This recipe is commonly used as a precondition for other recipes.
 * [org.openrewrite.javascript.dependencies.upgrade-dependency-version](/recipes/javascript/dependencies/upgrade-dependency-version.md)
   * **Upgrade npm dependency version**
-  * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager.
+  * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager. Either `packageName` or `packagePattern` must be specified.
 * [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](/recipes/javascript/dependencies/upgrade-transitive-dependency-version.md)
   * **Upgrade transitive npm dependency version**
   * Upgrades the version of a transitive dependency by adding override/resolution entries to `package.json` and updates the lock file by running the package manager.
@@ -915,7 +908,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_87 recipes_
+_88 recipes_
 
 * [org.openrewrite.maven.AddAnnotationProcessor](/recipes/maven/addannotationprocessor.md)
   * **Add an annotation processor to `maven-compiler-plugin`**
@@ -1073,6 +1066,9 @@ _87 recipes_
 * [org.openrewrite.maven.ReplaceRemovedRootDirectoryProperties](/recipes/maven/replaceremovedrootdirectoryproperties.md)
   * **Replace removed root directory properties**
   * Maven 4 removed support for deprecated root directory properties. This recipe replaces `$\{executionRootDirectory\}` with `$\{session.rootDirectory\}` and `$\{multiModuleProjectDirectory\}` with `$\{project.rootDirectory\}`.
+* [org.openrewrite.maven.SortDependencies](/recipes/maven/sortdependencies.md)
+  * **Sort dependencies**
+  * Sort dependencies alphabetically by groupId then artifactId. Test-scoped dependencies are sorted after non-test dependencies. Applies to both `&lt;dependencies&gt;` and `&lt;dependencyManagement&gt;` sections.
 * [org.openrewrite.maven.UpdateMavenProjectPropertyJavaVersion](/recipes/maven/updatemavenprojectpropertyjavaversion.md)
   * **Update Maven Java project properties**
   * The Java version is determined by several project properties, including:   * `java.version`  * `jdk.version`  * `javaVersion`  * `jdkVersion`  * `maven.compiler.source`  * `maven.compiler.target`  * `maven.compiler.release`  * `release.version`  If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
@@ -1081,7 +1077,7 @@ _87 recipes_
   * Update the version of Maven used in an existing Maven wrapper.
 * [org.openrewrite.maven.UpdateScmFromGitOrigin](/recipes/maven/updatescmfromgitorigin.md)
   * **Update SCM with Git origin**
-  * Updates or adds the Maven `&lt;scm&gt;` tag based on the Git remote origin. By default, only existing Source Control Management (SCM) sections are updated. Set `addIfMissing` to `true` to also add missing SCM sections.
+  * Updates or adds the Maven `&lt;scm&gt;` tag based on the Git remote origin. By default, only existing Source Control Management (SCM) sections are updated. Set `addIfMissing` to `true` to also add missing SCM sections to root POMs (POMs without a parent element).
 * [org.openrewrite.maven.UpgradeDependencyVersion](/recipes/maven/upgradedependencyversion.md)
   * **Upgrade Maven dependency version**
   * Upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
@@ -1444,7 +1440,7 @@ _3 recipes_
 
 _License: Moderne Source Available License_
 
-_108 recipes_
+_110 recipes_
 
 * [org.openrewrite.apache.commons.codec.ApacheBase64ToJavaBase64](/recipes/apache/commons/codec/apachebase64tojavabase64.md)
   * **Prefer `java.util.Base64`**
@@ -1536,6 +1532,12 @@ _108 recipes_
 * [org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$UppercaseRecipe](/recipes/apache/commons/lang/apachecommonsstringutilsrecipes$uppercaserecipe.md)
   * **Replace `StringUtils.upperCase(String)` with JDK internals**
   * Replace Apache Commons `StringUtils.upperCase(String str)` with JDK internals.
+* [org.openrewrite.apache.commons.lang.DefaultIfBlankToJdk](/recipes/apache/commons/lang/defaultifblanktojdk.md)
+  * **Replace StringUtils#defaultIfBlank(String, String) with JDK equivalent**
+  * Replace `StringUtils#defaultIfBlank(s, fallback)` with `s == null || s.isBlank() ? fallback : s`.
+* [org.openrewrite.apache.commons.lang.IsBlankToJdk](/recipes/apache/commons/lang/isblanktojdk.md)
+  * **Replace any StringUtils#isBlank(String) and #isNotBlank(String)**
+  * Replace any `StringUtils#isBlank(String)` and `#isNotBlank(String)` with `s == null || s.isBlank()` and `s != null &amp;&amp; !s.isBlank()`.
 * [org.openrewrite.apache.commons.lang.IsNotEmptyToJdk](/recipes/apache/commons/lang/isnotemptytojdk.md)
   * **Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)**
   * Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == null || s.isEmpty()` and `s != null &amp;&amp; !s.isEmpty()`.
@@ -3177,109 +3179,6 @@ _10 recipes_
   * **Upgrade to Cucumber-JVM 7.x**
   * Upgrade to Cucumber-JVM 7.x from any previous version.
 
-### rewrite-dropwizard
-
-_License: Apache License Version 2.0_
-
-_32 recipes_
-
-* [org.openrewrite.java.dropwizard.AddActuatorConfiguration](/recipes/java/dropwizard/addactuatorconfiguration.md)
-  * **Add Spring Boot Actuator Configuration**
-  * Configures Spring Boot Actuator endpoints and health checks in application.properties.
-* [org.openrewrite.java.dropwizard.AddCoreExampleProperties](/recipes/java/dropwizard/addcoreexampleproperties.md)
-  * **Add Core Example Properties**
-  * Adds core example properties to the application.properties file.
-* [org.openrewrite.java.dropwizard.AddHibernateConfiguration](/recipes/java/dropwizard/addhibernateconfiguration.md)
-  * **Add Hibernate Configuration**
-  * Configures Spring Boot Hibernate and JPA settings in application.properties.
-* [org.openrewrite.java.dropwizard.AddJerseyConfiguration](/recipes/java/dropwizard/addjerseyconfiguration.md)
-  * **Add Jersey Configuration**
-  * Configures essential Jersey properties in Spring Boot that complement the JerseyConfig class.
-* [org.openrewrite.java.dropwizard.AddMissingApplicationProperties](/recipes/java/dropwizard/addmissingapplicationproperties.md)
-  * **Add application.properties if missing**
-  * This recipe creates an application.properties file in the resources folder if it does not exist.
-* [org.openrewrite.java.dropwizard.CodeCleanup](/recipes/java/dropwizard/codecleanup.md)
-  * **Clean up various issues with the code**
-  * Shorten references, remove unused imports, and remove Dropwizard-specific code constructs.
-* [org.openrewrite.java.dropwizard.CoreSetup](/recipes/java/dropwizard/coresetup.md)
-  * **Create Spring Boot Application Entry Point**
-  * Creates the main Spring Boot application class.
-* [org.openrewrite.java.dropwizard.MigrateConfigurationClass](/recipes/java/dropwizard/migrateconfigurationclass.md)
-  * **Migrate Configuration Class**
-  * Converts Dropwizard Configuration to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateDropwizardToSpringBoot](/recipes/java/dropwizard/migratedropwizardtospringboot.md)
-  * **Migrate Dropwizard to Spring Boot**
-  * Apply various changes to migrate Dropwizard applications to Spring Boot.
-* [org.openrewrite.java.dropwizard.MigrateHealthChecksAndMetrics](/recipes/java/dropwizard/migratehealthchecksandmetrics.md)
-  * **Add Spring Boot Actuator**
-  * Configures Spring Boot Actuator with basic health endpoints.
-* [org.openrewrite.java.dropwizard.MigrateHibernate](/recipes/java/dropwizard/migratehibernate.md)
-  * **Migrate Hibernate**
-  * Converts Dropwizard Resources to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateResourcesToSpringJersey](/recipes/java/dropwizard/migrateresourcestospringjersey.md)
-  * **Migrate Resource Classes**
-  * Converts Dropwizard Resources to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateSecurity](/recipes/java/dropwizard/migratesecurity.md)
-  * **Migrate Health Checks to Spring Boot**
-  * Converts Dropwizard health checks to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateTasksAndCommands](/recipes/java/dropwizard/migratetasksandcommands.md)
-  * **Migrate `PostBodyTask` and `ConfiguredCommand`**
-  * Remove or change the superclasses of `PostBodyTask` and `ConfiguredCommand`.
-* [org.openrewrite.java.dropwizard.MigrateTests](/recipes/java/dropwizard/migratetests.md)
-  * **Migrate Health Checks to Spring Boot**
-  * Converts Dropwizard tests to Spring Boot format.
-* [org.openrewrite.java.dropwizard.MigrateToDropwizard5](/recipes/java/dropwizard/migratetodropwizard5.md)
-  * **Migrate to Dropwizard 5.0.x from 4.x**
-  * Apply changes required to upgrade a Dropwizard 4.x application to 5.0.x. This includes upgrading dependencies, removing deprecated configuration options, and migrating Jetty handler implementations. Includes required migrations to Java 17, Jakarta EE 10, JUnit 5.14, Jackson 2.x, and Hibernate 6.6. See [the upgrade guide](https://www.dropwizard.io/en/stable/manual/upgrade-notes/upgrade-notes-5_0_x.html).
-* [org.openrewrite.java.dropwizard.ModifyDropwizardHealthChecksToSpringVariants](/recipes/java/dropwizard/modifydropwizardhealthcheckstospringvariants.md)
-  * **Convert Health Check Implementations**
-  * Transforms Dropwizard HealthCheck classes to Spring Boot HealthIndicator.
-* [org.openrewrite.java.dropwizard.annotation.AddClassAnnotationIfAnnotationExists](/recipes/java/dropwizard/annotation/addclassannotationifannotationexists.md)
-  * **Add annotation if target annotations exist**
-  * Adds annotation if class has any of the specified target annotations.
-* [org.openrewrite.java.dropwizard.annotation.AddClassAnnotationIfSuperTypeExists](/recipes/java/dropwizard/annotation/addclassannotationifsupertypeexists.md)
-  * **Add annotation if target supertypes exist**
-  * Adds annotation if class extends or implements any of the specified target types.
-* [org.openrewrite.java.dropwizard.annotation.micrometer.CodahaleTimedToMicrometerTimed](/recipes/java/dropwizard/annotation/micrometer/codahaletimedtomicrometertimed.md)
-  * **Replace `@Timed` (Dropwizard) with `@Timed` (Micrometer)**
-  * Replaces Dropwizard's `@Timed` annotation with Micrometer's `@Timed` annotation, preserving name (mapped to value), absolute, and description attributes.
-* [org.openrewrite.java.dropwizard.config.RemoveAndExcludeDependency](/recipes/java/dropwizard/config/removeandexcludedependency.md)
-  * **Combined dependency management to remove and exclude**
-  * Combines excluding transitive dependencies and removing direct dependencies.
-* [org.openrewrite.java.dropwizard.general.RemoveMethodsByPackage](/recipes/java/dropwizard/general/removemethodsbypackage.md)
-  * **Remove methods referencing specified package**
-  * Removes any method that has a return type or parameter type from the specified package.
-* [org.openrewrite.java.dropwizard.general.RemoveVariablesByPackage](/recipes/java/dropwizard/general/removevariablesbypackage.md)
-  * **Remove class variables matching package filter**
-  * Removes class-level variables from classes in the specified package.
-* [org.openrewrite.java.dropwizard.jetty.MigrateJettyHandlerSignature](/recipes/java/dropwizard/jetty/migratejettyhandlersignature.md)
-  * **Migrate Jetty `AbstractHandler` to Jetty 12 `Handler.Abstract`**
-  * Migrates custom Jetty handler implementations from Jetty 11's `AbstractHandler` (used in Dropwizard 4.x) to Jetty 12's `Handler.Abstract` (used in Dropwizard 5.x). This changes the `handle` method signature and updates `baseRequest.setHandled(true)` to use `Callback` and return `true`.
-* [org.openrewrite.java.dropwizard.method.ChangeSuperType](/recipes/java/dropwizard/method/changesupertype.md)
-  * **Change superclass**
-  * Changes the superclass of a specified class to a new superclass.
-* [org.openrewrite.java.dropwizard.method.RemoveSuperTypeByType](/recipes/java/dropwizard/method/removesupertypebytype.md)
-  * **Remove supertype by fully qualified name matches**
-  * Removes a specified type from class extends or implements clauses.
-* [org.openrewrite.java.dropwizard.method.RemoveUnnecessaryOverride](/recipes/java/dropwizard/method/removeunnecessaryoverride.md)
-  * **Remove unnecessary `@Override` annotations**
-  * Removes `@Override` annotations from methods that don't actually override or implement any method. This helps maintain clean code by removing incorrect annotations that could be misleading.
-* [org.openrewrite.java.dropwizard.method.RemoveUnnecessarySuperCalls](/recipes/java/dropwizard/method/removeunnecessarysupercalls.md)
-  * **Remove `super` calls when the class does not extend another class**
-  * Removes calls to `super(...)` or `super.someMethod(...)` if the class does not have a real superclass besides `java.lang.Object`.
-* [org.openrewrite.java.dropwizard.test.DropwizardRulesJUnit4ToSpringBoot](/recipes/java/dropwizard/test/dropwizardrulesjunit4tospringboot.md)
-  * **Replace Dropwizard rules with Spring Boot test configuration**
-  * Remove Dropwizard JUnit4 rules and add Spring Boot test annotations and extensions.
-* [org.openrewrite.java.dropwizard.test.MethodLambdaExtractor](/recipes/java/dropwizard/test/methodlambdaextractor.md)
-  * **Extract lambda expressions**
-  * Extracts the body of lambda expressions and inlines them into the surrounding code.
-* [org.openrewrite.java.dropwizard.test.MockitoVariableToMockBean](/recipes/java/dropwizard/test/mockitovariabletomockbean.md)
-  * **Convert Mockito mock() to @MockBean**
-  * Converts static final Mockito mock fields to Spring Boot @MockBean fields.
-* [org.openrewrite.java.dropwizard.test.TransformDropwizardRuleInvocations](/recipes/java/dropwizard/test/transformdropwizardruleinvocations.md)
-  * **Convert dropwizard appRule to restTemplate**
-  * Transforms Dropwizard AppRule testing calls to their equivalent RestTemplate calls.
-
 ### rewrite-feature-flags
 
 _License: Moderne Source Available License_
@@ -3470,64 +3369,64 @@ _52 recipes_
 * [org.openrewrite.github.gradle.RenameWrapperValidationAction](/recipes/github/gradle/renamewrappervalidationaction.md)
   * **Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`**
   * Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v3`.
-* [org.openrewrite.github.security.AnonymousJobsRecipe](/recipes/github/security/anonymousjobsrecipe.md)
+* [org.openrewrite.github.security.AnonymousJobs](/recipes/github/security/anonymousjobs.md)
   * **Find jobs without descriptive names**
   * Find jobs that lack descriptive names, making them harder to identify in workflow runs. Jobs without `name` properties default to their job ID, which may not be descriptive. Based on [zizmor's anonymous-definition audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/anonymous_definition.rs).
-* [org.openrewrite.github.security.ArtifactSecurityRecipe](/recipes/github/security/artifactsecurityrecipe.md)
+* [org.openrewrite.github.security.ArtifactSecurity](/recipes/github/security/artifactsecurity.md)
   * **Find credential persistence through GitHub Actions artifacts**
   * Find workflows that may persist credentials through artifact uploads. This occurs when checkout actions don't disable credential persistence and upload actions include sensitive paths that may contain credentials, SSH keys, or configuration files. Based on [zizmor's `artipacked` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/artipacked.rs).
-* [org.openrewrite.github.security.BotConditionsRecipe](/recipes/github/security/botconditionsrecipe.md)
+* [org.openrewrite.github.security.BotConditions](/recipes/github/security/botconditions.md)
   * **Find spoofable bot actor checks**
   * Find workflow conditions that check for bot actors in ways that can be spoofed. Bot actor names (like `dependabot[bot]`) can be easily spoofed by creating accounts with similar names. Use `actor_id` with numeric comparison instead for secure bot validation. Based on [zizmor's `bot-conditions` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/bot_conditions.rs).
-* [org.openrewrite.github.security.CachePoisoningRecipe](/recipes/github/security/cachepoisoningrecipe.md)
+* [org.openrewrite.github.security.CachePoisoning](/recipes/github/security/cachepoisoning.md)
   * **Find cache poisoning vulnerabilities**
   * Detects potential cache poisoning vulnerabilities in workflows that use caching and publish artifacts. When workflows use caches during artifact publishing, attackers may be able to poison the cache with malicious content that gets included in published artifacts. Based on [zizmor's cache-poisoning audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/cache_poisoning.rs).
-* [org.openrewrite.github.security.DangerousTriggersRecipe](/recipes/github/security/dangeroustriggersrecipe.md)
+* [org.openrewrite.github.security.DangerousTriggers](/recipes/github/security/dangeroustriggers.md)
   * **Find dangerous workflow triggers**
   * Detects use of fundamentally insecure workflow triggers like `pull_request_target` and `workflow_run`. These triggers run with elevated privileges and are almost always used insecurely, potentially allowing code injection from untrusted sources. Based on [zizmor's dangerous-triggers audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/dangerous_triggers.rs).
-* [org.openrewrite.github.security.ExcessivePermissionsRecipe](/recipes/github/security/excessivepermissionsrecipe.md)
+* [org.openrewrite.github.security.ExcessivePermissions](/recipes/github/security/excessivepermissions.md)
   * **Find excessive permissions**
   * Find overly broad permissions in GitHub Actions workflows. Flags 'write-all' permissions and excessive write permissions that could be scoped more narrowly for security. Based on [zizmor's excessive-permissions audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/excessive_permissions.rs).
-* [org.openrewrite.github.security.ForbiddenUsesRecipe](/recipes/github/security/forbiddenusesrecipe.md)
+* [org.openrewrite.github.security.ForbiddenUses](/recipes/github/security/forbiddenuses.md)
   * **Find forbidden action usage**
   * Find usage of forbidden or dangerous GitHub Actions that have known security vulnerabilities or follow suspicious patterns. Based on [zizmor's forbidden-uses audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/forbidden_uses.rs).
 * [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
   * **GitHub Actions security insights**
   * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
-* [org.openrewrite.github.security.GitHubEnvRecipe](/recipes/github/security/githubenvrecipe.md)
+* [org.openrewrite.github.security.GitHubEnv](/recipes/github/security/githubenv.md)
   * **Find dangerous GITHUB_ENV usage**
   * Detects dangerous usage of `GITHUB_ENV` and `GITHUB_PATH` environment files in workflows with risky triggers like `pull_request_target` or `workflow_run`. Writing to these files can allow code injection when the content includes user-controlled data. Based on [zizmor's github-env audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/github_env.rs).
-* [org.openrewrite.github.security.HardcodedCredentialsRecipe](/recipes/github/security/hardcodedcredentialsrecipe.md)
+* [org.openrewrite.github.security.HardcodedCredentials](/recipes/github/security/hardcodedcredentials.md)
   * **Find hardcoded container credentials**
   * Detects hardcoded credentials in GitHub Actions container configurations. Container registry passwords should use secrets instead of hardcoded values. Based on [zizmor's hardcoded-container-credentials audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/hardcoded_container_credentials.rs).
-* [org.openrewrite.github.security.InsecureCommandsRecipe](/recipes/github/security/insecurecommandsrecipe.md)
+* [org.openrewrite.github.security.InsecureCommands](/recipes/github/security/insecurecommands.md)
   * **Find insecure commands configuration**
   * Detects when insecure workflow commands are enabled via `ACTIONS_ALLOW_UNSECURE_COMMANDS`. This environment variable enables dangerous workflow commands that can lead to code injection vulnerabilities. Based on [zizmor's insecure-commands audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/insecure_commands.rs).
-* [org.openrewrite.github.security.ObfuscationRecipe](/recipes/github/security/obfuscationrecipe.md)
+* [org.openrewrite.github.security.Obfuscation](/recipes/github/security/obfuscation.md)
   * **Find obfuscated GitHub Actions features**
   * Find workflows that use obfuscated action references or expressions that may be attempting to hide malicious behavior. This includes action paths with `'.'`, `'..'`, empty components, or expressions that use quote manipulation to hide their true intent. Based on [zizmor's `obfuscation` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/obfuscation.rs).
-* [org.openrewrite.github.security.RefVersionMismatchRecipe](/recipes/github/security/refversionmismatchrecipe.md)
+* [org.openrewrite.github.security.RefVersionMismatch](/recipes/github/security/refversionmismatch.md)
   * **Find commit SHAs with potentially mismatched version comments**
   * Find GitHub Actions that are pinned to commit SHAs but have version comments that may not match the actual pinned version. This can lead to confusion about which version is actually being used and potential security issues if the comment misleads developers about the pinned version. Based on [zizmor's `ref-version-mismatch` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/ref_version_mismatch.rs).
-* [org.openrewrite.github.security.SecretsInheritRecipe](/recipes/github/security/secretsinheritrecipe.md)
+* [org.openrewrite.github.security.SecretsInherit](/recipes/github/security/secretsinherit.md)
   * **Find unconditional secrets inheritance**
   * Detects when reusable workflows unconditionally inherit all parent secrets via `secrets: inherit`. This practice can lead to over-privileged workflows and potential secret exposure to called workflows that may not need access to all secrets. Consider explicitly passing only required secrets. Based on [zizmor's secrets-inherit audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/secrets_inherit.rs).
-* [org.openrewrite.github.security.SelfHostedRunnerRecipe](/recipes/github/security/selfhostedrunnerrecipe.md)
+* [org.openrewrite.github.security.SelfHostedRunner](/recipes/github/security/selfhostedrunner.md)
   * **Find usage of self-hosted runners**
   * Find workflows that use `self-hosted` runners, which may have security implications in public repositories due to potential persistence between workflow runs and lack of isolation. Self-hosted runners should be properly secured and ideally ephemeral. Based on [zizmor's `self-hosted-runner` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/self_hosted_runner.rs).
-* [org.openrewrite.github.security.TemplateInjectionRecipe](/recipes/github/security/templateinjectionrecipe.md)
+* [org.openrewrite.github.security.TemplateInjection](/recipes/github/security/templateinjection.md)
   * **Find template injection vulnerabilities**
   * Find GitHub Actions workflows vulnerable to template injection attacks. These occur when user-controllable input (like pull request titles, issue bodies, or commit messages) is used directly in `run` commands or `script` inputs without proper escaping. Attackers can exploit this to execute arbitrary code. Based on [zizmor's `template-injection` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/template_injection.rs).
-* [org.openrewrite.github.security.TrustedPublishingRecipe](/recipes/github/security/trustedpublishingrecipe.md)
+* [org.openrewrite.github.security.TrustedPublishing](/recipes/github/security/trustedpublishing.md)
   * **Find manual credentials instead of trusted publishing**
   * Find workflows that use manual credentials for publishing instead of OIDC trusted publishing. Trusted publishing eliminates the need for long-lived API tokens and provides better security through short-lived, automatically-rotated tokens. Based on [zizmor's use-trusted-publishing audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/use_trusted_publishing.rs).
-* [org.openrewrite.github.security.UndocumentedPermissionsRecipe](/recipes/github/security/undocumentedpermissionsrecipe.md)
+* [org.openrewrite.github.security.UndocumentedPermissions](/recipes/github/security/undocumentedpermissions.md)
   * **Document permissions usage**
   * Add documentation comments for permissions blocks in GitHub Actions workflows. Documenting permissions helps reviewers understand why specific permissions are needed and ensures security-conscious development practices. Based on [zizmor's undocumented-permissions audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/undocumented_permissions.rs).
-* [org.openrewrite.github.security.UnpinnedActionsRecipe](/recipes/github/security/unpinnedactionsrecipe.md)
+* [org.openrewrite.github.security.UnpinnedActions](/recipes/github/security/unpinnedactions.md)
   * **Pin GitHub Actions to specific commits**
   * Pin GitHub Actions to specific commit SHAs for security and reproducibility. Actions pinned to tags or branches can be changed by the action author, while SHA pins are immutable. Based on [zizmor's unpinned-uses audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/unpinned_uses.rs).
-* [org.openrewrite.github.security.UnpinnedDockerImagesRecipe](/recipes/github/security/unpinneddockerimagesrecipe.md)
+* [org.openrewrite.github.security.UnpinnedDockerImages](/recipes/github/security/unpinneddockerimages.md)
   * **Pin Docker images to digests**
   * Pin Docker images to specific digest hashes for security and reproducibility. Images pinned to tags can be changed by the image author, while digest pins are immutable. Based on [zizmor's unpinned-images audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/unpinned_images.rs).
 
@@ -3678,17 +3577,23 @@ _23 recipes_
 
 _License: Apache License Version 2.0_
 
-_34 recipes_
+_38 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
   * Jackson 3 strictly enforces creator visibility rules. Non-public constructors in Jackson-annotated classes that were auto-detected in Jackson 2 need an explicit `@JsonCreator` annotation to work for deserialization in Jackson 3.
+* [org.openrewrite.java.jackson.AddMissingJacksonDependencies](/recipes/java/jackson/addmissingjacksondependencies.md)
+  * **Add missing Jackson dataformat dependencies**
+  * Adds Jackson dataformat dependencies when code uses types from their packages but the dependency is not declared. For example, adds `jackson-dataformat-xml` when code uses `XmlMapper`.
 * [org.openrewrite.java.jackson.CodehausClassesToFasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
   * **Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML**
   * In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
 * [org.openrewrite.java.jackson.CodehausToFasterXML](/recipes/java/jackson/codehaustofasterxml.md)
   * **Migrate from Jackson Codehaus (legacy) to Jackson FasterXML**
   * In Jackson 2, the package and dependency coordinates moved from Codehaus to FasterXML.
+* [org.openrewrite.java.jackson.CommentOutSimpleModuleMethodCalls](/recipes/java/jackson/commentoutsimplemodulemethodcalls.md)
+  * **Add comment to SimpleModule method calls on modules that no longer extend SimpleModule**
+  * In Jackson 3, some modules (e.g. `JodaModule`) no longer extend `SimpleModule` and instead extend `JacksonModule` directly. This means methods like `addSerializer()` and `addDeserializer()` are no longer available on these types. This recipe adds a TODO comment to flag these call sites for manual migration.
 * [org.openrewrite.java.jackson.IOExceptionToJacksonException](/recipes/java/jackson/ioexceptiontojacksonexception.md)
   * **Replace `IOException` with `JacksonException` in catch clauses**
   * In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`.
@@ -3700,10 +3605,10 @@ _34 recipes_
   * Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
 * [org.openrewrite.java.jackson.LombokJacksonizedConfig](/recipes/java/jackson/lombokjacksonizedconfig.md)
   * **Update `lombok.config` for Jackson 3 compatibility**
-  * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion = 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
+  * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion += 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
 * [org.openrewrite.java.jackson.MigrateMapperSettersToBuilder](/recipes/java/jackson/migratemappersetterstobuilder.md)
-  * **Migrate `JsonMapper` setter calls to builder pattern**
-  * In Jackson 3, `JsonMapper` is immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
+  * **Migrate mapper setter calls to builder pattern**
+  * In Jackson 3, `JsonMapper` and other format-aligned mappers are immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
 * [org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations](/recipes/java/jackson/removebuiltinmoduleregistrations.md)
   * **Remove registrations of modules built-in to Jackson 3**
   * In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules.
@@ -3719,6 +3624,9 @@ _34 recipes_
 * [org.openrewrite.java.jackson.ReplaceObjectMapperCopy](/recipes/java/jackson/replaceobjectmappercopy.md)
   * **Replace `ObjectMapper.copy()` with `rebuild().build()`**
   * In Jackson 3, `ObjectMapper.copy()` was removed. Use `mapper.rebuild().build()` instead.
+* [org.openrewrite.java.jackson.ReplacePropertyNamingStrategyConstants](/recipes/java/jackson/replacepropertynamingstrategyconstants.md)
+  * **Replace deprecated `PropertyNamingStrategy` inner classes and constants**
+  * Replace usages of deprecated `PropertyNamingStrategy` inner classes and constants with their `PropertyNamingStrategies` equivalents, introduced in Jackson 2.12.
 * [org.openrewrite.java.jackson.ReplaceStreamWriteCapability](/recipes/java/jackson/replacestreamwritecapability.md)
   * **Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`**
   * In Jackson 3, `JsonGenerator.canWriteBinaryNatively()` and `canWriteFormattedNumbers()` were removed and replaced with the `StreamWriteCapability` enum. This recipe updates these method calls to use `getWriteCapabilities().isEnabled(StreamWriteCapability.*)` instead.
@@ -3728,6 +3636,9 @@ _34 recipes_
 * [org.openrewrite.java.jackson.StdDeserializerNullConstructor](/recipes/java/jackson/stddeserializernullconstructor.md)
   * **Replace `null` type in `StdDeserializer` constructor with actual type**
   * In Jackson 3, `StdDeserializer` no longer accepts `null` for the handled type parameter. This recipe replaces `this(null)` and `super((Class&lt;?&gt;) null)` in `StdDeserializer` subclass constructors with the actual type parameter from the class declaration.
+* [org.openrewrite.java.jackson.UpdateAutoDetectVisibilityConfiguration](/recipes/java/jackson/updateautodetectvisibilityconfiguration.md)
+  * **Replace `disable(MapperFeature.AUTO_DETECT_*)` with `changeDefaultVisibility()` for Jackson 3**
+  * In Jackson 3, auto-detection `MapperFeature` flags like `AUTO_DETECT_FIELDS` are removed. Use `changeDefaultVisibility()` on the builder instead.
 * [org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration](/recipes/java/jackson/updateserializationinclusionconfiguration.md)
   * **Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3**
   * In Jackson 3, `mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL)` is no longer supported and should be replaced by `changeDefaultPropertyInclusion()` for both `valueInclusion` and `contentInclusion`.
@@ -4176,7 +4087,7 @@ _120 recipes_
   * Transforms usages of Apache Commons Logging 1.x to leveraging SLF4J 1.x directly.
 * [org.openrewrite.java.logging.slf4j.CompleteExceptionLogging](/recipes/java/logging/slf4j/completeexceptionlogging.md)
   * **Enhances logging of exceptions by including the full stack trace in addition to the exception message**
-  * It is a common mistake to call `Exception.getMessage()` when passing an exception into a log method. Not all exception types have useful messages, and even if the message is useful this omits the stack trace. Including a complete stack trace of the error along with the exception message in the log allows developers to better understand the context of the exception and identify the source of the error more quickly and accurately.  If the method invocation includes any call to `Exception.getMessage()` or `Exception.getLocalizedMessage()` and not an exception is already passed as the last parameter to the log method, then we will append the exception as the last parameter in the log method.
+  * It is a common mistake to call `Exception.getMessage()` when passing an exception into a log method. Not all exception types have useful messages, and even if the message is useful this omits the stack trace. Including a complete stack trace of the error along with the exception message in the log allows developers to better understand the context of the exception and identify the source of the error more quickly and accurately.  If the method invocation includes any call to `Exception.getMessage()` or `Exception.getLocalizedMessage()` and not an exception is already passed as the last parameter to the log method, then we will append the exception as the last parameter in the log method. Additionally, if an exception is passed directly as a format argument that fills a `\{\}` placeholder, the placeholder is removed so that the exception is treated as the trailing argument, ensuring the full stack trace is logged.
 * [org.openrewrite.java.logging.slf4j.JBossLoggingToSlf4j](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)
   * **Migrate JBoss Logging to SLF4J**
   * Migrates usage of the JBoss Logging facade to using SLF4J.
@@ -4511,7 +4422,7 @@ _37 recipes_
 
 _License: Moderne Source Available License_
 
-_443 recipes_
+_449 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/com/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
@@ -4750,6 +4661,12 @@ _443 recipes_
 * [org.openrewrite.java.migrate.UpgradeBuildToJava21](/recipes/java/migrate/upgradebuildtojava21.md)
   * **Upgrade build to Java 21**
   * Updates build files to use Java 21 as the target/source.
+* [org.openrewrite.java.migrate.UpgradeBuildToJava24](/recipes/java/migrate/upgradebuildtojava24.md)
+  * **Upgrade build to Java 24 for Kotlin &lt;2.3**
+  * Kotlin versions before 2.3 only support up to Java 24.
+* [org.openrewrite.java.migrate.UpgradeBuildToJava25](/recipes/java/migrate/upgradebuildtojava25.md)
+  * **Upgrade build to Java 25 (default)**
+  * Upgrades build files to Java 25 for projects without Kotlin &lt;2.3.
 * [org.openrewrite.java.migrate.UpgradeDockerImageVersion](/recipes/java/migrate/upgradedockerimageversion.md)
   * **Upgrade Docker image Java version**
   * Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin.
@@ -5515,6 +5432,9 @@ _443 recipes_
 * [org.openrewrite.java.migrate.javax.openJPAToEclipseLink](/recipes/java/migrate/javax/openjpatoeclipselink.md)
   * **Migrate from OpenJPA to EclipseLink JPA**
   * These recipes help migrate Java Persistence applications using OpenJPA to EclipseLink JPA.
+* [org.openrewrite.java.migrate.jspecify.MoveAnnotationToArrayType](/recipes/java/migrate/jspecify/moveannotationtoarraytype.md)
+  * **Move annotation to array type**
+  * When an annotation like `@Nullable` is applied to an array type in declaration position, this recipe moves it to the array brackets. For example, `@Nullable byte[]` becomes `byte @Nullable[]`. Best used before `ChangeType` in a migration pipeline, targeting the pre-migration annotation type.
 * [org.openrewrite.java.migrate.lang.ExplicitRecordImport](/recipes/java/migrate/lang/explicitrecordimport.md)
   * **Add explicit import for `Record` classes**
   * Add explicit import for `Record` classes when upgrading past Java 14+, to avoid conflicts with `java.lang.Record`.
@@ -5779,6 +5699,15 @@ _443 recipes_
 * [org.openrewrite.java.migrate.util.ListFirstAndLast](/recipes/java/migrate/util/listfirstandlast.md)
   * **Replace `List.get(int)`, `add(int, Object)`, and `remove(int)` with `SequencedCollection` `*First` and `*Last` methods**
   * Replace `list.get(0)` with `list.getFirst()`, `list.get(list.size() - 1)` with `list.getLast()`, and similar for `add(int, E)` and `remove(int)`.
+* [org.openrewrite.java.migrate.util.MigrateCollectionsEmptyList](/recipes/java/migrate/util/migratecollectionsemptylist.md)
+  * **Prefer `List.of()`**
+  * Prefer `List.of()` instead of using `Collections.emptyList()` in Java 9 or higher.
+* [org.openrewrite.java.migrate.util.MigrateCollectionsEmptyMap](/recipes/java/migrate/util/migratecollectionsemptymap.md)
+  * **Prefer `Map.of()`**
+  * Prefer `Map.of()` instead of using `Collections.emptyMap()` in Java 9 or higher.
+* [org.openrewrite.java.migrate.util.MigrateCollectionsEmptySet](/recipes/java/migrate/util/migratecollectionsemptyset.md)
+  * **Prefer `Set.of()`**
+  * Prefer `Set.of()` instead of using `Collections.emptySet()` in Java 9 or higher.
 * [org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList](/recipes/java/migrate/util/migratecollectionssingletonlist.md)
   * **Prefer `List.of(..)`**
   * Prefer `List.of(..)` instead of using `Collections.singletonList()` in Java 9 or higher.
@@ -5847,7 +5776,7 @@ _443 recipes_
 
 _License: Apache License Version 2.0_
 
-_5 recipes_
+_10 recipes_
 
 * [org.openrewrite.java.netty.EventLoopGroupToMultiThreadIoEventLoopGroupRecipes](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes.md)
   * **Replace all `EventLoopGroup`s with `MultiThreadIoEventLoopGroup`**
@@ -5861,13 +5790,28 @@ _5 recipes_
 * [org.openrewrite.java.netty.EventLoopGroupToMultiThreadIoEventLoopGroupRecipes$NioEventLoopGroupFactoryRecipe](/recipes/java/netty/eventloopgrouptomultithreadioeventloopgrouprecipes$nioeventloopgroupfactoryrecipe.md)
   * **Replace `NioEventLoopGroup` with `MultiThreadIoEventLoopGroup`**
   * Replace `new NioEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory())`.
+* [org.openrewrite.java.netty.upgrade._3_2_to_4_1_.ChannelSetReadableToAutoRead](/recipes/java/netty/upgrade/_3_2_to_4_1_/channelsetreadabletoautoread.md)
+  * **Migrate Channel.setReadable(boolean) to Channel.config().setAutoRead(boolean)**
+  * Replaces `channel.setReadable(x)` with `channel.config().setAutoRead(x)`.
+* [org.openrewrite.java.netty.upgrade._3_2_to_4_1_.RemoveChannelStateEventParameter](/recipes/java/netty/upgrade/_3_2_to_4_1_/removechannelstateeventparameter.md)
+  * **Remove ChannelStateEvent parameter from handler methods**
+  * Removes `ChannelStateEvent` parameters from Netty channel handler method declarations, as Netty 4 handler methods no longer take this parameter.
+* [org.openrewrite.java.netty.upgrade._3_2_to_4_1_.ReplaceChannelsFireMessageReceived](/recipes/java/netty/upgrade/_3_2_to_4_1_/replacechannelsfiremessagereceived.md)
+  * **Replace Channels.fireMessageReceived(..) with ctx.fireChannelRead(e)**
+  * Replaces Netty 3 Channels.fireMessageReceived(channel, message) with Netty 4 ctx.fireChannelRead(message).
+* [org.openrewrite.java.netty.upgrade._3_2_to_4_1_.StringEncoderToStandardCharsets](/recipes/java/netty/upgrade/_3_2_to_4_1_/stringencodertostandardcharsets.md)
+  * **Migrate StringEncoder(String) to StringEncoder(StandardCharsets)**
+  * Replaces new StringEncoder(charsetName) with new StringEncoder(StandardCharsets.&lt;constant&gt;) for all standard charsets (US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16).
+* [org.openrewrite.netty.UpgradeNetty_3_2_to_4_1](/recipes/netty/upgradenetty_3_2_to_4_1.md)
+  * **Migrates from Netty 3.2.x to Netty 4.1.x**
+  * Migrate applications to the latest Netty 4.1.x release.
 * [org.openrewrite.netty.UpgradeNetty_4_1_to_4_2](/recipes/netty/upgradenetty_4_1_to_4_2.md)
   * **Migrates from Netty 4.1.x to Netty 4.2.x**
   * Migrate applications to the latest Netty 4.2.x release.
 
 ### rewrite-okhttp
 
-_License: Unknown_
+_License: Moderne Source Available License_
 
 _10 recipes_
 
@@ -6062,7 +6006,7 @@ _24 recipes_
 
 _License: Moderne Source Available License_
 
-_40 recipes_
+_41 recipes_
 
 * [org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
   * **Migrate from OpenRewrite annotations to JSpecify**
@@ -6151,6 +6095,9 @@ _40 recipes_
 * [org.openrewrite.java.recipes.UseEstimatedEffortPerOccurrenceField](/recipes/java/recipes/useestimatedeffortperoccurrencefield.md)
   * **Replace `getEstimatedEffortPerOccurrence()` method with field**
   * Recipe classes that return a simple expression from `getEstimatedEffortPerOccurrence()` can use a Lombok annotated field instead.
+* [org.openrewrite.java.recipes.UseJavaTemplateStaticApply](/recipes/java/recipes/usejavatemplatestaticapply.md)
+  * **Use `JavaTemplate.apply()` static method**
+  * Replaces `JavaTemplate.builder(template).build().apply(cursor, coordinates, args...)` with `JavaTemplate.apply(template, cursor, coordinates, args...)` when the builder chain has no intermediate configuration methods.
 * [org.openrewrite.java.recipes.UseRewriteTestDefaults](/recipes/java/recipes/userewritetestdefaults.md)
   * **Refactor RewriteTest to use defaults method**
   * When all `rewriteRun` methods in a test class use the same RecipeSpec configuration, refactor to use the `defaults` method instead.
@@ -6187,7 +6134,7 @@ _40 recipes_
 
 ### rewrite-spring
 
-_License: Unknown_
+_License: Moderne Source Available License_
 
 _314 recipes_
 
@@ -6731,6 +6678,9 @@ _314 recipes_
 * [org.openrewrite.java.spring.cloud2024.UpgradeSpringCloud_2024](/recipes/java/spring/cloud2024/upgradespringcloud_2024.md)
   * **Migrate to Spring Cloud 2024**
   * Migrate applications to the latest Spring Cloud 2024 (Moorgate) release.
+* [org.openrewrite.java.spring.cloud2025.AddSpringCloudDependenciesBom](/recipes/java/spring/cloud2025/addspringclouddependenciesbom.md)
+  * **Add Spring Cloud dependencies BOM**
+  * Adds the Spring Cloud dependencies BOM as a managed import, but only when the project already uses a Spring Cloud dependency. Prevents accidentally introducing the BOM into unrelated projects.
 * [org.openrewrite.java.spring.cloud2025.DependencyUpgrades](/recipes/java/spring/cloud2025/dependencyupgrades.md)
   * **Upgrade dependencies to Spring Cloud 2025**
   * Upgrade dependencies to Spring Cloud 2025 from prior 2024.x version.
@@ -6767,6 +6717,9 @@ _314 recipes_
 * [org.openrewrite.java.spring.data.MigrateJpaSort](/recipes/java/spring/data/migratejpasort.md)
   * **Use `JpaSort.of(..)`**
   * Equivalent constructors in `JpaSort` were deprecated in Spring Data 2.3.
+* [org.openrewrite.java.spring.data.MigratePagingAndSortingRepository](/recipes/java/spring/data/migratepagingandsortingrepository.md)
+  * **Add `CrudRepository` to interfaces extending `PagingAndSortingRepository`**
+  * In Spring Data 3.0, `PagingAndSortingRepository` no longer extends `CrudRepository`. Interfaces that extend only `PagingAndSortingRepository` must also explicitly extend `CrudRepository` to retain CRUD methods like `save()`, `findById()`, and `delete()`.
 * [org.openrewrite.java.spring.data.MigrateQueryToNativeQuery](/recipes/java/spring/data/migratequerytonativequery.md)
   * **Replace `@Query` annotation by `@NativeQuery` when possible**
   * Replace `@Query` annotation by `@NativeQuery` when `nativeQuery = true`. `@NativeQuery` was introduced in Spring Data JPA 3.4.
@@ -6788,18 +6741,12 @@ _314 recipes_
 * [org.openrewrite.java.spring.data.UpgradeSpringData_2_7](/recipes/java/spring/data/upgradespringdata_2_7.md)
   * **Migrate to Spring Data JPA 2.7**
   * Migrate applications to the latest Spring Data JPA 2.7 release.
+* [org.openrewrite.java.spring.data.UpgradeSpringData_3_0](/recipes/java/spring/data/upgradespringdata_3_0.md)
+  * **Migrate to Spring Data 3.0**
+  * Migrate applications to Spring Data 3.0. Handles the PagingAndSortingRepository hierarchy change where it no longer extends CrudRepository, and chains prior deprecation fixes from Spring Data 2.7.
 * [org.openrewrite.java.spring.data.UpgradeSpringData_3_4](/recipes/java/spring/data/upgradespringdata_3_4.md)
   * **Migrate to Spring Data JPA 3.4**
   * Migrate applications to the latest Spring Data JPA 3.4 release.
-* [org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch](/recipes/java/spring/data/usejparepositorydeleteallinbatch.md)
-  * **Use `JpaRepository#deleteAllInBatch(Iterable&lt;T&gt; entities)`**
-  * `JpaRepository#deleteInBatch(Iterable)` was deprecated in 2.5.
-* [org.openrewrite.java.spring.data.UseJpaRepositoryGetById](/recipes/java/spring/data/usejparepositorygetbyid.md)
-  * **Use `JpaRepository#getById(ID id)`**
-  * `JpaRepository#getOne(ID)` was deprecated in 2.5.
-* [org.openrewrite.java.spring.data.UseJpaRepositoryGetReferenceById](/recipes/java/spring/data/usejparepositorygetreferencebyid.md)
-  * **Use `JpaRepository#getReferenceById(ID id)`**
-  * `JpaRepository#getOne(ID)` was deprecated in 2.5 and `JpaRepository#getById(ID)` was deprecated in 2.7.
 * [org.openrewrite.java.spring.data.UseTlsJdbcConnectionString](/recipes/java/spring/data/usetlsjdbcconnectionstring.md)
   * **Use TLS for JDBC connection strings**
   * Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/default/files/2022-06/End_User_Briefing_Supplementing_Data_Security_UPDATED_FINAL.pdf)), JDBC connection strings should be TLS-enabled. This recipe will update the port and optionally add a connection attribute to indicate that the connection is TLS-enabled.
@@ -7356,10 +7303,10 @@ _176 recipes_
   * A `serialVersionUID` field is strongly recommended in all `Serializable` classes. If this is not defined on a `Serializable` class, the compiler will generate this value. If a change is later made to the class, the generated value will change and attempts to deserialize the class will fail.
 * [org.openrewrite.staticanalysis.AnnotateNullableMethods](/recipes/staticanalysis/annotatenullablemethods.md)
   * **Annotate methods which may return `null` with `@Nullable`**
-  * Add `@Nullable` to non-private methods that may return `null`. By default `org.jspecify.annotations.Nullable` is used, but through the `nullableAnnotationClass` option a custom annotation can be provided. When providing a custom `nullableAnnotationClass` that annotation should be meta annotated with `@Target(TYPE_USE)`. This recipe scans for methods that do not already have a `@Nullable` annotation and checks their return statements for potential null values. It also identifies known methods from standard libraries that may return null, such as methods from `Map`, `Queue`, `Deque`, `NavigableSet`, and `Spliterator`. The return of streams, or lambdas are not taken into account.
+  * Add `@Nullable` to non-private methods that may return `null`. By default `org.jspecify.annotations.Nullable` is used, but through the `nullableAnnotationClass` option a custom annotation can be provided. Both `@Target(TYPE_USE)` and declaration annotations (e.g. `javax.annotation.CheckForNull`) are supported. Methods that already carry a known nullable annotation (matched by simple name) are skipped to avoid duplication. This recipe scans for methods that do not already have a `@Nullable` annotation and checks their return statements for potential null values. It also identifies known methods from standard libraries that may return null, such as methods from `Map`, `Queue`, `Deque`, `NavigableSet`, and `Spliterator`. The return of streams, or lambdas are not taken into account.
 * [org.openrewrite.staticanalysis.AnnotateNullableParameters](/recipes/staticanalysis/annotatenullableparameters.md)
   * **Annotate null-checked method parameters with `@Nullable`**
-  * Add `@Nullable` to parameters of public methods that are explicitly checked for `null`. By default `org.jspecify.annotations.Nullable` is used, but through the `nullableAnnotationClass` option a custom annotation can be provided. When providing a custom `nullableAnnotationClass` that annotation should be meta annotated with `@Target(TYPE_USE)`. This recipe scans for methods that do not already have parameters annotated with `@Nullable` annotation and checks their usages for potential null checks. Additional null-checking methods can be specified via the `additionalNullCheckingMethods` option.
+  * Add `@Nullable` to parameters of public methods that are explicitly checked for `null`. By default `org.jspecify.annotations.Nullable` is used, but through the `nullableAnnotationClass` option a custom annotation can be provided. Both `@Target(TYPE_USE)` and declaration annotations (e.g. `javax.annotation.CheckForNull`) are supported. Parameters that already carry a known nullable annotation are skipped to avoid duplication. This recipe scans for methods that do not already have parameters annotated with a nullable annotation and checks their usages for potential null checks. Additional null-checking methods can be specified via the `additionalNullCheckingMethods` option.
 * [org.openrewrite.staticanalysis.AnnotateRequiredParameters](/recipes/staticanalysis/annotaterequiredparameters.md)
   * **Annotate required method parameters with `@NonNull`**
   * Add `@NonNull` to parameters of public methods that are explicitly checked for `null` and throw an exception if null. By default `org.jspecify.annotations.NonNull` is used, but through the `nonNullAnnotationClass` option a custom annotation can be provided. When providing a custom `nonNullAnnotationClass` that annotation should be meta annotated with `@Target(TYPE_USE)`. This recipe scans for methods that do not already have parameters annotated with `@NonNull` annotation and checks for null validation patterns that throw exceptions, such as `if (param == null) throw new IllegalArgumentException()`.
@@ -7875,7 +7822,7 @@ _176 recipes_
 
 _License: Moderne Source Available License_
 
-_236 recipes_
+_244 recipes_
 
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
@@ -8108,6 +8055,9 @@ _236 recipes_
 * [org.openrewrite.java.testing.cleanup.AssertEqualsBooleanToAssertBoolean](/recipes/java/testing/cleanup/assertequalsbooleantoassertboolean.md)
   * **Replace JUnit `assertEquals(false, &lt;boolean&gt;)` to `assertFalse(&lt;boolean&gt;)` / `assertTrue(&lt;boolean&gt;)`**
   * Using `assertFalse` or `assertTrue` is simpler and more clear.
+* [org.openrewrite.java.testing.cleanup.AssertEqualsIntegralDeltaToAssertEquals](/recipes/java/testing/cleanup/assertequalsintegraldeltatoassertequals.md)
+  * **Remove unnecessary `assertEquals` delta argument for integral types**
+  * Remove the delta argument from `assertEquals()` when both expected and actual are `int` or `long` types, since the delta is meaningless for exact integer comparison. Integer arguments get unnecessarily upcasted to `double` when a delta is provided.
 * [org.openrewrite.java.testing.cleanup.AssertEqualsNullToAssertNull](/recipes/java/testing/cleanup/assertequalsnulltoassertnull.md)
   * **`assertEquals(a, null)` to `assertNull(a)`**
   * Using `assertNull(a)` is simpler and more clear.
@@ -8493,17 +8443,29 @@ _236 recipes_
   * **Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic**
   * Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic as Mockito4 no longer allows this. For JUnit 4/5 &amp; TestNG: When `@Before*` is used, a `close` call is added to the corresponding `@After*` method. This change moves away from implicit bytecode manipulation for static method stubbing, making mocking behavior more explicit and scoped to avoid unintended side effects.
 * [org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith](/recipes/java/testing/mockito/powermockrunnerdelegatetorunwith.md)
-  * **Replace `@PowerMockRunnerDelegate` with `@RunWith`**
-  * Replaces `@PowerMockRunnerDelegate(X.class)` by promoting the delegate runner to `@RunWith(X.class)` and removing the PowerMock-specific annotation.
+  * **Replace PowerMock runner with JUnit `@RunWith`**
+  * Replaces `@RunWith(PowerMockRunner.class)`. If `@PowerMockRunnerDelegate(X.class)` is present, promotes the delegate runner to `@RunWith(X.class)`. Otherwise, removes the `@RunWith(PowerMockRunner.class)` annotation entirely.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
+  * **Replace PowerMock `Whitebox` with Java reflection**
+  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
+* [org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingToMockito](/recipes/java/testing/mockito/powermockitodostubbingtomockito.md)
+  * **Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing**
+  * Replaces PowerMockito's private method stubbing pattern `doNothing().when(instance, &quot;methodName&quot;, args...)` with the standard Mockito pattern `doNothing().when(instance).methodName(args...)`.
 * [org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito](/recipes/java/testing/mockito/powermockitomockstatictomockito.md)
   * **Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`**
   * Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`. Removes the `@PrepareForTest` annotation.
 * [org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito](/recipes/java/testing/mockito/powermockitowhennewtomockito.md)
   * **Replace `PowerMockito.whenNew` with Mockito counterpart**
   * Replaces `PowerMockito.whenNew` calls with respective `Mockito.whenConstructed` calls.
+* [org.openrewrite.java.testing.mockito.RemoveDoNothingForDefaultMocks](/recipes/java/testing/mockito/removedonothingfordefaultmocks.md)
+  * **Remove `doNothing()` for void methods on `@Mock` fields**
+  * Remove unnecessary `doNothing()` stubbings for void methods on `@Mock` fields. Mockito mocks already do nothing for void methods by default, making these stubbings redundant and triggering strict stubbing violations in Mockito 3+.
 * [org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified](/recipes/java/testing/mockito/removeinitmocksifrunnersspecified.md)
   * **Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified**
   * Remove `MockitoAnnotations.initMocks(this)` and `MockitoAnnotations.openMocks(this)` if class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)` are specified. These manual initialization calls are redundant when using Mockito's JUnit integration.
+* [org.openrewrite.java.testing.mockito.RemovePowerMockClassExtensions](/recipes/java/testing/mockito/removepowermockclassextensions.md)
+  * **Remove PowerMock class extensions**
+  * Removes `extends PowerMockConfiguration` and `extends PowerMockTestCase` from test classes, as these are PowerMock-specific base classes not needed with Mockito.
 * [org.openrewrite.java.testing.mockito.RemoveTimesZeroAndOne](/recipes/java/testing/mockito/removetimeszeroandone.md)
   * **Remove `Mockito.times(0)` and `Mockito.times(1)`**
   * Remove `Mockito.times(0)` and `Mockito.times(1)` from `Mockito.verify()` calls.
@@ -8531,6 +8493,9 @@ _236 recipes_
 * [org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven](/recipes/java/testing/mockito/simplifymockitoverifywhengiven.md)
   * **Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified**
   * Fixes Sonar issue `java:S6068`: Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified.
+* [org.openrewrite.java.testing.mockito.ThenThrowCheckedExceptionToRuntimeException](/recipes/java/testing/mockito/thenthrowcheckedexceptiontoruntimeexception.md)
+  * **Replace undeclared checked exceptions in `thenThrow` with `RuntimeException`**
+  * In Mockito 3+, `thenThrow()` validates that checked exceptions are declared in the mocked method's `throws` clause. This recipe replaces checked exception class literals in `thenThrow()` calls with `RuntimeException.class` when the mocked method does not declare the exception.
 * [org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions](/recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
   * **Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`**
   * Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version &lt; 3.x.
@@ -8549,6 +8514,9 @@ _236 recipes_
 * [org.openrewrite.java.testing.testcontainers.GetHostMigration](/recipes/java/testing/testcontainers/gethostmigration.md)
   * **Replace `ContainerState.getContainerIpAddress()` with `getHost()`**
   * Replace `org.testcontainers.containers.ContainerState.getContainerIpAddress()` with `getHost()`.
+* [org.openrewrite.java.testing.testcontainers.MigrateToOracleFree](/recipes/java/testing/testcontainers/migratetooraclefree.md)
+  * **Migrate from `oracle-xe` to `oracle-free`**
+  * Oracle Database Free is the successor of Oracle XE. Migrate from `org.testcontainers:oracle-xe` to `org.testcontainers:oracle-free`.
 * [org.openrewrite.java.testing.testcontainers.TestContainersBestPractices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
   * **Testcontainers best practices**
   * Apply best practices to Testcontainers usage.
@@ -8585,12 +8553,15 @@ _236 recipes_
 * [org.openrewrite.java.testing.truth.TruthThrowableAssertions](/recipes/java/testing/truth/truththrowableassertions.md)
   * **Convert Truth Throwable assertions to AssertJ**
   * Converts Google Truth's Throwable assertion chains like `hasMessageThat().contains()` to AssertJ equivalents.
+* [org.openrewrite.java.testing.wiremock.UpgradeWiremockDependencyVersion](/recipes/java/testing/wiremock/upgradewiremockdependencyversion.md)
+  * **Upgrade WireMock to 3.x**
+  * Migrate WireMock dependencies from the old `com.github.tomakehurst` coordinates to the new `org.wiremock` coordinates. WireMock 3.x changed its Maven coordinates and requires Java 11 or higher. Old 2.x versions contain CVE-2023-44487.
 
 ### rewrite-third-party
 
 _License: Apache License Version 2.0_
 
-_1493 recipes_
+_1494 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -9266,6 +9237,9 @@ _1493 recipes_
   * 
 * [io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact](/recipes/io/quarkus/updates/core/quarkus33/graalvmsubstitutionsartifact.md)
   * **io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact**
+  * 
+* [io.quarkus.updates.core.quarkus330.RenameEnableMetrics](/recipes/io/quarkus/updates/core/quarkus330/renameenablemetrics.md)
+  * **io.quarkus.updates.core.quarkus330.RenameEnableMetrics**
   * 
 * [io.quarkus.updates.core.quarkus331.AddArglineToSurefireFailsafePlugins](/recipes/io/quarkus/updates/core/quarkus331/addarglinetosurefirefailsafeplugins.md)
   * **Add @\{argLine\} to maven-surefire-plugin and maven-failsafe-plugin**

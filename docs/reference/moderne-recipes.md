@@ -10,6 +10,1725 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 ## io.moderne.recipe
 
 
+### recipes-code-quality
+
+* [OpenRewrite.Recipes.CodeQuality.CodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/codequality-recipe)
+  * **Code quality**
+  * All C# code quality recipes, organized by category.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.AddNewLineAfterOpeningBrace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/addnewlineafteropeningbrace)
+  * **Add newline after opening brace**
+  * Add newline after opening brace so the first statement starts on its own line.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.AddNewLineBeforeReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/addnewlinebeforereturn)
+  * **Add newline before return**
+  * Add a blank line before return statements that follow other statements.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.AddParagraphToDocComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/addparagraphtodoccomment)
+  * **Add paragraph to documentation comment**
+  * Format multi-line documentation comments with paragraph elements.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.AddParameterToDocComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/addparametertodoccomment)
+  * **Add parameter name to documentation comment**
+  * Add missing param elements to XML documentation comments.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.AddSummaryElementToDocComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/addsummaryelementtodoccomment)
+  * **Add summary to documentation comment**
+  * Add summary text to documentation comments with empty summary elements.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.AddSummaryToDocComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/addsummarytodoccomment)
+  * **Add summary element to documentation comment**
+  * Add missing summary element to XML documentation comments.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.AddTypeParamToDocComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/addtypeparamtodoccomment)
+  * **Add 'typeparam' element to documentation comment**
+  * Add missing 'typeparam' elements to XML documentation comments.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.FixDocCommentTag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/fixdoccommenttag)
+  * **Fix documentation comment tag**
+  * Replace inline &lt;code&gt; elements with &lt;c&gt; elements in XML documentation comments.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.FormatAccessorList](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/formataccessorlist)
+  * **Format accessor list**
+  * Format property accessor list for consistent whitespace.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.FormatDocumentationSummary](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/formatdocumentationsummary)
+  * **Format documentation summary**
+  * Format XML documentation summary on a single line or multiple lines.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.FormatSwitchSection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/formatswitchsection)
+  * **Format switch section**
+  * Ensure consistent formatting of switch sections.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.FormattingCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/formattingcodequality)
+  * **Formatting code quality**
+  * Code formatting recipes for C#.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.InvalidDocCommentReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/invaliddoccommentreference)
+  * **Invalid reference in a documentation comment**
+  * Find invalid cref or paramref references in XML documentation comments.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.NormalizeWhitespace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/normalizewhitespace)
+  * **Normalize whitespace**
+  * Normalize whitespace for consistent formatting.
+* [OpenRewrite.Recipes.CodeQuality.Formatting.OrderDocCommentElements](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/formatting/orderdoccommentelements)
+  * **Order elements in documentation comment**
+  * Order param/typeparam elements to match declaration order.
+* [OpenRewrite.Recipes.CodeQuality.Linq.CombineLinqMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/combinelinqmethods)
+  * **Combine LINQ methods**
+  * Combine `.Where(predicate).First()` and similar patterns into `.First(predicate)`, and consecutive `.Where().Where()` calls into a single `.Where()` with a combined predicate. Eliminating intermediate LINQ calls improves readability.
+* [OpenRewrite.Recipes.CodeQuality.Linq.FindOptimizeCountUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/findoptimizecountusage)
+  * **Find Count() comparison that could be optimized**
+  * Detect `Count(pred) == n` and `Count() &gt; n` comparisons which could use `Where().Take(n+1).Count()` or `Skip(n).Any()` for better performance.
+* [OpenRewrite.Recipes.CodeQuality.Linq.FindWhereBeforeOrderBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/findwherebeforeorderby)
+  * **Use Where before OrderBy**
+  * Place `.Where()` before `.OrderBy()` to filter elements before sorting. This reduces the number of items that need to be sorted.
+* [OpenRewrite.Recipes.CodeQuality.Linq.LinqCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/linqcodequality)
+  * **LINQ code quality**
+  * Optimize LINQ method calls for better readability and performance.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqSelectAverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqselectaverage)
+  * **Optimize LINQ Select().Average()**
+  * Replace `items.Select(selector).Average()` with `items.Average(selector)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqSelectMax](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqselectmax)
+  * **Optimize LINQ Select().Max()**
+  * Replace `items.Select(selector).Max()` with `items.Max(selector)`. Passing the selector directly to `Max` avoids an intermediate iterator.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqSelectMin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqselectmin)
+  * **Optimize LINQ Select().Min()**
+  * Replace `items.Select(selector).Min()` with `items.Min(selector)`. Passing the selector directly to `Min` avoids an intermediate iterator.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqSelectSum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqselectsum)
+  * **Optimize LINQ Select().Sum()**
+  * Replace `items.Select(selector).Sum()` with `items.Sum(selector)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereAny](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwhereany)
+  * **Optimize LINQ Where().Any()**
+  * Replace `items.Where(predicate).Any()` with `items.Any(predicate)`. Passing the predicate directly to `Any` avoids an intermediate iterator.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwherecount)
+  * **Optimize LINQ Where().Count()**
+  * Replace `items.Where(predicate).Count()` with `items.Count(predicate)`. Passing the predicate directly to `Count` avoids an intermediate iterator.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereCountLong](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwherecountlong)
+  * **Optimize LINQ Where().LongCount()**
+  * Replace `.Where(predicate).LongCount()` with `.LongCount(predicate)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereFirst](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwherefirst)
+  * **Optimize LINQ Where().First()**
+  * Replace `items.Where(predicate).First()` with `items.First(predicate)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereFirstOrDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwherefirstordefault)
+  * **Optimize LINQ Where().FirstOrDefault()**
+  * Replace `items.Where(predicate).FirstOrDefault()` with `items.FirstOrDefault(predicate)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereLast](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwherelast)
+  * **Optimize LINQ Where().Last()**
+  * Replace `items.Where(predicate).Last()` with `items.Last(predicate)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereLastOrDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwherelastordefault)
+  * **Optimize LINQ Where().LastOrDefault()**
+  * Replace `.Where(predicate).LastOrDefault()` with `.LastOrDefault(predicate)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereSingle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwheresingle)
+  * **Optimize LINQ Where().Single()**
+  * Replace `items.Where(predicate).Single()` with `items.Single(predicate)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.OptimizeLinqWhereSingleOrDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/optimizelinqwheresingleordefault)
+  * **Optimize LINQ Where().SingleOrDefault()**
+  * Replace `items.Where(predicate).SingleOrDefault()` with `items.SingleOrDefault(predicate)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.RemoveUselessOrderBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/removeuselessorderby)
+  * **Remove useless OrderBy call**
+  * Replace `.OrderBy(a).OrderBy(b)` with `.OrderBy(b)`. A second `OrderBy` completely replaces the first sort, making the first call useless.
+* [OpenRewrite.Recipes.CodeQuality.Linq.UseAnyInsteadOfCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/useanyinsteadofcount)
+  * **Use Any() instead of Count() &gt; 0**
+  * Replace `.Count() &gt; 0` with `.Any()`. `Any()` short-circuits after the first match, while `Count()` enumerates all elements.
+* [OpenRewrite.Recipes.CodeQuality.Linq.UseCastInsteadOfSelect](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/usecastinsteadofselect)
+  * **Use Cast&lt;T&gt;() instead of Select with cast**
+  * Replace `.Select(x =&gt; (T)x)` with `.Cast&lt;T&gt;()`. The `Cast&lt;T&gt;()` method is more concise and clearly expresses the intent.
+* [OpenRewrite.Recipes.CodeQuality.Linq.UseOrderByDescendingThenByDescending](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/useorderbydescendingthenbydescending)
+  * **Use OrderByDescending().ThenByDescending()**
+  * Replace `.OrderByDescending(a).OrderByDescending(b)` with `.OrderByDescending(a).ThenByDescending(b)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.UseOrderByThenBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/useorderbythenby)
+  * **Use ThenBy instead of second OrderBy**
+  * Replace `items.OrderBy(a).OrderBy(b)` with `items.OrderBy(a).ThenBy(b)`. A second `OrderBy` discards the first sort; `ThenBy` preserves it as a secondary key.
+* [OpenRewrite.Recipes.CodeQuality.Linq.UseOrderByThenByDescending](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/useorderbythenbydescending)
+  * **Use OrderBy().ThenByDescending()**
+  * Replace `.OrderBy(a).OrderByDescending(b)` with `.OrderBy(a).ThenByDescending(b)`.
+* [OpenRewrite.Recipes.CodeQuality.Linq.UseOrderInsteadOfOrderBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/linq/useorderinsteadoforderby)
+  * **Use Order() instead of OrderBy() with identity**
+  * Replace `.OrderBy(x =&gt; x)` with `.Order()`. The `Order()` method (available since .NET 7) is a cleaner way to sort elements in their natural order.
+* [OpenRewrite.Recipes.CodeQuality.Naming.AsyncMethodNameShouldEndWithAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/asyncmethodnameshouldendwithasync)
+  * **Async method name should end with Async**
+  * Rename async methods to end with 'Async' suffix.
+* [OpenRewrite.Recipes.CodeQuality.Naming.FindAttributeNameShouldEndWithAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/findattributenameshouldendwithattribute)
+  * **Attribute name should end with 'Attribute'**
+  * Classes that inherit from `System.Attribute` should have names ending with 'Attribute' by convention.
+* [OpenRewrite.Recipes.CodeQuality.Naming.FindEventArgsNameConvention](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/findeventargsnameconvention)
+  * **EventArgs name should end with 'EventArgs'**
+  * Classes that inherit from `System.EventArgs` should have names ending with 'EventArgs' by convention.
+* [OpenRewrite.Recipes.CodeQuality.Naming.FindExceptionNameShouldEndWithException](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/findexceptionnameshouldendwithexception)
+  * **Exception name should end with 'Exception'**
+  * Classes that inherit from `System.Exception` should have names ending with 'Exception' by convention.
+* [OpenRewrite.Recipes.CodeQuality.Naming.FindFixTodoComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/findfixtodocomment)
+  * **Find TODO/HACK/FIXME comments**
+  * Detect TODO, HACK, UNDONE, and FIXME comments that indicate unfinished work.
+* [OpenRewrite.Recipes.CodeQuality.Naming.NamingCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/namingcodequality)
+  * **Naming code quality**
+  * Naming convention recipes for C# code.
+* [OpenRewrite.Recipes.CodeQuality.Naming.NonAsyncMethodNameShouldNotEndWithAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/nonasyncmethodnameshouldnotendwithasync)
+  * **Non-async method should not end with Async**
+  * Remove 'Async' suffix from non-async methods.
+* [OpenRewrite.Recipes.CodeQuality.Naming.ParameterNameMatchesBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/parameternamematchesbase)
+  * **Parameter name should match base definition**
+  * Ensure parameter names match the names used in base class or interface.
+* [OpenRewrite.Recipes.CodeQuality.Naming.RenameParameterAccordingToConvention](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/renameparameteraccordingtoconvention)
+  * **Rename parameter to camelCase**
+  * Detect parameters not following camelCase naming convention.
+* [OpenRewrite.Recipes.CodeQuality.Naming.RenamePrivateFieldAccordingToConvention](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/renameprivatefieldaccordingtoconvention)
+  * **Rename private field according to _camelCase convention**
+  * Detect private fields not following _camelCase naming convention.
+* [OpenRewrite.Recipes.CodeQuality.Naming.UseNameofOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/naming/usenameofoperator)
+  * **Use nameof operator**
+  * Use nameof(parameter) instead of string literal for argument exception constructors.
+* [OpenRewrite.Recipes.CodeQuality.Performance.AvoidBoxingOfValueType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/avoidboxingofvaluetype)
+  * **Avoid boxing of value type**
+  * Avoid boxing of value type by using generic overloads or ToString().
+* [OpenRewrite.Recipes.CodeQuality.Performance.AvoidLockingOnPubliclyAccessible](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/avoidlockingonpubliclyaccessible)
+  * **Avoid locking on publicly accessible instance**
+  * Avoid lock(this), lock(typeof(T)), or lock on string literals which can cause deadlocks.
+* [OpenRewrite.Recipes.CodeQuality.Performance.AvoidNullReferenceException](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/avoidnullreferenceexception)
+  * **Avoid NullReferenceException**
+  * Flag patterns that may throw NullReferenceException, such as using 'as' cast result without null check.
+* [OpenRewrite.Recipes.CodeQuality.Performance.BitOperationOnEnumWithoutFlags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/bitoperationonenumwithoutflags)
+  * **Bitwise operation on enum without Flags attribute**
+  * Flag bitwise operations on enums that lack the Flags attribute.
+* [OpenRewrite.Recipes.CodeQuality.Performance.ConvertHasFlagToBitwiseOperation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/converthasflagtobitwiseoperation)
+  * **Convert HasFlag to bitwise operation**
+  * Replace flags.HasFlag(value) with (flags &amp; value) != 0.
+* [OpenRewrite.Recipes.CodeQuality.Performance.DoNotPassNonReadOnlyStructByReadOnlyRef](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/donotpassnonreadonlystructbyreadonlyref)
+  * **Do not pass non-read-only struct by read-only reference**
+  * Remove 'in' modifier from parameters of non-readonly struct type to avoid defensive copies.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindAsyncVoid](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findasyncvoid)
+  * **Do not use async void**
+  * Async void methods cannot be awaited and exceptions cannot be caught. Use `async Task` instead, except for event handlers.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindAvoidClosureByUsingFactoryArg](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findavoidclosurebyusingfactoryarg)
+  * **Find closure in GetOrAdd that could use factory argument**
+  * Detect `ConcurrentDictionary.GetOrAdd` calls with lambdas that capture variables. Use the overload with a factory argument parameter to avoid allocation.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindAvoidClosureInConcurrentDictionary](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findavoidclosureinconcurrentdictionary)
+  * **Avoid closure when using ConcurrentDictionary**
+  * ConcurrentDictionary methods like `GetOrAdd` may evaluate the factory even when the key exists. Use the overload with a factory argument to avoid closure allocation.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindAvoidClosureInMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findavoidclosureinmethod)
+  * **Find closure in GetOrAdd/AddOrUpdate factory**
+  * Detect closures in lambdas passed to `GetOrAdd` or `AddOrUpdate`. Use the factory overload that accepts a state argument to avoid allocations.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindBlockingCallsInAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findblockingcallsinasync)
+  * **Find blocking calls in async methods**
+  * Detect `.Wait()`, `.Result`, and `.GetAwaiter().GetResult()` calls in async methods. Blocking calls in async methods can cause deadlocks.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindDoNotUseBlockingCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/finddonotuseblockingcall)
+  * **Do not use blocking calls on tasks**
+  * Avoid `.Wait()`, `.Result`, and `.GetAwaiter().GetResult()` on tasks. These can cause deadlocks. Use `await` instead.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindDoNotUseToStringIfObject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/finddonotusetostringifobject)
+  * **Do not use ToString on GetType result**
+  * Using `.GetType().ToString()` returns the full type name. Consider using `.GetType().Name` or `.GetType().FullName` instead for clarity.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindEqualityComparerDefaultOfString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findequalitycomparerdefaultofstring)
+  * **Find EqualityComparer&lt;string&gt;.Default usage**
+  * Detect `EqualityComparer&lt;string&gt;.Default` which uses ordinal comparison. Consider using an explicit `StringComparer` instead.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindGetTypeOnSystemType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findgettypeonsystemtype)
+  * **Find GetType() called on System.Type**
+  * Detect `typeof(T).GetType()` which returns `System.RuntimeType` instead of the expected `System.Type`. Use `typeof(T)` directly.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindImplicitCultureSensitiveMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findimplicitculturesensitivemethods)
+  * **Find implicit culture-sensitive string methods**
+  * Detect calls to `ToLower()` and `ToUpper()` without culture parameters. These methods use the current thread culture, which may cause unexpected behavior.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindImplicitCultureSensitiveToString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findimplicitculturesensitivetostring)
+  * **Find implicit culture-sensitive ToString calls**
+  * Detect `.ToString()` calls without format arguments. On numeric and DateTime types, these use the current thread culture.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindLinqOnDirectMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findlinqondirectmethods)
+  * **Find LINQ methods replaceable with direct methods**
+  * Detect LINQ methods like `.Count()` that could be replaced with direct collection properties. Direct access avoids enumeration overhead.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindMakeMethodStatic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findmakemethodstatic)
+  * **Find methods that could be static**
+  * Detect private methods that don't appear to use instance members and could be marked `static` for clarity and performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindMissingCancellationToken](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findmissingcancellationtoken)
+  * **Find methods not forwarding CancellationToken**
+  * Detect calls to async methods that may have CancellationToken overloads but are called without one. Uses name-based heuristics.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindMissingStructLayout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findmissingstructlayout)
+  * **Find structs without StructLayout attribute**
+  * Detect struct declarations without `[StructLayout]` attribute. Adding `[StructLayout(LayoutKind.Auto)]` allows the CLR to optimize field layout for better memory usage.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindMissingTimeoutForRegex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findmissingtimeoutforregex)
+  * **Add timeout to Regex**
+  * Regex without a timeout can be vulnerable to ReDoS attacks. Specify a `TimeSpan` timeout or use `RegexOptions.NonBacktracking`.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindMissingWithCancellation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findmissingwithcancellation)
+  * **Find missing WithCancellation on async enumerables**
+  * Detect async enumerable iteration without `.WithCancellation()`. Async enumerables should forward CancellationToken via WithCancellation.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindNaNComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findnancomparison)
+  * **Do not use NaN in comparisons**
+  * Comparing with `NaN` using `==` always returns false. Use `double.IsNaN(x)` instead.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindOptimizeEnumerableCountVsAny](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findoptimizeenumerablecountvsany)
+  * **Find LINQ Count() on materialized collection**
+  * Detect LINQ `Count()` or `Any()` on types that have a `Count` or `Length` property. Use the property directly for O(1) performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindOptimizeGuidCreation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findoptimizeguidcreation)
+  * **Find Guid.Parse with constant string**
+  * Detect `Guid.Parse(&quot;...&quot;)` with constant strings. Consider using `new Guid(&quot;...&quot;)` or a static readonly field for better performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindOptimizeStartsWith](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findoptimizestartswith)
+  * **Use char overload for single-character string methods**
+  * Convert string methods with single-character string literals to use char overloads for better performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindSequenceEqualForSpan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findsequenceequalforspan)
+  * **Find Span&lt;char&gt; equality that should use SequenceEqual**
+  * Detect `==` and `!=` operators on `Span&lt;char&gt;` or `ReadOnlySpan&lt;char&gt;` which compare references. Use `SequenceEqual` for content comparison.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindSimplifyStringCreate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findsimplifystringcreate)
+  * **Find simplifiable string.Create calls**
+  * Detect `string.Create(CultureInfo.InvariantCulture, ...)` calls that could be simplified to string interpolation when all parameters are culture-invariant.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindStreamReadResultNotUsed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findstreamreadresultnotused)
+  * **Find unused Stream.Read return value**
+  * Detect calls to `Stream.Read` or `Stream.ReadAsync` where the return value is discarded. The return value indicates how many bytes were actually read.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindStringCreateInsteadOfFormattable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findstringcreateinsteadofformattable)
+  * **Find FormattableString that could use string.Create**
+  * Detect `FormattableString` usage where `string.Create` with an `IFormatProvider` could be used for better performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindStringFormatShouldBeConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findstringformatshouldbeconstant)
+  * **String.Format format string should be constant**
+  * The format string passed to `string.Format` should be a compile-time constant to enable analysis and avoid runtime format errors.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindStringGetHashCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findstringgethashcode)
+  * **Find string.GetHashCode() without StringComparer**
+  * Detect calls to `string.GetHashCode()` without a `StringComparer`. The default `GetHashCode()` may produce different results across platforms.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindStructWithDefaultEqualsAsKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findstructwithdefaultequalsaskey)
+  * **Find Dictionary/HashSet with struct key type**
+  * Detect `Dictionary` or `HashSet` usage with struct types as keys. Structs without overridden `Equals`/`GetHashCode` use slow reflection-based comparison.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindUseAttributeIsDefined](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/finduseattributeisdefined)
+  * **Find GetCustomAttributes that could use Attribute.IsDefined**
+  * Detect `GetCustomAttributes().Any()` or similar patterns where `Attribute.IsDefined` would be more efficient.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindUseContainsKeyInsteadOfTryGetValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findusecontainskeyinsteadoftrygetvalue)
+  * **Use ContainsKey instead of TryGetValue with discard**
+  * When only checking if a key exists, use `ContainsKey` instead of `TryGetValue` with a discarded out parameter.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindUseExplicitCaptureRegexOption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/finduseexplicitcaptureregexoption)
+  * **Use RegexOptions.ExplicitCapture**
+  * Use `RegexOptions.ExplicitCapture` to avoid capturing unnamed groups, which improves performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindUseIndexerInsteadOfLinq](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/finduseindexerinsteadoflinq)
+  * **Find LINQ methods replaceable with indexer**
+  * Detect LINQ methods like `.First()` and `.Last()` that could be replaced with direct indexer access for better performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindUseRegexSourceGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/finduseregexsourcegenerator)
+  * **Find Regex that could use source generator**
+  * Detect `new Regex(...)` calls that could benefit from the `[GeneratedRegex]` source generator attribute for better performance (.NET 7+).
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindUseTimeProviderOverload](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findusetimeprovideroverload)
+  * **Find calls that could use TimeProvider**
+  * Detect `DateTime.UtcNow`, `DateTimeOffset.UtcNow`, and `Task.Delay` calls that could use a `TimeProvider` parameter for better testability (.NET 8+).
+* [OpenRewrite.Recipes.CodeQuality.Performance.FindUseValuesContainsInsteadOfValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/findusevaluescontainsinsteadofvalues)
+  * **Find Values.Contains() instead of ContainsValue()**
+  * Detect `.Values.Contains(value)` on dictionaries. Use `.ContainsValue(value)` instead.
+* [OpenRewrite.Recipes.CodeQuality.Performance.MakeParameterRefReadOnly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/makeparameterrefreadonly)
+  * **Make parameter ref read-only**
+  * Use in parameter modifier for large struct parameters.
+* [OpenRewrite.Recipes.CodeQuality.Performance.OptimizeMethodCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/optimizemethodcall)
+  * **Optimize method call**
+  * Replace inefficient method calls with more optimal equivalents.
+* [OpenRewrite.Recipes.CodeQuality.Performance.OptimizeStringBuilderAppend](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/optimizestringbuilderappend)
+  * **Optimize StringBuilder.Append usage**
+  * Optimize StringBuilder method calls: use char overloads for single-character strings, remove redundant ToString() calls, replace string.Format with AppendFormat, and split string concatenation into chained Append calls.
+* [OpenRewrite.Recipes.CodeQuality.Performance.PerformanceCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/performancecodequality)
+  * **Performance code quality**
+  * Performance optimization recipes for C# code.
+* [OpenRewrite.Recipes.CodeQuality.Performance.ReplaceEnumToStringWithNameof](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/replaceenumtostringwithnameof)
+  * **Replace Enum.ToString() with nameof**
+  * Replace `MyEnum.Value.ToString()` with `nameof(MyEnum.Value)`. The `nameof` operator is evaluated at compile time, avoiding runtime reflection.
+* [OpenRewrite.Recipes.CodeQuality.Performance.ReturnCompletedTask](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/returncompletedtask)
+  * **Return completed task instead of null**
+  * Replace return null in Task-returning methods with return Task.CompletedTask.
+* [OpenRewrite.Recipes.CodeQuality.Performance.ThrowingNotImplementedException](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/throwingnotimplementedexception)
+  * **Throwing of new NotImplementedException**
+  * Find code that throws new NotImplementedException, which may indicate unfinished implementation.
+* [OpenRewrite.Recipes.CodeQuality.Performance.UnnecessaryExplicitEnumerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/unnecessaryexplicitenumerator)
+  * **Remove unnecessary explicit enumerator**
+  * Use foreach instead of explicit enumerator pattern.
+* [OpenRewrite.Recipes.CodeQuality.Performance.UseArrayEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/usearrayempty)
+  * **Use Array.Empty&lt;T&gt;() instead of new T[0]**
+  * Use Array.Empty&lt;T&gt;() instead of allocating empty arrays.
+* [OpenRewrite.Recipes.CodeQuality.Performance.UseContainsKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/usecontainskey)
+  * **Use ContainsKey instead of Keys.Contains**
+  * Replace `.Keys.Contains(key)` with `.ContainsKey(key)` on dictionaries for O(1) performance.
+* [OpenRewrite.Recipes.CodeQuality.Performance.UseCountProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/usecountproperty)
+  * **Use Count/Length property instead of Count()**
+  * Replace collection.Count() with collection.Count when available.
+* [OpenRewrite.Recipes.CodeQuality.Performance.UseRegexIsMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/useregexismatch)
+  * **Use Regex.IsMatch**
+  * Replace Regex.Match(s, p).Success with Regex.IsMatch(s, p).
+* [OpenRewrite.Recipes.CodeQuality.Performance.UseStringBuilderAppendLine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/usestringbuilderappendline)
+  * **Use StringBuilder.AppendLine**
+  * Replace `sb.Append(&quot;\n&quot;)` with `sb.AppendLine()`.
+* [OpenRewrite.Recipes.CodeQuality.Performance.UseStringComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/usestringcomparison)
+  * **Use StringComparison**
+  * Replace case-insensitive string comparisons using `ToLower()`/`ToUpper()` with overloads that accept `StringComparison.OrdinalIgnoreCase`.
+* [OpenRewrite.Recipes.CodeQuality.Performance.UseStringConcatInsteadOfJoin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/performance/usestringconcatinsteadofjoin)
+  * **Use string.Concat instead of string.Join**
+  * Replace `string.Join(&quot;&quot;, args)` with `string.Concat(args)`.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.FileContainsNoCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/filecontainsnocode)
+  * **File contains no code**
+  * Find files that contain no code, only using directives, comments, or whitespace.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.FindUnusedInternalType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/findunusedinternaltype)
+  * **Find internal types that may be unused**
+  * Detect `internal` (non-public) classes that may be unused. Review these types and remove them if they are no longer needed.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RedundancyCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/redundancycodequality)
+  * **Redundancy code quality**
+  * Remove redundant code from C# sources.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveArgumentListFromAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeargumentlistfromattribute)
+  * **Remove argument list from attribute**
+  * Remove empty argument list from attribute.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveBracesFromRecordDeclaration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removebracesfromrecorddeclaration)
+  * **Remove braces from record declaration**
+  * Remove unnecessary braces from record declarations with no body.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEmptyCatchClause](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeemptycatchclause)
+  * **Remove empty catch clause**
+  * Remove empty catch clauses that silently swallow exceptions without any logging or handling.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEmptyDestructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeemptydestructor)
+  * **Remove empty destructor**
+  * Remove destructors (finalizers) with empty bodies.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEmptyFinallyClause](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeemptyfinallyclause)
+  * **Remove empty finally clause**
+  * Remove `finally \{ \}` clauses that contain no statements. An empty finally block serves no purpose.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEmptyForBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeemptyforbody)
+  * **Flag empty for loop body**
+  * Flag `for` loops with empty bodies as potential dead code.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEmptyForEachBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeemptyforeachbody)
+  * **Remove empty foreach body**
+  * Remove `foreach` loops with empty bodies, which iterate without effect.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEmptySyntax](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeemptysyntax)
+  * **Remove empty syntax**
+  * Remove empty namespace, class, struct, interface, and enum declarations.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEmptyWhileBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeemptywhilebody)
+  * **Remove empty while body**
+  * Remove `while (cond) \{ \}` loops with empty bodies as they serve no purpose.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveEnumDefaultUnderlyingType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeenumdefaultunderlyingtype)
+  * **Remove enum default underlying type**
+  * Remove : int from enum declaration since int is the default.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveExplicitClassFromRecord](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeexplicitclassfromrecord)
+  * **Remove explicit 'class' from record**
+  * Remove the redundant `class` keyword from `record class` declarations. Records are reference types by default.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemovePartialModifierFromSinglePart](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removepartialmodifierfromsinglepart)
+  * **Remove partial modifier from single-part type**
+  * Remove `partial` modifier from types that have only one part.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantAsOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantasoperator)
+  * **Remove redundant as operator**
+  * Remove redundant 'as' operator when the expression already has the target type.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantassignment)
+  * **Remove redundant assignment**
+  * Remove assignments where the value is immediately returned.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantAsyncAwait](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantasyncawait)
+  * **Remove redundant async/await**
+  * Remove redundant async/await when a Task can be returned directly.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantAutoPropertyInit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantautopropertyinit)
+  * **Remove redundant constructor**
+  * Remove empty parameterless constructors that duplicate the implicit default.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantAutoPropertyInitialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantautopropertyinitialization)
+  * **Remove redundant auto-property initialization**
+  * Remove auto-property initializers that assign the default value.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantBaseConstructorCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantbaseconstructorcall)
+  * **Remove redundant base constructor call**
+  * Remove `: base()` parameterless base constructor call since it's implicit.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantBaseInterface](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantbaseinterface)
+  * **Remove redundant base interface**
+  * Remove interface that is already inherited by another implemented interface.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantCast](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantcast)
+  * **Remove redundant cast**
+  * Remove unnecessary casts when the expression already has the target type.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantCatchBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantcatchblock)
+  * **Remove redundant catch block**
+  * Remove try-catch blocks where every catch clause only rethrows the exception.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantComma](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantcomma)
+  * **Remove redundant comma**
+  * Remove redundant trailing comma in enum declarations.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantDefaultFieldInitialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantdefaultfieldinitialization)
+  * **Remove redundant default field initialization**
+  * Remove field initializations that assign the default value (e.g., `int x = 0`, `bool b = false`, `string s = null`, `object o = default`).
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantDefaultSwitchSection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantdefaultswitchsection)
+  * **Remove redundant default switch section**
+  * Remove default switch section that only contains break.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantDelegateCreation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantdelegatecreation)
+  * **Remove redundant delegate creation**
+  * Remove unnecessary `new EventHandler(M)` when `M` can be used directly.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantDisposeOrClose](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantdisposeorclose)
+  * **Remove redundant Dispose/Close call**
+  * Remove Dispose/Close calls on objects already in a using block.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantOverridingMember](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantoverridingmember)
+  * **Remove redundant overriding member**
+  * Remove overriding member that only calls the base implementation.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantParentheses](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantparentheses)
+  * **Remove redundant parentheses**
+  * Remove unnecessary parentheses around expressions in return statements and assignments.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantRegion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantregion)
+  * **Remove redundant region**
+  * Remove #region/#endregion directives.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantSealedModifier](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantsealedmodifier)
+  * **Remove redundant sealed modifier**
+  * Remove `sealed` modifier on members of sealed classes, since it's redundant.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantSealedModifierFromOverride](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantsealedmodifierfromoverride)
+  * **Remove redundant 'sealed' modifier from override**
+  * Remove redundant 'sealed' modifier from an overriding member in a sealed class.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantStatement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantstatement)
+  * **Remove redundant statement**
+  * Remove redundant `return;` at end of void method or `continue;` at end of loop body.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantStringToCharArrayCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundantstringtochararraycall)
+  * **Remove redundant ToCharArray() call**
+  * Remove `ToCharArray()` calls in foreach loops where iterating over the string directly produces the same result.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveRedundantToStringCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeredundanttostringcall)
+  * **Remove redundant ToString() call**
+  * Remove `ToString()` calls on expressions that are already strings.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveUnnecessaryCaseLabel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeunnecessarycaselabel)
+  * **Remove unnecessary case label**
+  * Remove case labels from switch section that has default label.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveUnnecessaryElse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeunnecessaryelse)
+  * **Remove unnecessary else clause**
+  * Remove `else` clause when the `if` body always terminates with `return`, `throw`, `break`, `continue`, or `goto`.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveUnnecessarySemicolon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeunnecessarysemicolon)
+  * **Remove unnecessary semicolon at end of declaration**
+  * Remove unnecessary semicolon at the end of a declaration.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveUnusedDocCommentElement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeunuseddoccommentelement)
+  * **Unused element in documentation comment**
+  * Remove unused param/typeparam elements from XML documentation.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveUnusedMemberDeclaration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeunusedmemberdeclaration)
+  * **Remove unused member declaration**
+  * Remove member declarations that are never referenced.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.RemoveUnusedThisParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/removeunusedthisparameter)
+  * **Unused 'this' parameter**
+  * Remove unused 'this' parameter from extension methods.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.ResourceCanBeDisposedAsynchronously](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/resourcecanbedisposedasynchronously)
+  * **Resource can be disposed asynchronously**
+  * Use `await using` instead of `using` when the resource implements IAsyncDisposable.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryEnumFlag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessaryenumflag)
+  * **Unnecessary enum flag**
+  * Remove unnecessary enum flag value that is a combination of other flags.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryInterpolatedString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessaryinterpolatedstring)
+  * **Remove unnecessary interpolated string**
+  * Replace interpolated strings with no interpolations with regular strings.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryInterpolation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessaryinterpolation)
+  * **Unnecessary interpolation**
+  * Remove unnecessary string interpolation, for example simplifying `$&quot;\{x\}&quot;` to `x.ToString()`.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryNullCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessarynullcheck)
+  * **Remove unnecessary null check**
+  * Remove null check that is unnecessary because the value is known to be non-null.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryNullForgivingOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessarynullforgivingoperator)
+  * **Remove unnecessary null-forgiving operator**
+  * Remove ! operator where expression is already non-nullable.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryRawStringLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessaryrawstringliteral)
+  * **Remove unnecessary raw string literal**
+  * Convert raw string literal to regular string when not needed.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryUnsafeContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessaryunsafecontext)
+  * **Remove unnecessary unsafe context**
+  * Remove unsafe blocks that do not contain unsafe code.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UnnecessaryVerbatimStringLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/unnecessaryverbatimstringliteral)
+  * **Remove unnecessary verbatim string literal**
+  * Remove @ prefix from string literals that do not contain escape sequences.
+* [OpenRewrite.Recipes.CodeQuality.Redundancy.UseRethrow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/redundancy/userethrow)
+  * **Use rethrow instead of throw ex**
+  * Replace `throw ex;` with `throw;` inside catch clauses when `ex` is the caught exception variable. A bare `throw` preserves the original stack trace.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.CombineWhereMethodChain](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/combinewheremethodchain)
+  * **Combine 'Enumerable.Where' method chain**
+  * Combine consecutive Enumerable.Where method calls into a single call with a combined predicate.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.ConvertAnonymousMethodToLambda](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/convertanonymousmethodtolambda)
+  * **Convert anonymous method to lambda**
+  * Convert anonymous method delegate syntax to lambda expression.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.ConvertIfToAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/convertiftoassignment)
+  * **Convert 'if' to assignment**
+  * Convert 'if' statement that assigns boolean literals to a simple assignment with the condition expression.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.ConvertInterpolatedStringToConcatenation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/convertinterpolatedstringtoconcatenation)
+  * **Convert interpolated string to concatenation**
+  * Detect string interpolations that could be simplified to concatenation.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.ExpressionAlwaysTrueOrFalse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/expressionalwaystrueorfalse)
+  * **Expression is always true or false**
+  * Simplify `x == x` to `true` and `x != x` to `false`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.InlineLazyInitialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/inlinelazyinitialization)
+  * **Inline lazy initialization**
+  * Use null-coalescing assignment (??=) for lazy initialization.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.InlineLocalVariable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/inlinelocalvariable)
+  * **Inline local variable**
+  * Inline local variable that is assigned once and used once immediately.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.JoinStringExpressions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/joinstringexpressions)
+  * **Join string expressions**
+  * Join consecutive string literal concatenations into a single literal.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.MergeElseWithNestedIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/mergeelsewithnestedif)
+  * **Merge else with nested if**
+  * Merge `else \{ if (...) \{ \} \}` into `else if (...) \{ \}` when the else block contains only a single if statement.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.MergeIfWithParentIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/mergeifwithparentif)
+  * **Merge if with parent if**
+  * Merge `if (a) \{ if (b) \{ ... \} \}` into `if (a &amp;&amp; b) \{ ... \}` when the outer if body contains only a single nested if without else.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.MergeSwitchSections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/mergeswitchsections)
+  * **Merge switch sections with equivalent content**
+  * Merge switch case labels that have identical bodies.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.RemoveRedundantBooleanLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/removeredundantbooleanliteral)
+  * **Remove redundant boolean literal**
+  * Remove redundant `== true` comparison from boolean expressions.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.RemoveUnnecessaryBraces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/removeunnecessarybraces)
+  * **Remove unnecessary braces**
+  * Remove braces from single-statement blocks where they are optional.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplificationCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplificationcodequality)
+  * **Simplification code quality**
+  * Simplify expressions and patterns in C# code.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyArgumentNullCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifyargumentnullcheck)
+  * **Simplify argument null check**
+  * Use ArgumentNullException.ThrowIfNull(arg) instead of manual null check.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyBooleanComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifybooleancomparison)
+  * **Simplify boolean comparison**
+  * Simplify `true == x` to `x`, `false == x` to `!x`, `true != x` to `!x`, and `false != x` to `x`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyCoalesceExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifycoalesceexpression)
+  * **Simplify coalesce expression**
+  * Simplify x ?? x to x.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyCodeBranching](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifycodebranching)
+  * **Simplify code branching**
+  * Simplify code branching patterns such as empty if-else, while(true) with break, and trailing return/continue in if-else.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyConditionalExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifyconditionalexpression)
+  * **Simplify conditional expression**
+  * Simplify `cond ? true : false` to `cond` and `cond ? false : true` to `!cond`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyDoWhileToWhile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifydowhiletowhile)
+  * **Simplify do-while(true) to while(true)**
+  * Convert `do \{ ... \} while (true)` to `while (true) \{ ... \}`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyLazyInitialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifylazyinitialization)
+  * **Simplify lazy initialization**
+  * Simplify lazy initialization using ??= operator.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyLogicalNegation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifylogicalnegation)
+  * **Simplify logical negation**
+  * Simplify negated comparison expressions. For example, `!(x == y)` becomes `x != y`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyNegatedIsNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifynegatedisnull)
+  * **Simplify negated is null pattern**
+  * Simplify `!(x is null)` to `x is not null` and `!(x is not null)` to `x is null`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyNestedUsingStatement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifynestedusingstatement)
+  * **Simplify nested using statement**
+  * Merge nested `using` statements into a single `using` declaration.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyNullableHasValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifynullablehasvalue)
+  * **Simplify Nullable&lt;T&gt;.HasValue**
+  * Replace `x.HasValue` with `x != null` and `!x.HasValue` with `x == null`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyNullableToShorthand](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifynullabletoshorthand)
+  * **Simplify Nullable&lt;T&gt; to T?**
+  * Use T? shorthand instead of Nullable&lt;T&gt;.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyNumericComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifynumericcomparison)
+  * **Simplify numeric comparison**
+  * Simplify `x - y &gt; 0` to `x &gt; y`, `x - y &lt; 0` to `x &lt; y`, `x - y &gt;= 0` to `x &gt;= y`, and `x - y &lt;= 0` to `x &lt;= y`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.SimplifyRedundantWhereWhere](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/simplifyredundantwherewhere)
+  * **Merge consecutive Where calls**
+  * Detect consecutive `.Where(p).Where(q)` calls that could be merged.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UnconstrainedTypeParamNullCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/unconstrainedtypeparamnullcheck)
+  * **Unconstrained type parameter checked for null**
+  * Find null checks on unconstrained type parameters, which may not be reference types.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UnnecessaryOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/unnecessaryoperator)
+  * **Operator is unnecessary**
+  * Remove unnecessary operators such as unary plus.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseAnonymousFunctionOrMethodGroup](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useanonymousfunctionormethodgroup)
+  * **Use anonymous function or method group**
+  * Convert a lambda expression to a method group where appropriate.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseCoalesceExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usecoalesceexpression)
+  * **Use coalesce expression**
+  * Replace `x != null ? x : y` and `x == null ? y : x` with `x ?? y`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseCoalesceExpressionInsteadOfIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usecoalesceexpressioninsteadofif)
+  * **Use coalesce expression instead of 'if'**
+  * Replace `if (x == null) x = y;` with `x ??= y`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseCompoundAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usecompoundassignment)
+  * **Use compound assignment**
+  * Replace `x = x op y` with `x op= y` for arithmetic, bitwise, shift, and null-coalescing operators.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseConditionalAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useconditionalaccess)
+  * **Use conditional access**
+  * Transform null-check patterns to use conditional access (?.).
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseConditionalAccessInsteadOfIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useconditionalaccessinsteadofif)
+  * **Use conditional access instead of conditional expression**
+  * Transform ternary null-check expressions to use conditional access (?.) with null-coalescing (??) where needed.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseConditionalExpressionForDeclaration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useconditionalexpressionfordeclaration)
+  * **Use conditional expression in declaration**
+  * Convert `int x; if (cond) x = a; else x = b;` to `int x = cond ? a : b;`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseConditionalExpressionForReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useconditionalexpressionforreturn)
+  * **Use conditional return expression**
+  * Convert `if (c) return a; return b;` to `return c ? a : b;`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseConditionalExpressionForThrow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useconditionalexpressionforthrow)
+  * **Use conditional throw expression**
+  * Detect `if (x == null) throw ...` patterns that could use `x ?? throw ...`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseDateTimeOffsetUnixEpoch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usedatetimeoffsetunixepoch)
+  * **Use DateTimeOffset.UnixEpoch**
+  * Replace `new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)` with `DateTimeOffset.UnixEpoch`. Available since .NET 8, `DateTimeOffset.UnixEpoch` is more readable.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseDateTimeUnixEpoch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usedatetimeunixepoch)
+  * **Use DateTime.UnixEpoch**
+  * Replace `new DateTime(1970, 1, 1)` with `DateTime.UnixEpoch`. Available since .NET 8, `DateTime.UnixEpoch` is more readable and avoids magic numbers.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseDefaultLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usedefaultliteral)
+  * **Use default literal**
+  * Simplify default(T) expressions to default. Note: in rare cases where the type cannot be inferred (e.g., overload resolution), manual review may be needed.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseExceptionFilter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useexceptionfilter)
+  * **Use exception filter**
+  * Detect catch blocks with if/throw pattern that could use a when clause.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseExpressionBodiedLambda](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useexpressionbodiedlambda)
+  * **Use expression-bodied lambda**
+  * Convert block-body lambdas with a single statement to expression-body lambdas.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseForInsteadOfWhile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useforinsteadofwhile)
+  * **Use for statement instead of while**
+  * Convert while loops with counter to for loops.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseGuidEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useguidempty)
+  * **Use Guid.Empty**
+  * Replace `new Guid()` with `Guid.Empty`. The static `Guid.Empty` field avoids unnecessary allocations and clearly expresses intent.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseIsOperatorInsteadOfAs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useisoperatorinsteadofas)
+  * **Use 'is' operator instead of 'as' operator**
+  * Replace 'as' operator followed by null check with 'is' operator.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseIsPatternInsteadOfSequenceEqual](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useispatterninsteadofsequenceequal)
+  * **Use 'is' pattern instead of SequenceEqual**
+  * Replace `span.SequenceEqual(&quot;str&quot;)` with `span is &quot;str&quot;`. Pattern matching with string constants is more concise for span comparisons.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseNotPattern](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usenotpattern)
+  * **Use 'not' pattern instead of negation**
+  * Detect `!(x is Type)` patterns that can use `x is not Type`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UsePatternMatchingForEquality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usepatternmatchingforequality)
+  * **Use pattern matching for equality comparison**
+  * Replace `x == constant` with `x is constant` for improved readability using C# pattern matching.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UsePatternMatchingForInequality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usepatternmatchingforinequality)
+  * **Use pattern matching for inequality comparison**
+  * Replace `x != constant` with `x is not constant` for improved readability using C# pattern matching.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UsePatternMatchingInsteadOfAs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usepatternmatchinginsteadofas)
+  * **Use pattern matching instead of as**
+  * Use pattern matching instead of as. Note: Needs type resolution.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UsePatternMatchingInsteadOfHasValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usepatternmatchinginsteadofhasvalue)
+  * **Use pattern matching instead of HasValue**
+  * Replace `nullable.HasValue` with `nullable is not null`. Pattern matching is more idiomatic in modern C#. Note: this recipe uses name-based matching and may match non-Nullable types with a `HasValue` property.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UsePatternMatchingInsteadOfIs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usepatternmatchinginsteadofis)
+  * **Use pattern matching instead of is**
+  * Use pattern matching instead of is. Note: Needs type resolution.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UsePatternMatchingNullCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usepatternmatchingnullcheck)
+  * **Use pattern matching for null check**
+  * Replace `x == null` with `x is null` and `x != null` with `x is not null`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UsePostfixIncrement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usepostfixincrement)
+  * **Use postfix increment/decrement**
+  * Replace `x = x + 1` with `x++` and `x = x - 1` with `x--`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseRangeOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/userangeoperator)
+  * **Use range operator**
+  * Detect Substring calls that could use C# 8 range syntax.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseShortCircuitOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useshortcircuitoperator)
+  * **Use short-circuit operator**
+  * Replace bitwise `&amp;` with `&amp;&amp;` and `|` with `||` in boolean contexts.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseStringEndsWith](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usestringendswith)
+  * **Use string.EndsWith**
+  * Detect substring comparison patterns that could use EndsWith.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseStringEquals](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usestringequals)
+  * **Use string.Equals instead of == for string comparison**
+  * Replace `==` string comparisons with `string.Equals(a, b, StringComparison.Ordinal)` for explicit comparison semantics.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseStringInterpolation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usestringinterpolation)
+  * **Use string interpolation instead of string.Format**
+  * Replace simple `string.Format(&quot;\{0\}&quot;, x)` calls with `$&quot;\{x\}&quot;`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseStringInterpolationInsteadOfConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usestringinterpolationinsteadofconcat)
+  * **Use string interpolation instead of concatenation**
+  * Replace string.Concat with string interpolation.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseStringStartsWith](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usestringstartswith)
+  * **Use string.StartsWith instead of IndexOf comparison**
+  * Replace `s.IndexOf(x) == 0` with `s.StartsWith(x)`.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseSwitchExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/useswitchexpression)
+  * **Use switch expression**
+  * Convert simple switch statements to switch expressions (C# 8+).
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseThrowExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usethrowexpression)
+  * **Use throw expression**
+  * Convert null-check-then-throw patterns to throw expressions.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseTimeSpanZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usetimespanzero)
+  * **Use TimeSpan.Zero**
+  * Replace `new TimeSpan(0)` and `TimeSpan.FromX(0)` with `TimeSpan.Zero`. The static `TimeSpan.Zero` field is more readable and avoids unnecessary object creation.
+* [OpenRewrite.Recipes.CodeQuality.Simplification.UseXorForBooleanInequality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/simplification/usexorforbooleaninequality)
+  * **Use ^ operator for boolean inequality**
+  * Replace a != b with a ^ b when both operands are boolean.
+* [OpenRewrite.Recipes.CodeQuality.Style.AbstractTypeShouldNotHavePublicConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/abstracttypeshouldnothavepublicconstructors)
+  * **Abstract type should not have public constructors**
+  * Change public constructors of abstract types to protected.
+* [OpenRewrite.Recipes.CodeQuality.Style.AddParenthesesForClarity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/addparenthesesforclarity)
+  * **Add parentheses for clarity**
+  * Add parentheses to expressions where operator precedence might be unclear to improve readability.
+* [OpenRewrite.Recipes.CodeQuality.Style.AddParenthesesToConditionalExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/addparenthesestoconditionalexpression)
+  * **Add parentheses to conditional expression condition**
+  * Add or remove parentheses from the condition in a conditional operator.
+* [OpenRewrite.Recipes.CodeQuality.Style.AddRemoveTrailingComma](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/addremovetrailingcomma)
+  * **Add trailing comma to last enum member**
+  * Add trailing comma to the last member of enum declarations for cleaner diffs when adding new members.
+* [OpenRewrite.Recipes.CodeQuality.Style.AddStaticToMembersOfStaticClass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/addstatictomembersofstaticclass)
+  * **Add static modifier to all members of static class**
+  * Ensure all members of a static class are also declared static.
+* [OpenRewrite.Recipes.CodeQuality.Style.AddTrailingComma](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/addtrailingcomma)
+  * **Add trailing comma**
+  * Add trailing commas to multi-line initializers and enum declarations for cleaner diffs.
+* [OpenRewrite.Recipes.CodeQuality.Style.AvoidChainOfAssignments](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/avoidchainofassignments)
+  * **Avoid chain of assignments**
+  * Flag chained assignment expressions like a = b = c = value.
+* [OpenRewrite.Recipes.CodeQuality.Style.AvoidNestingTernary](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/avoidnestingternary)
+  * **Avoid nested ternary operator**
+  * Replace nested ternary expressions with if/else chains for clarity.
+* [OpenRewrite.Recipes.CodeQuality.Style.CallExtensionMethodAsInstance](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/callextensionmethodasinstance)
+  * **Call extension method as instance method**
+  * Use instance method syntax instead of static extension method call.
+* [OpenRewrite.Recipes.CodeQuality.Style.CompositeEnumContainsUndefinedFlag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/compositeenumcontainsundefinedflag)
+  * **Composite enum value contains undefined flag**
+  * Find composite enum values that contain a flag which is not defined in the enum type.
+* [OpenRewrite.Recipes.CodeQuality.Style.ConstantValuesOnRightSide](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/constantvaluesonrightside)
+  * **Place constant values on right side of comparisons**
+  * Move constant values (literals, null) from the left side of comparisons to the right side for consistency and readability.
+* [OpenRewrite.Recipes.CodeQuality.Style.ConvertCommentToDocComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/convertcommenttodoccomment)
+  * **Convert comment to documentation comment**
+  * Convert single-line or multi-line comments above declarations to XML documentation comments.
+* [OpenRewrite.Recipes.CodeQuality.Style.DeclareEachAttributeSeparately](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/declareeachattributeseparately)
+  * **Declare each attribute separately**
+  * Declare each attribute in a separate attribute list.
+* [OpenRewrite.Recipes.CodeQuality.Style.DeclareEachTypeInSeparateFile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/declareeachtypeinseparatefile)
+  * **Declare each type in separate file**
+  * Declare each type in a separate file.
+* [OpenRewrite.Recipes.CodeQuality.Style.DeclareEachTypeSeparately](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/declareeachtypeseparately)
+  * **Declare each type in separate file**
+  * Flag files containing multiple top-level type declarations.
+* [OpenRewrite.Recipes.CodeQuality.Style.DeclareEnumMemberWithZeroValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/declareenummemberwithzerovalue)
+  * **Declare enum member with zero value**
+  * Ensure [Flags] enums have a member explicitly assigned the value 0.
+* [OpenRewrite.Recipes.CodeQuality.Style.DeclareEnumValueAsCombination](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/declareenumvalueascombination)
+  * **Declare enum value as combination of names**
+  * Declare Flags enum values as combinations of named values.
+* [OpenRewrite.Recipes.CodeQuality.Style.DeclareUsingDirectiveOnTopLevel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/declareusingdirectiveontoplevel)
+  * **Declare using directive on top level**
+  * Move using directives outside of namespace declarations to the top level of the file.
+* [OpenRewrite.Recipes.CodeQuality.Style.DefaultLabelShouldBeLast](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/defaultlabelshouldbelast)
+  * **Default label should be last**
+  * Move default label to the last position in switch statement.
+* [OpenRewrite.Recipes.CodeQuality.Style.DuplicateEnumValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/duplicateenumvalue)
+  * **Flag duplicate enum value**
+  * Flag enum members that have the same underlying value.
+* [OpenRewrite.Recipes.CodeQuality.Style.DuplicateWordInComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/duplicatewordincomment)
+  * **Duplicate word in a comment**
+  * Find and fix duplicate consecutive words in comments.
+* [OpenRewrite.Recipes.CodeQuality.Style.EnumShouldDeclareExplicitValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/enumshoulddeclareexplicitvalues)
+  * **Enum should declare explicit values**
+  * Add explicit values to enum members that do not have them.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindArgumentExceptionParameterName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findargumentexceptionparametername)
+  * **ArgumentException should specify argument name**
+  * When throwing `ArgumentException` or derived types, specify the parameter name using `nameof()`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindAsyncMethodReturnsNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findasyncmethodreturnsnull)
+  * **Find async void method**
+  * Detect `async void` methods. Use `async Task` instead so callers can await and exceptions propagate correctly.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindAsyncVoidDelegate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findasyncvoiddelegate)
+  * **Find async void delegate**
+  * Detect async lambdas used as delegates where the return type is void. Use `Func&lt;Task&gt;` instead of `Action` for async delegates.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindAvoidAnonymousDelegateForUnsubscribe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findavoidanonymousdelegateforunsubscribe)
+  * **Do not use anonymous delegates to unsubscribe from events**
+  * Unsubscribing from events using anonymous delegates or lambdas has no effect because each lambda creates a new delegate instance.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindAwaitTaskBeforeDisposing](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findawaittaskbeforedisposing)
+  * **Find unawaited task return in using block**
+  * Detect `return` of a Task inside a `using` block without `await`. The resource may be disposed before the task completes.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindBothConditionSidesIdentical](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findbothconditionsidesidentical)
+  * **Find binary expression with identical sides**
+  * Detect binary expressions where both sides are identical, e.g. `x == x` or `a &amp;&amp; a`. This is likely a copy-paste bug.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindClassWithEqualsButNoIEquatable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findclasswithequalsbutnoiequatable)
+  * **Find class with Equals(T) but no IEquatable&lt;T&gt;**
+  * Detect classes that define `Equals(T)` but do not implement `IEquatable&lt;T&gt;`. Implementing the interface ensures consistency and enables value-based equality.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindCompareToWithoutIComparable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findcomparetowithouticomparable)
+  * **Find CompareTo without IComparable**
+  * Detect classes that provide a `CompareTo` method but do not implement `IComparable&lt;T&gt;`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDangerousThreadingMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddangerousthreadingmethods)
+  * **Do not use dangerous threading methods**
+  * Avoid `Thread.Abort()`, `Thread.Suspend()`, and `Thread.Resume()`. These methods are unreliable and can corrupt state.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDefaultParameterValueNeedsOptional](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddefaultparametervalueneedsoptional)
+  * **Find [DefaultParameterValue] without [Optional]**
+  * Detect parameters with `[DefaultParameterValue]` that are missing `[Optional]`. Both attributes are needed for COM interop default parameter behavior.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotCallVirtualMethodInConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotcallvirtualmethodinconstructor)
+  * **Find virtual method call in constructor**
+  * Detect calls to virtual or abstract methods within constructors. Derived classes may not be fully initialized when these methods execute.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotCompareWithNaN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotcomparewithnan)
+  * **Find comparison with NaN**
+  * Detect comparisons with `NaN` using `==` or `!=`. Use `double.IsNaN()` or `float.IsNaN()` instead, as `x == NaN` is always false.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotCreateTypeWithBCLName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotcreatetypewithbclname)
+  * **Find type with BCL name**
+  * Detect class declarations that use names from well-known BCL types like `Task`, `Action`, `String`, which can cause confusion.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotDeclareStaticMembersOnGenericTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotdeclarestaticmembersongenerictypes)
+  * **Find static members on generic types**
+  * Detect static members declared on generic types. Static members on generic types require specifying type arguments at the call site, reducing discoverability.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotOverwriteParameterValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotoverwriteparametervalue)
+  * **Find overwritten parameter values**
+  * Detect assignments to method parameters, which can mask the original argument and lead to confusion.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotPassNullForCancellationToken](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotpassnullforcancellationtoken)
+  * **Find null passed for CancellationToken**
+  * Detect `null` or `default` passed for `CancellationToken` parameters. Use `CancellationToken.None` instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotRaiseApplicationException](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotraiseapplicationexception)
+  * **Do not raise ApplicationException**
+  * Avoid throwing `ApplicationException`. Use a more specific exception type.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotRaiseNotImplementedException](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotraisenotimplementedexception)
+  * **Do not throw NotImplementedException**
+  * Throwing `NotImplementedException` indicates incomplete implementation. Implement the functionality or throw a more specific exception.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotRaiseReservedExceptionType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotraisereservedexceptiontype)
+  * **Do not raise reserved exception types**
+  * Avoid throwing `Exception`, `SystemException`, or `ApplicationException`. Use more specific exception types.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotThrowFromFinalizer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotthrowfromfinalizer)
+  * **Find throw statements in finalizer**
+  * Detect `throw` statements inside finalizer/destructor methods. Throwing from a finalizer can terminate the process.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotThrowFromFinallyBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotthrowfromfinallyblock)
+  * **Do not throw from finally block**
+  * Throwing from a `finally` block can mask the original exception and make debugging difficult.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotUseCertificateValidationCallback](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotusecertificatevalidationcallback)
+  * **Do not write custom certificate validation**
+  * Custom certificate validation callbacks can introduce security vulnerabilities by accidentally accepting invalid certificates.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotUseEqualityComparerDefaultOfString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotuseequalitycomparerdefaultofstring)
+  * **Find EqualityComparer&lt;string&gt;.Default**
+  * Detect `EqualityComparer&lt;string&gt;.Default` which may use different comparison semantics across platforms. Use an explicit `StringComparer`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotUseGetHashCodeForString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotusegethashcodeforstring)
+  * **Find GetType() on Type instance**
+  * Detect `.GetType()` called on an object that is already a `System.Type`. Use `typeof()` directly.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotUseObjectToString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotuseobjecttostring)
+  * **Find ToString on object-typed parameter**
+  * Detect `.ToString()` calls on `object`-typed parameters. The default `object.ToString()` returns the type name, which is rarely the intended behavior.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotUseSleep](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotusesleep)
+  * **Find Thread.Sleep usage**
+  * Detect `Thread.Sleep()` which blocks the thread. Use `await Task.Delay()` in async contexts instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindDoNotUseStringGetHashCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finddonotusestringgethashcode)
+  * **Find string.GetHashCode() usage**
+  * Detect `string.GetHashCode()` which is not stable across runs. Use `StringComparer.GetHashCode()` or `string.GetHashCode(StringComparison)` instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindEmbedCaughtExceptionAsInner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findembedcaughtexceptionasinner)
+  * **Embed caught exception as inner exception**
+  * When rethrowing a different exception in a catch block, pass the original exception as the inner exception to preserve the stack trace.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindEnumDefaultValueZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findenumdefaultvaluezero)
+  * **Find explicit zero initialization in enum**
+  * Detect enum members explicitly initialized to `0`. The default value of an enum is already `0`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindEqualsWithoutNotNullWhen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findequalswithoutnotnullwhen)
+  * **Find Equals without [NotNullWhen(true)]**
+  * Detect `Equals(object?)` overrides that are missing `[NotNullWhen(true)]` on the parameter, which helps nullable analysis.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindEventArgsSenderNotNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findeventargssendernotnull)
+  * **Find event raised with null EventArgs**
+  * Detect event invocations that pass `null` for EventArgs. Use `EventArgs.Empty` instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindFlowCancellationTokenInAwaitForEach](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findflowcancellationtokeninawaitforeach)
+  * **Find await foreach without CancellationToken**
+  * Detect `await foreach` loops that don't pass a `CancellationToken` via `WithCancellation()` when one is available in the enclosing method.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindIComparableWithoutComparisonOperators](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findicomparablewithoutcomparisonoperators)
+  * **Find IComparable without comparison operators**
+  * Detect classes that implement `IComparable&lt;T&gt;` but do not override comparison operators (`&lt;`, `&gt;`, `&lt;=`, `&gt;=`).
+* [OpenRewrite.Recipes.CodeQuality.Style.FindIComparableWithoutIEquatable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findicomparablewithoutiequatable)
+  * **Find IComparable&lt;T&gt; without IEquatable&lt;T&gt;**
+  * Detect classes that implement `IComparable&lt;T&gt;` but not `IEquatable&lt;T&gt;`. Both interfaces should be implemented together for consistent comparison semantics.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindIEquatableWithoutEquals](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findiequatablewithoutequals)
+  * **Find IEquatable&lt;T&gt; without Equals(object) override**
+  * Detect classes that implement `IEquatable&lt;T&gt;` but do not override `Equals(object)`, which can lead to inconsistent equality behavior.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindILoggerTypeMismatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findiloggertypemismatch)
+  * **Find ILogger&lt;T&gt; type parameter mismatch**
+  * Detect `ILogger&lt;T&gt;` fields or parameters where `T` doesn't match the containing type name.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindIfElseBranchesIdentical](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findifelsebranchesidentical)
+  * **Find if/else with identical branches**
+  * Detect `if/else` statements where both branches contain identical code. This is likely a copy-paste bug.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindImplementNonGenericInterface](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findimplementnongenericinterface)
+  * **Find missing non-generic interface implementation**
+  * Detect types implementing `IComparable&lt;T&gt;` without `IComparable`, or `IEquatable&lt;T&gt;` without proper Equals override.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindImplicitCultureSensitiveToStringDirect](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findimplicitculturesensitivetostringdirect)
+  * **Find implicit culture-sensitive ToString in concatenation**
+  * Detect string concatenation with numeric types that implicitly call culture-sensitive `ToString()`. Use an explicit format or `CultureInfo.InvariantCulture`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindImplicitDateTimeOffsetConversion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findimplicitdatetimeoffsetconversion)
+  * **Find implicit DateTime to DateTimeOffset conversion**
+  * Detect implicit conversion from `DateTime` to `DateTimeOffset` which uses the local time zone and can produce unexpected results.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindInterpolatedStringWithoutParameters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findinterpolatedstringwithoutparameters)
+  * **Find interpolated string without parameters**
+  * Detect interpolated strings (`$&quot;...&quot;`) that contain no interpolation expressions. Use a regular string literal instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindInvalidAttributeArgumentType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findinvalidattributeargumenttype)
+  * **Find potentially invalid attribute argument type**
+  * Detect attribute arguments that use types not valid in attribute constructors (only primitives, string, Type, enums, and arrays of these are allowed).
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMethodReturningIAsyncEnumerable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmethodreturningiasyncenumerable)
+  * **Find IAsyncEnumerable method without Async suffix**
+  * Detect methods returning `IAsyncEnumerable&lt;T&gt;` that don't end with `Async`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMethodTooLong](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmethodtoolong)
+  * **Find method that is too long**
+  * Detect methods with more than 60 statements. Long methods are harder to understand and maintain.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMissingCancellationTokenOverload](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmissingcancellationtokenoverload)
+  * **Find async call missing CancellationToken**
+  * Detect async method calls that don't pass a `CancellationToken` when the enclosing method has one available as a parameter.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMissingNamedParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmissingnamedparameter)
+  * **Find boolean literal arguments without parameter name**
+  * Detect method calls passing `true` or `false` literals as arguments. Using named parameters improves readability.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMissingParamsInOverride](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmissingparamsinoverride)
+  * **Find override method missing params keyword**
+  * Detect override methods that may be missing the `params` keyword on array parameters that the base method declares as `params`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMissingStringComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmissingstringcomparison)
+  * **Find string method missing StringComparison**
+  * Detect string methods like `Equals`, `Contains`, `StartsWith`, `EndsWith` called without an explicit `StringComparison` parameter.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMissingStringEqualityComparer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmissingstringequalitycomparer)
+  * **Find missing string equality comparer**
+  * Detect `Dictionary&lt;string, T&gt;` and `HashSet&lt;string&gt;` created without an explicit `StringComparer`. Without a comparer, the default ordinal comparison is used.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindMultiLineXmlComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findmultilinexmlcomment)
+  * **Find multi-line XML doc comments**
+  * Detect `/** */` style XML documentation comments that could use the `///` single-line syntax for consistency.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindNonConstantStaticFieldsVisible](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findnonconstantstaticfieldsvisible)
+  * **Non-constant static fields should not be visible**
+  * Public static fields that are not `const` or `readonly` can be modified by any code, breaking encapsulation. Make them `readonly` or use a property.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindNonDeterministicEndOfLine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findnondeterministicendofline)
+  * **Find non-deterministic end-of-line in strings**
+  * Detect string literals containing `\n` that may behave differently across platforms. Consider using `Environment.NewLine` instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindNonFlagsEnumWithFlagsAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findnonflagsenumwithflagsattribute)
+  * **Find non-flags enum with [Flags]**
+  * Detect enums marked with `[Flags]` whose values are not powers of two, indicating they are not truly flags enums.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindNotNullIfNotNullAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findnotnullifnotnullattribute)
+  * **Find missing NotNullIfNotNull attribute**
+  * Detect methods with nullable return types depending on nullable parameters that lack `[NotNullIfNotNull]` attribute.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindObserveAsyncResult](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findobserveasyncresult)
+  * **Find unobserved async call result**
+  * Detect calls to async methods where the returned Task is not awaited, assigned, or otherwise observed. Unobserved tasks may silently swallow exceptions.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindObsoleteWithoutMessage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findobsoletewithoutmessage)
+  * **Obsolete attribute should include explanation**
+  * The `[Obsolete]` attribute should include a message explaining why the member is obsolete and what to use instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindOverrideChangesParameterDefaults](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findoverridechangesparameterdefaults)
+  * **Find overrides that change parameter defaults**
+  * Detect `override` methods with default parameter values. Overrides should not change defaults from the base method as this causes confusing behavior depending on the reference type.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindPreferCollectionAbstraction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findprefercollectionabstraction)
+  * **Find concrete collection in public API**
+  * Detect public method parameters or return types that use concrete collection types like `List&lt;T&gt;` instead of `IList&lt;T&gt;` or `IEnumerable&lt;T&gt;`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindPrimaryConstructorReadonly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findprimaryconstructorreadonly)
+  * **Find reassigned primary constructor parameter**
+  * Detect primary constructor parameters that are reassigned in the class body. Primary constructor parameters should be treated as readonly.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindRawStringImplicitEndOfLine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findrawstringimplicitendofline)
+  * **Find raw string with implicit end of line**
+  * Detect raw string literals (`&quot;&quot;&quot;...&quot;&quot;&quot;`) that contain implicit end-of-line characters which may behave differently across platforms.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindReadOnlyStructMembers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findreadonlystructmembers)
+  * **Find struct member that could be readonly**
+  * Detect struct methods and properties that don't modify state and could be marked `readonly` to prevent defensive copies.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindRedundantArgumentValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findredundantargumentvalue)
+  * **Find redundant default argument values**
+  * Detect named arguments that explicitly pass a default value. Removing them simplifies the call.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindSenderNullForStaticEvents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findsendernullforstaticevents)
+  * **Find static event with non-null sender**
+  * Detect static event invocations that pass `this` as the sender. Static events should use `null` as the sender.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindSingleLineXmlComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findsinglelinexmlcomment)
+  * **Find multi-line XML doc comment style**
+  * Detect `/** ... */` style XML doc comments. Use `///` single-line style instead for consistency.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindSpanEqualityOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findspanequalityoperator)
+  * **Find equality operator on Span&lt;T&gt;**
+  * Detect `==` or `!=` operators on `Span&lt;T&gt;` or `ReadOnlySpan&lt;T&gt;`. Use `SequenceEqual` instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindStreamReadIgnored](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findstreamreadignored)
+  * **Find Stream.Read() return value ignored**
+  * Detect `Stream.Read()` calls where the return value (bytes read) is not used. This can lead to incomplete reads.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindStringFormatConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findstringformatconstant)
+  * **Find non-constant string.Format format string**
+  * Detect non-constant format strings passed to `string.Format`. Use a constant to prevent format string injection.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindTaskInUsing](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findtaskinusing)
+  * **Find unawaited task in using statement**
+  * Detect `using` statements where a Task is not awaited, which can cause premature disposal before the task completes.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindThreadStaticOnInstanceField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findthreadstaticoninstancefield)
+  * **Do not use ThreadStatic on instance fields**
+  * `[ThreadStatic]` only works on static fields. Using it on instance fields has no effect.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindThrowIfNullWithNonNullable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findthrowifnullwithnonnullable)
+  * **Find ThrowIfNull with value type argument**
+  * Detect `ArgumentNullException.ThrowIfNull` called with value type parameters that can never be null.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindTypeNameMatchesNamespace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findtypenamematchesnamespace)
+  * **Find type name matching namespace**
+  * Detect type names that match their containing namespace, which can cause ambiguous references.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindTypeShouldNotExtendApplicationException](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findtypeshouldnotextendapplicationexception)
+  * **Types should not extend ApplicationException**
+  * Do not create custom exceptions that inherit from `ApplicationException`. Inherit from `Exception` or a more specific exception type.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseCallerArgumentExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusecallerargumentexpression)
+  * **Find redundant nameof with CallerArgumentExpression**
+  * Detect `nameof(param)` passed to parameters marked with `[CallerArgumentExpression]`. The attribute fills the value automatically.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseDateTimeOffsetInsteadOfDateTime](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusedatetimeoffsetinsteadofdatetime)
+  * **Find DateTime.Now/UtcNow usage**
+  * Detect `DateTime.Now` and `DateTime.UtcNow` usage. Use `DateTimeOffset` instead for unambiguous time representation across time zones.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseDebuggerDisplayAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusedebuggerdisplayattribute)
+  * **Find ToString override without DebuggerDisplay**
+  * Detect classes that override `ToString()` but lack `[DebuggerDisplay]` attribute for debugger integration.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseDefaultParameterValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusedefaultparametervalue)
+  * **Find [DefaultValue] on parameter**
+  * Detect `[DefaultValue]` on method parameters. Use `[DefaultParameterValue]` instead, as `[DefaultValue]` is for component model metadata only.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseElementAccessInsteadOfLinq](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseelementaccessinsteadoflinq)
+  * **Find ElementAt() that could use indexer**
+  * Detect LINQ `.ElementAt(index)` calls that could be replaced with direct indexer access `[index]`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseEqualsMethodInsteadOfOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseequalsmethodinsteadofoperator)
+  * **Find == comparison that should use Equals()**
+  * Detect `==` comparisons on reference types that override `Equals`. Using `==` may compare references instead of values.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseExplicitEnumValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseexplicitenumvalue)
+  * **Find integer 0 used instead of named enum value**
+  * Detect usage of integer literal `0` where a named enum member should be used for clarity.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseFormatProviderInToString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseformatproviderintostring)
+  * **Find Parse/ToString without IFormatProvider**
+  * Detect calls to culture-sensitive methods like `int.Parse`, `double.Parse` without an explicit `IFormatProvider` or `CultureInfo`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseIFormatProvider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseiformatprovider)
+  * **Find Parse/TryParse without IFormatProvider**
+  * Detect `int.Parse(str)` and similar calls without an `IFormatProvider` parameter. Use `CultureInfo.InvariantCulture` for culture-independent parsing.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseLangwordInXmlComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduselangwordinxmlcomment)
+  * **Find missing langword in XML comment**
+  * Detect XML doc comments that reference `null`, `true`, `false` as plain text instead of using `&lt;see langword=&quot;...&quot;/&gt;`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseLazyInitializerEnsureInitialize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduselazyinitializerensureinitialize)
+  * **Find Interlocked.CompareExchange lazy init pattern**
+  * Detect `Interlocked.CompareExchange(ref field, new T(), null)` pattern. Use `LazyInitializer.EnsureInitialized` for cleaner lazy initialization.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseListPatternMatching](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduselistpatternmatching)
+  * **Find collection emptiness check**
+  * Detect `.Length == 0` or `.Count == 0` checks that could use list patterns like `is []` in C# 11+.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseNamedParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusenamedparameter)
+  * **Find boolean literal argument without name**
+  * Detect boolean literal arguments (`true`/`false`) passed without named parameters. Named arguments improve readability.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseOperatingSystemMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseoperatingsystemmethods)
+  * **Use OperatingSystem methods instead of RuntimeInformation**
+  * Use `OperatingSystem.IsWindows()` and similar methods instead of `RuntimeInformation.IsOSPlatform()`. The OperatingSystem methods are more concise and can be optimized by the JIT.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseProcessStartWithStartInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseprocessstartwithstartinfo)
+  * **Find Process.Start with string argument**
+  * Detect `Process.Start(&quot;filename&quot;)` which should use the `ProcessStartInfo` overload for explicit control over `UseShellExecute` and other settings.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseRecordClassExplicitly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduserecordclassexplicitly)
+  * **Find implicit record class declaration**
+  * Detect `record` declarations that should use `record class` explicitly to clarify that they are reference types.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseRegexOptions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseregexoptions)
+  * **Find Regex without ExplicitCapture option**
+  * Detect `new Regex()` or `Regex.IsMatch()` without `RegexOptions.ExplicitCapture`. Using this option avoids unnecessary unnamed captures.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseShellExecuteFalseWhenRedirecting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseshellexecutefalsewhenredirecting)
+  * **Find redirect without UseShellExecute=false**
+  * Detect `ProcessStartInfo` that sets `RedirectStandard*` without explicitly setting `UseShellExecute = false`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseShellExecuteNotSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/finduseshellexecutenotset)
+  * **Find ProcessStartInfo without UseShellExecute**
+  * Detect `new ProcessStartInfo()` without explicitly setting `UseShellExecute`. The default changed between .NET Framework (true) and .NET Core (false).
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseStringComparer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusestringcomparer)
+  * **Find Dictionary/HashSet without StringComparer**
+  * Detect `Dictionary&lt;string, T&gt;` or `HashSet&lt;string&gt;` created without an explicit `StringComparer`. Use `StringComparer.Ordinal` or `StringComparer.OrdinalIgnoreCase`.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseStringCreateInsteadOfConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusestringcreateinsteadofconcat)
+  * **Find FormattableString usage**
+  * Detect `FormattableString` usage. Consider using `String.Create` on .NET 6+ for better performance.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseStringEqualsInsteadOfIsPattern](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusestringequalsinsteadofispattern)
+  * **Find 'is' pattern with string literal**
+  * Detect `x is &quot;literal&quot;` patterns that should use `string.Equals` with explicit `StringComparison` for culture-aware or case-insensitive comparisons.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseSystemThreadingLock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusesystemthreadinglock)
+  * **Use System.Threading.Lock instead of object for locking**
+  * In .NET 9+, use `System.Threading.Lock` instead of `object` for lock objects. The dedicated Lock type provides better performance.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseTaskUnwrap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusetaskunwrap)
+  * **Find double await pattern**
+  * Detect `await await` pattern which can be replaced with `.Unwrap()` for clarity.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindUseTimeProviderInsteadOfCustom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findusetimeproviderinsteadofcustom)
+  * **Find custom time abstraction**
+  * Detect interfaces or abstract classes that appear to be custom time providers. Use `System.TimeProvider` (available in .NET 8+) instead.
+* [OpenRewrite.Recipes.CodeQuality.Style.FindValidateArgumentsBeforeYield](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/findvalidateargumentsbeforeyield)
+  * **Find argument validation in iterator method**
+  * Detect iterator methods that validate arguments after `yield return`. Argument validation in iterators is deferred until enumeration begins.
+* [OpenRewrite.Recipes.CodeQuality.Style.ImplementExceptionConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/implementexceptionconstructors)
+  * **Implement exception constructors**
+  * Ensure custom exception classes implement standard constructors.
+* [OpenRewrite.Recipes.CodeQuality.Style.ImplementNonGenericCounterpart](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/implementnongenericcounterpart)
+  * **Implement non-generic counterpart**
+  * Implement non-generic interface when implementing generic counterpart.
+* [OpenRewrite.Recipes.CodeQuality.Style.InvalidArgumentNullCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/invalidargumentnullcheck)
+  * **Fix invalid argument null check**
+  * Fix invalid argument null check patterns.
+* [OpenRewrite.Recipes.CodeQuality.Style.MakeClassSealed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/makeclasssealed)
+  * **Make class sealed**
+  * A class that has only private constructors should be marked as sealed.
+* [OpenRewrite.Recipes.CodeQuality.Style.MakeClassStatic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/makeclassstatic)
+  * **Make class static**
+  * Make classes that contain only static members static.
+* [OpenRewrite.Recipes.CodeQuality.Style.MakeFieldReadOnly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/makefieldreadonly)
+  * **Make field read-only**
+  * Make field read-only when it is only assigned in the constructor or initializer.
+* [OpenRewrite.Recipes.CodeQuality.Style.MakeMethodExtensionMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/makemethodextensionmethod)
+  * **Make method an extension method**
+  * Convert a static method to an extension method where appropriate.
+* [OpenRewrite.Recipes.CodeQuality.Style.MarkLocalVariableAsConst](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/marklocalvariableasconst)
+  * **Mark local variable as const**
+  * Mark local variable as const when its value never changes.
+* [OpenRewrite.Recipes.CodeQuality.Style.MarkTypeWithDebuggerDisplay](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/marktypewithdebuggerdisplay)
+  * **Mark type with DebuggerDisplay attribute**
+  * Add DebuggerDisplay attribute to publicly visible types to improve debugging experience.
+* [OpenRewrite.Recipes.CodeQuality.Style.MergePreprocessorDirectives](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/mergepreprocessordirectives)
+  * **Merge preprocessor directives**
+  * Merge consecutive preprocessor directives that can be combined into a single directive.
+* [OpenRewrite.Recipes.CodeQuality.Style.NormalizeEnumFlagValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/normalizeenumflagvalue)
+  * **Normalize format of enum flag value**
+  * Normalize the format of Flags enum values.
+* [OpenRewrite.Recipes.CodeQuality.Style.OrderModifiers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/ordermodifiers)
+  * **Order modifiers**
+  * Reorder modifiers to the canonical C# order: access, new, abstract/virtual/override/sealed, static, readonly, extern, unsafe, volatile, async, partial, const.
+* [OpenRewrite.Recipes.CodeQuality.Style.OrderNamedArguments](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/ordernamedarguments)
+  * **Order named arguments by parameters**
+  * Reorder named arguments to match parameter order.
+* [OpenRewrite.Recipes.CodeQuality.Style.OrderTypeParameterConstraints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/ordertypeparameterconstraints)
+  * **Order type parameter constraints**
+  * Order type parameter constraints consistently.
+* [OpenRewrite.Recipes.CodeQuality.Style.OverridingMemberShouldNotChangeParams](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/overridingmembershouldnotchangeparams)
+  * **Overriding member should not change 'params' modifier**
+  * An overriding member should not add or remove the 'params' modifier compared to its base declaration.
+* [OpenRewrite.Recipes.CodeQuality.Style.ParameterNameDiffersFromBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/parameternamediffersfrombase)
+  * **Parameter name differs from base**
+  * Rename parameter to match base class or interface definition.
+* [OpenRewrite.Recipes.CodeQuality.Style.ParenthesizeNotPattern](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/parenthesizenotpattern)
+  * **Parenthesize not pattern for clarity**
+  * Add parentheses to `not A or B` → `(not A) or B` to clarify that `not` binds tighter than `or`.
+* [OpenRewrite.Recipes.CodeQuality.Style.PreferNullCheckOverTypeCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/prefernullcheckovertypecheck)
+  * **Prefer null check over type check**
+  * Replace `x is object` with `x is not null` for clarity.
+* [OpenRewrite.Recipes.CodeQuality.Style.SimplifyBooleanLogic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/simplifybooleanlogic)
+  * **Simplify boolean logic with constants**
+  * Simplify `x || true` to `true`, `x &amp;&amp; false` to `false`, `x || false` to `x`, and `x &amp;&amp; true` to `x`.
+* [OpenRewrite.Recipes.CodeQuality.Style.SortEnumMembers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/sortenummembers)
+  * **Sort enum members**
+  * Sort enum members by their resolved constant value.
+* [OpenRewrite.Recipes.CodeQuality.Style.SplitVariableDeclaration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/splitvariabledeclaration)
+  * **Split variable declaration**
+  * Split multi-variable declarations into separate declarations.
+* [OpenRewrite.Recipes.CodeQuality.Style.StaticMemberInGenericType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/staticmemberingenerictype)
+  * **Static member in generic type should use a type parameter**
+  * Find static members in generic types that do not use any of the type's type parameters.
+* [OpenRewrite.Recipes.CodeQuality.Style.StyleCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/stylecodequality)
+  * **Style code quality**
+  * Code style modernization recipes for C#.
+* [OpenRewrite.Recipes.CodeQuality.Style.UnusedParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/unusedparameter)
+  * **Remove unused parameter**
+  * Rename unused lambda parameters to discard (_).
+* [OpenRewrite.Recipes.CodeQuality.Style.UnusedTypeParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/unusedtypeparameter)
+  * **Remove unused type parameter**
+  * Flag type parameters that are not used.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseAsyncAwait](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useasyncawait)
+  * **Use async/await when necessary**
+  * Add async/await to methods that return Task but don't use await.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseAttributeUsageAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useattributeusageattribute)
+  * **Use AttributeUsageAttribute**
+  * Add AttributeUsage to custom attribute classes.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseAutoProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useautoproperty)
+  * **Use auto property**
+  * Use auto property instead of property with backing field.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseBlockBodyOrExpressionBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useblockbodyorexpressionbody)
+  * **Use block body or expression body**
+  * Convert between block body and expression body for members.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseCoalesceExpressionFromNullCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usecoalesceexpressionfromnullcheck)
+  * **Use coalesce expression**
+  * Convert null-check conditional to null-coalescing expression.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseCollectionExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usecollectionexpression)
+  * **Use collection expression**
+  * Replace array/list creation with collection expressions (C# 12).
+* [OpenRewrite.Recipes.CodeQuality.Style.UseConstantInsteadOfField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useconstantinsteadoffield)
+  * **Use constant instead of field**
+  * Convert `static readonly` fields with literal initializers to `const`.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseElementAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useelementaccess)
+  * **Use element access**
+  * Use indexer instead of First()/Last()/ElementAt() when the collection supports indexer access.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseEnumFieldExplicitly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useenumfieldexplicitly)
+  * **Use enum field explicitly**
+  * Use named enum field instead of cast integer value.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseEventArgsEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useeventargsempty)
+  * **Use EventArgs.Empty**
+  * Replace `new EventArgs()` with `EventArgs.Empty`. The static `EventArgs.Empty` field avoids unnecessary allocations.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseEventArgsEmptyForNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useeventargsemptyfornull)
+  * **Use EventArgs.Empty instead of null**
+  * Replace `null` with `EventArgs.Empty` when raising events. Passing `null` for EventArgs can cause NullReferenceException in event handlers.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseEventHandlerT](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useeventhandlert)
+  * **Use EventHandler&lt;T&gt;**
+  * Use generic EventHandler&lt;T&gt; instead of custom delegate types.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseExplicitTypeInsteadOfVar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useexplicittypeinsteadofvar)
+  * **Use explicit type instead of var**
+  * Use explicit type instead of `var` when the type is not evident.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseExplicitlyTypedArray](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useexplicitlytypedarray)
+  * **Use explicitly typed array**
+  * Use explicitly or implicitly typed array.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseFileScopedNamespace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usefilescopednamespace)
+  * **Use file-scoped namespace**
+  * Detect block-scoped namespace declarations that could use file-scoped syntax (C# 10).
+* [OpenRewrite.Recipes.CodeQuality.Style.UseMethodChaining](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usemethodchaining)
+  * **Use method chaining**
+  * Chain consecutive method calls on the same receiver into a fluent chain.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseMethodGroupConversion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usemethodgroupconversion)
+  * **Use method group conversion**
+  * Replace `x =&gt; Foo(x)` with `Foo` where method group conversion applies.
+* [OpenRewrite.Recipes.CodeQuality.Style.UsePredefinedType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usepredefinedtype)
+  * **Use predefined type**
+  * Use predefined type keyword (e.g., int instead of Int32).
+* [OpenRewrite.Recipes.CodeQuality.Style.UsePrimaryConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useprimaryconstructor)
+  * **Use primary constructor**
+  * Convert classes with a single constructor into primary constructor syntax (C# 12).
+* [OpenRewrite.Recipes.CodeQuality.Style.UseReadOnlyAutoProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usereadonlyautoproperty)
+  * **Use read-only auto property**
+  * Use read-only auto property when the setter is never used.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseStringContains](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usestringcontains)
+  * **Use string.Contains instead of IndexOf comparison**
+  * Replace `s.IndexOf(x) &gt;= 0` with `s.Contains(x)` and `s.IndexOf(x) == -1` with `!s.Contains(x)`.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseStringIsNullOrEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usestringisnullorempty)
+  * **Use string.IsNullOrEmpty method**
+  * Replace `s == null || s == &quot;&quot;` and `s == null || s.Length == 0` with `string.IsNullOrEmpty(s)`.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseStringLengthComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usestringlengthcomparison)
+  * **Use string.Length instead of comparison with empty string**
+  * Replace `s == &quot;&quot;` with `s.Length == 0` and `s != &quot;&quot;` with `s.Length != 0`.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseThisForEventSender](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usethisforeventsender)
+  * **Use 'this' for event sender**
+  * Replace `null` with `this` as the sender argument when raising instance events. The sender should be the object raising the event.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseUsingDeclaration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/useusingdeclaration)
+  * **Use using declaration**
+  * Convert using statement to using declaration.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseVarInForEach](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usevarinforeach)
+  * **Use var instead of explicit type in foreach**
+  * Replace explicit type in foreach with var when type is evident.
+* [OpenRewrite.Recipes.CodeQuality.Style.UseVarOrExplicitType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/usevarorexplicittype)
+  * **Use 'var' or explicit type**
+  * Enforce consistent use of 'var' or explicit type in local variable declarations.
+* [OpenRewrite.Recipes.CodeQuality.Style.ValidateArgumentsCorrectly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/validateargumentscorrectly)
+  * **Validate arguments correctly**
+  * Ensure argument validation in iterator methods runs immediately by flagging iterator methods that contain argument validation.
+* [OpenRewrite.Recipes.CodeQuality.Style.ValueTypeIsNeverEqualToNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/codequality/style/valuetypeisneverequaltonull)
+  * **Value type is never equal to null**
+  * Replace null with default in comparisons of value types.
+* [OpenRewrite.Xml.Recipes.ChangeXmlAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/xml/recipes/changexmlattribute)
+  * **Change XML attribute value**
+  * Changes the value of attributes matching AttrName to NewValue.
+* [OpenRewrite.Xml.Recipes.ChangeXmlCharData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/xml/recipes/changexmlchardata)
+  * **Change XML CharData text**
+  * Replaces occurrences of OldText with NewText in XML CharData nodes.
+
+### recipes-migrate-dotnet
+
+* [OpenRewrite.Recipes.AddNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/addnugetpackagereference)
+  * **Add NuGet package reference**
+  * Adds a `&lt;PackageReference&gt;` to .csproj files if not already present.
+* [OpenRewrite.Recipes.AspNet.UpgradeAspNetFrameworkToCore](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnet/upgradeaspnetframeworktocore)
+  * **Migrate ASP.NET Framework to ASP.NET Core**
+  * Migrate ASP.NET Framework (System.Web.Mvc, System.Web.Http) types to their ASP.NET Core equivalents. Based on the .NET Upgrade Assistant's UA0002 and UA0010 diagnostics. See https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x.
+* [OpenRewrite.Recipes.AspNetCore2.FindBuildWebHost](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/findbuildwebhost)
+  * **Find BuildWebHost method**
+  * Flags `BuildWebHost` method declarations that should be renamed to `CreateWebHostBuilder` and refactored for ASP.NET Core 2.1.
+* [OpenRewrite.Recipes.AspNetCore2.FindIAuthenticationManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/findiauthenticationmanager)
+  * **Find IAuthenticationManager usage**
+  * Flags references to `IAuthenticationManager` which was removed in ASP.NET Core 2.0. Use `HttpContext` extension methods from `Microsoft.AspNetCore.Authentication` instead.
+* [OpenRewrite.Recipes.AspNetCore2.FindLoggerFactoryAddProvider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/findloggerfactoryaddprovider)
+  * **Find ILoggerFactory.Add*() calls**
+  * Flags `ILoggerFactory.AddConsole()`, `AddDebug()`, and similar extension methods. In ASP.NET Core 2.2+, logging should be configured via `ConfigureLogging` in the host builder.
+* [OpenRewrite.Recipes.AspNetCore2.FindSetCompatibilityVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/findsetcompatibilityversion)
+  * **Find SetCompatibilityVersion() calls**
+  * Flags `SetCompatibilityVersion` calls. This method is a no-op in ASP.NET Core 3.0+ and should be removed during migration.
+* [OpenRewrite.Recipes.AspNetCore2.FindUseKestrelWithConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/findusekestrelwithconfig)
+  * **Find UseKestrel() with configuration**
+  * Flags `UseKestrel` calls with configuration lambdas that should be replaced with `ConfigureKestrel` to avoid conflicts with the IIS in-process hosting model.
+* [OpenRewrite.Recipes.AspNetCore2.UpgradeToAspNetCore20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/upgradetoaspnetcore20)
+  * **Migrate to ASP.NET Core 2.0**
+  * Migrate ASP.NET Core 1.x projects to ASP.NET Core 2.0, applying authentication and Identity changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x.
+* [OpenRewrite.Recipes.AspNetCore2.UpgradeToAspNetCore21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/upgradetoaspnetcore21)
+  * **Migrate to ASP.NET Core 2.1**
+  * Migrate ASP.NET Core 2.0 projects to ASP.NET Core 2.1, including host builder changes and obsolete API replacements. See https://learn.microsoft.com/en-us/aspnet/core/migration/20-to-21.
+* [OpenRewrite.Recipes.AspNetCore2.UpgradeToAspNetCore22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/upgradetoaspnetcore22)
+  * **Migrate to ASP.NET Core 2.2**
+  * Migrate ASP.NET Core 2.1 projects to ASP.NET Core 2.2, including Kestrel configuration and logging changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/21-to-22.
+* [OpenRewrite.Recipes.AspNetCore2.UseGetExternalAuthenticationSchemesAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/usegetexternalauthenticationschemesasync)
+  * **Use GetExternalAuthenticationSchemesAsync()**
+  * Replace `GetExternalAuthenticationSchemes()` with `GetExternalAuthenticationSchemesAsync()`. The synchronous method was removed in ASP.NET Core 2.0.
+* [OpenRewrite.Recipes.AspNetCore2.UseHttpContextAuthExtensions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/usehttpcontextauthextensions)
+  * **Use HttpContext authentication extensions**
+  * Replace `HttpContext.Authentication.Method(...)` calls with `HttpContext.Method(...)` extension methods. The `IAuthenticationManager` interface was removed in ASP.NET Core 2.0.
+* [OpenRewrite.Recipes.AspNetCore2.UseUseAuthentication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore2/useuseauthentication)
+  * **Replace UseIdentity() with UseAuthentication()**
+  * Replace `app.UseIdentity()` with `app.UseAuthentication()`. The `UseIdentity` method was removed in ASP.NET Core 2.0 in favor of `UseAuthentication`.
+* [OpenRewrite.Recipes.AspNetCore3.FindAddMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/findaddmvc)
+  * **Find AddMvc() calls**
+  * Flags `AddMvc()` calls that should be replaced with more specific service registrations (`AddControllers`, `AddControllersWithViews`, or `AddRazorPages`) in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.AspNetCore3.FindIApplicationLifetime](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/findiapplicationlifetime)
+  * **Find IApplicationLifetime usage**
+  * Flags usages of `IApplicationLifetime` which should be replaced with `IHostApplicationLifetime` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.AspNetCore3.FindIHostingEnvironment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/findihostingenvironment)
+  * **Find IHostingEnvironment usage**
+  * Flags usages of `IHostingEnvironment` which should be replaced with `IWebHostEnvironment` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.AspNetCore3.FindNewLoggerFactory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/findnewloggerfactory)
+  * **Find new LoggerFactory() calls**
+  * Flags `new LoggerFactory()` calls that should be replaced with `LoggerFactory.Create(builder =&gt; ...)` in .NET Core 3.0+.
+* [OpenRewrite.Recipes.AspNetCore3.FindNewtonsoftJsonUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/findnewtonsoftjsonusage)
+  * **Find Newtonsoft.Json usage in ASP.NET Core**
+  * Flags `JsonConvert` and other `Newtonsoft.Json` usage. ASP.NET Core 3.0 uses `System.Text.Json` by default.
+* [OpenRewrite.Recipes.AspNetCore3.FindUseMvcOrUseSignalR](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/findusemvcorusesignalr)
+  * **Find UseMvc()/UseSignalR() calls**
+  * Flags `UseMvc()` and `UseSignalR()` calls that should be replaced with endpoint routing (`UseRouting()` + `UseEndpoints()`) in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.AspNetCore3.FindWebHostBuilder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/findwebhostbuilder)
+  * **Find WebHostBuilder usage**
+  * Flags `WebHostBuilder` and `WebHost.CreateDefaultBuilder` usage that should migrate to the Generic Host pattern in ASP.NET Core 3.0+.
+* [OpenRewrite.Recipes.AspNetCore3.UpgradeToAspNetCore30](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/aspnetcore3/upgradetoaspnetcore30)
+  * **Migrate to ASP.NET Core 3.0**
+  * Migrate ASP.NET Core 2.2 projects to ASP.NET Core 3.0, including endpoint routing, Generic Host, and System.Text.Json changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/22-to-30.
+* [OpenRewrite.Recipes.ChangeDotNetTargetFramework](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/changedotnettargetframework)
+  * **Change .NET target framework**
+  * Changes the `&lt;TargetFramework&gt;` or `&lt;TargetFrameworks&gt;` value in .csproj files. For multi-TFM projects, replaces the matching framework within the semicolon-delimited list.
+* [OpenRewrite.Recipes.ChangeMethodName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/changemethodname)
+  * **Change method name**
+  * Rename a method.
+* [OpenRewrite.Recipes.ChangeType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/changetype)
+  * **Change type**
+  * Change a type reference to another type.
+* [OpenRewrite.Recipes.DeleteMethodArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/deletemethodargument)
+  * **Delete method argument**
+  * Delete an argument from method invocations.
+* [OpenRewrite.Recipes.Net10.FindActionContextAccessorObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findactioncontextaccessorobsolete)
+  * **Find obsolete `IActionContextAccessor`/`ActionContextAccessor` (ASPDEPR006)**
+  * Finds usages of `IActionContextAccessor` and `ActionContextAccessor` which are obsolete in .NET 10. Use `IHttpContextAccessor` and `HttpContext.GetEndpoint()` instead.
+* [OpenRewrite.Recipes.Net10.FindActivitySampling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findactivitysampling)
+  * **Find `ActivitySamplingResult.PropagationData` behavior change**
+  * Finds usages of `ActivitySamplingResult.PropagationData` which has changed behavior in .NET 10. Activities with a recorded parent and PropagationData sampling no longer set `Activity.Recorded = true`.
+* [OpenRewrite.Recipes.Net10.FindBackgroundServiceExecuteAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findbackgroundserviceexecuteasync)
+  * **Find `BackgroundService.ExecuteAsync` behavior change**
+  * Finds methods that override `ExecuteAsync` from `BackgroundService`. In .NET 10, the entire method runs on a background thread; synchronous code before the first `await` no longer blocks host startup.
+* [OpenRewrite.Recipes.Net10.FindBufferedStreamWriteByte](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findbufferedstreamwritebyte)
+  * **Find `BufferedStream.WriteByte` implicit flush behavior change**
+  * Finds calls to `BufferedStream.WriteByte()` which no longer performs an implicit flush when the internal buffer is full in .NET 10. Call `Flush()` explicitly if needed.
+* [OpenRewrite.Recipes.Net10.FindClipboardGetData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findclipboardgetdata)
+  * **Find obsolete `Clipboard.GetData` calls (WFDEV005)**
+  * Finds calls to `Clipboard.GetData(string)`. In .NET 10, this method is obsolete (WFDEV005). Use `Clipboard.TryGetData` methods instead.
+* [OpenRewrite.Recipes.Net10.FindDistributedContextPropagator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/finddistributedcontextpropagator)
+  * **Find `DistributedContextPropagator` default propagator change**
+  * Finds usages of `DistributedContextPropagator.Current` and `DistributedContextPropagator.CreateDefaultPropagator()` which now default to W3C format in .NET 10. The 'baggage' header is used instead of 'Correlation-Context'.
+* [OpenRewrite.Recipes.Net10.FindDllImportSearchPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/finddllimportsearchpath)
+  * **Find `DllImportSearchPath.AssemblyDirectory` behavior change**
+  * Finds usages of `DllImportSearchPath.AssemblyDirectory` which has changed behavior in .NET 10. Specifying only `AssemblyDirectory` no longer falls back to OS default search paths.
+* [OpenRewrite.Recipes.Net10.FindDriveInfoDriveFormat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/finddriveinfodriveformat)
+  * **Find `DriveInfo.DriveFormat` behavior change**
+  * Finds usages of `DriveInfo.DriveFormat` which returns Linux kernel filesystem type strings instead of mapped names in .NET 10. Verify that comparisons match the new format.
+* [OpenRewrite.Recipes.Net10.FindFormOnClosingObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findformonclosingobsolete)
+  * **Find obsolete `Form.OnClosing`/`OnClosed` usage (WFDEV004)**
+  * Finds usage of `Form.OnClosing`, `Form.OnClosed`, and the `Closing`/`Closed` events. In .NET 10, these are obsolete (WFDEV004). Use `OnFormClosing`/`OnFormClosed` and `FormClosing`/`FormClosed` instead.
+* [OpenRewrite.Recipes.Net10.FindGnuTarPaxTarEntry](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findgnutarpaxtarentry)
+  * **Find `GnuTarEntry`/`PaxTarEntry` default timestamp change**
+  * Finds `new GnuTarEntry(...)` and `new PaxTarEntry(...)` constructor calls. In .NET 10, these no longer set atime and ctime by default. Set `AccessTime`/`ChangeTime` explicitly if needed.
+* [OpenRewrite.Recipes.Net10.FindIpNetworkObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findipnetworkobsolete)
+  * **Find obsolete `IPNetwork`/`KnownNetworks` (ASPDEPR005)**
+  * Finds usages of `Microsoft.AspNetCore.HttpOverrides.IPNetwork` and `ForwardedHeadersOptions.KnownNetworks` which are obsolete in .NET 10. Use `System.Net.IPNetwork` and `KnownIPNetworks` instead.
+* [OpenRewrite.Recipes.Net10.FindKeyedServiceAnyKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findkeyedserviceanykey)
+  * **Find `KeyedService.AnyKey` behavior change**
+  * Finds usages of `KeyedService.AnyKey` which has changed behavior in .NET 10. `GetKeyedService(AnyKey)` now throws `InvalidOperationException` and `GetKeyedServices(AnyKey)` no longer returns AnyKey registrations.
+* [OpenRewrite.Recipes.Net10.FindMakeGenericSignatureType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findmakegenericsignaturetype)
+  * **Find `Type.MakeGenericSignatureType` validation change**
+  * Finds calls to `Type.MakeGenericSignatureType()` which now validates that the first argument is a generic type definition in .NET 10.
+* [OpenRewrite.Recipes.Net10.FindQueryableMaxByMinByObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findqueryablemaxbyminbyobsolete)
+  * **Find obsolete `Queryable.MaxBy`/`MinBy` with `IComparer&lt;TSource&gt;` (SYSLIB0061)**
+  * Finds `Queryable.MaxBy` and `Queryable.MinBy` overloads taking `IComparer&lt;TSource&gt;` which are obsolete in .NET 10. Use the overloads taking `IComparer&lt;TKey&gt;` instead.
+* [OpenRewrite.Recipes.Net10.FindRazorRuntimeCompilationObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findrazorruntimecompilationobsolete)
+  * **Find obsolete `AddRazorRuntimeCompilation` calls (ASPDEPR003)**
+  * Finds calls to `AddRazorRuntimeCompilation` which is obsolete in .NET 10. Use Hot Reload instead for development scenarios.
+* [OpenRewrite.Recipes.Net10.FindRfc2898DeriveBytesObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findrfc2898derivebytesobsolete)
+  * **Find obsolete `Rfc2898DeriveBytes` constructors (SYSLIB0060)**
+  * Finds `new Rfc2898DeriveBytes(...)` constructor calls which are obsolete in .NET 10. Use the static `Rfc2898DeriveBytes.Pbkdf2()` method instead.
+* [OpenRewrite.Recipes.Net10.FindSslAuthEnumTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findsslauthenumtypes)
+  * **Find obsolete SSL authentication enum types**
+  * Finds usage of `ExchangeAlgorithmType`, `CipherAlgorithmType`, and `HashAlgorithmType` from `System.Security.Authentication`. These enum types are obsolete in .NET 10 (SYSLIB0058). Use `SslStream.NegotiatedCipherSuite` instead.
+* [OpenRewrite.Recipes.Net10.FindSslStreamObsoleteProperties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findsslstreamobsoleteproperties)
+  * **Find obsolete `SslStream` cipher properties (SYSLIB0058)**
+  * Finds usages of `SslStream.KeyExchangeAlgorithm`, `KeyExchangeStrength`, `CipherAlgorithm`, `CipherStrength`, `HashAlgorithm`, and `HashStrength` which are obsolete in .NET 10. Use `SslStream.NegotiatedCipherSuite` instead.
+* [OpenRewrite.Recipes.Net10.FindSystemDrawingExceptionChange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findsystemdrawingexceptionchange)
+  * **Find `catch (OutOfMemoryException)` that may need `ExternalException`**
+  * In .NET 10, System.Drawing GDI+ errors now throw `ExternalException` instead of `OutOfMemoryException`. This recipe finds catch blocks that catch `OutOfMemoryException` which may need to also catch `ExternalException`.
+* [OpenRewrite.Recipes.Net10.FindSystemEventsThreadShutdownObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findsystemeventsthreadshutdownobsolete)
+  * **Find obsolete `SystemEvents.EventsThreadShutdown` (SYSLIB0059)**
+  * Finds usages of `SystemEvents.EventsThreadShutdown` which is obsolete in .NET 10. Use `AppDomain.ProcessExit` instead.
+* [OpenRewrite.Recipes.Net10.FindWebHostBuilderObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findwebhostbuilderobsolete)
+  * **Find obsolete `WebHostBuilder`/`IWebHost`/`WebHost` usage (ASPDEPR004/ASPDEPR008)**
+  * Finds usages of `WebHostBuilder`, `IWebHost`, and `WebHost` which are obsolete in .NET 10. Migrate to `HostBuilder` or `WebApplicationBuilder` instead.
+* [OpenRewrite.Recipes.Net10.FindWinFormsObsoleteApis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findwinformsobsoleteapis)
+  * **Find obsolete Windows Forms APIs (WFDEV004/005/006)**
+  * Finds usages of Windows Forms APIs that are obsolete in .NET 10, including `Form.OnClosing/OnClosed` (WFDEV004), `Clipboard.GetData` (WFDEV005), and legacy controls like `ContextMenu`, `DataGrid`, `MainMenu` (WFDEV006).
+* [OpenRewrite.Recipes.Net10.FindWithOpenApiDeprecated](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findwithopenapideprecated)
+  * **Find deprecated `WithOpenApi` calls (ASPDEPR002)**
+  * Finds calls to `.WithOpenApi()` which is deprecated in .NET 10. Remove the call or use `AddOpenApiOperationTransformer` instead.
+* [OpenRewrite.Recipes.Net10.FindX500DistinguishedNameValidation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findx500distinguishednamevalidation)
+  * **Find `X500DistinguishedName` string constructor stricter validation**
+  * Finds `new X500DistinguishedName(string, ...)` constructor calls which have stricter validation in .NET 10. Non-Windows environments may reject previously accepted values.
+* [OpenRewrite.Recipes.Net10.FindXsltSettingsEnableScriptObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/findxsltsettingsenablescriptobsolete)
+  * **Find obsolete `XsltSettings.EnableScript` (SYSLIB0062)**
+  * Finds usages of `XsltSettings.EnableScript` which is obsolete in .NET 10.
+* [OpenRewrite.Recipes.Net10.FormOnClosingRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/formonclosingrename)
+  * **Rename `Form.OnClosing/OnClosed` to `OnFormClosing/OnFormClosed` (WFDEV004)**
+  * Renames `Form.OnClosing` to `OnFormClosing` and `Form.OnClosed` to `OnFormClosed` for .NET 10 compatibility. Parameter type changes (`CancelEventArgs` → `FormClosingEventArgs`, `EventArgs` → `FormClosedEventArgs`) must be updated manually.
+* [OpenRewrite.Recipes.Net10.InsertAdjacentElementOrientParameterRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/insertadjacentelementorientparameterrename)
+  * **Rename `orient` parameter to `orientation` in `HtmlElement.InsertAdjacentElement`**
+  * The `orient` parameter of `HtmlElement.InsertAdjacentElement` was renamed to `orientation` in .NET 10. This recipe updates named arguments in method calls to use the new parameter name.
+* [OpenRewrite.Recipes.Net10.KnownNetworksRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/knownnetworksrename)
+  * **Rename `KnownNetworks` to `KnownIPNetworks` (ASPDEPR005)**
+  * Renames `ForwardedHeadersOptions.KnownNetworks` to `KnownIPNetworks` for .NET 10 compatibility.
+* [OpenRewrite.Recipes.Net10.MlDsaSlhDsaSecretKeyToPrivateKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/mldsaslhdsasecretkeytoprivatekey)
+  * **Rename MLDsa/SlhDsa `SecretKey` members to `PrivateKey`**
+  * Renames `SecretKey` to `PrivateKey` in MLDsa and SlhDsa post-quantum cryptography APIs to align with .NET 10 naming conventions.
+* [OpenRewrite.Recipes.Net10.RazorRuntimeCompilationObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/razorruntimecompilationobsolete)
+  * **Remove obsolete `AddRazorRuntimeCompilation` calls (ASPDEPR003)**
+  * Removes `AddRazorRuntimeCompilation()` calls which are obsolete in .NET 10. Use Hot Reload instead for development scenarios.
+* [OpenRewrite.Recipes.Net10.UpgradeToDotNet10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/upgradetodotnet10)
+  * **Migrate to .NET 10**
+  * Migrate C# projects to .NET 10, applying necessary API changes. Includes all .NET 9 (and earlier) migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/10.0.
+* [OpenRewrite.Recipes.Net10.WithOpenApiDeprecated](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net10/withopenapideprecated)
+  * **Remove deprecated `WithOpenApi` calls (ASPDEPR002)**
+  * Removes `.WithOpenApi()` calls which are deprecated in .NET 10. The call is removed from fluent method chains.
+* [OpenRewrite.Recipes.Net3_0.FindCompactOnMemoryPressure](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findcompactonmemorypressure)
+  * **Find `CompactOnMemoryPressure` usage (removed in ASP.NET Core 3.0)**
+  * Finds usages of `CompactOnMemoryPressure` which was removed from `MemoryCacheOptions` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_0.FindConnectionAdapter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findconnectionadapter)
+  * **Find `IConnectionAdapter` usage (removed in ASP.NET Core 3.0)**
+  * Finds usages of `IConnectionAdapter` which was removed from Kestrel in ASP.NET Core 3.0. Use Connection Middleware instead.
+* [OpenRewrite.Recipes.Net3_0.FindHttpContextAuthentication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findhttpcontextauthentication)
+  * **Find `HttpContext.Authentication` usage (removed in ASP.NET Core 3.0)**
+  * Finds usages of `HttpContext.Authentication` which was removed in ASP.NET Core 3.0. Use dependency injection to get `IAuthenticationService` instead.
+* [OpenRewrite.Recipes.Net3_0.FindNewtonsoftJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findnewtonsoftjson)
+  * **Find Newtonsoft.Json usage**
+  * Finds usages of Newtonsoft.Json types (`JObject`, `JArray`, `JToken`, `JsonConvert`) that should be migrated to `System.Text.Json` or explicitly preserved via `Microsoft.AspNetCore.Mvc.NewtonsoftJson` in ASP.NET Core 3.0+.
+* [OpenRewrite.Recipes.Net3_0.FindObsoleteLocalizationApis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findobsoletelocalizationapis)
+  * **Find obsolete localization APIs (ASP.NET Core 3.0)**
+  * Finds usages of `ResourceManagerWithCultureStringLocalizer` and `WithCulture()` which are obsolete in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_0.FindSpaServices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findspaservices)
+  * **Find SpaServices/NodeServices usage (obsolete in ASP.NET Core 3.0)**
+  * Finds usages of `SpaServices` and `NodeServices` which are obsolete in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_0.FindSynchronousIO](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findsynchronousio)
+  * **Find synchronous IO usage (disabled in ASP.NET Core 3.0)**
+  * Finds references to `AllowSynchronousIO` which indicates synchronous IO usage that is disabled by default in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_0.FindUseMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findusemvc)
+  * **Find `UseMvc`/`AddMvc` usage (replaced in ASP.NET Core 3.0)**
+  * Finds usages of `app.UseMvc()`, `app.UseMvcWithDefaultRoute()`, and `services.AddMvc()` which should be migrated to endpoint routing and more specific service registration in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_0.FindWebApiCompatShim](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findwebapicompatshim)
+  * **Find Web API compatibility shim usage (removed in ASP.NET Core 3.0)**
+  * Finds usages of `ApiController`, `HttpResponseMessage`, and other types from `Microsoft.AspNetCore.Mvc.WebApiCompatShim` which was removed in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_0.FindWebHostBuilder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/findwebhostbuilder)
+  * **Find `WebHostBuilder`/`WebHost.CreateDefaultBuilder` usage (replaced in ASP.NET Core 3.0)**
+  * Finds usages of `WebHost.CreateDefaultBuilder()` and `new WebHostBuilder()` which should be migrated to `Host.CreateDefaultBuilder()` with `ConfigureWebHostDefaults()` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_0.UpgradeToDotNet3_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/upgradetodotnet3_0)
+  * **Migrate to .NET Core 3.0**
+  * Migrate C# projects from .NET Core 2.x to .NET Core 3.0, applying necessary API changes for removed and replaced types. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/3.0.
+* [OpenRewrite.Recipes.Net3_0.UseApiControllerBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_0/useapicontrollerbase)
+  * **Migrate ApiController to ControllerBase**
+  * Replace `ApiController` base class (from the removed WebApiCompatShim) with `ControllerBase` and add the `[ApiController]` attribute. The shim was removed in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.Net3_1.FindSameSiteNone](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_1/findsamesitenone)
+  * **Find `SameSiteMode.None` usage (behavior changed in .NET Core 3.1)**
+  * Finds usages of `SameSiteMode.None` which changed behavior in .NET Core 3.1 due to Chrome 80 SameSite cookie changes. Apps using remote authentication may need browser sniffing.
+* [OpenRewrite.Recipes.Net3_1.UpgradeToDotNet3_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net3_1/upgradetodotnet3_1)
+  * **Migrate to .NET Core 3.1**
+  * Migrate C# projects from .NET Core 3.0 to .NET Core 3.1. Includes all .NET Core 3.0 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/3.1.
+* [OpenRewrite.Recipes.Net5.FindCodeAccessSecurity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net5/findcodeaccesssecurity)
+  * **Find Code Access Security usage (obsolete in .NET 5)**
+  * Finds usages of Code Access Security types (`SecurityPermission`, `PermissionSet`, etc.) which are obsolete in .NET 5+.
+* [OpenRewrite.Recipes.Net5.FindPrincipalPermissionAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net5/findprincipalpermissionattribute)
+  * **Find `PrincipalPermissionAttribute` usage (SYSLIB0003)**
+  * Finds usages of `PrincipalPermissionAttribute` which is obsolete in .NET 5+ (SYSLIB0003) and throws `NotSupportedException` at runtime.
+* [OpenRewrite.Recipes.Net5.FindUtf7Encoding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net5/findutf7encoding)
+  * **Find `Encoding.UTF7` usage (SYSLIB0001)**
+  * Finds usages of `Encoding.UTF7` and `UTF7Encoding` which are obsolete in .NET 5+ (SYSLIB0001). UTF-7 is insecure.
+* [OpenRewrite.Recipes.Net5.FindWinHttpHandler](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net5/findwinhttphandler)
+  * **Find `WinHttpHandler` usage (removed in .NET 5)**
+  * Finds usages of `WinHttpHandler` which was removed from the .NET 5 runtime. Install the `System.Net.Http.WinHttpHandler` NuGet package explicitly.
+* [OpenRewrite.Recipes.Net5.FindWinRTInterop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net5/findwinrtinterop)
+  * **Find WinRT interop usage (removed in .NET 5)**
+  * Finds usages of WinRT interop types (`WindowsRuntimeType`, `WindowsRuntimeMarshal`, etc.) which were removed in .NET 5.
+* [OpenRewrite.Recipes.Net5.UpgradeToDotNet5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net5/upgradetodotnet5)
+  * **Migrate to .NET 5**
+  * Migrate C# projects from .NET Core 3.1 to .NET 5.0. Includes all .NET Core 3.0 and 3.1 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/5.0.
+* [OpenRewrite.Recipes.Net6.FindAssemblyCodeBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/findassemblycodebase)
+  * **Find `Assembly.CodeBase`/`EscapedCodeBase` usage (SYSLIB0012)**
+  * Finds usages of `Assembly.CodeBase` and `Assembly.EscapedCodeBase` which are obsolete (SYSLIB0012). Use `Assembly.Location` instead.
+* [OpenRewrite.Recipes.Net6.FindIgnoreNullValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/findignorenullvalues)
+  * **Find `JsonSerializerOptions.IgnoreNullValues` usage (SYSLIB0020)**
+  * Finds usages of `JsonSerializerOptions.IgnoreNullValues` which is obsolete in .NET 6 (SYSLIB0020). Use `DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull` instead.
+* [OpenRewrite.Recipes.Net6.FindThreadAbort](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/findthreadabort)
+  * **Find `Thread.Abort` usage (SYSLIB0006)**
+  * Finds calls to `Thread.Abort()` which throws `PlatformNotSupportedException` in .NET 6+ (SYSLIB0006). Use `CancellationToken` for cooperative cancellation instead.
+* [OpenRewrite.Recipes.Net6.FindWebRequest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/findwebrequest)
+  * **Find `WebRequest`/`HttpWebRequest`/`WebClient` usage (SYSLIB0014)**
+  * Finds usages of `WebRequest`, `HttpWebRequest`, and `WebClient` which are obsolete in .NET 6 (SYSLIB0014). Use `HttpClient` instead.
+* [OpenRewrite.Recipes.Net6.FindX509PrivateKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/findx509privatekey)
+  * **Find `X509Certificate2.PrivateKey` usage (SYSLIB0028)**
+  * Finds usages of `X509Certificate2.PrivateKey` which is obsolete (SYSLIB0028). Use `GetRSAPrivateKey()`, `GetECDsaPrivateKey()`, or the appropriate algorithm-specific method instead.
+* [OpenRewrite.Recipes.Net6.UpgradeToDotNet6](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/upgradetodotnet6)
+  * **Migrate to .NET 6**
+  * Migrate C# projects to .NET 6, applying necessary API changes for obsoleted cryptographic types and other breaking changes. Includes all .NET Core 3.0, 3.1, and .NET 5 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/6.0.
+* [OpenRewrite.Recipes.Net6.UseEnvironmentCurrentManagedThreadId](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/useenvironmentcurrentmanagedthreadid)
+  * **Use Environment.CurrentManagedThreadId**
+  * Replace `Thread.CurrentThread.ManagedThreadId` with `Environment.CurrentManagedThreadId` (CA1840). Available since .NET 6.
+* [OpenRewrite.Recipes.Net6.UseEnvironmentProcessId](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/useenvironmentprocessid)
+  * **Use Environment.ProcessId**
+  * Replace `Process.GetCurrentProcess().Id` with `Environment.ProcessId` (CA1837). Available since .NET 6.
+* [OpenRewrite.Recipes.Net6.UseEnvironmentProcessPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/useenvironmentprocesspath)
+  * **Use Environment.ProcessPath**
+  * Replace `Process.GetCurrentProcess().MainModule.FileName` with `Environment.ProcessPath` (CA1839). Available since .NET 6.
+* [OpenRewrite.Recipes.Net6.UseLinqDistinctBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/uselinqdistinctby)
+  * **Use LINQ DistinctBy()**
+  * Replace `collection.GroupBy(selector).Select(g =&gt; g.First())` with `collection.DistinctBy(selector)`. Available since .NET 6.
+* [OpenRewrite.Recipes.Net6.UseLinqMaxMinBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/uselinqmaxminby)
+  * **Use LINQ MaxBy() and MinBy()**
+  * Replace `collection.OrderByDescending(selector).First()` with `collection.MaxBy(selector)` and `collection.OrderBy(selector).First()` with `collection.MinBy(selector)`. Also handles `.Last()` variants (OrderBy().Last() → MaxBy, OrderByDescending().Last() → MinBy). Note: MinBy/MaxBy return default for empty reference-type sequences instead of throwing. Available since .NET 6.
+* [OpenRewrite.Recipes.Net6.UseRandomShared](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/userandomshared)
+  * **Use Random.Shared**
+  * Replace `new Random().Method(...)` with `Random.Shared.Method(...)`. Available since .NET 6.
+* [OpenRewrite.Recipes.Net6.UseStringContainsChar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/usestringcontainschar)
+  * **Use string.Contains(char) overload**
+  * Finds calls to `string.Contains(&quot;x&quot;)` with a single-character string literal that could use the `string.Contains('x')` overload for better performance.
+* [OpenRewrite.Recipes.Net6.UseStringStartsEndsWithChar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/usestringstartsendswithchar)
+  * **Use string.StartsWith(char)/EndsWith(char) overload**
+  * Finds calls to `string.StartsWith(&quot;x&quot;)` and `string.EndsWith(&quot;x&quot;)` with a single-character string literal that could use the char overload for better performance.
+* [OpenRewrite.Recipes.Net6.UseThrowIfNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net6/usethrowifnull)
+  * **Use ArgumentNullException.ThrowIfNull()**
+  * Replace `if (x == null) throw new ArgumentNullException(nameof(x))` guard clauses with `ArgumentNullException.ThrowIfNull(x)` (CA1510). Handles `== null`, `is null`, reversed `null ==`, string literal param names, and braced then-blocks. Available since .NET 6.
+* [OpenRewrite.Recipes.Net7.FindObsoleteSslProtocols](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net7/findobsoletesslprotocols)
+  * **Find obsolete `SslProtocols.Tls`/`Tls11` usage (SYSLIB0039)**
+  * Finds usages of `SslProtocols.Tls` and `SslProtocols.Tls11` which are obsolete in .NET 7 (SYSLIB0039). Use `SslProtocols.Tls12`, `SslProtocols.Tls13`, or `SslProtocols.None` instead.
+* [OpenRewrite.Recipes.Net7.FindRfc2898InsecureCtors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net7/findrfc2898insecurectors)
+  * **Find insecure `Rfc2898DeriveBytes` constructors (SYSLIB0041)**
+  * Finds `Rfc2898DeriveBytes` constructor calls that use default SHA1 or low iteration counts, which are obsolete in .NET 7 (SYSLIB0041). Specify `HashAlgorithmName` and at least 600,000 iterations.
+* [OpenRewrite.Recipes.Net7.UpgradeToDotNet7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net7/upgradetodotnet7)
+  * **Migrate to .NET 7**
+  * Migrate C# projects to .NET 7, applying necessary API changes. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0.
+* [OpenRewrite.Recipes.Net7.UseLinqOrder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net7/uselinqorder)
+  * **Use LINQ Order() and OrderDescending()**
+  * Replace `collection.OrderBy(x =&gt; x)` with `collection.Order()` and `collection.OrderByDescending(x =&gt; x)` with `collection.OrderDescending()`. Available since .NET 7.
+* [OpenRewrite.Recipes.Net7.UseThrowIfNegative](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net7/usethrowifnegative)
+  * **Use ArgumentOutOfRangeException.ThrowIfNegative()**
+  * Replace `if (value &lt; 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfNegative(value)`. Also handles reversed `0 &gt; value`. Available since .NET 7.
+* [OpenRewrite.Recipes.Net7.UseThrowIfNegativeOrZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net7/usethrowifnegativeorzero)
+  * **Use ArgumentOutOfRangeException.ThrowIfNegativeOrZero()**
+  * Replace `if (value &lt;= 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value)`. Also handles reversed `0 &gt;= value`. Available since .NET 7.
+* [OpenRewrite.Recipes.Net7.UseThrowIfNullOrEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net7/usethrowifnullorempty)
+  * **Use ArgumentException.ThrowIfNullOrEmpty()**
+  * Replace `if (string.IsNullOrEmpty(s)) throw new ArgumentException(&quot;...&quot;, nameof(s))` guard clauses with `ArgumentException.ThrowIfNullOrEmpty(s)`. Available since .NET 7.
+* [OpenRewrite.Recipes.Net8.FindAddContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/findaddcontext)
+  * **Find `JsonSerializerOptions.AddContext` usage (SYSLIB0049)**
+  * Finds calls to `JsonSerializerOptions.AddContext&lt;T&gt;()` which is obsolete in .NET 8 (SYSLIB0049). Use `TypeInfoResolverChain` or `TypeInfoResolver` instead.
+* [OpenRewrite.Recipes.Net8.FindAesGcmOldConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/findaesgcmoldconstructor)
+  * **Find `AesGcm` constructor without tag size (SYSLIB0053)**
+  * Finds `new AesGcm(key)` constructor calls without an explicit tag size parameter. In .NET 8, the single-argument constructor is obsolete (SYSLIB0053). Use `new AesGcm(key, tagSizeInBytes)` instead.
+* [OpenRewrite.Recipes.Net8.FindFormatterBasedSerialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/findformatterbasedserialization)
+  * **Find formatter-based serialization types (SYSLIB0050/0051)**
+  * Finds usage of formatter-based serialization types (`FormatterConverter`, `IFormatter`, `ObjectIDGenerator`, `ObjectManager`, `SurrogateSelector`, `SerializationInfo`, `StreamingContext`). These are obsolete in .NET 8 (SYSLIB0050/0051).
+* [OpenRewrite.Recipes.Net8.FindFrozenCollection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/findfrozencollection)
+  * **Find ToImmutable*() that could use Frozen collections**
+  * Finds usages of `ToImmutableDictionary()` and `ToImmutableHashSet()`. In .NET 8+, `ToFrozenDictionary()` and `ToFrozenSet()` provide better read performance.
+* [OpenRewrite.Recipes.Net8.FindRegexCompileToAssembly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/findregexcompiletoassembly)
+  * **Find `Regex.CompileToAssembly` usage (SYSLIB0052)**
+  * Finds usage of `Regex.CompileToAssembly()` and `RegexCompilationInfo`. These are obsolete in .NET 8 (SYSLIB0052). Use the Regex source generator instead.
+* [OpenRewrite.Recipes.Net8.FindSerializationConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/findserializationconstructors)
+  * **Find legacy serialization constructors (SYSLIB0051)**
+  * Finds legacy serialization constructors `.ctor(SerializationInfo, StreamingContext)` which are obsolete in .NET 8 (SYSLIB0051). The `ISerializable` pattern is no longer recommended.
+* [OpenRewrite.Recipes.Net8.FindTimeAbstraction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/findtimeabstraction)
+  * **Find DateTime.Now/UtcNow usage (TimeProvider in .NET 8)**
+  * Finds usages of `DateTime.Now`, `DateTime.UtcNow`, `DateTimeOffset.Now`, and `DateTimeOffset.UtcNow`. In .NET 8+, `TimeProvider` is the recommended abstraction for time.
+* [OpenRewrite.Recipes.Net8.UpgradeToDotNet8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/upgradetodotnet8)
+  * **Migrate to .NET 8**
+  * Migrate C# projects to .NET 8, applying necessary API changes. Includes all .NET 7 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0.
+* [OpenRewrite.Recipes.Net8.UseThrowIfGreaterThan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/usethrowifgreaterthan)
+  * **Use ArgumentOutOfRangeException.ThrowIfGreaterThan()**
+  * Replace `if (value &gt; other) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfGreaterThan(value, other)`. Also handles reversed `other &lt; value` and `&gt;=`/`ThrowIfGreaterThanOrEqual`. Available since .NET 8.
+* [OpenRewrite.Recipes.Net8.UseThrowIfLessThan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/usethrowiflessthan)
+  * **Use ArgumentOutOfRangeException.ThrowIfLessThan()**
+  * Replace `if (value &lt; other) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfLessThan(value, other)`. Also handles reversed `other &gt; value` and `&lt;=`/`ThrowIfLessThanOrEqual`. Available since .NET 8.
+* [OpenRewrite.Recipes.Net8.UseThrowIfNullOrWhiteSpace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/usethrowifnullorwhitespace)
+  * **Use ArgumentException.ThrowIfNullOrWhiteSpace()**
+  * Replace `if (string.IsNullOrWhiteSpace(s)) throw new ArgumentException(&quot;...&quot;, nameof(s))` guard clauses with `ArgumentException.ThrowIfNullOrWhiteSpace(s)`. Available since .NET 8.
+* [OpenRewrite.Recipes.Net8.UseThrowIfZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/usethrowifzero)
+  * **Use ArgumentOutOfRangeException.ThrowIfZero()**
+  * Replace `if (value == 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfZero(value)`. Also handles reversed `0 == value`. Available since .NET 8.
+* [OpenRewrite.Recipes.Net8.UseTimeProvider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net8/usetimeprovider)
+  * **Use TimeProvider instead of DateTime/DateTimeOffset static properties**
+  * Replace `DateTime.UtcNow`, `DateTime.Now`, `DateTimeOffset.UtcNow`, and `DateTimeOffset.Now` with `TimeProvider.System.GetUtcNow()`/`GetLocalNow()` equivalents. TimeProvider enables testability and consistent time sources. Available since .NET 8.
+* [OpenRewrite.Recipes.Net9.FindAuthenticationManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findauthenticationmanager)
+  * **Find `AuthenticationManager` usage (SYSLIB0009)**
+  * Finds usages of `AuthenticationManager` which is not supported in .NET 9 (SYSLIB0009). Methods will no-op or throw `PlatformNotSupportedException`.
+* [OpenRewrite.Recipes.Net9.FindBinaryFormatter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findbinaryformatter)
+  * **Find `BinaryFormatter` usage (removed in .NET 9)**
+  * Finds usages of `BinaryFormatter` which always throws `NotSupportedException` in .NET 9. Migrate to a different serializer such as `System.Text.Json`, `XmlSerializer`, or `DataContractSerializer`.
+* [OpenRewrite.Recipes.Net9.FindBinaryReaderReadString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findbinaryreaderreadstring)
+  * **Find `BinaryReader.ReadString` behavior change**
+  * Finds calls to `BinaryReader.ReadString()` which now returns the Unicode replacement character (\uFFFD) for malformed UTF-8 byte sequences in .NET 9, instead of the previous behavior. Verify your code handles the replacement character correctly.
+* [OpenRewrite.Recipes.Net9.FindDistributedCache](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/finddistributedcache)
+  * **Find IDistributedCache usage (HybridCache in .NET 9)**
+  * Finds usages of `IDistributedCache`. In .NET 9, `HybridCache` is the recommended replacement with L1/L2 caching, stampede protection, and tag-based invalidation.
+* [OpenRewrite.Recipes.Net9.FindEnumConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findenumconverter)
+  * **Find `EnumConverter` constructor validation change**
+  * Finds `new EnumConverter()` constructor calls. In .NET 9, `EnumConverter` validates that the registered type is actually an enum and throws `ArgumentException` if not.
+* [OpenRewrite.Recipes.Net9.FindExecuteUpdateSync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findexecuteupdatesync)
+  * **Find synchronous ExecuteUpdate/ExecuteDelete (EF Core 9)**
+  * Finds usages of synchronous `ExecuteUpdate()` and `ExecuteDelete()` which were removed in EF Core 9. Use `ExecuteUpdateAsync`/`ExecuteDeleteAsync` instead.
+* [OpenRewrite.Recipes.Net9.FindHttpClientHandlerCast](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findhttpclienthandlercast)
+  * **Find `HttpClientHandler` usage (HttpClientFactory default change)**
+  * Finds usages of `HttpClientHandler` which may break when `HttpClientFactory` switches its default handler to `SocketsHttpHandler` in .NET 9.
+* [OpenRewrite.Recipes.Net9.FindHttpListenerRequestUserAgent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findhttplistenerrequestuseragent)
+  * **Find `HttpListenerRequest.UserAgent` nullable change**
+  * Finds accesses to `HttpListenerRequest.UserAgent` which changed from `string` to `string?` in .NET 9. Code that assumes `UserAgent` is non-null may throw `NullReferenceException`.
+* [OpenRewrite.Recipes.Net9.FindImplicitAuthenticationDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findimplicitauthenticationdefault)
+  * **Find implicit authentication default scheme (ASP.NET Core 9)**
+  * Finds calls to `AddAuthentication()` with no arguments. In .NET 9, a single registered authentication scheme is no longer automatically used as the default.
+* [OpenRewrite.Recipes.Net9.FindInMemoryDirectoryInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findinmemorydirectoryinfo)
+  * **Find `InMemoryDirectoryInfo` rootDir prepend change**
+  * Finds `new InMemoryDirectoryInfo()` constructor calls. In .NET 9, `rootDir` is prepended to file paths that don't start with the `rootDir`, which may change file matching behavior.
+* [OpenRewrite.Recipes.Net9.FindIncrementingPollingCounter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findincrementingpollingcounter)
+  * **Find `IncrementingPollingCounter` async callback change**
+  * Finds `new IncrementingPollingCounter()` constructor calls. In .NET 9, the initial callback invocation is asynchronous instead of synchronous, which may change timing behavior.
+* [OpenRewrite.Recipes.Net9.FindJsonDocumentNullable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findjsondocumentnullable)
+  * **Find `JsonSerializer.Deserialize` nullable `JsonDocument` change**
+  * Finds `JsonSerializer.Deserialize()` calls. In .NET 9, nullable `JsonDocument` properties now deserialize to a `JsonDocument` with `RootElement.ValueKind == JsonValueKind.Null` instead of being `null`.
+* [OpenRewrite.Recipes.Net9.FindJsonStringEnumConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findjsonstringenumconverter)
+  * **Find non-generic JsonStringEnumConverter**
+  * Finds usages of the non-generic `JsonStringEnumConverter`. In .NET 9, the generic `JsonStringEnumConverter&lt;TEnum&gt;` is preferred for AOT compatibility.
+* [OpenRewrite.Recipes.Net9.FindRuntimeHelpersGetSubArray](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findruntimehelpersgetsubarray)
+  * **Find `RuntimeHelpers.GetSubArray` return type change**
+  * Finds calls to `RuntimeHelpers.GetSubArray()` which may return a different array type in .NET 9. Code that depends on the runtime type of the returned array may break.
+* [OpenRewrite.Recipes.Net9.FindSafeEvpPKeyHandleDuplicate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findsafeevppkeyhandleduplicate)
+  * **Find `SafeEvpPKeyHandle.DuplicateHandle` up-ref change**
+  * Finds calls to `SafeEvpPKeyHandle.DuplicateHandle()`. In .NET 9, this method now increments the reference count instead of creating a deep copy, which may affect handle lifetime.
+* [OpenRewrite.Recipes.Net9.FindServicePointManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findservicepointmanager)
+  * **Find `ServicePointManager` usage (SYSLIB0014)**
+  * Finds usages of `ServicePointManager` which is fully obsolete in .NET 9 (SYSLIB0014). Settings on `ServicePointManager` don't affect `SslStream` or `HttpClient`.
+* [OpenRewrite.Recipes.Net9.FindSwashbuckle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findswashbuckle)
+  * **Find Swashbuckle usage (ASP.NET Core 9 built-in OpenAPI)**
+  * Finds usages of Swashbuckle APIs (`AddSwaggerGen`, `UseSwagger`, `UseSwaggerUI`). .NET 9 includes built-in OpenAPI support. Consider migrating to `AddOpenApi()`/`MapOpenApi()`.
+* [OpenRewrite.Recipes.Net9.FindX509CertificateConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findx509certificateconstructors)
+  * **Find obsolete `X509Certificate2`/`X509Certificate` constructors (SYSLIB0057)**
+  * Finds usages of `X509Certificate2` and `X509Certificate` constructors that accept binary content or file paths, which are obsolete in .NET 9 (SYSLIB0057). Use `X509CertificateLoader` methods instead.
+* [OpenRewrite.Recipes.Net9.FindZipArchiveCompressionLevel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findziparchivecompressionlevel)
+  * **Find `ZipArchive.CreateEntry` with `CompressionLevel` (bit flag change)**
+  * Finds `ZipArchive.CreateEntry()` and `ZipFileExtensions.CreateEntryFromFile()` calls with a `CompressionLevel` parameter. In .NET 9, the `CompressionLevel` value now sets general-purpose bit flags in the ZIP central directory header, which may affect interoperability.
+* [OpenRewrite.Recipes.Net9.FindZipArchiveEntryEncoding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/findziparchiveentryencoding)
+  * **Find `ZipArchiveEntry` name/comment UTF-8 encoding change**
+  * Finds access to `ZipArchiveEntry.Name`, `FullName`, or `Comment` properties. In .NET 9, these now respect the UTF-8 flag in ZIP entries, which may change decoded values.
+* [OpenRewrite.Recipes.Net9.MigrateSwashbuckleToOpenApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/migrateswashbuckletoopenapi)
+  * **Migrate Swashbuckle to built-in OpenAPI**
+  * Migrate from Swashbuckle to the built-in OpenAPI support in ASP.NET Core 9. Replaces `AddSwaggerGen()` with `AddOpenApi()`, `UseSwaggerUI()` with `MapOpenApi()`, removes `UseSwagger()`, removes Swashbuckle packages, and adds `Microsoft.AspNetCore.OpenApi`.
+* [OpenRewrite.Recipes.Net9.RemoveConfigureAwaitFalse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/removeconfigureawaitfalse)
+  * **Remove ConfigureAwait(false)**
+  * Remove `.ConfigureAwait(false)` calls that are unnecessary in ASP.NET Core and modern .NET applications (no SynchronizationContext). Do not apply to library code targeting .NET Framework.
+* [OpenRewrite.Recipes.Net9.UpgradeToDotNet9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/upgradetodotnet9)
+  * **Migrate to .NET 9**
+  * Migrate C# projects to .NET 9, applying necessary API changes. Includes all .NET 7 and .NET 8 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/9.0.
+* [OpenRewrite.Recipes.Net9.UseEscapeSequenceE](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/useescapesequencee)
+  * **Use \e escape sequence**
+  * Replace `\u001b` and `\x1b` escape sequences with `\e`. C# 13 introduced `\e` as a dedicated escape sequence for the escape character (U+001B).
+* [OpenRewrite.Recipes.Net9.UseFrozenCollections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/usefrozencollections)
+  * **Use Frozen collections instead of Immutable**
+  * Replace `ToImmutableDictionary()` with `ToFrozenDictionary()` and `ToImmutableHashSet()` with `ToFrozenSet()`. Frozen collections (.NET 8+) provide better read performance for collections populated once and read many times.
+* [OpenRewrite.Recipes.Net9.UseGuidCreateVersion7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/useguidcreateversion7)
+  * **Use Guid.CreateVersion7()**
+  * Replace `Guid.NewGuid()` with `Guid.CreateVersion7()`. Version 7 GUIDs are time-ordered and better for database primary keys, indexing, and sorting. Available since .NET 9.
+* [OpenRewrite.Recipes.Net9.UseLinqAggregateBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/uselinqaggregateby)
+  * **Use LINQ AggregateBy()**
+  * Replace `collection.GroupBy(keySelector).ToDictionary(g =&gt; g.Key, g =&gt; g.Aggregate(seed, func))` with `collection.AggregateBy(keySelector, seed, func).ToDictionary()`. Available since .NET 9.
+* [OpenRewrite.Recipes.Net9.UseLinqCountBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/uselinqcountby)
+  * **Use LINQ CountBy()**
+  * Replace `collection.GroupBy(selector).Select(g =&gt; g.Count())` with `collection.CountBy(selector)`. Available since .NET 9.
+* [OpenRewrite.Recipes.Net9.UseLinqIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/uselinqindex)
+  * **Use LINQ Index()**
+  * Replace `collection.Select((item, index) =&gt; (index, item))` with `collection.Index()`. Available since .NET 9.
+* [OpenRewrite.Recipes.Net9.UseLockObject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/uselockobject)
+  * **Use System.Threading.Lock for lock fields**
+  * Replace `object` fields initialized with `new object()` with `System.Threading.Lock` initialized with `new()`. The Lock type provides better performance with the lock statement. Available since .NET 9.
+* [OpenRewrite.Recipes.Net9.UseMapStaticAssets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/usemapstaticassets)
+  * **Use MapStaticAssets()**
+  * Replace `UseStaticFiles()` with `MapStaticAssets()` for ASP.NET Core 9. Only applies when the receiver supports `IEndpointRouteBuilder` (WebApplication / minimal hosting). Skips Startup.cs patterns using `IApplicationBuilder` where `MapStaticAssets` is not available.
+* [OpenRewrite.Recipes.Net9.UseTaskCompletedTask](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/usetaskcompletedtask)
+  * **Use Task.CompletedTask**
+  * Replace `Task.FromResult(0)`, `Task.FromResult(true)`, and `Task.FromResult(false)` with `Task.CompletedTask` when the return type is `Task` (not `Task&lt;T&gt;`).
+* [OpenRewrite.Recipes.Net9.UseVolatileReadWrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/usevolatilereadwrite)
+  * **Use Volatile.Read/Write (SYSLIB0054)**
+  * Replace `Thread.VolatileRead` and `Thread.VolatileWrite` with `Volatile.Read` and `Volatile.Write`. The Thread methods are obsolete in .NET 9 (SYSLIB0054).
+* [OpenRewrite.Recipes.Net9.UseX509CertificateLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/net9/usex509certificateloader)
+  * **Use X509CertificateLoader (SYSLIB0057)**
+  * Replace `new X509Certificate2(path, password)` with `X509CertificateLoader.LoadPkcs12FromFile(path, password)`. The two-argument X509Certificate2 constructor is obsolete in .NET 9 (SYSLIB0057).
+* [OpenRewrite.Recipes.RemoveNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/removenugetpackagereference)
+  * **Remove NuGet package reference**
+  * Removes a `&lt;PackageReference&gt;` from .csproj files.
+* [OpenRewrite.Recipes.UpgradeNuGetPackageVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/upgradenugetpackageversion)
+  * **Upgrade NuGet package version**
+  * Upgrades the version of a NuGet `&lt;PackageReference&gt;` or `&lt;PackageVersion&gt;` in .csproj and Directory.Packages.props files.
+
+### recipes-tunit
+
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.AsyncLifetimeToBeforeAfterTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/asynclifetimetobeforeaftertest)
+  * **Find `IAsyncLifetime` needing TUnit migration**
+  * Find classes implementing `IAsyncLifetime` that should use `[Before(Test)]` and `[After(Test)]` for TUnit.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.ChangeXUnitUsings](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/changexunitusings)
+  * **Change xUnit using directives to TUnit**
+  * Replace `using Xunit;` with `using TUnit.Core;` and `using TUnit.Assertions;`, and remove `using Xunit.Abstractions;` and `using Xunit.Sdk;`.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.ClassFixtureToClassDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/classfixturetoclassdatasource)
+  * **Find `IClassFixture&lt;T&gt;` needing TUnit migration**
+  * Find classes implementing `IClassFixture&lt;T&gt;` that should use `[ClassDataSource&lt;T&gt;]` for TUnit.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.CollectionToNotInParallel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/collectiontonotinparallel)
+  * **Replace `[Collection]` with `[NotInParallel]`**
+  * Replace the xUnit `[Collection(&quot;name&quot;)]` attribute with the TUnit `[NotInParallel(&quot;name&quot;)]` attribute.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.ConstructorToBeforeTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/constructortobeforetest)
+  * **Find test constructors needing `[Before(Test)]`**
+  * Find constructors in test classes that should be converted to `[Before(Test)]` methods for TUnit.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.DisposableToAfterTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/disposabletoaftertest)
+  * **Replace `IDisposable` with `[After(Test)]`**
+  * Remove `IDisposable` from the base type list and add `[After(Test)]` to the `Dispose()` method.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.FactSkipToSkipAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/factskiptoskipattribute)
+  * **Extract `Skip` into `[Skip]` attribute**
+  * Extract the `Skip` argument from `[Fact(Skip = &quot;...&quot;)]` or `[Theory(Skip = &quot;...&quot;)]` into a separate TUnit `[Skip(&quot;...&quot;)]` attribute.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.FactTimeoutToTimeoutAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/facttimeouttotimeoutattribute)
+  * **Extract `Timeout` into `[Timeout]` attribute**
+  * Extract the `Timeout` argument from `[Fact(Timeout = ...)]` or `[Theory(Timeout = ...)]` into a separate TUnit `[Timeout(...)]` attribute.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.FactToTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/facttotest)
+  * **Replace `[Fact]` with `[Test]`**
+  * Replace the xUnit `[Fact]` attribute with the TUnit `[Test]` attribute.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.InlineDataToArguments](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/inlinedatatoarguments)
+  * **Replace `[InlineData]` with `[Arguments]`**
+  * Replace the xUnit `[InlineData]` attribute with the TUnit `[Arguments]` attribute.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.MemberDataToMethodDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/memberdatatomethoddatasource)
+  * **Replace `[MemberData]` with `[MethodDataSource]`**
+  * Replace the xUnit `[MemberData]` attribute with the TUnit `[MethodDataSource]` attribute. Fields and properties referenced by MemberData are converted to methods.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.MigrateFromXUnit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/migratefromxunit)
+  * **Migrate from xUnit to TUnit**
+  * Migrate xUnit test attributes, assertions, and lifecycle patterns to their TUnit equivalents.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.MigrateFromXUnitAttributes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/migratefromxunitattributes)
+  * **Migrate xUnit attributes to TUnit**
+  * Replace xUnit test attributes ([Fact], [Theory], [InlineData], etc.) with their TUnit equivalents.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.MigrateXUnitAssertions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/migratexunitassertions)
+  * **Migrate xUnit assertions to TUnit**
+  * Replace xUnit `Assert.*` calls with TUnit's fluent `await Assert.That(...).Is*()` assertions. Note: test methods may need to be changed to `async Task` separately.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.MigrateXUnitDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/migratexunitdependencies)
+  * **Migrate xUnit NuGet dependencies to TUnit**
+  * Remove xUnit NuGet package references, add TUnit, and upgrade the target framework to at least .NET 9.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.TestOutputHelperToTestContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/testoutputhelpertotestcontext)
+  * **Find `ITestOutputHelper` needing TUnit migration**
+  * Find usages of xUnit's `ITestOutputHelper` that should be replaced with TUnit's `TestContext`.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.TheoryToTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/theorytotest)
+  * **Replace `[Theory]` with `[Test]`**
+  * Replace the xUnit `[Theory]` attribute with the TUnit `[Test]` attribute.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.TraitCategoryToCategory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/traitcategorytocategory)
+  * **Replace `[Trait(&quot;Category&quot;, ...)]` with `[Category]`**
+  * Replace xUnit `[Trait(&quot;Category&quot;, &quot;X&quot;)]` with TUnit's dedicated `[Category(&quot;X&quot;)]` attribute.
+* [OpenRewrite.Recipes.TUnit.Migration.FromXUnit.TraitToProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/tunit/migration/fromxunit/traittoproperty)
+  * **Replace `[Trait]` with `[Property]`**
+  * Replace the xUnit `[Trait]` attribute with the TUnit `[Property]` attribute.
+
 ### rewrite-ai
 
 * [io.moderne.ai.FindAgentsInUse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/findagentsinuse)
@@ -24,9 +1743,321 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-angular
 
+* [org.openrewrite.angular.UpgradeToAngular10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular10)
+  * **Upgrade to Angular 10**
+  * Migrates Angular 9.x applications to Angular 10. This includes removing the deprecated `es5BrowserSupport` option from `angular.json`, renaming deprecated `validator`/`asyncValidator` to their plural forms, renaming `browserslist` to `.browserslistrc`, migrating to solution-style `tsconfig.json`, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular11](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular11)
+  * **Upgrade to Angular 11**
+  * Migrates Angular 10.x applications to Angular 11. This includes replacing `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`, removing the deprecated `extractCss` build option from `angular.json`, flagging deprecated string-based `loadChildren` and `preserveQueryParams` usage, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular12](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular12)
+  * **Upgrade to Angular 12**
+  * Migrates Angular 11.x applications to Angular 12. This includes adding `defaultConfiguration: &quot;production&quot;` to build targets in `angular.json`, replacing `node-sass` with `sass` (Dart Sass), flagging deprecated `async` test helper and View Engine APIs, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular13](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular13)
+  * **Upgrade to Angular 13**
+  * Migrates Angular 12.x applications to Angular 13. This includes updating `tsconfig.json` target to `es2017`, removing IE11 polyfills, removing `defaultProject` from `angular.json`, adding TestBed module teardown, simplifying `ComponentFactoryResolver` usage, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular14](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular14)
+  * **Upgrade to Angular 14**
+  * Migrates Angular 13.x applications to Angular 14. This includes replacing form classes with their `Untyped*` equivalents for backward compatibility with typed forms, updating deprecated `initialNavigation` router option values, removing `aotSummaries` from TestBed calls, and flagging `pathMatch` properties that may need type narrowing.
+* [org.openrewrite.angular.UpgradeToAngular15](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular15)
+  * **Upgrade to Angular 15**
+  * Migrates Angular 14.x applications to Angular 15. This includes removing the `relativeLinkResolution` option from `RouterModule.forRoot()`, removing the `enableIvy` compiler option from `tsconfig.json`, flagging the deprecated `DATE_PIPE_DEFAULT_TIMEZONE` token and `providedIn: NgModule`/`'any'` usage, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular16](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular16)
+  * **Upgrade to Angular 16**
+  * Migrates Angular 15.x applications to Angular 16. This includes removing `entryComponents` and `moduleId` from decorators, replacing `RouterLinkWithHref` with `RouterLink`, moving the `XhrFactory` import to `@angular/common`, and flagging removed APIs like `ReflectiveInjector`, `renderModuleFactory`, and `BrowserTransferStateModule`.
+* [org.openrewrite.angular.UpgradeToAngular17](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular17)
+  * **Upgrade to Angular 17**
+  * Migrates Angular 16.x applications to Angular 17. This includes updating Angular package versions, replacing legacy deep `zone.js` imports, flagging the removed `withNoDomReuse` and `setupTestingRouter` APIs, and upgrading TypeScript and `zone.js` dependencies.
+* [org.openrewrite.angular.UpgradeToAngular18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular18)
+  * **Upgrade to Angular 18**
+  * Migrates Angular 17.x applications to Angular 18. This includes replacing the deprecated `async` test helper with `waitForAsync`, migrating `HttpClientModule` to `provideHttpClient()`, moving Transfer State APIs to `@angular/core`, and flagging removed platform APIs.
+* [org.openrewrite.angular.UpgradeToAngular19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular19)
+  * **Upgrade to Angular 19**
+  * Migrates Angular 18.x applications to Angular 19. This includes updating Angular package versions, adjusting the standalone default, renaming `ExperimentalPendingTasks` to `PendingTasks`, moving the `ApplicationConfig` import to `@angular/core`, and updating `zone.js`.
+* [org.openrewrite.angular.UpgradeToAngular20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular20)
+  * **Upgrade to Angular 20**
+  * Migrates Angular 19.x applications to Angular 20. This includes running the Angular 19 migration first, then updating Angular package versions, renaming experimental APIs promoted to stable, and upgrading TypeScript to 5.8.x.
+* [org.openrewrite.angular.UpgradeToAngular21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular21)
+  * **Upgrade to Angular 21**
+  * Migrates Angular 20.x applications to Angular 21. This includes running the Angular 20 migration first, flagging Karma test runner usage for Vitest migration, deprecated NgClass, zone.js-dependent test helpers, and upgrading TypeScript to 5.9.x.
+* [org.openrewrite.angular.UpgradeToAngular8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular8)
+  * **Upgrade to Angular 8**
+  * Migrates Angular 7.x applications to Angular 8. This includes adding the now-required `static: false` to `@ViewChild` and `@ContentChild` decorators, moving the `DOCUMENT` import from `@angular/platform-browser` to `@angular/common`, removing `rxjs-compat` and flagging any remaining RxJS 5-style imports, flagging removed `@angular/http` imports, converting deprecated string-based `loadChildren` to dynamic imports, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular9)
+  * **Upgrade to Angular 9**
+  * Migrates Angular 8.x applications to Angular 9. This includes removing the now-default `static: false` from view query decorators, replacing `TestBed.get()` with `TestBed.inject()`, adding generic type parameters to `ModuleWithProviders`, enabling AOT compilation in `angular.json`, updating `tsconfig.json` module settings for Ivy, flagging removed View Engine APIs (`Renderer`, `RenderComponentType`, `RootRenderer`), and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.migration.add-default-configuration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-default-configuration)
+  * **Add `defaultConfiguration` to build targets**
+  * Adds `&quot;defaultConfiguration&quot;: &quot;production&quot;` to build architect targets in `angular.json`. Angular 12 changed `ng build` to produce production bundles by default.
+* [org.openrewrite.angular.migration.add-localize-polyfill](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-localize-polyfill)
+  * **Add `@angular/localize/init` polyfill import**
+  * Adds `import '@angular/localize/init'` to `polyfills.ts`. Angular 9 introduced the `$localize` runtime API for i18n. Projects using internationalization must import this polyfill or the application will fail at runtime with `$localize is not defined`. The `@angular/localize` package must also be added as a dependency.
+* [org.openrewrite.angular.migration.add-module-with-providers-generic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-module-with-providers-generic)
+  * **Add generic type to `ModuleWithProviders`**
+  * Adds the required generic type parameter to bare `ModuleWithProviders` return types. Angular 10 requires `ModuleWithProviders&lt;T&gt;` where `T` is the NgModule type. The module type is inferred from the `ngModule` property in the return statement.
+* [org.openrewrite.angular.migration.add-static-false-to-view-queries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-static-false-to-view-queries)
+  * **Add `static: false` to view queries**
+  * Adds `static: false` to `@ViewChild` and `@ContentChild` decorators that don't have the `static` property. Angular 8 requires an explicit `static` flag for view query decorators. Using `static: false` preserves the Angular 7 default behavior (queries resolved after change detection).
+* [org.openrewrite.angular.migration.add-testbed-teardown](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-testbed-teardown)
+  * **Add TestBed module teardown**
+  * Adds `\{ teardown: \{ destroyAfterEach: true \} \}` as the third argument to `TestBed.initTestEnvironment()` calls. Angular 13 changed the default teardown behavior, and this ensures explicit opt-in for module teardown after each test.
+* [org.openrewrite.angular.migration.enable-aot-build](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/enable-aot-build)
+  * **Enable AOT compilation in `angular.json`**
+  * Adds `&quot;aot&quot;: true` to build options in `angular.json`. Angular 9 made AOT compilation the default, and projects upgrading from Angular 8 should enable it explicitly.
+* [org.openrewrite.angular.migration.explicit-standalone-flag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/explicit-standalone-flag)
+  * **Make standalone flag explicit**
+  * Adds `standalone: false` to non-standalone Angular components, directives, and pipes, and removes redundant `standalone: true` since it became the default in Angular 19.
+* [org.openrewrite.angular.migration.migrate-constructor-to-inject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-constructor-to-inject)
+  * **Migrate constructor injection to `inject()`**
+  * Converts constructor parameter properties in Angular classes to field declarations using the `inject()` function. For example, `constructor(private svc: MyService) \{\}` becomes `private svc = inject(MyService);`.
+* [org.openrewrite.angular.migration.migrate-input-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-input-to-signal)
+  * **Migrate `@Input()` to signal-based `input()`**
+  * Converts `@Input()` decorated properties in Angular classes to signal-based `input()` declarations. For example, `@Input() name: string` becomes `name = input&lt;string&gt;()`, and `@Input(\{ required: true \}) name!: string` becomes `name = input.required&lt;string&gt;()`.
+* [org.openrewrite.angular.migration.migrate-output-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-output-to-signal)
+  * **Migrate `@Output()` to signal-based `output()`**
+  * Converts `@Output()` decorated properties using `EventEmitter` in Angular classes to signal-based `output()` declarations. For example, `@Output() clicked = new EventEmitter&lt;void&gt;()` becomes `clicked = output&lt;void&gt;()`.
+* [org.openrewrite.angular.migration.migrate-query-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-query-to-signal)
+  * **Migrate query decorators to signal-based functions**
+  * Converts `@ViewChild()`, `@ViewChildren()`, `@ContentChild()`, and `@ContentChildren()` decorated properties to signal-based query functions. For example, `@ViewChild('ref') el: ElementRef` becomes `el = viewChild&lt;ElementRef&gt;('ref')`.
+* [org.openrewrite.angular.migration.migrate-to-solution-style-tsconfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-to-solution-style-tsconfig)
+  * **Migrate to solution-style tsconfig**
+  * Migrates a project to use a solution-style `tsconfig.json`. The original `tsconfig.json` content is moved to `tsconfig.base.json` (with project-specific fields removed), and `tsconfig.json` is replaced with a solution-style config that references the project's TypeScript configurations. Other tsconfig files that extend `./tsconfig.json` are updated to extend `./tsconfig.base.json`.
+* [org.openrewrite.angular.migration.move-document-import](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/move-document-import)
+  * **Move `DOCUMENT` import to `@angular/core`**
+  * Moves the `DOCUMENT` import from older Angular modules to `@angular/core`.
+* [org.openrewrite.angular.migration.remove-aot-summaries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-aot-summaries)
+  * **Remove `aotSummaries` from TestBed**
+  * Removes the `aotSummaries` property from `TestBed.configureTestingModule()` and `TestBed.initTestEnvironment()` calls. The `aotSummaries` parameter was removed in Angular 14 as it was only needed for the View Engine compiler.
+* [org.openrewrite.angular.migration.remove-browser-module-with-server-transition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-browser-module-with-server-transition)
+  * **Remove `BrowserModule.withServerTransition`**
+  * Replaces `BrowserModule.withServerTransition(\{ appId: '...' \})` with `BrowserModule` and adds `\{ provide: APP_ID, useValue: '...' \}` to the NgModule providers. The `withServerTransition` method was removed in Angular 19.
+* [org.openrewrite.angular.migration.remove-component-factory-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-component-factory-resolver)
+  * **Remove `ComponentFactoryResolver`**
+  * Replaces `resolver.resolveComponentFactory(Component)` with just `Component` and removes the `ComponentFactoryResolver` import. Since Ivy, `ViewContainerRef.createComponent` accepts the component class directly. `ComponentFactoryResolver` was deprecated in Angular 13 and removed in Angular 16.
+* [org.openrewrite.angular.migration.remove-default-project](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-default-project)
+  * **Remove `defaultProject` from `angular.json`**
+  * Removes the deprecated `defaultProject` property from `angular.json`. The `defaultProject` option was deprecated in Angular 13 and the CLI infers the default project from the workspace.
+* [org.openrewrite.angular.migration.remove-empty-ng-on-init](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-empty-ng-on-init)
+  * **Remove empty `ngOnInit` lifecycle hooks**
+  * Removes empty `ngOnInit` lifecycle hook methods and OnInit interface from Angular components.
+* [org.openrewrite.angular.migration.remove-enable-ivy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-enable-ivy)
+  * **Remove `enableIvy` compiler option**
+  * Removes the `enableIvy` option from `angularCompilerOptions` in `tsconfig.json`. Ivy is the only rendering engine since Angular 12, and the option was removed in Angular 15.
+* [org.openrewrite.angular.migration.remove-entry-components](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-entry-components)
+  * **Remove `entryComponents`**
+  * Removes the `entryComponents` property from `@NgModule` and `@Component` decorators, and removes the `ANALYZE_FOR_ENTRY_COMPONENTS` import. These were removed in Angular 16 as they served no purpose since Ivy.
+* [org.openrewrite.angular.migration.remove-es5-browser-support](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-es5-browser-support)
+  * **Remove `es5BrowserSupport` from `angular.json`**
+  * Removes the deprecated `es5BrowserSupport` option from `angular.json`. `es5BrowserSupport` was deprecated in Angular 7.3 and removed in Angular 10. Differential loading is now handled automatically by the Angular CLI based on the project's browserslist configuration.
+* [org.openrewrite.angular.migration.remove-extract-css](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-extract-css)
+  * **Remove `extractCss` from `angular.json`**
+  * Removes the deprecated `extractCss` build option from `angular.json`. In Angular 11, CSS extraction became the default behavior for production builds and the option was deprecated.
+* [org.openrewrite.angular.migration.remove-ie-polyfills](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-ie-polyfills)
+  * **Remove IE11 polyfills**
+  * Removes IE11-specific polyfill imports (`core-js`, `classlist.js`, `web-animations-js`) from `polyfills.ts` and `angular.json`. Angular 13 dropped IE11 support, making these polyfills unnecessary.
+* [org.openrewrite.angular.migration.remove-module-id](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-module-id)
+  * **Remove `moduleId`**
+  * Removes the `moduleId` property from `@Component` and `@Directive` decorators. `moduleId` was deprecated in Angular 16 and removed in Angular 17 as it served no purpose since Ivy.
+* [org.openrewrite.angular.migration.remove-relative-link-resolution](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-relative-link-resolution)
+  * **Remove `relativeLinkResolution`**
+  * Removes the `relativeLinkResolution` option from `RouterModule.forRoot()` calls. This option was deprecated in Angular 14 and removed in Angular 15.
+* [org.openrewrite.angular.migration.remove-standalone-true](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-standalone-true)
+  * **Remove redundant `standalone: true`**
+  * Removes the `standalone: true` property from Angular component, directive, and pipe decorators since standalone is the default in Angular 19+.
+* [org.openrewrite.angular.migration.remove-static-false](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-static-false)
+  * **Remove `static: false` from view queries**
+  * Removes `static: false` from `@ViewChild`, `@ContentChild`, `@ViewChildren`, and `@ContentChildren` decorators. In Angular 9 with Ivy, `static: false` became the default behavior, making the explicit option unnecessary.
+* [org.openrewrite.angular.migration.remove-zone-js-polyfill](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-zone-js-polyfill)
+  * **Remove zone.js polyfill from angular.json**
+  * Removes zone.js entries from the `polyfills` array in `angular.json`. Angular 20 supports zoneless change detection via `provideZonelessChangeDetection()`, making the zone.js polyfill unnecessary.
+* [org.openrewrite.angular.migration.rename-after-render](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-after-render)
+  * **Rename `afterRender` to `afterEveryRender`**
+  * Renames `afterRender` to `afterEveryRender` in imports and usages. The `afterRender` function was renamed to `afterEveryRender` in Angular 20, and Angular provides no migration schematic for this change.
+* [org.openrewrite.angular.migration.rename-check-no-changes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-check-no-changes)
+  * **Rename `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug`**
+  * Renames `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
+* [org.openrewrite.angular.migration.rename-file](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-file)
+  * **Rename file**
+  * Renames files matching a glob pattern to a new file name, preserving the directory.
+* [org.openrewrite.angular.migration.rename-pending-tasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-pending-tasks)
+  * **Rename `ExperimentalPendingTasks` to `PendingTasks`**
+  * Renames `ExperimentalPendingTasks` to `PendingTasks` in imports and usages. `ExperimentalPendingTasks` was renamed in Angular 19.
+* [org.openrewrite.angular.migration.rename-zoneless-provider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-zoneless-provider)
+  * **Rename `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection`**
+  * Renames `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
+* [org.openrewrite.angular.migration.replace-async-with-wait-for-async](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-async-with-wait-for-async)
+  * **Replace `async` with `waitForAsync`**
+  * Replaces the removed `async` test helper from `@angular/core/testing` with `waitForAsync`. The `async` function was deprecated in Angular 11 and removed in Angular 18.
+* [org.openrewrite.angular.migration.replace-deep-zone-js-imports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-deep-zone-js-imports)
+  * **Replace deep `zone.js` imports**
+  * Replaces legacy deep imports from `zone.js` such as `zone.js/dist/zone` or `zone.js/bundles/zone-testing.js` with the standard `zone.js` or `zone.js/testing` imports, in both TypeScript files and `angular.json` polyfills. Deep imports are no longer allowed in Angular 17.
+* [org.openrewrite.angular.migration.replace-http-client-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-http-client-module)
+  * **Replace `HttpClientModule` with `provideHttpClient()`**
+  * Replaces deprecated `HttpClientModule`, `HttpClientJsonpModule`, `HttpClientXsrfModule`, and `HttpClientTestingModule` with their functional equivalents: `provideHttpClient()` with feature functions and `provideHttpClientTesting()`.
+* [org.openrewrite.angular.migration.replace-initial-navigation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-initial-navigation)
+  * **Replace `initialNavigation` option values**
+  * Replaces deprecated `initialNavigation` router option values: `'legacy_enabled'` and `true` become `'enabledBlocking'`, `'legacy_disabled'` and `false` become `'disabled'`, and `'enabled'` becomes `'enabledNonBlocking'`. The legacy values were removed in Angular 11; `'enabled'` was renamed in Angular 14.
+* [org.openrewrite.angular.migration.replace-inject-flags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-inject-flags)
+  * **Replace `InjectFlags` with options object**
+  * Replaces deprecated `InjectFlags` enum usage in `inject()` calls with the corresponding options object. For example, `inject(MyService, InjectFlags.Optional)` becomes `inject(MyService, \{ optional: true \})`.
+* [org.openrewrite.angular.migration.replace-load-children-string](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-load-children-string)
+  * **Replace string-based `loadChildren` with dynamic `import()`**
+  * Converts the deprecated string-based `loadChildren: 'path#Module'` syntax to dynamic imports: `loadChildren: () =&gt; import('path').then(m =&gt; m.Module)`.
+* [org.openrewrite.angular.migration.replace-node-sass-with-sass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
+  * **Replace `node-sass` with `sass`**
+  * Replaces the deprecated `node-sass` package with `sass` (Dart Sass). Angular 12 requires Dart Sass; `node-sass` is no longer supported.
+* [org.openrewrite.angular.migration.replace-router-link-with-href](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-router-link-with-href)
+  * **Replace `RouterLinkWithHref` with `RouterLink`**
+  * Replaces `RouterLinkWithHref` with `RouterLink` in imports and usages. `RouterLinkWithHref` was merged into `RouterLink` in Angular 16.
+* [org.openrewrite.angular.migration.replace-testbed-get-with-inject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-testbed-get-with-inject)
+  * **Replace `TestBed.get()` with `TestBed.inject()`**
+  * Replaces deprecated `TestBed.get()` calls with `TestBed.inject()`. `TestBed.get()` was deprecated in Angular 9 and removed in Angular 13.
+* [org.openrewrite.angular.migration.replace-untyped-forms](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-untyped-forms)
+  * **Replace form classes with untyped variants**
+  * Renames `FormControl`, `FormGroup`, `FormArray`, and `FormBuilder` to their `Untyped*` equivalents in imports and usages. Angular 14 introduced strictly typed forms, requiring existing untyped usages to migrate to the `Untyped*` aliases.
+* [org.openrewrite.angular.migration.replace-validator-with-validators](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-validator-with-validators)
+  * **Replace `validator`/`asyncValidator` with plural forms**
+  * Renames the deprecated singular `validator` and `asyncValidator` property names to `validators` and `asyncValidators` (plural). Angular 10 deprecated the singular forms in favor of `AbstractControlOptions`.
+* [org.openrewrite.angular.migration.replace-view-encapsulation-native](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-view-encapsulation-native)
+  * **Replace `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`**
+  * Replaces `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`. `ViewEncapsulation.Native` was deprecated in Angular 6 and removed in Angular 11.
+* [org.openrewrite.angular.migration.update-component-template-url](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-component-template-url)
+  * **Update component `templateUrl`**
+  * Updates the `templateUrl` property value in Angular `@Component` decorators. Useful for refactoring template file paths or standardizing path conventions.
+* [org.openrewrite.angular.migration.update-tsconfig-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-tsconfig-module)
+  * **Update `tsconfig.json` module settings for Ivy**
+  * Updates `compilerOptions.module` to `esnext` and `compilerOptions.moduleResolution` to `node` in `tsconfig.json`. Angular 9's Ivy compiler requires ES module format. Already-current values like `es2020`, `node16`, `nodenext`, or `bundler` are left unchanged.
+* [org.openrewrite.angular.migration.update-tsconfig-target](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-tsconfig-target)
+  * **Update `tsconfig.json` target to `es2017`**
+  * Updates the `compilerOptions.target` in `tsconfig.json` from `es5`, `es2015`, or `es2016` to `es2017`. Angular 13 dropped IE11 support and requires at least ES2017.
 * [org.openrewrite.angular.search.FindAngularComponent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/findangularcomponent)
   * **Find Angular component**
   * Locates usages of Angular components across the codebase including template elements and other references. If `componentName` is `null`, finds all Angular components.
+* [org.openrewrite.angular.search.find-analyze-for-entry-components-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-analyze-for-entry-components-usage)
+  * **Find deprecated `ANALYZE_FOR_ENTRY_COMPONENTS` usage**
+  * Finds usages of the deprecated `ANALYZE_FOR_ENTRY_COMPONENTS` injection token from `@angular/core`. `ANALYZE_FOR_ENTRY_COMPONENTS` was deprecated in Angular 9 and removed in Angular 13.
+* [org.openrewrite.angular.search.find-angular-decorator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-angular-decorator)
+  * **Find Angular decorators**
+  * Finds all Angular decorators like @Component, @Directive, @Injectable, etc.
+* [org.openrewrite.angular.search.find-angular-http-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-angular-http-usage)
+  * **Find removed `@angular/http` usage**
+  * Finds imports from the `@angular/http` module, which was deprecated in Angular 5 and removed in Angular 8. Use `@angular/common/http` (`HttpClient`, `HttpClientModule`) instead.
+* [org.openrewrite.angular.search.find-animation-driver-matches-element](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-animation-driver-matches-element)
+  * **Find `AnimationDriver.matchesElement` usage**
+  * Finds imports of `AnimationDriver` from `@angular/animations/browser`, which had its `matchesElement` method removed in Angular 18.
+* [org.openrewrite.angular.search.find-async-test-helper-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-async-test-helper-usage)
+  * **Find deprecated `async` test helper usage**
+  * Finds usages of the deprecated `async` test helper from `@angular/core/testing`. The `async` function was deprecated in Angular 11 and should be replaced with `waitForAsync`.
+* [org.openrewrite.angular.search.find-bare-module-with-providers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-bare-module-with-providers)
+  * **Find `ModuleWithProviders` without generic type**
+  * Finds imports of `ModuleWithProviders` from `@angular/core`. Starting in Angular 10, `ModuleWithProviders` requires a generic type parameter (e.g. `ModuleWithProviders&lt;MyModule&gt;`). Ensure all usages specify the module type.
+* [org.openrewrite.angular.search.find-browser-transfer-state-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-browser-transfer-state-module-usage)
+  * **Find `BrowserTransferStateModule` usage**
+  * Finds usages of `BrowserTransferStateModule` from `@angular/platform-browser` which was removed in Angular 16. `TransferState` can be used directly without this module.
+* [org.openrewrite.angular.search.find-common-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-common-module-usage)
+  * **Find `CommonModule` usage**
+  * Finds imports of `CommonModule` from `@angular/common`. Since Angular 19, standalone components are the default and `CommonModule` is no longer needed in component `imports` arrays. Built-in directives and pipes are available automatically.
+* [org.openrewrite.angular.search.find-compiler-factory-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-compiler-factory-usage)
+  * **Find View Engine API usage**
+  * Finds usages of View Engine APIs from `@angular/core` (`CompilerFactory`, `Compiler`, `CompilerOptions`, `ModuleWithComponentFactories`, `NgModuleFactory`, `NgModuleFactoryLoader`) which were deprecated in Angular 13.
+* [org.openrewrite.angular.search.find-date-pipe-default-timezone-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-date-pipe-default-timezone-usage)
+  * **Find `DATE_PIPE_DEFAULT_TIMEZONE` usage**
+  * Finds usages of `DATE_PIPE_DEFAULT_TIMEZONE` which was deprecated in Angular 15. Use `DATE_PIPE_DEFAULT_OPTIONS` with a `\{timezone: '...'\}` object value instead.
+* [org.openrewrite.angular.search.find-effect-timing-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-effect-timing-usage)
+  * **Find `effect()` usage affected by Angular 19 timing changes**
+  * Finds `effect()` calls from `@angular/core`. In Angular 19, effects triggered outside change detection now run as part of the change detection process instead of as a microtask, and effects triggered during change detection run earlier, before the component's template.
+* [org.openrewrite.angular.search.find-empty-projectable-nodes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-empty-projectable-nodes)
+  * **Find `createComponent` calls with empty `projectableNodes`**
+  * Finds `createComponent()` calls that pass empty arrays in `projectableNodes`. In Angular 19, passing an empty array now renders the default `ng-content` fallback content. To suppress fallback content, pass `[document.createTextNode('')]` instead.
+* [org.openrewrite.angular.search.find-fake-async-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-fake-async-usage)
+  * **Find zone.js-dependent test helper usage**
+  * Finds `fakeAsync()`, `tick()`, and `waitForAsync()` calls from `@angular/core/testing`. These zone.js-dependent test helpers are incompatible with Vitest, the default test runner in Angular 21. Migrate to native async/await patterns instead.
+* [org.openrewrite.angular.search.find-hammer-js-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-hammer-js-usage)
+  * **Find HammerJS usage**
+  * Finds `HammerModule` imports and HammerJS references. Angular has deprecated HammerJS support and it will be removed in Angular 21.
+* [org.openrewrite.angular.search.find-i18n-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-i18n-usage)
+  * **Find i18n usage**
+  * Finds i18n usage indicators: legacy i18n configuration in `angular.json` (`i18nLocale`, `i18nFile`, `i18nFormat`, `i18nMissingTranslation`), `$localize` tagged template literals, and `@angular/localize` imports. Projects with these markers need `@angular/localize` installed and `import '@angular/localize/init'` in `polyfills.ts` for Angular 9+.
+* [org.openrewrite.angular.search.find-karma-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-karma-usage)
+  * **Find Karma test runner usage**
+  * Finds Karma test runner configuration in package.json dependencies and angular.json test builder. Angular 21 replaces Karma with Vitest as the default test runner.
+* [org.openrewrite.angular.search.find-load-children-string-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-load-children-string-usage)
+  * **Find deprecated string-based `loadChildren` usage**
+  * Finds usages of the deprecated string-based `loadChildren` syntax (e.g. `loadChildren: './path/to/module#ModuleName'`). String-based lazy loading was deprecated in Angular 8 and removed in Angular 11. Use dynamic imports instead: `loadChildren: () =&gt; import('./path/to/module').then(m =&gt; m.ModuleName)`.
+* [org.openrewrite.angular.search.find-missing-injectable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-missing-injectable)
+  * **Find classes with DI dependencies but missing `@Injectable()`**
+  * Finds classes that have constructor parameters (suggesting dependency injection) but lack an `@Injectable()` or other Angular class-level decorator. Angular 9 with Ivy requires an explicit `@Injectable()` decorator for all services that use dependency injection.
+* [org.openrewrite.angular.search.find-ng-class-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-ng-class-usage)
+  * **Find `NgClass` usage**
+  * Finds imports of `NgClass` from `@angular/common`. The `ngClass` directive is soft deprecated in Angular 21 in favor of native `[class.*]` bindings.
+* [org.openrewrite.angular.search.find-ng-style-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-ng-style-usage)
+  * **Find `NgStyle` usage**
+  * Finds imports of `NgStyle` from `@angular/common`. The `ngStyle` directive is soft deprecated in Angular 21 in favor of native `[style.*]` bindings.
+* [org.openrewrite.angular.search.find-path-match-type-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-path-match-type-usage)
+  * **Find `pathMatch` route properties that may need type narrowing**
+  * Finds `pathMatch` property assignments in route configurations. In Angular 14, the `pathMatch` type was narrowed from `string` to `'full' | 'prefix'`. Routes defined as plain objects without explicit `Route` or `Routes` typing may fail type checking.
+* [org.openrewrite.angular.search.find-platform-dynamic-server-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-platform-dynamic-server-usage)
+  * **Find `platformDynamicServer` usage**
+  * Finds usages of the removed `platformDynamicServer` API from `@angular/platform-server`. In Angular 18, replace with `platformServer` and add `import '@angular/compiler'`.
+* [org.openrewrite.angular.search.find-platform-webworker-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-platform-webworker-usage)
+  * **Find removed `@angular/platform-webworker` usage**
+  * Finds imports from `@angular/platform-webworker` and `@angular/platform-webworker-dynamic`, which were removed in Angular 8 with no direct replacement.
+* [org.openrewrite.angular.search.find-platform-worker-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-platform-worker-usage)
+  * **Find `isPlatformWorkerUi` and `isPlatformWorkerApp` usage**
+  * Finds usages of the removed `isPlatformWorkerUi` and `isPlatformWorkerApp` APIs from `@angular/common`. These were removed in Angular 18 with no replacement, as they served no purpose since the removal of the WebWorker platform.
+* [org.openrewrite.angular.search.find-preserve-fragment-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-preserve-fragment-usage)
+  * **Find deprecated `preserveFragment` usage**
+  * Finds usages of the deprecated `preserveFragment` navigation option. `preserveFragment` was deprecated in Angular 4 and removed in Angular 11. Fragments are now preserved by default.
+* [org.openrewrite.angular.search.find-preserve-query-params-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-preserve-query-params-usage)
+  * **Find deprecated `preserveQueryParams` usage**
+  * Finds usages of the deprecated `preserveQueryParams` navigation option. `preserveQueryParams` was deprecated in Angular 4 and removed in Angular 11. Use `queryParamsHandling: 'preserve'` instead.
+* [org.openrewrite.angular.search.find-provided-in-deprecated-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-provided-in-deprecated-usage)
+  * **Find deprecated `providedIn` values**
+  * Finds usages of `providedIn: 'any'` and `providedIn: NgModule` in `@Injectable` and `InjectionToken` declarations. These were deprecated in Angular 15. Use `providedIn: 'root'` or add the service to `NgModule.providers` instead.
+* [org.openrewrite.angular.search.find-reflective-injector-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-reflective-injector-usage)
+  * **Find `ReflectiveInjector` usage**
+  * Finds usages of `ReflectiveInjector` which was removed in Angular 16. Use `Injector.create` as a replacement.
+* [org.openrewrite.angular.search.find-render-application-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-render-application-usage)
+  * **Find `renderApplication` usage**
+  * Finds usages of `renderApplication` from `@angular/platform-server`. In Angular 16 the signature changed: it no longer accepts a root component as the first argument. Use a bootstrapping function that returns `Promise&lt;ApplicationRef&gt;` instead.
+* [org.openrewrite.angular.search.find-render-component-type-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-render-component-type-usage)
+  * **Find deprecated `RenderComponentType` usage**
+  * Finds imports of the deprecated `RenderComponentType` from `@angular/core`. `RenderComponentType` was part of the View Engine API, deprecated in Angular 4, and removed in Angular 9.
+* [org.openrewrite.angular.search.find-render-module-factory-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-render-module-factory-usage)
+  * **Find `renderModuleFactory` usage**
+  * Finds usages of `renderModuleFactory` from `@angular/platform-server` which was removed in Angular 16. Use `renderModule` instead.
+* [org.openrewrite.angular.search.find-renderer-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-renderer-usage)
+  * **Find deprecated `Renderer` usage**
+  * Finds imports of the deprecated `Renderer` from `@angular/core`. `Renderer` was deprecated in Angular 4 and removed in Angular 9. Users should use `Renderer2` instead.
+* [org.openrewrite.angular.search.find-resource-cache-provider-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-resource-cache-provider-usage)
+  * **Find `RESOURCE_CACHE_PROVIDER` usage**
+  * Finds usages of the removed `RESOURCE_CACHE_PROVIDER` from `@angular/platform-browser-dynamic`. This unused API was removed in Angular 18.
+* [org.openrewrite.angular.search.find-root-renderer-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-root-renderer-usage)
+  * **Find deprecated `RootRenderer` usage**
+  * Finds imports of the deprecated `RootRenderer` from `@angular/core`. `RootRenderer` was part of the View Engine API, deprecated in Angular 4, and removed in Angular 9. Use `RendererFactory2` instead.
+* [org.openrewrite.angular.search.find-rxjs-compat-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-rxjs-compat-usage)
+  * **Find RxJS 5-style imports requiring `rxjs-compat`**
+  * Finds imports using RxJS 5-style deep import paths (e.g. `rxjs/Observable`, `rxjs/add/operator/map`) that require the `rxjs-compat` package. These should be migrated to RxJS 6+ import paths before removing `rxjs-compat`.
+* [org.openrewrite.angular.search.find-server-transfer-state-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-server-transfer-state-module-usage)
+  * **Find `ServerTransferStateModule` usage**
+  * Finds usages of the removed `ServerTransferStateModule` from `@angular/platform-server`. In Angular 18, `TransferState` works without providing this module.
+* [org.openrewrite.angular.search.find-setup-testing-router-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-setup-testing-router-usage)
+  * **Find `setupTestingRouter` usage**
+  * Finds usages of the removed `setupTestingRouter` function from `@angular/router/testing`. This function was removed in Angular 17. Use `RouterModule.forRoot` or `provideRouter` to set up the Router for tests instead.
+* [org.openrewrite.angular.search.find-testability-pending-request-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-testability-pending-request-usage)
+  * **Find removed Testability pending request methods**
+  * Finds imports of `Testability` from `@angular/core`, which had `increasePendingRequestCount`, `decreasePendingRequestCount`, and `getPendingRequestCount` removed in Angular 18. These are now tracked with zones.
+* [org.openrewrite.angular.search.find-undecorated-angular-class](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-undecorated-angular-class)
+  * **Find undecorated classes with Angular features**
+  * Finds classes that use Angular member decorators (`@Input`, `@Output`, `@ViewChild`, etc.) or implement lifecycle hooks (`ngOnInit`, `ngOnDestroy`, etc.) but lack a class-level Angular decorator. Angular 9 with Ivy requires all classes using Angular features to have an explicit decorator.
+* [org.openrewrite.angular.search.find-with-no-dom-reuse-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-with-no-dom-reuse-usage)
+  * **Find `withNoDomReuse` usage**
+  * Finds usages of the removed `withNoDomReuse` function from `@angular/platform-browser`. This function was removed in Angular 17. To disable hydration, remove the `provideClientHydration()` call from your providers or use the `ngSkipHydration` attribute on specific components.
+* [org.openrewrite.angular.search.find-wrapped-value-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-wrapped-value-usage)
+  * **Find deprecated `WrappedValue` usage**
+  * Finds usages of the deprecated `WrappedValue` from `@angular/core`. `WrappedValue` was deprecated in Angular 11 and removed in Angular 13.
+* [org.openrewrite.angular.search.find-zone-js-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-zone-js-usage)
+  * **Find zone.js usage**
+  * Finds zone.js imports and NgZone references. Angular 20 supports zoneless change detection via `provideZonelessChangeDetection()`, making zone.js optional.
 
 ### rewrite-cryptography
 
@@ -63,33 +2094,60 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.devcenter.BuildToolStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/buildtoolstarter)
   * **DevCenter for Gradle and Maven**
   * Track and automate upgrades for Gradle, Maven, and Java versions.
+* [io.moderne.devcenter.CSharpVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/csharpversionupgrade)
+  * **Move to a later .NET version**
+  * Determine the current state of a repository relative to a desired .NET version upgrade.
 * [io.moderne.devcenter.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/dependencyvulnerabilitycheck)
   * **Vulnerabilities status**
   * Determine the current state of a repository relative to its vulnerabilities.
+* [io.moderne.devcenter.DevCenterCSharpStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentercsharpstarter)
+  * **DevCenter for C#**
+  * A default DevCenter configuration for C# repositories. Track .NET version adoption across your organization.
+* [io.moderne.devcenter.DevCenterNodeStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenternodestarter)
+  * **DevCenter for Node.js**
+  * A default DevCenter configuration for Node.js repositories. Track Node.js version adoption across your organization.
+* [io.moderne.devcenter.DevCenterPythonStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterpythonstarter)
+  * **DevCenter for Python**
+  * A default DevCenter configuration for Python repositories. Track Python version adoption across your organization.
 * [io.moderne.devcenter.DevCenterStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterstarter)
   * **DevCenter**
   * This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
 * [io.moderne.devcenter.FindOrganizationStatistics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/findorganizationstatistics)
   * **Find organization statistics**
   * Counts lines of code per repository for organization-level statistics.
+* [io.moderne.devcenter.GroovyVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/groovyversionupgrade)
+  * **Move to a later Groovy version**
+  * Determine the current state of a repository relative to a desired Groovy version upgrade.
 * [io.moderne.devcenter.JUnitJupiterUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/junitjupiterupgrade)
   * **Move to JUnit 6**
   * Move to JUnit Jupiter.
 * [io.moderne.devcenter.JavaVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/javaversionupgrade)
   * **Move to a later Java version**
   * Determine the current state of a repository relative to a desired Java version upgrade.
+* [io.moderne.devcenter.KotlinVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/kotlinversionupgrade)
+  * **Move to a later Kotlin version**
+  * Determine the current state of a repository relative to a desired Kotlin version upgrade.
 * [io.moderne.devcenter.LibraryUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/libraryupgrade)
   * **Library upgrade**
   * Determine the current state of a repository relative to a desired library upgrade.
+* [io.moderne.devcenter.NodeVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/nodeversionupgrade)
+  * **Move to a later Node.js version**
+  * Determine the current state of a repository relative to a desired Node.js version upgrade.
 * [io.moderne.devcenter.ParentPomUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/parentpomupgrade)
   * **Parent POM upgrade**
   * Determine the current state of a repository relative to a desired parent POM upgrade.
+* [io.moderne.devcenter.PythonVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/pythonversionupgrade)
+  * **Move to a later Python version**
+  * Determine the current state of a repository relative to a desired Python version upgrade.
 * [io.moderne.devcenter.QuarkusDevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/quarkusdevcenter)
   * **DevCenter for Quarkus**
   * A DevCenter that tracks the latest Quarkus framework versions and applies best practices. This DevCenter includes recipes to upgrade Quarkus versions, migrate from deprecated APIs, and ensure compatibility with the latest Java versions and testing frameworks.
 * [io.moderne.devcenter.ReportAsSecurityIssues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/reportassecurityissues)
   * **Report as security issues**
   * Look for results produced by recipes in the same recipe list that this recipe is part of, and report them as security issues in DevCenter.
+* [io.moderne.devcenter.ScalaVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/scalaversionupgrade)
+  * **Move to a later Scala version**
+  * Determine the current state of a repository relative to a desired Scala version upgrade.
 * [io.moderne.devcenter.SecurityStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/securitystarter)
   * **OWASP top ten**
   * This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
@@ -114,6 +2172,72 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.devcenter.VulnerabilitiesDevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/vulnerabilitiesdevcenter)
   * **DevCenter for Vulnerability Management**
   * Recipes to analyze and manage dependency vulnerabilities using Moderne DevCenter.
+
+### rewrite-dropwizard
+
+* [io.moderne.java.dropwizard.MigrateToDropwizard5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/migratetodropwizard5)
+  * **Migrate to Dropwizard 5.0.x from 4.x**
+  * Apply changes required to upgrade a Dropwizard 4.x application to 5.0.x. This includes upgrading dependencies, removing deprecated configuration options, and migrating Jetty handler implementations. Includes required migrations to Java 17, Jakarta EE 10, JUnit 5, Jackson 2.x, and Hibernate 6.6. See [the upgrade guide](https://www.dropwizard.io/en/stable/manual/upgrade-notes/upgrade-notes-5_0_x.html).
+* [io.moderne.java.dropwizard.boot.MigrateApplicationRunMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migrateapplicationrunmethod)
+  * **Migrate Dropwizard Application.run() to SpringApplication.run()**
+  * Replaces the `new MyApp().run(args)` pattern in the main method with `SpringApplication.run(MyApp.class, args)`.
+* [io.moderne.java.dropwizard.boot.MigrateDropwizardToSpringBoot3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
+  * **Migrate Dropwizard to Spring Boot 3**
+  * Migrate a Dropwizard application to Spring Boot 3. First applies the Dropwizard to Spring Boot 2.7 migration, then adds managed lifecycle and health check migrations on top.
+* [io.moderne.java.dropwizard.boot.annotation.AddClassAnnotationIfAnnotationExists](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/annotation/addclassannotationifannotationexists)
+  * **Add annotation if target annotation exists**
+  * Adds an annotation to a class if it already has a specified target annotation.
+* [io.moderne.java.dropwizard.boot.annotation.AddClassAnnotationIfSuperTypeExists](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/annotation/addclassannotationifsupertypeexists)
+  * **Add annotation if target supertype exists**
+  * Adds an annotation to a class if it extends or implements a specified target type.
+* [io.moderne.java.dropwizard.boot.datasource.RemoveDataSourceFactoryBuildChain](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/datasource/removedatasourcefactorybuildchain)
+  * **Replace DataSourceFactory build chain with @Autowired DataSource**
+  * Replaces `DataSourceFactory.build(MetricRegistry, String)` variable declarations with `@Autowired DataSource` fields. Spring Boot auto-configures the DataSource from `spring.datasource.*` properties. Note: connection pool metrics previously wired via `MetricRegistry` require `spring-boot-starter-actuator` for equivalent observability.
+* [io.moderne.java.dropwizard.boot.datasource.RemoveLifecycleManageCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/datasource/removelifecyclemanagecalls)
+  * **Remove Dropwizard lifecycle.manage() calls**
+  * Removes `environment.lifecycle().manage()` calls. Spring Boot manages bean lifecycle automatically through its IoC container.
+* [io.moderne.java.dropwizard.boot.general.RemoveMethodsByPackage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/general/removemethodsbypackage)
+  * **Remove methods referencing specified package**
+  * Removes any method that has a return type or parameter type from the specified package.
+* [io.moderne.java.dropwizard.boot.general.RemoveVariablesByPackage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/general/removevariablesbypackage)
+  * **Remove class variables matching package filter**
+  * Removes variable declarations whose type belongs to the specified package.
+* [io.moderne.java.dropwizard.boot.health.MigrateHealthCheckMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/health/migratehealthcheckmethod)
+  * **Migrate Dropwizard health check Result calls and wrap exceptions**
+  * Transforms `Result.healthy()`/`Result.unhealthy()` calls to `Health.up().build()`/`Health.down().build()` and wraps throwing `check()` methods in try-catch.
+* [io.moderne.java.dropwizard.boot.jackson.ReplaceJacksonNewObjectMapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/jackson/replacejacksonnewobjectmapper)
+  * **Replace `Jackson.newObjectMapper()` with `new ObjectMapper().findAndRegisterModules()`**
+  * Replaces Dropwizard's `Jackson.newObjectMapper()` with `new ObjectMapper().findAndRegisterModules()`, which provides equivalent module auto-discovery using the standard Jackson SPI mechanism.
+* [io.moderne.java.dropwizard.boot.lifecycle.MigrateManagedLifecycle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/lifecycle/migratemanagedlifecycle)
+  * **Add lifecycle annotations to Dropwizard Managed methods**
+  * Adds `@PostConstruct` to `start()` and `@PreDestroy` to `stop()` on classes implementing `io.dropwizard.lifecycle.Managed`.
+* [io.moderne.java.dropwizard.boot.method.ChangeSuperType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/method/changesupertype)
+  * **Change supertype**
+  * Changes the supertype of a class, optionally converting from extends to implements.
+* [io.moderne.java.dropwizard.boot.method.RemoveSuperTypeByType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/method/removesupertypebytype)
+  * **Remove supertype by fully qualified name**
+  * Removes a specified type from class extends or implements clauses.
+* [io.moderne.java.dropwizard.boot.method.RemoveUnnecessaryOverride](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/method/removeunnecessaryoverride)
+  * **Remove unnecessary `@Override` annotations**
+  * Removes `@Override` annotations from methods that don't actually override or implement any method. This helps maintain clean code by removing incorrect annotations that could be misleading.
+* [io.moderne.java.dropwizard.boot.method.RemoveUnnecessarySuperCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/method/removeunnecessarysupercalls)
+  * **Remove `super` calls when the class does not extend another class**
+  * Removes calls to `super(...)` or `super.someMethod(...)` if the class does not have a real superclass besides `java.lang.Object`.
+* [io.moderne.java.dropwizard.boot.test.DropwizardRulesJUnit4ToSpringBoot](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/test/dropwizardrulesjunit4tospringboot)
+  * **Replace Dropwizard rules with Spring Boot test configuration**
+  * Remove Dropwizard JUnit4 rules and add Spring Boot test annotations and extensions.
+* [io.moderne.java.dropwizard.boot.test.MethodLambdaExtractor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/test/methodlambdaextractor)
+  * **Inline lambda body from matched method invocations**
+  * Extracts the body of lambda expressions passed to matched method invocations and inlines them into the surrounding code.
+* [io.moderne.java.dropwizard.boot.test.MockitoVariableToMockBean](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/test/mockitovariabletomockbean)
+  * **Convert Mockito mock() to @MockBean**
+  * Converts static final Mockito mock fields to Spring Boot @MockBean fields.
+* [io.moderne.java.dropwizard.boot.test.TransformDropwizardRuleInvocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/test/transformdropwizardruleinvocations)
+  * **Convert Dropwizard test rule calls to RestTemplate**
+  * Transforms Dropwizard AppRule and ResourceTestRule testing calls to their equivalent RestTemplate calls.
+* [io.moderne.java.dropwizard.dw5.MigrateJettyHandlerSignature](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/dw5/migratejettyhandlersignature)
+  * **Migrate Jetty `AbstractHandler` to Jetty 12 `Handler.Abstract`**
+  * Migrates custom Jetty handler implementations from Jetty 11's `AbstractHandler` (used in Dropwizard 4.x) to Jetty 12's `Handler.Abstract` (used in Dropwizard 5.x). This changes the `handle` method signature and updates `baseRequest.setHandled(true)` to use `Callback` and return `true`.
 
 ### rewrite-elastic
 
@@ -183,6 +2307,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.hibernate.update40.MigrateJoinTableToCollectionTable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update40/migratejointabletocollectiontable)
   * **Migrate `@JoinTable` to `@CollectionTable` for element collections**
   * Replaces `@JoinTable` with `@CollectionTable` when used alongside `@CollectionOfElements` or `@ElementCollection`. `@CollectionTable` is the JPA 2.0 standard for defining the table that stores element collections. When `inverseJoinColumns` is present, its column name is preserved as a `@Column` annotation.
+* [io.moderne.hibernate.update60.MigrateHibernateCriteriaToJpaCriteria](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update60/migratehibernatecriteriatojpacriteria)
+  * **Migrate Hibernate Criteria API to JPA Criteria API**
+  * Migrates code using the legacy Hibernate Criteria API (org.hibernate.Criteria, org.hibernate.criterion.*) to the JPA Criteria API (jakarta.persistence.criteria.*). Handles common patterns including Restrictions (with and/or), Order, Projections, list(), and uniqueResult().
 * [io.moderne.hibernate.update66.FixConflictingClassTypeAnnotations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update66/fixconflictingclasstypeannotations)
   * **Fix conflicting class type annotation Hibernate 6.6**
   * Since Hibernate 6.6 a mapped class can have *either* `@MappedSuperclass` or `@Embeddable`, or `@Entity`. This recipe removes `@Entity` from classes annotated with `@MappedSuperclass` or `@Embeddable`. For the moment die combination of `@MappedSuperclass` or `@Embeddable` is advised to migrate to [Single Table Inheritance](https://docs.jboss.org/hibernate/orm/6.6/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-single-table) but still accepted and therefore stays.
@@ -207,6 +2334,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.hibernate.update70.MigrateJdbcTypeToJdbcTypeCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejdbctypetojdbctypecode)
   * **Migrate @JdbcType to @JdbcTypeCode**
   * In Hibernate 7.0, various JDBC types were moved to internal packages. Use @JdbcTypeCode with SqlTypes constants instead of @JdbcType with specific classes.
+* [io.moderne.hibernate.update70.MigrateJpqlTruncToDateCast](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejpqltrunctodatecast)
+  * **Migrate JPQL `trunc()` to `cast(... as date)`**
+  * Hibernate 7 maps the JPQL `trunc()` function to numeric truncation only (SQL standard). For date truncation, single-argument `trunc(expr)` must be replaced with `cast(expr as date)`.
 * [io.moderne.hibernate.update70.MigrateLockOptionsToDirectParameters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratelockoptionstodirectparameters)
   * **Migrate LockOptions to direct parameters**
   * Migrates deprecated `LockOptions` usage to direct parameters in method calls. As of JPA 3.2 and Hibernate 7, `LockMode`, `Timeout`, and `PessimisticLockScope` are passed directly to `find()`, `refresh()`, and `lock()` methods instead of being wrapped in a `LockOptions` object.
@@ -420,6 +2550,111 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.ExtractDependencyUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extractdependencyusage)
   * **Extract dependency usage patterns**
   * Analyze the codebase to extract dependency usage patterns by examining which types from external libraries are actually used in the code.
+* [io.moderne.prethink.ExtractErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extracterrorpatterns)
+  * **Extract error handling patterns**
+  * Analyze the codebase to extract error handling patterns including exception types, handling strategies, and logging frameworks used.
+* [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
+  * **Update Prethink context (no AI)**
+  * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. This recipe does not require an LLM provider - use UpdatePrethinkContextStarter if you want AI-generated code comprehension and test summaries.
+* [io.moderne.prethink.UpdatePrethinkContextStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
+  * **Update Prethink context (with AI)**
+  * Generate Moderne Prethink context files with AI-generated code comprehension, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. Maps tests to implementation methods and optionally generates AI summaries of what each test verifies when LLM provider is configured.
+* [io.moderne.prethink.calm.FindCalmRelationships](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findcalmrelationships)
+  * **Find CALM relationships**
+  * Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships.
+* [io.moderne.prethink.calm.FindDataAssets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddataassets)
+  * **Find data assets**
+  * Identify data assets including JPA entities, MongoDB documents, Java records, and DTOs in the application.
+* [io.moderne.prethink.calm.FindDatabaseConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddatabaseconnections)
+  * **Find database connections**
+  * Identify database connections and data access patterns in the application. Detects JPA entities, Spring Data repositories, JDBC templates, MyBatis mappers, and Quarkus Panache.
+* [io.moderne.prethink.calm.FindDeploymentArtifacts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddeploymentartifacts)
+  * **Find deployment artifacts**
+  * Identify deployment artifacts including Dockerfiles, docker-compose files, and Kubernetes manifests.
+* [io.moderne.prethink.calm.FindDjangoEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/finddjangoendpoints)
+  * **Find Django endpoints**
+  * Identify REST/HTTP endpoints in Django and Django REST Framework applications. Detects class-based views, function-based views with @api_view, and regular Django views with @require_http_methods decorators.
+* [io.moderne.prethink.calm.FindExpressEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findexpressendpoints)
+  * **Find Express endpoints**
+  * Identify REST/HTTP endpoints in Express and Fastify applications. Detects app.get(), router.post(), and similar route definition patterns.
+* [io.moderne.prethink.calm.FindExternalServiceCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findexternalservicecalls)
+  * **Find external service calls**
+  * Identify outbound HTTP calls to external services. Detects RestTemplate, WebClient, Feign clients, MicroProfile REST Client, Apache HttpClient, OkHttp, and JAX-RS clients.
+* [io.moderne.prethink.calm.FindFastAPIEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findfastapiendpoints)
+  * **Find FastAPI endpoints**
+  * Identify REST/HTTP endpoints in FastAPI applications. Detects @app.get(), @router.post(), and similar route decorator patterns.
+* [io.moderne.prethink.calm.FindFlaskEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findflaskendpoints)
+  * **Find Flask endpoints**
+  * Identify REST/HTTP endpoints in Flask applications. Detects @app.route(), @blueprint.route(), and Flask 2.0+ shortcut decorators like @app.get() and @app.post().
+* [io.moderne.prethink.calm.FindGraphQLEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgraphqlendpoints)
+  * **Find GraphQL endpoints**
+  * Identify GraphQL endpoints exposed by the application. Supports Spring GraphQL, Netflix DGS, and GraphQL Java (graphql-java-tools).
+* [io.moderne.prethink.calm.FindGrpcServices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgrpcservices)
+  * **Find gRPC services**
+  * Identify gRPC service implementations in the application. Detects classes extending generated ImplBase classes and @GrpcService annotations.
+* [io.moderne.prethink.calm.FindMessagingConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmessagingconnections)
+  * **Find messaging connections**
+  * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, AWS SQS, and SmallRye Reactive Messaging.
+* [io.moderne.prethink.calm.FindMongooseSchemas](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmongooseschemas)
+  * **Find Mongoose schemas**
+  * Identify Mongoose models and schemas in Node.js applications. Detects mongoose.model() calls and populates the DatabaseConnections table.
+* [io.moderne.prethink.calm.FindNestJSEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnestjsendpoints)
+  * **Find NestJS endpoints**
+  * Identify REST/HTTP endpoints in NestJS controllers. Detects @Controller, @Get, @Post, @Put, @Delete, and @Patch decorators and populates the ServiceEndpoints data table.
+* [io.moderne.prethink.calm.FindNodeErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodeerrorpatterns)
+  * **Find Node.js error patterns**
+  * Identify error handling patterns in Node.js applications. Detects try/catch blocks and identifies logging frameworks used.
+* [io.moderne.prethink.calm.FindNodeHttpClients](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodehttpclients)
+  * **Find Node.js HTTP clients**
+  * Identify HTTP client usage in Node.js applications. Detects axios, fetch, got, and superagent call patterns.
+* [io.moderne.prethink.calm.FindNodeMessaging](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodemessaging)
+  * **Find Node.js messaging**
+  * Identify messaging patterns in Node.js applications. Detects KafkaJS, amqplib, and Bull/BullMQ usage.
+* [io.moderne.prethink.calm.FindNodeProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodeprojectmetadata)
+  * **Find Node.js project metadata**
+  * Extract project metadata (name, version, description) from Node.js package.json files.
+* [io.moderne.prethink.calm.FindNodeSecurityConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodesecurityconfig)
+  * **Find Node.js security configuration**
+  * Identify security middleware in Node.js applications. Detects cors, helmet, passport, and JWT middleware usage.
+* [io.moderne.prethink.calm.FindNodeTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodetestcoverage)
+  * **Find Node.js test coverage**
+  * Identify test methods in Jest, Mocha, and Vitest test files. Detects describe(), it(), and test() blocks and populates the TestMapping table.
+* [io.moderne.prethink.calm.FindPrismaUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findprismausage)
+  * **Find Prisma usage**
+  * Identify Prisma ORM usage in Node.js applications. Detects prisma.model.findMany() and similar Prisma Client query patterns.
+* [io.moderne.prethink.calm.FindProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findprojectmetadata)
+  * **Find project metadata**
+  * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
+* [io.moderne.prethink.calm.FindPythonProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythonprojectmetadata)
+  * **Find Python project metadata**
+  * Extract project metadata (name, version, description) from Python pyproject.toml files.
+* [io.moderne.prethink.calm.FindPythonTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythontestcoverage)
+  * **Find Python test coverage**
+  * Identify test methods in Python test files. Detects pytest test functions/classes and unittest.TestCase subclasses, and populates the TestMapping table.
+* [io.moderne.prethink.calm.FindSQLAlchemyModels](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsqlalchemymodels)
+  * **Find SQLAlchemy and Django ORM models**
+  * Identify ORM model classes in Python applications. Detects SQLAlchemy models with DeclarativeBase inheritance, Flask-SQLAlchemy models with db.Model, and Django ORM models extending models.Model.
+* [io.moderne.prethink.calm.FindScheduledTasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findscheduledtasks)
+  * **Find scheduled tasks**
+  * Identify scheduled tasks and background jobs in the application. Supports Spring @Scheduled, Quarkus @Scheduled, Quartz Job, Jakarta/Javax EJB Timer, and JobRunr @Recurring annotations.
+* [io.moderne.prethink.calm.FindSecurityConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsecurityconfiguration)
+  * **Find security configuration**
+  * Identify security configurations including Spring Security, OAuth2, CORS, Jakarta Security (@RolesAllowed, @PermitAll, @DenyAll), and Quarkus Security settings.
+* [io.moderne.prethink.calm.FindServerConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findserverconfiguration)
+  * **Find server configuration**
+  * Extract server configuration (port, SSL, context path) from application.properties and application.yml files.
+* [io.moderne.prethink.calm.FindServiceComponents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findservicecomponents)
+  * **Find service components**
+  * Identify service layer components (@Service, @Component, @Named) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
+* [io.moderne.prethink.calm.FindServiceEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findserviceendpoints)
+  * **Find service endpoints**
+  * Identify all REST/HTTP service endpoints exposed by the application. Supports Spring MVC, JAX-RS, Micronaut, and Quarkus REST endpoints.
+* [io.moderne.prethink.calm.FindTypeORMEntities](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findtypeormentities)
+  * **Find TypeORM entities**
+  * Identify TypeORM entities in Node.js applications. Detects @Entity() decorator on classes and populates the DatabaseConnections table.
+* [io.moderne.prethink.calm.FindWebSocketEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findwebsocketendpoints)
+  * **Find WebSocket endpoints**
+  * Identify WebSocket endpoints in the application. Supports Spring WebSocket, Spring STOMP messaging, and Jakarta/Javax WebSocket.
 * [io.moderne.prethink.calm.GenerateCalmMermaidDiagram](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/generatecalmmermaiddiagram)
   * **Generate architecture mermaid diagram**
   * Generate a markdown file with a mermaid architecture diagram from discovered service endpoints, database connections, external service calls, and messaging connections.
@@ -435,6 +2670,51 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.quality.FindPackageMetrics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findpackagemetrics)
   * **Find package quality metrics**
   * Compute per-package architectural quality metrics including afferent/efferent coupling, instability, abstractness, distance from the main sequence, and dependency cycle detection using Tarjan's strongly connected components algorithm.
+* [io.moderne.prethink.testing.coverage.FindTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/coverage/findtestcoverage)
+  * **Find test coverage mapping**
+  * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships. Optionally generates AI summaries of what each test is verifying when LLM provider is configured.
+* [io.moderne.prethink.testing.coverage.FindTestGaps](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/coverage/findtestgaps)
+  * **Find test coverage gaps**
+  * Identify public non-trivial methods that lack test coverage. Reports gaps with cyclomatic complexity and risk scores to help prioritize where to add tests.
+* [io.moderne.prethink.testing.quality.FindFlakyTestPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findflakytestpatterns)
+  * **Find flaky test patterns**
+  * Detect patterns that commonly cause flaky tests in Java and Python code, including static waits (Thread.sleep, TimeUnit.sleep) and shared mutable state (static non-final fields in test classes).
+* [io.moderne.prethink.testing.quality.FindFragileTestData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findfragiletestdata)
+  * **Find fragile test data**
+  * Detect hardcoded dates, timing-dependent assertions, and hardcoded ports/paths in test code that may cause flaky or environment-dependent test failures.
+* [io.moderne.prethink.testing.quality.FindGhostTests](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findghosttests)
+  * **Find ghost tests**
+  * Detect methods that look like tests but will not be executed by the test runner, and tests skipped without a documented reason.
+* [io.moderne.prethink.testing.quality.FindNodeFlakyTestPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findnodeflakytestpatterns)
+  * **Find Node.js flaky test patterns**
+  * Detect patterns that commonly cause flaky tests in JavaScript and TypeScript code, including static waits (setTimeout, setInterval), prototype mutation, and shared mutable state (module-scope let/var declarations).
+* [io.moderne.prethink.testing.quality.FindNodeFragileTestData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findnodefragiletestdata)
+  * **Find Node.js fragile test data**
+  * Detect hardcoded dates, timing-dependent assertions, and hardcoded ports in JavaScript and TypeScript test files.
+* [io.moderne.prethink.testing.quality.FindNodeGhostTests](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findnodeghosttests)
+  * **Find Node.js ghost tests**
+  * Detect skipped tests in JavaScript and TypeScript test files. Flags xtest(), xit(), test.skip(), it.skip(), and describe.skip() calls that lack a documented reason in their description.
+* [io.moderne.prethink.testing.quality.FindNodeSilentTestFailures](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findnodesilenttestfailures)
+  * **Find Node.js silent test failures**
+  * Detect silent test failures in JavaScript and TypeScript test files including empty .catch() handlers and test functions missing expect() calls.
+* [io.moderne.prethink.testing.quality.FindNodeTestCodeSmells](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findnodetestcodesmells)
+  * **Find Node.js test code smells**
+  * Detect code smells in JavaScript and TypeScript test files including empty catch blocks and magic numbers.
+* [io.moderne.prethink.testing.quality.FindNodeUnmockedExternalCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findnodeunmockedexternalcalls)
+  * **Find unmocked external calls in Node.js tests**
+  * Detect direct HTTP, database, and network calls in JavaScript/TypeScript test files that are not mocked. Integration and e2e test files are excluded.
+* [io.moderne.prethink.testing.quality.FindOverlyBroadMocks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findoverlybroadmocks)
+  * **Find overly broad mocks**
+  * Detect Mockito stubbing or verification calls that use 3 or more any() matchers, which can hide incorrect arguments and reduce test effectiveness.
+* [io.moderne.prethink.testing.quality.FindSilentTestFailures](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findsilenttestfailures)
+  * **Find silent test failures**
+  * Detect silent test failures including Java assert keyword usage, swallowed exceptions in try/catch blocks, and test methods missing assertions.
+* [io.moderne.prethink.testing.quality.FindTestCodeSmells](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findtestcodesmells)
+  * **Find test code smells**
+  * Detect code smells in test files including empty catch blocks, deprecated test APIs, magic numbers, and poorly named test methods.
+* [io.moderne.prethink.testing.quality.FindUnmockedExternalCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/quality/findunmockedexternalcalls)
+  * **Find unmocked external calls in tests**
+  * Detect direct HTTP, database, and network calls in unit tests that are not mocked. These cause flaky and slow tests. Integration tests (annotated with @SpringBootTest, @Testcontainers, etc.) are excluded.
 
 ### rewrite-program-analysis
 
@@ -456,21 +2736,36 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.analysis.java.dataflow.FindDeadStores](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/dataflow/finddeadstores)
   * **Find dead stores**
   * Identifies variable assignments whose values are never used before being overwritten or going out of scope.
+* [org.openrewrite.analysis.java.dataflow.FindUnclosedResources](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/dataflow/findunclosedresources)
+  * **Find unclosed resources (S2095)**
+  * Identifies resources implementing AutoCloseable/Closeable that are opened but not properly closed on all execution paths. Unclosed resources can lead to resource leaks that degrade application performance and stability.
 * [org.openrewrite.analysis.java.datalineage.TrackDataLineage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/datalineage/trackdatalineage)
   * **Track data lineage**
-  * Tracks the flow of data from database sources (JDBC queries, JPA entities) to API sinks (REST endpoints, GraphQL mutations) to understand data dependencies and support compliance requirements.
+  * Tracks the flow of data from database sources to API sinks to understand data dependencies and support compliance requirements.  ## Prerequisites for detecting a data flow  All of the following conditions must be met for the recipe to report a flow:  1. The source code must contain at least one method call matching a recognized **source** (see below). 2. The source code must contain at least one method call matching a recognized **sink** (see below). 3. The tainted data must propagate from the source to the sink through variable assignments within the same method or via fields across methods in the same compilation unit. 4. No **flow breaker** (see below) may appear on the path between source and sink. 5. The relevant library types (e.g., `java.sql.ResultSet`, `javax.ws.rs.core.Response`) must be on the classpath so that OpenRewrite can resolve types. If types are unresolved, method matchers will not trigger and no flows will be detected.  ## Recognized sources (database reads)  | Category | Classes | | --- | --- | | JDBC | `java.sql.ResultSet` | | JPA (javax) | `javax.persistence.EntityManager`, `Query`, `TypedQuery` | | JPA (jakarta) | `jakarta.persistence.EntityManager`, `Query`, `TypedQuery` | | Hibernate | `org.hibernate.Session`, `org.hibernate.query.Query` | | Spring Data | `org.springframework.data.repository.CrudRepository` | | Spring JDBC | `org.springframework.jdbc.core.JdbcTemplate` | | MyBatis | `org.apache.ibatis.session.SqlSession`, `org.mybatis.spring.SqlSessionTemplate` | | MongoDB | `com.mongodb.client.MongoCollection`, `org.springframework.data.mongodb.core.MongoTemplate` | | Redis | `redis.clients.jedis.Jedis`, `org.springframework.data.redis.core.RedisTemplate`, `ValueOperations`, `HashOperations` | | Cassandra | `com.datastax.driver.core.Session`, `org.springframework.data.cassandra.core.CassandraTemplate` | | Elasticsearch | `org.elasticsearch.client.RestHighLevelClient`, `org.springframework.data.elasticsearch.core.ElasticsearchTemplate` | | Heuristic | Any class with `Repository`, `Dao`, or `Mapper` in its name calling methods starting with find, get, query, search, load, fetch, or select |  ## Recognized sinks (API responses)  | Category | Classes | | --- | --- | | JAX-RS (javax) | `javax.ws.rs.core.Response`, `Response.ResponseBuilder` | | JAX-RS (jakarta) | `jakarta.ws.rs.core.Response`, `Response.ResponseBuilder` | | Spring MVC | `org.springframework.http.ResponseEntity`, `ResponseEntity.BodyBuilder` | | Servlet (javax) | `javax.servlet.http.HttpServletResponse`, `javax.servlet.ServletOutputStream` | | Servlet (jakarta) | `jakarta.servlet.http.HttpServletResponse`, `jakarta.servlet.ServletOutputStream` | | Java I/O | `java.io.PrintWriter`, `java.io.Writer`, `java.io.OutputStream` | | Jackson | `com.fasterxml.jackson.databind.ObjectMapper`, `com.fasterxml.jackson.core.JsonGenerator` | | Gson | `com.google.gson.Gson`, `com.google.gson.JsonWriter` | | GraphQL | `graphql.schema.DataFetcher`, `graphql.schema.PropertyDataFetcher` | | Spring WebFlux | `ServerResponse`, `reactor.core.publisher.Mono`, `reactor.core.publisher.Flux` | | gRPC | `io.grpc.stub.StreamObserver` | | WebSocket | `javax.websocket.Session`, `RemoteEndpoint.Basic`, `jakarta.websocket.*`, `org.springframework.web.socket.WebSocketSession` |  ## Flow breakers  Flows are broken by methods matching common sanitization patterns (anonymize, redact, mask, encrypt, hash, sanitize, etc.) or authorization checks (isAuthorized, hasPermission, hasRole, etc.).
 * [org.openrewrite.analysis.java.privacy.FindPiiExposure](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/privacy/findpiiexposure)
   * **Find PII exposure in logs and external APIs**
   * Detects when Personally Identifiable Information (PII) is exposed through logging statements or sent to external APIs without proper sanitization. This helps prevent data leaks and ensures compliance with privacy regulations like GDPR and CCPA.
+* [org.openrewrite.analysis.java.security.FindArrayIndexInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findarrayindexinjection)
+  * **Find improper validation of array index**
+  * Detects when user-controlled input flows into array or collection index expressions without proper bounds validation, which could allow out-of-bounds access or denial of service (CWE-129).
 * [org.openrewrite.analysis.java.security.FindCommandInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findcommandinjection)
   * **Find command injection vulnerabilities**
   * Detects when user-controlled input flows into system command execution methods like Runtime.exec() or ProcessBuilder, which could allow attackers to execute arbitrary commands.
+* [org.openrewrite.analysis.java.security.FindJndiInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findjndiinjection)
+  * **Find JNDI injection vulnerabilities**
+  * Detects when user-controlled input flows into JNDI lookup operations without proper validation, which could allow an attacker to connect to malicious naming/directory services (CWE-99).
 * [org.openrewrite.analysis.java.security.FindLdapInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findldapinjection)
   * **Find LDAP injection vulnerabilities**
   * Finds LDAP injection vulnerabilities by tracking tainted data flow from user input to LDAP queries.
+* [org.openrewrite.analysis.java.security.FindLogInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findloginjection)
+  * **Find log injection vulnerabilities**
+  * Detects when user-controlled input flows into logging methods without sanitization, which could allow attackers to forge log entries by injecting newline characters.
 * [org.openrewrite.analysis.java.security.FindPathTraversal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findpathtraversal)
   * **Find path traversal vulnerabilities**
   * Detects potential path traversal vulnerabilities where user input flows to file system operations without proper validation.
+* [org.openrewrite.analysis.java.security.FindProcessControlInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findprocesscontrolinjection)
+  * **Find process control vulnerabilities**
+  * Detects when user-controlled input flows into native library loading methods without proper validation, which could allow an attacker to load arbitrary native code (CWE-114).
 * [org.openrewrite.analysis.java.security.FindSecurityVulnerabilities](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findsecurityvulnerabilities)
   * **Find security vulnerabilities using taint analysis**
   * Identifies potential security vulnerabilities where untrusted data from sources flows to sensitive sinks without proper sanitization.
@@ -480,12 +2775,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.analysis.java.security.FindUnencryptedPiiStorage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findunencryptedpiistorage)
   * **Find unencrypted PII storage**
   * Identifies when personally identifiable information (PII) is stored in databases, files, or other persistent storage without encryption.
+* [org.openrewrite.analysis.java.security.FindUnsafeReflectionInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findunsafereflectioninjection)
+  * **Find unsafe reflection vulnerabilities**
+  * Detects when user-controlled input flows into reflection-based class loading or instantiation without proper validation, which could allow an attacker to instantiate arbitrary classes (CWE-470).
 * [org.openrewrite.analysis.java.security.FindXssVulnerability](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findxssvulnerability)
   * **Find XSS vulnerabilities**
   * Detects potential cross-site scripting vulnerabilities where user input flows to output methods without proper sanitization.
 * [org.openrewrite.analysis.java.security.FindXxeVulnerability](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findxxevulnerability)
   * **Find XXE vulnerabilities**
   * Locates XML parsers that are not configured to prevent XML External Entity (XXE) attacks.
+* [org.openrewrite.analysis.java.security.SanitizeLogInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/sanitizeloginjection)
+  * **Sanitize log injection vulnerabilities**
+  * Sanitizes user-controlled input before it flows into logging methods by stripping newline, carriage return, and tab characters that could enable log forging.
 
 ### rewrite-react
 
@@ -677,13 +2978,16 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Adds a TODO comment to classes implementing the deprecated `ReactorNettyHttpClientMapper` interface. Migration to `ClientHttpConnectorBuilderCustomizer&lt;ReactorClientHttpConnectorBuilder&gt;` requires wrapping the HttpClient configuration in `builder.withHttpClientCustomizer(...)`.
 * [io.moderne.java.spring.boot4.InsertPropertyMapperAlwaysMethodInvocation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/insertpropertymapperalwaysmethodinvocation)
   * **Preserve `PropertyMapper` null-passing behavior**
-  * Spring Boot 4.0 changes the `PropertyMapper` behavior so that `from()` no longer calls `to()` when the source value is `null`. This recipe inserts `.always()` before terminal mapping methods to preserve the previous behavior.
+  * Spring Boot 4.0 changes the `PropertyMapper` behavior so that `from()` no longer calls `to()` when the source value is `null`. This recipe inserts `.always()` before terminal mapping methods to preserve the previous behavior. Chains that already contain `.whenNonNull()` or `.alwaysApplyingWhenNonNull()` are skipped, as they explicitly opted into null-skipping behavior which is now the default.
 * [io.moderne.java.spring.boot4.MigrateHazelcastSpringSession](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratehazelcastspringsession)
   * **Migrate Spring Session Hazelcast to Hazelcast Spring Session**
   * Spring Boot 4.0 removed direct support for Spring Session Hazelcast. The Hazelcast team now maintains their own Spring Session integration. This recipe changes the dependency from `org.springframework.session:spring-session-hazelcast` to `com.hazelcast.spring:hazelcast-spring-session` and updates the package from `org.springframework.session.hazelcast` to `com.hazelcast.spring.session`.
 * [io.moderne.java.spring.boot4.MigrateMockMvcToAssertJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratemockmvctoassertj)
   * **Migrate MockMvc to AssertJ assertions**
   * Migrates Spring MockMvc tests from Hamcrest-style `andExpect()` assertions to AssertJ-style fluent assertions. Changes `MockMvc` to `MockMvcTester` and converts assertion chains.
+* [io.moderne.java.spring.boot4.MigratePropertyMapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratepropertymapper)
+  * **Migrate `PropertyMapper` API for Spring Boot 4.0**
+  * Migrates `PropertyMapper` usage to accommodate Spring Boot 4.0 behavioral changes. In Boot 4.0, `PropertyMapper.from()` no longer calls `to()` when the source value is `null`. This recipe first inserts `.always()` on bare chains to preserve null-passing behavior, then removes the now-redundant `.whenNonNull()` and `.alwaysApplyingWhenNonNull()` calls. Guarded by a Spring Boot &lt; 4.0 precondition so that on subsequent recipe cycles (after the version is bumped by the parent migration recipe), this recipe becomes a no-op — preventing it from incorrectly adding `.always()` to chains that just had `.whenNonNull()` stripped.
 * [io.moderne.java.spring.boot4.MigrateRestAssured](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migraterestassured)
   * **Add explicit version for REST Assured**
   * REST Assured is no longer managed by Spring Boot 4.0. This recipe adds an explicit version to REST Assured dependencies.
@@ -878,10 +3182,13 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Spring Framework 7.0 removes Theme support entirely. This recipe identifies usages of Theme-related classes like `ThemeResolver`, `ThemeSource`, and `ThemeChangeInterceptor` that need to be removed or replaced with CSS-based alternatives. The Spring team recommends using CSS directly for theming functionality.
 * [io.moderne.java.spring.framework7.MigrateDeprecatedAPIs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratedeprecatedapis)
   * **Migrate deprecated APIs removed in Spring Framework 7.0**
-  * Migrates deprecated APIs that were removed in Spring Framework 7.0. This includes ListenableFuture to CompletableFuture migration.
+  * Migrates deprecated APIs that were removed in Spring Framework 7.0. This includes ListenableFuture to CompletableFuture migration, ContentCachingRequestWrapper constructor changes, and NestedServletException to ServletException type migration.
 * [io.moderne.java.spring.framework7.MigrateHttpStatusToRfc9110](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratehttpstatustorfc9110)
   * **Migrate `HttpStatus` enum values to RFC 9110 names**
   * Spring Framework 7.0 aligns HttpStatus enum values with RFC 9110. This recipe replaces deprecated status code constants with their RFC 9110 equivalents: `PAYLOAD_TOO_LARGE` becomes `CONTENT_TOO_LARGE` and `UNPROCESSABLE_ENTITY` becomes `UNPROCESSABLE_CONTENT`.
+* [io.moderne.java.spring.framework7.MigrateJackson2ObjectMapperBuilder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratejackson2objectmapperbuilder)
+  * **Migrate `Jackson2ObjectMapperBuilder` to mapper builder pattern**
+  * Replaces `Jackson2ObjectMapperBuilder.json().build()` and similar factory methods with the corresponding Jackson mapper builder pattern (e.g. `JsonMapper.builder()...build()`). Setter calls on the resulting mapper are folded into the builder chain when safe, or annotated with a TODO comment when automatic migration is not possible.
 * [io.moderne.java.spring.framework7.MigrateJmsDestinationResolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratejmsdestinationresolver)
   * **Preserve DynamicDestinationResolver behavior for JmsTemplate**
   * Spring Framework 7.0 changed the default `DestinationResolver` for `JmsTemplate` from `DynamicDestinationResolver` to `SimpleDestinationResolver`, which caches Session-resolved Queue and Topic instances. This recipe explicitly configures `DynamicDestinationResolver` to preserve the pre-7.0 behavior. The caching behavior of `SimpleDestinationResolver` should be fine for most JMS brokers, so this explicit configuration can be removed once verified.
@@ -912,6 +3219,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework7.UpgradeSpringFramework_7_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/upgradespringframework_7_0)
   * **Migrate to Spring Framework 7.0**
   * Migrates applications to Spring Framework 7.0. This recipe applies all necessary changes including API migrations, removed feature detection, and configuration updates.
+* [io.moderne.java.spring.framework7.WrapGenericMessageMapInMessageHeaders](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/wrapgenericmessagemapinmessageheaders)
+  * **Wrap `GenericMessage` map argument in `MessageHeaders`**
+  * Wraps the `Map` argument in `GenericMessage` constructors in Kotlin sources with `MessageHeaders(map)` to explicitly use the `MessageHeaders` overload. This resolves Kotlin overload resolution ambiguity between the `Map` and `MessageHeaders` constructor overloads.
 * [io.moderne.java.spring.hibernate.MigrateDaoSupportGetSession](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/hibernate/migratedaosupportgetsession)
   * **Migrate `HibernateDaoSupport#getSession()` usage**
   * Migrate `HibernateDaoSupport#getSession()` usage to `HibernateDaoSupport#getSessionFactory()#getCurrentSession()` and annotate the methods with `@Transactional`.
@@ -954,6 +3264,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.security7.MigrateOAuth2RestOperationsToRestClient](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/migrateoauth2restoperationstorestclient)
   * **Migrate OAuth2 token response client from `RestOperations` to `RestClient`**
   * Migrates `setRestOperations(RestOperations)` calls to `setRestClient(RestClient)` on the new `RestClient`-based OAuth2 `AccessTokenResponseClient` implementations. The `RestClient`-based implementations introduced in Spring Security 7 use `RestClient` instead of `RestOperations`.
+* [io.moderne.java.spring.security7.MigrateRequiresChannelToRedirectToHttps](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/migraterequireschanneltoredirecttohttps)
+  * **Migrate `requiresChannel()` to `redirectToHttps()`**
+  * In Spring Security 7.0, `HttpSecurity.requiresChannel()` is deprecated in favor of `HttpSecurity.redirectToHttps()`. This recipe renames the method call and simplifies `anyRequest().requiresSecure()` to `Customizer.withDefaults()`.
 * [io.moderne.java.spring.security7.ModularizeSpringSecurity7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/modularizespringsecurity7)
   * **Spring Security 7 modularization**
   * Spring Security Core was modularized in version 7, deprecated classes that are still a crucial part of some applications are moved to `spring-security-access`.
@@ -1007,13 +3320,13 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 * [org.openrewrite.python.AddDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/adddependency)
   * **Add Python dependency**
-  * Add a dependency to the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+  * Add a dependency to a Python project. Supports `pyproject.toml` (with scope/group targeting), `requirements.txt`, and `Pipfile`. When `uv` is available, the `uv.lock` file is regenerated.
 * [org.openrewrite.python.AddLiteralMethodArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/addliteralmethodargument)
   * **Add literal method argument**
   * Add a literal argument to method invocations matching a pattern.
 * [org.openrewrite.python.ChangeDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changedependency)
   * **Change Python dependency**
-  * Change a dependency to a different package in `pyproject.toml`. Searches all dependency arrays. When `uv` is available, the `uv.lock` file is regenerated.
+  * Change a dependency to a different package. Supports `pyproject.toml`, `requirements.txt`, and `Pipfile`. Searches all dependency scopes. When `uv` is available, the `uv.lock` file is regenerated.
 * [org.openrewrite.python.ChangeImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changeimport)
   * **Change import**
   * Change a Python import from one module/name to another, updating all type attributions.
@@ -1031,7 +3344,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Remove an argument from method invocations matching a pattern.
 * [org.openrewrite.python.RemoveDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/removedependency)
   * **Remove Python dependency**
-  * Remove a dependency from the `[project].dependencies` array in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+  * Remove a dependency from a Python project. Supports `pyproject.toml` (with scope/group targeting), `requirements.txt`, and `Pipfile`. When `uv` is available, the `uv.lock` file is regenerated.
 * [org.openrewrite.python.RemovePass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/removepass)
   * **Remove redundant pass statements**
   * Remove redundant `pass` statements from Python code when there are other executable statements in the block.
@@ -1040,10 +3353,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Reorder arguments in method invocations matching a pattern.
 * [org.openrewrite.python.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/upgradedependencyversion)
   * **Upgrade Python dependency version**
-  * Upgrade the version constraint for a dependency in `[project].dependencies` in `pyproject.toml`. When `uv` is available, the `uv.lock` file is regenerated.
+  * Upgrade the version constraint for a dependency. Supports `pyproject.toml` (with scope/group targeting), `requirements.txt`, and `Pipfile`. When `uv` is available, the `uv.lock` file is regenerated.
 * [org.openrewrite.python.UpgradeTransitiveDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/upgradetransitivedependencyversion)
   * **Upgrade transitive Python dependency version**
-  * Pin a transitive dependency version using the appropriate strategy for the detected package manager: uv uses `[tool.uv].constraint-dependencies`, PDM uses `[tool.pdm.overrides]`, and other managers add a direct dependency.
+  * Pin a transitive dependency version using the strategy appropriate for the file type and package manager. For `pyproject.toml`: uv uses `[tool.uv].constraint-dependencies`, PDM uses `[tool.pdm.overrides]`, and other managers add a direct dependency. For `requirements.txt` and `Pipfile`: appends the dependency.
 * [org.openrewrite.python.format.PythonSpaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/format/pythonspaces)
   * **Formats spaces in Python code**
   * Standardizes spaces in Python code. Currently limited to formatting method arguments.
@@ -1235,7 +3548,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-03-23T1116.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-04-06T1118.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -1269,6 +3582,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.Owasp2025A04](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a04)
   * **Remediate OWASP A04:2025 Cryptographic failures**
   * OWASP [A04:2025](https://owasp.org/Top10/2025/A04_2025-Cryptographic_Failures/) describes failures related to cryptography (or lack thereof), which often lead to exposure of sensitive data. Previously A02:2021.
+* [org.openrewrite.java.security.Owasp2025A05](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a05)
+  * **Remediate OWASP A05:2025 Injection**
+  * OWASP [A05:2025](https://owasp.org/Top10/2025/A05_2025-Injection/) describes failures related to user-supplied data being used to influence program state to operate outside of its intended bounds. Previously A03:2021.
 * [org.openrewrite.java.security.OwaspA01](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa01)
   * **Remediate OWASP A01:2021 Broken access control**
   * OWASP [A01:2021](https://owasp.org/Top10/A01_2021-Broken_Access_Control/) describes failures related to broken access control.
@@ -1323,9 +3639,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.marshalling.SecureSnakeYamlConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/marshalling/securesnakeyamlconstructor)
   * **Secure the use of SnakeYAML's constructor**
   * See the [paper](https://github.com/mbechler/marshalsec) on this subject.
+* [org.openrewrite.java.security.search.FindCommandInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findcommandinjection)
+  * **Find OS command injection vectors**
+  * Finds calls to `Runtime.exec(String)` which passes the command through a shell interpreter, enabling command injection via metacharacters like `;`, `|`, and `&amp;&amp;`. Use the `String[]` overload instead to avoid shell interpretation.
+* [org.openrewrite.java.security.search.FindExpressionLanguageInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findexpressionlanguageinjection)
+  * **Find Expression Language injection vectors**
+  * Finds calls to Expression Language (EL) evaluation methods which, when the expression is built from user input, can allow arbitrary code execution. Use parameterized expressions or input validation instead.
 * [org.openrewrite.java.security.search.FindHardcodedIv](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findhardcodediv)
   * **Find hardcoded initialization vectors**
   * Finds `IvParameterSpec` constructed with hardcoded byte arrays or string literals. A static IV makes CBC and other modes deterministic, enabling chosen-plaintext attacks. IVs should be generated randomly using `SecureRandom` for each encryption operation.
+* [org.openrewrite.java.security.search.FindHttpResponseSplitting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findhttpresponsesplitting)
+  * **Find HTTP response splitting vectors**
+  * Finds calls to `HttpServletResponse.addHeader()`, `setHeader()`, and `addCookie()` which, when header values are derived from user input without CRLF sanitization, can allow HTTP response splitting attacks. Full taint-based detection requires rewrite-program-analysis; this recipe identifies the sink call sites for manual review.
 * [org.openrewrite.java.security.search.FindInadequateKeySize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinadequatekeysize)
   * **Find inadequate cryptographic key sizes**
   * Finds cryptographic key generation with inadequate key sizes. RSA keys should be at least 2048 bits, DSA keys at least 2048 bits, EC keys at least 256 bits, and symmetric keys (AES) at least 128 bits. NIST recommends RSA-2048+ and AES-128+ as minimum for all new applications.
@@ -1338,12 +3663,27 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindPredictableSalt](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findpredictablesalt)
   * **Find predictable cryptographic salts**
   * Finds `PBEParameterSpec` and `PBEKeySpec` constructed with hardcoded salt byte arrays. A predictable salt undermines the purpose of salting, making rainbow table and precomputation attacks feasible. Salts should be generated randomly using `SecureRandom`.
+* [org.openrewrite.java.security.search.FindProcessControl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findprocesscontrol)
+  * **Find process control vectors**
+  * Finds calls to `System.loadLibrary()`, `System.load()`, and `Runtime.load()` which, when the library path or name is derived from user input, can allow an attacker to load arbitrary native code. Ensure library names are not externally controlled.
+* [org.openrewrite.java.security.search.FindResourceInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findresourceinjection)
+  * **Find resource injection vectors**
+  * Detects resource injection vulnerabilities where user-controlled input flows to resource access operations — file paths, JNDI lookups, class loading, and native library loading. Uses taint analysis from rewrite-program-analysis for source-to-sink tracking with sanitizer support, plus structural detection as fallback.
 * [org.openrewrite.java.security.search.FindRsaWithoutOaep](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findrsawithoutoaep)
   * **Find RSA encryption without OAEP padding**
   * Finds uses of RSA encryption with PKCS#1 v1.5 padding or no padding specification. RSA without OAEP padding is vulnerable to padding oracle attacks. Use `RSA/ECB/OAEPWithSHA-256AndMGF1Padding` or equivalent OAEP mode instead.
+* [org.openrewrite.java.security.search.FindScriptEngineInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findscriptengineinjection)
+  * **Find script engine code injection vectors**
+  * Finds calls to `ScriptEngine.eval()` which can execute arbitrary code if the script string is influenced by user input. Consider sandboxing or removing dynamic script evaluation.
 * [org.openrewrite.java.security.search.FindSensitiveApiEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findsensitiveapiendpoints)
   * **Find sensitive API endpoints**
   * Find data models exposed by REST APIs that contain sensitive information like PII and secrets.
+* [org.openrewrite.java.security.search.FindSqlInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findsqlinjection)
+  * **Find potential SQL injection**
+  * Finds SQL query methods where the query string is constructed via string concatenation, which may indicate SQL injection vulnerabilities. Use parameterized queries or prepared statements instead.
+* [org.openrewrite.java.security.search.FindUnsafeReflection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findunsafereflection)
+  * **Find unsafe reflection vectors**
+  * Finds calls to `Class.forName()` which, when the class name is derived from user input, can allow an attacker to instantiate arbitrary classes. Review these call sites to ensure the class name is not externally controlled.
 * [org.openrewrite.java.security.search.FindVulnerableJacksonJsonTypeInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findvulnerablejacksonjsontypeinfo)
   * **Find vulnerable uses of Jackson `@JsonTypeInfo`**
   * Identify where attackers can deserialize gadgets into a target field.
@@ -1353,6 +3693,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindWeakPasswordHashing](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findweakpasswordhashing)
   * **Find weak password hashing**
   * Finds uses of `MessageDigest.getInstance()` with algorithms unsuitable for password hashing (MD5, SHA-1, SHA-256, SHA-384, SHA-512). Passwords should be hashed with a purpose-built password hashing function such as bcrypt, scrypt, Argon2, or PBKDF2 that includes a salt and a tunable work factor.
+* [org.openrewrite.java.security.search.FindXPathInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findxpathinjection)
+  * **Find XPath injection vectors**
+  * Finds calls to `XPath.evaluate()` and `XPath.compile()` which, when the expression is built from user input, can allow XPath injection attacks. Use parameterized XPath expressions or input validation instead.
 * [org.openrewrite.java.security.secrets.FindArtifactorySecrets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/secrets/findartifactorysecrets)
   * **Find Artifactory secrets**
   * Locates Artifactory secrets stored in plain text in code.
@@ -1457,7 +3800,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Removes the debug attribute from @EnableWebSecurity annotations to prevent sensitive security information from being logged in production.
 * [org.openrewrite.python.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable PyPI dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.  ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source.
 * [org.openrewrite.recipe.rewrite-java-security.InlineDeprecatedMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-java-security/inlinedeprecatedmethods)
   * **Inline deprecated delegating methods**
   * Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class.
