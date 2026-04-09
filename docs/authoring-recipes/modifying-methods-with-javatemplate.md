@@ -283,7 +283,7 @@ If your import is _not_ part of the JDK itself, you will need to specify a class
 Please note that you'll need to update your `build.gradle` or `pom.xml` file as described in the [using multiple versions of a library in a project guide](multiple-versions.md) to support this functionality.
 :::
 
-With that template defined, we can now use it to replace the existing parameters via the `apply()` function. The `apply` function expects a [cursor](../concepts-and-explanations/visitors.md#cursoring), some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier).
+With that template defined, we can now use it to replace the existing parameters via the `apply()` function. The `apply` function expects a [cursor](../concepts-and-explanations/cursors.md#working-with-cursors-in-visitors), some coordinates (where our template should be applied), and then 0 or more optional parameters (which will replace the interpolation marker we specified earlier).
 
 There are three options for the cursor parameter:
 
