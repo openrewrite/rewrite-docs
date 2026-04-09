@@ -147,6 +147,30 @@ rootProject {
     }
 }`;
 
+  // Gradle init script snippet (Kotlin)
+  const gradleInitKts = `initscript {
+    repositories {
+        maven { url = uri("https://plugins.gradle.org/m2") }
+    }
+    dependencies { classpath("org.openrewrite:plugin:${gradlePluginVersion}") }
+}
+rootProject {
+    plugins.apply(org.openrewrite.gradle.RewritePlugin::class.java)
+    dependencies {
+        rewrite("${needsDependency ? `${groupId}:${artifactId}:${version}` : 'org.openrewrite:rewrite-java'}")
+    }
+    extensions.configure<org.openrewrite.gradle.RewriteExtension> {
+        activeRecipe("${activeRecipeName}")${dataTableGradleConfig}
+    }
+    afterEvaluate {
+        if (repositories.isEmpty()) {
+            repositories {
+                mavenCentral()
+            }
+        }
+    }
+}`;
+
   // Maven POM snippet
   const mavenPom = `<project>
   <build>
@@ -216,6 +240,24 @@ rootProject {
                 Run the recipe.
                 <CodeBlock language="shell" title="shell">
                   gradle --init-script init.gradle rewriteRun
+                </CodeBlock>
+              </li>
+            </ol>
+          </TabItem>
+        )}
+        {showGradle && !requiresConfiguration && (
+          <TabItem value="gradle-init-script-kts" label="Gradle init script (Kotlin)">
+            <ol>
+              <li>
+                Create a file named <code>init.gradle.kts</code> in the root of your project.
+                <CodeBlock language="kotlin" title="init.gradle.kts">
+                  {gradleInitKts}
+                </CodeBlock>
+              </li>
+              <li>
+                Run the recipe.
+                <CodeBlock language="shell" title="shell">
+                  gradle --init-script init.gradle.kts rewriteRun
                 </CodeBlock>
               </li>
             </ol>
