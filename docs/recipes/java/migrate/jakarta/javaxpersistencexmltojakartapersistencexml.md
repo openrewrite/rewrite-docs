@@ -29,6 +29,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../core/findsourcefiles)
+  * filePattern: `**/persistence.xml`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `//property`
   * attributeName: `name`
@@ -64,6 +72,10 @@ name: org.openrewrite.java.migrate.jakarta.JavaxPersistenceXmlToJakartaPersisten
 displayName: Migrate xmlns entries in `persistence.xml` files
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/persistence.xml
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: //property

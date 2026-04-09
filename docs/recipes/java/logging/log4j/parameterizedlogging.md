@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Parameterize logging statements](../../../java/logging/parameterizedlogging)
   * methodPattern: `org.apache.logging.log4j.Logger info(..)`
 * [Parameterize logging statements](../../../java/logging/parameterizedlogging)
@@ -77,6 +83,8 @@ description: |
 tags:
   - logging
   - log4j
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.ParameterizedLogging:
       methodPattern: org.apache.logging.log4j.Logger info(..)

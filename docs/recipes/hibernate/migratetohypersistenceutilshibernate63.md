@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../java/dependencies/changedependency)
   * oldGroupId: `io.hypersistence`
   * oldArtifactId: `hypersistence-utils-hibernate-62`
@@ -43,6 +49,8 @@ name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63
 displayName: Migrate Hibernate Types to Hypersistence Utils 6.3
 description: |
   This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: io.hypersistence

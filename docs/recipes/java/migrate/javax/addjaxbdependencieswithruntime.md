@@ -37,6 +37,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Add explicit JAXB API dependencies](../../../java/migrate/javax/addjaxbapidependencies)
 * [Use latest JAXB API and runtime for Jakarta EE 8](../../../java/migrate/javax/addjaxbruntime)
   * runtime: `glassfish`
@@ -66,6 +72,8 @@ tags:
   - javax
   - java11
   - jakarta
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javax.AddJaxbAPIDependencies
   - org.openrewrite.java.migrate.javax.AddJaxbRuntime:

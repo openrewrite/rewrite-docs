@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Use `Map#containsKey`](../staticanalysis/usemapcontainskey)
 
 </TabItem>
@@ -38,6 +44,8 @@ name: org.openrewrite.staticanalysis.JavaApiBestPractices
 displayName: Java API best practices
 description: |
   Use the Java standard library in a way that is most idiomatic.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.staticanalysis.UseMapContainsKey
 

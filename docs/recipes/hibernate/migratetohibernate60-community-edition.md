@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Migrate Hibernate dependencies to 6.0.x](../hibernate/migratetohibernatedependencies60)
 * [AddScalarPreferStandardBasicTypesForHibernate5](../hibernate/addscalarpreferstandardbasictypes)
 * [Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector`](../hibernate/emptyinterceptortointerface)
@@ -50,6 +56,8 @@ name: org.openrewrite.hibernate.MigrateToHibernate60
 displayName: Migrate to Hibernate 6.0.x (Community Edition)
 description: |
   This recipe will apply changes commonly needed when migrating to Hibernate 6.0.x. The hibernate dependencies will be updated to use the new `org.hibernate.orm` group ID and the recipe will make changes necessary to use Hibernate with Jakarta EE 9.0.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernateDependencies60
   - org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes

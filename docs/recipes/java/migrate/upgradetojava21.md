@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Java 17](../../java/migrate/upgradetojava17)
 * [Upgrade build to Java 21](../../java/migrate/upgradebuildtojava21)
 * [Remove extra semicolons](../../staticanalysis/removeextrasemicolons)
@@ -66,6 +72,8 @@ description: |
   This recipe will apply changes commonly needed when migrating to Java 21. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
 tags:
   - java21
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava17
   - org.openrewrite.java.migrate.UpgradeBuildToJava21

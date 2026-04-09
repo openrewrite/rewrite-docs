@@ -36,6 +36,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Add comment to method invocations](../../java/addcommenttomethodinvocations)
   * comment: `TODO: The transformation of Docket to OpenAPI is too complex to be adequately handled in a recipe. See https://springdoc.org/migrating-from-springfox.html for guidance.`
   * methodPattern: `springfox.documentation.spring.web.plugins.Docket <constructor>(..)`
@@ -65,6 +71,8 @@ tags:
   - openapi
   - springdoc
   - swagger
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO: The transformation of Docket to OpenAPI is too complex to be adequately handled in a recipe. See https://springdoc.org/migrating-from-springfox.html for guidance.

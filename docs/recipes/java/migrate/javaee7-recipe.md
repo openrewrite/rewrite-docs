@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Migrate to JavaEE6](../../java/migrate/javaee6)
 * [Removed OpenJPA providers in the persistence.xml file](../../java/migrate/javaee7/openjpapersistenceprovider)
 * [Disable the persistence unit second-level cache](../../java/migrate/jpacacheproperties)
@@ -54,6 +60,8 @@ description: |
 tags:
   - javaee7
   - deprecated
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javaee6
   - org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider

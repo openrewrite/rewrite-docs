@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Boot 2.6](../../../java/spring/boot2/upgradespringboot_2_6)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
@@ -95,6 +101,8 @@ name: org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
 displayName: Migrate to Spring Boot 2.7
 description: |
   Upgrade to Spring Boot 2.7.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_6
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

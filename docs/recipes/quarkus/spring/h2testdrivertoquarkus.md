@@ -37,6 +37,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `com.h2database`
+  * artifactIdPattern: `h2`
+  * scope: `test`
+
+**Recipes**
+
 * [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
   * groupId: `com.h2database`
   * artifactId: `h2`
@@ -64,6 +73,11 @@ tags:
   - test
   - quarkus
   - h2
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: com.h2database
+      artifactIdPattern: h2
+      scope: test
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: com.h2database

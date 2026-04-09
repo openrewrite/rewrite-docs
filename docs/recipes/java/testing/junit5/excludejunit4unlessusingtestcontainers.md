@@ -25,6 +25,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+* [Does not include Maven dependency](../../../maven/search/doesnotincludedependency)
+  * groupId: `org.testcontainers`
+  * artifactId: `*`
+  * version: `1.x`
+
+**Recipes**
+
 * [Exclude Maven dependency](../../../maven/excludedependency)
   * groupId: `junit`
   * artifactId: `junit`
@@ -40,6 +50,12 @@ name: org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers
 displayName: Exclude JUnit 4, unless Testcontainers is used
 description: |
   Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used.
+preconditions:
+  - org.openrewrite.Singleton
+  - org.openrewrite.maven.search.DoesNotIncludeDependency:
+      groupId: org.testcontainers
+      artifactId: "*"
+      version: 1.x
 recipeList:
   - org.openrewrite.maven.ExcludeDependency:
       groupId: junit

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Java version](../../java/migrate/upgradejavaversion)
   * version: `21`
 
@@ -45,6 +51,8 @@ description: |
   Updates build files to use Java 21 as the target/source.
 tags:
   - java21
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.UpgradeJavaVersion:
       version: 21

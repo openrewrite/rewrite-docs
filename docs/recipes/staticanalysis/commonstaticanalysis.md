@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Constructors of an `abstract` class should not be declared `public`](../staticanalysis/abstractclasspublicconstructor)
 * [Atomic Boolean, Integer, and Long equality checks compare their values](../staticanalysis/atomicprimitiveequalsusesget)
 * [`new BigDecimal(double)` should not be used](../staticanalysis/bigdecimaldoubleconstructorrecipe)
@@ -114,6 +120,8 @@ name: org.openrewrite.staticanalysis.CommonStaticAnalysis
 displayName: Common static analysis issues
 description: |
   Resolve common static analysis issues (also known as SAST issues).
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.staticanalysis.AbstractClassPublicConstructor
   - org.openrewrite.staticanalysis.AtomicPrimitiveEqualsUsesGet

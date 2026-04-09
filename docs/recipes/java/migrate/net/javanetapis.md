@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `java.net.MulticastSocket#setTimeToLive(int)`](../../../java/migrate/net/migratemulticastsocketsetttltosettimetolive)
 * [Use `java.net.MulticastSocket#getTimeToLive()`](../../../java/migrate/net/migratemulticastsocketgetttltogettimetolive)
 * [Use `java.net.HttpURLConnection.HTTP_INTERNAL_ERROR`](../../../java/migrate/net/migratehttpurlconnectionhttpservererrortohttpinternalerror)
@@ -52,6 +58,8 @@ description: |
   Certain Java networking APIs have become deprecated and their usages changed, necessitating usage changes.
 tags:
   - networking
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.net.MigrateMulticastSocketSetTTLToSetTimeToLive
   - org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLive

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Remove method invocations](../../../java/removemethodinvocations)
   * methodPattern: `jakarta.servlet.http.Cookie getComment()`
 * [Remove method invocations](../../../java/removemethodinvocations)
@@ -53,6 +59,8 @@ name: org.openrewrite.java.migrate.jakarta.ServletCookieBehaviorChangeRFC6265
 displayName: Remove `getComment` and `getVersion` methods
 description: |
   Jakarta Servlet methods have been deprecated for removal in Jakarta Servlet 6.0 to align with RFC 6265. In addition, the behavior of these methods has been changed so the setters no longer have any effect, the getComment methods return null, and the getVersion method returns 0. The deprecated methods are removed.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.RemoveMethodInvocations:
       methodPattern: jakarta.servlet.http.Cookie getComment()

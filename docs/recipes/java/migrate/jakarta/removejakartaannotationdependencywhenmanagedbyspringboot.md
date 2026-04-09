@@ -25,6 +25,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Project has no Jakarta annotations](../../../java/migrate/jakarta/hasnojakartaannotations)
+* [Dependency insight for Gradle and Maven](../../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.springframework.boot`
+  * artifactIdPattern: `spring-boot-starter`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
@@ -40,6 +50,12 @@ name: org.openrewrite.java.migrate.jakarta.RemoveJakartaAnnotationDependencyWhen
 displayName: Remove `jakarta.annotation-api` dependency when managed by Spring Boot
 description: |
   Best practice recipe to cleanup a direct dependency which also comes transitively for Spring Boot applications.
+preconditions:
+  - org.openrewrite.java.migrate.jakarta.HasNoJakartaAnnotations
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.springframework.boot
+      artifactIdPattern: spring-boot-starter
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: jakarta.annotation

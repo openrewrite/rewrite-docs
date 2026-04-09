@@ -34,6 +34,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/validation/*.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../../xml/changetagattribute)
   * elementName: `constraint-mappings`
   * attributeName: `version`
@@ -69,6 +76,9 @@ description: |
 tags:
   - validation-mapping
   - jakarta
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/validation/*.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: constraint-mappings

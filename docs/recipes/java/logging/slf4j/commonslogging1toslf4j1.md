@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Simplify a call chain](../../../java/simplifymethodchain)
   * methodPatternChain: `[org.apache.commons.logging.LogFactory getFactory(), org.apache.commons.logging.LogFactory getInstance(..)]`
   * newMethodName: `getLogger`
@@ -76,6 +82,8 @@ tags:
   - slf4j
   - logging
   - commons-logging
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.SimplifyMethodChain:
       methodPatternChain: [org.apache.commons.logging.LogFactory getFactory(), org.apache.commons.logging.LogFactory getInstance(..)]

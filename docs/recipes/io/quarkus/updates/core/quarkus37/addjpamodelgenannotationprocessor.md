@@ -25,6 +25,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find Maven dependency](../../../../../maven/search/finddependency)
+  * groupId: `org.hibernate.orm`
+  * artifactId: `hibernate-jpamodelgen`
+
+**Recipes**
+
 * [Add an annotation processor to the Maven Compiler plugin configuration](../../../../../io/quarkus/updates/core/quarkus37/addmavencompilerannotationprocessor)
   * groupId: `org.hibernate.orm`
   * artifactId: `hibernate-jpamodelgen`
@@ -42,6 +50,10 @@ name: io.quarkus.updates.core.quarkus37.AddJpaModelgenAnnotationProcessor
 displayName: io.quarkus.updates.core.quarkus37.AddJpaModelgenAnnotationProcessor
 description: |
   
+preconditions:
+  - org.openrewrite.maven.search.FindDependency:
+      groupId: org.hibernate.orm
+      artifactId: hibernate-jpamodelgen
 recipeList:
   - io.quarkus.updates.core.quarkus37.AddMavenCompilerAnnotationProcessor:
       groupId: org.hibernate.orm

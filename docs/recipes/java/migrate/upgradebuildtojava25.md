@@ -28,6 +28,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.jetbrains.kotlin`
+  * artifactIdPattern: `kotlin-stdlib*`
+  * version: `[0,2.3)`
+  * invertMarking: `true`
+
+**Recipes**
+
 * [Upgrade Java version](../../java/migrate/upgradejavaversion)
   * version: `25`
 
@@ -42,6 +52,12 @@ name: org.openrewrite.java.migrate.UpgradeBuildToJava25
 displayName: Upgrade build to Java 25 (default)
 description: |
   Upgrades build files to Java 25 for projects without Kotlin &lt;2.3.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.jetbrains.kotlin
+      artifactIdPattern: kotlin-stdlib*
+      version: [0,2.3)
+      invertMarking: true
 recipeList:
   - org.openrewrite.java.migrate.UpgradeJavaVersion:
       version: 25

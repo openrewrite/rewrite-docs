@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](../../../java/spring/framework/migratewebmvcconfigureradapter)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.security`
@@ -51,6 +57,8 @@ name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_0
 displayName: Migrate to Spring Framework 5.0
 description: |
   Migrate applications to the latest Spring Framework 5.0 release.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.framework.MigrateWebMvcConfigurerAdapter
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

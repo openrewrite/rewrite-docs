@@ -2771,7 +2771,7 @@ _1 recipe_
 
 ## jackson
 
-_29 recipes_
+_30 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -2868,6 +2868,10 @@ _29 recipes_
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
   * **Rename Jackson 2.x methods to 3.x equivalents**
   * Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
+  * Tags: jackson-3
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_ObjectNodeMethodRenames](/recipes/java/jackson/upgradejackson_2_3_objectnodemethodrenames.md)
+  * **Rename Jackson 2.x methods to 3.x equivalents for ObjectNode**
+  * Rename ObjectNode methods deprecated in Jackson 2 and removed in 3.x (`put(String, JsonNode)` to `set`, `putAll` to `setAll`).
   * Tags: jackson-3
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges](/recipes/java/jackson/upgradejackson_2_3_packagechanges.md)
   * **Update Jackson package names from 2.x to 3.x**

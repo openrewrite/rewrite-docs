@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Migrate to JSpecify](../../java/jspecify/migratetojspecify)
 * [Annotate methods which may return `null` with `@Nullable`](../../staticanalysis/annotatenullablemethods)
 * [Annotate null-checked method parameters with `@Nullable`](../../staticanalysis/annotatenullableparameters)
@@ -52,6 +58,8 @@ description: |
   Apply JSpecify best practices, such as migrating off of alternatives, and adding missing `@Nullable` annotations.
 tags:
   - java
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.jspecify.MigrateToJSpecify
   - org.openrewrite.staticanalysis.AnnotateNullableMethods

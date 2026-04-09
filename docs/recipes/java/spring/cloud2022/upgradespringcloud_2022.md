@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade dependencies to Spring Cloud 2022](../../../java/spring/cloud2022/dependencyupgrades)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](../../../java/spring/cloud2022/migratecloudsleuthtomicrometertracing)
 * [Migrate `@RequestMapping` on `FeignClient` to `@FeignClient` path attribute](../../../java/spring/cloud2022/migraterequestmappingonfeignclient)
@@ -52,6 +58,8 @@ description: |
 tags:
   - spring
   - cloud
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.cloud2022.DependencyUpgrades
   - org.openrewrite.java.spring.cloud2022.MigrateCloudSleuthToMicrometerTracing

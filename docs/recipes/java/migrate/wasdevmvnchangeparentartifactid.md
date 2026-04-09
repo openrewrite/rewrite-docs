@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change Maven parent](../../maven/changeparentpom)
   * oldGroupId: `net.wasdev.maven.parent`
   * oldArtifactId: `java8-parent`
@@ -42,6 +48,8 @@ name: org.openrewrite.java.migrate.WasDevMvnChangeParentArtifactId
 displayName: Change `net.wasdev.maven.parent:java8-parent` to `:parent`
 description: |
   This recipe changes the artifactId of the `&lt;parent&gt;` tag in the `pom.xml` from `java8-parent` to `parent`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.ChangeParentPom:
       oldGroupId: net.wasdev.maven.parent

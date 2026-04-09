@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../java/changemethodname)
   * methodPattern: `javax.net.ssl.SSLSession getPeerCertificateChain()`
   * newMethodName: `getPeerCertificates`
@@ -47,6 +53,8 @@ description: |
   The `javax.net.ssl.SSLSession.getPeerCertificateChain()` method implementation was removed from the SunJSSE provider and HTTP client implementation in Java SE 15. The default implementation will now throw an `UnsupportedOperationException`. Applications using this method should be updated to use the `javax.net.ssl.SSLSession.getPeerCertificates()` method instead.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: javax.net.ssl.SSLSession getPeerCertificateChain()

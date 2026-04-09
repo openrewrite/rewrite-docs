@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.junit.Assume assumeThat(..)`
   * fullyQualifiedTargetTypeName: `org.hamcrest.junit.MatcherAssume`
@@ -62,6 +68,8 @@ tags:
   - junit
   - testing
   - hamcrest
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.junit.Assume assumeThat(..)

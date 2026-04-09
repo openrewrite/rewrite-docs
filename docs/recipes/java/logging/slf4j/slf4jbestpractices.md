@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Unpack Logger method `new Object[] \{...\}` into varargs](../../../java/logging/argumentarraytovarargs)
 * [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass)
 * [SLF4J logging statements should begin with constants](../../../java/logging/slf4j/slf4jlogshouldbeconstant)
@@ -62,6 +68,8 @@ description: |
 tags:
   - slf4j
   - logging
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.ArgumentArrayToVarargs
   - org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass

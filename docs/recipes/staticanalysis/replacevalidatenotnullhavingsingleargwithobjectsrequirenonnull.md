@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Change method name](../java/changemethodname)
   * methodPattern: `org.apache.commons.lang3.Validate notNull(..)`
   * newMethodName: `requireNonNull`
@@ -47,6 +53,8 @@ name: org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingSingleArgWithOb
 displayName: Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`
 description: |
   Replace `org.apache.commons.lang3.Validate.notNull(Object)` with `Objects.requireNonNull(Object)`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.commons.lang3.Validate notNull(..)

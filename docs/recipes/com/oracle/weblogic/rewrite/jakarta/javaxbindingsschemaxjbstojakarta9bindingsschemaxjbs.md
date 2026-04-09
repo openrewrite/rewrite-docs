@@ -36,6 +36,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/*.xjb`
+
+**Recipes**
+
 * [Change XML attribute](../../../../../xml/changetagattribute)
   * elementName: `jaxb:bindings`
   * attributeName: `version`
@@ -97,6 +104,9 @@ tags:
   - xjb
   - bindings
   - jakarta
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/*.xjb
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: jaxb:bindings

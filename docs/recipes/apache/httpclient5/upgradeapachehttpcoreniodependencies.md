@@ -34,6 +34,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.apache.httpcomponents`
+  * artifactIdPattern: `httpcore-nio`
+
+**Recipes**
+
 * [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
   * groupId: `org.apache.httpcomponents.core5`
   * artifactId: `httpcore5`
@@ -57,6 +65,10 @@ description: |
 tags:
   - apache
   - httpclient
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.apache.httpcomponents
+      artifactIdPattern: httpcore-nio
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.apache.httpcomponents.core5

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentialsfortoolyaml)
   * tool: `flyway`
 * [Migrate flyway credentials](../../../java/spring/boot2/migratedatabasecredentialsfortoolproperties)
@@ -49,6 +55,8 @@ name: org.openrewrite.java.spring.boot2.MigrateDatabaseCredentials
 displayName: Migrate flyway and liquibase credentials
 description: |
   If you currently define a `spring.flyway.url` or `spring.liquibase.url` you may need to provide additional username and password properties. In earlier versions of Spring Boot, these settings were derived from `spring.datasource` properties but this turned out to be problematic for people that provided their own `DataSource` beans.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.MigrateDatabaseCredentialsForToolYaml:
       tool: flyway

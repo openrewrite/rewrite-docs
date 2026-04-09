@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Simplify a call chain](../java/simplifymethodchain)
   * methodPatternChain: `[java.util.Map keySet(), java.util.Set contains(..)]`
   * newMethodName: `containsKey`
@@ -40,6 +46,8 @@ name: org.openrewrite.staticanalysis.UseMapContainsKey
 displayName: Use `Map#containsKey`
 description: |
   `map.keySet().contains(a)` can be simplified to `map.containsKey(a)`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.SimplifyMethodChain:
       methodPatternChain: [java.util.Map keySet(), java.util.Set contains(..)]

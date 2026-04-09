@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Prefer `java.util.Optional#or(Supplier&lt;T extends java.util.Optional&lt;T&gt;&gt;)`](../../../java/migrate/guava/preferjavautiloptionalorsupplier)
 * [Prefer `java.util.Optional#orElse(null)` over `com.google.common.base.Optional#orNull()`](../../../java/migrate/guava/preferjavautiloptionalorelsenull)
 * [Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument](../../../java/migrate/guava/noguavaoptionalfromjavautil)
@@ -72,6 +78,8 @@ description: |
 tags:
   - RSPEC-S4738
   - guava
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrSupplier
   - org.openrewrite.java.migrate.guava.PreferJavaUtilOptionalOrElseNull

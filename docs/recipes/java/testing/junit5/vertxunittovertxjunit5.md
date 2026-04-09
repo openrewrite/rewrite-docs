@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension)
   * runners: `[io.vertx.ext.unit.junit.VertxUnitRunner]`
   * extension: `io.vertx.junit5.VertxExtension`
@@ -58,6 +64,8 @@ description: |
 tags:
   - junit
   - testing
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
       runners: [io.vertx.ext.unit.junit.VertxUnitRunner]

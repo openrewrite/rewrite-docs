@@ -36,6 +36,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/faces-config.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../../xml/changetagattribute)
   * elementName: `faces-config`
   * attributeName: `version`
@@ -69,6 +76,9 @@ tags:
   - jsf
   - faces-config
   - jakarta
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/faces-config.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: faces-config

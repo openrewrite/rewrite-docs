@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Remove elements from a method declaration `throws` clause](../../../java/removemethodthrows)
   * methodPattern: `org.springframework.security.config.annotation.SecurityConfigurer init(..)`
   * matchOverrides: `true`
@@ -57,6 +63,8 @@ description: |
 tags:
   - spring
   - security
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.RemoveMethodThrows:
       methodPattern: org.springframework.security.config.annotation.SecurityConfigurer init(..)

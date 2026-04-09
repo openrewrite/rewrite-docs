@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `com.sun.xml.internal.bind`
   * newPackageName: `com.sun.xml.bind`
@@ -47,6 +53,8 @@ description: |
   Do not use APIs from `com.sun.xml.internal.bind.*` packages.
 tags:
   - java11
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.sun.xml.internal.bind

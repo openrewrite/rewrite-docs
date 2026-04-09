@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `io.quarkus`
+  * artifactIdPattern: `quarkus-core`
+  * version: `(,3.8.3)`
+
+**Recipes**
+
 * [Quarkus Updates Aggregate 3.8.0](../quarkus/migratetoquarkus_v3_8_0)
 * [io.quarkus.updates.core.quarkus383.GraalSDK](../io/quarkus/updates/core/quarkus383/graalsdk)
 
@@ -43,6 +52,11 @@ name: org.openrewrite.quarkus.MigrateToQuarkus_v3_8_3
 displayName: Quarkus Updates Aggregate 3.8.3
 description: |
   Quarkus update recipes to upgrade your application to 3.8.3.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: io.quarkus
+      artifactIdPattern: quarkus-core
+      version: (,3.8.3)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_8_0
   - io.quarkus.updates.core.quarkus383.GraalSDK

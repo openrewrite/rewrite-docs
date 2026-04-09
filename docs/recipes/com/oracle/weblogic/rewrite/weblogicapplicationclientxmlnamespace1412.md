@@ -35,6 +35,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../core/findsourcefiles)
+  * filePattern: `**/application-client.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../xml/changetagattribute)
   * elementName: `weblogic-application-client`
   * attributeName: `xmlns`
@@ -63,6 +70,9 @@ tags:
   - schemas
   - weblogic
   - application-client
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/application-client.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: weblogic-application-client

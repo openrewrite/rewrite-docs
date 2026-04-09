@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Upgrade to SpringDoc 2.2](../../java/springdoc/upgradespringdoc_2_2)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springdoc`
@@ -52,6 +58,8 @@ description: |
   Upgrade to SpringDoc v2.5.
 tags:
   - springdoc
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_2_2
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

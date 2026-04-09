@@ -118,6 +118,7 @@ This recipe is used as part of the following composite recipes:
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](/recipes/java/jackson/upgradejackson_2_3_jsongeneratormethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonNode](/recipes/java/jackson/upgradejackson_2_3_jsonnodemethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonParser](/recipes/java/jackson/upgradejackson_2_3_jsonparsermethodrenames.md)
+* [Rename Jackson 2.x methods to 3.x equivalents for ObjectNode](/recipes/java/jackson/upgradejackson_2_3_objectnodemethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
 * [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](/recipes/java/testing/testcontainers/gethostmigration.md)

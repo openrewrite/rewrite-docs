@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.eclipse`
   * artifactId: `yasson`
@@ -41,6 +47,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies
 displayName: Update Eclipse Yasson Dependencies to 3.0.x
 description: |
   Update Eclipse Yasson Dependencies to 3.0.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.eclipse

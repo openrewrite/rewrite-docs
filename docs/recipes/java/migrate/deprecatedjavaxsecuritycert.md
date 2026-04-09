@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `javax.security.cert`
   * newPackageName: `java.security.cert`
@@ -46,6 +52,8 @@ description: |
   The `javax.security.cert` package has been deprecated for removal.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.security.cert

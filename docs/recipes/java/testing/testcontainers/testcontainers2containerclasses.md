@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.testcontainers.containers.BigQueryEmulatorContainer`
   * newFullyQualifiedTypeName: `org.testcontainers.gcloud.BigQueryEmulatorContainer`
@@ -173,6 +179,8 @@ name: org.openrewrite.java.testing.testcontainers.Testcontainers2ContainerClasse
 displayName: Testcontainers 2 container classes
 description: |
   Change Testcontainers container classes to their new package locations in Testcontainers 2.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.testcontainers.containers.BigQueryEmulatorContainer

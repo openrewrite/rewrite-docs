@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.ErrorController`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.servlet.error.ErrorController`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName
 displayName: Use `org.springframework.boot.web.servlet.error.ErrorController`
 description: |
   Use `org.springframework.boot.web.servlet.error.ErrorController` instead of the deprecated `org.springframework.boot.autoconfigure.web.ErrorController` in Spring Boot 2.0 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.ErrorController

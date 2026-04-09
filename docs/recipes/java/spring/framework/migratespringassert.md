@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Add a literal method argument](../../../java/addliteralmethodargument)
   * methodPattern: `org.springframework.util.Assert state(boolean)`
   * argumentIndex: `1`
@@ -89,6 +95,8 @@ name: org.openrewrite.java.spring.framework.MigrateSpringAssert
 displayName: Migrate removed Spring `Assert` methods
 description: |
   Assert methods without a message argument have been removed in Spring Framework 6.0.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.AddLiteralMethodArgument:
       methodPattern: org.springframework.util.Assert state(boolean)

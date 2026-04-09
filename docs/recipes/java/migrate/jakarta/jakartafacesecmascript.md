@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Find and replace](../../../text/findandreplace)
   * find: `javax.`
   * replace: `jakarta.`
@@ -63,6 +69,8 @@ tags:
   - faces
   - jsf
   - jakarta
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.text.FindAndReplace:
       find: javax.

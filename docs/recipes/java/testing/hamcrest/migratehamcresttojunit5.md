@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use consistent Hamcrest matcher imports](../../../java/testing/hamcrest/consistenthamcrestmatcherimports)
 * [Reorder method arguments](../../../java/reordermethodarguments)
   * methodPattern: `org.hamcrest.MatcherAssert assertThat(java.lang.String, boolean)`
@@ -64,6 +70,8 @@ tags:
   - testing
   - assertj
   - hamcrest
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.hamcrest.ConsistentHamcrestMatcherImports
   - org.openrewrite.java.ReorderMethodArguments:

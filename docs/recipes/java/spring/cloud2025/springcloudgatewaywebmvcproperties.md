@@ -30,6 +30,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.springframework.cloud`
+  * artifactIdPattern: `spring-cloud-gateway-mvc`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.cloud.gateway.proxy`
   * newPropertyKey: `spring.cloud.gateway.proxy-exchange.webmvc`
@@ -48,6 +57,11 @@ description: |
 tags:
   - spring
   - cloud
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.springframework.cloud
+      artifactIdPattern: spring-cloud-gateway-mvc
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.cloud.gateway.proxy

@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.lang.model.util.SimpleTypeVisitor6`
   * newFullyQualifiedTypeName: `javax.lang.model.util.SimpleTypeVisitor9`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.javax.MigrateSimpleTypeVisitor6To9
 displayName: Use `javax.lang.model.util.SimpleTypeVisitor9`
 description: |
   Use `javax.lang.model.util.SimpleTypeVisitor9` instead of the deprecated `javax.lang.model.util.SimpleTypeVisitor6` in Java 9 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.lang.model.util.SimpleTypeVisitor6

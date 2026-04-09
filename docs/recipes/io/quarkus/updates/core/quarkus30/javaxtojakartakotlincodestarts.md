@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/src/main/codestarts/**/*.kt`
+
+**Recipes**
+
 * [Find and replace](../../../../../text/findandreplace)
   * find: `javax.json.bind.config.`
   * replace: `jakarta.json.bind.config.`
@@ -450,6 +457,9 @@ name: io.quarkus.updates.core.quarkus30.JavaxToJakartaKotlinCodestarts
 displayName: io.quarkus.updates.core.quarkus30.JavaxToJakartaKotlinCodestarts
 description: |
   
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/src/main/codestarts/**/*.kt
 recipeList:
   - org.openrewrite.text.FindAndReplace:
       find: javax.json.bind.config.

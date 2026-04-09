@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `com.google.common.primitives.UnsignedInts parseUnsignedInt(String, ..)`
   * fullyQualifiedTargetTypeName: `java.lang.Integer`
@@ -46,6 +52,8 @@ description: |
   Prefer `java.lang.Integer#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedInts#parseUnsignedInt`.
 tags:
   - guava
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: com.google.common.primitives.UnsignedInts parseUnsignedInt(String, ..)

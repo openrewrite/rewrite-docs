@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `javax.management.monitor.CounterMonitor setThreshold(java.lang.Number)`
   * newMethodName: `setInitThreshold`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThresholdToSetI
 displayName: Use `javax.management.monitor.CounterMonitor#setInitThreshold`
 description: |
   Use `javax.management.monitor.CounterMonitor#setInitThreshold` instead of the deprecated `javax.management.monitor.CounterMonitor#setThreshold` in JMX 1.2 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: javax.management.monitor.CounterMonitor setThreshold(java.lang.Number)

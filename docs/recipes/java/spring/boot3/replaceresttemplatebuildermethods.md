@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.springframework.boot.web.client.RestTemplateBuilder setConnectTimeout(java.time.Duration)`
   * newMethodName: `connectTimeout`
@@ -51,6 +57,8 @@ name: org.openrewrite.java.spring.boot3.ReplaceRestTemplateBuilderMethods
 displayName: Replace deprecated setters in `RestTemplateBuilder`
 description: |
   Replaces `setConnectTimeout`, `setReadTimeout`, and `setSslBundle` method invocations with `connectTimeout`, `readTimeout`, and `sslBundle` respectively.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.boot.web.client.RestTemplateBuilder setConnectTimeout(java.time.Duration)

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `javax.xml.stream.XMLEventFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmleventfactorynewinstancetonewfactory)
 * [Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmlinputfactorynewinstancetonewfactory)
 * [Use `javax.xml.stream.XMLOutputFactory#newFactory(String, ClassLoader)`](../../../java/migrate/javax/migratexmloutputfactorynewinstancetonewfactory)
@@ -44,6 +50,8 @@ name: org.openrewrite.java.migrate.javax.JavaxXmlStreamAPIs
 displayName: Use modernized `javax.xml.stream` APIs
 description: |
   Certain `javax.xml.stream` APIs have become deprecated and their usages changed, necessitating usage changes.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javax.MigrateXMLEventFactoryNewInstanceToNewFactory
   - org.openrewrite.java.migrate.javax.MigrateXMLInputFactoryNewInstanceToNewFactory

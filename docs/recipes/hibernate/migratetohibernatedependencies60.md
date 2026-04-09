@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../java/dependencies/changedependency)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-agroal`
@@ -200,6 +206,8 @@ name: org.openrewrite.hibernate.MigrateToHibernateDependencies60
 displayName: Migrate Hibernate dependencies to 6.0.x
 description: |
   This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate

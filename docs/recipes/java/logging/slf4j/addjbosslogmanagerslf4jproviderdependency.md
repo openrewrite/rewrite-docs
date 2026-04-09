@@ -25,6 +25,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+* [Dependency insight for Gradle and Maven](../../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.jboss.logmanager`
+  * artifactIdPattern: `jboss-logmanager`
+
+**Recipes**
+
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.jboss.slf4j`
   * artifactId: `slf4j-jboss-logmanager`
@@ -41,6 +50,11 @@ name: org.openrewrite.java.logging.slf4j.AddJBossLogManagerSlf4jProviderDependen
 displayName: Add JBoss LogManager's SLF4J provider
 description: |
   When JBoss LogManager is the logging backend, add its SLF4J provider so we can migrate to SLF4J as a logging facade.
+preconditions:
+  - org.openrewrite.Singleton
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.jboss.logmanager
+      artifactIdPattern: jboss-logmanager
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.jboss.slf4j

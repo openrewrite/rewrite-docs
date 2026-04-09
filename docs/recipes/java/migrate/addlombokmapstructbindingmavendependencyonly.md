@@ -25,6 +25,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Does not include dependency for Gradle and Maven](../../java/dependencies/search/doesnotincludedependency)
+  * groupId: `org.projectlombok`
+  * artifactId: `lombok-mapstruct-binding`
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Add Maven dependency](../../maven/adddependency)
   * groupId: `org.projectlombok`
   * artifactId: `lombok-mapstruct-binding`
@@ -42,6 +51,11 @@ name: org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly
 displayName: Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used
 description: |
   Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
+preconditions:
+  - org.openrewrite.java.dependencies.search.DoesNotIncludeDependency:
+      groupId: org.projectlombok
+      artifactId: lombok-mapstruct-binding
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.AddDependency:
       groupId: org.projectlombok

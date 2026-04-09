@@ -30,6 +30,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use static import](../../../java/usestaticimport)
   * methodPattern: `org.junit.jupiter.api.Assertions *(..)`
 
@@ -47,6 +53,8 @@ description: |
 tags:
   - junit
   - testing
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.UseStaticImport:
       methodPattern: org.junit.jupiter.api.Assertions *(..)

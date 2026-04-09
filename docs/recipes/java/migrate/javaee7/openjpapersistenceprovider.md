@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change XML tag value](../../../xml/changetagvalue)
   * elementName: `/persistence/persistence-unit/provider`
   * oldValue: `org.apache.openjpa.persistence.PersistenceProviderImpl`
@@ -41,6 +47,8 @@ name: org.openrewrite.java.migrate.javaee7.OpenJPAPersistenceProvider
 displayName: Removed OpenJPA providers in the persistence.xml file
 description: |
   When migrating  to EclipseLink, using OpenJPA providers in EclipseLink results in runtime errors. To resolve these errors, the recipe removes the flagged OpenJPA provider from the persistence.xml.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.xml.ChangeTagValue:
       elementName: /persistence/persistence-unit/provider

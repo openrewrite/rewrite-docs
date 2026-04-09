@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Update Gradle wrapper](../../gradle/updategradlewrapper)
   * version: `8.5`
   * addIfMissing: `false`
@@ -67,6 +73,8 @@ description: |
   Updates plugins and dependencies to version compatible with Java 21.
 tags:
   - java21
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: 8.5

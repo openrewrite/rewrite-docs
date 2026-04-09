@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate Log4j 1.x to SLF4J 1.x](../../../java/logging/slf4j/log4j1toslf4j1)
 * [Loggers should be named for their enclosing classes](../../../java/logging/slf4j/loggersnamedforenclosingclass)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
@@ -88,6 +94,8 @@ tags:
   - slf4j
   - logging
   - log4j
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1
   - org.openrewrite.java.logging.slf4j.LoggersNamedForEnclosingClass

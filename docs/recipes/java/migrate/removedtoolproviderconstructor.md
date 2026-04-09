@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change method target to static](../../java/changemethodtargettostatic)
   * methodPattern: `javax.tools.ToolProvider *()`
   * fullyQualifiedTargetTypeName: `javax.tools.ToolProvider`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.RemovedToolProviderConstructor
 displayName: Change `javax.tools.ToolProvider` methods calls to static
 description: |
   The `javax.tools.ToolProvider()` constructor has been removed in Java SE 16 since the class only contains static methods. The recipe converts `javax.tools.ToolProvider getSystemJavaCompiler()`, `javax.tools.ToolProvider getSystemDocumentationTool()` and `javax.tools.ToolProvider getSystemToolClassLoader()` to static methods.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: javax.tools.ToolProvider *()

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Remove `Bean.isNullable()`](../../../java/migrate/jakarta/removebeanisnullable)
 * [Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`](../../../java/migrate/jakarta/updateaddannotatedtypes)
 * [Update `fireEvent()` and `createInjectionTarget()` calls](../../../java/migrate/jakarta/updatebeanmanagermethods)
@@ -44,6 +50,8 @@ name: org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40
 displayName: Remove deprecated API's not supported in CDI4.0
 description: |
   Deprecated APIs have been removed in CDI 4.0. This recipe removes and updates the corresponding deprecated methods.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.jakarta.RemoveBeanIsNullable
   - org.openrewrite.java.migrate.jakarta.UpdateAddAnnotatedTypes

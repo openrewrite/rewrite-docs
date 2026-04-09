@@ -36,6 +36,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../core/findsourcefiles)
+  * filePattern: `**/persistence-configuration.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../xml/changetagattribute)
   * elementName: `persistence-configuration`
   * attributeName: `xmlns`
@@ -65,6 +72,9 @@ tags:
   - schemas
   - weblogic
   - persistence-configuration
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/persistence-configuration.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: persistence-configuration

@@ -34,6 +34,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/application.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../../xml/changetagattribute)
   * elementName: `application`
   * attributeName: `version`
@@ -69,6 +76,9 @@ description: |
 tags:
   - application
   - jakarta
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/application.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: application

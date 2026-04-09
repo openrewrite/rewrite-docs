@@ -29,6 +29,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.springframework.boot`
+  * artifactIdPattern: `spring-boot-starter`
+  * version: `[2.2,2.7)`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `javax.validation`
   * artifactId: `validation-api`
@@ -51,6 +61,12 @@ name: org.openrewrite.java.spring.boot2.MaybeAddJavaxValidationApi
 displayName: Add `javax.validation-api` dependency
 description: |
   Conditional on the application using a version of Spring Boot which uses javax but provides a hibernate-validator version which exports the jakarta.validation-api instead.
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.springframework.boot
+      artifactIdPattern: spring-boot-starter
+      version: [2.2,2.7)
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: javax.validation

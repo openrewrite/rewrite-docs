@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `io.prometheus`
   * oldArtifactId: `simpleclient_pushgateway`
@@ -42,6 +48,8 @@ name: org.openrewrite.java.spring.boot3.UpdatePrometheusPushgateway
 displayName: Update Prometheus Pushgateway Dependency Coordinates
 description: |
   Update the Prometheus Pushgateway artifact ID for Spring Boot 3.5 compatibility.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: io.prometheus

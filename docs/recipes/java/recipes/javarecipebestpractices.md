@@ -29,6 +29,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find types](../../java/search/findtypes)
+  * fullyQualifiedTypeName: `org.openrewrite.Recipe`
+  * checkAssignability: `true`
+
+**Recipes**
+
 * [Add a blank line around fields with annotations](../../java/recipes/blanklinesaroundfieldswithannotations)
 * [Correctly spaced descriptions](../../java/recipes/correctlyspaceddescriptions)
 * [Use a standard name for `ExecutionContext`](../../java/recipes/executioncontextparametername)
@@ -60,6 +68,10 @@ name: org.openrewrite.java.recipes.JavaRecipeBestPractices
 displayName: Java Recipe best practices
 description: |
   Best practices for Java recipe development.
+preconditions:
+  - org.openrewrite.java.search.FindTypes:
+      fullyQualifiedTypeName: org.openrewrite.Recipe
+      checkAssignability: true
 recipeList:
   - org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations
   - org.openrewrite.java.recipes.CorrectlySpacedDescriptions

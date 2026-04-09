@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Adopt `@Container` and add `@Testcontainers`](../../../java/testing/testcontainers/addtestcontainersannotations)
 * [Explicit container images and versions](../../../java/testing/testcontainers/explicitcontainerimages)
 * [Replace `ContainerState.getContainerIpAddress()` with `getHost()`](../../../java/testing/testcontainers/gethostmigration)
@@ -49,6 +55,8 @@ name: org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
 displayName: Migrate to testcontainers-java 2.x
 description: |
   Change dependencies and types to migrate to testcontainers-java 2.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.testcontainers.AddTestcontainersAnnotations
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImages

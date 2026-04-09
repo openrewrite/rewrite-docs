@@ -25,6 +25,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.codehaus.groovy`
+  * artifactIdPattern: `groovy`
+  * version: `3.x`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.spockframework`
   * artifactId: `*`
@@ -42,6 +52,12 @@ name: org.openrewrite.java.spring.boot2.UpgradeSpockToGroovy3
 displayName: Upgrade Spock to a Groovy 3 compatible variant
 description: |
   Upgrade Spock dependencies to a Groovy 3 compatible 2.0 variant when Groovy 3 is on the classpath.
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.codehaus.groovy
+      artifactIdPattern: groovy
+      version: 3.x
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.spockframework

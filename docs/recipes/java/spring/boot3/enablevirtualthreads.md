@@ -25,6 +25,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files compiled at a specific Java version](../../../java/search/hasjavaversion)
+  * version: `21.X`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Add a spring configuration property](../../../java/spring/addspringproperty)
   * property: `spring.threads.virtual.enabled`
   * value: `true`
@@ -40,6 +48,10 @@ name: org.openrewrite.java.spring.boot3.EnableVirtualThreads
 displayName: Enable Virtual Threads on Java 21
 description: |
   Set `spring.threads.virtual.enabled` to `true` in `application.properties` or `application.yml`.
+preconditions:
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: 21.X
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.AddSpringProperty:
       property: spring.threads.virtual.enabled

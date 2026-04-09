@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Find method usages](../../../java/search/findmethods)
   * methodPattern: `java.util.concurrent.Executors#newCachedThreadPool(..)`
 * [Find method usages](../../../java/search/findmethods)
@@ -61,6 +67,8 @@ description: |
 tags:
   - java21
   - virtual_threads
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: java.util.concurrent.Executors#newCachedThreadPool(..)

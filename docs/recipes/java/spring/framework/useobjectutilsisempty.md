@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.springframework.util.StringUtils isEmpty(Object)`
   * fullyQualifiedTargetTypeName: `org.springframework.util.ObjectUtils`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty
 displayName: Use `ObjectUtils#isEmpty(Object)`
 description: |
   `StringUtils#isEmpty(Object)` was deprecated in 5.3.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.springframework.util.StringUtils isEmpty(Object)

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.faces`
   * oldArtifactId: `javax.faces-api`
@@ -76,6 +82,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi3
 displayName: Migrate deprecated `javax.faces` packages to `jakarta.faces`
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating a package relocation and upgrade.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.faces

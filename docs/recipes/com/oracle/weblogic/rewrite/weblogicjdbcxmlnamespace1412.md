@@ -35,6 +35,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../core/findsourcefiles)
+  * filePattern: `**/*-jdbc.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../xml/changetagattribute)
   * elementName: `jdbc-data-source`
   * attributeName: `xmlns`
@@ -71,6 +78,9 @@ tags:
   - schemas
   - weblogic
   - jdbc
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/*-jdbc.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: jdbc-data-source

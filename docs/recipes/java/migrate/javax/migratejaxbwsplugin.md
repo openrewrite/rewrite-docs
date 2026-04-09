@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Maven plugin group and artifact ID](../../../maven/changeplugingroupidandartifactid)
   * oldGroupId: `org.jvnet.jax-ws-commons`
   * oldArtifactId: `jaxws-maven-plugin`
@@ -58,6 +64,8 @@ description: |
   Upgrade the JAXB-WS Maven plugin to be compatible with Java 11.
 tags:
   - java11
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.ChangePluginGroupIdAndArtifactId:
       oldGroupId: org.jvnet.jax-ws-commons

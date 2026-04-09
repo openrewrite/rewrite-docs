@@ -25,6 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](./upgradejackson_2_3_jsongeneratormethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonNode](./upgradejackson_2_3_jsonnodemethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonParser](./upgradejackson_2_3_jsonparsermethodrenames.md)
+* [Rename Jackson 2.x methods to 3.x equivalents for ObjectNode](./upgradejackson_2_3_objectnodemethodrenames.md)
 * [Replace deprecated `PropertyNamingStrategy` inner classes and constants](./replacepropertynamingstrategyconstants.md)
 * [Update Jackson 2.x types to 3.x](./upgradejackson_2_3_typechanges.md)
 * [Update Jackson package names from 2.x to 3.x](./upgradejackson_2_3_packagechanges.md)

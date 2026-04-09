@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration)
 * [Mockito 4 to 5.x upgrade only](../../../java/testing/mockito/mockito4to5only)
 
@@ -51,6 +57,8 @@ description: |
 tags:
   - testing
   - mockito
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.mockito.Mockito1to4Migration
   - org.openrewrite.java.testing.mockito.Mockito4to5Only

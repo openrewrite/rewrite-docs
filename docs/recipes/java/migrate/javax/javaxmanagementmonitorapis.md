@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `javax.management.monitor.CounterMonitor#setInitThreshold`](../../../java/migrate/javax/migratecountermonitorsetthresholdtosetinitthreshold)
 
 </TabItem>
@@ -38,6 +44,8 @@ name: org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs
 displayName: Use modernized `javax.management.monitor` APIs
 description: |
   Certain `javax.management.monitor` APIs have become deprecated and their usages changed, necessitating usage changes.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javax.MigrateCounterMonitorSetThresholdToSetInitThreshold
 

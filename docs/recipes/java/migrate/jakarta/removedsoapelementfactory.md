@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `jakarta.xml.soap.SOAPElementFactory create(String,..)`
   * newMethodName: `createElement`
@@ -50,6 +56,8 @@ name: org.openrewrite.java.migrate.jakarta.RemovedSOAPElementFactory
 displayName: Use `jakarta.xml.soap.SOAPFactory` to create `SOAPElements`
 description: |
   XML Web Services prior to 4.0 provides the deprecated SOAPElementFactory class, which is removed in XML Web Services 4.0. The recommended replacement is to use jakarta.xml.soap.SOAPFactory to create SOAPElements.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: jakarta.xml.soap.SOAPElementFactory create(String,..)

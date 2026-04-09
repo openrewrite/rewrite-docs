@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has plugin](../../../gradle/search/modulehasplugin)
+  * pluginId: `io.spring.dependency-management`
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
   * oldArtifactId: `spring-boot-starter-oauth2-authorization-server`
@@ -65,6 +72,9 @@ name: org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions
 displayName: Rename Spring Boot 4.0 starters with managed versions
 description: |
   Renames deprecated Spring Boot starters to their new names without adding explicit versions, for use in projects where the `io.spring.dependency-management` plugin manages versions via BOM.
+preconditions:
+  - org.openrewrite.gradle.search.ModuleHasPlugin:
+      pluginId: io.spring.dependency-management
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot

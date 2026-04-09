@@ -35,6 +35,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+* [Check whether a type is **not** in use](../../../java/search/doesnotusetype)
+  * fullyQualifiedTypeName: `org.testng..*`
+  * includeImplicit: `true`
+* [Find the oldest Java version in use](../../../java/search/hasminimumjavaversion)
+  * version: `17`
+
+**Recipes**
+
 * [Upgrade to JUnit 5.14](../../../java/testing/junit5/upgradetojunit514)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.junit.platform`
@@ -93,6 +104,13 @@ tags:
   - junit
   - testing
   - jupiter
+preconditions:
+  - org.openrewrite.Singleton
+  - org.openrewrite.java.search.DoesNotUseType:
+      fullyQualifiedTypeName: org.testng..*
+      includeImplicit: true
+  - org.openrewrite.java.search.HasMinimumJavaVersion:
+      version: 17
 recipeList:
   - org.openrewrite.java.testing.junit5.UpgradeToJUnit514
   - org.openrewrite.java.dependencies.RemoveDependency:

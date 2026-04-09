@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Mockito 4.x upgrade](../../../java/testing/mockito/mockito1to4migration)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.mockito`
@@ -63,6 +69,8 @@ description: |
 tags:
   - testing
   - mockito
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.mockito.Mockito1to4Migration
   - org.openrewrite.java.dependencies.ChangeDependency:

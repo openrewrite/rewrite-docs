@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Wrapper`
   * methodPattern: `*..* isWrapperFor(..)`
@@ -49,6 +55,8 @@ name: org.openrewrite.java.migrate.JREWrapperInterface
 displayName: Add missing `isWrapperFor` and `unwrap` methods
 description: |
   Add method implementations stubs to classes that implement `java.sql.Wrapper`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.AddMissingMethodImplementation:
       fullyQualifiedClassName: java.sql.Wrapper

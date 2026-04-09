@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `io.quarkus`
+  * artifactIdPattern: `quarkus-core`
+  * version: `(,3.20.1)`
+
+**Recipes**
+
 * [Quarkus Updates Aggregate 3.19.0](../quarkus/migratetoquarkus_v3_19_0)
 * [Migrates `camel 4.10` application to `camel 4.10.4`](../io/quarkus/updates/camel/camel410_4/camelquarkusmigrationrecipe)
 
@@ -43,6 +52,11 @@ name: org.openrewrite.quarkus.MigrateToQuarkus_v3_20_1
 displayName: Quarkus Updates Aggregate 3.20.1
 description: |
   Quarkus update recipes to upgrade your application to 3.20.1.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: io.quarkus
+      artifactIdPattern: quarkus-core
+      version: (,3.20.1)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_19_0
   - io.quarkus.updates.camel.camel410_4.CamelQuarkusMigrationRecipe

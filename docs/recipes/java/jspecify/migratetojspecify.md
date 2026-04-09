@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Migrate from javax annotation API to JSpecify](../../java/jspecify/migratefromjavaxannotationapi)
 * [Migrate from Jakarta annotation API to JSpecify](../../java/jspecify/migratefromjakartaannotationapi)
 * [Migrate from JetBrains annotations to JSpecify](../../java/jspecify/migratefromjetbrainsannotations)
@@ -52,6 +58,8 @@ description: |
   This recipe will migrate to JSpecify annotations from various other nullability annotation standards.
 tags:
   - java
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.jspecify.MigrateFromJavaxAnnotationApi
   - org.openrewrite.java.jspecify.MigrateFromJakartaAnnotationApi

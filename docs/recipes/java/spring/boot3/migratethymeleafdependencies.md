@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.thymeleaf.spring5`
   * newPackageName: `org.thymeleaf.spring6`
@@ -63,6 +69,8 @@ tags:
   - spring
   - thymeleaf
   - boot
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.thymeleaf.spring5

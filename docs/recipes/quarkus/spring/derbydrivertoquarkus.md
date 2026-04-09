@@ -36,6 +36,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.apache.derby`
+  * artifactIdPattern: `derby*`
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.apache.derby`
   * oldArtifactId: `derby`
@@ -68,6 +76,10 @@ tags:
   - database
   - quarkus
   - derby
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.apache.derby
+      artifactIdPattern: derby*
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.derby

@@ -34,6 +34,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/handler.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../../xml/changetagattribute)
   * elementName: `handler-chains`
   * attributeName: `version`
@@ -69,6 +76,9 @@ description: |
 tags:
   - handler
   - jakarta
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/handler.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: handler-chains

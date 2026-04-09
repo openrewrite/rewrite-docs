@@ -32,6 +32,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/*.xhtml`
+
+**Recipes**
+
 * [Find and replace](../../../../../text/findandreplace)
   * find: `javax.`
   * replace: `jakarta.`
@@ -53,6 +60,9 @@ tags:
   - jsf
   - jakarta
   - xhtml
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/*.xhtml
 recipeList:
   - org.openrewrite.text.FindAndReplace:
       find: javax.

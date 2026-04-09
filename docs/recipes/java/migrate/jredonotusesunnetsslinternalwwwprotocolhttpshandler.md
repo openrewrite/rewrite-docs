@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.sun.net.ssl.internal.www.protocol.https.Handler`
   * newFullyQualifiedTypeName: `com.ibm.net.ssl.www2.protocol.https.Handler`
@@ -47,6 +53,8 @@ description: |
   Do not use the `com.sun.net.ssl.internal.www.protocol.https.Handler` class.
 tags:
   - java11
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.sun.net.ssl.internal.www.protocol.https.Handler

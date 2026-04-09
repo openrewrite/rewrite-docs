@@ -34,6 +34,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `io.springfox`
+  * artifactIdPattern: `*`
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
   * groupId: `io.springfox`
   * artifactId: `*`
@@ -56,6 +65,11 @@ description: |
 tags:
   - springfox
   - springdoc
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: io.springfox
+      artifactIdPattern: "*"
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: io.springfox

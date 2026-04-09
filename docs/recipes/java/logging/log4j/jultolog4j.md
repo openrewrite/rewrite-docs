@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace JUL Level arguments with the corresponding method calls](../../../java/logging/jul/loggerlevelargumenttomethodrecipes)
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `java.util.logging.Logger getLogger(..)`
@@ -80,6 +86,8 @@ tags:
   - java-util-logging
   - logging
   - log4j
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.jul.LoggerLevelArgumentToMethodRecipes
   - org.openrewrite.java.ChangeMethodTargetToStatic:

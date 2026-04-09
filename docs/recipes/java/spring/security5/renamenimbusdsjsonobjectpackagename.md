@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `com.nimbusds.jose.shaded.json`
   * newPackageName: `net.minidev.json`
@@ -58,6 +64,8 @@ description: |
 tags:
   - spring
   - security
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.nimbusds.jose.shaded.json

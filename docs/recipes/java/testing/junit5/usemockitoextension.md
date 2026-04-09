@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.mockito`
   * artifactId: `mockito-junit-jupiter`
@@ -60,6 +66,8 @@ tags:
   - junit
   - testing
   - mockito
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.mockito

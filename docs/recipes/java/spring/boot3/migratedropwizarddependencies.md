@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `com.codahale.metrics.servlet`
   * newPackageName: `io.dropwizard.metrics.servlet`
@@ -67,6 +73,8 @@ tags:
   - spring
   - boot
   - dropwizard
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.codahale.metrics.servlet

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate `ResponseStatusException#getRawStatusCode()` to `getStatusCode().value()`](../../../java/spring/framework/migrateresponsestatusexceptiongetrawstatuscodemethod)
 * [Migrate `ResponseStatusException#getStatus()` to `getStatusCode()`](../../../java/spring/framework/migrateresponsestatusexceptiongetstatuscodemethod)
 
@@ -43,6 +49,8 @@ name: org.openrewrite.java.spring.framework.MigrateResponseStatusException
 displayName: Migrate breaking changes in `ResponseStatusException`
 description: |
   Migrate Spring Framework 5.3's `ResponseStatusException` method `getRawStatusCode()` to Spring Framework 6's `getStatusCode().value()` and `ResponseStatusException` method `getStatus()` to Spring Framework 6's `getStatusCode()` .
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetRawStatusCodeMethod
   - org.openrewrite.java.spring.framework.MigrateResponseStatusExceptionGetStatusCodeMethod

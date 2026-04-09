@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `java.util.concurrent.atomic.AtomicReferenceArray weakCompareAndSet(int, ..)`
   * newMethodName: `weakCompareAndSetPlain`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.concurrent.MigrateAtomicReferenceArrayWeakCom
 displayName: Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`
 description: |
   Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)` instead of the deprecated `AtomicReferenceArray#weakCompareAndSet(int, T, T)` in Java 9 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.concurrent.atomic.AtomicReferenceArray weakCompareAndSet(int, ..)

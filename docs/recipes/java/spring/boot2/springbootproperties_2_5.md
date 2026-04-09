@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`](../../../java/spring/boot2/migrateartemisproperties)
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.batch.initialize-schema`
@@ -248,6 +254,8 @@ description: |
 tags:
   - spring
   - boot
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.MigrateArtemisProperties
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:

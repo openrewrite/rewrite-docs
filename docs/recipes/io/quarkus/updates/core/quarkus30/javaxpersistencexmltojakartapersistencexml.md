@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../core/findsourcefiles)
+  * filePattern: `**/persistence.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../../xml/changetagattribute)
   * elementName: `//property`
   * attributeName: `name`
@@ -64,6 +71,9 @@ name: io.quarkus.updates.core.quarkus30.JavaxPersistenceXmlToJakartaPersistenceX
 displayName: Migrate xmlns entries in `persistence.xml` files
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/persistence.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: //property

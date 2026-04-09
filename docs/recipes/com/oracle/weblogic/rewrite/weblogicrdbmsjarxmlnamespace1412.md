@@ -36,6 +36,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../core/findsourcefiles)
+  * filePattern: `**/weblogic-rdbms-jar.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../xml/changetagattribute)
   * elementName: `weblogic-rdbms-jar`
   * attributeName: `xmlns`
@@ -65,6 +72,9 @@ tags:
   - schemas
   - weblogic
   - rdbms-jar
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/weblogic-rdbms-jar.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: weblogic-rdbms-jar

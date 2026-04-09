@@ -34,6 +34,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.springframework`
+  * artifactIdPattern: `spring-web`
+* [Find annotations](../../../java/search/findannotations)
+  * annotationPattern: `@org.springframework.stereotype.Controller`
+  * matchMetaAnnotations: `true`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace String literals with `HttpHeaders` constants](../../../java/spring/http/replacestringliteralswithhttpheadersconstants)
 * [Replace String literals with `MediaType` constants](../../../java/spring/http/replacestringliteralswithmediatypeconstants)
 * [Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls](../../../java/spring/http/simplifymediatypeparsecalls)
@@ -53,6 +65,14 @@ description: |
 tags:
   - spring
   - boot
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.springframework
+      artifactIdPattern: spring-web
+  - org.openrewrite.java.search.FindAnnotations:
+      annotationPattern: @org.springframework.stereotype.Controller
+      matchMetaAnnotations: true
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithHttpHeadersConstants
   - org.openrewrite.java.spring.http.ReplaceStringLiteralsWithMediaTypeConstants

@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `java.net.MulticastSocket getTTL()`
   * newMethodName: `getTimeToLive`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.net.MigrateMulticastSocketGetTTLToGetTimeToLi
 displayName: Use `java.net.MulticastSocket#getTimeToLive()`
 description: |
   Use `java.net.MulticastSocket#getTimeToLive()` instead of the deprecated `java.net.MulticastSocket#getTTL()` in Java 1.2 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.net.MulticastSocket getTTL()

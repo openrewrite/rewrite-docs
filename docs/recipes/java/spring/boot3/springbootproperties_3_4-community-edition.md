@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate Enabled to Access Spring Boot Properties](../../../java/spring/boot3/springbootproperties_3_4_enabledtoaccess)
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.gson.lenient`
@@ -71,6 +77,8 @@ description: |
 tags:
   - spring
   - boot
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_4_EnabledToAccess
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:

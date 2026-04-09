@@ -25,6 +25,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.springframework.boot`
+  * artifactIdPattern: `spring-boot`
+  * version: `[2.5.0,)`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Unconditionally adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](../../../java/spring/boot2/databasecomponentandbeaninitializationorderingunconditionally)
 
 </TabItem>
@@ -38,6 +48,12 @@ name: org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOr
 displayName: Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`
 description: |
   Beans of certain well-known types, such as `JdbcTemplate`, will be ordered so that they are initialized after the database has been initialized. If you have a bean that works with the `DataSource` directly, annotate its class or `@Bean` method with `@DependsOnDatabaseInitialization` to ensure that it too is initialized after the database has been initialized. See the [release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#initialization-ordering) for more.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.springframework.boot
+      artifactIdPattern: spring-boot
+      version: [2.5.0,)
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrderingUnconditionally
 

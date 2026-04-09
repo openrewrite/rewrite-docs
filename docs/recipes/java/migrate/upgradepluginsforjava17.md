@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
   * minimumJavaMajorVersion: `17`
 * [Update Gradle wrapper](../../gradle/updategradlewrapper)
@@ -73,6 +79,8 @@ description: |
   Updates plugins to version compatible with Java 17.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
       minimumJavaMajorVersion: 17

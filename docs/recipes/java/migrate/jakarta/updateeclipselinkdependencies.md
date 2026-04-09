@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.eclipse.persistence`
   * artifactId: `*`
@@ -41,6 +47,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateEclipseLinkDependencies
 displayName: Update EclipseLink Dependencies to 4.x
 description: |
   Update EclipseLink Dependencies to 4.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.eclipse.persistence

@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Add missing Flyway module for PostgreSQL](../../java/flyway/addflywaymodulepostgresql)
 * [Add missing Flyway module for MySQL](../../java/flyway/addflywaymodulemysql)
 * [Add missing Flyway module for Oracle](../../java/flyway/addflywaymoduleoracle)
@@ -51,6 +57,8 @@ description: |
   Migrate to Flyway 10. See details at [Flyway V10 has landed](https://documentation.red-gate.com/fd/flyway-v10-has-landed-222627771.html).
 tags:
   - flyway
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.flyway.AddFlywayModulePostgreSQL
   - org.openrewrite.java.flyway.AddFlywayModuleMySQL

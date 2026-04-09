@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.apache.commons`
   * oldArtifactId: `commons-fileupload2-jakarta-servlet5`
@@ -48,6 +54,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateFileupload2Dependencies
 displayName: Update Apache Commons FileUpload2 package for EE10
 description: |
   Update Apache Commons FileUpload2 package for EE10.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.commons

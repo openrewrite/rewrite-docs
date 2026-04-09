@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Find implementing classes](../../../java/search/findimplementations)
   * typeName: `java.lang.Thread`
 * [Find method usages](../../../java/search/findmethods)
@@ -54,6 +60,8 @@ description: |
 tags:
   - java21
   - virtual_threads
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.search.FindImplementations:
       typeName: java.lang.Thread

@@ -29,6 +29,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+* [Find files with a particular build tool version](../../../java/search/hasbuildtoolversion)
+  * type: `Maven`
+  * version: `0.0.1-3.5.4`
+
+**Recipes**
+
 * [Add Maven plugin](../../../maven/addplugin)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-surefire-plugin`
@@ -51,6 +60,11 @@ name: org.openrewrite.java.testing.junit5.UpgradeSurefirePlugin
 displayName: Upgrade Surefire Plugin
 description: |
   Upgrades the Maven Surefire Plugin to the latest version if still using an older Maven version.
+preconditions:
+  - org.openrewrite.Singleton
+  - org.openrewrite.java.search.HasBuildToolVersion:
+      type: Maven
+      version: 0.0.1-3.5.4
 recipeList:
   - org.openrewrite.maven.AddPlugin:
       groupId: org.apache.maven.plugins

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.alibaba`
   * oldArtifactId: `fastjson`
@@ -98,6 +104,8 @@ name: org.openrewrite.java.migrate.jakarta.MigrateFastjsonForJakarta10
 displayName: Update Fastjson for Jakarta EE 10
 description: |
   Update Fastjson to be compatible with Jakarta EE 10.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.alibaba

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.github.javafaker.Crypto`
   * newFullyQualifiedTypeName: `net.datafaker.providers.base.Hashing`
@@ -58,6 +64,8 @@ name: org.openrewrite.java.testing.datafaker.JavaFakerToDataFaker
 displayName: Migrate from Java Faker to Datafaker
 description: |
   Change imports and dependencies related to Java Faker to Datafaker replacements.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.github.javafaker.Crypto

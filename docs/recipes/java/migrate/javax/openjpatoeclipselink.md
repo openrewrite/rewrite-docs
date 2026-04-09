@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation](../../../java/migrate/javax/addcolumnannotation)
 * [`@Entity` objects with constructors must also have a default constructor](../../../java/migrate/javax/adddefaultconstructortoentityclass)
 * [Attributes with automatically generated values require configuration](../../../java/migrate/javax/addtablegenerator)
@@ -58,6 +64,8 @@ description: |
 tags:
   - javaee7
   - deprecated
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javax.AddColumnAnnotation
   - org.openrewrite.java.migrate.javax.AddDefaultConstructorToEntityClass

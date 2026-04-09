@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Inline method calls](../../../java/inlinemethodcalls)
   * methodPattern: `com.google.common.primitives.Booleans hashCode(boolean)`
   * replacement: `Boolean.hashCode(value)`
@@ -326,6 +332,8 @@ name: com.google.guava.InlineGuavaMethods
 displayName: Inline `guava` methods annotated with `@InlineMe`
 description: |
   Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: com.google.common.primitives.Booleans hashCode(boolean)

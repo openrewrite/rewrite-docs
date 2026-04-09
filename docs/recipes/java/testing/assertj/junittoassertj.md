@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [JUnit 5 best practices](../../../java/testing/junit5/junit5bestpractices)
 * [JUnit `assertArrayEquals` to assertJ](../../../java/testing/assertj/junitassertarrayequalstoassertthat)
 * [JUnit `assertEquals` to AssertJ](../../../java/testing/assertj/junitassertequalstoassertthat)
@@ -69,6 +75,8 @@ description: |
 tags:
   - testing
   - assertj
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.junit5.JUnit5BestPractices
   - org.openrewrite.java.testing.assertj.JUnitAssertArrayEqualsToAssertThat

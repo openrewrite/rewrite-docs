@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `var` for reference-typed variables](../../../java/migrate/lang/var/usevarforobject)
 * [Use `var` for variables initialized with type casts](../../../java/migrate/lang/var/usevarfortypecast)
 * [Use `var` for constructor call assignments](../../../java/migrate/lang/var/usevarforconstructors)
@@ -57,6 +63,8 @@ tags:
   - refactoring
   - var
   - java10
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.lang.var.UseVarForObject
   - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast

@@ -34,6 +34,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files compiled at a specific Java version](../../../java/search/hasjavaversion)
+  * version: `[11,)`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Prefer `List.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablelistof)
 * [Prefer `Map.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablemapof)
 * [Prefer `Set.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablesetof)
@@ -58,6 +66,10 @@ description: |
 tags:
   - guava
   - java11
+preconditions:
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: [11,)
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableListOf
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf

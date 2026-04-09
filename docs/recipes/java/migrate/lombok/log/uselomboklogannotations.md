@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../../core/singleton)
+
+**Recipes**
+
 * [Use `@CommonsLog` instead of explicit fields](../../../../java/migrate/lombok/log/usecommonslog)
 * [Use `@JBossLog` instead of explicit fields](../../../../java/migrate/lombok/log/usejbosslog)
 * [Use `@Log` instead of explicit fields](../../../../java/migrate/lombok/log/uselog)
@@ -46,6 +52,8 @@ name: org.openrewrite.java.migrate.lombok.log.UseLombokLogAnnotations
 displayName: Use Lombok logger annotations instead of explicit fields
 description: |
   Applies all recipes that replace logger declarations with class level annotations.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.lombok.log.UseCommonsLog
   - org.openrewrite.java.migrate.lombok.log.UseJBossLog

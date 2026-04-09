@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.websocket`
   * oldArtifactId: `websocket-api`
@@ -113,6 +119,8 @@ name: org.openrewrite.java.migrate.jakarta.JettyUpgradeEE9
 displayName: Update Jetty9 to Jetty12
 description: |
   Update Jetty dependencies from version 9 to version 12.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.websocket

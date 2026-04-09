@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `javax.lang.model.util.AbstractAnnotationValueVisitor9`](../../../java/migrate/javax/migrateabstractannotationvaluevisitor6to9)
 * [Use `javax.lang.model.util.AbstractElementVisitor9`](../../../java/migrate/javax/migrateabstractelementvisitor6to9)
 * [Use `javax.lang.model.util.AbstractTypeVisitor9`](../../../java/migrate/javax/migrateabstracttypevisitor6to9)
@@ -50,6 +56,8 @@ name: org.openrewrite.java.migrate.javax.JavaxLangModelUtil
 displayName: Use modernized `javax.lang.model.util` APIs
 description: |
   Certain `javax.lang.model.util` APIs have become deprecated and their usages changed, necessitating usage changes.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javax.MigrateAbstractAnnotationValueVisitor6To9
   - org.openrewrite.java.migrate.javax.MigrateAbstractElementVisitor6To9

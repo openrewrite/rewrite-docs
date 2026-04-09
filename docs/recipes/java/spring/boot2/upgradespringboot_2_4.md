@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Boot 2.3](../../../java/spring/boot2/upgradespringboot_2_3)
 * [Migrate to Spring Framework 5.3 (Community Edition)](../../../java/spring/framework/upgradespringframework_5_3-community-edition)
 * [Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4](../../../java/spring/boot2/springboot2junit4to5migration)
@@ -96,6 +102,8 @@ description: |
 tags:
   - spring
   - boot
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_3
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3

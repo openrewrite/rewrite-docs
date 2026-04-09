@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../java/changemethodname)
   * methodPattern: `java.util.logging.LogRecord getThreadID()`
   * newMethodName: `getLongThreadID`
@@ -56,6 +62,8 @@ description: |
   Avoid using the deprecated methods in `java.util.logging.LogRecord`.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.logging.LogRecord getThreadID()

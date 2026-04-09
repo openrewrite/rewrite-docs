@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find types](../../java/search/findtypes)
+  * fullyQualifiedTypeName: `org.springframework.boot.autoconfigure.SpringBootApplication`
+
+**Recipes**
+
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.SpringBootApplication`
   * newFullyQualifiedTypeName: `io.quarkus.runtime.annotations.QuarkusMain`
@@ -45,6 +52,9 @@ name: org.openrewrite.quarkus.spring.ReplaceSpringBootApplication
 displayName: Replace `@SpringBootApplication` with Quarkus equivalent
 description: |
   Replace `@SpringBootApplication` annotation with `@QuarkusMain`, `SpringApplication.run()` calls.
+preconditions:
+  - org.openrewrite.java.search.FindTypes:
+      fullyQualifiedTypeName: org.springframework.boot.autoconfigure.SpringBootApplication
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.SpringBootApplication

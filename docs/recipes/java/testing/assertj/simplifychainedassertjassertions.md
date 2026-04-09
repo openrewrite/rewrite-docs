@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertion)
   * chainedAssertion: `isEmpty`
   * assertToReplace: `isTrue`
@@ -359,6 +365,8 @@ description: |
 tags:
   - testing
   - assertj
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion:
       chainedAssertion: isEmpty

@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `java.util.concurrent.atomic.AtomicLong weakCompareAndSet(long, long)`
   * newMethodName: `weakCompareAndSetPlain`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.concurrent.MigrateAtomicLongWeakCompareAndSet
 displayName: Use `AtomicLong#weakCompareAndSetPlain(long, long)`
 description: |
   Use `AtomicLong#weakCompareAndSetPlain(long, long)` instead of the deprecated `AtomicLong#weakCompareAndSet(long, long)` in Java 9 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.util.concurrent.atomic.AtomicLong weakCompareAndSet(long, long)

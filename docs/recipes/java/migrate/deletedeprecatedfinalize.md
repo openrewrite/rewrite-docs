@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Remove method invocations](../../java/removemethodinvocations)
   * methodPattern: `java.awt.color.ICC_Profile finalize()`
 * [Remove method invocations](../../java/removemethodinvocations)
@@ -53,6 +59,8 @@ description: |
   The java.desktop module had a few implementations of finalize() that did nothing and have been removed. This recipe will remove these methods.
 tags:
   - java21
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.RemoveMethodInvocations:
       methodPattern: java.awt.color.ICC_Profile finalize()

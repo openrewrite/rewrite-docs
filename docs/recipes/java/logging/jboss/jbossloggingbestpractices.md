@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace JBoss Logging Level arguments with the corresponding eponymous level method calls](../../../java/logging/jboss/loggerlevelargumenttomethod)
 * [Replace deprecated JBoss Logging Logger formatted message invocations with the v-version of methods](../../../java/logging/jboss/formattedargumentstovmethodrecipes)
 * [Unpack Logger method `new Object[] \{...\}` into varargs](../../../java/logging/argumentarraytovarargs)
@@ -52,6 +58,8 @@ description: |
 tags:
   - jboss
   - logging
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.jboss.LoggerLevelArgumentToMethod
   - org.openrewrite.java.logging.jboss.FormattedArgumentsToVMethodRecipes

@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change parameter type for a method declaration](../../../java/spring/changemethodparameter)
   * methodPattern: `org.springframework.batch.core.step.skip.SkipPolicy shouldSkip(java.lang.Throwable, int)`
   * parameterType: `long`
@@ -41,6 +47,8 @@ name: org.openrewrite.java.spring.batch.UpgradeSkipPolicyParameterType
 displayName: Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`
 description: |
   The `skipCount` parameter in `org.springframework.batch.core.step.skip.SkipPolicy#shouldSkip` has been changed from `int` to `long`, this recipe updates the parameter type in the implementing classes.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.ChangeMethodParameter:
       methodPattern: org.springframework.batch.core.step.skip.SkipPolicy shouldSkip(java.lang.Throwable, int)

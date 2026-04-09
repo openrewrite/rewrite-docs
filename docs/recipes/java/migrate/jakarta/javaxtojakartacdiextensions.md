@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Rename a file](../../../core/renamefile)
   * fileMatcher: `**/javax.enterprise.inject.spi.Extension`
   * fileName: `jakarta.enterprise.inject.spi.Extension`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.jakarta.JavaxToJakartaCdiExtensions
 displayName: Rename CDI Extension to Jakarta
 description: |
   Rename `javax.enterprise.inject.spi.Extension` to `jakarta.enterprise.inject.spi.Extension`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.RenameFile:
       fileMatcher: **/javax.enterprise.inject.spi.Extension

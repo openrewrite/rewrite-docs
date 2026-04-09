@@ -30,6 +30,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.springframework.cloud`
+  * artifactIdPattern: `*`
+
+**Recipes**
+
 * [Add managed Maven dependency](../../../maven/addmanageddependency)
   * groupId: `org.springframework.cloud`
   * artifactId: `spring-cloud-dependencies`
@@ -51,6 +59,10 @@ description: |
 tags:
   - spring
   - cloud
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.springframework.cloud
+      artifactIdPattern: "*"
 recipeList:
   - org.openrewrite.maven.AddManagedDependency:
       groupId: org.springframework.cloud

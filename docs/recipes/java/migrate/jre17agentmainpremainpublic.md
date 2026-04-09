@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change method access level](../../java/changemethodaccesslevel)
   * methodPattern: `*..* agentmain(java.lang.String)`
   * newAccessLevel: `public`
@@ -59,6 +65,8 @@ description: |
   Check for a behavior change in Java agents.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodAccessLevel:
       methodPattern: *..* agentmain(java.lang.String)

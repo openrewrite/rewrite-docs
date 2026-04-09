@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Remove method invocations](../../java/removemethodinvocations)
   * methodPattern: `java.lang.Runtime traceInstructions(boolean)`
 * [Remove method invocations](../../java/removemethodinvocations)
@@ -51,6 +57,8 @@ description: |
   The `traceInstructions` and `traceMethodCalls` methods in `java.lang.Runtime` were deprecated in Java SE 9 and are no longer available in Java SE 13 and later. The recipe removes the invocations of these methods since the method invocations do nothing functionally.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.RemoveMethodInvocations:
       methodPattern: java.lang.Runtime traceInstructions(boolean)

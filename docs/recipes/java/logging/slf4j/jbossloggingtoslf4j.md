@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [JBoss Logging Best Practices](../../../java/logging/jboss/jbossloggingbestpractices)
 * [Add JBoss LogManager's SLF4J provider](../../../java/logging/slf4j/addjbosslogmanagerslf4jproviderdependency)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
@@ -71,6 +77,8 @@ tags:
   - jboss
   - slf4j
   - logging
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.jboss.JBossLoggingBestPractices
   - org.openrewrite.java.logging.slf4j.AddJBossLogManagerSlf4jProviderDependency

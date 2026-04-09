@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.el.MethodBinding`
   * newFullyQualifiedTypeName: `jakarta.el.MethodExpression`
@@ -105,6 +111,8 @@ name: org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesExpressionLanguage
 displayName: Use `jakarta.el` instead of `jakarta.faces.el` and `javax.faces.el`
 description: |
   Several classes were removed and replaced in Jakarta Faces 3.0. The only Object definition not removed in the `jakarta.faces.el` package is the CompositeComponentExpressionHolder interface.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.el.MethodBinding

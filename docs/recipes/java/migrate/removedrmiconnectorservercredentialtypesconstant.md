@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `javax.management.remote.rmi.RMIConnectorServer.CREDENTIAL_TYPES`
   * fullyQualifiedConstantName: `javax.management.remote.rmi.RMIConnectorServer.CREDENTIALS_FILTER_PATTERN`
@@ -46,6 +52,8 @@ description: |
   This recipe replaces the `RMIConnectorServer.CREDENTIAL_TYPES` constant with the `RMIConnectorServer.CREDENTIALS_FILTER_PATTERN` constant.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: javax.management.remote.rmi.RMIConnectorServer.CREDENTIAL_TYPES

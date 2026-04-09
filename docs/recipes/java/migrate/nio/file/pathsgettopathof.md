@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../../core/singleton)
+
+**Recipes**
+
 * [Change method target to static](../../../../java/changemethodtargettostatic)
   * methodPattern: `java.nio.file.Paths get(..)`
   * fullyQualifiedTargetTypeName: `java.nio.file.Path`
@@ -53,6 +59,8 @@ description: |
   The `java.nio.file.Paths.get` method was introduced in Java SE 7. The `java.nio.file.Path.of` method was introduced in Java SE 11. This recipe replaces all usages of `Paths.get` with `Path.of` for consistency.
 tags:
   - java11
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: java.nio.file.Paths get(..)

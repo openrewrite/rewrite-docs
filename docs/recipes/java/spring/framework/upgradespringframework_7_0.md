@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Framework 6.2](../../../java/spring/framework/upgradespringframework_6_2)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework`
@@ -50,6 +56,8 @@ name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0
 displayName: Migrate to Spring Framework 7.0
 description: |
   Migrate applications to the latest Spring Framework 7.0 release.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_2
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

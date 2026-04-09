@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Boot 2.4](../../../java/spring/boot2/upgradespringboot_2_4)
 * [Migrate to Spring Data JPA 2.5](../../../java/spring/data/upgradespringdata_2_5)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
@@ -88,6 +94,8 @@ name: org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_5
 displayName: Upgrade to Spring Boot 2.5
 description: |
   Upgrade to Spring Boot 2.5 from any prior 2.x version.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_4
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_5

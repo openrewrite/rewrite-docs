@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find sources that are likely tests](../../java/search/islikelytest)
+
+**Recipes**
+
 * [Migrate to Java 21](../../java/migrate/upgradetojava21)
 
 </TabItem>
@@ -38,6 +44,8 @@ name: org.openrewrite.java.recipes.UpgradeTestsToJava21
 displayName: Migrate tests to Java 21
 description: |
   Use Java 21 features in tests.
+preconditions:
+  - org.openrewrite.java.search.IsLikelyTest
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava21
 

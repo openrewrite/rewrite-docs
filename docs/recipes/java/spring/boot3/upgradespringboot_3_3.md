@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Boot 3.2](../../../java/spring/boot3/upgradespringboot_3_2)
 * [Migrate to Spring Security 6.3](../../../java/spring/security6/upgradespringsecurity_6_3)
 * [Migrate Spring Boot properties to 3.3](../../../java/spring/boot3/springbootproperties_3_3)
@@ -89,6 +95,8 @@ description: |
 tags:
   - spring
   - boot
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2
   - org.openrewrite.java.spring.security6.UpgradeSpringSecurity_6_3

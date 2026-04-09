@@ -25,6 +25,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find Maven and Gradle dependencies](../../../java/dependencies/finddependency)
+  * groupId: `org.flywaydb`
+  * artifactId: `flyway-*`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-flyway`
@@ -43,6 +52,11 @@ name: org.openrewrite.java.spring.boot4.AddSpringBootStarterFlyway
 displayName: Add `spring-boot-starter-flyway` if using Flyway
 description: |
   Adds the necessary Spring Boot 4.0 Flyway starter for autoconfiguration based on dependency usage.
+preconditions:
+  - org.openrewrite.java.dependencies.FindDependency:
+      groupId: org.flywaydb
+      artifactId: flyway-*
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot

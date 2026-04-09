@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade dependencies to Spring Cloud 2025](../../../java/spring/cloud2025/dependencyupgrades)
 * [Migrate to New Spring Cloud Gateway Modules and Starters](../../../java/spring/cloud2025/springcloudgatewaydeprecatedmodulesandstarters)
 * [Migrate Spring Cloud Gateway Properties](../../../java/spring/cloud2025/springcloudgatewayproperties)
@@ -56,6 +62,8 @@ description: |
 tags:
   - spring
   - cloud
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.cloud2025.DependencyUpgrades
   - org.openrewrite.java.spring.cloud2025.SpringCloudGatewayDeprecatedModulesAndStarters

@@ -34,6 +34,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files compiled at a specific Java version](../../../java/search/hasjavaversion)
+  * version: `[21,)`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Prefer JDK methods for Maps and Sets of an expected size](../../../java/migrate/guava/nomapsandsetswithexpectedsize)
 * [Prefer `Math#clamp`](../../../java/migrate/guava/prefermathclamp)
 
@@ -51,6 +59,10 @@ description: |
 tags:
   - guava
   - java21
+preconditions:
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: [21,)
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.guava.NoMapsAndSetsWithExpectedSize
   - org.openrewrite.java.migrate.guava.PreferMathClamp

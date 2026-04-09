@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.view.facelets.ResourceResolver`
   * newFullyQualifiedTypeName: `jakarta.faces.application.ResourceHandler`
@@ -49,6 +55,8 @@ name: org.openrewrite.java.migrate.jakarta.RemovedJakartaFacesResourceResolver
 displayName: Replace `ResourceResolver` with `ResourceHandler`
 description: |
   The `ResourceResolver` class was removed in Jakarta Faces 3.0. The functionality provided by that class can be replaced by using the `jakarta.faces.application.ResourceHandler` class.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.view.facelets.ResourceResolver

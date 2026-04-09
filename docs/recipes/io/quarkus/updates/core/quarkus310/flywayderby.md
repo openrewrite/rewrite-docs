@@ -25,6 +25,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find Maven dependency](../../../../../maven/search/finddependency)
+  * groupId: `io.quarkus`
+  * artifactId: `quarkus-jdbc-derby`
+* [Find Maven dependency](../../../../../maven/search/finddependency)
+  * groupId: `io.quarkus`
+  * artifactId: `quarkus-flyway`
+
+**Recipes**
+
 * [Add Maven dependency](../../../../../maven/adddependency)
   * groupId: `org.flywaydb`
   * artifactId: `flyway-database-derby`
@@ -41,6 +52,13 @@ name: io.quarkus.updates.core.quarkus310.FlywayDerby
 displayName: io.quarkus.updates.core.quarkus310.FlywayDerby
 description: |
   
+preconditions:
+  - org.openrewrite.maven.search.FindDependency:
+      groupId: io.quarkus
+      artifactId: quarkus-jdbc-derby
+  - org.openrewrite.maven.search.FindDependency:
+      groupId: io.quarkus
+      artifactId: quarkus-flyway
 recipeList:
   - org.openrewrite.maven.AddDependency:
       groupId: org.flywaydb

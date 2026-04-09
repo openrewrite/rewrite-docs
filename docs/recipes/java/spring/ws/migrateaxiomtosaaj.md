@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.ws.soap.axiom.AxiomSoapMessage`
   * newFullyQualifiedTypeName: `org.springframework.ws.soap.saaj.SaajSoapMessage`
@@ -85,6 +91,8 @@ description: |
 tags:
   - spring
   - spring-ws
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.ws.soap.axiom.AxiomSoapMessage

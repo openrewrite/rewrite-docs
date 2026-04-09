@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Normalize Spring `application*.\{yml,yaml\}` properties to kebab-case](../../java/spring/propertiestokebabcaseyaml)
 * [Normalize Spring `application*.properties` properties to kebab-case](../../java/spring/propertiestokebabcaseproperties)
 
@@ -43,6 +49,8 @@ name: org.openrewrite.java.spring.PropertiesToKebabCase
 displayName: Normalize Spring properties to kebab-case
 description: |
   Normalize Spring properties to use lowercase and hyphen-separated syntax.  For example, changing `spring.main.showBanner` to `spring.main.show-banner`.  With [Spring's relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding),  `kebab-case` may be used in properties files and still be converted to configuration beans.  Note, an exception to this is the case of `@Value`, which is match-sensitive. For example, `@Value(&quot;${anExampleValue}&quot;)` will not match `an-example-value`.  [The Spring reference documentation recommends using `kebab-case` for properties where possible](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding).
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.PropertiesToKebabCaseYaml
   - org.openrewrite.java.spring.PropertiesToKebabCaseProperties

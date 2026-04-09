@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `ManagementFactory#getPlatformMXBean(PlatformLoggingMXBean.class)`](../../../java/migrate/logging/migrategetloggingmxbeantogetplatformmxbean)
 * [Use `Logger#getGlobal()`](../../../java/migrate/logging/migrateloggerglobaltogetglobal)
 * [Use `Logger#logrb(.., ResourceBundle bundleName, ..)`](../../../java/migrate/logging/migrateloggerlogrbtouseresourcebundle)
@@ -52,6 +58,8 @@ description: |
   Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes.
 tags:
   - logging
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.logging.MigrateGetLoggingMXBeanToGetPlatformMXBean
   - org.openrewrite.java.migrate.logging.MigrateLoggerGlobalToGetGlobal

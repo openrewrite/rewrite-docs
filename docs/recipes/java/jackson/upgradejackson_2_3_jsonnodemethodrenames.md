@@ -36,21 +36,27 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode asText(..)`
   * newMethodName: `asString`
+  * matchOverrides: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode findValuesAsText(..)`
   * newMethodName: `findValuesAsString`
+  * matchOverrides: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode isContainerNode()`
   * newMethodName: `isContainer`
+  * matchOverrides: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode isTextual()`
   * newMethodName: `isString`
+  * matchOverrides: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode textValue()`
   * newMethodName: `asString`
+  * matchOverrides: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode with(..)`
   * newMethodName: `withObject`
+  * matchOverrides: `true`
 * [Migrate `JSONNode` field iterator for Jackson 3](../../java/jackson/jackson3jsonnodefielditerators)
 
 </TabItem>
@@ -70,21 +76,27 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode asText(..)
       newMethodName: asString
+      matchOverrides: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode findValuesAsText(..)
       newMethodName: findValuesAsString
+      matchOverrides: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode isContainerNode()
       newMethodName: isContainer
+      matchOverrides: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode isTextual()
       newMethodName: isString
+      matchOverrides: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode textValue()
       newMethodName: asString
+      matchOverrides: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode with(..)
       newMethodName: withObject
+      matchOverrides: true
   - org.openrewrite.java.jackson.Jackson3JsonNodeFieldIterators
 
 ```

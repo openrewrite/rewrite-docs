@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.apache.commons`
   * oldArtifactId: `commons-email`
@@ -60,6 +66,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateApacheCommonsEmailDependencies
 displayName: Update Apache Commons Email to Email2 for Jakarta
 description: |
   Update Apache Commons Email to Email2 for Jakarta.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.commons

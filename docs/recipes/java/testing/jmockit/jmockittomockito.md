@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications](../../../java/testing/jmockit/jmockitblocktomockito)
 * [Rewrite JMockit MockUp to Mockito statements](../../../java/testing/jmockit/jmockitmockuptomockito)
 * [Convert JMockit `@Mocked` and `@Injectable` annotated arguments](../../../java/testing/jmockit/jmockitannotatedargumenttomockito)
@@ -80,6 +86,8 @@ description: |
 tags:
   - jmockit
   - testing
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.jmockit.JMockitBlockToMockito
   - org.openrewrite.java.testing.jmockit.JMockitMockUpToMockito

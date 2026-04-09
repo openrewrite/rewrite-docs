@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Data 3.0](../../../java/spring/data/upgradespringdata_3_0)
 * [Replace `@Query` annotation by `@NativeQuery` when possible](../../../java/spring/data/migratequerytonativequery)
 
@@ -43,6 +49,8 @@ name: org.openrewrite.java.spring.data.UpgradeSpringData_3_4
 displayName: Migrate to Spring Data JPA 3.4
 description: |
   Migrate applications to the latest Spring Data JPA 3.4 release.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.data.UpgradeSpringData_3_0
   - org.openrewrite.java.spring.data.MigrateQueryToNativeQuery

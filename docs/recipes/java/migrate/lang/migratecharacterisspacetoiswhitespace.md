@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `java.lang.Character isSpace(char)`
   * newMethodName: `isWhitespace`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.lang.MigrateCharacterIsSpaceToIsWhitespace
 displayName: Use `Character#isWhitespace(char)`
 description: |
   Use `Character#isWhitespace(char)` instead of the deprecated `Character#isSpace(char)` in Java 1.1 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Character isSpace(char)

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `JpaSort.of(..)`](../../../java/spring/data/migratejpasort)
 * [Use `QuerydslPredicateExecutor&lt;T&gt;`](../../../java/spring/data/migratequerydsljparepository)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
@@ -61,6 +67,8 @@ name: org.openrewrite.java.spring.data.UpgradeSpringData_2_3
 displayName: Migrate to Spring Data 2.3
 description: |
   Migrate applications to the latest Spring Data 2.3 release.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.data.MigrateJpaSort
   - org.openrewrite.java.spring.data.MigrateQuerydslJpaRepository

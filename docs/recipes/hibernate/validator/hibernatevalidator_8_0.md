@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-validator`
@@ -42,6 +48,8 @@ name: org.openrewrite.hibernate.validator.HibernateValidator_8_0
 displayName: Migrate to Hibernate Validator 8.0.x
 description: |
   This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate

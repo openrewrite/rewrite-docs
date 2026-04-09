@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Framework 5.3 (Community Edition)](../../../java/spring/framework/upgradespringframework_5_3-community-edition)
 * [Migrate to Jakarta EE 10](../../../java/migrate/jakarta/jakartaee10)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
@@ -54,6 +60,8 @@ name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0
 displayName: Migrate to Spring Framework 6.0
 description: |
   Migrate applications to the latest Spring Framework 6.0 release.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3
   - org.openrewrite.java.migrate.jakarta.JakartaEE10

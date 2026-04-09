@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Maven dependency insight](../../../maven/search/dependencyinsight)
   * groupIdPattern: `org.springframework`
   * artifactIdPattern: `spring-web`
@@ -48,6 +54,8 @@ name: org.openrewrite.java.spring.http.SpringWebDependency
 displayName: Find Spring Web dependency
 description: |
   Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.search.DependencyInsight:
       groupIdPattern: org.springframework

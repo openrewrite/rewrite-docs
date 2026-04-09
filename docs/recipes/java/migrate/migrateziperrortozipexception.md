@@ -25,6 +25,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files compiled at a specific Java version](../../java/search/hasjavaversion)
+  * version: `[25,)`
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `java.util.zip.ZipError`
   * newFullyQualifiedTypeName: `java.util.zip.ZipException`
@@ -40,6 +48,10 @@ name: org.openrewrite.java.migrate.MigrateZipErrorToZipException
 displayName: Use `ZipException` instead of `ZipError`
 description: |
   Use `ZipException` instead of the deprecated `ZipError` in Java 9 or higher.
+preconditions:
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: [25,)
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: java.util.zip.ZipError

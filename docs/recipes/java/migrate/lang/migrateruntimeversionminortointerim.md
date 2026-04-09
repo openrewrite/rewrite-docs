@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `java.lang.Runtime.Version minor()`
   * newMethodName: `interim`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.lang.MigrateRuntimeVersionMinorToInterim
 displayName: Use `Runtime.Version#interim()`
 description: |
   Use `Runtime.Version#interim()` instead of the deprecated `Runtime.Version#minor()` in Java 10 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: java.lang.Runtime.Version minor()

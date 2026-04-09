@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Transform classes that extend a given Class to implement the given Interface instead](../../../java/spring/batch/replacesupportclasswithitsinterface)
   * fullyQualifiedClassName: `org.springframework.batch.core.listener.JobExecutionListenerSupport`
   * fullyQualifiedInterfaceName: `org.springframework.batch.core.JobExecutionListener`
@@ -56,6 +62,8 @@ name: org.openrewrite.java.spring.batch.ListenerSupportClassToInterface
 displayName: Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead
 description: |
   As of 5.0 `*Listener` interfaces default methods (made possible by a Java 8 baseline) can be implemented directly without the need for the adapter.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.batch.ReplaceSupportClassWithItsInterface:
       fullyQualifiedClassName: org.springframework.batch.core.listener.JobExecutionListenerSupport

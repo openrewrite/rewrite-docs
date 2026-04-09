@@ -25,6 +25,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.junit.jupiter`
+  * artifactIdPattern: `junit-jupiter*`
+
+**Recipes**
+
 * [Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization](../../../java/testing/mockito/replacemockitotestexecutionlistener)
   * targetFramework: `jupiter`
 
@@ -39,6 +47,10 @@ name: org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerFo
 displayName: Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)
 description: |
   Replace `MockitoTestExecutionListener` in projects that have JUnit Jupiter as a dependency. Uses `@ExtendWith(MockitoExtension.class)` as the replacement.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.junit.jupiter
+      artifactIdPattern: junit-jupiter*
 recipeList:
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListener:
       targetFramework: jupiter

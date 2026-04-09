@@ -25,6 +25,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find method usages](../../java/search/findmethods)
+  * methodPattern: `org.apache.http.client.CredentialsProvider setCredentials(..)`
+
+**Recipes**
+
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.client.CredentialsProvider`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.CredentialsStore`
@@ -40,6 +47,9 @@ name: org.openrewrite.apache.httpclient5.CredentialsStoreSetCredentials
 displayName: Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`
 description: |
   Migrates `BasicCredentialsProvider` methods`setCredentials` to the new `CredentialsStore` interface.
+preconditions:
+  - org.openrewrite.java.search.FindMethods:
+      methodPattern: org.apache.http.client.CredentialsProvider setCredentials(..)
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.client.CredentialsProvider

@@ -29,6 +29,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `io.micrometer`
+  * artifactIdPattern: `micrometer-spring-legacy`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `io.micrometer`
   * artifactId: `micrometer-spring-legacy`
@@ -48,6 +57,11 @@ name: org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator
 displayName: Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`
 description: |
   Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`.
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: io.micrometer
+      artifactIdPattern: micrometer-spring-legacy
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: io.micrometer

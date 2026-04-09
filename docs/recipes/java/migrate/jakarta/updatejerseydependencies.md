@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.glassfish.jersey.core`
   * artifactId: `*`
@@ -69,6 +75,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateJerseyDependencies
 displayName: Update GlassFish Jersey Dependencies to 3.1.x
 description: |
   Update GlassFish Jersey Dependencies to 3.1.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.glassfish.jersey.core

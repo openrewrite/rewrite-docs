@@ -35,6 +35,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../../../core/findsourcefiles)
+  * filePattern: `**/mvc-core-config.xml`
+* [Find XML tags](../../../../../../xml/search/findtags)
+  * xPath: `//beans/mvc:default-servlet-handler[not(@default-servlet-name)]`
+
+**Recipes**
+
 * [Remove XML tag](../../../../../../xml/removexmltag)
   * xPath: `//beans/mvc:default-servlet-handler[not(@default-servlet-name)]`
 * [Add or update child tag](../../../../../../xml/addorupdatechildtag)
@@ -56,6 +65,11 @@ tags:
   - default-servlet-handler
   - weblogic
   - springframework
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/mvc-core-config.xml
+  - org.openrewrite.xml.search.FindTags:
+      xPath: //beans/mvc:default-servlet-handler[not(@default-servlet-name)]
 recipeList:
   - org.openrewrite.xml.RemoveXmlTag:
       xPath: //beans/mvc:default-servlet-handler[not(@default-servlet-name)]

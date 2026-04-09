@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace `List.get(int)`, `add(int, Object)`, and `remove(int)` with `SequencedCollection` `*First` and `*Last` methods](../../../java/migrate/util/listfirstandlast)
 * [Replace `iterator().next()` with `getFirst()`](../../../java/migrate/util/iteratornext)
 * [Use `getFirst()` instead of `stream().findFirst().orElseThrow()`](../../../java/migrate/util/streamfindfirst)
@@ -61,6 +67,8 @@ description: |
 tags:
   - collections
   - java21
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.util.ListFirstAndLast
   - org.openrewrite.java.migrate.util.IteratorNext

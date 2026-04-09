@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Batch 5.0 from 4.3](../../../java/spring/batch/springbatch4to5migration)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.batch`
@@ -240,6 +246,8 @@ description: |
 tags:
   - spring
   - batch
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.batch.SpringBatch4To5Migration
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

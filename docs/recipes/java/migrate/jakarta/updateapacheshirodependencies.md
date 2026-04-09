@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Maven dependency classifier](../../../maven/changedependencyclassifier)
   * groupId: `org.apache.shiro`
   * artifactId: `*`
@@ -81,6 +87,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateApacheShiroDependencies
 displayName: Update Apache Shiro Dependencies to 2.0.x
 description: |
   Update Apache Shiro Dependencies to 2.0.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.ChangeDependencyClassifier:
       groupId: org.apache.shiro

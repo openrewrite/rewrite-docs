@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Change Quarkus configuration property value](../../../../../quarkus/changequarkuspropertyvalue)
+  * propertyKey: `quarkus.package.type`
+  * newValue: `dummy`
+  * oldValue: `fast-jar`
+
+**Recipes**
+
 * [Add a Quarkus configuration property](../../../../../quarkus/addquarkusproperty)
   * property: `quarkus.package.jar.type`
   * value: `fast-jar`
@@ -46,6 +55,11 @@ name: io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar
 displayName: io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar
 description: |
   
+preconditions:
+  - org.openrewrite.quarkus.ChangeQuarkusPropertyValue:
+      propertyKey: quarkus.package.type
+      newValue: dummy
+      oldValue: fast-jar
 recipeList:
   - org.openrewrite.quarkus.AddQuarkusProperty:
       property: quarkus.package.jar.type

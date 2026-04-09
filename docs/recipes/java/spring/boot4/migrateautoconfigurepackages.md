@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.jms.activemq`
   * newPackageName: `org.springframework.boot.activemq.autoconfigure`
@@ -315,6 +321,8 @@ name: org.openrewrite.java.spring.boot4.MigrateAutoconfigurePackages
 displayName: Migrate packages to modular starters
 description: |
   Migrate to new packages used for autoconfiguration by Spring Boot 4.0 modules.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.jms.activemq

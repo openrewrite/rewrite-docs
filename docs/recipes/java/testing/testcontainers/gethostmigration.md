@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.testcontainers.containers.ContainerState getContainerIpAddress()`
   * newMethodName: `getHost`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.testing.testcontainers.GetHostMigration
 displayName: Replace `ContainerState.getContainerIpAddress()` with `getHost()`
 description: |
   Replace `org.testcontainers.containers.ContainerState.getContainerIpAddress()` with `getHost()`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.testcontainers.containers.ContainerState getContainerIpAddress()

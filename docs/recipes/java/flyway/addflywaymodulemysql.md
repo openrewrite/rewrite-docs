@@ -30,6 +30,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.flywaydb`
+  * artifactIdPattern: `flyway-core`
+  * version: `[10,)`
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `com.mysql`
+  * artifactIdPattern: `mysql-connector-j`
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
   * groupId: `org.flywaydb`
   * artifactId: `flyway-mysql`
@@ -49,6 +62,15 @@ description: |
 tags:
   - flyway
   - mysql
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.flywaydb
+      artifactIdPattern: flyway-core
+      version: [10,)
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: com.mysql
+      artifactIdPattern: mysql-connector-j
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.flywaydb

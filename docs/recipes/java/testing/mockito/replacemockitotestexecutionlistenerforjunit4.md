@@ -25,6 +25,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `junit`
+  * artifactIdPattern: `junit`
+
+**Recipes**
+
 * [Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization](../../../java/testing/mockito/replacemockitotestexecutionlistener)
   * targetFramework: `junit4`
 
@@ -39,6 +47,10 @@ name: org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerFo
 displayName: Replace `MockitoTestExecutionListener` (JUnit 4 projects)
 description: |
   Replace `MockitoTestExecutionListener` in projects that have JUnit 4 as a dependency. Uses `@RunWith(MockitoJUnitRunner.class)` as the replacement.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: junit
+      artifactIdPattern: junit
 recipeList:
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListener:
       targetFramework: junit4

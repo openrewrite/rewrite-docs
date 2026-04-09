@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use `DriverManager#setLogWriter(java.io.PrintWriter)`](../../../java/migrate/sql/migratedrivermanagersetlogstream)
 
 </TabItem>
@@ -38,6 +44,8 @@ name: org.openrewrite.java.migrate.sql.JavaSqlAPIs
 displayName: Use modernized `java.sql` APIs
 description: |
   Certain Java sql APIs have become deprecated and their usages changed, necessitating usage changes.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.sql.MigrateDriverManagerSetLogStream
 

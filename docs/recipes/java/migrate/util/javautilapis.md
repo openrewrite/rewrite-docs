@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace `iterator().next()` with `getFirst()`](../../../java/migrate/util/iteratornext)
 * [Replace `List.get(int)`, `add(int, Object)`, and `remove(int)` with `SequencedCollection` `*First` and `*Last` methods](../../../java/migrate/util/listfirstandlast)
 * [Prefer `List.of()`](../../../java/migrate/util/migratecollectionsemptylist)
@@ -64,6 +70,8 @@ name: org.openrewrite.java.migrate.util.JavaUtilAPIs
 displayName: Use modernized `java.util` APIs
 description: |
   Certain java util APIs have been introduced and are favored over previous APIs.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.util.IteratorNext
   - org.openrewrite.java.migrate.util.ListFirstAndLast

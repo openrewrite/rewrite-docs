@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.springframework.boot.web.client.RestTemplateBuilder basicAuthorization(String, String)`
   * newMethodName: `basicAuthentication`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.spring.boot2.MigrateRestTemplateBuilderBasicAuthoriza
 displayName: Use `RestTemplateBuilder#basicAuthentication`
 description: |
   `RestTemplateBuilder#basicAuthorization` was deprecated in 2.1.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.boot.web.client.RestTemplateBuilder basicAuthorization(String, String)

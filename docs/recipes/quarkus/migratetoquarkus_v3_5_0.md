@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `io.quarkus`
+  * artifactIdPattern: `quarkus-core`
+  * version: `(,3.5.0)`
+
+**Recipes**
+
 * [Quarkus Updates Aggregate 3.3.0](../quarkus/migratetoquarkus_v3_3_0)
 * [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](../io/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith)
 * [io.quarkus.updates.core.quarkus35.MutinyUniMemoizeAtLeast](../io/quarkus/updates/core/quarkus35/mutinyunimemoizeatleast)
@@ -44,6 +53,11 @@ name: org.openrewrite.quarkus.MigrateToQuarkus_v3_5_0
 displayName: Quarkus Updates Aggregate 3.5.0
 description: |
   Quarkus update recipes to upgrade your application to 3.5.0.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: io.quarkus
+      artifactIdPattern: quarkus-core
+      version: (,3.5.0)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0
   - io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith

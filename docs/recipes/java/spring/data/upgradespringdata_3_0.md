@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Data JPA 2.7](../../../java/spring/data/upgradespringdata_2_7)
 * [Add `CrudRepository` to interfaces extending `PagingAndSortingRepository`](../../../java/spring/data/migratepagingandsortingrepository)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
@@ -48,6 +54,8 @@ name: org.openrewrite.java.spring.data.UpgradeSpringData_3_0
 displayName: Migrate to Spring Data 3.0
 description: |
   Migrate applications to Spring Data 3.0. Handles the PagingAndSortingRepository hierarchy change where it no longer extends CrudRepository, and chains prior deprecation fixes from Spring Data 2.7.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_7
   - org.openrewrite.java.spring.data.MigratePagingAndSortingRepository

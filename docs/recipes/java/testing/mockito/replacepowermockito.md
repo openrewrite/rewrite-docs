@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace PowerMock dependencies with Mockito equivalents](../../../java/testing/mockito/replacepowermockdependencies)
 * [Remove annotation](../../../java/removeannotation)
   * annotationPattern: `@org.powermock.core.classloader.annotations.PowerMockIgnore`
@@ -83,6 +89,8 @@ description: |
 tags:
   - testing
   - mockito
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies
   - org.openrewrite.java.RemoveAnnotation:

@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `io.quarkus`
+  * artifactIdPattern: `quarkus-core`
+  * version: `(,3.9.0)`
+
+**Recipes**
+
 * [Quarkus Updates Aggregate 3.8.3](../quarkus/migratetoquarkus_v3_8_3)
 * [io.quarkus.updates.core.quarkus39.RemovePanacheAnnotationProcessor](../io/quarkus/updates/core/quarkus39/removepanacheannotationprocessor)
 * [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](../io/quarkus/updates/core/quarkus39/synchibernatejpamodelgenversionwithbom)
@@ -47,6 +56,11 @@ name: org.openrewrite.quarkus.MigrateToQuarkus_v3_9_0
 displayName: Quarkus Updates Aggregate 3.9.0
 description: |
   Quarkus update recipes to upgrade your application to 3.9.0.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: io.quarkus
+      artifactIdPattern: quarkus-core
+      version: (,3.9.0)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_8_3
   - io.quarkus.updates.core.quarkus39.RemovePanacheAnnotationProcessor

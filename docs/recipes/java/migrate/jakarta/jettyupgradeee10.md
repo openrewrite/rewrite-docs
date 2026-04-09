@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.ee9.websocket`
   * oldArtifactId: `jetty-ee9-websocket-jetty-api`
@@ -116,6 +122,8 @@ name: org.openrewrite.java.migrate.jakarta.JettyUpgradeEE10
 displayName: Update Jetty EE9 to Jetty EE10
 description: |
   Update Jetty dependencies from EE9 to EE10, changing the groupId and artifactIds as needed.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.ee9.websocket

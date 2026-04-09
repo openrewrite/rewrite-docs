@@ -37,6 +37,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Java 8](../../java/migrate/upgradetojava8)
 * [Prefer `java.util.Base64` instead of `sun.misc`](../../java/migrate/usejavautilbase64)
   * useMimeCoder: `false`
@@ -110,6 +116,8 @@ tags:
   - java11
   - jaxws
   - jakarta
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava8
   - org.openrewrite.java.migrate.UseJavaUtilBase64:

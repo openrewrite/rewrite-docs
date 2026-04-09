@@ -29,6 +29,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find types](../../java/search/findtypes)
+  * fullyQualifiedTypeName: `org.openrewrite.test.RewriteTest`
+  * checkAssignability: `true`
+
+**Recipes**
+
 * [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](../../java/migrate/util/replacestreamcollectwithtolist)
   * convertToList: `true`
 * [RewriteTest classes should not be public](../../java/recipes/rewritetestclassesshouldnotbepublic)
@@ -72,6 +80,10 @@ name: org.openrewrite.java.recipes.RecipeTestingBestPractices
 displayName: Recipe testing best practices
 description: |
   Best practices for testing recipes.
+preconditions:
+  - org.openrewrite.java.search.FindTypes:
+      fullyQualifiedTypeName: org.openrewrite.test.RewriteTest
+      checkAssignability: true
 recipeList:
   - org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList:
       convertToList: true

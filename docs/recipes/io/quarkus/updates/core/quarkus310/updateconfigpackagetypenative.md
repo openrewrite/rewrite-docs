@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Change Quarkus configuration property value](../../../../../quarkus/changequarkuspropertyvalue)
+  * propertyKey: `quarkus.package.type`
+  * newValue: `dummy`
+  * oldValue: `native`
+
+**Recipes**
+
 * [Add a Quarkus configuration property](../../../../../quarkus/addquarkusproperty)
   * property: `quarkus.native.enabled`
   * value: `true`
@@ -49,6 +58,11 @@ name: io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNative
 displayName: io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNative
 description: |
   
+preconditions:
+  - org.openrewrite.quarkus.ChangeQuarkusPropertyValue:
+      propertyKey: quarkus.package.type
+      newValue: dummy
+      oldValue: native
 recipeList:
   - org.openrewrite.quarkus.AddQuarkusProperty:
       property: quarkus.native.enabled

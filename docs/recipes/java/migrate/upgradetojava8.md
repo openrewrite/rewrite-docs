@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Java 7](../../java/migrate/upgradetojava7)
 * [Upgrade Java version](../../java/migrate/upgradejavaversion)
   * version: `8`
@@ -54,6 +60,8 @@ description: |
   This recipe will apply changes commonly needed when upgrading to Java 8. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
 tags:
   - java8
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava7
   - org.openrewrite.java.migrate.UpgradeJavaVersion:

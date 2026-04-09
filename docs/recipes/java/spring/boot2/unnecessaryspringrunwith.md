@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [JUnit 4 `@RunWith` to JUnit Jupiter `@ExtendWith`](../../../java/testing/junit5/runnertoextension)
   * runners: `[org.springframework.test.context.junit4.SpringRunner, org.springframework.test.context.junit4.SpringJUnit4ClassRunner]`
   * extension: `org.springframework.test.context.junit.jupiter.SpringExtension`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.spring.boot2.UnnecessarySpringRunWith
 displayName: Remove unnecessary Spring `@RunWith`
 description: |
   Remove `@RunWith` annotations on Spring tests.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.junit5.RunnerToExtension:
       runners: [org.springframework.test.context.junit4.SpringRunner, org.springframework.test.context.junit4.SpringJUnit4ClassRunner]

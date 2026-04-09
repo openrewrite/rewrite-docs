@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Migrate to Hibernate 6.4.x](../hibernate/migratetohibernate64)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
@@ -47,6 +53,8 @@ name: org.openrewrite.hibernate.MigrateToHibernate65
 displayName: Migrate to Hibernate 6.5.x
 description: |
   This recipe will apply changes commonly needed when migrating to Hibernate 6.5.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernate64
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

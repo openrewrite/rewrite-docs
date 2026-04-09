@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../core/singleton)
+
+**Recipes**
+
 * [Change type](../java/changetype)
   * oldFullyQualifiedTypeName: `org.hibernate.type.descriptor.java.JavaTypeDescriptor`
   * newFullyQualifiedTypeName: `org.hibernate.type.descriptor.java.JavaType`
@@ -47,6 +53,8 @@ name: org.openrewrite.hibernate.TypeDescriptorToType
 displayName: Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`
 description: |
   Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType` respectively. See https://github.com/hibernate/hibernate-orm/blob/6.0/migration-guide.adoc#type-system for more details.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.hibernate.type.descriptor.java.JavaTypeDescriptor

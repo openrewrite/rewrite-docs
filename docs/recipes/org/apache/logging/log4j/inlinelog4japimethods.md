@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../../core/singleton)
+
+**Recipes**
+
 * [Inline method calls](../../../../java/inlinemethodcalls)
   * methodPattern: `org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)`
   * replacement: `this(pattern, Arrays.stream(args).toArray(Object[]::new), throwable)`
@@ -63,6 +69,8 @@ name: org.apache.logging.log4j.InlineLog4jApiMethods
 displayName: Inline `log4j-api-2` methods annotated with `@InlineMe`
 description: |
   Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: org.apache.logging.log4j.message.ParameterizedMessage ParameterizedMessage(java.lang.String, java.lang.String[], java.lang.Throwable)

@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Normalize Spring properties to kebab-case](../../../java/spring/propertiestokebabcase)
 * [Enable Virtual Threads on Java 21](../../../java/spring/boot3/enablevirtualthreads)
 * [Remove `public` from `@Bean` methods](../../../java/spring/framework/beanmethodsnotpublic)
@@ -56,6 +62,8 @@ description: |
 tags:
   - spring
   - boot
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.PropertiesToKebabCase
   - org.openrewrite.java.spring.boot3.EnableVirtualThreads

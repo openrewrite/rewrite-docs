@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate Lombok to a Java 11 compatible version](../../../java/migrate/lombok/updatelomboktojava11)
 * [Use Lombok logger annotations instead of explicit fields](../../../java/migrate/lombok/log/uselomboklogannotations)
 * [Convert getter methods to annotations](../../../java/migrate/lombok/uselombokgetter)
@@ -60,6 +66,8 @@ name: org.openrewrite.java.migrate.lombok.LombokBestPractices
 displayName: Lombok Best Practices
 description: |
   Applies all recipes that enforce best practices for using Lombok.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.lombok.UpdateLombokToJava11
   - org.openrewrite.java.migrate.lombok.log.UseLombokLogAnnotations

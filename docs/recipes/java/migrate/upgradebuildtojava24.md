@@ -25,6 +25,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.jetbrains.kotlin`
+  * artifactIdPattern: `kotlin-stdlib*`
+  * version: `[0,2.3)`
+
+**Recipes**
+
 * [Upgrade Java version](../../java/migrate/upgradejavaversion)
   * version: `24`
 
@@ -39,6 +48,11 @@ name: org.openrewrite.java.migrate.UpgradeBuildToJava24
 displayName: Upgrade build to Java 24 for Kotlin &lt;2.3
 description: |
   Kotlin versions before 2.3 only support up to Java 24.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.jetbrains.kotlin
+      artifactIdPattern: kotlin-stdlib*
+      version: [0,2.3)
 recipeList:
   - org.openrewrite.java.migrate.UpgradeJavaVersion:
       version: 24

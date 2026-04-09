@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `com.tngtech.archunit`
   * artifactId: `archunit*`
@@ -69,6 +75,8 @@ name: org.openrewrite.java.testing.archunit.ArchUnit0to1Migration
 displayName: ArchUnit 0.x upgrade
 description: |
   Upgrade ArchUnit from 0.x to 1.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.tngtech.archunit

@@ -29,6 +29,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `io.quarkus`
+  * artifactIdPattern: `quarkus-core`
+  * version: `(,3.0.0)`
+
+**Recipes**
+
 * [Migrate `camel3` application to `camel4.`](../io/quarkus/updates/camel/camel40/camelquarkusmigrationrecipe)
 * [Remove non existing camel-quarkus extensions](../java/camel/migrate/removedextensions)
 * [io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse](../io/quarkus/updates/core/quarkus30/upgradequarkiverse)
@@ -92,6 +101,11 @@ name: org.openrewrite.quarkus.MigrateToQuarkus_v3_0_0
 displayName: Quarkus Updates Aggregate 3.0.0
 description: |
   Quarkus update recipes to upgrade your application to 3.0.0.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: io.quarkus
+      artifactIdPattern: quarkus-core
+      version: (,3.0.0)
 recipeList:
   - io.quarkus.updates.camel.camel40.CamelQuarkusMigrationRecipe
   - org.openrewrite.java.camel.migrate.removedExtensions

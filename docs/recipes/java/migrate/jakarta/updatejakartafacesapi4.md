@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.faces`
   * artifactId: `jakarta.faces-api`
@@ -49,6 +55,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi4
 displayName: Update Jakarta EE Java Faces Dependencies to 4.0.x
 description: |
   Update Jakarta EE Java Faces Dependencies to 4.0.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.faces

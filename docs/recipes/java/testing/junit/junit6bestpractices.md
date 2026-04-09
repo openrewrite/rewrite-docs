@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [JUnit 6 migration from JUnit 5.x](../../../java/testing/junit6/junit5to6migration)
 * [JUnit Jupiter best practices](../../../java/testing/junit/jupiterbestpractices)
 
@@ -51,6 +57,8 @@ description: |
 tags:
   - junit
   - testing
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.junit6.JUnit5to6Migration
   - org.openrewrite.java.testing.junit.JupiterBestPractices

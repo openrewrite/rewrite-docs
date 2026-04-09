@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate Log4j to SLF4J](../../../java/logging/slf4j/log4jtoslf4j)
 * [Migrate Log4j 2.x Appender to logback-classic equivalents](../../../java/logging/logback/log4jappendertologback)
 * [Migrate Log4j 2.x Layout to logback-classic equivalents](../../../java/logging/logback/log4jlayouttologback)
@@ -72,6 +78,8 @@ tags:
   - logging
   - log4j
   - logback
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.slf4j.Log4jToSlf4j
   - org.openrewrite.java.logging.logback.Log4jAppenderToLogback

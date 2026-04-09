@@ -31,6 +31,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../../core/singleton)
+
+**Recipes**
+
 * [Find method usages](../../../../java/search/findmethods)
   * methodPattern: `org.springframework.security.crypto.encrypt.Encryptors queryableText(..)`
   * matchOverrides: `false`
@@ -50,6 +56,8 @@ tags:
   - spring
   - security
   - search
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.search.FindMethods:
       methodPattern: org.springframework.security.crypto.encrypt.Encryptors queryableText(..)

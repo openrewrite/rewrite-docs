@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method target to static](../../../java/changemethodtargettostatic)
   * methodPattern: `org.slf4j.LoggerFactory getLogger(..)`
   * fullyQualifiedTargetTypeName: `org.apache.logging.log4j.LogManager`
@@ -111,6 +117,8 @@ tags:
   - slf4j
   - logging
   - log4j
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
       methodPattern: org.slf4j.LoggerFactory getLogger(..)

@@ -30,6 +30,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Use HttpServletRequest `logout` method for programmatic security logout in Servlet 3.0](../../java/migrate/javax/httpsessioninvalidate)
 
 </TabItem>
@@ -46,6 +52,8 @@ description: |
 tags:
   - javaee6
   - deprecated
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javax.HttpSessionInvalidate
 

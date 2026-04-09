@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Use `com.ibm.net.ssl.www2.protocol.https.Handler` instead of `com.sun.net.ssl.internal.www.protocol.https.Handler`](../../java/migrate/jredonotusesunnetsslinternalwwwprotocolhttpshandler)
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](../../java/migrate/jredonotusesunnetsslinternalwwwprotocol)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](../../java/migrate/jredonotusesunnetsslinternalsslprovider)
@@ -53,6 +59,8 @@ description: |
   This recipe will apply changes commonly needed when upgrading Java versions. The solutions provided in this list are solutions only available in IBM Semeru Runtimes.
 tags:
   - java11
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocolHttpsHandler
   - org.openrewrite.java.migrate.JREDoNotUseSunNetSslInternalWwwProtocol

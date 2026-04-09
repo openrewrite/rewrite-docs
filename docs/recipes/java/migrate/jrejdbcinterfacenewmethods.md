@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Adds missing method implementations](../../java/migrate/addmissingmethodimplementation)
   * fullyQualifiedClassName: `java.sql.Connection`
   * methodPattern: `*..* abort(java.util.concurrent.Executor)`
@@ -77,6 +83,8 @@ name: org.openrewrite.java.migrate.JREJdbcInterfaceNewMethods
 displayName: Adds missing JDBC interface methods
 description: |
   Add method implementations stubs to classes that implement JDBC interfaces.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.AddMissingMethodImplementation:
       fullyQualifiedClassName: java.sql.Connection

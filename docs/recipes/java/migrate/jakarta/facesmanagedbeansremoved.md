@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.faces.bean.ApplicationScoped`
   * newFullyQualifiedTypeName: `jakarta.enterprise.context.ApplicationScoped`
@@ -93,6 +99,8 @@ name: org.openrewrite.java.migrate.jakarta.FacesManagedBeansRemoved
 displayName: Substitute removed Faces Managed Beans
 description: |
   This recipe substitutes Faces Managed Beans, which were deprecated in JavaServer Faces 2.3 and have been removed from Jakarta Faces 4.0.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.faces.bean.ApplicationScoped

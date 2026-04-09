@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 **org.openrewrite.java.netty.upgrade.\_3\_2\_to\_4\_1\_.StringEncoderToStandardCharsets**
 
 ```
-Replaces new StringEncoder(charsetName) with new StringEncoder(StandardCharsets.\<constant>) for all standard charsets (US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16).
+Replaces new StringEncoder(charsetName) with new StringEncoder(StandardCharsets.<constant>) for all standard charsets (US-ASCII, ISO-8859-1, UTF-8, UTF-16BE, UTF-16LE, UTF-16).
 ```
 
 

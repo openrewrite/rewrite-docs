@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.springframework.kafka.listener.SeekToCurrentErrorHandler handle(..)`
   * newMethodName: `handleRemaining`
@@ -58,6 +64,8 @@ description: |
 tags:
   - spring
   - kafka
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.springframework.kafka.listener.SeekToCurrentErrorHandler handle(..)

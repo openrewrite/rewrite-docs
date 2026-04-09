@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Framework 5.0](../../../java/spring/framework/upgradespringframework_5_0)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework`
@@ -56,6 +62,8 @@ name: org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_1
 displayName: Migrate to Spring Framework 5.1
 description: |
   Migrate applications to the latest Spring Framework 5.1 release.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_0
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

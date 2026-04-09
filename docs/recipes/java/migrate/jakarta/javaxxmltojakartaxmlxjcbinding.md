@@ -35,6 +35,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files without Namespace URI](../../../xml/search/doesnotusenamespaceuri)
+  * namespaceUri: `http://websphere.ibm.com/xml/ns/javaee`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change XML attribute](../../../xml/changetagattribute)
   * elementName: `//*[namespace-uri() = 'http://java.sun.com/xml/ns/jaxb' and local-name() = 'bindings']`
   * attributeName: `xmlns:jxb`
@@ -61,6 +69,10 @@ tags:
   - jaxb
   - javax
   - jakarta
+preconditions:
+  - org.openrewrite.xml.search.DoesNotUseNamespaceUri:
+      namespaceUri: http://websphere.ibm.com/xml/ns/javaee
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: //*[namespace-uri() = 'http://java.sun.com/xml/ns/jaxb' and local-name() = 'bindings']

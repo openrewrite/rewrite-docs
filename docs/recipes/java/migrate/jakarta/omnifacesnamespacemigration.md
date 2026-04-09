@@ -36,6 +36,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Find and replace](../../../text/findandreplace)
   * find: `http://omnifaces.org/ui`
   * replace: `omnifaces`
@@ -61,6 +67,8 @@ tags:
   - jsf
   - omnifaces
   - jakarta
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.text.FindAndReplace:
       find: http://omnifaces.org/ui

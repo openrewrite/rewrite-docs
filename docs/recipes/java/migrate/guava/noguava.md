@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Inline `guava` methods annotated with `@InlineMe`](../../../com/google/guava/inlineguavamethods)
 * [Prefer the Java 11 standard library instead of Guava](../../../java/migrate/guava/noguavajava11)
 * [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
@@ -98,6 +104,8 @@ description: |
   Guava filled in important gaps in the Java standard library and still does. But at least some of Guava's API surface area is covered by the Java standard library now, and some projects may be able to remove Guava altogether if they migrate to standard library for these functions.
 tags:
   - guava
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - com.google.guava.InlineGuavaMethods
   - org.openrewrite.java.migrate.guava.NoGuavaJava11

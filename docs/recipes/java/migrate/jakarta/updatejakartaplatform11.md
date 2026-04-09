@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.platform`
   * artifactId: `*`
@@ -53,6 +59,8 @@ name: org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform11
 displayName: Update Jakarta EE Platform Dependencies to 11.0.x
 description: |
   Update Jakarta EE Platform Dependencies to 11.0.x.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.platform

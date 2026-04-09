@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Use TLS for AMQP connection strings](../../../java/spring/amqp/usetlsamqpconnectionstring)
 * [Use TLS for JDBC connection strings](../../../java/spring/data/usetlsjdbcconnectionstring)
 
@@ -51,6 +57,8 @@ description: |
 tags:
   - spring
   - security
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.amqp.UseTlsAmqpConnectionString
   - org.openrewrite.java.spring.data.UseTlsJdbcConnectionString

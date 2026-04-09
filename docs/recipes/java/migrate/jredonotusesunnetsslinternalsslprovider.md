@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.sun.net.ssl.internal.ssl.Provider`
   * newFullyQualifiedTypeName: `com.ibm.jsse2.IBMJSSEProvider2`
@@ -63,6 +69,8 @@ description: |
   Do not use the `com.sun.net.ssl.internal.ssl.Provider` class.
 tags:
   - java11
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.sun.net.ssl.internal.ssl.Provider

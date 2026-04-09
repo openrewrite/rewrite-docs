@@ -35,6 +35,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files compiled at a specific Java version](../../java/search/hasjavaversion)
+  * version: `[25,)`
+* [Find method usages](../../java/search/findmethods)
+  * methodPattern: `java.security.AccessController#checkPermission(..)`
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Remove method invocations](../../java/removemethodinvocations)
   * methodPattern: `java.security.AccessController#checkPermission(..)`
 * [Remove catch for a checked exception if the try block does not throw that exception](../../staticanalysis/unnecessarycatch)
@@ -57,6 +67,12 @@ tags:
   - security
   - java25
   - deprecation
+preconditions:
+  - org.openrewrite.java.search.HasJavaVersion:
+      version: [25,)
+  - org.openrewrite.java.search.FindMethods:
+      methodPattern: java.security.AccessController#checkPermission(..)
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.RemoveMethodInvocations:
       methodPattern: java.security.AccessController#checkPermission(..)

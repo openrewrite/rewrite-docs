@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Find and replace](../../../text/findandreplace)
   * find: `org.springframework.boot.loader.JarLauncher`
   * replace: `org.springframework.boot.loader.launch.JarLauncher`
@@ -53,6 +59,8 @@ name: org.openrewrite.java.spring.boot3.RelocateLauncherClasses
 displayName: Relocate Launcher Classes
 description: |
   Relocate classes that have been moved to different packages in Spring Boot 3.2.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.text.FindAndReplace:
       find: org.springframework.boot.loader.JarLauncher

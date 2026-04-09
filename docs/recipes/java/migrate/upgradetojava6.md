@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Upgrade JaCoCo](../../java/migrate/jacoco/upgradejacoco)
 * [Add missing `isWrapperFor` and `unwrap` methods](../../java/migrate/jrewrapperinterface)
 
@@ -49,6 +55,8 @@ description: |
   This recipe will apply changes commonly needed when upgrading to Java 6. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
 tags:
   - java6
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo
   - org.openrewrite.java.migrate.JREWrapperInterface

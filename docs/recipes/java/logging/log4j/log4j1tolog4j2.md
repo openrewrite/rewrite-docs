@@ -34,6 +34,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace any Lombok log annotations with target logging framework annotation](../../../java/logging/changelomboklogannotation)
   * loggingFramework: `Log4J2`
 * [Change method target to static](../../../java/changemethodtargettostatic)
@@ -125,6 +131,8 @@ description: |
 tags:
   - logging
   - log4j
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.ChangeLombokLogAnnotation:
       loggingFramework: Log4J2

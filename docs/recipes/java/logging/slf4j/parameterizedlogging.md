@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Parameterize logging statements](../../../java/logging/parameterizedlogging)
   * methodPattern: `org.slf4j.Logger trace(..)`
 * [Parameterize logging statements](../../../java/logging/parameterizedlogging)
@@ -61,6 +67,8 @@ tags:
   - slf4j
   - RSPEC-S2629
   - logging
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.logging.ParameterizedLogging:
       methodPattern: org.slf4j.Logger trace(..)

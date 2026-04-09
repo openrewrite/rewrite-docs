@@ -35,6 +35,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.springframework.boot`
+  * artifactIdPattern: `spring-boot-starter-thymeleaf`
+
+**Recipes**
+
 * [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-thymeleaf`
@@ -58,6 +66,10 @@ tags:
   - spring
   - quarkus
   - templating
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.springframework.boot
+      artifactIdPattern: spring-boot-starter-thymeleaf
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.springframework.boot

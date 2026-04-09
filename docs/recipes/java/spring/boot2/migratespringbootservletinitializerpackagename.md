@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.support.SpringBootServletInitializer`
   * newFullyQualifiedTypeName: `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.spring.boot2.MigrateSpringBootServletInitializerPacka
 displayName: Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`
 description: |
   Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer` instead of the deprecated `org.springframework.boot.web.support.SpringBootServletInitializer` in Spring Boot 1.4 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.web.support.SpringBootServletInitializer

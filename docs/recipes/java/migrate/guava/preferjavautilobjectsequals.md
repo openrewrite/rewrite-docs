@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `com.google.common.base.Objects equal(Object, Object)`
   * newMethodName: `equals`
@@ -53,6 +59,8 @@ description: |
   Prefer `java.util.Objects#equals` instead of using `com.google.common.base.Objects#equal`.
 tags:
   - guava
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.google.common.base.Objects equal(Object, Object)

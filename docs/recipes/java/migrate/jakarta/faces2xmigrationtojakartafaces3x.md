@@ -35,6 +35,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate deprecated `javax.faces` packages to `jakarta.faces`](../../../java/migrate/jakarta/updatejakartafacesapi3)
 * [Faces XHTML migration for Jakarta EE 9](../../../java/migrate/jakarta/jakartafacesxhtmlee9)
 * [Migrate JSF values inside EcmaScript files](../../../java/migrate/jakarta/jakartafacesecmascript)
@@ -64,6 +70,8 @@ tags:
   - faces
   - jsf
   - jakarta
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.jakarta.UpdateJakartaFacesApi3
   - org.openrewrite.java.migrate.jakarta.JakartaFacesXhtmlEE9

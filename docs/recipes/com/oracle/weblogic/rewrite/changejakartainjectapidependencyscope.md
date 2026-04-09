@@ -29,6 +29,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `jakarta.platform`
+  * artifactIdPattern: `jakarta.jakartaee-api`
+  * version: `9.x`
+  * scope: `provided`
+
+**Recipes**
+
 * [Change Maven dependency scope](../../../../maven/changedependencyscope)
   * groupId: `jakarta.inject`
   * artifactId: `jakarta.inject-api`
@@ -47,6 +57,12 @@ description: |
   This recipe will change the jakarta.inject-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.inject-api jar from being deployed to WebLogic which can cause class conflicts.
 tags:
   - weblogic
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: jakarta.platform
+      artifactIdPattern: jakarta.jakartaee-api
+      version: 9.x
+      scope: provided
 recipeList:
   - org.openrewrite.maven.ChangeDependencyScope:
       groupId: jakarta.inject

@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
   * minimumJavaMajorVersion: `25`
 * [Update Gradle wrapper](../../gradle/updategradlewrapper)
@@ -73,6 +79,8 @@ description: |
   Updates plugins and dependencies to versions compatible with Java 25.
 tags:
   - java25
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
       minimumJavaMajorVersion: 25

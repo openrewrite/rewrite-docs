@@ -33,6 +33,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.projectlombok`
+  * artifactIdPattern: `lombok`
+* [Dependency insight for Gradle and Maven](../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.mapstruct`
+  * artifactIdPattern: `mapstruct`
+* [Singleton](../../core/singleton)
+
+**Recipes**
+
 * [Add Gradle dependency](../../gradle/adddependency)
   * groupId: `org.projectlombok`
   * artifactId: `lombok-mapstruct-binding`
@@ -58,6 +70,14 @@ description: |
   Add the `lombok-mapstruct-binding` annotation processor as needed when both MapStruct and Lombok are used.
 tags:
   - java17
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.projectlombok
+      artifactIdPattern: lombok
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.mapstruct
+      artifactIdPattern: mapstruct
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.gradle.AddDependency:
       groupId: org.projectlombok

@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.codehaus.mojo`
   * artifactId: `jaxb2-maven-plugin`
@@ -49,6 +55,8 @@ name: org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10
 displayName: Update Plugins for Jakarta EE 10
 description: |
   Update plugin to be compatible with Jakarta EE 10.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.codehaus.mojo

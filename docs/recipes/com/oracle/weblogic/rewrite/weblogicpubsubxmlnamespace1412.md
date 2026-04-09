@@ -35,6 +35,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find files](../../../../core/findsourcefiles)
+  * filePattern: `**/weblogic-pubsub.xml`
+
+**Recipes**
+
 * [Change XML attribute](../../../../xml/changetagattribute)
   * elementName: `weblogic-pubsub`
   * attributeName: `xmlns`
@@ -63,6 +70,9 @@ tags:
   - schemas
   - weblogic
   - pubsub
+preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/weblogic-pubsub.xml
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
       elementName: weblogic-pubsub

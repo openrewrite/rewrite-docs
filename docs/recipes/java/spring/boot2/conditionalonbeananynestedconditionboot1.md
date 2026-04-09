@@ -25,6 +25,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.springframework.boot`
+  * artifactIdPattern: `spring-boot-autoconfigure`
+  * version: `1.x`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate multi-condition `@ConditionalOnBean` annotations](../../../java/spring/boot2/conditionalonbeananynestedcondition)
 
 </TabItem>
@@ -38,6 +48,12 @@ name: org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedConditionBoot1
 displayName: Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x
 description: |
   Migrate multi-condition `@ConditionalOnBean` annotations to use `AnyNestedCondition` when upgrading from Spring Boot 1.x to 2.x. In Boot 1.x, listing multiple beans in `@ConditionalOnBean` meant OR (any match); in Boot 2.x+ it means AND (all must match). This recipe preserves the original OR semantics by wrapping conditions in an `AnyNestedCondition` class.
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.springframework.boot
+      artifactIdPattern: spring-boot-autoconfigure
+      version: 1.x
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedCondition
 

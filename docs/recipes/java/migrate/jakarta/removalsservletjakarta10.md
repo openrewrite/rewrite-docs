@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.servlet.http.HttpServletRequest`
   * newFullyQualifiedTypeName: `jakarta.servlet.http.HttpServletRequest`
@@ -115,6 +121,8 @@ name: org.openrewrite.java.migrate.jakarta.RemovalsServletJakarta10
 displayName: Replace  deprecated Jakarta Servlet methods and classes
 description: |
   This recipe replaces the classes and methods deprecated in Jakarta Servlet 6.0.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.servlet.http.HttpServletRequest

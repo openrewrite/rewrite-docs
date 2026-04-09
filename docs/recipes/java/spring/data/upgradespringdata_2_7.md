@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Spring Data JPA 2.5](../../../java/spring/data/upgradespringdata_2_5)
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.springframework.data.jpa.repository.JpaRepository getById(..)`
@@ -50,6 +56,8 @@ name: org.openrewrite.java.spring.data.UpgradeSpringData_2_7
 displayName: Migrate to Spring Data JPA 2.7
 description: |
   Migrate applications to the latest Spring Data JPA 2.7 release.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.data.UpgradeSpringData_2_5
   - org.openrewrite.java.ChangeMethodName:

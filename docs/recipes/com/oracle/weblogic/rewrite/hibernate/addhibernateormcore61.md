@@ -32,6 +32,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Dependency insight for Gradle and Maven](../../../../../java/dependencies/dependencyinsight)
+  * groupIdPattern: `org.hibernate*`
+  * artifactIdPattern: `hibernate-*`
+
+**Recipes**
+
 * [Add Gradle or Maven dependency](../../../../../java/dependencies/adddependency)
   * groupId: `org.hibernate.orm`
   * artifactId: `hibernate-core`
@@ -54,6 +62,10 @@ tags:
   - orm
   - hibernate
   - jakarta
+preconditions:
+  - org.openrewrite.java.dependencies.DependencyInsight:
+      groupIdPattern: org.hibernate*
+      artifactIdPattern: hibernate-*
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.hibernate.orm

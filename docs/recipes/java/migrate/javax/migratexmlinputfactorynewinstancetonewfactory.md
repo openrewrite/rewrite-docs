@@ -25,6 +25,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `javax.xml.stream.XMLInputFactory newInstance(String, java.lang.ClassLoader)`
   * newMethodName: `newFactory`
@@ -40,6 +46,8 @@ name: org.openrewrite.java.migrate.javax.MigrateXMLInputFactoryNewInstanceToNewF
 displayName: Use `javax.xml.stream.XMLInputFactory#newFactory(String, ClassLoader)`
 description: |
   Use `javax.xml.stream.XMLInputFactory#newFactory` instead of the deprecated `javax.xml.stream.XMLInputFactory#newInstance` in Java 7 or higher.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: javax.xml.stream.XMLInputFactory newInstance(String, java.lang.ClassLoader)

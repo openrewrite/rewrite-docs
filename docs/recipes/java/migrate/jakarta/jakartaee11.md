@@ -33,6 +33,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Migrate to Jakarta EE 10](../../../java/migrate/jakarta/jakartaee10)
 * [Jakarta Faces 4.0 to 4.1](../../../java/migrate/jakarta/faces4xmigrationtofaces41x)
 * [Update Jakarta EE Platform Dependencies to 11.0.x](../../../java/migrate/jakarta/updatejakartaplatform11)
@@ -50,6 +56,8 @@ description: |
   These recipes help with the Migration to Jakarta EE 11, flagging and updating deprecated methods.
 tags:
   - jakarta
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JakartaEE10
   - org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x
