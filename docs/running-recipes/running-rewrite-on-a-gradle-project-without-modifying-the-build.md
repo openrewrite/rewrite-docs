@@ -74,7 +74,7 @@ initscript {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin::class.java)
     dependencies {
-        rewrite("org.openrewrite.recipe:rewrite-spring:latest.release")
+        add("rewrite", "org.openrewrite.recipe:rewrite-spring:latest.release")
     }
 
     afterEvaluate {

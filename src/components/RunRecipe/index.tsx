@@ -157,7 +157,7 @@ rootProject {
 rootProject {
     plugins.apply(org.openrewrite.gradle.RewritePlugin::class.java)
     dependencies {
-        rewrite("${needsDependency ? `${groupId}:${artifactId}:${version}` : 'org.openrewrite:rewrite-java'}")
+        add("rewrite", "${needsDependency ? `${groupId}:${artifactId}:${version}` : 'org.openrewrite:rewrite-java'}")
     }
     extensions.configure<org.openrewrite.gradle.RewriteExtension> {
         activeRecipe("${activeRecipeName}")${dataTableGradleConfig}
