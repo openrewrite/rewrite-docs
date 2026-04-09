@@ -74,6 +74,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove unused properties](./removeunusedproperties.md)
 * [Rename Maven property key](./renamepropertykey.md)
 * [Set Maven project packaging](./changepackaging.md)
+* [Sort dependencies](./sortdependencies.md)
 * [Update Maven Java project properties](./updatemavenprojectpropertyjavaversion.md)
 * [Update Maven wrapper](./updatemavenwrapper.md)
 * [Update SCM with Git origin](./updatescmfromgitorigin.md)

@@ -32,6 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
 * [Transform classes that extend `*ListenerSupport` to implement the `*Listener` interfaces instead](/recipes/java/spring/batch/listenersupportclasstointerface.md)
 
 

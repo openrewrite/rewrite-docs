@@ -36,7 +36,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Combined dependency management to remove and exclude](/recipes/java/dropwizard/config/removeandexcludedependency.md)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)
 * [Moved the camel-cloudevents api into camel-api and removed the camel-cloudevents](/recipes/org/apache/camel/upgrade/camel47/removeddependencies.md)
 * [Remove non existing camel-quarkus extensions](/recipes/java/camel/migrate/removedextensions.md)

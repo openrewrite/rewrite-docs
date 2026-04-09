@@ -14,6 +14,7 @@ _Recipes to perform [Jackson](https://github.com/FasterXML/jackson) migration ta
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add missing Jackson dataformat dependencies](./addmissingjacksondependencies.md)
 * [Jackson best practices](./jacksonbestpractices.md)
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](./codehausclassestofasterxml.md)
 * [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](./codehaustofasterxml.md)
@@ -24,6 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](./upgradejackson_2_3_jsongeneratormethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonNode](./upgradejackson_2_3_jsonnodemethodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonParser](./upgradejackson_2_3_jsonparsermethodrenames.md)
+* [Replace deprecated `PropertyNamingStrategy` inner classes and constants](./replacepropertynamingstrategyconstants.md)
 * [Update Jackson 2.x types to 3.x](./upgradejackson_2_3_typechanges.md)
 * [Update Jackson package names from 2.x to 3.x](./upgradejackson_2_3_packagechanges.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](./upgradejackson_2_3_dependencies.md)
@@ -31,14 +33,16 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `@JsonCreator` to non-public constructors](./addjsoncreatortoprivateconstructors.md)
+* [Add comment to SimpleModule method calls on modules that no longer extend SimpleModule](./commentoutsimplemodulemethodcalls.md)
 * [Migrate `JSONNode` field iterator for Jackson 3](./jackson3jsonnodefielditerators.md)
-* [Migrate `JsonMapper` setter calls to builder pattern](./migratemappersetterstobuilder.md)
+* [Migrate mapper setter calls to builder pattern](./migratemappersetterstobuilder.md)
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
 * [Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields](./replacejsonignorewithjsonsetter.md)
 * [Replace `IOException` with `JacksonException` in catch clauses](./ioexceptiontojacksonexception.md)
 * [Replace `ObjectMapper.copy()` with `rebuild().build()`](./replaceobjectmappercopy.md)
+* [Replace `disable(MapperFeature.AUTO_DETECT_*)` with `changeDefaultVisibility()` for Jackson 3](./updateautodetectvisibilityconfiguration.md)
 * [Replace `null` type in `StdDeserializer` constructor with actual type](./stddeserializernullconstructor.md)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](./replacestreamwritecapability.md)
 * [Simplify catch clauses for Jackson exceptions](./simplifyjacksonexceptioncatch.md)

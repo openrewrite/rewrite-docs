@@ -44,6 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jakarta.ws.rs-api`
   * version: `3.0.x`
   * onlyIfUsing: `javax.ws.rs.core.*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.ws`
   * newPackageName: `jakarta.ws`
@@ -76,6 +77,7 @@ recipeList:
       artifactId: jakarta.ws.rs-api
       version: 3.0.x
       onlyIfUsing: javax.ws.rs.core.*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.ws
       newPackageName: jakarta.ws

@@ -51,6 +51,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.inject`
   * artifactId: `jakarta.inject-api`
   * newVersion: `2.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.inject`
+  * artifactId: `jakarta.inject-api`
+  * version: `2.0.x`
+  * onlyIfUsing: `javax.inject..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.inject`
   * newPackageName: `jakarta.inject`
@@ -88,6 +94,12 @@ recipeList:
       groupId: jakarta.inject
       artifactId: jakarta.inject-api
       newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.inject
+      artifactId: jakarta.inject-api
+      version: 2.0.x
+      onlyIfUsing: javax.inject..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.inject
       newPackageName: jakarta.inject

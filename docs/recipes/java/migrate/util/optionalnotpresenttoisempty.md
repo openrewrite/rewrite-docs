@@ -26,6 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+* [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
 
 ## Example
 

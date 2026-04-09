@@ -49,6 +49,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.activation`
   * artifactId: `jakarta.activation-api`
   * newVersion: `2.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.activation`
+  * artifactId: `jakarta.activation-api`
+  * version: `2.0.x`
+  * onlyIfUsing: `javax.activation..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.activation`
   * newPackageName: `jakarta.activation`
@@ -84,6 +90,12 @@ recipeList:
       groupId: jakarta.activation
       artifactId: jakarta.activation-api
       newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.activation
+      artifactId: jakarta.activation-api
+      version: 2.0.x
+      onlyIfUsing: javax.activation..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.activation
       newPackageName: jakarta.activation

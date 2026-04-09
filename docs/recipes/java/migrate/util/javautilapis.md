@@ -29,13 +29,29 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Replace `iterator().next()` with `getFirst()`](../../../java/migrate/util/iteratornext)
+* [Replace `List.get(int)`, `add(int, Object)`, and `remove(int)` with `SequencedCollection` `*First` and `*Last` methods](../../../java/migrate/util/listfirstandlast)
+* [Prefer `List.of()`](../../../java/migrate/util/migratecollectionsemptylist)
+* [Prefer `Map.of()`](../../../java/migrate/util/migratecollectionsemptymap)
+* [Prefer `Set.of()`](../../../java/migrate/util/migratecollectionsemptyset)
 * [Prefer `List.of(..)`](../../../java/migrate/util/migratecollectionssingletonlist)
 * [Prefer `Map.of(..)`](../../../java/migrate/util/migratecollectionssingletonmap)
 * [Prefer `Set.of(..)`](../../../java/migrate/util/migratecollectionssingletonset)
 * [Prefer `List.of(..)`](../../../java/migrate/util/migratecollectionsunmodifiablelist)
 * [Prefer `Set.of(..)`](../../../java/migrate/util/migratecollectionsunmodifiableset)
+* [Use `Reader.of(CharSequence)` for non-synchronized readers](../../../java/migrate/util/migratestringreadertoreaderof)
+* [Prefer `Optional.isPresent()`](../../../java/migrate/util/optionalnotemptytoispresent)
+* [Prefer `Optional.isEmpty()`](../../../java/migrate/util/optionalnotpresenttoisempty)
+* [`Stream&lt;Optional&gt;` idiom recipe](../../../java/migrate/util/optionalstreamrecipe)
+* [Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile](../../../java/migrate/util/removefinalizerfromzip)
+* [Replace `java.lang.Math random()` with `ThreadLocalRandom nextDouble()`](../../../java/migrate/util/replacemathrandomwiththreadlocalrandomrecipe)
 * [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](../../../java/migrate/util/replacestreamcollectwithtolist)
+* [Use `getFirst()` instead of `stream().findFirst().orElseThrow()`](../../../java/migrate/util/streamfindfirst)
+* [Prefer `EnumSet of(..)`](../../../java/migrate/util/useenumsetof)
+* [Prefer `List.of(..)`](../../../java/migrate/util/uselistof)
+* [Prefer `Locale.of(..)` over `new Locale(..)`](../../../java/migrate/util/uselocaleof)
 * [Prefer `Map.of(..)`](../../../java/migrate/util/usemapof)
+* [Prefer `Set.of(..)`](../../../java/migrate/util/usesetof)
 
 </TabItem>
 
@@ -49,17 +65,40 @@ displayName: Use modernized `java.util` APIs
 description: |
   Certain java util APIs have been introduced and are favored over previous APIs.
 recipeList:
+  - org.openrewrite.java.migrate.util.IteratorNext
+  - org.openrewrite.java.migrate.util.ListFirstAndLast
+  - org.openrewrite.java.migrate.util.MigrateCollectionsEmptyList
+  - org.openrewrite.java.migrate.util.MigrateCollectionsEmptyMap
+  - org.openrewrite.java.migrate.util.MigrateCollectionsEmptySet
   - org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList
   - org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap
   - org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList
   - org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableSet
+  - org.openrewrite.java.migrate.util.MigrateStringReaderToReaderOf
+  - org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent
+  - org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty
+  - org.openrewrite.java.migrate.util.OptionalStreamRecipe
+  - org.openrewrite.java.migrate.util.RemoveFinalizerFromZip
+  - org.openrewrite.java.migrate.util.ReplaceMathRandomWithThreadLocalRandomRecipe
   - org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList
+  - org.openrewrite.java.migrate.util.StreamFindFirst
+  - org.openrewrite.java.migrate.util.UseEnumSetOf
+  - org.openrewrite.java.migrate.util.UseListOf
+  - org.openrewrite.java.migrate.util.UseLocaleOf
   - org.openrewrite.java.migrate.util.UseMapOf
+  - org.openrewrite.java.migrate.util.UseSetOf
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Java best practices](/recipes/java/migrate/javabestpractices.md)
+
 
 ## Usage
 

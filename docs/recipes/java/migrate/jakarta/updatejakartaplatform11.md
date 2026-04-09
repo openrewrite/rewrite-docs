@@ -18,6 +18,10 @@ _Update Jakarta EE Platform Dependencies to 11.0.x._
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
@@ -29,6 +33,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.platform`
   * artifactId: `*`
   * newVersion: `11.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.annotation`
+  * artifactId: `jakarta.annotation-api`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.servlet.jsp`
+  * artifactId: `jakarta.servlet.jsp-api`
+  * newVersion: `4.0.x`
 
 </TabItem>
 
@@ -46,6 +58,14 @@ recipeList:
       groupId: jakarta.platform
       artifactId: "*"
       newVersion: 11.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.annotation
+      artifactId: jakarta.annotation-api
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.servlet.jsp
+      artifactId: jakarta.servlet.jsp-api
+      newVersion: 4.0.x
 
 ```
 </TabItem>

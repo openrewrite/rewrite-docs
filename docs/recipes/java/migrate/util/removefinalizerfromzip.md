@@ -20,6 +20,13 @@ _Remove invocations of finalize() deprecated invocations from Deflater, Inflater
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
+
 ## Example
 
 

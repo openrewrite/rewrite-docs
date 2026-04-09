@@ -199,6 +199,21 @@ _Statistics used in analyzing the performance of recipes._
 
 </TabItem>
 
+<TabItem value="org.openrewrite.java.recipes.DeprecatedMethodDelegations" label="DeprecatedMethodDelegations">
+
+### Deprecated method delegations
+**org.openrewrite.java.recipes.DeprecatedMethodDelegations**
+
+_Deprecated methods that delegate to another method in the same class, suitable for inlining via `InlineMethodCalls`._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Method pattern | The method pattern of the deprecated method. |
+| Replacement | The replacement expression to inline. |
+| Recipe YAML | A YAML snippet that can be copied into a recipe list. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
 
 ### Maven metadata failures

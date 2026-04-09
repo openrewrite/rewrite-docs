@@ -36,7 +36,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter best practices](/recipes/java/testing/junit/jupiterbestpractices.md)
-* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 
 ## Example
 

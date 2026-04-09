@@ -15,14 +15,17 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Prefer `EnumSet of(..)`](./useenumsetof.md)
+* [Prefer `List.of()`](./migratecollectionsemptylist.md)
 * [Prefer `List.of(..)`](./migratecollectionssingletonlist.md)
 * [Prefer `List.of(..)`](./migratecollectionsunmodifiablelist.md)
 * [Prefer `List.of(..)`](./uselistof.md)
 * [Prefer `Locale.of(..)` over `new Locale(..)`](./uselocaleof.md)
+* [Prefer `Map.of()`](./migratecollectionsemptymap.md)
 * [Prefer `Map.of(..)`](./migratecollectionssingletonmap.md)
 * [Prefer `Map.of(..)`](./usemapof.md)
 * [Prefer `Optional.isEmpty()`](./optionalnotpresenttoisempty.md)
 * [Prefer `Optional.isPresent()`](./optionalnotemptytoispresent.md)
+* [Prefer `Set.of()`](./migratecollectionsemptyset.md)
 * [Prefer `Set.of(..)`](./migratecollectionssingletonset.md)
 * [Prefer `Set.of(..)`](./migratecollectionsunmodifiableset.md)
 * [Prefer `Set.of(..)`](./usesetof.md)

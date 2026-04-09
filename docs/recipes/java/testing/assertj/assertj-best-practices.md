@@ -154,6 +154,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
+
 ## Examples
 ##### Example 1
 `AssertJBestPracticesTest#convertsIsEqualToEmptyString`

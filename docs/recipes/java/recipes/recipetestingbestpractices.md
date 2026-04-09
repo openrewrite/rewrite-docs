@@ -43,8 +43,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `var` for constructor call assignments](../../java/migrate/lang/var/usevarforconstructors)
 * [Use `var` for primitive and String variables](../../java/migrate/lang/var/usevarforprimitive)
 * [Use `var` for variables initialized with type casts](../../java/migrate/lang/var/usevarfortypecast)
-* [Remove `test` prefix from JUnit 5 tests](../../java/testing/cleanup/removetestprefix)
-* [Remove `public` visibility of JUnit 5 tests](../../java/testing/cleanup/testsshouldnotbepublic)
+* [JUnit 6 best practices](../../java/testing/junit/junit6bestpractices)
+* [AssertJ best practices](../../java/testing/assertj/assertj-best-practices)
 * [Fix missing braces](../../staticanalysis/needbraces)
 * [Remove `System.out#println` statements](../../staticanalysis/removesystemoutprintln)
 * [Reorder annotations alphabetically](../../staticanalysis/reorderannotations)
@@ -87,8 +87,8 @@ recipeList:
   - org.openrewrite.java.migrate.lang.var.UseVarForConstructors
   - org.openrewrite.java.migrate.lang.var.UseVarForPrimitive
   - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast
-  - org.openrewrite.java.testing.cleanup.RemoveTestPrefix
-  - org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic
+  - org.openrewrite.java.testing.junit.JUnit6BestPractices
+  - org.openrewrite.java.testing.assertj.Assertj
   - org.openrewrite.staticanalysis.NeedBraces
   - org.openrewrite.staticanalysis.RemoveSystemOutPrintln
   - org.openrewrite.staticanalysis.ReorderAnnotations
@@ -205,6 +205,25 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

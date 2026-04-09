@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Remove supertype by fully qualified name](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/method/removesupertypebytype)
 * [Update Jackson 2.x types to 3.x](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
 
 ## Example

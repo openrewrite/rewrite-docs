@@ -29,6 +29,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `null` | scope | *Optional*. The dependency scope: `dependencies`, `devDependencies`, `peerDependencies`, or `optionalDependencies` | `dependencies` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace `node-sass` with `sass`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
+
+
 ## Usage
 
 <RunRecipe

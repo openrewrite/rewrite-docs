@@ -45,6 +45,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.batch`
   * artifactId: `jakarta.batch-api`
   * newVersion: `2.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.batch`
+  * artifactId: `jakarta.batch-api`
+  * version: `2.0.x`
+  * onlyIfUsing: `javax.batch..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.batch`
   * newPackageName: `jakarta.batch`
@@ -76,6 +82,12 @@ recipeList:
       groupId: jakarta.batch
       artifactId: jakarta.batch-api
       newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.batch
+      artifactId: jakarta.batch-api
+      version: 2.0.x
+      onlyIfUsing: javax.batch..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.batch
       newPackageName: jakarta.batch

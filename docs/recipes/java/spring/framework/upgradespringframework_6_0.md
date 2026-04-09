@@ -30,6 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Spring Framework 5.3 (Community Edition)](../../../java/spring/framework/upgradespringframework_5_3-community-edition)
+* [Migrate to Jakarta EE 10](../../../java/migrate/jakarta/jakartaee10)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework`
   * artifactId: `*`
@@ -39,6 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryreadtimeout)
 * [Migrate `ResponseEntityExceptionHandler` from HttpStatus to HttpStatusCode](../../../java/spring/framework/migrateresponseentityexceptionhandlerhttpstatustohttpstatuscode)
 * [Migrate breaking changes in `ResponseStatusException`](../../../java/spring/framework/migrateresponsestatusexception)
+* [Migrate to Spring Data 3.0](../../../java/spring/data/upgradespringdata_3_0)
 * [Convert `JdbcTemplate.queryForLong(..)` to `queryForObject(..)`](../../../java/spring/data/jdbctemplatequeryforlongmigration)
 
 </TabItem>
@@ -54,6 +56,7 @@ description: |
   Migrate applications to the latest Spring Framework 6.0 release.
 recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_3
+  - org.openrewrite.java.migrate.jakarta.JakartaEE10
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework
       artifactId: "*"
@@ -63,6 +66,7 @@ recipeList:
   - org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryReadTimeout
   - org.openrewrite.java.spring.framework.MigrateResponseEntityExceptionHandlerHttpStatusToHttpStatusCode
   - org.openrewrite.java.spring.framework.MigrateResponseStatusException
+  - org.openrewrite.java.spring.data.UpgradeSpringData_3_0
   - org.openrewrite.java.spring.data.JdbcTemplateQueryForLongMigration
 
 ```
@@ -166,6 +170,25 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

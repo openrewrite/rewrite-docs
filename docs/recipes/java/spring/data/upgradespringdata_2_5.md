@@ -14,7 +14,7 @@ _Migrate applications to the latest Spring Data 2.5 release._
 
 ## Recipe source
 
-[GitHub: spring-data-25.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-25.yml),
+[GitHub: spring-data-2.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-2.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
@@ -29,8 +29,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Use `JpaRepository#getById(ID id)`](../../../java/spring/data/usejparepositorygetbyid)
-* [Use `JpaRepository#deleteAllInBatch(Iterable&lt;T&gt; entities)`](../../../java/spring/data/usejparepositorydeleteallinbatch)
+* [Migrate to Spring Data 2.3](../../../java/spring/data/upgradespringdata_2_3)
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.data.jpa.repository.JpaRepository getOne(..)`
+  * newMethodName: `getById`
+  * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.data.jpa.repository.JpaRepository deleteInBatch(..)`
+  * newMethodName: `deleteAllInBatch`
+  * matchOverrides: `true`
 
 </TabItem>
 
@@ -44,8 +51,15 @@ displayName: Migrate to Spring Data JPA 2.5
 description: |
   Migrate applications to the latest Spring Data 2.5 release.
 recipeList:
-  - org.openrewrite.java.spring.data.UseJpaRepositoryGetById
-  - org.openrewrite.java.spring.data.UseJpaRepositoryDeleteAllInBatch
+  - org.openrewrite.java.spring.data.UpgradeSpringData_2_3
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.data.jpa.repository.JpaRepository getOne(..)
+      newMethodName: getById
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.data.jpa.repository.JpaRepository deleteInBatch(..)
+      newMethodName: deleteAllInBatch
+      matchOverrides: true
 
 ```
 </TabItem>
@@ -55,6 +69,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Spring Data JPA 2.7](/recipes/java/spring/data/upgradespringdata_2_7.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 
 

@@ -31,6 +31,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `null` | newAlias | *Optional*. Optional alias for the new import. Required when newMember is 'default' or '*'. |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Move `DOCUMENT` import to `@angular/core`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/move-document-import)
+* [Replace form classes with untyped variants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-untyped-forms)
+* [Upgrade to Angular 16](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular16)
+* [Upgrade to Angular 18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular18)
+* [Upgrade to Angular 19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular19)
+
+
 ## Usage
 
 <RunRecipe

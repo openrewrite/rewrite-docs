@@ -45,6 +45,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.ejb`
   * artifactId: `jakarta.ejb-api`
   * newVersion: `4.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.ejb`
+  * artifactId: `jakarta.ejb-api`
+  * version: `4.0.x`
+  * onlyIfUsing: `javax.ejb..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.ejb`
   * newPackageName: `jakarta.ejb`
@@ -78,6 +84,12 @@ recipeList:
       groupId: jakarta.ejb
       artifactId: jakarta.ejb-api
       newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.ejb
+      artifactId: jakarta.ejb-api
+      version: 4.0.x
+      onlyIfUsing: javax.ejb..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.ejb
       newPackageName: jakarta.ejb

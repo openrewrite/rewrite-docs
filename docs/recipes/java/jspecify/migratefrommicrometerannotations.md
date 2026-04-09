@@ -35,6 +35,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `1.0.0`
   * onlyIfUsing: `org.springframework.lang.*ull*`
   * acceptTransitive: `true`
+* [Move annotation to array type](../../java/migrate/jspecify/moveannotationtoarraytype)
+  * annotationType: `io.micrometer.core.lang.*ull*`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `io.micrometer.core.lang.Nullable`
   * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
@@ -64,6 +66,8 @@ recipeList:
       version: 1.0.0
       onlyIfUsing: org.springframework.lang.*ull*
       acceptTransitive: true
+  - org.openrewrite.java.migrate.jspecify.MoveAnnotationToArrayType:
+      annotationType: io.micrometer.core.lang.*ull*
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.micrometer.core.lang.Nullable
       newFullyQualifiedTypeName: org.jspecify.annotations.Nullable

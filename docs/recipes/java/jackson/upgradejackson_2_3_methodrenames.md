@@ -39,6 +39,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.type.TypeFactory defaultInstance()`
   * newMethodName: `createDefaultInstance`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper getSerializationConfig()`
+  * newMethodName: `serializationConfig`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper getDeserializationConfig()`
+  * newMethodName: `deserializationConfig`
 
 </TabItem>
 
@@ -60,6 +66,12 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.type.TypeFactory defaultInstance()
       newMethodName: createDefaultInstance
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.ObjectMapper getSerializationConfig()
+      newMethodName: serializationConfig
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.databind.ObjectMapper getDeserializationConfig()
+      newMethodName: deserializationConfig
 
 ```
 </TabItem>

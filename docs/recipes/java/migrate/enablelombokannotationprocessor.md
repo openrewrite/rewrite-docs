@@ -71,6 +71,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 
 

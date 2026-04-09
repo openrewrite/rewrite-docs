@@ -43,6 +43,7 @@ This recipe is used as part of the following composite recipes:
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Migrate Brave API to OpenTelemetry API](/recipes/java/spring/opentelemetry/migratebravetoopentelemetry.md)
 * [Migrate Datadog tracing to OpenTelemetry](/recipes/java/spring/opentelemetry/migratedatadogtoopentelemetry.md)
+* [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
 * [Migrate Google Truth to AssertJ](/recipes/java/testing/truth/migratetruthtoassertj.md)
 * [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
 * [Migrate JBoss Logging to SLF4J](/recipes/java/logging/slf4j/jbossloggingtoslf4j.md)

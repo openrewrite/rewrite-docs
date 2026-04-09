@@ -14,9 +14,13 @@ _Migrate applications to the latest Spring Data JPA 3.4 release._
 
 ## Recipe source
 
-[GitHub: spring-data-34.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-34.yml),
+[GitHub: spring-data-3.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-3.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -25,6 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate to Spring Data 3.0](../../../java/spring/data/upgradespringdata_3_0)
 * [Replace `@Query` annotation by `@NativeQuery` when possible](../../../java/spring/data/migratequerytonativequery)
 
 </TabItem>
@@ -39,6 +44,7 @@ displayName: Migrate to Spring Data JPA 3.4
 description: |
   Migrate applications to the latest Spring Data JPA 3.4 release.
 recipeList:
+  - org.openrewrite.java.spring.data.UpgradeSpringData_3_0
   - org.openrewrite.java.spring.data.MigrateQueryToNativeQuery
 
 ```

@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | commentText | The comment text to be added before the specified key. | `The `foo` property is deprecated, please migrate` |
 | `Boolean` | commentOutProperty | *Optional*. If false, property wouldn't be commented out, only comment will be added. By default, set to true | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
+
 ## Example
 
 ###### Parameters

@@ -62,6 +62,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jakarta.mail-api`
   * version: `2.0.x`
   * onlyIfUsing: `javax.mail.*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.mail`
   * newPackageName: `jakarta.mail`
@@ -112,6 +113,7 @@ recipeList:
       artifactId: jakarta.mail-api
       version: 2.0.x
       onlyIfUsing: javax.mail.*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.mail
       newPackageName: jakarta.mail

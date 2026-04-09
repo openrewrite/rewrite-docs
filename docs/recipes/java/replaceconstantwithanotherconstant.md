@@ -56,6 +56,7 @@ This recipe is used as part of the following composite recipes:
 * [Renamed constants in camel-smb](/recipes/org/apache/camel/upgrade/camel410/camelsmb.md)
 * [Replace `CURRENT_COMPONENT` and `CURRENT_COMPOSITE_COMPONENT` with `getCurrentComponent()` and `getCurrentCompositeComponent()`](/recipes/java/migrate/jakarta/removeduicomponentconstant.md)
 * [Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant](/recipes/java/migrate/removedrmiconnectorservercredentialtypesconstant.md)
+* [Replace deprecated `PropertyNamingStrategy` inner classes and constants](/recipes/java/jackson/replacepropertynamingstrategyconstants.md)
 * [The header name for the List metadata has changed](/recipes/org/apache/camel/upgrade/camel43/kafkametadata.md)
 * [Upgrade to JUnit 5.13](/recipes/java/testing/junit5/upgradetojunit513.md)
 * [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7](/recipes/io/quarkus/updates/core/quarkus324/migratefromhibernateormvariousremovedin7.md)

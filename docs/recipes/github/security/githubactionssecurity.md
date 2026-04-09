@@ -35,24 +35,24 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Find credential persistence through GitHub Actions artifacts](../../github/security/artifactsecurityrecipe)
-* [Find spoofable bot actor checks](../../github/security/botconditionsrecipe)
-* [Find cache poisoning vulnerabilities](../../github/security/cachepoisoningrecipe)
-* [Find dangerous workflow triggers](../../github/security/dangeroustriggersrecipe)
-* [Find excessive permissions](../../github/security/excessivepermissionsrecipe)
-* [Find forbidden action usage](../../github/security/forbiddenusesrecipe)
-* [Find dangerous GITHUB_ENV usage](../../github/security/githubenvrecipe)
-* [Find hardcoded container credentials](../../github/security/hardcodedcredentialsrecipe)
-* [Find insecure commands configuration](../../github/security/insecurecommandsrecipe)
-* [Find obfuscated GitHub Actions features](../../github/security/obfuscationrecipe)
-* [Find commit SHAs with potentially mismatched version comments](../../github/security/refversionmismatchrecipe)
-* [Find unconditional secrets inheritance](../../github/security/secretsinheritrecipe)
-* [Find usage of self-hosted runners](../../github/security/selfhostedrunnerrecipe)
-* [Find template injection vulnerabilities](../../github/security/templateinjectionrecipe)
-* [Find manual credentials instead of trusted publishing](../../github/security/trustedpublishingrecipe)
-* [Document permissions usage](../../github/security/undocumentedpermissionsrecipe)
-* [Pin GitHub Actions to specific commits](../../github/security/unpinnedactionsrecipe)
-* [Pin Docker images to digests](../../github/security/unpinneddockerimagesrecipe)
+* [Find credential persistence through GitHub Actions artifacts](../../github/security/artifactsecurity)
+* [Find spoofable bot actor checks](../../github/security/botconditions)
+* [Find cache poisoning vulnerabilities](../../github/security/cachepoisoning)
+* [Find dangerous workflow triggers](../../github/security/dangeroustriggers)
+* [Find excessive permissions](../../github/security/excessivepermissions)
+* [Find forbidden action usage](../../github/security/forbiddenuses)
+* [Find dangerous GITHUB_ENV usage](../../github/security/githubenv)
+* [Find hardcoded container credentials](../../github/security/hardcodedcredentials)
+* [Find insecure commands configuration](../../github/security/insecurecommands)
+* [Find obfuscated GitHub Actions features](../../github/security/obfuscation)
+* [Find commit SHAs with potentially mismatched version comments](../../github/security/refversionmismatch)
+* [Find unconditional secrets inheritance](../../github/security/secretsinherit)
+* [Find usage of self-hosted runners](../../github/security/selfhostedrunner)
+* [Find template injection vulnerabilities](../../github/security/templateinjection)
+* [Find manual credentials instead of trusted publishing](../../github/security/trustedpublishing)
+* [Document permissions usage](../../github/security/undocumentedpermissions)
+* [Pin GitHub Actions to specific commits](../../github/security/unpinnedactions)
+* [Pin Docker images to digests](../../github/security/unpinneddockerimages)
 
 </TabItem>
 
@@ -70,24 +70,24 @@ tags:
   - github
   - security
 recipeList:
-  - org.openrewrite.github.security.ArtifactSecurityRecipe
-  - org.openrewrite.github.security.BotConditionsRecipe
-  - org.openrewrite.github.security.CachePoisoningRecipe
-  - org.openrewrite.github.security.DangerousTriggersRecipe
-  - org.openrewrite.github.security.ExcessivePermissionsRecipe
-  - org.openrewrite.github.security.ForbiddenUsesRecipe
-  - org.openrewrite.github.security.GitHubEnvRecipe
-  - org.openrewrite.github.security.HardcodedCredentialsRecipe
-  - org.openrewrite.github.security.InsecureCommandsRecipe
-  - org.openrewrite.github.security.ObfuscationRecipe
-  - org.openrewrite.github.security.RefVersionMismatchRecipe
-  - org.openrewrite.github.security.SecretsInheritRecipe
-  - org.openrewrite.github.security.SelfHostedRunnerRecipe
-  - org.openrewrite.github.security.TemplateInjectionRecipe
-  - org.openrewrite.github.security.TrustedPublishingRecipe
-  - org.openrewrite.github.security.UndocumentedPermissionsRecipe
-  - org.openrewrite.github.security.UnpinnedActionsRecipe
-  - org.openrewrite.github.security.UnpinnedDockerImagesRecipe
+  - org.openrewrite.github.security.ArtifactSecurity
+  - org.openrewrite.github.security.BotConditions
+  - org.openrewrite.github.security.CachePoisoning
+  - org.openrewrite.github.security.DangerousTriggers
+  - org.openrewrite.github.security.ExcessivePermissions
+  - org.openrewrite.github.security.ForbiddenUses
+  - org.openrewrite.github.security.GitHubEnv
+  - org.openrewrite.github.security.HardcodedCredentials
+  - org.openrewrite.github.security.InsecureCommands
+  - org.openrewrite.github.security.Obfuscation
+  - org.openrewrite.github.security.RefVersionMismatch
+  - org.openrewrite.github.security.SecretsInherit
+  - org.openrewrite.github.security.SelfHostedRunner
+  - org.openrewrite.github.security.TemplateInjection
+  - org.openrewrite.github.security.TrustedPublishing
+  - org.openrewrite.github.security.UndocumentedPermissions
+  - org.openrewrite.github.security.UnpinnedActions
+  - org.openrewrite.github.security.UnpinnedDockerImages
 
 ```
 </TabItem>

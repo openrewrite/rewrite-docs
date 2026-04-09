@@ -44,6 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jakarta.servlet-api`
   * version: `5.0.x`
   * onlyIfUsing: `javax.servlet.*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.servlet`
   * newPackageName: `jakarta.servlet`
@@ -76,6 +77,7 @@ recipeList:
       artifactId: jakarta.servlet-api
       version: 5.0.x
       onlyIfUsing: javax.servlet.*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.servlet
       newPackageName: jakarta.servlet

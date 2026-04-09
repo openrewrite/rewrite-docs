@@ -41,6 +41,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Single `@DocumentExample` per test class](./singledocumentexample.md)
 * [Use `!StringUtils#isBlank(String)`](./usestringutilsrecipes$stringutilsisnotblankrecipe.md)
 * [Use `J.Literal.isLiteralValue(expression, null)`](./isliteralnullrecipe.md)
+* [Use `JavaTemplate.apply()` static method](./usejavatemplatestaticapply.md)
 * [Use `StringUtils#isBlank(String)`](./usestringutilsrecipes$stringutilsisblankrecipe.md)
 * [Use `StringUtils#isNotEmpty(String)`](./usestringutilsrecipes$stringutilsisnotemptyrecipe.md)
 * [Use `StringUtils#isNullOrEmpty(String)`](./usestringutilsrecipes$stringutilsisnulloremptyrecipe.md)

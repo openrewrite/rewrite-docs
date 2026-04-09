@@ -12,6 +12,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Find locations where the result of the method call is being ignored._
 
+### Tags
+
+* [RSPEC-S6809](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6809&open=java%3AS6809)
+
 ## Recipe source
 
 [GitHub: ResultOfMethodCallIgnored.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/ResultOfMethodCallIgnored.java),

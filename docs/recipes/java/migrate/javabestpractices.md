@@ -45,10 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Apply `var` to Generic Constructors](../../java/migrate/lang/var/usevarforgenericsconstructors)
 * [Apply `var` to generic method invocations](../../java/migrate/lang/var/usevarforgenericmethodinvocations)
 * [Use `var` for primitive and String variables](../../java/migrate/lang/var/usevarforprimitive)
-* [Prefer `EnumSet of(..)`](../../java/migrate/util/useenumsetof)
-* [Prefer `List.of(..)`](../../java/migrate/util/uselistof)
-* [Prefer `Map.of(..)`](../../java/migrate/util/usemapof)
-* [Prefer `Set.of(..)`](../../java/migrate/util/usesetof)
+* [Use modernized `java.util` APIs](../../java/migrate/util/javautilapis)
 * [Week Year (YYYY) should not be used for date formatting](../../staticanalysis/replaceweekyearwithyear)
 * [`hashCode()` should not be called on array instances](../../staticanalysis/removehashcodecallsfromarrayinstances)
 * [Remove `toString()` calls on arrays](../../staticanalysis/removetostringcallsfromarrayinstances)
@@ -98,10 +95,7 @@ recipeList:
   - org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors
   - org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations
   - org.openrewrite.java.migrate.lang.var.UseVarForPrimitive
-  - org.openrewrite.java.migrate.util.UseEnumSetOf
-  - org.openrewrite.java.migrate.util.UseListOf
-  - org.openrewrite.java.migrate.util.UseMapOf
-  - org.openrewrite.java.migrate.util.UseSetOf
+  - org.openrewrite.java.migrate.util.JavaUtilAPIs
   - org.openrewrite.staticanalysis.ReplaceWeekYearWithYear
   - org.openrewrite.staticanalysis.RemoveHashCodeCallsFromArrayInstances
   - org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances
@@ -132,6 +126,11 @@ recipeList:
 ##### Example 1
 `JavaBestPracticesTest#updateCompilerVersion`
 
+
+###### Unchanged
+```mavenProject
+project
+```
 
 <Tabs groupId="beforeAfter">
 <TabItem value="pom.xml" label="pom.xml">
@@ -182,6 +181,11 @@ recipeList:
 ##### Example 2
 `JavaBestPracticesTest#updateCompilerVersion`
 
+
+###### Unchanged
+```mavenProject
+project
+```
 
 <Tabs groupId="beforeAfter">
 <TabItem value="pom.xml" label="pom.xml">

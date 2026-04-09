@@ -45,6 +45,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.servlet.jsp`
   * artifactId: `jakarta.servlet.jsp-api`
   * newVersion: `3.0.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `jakarta.servlet.jsp`
+  * artifactId: `jakarta.servlet.jsp-api`
+  * version: `3.0.x`
+  * onlyIfUsing: `javax.servlet.jsp..*`
+  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.servlet.jsp`
   * newPackageName: `jakarta.servlet.jsp`
@@ -78,6 +84,12 @@ recipeList:
       groupId: jakarta.servlet.jsp
       artifactId: jakarta.servlet.jsp-api
       newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: jakarta.servlet.jsp
+      artifactId: jakarta.servlet.jsp-api
+      version: 3.0.x
+      onlyIfUsing: javax.servlet.jsp..*
+      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.servlet.jsp
       newPackageName: jakarta.servlet.jsp
@@ -92,6 +104,121 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
+
+## Examples
+##### Example 1
+`JavaxJspToJakartaJspTest#switchesJavaxJspApiDependencyToJakartaJspApiDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.jsp.PageContext;
+public class TestApplication {
+}
+```
+
+###### After
+```java
+import jakarta.servlet.jsp.PageContext;
+public class TestApplication {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.servlet.jsp.PageContext;
++import jakarta.servlet.jsp.PageContext;
+public class TestApplication {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+Sample
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`JavaxJspToJakartaJspTest#switchesJavaxJspApiDependencyToJakartaJspApiDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.servlet.jsp.PageContext;
+public class TestApplication {
+}
+```
+
+###### After
+```java
+import jakarta.servlet.jsp.PageContext;
+public class TestApplication {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.servlet.jsp.PageContext;
++import jakarta.servlet.jsp.PageContext;
+public class TestApplication {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+Sample
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 
 ## Usage

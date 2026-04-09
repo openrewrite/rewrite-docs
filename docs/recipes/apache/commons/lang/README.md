@@ -17,6 +17,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Remove redundant null check when using `StringUtils.isNotBlank(String)`](./apachecommonsstringutilsrecipes$removeredundantnullcheckwithisnotblankrecipe.md)
+* [Replace StringUtils#defaultIfBlank(String, String) with JDK equivalent](./defaultifblanktojdk.md)
 * [Replace `StringUtils.abbreviate(String, int)` with JDK provided API](./apachecommonsstringutilsrecipes$abbreviaterecipe.md)
 * [Replace `StringUtils.capitalize(String)` with JDK provided API](./apachecommonsstringutilsrecipes$capitalizerecipe.md)
 * [Replace `StringUtils.defaultString(String)` with JDK provided API](./apachecommonsstringutilsrecipes$defaultstringrecipe.md)
@@ -35,6 +36,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `StringUtils.trimToEmpty(String)` with JDK provided API](./apachecommonsstringutilsrecipes$trimtoemptyrecipe.md)
 * [Replace `StringUtils.trimToNull(String)` with JDK provided API](./apachecommonsstringutilsrecipes$trimtonullrecipe.md)
 * [Replace `StringUtils.upperCase(String)` with JDK internals](./apachecommonsstringutilsrecipes$uppercaserecipe.md)
+* [Replace any StringUtils#isBlank(String) and #isNotBlank(String)](./isblanktojdk.md)
 * [Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)](./isnotemptytojdk.md)
 
 

@@ -14,7 +14,7 @@ _Migrate applications to the latest Spring Data 2.3 release._
 
 ## Recipe source
 
-[GitHub: spring-data-23.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-23.yml),
+[GitHub: spring-data-2.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-data-2.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
@@ -92,6 +92,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 2.3](/recipes/java/spring/boot2/upgradespringboot_2_3.md)
+* [Migrate to Spring Data JPA 2.5](/recipes/java/spring/data/upgradespringdata_2_5.md)
 
 ## Examples
 ##### Example 1

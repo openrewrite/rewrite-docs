@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add Spring Cloud dependencies BOM](./addspringclouddependenciesbom.md)
 * [Migrate Spring Cloud Gateway Proxy WebMvc Properties](./springcloudgatewayproxywebmvcproperties.md)
 * [Migrate Spring Cloud Gateway Proxy Webflux Properties](./springcloudgatewayproxywebfluxproperties.md)
 * [Migrate Spring Cloud Gateway WebMvc Properties](./springcloudgatewaywebmvcproperties.md)

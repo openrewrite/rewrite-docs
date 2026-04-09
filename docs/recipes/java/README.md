@@ -11,7 +11,6 @@ _Basic building blocks for transforming Java code._
 * [AI](/recipes/java/ai)
 * [Camel](/recipes/java/camel)
 * [Dependencies](/recipes/java/dependencies)
-* [Dropwizard](/recipes/java/dropwizard)
 * [Flyway](/recipes/java/flyway)
 * [Format](/recipes/java/format)
 * [JSpecify](/recipes/java/jspecify)

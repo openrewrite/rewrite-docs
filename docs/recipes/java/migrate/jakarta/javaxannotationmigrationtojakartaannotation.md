@@ -128,6 +128,133 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 * [Update jakarta annotations dependency](/recipes/java/micronaut/updatejakartaannotations.md)
 
+## Examples
+##### Example 1
+`JavaxAnnotationMigrationToJakartaAnnotationTest#migratesExplicitDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.annotation.Nonnull;
+
+class A {
+    @Nonnull
+    String name;
+}
+```
+
+###### After
+```java
+import jakarta.annotation.Nonnull;
+
+class A {
+    @Nonnull
+    String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.annotation.Nonnull;
++import jakarta.annotation.Nonnull;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+my-project
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`JavaxAnnotationMigrationToJakartaAnnotationTest#migratesExplicitDependency`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import javax.annotation.Nonnull;
+
+class A {
+    @Nonnull
+    String name;
+}
+```
+
+###### After
+```java
+import jakarta.annotation.Nonnull;
+
+class A {
+    @Nonnull
+    String name;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import javax.annotation.Nonnull;
++import jakarta.annotation.Nonnull;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+my-project
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
 
 ## Usage
 

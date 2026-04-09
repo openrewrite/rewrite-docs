@@ -88,6 +88,21 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.recipes.DeprecatedMethodDelegations" label="DeprecatedMethodDelegations">
+
+### Deprecated method delegations
+**org.openrewrite.java.recipes.DeprecatedMethodDelegations**
+
+_Deprecated methods that delegate to another method in the same class, suitable for inlining via `InlineMethodCalls`._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Method pattern | The method pattern of the deprecated method. |
+| Replacement | The replacement expression to inline. |
+| Recipe YAML | A YAML snippet that can be copied into a recipe list. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
