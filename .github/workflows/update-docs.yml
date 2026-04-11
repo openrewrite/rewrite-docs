@@ -93,7 +93,7 @@ jobs:
       # Update Gradle plugin properties table from generated docs
       - name: Update Gradle plugin properties
         working-directory: rewrite-docs
-        run: python3 scripts/update-gradle-plugin-props.py && git add docs/reference/gradle-plugin-configuration.md
+        run: node scripts/update-gradle-plugin-props.mjs && git add docs/reference/gradle-plugin-configuration.md
 
       # Commit and push changes
       - name: Commit and push
