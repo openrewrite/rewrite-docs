@@ -90,6 +90,11 @@ jobs:
           # Stage all changes
           git add docs/recipes docs/reference src/plugins/latest-versions.js static/recipes
 
+      # Update Gradle plugin properties table from generated docs
+      - name: Update Gradle plugin properties
+        working-directory: rewrite-docs
+        run: node scripts/update-gradle-plugin-props.mjs && git add docs/reference/gradle-plugin-configuration.md
+
       # Commit and push changes
       - name: Commit and push
         working-directory: rewrite-docs
