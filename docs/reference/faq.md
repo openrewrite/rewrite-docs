@@ -233,7 +233,7 @@ JavaTemplate
     .apply(getCursor(), ann.getCoordinates().replace());
 ```
 
-Alternatively, if your recipe uses [TypeTables](../authoring-recipes/multiple-versions.md#typetables), use `.classpathFromResources` instead of `.classpath` to load types from the `META-INF/rewrite/classpath` directory:
+Alternatively, if your recipe uses [TypeTables](../authoring-recipes/multiple-versions.md#typetables), use `.classpathFromResources` instead of `.classpath` to load types from the `META-INF/rewrite/` directory:
 
 ```java
 .javaParser(JavaParser.fromJavaVersion()
