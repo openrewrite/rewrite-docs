@@ -216,6 +216,38 @@ The error message will indicate which types are missing; Using the debugger it s
 If for some reason you're unable to resolve the missing types issue, and are OK with a limited ability to chain recipes together,
 then you can disable the type validation through either `org.openrewrite.test.RecipeSpec.afterTypeValidationOptions` or `org.openrewrite.test.RecipeSpec.typeValidationOptions`.
 
+## I'm getting `Unable to construct Java21Parser` (or similar) when running my recipe. What does this mean?
+
+This `IllegalStateException` typically occurs when using `JavaTemplate` with an incomplete classpath.
+The Java parser needs all relevant types on the classpath to compile the template snippet, including transitive dependencies that aren't automatically resolved.
+
+For example, if your template references an annotation from `jakarta.jakartaee-api`, but the annotation type extends a class from `hibernate-core`, you'll need both on the classpath:
+
+```java
+JavaTemplate
+    .builder("@SequenceGenerator(name = \"gen\", sequenceName = \"seq\")")
+    .imports("jakarta.persistence.SequenceGenerator")
+    // highlight-next-line
+    .javaParser(JavaParser.fromJavaVersion().classpath("jakarta.jakartaee-api", "hibernate-core"))
+    .build()
+    .apply(getCursor(), ann.getCoordinates().replace());
+```
+
+Alternatively, if your recipe uses [TypeTables](../authoring-recipes/multiple-versions.md#typetables), use `.classpathFromResources` instead of `.classpath` to load types from the `META-INF/rewrite/classpath` directory:
+
+```java
+.javaParser(JavaParser.fromJavaVersion()
+    // highlight-next-line
+    .classpathFromResources(new InMemoryExecutionContext(), "jakarta.jakartaee-api", "hibernate-core"))
+```
+
+Note that `.classpathFromResources` does _not_ resolve transitive dependencies automatically, so you may need to add multiple TypeTable entries for deeper class hierarchies.
+
+The error message includes `java.version` and the resolved classpath to help you diagnose what's missing.
+Check which types your template references and ensure all required classpath entries are provided in the `.classpath(...)` or `.classpathFromResources(...)` call.
+
+Also make sure that these dependencies are available to the build plugin that runs your recipe, for instance through an explicit dependency in the Maven or Gradle plugin configuration.
+
 ## Is it possible to pass arguments to a recipe from the command line?
 
 This is a challenging problem for a couple of reasons:
