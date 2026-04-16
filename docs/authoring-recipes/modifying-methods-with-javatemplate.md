@@ -4,6 +4,10 @@ description: A deeper look into how you can use JavaTemplates to refactor/modify
 
 # Modifying methods with JavaTemplates
 
+:::info[Free Training]
+New to writing recipes? [Join our free Authoring OpenRewrite Recipes: Fundamentals course →](https://www.moderne.ai/training/authoring-openrewrite-recipes-fundamentals)
+:::
+
 Previously, we wrote a Java recipe that [added a hello() method to a class if it didn't already have one](./writing-a-java-refactoring-recipe.md). In that guide, we used a `JavaTemplate` to create a basic method. However, a `JavaTemplate` can be used for much more complicated changes, such as refactoring existing methods. Let's explore that.
 
 In this guide, you will build a recipe that [finds a specific abstract method](#limit-the-visitors-scope) and:

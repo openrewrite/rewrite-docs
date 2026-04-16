@@ -8,6 +8,10 @@ import TabItem from '@theme/TabItem';
 
 # Recipe development environment
 
+:::info[Free Training]
+New to writing recipes? [Join our free Authoring OpenRewrite Recipes: Fundamentals course →](https://www.moderne.ai/training/authoring-openrewrite-recipes-fundamentals)
+:::
+
 This getting started guide covers setting up your development environment for creating your own OpenRewrite recipes.
 
 :::info

@@ -4,6 +4,10 @@ description: Describes what the three types of recipes are, and what their advan
 
 # Types of recipes
 
+:::info[Free Training]
+New to writing recipes? [Join our free Authoring OpenRewrite Recipes: Fundamentals course →](https://www.moderne.ai/training/authoring-openrewrite-recipes-fundamentals)
+:::
+
 Before you jump into coding recipes, it's important to figure out what type of recipe you're going to make.
 
 OpenRewrite offers support for three different types of recipes: declarative, refaster, and imperative. Each of these has its own advantages and disadvantages depending on the type of recipe you want to build. 

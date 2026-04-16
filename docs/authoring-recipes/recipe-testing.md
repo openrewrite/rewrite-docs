@@ -10,6 +10,10 @@ import TabItem from '@theme/TabItem';
 
 # Recipe testing
 
+:::info[Free Training]
+New to writing recipes? [Join our free Authoring OpenRewrite Recipes: Fundamentals course →](https://www.moderne.ai/training/authoring-openrewrite-recipes-fundamentals)
+:::
+
 When developing new recipes, it's very important to test them to ensure that they not only make the expected changes but that they also **don't** make unnecessary changes.
 
 To help you create tests that meet those standards, this guide will walk you through everything you need to know – from what dependencies to add, to example recipes and their tests, to advanced testing concepts. By the end, you should be writing great tests for your own recipes.
