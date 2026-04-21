@@ -11,10 +11,6 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 :::
 
 
-## Removed Artifacts
-
-* rewrite-csharp
-* rewrite-dropwizard
 
 ## New Recipes
 
