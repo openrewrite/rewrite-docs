@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveUnusedLocalVariables**
 
-_If a local variable is declared but not used, it is dead code and should be removed._
+_If a local variable is declared but not used, it is dead code and should be removed. Unused variables increase cognitive load for readers who must determine whether the variable matters, and they may signal incomplete implementations or missed refactoring._
 
 ### Tags
 

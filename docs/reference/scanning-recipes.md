@@ -162,6 +162,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.maven.UpgradeTransitiveDependencyVersion](/recipes/maven/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Maven dependencies**
   * Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+* [org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration](/recipes/maven/usemavencompilerpluginreleaseconfiguration.md)
+  * **Use Maven compiler plugin release configuration**
+  * Replaces any explicit `source` or `target` configuration (if present) on the `maven-compiler-plugin` with `release`, and updates the `release` value if needed. When `testSource` or `testTarget` differ from the main version, introduces `testRelease`. Will not downgrade the Java version if the current version is higher. Also removes stale `maven.compiler.source`, `maven.compiler.target`, `maven.compiler.testSource`, and `maven.compiler.testTarget` properties that are no longer referenced.
 * [org.openrewrite.maven.search.ModuleHasDependency](/recipes/maven/search/modulehasdependency.md)
   * **Module has dependency**
   * Searches for Maven modules that have a dependency matching the specified groupId and artifactId. Places a `SearchResult` marker on all sources within a module with a matching dependency. This recipe is intended to be used as a precondition for other recipes. For example this could be used to limit the application of a spring boot migration to only projects that use spring-boot-starter, limiting unnecessary upgrading. If the search result you want is instead just the build.gradle(.kts) file applying the plugin, use the `FindDependency` recipe instead.
@@ -354,6 +357,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.migrate.lombok.LombokValueToRecord](/recipes/java/migrate/lombok/lombokvaluetorecord.md)
   * **Convert `@lombok.Value` class to Record**
   * Convert Lombok `@Value` annotated classes to standard Java Records.
+* [org.openrewrite.java.migrate.search.ModuleHasKotlinSource](/recipes/java/migrate/search/modulehaskotlinsource.md)
+  * **Module has Kotlin source files**
+  * Marks all files in modules that contain at least one Kotlin source file (`.kt`). Intended as a precondition to scope recipes to projects that actually compile Kotlin, as opposed to projects that merely pick up `kotlin-stdlib` transitively.
 * [org.openrewrite.java.migrate.search.PlanJavaMigration](/recipes/java/migrate/search/planjavamigration.md)
   * **Plan a Java version migration**
   * Study the set of Java versions and associated tools in use across many repositories.
@@ -434,10 +440,10 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 * [org.openrewrite.staticanalysis.LowercasePackage](/recipes/staticanalysis/lowercasepackage.md)
   * **Rename packages to lowercase**
-  * By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase.
+  * By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase. Consistent package naming prevents confusion and potential issues on case-insensitive file systems.
 * [org.openrewrite.staticanalysis.MethodNameCasing](/recipes/staticanalysis/methodnamecasing.md)
   * **Standardize method name casing**
-  * Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`.
+  * Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`. Following a consistent casing convention for method names improves code readability and helps developers quickly distinguish methods from classes or constants.
 
 ### rewrite-testing-frameworks
 

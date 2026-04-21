@@ -1,79 +1,91 @@
 ---
-sidebar_label: "Use `secrets: inherit` if possible"
+sidebar_label: "Remove methods that only call super"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Use `secrets: inherit` if possible
+# Remove methods that only call super
 
-**org.openrewrite.github.PreferSecretsInheritWorkflow**
+**org.openrewrite.staticanalysis.RemoveMethodsOnlyCallSuper**
 
-_Pass all secrets to a reusable workflow using `secrets: inherit`. See [Simplify using secrets with reusable workflows](https://github.blog/changelog/2022-05-03-github-actions-simplify-using-secrets-with-reusable-workflows/) for details._
+_Methods that override a parent method but only call `super` with the same arguments are redundant and should be removed._
+
+### Tags
+
+* [RSPEC-S1185](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1185&open=java%3AS1185)
 
 ## Recipe source
 
-[GitHub: PreferSecretsInheritWorkflow.java](https://github.com/openrewrite/rewrite-github-actions/blob/main/src/main/java/org/openrewrite/github/PreferSecretsInheritWorkflow.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-github-actions/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-github-actions/)
+[GitHub: RemoveMethodsOnlyCallSuper.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/RemoveMethodsOnlyCallSuper.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Code cleanup](/recipes/staticanalysis/codecleanup.md)
 
 ## Example
 
 
 <Tabs groupId="beforeAfter">
-<TabItem value=".github/workflows/ci.yml" label=".github/workflows/ci.yml">
+<TabItem value="java" label="java">
 
 
 ###### Before
-```yaml title=".github/workflows/ci.yml"
-jobs:
-  call-workflow-passing-data:
-    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
-    with:
-      config-path: .github/labeler.yml
-    secrets:
-      envPAT: ${{ secrets.envPAT }}
+```java
+class Child extends Parent {
+    @Override
+    void foo() {
+        super.foo();
+    }
+}
 ```
 
 ###### After
-```yaml title=".github/workflows/ci.yml"
-jobs:
-  call-workflow-passing-data:
-    uses: octo-org/example-repo/.github/workflows/reusable-workflow.yml@main
-    with:
-      config-path: .github/labeler.yml
-    secrets: inherit
+```java
+class Child extends Parent {
+}
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
---- .github/workflows/ci.yml
-+++ .github/workflows/ci.yml
-@@ -6,2 +6,1 @@
-    with:
-      config-path: .github/labeler.yml
--   secrets:
--     envPAT: ${{ secrets.envPAT }}
-+   secrets: inherit
-
+@@ -2,4 +2,0 @@
+class Child extends Parent {
+-   @Override
+-   void foo() {
+-       super.foo();
+-   }
+}
 ```
 </TabItem>
 </Tabs>
+
+###### Unchanged
+```java
+class Parent {
+    void foo() {
+    }
+}
+```
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.github.PreferSecretsInheritWorkflow"
-  displayName="Use `secrets: inherit` if possible"
+  recipeName="org.openrewrite.staticanalysis.RemoveMethodsOnlyCallSuper"
+  displayName="Remove methods that only call super"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-github-actions"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
+  artifactId="rewrite-static-analysis"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
   hasDataTables
 />
 
@@ -81,7 +93,7 @@ jobs:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.github.PreferSecretsInheritWorkflow" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.RemoveMethodsOnlyCallSuper" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

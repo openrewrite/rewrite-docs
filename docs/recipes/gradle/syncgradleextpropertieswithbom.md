@@ -38,6 +38,45 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.5 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_5-moderne-edition)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupId|`org.springframework.boot`|
+|artifactId|`spring-boot-dependencies`|
+|version|`3.4.0`|
+|removeRedundantOverrides|`false`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+ext['jackson-bom.version'] = '2.14.0'
+```
+
+###### After
+```groovy title="build.gradle"
+ext['jackson-bom.version'] = '2.18.1'
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -1,1 +1,1 @@
+-ext['jackson-bom.version'] = '2.14.0'
++ext['jackson-bom.version'] = '2.18.1'
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

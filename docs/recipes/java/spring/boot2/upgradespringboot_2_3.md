@@ -66,12 +66,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update Gradle wrapper](../../../gradle/updategradlewrapper)
   * version: `^6.3`
   * addIfMissing: `false`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `org.springframework.boot`
-  * artifactId: `spring-boot-starter-validation`
-  * version: `2.3.x`
-  * onlyIfUsing: `javax.validation.constraints.*`
-  * acceptTransitive: `true`
+* [Add `spring-boot-starter-validation` if needed](../../../java/spring/boot2/addspringbootstartervalidation)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springdoc`
   * artifactId: `*`
@@ -125,12 +120,7 @@ recipeList:
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: ^6.3
       addIfMissing: false
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.springframework.boot
-      artifactId: spring-boot-starter-validation
-      version: 2.3.x
-      onlyIfUsing: javax.validation.constraints.*
-      acceptTransitive: true
+  - org.openrewrite.java.spring.boot2.AddSpringBootStarterValidation
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springdoc
       artifactId: "*"

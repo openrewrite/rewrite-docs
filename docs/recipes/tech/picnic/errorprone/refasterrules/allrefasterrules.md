@@ -29,15 +29,33 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Refaster rules related to AssertJ assertions over `BigDecimal`s](../../../../tech/picnic/errorprone/refasterrules/assertjbigdecimalrulesrecipes)
 * [`AssertJBigIntegerRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes)
+* [`AssertJBooleanRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjbooleanrulesrecipes)
 * [`AssertJByteRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjbyterulesrecipes)
+* [`AssertJCharSequenceRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes)
+* [`AssertJComparableRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjcomparablerulesrecipes)
 * [`AssertJDoubleRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjdoublerulesrecipes)
+* [Refaster rules related to AssertJ assertions over `Duration`s](../../../../tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes)
+* [`AssertJEnumerableRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjenumerablerulesrecipes)
 * [Refaster rules related to AssertJ assertions over `File`s](../../../../tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes)
 * [`AssertJFloatRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjfloatrulesrecipes)
+* [Refaster rules related to AssertJ assertions over `Instant`s](../../../../tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes)
 * [`AssertJIntegerRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjintegerrulesrecipes)
+* [`AssertJIterableRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes)
+* [`AssertJIteratorRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjiteratorrulesrecipes)
 * [`AssertJLongRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjlongrulesrecipes)
+* [`AssertJMapRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes)
+* [`AssertJNumberRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjnumberrulesrecipes)
+* [`AssertJObjectRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes)
+* [`AssertJOptionalRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjoptionalrulesrecipes)
+* [Refaster rules related to AssertJ assertions over `Path`s](../../../../tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes)
+* [`AssertJPrimitiveRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjprimitiverulesrecipes)
+* [`AssertJRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjrulesrecipes)
 * [`AssertJShortRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjshortrulesrecipes)
 * [`AssertJStreamRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes)
+* [`AssertJStringRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes)
+* [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](../../../../tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes)
 * [`AssortedRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes)
 * [`BigDecimalRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes)
 * [`BugCheckerRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/bugcheckerrulesrecipes)
@@ -60,7 +78,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [`ImmutableSortedMultisetRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/immutablesortedmultisetrulesrecipes)
 * [`ImmutableSortedSetRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes)
 * [`ImmutableTableRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/immutabletablerulesrecipes)
+* [`InputStreamRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/inputstreamrulesrecipes)
 * [`IntStreamRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/intstreamrulesrecipes)
+* [`JUnitRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/junitrulesrecipes)
+* [Refaster rules to replace JUnit assertions with AssertJ equivalents](../../../../tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes)
 * [`Jackson2Rules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/jackson2rulesrecipes)
 * [`Jackson3Rules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/jackson3rulesrecipes)
 * [`LongStreamRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/longstreamrulesrecipes)
@@ -75,11 +96,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [`PreconditionsRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/preconditionsrulesrecipes)
 * [`PrimitiveRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes)
 * [`RandomGeneratorRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes)
+* [`ReactorRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes)
 * [`RxJava2AdapterRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes)
 * [`SpringTestRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/springtestrulesrecipes)
 * [`StreamRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes)
+* [`StringBuilderRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/stringbuilderrulesrecipes)
 * [`StringRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes)
 * [`SuggestedFixRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes)
+* [Refaster rules that replace TestNG assertions with equivalent AssertJ assertions](../../../../tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes)
 * [`TimeRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/timerulesrecipes)
 * [`WebClientRules` Refaster recipes](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes)
 
@@ -95,15 +119,33 @@ displayName: All Picnic Refaster rules
 description: |
   Collection of all Refaster rules from Picnic's error-prone-contrib project.
 recipeList:
+  - tech.picnic.errorprone.refasterrules.AssertJBigDecimalRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes
+  - tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes
   - tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes
@@ -126,7 +168,10 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSortedMultisetRulesRecipes
   - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes
   - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes
+  - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes
+  - tech.picnic.errorprone.refasterrules.JUnitRulesRecipes
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes
   - tech.picnic.errorprone.refasterrules.Jackson2RulesRecipes
   - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes
@@ -141,11 +186,14 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes
   - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes
   - tech.picnic.errorprone.refasterrules.SpringTestRulesRecipes
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes
+  - tech.picnic.errorprone.refasterrules.StringBuilderRulesRecipes
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes
 

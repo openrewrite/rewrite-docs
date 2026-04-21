@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ReplaceClassIsInstanceWithInstanceof**
 
-_There should be no `A.class.isInstance(a)`, it should be replaced by `a instanceof A`._
+_There should be no `A.class.isInstance(a)`, it should be replaced by `a instanceof A`. Using `instanceof` enables the compiler to catch type incompatibilities at compile time rather than silently passing at runtime, which helps detect dead code early._
 
 ### Tags
 

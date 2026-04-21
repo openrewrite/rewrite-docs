@@ -50,7 +50,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Hibernate 7.1.x (Community Edition)](../../../hibernate/migratetohibernate71-community-edition)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 * [Upgrade to SpringDoc 3.0](../../../java/springdoc/upgradespringdoc_3_0)
-* [Migrate to Spring Boot 4.0 modular starters (Community Edition)](../../../java/spring/boot4/migratetomodularstarters-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -75,6 +74,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update Gradle wrapper](../../../gradle/updategradlewrapper)
   * version: `^8.14`
   * addIfMissing: `false`
+* [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion)
+  * pluginIdPattern: `org.jetbrains.kotlin.*`
+  * newVersion: `2.2.x`
+* [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
+  * groupId: `org.jetbrains.kotlin`
+  * artifactId: `kotlin-maven-plugin`
+  * newVersion: `2.2.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.jetbrains.kotlin`
+  * artifactId: `*`
+  * newVersion: `2.2.x`
+  * overrideManagedVersion: `true`
+* [Migrate to Spring Boot 4.0 modular starters (Community Edition)](../../../java/spring/boot4/migratetomodularstarters-community-edition)
 * [Rename Spring Boot 4.0 starters with managed versions](../../../java/spring/boot4/renamedeprecatedstartersmanagedversions)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.boot`
@@ -150,7 +162,6 @@ recipeList:
   - org.openrewrite.hibernate.MigrateToHibernate71
   - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0
-  - org.openrewrite.java.spring.boot4.MigrateToModularStarters
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: "*"
@@ -175,6 +186,19 @@ recipeList:
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: ^8.14
       addIfMissing: false
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: org.jetbrains.kotlin.*
+      newVersion: 2.2.x
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.jetbrains.kotlin
+      artifactId: kotlin-maven-plugin
+      newVersion: 2.2.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.jetbrains.kotlin
+      artifactId: "*"
+      newVersion: 2.2.x
+      overrideManagedVersion: true
+  - org.openrewrite.java.spring.boot4.MigrateToModularStarters
   - org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot

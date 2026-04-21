@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.NeedBraces**
 
-_Adds missing braces around code such as single-line `if`, `for`, `while`, and `do-while` block bodies._
+_Adds missing braces around code such as single-line `if`, `for`, `while`, and `do-while` block bodies. Omitting braces can lead to dangling-statement bugs when additional lines are later added to a block without realizing they fall outside the control structure._
 
 ### Tags
 

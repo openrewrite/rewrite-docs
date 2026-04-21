@@ -34,6 +34,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ImmutableListRules.StreamToImmutableList`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$streamtoimmutablelistrecipe)
 * [Refaster template `ImmutableListRules.ImmutableListSortedCopyOf`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$immutablelistsortedcopyofrecipe)
 * [Refaster template `ImmutableListRules.ImmutableListSortedCopyOfWithCustomComparator`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$immutablelistsortedcopyofwithcustomcomparatorrecipe)
+* [Refaster template `ImmutableListRules.ImmutableListSortedCopyOfIterator`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$immutablelistsortedcopyofiteratorrecipe)
+* [Refaster template `ImmutableListRules.ImmutableListSortedCopyOfIteratorWithComparator`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$immutablelistsortedcopyofiteratorwithcomparatorrecipe)
 * [Refaster template `ImmutableListRules.StreamToDistinctImmutableList`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$streamtodistinctimmutablelistrecipe)
 * [Refaster template `ImmutableListRules.ImmutableListOf`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$immutablelistofrecipe)
 * [Refaster template `ImmutableListRules.ImmutableListOf1`](../../../../tech/picnic/errorprone/refasterrules/immutablelistrulesrecipes$immutablelistof1recipe)
@@ -59,6 +61,8 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$StreamToImmutableListRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListSortedCopyOfRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListSortedCopyOfWithCustomComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListSortedCopyOfIteratorRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListSortedCopyOfIteratorWithComparatorRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$StreamToDistinctImmutableListRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListOfRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListOf1Recipe

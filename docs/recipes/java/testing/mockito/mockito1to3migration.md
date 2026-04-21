@@ -115,6 +115,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use static form of Mockito `MockUtil`](../../../java/testing/mockito/mockutilstostatic)
 * [Replace PowerMock with raw Mockito](../../../java/testing/mockito/replacepowermockito)
 * [JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`](../../../java/testing/junit5/mockitojunittomockitoextension)
+* [Add `@MockitoSettings(strictness = Strictness.WARN)` for legacy Mockito modules](../../../java/testing/mockito/addmockitosettingswithwarnstrictnessforlegacymockito)
 * [Adds Mockito extensions to Mockito tests](../../../java/testing/mockito/addmockitoextensionifannotationsused)
 * [Add mockito-junit-jupiter dependency](../../../java/testing/mockito/addmockitojupiterdependency)
 * [Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)](../../../java/testing/mockito/replacemockitotestexecutionlistenerforjupiter)
@@ -235,6 +236,7 @@ recipeList:
   - org.openrewrite.java.testing.mockito.MockUtilsToStatic
   - org.openrewrite.java.testing.mockito.ReplacePowerMockito
   - org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension
+  - org.openrewrite.java.testing.mockito.AddMockitoSettingsWithWarnStrictnessForLegacyMockito
   - org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed
   - org.openrewrite.java.testing.mockito.AddMockitoJupiterDependency
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListenerForJupiter

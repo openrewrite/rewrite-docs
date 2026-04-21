@@ -141,6 +141,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newMethodName: `addPush`
   * matchOverrides: `true`
   * ignoreDefinition: `false`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `okhttp3.mockwebserver.RecordedRequest getPath()`
+  * newMethodName: `getTarget`
+  * matchOverrides: `true`
+  * ignoreDefinition: `false`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `okhttp3.mockwebserver.RecordedRequest getRequestUrl()`
+  * newMethodName: `getUrl`
+  * matchOverrides: `true`
+  * ignoreDefinition: `false`
+* [Preserve `MockResponse` return type for `Dispatcher.dispatch()` overrides](../../../java/testing/junit5/updatemockwebserverdispatcher)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `okhttp3.mockwebserver.MockResponse`
   * newFullyQualifiedTypeName: `mockwebserver3.MockResponse$Builder`
@@ -274,6 +285,17 @@ recipeList:
       newMethodName: addPush
       matchOverrides: true
       ignoreDefinition: false
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: okhttp3.mockwebserver.RecordedRequest getPath()
+      newMethodName: getTarget
+      matchOverrides: true
+      ignoreDefinition: false
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: okhttp3.mockwebserver.RecordedRequest getRequestUrl()
+      newMethodName: getUrl
+      matchOverrides: true
+      ignoreDefinition: false
+  - org.openrewrite.java.testing.junit5.UpdateMockWebServerDispatcher
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: okhttp3.mockwebserver.MockResponse
       newFullyQualifiedTypeName: mockwebserver3.MockResponse$Builder

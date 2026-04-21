@@ -74,7 +74,6 @@ This recipe is used as part of the following composite recipes:
 * [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
 * [Use `MatcherAssert#assertThat(..)`](/recipes/java/testing/junit5/usehamcrestassertthat.md)
-* [Use `ObjectUtils#isEmpty(Object)`](/recipes/java/spring/framework/useobjectutilsisempty.md)
 * [Use consistent Hamcrest matcher imports](/recipes/java/testing/hamcrest/consistenthamcrestmatcherimports.md)
 
 

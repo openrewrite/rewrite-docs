@@ -17,6 +17,8 @@ Remove unnecessary `throws` declarations. This recipe will only remove unused, c
  - The method overrides a method declaration in a super class and the super class does not throw the exception.
  - The method is `public` or `protected` and the exception is not documented via a JavaDoc as a `@throws` tag.
 
+Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
+
 ### Tags
 
 * [RSPEC-S1130](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1130&open=java%3AS1130)

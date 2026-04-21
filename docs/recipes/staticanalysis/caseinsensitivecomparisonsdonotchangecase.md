@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.CaseInsensitiveComparisonsDoNotChangeCase**
 
-_Remove `String#toLowerCase()` or `String#toUpperCase()` from `String#equalsIgnoreCase(..)` comparisons._
+_Remove `String#toLowerCase()` or `String#toUpperCase()` from `String#equalsIgnoreCase(..)` comparisons. Changing case before a case-insensitive comparison is redundant and allocates unnecessary intermediate `String` objects._
 
 ### Tags
 

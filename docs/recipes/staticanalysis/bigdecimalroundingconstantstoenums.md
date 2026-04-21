@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.BigDecimalRoundingConstantsToEnums**
 
-_Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum._
+_Convert `BigDecimal` rounding constants to the equivalent `RoundingMode` enum. The integer-based rounding constants on `BigDecimal` are deprecated and lack type safety; the `RoundingMode` enum makes the rounding behavior self-documenting and prevents invalid values._
 
 ### Tags
 

@@ -33,13 +33,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `StreamRules.StreamOfNullable`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamofnullablerecipe)
 * [Refaster template `StreamRules.ConcatOneStream`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$concatonestreamrecipe)
 * [Refaster template `StreamRules.ConcatTwoStreams`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$concattwostreamsrecipe)
+* [Refaster template `StreamRules.StreamSorted`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamsortedrecipe)
 * [Refaster template `StreamRules.StreamFilterSorted`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfiltersortedrecipe)
 * [Refaster template `StreamRules.StreamFilterSortedWithComparator`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfiltersortedwithcomparatorrecipe)
 * [Refaster template `StreamRules.StreamDistinctSorted`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamdistinctsortedrecipe)
 * [Refaster template `StreamRules.StreamDistinctSortedWithComparator`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamdistinctsortedwithcomparatorrecipe)
+* [Refaster template `StreamRules.StreamCollectLeastStream`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamcollectleaststreamrecipe)
+* [Refaster template `StreamRules.StreamCollectLeastNaturalOrderStream`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamcollectleastnaturalorderstreamrecipe)
 * [Refaster template `StreamRules.StreamMapFirst`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streammapfirstrecipe)
 * [Refaster template `StreamRules.StreamFindAnyIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfindanyisemptyrecipe)
 * [Refaster template `StreamRules.StreamFindAnyIsPresent`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfindanyispresentrecipe)
+* [Refaster template `StreamRules.StreamFindFirst`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamfindfirstrecipe)
 * [Refaster template `StreamRules.StreamMapFilter`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streammapfilterrecipe)
 * [Refaster template `StreamRules.StreamMin`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamminrecipe)
 * [Refaster template `StreamRules.StreamMinNaturalOrder`](../../../../tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamminnaturalorderrecipe)
@@ -80,13 +84,17 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOfNullableRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$ConcatOneStreamRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$ConcatTwoStreamsRecipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamSortedRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedWithComparatorRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamDistinctSortedRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamDistinctSortedWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamCollectLeastStreamRecipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamCollectLeastNaturalOrderStreamRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapFirstRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFindAnyIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFindAnyIsPresentRecipe
+  - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFindFirstRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapFilterRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMinRecipe
   - tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMinNaturalOrderRecipe

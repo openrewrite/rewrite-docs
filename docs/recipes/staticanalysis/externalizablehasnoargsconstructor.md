@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ExternalizableHasNoArgsConstructor**
 
-_`Externalizable` classes handle both serialization and deserialization and must have a no-args constructor for the deserialization process._
+_`Externalizable` classes handle both serialization and deserialization and must have a no-args constructor for the deserialization process. Without a public no-argument constructor, the JVM cannot instantiate the object during deserialization and will throw an `InvalidClassException` at runtime._
 
 ### Tags
 

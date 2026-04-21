@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveUnneededBlock**
 
-_Flatten blocks into inline statements when possible._
+_Flatten blocks into inline statements when possible. Unnecessary nested blocks add indentation and scope boundaries that obscure the control flow, often indicating code that should be extracted into its own method._
 
 ### Tags
 

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.MinimumSwitchCases**
 
-_`switch` statements are useful when many code paths branch depending on the value of a single expression. For just one or two code paths, the code will be more readable with `if` statements._
+_`switch` statements are useful when many code paths branch depending on the value of a single expression. For just one or two code paths, the code will be more readable with `if` statements. Using `switch` for trivial branching adds unnecessary syntactic overhead and obscures the simplicity of the logic._
 
 ### Tags
 

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.AvoidBoxedBooleanExpressions**
 
-_Under certain conditions the `java.lang.Boolean` type is used as an expression, and it may throw a `NullPointerException` if the value is null._
+_Under certain conditions the `java.lang.Boolean` type is used as an expression, and it may throw a `NullPointerException` if the value is null. Using `Boolean.TRUE.equals(...)` guards against unboxing a `null` reference in control flow positions like `if` conditions and ternary operators._
 
 ### Tags
 

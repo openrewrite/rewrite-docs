@@ -90,6 +90,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Spring Boot properties to 3.0](../../../java/spring/boot3/springbootproperties_3_0)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](../../../java/spring/boot3/migratethymeleafdependencies)
 * [Migrate dropWizard dependencies to Spring Boot 3.x](../../../java/spring/boot3/migratedropwizarddependencies)
+* [Rename `logback.xml` to `logback-spring.xml`](../../../java/spring/boot3/renamelogbacktologbackspring)
 * [Remove `SolrAutoConfiguration`](../../../java/spring/boot3/removesolrautoconfigurationexclude)
 * [Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`](../../../java/spring/boot3/migratewebmvctagstoobservationconvention)
 * [`@Bean` methods may not return `void`](../../../java/spring/framework/beanmethodreturnnull)
@@ -169,6 +170,7 @@ recipeList:
   - org.openrewrite.java.spring.boot3.SpringBootProperties_3_0
   - org.openrewrite.java.spring.boot3.MigrateThymeleafDependencies
   - org.openrewrite.java.spring.boot3.MigrateDropWizardDependencies
+  - org.openrewrite.java.spring.boot3.RenameLogbackToLogbackSpring
   - org.openrewrite.java.spring.boot3.RemoveSolrAutoConfigurationExclude
   - org.openrewrite.java.spring.boot3.MigrateWebMvcTagsToObservationConvention
   - org.openrewrite.java.spring.framework.BeanMethodReturnNull

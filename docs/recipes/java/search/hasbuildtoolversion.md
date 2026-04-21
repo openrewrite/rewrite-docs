@@ -24,7 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `Type` | type | The build tool to search for. | `Maven` |
+| `Type` | type | The build tool to search for. Valid options: `Gradle`, `Maven`, `Bazel`, `ModerneCli` | `Maven` |
 | `String` | version | An exact version number or node-style semver selector used to select the version number. | `3.6.0-9999` |
 
 

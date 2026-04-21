@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UnnecessaryPrimitiveAnnotations**
 
-_Primitives can't be null anyway, so these annotations are not useful in this context._
+_Primitives can't be null anyway, so these annotations are not useful in this context. Leaving them in place gives the false impression that a null value is possible, which can confuse readers and static analysis tools alike._
 
 ### Tags
 

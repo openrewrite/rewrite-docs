@@ -16,6 +16,7 @@ description: Core OpenRewrite recipes.
 * [Find files](./findsourcefiles.md)
 * [Find instances of type `Quark`](./findquarks.md)
 * [Find source files with `ParseExceptionResult` markers](./findparsefailures.md)
+* [Find styles](./findstyles.md)
 * [Is in repository](./isinrepository.md)
 * [Language composition report](./languagecomposition.md)
 * [List runtime classpath](./listruntimeclasspath.md)

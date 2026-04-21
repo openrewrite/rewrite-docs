@@ -29,6 +29,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Replace container image name](../../../java/testing/testcontainers/replacecontainerimagename)
+  * containerClass: `org.testcontainers.containers.OracleContainer`
+  * imagePrefix: `gvenzl/oracle-xe`
+  * newImage: `gvenzl/oracle-free:slim`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.testcontainers.containers.OracleContainer`
   * newFullyQualifiedTypeName: `org.testcontainers.oracle.OracleContainer`
@@ -49,6 +53,10 @@ displayName: Migrate from `oracle-xe` to `oracle-free`
 description: |
   Oracle Database Free is the successor of Oracle XE. Migrate from `org.testcontainers:oracle-xe` to `org.testcontainers:oracle-free`.
 recipeList:
+  - org.openrewrite.java.testing.testcontainers.ReplaceContainerImageName:
+      containerClass: org.testcontainers.containers.OracleContainer
+      imagePrefix: gvenzl/oracle-xe
+      newImage: gvenzl/oracle-free:slim
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.testcontainers.containers.OracleContainer
       newFullyQualifiedTypeName: org.testcontainers.oracle.OracleContainer
@@ -66,6 +74,85 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Testcontainers best practices](/recipes/java/testing/testcontainers/testcontainersbestpractices.md)
+
+## Examples
+##### Example 1
+`MigrateToOracleFreeTest#changeTypeAndImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.testcontainers.containers.OracleContainer;
+
+class A {
+    private OracleContainer oracle = null;
+}
+```
+
+###### After
+```java
+import org.testcontainers.oracle.OracleContainer;
+
+class A {
+    private OracleContainer oracle = null;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.testcontainers.containers.OracleContainer;
++import org.testcontainers.oracle.OracleContainer;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateToOracleFreeTest#changeTypeAndImport`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.testcontainers.containers.OracleContainer;
+
+class A {
+    private OracleContainer oracle = null;
+}
+```
+
+###### After
+```java
+import org.testcontainers.oracle.OracleContainer;
+
+class A {
+    private OracleContainer oracle = null;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.testcontainers.containers.OracleContainer;
++import org.testcontainers.oracle.OracleContainer;
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

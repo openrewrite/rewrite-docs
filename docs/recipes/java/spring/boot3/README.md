@@ -54,6 +54,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`](./migratewebmvctagstoobservationconvention.md)
 * [Remove `SolrAutoConfiguration`](./removesolrautoconfigurationexclude.md)
 * [Remove Unnecessary `@ConstructorBinding`](./removeconstructorbindingannotation.md)
+* [Rename `logback.xml` to `logback-spring.xml`](./renamelogbacktologbackspring.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](./migratemaxhttpheadersize.md)
 * [Replace `RestTemplateBuilder.requestFactory(Function)` with `requestFactoryBuilder`](./replaceresttemplatebuilderrequestfactorymethod.md)
 * [Spring Boot 3.3 best practices](./springboot33bestpractices.md)

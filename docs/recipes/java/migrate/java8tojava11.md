@@ -44,6 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Java 8](../../java/migrate/upgradetojava8)
+* [Rename `_` identifier to `__`](../../java/migrate/lang/renameunderscoreidentifier)
 * [Prefer `java.util.Base64` instead of `sun.misc`](../../java/migrate/usejavautilbase64)
   * useMimeCoder: `false`
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](../../java/migrate/castarraysaslisttolist)
@@ -120,6 +121,7 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava8
+  - org.openrewrite.java.migrate.lang.RenameUnderscoreIdentifier
   - org.openrewrite.java.migrate.UseJavaUtilBase64:
       useMimeCoder: false
   - org.openrewrite.java.migrate.CastArraysAsListToList

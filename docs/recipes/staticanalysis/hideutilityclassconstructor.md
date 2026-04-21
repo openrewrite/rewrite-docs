@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.HideUtilityClassConstructor**
 
-_Ensures utility classes (classes containing only static methods or fields in their API) do not have a public constructor._
+_Ensures utility classes (classes containing only static methods or fields in their API) do not have a public constructor. Instantiating a utility class is almost certainly a mistake, and a private constructor makes that intent clear while preventing misuse._
 
 ### Tags
 

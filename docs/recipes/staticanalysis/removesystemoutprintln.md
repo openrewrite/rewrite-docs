@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveSystemOutPrintln**
 
-_Print statements are often left accidentally after debugging an issue. This recipe removes all `System.out#println` and `System.err#println` statements from the code._
+_Print statements are often left accidentally after debugging an issue. This recipe removes all `System.out#println` and `System.err#println` statements from the code. Production code should use a proper logging framework which provides consistent formatting, configurable log levels, and centralized output control._
 
 ### Tags
 

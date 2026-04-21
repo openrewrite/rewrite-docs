@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.InlineVariable**
 
-_Inline variables when they are immediately used to return or throw. Supports both variable declarations and assignments to local variables._
+_Inline variables when they are immediately used to return or throw. Supports both variable declarations and assignments to local variables. A variable that is declared only to be returned or thrown on the very next line adds an unnecessary level of indirection without improving readability._
 
 ### Tags
 

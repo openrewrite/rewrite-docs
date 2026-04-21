@@ -41,6 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add image argument to container constructor](../../../java/testing/testcontainers/explicitcontainerimage)
   * containerClass: `org.testcontainers.containers.ClickHouseContainer`
   * image: `yandex/clickhouse-server:18.10.3`
+* [Replace container image name](../../../java/testing/testcontainers/replacecontainerimagename)
+  * containerClass: `org.testcontainers.containers.ClickHouseContainer`
+  * imagePrefix: `yandex/clickhouse-server`
+  * newImage: `clickhouse/clickhouse-server`
 * [Add image argument to container constructor](../../../java/testing/testcontainers/explicitcontainerimage)
   * containerClass: `org.testcontainers.containers.CockroachContainer`
   * image: `cockroachdb/cockroach:v19.2.11`
@@ -95,9 +99,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add image argument to container constructor](../../../java/testing/testcontainers/explicitcontainerimage)
   * containerClass: `org.testcontainers.containers.ToxiproxyContainer`
   * image: `shopify/toxiproxy:2.1.0`
+* [Replace container image name](../../../java/testing/testcontainers/replacecontainerimagename)
+  * containerClass: `org.testcontainers.containers.ToxiproxyContainer`
+  * imagePrefix: `shopify/toxiproxy`
+  * newImage: `ghcr.io/shopify/toxiproxy`
 * [Add image argument to container constructor](../../../java/testing/testcontainers/explicitcontainerimage)
   * containerClass: `org.testcontainers.vault.VaultContainer`
   * image: `vault:1.1.3`
+* [Replace container image name](../../../java/testing/testcontainers/replacecontainerimagename)
+  * containerClass: `org.testcontainers.vault.VaultContainer`
+  * imagePrefix: `vault:`
+  * newImage: `hashicorp/vault`
 * [Add image argument to container constructor](../../../java/testing/testcontainers/explicitcontainerimage)
   * containerClass: `org.testcontainers.containers.KafkaContainer`
   * image: `confluentinc/cp-kafka:5.4.3`
@@ -135,6 +147,10 @@ recipeList:
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:
       containerClass: org.testcontainers.containers.ClickHouseContainer
       image: yandex/clickhouse-server:18.10.3
+  - org.openrewrite.java.testing.testcontainers.ReplaceContainerImageName:
+      containerClass: org.testcontainers.containers.ClickHouseContainer
+      imagePrefix: yandex/clickhouse-server
+      newImage: clickhouse/clickhouse-server
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:
       containerClass: org.testcontainers.containers.CockroachContainer
       image: cockroachdb/cockroach:v19.2.11
@@ -189,9 +205,17 @@ recipeList:
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:
       containerClass: org.testcontainers.containers.ToxiproxyContainer
       image: shopify/toxiproxy:2.1.0
+  - org.openrewrite.java.testing.testcontainers.ReplaceContainerImageName:
+      containerClass: org.testcontainers.containers.ToxiproxyContainer
+      imagePrefix: shopify/toxiproxy
+      newImage: ghcr.io/shopify/toxiproxy
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:
       containerClass: org.testcontainers.vault.VaultContainer
       image: vault:1.1.3
+  - org.openrewrite.java.testing.testcontainers.ReplaceContainerImageName:
+      containerClass: org.testcontainers.vault.VaultContainer
+      imagePrefix: vault:
+      newImage: hashicorp/vault
   - org.openrewrite.java.testing.testcontainers.ExplicitContainerImage:
       containerClass: org.testcontainers.containers.KafkaContainer
       image: confluentinc/cp-kafka:5.4.3

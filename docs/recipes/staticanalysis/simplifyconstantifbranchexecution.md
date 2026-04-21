@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution**
 
-_Checks for if expressions that are always `true` or `false` and simplifies them._
+_Checks for if expressions that are always `true` or `false` and simplifies them. Branches that can never execute are dead code that misleads readers and may mask logic errors introduced during refactoring._
 
 ### Tags
 

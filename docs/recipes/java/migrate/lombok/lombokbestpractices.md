@@ -98,6 +98,11 @@ recipeList:
 
 
 ###### Unchanged
+```mavenProject
+project
+```
+
+###### Unchanged
 ```xml title="pom.xml"
 <project>
     <modelVersion>4.0.0</modelVersion>
@@ -124,6 +129,11 @@ recipeList:
 ##### Example 2
 `LombokBestPracticesTest#providedScope`
 
+
+###### Unchanged
+```mavenProject
+project
+```
 
 ###### Unchanged
 ```xml title="pom.xml"

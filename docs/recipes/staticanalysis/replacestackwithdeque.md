@@ -13,6 +13,8 @@ import RunRecipe from '@site/src/components/RunRecipe';
 ```
 From the Javadoc of `Stack`:
 > A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class.
+
+`Stack` inherits from `Vector`, which carries unnecessary synchronization overhead in single-threaded contexts and exposes non-stack operations like random index access.
 ```
 
 

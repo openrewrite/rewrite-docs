@@ -69,7 +69,9 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Convert @ConfigurationProperties class to @ConfigMapping interface](./configurationpropertiestoconfigmapping.md)
 * [Convert JPA Entity to Panache Entity](./jpaentitytopanacheentity.md)
+* [Convert MongoRepository to PanacheMongoRepository](./mongorepositorytopanachemongorepository.md)
 * [Convert Spring @EventListener to CDI @Observes](./springeventlistenertoobserves.md)
 * [Convert Spring HealthIndicator to Quarkus HealthCheck](./springhealthindicatortoquarkus.md)
 * [Convert Spring `ResponseEntity` to JAX-RS `Response`](./responseentitytojaxrsresponse.md)

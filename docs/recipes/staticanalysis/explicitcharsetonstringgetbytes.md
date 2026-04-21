@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ExplicitCharsetOnStringGetBytes**
 
-_This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option._
+_This makes the behavior of the code platform neutral. It will not override any existing explicit encodings, even if they don't match the default encoding option. Relying on the platform default charset can produce different results across environments, leading to subtle data corruption bugs._
 
 ### Tags
 

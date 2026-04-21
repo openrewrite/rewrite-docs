@@ -100,6 +100,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Relocate Launcher Classes](../../../java/spring/boot3/relocatelauncherclasses)
 * [Upgrade MyBatis to Spring Boot 3.2](../../../java/spring/boot3/upgrademybatistospringboot_3_2)
 * [Upgrade to SpringDoc 2.5](../../../java/springdoc/upgradespringdoc_2_5)
+* [Remove Maven project property](../../../maven/removeproperty)
+  * propertyName: `jakarta-servlet.version`
 
 </TabItem>
 
@@ -178,6 +180,8 @@ recipeList:
   - org.openrewrite.java.spring.boot3.RelocateLauncherClasses
   - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_2
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_2_5
+  - org.openrewrite.maven.RemoveProperty:
+      propertyName: jakarta-servlet.version
 
 ```
 </TabItem>

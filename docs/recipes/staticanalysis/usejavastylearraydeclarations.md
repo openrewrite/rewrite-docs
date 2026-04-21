@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations**
 
-_Change C-Style array declarations `int i[];` to `int[] i;`._
+_Change C-Style array declarations `int i[];` to `int[] i;`. Keeping the brackets with the type groups all type information in one place, so readers do not have to inspect both the type and the variable name to determine whether something is an array._
 
 ### Tags
 

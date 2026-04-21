@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Migrate to Apache Kafka Native container](../../../java/testing/testcontainers/migratetokafkanative)
 * [Migrate from `oracle-xe` to `oracle-free`](../../../java/testing/testcontainers/migratetooraclefree)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 
@@ -52,6 +53,7 @@ description: |
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.testing.testcontainers.MigrateToKafkaNative
   - org.openrewrite.java.testing.testcontainers.MigrateToOracleFree
   - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
 

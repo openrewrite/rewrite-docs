@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UnnecessaryParentheses**
 
-_Removes unnecessary parentheses from code where extra parentheses pairs are redundant._
+_Removes unnecessary parentheses from code where extra parentheses pairs are redundant. Redundant parentheses add visual noise and can obscure the actual structure of an expression, making code harder to read at a glance._
 
 ### Tags
 

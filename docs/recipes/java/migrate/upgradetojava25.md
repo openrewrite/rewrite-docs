@@ -40,8 +40,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Java 21](../../java/migrate/upgradetojava21)
-* [Upgrade build to Java 24 for Kotlin &lt;2.3](../../java/migrate/upgradebuildtojava24)
-* [Upgrade build to Java 25 (default)](../../java/migrate/upgradebuildtojava25)
+* [Upgrade build to Java 24 for Kotlin pre-2.3](../../java/migrate/upgradebuildtojava24)
+* [Upgrade build to Java 25 (non-Kotlin)](../../java/migrate/upgradebuildtojava25)
+* [Upgrade build to Java 25 for Kotlin 2.3+](../../java/migrate/upgradebuildtojava25forkotlin)
 * [Upgrade plugins to Java 25 compatible versions](../../java/migrate/upgradepluginsforjava25)
 * [Migrate `System.out.print` to Java 25 IO utility class](../../java/migrate/io/replacesystemoutwithioprint)
 * [Migrate `public static void main(String[] args)` to instance `void main()`](../../java/migrate/lang/migratemainmethodtoinstancemain)
@@ -75,6 +76,7 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava21
   - org.openrewrite.java.migrate.UpgradeBuildToJava24
   - org.openrewrite.java.migrate.UpgradeBuildToJava25
+  - org.openrewrite.java.migrate.UpgradeBuildToJava25ForKotlin
   - org.openrewrite.java.migrate.UpgradePluginsForJava25
   - org.openrewrite.java.migrate.io.ReplaceSystemOutWithIOPrint
   - org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain

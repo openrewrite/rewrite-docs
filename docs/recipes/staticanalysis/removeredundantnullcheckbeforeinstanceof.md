@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof**
 
-_Removes redundant null checks before instanceof operations since instanceof returns false for null._
+_Removes redundant null checks before instanceof operations since instanceof returns false for null. Removing the extra check simplifies the conditional and makes the null-safety guarantee of `instanceof` more visible to readers._
 
 ### Tags
 

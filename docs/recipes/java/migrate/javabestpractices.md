@@ -45,6 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * convertStringsWithoutNewlines: `true`
   * avoidLineContinuations: `false`
 * [Prefer the Java standard library instead of Guava](../../java/migrate/guava/noguava)
+* [Prefer the Java standard library instead of Joda-Time](../../java/joda/time/nojodatime)
 * [JSpecify best practices](../../java/jspecify/jspecifybestpractices)
 * [Use `var` for variables initialized with type casts](../../java/migrate/lang/var/usevarfortypecast)
 * [Use `var` for constructor call assignments](../../java/migrate/lang/var/usevarforconstructors)
@@ -58,6 +59,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replaces `Object.notify()` with `Object.notifyAll()`](../../staticanalysis/useobjectnotifyall)
 * [Remove garbage collection invocations](../../staticanalysis/removecallstosystemgc)
 * [Remove `Object.finalize()` invocations](../../staticanalysis/removecallstoobjectfinalize)
+* [URL Equals and Hash Code](../../staticanalysis/urlequalshashcoderecipes)
 * [Use method references in lambda](../../staticanalysis/replacelambdawithmethodreference)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
 * [Remove unnecessary parentheses](../../staticanalysis/unnecessaryparentheses)
@@ -97,6 +99,7 @@ recipeList:
       convertStringsWithoutNewlines: true
       avoidLineContinuations: false
   - org.openrewrite.java.migrate.guava.NoGuava
+  - org.openrewrite.java.joda.time.NoJodaTime
   - org.openrewrite.java.jspecify.JSpecifyBestPractices
   - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast
   - org.openrewrite.java.migrate.lang.var.UseVarForConstructors
@@ -110,6 +113,7 @@ recipeList:
   - org.openrewrite.staticanalysis.UseObjectNotifyAll
   - org.openrewrite.staticanalysis.RemoveCallsToSystemGc
   - org.openrewrite.staticanalysis.RemoveCallsToObjectFinalize
+  - org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.UseDiamondOperator
   - org.openrewrite.staticanalysis.UnnecessaryParentheses

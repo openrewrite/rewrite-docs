@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.EqualsAvoidsNull**
 
-_Checks that any combination of String literals is on the left side of an `equals()` comparison. Also checks for String literals assigned to some field (such as `someString.equals(anotherString = "text"))`. And removes redundant null checks in conjunction with equals comparisons._
+_Checks that any combination of String literals is on the left side of an `equals()` comparison. Also checks for String literals assigned to some field (such as `someString.equals(anotherString = "text"))`. And removes redundant null checks in conjunction with equals comparisons. Placing the literal on the left side prevents `NullPointerException`s, since a literal can never be null and its `equals` method handles null arguments safely._
 
 ### Tags
 

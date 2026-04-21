@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate Hibernate Types to Hypersistence Utils 6.0](./migratetohypersistenceutilshibernate60.md)
 * [Migrate Hibernate dependencies to 6.0.x](./migratetohibernatedependencies60.md)
+* [Migrate Hibernate dialect to the generic dialect](./migratedialect.md)
 * [Migrate to Hibernate 6.0.x (Community Edition)](./migratetohibernate60-community-edition.md)
 * [Migrate to Hibernate 6.1.x](./migratetohibernate61.md)
 * [Migrate to Hibernate 6.2.x](./migratetohibernate62.md)

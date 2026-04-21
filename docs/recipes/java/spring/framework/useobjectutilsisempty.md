@@ -14,54 +14,65 @@ _`StringUtils#isEmpty(Object)` was deprecated in 5.3._
 
 ## Recipe source
 
-[GitHub: spring-framework-53.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-53.yml),
+[GitHub: UseObjectUtilsIsEmpty.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/UseObjectUtilsIsEmpty.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.springframework.util.StringUtils isEmpty(Object)`
-  * fullyQualifiedTargetTypeName: `org.springframework.util.ObjectUtils`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.spring.framework.UseObjectUtilsIsEmpty
-displayName: Use `ObjectUtils#isEmpty(Object)`
-description: |
-  `StringUtils#isEmpty(Object)` was deprecated in 5.3.
-preconditions:
-  - org.openrewrite.Singleton
-recipeList:
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.springframework.util.StringUtils isEmpty(Object)
-      fullyQualifiedTargetTypeName: org.springframework.util.ObjectUtils
-
-```
-</TabItem>
-</Tabs>
-
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Framework 5.3 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.util.StringUtils;
+
+class A {
+    boolean test(String s) {
+        return StringUtils.isEmpty(s);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.util.ObjectUtils;
+
+class A {
+    boolean test(String s) {
+        return ObjectUtils.isEmpty(s);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.util.StringUtils;
++import org.springframework.util.ObjectUtils;
+
+@@ -5,1 +5,1 @@
+class A {
+    boolean test(String s) {
+-       return StringUtils.isEmpty(s);
++       return ObjectUtils.isEmpty(s);
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

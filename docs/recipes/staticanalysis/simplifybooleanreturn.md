@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.SimplifyBooleanReturn**
 
-_Simplifies Boolean expressions by removing redundancies. For example, `a && true` simplifies to `a`._
+_Simplifies Boolean expressions by removing redundancies. For example, `a && true` simplifies to `a`. Wrapping a boolean expression in an if-then-else just to return `true` or `false` adds unnecessary control flow that obscures the straightforward intent of the expression._
 
 ### Tags
 

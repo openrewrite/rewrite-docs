@@ -39,6 +39,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add missing `@Configuration` annotation](./addconfigurationannotationifbeanspresent.md)
+* [Add `spring-boot-starter-validation` if needed](./addspringbootstartervalidation.md)
 * [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](./databasecomponentandbeaninitializationordering.md)
 * [Adjust configuration classes to use the `WebServerFactoryCustomizer` interface](./changeembeddedservletcontainercustomizer.md)
 * [Convert `HeadersConfigurer` chained calls into Lambda DSL](./headersconfigurerlambdadsl.md)
@@ -51,8 +52,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`](./migratehsqlembeddeddatabaseconnection.md)
 * [Migrate multi-condition `@ConditionalOnBean` annotations](./conditionalonbeananynestedcondition.md)
 * [Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x](./conditionalonbeananynestedconditionboot1.md)
-* [Migrate null credentials](./migratedatabasecredentialsfortoolproperties.md)
 * [Migrate null credentials](./migratedatabasecredentialsfortoolyaml.md)
+* [Migrate null credentials](./migratedatabasecredentialsfortoolproperties.md)
 * [Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`](./migrateartemisproperties.md)
 * [Migrate to recommended constants in `LogbackLoggingSystemProperties` from deprecated values in `LoggingSystemProperties`](./migrateloggingsystempropertyconstants.md)
 * [Move SAML relying party identity provider property to asserting party](./samlrelyingpartypropertyapplicationpropertiesmove.md)

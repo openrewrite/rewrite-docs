@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.NoEmptyCollectionWithRawType**
 
-_Replaces `Collections#EMPTY_...` with methods that return generic types._
+_Replaces `Collections#EMPTY_...` with methods that return generic types. The raw-typed constant fields bypass generics checks, which can hide type mismatches that only surface as `ClassCastException` at runtime._
 
 ### Tags
 

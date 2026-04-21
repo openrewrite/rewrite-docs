@@ -77,8 +77,10 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `JDeprScan` Maven Plug-in](./addjdeprscanplugin.md)
+* [Add `argLine` to surefire and failsafe plugins](./addsurefirefailsafeargline.md)
 * [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](./addlombokmapstructbindingmavendependencyonly.md)
 * [Add maven jar plugin to suppress illegal reflection warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
+* [Add surefire `--add-opens` for Mockito/ByteBuddy](./addsurefirefailsafearglineformockito.md)
 * [Adds missing method implementations](./addmissingmethodimplementation.md)
 * [Adds `static` modifier to `@Produces` fields that are in session beans](./addstaticvariableonproducersessionbean.md)
 * [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](./beandiscovery.md)
@@ -117,8 +119,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade build to Java 11](./upgradebuildtojava11.md)
 * [Upgrade build to Java 17](./upgradebuildtojava17.md)
 * [Upgrade build to Java 21](./upgradebuildtojava21.md)
-* [Upgrade build to Java 24 for Kotlin &lt;2.3](./upgradebuildtojava24.md)
-* [Upgrade build to Java 25 (default)](./upgradebuildtojava25.md)
+* [Upgrade build to Java 24 for Kotlin pre-2.3](./upgradebuildtojava24.md)
+* [Upgrade build to Java 25 (non-Kotlin)](./upgradebuildtojava25.md)
+* [Upgrade build to Java 25 for Kotlin 2.3+](./upgradebuildtojava25forkotlin.md)
 * [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](./removedlegacysunjsseprovidername.md)
 * [Use `ZipException` instead of `ZipError`](./migrateziperrortozipexception.md)
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](./jredonotusesunnetsslinternalwwwprotocol.md)

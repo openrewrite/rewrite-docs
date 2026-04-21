@@ -21,6 +21,78 @@ _Sort dependencies in `build.gradle` and `build.gradle.kts` files. Dependencies 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.9.1"
+    implementation "org.springframework:spring-web:5.3.23"
+    api "com.google.guava:guava:31.1-jre"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.4"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api "com.google.guava:guava:31.1-jre"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.4"
+    implementation "org.springframework:spring-web:5.3.23"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.9.1"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,2 +10,0 @@
+
+dependencies {
+-   testImplementation "org.junit.jupiter:junit-jupiter-api:5.9.1"
+-   implementation "org.springframework:spring-web:5.3.23"
+    api "com.google.guava:guava:31.1-jre"
+@@ -14,0 +12,2 @@
+    api "com.google.guava:guava:31.1-jre"
+    implementation "com.fasterxml.jackson.core:jackson-databind:2.13.4"
++   implementation "org.springframework:spring-web:5.3.23"
++   testImplementation "org.junit.jupiter:junit-jupiter-api:5.9.1"
+}
+```
+</TabItem>
+</Tabs>
+
+
 ## Usage
 
 <RunRecipe

@@ -1,16 +1,16 @@
 ---
-sidebar_label: "Upgrade build to Java 24 for Kotlin &lt;2.3"
+sidebar_label: "Upgrade build to Java 24 for Kotlin pre-2.3"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Upgrade build to Java 24 for Kotlin &lt;2.3
+# Upgrade build to Java 24 for Kotlin pre-2.3
 
 **org.openrewrite.java.migrate.UpgradeBuildToJava24**
 
-_Kotlin versions before 2.3 only support up to Java 24._
+_Kotlin versions before 2.3 only support up to Java 24. Applies only to modules that actually compile Kotlin (i.e. contain `.kt` source files), so transitive `kotlin-stdlib` dependencies do not trigger the cap._
 
 ## Recipe source
 
@@ -27,6 +27,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
+* [Module has Kotlin source files](../../java/migrate/search/modulehaskotlinsource)
 * [Module has dependency](../../java/dependencies/search/modulehasdependency)
   * groupIdPattern: `org.jetbrains.kotlin`
   * artifactIdPattern: `kotlin-stdlib*`
@@ -45,10 +46,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.UpgradeBuildToJava24
-displayName: Upgrade build to Java 24 for Kotlin &lt;2.3
+displayName: Upgrade build to Java 24 for Kotlin pre-2.3
 description: |
-  Kotlin versions before 2.3 only support up to Java 24.
+  Kotlin versions before 2.3 only support up to Java 24. Applies only to modules that actually compile Kotlin (i.e. contain `.kt` source files), so transitive `kotlin-stdlib` dependencies do not trigger the cap.
 preconditions:
+  - org.openrewrite.java.migrate.search.ModuleHasKotlinSource
   - org.openrewrite.java.dependencies.search.ModuleHasDependency:
       groupIdPattern: org.jetbrains.kotlin
       artifactIdPattern: kotlin-stdlib*
@@ -72,7 +74,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.UpgradeBuildToJava24"
-  displayName="Upgrade build to Java 24 for Kotlin &lt;2.3"
+  displayName="Upgrade build to Java 24 for Kotlin pre-2.3"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

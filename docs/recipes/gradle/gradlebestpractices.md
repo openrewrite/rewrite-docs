@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.gradle.GradleBestPractices**
 
-_Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and ideomatic builds._
+_Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and idiomatic builds._
 
 ## Recipe source
 
@@ -33,6 +33,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Enable Gradle build cache](../gradle/enablegradlebuildcache)
 * [Enable Gradle parallel execution](../gradle/enablegradleparallelexecution)
 * [Change Gradle task eager creation to lazy registration](../gradle/changetasktotasksregister)
+* [Remove redundant explicit dependencies and versions](../gradle/removeredundantdependencyversions)
+* [Remove redundant security resolution rules](../gradle/removeredundantsecurityresolutionrules)
+* [Sort Gradle dependencies](../gradle/sortdependencies)
+* [Use HTTPS for repositories](../gradle/security/usehttpsforrepositories)
 
 </TabItem>
 
@@ -44,12 +48,16 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.gradle.GradleBestPractices
 displayName: Apply Gradle best practices
 description: |
-  Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and ideomatic builds.
+  Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and idiomatic builds.
 recipeList:
   - org.openrewrite.gradle.MigrateToGradle9
   - org.openrewrite.gradle.EnableGradleBuildCache
   - org.openrewrite.gradle.EnableGradleParallelExecution
   - org.openrewrite.gradle.ChangeTaskToTasksRegister
+  - org.openrewrite.gradle.RemoveRedundantDependencyVersions
+  - org.openrewrite.gradle.RemoveRedundantSecurityResolutionRules
+  - org.openrewrite.gradle.SortDependencies
+  - org.openrewrite.gradle.security.UseHttpsForRepositories
 
 ```
 </TabItem>

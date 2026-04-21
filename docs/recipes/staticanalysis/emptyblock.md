@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.EmptyBlock**
 
-_Remove empty blocks that effectively do nothing._
+_Remove empty blocks that effectively do nothing. Empty blocks are ambiguous -- they may indicate incomplete implementation or accidentally deleted code -- and removing them makes the intent of the surrounding code explicit._
 
 ### Tags
 

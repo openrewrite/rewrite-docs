@@ -39,8 +39,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Add Maven profile](../../maven/addprofile)
   * id: `native`
-  * activation: `<property>   <name>native</name> </property> `
-  * properties: `<quarkus.native.enabled>true</quarkus.native.enabled> <quarkus.package.jar.enabled>false</quarkus.package.jar.enabled> `
+  * activation: `<activation>   <property>     <name>native</name>   </property> </activation> `
+  * properties: `<properties>   <quarkus.native.enabled>true</quarkus.native.enabled>   <quarkus.package.jar.enabled>false</quarkus.package.jar.enabled> </properties> `
 * [Add Quarkus Maven plugin](../../quarkus/spring/addquarkusmavenplugin)
 
 </TabItem>
@@ -63,18 +63,165 @@ tags:
 recipeList:
   - org.openrewrite.maven.AddProfile:
       id: native
-      activation: <property>
-  <name>native</name>
-</property>
+      activation: <activation>
+  <property>
+    <name>native</name>
+  </property>
+</activation>
 
-      properties: <quarkus.native.enabled>true</quarkus.native.enabled>
-<quarkus.package.jar.enabled>false</quarkus.package.jar.enabled>
+      properties: <properties>
+  <quarkus.native.enabled>true</quarkus.native.enabled>
+  <quarkus.package.jar.enabled>false</quarkus.package.jar.enabled>
+</properties>
 
   - org.openrewrite.quarkus.spring.AddQuarkusMavenPlugin
 
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`ConfigureNativeBuildTest#addNativeProfile`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <profiles>
+        <profile>
+            <id>native</id>
+            <activation>
+                <property>
+                    <name>native</name>
+                </property>
+            </activation>
+            <properties>
+                <quarkus.native.enabled>true</quarkus.native.enabled>
+                <quarkus.package.jar.enabled>false</quarkus.package.jar.enabled>
+            </properties>
+        </profile>
+    </profiles>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,0 +6,14 @@
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
++   <profiles>
++       <profile>
++           <id>native</id>
++           <activation>
++               <property>
++                   <name>native</name>
++               </property>
++           </activation>
++           <properties>
++               <quarkus.native.enabled>true</quarkus.native.enabled>
++               <quarkus.package.jar.enabled>false</quarkus.package.jar.enabled>
++           </properties>
++       </profile>
++   </profiles>
+</project>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`ConfigureNativeBuildTest#addNativeProfile`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <profiles>
+        <profile>
+            <id>native</id>
+            <activation>
+                <property>
+                    <name>native</name>
+                </property>
+            </activation>
+            <properties>
+                <quarkus.native.enabled>true</quarkus.native.enabled>
+                <quarkus.package.jar.enabled>false</quarkus.package.jar.enabled>
+            </properties>
+        </profile>
+    </profiles>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -6,0 +6,14 @@
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
++   <profiles>
++       <profile>
++           <id>native</id>
++           <activation>
++               <property>
++                   <name>native</name>
++               </property>
++           </activation>
++           <properties>
++               <quarkus.native.enabled>true</quarkus.native.enabled>
++               <quarkus.package.jar.enabled>false</quarkus.package.jar.enabled>
++           </properties>
++       </profile>
++   </profiles>
+</project>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

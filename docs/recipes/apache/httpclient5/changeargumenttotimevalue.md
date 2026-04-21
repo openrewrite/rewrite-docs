@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `org.apache.http.impl.nio.reactor.IOReactorConfig.Builder setSelectInterval(long)` |
-| `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to use to turn the original value into a TimeValue. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
+| `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to use to turn the original value into a TimeValue. Defaults to `MILLISECONDS`. Valid options: `NANOSECONDS`, `MICROSECONDS`, `MILLISECONDS`, `SECONDS`, `MINUTES`, `HOURS`, `DAYS` | `MILLISECONDS` |
 
 
 ## Used by

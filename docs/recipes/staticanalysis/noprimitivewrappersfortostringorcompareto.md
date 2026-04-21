@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.NoPrimitiveWrappersForToStringOrCompareTo**
 
-_Primitive wrappers should not be instantiated only for `#toString()` or `#compareTo(..)` invocations._
+_Primitive wrappers should not be instantiated only for `#toString()` or `#compareTo(..)` invocations. Allocating a wrapper object just to call a method that has a static equivalent is wasteful; the static versions avoid the unnecessary object creation._
 
 ### Tags
 

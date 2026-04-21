@@ -12,10 +12,6 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Avoid vacuous operations prior to invocation of `Mono#then(Mono)`._
 
-### Tags
-
-* [RSPEC-S4968](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4968&open=java%3AS4968)
-
 ## Recipe source
 
 [GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenMonoRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenMonoRecipe),

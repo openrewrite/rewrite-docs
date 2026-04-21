@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle**
 
-_Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v3`._
+_Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v6`._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change GitHub Action](../../github/changeaction)
   * oldAction: `gradle/gradle-build-action`
   * newAction: `gradle/actions/setup-gradle`
-  * newVersion: `v3`
+  * newVersion: `v6`
 
 </TabItem>
 
@@ -45,7 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.github.gradle.RenameGradleBuildActionToSetupGradle
 displayName: Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`
 description: |
-  Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v3`.
+  Rename the deprecated `gradle/gradle-build-action` to `gradle/actions/setup-gradle@v6`.
 tags:
   - gradle
   - github
@@ -53,7 +53,7 @@ recipeList:
   - org.openrewrite.github.ChangeAction:
       oldAction: gradle/gradle-build-action
       newAction: gradle/actions/setup-gradle
-      newVersion: v3
+      newVersion: v6
 
 ```
 </TabItem>

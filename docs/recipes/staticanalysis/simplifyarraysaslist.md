@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.SimplifyArraysAsList**
 
-_Simplifies `Arrays.asList()` method calls that use explicit array creation to use varargs instead. For example, `Arrays.asList(new String[]{"a", "b", "c"})` becomes `Arrays.asList("a", "b", "c")`._
+_Simplifies `Arrays.asList()` method calls that use explicit array creation to use varargs instead. For example, `Arrays.asList(new String[]{"a", "b", "c"})` becomes `Arrays.asList("a", "b", "c")`. Explicitly constructing an array to pass to a varargs parameter adds visual clutter without changing behavior, since the compiler generates the array automatically._
 
 ### Tags
 

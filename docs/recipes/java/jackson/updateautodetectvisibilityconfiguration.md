@@ -31,6 +31,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.MapperFeature;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+
+class Test {
+    void configure() {
+        JsonMapper.builder()
+          .disable(MapperFeature.AUTO_DETECT_FIELDS)
+          .build();
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+
+class Test {
+    void configure() {
+        JsonMapper.builder()
+          .changeDefaultVisibility(vc -> vc.withFieldVisibility(JsonAutoDetect.Visibility.NONE))
+          .build();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.databind.MapperFeature;
++import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.databind.json.JsonMapper;
+@@ -7,1 +7,1 @@
+    void configure() {
+        JsonMapper.builder()
+-         .disable(MapperFeature.AUTO_DETECT_FIELDS)
++         .changeDefaultVisibility(vc -> vc.withFieldVisibility(JsonAutoDetect.Visibility.NONE))
+          .build();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

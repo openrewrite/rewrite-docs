@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods**
 
-_`private` methods that are never executed are dead code and should be removed._
+_`private` methods that are never executed are dead code and should be removed. Keeping unreachable methods around adds maintenance burden and can give a false impression of the class's capabilities._
 
 ### Tags
 

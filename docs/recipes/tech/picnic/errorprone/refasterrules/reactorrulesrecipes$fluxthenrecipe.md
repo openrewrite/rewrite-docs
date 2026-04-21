@@ -12,11 +12,6 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Avoid vacuous invocations of `Flux#ignoreElements()`._
 
-### Tags
-
-* [RSPEC-S4968](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4968&open=java%3AS4968)
-* [RSPEC-S2637](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2637&open=java%3AS2637)
-
 ## Recipe source
 
 [GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenRecipe),

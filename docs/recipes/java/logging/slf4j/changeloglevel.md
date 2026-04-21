@@ -24,8 +24,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `Level` | from | The log level to change from. | `INFO` |
-| `Level` | to | The log level to change to. | `DEBUG` |
+| `Level` | from | The log level to change from. Valid options: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` | `INFO` |
+| `Level` | to | The log level to change to. Valid options: `TRACE`, `DEBUG`, `INFO`, `WARN`, `ERROR` | `DEBUG` |
 | `String` | startsWith | *Optional*. Only change log statements that start with this string. When omitted all log statements of the specified level are changed. | `LaunchDarkly` |
 
 ## Example
