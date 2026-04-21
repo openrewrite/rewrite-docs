@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.LambdaBlockToExpression**
 
-_Single-line statement lambdas returning a value can be replaced with expression lambdas._
+_Single-line statement lambdas returning a value can be replaced with expression lambdas. Expression-form lambdas are more concise and consistent with a functional programming style, making the code easier to scan._
 
 ### Tags
 

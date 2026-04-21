@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveCallsToObjectFinalize**
 
-_Remove calls to `Object.finalize()`. This method is called during garbage collection and calling it manually is misleading._
+_Remove calls to `Object.finalize()`. This method is called during garbage collection and calling it manually is misleading. Explicit finalize invocations can trigger resource cleanup prematurely while the object is still in use, leading to unpredictable behavior._
 
 ### Tags
 

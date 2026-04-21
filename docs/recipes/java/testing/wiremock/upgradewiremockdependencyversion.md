@@ -119,6 +119,53 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 
+## Examples
+##### Example 1
+`UpgradeWiremockDependencyVersionTest#wiremockJre8ToWiremock`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>com.github.tomakehurst</groupId>
+          <artifactId>wiremock-jre8</artifactId>
+          <version>2.35.1</version>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`UpgradeWiremockDependencyVersionTest#wiremockJre8ToWiremock`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+      <dependency>
+          <groupId>com.github.tomakehurst</groupId>
+          <artifactId>wiremock-jre8</artifactId>
+          <version>2.35.1</version>
+          <scope>test</scope>
+      </dependency>
+  </dependencies>
+</project>
+```
+
 
 ## Usage
 

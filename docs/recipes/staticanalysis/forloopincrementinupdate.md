@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ForLoopIncrementInUpdate**
 
-_The increment should be moved to the loop's increment clause if possible._
+_The increment should be moved to the loop's increment clause if possible. Placing the counter update in the loop body rather than the update clause obscures the loop's control flow and makes it harder to reason about termination._
 
 ### Tags
 

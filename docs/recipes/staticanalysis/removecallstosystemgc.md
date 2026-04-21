@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveCallsToSystemGc**
 
-_Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage collection is best left to the JVM._
+_Removes calls to `System.gc()` and `Runtime.gc()`. When to invoke garbage collection is best left to the JVM. Manual GC calls produce unpredictable results across different JVM implementations and can cause unnecessary application pauses._
 
 ### Tags
 

@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactPattern | *Optional*. Artifact glob expression pattern used to match dependencies that should be managed.Artifact is the second part of a dependency coordinate `com.google.guava:guava:VERSION`. | `guava*` |
 | `Comparator` | onlyIfManagedVersionIs | *Optional*. Only remove the explicit version if the managed version has the specified comparative relationship to the explicit version. For example, `gte` will only remove the explicit version if the managed version is the same or newer. Default `eq`. Valid options: `ANY`, `EQ`, `LT`, `LTE`, `GT`, `GTE` |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
+
 ## Example
 
 ###### Parameters

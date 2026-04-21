@@ -15,6 +15,7 @@ _Recipes to perform [GitHub Actions](https://docs.github.com/en/actions) hygiene
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [GitHub Actions best practices](./githubactionsbestpractices.md)
 * [Migrate `astral-sh/setup-uv` from v6 to v7](./migratesetupuvv6tov7.md)
 * [Migrate from tibdex/github-app-token to actions/create-github-app-token](./migratetibdexgithubapptokentoactions.md)
 * [Replace OSSRH secrets with Sonatype secrets](./replaceossrhsecretswithsonatype.md)
@@ -33,6 +34,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find GitHub action secret references](./findgithubactionsecretreferences.md)
 * [Find jobs missing timeout](./findmissingtimeout.md)
 * [Is GitHub Actions Workflow](./isgithubactionsworkflow.md)
+* [Prefer block style for job dependencies](./preferblockstylejobdependencies.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)
 * [Remove unused workflow dispatch inputs](./removeunusedworkflowdispatchinputs.md)
 * [Remove workflow input argument](./removeworkflowinputargument.md)
@@ -47,6 +49,5 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use `actions/setup-java` IBM `semeru` distribution](./setupjavaadoptopenj9tosemeru.md)
 * [Use `actions/setup-java` `temurin` distribution](./setupjavaadoptopenjdktotemurin.md)
 * [Use `actions/setup-java` `temurin` distribution as they are cached in hosted runners](./prefertemurindistributions.md)
-* [Use `secrets: inherit` if possible](./prefersecretsinheritworkflow.md)
 
 

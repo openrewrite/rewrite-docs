@@ -32,6 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJIterableRules.AssertThatIterableIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterableisemptyrecipe)
 * [Refaster template `AssertJIterableRules.AssertThatIterableIsNotEmpty`](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterableisnotemptyrecipe)
 * [Refaster template `AssertJIterableRules.AssertThatIterableSize`](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterablesizerecipe)
+* [Refaster template `AssertJIterableRules.AssertThatContains`](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatcontainsrecipe)
+* [Refaster template `AssertJIterableRules.AssertThatDoesNotContain`](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatdoesnotcontainrecipe)
+* [Refaster template `AssertJIterableRules.AssertThatContainsAll`](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatcontainsallrecipe)
 * [Refaster template `AssertJIterableRules.AssertThatIterableHasOneElementEqualTo`](../../../../tech/picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterablehasoneelementequaltorecipe)
 
 </TabItem>
@@ -49,6 +52,9 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsNotEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableSizeRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatContainsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatDoesNotContainRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatContainsAllRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableHasOneElementEqualToRecipe
 
 ```
@@ -59,6 +65,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 
 

@@ -82,6 +82,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](/recipes/java/springdoc/migratespringdoccommon.md)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods.md)
 * [Migrate to Hibernate 6.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate60-moderne-edition)
+* [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
 * [Migrate to Hibernate 7.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate70-moderne-edition)
 * [Migrate to HtmlUnit 3.x](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
 * [Migrate to Kafka 2.7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka27)

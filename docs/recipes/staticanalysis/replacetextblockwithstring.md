@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ReplaceTextBlockWithString**
 
-_Replace text block with a regular multi-line string._
+_Replace text block with a regular multi-line string. Text blocks that fit on a single line without concatenation or escaped newlines gain no readability benefit from the triple-quote syntax and are clearer as plain string literals._
 
 ### Tags
 

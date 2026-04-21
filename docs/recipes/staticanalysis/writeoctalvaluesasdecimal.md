@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.WriteOctalValuesAsDecimal**
 
-_Developers may not recognize octal values as such, mistaking them instead for decimal values._
+_Developers may not recognize octal values as such, mistaking them instead for decimal values. Because a leading zero silently switches the literal to base-8, what looks like `010` actually represents `8`, which is a common source of subtle numeric bugs._
 
 ### Tags
 

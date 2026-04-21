@@ -33,6 +33,51 @@ This recipe is used as part of the following composite recipes:
 
 * [Use `=` assignment syntax for well-known Gradle properties](/recipes/gradle/useassignmentforpropertysyntax.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|propertyName|`description`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+tasks.register('runLogic', JavaExec) {
+    description 'My precious logic'
+    classpath sourceSets.main.runtimeClasspath
+    mainClass = 'my.org.logic.Logic'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+tasks.register('runLogic', JavaExec) {
+    description = 'My precious logic'
+    classpath sourceSets.main.runtimeClasspath
+    mainClass = 'my.org.logic.Logic'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -2,1 +2,1 @@
+tasks.register('runLogic', JavaExec) {
+-   description 'My precious logic'
++   description = 'My precious logic'
+    classpath sourceSets.main.runtimeClasspath
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

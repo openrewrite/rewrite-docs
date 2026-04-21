@@ -30,6 +30,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | securityPattern | *Optional*. A regular expression pattern to identify security-related resolution rules by matching against the `because` clause. Rules matching this pattern will be considered for removal. The pattern is searched within the clause, so a `because` containing multiple identifiers (e.g., `CVE-2024-1234, GHSA-abcd-1234-efgh`) will match if any identifier matches. Default pattern matches CVE identifiers (e.g., `CVE-2024-1234`) and GitHub Security Advisory identifiers (e.g., `GHSA-xxxx-xxxx-xxxx`). | `(CVE-\d|GHSA-[a-z0-9])` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
+
 ## Examples
 ##### Example 1
 `RemoveRedundantSecurityResolutionRulesGroovyTest#removeRedundantCveRule`

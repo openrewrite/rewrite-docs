@@ -15,6 +15,8 @@ Removes not needed semicolons. Semicolons are considered not needed:
  * after the last enum value if no field or method is defined,
  * no statement between two semicolon.
 
+Stray semicolons are typically typos or remnants of refactoring and can mislead readers into thinking a statement is present.
+
 ### Tags
 
 * [RSPEC-S1116](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1116&open=java%3AS1116)

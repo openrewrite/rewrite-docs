@@ -26,6 +26,58 @@ _Replace `StringUtils#defaultIfBlank(s, fallback)` with `s == null || s.isBlank(
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java standard library instead of Apache Commons](/recipes/apache/commons/preferjavastandardlibrary.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.apache.commons.lang3.StringUtils;
+
+class A {
+    String test(String input) {
+        return StringUtils.defaultIfBlank(input, "default");
+    }
+}
+```
+
+###### After
+```java
+class A {
+    String test(String input) {
+        return input == null || input.isBlank() ? "default" : input;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import org.apache.commons.lang3.StringUtils;
+-
+class A {
+@@ -5,1 +3,1 @@
+class A {
+    String test(String input) {
+-       return StringUtils.defaultIfBlank(input, "default");
++       return input == null || input.isBlank() ? "default" : input;
+    }
+```
+</TabItem>
+</Tabs>
+
+
 ## Usage
 
 <RunRecipe

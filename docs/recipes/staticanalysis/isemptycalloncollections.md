@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.IsEmptyCallOnCollections**
 
-_Also check for _not_ `isEmpty()` when testing for not equal to zero size._
+_Also check for _not_ `isEmpty()` when testing for not equal to zero size. Using `isEmpty()` communicates intent more clearly than comparing `size()` to zero, and for some collection implementations `isEmpty()` can be more efficient since `size()` may require traversal._
 
 ### Tags
 

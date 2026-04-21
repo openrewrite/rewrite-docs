@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.MemberNameCaseInsensitiveDuplicates**
 
-_Looking at the set of methods and fields in a class and all of its parents, no two members should have names that differ only in capitalization. This rule will not report if a method overrides a parent method._
+_Looking at the set of methods and fields in a class and all of its parents, no two members should have names that differ only in capitalization. This rule will not report if a method overrides a parent method. Members with near-identical names are easily confused, leading to bugs where the wrong field or method is referenced._
 
 ### Tags
 

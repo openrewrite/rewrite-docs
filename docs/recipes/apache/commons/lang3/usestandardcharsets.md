@@ -132,6 +132,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
+* [Prefer the Java standard library instead of Apache Commons](/recipes/apache/commons/preferjavastandardlibrary.md)
 
 ## Examples
 ##### Example 1

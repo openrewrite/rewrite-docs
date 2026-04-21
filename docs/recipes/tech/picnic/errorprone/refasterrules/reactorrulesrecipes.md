@@ -59,6 +59,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ReactorRules.FluxDefaultIfEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxdefaultifemptyrecipe)
 * [Refaster template `ReactorRules.FluxTimeoutFluxEmpty`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtimeoutfluxemptyrecipe)
 * [Refaster template `ReactorRules.FluxJust`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxjustrecipe)
+* [Refaster template `ReactorRules.FluxJustArray`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxjustarrayrecipe)
 * [Refaster template `ReactorRules.MonoIdentity`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe)
 * [Refaster template `ReactorRules.MonoSingle`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$monosinglerecipe)
 * [Refaster template `ReactorRules.FluxSwitchIfEmptyOfEmptyPublisher`](../../../../tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxswitchifemptyofemptypublisherrecipe)
@@ -179,6 +180,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxDefaultIfEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTimeoutFluxEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxJustRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxJustArrayRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoIdentityRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoSingleRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxSwitchIfEmptyOfEmptyPublisherRecipe
@@ -265,6 +267,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 * [Reactor Best Practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/reactive/reactor/reactorbestpractices)
 
 

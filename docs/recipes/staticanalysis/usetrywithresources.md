@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UseTryWithResources**
 
-_Refactor try/finally blocks to use try-with-resources when the finally block only closes an `AutoCloseable` resource._
+_Refactor try/finally blocks to use try-with-resources when the finally block only closes an `AutoCloseable` resource. Try-with-resources guarantees that resources are closed even when exceptions occur, eliminating an entire class of resource-leak bugs that manual `finally` blocks are prone to._
 
 ### Tags
 

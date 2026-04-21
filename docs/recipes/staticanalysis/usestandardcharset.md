@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UseStandardCharset**
 
-_Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharset` constant._
+_Replaces `Charset.forName(java.lang.String)` with the equivalent `StandardCharset` constant. Using the predefined constants is both compile-time safe and avoids the need to handle `UnsupportedEncodingException` for charsets that are guaranteed to exist on every JVM._
 
 ### Tags
 

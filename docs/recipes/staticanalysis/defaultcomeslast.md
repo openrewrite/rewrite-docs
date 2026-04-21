@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.DefaultComesLast**
 
-_Ensure the `default` case comes last after all the cases in a switch statement._
+_Ensure the `default` case comes last after all the cases in a switch statement. Placing `default` at the end follows a widely expected convention, making it easy to find the fallback behavior at a glance._
 
 ### Tags
 

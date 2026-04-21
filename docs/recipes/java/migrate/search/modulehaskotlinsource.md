@@ -1,41 +1,40 @@
 ---
-sidebar_label: "Refaster template `FileRules.FilesNewBufferedReaderToPathWithCharset`"
+sidebar_label: "Module has Kotlin source files"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `FileRules.FilesNewBufferedReaderToPathWithCharset`
+# Module has Kotlin source files
 
-**tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe**
+**org.openrewrite.java.migrate.search.ModuleHasKotlinSource**
 
-_Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives._
+_Marks all files in modules that contain at least one Kotlin source file (`.kt`). Intended as a precondition to scope recipes to projects that actually compile Kotlin, as opposed to projects that merely pick up `kotlin-stdlib` transitively._
 
 ## Recipe source
 
-[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub: ModuleHasKotlinSource.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/search/ModuleHasKotlinSource.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Options
 
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [`FileRules` Refaster recipes](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes.md)
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `Boolean` | invertMarking | *Optional*. If `true`, marks files in modules that do *not* contain Kotlin sources. Defaults to `false`. |  |
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe"
-  displayName="Refaster template `FileRules.FilesNewBufferedReaderToPathWithCharset`"
+  recipeName="org.openrewrite.java.migrate.search.ModuleHasKotlinSource"
+  displayName="Module has Kotlin source files"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-third-party"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
+  artifactId="rewrite-migrate-java"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
   hasDataTables
 />
 
@@ -43,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.search.ModuleHasKotlinSource" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

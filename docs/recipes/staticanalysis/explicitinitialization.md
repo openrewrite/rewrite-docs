@@ -14,7 +14,7 @@ Checks if any class or object member is explicitly initialized to default for it
  - `null` for object references
  - zero for numeric types and `char`
  - and `false` for `boolean`
-Removes explicit initializations where they aren't necessary.
+Removes explicit initializations where they aren't necessary. Since the JVM already guarantees these defaults, restating them adds visual noise and can obscure fields that are intentionally initialized to non-default values.
 
 ### Tags
 

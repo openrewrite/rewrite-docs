@@ -1,25 +1,20 @@
 ---
-sidebar_label: "Refaster template `FileRules.FilesNewBufferedReaderToPath`"
+sidebar_label: "Refaster template `FileRules.PathOfString`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `FileRules.FilesNewBufferedReaderToPath`
+# Refaster template `FileRules.PathOfString`
 
-**tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe**
+**tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfStringRecipe**
 
-_Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives._
-
-### Tags
-
-* [RSPEC-S1943](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1943&open=java%3AS1943)
-* [RSPEC-S2095](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2095&open=java%3AS2095)
+_Prefer the more idiomatic `Path#of(String, String...)` over `Paths#get(String, String...)`._
 
 ## Recipe source
 
-[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfStringRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfStringRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -36,8 +31,8 @@ This recipe is used as part of the following composite recipes:
 ## Usage
 
 <RunRecipe
-  recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe"
-  displayName="Refaster template `FileRules.FilesNewBufferedReaderToPath`"
+  recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfStringRecipe"
+  displayName="Refaster template `FileRules.PathOfString`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
@@ -48,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfStringRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

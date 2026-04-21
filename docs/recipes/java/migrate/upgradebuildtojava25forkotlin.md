@@ -1,46 +1,85 @@
 ---
-sidebar_label: "Refaster template `FileRules.FilesNewBufferedReaderPathOf`"
+sidebar_label: "Upgrade build to Java 25 for Kotlin 2.3+"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `FileRules.FilesNewBufferedReaderPathOf`
+# Upgrade build to Java 25 for Kotlin 2.3+
 
-**tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe**
+**org.openrewrite.java.migrate.UpgradeBuildToJava25ForKotlin**
 
-_Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives._
-
-### Tags
-
-* [RSPEC-S1943](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1943&open=java%3AS1943)
-* [RSPEC-S2095](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2095&open=java%3AS2095)
+_Upgrades build files to Java 25 for Kotlin modules already on Kotlin 2.3 or later._
 
 ## Recipe source
 
-[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub: java-version-25.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-25.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has Kotlin source files](../../java/migrate/search/modulehaskotlinsource)
+* [Module has dependency](../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.jetbrains.kotlin`
+  * artifactIdPattern: `kotlin-stdlib*`
+  * version: `[0,2.3)`
+  * invertMarking: `true`
+
+**Recipes**
+
+* [Upgrade Java version](../../java/migrate/upgradejavaversion)
+  * version: `25`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.migrate.UpgradeBuildToJava25ForKotlin
+displayName: Upgrade build to Java 25 for Kotlin 2.3+
+description: |
+  Upgrades build files to Java 25 for Kotlin modules already on Kotlin 2.3 or later.
+preconditions:
+  - org.openrewrite.java.migrate.search.ModuleHasKotlinSource
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.jetbrains.kotlin
+      artifactIdPattern: kotlin-stdlib*
+      version: [0,2.3)
+      invertMarking: true
+recipeList:
+  - org.openrewrite.java.migrate.UpgradeJavaVersion:
+      version: 25
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [`FileRules` Refaster recipes](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes.md)
+* [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe"
-  displayName="Refaster template `FileRules.FilesNewBufferedReaderPathOf`"
+  recipeName="org.openrewrite.java.migrate.UpgradeBuildToJava25ForKotlin"
+  displayName="Upgrade build to Java 25 for Kotlin 2.3+"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-third-party"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
+  artifactId="rewrite-migrate-java"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
   hasDataTables
 />
 
@@ -48,7 +87,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpgradeBuildToJava25ForKotlin" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

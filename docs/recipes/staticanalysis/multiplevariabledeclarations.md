@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.MultipleVariableDeclarations**
 
-_Places each variable declaration in its own statement and on its own line. Using one variable declaration per line encourages commenting and can increase readability._
+_Places each variable declaration in its own statement and on its own line. Using one variable declaration per line encourages commenting and can increase readability. Multi-variable declarations also make it harder to track individual types and initializers, increasing the risk of subtle errors._
 
 ### Tags
 

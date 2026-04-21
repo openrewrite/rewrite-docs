@@ -19,7 +19,12 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `java.nio.file.Files`](./apachefileutilstojavafiles.md)
 * [Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`](./relocateapachecommonsio.md)
 * [Replace `FileUtils.getFile(String...)` with JDK provided API](./apachecommonsfileutilsrecipes$getfilerecipe.md)
+* [Replace `FileUtils.readFileToString(File)` with `FileUtils.readFileToString(File, StandardCharsets.UTF_8)`](./apachecommonsfileutilsrecipes$readfiletostringwithcharsetrecipe.md)
+* [Replace `FileUtils.readLines(File)` with `FileUtils.readLines(File, StandardCharsets.UTF_8)`](./apachecommonsfileutilsrecipes$readlineswithcharsetrecipe.md)
+* [Replace `FileUtils.write(File, CharSequence)` with `FileUtils.write(File, CharSequence, StandardCharsets.UTF_8, false)`](./apachecommonsfileutilsrecipes$writewithcharsetrecipe.md)
+* [Replace `FileUtils.write(File, CharSequence, boolean)` with `FileUtils.write(File, CharSequence, StandardCharsets.UTF_8, boolean)`](./apachecommonsfileutilsrecipes$writeappendwithcharsetrecipe.md)
 * [Replace `FileUtils.writeStringToFile(File, String)` with JDK provided API](./apachecommonsfileutilsrecipes$writestringtofilerecipe.md)
+* [Replace `FileUtils.writeStringToFile(File, String, boolean)` with `FileUtils.writeStringToFile(File, String, StandardCharsets.UTF_8, boolean)`](./apachecommonsfileutilsrecipes$writestringtofileappendwithcharsetrecipe.md)
 * [Use IOUtils method that include  their charset encoding](./apacheioutilsuseexplicitcharset.md)
 
 

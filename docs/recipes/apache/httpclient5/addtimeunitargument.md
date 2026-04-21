@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | methodPattern | A method pattern that is used to find matching method invocations. | `org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)` |
-| `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to add to the method invocation. Defaults to `MILLISECONDS`. | `MILLISECONDS` |
+| `TimeUnit` | timeUnit | *Optional*. The TimeUnit enum value we want to add to the method invocation. Defaults to `MILLISECONDS`. Valid options: `NANOSECONDS`, `MICROSECONDS`, `MILLISECONDS`, `SECONDS`, `MINUTES`, `HOURS`, `DAYS` | `MILLISECONDS` |
 
 
 ## Used by

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.MethodNameCasing**
 
-_Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`._
+_Fixes method names that do not follow standard naming conventions. For example, `String getFoo_bar()` would be adjusted to `String getFooBar()` and `int DoSomething()` would be adjusted to `int doSomething()`. Following a consistent casing convention for method names improves code readability and helps developers quickly distinguish methods from classes or constants._
 
 ### Tags
 

@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | groupId | The group ID of the Maven project to change its version. This can be a glob expression. | `org.openrewrite` |
 | `String` | artifactId | The artifact ID of the Maven project to change its version. This can be a glob expression. | `*` |
-| `SemverDigit` | digit | `MAJOR` increments the first digit, `MINOR` increments the second digit, and `PATCH` increments the third digit. | `PATCH` |
+| `SemverDigit` | digit | `MAJOR` increments the first digit, `MINOR` increments the second digit, and `PATCH` increments the third digit. Valid options: `MAJOR`, `MINOR`, `PATCH` | `PATCH` |
 
 ## Example
 

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveHashCodeCallsFromArrayInstances**
 
-_Replace `hashCode()` calls on arrays with `Arrays.hashCode()` because the results from `hashCode()` are not helpful._
+_Replace `hashCode()` calls on arrays with `Arrays.hashCode()` because the results from `hashCode()` are not helpful. Arrays inherit `hashCode()` from `Object`, which returns an identity-based value unrelated to the array contents, so two arrays with identical elements will produce different hash codes._
 
 ### Tags
 

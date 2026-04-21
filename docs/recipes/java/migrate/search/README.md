@@ -12,6 +12,7 @@ description: Search OpenRewrite recipes.
 * [Find methods that only use one DTO data element](./finddtooverfetching.md)
 * [Find uses of internal javax APIs](./findinternaljavaxapis.md)
 * [Find which Java version is in use](./aboutjavaversion.md)
+* [Module has Kotlin source files](./modulehaskotlinsource.md)
 * [Plan a Java version migration](./planjavamigration.md)
 
 

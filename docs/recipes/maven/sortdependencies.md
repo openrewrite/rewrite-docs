@@ -21,6 +21,104 @@ _Sort dependencies alphabetically by groupId then artifactId. Test-scoped depend
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apache Maven best practices](/recipes/maven/bestpractices.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.0</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <dependencies>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.13.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>29.0-jre</version>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.9.1</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -8,3 +8,3 @@
+  <dependencies>
+    <dependency>
+-     <groupId>org.junit.jupiter</groupId>
+-     <artifactId>junit-jupiter</artifactId>
+-     <version>5.9.1</version>
++     <groupId>com.fasterxml.jackson.core</groupId>
++     <artifactId>jackson-databind</artifactId>
++     <version>2.13.0</version>
+    </dependency>
+@@ -18,3 +18,3 @@
+    </dependency>
+    <dependency>
+-     <groupId>com.fasterxml.jackson.core</groupId>
+-     <artifactId>jackson-databind</artifactId>
+-     <version>2.13.0</version>
++     <groupId>org.junit.jupiter</groupId>
++     <artifactId>junit-jupiter</artifactId>
++     <version>5.9.1</version>
+    </dependency>
+```
+</TabItem>
+</Tabs>
+
+
 ## Usage
 
 <RunRecipe

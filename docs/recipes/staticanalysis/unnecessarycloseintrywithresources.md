@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UnnecessaryCloseInTryWithResources**
 
-_Remove unnecessary `AutoCloseable#close()` statements in try-with-resources._
+_Remove unnecessary `AutoCloseable#close()` statements in try-with-resources. Try-with-resources already guarantees that each declared resource is closed when the block exits, so an explicit `close()` call is redundant and can be confusing._
 
 ### Tags
 

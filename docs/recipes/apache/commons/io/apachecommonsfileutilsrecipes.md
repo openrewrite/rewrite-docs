@@ -31,6 +31,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Replace `FileUtils.getFile(String...)` with JDK provided API](../../../apache/commons/io/apachecommonsfileutilsrecipes$getfilerecipe)
 * [Replace `FileUtils.writeStringToFile(File, String)` with JDK provided API](../../../apache/commons/io/apachecommonsfileutilsrecipes$writestringtofilerecipe)
+* [Replace `FileUtils.readFileToString(File)` with `FileUtils.readFileToString(File, StandardCharsets.UTF_8)`](../../../apache/commons/io/apachecommonsfileutilsrecipes$readfiletostringwithcharsetrecipe)
+* [Replace `FileUtils.readLines(File)` with `FileUtils.readLines(File, StandardCharsets.UTF_8)`](../../../apache/commons/io/apachecommonsfileutilsrecipes$readlineswithcharsetrecipe)
+* [Replace `FileUtils.write(File, CharSequence)` with `FileUtils.write(File, CharSequence, StandardCharsets.UTF_8, false)`](../../../apache/commons/io/apachecommonsfileutilsrecipes$writewithcharsetrecipe)
+* [Replace `FileUtils.write(File, CharSequence, boolean)` with `FileUtils.write(File, CharSequence, StandardCharsets.UTF_8, boolean)`](../../../apache/commons/io/apachecommonsfileutilsrecipes$writeappendwithcharsetrecipe)
+* [Replace `FileUtils.writeStringToFile(File, String, boolean)` with `FileUtils.writeStringToFile(File, String, StandardCharsets.UTF_8, boolean)`](../../../apache/commons/io/apachecommonsfileutilsrecipes$writestringtofileappendwithcharsetrecipe)
 
 </TabItem>
 
@@ -46,10 +51,22 @@ description: |
 recipeList:
   - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes$GetFileRecipe
   - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes$WriteStringToFileRecipe
+  - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes$ReadFileToStringWithCharsetRecipe
+  - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes$ReadLinesWithCharsetRecipe
+  - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes$WriteWithCharsetRecipe
+  - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes$WriteAppendWithCharsetRecipe
+  - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes$WriteStringToFileAppendWithCharsetRecipe
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java standard library instead of Apache Commons](/recipes/apache/commons/preferjavastandardlibrary.md)
+
 ## Example
 
 
@@ -110,6 +127,11 @@ class Foo {
         FileUtils.writeByteArrayToFile(fileA, bytes);
         FileUtils.writeLines(fileA, collection);
         FileUtils.writeStringToFile(fileA, s);
+        str = FileUtils.readFileToString(fileA);
+        strList = FileUtils.readLines(fileA);
+        FileUtils.write(fileA, charSeq);
+        FileUtils.write(fileA, charSeq, true);
+        FileUtils.writeStringToFile(fileA, s, true);
     }
 }
 ```
@@ -122,6 +144,7 @@ import java.io.File;
 import java.io.FileFilter;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Collection;
 import java.util.Collections;
@@ -168,6 +191,11 @@ class Foo {
         FileUtils.writeByteArrayToFile(fileA, bytes);
         FileUtils.writeLines(fileA, collection);
         Files.write(fileA.toPath(), s.getBytes());
+        str = FileUtils.readFileToString(fileA, StandardCharsets.UTF_8);
+        strList = FileUtils.readLines(fileA, StandardCharsets.UTF_8);
+        FileUtils.write(fileA, charSeq, StandardCharsets.UTF_8, false);
+        FileUtils.write(fileA, charSeq, StandardCharsets.UTF_8, true);
+        FileUtils.writeStringToFile(fileA, s, StandardCharsets.UTF_8, true);
     }
 }
 ```
@@ -176,22 +204,33 @@ class Foo {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -7,0 +7,1 @@
+@@ -7,0 +7,2 @@
 import java.net.URL;
 import java.nio.charset.Charset;
++import java.nio.charset.StandardCharsets;
 +import java.nio.file.Files;
 import java.util.Collection;
-@@ -25,1 +26,1 @@
+@@ -25,1 +27,1 @@
 
         FileUtils.write(fileA, s, cs);
 -       f = FileUtils.getFile(s);
 +       f = new File(s);
         f = FileUtils.getFile(s, s);
-@@ -51,1 +52,1 @@
+@@ -51,6 +53,6 @@
         FileUtils.writeByteArrayToFile(fileA, bytes);
         FileUtils.writeLines(fileA, collection);
 -       FileUtils.writeStringToFile(fileA, s);
+-       str = FileUtils.readFileToString(fileA);
+-       strList = FileUtils.readLines(fileA);
+-       FileUtils.write(fileA, charSeq);
+-       FileUtils.write(fileA, charSeq, true);
+-       FileUtils.writeStringToFile(fileA, s, true);
 +       Files.write(fileA.toPath(), s.getBytes());
++       str = FileUtils.readFileToString(fileA, StandardCharsets.UTF_8);
++       strList = FileUtils.readLines(fileA, StandardCharsets.UTF_8);
++       FileUtils.write(fileA, charSeq, StandardCharsets.UTF_8, false);
++       FileUtils.write(fileA, charSeq, StandardCharsets.UTF_8, true);
++       FileUtils.writeStringToFile(fileA, s, StandardCharsets.UTF_8, true);
     }
 ```
 </TabItem>

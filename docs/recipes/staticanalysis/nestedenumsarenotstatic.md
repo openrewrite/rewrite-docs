@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.NestedEnumsAreNotStatic**
 
-_Remove static modifier from nested enum types since they are implicitly static._
+_Remove static modifier from nested enum types since they are implicitly static. The redundant modifier adds visual noise and may mislead readers into thinking there is a non-static alternative._
 
 ### Tags
 

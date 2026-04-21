@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ObjectFinalizeCallsSuper**
 
-_Overrides of `Object#finalize()` should call super._
+_Overrides of `Object#finalize()` should call super. Skipping the super call can prevent parent classes from releasing critical system resources during garbage collection._
 
 ### Tags
 

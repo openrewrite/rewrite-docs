@@ -40,12 +40,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Add Maven profile](../../maven/addprofile)
   * id: `native`
-  * activation: `<property>   <name>native</name> </property> `
-  * properties: `<quarkus.package.type>native</quarkus.package.type> <quarkus.native.enabled>true</quarkus.native.enabled> `
+  * activation: `<activation>   <property>     <name>native</name>   </property> </activation> `
+  * properties: `<properties>   <quarkus.package.type>native</quarkus.package.type>   <quarkus.native.enabled>true</quarkus.native.enabled> </properties> `
 * [Add Maven profile](../../maven/addprofile)
   * id: `container`
-  * activation: `<property>   <name>container</name> </property> `
-  * properties: `<quarkus.container-image.build>true</quarkus.container-image.build> `
+  * activation: `<activation>   <property>     <name>container</name>   </property> </activation> `
+  * properties: `<properties>   <quarkus.container-image.build>true</quarkus.container-image.build> </properties> `
 
 </TabItem>
 
@@ -68,20 +68,28 @@ tags:
 recipeList:
   - org.openrewrite.maven.AddProfile:
       id: native
-      activation: <property>
-  <name>native</name>
-</property>
+      activation: <activation>
+  <property>
+    <name>native</name>
+  </property>
+</activation>
 
-      properties: <quarkus.package.type>native</quarkus.package.type>
-<quarkus.native.enabled>true</quarkus.native.enabled>
+      properties: <properties>
+  <quarkus.package.type>native</quarkus.package.type>
+  <quarkus.native.enabled>true</quarkus.native.enabled>
+</properties>
 
   - org.openrewrite.maven.AddProfile:
       id: container
-      activation: <property>
-  <name>container</name>
-</property>
+      activation: <activation>
+  <property>
+    <name>container</name>
+  </property>
+</activation>
 
-      properties: <quarkus.container-image.build>true</quarkus.container-image.build>
+      properties: <properties>
+  <quarkus.container-image.build>true</quarkus.container-image.build>
+</properties>
 
 
 ```

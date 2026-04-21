@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | releasesEnabled | *Optional*. Releases from the repository are available |  |
 | `String` | releasesChecksumPolicy | *Optional*. Governs whether releases require checksums. | `fail` |
 | `String` | releasesUpdatePolicy | *Optional*. The policy governing release updating interval. | `never` |
-| `Type` | type | *Optional*. The type of repository to add. | `Repository` |
+| `Type` | type | *Optional*. The type of repository to add. Valid options: `Repository`, `PluginRepository` | `Repository` |
 
 ## Example
 

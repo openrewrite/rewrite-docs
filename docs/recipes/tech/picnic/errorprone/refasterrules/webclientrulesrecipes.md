@@ -36,6 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `WebClientRules.WebClientPatch`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientpatchrecipe)
 * [Refaster template `WebClientRules.WebClientPost`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientpostrecipe)
 * [Refaster template `WebClientRules.WebClientPut`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$webclientputrecipe)
+* [Refaster template `WebClientRules.RequestHeadersUriSpecUri`](../../../../tech/picnic/errorprone/refasterrules/webclientrulesrecipes$requestheadersurispecurirecipe)
 
 </TabItem>
 
@@ -56,6 +57,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPatchRecipe
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPostRecipe
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPutRecipe
+  - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$RequestHeadersUriSpecUriRecipe
 
 ```
 </TabItem>

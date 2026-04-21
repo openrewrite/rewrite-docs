@@ -45,6 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `List.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablelistof)
 * [Prefer `Map.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablemapof)
 * [Prefer `Set.of(..)` in Java 9 or higher](../../../java/migrate/guava/noguavaimmutablesetof)
+* [Prefer `List.copyOf(..)` in Java 10 or higher](../../../java/migrate/guava/noguavaimmutablelistcopyof)
+* [Prefer `Map.copyOf(..)` in Java 10 or higher](../../../java/migrate/guava/noguavaimmutablemapcopyof)
+* [Prefer `Set.copyOf(..)` in Java 10 or higher](../../../java/migrate/guava/noguavaimmutablesetcopyof)
 * [Prefer `java.util.Objects#requireNonNullElse`](../../../java/migrate/guava/preferjavautilobjectsrequirenonnullelse)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `io.springfox`
@@ -74,6 +77,9 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableListOf
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableMapOf
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableSetOf
+  - org.openrewrite.java.migrate.guava.NoGuavaImmutableListCopyOf
+  - org.openrewrite.java.migrate.guava.NoGuavaImmutableMapCopyOf
+  - org.openrewrite.java.migrate.guava.NoGuavaImmutableSetCopyOf
   - org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsRequireNonNullElse
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: io.springfox

@@ -31,27 +31,27 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.ai.timefold.solver`
-  * newValue: `1.32.0`
+  * newValue: `1.33.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `version.timefold`
-  * newValue: `1.32.0`
+  * newValue: `1.33.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `ai.timefold.solver.version`
-  * newValue: `1.32.0`
+  * newValue: `1.33.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefold.version`
-  * newValue: `1.32.0`
+  * newValue: `1.33.0`
   * addIfMissing: `false`
   * trustParent: `true`
 * [Change Maven project property value](../../../../maven/changepropertyvalue)
   * key: `timefoldVersion`
-  * newValue: `1.32.0`
+  * newValue: `1.33.0`
   * addIfMissing: `false`
   * trustParent: `true`
 
@@ -69,27 +69,27 @@ description: |
 recipeList:
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.ai.timefold.solver
-      newValue: 1.32.0
+      newValue: 1.33.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: version.timefold
-      newValue: 1.32.0
+      newValue: 1.33.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: ai.timefold.solver.version
-      newValue: 1.32.0
+      newValue: 1.33.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefold.version
-      newValue: 1.32.0
+      newValue: 1.33.0
       addIfMissing: false
       trustParent: true
   - org.openrewrite.maven.ChangePropertyValue:
       key: timefoldVersion
-      newValue: 1.32.0
+      newValue: 1.33.0
       addIfMissing: false
       trustParent: true
 

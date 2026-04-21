@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.TernaryOperatorsShouldNotBeNested**
 
-_Nested ternary operators can be hard to read quickly. Prefer simpler constructs for improved readability. If supported, this recipe will try to replace nested ternaries with switch expressions._
+_Nested ternary operators can be hard to read quickly. Prefer simpler constructs for improved readability. If supported, this recipe will try to replace nested ternaries with switch expressions. Deeply nested conditional expressions obscure the branching logic and make it easy to misread which value corresponds to which condition._
 
 ### Tags
 

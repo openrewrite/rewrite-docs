@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveUnusedPrivateFields**
 
-_If a private field is declared but not used in the program, it can be considered dead code and should therefore be removed._
+_If a private field is declared but not used in the program, it can be considered dead code and should therefore be removed. Dead fields clutter the class, increase its memory footprint, and can mislead developers into thinking they are part of the class's behavior._
 
 ### Tags
 

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.NoDoubleBraceInitialization**
 
-_Replace `List`, `Map`, and `Set` double brace initialization with an initialization block._
+_Replace `List`, `Map`, and `Set` double brace initialization with an initialization block. Double brace initialization creates an anonymous inner class that holds a hidden reference to the enclosing instance, which can cause memory leaks and serialization issues._
 
 ### Tags
 

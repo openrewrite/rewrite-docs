@@ -1,20 +1,24 @@
 ---
-sidebar_label: "Refaster template `FileRules.FilesNewBufferedReaderPathOfWithCharset`"
+sidebar_label: "Refaster template `PrimitiveRules.MathClampFloat`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `FileRules.FilesNewBufferedReaderPathOfWithCharset`
+# Refaster template `PrimitiveRules.MathClampFloat`
 
-**tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe**
+**tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe**
 
-_Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives._
+_Prefer `Math#clamp(float, float, float)` over more verbose alternatives._
+
+### Tags
+
+* [RSPEC-S6885](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S6885&open=java%3AS6885)
 
 ## Recipe source
 
-[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -25,14 +29,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [`FileRules` Refaster recipes](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes.md)
+* [`PrimitiveRules` Refaster recipes](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe"
-  displayName="Refaster template `FileRules.FilesNewBufferedReaderPathOfWithCharset`"
+  recipeName="tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe"
+  displayName="Refaster template `PrimitiveRules.MathClampFloat`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
@@ -43,7 +47,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

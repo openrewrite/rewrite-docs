@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Analyse Organization's Release Train Metro Plan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/releasemetro/releasemetroplan)
 * [Find AI libraries in use](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/findlibrariesinuse)
 
 ## Example

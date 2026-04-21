@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.docker.ChangeFrom**
 
-_Change the base image in a Dockerfile FROM instruction._
+_Change the base image in a Dockerfile FROM instruction. Each `*` in an `old*` glob is a positional capture; `$N` in the paired `new*` substitutes capture N. `$0` substitutes the full original value; `\$` is a literal dollar._
 
 ## Recipe source
 

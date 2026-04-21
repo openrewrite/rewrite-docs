@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.HiddenField**
 
-_Refactor local variables or parameters which shadow a field defined in the same class._
+_Refactor local variables or parameters which shadow a field defined in the same class. Shadowing a field with a local variable of the same name makes it easy to accidentally reference the wrong one, leading to confusing bugs._
 
 ### Tags
 

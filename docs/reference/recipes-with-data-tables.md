@@ -123,6 +123,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.table.SourcesFiles**: *Source files that matched some criteria.*
 
 
+#### [org.openrewrite.FindStyles](/recipes/core/findstyles.md)
+  * **Find styles**
+  * Find and report the styles attached to each source file. Styles are output as valid OpenRewrite style YAML that can be used directly in rewrite.yml configuration.
+
+##### Data tables:
+
+  * **org.openrewrite.table.StylesInUse**: *Styles detected on each source file.*
+
+
 #### [org.openrewrite.ListRuntimeClasspath](/recipes/core/listruntimeclasspath.md)
   * **List runtime classpath**
   * A diagnostic utility which emits the runtime classpath to a data table.
@@ -258,7 +267,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.gradle.GradleBestPractices](/recipes/gradle/gradlebestpractices.md)
   * **Apply Gradle best practices**
-  * Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and ideomatic builds.
+  * Apply a set of [Gradle best practices](https://docs.gradle.org/current/userguide/best_practices_general.html) to the build files, for more efficient and idiomatic builds.
 
 ##### Data tables:
 

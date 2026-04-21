@@ -32,47 +32,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `InsertMode` | insertMode | *Optional*. Choose an insertion point relative to an existing property. Default is `Last`. Takes precedence over `orderedInsertion`. If the referenced property does not exist, falls back to default behavior. Valid options: `Before`, `After`, `Last` |  |
 | `String` | insertProperty | *Optional*. The key of an existing property to use as the reference point for the insert mode. Required when `insertMode` is `Before` or `After`. | `server.port` |
 
-## Example
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|property|`management.metrics.enable.process.files`|
-|value|`true`|
-|comment|`null`|
-|delimiter|`null`|
-|orderedInsertion|`null`|
-|insertMode|`null`|
-|insertProperty|`null`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="properties" label="properties">
-
-
-###### Before
-```properties
-management=true
-```
-
-###### After
-```properties
-management=true
-management.metrics.enable.process.files=true
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -2,0 +2,1 @@
-management=true
-+management.metrics.enable.process.files=true
-
-```
-</TabItem>
-</Tabs>
-
 
 ## Usage
 

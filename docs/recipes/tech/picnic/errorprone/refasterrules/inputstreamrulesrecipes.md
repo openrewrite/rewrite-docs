@@ -59,6 +59,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 * [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
 
 

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.gradle.RenameWrapperValidationAction**
 
-_Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v3`._
+_Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v5`._
 
 ### Tags
 
@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change GitHub Action](../../github/changeaction)
   * oldAction: `gradle/wrapper-validation-action`
   * newAction: `gradle/actions/wrapper-validation`
-  * newVersion: `v3`
+  * newVersion: `v5`
 
 </TabItem>
 
@@ -45,7 +45,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.github.gradle.RenameWrapperValidationAction
 displayName: Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`
 description: |
-  Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v3`.
+  Rename the deprecated `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation@v5`.
 tags:
   - gradle
   - github
@@ -53,7 +53,7 @@ recipeList:
   - org.openrewrite.github.ChangeAction:
       oldAction: gradle/wrapper-validation-action
       newAction: gradle/actions/wrapper-validation
-      newVersion: v3
+      newVersion: v5
 
 ```
 </TabItem>

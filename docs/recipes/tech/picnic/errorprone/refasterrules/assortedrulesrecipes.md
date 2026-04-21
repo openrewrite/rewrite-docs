@@ -33,8 +33,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssortedRules.IteratorGetNextOrDefault`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$iteratorgetnextordefaultrecipe)
 * [Refaster template `AssortedRules.LogicalImplication`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe)
 * [Refaster template `AssortedRules.UnboundedSingleElementStream`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$unboundedsingleelementstreamrecipe)
-* [Refaster template `AssortedRules.DisjointSets`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$disjointsetsrecipe)
-* [Refaster template `AssortedRules.DisjointCollections`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$disjointcollectionsrecipe)
 * [Refaster template `AssortedRules.IterableIsEmpty`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$iterableisemptyrecipe)
 * [Refaster template `AssortedRules.SplitToStream`](../../../../tech/picnic/errorprone/refasterrules/assortedrulesrecipes$splittostreamrecipe)
 
@@ -54,8 +52,6 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IteratorGetNextOrDefaultRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$UnboundedSingleElementStreamRecipe
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointSetsRecipe
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointCollectionsRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IterableIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$SplitToStreamRecipe
 

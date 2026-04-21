@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.ModifierOrder**
 
-_Modifiers should be declared in the correct order as recommended by the JLS._
+_Modifiers should be declared in the correct order as recommended by the JLS. Ordering modifiers consistently reduces cognitive load for developers who are accustomed to the standard sequence._
 
 ### Tags
 

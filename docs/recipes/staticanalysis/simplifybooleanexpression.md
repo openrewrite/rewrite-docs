@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.SimplifyBooleanExpression**
 
-_Checks for overly complicated boolean expressions, such as `if (b == true)`, `b || true`, `!false`, etc._
+_Checks for overly complicated boolean expressions, such as `if (b == true)`, `b || true`, `!false`, etc. Needlessly complex boolean logic makes code harder to reason about and increases the chance of introducing errors during future modifications._
 
 ### Tags
 

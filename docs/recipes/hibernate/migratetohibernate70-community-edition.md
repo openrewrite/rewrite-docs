@@ -44,6 +44,42 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.hibernate.orm`
   * oldArtifactId: `hibernate-jpamodelgen`
   * newArtifactId: `hibernate-processor`
+* [Change type](../java/changetype)
+  * oldFullyQualifiedTypeName: `org.hibernate.metamodel.spi.AdditionalJaxbMappingProducer`
+  * newFullyQualifiedTypeName: `org.hibernate.boot.spi.AdditionalMappingContributor`
+* [Change type](../java/changetype)
+  * oldFullyQualifiedTypeName: `org.hibernate.boot.spi.MetadataContributor`
+  * newFullyQualifiedTypeName: `org.hibernate.boot.spi.AdditionalMappingContributor`
+* [Change type](../java/changetype)
+  * oldFullyQualifiedTypeName: `org.hibernate.query.sqm.tree.SqmQualifiedJoin`
+  * newFullyQualifiedTypeName: `org.hibernate.query.sqm.tree.SqmJoin`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session save(Object)`
+  * newMethodName: `persist`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session save(String, Object)`
+  * newMethodName: `persist`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session delete(Object)`
+  * newMethodName: `remove`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session delete(String, Object)`
+  * newMethodName: `remove`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session get(Class, java.io.Serializable)`
+  * newMethodName: `find`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session get(String, java.io.Serializable)`
+  * newMethodName: `find`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session load(Class, java.io.Serializable)`
+  * newMethodName: `getReference`
+* [Change method name](../java/changemethodname)
+  * methodPattern: `org.hibernate.Session load(String, java.io.Serializable)`
+  * newMethodName: `getReference`
+* [Replace constant with another constant](../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.hibernate.annotations.CascadeType.DELETE`
+  * fullyQualifiedConstantName: `org.hibernate.annotations.CascadeType.REMOVE`
 
 </TabItem>
 
@@ -68,6 +104,42 @@ recipeList:
       oldGroupId: org.hibernate.orm
       oldArtifactId: hibernate-jpamodelgen
       newArtifactId: hibernate-processor
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.hibernate.metamodel.spi.AdditionalJaxbMappingProducer
+      newFullyQualifiedTypeName: org.hibernate.boot.spi.AdditionalMappingContributor
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.hibernate.boot.spi.MetadataContributor
+      newFullyQualifiedTypeName: org.hibernate.boot.spi.AdditionalMappingContributor
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.hibernate.query.sqm.tree.SqmQualifiedJoin
+      newFullyQualifiedTypeName: org.hibernate.query.sqm.tree.SqmJoin
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session save(Object)
+      newMethodName: persist
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session save(String, Object)
+      newMethodName: persist
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session delete(Object)
+      newMethodName: remove
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session delete(String, Object)
+      newMethodName: remove
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session get(Class, java.io.Serializable)
+      newMethodName: find
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session get(String, java.io.Serializable)
+      newMethodName: find
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session load(Class, java.io.Serializable)
+      newMethodName: getReference
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.hibernate.Session load(String, java.io.Serializable)
+      newMethodName: getReference
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.hibernate.annotations.CascadeType.DELETE
+      fullyQualifiedConstantName: org.hibernate.annotations.CascadeType.REMOVE
 
 ```
 </TabItem>
@@ -79,6 +151,93 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Hibernate 7.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate70-moderne-edition)
 * [Migrate to Hibernate 7.1.x (Community Edition)](/recipes/hibernate/migratetohibernate71-community-edition.md)
+
+## Examples
+##### Example 1
+`MigrateToHibernate70Test#migratesMetadataContributor`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.boot.spi.MetadataContributor;
+
+class MyContributor implements MetadataContributor {
+}
+```
+
+###### After
+```java
+import org.hibernate.boot.spi.AdditionalMappingContributor;
+
+class MyContributor implements AdditionalMappingContributor {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.hibernate.boot.spi.MetadataContributor;
++import org.hibernate.boot.spi.AdditionalMappingContributor;
+
+@@ -3,1 +3,1 @@
+import org.hibernate.boot.spi.MetadataContributor;
+
+-class MyContributor implements MetadataContributor {
++class MyContributor implements AdditionalMappingContributor {
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateToHibernate70Test#migratesMetadataContributor`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.hibernate.boot.spi.MetadataContributor;
+
+class MyContributor implements MetadataContributor {
+}
+```
+
+###### After
+```java
+import org.hibernate.boot.spi.AdditionalMappingContributor;
+
+class MyContributor implements AdditionalMappingContributor {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.hibernate.boot.spi.MetadataContributor;
++import org.hibernate.boot.spi.AdditionalMappingContributor;
+
+@@ -3,1 +3,1 @@
+import org.hibernate.boot.spi.MetadataContributor;
+
+-class MyContributor implements MetadataContributor {
++class MyContributor implements AdditionalMappingContributor {
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

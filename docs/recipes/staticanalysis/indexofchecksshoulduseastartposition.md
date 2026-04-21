@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.IndexOfChecksShouldUseAStartPosition**
 
-_Replaces `indexOf(String)` in binary operations if the compared value is an int and not less than 1._
+_Replaces `indexOf(String)` in binary operations if the compared value is an int and not less than 1. Using the two-argument `indexOf(String, int)` form with a start position avoids redundantly scanning the beginning of the string when you already know the match must occur after a certain index._
 
 ### Tags
 

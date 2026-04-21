@@ -55,6 +55,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`](./usetestmethodorder.md)
 * [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](./updatemockwebserver.md)
 * [Pragmatists `@RunWith(JUnitParamsRunner.class)` to JUnit Jupiter `@Parameterized` tests](./junitparamsrunnertoparameterized.md)
+* [Preserve `MockResponse` return type for `Dispatcher.dispatch()` overrides](./updatemockwebserverdispatcher.md)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](./removeobsoleterunners.md)
 * [Remove JUnit 5 static Assertions imports in Kotlin when wildcard import is present](./cleanupkotlinjunit5assertionimports.md)
 * [Remove duplicates uses of @TestTemplate implementations for a single method](./removeduplicatetesttemplates.md)

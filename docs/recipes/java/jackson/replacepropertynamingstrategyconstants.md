@@ -131,6 +131,97 @@ This recipe is used as part of the following composite recipes:
 
 * [Jackson best practices](/recipes/java/jackson/jacksonbestpractices.md)
 
+## Examples
+##### Example 1
+`ReplacePropertyNamingStrategyConstantsTest#replaceSnakeCaseStrategy`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+
+class Test {
+    PropertyNamingStrategy.SnakeCaseStrategy strategy = new PropertyNamingStrategy.SnakeCaseStrategy();
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+
+class Test {
+    SnakeCaseStrategy strategy = new SnakeCaseStrategy();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
++import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+
+@@ -4,1 +4,1 @@
+
+class Test {
+-   PropertyNamingStrategy.SnakeCaseStrategy strategy = new PropertyNamingStrategy.SnakeCaseStrategy();
++   SnakeCaseStrategy strategy = new SnakeCaseStrategy();
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`ReplacePropertyNamingStrategyConstantsTest#replaceSnakeCaseStrategy`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+
+class Test {
+    PropertyNamingStrategy.SnakeCaseStrategy strategy = new PropertyNamingStrategy.SnakeCaseStrategy();
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+
+class Test {
+    SnakeCaseStrategy strategy = new SnakeCaseStrategy();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
++import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+
+@@ -4,1 +4,1 @@
+
+class Test {
+-   PropertyNamingStrategy.SnakeCaseStrategy strategy = new PropertyNamingStrategy.SnakeCaseStrategy();
++   SnakeCaseStrategy strategy = new SnakeCaseStrategy();
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

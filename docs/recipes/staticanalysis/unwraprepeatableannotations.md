@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UnwrapRepeatableAnnotations**
 
-_Java 8 introduced the concept of `@Repeatable` annotations, making the wrapper annotation unnecessary._
+_Java 8 introduced the concept of `@Repeatable` annotations, making the wrapper annotation unnecessary. Using the repeatable form directly reduces nesting and makes the individual annotations easier to scan._
 
 ### Tags
 

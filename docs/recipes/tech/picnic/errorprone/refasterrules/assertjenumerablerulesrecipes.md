@@ -67,6 +67,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [All Picnic Refaster rules](/recipes/tech/picnic/errorprone/refasterrules/allrefasterrules.md)
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 
 

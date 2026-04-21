@@ -1,20 +1,39 @@
 ---
-sidebar_label: "Refaster template `AssortedRules.DisjointCollections`"
+sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageParameters`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `AssortedRules.DisjointCollections`
+# Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageParameters`
 
-**tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointCollectionsRecipe**
+**tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageParametersRecipe**
 
-_Don't unnecessarily copy collections before passing them to `Collections#disjoint(Collection, Collection)`._
+Recipe created for the following Refaster template:
+```java
+static final class AssertThatThrownByHasMessageParameters {
+    
+    @BeforeTemplate
+    @SuppressWarnings(value = "AssertThatThrownByAsInstanceOfThrowable")
+    AbstractObjectAssert<?, ?> before(ThrowingCallable throwingCallable, Class<? extends Throwable> exceptionType, String message, @Repeated
+    Object parameters) {
+        return assertThatExceptionOfType(exceptionType).isThrownBy(throwingCallable).withMessage(message, parameters);
+    }
+    
+    @AfterTemplate
+    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
+    AbstractObjectAssert<?, ?> after(ThrowingCallable throwingCallable, Class<? extends Throwable> exceptionType, String message, @Repeated
+    Object parameters) {
+        return assertThatThrownBy(throwingCallable).isInstanceOf(exceptionType).hasMessage(message, parameters);
+    }
+}
+```
+.
 
 ## Recipe source
 
-[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointCollectionsRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointCollectionsRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageParametersRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageParametersRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -25,14 +44,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [`AssortedRules` Refaster recipes](/recipes/tech/picnic/errorprone/refasterrules/assortedrulesrecipes.md)
+* [Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype](/recipes/tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointCollectionsRecipe"
-  displayName="Refaster template `AssortedRules.DisjointCollections`"
+  recipeName="tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageParametersRecipe"
+  displayName="Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageParameters`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
@@ -43,7 +62,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointCollectionsRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByHasMessageParametersRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

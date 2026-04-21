@@ -8,6 +8,7 @@ description: Dependencies OpenRewrite recipes.
 
 * [Add npm dependency](./add-dependency.md)
 * [Find Node.js dependency](./find-dependency.md)
+* [Remove npm dependency](./remove-dependency.md)
 * [Upgrade npm dependency version](./upgrade-dependency-version.md)
 * [Upgrade transitive npm dependency version](./upgrade-transitive-dependency-version.md)
 

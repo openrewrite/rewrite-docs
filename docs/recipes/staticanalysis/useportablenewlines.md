@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UsePortableNewlines**
 
-_Format strings should use %n rather than \n to produce platform-specific line separators._
+_Format strings should use %n rather than \n to produce platform-specific line separators. Hard-coded `\n` characters produce incorrect line endings on Windows, whereas `%n` adapts to the runtime platform automatically._
 
 ### Tags
 

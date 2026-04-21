@@ -39,6 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `StringRules.OptionalNonEmptyString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$optionalnonemptystringrecipe)
 * [Refaster template `StringRules.FilterEmptyString`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$filteremptystringrecipe)
 * [Refaster template `StringRules.JoinStrings`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$joinstringsrecipe)
+* [Refaster template `StringRules.StringJoinDelimiterVarargs`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringjoindelimitervarargsrecipe)
 * [Refaster template `StringRules.StringValueOf`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofrecipe)
 * [Refaster template `StringRules.NewStringFromCharArraySubSequence`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararraysubsequencerecipe)
 * [Refaster template `StringRules.NewStringFromCharArray`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararrayrecipe)
@@ -54,6 +55,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `StringRules.StringLastIndexOfCharWithIndex`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharwithindexrecipe)
 * [Refaster template `StringRules.StringLastIndexOfStringWithIndex`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringwithindexrecipe)
 * [Refaster template `StringRules.StringStartsWith`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringstartswithrecipe)
+* [Refaster template `StringRules.StringFormatted`](../../../../tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringformattedrecipe)
 
 </TabItem>
 
@@ -77,6 +79,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$FilterEmptyStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$JoinStringsRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringJoinDelimiterVarargsRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArraySubSequenceRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArrayRecipe
@@ -92,6 +95,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharWithIndexRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringStartsWithRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringFormattedRecipe
 
 ```
 </TabItem>

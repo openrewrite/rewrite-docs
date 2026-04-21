@@ -60,6 +60,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java standard library instead of Apache Commons](/recipes/apache/commons/preferjavastandardlibrary.md)
+
 ## Examples
 ##### Example 1
 `UseSystemLineSeparatorTest#migratesQualifiedField`

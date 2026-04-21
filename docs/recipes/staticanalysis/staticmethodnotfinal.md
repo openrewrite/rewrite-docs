@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.StaticMethodNotFinal**
 
-_Static methods do not need to be declared final because they cannot be overridden._
+_Static methods do not need to be declared final because they cannot be overridden. Redundant modifiers add noise to the code and can suggest a misunderstanding of the language's dispatch model._
 
 ### Tags
 

@@ -42,9 +42,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ComparatorRules.CollectionsMin`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsminrecipe)
 * [Refaster template `ComparatorRules.MinOfArray`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$minofarrayrecipe)
 * [Refaster template `ComparatorRules.CollectionsMinWithComparator`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsminwithcomparatorrecipe)
+* [Refaster template `ComparatorRules.MinOfVarargs`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$minofvarargsrecipe)
 * [Refaster template `ComparatorRules.CollectionsMax`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxrecipe)
 * [Refaster template `ComparatorRules.MaxOfArray`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$maxofarrayrecipe)
 * [Refaster template `ComparatorRules.CollectionsMaxWithComparator`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxwithcomparatorrecipe)
+* [Refaster template `ComparatorRules.MaxOfVarargs`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$maxofvarargsrecipe)
+* [Refaster template `ComparatorRules.Least`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$leastrecipe)
+* [Refaster template `ComparatorRules.Greatest`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$greatestrecipe)
+* [Refaster template `ComparatorRules.LeastNaturalOrder`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$leastnaturalorderrecipe)
+* [Refaster template `ComparatorRules.GreatestNaturalOrder`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$greatestnaturalorderrecipe)
 * [Refaster template `ComparatorRules.ComparatorsMin`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsminrecipe)
 * [Refaster template `ComparatorRules.ComparatorsMax`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsmaxrecipe)
 * [Refaster template `ComparatorRules.MinByNaturalOrder`](../../../../tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$minbynaturalorderrecipe)
@@ -77,9 +83,15 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMinRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MinOfArrayRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMinWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MinOfVarargsRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxOfArrayRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxOfVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$LeastRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$GreatestRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$LeastNaturalOrderRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$GreatestNaturalOrderRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMinRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMaxRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MinByNaturalOrderRecipe

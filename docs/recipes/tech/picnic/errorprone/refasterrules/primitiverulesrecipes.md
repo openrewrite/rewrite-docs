@@ -33,6 +33,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `PrimitiveRules.LessThanOrEqualTo`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe)
 * [Refaster template `PrimitiveRules.GreaterThan`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe)
 * [Refaster template `PrimitiveRules.GreaterThanOrEqualTo`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe)
+* [Refaster template `PrimitiveRules.MathClampInt`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampintrecipe)
+* [Refaster template `PrimitiveRules.MathClampLong`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclamplongrecipe)
+* [Refaster template `PrimitiveRules.MathClampFloat`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampfloatrecipe)
+* [Refaster template `PrimitiveRules.MathClampDouble`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampdoublerecipe)
 * [Refaster template `PrimitiveRules.LongToIntExact`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$longtointexactrecipe)
 * [Refaster template `PrimitiveRules.CharacterBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$characterbytesrecipe)
 * [Refaster template `PrimitiveRules.ShortBytes`](../../../../tech/picnic/errorprone/refasterrules/primitiverulesrecipes$shortbytesrecipe)
@@ -78,6 +82,10 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanOrEqualToRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanOrEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampIntRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampLongRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampDoubleRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToIntExactRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortBytesRecipe

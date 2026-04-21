@@ -37,6 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../../tech/picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset4recipe)
 * [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../../tech/picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset5recipe)
 * [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../../tech/picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset6recipe)
+* [Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarArgs`](../../../../tech/picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumsetvarargsrecipe)
 * [Use `Sets#toImmutableEnumSet()` when possible, as it is more efficient than `ImmutableSet#toImmutableSet()` and produces a more compact object](../../../../tech/picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$streamtoimmutableenumsetrecipe)
 
 </TabItem>
@@ -59,6 +60,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet4Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet5Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet6Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarArgsRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$StreamToImmutableEnumSetRecipe
 
 ```

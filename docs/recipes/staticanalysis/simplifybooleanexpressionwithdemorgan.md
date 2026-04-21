@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.SimplifyBooleanExpressionWithDeMorgan**
 
-_Applies De Morgan's laws to simplify boolean expressions with negation. Transforms `!(a && b)` to `!a || !b` and `!(a || b)` to `!a && !b`._
+_Applies De Morgan's laws to simplify boolean expressions with negation. Transforms `!(a && b)` to `!a || !b` and `!(a || b)` to `!a && !b`. Distributing negations inward eliminates the outer `!` and makes each individual condition's polarity immediately visible, which aids comprehension._
 
 ### Tags
 

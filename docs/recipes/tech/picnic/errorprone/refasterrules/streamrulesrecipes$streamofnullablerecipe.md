@@ -12,6 +12,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Prefer `Stream#ofNullable(Object)` over more contrived alternatives._
 
+### Tags
+
+* [RSPEC-S2583](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2583&open=java%3AS2583)
+
 ## Recipe source
 
 [GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOfNullableRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOfNullableRecipe),

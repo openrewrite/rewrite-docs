@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances**
 
-_The result from `toString()` calls on arrays is largely useless. The output does not actually reflect the contents of the array. `Arrays.toString(array)` should be used instead as it gives the contents of the array._
+_The result from `toString()` calls on arrays is largely useless. The output does not actually reflect the contents of the array. `Arrays.toString(array)` should be used instead as it gives the contents of the array. Since arrays do not override `toString()` from `Object`, calling it produces only the type name and memory address, which is rarely what was intended._
 
 ### Tags
 

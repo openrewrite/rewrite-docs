@@ -30,8 +30,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `RandomGeneratorRules.RandomGeneratorNextDouble`](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublerecipe)
+* [Refaster template `RandomGeneratorRules.RandomGeneratorNextDoubleWithOrigin`](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublewithoriginrecipe)
 * [Refaster template `RandomGeneratorRules.RandomGeneratorNextInt`](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintrecipe)
+* [Refaster template `RandomGeneratorRules.RandomGeneratorNextIntWithOrigin`](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintwithoriginrecipe)
 * [Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe)
+* [Refaster template `RandomGeneratorRules.RandomGeneratorNextLongWithOrigin`](../../../../tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongwithoriginrecipe)
 
 </TabItem>
 
@@ -46,8 +49,11 @@ description: |
   Refaster rules related to expressions dealing with `RandomGenerator` instances. [Source](https://error-prone.picnic.tech/refasterrules/RandomGeneratorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleWithOriginRecipe
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntWithOriginRecipe
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongWithOriginRecipe
 
 ```
 </TabItem>

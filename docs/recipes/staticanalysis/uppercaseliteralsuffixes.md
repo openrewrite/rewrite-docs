@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.UpperCaseLiteralSuffixes**
 
-_Using upper case literal suffixes for declaring literals is less ambiguous, e.g., `1l` versus `1L`._
+_Using upper case literal suffixes for declaring literals is less ambiguous, e.g., `1l` versus `1L`. A lowercase `l` is easily mistaken for the digit `1` in many fonts, which can lead to incorrect assumptions about the value._
 
 ### Tags
 

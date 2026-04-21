@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.RemoveRedundantTypeCast**
 
-_Removes unnecessary type casts. Does not currently check casts in lambdas and class constructors._
+_Removes unnecessary type casts. Does not currently check casts in lambdas and class constructors. Redundant casts add visual noise and can obscure the actual type relationships in the code, making it harder to follow the data flow._
 
 ### Tags
 

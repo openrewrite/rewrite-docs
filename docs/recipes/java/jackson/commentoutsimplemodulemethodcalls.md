@@ -31,6 +31,69 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
+
+class Test {
+    void configure(JsonSerializer<String> serializer) {
+        JodaModule module = new JodaModule();
+        module.addSerializer(String.class, serializer);
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.datatype.joda.JodaModule;
+
+class Test {
+    void configure(JsonSerializer<String> serializer) {
+        JodaModule module = new JodaModule();
+        /* TODO this module no longer extends SimpleModule in Jackson 3,
+         * so addSerializer/addDeserializer calls are no longer available.
+         * Move this call to a new SimpleModule and register it separately:
+         *   SimpleModule customModule = new SimpleModule();
+         *   customModule.addSerializer(...);
+         *   mapper.registerModule(customModule);
+         * Note: register the custom module AFTER the original module,
+         * as the last registered serializer for a given type wins.
+         */
+        module.addSerializer(String.class, serializer);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,0 +7,9 @@
+    void configure(JsonSerializer<String> serializer) {
+        JodaModule module = new JodaModule();
++       /* TODO this module no longer extends SimpleModule in Jackson 3,
++        * so addSerializer/addDeserializer calls are no longer available.
++        * Move this call to a new SimpleModule and register it separately:
++        *   SimpleModule customModule = new SimpleModule();
++        *   customModule.addSerializer(...);
++        *   mapper.registerModule(customModule);
++        * Note: register the custom module AFTER the original module,
++        * as the last registered serializer for a given type wins.
++        */
+        module.addSerializer(String.class, serializer);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.NoToStringOnStringType**
 
-_Remove unnecessary `String#toString` invocations on objects which are already a string._
+_Remove unnecessary `String#toString` invocations on objects which are already a string. Calling `toString()` on something that is already a `String` is redundant and clutters the code._
 
 ### Tags
 

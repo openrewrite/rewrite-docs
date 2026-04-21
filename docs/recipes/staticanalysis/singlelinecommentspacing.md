@@ -1,41 +1,79 @@
 ---
-sidebar_label: "Refaster template `AssortedRules.DisjointSets`"
+sidebar_label: "Add space after // in single-line comments"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `AssortedRules.DisjointSets`
+# Add space after // in single-line comments
 
-**tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointSetsRecipe**
+**org.openrewrite.staticanalysis.SingleLineCommentSpacing**
 
-_Prefer `Collections#disjoint(Collection, Collection)` over more contrived alternatives._
+_Ensures there is exactly one space after // in single-line comments when missing._
+
+### Tags
+
+* [formatting](/reference/recipes-by-tag#formatting)
 
 ## Recipe source
 
-[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointSetsRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointSetsRecipe),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub: SingleLineCommentSpacing.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/SingleLineCommentSpacing.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Example
 
 
-## Used by
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
 
-This recipe is used as part of the following composite recipes:
 
-* [`AssortedRules` Refaster recipes](/recipes/tech/picnic/errorprone/refasterrules/assortedrulesrecipes.md)
+###### Before
+```java
+class Test {
+    void method() {
+        //Hello
+        int a = 1;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void method() {
+        // Hello
+        int a = 1;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class Test {
+    void method() {
+-       //Hello
++       // Hello
+        int a = 1;
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointSetsRecipe"
-  displayName="Refaster template `AssortedRules.DisjointSets`"
+  recipeName="org.openrewrite.staticanalysis.SingleLineCommentSpacing"
+  displayName="Add space after // in single-line comments"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-third-party"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
+  artifactId="rewrite-static-analysis"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
   hasDataTables
 />
 
@@ -43,7 +81,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$DisjointSetsRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.SingleLineCommentSpacing" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
