@@ -17,7 +17,7 @@ It consists of an auto-refactoring engine that runs prepackaged, open-source ref
 
  ## How does OpenRewrite work?
 
-<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=LgvqAzTxkEU' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=6LGL64AwEEY' controls="true" />
 
 <br/>
 
@@ -39,7 +39,7 @@ import static org.junit.Assert.assertTrue;
 assertTrue(condition);
 ```
 
-<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=6LGL64AwEEY' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=LgvqAzTxkEU' controls="true" />
 
 ## Get started
 
