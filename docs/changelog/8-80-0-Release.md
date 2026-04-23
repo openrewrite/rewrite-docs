@@ -547,29 +547,3 @@ static final class AssertThatThrownByNullPointerExceptionHasMessageParameters {
 * **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe**: Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives. 
 * **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe**: Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives. 
 * **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe**: Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives. 
-
-## Changed Recipes
-
-* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](https://docs.openrewrite.org/recipes/javascript/dependencies/upgrade-dependency-version) was changed:
-  * Old Options:
-    * `newVersion: { type: String, required: true }`
-    * `packageName: { type: String, required: true }`
-  * New Options:
-    * `newVersion: { type: String, required: true }`
-    * `packageName: { type: String, required: false }`
-    * `packagePattern: { type: String, required: false }`
-* [org.openrewrite.properties.AddProperty](https://docs.openrewrite.org/recipes/properties/addproperty) was changed:
-  * Old Options:
-    * `comment: { type: String, required: false }`
-    * `delimiter: { type: String, required: false }`
-    * `orderedInsertion: { type: Boolean, required: false }`
-    * `property: { type: String, required: true }`
-    * `value: { type: String, required: true }`
-  * New Options:
-    * `comment: { type: String, required: false }`
-    * `delimiter: { type: String, required: false }`
-    * `insertMode: { type: InsertMode, required: false }`
-    * `insertProperty: { type: String, required: false }`
-    * `orderedInsertion: { type: Boolean, required: false }`
-    * `property: { type: String, required: true }`
-    * `value: { type: String, required: true }`
