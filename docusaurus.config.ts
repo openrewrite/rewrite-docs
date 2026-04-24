@@ -178,9 +178,10 @@ const config: Config = {
       indexName: "openrewrite",
     },
     announcementBar: {
-      id: "openrewrite_training",
+      id: "moderne_recipe_catalog",
       content:
-        '<strong><a href="https://coderemix.ai/?utm_source=docs&utm_medium=referral&utm_campaign=26_crs_banner">Code Remix Summit is back</a></strong> ✦ May 11–13',
+        '<strong>Moderne customer?</strong> <a href="https://docs.moderne.io/user-documentation/recipes/recipe-catalog" target="_blank" rel="noopener">Use the Moderne recipe catalog instead.</a>',
+      isCloseable: true,
     },
     image: "img/moderne-poster-logo.svg",
     colorMode: {

@@ -1,4 +1,5 @@
 import React from 'react';
+import {useLocation} from '@docusaurus/router';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import {useAnnouncementBar} from '@docusaurus/theme-common/internal';
 import AnnouncementBarCloseButton from '@theme/AnnouncementBar/CloseButton';
@@ -8,7 +9,8 @@ import styles from './styles.module.css';
 export default function AnnouncementBar(): JSX.Element | null {
   const {announcementBar} = useThemeConfig();
   const {isActive, close} = useAnnouncementBar();
-  if (!isActive) {
+  const {pathname} = useLocation();
+  if (!isActive || !pathname.startsWith('/recipes')) {
     return null;
   }
   const {isCloseable} = announcementBar!;
