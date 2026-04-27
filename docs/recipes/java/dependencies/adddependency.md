@@ -83,6 +83,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Hamcrest assertions to AssertJ](/recipes/java/testing/hamcrest/migratehamcresttoassertj.md)
 * [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
 * [Migrate JBoss to Jetty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/migratejbosstojetty)
+* [Migrate JBoss to Tomcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/migratejbosstotomcat)
 * [Migrate JPA Entities to Panache Entities](/recipes/quarkus/spring/migrateentitiestopanache.md)
 * [Migrate JUnit asserts to AssertJ](/recipes/java/testing/assertj/junittoassertj.md)
 * [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)

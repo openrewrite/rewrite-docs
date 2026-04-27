@@ -1,96 +1,89 @@
 ---
-sidebar_label: "Migrate to Hibernate 7.1.x (Community Edition)"
+sidebar_label: "Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate to Hibernate 7.1.x (Community Edition)
+# Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`
 
-**org.openrewrite.hibernate.MigrateToHibernate71**
+**org.openrewrite.java.migrate.util.UsePredicateNot**
 
-_This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x._
+_Replace `((Predicate<T>) lambdaOrMethodRef).negate()` with `Predicate.not(lambdaOrMethodRef)` as of Java 11._
 
 ## Recipe source
 
-[GitHub: hibernate-7.1.yml](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-7.1.yml),
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub: UsePredicateNot.java](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/java/org/openrewrite/java/migrate/util/UsePredicateNot.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../core/singleton)
-
-**Recipes**
-
-* [Migrate to Hibernate 7.0.x (Community Edition)](../hibernate/migratetohibernate70-community-edition)
-* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
-  * groupId: `org.hibernate.orm`
-  * artifactId: `*`
-  * newVersion: `7.1.x`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.MigrateToHibernate71
-displayName: Migrate to Hibernate 7.1.x (Community Edition)
-description: |
-  This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x.
-preconditions:
-  - org.openrewrite.Singleton
-recipeList:
-  - org.openrewrite.hibernate.MigrateToHibernate70
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.hibernate.orm
-      artifactId: "*"
-      newVersion: 7.1.x
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Hibernate 7.1.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate71-moderne-edition)
-* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
-* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
+* [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
+* [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.function.Predicate;
+
+class A {
+    Predicate<String> notEmpty = ((Predicate<String>) String::isEmpty).negate();
+}
+```
+
+###### After
+```java
+import java.util.function.Predicate;
+
+class A {
+    Predicate<String> notEmpty = Predicate.not(String::isEmpty);
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -4,1 +4,1 @@
+
+class A {
+-   Predicate<String> notEmpty = ((Predicate<String>) String::isEmpty).negate();
++   Predicate<String> notEmpty = Predicate.not(String::isEmpty);
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.hibernate.MigrateToHibernate71"
-  displayName="Migrate to Hibernate 7.1.x (Community Edition)"
+  recipeName="org.openrewrite.java.migrate.util.UsePredicateNot"
+  displayName="Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-hibernate"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE"
+  artifactId="rewrite-migrate-java"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
   hasDataTables
-  useFullyQualifiedCliName
 />
 
 ## See how this recipe works across multiple open-source repositories
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHibernate71" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.util.UsePredicateNot" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

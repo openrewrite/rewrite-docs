@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace container image name](../../../java/testing/testcontainers/replacecontainerimagename)
   * containerClass: `org.testcontainers.containers.OracleContainer`
   * imagePrefix: `gvenzl/oracle-xe`
@@ -52,6 +58,8 @@ name: org.openrewrite.java.testing.testcontainers.MigrateToOracleFree
 displayName: Migrate from `oracle-xe` to `oracle-free`
 description: |
   Oracle Database Free is the successor of Oracle XE. Migrate from `org.testcontainers:oracle-xe` to `org.testcontainers:oracle-free`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.testcontainers.ReplaceContainerImageName:
       containerClass: org.testcontainers.containers.OracleContainer
