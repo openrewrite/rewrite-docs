@@ -75,6 +75,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Optional.isEmpty()`](../../java/migrate/util/optionalnotpresenttoisempty)
 * [Prefer `Optional.isPresent()`](../../java/migrate/util/optionalnotemptytoispresent)
 * [`Stream&lt;Optional&gt;` idiom recipe](../../java/migrate/util/optionalstreamrecipe)
+* [Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`](../../java/migrate/util/usepredicatenot)
 * [Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`](../../java/migrate/internalbindpackages)
 * [Replace deprecated methods in`SecurityManager`](../../java/migrate/removedsecuritymanagermethods)
 * [Upgrade plugins to Java 11 compatible versions](../../java/migrate/upgradepluginsforjava11)
@@ -152,6 +153,7 @@ recipeList:
   - org.openrewrite.java.migrate.util.OptionalNotPresentToIsEmpty
   - org.openrewrite.java.migrate.util.OptionalNotEmptyToIsPresent
   - org.openrewrite.java.migrate.util.OptionalStreamRecipe
+  - org.openrewrite.java.migrate.util.UsePredicateNot
   - org.openrewrite.java.migrate.InternalBindPackages
   - org.openrewrite.java.migrate.RemovedSecurityManagerMethods
   - org.openrewrite.java.migrate.UpgradePluginsForJava11

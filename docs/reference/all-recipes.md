@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4332
+Total recipes: 4335
 
 
 ## org.openrewrite
@@ -3461,7 +3461,7 @@ _53 recipes_
 
 _License: Moderne Source Available License_
 
-_20 recipes_
+_22 recipes_
 
 * [org.openrewrite.gitlab.AddArtifactsExpireIn](/recipes/gitlab/addartifactsexpirein.md)
   * **Add artifacts expire_in**
@@ -3502,6 +3502,12 @@ _20 recipes_
 * [org.openrewrite.gitlab.ChangeTemplate](/recipes/gitlab/changetemplate.md)
   * **Change GitLab template**
   * Change a GitLab template in use.
+* [org.openrewrite.gitlab.MigrateTemplateToComponent](/recipes/gitlab/migratetemplatetocomponent.md)
+  * **Migrate GitLab template to component**
+  * Replace a GitLab `template:` include with a `component:` include, as recommended by GitLab's CI/CD Catalog migration guides.
+* [org.openrewrite.gitlab.MigrateTerraformTemplateToOpenTofuComponent](/recipes/gitlab/migrateterraformtemplatetoopentofucomponent.md)
+  * **Migrate GitLab Terraform template to OpenTofu component**
+  * Replace the deprecated `Terraform/Base.latest.gitlab-ci.yml` template include with the OpenTofu CI/CD component, per the GitLab catalog migration guide.
 * [org.openrewrite.gitlab.MigrateToRules](/recipes/gitlab/migratetorules.md)
   * **Migrate `only`/`except` to `rules`**
   * Replace the deprecated `only` and `except` keywords with equivalent `rules` in `.gitlab-ci.yml` job definitions. When both `only` and `except` are present, they are combined into a single `rules` block. Handles simple ref list forms; complex object forms with `refs`, `variables`, or `changes` sub-keys are left unchanged.
@@ -4455,7 +4461,7 @@ _37 recipes_
 
 _License: Moderne Source Available License_
 
-_457 recipes_
+_458 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/com/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
@@ -5822,6 +5828,9 @@ _457 recipes_
 * [org.openrewrite.java.migrate.util.UseMapOf](/recipes/java/migrate/util/usemapof.md)
   * **Prefer `Map.of(..)`**
   * Prefer `Map.of(..)` instead of using `java.util.Map#put(..)` in Java 10 or higher.
+* [org.openrewrite.java.migrate.util.UsePredicateNot](/recipes/java/migrate/util/usepredicatenot.md)
+  * **Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`**
+  * Replace `((Predicate&lt;T&gt;) lambdaOrMethodRef).negate()` with `Predicate.not(lambdaOrMethodRef)` as of Java 11.
 * [org.openrewrite.java.migrate.util.UseSetOf](/recipes/java/migrate/util/usesetof.md)
   * **Prefer `Set.of(..)`**
   * Prefer `Set.of(..)` instead of using `java.util.Set#add(..)` in anonymous HashSet initializers in Java 10 or higher. This recipe will not modify code where the Set is later mutated since `Set.of` returns an immutable set.
@@ -6495,8 +6504,8 @@ _316 recipes_
 * [org.openrewrite.java.spring.boot2.UpgradeSpockToGroovy3](/recipes/java/spring/boot2/upgradespocktogroovy3.md)
   * **Upgrade Spock to a Groovy 3 compatible variant**
   * Upgrade Spock dependencies to a Groovy 3 compatible 2.0 variant when Groovy 3 is on the classpath.
-* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0-community-edition.md)
-  * **Migrate from Spring Boot 1.x to 2.0 (Community Edition)**
+* [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+  * **Migrate from Spring Boot 1.x to 2.0**
   * Migrate Spring Boot 1.x applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
   * **Migrate to Spring Boot 2.1**

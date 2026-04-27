@@ -31,6 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupIdPattern: `org.mockito`
   * artifactIdPattern: `*`
   * version: `(,3.0)`
+* [Singleton](../../../core/singleton)
 
 **Recipes**
 
@@ -52,6 +53,7 @@ preconditions:
       groupIdPattern: org.mockito
       artifactIdPattern: "*"
       version: (,3.0)
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.mockito.AddMockitoSettingsWithWarnStrictness
 

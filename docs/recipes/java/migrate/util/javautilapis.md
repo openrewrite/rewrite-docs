@@ -57,6 +57,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `List.of(..)`](../../../java/migrate/util/uselistof)
 * [Prefer `Locale.of(..)` over `new Locale(..)`](../../../java/migrate/util/uselocaleof)
 * [Prefer `Map.of(..)`](../../../java/migrate/util/usemapof)
+* [Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`](../../../java/migrate/util/usepredicatenot)
 * [Prefer `Set.of(..)`](../../../java/migrate/util/usesetof)
 
 </TabItem>
@@ -95,6 +96,7 @@ recipeList:
   - org.openrewrite.java.migrate.util.UseListOf
   - org.openrewrite.java.migrate.util.UseLocaleOf
   - org.openrewrite.java.migrate.util.UseMapOf
+  - org.openrewrite.java.migrate.util.UsePredicateNot
   - org.openrewrite.java.migrate.util.UseSetOf
 
 ```

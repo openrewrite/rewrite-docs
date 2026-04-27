@@ -1,26 +1,29 @@
 ---
-sidebar_label: "Migrate to Hibernate 7.1.x (Community Edition)"
+sidebar_label: "Migrate GitLab Terraform template to OpenTofu component"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate to Hibernate 7.1.x (Community Edition)
+# Migrate GitLab Terraform template to OpenTofu component
 
-**org.openrewrite.hibernate.MigrateToHibernate71**
+**org.openrewrite.gitlab.MigrateTerraformTemplateToOpenTofuComponent**
 
-_This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x._
+_Replace the deprecated `Terraform/Base.latest.gitlab-ci.yml` template include with the OpenTofu CI/CD component, per the GitLab catalog migration guide._
+
+### Tags
+
+* [ci](/reference/recipes-by-tag#ci)
+* [gitlab](/reference/recipes-by-tag#gitlab)
+* [terraform](/reference/recipes-by-tag#terraform)
+* [opentofu](/reference/recipes-by-tag#opentofu)
 
 ## Recipe source
 
-[GitHub: hibernate-7.1.yml](https://github.com/openrewrite/rewrite-hibernate/blob/main/src/main/resources/META-INF/rewrite/hibernate-7.1.yml),
-[Issue Tracker](https://github.com/openrewrite/rewrite-hibernate/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-hibernate/)
-
-:::info
-This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
-:::
+[GitHub: opentofu.yml](https://github.com/openrewrite/rewrite-gitlab/blob/main/src/main/resources/META-INF/rewrite/opentofu.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-gitlab/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-gitlab/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -29,17 +32,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../core/singleton)
-
-**Recipes**
-
-* [Migrate to Hibernate 7.0.x (Community Edition)](../hibernate/migratetohibernate70-community-edition)
-* [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
-  * groupId: `org.hibernate.orm`
-  * artifactId: `*`
-  * newVersion: `7.1.x`
+* [Migrate GitLab template to component](../gitlab/migratetemplatetocomponent)
+  * oldTemplate: `Terraform/Base.latest.gitlab-ci.yml`
+  * newComponent: `$CI_SERVER_FQDN/components/opentofu/job-templates`
+  * version: `~latest`
+  * inputs: `[opentofu_version: 1.11.6]`
 
 </TabItem>
 
@@ -48,49 +45,123 @@ This recipe is available under the [Moderne Source Available License](https://do
 ```yaml
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.hibernate.MigrateToHibernate71
-displayName: Migrate to Hibernate 7.1.x (Community Edition)
+name: org.openrewrite.gitlab.MigrateTerraformTemplateToOpenTofuComponent
+displayName: Migrate GitLab Terraform template to OpenTofu component
 description: |
-  This recipe will apply changes commonly needed when migrating to Hibernate 7.1.x.
-preconditions:
-  - org.openrewrite.Singleton
+  Replace the deprecated `Terraform/Base.latest.gitlab-ci.yml` template include with the OpenTofu CI/CD component, per the GitLab catalog migration guide.
+tags:
+  - ci
+  - gitlab
+  - terraform
+  - opentofu
 recipeList:
-  - org.openrewrite.hibernate.MigrateToHibernate70
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: org.hibernate.orm
-      artifactId: "*"
-      newVersion: 7.1.x
+  - org.openrewrite.gitlab.MigrateTemplateToComponent:
+      oldTemplate: Terraform/Base.latest.gitlab-ci.yml
+      newComponent: $CI_SERVER_FQDN/components/opentofu/job-templates
+      version: ~latest
+      inputs: [opentofu_version: 1.11.6]
+
+```
+</TabItem>
+</Tabs>
+## Examples
+##### Example 1
+`MigrateTerraformTemplateToOpenTofuComponentTest#migrateTerraformTemplateToOpenTofuComponent`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value=".gitlab-ci.yml" label=".gitlab-ci.yml">
+
+
+###### Before
+```yaml title=".gitlab-ci.yml"
+include:
+  - template: Terraform/Base.latest.gitlab-ci.yml
+```
+
+###### After
+```yaml title=".gitlab-ci.yml"
+include:
+  - component: $CI_SERVER_FQDN/components/opentofu/job-templates@~latest
+    inputs:
+      opentofu_version: 1.11.6
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- .gitlab-ci.yml
++++ .gitlab-ci.yml
+@@ -2,1 +2,3 @@
+include:
+- - template: Terraform/Base.latest.gitlab-ci.yml
++ - component: $CI_SERVER_FQDN/components/opentofu/job-templates@~latest
++   inputs:
++     opentofu_version: 1.11.6
 
 ```
 </TabItem>
 </Tabs>
 
-## Used by
+---
 
-This recipe is used as part of the following composite recipes:
+##### Example 2
+`MigrateTerraformTemplateToOpenTofuComponentTest#migrateTerraformTemplateToOpenTofuComponent`
 
-* [Migrate to Hibernate 7.1.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate71-moderne-edition)
-* [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
-* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
+
+<Tabs groupId="beforeAfter">
+<TabItem value=".gitlab-ci.yml" label=".gitlab-ci.yml">
+
+
+###### Before
+```yaml title=".gitlab-ci.yml"
+include:
+  - template: Terraform/Base.latest.gitlab-ci.yml
+```
+
+###### After
+```yaml title=".gitlab-ci.yml"
+include:
+  - component: $CI_SERVER_FQDN/components/opentofu/job-templates@~latest
+    inputs:
+      opentofu_version: 1.11.6
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- .gitlab-ci.yml
++++ .gitlab-ci.yml
+@@ -2,1 +2,3 @@
+include:
+- - template: Terraform/Base.latest.gitlab-ci.yml
++ - component: $CI_SERVER_FQDN/components/opentofu/job-templates@~latest
++   inputs:
++     opentofu_version: 1.11.6
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.hibernate.MigrateToHibernate71"
-  displayName="Migrate to Hibernate 7.1.x (Community Edition)"
+  recipeName="org.openrewrite.gitlab.MigrateTerraformTemplateToOpenTofuComponent"
+  displayName="Migrate GitLab Terraform template to OpenTofu component"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-hibernate"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_HIBERNATE"
+  artifactId="rewrite-gitlab"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   hasDataTables
-  useFullyQualifiedCliName
 />
 
 ## See how this recipe works across multiple open-source repositories
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.hibernate.MigrateToHibernate71" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.gitlab.MigrateTerraformTemplateToOpenTofuComponent" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

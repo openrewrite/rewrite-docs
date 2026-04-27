@@ -35,6 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate JBoss to Jetty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/migratejbosstojetty)
+* [Migrate JBoss to Tomcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/migratejbosstotomcat)
 * [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
 
 ## Example

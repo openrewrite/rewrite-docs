@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Find types](../../java/search/findtypes)
   * fullyQualifiedTypeName: `springfox..*`
+* [Singleton](../../core/singleton)
 
 **Recipes**
 
@@ -53,6 +54,7 @@ description: |
 preconditions:
   - org.openrewrite.java.search.FindTypes:
       fullyQualifiedTypeName: springfox..*
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateFields
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods

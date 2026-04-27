@@ -30,6 +30,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add workflow rules](./addworkflowrules.md)
 * [Change GitLab Component](./changecomponent.md)
 * [Change GitLab template](./changetemplate.md)
+* [Migrate GitLab Terraform template to OpenTofu component](./migrateterraformtemplatetoopentofucomponent.md)
+* [Migrate GitLab template to component](./migratetemplatetocomponent.md)
 * [Migrate `only`/`except` to `rules`](./migratetorules.md)
 * [Remove GitLab template](./removetemplate.md)
 

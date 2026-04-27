@@ -30,6 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Module has dependency](../../../java/dependencies/search/modulehasdependency)
   * groupIdPattern: `org.junit.jupiter`
   * artifactIdPattern: `junit-jupiter*`
+* [Singleton](../../../core/singleton)
 
 **Recipes**
 
@@ -51,6 +52,7 @@ preconditions:
   - org.openrewrite.java.dependencies.search.ModuleHasDependency:
       groupIdPattern: org.junit.jupiter
       artifactIdPattern: junit-jupiter*
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.mockito.ReplaceMockitoTestExecutionListener:
       targetFramework: jupiter

@@ -35,6 +35,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Module has dependency](../../../java/dependencies/search/modulehasdependency)
   * groupIdPattern: `org.springframework.cloud`
   * artifactIdPattern: `*`
+* [Singleton](../../../core/singleton)
 
 **Recipes**
 
@@ -63,6 +64,7 @@ preconditions:
   - org.openrewrite.java.dependencies.search.ModuleHasDependency:
       groupIdPattern: org.springframework.cloud
       artifactIdPattern: "*"
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.maven.AddManagedDependency:
       groupId: org.springframework.cloud

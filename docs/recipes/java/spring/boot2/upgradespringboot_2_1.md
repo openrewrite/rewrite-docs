@@ -40,7 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate from Spring Boot 1.x to 2.0 (Community Edition)](../../../java/spring/boot2/upgradespringboot_2_0-community-edition)
+* [Migrate from Spring Boot 1.x to 2.0](../../../java/spring/boot2/upgradespringboot_2_0)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`

@@ -2466,6 +2466,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-java-application-server
 
+* [io.moderne.java.server.jboss.ConfigureGradleApplicationPlugin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/configuregradleapplicationplugin)
+  * **Configure Gradle `application` plugin main class**
+  * Adds or updates `application \{ mainClass = '...' \}` in a Gradle build script. Supports both Groovy DSL (`build.gradle`) and Kotlin DSL (`build.gradle.kts`).
+* [io.moderne.java.server.jboss.ConfigureGradleFatJar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/configuregradlefatjar)
+  * **Configure Gradle `jar` task for fat JAR**
+  * Configures the Gradle `jar` task to produce a self-contained fat JAR with all runtime dependencies bundled. Supports both Groovy DSL (`build.gradle`) and Kotlin DSL (`build.gradle.kts`).
 * [io.moderne.java.server.jboss.ModuleHasJBossDescriptor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/modulehasjbossdescriptor)
   * **Module has JBoss descriptor**
   * Searches for modules containing JBoss descriptor files (`jboss-web.xml`, `jboss-deployment-structure.xml`). Places a `SearchResult` marker on all source files within a module with a JBoss descriptor. This recipe is intended to be used as a precondition for other recipes.
@@ -2475,12 +2481,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.server.jboss.PlanJBossMigration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/planjbossmigration)
   * **Plan JBoss migration**
   * Analyzes the repository to plan a JBoss migration, identifying JBoss descriptor files (jboss-web.xml, jboss-deployment-structure.xml) and recording them in a data table.
-* [io.moderne.java.server.jboss.jetty.ConfigureGradleApplicationPlugin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/configuregradleapplicationplugin)
-  * **Configure Gradle `application` plugin main class**
-  * Adds or updates `application \{ mainClass = '...' \}` in a Gradle build script. Supports both Groovy DSL (`build.gradle`) and Kotlin DSL (`build.gradle.kts`).
-* [io.moderne.java.server.jboss.jetty.ConfigureGradleFatJar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/configuregradlefatjar)
-  * **Configure Gradle `jar` task for fat JAR**
-  * Configures the Gradle `jar` task to produce a self-contained fat JAR with all runtime dependencies bundled. Supports both Groovy DSL (`build.gradle`) and Kotlin DSL (`build.gradle.kts`).
 * [io.moderne.java.server.jboss.jetty.CreateJettyEnvXml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/createjettyenvxml)
   * **Create Jetty environment XML**
   * Creates a `jetty-env.xml` file for projects containing JBoss descriptor files.
@@ -2499,6 +2499,24 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.server.jboss.jetty.devcenter.JBossToJettyMigrationCard$Scanner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/jetty/devcenter/jbosstojettymigrationcard$scanner)
   * **JBoss to Jetty migration scanner**
   * Scans for JBoss and Jetty configuration files.
+* [io.moderne.java.server.jboss.tomcat.CreateTomcatContextXml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/createtomcatcontextxml)
+  * **Create Tomcat context XML**
+  * Creates a `context.xml` file for projects containing JBoss descriptor files.
+* [io.moderne.java.server.jboss.tomcat.CreateTomcatFilesInPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/createtomcatfilesinpath)
+  * **Migrate JBoss to Tomcat**
+  * Comprehensive migration from JBoss to Tomcat.
+* [io.moderne.java.server.jboss.tomcat.CreateTomcatSourceFile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/createtomcatsourcefile)
+  * **Create Tomcat server source file**
+  * Creates a `TomcatServer.java` source file for projects containing JBoss descriptor files.
+* [io.moderne.java.server.jboss.tomcat.MigrateJBossToTomcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/migratejbosstotomcat)
+  * **Migrate JBoss to Tomcat**
+  * Comprehensive migration from JBoss to embedded Tomcat.
+* [io.moderne.java.server.jboss.tomcat.devcenter.JBossToTomcatMigrationCard](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/devcenter/jbosstotomcatmigrationcard)
+  * **JBoss to Tomcat migration**
+  * Measures the progress of migrating applications from JBoss to Tomcat. Analyzes the presence of JBoss descriptor files (jboss-web.xml, jboss-deployment-structure.xml) and Tomcat context.xml configuration files to determine migration state.
+* [io.moderne.java.server.jboss.tomcat.devcenter.JBossToTomcatMigrationCard$Scanner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/server/jboss/tomcat/devcenter/jbosstotomcatmigrationcard$scanner)
+  * **JBoss to Tomcat migration scanner**
+  * Scans for JBoss and Tomcat configuration files.
 
 ### rewrite-kafka
 
@@ -2919,9 +2937,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot.SpringToSpringBoot](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot/springtospringboot)
   * **Migrate Spring Framework to Spring Boot**
   * Migrate non Spring Boot applications to the latest compatible Spring Boot release. This recipe will modify an application's build files introducing Maven dependency management for Spring Boot, or adding the Gradle Spring Boot build plugin.
-* [io.moderne.java.spring.boot2.UpgradeSpringBoot_2_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot2/upgradespringboot_2_0-moderne-edition)
-  * **Migrate to Spring Boot 2.0 (Moderne Edition)**
-  * Migrate applications to the latest Spring Boot 2.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.0.
 * [io.moderne.java.spring.boot3.AddValidToConfigurationPropertiesFields](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/addvalidtoconfigurationpropertiesfields)
   * **Add `@Valid` annotation to fields**
   * In Spring Boot 3.4, validation of `@ConfigurationProperties` classes annotated with `@Validated` now follows the Bean Validation specification, only cascading to nested properties if the corresponding field is annotated with `@Valid`. The recipe will add a `@Valid` annotation to each field which has a type that has a field which is annotated with a `jakarta.validation.constraints.*` annotation.
@@ -2930,7 +2945,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Spring Boot 3.4 deprecates methods that are not commonly used or need manual interaction.
 * [io.moderne.java.spring.boot3.CommentOnMockAndSpyBeansInConfigSpring34](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/commentonmockandspybeansinconfigspring34)
   * **Comment on `@MockitoSpyBean` and `@MockitoBean` in `@Configuration`**
-  * As stated in [Spring Docs](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-mockitobean.html) `@MockitoSpyBean` and `@MockitoBean` will only work in tests, explicitly not in `@Configuration` annotated classes.
+  * **Deprecated**: use `io.moderne.java.spring.boot3.ReplaceMockitoBeanWithBeanMethod` instead, which rewrites the field into a working `@Bean` method rather than adding a TODO comment. As stated in [Spring Docs](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-mockitobean.html) `@MockitoSpyBean` and `@MockitoBean` will only work in tests, explicitly not in `@Configuration` annotated classes.
 * [io.moderne.java.spring.boot3.ConditionalOnAvailableEndpointMigrationSpring34](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/conditionalonavailableendpointmigrationspring34)
   * **Migrate `ConditionalOnAvailableEndpoint` for Spring Boot 3.4**
   * Migrate `@ConditionalOnAvailableEndpoint(EndpointExposure.CLOUD_FOUNDRY)` to `@ConditionalOnAvailableEndpoint(EndpointExposure.WEB)` for Spring Boot 3.4.
@@ -2979,6 +2994,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot3.ReplaceKafkaTransactionManagerSetter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/replacekafkatransactionmanagersetter)
   * **Use `kafkaAwareTransactionManager` setter**
   * Replace deprecated `ContainerProperties#setTransactionManager(org.springframework.transaction.PlatformTransactionManager)` method with `ContainerProperties#setKafkaAwareTransactionManager(org.springframework.kafka.transaction.KafkaAwareTransactionManager)`. The method will be replaced only if its argument has the type `KafkaAwareTransactionManager`.
+* [io.moderne.java.spring.boot3.ReplaceMockitoBeanWithBeanMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/replacemockitobeanwithbeanmethod)
+  * **Replace `@MockitoBean` and `@MockitoSpyBean` with `@Bean` methods in `@Configuration` classes**
+  * `@MockitoBean` and `@MockitoSpyBean` only work in test classes, not in `@Configuration` classes. This recipe converts annotated fields into `@Bean` methods using `Mockito.mock()` or `Mockito.spy()`.
 * [io.moderne.java.spring.boot3.ReplaceTaskExecutorNameByApplicationTaskExecutorName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/replacetaskexecutornamebyapplicationtaskexecutorname)
   * **Use bean name `applicationTaskExecutor` instead of `taskExecutor`**
   * Spring Boot 3.5 removed the bean name `taskExecutor`. Where this bean name is used, the recipe replaces the bean name to `applicationTaskExecutor`. This also includes instances where the developer provided their own bean named `taskExecutor`. This also includes scenarios where JSR-250's `@Resource` annotation is used.
@@ -3635,7 +3653,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-04-20T1128.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-04-27T1132.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -3672,6 +3690,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.Owasp2025A05](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a05)
   * **Remediate OWASP A05:2025 Injection**
   * OWASP [A05:2025](https://owasp.org/Top10/2025/A05_2025-Injection/) describes failures related to user-supplied data being used to influence program state to operate outside of its intended bounds. Previously A03:2021.
+* [org.openrewrite.java.security.Owasp2025A07](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a07)
+  * **Remediate OWASP A07:2025 Identification and authentication failures**
+  * OWASP [A07:2025](https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/) describes failures related to identification and authentication, including weak credential management, missing brute force protections, session fixation, hardcoded credentials, insecure &quot;remember me&quot;, and missing multi-factor authentication. Same position as A07:2021 (no prior aggregator existed).
 * [org.openrewrite.java.security.OwaspA01](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owaspa01)
   * **Remediate OWASP A01:2021 Broken access control**
   * OWASP [A01:2021](https://owasp.org/Top10/A01_2021-Broken_Access_Control/) describes failures related to broken access control.
@@ -3732,6 +3753,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindExpressionLanguageInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findexpressionlanguageinjection)
   * **Find Expression Language injection vectors**
   * Finds calls to Expression Language (EL) evaluation methods which, when the expression is built from user input, can allow arbitrary code execution. Use parameterized expressions or input validation instead.
+* [org.openrewrite.java.security.search.FindHardcodedAuthenticationCredentials](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findhardcodedauthenticationcredentials)
+  * **Find hardcoded authentication credentials**
+  * Finds hardcoded passwords flowing into Spring Security user builders: `InMemoryUserDetailsManagerConfigurer` (`inMemoryAuthentication().withUser(...).password(...)`) and the `User.UserBuilder.password(...)` API. Uses taint analysis so credentials assigned to a variable, field, or constant before being passed to `.password(...)` are also detected.
 * [org.openrewrite.java.security.search.FindHardcodedIv](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findhardcodediv)
   * **Find hardcoded initialization vectors**
   * Finds `IvParameterSpec` constructed with hardcoded byte arrays or string literals. A static IV makes CBC and other modes deterministic, enabling chosen-plaintext attacks. IVs should be generated randomly using `SecureRandom` for each encryption operation.
@@ -3741,9 +3765,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindInadequateKeySize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinadequatekeysize)
   * **Find inadequate cryptographic key sizes**
   * Finds cryptographic key generation with inadequate key sizes. RSA keys should be at least 2048 bits, DSA keys at least 2048 bits, EC keys at least 256 bits, and symmetric keys (AES) at least 128 bits. NIST recommends RSA-2048+ and AES-128+ as minimum for all new applications.
+* [org.openrewrite.java.security.search.FindInsecureRememberMeConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinsecureremembermeconfig)
+  * **Find insecure Spring Security RememberMe configuration**
+  * Finds Spring Security RememberMe configurations with insecure settings: `useSecureCookie(false)` (allows cookie transmission over HTTP), `alwaysRemember(true)` (bypasses user opt-in), or `tokenValiditySeconds(...)` set longer than 30 days (extends the window in which a stolen remember-me cookie can be replayed).
+* [org.openrewrite.java.security.search.FindInsecureSessionFixationConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinsecuresessionfixationconfig)
+  * **Find Spring Security configurations that disable session fixation protection**
+  * Finds Spring Security configurations that disable session fixation protection by calling `sessionFixation().none()`. Without session fixation protection, an attacker who obtains a victim's session identifier before authentication can reuse it to hijack the authenticated session. Spring Security defaults to `changeSessionId()`; applications should keep that default or use `migrateSession()`.
 * [org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findjacksondefaulttypemapping)
   * **Find Jackson default type mapping enablement**
   * `ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization.
+* [org.openrewrite.java.security.search.FindLongSessionTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findlongsessiontimeout)
+  * **Find long or disabled HTTP session timeout**
+  * Finds calls to `HttpSession.setMaxInactiveInterval(int)` whose integer-literal argument exceeds 30 minutes or is zero/negative (which disables session expiration). Long-lived or non-expiring sessions increase the window for session hijacking and replay (CWE-613).
 * [org.openrewrite.java.security.search.FindPermissiveCorsConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findpermissivecorsconfiguration)
   * **Find permissive CORS configuration**
   * Finds overly permissive CORS configurations that allow all origins, which can expose the application to cross-domain attacks.
@@ -3771,15 +3804,30 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindUnsafeReflection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findunsafereflection)
   * **Find unsafe reflection vectors**
   * Finds calls to `Class.forName()` which, when the class name is derived from user input, can allow an attacker to instantiate arbitrary classes. Review these call sites to ensure the class name is not externally controlled.
+* [org.openrewrite.java.security.search.FindUnsignedJwt](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findunsignedjwt)
+  * **Find unsigned JWT usage**
+  * Finds construction or parsing of Nimbus `PlainJWT` — an unsecured JWT that has no signature or MAC. Unsecured JWTs allow an attacker to forge tokens because their payloads are not integrity-protected. Use a signed (`SignedJWT`) or encrypted (`EncryptedJWT`) JWT instead.
+* [org.openrewrite.java.security.search.FindUserWithDefaultPasswordEncoder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/finduserwithdefaultpasswordencoder)
+  * **Find `User.withDefaultPasswordEncoder()` usage**
+  * Flags any call to `User.withDefaultPasswordEncoder()` from Spring Security. The factory is documented as for non-production demos only: it stores credentials in memory with a fixed encoder and is unsafe for real workloads.
 * [org.openrewrite.java.security.search.FindVulnerableJacksonJsonTypeInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findvulnerablejacksonjsontypeinfo)
   * **Find vulnerable uses of Jackson `@JsonTypeInfo`**
   * Identify where attackers can deserialize gadgets into a target field.
 * [org.openrewrite.java.security.search.FindWeakCryptoAlgorithm](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findweakcryptoalgorithm)
   * **Find weak cryptographic algorithms**
   * Finds uses of broken or risky cryptographic algorithms such as MD5, SHA-1, DES, DESede (3DES), RC2, RC4, and Blowfish in calls to `Cipher.getInstance()`, `MessageDigest.getInstance()`, `Mac.getInstance()`, `KeyGenerator.getInstance()`, and `SecretKeyFactory.getInstance()`.
+* [org.openrewrite.java.security.search.FindWeakDigestInPasswordEncoder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findweakdigestinpasswordencoder)
+  * **Find weak message digests used inside custom `PasswordEncoder` implementations**
+  * Finds calls to `MessageDigest.getInstance(&quot;...&quot;)` whose algorithm is unsuitable for password storage, scoped to classes implementing `org.springframework.security.crypto.password.PasswordEncoder`. Unsalted and non-iterated digests (MD2, MD4, MD5, SHA-1, SHA-224/256/384/512) are unsuitable for password hashing regardless of how they are wrapped. Delegate to `BCryptPasswordEncoder`, `Argon2PasswordEncoder`, `Pbkdf2PasswordEncoder`, or `SCryptPasswordEncoder` instead of implementing `PasswordEncoder` yourself.
+* [org.openrewrite.java.security.search.FindWeakPasswordEncoderStrength](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findweakpasswordencoderstrength)
+  * **Find weak password encoder strength**
+  * Finds Spring Security `BCryptPasswordEncoder` instantiations with a strength (work factor) below 10. The default and OWASP-recommended minimum is 10; lower values make stolen password hashes substantially cheaper to brute-force.
 * [org.openrewrite.java.security.search.FindWeakPasswordHashing](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findweakpasswordhashing)
   * **Find weak password hashing**
   * Finds uses of `MessageDigest.getInstance()` with algorithms unsuitable for password hashing (MD5, SHA-1, SHA-256, SHA-384, SHA-512). Passwords should be hashed with a purpose-built password hashing function such as bcrypt, scrypt, Argon2, or PBKDF2 that includes a salt and a tunable work factor.
+* [org.openrewrite.java.security.search.FindWeakSpringPasswordEncoder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findweakspringpasswordencoder)
+  * **Find weak Spring Security password encoders**
+  * Finds uses of Spring Security password encoders that are unsuitable for production password storage: `NoOpPasswordEncoder` (plaintext), `StandardPasswordEncoder` (deprecated SHA-256), `MessageDigestPasswordEncoder` (raw message digest), `Md4PasswordEncoder` (MD4, broken), and `LdapShaPasswordEncoder` (deprecated). Use an adaptive function such as `BCryptPasswordEncoder`, `Argon2PasswordEncoder`, `Pbkdf2PasswordEncoder`, or `SCryptPasswordEncoder` instead.
 * [org.openrewrite.java.security.search.FindXPathInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findxpathinjection)
   * **Find XPath injection vectors**
   * Finds calls to `XPath.evaluate()` and `XPath.compile()` which, when the expression is built from user input, can allow XPath injection attacks. Use parameterized XPath expressions or input validation instead.
@@ -4381,8 +4429,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Replace `str.format()` with f-string**
   * Replace `&quot;...&quot;.format(...)` calls with f-strings (Python 3.6+). Only converts cases where the format string is a literal and the conversion is safe.
 * [org.openrewrite.python.migrate.ReplaceSysLastExcInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacesyslastexcinfo)
-  * **Replace `sys.last_value` with `sys.last_exc` and flag `sys.last_type` / `sys.last_traceback`**
-  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. `sys.last_value` is auto-replaced with `sys.last_exc`; `sys.last_type` and `sys.last_traceback` are flagged for manual review.
+  * **Replace `sys.last_type` / `sys.last_value` / `sys.last_traceback` with `sys.last_exc`**
+  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. Replace them with their `sys.last_exc`-based equivalents: `type(sys.last_exc)`, `sys.last_exc`, and `sys.last_exc.__traceback__` respectively.
 * [org.openrewrite.python.migrate.ReplaceTarfileFilemode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetarfilefilemode)
   * **Replace `tarfile.filemode` with `stat.filemode`**
   * `tarfile.filemode` was removed in Python 3.8. Use `stat.filemode()` instead.

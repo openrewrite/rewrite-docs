@@ -29,6 +29,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
 * [Replace container image name](../../../java/testing/testcontainers/replacecontainerimagename)
   * containerClass: `org.testcontainers.containers.KafkaContainer`
   * imagePrefix: `confluentinc/cp-kafka`
@@ -48,6 +54,8 @@ name: org.openrewrite.java.testing.testcontainers.MigrateToKafkaNative
 displayName: Migrate to Apache Kafka Native container
 description: |
   Replace `confluentinc/cp-kafka` with the much faster `apache/kafka-native` image and migrate from `org.testcontainers.containers.KafkaContainer` to `org.testcontainers.kafka.KafkaContainer`.
+preconditions:
+  - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.testing.testcontainers.ReplaceContainerImageName:
       containerClass: org.testcontainers.containers.KafkaContainer

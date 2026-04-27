@@ -25,6 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `Map.of(..)`](./usemapof.md)
 * [Prefer `Optional.isEmpty()`](./optionalnotpresenttoisempty.md)
 * [Prefer `Optional.isPresent()`](./optionalnotemptytoispresent.md)
+* [Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`](./usepredicatenot.md)
 * [Prefer `Set.of()`](./migratecollectionsemptyset.md)
 * [Prefer `Set.of(..)`](./migratecollectionssingletonset.md)
 * [Prefer `Set.of(..)`](./migratecollectionsunmodifiableset.md)
