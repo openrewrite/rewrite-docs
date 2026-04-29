@@ -151,6 +151,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
 * [Migrate to Spring Boot 4.0 modular starters (Community Edition)](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
+* [Migrate to Spring Boot 4.1 modular starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters_4_1)
 * [Migrate to Spring Data 2.3](/recipes/java/spring/data/upgradespringdata_2_3.md)
 * [Migrate to Struts 2.x from Struts 1.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratestruts2)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)

@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * version: `9.x`
   * addIfMissing: `false`
 * [Use `String` notation for Gradle dependency declarations](../gradle/dependencyusestringnotation)
+* [Use `mainClass` instead of `main` for `JavaExec` tasks](../gradle/gradle9/usemainclassproperty)
 
 </TabItem>
 
@@ -52,6 +53,7 @@ recipeList:
       version: 9.x
       addIfMissing: false
   - org.openrewrite.gradle.DependencyUseStringNotation
+  - org.openrewrite.gradle.gradle9.UseMainClassProperty
 
 ```
 </TabItem>

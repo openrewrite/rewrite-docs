@@ -3102,6 +3102,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.MigrateToModularStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters-moderne-edition)
   * **Migrate to Spring Boot 4.0 modular starters (Moderne Edition)**
   * Remove monolithic starters and adds the necessary Spring Boot 4.0 starter dependencies based on package usage, where any spring-boot-starter was used previously.
+* [io.moderne.java.spring.boot4.MigrateToModularStarters_4_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters_4_1)
+  * **Migrate to Spring Boot 4.1 modular starters**
+  * Add Spring Boot 4.1 starter dependencies for modules introduced in 4.1 (gRPC server, gRPC client, and Spring Batch with MongoDB support). This recipe complements `MigrateToModularStarters` from 4.0 and only adds the new starters; it does not rewrite or remove anything else.
 * [io.moderne.java.spring.boot4.MockMvcAssertionsToAssertJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/mockmvcassertionstoassertj)
   * **Migrate MockMvc `andExpect()` chains to AssertJ assertions**
   * Converts MockMvc Hamcrest-style `andExpect()` assertion chains to AssertJ-style fluent assertions using `assertThat()`. Handles status, content, JSON path, header, redirect, and forward assertions.
@@ -3156,12 +3159,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.SpringBoot4BestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/springboot4bestpractices)
   * **Spring Boot 4.0 best practices**
   * Applies best practices to Spring Boot 4.+ applications.
+* [io.moderne.java.spring.boot4.SpringBootProperties_4_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/springbootproperties_4_1)
+  * **Migrate Spring Boot properties to 4.1**
+  * Migrate properties found in `application.properties` and `application.yml`.
 * [io.moderne.java.spring.boot4.UpgradeMyBatisToSpringBoot_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgrademybatistospringboot_4_0)
   * **Upgrade MyBatis to Spring Boot 4.0**
   * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 4.0.
 * [io.moderne.java.spring.boot4.UpgradeSpringBoot_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
   * **Migrate to Spring Boot 4.0 (Moderne Edition)**
   * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 4.0.
+* [io.moderne.java.spring.boot4.UpgradeSpringBoot_4_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
+  * **Migrate to Spring Boot 4.1**
+  * Migrate applications to the latest Spring Boot 4.1 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 4.1.
 * [io.moderne.java.spring.boot4.UpgradeSpringKafka_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringkafka_4_0)
   * **Migrate to Spring Kafka 4.0**
   * Migrate applications to Spring Kafka 4.0. This includes removing deprecated configuration options that are no longer supported.

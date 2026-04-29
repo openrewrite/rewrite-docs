@@ -37,6 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.4 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_4-moderne-edition)
 * [Migrate to Spring Boot 3.5 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_5-moderne-edition)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
+* [Migrate to Spring Boot 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
 
 ## Example
 

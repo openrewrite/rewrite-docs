@@ -309,6 +309,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `org.springframework.boot.actuate.health`
   * newPackageName: `org.springframework.boot.health.contributor`
   * recursive: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.boot.health.contributor.HealthIndicator getHealth(..)`
+  * newMethodName: `health`
+  * matchOverrides: `true`
+  * ignoreDefinition: `false`
 
 </TabItem>
 
@@ -598,6 +603,11 @@ recipeList:
       oldPackageName: org.springframework.boot.actuate.health
       newPackageName: org.springframework.boot.health.contributor
       recursive: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.boot.health.contributor.HealthIndicator getHealth(..)
+      newMethodName: health
+      matchOverrides: true
+      ignoreDefinition: false
 
 ```
 </TabItem>

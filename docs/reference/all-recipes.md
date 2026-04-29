@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4335
+Total recipes: 4336
 
 
 ## org.openrewrite
@@ -199,7 +199,7 @@ _18 recipes_
 
 _License: Apache License Version 2.0_
 
-_68 recipes_
+_69 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -324,6 +324,9 @@ _68 recipes_
 * [org.openrewrite.gradle.gradle8.JacocoReportDeprecations](/recipes/gradle/gradle8/jacocoreportdeprecations.md)
   * **Replace Gradle 8 introduced deprecations in JaCoCo report task**
   * Set the `enabled` to `required` and the `destination` to `outputLocation` for Reports deprecations that were removed in gradle 8. See [the gradle docs on this topic](https://docs.gradle.org/current/userguide/upgrading_version_7.html#report_and_testreport_api_cleanup).
+* [org.openrewrite.gradle.gradle9.UseMainClassProperty](/recipes/gradle/gradle9/usemainclassproperty.md)
+  * **Use `mainClass` instead of `main` for `JavaExec` tasks**
+  * The `main` property on `JavaExec` tasks was deprecated in Gradle 7.1 and removed in Gradle 9.0. Use the `mainClass` property instead. See the [Gradle upgrade guide](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
 * [org.openrewrite.gradle.plugins.AddBuildPlugin](/recipes/gradle/plugins/addbuildplugin.md)
   * **Add Gradle plugin**
   * Add a build plugin to a Gradle build file's `plugins` block.
