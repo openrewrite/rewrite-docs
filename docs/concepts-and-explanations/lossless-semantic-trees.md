@@ -4,10 +4,6 @@ description: An explanation of what an LST is and why it's critical for large-sc
 
 # Lossless Semantic Trees (LST)
 
-:::info[Free Training]
-Want to learn how recipes work? [Join our free training on April 28 →](https://www.moderne.ai/training/introduction-to-openrewrite-training-april-session)
-:::
-
 <figure>
   ![](./assets/LST-comparison.png)
   <figcaption>_LST comparison_</figcaption>

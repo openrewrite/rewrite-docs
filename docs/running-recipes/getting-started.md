@@ -7,10 +7,6 @@ import TabItem from '@theme/TabItem';
 
 # Quickstart: Setting up your project and running recipes
 
-:::info[Free Training]
-Want to learn how recipes work? [Join our free training on April 28 →](https://www.moderne.ai/training/introduction-to-openrewrite-training-april-session)
-:::
-
 To help orient you to OpenRewrite, let's walk through configuring a project to use the Maven or Gradle OpenRewrite plugin. Then let's walk through running various types of recipes on said project and talk through the results.
 
 In this guide, you will:
