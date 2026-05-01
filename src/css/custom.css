@@ -215,25 +215,27 @@ html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
   position: relative;
 }
 
-[class^=docMainContainer_] [class^=generatedIndexPage_]::before {
-  position: absolute;
-  background: url(/img/gems-bg.webp) no-repeat 0 0;
-  width: 1322px;
-  height: 1070px;
-  z-index: -1;
-  content: '';
+[class^=docMainContainer_] [class^=generatedIndexPage_] .row > .col,
+[class^=docMainContainer_] [class^=generatedIndexPage_] .col--6 {
+  display: flex;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
 }
 
-[class^=docMainContainer_] [class^=generatedIndexPage_] .row[class*=list_] > .col {
-  display: flex;
+[class^=docMainContainer_] [class^=generatedIndexPage_] .card {
+  padding: 0.75rem 1.25rem !important;
 }
 
 [class^=docMainContainer_] [class^=generatedIndexPage_] .margin-top--lg {
   margin-top: 4.5rem !important;
 }
 
-[class^=docMainContainer_] [class^=generatedIndexPage_] .margin-bottom--lg {
-  margin-bottom: 2.5rem !important;
+html body .margin-bottom--lg {
+  margin-bottom: 1.25rem !important;
+}
+
+html body section.row .col {
+  margin-bottom: 1.25rem !important;
 }
 
 html[data-theme='dark'] [class^=docMainContainer_] .card {
