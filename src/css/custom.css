@@ -138,17 +138,17 @@ figure figcaption {
 }
 
 .theme-doc-sidebar-menu .menu__list-item {
-  margin-top: 0.25rem;
+  margin-top: 0;
 }
 
 .theme-doc-sidebar-menu .menu__list .menu__list {
   padding-left: 0.75rem;
-  margin-top: 0.25rem;
+  margin-top: 0;
 }
 
 .theme-doc-sidebar-menu .menu__link {
-  padding: 0.4rem 0.5rem;
-  line-height: 1.5;
+  padding: 0.3rem 0.5rem;
+  line-height: 1.4;
 }
 
 .theme-doc-sidebar-menu .menu__link--sublist {
