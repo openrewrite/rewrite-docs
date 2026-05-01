@@ -436,3 +436,37 @@ html[data-theme='dark'] {
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 calc(var(--ifm-pre-padding) - 3px) 0 var(--ifm-pre-padding);
 }
+
+/* Style markdown link-only lists as cards (recipe README pages) */
+.markdown ul:has(> li > a:only-child) {
+  list-style: none;
+  padding-left: 0;
+}
+
+.markdown ul:has(> li > a:only-child) > li {
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+}
+
+.markdown ul:has(> li > a:only-child) > li::before {
+  content: none;
+}
+
+.markdown ul:has(> li > a:only-child) > li > a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--ifm-color-border);
+  border-radius: 8px;
+  background-color: #fff;
+  color: var(--ifm-heading-color);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.markdown ul:has(> li > a:only-child) > li > a:hover {
+  background-color: #F3F4F6;
+  border-color: rgba(4, 24, 52, 0.2);
+  text-decoration: none;
+}
