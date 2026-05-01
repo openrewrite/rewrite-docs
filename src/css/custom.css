@@ -24,7 +24,7 @@
   --ifm-color-primary-lighter: #6787e7;
   --ifm-color-primary-lightest: #8ca4ed;
   --ifm-color-border: #D9D9D9;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 81.25%;
   --ifm-color-base: rgba(4, 24, 52);
   --ifm-color-content: var(--ifm-color-base);
   --ifm-color-announcement-bar-bg: var(--ifm-color-mint);
