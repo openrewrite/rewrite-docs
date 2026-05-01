@@ -14,7 +14,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-background-color: #F8F8FF;
+  --ifm-background-color: #FAFAFF;
   --ifm-color-mint: #85FE99;
   --ifm-color-primary: #4169e1;
   --ifm-color-primary-dark: #2855dd;
@@ -163,7 +163,7 @@ figure {
 
 .navbar {
   border-bottom: 1px solid var(--ifm-section-divider-color);
-  background-color: rgba(248, 248, 255, 0.7);
+  background-color: rgba(250, 250, 255, 0.7);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
