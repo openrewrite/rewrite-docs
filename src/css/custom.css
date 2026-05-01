@@ -202,10 +202,10 @@ html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
 }
 
 [class^=docMainContainer_] h1 {
-  --ifm-heading-font-weight: 300;
-  --ifm-heading-font-family: "Beausite", sans-serif;
-  --ifm-h1-font-size: 3.75rem;
-  --ifm-leading: 1;
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-font-family: "Inter", sans-serif;
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-leading: 1.2;
 
   margin-bottom: 1.25rem;
 }
@@ -241,8 +241,8 @@ html[data-theme='dark'] [class^=docMainContainer_] .card {
 }
 
 .markdown {
-  --ifm-heading-font-family: "Beausite", sans-serif;
-  --ifm-heading-font-weight: 300;
+  --ifm-heading-font-family: "Inter", sans-serif;
+  --ifm-heading-font-weight: 600;
   --ifm-link-decoration: underline;
 }
 
