@@ -436,3 +436,69 @@ html[data-theme='dark'] {
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 calc(var(--ifm-pre-padding) - 3px) 0 var(--ifm-pre-padding);
 }
+
+/* ============================================================
+ * Visual polish — neo card design tokens, rounded media,
+ * sidebar active-leaf weight bump.
+ * Additive overrides; safe to land regardless of which other
+ * visual-refresh PRs merge first.
+ * ============================================================ */
+
+:root {
+  --neo-border-card: rgba(4, 24, 52, 0.12);
+  --neo-grey-300: rgba(4, 24, 52, 0.25);
+  --neo-shadow-card: 0 1px 2px rgba(4, 24, 52, 0.06), 0 4px 12px rgba(4, 24, 52, 0.05);
+  --neo-card-hover-bg: #FFFFFF;
+}
+
+html[data-theme='dark'] {
+  --neo-border-card: rgba(255, 255, 255, 0.1);
+  --neo-grey-300: rgba(255, 255, 255, 0.25);
+  --neo-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
+  --neo-card-hover-bg: rgba(255, 255, 255, 0.04);
+}
+
+/* DocCard — transparent default, white on hover with shadow lift */
+[class^=cardContainer_] {
+  background-color: transparent !important;
+  border-color: var(--neo-border-card) !important;
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease !important;
+}
+
+[class^=cardContainer_]:hover {
+  background-color: var(--neo-card-hover-bg) !important;
+  border-color: var(--neo-grey-300) !important;
+  box-shadow: var(--neo-shadow-card) !important;
+}
+
+/* Markdown link-list cards — same treatment */
+.markdown ul:has(> li > a:only-child) > li > a {
+  background-color: transparent !important;
+  border-color: var(--neo-border-card) !important;
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease !important;
+}
+
+.markdown ul:has(> li > a:only-child) > li > a:hover {
+  background-color: var(--neo-card-hover-bg) !important;
+  border-color: var(--neo-grey-300) !important;
+  box-shadow: var(--neo-shadow-card) !important;
+}
+
+/* Rounded corners on inline media */
+.markdown img,
+figure img {
+  border-radius: 12px;
+}
+
+.markdown iframe[src*="youtube"],
+.markdown iframe[src*="youtu.be"],
+.markdown iframe[src*="vimeo"],
+.markdown iframe {
+  border-radius: 12px;
+}
+
+/* Sidebar active-leaf — bump to 700 Inter for stronger emphasis */
+.theme-doc-sidebar-menu .menu__link:not(.menu__link--sublist).menu__link--active {
+  font-weight: 700 !important;
+  font-family: "Inter", sans-serif !important;
+}
