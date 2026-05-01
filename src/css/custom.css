@@ -137,6 +137,40 @@ figure figcaption {
   color: var(--ifm-heading-color);
 }
 
+.theme-doc-sidebar-menu .menu__list-item {
+  margin-top: 0;
+}
+
+.theme-doc-sidebar-menu .menu__list .menu__list {
+  padding-left: 0.75rem;
+  margin-top: 0;
+}
+
+.theme-doc-sidebar-menu .menu__link {
+  padding: 0.3rem 0.5rem;
+  line-height: 1.4;
+}
+
+.theme-doc-sidebar-menu .menu__link--sublist {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible:has(.menu__link--active) .menu__link--sublist,
+.theme-doc-sidebar-menu .menu__link--sublist.menu__link--active {
+  color: var(--ifm-link-color);
+}
+
+.theme-doc-sidebar-menu .menu__link:not(.menu__link--sublist) {
+  font-weight: 400;
+  color: var(--ifm-menu-color);
+}
+
+.theme-doc-sidebar-menu .menu__link:not(.menu__link--sublist).menu__link--active {
+  font-weight: 600;
+  color: var(--ifm-link-color);
+}
+
 .theme-doc-sidebar-menu .menu__caret:before {
   background-image: url("data:image/svg+xml, %3Csvg%20width=%228%22%20height=%2213%22%20viewBox=%220%200%208%2013%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M1%2012L7%206.5L1%201%22%20stroke=%22%23415067%22%20stroke-width=%221.25%22%2F%3E%0A%3C%2Fsvg%3E%0A");
   background-repeat: no-repeat;
