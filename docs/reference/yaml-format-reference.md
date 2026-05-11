@@ -121,12 +121,19 @@ But because `Find` is used as a precondition, `ChangeText` will only be run on f
 
 **Recipes commonly used as preconditions include:**
 
-* `org.openrewrite.FindSourceFiles` - limits the recipe to only run on files whose path matches a glob pattern
-* `org.openrewrite.text.Find` - limits the recipe to only run on files that contain a given string
-* `org.openrewrite.java.search.FindTypes` - limits the recipe to run only on source code which contain a given type
-* `org.openrewrite.java.search.HasJavaVersion` - limits the recipe to run only on Java source code with the specified source or target compatibility versions. Allowing a recipe to be targeted only at Java 8, 11, 17, etc., code.
-* `org.openrewrite.java.search.IsLikelyTest` - limits the recipe to run only on source code which is likely to be test code.
-* `org.openrewrite.java.search.IsLikelyNotTest` - limits the recipe to run only on source code which is likely to be production code.
+* [`org.openrewrite.FindSourceFiles`](../recipes/core/findsourcefiles.md) - limits the recipe to only run on files whose path matches a glob pattern
+* [`org.openrewrite.text.Find`](../recipes/text/find.md) - limits the recipe to only run on files that contain a given string
+* [`org.openrewrite.java.search.FindTypes`](../recipes/java/search/findtypes.md) - limits the recipe to run only on source code which contain a given type
+* [`org.openrewrite.java.search.HasJavaVersion`](../recipes/java/search/hasjavaversion.md) - limits the recipe to run only on Java source code with the specified source or target compatibility versions. Allowing a recipe to be targeted only at Java 8, 11, 17, etc., code.
+* [`org.openrewrite.java.search.IsLikelyTest`](../recipes/java/search/islikelytest.md) - limits the recipe to run only on source code which is likely to be test code.
+* [`org.openrewrite.java.search.IsLikelyNotTest`](../recipes/java/search/islikelynottest.md) - limits the recipe to run only on source code which is likely to be production code.
+* [`org.openrewrite.java.dependencies.search.ModuleHasDependency`](../recipes/java/dependencies/search/modulehasdependency.md) - limits the recipe to run on _all_ files within a module that has a matching dependency on its classpath.
+* [`org.openrewrite.java.dependencies.search.DoesNotIncludeDependency`](../recipes/java/dependencies/search/doesnotincludedependency.md) - limits the recipe to run on _all_ files within a module that does _not_ have a matching dependency on its classpath.
+* [`org.openrewrite.gradle.search.ModuleHasPlugin`](../recipes/gradle/search/modulehasplugin.md) - limits the recipe to run on _all_ files within a Gradle module that applies a matching plugin.
+
+:::tip
+Recipes like `ModuleHasDependency` and `ModuleHasPlugin` mark _every_ file within a module when the dependency or plugin is found – not just the `build.gradle`, `pom.xml`, or other file that declares it. This is what makes them suitable as preconditions for recipes that need to edit source files (such as Java classes) based on module-level characteristics. See [Precondition scope](#precondition-scope) below for more on why this matters.
+:::
 
 #### Creating "OR" preconditions instead of "AND"
 
