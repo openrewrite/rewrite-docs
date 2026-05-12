@@ -4,10 +4,10 @@
   --ifm-link-hover-decoration: none;
 
   box-shadow: none;
-  border: 1px solid var(--ifm-color-border);
+  border: 0.5px solid var(--neo-border-card);
   border-radius: 8px;
-  background-color: #fff;
-  transition: background-color var(--ifm-transition-fast) ease, border-color var(--ifm-transition-fast) ease;
+  background-color: var(--neo-card-bg, transparent);
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
   width: 100%;
   min-height: 3.25rem;
   display: flex;
@@ -17,9 +17,9 @@
 }
 
 .cardContainer:hover {
-  box-shadow: none;
-  background-color: #F3F4F6;
-  border-color: rgba(4, 24, 52, 0.2);
+  background-color: var(--neo-card-hover-bg);
+  border-color: var(--neo-grey-300);
+  box-shadow: var(--neo-shadow-card);
 }
 
 .cardContainer *:last-child {
