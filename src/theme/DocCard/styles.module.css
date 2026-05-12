@@ -4,15 +4,22 @@
   --ifm-link-hover-decoration: none;
 
   box-shadow: none;
-  border: 1px solid var(--ifm-color-divider);
-  transition: all var(--ifm-transition-fast) ease;
-  transition-property: border, box-shadow;
+  border: 0.5px solid var(--neo-border-card);
+  border-radius: 8px;
+  background-color: var(--neo-card-bg, transparent);
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
   width: 100%;
+  min-height: 3.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.75rem 1.25rem !important;
 }
 
 .cardContainer:hover {
-  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.15);
-  background-color: var(--ifm-color-mint);
+  background-color: var(--neo-card-hover-bg);
+  border-color: var(--neo-grey-300);
+  box-shadow: var(--neo-shadow-card);
 }
 
 .cardContainer *:last-child {
@@ -21,14 +28,16 @@
 
 .cardTitle {
   --ifm-heading-margin-bottom: 8px;
-  font-size: 1.25rem;
+  font-size: 1.0625rem;
   font-weight: 600;
-  line-height: 1.666;
+  line-height: 1.4;
 }
 
 .cardDescription {
-  color: var(--ifm-heading-color);
-  font-size: 1rem;
+  color: rgba(4, 24, 52, 0.65);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;

@@ -24,7 +24,7 @@
   --ifm-color-primary-lighter: #6787e7;
   --ifm-color-primary-lightest: #8ca4ed;
   --ifm-color-border: #D9D9D9;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 81.25%;
   --ifm-color-base: rgba(4, 24, 52);
   --ifm-color-content: var(--ifm-color-base);
   --ifm-color-announcement-bar-bg: var(--ifm-color-mint);
@@ -53,6 +53,13 @@
   --ifm-navbar-shadow: none;
   --ifm-toc-border-color: transparent;
   --ifm-section-divider-color: rgba(4, 24, 52, 0.3);
+
+  --neo-border-card: rgba(4, 24, 52, 0.12);
+  --neo-grey-300: rgba(4, 24, 52, 0.25);
+  --neo-shadow-card: 0 1px 2px rgba(4, 24, 52, 0.06), 0 4px 12px rgba(4, 24, 52, 0.05);
+  --neo-card-hover-bg: #FFFFFF;
+  --neo-double-border: rgba(4, 24, 52, 0.08);
+  --neo-frame-bg: rgba(4, 24, 52, 0.03);
 }
 
 /* Use selector for specificity */
@@ -82,11 +89,15 @@ html[data-theme='dark'] {
   --ifm-link-color: #85fe99;
   --ifm-toc-border-color: transparent;
   --ifm-section-divider-color: #d9d9d9;
-  --ifm-card-background-color: #fff;
   --ifm-heading-line-height: 1.25;
-  .theme-code-block {
-    border: 1.5px solid var(--ifm-color-border);
-  }
+
+  --neo-border-card: rgba(255, 255, 255, 0.14);
+  --neo-grey-300: rgba(255, 255, 255, 0.3);
+  --neo-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.25);
+  --neo-card-hover-bg: rgba(255, 255, 255, 0.06);
+  --neo-card-bg: rgba(255, 255, 255, 0.025);
+  --neo-double-border: rgba(255, 255, 255, 0.28);
+  --neo-frame-bg: rgba(255, 255, 255, 0.04);
 }
 
 .navbar__logo img {
@@ -103,8 +114,42 @@ figure figcaption {
   text-align: center;
 }
 
-.reactPlayer {
-  margin: auto;
+.reactPlayer,
+.react-player {
+  margin: 3rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  outline: 1px solid var(--neo-double-border);
+  outline-offset: 14px;
+}
+
+.reactPlayer iframe,
+.reactPlayer video,
+.react-player iframe,
+.react-player video,
+.react-player > div > iframe {
+  border-radius: 12px;
+}
+
+.reactPlayer iframe,
+.react-player iframe,
+.reactPlayer video,
+.react-player video {
+  outline: none !important;
+  border: none !important;
+}
+
+.markdown img,
+figure img {
+  border-radius: 12px;
+  outline: 1.5px solid var(--neo-double-border);
+  outline-offset: 18px;
+  border-radius: 12px;
+  margin: 2.5rem auto;
+}
+
+figure {
+  margin: 2.5rem auto;
 }
 
 /* Zoomed image background */
@@ -118,6 +163,13 @@ figure figcaption {
 
 .navbar {
   border-bottom: 1px solid var(--ifm-section-divider-color);
+  background-color: rgba(248, 248, 255, 0.7);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+html[data-theme='dark'] .navbar {
+  background-color: rgba(4, 24, 52, 0.7);
 }
 
 .navbar .navbar__link {
@@ -135,6 +187,41 @@ figure figcaption {
 .theme-doc-sidebar-item-link > strong {
   text-transform: uppercase;
   color: var(--ifm-heading-color);
+}
+
+.theme-doc-sidebar-menu .menu__list-item {
+  margin-top: 0;
+}
+
+.theme-doc-sidebar-menu .menu__list .menu__list {
+  padding-left: 0.75rem;
+  margin-top: 0;
+}
+
+.theme-doc-sidebar-menu .menu__link {
+  padding: 0.3rem 0.5rem;
+  line-height: 1.4;
+}
+
+.theme-doc-sidebar-menu .menu__link--sublist {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+.theme-doc-sidebar-menu .menu__list-item-collapsible:has(.menu__link--active) .menu__link--sublist,
+.theme-doc-sidebar-menu .menu__link--sublist.menu__link--active {
+  color: var(--ifm-link-color);
+}
+
+.theme-doc-sidebar-menu .menu__link:not(.menu__link--sublist) {
+  font-weight: 400;
+  color: var(--ifm-menu-color);
+}
+
+.theme-doc-sidebar-menu .menu__link:not(.menu__link--sublist).menu__link--active {
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: var(--ifm-link-color);
 }
 
 .theme-doc-sidebar-menu .menu__caret:before {
@@ -202,10 +289,10 @@ html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
 }
 
 [class^=docMainContainer_] h1 {
-  --ifm-heading-font-weight: 300;
-  --ifm-heading-font-family: "Beausite", sans-serif;
-  --ifm-h1-font-size: 3.75rem;
-  --ifm-leading: 1;
+  --ifm-heading-font-weight: 600;
+  --ifm-heading-font-family: "Inter", sans-serif;
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-leading: 1.2;
 
   margin-bottom: 1.25rem;
 }
@@ -215,34 +302,41 @@ html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
   position: relative;
 }
 
-[class^=docMainContainer_] [class^=generatedIndexPage_]::before {
-  position: absolute;
-  background: url(/img/gems-bg.webp) no-repeat 0 0;
-  width: 1322px;
-  height: 1070px;
-  z-index: -1;
-  content: '';
+[class^=docMainContainer_] [class^=generatedIndexPage_] .row > .col,
+[class^=docMainContainer_] [class^=generatedIndexPage_] .col--6 {
+  display: flex;
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
 }
 
-[class^=docMainContainer_] [class^=generatedIndexPage_] .row[class*=list_] > .col {
-  display: flex;
+[class^=docMainContainer_] [class^=generatedIndexPage_] .card {
+  padding: 0.75rem 1.25rem !important;
 }
 
 [class^=docMainContainer_] [class^=generatedIndexPage_] .margin-top--lg {
   margin-top: 4.5rem !important;
 }
 
-[class^=docMainContainer_] [class^=generatedIndexPage_] .margin-bottom--lg {
-  margin-bottom: 2.5rem !important;
+html body .margin-bottom--lg {
+  margin-bottom: 1.25rem !important;
+}
+
+html body section.row .col {
+  margin-bottom: 1.25rem !important;
 }
 
 html[data-theme='dark'] [class^=docMainContainer_] .card {
-  --ifm-heading-color: #041834;
+  --ifm-heading-color: #fff;
+}
+
+html[data-theme='dark'] [class*=cardDescription_],
+html[data-theme='dark'] [class*=cardContainer_] p {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .markdown {
-  --ifm-heading-font-family: "Beausite", sans-serif;
-  --ifm-heading-font-weight: 300;
+  --ifm-heading-font-family: "Inter", sans-serif;
+  --ifm-heading-font-weight: 600;
   --ifm-link-decoration: underline;
 }
 
@@ -412,7 +506,7 @@ html[data-theme='dark'] .footer .footer__bottom::before {
 }
 
 h1, .markdown h2, .markdown h3, .markdown h4 {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* Colorblind-friendly code highlighting */
@@ -437,68 +531,341 @@ html[data-theme='dark'] {
   padding: 0 calc(var(--ifm-pre-padding) - 3px) 0 var(--ifm-pre-padding);
 }
 
+/* Style link lists on recipe README pages as cards.
+ * Targets only the lists that follow specific h2 anchors so it doesn't
+ * affect inline single-link bullets in regular doc content. */
+.markdown h2#categories + ul,
+.markdown h2#recipes + ul,
+.markdown h2#composite-recipes + ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.markdown h2#categories + ul > li,
+.markdown h2#recipes + ul > li,
+.markdown h2#composite-recipes + ul > li {
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.markdown h2#categories + ul > li::before,
+.markdown h2#recipes + ul > li::before,
+.markdown h2#composite-recipes + ul > li::before {
+  content: none;
+}
+
+.markdown h2#categories + ul > li > a,
+.markdown h2#recipes + ul > li > a,
+.markdown h2#composite-recipes + ul > li > a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  border: 0.5px solid var(--neo-border-card);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--ifm-heading-color);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  text-decoration: none;
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.markdown h2#categories + ul > li > a:hover,
+.markdown h2#recipes + ul > li > a:hover,
+.markdown h2#composite-recipes + ul > li > a:hover {
+  background-color: var(--neo-card-hover-bg);
+  border-color: var(--neo-grey-300);
+  box-shadow: var(--neo-shadow-card);
+  text-decoration: none;
+}
+
+/* Admonition base — shared layout for all variants */
+.theme-admonition {
+  border-radius: 10px;
+  padding: 1rem 1.25rem 1rem 3rem;
+  position: relative;
+}
+
+.theme-admonition [class*=admonitionHeading_] {
+  display: none;
+}
+
+.theme-admonition::before {
+  content: '';
+  position: absolute;
+  left: 1.1rem;
+  top: 1.1rem;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.theme-admonition [class*=admonitionContent_],
+.theme-admonition [class*=admonitionContent_] p:last-child {
+  margin-bottom: 0;
+}
+
+/* Info — Lucide Info icon, blue */
+.theme-admonition-info {
+  background-color: rgba(40, 58, 247, 0.05);
+  border: 1px solid rgba(40, 58, 247, 0.18);
+  color: #283AF7;
+}
+
+.theme-admonition-info::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23283AF7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E");
+}
+
+.theme-admonition-info [class*=admonitionContent_],
+.theme-admonition-info [class*=admonitionContent_] p {
+  color: #283AF7;
+}
+
+.theme-admonition-info a {
+  color: #283AF7;
+  text-decoration: underline;
+}
+
+/* Tip — Lucide Lightbulb icon, green */
+.theme-admonition-tip {
+  background-color: rgba(21, 128, 61, 0.05);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  color: #15803D;
+}
+
+.theme-admonition-tip::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315803D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3C/svg%3E");
+}
+
+.theme-admonition-tip [class*=admonitionContent_],
+.theme-admonition-tip [class*=admonitionContent_] p {
+  color: #15803D;
+}
+
+.theme-admonition-tip a {
+  color: #15803D;
+  text-decoration: underline;
+}
+
+/* Note — Lucide StickyNote icon, neutral gray */
+.theme-admonition-note,
+.theme-admonition-secondary {
+  background-color: #FFFFFF;
+  border: 1px solid var(--ifm-color-border);
+  color: #041834;
+}
+
+.theme-admonition-note::before,
+.theme-admonition-secondary::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23041834' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M15 3v4a2 2 0 0 0 2 2h4'/%3E%3C/svg%3E");
+}
+
+.theme-admonition-note [class*=admonitionContent_],
+.theme-admonition-note [class*=admonitionContent_] p,
+.theme-admonition-secondary [class*=admonitionContent_],
+.theme-admonition-secondary [class*=admonitionContent_] p {
+  color: #041834;
+}
+
+.theme-admonition-note a,
+.theme-admonition-secondary a {
+  color: var(--ifm-link-color);
+  text-decoration: underline;
+}
+
+/* Warning / Caution — Lucide TriangleAlert icon, amber */
+.theme-admonition-warning,
+.theme-admonition-caution {
+  background-color: #FEFAE0;
+  border: 1px solid #F0DA8C;
+  color: #8A6B00;
+}
+
+.theme-admonition-warning::before,
+.theme-admonition-caution::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238A6B00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E");
+}
+
+.theme-admonition-warning [class*=admonitionContent_],
+.theme-admonition-warning [class*=admonitionContent_] p,
+.theme-admonition-caution [class*=admonitionContent_],
+.theme-admonition-caution [class*=admonitionContent_] p {
+  color: #8A6B00;
+}
+
+.theme-admonition-warning a,
+.theme-admonition-caution a {
+  color: #8A6B00;
+  text-decoration: underline;
+}
+
+.theme-admonition-warning code,
+.theme-admonition-caution code {
+  background-color: rgba(138, 107, 0, 0.1);
+  border-color: rgba(138, 107, 0, 0.2);
+  color: #8A6B00;
+}
+
+/* Danger — Lucide OctagonAlert icon, red */
+.theme-admonition-danger {
+  background-color: rgba(159, 7, 18, 0.05);
+  border: 1px solid rgba(159, 7, 18, 0.2);
+  color: #9F0712;
+}
+
+.theme-admonition-danger::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239F0712' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z'/%3E%3Cpath d='M12 8v4'/%3E%3Cpath d='M12 16h.01'/%3E%3C/svg%3E");
+}
+
+.theme-admonition-danger [class*=admonitionContent_],
+.theme-admonition-danger [class*=admonitionContent_] p {
+  color: #9F0712;
+}
+
+.theme-admonition-danger a {
+  color: #9F0712;
+  text-decoration: underline;
+}
+
+/* Extra vertical breathing room in markdown content */
+.markdown > p {
+  margin-bottom: 2.5rem;
+}
+
+.markdown > ul,
+.markdown > ol {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.markdown > ul > li,
+.markdown > ol > li {
+  margin-bottom: 0.75rem;
+}
+
+.markdown h2 {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h3 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.markdown h4 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.markdown pre,
+.markdown .theme-code-block {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  outline: none !important;
+}
+
+.markdown blockquote {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.theme-admonition {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 /* ============================================================
- * Visual polish — neo card design tokens, rounded media,
- * sidebar active-leaf weight bump.
- * Additive overrides; safe to land regardless of which other
- * visual-refresh PRs merge first.
+ * Dark mode adjustments for admonitions and cards
  * ============================================================ */
 
-:root {
-  --neo-border-card: rgba(4, 24, 52, 0.12);
-  --neo-grey-300: rgba(4, 24, 52, 0.25);
-  --neo-shadow-card: 0 1px 2px rgba(4, 24, 52, 0.06), 0 4px 12px rgba(4, 24, 52, 0.05);
-  --neo-card-hover-bg: #FFFFFF;
+html[data-theme='dark'] .theme-admonition-info {
+  background-color: rgba(126, 155, 210, 0.1);
+  border-color: rgba(126, 155, 210, 0.3);
+  color: #b9c8e7;
 }
 
-html[data-theme='dark'] {
-  --neo-border-card: rgba(255, 255, 255, 0.1);
-  --neo-grey-300: rgba(255, 255, 255, 0.25);
-  --neo-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
-  --neo-card-hover-bg: rgba(255, 255, 255, 0.04);
+html[data-theme='dark'] .theme-admonition-info::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b9c8e7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4'/%3E%3Cpath d='M12 8h.01'/%3E%3C/svg%3E");
 }
 
-/* DocCard — transparent default, white on hover with shadow lift */
-[class^=cardContainer_] {
-  background-color: transparent !important;
-  border-color: var(--neo-border-card) !important;
-  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease !important;
+html[data-theme='dark'] .theme-admonition-info,
+html[data-theme='dark'] .theme-admonition-info [class*=admonitionContent_],
+html[data-theme='dark'] .theme-admonition-info [class*=admonitionContent_] p,
+html[data-theme='dark'] .theme-admonition-info a {
+  color: #b9c8e7;
 }
 
-[class^=cardContainer_]:hover {
-  background-color: var(--neo-card-hover-bg) !important;
-  border-color: var(--neo-grey-300) !important;
-  box-shadow: var(--neo-shadow-card) !important;
+html[data-theme='dark'] .theme-admonition-tip {
+  background-color: rgba(74, 222, 128, 0.1);
+  border-color: rgba(74, 222, 128, 0.3);
+  color: #86efac;
 }
 
-/* Markdown link-list cards — same treatment */
-.markdown ul:has(> li > a:only-child) > li > a {
-  background-color: transparent !important;
-  border-color: var(--neo-border-card) !important;
-  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease !important;
+html[data-theme='dark'] .theme-admonition-tip::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386efac' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5'/%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 22h4'/%3E%3C/svg%3E");
 }
 
-.markdown ul:has(> li > a:only-child) > li > a:hover {
-  background-color: var(--neo-card-hover-bg) !important;
-  border-color: var(--neo-grey-300) !important;
-  box-shadow: var(--neo-shadow-card) !important;
+html[data-theme='dark'] .theme-admonition-tip [class*=admonitionContent_],
+html[data-theme='dark'] .theme-admonition-tip [class*=admonitionContent_] p,
+html[data-theme='dark'] .theme-admonition-tip a {
+  color: #86efac;
 }
 
-/* Rounded corners on inline media */
-.markdown img,
-figure img {
-  border-radius: 12px;
+html[data-theme='dark'] .theme-admonition-note,
+html[data-theme='dark'] .theme-admonition-secondary {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
 
-.markdown iframe[src*="youtube"],
-.markdown iframe[src*="youtu.be"],
-.markdown iframe[src*="vimeo"],
-.markdown iframe {
-  border-radius: 12px;
+html[data-theme='dark'] .theme-admonition-note::before,
+html[data-theme='dark'] .theme-admonition-secondary::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8z'/%3E%3Cpath d='M15 3v4a2 2 0 0 0 2 2h4'/%3E%3C/svg%3E");
 }
 
-/* Sidebar active-leaf — bump to 700 Inter for stronger emphasis */
-.theme-doc-sidebar-menu .menu__link:not(.menu__link--sublist).menu__link--active {
-  font-weight: 700 !important;
-  font-family: "Inter", sans-serif !important;
+html[data-theme='dark'] .theme-admonition-note [class*=admonitionContent_],
+html[data-theme='dark'] .theme-admonition-note [class*=admonitionContent_] p,
+html[data-theme='dark'] .theme-admonition-secondary [class*=admonitionContent_],
+html[data-theme='dark'] .theme-admonition-secondary [class*=admonitionContent_] p {
+  color: #fff;
+}
+
+html[data-theme='dark'] .theme-admonition-warning,
+html[data-theme='dark'] .theme-admonition-caution {
+  background-color: rgba(252, 211, 77, 0.1);
+  border-color: rgba(252, 211, 77, 0.3);
+  color: #fcd34d;
+}
+
+html[data-theme='dark'] .theme-admonition-warning::before,
+html[data-theme='dark'] .theme-admonition-caution::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fcd34d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3'/%3E%3Cpath d='M12 9v4'/%3E%3Cpath d='M12 17h.01'/%3E%3C/svg%3E");
+}
+
+html[data-theme='dark'] .theme-admonition-warning [class*=admonitionContent_],
+html[data-theme='dark'] .theme-admonition-warning [class*=admonitionContent_] p,
+html[data-theme='dark'] .theme-admonition-caution [class*=admonitionContent_],
+html[data-theme='dark'] .theme-admonition-caution [class*=admonitionContent_] p,
+html[data-theme='dark'] .theme-admonition-warning a,
+html[data-theme='dark'] .theme-admonition-caution a {
+  color: #fcd34d;
+}
+
+html[data-theme='dark'] .theme-admonition-danger {
+  background-color: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.3);
+  color: #fca5a5;
+}
+
+html[data-theme='dark'] .theme-admonition-danger::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fca5a5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z'/%3E%3Cpath d='M12 8v4'/%3E%3Cpath d='M12 16h.01'/%3E%3C/svg%3E");
+}
+
+html[data-theme='dark'] .theme-admonition-danger [class*=admonitionContent_],
+html[data-theme='dark'] .theme-admonition-danger [class*=admonitionContent_] p,
+html[data-theme='dark'] .theme-admonition-danger a {
+  color: #fca5a5;
 }
