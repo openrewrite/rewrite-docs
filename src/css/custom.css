@@ -92,6 +92,10 @@ html[data-theme='dark'] {
   --neo-frame-bg: rgba(255, 255, 255, 0.04);
 }
 
+html[data-theme='dark'] .theme-code-block {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
 .navbar__logo img {
   height: 33px;
 }
