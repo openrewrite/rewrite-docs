@@ -45,7 +45,7 @@ See the [Moderne CLI documentation](https://docs.moderne.io/user-documentation/m
 
 ## Option 2: Host Gradle project
 
-If you prefer to stay entirely within the OSS toolchain, the established pattern is to create a *host* Gradle project that applies the OpenRewrite plugin, and to clone target Terraform repositories into a subdirectory of that host project. The Gradle plugin then walks the workspace and the `HclParser` picks up every `.hcl`, `.tf`, `.tfvars`, and `.tofu` file beneath it. The target Terraform repository itself remains untouched — it never gets a `build.gradle` of its own.
+If the Moderne CLI is not (yet) an option for you, the established OSS pattern is to create a *host* Gradle project that applies the OpenRewrite plugin, and to clone target Terraform repositories into a subdirectory of that host project. The Gradle plugin then walks the workspace and the `HclParser` picks up every `.hcl`, `.tf`, `.tfvars`, and `.tofu` file beneath it. The target Terraform repository itself remains untouched — it never gets a `build.gradle` of its own.
 
 For a complete working setup, see [infra-at-scale/avm-openrewrite-migrations](https://github.com/infra-at-scale/avm-openrewrite-migrations) and the accompanying write-up [Refactoring HCL organization-wide with OpenRewrite](https://oczadly.io/posts/2026-04-23-refactoring-hcl-organization-wide-with-openrewrite/), which walks through the host `build.gradle.kts`, the `projects/` layout, and the workaround needed for the plugin to see `.tf` files past the host's `.gitignore` and the cloned repos' nested `.git/` directories.
 
@@ -150,6 +150,10 @@ git commit -m "Apply OpenRewrite HCL recipe"
 ## Option 3: Standalone runner
 
 If you need to embed recipe execution in your own tooling — a CI worker, a custom CLI, or a service — you can call OpenRewrite directly as a library. The HCL parser is self-contained and needs no build metadata.
+
+:::warning
+The OpenRewrite parser and recipe-execution APIs used below are not guaranteed to be stable across releases. They may change without notice — use at your own risk, and prefer Options 1 or 2 if you don't need to embed execution yourself.
+:::
 
 <details>
 <summary>Example standalone runner</summary>
