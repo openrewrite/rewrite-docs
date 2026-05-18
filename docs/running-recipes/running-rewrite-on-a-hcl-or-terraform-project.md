@@ -220,6 +220,6 @@ Writing custom HCL recipes follows the same patterns as Java recipes — see [Ty
 
 For published HCL recipe libraries you can depend on today, see:
 
-* [paweloczadly/openrewrite-recipes](https://github.com/paweloczadly/openrewrite-recipes) — generic HCL/OpenTofu transformations (change module versions, add/remove input variables).
-* [infra-at-scale/avm-openrewrite-migrations](https://github.com/infra-at-scale/avm-openrewrite-migrations) — Azure Verified Module migration recipes.
 * [Moderne Terraform recipe catalog](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/) — proprietary recipes available only to Moderne customers.
+* [paweloczadly/openrewrite-recipes](https://github.com/paweloczadly/openrewrite-recipes) — community: generic HCL/OpenTofu transformations (change module versions, add/remove input variables).
+* [infra-at-scale/avm-openrewrite-migrations](https://github.com/infra-at-scale/avm-openrewrite-migrations) — community: Azure Verified Module migration recipes.
