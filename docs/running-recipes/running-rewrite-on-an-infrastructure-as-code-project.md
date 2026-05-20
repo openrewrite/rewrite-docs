@@ -16,7 +16,7 @@ OpenRewrite ships standalone parsers for the file types these repositories conta
 |---|---|---|
 | Terraform / OpenTofu / HCL (`.tf`, `.tfvars`, `.tofu`, `.hcl`) | [`rewrite-hcl`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl) | Used as the running example below. See the [HCL recipe catalog](/recipes/hcl). |
 | Kubernetes manifests, Helm charts | [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml) | |
-| Dockerfiles, Containerfiles | [`rewrite-docker`](https://github.com/openrewrite/rewrite-docker) | |
+| Dockerfiles, Containerfiles | [`rewrite-docker`](https://github.com/openrewrite/rewrite/tree/main/rewrite-docker) | |
 | GitHub Actions, GitLab CI workflows | [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml) + [`rewrite-github-actions`](https://github.com/openrewrite/rewrite-github-actions) / [`rewrite-gitlab`](https://github.com/openrewrite/rewrite-gitlab) | |
 | Protobuf (`.proto`) | [`rewrite-protobuf`](https://github.com/openrewrite/rewrite/tree/main/rewrite-protobuf) | Schema, not IaC, but the same pattern applies. |
 
@@ -213,11 +213,22 @@ Package this as an executable jar with `rewrite-hcl` and any recipe artifacts on
 
 </details>
 
-## Authoring Terraform / HCL recipes
+## Authoring recipes for IaC sources
 
-Writing custom HCL recipes follows the same patterns as Java recipes — see [Types of recipes](../authoring-recipes/types-of-recipes.md). The HCL LST is described in the [rewrite-hcl source](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/tree), and for testing you can use `RewriteTest` with `HclParser.builder()` as the parser — see existing test cases under [`rewrite-hcl/src/test/java`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/test/java/org/openrewrite/hcl) for reference.
+Writing custom recipes against any of the source types listed at the top of this guide follows the same patterns as Java recipes — see [Types of recipes](../authoring-recipes/types-of-recipes.md). Each language module is laid out the same way: the LST definition lives in `src/main/java/.../<lang>/tree`, and worked recipe examples live in `src/test/java/.../<lang>`. The easiest way to get started is to read the existing tests for your target language and adapt one.
 
-For published HCL recipe libraries you can depend on today, see:
+Using Terraform/HCL as the concrete example: the [HCL LST](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/tree) is defined under `rewrite-hcl/src/main/java/org/openrewrite/hcl/tree`, and for testing you can use `RewriteTest` with `HclParser.builder()` as the parser — see [`rewrite-hcl/src/test/java`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/test/java/org/openrewrite/hcl) for reference test cases. The equivalent locations for the other languages:
+
+| Language | LST tree | Test examples |
+|---|---|---|
+| HCL / Terraform | [`rewrite-hcl/.../hcl/tree`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/tree) | [`rewrite-hcl/src/test/java`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/test/java/org/openrewrite/hcl) |
+| YAML (Kubernetes, Helm, CI workflows) | [`rewrite-yaml/.../yaml/tree`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree) | [`rewrite-yaml/src/test/java`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml/src/test/java/org/openrewrite/yaml) |
+| Docker | [`rewrite-docker/.../docker/tree`](https://github.com/openrewrite/rewrite/tree/main/rewrite-docker/src/main/java/org/openrewrite/docker/tree) | [`rewrite-docker/src/test/java`](https://github.com/openrewrite/rewrite/tree/main/rewrite-docker/src/test/java/org/openrewrite/docker) |
+| Protobuf | [`rewrite-protobuf/.../protobuf/tree`](https://github.com/openrewrite/rewrite/tree/main/rewrite-protobuf/src/main/java/org/openrewrite/protobuf/tree) | [`rewrite-protobuf/src/test/java`](https://github.com/openrewrite/rewrite/tree/main/rewrite-protobuf/src/test/java/org/openrewrite/protobuf) |
+
+For workflow-aware recipes that build on top of YAML (GitHub Actions, GitLab CI), see [`rewrite-github-actions`](https://github.com/openrewrite/rewrite-github-actions) and [`rewrite-gitlab`](https://github.com/openrewrite/rewrite-gitlab) for examples of recipes that match on workflow-specific structure rather than raw YAML.
+
+For published recipe libraries you can depend on today:
 
 * [Moderne Terraform recipe catalog](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/terraform/) — proprietary recipes available only to Moderne customers.
 * [paweloczadly/openrewrite-recipes](https://github.com/paweloczadly/openrewrite-recipes) — community: generic HCL/OpenTofu transformations (change module versions, add/remove input variables).
