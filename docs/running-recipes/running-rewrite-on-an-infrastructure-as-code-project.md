@@ -1,29 +1,28 @@
 ---
-sidebar_label: Running Rewrite on an HCL or Terraform project
-description: How to run OpenRewrite recipes against HCL, Terraform, OpenTofu, and other Infrastructure-as-Code repositories that have no Maven or Gradle build file.
+sidebar_label: Running Rewrite on an Infrastructure-as-Code project
+description: How to run OpenRewrite recipes against Infrastructure-as-Code repositories — Terraform, Kubernetes manifests, Dockerfiles, CI workflows — that have no Maven or Gradle build file.
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Running Rewrite on an HCL or Terraform project
+# Running Rewrite on an Infrastructure-as-Code project
 
-OpenRewrite has first-class support for HashiCorp Configuration Language (`.hcl`), Terraform (`.tf`, `.tfvars`), and OpenTofu (`.tofu`) files through the [rewrite-hcl](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl) module, and a small but growing [catalog of HCL recipes](/recipes/hcl).
+Infrastructure-as-Code (IaC) repositories typically have no `pom.xml` or `build.gradle`. That makes them awkward to run OpenRewrite against, because the `rewrite-maven-plugin` and `rewrite-gradle-plugin` are — by design — Maven and Gradle plugins, and need a host build to be invoked from.
 
-The challenge for Infrastructure-as-Code repositories is that the `rewrite-maven-plugin` and `rewrite-gradle-plugin` are — by design — Maven and Gradle plugins. They need to be invoked from a host build. A Terraform repository typically has no `pom.xml` or `build.gradle`, so the plugins cannot be run against it directly.
+OpenRewrite ships standalone parsers for the file types these repositories contain, so the recipes themselves can run; the only question is how to invoke them without a Java build. This guide uses **Terraform** as the running example because it has the richest ecosystem of OpenRewrite recipes and community tooling today, but the same three approaches work unchanged for any source that has a standalone parser:
 
-:::tip
-The same techniques apply to any repository where the files of interest are parsed by a standalone OpenRewrite parser rather than discovered through a Java build. In particular:
+| Source | Parser module | Notes |
+|---|---|---|
+| Terraform / OpenTofu / HCL (`.tf`, `.tfvars`, `.tofu`, `.hcl`) | [`rewrite-hcl`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl) | Used as the running example below. See the [HCL recipe catalog](/recipes/hcl). |
+| Kubernetes manifests, Helm charts | [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml) | |
+| Dockerfiles, Containerfiles | [`rewrite-docker`](https://github.com/openrewrite/rewrite-docker) | |
+| GitHub Actions, GitLab CI workflows | [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml) + [`rewrite-github-actions`](https://github.com/openrewrite/rewrite-github-actions) / [`rewrite-gitlab`](https://github.com/openrewrite/rewrite-gitlab) | |
+| Protobuf (`.proto`) | [`rewrite-protobuf`](https://github.com/openrewrite/rewrite/tree/main/rewrite-protobuf) | Schema, not IaC, but the same pattern applies. |
 
-* **Kubernetes manifests and Helm charts** — parsed by [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml). Swap `org.openrewrite:rewrite-hcl` for `org.openrewrite:rewrite-yaml` (and `HclParser` for `YamlParser` in the standalone runner) and follow the same pattern.
-* **Dockerfiles and Containerfiles** — parsed by [`rewrite-docker`](https://github.com/openrewrite/rewrite-docker). Swap in `org.openrewrite:rewrite-docker` (and `DockerParser`).
-* **GitHub Actions and GitLab CI workflows** — parsed as YAML by [`rewrite-yaml`](https://github.com/openrewrite/rewrite/tree/main/rewrite-yaml); workflow-aware recipes ship in [`rewrite-github-actions`](https://github.com/openrewrite/rewrite-github-actions) and [`rewrite-gitlab`](https://github.com/openrewrite/rewrite-gitlab). Use `YamlParser` in the standalone runner and add whichever recipe artifact you need to the classpath.
-* **Protobuf definitions** — parsed by [`rewrite-protobuf`](https://github.com/openrewrite/rewrite/tree/main/rewrite-protobuf). Swap in `org.openrewrite:rewrite-protobuf` (and `ProtoParser`) for `.proto` files.
+Wherever the examples below reference `rewrite-hcl`, `HclParser`, or `.tf`, substitute the equivalent module, parser, and file extensions for your source type.
 
-Wherever this guide references `rewrite-hcl` / `HclParser` / `.tf`, substitute the equivalent module, parser, and file extensions for your target language.
-:::
-
-This guide covers the three supported ways to apply HCL recipes to such a repository, ordered from easiest to most flexible:
+This guide covers three ways to apply recipes to such a repository, ordered from easiest to most flexible:
 
 1. [Use the Moderne CLI](#option-1-moderne-cli) — least setup, no Java build knowledge required.
 2. [Use a host Gradle project](#option-2-host-gradle-project) — pure OSS, the approach demonstrated in the [referenced community write-up](https://oczadly.io/posts/2026-04-23-refactoring-hcl-organization-wide-with-openrewrite/).
@@ -31,7 +30,7 @@ This guide covers the three supported ways to apply HCL recipes to such a reposi
 
 ## Option 1: Moderne CLI
 
-The [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) (`mod`) is the easiest way to run OpenRewrite recipes against repositories that have no Java build. It builds a Lossless Semantic Tree (LST) from the repository's source files — for an HCL-only repository, no Java toolchain or build file is required — and then applies recipes against that LST.
+The [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) (`mod`) is the easiest way to run OpenRewrite recipes against repositories that have no Java build. It builds a Lossless Semantic Tree (LST) from the repository's source files — for an IaC-only repository, no Java toolchain or build file is required — and then applies recipes against that LST.
 
 ```bash
 # Build an LST for the Terraform repo
@@ -210,11 +209,11 @@ public class HclRecipeRunner {
 }
 ```
 
-Package this as an executable jar with `rewrite-hcl` and any recipe artifacts on the classpath, and you have a self-contained command-line tool that applies OpenRewrite HCL recipes against any directory.
+Package this as an executable jar with `rewrite-hcl` and any recipe artifacts on the classpath, and you have a self-contained command-line tool that applies OpenRewrite HCL recipes against any directory. Swap `HclParser` for `YamlParser`, `DockerParser`, or `ProtoParser` (and the corresponding `rewrite-*` artifact) to do the same against the other source types listed at the top of this guide.
 
 </details>
 
-## Authoring HCL recipes
+## Authoring Terraform / HCL recipes
 
 Writing custom HCL recipes follows the same patterns as Java recipes — see [Types of recipes](../authoring-recipes/types-of-recipes.md). The HCL LST is described in the [rewrite-hcl source](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/main/java/org/openrewrite/hcl/tree), and for testing you can use `RewriteTest` with `HclParser.builder()` as the parser — see existing test cases under [`rewrite-hcl/src/test/java`](https://github.com/openrewrite/rewrite/tree/main/rewrite-hcl/src/test/java/org/openrewrite/hcl) for reference.
 

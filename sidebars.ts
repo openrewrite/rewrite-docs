@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
         'running-recipes/customize-recipe',
         'running-recipes/running-rewrite-on-a-gradle-project-without-modifying-the-build',
         'running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build',
-        'running-recipes/running-rewrite-on-a-hcl-or-terraform-project',
+        'running-recipes/running-rewrite-on-an-infrastructure-as-code-project',
         'running-recipes/running-text-based-recipes',
         {
           type: 'category',
