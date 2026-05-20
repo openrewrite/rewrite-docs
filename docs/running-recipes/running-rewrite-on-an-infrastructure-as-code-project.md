@@ -32,6 +32,10 @@ This guide covers three ways to apply recipes to such a repository, ordered from
 
 The [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro) (`mod`) is the easiest way to run OpenRewrite recipes against repositories that have no Java build. It builds a Lossless Semantic Tree (LST) from the repository's source files — for an IaC-only repository, no Java toolchain or build file is required — and then applies recipes against that LST.
 
+:::note
+The Moderne CLI is free to use against public repositories, but [requires a Moderne license](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/moderne-cli-license) to run recipes against private repositories. If your Terraform repo is private, choose Option 2 or 3 below, or contact Moderne about a license.
+:::
+
 ```bash
 # Build an LST for the Terraform repo
 mod build path/to/terraform-repo
@@ -148,7 +152,7 @@ git commit -m "Apply OpenRewrite HCL recipe"
 
 ## Option 3: Standalone runner
 
-If you need to embed recipe execution in your own tooling — a CI worker, a custom CLI, or a service — you can call OpenRewrite directly as a library. The HCL parser is self-contained and needs no build metadata.
+If you need to embed recipe execution in your own tooling — a CI worker, a custom CLI, or a service — you can call OpenRewrite directly as a library. The HCL parser is self-contained and needs no build metadata. The example below requires **Java 17 or later** (it uses `Stream.toList()`), which is also the recommended baseline for running modern OpenRewrite recipes.
 
 :::warning
 The OpenRewrite parser and recipe-execution APIs used below are not guaranteed to be stable across releases. They may change without notice — use at your own risk, and prefer Options 1 or 2 if you don't need to embed execution yourself.
