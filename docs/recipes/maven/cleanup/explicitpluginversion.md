@@ -27,6 +27,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Apache Maven best practices](/recipes/maven/bestpractices.md)
 * [Apache Maven best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavenbestpractices)
+* [Apache Maven reproducible builds](/recipes/maven/reproduciblebuilds.md)
 
 ## Example
 

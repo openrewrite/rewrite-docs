@@ -89,8 +89,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `junit`
   * artifactId: `junit`
+* [Remove Maven managed dependency](../../../maven/removemanageddependency)
+  * groupId: `junit`
+  * artifactId: `junit`
 * [Exclude JUnit 4, unless Testcontainers is used](../../../java/testing/junit5/excludejunit4unlessusingtestcontainers)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
+  * groupId: `org.junit.vintage`
+  * artifactId: `junit-vintage-engine`
+* [Remove Maven managed dependency](../../../maven/removemanageddependency)
   * groupId: `org.junit.vintage`
   * artifactId: `junit-vintage-engine`
 * [Exclude Maven dependency](../../../maven/excludedependency)
@@ -187,8 +193,14 @@ recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: junit
       artifactId: junit
+  - org.openrewrite.maven.RemoveManagedDependency:
+      groupId: junit
+      artifactId: junit
   - org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers
   - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: org.junit.vintage
+      artifactId: junit-vintage-engine
+  - org.openrewrite.maven.RemoveManagedDependency:
       groupId: org.junit.vintage
       artifactId: junit-vintage-engine
   - org.openrewrite.maven.ExcludeDependency:
@@ -750,6 +762,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -816,25 +847,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

@@ -42,6 +42,7 @@ This recipe is used as part of the following composite recipes:
 * [Apache Maven best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavenbestpractices)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
 * [Replace Spring Boot starter dependencies with Quarkus equivalents](/recipes/quarkus/spring/migratebootstarters.md)
 

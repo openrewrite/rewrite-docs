@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf**
 
-_The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations._
+_The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations. Note that this changes identity semantics: `valueOf` may return cached instances (such as `Boolean.TRUE` or `Integer` values in `[-128, 127]`), so code that compares boxed values with `==`/`!=`, relies on `System.identityHashCode`, or synchronizes on the boxed value may behave differently after this change._
 
 ### Tags
 

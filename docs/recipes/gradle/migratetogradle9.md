@@ -35,6 +35,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * addIfMissing: `false`
 * [Use `String` notation for Gradle dependency declarations](../gradle/dependencyusestringnotation)
 * [Use `mainClass` instead of `main` for `JavaExec` tasks](../gradle/gradle9/usemainclassproperty)
+* [Use `application \{ mainClass \}` instead of `mainClassName`](../gradle/gradle9/usemainclasspropertyforapplication)
+* [Move `sourceCompatibility` and `targetCompatibility` into the `java \{ \}` extension block](../gradle/gradle9/usejavaextensionblock)
+* [Replace spread-`all*` calls in `configurations` blocks with `configurations.all \{ \}`](../gradle/gradle9/rewritespreadallinconfigurationsblock)
+* [Use `version \{ \}` closure instead of `version = \{ \}` assignment](../gradle/gradle9/useversionclosure)
 
 </TabItem>
 
@@ -54,6 +58,10 @@ recipeList:
       addIfMissing: false
   - org.openrewrite.gradle.DependencyUseStringNotation
   - org.openrewrite.gradle.gradle9.UseMainClassProperty
+  - org.openrewrite.gradle.gradle9.UseMainClassPropertyForApplication
+  - org.openrewrite.gradle.gradle9.UseJavaExtensionBlock
+  - org.openrewrite.gradle.gradle9.RewriteSpreadAllInConfigurationsBlock
+  - org.openrewrite.gradle.gradle9.UseVersionClosure
 
 ```
 </TabItem>
@@ -206,6 +214,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -272,25 +299,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

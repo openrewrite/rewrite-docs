@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
+* [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
 * [Update the Micronaut version to 4.x](/recipes/java/micronaut/updatebuildtomicronaut4version.md)
 
 ## Example

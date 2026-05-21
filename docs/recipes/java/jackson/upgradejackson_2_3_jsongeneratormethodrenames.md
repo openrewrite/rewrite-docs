@@ -34,6 +34,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator getOutputContext()`
+  * newMethodName: `streamWriteContext`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator getOutputTarget()`
+  * newMethodName: `streamWriteOutputTarget`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator getOutputBuffered()`
+  * newMethodName: `streamWriteOutputBuffered`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonGenerator canOmitFields()`
+  * newMethodName: `canOmitProperties`
+* [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.core.JsonGenerator getCodec()`
   * newMethodName: `objectWriteContext`
 * [Change method name](../../java/changemethodname)
@@ -96,6 +108,18 @@ description: |
 tags:
   - jackson-3
 recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator getOutputContext()
+      newMethodName: streamWriteContext
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator getOutputTarget()
+      newMethodName: streamWriteOutputTarget
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator getOutputBuffered()
+      newMethodName: streamWriteOutputBuffered
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonGenerator canOmitFields()
+      newMethodName: canOmitProperties
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.core.JsonGenerator getCodec()
       newMethodName: objectWriteContext

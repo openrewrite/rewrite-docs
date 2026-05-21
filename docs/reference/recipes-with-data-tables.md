@@ -383,6 +383,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.search.EffectiveMavenRepositoriesTable**: *Table showing which Maven repositories were used in dependency resolution for this POM.*
 
 
+#### [org.openrewrite.gradle.search.FindDependency](/recipes/gradle/search/finddependency.md)
+  * **Find Gradle dependency**
+  * Finds dependencies declared in gradle build files. Each match is also recorded as a row in the `DependenciesDeclared` data table. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.  &lt;img alt=&quot;Gradle compile classpath&quot; src=&quot;https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-main.png&quot; width=&quot;200px&quot;/&gt; A project's test classpath is based on these configurations.  &lt;img alt=&quot;Gradle test classpath&quot; src=&quot;https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-test.png&quot; width=&quot;200px&quot;/&gt;.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.DependenciesDeclared**: *Direct (first-order) dependencies declared by the project.*
+
+
 #### [org.openrewrite.gradle.search.FindGradleWrapper](/recipes/gradle/search/findgradlewrapper.md)
   * **Find Gradle wrappers**
   * Find Gradle wrappers.
@@ -461,6 +470,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.java.search.FindDeprecatedMethods](/recipes/java/search/finddeprecatedmethods.md)
   * **Find uses of deprecated methods**
   * Find uses of deprecated methods in any API.
+
+##### Data tables:
+
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
+
+
+#### [org.openrewrite.java.search.FindDeprecatedUses](/recipes/java/search/finddeprecateduses.md)
+  * **Find uses of deprecated classes, methods, and fields**
+  * Find deprecated uses of methods, fields, and types. Optionally ignore those classes that are inside deprecated scopes.
 
 ##### Data tables:
 
@@ -620,6 +638,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.maven.ReproducibleBuilds](/recipes/maven/reproduciblebuilds.md)
+  * **Apache Maven reproducible builds**
+  * Configure a Maven project for [reproducible builds](https://maven.apache.org/guides/mini/guide-reproducible-builds.html): pin dependency and plugin versions, set `project.build.outputTimestamp`, set explicit UTF-8 source encoding, and upgrade core plugins to versions that honor the output timestamp.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.maven.UpgradeDependencyVersion](/recipes/maven/upgradedependencyversion.md)
   * **Upgrade Maven dependency version**
   * Upgrade the version of a dependency by specifying a group and (optionally) an artifact using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
@@ -691,6 +718,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.maven.search.EffectiveMavenRepositoriesTable**: *Table showing which Maven repositories were used in dependency resolution for this POM.*
+
+
+#### [org.openrewrite.maven.search.FindDependency](/recipes/maven/search/finddependency.md)
+  * **Find Maven dependency**
+  * Finds first-order dependency uses, i.e. dependencies that are defined directly in a project. Each match is also recorded as a row in the `DependenciesDeclared` data table.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.DependenciesDeclared**: *Direct (first-order) dependencies declared by the project.*
 
 
 #### [org.openrewrite.maven.search.FindMavenSettings](/recipes/maven/search/findmavensettings.md)
@@ -769,6 +805,8 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.table.CallGraph**: *Records method callers and the methods they invoke.*
+  * **org.openrewrite.table.FactoryEdges**: *Construction edges where the caller's declared return type is assignable from the constructed class (the caller semantically produces an instance of the target type).*
+  * **org.openrewrite.table.LowConfidenceFiles**: *Source files where call-graph construction skipped an edge because the underlying LST had a null type. Used as a confidence signal during test selection: any row for a file means that file's outbound edges may be undercounted.*
 
 
 #### [org.openrewrite.FindDuplicateSourceFiles](/recipes/core/findduplicatesourcefiles.md)
@@ -4078,9 +4116,27 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.micronaut.Micronaut4to5Migration](/recipes/java/micronaut/micronaut4to5migration.md)
+  * **Migrate from Micronaut 4.x to 5.x**
+  * This recipe will apply changes required for migrating from Micronaut 4 to Micronaut 5. Micronaut 5 raises the Java baseline to 25 and ships a number of artifact/plugin renames; see the [upstream migration guide](https://github.com/micronaut-projects/micronaut-core/wiki/Update-to-Micronaut-5) for the full list of breaking changes.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.micronaut.UpdateBuildPlugins](/recipes/java/micronaut/updatebuildplugins.md)
   * **Add Micronaut build plugins to 4.x**
   * This recipe will update the shadow jar plugin to 8.x and the Micronaut build plugins to 4.x for a Gradle build.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.micronaut.UpdateBuildPlugins5](/recipes/java/micronaut/updatebuildplugins5.md)
+  * **Update Micronaut Gradle build plugins to 5.x**
+  * This recipe will update the Micronaut Gradle build plugins to 5.x and migrate the Shadow plugin from `com.github.johnrengelman.shadow` to `com.gradleup.shadow` 9.x.
 
 ##### Data tables:
 
@@ -4416,7 +4472,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.java.migrate.search.FindJavaVersion](/recipes/java/migrate/search/findjavaversion.md)
   * **Find Java versions in use**
-  * Finds Java versions in use.
+  * Finds Java versions in use, emitting one row per git repository (the lowest source/target compatibility across modules in that repository).
 
 ##### Data tables:
 
@@ -4450,6 +4506,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.prethink.UpdateAgentConfig](/recipes/prethink/updateagentconfig.md)
   * **Update agent configuration files**
   * Update coding agent configuration files (CLAUDE.md, .cursorrules, etc.) to include references to Moderne Prethink context files in .moderne/context/.
+
+##### Data tables:
+
+  * **org.openrewrite.prethink.table.ContextRegistry**: *Registry of available context files for coding agents.*
+
+
+#### [org.openrewrite.prethink.UpdatePrethinkContext](/recipes/prethink/updateprethinkcontext.md)
+  * **Update Prethink context**
+  * Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
 
 ##### Data tables:
 
@@ -4617,6 +4682,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot2.search.FindUpgradeRequirementsSpringBoot_2_5](/recipes/java/spring/boot2/search/findupgraderequirementsspringboot_2_5.md)
+  * **Find patterns that require updating for Spring Boot 2.5**
+  * Looks for a series of patterns that have not yet had auto-remediation recipes developed for.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.DependenciesDeclared**: *Direct (first-order) dependencies declared by the project.*
+
+
+#### [org.openrewrite.java.spring.boot2.search.MessagesInTheDefaultErrorView](/recipes/java/spring/boot2/search/messagesinthedefaulterrorview.md)
+  * **Find projects affected by changes to the default error view message attribute**
+  * As of Spring Boot 2.5 the `message` attribute in the default error view was removed rather than blanked when it is not shown. `spring-webmvc` or `spring-webflux` projects that parse the error response JSON may need to deal with the missing item ([release notes](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.5-Release-Notes#messages-in-the-default-error-view)). You can still use the `server.error.include-message` property if you want messages to be included.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.DependenciesDeclared**: *Direct (first-order) dependencies declared by the project.*
 
 
 #### [org.openrewrite.java.spring.boot3.SpringBoot33BestPractices](/recipes/java/spring/boot3/springboot33bestpractices.md)
@@ -4888,6 +4971,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ##### Data tables:
 
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
@@ -4897,6 +4981,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ##### Data tables:
 
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
@@ -4909,12 +4994,22 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [com.oracle.weblogic.rewrite.ReportDeprecated](/recipes/com/oracle/weblogic/rewrite/reportdeprecated.md)
+  * **Report uses of Java types deprecated or removed in WebLogic**
+  * This recipe will report uses of Java types that have been deprecated or removed in WebLogic.
+
+##### Data tables:
+
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
+
+
 #### [com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1412](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1412.md)
   * **Report types deprecated or removed in WebLogic version 14.1.2**
   * This recipe will report Java types that have been deprecated or removed in WebLogic version 14.1.2.
 
 ##### Data tables:
 
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
@@ -4924,6 +5019,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ##### Data tables:
 
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
@@ -4961,6 +5057,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
@@ -4971,6 +5068,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
@@ -5470,8 +5568,8 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.18.0**
-  * Migrates Apache Camel application to 4.18.0.
+  * **Migrate to 4.20.0**
+  * Migrates Apache Camel application to 4.20.0.
 
 ##### Data tables:
 
@@ -5517,6 +5615,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.apache.camel.upgrade.camel413.furyDependency](/recipes/org/apache/camel/upgrade/camel413/furydependency.md)
   * **Change Maven dependency example**
   * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel419.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
+  * **Migrates `camel 4.18` application to `camel 4.19`**
+  * Migrates `camel 4.18` application to `camel 4.19`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel419.migrateGroovyXml](/recipes/org/apache/camel/upgrade/camel419/migrategroovyxml.md)
+  * **Migrate camel-groovy-xml to camel-groovy**
+  * camel-groovy-xml has been removed and moved into camel-groovy. Changes the dependency from camel-groovy-xml to camel-groovy.
 
 ##### Data tables:
 

@@ -247,6 +247,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Lint UI5 projects with UI5 linter**
   * Runs the [UI5 Linter](https://github.com/SAP/ui5-linter), a static code analysis tool for UI5 projects. It checks JavaScript, TypeScript, XML, JSON, and other files in your project and reports findings.
 
+### rewrite-github-actions
+
+* [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
+  * **Pin GitHub Actions to commit SHAs**
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
+
 ### rewrite-jackson
 
 * [org.openrewrite.java.jackson.LombokJacksonizedConfig](/recipes/java/jackson/lombokjacksonizedconfig.md)
@@ -348,6 +354,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.migrate.javax.RemoveEmbeddableId](/recipes/java/migrate/javax/removeembeddableid.md)
   * **`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation**
   * According to the Java Persistence API (JPA) specification, if an entity defines an attribute with an `@EmbeddedId` annotation, the embeddable class cannot contain an attribute with an `@Id` annotation. If both the `@EmbeddedId` annotation and the `@Id` annotation are defined, OpenJPA ignores the `@Id` annotation, whereas EclipseLink throws an exception.
+* [org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain](/recipes/java/migrate/lang/migratemainmethodtoinstancemain.md)
+  * **Migrate `public static void main(String[] args)` to instance `void main()`**
+  * Migrate `public static void main(String[] args)` method to instance `void main()` method when the `args` parameter is unused, as supported by JEP 512 in Java 25+.
 * [org.openrewrite.java.migrate.lombok.AdoptLombokGetterMethodNames](/recipes/java/migrate/lombok/adoptlombokgettermethodnames.md)
   * **Rename getter methods to fit Lombok**
   * Rename methods that are effectively getter to the name Lombok would give them.  Limitations:  - If two methods in a class are effectively the same getter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() \{ return ba; \} int getBa() \{ return foo; \}` stays as it is.
@@ -357,6 +366,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.migrate.lombok.LombokValueToRecord](/recipes/java/migrate/lombok/lombokvaluetorecord.md)
   * **Convert `@lombok.Value` class to Record**
   * Convert Lombok `@Value` annotated classes to standard Java Records.
+* [org.openrewrite.java.migrate.search.FindJavaVersion](/recipes/java/migrate/search/findjavaversion.md)
+  * **Find Java versions in use**
+  * Finds Java versions in use, emitting one row per git repository (the lowest source/target compatibility across modules in that repository).
 * [org.openrewrite.java.migrate.search.ModuleHasKotlinSource](/recipes/java/migrate/search/modulehaskotlinsource.md)
   * **Module has Kotlin source files**
   * Marks all files in modules that contain at least one Kotlin source file (`.kt`). Intended as a precondition to scope recipes to projects that actually compile Kotlin, as opposed to projects that merely pick up `kotlin-stdlib` transitively.
@@ -408,6 +420,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.spring.UpdateApiManifest](/recipes/java/spring/updateapimanifest.md)
   * **Update the API manifest**
   * Keep a consolidated manifest of the API endpoints that this application exposes up-to-date.
+* [org.openrewrite.java.spring.boot2.AddConfigurationAnnotationIfBeansPresent](/recipes/java/spring/boot2/addconfigurationannotationifbeanspresent.md)
+  * **Add missing `@Configuration` annotation**
+  * Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added. Classes referenced as scoped configuration via `.class` (e.g. `@FeignClient(configuration = X.class)`) are skipped to preserve their intended per-client scope.
 * [org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md)
   * **Merge Spring `bootstrap.yml` with `application.yml`**
   * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency.
@@ -432,6 +447,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean](/recipes/java/spring/doc/migratedocketbeantogroupedopenapibean.md)
   * **Migrate `Docket` to `GroupedOpenAPI`**
   * Migrate a `Docket` bean to a `GroupedOpenAPI` bean preserving group name, packages and paths. When possible the recipe will prefer property based configuration.
+* [org.openrewrite.java.spring.doc.MigrateSpringFoxSecurityConfiguration](/recipes/java/spring/doc/migratespringfoxsecurityconfiguration.md)
+  * **Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties**
+  * Replace `@Bean` methods that return `springfox.documentation.swagger.web.SecurityConfiguration` with the equivalent `springdoc.swagger-ui.*` configuration properties. Only literal builder arguments are migrated; beans with non-literal arguments or unsupported builder methods (`apiKey`, `apiKeyName`, `apiKeyVehicle`, `additionalQueryStringParams`) are left untouched for manual review. If no Spring application configuration file exists, the bean is left in place to avoid silently dropping configuration.
 * [org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies](/recipes/maven/spring/upgradeexplicitspringbootdependencies.md)
   * **Upgrade Spring dependencies**
   * Upgrades dependencies according to the specified version of spring boot. Spring boot has many direct and transitive dependencies. When a module has an explicit dependency on one of these it may also need to be upgraded to match the version used by spring boot.

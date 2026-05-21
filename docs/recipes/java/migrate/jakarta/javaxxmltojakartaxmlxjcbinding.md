@@ -52,7 +52,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * elementName: `//*[namespace-uri() = 'https://jakarta.ee/xml/ns/jaxb' and local-name() = 'bindings']`
   * attributeName: `version`
   * newValue: `3.0`
-  * oldValue: `1.0`
+  * oldValue: `1\.0|2\.[0-2]`
+  * regex: `true`
 
 </TabItem>
 
@@ -83,7 +84,8 @@ recipeList:
       elementName: //*[namespace-uri() = 'https://jakarta.ee/xml/ns/jaxb' and local-name() = 'bindings']
       attributeName: version
       newValue: 3.0
-      oldValue: 1.0
+      oldValue: 1\.0|2\.[0-2]
+      regex: true
 
 ```
 </TabItem>

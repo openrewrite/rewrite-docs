@@ -27,6 +27,54 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.MockBeans;
+
+@MockBeans({@MockBean(Foo.class), @MockBean(Bar.class)})
+class SomeTest {
+}
+class Foo {}
+class Bar {}
+```
+
+###### After
+```java
+import org.springframework.boot.test.mock.mockito.MockBean;
+
+@MockBean(types = {Foo.class, Bar.class})
+class SomeTest {
+}
+class Foo {}
+class Bar {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import org.springframework.boot.test.mock.mockito.MockBean;
+-import org.springframework.boot.test.mock.mockito.MockBeans;
+
+@@ -4,1 +3,1 @@
+import org.springframework.boot.test.mock.mockito.MockBeans;
+
+-@MockBeans({@MockBean(Foo.class), @MockBean(Bar.class)})
++@MockBean(types = {Foo.class, Bar.class})
+class SomeTest {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

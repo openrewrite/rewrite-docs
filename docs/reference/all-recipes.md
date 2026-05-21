@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc contains all recipes grouped by their module._
 
-Total recipes: 4336
+Total recipes: 4364
 
 
 ## org.openrewrite
@@ -199,7 +199,7 @@ _18 recipes_
 
 _License: Apache License Version 2.0_
 
-_69 recipes_
+_73 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -324,9 +324,21 @@ _69 recipes_
 * [org.openrewrite.gradle.gradle8.JacocoReportDeprecations](/recipes/gradle/gradle8/jacocoreportdeprecations.md)
   * **Replace Gradle 8 introduced deprecations in JaCoCo report task**
   * Set the `enabled` to `required` and the `destination` to `outputLocation` for Reports deprecations that were removed in gradle 8. See [the gradle docs on this topic](https://docs.gradle.org/current/userguide/upgrading_version_7.html#report_and_testreport_api_cleanup).
+* [org.openrewrite.gradle.gradle9.RewriteSpreadAllInConfigurationsBlock](/recipes/gradle/gradle9/rewritespreadallinconfigurationsblock.md)
+  * **Replace spread-`all*` calls in `configurations` blocks with `configurations.all \{ \}`**
+  * Gradle 9 throws `Cannot mutate the dependencies of configuration ':all' after the configuration was resolved.` when a `configurations \{ \}` closure uses Groovy's spread-dot form `all*.&lt;method&gt;(args)`. Rewrite each such call to the closure form `configurations.all \{ &lt;method&gt;(args) \}`, which preserves eager-`all` semantics but is accepted by Gradle 9. Only applied when every statement in the `configurations \{ \}` block uses the spread form; mixed blocks are left untouched for manual review.
+* [org.openrewrite.gradle.gradle9.UseJavaExtensionBlock](/recipes/gradle/gradle9/usejavaextensionblock.md)
+  * **Move `sourceCompatibility` and `targetCompatibility` into the `java \{ \}` extension block**
+  * Gradle 9 removed the `JavaPluginConvention` (deprecated in 8.2). Top-level `sourceCompatibility` and `targetCompatibility` assignments in a Groovy build script previously delegated to that convention object and stop working in Gradle 9. Move them into the `java \{ \}` extension block, normalizing values to `JavaVersion.VERSION_&lt;n&gt;` and adding the missing counterpart so both properties are set explicitly. See the [Gradle upgrade guide](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
 * [org.openrewrite.gradle.gradle9.UseMainClassProperty](/recipes/gradle/gradle9/usemainclassproperty.md)
   * **Use `mainClass` instead of `main` for `JavaExec` tasks**
   * The `main` property on `JavaExec` tasks was deprecated in Gradle 7.1 and removed in Gradle 9.0. Use the `mainClass` property instead. See the [Gradle upgrade guide](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
+* [org.openrewrite.gradle.gradle9.UseMainClassPropertyForApplication](/recipes/gradle/gradle9/usemainclasspropertyforapplication.md)
+  * **Use `application \{ mainClass \}` instead of `mainClassName`**
+  * The `mainClassName` property on the `application` extension was deprecated in Gradle 6.4 and removed in Gradle 9.0. Use `application \{ mainClass = ... \}` instead. Top-level `mainClassName` assignments are wrapped in an `application` block. See the [Gradle upgrade guide](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
+* [org.openrewrite.gradle.gradle9.UseVersionClosure](/recipes/gradle/gradle9/useversionclosure.md)
+  * **Use `version \{ \}` closure instead of `version = \{ \}` assignment**
+  * Converts `version = \{ ... \}` assignment syntax to `version \{ ... \}` closure call syntax in Gradle dependency declarations. The assignment form is not valid Gradle DSL; the closure form invokes the version spec method directly.
 * [org.openrewrite.gradle.plugins.AddBuildPlugin](/recipes/gradle/plugins/addbuildplugin.md)
   * **Add Gradle plugin**
   * Add a build plugin to a Gradle build file's `plugins` block.
@@ -377,7 +389,7 @@ _69 recipes_
   * Lists the Gradle project repositories that would be used for dependency resolution, in order of precedence. This includes Maven repositories defined in the Gradle build files and settings as determined when the LST was produced.
 * [org.openrewrite.gradle.search.FindDependency](/recipes/gradle/search/finddependency.md)
   * **Find Gradle dependency**
-  * Finds dependencies declared in gradle build files. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.  &lt;img alt=&quot;Gradle compile classpath&quot; src=&quot;https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-main.png&quot; width=&quot;200px&quot;/&gt; A project's test classpath is based on these configurations.  &lt;img alt=&quot;Gradle test classpath&quot; src=&quot;https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-test.png&quot; width=&quot;200px&quot;/&gt;.
+  * Finds dependencies declared in gradle build files. Each match is also recorded as a row in the `DependenciesDeclared` data table. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.  &lt;img alt=&quot;Gradle compile classpath&quot; src=&quot;https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-main.png&quot; width=&quot;200px&quot;/&gt; A project's test classpath is based on these configurations.  &lt;img alt=&quot;Gradle test classpath&quot; src=&quot;https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-test.png&quot; width=&quot;200px&quot;/&gt;.
 * [org.openrewrite.gradle.search.FindDependencyHandler](/recipes/gradle/search/finddependencyhandler.md)
   * **Find Gradle `dependencies` blocks**
   * Find the dependency handler containing any number of dependency definitions.
@@ -917,7 +929,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_88 recipes_
+_90 recipes_
 
 * [org.openrewrite.maven.AddAnnotationProcessor](/recipes/maven/addannotationprocessor.md)
   * **Add an annotation processor to `maven-compiler-plugin`**
@@ -1075,6 +1087,9 @@ _88 recipes_
 * [org.openrewrite.maven.ReplaceRemovedRootDirectoryProperties](/recipes/maven/replaceremovedrootdirectoryproperties.md)
   * **Replace removed root directory properties**
   * Maven 4 removed support for deprecated root directory properties. This recipe replaces `$\{executionRootDirectory\}` with `$\{session.rootDirectory\}` and `$\{multiModuleProjectDirectory\}` with `$\{project.rootDirectory\}`.
+* [org.openrewrite.maven.ReproducibleBuilds](/recipes/maven/reproduciblebuilds.md)
+  * **Apache Maven reproducible builds**
+  * Configure a Maven project for [reproducible builds](https://maven.apache.org/guides/mini/guide-reproducible-builds.html): pin dependency and plugin versions, set `project.build.outputTimestamp`, set explicit UTF-8 source encoding, and upgrade core plugins to versions that honor the output timestamp.
 * [org.openrewrite.maven.SortDependencies](/recipes/maven/sortdependencies.md)
   * **Sort dependencies**
   * Sort dependencies alphabetically by groupId then artifactId. Test-scoped dependencies are sorted after non-test dependencies. Applies to both `&lt;dependencies&gt;` and `&lt;dependencyManagement&gt;` sections.
@@ -1108,6 +1123,9 @@ _88 recipes_
 * [org.openrewrite.maven.UseParentInference](/recipes/maven/useparentinference.md)
   * **Use Maven 4 parent inference**
   * Maven 4.1.0 supports automatic parent version inference when using a relative path. This recipe simplifies parent declarations by using the shorthand `&lt;parent/&gt;` form when the parent is in the default location (`..`), removing the explicit `&lt;relativePath&gt;`, `&lt;groupId&gt;`, `&lt;artifactId&gt;`, and `&lt;version&gt;` elements. Maven automatically infers these values from the parent POM.
+* [org.openrewrite.maven.cleanup.AddProjectBuildOutputTimestamp](/recipes/maven/cleanup/addprojectbuildoutputtimestamp.md)
+  * **Add `project.build.outputTimestamp` for reproducible builds**
+  * Adds the `project.build.outputTimestamp` property, which Maven uses to make build outputs reproducible by stamping archive entries with a fixed timestamp instead of the current time. An existing value is preserved. See [Configuring for Reproducible Builds](https://maven.apache.org/guides/mini/guide-reproducible-builds.html).
 * [org.openrewrite.maven.cleanup.DependencyManagementDependencyRequiresVersion](/recipes/maven/cleanup/dependencymanagementdependencyrequiresversion.md)
   * **Dependency management dependencies should have a version**
   * If they don't have a version, they can't possibly affect dependency resolution anywhere, and can be safely removed.
@@ -1146,7 +1164,7 @@ _88 recipes_
   * Lists the Maven repositories that would be used for dependency resolution, in order of precedence. This includes Maven repositories defined in the Maven settings file (and those contributed by active profiles) as determined when the LST was produced.
 * [org.openrewrite.maven.search.FindDependency](/recipes/maven/search/finddependency.md)
   * **Find Maven dependency**
-  * Finds first-order dependency uses, i.e. dependencies that are defined directly in a project.
+  * Finds first-order dependency uses, i.e. dependencies that are defined directly in a project. Each match is also recorded as a row in the `DependenciesDeclared` data table.
 * [org.openrewrite.maven.search.FindManagedDependency](/recipes/maven/search/findmanageddependency.md)
   * **Find Maven dependency management entry**
   * Finds first-order dependency management entries, i.e. dependencies that are defined directly in a project.
@@ -1449,7 +1467,7 @@ _3 recipes_
 
 _License: Moderne Source Available License_
 
-_116 recipes_
+_118 recipes_
 
 * [org.openrewrite.apache.commons.PreferJavaStandardLibrary](/recipes/apache/commons/preferjavastandardlibrary.md)
   * **Prefer the Java standard library instead of Apache Commons**
@@ -1607,9 +1625,15 @@ _116 recipes_
 * [org.openrewrite.apache.httpclient5.InputBufferReadAddOffsetAndLengthArguments](/recipes/apache/httpclient5/inputbufferreadaddoffsetandlengtharguments.md)
   * **Adds offset and length arguments to the read method of SharedInputBuffer**
   * In Apache Http Client 5.x migration, the shortened form of the `read(byte[])` has been removed.
+* [org.openrewrite.apache.httpclient5.MigrateAuthSchemeCredentials](/recipes/apache/httpclient5/migrateauthschemecredentials.md)
+  * **Migrate `AuthScheme` credential handling**
+  * Rewrites `AuthExchange#update(BasicScheme, Credentials)` to `BasicScheme#initPreemptive(Credentials)` followed by `AuthExchange#select(AuthScheme)`. Unwraps leftover `AuthOption#getAuthScheme()` calls (now on `AuthScheme` after the type rename) to the receiver itself. Other `update`/`setCredentials`/`getCredentials` call sites are flagged separately by `AddCommentToMethodInvocations`.
 * [org.openrewrite.apache.httpclient5.MigrateAuthScope](/recipes/apache/httpclient5/migrateauthscope.md)
   * **Replaces `AuthScope.ANY`**
   * Replace removed constant `org.apache.http.auth.AuthScope.AuthScope.ANY` with `new org.apache.hc.client5.http.auth.AuthScope(null, -1)`.
+* [org.openrewrite.apache.httpclient5.MigrateAuthState](/recipes/apache/httpclient5/migrateauthstate.md)
+  * **Migrate `AuthState` to `AuthExchange`**
+  * Migrate Apache HttpClient 4.x `AuthState` and related types to the HttpClient 5.x `AuthExchange` API, including the `AuthProtocolState` enum, `AuthOption` queue elements, and credential-handling call sites.
 * [org.openrewrite.apache.httpclient5.MigratePoolingNHttpClientConnectionManager](/recipes/apache/httpclient5/migratepoolingnhttpclientconnectionmanager.md)
   * **Migrate `PoolingNHttpClientConnectionManager` to `PoolingAsyncClientConnectionManager`**
   * Migrates `PoolingNHttpClientConnectionManager` from Apache HttpAsyncClient 4.x to `PoolingAsyncClientConnectionManager` in HttpClient 5.x using the builder pattern.
@@ -3298,7 +3322,7 @@ _27 recipes_
 
 _License: Moderne Source Available License_
 
-_53 recipes_
+_54 recipes_
 
 * [org.openrewrite.github.AddCronTrigger](/recipes/github/addcrontrigger.md)
   * **Add cron workflow trigger**
@@ -3435,6 +3459,9 @@ _53 recipes_
 * [org.openrewrite.github.security.Obfuscation](/recipes/github/security/obfuscation.md)
   * **Find obfuscated GitHub Actions features**
   * Find workflows that use obfuscated action references or expressions that may be attempting to hide malicious behavior. This includes action paths with `'.'`, `'..'`, empty components, or expressions that use quote manipulation to hide their true intent. Based on [zizmor's `obfuscation` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/obfuscation.rs).
+* [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
+  * **Pin GitHub Actions to commit SHAs**
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
 * [org.openrewrite.github.security.RefVersionMismatch](/recipes/github/security/refversionmismatch.md)
   * **Find commit SHAs with potentially mismatched version comments**
   * Find GitHub Actions that are pinned to commit SHAs but have version comments that may not match the actual pinned version. This can lead to confusion about which version is actually being used and potential security issues if the comment misleads developers about the pinned version. Based on [zizmor's `ref-version-mismatch` audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/ref_version_mismatch.rs).
@@ -4346,7 +4373,7 @@ _7 recipes_
 
 _License: Apache License Version 2.0_
 
-_37 recipes_
+_39 recipes_
 
 * [org.openrewrite.java.micronaut.AddAnnotationProcessorPath](/recipes/java/micronaut/addannotationprocessorpath.md)
   * **Add Maven annotation processor path**
@@ -4390,6 +4417,9 @@ _37 recipes_
 * [org.openrewrite.java.micronaut.Micronaut3to4Migration](/recipes/java/micronaut/micronaut3to4migration.md)
   * **Migrate from Micronaut 3.x to 4.x**
   * This recipe will apply changes required for migrating from Micronaut 3 to Micronaut 4.
+* [org.openrewrite.java.micronaut.Micronaut4to5Migration](/recipes/java/micronaut/micronaut4to5migration.md)
+  * **Migrate from Micronaut 4.x to 5.x**
+  * This recipe will apply changes required for migrating from Micronaut 4 to Micronaut 5. Micronaut 5 raises the Java baseline to 25 and ships a number of artifact/plugin renames; see the [upstream migration guide](https://github.com/micronaut-projects/micronaut-core/wiki/Update-to-Micronaut-5) for the full list of breaking changes.
 * [org.openrewrite.java.micronaut.OncePerRequestHttpServerFilterToHttpServerFilter](/recipes/java/micronaut/onceperrequesthttpserverfiltertohttpserverfilter.md)
   * **Convert `OncePerRequestServerFilter` extensions to `HttpServerFilter`**
   * Starting in Micronaut 3.0 all filters are executed once per request. Directly implement `HttpServerFilter` instead of extending `OncePerRequestHttpServerFilter` and replace any usages of `micronaut.once` attributes with a custom attribute name.
@@ -4420,6 +4450,9 @@ _37 recipes_
 * [org.openrewrite.java.micronaut.UpdateBuildPlugins](/recipes/java/micronaut/updatebuildplugins.md)
   * **Add Micronaut build plugins to 4.x**
   * This recipe will update the shadow jar plugin to 8.x and the Micronaut build plugins to 4.x for a Gradle build.
+* [org.openrewrite.java.micronaut.UpdateBuildPlugins5](/recipes/java/micronaut/updatebuildplugins5.md)
+  * **Update Micronaut Gradle build plugins to 5.x**
+  * This recipe will update the Micronaut Gradle build plugins to 5.x and migrate the Shadow plugin from `com.github.johnrengelman.shadow` to `com.gradleup.shadow` 9.x.
 * [org.openrewrite.java.micronaut.UpdateBuildToMicronaut4Version](/recipes/java/micronaut/updatebuildtomicronaut4version.md)
   * **Update the Micronaut version to 4.x**
   * This recipe will update the Micronaut version to 4.x for a Gradle or Maven build.
@@ -5740,7 +5773,7 @@ _458 recipes_
   * The libraries that define these APIs will have to be migrated before any of the repositories that use them.
 * [org.openrewrite.java.migrate.search.FindJavaVersion](/recipes/java/migrate/search/findjavaversion.md)
   * **Find Java versions in use**
-  * Finds Java versions in use.
+  * Finds Java versions in use, emitting one row per git repository (the lowest source/target compatibility across modules in that repository).
 * [org.openrewrite.java.migrate.search.FindLocaleDateTimeFormats](/recipes/java/migrate/search/findlocaledatetimeformats.md)
   * **Find locale-sensitive date/time formatting**
   * Finds usages of locale-based date/time formatting APIs that may be affected by JDK 20+ CLDR locale data changes, where the space before AM/PM was changed from a regular space to a narrow no-break space (NNBSP).
@@ -5776,13 +5809,13 @@ _458 recipes_
   * Prefer `Set.of()` instead of using `Collections.emptySet()` in Java 9 or higher.
 * [org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList](/recipes/java/migrate/util/migratecollectionssingletonlist.md)
   * **Prefer `List.of(..)`**
-  * Prefer `List.of(..)` instead of using `Collections.singletonList()` in Java 9 or higher.
+  * Prefer `List.of(..)` instead of using `Collections.singletonList()` in Java 9 or higher. Note that the resulting `List` is not behaviorally equivalent: `List.of(..)` throws `NullPointerException` when probed with `contains(null)`, `indexOf(null)`, or `lastIndexOf(null)`, whereas `Collections.singletonList(..)` returns `false`/`-1`.
 * [org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap](/recipes/java/migrate/util/migratecollectionssingletonmap.md)
   * **Prefer `Map.of(..)`**
-  * Prefer `Map.of(..)` instead of using `Collections.singletonMap()` in Java 9 or higher.
+  * Prefer `Map.of(..)` instead of using `Collections.singletonMap()` in Java 9 or higher. Note that the resulting `Map` is not behaviorally equivalent: `Map.of(..)` throws `NullPointerException` when probed with `containsKey(null)`, `containsValue(null)`, or `get(null)`, whereas `Collections.singletonMap(..)` returns `false`/`null`.
 * [org.openrewrite.java.migrate.util.MigrateCollectionsSingletonSet](/recipes/java/migrate/util/migratecollectionssingletonset.md)
   * **Prefer `Set.of(..)`**
-  * Prefer `Set.Of(..)` instead of using `Collections.singleton()` in Java 9 or higher.
+  * Prefer `Set.of(..)` instead of using `Collections.singleton()` in Java 9 or higher. Note that the resulting `Set` is not behaviorally equivalent: `Set.of(..)` throws `NullPointerException` when probed with `contains(null)`, whereas `Collections.singleton(..)` returns `false`.
 * [org.openrewrite.java.migrate.util.MigrateCollectionsUnmodifiableList](/recipes/java/migrate/util/migratecollectionsunmodifiablelist.md)
   * **Prefer `List.of(..)`**
   * Prefer `List.Of(..)` instead of using `unmodifiableList(java.util.Arrays asList(&lt;args&gt;))` in Java 9 or higher.
@@ -6205,7 +6238,7 @@ _41 recipes_
 
 _License: Moderne Source Available License_
 
-_316 recipes_
+_318 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -6249,6 +6282,9 @@ _316 recipes_
 * [org.openrewrite.java.spring.ImplicitWebAnnotationNames](/recipes/java/spring/implicitwebannotationnames.md)
   * **Remove implicit web annotation names**
   * Removes implicit web annotation names.
+* [org.openrewrite.java.spring.MarkAdditionalSpringConfigFiles](/recipes/java/spring/markadditionalspringconfigfiles.md)
+  * **Mark additional files as Spring configuration**
+  * Attach a `SpringConfigFile` marker to YAML/properties files matching the provided glob patterns so that Spring property recipes such as `ChangeSpringPropertyKey`, `DeleteSpringProperty`, `ChangeSpringPropertyValue`, and `CommentOutSpringPropertyKey` will visit files that live outside standard resource source sets. Files that already pass the `SourceSet`-based check are skipped to avoid redundant markers.
 * [org.openrewrite.java.spring.NoAutowiredOnConstructor](/recipes/java/spring/noautowiredonconstructor.md)
   * **Remove the `@Autowired` annotation on inferred constructor**
   * Spring can infer an autowired constructor when there is a single constructor on the bean. This recipe removes unneeded `@Autowired` annotations on constructors.
@@ -6332,7 +6368,7 @@ _316 recipes_
   * The `skipCount` parameter in `org.springframework.batch.core.step.skip.SkipPolicy#shouldSkip` has been changed from `int` to `long`, this recipe updates the parameter type in the implementing classes.
 * [org.openrewrite.java.spring.boot2.AddConfigurationAnnotationIfBeansPresent](/recipes/java/spring/boot2/addconfigurationannotationifbeanspresent.md)
   * **Add missing `@Configuration` annotation**
-  * Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added.
+  * Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added. Classes referenced as scoped configuration via `.class` (e.g. `@FeignClient(configuration = X.class)`) are skipped to preserve their intended per-client scope.
 * [org.openrewrite.java.spring.boot2.AddSpringBootStarterValidation](/recipes/java/spring/boot2/addspringbootstartervalidation.md)
   * **Add `spring-boot-starter-validation` if needed**
   * Add `spring-boot-starter-validation` when validation constraints are used, unless the project already declares an explicit validation API dependency.
@@ -6831,6 +6867,9 @@ _316 recipes_
 * [org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean](/recipes/java/spring/doc/migratedocketbeantogroupedopenapibean.md)
   * **Migrate `Docket` to `GroupedOpenAPI`**
   * Migrate a `Docket` bean to a `GroupedOpenAPI` bean preserving group name, packages and paths. When possible the recipe will prefer property based configuration.
+* [org.openrewrite.java.spring.doc.MigrateSpringFoxSecurityConfiguration](/recipes/java/spring/doc/migratespringfoxsecurityconfiguration.md)
+  * **Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties**
+  * Replace `@Bean` methods that return `springfox.documentation.swagger.web.SecurityConfiguration` with the equivalent `springdoc.swagger-ui.*` configuration properties. Only literal builder arguments are migrated; beans with non-literal arguments or unsupported builder methods (`apiKey`, `apiKeyName`, `apiKeyVehicle`, `additionalQueryStringParams`) are left untouched for manual review. If no Spring application configuration file exists, the bean is left in place to avoid silently dropping configuration.
 * [org.openrewrite.java.spring.doc.RemoveBeanValidatorPluginsConfiguration](/recipes/java/spring/doc/removebeanvalidatorpluginsconfiguration.md)
   * **Removes @Import(BeanValidatorPluginsConfiguration.class)**
   * As Springdoc OpenAPI supports Bean Validation out of the box, the BeanValidatorPluginsConfiguration is no longer supported nor needed. Thus remove @Import(BeanValidatorPluginsConfiguration.class).
@@ -7627,7 +7666,7 @@ _181 recipes_
   * Replaces `System.getenv(&quot;HOME&quot;)` with `System.getProperty(&quot;user.home&quot;)` for better portability.
 * [org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf](/recipes/staticanalysis/primitivewrapperclassconstructortovalueof.md)
   * **Use primitive wrapper `valueOf` method**
-  * The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations.
+  * The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations. Note that this changes identity semantics: `valueOf` may return cached instances (such as `Boolean.TRUE` or `Integer` values in `[-128, 127]`), so code that compares boxed values with `==`/`!=`, relies on `System.identityHashCode`, or synchronizes on the boxed value may behave differently after this change.
 * [org.openrewrite.staticanalysis.RedundantFileCreation](/recipes/staticanalysis/redundantfilecreation.md)
   * **Redundant file creation**
   * Remove unnecessary intermediate creations of files.
@@ -7918,7 +7957,7 @@ _181 recipes_
 
 _License: Moderne Source Available License_
 
-_249 recipes_
+_251 recipes_
 
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
@@ -8456,7 +8495,7 @@ _249 recipes_
   * Upgrades JUnit 5 to 5.14.x and migrates all deprecated APIs.
 * [org.openrewrite.java.testing.junit5.UseAssertSame](/recipes/java/testing/junit5/useassertsame.md)
   * **Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`**
-  * Prefers the usage of `assertSame` or `assertNotSame` methods instead of using of vanilla `assertTrue` or `assertFalse` with a boolean comparison.
+  * Prefers the usage of `assertSame` or `assertNotSame` methods instead of using of vanilla `assertTrue` or `assertFalse` with a boolean comparison. Only applies when both operands are reference types — primitive operands are handled by `AssertTrueComparisonToAssertEquals`.
 * [org.openrewrite.java.testing.junit5.UseHamcrestAssertThat](/recipes/java/testing/junit5/usehamcrestassertthat.md)
   * **Use `MatcherAssert#assertThat(..)`**
   * JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter.
@@ -8478,6 +8517,9 @@ _249 recipes_
 * [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
   * **JUnit 6 migration from JUnit 5.x**
   * Migrates JUnit 5.x tests to JUnit 6.x.
+* [org.openrewrite.java.testing.junit6.MigrateJUnitPioneerToJupiter](/recipes/java/testing/junit6/migratejunitpioneertojupiter.md)
+  * **Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents**
+  * Migrates `@DefaultLocale`, `@DefaultTimeZone`, `@SetSystemProperty`, `@ClearSystemProperty`, `@RestoreSystemProperties` (and their `@Reads.../@Writes...` companions) from JUnit Pioneer to the native equivalents added in JUnit Jupiter 6.1. The `junit-pioneer` dependency is not removed since other Pioneer features (e.g. `@RetryingTest`, `@CartesianTest`) have no Jupiter equivalent.
 * [org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric](/recipes/java/testing/junit6/migratemethodordereralphanumeric.md)
   * **Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`**
   * JUnit 6 removed the `MethodOrderer.Alphanumeric` class. This recipe migrates usages to `MethodOrderer.MethodName` which provides similar functionality.
@@ -8487,6 +8529,9 @@ _249 recipes_
 * [org.openrewrite.java.testing.junit6.RemoveInterceptDynamicTest](/recipes/java/testing/junit6/removeinterceptdynamictest.md)
   * **Remove `InvocationInterceptor.interceptDynamicTest`**
   * JUnit 6 removed the `interceptDynamicTest(Invocation, ExtensionContext)` method from `InvocationInterceptor`. This recipe removes implementations of this deprecated method.
+* [org.openrewrite.java.testing.junit6.RemoveJreOther](/recipes/java/testing/junit6/removejreother.md)
+  * **Remove deprecated `JRE.OTHER` from `@EnabledOnJre`/`@DisabledOnJre` arrays**
+  * JUnit 6.1 deprecated `JRE.OTHER` in favor of `int`/`int[]` annotation attributes. This recipe removes `JRE.OTHER` entries from `@EnabledOnJre` and `@DisabledOnJre` array values when other JRE constants remain. Lone `JRE.OTHER` usages are left untouched because they have no mechanical replacement; review them manually.
 * [org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed](/recipes/java/testing/mockito/addmockitoextensionifannotationsused.md)
   * **Adds Mockito extensions to Mockito tests**
   * Adds `@ExtendWith(MockitoExtension.class)` to JUnit 5 tests or `@RunWith(MockitoJUnitRunner.class)` to JUnit 4 tests using Mockito annotations like `@Mock` or `@Captor`.
@@ -8567,7 +8612,7 @@ _249 recipes_
   * Remove unnecessary `doNothing()` stubbings for void methods on `@Mock` fields. Mockito mocks already do nothing for void methods by default, making these stubbings redundant and triggering strict stubbing violations in Mockito 3+.
 * [org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified](/recipes/java/testing/mockito/removeinitmocksifrunnersspecified.md)
   * **Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified**
-  * Remove `MockitoAnnotations.initMocks(this)` and `MockitoAnnotations.openMocks(this)` if class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)` are specified. These manual initialization calls are redundant when using Mockito's JUnit integration.
+  * Remove `MockitoAnnotations.initMocks(this)` and `MockitoAnnotations.openMocks(this)` if class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)` are specified. These manual initialization calls are redundant when using Mockito's JUnit integration. Note that the `@Mock` fields will then be initialized by the strict mocking session of the extension or runner; tests that relied on the lenient mocks created by an explicit `openMocks(this)` call inside `@BeforeEach` may surface `UnnecessaryStubbingException`. Add `@MockitoSettings(strictness = Strictness.LENIENT)` to opt out.
 * [org.openrewrite.java.testing.mockito.RemovePowerMockClassExtensions](/recipes/java/testing/mockito/removepowermockclassextensions.md)
   * **Remove PowerMock class extensions**
   * Removes `extends PowerMockConfiguration` and `extends PowerMockTestCase` from test classes, as these are PowerMock-specific base classes not needed with Mockito.
@@ -8672,7 +8717,7 @@ _249 recipes_
 
 _License: Apache License Version 2.0_
 
-_1553 recipes_
+_1566 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/ai/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -9476,8 +9521,8 @@ _1553 recipes_
   * **Migrate to 4.10.6**
   * Migrates Apache Camel application to 4.10.6.
 * [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.18.0**
-  * Migrates Apache Camel application to 4.18.0.
+  * **Migrate to 4.20.0**
+  * Migrates Apache Camel application to 4.20.0.
 * [org.apache.camel.upgrade.JavaVersion17](/recipes/org/apache/camel/upgrade/javaversion17.md)
   * **Change Maven Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
@@ -9652,12 +9697,39 @@ _1553 recipes_
 * [org.apache.camel.upgrade.camel418.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel418/camelmigrationrecipe.md)
   * **Migrates `camel 4.17` application to `camel 4.18`**
   * Migrates `camel 4.17` application to `camel 4.18`.
+* [org.apache.camel.upgrade.camel419.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
+  * **Migrates `camel 4.18` application to `camel 4.19`**
+  * Migrates `camel 4.18` application to `camel 4.19`.
+* [org.apache.camel.upgrade.camel419.Pom419TestInfraRecipe](/recipes/org/apache/camel/upgrade/camel419/pom419testinfrarecipe.md)
+  * **Remove test-jar type from camel-test-infra dependencies**
+  * Removes &lt;type&gt;test-jar&lt;/type&gt; from camel-test-infra-* dependencies as they no longer produce separate test-JAR artifacts.
+* [org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe](/recipes/org/apache/camel/upgrade/camel419/xmldsl419sagarecipe.md)
+  * **Camel XML DSL Saga EIP restructuring**
+  * Apache Camel XML DSL migration from version 4.18 to 4.19. Converts saga compensation and completion child elements to attributes.
+* [org.apache.camel.upgrade.camel419.YamlDsl419RoutePolicyRecipe](/recipes/org/apache/camel/upgrade/camel419/yamldsl419routepolicyrecipe.md)
+  * **Camel YAML DSL routePolicy renaming**
+  * Apache Camel YAML DSL migration from version 4.18 to 4.19. Renames routePolicy to routePolicyRef.
+* [org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe](/recipes/org/apache/camel/upgrade/camel419/yamldsl419sagarecipe.md)
+  * **Camel YAML DSL Saga EIP restructuring**
+  * Apache Camel YAML DSL migration from version 4.18 to 4.19. Flattens saga compensation and completion nested uri to direct values.
+* [org.apache.camel.upgrade.camel419.migrateGroovyXml](/recipes/org/apache/camel/upgrade/camel419/migrategroovyxml.md)
+  * **Migrate camel-groovy-xml to camel-groovy**
+  * camel-groovy-xml has been removed and moved into camel-groovy. Changes the dependency from camel-groovy-xml to camel-groovy.
+* [org.apache.camel.upgrade.camel419.removedComponents](/recipes/org/apache/camel/upgrade/camel419/removedcomponents.md)
+  * **The camel-test module has been removed from camel-bom**
+  * The camel-test module has been removed from camel-bom.
 * [org.apache.camel.upgrade.camel42.CamelMainDebugger](/recipes/org/apache/camel/upgrade/camel42/camelmaindebugger.md)
   * **The option camel.main.debugger has been renamed**
   * The option camel.main.debugger has been renamed to camel.debug.enabled.
 * [org.apache.camel.upgrade.camel42.CamelSagaRecipe](/recipes/org/apache/camel/upgrade/camel42/camelsagarecipe.md)
   * **Camel Core changes**
   * Apache Camel Core migration from version 4.0 to 4.1.
+* [org.apache.camel.upgrade.camel420.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel420/camelmigrationrecipe.md)
+  * **Migrates `camel 4.19` application to `camel 4.20`**
+  * Migrates `camel 4.19` application to `camel 4.20`.
+* [org.apache.camel.upgrade.camel420.migratePulsarUris](/recipes/org/apache/camel/upgrade/camel420/migratepulsaruris.md)
+  * **Migrate Pulsar component URIs from V1 to V2 format**
+  * Apache Pulsar client upgraded from 4.1.3 to 4.2.0. Per PIP-457, V1 topic names are no longer supported. Migrates from V1 format (persistent://tenant/cluster/namespace/topic) to V2 format (persistent://tenant/namespace/topic). Removes the cluster segment. Only transforms URIs where the topic name does NOT contain slashes. URIs with slashes in topic names are left unchanged to avoid ambiguity between V1 and V2 formats. Works across Java, XML DSL, and YAML DSL.
 * [org.apache.camel.upgrade.camel43.CamelResequenceEIPXmlRecipe](/recipes/org/apache/camel/upgrade/camel43/camelresequenceeipxmlrecipe.md)
   * **Camel Resequence DSL changes**
   * Batch and stream attributes were renamed in Resequence EIP XML DSL.
@@ -9754,6 +9826,9 @@ _1553 recipes_
 * [org.apache.camel.upgrade.camel49.renamedAPIs](/recipes/org/apache/camel/upgrade/camel49/renamedapis.md)
   * **Renamed classes for API**
   * Renamed classes for API.
+* [org.apache.camel.upgrade.customRecipes.ChangeComponentUriRecipe](/recipes/org/apache/camel/upgrade/customrecipes/changecomponenturirecipe.md)
+  * **Change Camel component URI across all DSLs**
+  * Transforms component URIs using regular expressions with capturing groups. Automatically handles Java, XML DSL, and YAML DSL.
 * [org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange](/recipes/org/apache/camel/upgrade/customrecipes/changepropertykeywithcasechange.md)
   * **Change prefix of property with Camel case**
   * Change prefix of property with Camel case
@@ -9781,6 +9856,15 @@ _1553 recipes_
 * [org.apache.camel.upgrade.customRecipes.ReplacePropertyInDataFormatYaml](/recipes/org/apache/camel/upgrade/customrecipes/replacepropertyindataformatyaml.md)
   * **Renames property of the component**
   * ARenames property of the component.
+* [org.apache.camel.upgrade.customRecipes.internal.ChangeJavaComponentUriRecipe](/recipes/org/apache/camel/upgrade/customrecipes/internal/changejavacomponenturirecipe.md)
+  * **Change Camel component URI in Java**
+  * Transforms component URIs in Java code using regular expressions with capturing groups.
+* [org.apache.camel.upgrade.customRecipes.internal.ChangeXmlComponentUriRecipe](/recipes/org/apache/camel/upgrade/customrecipes/internal/changexmlcomponenturirecipe.md)
+  * **Change Camel component URI in XML DSL**
+  * Transforms component URIs in XML DSL using regular expressions with capturing groups.
+* [org.apache.camel.upgrade.customRecipes.internal.ChangeYamlComponentUriRecipe](/recipes/org/apache/camel/upgrade/customrecipes/internal/changeyamlcomponenturirecipe.md)
+  * **Change Camel component URI in YAML DSL**
+  * Transforms component URIs in YAML DSL using regular expressions with capturing groups.
 * [org.apache.wicket.BestPractices](/recipes/org/apache/wicket/bestpractices.md)
   * **Wicket best practices**
   * Applies Wicket best practices such as minimizing anonymous inner classes and upgrading to the latest version.

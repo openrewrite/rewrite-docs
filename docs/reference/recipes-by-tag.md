@@ -37,7 +37,7 @@ _7 recipes_
 
 ## actions
 
-_3 recipes_
+_4 recipes_
 
 * [org.openrewrite.github.GitHubActionsBestPractices](/recipes/github/githubactionsbestpractices.md)
   * **GitHub Actions best practices**
@@ -48,6 +48,9 @@ _3 recipes_
 * [org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions](/recipes/github/migratetibdexgithubapptokentoactions.md)
   * **Migrate from tibdex/github-app-token to actions/create-github-app-token**
   * Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case.
+* [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
+  * **Pin GitHub Actions to commit SHAs**
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
 
 ## activation
 
@@ -117,7 +120,7 @@ _2 recipes_
 
 ## apache
 
-_23 recipes_
+_24 recipes_
 
 * [org.openrewrite.apache.commons.PreferJavaStandardLibrary](/recipes/apache/commons/preferjavastandardlibrary.md)
   * **Prefer the Java standard library instead of Apache Commons**
@@ -167,6 +170,9 @@ _23 recipes_
 * [org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
   * **Migrates to ApacheHttpClient 4.5.x**
   * Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+* [org.openrewrite.apache.httpclient5.MigrateAuthState](/recipes/apache/httpclient5/migrateauthstate.md)
+  * **Migrate `AuthState` to `AuthExchange`**
+  * Migrate Apache HttpClient 4.x `AuthState` and related types to the HttpClient 5.x `AuthExchange` API, including the `AuthProtocolState` enum, `AuthOption` queue elements, and credential-handling call sites.
 * [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
   * **Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies**
   * Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`.
@@ -2410,7 +2416,7 @@ _1 recipe_
 
 ## github
 
-_13 recipes_
+_14 recipes_
 
 * [org.openrewrite.github.AddDependabotCooldown](/recipes/github/adddependabotcooldown.md)
   * **Add cooldown periods to Dependabot configuration**
@@ -2451,6 +2457,9 @@ _13 recipes_
 * [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
   * **GitHub Actions security insights**
   * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
+* [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
+  * **Pin GitHub Actions to commit SHAs**
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
 
 ## gitlab
 
@@ -2747,11 +2756,14 @@ _5 recipes_
 
 ## httpclient
 
-_5 recipes_
+_6 recipes_
 
 * [org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5](/recipes/apache/httpclient4/upgradeapachehttpclient_4_5.md)
   * **Migrates to ApacheHttpClient 4.5.x**
   * Migrate applications to the latest Apache HttpClient 4.5.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
+* [org.openrewrite.apache.httpclient5.MigrateAuthState](/recipes/apache/httpclient5/migrateauthstate.md)
+  * **Migrate `AuthState` to `AuthExchange`**
+  * Migrate Apache HttpClient 4.x `AuthState` and related types to the HttpClient 5.x `AuthExchange` API, including the `AuthProtocolState` enum, `AuthOption` queue elements, and credential-handling call sites.
 * [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
   * **Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies**
   * Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`.
@@ -4115,7 +4127,7 @@ _1 recipe_
 
 ## junit
 
-_22 recipes_
+_23 recipes_
 
 * [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
   * **Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4**
@@ -4183,10 +4195,14 @@ _22 recipes_
 * [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
   * **JUnit 6 migration from JUnit 5.x**
   * Migrates JUnit 5.x tests to JUnit 6.x.
+* [org.openrewrite.java.testing.junit6.MigrateJUnitPioneerToJupiter](/recipes/java/testing/junit6/migratejunitpioneertojupiter.md)
+  * **Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents**
+  * Migrates `@DefaultLocale`, `@DefaultTimeZone`, `@SetSystemProperty`, `@ClearSystemProperty`, `@RestoreSystemProperties` (and their `@Reads.../@Writes...` companions) from JUnit Pioneer to the native equivalents added in JUnit Jupiter 6.1. The `junit-pioneer` dependency is not removed since other Pioneer features (e.g. `@RetryingTest`, `@CartesianTest`) have no Jupiter equivalent.
+  * Tags: junit-pioneer
 
 ## jupiter
 
-_2 recipes_
+_3 recipes_
 
 * [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
   * **Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4**
@@ -4194,6 +4210,9 @@ _2 recipes_
 * [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
   * **JUnit 6 migration from JUnit 5.x**
   * Migrates JUnit 5.x tests to JUnit 6.x.
+* [org.openrewrite.java.testing.junit6.MigrateJUnitPioneerToJupiter](/recipes/java/testing/junit6/migratejunitpioneertojupiter.md)
+  * **Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents**
+  * Migrates `@DefaultLocale`, `@DefaultTimeZone`, `@SetSystemProperty`, `@ClearSystemProperty`, `@RestoreSystemProperties` (and their `@Reads.../@Writes...` companions) from JUnit Pioneer to the native equivalents added in JUnit Jupiter 6.1. The `junit-pioneer` dependency is not removed since other Pioneer features (e.g. `@RetryingTest`, `@CartesianTest`) have no Jupiter equivalent.
 
 ## kafka
 
@@ -6218,7 +6237,7 @@ _215 recipes_
   * Tags: RSPEC-S2221
 * [org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf](/recipes/staticanalysis/primitivewrapperclassconstructortovalueof.md)
   * **Use primitive wrapper `valueOf` method**
-  * The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations.
+  * The constructor of all primitive types has been deprecated in favor of using the static factory method `valueOf` available for each of the primitive type wrappers. Using `valueOf` enables object caching for frequently used values, reducing unnecessary heap allocations. Note that this changes identity semantics: `valueOf` may return cached instances (such as `Boolean.TRUE` or `Integer` values in `[-128, 127]`), so code that compares boxed values with `==`/`!=`, relies on `System.identityHashCode`, or synchronizes on the boxed value may behave differently after this change.
   * Tags: RSPEC-S2129
 * [org.openrewrite.staticanalysis.ReferentialEqualityToObjectEquals](/recipes/staticanalysis/referentialequalitytoobjectequals.md)
   * **Replace referential equality operators with Object equals method invocations when the operands both override `Object.equals(Object obj)`**
@@ -6899,7 +6918,7 @@ _1 recipe_
 
 ## security
 
-_38 recipes_
+_39 recipes_
 
 * [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/io/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
   * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
@@ -6925,6 +6944,9 @@ _38 recipes_
 * [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
   * **GitHub Actions security insights**
   * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
+* [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
+  * **Pin GitHub Actions to commit SHAs**
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
 * [org.openrewrite.gradle.RemoveRedundantSecurityResolutionRules](/recipes/gradle/removeredundantsecurityresolutionrules.md)
   * **Remove redundant security resolution rules**
   * Remove `resolutionStrategy.eachDependency` rules that pin dependencies to versions that are already being managed by a platform/BOM to equal or newer versions. Only removes rules that have a security advisory identifier (CVE or GHSA) in the `because` clause, unless a custom pattern is specified.
@@ -7924,11 +7946,15 @@ _87 recipes_
 
 ## supply
 
-_1 recipe_
+_2 recipes_
 
 * [org.openrewrite.github.security.GitHubActionsSecurity](/recipes/github/security/githubactionssecurity.md)
   * **GitHub Actions security insights**
   * Finds potential security issues in GitHub Actions workflows, based on [Zizmor](https://docs.zizmor.sh) security analysis rules.
+  * Tags: supply-chain
+* [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
+  * **Pin GitHub Actions to commit SHAs**
+  * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
   * Tags: supply-chain
 
 ## svelte
@@ -8082,7 +8108,7 @@ _5 recipes_
 
 ## testing
 
-_49 recipes_
+_50 recipes_
 
 * [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](/recipes/cucumber/jvm/cucumberjava8tojava.md)
   * **Migrate `cucumber-java8` to `cucumber-java`**
@@ -8201,6 +8227,9 @@ _49 recipes_
 * [org.openrewrite.java.testing.junit6.JUnit5to6Migration](/recipes/java/testing/junit6/junit5to6migration.md)
   * **JUnit 6 migration from JUnit 5.x**
   * Migrates JUnit 5.x tests to JUnit 6.x.
+* [org.openrewrite.java.testing.junit6.MigrateJUnitPioneerToJupiter](/recipes/java/testing/junit6/migratejunitpioneertojupiter.md)
+  * **Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents**
+  * Migrates `@DefaultLocale`, `@DefaultTimeZone`, `@SetSystemProperty`, `@ClearSystemProperty`, `@RestoreSystemProperties` (and their `@Reads.../@Writes...` companions) from JUnit Pioneer to the native equivalents added in JUnit Jupiter 6.1. The `junit-pioneer` dependency is not removed since other Pioneer features (e.g. `@RetryingTest`, `@CartesianTest`) have no Jupiter equivalent.
 * [org.openrewrite.java.testing.mockito.Mockito1to3Migration](/recipes/java/testing/mockito/mockito1to3migration.md)
   * **Mockito 3.x migration from 1.x**
   * Upgrade Mockito from 1.x to 3.x.

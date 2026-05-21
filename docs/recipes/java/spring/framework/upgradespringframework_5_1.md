@@ -89,6 +89,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Spring Boot 2.1](/recipes/java/spring/boot2/upgradespringboot_2_1.md)
 * [Migrate to Spring Framework 5.2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
 
 

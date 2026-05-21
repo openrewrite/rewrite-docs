@@ -41,6 +41,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Change `net.wasdev.maven.parent:java8-parent` to `:parent`](/recipes/java/migrate/wasdevmvnchangeparentartifactid.md)
+* [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
 * [Migrate to Spring Cloud 2025.1](/recipes/java/spring/cloud2025/upgradespringcloud_2025_1.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)

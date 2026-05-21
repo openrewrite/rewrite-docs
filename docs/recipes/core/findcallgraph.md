@@ -112,6 +112,35 @@ _Records method callers and the methods they invoke._
 
 </TabItem>
 
+<TabItem value="org.openrewrite.table.FactoryEdges" label="FactoryEdges">
+
+### Factory-method construction edges
+**org.openrewrite.table.FactoryEdges**
+
+_Construction edges where the caller's declared return type is assignable from the constructed class (the caller semantically produces an instance of the target type)._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| From class | Fully-qualified name of the class containing the factory method. |
+| From method | Simple name of the factory method. |
+| To class | Fully-qualified name of the class being constructed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.LowConfidenceFiles" label="LowConfidenceFiles">
+
+### Files with incomplete call-graph extraction
+**org.openrewrite.table.LowConfidenceFiles**
+
+_Source files where call-graph construction skipped an edge because the underlying LST had a null type. Used as a confidence signal during test selection: any row for a file means that file's outbound edges may be undercounted._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | Path of the source file as recorded on the LST. |
+| Reason | Short label for the kind of type-attribution gap encountered (e.g. &quot;call.declaringType&quot;, &quot;call.returnType&quot;, &quot;reference.scope&quot;). |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

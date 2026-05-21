@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 **org.openrewrite.gradle.search.FindDependency**
 
 ```
-Finds dependencies declared in gradle build files. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.
+Finds dependencies declared in gradle build files. Each match is also recorded as a row in the `DependenciesDeclared` data table. See the [reference](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_configurations_graph) on Gradle configurations or the diagram below for a description of what configuration to use. A project's compile and runtime classpath is based on these configurations.
 
 <img alt="Gradle compile classpath" src="https://docs.gradle.org/current/userguide/img/java-library-ignore-deprecated-main.png" width="200px"/>
 A project's test classpath is based on these configurations.
@@ -37,6 +37,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | configuration | *Optional*. The dependency configuration to search for dependencies in. If omitted then all configurations will be searched. | `api` |
 | `String` | version | *Optional*. An exact version number or node-style semver selector used to select the version number. | `3.0.0` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Analyse Organization's Release Train Metro Plan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/releasemetro/releasemetroplan)
 
 ## Example
 
@@ -140,6 +147,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.DependenciesDeclared" label="DependenciesDeclared">
+
+### Dependencies declared
+**org.openrewrite.maven.table.DependenciesDeclared**
+
+_Direct (first-order) dependencies declared by the project._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The name of the project that contains the dependency. |
+| Source set | The source set that contains the dependency. |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
+| Scope | Maven scope (e.g. `compile`, `test`) or Gradle configuration name (e.g. `implementation`, `testImplementation`). For Maven, defaults to `compile` when no scope is declared. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

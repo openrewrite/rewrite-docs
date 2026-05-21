@@ -246,6 +246,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.client.CredentialsProvider`
   * newFullyQualifiedTypeName: `org.apache.hc.client5.http.auth.CredentialsProvider`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.client.ResponseHandler`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientResponseHandler`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http.client`
   * newPackageName: `org.apache.hc.client5.http`
@@ -405,9 +408,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.HttpResponse`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.http.ClassicHttpResponse`
-* [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.http.client.ResponseHandler`
-  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.HttpClientResponseHandler`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.http`
   * newPackageName: `org.apache.hc.core5.http`
@@ -680,6 +680,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.client.CredentialsProvider
       newFullyQualifiedTypeName: org.apache.hc.client5.http.auth.CredentialsProvider
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.client.ResponseHandler
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpClientResponseHandler
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http.client
       newPackageName: org.apache.hc.client5.http
@@ -839,9 +842,6 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.HttpResponse
       newFullyQualifiedTypeName: org.apache.hc.core5.http.ClassicHttpResponse
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.http.client.ResponseHandler
-      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.HttpClientResponseHandler
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.http
       newPackageName: org.apache.hc.core5.http

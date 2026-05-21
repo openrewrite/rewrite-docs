@@ -42,19 +42,38 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Simplify single-element annotation](../../java/simplifysingleelementannotation)
 * [End files with a single newline](../../java/format/emptynewlineatendoffile)
 * [Remove trailing whitespace](../../java/format/removetrailingwhitespace)
-* [Enum values should be compared with &quot;==&quot;](../../staticanalysis/compareenumswithequalityoperator)
-* [Equals avoids null](../../staticanalysis/equalsavoidsnull)
 * [Inline variable](../../staticanalysis/inlinevariable)
-* [Simplify lambda blocks to expressions](../../staticanalysis/lambdablocktoexpression)
-* [Add missing `@Override` to overriding and implementing methods](../../staticanalysis/missingoverrideannotation)
 * [Operator wrapping](../../staticanalysis/operatorwrap)
   * wrapOption: `EOL`
-* [Remove redundant null checks before instanceof](../../staticanalysis/removeredundantnullcheckbeforeinstanceof)
 * [Remove unused local variables](../../staticanalysis/removeunusedlocalvariables)
 * [Remove unused private fields](../../staticanalysis/removeunusedprivatefields)
 * [Remove unused private methods](../../staticanalysis/removeunusedprivatemethods)
 * [Unwrap else block after return or throw statement](../../staticanalysis/unwrapelseafterreturn)
+* [Equals avoids null](../../staticanalysis/equalsavoidsnull)
+* [Add missing `@Override` to overriding and implementing methods](../../staticanalysis/missingoverrideannotation)
+* [Week Year (YYYY) should not be used for date formatting](../../staticanalysis/replaceweekyearwithyear)
+* [`hashCode()` should not be called on array instances](../../staticanalysis/removehashcodecallsfromarrayinstances)
+* [Remove `toString()` calls on arrays](../../staticanalysis/removetostringcallsfromarrayinstances)
+* [Replaces `Object.notify()` with `Object.notifyAll()`](../../staticanalysis/useobjectnotifyall)
+* [Remove garbage collection invocations](../../staticanalysis/removecallstosystemgc)
+* [Remove `Object.finalize()` invocations](../../staticanalysis/removecallstoobjectfinalize)
+* [URL Equals and Hash Code](../../staticanalysis/urlequalshashcoderecipes)
+* [Simplify lambda blocks to expressions](../../staticanalysis/lambdablocktoexpression)
+* [Use method references in lambda](../../staticanalysis/replacelambdawithmethodreference)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
+* [Remove unnecessary parentheses](../../staticanalysis/unnecessaryparentheses)
+* [Remove redundant null checks before instanceof](../../staticanalysis/removeredundantnullcheckbeforeinstanceof)
+* [Replace `StringBuilder#append` with `String`](../../staticanalysis/replacestringbuilderwithstring)
+* [Use `Collection` interfaces](../../staticanalysis/usecollectioninterfaces)
+* [Enum values should be compared with &quot;==&quot;](../../staticanalysis/compareenumswithequalityoperator)
+* [Combine semantically equal catch blocks](../../staticanalysis/combinesemanticallyequalcatchblocks)
+* [Use `String::replace()` when first parameter is not a real regular expression](../../staticanalysis/usestringreplace)
+* [Use `StandardCharset` constants](../../staticanalysis/usestandardcharset)
+* [Use `System.lineSeparator()`](../../staticanalysis/usesystemlineseparator)
+* [Remove redundant casts](../../staticanalysis/removeredundanttypecast)
+* [Replace `java.util.Stack` with `java.util.Deque`](../../staticanalysis/replacestackwithdeque)
+* [Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`](../../staticanalysis/uselistsort)
+* [Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`](../../staticanalysis/equalstocontentequals)
 * [Use static import](../../java/usestaticimport)
   * methodPattern: `java.util.stream.Collectors *(..)`
 * [Use static import](../../java/usestaticimport)
@@ -85,19 +104,38 @@ recipeList:
   - org.openrewrite.java.SimplifySingleElementAnnotation
   - org.openrewrite.java.format.EmptyNewlineAtEndOfFile
   - org.openrewrite.java.format.RemoveTrailingWhitespace
-  - org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator
-  - org.openrewrite.staticanalysis.EqualsAvoidsNull
   - org.openrewrite.staticanalysis.InlineVariable
-  - org.openrewrite.staticanalysis.LambdaBlockToExpression
-  - org.openrewrite.staticanalysis.MissingOverrideAnnotation
   - org.openrewrite.staticanalysis.OperatorWrap:
       wrapOption: EOL
-  - org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof
   - org.openrewrite.staticanalysis.RemoveUnusedLocalVariables
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateFields
   - org.openrewrite.staticanalysis.RemoveUnusedPrivateMethods
   - org.openrewrite.staticanalysis.UnwrapElseAfterReturn
+  - org.openrewrite.staticanalysis.EqualsAvoidsNull
+  - org.openrewrite.staticanalysis.MissingOverrideAnnotation
+  - org.openrewrite.staticanalysis.ReplaceWeekYearWithYear
+  - org.openrewrite.staticanalysis.RemoveHashCodeCallsFromArrayInstances
+  - org.openrewrite.staticanalysis.RemoveToStringCallsFromArrayInstances
+  - org.openrewrite.staticanalysis.UseObjectNotifyAll
+  - org.openrewrite.staticanalysis.RemoveCallsToSystemGc
+  - org.openrewrite.staticanalysis.RemoveCallsToObjectFinalize
+  - org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes
+  - org.openrewrite.staticanalysis.LambdaBlockToExpression
+  - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.UseDiamondOperator
+  - org.openrewrite.staticanalysis.UnnecessaryParentheses
+  - org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof
+  - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
+  - org.openrewrite.staticanalysis.UseCollectionInterfaces
+  - org.openrewrite.staticanalysis.CompareEnumsWithEqualityOperator
+  - org.openrewrite.staticanalysis.CombineSemanticallyEqualCatchBlocks
+  - org.openrewrite.staticanalysis.UseStringReplace
+  - org.openrewrite.staticanalysis.UseStandardCharset
+  - org.openrewrite.staticanalysis.UseSystemLineSeparator
+  - org.openrewrite.staticanalysis.RemoveRedundantTypeCast
+  - org.openrewrite.staticanalysis.ReplaceStackWithDeque
+  - org.openrewrite.staticanalysis.UseListSort
+  - org.openrewrite.staticanalysis.EqualsToContentEquals
   - org.openrewrite.java.UseStaticImport:
       methodPattern: java.util.stream.Collectors *(..)
   - org.openrewrite.java.UseStaticImport:
@@ -130,6 +168,40 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.recipes.DeprecatedMethodDelegations" label="DeprecatedMethodDelegations">
+
+### Deprecated method delegations
+**org.openrewrite.java.recipes.DeprecatedMethodDelegations**
+
+_Deprecated methods that delegate to another method in the same class, suitable for inlining via `InlineMethodCalls`._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Method pattern | The method pattern of the deprecated method. |
+| Replacement | The replacement expression to inline. |
+| Recipe YAML | A YAML snippet that can be copied into a recipe list. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -196,40 +268,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.java.recipes.DeprecatedMethodDelegations" label="DeprecatedMethodDelegations">
-
-### Deprecated method delegations
-**org.openrewrite.java.recipes.DeprecatedMethodDelegations**
-
-_Deprecated methods that delegate to another method in the same class, suitable for inlining via `InlineMethodCalls`._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Method pattern | The method pattern of the deprecated method. |
-| Replacement | The replacement expression to inline. |
-| Recipe YAML | A YAML snippet that can be copied into a recipe list. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

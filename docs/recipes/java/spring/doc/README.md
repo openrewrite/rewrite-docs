@@ -14,6 +14,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Migrate `Docket` to `GroupedOpenAPI`](./migratedocketbeantogroupedopenapibean.md)
+* [Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties](./migratespringfoxsecurityconfiguration.md)
 * [Removes @Import(BeanValidatorPluginsConfiguration.class)](./removebeanvalidatorpluginsconfiguration.md)
 
 

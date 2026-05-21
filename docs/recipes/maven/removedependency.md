@@ -41,6 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Remove non existing camel-quarkus extensions](/recipes/java/camel/migrate/removedextensions.md)
 * [Removed deprecated components](/recipes/org/apache/camel/upgrade/camel411/removeddependencies.md)
 * [Removed deprecated components](/recipes/org/apache/camel/upgrade/camel49/removeddependencies.md)
+* [The camel-test module has been removed from camel-bom](/recipes/org/apache/camel/upgrade/camel419/removedcomponents.md)
 * [io.quarkus.updates.core.quarkus324.RemoveJpaModelgenDependencies](/recipes/io/quarkus/updates/core/quarkus324/removejpamodelgendependencies.md)
 * [io.quarkus.updates.core.quarkus37.RemoveJpaModelgenDependencies](/recipes/io/quarkus/updates/core/quarkus37/removejpamodelgendependencies.md)
 

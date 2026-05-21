@@ -48,9 +48,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Minimal indentation for `SourceSpecs` text blocks](../../java/recipes/sourcespectextblockindentation)
 * [Refactor RewriteTest to use defaults method](../../java/recipes/userewritetestdefaults)
 * [Use `StringUtils` utility methods](../../java/recipes/usestringutilsrecipes)
-* [Use `var` for constructor call assignments](../../java/migrate/lang/var/usevarforconstructors)
-* [Use `var` for primitive and String variables](../../java/migrate/lang/var/usevarforprimitive)
 * [Use `var` for variables initialized with type casts](../../java/migrate/lang/var/usevarfortypecast)
+* [Use `var` for constructor call assignments](../../java/migrate/lang/var/usevarforconstructors)
+* [Apply `var` to Generic Constructors](../../java/migrate/lang/var/usevarforgenericsconstructors)
+* [Apply `var` to generic method invocations](../../java/migrate/lang/var/usevarforgenericmethodinvocations)
+* [Use `var` for primitive and String variables](../../java/migrate/lang/var/usevarforprimitive)
+* [Use modernized `java.util` APIs](../../java/migrate/util/javautilapis)
+* [Convert Javadoc to Markdown documentation comments](../../java/migrate/lang/javadoctomarkdowndoccomment)
 * [JUnit 6 best practices](../../java/testing/junit/junit6bestpractices)
 * [AssertJ best practices](../../java/testing/assertj/assertj-best-practices)
 * [Fix missing braces](../../staticanalysis/needbraces)
@@ -96,9 +100,13 @@ recipeList:
   - org.openrewrite.java.recipes.SourceSpecTextBlockIndentation
   - org.openrewrite.java.recipes.UseRewriteTestDefaults
   - org.openrewrite.java.recipes.UseStringUtilsRecipes
-  - org.openrewrite.java.migrate.lang.var.UseVarForConstructors
-  - org.openrewrite.java.migrate.lang.var.UseVarForPrimitive
   - org.openrewrite.java.migrate.lang.var.UseVarForTypeCast
+  - org.openrewrite.java.migrate.lang.var.UseVarForConstructors
+  - org.openrewrite.java.migrate.lang.var.UseVarForGenericsConstructors
+  - org.openrewrite.java.migrate.lang.var.UseVarForGenericMethodInvocations
+  - org.openrewrite.java.migrate.lang.var.UseVarForPrimitive
+  - org.openrewrite.java.migrate.util.JavaUtilAPIs
+  - org.openrewrite.java.migrate.lang.JavadocToMarkdownDocComment
   - org.openrewrite.java.testing.junit.JUnit6BestPractices
   - org.openrewrite.java.testing.assertj.Assertj
   - org.openrewrite.staticanalysis.NeedBraces
@@ -151,6 +159,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -217,25 +244,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

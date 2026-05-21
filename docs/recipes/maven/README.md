@@ -19,6 +19,7 @@ description: Maven OpenRewrite recipes.
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Apache Maven best practices](./bestpractices.md)
+* [Apache Maven reproducible builds](./reproduciblebuilds.md)
 * [Migrate to Maven 4](./migratetomaven4.md)
 * [Remove Maven wrapper](./removemavenwrapper.md)
 * [Replace deprecated lifecycle phases](./replacedeprecatedlifecyclephases.md)

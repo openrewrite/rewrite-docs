@@ -18,7 +18,9 @@ description: Upgrade OpenRewrite recipes.
 * [Camel416](/recipes/org/apache/camel/upgrade/camel416)
 * [Camel417](/recipes/org/apache/camel/upgrade/camel417)
 * [Camel418](/recipes/org/apache/camel/upgrade/camel418)
+* [Camel419](/recipes/org/apache/camel/upgrade/camel419)
 * [Camel42](/recipes/org/apache/camel/upgrade/camel42)
+* [Camel420](/recipes/org/apache/camel/upgrade/camel420)
 * [Camel43](/recipes/org/apache/camel/upgrade/camel43)
 * [Camel44](/recipes/org/apache/camel/upgrade/camel44)
 * [Camel45](/recipes/org/apache/camel/upgrade/camel45)
@@ -33,7 +35,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Change Maven Java version property values to 17](./javaversion17.md)
 * [Migrate to 4.10.6](./camel410ltsmigrationrecipe.md)
-* [Migrate to 4.18.0](./camelmigrationrecipe.md)
+* [Migrate to 4.20.0](./camelmigrationrecipe.md)
 * [Migrate to Java 17](./upgradetojava17.md)
 * [Update properties and yaml configurations file](./updatepropertiesandyamlkeys.md)
 * [Upgrade Java version](./upgradejavaversion.md)

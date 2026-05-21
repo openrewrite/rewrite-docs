@@ -33,7 +33,6 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
-* [Migrate from Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/swaggertospringdoc.md)
 * [Remove the deprecated properties `additional-keys-to-sanitize` from the `configprops` and `env` end points](/recipes/java/spring/boot3/actuatorendpointsanitization.md)
 
 ## Example

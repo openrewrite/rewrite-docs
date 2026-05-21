@@ -4,10 +4,15 @@ description: Customrecipes OpenRewrite recipes.
 
 # Customrecipes
 
+## Categories
+
+* [Internal](/recipes/org/apache/camel/upgrade/customrecipes/internal)
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Change Camel component URI across all DSLs](./changecomponenturirecipe.md)
 * [Update Apache Camel configurations keys](./propertiesandyamlkeyupdate.md)
 
 ## Recipes
