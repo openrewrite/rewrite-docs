@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.RemoveInitMocksIfRunnersSpecified**
 
-_Remove `MockitoAnnotations.initMocks(this)` and `MockitoAnnotations.openMocks(this)` if class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)` are specified. These manual initialization calls are redundant when using Mockito's JUnit integration._
+_Remove `MockitoAnnotations.initMocks(this)` and `MockitoAnnotations.openMocks(this)` if class-level JUnit runners `@RunWith(MockitoJUnitRunner.class)` or `@ExtendWith(MockitoExtension.class)` are specified. These manual initialization calls are redundant when using Mockito's JUnit integration. Note that the `@Mock` fields will then be initialized by the strict mocking session of the extension or runner; tests that relied on the lenient mocks created by an explicit `openMocks(this)` call inside `@BeforeEach` may surface `UnnecessaryStubbingException`. Add `@MockitoSettings(strictness = Strictness.LENIENT)` to opt out._
 
 ## Recipe source
 

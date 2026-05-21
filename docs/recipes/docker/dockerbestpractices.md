@@ -80,7 +80,7 @@ ENTRYPOINT /app/start.sh
 
 ###### After
 ```docker
-~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
+~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest plucky (26.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
 COPY app.jar /app/
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["/app/start.sh"]
@@ -97,7 +97,7 @@ USER appuser
 -RUN apt-get update
 -RUN apt-get install -y curl
 -ENTRYPOINT /app/start.sh
-+~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
++~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest plucky (26.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
 +COPY app.jar /app/
 +RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 +ENTRYPOINT ["/app/start.sh"]
@@ -128,7 +128,7 @@ ENTRYPOINT /app/start.sh
 
 ###### After
 ```docker
-~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
+~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest plucky (26.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
 COPY app.jar /app/
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["/app/start.sh"]
@@ -145,7 +145,7 @@ USER appuser
 -RUN apt-get update
 -RUN apt-get install -y curl
 -ENTRYPOINT /app/start.sh
-+~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest noble (24.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
++~~(EOL: ubuntu:20.04 (ended 2025-05-31, suggest plucky (26.04)))~~>~~(Missing HEALTHCHECK instruction)~~>FROM ubuntu:20.04
 +COPY app.jar /app/
 +RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 +ENTRYPOINT ["/app/start.sh"]
@@ -180,6 +180,24 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.docker.table.EolDockerImages" label="EolDockerImages">
+
+### End-of-life Docker images
+**org.openrewrite.docker.table.EolDockerImages**
+
+_Records Docker base images that have reached end-of-life._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The Dockerfile containing the EOL base image. |
+| Stage name | The build stage name (from AS clause), if specified. |
+| Image name | The name of the base image. |
+| Tag | The image tag. |
+| EOL date | The date when the image reached end-of-life. |
+| Suggested replacement | Recommended newer version to migrate to. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -246,24 +264,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.docker.table.EolDockerImages" label="EolDockerImages">
-
-### End-of-life Docker images
-**org.openrewrite.docker.table.EolDockerImages**
-
-_Records Docker base images that have reached end-of-life._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The Dockerfile containing the EOL base image. |
-| Stage name | The build stage name (from AS clause), if specified. |
-| Image name | The name of the base image. |
-| Tag | The image tag. |
-| EOL date | The date when the image reached end-of-life. |
-| Suggested replacement | Recommended newer version to migrate to. |
 
 </TabItem>
 

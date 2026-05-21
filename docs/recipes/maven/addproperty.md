@@ -34,6 +34,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Add `project.build.outputTimestamp` for reproducible builds](/recipes/maven/cleanup/addprojectbuildoutputtimestamp.md)
+* [Apache Maven reproducible builds](/recipes/maven/reproduciblebuilds.md)
 * [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
 
 ## Example

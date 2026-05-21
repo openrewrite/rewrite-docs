@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Replace `node-sass` with `sass`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
+* [Upgrade to PrimeNG 18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/upgradeto18)
 
 
 ## Usage

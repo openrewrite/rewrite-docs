@@ -37,6 +37,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * methodPattern: `com.fasterxml.jackson.core.JsonParser getCodec()`
   * newMethodName: `objectReadContext`
 * [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getParsingContext()`
+  * newMethodName: `streamReadContext`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getInputSource()`
+  * newMethodName: `streamReadInputSource`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser nextFieldName(..)`
+  * newMethodName: `nextName`
+* [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.core.JsonParser getCurrentLocation()`
   * newMethodName: `currentLocation`
 * [Change method name](../../java/changemethodname)
@@ -66,6 +75,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.core.JsonParser nextTextValue()`
   * newMethodName: `nextStringValue`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getCurrentToken()`
+  * newMethodName: `currentToken`
+* [Change method name](../../java/changemethodname)
+  * methodPattern: `com.fasterxml.jackson.core.JsonParser getCurrentName()`
+  * newMethodName: `currentName`
 
 </TabItem>
 
@@ -84,6 +99,15 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.core.JsonParser getCodec()
       newMethodName: objectReadContext
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getParsingContext()
+      newMethodName: streamReadContext
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getInputSource()
+      newMethodName: streamReadInputSource
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser nextFieldName(..)
+      newMethodName: nextName
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.core.JsonParser getCurrentLocation()
       newMethodName: currentLocation
@@ -114,6 +138,12 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.core.JsonParser nextTextValue()
       newMethodName: nextStringValue
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getCurrentToken()
+      newMethodName: currentToken
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.fasterxml.jackson.core.JsonParser getCurrentName()
+      newMethodName: currentName
 
 ```
 </TabItem>

@@ -44,6 +44,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate JSF values inside EcmaScript files](/recipes/java/migrate/jakarta/jakartafacesecmascript.md)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
+* [Migrate `layertools` jarmode to `tools`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratelayertoolstotools_4_1)
 * [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
 * [Migrate javax.jms to jakarta.jms on MDB](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxjmstojakartajmsonmdb.md)
 * [Migrate to JSF 2.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/migratetojsf_2_3)

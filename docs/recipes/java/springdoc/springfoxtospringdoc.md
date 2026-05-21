@@ -52,6 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace SpringFox Dependencies](../../java/springdoc/replacespringfoxdependencies)
 * [Migrate `ApiInfoBuilder` to `Info`](../../java/spring/doc/apiinfobuildertoinfo)
 * [Replace elements of SpringFox's security with Swagger's security models](../../java/spring/doc/securitycontexttosecurityscheme)
+* [Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties](../../java/spring/doc/migratespringfoxsecurityconfiguration)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](../../java/springdoc/migratespringdoccommon)
 * [Remove remaining Springfox dead code](../../java/springdoc/cleanupremainingspringfox)
 
@@ -84,6 +85,7 @@ recipeList:
   - org.openrewrite.java.springdoc.ReplaceSpringFoxDependencies
   - org.openrewrite.java.spring.doc.ApiInfoBuilderToInfo
   - org.openrewrite.java.spring.doc.SecurityContextToSecurityScheme
+  - org.openrewrite.java.spring.doc.MigrateSpringFoxSecurityConfiguration
   - org.openrewrite.java.springdoc.MigrateSpringdocCommon
   - org.openrewrite.java.springdoc.CleanupRemainingSpringfox
 

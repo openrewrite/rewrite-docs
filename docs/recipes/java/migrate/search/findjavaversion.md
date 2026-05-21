@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.search.FindJavaVersion**
 
-_Finds Java versions in use._
+_Finds Java versions in use, emitting one row per git repository (the lowest source/target compatibility across modules in that repository)._
 
 ## Recipe source
 

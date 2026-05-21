@@ -117,6 +117,170 @@ class MyTest {
 ---
 
 ##### Example 2
+`MockitoBestPracticesTest#mockito5`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+test {
+   useJUnitPlatform()
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+import java.sql.Connection;
+import java.util.List;
+
+@ExtendWith(MockitoExtension.class)
+class MyTest {
+    @Mock
+    Connection conn;
+
+    AutoCloseable mocks;
+
+    @BeforeEach
+    void beforeEach() {
+      mocks = MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    void test() {
+        List<String> list = Mockito.mock(List.class);
+    }
+
+    @AfterEach
+    void afterEach() {
+        if (mocks != null) {
+            mocks.close();
+        }
+    }
+
+    @Nested
+    class NestedClass {
+        @Test
+        void test() {
+            List<String> list = Mockito.mock(List.class);
+        }
+
+        @AfterEach
+        void afterEach() {
+            if (mocks != null) {
+                mocks.close();
+            }
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import java.sql.Connection;
+import java.util.List;
+
+@ExtendWith(MockitoExtension.class)
+class MyTest {
+    @Mock
+    Connection conn;
+
+    @Test
+    void test() {
+        List<String> list = Mockito.mock(List.class);
+    }
+
+    @Nested
+    class NestedClass {
+        @Test
+        void test() {
+            List<String> list = Mockito.mock(List.class);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import org.junit.jupiter.api.AfterEach;
+-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+@@ -8,1 +6,0 @@
+import org.mockito.Mock;
+import org.mockito.Mockito;
+-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+@@ -18,7 +15,0 @@
+    Connection conn;
+
+-   AutoCloseable mocks;
+-
+-   @BeforeEach
+-   void beforeEach() {
+-     mocks = MockitoAnnotations.openMocks(this);
+-   }
+-
+    @Test
+@@ -30,7 +20,0 @@
+    }
+
+-   @AfterEach
+-   void afterEach() {
+-       if (mocks != null) {
+-           mocks.close();
+-       }
+-   }
+-
+    @Nested
+@@ -43,7 +26,0 @@
+            List<String> list = Mockito.mock(List.class);
+        }
+-
+-       @AfterEach
+-       void afterEach() {
+-           if (mocks != null) {
+-               mocks.close();
+-           }
+-       }
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 3
 `MockitoInlineToCoreTest#inlineToCore`
 
 
@@ -140,7 +304,7 @@ class MyTest {
 
 ---
 
-##### Example 3
+##### Example 4
 `Mockito1to5MigrationTest#modifyMockitoDependencies`
 
 
@@ -182,7 +346,171 @@ class MyTest {
 
 ---
 
-##### Example 4
+##### Example 5
+`MockitoBestPracticesTest#mockito5`
+
+
+###### Unchanged
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation("org.mockito:mockito-junit-jupiter:3.12.4")
+}
+test {
+   useJUnitPlatform()
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+import java.sql.Connection;
+import java.util.List;
+
+@ExtendWith(MockitoExtension.class)
+class MyTest {
+    @Mock
+    Connection conn;
+
+    AutoCloseable mocks;
+
+    @BeforeEach
+    void beforeEach() {
+      mocks = MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    void test() {
+        List<String> list = Mockito.mock(List.class);
+    }
+
+    @AfterEach
+    void afterEach() {
+        if (mocks != null) {
+            mocks.close();
+        }
+    }
+
+    @Nested
+    class NestedClass {
+        @Test
+        void test() {
+            List<String> list = Mockito.mock(List.class);
+        }
+
+        @AfterEach
+        void afterEach() {
+            if (mocks != null) {
+                mocks.close();
+            }
+        }
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
+import java.sql.Connection;
+import java.util.List;
+
+@ExtendWith(MockitoExtension.class)
+class MyTest {
+    @Mock
+    Connection conn;
+
+    @Test
+    void test() {
+        List<String> list = Mockito.mock(List.class);
+    }
+
+    @Nested
+    class NestedClass {
+        @Test
+        void test() {
+            List<String> list = Mockito.mock(List.class);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import org.junit.jupiter.api.AfterEach;
+-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+@@ -8,1 +6,0 @@
+import org.mockito.Mock;
+import org.mockito.Mockito;
+-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.jupiter.MockitoExtension;
+@@ -18,7 +15,0 @@
+    Connection conn;
+
+-   AutoCloseable mocks;
+-
+-   @BeforeEach
+-   void beforeEach() {
+-     mocks = MockitoAnnotations.openMocks(this);
+-   }
+-
+    @Test
+@@ -30,7 +20,0 @@
+    }
+
+-   @AfterEach
+-   void afterEach() {
+-       if (mocks != null) {
+-           mocks.close();
+-       }
+-   }
+-
+    @Nested
+@@ -43,7 +26,0 @@
+            List<String> list = Mockito.mock(List.class);
+        }
+-
+-       @AfterEach
+-       void afterEach() {
+-           if (mocks != null) {
+-               mocks.close();
+-           }
+-       }
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
 `MockitoInlineToCoreTest#inlineToCore`
 
 

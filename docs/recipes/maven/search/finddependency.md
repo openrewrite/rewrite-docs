@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.search.FindDependency**
 
-_Finds first-order dependency uses, i.e. dependencies that are defined directly in a project._
+_Finds first-order dependency uses, i.e. dependencies that are defined directly in a project. Each match is also recorded as a row in the `DependenciesDeclared` data table._
 
 ## Recipe source
 
@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Analyse Organization's Release Train Metro Plan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/releasemetro/releasemetroplan)
 * [Find projects affected by changes to the default error view message attribute](/recipes/java/spring/boot2/search/messagesinthedefaulterrorview.md)
 
 ## Example
@@ -144,6 +145,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.DependenciesDeclared" label="DependenciesDeclared">
+
+### Dependencies declared
+**org.openrewrite.maven.table.DependenciesDeclared**
+
+_Direct (first-order) dependencies declared by the project._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Project name | The name of the project that contains the dependency. |
+| Source set | The source set that contains the dependency. |
+| Group | The first part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Artifact | The second part of a dependency coordinate `com.google.guava:guava:VERSION`. |
+| Version | The resolved version. |
+| Dated snapshot version | The resolved dated snapshot version or `null` if this dependency is not a snapshot. |
+| Scope | Maven scope (e.g. `compile`, `test`) or Gradle configuration name (e.g. `implementation`, `testImplementation`). For Maven, defaults to `compile` when no scope is declared. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

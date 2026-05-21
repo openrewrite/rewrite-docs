@@ -67,7 +67,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate to 4.10.6](/recipes/org/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
-* [Migrate to 4.18.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.20.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to Struts 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/migratestruts7)
 * [Migrate to Wicket 10.x](/recipes/org/apache/wicket/migratetowicket10.md)

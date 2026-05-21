@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.UseAssertSame**
 
-_Prefers the usage of `assertSame` or `assertNotSame` methods instead of using of vanilla `assertTrue` or `assertFalse` with a boolean comparison._
+_Prefers the usage of `assertSame` or `assertNotSame` methods instead of using of vanilla `assertTrue` or `assertFalse` with a boolean comparison. Only applies when both operands are reference types — primitive operands are handled by `AssertTrueComparisonToAssertEquals`._
 
 ## Recipe source
 

@@ -31,6 +31,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [DevCenter Kotlin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterkotlin)
+* [DevCenter for Angular](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterangularstarter)
 * [DevCenter for C#](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentercsharpstarter)
 * [DevCenter for Node.js](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenternodestarter)
 * [DevCenter for Python](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterpythonstarter)

@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.util.MigrateCollectionsSingletonList**
 
-_Prefer `List.of(..)` instead of using `Collections.singletonList()` in Java 9 or higher._
+_Prefer `List.of(..)` instead of using `Collections.singletonList()` in Java 9 or higher. Note that the resulting `List` is not behaviorally equivalent: `List.of(..)` throws `NullPointerException` when probed with `contains(null)`, `indexOf(null)`, or `lastIndexOf(null)`, whereas `Collections.singletonList(..)` returns `false`/`-1`._
 
 ## Recipe source
 

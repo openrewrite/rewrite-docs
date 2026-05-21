@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.boot2.AddConfigurationAnnotationIfBeansPresent**
 
-_Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added._
+_Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added. Classes referenced as scoped configuration via `.class` (e.g. `@FeignClient(configuration = X.class)`) are skipped to preserve their intended per-client scope._
 
 ## Recipe source
 

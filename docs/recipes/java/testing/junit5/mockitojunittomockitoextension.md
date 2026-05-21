@@ -27,6 +27,102 @@ This recipe is used as part of the following composite recipes:
 
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Rule;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+
+import java.util.List;
+
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+public class MyTest {
+
+    @Rule
+    public MockitoRule rule = MockitoJUnit.rule().silent();
+
+    @Mock
+    private List<String> mockList;
+
+    @Test
+    public void testing() {
+        when(mockList.add("one")).thenReturn(true);
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.junit.jupiter.MockitoSettings;
+import org.mockito.quality.Strictness;
+
+import java.util.List;
+
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+@MockitoSettings(strictness = Strictness.LENIENT)
+public class MyTest {
+
+    @Mock
+    private List<String> mockList;
+
+    @Test
+    public void testing() {
+        when(mockList.add("one")).thenReturn(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import org.junit.jupiter.api.extension.ExtendWith;
+-import org.junit.Rule;
+import org.junit.Test;
+@@ -6,2 +5,2 @@
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+-import org.mockito.junit.MockitoJUnit;
+-import org.mockito.junit.MockitoRule;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
+
+@@ -14,0 +13,1 @@
+
+@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
+public class MyTest {
+@@ -16,3 +16,0 @@
+public class MyTest {
+
+-   @Rule
+-   public MockitoRule rule = MockitoJUnit.rule().silent();
+-
+    @Mock
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

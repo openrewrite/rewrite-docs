@@ -73,6 +73,201 @@ This recipe is used as part of the following composite recipes:
 
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 
+## Examples
+##### Example 1
+`JUnit6BestPracticesTest#junit5ToJunit6`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.Test;
+
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
+public class MyTest {
+    @Test
+    public void test1() {
+    }
+
+    @Test
+    public void test2() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.Test;
+
+@TestMethodOrder(MethodOrderer.MethodName.class)
+class MyTest {
+    @Test
+    void test1() {
+    }
+
+    @Test
+    void test2() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+import org.junit.jupiter.api.Test;
+
+-@TestMethodOrder(MethodOrderer.Alphanumeric.class)
+-public class MyTest {
++@TestMethodOrder(MethodOrderer.MethodName.class)
++class MyTest {
+    @Test
+@@ -8,1 +8,1 @@
+public class MyTest {
+    @Test
+-   public void test1() {
++   void test1() {
+    }
+@@ -12,1 +12,1 @@
+
+    @Test
+-   public void test2() {
++   void test2() {
+    }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <properties>
+        <junit-jupiter.version>5.14.4</junit-jupiter.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
+
+---
+
+##### Example 2
+`JUnit6BestPracticesTest#junit5ToJunit6`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.Test;
+
+@TestMethodOrder(MethodOrderer.Alphanumeric.class)
+public class MyTest {
+    @Test
+    public void test1() {
+    }
+
+    @Test
+    public void test2() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.Test;
+
+@TestMethodOrder(MethodOrderer.MethodName.class)
+class MyTest {
+    @Test
+    void test1() {
+    }
+
+    @Test
+    void test2() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+import org.junit.jupiter.api.Test;
+
+-@TestMethodOrder(MethodOrderer.Alphanumeric.class)
+-public class MyTest {
++@TestMethodOrder(MethodOrderer.MethodName.class)
++class MyTest {
+    @Test
+@@ -8,1 +8,1 @@
+public class MyTest {
+    @Test
+-   public void test1() {
++   void test1() {
+    }
+@@ -12,1 +12,1 @@
+
+    @Test
+-   public void test2() {
++   void test2() {
+    }
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <properties>
+        <junit-jupiter.version>5.14.4</junit-jupiter.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
+
 
 ## Usage
 
@@ -97,6 +292,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -163,25 +377,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

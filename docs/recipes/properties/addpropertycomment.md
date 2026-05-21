@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | comment | The comment to be added. | `comment` |
 | `Boolean` | commentOutProperty | *Optional*. If true, property will be commented out. | `true` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Kafka 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka40)
+
 ## Example
 
 ###### Parameters

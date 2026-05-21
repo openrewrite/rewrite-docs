@@ -88,6 +88,57 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.table.MethodCalls" label="MethodCalls">
+
+### Method calls
+**org.openrewrite.java.table.MethodCalls**
+
+_The text of matching method invocations._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Method call | The text of the method call. |
+| Class name | The class name of the method call. |
+| Method name | The method name of the method call. |
+| Argument types | The argument types of the method call. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.java.table.TypeUses" label="TypeUses">
+
+### Type uses
+**org.openrewrite.java.table.TypeUses**
+
+_The source code of matching type uses._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The source file that the method call occurred in. |
+| Source | The source code of the type use. |
+| Concrete type | The concrete type in use, which may be a subtype of a searched type. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -154,40 +205,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.java.table.TypeUses" label="TypeUses">
-
-### Type uses
-**org.openrewrite.java.table.TypeUses**
-
-_The source code of matching type uses._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The source file that the method call occurred in. |
-| Source | The source code of the type use. |
-| Concrete type | The concrete type in use, which may be a subtype of a searched type. |
 
 </TabItem>
 

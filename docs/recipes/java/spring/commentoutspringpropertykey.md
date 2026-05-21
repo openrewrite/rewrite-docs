@@ -32,6 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Comment out deprecated DevTools LiveReload properties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removedevtoolslivereloadproperties_4_1)
 * [Migrate Spring Boot properties to 2.0](/recipes/java/spring/boot2/springbootproperties_2_0.md)
 * [Migrate Spring Boot properties to 2.1](/recipes/java/spring/boot2/springbootproperties_2_1.md)
 * [Migrate Spring Boot properties to 2.2](/recipes/java/spring/boot2/springbootproperties_2_2.md)

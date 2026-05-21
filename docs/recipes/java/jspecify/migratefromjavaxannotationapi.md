@@ -38,7 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
   * groupId: `org.jspecify`
   * artifactId: `jspecify`
-  * version: `latest.release`
+  * version: `1.0.0`
   * onlyIfUsing: `javax.annotation.*ull*`
   * acceptTransitive: `true`
 * [Move annotation to array type](../../java/migrate/jspecify/moveannotationtoarraytype)
@@ -75,7 +75,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.jspecify
       artifactId: jspecify
-      version: latest.release
+      version: 1.0.0
       onlyIfUsing: javax.annotation.*ull*
       acceptTransitive: true
   - org.openrewrite.java.migrate.jspecify.MoveAnnotationToArrayType:

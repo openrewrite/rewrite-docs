@@ -100,6 +100,24 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.docker.table.EolDockerImages" label="EolDockerImages">
+
+### End-of-life Docker images
+**org.openrewrite.docker.table.EolDockerImages**
+
+_Records Docker base images that have reached end-of-life._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source file | The Dockerfile containing the EOL base image. |
+| Stage name | The build stage name (from AS clause), if specified. |
+| Image name | The name of the base image. |
+| Tag | The image tag. |
+| EOL date | The date when the image reached end-of-life. |
+| Suggested replacement | Recommended newer version to migrate to. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -166,24 +184,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.docker.table.EolDockerImages" label="EolDockerImages">
-
-### End-of-life Docker images
-**org.openrewrite.docker.table.EolDockerImages**
-
-_Records Docker base images that have reached end-of-life._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Source file | The Dockerfile containing the EOL base image. |
-| Stage name | The build stage name (from AS clause), if specified. |
-| Image name | The name of the base image. |
-| Tag | The image tag. |
-| EOL date | The date when the image reached end-of-life. |
-| Suggested replacement | Recommended newer version to migrate to. |
 
 </TabItem>
 

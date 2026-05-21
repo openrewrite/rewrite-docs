@@ -60,6 +60,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter-migrationsupport`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.junit`
+  * artifactId: `junit-bom`
+  * newVersion: `6.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.junit.jupiter`
   * artifactId: `junit-jupiter*`
   * newVersion: `6.x`
@@ -82,7 +86,16 @@ This recipe is available under the [Moderne Source Available License](https://do
   * matchOverrides: `true`
   * ignoreDefinition: `true`
 * [Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`](../../../java/testing/junit6/migratemethodordereralphanumeric)
+* [Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents](../../../java/testing/junit6/migratejunitpioneertojupiter)
 * [Remove `InvocationInterceptor.interceptDynamicTest`](../../../java/testing/junit6/removeinterceptdynamictest)
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.junit.jupiter.engine.Constants`
+  * newFullyQualifiedTypeName: `org.junit.jupiter.api.Constants`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.junit.platform.testkit.engine.Executions started()`
+  * newMethodName: `finished`
+  * matchOverrides: `false`
+  * ignoreDefinition: `true`
 * [Delete property by key](../../../properties/deleteproperty)
   * propertyKey: `junit.jupiter.tempdir.scope`
 * [Delete property by key](../../../properties/deleteproperty)
@@ -126,6 +139,10 @@ recipeList:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter-migrationsupport
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.junit
+      artifactId: junit-bom
+      newVersion: 6.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.junit.jupiter
       artifactId: junit-jupiter*
       newVersion: 6.x
@@ -148,7 +165,16 @@ recipeList:
       matchOverrides: true
       ignoreDefinition: true
   - org.openrewrite.java.testing.junit6.MigrateMethodOrdererAlphanumeric
+  - org.openrewrite.java.testing.junit6.MigrateJUnitPioneerToJupiter
   - org.openrewrite.java.testing.junit6.RemoveInterceptDynamicTest
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.junit.jupiter.engine.Constants
+      newFullyQualifiedTypeName: org.junit.jupiter.api.Constants
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.junit.platform.testkit.engine.Executions started()
+      newMethodName: finished
+      matchOverrides: false
+      ignoreDefinition: true
   - org.openrewrite.properties.DeleteProperty:
       propertyKey: junit.jupiter.tempdir.scope
   - org.openrewrite.properties.DeleteProperty:
@@ -190,6 +216,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
@@ -256,25 +301,6 @@ _Statistics used in analyzing the performance of recipes._
 | Max scanning time (ns) | The max time scanning any one source file. |
 | Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
 | Max edit time (ns) | The max time editing any one source file. |
-
-</TabItem>
-
-<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
-
-### Maven metadata failures
-**org.openrewrite.maven.table.MavenMetadataFailures**
-
-_Attempts to resolve maven metadata that failed._
-
-| Column Name | Description |
-| ----------- | ----------- |
-| Group id | The groupId of the artifact for which the metadata download failed. |
-| Artifact id | The artifactId of the artifact for which the metadata download failed. |
-| Version | The version of the artifact for which the metadata download failed. |
-| Maven repository | The URL of the Maven repository that the metadata download failed on. |
-| Snapshots | Does the repository support snapshots. |
-| Releases | Does the repository support releases. |
-| Failure | The reason the metadata download failed. |
 
 </TabItem>
 

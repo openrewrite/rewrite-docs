@@ -101,6 +101,21 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.prethink.table.ContextRegistry" label="ContextRegistry">
+
+### Context registry
+**org.openrewrite.prethink.table.ContextRegistry**
+
+_Registry of available context files for coding agents._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Display name | The display name of the context. |
+| Short description | A brief description of what context this provides. |
+| Context file | Path to the markdown file describing this context. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

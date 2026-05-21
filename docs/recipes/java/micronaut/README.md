@@ -13,6 +13,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add Micronaut build plugins to 4.x](./updatebuildplugins.md)
 * [Migrate from Micronaut 2.x to 3.x](./micronaut2to3migration.md)
 * [Migrate from Micronaut 3.x to 4.x](./micronaut3to4migration.md)
+* [Migrate from Micronaut 4.x to 5.x](./micronaut4to5migration.md)
+* [Update Micronaut Gradle build plugins to 5.x](./updatebuildplugins5.md)
 * [Update jakarta annotations dependency](./updatejakartaannotations.md)
 * [Update the Micronaut Data library](./updatemicronautdata.md)
 * [Update the Micronaut Security library](./updatemicronautsecurity.md)

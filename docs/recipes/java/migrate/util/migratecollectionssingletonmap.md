@@ -10,7 +10,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.util.MigrateCollectionsSingletonMap**
 
-_Prefer `Map.of(..)` instead of using `Collections.singletonMap()` in Java 9 or higher._
+_Prefer `Map.of(..)` instead of using `Collections.singletonMap()` in Java 9 or higher. Note that the resulting `Map` is not behaviorally equivalent: `Map.of(..)` throws `NullPointerException` when probed with `containsKey(null)`, `containsValue(null)`, or `get(null)`, whereas `Collections.singletonMap(..)` returns `false`/`null`._
 
 ## Recipe source
 
@@ -26,6 +26,55 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Use modernized `java.util` APIs](/recipes/java/migrate/util/javautilapis.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.*;
+
+class Test {
+    void take(Map<String, Object> m) {}
+    void call(String key, Object value) {
+        take(Collections.singletonMap(key, value));
+    }
+}
+```
+
+###### After
+```java
+import java.util.Map;
+
+class Test {
+    void take(Map<String, Object> m) {}
+    void call(String key, Object value) {
+        take(Map.of(key, value));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.*;
++import java.util.Map;
+
+@@ -6,1 +6,1 @@
+    void take(Map<String, Object> m) {}
+    void call(String key, Object value) {
+-       take(Collections.singletonMap(key, value));
++       take(Map.of(key, value));
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage
