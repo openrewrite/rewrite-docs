@@ -16,7 +16,7 @@
   --ifm-color-primary-lighter: #6787e7;
   --ifm-color-primary-lightest: #8ca4ed;
   --ifm-color-border: #D9D9D9;
-  --ifm-code-font-size: 81.25%;
+  --ifm-code-font-size: 87.5%;
   --ifm-color-base: rgba(4, 24, 52);
   --ifm-color-content: var(--ifm-color-base);
   --ifm-color-announcement-bar-bg: var(--ifm-color-mint);
@@ -93,7 +93,16 @@ html[data-theme='dark'] {
 }
 
 html[data-theme='dark'] .theme-code-block {
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Tighten vertical padding on the inner code element so code blocks
+   don't feel over-padded. Scoped via .theme-code-block code so this
+   only applies to actual code blocks — does NOT touch cards or
+   anything else that reads --ifm-pre-padding. */
+.theme-code-block code {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .navbar__logo img {
@@ -758,8 +767,8 @@ html[data-theme='dark'] {
 
 .markdown pre,
 .markdown .theme-code-block {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   outline: none !important;
 }
 
