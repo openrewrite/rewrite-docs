@@ -39,7 +39,7 @@ import static org.junit.Assert.assertTrue;
 assertTrue(condition);
 ```
 
-<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=LgvqAzTxkEU' controls="true" />
+<ReactPlayer className="reactPlayer" url='https://www.youtube.com/watch?v=SxABeHxvc4s' controls="true" />
 
 ## Get started
 
