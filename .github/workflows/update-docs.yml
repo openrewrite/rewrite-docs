@@ -71,7 +71,7 @@ jobs:
           cp -r ../rewrite-recipe-markdown-generator/build/docs/recipes docs/recipes
 
           # Copy reference/list files
-          cp ../rewrite-recipe-markdown-generator/build/docs/all-recipes.md docs/reference/
+          cp ../rewrite-recipe-markdown-generator/build/docs/all-recipes*.md docs/reference/
           cp ../rewrite-recipe-markdown-generator/build/docs/recipes-by-tag.md docs/reference/
           cp ../rewrite-recipe-markdown-generator/build/docs/recipes-with-data-tables.md docs/reference/
           cp ../rewrite-recipe-markdown-generator/build/docs/scanning-recipes.md docs/reference/
