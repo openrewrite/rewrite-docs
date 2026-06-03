@@ -1,4 +1,5 @@
 ---
+title: "Collapse `assertThat` followed by `return` into single statement"
 sidebar_label: "Collapse `assertThat` followed by `return` into single statement"
 ---
 

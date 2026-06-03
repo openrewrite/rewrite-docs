@@ -1,4 +1,5 @@
 ---
+title: "Migrate `WordUtils` to Apache Commons Text"
 sidebar_label: "Migrate `WordUtils` to Apache Commons Text"
 ---
 

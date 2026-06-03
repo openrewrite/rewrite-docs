@@ -1,4 +1,5 @@
 ---
+title: "Migrate `Docket` to `GroupedOpenAPI`"
 sidebar_label: "Migrate `Docket` to `GroupedOpenAPI`"
 ---
 

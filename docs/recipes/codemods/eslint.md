@@ -1,4 +1,5 @@
 ---
+title: "Lint source code with ESLint"
 sidebar_label: "Lint source code with ESLint"
 ---
 

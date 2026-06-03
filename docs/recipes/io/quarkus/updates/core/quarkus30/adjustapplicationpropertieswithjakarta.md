@@ -1,4 +1,5 @@
 ---
+title: "Adjust application.properties for jakarta.* packages"
 sidebar_label: "Adjust application.properties for jakarta.* packages"
 ---
 

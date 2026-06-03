@@ -1,4 +1,5 @@
 ---
+title: "Updates withMobileDialog higher-order component"
 sidebar_label: "Updates withMobileDialog higher-order component"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `LongStreamRules.LongStreamTakeWhile`"
 sidebar_label: "Refaster template `LongStreamRules.LongStreamTakeWhile`"
 ---
 

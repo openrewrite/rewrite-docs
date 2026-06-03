@@ -1,4 +1,5 @@
 ---
+title: "Add a new property"
 sidebar_label: "Add a new property"
 ---
 

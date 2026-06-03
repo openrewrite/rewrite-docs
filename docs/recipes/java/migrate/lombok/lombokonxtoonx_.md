@@ -1,4 +1,5 @@
 ---
+title: "Migrate Lombok's `@__` syntax to `onX_` for Java 8+"
 sidebar_label: "Migrate Lombok's `@__` syntax to `onX_` for Java 8+"
 ---
 

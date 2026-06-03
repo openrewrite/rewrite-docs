@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `JUnitToAssertJRules.AssertThatFloatArrayContainsExactly`"
 sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatFloatArrayContainsExactly`"
 ---
 

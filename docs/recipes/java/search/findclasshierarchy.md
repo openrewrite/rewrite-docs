@@ -1,4 +1,5 @@
 ---
+title: "Find class hierarchy"
 sidebar_label: "Find class hierarchy"
 ---
 

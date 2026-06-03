@@ -1,4 +1,5 @@
 ---
+title: "Change TransferManager simple methods to v2."
 sidebar_label: "Change TransferManager simple methods to v2."
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `version { }` closure instead of `version = { }` assignment"
 sidebar_label: "Use `version { }` closure instead of `version = { }` assignment"
 ---
 
@@ -26,6 +27,51 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+dependencies {
+    implementation('org.example:lib') {
+        version = {
+            strictly '1.0'
+        }
+    }
+}
+```
+
+###### After
+```groovy title="build.gradle"
+dependencies {
+    implementation('org.example:lib') {
+        version {
+            strictly '1.0'
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -3,1 +3,1 @@
+dependencies {
+    implementation('org.example:lib') {
+-       version = {
++       version {
+            strictly '1.0'
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

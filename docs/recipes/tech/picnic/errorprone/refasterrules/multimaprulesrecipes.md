@@ -1,4 +1,5 @@
 ---
+title: "`MultimapRules` Refaster recipes"
 sidebar_label: "`MultimapRules` Refaster recipes"
 ---
 

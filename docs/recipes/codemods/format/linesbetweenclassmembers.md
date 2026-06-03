@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow an empty line between class members"
 sidebar_label: "Require or disallow an empty line between class members"
 ---
 

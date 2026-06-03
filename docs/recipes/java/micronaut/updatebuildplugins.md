@@ -1,4 +1,5 @@
 ---
+title: "Add Micronaut build plugins to 4.x"
 sidebar_label: "Add Micronaut build plugins to 4.x"
 ---
 

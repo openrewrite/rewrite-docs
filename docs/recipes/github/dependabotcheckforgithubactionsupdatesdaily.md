@@ -1,4 +1,5 @@
 ---
+title: "Check for github-actions updates daily"
 sidebar_label: "Check for github-actions updates daily"
 ---
 

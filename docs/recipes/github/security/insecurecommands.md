@@ -1,4 +1,5 @@
 ---
+title: "Find insecure commands configuration"
 sidebar_label: "Find insecure commands configuration"
 ---
 

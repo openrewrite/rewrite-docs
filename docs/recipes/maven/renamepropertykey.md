@@ -1,4 +1,5 @@
 ---
+title: "Rename Maven property key"
 sidebar_label: "Rename Maven property key"
 ---
 

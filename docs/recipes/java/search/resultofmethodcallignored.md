@@ -1,4 +1,5 @@
 ---
+title: "Result of method call ignored"
 sidebar_label: "Result of method call ignored"
 ---
 

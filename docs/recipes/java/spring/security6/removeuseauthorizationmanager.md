@@ -1,4 +1,5 @@
 ---
+title: "Remove unnecessary `use-authorization-manager` for message security in Spring security 6"
 sidebar_label: "Remove unnecessary `use-authorization-manager` for message security in Spring security 6"
 ---
 

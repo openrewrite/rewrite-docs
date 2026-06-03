@@ -1,4 +1,5 @@
 ---
+title: "Add explicit plugin versions"
 sidebar_label: "Add explicit plugin versions"
 ---
 

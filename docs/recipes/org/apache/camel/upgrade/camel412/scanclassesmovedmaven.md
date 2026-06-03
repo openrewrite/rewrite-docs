@@ -1,4 +1,5 @@
 ---
+title: "The package scan classes has moved from camel-base-engine to camel-support - maven"
 sidebar_label: "The package scan classes has moved from camel-base-engine to camel-support - maven"
 ---
 

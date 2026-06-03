@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Framework 5.1"
 sidebar_label: "Migrate to Spring Framework 5.1"
 ---
 
@@ -35,7 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate to Spring Framework 5.0](../../../java/spring/framework/upgradespringframework_5_0)
+* [Migrate to Spring Framework 5.0 (Community Edition)](../../../java/spring/framework/upgradespringframework_5_0-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework`
   * artifactId: `*`

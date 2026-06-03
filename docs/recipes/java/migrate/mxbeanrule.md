@@ -1,4 +1,5 @@
 ---
+title: "MBean and MXBean interfaces must be public"
 sidebar_label: "MBean and MXBean interfaces must be public"
 ---
 

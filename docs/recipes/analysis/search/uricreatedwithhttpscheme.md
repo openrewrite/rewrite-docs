@@ -1,4 +1,5 @@
 ---
+title: "URIs created with an HTTP scheme"
 sidebar_label: "URIs created with an HTTP scheme"
 ---
 

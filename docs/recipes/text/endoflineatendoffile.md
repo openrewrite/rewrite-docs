@@ -1,4 +1,5 @@
 ---
+title: "End of Line @ End of File (EOL @ EOF)"
 sidebar_label: "End of Line @ End of File (EOL @ EOF)"
 ---
 

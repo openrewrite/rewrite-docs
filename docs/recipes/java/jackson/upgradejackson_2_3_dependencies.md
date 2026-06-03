@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Jackson 2.x dependencies to 3.x"
 sidebar_label: "Upgrade Jackson 2.x dependencies to 3.x"
 ---
 

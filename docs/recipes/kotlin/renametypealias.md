@@ -1,4 +1,5 @@
 ---
+title: "Rename type alias"
 sidebar_label: "Rename type alias"
 ---
 

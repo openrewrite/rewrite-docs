@@ -1,4 +1,5 @@
 ---
+title: "Use `DriverManager#setLogWriter(java.io.PrintWriter)`"
 sidebar_label: "Use `DriverManager#setLogWriter(java.io.PrintWriter)`"
 ---
 

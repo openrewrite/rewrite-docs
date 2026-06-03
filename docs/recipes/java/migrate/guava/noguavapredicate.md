@@ -1,4 +1,5 @@
 ---
+title: "Change Guava's `Predicate` into `java.util.function.Predicate` where possible"
 sidebar_label: "Change Guava's `Predicate` into `java.util.function.Predicate` where possible"
 ---
 

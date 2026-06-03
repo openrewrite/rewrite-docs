@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent brace style for case clauses"
 sidebar_label: "Enforce consistent brace style for case clauses"
 ---
 

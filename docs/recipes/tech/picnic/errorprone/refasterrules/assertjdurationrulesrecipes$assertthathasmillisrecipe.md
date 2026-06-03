@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJDurationRules.AssertThatHasMillis`"
 sidebar_label: "Refaster template `AssertJDurationRules.AssertThatHasMillis`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `var` for reference-typed variables"
 sidebar_label: "Use `var` for reference-typed variables"
 ---
 

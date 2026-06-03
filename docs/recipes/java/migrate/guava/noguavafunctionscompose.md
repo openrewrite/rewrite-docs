@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Function.compose(Function)`"
 sidebar_label: "Prefer `Function.compose(Function)`"
 ---
 

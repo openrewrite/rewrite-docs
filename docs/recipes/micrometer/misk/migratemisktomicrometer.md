@@ -1,4 +1,5 @@
 ---
+title: "Migrate Misk metrics to Micrometer"
 sidebar_label: "Migrate Misk metrics to Micrometer"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find methods with empty bodies"
 sidebar_label: "Find methods with empty bodies"
 ---
 

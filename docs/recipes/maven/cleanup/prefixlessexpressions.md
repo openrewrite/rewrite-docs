@@ -1,4 +1,5 @@
 ---
+title: "Drop prefixless expressions in POM"
 sidebar_label: "Drop prefixless expressions in POM"
 ---
 

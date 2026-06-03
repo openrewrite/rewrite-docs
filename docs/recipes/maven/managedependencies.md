@@ -1,4 +1,5 @@
 ---
+title: "Manage dependencies"
 sidebar_label: "Manage dependencies"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate Google Truth to AssertJ"
 sidebar_label: "Migrate Google Truth to AssertJ"
 ---
 

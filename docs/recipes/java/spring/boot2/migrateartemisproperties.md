@@ -1,4 +1,5 @@
 ---
+title: "Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`"
 sidebar_label: "Migrate `spring.artemis.host` and `spring.artemis.port` to `spring.artemis.broker-url`"
 ---
 

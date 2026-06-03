@@ -1,4 +1,5 @@
 ---
+title: "`AssertJShortRules` Refaster recipes"
 sidebar_label: "`AssertJShortRules` Refaster recipes"
 ---
 

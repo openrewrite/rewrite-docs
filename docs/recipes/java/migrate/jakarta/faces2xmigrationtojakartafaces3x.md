@@ -1,4 +1,5 @@
 ---
+title: "JSF 2.x to Jakarta Faces 3.x"
 sidebar_label: "JSF 2.x to Jakarta Faces 3.x"
 ---
 

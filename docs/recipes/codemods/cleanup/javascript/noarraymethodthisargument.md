@@ -1,4 +1,5 @@
 ---
+title: "Disallow using the `this` argument in array methods"
 sidebar_label: "Disallow using the `this` argument in array methods"
 ---
 

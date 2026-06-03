@@ -1,4 +1,5 @@
 ---
+title: "Rename bean"
 sidebar_label: "Rename bean"
 ---
 
@@ -24,9 +25,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | type | *Optional*.  | `foo.MyType` |
-| `String` | oldName |  | `fooBean` |
-| `String` | newName |  | `barBean` |
+| `String` | type | *Optional*. The fully qualified name of the bean type to rename. If omitted, beans are matched by name alone. | `foo.MyType` |
+| `String` | oldName | The existing name of the bean to rename. | `fooBean` |
+| `String` | newName | The new name to give the matching bean. | `barBean` |
 
 ## Examples
 ##### Example 1

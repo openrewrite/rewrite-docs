@@ -1,4 +1,5 @@
 ---
+title: "Remove Security Policy"
 sidebar_label: "Remove Security Policy"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change Extra Property"
 sidebar_label: "Change Extra Property"
 ---
 
@@ -26,6 +27,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | key | The key of the property to change. | `foo` |
 | `String` | value | The new value to set. The value will be treated the contents of a string literal. | `bar` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate the Axon Framework BOM coordinates](/recipes/org/axonframework/migration/axon4toaxon5bom.md)
+* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/io/axoniq/framework/migration/axon4toaxoniq5bom.md)
 
 ## Example
 

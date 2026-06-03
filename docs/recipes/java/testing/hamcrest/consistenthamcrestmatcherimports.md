@@ -1,4 +1,5 @@
 ---
+title: "Use consistent Hamcrest matcher imports"
 sidebar_label: "Use consistent Hamcrest matcher imports"
 ---
 

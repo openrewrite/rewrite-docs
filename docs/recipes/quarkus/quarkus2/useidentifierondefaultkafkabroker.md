@@ -1,4 +1,5 @@
 ---
+title: "Use `@Identifier(&quot;default-kafka-broker&quot;)`"
 sidebar_label: "Use `@Identifier(&quot;default-kafka-broker&quot;)`"
 ---
 

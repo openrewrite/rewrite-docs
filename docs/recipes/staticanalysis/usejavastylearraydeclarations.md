@@ -1,4 +1,5 @@
 ---
+title: "No C-style array declarations"
 sidebar_label: "No C-style array declarations"
 ---
 

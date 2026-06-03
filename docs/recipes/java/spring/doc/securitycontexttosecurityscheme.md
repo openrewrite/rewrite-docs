@@ -1,4 +1,5 @@
 ---
+title: "Replace elements of SpringFox's security with Swagger's security models"
 sidebar_label: "Replace elements of SpringFox's security with Swagger's security models"
 ---
 

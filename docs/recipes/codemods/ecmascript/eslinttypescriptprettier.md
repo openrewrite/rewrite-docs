@@ -1,4 +1,5 @@
 ---
+title: "Format TypeScript using ESLint Prettier plugin"
 sidebar_label: "Format TypeScript using ESLint Prettier plugin"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new ConcurrentHashMap&lt;&gt;()`"
 sidebar_label: "Prefer `new ConcurrentHashMap&lt;&gt;()`"
 ---
 

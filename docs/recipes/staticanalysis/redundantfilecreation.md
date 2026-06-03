@@ -1,4 +1,5 @@
 ---
+title: "Redundant file creation"
 sidebar_label: "Redundant file creation"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoFromFutureAsyncLoadingCacheGetAll`"
 sidebar_label: "Refaster template `ReactorRules.MonoFromFutureAsyncLoadingCacheGetAll`"
 ---
 

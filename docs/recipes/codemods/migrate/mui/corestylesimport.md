@@ -1,4 +1,5 @@
 ---
+title: "Updates import paths for core styles"
 sidebar_label: "Updates import paths for core styles"
 ---
 

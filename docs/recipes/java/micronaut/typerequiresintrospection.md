@@ -1,4 +1,5 @@
 ---
+title: "Add `@Introspected` to classes requiring a map representation"
 sidebar_label: "Add `@Introspected` to classes requiring a map representation"
 ---
 

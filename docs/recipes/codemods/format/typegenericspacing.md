@@ -1,4 +1,5 @@
 ---
+title: "Enforces consistent spacing inside TypeScript type generics"
 sidebar_label: "Enforces consistent spacing inside TypeScript type generics"
 ---
 

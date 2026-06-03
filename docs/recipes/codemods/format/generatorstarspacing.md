@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions"
 sidebar_label: "Enforce consistent spacing around &amp;#x60;*&amp;#x60; operators in generator functions"
 ---
 

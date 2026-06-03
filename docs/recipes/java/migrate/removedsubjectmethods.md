@@ -1,4 +1,5 @@
 ---
+title: "Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`"
 sidebar_label: "Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`"
 ---
 

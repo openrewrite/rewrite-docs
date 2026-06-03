@@ -1,4 +1,5 @@
 ---
+title: "Add a comment to a `Maven` dependency or plugin"
 sidebar_label: "Add a comment to a `Maven` dependency or plugin"
 ---
 

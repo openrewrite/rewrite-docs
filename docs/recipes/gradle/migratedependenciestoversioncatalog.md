@@ -1,4 +1,5 @@
 ---
+title: "Migrate Gradle project dependencies to version catalog"
 sidebar_label: "Migrate Gradle project dependencies to version catalog"
 ---
 

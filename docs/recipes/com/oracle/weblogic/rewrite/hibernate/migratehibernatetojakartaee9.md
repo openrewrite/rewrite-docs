@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Hibernate for Jakarta EE 9"
 sidebar_label: "Migrate to Hibernate for Jakarta EE 9"
 ---
 

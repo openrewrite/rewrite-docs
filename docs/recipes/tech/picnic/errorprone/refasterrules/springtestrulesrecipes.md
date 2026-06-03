@@ -1,4 +1,5 @@
 ---
+title: "`SpringTestRules` Refaster recipes"
 sidebar_label: "`SpringTestRules` Refaster recipes"
 ---
 

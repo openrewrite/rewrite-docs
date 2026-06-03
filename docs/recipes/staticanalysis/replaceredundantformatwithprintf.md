@@ -1,4 +1,5 @@
 ---
+title: "Replace redundant String format invocations that are wrapped with PrintStream operations"
 sidebar_label: "Replace redundant String format invocations that are wrapped with PrintStream operations"
 ---
 

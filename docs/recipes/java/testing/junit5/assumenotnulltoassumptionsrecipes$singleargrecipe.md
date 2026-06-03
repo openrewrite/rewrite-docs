@@ -1,4 +1,5 @@
 ---
+title: "Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`"
 sidebar_label: "Transform singlar `assumeNotNull(object)` to `assumeFalse(object == null)`"
 ---
 

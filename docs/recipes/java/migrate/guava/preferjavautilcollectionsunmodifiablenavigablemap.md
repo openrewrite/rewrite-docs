@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.Collections#unmodifiableNavigableMap`"
 sidebar_label: "Prefer `java.util.Collections#unmodifiableNavigableMap`"
 ---
 

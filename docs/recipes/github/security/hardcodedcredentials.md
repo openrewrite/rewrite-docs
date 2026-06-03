@@ -1,4 +1,5 @@
 ---
+title: "Find hardcoded container credentials"
 sidebar_label: "Find hardcoded container credentials"
 ---
 

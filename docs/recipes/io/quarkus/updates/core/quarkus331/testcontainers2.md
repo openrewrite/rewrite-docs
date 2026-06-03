@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus331.Testcontainers2"
 sidebar_label: "io.quarkus.updates.core.quarkus331.Testcontainers2"
 ---
 

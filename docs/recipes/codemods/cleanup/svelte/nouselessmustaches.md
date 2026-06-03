@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary mustache interpolations"
 sidebar_label: "Disallow unnecessary mustache interpolations"
 ---
 

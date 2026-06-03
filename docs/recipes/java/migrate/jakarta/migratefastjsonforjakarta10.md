@@ -1,4 +1,5 @@
 ---
+title: "Update Fastjson for Jakarta EE 10"
 sidebar_label: "Update Fastjson for Jakarta EE 10"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Suggest using toBe() for primitive literals"
 sidebar_label: "Suggest using toBe() for primitive literals"
 ---
 

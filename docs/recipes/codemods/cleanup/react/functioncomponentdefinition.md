@@ -1,4 +1,5 @@
 ---
+title: "Enforce a specific function type for function components"
 sidebar_label: "Enforce a specific function type for function components"
 ---
 

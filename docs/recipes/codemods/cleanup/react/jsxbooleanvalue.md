@@ -1,4 +1,5 @@
 ---
+title: "Enforce boolean attributes notation in JSX"
 sidebar_label: "Enforce boolean attributes notation in JSX"
 ---
 

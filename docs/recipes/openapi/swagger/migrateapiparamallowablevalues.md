@@ -1,4 +1,5 @@
 ---
+title: "Migrate `@ApiParam(allowableValues)` to `@Parameter(schema)`"
 sidebar_label: "Migrate `@ApiParam(allowableValues)` to `@Parameter(schema)`"
 ---
 

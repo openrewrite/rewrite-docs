@@ -1,4 +1,5 @@
 ---
+title: "Recommended Storybook code cleanup"
 sidebar_label: "Recommended Storybook code cleanup"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Removed OpenJPA providers in the persistence.xml file"
 sidebar_label: "Removed OpenJPA providers in the persistence.xml file"
 ---
 

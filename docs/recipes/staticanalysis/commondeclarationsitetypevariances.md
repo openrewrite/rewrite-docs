@@ -1,4 +1,5 @@
 ---
+title: "Properly use declaration-site type variance for well-known types"
 sidebar_label: "Properly use declaration-site type variance for well-known types"
 ---
 

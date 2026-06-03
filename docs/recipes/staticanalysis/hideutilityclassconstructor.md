@@ -1,4 +1,5 @@
 ---
+title: "Hide utility class constructor"
 sidebar_label: "Hide utility class constructor"
 ---
 

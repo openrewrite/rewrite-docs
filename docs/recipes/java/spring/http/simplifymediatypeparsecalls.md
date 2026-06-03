@@ -1,4 +1,5 @@
 ---
+title: "Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls"
 sidebar_label: "Simplify unnecessary `MediaType.parseMediaType()` and `MediaType.valueOf()` calls"
 ---
 

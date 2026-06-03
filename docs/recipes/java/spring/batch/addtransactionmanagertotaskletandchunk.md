@@ -1,4 +1,5 @@
 ---
+title: "Add `PlatformTransactionManager` to `tasklet()` and `chunk()` calls"
 sidebar_label: "Add `PlatformTransactionManager` to `tasklet()` and `chunk()` calls"
 ---
 

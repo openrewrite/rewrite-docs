@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent linebreak style for operators"
 sidebar_label: "Enforce consistent linebreak style for operators"
 ---
 

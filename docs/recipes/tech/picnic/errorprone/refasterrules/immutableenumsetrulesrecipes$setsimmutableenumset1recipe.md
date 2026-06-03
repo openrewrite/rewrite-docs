@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSet1`"
 sidebar_label: "Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSet1`"
 ---
 

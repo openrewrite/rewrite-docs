@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.isLoggable(Level.WARNING)` with SLF4J's `Logger.isWarnEnabled()`"
 sidebar_label: "Replace JUL `Logger.isLoggable(Level.WARNING)` with SLF4J's `Logger.isWarnEnabled()`"
 ---
 

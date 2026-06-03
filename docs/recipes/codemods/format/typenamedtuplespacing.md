@@ -1,4 +1,5 @@
 ---
+title: "Expect space before the type declaration in the named tuple"
 sidebar_label: "Expect space before the type declaration in the named tuple"
 ---
 

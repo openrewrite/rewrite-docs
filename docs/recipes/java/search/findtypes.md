@@ -1,4 +1,5 @@
 ---
+title: "Find types"
 sidebar_label: "Find types"
 ---
 

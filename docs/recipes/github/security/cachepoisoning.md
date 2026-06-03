@@ -1,4 +1,5 @@
 ---
+title: "Find cache poisoning vulnerabilities"
 sidebar_label: "Find cache poisoning vulnerabilities"
 ---
 

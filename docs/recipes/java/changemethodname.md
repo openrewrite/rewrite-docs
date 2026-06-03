@@ -1,4 +1,5 @@
 ---
+title: "Change method name"
 sidebar_label: "Change method name"
 ---
 
@@ -38,6 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [Adopt `javax.security.auth.Subject.current()` and `javax.security.auth.Subject.callAs()` methods`](/recipes/java/migrate/removedsubjectmethods.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/io/quarkus/updates/core/quarkus37/deprecatedlogrecordthreadid.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/java/migrate/deprecatedlogrecordthreadid.md)
+* [Apply Axon Framework 5 messaging module renames](/recipes/org/axonframework/migration/axon4toaxon5messaging.md)
 * [ArchUnit 0.x upgrade](/recipes/java/testing/archunit/archunit0to1migration.md)
 * [Change S3 methods to v2.](/recipes/software/amazon/awssdk/v2migration/s3methodstov2.md)
 * [Change S3EventNotification methods to v2.](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
@@ -131,7 +133,6 @@ This recipe is used as part of the following composite recipes:
 * [Replace `Paths.get` with `Path.of`](/recipes/java/migrate/nio/file/pathsgettopathof.md)
 * [Replace `SSLSession.getPeerCertificateChain()` method](/recipes/java/migrate/removedsslsessiongetpeercertificatechainmethodimpl.md)
 * [Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`](/recipes/java/migrate/jakarta/wswsocservercontainerdeprecation.md)
-* [Replace `enumValues&lt;T&gt;()` with `enumEntries&lt;T&gt;()`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replaceenumvaluesfunctionwithenumentries)
 * [Replace `finalize` method in `java.io.FileInputStream`  and `java.io.FileOutputStream`](/recipes/java/migrate/removedfileiofinalizemethods.md)
 * [Replace `finalize` method in `java.util.zip.ZipFile`, `java.util.zip.Inflater` and `java.util.zip.Deflater`](/recipes/java/migrate/removedzipfinalizemethods.md)
 * [Replace `hudson.Util.getPastTimeString` with `getTimeSpanString`](/recipes/jenkins/migrate/hudson/utilgetpasttimestringtogettimespanstring.md)

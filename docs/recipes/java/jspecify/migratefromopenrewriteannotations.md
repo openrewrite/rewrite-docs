@@ -1,4 +1,5 @@
 ---
+title: "Migrate from OpenRewrite annotations to JSpecify"
 sidebar_label: "Migrate from OpenRewrite annotations to JSpecify"
 ---
 

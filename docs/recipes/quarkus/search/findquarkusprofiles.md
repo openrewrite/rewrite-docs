@@ -1,4 +1,5 @@
 ---
+title: "Search Quarkus profiles"
 sidebar_label: "Search Quarkus profiles"
 ---
 

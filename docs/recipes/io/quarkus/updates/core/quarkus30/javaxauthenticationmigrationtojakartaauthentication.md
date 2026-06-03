@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`"
 sidebar_label: "Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`"
 ---
 

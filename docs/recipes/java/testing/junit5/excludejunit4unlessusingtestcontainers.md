@@ -1,4 +1,5 @@
 ---
+title: "Exclude JUnit 4, unless Testcontainers is used"
 sidebar_label: "Exclude JUnit 4, unless Testcontainers is used"
 ---
 

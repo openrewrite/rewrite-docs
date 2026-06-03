@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`"
 sidebar_label: "Prefer `Predicate.not(..)` over casting to `Predicate` and calling `negate()`"
 ---
 

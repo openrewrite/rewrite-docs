@@ -1,4 +1,5 @@
 ---
+title: "Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`"
 sidebar_label: "Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`"
 ---
 

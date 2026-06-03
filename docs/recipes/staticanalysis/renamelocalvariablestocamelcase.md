@@ -1,4 +1,5 @@
 ---
+title: "Reformat local variable names to camelCase"
 sidebar_label: "Reformat local variable names to camelCase"
 ---
 

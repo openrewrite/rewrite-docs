@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.IntegerCompareUnsigned`"
 sidebar_label: "Refaster template `PrimitiveRules.IntegerCompareUnsigned`"
 ---
 

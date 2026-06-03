@@ -1,4 +1,5 @@
 ---
+title: "Prefer modern Math APIs over legacy patterns"
 sidebar_label: "Prefer modern Math APIs over legacy patterns"
 ---
 

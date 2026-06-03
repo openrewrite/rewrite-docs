@@ -1,4 +1,5 @@
 ---
+title: "Increment Maven project version"
 sidebar_label: "Increment Maven project version"
 ---
 

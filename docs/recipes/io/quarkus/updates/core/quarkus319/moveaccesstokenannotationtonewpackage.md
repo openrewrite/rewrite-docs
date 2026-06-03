@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage"
 sidebar_label: "io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage"
 ---
 

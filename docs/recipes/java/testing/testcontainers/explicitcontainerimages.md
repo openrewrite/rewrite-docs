@@ -1,4 +1,5 @@
 ---
+title: "Explicit container images and versions"
 sidebar_label: "Explicit container images and versions"
 ---
 

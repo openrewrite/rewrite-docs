@@ -1,4 +1,5 @@
 ---
+title: "Convert Spring `ResponseEntity` to JAX-RS `Response`"
 sidebar_label: "Convert Spring `ResponseEntity` to JAX-RS `Response`"
 ---
 

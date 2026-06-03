@@ -1,4 +1,5 @@
 ---
+title: "Fix deprecated no-arg `ExceptionHandler` constructors"
 sidebar_label: "Fix deprecated no-arg `ExceptionHandler` constructors"
 ---
 

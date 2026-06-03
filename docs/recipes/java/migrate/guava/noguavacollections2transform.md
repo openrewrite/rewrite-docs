@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Collection.stream().map(Function)` over `Collections2.transform`"
 sidebar_label: "Prefer `Collection.stream().map(Function)` over `Collections2.transform`"
 ---
 

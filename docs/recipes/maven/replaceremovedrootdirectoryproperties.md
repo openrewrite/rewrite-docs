@@ -1,4 +1,5 @@
 ---
+title: "Replace removed root directory properties"
 sidebar_label: "Replace removed root directory properties"
 ---
 

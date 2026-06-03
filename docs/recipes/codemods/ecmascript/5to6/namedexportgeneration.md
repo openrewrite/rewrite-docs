@@ -1,4 +1,5 @@
 ---
+title: "Generate named exports from CommonJS modules"
 sidebar_label: "Generate named exports from CommonJS modules"
 ---
 

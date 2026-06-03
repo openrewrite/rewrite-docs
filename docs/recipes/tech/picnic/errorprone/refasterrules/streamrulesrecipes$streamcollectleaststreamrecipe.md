@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamCollectLeastStream`"
 sidebar_label: "Refaster template `StreamRules.StreamCollectLeastStream`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Improve regexes by making them shorter, consistent, and safer"
 sidebar_label: "Improve regexes by making them shorter, consistent, and safer"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Transform `Assume` methods to `Assumptions`"
 sidebar_label: "Transform `Assume` methods to `Assumptions`"
 ---
 

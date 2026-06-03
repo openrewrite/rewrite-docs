@@ -1,4 +1,5 @@
 ---
+title: "Updates props for DialogTitle component"
 sidebar_label: "Updates props for DialogTitle component"
 ---
 

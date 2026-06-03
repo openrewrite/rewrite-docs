@@ -1,4 +1,5 @@
 ---
+title: "Find XML namespace URIs"
 sidebar_label: "Find XML namespace URIs"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Simplify boolean expression"
 sidebar_label: "Simplify boolean expression"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `java.security.cert` instead of `javax.security.cert`"
 sidebar_label: "Use `java.security.cert` instead of `javax.security.cert`"
 ---
 

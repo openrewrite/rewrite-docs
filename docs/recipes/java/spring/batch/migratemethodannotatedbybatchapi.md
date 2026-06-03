@@ -1,4 +1,5 @@
 ---
+title: "Migrate method when it annotated by Spring Batch API"
 sidebar_label: "Migrate method when it annotated by Spring Batch API"
 ---
 

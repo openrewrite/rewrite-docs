@@ -1,4 +1,5 @@
 ---
+title: "Add new XML attribute for an Element"
 sidebar_label: "Add new XML attribute for an Element"
 ---
 

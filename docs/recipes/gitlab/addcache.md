@@ -1,4 +1,5 @@
 ---
+title: "Add cache configuration"
 sidebar_label: "Add cache configuration"
 ---
 

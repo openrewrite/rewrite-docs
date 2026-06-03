@@ -1,4 +1,5 @@
 ---
+title: "Simplify AssertJ assertions with literal arguments"
 sidebar_label: "Simplify AssertJ assertions with literal arguments"
 ---
 

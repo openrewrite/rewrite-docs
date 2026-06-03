@@ -1,4 +1,5 @@
 ---
+title: "Rename getter methods to fit Lombok"
 sidebar_label: "Rename getter methods to fit Lombok"
 ---
 

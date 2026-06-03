@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;`"
 sidebar_label: "Require or disallow method and property shorthand syntax for object literals in `&lt;template&gt;`"
 ---
 

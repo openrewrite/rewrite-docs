@@ -1,4 +1,5 @@
 ---
+title: "Remove unused YAML keys in config files"
 sidebar_label: "Remove unused YAML keys in config files"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Atomic Boolean, Integer, and Long equality checks compare their values"
 sidebar_label: "Atomic Boolean, Integer, and Long equality checks compare their values"
 ---
 

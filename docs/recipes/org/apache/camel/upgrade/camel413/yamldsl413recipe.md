@@ -1,4 +1,5 @@
 ---
+title: "Camel YML DSL changes"
 sidebar_label: "Camel YML DSL changes"
 ---
 

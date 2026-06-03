@@ -1,4 +1,5 @@
 ---
+title: "Do not use leading/trailing space between `console.log` parameters"
 sidebar_label: "Do not use leading/trailing space between `console.log` parameters"
 ---
 

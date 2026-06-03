@@ -1,4 +1,5 @@
 ---
+title: "Updates theme palette mode"
 sidebar_label: "Updates theme palette mode"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Setup Java dependency caching"
 sidebar_label: "Setup Java dependency caching"
 ---
 

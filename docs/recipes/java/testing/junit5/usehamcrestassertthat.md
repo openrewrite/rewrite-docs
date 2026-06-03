@@ -1,4 +1,5 @@
 ---
+title: "Use `MatcherAssert#assertThat(..)`"
 sidebar_label: "Use `MatcherAssert#assertThat(..)`"
 ---
 

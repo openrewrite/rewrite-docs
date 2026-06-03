@@ -1,4 +1,5 @@
 ---
+title: "DataNucleus 5.0 package moves"
 sidebar_label: "DataNucleus 5.0 package moves"
 ---
 

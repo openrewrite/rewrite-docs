@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.MinOfVarargs`"
 sidebar_label: "Refaster template `ComparatorRules.MinOfVarargs`"
 ---
 

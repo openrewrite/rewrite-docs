@@ -1,4 +1,5 @@
 ---
+title: "Simplify `assertThat(collection.stream().map(...))` to `assertThat(collection).extracting(...)`"
 sidebar_label: "Simplify `assertThat(collection.stream().map(...))` to `assertThat(collection).extracting(...)`"
 ---
 

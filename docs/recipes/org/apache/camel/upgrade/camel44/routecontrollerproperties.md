@@ -1,4 +1,5 @@
 ---
+title: "Replace 'camel.main.routeController' with `camel.routecontroller'"
 sidebar_label: "Replace 'camel.main.routeController' with `camel.routecontroller'"
 ---
 

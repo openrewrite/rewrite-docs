@@ -1,4 +1,5 @@
 ---
+title: "Camel Java DSL change for camel 4.12"
 sidebar_label: "Camel Java DSL change for camel 4.12"
 ---
 

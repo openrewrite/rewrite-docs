@@ -1,4 +1,5 @@
 ---
+title: "Find COBOL relationships"
 sidebar_label: "Find COBOL relationships"
 ---
 

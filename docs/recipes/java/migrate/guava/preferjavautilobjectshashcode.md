@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.Objects#hash`"
 sidebar_label: "Prefer `java.util.Objects#hash`"
 ---
 

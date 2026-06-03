@@ -1,4 +1,5 @@
 ---
+title: "Convert the method parameter from numeric type to duration"
 sidebar_label: "Convert the method parameter from numeric type to duration"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`SuggestedFixRules` Refaster recipes"
 sidebar_label: "`SuggestedFixRules` Refaster recipes"
 ---
 

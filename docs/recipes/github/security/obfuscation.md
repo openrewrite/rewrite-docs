@@ -1,4 +1,5 @@
 ---
+title: "Find obfuscated GitHub Actions features"
 sidebar_label: "Find obfuscated GitHub Actions features"
 ---
 

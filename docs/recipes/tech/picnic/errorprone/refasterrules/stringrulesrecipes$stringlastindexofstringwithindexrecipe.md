@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringLastIndexOfStringWithIndex`"
 sidebar_label: "Refaster template `StringRules.StringLastIndexOfStringWithIndex`"
 ---
 

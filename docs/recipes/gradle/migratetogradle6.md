@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Gradle 6 from Gradle 5"
 sidebar_label: "Migrate to Gradle 6 from Gradle 5"
 ---
 

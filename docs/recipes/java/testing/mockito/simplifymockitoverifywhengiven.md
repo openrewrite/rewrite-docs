@@ -1,4 +1,5 @@
 ---
+title: "Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified"
 sidebar_label: "Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use switch cases labels for enums"
 sidebar_label: "Use switch cases labels for enums"
 ---
 

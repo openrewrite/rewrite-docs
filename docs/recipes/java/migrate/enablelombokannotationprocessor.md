@@ -1,4 +1,5 @@
 ---
+title: "Enable Lombok annotation processor"
 sidebar_label: "Enable Lombok annotation processor"
 ---
 

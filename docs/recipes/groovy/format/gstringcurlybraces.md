@@ -1,4 +1,5 @@
 ---
+title: "Groovy GString curly braces"
 sidebar_label: "Groovy GString curly braces"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add `@Serial` annotation to `serialVersionUID`"
 sidebar_label: "Add `@Serial` annotation to `serialVersionUID`"
 ---
 

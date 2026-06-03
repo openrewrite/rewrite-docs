@@ -1,4 +1,5 @@
 ---
+title: "Disallow useless fallback when spreading in object literals"
 sidebar_label: "Disallow useless fallback when spreading in object literals"
 ---
 

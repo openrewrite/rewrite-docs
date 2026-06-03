@@ -1,4 +1,5 @@
 ---
+title: "Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`"
 sidebar_label: "Use `AtomicBoolean#weakCompareAndSetPlain(boolean, boolean)`"
 ---
 

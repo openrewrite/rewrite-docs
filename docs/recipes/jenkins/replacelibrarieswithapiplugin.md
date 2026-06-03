@@ -1,4 +1,5 @@
 ---
+title: "Use Jenkins API plugin instead of libraries"
 sidebar_label: "Use Jenkins API plugin instead of libraries"
 ---
 

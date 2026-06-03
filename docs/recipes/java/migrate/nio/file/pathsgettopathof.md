@@ -1,4 +1,5 @@
 ---
+title: "Replace `Paths.get` with `Path.of`"
 sidebar_label: "Replace `Paths.get` with `Path.of`"
 ---
 

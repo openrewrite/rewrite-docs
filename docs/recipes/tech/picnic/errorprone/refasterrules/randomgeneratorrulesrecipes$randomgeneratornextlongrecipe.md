@@ -1,4 +1,5 @@
 ---
+title: "Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives"
 sidebar_label: "Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives"
 ---
 

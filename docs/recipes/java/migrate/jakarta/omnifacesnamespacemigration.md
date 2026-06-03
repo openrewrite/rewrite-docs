@@ -1,4 +1,5 @@
 ---
+title: "OmniFaces Namespace Migration"
 sidebar_label: "OmniFaces Namespace Migration"
 ---
 

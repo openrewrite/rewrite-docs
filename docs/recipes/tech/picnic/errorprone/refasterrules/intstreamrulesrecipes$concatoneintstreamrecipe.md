@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `IntStreamRules.ConcatOneIntStream`"
 sidebar_label: "Refaster template `IntStreamRules.ConcatOneIntStream`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove obsolete Spring JUnit runners"
 sidebar_label: "Remove obsolete Spring JUnit runners"
 ---
 

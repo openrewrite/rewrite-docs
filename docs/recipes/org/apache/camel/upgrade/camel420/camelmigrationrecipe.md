@@ -1,4 +1,5 @@
 ---
+title: "Migrates `camel 4.19` application to `camel 4.20`"
 sidebar_label: "Migrates `camel 4.19` application to `camel 4.20`"
 ---
 
@@ -50,6 +51,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to 4.20.0](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrates `camel 4.18` application to `camel 4.20`](/recipes/io/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
 
 
 ## Usage

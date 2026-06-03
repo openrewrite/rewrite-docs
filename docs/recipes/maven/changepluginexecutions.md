@@ -1,4 +1,5 @@
 ---
+title: "Change Maven plugin executions"
 sidebar_label: "Change Maven plugin executions"
 ---
 

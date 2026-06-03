@@ -1,4 +1,5 @@
 ---
+title: "Use `getSSOCookieFromSSOToken` and `logout`"
 sidebar_label: "Use `getSSOCookieFromSSOToken` and `logout`"
 ---
 

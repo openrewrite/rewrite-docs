@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.CollectionsMax`"
 sidebar_label: "Refaster template `ComparatorRules.CollectionsMax`"
 ---
 

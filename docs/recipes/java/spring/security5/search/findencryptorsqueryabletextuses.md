@@ -1,4 +1,5 @@
 ---
+title: "Finds uses of `Encryptors.queryableText()`"
 sidebar_label: "Finds uses of `Encryptors.queryableText()`"
 ---
 

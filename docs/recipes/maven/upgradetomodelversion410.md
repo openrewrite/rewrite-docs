@@ -1,4 +1,5 @@
 ---
+title: "Upgrade to Maven model version 4.1.0"
 sidebar_label: "Upgrade to Maven model version 4.1.0"
 ---
 

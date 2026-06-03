@@ -1,4 +1,5 @@
 ---
+title: "Update Gradle project Java compatibility"
 sidebar_label: "Update Gradle project Java compatibility"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Converts ExpansionPanel to use ExpansionPanel component"
 sidebar_label: "Converts ExpansionPanel to use ExpansionPanel component"
 ---
 

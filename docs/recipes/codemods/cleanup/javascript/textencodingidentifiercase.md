@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent case for text encoding identifiers"
 sidebar_label: "Enforce consistent case for text encoding identifiers"
 ---
 

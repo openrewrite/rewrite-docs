@@ -1,4 +1,5 @@
 ---
+title: "Spring Boot 3.3 best practices (only)"
 sidebar_label: "Spring Boot 3.3 best practices (only)"
 ---
 

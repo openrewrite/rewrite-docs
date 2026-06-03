@@ -1,4 +1,5 @@
 ---
+title: "Migrate to JavaEE7"
 sidebar_label: "Migrate to JavaEE7"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find deprecated GitLab CI syntax"
 sidebar_label: "Find deprecated GitLab CI syntax"
 ---
 

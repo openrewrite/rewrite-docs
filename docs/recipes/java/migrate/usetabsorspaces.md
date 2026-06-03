@@ -1,4 +1,5 @@
 ---
+title: "Force indentation to either tabs or spaces"
 sidebar_label: "Force indentation to either tabs or spaces"
 ---
 

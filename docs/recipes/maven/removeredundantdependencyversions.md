@@ -1,4 +1,5 @@
 ---
+title: "Remove redundant explicit dependency and plugin versions"
 sidebar_label: "Remove redundant explicit dependency and plugin versions"
 ---
 

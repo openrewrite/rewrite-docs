@@ -1,4 +1,5 @@
 ---
+title: "Configure Quarkus Native Build Support"
 sidebar_label: "Configure Quarkus Native Build Support"
 ---
 

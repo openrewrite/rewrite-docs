@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssortedRules.IteratorGetNextOrDefault`"
 sidebar_label: "Refaster template `AssortedRules.IteratorGetNextOrDefault`"
 ---
 

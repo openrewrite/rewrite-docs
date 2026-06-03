@@ -1,4 +1,5 @@
 ---
+title: "Migrate from tibdex/github-app-token to actions/create-github-app-token"
 sidebar_label: "Migrate from tibdex/github-app-token to actions/create-github-app-token"
 ---
 

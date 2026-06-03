@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DoubleStreamRules.DoubleStreamAnyMatch`"
 sidebar_label: "Refaster template `DoubleStreamRules.DoubleStreamAnyMatch`"
 ---
 

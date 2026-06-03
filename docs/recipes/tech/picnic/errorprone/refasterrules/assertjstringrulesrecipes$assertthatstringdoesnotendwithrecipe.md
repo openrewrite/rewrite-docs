@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJStringRules.AssertThatStringDoesNotEndWith`"
 sidebar_label: "Refaster template `AssertJStringRules.AssertThatStringDoesNotEndWith`"
 ---
 

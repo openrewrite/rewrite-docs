@@ -1,4 +1,5 @@
 ---
+title: "Replace OSSRH secrets with Sonatype secrets"
 sidebar_label: "Replace OSSRH secrets with Sonatype secrets"
 ---
 

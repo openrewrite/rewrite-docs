@@ -1,4 +1,5 @@
 ---
+title: "Remove an enabled Gradle preview feature"
 sidebar_label: "Remove an enabled Gradle preview feature"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add GitLab component"
 sidebar_label: "Add GitLab component"
 ---
 

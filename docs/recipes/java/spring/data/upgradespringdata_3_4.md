@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Data JPA 3.4"
 sidebar_label: "Migrate to Spring Data JPA 3.4"
 ---
 

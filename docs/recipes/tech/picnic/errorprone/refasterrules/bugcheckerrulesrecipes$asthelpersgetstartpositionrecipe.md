@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `BugCheckerRules.ASTHelpersGetStartPosition`"
 sidebar_label: "Refaster template `BugCheckerRules.ASTHelpersGetStartPosition`"
 ---
 

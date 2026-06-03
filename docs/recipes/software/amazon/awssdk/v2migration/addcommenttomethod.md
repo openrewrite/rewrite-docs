@@ -1,4 +1,5 @@
 ---
+title: "Add a comment to a method"
 sidebar_label: "Add a comment to a method"
 ---
 

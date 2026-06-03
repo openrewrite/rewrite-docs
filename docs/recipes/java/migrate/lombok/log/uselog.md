@@ -1,4 +1,5 @@
 ---
+title: "Use `@Log` instead of explicit fields"
 sidebar_label: "Use `@Log` instead of explicit fields"
 ---
 

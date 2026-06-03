@@ -1,4 +1,5 @@
 ---
+title: "Enforce use of defineOptions instead of default export"
 sidebar_label: "Enforce use of defineOptions instead of default export"
 ---
 

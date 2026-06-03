@@ -1,4 +1,5 @@
 ---
+title: "Drop `SummaryPrinter`"
 sidebar_label: "Drop `SummaryPrinter`"
 ---
 

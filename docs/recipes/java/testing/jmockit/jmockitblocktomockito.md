@@ -1,4 +1,5 @@
 ---
+title: "Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications"
 sidebar_label: "Rewrite JMockit Expectations, NonStrictExpectations, Verifications, VerificationsInOrder, FullVerifications"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Transform AMD style `define()` calls to ES6 `import` statements"
 sidebar_label: "Transform AMD style `define()` calls to ES6 `import` statements"
 ---
 

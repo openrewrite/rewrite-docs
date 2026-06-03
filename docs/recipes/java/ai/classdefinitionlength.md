@@ -1,4 +1,5 @@
 ---
+title: "Calculate token length of classes"
 sidebar_label: "Calculate token length of classes"
 ---
 

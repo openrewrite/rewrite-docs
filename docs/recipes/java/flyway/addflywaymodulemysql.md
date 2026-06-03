@@ -1,4 +1,5 @@
 ---
+title: "Add missing Flyway module for MySQL"
 sidebar_label: "Add missing Flyway module for MySQL"
 ---
 

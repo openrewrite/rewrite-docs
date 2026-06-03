@@ -1,4 +1,5 @@
 ---
+title: "Complete migration to OpenTelemetry"
 sidebar_label: "Complete migration to OpenTelemetry"
 ---
 

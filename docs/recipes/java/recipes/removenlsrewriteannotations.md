@@ -1,4 +1,5 @@
 ---
+title: "Remove `@NlsRewrite` annotations from `Recipe` classes"
 sidebar_label: "Remove `@NlsRewrite` annotations from `Recipe` classes"
 ---
 

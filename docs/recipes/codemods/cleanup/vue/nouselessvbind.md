@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary v-bind directives"
 sidebar_label: "Disallow unnecessary v-bind directives"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsNotZero`"
 sidebar_label: "Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsNotZero`"
 ---
 

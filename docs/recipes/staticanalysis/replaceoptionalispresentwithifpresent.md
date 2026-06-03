@@ -1,4 +1,5 @@
 ---
+title: "Replace `Optional#isPresent()` with `Optional#ifPresent()`"
 sidebar_label: "Replace `Optional#isPresent()` with `Optional#ifPresent()`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.json` packages to `jakarta.json`"
 sidebar_label: "Migrate deprecated `javax.json` packages to `jakarta.json`"
 ---
 

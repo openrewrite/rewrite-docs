@@ -1,4 +1,5 @@
 ---
+title: "`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation"
 sidebar_label: "`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation"
 ---
 

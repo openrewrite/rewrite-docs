@@ -1,4 +1,5 @@
 ---
+title: "`AssertJByteRules` Refaster recipes"
 sidebar_label: "`AssertJByteRules` Refaster recipes"
 ---
 

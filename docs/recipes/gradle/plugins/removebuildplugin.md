@@ -1,4 +1,5 @@
 ---
+title: "Remove Gradle plugin"
 sidebar_label: "Remove Gradle plugin"
 ---
 

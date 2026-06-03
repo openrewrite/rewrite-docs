@@ -1,4 +1,5 @@
 ---
+title: "Simplify consecutive assignments"
 sidebar_label: "Simplify consecutive assignments"
 ---
 

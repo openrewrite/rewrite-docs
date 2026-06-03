@@ -1,4 +1,5 @@
 ---
+title: "Enforce the casing of component name in components options"
 sidebar_label: "Enforce the casing of component name in components options"
 ---
 

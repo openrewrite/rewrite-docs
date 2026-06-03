@@ -1,4 +1,5 @@
 ---
+title: "Merge YAML snippet"
 sidebar_label: "Merge YAML snippet"
 ---
 

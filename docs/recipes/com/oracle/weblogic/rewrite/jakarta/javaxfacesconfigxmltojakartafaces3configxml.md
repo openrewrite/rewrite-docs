@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3"
 sidebar_label: "Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3"
 ---
 

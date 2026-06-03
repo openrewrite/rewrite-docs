@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.replace(String, String, String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.replace(String, String, String)` with JDK provided API"
 ---
 

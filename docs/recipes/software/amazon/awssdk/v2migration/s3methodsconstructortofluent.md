@@ -1,4 +1,5 @@
 ---
+title: "Change S3 method constructors to fluent builder calls"
 sidebar_label: "Change S3 method constructors to fluent builder calls"
 ---
 

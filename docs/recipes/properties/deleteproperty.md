@@ -1,4 +1,5 @@
 ---
+title: "Delete property by key"
 sidebar_label: "Delete property by key"
 ---
 

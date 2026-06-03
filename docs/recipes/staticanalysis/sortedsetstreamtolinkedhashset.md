@@ -1,4 +1,5 @@
 ---
+title: "Sorted set stream should be collected to LinkedHashSet"
 sidebar_label: "Sorted set stream should be collected to LinkedHashSet"
 ---
 

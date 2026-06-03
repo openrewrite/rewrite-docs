@@ -1,4 +1,5 @@
 ---
+title: "Generate CALM architecture"
 sidebar_label: "Generate CALM architecture"
 ---
 

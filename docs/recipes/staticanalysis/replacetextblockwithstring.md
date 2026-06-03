@@ -1,4 +1,5 @@
 ---
+title: "Replace text block with regular string"
 sidebar_label: "Replace text block with regular string"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow unsupported Vue.js syntax on the specified version"
 sidebar_label: "Disallow unsupported Vue.js syntax on the specified version"
 ---
 

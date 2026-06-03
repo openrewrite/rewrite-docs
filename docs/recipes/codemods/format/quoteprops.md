@@ -1,4 +1,5 @@
 ---
+title: "Require quotes around object literal property names"
 sidebar_label: "Require quotes around object literal property names"
 ---
 

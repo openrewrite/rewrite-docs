@@ -1,4 +1,5 @@
 ---
+title: "Add missing `isWrapperFor` and `unwrap` methods"
 sidebar_label: "Add missing `isWrapperFor` and `unwrap` methods"
 ---
 

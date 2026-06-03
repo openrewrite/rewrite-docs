@@ -1,4 +1,5 @@
 ---
+title: "Find symbols"
 sidebar_label: "Find symbols"
 ---
 

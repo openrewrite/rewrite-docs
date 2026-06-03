@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.function.Predicate`"
 sidebar_label: "Prefer `java.util.function.Predicate`"
 ---
 

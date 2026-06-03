@@ -1,4 +1,5 @@
 ---
+title: "Biome recommendations"
 sidebar_label: "Biome recommendations"
 ---
 

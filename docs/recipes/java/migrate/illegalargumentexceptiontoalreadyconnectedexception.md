@@ -1,4 +1,5 @@
 ---
+title: "Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method"
 sidebar_label: "Replace `IllegalArgumentException` with `AlreadyConnectedException` in `DatagramChannel.send()` method"
 ---
 

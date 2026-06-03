@@ -1,4 +1,5 @@
 ---
+title: "Remove unused private methods"
 sidebar_label: "Remove unused private methods"
 ---
 

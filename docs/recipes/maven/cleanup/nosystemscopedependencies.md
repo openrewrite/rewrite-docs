@@ -1,4 +1,5 @@
 ---
+title: "Dependencies should not have `system` scope"
 sidebar_label: "Dependencies should not have `system` scope"
 ---
 

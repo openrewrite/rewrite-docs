@@ -1,4 +1,5 @@
 ---
+title: "Use correct ejb-jar namespace values"
 sidebar_label: "Use correct ejb-jar namespace values"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace `@LazyCollection` with `jakarta.persistence.FetchType`"
 sidebar_label: "Replace `@LazyCollection` with `jakarta.persistence.FetchType`"
 ---
 

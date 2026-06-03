@@ -1,4 +1,5 @@
 ---
+title: "Remove Hamcrest `is(Matcher)`"
 sidebar_label: "Remove Hamcrest `is(Matcher)`"
 ---
 

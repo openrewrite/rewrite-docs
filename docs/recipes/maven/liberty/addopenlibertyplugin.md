@@ -1,4 +1,5 @@
 ---
+title: "Add Liberty Maven plugin"
 sidebar_label: "Add Liberty Maven plugin"
 ---
 

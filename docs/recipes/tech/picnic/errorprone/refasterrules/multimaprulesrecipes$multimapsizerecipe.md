@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MultimapRules.MultimapSize`"
 sidebar_label: "Refaster template `MultimapRules.MultimapSize`"
 ---
 

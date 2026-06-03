@@ -1,4 +1,5 @@
 ---
+title: "Use `WebServerFactoryCustomizer`"
 sidebar_label: "Use `WebServerFactoryCustomizer`"
 ---
 

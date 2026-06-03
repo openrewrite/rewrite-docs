@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `IntStreamRules.IntStreamClosedOpenRange`"
 sidebar_label: "Refaster template `IntStreamRules.IntStreamClosedOpenRange`"
 ---
 

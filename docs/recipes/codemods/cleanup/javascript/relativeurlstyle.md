@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent relative URL style"
 sidebar_label: "Enforce consistent relative URL style"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Adopt `@Container` and add `@Testcontainers`"
 sidebar_label: "Adopt `@Container` and add `@Testcontainers`"
 ---
 

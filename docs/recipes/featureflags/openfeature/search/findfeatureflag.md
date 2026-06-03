@@ -1,4 +1,5 @@
 ---
+title: "Find an OpenFeature feature flag"
 sidebar_label: "Find an OpenFeature feature flag"
 ---
 

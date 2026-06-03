@@ -1,4 +1,5 @@
 ---
+title: "Use JUnit Jupiter `@Disabled`"
 sidebar_label: "Use JUnit Jupiter `@Disabled`"
 ---
 

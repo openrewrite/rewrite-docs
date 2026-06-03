@@ -1,4 +1,5 @@
 ---
+title: "Next.js Codemods for API Updates"
 sidebar_label: "Next.js Codemods for API Updates"
 ---
 

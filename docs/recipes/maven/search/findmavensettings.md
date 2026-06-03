@@ -1,4 +1,5 @@
 ---
+title: "Find effective maven settings"
 sidebar_label: "Find effective maven settings"
 ---
 

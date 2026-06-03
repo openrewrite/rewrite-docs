@@ -1,4 +1,5 @@
 ---
+title: "Upgrade to SpringDoc 3.0"
 sidebar_label: "Upgrade to SpringDoc 3.0"
 ---
 

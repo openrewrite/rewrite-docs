@@ -1,4 +1,5 @@
 ---
+title: "Relocate Launcher Classes"
 sidebar_label: "Relocate Launcher Classes"
 ---
 

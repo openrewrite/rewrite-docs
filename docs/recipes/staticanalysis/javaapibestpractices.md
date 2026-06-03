@@ -1,4 +1,5 @@
 ---
+title: "Java API best practices"
 sidebar_label: "Java API best practices"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce PascalCase for user-defined JSX components"
 sidebar_label: "Enforce PascalCase for user-defined JSX components"
 ---
 

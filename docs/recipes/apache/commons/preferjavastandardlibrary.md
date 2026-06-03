@@ -1,4 +1,5 @@
 ---
+title: "Prefer the Java standard library instead of Apache Commons"
 sidebar_label: "Prefer the Java standard library instead of Apache Commons"
 ---
 

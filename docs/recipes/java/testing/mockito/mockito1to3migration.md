@@ -1,4 +1,5 @@
 ---
+title: "Mockito 3.x migration from 1.x"
 sidebar_label: "Mockito 3.x migration from 1.x"
 ---
 

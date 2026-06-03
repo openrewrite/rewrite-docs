@@ -1,4 +1,5 @@
 ---
+title: "Disallow useless array `length` check"
 sidebar_label: "Disallow useless array `length` check"
 ---
 

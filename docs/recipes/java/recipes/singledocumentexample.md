@@ -1,4 +1,5 @@
 ---
+title: "Single `@DocumentExample` per test class"
 sidebar_label: "Single `@DocumentExample` per test class"
 ---
 

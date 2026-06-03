@@ -1,4 +1,5 @@
 ---
+title: "Format Java code"
 sidebar_label: "Format Java code"
 ---
 
@@ -25,6 +26,120 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | style | *Optional*. An OpenRewrite [style](https://docs.openrewrite.org/concepts-and-explanations/styles) formatted in YAML. | <pre>type: specs.openrewrite.org/v1beta/style<br />name: com.yourorg.YesTabsNoStarImports<br />styleConfigs:<br />  - org.openrewrite.java.style.TabsAndIndentsStyle:<br />      useTabCharacter: true</pre> |
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|style|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {{
+    if (true == false)
+ doTheThing();
+    else if (true == false)
+  doTheOtherThing();
+    else
+   somethingElseEntirely();
+
+    if (true == false)
+    doTheThing();
+
+    doTheOtherThing();
+    somethingElseEntirely();
+
+    foo();
+}
+    public static void doTheThing() {}
+    public static void doTheOtherThing() {}
+    public static void somethingElseEntirely() {}
+    public static void foo() {}
+}
+```
+
+###### After
+```java
+class Test {
+    {
+        if (true == false)
+            doTheThing();
+        else if (true == false)
+            doTheOtherThing();
+        else
+            somethingElseEntirely();
+
+        if (true == false)
+            doTheThing();
+
+        doTheOtherThing();
+        somethingElseEntirely();
+
+        foo();
+    }
+
+    public static void doTheThing() {}
+    public static void doTheOtherThing() {}
+    public static void somethingElseEntirely() {}
+    public static void foo() {}
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,7 +1,8 @@
+-class Test {{
+-   if (true == false)
+-doTheThing();
+-   else if (true == false)
+- doTheOtherThing();
+-   else
+-  somethingElseEntirely();
++class Test {
++   {
++       if (true == false)
++           doTheThing();
++       else if (true == false)
++           doTheOtherThing();
++       else
++           somethingElseEntirely();
+
+@@ -9,2 +10,2 @@
+   somethingElseEntirely();
+
+-   if (true == false)
+-   doTheThing();
++       if (true == false)
++           doTheThing();
+
+@@ -12,2 +13,2 @@
+    doTheThing();
+
+-   doTheOtherThing();
+-   somethingElseEntirely();
++       doTheOtherThing();
++       somethingElseEntirely();
+
+@@ -15,2 +16,3 @@
+    somethingElseEntirely();
+
+-   foo();
+-}
++       foo();
++   }
++
+    public static void doTheThing() {}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

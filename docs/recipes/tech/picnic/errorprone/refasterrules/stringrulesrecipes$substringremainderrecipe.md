@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.SubstringRemainder`"
 sidebar_label: "Refaster template `StringRules.SubstringRemainder`"
 ---
 

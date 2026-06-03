@@ -1,4 +1,5 @@
 ---
+title: "Update Apache Camel configurations keys"
 sidebar_label: "Update Apache Camel configurations keys"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "The option camel.main.debugger has been renamed"
 sidebar_label: "The option camel.main.debugger has been renamed"
 ---
 

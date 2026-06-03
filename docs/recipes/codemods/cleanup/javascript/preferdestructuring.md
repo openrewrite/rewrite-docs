@@ -1,4 +1,5 @@
 ---
+title: "Require destructuring from arrays and/or objects"
 sidebar_label: "Require destructuring from arrays and/or objects"
 ---
 

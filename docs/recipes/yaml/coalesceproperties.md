@@ -1,4 +1,5 @@
 ---
+title: "Coalesce YAML properties"
 sidebar_label: "Coalesce YAML properties"
 ---
 

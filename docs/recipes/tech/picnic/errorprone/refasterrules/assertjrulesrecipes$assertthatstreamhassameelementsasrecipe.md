@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.AssertThatStreamHasSameElementsAs`"
 sidebar_label: "Refaster template `AssertJRules.AssertThatStreamHasSameElementsAs`"
 ---
 

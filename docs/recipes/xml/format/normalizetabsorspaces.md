@@ -1,4 +1,5 @@
 ---
+title: "Normalize to tabs or spaces"
 sidebar_label: "Normalize to tabs or spaces"
 ---
 

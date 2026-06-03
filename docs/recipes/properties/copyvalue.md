@@ -1,4 +1,5 @@
 ---
+title: "Copy property value"
 sidebar_label: "Copy property value"
 ---
 

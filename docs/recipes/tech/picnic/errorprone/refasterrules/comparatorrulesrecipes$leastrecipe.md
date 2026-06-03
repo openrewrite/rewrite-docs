@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.Least`"
 sidebar_label: "Refaster template `ComparatorRules.Least`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace 'camel.main.backlogTracing' with `camel.trace.enabled'"
 sidebar_label: "Replace 'camel.main.backlogTracing' with `camel.trace.enabled'"
 ---
 

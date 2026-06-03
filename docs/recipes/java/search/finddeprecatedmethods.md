@@ -1,4 +1,5 @@
 ---
+title: "Find uses of deprecated methods"
 sidebar_label: "Find uses of deprecated methods"
 ---
 

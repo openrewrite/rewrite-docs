@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new LinkedList&lt;&gt;()`"
 sidebar_label: "Prefer `new LinkedList&lt;&gt;()`"
 ---
 

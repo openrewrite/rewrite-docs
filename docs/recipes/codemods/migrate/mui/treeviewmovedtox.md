@@ -1,4 +1,5 @@
 ---
+title: "Moves tree view to `@mui/x-tree-view`"
 sidebar_label: "Moves tree view to `@mui/x-tree-view`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use static import"
 sidebar_label: "Use static import"
 ---
 

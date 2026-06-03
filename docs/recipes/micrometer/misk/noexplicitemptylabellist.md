@@ -1,4 +1,5 @@
 ---
+title: "Don't use an explicit empty label list"
 sidebar_label: "Don't use an explicit empty label list"
 ---
 

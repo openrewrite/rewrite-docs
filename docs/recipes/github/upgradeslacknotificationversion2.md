@@ -1,4 +1,5 @@
 ---
+title: "Upgrade `slackapi/slack-github-action`"
 sidebar_label: "Upgrade `slackapi/slack-github-action`"
 ---
 

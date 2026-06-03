@@ -1,4 +1,5 @@
 ---
+title: "Find projects affected by changes to the default error view message attribute"
 sidebar_label: "Find projects affected by changes to the default error view message attribute"
 ---
 

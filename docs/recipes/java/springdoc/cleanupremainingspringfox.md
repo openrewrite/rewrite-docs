@@ -1,4 +1,5 @@
 ---
+title: "Remove remaining Springfox dead code"
 sidebar_label: "Remove remaining Springfox dead code"
 ---
 

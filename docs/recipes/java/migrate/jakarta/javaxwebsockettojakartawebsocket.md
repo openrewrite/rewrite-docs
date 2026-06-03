@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.websocket` packages to `jakarta.websocket`"
 sidebar_label: "Migrate deprecated `javax.websocket` packages to `jakarta.websocket`"
 ---
 

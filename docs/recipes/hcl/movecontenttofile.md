@@ -1,4 +1,5 @@
 ---
+title: "Move content to another file"
 sidebar_label: "Move content to another file"
 ---
 

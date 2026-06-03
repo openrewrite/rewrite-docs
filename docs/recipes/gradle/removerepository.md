@@ -1,4 +1,5 @@
 ---
+title: "Remove repository"
 sidebar_label: "Remove repository"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Updates scroll buttons for Tabs component"
 sidebar_label: "Updates scroll buttons for Tabs component"
 ---
 

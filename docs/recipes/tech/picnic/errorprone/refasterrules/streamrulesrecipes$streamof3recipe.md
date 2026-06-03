@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamOf3`"
 sidebar_label: "Refaster template `StreamRules.StreamOf3`"
 ---
 

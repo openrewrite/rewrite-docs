@@ -1,4 +1,5 @@
 ---
+title: "Finalize classes with private constructors"
 sidebar_label: "Finalize classes with private constructors"
 ---
 

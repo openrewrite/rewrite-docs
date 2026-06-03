@@ -1,4 +1,5 @@
 ---
+title: "Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`"
 sidebar_label: "Prefer the spread operator over `Array.from()`, `Array#concat()`, `Array#{slice,toSpliced}()` and `String#split('')`"
 ---
 

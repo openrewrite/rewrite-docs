@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries and javax. packages in `validation.xml` files"
 sidebar_label: "Migrate xmlns entries and javax. packages in `validation.xml` files"
 ---
 

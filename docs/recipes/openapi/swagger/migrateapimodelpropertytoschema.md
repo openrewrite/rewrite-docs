@@ -1,4 +1,5 @@
 ---
+title: "Migrate from `@ApiModelProperty` to `@Schema`"
 sidebar_label: "Migrate from `@ApiModelProperty` to `@Schema`"
 ---
 

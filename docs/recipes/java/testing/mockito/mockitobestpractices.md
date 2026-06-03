@@ -1,4 +1,5 @@
 ---
+title: "Mockito best practices"
 sidebar_label: "Mockito best practices"
 ---
 

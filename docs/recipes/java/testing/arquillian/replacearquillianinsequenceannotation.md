@@ -1,4 +1,5 @@
 ---
+title: "Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`"
 sidebar_label: "Arquillian JUnit 4 `@InSequence` to JUnit Jupiter `@Order`"
 ---
 

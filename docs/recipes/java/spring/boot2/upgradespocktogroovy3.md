@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Spock to a Groovy 3 compatible variant"
 sidebar_label: "Upgrade Spock to a Groovy 3 compatible variant"
 ---
 

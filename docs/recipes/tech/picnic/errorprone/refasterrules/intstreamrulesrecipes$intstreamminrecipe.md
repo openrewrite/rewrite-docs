@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `IntStreamRules.IntStreamMin`"
 sidebar_label: "Refaster template `IntStreamRules.IntStreamMin`"
 ---
 

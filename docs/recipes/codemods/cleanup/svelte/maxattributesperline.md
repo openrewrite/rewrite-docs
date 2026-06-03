@@ -1,4 +1,5 @@
 ---
+title: "Enforce the maximum number of attributes per line"
 sidebar_label: "Enforce the maximum number of attributes per line"
 ---
 

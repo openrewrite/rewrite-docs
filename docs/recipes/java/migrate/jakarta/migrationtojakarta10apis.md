@@ -1,4 +1,5 @@
 ---
+title: "Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions"
 sidebar_label: "Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties"
 sidebar_label: "Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties"
 ---
 

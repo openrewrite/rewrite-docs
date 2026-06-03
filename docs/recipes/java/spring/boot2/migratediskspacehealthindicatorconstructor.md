@@ -1,4 +1,5 @@
 ---
+title: "Use `DiskSpaceHealthIndicator(File, DataSize)`"
 sidebar_label: "Use `DiskSpaceHealthIndicator(File, DataSize)`"
 ---
 

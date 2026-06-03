@@ -1,4 +1,5 @@
 ---
+title: "Find empty classes"
 sidebar_label: "Find empty classes"
 ---
 

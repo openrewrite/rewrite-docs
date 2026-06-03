@@ -1,4 +1,5 @@
 ---
+title: "JUnit TestName @Rule to JUnit Jupiter TestInfo"
 sidebar_label: "JUnit TestName @Rule to JUnit Jupiter TestInfo"
 ---
 

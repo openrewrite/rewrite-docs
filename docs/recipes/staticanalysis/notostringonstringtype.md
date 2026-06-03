@@ -1,4 +1,5 @@
 ---
+title: "Unnecessary `String#toString`"
 sidebar_label: "Unnecessary `String#toString`"
 ---
 

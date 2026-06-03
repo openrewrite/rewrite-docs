@@ -1,4 +1,5 @@
 ---
+title: "Change factory method return types to reflect their resolved return type"
 sidebar_label: "Change factory method return types to reflect their resolved return type"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Move a closure which is the last argument of a method invocation out of parentheses"
 sidebar_label: "Move a closure which is the last argument of a method invocation out of parentheses"
 ---
 

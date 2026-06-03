@@ -1,4 +1,5 @@
 ---
+title: "Change `KafkaOperations.send*` return type to `CompletableFuture`"
 sidebar_label: "Change `KafkaOperations.send*` return type to `CompletableFuture`"
 ---
 

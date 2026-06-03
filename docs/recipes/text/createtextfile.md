@@ -1,4 +1,5 @@
 ---
+title: "Create text file"
 sidebar_label: "Create text file"
 ---
 

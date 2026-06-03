@@ -1,4 +1,5 @@
 ---
+title: "Fix `String#format` and `String#formatted` expressions"
 sidebar_label: "Fix `String#format` and `String#formatted` expressions"
 ---
 

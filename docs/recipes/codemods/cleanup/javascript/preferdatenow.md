@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch"
 sidebar_label: "Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch"
 ---
 

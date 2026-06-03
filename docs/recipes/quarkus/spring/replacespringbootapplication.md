@@ -1,4 +1,5 @@
 ---
+title: "Replace `@SpringBootApplication` with Quarkus equivalent"
 sidebar_label: "Replace `@SpringBootApplication` with Quarkus equivalent"
 ---
 

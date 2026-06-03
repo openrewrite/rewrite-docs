@@ -1,4 +1,5 @@
 ---
+title: "Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9"
 sidebar_label: "Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9"
 ---
 

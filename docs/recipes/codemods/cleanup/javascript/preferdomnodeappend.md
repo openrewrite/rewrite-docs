@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Node#append()` over `Node#appendChild()`"
 sidebar_label: "Prefer `Node#append()` over `Node#appendChild()`"
 ---
 

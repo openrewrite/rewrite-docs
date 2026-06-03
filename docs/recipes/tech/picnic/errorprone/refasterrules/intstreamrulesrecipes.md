@@ -1,4 +1,5 @@
 ---
+title: "`IntStreamRules` Refaster recipes"
 sidebar_label: "`IntStreamRules` Refaster recipes"
 ---
 

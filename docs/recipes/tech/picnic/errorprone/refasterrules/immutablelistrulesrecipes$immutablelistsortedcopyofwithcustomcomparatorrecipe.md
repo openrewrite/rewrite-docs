@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableListRules.ImmutableListSortedCopyOfWithCustomComparator`"
 sidebar_label: "Refaster template `ImmutableListRules.ImmutableListSortedCopyOfWithCustomComparator`"
 ---
 

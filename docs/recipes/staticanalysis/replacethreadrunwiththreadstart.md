@@ -1,4 +1,5 @@
 ---
+title: "Replace calls to `Thread.run()` with `Thread.start()`"
 sidebar_label: "Replace calls to `Thread.run()` with `Thread.start()`"
 ---
 

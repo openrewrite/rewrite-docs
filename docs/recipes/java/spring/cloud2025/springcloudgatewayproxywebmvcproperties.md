@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Cloud Gateway Proxy WebMvc Properties"
 sidebar_label: "Migrate Spring Cloud Gateway Proxy WebMvc Properties"
 ---
 

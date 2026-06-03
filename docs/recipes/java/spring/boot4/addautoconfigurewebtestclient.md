@@ -1,4 +1,5 @@
 ---
+title: "Add `@AutoConfigureWebTestClient` if necessary"
 sidebar_label: "Add `@AutoConfigureWebTestClient` if necessary"
 ---
 

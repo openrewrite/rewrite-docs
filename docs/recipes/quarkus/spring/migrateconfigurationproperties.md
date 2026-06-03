@@ -1,4 +1,5 @@
 ---
+title: "Migrate @ConfigurationProperties to Quarkus @ConfigMapping"
 sidebar_label: "Migrate @ConfigurationProperties to Quarkus @ConfigMapping"
 ---
 

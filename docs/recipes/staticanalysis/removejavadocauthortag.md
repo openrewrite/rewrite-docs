@@ -1,4 +1,5 @@
 ---
+title: "Remove author tags from JavaDocs"
 sidebar_label: "Remove author tags from JavaDocs"
 ---
 

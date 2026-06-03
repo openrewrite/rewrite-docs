@@ -1,4 +1,5 @@
 ---
+title: "Enforce Promise or callback style in nextTick"
 sidebar_label: "Enforce Promise or callback style in nextTick"
 ---
 

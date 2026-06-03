@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Cloud Gateway Properties"
 sidebar_label: "Migrate Spring Cloud Gateway Properties"
 ---
 

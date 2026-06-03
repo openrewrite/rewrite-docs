@@ -1,4 +1,5 @@
 ---
+title: "Change Maven dependency exclusion"
 sidebar_label: "Change Maven dependency exclusion"
 ---
 

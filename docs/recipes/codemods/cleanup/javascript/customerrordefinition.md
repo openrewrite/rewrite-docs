@@ -1,4 +1,5 @@
 ---
+title: "Enforce correct `Error` subclassing"
 sidebar_label: "Enforce correct `Error` subclassing"
 ---
 

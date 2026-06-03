@@ -1,4 +1,5 @@
 ---
+title: "Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`"
 sidebar_label: "Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`"
 ---
 

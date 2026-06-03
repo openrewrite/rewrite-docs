@@ -1,4 +1,5 @@
 ---
+title: "Enforce order of defineEmits and defineProps compiler macros"
 sidebar_label: "Enforce order of defineEmits and defineProps compiler macros"
 ---
 

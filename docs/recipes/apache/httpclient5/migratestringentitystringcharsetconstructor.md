@@ -1,4 +1,5 @@
 ---
+title: "Replace `new StringEntity(String, String)` with `new StringEntity(String, Charset)`"
 sidebar_label: "Replace `new StringEntity(String, String)` with `new StringEntity(String, Charset)`"
 ---
 

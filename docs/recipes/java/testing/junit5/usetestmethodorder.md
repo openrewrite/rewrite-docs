@@ -1,4 +1,5 @@
 ---
+title: "Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`"
 sidebar_label: "Migrate from JUnit 4 `@FixedMethodOrder` to JUnit 5 `@TestMethodOrder`"
 ---
 

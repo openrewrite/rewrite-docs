@@ -1,4 +1,5 @@
 ---
+title: "Remove ignoral of files or directories from .gitignore"
 sidebar_label: "Remove ignoral of files or directories from .gitignore"
 ---
 

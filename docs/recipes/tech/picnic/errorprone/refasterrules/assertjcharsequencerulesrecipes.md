@@ -1,4 +1,5 @@
 ---
+title: "`AssertJCharSequenceRules` Refaster recipes"
 sidebar_label: "`AssertJCharSequenceRules` Refaster recipes"
 ---
 

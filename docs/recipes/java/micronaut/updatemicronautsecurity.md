@@ -1,4 +1,5 @@
 ---
+title: "Update the Micronaut Security library"
 sidebar_label: "Update the Micronaut Security library"
 ---
 

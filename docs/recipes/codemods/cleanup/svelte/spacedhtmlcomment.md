@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment"
 sidebar_label: "Enforce consistent spacing after the &lt;!-- and before the --&gt; in a HTML comment"
 ---
 

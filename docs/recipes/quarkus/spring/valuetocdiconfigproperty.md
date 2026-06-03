@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring `@Value` with CDI `@ConfigProperty`"
 sidebar_label: "Replace Spring `@Value` with CDI `@ConfigProperty`"
 ---
 

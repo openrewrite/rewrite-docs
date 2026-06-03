@@ -1,4 +1,5 @@
 ---
+title: "Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`"
 sidebar_label: "Migrate `HandlerInterceptorAdapter` to `HandlerInterceptor`"
 ---
 

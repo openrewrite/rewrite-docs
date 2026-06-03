@@ -1,4 +1,5 @@
 ---
+title: "Use `Runtime.Version#feature()`"
 sidebar_label: "Use `Runtime.Version#feature()`"
 ---
 

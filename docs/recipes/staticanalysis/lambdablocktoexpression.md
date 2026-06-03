@@ -1,4 +1,5 @@
 ---
+title: "Simplify lambda blocks to expressions"
 sidebar_label: "Simplify lambda blocks to expressions"
 ---
 

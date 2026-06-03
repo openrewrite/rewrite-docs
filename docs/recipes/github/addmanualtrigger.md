@@ -1,4 +1,5 @@
 ---
+title: "Add manual workflow trigger"
 sidebar_label: "Add manual workflow trigger"
 ---
 

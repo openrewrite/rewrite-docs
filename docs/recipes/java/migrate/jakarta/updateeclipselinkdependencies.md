@@ -1,4 +1,5 @@
 ---
+title: "Update EclipseLink Dependencies to 4.x"
 sidebar_label: "Update EclipseLink Dependencies to 4.x"
 ---
 

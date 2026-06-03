@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Boot 4.0 (Community Edition)"
 sidebar_label: "Migrate to Spring Boot 4.0 (Community Edition)"
 ---
 

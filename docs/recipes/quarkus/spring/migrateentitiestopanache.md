@@ -1,4 +1,5 @@
 ---
+title: "Migrate JPA Entities to Panache Entities"
 sidebar_label: "Migrate JPA Entities to Panache Entities"
 ---
 

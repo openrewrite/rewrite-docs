@@ -1,4 +1,5 @@
 ---
+title: "Migrate javax.mvc to 2.0 (Jakarta EE 9)"
 sidebar_label: "Migrate javax.mvc to 2.0 (Jakarta EE 9)"
 ---
 

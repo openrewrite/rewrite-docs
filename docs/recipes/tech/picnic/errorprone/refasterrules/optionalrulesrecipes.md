@@ -1,4 +1,5 @@
 ---
+title: "`OptionalRules` Refaster recipes"
 sidebar_label: "`OptionalRules` Refaster recipes"
 ---
 

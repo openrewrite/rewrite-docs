@@ -1,4 +1,5 @@
 ---
+title: "Replace lower and upper case `String` comparisons with `String.equalsIgnoreCase(String)`"
 sidebar_label: "Replace lower and upper case `String` comparisons with `String.equalsIgnoreCase(String)`"
 ---
 

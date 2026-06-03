@@ -1,4 +1,5 @@
 ---
+title: "Remove &quot;use strict&quot; directives"
 sidebar_label: "Remove &quot;use strict&quot; directives"
 ---
 

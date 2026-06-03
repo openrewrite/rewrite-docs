@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Math#addExact`"
 sidebar_label: "Prefer `Math#addExact`"
 ---
 

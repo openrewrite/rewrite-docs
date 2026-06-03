@@ -1,4 +1,5 @@
 ---
+title: "Use `native` profile in `quarkus-maven-plugin`"
 sidebar_label: "Use `native` profile in `quarkus-maven-plugin`"
 ---
 

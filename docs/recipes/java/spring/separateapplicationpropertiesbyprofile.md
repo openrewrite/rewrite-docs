@@ -1,4 +1,5 @@
 ---
+title: "Separate `application.properties` by profile"
 sidebar_label: "Separate `application.properties` by profile"
 ---
 

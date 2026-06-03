@@ -1,4 +1,5 @@
 ---
+title: "Mask credit card numbers"
 sidebar_label: "Mask credit card numbers"
 ---
 

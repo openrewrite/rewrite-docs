@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`"
 sidebar_label: "Require or disallow spacing between function identifiers and their invocations in `&lt;template&gt;`"
 ---
 

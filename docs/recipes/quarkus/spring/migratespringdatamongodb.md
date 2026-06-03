@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Data MongoDB to Quarkus Panache MongoDB"
 sidebar_label: "Migrate Spring Data MongoDB to Quarkus Panache MongoDB"
 ---
 

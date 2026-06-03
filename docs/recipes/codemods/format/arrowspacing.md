@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing before and after the arrow in arrow functions"
 sidebar_label: "Enforce consistent spacing before and after the arrow in arrow functions"
 ---
 

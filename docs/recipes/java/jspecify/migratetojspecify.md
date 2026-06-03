@@ -1,4 +1,5 @@
 ---
+title: "Migrate to JSpecify"
 sidebar_label: "Migrate to JSpecify"
 ---
 

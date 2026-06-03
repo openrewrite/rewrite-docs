@@ -1,4 +1,5 @@
 ---
+title: "Use `Tree.randomId()` in LST constructors"
 sidebar_label: "Use `Tree.randomId()` in LST constructors"
 ---
 

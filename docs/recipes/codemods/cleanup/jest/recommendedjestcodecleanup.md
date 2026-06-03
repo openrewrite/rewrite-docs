@@ -1,4 +1,5 @@
 ---
+title: "Recommended Jest code cleanup"
 sidebar_label: "Recommended Jest code cleanup"
 ---
 

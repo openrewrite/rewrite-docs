@@ -1,4 +1,5 @@
 ---
+title: "Add entries to `.gitignore`"
 sidebar_label: "Add entries to `.gitignore`"
 ---
 

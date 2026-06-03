@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL Level arguments with the corresponding method calls"
 sidebar_label: "Replace JUL Level arguments with the corresponding method calls"
 ---
 

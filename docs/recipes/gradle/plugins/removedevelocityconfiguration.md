@@ -1,4 +1,5 @@
 ---
+title: "Remove Develocity configuration"
 sidebar_label: "Remove Develocity configuration"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add JBoss LogManager's SLF4J provider"
 sidebar_label: "Add JBoss LogManager's SLF4J provider"
 ---
 

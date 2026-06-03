@@ -1,4 +1,5 @@
 ---
+title: "Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)"
 sidebar_label: "Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)"
 ---
 

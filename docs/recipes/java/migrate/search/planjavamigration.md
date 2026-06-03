@@ -1,4 +1,5 @@
 ---
+title: "Plan a Java version migration"
 sidebar_label: "Plan a Java version migration"
 ---
 

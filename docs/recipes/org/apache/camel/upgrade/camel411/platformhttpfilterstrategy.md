@@ -1,4 +1,5 @@
 ---
+title: "Use PlatformHttpHeaderFilterStrategy instead of HttpHeaderFilterStrategy"
 sidebar_label: "Use PlatformHttpHeaderFilterStrategy instead of HttpHeaderFilterStrategy"
 ---
 

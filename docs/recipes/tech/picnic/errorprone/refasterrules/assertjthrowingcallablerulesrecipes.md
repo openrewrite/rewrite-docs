@@ -1,4 +1,5 @@
 ---
+title: "Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype"
 sidebar_label: "Refaster rules related to AssertJ assertions over expressions that may throw a `Throwable` subtype"
 ---
 

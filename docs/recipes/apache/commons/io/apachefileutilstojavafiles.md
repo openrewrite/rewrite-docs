@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.nio.file.Files`"
 sidebar_label: "Prefer `java.nio.file.Files`"
 ---
 

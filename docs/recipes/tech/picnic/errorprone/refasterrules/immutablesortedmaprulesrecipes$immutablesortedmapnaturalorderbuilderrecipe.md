@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSortedMapRules.ImmutableSortedMapNaturalOrderBuilder`"
 sidebar_label: "Refaster template `ImmutableSortedMapRules.ImmutableSortedMapNaturalOrderBuilder`"
 ---
 

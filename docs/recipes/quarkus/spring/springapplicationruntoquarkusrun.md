@@ -1,4 +1,5 @@
 ---
+title: "Replace `SpringApplication.run()` with `Quarkus.run()`"
 sidebar_label: "Replace `SpringApplication.run()` with `Quarkus.run()`"
 ---
 

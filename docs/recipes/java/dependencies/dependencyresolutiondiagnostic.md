@@ -1,4 +1,5 @@
 ---
+title: "Dependency resolution diagnostic"
 sidebar_label: "Dependency resolution diagnostic"
 ---
 

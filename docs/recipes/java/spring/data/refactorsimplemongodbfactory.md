@@ -1,4 +1,5 @@
 ---
+title: "Use `new SimpleMongoClientDbFactory(String)`"
 sidebar_label: "Use `new SimpleMongoClientDbFactory(String)`"
 ---
 

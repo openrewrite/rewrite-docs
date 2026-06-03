@@ -1,4 +1,5 @@
 ---
+title: "Story files should have a default export"
 sidebar_label: "Story files should have a default export"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.ConcatMapIterableIdentity`"
 sidebar_label: "Refaster template `ReactorRules.ConcatMapIterableIdentity`"
 ---
 

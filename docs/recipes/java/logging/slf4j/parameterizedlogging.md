@@ -1,4 +1,5 @@
 ---
+title: "Parameterize SLF4J's logging statements"
 sidebar_label: "Parameterize SLF4J's logging statements"
 ---
 

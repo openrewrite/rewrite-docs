@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Cloud Service Discovery to Quarkus"
 sidebar_label: "Migrate Spring Cloud Service Discovery to Quarkus"
 ---
 

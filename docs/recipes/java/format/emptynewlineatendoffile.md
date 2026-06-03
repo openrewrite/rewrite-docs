@@ -1,4 +1,5 @@
 ---
+title: "End files with a single newline"
 sidebar_label: "End files with a single newline"
 ---
 

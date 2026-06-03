@@ -1,4 +1,5 @@
 ---
+title: "Rename `_` identifier to `__`"
 sidebar_label: "Rename `_` identifier to `__`"
 ---
 

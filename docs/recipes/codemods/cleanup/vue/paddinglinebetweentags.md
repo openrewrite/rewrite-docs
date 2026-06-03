@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow newlines between sibling tags in template"
 sidebar_label: "Require or disallow newlines between sibling tags in template"
 ---
 

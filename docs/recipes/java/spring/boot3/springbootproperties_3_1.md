@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Boot properties to 3.1"
 sidebar_label: "Migrate Spring Boot properties to 3.1"
 ---
 
@@ -43,12 +44,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.cassandra.ssl`
   * newPropertyKey: `spring.cassandra.ssl.enabled`
+  * except: `[bundle]`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.cassandra.ssl`
   * newPropertyKey: `spring.cassandra.ssl.enabled`
+  * except: `[bundle]`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.data.redis.ssl`
   * newPropertyKey: `spring.data.redis.ssl.enabled`
+  * except: `[bundle]`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.kafka.streams.cache-max-size-buffering`
   * newPropertyKey: `spring.kafka.streams.state-store-cache-max-size`
@@ -79,12 +83,15 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.cassandra.ssl
       newPropertyKey: spring.cassandra.ssl.enabled
+      except: [bundle]
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.cassandra.ssl
       newPropertyKey: spring.cassandra.ssl.enabled
+      except: [bundle]
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.data.redis.ssl
       newPropertyKey: spring.data.redis.ssl.enabled
+      except: [bundle]
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.kafka.streams.cache-max-size-buffering
       newPropertyKey: spring.kafka.streams.state-store-cache-max-size

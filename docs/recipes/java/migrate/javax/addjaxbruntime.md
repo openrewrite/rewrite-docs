@@ -1,4 +1,5 @@
 ---
+title: "Use latest JAXB API and runtime for Jakarta EE 8"
 sidebar_label: "Use latest JAXB API and runtime for Jakarta EE 8"
 ---
 

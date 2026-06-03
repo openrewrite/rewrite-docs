@@ -1,4 +1,5 @@
 ---
+title: "Configure `quarkus-maven-plugin` with reasonable defaults"
 sidebar_label: "Configure `quarkus-maven-plugin` with reasonable defaults"
 ---
 

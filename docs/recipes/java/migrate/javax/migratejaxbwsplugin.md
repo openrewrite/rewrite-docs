@@ -1,4 +1,5 @@
 ---
+title: "Migrate JAXB-WS Plugin"
 sidebar_label: "Migrate JAXB-WS Plugin"
 ---
 

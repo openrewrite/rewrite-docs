@@ -1,4 +1,5 @@
 ---
+title: "Disallow comparing `undefined` using `typeof`"
 sidebar_label: "Disallow comparing `undefined` using `typeof`"
 ---
 

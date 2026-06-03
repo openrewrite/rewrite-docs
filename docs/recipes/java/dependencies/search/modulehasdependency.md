@@ -1,4 +1,5 @@
 ---
+title: "Module has dependency"
 sidebar_label: "Module has dependency"
 ---
 

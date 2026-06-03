@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MicrometerRules.TagsOf5`"
 sidebar_label: "Refaster template `MicrometerRules.TagsOf5`"
 ---
 

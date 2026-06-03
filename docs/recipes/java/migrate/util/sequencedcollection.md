@@ -1,4 +1,5 @@
 ---
+title: "Adopt `SequencedCollection`"
 sidebar_label: "Adopt `SequencedCollection`"
 ---
 

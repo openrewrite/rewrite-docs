@@ -1,4 +1,5 @@
 ---
+title: "Migrate to 4.20.0"
 sidebar_label: "Migrate to 4.20.0"
 ---
 

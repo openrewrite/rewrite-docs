@@ -1,4 +1,5 @@
 ---
+title: "Use lambda expressions instead of anonymous classes"
 sidebar_label: "Use lambda expressions instead of anonymous classes"
 ---
 

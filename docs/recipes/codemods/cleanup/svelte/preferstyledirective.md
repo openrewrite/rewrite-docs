@@ -1,4 +1,5 @@
 ---
+title: "Require style directives instead of style attribute"
 sidebar_label: "Require style directives instead of style attribute"
 ---
 

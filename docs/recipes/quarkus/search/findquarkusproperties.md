@@ -1,4 +1,5 @@
 ---
+title: "Find Quarkus property"
 sidebar_label: "Find Quarkus property"
 ---
 

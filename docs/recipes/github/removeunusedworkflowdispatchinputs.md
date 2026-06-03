@@ -1,4 +1,5 @@
 ---
+title: "Remove unused workflow dispatch inputs"
 sidebar_label: "Remove unused workflow dispatch inputs"
 ---
 

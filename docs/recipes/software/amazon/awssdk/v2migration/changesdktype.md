@@ -1,4 +1,5 @@
 ---
+title: "Change AWS SDK for Java v1 types to v2 equivalents"
 sidebar_label: "Change AWS SDK for Java v1 types to v2 equivalents"
 ---
 

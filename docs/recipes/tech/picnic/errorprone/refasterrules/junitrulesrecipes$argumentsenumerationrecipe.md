@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `JUnitRules.ArgumentsEnumeration`"
 sidebar_label: "Refaster template `JUnitRules.ArgumentsEnumeration`"
 ---
 

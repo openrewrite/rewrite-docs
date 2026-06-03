@@ -1,4 +1,5 @@
 ---
+title: "Move a file"
 sidebar_label: "Move a file"
 ---
 

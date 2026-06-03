@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJFileRules.AssertThatIsFile`"
 sidebar_label: "Refaster template `AssertJFileRules.AssertThatIsFile`"
 ---
 

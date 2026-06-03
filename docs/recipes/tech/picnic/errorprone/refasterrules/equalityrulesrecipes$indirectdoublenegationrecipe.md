@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `EqualityRules.IndirectDoubleNegation`"
 sidebar_label: "Refaster template `EqualityRules.IndirectDoubleNegation`"
 ---
 

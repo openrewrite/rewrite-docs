@@ -1,4 +1,5 @@
 ---
+title: "Prefer await expect(...).resolves over expect(await ...) syntax"
 sidebar_label: "Prefer await expect(...).resolves over expect(await ...) syntax"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoFromFutureSupplierBoolean`"
 sidebar_label: "Refaster template `ReactorRules.MonoFromFutureSupplierBoolean`"
 ---
 

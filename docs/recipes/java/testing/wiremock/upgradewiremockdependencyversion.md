@@ -1,4 +1,5 @@
 ---
+title: "Upgrade WireMock to 3.x"
 sidebar_label: "Upgrade WireMock to 3.x"
 ---
 

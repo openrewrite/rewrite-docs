@@ -1,4 +1,5 @@
 ---
+title: "Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`"
 sidebar_label: "Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`"
 ---
 

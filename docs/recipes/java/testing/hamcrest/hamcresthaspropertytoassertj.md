@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hamcrest `hasProperty` to AssertJ"
 sidebar_label: "Migrate Hamcrest `hasProperty` to AssertJ"
 ---
 

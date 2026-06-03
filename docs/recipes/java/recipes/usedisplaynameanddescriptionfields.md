@@ -1,4 +1,5 @@
 ---
+title: "Replace `getDisplayName()` and `getDescription()` methods with fields"
 sidebar_label: "Replace `getDisplayName()` and `getDescription()` methods with fields"
 ---
 

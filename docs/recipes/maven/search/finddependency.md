@@ -1,4 +1,5 @@
 ---
+title: "Find Maven dependency"
 sidebar_label: "Find Maven dependency"
 ---
 

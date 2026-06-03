@@ -1,4 +1,5 @@
 ---
+title: "Add `javax.validation-api` dependency"
 sidebar_label: "Add `javax.validation-api` dependency"
 ---
 

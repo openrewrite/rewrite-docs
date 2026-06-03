@@ -1,4 +1,5 @@
 ---
+title: "Upgrade transitive npm dependency version"
 sidebar_label: "Upgrade transitive npm dependency version"
 ---
 

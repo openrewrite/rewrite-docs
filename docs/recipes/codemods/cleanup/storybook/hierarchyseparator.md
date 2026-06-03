@@ -1,4 +1,5 @@
 ---
+title: "Deprecated hierarchy separator in title property"
 sidebar_label: "Deprecated hierarchy separator in title property"
 ---
 

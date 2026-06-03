@@ -1,4 +1,5 @@
 ---
+title: "Migrate to LaunchDarkly 7.x"
 sidebar_label: "Migrate to LaunchDarkly 7.x"
 ---
 

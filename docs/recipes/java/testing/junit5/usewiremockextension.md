@@ -1,4 +1,5 @@
 ---
+title: "Use wiremock extension"
 sidebar_label: "Use wiremock extension"
 ---
 

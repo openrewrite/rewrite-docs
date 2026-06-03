@@ -1,4 +1,5 @@
 ---
+title: "Add cooldown periods to Dependabot configuration"
 sidebar_label: "Add cooldown periods to Dependabot configuration"
 ---
 

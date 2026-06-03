@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.fine(Supplier&lt;String&gt;)` with SLF4J's `Logger.atDebug().log(Supplier&lt;String&gt;)`"
 sidebar_label: "Replace JUL `Logger.fine(Supplier&lt;String&gt;)` with SLF4J's `Logger.atDebug().log(Supplier&lt;String&gt;)`"
 ---
 

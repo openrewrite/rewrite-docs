@@ -1,4 +1,5 @@
 ---
+title: "Convert Spring @EventListener to CDI @Observes"
 sidebar_label: "Convert Spring @EventListener to CDI @Observes"
 ---
 

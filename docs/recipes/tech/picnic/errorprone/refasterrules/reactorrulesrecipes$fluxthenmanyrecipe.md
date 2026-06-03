@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxThenMany`"
 sidebar_label: "Refaster template `ReactorRules.FluxThenMany`"
 ---
 

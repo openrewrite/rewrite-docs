@@ -1,4 +1,5 @@
 ---
+title: "Move annotation to type instead of field"
 sidebar_label: "Move annotation to type instead of field"
 ---
 

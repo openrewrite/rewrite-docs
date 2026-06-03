@@ -1,4 +1,5 @@
 ---
+title: "Indentation for binary operators"
 sidebar_label: "Indentation for binary operators"
 ---
 

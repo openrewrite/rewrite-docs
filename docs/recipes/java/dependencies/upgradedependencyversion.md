@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Gradle or Maven dependency versions"
 sidebar_label: "Upgrade Gradle or Maven dependency versions"
 ---
 
@@ -59,6 +60,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Okio dependencies to 3.x](/recipes/okio/upgradeokio3dependencies.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
 * [Migrate RichFaces 3.x to 4.5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/migraterichfaces_4_5)
+* [Migrate Spring Cloud AWS (awspring) to 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradeawspringcloud_4_0)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
@@ -105,7 +107,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Hibernate 6.4.x](/recipes/hibernate/migratetohibernate64.md)
 * [Migrate to Hibernate 6.5.x](/recipes/hibernate/migratetohibernate65.md)
 * [Migrate to Hibernate 6.6.x (Community Edition)](/recipes/hibernate/migratetohibernate66-community-edition.md)
-* [Migrate to Hibernate 6.6.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate66-moderne-edition)
 * [Migrate to Hibernate 7.0.x (Community Edition)](/recipes/hibernate/migratetohibernate70-community-edition.md)
 * [Migrate to Hibernate 7.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate70-moderne-edition)
 * [Migrate to Hibernate 7.1.x (Community Edition)](/recipes/hibernate/migratetohibernate71-community-edition.md)
@@ -140,7 +141,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 2.4](/recipes/java/spring/boot2/upgradespringboot_2_4.md)
 * [Migrate to Spring Boot 2.6](/recipes/java/spring/boot2/upgradespringboot_2_6.md)
 * [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
-* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Migrate to Spring Boot 3.0 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
 * [Migrate to Spring Boot 3.1](/recipes/java/spring/boot3/upgradespringboot_3_1.md)
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
 * [Migrate to Spring Boot 3.3](/recipes/java/spring/boot3/upgradespringboot_3_3.md)
@@ -153,12 +154,14 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
 * [Migrate to Spring Cloud 2025.1](/recipes/java/spring/cloud2025/upgradespringcloud_2025_1.md)
 * [Migrate to Spring Data 3.0](/recipes/java/spring/data/upgradespringdata_3_0.md)
-* [Migrate to Spring Framework 5.0](/recipes/java/spring/framework/upgradespringframework_5_0.md)
+* [Migrate to Spring Framework 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_4_0)
+* [Migrate to Spring Framework 5.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_5_0-community-edition.md)
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](/recipes/java/spring/framework/upgradespringframework_5_2.md)
 * [Migrate to Spring Framework 5.3 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_5_3-community-edition.md)
 * [Migrate to Spring Framework 5.3 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_3-moderne-edition)
-* [Migrate to Spring Framework 6.0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
+* [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
+* [Migrate to Spring Framework 6.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_6_0-moderne-edition)
 * [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2 for WebLogic 15.1.1](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
@@ -212,6 +215,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Hibernate to 6.6](/recipes/com/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
 * [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
+* [Upgrade Kotlin to 2.x for Axon Framework 5](/recipes/org/axonframework/migration/upgradekotlin.md)
 * [Upgrade Log4j 2.x dependency version](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
 * [Upgrade MyBatis to Spring Boot 2.0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
 * [Upgrade MyBatis to Spring Boot 2.1](/recipes/java/spring/boot3/upgrademybatistospringboot_2_1.md)
@@ -237,6 +241,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade dependencies to Spring Cloud 2025](/recipes/java/spring/cloud2025/dependencyupgrades.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
 * [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
+* [Upgrade to Axoniq Framework 5 (commercial)](/recipes/io/axoniq/framework/migration/upgradeaxon4toaxoniq5.md)
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
 * [Upgrade to JUnit 5.13](/recipes/java/testing/junit5/upgradetojunit513.md)
 * [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
@@ -250,6 +255,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade to SpringDoc 3.0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
 * [Upgrade to `kotlinx-coroutines` 1.10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxcoroutines_1_10)
 * [Upgrade to `kotlinx-serialization` 1.8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxserialization_1_8)
+* [Upgrade to free Axon Framework 5](/recipes/org/axonframework/migration/upgradeaxon4toaxon5.md)
 * [Use wiremock extension](/recipes/java/testing/junit5/usewiremockextension.md)
 
 ## Example

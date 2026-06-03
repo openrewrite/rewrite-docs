@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot ActiveMQ with Quarkus Artemis JMS"
 sidebar_label: "Replace Spring Boot ActiveMQ with Quarkus Artemis JMS"
 ---
 

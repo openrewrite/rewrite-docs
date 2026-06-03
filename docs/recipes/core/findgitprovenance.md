@@ -1,4 +1,5 @@
 ---
+title: "Show Git source control metadata"
 sidebar_label: "Show Git source control metadata"
 ---
 

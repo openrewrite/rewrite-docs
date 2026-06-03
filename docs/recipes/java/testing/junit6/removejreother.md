@@ -1,4 +1,5 @@
 ---
+title: "Remove deprecated `JRE.OTHER` from `@EnabledOnJre`/`@DisabledOnJre` arrays"
 sidebar_label: "Remove deprecated `JRE.OTHER` from `@EnabledOnJre`/`@DisabledOnJre` arrays"
 ---
 

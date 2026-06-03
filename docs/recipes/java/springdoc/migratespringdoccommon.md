@@ -1,4 +1,5 @@
 ---
+title: "Migrate from springdoc-openapi-common to springdoc-openapi-starter-common"
 sidebar_label: "Migrate from springdoc-openapi-common to springdoc-openapi-starter-common"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.ImmutableCollectionParallelStream`"
 sidebar_label: "Refaster template `CollectionRules.ImmutableCollectionParallelStream`"
 ---
 

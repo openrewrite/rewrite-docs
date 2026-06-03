@@ -1,4 +1,5 @@
 ---
+title: "Updates usage of useTransitionProps"
 sidebar_label: "Updates usage of useTransitionProps"
 ---
 

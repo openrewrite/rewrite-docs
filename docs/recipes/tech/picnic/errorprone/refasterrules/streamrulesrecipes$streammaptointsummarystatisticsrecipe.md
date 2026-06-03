@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamMapToIntSummaryStatistics`"
 sidebar_label: "Refaster template `StreamRules.StreamMapToIntSummaryStatistics`"
 ---
 

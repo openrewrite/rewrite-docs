@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSetRules.SetsIntersection`"
 sidebar_label: "Refaster template `ImmutableSetRules.SetsIntersection`"
 ---
 

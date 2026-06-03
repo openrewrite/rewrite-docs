@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent comma style in `&lt;template&gt;`"
 sidebar_label: "Enforce consistent comma style in `&lt;template&gt;`"
 ---
 

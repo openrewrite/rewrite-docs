@@ -1,4 +1,5 @@
 ---
+title: "Remove redundant security resolution rules"
 sidebar_label: "Remove redundant security resolution rules"
 ---
 

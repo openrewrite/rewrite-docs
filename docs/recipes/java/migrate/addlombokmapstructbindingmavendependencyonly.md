@@ -1,4 +1,5 @@
 ---
+title: "Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used"
 sidebar_label: "Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used"
 ---
 

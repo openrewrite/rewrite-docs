@@ -1,4 +1,5 @@
 ---
+title: "Add `serialVersionUID` to a `Serializable` class when missing"
 sidebar_label: "Add `serialVersionUID` to a `Serializable` class when missing"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change cacheManager to use the SimpleCacheManager"
 sidebar_label: "Change cacheManager to use the SimpleCacheManager"
 ---
 

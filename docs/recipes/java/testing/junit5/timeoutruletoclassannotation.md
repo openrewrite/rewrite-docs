@@ -1,4 +1,5 @@
 ---
+title: "JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`"
 sidebar_label: "JUnit 4 `@Rule Timeout` to JUnit Jupiter's `Timeout`"
 ---
 

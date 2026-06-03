@@ -1,4 +1,5 @@
 ---
+title: "Add a spring configuration property"
 sidebar_label: "Add a spring configuration property"
 ---
 

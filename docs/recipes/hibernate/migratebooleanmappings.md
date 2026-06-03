@@ -1,4 +1,5 @@
 ---
+title: "Replace boolean type mappings with converters"
 sidebar_label: "Replace boolean type mappings with converters"
 ---
 

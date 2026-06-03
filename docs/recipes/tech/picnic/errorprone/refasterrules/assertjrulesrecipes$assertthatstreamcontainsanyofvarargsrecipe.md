@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.AssertThatStreamContainsAnyOfVarArgs`"
 sidebar_label: "Refaster template `AssertJRules.AssertThatStreamContainsAnyOfVarArgs`"
 ---
 

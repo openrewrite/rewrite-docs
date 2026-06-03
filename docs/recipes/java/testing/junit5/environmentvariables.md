@@ -1,4 +1,5 @@
 ---
+title: "Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension"
 sidebar_label: "Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension"
 ---
 

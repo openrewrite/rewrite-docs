@@ -1,4 +1,5 @@
 ---
+title: "Migrate Truth custom subjects to AssertJ"
 sidebar_label: "Migrate Truth custom subjects to AssertJ"
 ---
 

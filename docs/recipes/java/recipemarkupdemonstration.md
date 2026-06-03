@@ -1,4 +1,5 @@
 ---
+title: "Demonstrate rendering of `Markup` markers"
 sidebar_label: "Demonstrate rendering of `Markup` markers"
 ---
 

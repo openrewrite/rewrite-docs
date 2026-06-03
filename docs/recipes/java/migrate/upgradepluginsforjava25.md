@@ -1,4 +1,5 @@
 ---
+title: "Upgrade plugins to Java 25 compatible versions"
 sidebar_label: "Upgrade plugins to Java 25 compatible versions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add class argument to `JobParameters`"
 sidebar_label: "Add class argument to `JobParameters`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Forbid import statements with CommonJS module.exports"
 sidebar_label: "Forbid import statements with CommonJS module.exports"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Forbid import of modules using absolute paths"
 sidebar_label: "Forbid import of modules using absolute paths"
 ---
 

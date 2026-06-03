@@ -1,4 +1,5 @@
 ---
+title: "`DequeRules` Refaster recipes"
 sidebar_label: "`DequeRules` Refaster recipes"
 ---
 

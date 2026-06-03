@@ -1,4 +1,5 @@
 ---
+title: "Replace SpringFox Dependencies"
 sidebar_label: "Replace SpringFox Dependencies"
 ---
 

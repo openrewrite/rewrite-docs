@@ -1,4 +1,5 @@
 ---
+title: "Add Maven parent"
 sidebar_label: "Add Maven parent"
 ---
 

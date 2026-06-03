@@ -1,4 +1,5 @@
 ---
+title: "Remove a boolean feature flag for feature key"
 sidebar_label: "Remove a boolean feature flag for feature key"
 ---
 

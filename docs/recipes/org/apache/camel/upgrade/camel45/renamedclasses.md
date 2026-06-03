@@ -1,4 +1,5 @@
 ---
+title: "Renamed classes for elasticsearch,opensearch and spring regis"
 sidebar_label: "Renamed classes for elasticsearch,opensearch and spring regis"
 ---
 

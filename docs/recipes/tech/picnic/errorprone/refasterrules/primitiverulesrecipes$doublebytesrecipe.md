@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.DoubleBytes`"
 sidebar_label: "Refaster template `PrimitiveRules.DoubleBytes`"
 ---
 

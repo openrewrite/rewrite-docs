@@ -1,4 +1,5 @@
 ---
+title: "Update OWASP suppression date bounds"
 sidebar_label: "Update OWASP suppression date bounds"
 ---
 

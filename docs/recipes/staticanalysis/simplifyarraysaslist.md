@@ -1,4 +1,5 @@
 ---
+title: "Simplify `Arrays.asList(..)` with varargs"
 sidebar_label: "Simplify `Arrays.asList(..)` with varargs"
 ---
 

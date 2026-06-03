@@ -1,4 +1,5 @@
 ---
+title: "Prefer the Java 21 standard library instead of Guava"
 sidebar_label: "Prefer the Java 21 standard library instead of Guava"
 ---
 

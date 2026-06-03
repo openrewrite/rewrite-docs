@@ -1,4 +1,5 @@
 ---
+title: "Adopt AssertJ Short Assertions"
 sidebar_label: "Adopt AssertJ Short Assertions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Kafka with Quarkus Messaging Kafka"
 sidebar_label: "Replace Spring Kafka with Quarkus Messaging Kafka"
 ---
 

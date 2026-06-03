@@ -1,4 +1,5 @@
 ---
+title: "Remove illegal semicolons"
 sidebar_label: "Remove illegal semicolons"
 ---
 

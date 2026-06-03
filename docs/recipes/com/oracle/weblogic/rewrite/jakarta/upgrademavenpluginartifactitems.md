@@ -1,4 +1,5 @@
 ---
+title: "Upgrade group, artifact ID and version of an artifactItem, of a maven plugin execution configuration"
 sidebar_label: "Upgrade group, artifact ID and version of an artifactItem, of a maven plugin execution configuration"
 ---
 

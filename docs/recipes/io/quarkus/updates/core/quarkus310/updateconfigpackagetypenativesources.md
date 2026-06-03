@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNativeSources"
 sidebar_label: "io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNativeSources"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Apply `var` to Generic Constructors"
 sidebar_label: "Apply `var` to Generic Constructors"
 ---
 

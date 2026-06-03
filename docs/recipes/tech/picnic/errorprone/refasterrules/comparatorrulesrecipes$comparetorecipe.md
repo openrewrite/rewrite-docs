@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.CompareTo`"
 sidebar_label: "Refaster template `ComparatorRules.CompareTo`"
 ---
 

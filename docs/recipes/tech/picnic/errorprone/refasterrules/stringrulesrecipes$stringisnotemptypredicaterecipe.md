@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringIsNotEmptyPredicate`"
 sidebar_label: "Refaster template `StringRules.StringIsNotEmptyPredicate`"
 ---
 

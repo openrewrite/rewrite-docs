@@ -1,4 +1,5 @@
 ---
+title: "Migrate JUnit 4 lifecycle annotations to JUnit Jupiter"
 sidebar_label: "Migrate JUnit 4 lifecycle annotations to JUnit Jupiter"
 ---
 

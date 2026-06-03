@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Actuator with Quarkus SmallRye Health"
 sidebar_label: "Replace Spring Boot Actuator with Quarkus SmallRye Health"
 ---
 

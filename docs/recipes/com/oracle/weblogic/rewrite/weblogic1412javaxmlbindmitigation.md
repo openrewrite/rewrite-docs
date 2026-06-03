@@ -1,4 +1,5 @@
 ---
+title: "Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2"
 sidebar_label: "Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2"
 ---
 

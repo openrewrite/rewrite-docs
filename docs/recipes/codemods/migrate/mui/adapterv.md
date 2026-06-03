@@ -1,4 +1,5 @@
 ---
+title: "Converts components to use the v4 adapter module"
 sidebar_label: "Converts components to use the v4 adapter module"
 ---
 

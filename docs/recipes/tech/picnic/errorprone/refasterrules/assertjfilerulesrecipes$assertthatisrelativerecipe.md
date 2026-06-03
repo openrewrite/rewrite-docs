@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJFileRules.AssertThatIsRelative`"
 sidebar_label: "Refaster template `AssertJFileRules.AssertThatIsRelative`"
 ---
 

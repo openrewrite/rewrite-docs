@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.Base64`"
 sidebar_label: "Prefer `java.util.Base64`"
 ---
 
@@ -71,10 +72,10 @@ import java.util.Base64;
 
 class Test {
     static byte[] decodeBytes(byte[] encodedBytes) {
-        return Base64.getDecoder().decode(encodedBytes);
+        return Base64.getMimeDecoder().decode(encodedBytes);
     }
     static byte[] decodeToBytes(String encodedString) {
-        return Base64.getDecoder().decode(encodedString);
+        return Base64.getMimeDecoder().decode(encodedString);
     }
     static String encodeToString(byte[] decodedByteArr) {
         return Base64.getEncoder().encodeToString(decodedByteArr);
@@ -103,13 +104,13 @@ class Test {
 class Test {
     static byte[] decodeBytes(byte[] encodedBytes) {
 -       return Base64.decodeBase64(encodedBytes);
-+       return Base64.getDecoder().decode(encodedBytes);
++       return Base64.getMimeDecoder().decode(encodedBytes);
     }
 @@ -8,1 +8,1 @@
     }
     static byte[] decodeToBytes(String encodedString) {
 -       return Base64.decodeBase64(encodedString);
-+       return Base64.getDecoder().decode(encodedString);
++       return Base64.getMimeDecoder().decode(encodedString);
     }
 @@ -11,1 +11,1 @@
     }

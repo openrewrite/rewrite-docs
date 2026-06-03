@@ -1,4 +1,5 @@
 ---
+title: "Remove test-jar type from camel-test-infra dependencies"
 sidebar_label: "Remove test-jar type from camel-test-infra dependencies"
 ---
 

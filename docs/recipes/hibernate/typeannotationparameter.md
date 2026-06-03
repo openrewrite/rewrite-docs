@@ -1,4 +1,5 @@
 ---
+title: "`@Type` annotation type parameter migration"
 sidebar_label: "`@Type` annotation type parameter migration"
 ---
 

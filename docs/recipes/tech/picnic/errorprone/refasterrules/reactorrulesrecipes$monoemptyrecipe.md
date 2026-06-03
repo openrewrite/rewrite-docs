@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoEmpty`"
 sidebar_label: "Refaster template `ReactorRules.MonoEmpty`"
 ---
 

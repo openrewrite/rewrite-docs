@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary computed property keys in objects and classes"
 sidebar_label: "Disallow unnecessary computed property keys in objects and classes"
 ---
 

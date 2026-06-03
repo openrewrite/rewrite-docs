@@ -1,4 +1,5 @@
 ---
+title: "Upper case literal suffixes"
 sidebar_label: "Upper case literal suffixes"
 ---
 

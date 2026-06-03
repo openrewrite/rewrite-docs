@@ -1,4 +1,5 @@
 ---
+title: "Method parameter padding"
 sidebar_label: "Method parameter padding"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate from OptaPlanner to Timefold Solver"
 sidebar_label: "Migrate from OptaPlanner to Timefold Solver"
 ---
 

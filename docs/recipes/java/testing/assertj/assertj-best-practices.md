@@ -1,4 +1,5 @@
 ---
+title: "AssertJ best practices"
 sidebar_label: "AssertJ best practices"
 ---
 
@@ -89,6 +90,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Collapse consecutive `assertThat` statements](../../../java/testing/assertj/collapseconsecutiveassertthatstatements)
 * [Collapse `assertThat` followed by `return` into single statement](../../../java/testing/assertj/returnactual)
 * [Simplify redundant AssertJ assertion chains](../../../java/testing/assertj/simplifyredundantassertjchains)
+* [Migrate `AssertionsForClassTypes` and `AssertionsForInterfaceTypes` to `Assertions`](../../../java/testing/assertj/migrateassertionsforclassandinterfacetypes)
 * [Statically import AssertJ's `assertThat`](../../../java/testing/assertj/staticimports)
 
 </TabItem>
@@ -157,6 +159,7 @@ recipeList:
   - org.openrewrite.java.testing.assertj.CollapseConsecutiveAssertThatStatements
   - org.openrewrite.java.testing.assertj.ReturnActual
   - org.openrewrite.java.testing.assertj.SimplifyRedundantAssertJChains
+  - org.openrewrite.java.testing.assertj.MigrateAssertionsForClassAndInterfaceTypes
   - org.openrewrite.java.testing.assertj.StaticImports
 
 ```

@@ -1,4 +1,5 @@
 ---
+title: "Update properties and yaml configurations file"
 sidebar_label: "Update properties and yaml configurations file"
 ---
 

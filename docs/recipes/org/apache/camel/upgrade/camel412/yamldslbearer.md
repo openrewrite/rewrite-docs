@@ -1,4 +1,5 @@
 ---
+title: "Yaml DSL bearer from rest/securityDefinitions is renamed to bearerToken"
 sidebar_label: "Yaml DSL bearer from rest/securityDefinitions is renamed to bearerToken"
 ---
 

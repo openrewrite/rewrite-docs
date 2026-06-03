@@ -1,4 +1,5 @@
 ---
+title: "Convert `OAuth2ClientConfigurer` chained calls into Lambda DSL"
 sidebar_label: "Convert `OAuth2ClientConfigurer` chained calls into Lambda DSL"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce spacing around colons of switch statements"
 sidebar_label: "Enforce spacing around colons of switch statements"
 ---
 

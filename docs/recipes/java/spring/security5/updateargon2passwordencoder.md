@@ -1,4 +1,5 @@
 ---
+title: "Use new `Argon2PasswordEncoder` factory methods"
 sidebar_label: "Use new `Argon2PasswordEncoder` factory methods"
 ---
 

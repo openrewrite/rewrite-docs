@@ -1,4 +1,5 @@
 ---
+title: "Remove `test` prefix from JUnit 5 tests"
 sidebar_label: "Remove `test` prefix from JUnit 5 tests"
 ---
 

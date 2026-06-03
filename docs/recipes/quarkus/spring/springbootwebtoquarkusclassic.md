@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Web with Quarkus RESTEasy Classic"
 sidebar_label: "Replace Spring Boot Web with Quarkus RESTEasy Classic"
 ---
 

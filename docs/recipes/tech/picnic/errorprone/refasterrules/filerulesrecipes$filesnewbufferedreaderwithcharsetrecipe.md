@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FileRules.FilesNewBufferedReaderWithCharset`"
 sidebar_label: "Refaster template `FileRules.FilesNewBufferedReaderWithCharset`"
 ---
 

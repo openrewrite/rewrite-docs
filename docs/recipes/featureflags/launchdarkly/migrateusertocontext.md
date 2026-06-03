@@ -1,4 +1,5 @@
 ---
+title: "Migrate `LDUser` to `LDContext`"
 sidebar_label: "Migrate `LDUser` to `LDContext`"
 ---
 

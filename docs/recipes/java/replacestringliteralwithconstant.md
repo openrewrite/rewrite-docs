@@ -1,4 +1,5 @@
 ---
+title: "Replace String literal with constant"
 sidebar_label: "Replace String literal with constant"
 ---
 

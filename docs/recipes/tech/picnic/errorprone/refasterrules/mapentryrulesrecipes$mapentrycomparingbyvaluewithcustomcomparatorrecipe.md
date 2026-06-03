@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MapEntryRules.MapEntryComparingByValueWithCustomComparator`"
 sidebar_label: "Refaster template `MapEntryRules.MapEntryComparingByValueWithCustomComparator`"
 ---
 

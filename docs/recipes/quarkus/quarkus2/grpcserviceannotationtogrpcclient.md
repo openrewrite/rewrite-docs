@@ -1,4 +1,5 @@
 ---
+title: "Use `@GrpcClient`"
 sidebar_label: "Use `@GrpcClient`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Sync Gradle ext properties with BOM"
 sidebar_label: "Sync Gradle ext properties with BOM"
 ---
 

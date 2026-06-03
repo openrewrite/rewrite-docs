@@ -1,4 +1,5 @@
 ---
+title: "Unnecessary explicit type arguments"
 sidebar_label: "Unnecessary explicit type arguments"
 ---
 

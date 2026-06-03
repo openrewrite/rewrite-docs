@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `UriComponentsBuilder` methods"
 sidebar_label: "Migrate deprecated `UriComponentsBuilder` methods"
 ---
 

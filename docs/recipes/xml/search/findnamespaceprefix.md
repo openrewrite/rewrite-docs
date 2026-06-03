@@ -1,4 +1,5 @@
 ---
+title: "Find XML namespace prefixes"
 sidebar_label: "Find XML namespace prefixes"
 ---
 

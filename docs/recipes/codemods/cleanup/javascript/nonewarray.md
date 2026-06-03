@@ -1,4 +1,5 @@
 ---
+title: "Disallow `new Array()`"
 sidebar_label: "Disallow `new Array()`"
 ---
 

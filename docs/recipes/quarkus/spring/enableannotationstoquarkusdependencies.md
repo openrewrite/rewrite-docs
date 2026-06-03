@@ -1,4 +1,5 @@
 ---
+title: "Migrate `@EnableXyz` annotations to Quarkus extensions"
 sidebar_label: "Migrate `@EnableXyz` annotations to Quarkus extensions"
 ---
 

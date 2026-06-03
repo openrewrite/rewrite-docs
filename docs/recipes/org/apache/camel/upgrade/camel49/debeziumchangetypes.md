@@ -1,4 +1,5 @@
 ---
+title: "Each camel-debezium module has its own subpackage corresponding to the database type"
 sidebar_label: "Each camel-debezium module has its own subpackage corresponding to the database type"
 ---
 

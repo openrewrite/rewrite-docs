@@ -1,4 +1,5 @@
 ---
+title: "Find spoofable bot actor checks"
 sidebar_label: "Find spoofable bot actor checks"
 ---
 

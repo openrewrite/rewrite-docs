@@ -1,4 +1,5 @@
 ---
+title: "Simplify AssertJ assertions on SequencedCollection"
 sidebar_label: "Simplify AssertJ assertions on SequencedCollection"
 ---
 

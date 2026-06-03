@@ -1,4 +1,5 @@
 ---
+title: "Remove OpenFeature's `getBooleanValue` for feature key"
 sidebar_label: "Remove OpenFeature's `getBooleanValue` for feature key"
 ---
 

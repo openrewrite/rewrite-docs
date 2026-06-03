@@ -1,4 +1,5 @@
 ---
+title: "`StringBuilderRules` Refaster recipes"
 sidebar_label: "`StringBuilderRules` Refaster recipes"
 ---
 

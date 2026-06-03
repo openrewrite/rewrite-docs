@@ -1,4 +1,5 @@
 ---
+title: "Avoid using the deprecated empty `finalize()` method in `java.desktop`"
 sidebar_label: "Avoid using the deprecated empty `finalize()` method in `java.desktop`"
 ---
 

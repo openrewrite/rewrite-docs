@@ -1,4 +1,5 @@
 ---
+title: "Disallow nested ternary expressions"
 sidebar_label: "Disallow nested ternary expressions"
 ---
 

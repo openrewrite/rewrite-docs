@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hamcrest `everyItem` to AssertJ"
 sidebar_label: "Migrate Hamcrest `everyItem` to AssertJ"
 ---
 

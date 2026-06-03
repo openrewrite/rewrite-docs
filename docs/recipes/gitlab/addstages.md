@@ -1,4 +1,5 @@
 ---
+title: "Add GitLab stages"
 sidebar_label: "Add GitLab stages"
 ---
 

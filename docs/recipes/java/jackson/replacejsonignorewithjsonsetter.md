@@ -1,4 +1,5 @@
 ---
+title: "Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields"
 sidebar_label: "Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields"
 ---
 

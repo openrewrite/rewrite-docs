@@ -1,4 +1,5 @@
 ---
+title: "Convert Log4j `Logger.setLevel` to Log4j2 `Configurator.setLevel`"
 sidebar_label: "Convert Log4j `Logger.setLevel` to Log4j2 `Configurator.setLevel`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce placing object properties on separate lines"
 sidebar_label: "Enforce placing object properties on separate lines"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change XML attribute key"
 sidebar_label: "Change XML attribute key"
 ---
 
@@ -34,6 +35,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Bean XML properties deprecated in Spring Framework 3.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratedeprecatedbeanxmlproperties)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
+* [Migrate Spring Integration XML attributes deprecated by Spring Integration 6.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/integration/migratespringframework6deprecatedintegrationxmlattributes)
 
 ## Example
 

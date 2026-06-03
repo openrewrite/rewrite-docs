@@ -1,4 +1,5 @@
 ---
+title: "Change property key"
 sidebar_label: "Change property key"
 ---
 

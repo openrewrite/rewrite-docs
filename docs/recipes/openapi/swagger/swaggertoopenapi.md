@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Swagger to OpenAPI"
 sidebar_label: "Migrate from Swagger to OpenAPI"
 ---
 
@@ -54,6 +55,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `io.swagger.annotations.Info`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.info.Info`
+* [Replace springfox `@ApiIgnore` on method parameters with `@Parameter(hidden = true)`](../../openapi/swagger/migrateapiignoreparametertoparameterhidden)
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `springfox.documentation.annotations.ApiIgnore`
   * newFullyQualifiedTypeName: `io.swagger.v3.oas.annotations.Hidden`
@@ -101,6 +103,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: io.swagger.annotations.Info
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.info.Info
+  - org.openrewrite.openapi.swagger.MigrateApiIgnoreParameterToParameterHidden
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: springfox.documentation.annotations.ApiIgnore
       newFullyQualifiedTypeName: io.swagger.v3.oas.annotations.Hidden

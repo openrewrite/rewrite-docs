@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.log(Level.FINEST, Supplier&lt;String&gt;)` with `Logger.finest(Supplier&lt;String&gt;)`"
 sidebar_label: "Replace JUL `Logger.log(Level.FINEST, Supplier&lt;String&gt;)` with `Logger.finest(Supplier&lt;String&gt;)`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate to `maven-dependency-plugin` goal `resolve-sources`"
 sidebar_label: "Migrate to `maven-dependency-plugin` goal `resolve-sources`"
 ---
 

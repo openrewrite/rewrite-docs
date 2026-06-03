@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsOne`"
 sidebar_label: "Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsOne`"
 ---
 

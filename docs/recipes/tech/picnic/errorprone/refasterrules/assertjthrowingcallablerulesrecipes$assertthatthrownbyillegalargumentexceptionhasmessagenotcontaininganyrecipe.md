@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIllegalArgumentExceptionHasMessageNotContainingAny`"
 sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIllegalArgumentExceptionHasMessageNotContainingAny`"
 ---
 

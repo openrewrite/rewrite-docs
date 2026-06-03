@@ -1,4 +1,5 @@
 ---
+title: "Replace `MockitoAnnotations.initMocks(this)` to `MockitoAnnotations.openMocks(this)`"
 sidebar_label: "Replace `MockitoAnnotations.initMocks(this)` to `MockitoAnnotations.openMocks(this)`"
 ---
 

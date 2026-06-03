@@ -1,4 +1,5 @@
 ---
+title: "Simplify AssertJ chained assertions"
 sidebar_label: "Simplify AssertJ chained assertions"
 ---
 

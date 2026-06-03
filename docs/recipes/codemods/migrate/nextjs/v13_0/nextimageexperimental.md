@@ -1,4 +1,5 @@
 ---
+title: "Migrate to the New Image Component"
 sidebar_label: "Migrate to the New Image Component"
 ---
 

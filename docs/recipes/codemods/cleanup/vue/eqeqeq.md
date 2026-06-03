@@ -1,4 +1,5 @@
 ---
+title: "Require the use of === and !== in `&lt;template&gt;`"
 sidebar_label: "Require the use of === and !== in `&lt;template&gt;`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `MultipartConfigFactory` with `DataSize` arguments"
 sidebar_label: "Use `MultipartConfigFactory` with `DataSize` arguments"
 ---
 

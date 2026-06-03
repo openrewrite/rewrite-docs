@@ -1,4 +1,5 @@
 ---
+title: "Prefer `final var` over `lombok.val`"
 sidebar_label: "Prefer `final var` over `lombok.val`"
 ---
 

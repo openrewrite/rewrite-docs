@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent indentation in `&lt;script&gt;`"
 sidebar_label: "Enforce consistent indentation in `&lt;script&gt;`"
 ---
 

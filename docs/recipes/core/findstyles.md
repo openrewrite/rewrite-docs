@@ -1,4 +1,5 @@
 ---
+title: "Find styles"
 sidebar_label: "Find styles"
 ---
 

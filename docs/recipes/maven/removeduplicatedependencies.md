@@ -1,4 +1,5 @@
 ---
+title: "Remove duplicate Maven dependencies"
 sidebar_label: "Remove duplicate Maven dependencies"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2"
 sidebar_label: "Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2"
 ---
 

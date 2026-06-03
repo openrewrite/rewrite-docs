@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.CollectionForEach`"
 sidebar_label: "Refaster template `CollectionRules.CollectionForEach`"
 ---
 

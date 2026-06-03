@@ -1,4 +1,5 @@
 ---
+title: "Ensures presets are safe to use"
 sidebar_label: "Ensures presets are safe to use"
 ---
 

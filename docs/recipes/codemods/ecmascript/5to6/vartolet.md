@@ -1,4 +1,5 @@
 ---
+title: "Convert `var` to `let`"
 sidebar_label: "Convert `var` to `let`"
 ---
 

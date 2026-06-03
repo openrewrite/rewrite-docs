@@ -1,4 +1,5 @@
 ---
+title: "Convert MongoRepository to PanacheMongoRepository"
 sidebar_label: "Convert MongoRepository to PanacheMongoRepository"
 ---
 

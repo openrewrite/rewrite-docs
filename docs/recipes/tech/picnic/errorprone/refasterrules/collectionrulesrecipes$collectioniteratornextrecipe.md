@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.CollectionIteratorNext`"
 sidebar_label: "Refaster template `CollectionRules.CollectionIteratorNext`"
 ---
 

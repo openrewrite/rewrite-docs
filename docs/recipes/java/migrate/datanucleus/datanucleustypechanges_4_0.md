@@ -1,4 +1,5 @@
 ---
+title: "DataNucleus 4.0 type changes"
 sidebar_label: "DataNucleus 4.0 type changes"
 ---
 

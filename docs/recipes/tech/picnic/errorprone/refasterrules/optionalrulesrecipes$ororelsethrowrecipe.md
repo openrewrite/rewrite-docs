@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `OptionalRules.OrOrElseThrow`"
 sidebar_label: "Refaster template `OptionalRules.OrOrElseThrow`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce or ban the use of inline type-only markers for named imports"
 sidebar_label: "Enforce or ban the use of inline type-only markers for named imports"
 ---
 

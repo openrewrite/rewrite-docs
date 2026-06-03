@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringIdentity`"
 sidebar_label: "Refaster template `StringRules.StringIdentity`"
 ---
 

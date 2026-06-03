@@ -1,4 +1,5 @@
 ---
+title: "Camel Yaml steps not allowed as route child"
 sidebar_label: "Camel Yaml steps not allowed as route child"
 ---
 

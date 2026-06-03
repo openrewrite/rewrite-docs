@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TestNGToAssertJRules.AssertEqualArrayIterationOrder`"
 sidebar_label: "Refaster template `TestNGToAssertJRules.AssertEqualArrayIterationOrder`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate Enabled to Access Spring Boot Properties"
 sidebar_label: "Migrate Enabled to Access Spring Boot Properties"
 ---
 

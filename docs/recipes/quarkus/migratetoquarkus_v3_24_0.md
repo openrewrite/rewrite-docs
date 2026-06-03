@@ -1,4 +1,5 @@
 ---
+title: "Quarkus Updates Aggregate 3.24.0"
 sidebar_label: "Quarkus Updates Aggregate 3.24.0"
 ---
 
@@ -47,6 +48,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmSessionMethodsRemovedIn7](../io/quarkus/updates/core/quarkus324/migratefromhibernateormsessionmethodsremovedin7)
 * [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7](../io/quarkus/updates/core/quarkus324/migratefromhibernateormvariousremovedin7)
 * [io.quarkus.updates.core.quarkus324.LogConsoleAsyncEnable](../io/quarkus/updates/core/quarkus324/logconsoleasyncenable)
+* [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmQueryHints](../io/quarkus/updates/core/quarkus324/migratefromhibernateormqueryhints)
+* [io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmEmptyInterceptor](../io/quarkus/updates/core/quarkus324/migratefromhibernateormemptyinterceptor)
+* [io.quarkus.updates.core.quarkus324.MigrateFromHibernateValidatorNotBlank](../io/quarkus/updates/core/quarkus324/migratefromhibernatevalidatornotblank)
+* [io.quarkus.updates.core.quarkus324.MigrateFromIndexColumn](../io/quarkus/updates/core/quarkus324/migratefromindexcolumn)
+* [io.quarkus.updates.core.quarkus324.MigrateFromDefaultUniqueDelegate](../io/quarkus/updates/core/quarkus324/migratefromdefaultuniquedelegate)
 * [Migrates `camel 4.11` application to `camel 4.12`](../io/quarkus/updates/camel/camel412/camelquarkusmigrationrecipe)
 
 </TabItem>
@@ -75,6 +81,11 @@ recipeList:
   - io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmSessionMethodsRemovedIn7
   - io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7
   - io.quarkus.updates.core.quarkus324.LogConsoleAsyncEnable
+  - io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmQueryHints
+  - io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmEmptyInterceptor
+  - io.quarkus.updates.core.quarkus324.MigrateFromHibernateValidatorNotBlank
+  - io.quarkus.updates.core.quarkus324.MigrateFromIndexColumn
+  - io.quarkus.updates.core.quarkus324.MigrateFromDefaultUniqueDelegate
   - io.quarkus.updates.camel.camel412.CamelQuarkusMigrationRecipe
 
 ```

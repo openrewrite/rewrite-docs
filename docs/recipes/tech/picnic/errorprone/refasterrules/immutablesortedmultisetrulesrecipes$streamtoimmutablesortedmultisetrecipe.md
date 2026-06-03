@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSortedMultisetRules.StreamToImmutableSortedMultiset`"
 sidebar_label: "Refaster template `ImmutableSortedMultisetRules.StreamToImmutableSortedMultiset`"
 ---
 

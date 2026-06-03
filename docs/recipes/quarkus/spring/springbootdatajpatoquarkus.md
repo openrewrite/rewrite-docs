@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Data JPA with Quarkus Hibernate ORM Panache"
 sidebar_label: "Replace Spring Boot Data JPA with Quarkus Hibernate ORM Panache"
 ---
 

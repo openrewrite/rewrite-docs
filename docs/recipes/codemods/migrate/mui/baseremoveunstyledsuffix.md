@@ -1,4 +1,5 @@
 ---
+title: "Removes `Unstyled` suffix from base components"
 sidebar_label: "Removes `Unstyled` suffix from base components"
 ---
 

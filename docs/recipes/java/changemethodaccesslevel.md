@@ -1,4 +1,5 @@
 ---
+title: "Change method access level"
 sidebar_label: "Change method access level"
 ---
 

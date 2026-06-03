@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssortedRules.IterableIsEmpty`"
 sidebar_label: "Refaster template `AssortedRules.IterableIsEmpty`"
 ---
 

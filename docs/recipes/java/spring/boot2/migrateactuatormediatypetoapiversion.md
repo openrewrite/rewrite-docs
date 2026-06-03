@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`"
 sidebar_label: "Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change region related classes"
 sidebar_label: "Change region related classes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove static import"
 sidebar_label: "Remove static import"
 ---
 

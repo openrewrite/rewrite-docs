@@ -1,4 +1,5 @@
 ---
+title: "Add comment before property key"
 sidebar_label: "Add comment before property key"
 ---
 

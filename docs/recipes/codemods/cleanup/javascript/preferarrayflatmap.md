@@ -1,4 +1,5 @@
 ---
+title: "Prefer `.flatMap()` over `.map().flat()`"
 sidebar_label: "Prefer `.flatMap()` over `.map().flat()`"
 ---
 

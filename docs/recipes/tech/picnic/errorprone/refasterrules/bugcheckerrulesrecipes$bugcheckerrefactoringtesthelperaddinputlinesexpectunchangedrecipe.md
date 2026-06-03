@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged`"
 sidebar_label: "Refaster template `BugCheckerRules.BugCheckerRefactoringTestHelperAddInputLinesExpectUnchanged`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow shorthand type conversions"
 sidebar_label: "Disallow shorthand type conversions"
 ---
 

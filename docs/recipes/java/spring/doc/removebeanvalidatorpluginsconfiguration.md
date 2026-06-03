@@ -1,4 +1,5 @@
 ---
+title: "Removes @Import(BeanValidatorPluginsConfiguration.class)"
 sidebar_label: "Removes @Import(BeanValidatorPluginsConfiguration.class)"
 ---
 

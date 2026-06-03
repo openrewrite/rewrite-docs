@@ -1,4 +1,5 @@
 ---
+title: "`assertEquals(a, null)` to `assertNull(a)`"
 sidebar_label: "`assertEquals(a, null)` to `assertNull(a)`"
 ---
 

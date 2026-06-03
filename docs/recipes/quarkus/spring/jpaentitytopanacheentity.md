@@ -1,4 +1,5 @@
 ---
+title: "Convert JPA Entity to Panache Entity"
 sidebar_label: "Convert JPA Entity to Panache Entity"
 ---
 

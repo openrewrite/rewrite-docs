@@ -1,4 +1,5 @@
 ---
+title: "Update agent configuration files"
 sidebar_label: "Update agent configuration files"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus36.JaegerSmallRyeOpenTracing"
 sidebar_label: "io.quarkus.updates.core.quarkus36.JaegerSmallRyeOpenTracing"
 ---
 

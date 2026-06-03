@@ -1,4 +1,5 @@
 ---
+title: "`AssertJNumberRules` Refaster recipes"
 sidebar_label: "`AssertJNumberRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use TLS for JDBC connection strings"
 sidebar_label: "Use TLS for JDBC connection strings"
 ---
 

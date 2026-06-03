@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.jms` packages to `jakarta.jms`"
 sidebar_label: "Migrate deprecated `javax.jms` packages to `jakarta.jms`"
 ---
 

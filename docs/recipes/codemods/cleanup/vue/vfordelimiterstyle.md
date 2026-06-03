@@ -1,4 +1,5 @@
 ---
+title: "Enforce v-for directive's delimiter style"
 sidebar_label: "Enforce v-for directive's delimiter style"
 ---
 

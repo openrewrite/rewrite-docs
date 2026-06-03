@@ -1,4 +1,5 @@
 ---
+title: "Recipe nullability best practices"
 sidebar_label: "Recipe nullability best practices"
 ---
 

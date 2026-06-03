@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Events to CDI Events"
 sidebar_label: "Migrate Spring Events to CDI Events"
 ---
 

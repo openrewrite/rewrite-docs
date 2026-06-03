@@ -1,4 +1,5 @@
 ---
+title: "Replace H2 test driver with Quarkus JDBC H2 (test scope)"
 sidebar_label: "Replace H2 test driver with Quarkus JDBC H2 (test scope)"
 ---
 

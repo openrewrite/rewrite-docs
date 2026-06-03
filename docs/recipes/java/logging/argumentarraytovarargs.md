@@ -1,4 +1,5 @@
 ---
+title: "Unpack Logger method `new Object[] {...}` into varargs"
 sidebar_label: "Unpack Logger method `new Object[] {...}` into varargs"
 ---
 

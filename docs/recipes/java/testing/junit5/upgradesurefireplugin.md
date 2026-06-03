@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Surefire Plugin"
 sidebar_label: "Upgrade Surefire Plugin"
 ---
 

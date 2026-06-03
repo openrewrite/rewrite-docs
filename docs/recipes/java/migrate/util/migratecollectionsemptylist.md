@@ -1,4 +1,5 @@
 ---
+title: "Prefer `List.of()`"
 sidebar_label: "Prefer `List.of()`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `BugCheckerRules.NameContentEquals`"
 sidebar_label: "Refaster template `BugCheckerRules.NameContentEquals`"
 ---
 

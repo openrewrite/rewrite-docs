@@ -1,4 +1,5 @@
 ---
+title: "Replace `IOException` with `JacksonException` in catch clauses"
 sidebar_label: "Replace `IOException` with `JacksonException` in catch clauses"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`ClassRules` Refaster recipes"
 sidebar_label: "`ClassRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add explicit `groupId` to Maven plugins"
 sidebar_label: "Add explicit `groupId` to Maven plugins"
 ---
 

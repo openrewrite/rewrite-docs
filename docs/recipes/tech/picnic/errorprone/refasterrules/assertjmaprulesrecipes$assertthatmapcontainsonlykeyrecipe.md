@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJMapRules.AssertThatMapContainsOnlyKey`"
 sidebar_label: "Refaster template `AssertJMapRules.AssertThatMapContainsOnlyKey`"
 ---
 

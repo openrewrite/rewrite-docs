@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new ArrayList&lt;&gt;()`"
 sidebar_label: "Prefer `new ArrayList&lt;&gt;()`"
 ---
 

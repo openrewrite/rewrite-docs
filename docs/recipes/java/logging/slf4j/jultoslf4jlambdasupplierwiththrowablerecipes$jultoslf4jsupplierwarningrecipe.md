@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `logger.log(Level.WARNING, e, Supplier&lt;String&gt;)` with SLF4J's `Logger.atWarn().log(Supplier&lt;String&gt;)`"
 sidebar_label: "Replace JUL `logger.log(Level.WARNING, e, Supplier&lt;String&gt;)` with SLF4J's `Logger.atWarn().log(Supplier&lt;String&gt;)`"
 ---
 

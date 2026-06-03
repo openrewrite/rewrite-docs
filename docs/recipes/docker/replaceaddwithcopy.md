@@ -1,4 +1,5 @@
 ---
+title: "Replace `ADD` with `COPY`"
 sidebar_label: "Replace `ADD` with `COPY`"
 ---
 

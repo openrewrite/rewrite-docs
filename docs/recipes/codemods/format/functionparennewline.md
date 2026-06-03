@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent line breaks inside function parentheses"
 sidebar_label: "Enforce consistent line breaks inside function parentheses"
 ---
 

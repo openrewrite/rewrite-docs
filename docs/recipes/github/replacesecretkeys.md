@@ -1,4 +1,5 @@
 ---
+title: "Replace secret key names in GitHub Actions"
 sidebar_label: "Replace secret key names in GitHub Actions"
 ---
 

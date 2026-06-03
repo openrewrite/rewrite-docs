@@ -1,4 +1,5 @@
 ---
+title: "Replace `booleanExpression ? false : true` with `!booleanExpression`"
 sidebar_label: "Replace `booleanExpression ? false : true` with `!booleanExpression`"
 ---
 

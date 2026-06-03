@@ -1,4 +1,5 @@
 ---
+title: "`AssertJMapRules` Refaster recipes"
 sidebar_label: "`AssertJMapRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate to DataNucleus 5.2"
 sidebar_label: "Migrate to DataNucleus 5.2"
 ---
 

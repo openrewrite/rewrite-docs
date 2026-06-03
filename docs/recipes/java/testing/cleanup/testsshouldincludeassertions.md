@@ -1,4 +1,5 @@
 ---
+title: "Include an assertion in tests"
 sidebar_label: "Include an assertion in tests"
 ---
 

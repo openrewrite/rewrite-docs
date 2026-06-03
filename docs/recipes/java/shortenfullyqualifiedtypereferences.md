@@ -1,4 +1,5 @@
 ---
+title: "Add imports for fully qualified references to types"
 sidebar_label: "Add imports for fully qualified references to types"
 ---
 

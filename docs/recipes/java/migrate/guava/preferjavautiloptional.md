@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.Optional`"
 sidebar_label: "Prefer `java.util.Optional`"
 ---
 

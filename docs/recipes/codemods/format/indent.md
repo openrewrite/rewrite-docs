@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent indentation"
 sidebar_label: "Enforce consistent indentation"
 ---
 

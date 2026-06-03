@@ -1,4 +1,5 @@
 ---
+title: "Add `USER` instruction"
 sidebar_label: "Add `USER` instruction"
 ---
 

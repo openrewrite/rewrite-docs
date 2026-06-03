@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.Greatest`"
 sidebar_label: "Refaster template `ComparatorRules.Greatest`"
 ---
 

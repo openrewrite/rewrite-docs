@@ -1,4 +1,5 @@
 ---
+title: "Converts base imports to use React hooks"
 sidebar_label: "Converts base imports to use React hooks"
 ---
 

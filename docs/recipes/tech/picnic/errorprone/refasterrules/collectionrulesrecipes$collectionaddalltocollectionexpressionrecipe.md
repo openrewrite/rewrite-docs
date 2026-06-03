@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.CollectionAddAllToCollectionExpression`"
 sidebar_label: "Refaster template `CollectionRules.CollectionAddAllToCollectionExpression`"
 ---
 

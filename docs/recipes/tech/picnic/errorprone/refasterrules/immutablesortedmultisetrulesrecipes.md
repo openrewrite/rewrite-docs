@@ -1,4 +1,5 @@
 ---
+title: "`ImmutableSortedMultisetRules` Refaster recipes"
 sidebar_label: "`ImmutableSortedMultisetRules` Refaster recipes"
 ---
 

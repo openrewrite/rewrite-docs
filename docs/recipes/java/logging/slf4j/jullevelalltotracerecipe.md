@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Level.ALL` logging with SLF4J's trace level"
 sidebar_label: "Replace JUL `Level.ALL` logging with SLF4J's trace level"
 ---
 

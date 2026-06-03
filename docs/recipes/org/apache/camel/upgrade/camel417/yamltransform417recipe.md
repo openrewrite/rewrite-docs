@@ -1,4 +1,5 @@
 ---
+title: "Camel YML transform changes"
 sidebar_label: "Camel YML transform changes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Boot Testing to Quarkus Testing"
 sidebar_label: "Migrate Spring Boot Testing to Quarkus Testing"
 ---
 

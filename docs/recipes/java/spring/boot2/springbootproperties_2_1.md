@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Boot properties to 2.1"
 sidebar_label: "Migrate Spring Boot properties to 2.1"
 ---
 

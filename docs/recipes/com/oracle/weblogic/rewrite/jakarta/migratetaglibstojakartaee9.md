@@ -1,4 +1,5 @@
 ---
+title: "Migrate Tag Libraries to 2.0 (Jakarta EE 9)"
 sidebar_label: "Migrate Tag Libraries to 2.0 (Jakarta EE 9)"
 ---
 

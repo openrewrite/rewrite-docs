@@ -1,4 +1,5 @@
 ---
+title: "Migrate from `@ApiParam` to `@Parameter`"
 sidebar_label: "Migrate from `@ApiParam` to `@Parameter`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary spread"
 sidebar_label: "Disallow unnecessary spread"
 ---
 

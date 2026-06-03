@@ -1,4 +1,5 @@
 ---
+title: "Require `new` when throwing an error"
 sidebar_label: "Require `new` when throwing an error"
 ---
 

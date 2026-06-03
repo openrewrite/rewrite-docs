@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJIteratorRules.AssertThatHasNext`"
 sidebar_label: "Refaster template `AssertJIteratorRules.AssertThatHasNext`"
 ---
 

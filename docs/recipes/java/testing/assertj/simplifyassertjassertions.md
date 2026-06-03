@@ -1,4 +1,5 @@
 ---
+title: "Shorten AssertJ assertions"
 sidebar_label: "Shorten AssertJ assertions"
 ---
 

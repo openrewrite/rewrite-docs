@@ -1,4 +1,5 @@
 ---
+title: "Use explicit types on lambda arguments"
 sidebar_label: "Use explicit types on lambda arguments"
 ---
 

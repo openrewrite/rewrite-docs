@@ -1,4 +1,5 @@
 ---
+title: "Remove a double feature flag for feature key"
 sidebar_label: "Remove a double feature flag for feature key"
 ---
 

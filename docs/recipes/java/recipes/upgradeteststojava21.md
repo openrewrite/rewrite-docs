@@ -1,4 +1,5 @@
 ---
+title: "Migrate tests to Java 21"
 sidebar_label: "Migrate tests to Java 21"
 ---
 

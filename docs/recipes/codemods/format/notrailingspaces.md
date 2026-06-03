@@ -1,4 +1,5 @@
 ---
+title: "Disallow trailing whitespace at the end of lines"
 sidebar_label: "Disallow trailing whitespace at the end of lines"
 ---
 

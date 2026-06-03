@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxNext`"
 sidebar_label: "Refaster template `ReactorRules.FluxNext`"
 ---
 

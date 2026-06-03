@@ -1,4 +1,5 @@
 ---
+title: "Migrate moved types between Camel 3.x and Camel 4.x"
 sidebar_label: "Migrate moved types between Camel 3.x and Camel 4.x"
 ---
 

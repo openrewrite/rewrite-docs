@@ -1,4 +1,5 @@
 ---
+title: "Replace `RestTemplateBuilder.requestFactory(Function)` with `requestFactoryBuilder`"
 sidebar_label: "Replace `RestTemplateBuilder.requestFactory(Function)` with `requestFactoryBuilder`"
 ---
 

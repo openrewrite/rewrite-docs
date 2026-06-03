@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring WS 4.0"
 sidebar_label: "Migrate to Spring WS 4.0"
 ---
 

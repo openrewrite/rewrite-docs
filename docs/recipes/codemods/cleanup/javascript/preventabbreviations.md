@@ -1,4 +1,5 @@
 ---
+title: "Prevent abbreviations"
 sidebar_label: "Prevent abbreviations"
 ---
 

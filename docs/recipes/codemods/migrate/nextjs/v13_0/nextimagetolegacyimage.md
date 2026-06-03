@@ -1,4 +1,5 @@
 ---
+title: "Rename Next Image Imports"
 sidebar_label: "Rename Next Image Imports"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Java version"
 sidebar_label: "Upgrade Java version"
 ---
 

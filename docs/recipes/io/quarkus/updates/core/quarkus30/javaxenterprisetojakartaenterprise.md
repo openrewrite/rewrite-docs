@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`"
 sidebar_label: "Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`"
 ---
 

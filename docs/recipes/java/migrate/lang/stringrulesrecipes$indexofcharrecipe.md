@@ -1,4 +1,5 @@
 ---
+title: "Replace `String.indexOf(char, 0)` with `String.indexOf(char)`"
 sidebar_label: "Replace `String.indexOf(char, 0)` with `String.indexOf(char)`"
 ---
 

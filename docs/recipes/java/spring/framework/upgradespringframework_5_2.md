@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Framework 5.2"
 sidebar_label: "Migrate to Spring Framework 5.2"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Wrapping and braces"
 sidebar_label: "Wrapping and braces"
 ---
 

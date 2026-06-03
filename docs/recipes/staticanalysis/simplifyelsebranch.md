@@ -1,4 +1,5 @@
 ---
+title: "Simplify `else` branch if it only has a single `if`"
 sidebar_label: "Simplify `else` branch if it only has a single `if`"
 ---
 

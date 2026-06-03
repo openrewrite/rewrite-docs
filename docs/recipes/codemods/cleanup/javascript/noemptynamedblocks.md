@@ -1,4 +1,5 @@
 ---
+title: "Forbid empty named import"
 sidebar_label: "Forbid empty named import"
 ---
 

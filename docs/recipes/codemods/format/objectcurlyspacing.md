@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing inside braces"
 sidebar_label: "Enforce consistent spacing inside braces"
 ---
 

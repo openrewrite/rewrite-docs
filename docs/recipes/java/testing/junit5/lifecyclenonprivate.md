@@ -1,4 +1,5 @@
 ---
+title: "Make lifecycle methods non private"
 sidebar_label: "Make lifecycle methods non private"
 ---
 

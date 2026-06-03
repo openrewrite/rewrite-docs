@@ -1,4 +1,5 @@
 ---
+title: "Upgrade to Spring Boot 2.5"
 sidebar_label: "Upgrade to Spring Boot 2.5"
 ---
 

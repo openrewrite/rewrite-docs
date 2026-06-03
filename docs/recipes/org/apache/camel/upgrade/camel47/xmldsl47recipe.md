@@ -1,4 +1,5 @@
 ---
+title: "Camel XMl DSL changes"
 sidebar_label: "Camel XMl DSL changes"
 ---
 

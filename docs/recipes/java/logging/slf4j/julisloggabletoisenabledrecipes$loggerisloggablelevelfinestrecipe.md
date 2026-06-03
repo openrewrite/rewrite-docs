@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.isLoggable(Level.FINEST)` with SLF4J's `Logger.isTraceEnabled`"
 sidebar_label: "Replace JUL `Logger.isLoggable(Level.FINEST)` with SLF4J's `Logger.isTraceEnabled`"
 ---
 

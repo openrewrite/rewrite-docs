@@ -1,4 +1,5 @@
 ---
+title: "Remove JavaEE dependencies"
 sidebar_label: "Remove JavaEE dependencies"
 ---
 

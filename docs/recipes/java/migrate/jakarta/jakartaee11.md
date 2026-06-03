@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Jakarta EE 11"
 sidebar_label: "Migrate to Jakarta EE 11"
 ---
 

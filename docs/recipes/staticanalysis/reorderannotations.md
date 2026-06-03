@@ -1,4 +1,5 @@
 ---
+title: "Reorder annotations alphabetically"
 sidebar_label: "Reorder annotations alphabetically"
 ---
 

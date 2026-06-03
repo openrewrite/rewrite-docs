@@ -1,4 +1,5 @@
 ---
+title: "Add `prefer-application-packages` for SLF4J in `weblogic.xml`"
 sidebar_label: "Add `prefer-application-packages` for SLF4J in `weblogic.xml`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add Spring Cloud dependencies BOM"
 sidebar_label: "Add Spring Cloud dependencies BOM"
 ---
 

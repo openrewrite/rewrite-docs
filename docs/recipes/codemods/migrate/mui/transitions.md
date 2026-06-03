@@ -1,4 +1,5 @@
 ---
+title: "Updates usage of transitions"
 sidebar_label: "Updates usage of transitions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`AssertJStringRules` Refaster recipes"
 sidebar_label: "`AssertJStringRules` Refaster recipes"
 ---
 

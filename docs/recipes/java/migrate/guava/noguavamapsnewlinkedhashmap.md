@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new LinkedHashMap&lt;&gt;()`"
 sidebar_label: "Prefer `new LinkedHashMap&lt;&gt;()`"
 ---
 

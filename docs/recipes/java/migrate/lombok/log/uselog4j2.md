@@ -1,4 +1,5 @@
 ---
+title: "Use `@Log4j2` instead of explicit fields"
 sidebar_label: "Use `@Log4j2` instead of explicit fields"
 ---
 

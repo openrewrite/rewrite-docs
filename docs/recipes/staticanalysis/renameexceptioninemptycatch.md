@@ -1,4 +1,5 @@
 ---
+title: "Rename caught exceptions in empty catch blocks to `ignored`"
 sidebar_label: "Rename caught exceptions in empty catch blocks to `ignored`"
 ---
 

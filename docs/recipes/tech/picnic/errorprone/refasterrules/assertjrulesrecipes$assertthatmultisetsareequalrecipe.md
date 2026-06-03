@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.AssertThatMultisetsAreEqual`"
 sidebar_label: "Refaster template `AssertJRules.AssertThatMultisetsAreEqual`"
 ---
 

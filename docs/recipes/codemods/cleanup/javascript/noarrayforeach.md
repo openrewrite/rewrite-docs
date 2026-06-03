@@ -1,4 +1,5 @@
 ---
+title: "Prefer `for…of` over the `forEach` method"
 sidebar_label: "Prefer `for…of` over the `forEach` method"
 ---
 

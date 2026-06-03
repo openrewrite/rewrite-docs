@@ -1,4 +1,5 @@
 ---
+title: "Refactored dataFormats (YAML DSL)"
 sidebar_label: "Refactored dataFormats (YAML DSL)"
 ---
 

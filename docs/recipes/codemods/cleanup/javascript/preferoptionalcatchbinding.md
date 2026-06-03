@@ -1,4 +1,5 @@
 ---
+title: "Prefer omitting the catch binding parameter"
 sidebar_label: "Prefer omitting the catch binding parameter"
 ---
 

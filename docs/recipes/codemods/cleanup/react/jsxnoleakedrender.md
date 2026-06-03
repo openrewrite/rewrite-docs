@@ -1,4 +1,5 @@
 ---
+title: "Disallow problematic leaked values from being rendered"
 sidebar_label: "Disallow problematic leaked values from being rendered"
 ---
 

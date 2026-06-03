@@ -1,4 +1,5 @@
 ---
+title: "Move persistence.xml file"
 sidebar_label: "Move persistence.xml file"
 ---
 

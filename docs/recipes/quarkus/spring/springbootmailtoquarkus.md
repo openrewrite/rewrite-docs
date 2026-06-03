@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Mail with Quarkus Mailer"
 sidebar_label: "Replace Spring Boot Mail with Quarkus Mailer"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate JBoss Logging to SLF4J"
 sidebar_label: "Migrate JBoss Logging to SLF4J"
 ---
 

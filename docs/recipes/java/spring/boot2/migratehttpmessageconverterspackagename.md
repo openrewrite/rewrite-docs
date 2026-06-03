@@ -1,4 +1,5 @@
 ---
+title: "Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`"
 sidebar_label: "Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`"
 ---
 

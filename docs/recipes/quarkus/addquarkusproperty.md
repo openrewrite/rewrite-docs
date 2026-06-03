@@ -1,4 +1,5 @@
 ---
+title: "Add a Quarkus configuration property"
 sidebar_label: "Add a Quarkus configuration property"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate TestNG assertions to AssertJ"
 sidebar_label: "Migrate TestNG assertions to AssertJ"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Zipkin to OpenTelemetry OTLP"
 sidebar_label: "Migrate from Zipkin to OpenTelemetry OTLP"
 ---
 

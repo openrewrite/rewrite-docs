@@ -1,4 +1,5 @@
 ---
+title: "Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`"
 sidebar_label: "Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`"
 ---
 

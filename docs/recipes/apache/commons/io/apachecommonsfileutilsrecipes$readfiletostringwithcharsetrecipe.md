@@ -1,4 +1,5 @@
 ---
+title: "Replace `FileUtils.readFileToString(File)` with `FileUtils.readFileToString(File, StandardCharsets.UTF_8)`"
 sidebar_label: "Replace `FileUtils.readFileToString(File)` with `FileUtils.readFileToString(File, StandardCharsets.UTF_8)`"
 ---
 

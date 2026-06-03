@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.Base64` instead of `sun.misc`"
 sidebar_label: "Prefer `java.util.Base64` instead of `sun.misc`"
 ---
 

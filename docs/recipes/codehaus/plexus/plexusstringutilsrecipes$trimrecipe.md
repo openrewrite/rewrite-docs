@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.trim(String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.trim(String)` with JDK provided API"
 ---
 

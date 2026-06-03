@@ -1,4 +1,5 @@
 ---
+title: "Use `@CommonsLog` instead of explicit fields"
 sidebar_label: "Use `@CommonsLog` instead of explicit fields"
 ---
 

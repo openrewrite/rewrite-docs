@@ -1,4 +1,5 @@
 ---
+title: "Replaces removed method camel EIP"
 sidebar_label: "Replaces removed method camel EIP"
 ---
 

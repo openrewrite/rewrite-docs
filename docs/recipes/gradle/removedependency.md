@@ -1,4 +1,5 @@
 ---
+title: "Remove a Gradle dependency"
 sidebar_label: "Remove a Gradle dependency"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Upgrade gradle.properties Micronaut version"
 sidebar_label: "Upgrade gradle.properties Micronaut version"
 ---
 

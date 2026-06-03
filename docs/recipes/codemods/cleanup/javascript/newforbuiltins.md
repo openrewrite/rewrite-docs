@@ -1,4 +1,5 @@
 ---
+title: "Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`"
 sidebar_label: "Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol`, and `BigInt`"
 ---
 

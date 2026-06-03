@@ -1,4 +1,5 @@
 ---
+title: "Enforce the use of `Math.trunc()` instead of bitwise operators"
 sidebar_label: "Enforce the use of `Math.trunc()` instead of bitwise operators"
 ---
 

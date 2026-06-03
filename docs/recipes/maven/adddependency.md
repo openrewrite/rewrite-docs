@@ -1,4 +1,5 @@
 ---
+title: "Add Maven dependency"
 sidebar_label: "Add Maven dependency"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add an annotation processor to the Maven Compiler plugin configuration"
 sidebar_label: "Add an annotation processor to the Maven Compiler plugin configuration"
 ---
 

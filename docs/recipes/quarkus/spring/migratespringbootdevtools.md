@@ -1,4 +1,5 @@
 ---
+title: "Remove Spring Boot DevTools"
 sidebar_label: "Remove Spring Boot DevTools"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Faces XHTML migration for Jakarta EE 9"
 sidebar_label: "Faces XHTML migration for Jakarta EE 9"
 ---
 

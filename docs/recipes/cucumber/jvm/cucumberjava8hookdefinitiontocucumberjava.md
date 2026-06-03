@@ -1,4 +1,5 @@
 ---
+title: "Replace `cucumber-java8` hook definition with `cucumber-java`"
 sidebar_label: "Replace `cucumber-java8` hook definition with `cucumber-java`"
 ---
 

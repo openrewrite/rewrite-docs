@@ -1,4 +1,5 @@
 ---
+title: "Find Micronaut properties config"
 sidebar_label: "Find Micronaut properties config"
 ---
 

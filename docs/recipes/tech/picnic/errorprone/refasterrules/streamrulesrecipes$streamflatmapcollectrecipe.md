@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamFlatMapCollect`"
 sidebar_label: "Refaster template `StreamRules.StreamFlatMapCollect`"
 ---
 

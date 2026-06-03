@@ -1,4 +1,5 @@
 ---
+title: "Find dangerous workflow triggers"
 sidebar_label: "Find dangerous workflow triggers"
 ---
 

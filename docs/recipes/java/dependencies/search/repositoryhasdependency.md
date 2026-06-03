@@ -1,4 +1,5 @@
 ---
+title: "Repository has dependency"
 sidebar_label: "Repository has dependency"
 ---
 

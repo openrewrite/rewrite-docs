@@ -1,4 +1,5 @@
 ---
+title: "`DoubleStreamRules` Refaster recipes"
 sidebar_label: "`DoubleStreamRules` Refaster recipes"
 ---
 

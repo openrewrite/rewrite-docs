@@ -1,4 +1,5 @@
 ---
+title: "Apply Docker best practices"
 sidebar_label: "Apply Docker best practices"
 ---
 

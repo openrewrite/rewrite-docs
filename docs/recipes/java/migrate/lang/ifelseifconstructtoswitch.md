@@ -1,4 +1,5 @@
 ---
+title: "If-else-if-else to switch"
 sidebar_label: "If-else-if-else to switch"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce placing object properties on separate lines in `&lt;template&gt;`"
 sidebar_label: "Enforce placing object properties on separate lines in `&lt;template&gt;`"
 ---
 

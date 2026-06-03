@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.InstantIsAfter`"
 sidebar_label: "Refaster template `TimeRules.InstantIsAfter`"
 ---
 

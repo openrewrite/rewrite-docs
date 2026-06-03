@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.join(Iterable&lt;? extends CharSequence&gt;, String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.join(Iterable&lt;? extends CharSequence&gt;, String)` with JDK provided API"
 ---
 

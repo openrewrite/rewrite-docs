@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Wicket 10.x"
 sidebar_label: "Migrate to Wicket 10.x"
 ---
 

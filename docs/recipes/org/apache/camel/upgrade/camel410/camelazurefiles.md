@@ -1,4 +1,5 @@
 ---
+title: "Renamed constants in camel-azure-files"
 sidebar_label: "Renamed constants in camel-azure-files"
 ---
 

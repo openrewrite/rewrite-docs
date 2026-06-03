@@ -1,4 +1,5 @@
 ---
+title: "Upgrade dependencies to Spring Cloud 2025"
 sidebar_label: "Upgrade dependencies to Spring Cloud 2025"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Update Maven Java project properties"
 sidebar_label: "Update Maven Java project properties"
 ---
 

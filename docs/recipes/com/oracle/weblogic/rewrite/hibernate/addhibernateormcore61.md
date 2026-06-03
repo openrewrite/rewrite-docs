@@ -1,4 +1,5 @@
 ---
+title: "Add Hibernate ORM Core if has dependencies"
 sidebar_label: "Add Hibernate ORM Core if has dependencies"
 ---
 

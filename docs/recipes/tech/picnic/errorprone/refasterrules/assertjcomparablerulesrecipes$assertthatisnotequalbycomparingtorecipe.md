@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJComparableRules.AssertThatIsNotEqualByComparingTo`"
 sidebar_label: "Refaster template `AssertJComparableRules.AssertThatIsNotEqualByComparingTo`"
 ---
 

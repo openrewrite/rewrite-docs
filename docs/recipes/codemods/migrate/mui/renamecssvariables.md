@@ -1,4 +1,5 @@
 ---
+title: "Renames CSS variables"
 sidebar_label: "Renames CSS variables"
 ---
 

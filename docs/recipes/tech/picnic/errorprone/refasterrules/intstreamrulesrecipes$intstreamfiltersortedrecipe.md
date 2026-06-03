@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `IntStreamRules.IntStreamFilterSorted`"
 sidebar_label: "Refaster template `IntStreamRules.IntStreamFilterSorted`"
 ---
 

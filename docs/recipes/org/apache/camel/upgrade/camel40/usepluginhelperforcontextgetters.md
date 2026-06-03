@@ -1,4 +1,5 @@
 ---
+title: "Replace context.getExtension(ExtendedCamelContext.class).get* with PluginHelper.get*(context)"
 sidebar_label: "Replace context.getExtension(ExtendedCamelContext.class).get* with PluginHelper.get*(context)"
 ---
 

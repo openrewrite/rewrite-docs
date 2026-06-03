@@ -1,4 +1,5 @@
 ---
+title: "Camel bean recipe"
 sidebar_label: "Camel bean recipe"
 ---
 

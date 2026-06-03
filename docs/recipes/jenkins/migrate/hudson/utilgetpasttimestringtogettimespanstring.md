@@ -1,4 +1,5 @@
 ---
+title: "Replace `hudson.Util.getPastTimeString` with `getTimeSpanString`"
 sidebar_label: "Replace `hudson.Util.getPastTimeString` with `getTimeSpanString`"
 ---
 

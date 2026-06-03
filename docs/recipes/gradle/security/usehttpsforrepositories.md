@@ -1,4 +1,5 @@
 ---
+title: "Use HTTPS for repositories"
 sidebar_label: "Use HTTPS for repositories"
 ---
 

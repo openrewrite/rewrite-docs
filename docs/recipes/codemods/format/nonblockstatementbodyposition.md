@@ -1,4 +1,5 @@
 ---
+title: "Enforce the location of single-line statements"
 sidebar_label: "Enforce the location of single-line statements"
 ---
 

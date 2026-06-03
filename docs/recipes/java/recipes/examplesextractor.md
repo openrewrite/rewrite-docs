@@ -1,4 +1,5 @@
 ---
+title: "Extract documentation examples from tests"
 sidebar_label: "Extract documentation examples from tests"
 ---
 

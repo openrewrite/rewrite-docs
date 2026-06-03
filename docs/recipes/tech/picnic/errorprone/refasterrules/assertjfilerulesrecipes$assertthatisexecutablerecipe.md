@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJFileRules.AssertThatIsExecutable`"
 sidebar_label: "Refaster template `AssertJFileRules.AssertThatIsExecutable`"
 ---
 

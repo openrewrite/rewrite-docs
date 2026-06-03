@@ -1,4 +1,5 @@
 ---
+title: "The camel-test module has been removed from camel-bom"
 sidebar_label: "The camel-test module has been removed from camel-bom"
 ---
 

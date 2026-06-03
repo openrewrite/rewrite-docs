@@ -1,4 +1,5 @@
 ---
+title: "Migrate `AuthState` to `AuthExchange`"
 sidebar_label: "Migrate `AuthState` to `AuthExchange`"
 ---
 

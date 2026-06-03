@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar"
 sidebar_label: "io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.ReverseOrder`"
 sidebar_label: "Refaster template `ComparatorRules.ReverseOrder`"
 ---
 

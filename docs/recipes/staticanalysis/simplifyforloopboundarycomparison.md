@@ -1,4 +1,5 @@
 ---
+title: "Simplify for loop boundary comparisons"
 sidebar_label: "Simplify for loop boundary comparisons"
 ---
 

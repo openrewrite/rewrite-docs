@@ -1,4 +1,5 @@
 ---
+title: "Enforce line breaks after each array element in `&lt;template&gt;`"
 sidebar_label: "Enforce line breaks after each array element in `&lt;template&gt;`"
 ---
 

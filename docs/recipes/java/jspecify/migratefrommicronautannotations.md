@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Micronaut Framework annotations to JSpecify"
 sidebar_label: "Migrate from Micronaut Framework annotations to JSpecify"
 ---
 

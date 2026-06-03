@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Swagger to SpringDoc and OpenAPI"
 sidebar_label: "Migrate from Swagger to SpringDoc and OpenAPI"
 ---
 

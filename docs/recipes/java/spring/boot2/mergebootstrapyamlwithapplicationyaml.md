@@ -1,4 +1,5 @@
 ---
+title: "Merge Spring `bootstrap.yml` with `application.yml`"
 sidebar_label: "Merge Spring `bootstrap.yml` with `application.yml`"
 ---
 

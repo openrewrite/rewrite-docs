@@ -1,4 +1,5 @@
 ---
+title: "Replace all function expressions with only `return` statement with simple arrow"
 sidebar_label: "Replace all function expressions with only `return` statement with simple arrow"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements"
 sidebar_label: "Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements"
 ---
 

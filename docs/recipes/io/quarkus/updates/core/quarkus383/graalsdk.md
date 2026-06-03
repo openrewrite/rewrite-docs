@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus383.GraalSDK"
 sidebar_label: "io.quarkus.updates.core.quarkus383.GraalSDK"
 ---
 

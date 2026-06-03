@@ -1,4 +1,5 @@
 ---
+title: "Enforce line breaks between arguments of a function call"
 sidebar_label: "Enforce line breaks between arguments of a function call"
 ---
 

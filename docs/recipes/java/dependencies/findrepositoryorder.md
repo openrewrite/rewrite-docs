@@ -1,4 +1,5 @@
 ---
+title: "Maven repository order"
 sidebar_label: "Maven repository order"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Updates `justify` prop to `justifyContent` for Grid component"
 sidebar_label: "Updates `justify` prop to `justifyContent` for Grid component"
 ---
 

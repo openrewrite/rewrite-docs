@@ -1,4 +1,5 @@
 ---
+title: "Disallow negated conditions"
 sidebar_label: "Disallow negated conditions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce line breaks after opening and before closing block-level tags"
 sidebar_label: "Enforce line breaks after opening and before closing block-level tags"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension"
 sidebar_label: "Replace JUnit 4 MockitoJUnitRunner with junit-jupiter MockitoExtension"
 ---
 

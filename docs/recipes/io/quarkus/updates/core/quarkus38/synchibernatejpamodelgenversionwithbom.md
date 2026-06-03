@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM"
 sidebar_label: "io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM"
 ---
 

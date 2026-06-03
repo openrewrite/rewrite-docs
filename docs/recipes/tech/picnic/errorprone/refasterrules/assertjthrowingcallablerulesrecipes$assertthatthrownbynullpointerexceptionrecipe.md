@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByNullPointerException`"
 sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByNullPointerException`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Combine consecutive `RUN` instructions"
 sidebar_label: "Combine consecutive `RUN` instructions"
 ---
 

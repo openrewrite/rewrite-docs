@@ -1,4 +1,5 @@
 ---
+title: "`LongStreamRules` Refaster recipes"
 sidebar_label: "`LongStreamRules` Refaster recipes"
 ---
 

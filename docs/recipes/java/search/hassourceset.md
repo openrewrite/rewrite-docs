@@ -1,4 +1,5 @@
 ---
+title: "Find files in a source set"
 sidebar_label: "Find files in a source set"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent newlines before and after dots"
 sidebar_label: "Enforce consistent newlines before and after dots"
 ---
 

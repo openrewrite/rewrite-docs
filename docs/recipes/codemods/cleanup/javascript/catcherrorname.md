@@ -1,4 +1,5 @@
 ---
+title: "Enforce a specific parameter name in catch clauses"
 sidebar_label: "Enforce a specific parameter name in catch clauses"
 ---
 

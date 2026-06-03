@@ -1,4 +1,5 @@
 ---
+title: "`AssertJRules` Refaster recipes"
 sidebar_label: "`AssertJRules` Refaster recipes"
 ---
 

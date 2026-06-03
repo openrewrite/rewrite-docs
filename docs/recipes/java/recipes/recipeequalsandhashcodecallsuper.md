@@ -1,4 +1,5 @@
 ---
+title: "Use of `@EqualsAndHashCode` on `Recipe`"
 sidebar_label: "Use of `@EqualsAndHashCode` on `Recipe`"
 ---
 

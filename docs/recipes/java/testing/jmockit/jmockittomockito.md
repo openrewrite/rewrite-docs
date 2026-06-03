@@ -1,4 +1,5 @@
 ---
+title: "Migrate from JMockit to Mockito"
 sidebar_label: "Migrate from JMockit to Mockito"
 ---
 

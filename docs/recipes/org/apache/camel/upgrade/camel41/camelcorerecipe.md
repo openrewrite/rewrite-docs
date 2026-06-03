@@ -1,4 +1,5 @@
 ---
+title: "Camel Core changes"
 sidebar_label: "Camel Core changes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find indicators"
 sidebar_label: "Find indicators"
 ---
 

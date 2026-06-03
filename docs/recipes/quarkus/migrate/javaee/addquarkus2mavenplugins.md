@@ -1,4 +1,5 @@
 ---
+title: "Migrate JavaEE Maven Dependencies to Quarkus 2"
 sidebar_label: "Migrate JavaEE Maven Dependencies to Quarkus 2"
 ---
 

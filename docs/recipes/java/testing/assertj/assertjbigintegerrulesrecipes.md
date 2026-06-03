@@ -1,4 +1,5 @@
 ---
+title: "Adopt AssertJ BigInteger Assertions"
 sidebar_label: "Adopt AssertJ BigInteger Assertions"
 ---
 

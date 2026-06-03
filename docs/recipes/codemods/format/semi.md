@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow semicolons instead of ASI"
 sidebar_label: "Require or disallow semicolons instead of ASI"
 ---
 

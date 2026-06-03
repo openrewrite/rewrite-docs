@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoThenMany`"
 sidebar_label: "Refaster template `ReactorRules.MonoThenMany`"
 ---
 

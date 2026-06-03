@@ -1,4 +1,5 @@
 ---
+title: "Use `Reader.of(CharSequence)` for non-synchronized readers"
 sidebar_label: "Use `Reader.of(CharSequence)` for non-synchronized readers"
 ---
 

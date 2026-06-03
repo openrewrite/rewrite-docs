@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `EqualityRules.EnumReferenceEquality`"
 sidebar_label: "Refaster template `EqualityRules.EnumReferenceEquality`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Camel Resequence DSL changes"
 sidebar_label: "Camel Resequence DSL changes"
 ---
 

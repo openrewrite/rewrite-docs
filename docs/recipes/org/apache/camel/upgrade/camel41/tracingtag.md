@@ -1,4 +1,5 @@
 ---
+title: "Tag Enum has been deprecated"
 sidebar_label: "Tag Enum has been deprecated"
 ---
 

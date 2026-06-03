@@ -1,4 +1,5 @@
 ---
+title: "All Picnic Refaster rules"
 sidebar_label: "All Picnic Refaster rules"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove `@SpringExtension`"
 sidebar_label: "Remove `@SpringExtension`"
 ---
 

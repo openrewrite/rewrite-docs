@@ -1,4 +1,5 @@
 ---
+title: "Replace any Lombok log annotations with target logging framework annotation"
 sidebar_label: "Replace any Lombok log annotations with target logging framework annotation"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrates to Apache Commons Math 3.x"
 sidebar_label: "Migrates to Apache Commons Math 3.x"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Upgrade transitive Gradle or Maven dependencies"
 sidebar_label: "Upgrade transitive Gradle or Maven dependencies"
 ---
 

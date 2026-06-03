@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent indentation in HTML comments"
 sidebar_label: "Enforce consistent indentation in HTML comments"
 ---
 

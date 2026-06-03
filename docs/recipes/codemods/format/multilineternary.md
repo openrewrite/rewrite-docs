@@ -1,4 +1,5 @@
 ---
+title: "Enforce newlines between operands of ternary expressions"
 sidebar_label: "Enforce newlines between operands of ternary expressions"
 ---
 

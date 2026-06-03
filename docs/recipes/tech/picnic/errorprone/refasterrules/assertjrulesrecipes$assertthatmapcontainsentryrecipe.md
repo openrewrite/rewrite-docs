@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.AssertThatMapContainsEntry`"
 sidebar_label: "Refaster template `AssertJRules.AssertThatMapContainsEntry`"
 ---
 

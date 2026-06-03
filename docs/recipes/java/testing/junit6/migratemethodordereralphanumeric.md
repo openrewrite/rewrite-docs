@@ -1,4 +1,5 @@
 ---
+title: "Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`"
 sidebar_label: "Migrate `MethodOrderer.Alphanumeric` to `MethodOrderer.MethodName`"
 ---
 

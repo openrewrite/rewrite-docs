@@ -1,4 +1,5 @@
 ---
+title: "`ImmutableSortedMapRules` Refaster recipes"
 sidebar_label: "`ImmutableSortedMapRules` Refaster recipes"
 ---
 

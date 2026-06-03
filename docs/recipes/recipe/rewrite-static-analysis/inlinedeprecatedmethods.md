@@ -1,4 +1,5 @@
 ---
+title: "Inline deprecated delegating methods"
 sidebar_label: "Inline deprecated delegating methods"
 ---
 

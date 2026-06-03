@@ -1,4 +1,5 @@
 ---
+title: "Add `@MockitoSettings(strictness = Strictness.WARN)` for legacy Mockito modules"
 sidebar_label: "Add `@MockitoSettings(strictness = Strictness.WARN)` for legacy Mockito modules"
 ---
 

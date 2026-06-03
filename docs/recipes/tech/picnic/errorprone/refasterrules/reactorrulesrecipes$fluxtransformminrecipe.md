@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxTransformMin`"
 sidebar_label: "Refaster template `ReactorRules.FluxTransformMin`"
 ---
 

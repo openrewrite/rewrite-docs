@@ -1,4 +1,5 @@
 ---
+title: "Add Docker LABEL instruction"
 sidebar_label: "Add Docker LABEL instruction"
 ---
 

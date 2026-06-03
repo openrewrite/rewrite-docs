@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MultimapRules.MultimapValuesStream`"
 sidebar_label: "Refaster template `MultimapRules.MultimapValuesStream`"
 ---
 

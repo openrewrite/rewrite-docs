@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Cache with Quarkus Cache"
 sidebar_label: "Replace Spring Boot Cache with Quarkus Cache"
 ---
 

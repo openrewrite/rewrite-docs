@@ -1,4 +1,5 @@
 ---
+title: "Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`"
 sidebar_label: "Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`"
 ---
 

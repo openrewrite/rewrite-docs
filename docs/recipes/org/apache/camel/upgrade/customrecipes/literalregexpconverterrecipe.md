@@ -1,4 +1,5 @@
 ---
+title: "Replaces a literal matching an expression"
 sidebar_label: "Replaces a literal matching an expression"
 ---
 

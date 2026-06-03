@@ -1,4 +1,5 @@
 ---
+title: "Does not include Gradle dependency"
 sidebar_label: "Does not include Gradle dependency"
 ---
 

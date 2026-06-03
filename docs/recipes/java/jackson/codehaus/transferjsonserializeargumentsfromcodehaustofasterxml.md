@@ -1,4 +1,5 @@
 ---
+title: "Transfer @JsonSerialize arguments from Codehaus to FasterXML"
 sidebar_label: "Transfer @JsonSerialize arguments from Codehaus to FasterXML"
 ---
 

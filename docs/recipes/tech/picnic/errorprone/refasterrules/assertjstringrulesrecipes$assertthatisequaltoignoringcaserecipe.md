@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJStringRules.AssertThatIsEqualToIgnoringCase`"
 sidebar_label: "Refaster template `AssertJStringRules.AssertThatIsEqualToIgnoringCase`"
 ---
 

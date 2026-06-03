@@ -1,4 +1,5 @@
 ---
+title: "Updates `circular` prop to `variant=&quot;circular&quot;`"
 sidebar_label: "Updates `circular` prop to `variant=&quot;circular&quot;`"
 ---
 

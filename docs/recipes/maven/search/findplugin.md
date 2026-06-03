@@ -1,4 +1,5 @@
 ---
+title: "Find Maven plugin"
 sidebar_label: "Find Maven plugin"
 ---
 

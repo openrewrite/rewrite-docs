@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Gradle Enterprise to Develocity"
 sidebar_label: "Migrate from Gradle Enterprise to Develocity"
 ---
 

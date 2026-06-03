@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hibernate dependencies to 6.0.x"
 sidebar_label: "Migrate Hibernate dependencies to 6.0.x"
 ---
 
@@ -121,6 +122,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `hibernate-entitymanager`
 * [Change Gradle or Maven dependency](../java/dependencies/changedependency)
   * oldGroupId: `org.hibernate`
+  * oldArtifactId: `hibernate-validator`
+  * newGroupId: `org.hibernate.validator`
+  * newVersion: `8.0.x`
+* [Change Gradle or Maven dependency](../java/dependencies/changedependency)
+  * oldGroupId: `org.hibernate`
   * oldArtifactId: `hibernate-*`
   * newGroupId: `org.hibernate.orm`
   * newVersion: `6.0.x`
@@ -233,6 +239,11 @@ recipeList:
   - org.openrewrite.maven.RemoveManagedDependency:
       groupId: org.hibernate
       artifactId: hibernate-entitymanager
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.hibernate
+      oldArtifactId: hibernate-validator
+      newGroupId: org.hibernate.validator
+      newVersion: 8.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.hibernate
       oldArtifactId: hibernate-*

@@ -1,4 +1,5 @@
 ---
+title: "Format Kotlin code"
 sidebar_label: "Format Kotlin code"
 ---
 

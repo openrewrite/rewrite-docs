@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.InstantTruncatedToSeconds`"
 sidebar_label: "Refaster template `TimeRules.InstantTruncatedToSeconds`"
 ---
 

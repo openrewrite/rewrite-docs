@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.LongParseUnsignedLong`"
 sidebar_label: "Refaster template `PrimitiveRules.LongParseUnsignedLong`"
 ---
 

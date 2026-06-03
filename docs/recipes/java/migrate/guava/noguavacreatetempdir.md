@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Files#createTempDirectory()`"
 sidebar_label: "Prefer `Files#createTempDirectory()`"
 ---
 

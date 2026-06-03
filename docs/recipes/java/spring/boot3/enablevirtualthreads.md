@@ -1,4 +1,5 @@
 ---
+title: "Enable Virtual Threads on Java 21"
 sidebar_label: "Enable Virtual Threads on Java 21"
 ---
 

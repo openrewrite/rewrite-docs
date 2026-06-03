@@ -1,4 +1,5 @@
 ---
+title: "Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`"
 sidebar_label: "Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`"
 ---
 

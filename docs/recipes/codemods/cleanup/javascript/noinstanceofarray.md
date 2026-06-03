@@ -1,4 +1,5 @@
 ---
+title: "Require `Array.isArray()` instead of `instanceof Array`"
 sidebar_label: "Require `Array.isArray()` instead of `instanceof Array`"
 ---
 

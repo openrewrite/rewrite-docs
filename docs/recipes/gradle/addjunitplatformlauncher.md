@@ -1,4 +1,5 @@
 ---
+title: "Add JUnit Platform Launcher"
 sidebar_label: "Add JUnit Platform Launcher"
 ---
 

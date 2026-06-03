@@ -1,4 +1,5 @@
 ---
+title: "Use `java.net.MulticastSocket#getTimeToLive()`"
 sidebar_label: "Use `java.net.MulticastSocket#getTimeToLive()`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Simplify catch clauses for Jackson exceptions"
 sidebar_label: "Simplify catch clauses for Jackson exceptions"
 ---
 

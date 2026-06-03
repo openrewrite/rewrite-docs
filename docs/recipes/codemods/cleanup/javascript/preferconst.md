@@ -1,4 +1,5 @@
 ---
+title: "Require const declarations for variables that are never reassigned after declared"
 sidebar_label: "Require const declarations for variables that are never reassigned after declared"
 ---
 

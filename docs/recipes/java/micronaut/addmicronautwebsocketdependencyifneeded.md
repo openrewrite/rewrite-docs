@@ -1,4 +1,5 @@
 ---
+title: "Update the Micronaut Websocket support"
 sidebar_label: "Update the Micronaut Websocket support"
 ---
 

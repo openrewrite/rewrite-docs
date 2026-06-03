@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new HashMap&lt;&gt;()`"
 sidebar_label: "Prefer `new HashMap&lt;&gt;()`"
 ---
 

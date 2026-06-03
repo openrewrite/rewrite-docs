@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MultimapRules.MultimapIsEmpty`"
 sidebar_label: "Refaster template `MultimapRules.MultimapIsEmpty`"
 ---
 

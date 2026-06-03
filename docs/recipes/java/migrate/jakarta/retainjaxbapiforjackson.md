@@ -1,4 +1,5 @@
 ---
+title: "Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present"
 sidebar_label: "Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present"
 ---
 

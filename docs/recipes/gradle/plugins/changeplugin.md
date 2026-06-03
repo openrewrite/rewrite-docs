@@ -1,4 +1,5 @@
 ---
+title: "Change a Gradle plugin"
 sidebar_label: "Change a Gradle plugin"
 ---
 

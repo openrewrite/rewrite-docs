@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MapRules.MapIsEmpty`"
 sidebar_label: "Refaster template `MapRules.MapIsEmpty`"
 ---
 

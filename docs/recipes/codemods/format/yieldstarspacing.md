@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions"
 sidebar_label: "Require or disallow spacing around the &amp;#x60;*&amp;#x60; in &amp;#x60;yield*&amp;#x60; expressions"
 ---
 

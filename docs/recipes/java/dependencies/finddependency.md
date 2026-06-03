@@ -1,4 +1,5 @@
 ---
+title: "Find Maven and Gradle dependencies"
 sidebar_label: "Find Maven and Gradle dependencies"
 ---
 

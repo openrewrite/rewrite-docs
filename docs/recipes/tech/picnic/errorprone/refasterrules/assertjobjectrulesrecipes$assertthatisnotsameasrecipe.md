@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJObjectRules.AssertThatIsNotSameAs`"
 sidebar_label: "Refaster template `AssertJObjectRules.AssertThatIsNotSameAs`"
 ---
 

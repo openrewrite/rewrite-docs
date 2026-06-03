@@ -1,4 +1,5 @@
 ---
+title: "Convert `HeadersConfigurer` chained calls into Lambda DSL"
 sidebar_label: "Convert `HeadersConfigurer` chained calls into Lambda DSL"
 ---
 

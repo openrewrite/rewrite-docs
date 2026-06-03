@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.validation` packages to `jakarta.validation`"
 sidebar_label: "Migrate deprecated `javax.validation` packages to `jakarta.validation`"
 ---
 

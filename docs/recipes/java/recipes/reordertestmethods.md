@@ -1,4 +1,5 @@
 ---
+title: "Show `@DocumentExample`s first"
 sidebar_label: "Show `@DocumentExample`s first"
 ---
 

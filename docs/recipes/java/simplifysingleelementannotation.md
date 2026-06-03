@@ -1,4 +1,5 @@
 ---
+title: "Simplify single-element annotation"
 sidebar_label: "Simplify single-element annotation"
 ---
 

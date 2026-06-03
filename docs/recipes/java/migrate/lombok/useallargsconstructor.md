@@ -1,4 +1,5 @@
 ---
+title: "Use `@AllArgsConstructor` where applicable"
 sidebar_label: "Use `@AllArgsConstructor` where applicable"
 ---
 

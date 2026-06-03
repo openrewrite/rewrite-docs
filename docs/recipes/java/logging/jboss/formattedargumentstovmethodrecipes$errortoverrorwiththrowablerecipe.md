@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FormattedArgumentsToVMethod.ErrorToVErrorWithThrowable`"
 sidebar_label: "Refaster template `FormattedArgumentsToVMethod.ErrorToVErrorWithThrowable`"
 ---
 

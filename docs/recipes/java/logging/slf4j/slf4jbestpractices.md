@@ -1,4 +1,5 @@
 ---
+title: "SLF4J best practices"
 sidebar_label: "SLF4J best practices"
 ---
 

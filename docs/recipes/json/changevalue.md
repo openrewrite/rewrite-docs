@@ -1,4 +1,5 @@
 ---
+title: "Change value"
 sidebar_label: "Change value"
 ---
 

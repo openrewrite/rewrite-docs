@@ -1,4 +1,5 @@
 ---
+title: "Updates withWidth higher-order component"
 sidebar_label: "Updates withWidth higher-order component"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove redundant null checks before literal equals"
 sidebar_label: "Remove redundant null checks before literal equals"
 ---
 

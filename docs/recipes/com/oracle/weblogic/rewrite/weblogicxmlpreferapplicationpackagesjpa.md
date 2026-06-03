@@ -1,4 +1,5 @@
 ---
+title: "Add `prefer-application-packages` for JPA in `weblogic.xml`"
 sidebar_label: "Add `prefer-application-packages` for JPA in `weblogic.xml`"
 ---
 

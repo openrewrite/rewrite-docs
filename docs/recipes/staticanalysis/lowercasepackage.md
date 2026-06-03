@@ -1,4 +1,5 @@
 ---
+title: "Rename packages to lowercase"
 sidebar_label: "Rename packages to lowercase"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow classes that only have static members"
 sidebar_label: "Disallow classes that only have static members"
 ---
 

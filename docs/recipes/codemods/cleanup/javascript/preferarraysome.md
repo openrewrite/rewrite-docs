@@ -1,4 +1,5 @@
 ---
+title: "Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`"
 sidebar_label: "Prefer `.some()` over `.filter().length` check and `.{find,findLast}()`"
 ---
 

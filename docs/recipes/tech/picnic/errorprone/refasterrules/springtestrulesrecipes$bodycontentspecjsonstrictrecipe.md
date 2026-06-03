@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `SpringTestRules.BodyContentSpecJsonStrict`"
 sidebar_label: "Refaster template `SpringTestRules.BodyContentSpecJsonStrict`"
 ---
 

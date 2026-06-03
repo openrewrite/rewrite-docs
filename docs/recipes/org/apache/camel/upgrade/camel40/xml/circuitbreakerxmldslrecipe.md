@@ -1,4 +1,5 @@
 ---
+title: "Camel XMl DSL Circuit Breaker changes"
 sidebar_label: "Camel XMl DSL Circuit Breaker changes"
 ---
 

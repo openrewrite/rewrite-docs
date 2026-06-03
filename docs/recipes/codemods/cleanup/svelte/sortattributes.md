@@ -1,4 +1,5 @@
 ---
+title: "Enforce order of attributes"
 sidebar_label: "Enforce order of attributes"
 ---
 

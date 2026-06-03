@@ -1,4 +1,5 @@
 ---
+title: "Add Spring compatibility extensions for commonly used annotations"
 sidebar_label: "Add Spring compatibility extensions for commonly used annotations"
 ---
 

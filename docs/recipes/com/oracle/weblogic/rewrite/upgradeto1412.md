@@ -1,4 +1,5 @@
 ---
+title: "Migrate to WebLogic 14.1.2"
 sidebar_label: "Migrate to WebLogic 14.1.2"
 ---
 

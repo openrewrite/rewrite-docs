@@ -1,4 +1,5 @@
 ---
+title: "Require class directives instead of ternary expressions"
 sidebar_label: "Require class directives instead of ternary expressions"
 ---
 

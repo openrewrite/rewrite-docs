@@ -1,4 +1,5 @@
 ---
+title: "Add `@AutoConfigureTestRestTemplate` if necessary"
 sidebar_label: "Add `@AutoConfigureTestRestTemplate` if necessary"
 ---
 

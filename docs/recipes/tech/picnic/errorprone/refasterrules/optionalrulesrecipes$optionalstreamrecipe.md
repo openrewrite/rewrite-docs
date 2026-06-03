@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `OptionalRules.OptionalStream`"
 sidebar_label: "Refaster template `OptionalRules.OptionalStream`"
 ---
 

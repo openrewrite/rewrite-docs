@@ -1,4 +1,5 @@
 ---
+title: "SDK Exceptions Methods to V2"
 sidebar_label: "SDK Exceptions Methods to V2"
 ---
 

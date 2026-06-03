@@ -1,4 +1,5 @@
 ---
+title: "Add Maven profile"
 sidebar_label: "Add Maven profile"
 ---
 

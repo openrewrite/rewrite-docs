@@ -1,4 +1,5 @@
 ---
+title: "XSLT transformation"
 sidebar_label: "XSLT transformation"
 ---
 

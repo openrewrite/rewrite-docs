@@ -1,4 +1,5 @@
 ---
+title: "Change Maven dependency example"
 sidebar_label: "Change Maven dependency example"
 ---
 

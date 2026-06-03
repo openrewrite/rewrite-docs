@@ -1,4 +1,5 @@
 ---
+title: "Find Spring `@ConfigurationProperties`"
 sidebar_label: "Find Spring `@ConfigurationProperties`"
 ---
 

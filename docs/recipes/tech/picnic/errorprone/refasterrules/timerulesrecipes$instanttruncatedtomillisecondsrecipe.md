@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Instant#truncatedTo(TemporalUnit)` over less obvious alternatives"
 sidebar_label: "Prefer `Instant#truncatedTo(TemporalUnit)` over less obvious alternatives"
 ---
 

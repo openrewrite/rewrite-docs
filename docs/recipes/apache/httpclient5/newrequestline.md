@@ -1,4 +1,5 @@
 ---
+title: "Replaces deprecated `HttpRequestBase::getRequestLine()`"
 sidebar_label: "Replaces deprecated `HttpRequestBase::getRequestLine()`"
 ---
 

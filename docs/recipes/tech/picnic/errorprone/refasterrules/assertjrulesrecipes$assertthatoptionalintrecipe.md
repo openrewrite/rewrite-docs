@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.AssertThatOptionalInt`"
 sidebar_label: "Refaster template `AssertJRules.AssertThatOptionalInt`"
 ---
 

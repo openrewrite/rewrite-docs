@@ -1,4 +1,5 @@
 ---
+title: "Find duplicate classes on the classpath"
 sidebar_label: "Find duplicate classes on the classpath"
 ---
 

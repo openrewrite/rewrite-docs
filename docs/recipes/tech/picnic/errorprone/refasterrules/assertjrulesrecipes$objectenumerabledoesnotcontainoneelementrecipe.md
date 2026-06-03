@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.ObjectEnumerableDoesNotContainOneElement`"
 sidebar_label: "Refaster template `AssertJRules.ObjectEnumerableDoesNotContainOneElement`"
 ---
 

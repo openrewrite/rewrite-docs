@@ -1,4 +1,5 @@
 ---
+title: "Combine semantically equal catch blocks"
 sidebar_label: "Combine semantically equal catch blocks"
 ---
 

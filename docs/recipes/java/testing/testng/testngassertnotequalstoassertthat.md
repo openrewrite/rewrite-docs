@@ -1,4 +1,5 @@
 ---
+title: "TestNG `assertNotEquals` to AssertJ"
 sidebar_label: "TestNG `assertNotEquals` to AssertJ"
 ---
 

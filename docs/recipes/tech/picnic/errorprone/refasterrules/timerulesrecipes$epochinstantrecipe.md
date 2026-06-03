@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.EpochInstant`"
 sidebar_label: "Refaster template `TimeRules.EpochInstant`"
 ---
 

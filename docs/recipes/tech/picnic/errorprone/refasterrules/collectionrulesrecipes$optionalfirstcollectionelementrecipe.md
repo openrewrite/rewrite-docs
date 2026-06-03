@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.OptionalFirstCollectionElement`"
 sidebar_label: "Refaster template `CollectionRules.OptionalFirstCollectionElement`"
 ---
 

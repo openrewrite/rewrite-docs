@@ -1,4 +1,5 @@
 ---
+title: "Find files"
 sidebar_label: "Find files"
 ---
 

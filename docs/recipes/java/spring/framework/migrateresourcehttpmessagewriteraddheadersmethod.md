@@ -1,4 +1,5 @@
 ---
+title: "Migrate `ResourceHttpMessageWriter.addHeaders`"
 sidebar_label: "Migrate `ResourceHttpMessageWriter.addHeaders`"
 ---
 

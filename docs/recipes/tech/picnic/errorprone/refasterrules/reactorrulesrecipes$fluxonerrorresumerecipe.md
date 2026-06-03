@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxOnErrorResume`"
 sidebar_label: "Refaster template `ReactorRules.FluxOnErrorResume`"
 ---
 

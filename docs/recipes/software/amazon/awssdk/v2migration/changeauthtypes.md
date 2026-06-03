@@ -1,4 +1,5 @@
 ---
+title: "Change auth related classes from v1 to v2"
 sidebar_label: "Change auth related classes from v1 to v2"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace JUnit `assertTrue(a == null)` to `assertNull(a)`"
 sidebar_label: "Replace JUnit `assertTrue(a == null)` to `assertNull(a)`"
 ---
 

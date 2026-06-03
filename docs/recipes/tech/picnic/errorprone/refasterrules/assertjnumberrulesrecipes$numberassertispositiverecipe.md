@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJNumberRules.NumberAssertIsPositive`"
 sidebar_label: "Refaster template `AssertJNumberRules.NumberAssertIsPositive`"
 ---
 

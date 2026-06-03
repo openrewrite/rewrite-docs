@@ -1,4 +1,5 @@
 ---
+title: "Find relocated dependencies"
 sidebar_label: "Find relocated dependencies"
 ---
 

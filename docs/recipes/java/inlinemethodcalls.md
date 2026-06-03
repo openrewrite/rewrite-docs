@@ -1,4 +1,5 @@
 ---
+title: "Inline method calls"
 sidebar_label: "Inline method calls"
 ---
 

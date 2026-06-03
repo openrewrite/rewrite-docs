@@ -1,4 +1,5 @@
 ---
+title: "Migrate com.intellij:annotations to org.jetbrains:annotations"
 sidebar_label: "Migrate com.intellij:annotations to org.jetbrains:annotations"
 ---
 

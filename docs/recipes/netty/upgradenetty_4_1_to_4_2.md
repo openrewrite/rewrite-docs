@@ -1,4 +1,5 @@
 ---
+title: "Migrates from Netty 4.1.x to Netty 4.2.x"
 sidebar_label: "Migrates from Netty 4.1.x to Netty 4.2.x"
 ---
 

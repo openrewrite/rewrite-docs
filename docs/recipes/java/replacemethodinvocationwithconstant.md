@@ -1,4 +1,5 @@
 ---
+title: "Replace method invocation with constant"
 sidebar_label: "Replace method invocation with constant"
 ---
 

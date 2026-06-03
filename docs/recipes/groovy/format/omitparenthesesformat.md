@@ -1,4 +1,5 @@
 ---
+title: "Stylize Groovy code to omit parentheses"
 sidebar_label: "Stylize Groovy code to omit parentheses"
 ---
 

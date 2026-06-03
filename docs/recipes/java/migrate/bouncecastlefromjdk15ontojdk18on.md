@@ -1,4 +1,5 @@
 ---
+title: "Migrate Bouncy Castle to `jdk18on`"
 sidebar_label: "Migrate Bouncy Castle to `jdk18on`"
 ---
 

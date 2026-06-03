@@ -1,4 +1,5 @@
 ---
+title: "Replace container image name"
 sidebar_label: "Replace container image name"
 ---
 

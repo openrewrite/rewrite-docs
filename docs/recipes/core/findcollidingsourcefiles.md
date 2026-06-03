@@ -1,4 +1,5 @@
 ---
+title: "Find colliding source files"
 sidebar_label: "Find colliding source files"
 ---
 

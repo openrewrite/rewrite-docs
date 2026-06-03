@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamDistinctSorted`"
 sidebar_label: "Refaster template `StreamRules.StreamDistinctSorted`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Wicket best practices"
 sidebar_label: "Wicket best practices"
 ---
 

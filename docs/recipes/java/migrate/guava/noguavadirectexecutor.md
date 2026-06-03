@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Runnable::run`"
 sidebar_label: "Prefer `Runnable::run`"
 ---
 

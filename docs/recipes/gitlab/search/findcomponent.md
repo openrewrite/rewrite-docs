@@ -1,4 +1,5 @@
 ---
+title: "Find GitLab Component"
 sidebar_label: "Find GitLab Component"
 ---
 

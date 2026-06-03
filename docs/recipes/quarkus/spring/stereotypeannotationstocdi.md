@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring annotations to CDI"
 sidebar_label: "Migrate Spring annotations to CDI"
 ---
 

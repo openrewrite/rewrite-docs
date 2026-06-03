@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.transaction` packages to `jakarta.transaction`"
 sidebar_label: "Migrate deprecated `javax.transaction` packages to `jakarta.transaction`"
 ---
 

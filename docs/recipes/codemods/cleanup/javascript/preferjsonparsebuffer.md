@@ -1,4 +1,5 @@
 ---
+title: "Prefer reading a JSON file as a buffer"
 sidebar_label: "Prefer reading a JSON file as a buffer"
 ---
 

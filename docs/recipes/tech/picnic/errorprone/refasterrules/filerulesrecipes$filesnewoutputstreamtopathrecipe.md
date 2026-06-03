@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FileRules.FilesNewOutputStreamToPath`"
 sidebar_label: "Refaster template `FileRules.FilesNewOutputStreamToPath`"
 ---
 

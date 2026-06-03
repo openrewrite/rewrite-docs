@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.GreatestNaturalOrder`"
 sidebar_label: "Refaster template `ComparatorRules.GreatestNaturalOrder`"
 ---
 

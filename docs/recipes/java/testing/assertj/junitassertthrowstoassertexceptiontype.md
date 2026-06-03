@@ -1,4 +1,5 @@
 ---
+title: "JUnit AssertThrows to AssertJ exceptionType"
 sidebar_label: "JUnit AssertThrows to AssertJ exceptionType"
 ---
 

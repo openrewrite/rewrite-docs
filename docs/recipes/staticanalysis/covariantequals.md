@@ -1,4 +1,5 @@
 ---
+title: "Covariant equals"
 sidebar_label: "Covariant equals"
 ---
 

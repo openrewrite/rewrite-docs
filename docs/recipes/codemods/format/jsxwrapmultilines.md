@@ -1,4 +1,5 @@
 ---
+title: "Disallow missing parentheses around multiline JSX"
 sidebar_label: "Disallow missing parentheses around multiline JSX"
 ---
 

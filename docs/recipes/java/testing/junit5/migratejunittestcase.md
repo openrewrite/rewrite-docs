@@ -1,4 +1,5 @@
 ---
+title: "Migrate JUnit 4 `TestCase` to JUnit Jupiter"
 sidebar_label: "Migrate JUnit 4 `TestCase` to JUnit Jupiter"
 ---
 

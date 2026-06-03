@@ -1,4 +1,5 @@
 ---
+title: "Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly"
 sidebar_label: "Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly"
 ---
 

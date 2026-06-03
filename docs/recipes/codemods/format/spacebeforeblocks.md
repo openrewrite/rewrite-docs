@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing before blocks"
 sidebar_label: "Enforce consistent spacing before blocks"
 ---
 

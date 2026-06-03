@@ -1,4 +1,5 @@
 ---
+title: "Refaster rules related to AssertJ assertions over `Path`s"
 sidebar_label: "Refaster rules related to AssertJ assertions over `Path`s"
 ---
 

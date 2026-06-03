@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `EqualityRules.ObjectsEquals`"
 sidebar_label: "Refaster template `EqualityRules.ObjectsEquals`"
 ---
 

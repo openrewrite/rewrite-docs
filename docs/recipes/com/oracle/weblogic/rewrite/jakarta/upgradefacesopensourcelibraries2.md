@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Faces open source libraries"
 sidebar_label: "Upgrade Faces open source libraries"
 ---
 

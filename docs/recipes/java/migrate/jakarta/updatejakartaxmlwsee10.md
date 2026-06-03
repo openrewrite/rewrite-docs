@@ -1,4 +1,5 @@
 ---
+title: "Update Jakarta EE XML Web Services Dependencies for EE 10"
 sidebar_label: "Update Jakarta EE XML Web Services Dependencies for EE 10"
 ---
 

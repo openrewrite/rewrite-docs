@@ -1,4 +1,5 @@
 ---
+title: "Use `javax.management.monitor.CounterMonitor#setInitThreshold`"
 sidebar_label: "Use `javax.management.monitor.CounterMonitor#setInitThreshold`"
 ---
 

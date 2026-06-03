@@ -1,4 +1,5 @@
 ---
+title: "Add logging.pattern.level for traceId and spanId"
 sidebar_label: "Add logging.pattern.level for traceId and spanId"
 ---
 

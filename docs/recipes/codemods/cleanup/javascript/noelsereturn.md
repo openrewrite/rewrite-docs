@@ -1,4 +1,5 @@
 ---
+title: "Disallow else blocks after return statements in if statements"
 sidebar_label: "Disallow else blocks after return statements in if statements"
 ---
 

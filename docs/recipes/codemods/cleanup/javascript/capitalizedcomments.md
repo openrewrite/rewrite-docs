@@ -1,4 +1,5 @@
 ---
+title: "Enforce or disallow capitalization of the first letter of a comment"
 sidebar_label: "Enforce or disallow capitalization of the first letter of a comment"
 ---
 

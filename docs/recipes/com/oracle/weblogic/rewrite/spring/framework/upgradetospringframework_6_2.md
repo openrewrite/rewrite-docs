@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Framework 6.2 for WebLogic 15.1.1"
 sidebar_label: "Migrate to Spring Framework 6.2 for WebLogic 15.1.1"
 ---
 

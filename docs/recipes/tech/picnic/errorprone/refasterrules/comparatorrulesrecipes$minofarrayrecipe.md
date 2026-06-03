@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.MinOfArray`"
 sidebar_label: "Refaster template `ComparatorRules.MinOfArray`"
 ---
 

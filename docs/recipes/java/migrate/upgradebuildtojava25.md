@@ -1,4 +1,5 @@
 ---
+title: "Upgrade build to Java 25 (non-Kotlin)"
 sidebar_label: "Upgrade build to Java 25 (non-Kotlin)"
 ---
 

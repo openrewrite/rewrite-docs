@@ -1,4 +1,5 @@
 ---
+title: "Find XML tags"
 sidebar_label: "Find XML tags"
 ---
 

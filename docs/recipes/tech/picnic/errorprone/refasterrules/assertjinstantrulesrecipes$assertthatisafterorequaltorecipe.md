@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJInstantRules.AssertThatIsAfterOrEqualTo`"
 sidebar_label: "Refaster template `AssertJInstantRules.AssertThatIsAfterOrEqualTo`"
 ---
 

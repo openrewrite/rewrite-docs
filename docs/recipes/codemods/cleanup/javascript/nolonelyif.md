@@ -1,4 +1,5 @@
 ---
+title: "Disallow if statements as the only statement in else blocks"
 sidebar_label: "Disallow if statements as the only statement in else blocks"
 ---
 

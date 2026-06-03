@@ -1,4 +1,5 @@
 ---
+title: "Configure logback logger level"
 sidebar_label: "Configure logback logger level"
 ---
 

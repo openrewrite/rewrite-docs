@@ -1,4 +1,5 @@
 ---
+title: "Removes invalid JNDI properties"
 sidebar_label: "Removes invalid JNDI properties"
 ---
 

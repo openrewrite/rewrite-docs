@@ -1,4 +1,5 @@
 ---
+title: "`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation"
 sidebar_label: "`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation"
 ---
 

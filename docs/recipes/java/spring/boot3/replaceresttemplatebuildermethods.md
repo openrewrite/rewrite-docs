@@ -1,4 +1,5 @@
 ---
+title: "Replace deprecated setters in `RestTemplateBuilder`"
 sidebar_label: "Replace deprecated setters in `RestTemplateBuilder`"
 ---
 

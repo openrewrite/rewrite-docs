@@ -1,4 +1,5 @@
 ---
+title: "Migrate javax.jms to jakarta.jms on MDB"
 sidebar_label: "Migrate javax.jms to jakarta.jms on MDB"
 ---
 

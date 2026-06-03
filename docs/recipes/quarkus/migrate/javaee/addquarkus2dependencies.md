@@ -1,4 +1,5 @@
 ---
+title: "Add Quarkus 2 dependencies"
 sidebar_label: "Add Quarkus 2 dependencies"
 ---
 

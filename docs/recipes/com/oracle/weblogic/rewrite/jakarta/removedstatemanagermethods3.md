@@ -1,4 +1,5 @@
 ---
+title: "Use `StateManagementStrategy`"
 sidebar_label: "Use `StateManagementStrategy`"
 ---
 

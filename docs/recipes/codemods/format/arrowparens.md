@@ -1,4 +1,5 @@
 ---
+title: "Require parentheses around arrow function arguments"
 sidebar_label: "Require parentheses around arrow function arguments"
 ---
 

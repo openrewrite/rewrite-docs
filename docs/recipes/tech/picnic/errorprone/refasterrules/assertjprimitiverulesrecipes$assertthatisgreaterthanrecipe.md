@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJPrimitiveRules.AssertThatIsGreaterThan`"
 sidebar_label: "Refaster template `AssertJPrimitiveRules.AssertThatIsGreaterThan`"
 ---
 

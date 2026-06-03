@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Hibernate to 6.6"
 sidebar_label: "Upgrade Hibernate to 6.6"
 ---
 

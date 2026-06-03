@@ -1,4 +1,5 @@
 ---
+title: "Enforce unified spacing in mustache"
 sidebar_label: "Enforce unified spacing in mustache"
 ---
 

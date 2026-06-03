@@ -1,4 +1,5 @@
 ---
+title: "Add a Gradle settings repository"
 sidebar_label: "Add a Gradle settings repository"
 ---
 

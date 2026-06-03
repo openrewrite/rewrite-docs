@@ -1,4 +1,5 @@
 ---
+title: "Find Dropwizard metrics"
 sidebar_label: "Find Dropwizard metrics"
 ---
 

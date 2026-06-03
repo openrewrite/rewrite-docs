@@ -1,4 +1,5 @@
 ---
+title: "Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)`"
 sidebar_label: "Use `java.net.URLDecoder#decode(String, StandardCharsets.UTF_8)`"
 ---
 

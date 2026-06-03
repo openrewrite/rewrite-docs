@@ -1,4 +1,5 @@
 ---
+title: "Adds offset and length arguments to the write method of SharedOutputBuffer"
 sidebar_label: "Adds offset and length arguments to the write method of SharedOutputBuffer"
 ---
 

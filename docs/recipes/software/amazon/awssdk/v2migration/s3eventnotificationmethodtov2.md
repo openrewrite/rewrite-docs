@@ -1,4 +1,5 @@
 ---
+title: "S3 Event Notification method to v2"
 sidebar_label: "S3 Event Notification method to v2"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.PublisherProbeAssertWasNotSubscribed`"
 sidebar_label: "Refaster template `ReactorRules.PublisherProbeAssertWasNotSubscribed`"
 ---
 

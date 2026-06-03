@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Map.of(..)` in Java 9 or higher"
 sidebar_label: "Prefer `Map.of(..)` in Java 9 or higher"
 ---
 

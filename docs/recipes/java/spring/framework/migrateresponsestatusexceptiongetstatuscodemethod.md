@@ -1,4 +1,5 @@
 ---
+title: "Migrate `ResponseStatusException#getStatus()` to `getStatusCode()`"
 sidebar_label: "Migrate `ResponseStatusException#getStatus()` to `getStatusCode()`"
 ---
 

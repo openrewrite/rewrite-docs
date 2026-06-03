@@ -1,4 +1,5 @@
 ---
+title: "Do not use a `for` loop that can be replaced with a `for-of` loop"
 sidebar_label: "Do not use a `for` loop that can be replaced with a `for-of` loop"
 ---
 

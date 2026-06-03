@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.ImmutableCollectionToArrayWithArray`"
 sidebar_label: "Refaster template `CollectionRules.ImmutableCollectionToArrayWithArray`"
 ---
 

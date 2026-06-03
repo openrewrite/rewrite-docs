@@ -1,4 +1,5 @@
 ---
+title: "Migrate packages to modular starters"
 sidebar_label: "Migrate packages to modular starters"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Substitute deprecated Faces Managed Beans"
 sidebar_label: "Substitute deprecated Faces Managed Beans"
 ---
 

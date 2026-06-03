@@ -1,4 +1,5 @@
 ---
+title: "Upgrade transitive Maven dependencies"
 sidebar_label: "Upgrade transitive Maven dependencies"
 ---
 

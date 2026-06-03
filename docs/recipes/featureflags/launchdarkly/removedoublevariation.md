@@ -1,4 +1,5 @@
 ---
+title: "Remove LaunchDarkly's `doubleVariation` for feature key"
 sidebar_label: "Remove LaunchDarkly's `doubleVariation` for feature key"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Optional.isEmpty()`"
 sidebar_label: "Prefer `Optional.isEmpty()`"
 ---
 

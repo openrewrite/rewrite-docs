@@ -1,4 +1,5 @@
 ---
+title: "Changed types of camel AI nested headers classes"
 sidebar_label: "Changed types of camel AI nested headers classes"
 ---
 

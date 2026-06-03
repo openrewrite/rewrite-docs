@@ -1,4 +1,5 @@
 ---
+title: "Change static field access to static method access"
 sidebar_label: "Change static field access to static method access"
 ---
 

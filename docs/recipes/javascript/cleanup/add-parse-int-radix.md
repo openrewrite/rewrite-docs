@@ -1,4 +1,5 @@
 ---
+title: "Add radix to `parseInt`"
 sidebar_label: "Add radix to `parseInt`"
 ---
 

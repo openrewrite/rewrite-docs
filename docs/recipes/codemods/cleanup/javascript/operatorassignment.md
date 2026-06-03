@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow assignment operator shorthand where possible"
 sidebar_label: "Require or disallow assignment operator shorthand where possible"
 ---
 

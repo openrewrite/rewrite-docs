@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hamcrest `hasItem(Matcher)` to AssertJ"
 sidebar_label: "Migrate Hamcrest `hasItem(Matcher)` to AssertJ"
 ---
 

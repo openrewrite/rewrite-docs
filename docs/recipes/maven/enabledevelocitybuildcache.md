@@ -1,4 +1,5 @@
 ---
+title: "Enable Develocity build cache"
 sidebar_label: "Enable Develocity build cache"
 ---
 

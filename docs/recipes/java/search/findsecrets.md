@@ -1,4 +1,5 @@
 ---
+title: "Find plain text secrets"
 sidebar_label: "Find plain text secrets"
 ---
 

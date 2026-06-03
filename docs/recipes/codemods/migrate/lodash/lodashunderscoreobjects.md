@@ -1,4 +1,5 @@
 ---
+title: "Replace lodash and underscore object functions with native JavaScript"
 sidebar_label: "Replace lodash and underscore object functions with native JavaScript"
 ---
 

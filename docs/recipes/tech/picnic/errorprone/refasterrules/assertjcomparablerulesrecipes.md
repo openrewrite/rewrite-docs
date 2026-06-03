@@ -1,4 +1,5 @@
 ---
+title: "`AssertJComparableRules` Refaster recipes"
 sidebar_label: "`AssertJComparableRules` Refaster recipes"
 ---
 

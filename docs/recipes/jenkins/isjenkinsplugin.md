@@ -1,4 +1,5 @@
 ---
+title: "Is the project a Jenkins plugin?"
 sidebar_label: "Is the project a Jenkins plugin?"
 ---
 

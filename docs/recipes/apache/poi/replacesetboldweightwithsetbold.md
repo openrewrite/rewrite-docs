@@ -1,4 +1,5 @@
 ---
+title: "Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`"
 sidebar_label: "Replace `Font.setBoldweight(short)` with `Font.setBold(boolean)`"
 ---
 

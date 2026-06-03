@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FileRules.PathOfString`"
 sidebar_label: "Refaster template `FileRules.PathOfString`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change of method names brought by Camel JMX API changes"
 sidebar_label: "Change of method names brought by Camel JMX API changes"
 ---
 

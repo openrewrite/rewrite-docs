@@ -1,4 +1,5 @@
 ---
+title: "Module has plugin"
 sidebar_label: "Module has plugin"
 ---
 

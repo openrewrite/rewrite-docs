@@ -1,4 +1,5 @@
 ---
+title: "Enforce proper case for numeric literals"
 sidebar_label: "Enforce proper case for numeric literals"
 ---
 

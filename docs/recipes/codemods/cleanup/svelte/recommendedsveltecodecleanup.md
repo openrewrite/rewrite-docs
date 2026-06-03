@@ -1,4 +1,5 @@
 ---
+title: "Recommended svelte code cleanup"
 sidebar_label: "Recommended svelte code cleanup"
 ---
 

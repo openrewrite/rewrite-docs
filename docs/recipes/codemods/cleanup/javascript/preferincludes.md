@@ -1,4 +1,5 @@
 ---
+title: "Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence"
 sidebar_label: "Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence"
 ---
 

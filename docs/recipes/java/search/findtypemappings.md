@@ -1,4 +1,5 @@
 ---
+title: "Find type mappings"
 sidebar_label: "Find type mappings"
 ---
 

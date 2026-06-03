@@ -1,4 +1,5 @@
 ---
+title: "Enforce order of properties in components"
 sidebar_label: "Enforce order of properties in components"
 ---
 

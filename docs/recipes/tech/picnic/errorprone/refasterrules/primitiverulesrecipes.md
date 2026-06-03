@@ -1,4 +1,5 @@
 ---
+title: "`PrimitiveRules` Refaster recipes"
 sidebar_label: "`PrimitiveRules` Refaster recipes"
 ---
 

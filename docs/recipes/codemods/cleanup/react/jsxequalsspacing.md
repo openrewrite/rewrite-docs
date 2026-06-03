@@ -1,4 +1,5 @@
 ---
+title: "Enforce or disallow spaces around equal signs in JSX attributes"
 sidebar_label: "Enforce or disallow spaces around equal signs in JSX attributes"
 ---
 

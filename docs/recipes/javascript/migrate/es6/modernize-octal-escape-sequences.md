@@ -1,4 +1,5 @@
 ---
+title: "Modernize octal escape sequences"
 sidebar_label: "Modernize octal escape sequences"
 ---
 

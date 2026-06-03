@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.DurationOfHours`"
 sidebar_label: "Refaster template `TimeRules.DurationOfHours`"
 ---
 

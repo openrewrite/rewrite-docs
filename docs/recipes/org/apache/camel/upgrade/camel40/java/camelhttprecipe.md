@@ -1,4 +1,5 @@
 ---
+title: "Camel Http Extension changes"
 sidebar_label: "Camel Http Extension changes"
 ---
 

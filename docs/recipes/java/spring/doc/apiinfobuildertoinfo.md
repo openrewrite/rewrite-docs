@@ -1,4 +1,5 @@
 ---
+title: "Migrate `ApiInfoBuilder` to `Info`"
 sidebar_label: "Migrate `ApiInfoBuilder` to `Info`"
 ---
 

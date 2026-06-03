@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJPathRules.AssertThatEndsWithRaw`"
 sidebar_label: "Refaster template `AssertJPathRules.AssertThatEndsWithRaw`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove `Thread.destroy()` and `Thread.stop(Throwable)`"
 sidebar_label: "Remove `Thread.destroy()` and `Thread.stop(Throwable)`"
 ---
 

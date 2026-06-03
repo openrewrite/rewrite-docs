@@ -1,4 +1,5 @@
 ---
+title: "Unnecessary close in try-with-resources"
 sidebar_label: "Unnecessary close in try-with-resources"
 ---
 

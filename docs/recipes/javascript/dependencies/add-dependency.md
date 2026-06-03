@@ -1,4 +1,5 @@
 ---
+title: "Add npm dependency"
 sidebar_label: "Add npm dependency"
 ---
 
@@ -27,14 +28,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `null` | packageName | The name of the npm package to add (e.g., `lodash`, `@types/node`) | `lodash` |
 | `null` | version | The version constraint to set (e.g., `^5.0.0`, `~2.1.0`, `3.0.0`) | `^5.0.0` |
 | `null` | scope | *Optional*. The dependency scope: `dependencies`, `devDependencies`, `peerDependencies`, or `optionalDependencies` | `dependencies` |
-
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Replace `node-sass` with `sass`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
-* [Upgrade to PrimeNG 18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/upgradeto18)
 
 
 ## Usage

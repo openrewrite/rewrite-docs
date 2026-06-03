@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary labels"
 sidebar_label: "Disallow unnecessary labels"
 ---
 

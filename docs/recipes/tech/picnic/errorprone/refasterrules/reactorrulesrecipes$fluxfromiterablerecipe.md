@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxFromIterable`"
 sidebar_label: "Refaster template `ReactorRules.FluxFromIterable`"
 ---
 

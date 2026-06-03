@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FileRules.PathResolveSiblingString`"
 sidebar_label: "Refaster template `FileRules.PathResolveSiblingString`"
 ---
 

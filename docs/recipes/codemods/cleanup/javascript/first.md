@@ -1,4 +1,5 @@
 ---
+title: "Ensure all imports appear before other statements"
 sidebar_label: "Ensure all imports appear before other statements"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Rewrite JMockit MockUp to Mockito statements"
 sidebar_label: "Rewrite JMockit MockUp to Mockito statements"
 ---
 

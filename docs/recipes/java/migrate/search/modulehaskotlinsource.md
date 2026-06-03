@@ -1,4 +1,5 @@
 ---
+title: "Module has Kotlin source files"
 sidebar_label: "Module has Kotlin source files"
 ---
 

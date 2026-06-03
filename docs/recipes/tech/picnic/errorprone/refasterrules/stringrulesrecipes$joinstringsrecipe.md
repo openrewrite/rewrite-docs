@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.JoinStrings`"
 sidebar_label: "Refaster template `StringRules.JoinStrings`"
 ---
 

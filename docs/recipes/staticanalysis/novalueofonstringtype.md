@@ -1,4 +1,5 @@
 ---
+title: "Unnecessary `String#valueOf(..)`"
 sidebar_label: "Unnecessary `String#valueOf(..)`"
 ---
 

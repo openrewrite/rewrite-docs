@@ -1,4 +1,5 @@
 ---
+title: "Ternary operators should not be nested"
 sidebar_label: "Ternary operators should not be nested"
 ---
 

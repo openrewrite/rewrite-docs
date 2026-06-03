@@ -1,4 +1,5 @@
 ---
+title: "Optimize Docker builds"
 sidebar_label: "Optimize Docker builds"
 ---
 

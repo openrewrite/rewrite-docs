@@ -1,4 +1,5 @@
 ---
+title: "Remove OpenFeature's `getIntegerValue` for feature key"
 sidebar_label: "Remove OpenFeature's `getIntegerValue` for feature key"
 ---
 

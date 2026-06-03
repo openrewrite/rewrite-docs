@@ -1,4 +1,5 @@
 ---
+title: "OpenRewrite recipe best practices"
 sidebar_label: "OpenRewrite recipe best practices"
 ---
 
@@ -144,6 +145,135 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`RecipeTestingBestPracticesTest#collapsesSingleReturnLambdaWithInlineActual`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.test.RewriteTest;
+
+import java.util.function.UnaryOperator;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class FooTest implements RewriteTest {
+    UnaryOperator<String> assertion() {
+        return after -> {
+            assertThat(after).contains("~~>");
+            return after;
+        };
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.test.RewriteTest;
+
+import java.util.function.UnaryOperator;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class FooTest implements RewriteTest {
+    UnaryOperator<String> assertion() {
+        return after -> assertThat(after).contains("~~>").actual();
+    }
+}
+
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,4 +9,1 @@
+class FooTest implements RewriteTest {
+    UnaryOperator<String> assertion() {
+-       return after -> {
+-           assertThat(after).contains("~~>");
+-           return after;
+-       };
++       return after -> assertThat(after).contains("~~>").actual();
+    }
+@@ -16,0 +13,1 @@
+}
+
++
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RecipeTestingBestPracticesTest#collapsesSingleReturnLambdaWithInlineActual`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.openrewrite.test.RewriteTest;
+
+import java.util.function.UnaryOperator;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class FooTest implements RewriteTest {
+    UnaryOperator<String> assertion() {
+        return after -> {
+            assertThat(after).contains("~~>");
+            return after;
+        };
+    }
+}
+```
+
+###### After
+```java
+import org.openrewrite.test.RewriteTest;
+
+import java.util.function.UnaryOperator;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class FooTest implements RewriteTest {
+    UnaryOperator<String> assertion() {
+        return after -> assertThat(after).contains("~~>").actual();
+    }
+}
+
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,4 +9,1 @@
+class FooTest implements RewriteTest {
+    UnaryOperator<String> assertion() {
+-       return after -> {
+-           assertThat(after).contains("~~>");
+-           return after;
+-       };
++       return after -> assertThat(after).contains("~~>").actual();
+    }
+@@ -16,0 +13,1 @@
+}
+
++
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

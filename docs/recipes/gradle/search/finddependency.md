@@ -1,4 +1,5 @@
 ---
+title: "Find Gradle dependency"
 sidebar_label: "Find Gradle dependency"
 ---
 

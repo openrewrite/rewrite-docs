@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Hibernate Validator 8.0.x"
 sidebar_label: "Migrate to Hibernate Validator 8.0.x"
 ---
 

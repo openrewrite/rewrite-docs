@@ -1,4 +1,5 @@
 ---
+title: "Remove redundant casts"
 sidebar_label: "Remove redundant casts"
 ---
 

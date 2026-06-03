@@ -1,4 +1,5 @@
 ---
+title: "Create Java class"
 sidebar_label: "Create Java class"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Avoid boxed boolean expressions"
 sidebar_label: "Avoid boxed boolean expressions"
 ---
 

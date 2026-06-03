@@ -1,4 +1,5 @@
 ---
+title: "Renames `alpha` prop to `opacity`"
 sidebar_label: "Renames `alpha` prop to `opacity`"
 ---
 

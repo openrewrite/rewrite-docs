@@ -1,4 +1,5 @@
 ---
+title: "Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2"
 sidebar_label: "Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2"
 ---
 

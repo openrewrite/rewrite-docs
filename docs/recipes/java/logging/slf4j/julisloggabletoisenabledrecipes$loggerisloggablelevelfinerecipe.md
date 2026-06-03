@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.isLoggable(Level.FINE)` with SLF4J's `Logger.isDebugEnabled()`"
 sidebar_label: "Replace JUL `Logger.isLoggable(Level.FINE)` with SLF4J's `Logger.isDebugEnabled()`"
 ---
 

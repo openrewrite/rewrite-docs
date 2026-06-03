@@ -1,4 +1,5 @@
 ---
+title: "Updates `variant` prop usage"
 sidebar_label: "Updates `variant` prop usage"
 ---
 

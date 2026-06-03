@@ -1,4 +1,5 @@
 ---
+title: "Change `net.wasdev.maven.parent:java8-parent` to `:parent`"
 sidebar_label: "Change `net.wasdev.maven.parent:java8-parent` to `:parent`"
 ---
 

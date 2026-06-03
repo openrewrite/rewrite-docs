@@ -1,4 +1,5 @@
 ---
+title: "`indexOf()` replaceable by `contains()`"
 sidebar_label: "`indexOf()` replaceable by `contains()`"
 ---
 

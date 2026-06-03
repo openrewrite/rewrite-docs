@@ -1,4 +1,5 @@
 ---
+title: "Refaster rules that replace TestNG assertions with equivalent AssertJ assertions"
 sidebar_label: "Refaster rules that replace TestNG assertions with equivalent AssertJ assertions"
 ---
 

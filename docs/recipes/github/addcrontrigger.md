@@ -1,4 +1,5 @@
 ---
+title: "Add cron workflow trigger"
 sidebar_label: "Add cron workflow trigger"
 ---
 

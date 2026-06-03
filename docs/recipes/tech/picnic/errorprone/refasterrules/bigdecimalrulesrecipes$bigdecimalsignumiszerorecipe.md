@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `BigDecimalRules.BigDecimalSignumIsZero`"
 sidebar_label: "Refaster template `BigDecimalRules.BigDecimalSignumIsZero`"
 ---
 

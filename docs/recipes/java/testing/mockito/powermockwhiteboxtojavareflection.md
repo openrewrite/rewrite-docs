@@ -1,4 +1,5 @@
 ---
+title: "Replace PowerMock `Whitebox` with Java reflection"
 sidebar_label: "Replace PowerMock `Whitebox` with Java reflection"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Require parenthesis around regex literals"
 sidebar_label: "Require parenthesis around regex literals"
 ---
 

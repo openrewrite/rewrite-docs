@@ -1,4 +1,5 @@
 ---
+title: "Convert API responseHeaders to headers"
 sidebar_label: "Convert API responseHeaders to headers"
 ---
 

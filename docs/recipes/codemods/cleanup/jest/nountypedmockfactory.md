@@ -1,4 +1,5 @@
 ---
+title: "Disallow using jest.mock() factories without an explicit type parameter"
 sidebar_label: "Disallow using jest.mock() factories without an explicit type parameter"
 ---
 

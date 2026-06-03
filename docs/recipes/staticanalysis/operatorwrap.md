@@ -1,4 +1,5 @@
 ---
+title: "Operator wrapping"
 sidebar_label: "Operator wrapping"
 ---
 

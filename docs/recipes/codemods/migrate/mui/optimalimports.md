@@ -1,4 +1,5 @@
 ---
+title: "Optimizes imports"
 sidebar_label: "Optimizes imports"
 ---
 

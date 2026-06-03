@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries in `batch.xml` files."
 sidebar_label: "Migrate xmlns entries in `batch.xml` files."
 ---
 

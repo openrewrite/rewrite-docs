@@ -1,4 +1,5 @@
 ---
+title: "Enforce no spaces between braces"
 sidebar_label: "Enforce no spaces between braces"
 ---
 

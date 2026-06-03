@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing inside array brackets in `&lt;template&gt;`"
 sidebar_label: "Enforce consistent spacing inside array brackets in `&lt;template&gt;`"
 ---
 

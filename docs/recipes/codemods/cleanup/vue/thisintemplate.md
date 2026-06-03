@@ -1,4 +1,5 @@
 ---
+title: "Disallow usage of this in template"
 sidebar_label: "Disallow usage of this in template"
 ---
 

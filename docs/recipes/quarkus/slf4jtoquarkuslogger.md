@@ -1,4 +1,5 @@
 ---
+title: "Migrate SLF4J Logger injection and usage to Quarkus static `Log`"
 sidebar_label: "Migrate SLF4J Logger injection and usage to Quarkus static `Log`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change Camel component URI in Java"
 sidebar_label: "Change Camel component URI in Java"
 ---
 

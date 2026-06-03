@@ -1,4 +1,5 @@
 ---
+title: "Replace `@Query` annotation by `@NativeQuery` when possible"
 sidebar_label: "Replace `@Query` annotation by `@NativeQuery` when possible"
 ---
 

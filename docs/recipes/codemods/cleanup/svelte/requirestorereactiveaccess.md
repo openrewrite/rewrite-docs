@@ -1,4 +1,5 @@
 ---
+title: "Disallow to use of the store itself as an operand. Need to use $ prefix or get function"
 sidebar_label: "Disallow to use of the store itself as an operand. Need to use $ prefix or get function"
 ---
 

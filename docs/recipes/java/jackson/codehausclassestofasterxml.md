@@ -1,4 +1,5 @@
 ---
+title: "Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML"
 sidebar_label: "Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML"
 ---
 

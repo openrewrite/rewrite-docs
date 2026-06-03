@@ -1,4 +1,5 @@
 ---
+title: "Prefer `while` over `for` loops"
 sidebar_label: "Prefer `while` over `for` loops"
 ---
 

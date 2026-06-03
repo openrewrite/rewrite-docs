@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Quartz with Quarkus Quartz"
 sidebar_label: "Replace Spring Boot Quartz with Quarkus Quartz"
 ---
 

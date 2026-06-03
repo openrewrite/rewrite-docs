@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableMapRules.ImmutableMapOf3`"
 sidebar_label: "Refaster template `ImmutableMapRules.ImmutableMapOf3`"
 ---
 

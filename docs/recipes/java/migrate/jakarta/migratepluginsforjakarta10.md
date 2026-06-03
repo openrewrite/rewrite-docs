@@ -1,4 +1,5 @@
 ---
+title: "Update Plugins for Jakarta EE 10"
 sidebar_label: "Update Plugins for Jakarta EE 10"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Upgrade ECMAScript 5 to ECMAScript 6"
 sidebar_label: "Upgrade ECMAScript 5 to ECMAScript 6"
 ---
 

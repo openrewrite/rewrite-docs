@@ -1,4 +1,5 @@
 ---
+title: "Enforce new lines between multi-line properties in Vue components"
 sidebar_label: "Enforce new lines between multi-line properties in Vue components"
 ---
 

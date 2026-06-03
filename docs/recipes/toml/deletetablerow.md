@@ -1,4 +1,5 @@
 ---
+title: "Delete TOML table row"
 sidebar_label: "Delete TOML table row"
 ---
 

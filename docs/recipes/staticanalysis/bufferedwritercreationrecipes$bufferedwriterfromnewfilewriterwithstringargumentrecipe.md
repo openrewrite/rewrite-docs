@@ -1,4 +1,5 @@
 ---
+title: "Convert `new BufferedWriter(new FileWriter(String))` to `Files.newBufferedWriter(Path)`"
 sidebar_label: "Convert `new BufferedWriter(new FileWriter(String))` to `Files.newBufferedWriter(Path)`"
 ---
 

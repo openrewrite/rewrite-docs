@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FormattedArgumentsToVMethod.InfoToVInfoWithThrowable`"
 sidebar_label: "Refaster template `FormattedArgumentsToVMethod.InfoToVInfoWithThrowable`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change Maven annotation processor path"
 sidebar_label: "Change Maven annotation processor path"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`"
 sidebar_label: "Remove explicit configuration of SHA-256 as encoding and matching algorithm for `TokenBasedRememberMeServices`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Predicate.isEqual(Object)`"
 sidebar_label: "Prefer `Predicate.isEqual(Object)`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`BigDecimalRules` Refaster recipes"
 sidebar_label: "`BigDecimalRules` Refaster recipes"
 ---
 

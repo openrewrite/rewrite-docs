@@ -1,4 +1,5 @@
 ---
+title: "Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`"
 sidebar_label: "Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`"
 ---
 

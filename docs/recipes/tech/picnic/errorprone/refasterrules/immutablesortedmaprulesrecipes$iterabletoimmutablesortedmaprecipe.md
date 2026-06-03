@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSortedMapRules.IterableToImmutableSortedMap`"
 sidebar_label: "Refaster template `ImmutableSortedMapRules.IterableToImmutableSortedMap`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove elements annotated with `@ToBeRemoved` past their date"
 sidebar_label: "Remove elements annotated with `@ToBeRemoved` past their date"
 ---
 

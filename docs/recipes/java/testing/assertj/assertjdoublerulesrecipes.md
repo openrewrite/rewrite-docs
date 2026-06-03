@@ -1,4 +1,5 @@
 ---
+title: "Adopt AssertJ Double Assertions"
 sidebar_label: "Adopt AssertJ Double Assertions"
 ---
 

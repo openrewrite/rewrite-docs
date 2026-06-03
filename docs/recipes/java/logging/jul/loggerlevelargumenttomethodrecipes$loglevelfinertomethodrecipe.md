@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.log(Level.FINER, String)` with `Logger.finer(String)`"
 sidebar_label: "Replace JUL `Logger.log(Level.FINER, String)` with `Logger.finer(String)`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Transform CommonJS style `require()` calls to ES6 `import` statements"
 sidebar_label: "Transform CommonJS style `require()` calls to ES6 `import` statements"
 ---
 

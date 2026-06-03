@@ -1,4 +1,5 @@
 ---
+title: "Renames CSS properties for Box component"
 sidebar_label: "Renames CSS properties for Box component"
 ---
 

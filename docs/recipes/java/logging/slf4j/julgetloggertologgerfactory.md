@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL Logger creation with SLF4J LoggerFactory"
 sidebar_label: "Replace JUL Logger creation with SLF4J LoggerFactory"
 ---
 

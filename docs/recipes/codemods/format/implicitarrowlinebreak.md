@@ -1,4 +1,5 @@
 ---
+title: "Enforce the location of arrow function bodies"
 sidebar_label: "Enforce the location of arrow function bodies"
 ---
 

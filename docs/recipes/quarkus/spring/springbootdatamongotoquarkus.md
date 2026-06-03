@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Data MongoDB with Quarkus MongoDB Panache"
 sidebar_label: "Replace Spring Boot Data MongoDB with Quarkus MongoDB Panache"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace `java.util.Set#removeAll(java.util.Collection)` with `java.util.Collection#forEach(Set::remove)`"
 sidebar_label: "Replace `java.util.Set#removeAll(java.util.Collection)` with `java.util.Collection#forEach(Set::remove)`"
 ---
 

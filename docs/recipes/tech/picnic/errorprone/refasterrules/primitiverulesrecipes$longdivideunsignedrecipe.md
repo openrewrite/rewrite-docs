@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.LongDivideUnsigned`"
 sidebar_label: "Refaster template `PrimitiveRules.LongDivideUnsigned`"
 ---
 

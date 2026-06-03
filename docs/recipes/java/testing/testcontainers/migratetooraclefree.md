@@ -1,4 +1,5 @@
 ---
+title: "Migrate from `oracle-xe` to `oracle-free`"
 sidebar_label: "Migrate from `oracle-xe` to `oracle-free`"
 ---
 

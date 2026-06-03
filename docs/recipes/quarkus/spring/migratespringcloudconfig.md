@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Cloud Config Client to Quarkus Config"
 sidebar_label: "Migrate Spring Cloud Config Client to Quarkus Config"
 ---
 

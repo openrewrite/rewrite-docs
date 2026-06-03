@@ -1,4 +1,5 @@
 ---
+title: "Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports"
 sidebar_label: "Forbid namespace (a.k.a. &quot;wildcard&quot; `*`) imports"
 ---
 

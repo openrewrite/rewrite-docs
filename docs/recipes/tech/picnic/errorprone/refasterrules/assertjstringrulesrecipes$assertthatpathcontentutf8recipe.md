@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJStringRules.AssertThatPathContentUtf8`"
 sidebar_label: "Refaster template `AssertJStringRules.AssertThatPathContentUtf8`"
 ---
 

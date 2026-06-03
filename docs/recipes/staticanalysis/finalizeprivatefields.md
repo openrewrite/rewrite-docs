@@ -1,4 +1,5 @@
 ---
+title: "Finalize private fields"
 sidebar_label: "Finalize private fields"
 ---
 

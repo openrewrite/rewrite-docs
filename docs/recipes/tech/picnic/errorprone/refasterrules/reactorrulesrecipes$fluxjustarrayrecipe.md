@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxJustArray`"
 sidebar_label: "Refaster template `ReactorRules.FluxJustArray`"
 ---
 

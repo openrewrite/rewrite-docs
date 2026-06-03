@@ -1,4 +1,5 @@
 ---
+title: "Use exec form for `ENTRYPOINT` and `CMD`"
 sidebar_label: "Use exec form for `ENTRYPOINT` and `CMD`"
 ---
 

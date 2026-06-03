@@ -1,4 +1,5 @@
 ---
+title: "Disallow multiple spaces"
 sidebar_label: "Disallow multiple spaces"
 ---
 

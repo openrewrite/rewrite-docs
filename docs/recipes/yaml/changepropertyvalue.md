@@ -1,4 +1,5 @@
 ---
+title: "Change YAML property"
 sidebar_label: "Change YAML property"
 ---
 

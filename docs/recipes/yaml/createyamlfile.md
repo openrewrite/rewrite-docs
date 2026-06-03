@@ -1,4 +1,5 @@
 ---
+title: "Create YAML file"
 sidebar_label: "Create YAML file"
 ---
 

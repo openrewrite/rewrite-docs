@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.log(Level.WARNING, String)` with `Logger.warning(String)`"
 sidebar_label: "Replace JUL `Logger.log(Level.WARNING, String)` with `Logger.warning(String)`"
 ---
 

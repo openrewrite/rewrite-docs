@@ -1,4 +1,5 @@
 ---
+title: "Add or correct Jenkins plugins BOM"
 sidebar_label: "Add or correct Jenkins plugins BOM"
 ---
 

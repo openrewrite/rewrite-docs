@@ -1,4 +1,5 @@
 ---
+title: "Common static analysis issues"
 sidebar_label: "Common static analysis issues"
 ---
 

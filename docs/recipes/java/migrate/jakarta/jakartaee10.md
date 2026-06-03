@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Jakarta EE 10"
 sidebar_label: "Migrate to Jakarta EE 10"
 ---
 
@@ -127,7 +128,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Dropwizard 5.0.x from 4.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/migratetodropwizard5)
 * [Migrate to Jakarta EE 11](/recipes/java/migrate/jakarta/jakartaee11.md)
-* [Migrate to Spring Framework 6.0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
+* [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 * [Migrate to Struts 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/migratestruts7)
 
 ## Examples

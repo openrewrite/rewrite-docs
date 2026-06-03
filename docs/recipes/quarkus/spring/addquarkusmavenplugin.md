@@ -1,4 +1,5 @@
 ---
+title: "Add Quarkus Maven plugin"
 sidebar_label: "Add Quarkus Maven plugin"
 ---
 

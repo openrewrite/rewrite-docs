@@ -1,4 +1,5 @@
 ---
+title: "Control flow visualization"
 sidebar_label: "Control flow visualization"
 ---
 

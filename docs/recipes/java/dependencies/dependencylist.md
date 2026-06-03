@@ -1,4 +1,5 @@
 ---
+title: "Dependency report"
 sidebar_label: "Dependency report"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate `ImageResponse` imports"
 sidebar_label: "Migrate `ImageResponse` imports"
 ---
 

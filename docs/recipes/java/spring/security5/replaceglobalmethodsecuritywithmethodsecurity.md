@@ -1,4 +1,5 @@
 ---
+title: "Replace global method security with method security"
 sidebar_label: "Replace global method security with method security"
 ---
 

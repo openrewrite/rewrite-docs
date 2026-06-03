@@ -1,4 +1,5 @@
 ---
+title: "Migrate `only`/`except` to `rules`"
 sidebar_label: "Migrate `only`/`except` to `rules`"
 ---
 

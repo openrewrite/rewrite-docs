@@ -1,4 +1,5 @@
 ---
+title: "Print Maven dependency hierarchy in DOT format"
 sidebar_label: "Print Maven dependency hierarchy in DOT format"
 ---
 

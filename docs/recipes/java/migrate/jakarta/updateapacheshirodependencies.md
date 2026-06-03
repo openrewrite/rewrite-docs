@@ -1,4 +1,5 @@
 ---
+title: "Update Apache Shiro Dependencies to 2.0.x"
 sidebar_label: "Update Apache Shiro Dependencies to 2.0.x"
 ---
 

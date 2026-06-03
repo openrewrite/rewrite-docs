@@ -1,4 +1,5 @@
 ---
+title: "Enforce JSX indentation"
 sidebar_label: "Enforce JSX indentation"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change v1 enum getters to v2"
 sidebar_label: "Change v1 enum getters to v2"
 ---
 

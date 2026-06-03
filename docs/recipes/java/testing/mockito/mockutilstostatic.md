@@ -1,4 +1,5 @@
 ---
+title: "Use static form of Mockito `MockUtil`"
 sidebar_label: "Use static form of Mockito `MockUtil`"
 ---
 

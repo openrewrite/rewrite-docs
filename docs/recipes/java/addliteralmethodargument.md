@@ -1,4 +1,5 @@
 ---
+title: "Add a literal method argument"
 sidebar_label: "Add a literal method argument"
 ---
 

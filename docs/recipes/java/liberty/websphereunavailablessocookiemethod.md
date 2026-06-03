@@ -1,4 +1,5 @@
 ---
+title: "Replace `revokeSSOCookies` with `logout`"
 sidebar_label: "Replace `revokeSSOCookies` with `logout`"
 ---
 

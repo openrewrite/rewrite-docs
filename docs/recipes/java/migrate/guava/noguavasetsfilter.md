@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Collection.stream().filter(Predicate)`"
 sidebar_label: "Prefer `Collection.stream().filter(Predicate)`"
 ---
 

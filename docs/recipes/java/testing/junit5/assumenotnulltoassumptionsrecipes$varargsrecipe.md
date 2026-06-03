@@ -1,4 +1,5 @@
 ---
+title: "Transform variadic `assumeNotNull(objects...)` to a stream of `assumeFalse(object == null)`"
 sidebar_label: "Transform variadic `assumeNotNull(objects...)` to a stream of `assumeFalse(object == null)`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change Maven Project Version"
 sidebar_label: "Change Maven Project Version"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Update to Micronaut 4.x platform BOM"
 sidebar_label: "Update to Micronaut 4.x platform BOM"
 ---
 

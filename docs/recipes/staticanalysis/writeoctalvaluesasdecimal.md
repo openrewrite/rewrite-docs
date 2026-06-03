@@ -1,4 +1,5 @@
 ---
+title: "Write octal values as decimal"
 sidebar_label: "Write octal values as decimal"
 ---
 

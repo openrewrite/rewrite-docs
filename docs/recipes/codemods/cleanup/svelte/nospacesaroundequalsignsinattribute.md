@@ -1,4 +1,5 @@
 ---
+title: "Disallow spaces around equal signs in attribute"
 sidebar_label: "Disallow spaces around equal signs in attribute"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Module contains file"
 sidebar_label: "Module contains file"
 ---
 
@@ -33,6 +34,55 @@ This recipe is used as part of the following composite recipes:
 
 * [Module uses Flyway](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesflyway)
 * [Module uses Liquibase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesliquibase)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|filePattern|`**/application.properties`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class A {}
+```
+
+###### After
+```java
+/*~~(Module contains file matching pattern: **/application.properties)~~>*/class A {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class A {}
++/*~~(Module contains file matching pattern: **/application.properties)~~>*/class A {}
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+class B {}
+```
+
+###### Unchanged
+```mavenProject
+module-a
+```
+
+###### Unchanged
+```mavenProject
+module-b
+```
 
 
 ## Usage

@@ -1,4 +1,5 @@
 ---
+title: "Migrate to testcontainers-java 2.x"
 sidebar_label: "Migrate to testcontainers-java 2.x"
 ---
 

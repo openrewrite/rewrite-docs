@@ -1,4 +1,5 @@
 ---
+title: "Use `getProperty(&quot;wlp.server.name&quot;)`"
 sidebar_label: "Use `getProperty(&quot;wlp.server.name&quot;)`"
 ---
 

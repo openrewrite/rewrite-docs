@@ -1,4 +1,5 @@
 ---
+title: "Find Docker base images"
 sidebar_label: "Find Docker base images"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `Jackson2Rules.JsonNodeOptionalString`"
 sidebar_label: "Refaster template `Jackson2Rules.JsonNodeOptionalString`"
 ---
 

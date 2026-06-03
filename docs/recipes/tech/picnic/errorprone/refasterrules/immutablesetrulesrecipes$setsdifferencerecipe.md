@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSetRules.SetsDifference`"
 sidebar_label: "Refaster template `ImmutableSetRules.SetsDifference`"
 ---
 

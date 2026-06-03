@@ -1,4 +1,5 @@
 ---
+title: "Parameterize Log4j 2.x logging statements"
 sidebar_label: "Parameterize Log4j 2.x logging statements"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change Maven dependency classifier"
 sidebar_label: "Change Maven dependency classifier"
 ---
 

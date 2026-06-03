@@ -1,4 +1,5 @@
 ---
+title: "Migrate from JetBrains annotations to JSpecify"
 sidebar_label: "Migrate from JetBrains annotations to JSpecify"
 ---
 

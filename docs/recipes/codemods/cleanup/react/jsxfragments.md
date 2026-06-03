@@ -1,4 +1,5 @@
 ---
+title: "Enforce shorthand or standard form for React fragments"
 sidebar_label: "Enforce shorthand or standard form for React fragments"
 ---
 

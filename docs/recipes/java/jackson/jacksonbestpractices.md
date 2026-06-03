@@ -1,4 +1,5 @@
 ---
+title: "Jackson best practices"
 sidebar_label: "Jackson best practices"
 ---
 

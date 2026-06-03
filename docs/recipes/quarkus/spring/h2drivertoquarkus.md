@@ -1,4 +1,5 @@
 ---
+title: "Replace H2 driver with Quarkus JDBC H2"
 sidebar_label: "Replace H2 driver with Quarkus JDBC H2"
 ---
 

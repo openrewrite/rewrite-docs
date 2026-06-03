@@ -1,4 +1,5 @@
 ---
+title: "Require spacing around infix operators"
 sidebar_label: "Require spacing around infix operators"
 ---
 

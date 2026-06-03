@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `InputStreamRules.InputStreamReadNBytes`"
 sidebar_label: "Refaster template `InputStreamRules.InputStreamReadNBytes`"
 ---
 

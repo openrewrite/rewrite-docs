@@ -1,4 +1,5 @@
 ---
+title: "Refactored dataFormats"
 sidebar_label: "Refactored dataFormats"
 ---
 

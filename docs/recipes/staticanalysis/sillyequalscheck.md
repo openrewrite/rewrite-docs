@@ -1,4 +1,5 @@
 ---
+title: "Silly equality checks should not be made"
 sidebar_label: "Silly equality checks should not be made"
 ---
 

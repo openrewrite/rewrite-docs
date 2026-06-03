@@ -1,4 +1,5 @@
 ---
+title: "Recommended ESLint Styling"
 sidebar_label: "Recommended ESLint Styling"
 ---
 

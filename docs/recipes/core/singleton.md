@@ -1,4 +1,5 @@
 ---
+title: "Singleton"
 sidebar_label: "Singleton"
 ---
 

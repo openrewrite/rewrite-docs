@@ -1,4 +1,5 @@
 ---
+title: "Move `sourceCompatibility` and `targetCompatibility` into the `java { }` extension block"
 sidebar_label: "Move `sourceCompatibility` and `targetCompatibility` into the `java { }` extension block"
 ---
 
@@ -26,6 +27,55 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -5,2 +5,4 @@
+}
+
+-sourceCompatibility = '17'
+-targetCompatibility = '17'
++java {
++   sourceCompatibility = JavaVersion.VERSION_17
++   targetCompatibility = JavaVersion.VERSION_17
++}
+
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

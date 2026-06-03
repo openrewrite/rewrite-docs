@@ -1,4 +1,5 @@
 ---
+title: "Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization"
 sidebar_label: "Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization"
 ---
 

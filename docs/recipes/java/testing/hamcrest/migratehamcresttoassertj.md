@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hamcrest assertions to AssertJ"
 sidebar_label: "Migrate Hamcrest assertions to AssertJ"
 ---
 

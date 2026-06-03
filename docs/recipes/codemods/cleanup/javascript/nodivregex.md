@@ -1,4 +1,5 @@
 ---
+title: "Disallow equal signs explicitly at the beginning of regular expressions"
 sidebar_label: "Disallow equal signs explicitly at the beginning of regular expressions"
 ---
 

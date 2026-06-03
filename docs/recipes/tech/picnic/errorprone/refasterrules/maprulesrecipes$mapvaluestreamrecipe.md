@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MapRules.MapValueStream`"
 sidebar_label: "Refaster template `MapRules.MapValueStream`"
 ---
 

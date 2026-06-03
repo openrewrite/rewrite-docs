@@ -1,4 +1,5 @@
 ---
+title: "Add Gradle plugin"
 sidebar_label: "Add Gradle plugin"
 ---
 

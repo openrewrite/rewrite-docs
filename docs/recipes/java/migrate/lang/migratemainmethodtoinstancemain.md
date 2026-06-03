@@ -1,4 +1,5 @@
 ---
+title: "Migrate `public static void main(String[] args)` to instance `void main()`"
 sidebar_label: "Migrate `public static void main(String[] args)` to instance `void main()`"
 ---
 

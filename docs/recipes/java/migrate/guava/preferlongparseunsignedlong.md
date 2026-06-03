@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Long#parseUnsignedInt`"
 sidebar_label: "Prefer `Long#parseUnsignedInt`"
 ---
 

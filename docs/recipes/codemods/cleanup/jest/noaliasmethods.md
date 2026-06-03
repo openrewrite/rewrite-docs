@@ -1,4 +1,5 @@
 ---
+title: "Disallow alias methods"
 sidebar_label: "Disallow alias methods"
 ---
 

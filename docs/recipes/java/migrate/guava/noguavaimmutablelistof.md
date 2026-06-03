@@ -1,4 +1,5 @@
 ---
+title: "Prefer `List.of(..)` in Java 9 or higher"
 sidebar_label: "Prefer `List.of(..)` in Java 9 or higher"
 ---
 

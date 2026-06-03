@@ -1,4 +1,5 @@
 ---
+title: "Migrate Log4j 2.x Appender to logback-classic equivalents"
 sidebar_label: "Migrate Log4j 2.x Appender to logback-classic equivalents"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `LongStreamRules.LongStreamAllMatch`"
 sidebar_label: "Refaster template `LongStreamRules.LongStreamAllMatch`"
 ---
 

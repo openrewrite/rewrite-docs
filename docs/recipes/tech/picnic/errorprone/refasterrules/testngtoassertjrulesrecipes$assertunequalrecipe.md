@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TestNGToAssertJRules.AssertUnequal`"
 sidebar_label: "Refaster template `TestNGToAssertJRules.AssertUnequal`"
 ---
 

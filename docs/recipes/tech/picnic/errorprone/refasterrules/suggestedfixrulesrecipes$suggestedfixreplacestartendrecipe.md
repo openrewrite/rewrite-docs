@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `SuggestedFixRules.SuggestedFixReplaceStartEnd`"
 sidebar_label: "Refaster template `SuggestedFixRules.SuggestedFixReplaceStartEnd`"
 ---
 

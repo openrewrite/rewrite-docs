@@ -1,4 +1,5 @@
 ---
+title: "Change S3 types to v2."
 sidebar_label: "Change S3 types to v2."
 ---
 

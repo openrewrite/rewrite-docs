@@ -1,4 +1,5 @@
 ---
+title: "`AssertJStreamRules` Refaster recipes"
 sidebar_label: "`AssertJStreamRules` Refaster recipes"
 ---
 

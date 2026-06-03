@@ -1,4 +1,5 @@
 ---
+title: "Disables local file resolution for parent POM"
 sidebar_label: "Disables local file resolution for parent POM"
 ---
 

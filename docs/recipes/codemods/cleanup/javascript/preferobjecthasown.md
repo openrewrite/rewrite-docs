@@ -1,4 +1,5 @@
 ---
+title: "Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)"
 sidebar_label: "Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn(`)"
 ---
 

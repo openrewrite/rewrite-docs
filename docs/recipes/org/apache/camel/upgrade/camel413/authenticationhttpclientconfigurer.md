@@ -1,4 +1,5 @@
 ---
+title: "Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer"
 sidebar_label: "Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer"
 ---
 

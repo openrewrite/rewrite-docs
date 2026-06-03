@@ -1,4 +1,5 @@
 ---
+title: "Set file permission attributes"
 sidebar_label: "Set file permission attributes"
 ---
 

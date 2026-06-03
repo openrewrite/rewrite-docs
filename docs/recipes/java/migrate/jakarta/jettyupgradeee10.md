@@ -1,4 +1,5 @@
 ---
+title: "Update Jetty EE9 to Jetty EE10"
 sidebar_label: "Update Jetty EE9 to Jetty EE10"
 ---
 

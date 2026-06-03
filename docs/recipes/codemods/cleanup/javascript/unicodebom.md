@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow Unicode byte order mark (BOM)"
 sidebar_label: "Require or disallow Unicode byte order mark (BOM)"
 ---
 

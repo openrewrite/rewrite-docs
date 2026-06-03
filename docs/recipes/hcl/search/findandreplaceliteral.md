@@ -1,4 +1,5 @@
 ---
+title: "Find and replace literals in HCL files"
 sidebar_label: "Find and replace literals in HCL files"
 ---
 

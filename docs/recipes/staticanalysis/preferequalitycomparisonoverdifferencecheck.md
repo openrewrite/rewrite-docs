@@ -1,4 +1,5 @@
 ---
+title: "Prefer direct comparison of numbers"
 sidebar_label: "Prefer direct comparison of numbers"
 ---
 

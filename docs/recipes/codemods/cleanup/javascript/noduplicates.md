@@ -1,4 +1,5 @@
 ---
+title: "Forbid repeated import of the same module in multiple places"
 sidebar_label: "Forbid repeated import of the same module in multiple places"
 ---
 

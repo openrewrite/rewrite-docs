@@ -1,4 +1,5 @@
 ---
+title: "Update the Micronaut version to 4.x"
 sidebar_label: "Update the Micronaut version to 4.x"
 ---
 

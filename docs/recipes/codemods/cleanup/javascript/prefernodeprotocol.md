@@ -1,4 +1,5 @@
 ---
+title: "Prefer using the `node:` protocol when importing Node.js builtin modules"
 sidebar_label: "Prefer using the `node:` protocol when importing Node.js builtin modules"
 ---
 

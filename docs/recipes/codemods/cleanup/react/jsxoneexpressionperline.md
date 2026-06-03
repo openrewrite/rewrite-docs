@@ -1,4 +1,5 @@
 ---
+title: "Require one JSX element per line"
 sidebar_label: "Require one JSX element per line"
 ---
 

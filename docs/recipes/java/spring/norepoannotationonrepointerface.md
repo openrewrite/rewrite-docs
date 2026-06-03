@@ -1,4 +1,5 @@
 ---
+title: "Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface"
 sidebar_label: "Remove unnecessary `@Repository` annotation from Spring Data `Repository` sub-interface"
 ---
 

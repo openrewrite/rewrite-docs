@@ -1,4 +1,5 @@
 ---
+title: "Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`"
 sidebar_label: "Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`"
 ---
 
@@ -25,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Framework 5.0](/recipes/java/spring/framework/upgradespringframework_5_0.md)
+* [Migrate to Spring Framework 5.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_5_0-community-edition.md)
 
 ## Example
 

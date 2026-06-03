@@ -1,4 +1,5 @@
 ---
+title: "Disallow multiple empty lines"
 sidebar_label: "Disallow multiple empty lines"
 ---
 

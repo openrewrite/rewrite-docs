@@ -1,4 +1,5 @@
 ---
+title: "Add missing Flyway module for PostgreSQL"
 sidebar_label: "Add missing Flyway module for PostgreSQL"
 ---
 

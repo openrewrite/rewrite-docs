@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Map#entry(Object, Object)` over alternative ways to create an immutable map entry"
 sidebar_label: "Prefer `Map#entry(Object, Object)` over alternative ways to create an immutable map entry"
 ---
 

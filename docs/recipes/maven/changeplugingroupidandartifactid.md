@@ -1,4 +1,5 @@
 ---
+title: "Change Maven plugin group and artifact ID"
 sidebar_label: "Change Maven plugin group and artifact ID"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Update the Micronaut Session support"
 sidebar_label: "Update the Micronaut Session support"
 ---
 

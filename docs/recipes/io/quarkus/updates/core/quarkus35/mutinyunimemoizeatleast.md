@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus35.MutinyUniMemoizeAtLeast"
 sidebar_label: "io.quarkus.updates.core.quarkus35.MutinyUniMemoizeAtLeast"
 ---
 

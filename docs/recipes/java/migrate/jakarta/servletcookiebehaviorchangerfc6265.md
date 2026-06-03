@@ -1,4 +1,5 @@
 ---
+title: "Remove `getComment` and `getVersion` methods"
 sidebar_label: "Remove `getComment` and `getVersion` methods"
 ---
 

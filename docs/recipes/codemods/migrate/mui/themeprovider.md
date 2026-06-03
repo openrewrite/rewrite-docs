@@ -1,4 +1,5 @@
 ---
+title: "Updates usage of ThemeProvider"
 sidebar_label: "Updates usage of ThemeProvider"
 ---
 

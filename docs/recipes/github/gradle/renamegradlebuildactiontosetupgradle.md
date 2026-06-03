@@ -1,4 +1,5 @@
 ---
+title: "Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`"
 sidebar_label: "Rename `gradle/gradle-build-action` to `gradle/actions/setup-gradle`"
 ---
 

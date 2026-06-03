@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Boot to Quarkus"
 sidebar_label: "Migrate Spring Boot to Quarkus"
 ---
 

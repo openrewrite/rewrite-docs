@@ -1,4 +1,5 @@
 ---
+title: "Convert `HttpSecurity` chained calls into Lambda DSL"
 sidebar_label: "Convert `HttpSecurity` chained calls into Lambda DSL"
 ---
 

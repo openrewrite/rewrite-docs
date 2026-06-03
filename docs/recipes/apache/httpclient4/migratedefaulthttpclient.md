@@ -1,4 +1,5 @@
 ---
+title: "Migrates deprecated `DefaultHttpClient`"
 sidebar_label: "Migrates deprecated `DefaultHttpClient`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `Character#isJavaIdentifierStart(char)`"
 sidebar_label: "Use `Character#isJavaIdentifierStart(char)`"
 ---
 

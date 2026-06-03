@@ -1,4 +1,5 @@
 ---
+title: "Renames `collapsedHeight` prop to `transitionCollapsedHeight`"
 sidebar_label: "Renames `collapsedHeight` prop to `transitionCollapsedHeight`"
 ---
 

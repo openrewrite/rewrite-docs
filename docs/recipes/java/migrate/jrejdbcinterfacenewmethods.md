@@ -1,4 +1,5 @@
 ---
+title: "Adds missing JDBC interface methods"
 sidebar_label: "Adds missing JDBC interface methods"
 ---
 

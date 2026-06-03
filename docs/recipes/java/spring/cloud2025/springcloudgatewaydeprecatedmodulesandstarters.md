@@ -1,4 +1,5 @@
 ---
+title: "Migrate to New Spring Cloud Gateway Modules and Starters"
 sidebar_label: "Migrate to New Spring Cloud Gateway Modules and Starters"
 ---
 

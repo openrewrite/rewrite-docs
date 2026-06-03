@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxSort`"
 sidebar_label: "Refaster template `ReactorRules.FluxSort`"
 ---
 

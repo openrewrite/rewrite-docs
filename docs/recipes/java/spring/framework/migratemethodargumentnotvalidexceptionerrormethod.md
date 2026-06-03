@@ -1,4 +1,5 @@
 ---
+title: "Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`"
 sidebar_label: "Migrate `MethodArgumentNotValidException.errorsToStringList` and `resolveErrorMessages`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce specific casing for the component naming style in template"
 sidebar_label: "Enforce specific casing for the component naming style in template"
 ---
 

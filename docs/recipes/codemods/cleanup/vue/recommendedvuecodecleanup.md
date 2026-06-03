@@ -1,4 +1,5 @@
 ---
+title: "Recommended vue code cleanup"
 sidebar_label: "Recommended vue code cleanup"
 ---
 

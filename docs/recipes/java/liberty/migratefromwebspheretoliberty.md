@@ -1,4 +1,5 @@
 ---
+title: "Migrate from WebSphere traditional to Liberty"
 sidebar_label: "Migrate from WebSphere traditional to Liberty"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change annotation attribute name"
 sidebar_label: "Change annotation attribute name"
 ---
 

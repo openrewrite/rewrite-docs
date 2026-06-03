@@ -1,4 +1,5 @@
 ---
+title: "Enforce whitespace in and around the JSX opening and closing brackets"
 sidebar_label: "Enforce whitespace in and around the JSX opening and closing brackets"
 ---
 

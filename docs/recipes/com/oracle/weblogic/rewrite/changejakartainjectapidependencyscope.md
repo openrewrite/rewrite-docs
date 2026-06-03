@@ -1,4 +1,5 @@
 ---
+title: "Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided."
 sidebar_label: "Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided."
 ---
 

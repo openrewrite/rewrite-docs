@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FormattedArgumentsToVMethod.TraceToVTrace`"
 sidebar_label: "Refaster template `FormattedArgumentsToVMethod.TraceToVTrace`"
 ---
 

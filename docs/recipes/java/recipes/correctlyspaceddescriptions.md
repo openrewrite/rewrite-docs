@@ -1,4 +1,5 @@
 ---
+title: "Correctly spaced descriptions"
 sidebar_label: "Correctly spaced descriptions"
 ---
 

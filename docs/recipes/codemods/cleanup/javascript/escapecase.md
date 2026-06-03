@@ -1,4 +1,5 @@
 ---
+title: "Require escape sequences to use uppercase values"
 sidebar_label: "Require escape sequences to use uppercase values"
 ---
 

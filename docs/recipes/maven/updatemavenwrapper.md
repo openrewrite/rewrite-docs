@@ -1,4 +1,5 @@
 ---
+title: "Update Maven wrapper"
 sidebar_label: "Update Maven wrapper"
 ---
 

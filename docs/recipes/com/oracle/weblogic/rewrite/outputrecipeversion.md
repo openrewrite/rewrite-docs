@@ -1,4 +1,5 @@
 ---
+title: "Output Recipe Version"
 sidebar_label: "Output Recipe Version"
 ---
 

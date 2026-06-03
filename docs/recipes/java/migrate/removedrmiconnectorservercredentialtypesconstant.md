@@ -1,4 +1,5 @@
 ---
+title: "Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant"
 sidebar_label: "Replace `RMIConnectorServer.CREDENTIAL_TYPES` constant"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.removeEnd(String, String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.removeEnd(String, String)` with JDK provided API"
 ---
 

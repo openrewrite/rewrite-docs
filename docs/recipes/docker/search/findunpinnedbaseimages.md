@@ -1,4 +1,5 @@
 ---
+title: "Find unpinned base images"
 sidebar_label: "Find unpinned base images"
 ---
 

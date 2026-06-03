@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJLongRules.AbstractLongAssertIsNotZero`"
 sidebar_label: "Refaster template `AssertJLongRules.AbstractLongAssertIsNotZero`"
 ---
 

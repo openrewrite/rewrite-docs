@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxZip`"
 sidebar_label: "Refaster template `ReactorRules.FluxZip`"
 ---
 

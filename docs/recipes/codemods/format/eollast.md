@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow newline at the end of files"
 sidebar_label: "Require or disallow newline at the end of files"
 ---
 

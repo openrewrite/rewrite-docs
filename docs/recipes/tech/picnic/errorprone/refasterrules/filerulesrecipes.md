@@ -1,4 +1,5 @@
 ---
+title: "`FileRules` Refaster recipes"
 sidebar_label: "`FileRules` Refaster recipes"
 ---
 

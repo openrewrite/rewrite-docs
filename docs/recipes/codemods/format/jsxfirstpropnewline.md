@@ -1,4 +1,5 @@
 ---
+title: "Enforce proper position of the first property in JSX"
 sidebar_label: "Enforce proper position of the first property in JSX"
 ---
 

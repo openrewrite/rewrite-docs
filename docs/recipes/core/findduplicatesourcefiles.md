@@ -1,4 +1,5 @@
 ---
+title: "Find duplicate source files"
 sidebar_label: "Find duplicate source files"
 ---
 

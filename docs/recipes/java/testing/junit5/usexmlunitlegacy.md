@@ -1,4 +1,5 @@
 ---
+title: "Use XMLUnit Legacy for JUnit 5"
 sidebar_label: "Use XMLUnit Legacy for JUnit 5"
 ---
 

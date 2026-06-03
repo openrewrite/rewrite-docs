@@ -1,4 +1,5 @@
 ---
+title: "CaseInsensitive comparisons do not alter case"
 sidebar_label: "CaseInsensitive comparisons do not alter case"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce unified line brake in HTML comments"
 sidebar_label: "Enforce unified line brake in HTML comments"
 ---
 

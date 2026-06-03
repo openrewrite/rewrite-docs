@@ -1,4 +1,5 @@
 ---
+title: "Converts JSS styles to styled-components"
 sidebar_label: "Converts JSS styles to styled-components"
 ---
 

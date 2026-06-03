@@ -1,4 +1,5 @@
 ---
+title: "Add comment to SimpleModule method calls on modules that no longer extend SimpleModule"
 sidebar_label: "Add comment to SimpleModule method calls on modules that no longer extend SimpleModule"
 ---
 

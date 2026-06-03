@@ -1,4 +1,5 @@
 ---
+title: "Updates theme breakpoints"
 sidebar_label: "Updates theme breakpoints"
 ---
 

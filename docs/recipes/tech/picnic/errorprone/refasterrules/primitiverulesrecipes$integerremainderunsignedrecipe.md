@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.IntegerRemainderUnsigned`"
 sidebar_label: "Refaster template `PrimitiveRules.IntegerRemainderUnsigned`"
 ---
 

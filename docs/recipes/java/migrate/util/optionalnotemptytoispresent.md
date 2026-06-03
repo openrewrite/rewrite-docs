@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Optional.isPresent()`"
 sidebar_label: "Prefer `Optional.isPresent()`"
 ---
 

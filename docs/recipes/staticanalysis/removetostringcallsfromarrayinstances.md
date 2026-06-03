@@ -1,4 +1,5 @@
 ---
+title: "Remove `toString()` calls on arrays"
 sidebar_label: "Remove `toString()` calls on arrays"
 ---
 

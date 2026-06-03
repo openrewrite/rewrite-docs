@@ -1,4 +1,5 @@
 ---
+title: "Forbid importing packages through relative paths"
 sidebar_label: "Forbid importing packages through relative paths"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda"
 sidebar_label: "Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda"
 ---
 

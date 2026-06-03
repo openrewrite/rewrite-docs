@@ -1,4 +1,5 @@
 ---
+title: "Migrate WebLogic Schemas to 15.1.1"
 sidebar_label: "Migrate WebLogic Schemas to 15.1.1"
 ---
 

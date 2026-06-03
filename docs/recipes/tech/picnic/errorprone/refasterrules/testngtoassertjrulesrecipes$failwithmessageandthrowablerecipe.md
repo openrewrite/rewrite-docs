@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TestNGToAssertJRules.FailWithMessageAndThrowable`"
 sidebar_label: "Refaster template `TestNGToAssertJRules.FailWithMessageAndThrowable`"
 ---
 

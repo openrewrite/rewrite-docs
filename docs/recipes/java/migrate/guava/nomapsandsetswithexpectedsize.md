@@ -1,4 +1,5 @@
 ---
+title: "Prefer JDK methods for Maps and Sets of an expected size"
 sidebar_label: "Prefer JDK methods for Maps and Sets of an expected size"
 ---
 

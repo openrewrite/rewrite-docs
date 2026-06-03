@@ -1,4 +1,5 @@
 ---
+title: "Enhances logging of exceptions by including the full stack trace in addition to the exception message"
 sidebar_label: "Enhances logging of exceptions by including the full stack trace in addition to the exception message"
 ---
 

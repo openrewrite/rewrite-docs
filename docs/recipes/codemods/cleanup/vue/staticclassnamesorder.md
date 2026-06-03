@@ -1,4 +1,5 @@
 ---
+title: "Enforce static class names order"
 sidebar_label: "Enforce static class names order"
 ---
 

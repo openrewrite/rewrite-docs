@@ -1,4 +1,5 @@
 ---
+title: "Add explicit JAXB API dependencies"
 sidebar_label: "Add explicit JAXB API dependencies"
 ---
 

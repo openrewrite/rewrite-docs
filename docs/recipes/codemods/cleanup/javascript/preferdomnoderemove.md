@@ -1,4 +1,5 @@
 ---
+title: "Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`"
 sidebar_label: "Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`"
 ---
 

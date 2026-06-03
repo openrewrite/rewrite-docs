@@ -1,4 +1,5 @@
 ---
+title: "Remove method invocations"
 sidebar_label: "Remove method invocations"
 ---
 

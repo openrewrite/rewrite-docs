@@ -1,4 +1,5 @@
 ---
+title: "Collapse consecutive `assertThat` statements"
 sidebar_label: "Collapse consecutive `assertThat` statements"
 ---
 

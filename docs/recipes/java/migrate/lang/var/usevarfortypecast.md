@@ -1,4 +1,5 @@
 ---
+title: "Use `var` for variables initialized with type casts"
 sidebar_label: "Use `var` for variables initialized with type casts"
 ---
 

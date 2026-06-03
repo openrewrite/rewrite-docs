@@ -1,4 +1,5 @@
 ---
+title: "Adopt AssertJ Float Assertions"
 sidebar_label: "Adopt AssertJ Float Assertions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow multiple spaces between inline JSX props"
 sidebar_label: "Disallow multiple spaces between inline JSX props"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow padding lines in component definition"
 sidebar_label: "Require or disallow padding lines in component definition"
 ---
 

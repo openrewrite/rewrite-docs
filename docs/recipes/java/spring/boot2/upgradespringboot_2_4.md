@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Boot 2.4"
 sidebar_label: "Migrate to Spring Boot 2.4"
 ---
 

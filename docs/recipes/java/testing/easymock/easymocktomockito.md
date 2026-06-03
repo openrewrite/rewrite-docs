@@ -1,4 +1,5 @@
 ---
+title: "Migrate from EasyMock to Mockito"
 sidebar_label: "Migrate from EasyMock to Mockito"
 ---
 

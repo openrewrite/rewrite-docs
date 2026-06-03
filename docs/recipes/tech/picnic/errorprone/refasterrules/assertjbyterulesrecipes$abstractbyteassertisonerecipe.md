@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJByteRules.AbstractByteAssertIsOne`"
 sidebar_label: "Refaster template `AssertJByteRules.AbstractByteAssertIsOne`"
 ---
 

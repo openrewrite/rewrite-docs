@@ -1,4 +1,5 @@
 ---
+title: "Change Maven plugin dependencies"
 sidebar_label: "Change Maven plugin dependencies"
 ---
 

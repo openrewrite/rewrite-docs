@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow newlines around variable declarations"
 sidebar_label: "Require or disallow newlines around variable declarations"
 ---
 

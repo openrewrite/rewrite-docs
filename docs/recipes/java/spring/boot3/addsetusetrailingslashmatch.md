@@ -1,4 +1,5 @@
 ---
+title: "Add `SetUseTrailingSlashMatch()` in configuration"
 sidebar_label: "Add `SetUseTrailingSlashMatch()` in configuration"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce quotes style of HTML attributes"
 sidebar_label: "Enforce quotes style of HTML attributes"
 ---
 

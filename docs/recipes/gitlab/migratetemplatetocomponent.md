@@ -1,4 +1,5 @@
 ---
+title: "Migrate GitLab template to component"
 sidebar_label: "Migrate GitLab template to component"
 ---
 

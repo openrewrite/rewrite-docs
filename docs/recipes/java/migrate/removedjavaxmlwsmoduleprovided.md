@@ -1,4 +1,5 @@
 ---
+title: "Do not package `java.xml.ws` module in WebSphere Liberty applications"
 sidebar_label: "Do not package `java.xml.ws` module in WebSphere Liberty applications"
 ---
 

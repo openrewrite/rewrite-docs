@@ -1,4 +1,5 @@
 ---
+title: "Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method"
 sidebar_label: "Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJPathRules.AssertThatExists`"
 sidebar_label: "Refaster template `AssertJPathRules.AssertThatExists`"
 ---
 

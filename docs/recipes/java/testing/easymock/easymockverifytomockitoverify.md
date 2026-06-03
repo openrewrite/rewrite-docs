@@ -1,4 +1,5 @@
 ---
+title: "Replace EasyMock `verify` calls with Mockito `verify` calls"
 sidebar_label: "Replace EasyMock `verify` calls with Mockito `verify` calls"
 ---
 

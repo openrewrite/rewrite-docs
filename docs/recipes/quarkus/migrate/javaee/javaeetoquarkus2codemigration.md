@@ -1,4 +1,5 @@
 ---
+title: "Migrate JavaEE Code to Quarkus 2"
 sidebar_label: "Migrate JavaEE Code to Quarkus 2"
 ---
 

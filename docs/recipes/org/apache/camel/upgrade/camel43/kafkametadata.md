@@ -1,4 +1,5 @@
 ---
+title: "The header name for the List metadata has changed"
 sidebar_label: "The header name for the List metadata has changed"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find Gradle `dependencies` blocks"
 sidebar_label: "Find Gradle `dependencies` blocks"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Apache HttpCore Nio Util Classes to Apache HttpCore 5.x"
 sidebar_label: "Migrate to Apache HttpCore Nio Util Classes to Apache HttpCore 5.x"
 ---
 

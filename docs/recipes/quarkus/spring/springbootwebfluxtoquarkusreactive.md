@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot WebFlux with Quarkus REST Client"
 sidebar_label: "Replace Spring Boot WebFlux with Quarkus REST Client"
 ---
 

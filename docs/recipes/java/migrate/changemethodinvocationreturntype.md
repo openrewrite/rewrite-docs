@@ -1,4 +1,5 @@
 ---
+title: "Change method invocation return type"
 sidebar_label: "Change method invocation return type"
 ---
 

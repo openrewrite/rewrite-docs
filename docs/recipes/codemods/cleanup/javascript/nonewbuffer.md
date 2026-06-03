@@ -1,4 +1,5 @@
 ---
+title: "Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`"
 sidebar_label: "Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`"
 ---
 

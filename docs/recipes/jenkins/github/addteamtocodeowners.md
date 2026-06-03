@@ -1,4 +1,5 @@
 ---
+title: "Add plugin developer team to CODEOWNERS"
 sidebar_label: "Add plugin developer team to CODEOWNERS"
 ---
 

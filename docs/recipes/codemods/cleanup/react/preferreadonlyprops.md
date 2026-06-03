@@ -1,4 +1,5 @@
 ---
+title: "Enforce that props are read-only"
 sidebar_label: "Enforce that props are read-only"
 ---
 

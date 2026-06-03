@@ -1,4 +1,5 @@
 ---
+title: "Remove `KafkaOperations.usingCompletableFuture()`"
 sidebar_label: "Remove `KafkaOperations.usingCompletableFuture()`"
 ---
 

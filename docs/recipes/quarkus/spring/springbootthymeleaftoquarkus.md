@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Thymeleaf with Quarkus Qute"
 sidebar_label: "Replace Spring Boot Thymeleaf with Quarkus Qute"
 ---
 

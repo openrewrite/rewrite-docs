@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ClassRules.ClassIsInstance`"
 sidebar_label: "Refaster template `ClassRules.ClassIsInstance`"
 ---
 

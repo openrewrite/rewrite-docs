@@ -1,4 +1,5 @@
 ---
+title: "Find Micronaut yaml config"
 sidebar_label: "Find Micronaut yaml config"
 ---
 

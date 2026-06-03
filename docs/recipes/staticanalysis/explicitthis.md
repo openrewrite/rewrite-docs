@@ -1,4 +1,5 @@
 ---
+title: "Use explicit `this.field` and `this.method()`"
 sidebar_label: "Use explicit `this.field` and `this.method()`"
 ---
 

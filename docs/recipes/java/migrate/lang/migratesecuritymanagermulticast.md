@@ -1,4 +1,5 @@
 ---
+title: "Use `SecurityManager#checkMulticast(InetAddress)`"
 sidebar_label: "Use `SecurityManager#checkMulticast(InetAddress)`"
 ---
 

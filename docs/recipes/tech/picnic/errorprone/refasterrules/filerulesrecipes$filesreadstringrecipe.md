@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FileRules.FilesReadString`"
 sidebar_label: "Refaster template `FileRules.FilesReadString`"
 ---
 

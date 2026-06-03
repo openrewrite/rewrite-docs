@@ -1,4 +1,5 @@
 ---
+title: "Prefer `String#slice()` over `String#substr()` and `String#substring()`"
 sidebar_label: "Prefer `String#slice()` over `String#substr()` and `String#substring()`"
 ---
 

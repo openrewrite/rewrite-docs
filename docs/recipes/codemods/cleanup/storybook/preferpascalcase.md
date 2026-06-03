@@ -1,4 +1,5 @@
 ---
+title: "Stories should use PascalCase"
 sidebar_label: "Stories should use PascalCase"
 ---
 

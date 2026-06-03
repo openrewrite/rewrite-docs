@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PreconditionsRules.RequireNonNull`"
 sidebar_label: "Refaster template `PreconditionsRules.RequireNonNull`"
 ---
 

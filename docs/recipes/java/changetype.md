@@ -1,4 +1,5 @@
 ---
+title: "Change type"
 sidebar_label: "Change type"
 ---
 
@@ -34,6 +35,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Adopt Jackson 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/adoptjackson3)
+* [Apply Axon Framework 5 common module renames](/recipes/org/axonframework/migration/axon4toaxon5common.md)
+* [Apply Axon Framework 5 event-sourcing module renames](/recipes/org/axonframework/migration/axon4toaxon5eventsourcing.md)
+* [Apply Axon Framework 5 messaging module renames](/recipes/org/axonframework/migration/axon4toaxon5messaging.md)
+* [Apply Axon Framework 5 modelling module renames](/recipes/org/axonframework/migration/axon4toaxon5modelling.md)
+* [Apply Axon Framework 5 test module renames](/recipes/org/axonframework/migration/axon4toaxon5test.md)
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 * [Change SDK Exception types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changeexceptiontypes.md)
 * [Change SDK S3EventNotification types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changes3eventnotificationtypes.md)
@@ -85,6 +91,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate SLF4J to Log4j 2.x API](/recipes/java/logging/log4j/slf4jtolog4j.md)
 * [Migrate Spring @Transactional to Jakarta @Transactional](/recipes/quarkus/spring/migratespringtransactional.md)
 * [Migrate Spring Boot Testing to Quarkus Testing](/recipes/quarkus/spring/migratespringtesting.md)
+* [Migrate Spring Cloud AWS (awspring) to 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradeawspringcloud_4_0)
 * [Migrate Spring Cloud Service Discovery to Quarkus](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Spring Data MongoDB to Quarkus Panache MongoDB](/recipes/quarkus/spring/migratespringdatamongodb.md)
@@ -94,6 +101,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Struts 1 Action to Struts 2 ActionSupport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migrateactionclass)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migrateawareinterfaces)
 * [Migrate TaskMetadata and ThreadMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/migratetaskandthreadmetadata)
+* [Migrate `AbstractClientHttpResponse` to `ClientHttpResponse`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migrateabstractclienthttpresponse)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migrateadminlistconsumergroups)
 * [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/spring/doc/apiinfobuildertoinfo.md)
 * [Migrate `AuthState` to `AuthExchange`](/recipes/apache/httpclient5/migrateauthstate.md)
@@ -102,6 +110,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoreclear.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)
+* [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
 * [Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoresetcredentials.md)
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
 * [Migrate deprecated APIs removed in Spring Framework 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratedeprecatedapis)
@@ -110,6 +119,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.annotation` packages to `jakarta.annotation`](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationpackagetojakarta.md)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
 * [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
+* [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [Migrate distributed messaging components to Axoniq Framework 5](/recipes/io/axoniq/framework/migration/axon4toaxoniq5distributedmessaging.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate from Elasticsearch 8 to 9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/elastic/elastic9/migratetoelasticsearch9)
@@ -137,6 +148,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](/recipes/java/springdoc/migratespringdoccommon.md)
 * [Migrate moved types between Camel 3.x and Camel 4.x](/recipes/org/apache/camel/upgrade/camel40/changetypes.md)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
+* [Migrate the Axon Server Testcontainer to Axoniq Framework 5](/recipes/io/axoniq/framework/migration/axon4toaxoniq5testcontainer.md)
+* [Migrate the Spring extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5springextension.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to Apache Kafka Native container](/recipes/java/testing/testcontainers/migratetokafkanative.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
@@ -156,6 +169,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Data 2.3](/recipes/java/spring/data/upgradespringdata_2_3.md)
+* [Migrate to Spring Framework 5.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_0-moderne-edition)
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
@@ -217,8 +231,6 @@ This recipe is used as part of the following composite recipes:
 * [Update Jetty EE9 to Jetty EE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update the Micronaut Security library](/recipes/java/micronaut/updatemicronautsecurity.md)
-* [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
-* [Upgrade to Axonframework 4.x Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
 * [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
@@ -229,6 +241,7 @@ This recipe is used as part of the following composite recipes:
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
 * [Use `PingHealthIndicator`](/recipes/java/spring/boot2/migrateapplicationhealthindicatortopinghealthindicator.md)
 * [Use `RestClientBuilderCustomizer`](/recipes/java/spring/boot2/migraterestclientbuildercustomizerpackagename.md)
+* [Use `Rfc6265CookieProcessor` instead of `LegacyCookieProcessor`](/recipes/java/spring/boot3/userfc6265cookieprocessor.md)
 * [Use `StateManagementStrategy`](/recipes/com/oracle/weblogic/rewrite/jakarta/removedstatemanagermethods3.md)
 * [Use `StateManagementStrategy`](/recipes/java/migrate/jakarta/removedstatemanagermethods.md)
 * [Use `WebServerFactoryCustomizer`](/recipes/java/spring/boot2/migratetowebserverfactorycustomizer.md)
@@ -259,6 +272,9 @@ This recipe is used as part of the following composite recipes:
 * [io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage](/recipes/io/quarkus/updates/core/quarkus319/moveaccesstokenannotationtonewpackage.md)
 * [io.quarkus.updates.core.quarkus32.InjectMock](/recipes/io/quarkus/updates/core/quarkus32/injectmock.md)
 * [io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus321/tlsregistrysplitpackagesfix.md)
+* [io.quarkus.updates.core.quarkus324.MigrateFromDefaultUniqueDelegate](/recipes/io/quarkus/updates/core/quarkus324/migratefromdefaultuniquedelegate.md)
+* [io.quarkus.updates.core.quarkus324.MigrateFromHibernateValidatorNotBlank](/recipes/io/quarkus/updates/core/quarkus324/migratefromhibernatevalidatornotblank.md)
+* [io.quarkus.updates.core.quarkus324.MigrateFromIndexColumn](/recipes/io/quarkus/updates/core/quarkus324/migratefromindexcolumn.md)
 * [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](/recipes/io/quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix.md)
 
 ## Example

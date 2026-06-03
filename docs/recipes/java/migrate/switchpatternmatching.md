@@ -1,4 +1,5 @@
 ---
+title: "Adopt switch pattern matching (JEP 441)"
 sidebar_label: "Adopt switch pattern matching (JEP 441)"
 ---
 

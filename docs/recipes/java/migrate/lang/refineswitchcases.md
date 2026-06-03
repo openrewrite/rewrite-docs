@@ -1,4 +1,5 @@
 ---
+title: "Use switch cases refinement when possible"
 sidebar_label: "Use switch cases refinement when possible"
 ---
 

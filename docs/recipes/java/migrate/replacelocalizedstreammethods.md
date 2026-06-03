@@ -1,4 +1,5 @@
 ---
+title: "Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment"
 sidebar_label: "Replace `getLocalizedInputStream` and `getLocalizedOutputStream` with direct assignment"
 ---
 

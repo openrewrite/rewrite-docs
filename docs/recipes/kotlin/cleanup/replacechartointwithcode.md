@@ -1,4 +1,5 @@
 ---
+title: "Replace `Char#toInt()` with `Char#code`"
 sidebar_label: "Replace `Char#toInt()` with `Char#code`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find deprecated `except` keyword"
 sidebar_label: "Find deprecated `except` keyword"
 ---
 

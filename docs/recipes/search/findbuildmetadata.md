@@ -1,4 +1,5 @@
 ---
+title: "Find build metadata"
 sidebar_label: "Find build metadata"
 ---
 

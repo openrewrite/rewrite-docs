@@ -1,4 +1,5 @@
 ---
+title: "Convert Truth Throwable assertions to AssertJ"
 sidebar_label: "Convert Truth Throwable assertions to AssertJ"
 ---
 

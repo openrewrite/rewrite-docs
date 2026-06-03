@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.SetOfVarargs`"
 sidebar_label: "Refaster template `CollectionRules.SetOfVarargs`"
 ---
 

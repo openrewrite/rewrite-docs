@@ -1,4 +1,5 @@
 ---
+title: "Loggers should be named for their enclosing classes"
 sidebar_label: "Loggers should be named for their enclosing classes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Math#clamp`"
 sidebar_label: "Prefer `Math#clamp`"
 ---
 

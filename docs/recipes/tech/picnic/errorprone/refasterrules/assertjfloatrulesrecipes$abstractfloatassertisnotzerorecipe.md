@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJFloatRules.AbstractFloatAssertIsNotZero`"
 sidebar_label: "Refaster template `AssertJFloatRules.AbstractFloatAssertIsNotZero`"
 ---
 

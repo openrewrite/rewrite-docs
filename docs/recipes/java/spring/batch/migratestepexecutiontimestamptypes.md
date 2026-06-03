@@ -1,4 +1,5 @@
 ---
+title: "Migrate `Date` to `LocalDateTime` for Spring Batch timestamp methods"
 sidebar_label: "Migrate `Date` to `LocalDateTime` for Spring Batch timestamp methods"
 ---
 

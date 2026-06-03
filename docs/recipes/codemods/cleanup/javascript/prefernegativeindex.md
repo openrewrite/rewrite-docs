@@ -1,4 +1,5 @@
 ---
+title: "Prefer negative index over `.length - index` when possible"
 sidebar_label: "Prefer negative index over `.length - index` when possible"
 ---
 

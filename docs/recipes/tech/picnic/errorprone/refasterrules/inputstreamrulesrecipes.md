@@ -1,4 +1,5 @@
 ---
+title: "`InputStreamRules` Refaster recipes"
 sidebar_label: "`InputStreamRules` Refaster recipes"
 ---
 

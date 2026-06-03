@@ -1,4 +1,5 @@
 ---
+title: "Add Hamcrest JUnit dependency"
 sidebar_label: "Add Hamcrest JUnit dependency"
 ---
 

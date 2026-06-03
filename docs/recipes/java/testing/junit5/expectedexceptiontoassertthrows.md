@@ -1,4 +1,5 @@
 ---
+title: "JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`"
 sidebar_label: "JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Reflect.apply()` over `Function#apply()`"
 sidebar_label: "Prefer `Reflect.apply()` over `Function#apply()`"
 ---
 

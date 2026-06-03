@@ -1,4 +1,5 @@
 ---
+title: "Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`"
 sidebar_label: "Rename `gradle/wrapper-validation-action` to `gradle/actions/wrapper-validation`"
 ---
 

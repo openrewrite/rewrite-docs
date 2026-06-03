@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Web with Quarkus REST"
 sidebar_label: "Replace Spring Boot Web with Quarkus REST"
 ---
 

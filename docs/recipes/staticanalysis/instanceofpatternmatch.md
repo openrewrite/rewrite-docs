@@ -1,4 +1,5 @@
 ---
+title: "Changes code to use Java 17's `instanceof` pattern matching"
 sidebar_label: "Changes code to use Java 17's `instanceof` pattern matching"
 ---
 

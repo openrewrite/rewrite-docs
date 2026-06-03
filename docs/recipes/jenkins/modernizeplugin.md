@@ -1,4 +1,5 @@
 ---
+title: "Modernize a Jenkins plugin to the latest recommended versions"
 sidebar_label: "Modernize a Jenkins plugin to the latest recommended versions"
 ---
 

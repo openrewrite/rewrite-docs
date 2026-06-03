@@ -1,4 +1,5 @@
 ---
+title: "Remove Quarkus feature flag's `isEnabled` for feature key"
 sidebar_label: "Remove Quarkus feature flag's `isEnabled` for feature key"
 ---
 

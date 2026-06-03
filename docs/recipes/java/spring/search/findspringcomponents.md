@@ -1,4 +1,5 @@
 ---
+title: "Find Spring components"
 sidebar_label: "Find Spring components"
 ---
 

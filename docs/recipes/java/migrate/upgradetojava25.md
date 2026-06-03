@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Java 25"
 sidebar_label: "Migrate to Java 25"
 ---
 

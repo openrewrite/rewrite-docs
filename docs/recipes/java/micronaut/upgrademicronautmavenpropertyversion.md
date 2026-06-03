@@ -1,4 +1,5 @@
 ---
+title: "Upgrade `micronaut.version` Maven property"
 sidebar_label: "Upgrade `micronaut.version` Maven property"
 ---
 

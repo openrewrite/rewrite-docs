@@ -1,4 +1,5 @@
 ---
+title: "JUnit 4 `Assert` To JUnit Jupiter `Assertions`"
 sidebar_label: "JUnit 4 `Assert` To JUnit Jupiter `Assertions`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add workflow rules"
 sidebar_label: "Add workflow rules"
 ---
 

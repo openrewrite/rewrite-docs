@@ -1,4 +1,5 @@
 ---
+title: "Add apt-get cleanup"
 sidebar_label: "Add apt-get cleanup"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader"
 sidebar_label: "Replace deprecated DefaultJsonSchemaLoader with DefaultJsonUriSchemaLoader"
 ---
 

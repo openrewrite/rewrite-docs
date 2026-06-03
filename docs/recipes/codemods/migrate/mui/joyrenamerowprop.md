@@ -1,4 +1,5 @@
 ---
+title: "Renames `row` prop to `flexDirection=&quot;row&quot;`"
 sidebar_label: "Renames `row` prop to `flexDirection=&quot;row&quot;`"
 ---
 

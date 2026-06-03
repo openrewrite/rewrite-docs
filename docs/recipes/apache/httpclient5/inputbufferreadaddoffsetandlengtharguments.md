@@ -1,4 +1,5 @@
 ---
+title: "Adds offset and length arguments to the read method of SharedInputBuffer"
 sidebar_label: "Adds offset and length arguments to the read method of SharedInputBuffer"
 ---
 

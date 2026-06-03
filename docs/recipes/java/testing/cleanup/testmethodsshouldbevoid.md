@@ -1,4 +1,5 @@
 ---
+title: "Test methods should have void return type"
 sidebar_label: "Test methods should have void return type"
 ---
 

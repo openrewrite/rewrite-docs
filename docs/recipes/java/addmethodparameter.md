@@ -1,4 +1,5 @@
 ---
+title: "Add method parameter to a method declaration"
 sidebar_label: "Add method parameter to a method declaration"
 ---
 

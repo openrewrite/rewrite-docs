@@ -1,4 +1,5 @@
 ---
+title: "Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector`"
 sidebar_label: "Replace `extends EmptyInterceptor` with `implements Interceptor` and potentially `StatementInspector`"
 ---
 

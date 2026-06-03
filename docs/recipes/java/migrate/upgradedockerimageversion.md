@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Docker image Java version"
 sidebar_label: "Upgrade Docker image Java version"
 ---
 

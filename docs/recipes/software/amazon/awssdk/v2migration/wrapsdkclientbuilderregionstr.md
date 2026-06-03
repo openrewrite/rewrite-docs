@@ -1,4 +1,5 @@
 ---
+title: "Wrap the region string provided on the SDK client builder with Region.of"
 sidebar_label: "Wrap the region string provided on the SDK client builder with Region.of"
 ---
 

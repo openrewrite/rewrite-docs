@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyEntriesOf`"
 sidebar_label: "Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyEntriesOf`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`new BigDecimal(double)` should not be used"
 sidebar_label: "`new BigDecimal(double)` should not be used"
 ---
 

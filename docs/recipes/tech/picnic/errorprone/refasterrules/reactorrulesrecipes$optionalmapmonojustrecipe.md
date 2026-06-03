@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.OptionalMapMonoJust`"
 sidebar_label: "Refaster template `ReactorRules.OptionalMapMonoJust`"
 ---
 

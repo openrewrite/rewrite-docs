@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DequeRules.DequeRemoveFirstOccurrence`"
 sidebar_label: "Refaster template `DequeRules.DequeRemoveFirstOccurrence`"
 ---
 

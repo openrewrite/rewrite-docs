@@ -1,4 +1,5 @@
 ---
+title: "Use `Logger#getGlobal()`"
 sidebar_label: "Use `Logger#getGlobal()`"
 ---
 

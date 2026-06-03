@@ -1,4 +1,5 @@
 ---
+title: "Use `org.springframework.boot.web.servlet.error.ErrorController`"
 sidebar_label: "Use `org.springframework.boot.web.servlet.error.ErrorController`"
 ---
 

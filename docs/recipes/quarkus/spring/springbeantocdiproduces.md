@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring `@Bean` with CDI `@Produces`"
 sidebar_label: "Replace Spring `@Bean` with CDI `@Produces`"
 ---
 

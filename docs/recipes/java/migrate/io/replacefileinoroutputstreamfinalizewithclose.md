@@ -1,4 +1,5 @@
 ---
+title: "Replace invocations of `finalize()` on `FileInputStream` and `FileOutputStream` with `close()`"
 sidebar_label: "Replace invocations of `finalize()` on `FileInputStream` and `FileOutputStream` with `close()`"
 ---
 

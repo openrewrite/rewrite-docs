@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `Jackson3Rules.JsonNodeOptionalInt`"
 sidebar_label: "Refaster template `Jackson3Rules.JsonNodeOptionalInt`"
 ---
 

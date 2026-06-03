@@ -1,4 +1,5 @@
 ---
+title: "Modernize Jenkinsfile"
 sidebar_label: "Modernize Jenkinsfile"
 ---
 

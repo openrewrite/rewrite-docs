@@ -1,4 +1,5 @@
 ---
+title: "Single line comments begin with a whitespace"
 sidebar_label: "Single line comments begin with a whitespace"
 ---
 

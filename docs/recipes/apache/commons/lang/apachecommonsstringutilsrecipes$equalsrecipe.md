@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.equals(CharSequence, CharSequence)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.equals(CharSequence, CharSequence)` with JDK provided API"
 ---
 

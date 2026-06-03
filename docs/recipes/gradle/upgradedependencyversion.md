@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Gradle dependency versions"
 sidebar_label: "Upgrade Gradle dependency versions"
 ---
 

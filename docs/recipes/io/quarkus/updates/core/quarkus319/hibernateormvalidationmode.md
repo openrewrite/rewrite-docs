@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus319.HibernateORMValidationMode"
 sidebar_label: "io.quarkus.updates.core.quarkus319.HibernateORMValidationMode"
 ---
 

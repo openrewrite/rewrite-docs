@@ -1,4 +1,5 @@
 ---
+title: "Removed deprecated property camel.main.lightweight"
 sidebar_label: "Removed deprecated property camel.main.lightweight"
 ---
 

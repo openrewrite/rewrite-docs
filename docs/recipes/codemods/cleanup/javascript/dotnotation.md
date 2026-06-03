@@ -1,4 +1,5 @@
 ---
+title: "Enforce dot notation whenever possible"
 sidebar_label: "Enforce dot notation whenever possible"
 ---
 

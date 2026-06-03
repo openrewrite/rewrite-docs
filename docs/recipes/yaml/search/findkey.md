@@ -1,4 +1,5 @@
 ---
+title: "Find YAML entries"
 sidebar_label: "Find YAML entries"
 ---
 

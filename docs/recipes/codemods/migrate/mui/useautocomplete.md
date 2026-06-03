@@ -1,4 +1,5 @@
 ---
+title: "Updates usage of useAutocomplete"
 sidebar_label: "Updates usage of useAutocomplete"
 ---
 

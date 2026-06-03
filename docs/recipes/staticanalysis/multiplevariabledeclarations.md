@@ -1,4 +1,5 @@
 ---
+title: "No multiple variable declarations"
 sidebar_label: "No multiple variable declarations"
 ---
 

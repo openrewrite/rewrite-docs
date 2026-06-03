@@ -1,4 +1,5 @@
 ---
+title: "Find and replace"
 sidebar_label: "Find and replace"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `@Slf4` instead of explicit fields"
 sidebar_label: "Use `@Slf4` instead of explicit fields"
 ---
 

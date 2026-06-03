@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Batch with Quarkus Scheduler"
 sidebar_label: "Replace Spring Boot Batch with Quarkus Scheduler"
 ---
 

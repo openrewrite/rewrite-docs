@@ -1,4 +1,5 @@
 ---
+title: "Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x"
 sidebar_label: "Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce valid titles"
 sidebar_label: "Enforce valid titles"
 ---
 

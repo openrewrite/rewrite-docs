@@ -1,4 +1,5 @@
 ---
+title: "Upgrade JaCoCo"
 sidebar_label: "Upgrade JaCoCo"
 ---
 

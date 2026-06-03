@@ -1,4 +1,5 @@
 ---
+title: "Use varargs equivalents for deprecated JdbcTemplate signatures"
 sidebar_label: "Use varargs equivalents for deprecated JdbcTemplate signatures"
 ---
 

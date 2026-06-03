@@ -1,4 +1,5 @@
 ---
+title: "Inline methods annotated with `@InlineMe`"
 sidebar_label: "Inline methods annotated with `@InlineMe`"
 ---
 

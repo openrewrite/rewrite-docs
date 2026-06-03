@@ -1,4 +1,5 @@
 ---
+title: "Gradle dependency insight"
 sidebar_label: "Gradle dependency insight"
 ---
 

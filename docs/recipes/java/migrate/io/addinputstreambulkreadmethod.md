@@ -1,4 +1,5 @@
 ---
+title: "Add bulk read method to `InputStream` implementations"
 sidebar_label: "Add bulk read method to `InputStream` implementations"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Append to text file"
 sidebar_label: "Append to text file"
 ---
 

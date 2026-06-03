@@ -1,4 +1,5 @@
 ---
+title: "Replace deprecated lifecycle phases"
 sidebar_label: "Replace deprecated lifecycle phases"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate Lombok to a Java 11 compatible version"
 sidebar_label: "Migrate Lombok to a Java 11 compatible version"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJStreamRules.AssertThatHasSize`"
 sidebar_label: "Refaster template `AssertJStreamRules.AssertThatHasSize`"
 ---
 

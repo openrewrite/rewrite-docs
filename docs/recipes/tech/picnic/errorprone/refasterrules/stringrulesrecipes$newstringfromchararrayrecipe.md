@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.NewStringFromCharArray`"
 sidebar_label: "Refaster template `StringRules.NewStringFromCharArray`"
 ---
 

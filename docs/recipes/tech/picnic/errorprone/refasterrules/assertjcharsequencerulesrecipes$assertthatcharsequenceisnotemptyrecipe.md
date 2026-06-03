@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJCharSequenceRules.AssertThatCharSequenceIsNotEmpty`"
 sidebar_label: "Refaster template `AssertJCharSequenceRules.AssertThatCharSequenceIsNotEmpty`"
 ---
 

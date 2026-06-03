@@ -1,4 +1,5 @@
 ---
+title: "Find Gradle wrappers"
 sidebar_label: "Find Gradle wrappers"
 ---
 

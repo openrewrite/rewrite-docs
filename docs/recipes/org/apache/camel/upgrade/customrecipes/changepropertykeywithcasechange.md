@@ -1,4 +1,5 @@
 ---
+title: "Change prefix of property with Camel case"
 sidebar_label: "Change prefix of property with Camel case"
 ---
 

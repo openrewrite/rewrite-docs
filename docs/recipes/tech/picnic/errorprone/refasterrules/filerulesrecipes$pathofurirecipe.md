@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FileRules.PathOfUri`"
 sidebar_label: "Refaster template `FileRules.PathOfUri`"
 ---
 

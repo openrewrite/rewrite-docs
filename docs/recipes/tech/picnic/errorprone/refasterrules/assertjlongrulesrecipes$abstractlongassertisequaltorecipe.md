@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJLongRules.AbstractLongAssertIsEqualTo`"
 sidebar_label: "Refaster template `AssertJLongRules.AbstractLongAssertIsEqualTo`"
 ---
 

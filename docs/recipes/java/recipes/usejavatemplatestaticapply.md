@@ -1,4 +1,5 @@
 ---
+title: "Use `JavaTemplate.apply()` static method"
 sidebar_label: "Use `JavaTemplate.apply()` static method"
 ---
 

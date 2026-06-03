@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJObjectRules.AssertThatHasSameHashCodeAs`"
 sidebar_label: "Refaster template `AssertJObjectRules.AssertThatHasSameHashCodeAs`"
 ---
 

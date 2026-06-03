@@ -1,4 +1,5 @@
 ---
+title: "Add Managed Maven plugin"
 sidebar_label: "Add Managed Maven plugin"
 ---
 

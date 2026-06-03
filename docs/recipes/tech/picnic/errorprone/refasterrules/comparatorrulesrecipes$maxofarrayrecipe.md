@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.MaxOfArray`"
 sidebar_label: "Refaster template `ComparatorRules.MaxOfArray`"
 ---
 

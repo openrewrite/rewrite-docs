@@ -1,4 +1,5 @@
 ---
+title: "Find method declaration"
 sidebar_label: "Find method declaration"
 ---
 

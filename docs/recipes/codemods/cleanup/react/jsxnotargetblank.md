@@ -1,4 +1,5 @@
 ---
+title: "Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;"
 sidebar_label: "Disallow target=&quot;_blank&quot; attribute without rel=&quot;noreferrer&quot;"
 ---
 

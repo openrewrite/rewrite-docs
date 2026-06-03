@@ -1,4 +1,5 @@
 ---
+title: "Use try-with-resources"
 sidebar_label: "Use try-with-resources"
 ---
 

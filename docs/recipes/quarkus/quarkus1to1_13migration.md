@@ -1,4 +1,5 @@
 ---
+title: "Quarkus 1.13 migration from Quarkus 1.11"
 sidebar_label: "Quarkus 1.13 migration from Quarkus 1.11"
 ---
 

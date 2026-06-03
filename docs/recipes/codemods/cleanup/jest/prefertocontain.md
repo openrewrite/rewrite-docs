@@ -1,4 +1,5 @@
 ---
+title: "Suggest using toContain()"
 sidebar_label: "Suggest using toContain()"
 ---
 

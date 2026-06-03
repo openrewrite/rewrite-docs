@@ -1,4 +1,5 @@
 ---
+title: "Prefer optional chaining"
 sidebar_label: "Prefer optional chaining"
 ---
 

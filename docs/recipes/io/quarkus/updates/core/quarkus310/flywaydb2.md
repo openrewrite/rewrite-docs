@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus310.FlywayDb2"
 sidebar_label: "io.quarkus.updates.core.quarkus310.FlywayDb2"
 ---
 

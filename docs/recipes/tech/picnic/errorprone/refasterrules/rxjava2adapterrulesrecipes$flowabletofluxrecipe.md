@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `RxJava2AdapterRules.FlowableToFlux`"
 sidebar_label: "Refaster template `RxJava2AdapterRules.FlowableToFlux`"
 ---
 

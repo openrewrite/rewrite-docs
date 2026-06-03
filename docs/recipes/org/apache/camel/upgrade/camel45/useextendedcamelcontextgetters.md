@@ -1,4 +1,5 @@
 ---
+title: "Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`"
 sidebar_label: "Replace `context.${method}(*)` with `context.getCamelContextExtension().${method}(*)`"
 ---
 

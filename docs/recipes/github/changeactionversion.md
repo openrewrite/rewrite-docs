@@ -1,4 +1,5 @@
 ---
+title: "Change GitHub Action version"
 sidebar_label: "Change GitHub Action version"
 ---
 

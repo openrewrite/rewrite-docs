@@ -1,4 +1,5 @@
 ---
+title: "Use TLS for AMQP connection strings"
 sidebar_label: "Use TLS for AMQP connection strings"
 ---
 

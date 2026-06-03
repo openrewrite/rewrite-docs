@@ -1,4 +1,5 @@
 ---
+title: "Change GitLab template"
 sidebar_label: "Change GitLab template"
 ---
 

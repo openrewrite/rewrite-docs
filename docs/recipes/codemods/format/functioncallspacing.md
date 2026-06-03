@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow spacing between function identifiers and their invocations"
 sidebar_label: "Require or disallow spacing between function identifiers and their invocations"
 ---
 

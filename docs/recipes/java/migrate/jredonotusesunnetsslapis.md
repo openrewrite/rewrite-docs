@@ -1,4 +1,5 @@
 ---
+title: "Use `javax.net.ssl` instead of `com.sun.net.ssl`"
 sidebar_label: "Use `javax.net.ssl` instead of `com.sun.net.ssl`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Changes for creation of inlined beans."
 sidebar_label: "Changes for creation of inlined beans."
 ---
 

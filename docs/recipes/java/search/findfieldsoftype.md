@@ -1,4 +1,5 @@
 ---
+title: "Find fields of type"
 sidebar_label: "Find fields of type"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Jakarta Faces 4.0 to 4.1"
 sidebar_label: "Jakarta Faces 4.0 to 4.1"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find a Quarkus feature flag"
 sidebar_label: "Find a Quarkus feature flag"
 ---
 

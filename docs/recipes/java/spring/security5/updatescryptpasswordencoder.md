@@ -1,4 +1,5 @@
 ---
+title: "Use new `SCryptPasswordEncoder` factory methods"
 sidebar_label: "Use new `SCryptPasswordEncoder` factory methods"
 ---
 

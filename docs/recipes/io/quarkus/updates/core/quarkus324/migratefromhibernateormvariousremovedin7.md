@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7"
 sidebar_label: "io.quarkus.updates.core.quarkus324.MigrateFromHibernateOrmVariousRemovedIn7"
 ---
 

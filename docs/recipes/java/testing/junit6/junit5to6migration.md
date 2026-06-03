@@ -1,4 +1,5 @@
 ---
+title: "JUnit 6 migration from JUnit 5.x"
 sidebar_label: "JUnit 6 migration from JUnit 5.x"
 ---
 

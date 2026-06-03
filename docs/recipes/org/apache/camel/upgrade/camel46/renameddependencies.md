@@ -1,4 +1,5 @@
 ---
+title: "Renamed dependencies"
 sidebar_label: "Renamed dependencies"
 ---
 

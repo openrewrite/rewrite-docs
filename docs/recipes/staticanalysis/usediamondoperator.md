@@ -1,4 +1,5 @@
 ---
+title: "Use the diamond operator"
 sidebar_label: "Use the diamond operator"
 ---
 

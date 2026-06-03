@@ -1,4 +1,5 @@
 ---
+title: "Replace deprecated methods in`SecurityManager`"
 sidebar_label: "Replace deprecated methods in`SecurityManager`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Delete Quarkus configuration property"
 sidebar_label: "Delete Quarkus configuration property"
 ---
 

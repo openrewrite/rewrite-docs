@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamMaxNaturalOrder`"
 sidebar_label: "Refaster template `StreamRules.StreamMaxNaturalOrder`"
 ---
 

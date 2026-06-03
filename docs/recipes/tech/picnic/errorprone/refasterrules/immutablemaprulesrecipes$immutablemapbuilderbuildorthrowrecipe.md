@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableMapRules.ImmutableMapBuilderBuildOrThrow`"
 sidebar_label: "Refaster template `ImmutableMapRules.ImmutableMapBuilderBuildOrThrow`"
 ---
 

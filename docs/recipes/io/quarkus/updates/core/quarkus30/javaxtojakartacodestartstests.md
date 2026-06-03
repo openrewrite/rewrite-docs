@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus30.JavaxToJakartaCodestartsTests"
 sidebar_label: "io.quarkus.updates.core.quarkus30.JavaxToJakartaCodestartsTests"
 ---
 

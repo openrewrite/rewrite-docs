@@ -1,4 +1,5 @@
 ---
+title: "Use logger instead of `printStackTrace()`"
 sidebar_label: "Use logger instead of `printStackTrace()`"
 ---
 

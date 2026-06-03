@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Long#divideUnsigned`"
 sidebar_label: "Prefer `Long#divideUnsigned`"
 ---
 

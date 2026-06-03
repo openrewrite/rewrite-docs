@@ -1,4 +1,5 @@
 ---
+title: "Delete TOML key"
 sidebar_label: "Delete TOML key"
 ---
 

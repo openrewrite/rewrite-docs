@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DequeRules.DequeOfferLast`"
 sidebar_label: "Refaster template `DequeRules.DequeOfferLast`"
 ---
 

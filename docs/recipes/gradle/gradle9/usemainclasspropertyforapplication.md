@@ -1,4 +1,5 @@
 ---
+title: "Use `application { mainClass }` instead of `mainClassName`"
 sidebar_label: "Use `application { mainClass }` instead of `mainClassName`"
 ---
 
@@ -26,6 +27,51 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'application'
+}
+
+application {
+    mainClassName = "com.example.AppMain"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = "com.example.AppMain"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -6,1 +6,1 @@
+
+application {
+-   mainClassName = "com.example.AppMain"
++   mainClass = "com.example.AppMain"
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

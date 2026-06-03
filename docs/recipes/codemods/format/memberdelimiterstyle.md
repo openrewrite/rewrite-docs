@@ -1,4 +1,5 @@
 ---
+title: "Require a specific member delimiter style for interfaces and type literals"
 sidebar_label: "Require a specific member delimiter style for interfaces and type literals"
 ---
 

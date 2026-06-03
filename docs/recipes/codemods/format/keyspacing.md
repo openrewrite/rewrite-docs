@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing between keys and values in object literal properties"
 sidebar_label: "Enforce consistent spacing between keys and values in object literal properties"
 ---
 

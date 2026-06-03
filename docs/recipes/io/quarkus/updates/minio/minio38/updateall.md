@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.minio.minio38.UpdateAll"
 sidebar_label: "io.quarkus.updates.minio.minio38.UpdateAll"
 ---
 

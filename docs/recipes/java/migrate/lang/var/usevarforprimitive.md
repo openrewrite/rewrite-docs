@@ -1,4 +1,5 @@
 ---
+title: "Use `var` for primitive and String variables"
 sidebar_label: "Use `var` for primitive and String variables"
 ---
 

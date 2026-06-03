@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSortedMultisetRules.ImmutableSortedMultisetBuilder`"
 sidebar_label: "Refaster template `ImmutableSortedMultisetRules.ImmutableSortedMultisetBuilder`"
 ---
 

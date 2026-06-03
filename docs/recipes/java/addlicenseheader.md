@@ -1,4 +1,5 @@
 ---
+title: "Add license header"
 sidebar_label: "Add license header"
 ---
 

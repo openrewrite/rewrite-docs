@@ -1,4 +1,5 @@
 ---
+title: "Format XML"
 sidebar_label: "Format XML"
 ---
 

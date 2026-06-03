@@ -1,4 +1,5 @@
 ---
+title: "Finalize method arguments"
 sidebar_label: "Finalize method arguments"
 ---
 

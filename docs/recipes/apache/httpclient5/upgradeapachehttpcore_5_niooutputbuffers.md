@@ -1,4 +1,5 @@
 ---
+title: "Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x"
 sidebar_label: "Migrate Apache HttpCore Nio Output Buffer classes to Apache HttpCore 5.x"
 ---
 

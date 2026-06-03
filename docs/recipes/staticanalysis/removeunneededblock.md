@@ -1,4 +1,5 @@
 ---
+title: "Remove unneeded block"
 sidebar_label: "Remove unneeded block"
 ---
 

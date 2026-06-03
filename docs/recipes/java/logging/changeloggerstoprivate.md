@@ -1,4 +1,5 @@
 ---
+title: "Change logger fields to `private`"
 sidebar_label: "Change logger fields to `private`"
 ---
 

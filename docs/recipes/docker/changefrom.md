@@ -1,4 +1,5 @@
 ---
+title: "Change Docker FROM"
 sidebar_label: "Change Docker FROM"
 ---
 

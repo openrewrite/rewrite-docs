@@ -1,4 +1,5 @@
 ---
+title: "Replace `@MockBean` and `@SpyBean`"
 sidebar_label: "Replace `@MockBean` and `@SpyBean`"
 ---
 

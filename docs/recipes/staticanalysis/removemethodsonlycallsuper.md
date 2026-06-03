@@ -1,4 +1,5 @@
 ---
+title: "Remove methods that only call super"
 sidebar_label: "Remove methods that only call super"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Modernize a Jenkins plugin to the latest versions supported by Java 8"
 sidebar_label: "Modernize a Jenkins plugin to the latest versions supported by Java 8"
 ---
 

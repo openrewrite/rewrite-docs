@@ -1,4 +1,5 @@
 ---
+title: "Remove build extension by name"
 sidebar_label: "Remove build extension by name"
 ---
 

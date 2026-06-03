@@ -1,4 +1,5 @@
 ---
+title: "JUnit Jupiter best practices"
 sidebar_label: "JUnit Jupiter best practices"
 ---
 
@@ -60,6 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](../../../java/testing/junit5/assertthrowsonlaststatement)
 * [`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)
 * [Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`](../../../java/testing/junit5/useassertsame)
+* [Remove JUnit Jupiter migrationsupport](../../../java/testing/junit/removejupitermigrationsupport)
 
 </TabItem>
 
@@ -98,6 +100,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.AssertThrowsOnLastStatement
   - org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf
   - org.openrewrite.java.testing.junit5.UseAssertSame
+  - org.openrewrite.java.testing.junit.RemoveJupiterMigrationSupport
 
 ```
 </TabItem>

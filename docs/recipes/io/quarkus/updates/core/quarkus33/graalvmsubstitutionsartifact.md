@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact"
 sidebar_label: "io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact"
 ---
 

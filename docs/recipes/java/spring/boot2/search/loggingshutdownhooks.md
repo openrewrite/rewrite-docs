@@ -1,4 +1,5 @@
 ---
+title: "Applications using logging shutdown hooks"
 sidebar_label: "Applications using logging shutdown hooks"
 ---
 

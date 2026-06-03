@@ -1,4 +1,5 @@
 ---
+title: "Use `ClassLoader#defineClass(String, byte[], int, int)`"
 sidebar_label: "Use `ClassLoader#defineClass(String, byte[], int, int)`"
 ---
 

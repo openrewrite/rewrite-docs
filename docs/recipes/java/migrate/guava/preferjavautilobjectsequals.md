@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.Objects#equals`"
 sidebar_label: "Prefer `java.util.Objects#equals`"
 ---
 

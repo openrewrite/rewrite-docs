@@ -1,4 +1,5 @@
 ---
+title: "Disallow whitespace before properties"
 sidebar_label: "Disallow whitespace before properties"
 ---
 

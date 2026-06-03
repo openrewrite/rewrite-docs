@@ -1,4 +1,5 @@
 ---
+title: "Remove `Bean.isNullable()`"
 sidebar_label: "Remove `Bean.isNullable()`"
 ---
 

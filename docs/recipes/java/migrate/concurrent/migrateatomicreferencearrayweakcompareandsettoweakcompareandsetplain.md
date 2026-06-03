@@ -1,4 +1,5 @@
 ---
+title: "Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`"
 sidebar_label: "Use `AtomicReferenceArray#weakCompareAndSetPlain(int, T, T)`"
 ---
 

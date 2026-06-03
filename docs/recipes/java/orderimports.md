@@ -1,4 +1,5 @@
 ---
+title: "Order imports"
 sidebar_label: "Order imports"
 ---
 
@@ -42,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 | Parameter | Value |
 | --- | --- |
 |removeUnused|`false`|
-|style||
+|style|`null`|
 
 
 <Tabs groupId="beforeAfter">

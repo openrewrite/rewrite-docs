@@ -1,4 +1,5 @@
 ---
+title: "Upgrade build to Java 24 for Kotlin pre-2.3"
 sidebar_label: "Upgrade build to Java 24 for Kotlin pre-2.3"
 ---
 

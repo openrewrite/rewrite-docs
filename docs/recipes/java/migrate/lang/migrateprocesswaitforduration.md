@@ -1,4 +1,5 @@
 ---
+title: "Use `Process#waitFor(Duration)`"
 sidebar_label: "Use `Process#waitFor(Duration)`"
 ---
 

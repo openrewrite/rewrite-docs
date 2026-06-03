@@ -1,4 +1,5 @@
 ---
+title: "Change Gradle managed dependency"
 sidebar_label: "Change Gradle managed dependency"
 ---
 
@@ -30,6 +31,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | newArtifactId | *Optional*. The new artifactId to use. Defaults to the existing artifact id. | `rewrite-testing-frameworks` |
 | `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors). | `29.X` |
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate the Axon Framework BOM coordinates](/recipes/org/axonframework/migration/axon4toaxon5bom.md)
+* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/io/axoniq/framework/migration/axon4toaxoniq5bom.md)
 
 
 ## Usage

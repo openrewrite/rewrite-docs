@@ -1,4 +1,5 @@
 ---
+title: "Add explicit Inject dependencies"
 sidebar_label: "Add explicit Inject dependencies"
 ---
 

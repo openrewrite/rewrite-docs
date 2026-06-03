@@ -1,4 +1,5 @@
 ---
+title: "Find template injection vulnerabilities"
 sidebar_label: "Find template injection vulnerabilities"
 ---
 

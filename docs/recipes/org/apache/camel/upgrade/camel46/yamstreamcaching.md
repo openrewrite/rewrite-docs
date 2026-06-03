@@ -1,4 +1,5 @@
 ---
+title: "Renamed streamCaching to streamCache on the route"
 sidebar_label: "Renamed streamCaching to streamCache on the route"
 ---
 

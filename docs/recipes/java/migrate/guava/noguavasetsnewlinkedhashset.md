@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new LinkedHashSet&lt;&gt;()`"
 sidebar_label: "Prefer `new LinkedHashSet&lt;&gt;()`"
 ---
 

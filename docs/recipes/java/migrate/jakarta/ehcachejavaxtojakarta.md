@@ -1,4 +1,5 @@
 ---
+title: "Migrate Ehcache from javax to jakarta namespace"
 sidebar_label: "Migrate Ehcache from javax to jakarta namespace"
 ---
 

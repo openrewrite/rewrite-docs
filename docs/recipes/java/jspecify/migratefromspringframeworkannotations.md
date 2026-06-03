@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Spring Framework annotations to JSpecify"
 sidebar_label: "Migrate from Spring Framework annotations to JSpecify"
 ---
 

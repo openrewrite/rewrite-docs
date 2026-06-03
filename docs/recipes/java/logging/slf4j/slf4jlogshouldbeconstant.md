@@ -1,4 +1,5 @@
 ---
+title: "SLF4J logging statements should begin with constants"
 sidebar_label: "SLF4J logging statements should begin with constants"
 ---
 

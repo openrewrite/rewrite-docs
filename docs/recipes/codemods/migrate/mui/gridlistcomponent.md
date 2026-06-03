@@ -1,4 +1,5 @@
 ---
+title: "Converts GridList to use Grid component"
 sidebar_label: "Converts GridList to use Grid component"
 ---
 

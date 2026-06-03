@@ -1,4 +1,5 @@
 ---
+title: "Change Gradle dependency artifact"
 sidebar_label: "Change Gradle dependency artifact"
 ---
 

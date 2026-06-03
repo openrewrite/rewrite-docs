@@ -1,4 +1,5 @@
 ---
+title: "Update `lombok.config` for Jackson 3 compatibility"
 sidebar_label: "Update `lombok.config` for Jackson 3 compatibility"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Maven dependency insight"
 sidebar_label: "Maven dependency insight"
 ---
 

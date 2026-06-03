@@ -1,4 +1,5 @@
 ---
+title: "Minimal indentation for `SourceSpecs` text blocks"
 sidebar_label: "Minimal indentation for `SourceSpecs` text blocks"
 ---
 

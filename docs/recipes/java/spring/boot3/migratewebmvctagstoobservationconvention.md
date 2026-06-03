@@ -1,4 +1,5 @@
 ---
+title: "Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`"
 sidebar_label: "Migrate `WebMvcTagsProvider` to `DefaultServerRequestObservationConvention`"
 ---
 
@@ -25,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Migrate to Spring Boot 3.0 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
 
 ## Example
 

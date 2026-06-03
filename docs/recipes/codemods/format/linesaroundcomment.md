@@ -1,4 +1,5 @@
 ---
+title: "Require empty lines around comments"
 sidebar_label: "Require empty lines around comments"
 ---
 

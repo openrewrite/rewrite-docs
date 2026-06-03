@@ -1,4 +1,5 @@
 ---
+title: "`NullRules` Refaster recipes"
 sidebar_label: "`NullRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Inline variable"
 sidebar_label: "Inline variable"
 ---
 

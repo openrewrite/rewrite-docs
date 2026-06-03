@@ -1,4 +1,5 @@
 ---
+title: "Replace StringUtils#defaultIfBlank(String, String) with JDK equivalent"
 sidebar_label: "Replace StringUtils#defaultIfBlank(String, String) with JDK equivalent"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce using the separator argument with `Array#join()`"
 sidebar_label: "Enforce using the separator argument with `Array#join()`"
 ---
 

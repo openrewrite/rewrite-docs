@@ -1,4 +1,5 @@
 ---
+title: "Kotlin test methods should have return type `Unit`"
 sidebar_label: "Kotlin test methods should have return type `Unit`"
 ---
 

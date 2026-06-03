@@ -1,4 +1,5 @@
 ---
+title: "Change GitHub Action"
 sidebar_label: "Change GitHub Action"
 ---
 

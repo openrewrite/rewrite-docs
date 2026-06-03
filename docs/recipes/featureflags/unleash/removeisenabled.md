@@ -1,4 +1,5 @@
 ---
+title: "Remove Unleash's `isEnabled` for feature key"
 sidebar_label: "Remove Unleash's `isEnabled` for feature key"
 ---
 

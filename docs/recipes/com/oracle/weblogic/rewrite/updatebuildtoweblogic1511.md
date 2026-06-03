@@ -1,4 +1,5 @@
 ---
+title: "Update the WebLogic version to 15.1.1"
 sidebar_label: "Update the WebLogic version to 15.1.1"
 ---
 

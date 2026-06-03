@@ -1,4 +1,5 @@
 ---
+title: "Remove elements from a method declaration `throws` clause"
 sidebar_label: "Remove elements from a method declaration `throws` clause"
 ---
 

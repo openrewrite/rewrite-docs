@@ -1,4 +1,5 @@
 ---
+title: "Replace `FileUtils.fileExists(String)` with JDK provided API"
 sidebar_label: "Replace `FileUtils.fileExists(String)` with JDK provided API"
 ---
 

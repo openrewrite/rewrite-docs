@@ -1,4 +1,5 @@
 ---
+title: "Find methods that only use one DTO data element"
 sidebar_label: "Find methods that only use one DTO data element"
 ---
 

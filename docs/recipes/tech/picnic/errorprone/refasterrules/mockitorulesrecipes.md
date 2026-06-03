@@ -1,4 +1,5 @@
 ---
+title: "`MockitoRules` Refaster recipes"
 sidebar_label: "`MockitoRules` Refaster recipes"
 ---
 

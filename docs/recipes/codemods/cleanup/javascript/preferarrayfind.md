@@ -1,4 +1,5 @@
 ---
+title: "Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`"
 sidebar_label: "Prefer `.find()` and `.findLast()` over the first or last element from `.filter()`"
 ---
 

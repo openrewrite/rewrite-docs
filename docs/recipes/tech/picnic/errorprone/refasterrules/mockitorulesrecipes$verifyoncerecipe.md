@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MockitoRules.VerifyOnce`"
 sidebar_label: "Refaster template `MockitoRules.VerifyOnce`"
 ---
 

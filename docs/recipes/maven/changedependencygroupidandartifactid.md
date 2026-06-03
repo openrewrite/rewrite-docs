@@ -1,4 +1,5 @@
 ---
+title: "Change Maven dependency"
 sidebar_label: "Change Maven dependency"
 ---
 
@@ -43,7 +44,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
 * [Renamed dependencies](/recipes/org/apache/camel/upgrade/camel46/renameddependencies.md)
 * [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
-* [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
 
 ## Example
 

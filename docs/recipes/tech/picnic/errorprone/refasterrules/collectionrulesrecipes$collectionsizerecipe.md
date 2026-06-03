@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.CollectionSize`"
 sidebar_label: "Refaster template `CollectionRules.CollectionSize`"
 ---
 

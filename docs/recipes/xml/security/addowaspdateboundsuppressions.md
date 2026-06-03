@@ -1,4 +1,5 @@
 ---
+title: "Add date bounds to OWASP suppressions"
 sidebar_label: "Add date bounds to OWASP suppressions"
 ---
 

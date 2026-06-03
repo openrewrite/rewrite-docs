@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DoubleStreamRules.DoubleStreamTakeWhile`"
 sidebar_label: "Refaster template `DoubleStreamRules.DoubleStreamTakeWhile`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace DTO method parameters with data elements"
 sidebar_label: "Replace DTO method parameters with data elements"
 ---
 

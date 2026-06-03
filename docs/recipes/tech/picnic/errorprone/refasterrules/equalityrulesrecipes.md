@@ -1,4 +1,5 @@
 ---
+title: "`EqualityRules` Refaster recipes"
 sidebar_label: "`EqualityRules` Refaster recipes"
 ---
 

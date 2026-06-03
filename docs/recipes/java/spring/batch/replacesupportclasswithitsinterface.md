@@ -1,4 +1,5 @@
 ---
+title: "Transform classes that extend a given Class to implement the given Interface instead"
 sidebar_label: "Transform classes that extend a given Class to implement the given Interface instead"
 ---
 

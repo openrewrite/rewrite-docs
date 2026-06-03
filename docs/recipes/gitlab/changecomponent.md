@@ -1,4 +1,5 @@
 ---
+title: "Change GitLab Component"
 sidebar_label: "Change GitLab Component"
 ---
 

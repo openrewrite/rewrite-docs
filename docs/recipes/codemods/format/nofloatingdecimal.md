@@ -1,4 +1,5 @@
 ---
+title: "Disallow leading or trailing decimal points in numeric literals"
 sidebar_label: "Disallow leading or trailing decimal points in numeric literals"
 ---
 

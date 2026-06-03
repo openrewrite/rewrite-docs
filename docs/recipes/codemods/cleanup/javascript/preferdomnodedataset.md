@@ -1,4 +1,5 @@
 ---
+title: "Prefer using `.dataset` on DOM elements over calling attribute methods"
 sidebar_label: "Prefer using `.dataset` on DOM elements over calling attribute methods"
 ---
 

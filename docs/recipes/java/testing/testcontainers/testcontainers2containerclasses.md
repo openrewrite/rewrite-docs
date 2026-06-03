@@ -1,4 +1,5 @@
 ---
+title: "Testcontainers 2 container classes"
 sidebar_label: "Testcontainers 2 container classes"
 ---
 

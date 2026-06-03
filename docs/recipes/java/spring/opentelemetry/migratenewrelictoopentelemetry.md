@@ -1,4 +1,5 @@
 ---
+title: "Migrate New Relic Agent to OpenTelemetry"
 sidebar_label: "Migrate New Relic Agent to OpenTelemetry"
 ---
 

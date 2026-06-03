@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJIterableRules.AssertThatIterableHasOneElementEqualTo`"
 sidebar_label: "Refaster template `AssertJIterableRules.AssertThatIterableHasOneElementEqualTo`"
 ---
 

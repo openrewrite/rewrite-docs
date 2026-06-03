@@ -1,4 +1,5 @@
 ---
+title: "Language composition report"
 sidebar_label: "Language composition report"
 ---
 

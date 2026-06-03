@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Set.of(..)` in Java 9 or higher"
 sidebar_label: "Prefer `Set.of(..)` in Java 9 or higher"
 ---
 

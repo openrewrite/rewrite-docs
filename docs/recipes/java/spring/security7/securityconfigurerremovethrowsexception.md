@@ -1,4 +1,5 @@
 ---
+title: "Remove throws exception in `SecurityConfigurer` methods `init` and `configure`"
 sidebar_label: "Remove throws exception in `SecurityConfigurer` methods `init` and `configure`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find implementing classes"
 sidebar_label: "Find implementing classes"
 ---
 

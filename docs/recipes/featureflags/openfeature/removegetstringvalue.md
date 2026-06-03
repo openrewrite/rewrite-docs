@@ -1,4 +1,5 @@
 ---
+title: "Remove OpenFeature's `getStringValue` for feature key"
 sidebar_label: "Remove OpenFeature's `getStringValue` for feature key"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate JAX-RS Response to Spring MVC ResponseEntity"
 sidebar_label: "Migrate JAX-RS Response to Spring MVC ResponseEntity"
 ---
 

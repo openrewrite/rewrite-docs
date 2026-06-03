@@ -1,4 +1,5 @@
 ---
+title: "Apply `var` to generic method invocations"
 sidebar_label: "Apply `var` to generic method invocations"
 ---
 

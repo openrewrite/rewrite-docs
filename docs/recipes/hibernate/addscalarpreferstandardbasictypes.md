@@ -1,4 +1,5 @@
 ---
+title: "AddScalarPreferStandardBasicTypesForHibernate5"
 sidebar_label: "AddScalarPreferStandardBasicTypesForHibernate5"
 ---
 

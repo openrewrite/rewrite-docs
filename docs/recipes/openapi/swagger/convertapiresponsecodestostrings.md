@@ -1,4 +1,5 @@
 ---
+title: "Convert API response codes to strings"
 sidebar_label: "Convert API response codes to strings"
 ---
 

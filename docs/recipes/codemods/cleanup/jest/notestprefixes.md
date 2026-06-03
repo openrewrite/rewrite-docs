@@ -1,4 +1,5 @@
 ---
+title: "Require using .only and .skip over f and x"
 sidebar_label: "Require using .only and .skip over f and x"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove unnecessary parentheses on Kotlin types"
 sidebar_label: "Remove unnecessary parentheses on Kotlin types"
 ---
 

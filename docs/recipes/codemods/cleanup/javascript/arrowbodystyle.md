@@ -1,4 +1,5 @@
 ---
+title: "Require braces around arrow function bodies"
 sidebar_label: "Require braces around arrow function bodies"
 ---
 

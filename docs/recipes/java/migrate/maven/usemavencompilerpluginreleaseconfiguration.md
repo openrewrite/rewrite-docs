@@ -1,4 +1,5 @@
 ---
+title: "Use Maven compiler plugin release configuration"
 sidebar_label: "Use Maven compiler plugin release configuration"
 ---
 

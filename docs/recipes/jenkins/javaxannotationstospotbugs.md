@@ -1,4 +1,5 @@
 ---
+title: "Migrate `javax.annotations` to SpotBugs annotations"
 sidebar_label: "Migrate `javax.annotations` to SpotBugs annotations"
 ---
 

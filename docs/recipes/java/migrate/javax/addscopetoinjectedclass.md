@@ -1,4 +1,5 @@
 ---
+title: "Add scope annotation to injected classes"
 sidebar_label: "Add scope annotation to injected classes"
 ---
 

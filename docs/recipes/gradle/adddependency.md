@@ -1,4 +1,5 @@
 ---
+title: "Add Gradle dependency"
 sidebar_label: "Add Gradle dependency"
 ---
 

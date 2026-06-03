@@ -1,4 +1,5 @@
 ---
+title: "Convert Spring HealthIndicator to Quarkus HealthCheck"
 sidebar_label: "Convert Spring HealthIndicator to Quarkus HealthCheck"
 ---
 

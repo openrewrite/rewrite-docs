@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `IntStreamRules.IntStreamAnyMatch`"
 sidebar_label: "Refaster template `IntStreamRules.IntStreamAnyMatch`"
 ---
 

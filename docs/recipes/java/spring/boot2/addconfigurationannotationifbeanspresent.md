@@ -1,4 +1,5 @@
 ---
+title: "Add missing `@Configuration` annotation"
 sidebar_label: "Add missing `@Configuration` annotation"
 ---
 

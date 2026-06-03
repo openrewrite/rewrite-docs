@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.equals(String, String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.equals(String, String)` with JDK provided API"
 ---
 

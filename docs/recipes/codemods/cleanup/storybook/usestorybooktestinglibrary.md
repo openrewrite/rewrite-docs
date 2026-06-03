@@ -1,4 +1,5 @@
 ---
+title: "Do not use testing-library directly on stories"
 sidebar_label: "Do not use testing-library directly on stories"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove unused local variables"
 sidebar_label: "Remove unused local variables"
 ---
 

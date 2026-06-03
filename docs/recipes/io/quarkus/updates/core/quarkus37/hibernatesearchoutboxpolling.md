@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus37.HibernateSearchOutboxPolling"
 sidebar_label: "io.quarkus.updates.core.quarkus37.HibernateSearchOutboxPolling"
 ---
 

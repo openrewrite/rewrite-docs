@@ -1,4 +1,5 @@
 ---
+title: "Update RestLet to 2.6.0"
 sidebar_label: "Update RestLet to 2.6.0"
 ---
 

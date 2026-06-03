@@ -1,4 +1,5 @@
 ---
+title: "Normalize Docker Hub image names"
 sidebar_label: "Normalize Docker Hub image names"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJObjectRules.AssertThatIsNull`"
 sidebar_label: "Refaster template `AssertJObjectRules.AssertThatIsNull`"
 ---
 

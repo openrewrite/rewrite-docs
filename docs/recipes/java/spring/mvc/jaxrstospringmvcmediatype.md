@@ -1,4 +1,5 @@
 ---
+title: "Migrate JAX-RS MediaType to Spring MVC MediaType"
 sidebar_label: "Migrate JAX-RS MediaType to Spring MVC MediaType"
 ---
 

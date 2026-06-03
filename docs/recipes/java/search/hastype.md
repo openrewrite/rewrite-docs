@@ -1,4 +1,5 @@
 ---
+title: "Find files that have at least one use of a type"
 sidebar_label: "Find files that have at least one use of a type"
 ---
 

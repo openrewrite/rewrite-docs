@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DoubleStreamRules.ConcatOneDoubleStream`"
 sidebar_label: "Refaster template `DoubleStreamRules.ConcatOneDoubleStream`"
 ---
 

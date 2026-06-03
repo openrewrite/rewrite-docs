@@ -1,4 +1,5 @@
 ---
+title: "Change SLF4J log level"
 sidebar_label: "Change SLF4J log level"
 ---
 

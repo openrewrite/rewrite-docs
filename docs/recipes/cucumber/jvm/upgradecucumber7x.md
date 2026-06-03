@@ -1,4 +1,5 @@
 ---
+title: "Upgrade to Cucumber-JVM 7.x"
 sidebar_label: "Upgrade to Cucumber-JVM 7.x"
 ---
 

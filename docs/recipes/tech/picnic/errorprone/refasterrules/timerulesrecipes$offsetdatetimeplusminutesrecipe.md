@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.OffsetDateTimePlusMinutes`"
 sidebar_label: "Refaster template `TimeRules.OffsetDateTimePlusMinutes`"
 ---
 

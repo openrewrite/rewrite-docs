@@ -1,4 +1,5 @@
 ---
+title: "Generate `InlineMethodCalls` recipes for deprecated delegating methods"
 sidebar_label: "Generate `InlineMethodCalls` recipes for deprecated delegating methods"
 ---
 

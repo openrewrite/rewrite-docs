@@ -1,4 +1,5 @@
 ---
+title: "Rename setter methods to fit Lombok"
 sidebar_label: "Rename setter methods to fit Lombok"
 ---
 

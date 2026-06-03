@@ -1,4 +1,5 @@
 ---
+title: "Convert `export =` to `export default`"
 sidebar_label: "Convert `export =` to `export default`"
 ---
 

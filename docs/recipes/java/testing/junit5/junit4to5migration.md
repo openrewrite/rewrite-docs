@@ -1,4 +1,5 @@
 ---
+title: "JUnit Jupiter migration from JUnit 4.x"
 sidebar_label: "JUnit Jupiter migration from JUnit 4.x"
 ---
 

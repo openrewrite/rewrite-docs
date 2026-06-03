@@ -1,4 +1,5 @@
 ---
+title: "Migrate Channel.setReadable(boolean) to Channel.config().setAutoRead(boolean)"
 sidebar_label: "Migrate Channel.setReadable(boolean) to Channel.config().setAutoRead(boolean)"
 ---
 

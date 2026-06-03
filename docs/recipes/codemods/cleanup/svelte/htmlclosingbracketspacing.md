@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow a space before tag's closing brackets"
 sidebar_label: "Require or disallow a space before tag's closing brackets"
 ---
 

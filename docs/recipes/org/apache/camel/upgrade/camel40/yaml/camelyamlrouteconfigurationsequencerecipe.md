@@ -1,4 +1,5 @@
 ---
+title: "Camel Yaml changes regarding route-configuration children"
 sidebar_label: "Camel Yaml changes regarding route-configuration children"
 ---
 

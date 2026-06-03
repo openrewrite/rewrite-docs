@@ -1,4 +1,5 @@
 ---
+title: "Replace `FileUtils.readLines(File)` with `FileUtils.readLines(File, StandardCharsets.UTF_8)`"
 sidebar_label: "Replace `FileUtils.readLines(File)` with `FileUtils.readLines(File, StandardCharsets.UTF_8)`"
 ---
 

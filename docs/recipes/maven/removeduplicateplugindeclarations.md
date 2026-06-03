@@ -1,4 +1,5 @@
 ---
+title: "Remove duplicate plugin declarations"
 sidebar_label: "Remove duplicate plugin declarations"
 ---
 

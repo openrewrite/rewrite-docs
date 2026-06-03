@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJEnumerableRules.EnumerableAssertIsNotEmpty`"
 sidebar_label: "Refaster template `AssertJEnumerableRules.EnumerableAssertIsNotEmpty`"
 ---
 

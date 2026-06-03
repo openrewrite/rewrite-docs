@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `SuggestedFixRules.SuggestedFixToBuilder`"
 sidebar_label: "Refaster template `SuggestedFixRules.SuggestedFixToBuilder`"
 ---
 

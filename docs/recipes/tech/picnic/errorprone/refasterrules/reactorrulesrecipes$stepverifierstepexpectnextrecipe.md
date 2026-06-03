@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.StepVerifierStepExpectNext`"
 sidebar_label: "Refaster template `ReactorRules.StepVerifierStepExpectNext`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove Cobertura Maven plugin"
 sidebar_label: "Remove Cobertura Maven plugin"
 ---
 

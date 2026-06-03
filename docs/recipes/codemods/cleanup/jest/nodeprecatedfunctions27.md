@@ -1,4 +1,5 @@
 ---
+title: "Disallow use of deprecated functions from before version 27"
 sidebar_label: "Disallow use of deprecated functions from before version 27"
 ---
 

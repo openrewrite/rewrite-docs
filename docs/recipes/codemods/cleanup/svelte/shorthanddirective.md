@@ -1,4 +1,5 @@
 ---
+title: "Enforce use of shorthand syntax in directives"
 sidebar_label: "Enforce use of shorthand syntax in directives"
 ---
 

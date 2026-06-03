@@ -1,4 +1,5 @@
 ---
+title: "Enforce closing bracket location in JSX"
 sidebar_label: "Enforce closing bracket location in JSX"
 ---
 

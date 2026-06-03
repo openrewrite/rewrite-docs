@@ -1,4 +1,5 @@
 ---
+title: "Updates `variant` prop for Fab component"
 sidebar_label: "Updates `variant` prop for Fab component"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Validation with Quarkus Hibernate Validator"
 sidebar_label: "Replace Spring Boot Validation with Quarkus Hibernate Validator"
 ---
 

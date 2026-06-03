@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus310.FlywayDerby"
 sidebar_label: "io.quarkus.updates.core.quarkus310.FlywayDerby"
 ---
 

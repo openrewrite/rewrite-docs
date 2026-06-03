@@ -1,4 +1,5 @@
 ---
+title: "Convert v1 AmazonS3URI to v2 S3Uri"
 sidebar_label: "Convert v1 AmazonS3URI to v2 S3Uri"
 ---
 

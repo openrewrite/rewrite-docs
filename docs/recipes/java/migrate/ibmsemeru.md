@@ -1,4 +1,5 @@
 ---
+title: "Migrate to IBM Semeru Runtimes"
 sidebar_label: "Migrate to IBM Semeru Runtimes"
 ---
 

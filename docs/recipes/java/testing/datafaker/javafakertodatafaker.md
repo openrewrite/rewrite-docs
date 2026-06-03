@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Java Faker to Datafaker"
 sidebar_label: "Migrate from Java Faker to Datafaker"
 ---
 

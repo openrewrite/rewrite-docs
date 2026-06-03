@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `JUnitToAssertJRules.AssertThatByteArrayWithFailMessageContainsExactly`"
 sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatByteArrayWithFailMessageContainsExactly`"
 ---
 

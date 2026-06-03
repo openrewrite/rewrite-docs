@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Map.copyOf(..)` in Java 10 or higher"
 sidebar_label: "Prefer `Map.copyOf(..)` in Java 10 or higher"
 ---
 

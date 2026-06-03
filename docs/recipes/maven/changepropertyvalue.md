@@ -1,4 +1,5 @@
 ---
+title: "Change Maven project property value"
 sidebar_label: "Change Maven project property value"
 ---
 

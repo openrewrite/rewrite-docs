@@ -1,4 +1,5 @@
 ---
+title: "Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`"
 sidebar_label: "Migrate `@OutputCaptureRule` to `@ExtendWith(OutputCaptureExtension.class)`"
 ---
 

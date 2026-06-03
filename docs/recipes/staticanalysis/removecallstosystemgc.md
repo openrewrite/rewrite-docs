@@ -1,4 +1,5 @@
 ---
+title: "Remove garbage collection invocations"
 sidebar_label: "Remove garbage collection invocations"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find missing type information on Java LSTs"
 sidebar_label: "Find missing type information on Java LSTs"
 ---
 

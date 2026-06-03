@@ -1,4 +1,5 @@
 ---
+title: "Static members should be accessed via the class name"
 sidebar_label: "Static members should be accessed via the class name"
 ---
 

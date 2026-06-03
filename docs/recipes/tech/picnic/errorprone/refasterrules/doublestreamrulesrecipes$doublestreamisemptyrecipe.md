@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DoubleStreamRules.DoubleStreamIsEmpty`"
 sidebar_label: "Refaster template `DoubleStreamRules.DoubleStreamIsEmpty`"
 ---
 

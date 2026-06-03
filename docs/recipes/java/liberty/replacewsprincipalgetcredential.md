@@ -1,4 +1,5 @@
 ---
+title: "Replace `WSPrincipal.getCredential()` with `WSSubject` lookup"
 sidebar_label: "Replace `WSPrincipal.getCredential()` with `WSSubject` lookup"
 ---
 

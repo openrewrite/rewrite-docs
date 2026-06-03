@@ -1,4 +1,5 @@
 ---
+title: "Update the API manifest"
 sidebar_label: "Update the API manifest"
 ---
 

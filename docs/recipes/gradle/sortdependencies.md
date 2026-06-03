@@ -1,4 +1,5 @@
 ---
+title: "Sort Gradle dependencies"
 sidebar_label: "Sort Gradle dependencies"
 ---
 

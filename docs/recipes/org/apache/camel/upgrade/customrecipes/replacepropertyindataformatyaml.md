@@ -1,4 +1,5 @@
 ---
+title: "Renames property of the component"
 sidebar_label: "Renames property of the component"
 ---
 

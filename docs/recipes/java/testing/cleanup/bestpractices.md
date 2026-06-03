@@ -1,4 +1,5 @@
 ---
+title: "Testing best practices"
 sidebar_label: "Testing best practices"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "DataNucleus 5.0 property migrations"
 sidebar_label: "DataNucleus 5.0 property migrations"
 ---
 

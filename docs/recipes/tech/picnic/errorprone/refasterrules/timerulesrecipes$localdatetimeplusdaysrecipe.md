@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.LocalDateTimePlusDays`"
 sidebar_label: "Refaster template `TimeRules.LocalDateTimePlusDays`"
 ---
 

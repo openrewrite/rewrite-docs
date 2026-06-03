@@ -1,4 +1,5 @@
 ---
+title: "Separate application YAML by profile"
 sidebar_label: "Separate application YAML by profile"
 ---
 

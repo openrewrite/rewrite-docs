@@ -1,4 +1,5 @@
 ---
+title: "Statically import JUnit Jupiter assertions"
 sidebar_label: "Statically import JUnit Jupiter assertions"
 ---
 

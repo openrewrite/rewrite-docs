@@ -1,4 +1,5 @@
 ---
+title: "Use `StringUtils` utility methods"
 sidebar_label: "Use `StringUtils` utility methods"
 ---
 

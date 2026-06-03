@@ -1,4 +1,5 @@
 ---
+title: "Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile"
 sidebar_label: "Remove invocations of deprecated invocations from Deflater, Inflater, ZipFile"
 ---
 

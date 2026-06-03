@@ -1,4 +1,5 @@
 ---
+title: "`JUnitRules` Refaster recipes"
 sidebar_label: "`JUnitRules` Refaster recipes"
 ---
 

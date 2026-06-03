@@ -1,4 +1,5 @@
 ---
+title: "Require `let` or `const` instead of `var`"
 sidebar_label: "Require `let` or `const` instead of `var`"
 ---
 

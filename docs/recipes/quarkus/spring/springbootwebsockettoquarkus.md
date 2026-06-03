@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot WebSocket with Quarkus WebSockets"
 sidebar_label: "Replace Spring Boot WebSocket with Quarkus WebSockets"
 ---
 

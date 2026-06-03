@@ -1,4 +1,5 @@
 ---
+title: "Use `Collection` interfaces"
 sidebar_label: "Use `Collection` interfaces"
 ---
 

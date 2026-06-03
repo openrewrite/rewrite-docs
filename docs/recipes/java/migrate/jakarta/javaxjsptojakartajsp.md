@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.jsp` packages to `jakarta.jsp`"
 sidebar_label: "Migrate deprecated `javax.jsp` packages to `jakarta.jsp`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings"
 sidebar_label: "JUnit 4 MockitoJUnitRunner.Silent to JUnit Jupiter MockitoExtension with LENIENT settings"
 ---
 

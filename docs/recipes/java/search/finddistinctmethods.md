@@ -1,4 +1,5 @@
 ---
+title: "Find distinct methods in use"
 sidebar_label: "Find distinct methods in use"
 ---
 

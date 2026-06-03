@@ -1,4 +1,5 @@
 ---
+title: "Update SCM with Git origin"
 sidebar_label: "Update SCM with Git origin"
 ---
 

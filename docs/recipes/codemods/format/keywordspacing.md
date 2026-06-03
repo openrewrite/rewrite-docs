@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing before and after keywords"
 sidebar_label: "Enforce consistent spacing before and after keywords"
 ---
 

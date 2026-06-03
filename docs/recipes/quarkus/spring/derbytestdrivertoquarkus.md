@@ -1,4 +1,5 @@
 ---
+title: "Replace Derby test driver with Quarkus JDBC Derby (test scope)"
 sidebar_label: "Replace Derby test driver with Quarkus JDBC Derby (test scope)"
 ---
 

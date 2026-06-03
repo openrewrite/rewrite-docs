@@ -1,4 +1,5 @@
 ---
+title: "Replaces deprecated `ClientHttpResponse#getRawStatusCode()`"
 sidebar_label: "Replaces deprecated `ClientHttpResponse#getRawStatusCode()`"
 ---
 
@@ -25,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 
 ## Example
 

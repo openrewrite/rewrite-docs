@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Integration with Camel Quarkus"
 sidebar_label: "Replace Spring Boot Integration with Camel Quarkus"
 ---
 

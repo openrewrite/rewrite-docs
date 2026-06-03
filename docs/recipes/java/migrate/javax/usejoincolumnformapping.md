@@ -1,4 +1,5 @@
 ---
+title: "`@JoinColumn` annotations must be used with relationship mappings"
 sidebar_label: "`@JoinColumn` annotations must be used with relationship mappings"
 ---
 

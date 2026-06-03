@@ -1,4 +1,5 @@
 ---
+title: "Replace `isEqualTo(1)` with `isOne()`"
 sidebar_label: "Replace `isEqualTo(1)` with `isOne()`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Preserve `MockResponse` return type for `Dispatcher.dispatch()` overrides"
 sidebar_label: "Preserve `MockResponse` return type for `Dispatcher.dispatch()` overrides"
 ---
 

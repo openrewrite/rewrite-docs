@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJThrowingCallableRules.AbstractThrowableAssertCauseIsSameAs`"
 sidebar_label: "Refaster template `AssertJThrowingCallableRules.AbstractThrowableAssertCauseIsSameAs`"
 ---
 

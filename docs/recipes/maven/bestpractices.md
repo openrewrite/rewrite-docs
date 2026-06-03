@@ -1,4 +1,5 @@
 ---
+title: "Apache Maven best practices"
 sidebar_label: "Apache Maven best practices"
 ---
 

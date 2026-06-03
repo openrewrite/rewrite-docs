@@ -1,4 +1,5 @@
 ---
+title: "Enforce the location of first attribute"
 sidebar_label: "Enforce the location of first attribute"
 ---
 

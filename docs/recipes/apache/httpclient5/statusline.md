@@ -1,4 +1,5 @@
 ---
+title: "Migrate to ApacheHttpClient 5.x deprecated methods from 4.x"
 sidebar_label: "Migrate to ApacheHttpClient 5.x deprecated methods from 4.x"
 ---
 

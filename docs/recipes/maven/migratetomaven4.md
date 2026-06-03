@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Maven 4"
 sidebar_label: "Migrate to Maven 4"
 ---
 

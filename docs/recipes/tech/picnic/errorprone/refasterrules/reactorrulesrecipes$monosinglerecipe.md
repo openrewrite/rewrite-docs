@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoSingle`"
 sidebar_label: "Refaster template `ReactorRules.MonoSingle`"
 ---
 

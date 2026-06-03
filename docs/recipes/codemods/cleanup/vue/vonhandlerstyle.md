@@ -1,4 +1,5 @@
 ---
+title: "Enforce writing style for handlers in v-on directives"
 sidebar_label: "Enforce writing style for handlers in v-on directives"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Upgrade build to Java 17"
 sidebar_label: "Upgrade build to Java 17"
 ---
 

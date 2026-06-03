@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus30.JavaxConfigurationFiles"
 sidebar_label: "io.quarkus.updates.core.quarkus30.JavaxConfigurationFiles"
 ---
 

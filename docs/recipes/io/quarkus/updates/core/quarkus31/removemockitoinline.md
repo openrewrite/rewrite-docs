@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus31.RemoveMockitoInline"
 sidebar_label: "io.quarkus.updates.core.quarkus31.RemoveMockitoInline"
 ---
 

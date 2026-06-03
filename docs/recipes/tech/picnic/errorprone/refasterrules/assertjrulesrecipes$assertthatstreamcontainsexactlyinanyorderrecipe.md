@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.AssertThatStreamContainsExactlyInAnyOrder`"
 sidebar_label: "Refaster template `AssertJRules.AssertThatStreamContainsExactlyInAnyOrder`"
 ---
 

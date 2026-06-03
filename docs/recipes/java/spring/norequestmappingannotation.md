@@ -1,4 +1,5 @@
 ---
+title: "Remove `@RequestMapping` annotations"
 sidebar_label: "Remove `@RequestMapping` annotations"
 ---
 

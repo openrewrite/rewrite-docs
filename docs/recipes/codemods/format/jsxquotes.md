@@ -1,4 +1,5 @@
 ---
+title: "Enforce the consistent use of either double or single quotes in JSX attributes"
 sidebar_label: "Enforce the consistent use of either double or single quotes in JSX attributes"
 ---
 

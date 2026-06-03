@@ -1,4 +1,5 @@
 ---
+title: "Migrate Fest 2.x to AssertJ"
 sidebar_label: "Migrate Fest 2.x to AssertJ"
 ---
 

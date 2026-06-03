@@ -1,4 +1,5 @@
 ---
+title: "XML style Auto-detection debug"
 sidebar_label: "XML style Auto-detection debug"
 ---
 

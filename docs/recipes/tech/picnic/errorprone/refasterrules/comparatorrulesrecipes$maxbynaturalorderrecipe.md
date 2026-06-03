@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.MaxByNaturalOrder`"
 sidebar_label: "Refaster template `ComparatorRules.MaxByNaturalOrder`"
 ---
 

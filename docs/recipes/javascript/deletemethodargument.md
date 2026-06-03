@@ -1,4 +1,5 @@
 ---
+title: "Delete method argument"
 sidebar_label: "Delete method argument"
 ---
 

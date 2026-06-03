@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot OAuth2 Client with Quarkus OIDC Client"
 sidebar_label: "Replace Spring Boot OAuth2 Client with Quarkus OIDC Client"
 ---
 

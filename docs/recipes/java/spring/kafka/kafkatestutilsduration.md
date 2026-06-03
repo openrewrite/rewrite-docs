@@ -1,4 +1,5 @@
 ---
+title: "Use `Duration` in `KafkaTestUtils`"
 sidebar_label: "Use `Duration` in `KafkaTestUtils`"
 ---
 

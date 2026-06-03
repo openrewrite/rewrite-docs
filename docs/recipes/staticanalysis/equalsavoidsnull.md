@@ -1,4 +1,5 @@
 ---
+title: "Equals avoids null"
 sidebar_label: "Equals avoids null"
 ---
 

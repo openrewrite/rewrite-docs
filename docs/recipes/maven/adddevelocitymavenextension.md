@@ -1,4 +1,5 @@
 ---
+title: "Add the Develocity Maven extension"
 sidebar_label: "Add the Develocity Maven extension"
 ---
 

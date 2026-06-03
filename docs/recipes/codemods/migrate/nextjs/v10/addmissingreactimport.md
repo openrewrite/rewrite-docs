@@ -1,4 +1,5 @@
 ---
+title: "Add React imports"
 sidebar_label: "Add React imports"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prepends emotion cache"
 sidebar_label: "Prepends emotion cache"
 ---
 

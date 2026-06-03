@@ -1,4 +1,5 @@
 ---
+title: "Adjust the package properties"
 sidebar_label: "Adjust the package properties"
 ---
 

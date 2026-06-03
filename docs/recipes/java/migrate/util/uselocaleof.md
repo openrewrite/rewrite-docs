@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Locale.of(..)` over `new Locale(..)`"
 sidebar_label: "Prefer `Locale.of(..)` over `new Locale(..)`"
 ---
 

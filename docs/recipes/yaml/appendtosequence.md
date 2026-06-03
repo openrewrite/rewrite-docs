@@ -1,4 +1,5 @@
 ---
+title: "Append to sequence"
 sidebar_label: "Append to sequence"
 ---
 

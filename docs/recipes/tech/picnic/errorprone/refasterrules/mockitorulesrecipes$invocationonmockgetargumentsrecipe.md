@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MockitoRules.InvocationOnMockGetArguments`"
 sidebar_label: "Refaster template `MockitoRules.InvocationOnMockGetArguments`"
 ---
 

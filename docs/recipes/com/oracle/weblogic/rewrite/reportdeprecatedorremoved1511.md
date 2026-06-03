@@ -1,4 +1,5 @@
 ---
+title: "Report types deprecated or removed in WebLogic version 15.1.1"
 sidebar_label: "Report types deprecated or removed in WebLogic version 15.1.1"
 ---
 

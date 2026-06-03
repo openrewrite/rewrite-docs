@@ -1,4 +1,5 @@
 ---
+title: "Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
 sidebar_label: "Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages"
 ---
 
@@ -35,6 +36,60 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.BinarySecurity`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.BinarySecurity`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.DOMX509Data`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.DOMX509Data`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.DOMX509IssuerSerial`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.DOMX509IssuerSerial`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.PKIPathSecurity`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.PKIPathSecurity`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.Reference`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.Reference`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.SecurityTokenReference`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.SecurityTokenReference`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.TokenElementCallback`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.TokenElementCallback`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.X509Security`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.token.X509Security`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.DerivedKeyToken`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.dom.message.token.DerivedKeyToken`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.KerberosSecurity`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.dom.message.token.KerberosSecurity`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.SecurityContextToken`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.dom.message.token.SecurityContextToken`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.SignatureConfirmation`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.dom.message.token.SignatureConfirmation`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.Timestamp`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.dom.message.token.Timestamp`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.UsernameToken`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.dom.message.token.UsernameToken`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.KerberosClientExceptionAction`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.kerberos.KerberosClientExceptionAction`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.KerberosContext`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.kerberos.KerberosContext`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.KerberosServiceContext`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.kerberos.KerberosServiceContext`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.ws.security.message.token.KerberosServiceExceptionAction`
+  * newFullyQualifiedTypeName: `org.apache.wss4j.common.kerberos.KerberosServiceExceptionAction`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.ws.security`
   * newPackageName: `org.apache.wss4j.common.ext`
@@ -58,6 +113,60 @@ description: |
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.BinarySecurity
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.BinarySecurity
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.DOMX509Data
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.DOMX509Data
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.DOMX509IssuerSerial
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.DOMX509IssuerSerial
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.PKIPathSecurity
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.PKIPathSecurity
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.Reference
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.Reference
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.SecurityTokenReference
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.SecurityTokenReference
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.TokenElementCallback
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.TokenElementCallback
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.X509Security
+      newFullyQualifiedTypeName: org.apache.wss4j.common.token.X509Security
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.DerivedKeyToken
+      newFullyQualifiedTypeName: org.apache.wss4j.dom.message.token.DerivedKeyToken
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.KerberosSecurity
+      newFullyQualifiedTypeName: org.apache.wss4j.dom.message.token.KerberosSecurity
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.SecurityContextToken
+      newFullyQualifiedTypeName: org.apache.wss4j.dom.message.token.SecurityContextToken
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.SignatureConfirmation
+      newFullyQualifiedTypeName: org.apache.wss4j.dom.message.token.SignatureConfirmation
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.Timestamp
+      newFullyQualifiedTypeName: org.apache.wss4j.dom.message.token.Timestamp
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.UsernameToken
+      newFullyQualifiedTypeName: org.apache.wss4j.dom.message.token.UsernameToken
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.KerberosClientExceptionAction
+      newFullyQualifiedTypeName: org.apache.wss4j.common.kerberos.KerberosClientExceptionAction
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.KerberosContext
+      newFullyQualifiedTypeName: org.apache.wss4j.common.kerberos.KerberosContext
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.KerberosServiceContext
+      newFullyQualifiedTypeName: org.apache.wss4j.common.kerberos.KerberosServiceContext
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.ws.security.message.token.KerberosServiceExceptionAction
+      newFullyQualifiedTypeName: org.apache.wss4j.common.kerberos.KerberosServiceExceptionAction
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.ws.security
       newPackageName: org.apache.wss4j.common.ext

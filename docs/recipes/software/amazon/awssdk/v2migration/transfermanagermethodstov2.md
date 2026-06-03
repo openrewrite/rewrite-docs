@@ -1,4 +1,5 @@
 ---
+title: "Transfer Manager Methods to V2"
 sidebar_label: "Transfer Manager Methods to V2"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce dot notation whenever possible in `&lt;template&gt;`"
 sidebar_label: "Enforce dot notation whenever possible in `&lt;template&gt;`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `getFirst()` instead of `stream().findFirst().orElseThrow()`"
 sidebar_label: "Use `getFirst()` instead of `stream().findFirst().orElseThrow()`"
 ---
 

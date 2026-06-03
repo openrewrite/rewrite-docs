@@ -1,4 +1,5 @@
 ---
+title: "`PlexusFileUtils` Refaster recipes"
 sidebar_label: "`PlexusFileUtils` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add XML declaration to Jelly files"
 sidebar_label: "Add XML declaration to Jelly files"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`AssertJOptionalRules` Refaster recipes"
 sidebar_label: "`AssertJOptionalRules` Refaster recipes"
 ---
 

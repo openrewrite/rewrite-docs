@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Kafka 3.0"
 sidebar_label: "Migrate to Spring Kafka 3.0"
 ---
 
@@ -113,7 +114,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 
 ## Examples
 ##### Example 1

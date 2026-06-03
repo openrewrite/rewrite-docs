@@ -1,4 +1,5 @@
 ---
+title: "Maven parent insight"
 sidebar_label: "Maven parent insight"
 ---
 

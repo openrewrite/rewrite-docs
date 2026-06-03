@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Adopt AssertJ Long Assertions](./assertjlongrulesrecipes.md)
 * [Adopt AssertJ Short Assertions](./assertjshortrulesrecipes.md)
 * [AssertJ best practices](./assertj-best-practices.md)
+* [Migrate `AssertionsForClassTypes` and `AssertionsForInterfaceTypes` to `Assertions`](./migrateassertionsforclassandinterfacetypes.md)
 * [Migrate Fest 2.x to AssertJ](./festtoassertj.md)
 * [Migrate JUnit asserts to AssertJ](./junittoassertj.md)
 * [Shorten AssertJ assertions](./simplifyassertjassertions.md)
@@ -83,5 +84,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Simplify AssertJ chained assertions](./simplifychainedassertjassertion.md)
 * [Simplify `assertThat(collection.stream().map(...))` to `assertThat(collection).extracting(...)`](./simplifystreammaptoextracting.md)
 * [Simplify redundant AssertJ assertion chains](./simplifyredundantassertjchains.md)
+* [Use `Assertions.assertThatObject` for ambiguous `AssertionsForClassTypes.assertThat` calls](./migrateassertionsforclasstypes.md)
 
 

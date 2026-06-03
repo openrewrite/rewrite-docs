@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0"
 sidebar_label: "Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0"
 ---
 

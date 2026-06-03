@@ -1,4 +1,5 @@
 ---
+title: "Prefer JavaScript modules (ESM) over CommonJS"
 sidebar_label: "Prefer JavaScript modules (ESM) over CommonJS"
 ---
 

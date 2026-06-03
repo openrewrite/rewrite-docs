@@ -1,4 +1,5 @@
 ---
+title: "Disallow arrow functions where they could be confused with comparisons"
 sidebar_label: "Disallow arrow functions where they could be confused with comparisons"
 ---
 

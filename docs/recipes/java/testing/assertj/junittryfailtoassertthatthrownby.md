@@ -1,4 +1,5 @@
 ---
+title: "Convert try-catch-fail blocks to AssertJ's assertThatThrownBy"
 sidebar_label: "Convert try-catch-fail blocks to AssertJ's assertThatThrownBy"
 ---
 

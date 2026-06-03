@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`"
 sidebar_label: "Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`"
 ---
 

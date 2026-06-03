@@ -1,4 +1,5 @@
 ---
+title: "Remove Maven wrapper"
 sidebar_label: "Remove Maven wrapper"
 ---
 

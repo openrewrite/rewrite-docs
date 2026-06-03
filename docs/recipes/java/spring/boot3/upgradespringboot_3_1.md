@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Boot 3.1"
 sidebar_label: "Migrate to Spring Boot 3.1"
 ---
 
@@ -40,7 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate to Spring Boot 3.0](../../../java/spring/boot3/upgradespringboot_3_0)
+* [Migrate to Spring Boot 3.0 (Community Edition)](../../../java/spring/boot3/upgradespringboot_3_0-community-edition)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`

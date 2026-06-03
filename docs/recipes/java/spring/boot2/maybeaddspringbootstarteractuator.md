@@ -1,4 +1,5 @@
 ---
+title: "Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`"
 sidebar_label: "Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`"
 ---
 

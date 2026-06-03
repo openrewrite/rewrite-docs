@@ -1,4 +1,5 @@
 ---
+title: "Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents"
 sidebar_label: "Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalents"
 ---
 

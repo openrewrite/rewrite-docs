@@ -1,4 +1,5 @@
 ---
+title: "Migrate database drivers to Quarkus JDBC extensions"
 sidebar_label: "Migrate database drivers to Quarkus JDBC extensions"
 ---
 

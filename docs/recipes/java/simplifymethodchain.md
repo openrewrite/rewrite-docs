@@ -1,4 +1,5 @@
 ---
+title: "Simplify a call chain"
 sidebar_label: "Simplify a call chain"
 ---
 

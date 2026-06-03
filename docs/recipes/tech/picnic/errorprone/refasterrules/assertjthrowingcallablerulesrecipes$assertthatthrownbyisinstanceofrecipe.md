@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIsInstanceOf`"
 sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIsInstanceOf`"
 ---
 

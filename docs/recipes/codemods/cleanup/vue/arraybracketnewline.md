@@ -1,4 +1,5 @@
 ---
+title: "Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`"
 sidebar_label: "Enforce linebreaks after opening and before closing array brackets in `&lt;template&gt;`"
 ---
 

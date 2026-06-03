@@ -1,4 +1,5 @@
 ---
+title: "Sync Maven Compiler plugin annotation processor version with the one provided by the BOM"
 sidebar_label: "Sync Maven Compiler plugin annotation processor version with the one provided by the BOM"
 ---
 

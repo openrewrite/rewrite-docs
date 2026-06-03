@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJBigDecimalRules.AbstractBigDecimalAssertIsNotEqualByComparingTo`"
 sidebar_label: "Refaster template `AssertJBigDecimalRules.AbstractBigDecimalAssertIsNotEqualByComparingTo`"
 ---
 

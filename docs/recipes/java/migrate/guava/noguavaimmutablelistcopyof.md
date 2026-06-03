@@ -1,4 +1,5 @@
 ---
+title: "Prefer `List.copyOf(..)` in Java 10 or higher"
 sidebar_label: "Prefer `List.copyOf(..)` in Java 10 or higher"
 ---
 

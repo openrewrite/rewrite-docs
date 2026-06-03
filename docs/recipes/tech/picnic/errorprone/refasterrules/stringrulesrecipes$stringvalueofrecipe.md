@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringValueOf`"
 sidebar_label: "Refaster template `StringRules.StringValueOf`"
 ---
 

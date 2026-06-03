@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.persistence` packages to `jakarta.persistence`"
 sidebar_label: "Migrate deprecated `javax.persistence` packages to `jakarta.persistence`"
 ---
 

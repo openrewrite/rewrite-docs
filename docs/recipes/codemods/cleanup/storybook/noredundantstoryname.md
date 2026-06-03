@@ -1,4 +1,5 @@
 ---
+title: "A story should not have a redundant name property"
 sidebar_label: "A story should not have a redundant name property"
 ---
 

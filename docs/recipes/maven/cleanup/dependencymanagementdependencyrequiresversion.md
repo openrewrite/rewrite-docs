@@ -1,4 +1,5 @@
 ---
+title: "Dependency management dependencies should have a version"
 sidebar_label: "Dependency management dependencies should have a version"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent linebreaks in curly braces in JSX attributes and expressions"
 sidebar_label: "Enforce consistent linebreaks in curly braces in JSX attributes and expressions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Short#compare`"
 sidebar_label: "Prefer `Short#compare`"
 ---
 

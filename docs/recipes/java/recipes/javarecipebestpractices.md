@@ -1,4 +1,5 @@
 ---
+title: "Java Recipe best practices"
 sidebar_label: "Java Recipe best practices"
 ---
 

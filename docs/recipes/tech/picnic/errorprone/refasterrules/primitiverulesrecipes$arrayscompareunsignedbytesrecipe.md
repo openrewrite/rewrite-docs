@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.ArraysCompareUnsignedBytes`"
 sidebar_label: "Refaster template `PrimitiveRules.ArraysCompareUnsignedBytes`"
 ---
 

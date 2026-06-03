@@ -1,4 +1,5 @@
 ---
+title: "Find Maven projects"
 sidebar_label: "Find Maven projects"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Node.js dependency insight"
 sidebar_label: "Node.js dependency insight"
 ---
 

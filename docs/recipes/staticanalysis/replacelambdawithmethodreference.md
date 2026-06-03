@@ -1,4 +1,5 @@
 ---
+title: "Use method references in lambda"
 sidebar_label: "Use method references in lambda"
 ---
 

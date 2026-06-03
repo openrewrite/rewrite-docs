@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Spring Data JPA to 3.4.6"
 sidebar_label: "Upgrade Spring Data JPA to 3.4.6"
 ---
 

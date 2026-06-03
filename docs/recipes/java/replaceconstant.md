@@ -1,4 +1,5 @@
 ---
+title: "Replace constant with literal value"
 sidebar_label: "Replace constant with literal value"
 ---
 

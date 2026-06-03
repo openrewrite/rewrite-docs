@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringValueOfMethodReference`"
 sidebar_label: "Refaster template `StringRules.StringValueOfMethodReference`"
 ---
 

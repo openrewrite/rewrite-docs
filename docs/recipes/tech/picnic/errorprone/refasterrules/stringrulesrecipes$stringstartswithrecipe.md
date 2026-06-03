@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringStartsWith`"
 sidebar_label: "Refaster template `StringRules.StringStartsWith`"
 ---
 

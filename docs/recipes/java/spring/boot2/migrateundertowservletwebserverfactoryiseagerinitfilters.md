@@ -1,4 +1,5 @@
 ---
+title: "Use `isEagerFilterInit()`"
 sidebar_label: "Use `isEagerFilterInit()`"
 ---
 

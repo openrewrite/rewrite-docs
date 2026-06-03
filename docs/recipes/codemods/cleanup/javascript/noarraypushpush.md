@@ -1,4 +1,5 @@
 ---
+title: "Enforce combining multiple `Array#push()` into one call"
 sidebar_label: "Enforce combining multiple `Array#push()` into one call"
 ---
 

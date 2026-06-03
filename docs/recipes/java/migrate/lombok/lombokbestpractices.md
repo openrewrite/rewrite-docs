@@ -1,4 +1,5 @@
 ---
+title: "Lombok Best Practices"
 sidebar_label: "Lombok Best Practices"
 ---
 

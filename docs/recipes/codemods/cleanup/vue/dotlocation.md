@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent newlines before and after dots in `&lt;template&gt;`"
 sidebar_label: "Enforce consistent newlines before and after dots in `&lt;template&gt;`"
 ---
 

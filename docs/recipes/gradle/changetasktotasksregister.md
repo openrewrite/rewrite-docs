@@ -1,4 +1,5 @@
 ---
+title: "Change Gradle task eager creation to lazy registration"
 sidebar_label: "Change Gradle task eager creation to lazy registration"
 ---
 

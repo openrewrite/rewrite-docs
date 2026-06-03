@@ -1,4 +1,5 @@
 ---
+title: "Add comment to a YAML property"
 sidebar_label: "Add comment to a YAML property"
 ---
 

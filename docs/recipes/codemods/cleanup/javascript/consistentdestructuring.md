@@ -1,4 +1,5 @@
 ---
+title: "Use destructured variables over properties"
 sidebar_label: "Use destructured variables over properties"
 ---
 

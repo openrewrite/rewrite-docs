@@ -1,4 +1,5 @@
 ---
+title: "`TimeRules` Refaster recipes"
 sidebar_label: "`TimeRules` Refaster recipes"
 ---
 

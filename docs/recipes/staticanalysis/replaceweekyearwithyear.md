@@ -1,4 +1,5 @@
 ---
+title: "Week Year (YYYY) should not be used for date formatting"
 sidebar_label: "Week Year (YYYY) should not be used for date formatting"
 ---
 

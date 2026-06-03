@@ -1,4 +1,5 @@
 ---
+title: "`ImmutableSetMultimapRules` Refaster recipes"
 sidebar_label: "`ImmutableSetMultimapRules` Refaster recipes"
 ---
 

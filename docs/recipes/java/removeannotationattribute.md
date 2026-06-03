@@ -1,4 +1,5 @@
 ---
+title: "Remove annotation attribute"
 sidebar_label: "Remove annotation attribute"
 ---
 
@@ -46,46 +47,6 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
-`SingleAnnotation#withTwoAttributesOnSingleLine`
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|annotationType|`TestAnnotation`|
-|attributeName|`deletedAttribute`|
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-@TestAnnotation(attributeA = "attributeValue", deletedAttribute = "deletedAttributeValue")
-class SomeClass {}
-```
-
-###### After
-```java
-@TestAnnotation(attributeA = "attributeValue")
-class SomeClass {}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -1,1 +1,1 @@
--@TestAnnotation(attributeA = "attributeValue", deletedAttribute = "deletedAttributeValue")
-+@TestAnnotation(attributeA = "attributeValue")
-class SomeClass {}
-```
-</TabItem>
-</Tabs>
-
----
-
-##### Example 2
 `RemoveAnnotationAttributeTest#removeNamedAttribute`
 
 ###### Parameters
@@ -119,6 +80,46 @@ class A {}
 -@Deprecated(since = "1.0", forRemoval = true)
 +@Deprecated(forRemoval = true)
 class A {}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SingleAnnotation#withTwoAttributesOnSingleLine`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|annotationType|`TestAnnotation`|
+|attributeName|`deletedAttribute`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+@TestAnnotation(attributeA = "attributeValue", deletedAttribute = "deletedAttributeValue")
+class SomeClass {}
+```
+
+###### After
+```java
+@TestAnnotation(attributeA = "attributeValue")
+class SomeClass {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-@TestAnnotation(attributeA = "attributeValue", deletedAttribute = "deletedAttributeValue")
++@TestAnnotation(attributeA = "attributeValue")
+class SomeClass {}
 ```
 </TabItem>
 </Tabs>

@@ -1,4 +1,5 @@
 ---
+title: "`AssertJFloatRules` Refaster recipes"
 sidebar_label: "`AssertJFloatRules` Refaster recipes"
 ---
 

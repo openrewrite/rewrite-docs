@@ -1,4 +1,5 @@
 ---
+title: "Use modernized `java.util.logging` APIs"
 sidebar_label: "Use modernized `java.util.logging` APIs"
 ---
 

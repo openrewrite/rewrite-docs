@@ -1,4 +1,5 @@
 ---
+title: "Use Mutiny `multi.toHotStream()`"
 sidebar_label: "Use Mutiny `multi.toHotStream()`"
 ---
 

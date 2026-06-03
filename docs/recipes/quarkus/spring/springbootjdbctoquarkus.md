@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot JDBC with Quarkus Agroal"
 sidebar_label: "Replace Spring Boot JDBC with Quarkus Agroal"
 ---
 

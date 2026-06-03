@@ -1,4 +1,5 @@
 ---
+title: "Replace JBoss Logging Level arguments with the corresponding eponymous level method calls"
 sidebar_label: "Replace JBoss Logging Level arguments with the corresponding eponymous level method calls"
 ---
 

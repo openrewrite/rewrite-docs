@@ -1,4 +1,5 @@
 ---
+title: "Remove `DefaultBatchConfigurer`"
 sidebar_label: "Remove `DefaultBatchConfigurer`"
 ---
 

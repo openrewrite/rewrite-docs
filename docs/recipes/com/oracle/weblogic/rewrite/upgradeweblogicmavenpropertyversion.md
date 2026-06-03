@@ -1,4 +1,5 @@
 ---
+title: "Upgrade `weblogic.version` Maven property"
 sidebar_label: "Upgrade `weblogic.version` Maven property"
 ---
 

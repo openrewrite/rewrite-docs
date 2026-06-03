@@ -1,4 +1,5 @@
 ---
+title: "Replace legacy attribute index syntax"
 sidebar_label: "Replace legacy attribute index syntax"
 ---
 

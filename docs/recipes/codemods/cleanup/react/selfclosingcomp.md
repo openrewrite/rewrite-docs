@@ -1,4 +1,5 @@
 ---
+title: "Disallow extra closing tags for components without children"
 sidebar_label: "Disallow extra closing tags for components without children"
 ---
 

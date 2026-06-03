@@ -1,4 +1,5 @@
 ---
+title: "Use Arquillian JUnit 5 Extension"
 sidebar_label: "Use Arquillian JUnit 5 Extension"
 ---
 

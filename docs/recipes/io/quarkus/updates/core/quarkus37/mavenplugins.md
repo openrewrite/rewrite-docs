@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus37.MavenPlugins"
 sidebar_label: "io.quarkus.updates.core.quarkus37.MavenPlugins"
 ---
 

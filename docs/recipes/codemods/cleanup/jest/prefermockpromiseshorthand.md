@@ -1,4 +1,5 @@
 ---
+title: "Prefer mock resolved/rejected shorthands for promises"
 sidebar_label: "Prefer mock resolved/rejected shorthands for promises"
 ---
 

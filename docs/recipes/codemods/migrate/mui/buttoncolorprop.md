@@ -1,4 +1,5 @@
 ---
+title: "Renames `color` prop to `colorOverride`"
 sidebar_label: "Renames `color` prop to `colorOverride`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Update to Micronaut Validation 4.x"
 sidebar_label: "Update to Micronaut Validation 4.x"
 ---
 

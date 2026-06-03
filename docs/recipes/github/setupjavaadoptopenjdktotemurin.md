@@ -1,4 +1,5 @@
 ---
+title: "Use `actions/setup-java` `temurin` distribution"
 sidebar_label: "Use `actions/setup-java` `temurin` distribution"
 ---
 

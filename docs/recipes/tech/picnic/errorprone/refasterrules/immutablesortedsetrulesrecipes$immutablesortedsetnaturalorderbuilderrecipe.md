@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSortedSetRules.ImmutableSortedSetNaturalOrderBuilder`"
 sidebar_label: "Refaster template `ImmutableSortedSetRules.ImmutableSortedSetNaturalOrderBuilder`"
 ---
 

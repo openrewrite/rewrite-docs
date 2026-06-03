@@ -1,4 +1,5 @@
 ---
+title: "Find forbidden action usage"
 sidebar_label: "Find forbidden action usage"
 ---
 

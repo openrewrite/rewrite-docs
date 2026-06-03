@@ -1,4 +1,5 @@
 ---
+title: "`Provider` implementation beans to Micronaut `@Factory`"
 sidebar_label: "`Provider` implementation beans to Micronaut `@Factory`"
 ---
 

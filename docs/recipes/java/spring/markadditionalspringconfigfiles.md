@@ -1,4 +1,5 @@
 ---
+title: "Mark additional files as Spring configuration"
 sidebar_label: "Mark additional files as Spring configuration"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`"
 sidebar_label: "Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`"
 ---
 

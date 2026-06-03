@@ -1,4 +1,5 @@
 ---
+title: "Add `@MockitoSettings(strictness = Strictness.WARN)` to `@ExtendWith(MockitoExtension.class)` classes"
 sidebar_label: "Add `@MockitoSettings(strictness = Strictness.WARN)` to `@ExtendWith(MockitoExtension.class)` classes"
 ---
 

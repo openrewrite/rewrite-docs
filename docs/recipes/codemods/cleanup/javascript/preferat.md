@@ -1,4 +1,5 @@
 ---
+title: "Prefer `.at()` method for index access and `String#charAt()`"
 sidebar_label: "Prefer `.at()` method for index access and `String#charAt()`"
 ---
 

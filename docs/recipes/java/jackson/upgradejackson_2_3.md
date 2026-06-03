@@ -1,4 +1,5 @@
 ---
+title: "Migrates from Jackson 2.x to Jackson 3.x"
 sidebar_label: "Migrates from Jackson 2.x to Jackson 3.x"
 ---
 

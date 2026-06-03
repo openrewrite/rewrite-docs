@@ -1,4 +1,5 @@
 ---
+title: "Find manual credentials instead of trusted publishing"
 sidebar_label: "Find manual credentials instead of trusted publishing"
 ---
 

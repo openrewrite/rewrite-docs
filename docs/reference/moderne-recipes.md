@@ -3693,6 +3693,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.scala.recipes.migrate.ReviewTraitVarInit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/reviewtraitvarinit)
   * **Review trait var initialization for Scala 3**
   * Finds traits that have initialized `var` fields. In Scala 3, trait initialization semantics changed and these may need review.
+* [org.openrewrite.scala.recipes.migrate.UpgradeSbtVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/upgradesbtversion)
+  * **Upgrade sbt version**
+  * Update the `sbt.version` property in `project/build.properties` to the specified version. Only modifies files at `**/project/build.properties`.
 * [org.openrewrite.scala.recipes.migrate.UseQuestionMarkWildcard](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/usequestionmarkwildcard)
   * **Use `?` instead of `_` for wildcard types (Scala 3)**
   * Finds usage of `_` as a wildcard type in type parameters (e.g., `List[_]`). In Scala 3, the wildcard type syntax changed from `_` to `?`.
@@ -3843,375 +3846,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-angular
 
-* [org.openrewrite.angular.UpgradeToAngular10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular10)
-  * **Upgrade to Angular 10**
-  * Migrates Angular 9.x applications to Angular 10. This includes removing the deprecated `es5BrowserSupport` option from `angular.json`, renaming deprecated `validator`/`asyncValidator` to their plural forms, renaming `browserslist` to `.browserslistrc`, migrating to solution-style `tsconfig.json`, and upgrading Angular, TypeScript, and related dependency versions.
-* [org.openrewrite.angular.UpgradeToAngular11](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular11)
-  * **Upgrade to Angular 11**
-  * Migrates Angular 10.x applications to Angular 11. This includes replacing `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`, removing the deprecated `extractCss` build option from `angular.json`, flagging deprecated string-based `loadChildren` and `preserveQueryParams` usage, and upgrading Angular, TypeScript, and related dependency versions.
-* [org.openrewrite.angular.UpgradeToAngular12](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular12)
-  * **Upgrade to Angular 12**
-  * Migrates Angular 11.x applications to Angular 12. This includes adding `defaultConfiguration: &quot;production&quot;` to build targets in `angular.json`, replacing `node-sass` with `sass` (Dart Sass), flagging deprecated `async` test helper and View Engine APIs, and upgrading Angular, TypeScript, and related dependency versions.
-* [org.openrewrite.angular.UpgradeToAngular13](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular13)
-  * **Upgrade to Angular 13**
-  * Migrates Angular 12.x applications to Angular 13. This includes updating `tsconfig.json` target to `es2017`, removing IE11 polyfills, removing `defaultProject` from `angular.json`, adding TestBed module teardown, simplifying `ComponentFactoryResolver` usage, and upgrading Angular, TypeScript, and related dependency versions.
-* [org.openrewrite.angular.UpgradeToAngular14](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular14)
-  * **Upgrade to Angular 14**
-  * Migrates Angular 13.x applications to Angular 14. This includes replacing form classes with their `Untyped*` equivalents for backward compatibility with typed forms, updating deprecated `initialNavigation` router option values, removing `aotSummaries` from TestBed calls, and flagging `pathMatch` properties that may need type narrowing.
-* [org.openrewrite.angular.UpgradeToAngular15](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular15)
-  * **Upgrade to Angular 15**
-  * Migrates Angular 14.x applications to Angular 15. This includes removing the `relativeLinkResolution` option from `RouterModule.forRoot()`, removing the `enableIvy` compiler option from `tsconfig.json`, flagging the deprecated `DATE_PIPE_DEFAULT_TIMEZONE` token and `providedIn: NgModule`/`'any'` usage, and upgrading Angular, TypeScript, and related dependency versions.
-* [org.openrewrite.angular.UpgradeToAngular16](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular16)
-  * **Upgrade to Angular 16**
-  * Migrates Angular 15.x applications to Angular 16. This includes removing `entryComponents` and `moduleId` from decorators, replacing `RouterLinkWithHref` with `RouterLink`, moving the `XhrFactory` import to `@angular/common`, and flagging removed APIs like `ReflectiveInjector`, `renderModuleFactory`, and `BrowserTransferStateModule`.
-* [org.openrewrite.angular.UpgradeToAngular17](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular17)
-  * **Upgrade to Angular 17**
-  * Migrates Angular 16.x applications to Angular 17. This includes updating Angular package versions, replacing legacy deep `zone.js` imports, flagging the removed `withNoDomReuse` and `setupTestingRouter` APIs, and upgrading TypeScript and `zone.js` dependencies.
-* [org.openrewrite.angular.UpgradeToAngular18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular18)
-  * **Upgrade to Angular 18**
-  * Migrates Angular 17.x applications to Angular 18. This includes replacing the deprecated `async` test helper with `waitForAsync`, migrating `HttpClientModule` to `provideHttpClient()`, moving Transfer State APIs to `@angular/core`, and flagging removed platform APIs.
-* [org.openrewrite.angular.UpgradeToAngular19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular19)
-  * **Upgrade to Angular 19**
-  * Migrates Angular 18.x applications to Angular 19. This includes updating Angular package versions, adjusting the standalone default, renaming `ExperimentalPendingTasks` to `PendingTasks`, moving the `ApplicationConfig` import to `@angular/core`, and updating `zone.js`.
-* [org.openrewrite.angular.UpgradeToAngular20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular20)
-  * **Upgrade to Angular 20**
-  * Migrates Angular 19.x applications to Angular 20. This includes running the Angular 19 migration first, then updating Angular package versions, renaming experimental APIs promoted to stable, and upgrading TypeScript to 5.8.x.
-* [org.openrewrite.angular.UpgradeToAngular21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular21)
-  * **Upgrade to Angular 21**
-  * Migrates Angular 20.x applications to Angular 21. This includes running the Angular 20 migration first, flagging Karma test runner usage for Vitest migration, deprecated NgClass, zone.js-dependent test helpers, and upgrading TypeScript to 5.9.x.
-* [org.openrewrite.angular.UpgradeToAngular8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular8)
-  * **Upgrade to Angular 8**
-  * Migrates Angular 7.x applications to Angular 8. This includes adding the now-required `static: false` to `@ViewChild` and `@ContentChild` decorators, moving the `DOCUMENT` import from `@angular/platform-browser` to `@angular/common`, removing `rxjs-compat` and flagging any remaining RxJS 5-style imports, flagging removed `@angular/http` imports, converting deprecated string-based `loadChildren` to dynamic imports, and upgrading Angular, TypeScript, and related dependency versions.
-* [org.openrewrite.angular.UpgradeToAngular9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular9)
-  * **Upgrade to Angular 9**
-  * Migrates Angular 8.x applications to Angular 9. This includes removing the now-default `static: false` from view query decorators, replacing `TestBed.get()` with `TestBed.inject()`, adding generic type parameters to `ModuleWithProviders`, enabling AOT compilation in `angular.json`, updating `tsconfig.json` module settings for Ivy, flagging removed View Engine APIs (`Renderer`, `RenderComponentType`, `RootRenderer`), and upgrading Angular, TypeScript, and related dependency versions.
-* [org.openrewrite.angular.migration.add-default-configuration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-default-configuration)
-  * **Add `defaultConfiguration` to build targets**
-  * Adds `&quot;defaultConfiguration&quot;: &quot;production&quot;` to build architect targets in `angular.json`. Angular 12 changed `ng build` to produce production bundles by default.
-* [org.openrewrite.angular.migration.add-localize-polyfill](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-localize-polyfill)
-  * **Add `@angular/localize/init` polyfill import**
-  * Adds `import '@angular/localize/init'` to `polyfills.ts`. Angular 9 introduced the `$localize` runtime API for i18n. Projects using internationalization must import this polyfill or the application will fail at runtime with `$localize is not defined`. The `@angular/localize` package must also be added as a dependency.
-* [org.openrewrite.angular.migration.add-module-with-providers-generic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-module-with-providers-generic)
-  * **Add generic type to `ModuleWithProviders`**
-  * Adds the required generic type parameter to bare `ModuleWithProviders` return types. Angular 10 requires `ModuleWithProviders&lt;T&gt;` where `T` is the NgModule type. The module type is inferred from the `ngModule` property in the return statement.
-* [org.openrewrite.angular.migration.add-static-false-to-view-queries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-static-false-to-view-queries)
-  * **Add `static: false` to view queries**
-  * Adds `static: false` to `@ViewChild` and `@ContentChild` decorators that don't have the `static` property. Angular 8 requires an explicit `static` flag for view query decorators. Using `static: false` preserves the Angular 7 default behavior (queries resolved after change detection).
-* [org.openrewrite.angular.migration.add-testbed-teardown](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-testbed-teardown)
-  * **Add TestBed module teardown**
-  * Adds `\{ teardown: \{ destroyAfterEach: true \} \}` as the third argument to `TestBed.initTestEnvironment()` calls. Angular 13 changed the default teardown behavior, and this ensures explicit opt-in for module teardown after each test.
-* [org.openrewrite.angular.migration.enable-aot-build](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/enable-aot-build)
-  * **Enable AOT compilation in `angular.json`**
-  * Adds `&quot;aot&quot;: true` to build options in `angular.json`. Angular 9 made AOT compilation the default, and projects upgrading from Angular 8 should enable it explicitly.
-* [org.openrewrite.angular.migration.explicit-standalone-flag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/explicit-standalone-flag)
-  * **Make standalone flag explicit**
-  * Adds `standalone: false` to non-standalone Angular components, directives, and pipes, and removes redundant `standalone: true` since it became the default in Angular 19.
-* [org.openrewrite.angular.migration.migrate-constructor-to-inject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-constructor-to-inject)
-  * **Migrate constructor injection to `inject()`**
-  * Converts constructor parameter properties in Angular classes to field declarations using the `inject()` function. For example, `constructor(private svc: MyService) \{\}` becomes `private svc = inject(MyService);`.
-* [org.openrewrite.angular.migration.migrate-input-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-input-to-signal)
-  * **Migrate `@Input()` to signal-based `input()`**
-  * Converts `@Input()` decorated properties in Angular classes to signal-based `input()` declarations. For example, `@Input() name: string` becomes `name = input&lt;string&gt;()`, and `@Input(\{ required: true \}) name!: string` becomes `name = input.required&lt;string&gt;()`.
-* [org.openrewrite.angular.migration.migrate-output-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-output-to-signal)
-  * **Migrate `@Output()` to signal-based `output()`**
-  * Converts `@Output()` decorated properties using `EventEmitter` in Angular classes to signal-based `output()` declarations. For example, `@Output() clicked = new EventEmitter&lt;void&gt;()` becomes `clicked = output&lt;void&gt;()`.
-* [org.openrewrite.angular.migration.migrate-query-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-query-to-signal)
-  * **Migrate query decorators to signal-based functions**
-  * Converts `@ViewChild()`, `@ViewChildren()`, `@ContentChild()`, and `@ContentChildren()` decorated properties to signal-based query functions. For example, `@ViewChild('ref') el: ElementRef` becomes `el = viewChild&lt;ElementRef&gt;('ref')`.
-* [org.openrewrite.angular.migration.migrate-to-solution-style-tsconfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-to-solution-style-tsconfig)
-  * **Migrate to solution-style tsconfig**
-  * Migrates a project to use a solution-style `tsconfig.json`. The original `tsconfig.json` content is moved to `tsconfig.base.json` (with project-specific fields removed), and `tsconfig.json` is replaced with a solution-style config that references the project's TypeScript configurations. Other tsconfig files that extend `./tsconfig.json` are updated to extend `./tsconfig.base.json`.
-* [org.openrewrite.angular.migration.move-document-import](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/move-document-import)
-  * **Move `DOCUMENT` import to `@angular/core`**
-  * Moves the `DOCUMENT` import from older Angular modules to `@angular/core`.
-* [org.openrewrite.angular.migration.remove-aot-summaries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-aot-summaries)
-  * **Remove `aotSummaries` from TestBed**
-  * Removes the `aotSummaries` property from `TestBed.configureTestingModule()` and `TestBed.initTestEnvironment()` calls. The `aotSummaries` parameter was removed in Angular 14 as it was only needed for the View Engine compiler.
-* [org.openrewrite.angular.migration.remove-browser-module-with-server-transition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-browser-module-with-server-transition)
-  * **Remove `BrowserModule.withServerTransition`**
-  * Replaces `BrowserModule.withServerTransition(\{ appId: '...' \})` with `BrowserModule` and adds `\{ provide: APP_ID, useValue: '...' \}` to the NgModule providers. The `withServerTransition` method was removed in Angular 19.
-* [org.openrewrite.angular.migration.remove-component-factory-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-component-factory-resolver)
-  * **Remove `ComponentFactoryResolver`**
-  * Replaces `resolver.resolveComponentFactory(Component)` with just `Component` and removes the `ComponentFactoryResolver` import. Since Ivy, `ViewContainerRef.createComponent` accepts the component class directly. `ComponentFactoryResolver` was deprecated in Angular 13 and removed in Angular 16.
-* [org.openrewrite.angular.migration.remove-default-project](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-default-project)
-  * **Remove `defaultProject` from `angular.json`**
-  * Removes the deprecated `defaultProject` property from `angular.json`. The `defaultProject` option was deprecated in Angular 13 and the CLI infers the default project from the workspace.
-* [org.openrewrite.angular.migration.remove-empty-ng-on-init](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-empty-ng-on-init)
-  * **Remove empty `ngOnInit` lifecycle hooks**
-  * Removes empty `ngOnInit` lifecycle hook methods and OnInit interface from Angular components.
-* [org.openrewrite.angular.migration.remove-enable-ivy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-enable-ivy)
-  * **Remove `enableIvy` compiler option**
-  * Removes the `enableIvy` option from `angularCompilerOptions` in `tsconfig.json`. Ivy is the only rendering engine since Angular 12, and the option was removed in Angular 15.
-* [org.openrewrite.angular.migration.remove-entry-components](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-entry-components)
-  * **Remove `entryComponents`**
-  * Removes the `entryComponents` property from `@NgModule` and `@Component` decorators, and removes the `ANALYZE_FOR_ENTRY_COMPONENTS` import. These were removed in Angular 16 as they served no purpose since Ivy.
-* [org.openrewrite.angular.migration.remove-es5-browser-support](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-es5-browser-support)
-  * **Remove `es5BrowserSupport` from `angular.json`**
-  * Removes the deprecated `es5BrowserSupport` option from `angular.json`. `es5BrowserSupport` was deprecated in Angular 7.3 and removed in Angular 10. Differential loading is now handled automatically by the Angular CLI based on the project's browserslist configuration.
-* [org.openrewrite.angular.migration.remove-extract-css](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-extract-css)
-  * **Remove `extractCss` from `angular.json`**
-  * Removes the deprecated `extractCss` build option from `angular.json`. In Angular 11, CSS extraction became the default behavior for production builds and the option was deprecated.
-* [org.openrewrite.angular.migration.remove-ie-polyfills](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-ie-polyfills)
-  * **Remove IE11 polyfills**
-  * Removes IE11-specific polyfill imports (`core-js`, `classlist.js`, `web-animations-js`) from `polyfills.ts` and `angular.json`. Angular 13 dropped IE11 support, making these polyfills unnecessary.
-* [org.openrewrite.angular.migration.remove-module-id](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-module-id)
-  * **Remove `moduleId`**
-  * Removes the `moduleId` property from `@Component` and `@Directive` decorators. `moduleId` was deprecated in Angular 16 and removed in Angular 17 as it served no purpose since Ivy.
-* [org.openrewrite.angular.migration.remove-relative-link-resolution](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-relative-link-resolution)
-  * **Remove `relativeLinkResolution`**
-  * Removes the `relativeLinkResolution` option from `RouterModule.forRoot()` calls. This option was deprecated in Angular 14 and removed in Angular 15.
-* [org.openrewrite.angular.migration.remove-standalone-true](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-standalone-true)
-  * **Remove redundant `standalone: true`**
-  * Removes the `standalone: true` property from Angular component, directive, and pipe decorators since standalone is the default in Angular 19+.
-* [org.openrewrite.angular.migration.remove-static-false](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-static-false)
-  * **Remove `static: false` from view queries**
-  * Removes `static: false` from `@ViewChild`, `@ContentChild`, `@ViewChildren`, and `@ContentChildren` decorators. In Angular 9 with Ivy, `static: false` became the default behavior, making the explicit option unnecessary.
-* [org.openrewrite.angular.migration.remove-zone-js-polyfill](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-zone-js-polyfill)
-  * **Remove zone.js polyfill from angular.json**
-  * Removes zone.js entries from the `polyfills` array in `angular.json`. Angular 20 supports zoneless change detection via `provideZonelessChangeDetection()`, making the zone.js polyfill unnecessary.
-* [org.openrewrite.angular.migration.rename-after-render](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-after-render)
-  * **Rename `afterRender` to `afterEveryRender`**
-  * Renames `afterRender` to `afterEveryRender` in imports and usages. The `afterRender` function was renamed to `afterEveryRender` in Angular 20, and Angular provides no migration schematic for this change.
-* [org.openrewrite.angular.migration.rename-check-no-changes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-check-no-changes)
-  * **Rename `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug`**
-  * Renames `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
-* [org.openrewrite.angular.migration.rename-file](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-file)
-  * **Rename file**
-  * Renames files matching a glob pattern to a new file name, preserving the directory.
-* [org.openrewrite.angular.migration.rename-pending-tasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-pending-tasks)
-  * **Rename `ExperimentalPendingTasks` to `PendingTasks`**
-  * Renames `ExperimentalPendingTasks` to `PendingTasks` in imports and usages. `ExperimentalPendingTasks` was renamed in Angular 19.
-* [org.openrewrite.angular.migration.rename-zoneless-provider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-zoneless-provider)
-  * **Rename `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection`**
-  * Renames `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
-* [org.openrewrite.angular.migration.replace-async-with-wait-for-async](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-async-with-wait-for-async)
-  * **Replace `async` with `waitForAsync`**
-  * Replaces the removed `async` test helper from `@angular/core/testing` with `waitForAsync`. The `async` function was deprecated in Angular 11 and removed in Angular 18.
-* [org.openrewrite.angular.migration.replace-deep-zone-js-imports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-deep-zone-js-imports)
-  * **Replace deep `zone.js` imports**
-  * Replaces legacy deep imports from `zone.js` such as `zone.js/dist/zone` or `zone.js/bundles/zone-testing.js` with the standard `zone.js` or `zone.js/testing` imports, in both TypeScript files and `angular.json` polyfills. Deep imports are no longer allowed in Angular 17.
-* [org.openrewrite.angular.migration.replace-http-client-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-http-client-module)
-  * **Replace `HttpClientModule` with `provideHttpClient()`**
-  * Replaces deprecated `HttpClientModule`, `HttpClientJsonpModule`, `HttpClientXsrfModule`, and `HttpClientTestingModule` with their functional equivalents: `provideHttpClient()` with feature functions and `provideHttpClientTesting()`.
-* [org.openrewrite.angular.migration.replace-initial-navigation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-initial-navigation)
-  * **Replace `initialNavigation` option values**
-  * Replaces deprecated `initialNavigation` router option values: `'legacy_enabled'` and `true` become `'enabledBlocking'`, `'legacy_disabled'` and `false` become `'disabled'`, and `'enabled'` becomes `'enabledNonBlocking'`. The legacy values were removed in Angular 11; `'enabled'` was renamed in Angular 14.
-* [org.openrewrite.angular.migration.replace-inject-flags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-inject-flags)
-  * **Replace `InjectFlags` with options object**
-  * Replaces deprecated `InjectFlags` enum usage in `inject()` calls with the corresponding options object. For example, `inject(MyService, InjectFlags.Optional)` becomes `inject(MyService, \{ optional: true \})`.
-* [org.openrewrite.angular.migration.replace-load-children-string](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-load-children-string)
-  * **Replace string-based `loadChildren` with dynamic `import()`**
-  * Converts the deprecated string-based `loadChildren: 'path#Module'` syntax to dynamic imports: `loadChildren: () =&gt; import('path').then(m =&gt; m.Module)`.
-* [org.openrewrite.angular.migration.replace-node-sass-with-sass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
-  * **Replace `node-sass` with `sass`**
-  * Replaces the deprecated `node-sass` package with `sass` (Dart Sass). Angular 12 requires Dart Sass; `node-sass` is no longer supported.
-* [org.openrewrite.angular.migration.replace-router-link-with-href](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-router-link-with-href)
-  * **Replace `RouterLinkWithHref` with `RouterLink`**
-  * Replaces `RouterLinkWithHref` with `RouterLink` in imports and usages. `RouterLinkWithHref` was merged into `RouterLink` in Angular 16.
-* [org.openrewrite.angular.migration.replace-testbed-get-with-inject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-testbed-get-with-inject)
-  * **Replace `TestBed.get()` with `TestBed.inject()`**
-  * Replaces deprecated `TestBed.get()` calls with `TestBed.inject()`. `TestBed.get()` was deprecated in Angular 9 and removed in Angular 13.
-* [org.openrewrite.angular.migration.replace-untyped-forms](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-untyped-forms)
-  * **Replace form classes with untyped variants**
-  * Renames `FormControl`, `FormGroup`, `FormArray`, and `FormBuilder` to their `Untyped*` equivalents in imports and usages. Angular 14 introduced strictly typed forms, requiring existing untyped usages to migrate to the `Untyped*` aliases. Classes used in parameterized type positions (e.g. `FormGroup&lt;T&gt;`) are left unchanged because the user already opted into typed forms.
-* [org.openrewrite.angular.migration.replace-validator-with-validators](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-validator-with-validators)
-  * **Replace `validator`/`asyncValidator` with plural forms**
-  * Renames the deprecated singular `validator` and `asyncValidator` property names to `validators` and `asyncValidators` (plural). Angular 10 deprecated the singular forms in favor of `AbstractControlOptions`.
-* [org.openrewrite.angular.migration.replace-view-encapsulation-native](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-view-encapsulation-native)
-  * **Replace `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`**
-  * Replaces `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`. `ViewEncapsulation.Native` was deprecated in Angular 6 and removed in Angular 11.
-* [org.openrewrite.angular.migration.update-component-template-url](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-component-template-url)
-  * **Update component `templateUrl`**
-  * Updates the `templateUrl` property value in Angular `@Component` decorators. Useful for refactoring template file paths or standardizing path conventions.
-* [org.openrewrite.angular.migration.update-tsconfig-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-tsconfig-module)
-  * **Update `tsconfig.json` module settings for Ivy**
-  * Updates `compilerOptions.module` to `esnext` and `compilerOptions.moduleResolution` to `node` in `tsconfig.json`. Angular 9's Ivy compiler requires ES module format. Already-current values like `es2020`, `node16`, `nodenext`, or `bundler` are left unchanged.
-* [org.openrewrite.angular.migration.update-tsconfig-target](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-tsconfig-target)
-  * **Update `tsconfig.json` target to `es2017`**
-  * Updates the `compilerOptions.target` in `tsconfig.json` from `es5`, `es2015`, or `es2016` to `es2017`. Angular 13 dropped IE11 support and requires at least ES2017.
 * [org.openrewrite.angular.search.FindAngularComponent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/findangularcomponent)
   * **Find Angular component**
   * Locates usages of Angular components across the codebase including template elements and other references. If `componentName` is `null`, finds all Angular components.
-* [org.openrewrite.angular.search.find-analyze-for-entry-components-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-analyze-for-entry-components-usage)
-  * **Find deprecated `ANALYZE_FOR_ENTRY_COMPONENTS` usage**
-  * Finds usages of the deprecated `ANALYZE_FOR_ENTRY_COMPONENTS` injection token from `@angular/core`. `ANALYZE_FOR_ENTRY_COMPONENTS` was deprecated in Angular 9 and removed in Angular 13.
-* [org.openrewrite.angular.search.find-angular-decorator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-angular-decorator)
-  * **Find Angular decorators**
-  * Finds all Angular decorators like @Component, @Directive, @Injectable, etc.
-* [org.openrewrite.angular.search.find-angular-http-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-angular-http-usage)
-  * **Find removed `@angular/http` usage**
-  * Finds imports from the `@angular/http` module, which was deprecated in Angular 5 and removed in Angular 8. Use `@angular/common/http` (`HttpClient`, `HttpClientModule`) instead.
-* [org.openrewrite.angular.search.find-animation-driver-matches-element](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-animation-driver-matches-element)
-  * **Find `AnimationDriver.matchesElement` usage**
-  * Finds imports of `AnimationDriver` from `@angular/animations/browser`, which had its `matchesElement` method removed in Angular 18.
-* [org.openrewrite.angular.search.find-async-test-helper-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-async-test-helper-usage)
-  * **Find deprecated `async` test helper usage**
-  * Finds usages of the deprecated `async` test helper from `@angular/core/testing`. The `async` function was deprecated in Angular 11 and should be replaced with `waitForAsync`.
-* [org.openrewrite.angular.search.find-bare-module-with-providers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-bare-module-with-providers)
-  * **Find `ModuleWithProviders` without generic type**
-  * Finds imports of `ModuleWithProviders` from `@angular/core`. Starting in Angular 10, `ModuleWithProviders` requires a generic type parameter (e.g. `ModuleWithProviders&lt;MyModule&gt;`). Ensure all usages specify the module type.
-* [org.openrewrite.angular.search.find-browser-transfer-state-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-browser-transfer-state-module-usage)
-  * **Find `BrowserTransferStateModule` usage**
-  * Finds usages of `BrowserTransferStateModule` from `@angular/platform-browser` which was removed in Angular 16. `TransferState` can be used directly without this module.
-* [org.openrewrite.angular.search.find-common-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-common-module-usage)
-  * **Find `CommonModule` usage**
-  * Finds imports of `CommonModule` from `@angular/common`. Since Angular 19, standalone components are the default and `CommonModule` is no longer needed in component `imports` arrays. Built-in directives and pipes are available automatically.
-* [org.openrewrite.angular.search.find-compiler-factory-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-compiler-factory-usage)
-  * **Find View Engine API usage**
-  * Finds usages of View Engine APIs from `@angular/core` (`CompilerFactory`, `Compiler`, `CompilerOptions`, `ModuleWithComponentFactories`, `NgModuleFactory`, `NgModuleFactoryLoader`) which were deprecated in Angular 13.
-* [org.openrewrite.angular.search.find-date-pipe-default-timezone-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-date-pipe-default-timezone-usage)
-  * **Find `DATE_PIPE_DEFAULT_TIMEZONE` usage**
-  * Finds usages of `DATE_PIPE_DEFAULT_TIMEZONE` which was deprecated in Angular 15. Use `DATE_PIPE_DEFAULT_OPTIONS` with a `\{timezone: '...'\}` object value instead.
-* [org.openrewrite.angular.search.find-effect-timing-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-effect-timing-usage)
-  * **Find `effect()` usage affected by Angular 19 timing changes**
-  * Finds `effect()` calls from `@angular/core`. In Angular 19, effects triggered outside change detection now run as part of the change detection process instead of as a microtask, and effects triggered during change detection run earlier, before the component's template.
-* [org.openrewrite.angular.search.find-empty-projectable-nodes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-empty-projectable-nodes)
-  * **Find `createComponent` calls with empty `projectableNodes`**
-  * Finds `createComponent()` calls that pass empty arrays in `projectableNodes`. In Angular 19, passing an empty array now renders the default `ng-content` fallback content. To suppress fallback content, pass `[document.createTextNode('')]` instead.
-* [org.openrewrite.angular.search.find-fake-async-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-fake-async-usage)
-  * **Find zone.js-dependent test helper usage**
-  * Finds `fakeAsync()`, `tick()`, and `waitForAsync()` calls from `@angular/core/testing`. These zone.js-dependent test helpers are incompatible with Vitest, the default test runner in Angular 21. Migrate to native async/await patterns instead.
-* [org.openrewrite.angular.search.find-hammer-js-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-hammer-js-usage)
-  * **Find HammerJS usage**
-  * Finds `HammerModule` imports and HammerJS references. Angular has deprecated HammerJS support and it will be removed in Angular 21.
-* [org.openrewrite.angular.search.find-i18n-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-i18n-usage)
-  * **Find i18n usage**
-  * Finds i18n usage indicators: legacy i18n configuration in `angular.json` (`i18nLocale`, `i18nFile`, `i18nFormat`, `i18nMissingTranslation`), `$localize` tagged template literals, and `@angular/localize` imports. Projects with these markers need `@angular/localize` installed and `import '@angular/localize/init'` in `polyfills.ts` for Angular 9+.
-* [org.openrewrite.angular.search.find-karma-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-karma-usage)
-  * **Find Karma test runner usage**
-  * Finds Karma test runner configuration in package.json dependencies and angular.json test builder. Angular 21 replaces Karma with Vitest as the default test runner.
-* [org.openrewrite.angular.search.find-load-children-string-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-load-children-string-usage)
-  * **Find deprecated string-based `loadChildren` usage**
-  * Finds usages of the deprecated string-based `loadChildren` syntax (e.g. `loadChildren: './path/to/module#ModuleName'`). String-based lazy loading was deprecated in Angular 8 and removed in Angular 11. Use dynamic imports instead: `loadChildren: () =&gt; import('./path/to/module').then(m =&gt; m.ModuleName)`.
-* [org.openrewrite.angular.search.find-missing-injectable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-missing-injectable)
-  * **Find classes with DI dependencies but missing `@Injectable()`**
-  * Finds classes that have constructor parameters (suggesting dependency injection) but lack an `@Injectable()` or other Angular class-level decorator. Angular 9 with Ivy requires an explicit `@Injectable()` decorator for all services that use dependency injection.
-* [org.openrewrite.angular.search.find-ng-class-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-ng-class-usage)
-  * **Find `NgClass` usage**
-  * Finds imports of `NgClass` from `@angular/common`. The `ngClass` directive is soft deprecated in Angular 21 in favor of native `[class.*]` bindings.
-* [org.openrewrite.angular.search.find-ng-style-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-ng-style-usage)
-  * **Find `NgStyle` usage**
-  * Finds imports of `NgStyle` from `@angular/common`. The `ngStyle` directive is soft deprecated in Angular 21 in favor of native `[style.*]` bindings.
-* [org.openrewrite.angular.search.find-path-match-type-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-path-match-type-usage)
-  * **Find `pathMatch` route properties that may need type narrowing**
-  * Finds `pathMatch` property assignments in route configurations. In Angular 14, the `pathMatch` type was narrowed from `string` to `'full' | 'prefix'`. Routes defined as plain objects without explicit `Route` or `Routes` typing may fail type checking.
-* [org.openrewrite.angular.search.find-platform-dynamic-server-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-platform-dynamic-server-usage)
-  * **Find `platformDynamicServer` usage**
-  * Finds usages of the removed `platformDynamicServer` API from `@angular/platform-server`. In Angular 18, replace with `platformServer` and add `import '@angular/compiler'`.
-* [org.openrewrite.angular.search.find-platform-webworker-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-platform-webworker-usage)
-  * **Find removed `@angular/platform-webworker` usage**
-  * Finds imports from `@angular/platform-webworker` and `@angular/platform-webworker-dynamic`, which were removed in Angular 8 with no direct replacement.
-* [org.openrewrite.angular.search.find-platform-worker-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-platform-worker-usage)
-  * **Find `isPlatformWorkerUi` and `isPlatformWorkerApp` usage**
-  * Finds usages of the removed `isPlatformWorkerUi` and `isPlatformWorkerApp` APIs from `@angular/common`. These were removed in Angular 18 with no replacement, as they served no purpose since the removal of the WebWorker platform.
-* [org.openrewrite.angular.search.find-preserve-fragment-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-preserve-fragment-usage)
-  * **Find deprecated `preserveFragment` usage**
-  * Finds usages of the deprecated `preserveFragment` navigation option. `preserveFragment` was deprecated in Angular 4 and removed in Angular 11. Fragments are now preserved by default.
-* [org.openrewrite.angular.search.find-preserve-query-params-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-preserve-query-params-usage)
-  * **Find deprecated `preserveQueryParams` usage**
-  * Finds usages of the deprecated `preserveQueryParams` navigation option. `preserveQueryParams` was deprecated in Angular 4 and removed in Angular 11. Use `queryParamsHandling: 'preserve'` instead.
-* [org.openrewrite.angular.search.find-provided-in-deprecated-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-provided-in-deprecated-usage)
-  * **Find deprecated `providedIn` values**
-  * Finds usages of `providedIn: 'any'` and `providedIn: NgModule` in `@Injectable` and `InjectionToken` declarations. These were deprecated in Angular 15. Use `providedIn: 'root'` or add the service to `NgModule.providers` instead.
-* [org.openrewrite.angular.search.find-reflective-injector-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-reflective-injector-usage)
-  * **Find `ReflectiveInjector` usage**
-  * Finds usages of `ReflectiveInjector` which was removed in Angular 16. Use `Injector.create` as a replacement.
-* [org.openrewrite.angular.search.find-render-application-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-render-application-usage)
-  * **Find `renderApplication` usage**
-  * Finds usages of `renderApplication` from `@angular/platform-server`. In Angular 16 the signature changed: it no longer accepts a root component as the first argument. Use a bootstrapping function that returns `Promise&lt;ApplicationRef&gt;` instead.
-* [org.openrewrite.angular.search.find-render-component-type-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-render-component-type-usage)
-  * **Find deprecated `RenderComponentType` usage**
-  * Finds imports of the deprecated `RenderComponentType` from `@angular/core`. `RenderComponentType` was part of the View Engine API, deprecated in Angular 4, and removed in Angular 9.
-* [org.openrewrite.angular.search.find-render-module-factory-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-render-module-factory-usage)
-  * **Find `renderModuleFactory` usage**
-  * Finds usages of `renderModuleFactory` from `@angular/platform-server` which was removed in Angular 16. Use `renderModule` instead.
-* [org.openrewrite.angular.search.find-renderer-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-renderer-usage)
-  * **Find deprecated `Renderer` usage**
-  * Finds imports of the deprecated `Renderer` from `@angular/core`. `Renderer` was deprecated in Angular 4 and removed in Angular 9. Users should use `Renderer2` instead.
-* [org.openrewrite.angular.search.find-resource-cache-provider-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-resource-cache-provider-usage)
-  * **Find `RESOURCE_CACHE_PROVIDER` usage**
-  * Finds usages of the removed `RESOURCE_CACHE_PROVIDER` from `@angular/platform-browser-dynamic`. This unused API was removed in Angular 18.
-* [org.openrewrite.angular.search.find-root-renderer-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-root-renderer-usage)
-  * **Find deprecated `RootRenderer` usage**
-  * Finds imports of the deprecated `RootRenderer` from `@angular/core`. `RootRenderer` was part of the View Engine API, deprecated in Angular 4, and removed in Angular 9. Use `RendererFactory2` instead.
-* [org.openrewrite.angular.search.find-rxjs-compat-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-rxjs-compat-usage)
-  * **Find RxJS 5-style imports requiring `rxjs-compat`**
-  * Finds imports using RxJS 5-style deep import paths (e.g. `rxjs/Observable`, `rxjs/add/operator/map`) that require the `rxjs-compat` package. These should be migrated to RxJS 6+ import paths before removing `rxjs-compat`.
-* [org.openrewrite.angular.search.find-server-transfer-state-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-server-transfer-state-module-usage)
-  * **Find `ServerTransferStateModule` usage**
-  * Finds usages of the removed `ServerTransferStateModule` from `@angular/platform-server`. In Angular 18, `TransferState` works without providing this module.
-* [org.openrewrite.angular.search.find-setup-testing-router-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-setup-testing-router-usage)
-  * **Find `setupTestingRouter` usage**
-  * Finds usages of the removed `setupTestingRouter` function from `@angular/router/testing`. This function was removed in Angular 17. Use `RouterModule.forRoot` or `provideRouter` to set up the Router for tests instead.
-* [org.openrewrite.angular.search.find-testability-pending-request-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-testability-pending-request-usage)
-  * **Find removed Testability pending request methods**
-  * Finds imports of `Testability` from `@angular/core`, which had `increasePendingRequestCount`, `decreasePendingRequestCount`, and `getPendingRequestCount` removed in Angular 18. These are now tracked with zones.
-* [org.openrewrite.angular.search.find-undecorated-angular-class](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-undecorated-angular-class)
-  * **Find undecorated classes with Angular features**
-  * Finds classes that use Angular member decorators (`@Input`, `@Output`, `@ViewChild`, etc.) or implement lifecycle hooks (`ngOnInit`, `ngOnDestroy`, etc.) but lack a class-level Angular decorator. Angular 9 with Ivy requires all classes using Angular features to have an explicit decorator.
-* [org.openrewrite.angular.search.find-with-no-dom-reuse-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-with-no-dom-reuse-usage)
-  * **Find `withNoDomReuse` usage**
-  * Finds usages of the removed `withNoDomReuse` function from `@angular/platform-browser`. This function was removed in Angular 17. To disable hydration, remove the `provideClientHydration()` call from your providers or use the `ngSkipHydration` attribute on specific components.
-* [org.openrewrite.angular.search.find-wrapped-value-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-wrapped-value-usage)
-  * **Find deprecated `WrappedValue` usage**
-  * Finds usages of the deprecated `WrappedValue` from `@angular/core`. `WrappedValue` was deprecated in Angular 11 and removed in Angular 13.
-* [org.openrewrite.angular.search.find-zone-js-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-zone-js-usage)
-  * **Find zone.js usage**
-  * Finds zone.js imports and NgZone references. Angular 20 supports zoneless change detection via `provideZonelessChangeDetection()`, making zone.js optional.
-* [org.openrewrite.primeng.AddPrimengProvider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/addprimengprovider)
-  * **Add `providePrimeNG` with a detected theme preset to the root NgModule**
-  * Wires the v18 styled mode into an NgModule-based app by adding `providePrimeNG(\{ theme: \{ preset: &lt;Preset&gt; \} \})` to the root `@NgModule`'s providers array (detected by the presence of a `bootstrap:` field). The preset is chosen by scanning `angular.json` for a `primeng/resources/themes/&lt;themeName&gt;/theme.css` entry: `lara-*` maps to Lara, `md-*`/`mdc-*` to Material, `nora`/`nano` to Nora, and any other v17 theme (mira, nova, saga, vela, soho, fluent, viva, rhea, tailwind, bootstrap4, arya, luna, ...) falls back to Aura. The matching imports for `providePrimeNG` and the chosen preset are added automatically. Also deletes the now-defunct `primeng/resources` style entries from `angular.json` so the build doesn't try to load missing files. Idempotent: skips files that already call `providePrimeNG`.
-* [org.openrewrite.primeng.MarkDeprecatedPrimengComponents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/markdeprecatedprimengcomponents)
-  * **Mark deprecated PrimeNG components with TODO comments**
-  * For every TS file that imports a component / module deprecated in PrimeNG 18 (`TabMenu`, `Steps`, `InlineMessage`, `TabView`, `pDefer`), prepends a TODO comment to the import describing the recommended v18 replacement and writes a row to the `ManualMigrationSteps` data table. The import itself is left intact — these modules still exist in v18 but their replacements have different APIs that require manual migration.
-* [org.openrewrite.primeng.MarkDeprecatedPrimengCssClasses](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/markdeprecatedprimengcssclasses)
-  * **Mark deprecated PrimeNG CSS classes with TODO comments**
-  * For every HTML template that references a CSS class removed in PrimeNG 18 (`.p-link`, `.p-highlight`, `.p-fluid`), inserts a `&lt;!-- TODO: ... --&gt;` comment immediately before the offending element and writes a row to the `ManualMigrationSteps` data table. The class itself is left in place — the replacements are context-dependent (component-specific selectors, the new `fluid` input, etc.) and need a human or AI agent to apply.
-* [org.openrewrite.primeng.MarkDrawerSize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/markdrawersize)
-  * **Mark `&lt;p-drawer&gt;` / `&lt;p-sidebar&gt;` `size` usages with TODO comments**
-  * Inserts an HTML `&lt;!-- TODO: ... --&gt;` comment before any `&lt;p-drawer&gt;` or `&lt;p-sidebar&gt;` element that binds the removed `size` input, and records the site in the `ManualMigrationSteps` data table. Both `[size]=&quot;...&quot;` and `size=&quot;...&quot;` attribute forms are matched. The attribute is left untouched — the v18 replacement (responsive CSS via `[style]` / `styleClass`) depends on the desired layout and needs manual review.
-* [org.openrewrite.primeng.MarkRemovedPrimengModules](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/markremovedprimengmodules)
-  * **Mark imports of removed PrimeNG modules with TODO stubs**
-  * For each `import` of a PrimeNG module that no longer exists in v18 (`primeng/chips`, `primeng/tristatecheckbox`, `primeng/messages`, `primeng/dataviewlayoutoptions`), replaces the broken import statement with a `const &lt;Name&gt;: any = null;` stub annotated by a TODO comment that describes the v18 replacement. Also strips the corresponding entries from `@NgModule` `imports`, `declarations`, and `exports` arrays since Angular's compiler rejects `null` values there. Each flagged site is also recorded in the `ManualMigrationSteps` data table so downstream tooling can enumerate the remaining work.
-* [org.openrewrite.primeng.MigrateMessagesToMessageLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/migratemessagestomessageloop)
-  * **Migrate `&lt;p-messages&gt;` to `&lt;p-message&gt;` with `@for` loop**
-  * Rewrites `&lt;p-messages [value]=&quot;expr&quot;&gt;…&lt;/p-messages&gt;` to `@for (msg of expr; track msg) \{ &lt;p-message [severity]=&quot;msg.severity&quot; [text]=&quot;msg.detail&quot;&gt;&lt;/p-message&gt; \}`. The `Messages` component was removed in PrimeNG 18 in favor of looping over the new `Message` component. Each rewritten site is recorded in the `ManualMigrationSteps` data table for follow-up review.
-* [org.openrewrite.primeng.MigratePFluidToWrapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/migratepfluidtowrapper)
-  * **Migrate `.p-fluid` to `&lt;p-fluid&gt;` wrapper**
-  * Rewrites `&lt;div class=&quot;…p-fluid…&quot;&gt;…&lt;/div&gt;` to `&lt;p-fluid class=&quot;…&quot;&gt;…&lt;/p-fluid&gt;` and adds a `FluidModule` import from `primeng/fluid` to the corresponding component file. PrimeNG 18 removed the `.p-fluid` CSS class; the `&lt;p-fluid&gt;` wrapper component is its replacement.
-* [org.openrewrite.primeng.MigratePrimeNGSignalAssignments](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/migrateprimengsignalassignments)
-  * **Migrate `PrimeNG` config field assignments to `.set()`**
-  * In PrimeNG 18, fields on the `PrimeNG` config service like `ripple`, `inputStyle`, `inputVariant`, and `csp` are `WritableSignal&lt;T&gt;` rather than plain fields. Direct assignment (`service.ripple = true`) no longer compiles. This recipe rewrites such assignments to use the signal's `set()` method (`service.ripple.set(true)`) when the file imports `PrimeNG` from `primeng/config`.
-* [org.openrewrite.primeng.MigratePrimeNgConfigToPrimeNG](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/migrateprimengconfigtoprimeng)
-  * **Migrate `PrimeNGConfig` to `PrimeNG`**
-  * Renames the `PrimeNGConfig` import from `primeng/api` to `PrimeNG` from `primeng/config`, renames all identifier usages, and flags injection sites that should be migrated to `providePrimeNG()` in application providers.
-* [org.openrewrite.primeng.RenameCalendarToDatePicker](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamecalendartodatepicker)
-  * **Rename `Calendar` to `DatePicker`**
-  * Renames `Calendar` and `CalendarModule` imports from `primeng/calendar` to `DatePicker` and `DatePickerModule` from `primeng/datepicker`, and updates all identifier usages. The old names are deprecated in PrimeNG 18.
-* [org.openrewrite.primeng.RenameDropdownToSelect](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamedropdowntoselect)
-  * **Rename `Dropdown` to `Select`**
-  * Renames `Dropdown` and `DropdownModule` imports from `primeng/dropdown` to `Select` and `SelectModule` from `primeng/select`, and updates all identifier usages. The old names are deprecated in PrimeNG 18.
-* [org.openrewrite.primeng.RenameInputSwitchToToggleSwitch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renameinputswitchtotoggleswitch)
-  * **Rename `InputSwitch` to `ToggleSwitch`**
-  * Renames `InputSwitch` and `InputSwitchModule` imports from `primeng/inputswitch` to `ToggleSwitch` and `ToggleSwitchModule` from `primeng/toggleswitch`, and updates all identifier usages. The old names are deprecated in PrimeNG 18.
-* [org.openrewrite.primeng.RenameMessageInterface](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamemessageinterface)
-  * **Rename `Message` interface to `ToastMessageOptions`**
-  * Renames the `Message` interface import from `primeng/api` to `ToastMessageOptions` and updates all identifier usages. The `Message` interface was renamed in PrimeNG 18 due to name collision with the `Message` component.
-* [org.openrewrite.primeng.RenameOverlayPanelToPopover](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renameoverlaypaneltopopover)
-  * **Rename `OverlayPanel` to `Popover`**
-  * Renames `OverlayPanel` and `OverlayPanelModule` imports from `primeng/overlaypanel` to `Popover` and `PopoverModule` from `primeng/popover`, and updates all identifier usages. The old names are deprecated in PrimeNG 18.
-* [org.openrewrite.primeng.RenameSidebarToDrawer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamesidebartodrawer)
-  * **Rename `Sidebar` to `Drawer`**
-  * Renames `Sidebar` and `SidebarModule` imports from `primeng/sidebar` to `Drawer` and `DrawerModule` from `primeng/drawer`, and updates all identifier usages. The old names are deprecated in PrimeNG 18.
-* [org.openrewrite.primeng.RenameTemplateSelectors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renametemplateselectors)
-  * **Rename PrimeNG selectors in HTML templates to their v18 equivalents**
-  * Renames v17 PrimeNG component selectors in `.html` templates to their v18 names: `&lt;p-calendar&gt;` → `&lt;p-datepicker&gt;`, `&lt;p-dropdown&gt;` → `&lt;p-select&gt;`, `&lt;p-inputSwitch&gt;` → `&lt;p-toggleSwitch&gt;`, `&lt;p-overlayPanel&gt;` → `&lt;p-popover&gt;`, `&lt;p-sidebar&gt;` → `&lt;p-drawer&gt;`. Both opening and closing tags are rewritten.
-* [org.openrewrite.primeng.UpgradeComponentsTo18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/upgradecomponentsto18)
-  * **Upgrade PrimeNG components to 18**
-  * Handles component renames, deprecations, and removals for PrimeNG 18. Renames Calendar to DatePicker, Dropdown to Select, InputSwitch to ToggleSwitch, OverlayPanel to Popover, and Sidebar to Drawer (TS imports + identifier usages + HTML selectors). Migrates the `Messages` template usage to the `&lt;p-message&gt;` + `@for` loop. Marks removed modules (Chips, TriStateCheckbox, Messages, DataViewLayoutOptions, pAnimate) with TODO stubs, marks deprecated components (TabMenu, Steps, InlineMessage, TabView, pDefer) with TODO comments on their imports, and marks deprecated CSS classes (`.p-link`, `.p-highlight`, `.p-fluid`) and `&lt;p-drawer&gt;`/`&lt;p-sidebar&gt;` `size` usages with HTML TODO comments. All marked sites are written to the `ManualMigrationSteps` data table.
-* [org.openrewrite.primeng.UpgradeTo18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/upgradeto18)
-  * **Upgrade to PrimeNG 18**
-  * Migrates PrimeNG 17.x applications to PrimeNG 18. Renames components, migrates `PrimeNGConfig` to `PrimeNG` (with signal-backed setters), comments out the obsolete `primeng/resources` style entries in `angular.json`, wires `providePrimeNG(\{ theme: \{ preset: Aura \} \})` into the root NgModule and adds `@primeng/themes` to `package.json`. Anything that can't be deterministically migrated (removed-and-no-direct-replacement components, deprecated CSS classes, structural template changes) gets a TODO comment in source plus a row in the `ManualMigrationSteps` data table for an agent or human to finish.
 
 ### rewrite-cryptography
 
@@ -5187,12 +4824,105 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.analysis.java.security.FindXxeVulnerability](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/findxxevulnerability)
   * **Find XXE vulnerabilities**
   * Locates XML parsers that are not configured to prevent XML External Entity (XXE) attacks.
+* [org.openrewrite.analysis.java.security.FixXssVulnerabilityJava](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/fixxssvulnerabilityjava)
+  * **Fix XSS vulnerabilities in Java sources**
+  * Wraps tainted arguments flowing into HTML output sinks with an HTML-escape helper. Reuses `FindXssVulnerability`'s taint spec so the fix's source/sink/sanitizer coverage stays in sync with the detector. The escape helper is picked per `JavaProject` based on which dependency is declared (direct or transitive) in the project's Maven or Gradle build, preferring Spring `HtmlUtils` (`org.springframework:spring-web`), then OWASP `Encode` (`org.owasp.encoder:encoder`), then Commons Text (`org.apache.commons:commons-text`), then deprecated Commons Lang3 (`org.apache.commons:commons-lang3`). Projects with no recognised helper dependency are skipped; arguments already wrapped in a recognised sanitizer are also skipped. For detection without remediation, use `FindXssVulnerability` directly.
 * [org.openrewrite.analysis.java.security.SanitizeLogInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/analysis/java/security/sanitizeloginjection)
   * **Sanitize log injection vulnerabilities**
   * Sanitizes user-controlled input before it flows into logging methods by stripping newline, carriage return, and tab characters that could enable log forging.
 
 ### rewrite-react
 
+* [org.openrewrite.angular.migration.add-default-configuration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-default-configuration)
+  * **Add `defaultConfiguration` to build targets**
+  * Adds `&quot;defaultConfiguration&quot;: &quot;production&quot;` to build architect targets in `angular.json`. Angular 12 changed `ng build` to produce production bundles by default.
+* [org.openrewrite.angular.migration.add-testbed-teardown](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-testbed-teardown)
+  * **Add TestBed module teardown**
+  * Adds `\{ teardown: \{ destroyAfterEach: true \} \}` as the third argument to `TestBed.initTestEnvironment()` calls. Angular 13 changed the default teardown behavior, and this ensures explicit opt-in for module teardown after each test.
+* [org.openrewrite.angular.migration.explicit-standalone-flag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/explicit-standalone-flag)
+  * **Make standalone flag explicit**
+  * Adds `standalone: false` to non-standalone Angular components, directives, and pipes, and removes redundant `standalone: true` since it became the default in Angular 19.
+* [org.openrewrite.angular.migration.move-document-import](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/move-document-import)
+  * **Move `DOCUMENT` import to `@angular/core`**
+  * Moves the `DOCUMENT` import from older Angular modules to `@angular/core`.
+* [org.openrewrite.angular.migration.remove-aot-summaries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-aot-summaries)
+  * **Remove `aotSummaries` from TestBed**
+  * Removes the `aotSummaries` property from `TestBed.configureTestingModule()` and `TestBed.initTestEnvironment()` calls. The `aotSummaries` parameter was removed in Angular 14 as it was only needed for the View Engine compiler.
+* [org.openrewrite.angular.migration.remove-browser-module-with-server-transition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-browser-module-with-server-transition)
+  * **Remove `BrowserModule.withServerTransition`**
+  * Replaces `BrowserModule.withServerTransition(\{ appId: '...' \})` with `BrowserModule` and adds `\{ provide: APP_ID, useValue: '...' \}` to the NgModule providers. The `withServerTransition` method was removed in Angular 19.
+* [org.openrewrite.angular.migration.remove-component-factory-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-component-factory-resolver)
+  * **Remove `ComponentFactoryResolver`**
+  * Replaces `resolver.resolveComponentFactory(Component)` with just `Component` and removes the `ComponentFactoryResolver` import. Since Ivy, `ViewContainerRef.createComponent` accepts the component class directly. `ComponentFactoryResolver` was deprecated in Angular 13 and removed in Angular 16.
+* [org.openrewrite.angular.migration.remove-default-project](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-default-project)
+  * **Remove `defaultProject` from `angular.json`**
+  * Removes the deprecated `defaultProject` property from `angular.json`. The `defaultProject` option was deprecated in Angular 13 and the CLI infers the default project from the workspace.
+* [org.openrewrite.angular.migration.remove-empty-ng-on-init](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-empty-ng-on-init)
+  * **Remove empty `ngOnInit` lifecycle hooks**
+  * Removes empty `ngOnInit` lifecycle hook methods and OnInit interface from Angular components.
+* [org.openrewrite.angular.migration.remove-enable-ivy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-enable-ivy)
+  * **Remove `enableIvy` compiler option**
+  * Removes the `enableIvy` option from `angularCompilerOptions` in `tsconfig.json`. Ivy is the only rendering engine since Angular 12, and the option was removed in Angular 15.
+* [org.openrewrite.angular.migration.remove-entry-components](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-entry-components)
+  * **Remove `entryComponents`**
+  * Removes the `entryComponents` property from `@NgModule` and `@Component` decorators, and removes the `ANALYZE_FOR_ENTRY_COMPONENTS` import. These were removed in Angular 16 as they served no purpose since Ivy.
+* [org.openrewrite.angular.migration.remove-ie-polyfills](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-ie-polyfills)
+  * **Remove IE11 polyfills**
+  * Removes IE11-specific polyfill imports (`core-js`, `classlist.js`, `web-animations-js`) from `polyfills.ts` and `angular.json`. Angular 13 dropped IE11 support, making these polyfills unnecessary.
+* [org.openrewrite.angular.migration.remove-module-id](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-module-id)
+  * **Remove `moduleId`**
+  * Removes the `moduleId` property from `@Component` and `@Directive` decorators. `moduleId` was deprecated in Angular 16 and removed in Angular 17 as it served no purpose since Ivy.
+* [org.openrewrite.angular.migration.remove-relative-link-resolution](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-relative-link-resolution)
+  * **Remove `relativeLinkResolution`**
+  * Removes the `relativeLinkResolution` option from `RouterModule.forRoot()` calls. This option was deprecated in Angular 14 and removed in Angular 15.
+* [org.openrewrite.angular.migration.remove-standalone-true](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-standalone-true)
+  * **Remove redundant `standalone: true`**
+  * Removes the `standalone: true` property from Angular component, directive, and pipe decorators since standalone is the default in Angular 19+.
+* [org.openrewrite.angular.migration.remove-zone-js-polyfill](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-zone-js-polyfill)
+  * **Remove zone.js polyfill from angular.json**
+  * Removes zone.js entries from the `polyfills` array in `angular.json`. Angular 20 supports zoneless change detection via `provideZonelessChangeDetection()`, making the zone.js polyfill unnecessary.
+* [org.openrewrite.angular.migration.rename-after-render](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-after-render)
+  * **Rename `afterRender` to `afterEveryRender`**
+  * Renames `afterRender` to `afterEveryRender` in imports and usages. The `afterRender` function was renamed to `afterEveryRender` in Angular 20, and Angular provides no migration schematic for this change.
+* [org.openrewrite.angular.migration.rename-check-no-changes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-check-no-changes)
+  * **Rename `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug`**
+  * Renames `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
+* [org.openrewrite.angular.migration.rename-file](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-file)
+  * **Rename file**
+  * Renames files matching a glob pattern to a new file name, preserving the directory.
+* [org.openrewrite.angular.migration.rename-pending-tasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-pending-tasks)
+  * **Rename `ExperimentalPendingTasks` to `PendingTasks`**
+  * Renames `ExperimentalPendingTasks` to `PendingTasks` in imports and usages. `ExperimentalPendingTasks` was renamed in Angular 19.
+* [org.openrewrite.angular.migration.rename-zoneless-provider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-zoneless-provider)
+  * **Rename `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection`**
+  * Renames `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
+* [org.openrewrite.angular.migration.replace-async-with-wait-for-async](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-async-with-wait-for-async)
+  * **Replace `async` with `waitForAsync`**
+  * Replaces the removed `async` test helper from `@angular/core/testing` with `waitForAsync`. The `async` function was deprecated in Angular 11 and removed in Angular 18.
+* [org.openrewrite.angular.migration.replace-deep-zone-js-imports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-deep-zone-js-imports)
+  * **Replace deep `zone.js` imports**
+  * Replaces legacy deep imports from `zone.js` such as `zone.js/dist/zone` or `zone.js/bundles/zone-testing.js` with the standard `zone.js` or `zone.js/testing` imports, in both TypeScript files and `angular.json` polyfills. Deep imports are no longer allowed in Angular 17.
+* [org.openrewrite.angular.migration.replace-http-client-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-http-client-module)
+  * **Replace `HttpClientModule` with `provideHttpClient()`**
+  * Replaces deprecated `HttpClientModule`, `HttpClientJsonpModule`, `HttpClientXsrfModule`, and `HttpClientTestingModule` with their functional equivalents: `provideHttpClient()` with feature functions and `provideHttpClientTesting()`.
+* [org.openrewrite.angular.migration.replace-initial-navigation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-initial-navigation)
+  * **Replace `initialNavigation` option values**
+  * Replaces deprecated `initialNavigation` router option values: `'legacy_enabled'` and `true` become `'enabledBlocking'`, `'legacy_disabled'` and `false` become `'disabled'`, and `'enabled'` becomes `'enabledNonBlocking'`. The legacy values were removed in Angular 11; `'enabled'` was renamed in Angular 14.
+* [org.openrewrite.angular.migration.replace-inject-flags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-inject-flags)
+  * **Replace `InjectFlags` with options object**
+  * Replaces deprecated `InjectFlags` enum usage in `inject()` calls with the corresponding options object. For example, `inject(MyService, InjectFlags.Optional)` becomes `inject(MyService, \{ optional: true \})`.
+* [org.openrewrite.angular.migration.replace-router-link-with-href](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-router-link-with-href)
+  * **Replace `RouterLinkWithHref` with `RouterLink`**
+  * Replaces `RouterLinkWithHref` with `RouterLink` in imports and usages. `RouterLinkWithHref` was merged into `RouterLink` in Angular 16.
+* [org.openrewrite.angular.migration.replace-untyped-forms](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-untyped-forms)
+  * **Replace form classes with untyped variants**
+  * Renames `FormControl`, `FormGroup`, `FormArray`, and `FormBuilder` to their `Untyped*` equivalents in imports and usages. Angular 14 introduced strictly typed forms, requiring existing untyped usages to migrate to the `Untyped*` aliases. Classes used in parameterized type positions (e.g. `FormGroup&lt;T&gt;`) are left unchanged because the user already opted into typed forms.
+* [org.openrewrite.angular.migration.update-component-template-url](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-component-template-url)
+  * **Update component `templateUrl`**
+  * Updates the `templateUrl` property value in Angular `@Component` decorators. Useful for refactoring template file paths or standardizing path conventions.
+* [org.openrewrite.angular.migration.update-tsconfig-target](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-tsconfig-target)
+  * **Update `tsconfig.json` target to `es2017`**
+  * Updates the `compilerOptions.target` in `tsconfig.json` from `es5`, `es2015`, or `es2016` to `es2017`. Angular 13 dropped IE11 support and requires at least ES2017.
 * [org.openrewrite.javascript.cleanup.simplify-object-pattern-property](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/javascript/cleanup/simplify-object-pattern-property)
   * **Simplify object pattern properties**
   * Simplifies object destructuring patterns where the property name and variable name are the same (e.g., `\{ x: x \}` becomes `\{ x \}`).
@@ -5502,6 +5232,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot3.UpgradeMyBatisToSpringBoot_3_5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgrademybatistospringboot_3_5)
   * **Upgrade MyBatis to Spring Boot 3.5**
   * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 3.5.
+* [io.moderne.java.spring.boot3.UpgradeSpringBoot_3_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_0-moderne-edition)
+  * **Migrate to Spring Boot 3.0 (Moderne Edition)**
+  * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations that are required as part of the migration to Spring Boot 3.0, including the Tomcat 10.1 upgrade which removes `LegacyCookieProcessor`.
 * [io.moderne.java.spring.boot3.UpgradeSpringBoot_3_4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_4-moderne-edition)
   * **Migrate to Spring Boot 3.4 (Moderne Edition)**
   * Migrate applications to the latest Spring Boot 3.4 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 3.4.
@@ -5556,6 +5289,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.MigrateAutoConfigureMockMvcHtmlUnit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migrateautoconfiguremockmvchtmlunit)
   * **Migrate `@AutoConfigureMockMvc` HtmlUnit attributes to nested `@HtmlUnit`**
   * Spring Boot 4 moved `webClientEnabled` and `webDriverEnabled` on `@AutoConfigureMockMvc` under a nested `@HtmlUnit` annotation as `webClient` and `webDriver`, and relocated the annotation to `org.springframework.boot.webmvc.test.autoconfigure`. This recipe rewrites the attribute syntax and relocates the annotation in one step, so it must run before any package-relocation recipe touches `@AutoConfigureMockMvc`.
+* [io.moderne.java.spring.boot4.MigrateAwspringSqsMessageConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migrateawspringsqsmessageconverter)
+  * **Migrate awspring SQS default converter `setObjectMapper` to constructor injection**
+  * In spring-cloud-aws 4.0 `AbstractMessagingMessageConverter.setObjectMapper(...)` was removed and the `JsonMapper` is supplied through the `SqsMessagingMessageConverter` constructor. Rewrites `SqsTemplate.builder().configureDefaultConverter(c -&gt; c.setObjectMapper(mapper))` to `SqsTemplate.builder().messageConverter(new SqsMessagingMessageConverter(mapper))`, or adds a TODO comment when the configurer does more than set the object mapper.
 * [io.moderne.java.spring.boot4.MigrateHazelcastSpringSession](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratehazelcastspringsession)
   * **Migrate Spring Session Hazelcast to Hazelcast Spring Session**
   * Spring Boot 4.0 removed direct support for Spring Session Hazelcast. The Hazelcast team now maintains their own Spring Session integration. This recipe changes the dependency from `org.springframework.session:spring-session-hazelcast` to `com.hazelcast.spring:hazelcast-spring-session` and updates the package from `org.springframework.session.hazelcast` to `com.hazelcast.spring.session`.
@@ -5649,6 +5385,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.SpringBootProperties_4_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/springbootproperties_4_1)
   * **Migrate Spring Boot properties to 4.1**
   * Migrate properties found in `application.properties` and `application.yml`.
+* [io.moderne.java.spring.boot4.UpgradeAwspringCloud_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradeawspringcloud_4_0)
+  * **Migrate Spring Cloud AWS (awspring) to 4.0**
+  * Upgrade `io.awspring.cloud` dependencies to 4.0.x and migrate code for the breaking API changes in Spring Cloud AWS 4.0. Spring Cloud AWS 4.0 aligns with Spring Boot 4 / Spring Framework 7 and adopts Jackson 3 by default; this recipe moves usages off the deprecated Jackson 2 variants to their Jackson 3 replacements and migrates the SQS default-converter `setObjectMapper` configurer. Run after the Jackson 2 to 3 migration so user mappers are already `tools.jackson` `JsonMapper`s.
 * [io.moderne.java.spring.boot4.UpgradeMyBatisToSpringBoot_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgrademybatistospringboot_4_0)
   * **Upgrade MyBatis to Spring Boot 4.0**
   * Upgrade MyBatis Spring modules to a version corresponding to Spring Boot 4.0.
@@ -5703,6 +5442,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework.JaxRsToSpringWeb](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jaxrstospringweb)
   * **Convert JAX-RS annotations to Spring Web**
   * Converts JAX-RS annotations such as `@Path`, `@GET`, `@POST`, etc., to their Spring Web equivalents like `@RestController`, `@RequestMapping`, `@GetMapping`, etc.
+* [io.moderne.java.spring.framework.MigrateChannelInterceptorAdapter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratechannelinterceptoradapter)
+  * **Replace `ChannelInterceptorAdapter` with `ChannelInterceptor`**
+  * As of 5.0 `ChannelInterceptor` has default methods (made possible by a Java 8 baseline) and can be implemented directly without the need for this adapter.
 * [io.moderne.java.spring.framework.MigrateConverterSetObjectMapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migrateconvertersetobjectmapper)
   * **Replace `setObjectMapper` with constructor injection**
   * Folds `setObjectMapper` calls on `MappingJackson2HttpMessageConverter` into the constructor. If the converter is instantiated in the same block with no other invocations, the setter call is replaced with constructor injection. Otherwise, a TODO comment is added.
@@ -5748,9 +5490,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework.UpgradeSpringFramework_3_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_3_0)
   * **Migrate to Spring Framework 3.x**
   * Migrate applications to the latest Spring Framework 3 release, pulling in additional proprietary Moderne recipes.
+* [io.moderne.java.spring.framework.UpgradeSpringFramework_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_4_0)
+  * **Migrate to Spring Framework 4.0**
+  * Migrate applications to the latest Spring Framework 4.0 release. This composite focuses on dependency upgrades and the mechanical package moves that accompanied the 3.x to 4.0 transition. Removed APIs that do not have a 1:1 replacement (for example `JpaTemplate`, the `AbstractCommandController` family, Hibernate 3 support classes) still require code changes that this recipe does not perform.
+* [io.moderne.java.spring.framework.UpgradeSpringFramework_5_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_0-moderne-edition)
+  * **Migrate to Spring Framework 5.0 (Moderne Edition)**
+  * Migrate applications to Spring Framework 5.0, layering proprietary Moderne recipes on top of the OSS `org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_0`. Chains through `UpgradeSpringFramework_4_0` (and transitively `_3_0`) so a customer on Spring 3.x lands on a 5.0 baseline after one composite run.
 * [io.moderne.java.spring.framework.UpgradeSpringFramework_5_3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_3-moderne-edition)
   * **Migrate to Spring Framework 5.3 (Moderne Edition)**
   * Migrate applications to the latest Spring Framework 5.3 release, pulling in additional proprietary Moderne recipes.
+* [io.moderne.java.spring.framework.UpgradeSpringFramework_6_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_6_0-moderne-edition)
+  * **Migrate to Spring Framework 6.0 (Moderne Edition)**
+  * Migrate applications to the latest Spring Framework 6.0 release. Chains through `UpgradeSpringFramework_5_3` (and transitively `_5_0`/`_4_0`/`_3_0`) and layers Spring Integration XML attribute migrations on top of the OSS Spring Framework 6.0 upgrade. The OSS recipe handles the `org.springframework:*` version bump and Jakarta EE 10 package moves; this composite additionally bumps `org.springframework.security:*` to 6.0.x (Spring Security tracks Spring's major) and cleans up Spring Integration XML configurations.
 * [io.moderne.java.spring.framework.beansxml.BeansXmlToConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/beansxml/beansxmltoconfiguration)
   * **Migrate `beans.xml` to Spring Framework configuration class**
   * Converts Java/Jakarta EE `beans.xml` configuration files to Spring Framework `@Configuration` classes.
@@ -5781,6 +5532,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework7.FindThemeSupportUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/findthemesupportusage)
   * **Find Spring Theme support usage**
   * Spring Framework 7.0 removes Theme support entirely. This recipe identifies usages of Theme-related classes like `ThemeResolver`, `ThemeSource`, and `ThemeChangeInterceptor` that need to be removed or replaced with CSS-based alternatives. The Spring team recommends using CSS directly for theming functionality.
+* [io.moderne.java.spring.framework7.MigrateAbstractClientHttpResponse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migrateabstractclienthttpresponse)
+  * **Migrate `AbstractClientHttpResponse` to `ClientHttpResponse`**
+  * Spring Framework 6.0 removed `org.springframework.http.client.AbstractClientHttpResponse`. This recipe rewrites `extends AbstractClientHttpResponse` to `implements ClientHttpResponse`, flags any `super.*()` calls inside the converted class with a TODO comment (those calls no longer compile), and renames remaining type references (variables, parameters, fields, casts, generics, return types) to the `ClientHttpResponse` interface.
 * [io.moderne.java.spring.framework7.MigrateDeprecatedAPIs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratedeprecatedapis)
   * **Migrate deprecated APIs removed in Spring Framework 7.0**
   * Migrates deprecated APIs that were removed in Spring Framework 7.0. This includes ListenableFuture to CompletableFuture migration, ContentCachingRequestWrapper constructor changes, and NestedServletException to ServletException type migration.
@@ -5832,6 +5586,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.hibernate.MigrateSaveOrUpdateAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/hibernate/migratesaveorupdateall)
   * **Migrate `HibernateDaoSupport#getHibernateTemplate#saveOrUpdateAll`**
   * Migrate removed `HibernateDaoSupport#getHibernateTemplate#.saveOrUpdateAll` to an iterative `HibernateDaoSupport#getHibernateTemplate#.saveOrUpdate`.
+* [io.moderne.java.spring.integration.MigrateSpringFramework6DeprecatedIntegrationXmlAttributes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/integration/migratespringframework6deprecatedintegrationxmlattributes)
+  * **Migrate Spring Integration XML attributes deprecated by Spring Integration 6.x**
+  * Renames or removes Spring Integration XML attributes that were deprecated or removed between Spring Integration 5.x and 6.x. Scoped to XML files using the Spring Integration namespace.
 * [io.moderne.java.spring.kafka.consumer.FindKafkaListenerWithoutErrorHandling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/kafka/consumer/findkafkalistenerwithouterrorhandling)
   * **Find `@KafkaListener` methods without error handling**
   * Flags `@KafkaListener` methods that lack proper error handling. Methods should have `@RetryableTopic`, specify an `errorHandler` in the annotation, or implement try-catch blocks for error handling.
@@ -5847,6 +5604,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.kafka.producer.IsKafkaProducer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/kafka/producer/iskafkaproducer)
   * **Is likely a Kafka producer module**
   * Marks the project if it's likely a Kafka producer module.
+* [io.moderne.java.spring.kotlin.ReplaceKotlinPropertyAssignmentWithSetterCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/kotlin/replacekotlinpropertyassignmentwithsettercall)
+  * **Replace Kotlin property assignment with setter call**
+  * Rewrites a Kotlin property-style assignment (`obj.prop = value`) to an explicit setter invocation (`obj.setProp(value)`). Use when a Java library adopts JSpecify `@NullMarked` and a previously-`var` synthetic property is demoted to `val`: Kotlin requires the getter's return type and the setter's parameter type to share the same nullability, and once they diverge the assignment stops compiling.
 * [io.moderne.java.spring.orm.SpringORM5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
   * **Migrate to Spring ORM to 5**
   * Migrate applications using Spring ORM Hibernate Support to Hibernate 5 compatible version. This will enable a further migration by the Spring Framework migration past 5.
@@ -6182,7 +5942,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Finds dependencies in `*.csproj` and `packages.config`.
 * [org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Nuget dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-05-11T1202.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-06-01T1251.
 * [org.openrewrite.csharp.dependencies.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/upgradedependencyversion)
   * **Upgrade C# dependency versions**
   * Upgrades dependencies in `*.csproj`, `Directory.Packages.props`, and `packages.config`.
@@ -6193,8 +5953,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Find licenses in use in third-party dependencies**
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
-  * **Find and fix vulnerable dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-05-11T1202.
+  * **Find and fix vulnerable Maven/Gradle dependencies**
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-06-01T1251.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -6204,12 +5964,24 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.FindTextDirectionChanges](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/findtextdirectionchanges)
   * **Find text-direction changes**
   * Finds unicode control characters which can change the direction text is displayed in. These control characters can alter how source code is presented to a human reader without affecting its interpretation by tools like compilers. So a malicious patch could pass code review while introducing vulnerabilities. Note that text direction-changing unicode control characters aren't inherently malicious. These characters can appear for legitimate reasons in code written in or dealing with right-to-left languages. See: https://trojansource.codes/ for more information.
+* [org.openrewrite.java.security.FixCommandInjectionLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/fixcommandinjectionliteral)
+  * **Replace `Runtime.exec(String)` with `Runtime.exec(String[])`**
+  * Rewrites `Runtime.exec(&quot;cmd args &quot; + arg)` calls into the safer `Runtime.exec(new String[]\{...\})` overload that bypasses shell interpretation. Fires only when the first argument is a string concatenation, the first operand is a string literal containing whitespace, and no literal contains shell metacharacters (`|`, `&lt;`, `&gt;`, `&amp;`, `;`, backtick, `$`, newline). Calls with no literal prefix, with single-token literals, or with shell metacharacters are left for human review.
 * [org.openrewrite.java.security.FixCwe338](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/fixcwe338)
   * **Fix CWE-338 with `SecureRandom`**
   * Use a cryptographically strong pseudo-random number generator (PRNG).
 * [org.openrewrite.java.security.FixCwe918](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/fixcwe918)
   * **Remediate server-side request forgery (SSRF)**
-  * Inserts a guard that validates URLs constructed from user-controlled input do not target internal network addresses, blocking server-side request forgery (SSRF) attacks.
+  * Inserts a guard that validates URLs constructed from user-controlled input do not resolve to internal, reserved, or otherwise unsafe network addresses, blocking server-side request forgery (SSRF) attacks. The block list covers IPv4 and IPv6, including IPv4-mapped IPv6 (`::ffff:0:0/96`), IPv6 ULA (`fc00::/7`), NAT64 (`64:ff9b::/96`), 6to4 (`2002::/16`), and Teredo (`2001::/32`) — all of which embed or translate to addresses that would otherwise bypass a naïve `isSiteLocalAddress` / `isLoopbackAddress` check.  The guard does not by itself prevent DNS rebinding. `URL.openConnection()` re-resolves the host at connect time, so a rapidly shifting authoritative DNS response can answer with a public IP during validation and an internal IP at connect time. Closing this time-of-check / time-of-use window requires binding the TCP connection to the validated IP literal — typically via a hardened HTTP client with a custom DNS resolver (`HttpClient.Builder`, Apache HttpClient's `DnsResolver`, OkHttp's `Dns`, etc.) — and is HTTP-client-specific, so it is out of scope for this recipe.  The block list reflects IANA special-use registries at the time of this recipe's release and is not, and cannot be, permanently complete. New special-use ranges are assigned periodically — `3fff::/20` was added as IPv6 documentation space in 2024 (RFC 9637), for example — so the list will need ongoing maintenance to keep pace with the IANA IPv4 and IPv6 Special-Purpose Address Registries.
+* [org.openrewrite.java.security.FixPermissiveHostnameVerifier](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/fixpermissivehostnameverifier)
+  * **Fix permissive `HostnameVerifier` implementations**
+  * Replaces `javax.net.ssl.HostnameVerifier` implementations whose `verify(String, SSLSession)` method unconditionally returns `true` (matching `return true;`, `return Boolean.TRUE;`, or `return Boolean.valueOf(true);`) with a delegation to `HttpsURLConnection.getDefaultHostnameVerifier()`, restoring proper hostname verification.
+* [org.openrewrite.java.security.FixPermissiveTrustManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/fixpermissivetrustmanager)
+  * **Fix permissive `X509TrustManager` implementations**
+  * Replaces empty `checkClientTrusted` and `checkServerTrusted` method bodies on `javax.net.ssl.X509TrustManager` implementations with a `throw new CertificateException(&quot;Not trusted&quot;)` so the trust manager fails closed instead of accepting any certificate.
+* [org.openrewrite.java.security.FixSqlInjectionConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/fixsqlinjectionconcat)
+  * **Replace SQL string concatenation with a `PreparedStatement`**
+  * Rewrites JDBC `Statement.executeQuery`/`executeUpdate`/`execute`/`addBatch` calls whose argument is a string concatenation built from a literal SQL prefix plus simple variable operands into a `PreparedStatement` with `?` placeholders and `setX(i, ...)` bindings. Only fixes the narrow safe subset where the `Statement` is a local variable from `Connection.createStatement()` used for a single SQL execution; other cases are left for the `FindSqlInjection` recipe to surface.
 * [org.openrewrite.java.security.ImproperPrivilegeManagement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/improperprivilegemanagement)
   * **Improper privilege management**
   * Marking code as privileged enables a piece of trusted code to temporarily enable access to more resources than are available directly to the code that called it.
@@ -6279,6 +6051,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.ZipSlip](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/zipslip)
   * **Zip slip**
   * Zip slip is an arbitrary file overwrite critical vulnerability, which typically results in remote command execution. A fuller description of this vulnerability is available in the [Snyk documentation](https://snyk.io/research/zip-slip-vulnerability) on it.
+* [org.openrewrite.java.security.marshalling.FixInsecureJmsDeserialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/marshalling/fixinsecurejmsdeserialization)
+  * **Restrict deserialized classes for JMS `ObjectMessage`**
+  * Patches `ActiveMQConnectionFactory` instantiations to install a deserialization allowlist when the same compilation run contains a `javax.jms.ObjectMessage#getObject` (or `jakarta.jms.ObjectMessage#getObject`) call inside a `MessageListener#onMessage` override. Targets ActiveMQ Classic (`org.apache.activemq.ActiveMQConnectionFactory.setTrustedPackages`) and ActiveMQ Artemis (`org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory.setDeserializationAllowList`). IBM MQ (`com.ibm.mq.jms.MQConnectionFactory`) is not yet supported. The recipe handles two factory instantiation shapes: a local variable declaration (`ActiveMQConnectionFactory f = new ActiveMQConnectionFactory(...)`) and a direct return (`return new ActiveMQConnectionFactory(...)`), the latter refactored into a declare-then-return. Skips factories that already configure a trusted-packages / allowlist call.
 * [org.openrewrite.java.security.marshalling.InsecureJmsDeserialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/marshalling/insecurejmsdeserialization)
   * **Insecure JMS deserialization**
   * JMS `Object` messages depend on Java Serialization for marshalling/unmarshalling of the message payload when `ObjectMessage#getObject` is called. Deserialization of untrusted data can lead to security flaws.
@@ -6318,6 +6093,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindLongSessionTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findlongsessiontimeout)
   * **Find long or disabled HTTP session timeout**
   * Finds calls to `HttpSession.setMaxInactiveInterval(int)` whose integer-literal argument exceeds 30 minutes or is zero/negative (which disables session expiration). Long-lived or non-expiring sessions increase the window for session hijacking and replay (CWE-613).
+* [org.openrewrite.java.security.search.FindMissingSpringAuthorization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findmissingspringauthorization)
+  * **Find Spring MVC handlers missing authorization**
+  * Flags Spring MVC (and WebFlux) controller methods reachable to anonymous users — either matched by `permitAll()` in a `SecurityFilterChain` / `SecurityWebFilterChain` bean (or in a legacy `WebSecurityConfigurerAdapter.configure(HttpSecurity)` override) or with no matching rule at all — and which do not carry an explicit authorization annotation (`@PreAuthorize`, `@PostAuthorize`, `@Secured`, `@RolesAllowed`, `@PermitAll`, `@DenyAll`), including annotations inherited from a superclass or overridden parent method. Detector only; does not modify code.
 * [org.openrewrite.java.security.search.FindPermissiveCorsConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findpermissivecorsconfiguration)
   * **Find permissive CORS configuration**
   * Finds overly permissive CORS configurations that allow all origins, which can expose the application to cross-domain attacks.
@@ -7074,9 +6852,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-nodejs
 
-* [org.openrewrite.node.dependency-vulnerability-check](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/dependency-vulnerability-check)
-  * **Find and fix vulnerable npm dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government.  ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheck` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `Vulnerability[]` arrays. Vulnerability data can be loaded from CSV files using `VulnerabilityDatabase.loadFromFile(path).getAllVulnerabilities()` or constructed programmatically. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source.
 * [org.openrewrite.node.migrate.buffer.replace-deprecated-slice](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/buffer/replace-deprecated-slice)
   * **Replace deprecated `Buffer.slice()` with `Buffer.subarray()`**
   * Replace deprecated `buffer.slice()` calls with `buffer.subarray()` for compatibility with Uint8Array.prototype.slice().
@@ -7164,9 +6939,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.node.migrate.zlib.replace-bytes-read](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/zlib/replace-bytes-read)
   * **Replace deprecated `zlib.bytesRead` with `zlib.bytesWritten`**
   * Replace deprecated `bytesRead` property on zlib streams with `bytesWritten`.
-* [org.openrewrite.node.security.remove-redundant-overrides](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/security/remove-redundant-overrides)
-  * **Remove redundant dependency overrides**
-  * Removes overrides/resolutions from package.json that are redundant because the dependency tree already resolves to the overridden version or higher.
 * [org.openrewrite.nodejs.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/upgradedependencyversion)
   * **Upgrade Node.js dependencies**
   * Upgrade matching Node.js direct dependencies.
@@ -7209,6 +6981,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.nodejs.search.UtilityInsights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/utilityinsights)
   * **Javascript utility library insights**
   * Discover which popular javascript utility libraries (Lodash, Moment.js, Date-fns, etc.) are being used in your projects.
+* [org.openrewrite.nodejs.security.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/security/dependencyvulnerabilitycheck)
+  * **Find and fix vulnerable npm dependencies**
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest patch version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the GitHub Security Advisory Database, which aggregates vulnerability data from several public databases.  ## Customizing Vulnerability Data  Extend this recipe and override `baselineVulnerabilities(ctx)` to replace the bundled advisory database, or override `supplementalVulnerabilities(ctx)` to add organisation-specific advisories alongside the bundled data.
+* [org.openrewrite.nodejs.security.RemoveRedundantOverrides](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/security/removeredundantoverrides)
+  * **Remove redundant dependency overrides**
+  * Removes overrides/resolutions from `package.json` that are redundant because the dependency tree already resolves to the overridden version (or higher) without the override. For each project, the recipe re-runs the package manager's lock-file generation with all overrides stripped and compares the resolved versions against the original override pins. Overrides matching or below the natural resolution are dropped along with any parallel `//overrides`, `//resolutions`, or `//pnpm.overrides` comment entries.
 
 ### rewrite-reactive-streams
 

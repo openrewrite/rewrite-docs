@@ -1,4 +1,5 @@
 ---
+title: "Prefer `StringBuilder#repeat(CharSequence, int)` over less efficient alternatives"
 sidebar_label: "Prefer `StringBuilder#repeat(CharSequence, int)` over less efficient alternatives"
 ---
 

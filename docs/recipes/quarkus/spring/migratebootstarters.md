@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot starter dependencies with Quarkus equivalents"
 sidebar_label: "Replace Spring Boot starter dependencies with Quarkus equivalents"
 ---
 

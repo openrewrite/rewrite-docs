@@ -1,4 +1,5 @@
 ---
+title: "Normalize Spring properties to kebab-case"
 sidebar_label: "Normalize Spring properties to kebab-case"
 ---
 

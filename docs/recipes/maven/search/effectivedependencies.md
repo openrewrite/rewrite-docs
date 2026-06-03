@@ -1,4 +1,5 @@
 ---
+title: "Effective dependencies"
 sidebar_label: "Effective dependencies"
 ---
 

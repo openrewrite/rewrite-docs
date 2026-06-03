@@ -1,4 +1,5 @@
 ---
+title: "Find literals"
 sidebar_label: "Find literals"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`AssertJBigIntegerRules` Refaster recipes"
 sidebar_label: "`AssertJBigIntegerRules` Refaster recipes"
 ---
 

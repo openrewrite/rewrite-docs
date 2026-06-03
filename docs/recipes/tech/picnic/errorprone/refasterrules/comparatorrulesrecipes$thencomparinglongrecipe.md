@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.ThenComparingLong`"
 sidebar_label: "Refaster template `ComparatorRules.ThenComparingLong`"
 ---
 

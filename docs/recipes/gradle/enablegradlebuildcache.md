@@ -1,4 +1,5 @@
 ---
+title: "Enable Gradle build cache"
 sidebar_label: "Enable Gradle build cache"
 ---
 

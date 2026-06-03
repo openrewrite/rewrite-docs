@@ -1,4 +1,5 @@
 ---
+title: "Adds Mockito extensions to Mockito tests"
 sidebar_label: "Adds Mockito extensions to Mockito tests"
 ---
 

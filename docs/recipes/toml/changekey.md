@@ -1,4 +1,5 @@
 ---
+title: "Change TOML key"
 sidebar_label: "Change TOML key"
 ---
 

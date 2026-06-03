@@ -1,4 +1,5 @@
 ---
+title: "Require using arrow functions for callbacks"
 sidebar_label: "Require using arrow functions for callbacks"
 ---
 

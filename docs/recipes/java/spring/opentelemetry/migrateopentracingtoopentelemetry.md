@@ -1,4 +1,5 @@
 ---
+title: "Migrate OpenTracing API to OpenTelemetry API"
 sidebar_label: "Migrate OpenTracing API to OpenTelemetry API"
 ---
 

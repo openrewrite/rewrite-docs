@@ -1,4 +1,5 @@
 ---
+title: "Project has no Jakarta annotations"
 sidebar_label: "Project has no Jakarta annotations"
 ---
 

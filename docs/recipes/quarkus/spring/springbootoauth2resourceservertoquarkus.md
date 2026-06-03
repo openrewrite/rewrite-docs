@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot OAuth2 Resource Server with Quarkus OIDC"
 sidebar_label: "Replace Spring Boot OAuth2 Resource Server with Quarkus OIDC"
 ---
 

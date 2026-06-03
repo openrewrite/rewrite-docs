@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Test with Quarkus JUnit 5"
 sidebar_label: "Replace Spring Boot Test with Quarkus JUnit 5"
 ---
 

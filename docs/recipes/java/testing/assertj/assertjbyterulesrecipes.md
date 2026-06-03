@@ -1,4 +1,5 @@
 ---
+title: "Adopt AssertJ Byte Assertions"
 sidebar_label: "Adopt AssertJ Byte Assertions"
 ---
 

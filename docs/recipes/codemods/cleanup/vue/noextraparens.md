@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary parentheses in `&lt;template&gt;`"
 sidebar_label: "Disallow unnecessary parentheses in `&lt;template&gt;`"
 ---
 

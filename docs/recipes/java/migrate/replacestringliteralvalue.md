@@ -1,4 +1,5 @@
 ---
+title: "Replace `String` literal"
 sidebar_label: "Replace `String` literal"
 ---
 

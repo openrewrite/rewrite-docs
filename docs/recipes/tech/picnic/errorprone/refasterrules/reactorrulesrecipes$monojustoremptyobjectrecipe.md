@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoJustOrEmptyObject`"
 sidebar_label: "Refaster template `ReactorRules.MonoJustOrEmptyObject`"
 ---
 

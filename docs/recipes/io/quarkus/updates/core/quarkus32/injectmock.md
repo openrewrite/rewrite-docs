@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus32.InjectMock"
 sidebar_label: "io.quarkus.updates.core.quarkus32.InjectMock"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Pin Docker images to digests"
 sidebar_label: "Pin Docker images to digests"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`"
 sidebar_label: "Replace invocations of `Collections#sort(List, Comparator)` with `List#sort(Comparator)`"
 ---
 

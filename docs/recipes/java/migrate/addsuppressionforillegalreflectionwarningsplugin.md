@@ -1,4 +1,5 @@
 ---
+title: "Add maven jar plugin to suppress illegal reflection warnings"
 sidebar_label: "Add maven jar plugin to suppress illegal reflection warnings"
 ---
 

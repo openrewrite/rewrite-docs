@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix"
 sidebar_label: "io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix"
 ---
 

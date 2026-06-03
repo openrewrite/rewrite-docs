@@ -1,4 +1,5 @@
 ---
+title: "Rename Jackson 2.x methods to 3.x equivalents for JsonNode"
 sidebar_label: "Rename Jackson 2.x methods to 3.x equivalents for JsonNode"
 ---
 

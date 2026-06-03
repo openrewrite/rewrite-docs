@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javaee-api` dependencies to `jakarta.platform`"
 sidebar_label: "Migrate deprecated `javaee-api` dependencies to `jakarta.platform`"
 ---
 

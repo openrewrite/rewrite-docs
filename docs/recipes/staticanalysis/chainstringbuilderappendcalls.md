@@ -1,4 +1,5 @@
 ---
+title: "Chain `StringBuilder.append()` calls"
 sidebar_label: "Chain `StringBuilder.append()` calls"
 ---
 

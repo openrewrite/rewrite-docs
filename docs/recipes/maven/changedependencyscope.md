@@ -1,4 +1,5 @@
 ---
+title: "Change Maven dependency scope"
 sidebar_label: "Change Maven dependency scope"
 ---
 

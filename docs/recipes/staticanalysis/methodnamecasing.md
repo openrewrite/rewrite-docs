@@ -1,4 +1,5 @@
 ---
+title: "Standardize method name casing"
 sidebar_label: "Standardize method name casing"
 ---
 

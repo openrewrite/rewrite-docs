@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamOfNullable`"
 sidebar_label: "Refaster template `StreamRules.StreamOfNullable`"
 ---
 

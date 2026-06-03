@@ -1,4 +1,5 @@
 ---
+title: "Change Gradle or Maven dependency"
 sidebar_label: "Change Gradle or Maven dependency"
 ---
 
@@ -140,6 +141,12 @@ This recipe is used as part of the following composite recipes:
 * [Migrate javax.javaee-web-api to jakarta.jakartaee-web-api (Jakarta EE 9)](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxwebtojakartaweb9.md)
 * [Migrate javax.mvc to 2.0 (Jakarta EE 9)](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](/recipes/java/testing/dbrider/migratedbriderspringtodbriderjunit5.md)
+* [Migrate the Axon Server connector to Axoniq Framework 5](/recipes/io/axoniq/framework/migration/axon4toaxoniq5axonserverconnector.md)
+* [Migrate the Dropwizard Metrics extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5metricsdropwizardextension.md)
+* [Migrate the Micrometer Metrics extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5metricsmicrometerextension.md)
+* [Migrate the Reactor extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5reactorextension.md)
+* [Migrate the Spring Boot extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5springbootextension.md)
+* [Migrate the Spring extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5springextension.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
 * [Migrate to DataNucleus 5.0](/recipes/java/migrate/datanucleus/upgradedatanucleus_5_0.md)
 * [Migrate to Hibernate 6.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate60-moderne-edition)
@@ -176,6 +183,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace Derby driver with Quarkus JDBC Derby](/recipes/quarkus/spring/derbydrivertoquarkus.md)
 * [Replace H2 driver with Quarkus JDBC H2](/recipes/quarkus/spring/h2drivertoquarkus.md)
 * [Replace Spring Framework dependencies with Spring Boot starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot/replacespringframeworkdepswithbootstarters)
+* [Swap the Spring Boot starter to Axoniq Framework 5 commercial](/recipes/io/axoniq/framework/migration/axon4toaxoniq5springboot.md)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)
 * [Update Apache Commons FileUpload2 package for EE10](/recipes/java/migrate/jakarta/updatefileupload2dependencies.md)
 * [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)

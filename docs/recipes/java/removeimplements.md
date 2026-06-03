@@ -1,4 +1,5 @@
 ---
+title: "Remove interface implementations"
 sidebar_label: "Remove interface implementations"
 ---
 

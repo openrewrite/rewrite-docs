@@ -1,4 +1,5 @@
 ---
+title: "Copy YAML value"
 sidebar_label: "Copy YAML value"
 ---
 

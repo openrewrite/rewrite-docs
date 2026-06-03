@@ -1,4 +1,5 @@
 ---
+title: "Migrate Pulsar component URIs from V1 to V2 format"
 sidebar_label: "Migrate Pulsar component URIs from V1 to V2 format"
 ---
 

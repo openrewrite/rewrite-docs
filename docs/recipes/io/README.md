@@ -6,6 +6,7 @@ description: Io OpenRewrite recipes.
 
 ## Categories
 
+* [Axoniq](/recipes/io/axoniq)
 * [Quarkus](/recipes/io/quarkus)
 
 

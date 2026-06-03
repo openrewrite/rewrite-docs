@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Security with Quarkus Security"
 sidebar_label: "Replace Spring Boot Security with Quarkus Security"
 ---
 

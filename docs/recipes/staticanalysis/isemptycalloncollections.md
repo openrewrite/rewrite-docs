@@ -1,4 +1,5 @@
 ---
+title: "Use `Collection#isEmpty()` instead of comparing `size()`"
 sidebar_label: "Use `Collection#isEmpty()` instead of comparing `size()`"
 ---
 

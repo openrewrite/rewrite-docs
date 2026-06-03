@@ -1,4 +1,5 @@
 ---
+title: "Applies a codemod to all source files"
 sidebar_label: "Applies a codemod to all source files"
 ---
 

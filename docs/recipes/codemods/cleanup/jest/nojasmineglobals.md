@@ -1,4 +1,5 @@
 ---
+title: "Disallow Jasmine globals"
 sidebar_label: "Disallow Jasmine globals"
 ---
 

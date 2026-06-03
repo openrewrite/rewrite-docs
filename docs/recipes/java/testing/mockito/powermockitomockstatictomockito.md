@@ -1,4 +1,5 @@
 ---
+title: "Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`"
 sidebar_label: "Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`"
 ---
 

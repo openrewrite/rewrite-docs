@@ -1,4 +1,5 @@
 ---
+title: "Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`"
 sidebar_label: "Replace JUnit `assertTrue(a.equals(b))` to `assertEquals(a,b)`"
 ---
 

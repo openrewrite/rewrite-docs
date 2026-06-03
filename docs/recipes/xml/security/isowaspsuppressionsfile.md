@@ -1,4 +1,5 @@
 ---
+title: "Find OWASP vulnerability suppression XML files"
 sidebar_label: "Find OWASP vulnerability suppression XML files"
 ---
 

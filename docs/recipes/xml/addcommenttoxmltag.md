@@ -1,4 +1,5 @@
 ---
+title: "Add a comment to an XML tag"
 sidebar_label: "Add a comment to an XML tag"
 ---
 
@@ -32,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate Spring Integration XML attributes deprecated by Spring Integration 6.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/integration/migratespringframework6deprecatedintegrationxmlattributes)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 
 ## Example

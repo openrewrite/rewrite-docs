@@ -1,4 +1,5 @@
 ---
+title: "Replace null with RewriteTest.doesNotExist()"
 sidebar_label: "Replace null with RewriteTest.doesNotExist()"
 ---
 

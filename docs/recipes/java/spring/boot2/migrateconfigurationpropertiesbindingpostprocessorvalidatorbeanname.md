@@ -1,4 +1,5 @@
 ---
+title: "Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`"
 sidebar_label: "Use `EnableConfigurationProperties.VALIDATOR_BEAN_NAME`"
 ---
 

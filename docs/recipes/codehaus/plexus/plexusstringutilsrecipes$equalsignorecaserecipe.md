@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.equalsIgnoreCase(String, String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.equalsIgnoreCase(String, String)` with JDK provided API"
 ---
 

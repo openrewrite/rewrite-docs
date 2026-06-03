@@ -1,4 +1,5 @@
 ---
+title: "Require static class names in template to be in a separate class attribute"
 sidebar_label: "Require static class names in template to be in a separate class attribute"
 ---
 

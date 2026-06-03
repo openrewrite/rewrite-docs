@@ -1,4 +1,5 @@
 ---
+title: "Delete files"
 sidebar_label: "Delete files"
 ---
 

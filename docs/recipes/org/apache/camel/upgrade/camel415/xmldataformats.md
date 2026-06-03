@@ -1,4 +1,5 @@
 ---
+title: "Refactored dataFormats (XML DSL)"
 sidebar_label: "Refactored dataFormats (XML DSL)"
 ---
 

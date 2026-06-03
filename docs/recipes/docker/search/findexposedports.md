@@ -1,4 +1,5 @@
 ---
+title: "Find exposed ports"
 sidebar_label: "Find exposed ports"
 ---
 

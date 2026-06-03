@@ -1,4 +1,5 @@
 ---
+title: "Apache Maven reproducible builds"
 sidebar_label: "Apache Maven reproducible builds"
 ---
 
@@ -76,6 +77,109 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`ReproducibleBuildsTest#appliesEncodingAndOutputTimestamp`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <properties>
+    <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,0 +5,5 @@
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <properties>
++   <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
++   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++   <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
++ </properties>
+</project>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`ReproducibleBuildsTest#appliesEncodingAndOutputTimestamp`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <properties>
+    <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,0 +5,5 @@
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <properties>
++   <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
++   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
++   <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
++ </properties>
+</project>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

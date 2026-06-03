@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.ejb` packages to `jakarta.ejb`"
 sidebar_label: "Migrate deprecated `javax.ejb` packages to `jakarta.ejb`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find source files with imports"
 sidebar_label: "Find source files with imports"
 ---
 

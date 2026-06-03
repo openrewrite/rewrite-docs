@@ -1,4 +1,5 @@
 ---
+title: "Document permissions usage"
 sidebar_label: "Document permissions usage"
 ---
 

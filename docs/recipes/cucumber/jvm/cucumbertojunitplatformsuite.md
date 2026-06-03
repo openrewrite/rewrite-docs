@@ -1,4 +1,5 @@
 ---
+title: "Cucumber to JUnit test `@Suite`"
 sidebar_label: "Cucumber to JUnit test `@Suite`"
 ---
 

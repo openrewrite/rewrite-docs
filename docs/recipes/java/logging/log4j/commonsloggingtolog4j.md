@@ -1,4 +1,5 @@
 ---
+title: "Migrate JCL to Log4j 2.x API"
 sidebar_label: "Migrate JCL to Log4j 2.x API"
 ---
 

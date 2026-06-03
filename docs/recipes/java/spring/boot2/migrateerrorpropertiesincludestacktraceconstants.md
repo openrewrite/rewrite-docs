@@ -1,4 +1,5 @@
 ---
+title: "Use `ErrorProperties#IncludeStacktrace.ON_PARAM`"
 sidebar_label: "Use `ErrorProperties#IncludeStacktrace.ON_PARAM`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `JUnitToAssertJRules.AssertThatIsNotSameAs`"
 sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatIsNotSameAs`"
 ---
 

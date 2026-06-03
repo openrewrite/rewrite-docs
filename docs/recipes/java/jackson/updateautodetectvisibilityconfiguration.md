@@ -1,4 +1,5 @@
 ---
+title: "Replace `disable(MapperFeature.AUTO_DETECT_*)` with `changeDefaultVisibility()` for Jackson 3"
 sidebar_label: "Replace `disable(MapperFeature.AUTO_DETECT_*)` with `changeDefaultVisibility()` for Jackson 3"
 ---
 

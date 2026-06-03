@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Math#multiplyExact`"
 sidebar_label: "Prefer `Math#multiplyExact`"
 ---
 

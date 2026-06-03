@@ -1,4 +1,5 @@
 ---
+title: "Change Maven and Gradle Java version property values to 17"
 sidebar_label: "Change Maven and Gradle Java version property values to 17"
 ---
 

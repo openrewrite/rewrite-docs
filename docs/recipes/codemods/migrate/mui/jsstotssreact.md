@@ -1,4 +1,5 @@
 ---
+title: "Converts JSS to TypeScript in React components"
 sidebar_label: "Converts JSS to TypeScript in React components"
 ---
 

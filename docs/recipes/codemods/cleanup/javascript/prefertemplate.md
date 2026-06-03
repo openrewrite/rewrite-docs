@@ -1,4 +1,5 @@
 ---
+title: "Require template literals instead of string concatenation"
 sidebar_label: "Require template literals instead of string concatenation"
 ---
 

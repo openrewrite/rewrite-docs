@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxThenMono`"
 sidebar_label: "Refaster template `ReactorRules.FluxThenMono`"
 ---
 

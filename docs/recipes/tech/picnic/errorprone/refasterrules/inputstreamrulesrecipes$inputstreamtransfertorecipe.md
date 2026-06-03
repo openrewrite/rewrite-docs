@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `InputStreamRules.InputStreamTransferTo`"
 sidebar_label: "Refaster template `InputStreamRules.InputStreamTransferTo`"
 ---
 

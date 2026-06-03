@@ -1,4 +1,5 @@
 ---
+title: "Migrate Joda-Time `LocalDate` to `java.time.LocalDate`"
 sidebar_label: "Migrate Joda-Time `LocalDate` to `java.time.LocalDate`"
 ---
 

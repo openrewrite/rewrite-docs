@@ -1,4 +1,5 @@
 ---
+title: "Enforce maximum of props on a single line in JSX"
 sidebar_label: "Enforce maximum of props on a single line in JSX"
 ---
 

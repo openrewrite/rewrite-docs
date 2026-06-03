@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new AtomicReference&lt;&gt;()`"
 sidebar_label: "Prefer `new AtomicReference&lt;&gt;()`"
 ---
 

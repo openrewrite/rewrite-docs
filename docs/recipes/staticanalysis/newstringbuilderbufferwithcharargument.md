@@ -1,4 +1,5 @@
 ---
+title: "Change `StringBuilder` and `StringBuffer` character constructor argument to `String`"
 sidebar_label: "Change `StringBuilder` and `StringBuffer` character constructor argument to `String`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace String literals with Spring constants"
 sidebar_label: "Replace String literals with Spring constants"
 ---
 

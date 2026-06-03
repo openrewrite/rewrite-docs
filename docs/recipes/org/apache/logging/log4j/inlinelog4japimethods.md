@@ -1,4 +1,5 @@
 ---
+title: "Inline `log4j-api-2` methods annotated with `@InlineMe`"
 sidebar_label: "Inline `log4j-api-2` methods annotated with `@InlineMe`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.RemoveOptionalFirstNavigableSetElement`"
 sidebar_label: "Refaster template `CollectionRules.RemoveOptionalFirstNavigableSetElement`"
 ---
 

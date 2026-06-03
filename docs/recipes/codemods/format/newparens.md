@@ -1,4 +1,5 @@
 ---
+title: "Enforce or disallow parentheses when invoking a constructor with no arguments"
 sidebar_label: "Enforce or disallow parentheses when invoking a constructor with no arguments"
 ---
 

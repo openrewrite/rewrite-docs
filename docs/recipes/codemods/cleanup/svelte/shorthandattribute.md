@@ -1,4 +1,5 @@
 ---
+title: "Enforce use of shorthand syntax in attribute"
 sidebar_label: "Enforce use of shorthand syntax in attribute"
 ---
 

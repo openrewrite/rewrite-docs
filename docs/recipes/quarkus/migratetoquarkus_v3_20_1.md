@@ -1,4 +1,5 @@
 ---
+title: "Quarkus Updates Aggregate 3.20.1"
 sidebar_label: "Quarkus Updates Aggregate 3.20.1"
 ---
 

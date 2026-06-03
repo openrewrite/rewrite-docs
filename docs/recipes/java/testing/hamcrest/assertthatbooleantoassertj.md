@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ"
 sidebar_label: "Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ"
 ---
 

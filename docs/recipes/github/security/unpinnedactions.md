@@ -1,4 +1,5 @@
 ---
+title: "Pin GitHub Actions to specific commits"
 sidebar_label: "Pin GitHub Actions to specific commits"
 ---
 

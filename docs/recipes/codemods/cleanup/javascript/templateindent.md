@@ -1,4 +1,5 @@
 ---
+title: "Fix whitespace-insensitive template indentation"
 sidebar_label: "Fix whitespace-insensitive template indentation"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "URL Hash Code"
 sidebar_label: "URL Hash Code"
 ---
 

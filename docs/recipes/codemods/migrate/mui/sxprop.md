@@ -1,4 +1,5 @@
 ---
+title: "Update the usage of the `sx` prop to be compatible with `@pigment-css/react`"
 sidebar_label: "Update the usage of the `sx` prop to be compatible with `@pigment-css/react`"
 ---
 

@@ -29,5 +29,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate from `@Api` to `@Tag`](./migrateapitotag.md)
 * [Migrate from `@ApiModel` to `@Schema`](./migrateapimodeltoschema.md)
 * [Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`](./migrateswaggerdefinitiontoopenapidefinition.md)
+* [Replace springfox `@ApiIgnore` on method parameters with `@Parameter(hidden = true)`](./migrateapiignoreparametertoparameterhidden.md)
 
 

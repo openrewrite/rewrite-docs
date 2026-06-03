@@ -1,4 +1,5 @@
 ---
+title: "Finalize local variables"
 sidebar_label: "Finalize local variables"
 ---
 

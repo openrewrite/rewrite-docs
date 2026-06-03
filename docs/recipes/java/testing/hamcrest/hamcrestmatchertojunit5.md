@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Hamcrest `Matcher` to JUnit 5"
 sidebar_label: "Migrate from Hamcrest `Matcher` to JUnit 5"
 ---
 

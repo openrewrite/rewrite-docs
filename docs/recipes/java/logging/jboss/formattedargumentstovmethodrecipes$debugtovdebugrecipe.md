@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `FormattedArgumentsToVMethod.DebugToVDebug`"
 sidebar_label: "Refaster template `FormattedArgumentsToVMethod.DebugToVDebug`"
 ---
 

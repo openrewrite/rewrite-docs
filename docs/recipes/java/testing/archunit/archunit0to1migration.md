@@ -1,4 +1,5 @@
 ---
+title: "ArchUnit 0.x upgrade"
 sidebar_label: "ArchUnit 0.x upgrade"
 ---
 

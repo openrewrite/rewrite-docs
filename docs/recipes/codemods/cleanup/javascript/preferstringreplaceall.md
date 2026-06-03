@@ -1,4 +1,5 @@
 ---
+title: "Prefer `String#replaceAll()` over regex searches with the global flag"
 sidebar_label: "Prefer `String#replaceAll()` over regex searches with the global flag"
 ---
 

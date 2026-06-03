@@ -1,4 +1,5 @@
 ---
+title: "`AssertJLongRules` Refaster recipes"
 sidebar_label: "`AssertJLongRules` Refaster recipes"
 ---
 

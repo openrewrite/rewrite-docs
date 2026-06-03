@@ -1,4 +1,5 @@
 ---
+title: "Remove unused properties"
 sidebar_label: "Remove unused properties"
 ---
 

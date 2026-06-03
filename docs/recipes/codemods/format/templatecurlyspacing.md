@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow spacing around embedded expressions of template strings"
 sidebar_label: "Require or disallow spacing around embedded expressions of template strings"
 ---
 

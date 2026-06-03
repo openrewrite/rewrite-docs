@@ -1,4 +1,5 @@
 ---
+title: "Update Micronaut Gradle build plugins to 5.x"
 sidebar_label: "Update Micronaut Gradle build plugins to 5.x"
 ---
 

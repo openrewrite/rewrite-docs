@@ -1,4 +1,5 @@
 ---
+title: "YAML indent"
 sidebar_label: "YAML indent"
 ---
 

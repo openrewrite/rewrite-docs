@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJEnumerableRules.EnumerableAssertHasSizeGreaterThanOrEqualTo`"
 sidebar_label: "Refaster template `AssertJEnumerableRules.EnumerableAssertHasSizeGreaterThanOrEqualTo`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `switch` over multiple `else-if`"
 sidebar_label: "Prefer `switch` over multiple `else-if`"
 ---
 

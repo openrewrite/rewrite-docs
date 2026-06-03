@@ -1,4 +1,5 @@
 ---
+title: "Prepend a random name to each Log4J statement"
 sidebar_label: "Prepend a random name to each Log4J statement"
 ---
 

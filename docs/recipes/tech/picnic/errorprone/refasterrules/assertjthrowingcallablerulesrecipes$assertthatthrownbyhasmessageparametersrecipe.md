@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageParameters`"
 sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByHasMessageParameters`"
 ---
 

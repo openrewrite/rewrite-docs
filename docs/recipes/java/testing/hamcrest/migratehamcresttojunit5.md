@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hamcrest assertions to JUnit Jupiter"
 sidebar_label: "Migrate Hamcrest assertions to JUnit Jupiter"
 ---
 

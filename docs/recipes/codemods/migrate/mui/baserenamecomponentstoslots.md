@@ -1,4 +1,5 @@
 ---
+title: "Renames base components to slots"
 sidebar_label: "Renames base components to slots"
 ---
 

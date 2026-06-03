@@ -1,4 +1,5 @@
 ---
+title: "Find end-of-life Docker base images"
 sidebar_label: "Find end-of-life Docker base images"
 ---
 

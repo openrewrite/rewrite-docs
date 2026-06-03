@@ -1,4 +1,5 @@
 ---
+title: "Rename package name in String literals"
 sidebar_label: "Rename package name in String literals"
 ---
 

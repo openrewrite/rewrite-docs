@@ -1,4 +1,5 @@
 ---
+title: "URL Equals"
 sidebar_label: "URL Equals"
 ---
 

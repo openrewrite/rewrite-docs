@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `LongStreamRules.LongStreamClosedOpenRange`"
 sidebar_label: "Refaster template `LongStreamRules.LongStreamClosedOpenRange`"
 ---
 

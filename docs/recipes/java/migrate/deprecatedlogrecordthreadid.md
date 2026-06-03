@@ -1,4 +1,5 @@
 ---
+title: "Adopt `setLongThreadID` in `java.util.logging.LogRecord`"
 sidebar_label: "Adopt `setLongThreadID` in `java.util.logging.LogRecord`"
 ---
 

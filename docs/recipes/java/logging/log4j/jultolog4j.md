@@ -1,4 +1,5 @@
 ---
+title: "Migrate JUL to Log4j 2.x API"
 sidebar_label: "Migrate JUL to Log4j 2.x API"
 ---
 

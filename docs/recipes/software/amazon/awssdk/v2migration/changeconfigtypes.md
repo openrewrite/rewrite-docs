@@ -1,4 +1,5 @@
 ---
+title: "Change config related classes from v1 to v2"
 sidebar_label: "Change config related classes from v1 to v2"
 ---
 

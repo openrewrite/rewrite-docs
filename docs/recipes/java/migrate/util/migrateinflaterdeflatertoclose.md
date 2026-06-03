@@ -1,4 +1,5 @@
 ---
+title: "Replace `Inflater` and `Deflater` `end()` calls with `close()`"
 sidebar_label: "Replace `Inflater` and `Deflater` `end()` calls with `close()`"
 ---
 

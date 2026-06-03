@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PatternRules.PatternCompileAsPredicate`"
 sidebar_label: "Refaster template `PatternRules.PatternCompileAsPredicate`"
 ---
 

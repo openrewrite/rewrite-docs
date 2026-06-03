@@ -1,4 +1,5 @@
 ---
+title: "Enforce the consistent use of either backticks, double, or single quotes"
 sidebar_label: "Enforce the consistent use of either backticks, double, or single quotes"
 ---
 

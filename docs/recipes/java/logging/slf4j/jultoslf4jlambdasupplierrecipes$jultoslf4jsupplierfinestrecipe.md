@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.finest(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`"
 sidebar_label: "Replace JUL `Logger.finest(Supplier&lt;String&gt;)` with SLF4J's `Logger.atTrace().log(Supplier&lt;String&gt;)`"
 ---
 

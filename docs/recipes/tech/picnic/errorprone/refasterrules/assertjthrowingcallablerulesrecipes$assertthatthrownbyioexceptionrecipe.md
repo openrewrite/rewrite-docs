@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIOException`"
 sidebar_label: "Refaster template `AssertJThrowingCallableRules.AssertThatThrownByIOException`"
 ---
 

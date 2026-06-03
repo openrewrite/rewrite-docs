@@ -1,4 +1,5 @@
 ---
+title: "Migrate Log4j 2.x to SLF4J 1.x"
 sidebar_label: "Migrate Log4j 2.x to SLF4J 1.x"
 ---
 
@@ -50,6 +51,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.apache.logging.log4j.Category fatal(..)`
   * newMethodName: `error`
+* [Replace Log4j 2.x active Level check with corresponding SLF4J method calls](../../../java/logging/slf4j/log4j2isenabledtoslf4jrecipes)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.logging.log4j.Logger`
   * newFullyQualifiedTypeName: `org.slf4j.Logger`
@@ -83,6 +85,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.logging.log4j.Category fatal(..)
       newMethodName: error
+  - org.openrewrite.java.logging.slf4j.Log4j2IsEnabledToSlf4jRecipes
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.logging.log4j.Logger
       newFullyQualifiedTypeName: org.slf4j.Logger

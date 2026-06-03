@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJStringRules.AssertThatIsBlank`"
 sidebar_label: "Refaster template `AssertJStringRules.AssertThatIsBlank`"
 ---
 

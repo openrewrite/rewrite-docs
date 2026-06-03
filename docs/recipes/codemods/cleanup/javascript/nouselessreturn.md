@@ -1,4 +1,5 @@
 ---
+title: "Disallow redundant return statements"
 sidebar_label: "Disallow redundant return statements"
 ---
 

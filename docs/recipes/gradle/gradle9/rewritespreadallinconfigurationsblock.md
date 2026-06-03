@@ -1,4 +1,5 @@
 ---
+title: "Replace spread-`all*` calls in `configurations` blocks with `configurations.all { }`"
 sidebar_label: "Replace spread-`all*` calls in `configurations` blocks with `configurations.all { }`"
 ---
 
@@ -26,6 +27,43 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+configurations {
+    all*.exclude group: "log4j", module: "log4j"
+}
+```
+
+###### After
+```groovy title="build.gradle"
+configurations.all {
+    exclude group: "log4j", module: "log4j"
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -1,2 +1,2 @@
+-configurations {
+-   all*.exclude group: "log4j", module: "log4j"
++configurations.all {
++   exclude group: "log4j", module: "log4j"
+}
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

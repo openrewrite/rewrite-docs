@@ -1,4 +1,5 @@
 ---
+title: "Remove implicit web annotation names"
 sidebar_label: "Remove implicit web annotation names"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find Spring API endpoints"
 sidebar_label: "Find Spring API endpoints"
 ---
 

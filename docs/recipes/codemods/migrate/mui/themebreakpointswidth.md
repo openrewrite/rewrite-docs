@@ -1,4 +1,5 @@
 ---
+title: "Updates `width` values for theme breakpoints"
 sidebar_label: "Updates `width` values for theme breakpoints"
 ---
 

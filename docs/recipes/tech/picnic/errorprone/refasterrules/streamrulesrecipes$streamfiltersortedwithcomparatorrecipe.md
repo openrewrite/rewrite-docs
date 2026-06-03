@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamFilterSortedWithComparator`"
 sidebar_label: "Refaster template `StreamRules.StreamFilterSortedWithComparator`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Renames `Mui` classname prefix"
 sidebar_label: "Renames `Mui` classname prefix"
 ---
 

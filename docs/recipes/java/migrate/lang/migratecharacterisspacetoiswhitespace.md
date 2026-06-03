@@ -1,4 +1,5 @@
 ---
+title: "Use `Character#isWhitespace(char)`"
 sidebar_label: "Use `Character#isWhitespace(char)`"
 ---
 

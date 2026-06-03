@@ -1,4 +1,5 @@
 ---
+title: "Use `java.lang.management.PlatformLoggingMXBean`"
 sidebar_label: "Use `java.lang.management.PlatformLoggingMXBean`"
 ---
 

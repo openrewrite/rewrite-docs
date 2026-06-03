@@ -1,4 +1,5 @@
 ---
+title: "Replace `0 &lt; s.length()` with `!s.isEmpty()`"
 sidebar_label: "Replace `0 &lt; s.length()` with `!s.isEmpty()`"
 ---
 

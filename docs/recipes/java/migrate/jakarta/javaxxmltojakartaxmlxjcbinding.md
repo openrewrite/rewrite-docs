@@ -1,4 +1,5 @@
 ---
+title: "Migrate XJC Bindings to Jakata XML"
 sidebar_label: "Migrate XJC Bindings to Jakata XML"
 ---
 

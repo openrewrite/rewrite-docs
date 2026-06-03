@@ -1,4 +1,5 @@
 ---
+title: "Log exceptions as parameters rather than as string concatenations"
 sidebar_label: "Log exceptions as parameters rather than as string concatenations"
 ---
 

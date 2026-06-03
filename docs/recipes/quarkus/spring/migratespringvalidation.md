@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Validation to Quarkus"
 sidebar_label: "Migrate Spring Validation to Quarkus"
 ---
 

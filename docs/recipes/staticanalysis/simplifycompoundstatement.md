@@ -1,4 +1,5 @@
 ---
+title: "Simplify compound statement"
 sidebar_label: "Simplify compound statement"
 ---
 

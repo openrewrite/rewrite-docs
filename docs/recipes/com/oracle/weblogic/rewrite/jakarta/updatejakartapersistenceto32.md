@@ -1,4 +1,5 @@
 ---
+title: "Update Jakarta Persistence to 3.2"
 sidebar_label: "Update Jakarta Persistence to 3.2"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `export…from` when re-exporting"
 sidebar_label: "Prefer `export…from` when re-exporting"
 ---
 

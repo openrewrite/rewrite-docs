@@ -1,4 +1,5 @@
 ---
+title: "Use `mainClass` instead of `main` for `JavaExec` tasks"
 sidebar_label: "Use `mainClass` instead of `main` for `JavaExec` tasks"
 ---
 

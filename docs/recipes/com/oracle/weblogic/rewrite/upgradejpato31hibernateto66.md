@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Jakarta JPA to 3.1 and Hibernate 6.6"
 sidebar_label: "Upgrade Jakarta JPA to 3.1 and Hibernate 6.6"
 ---
 

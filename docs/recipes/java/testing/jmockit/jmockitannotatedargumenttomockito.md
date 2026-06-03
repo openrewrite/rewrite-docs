@@ -1,4 +1,5 @@
 ---
+title: "Convert JMockit `@Mocked` and `@Injectable` annotated arguments"
 sidebar_label: "Convert JMockit `@Mocked` and `@Injectable` annotated arguments"
 ---
 

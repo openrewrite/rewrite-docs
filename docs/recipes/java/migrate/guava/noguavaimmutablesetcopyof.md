@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Set.copyOf(..)` in Java 10 or higher"
 sidebar_label: "Prefer `Set.copyOf(..)` in Java 10 or higher"
 ---
 

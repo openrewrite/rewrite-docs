@@ -1,4 +1,5 @@
 ---
+title: "Enforce props alphabetical sorting"
 sidebar_label: "Enforce props alphabetical sorting"
 ---
 

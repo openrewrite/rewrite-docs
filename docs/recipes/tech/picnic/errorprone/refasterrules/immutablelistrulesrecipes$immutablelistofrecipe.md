@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableListRules.ImmutableListOf`"
 sidebar_label: "Refaster template `ImmutableListRules.ImmutableListOf`"
 ---
 

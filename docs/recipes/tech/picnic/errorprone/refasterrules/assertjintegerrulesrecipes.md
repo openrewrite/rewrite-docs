@@ -1,4 +1,5 @@
 ---
+title: "`AssertJIntegerRules` Refaster recipes"
 sidebar_label: "`AssertJIntegerRules` Refaster recipes"
 ---
 

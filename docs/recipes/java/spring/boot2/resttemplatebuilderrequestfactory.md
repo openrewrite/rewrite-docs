@@ -1,4 +1,5 @@
 ---
+title: "Migrate `RestTemplateBuilder`"
 sidebar_label: "Migrate `RestTemplateBuilder`"
 ---
 

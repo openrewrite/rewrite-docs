@@ -1,4 +1,5 @@
 ---
+title: "Remove registrations of modules built-in to Jackson 3"
 sidebar_label: "Remove registrations of modules built-in to Jackson 3"
 ---
 

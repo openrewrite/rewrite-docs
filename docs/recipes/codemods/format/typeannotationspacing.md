@@ -1,4 +1,5 @@
 ---
+title: "Require consistent spacing around type annotations"
 sidebar_label: "Require consistent spacing around type annotations"
 ---
 

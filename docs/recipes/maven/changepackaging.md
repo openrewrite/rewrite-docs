@@ -1,4 +1,5 @@
 ---
+title: "Set Maven project packaging"
 sidebar_label: "Set Maven project packaging"
 ---
 

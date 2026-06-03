@@ -1,4 +1,5 @@
 ---
+title: "`RxJava2AdapterRules` Refaster recipes"
 sidebar_label: "`RxJava2AdapterRules` Refaster recipes"
 ---
 

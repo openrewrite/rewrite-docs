@@ -1,4 +1,5 @@
 ---
+title: "`AssertJObjectRules` Refaster recipes"
 sidebar_label: "`AssertJObjectRules` Refaster recipes"
 ---
 

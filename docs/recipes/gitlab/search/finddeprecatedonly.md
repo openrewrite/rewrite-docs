@@ -1,4 +1,5 @@
 ---
+title: "Find deprecated `only` keyword"
 sidebar_label: "Find deprecated `only` keyword"
 ---
 

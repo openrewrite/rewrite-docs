@@ -1,4 +1,5 @@
 ---
+title: "Migrate `AuthScheme` credential handling"
 sidebar_label: "Migrate `AuthScheme` credential handling"
 ---
 

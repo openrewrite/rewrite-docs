@@ -1,4 +1,5 @@
 ---
+title: "Check whether a type is **not** in use"
 sidebar_label: "Check whether a type is **not** in use"
 ---
 

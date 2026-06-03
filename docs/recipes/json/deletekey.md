@@ -1,4 +1,5 @@
 ---
+title: "Delete key"
 sidebar_label: "Delete key"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Simplify boolean expressions using De Morgan's laws"
 sidebar_label: "Simplify boolean expressions using De Morgan's laws"
 ---
 

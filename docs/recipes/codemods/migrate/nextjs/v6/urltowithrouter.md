@@ -1,4 +1,5 @@
 ---
+title: "Use `withRouter`"
 sidebar_label: "Use `withRouter`"
 ---
 

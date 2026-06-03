@@ -1,4 +1,5 @@
 ---
+title: "Updates createMuiTheme usage"
 sidebar_label: "Updates createMuiTheme usage"
 ---
 

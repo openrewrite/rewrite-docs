@@ -1,4 +1,5 @@
 ---
+title: "`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`"
 sidebar_label: "`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`"
 ---
 

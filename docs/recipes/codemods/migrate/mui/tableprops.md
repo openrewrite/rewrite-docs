@@ -1,4 +1,5 @@
 ---
+title: "Updates props for Table component"
 sidebar_label: "Updates props for Table component"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`"
 sidebar_label: "Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`"
 ---
 

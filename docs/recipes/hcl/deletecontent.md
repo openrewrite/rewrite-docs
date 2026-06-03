@@ -1,4 +1,5 @@
 ---
+title: "Delete content"
 sidebar_label: "Delete content"
 ---
 

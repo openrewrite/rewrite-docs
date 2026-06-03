@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoZipWithCombinator`"
 sidebar_label: "Refaster template `ReactorRules.MonoZipWithCombinator`"
 ---
 

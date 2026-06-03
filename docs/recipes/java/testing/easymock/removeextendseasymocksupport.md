@@ -1,4 +1,5 @@
 ---
+title: "Migrate Test classes that extend `org.easymock.EasyMockSupport` to use Mockito"
 sidebar_label: "Migrate Test classes that extend `org.easymock.EasyMockSupport` to use Mockito"
 ---
 

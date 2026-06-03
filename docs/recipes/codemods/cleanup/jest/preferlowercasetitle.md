@@ -1,4 +1,5 @@
 ---
+title: "Enforce lowercase test names"
 sidebar_label: "Enforce lowercase test names"
 ---
 

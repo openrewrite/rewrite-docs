@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUL active Level check with corresponding SLF4J method calls](./jultoslf4jlambdasupplierrecipes.md)
 * [Replace JUL `log(Level, String, Throwable)` with corresponding SLF4J method calls](./jultoslf4jsimplecallswiththrowablerecipes.md)
 * [Replace JUL `log(Level, Throwable, Supplier&lt;String&gt;)` with corresponding SLF4J method calls](./jultoslf4jlambdasupplierwiththrowablerecipes.md)
+* [Replace Log4j 2.x active Level check with corresponding SLF4J method calls](./log4j2isenabledtoslf4jrecipes.md)
 * [SLF4J best practices](./slf4jbestpractices.md)
 
 ## Recipes
@@ -74,6 +75,11 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace JUL `logger.log(Level.SEVERE, e, Supplier&lt;String&gt;)` with SLF4J's `Logger.atError().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsuppliersevererecipe.md)
 * [Replace JUL `logger.log(Level.WARNING, String message, Throwable e)` with SLF4J's `Logger.warn(message, e)`](./jultoslf4jsimplecallswiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
 * [Replace JUL `logger.log(Level.WARNING, e, Supplier&lt;String&gt;)` with SLF4J's `Logger.atWarn().log(Supplier&lt;String&gt;)`](./jultoslf4jlambdasupplierwiththrowablerecipes$jultoslf4jsupplierwarningrecipe.md)
+* [Replace Log4j 2.x `Logger.isEnabled(Level.DEBUG)` with SLF4J's `Logger.isDebugEnabled()`](./log4j2isenabledtoslf4jrecipes$loggerisenabledleveldebugrecipe.md)
+* [Replace Log4j 2.x `Logger.isEnabled(Level.ERROR)` with SLF4J's `Logger.isErrorEnabled()`](./log4j2isenabledtoslf4jrecipes$loggerisenabledlevelerrorrecipe.md)
+* [Replace Log4j 2.x `Logger.isEnabled(Level.INFO)` with SLF4J's `Logger.isInfoEnabled()`](./log4j2isenabledtoslf4jrecipes$loggerisenabledlevelinforecipe.md)
+* [Replace Log4j 2.x `Logger.isEnabled(Level.TRACE)` with SLF4J's `Logger.isTraceEnabled()`](./log4j2isenabledtoslf4jrecipes$loggerisenabledleveltracerecipe.md)
+* [Replace Log4j 2.x `Logger.isEnabled(Level.WARN)` with SLF4J's `Logger.isWarnEnabled()`](./log4j2isenabledtoslf4jrecipes$loggerisenabledlevelwarnrecipe.md)
 * [Replace parameterized JUL level call with corresponding SLF4J method calls](./julparameterizedarguments.md)
 * [SLF4J logging statements should begin with constants](./slf4jlogshouldbeconstant.md)
 * [`String.format()` in logging statements should use SLF4J parameterized logging](./stringformattoparameterizedlogging.md)

@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.log(Level.SEVERE, String)` with `Logger.severe(String)`"
 sidebar_label: "Replace JUL `Logger.log(Level.SEVERE, String)` with `Logger.severe(String)`"
 ---
 

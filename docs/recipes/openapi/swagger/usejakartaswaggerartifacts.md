@@ -1,4 +1,5 @@
 ---
+title: "Use Jakarta Swagger Artifacts"
 sidebar_label: "Use Jakarta Swagger Artifacts"
 ---
 

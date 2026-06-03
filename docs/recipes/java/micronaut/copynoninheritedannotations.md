@@ -1,4 +1,5 @@
 ---
+title: "Copy non-inherited annotations from super class"
 sidebar_label: "Copy non-inherited annotations from super class"
 ---
 

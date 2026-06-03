@@ -1,4 +1,5 @@
 ---
+title: "Parameterize logging statements"
 sidebar_label: "Parameterize logging statements"
 ---
 

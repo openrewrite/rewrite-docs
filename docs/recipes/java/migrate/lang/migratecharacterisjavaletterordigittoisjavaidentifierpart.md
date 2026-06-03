@@ -1,4 +1,5 @@
 ---
+title: "Use `Character#isJavaIdentifierPart(char)`"
 sidebar_label: "Use `Character#isJavaIdentifierPart(char)`"
 ---
 

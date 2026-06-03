@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `OptionalRules.OptionalOrElseThrowMethodReference`"
 sidebar_label: "Refaster template `OptionalRules.OptionalOrElseThrowMethodReference`"
 ---
 

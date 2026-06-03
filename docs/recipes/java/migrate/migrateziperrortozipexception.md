@@ -1,4 +1,5 @@
 ---
+title: "Use `ZipException` instead of `ZipError`"
 sidebar_label: "Use `ZipException` instead of `ZipError`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Spring dependencies"
 sidebar_label: "Upgrade Spring dependencies"
 ---
 

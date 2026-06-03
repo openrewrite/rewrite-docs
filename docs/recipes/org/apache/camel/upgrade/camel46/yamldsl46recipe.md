@@ -1,4 +1,5 @@
 ---
+title: "Bean property to properties."
 sidebar_label: "Bean property to properties."
 ---
 

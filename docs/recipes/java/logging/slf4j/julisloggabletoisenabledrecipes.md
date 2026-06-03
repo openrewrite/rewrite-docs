@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL active Level check with corresponding SLF4J method calls"
 sidebar_label: "Replace JUL active Level check with corresponding SLF4J method calls"
 ---
 

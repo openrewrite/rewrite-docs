@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4"
 sidebar_label: "Migrate Spring Boot 2.x projects to JUnit 5 from JUnit 4"
 ---
 

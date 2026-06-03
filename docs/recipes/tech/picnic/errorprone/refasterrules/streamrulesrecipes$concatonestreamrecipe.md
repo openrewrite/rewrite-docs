@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.ConcatOneStream`"
 sidebar_label: "Refaster template `StreamRules.ConcatOneStream`"
 ---
 

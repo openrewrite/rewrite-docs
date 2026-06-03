@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.abbreviate(String, int)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.abbreviate(String, int)` with JDK provided API"
 ---
 

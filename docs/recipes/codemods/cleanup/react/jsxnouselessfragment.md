@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary fragments"
 sidebar_label: "Disallow unnecessary fragments"
 ---
 

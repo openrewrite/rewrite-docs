@@ -1,4 +1,5 @@
 ---
+title: "Add WebLogic 15.1.1 PetClinic extras"
 sidebar_label: "Add WebLogic 15.1.1 PetClinic extras"
 ---
 

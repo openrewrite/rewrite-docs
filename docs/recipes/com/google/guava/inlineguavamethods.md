@@ -1,4 +1,5 @@
 ---
+title: "Inline `guava` methods annotated with `@InlineMe`"
 sidebar_label: "Inline `guava` methods annotated with `@InlineMe`"
 ---
 

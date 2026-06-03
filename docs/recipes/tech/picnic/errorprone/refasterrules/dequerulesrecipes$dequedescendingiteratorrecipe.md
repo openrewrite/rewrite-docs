@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DequeRules.DequeDescendingIterator`"
 sidebar_label: "Refaster template `DequeRules.DequeDescendingIterator`"
 ---
 

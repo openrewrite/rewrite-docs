@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.CollectionsDisjoint`"
 sidebar_label: "Refaster template `CollectionRules.CollectionsDisjoint`"
 ---
 

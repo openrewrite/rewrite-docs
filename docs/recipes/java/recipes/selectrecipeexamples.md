@@ -1,4 +1,5 @@
 ---
+title: "Automatically select recipe examples from the unit test cases of a recipe"
 sidebar_label: "Automatically select recipe examples from the unit test cases of a recipe"
 ---
 

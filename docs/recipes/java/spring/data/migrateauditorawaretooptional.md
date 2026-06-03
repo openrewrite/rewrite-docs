@@ -1,4 +1,5 @@
 ---
+title: "Make AuditorAware.getCurrentAuditor return `Optional`"
 sidebar_label: "Make AuditorAware.getCurrentAuditor return `Optional`"
 ---
 

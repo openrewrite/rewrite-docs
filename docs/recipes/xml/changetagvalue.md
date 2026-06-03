@@ -1,4 +1,5 @@
 ---
+title: "Change XML tag value"
 sidebar_label: "Change XML tag value"
 ---
 

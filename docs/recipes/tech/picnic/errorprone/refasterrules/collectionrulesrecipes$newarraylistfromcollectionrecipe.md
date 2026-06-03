@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.NewArrayListFromCollection`"
 sidebar_label: "Refaster template `CollectionRules.NewArrayListFromCollection`"
 ---
 

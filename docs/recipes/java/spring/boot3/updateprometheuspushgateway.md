@@ -1,4 +1,5 @@
 ---
+title: "Update Prometheus Pushgateway Dependency Coordinates"
 sidebar_label: "Update Prometheus Pushgateway Dependency Coordinates"
 ---
 

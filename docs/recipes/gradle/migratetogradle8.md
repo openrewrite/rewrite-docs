@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Gradle 8 from Gradle 7"
 sidebar_label: "Migrate to Gradle 8 from Gradle 7"
 ---
 

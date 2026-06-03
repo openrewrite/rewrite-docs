@@ -1,4 +1,5 @@
 ---
+title: "Replace `java.lang.ref.Reference.clone()` with constructor call"
 sidebar_label: "Replace `java.lang.ref.Reference.clone()` with constructor call"
 ---
 

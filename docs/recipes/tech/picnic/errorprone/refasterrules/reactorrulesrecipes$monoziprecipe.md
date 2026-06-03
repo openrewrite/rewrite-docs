@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoZip`"
 sidebar_label: "Refaster template `ReactorRules.MonoZip`"
 ---
 

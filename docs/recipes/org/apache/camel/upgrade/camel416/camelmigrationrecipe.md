@@ -1,4 +1,5 @@
 ---
+title: "Migrates `camel 4.15` application to `camel 4.16`"
 sidebar_label: "Migrates `camel 4.15` application to `camel 4.16`"
 ---
 

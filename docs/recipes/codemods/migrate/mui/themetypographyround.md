@@ -1,4 +1,5 @@
 ---
+title: "Updates `round` values for theme typography"
 sidebar_label: "Updates `round` values for theme typography"
 ---
 

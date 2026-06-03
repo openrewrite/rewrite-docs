@@ -1,4 +1,5 @@
 ---
+title: "Migrate from `@ApiImplicitParams`  to `@Parameters`"
 sidebar_label: "Migrate from `@ApiImplicitParams`  to `@Parameters`"
 ---
 

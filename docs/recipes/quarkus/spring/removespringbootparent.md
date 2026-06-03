@@ -1,4 +1,5 @@
 ---
+title: "Remove Spring Boot 3.x parent POM"
 sidebar_label: "Remove Spring Boot 3.x parent POM"
 ---
 

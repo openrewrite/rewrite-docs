@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.resource` packages to `jakarta.resource`"
 sidebar_label: "Migrate deprecated `javax.resource` packages to `jakarta.resource`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add Maven project property"
 sidebar_label: "Add Maven project property"
 ---
 

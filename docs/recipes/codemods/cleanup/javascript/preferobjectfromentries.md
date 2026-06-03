@@ -1,4 +1,5 @@
 ---
+title: "Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object"
 sidebar_label: "Prefer using `Object.fromEntries()` to transform a list of key-value pairs into an object"
 ---
 

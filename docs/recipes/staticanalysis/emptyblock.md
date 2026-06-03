@@ -1,4 +1,5 @@
 ---
+title: "Remove empty blocks"
 sidebar_label: "Remove empty blocks"
 ---
 

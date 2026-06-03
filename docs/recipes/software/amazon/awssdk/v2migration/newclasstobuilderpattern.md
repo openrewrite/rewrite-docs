@@ -1,4 +1,5 @@
 ---
+title: "Change new objects creation to Builder pattern"
 sidebar_label: "Change new objects creation to Builder pattern"
 ---
 

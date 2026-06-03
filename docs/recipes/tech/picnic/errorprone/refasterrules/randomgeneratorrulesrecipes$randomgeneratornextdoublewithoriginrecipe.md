@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `RandomGeneratorRules.RandomGeneratorNextDoubleWithOrigin`"
 sidebar_label: "Refaster template `RandomGeneratorRules.RandomGeneratorNextDoubleWithOrigin`"
 ---
 

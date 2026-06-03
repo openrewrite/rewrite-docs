@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Cloud 2024"
 sidebar_label: "Migrate to Spring Cloud 2024"
 ---
 

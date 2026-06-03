@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing inside parentheses"
 sidebar_label: "Enforce consistent spacing inside parentheses"
 ---
 

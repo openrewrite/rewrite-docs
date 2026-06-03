@@ -1,4 +1,5 @@
 ---
+title: "Enforce a newline after import statements"
 sidebar_label: "Enforce a newline after import statements"
 ---
 

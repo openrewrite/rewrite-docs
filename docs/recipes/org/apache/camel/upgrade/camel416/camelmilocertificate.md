@@ -1,4 +1,5 @@
 ---
+title: "Different java type for ServerCertificateValidator in camel-milo"
 sidebar_label: "Different java type for ServerCertificateValidator in camel-milo"
 ---
 

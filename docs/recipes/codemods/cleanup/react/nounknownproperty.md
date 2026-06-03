@@ -1,4 +1,5 @@
 ---
+title: "Disallow usage of unknown DOM property"
 sidebar_label: "Disallow usage of unknown DOM property"
 ---
 

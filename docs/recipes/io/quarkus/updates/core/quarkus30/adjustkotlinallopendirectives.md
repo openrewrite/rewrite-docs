@@ -1,4 +1,5 @@
 ---
+title: "Adjust all-open directives in Kotlin plugin configuration"
 sidebar_label: "Adjust all-open directives in Kotlin plugin configuration"
 ---
 

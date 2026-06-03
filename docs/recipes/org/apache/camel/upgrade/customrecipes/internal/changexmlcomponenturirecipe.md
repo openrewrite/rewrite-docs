@@ -1,4 +1,5 @@
 ---
+title: "Change Camel component URI in XML DSL"
 sidebar_label: "Change Camel component URI in XML DSL"
 ---
 

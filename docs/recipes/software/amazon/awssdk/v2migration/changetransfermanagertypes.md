@@ -1,4 +1,5 @@
 ---
+title: "Change SDK TransferManager types from v1 to v2"
 sidebar_label: "Change SDK TransferManager types from v1 to v2"
 ---
 

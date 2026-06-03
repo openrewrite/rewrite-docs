@@ -1,4 +1,5 @@
 ---
+title: "Use local variable type inference"
 sidebar_label: "Use local variable type inference"
 ---
 

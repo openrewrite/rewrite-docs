@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJPathRules.AssertThatIsDirectory`"
 sidebar_label: "Refaster template `AssertJPathRules.AssertThatIsDirectory`"
 ---
 

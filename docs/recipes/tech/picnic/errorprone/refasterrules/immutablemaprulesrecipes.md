@@ -1,4 +1,5 @@
 ---
+title: "`ImmutableMapRules` Refaster recipes"
 sidebar_label: "`ImmutableMapRules` Refaster recipes"
 ---
 

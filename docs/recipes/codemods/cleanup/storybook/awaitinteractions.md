@@ -1,4 +1,5 @@
 ---
+title: "Interactions should be awaited"
 sidebar_label: "Interactions should be awaited"
 ---
 

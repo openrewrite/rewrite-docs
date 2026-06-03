@@ -1,4 +1,5 @@
 ---
+title: "Require spacing around infix operators in `&lt;template&gt;`"
 sidebar_label: "Require spacing around infix operators in `&lt;template&gt;`"
 ---
 

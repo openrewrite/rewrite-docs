@@ -1,4 +1,5 @@
 ---
+title: "Add `snakeyaml` dependency if needed"
 sidebar_label: "Add `snakeyaml` dependency if needed"
 ---
 

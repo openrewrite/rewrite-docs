@@ -1,4 +1,5 @@
 ---
+title: "Add Gradle property"
 sidebar_label: "Add Gradle property"
 ---
 

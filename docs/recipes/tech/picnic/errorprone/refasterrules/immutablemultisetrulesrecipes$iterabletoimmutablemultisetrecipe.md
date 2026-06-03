@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableMultisetRules.IterableToImmutableMultiset`"
 sidebar_label: "Refaster template `ImmutableMultisetRules.IterableToImmutableMultiset`"
 ---
 

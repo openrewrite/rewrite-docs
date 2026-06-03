@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `LongStreamRules.LongStreamIsNotEmpty`"
 sidebar_label: "Refaster template `LongStreamRules.LongStreamIsNotEmpty`"
 ---
 

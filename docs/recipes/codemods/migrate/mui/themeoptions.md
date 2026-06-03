@@ -1,4 +1,5 @@
 ---
+title: "Updates theme options"
 sidebar_label: "Updates theme options"
 ---
 

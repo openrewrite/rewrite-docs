@@ -1,4 +1,5 @@
 ---
+title: "Change XML attribute of a specific resource version"
 sidebar_label: "Change XML attribute of a specific resource version"
 ---
 

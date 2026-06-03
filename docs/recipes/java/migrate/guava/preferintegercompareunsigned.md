@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Integer#compareUnsigned`"
 sidebar_label: "Prefer `Integer#compareUnsigned`"
 ---
 

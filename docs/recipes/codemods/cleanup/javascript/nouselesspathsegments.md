@@ -1,4 +1,5 @@
 ---
+title: "Forbid unnecessary path segments in import and require statements"
 sidebar_label: "Forbid unnecessary path segments in import and require statements"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "JUnit `assertInstanceOf` to AssertJ"
 sidebar_label: "JUnit `assertInstanceOf` to AssertJ"
 ---
 

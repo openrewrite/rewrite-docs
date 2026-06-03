@@ -1,4 +1,5 @@
 ---
+title: "Use `String.equals()` on `String` literals"
 sidebar_label: "Use `String.equals()` on `String` literals"
 ---
 

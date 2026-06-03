@@ -1,4 +1,5 @@
 ---
+title: "Disallow useless `undefined`"
 sidebar_label: "Disallow useless `undefined`"
 ---
 

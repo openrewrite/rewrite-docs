@@ -1,4 +1,5 @@
 ---
+title: "Enforce self-closing style"
 sidebar_label: "Enforce self-closing style"
 ---
 

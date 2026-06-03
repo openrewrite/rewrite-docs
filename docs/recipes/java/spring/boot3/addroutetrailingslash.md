@@ -1,4 +1,5 @@
 ---
+title: "Add trailing slash to Spring routes"
 sidebar_label: "Add trailing slash to Spring routes"
 ---
 

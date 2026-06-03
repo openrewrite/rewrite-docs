@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus33.ApplicationYml"
 sidebar_label: "io.quarkus.updates.core.quarkus33.ApplicationYml"
 ---
 

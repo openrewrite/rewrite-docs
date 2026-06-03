@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Boot Actuator to Quarkus Health and Metrics"
 sidebar_label: "Migrate Spring Boot Actuator to Quarkus Health and Metrics"
 ---
 

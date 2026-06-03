@@ -1,4 +1,5 @@
 ---
+title: "Migrate Log4j 2.x to Logback"
 sidebar_label: "Migrate Log4j 2.x to Logback"
 ---
 

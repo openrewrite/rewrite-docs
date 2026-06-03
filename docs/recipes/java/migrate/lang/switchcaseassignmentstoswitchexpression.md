@@ -1,4 +1,5 @@
 ---
+title: "Convert assigning Switch statements to Switch expressions"
 sidebar_label: "Convert assigning Switch statements to Switch expressions"
 ---
 

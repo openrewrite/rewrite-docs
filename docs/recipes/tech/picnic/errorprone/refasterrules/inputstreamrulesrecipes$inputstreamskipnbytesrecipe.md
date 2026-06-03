@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `InputStreamRules.InputStreamSkipNBytes`"
 sidebar_label: "Refaster template `InputStreamRules.InputStreamSkipNBytes`"
 ---
 

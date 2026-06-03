@@ -1,4 +1,5 @@
 ---
+title: "Default comes last"
 sidebar_label: "Default comes last"
 ---
 

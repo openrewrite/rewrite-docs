@@ -1,4 +1,5 @@
 ---
+title: "Use text blocks"
 sidebar_label: "Use text blocks"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find minimum JUnit version"
 sidebar_label: "Find minimum JUnit version"
 ---
 

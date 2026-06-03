@@ -1,4 +1,5 @@
 ---
+title: "`finalize()` calls super"
 sidebar_label: "`finalize()` calls super"
 ---
 

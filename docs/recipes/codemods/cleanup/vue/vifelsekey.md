@@ -1,4 +1,5 @@
 ---
+title: "Require key attribute for conditionally rendered repeated components"
 sidebar_label: "Require key attribute for conditionally rendered repeated components"
 ---
 

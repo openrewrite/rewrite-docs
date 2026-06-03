@@ -1,4 +1,5 @@
 ---
+title: "Rename Testcontainers dependencies"
 sidebar_label: "Rename Testcontainers dependencies"
 ---
 

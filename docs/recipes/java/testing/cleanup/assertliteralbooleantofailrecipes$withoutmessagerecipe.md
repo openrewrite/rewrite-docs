@@ -1,4 +1,5 @@
 ---
+title: "Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`"
 sidebar_label: "Replace JUnit `assertTrue(false)` and `assertFalse(true)` with `fail()`"
 ---
 

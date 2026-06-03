@@ -1,4 +1,5 @@
 ---
+title: "Replace `getTags()` method with field"
 sidebar_label: "Replace `getTags()` method with field"
 ---
 

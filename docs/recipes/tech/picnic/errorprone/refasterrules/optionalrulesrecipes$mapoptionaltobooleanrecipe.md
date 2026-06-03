@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `OptionalRules.MapOptionalToBoolean`"
 sidebar_label: "Refaster template `OptionalRules.MapOptionalToBoolean`"
 ---
 

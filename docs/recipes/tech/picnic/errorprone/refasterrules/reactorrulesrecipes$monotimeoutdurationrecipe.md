@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoTimeoutDuration`"
 sidebar_label: "Refaster template `ReactorRules.MonoTimeoutDuration`"
 ---
 

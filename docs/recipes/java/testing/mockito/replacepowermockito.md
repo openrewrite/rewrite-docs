@@ -1,4 +1,5 @@
 ---
+title: "Replace PowerMock with raw Mockito"
 sidebar_label: "Replace PowerMock with raw Mockito"
 ---
 

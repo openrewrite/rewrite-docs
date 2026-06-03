@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Optional.stream().collect(Collectors.toSet())`"
 sidebar_label: "Prefer `Optional.stream().collect(Collectors.toSet())`"
 ---
 

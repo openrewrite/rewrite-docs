@@ -1,4 +1,5 @@
 ---
+title: "GitHub Actions security insights"
 sidebar_label: "GitHub Actions security insights"
 ---
 

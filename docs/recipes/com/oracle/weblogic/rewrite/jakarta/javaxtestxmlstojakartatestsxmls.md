@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries in `test-*.xml` files for Jakarta EE 9.1 using test interfaces"
 sidebar_label: "Migrate xmlns entries in `test-*.xml` files for Jakarta EE 9.1 using test interfaces"
 ---
 

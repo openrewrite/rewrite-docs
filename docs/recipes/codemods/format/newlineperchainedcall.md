@@ -1,4 +1,5 @@
 ---
+title: "Require a newline after each call in a method chain"
 sidebar_label: "Require a newline after each call in a method chain"
 ---
 

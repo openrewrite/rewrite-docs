@@ -1,4 +1,5 @@
 ---
+title: "`CollectionRules` Refaster recipes"
 sidebar_label: "`CollectionRules` Refaster recipes"
 ---
 

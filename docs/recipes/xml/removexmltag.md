@@ -1,4 +1,5 @@
 ---
+title: "Remove XML tag"
 sidebar_label: "Remove XML tag"
 ---
 

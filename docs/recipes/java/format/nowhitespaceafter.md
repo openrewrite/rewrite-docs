@@ -1,4 +1,5 @@
 ---
+title: "No whitespace after"
 sidebar_label: "No whitespace after"
 ---
 

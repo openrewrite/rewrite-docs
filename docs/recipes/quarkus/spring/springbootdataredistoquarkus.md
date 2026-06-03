@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Data Redis with Quarkus Redis Client"
 sidebar_label: "Replace Spring Boot Data Redis with Quarkus Redis Client"
 ---
 

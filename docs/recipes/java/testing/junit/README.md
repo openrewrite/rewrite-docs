@@ -10,5 +10,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [JUnit 6 best practices](./junit6bestpractices.md)
 * [JUnit Jupiter best practices](./jupiterbestpractices.md)
+* [Remove JUnit Jupiter migrationsupport](./removejupitermigrationsupport.md)
 
 

@@ -1,4 +1,5 @@
 ---
+title: "Convert Micrometer `Timer` to `Observations`"
 sidebar_label: "Convert Micrometer `Timer` to `Observations`"
 ---
 

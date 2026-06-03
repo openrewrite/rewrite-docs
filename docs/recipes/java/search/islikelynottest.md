@@ -1,4 +1,5 @@
 ---
+title: "Find files that are likely not tests"
 sidebar_label: "Find files that are likely not tests"
 ---
 

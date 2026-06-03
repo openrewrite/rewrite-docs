@@ -1,4 +1,5 @@
 ---
+title: "Add comment to method declarations"
 sidebar_label: "Add comment to method declarations"
 ---
 

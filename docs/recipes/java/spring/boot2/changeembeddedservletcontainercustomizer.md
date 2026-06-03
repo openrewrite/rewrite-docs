@@ -1,4 +1,5 @@
 ---
+title: "Adjust configuration classes to use the `WebServerFactoryCustomizer` interface"
 sidebar_label: "Adjust configuration classes to use the `WebServerFactoryCustomizer` interface"
 ---
 

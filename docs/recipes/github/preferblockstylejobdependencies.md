@@ -1,4 +1,5 @@
 ---
+title: "Prefer block style for job dependencies"
 sidebar_label: "Prefer block style for job dependencies"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add OCI image labels"
 sidebar_label: "Add OCI image labels"
 ---
 

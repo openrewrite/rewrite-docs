@@ -1,4 +1,5 @@
 ---
+title: "Add AWS SDK for Java v2 S3 Event Notification dependency if needed"
 sidebar_label: "Add AWS SDK for Java v2 S3 Event Notification dependency if needed"
 ---
 
@@ -33,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add Gradle or Maven dependency](../../../../java/dependencies/adddependency)
   * groupId: `software.amazon.awssdk`
   * artifactId: `s3-event-notifications`
-  * version: `2.44.8`
+  * version: `2.46.0`
   * onlyIfUsing: `com.amazonaws.services.s3.event.S3EventNotification`
 
 </TabItem>
@@ -54,7 +55,7 @@ recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: software.amazon.awssdk
       artifactId: s3-event-notifications
-      version: 2.44.8
+      version: 2.46.0
       onlyIfUsing: com.amazonaws.services.s3.event.S3EventNotification
 
 ```

@@ -1,4 +1,5 @@
 ---
+title: "Change of headers with embedded HTTP server (consumer)"
 sidebar_label: "Change of headers with embedded HTTP server (consumer)"
 ---
 

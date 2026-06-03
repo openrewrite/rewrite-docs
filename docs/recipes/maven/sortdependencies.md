@@ -1,4 +1,5 @@
 ---
+title: "Sort dependencies"
 sidebar_label: "Sort dependencies"
 ---
 

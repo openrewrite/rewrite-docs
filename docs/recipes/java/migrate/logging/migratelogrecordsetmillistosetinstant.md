@@ -1,4 +1,5 @@
 ---
+title: "Use `LogRecord#setInstant(Instant)`"
 sidebar_label: "Use `LogRecord#setInstant(Instant)`"
 ---
 

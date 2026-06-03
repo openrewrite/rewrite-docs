@@ -1,4 +1,5 @@
 ---
+title: "Add or update child tag"
 sidebar_label: "Add or update child tag"
 ---
 

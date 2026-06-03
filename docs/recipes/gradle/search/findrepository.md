@@ -1,4 +1,5 @@
 ---
+title: "Find Gradle repository"
 sidebar_label: "Find Gradle repository"
 ---
 

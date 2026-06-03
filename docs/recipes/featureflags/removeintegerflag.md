@@ -1,4 +1,5 @@
 ---
+title: "Remove an integer feature flag for feature key"
 sidebar_label: "Remove an integer feature flag for feature key"
 ---
 

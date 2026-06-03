@@ -1,4 +1,5 @@
 ---
+title: "Prefer default parameters over reassignment"
 sidebar_label: "Prefer default parameters over reassignment"
 ---
 

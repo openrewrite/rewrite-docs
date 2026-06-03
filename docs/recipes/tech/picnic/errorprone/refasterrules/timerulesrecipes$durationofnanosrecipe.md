@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.DurationOfNanos`"
 sidebar_label: "Refaster template `TimeRules.DurationOfNanos`"
 ---
 

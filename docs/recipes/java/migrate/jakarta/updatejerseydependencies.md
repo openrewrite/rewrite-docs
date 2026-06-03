@@ -1,4 +1,5 @@
 ---
+title: "Update GlassFish Jersey Dependencies to 3.1.x"
 sidebar_label: "Update GlassFish Jersey Dependencies to 3.1.x"
 ---
 

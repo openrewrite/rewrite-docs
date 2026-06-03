@@ -1,4 +1,5 @@
 ---
+title: "Mockito 5.x upgrade"
 sidebar_label: "Mockito 5.x upgrade"
 ---
 

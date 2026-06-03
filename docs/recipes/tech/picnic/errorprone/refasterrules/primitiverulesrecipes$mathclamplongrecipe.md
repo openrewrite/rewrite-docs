@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.MathClampLong`"
 sidebar_label: "Refaster template `PrimitiveRules.MathClampLong`"
 ---
 

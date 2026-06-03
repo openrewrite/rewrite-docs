@@ -1,4 +1,5 @@
 ---
+title: "Tabs and indents"
 sidebar_label: "Tabs and indents"
 ---
 

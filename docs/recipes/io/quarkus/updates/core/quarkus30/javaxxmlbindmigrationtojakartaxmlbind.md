@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`"
 sidebar_label: "Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`"
 ---
 

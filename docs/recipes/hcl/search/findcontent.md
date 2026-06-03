@@ -1,4 +1,5 @@
 ---
+title: "Find content"
 sidebar_label: "Find content"
 ---
 

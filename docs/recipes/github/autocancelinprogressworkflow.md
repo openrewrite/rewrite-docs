@@ -1,4 +1,5 @@
 ---
+title: "Cancel in-progress workflow when it is triggered again"
 sidebar_label: "Cancel in-progress workflow when it is triggered again"
 ---
 

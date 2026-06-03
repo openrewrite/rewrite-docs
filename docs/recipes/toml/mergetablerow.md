@@ -1,4 +1,5 @@
 ---
+title: "Merge TOML table row"
 sidebar_label: "Merge TOML table row"
 ---
 

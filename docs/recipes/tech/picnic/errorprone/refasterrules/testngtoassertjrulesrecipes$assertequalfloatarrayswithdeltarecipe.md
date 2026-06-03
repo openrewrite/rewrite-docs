@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TestNGToAssertJRules.AssertEqualFloatArraysWithDelta`"
 sidebar_label: "Refaster template `TestNGToAssertJRules.AssertEqualFloatArraysWithDelta`"
 ---
 

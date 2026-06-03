@@ -1,4 +1,5 @@
 ---
+title: "Migrate from JavaX to Jakarta EE 9.1 Namespaces"
 sidebar_label: "Migrate from JavaX to Jakarta EE 9.1 Namespaces"
 ---
 

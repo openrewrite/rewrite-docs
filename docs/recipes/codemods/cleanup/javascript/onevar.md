@@ -1,4 +1,5 @@
 ---
+title: "Enforce variables to be declared either together or separately in functions"
 sidebar_label: "Enforce variables to be declared either together or separately in functions"
 ---
 

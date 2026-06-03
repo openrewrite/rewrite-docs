@@ -10,11 +10,11 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate breaking changes in `ResponseStatusException`](./migrateresponsestatusexception.md)
 * [Migrate removed Spring `Assert` methods](./migratespringassert.md)
-* [Migrate to Spring Framework 5.0](./upgradespringframework_5_0.md)
+* [Migrate to Spring Framework 5.0 (Community Edition)](./upgradespringframework_5_0-community-edition.md)
 * [Migrate to Spring Framework 5.1](./upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](./upgradespringframework_5_2.md)
 * [Migrate to Spring Framework 5.3 (Community Edition)](./upgradespringframework_5_3-community-edition.md)
-* [Migrate to Spring Framework 6.0](./upgradespringframework_6_0.md)
+* [Migrate to Spring Framework 6.0 (Community Edition)](./upgradespringframework_6_0-community-edition.md)
 * [Migrate to Spring Framework 6.1](./upgradespringframework_6_1.md)
 * [Migrate to Spring Framework 6.2](./upgradespringframework_6_2.md)
 * [Migrate to Spring Framework 7.0](./upgradespringframework_7_0.md)

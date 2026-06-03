@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.DurationBetweenInstants`"
 sidebar_label: "Refaster template `TimeRules.DurationBetweenInstants`"
 ---
 

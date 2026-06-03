@@ -1,4 +1,5 @@
 ---
+title: "Remove PowerMock class extensions"
 sidebar_label: "Remove PowerMock class extensions"
 ---
 

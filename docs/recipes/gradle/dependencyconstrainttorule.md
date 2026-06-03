@@ -1,4 +1,5 @@
 ---
+title: "Dependency constraint to resolution rule"
 sidebar_label: "Dependency constraint to resolution rule"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`AssertJBooleanRules` Refaster recipes"
 sidebar_label: "`AssertJBooleanRules` Refaster recipes"
 ---
 

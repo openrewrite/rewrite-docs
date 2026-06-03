@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `Jackson2Rules.ObjectMapperConvertValueWithClass`"
 sidebar_label: "Refaster template `Jackson2Rules.ObjectMapperConvertValueWithClass`"
 ---
 

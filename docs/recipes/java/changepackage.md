@@ -1,4 +1,5 @@
 ---
+title: "Rename package name"
 sidebar_label: "Rename package name"
 ---
 
@@ -33,6 +34,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Apply Axon Framework 5 common module renames](/recipes/org/axonframework/migration/axon4toaxon5common.md)
+* [Apply Axon Framework 5 messaging module renames](/recipes/org/axonframework/migration/axon4toaxon5messaging.md)
+* [Apply Axon Framework 5 modelling module renames](/recipes/org/axonframework/migration/axon4toaxon5modelling.md)
+* [Apply Axon Framework 5 serialization → conversion rename](/recipes/org/axonframework/migration/axon4toaxon5conversion.md)
 * [ArchUnit 0.x upgrade](/recipes/java/testing/archunit/archunit0to1migration.md)
 * [Change Tapestry 4 packages to Tapestry 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/tapestry/changetapestrypackages)
 * [DataNucleus 4.0 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_4_0.md)
@@ -116,6 +121,14 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
 * [Migrate javax.mvc to 2.0 (Jakarta EE 9)](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
+* [Migrate the Axon Server connector to Axoniq Framework 5](/recipes/io/axoniq/framework/migration/axon4toaxoniq5axonserverconnector.md)
+* [Migrate the Dropwizard Metrics extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5metricsdropwizardextension.md)
+* [Migrate the Micrometer Metrics extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5metricsmicrometerextension.md)
+* [Migrate the Reactor extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5reactorextension.md)
+* [Migrate the Sequenced Dead-Letter Queue to Axoniq Framework 5](/recipes/io/axoniq/framework/migration/axon4toaxoniq5deadletter.md)
+* [Migrate the Spring Boot Actuator extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5springbootactuatorextension.md)
+* [Migrate the Spring Boot extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5springbootextension.md)
+* [Migrate the Spring extension to Axon Framework 5](/recipes/org/axonframework/migration/axon4toaxon5springextension.md)
 * [Migrate thymeleaf dependencies to Spring Boot 3.x](/recipes/java/spring/boot3/migratethymeleafdependencies.md)
 * [Migrate to ApacheHttpClient 5.x Classes Namespace from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_classmapping.md)
 * [Migrate to HtmlUnit 3.x](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
@@ -125,6 +138,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to MockWebServer3 with JUnit 5](/recipes/okhttp/upgrademockwebserver3junit5.md)
 * [Migrate to Spring Batch 6.0 from 5.2](/recipes/java/spring/batch/springbatch5to6migration.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
+* [Migrate to Spring Framework 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_4_0)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
 * [Migrates `camel 4.16` application to `camel 4.17`](/recipes/io/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
 * [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
@@ -149,8 +163,6 @@ This recipe is used as part of the following composite recipes:
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update to Micronaut Email 2.x](/recipes/java/micronaut/updatemicronautemail.md)
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
-* [Upgrade to Axonframework 4.x Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
-* [Upgrade to Axonframework 4.x Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
 * [Upgrade to Cucumber-JVM 5.x](/recipes/cucumber/jvm/upgradecucumber5x.md)
 * [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
 * [Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`](/recipes/java/migrate/internalbindpackages.md)

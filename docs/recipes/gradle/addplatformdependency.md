@@ -1,4 +1,5 @@
 ---
+title: "Add Gradle platform dependency"
 sidebar_label: "Add Gradle platform dependency"
 ---
 

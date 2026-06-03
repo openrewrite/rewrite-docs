@@ -1,4 +1,5 @@
 ---
+title: "Change the value of a spring application property"
 sidebar_label: "Change the value of a spring application property"
 ---
 

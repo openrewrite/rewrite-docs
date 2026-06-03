@@ -1,4 +1,5 @@
 ---
+title: "Simplify Micrometer meter tags"
 sidebar_label: "Simplify Micrometer meter tags"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJShortRules.AbstractShortAssertIsNotZero`"
 sidebar_label: "Refaster template `AssertJShortRules.AbstractShortAssertIsNotZero`"
 ---
 

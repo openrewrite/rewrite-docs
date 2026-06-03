@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus331.CoreUpdate331"
 sidebar_label: "io.quarkus.updates.core.quarkus331.CoreUpdate331"
 ---
 

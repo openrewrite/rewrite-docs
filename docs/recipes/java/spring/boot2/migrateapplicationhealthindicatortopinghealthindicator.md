@@ -1,4 +1,5 @@
 ---
+title: "Use `PingHealthIndicator`"
 sidebar_label: "Use `PingHealthIndicator`"
 ---
 

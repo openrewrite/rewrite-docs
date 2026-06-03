@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Spring Boot 1.x to 2.0"
 sidebar_label: "Migrate from Spring Boot 1.x to 2.0"
 ---
 
@@ -79,11 +80,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `webjars-locator-core`
   * newVersion: `^0.35`
 * [Use `WebServerFactoryCustomizer`](../../../java/spring/boot2/migratetowebserverfactorycustomizer)
-* [Migrate to Spring Framework 5.0](../../../java/spring/framework/upgradespringframework_5_0)
+* [Migrate to Spring Framework 5.0 (Community Edition)](../../../java/spring/framework/upgradespringframework_5_0-community-edition)
 * [Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`](../../../java/spring/boot2/migratespringbootservletinitializerpackagename)
 * [Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`](../../../java/spring/boot2/migratehttpmessageconverterspackagename)
 * [Use `org.springframework.boot.web.servlet.error.ErrorController`](../../../java/spring/boot2/migrateerrorcontrollerpackagename)
-* [Use `javax.validation.constraints`](../../../java/spring/boot2/migratehibernateconstraintstojavax)
 * [Use `org.springframework.boot.web.server.LocalServerPort`](../../../java/spring/boot2/migratelocalserverportannotation)
 * [Replace `micrometer-spring-legacy` with `spring-boot-starter-actuator`](../../../java/spring/boot2/maybeaddspringbootstarteractuator)
 * [Migrate Spring Boot properties to 2.0](../../../java/spring/boot2/springbootproperties_2_0)
@@ -160,7 +160,6 @@ recipeList:
   - org.openrewrite.java.spring.boot2.MigrateSpringBootServletInitializerPackageName
   - org.openrewrite.java.spring.boot2.MigrateHttpMessageConvertersPackageName
   - org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName
-  - org.openrewrite.java.spring.boot2.MigrateHibernateConstraintsToJavax
   - org.openrewrite.java.spring.boot2.MigrateLocalServerPortAnnotation
   - org.openrewrite.java.spring.boot2.MaybeAddSpringBootStarterActuator
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_0

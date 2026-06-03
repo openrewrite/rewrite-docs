@@ -1,4 +1,5 @@
 ---
+title: "Apache POI use `Cell.setCellType(CellType)`"
 sidebar_label: "Apache POI use `Cell.setCellType(CellType)`"
 ---
 

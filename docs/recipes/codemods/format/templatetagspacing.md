@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow spacing between template tags and their literals"
 sidebar_label: "Require or disallow spacing between template tags and their literals"
 ---
 

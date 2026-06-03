@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus323.HibernateORMSchemaManagementProperties"
 sidebar_label: "io.quarkus.updates.core.quarkus323.HibernateORMSchemaManagementProperties"
 ---
 

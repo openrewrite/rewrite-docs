@@ -1,4 +1,5 @@
 ---
+title: "Change artifacts for a Maven plugin configuration"
 sidebar_label: "Change artifacts for a Maven plugin configuration"
 ---
 

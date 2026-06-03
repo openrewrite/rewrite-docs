@@ -1,4 +1,5 @@
 ---
+title: "Find YAML properties"
 sidebar_label: "Find YAML properties"
 ---
 

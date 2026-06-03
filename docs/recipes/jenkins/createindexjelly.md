@@ -1,4 +1,5 @@
 ---
+title: "Create `index.jelly` if it doesn't exist"
 sidebar_label: "Create `index.jelly` if it doesn't exist"
 ---
 

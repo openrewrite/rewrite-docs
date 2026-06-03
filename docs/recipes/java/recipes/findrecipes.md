@@ -1,4 +1,5 @@
 ---
+title: "Find OpenRewrite recipes"
 sidebar_label: "Find OpenRewrite recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Rewrites JUL's Logger#entering method to Log4j API"
 sidebar_label: "Rewrites JUL's Logger#entering method to Log4j API"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "JSON new lines"
 sidebar_label: "JSON new lines"
 ---
 

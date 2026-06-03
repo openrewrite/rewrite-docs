@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJInstantRules.AssertThatIsStrictlyBetween`"
 sidebar_label: "Refaster template `AssertJInstantRules.AssertThatIsStrictlyBetween`"
 ---
 

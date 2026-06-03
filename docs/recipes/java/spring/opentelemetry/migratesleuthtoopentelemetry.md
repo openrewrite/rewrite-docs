@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Spring Cloud Sleuth to OpenTelemetry"
 sidebar_label: "Migrate from Spring Cloud Sleuth to OpenTelemetry"
 ---
 

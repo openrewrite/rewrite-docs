@@ -1,4 +1,5 @@
 ---
+title: "Use primitive wrapper `valueOf` method"
 sidebar_label: "Use primitive wrapper `valueOf` method"
 ---
 

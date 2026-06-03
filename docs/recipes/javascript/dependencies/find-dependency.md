@@ -1,4 +1,5 @@
 ---
+title: "Find Node.js dependency"
 sidebar_label: "Find Node.js dependency"
 ---
 

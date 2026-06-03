@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Security 5.7"
 sidebar_label: "Migrate to Spring Security 5.7"
 ---
 

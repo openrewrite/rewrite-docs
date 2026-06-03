@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableListRules.StreamToDistinctImmutableList`"
 sidebar_label: "Refaster template `ImmutableListRules.StreamToDistinctImmutableList`"
 ---
 

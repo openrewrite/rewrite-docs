@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Log4j 2.x dependency version"
 sidebar_label: "Upgrade Log4j 2.x dependency version"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL"
 sidebar_label: "Convert `HttpSecurity::apply` chained calls into `HttpSecurity::with` Lambda DSL"
 ---
 

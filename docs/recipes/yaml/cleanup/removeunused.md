@@ -1,4 +1,5 @@
 ---
+title: "Remove unused YAML"
 sidebar_label: "Remove unused YAML"
 ---
 

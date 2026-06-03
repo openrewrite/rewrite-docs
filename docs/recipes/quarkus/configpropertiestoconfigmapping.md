@@ -1,4 +1,5 @@
 ---
+title: "Use `@ConfigMapping`"
 sidebar_label: "Use `@ConfigMapping`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use modernized `java.net` APIs"
 sidebar_label: "Use modernized `java.net` APIs"
 ---
 

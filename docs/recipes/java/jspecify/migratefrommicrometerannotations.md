@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Micrometer annotations to JSpecify"
 sidebar_label: "Migrate from Micrometer annotations to JSpecify"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Camel API changes in application.properties"
 sidebar_label: "Camel API changes in application.properties"
 ---
 

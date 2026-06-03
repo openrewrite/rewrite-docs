@@ -1,4 +1,5 @@
 ---
+title: "Migrate from `@ApiResponses` to `@ApiResponses`"
 sidebar_label: "Migrate from `@ApiResponses` to `@ApiResponses`"
 ---
 

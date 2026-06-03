@@ -1,4 +1,5 @@
 ---
+title: "Remove trailing comma in Kotlin"
 sidebar_label: "Remove trailing comma in Kotlin"
 ---
 

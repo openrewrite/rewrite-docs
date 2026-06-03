@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus326.EnableEnabledConfigChanges"
 sidebar_label: "io.quarkus.updates.core.quarkus326.EnableEnabledConfigChanges"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove ChannelStateEvent parameter from handler methods"
 sidebar_label: "Remove ChannelStateEvent parameter from handler methods"
 ---
 

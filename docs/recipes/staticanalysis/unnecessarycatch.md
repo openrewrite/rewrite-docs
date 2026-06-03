@@ -1,4 +1,5 @@
 ---
+title: "Remove catch for a checked exception if the try block does not throw that exception"
 sidebar_label: "Remove catch for a checked exception if the try block does not throw that exception"
 ---
 

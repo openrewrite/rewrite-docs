@@ -1,4 +1,5 @@
 ---
+title: "Catch clause should do more than just rethrow"
 sidebar_label: "Catch clause should do more than just rethrow"
 ---
 

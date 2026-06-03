@@ -1,4 +1,5 @@
 ---
+title: "Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks"
 sidebar_label: "Disallow returning/yielding `Promise.resolve()`/`reject()` in `async` functions or promise callbacks"
 ---
 

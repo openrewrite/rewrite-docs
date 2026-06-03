@@ -1,4 +1,5 @@
 ---
+title: "Migrates to Apache Commons Collections 4.x"
 sidebar_label: "Migrates to Apache Commons Collections 4.x"
 ---
 

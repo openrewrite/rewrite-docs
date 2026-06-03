@@ -1,4 +1,5 @@
 ---
+title: "Migrate JUL to SLF4J"
 sidebar_label: "Migrate JUL to SLF4J"
 ---
 

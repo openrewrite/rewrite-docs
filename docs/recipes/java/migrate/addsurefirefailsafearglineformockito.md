@@ -1,4 +1,5 @@
 ---
+title: "Add surefire `--add-opens` for Mockito/ByteBuddy"
 sidebar_label: "Add surefire `--add-opens` for Mockito/ByteBuddy"
 ---
 

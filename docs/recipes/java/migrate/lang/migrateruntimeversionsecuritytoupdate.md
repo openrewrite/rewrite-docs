@@ -1,4 +1,5 @@
 ---
+title: "Use `Runtime.Version#update()`"
 sidebar_label: "Use `Runtime.Version#update()`"
 ---
 

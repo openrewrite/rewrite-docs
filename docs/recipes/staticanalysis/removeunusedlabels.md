@@ -1,4 +1,5 @@
 ---
+title: "Remove unused labels"
 sidebar_label: "Remove unused labels"
 ---
 

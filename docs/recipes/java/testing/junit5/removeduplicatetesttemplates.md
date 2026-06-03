@@ -1,4 +1,5 @@
 ---
+title: "Remove duplicates uses of @TestTemplate implementations for a single method"
 sidebar_label: "Remove duplicates uses of @TestTemplate implementations for a single method"
 ---
 

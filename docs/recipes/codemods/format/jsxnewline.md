@@ -1,4 +1,5 @@
 ---
+title: "Require or prevent a new line after jsx elements and expressions"
 sidebar_label: "Require or prevent a new line after jsx elements and expressions"
 ---
 

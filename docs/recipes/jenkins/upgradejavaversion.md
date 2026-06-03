@@ -1,4 +1,5 @@
 ---
+title: "Upgrade jenkins java version"
 sidebar_label: "Upgrade jenkins java version"
 ---
 

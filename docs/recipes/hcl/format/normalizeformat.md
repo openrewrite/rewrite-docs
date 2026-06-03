@@ -1,4 +1,5 @@
 ---
+title: "Normalize format"
 sidebar_label: "Normalize format"
 ---
 

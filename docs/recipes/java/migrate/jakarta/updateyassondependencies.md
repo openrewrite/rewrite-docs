@@ -1,4 +1,5 @@
 ---
+title: "Update Eclipse Yasson Dependencies to 3.0.x"
 sidebar_label: "Update Eclipse Yasson Dependencies to 3.0.x"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use Vert.x JUnit 5 Extension"
 sidebar_label: "Use Vert.x JUnit 5 Extension"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TestNGToAssertJRules.AssertNull`"
 sidebar_label: "Refaster template `TestNGToAssertJRules.AssertNull`"
 ---
 

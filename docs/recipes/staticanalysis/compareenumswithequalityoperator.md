@@ -1,4 +1,5 @@
 ---
+title: "Enum values should be compared with &quot;==&quot;"
 sidebar_label: "Enum values should be compared with &quot;==&quot;"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Updates the usage of `styled` from `@mui/system@v5` to be compatible with` @pigment-css/react`"
 sidebar_label: "Updates the usage of `styled` from `@mui/system@v5` to be compatible with` @pigment-css/react`"
 ---
 

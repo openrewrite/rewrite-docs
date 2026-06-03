@@ -1,4 +1,5 @@
 ---
+title: "Experimental find text with multiselect"
 sidebar_label: "Experimental find text with multiselect"
 ---
 

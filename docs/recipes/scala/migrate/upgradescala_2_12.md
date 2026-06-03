@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Scala 2.12.+"
 sidebar_label: "Migrate to Scala 2.12.+"
 ---
 

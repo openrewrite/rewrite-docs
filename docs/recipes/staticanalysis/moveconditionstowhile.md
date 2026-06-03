@@ -1,4 +1,5 @@
 ---
+title: "Convert `while (true)` with initial `if` break to loop condition"
 sidebar_label: "Convert `while (true)` with initial `if` break to loop condition"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`CharSequenceRules` Refaster recipes"
 sidebar_label: "`CharSequenceRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Adopt AssertJ Duration assertions"
 sidebar_label: "Adopt AssertJ Duration assertions"
 ---
 

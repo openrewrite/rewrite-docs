@@ -1,4 +1,5 @@
 ---
+title: "Disallow member access from `await` expression"
 sidebar_label: "Disallow member access from `await` expression"
 ---
 

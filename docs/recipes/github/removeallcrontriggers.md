@@ -1,4 +1,5 @@
 ---
+title: "Remove all cron triggers"
 sidebar_label: "Remove all cron triggers"
 ---
 

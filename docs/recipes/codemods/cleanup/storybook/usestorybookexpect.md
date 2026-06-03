@@ -1,4 +1,5 @@
 ---
+title: "Use expect from @storybook/jest"
 sidebar_label: "Use expect from @storybook/jest"
 ---
 

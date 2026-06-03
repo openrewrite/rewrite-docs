@@ -1,4 +1,5 @@
 ---
+title: "Hidden field"
 sidebar_label: "Hidden field"
 ---
 

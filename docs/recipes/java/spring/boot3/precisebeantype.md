@@ -1,4 +1,5 @@
 ---
+title: "Bean methods should return concrete types"
 sidebar_label: "Bean methods should return concrete types"
 ---
 

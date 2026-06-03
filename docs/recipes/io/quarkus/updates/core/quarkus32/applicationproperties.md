@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus32.ApplicationProperties"
 sidebar_label: "io.quarkus.updates.core.quarkus32.ApplicationProperties"
 ---
 

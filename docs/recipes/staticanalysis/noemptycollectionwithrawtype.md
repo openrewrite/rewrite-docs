@@ -1,4 +1,5 @@
 ---
+title: "Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`"
 sidebar_label: "Use `Collections#emptyList()`, `emptyMap()`, and `emptySet()`"
 ---
 

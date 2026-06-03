@@ -1,4 +1,5 @@
 ---
+title: "Migrate JUnit asserts to AssertJ"
 sidebar_label: "Migrate JUnit asserts to AssertJ"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Format Groovy code"
 sidebar_label: "Format Groovy code"
 ---
 

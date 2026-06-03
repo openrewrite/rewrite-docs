@@ -1,4 +1,5 @@
 ---
+title: "Lint UI5 projects with UI5 linter"
 sidebar_label: "Lint UI5 projects with UI5 linter"
 ---
 

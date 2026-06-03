@@ -1,4 +1,5 @@
 ---
+title: "`WebClientRules` Refaster recipes"
 sidebar_label: "`WebClientRules` Refaster recipes"
 ---
 

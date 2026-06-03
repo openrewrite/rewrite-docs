@@ -1,4 +1,5 @@
 ---
+title: "Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`"
 sidebar_label: "Disallow or enforce spaces inside of blocks after opening block and before closing block in `&lt;template&gt;`"
 ---
 

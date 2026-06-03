@@ -1,4 +1,5 @@
 ---
+title: "Disallow initializing variables to undefined"
 sidebar_label: "Disallow initializing variables to undefined"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis"
 sidebar_label: "Enforce consistent spacing before &amp;#x60;function&amp;#x60; definition opening parenthesis"
 ---
 

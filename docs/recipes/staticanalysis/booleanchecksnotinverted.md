@@ -1,4 +1,5 @@
 ---
+title: "Boolean checks should not be inverted"
 sidebar_label: "Boolean checks should not be inverted"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)"
 sidebar_label: "Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)"
 ---
 

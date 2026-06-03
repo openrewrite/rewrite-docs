@@ -1,4 +1,5 @@
 ---
+title: "`ImmutableEnumSetRules` Refaster recipes"
 sidebar_label: "`ImmutableEnumSetRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace `@Cucumber` with `@Suite`"
 sidebar_label: "Replace `@Cucumber` with `@Suite`"
 ---
 

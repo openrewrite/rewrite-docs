@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssortedRules.CheckIndex`"
 sidebar_label: "Refaster template `AssortedRules.CheckIndex`"
 ---
 

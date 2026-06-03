@@ -1,4 +1,5 @@
 ---
+title: "`BugCheckerRules` Refaster recipes"
 sidebar_label: "`BugCheckerRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use Maven 4 parent inference"
 sidebar_label: "Use Maven 4 parent inference"
 ---
 

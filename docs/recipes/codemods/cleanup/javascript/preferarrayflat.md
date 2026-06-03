@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Array#flat()` over legacy techniques to flatten arrays"
 sidebar_label: "Prefer `Array#flat()` over legacy techniques to flatten arrays"
 ---
 

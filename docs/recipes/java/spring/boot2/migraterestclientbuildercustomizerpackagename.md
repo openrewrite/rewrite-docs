@@ -1,4 +1,5 @@
 ---
+title: "Use `RestClientBuilderCustomizer`"
 sidebar_label: "Use `RestClientBuilderCustomizer`"
 ---
 

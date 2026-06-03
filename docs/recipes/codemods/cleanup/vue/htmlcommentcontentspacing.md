@@ -1,4 +1,5 @@
 ---
+title: "Enforce unified spacing in HTML comments"
 sidebar_label: "Enforce unified spacing in HTML comments"
 ---
 

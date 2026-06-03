@@ -1,4 +1,5 @@
 ---
+title: "Lint TypeScript code using ESLint"
 sidebar_label: "Lint TypeScript code using ESLint"
 ---
 

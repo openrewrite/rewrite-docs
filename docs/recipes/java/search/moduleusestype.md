@@ -1,4 +1,5 @@
 ---
+title: "Module uses type"
 sidebar_label: "Module uses type"
 ---
 
@@ -34,6 +35,88 @@ This recipe is used as part of the following composite recipes:
 
 * [Module uses Flyway](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesflyway)
 * [Module uses Liquibase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesliquibase)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|fullyQualifiedTypeName|`java.util.List`|
+|includeImplicit|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class B {}
+```
+
+###### After
+```java
+/*~~(Module uses type: java.util.List)~~>*/class B {}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-class B {}
++/*~~(Module uses type: java.util.List)~~>*/class B {}
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+class C {}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+class A {
+    List<String> items;
+}
+```
+
+###### After
+```java
+/*~~(Module uses type: java.util.List)~~>*/import java.util.List;
+class A {
+    List<String> items;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.List;
++/*~~(Module uses type: java.util.List)~~>*/import java.util.List;
+class A {
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+module-a
+```
+
+###### Unchanged
+```mavenProject
+module-b
+```
 
 
 ## Usage

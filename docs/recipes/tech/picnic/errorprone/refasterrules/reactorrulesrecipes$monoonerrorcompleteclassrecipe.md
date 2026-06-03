@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoOnErrorCompleteClass`"
 sidebar_label: "Refaster template `ReactorRules.MonoOnErrorCompleteClass`"
 ---
 

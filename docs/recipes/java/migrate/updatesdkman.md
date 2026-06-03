@@ -1,4 +1,5 @@
 ---
+title: "Update SDKMan Java version"
 sidebar_label: "Update SDKMan Java version"
 ---
 

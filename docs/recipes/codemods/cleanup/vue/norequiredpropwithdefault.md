@@ -1,4 +1,5 @@
 ---
+title: "Enforce props with default values to be optional"
 sidebar_label: "Enforce props with default values to be optional"
 ---
 

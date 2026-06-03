@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `EqualityRules.Negation`"
 sidebar_label: "Refaster template `EqualityRules.Negation`"
 ---
 

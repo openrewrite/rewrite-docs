@@ -1,4 +1,5 @@
 ---
+title: "Migrate from OpenJPA to EclipseLink JPA"
 sidebar_label: "Migrate from OpenJPA to EclipseLink JPA"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "`AssertJIterableRules` Refaster recipes"
 sidebar_label: "`AssertJIterableRules` Refaster recipes"
 ---
 

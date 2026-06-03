@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssortedRules.SplitToStream`"
 sidebar_label: "Refaster template `AssortedRules.SplitToStream`"
 ---
 

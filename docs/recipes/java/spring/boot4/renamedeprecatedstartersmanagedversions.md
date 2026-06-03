@@ -1,4 +1,5 @@
 ---
+title: "Rename Spring Boot 4.0 starters with managed versions"
 sidebar_label: "Rename Spring Boot 4.0 starters with managed versions"
 ---
 

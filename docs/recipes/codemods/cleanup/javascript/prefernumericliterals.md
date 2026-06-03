@@ -1,4 +1,5 @@
 ---
+title: "Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals"
 sidebar_label: "Disallow `parseInt()` and `Number.parseInt()` in favor of binary, octal, and hexadecimal literals"
 ---
 

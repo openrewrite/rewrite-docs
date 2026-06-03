@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Gradle 9 from Gradle 8"
 sidebar_label: "Migrate to Gradle 9 from Gradle 8"
 ---
 
@@ -87,7 +88,10 @@ This recipe is used as part of the following composite recipes:
 plugins {
     id 'java'
     id 'jacoco'
+    id 'application'
 }
+
+mainClassName = "com.example.AppMain"
 
 repositories {
     mavenCentral()
@@ -95,6 +99,19 @@ repositories {
 
 dependencies {
     implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+    implementation("org.apache.httpcomponents:httpclient") {
+        version = {
+            strictly("4.5.13")
+        }
+    }
+}
+
+task doSomething(type: JavaExec) {
+    main = "com.example.AppMain"
+}
+
+tasks.register("runEverything", JavaExec) {
+    main = "com.example.AppMain"
 }
 ```
 
@@ -103,6 +120,11 @@ dependencies {
 plugins {
     id 'java'
     id 'jacoco'
+    id 'application'
+}
+
+application {
+    mainClass = "com.example.AppMain"
 }
 
 repositories {
@@ -111,6 +133,19 @@ repositories {
 
 dependencies {
     implementation "com.google.guava:guava:31.1-jre"
+    implementation("org.apache.httpcomponents:httpclient") {
+        version {
+            strictly("4.5.13")
+        }
+    }
+}
+
+task doSomething(type: JavaExec) {
+    mainClass = "com.example.AppMain"
+}
+
+tasks.register("runEverything", JavaExec) {
+    mainClass = "com.example.AppMain"
 }
 ```
 
@@ -120,11 +155,37 @@ dependencies {
 ```diff
 --- build.gradle
 +++ build.gradle
-@@ -11,1 +11,1 @@
+@@ -7,1 +7,3 @@
+}
+
+-mainClassName = "com.example.AppMain"
++application {
++   mainClass = "com.example.AppMain"
++}
+
+@@ -14,1 +16,1 @@
 
 dependencies {
 -   implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 +   implementation "com.google.guava:guava:31.1-jre"
+    implementation("org.apache.httpcomponents:httpclient") {
+@@ -16,1 +18,1 @@
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+    implementation("org.apache.httpcomponents:httpclient") {
+-       version = {
++       version {
+            strictly("4.5.13")
+@@ -23,1 +25,1 @@
+
+task doSomething(type: JavaExec) {
+-   main = "com.example.AppMain"
++   mainClass = "com.example.AppMain"
+}
+@@ -27,1 +29,1 @@
+
+tasks.register("runEverything", JavaExec) {
+-   main = "com.example.AppMain"
++   mainClass = "com.example.AppMain"
 }
 ```
 </TabItem>
@@ -145,7 +206,10 @@ dependencies {
 plugins {
     id 'java'
     id 'jacoco'
+    id 'application'
 }
+
+mainClassName = "com.example.AppMain"
 
 repositories {
     mavenCentral()
@@ -153,6 +217,19 @@ repositories {
 
 dependencies {
     implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+    implementation("org.apache.httpcomponents:httpclient") {
+        version = {
+            strictly("4.5.13")
+        }
+    }
+}
+
+task doSomething(type: JavaExec) {
+    main = "com.example.AppMain"
+}
+
+tasks.register("runEverything", JavaExec) {
+    main = "com.example.AppMain"
 }
 ```
 
@@ -161,6 +238,11 @@ dependencies {
 plugins {
     id 'java'
     id 'jacoco'
+    id 'application'
+}
+
+application {
+    mainClass = "com.example.AppMain"
 }
 
 repositories {
@@ -169,6 +251,19 @@ repositories {
 
 dependencies {
     implementation "com.google.guava:guava:31.1-jre"
+    implementation("org.apache.httpcomponents:httpclient") {
+        version {
+            strictly("4.5.13")
+        }
+    }
+}
+
+task doSomething(type: JavaExec) {
+    mainClass = "com.example.AppMain"
+}
+
+tasks.register("runEverything", JavaExec) {
+    mainClass = "com.example.AppMain"
 }
 ```
 
@@ -178,11 +273,37 @@ dependencies {
 ```diff
 --- build.gradle
 +++ build.gradle
-@@ -11,1 +11,1 @@
+@@ -7,1 +7,3 @@
+}
+
+-mainClassName = "com.example.AppMain"
++application {
++   mainClass = "com.example.AppMain"
++}
+
+@@ -14,1 +16,1 @@
 
 dependencies {
 -   implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 +   implementation "com.google.guava:guava:31.1-jre"
+    implementation("org.apache.httpcomponents:httpclient") {
+@@ -16,1 +18,1 @@
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
+    implementation("org.apache.httpcomponents:httpclient") {
+-       version = {
++       version {
+            strictly("4.5.13")
+@@ -23,1 +25,1 @@
+
+task doSomething(type: JavaExec) {
+-   main = "com.example.AppMain"
++   mainClass = "com.example.AppMain"
+}
+@@ -27,1 +29,1 @@
+
+tasks.register("runEverything", JavaExec) {
+-   main = "com.example.AppMain"
++   mainClass = "com.example.AppMain"
 }
 ```
 </TabItem>

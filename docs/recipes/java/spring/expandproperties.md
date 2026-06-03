@@ -1,4 +1,5 @@
 ---
+title: "Expand Spring YAML properties"
 sidebar_label: "Expand Spring YAML properties"
 ---
 

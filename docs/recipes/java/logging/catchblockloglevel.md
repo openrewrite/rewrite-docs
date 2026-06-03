@@ -1,4 +1,5 @@
 ---
+title: "Catch block log level"
 sidebar_label: "Catch block log level"
 ---
 

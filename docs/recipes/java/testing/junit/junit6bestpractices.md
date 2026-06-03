@@ -1,4 +1,5 @@
 ---
+title: "JUnit 6 best practices"
 sidebar_label: "JUnit 6 best practices"
 ---
 

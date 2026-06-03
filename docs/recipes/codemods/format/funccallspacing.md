@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;"
 sidebar_label: "Require or disallow spacing between function identifiers and their invocations. Alias of &amp;#x60;function-call-spacing&amp;#x60;"
 ---
 

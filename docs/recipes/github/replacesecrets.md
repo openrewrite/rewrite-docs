@@ -1,4 +1,5 @@
 ---
+title: "Replace GitHub Action secret names"
 sidebar_label: "Replace GitHub Action secret names"
 ---
 

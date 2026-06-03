@@ -1,4 +1,5 @@
 ---
+title: "Enforce spacing before closing bracket in JSX"
 sidebar_label: "Enforce spacing before closing bracket in JSX"
 ---
 

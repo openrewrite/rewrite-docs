@@ -1,4 +1,5 @@
 ---
+title: "Unannotated collection attributes require a Transient annotation"
 sidebar_label: "Unannotated collection attributes require a Transient annotation"
 ---
 

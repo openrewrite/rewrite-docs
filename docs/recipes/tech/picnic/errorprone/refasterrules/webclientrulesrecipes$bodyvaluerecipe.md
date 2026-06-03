@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `WebClientRules.BodyValue`"
 sidebar_label: "Refaster template `WebClientRules.BodyValue`"
 ---
 

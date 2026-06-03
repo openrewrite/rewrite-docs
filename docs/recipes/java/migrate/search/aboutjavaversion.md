@@ -1,4 +1,5 @@
 ---
+title: "Find which Java version is in use"
 sidebar_label: "Find which Java version is in use"
 ---
 

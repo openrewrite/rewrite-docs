@@ -1,4 +1,5 @@
 ---
+title: "Auto-format JavaScript/TypeScript code"
 sidebar_label: "Auto-format JavaScript/TypeScript code"
 ---
 

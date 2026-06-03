@@ -1,4 +1,5 @@
 ---
+title: "Change Gradle dependency"
 sidebar_label: "Change Gradle dependency"
 ---
 
@@ -32,6 +33,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | overrideManagedVersion | *Optional*. If the old dependency has a managed version, this flag can be used to explicitly set the version on the new dependency. WARNING: No check is done on the NEW dependency to verify if it is managed, it relies on whether the OLD dependency had a managed version. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate the Axon Framework BOM coordinates](/recipes/org/axonframework/migration/axon4toaxon5bom.md)
+* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/io/axoniq/framework/migration/axon4toaxoniq5bom.md)
 
 ## Example
 

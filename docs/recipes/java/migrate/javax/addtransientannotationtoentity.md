@@ -1,4 +1,5 @@
 ---
+title: "Unannotated entity attributes require a Transient annotation"
 sidebar_label: "Unannotated entity attributes require a Transient annotation"
 ---
 

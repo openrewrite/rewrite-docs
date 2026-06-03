@@ -1,4 +1,5 @@
 ---
+title: "Update Jackson 2.x types to 3.x"
 sidebar_label: "Update Jackson 2.x types to 3.x"
 ---
 

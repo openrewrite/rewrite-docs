@@ -1,4 +1,5 @@
 ---
+title: "Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`"
 sidebar_label: "Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`"
 ---
 

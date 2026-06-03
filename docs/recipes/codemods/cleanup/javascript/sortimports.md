@@ -1,4 +1,5 @@
 ---
+title: "Enforce sorted import declarations within modules"
 sidebar_label: "Enforce sorted import declarations within modules"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Micrometer 1.13"
 sidebar_label: "Migrate to Micrometer 1.13"
 ---
 

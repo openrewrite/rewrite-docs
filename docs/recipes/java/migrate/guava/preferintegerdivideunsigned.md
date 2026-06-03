@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Integer#divideUnsigned`"
 sidebar_label: "Prefer `Integer#divideUnsigned`"
 ---
 

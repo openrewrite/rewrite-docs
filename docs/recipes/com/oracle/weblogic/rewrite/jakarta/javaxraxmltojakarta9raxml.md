@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries in `ra.xml` files (Connectors)."
 sidebar_label: "Migrate xmlns entries in `ra.xml` files (Connectors)."
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxCollectToImmutableSet`"
 sidebar_label: "Refaster template `ReactorRules.FluxCollectToImmutableSet`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Private accessor methods must have a `@Transient` annotation"
 sidebar_label: "Private accessor methods must have a `@Transient` annotation"
 ---
 

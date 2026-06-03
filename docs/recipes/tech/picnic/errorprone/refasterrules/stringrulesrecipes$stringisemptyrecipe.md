@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringIsEmpty`"
 sidebar_label: "Refaster template `StringRules.StringIsEmpty`"
 ---
 

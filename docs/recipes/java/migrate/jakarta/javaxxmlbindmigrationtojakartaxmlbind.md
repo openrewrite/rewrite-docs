@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`"
 sidebar_label: "Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`"
 ---
 
@@ -72,6 +73,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `javax.xml.bind`
   * newPackageName: `jakarta.xml.bind`
   * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.sun.xml.bind.marshaller.NamespacePrefixMapper`
+  * newFullyQualifiedTypeName: `org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper`
+  * ignoreDefinition: `true`
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.codehaus.mojo`
   * artifactId: `jaxb2-maven-plugin`
@@ -131,6 +136,10 @@ recipeList:
       oldPackageName: javax.xml.bind
       newPackageName: jakarta.xml.bind
       recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.sun.xml.bind.marshaller.NamespacePrefixMapper
+      newFullyQualifiedTypeName: org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper
+      ignoreDefinition: true
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.codehaus.mojo
       artifactId: jaxb2-maven-plugin

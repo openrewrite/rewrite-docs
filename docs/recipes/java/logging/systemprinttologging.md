@@ -1,4 +1,5 @@
 ---
+title: "Use logger instead of system print statements"
 sidebar_label: "Use logger instead of system print statements"
 ---
 

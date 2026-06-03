@@ -1,4 +1,5 @@
 ---
+title: "Change type in String literals"
 sidebar_label: "Change type in String literals"
 ---
 

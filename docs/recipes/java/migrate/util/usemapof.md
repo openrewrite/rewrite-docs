@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Map.of(..)`"
 sidebar_label: "Prefer `Map.of(..)`"
 ---
 

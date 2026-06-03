@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableTableRules.ImmutableTableBuilderBuildOrThrow`"
 sidebar_label: "Refaster template `ImmutableTableRules.ImmutableTableBuilderBuildOrThrow`"
 ---
 

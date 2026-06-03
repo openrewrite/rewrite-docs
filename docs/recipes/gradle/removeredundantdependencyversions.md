@@ -1,4 +1,5 @@
 ---
+title: "Remove redundant explicit dependencies and versions"
 sidebar_label: "Remove redundant explicit dependencies and versions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace beans.xml file"
 sidebar_label: "Replace beans.xml file"
 ---
 

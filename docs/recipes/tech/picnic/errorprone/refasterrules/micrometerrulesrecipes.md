@@ -1,4 +1,5 @@
 ---
+title: "`MicrometerRules` Refaster recipes"
 sidebar_label: "`MicrometerRules` Refaster recipes"
 ---
 

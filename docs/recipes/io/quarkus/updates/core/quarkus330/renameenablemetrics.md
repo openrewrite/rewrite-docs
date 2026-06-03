@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus330.RenameEnableMetrics"
 sidebar_label: "io.quarkus.updates.core.quarkus330.RenameEnableMetrics"
 ---
 

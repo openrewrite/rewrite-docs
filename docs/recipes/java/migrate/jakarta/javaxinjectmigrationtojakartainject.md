@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.inject` packages to `jakarta.inject`"
 sidebar_label: "Migrate deprecated `javax.inject` packages to `jakarta.inject`"
 ---
 

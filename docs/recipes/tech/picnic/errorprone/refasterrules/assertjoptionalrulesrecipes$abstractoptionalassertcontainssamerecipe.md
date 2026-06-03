@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJOptionalRules.AbstractOptionalAssertContainsSame`"
 sidebar_label: "Refaster template `AssertJOptionalRules.AbstractOptionalAssertContainsSame`"
 ---
 

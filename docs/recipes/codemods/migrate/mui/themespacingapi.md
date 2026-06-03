@@ -1,4 +1,5 @@
 ---
+title: "Updates theme spacing API"
 sidebar_label: "Updates theme spacing API"
 ---
 

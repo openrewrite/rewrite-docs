@@ -1,4 +1,5 @@
 ---
+title: "Recipe testing best practices"
 sidebar_label: "Recipe testing best practices"
 ---
 

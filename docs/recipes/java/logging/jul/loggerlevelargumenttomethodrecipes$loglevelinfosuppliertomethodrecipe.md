@@ -1,4 +1,5 @@
 ---
+title: "Replace JUL `Logger.log(Level.INFO, Supplier&lt;String&gt;)` with `Logger.info(Supplier&lt;String&gt;)`"
 sidebar_label: "Replace JUL `Logger.log(Level.INFO, Supplier&lt;String&gt;)` with `Logger.info(Supplier&lt;String&gt;)`"
 ---
 

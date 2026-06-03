@@ -1,4 +1,5 @@
 ---
+title: "Is GitHub Actions Workflow"
 sidebar_label: "Is GitHub Actions Workflow"
 ---
 

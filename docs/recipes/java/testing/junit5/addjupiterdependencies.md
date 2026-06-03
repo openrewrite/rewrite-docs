@@ -1,4 +1,5 @@
 ---
+title: "Add JUnit Jupiter dependencies"
 sidebar_label: "Add JUnit Jupiter dependencies"
 ---
 

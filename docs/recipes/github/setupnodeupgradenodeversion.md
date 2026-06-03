@@ -1,4 +1,5 @@
 ---
+title: "Upgrade `actions/setup-node` `node-version`"
 sidebar_label: "Upgrade `actions/setup-node` `node-version`"
 ---
 

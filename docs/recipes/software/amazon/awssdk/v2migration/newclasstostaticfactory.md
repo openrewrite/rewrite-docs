@@ -1,4 +1,5 @@
 ---
+title: "Transform 'new' expressions to static factory methods"
 sidebar_label: "Transform 'new' expressions to static factory methods"
 ---
 

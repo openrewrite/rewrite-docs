@@ -1,4 +1,5 @@
 ---
+title: "Use object property shorthand"
 sidebar_label: "Use object property shorthand"
 ---
 

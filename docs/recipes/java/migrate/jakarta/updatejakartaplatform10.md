@@ -1,4 +1,5 @@
 ---
+title: "Update Jakarta EE Platform Dependencies to 10.0.0"
 sidebar_label: "Update Jakarta EE Platform Dependencies to 10.0.0"
 ---
 

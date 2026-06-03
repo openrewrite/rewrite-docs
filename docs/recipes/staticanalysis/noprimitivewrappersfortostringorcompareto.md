@@ -1,4 +1,5 @@
 ---
+title: "No primitive wrappers for #toString() or #compareTo(..)"
 sidebar_label: "No primitive wrappers for #toString() or #compareTo(..)"
 ---
 

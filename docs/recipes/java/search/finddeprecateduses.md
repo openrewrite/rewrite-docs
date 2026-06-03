@@ -1,4 +1,5 @@
 ---
+title: "Find uses of deprecated classes, methods, and fields"
 sidebar_label: "Find uses of deprecated classes, methods, and fields"
 ---
 

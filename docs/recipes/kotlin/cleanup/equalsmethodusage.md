@@ -1,4 +1,5 @@
 ---
+title: "Structural equality tests should use `==` or `!=`"
 sidebar_label: "Structural equality tests should use `==` or `!=`"
 ---
 

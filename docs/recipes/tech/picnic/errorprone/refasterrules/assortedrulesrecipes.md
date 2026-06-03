@@ -1,4 +1,5 @@
 ---
+title: "`AssortedRules` Refaster recipes"
 sidebar_label: "`AssortedRules` Refaster recipes"
 ---
 

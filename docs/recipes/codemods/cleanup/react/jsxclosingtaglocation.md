@@ -1,4 +1,5 @@
 ---
+title: "Enforce closing tag location for multiline JSX"
 sidebar_label: "Enforce closing tag location for multiline JSX"
 ---
 

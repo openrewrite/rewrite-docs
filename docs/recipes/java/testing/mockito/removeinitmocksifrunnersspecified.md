@@ -1,4 +1,5 @@
 ---
+title: "Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified"
 sidebar_label: "Remove `MockitoAnnotations.initMocks(this)` and `openMocks(this)` if JUnit runners specified"
 ---
 

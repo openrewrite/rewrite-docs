@@ -1,4 +1,5 @@
 ---
+title: "Unfold YAML properties"
 sidebar_label: "Unfold YAML properties"
 ---
 

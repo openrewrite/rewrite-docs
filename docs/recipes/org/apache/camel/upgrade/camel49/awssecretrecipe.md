@@ -1,4 +1,5 @@
 ---
+title: "The syntax for retrieving a single field of a secret has been changed"
 sidebar_label: "The syntax for retrieving a single field of a secret has been changed"
 ---
 

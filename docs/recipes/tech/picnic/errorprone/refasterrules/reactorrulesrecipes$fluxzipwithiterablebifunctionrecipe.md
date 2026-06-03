@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxZipWithIterableBiFunction`"
 sidebar_label: "Refaster template `ReactorRules.FluxZipWithIterableBiFunction`"
 ---
 

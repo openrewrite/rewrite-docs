@@ -1,4 +1,5 @@
 ---
+title: "Renamed classes for API"
 sidebar_label: "Renamed classes for API"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Camel API changes"
 sidebar_label: "Camel API changes"
 ---
 

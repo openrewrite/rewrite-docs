@@ -1,4 +1,5 @@
 ---
+title: "Convert switch expression yield to arrow"
 sidebar_label: "Convert switch expression yield to arrow"
 ---
 

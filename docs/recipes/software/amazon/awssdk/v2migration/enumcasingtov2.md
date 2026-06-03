@@ -1,4 +1,5 @@
 ---
+title: "V1 Enum Casing to V2"
 sidebar_label: "V1 Enum Casing to V2"
 ---
 

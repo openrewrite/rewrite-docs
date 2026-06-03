@@ -1,4 +1,5 @@
 ---
+title: "Remove redundant `@JsonProperty` argument"
 sidebar_label: "Remove redundant `@JsonProperty` argument"
 ---
 

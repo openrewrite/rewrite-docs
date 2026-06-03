@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions"
 sidebar_label: "Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add `JDeprScan` Maven Plug-in"
 sidebar_label: "Add `JDeprScan` Maven Plug-in"
 ---
 

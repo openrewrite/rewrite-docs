@@ -1,4 +1,5 @@
 ---
+title: "Add `project.build.outputTimestamp` for reproducible builds"
 sidebar_label: "Add `project.build.outputTimestamp` for reproducible builds"
 ---
 
@@ -65,6 +66,56 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Apache Maven reproducible builds](/recipes/maven/reproduciblebuilds.md)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|timestamp|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <properties>
+    <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
+  </properties>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -5,0 +5,3 @@
+  <artifactId>my-app</artifactId>
+  <version>1</version>
++ <properties>
++   <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
++ </properties>
+</project>
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

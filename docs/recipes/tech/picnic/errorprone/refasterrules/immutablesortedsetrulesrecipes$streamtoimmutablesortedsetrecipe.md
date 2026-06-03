@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSortedSetRules.StreamToImmutableSortedSet`"
 sidebar_label: "Refaster template `ImmutableSortedSetRules.StreamToImmutableSortedSet`"
 ---
 

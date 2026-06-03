@@ -1,4 +1,5 @@
 ---
+title: "Rename CDI Extension to Jakarta"
 sidebar_label: "Rename CDI Extension to Jakarta"
 ---
 

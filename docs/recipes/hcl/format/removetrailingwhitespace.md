@@ -1,4 +1,5 @@
 ---
+title: "Remove trailing whitespace"
 sidebar_label: "Remove trailing whitespace"
 ---
 

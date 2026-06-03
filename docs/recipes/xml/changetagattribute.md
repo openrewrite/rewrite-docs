@@ -1,4 +1,5 @@
 ---
+title: "Change XML attribute"
 sidebar_label: "Change XML attribute"
 ---
 
@@ -44,6 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Bean XML properties deprecated in Spring Framework 3.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/migratedeprecatedbeanxmlproperties)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
+* [Migrate Spring Integration XML attributes deprecated by Spring Integration 6.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/integration/migratespringframework6deprecatedintegrationxmlattributes)
 * [Migrate XJC Bindings to Jakata XML](/recipes/java/migrate/jakarta/javaxxmltojakartaxmlxjcbinding.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
@@ -102,6 +104,7 @@ This recipe is used as part of the following composite recipes:
 * [Remove unnecessary `use-authorization-manager` for message security in Spring security 6](/recipes/java/spring/security6/removeuseauthorizationmanager.md)
 * [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
 * [Upgrade to Maven model version 4.1.0](/recipes/maven/upgradetomodelversion410.md)
+* [Use `Rfc6265CookieProcessor` instead of `LegacyCookieProcessor`](/recipes/java/spring/boot3/userfc6265cookieprocessor.md)
 
 ## Example
 

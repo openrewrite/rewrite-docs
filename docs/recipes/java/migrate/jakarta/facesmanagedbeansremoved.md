@@ -1,4 +1,5 @@
 ---
+title: "Substitute removed Faces Managed Beans"
 sidebar_label: "Substitute removed Faces Managed Beans"
 ---
 

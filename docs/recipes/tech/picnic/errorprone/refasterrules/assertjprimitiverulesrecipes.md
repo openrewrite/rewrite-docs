@@ -1,4 +1,5 @@
 ---
+title: "`AssertJPrimitiveRules` Refaster recipes"
 sidebar_label: "`AssertJPrimitiveRules` Refaster recipes"
 ---
 

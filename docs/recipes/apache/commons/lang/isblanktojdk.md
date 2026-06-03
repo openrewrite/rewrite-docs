@@ -1,4 +1,5 @@
 ---
+title: "Replace any StringUtils#isBlank(String) and #isNotBlank(String)"
 sidebar_label: "Replace any StringUtils#isBlank(String) and #isNotBlank(String)"
 ---
 

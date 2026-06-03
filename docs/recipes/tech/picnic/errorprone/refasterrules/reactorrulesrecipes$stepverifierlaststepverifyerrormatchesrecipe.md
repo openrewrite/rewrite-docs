@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMatches`"
 sidebar_label: "Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMatches`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `BigDecimalRules.BigDecimalTen`"
 sidebar_label: "Refaster template `BigDecimalRules.BigDecimalTen`"
 ---
 

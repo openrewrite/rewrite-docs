@@ -1,4 +1,5 @@
 ---
+title: "Use `RestTemplateBuilder#basicAuthentication`"
 sidebar_label: "Use `RestTemplateBuilder#basicAuthentication`"
 ---
 

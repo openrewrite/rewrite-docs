@@ -1,4 +1,5 @@
 ---
+title: "`MessageFormat.format()` in logging statements should use SLF4J parameterized logging"
 sidebar_label: "`MessageFormat.format()` in logging statements should use SLF4J parameterized logging"
 ---
 

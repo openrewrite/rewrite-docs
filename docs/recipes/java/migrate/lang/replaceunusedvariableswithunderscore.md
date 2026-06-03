@@ -1,4 +1,5 @@
 ---
+title: "Replace unused variables with underscore"
 sidebar_label: "Replace unused variables with underscore"
 ---
 

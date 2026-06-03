@@ -1,4 +1,5 @@
 ---
+title: "Camel YAML DSL routePolicy renaming"
 sidebar_label: "Camel YAML DSL routePolicy renaming"
 ---
 

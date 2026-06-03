@@ -1,4 +1,5 @@
 ---
+title: "Enable Gradle parallel execution"
 sidebar_label: "Enable Gradle parallel execution"
 ---
 

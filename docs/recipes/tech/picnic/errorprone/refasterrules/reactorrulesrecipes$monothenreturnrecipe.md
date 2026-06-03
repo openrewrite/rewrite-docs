@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoThenReturn`"
 sidebar_label: "Refaster template `ReactorRules.MonoThenReturn`"
 ---
 

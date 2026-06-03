@@ -1,4 +1,5 @@
 ---
+title: "Remove LaunchDarkly's `boolVariation` for feature key"
 sidebar_label: "Remove LaunchDarkly's `boolVariation` for feature key"
 ---
 

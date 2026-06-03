@@ -1,4 +1,5 @@
 ---
+title: "Modernize obsolete Maven poms"
 sidebar_label: "Modernize obsolete Maven poms"
 ---
 

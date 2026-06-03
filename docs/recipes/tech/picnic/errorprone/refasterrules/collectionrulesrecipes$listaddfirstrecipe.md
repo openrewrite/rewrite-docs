@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.ListAddFirst`"
 sidebar_label: "Refaster template `CollectionRules.ListAddFirst`"
 ---
 

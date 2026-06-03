@@ -1,4 +1,5 @@
 ---
+title: "Require quotes around object literal property names in `&lt;template&gt;`"
 sidebar_label: "Require quotes around object literal property names in `&lt;template&gt;`"
 ---
 

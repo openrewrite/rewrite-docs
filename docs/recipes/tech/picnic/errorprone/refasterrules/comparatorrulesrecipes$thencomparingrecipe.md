@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ComparatorRules.ThenComparing`"
 sidebar_label: "Refaster template `ComparatorRules.ThenComparing`"
 ---
 

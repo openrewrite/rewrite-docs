@@ -1,4 +1,5 @@
 ---
+title: "Refaster rules to replace JUnit assertions with AssertJ equivalents"
 sidebar_label: "Refaster rules to replace JUnit assertions with AssertJ equivalents"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "'Collection.toArray()' should be passed an array of the proper type"
 sidebar_label: "'Collection.toArray()' should be passed an array of the proper type"
 ---
 

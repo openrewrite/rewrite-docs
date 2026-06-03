@@ -1,4 +1,5 @@
 ---
+title: "No double brace initialization"
 sidebar_label: "No double brace initialization"
 ---
 

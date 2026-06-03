@@ -1,4 +1,5 @@
 ---
+title: "Change Gradle dependency group"
 sidebar_label: "Change Gradle dependency group"
 ---
 

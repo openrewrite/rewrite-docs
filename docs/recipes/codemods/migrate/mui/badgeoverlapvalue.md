@@ -1,4 +1,5 @@
 ---
+title: "Updates `overlap` prop to `variant=&quot;dot&quot;`"
 sidebar_label: "Updates `overlap` prop to `variant=&quot;dot&quot;`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Converts all `@mui/material` submodule imports to the root module"
 sidebar_label: "Converts all `@mui/material` submodule imports to the root module"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Renames `option` prop to `getOptionLabel`"
 sidebar_label: "Renames `option` prop to `getOptionLabel`"
 ---
 

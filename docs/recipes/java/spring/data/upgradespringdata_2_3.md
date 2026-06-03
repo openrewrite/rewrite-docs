@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Spring Data 2.3"
 sidebar_label: "Migrate to Spring Data 2.3"
 ---
 

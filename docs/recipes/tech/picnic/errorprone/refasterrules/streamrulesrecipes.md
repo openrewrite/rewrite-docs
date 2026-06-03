@@ -1,4 +1,5 @@
 ---
+title: "`StreamRules` Refaster recipes"
 sidebar_label: "`StreamRules` Refaster recipes"
 ---
 

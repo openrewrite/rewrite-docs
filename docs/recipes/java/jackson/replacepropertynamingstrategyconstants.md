@@ -1,4 +1,5 @@
 ---
+title: "Replace deprecated `PropertyNamingStrategy` inner classes and constants"
 sidebar_label: "Replace deprecated `PropertyNamingStrategy` inner classes and constants"
 ---
 

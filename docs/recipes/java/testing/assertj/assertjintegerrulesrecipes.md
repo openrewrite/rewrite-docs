@@ -1,4 +1,5 @@
 ---
+title: "Adopt AssertJ Integer Assertions"
 sidebar_label: "Adopt AssertJ Integer Assertions"
 ---
 

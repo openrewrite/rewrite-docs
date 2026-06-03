@@ -1,4 +1,5 @@
 ---
+title: "Updates base imports to use named exports"
 sidebar_label: "Updates base imports to use named exports"
 ---
 

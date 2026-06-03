@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxTakeWhile`"
 sidebar_label: "Refaster template `ReactorRules.FluxTakeWhile`"
 ---
 

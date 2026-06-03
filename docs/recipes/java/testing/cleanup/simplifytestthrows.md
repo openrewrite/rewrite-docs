@@ -1,4 +1,5 @@
 ---
+title: "Simplify `throws` statements of tests"
 sidebar_label: "Simplify `throws` statements of tests"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Update the Micronaut Data library"
 sidebar_label: "Update the Micronaut Data library"
 ---
 

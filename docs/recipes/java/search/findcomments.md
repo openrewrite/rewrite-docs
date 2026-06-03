@@ -1,4 +1,5 @@
 ---
+title: "Find within comments and literals"
 sidebar_label: "Find within comments and literals"
 ---
 

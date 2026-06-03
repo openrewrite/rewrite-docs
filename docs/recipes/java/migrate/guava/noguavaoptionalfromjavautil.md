@@ -1,4 +1,5 @@
 ---
+title: "Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument"
 sidebar_label: "Replace `com.google.common.base.Optional#fromJavaUtil(java.util.Optional)` with argument"
 ---
 

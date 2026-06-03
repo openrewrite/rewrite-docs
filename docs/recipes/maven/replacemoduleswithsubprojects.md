@@ -1,4 +1,5 @@
 ---
+title: "Replace modules with subprojects"
 sidebar_label: "Replace modules with subprojects"
 ---
 

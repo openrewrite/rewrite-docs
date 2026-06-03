@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.SortedSetLast`"
 sidebar_label: "Refaster template `CollectionRules.SortedSetLast`"
 ---
 

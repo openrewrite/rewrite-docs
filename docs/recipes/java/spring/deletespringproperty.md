@@ -1,4 +1,5 @@
 ---
+title: "Delete a spring configuration property"
 sidebar_label: "Delete a spring configuration property"
 ---
 

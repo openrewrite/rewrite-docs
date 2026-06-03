@@ -1,4 +1,5 @@
 ---
+title: "Remove non existing camel-quarkus extensions"
 sidebar_label: "Remove non existing camel-quarkus extensions"
 ---
 

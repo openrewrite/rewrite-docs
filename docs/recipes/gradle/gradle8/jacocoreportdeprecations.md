@@ -1,4 +1,5 @@
 ---
+title: "Replace Gradle 8 introduced deprecations in JaCoCo report task"
 sidebar_label: "Replace Gradle 8 introduced deprecations in JaCoCo report task"
 ---
 

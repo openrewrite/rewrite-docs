@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse"
 sidebar_label: "io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse"
 ---
 

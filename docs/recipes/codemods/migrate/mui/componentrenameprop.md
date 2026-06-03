@@ -1,4 +1,5 @@
 ---
+title: "Renames `component` prop to `as`"
 sidebar_label: "Renames `component` prop to `as`"
 ---
 

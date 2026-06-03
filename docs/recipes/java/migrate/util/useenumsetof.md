@@ -1,4 +1,5 @@
 ---
+title: "Prefer `EnumSet of(..)`"
 sidebar_label: "Prefer `EnumSet of(..)`"
 ---
 

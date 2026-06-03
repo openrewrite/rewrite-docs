@@ -1,4 +1,5 @@
 ---
+title: "JUnit `assertEquals` to AssertJ"
 sidebar_label: "JUnit `assertEquals` to AssertJ"
 ---
 

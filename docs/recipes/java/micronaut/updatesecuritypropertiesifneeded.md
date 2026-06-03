@@ -1,4 +1,5 @@
 ---
+title: "Update relocated Micronaut Security config properties"
 sidebar_label: "Update relocated Micronaut Security config properties"
 ---
 

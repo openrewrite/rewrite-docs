@@ -1,4 +1,5 @@
 ---
+title: "Remove `Thread.countStackFrames()` method"
 sidebar_label: "Remove `Thread.countStackFrames()` method"
 ---
 

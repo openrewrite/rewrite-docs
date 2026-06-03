@@ -1,4 +1,5 @@
 ---
+title: "Replace parameterized JUL level call with corresponding SLF4J method calls"
 sidebar_label: "Replace parameterized JUL level call with corresponding SLF4J method calls"
 ---
 

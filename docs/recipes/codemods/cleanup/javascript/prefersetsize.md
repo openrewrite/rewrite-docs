@@ -1,4 +1,5 @@
 ---
+title: "Prefer using `Set#size` instead of `Array#length`"
 sidebar_label: "Prefer using `Set#size` instead of `Array#length`"
 ---
 

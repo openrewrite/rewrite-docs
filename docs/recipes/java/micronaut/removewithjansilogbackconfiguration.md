@@ -1,4 +1,5 @@
 ---
+title: "Remove withJansi Logback configuration"
 sidebar_label: "Remove withJansi Logback configuration"
 ---
 

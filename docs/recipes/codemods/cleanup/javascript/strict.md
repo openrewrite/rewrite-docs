@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow strict mode directives"
 sidebar_label: "Require or disallow strict mode directives"
 ---
 

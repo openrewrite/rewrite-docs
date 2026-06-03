@@ -1,4 +1,5 @@
 ---
+title: "Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency"
 sidebar_label: "Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Updates usage of `@mui/styles`"
 sidebar_label: "Updates usage of `@mui/styles`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change method target to variable"
 sidebar_label: "Change method target to variable"
 ---
 

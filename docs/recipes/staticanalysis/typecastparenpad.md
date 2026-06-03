@@ -1,4 +1,5 @@
 ---
+title: "Typecast parenthesis padding"
 sidebar_label: "Typecast parenthesis padding"
 ---
 

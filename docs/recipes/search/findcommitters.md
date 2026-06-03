@@ -1,4 +1,5 @@
 ---
+title: "Find committers on repositories"
 sidebar_label: "Find committers on repositories"
 ---
 

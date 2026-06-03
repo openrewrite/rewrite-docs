@@ -1,4 +1,5 @@
 ---
+title: "Add an annotation processor to `maven-compiler-plugin`"
 sidebar_label: "Add an annotation processor to `maven-compiler-plugin`"
 ---
 
@@ -36,7 +37,9 @@ This recipe is used as part of the following composite recipes:
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
 * [Enable Lombok annotation processor](/recipes/java/migrate/enablelombokannotationprocessor.md)
 
-## Example
+## Examples
+##### Example 1
+`AddAnnotationProcessorTest#addAnnotationProcessor`
 
 ###### Parameters
 | Parameter | Value |
@@ -130,6 +133,170 @@ This recipe is used as part of the following composite recipes:
 +                           <version>0.2.0</version>
 +                       </path>
                     </annotationProcessorPaths>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SeparatedAggregatorAndParent#orphanModuleSharedLstWithExternalParent`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|groupId|`org.projectlombok`|
+|artifactId|`lombok-mapstruct-binding`|
+|version|`0.2.0`|
+
+
+###### Unchanged
+```mavenProject
+corp-parent
+```
+
+###### Unchanged
+```mavenProject
+service-module
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany.platform</groupId>
+    <artifactId>corp-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.2.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mycompany.platform</groupId>
+        <artifactId>corp-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>service-module</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.44</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+            <version>0.2.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mycompany.platform</groupId>
+        <artifactId>corp-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+    <artifactId>service-module</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.44</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+            <version>0.2.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>0.2.0</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -24,0 +24,17 @@
+        </dependency>
+    </dependencies>
++   <build>
++       <plugins>
++           <plugin>
++               <groupId>org.apache.maven.plugins</groupId>
++               <artifactId>maven-compiler-plugin</artifactId>
++               <configuration>
++                   <annotationProcessorPaths>
++                       <path>
++                           <groupId>org.projectlombok</groupId>
++                           <artifactId>lombok-mapstruct-binding</artifactId>
++                           <version>0.2.0</version>
++                       </path>
++                   </annotationProcessorPaths>
++               </configuration>
++           </plugin>
++       </plugins>
++   </build>
+</project>
 ```
 </TabItem>
 </Tabs>

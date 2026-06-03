@@ -1,4 +1,5 @@
 ---
+title: "Use `Uni&lt;T extends PanacheEntityBase&gt;`"
 sidebar_label: "Use `Uni&lt;T extends PanacheEntityBase&gt;`"
 ---
 

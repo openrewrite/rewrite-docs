@@ -1,4 +1,5 @@
 ---
+title: "Add managed Maven dependency"
 sidebar_label: "Add managed Maven dependency"
 ---
 

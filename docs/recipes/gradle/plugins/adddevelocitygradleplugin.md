@@ -1,4 +1,5 @@
 ---
+title: "Add the Develocity Gradle plugin"
 sidebar_label: "Add the Develocity Gradle plugin"
 ---
 

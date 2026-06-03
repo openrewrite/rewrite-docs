@@ -1,4 +1,5 @@
 ---
+title: "Add a configuration option for the Maven runtime"
 sidebar_label: "Add a configuration option for the Maven runtime"
 ---
 

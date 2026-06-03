@@ -1,4 +1,5 @@
 ---
+title: "Find Gradle JVMTestSuite plugin configuration"
 sidebar_label: "Find Gradle JVMTestSuite plugin configuration"
 ---
 

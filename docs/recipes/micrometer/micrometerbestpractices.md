@@ -1,4 +1,5 @@
 ---
+title: "Micrometer best practices"
 sidebar_label: "Micrometer best practices"
 ---
 

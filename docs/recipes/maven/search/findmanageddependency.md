@@ -1,4 +1,5 @@
 ---
+title: "Find Maven dependency management entry"
 sidebar_label: "Find Maven dependency management entry"
 ---
 

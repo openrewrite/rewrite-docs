@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.IntegerSignumIsNegative`"
 sidebar_label: "Refaster template `PrimitiveRules.IntegerSignumIsNegative`"
 ---
 

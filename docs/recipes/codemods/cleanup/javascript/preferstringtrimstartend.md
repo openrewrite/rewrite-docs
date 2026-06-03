@@ -1,4 +1,5 @@
 ---
+title: "Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`"
 sidebar_label: "Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`"
 ---
 

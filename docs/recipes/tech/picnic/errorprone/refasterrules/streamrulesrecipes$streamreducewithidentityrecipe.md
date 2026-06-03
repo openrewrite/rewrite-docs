@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamReduceWithIdentity`"
 sidebar_label: "Refaster template `StreamRules.StreamReduceWithIdentity`"
 ---
 

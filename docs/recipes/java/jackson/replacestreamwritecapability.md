@@ -1,4 +1,5 @@
 ---
+title: "Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`"
 sidebar_label: "Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`"
 ---
 

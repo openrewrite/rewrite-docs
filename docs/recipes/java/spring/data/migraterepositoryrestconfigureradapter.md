@@ -1,4 +1,5 @@
 ---
+title: "Replace `RepositoryRestConfigurerAdapter` with `RepositoryRestConfigurer`"
 sidebar_label: "Replace `RepositoryRestConfigurerAdapter` with `RepositoryRestConfigurer`"
 ---
 

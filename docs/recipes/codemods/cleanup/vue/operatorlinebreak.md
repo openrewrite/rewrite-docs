@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent linebreak style for operators in `&lt;template&gt;`"
 sidebar_label: "Enforce consistent linebreak style for operators in `&lt;template&gt;`"
 ---
 

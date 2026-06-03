@@ -1,4 +1,5 @@
 ---
+title: "Migrate from `@ApiOperation` to `@Operation`"
 sidebar_label: "Migrate from `@ApiOperation` to `@Operation`"
 ---
 

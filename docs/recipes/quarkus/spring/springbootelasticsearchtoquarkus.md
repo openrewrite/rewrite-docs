@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Elasticsearch with Quarkus Elasticsearch REST Client"
 sidebar_label: "Replace Spring Boot Elasticsearch with Quarkus Elasticsearch REST Client"
 ---
 

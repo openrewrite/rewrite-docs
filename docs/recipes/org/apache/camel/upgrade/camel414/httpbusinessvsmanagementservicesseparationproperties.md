@@ -1,4 +1,5 @@
 ---
+title: "Update properties and yaml configurations file because of Http management vs business separation"
 sidebar_label: "Update properties and yaml configurations file because of Http management vs business separation"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Use `AtomicLong#weakCompareAndSetPlain(long, long)`"
 sidebar_label: "Use `AtomicLong#weakCompareAndSetPlain(long, long)`"
 ---
 

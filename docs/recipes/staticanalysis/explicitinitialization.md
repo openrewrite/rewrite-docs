@@ -1,4 +1,5 @@
 ---
+title: "Explicit initialization"
 sidebar_label: "Explicit initialization"
 ---
 

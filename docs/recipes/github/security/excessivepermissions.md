@@ -1,4 +1,5 @@
 ---
+title: "Find excessive permissions"
 sidebar_label: "Find excessive permissions"
 ---
 

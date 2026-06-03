@@ -1,4 +1,5 @@
 ---
+title: "Recipe classes should be public"
 sidebar_label: "Recipe classes should be public"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce spacing between rest and spread operators and their expressions"
 sidebar_label: "Enforce spacing between rest and spread operators and their expressions"
 ---
 

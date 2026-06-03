@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJMapRules.AbstractMapAssertHasSameSizeAs`"
 sidebar_label: "Refaster template `AssertJMapRules.AbstractMapAssertHasSameSizeAs`"
 ---
 

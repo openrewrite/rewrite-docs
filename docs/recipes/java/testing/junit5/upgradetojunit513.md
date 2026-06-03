@@ -1,4 +1,5 @@
 ---
+title: "Upgrade to JUnit 5.13"
 sidebar_label: "Upgrade to JUnit 5.13"
 ---
 

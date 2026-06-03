@@ -1,4 +1,5 @@
 ---
+title: "Use `visit` with parent cursor when calling from another visitor"
 sidebar_label: "Use `visit` with parent cursor when calling from another visitor"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove workflow input argument"
 sidebar_label: "Remove workflow input argument"
 ---
 

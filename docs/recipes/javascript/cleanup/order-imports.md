@@ -1,4 +1,5 @@
 ---
+title: "Order imports"
 sidebar_label: "Order imports"
 ---
 

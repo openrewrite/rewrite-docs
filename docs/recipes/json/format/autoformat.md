@@ -1,4 +1,5 @@
 ---
+title: "Format JSON"
 sidebar_label: "Format JSON"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find Maven project properties"
 sidebar_label: "Find Maven project properties"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hibernate dialect to the generic dialect"
 sidebar_label: "Migrate Hibernate dialect to the generic dialect"
 ---
 

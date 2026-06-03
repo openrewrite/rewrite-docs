@@ -1,4 +1,5 @@
 ---
+title: "Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead"
 sidebar_label: "Disallow using `Object.assign` with an object literal as the first argument and prefer the use of object spread instead"
 ---
 

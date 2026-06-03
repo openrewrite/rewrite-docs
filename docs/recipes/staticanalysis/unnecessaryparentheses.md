@@ -1,4 +1,5 @@
 ---
+title: "Remove unnecessary parentheses"
 sidebar_label: "Remove unnecessary parentheses"
 ---
 

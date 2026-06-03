@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Integer#remainderUnsigned`"
 sidebar_label: "Prefer `Integer#remainderUnsigned`"
 ---
 

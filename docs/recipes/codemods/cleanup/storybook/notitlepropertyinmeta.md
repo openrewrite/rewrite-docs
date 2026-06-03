@@ -1,4 +1,5 @@
 ---
+title: "Do not define a title in meta"
 sidebar_label: "Do not define a title in meta"
 ---
 

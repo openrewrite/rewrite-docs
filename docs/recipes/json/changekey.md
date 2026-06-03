@@ -1,4 +1,5 @@
 ---
+title: "Change key"
 sidebar_label: "Change key"
 ---
 

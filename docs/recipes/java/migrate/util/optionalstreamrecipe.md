@@ -1,4 +1,5 @@
 ---
+title: "`Stream&lt;Optional&gt;` idiom recipe"
 sidebar_label: "`Stream&lt;Optional&gt;` idiom recipe"
 ---
 

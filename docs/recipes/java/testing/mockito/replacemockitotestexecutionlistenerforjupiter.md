@@ -1,4 +1,5 @@
 ---
+title: "Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)"
 sidebar_label: "Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)"
 ---
 

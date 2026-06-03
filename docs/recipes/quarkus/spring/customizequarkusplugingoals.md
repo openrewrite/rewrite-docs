@@ -1,4 +1,5 @@
 ---
+title: "Customize Quarkus Maven Plugin Goals"
 sidebar_label: "Customize Quarkus Maven Plugin Goals"
 ---
 

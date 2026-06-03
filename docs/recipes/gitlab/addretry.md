@@ -1,4 +1,5 @@
 ---
+title: "Add retry configuration"
 sidebar_label: "Add retry configuration"
 ---
 

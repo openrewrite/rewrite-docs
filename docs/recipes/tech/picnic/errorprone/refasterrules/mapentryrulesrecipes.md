@@ -1,4 +1,5 @@
 ---
+title: "`MapEntryRules` Refaster recipes"
 sidebar_label: "`MapEntryRules` Refaster recipes"
 ---
 

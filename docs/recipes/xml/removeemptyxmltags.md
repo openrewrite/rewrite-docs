@@ -1,4 +1,5 @@
 ---
+title: "Remove empty XML Tag"
 sidebar_label: "Remove empty XML Tag"
 ---
 

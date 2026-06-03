@@ -1,4 +1,5 @@
 ---
+title: "Convert @ConfigurationProperties class to @ConfigMapping interface"
 sidebar_label: "Convert @ConfigurationProperties class to @ConfigMapping interface"
 ---
 

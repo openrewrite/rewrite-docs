@@ -1,4 +1,5 @@
 ---
+title: "Customize Quarkus BOM Version"
 sidebar_label: "Customize Quarkus BOM Version"
 ---
 

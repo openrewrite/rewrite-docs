@@ -1,4 +1,5 @@
 ---
+title: "Migration of `ResultCheckStyle` to `Expectation`"
 sidebar_label: "Migration of `ResultCheckStyle` to `Expectation`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries in `beans.xml` files for Beans 3.0."
 sidebar_label: "Migrate xmlns entries in `beans.xml` files for Beans 3.0."
 ---
 

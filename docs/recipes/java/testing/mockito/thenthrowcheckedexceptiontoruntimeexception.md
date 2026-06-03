@@ -1,4 +1,5 @@
 ---
+title: "Replace undeclared checked exceptions in `thenThrow` with `RuntimeException`"
 sidebar_label: "Replace undeclared checked exceptions in `thenThrow` with `RuntimeException`"
 ---
 

@@ -4711,8 +4711,8 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
-  * **Migrate to Spring Boot 3.0**
+#### [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
+  * **Migrate to Spring Boot 3.0 (Community Edition)**
   * Migrate applications to the latest Spring Boot 3.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions. This recipe will also chain additional framework migrations (Spring Framework, Spring Data, etc) that are required as part of the migration to Spring Boot 2.7.
 
 ##### Data tables:
@@ -4792,8 +4792,8 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](/recipes/java/spring/framework/upgradespringframework_6_0.md)
-  * **Migrate to Spring Framework 6.0**
+#### [org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_0](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
+  * **Migrate to Spring Framework 6.0 (Community Edition)**
   * Migrate applications to the latest Spring Framework 6.0 release.
 
 ##### Data tables:
@@ -5099,6 +5099,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.axoniq.framework.migration.Axon4ToAxoniq5Bom](/recipes/io/axoniq/framework/migration/axon4toaxoniq5bom.md)
+  * **Swap the BOM to Axoniq Framework 5 commercial**
+  * Replaces the imported `org.axonframework:axon-bom` (AF4) or `org.axonframework:axon-framework-bom` (free AF5) in `&lt;dependencyManagement&gt;` with the Axoniq Framework 5 commercial BOM `io.axoniq.framework:axoniq-framework-bom`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.axoniq.framework.migration.UpgradeAxon4ToAxoniq5](/recipes/io/axoniq/framework/migration/upgradeaxon4toaxoniq5.md)
+  * **Upgrade to Axoniq Framework 5 (commercial)**
+  * Migrates an Axon Framework 4.x application to Axoniq Framework 5 (commercial). Composes `UpgradeAxon4ToAxon5` (the free leg) and then layers commercial-only migrations: BOM swap to `io.axoniq.framework:axoniq-framework-bom`, Spring Boot starter swap to `io.axoniq.framework:axoniq-spring-boot-starter`, source rewrites and Maven adds for Axon Server connector, sequenced dead-letter queue, and distributed messaging.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.camel.camel412.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel412/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.11` application to `camel 4.12`**
   * Migrates `camel 4.11` quarkus application to `camel 4.12`.
@@ -5111,6 +5129,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [io.quarkus.updates.camel.camel413.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel413/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.12` application to `camel 4.13`**
   * Migrates `camel 4.12` Quarkus application to `camel 4.13`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.camel.camel420.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.18` application to `camel 4.20`**
+  * Migrates `camel 4.18` Quarkus application to `camel 4.20`.
 
 ##### Data tables:
 
@@ -5675,18 +5702,27 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.axonframework.migration.UpgradeAxonFramework_4_Jakarta](/recipes/org/axonframework/migration/upgradeaxonframework_4_jakarta.md)
-  * **Upgrade to Axonframework 4.x Jakarta**
-  * Migration file to upgrade from an Axon Framework Javax-specific project to Jakarta.
+#### [org.axonframework.migration.Axon4ToAxon5Bom](/recipes/org/axonframework/migration/axon4toaxon5bom.md)
+  * **Migrate the Axon Framework BOM coordinates**
+  * Renames the imported `org.axonframework:axon-bom` BOM in `&lt;dependencyManagement&gt;` to `org.axonframework:axon-framework-bom` and pins the imported version to the current Axon Framework 5 release. The BOM artifactId changed between Axon Framework 4 and Axon Framework 5; the groupId is unchanged.
 
 ##### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.axonframework.migration.UpgradeAxonFramework_4_Javax](/recipes/org/axonframework/migration/upgradeaxonframework_4_javax.md)
-  * **Upgrade to Axonframework 4.x Javax**
-  * Migration file to upgrade an Axon Framework Javax-specific project and remain on Javax.
+#### [org.axonframework.migration.UpgradeAxon4ToAxon5](/recipes/org/axonframework/migration/upgradeaxon4toaxon5.md)
+  * **Upgrade to free Axon Framework 5**
+  * Migrates an Axon Framework 4.x application to free (Apache 2.0) Axon Framework 5. Bumps the Axon Framework dependency versions, applies per-module rename recipes (one per core framework module), and renames Maven coordinates within the `org.axonframework.*` namespace. Does NOT touch features dropped from free AF5 (Axon Server, DLQ, DistributedCommandBus) — see `UpgradeAxon4ToAxoniq5` for the commercial path.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.axonframework.migration.UpgradeKotlin](/recipes/org/axonframework/migration/upgradekotlin.md)
+  * **Upgrade Kotlin to 2.x for Axon Framework 5**
+  * Bumps the `org.jetbrains.kotlin:*` dependency versions and the `kotlin-maven-plugin` to the configured Kotlin line (defaults to &quot;2.x&quot;, the latest Kotlin 2.x). No-op for modules already at or above the target — the underlying upgrade recipes never downgrade. Rejects targets below Kotlin 2.0.
 
 ##### Data tables:
 
@@ -5885,6 +5921,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.quarkus.MigrateToQuarkus_v3_32_0](/recipes/quarkus/migratetoquarkus_v3_32_0.md)
   * **Quarkus Updates Aggregate 3.32.0**
   * Quarkus update recipes to upgrade your application to 3.32.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v3_33_0](/recipes/quarkus/migratetoquarkus_v3_33_0.md)
+  * **Quarkus Updates Aggregate 3.33.0**
+  * Quarkus update recipes to upgrade your application to 3.33.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v3_37_0](/recipes/quarkus/migratetoquarkus_v3_37_0.md)
+  * **Quarkus Updates Aggregate 3.37.0**
+  * Quarkus update recipes to upgrade your application to 3.37.0.
 
 ##### Data tables:
 

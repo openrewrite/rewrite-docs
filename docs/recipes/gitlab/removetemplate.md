@@ -1,4 +1,5 @@
 ---
+title: "Remove GitLab template"
 sidebar_label: "Remove GitLab template"
 ---
 

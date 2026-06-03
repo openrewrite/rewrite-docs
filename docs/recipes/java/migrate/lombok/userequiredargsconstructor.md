@@ -1,4 +1,5 @@
 ---
+title: "Use `@RequiredArgsConstructor` where applicable"
 sidebar_label: "Use `@RequiredArgsConstructor` where applicable"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsInstanceOf`"
 sidebar_label: "Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsInstanceOf`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow the use of the `null` literal"
 sidebar_label: "Disallow the use of the `null` literal"
 ---
 

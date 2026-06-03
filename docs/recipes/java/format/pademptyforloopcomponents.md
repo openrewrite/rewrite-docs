@@ -1,4 +1,5 @@
 ---
+title: "Pad empty `for` loop components"
 sidebar_label: "Pad empty `for` loop components"
 ---
 

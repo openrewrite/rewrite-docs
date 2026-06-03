@@ -1,4 +1,5 @@
 ---
+title: "Don't use final on local variables"
 sidebar_label: "Don't use final on local variables"
 ---
 

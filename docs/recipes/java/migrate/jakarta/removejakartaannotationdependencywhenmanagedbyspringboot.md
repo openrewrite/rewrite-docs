@@ -1,4 +1,5 @@
 ---
+title: "Remove `jakarta.annotation-api` dependency when managed by Spring Boot"
 sidebar_label: "Remove `jakarta.annotation-api` dependency when managed by Spring Boot"
 ---
 

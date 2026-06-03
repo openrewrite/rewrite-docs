@@ -1,4 +1,5 @@
 ---
+title: "Enforce propTypes declarations alphabetical sorting"
 sidebar_label: "Enforce propTypes declarations alphabetical sorting"
 ---
 

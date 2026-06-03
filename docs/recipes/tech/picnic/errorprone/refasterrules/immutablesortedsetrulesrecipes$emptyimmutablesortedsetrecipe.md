@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSortedSetRules.EmptyImmutableSortedSet`"
 sidebar_label: "Refaster template `ImmutableSortedSetRules.EmptyImmutableSortedSet`"
 ---
 

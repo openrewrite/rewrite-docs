@@ -1,4 +1,5 @@
 ---
+title: "Create XML file"
 sidebar_label: "Create XML file"
 ---
 

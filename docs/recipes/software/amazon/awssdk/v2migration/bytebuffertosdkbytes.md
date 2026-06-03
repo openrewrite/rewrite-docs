@@ -1,4 +1,5 @@
 ---
+title: "Convert ByteBuffer to SdkBytes"
 sidebar_label: "Convert ByteBuffer to SdkBytes"
 ---
 

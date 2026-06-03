@@ -1,4 +1,5 @@
 ---
+title: "Lifecycle methods should be methods on the prototype, not class fields"
 sidebar_label: "Lifecycle methods should be methods on the prototype, not class fields"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate relocated feature constants to DateTimeFeature and EnumFeature"
 sidebar_label: "Migrate relocated feature constants to DateTimeFeature and EnumFeature"
 ---
 

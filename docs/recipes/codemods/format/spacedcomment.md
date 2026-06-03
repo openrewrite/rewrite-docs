@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment"
 sidebar_label: "Enforce consistent spacing after the &amp;#x60;//&amp;#x60; or &amp;#x60;/*&amp;#x60; in a comment"
 ---
 

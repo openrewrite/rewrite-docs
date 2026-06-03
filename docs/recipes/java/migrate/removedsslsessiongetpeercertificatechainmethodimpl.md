@@ -1,4 +1,5 @@
 ---
+title: "Replace `SSLSession.getPeerCertificateChain()` method"
 sidebar_label: "Replace `SSLSession.getPeerCertificateChain()` method"
 ---
 

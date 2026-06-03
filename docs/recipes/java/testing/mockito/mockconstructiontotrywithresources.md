@@ -1,4 +1,5 @@
 ---
+title: "Wrap `MockedConstruction` in try-with-resources"
 sidebar_label: "Wrap `MockedConstruction` in try-with-resources"
 ---
 

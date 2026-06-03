@@ -1,4 +1,5 @@
 ---
+title: "Change SDK Exception types from v1 to v2"
 sidebar_label: "Change SDK Exception types from v1 to v2"
 ---
 

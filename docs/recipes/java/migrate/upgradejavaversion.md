@@ -1,4 +1,5 @@
 ---
+title: "Upgrade Java version"
 sidebar_label: "Upgrade Java version"
 ---
 
@@ -77,6 +78,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 * [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
 * [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
+* [Upgrade Java compiler target for Axon Framework 5](/recipes/org/axonframework/migration/upgradejava.md)
 * [Upgrade Java to 11+ for Kafka clients](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkaclients)
 * [Upgrade Java to 17+ for Kafka broker/tools](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkabroker)
 * [Upgrade build to Java 11](/recipes/java/migrate/upgradebuildtojava11.md)

@@ -1,4 +1,5 @@
 ---
+title: "`Jackson3Rules` Refaster recipes"
 sidebar_label: "`Jackson3Rules` Refaster recipes"
 ---
 

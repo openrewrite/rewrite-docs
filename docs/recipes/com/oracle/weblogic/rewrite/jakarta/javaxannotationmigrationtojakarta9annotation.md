@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.annotation` to `jakarta.annotation`"
 sidebar_label: "Migrate deprecated `javax.annotation` to `jakarta.annotation`"
 ---
 

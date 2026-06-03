@@ -1,4 +1,5 @@
 ---
+title: "Enforce throwing `TypeError` in type checking conditions"
 sidebar_label: "Enforce throwing `TypeError` in type checking conditions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove Gradle settings plugin"
 sidebar_label: "Remove Gradle settings plugin"
 ---
 

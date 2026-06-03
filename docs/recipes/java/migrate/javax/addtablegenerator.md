@@ -1,4 +1,5 @@
 ---
+title: "Attributes with automatically generated values require configuration"
 sidebar_label: "Attributes with automatically generated values require configuration"
 ---
 

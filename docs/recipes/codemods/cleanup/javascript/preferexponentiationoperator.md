@@ -1,4 +1,5 @@
 ---
+title: "Disallow the use of `Math.pow` in favor of the ** operator"
 sidebar_label: "Disallow the use of `Math.pow` in favor of the ** operator"
 ---
 

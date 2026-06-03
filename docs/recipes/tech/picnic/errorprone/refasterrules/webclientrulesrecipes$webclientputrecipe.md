@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `WebClientRules.WebClientPut`"
 sidebar_label: "Refaster template `WebClientRules.WebClientPut`"
 ---
 

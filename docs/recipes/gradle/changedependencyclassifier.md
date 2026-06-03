@@ -1,4 +1,5 @@
 ---
+title: "Change a Gradle dependency classifier"
 sidebar_label: "Change a Gradle dependency classifier"
 ---
 

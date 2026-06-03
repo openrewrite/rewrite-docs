@@ -1,4 +1,5 @@
 ---
+title: "Prefer `System.lineSeparator()`"
 sidebar_label: "Prefer `System.lineSeparator()`"
 ---
 

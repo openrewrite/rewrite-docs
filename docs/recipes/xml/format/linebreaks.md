@@ -1,4 +1,5 @@
 ---
+title: "Blank lines"
 sidebar_label: "Blank lines"
 ---
 

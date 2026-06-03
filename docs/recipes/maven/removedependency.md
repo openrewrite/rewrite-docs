@@ -1,4 +1,5 @@
 ---
+title: "Remove Maven dependency"
 sidebar_label: "Remove Maven dependency"
 ---
 

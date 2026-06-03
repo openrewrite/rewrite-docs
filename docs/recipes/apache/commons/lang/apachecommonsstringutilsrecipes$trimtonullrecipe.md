@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.trimToNull(String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.trimToNull(String)` with JDK provided API"
 ---
 

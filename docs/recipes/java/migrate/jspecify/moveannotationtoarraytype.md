@@ -1,4 +1,5 @@
 ---
+title: "Move annotation to array type"
 sidebar_label: "Move annotation to array type"
 ---
 

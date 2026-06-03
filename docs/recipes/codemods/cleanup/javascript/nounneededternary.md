@@ -1,4 +1,5 @@
 ---
+title: "Disallow ternary operators when simpler alternatives exist"
 sidebar_label: "Disallow ternary operators when simpler alternatives exist"
 ---
 

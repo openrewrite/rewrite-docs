@@ -1,4 +1,5 @@
 ---
+title: "Change the Timefold version"
 sidebar_label: "Change the Timefold version"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Transform Anonymous Components into Named Components"
 sidebar_label: "Transform Anonymous Components into Named Components"
 ---
 

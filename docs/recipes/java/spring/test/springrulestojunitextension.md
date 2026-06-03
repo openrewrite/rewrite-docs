@@ -1,4 +1,5 @@
 ---
+title: "Replace `SpringClassRule` and `SpringMethodRule` with JUnit 5 `SpringExtension`"
 sidebar_label: "Replace `SpringClassRule` and `SpringMethodRule` with JUnit 5 `SpringExtension`"
 ---
 

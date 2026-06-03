@@ -1,4 +1,5 @@
 ---
+title: "Removed deprecated components"
 sidebar_label: "Removed deprecated components"
 ---
 

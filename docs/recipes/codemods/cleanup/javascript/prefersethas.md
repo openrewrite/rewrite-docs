@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence"
 sidebar_label: "Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence"
 ---
 

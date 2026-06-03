@@ -1,4 +1,5 @@
 ---
+title: "Camel YAML DSL Saga EIP restructuring"
 sidebar_label: "Camel YAML DSL Saga EIP restructuring"
 ---
 

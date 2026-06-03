@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `LongStreamRules.ConcatTwoLongStreams`"
 sidebar_label: "Refaster template `LongStreamRules.ConcatTwoLongStreams`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent brace style for blocks"
 sidebar_label: "Enforce consistent brace style for blocks"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove non-ASCII characters from Javadoc"
 sidebar_label: "Remove non-ASCII characters from Javadoc"
 ---
 

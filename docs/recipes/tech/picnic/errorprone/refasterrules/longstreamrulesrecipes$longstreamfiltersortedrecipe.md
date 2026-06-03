@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `LongStreamRules.LongStreamFilterSorted`"
 sidebar_label: "Refaster template `LongStreamRules.LongStreamFilterSorted`"
 ---
 

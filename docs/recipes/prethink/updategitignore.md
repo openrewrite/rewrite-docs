@@ -1,4 +1,5 @@
 ---
+title: "Update .gitignore for Prethink context"
 sidebar_label: "Update .gitignore for Prethink context"
 ---
 

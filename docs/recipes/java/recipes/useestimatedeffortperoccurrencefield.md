@@ -1,4 +1,5 @@
 ---
+title: "Replace `getEstimatedEffortPerOccurrence()` method with field"
 sidebar_label: "Replace `getEstimatedEffortPerOccurrence()` method with field"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent usage of destructuring assignment of props, state, and context"
 sidebar_label: "Enforce consistent usage of destructuring assignment of props, state, and context"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce a particular style for multiline comments"
 sidebar_label: "Enforce a particular style for multiline comments"
 ---
 

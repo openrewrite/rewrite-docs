@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJIterableRules.AssertThatIterableIsNotEmpty`"
 sidebar_label: "Refaster template `AssertJIterableRules.AssertThatIterableIsNotEmpty`"
 ---
 

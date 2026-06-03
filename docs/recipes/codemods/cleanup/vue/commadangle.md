@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow trailing commas in `&lt;template&gt;`"
 sidebar_label: "Require or disallow trailing commas in `&lt;template&gt;`"
 ---
 

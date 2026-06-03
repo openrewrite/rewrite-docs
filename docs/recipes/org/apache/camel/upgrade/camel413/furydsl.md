@@ -1,4 +1,5 @@
 ---
+title: "Change dataformat fury to fury in xml/java dsl."
 sidebar_label: "Change dataformat fury to fury in xml/java dsl."
 ---
 

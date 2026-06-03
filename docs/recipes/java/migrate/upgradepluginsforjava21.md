@@ -1,4 +1,5 @@
 ---
+title: "Upgrade plugins to Java 21 compatible versions"
 sidebar_label: "Upgrade plugins to Java 21 compatible versions"
 ---
 

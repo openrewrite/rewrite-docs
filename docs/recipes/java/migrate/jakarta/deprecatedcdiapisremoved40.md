@@ -1,4 +1,5 @@
 ---
+title: "Remove deprecated API's not supported in CDI4.0"
 sidebar_label: "Remove deprecated API's not supported in CDI4.0"
 ---
 

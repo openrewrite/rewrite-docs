@@ -1,4 +1,5 @@
 ---
+title: "Use `=` assignment syntax for well-known Gradle properties"
 sidebar_label: "Use `=` assignment syntax for well-known Gradle properties"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new CopyOnWriteArrayList&lt;&gt;()`"
 sidebar_label: "Prefer `new CopyOnWriteArrayList&lt;&gt;()`"
 ---
 

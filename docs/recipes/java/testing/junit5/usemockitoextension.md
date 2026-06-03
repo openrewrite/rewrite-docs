@@ -1,4 +1,5 @@
 ---
+title: "Use Mockito JUnit Jupiter extension"
 sidebar_label: "Use Mockito JUnit Jupiter extension"
 ---
 

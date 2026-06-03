@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`"
 sidebar_label: "Migrate deprecated Spring-Boot `EmbeddedDatabaseConnection.HSQL`"
 ---
 

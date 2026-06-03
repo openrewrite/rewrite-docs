@@ -1,4 +1,5 @@
 ---
+title: "Remove Maven project property"
 sidebar_label: "Remove Maven project property"
 ---
 

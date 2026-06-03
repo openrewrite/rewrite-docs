@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Flyway 10"
 sidebar_label: "Migrate to Flyway 10"
 ---
 

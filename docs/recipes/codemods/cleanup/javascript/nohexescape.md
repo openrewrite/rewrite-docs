@@ -1,4 +1,5 @@
 ---
+title: "Enforce the use of Unicode escapes instead of hexadecimal escapes"
 sidebar_label: "Enforce the use of Unicode escapes instead of hexadecimal escapes"
 ---
 

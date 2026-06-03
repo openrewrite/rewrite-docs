@@ -1,4 +1,5 @@
 ---
+title: "Update to Micronaut Email 2.x"
 sidebar_label: "Update to Micronaut Email 2.x"
 ---
 

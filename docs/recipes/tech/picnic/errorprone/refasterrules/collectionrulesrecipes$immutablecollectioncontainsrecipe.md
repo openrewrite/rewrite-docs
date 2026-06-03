@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.ImmutableCollectionContains`"
 sidebar_label: "Refaster template `CollectionRules.ImmutableCollectionContains`"
 ---
 

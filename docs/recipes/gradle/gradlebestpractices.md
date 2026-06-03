@@ -1,4 +1,5 @@
 ---
+title: "Apply Gradle best practices"
 sidebar_label: "Apply Gradle best practices"
 ---
 

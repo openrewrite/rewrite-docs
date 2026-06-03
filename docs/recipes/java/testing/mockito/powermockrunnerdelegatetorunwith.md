@@ -1,4 +1,5 @@
 ---
+title: "Replace PowerMock runner with JUnit `@RunWith`"
 sidebar_label: "Replace PowerMock runner with JUnit `@RunWith`"
 ---
 

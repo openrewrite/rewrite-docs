@@ -1,4 +1,5 @@
 ---
+title: "Use correct web-app namespace values"
 sidebar_label: "Use correct web-app namespace values"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find GitHub action secret references"
 sidebar_label: "Find GitHub action secret references"
 ---
 

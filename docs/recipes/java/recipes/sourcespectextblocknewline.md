@@ -1,4 +1,5 @@
 ---
+title: "New line at the end of `SourceSpecs` text blocks"
 sidebar_label: "New line at the end of `SourceSpecs` text blocks"
 ---
 

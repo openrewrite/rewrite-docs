@@ -1,4 +1,5 @@
 ---
+title: "Normalize line breaks"
 sidebar_label: "Normalize line breaks"
 ---
 

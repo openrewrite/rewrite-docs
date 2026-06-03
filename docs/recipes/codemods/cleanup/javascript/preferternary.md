@@ -1,4 +1,5 @@
 ---
+title: "Prefer ternary expressions over simple `if-else` statements"
 sidebar_label: "Prefer ternary expressions over simple `if-else` statements"
 ---
 

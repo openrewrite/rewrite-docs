@@ -1,4 +1,5 @@
 ---
+title: "Rename a file example"
 sidebar_label: "Rename a file example"
 ---
 

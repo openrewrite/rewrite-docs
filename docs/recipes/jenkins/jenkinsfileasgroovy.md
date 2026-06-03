@@ -1,4 +1,5 @@
 ---
+title: "Parse `Jenkinsfile` as Groovy"
 sidebar_label: "Parse `Jenkinsfile` as Groovy"
 ---
 

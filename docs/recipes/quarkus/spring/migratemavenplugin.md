@@ -1,4 +1,5 @@
 ---
+title: "Add or replace Spring Boot build plugin with Quarkus build plugin"
 sidebar_label: "Add or replace Spring Boot build plugin with Quarkus build plugin"
 ---
 

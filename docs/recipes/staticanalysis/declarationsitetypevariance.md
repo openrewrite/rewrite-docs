@@ -1,4 +1,5 @@
 ---
+title: "Properly use declaration-site type variance"
 sidebar_label: "Properly use declaration-site type variance"
 ---
 

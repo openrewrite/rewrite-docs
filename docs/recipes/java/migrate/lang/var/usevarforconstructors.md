@@ -1,4 +1,5 @@
 ---
+title: "Use `var` for constructor call assignments"
 sidebar_label: "Use `var` for constructor call assignments"
 ---
 

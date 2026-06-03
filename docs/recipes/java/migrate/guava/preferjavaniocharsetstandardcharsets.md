@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.nio.charset.StandardCharsets`"
 sidebar_label: "Prefer `java.nio.charset.StandardCharsets`"
 ---
 

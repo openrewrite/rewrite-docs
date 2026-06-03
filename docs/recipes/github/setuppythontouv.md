@@ -1,4 +1,5 @@
 ---
+title: "Replace `actions/setup-python` with `astral-sh/setup-uv`"
 sidebar_label: "Replace `actions/setup-python` with `astral-sh/setup-uv`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Effective managed dependencies"
 sidebar_label: "Effective managed dependencies"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow renaming import, export, and destructured assignments to the same name"
 sidebar_label: "Disallow renaming import, export, and destructured assignments to the same name"
 ---
 

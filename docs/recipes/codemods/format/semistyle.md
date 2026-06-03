@@ -1,4 +1,5 @@
 ---
+title: "Enforce location of semicolons"
 sidebar_label: "Enforce location of semicolons"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin"
 sidebar_label: "Add &lt;extensions&gt;true&lt;/extensions&gt; to quarkus-maven-plugin"
 ---
 

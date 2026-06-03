@@ -1,4 +1,5 @@
 ---
+title: "React i18next internationalization"
 sidebar_label: "React i18next internationalization"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace `ResourceResolver` with `ResourceHandler`"
 sidebar_label: "Replace `ResourceResolver` with `ResourceHandler`"
 ---
 

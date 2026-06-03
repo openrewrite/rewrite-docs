@@ -1,4 +1,5 @@
 ---
+title: "Prefer `java.util.Collections#synchronizedNavigableMap`"
 sidebar_label: "Prefer `java.util.Collections#synchronizedNavigableMap`"
 ---
 

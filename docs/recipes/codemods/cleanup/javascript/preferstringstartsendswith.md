@@ -1,4 +1,5 @@
 ---
+title: "Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`"
 sidebar_label: "Prefer `String#startsWith()` &amp; `String#endsWith()` over `RegExp#test()`"
 ---
 

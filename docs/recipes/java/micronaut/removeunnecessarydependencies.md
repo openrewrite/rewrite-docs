@@ -1,4 +1,5 @@
 ---
+title: "Remove unnecessary dependencies"
 sidebar_label: "Remove unnecessary dependencies"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Find patterns that require updating for Spring Boot 2.5"
 sidebar_label: "Find patterns that require updating for Spring Boot 2.5"
 ---
 

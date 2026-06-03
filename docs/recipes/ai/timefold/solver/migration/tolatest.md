@@ -1,4 +1,5 @@
 ---
+title: "Upgrade to the latest Timefold Solver"
 sidebar_label: "Upgrade to the latest Timefold Solver"
 ---
 

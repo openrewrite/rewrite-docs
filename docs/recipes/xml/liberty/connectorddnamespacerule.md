@@ -1,4 +1,5 @@
 ---
+title: "Use correct connector namespace values"
 sidebar_label: "Use correct connector namespace values"
 ---
 

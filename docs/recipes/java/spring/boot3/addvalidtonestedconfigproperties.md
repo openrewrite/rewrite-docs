@@ -1,4 +1,5 @@
 ---
+title: "Add `@Valid` to nested properties in `@ConfigurationProperties`"
 sidebar_label: "Add `@Valid` to nested properties in `@ConfigurationProperties`"
 ---
 

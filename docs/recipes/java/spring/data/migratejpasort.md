@@ -1,4 +1,5 @@
 ---
+title: "Use `JpaSort.of(..)`"
 sidebar_label: "Use `JpaSort.of(..)`"
 ---
 

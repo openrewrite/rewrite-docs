@@ -1,4 +1,5 @@
 ---
+title: "Gradle repository order"
 sidebar_label: "Gradle repository order"
 ---
 
@@ -23,11 +24,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ## Example
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="build.gradle" label="build.gradle">
-
-
-###### Before
+###### Unchanged
 ```groovy title="build.gradle"
 plugins {
     id 'java'
@@ -37,31 +34,6 @@ repositories {
     maven { url 'https://repo.spring.io/milestone' }
 }
 ```
-
-###### After
-```groovy title="build.gradle"
-/*~~(https://repo.spring.io/milestone)~~>*/plugins {
-    id 'java'
-}
-
-repositories {
-    maven { url 'https://repo.spring.io/milestone' }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- build.gradle
-+++ build.gradle
-@@ -1,1 +1,1 @@
--plugins {
-+/*~~(https://repo.spring.io/milestone)~~>*/plugins {
-    id 'java'
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage

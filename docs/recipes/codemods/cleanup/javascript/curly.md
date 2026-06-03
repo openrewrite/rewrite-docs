@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent brace style for all control statements"
 sidebar_label: "Enforce consistent brace style for all control statements"
 ---
 

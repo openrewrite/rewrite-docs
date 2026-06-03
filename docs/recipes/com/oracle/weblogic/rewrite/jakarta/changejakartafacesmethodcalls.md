@@ -1,4 +1,5 @@
 ---
+title: "ChangeJakartaFacesMethodCalls"
 sidebar_label: "ChangeJakartaFacesMethodCalls"
 ---
 

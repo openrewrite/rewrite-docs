@@ -1,4 +1,5 @@
 ---
+title: "Enforce a convention in module import order"
 sidebar_label: "Enforce a convention in module import order"
 ---
 

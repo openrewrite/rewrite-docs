@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith"
 sidebar_label: "io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith"
 ---
 

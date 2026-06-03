@@ -1,4 +1,5 @@
 ---
+title: "Updates props for Modal component"
 sidebar_label: "Updates props for Modal component"
 ---
 

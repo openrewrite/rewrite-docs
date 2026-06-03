@@ -1,4 +1,5 @@
 ---
+title: "Refactor RewriteTest to use defaults method"
 sidebar_label: "Refactor RewriteTest to use defaults method"
 ---
 

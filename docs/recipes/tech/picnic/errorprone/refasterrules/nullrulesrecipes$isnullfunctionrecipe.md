@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `NullRules.IsNullFunction`"
 sidebar_label: "Refaster template `NullRules.IsNullFunction`"
 ---
 

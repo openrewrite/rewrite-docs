@@ -1,4 +1,5 @@
 ---
+title: "URL Equals and Hash Code"
 sidebar_label: "URL Equals and Hash Code"
 ---
 

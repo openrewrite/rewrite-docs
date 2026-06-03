@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`"
 sidebar_label: "Enforce consistent line breaks after opening and before closing braces in `&lt;template&gt;`"
 ---
 

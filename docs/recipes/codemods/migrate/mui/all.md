@@ -1,4 +1,5 @@
 ---
+title: "Combination of all deprecations"
 sidebar_label: "Combination of all deprecations"
 ---
 

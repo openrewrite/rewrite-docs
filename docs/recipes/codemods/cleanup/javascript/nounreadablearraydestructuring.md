@@ -1,4 +1,5 @@
 ---
+title: "Disallow unreadable array destructuring"
 sidebar_label: "Disallow unreadable array destructuring"
 ---
 

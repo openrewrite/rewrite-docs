@@ -1,4 +1,5 @@
 ---
+title: "Migrate serialization annotation processor"
 sidebar_label: "Migrate serialization annotation processor"
 ---
 

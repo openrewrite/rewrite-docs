@@ -1,4 +1,5 @@
 ---
+title: "Replace deprecated JBoss Logging Logger formatted message invocations with the v-version of methods"
 sidebar_label: "Replace deprecated JBoss Logging Logger formatted message invocations with the v-version of methods"
 ---
 

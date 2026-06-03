@@ -1,4 +1,5 @@
 ---
+title: "Does not include Maven dependency"
 sidebar_label: "Does not include Maven dependency"
 ---
 

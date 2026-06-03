@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow padding lines between statements"
 sidebar_label: "Require or disallow padding lines between statements"
 ---
 

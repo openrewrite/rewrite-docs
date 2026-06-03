@@ -1,4 +1,5 @@
 ---
+title: "Enforce using the digits argument with `Number#toFixed()`"
 sidebar_label: "Enforce using the digits argument with `Number#toFixed()`"
 ---
 

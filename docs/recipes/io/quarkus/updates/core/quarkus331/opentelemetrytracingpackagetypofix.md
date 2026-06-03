@@ -1,4 +1,5 @@
 ---
+title: "io.quarkus.updates.core.quarkus331.OpenTelemetryTracingPackageTypoFix"
 sidebar_label: "io.quarkus.updates.core.quarkus331.OpenTelemetryTracingPackageTypoFix"
 ---
 

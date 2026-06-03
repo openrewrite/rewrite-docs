@@ -1,4 +1,5 @@
 ---
+title: "GitLab CI best practices"
 sidebar_label: "GitLab CI best practices"
 ---
 

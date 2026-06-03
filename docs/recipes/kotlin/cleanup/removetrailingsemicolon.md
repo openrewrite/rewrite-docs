@@ -1,4 +1,5 @@
 ---
+title: "Remove unnecessary trailing semicolon"
 sidebar_label: "Remove unnecessary trailing semicolon"
 ---
 

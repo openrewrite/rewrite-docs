@@ -1,4 +1,5 @@
 ---
+title: "Change Maven managed dependency groupId, artifactId and optionally the version"
 sidebar_label: "Change Maven managed dependency groupId, artifactId and optionally the version"
 ---
 
@@ -40,6 +41,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
+* [Migrate the Axon Framework BOM coordinates](/recipes/org/axonframework/migration/axon4toaxon5bom.md)
+* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/io/axoniq/framework/migration/axon4toaxoniq5bom.md)
 
 ## Example
 

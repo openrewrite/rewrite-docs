@@ -1,4 +1,5 @@
 ---
+title: "Find method usages"
 sidebar_label: "Find method usages"
 ---
 

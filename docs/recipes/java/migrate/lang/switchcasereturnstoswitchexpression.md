@@ -1,4 +1,5 @@
 ---
+title: "Convert switch cases where every case returns into a returned switch expression"
 sidebar_label: "Convert switch cases where every case returns into a returned switch expression"
 ---
 

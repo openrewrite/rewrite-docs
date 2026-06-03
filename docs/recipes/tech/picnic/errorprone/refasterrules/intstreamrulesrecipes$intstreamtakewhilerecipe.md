@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `IntStreamRules.IntStreamTakeWhile`"
 sidebar_label: "Refaster template `IntStreamRules.IntStreamTakeWhile`"
 ---
 

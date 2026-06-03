@@ -1,4 +1,5 @@
 ---
+title: "Remove extra semicolons"
 sidebar_label: "Remove extra semicolons"
 ---
 

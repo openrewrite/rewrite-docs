@@ -1,4 +1,5 @@
 ---
+title: "Use `StringUtils#isBlank(String)`"
 sidebar_label: "Use `StringUtils#isBlank(String)`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary semicolons"
 sidebar_label: "Disallow unnecessary semicolons"
 ---
 

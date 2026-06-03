@@ -1,4 +1,5 @@
 ---
+title: "Spring security best practices"
 sidebar_label: "Spring security best practices"
 ---
 

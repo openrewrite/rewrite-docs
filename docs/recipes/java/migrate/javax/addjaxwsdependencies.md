@@ -1,4 +1,5 @@
 ---
+title: "Add explicit JAX-WS dependencies"
 sidebar_label: "Add explicit JAX-WS dependencies"
 ---
 

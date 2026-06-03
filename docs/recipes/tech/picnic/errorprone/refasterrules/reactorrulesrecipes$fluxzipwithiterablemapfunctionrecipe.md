@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.FluxZipWithIterableMapFunction`"
 sidebar_label: "Refaster template `ReactorRules.FluxZipWithIterableMapFunction`"
 ---
 

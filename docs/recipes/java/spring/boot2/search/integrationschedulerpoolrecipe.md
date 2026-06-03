@@ -1,4 +1,5 @@
 ---
+title: "Integration scheduler pool size"
 sidebar_label: "Integration scheduler pool size"
 ---
 

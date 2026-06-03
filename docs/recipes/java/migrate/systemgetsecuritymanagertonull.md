@@ -1,4 +1,5 @@
 ---
+title: "Replace `System.getSecurityManager()` with `null`"
 sidebar_label: "Replace `System.getSecurityManager()` with `null`"
 ---
 

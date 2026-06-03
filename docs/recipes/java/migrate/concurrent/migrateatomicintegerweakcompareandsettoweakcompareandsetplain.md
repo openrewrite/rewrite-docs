@@ -1,4 +1,5 @@
 ---
+title: "Use `AtomicInteger#weakCompareAndSetPlain(int, int)`"
 sidebar_label: "Use `AtomicInteger#weakCompareAndSetPlain(int, int)`"
 ---
 

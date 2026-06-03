@@ -1,4 +1,5 @@
 ---
+title: "Disallow unnecessary calls to `.bind()`"
 sidebar_label: "Disallow unnecessary calls to `.bind()`"
 ---
 

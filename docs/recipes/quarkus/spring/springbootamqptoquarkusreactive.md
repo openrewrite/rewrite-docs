@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot AMQP with Quarkus Messaging AMQP"
 sidebar_label: "Replace Spring Boot AMQP with Quarkus Messaging AMQP"
 ---
 

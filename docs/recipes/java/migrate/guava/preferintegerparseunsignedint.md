@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Integer#parseUnsignedInt`"
 sidebar_label: "Prefer `Integer#parseUnsignedInt`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate Brave API to OpenTelemetry API"
 sidebar_label: "Migrate Brave API to OpenTelemetry API"
 ---
 

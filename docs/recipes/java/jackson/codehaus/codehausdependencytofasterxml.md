@@ -1,4 +1,5 @@
 ---
+title: "Migrate dependencies from Jackson Codehaus (legacy) to FasterXML"
 sidebar_label: "Migrate dependencies from Jackson Codehaus (legacy) to FasterXML"
 ---
 

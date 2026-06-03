@@ -1,4 +1,5 @@
 ---
+title: "JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`"
 sidebar_label: "JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`"
 ---
 

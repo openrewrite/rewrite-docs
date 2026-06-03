@@ -1,4 +1,5 @@
 ---
+title: "JUnit fail to AssertJ"
 sidebar_label: "JUnit fail to AssertJ"
 ---
 

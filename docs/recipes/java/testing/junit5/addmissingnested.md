@@ -1,4 +1,5 @@
 ---
+title: "JUnit 5 inner test classes should be annotated with `@Nested`"
 sidebar_label: "JUnit 5 inner test classes should be annotated with `@Nested`"
 ---
 

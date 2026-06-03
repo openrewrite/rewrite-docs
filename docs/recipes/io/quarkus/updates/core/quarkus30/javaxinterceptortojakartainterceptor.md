@@ -1,4 +1,5 @@
 ---
+title: "Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`"
 sidebar_label: "Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`"
 ---
 

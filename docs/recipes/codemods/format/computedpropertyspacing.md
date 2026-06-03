@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent spacing inside computed property brackets"
 sidebar_label: "Enforce consistent spacing inside computed property brackets"
 ---
 

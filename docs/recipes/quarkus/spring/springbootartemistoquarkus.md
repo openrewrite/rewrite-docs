@@ -1,4 +1,5 @@
 ---
+title: "Replace Spring Boot Artemis with Quarkus Artemis JMS"
 sidebar_label: "Replace Spring Boot Artemis with Quarkus Artemis JMS"
 ---
 

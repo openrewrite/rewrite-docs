@@ -1,4 +1,5 @@
 ---
+title: "Prefer `A.class::isInstance`"
 sidebar_label: "Prefer `A.class::isInstance`"
 ---
 

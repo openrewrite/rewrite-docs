@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ImmutableSetRules.ImmutableSetOf5`"
 sidebar_label: "Refaster template `ImmutableSetRules.ImmutableSetOf5`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.SequencedCollectionGetLast`"
 sidebar_label: "Refaster template `CollectionRules.SequencedCollectionGetLast`"
 ---
 

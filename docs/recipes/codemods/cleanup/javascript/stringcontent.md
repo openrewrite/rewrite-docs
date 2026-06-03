@@ -1,4 +1,5 @@
 ---
+title: "Enforce better string content"
 sidebar_label: "Enforce better string content"
 ---
 

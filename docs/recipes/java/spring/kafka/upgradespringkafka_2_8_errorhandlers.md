@@ -1,4 +1,5 @@
 ---
+title: "Migrates Spring Kafka deprecated error handlers"
 sidebar_label: "Migrates Spring Kafka deprecated error handlers"
 ---
 

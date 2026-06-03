@@ -1,4 +1,5 @@
 ---
+title: "Add repository"
 sidebar_label: "Add repository"
 ---
 

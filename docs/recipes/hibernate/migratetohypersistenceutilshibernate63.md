@@ -1,4 +1,5 @@
 ---
+title: "Migrate Hibernate Types to Hypersistence Utils 6.3"
 sidebar_label: "Migrate Hibernate Types to Hypersistence Utils 6.3"
 ---
 

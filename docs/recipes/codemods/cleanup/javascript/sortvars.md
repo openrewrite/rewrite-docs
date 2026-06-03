@@ -1,4 +1,5 @@
 ---
+title: "Require variables within the same declaration block to be sorted"
 sidebar_label: "Require variables within the same declaration block to be sorted"
 ---
 

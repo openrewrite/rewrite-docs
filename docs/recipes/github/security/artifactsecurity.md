@@ -1,4 +1,5 @@
 ---
+title: "Find credential persistence through GitHub Actions artifacts"
 sidebar_label: "Find credential persistence through GitHub Actions artifacts"
 ---
 

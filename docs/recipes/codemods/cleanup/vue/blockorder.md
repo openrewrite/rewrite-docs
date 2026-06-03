@@ -1,4 +1,5 @@
 ---
+title: "Enforce order of component top-level elements"
 sidebar_label: "Enforce order of component top-level elements"
 ---
 

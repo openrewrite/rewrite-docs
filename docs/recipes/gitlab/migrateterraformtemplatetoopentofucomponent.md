@@ -1,4 +1,5 @@
 ---
+title: "Migrate GitLab Terraform template to OpenTofu component"
 sidebar_label: "Migrate GitLab Terraform template to OpenTofu component"
 ---
 

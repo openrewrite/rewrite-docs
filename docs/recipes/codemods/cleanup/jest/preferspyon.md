@@ -1,4 +1,5 @@
 ---
+title: "Suggest using jest.spyOn()"
 sidebar_label: "Suggest using jest.spyOn()"
 ---
 

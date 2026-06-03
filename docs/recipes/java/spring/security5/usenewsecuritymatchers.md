@@ -1,4 +1,5 @@
 ---
+title: "Use the new `securityMatcher()` method"
 sidebar_label: "Use the new `securityMatcher()` method"
 ---
 

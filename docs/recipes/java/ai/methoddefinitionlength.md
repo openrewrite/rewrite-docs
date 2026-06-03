@@ -1,4 +1,5 @@
 ---
+title: "Calculate token length of method definitions"
 sidebar_label: "Calculate token length of method definitions"
 ---
 

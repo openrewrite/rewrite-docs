@@ -1,4 +1,5 @@
 ---
+title: "Add `spring-boot-starter-flyway` if using Flyway"
 sidebar_label: "Add `spring-boot-starter-flyway` if using Flyway"
 ---
 

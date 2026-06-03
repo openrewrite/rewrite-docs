@@ -1,4 +1,5 @@
 ---
+title: "Remove `&lt;a&gt;` Tags From Link Components"
 sidebar_label: "Remove `&lt;a&gt;` Tags From Link Components"
 ---
 

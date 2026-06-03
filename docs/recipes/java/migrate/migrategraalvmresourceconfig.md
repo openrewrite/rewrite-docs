@@ -1,4 +1,5 @@
 ---
+title: "Migrate GraalVM resource-config.json to glob patterns"
 sidebar_label: "Migrate GraalVM resource-config.json to glob patterns"
 ---
 

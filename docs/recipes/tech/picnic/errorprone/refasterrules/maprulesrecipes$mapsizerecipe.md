@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MapRules.MapSize`"
 sidebar_label: "Refaster template `MapRules.MapSize`"
 ---
 

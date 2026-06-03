@@ -1,4 +1,5 @@
 ---
+title: "Prefer `new HashSet&lt;&gt;()`"
 sidebar_label: "Prefer `new HashSet&lt;&gt;()`"
 ---
 

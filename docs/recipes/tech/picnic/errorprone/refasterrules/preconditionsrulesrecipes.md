@@ -1,4 +1,5 @@
 ---
+title: "`PreconditionsRules` Refaster recipes"
 sidebar_label: "`PreconditionsRules` Refaster recipes"
 ---
 

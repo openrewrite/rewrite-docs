@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsFalse`"
 sidebar_label: "Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsFalse`"
 ---
 

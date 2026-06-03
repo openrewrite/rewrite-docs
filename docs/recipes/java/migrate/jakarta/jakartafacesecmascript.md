@@ -1,4 +1,5 @@
 ---
+title: "Migrate JSF values inside EcmaScript files"
 sidebar_label: "Migrate JSF values inside EcmaScript files"
 ---
 

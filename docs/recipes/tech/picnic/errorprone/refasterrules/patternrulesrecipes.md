@@ -1,4 +1,5 @@
 ---
+title: "`PatternRules` Refaster recipes"
 sidebar_label: "`PatternRules` Refaster recipes"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Fix missing braces"
 sidebar_label: "Fix missing braces"
 ---
 

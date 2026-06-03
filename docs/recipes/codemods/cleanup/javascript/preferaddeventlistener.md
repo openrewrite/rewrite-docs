@@ -1,4 +1,5 @@
 ---
+title: "Prefer `.addEventListener()` and `.removeEventListener()` over on-functions"
 sidebar_label: "Prefer `.addEventListener()` and `.removeEventListener()` over on-functions"
 ---
 

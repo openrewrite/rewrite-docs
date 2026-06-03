@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Apache Kafka Native container"
 sidebar_label: "Migrate to Apache Kafka Native container"
 ---
 

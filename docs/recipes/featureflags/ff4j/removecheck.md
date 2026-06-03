@@ -1,4 +1,5 @@
 ---
+title: "Remove FF4j's `check` for feature key"
 sidebar_label: "Remove FF4j's `check` for feature key"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Remove invalid `@GeneratedValue` annotation"
 sidebar_label: "Remove invalid `@GeneratedValue` annotation"
 ---
 

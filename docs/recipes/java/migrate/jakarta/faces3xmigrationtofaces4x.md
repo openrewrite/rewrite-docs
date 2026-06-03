@@ -1,4 +1,5 @@
 ---
+title: "Upgrade to Jakarta Faces 4.x"
 sidebar_label: "Upgrade to Jakarta Faces 4.x"
 ---
 

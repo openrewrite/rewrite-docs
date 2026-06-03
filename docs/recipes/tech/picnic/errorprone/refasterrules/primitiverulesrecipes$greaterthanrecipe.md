@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.GreaterThan`"
 sidebar_label: "Refaster template `PrimitiveRules.GreaterThan`"
 ---
 

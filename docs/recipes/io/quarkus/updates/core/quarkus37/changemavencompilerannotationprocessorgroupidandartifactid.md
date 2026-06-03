@@ -1,4 +1,5 @@
 ---
+title: "Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version"
 sidebar_label: "Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJPathRules.AssertThatIsSymbolicLink`"
 sidebar_label: "Refaster template `AssertJPathRules.AssertThatIsSymbolicLink`"
 ---
 

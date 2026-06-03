@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `DoubleStreamRules.DoubleStreamFilterSorted`"
 sidebar_label: "Refaster template `DoubleStreamRules.DoubleStreamFilterSorted`"
 ---
 

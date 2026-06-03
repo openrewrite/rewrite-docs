@@ -1,4 +1,5 @@
 ---
+title: "Remove parameterized type arguments from a Java class"
 sidebar_label: "Remove parameterized type arguments from a Java class"
 ---
 

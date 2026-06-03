@@ -1,4 +1,5 @@
 ---
+title: "Optimize log statements"
 sidebar_label: "Optimize log statements"
 ---
 

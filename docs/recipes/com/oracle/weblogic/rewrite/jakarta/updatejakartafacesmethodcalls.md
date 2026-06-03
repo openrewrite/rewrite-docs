@@ -1,4 +1,5 @@
 ---
+title: "Update deprecated Faces method calls"
 sidebar_label: "Update deprecated Faces method calls"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Nested enums are not static"
 sidebar_label: "Nested enums are not static"
 ---
 

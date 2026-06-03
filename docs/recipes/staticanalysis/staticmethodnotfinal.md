@@ -1,4 +1,5 @@
 ---
+title: "Static methods need not be final"
 sidebar_label: "Static methods need not be final"
 ---
 

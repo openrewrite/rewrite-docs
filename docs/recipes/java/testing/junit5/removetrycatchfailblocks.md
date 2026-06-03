@@ -1,4 +1,5 @@
 ---
+title: "Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`"
 sidebar_label: "Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; { ... })`"
 ---
 

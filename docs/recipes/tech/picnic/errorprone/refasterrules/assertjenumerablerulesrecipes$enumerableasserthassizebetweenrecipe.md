@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJEnumerableRules.EnumerableAssertHasSizeBetween`"
 sidebar_label: "Refaster template `AssertJEnumerableRules.EnumerableAssertHasSizeBetween`"
 ---
 

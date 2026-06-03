@@ -1,4 +1,5 @@
 ---
+title: "Disallow dynamic slot name"
 sidebar_label: "Disallow dynamic slot name"
 ---
 

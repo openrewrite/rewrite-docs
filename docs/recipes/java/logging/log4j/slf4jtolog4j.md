@@ -1,4 +1,5 @@
 ---
+title: "Migrate SLF4J to Log4j 2.x API"
 sidebar_label: "Migrate SLF4J to Log4j 2.x API"
 ---
 

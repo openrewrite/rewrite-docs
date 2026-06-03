@@ -1,4 +1,5 @@
 ---
+title: "Replace all `EventLoopGroup`s with `MultiThreadIoEventLoopGroup`"
 sidebar_label: "Replace all `EventLoopGroup`s with `MultiThreadIoEventLoopGroup`"
 ---
 

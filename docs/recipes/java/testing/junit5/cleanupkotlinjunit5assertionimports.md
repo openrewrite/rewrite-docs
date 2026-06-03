@@ -1,4 +1,5 @@
 ---
+title: "Remove JUnit 5 static Assertions imports in Kotlin when wildcard import is present"
 sidebar_label: "Remove JUnit 5 static Assertions imports in Kotlin when wildcard import is present"
 ---
 

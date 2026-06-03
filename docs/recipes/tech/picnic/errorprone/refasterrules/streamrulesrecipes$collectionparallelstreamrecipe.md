@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.CollectionParallelStream`"
 sidebar_label: "Refaster template `StreamRules.CollectionParallelStream`"
 ---
 

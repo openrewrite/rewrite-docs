@@ -1,4 +1,5 @@
 ---
+title: "`MavenSharedStringUtils` Refaster recipes"
 sidebar_label: "`MavenSharedStringUtils` Refaster recipes"
 ---
 

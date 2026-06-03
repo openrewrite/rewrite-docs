@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `SuggestedFixRules.SuggestedFixPostfixWith`"
 sidebar_label: "Refaster template `SuggestedFixRules.SuggestedFixPostfixWith`"
 ---
 

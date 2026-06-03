@@ -1,4 +1,5 @@
 ---
+title: "Report uses of Java types deprecated or removed in WebLogic"
 sidebar_label: "Report uses of Java types deprecated or removed in WebLogic"
 ---
 

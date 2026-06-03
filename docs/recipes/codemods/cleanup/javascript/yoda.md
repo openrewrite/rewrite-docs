@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow &quot;Yoda&quot; conditions"
 sidebar_label: "Require or disallow &quot;Yoda&quot; conditions"
 ---
 

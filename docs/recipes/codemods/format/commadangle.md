@@ -1,4 +1,5 @@
 ---
+title: "Require or disallow trailing commas"
 sidebar_label: "Require or disallow trailing commas"
 ---
 

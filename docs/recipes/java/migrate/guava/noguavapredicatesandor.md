@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Predicate.and(Predicate)`"
 sidebar_label: "Prefer `Predicate.and(Predicate)`"
 ---
 

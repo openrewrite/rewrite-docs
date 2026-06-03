@@ -1,4 +1,5 @@
 ---
+title: "Remove out-of-date OWASP suppressions"
 sidebar_label: "Remove out-of-date OWASP suppressions"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `ReactorRules.MonoOfType`"
 sidebar_label: "Refaster template `ReactorRules.MonoOfType`"
 ---
 

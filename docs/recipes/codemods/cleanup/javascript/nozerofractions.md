@@ -1,4 +1,5 @@
 ---
+title: "Disallow number literals with zero fractions or dangling dots"
 sidebar_label: "Disallow number literals with zero fractions or dangling dots"
 ---
 

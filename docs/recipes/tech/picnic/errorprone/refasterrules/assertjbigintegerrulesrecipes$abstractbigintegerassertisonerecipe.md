@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsOne`"
 sidebar_label: "Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsOne`"
 ---
 

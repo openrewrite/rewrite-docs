@@ -1,4 +1,5 @@
 ---
+title: "Pin GitHub Actions to commit SHAs"
 sidebar_label: "Pin GitHub Actions to commit SHAs"
 ---
 

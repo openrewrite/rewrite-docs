@@ -1,4 +1,5 @@
 ---
+title: "Copy JSON value"
 sidebar_label: "Copy JSON value"
 ---
 

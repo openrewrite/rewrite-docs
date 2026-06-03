@@ -1,4 +1,5 @@
 ---
+title: "Replace PowerMock dependencies with Mockito equivalents"
 sidebar_label: "Replace PowerMock dependencies with Mockito equivalents"
 ---
 

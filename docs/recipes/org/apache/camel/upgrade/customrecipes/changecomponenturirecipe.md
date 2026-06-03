@@ -1,4 +1,5 @@
 ---
+title: "Change Camel component URI across all DSLs"
 sidebar_label: "Change Camel component URI across all DSLs"
 ---
 

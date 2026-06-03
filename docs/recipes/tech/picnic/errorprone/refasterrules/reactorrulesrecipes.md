@@ -1,4 +1,5 @@
 ---
+title: "`ReactorRules` Refaster recipes"
 sidebar_label: "`ReactorRules` Refaster recipes"
 ---
 

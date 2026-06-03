@@ -1,4 +1,5 @@
 ---
+title: "Move getter from context to PluginHelper."
 sidebar_label: "Move getter from context to PluginHelper."
 ---
 

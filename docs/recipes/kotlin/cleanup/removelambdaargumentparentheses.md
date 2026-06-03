@@ -1,4 +1,5 @@
 ---
+title: "Remove method invocation parentheses around single lambda argument"
 sidebar_label: "Remove method invocation parentheses around single lambda argument"
 ---
 

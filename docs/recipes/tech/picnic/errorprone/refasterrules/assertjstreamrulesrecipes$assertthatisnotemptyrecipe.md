@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJStreamRules.AssertThatIsNotEmpty`"
 sidebar_label: "Refaster template `AssertJStreamRules.AssertThatIsNotEmpty`"
 ---
 

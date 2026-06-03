@@ -1,4 +1,5 @@
 ---
+title: "Unnecessary throws"
 sidebar_label: "Unnecessary throws"
 ---
 

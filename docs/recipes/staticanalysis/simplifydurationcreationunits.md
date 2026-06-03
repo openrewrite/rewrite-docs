@@ -1,4 +1,5 @@
 ---
+title: "Simplify `java.time.Duration` units"
 sidebar_label: "Simplify `java.time.Duration` units"
 ---
 

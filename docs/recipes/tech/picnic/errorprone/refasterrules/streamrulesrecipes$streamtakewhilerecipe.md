@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StreamRules.StreamTakeWhile`"
 sidebar_label: "Refaster template `StreamRules.StreamTakeWhile`"
 ---
 

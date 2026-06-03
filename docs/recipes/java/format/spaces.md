@@ -1,4 +1,5 @@
 ---
+title: "Spaces"
 sidebar_label: "Spaces"
 ---
 

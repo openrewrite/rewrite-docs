@@ -29,6 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Is the project a Jenkins plugin?](./isjenkinsplugin.md)
 * [Modernize Jenkinsfile](./modernizejenkinsfile.md)
 * [Parse `Jenkinsfile` as Groovy](./jenkinsfileasgroovy.md)
+* [Recover `Jenkinsfile` parse errors caused by a misplaced shebang](./movejenkinsfileshebangandreparse.md)
 * [Upgrade jenkins java version](./upgradejavaversion.md)
 * [Upgrade property's value to version](./upgradeversionproperty.md)
 * [Use Jenkins API plugin instead of libraries](./replacelibrarieswithapiplugin.md)

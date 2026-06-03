@@ -1,4 +1,5 @@
 ---
+title: "Use Lombok logger annotations instead of explicit fields"
 sidebar_label: "Use Lombok logger annotations instead of explicit fields"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Enforce props indentation in JSX"
 sidebar_label: "Enforce props indentation in JSX"
 ---
 

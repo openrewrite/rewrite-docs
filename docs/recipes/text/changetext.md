@@ -1,4 +1,5 @@
 ---
+title: "Change text"
 sidebar_label: "Change text"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate Jackson from javax to jakarta namespace"
 sidebar_label: "Migrate Jackson from javax to jakarta namespace"
 ---
 

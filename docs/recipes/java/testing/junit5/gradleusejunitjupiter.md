@@ -1,4 +1,5 @@
 ---
+title: "Gradle `Test` use JUnit Jupiter"
 sidebar_label: "Gradle `Test` use JUnit Jupiter"
 ---
 

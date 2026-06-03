@@ -1,4 +1,5 @@
 ---
+title: "Renames `closeIcon` prop to `closeButtonIcon`"
 sidebar_label: "Renames `closeIcon` prop to `closeButtonIcon`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Simplify ternary expressions"
 sidebar_label: "Simplify ternary expressions"
 ---
 

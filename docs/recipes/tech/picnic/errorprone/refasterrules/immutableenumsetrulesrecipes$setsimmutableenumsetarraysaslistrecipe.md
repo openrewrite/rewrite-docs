@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Sets#immutableEnumSet(Iterable)` for enum collections to take advantage of the internally used `EnumSet`"
 sidebar_label: "Prefer `Sets#immutableEnumSet(Iterable)` for enum collections to take advantage of the internally used `EnumSet`"
 ---
 

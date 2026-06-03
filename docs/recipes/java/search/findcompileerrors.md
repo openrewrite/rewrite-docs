@@ -1,4 +1,5 @@
 ---
+title: "Find compile errors"
 sidebar_label: "Find compile errors"
 ---
 

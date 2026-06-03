@@ -1,4 +1,5 @@
 ---
+title: "`AssertJDoubleRules` Refaster recipes"
 sidebar_label: "`AssertJDoubleRules` Refaster recipes"
 ---
 

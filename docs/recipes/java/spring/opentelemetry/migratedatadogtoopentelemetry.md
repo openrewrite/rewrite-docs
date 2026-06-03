@@ -1,4 +1,5 @@
 ---
+title: "Migrate Datadog tracing to OpenTelemetry"
 sidebar_label: "Migrate Datadog tracing to OpenTelemetry"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Moved the camel-cloudevents api into camel-api and removed the camel-cloudevents"
 sidebar_label: "Moved the camel-cloudevents api into camel-api and removed the camel-cloudevents"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer borrowing methods from the prototype instead of the instance"
 sidebar_label: "Prefer borrowing methods from the prototype instead of the instance"
 ---
 

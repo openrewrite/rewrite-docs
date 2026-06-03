@@ -1,4 +1,5 @@
 ---
+title: "Upgrade MyBatis to Spring Boot 2.5"
 sidebar_label: "Upgrade MyBatis to Spring Boot 2.5"
 ---
 

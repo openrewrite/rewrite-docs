@@ -1,4 +1,5 @@
 ---
+title: "Use `Logger#logrb(.., ResourceBundle bundleName, ..)`"
 sidebar_label: "Use `Logger#logrb(.., ResourceBundle bundleName, ..)`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "RewriteTest classes should not be public"
 sidebar_label: "RewriteTest classes should not be public"
 ---
 

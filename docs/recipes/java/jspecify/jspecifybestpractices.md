@@ -1,4 +1,5 @@
 ---
+title: "JSpecify best practices"
 sidebar_label: "JSpecify best practices"
 ---
 

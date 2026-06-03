@@ -1,4 +1,5 @@
 ---
+title: "Enforce consistent linebreak style"
 sidebar_label: "Enforce consistent linebreak style"
 ---
 

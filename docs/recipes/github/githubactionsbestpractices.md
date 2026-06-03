@@ -1,4 +1,5 @@
 ---
+title: "GitHub Actions best practices"
 sidebar_label: "GitHub Actions best practices"
 ---
 

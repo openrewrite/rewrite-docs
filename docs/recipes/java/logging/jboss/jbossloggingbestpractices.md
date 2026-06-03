@@ -1,4 +1,5 @@
 ---
+title: "JBoss Logging Best Practices"
 sidebar_label: "JBoss Logging Best Practices"
 ---
 

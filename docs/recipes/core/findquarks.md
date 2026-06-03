@@ -1,4 +1,5 @@
 ---
+title: "Find instances of type `Quark`"
 sidebar_label: "Find instances of type `Quark`"
 ---
 

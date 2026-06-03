@@ -1,4 +1,5 @@
 ---
+title: "Maintain trailing slash URL mappings"
 sidebar_label: "Maintain trailing slash URL mappings"
 ---
 

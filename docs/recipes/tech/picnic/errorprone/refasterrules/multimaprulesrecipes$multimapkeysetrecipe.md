@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `MultimapRules.MultimapKeySet`"
 sidebar_label: "Refaster template `MultimapRules.MultimapKeySet`"
 ---
 

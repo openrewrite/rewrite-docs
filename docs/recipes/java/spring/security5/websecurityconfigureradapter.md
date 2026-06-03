@@ -1,4 +1,5 @@
 ---
+title: "Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean"
 sidebar_label: "Spring Security 5.4 introduces the ability to configure `HttpSecurity` by creating a `SecurityFilterChain` bean"
 ---
 

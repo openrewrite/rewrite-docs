@@ -1,4 +1,5 @@
 ---
+title: "Migrate to Java 8"
 sidebar_label: "Migrate to Java 8"
 ---
 

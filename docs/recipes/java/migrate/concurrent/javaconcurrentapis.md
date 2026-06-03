@@ -1,4 +1,5 @@
 ---
+title: "Use modernized `java.util.concurrent` APIs"
 sidebar_label: "Use modernized `java.util.concurrent` APIs"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Replace `PowerMockito.whenNew` with Mockito counterpart"
 sidebar_label: "Replace `PowerMockito.whenNew` with Mockito counterpart"
 ---
 

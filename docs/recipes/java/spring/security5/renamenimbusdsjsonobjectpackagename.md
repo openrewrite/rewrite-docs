@@ -1,4 +1,5 @@
 ---
+title: "Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`"
 sidebar_label: "Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`"
 ---
 

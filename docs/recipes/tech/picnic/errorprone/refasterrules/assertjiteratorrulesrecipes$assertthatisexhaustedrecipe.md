@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJIteratorRules.AssertThatIsExhausted`"
 sidebar_label: "Refaster template `AssertJIteratorRules.AssertThatIsExhausted`"
 ---
 

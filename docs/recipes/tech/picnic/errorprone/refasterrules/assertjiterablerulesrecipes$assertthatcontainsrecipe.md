@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJIterableRules.AssertThatContains`"
 sidebar_label: "Refaster template `AssertJIterableRules.AssertThatContains`"
 ---
 

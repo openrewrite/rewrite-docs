@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Number` static properties over global ones"
 sidebar_label: "Prefer `Number` static properties over global ones"
 ---
 

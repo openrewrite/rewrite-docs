@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1"
 sidebar_label: "Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1"
 ---
 

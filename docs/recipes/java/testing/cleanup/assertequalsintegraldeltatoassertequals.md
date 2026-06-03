@@ -1,4 +1,5 @@
 ---
+title: "Remove unnecessary `assertEquals` delta argument for integral types"
 sidebar_label: "Remove unnecessary `assertEquals` delta argument for integral types"
 ---
 

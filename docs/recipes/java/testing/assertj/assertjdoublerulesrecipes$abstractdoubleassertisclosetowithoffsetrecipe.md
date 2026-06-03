@@ -1,4 +1,5 @@
 ---
+title: "Replace `isEqualTo` with `isCloseTo`"
 sidebar_label: "Replace `isEqualTo` with `isCloseTo`"
 ---
 

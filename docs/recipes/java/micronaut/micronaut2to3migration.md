@@ -1,4 +1,5 @@
 ---
+title: "Migrate from Micronaut 2.x to 3.x"
 sidebar_label: "Migrate from Micronaut 2.x to 3.x"
 ---
 

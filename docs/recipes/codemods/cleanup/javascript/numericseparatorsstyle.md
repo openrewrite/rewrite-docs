@@ -1,4 +1,5 @@
 ---
+title: "Enforce the style of numeric separators by correctly grouping digits"
 sidebar_label: "Enforce the style of numeric separators by correctly grouping digits"
 ---
 

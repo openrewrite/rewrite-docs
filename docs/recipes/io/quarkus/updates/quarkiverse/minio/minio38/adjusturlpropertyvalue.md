@@ -1,4 +1,5 @@
 ---
+title: "Adust quarkus.minio.url property key"
 sidebar_label: "Adust quarkus.minio.url property key"
 ---
 

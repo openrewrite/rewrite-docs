@@ -1,4 +1,5 @@
 ---
+title: "Add `CrudRepository` to interfaces extending `PagingAndSortingRepository`"
 sidebar_label: "Add `CrudRepository` to interfaces extending `PagingAndSortingRepository`"
 ---
 

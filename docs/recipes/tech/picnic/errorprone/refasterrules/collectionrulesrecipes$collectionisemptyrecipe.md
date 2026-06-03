@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `CollectionRules.CollectionIsEmpty`"
 sidebar_label: "Refaster template `CollectionRules.CollectionIsEmpty`"
 ---
 

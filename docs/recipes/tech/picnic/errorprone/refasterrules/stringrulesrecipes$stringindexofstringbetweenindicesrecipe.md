@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `StringRules.StringIndexOfStringBetweenIndices`"
 sidebar_label: "Refaster template `StringRules.StringIndexOfStringBetweenIndices`"
 ---
 

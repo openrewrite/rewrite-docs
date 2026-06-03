@@ -1,4 +1,5 @@
 ---
+title: "Format HCL code"
 sidebar_label: "Format HCL code"
 ---
 

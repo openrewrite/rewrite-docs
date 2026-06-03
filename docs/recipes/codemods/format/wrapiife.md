@@ -1,4 +1,5 @@
 ---
+title: "Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations"
 sidebar_label: "Require parentheses around immediate &amp;#x60;function&amp;#x60; invocations"
 ---
 

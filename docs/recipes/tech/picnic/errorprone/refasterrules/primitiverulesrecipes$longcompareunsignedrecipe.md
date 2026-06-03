@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `PrimitiveRules.LongCompareUnsigned`"
 sidebar_label: "Refaster template `PrimitiveRules.LongCompareUnsigned`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Change dependabot schedule interval"
 sidebar_label: "Change dependabot schedule interval"
 ---
 

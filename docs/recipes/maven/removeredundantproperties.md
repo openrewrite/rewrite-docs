@@ -1,4 +1,5 @@
 ---
+title: "Remove redundant properties"
 sidebar_label: "Remove redundant properties"
 ---
 

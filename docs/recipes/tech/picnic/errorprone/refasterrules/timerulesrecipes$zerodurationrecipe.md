@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `TimeRules.ZeroDuration`"
 sidebar_label: "Refaster template `TimeRules.ZeroDuration`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Migrate camel-groovy-xml to camel-groovy"
 sidebar_label: "Migrate camel-groovy-xml to camel-groovy"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Dependency insight for Gradle and Maven"
 sidebar_label: "Dependency insight for Gradle and Maven"
 ---
 

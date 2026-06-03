@@ -1,4 +1,5 @@
 ---
+title: "A collection of `String` rules"
 sidebar_label: "A collection of `String` rules"
 ---
 

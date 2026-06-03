@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Collection.stream().anyMatch(Predicate)`"
 sidebar_label: "Prefer `Collection.stream().anyMatch(Predicate)`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Statically import AssertJ's `assertThat`"
 sidebar_label: "Statically import AssertJ's `assertThat`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Prefer `Integer#compare`"
 sidebar_label: "Prefer `Integer#compare`"
 ---
 

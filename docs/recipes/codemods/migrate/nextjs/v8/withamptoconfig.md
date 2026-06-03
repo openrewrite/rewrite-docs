@@ -1,4 +1,5 @@
 ---
+title: "Transform AMP HOC into page config"
 sidebar_label: "Transform AMP HOC into page config"
 ---
 

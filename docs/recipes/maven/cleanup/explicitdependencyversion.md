@@ -1,4 +1,5 @@
 ---
+title: "Add explicit dependency versions"
 sidebar_label: "Add explicit dependency versions"
 ---
 

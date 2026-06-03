@@ -1,4 +1,5 @@
 ---
+title: "Disallow awaiting non-promise values"
 sidebar_label: "Disallow awaiting non-promise values"
 ---
 

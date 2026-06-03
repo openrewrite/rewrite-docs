@@ -1,4 +1,5 @@
 ---
+title: "Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x"
 sidebar_label: "Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x"
 ---
 

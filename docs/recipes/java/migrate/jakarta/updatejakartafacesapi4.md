@@ -1,4 +1,5 @@
 ---
+title: "Update Jakarta EE Java Faces Dependencies to 4.0.x"
 sidebar_label: "Update Jakarta EE Java Faces Dependencies to 4.0.x"
 ---
 

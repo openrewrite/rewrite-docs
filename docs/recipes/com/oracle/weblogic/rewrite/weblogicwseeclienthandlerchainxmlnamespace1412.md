@@ -1,4 +1,5 @@
 ---
+title: "Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 14.1.2"
 sidebar_label: "Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 14.1.2"
 ---
 

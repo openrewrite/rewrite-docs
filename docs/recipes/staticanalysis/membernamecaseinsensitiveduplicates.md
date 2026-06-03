@@ -1,4 +1,5 @@
 ---
+title: "Members should not have names differing only by capitalization"
 sidebar_label: "Members should not have names differing only by capitalization"
 ---
 

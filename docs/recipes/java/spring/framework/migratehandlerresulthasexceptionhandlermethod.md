@@ -1,4 +1,5 @@
 ---
+title: "Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`"
 sidebar_label: "Migrate `HandlerResult.hasExceptionHandler()` to `getExceptionHandler()`"
 ---
 

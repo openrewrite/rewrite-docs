@@ -1,4 +1,5 @@
 ---
+title: "Use OkHttp 3 MockWebServer for JUnit 5"
 sidebar_label: "Use OkHttp 3 MockWebServer for JUnit 5"
 ---
 
@@ -46,8 +47,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `mockwebserver`
   * newArtifactId: `mockwebserver3`
   * newVersion: `5.x`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `com.squareup.okhttp3`
+  * artifactId: `mockwebserver3`
+  * version: `5.x`
+  * onlyIfUsing: `okhttp3.mockwebserver..*`
+  * scope: `test`
+  * acceptTransitive: `true`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `mockwebserver3.MockWebServer shutdown()`
+  * methodPattern: `okhttp3.mockwebserver.MockWebServer shutdown()`
   * newMethodName: `close`
 * [OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`](../../../java/testing/junit5/updatemockwebservermockresponse)
 
@@ -74,8 +82,15 @@ recipeList:
       oldArtifactId: mockwebserver
       newArtifactId: mockwebserver3
       newVersion: 5.x
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: com.squareup.okhttp3
+      artifactId: mockwebserver3
+      version: 5.x
+      onlyIfUsing: okhttp3.mockwebserver..*
+      scope: test
+      acceptTransitive: true
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: mockwebserver3.MockWebServer shutdown()
+      methodPattern: okhttp3.mockwebserver.MockWebServer shutdown()
       newMethodName: close
   - org.openrewrite.java.testing.junit5.UpdateMockWebServerMockResponse
 

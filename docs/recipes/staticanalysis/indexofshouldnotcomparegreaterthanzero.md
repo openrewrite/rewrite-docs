@@ -1,4 +1,5 @@
 ---
+title: "`indexOf` should not compare greater than zero"
 sidebar_label: "`indexOf` should not compare greater than zero"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Study the size of the classpath by source set"
 sidebar_label: "Study the size of the classpath by source set"
 ---
 

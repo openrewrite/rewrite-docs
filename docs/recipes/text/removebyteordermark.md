@@ -1,4 +1,5 @@
 ---
+title: "Remove byte order mark (BOM)"
 sidebar_label: "Remove byte order mark (BOM)"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Make declarative recipes singletons"
 sidebar_label: "Make declarative recipes singletons"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Testcontainers best practices"
 sidebar_label: "Testcontainers best practices"
 ---
 

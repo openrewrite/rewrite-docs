@@ -1,4 +1,5 @@
 ---
+title: "Moves date pickers to `@mui/x-date-picker`"
 sidebar_label: "Moves date pickers to `@mui/x-date-picker`"
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: "Move SAML relying party identity provider property to asserting party"
 sidebar_label: "Move SAML relying party identity provider property to asserting party"
 ---
 

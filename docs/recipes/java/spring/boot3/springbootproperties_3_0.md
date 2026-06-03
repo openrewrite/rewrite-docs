@@ -1,4 +1,5 @@
 ---
+title: "Migrate Spring Boot properties to 3.0"
 sidebar_label: "Migrate Spring Boot properties to 3.0"
 ---
 
@@ -1765,7 +1766,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 3.0](/recipes/java/spring/boot3/upgradespringboot_3_0.md)
+* [Migrate to Spring Boot 3.0 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
 
 
 ## Usage

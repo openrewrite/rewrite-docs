@@ -1,4 +1,5 @@
 ---
+title: "`ComparatorRules` Refaster recipes"
 sidebar_label: "`ComparatorRules` Refaster recipes"
 ---
 

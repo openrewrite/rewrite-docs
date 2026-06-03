@@ -1,4 +1,5 @@
 ---
+title: "Replace `StringUtils.capitalise(String)` with JDK provided API"
 sidebar_label: "Replace `StringUtils.capitalise(String)` with JDK provided API"
 ---
 

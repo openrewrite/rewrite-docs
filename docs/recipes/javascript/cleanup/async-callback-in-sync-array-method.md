@@ -1,4 +1,5 @@
 ---
+title: "Detect async callbacks in synchronous array methods"
 sidebar_label: "Detect async callbacks in synchronous array methods"
 ---
 

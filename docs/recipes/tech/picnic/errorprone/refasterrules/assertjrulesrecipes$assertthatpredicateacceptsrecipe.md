@@ -1,4 +1,5 @@
 ---
+title: "Refaster template `AssertJRules.AssertThatPredicateAccepts`"
 sidebar_label: "Refaster template `AssertJRules.AssertThatPredicateAccepts`"
 ---
 

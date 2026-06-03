@@ -1,4 +1,5 @@
 ---
+title: "`RandomGeneratorRules` Refaster recipes"
 sidebar_label: "`RandomGeneratorRules` Refaster recipes"
 ---
 

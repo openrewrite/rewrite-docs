@@ -1,4 +1,5 @@
 ---
+title: "Remove an annotation processor from the Maven Compiler plugin configuration"
 sidebar_label: "Remove an annotation processor from the Maven Compiler plugin configuration"
 ---
 
