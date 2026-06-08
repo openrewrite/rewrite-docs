@@ -22,7 +22,7 @@ If you want to understand the techniques behind OpenRewrite's most sophisticated
 
 Every week, the Moderne team hosts a live Code Remix session where they talk through the latest changes, answer community questions, and dig into specific topics. Each session is archived with a summary and the key links so you can catch up on anything you missed.
 
-[Browse Code Remix sessions](https://docs.moderne.io/user-documentation/code-remix-sessions/2026/)
+[Browse Code Remix sessions](https://www.youtube.com/@Moderne-and-OpenRewrite/streams)
 
 ## Live OpenRewrite training
 
