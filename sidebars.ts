@@ -132,6 +132,7 @@ const sidebars: SidebarsConfig = {
         'reference/building-openrewrite-from-source',
       ],
     },
+    'training',
     {
       type: 'category',
       label: 'Lists',
