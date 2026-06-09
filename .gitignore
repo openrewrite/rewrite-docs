@@ -24,3 +24,5 @@ yarn-error.log*
 .vscode/
 
 .claude/settings.local.json 
+
+.context/
