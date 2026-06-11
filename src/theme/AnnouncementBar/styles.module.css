@@ -24,6 +24,37 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
   display: none;
 }
 
+/*
+Mirrors .announcementBar, but kept as a separate class so the recipe-catalog
+bar's dismissal (data-announcement-bar-initially-dismissed) never hides the
+event bar. Its own attribute is set by the inline head script for no flash.
+*/
+.eventBar {
+  display: flex;
+  align-items: center;
+  height: var(--docusaurus-announcement-bar-height);
+  background-color: var(--ifm-color-announcement-bar-bg);
+  color: var(--ifm-color-announcement-bar-text);
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+}
+
+html[data-event-bar-dismissed='true'] .eventBar {
+  display: none;
+}
+
+/* Matches AnnouncementBar/Content's .content so the event bar reads the same. */
+.eventBarContent {
+  flex: 1 1 auto;
+  font-size: 85%;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.eventBarContent a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .announcementBarPlaceholder {
   flex: 0 0 10px;
 }
@@ -38,7 +69,8 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
 }
 
 @media print {
-  .announcementBar {
+  .announcementBar,
+  .eventBar {
     display: none;
   }
 }
