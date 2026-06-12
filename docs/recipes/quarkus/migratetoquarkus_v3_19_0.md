@@ -40,9 +40,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.18.0](../quarkus/migratetoquarkus_v3_18_0)
-* [io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage](../io/quarkus/updates/core/quarkus319/moveaccesstokenannotationtonewpackage)
-* [io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange](../io/quarkus/updates/core/quarkus319/configurationpropertieschange)
-* [io.quarkus.updates.core.quarkus319.HibernateORMValidationMode](../io/quarkus/updates/core/quarkus319/hibernateormvalidationmode)
+* [io.quarkus.updates.core.quarkus319.MoveAccessTokenAnnotationToNewPackage](../quarkus/updates/core/quarkus319/moveaccesstokenannotationtonewpackage)
+* [io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange](../quarkus/updates/core/quarkus319/configurationpropertieschange)
+* [io.quarkus.updates.core.quarkus319.HibernateORMValidationMode](../quarkus/updates/core/quarkus319/hibernateormvalidationmode)
 
 </TabItem>
 

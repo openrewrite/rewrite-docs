@@ -12,6 +12,7 @@ _Recipes for upgrading and patching [Quarkus](https://quarkus.io/) applications.
 * [Quarkus 2.x](/recipes/quarkus/quarkus2)
 * [Search](/recipes/quarkus/search)
 * [Spring to Quarkus](/recipes/quarkus/spring)
+* [Updates](/recipes/quarkus/updates)
 
 ## Composite Recipes
 

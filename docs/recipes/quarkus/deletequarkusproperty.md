@@ -36,13 +36,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypefastjar.md)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypejar.md)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypemutablejar.md)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNativeSources](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypenativesources.md)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNative](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypenative.md)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeUberJar](/recipes/io/quarkus/updates/core/quarkus310/updateconfigpackagetypeuberjar.md)
-* [io.quarkus.updates.core.quarkus318.RemoveFlywayCleanOnValidationError](/recipes/io/quarkus/updates/core/quarkus318/removeflywaycleanonvalidationerror.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypefastjar.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeJar](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypejar.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypemutablejar.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNativeSources](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypenativesources.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNative](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypenative.md)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeUberJar](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypeuberjar.md)
+* [io.quarkus.updates.core.quarkus318.RemoveFlywayCleanOnValidationError](/recipes/quarkus/updates/core/quarkus318/removeflywaycleanonvalidationerror.md)
 
 
 ## Usage

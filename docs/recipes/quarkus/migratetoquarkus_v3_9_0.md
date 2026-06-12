@@ -40,11 +40,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.8.3](../quarkus/migratetoquarkus_v3_8_3)
-* [io.quarkus.updates.core.quarkus39.RemovePanacheAnnotationProcessor](../io/quarkus/updates/core/quarkus39/removepanacheannotationprocessor)
-* [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](../io/quarkus/updates/core/quarkus39/synchibernatejpamodelgenversionwithbom)
-* [io.quarkus.updates.core.quarkus39.Relocations](../io/quarkus/updates/core/quarkus39/relocations)
-* [io.quarkus.updates.core.quarkus39.UpdateConfigRoots](../io/quarkus/updates/core/quarkus39/updateconfigroots)
-* [io.quarkus.updates.core.quarkus39.GraalSDK](../io/quarkus/updates/core/quarkus39/graalsdk)
+* [io.quarkus.updates.core.quarkus39.RemovePanacheAnnotationProcessor](../quarkus/updates/core/quarkus39/removepanacheannotationprocessor)
+* [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus39/synchibernatejpamodelgenversionwithbom)
+* [io.quarkus.updates.core.quarkus39.Relocations](../quarkus/updates/core/quarkus39/relocations)
+* [io.quarkus.updates.core.quarkus39.UpdateConfigRoots](../quarkus/updates/core/quarkus39/updateconfigroots)
+* [io.quarkus.updates.core.quarkus39.GraalSDK](../quarkus/updates/core/quarkus39/graalsdk)
 
 </TabItem>
 

@@ -36,7 +36,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate `PrimeNGConfig` to `PrimeNG`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/migrateprimengconfigtoprimeng)
 * [Move `DOCUMENT` import to `@angular/core`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/move-document-import)
+* [Rename `Calendar` to `DatePicker`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamecalendartodatepicker)
+* [Rename `Dropdown` to `Select`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamedropdowntoselect)
+* [Rename `InputSwitch` to `ToggleSwitch`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renameinputswitchtotoggleswitch)
+* [Rename `Message` interface to `ToastMessageOptions`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamemessageinterface)
+* [Rename `OverlayPanel` to `Popover`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renameoverlaypaneltopopover)
+* [Rename `Sidebar` to `Drawer`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamesidebartodrawer)
 
 
 ## Usage

@@ -47,8 +47,9 @@ This recipe is used as part of the following composite recipes:
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [Reorder the arguments of `RequestBody.create()`](/recipes/okhttp/reorderrequestbodycreatearguments.md)
 * [Replace  deprecated Jakarta Servlet methods and classes](/recipes/java/migrate/jakarta/removalsservletjakarta10.md)
-* [Replace deprecated Jakarta Servlet methods and classes](/recipes/com/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
+* [Replace deprecated Jakarta Servlet methods and classes](/recipes/oracle/weblogic/rewrite/jakarta/removalsservletjakarta9.md)
 * [Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(..)`](/recipes/java/testing/junit5/migrateassumptions.md)
+* [Use non-deprecated SingleConstraintAssertion methods](/recipes/timefold/solver/migration/v8/singleconstraintassertionmethodsrecipe.md)
 
 
 ## Usage

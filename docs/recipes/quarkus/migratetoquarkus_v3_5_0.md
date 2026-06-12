@@ -40,8 +40,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.3.0](../quarkus/migratetoquarkus_v3_3_0)
-* [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](../io/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith)
-* [io.quarkus.updates.core.quarkus35.MutinyUniMemoizeAtLeast](../io/quarkus/updates/core/quarkus35/mutinyunimemoizeatleast)
+* [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](../quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith)
+* [io.quarkus.updates.core.quarkus35.MutinyUniMemoizeAtLeast](../quarkus/updates/core/quarkus35/mutinyunimemoizeatleast)
 
 </TabItem>
 

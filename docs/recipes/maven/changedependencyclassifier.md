@@ -37,9 +37,9 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Ehcache from javax to jakarta namespace](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
 * [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
-* [Upgrade Faces open source libraries](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
 * [Upgrade Faces open source libraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
 * [Upgrade Faces open source libraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
+* [Upgrade Faces open source libraries](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
 
 ## Example
 

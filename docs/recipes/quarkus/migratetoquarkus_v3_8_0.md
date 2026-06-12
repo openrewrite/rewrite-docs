@@ -40,9 +40,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.7.0](../quarkus/migratetoquarkus_v3_7_0)
-* [Migrates `camel 4.0` application to `camel 4.4`](../io/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe)
-* [io.quarkus.updates.minio.minio38.UpdateAll](../io/quarkus/updates/minio/minio38/updateall)
-* [io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM](../io/quarkus/updates/core/quarkus38/synchibernatejpamodelgenversionwithbom)
+* [Migrates `camel 4.0` application to `camel 4.4`](../quarkus/updates/camel/camel44/camelquarkusmigrationrecipe)
+* [io.quarkus.updates.minio.minio38.UpdateAll](../quarkus/updates/minio/minio38/updateall)
+* [io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus38/synchibernatejpamodelgenversionwithbom)
 
 </TabItem>
 

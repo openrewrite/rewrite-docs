@@ -40,7 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.11.0](../quarkus/migratetoquarkus_v3_11_0)
-* [io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM](../io/quarkus/updates/core/quarkus312/synchibernatejpamodelgenversionwithbom)
+* [io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus312/synchibernatejpamodelgenversionwithbom)
 
 </TabItem>
 

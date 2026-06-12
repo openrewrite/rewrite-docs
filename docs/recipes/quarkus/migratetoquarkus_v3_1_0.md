@@ -40,7 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.0.0](../quarkus/migratetoquarkus_v3_0_0)
-* [io.quarkus.updates.core.quarkus31.RemoveMockitoInline](../io/quarkus/updates/core/quarkus31/removemockitoinline)
+* [io.quarkus.updates.core.quarkus31.RemoveMockitoInline](../quarkus/updates/core/quarkus31/removemockitoinline)
 
 </TabItem>
 

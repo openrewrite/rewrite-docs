@@ -39,7 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Kafka 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migratetokafka41)
 * [Remove Spring Boot DevTools](/recipes/quarkus/spring/migratespringbootdevtools.md)
 * [Remove deprecated Kotlin Gradle properties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/removedeprecatedkotlingradleproperties)
-* [Removed deprecated property camel.main.lightweight](/recipes/org/apache/camel/upgrade/camel411/removedlightweight.md)
+* [Removed deprecated property camel.main.lightweight](/recipes/apache/camel/upgrade/camel411/removedlightweight.md)
 
 ## Example
 

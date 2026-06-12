@@ -40,7 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.5.0](../quarkus/migratetoquarkus_v3_5_0)
-* [io.quarkus.updates.core.quarkus36.JaegerSmallRyeOpenTracing](../io/quarkus/updates/core/quarkus36/jaegersmallryeopentracing)
+* [io.quarkus.updates.core.quarkus36.JaegerSmallRyeOpenTracing](../quarkus/updates/core/quarkus36/jaegersmallryeopentracing)
 
 </TabItem>
 

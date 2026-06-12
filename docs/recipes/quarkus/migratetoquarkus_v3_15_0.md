@@ -40,7 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.13.0](../quarkus/migratetoquarkus_v3_13_0)
-* [Migrates `camel 4.4` application to `camel 4.8`](../io/quarkus/updates/camel/camel47/camelquarkusmigrationrecipe)
+* [Migrates `camel 4.4` application to `camel 4.8`](../quarkus/updates/camel/camel47/camelquarkusmigrationrecipe)
 
 </TabItem>
 

@@ -40,9 +40,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.1.0](../quarkus/migratetoquarkus_v3_1_0)
-* [io.quarkus.updates.core.quarkus32.InjectMock](../io/quarkus/updates/core/quarkus32/injectmock)
-* [io.quarkus.updates.core.quarkus32.ApplicationProperties](../io/quarkus/updates/core/quarkus32/applicationproperties)
-* [io.quarkus.updates.core.quarkus32.ApplicationYml](../io/quarkus/updates/core/quarkus32/applicationyml)
+* [io.quarkus.updates.core.quarkus32.InjectMock](../quarkus/updates/core/quarkus32/injectmock)
+* [io.quarkus.updates.core.quarkus32.ApplicationProperties](../quarkus/updates/core/quarkus32/applicationproperties)
+* [io.quarkus.updates.core.quarkus32.ApplicationYml](../quarkus/updates/core/quarkus32/applicationyml)
 
 </TabItem>
 

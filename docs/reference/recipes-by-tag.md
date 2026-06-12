@@ -56,7 +56,7 @@ _4 recipes_
 
 _2 recipes_
 
-* [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/io/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
   * **Migrate deprecated `javax.activation` packages to `jakarta.activation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
@@ -97,10 +97,10 @@ _2 recipes_
 
 _3 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Annotation](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Annotation](/recipes/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
   * **Migrate deprecated `javax.annotation` to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/java/migrate/jakarta/javaxannotationmigrationtojakartaannotation.md)
@@ -199,25 +199,25 @@ _24 recipes_
 
 _7 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1412.md)
   * **Migrate xmlns entries in `application-client.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Application Client schema files to WebLogic 14.1.2
   * Tags: application-client
-* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1511.md)
   * **Migrate xmlns entries in `application-client.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `application-client.xml` files to WebLogic 15.1.1
   * Tags: application-client
-* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Application schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-application.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationClientXmlToJakarta9ApplicationClientXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationclientxmltojakarta9applicationclientxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationClientXmlToJakarta9ApplicationClientXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxapplicationclientxmltojakarta9applicationclientxml.md)
   * **Migrate xmlns entries in `application-client.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
   * Tags: application-client
-* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationXmlToJakarta9ApplicationXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationxmltojakarta9applicationxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationXmlToJakarta9ApplicationXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxapplicationxmltojakarta9applicationxml.md)
   * **Migrate xmlns entries in `application.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 * [org.openrewrite.quarkus.spring.EnableAnnotationsToQuarkusDependencies](/recipes/quarkus/spring/enableannotationstoquarkusdependencies.md)
@@ -293,7 +293,7 @@ _1 recipe_
 
 _2 recipes_
 
-* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/io/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
   * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication.md)
@@ -304,7 +304,7 @@ _2 recipes_
 
 _2 recipes_
 
-* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/io/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
   * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/java/migrate/jakarta/javaxauthorizationmigrationtojakartaauthorization.md)
@@ -315,13 +315,13 @@ _2 recipes_
 
 _3 recipes_
 
-* [software.amazon.awssdk.v2migration.AddS3EventNotificationDependency](/recipes/software/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
+* [software.amazon.awssdk.v2migration.AddS3EventNotificationDependency](/recipes/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
   * **Add AWS SDK for Java v2 S3 Event Notification dependency if needed**
   * This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used
-* [software.amazon.awssdk.v2migration.AddTransferManagerDependency](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
+* [software.amazon.awssdk.v2migration.AddTransferManagerDependency](/recipes/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
   * **Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed**
   * This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer Manager is used
-* [software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
+* [software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2](/recipes/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
   * **Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2**
   * This recipe will apply changes required for migrating from the AWS SDK for Java v1 to the AWS SDK for Java v2.
 
@@ -329,19 +329,19 @@ _3 recipes_
 
 _9 recipes_
 
-* [io.quarkus.updates.core.quarkus30.ChangeJavaxAnnotationToJakarta](/recipes/io/quarkus/updates/core/quarkus30/changejavaxannotationtojakarta.md)
+* [io.quarkus.updates.core.quarkus30.ChangeJavaxAnnotationToJakarta](/recipes/quarkus/updates/core/quarkus30/changejavaxannotationtojakarta.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationpackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationpackagetojakarta.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Change type of classes in the `javax.annotation` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSecurityPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationsecuritypackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSecurityPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationsecuritypackagetojakarta.md)
   * **Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`**
   * Change type of classes in the `javax.annotation.security` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationsqlpackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationsqlpackagetojakarta.md)
   * **Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`**
   * Change type of classes in the `javax.annotation.sql` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/io/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
+* [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
   * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxBatchMigrationToJakartaBatch](/recipes/java/migrate/jakarta/javaxbatchmigrationtojakartabatch.md)
@@ -361,7 +361,7 @@ _9 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchXmlToJakarta9BatchXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbatchxmltojakarta9batchxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchXmlToJakarta9BatchXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxbatchxmltojakarta9batchxml.md)
   * **Migrate xmlns entries in `batch.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -377,7 +377,7 @@ _1 recipe_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBeansXmlToJakarta9BeansXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbeansxmltojakarta9beansxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBeansXmlToJakarta9BeansXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxbeansxmltojakarta9beansxml.md)
   * **Migrate xmlns entries in `beans.xml` files for Beans 3.0.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxBeansXmlToJakartaBeansXml](/recipes/java/migrate/jakarta/javaxbeansxmltojakartabeansxml.md)
@@ -397,7 +397,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
   * **Migrate xmlns entries in `*.xjb` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -622,7 +622,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager](/recipes/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
   * **Change cacheManager to use the SimpleCacheManager**
   * Change cacheManager to use the SimpleCacheManager.
 
@@ -638,7 +638,7 @@ _1 recipe_
 
 _3 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBeansXmlToJakarta9BeansXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbeansxmltojakarta9beansxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBeansXmlToJakarta9BeansXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxbeansxmltojakarta9beansxml.md)
   * **Migrate xmlns entries in `beans.xml` files for Beans 3.0.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxBeansXmlToJakartaBeansXml](/recipes/java/migrate/jakarta/javaxbeansxmltojakartabeansxml.md)
@@ -1157,10 +1157,10 @@ _1 recipe_
 
 _2 recipes_
 
-* [io.quarkus.updates.core.quarkus37.JavaVersion17](/recipes/io/quarkus/updates/core/quarkus37/javaversion17.md)
+* [io.quarkus.updates.core.quarkus37.JavaVersion17](/recipes/quarkus/updates/core/quarkus37/javaversion17.md)
   * **Change Maven and Gradle Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
-* [org.apache.camel.upgrade.JavaVersion17](/recipes/org/apache/camel/upgrade/javaversion17.md)
+* [org.apache.camel.upgrade.JavaVersion17](/recipes/apache/camel/upgrade/javaversion17.md)
   * **Change Maven Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
 
@@ -1184,10 +1184,10 @@ _1 recipe_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Resource Adapter schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLogic 15.1.1
 
@@ -1195,7 +1195,7 @@ _2 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxRaXmlToJakarta9RaXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxRaXmlToJakarta9RaXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
   * **Migrate xmlns entries in `ra.xml` files (Connectors).**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -1203,7 +1203,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
   * **Add Hibernate ORM Core if has dependencies**
   * This recipe will add Hibernate ORM Core if has dependencies.
 
@@ -1338,7 +1338,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
+* [com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler](/recipes/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
   * **Update Default Servlet Handler for Spring Framework if empty**
   * This recipe will update Spring Framework default servlet handler if empty, as noted in the Spring Framework 6.2 [documentation](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/default-servlet-handler.html).
   * Tags: default-servlet-handler
@@ -1375,10 +1375,10 @@ _4 recipes_
 
 _7 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPlatform9_1](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPlatform9_1](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1.md)
   * **Update Jakarta EE Platform Dependencies to 9.1.0**
   * Update Jakarta EE Platform Dependencies to 9.1.0
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
   * **Change artifacts for a Maven plugin configuration**
   * Change artifacts for a Maven plugin configuration artifacts.
 * [org.openrewrite.github.AddDependabotCooldown](/recipes/github/adddependabotcooldown.md)
@@ -1401,11 +1401,11 @@ _7 recipes_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicplanxmlnamespace1412.md)
   * **Migrate xmlns entries in `plan.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Plan schema files to WebLogic 14.1.2
   * Tags: deployment-plan
-* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicplanxmlnamespace1511.md)
   * **Migrate xmlns entries in `plan.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `plan.xml` files to WebLogic 15.1.1
   * Tags: deployment-plan
@@ -1501,10 +1501,10 @@ _2 recipes_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
   * **Migrate WebLogic Schemas to 14.1.2**
   * This recipe will migrate WebLogic schemas to 14.1.2
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
   * **Migrate WebLogic Schemas to 15.1.1**
   * This recipe will migrate WebLogic schemas to 15.1.1
 
@@ -1550,23 +1550,23 @@ _1 recipe_
 
 _7 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 schema files to WebLogic 14.1.2
   * Tags: ejb-3.2, ejb-jar
-* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1
   * Tags: ejb-jar
-* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
   * **Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 Persistence Configuration schema files to WebLogic 14.1.2
   * Tags: ejb-3.2
-* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 RDBMS schema files to WebLogic 14.1.2
   * Tags: ejb-3.2
-* [com.oracle.weblogic.rewrite.jakarta.JavaxEjbJarXmlToJakarta9EjbJarXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxejbjarxmltojakarta9ejbjarxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxEjbJarXmlToJakarta9EjbJarXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxejbjarxmltojakarta9ejbjarxml.md)
   * **Migrate xmlns entries in `ejb-jar.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxBeanValidationXmlToJakartaBeanValidationXml](/recipes/java/migrate/jakarta/javaxbeanvalidationxmltojakartabeanvalidationxml.md)
@@ -2280,19 +2280,19 @@ _1 recipe_
 
 _5 recipes_
 
-* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib2_1](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md)
+* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib2_1](/recipes/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md)
   * **Add implicit TLD with taglib 2.1**
   * Add `implicit.tld` file with taglib 2.1 to `src/main/webapp/WEB-INF/tags`.
-* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
+* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0](/recipes/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
   * **Add implicit TLD with taglib 3.0**
   * Add `implicit.tld` file with taglib 3.0 to `src/main/webapp/WEB-INF/tags`.
-* [com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager](/recipes/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
   * **Change cacheManager to use the SimpleCacheManager**
   * Change cacheManager to use the SimpleCacheManager.
-* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/com/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
+* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
   * **Add WebLogic 15.1.1 PetClinic extras**
   * Run migration extras for migrated Spring Framework PetClinic example run on WebLogic 15.1.1.
-* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/com/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
+* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
   * **Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2**
   * Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2.
 
@@ -2300,35 +2300,35 @@ _5 recipes_
 
 _29 recipes_
 
-* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
+* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
   * Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
-* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/com/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
+* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
   * **JSF 2.x to Jakarta Server Faces 3.x**
   * Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespaces.
-* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
   * **Faces XHTML migration for Jakarta EE 9**
   * Find and replace legacy JSF namespaces and javax references with Jakarta Faces values in XHTML files.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesConfigXmlToJakartaFaces3ConfigXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesConfigXmlToJakartaFaces3ConfigXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
   * **Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
   * Tags: faces-config
-* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
   * **Migrate xmlns entries in `*taglib*.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
   * **Migrate xmlns entries in `test-web.xml` files for Jakarta Server Faces 3 using test interfaces**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation for test interfaces like arquillian.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
   * **Migrate xmlns entries in `web-fragment.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
   * **Migrate xmlns entries in `web.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
 * [org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
@@ -2722,7 +2722,7 @@ _6 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebHandlerXmlToJakarta9HandlerXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebhandlerxmltojakarta9handlerxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebHandlerXmlToJakarta9HandlerXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebhandlerxmltojakarta9handlerxml.md)
   * **Migrate xmlns entries in `handler.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -2741,19 +2741,19 @@ _2 recipes_
 
 _5 recipes_
 
-* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/com/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
+* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
   * **Upgrade Jakarta JPA to 3.1 and Hibernate 6.6**
   * This recipe upgrades Jakarta JPA to 3.1 and Hibernate to 6.6 (compatible with Jakarta EE 10).
-* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
   * **Add Hibernate ORM Core if has dependencies**
   * This recipe will add Hibernate ORM Core if has dependencies.
-* [com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
+* [com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9](/recipes/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
   * **Migrate to Hibernate for Jakarta EE 9**
   * Upgrade hibernate libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66](/recipes/com/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
+* [com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66](/recipes/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
   * **Upgrade Hibernate to 6.6**
   * This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta EE 10 and JPA 3.1. It also upgrades a few of the commonly used Hibernate add-ons.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeCommonOpenSourceLibraries](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradecommonopensourcelibraries.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeCommonOpenSourceLibraries](/recipes/oracle/weblogic/rewrite/jakarta/upgradecommonopensourcelibraries.md)
   * **Upgrade Common open source libraries**
   * Upgrade Common open source libraries libraries to Jakarta EE9 versions.
 
@@ -2784,7 +2784,7 @@ _6 recipes_
 
 _3 recipes_
 
-* [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/io/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
+* [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
   * **Migrate deprecated `javax.inject` packages to `jakarta.inject`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject](/recipes/java/migrate/jakarta/javaxinjectmigrationtojakartainject.md)
@@ -2947,163 +2947,163 @@ _1 recipe_
 
 _102 recipes_
 
-* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
+* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
   * Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
-* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/com/oracle/weblogic/rewrite/jakartaee9_1.md)
+* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/oracle/weblogic/rewrite/jakartaee9_1.md)
   * **Migrate to Jakarta EE 9.1**
   * These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods.
-* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/com/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
+* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
   * **Upgrade Jakarta JPA to 3.1 and Hibernate 6.6**
   * This recipe upgrades Jakarta JPA to 3.1 and Hibernate to 6.6 (compatible with Jakarta EE 10).
-* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
   * **Add Hibernate ORM Core if has dependencies**
   * This recipe will add Hibernate ORM Core if has dependencies.
-* [com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9](/recipes/com/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
+* [com.oracle.weblogic.rewrite.hibernate.MigrateHibernateToJakartaEE9](/recipes/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
   * **Migrate to Hibernate for Jakarta EE 9**
   * Upgrade hibernate libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.AddJakartaEE9ServletDependencyIfUsingServletContext](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
+* [com.oracle.weblogic.rewrite.jakarta.AddJakartaEE9ServletDependencyIfUsingServletContext](/recipes/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
   * **Add Jakarta EE 9 Servlet Dependency**
   * Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext
-* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/com/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
+* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
   * **JSF 2.x to Jakarta Server Faces 3.x**
   * Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespaces.
-* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
   * **Migrate from JavaX to Jakarta EE 9.1 Namespaces**
   * These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces.
-* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
   * **Faces XHTML migration for Jakarta EE 9**
   * Find and replace legacy JSF namespaces and javax references with Jakarta Faces values in XHTML files.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Annotation](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Annotation](/recipes/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
   * **Migrate deprecated `javax.annotation` to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationClientXmlToJakarta9ApplicationClientXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationclientxmltojakarta9applicationclientxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationClientXmlToJakarta9ApplicationClientXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxapplicationclientxmltojakarta9applicationclientxml.md)
   * **Migrate xmlns entries in `application-client.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationXmlToJakarta9ApplicationXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxapplicationxmltojakarta9applicationxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxApplicationXmlToJakarta9ApplicationXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxapplicationxmltojakarta9applicationxml.md)
   * **Migrate xmlns entries in `application.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchJobsXmlsToJakarta9BatchJobsXmls](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbatchjobsxmlstojakarta9batchjobsxmls.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchJobsXmlsToJakarta9BatchJobsXmls](/recipes/oracle/weblogic/rewrite/jakarta/javaxbatchjobsxmlstojakarta9batchjobsxmls.md)
   * **Migrate xmlns entries in `**/batch-jobs/*.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchXmlToJakarta9BatchXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbatchxmltojakarta9batchxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchXmlToJakarta9BatchXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxbatchxmltojakarta9batchxml.md)
   * **Migrate xmlns entries in `batch.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBeansXmlToJakarta9BeansXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbeansxmltojakarta9beansxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBeansXmlToJakarta9BeansXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxbeansxmltojakarta9beansxml.md)
   * **Migrate xmlns entries in `beans.xml` files for Beans 3.0.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
   * **Migrate xmlns entries in `*.xjb` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxEjbJarXmlToJakarta9EjbJarXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxejbjarxmltojakarta9ejbjarxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxEjbJarXmlToJakarta9EjbJarXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxejbjarxmltojakarta9ejbjarxml.md)
   * **Migrate xmlns entries in `ejb-jar.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesConfigXmlToJakartaFaces3ConfigXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesConfigXmlToJakartaFaces3ConfigXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
   * **Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
   * **Migrate xmlns entries in `*taglib*.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxJmsToJakartaJmsOnMdb](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxjmstojakartajmsonmdb.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxJmsToJakartaJmsOnMdb](/recipes/oracle/weblogic/rewrite/jakarta/javaxjmstojakartajmsonmdb.md)
   * **Migrate javax.jms to jakarta.jms on MDB**
   * Migrate javax.jms to jakarta.jms on MDB
-* [com.oracle.weblogic.rewrite.jakarta.JavaxPermissionsXmlToJakarta9PermissionsXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxpermissionsxmltojakarta9permissionsxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxPermissionsXmlToJakarta9PermissionsXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxpermissionsxmltojakarta9permissionsxml.md)
   * **Migrate xmlns entries in `permissions.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxRaXmlToJakarta9RaXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxRaXmlToJakarta9RaXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
   * **Migrate xmlns entries in `ra.xml` files (Connectors).**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
   * **Migrate xmlns entries in `test-web.xml` files for Jakarta Server Faces 3 using test interfaces**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation for test interfaces like arquillian.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxTestXmlsToJakartaTestsXmls](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestxmlstojakartatestsxmls.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxTestXmlsToJakartaTestsXmls](/recipes/oracle/weblogic/rewrite/jakarta/javaxtestxmlstojakartatestsxmls.md)
   * **Migrate xmlns entries in `test-*.xml` files for Jakarta EE 9.1 using test interfaces**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation for test interfaces like arquillian.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxValidationMappingXmlsToJakarta9ValidationMappingXmls](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxvalidationmappingxmlstojakarta9validationmappingxmls.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxValidationMappingXmlsToJakarta9ValidationMappingXmls](/recipes/oracle/weblogic/rewrite/jakarta/javaxvalidationmappingxmlstojakarta9validationmappingxmls.md)
   * **Migrate xmlns entries in `**/validation/*.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
   * **Migrate xmlns entries in `web-fragment.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebHandlerXmlToJakarta9HandlerXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebhandlerxmltojakarta9handlerxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebHandlerXmlToJakarta9HandlerXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebhandlerxmltojakarta9handlerxml.md)
   * **Migrate xmlns entries in `handler.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
   * **Migrate xmlns entries in `*.tld` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebServicesXmlToJakarta9WebServicesXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebServicesXmlToJakarta9WebServicesXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
   * **Migrate xmlns entries in `webservices.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
   * **Migrate xmlns entries in `web.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxMVCToJakartaEE9](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
+* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxMVCToJakartaEE9](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
   * **Migrate javax.mvc to 2.0 (Jakarta EE 9)**
   * Upgrade Jakarta Model-View-Controller libraries to 2.0 (Jakarta EE9) versions.
-* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxWebToJakartaWeb9](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxwebtojakartaweb9.md)
+* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxWebToJakartaWeb9](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxwebtojakartaweb9.md)
   * **Migrate javax.javaee-web-api to jakarta.jakartaee-web-api (Jakarta EE 9)**
   * Update Java EE Web API dependency to Jakarta EE Web Profile API 9.1
-* [com.oracle.weblogic.rewrite.jakarta.MigrateTagLibsToJakartaEE9](/recipes/com/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
+* [com.oracle.weblogic.rewrite.jakarta.MigrateTagLibsToJakartaEE9](/recipes/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
   * **Migrate Tag Libraries to 2.0 (Jakarta EE 9)**
   * Upgrade Jakarta Standard Tag libraries to 2.0 (Jakarta EE9) versions.
-* [com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages](/recipes/com/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
+* [com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages](/recipes/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
   * **Mitigate Unaffected Non-EE Jakarta 9 Packages**
   * Mitigate Unaffected Non-EE Jakarta 9 Packages. Reference: [https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc](https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc)
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPlatform9_1](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPlatform9_1](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1.md)
   * **Update Jakarta EE Platform Dependencies to 9.1.0**
   * Update Jakarta EE Platform Dependencies to 9.1.0
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeCommonOpenSourceLibraries](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradecommonopensourcelibraries.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeCommonOpenSourceLibraries](/recipes/oracle/weblogic/rewrite/jakarta/upgradecommonopensourcelibraries.md)
   * **Upgrade Common open source libraries**
   * Upgrade Common open source libraries libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
   * **Change artifacts for a Maven plugin configuration**
   * Change artifacts for a Maven plugin configuration artifacts.
-* [io.quarkus.updates.core.quarkus30.ChangeJavaxAnnotationToJakarta](/recipes/io/quarkus/updates/core/quarkus30/changejavaxannotationtojakarta.md)
+* [io.quarkus.updates.core.quarkus30.ChangeJavaxAnnotationToJakarta](/recipes/quarkus/updates/core/quarkus30/changejavaxannotationtojakarta.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`.
-* [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/io/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
   * **Migrate deprecated `javax.activation` packages to `jakarta.activation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationpackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationpackagetojakarta.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Change type of classes in the `javax.annotation` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSecurityPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationsecuritypackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSecurityPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationsecuritypackagetojakarta.md)
   * **Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`**
   * Change type of classes in the `javax.annotation.security` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationsqlpackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationsqlpackagetojakarta.md)
   * **Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`**
   * Change type of classes in the `javax.annotation.sql` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/io/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
   * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/io/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
   * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/io/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
+* [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
   * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/io/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
+* [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
   * **Migrate deprecated `javax.inject` packages to `jakarta.inject`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/io/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
+* [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
   * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/io/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
   * **Migrate deprecated `javax.validation` packages to `jakarta.validation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
   * **Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
+* [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
   * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
@@ -3258,22 +3258,22 @@ _102 recipes_
 
 _6 recipes_
 
-* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
+* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
   * Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
-* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/com/oracle/weblogic/rewrite/jakartaee9_1.md)
+* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/oracle/weblogic/rewrite/jakartaee9_1.md)
   * **Migrate to Jakarta EE 9.1**
   * These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods.
-* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/com/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
+* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
   * **JSF 2.x to Jakarta Server Faces 3.x**
   * Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespaces.
-* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
   * **Migrate from JavaX to Jakarta EE 9.1 Namespaces**
   * These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces.
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo31](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo31](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
   * **Update Jakarta Persistence to 3.1**
   * Update Jakarta Persistence to 3.1.
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo32](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo32](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
   * **Update Jakarta Persistence to 3.2**
   * Update Jakarta Persistence to 3.2.
 
@@ -3281,22 +3281,22 @@ _6 recipes_
 
 _10 recipes_
 
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
   * **Migrate WebLogic Schemas to 14.1.2**
   * This recipe will migrate WebLogic schemas to 14.1.2
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
   * **Migrate WebLogic Schemas to 15.1.1**
   * This recipe will migrate WebLogic schemas to 15.1.1
-* [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
+* [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
   * **Migrate to WebLogic 14.1.1**
   * This recipe will apply changes required for migrating to WebLogic 14.1.1
-* [com.oracle.weblogic.rewrite.UpgradeTo1412](/recipes/com/oracle/weblogic/rewrite/upgradeto1412.md)
+* [com.oracle.weblogic.rewrite.UpgradeTo1412](/recipes/oracle/weblogic/rewrite/upgradeto1412.md)
   * **Migrate to WebLogic 14.1.2**
   * This recipe will apply changes required for migrating to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.UpgradeTo1511](/recipes/com/oracle/weblogic/rewrite/upgradeto1511.md)
+* [com.oracle.weblogic.rewrite.UpgradeTo1511](/recipes/oracle/weblogic/rewrite/upgradeto1511.md)
   * **Migrate to WebLogic 15.1.1**
   * This recipe will apply changes required for migrating to WebLogic 15.1.1 and Jakarta EE 9.1
-* [com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation](/recipes/com/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
+* [com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation](/recipes/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
   * **Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2**
   * This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic 14.1.2
 * [org.openrewrite.java.jspecify.JSpecifyBestPractices](/recipes/java/jspecify/jspecifybestpractices.md)
@@ -3418,28 +3418,28 @@ _29 recipes_
 
 _23 recipes_
 
-* [io.quarkus.updates.core.quarkus37.DeprecatedJavaxSecurityCert](/recipes/io/quarkus/updates/core/quarkus37/deprecatedjavaxsecuritycert.md)
+* [io.quarkus.updates.core.quarkus37.DeprecatedJavaxSecurityCert](/recipes/quarkus/updates/core/quarkus37/deprecatedjavaxsecuritycert.md)
   * **Use `java.security.cert` instead of `javax.security.cert`**
   * The `javax.security.cert` package has been deprecated for removal.
-* [io.quarkus.updates.core.quarkus37.DeprecatedLogRecordThreadID](/recipes/io/quarkus/updates/core/quarkus37/deprecatedlogrecordthreadid.md)
+* [io.quarkus.updates.core.quarkus37.DeprecatedLogRecordThreadID](/recipes/quarkus/updates/core/quarkus37/deprecatedlogrecordthreadid.md)
   * **Adopt `setLongThreadID` in `java.util.logging.LogRecord`**
   * Avoid using the deprecated methods in `java.util.logging.LogRecord`
-* [io.quarkus.updates.core.quarkus37.JavaVersion17](/recipes/io/quarkus/updates/core/quarkus37/javaversion17.md)
+* [io.quarkus.updates.core.quarkus37.JavaVersion17](/recipes/quarkus/updates/core/quarkus37/javaversion17.md)
   * **Change Maven and Gradle Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
-* [io.quarkus.updates.core.quarkus37.Jre17AgentMainPreMainPublic](/recipes/io/quarkus/updates/core/quarkus37/jre17agentmainpremainpublic.md)
+* [io.quarkus.updates.core.quarkus37.Jre17AgentMainPreMainPublic](/recipes/quarkus/updates/core/quarkus37/jre17agentmainpremainpublic.md)
   * **Set visibility of `premain` and `agentmain` methods to `public`**
   * Check for a behavior change in Java agents.
-* [io.quarkus.updates.core.quarkus37.RemovedLegacySunJSSEProviderName](/recipes/io/quarkus/updates/core/quarkus37/removedlegacysunjsseprovidername.md)
+* [io.quarkus.updates.core.quarkus37.RemovedLegacySunJSSEProviderName](/recipes/quarkus/updates/core/quarkus37/removedlegacysunjsseprovidername.md)
   * **Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`**
   * The `com.sun.net.ssl.internal.ssl.Provider` provider name was removed.
-* [io.quarkus.updates.core.quarkus37.UpgradeToJava17](/recipes/io/quarkus/updates/core/quarkus37/upgradetojava17.md)
+* [io.quarkus.updates.core.quarkus37.UpgradeToJava17](/recipes/quarkus/updates/core/quarkus37/upgradetojava17.md)
   * **Migrate to Java 17**
   * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
-* [org.apache.camel.upgrade.JavaVersion17](/recipes/org/apache/camel/upgrade/javaversion17.md)
+* [org.apache.camel.upgrade.JavaVersion17](/recipes/apache/camel/upgrade/javaversion17.md)
   * **Change Maven Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
-* [org.apache.camel.upgrade.UpgradeToJava17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
+* [org.apache.camel.upgrade.UpgradeToJava17](/recipes/apache/camel/upgrade/upgradetojava17.md)
   * **Migrate to Java 17**
   * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
 * [org.openrewrite.java.migrate.AddLombokMapstructBinding](/recipes/java/migrate/addlombokmapstructbinding.md)
@@ -3626,55 +3626,55 @@ _1 recipe_
 
 _37 recipes_
 
-* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
+* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
   * Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
-* [com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation](/recipes/com/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
+* [com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation](/recipes/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
   * **Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2**
   * This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Annotation](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxAnnotationMigrationToJakarta9Annotation](/recipes/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
   * **Migrate deprecated `javax.annotation` to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.ChangeJavaxAnnotationToJakarta](/recipes/io/quarkus/updates/core/quarkus30/changejavaxannotationtojakarta.md)
+* [io.quarkus.updates.core.quarkus30.ChangeJavaxAnnotationToJakarta](/recipes/quarkus/updates/core/quarkus30/changejavaxannotationtojakarta.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`.
-* [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/io/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
   * **Migrate deprecated `javax.activation` packages to `jakarta.activation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationpackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationpackagetojakarta.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Change type of classes in the `javax.annotation` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSecurityPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationsecuritypackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSecurityPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationsecuritypackagetojakarta.md)
   * **Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`**
   * Change type of classes in the `javax.annotation.security` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationsqlpackagetojakarta.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAnnotationSqlPackageToJakarta](/recipes/quarkus/updates/core/quarkus30/javaxannotationsqlpackagetojakarta.md)
   * **Migrate deprecated `javax.annotation.sql` packages to `jakarta.annotation.sql`**
   * Change type of classes in the `javax.annotation.sql` package to jakarta.
-* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/io/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
   * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/io/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
   * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/io/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
+* [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
   * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/io/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
+* [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
   * **Migrate deprecated `javax.inject` packages to `jakarta.inject`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/io/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
+* [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
   * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/io/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
   * **Migrate deprecated `javax.validation` packages to `jakarta.validation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
   * **Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
+* [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
   * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
@@ -3742,10 +3742,10 @@ _37 recipes_
 
 _12 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
   * **Migrate xmlns entries in `*.xjb` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
   * **Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
@@ -3791,7 +3791,7 @@ _1 recipe_
 
 _5 recipes_
 
-* [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
+* [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
   * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
@@ -3822,10 +3822,10 @@ _2 recipes_
 
 _4 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md)
   * **Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic JDBC schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1511.md)
   * **Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `*-jdbc.xml` files to WebLogic 15.1.1
 * [org.openrewrite.quarkus.spring.MigrateDatabaseDrivers](/recipes/quarkus/spring/migratedatabasedrivers.md)
@@ -3945,13 +3945,13 @@ _1 recipe_
 
 _5 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1412.md)
   * **Migrate xmlns entries in `*-jms.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic JMS schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1511.md)
   * **Migrate xmlns entries in `*-jms.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `*-jms.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.jakarta.JavaxJmsToJakartaJmsOnMdb](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxjmstojakartajmsonmdb.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxJmsToJakartaJmsOnMdb](/recipes/oracle/weblogic/rewrite/jakarta/javaxjmstojakartajmsonmdb.md)
   * **Migrate javax.jms to jakarta.jms on MDB**
   * Migrate javax.jms to jakarta.jms on MDB
 * [org.openrewrite.quarkus.spring.SpringBootActiveMQToQuarkus](/recipes/quarkus/spring/springbootactivemqtoquarkus.md)
@@ -3965,7 +3965,7 @@ _5 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchJobsXmlsToJakarta9BatchJobsXmls](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbatchjobsxmlstojakarta9batchjobsxmls.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBatchJobsXmlsToJakarta9BatchJobsXmls](/recipes/oracle/weblogic/rewrite/jakarta/javaxbatchjobsxmlstojakarta9batchjobsxmls.md)
   * **Migrate xmlns entries in `**/batch-jobs/*.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -3982,7 +3982,7 @@ _1 recipe_
 
 _7 recipes_
 
-* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/com/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
+* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
   * **Upgrade Jakarta JPA to 3.1 and Hibernate 6.6**
   * This recipe upgrades Jakarta JPA to 3.1 and Hibernate to 6.6 (compatible with Jakarta EE 10).
 * [org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_4_0](/recipes/java/migrate/datanucleus/upgradedatanucleus_4_0.md)
@@ -4008,34 +4008,34 @@ _7 recipes_
 
 _29 recipes_
 
-* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/com/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
+* [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
   * Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
-* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/com/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
+* [com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/oracle/weblogic/rewrite/jakarta/faces2xmigrationtojakartafaces3x.md)
   * **JSF 2.x to Jakarta Server Faces 3.x**
   * Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespaces.
-* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
   * **Faces XHTML migration for Jakarta EE 9**
   * Find and replace legacy JSF namespaces and javax references with Jakarta Faces values in XHTML files.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesConfigXmlToJakartaFaces3ConfigXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesConfigXmlToJakartaFaces3ConfigXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxfacesconfigxmltojakartafaces3configxml.md)
   * **Migrate xmlns entries in `faces-config.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
   * **Migrate xmlns entries in `*taglib*.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
   * **Migrate xmlns entries in `test-web.xml` files for Jakarta Server Faces 3 using test interfaces**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation for test interfaces like arquillian.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
   * **Migrate xmlns entries in `web-fragment.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
   * **Migrate xmlns entries in `web.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
 * [org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x](/recipes/java/migrate/jakarta/faces2xmigrationtojakartafaces3x.md)
@@ -4100,7 +4100,7 @@ _29 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
   * **Migrate xmlns entries in `*.tld` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -4108,7 +4108,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
   * **Migrate xmlns entries in `*.tld` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -4124,7 +4124,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicJtaTransactionManager](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
+* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicJtaTransactionManager](/recipes/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
   * **Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x**
   * Replace removed WebLogicJtaTransactionManager with JtaTransactionManager from Spring Framework 6.2.x.
 
@@ -4252,7 +4252,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicLoadTimeWeaver](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
+* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicLoadTimeWeaver](/recipes/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
   * **Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x**
   * Replace removed WebLogicLoadTimeWeaver with LoadTimeWeaver from Spring Framework 6.2.x.
 
@@ -4813,10 +4813,10 @@ _3 recipes_
 
 _28 recipes_
 
-* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/com/oracle/weblogic/rewrite/jakartaee9_1.md)
+* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/oracle/weblogic/rewrite/jakartaee9_1.md)
   * **Migrate to Jakarta EE 9.1**
   * These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods.
-* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
   * **Migrate from JavaX to Jakarta EE 9.1 Namespaces**
   * These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces.
 * [org.openrewrite.java.spring.opentelemetry.MigrateBraveToOpenTelemetry](/recipes/java/spring/opentelemetry/migratebravetoopentelemetry.md)
@@ -5178,7 +5178,7 @@ _78 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxMVCToJakartaEE9](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
+* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxMVCToJakartaEE9](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
   * **Migrate javax.mvc to 2.0 (Jakarta EE 9)**
   * Upgrade Jakarta Model-View-Controller libraries to 2.0 (Jakarta EE9) versions.
 
@@ -5186,10 +5186,10 @@ _1 recipe_
 
 _5 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
 * [org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
@@ -5214,7 +5214,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
   * **Migrate from JavaX to Jakarta EE 9.1 Namespaces**
   * These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces.
 
@@ -5326,7 +5326,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages](/recipes/com/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
+* [com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages](/recipes/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
   * **Mitigate Unaffected Non-EE Jakarta 9 Packages**
   * Mitigate Unaffected Non-EE Jakarta 9 Packages. Reference: [https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc](https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc)
   * Tags: non-eejakarta
@@ -5365,10 +5365,10 @@ _1 recipe_
 
 _6 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
 * [org.openrewrite.java.migrate.jakarta.OmniFacesNamespaceMigration](/recipes/java/migrate/jakarta/omnifacesnamespacemigration.md)
@@ -5481,7 +5481,7 @@ _1 recipe_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/com/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
+* [com.oracle.weblogic.rewrite.hibernate.AddHibernateOrmCore61](/recipes/oracle/weblogic/rewrite/hibernate/addhibernateormcore61.md)
   * **Add Hibernate ORM Core if has dependencies**
   * This recipe will add Hibernate ORM Core if has dependencies.
 * [org.openrewrite.java.migrate.jakarta.JavaxOrmXmlToJakartaOrmXml](/recipes/java/migrate/jakarta/javaxormxmltojakartaormxml.md)
@@ -5511,7 +5511,7 @@ _2 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxPermissionsXmlToJakarta9PermissionsXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxpermissionsxmltojakarta9permissionsxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxPermissionsXmlToJakarta9PermissionsXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxpermissionsxmltojakarta9permissionsxml.md)
   * **Migrate xmlns entries in `permissions.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -5519,24 +5519,24 @@ _1 recipe_
 
 _7 recipes_
 
-* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/com/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
+* [com.oracle.weblogic.rewrite.UpgradeJPATo31HibernateTo66](/recipes/oracle/weblogic/rewrite/upgradejpato31hibernateto66.md)
   * **Upgrade Jakarta JPA to 3.1 and Hibernate 6.6**
   * This recipe upgrades Jakarta JPA to 3.1 and Hibernate to 6.6 (compatible with Jakarta EE 10).
-* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
   * **Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 Persistence Configuration schema files to WebLogic 14.1.2
   * Tags: persistence-configuration
-* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1511.md)
   * **Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `persistence-configuration.xml` files to WebLogic 15.1.1
   * Tags: persistence-configuration
-* [com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66](/recipes/com/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
+* [com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66](/recipes/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
   * **Upgrade Hibernate to 6.6**
   * This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta EE 10 and JPA 3.1. It also upgrades a few of the commonly used Hibernate add-ons.
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo31](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo31](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
   * **Update Jakarta Persistence to 3.1**
   * Update Jakarta Persistence to 3.1.
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo32](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo32](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
   * **Update Jakarta Persistence to 3.2**
   * Update Jakarta Persistence to 3.2.
 * [org.openrewrite.java.migrate.jakarta.JavaxOrmXmlToJakartaOrmXml](/recipes/java/migrate/jakarta/javaxormxmltojakartaormxml.md)
@@ -5547,10 +5547,10 @@ _7 recipes_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/com/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
+* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
   * **Add WebLogic 15.1.1 PetClinic extras**
   * Run migration extras for migrated Spring Framework PetClinic example run on WebLogic 15.1.1.
-* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/com/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
+* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
   * **Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2**
   * Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2.
 
@@ -5596,10 +5596,10 @@ _1 recipe_
 
 _4 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries2.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
-* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/com/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries3](/recipes/oracle/weblogic/rewrite/jakarta/upgradefacesopensourcelibraries3.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
 * [org.openrewrite.java.migrate.jakarta.UpgradeFaces3OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces3opensourcelibraries.md)
@@ -5613,10 +5613,10 @@ _4 recipes_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic PubSub schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1
 
@@ -5796,13 +5796,13 @@ _1 recipe_
 
 _3 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Resource Adapter schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.jakarta.JavaxRaXmlToJakarta9RaXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxRaXmlToJakarta9RaXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxraxmltojakarta9raxml.md)
   * **Migrate xmlns entries in `ra.xml` files (Connectors).**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -5818,11 +5818,11 @@ _1 recipe_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 RDBMS schema files to WebLogic 14.1.2
   * Tags: rdbms-jar
-* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-rdbms-jar.xml` files to WebLogic 15.1.1
   * Tags: rdbms-jar
@@ -5864,11 +5864,11 @@ _1 recipe_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1412.md)
   * **Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Resource Deployment Plan schema files to WebLogic 14.1.2
   * Tags: resource-deployment-plan
-* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1511.md)
   * **Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1
   * Tags: resource-deployment-plan
@@ -6477,271 +6477,271 @@ _215 recipes_
   * **Write octal values as decimal**
   * Developers may not recognize octal values as such, mistaking them instead for decimal values. Because a leading zero silently switches the literal to base-8, what looks like `010` actually represents `8`, which is a common source of subtle numeric bugs.
   * Tags: RSPEC-S1314
-* [tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe](/recipes/tech/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe.md)
+* [tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe](/recipes/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe.md)
   * **Refaster template `AssortedRules.LogicalImplication`**
   * Don't unnecessarily repeat boolean expressions.
   * Tags: RSPEC-S2589
-* [tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe.md)
+* [tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe](/recipes/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe.md)
   * **Refaster template `BigDecimalRules.BigDecimalValueOf`**
   * Prefer `BigDecimal#valueOf(double)` over the associated constructor.
   * Tags: RSPEC-S2111
-* [tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes$CharSequenceIsEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/charsequencerulesrecipes$charsequenceisemptyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes$CharSequenceIsEmptyRecipe](/recipes/picnic/errorprone/refasterrules/charsequencerulesrecipes$charsequenceisemptyrecipe.md)
   * **Refaster template `CharSequenceRules.CharSequenceIsEmpty`**
   * Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequence's length.
   * Tags: RSPEC-S7158
-* [tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIsEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionisemptyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIsEmptyRecipe](/recipes/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionisemptyrecipe.md)
   * **Refaster template `CollectionRules.CollectionIsEmpty`**
   * Prefer `Collection#isEmpty()` over alternatives that consult the collection's size or are otherwise more contrived.
   * Tags: RSPEC-S1155
-* [tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAnyMatchRecipe](/recipes/tech/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamanymatchrecipe.md)
+* [tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAnyMatchRecipe](/recipes/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamanymatchrecipe.md)
   * **Refaster template `DoubleStreamRules.DoubleStreamAnyMatch`**
   * Prefer `DoubleStream#anyMatch(DoublePredicate)` over more contrived alternatives.
   * Tags: RSPEC-S4034
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe.md)
+* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe.md)
   * **Refaster template `EqualityRules.DoubleNegation`**
   * Avoid double negations; this is not Javascript.
   * Tags: RSPEC-S2761
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$IndirectDoubleNegationRecipe](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md)
+* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$IndirectDoubleNegationRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md)
   * **Refaster template `EqualityRules.IndirectDoubleNegation`**
   * Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead.
   * Tags: RSPEC-S1244, RSPEC-S1940
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe](/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md)
+* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md)
   * **Refaster template `EqualityRules.Negation`**
   * Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead.
   * Tags: RSPEC-S1244, RSPEC-S1940
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfiletofilerecipe.md)
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfiletofilerecipe.md)
   * **Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions**
   * Note that `File#createTempFile` treats the given prefix as a path, and ignores all but  its file name. That is, the actual prefix used is derived from all characters following the  final file separator (if any). This is not the case with `Files#createTempFile`, which  will instead throw an `IllegalArgumentException` if the prefix contains any file  separators.
   * Tags: RSPEC-S5443
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderRecipe](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderrecipe.md)
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderrecipe.md)
   * **Refaster template `FileRules.FilesNewBufferedReader`**
   * Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives.
   * Tags: RSPEC-S1943, RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamPathOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreampathofrecipe.md)
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamPathOfRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreampathofrecipe.md)
   * **Refaster template `FileRules.FilesNewInputStreamPathOf`**
   * Prefer `Files#newInputStream(Path, OpenOption...)` over less idiomatic alternatives.
   * Tags: RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamToPathRecipe](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreamtopathrecipe.md)
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamToPathRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreamtopathrecipe.md)
   * **Refaster template `FileRules.FilesNewInputStreamToPath`**
   * Prefer `Files#newInputStream(Path, OpenOption...)` over less idiomatic alternatives.
   * Tags: RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamPathOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreampathofrecipe.md)
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamPathOfRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreampathofrecipe.md)
   * **Refaster template `FileRules.FilesNewOutputStreamPathOf`**
   * Prefer `Files#newOutputStream(Path, OpenOption...)` over less idiomatic alternatives.
   * Tags: RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamToPathRecipe](/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreamtopathrecipe.md)
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamToPathRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreamtopathrecipe.md)
   * **Refaster template `FileRules.FilesNewOutputStreamToPath`**
   * Prefer `Files#newOutputStream(Path, OpenOption...)` over less idiomatic alternatives.
   * Tags: RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf4Recipe](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof4recipe.md)
+* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf4Recipe](/recipes/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof4recipe.md)
   * **Refaster template `ImmutableMapRules.ImmutableMapOf4`**
   * Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level.
   * Tags: RSPEC-S107
-* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf5Recipe](/recipes/tech/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof5recipe.md)
+* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf5Recipe](/recipes/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof5recipe.md)
   * **Refaster template `ImmutableMapRules.ImmutableMapOf5`**
   * Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level.
   * Tags: RSPEC-S107
-* [tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAnyMatchRecipe](/recipes/tech/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamanymatchrecipe.md)
+* [tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAnyMatchRecipe](/recipes/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamanymatchrecipe.md)
   * **Refaster template `IntStreamRules.IntStreamAnyMatch`**
   * Prefer `IntStream#anyMatch(IntPredicate)` over more contrived alternatives.
   * Tags: RSPEC-S4034
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbooleanarraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbooleanarraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatBooleanArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatBooleanArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(boolean[] actual, Supplier&lt;@Nullable String&gt; message, boolean[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean[] actual, Supplier&lt;@Nullable String&gt; message, boolean[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbytearraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbytearraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatByteArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatByteArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(byte[] actual, Supplier&lt;@Nullable String&gt; message, byte[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(byte[] actual, Supplier&lt;@Nullable String&gt; message, byte[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatchararraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatchararraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatCharArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatCharArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(char[] actual, Supplier&lt;@Nullable String&gt; message, char[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(char[] actual, Supplier&lt;@Nullable String&gt; message, char[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyExceptionRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcodewithfailmessagesupplierdoesnotthrowanyexceptionrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyExceptionRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcodewithfailmessagesupplierdoesnotthrowanyexceptionrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Executable throwingCallable, Supplier&lt;@Nullable String&gt; supplier) \{         assertDoesNotThrow(throwingCallable, supplier);     \}          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(ThrowingSupplier&lt;?&gt; throwingCallable, Supplier&lt;@Nullable String&gt; supplier) \{         assertDoesNotThrow(throwingCallable, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, Supplier&lt;@Nullable String&gt; supplier) \{         assertThatCode(throwingCallable).withFailMessage(supplier).doesNotThrowAnyException();     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(double[] actual, Supplier&lt;@Nullable String&gt; message, double[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(double[] actual, Supplier&lt;@Nullable String&gt; message, double[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlywithoffsetrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlywithoffsetrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffset`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffset \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(double[] actual, Supplier&lt;@Nullable String&gt; messageSupplier, double[] expected, double delta) \{         assertArrayEquals(expected, actual, delta, messageSupplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(double[] actual, Supplier&lt;@Nullable String&gt; messageSupplier, double[] expected, double delta) \{         assertThat(actual).withFailMessage(messageSupplier).containsExactly(expected, offset(delta));     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlywithoffsetrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlywithoffsetrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffset`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffset \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected, float delta) \{         assertArrayEquals(expected, actual, delta, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected, float delta) \{         assertThat(actual).withFailMessage(message).containsExactly(expected, offset(delta));     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatintarraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatintarraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatIntArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatIntArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(int[] actual, Supplier&lt;@Nullable String&gt; message, int[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(int[] actual, Supplier&lt;@Nullable String&gt; message, int[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatlongarraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatlongarraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatLongArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatLongArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(long[] actual, Supplier&lt;@Nullable String&gt; message, long[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(long[] actual, Supplier&lt;@Nullable String&gt; message, long[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatobjectarraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatobjectarraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatObjectArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatObjectArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object[] actual, Supplier&lt;@Nullable String&gt; message, Object[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object[] actual, Supplier&lt;@Nullable String&gt; message, Object[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatshortarraywithfailmessagesuppliercontainsexactlyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatshortarraywithfailmessagesuppliercontainsexactlyrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatShortArrayWithFailMessageSupplierContainsExactly`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatShortArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(short[] actual, Supplier&lt;@Nullable String&gt; message, short[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(short[] actual, Supplier&lt;@Nullable String&gt; message, short[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisexactlyinstanceofrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOfRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisexactlyinstanceofrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOf`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOf&lt;T extends Throwable&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Executable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThrowsExactly(clazz, throwingCallable, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThatThrownBy(throwingCallable).withFailMessage(supplier).isExactlyInstanceOf(clazz);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsInstanceOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisinstanceofrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsInstanceOfRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisinstanceofrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageSupplierIsInstanceOf`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatThrownByWithFailMessageSupplierIsInstanceOf&lt;T extends Throwable&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Executable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThrows(clazz, throwingCallable, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThatThrownBy(throwingCallable).withFailMessage(supplier).isInstanceOf(clazz);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsFalseRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisfalserecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsFalseRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisfalserecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsFalse`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsFalse \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertFalse(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isFalse();     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsInstanceOfRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisinstanceofrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsInstanceOfRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisinstanceofrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsInstanceOf`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsInstanceOf&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertInstanceOf(clazz, actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThat(actual).withFailMessage(supplier).isInstanceOf(clazz);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotNullRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotnullrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotNullRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotnullrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNotNull`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsNotNull \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertNotNull(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isNotNull();     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotSameAsRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotsameasrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotSameAsRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotsameasrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNotSameAs`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsNotSameAs \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertNotSame(expected, actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertThat(actual).withFailMessage(supplier).isNotSameAs(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNullRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnullrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNullRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnullrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNull`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsNull \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertNull(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isNull();     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsSameAsRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierissameasrecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsSameAsRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierissameasrecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsSameAs`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsSameAs \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertSame(expected, actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertThat(actual).withFailMessage(supplier).isSameAs(expected);     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsTrueRecipe](/recipes/tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplieristruerecipe.md)
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsTrueRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplieristruerecipe.md)
   * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsTrue`**
   * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsTrue \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertTrue(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isTrue();     \} \} ``` .
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamAnyMatchRecipe](/recipes/tech/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamanymatchrecipe.md)
+* [tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamAnyMatchRecipe](/recipes/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamanymatchrecipe.md)
   * **Refaster template `LongStreamRules.LongStreamAnyMatch`**
   * Prefer `LongStream#anyMatch(LongPredicate)` over more contrived alternatives.
   * Tags: RSPEC-S4034
-* [tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowRecipe](/recipes/tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowrecipe.md)
+* [tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowRecipe](/recipes/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowrecipe.md)
   * **Refaster template `OptionalRules.OptionalOrElseThrow`**
   * Prefer `Optional#orElseThrow()` over the less explicit `Optional#get()`.
   * Tags: RSPEC-S3655
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanOrEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanOrEqualToRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe.md)
   * **Refaster template `PrimitiveRules.GreaterThanOrEqualTo`**
   * Avoid contrived ways of expressing the &quot;greater than or equal to&quot; relationship.
   * Tags: RSPEC-S1940
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe.md)
   * **Refaster template `PrimitiveRules.GreaterThan`**
   * Avoid contrived ways of expressing the &quot;greater than&quot; relationship.
   * Tags: RSPEC-S1940
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanOrEqualToRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanOrEqualToRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe.md)
   * **Refaster template `PrimitiveRules.LessThanOrEqualTo`**
   * Avoid contrived ways of expressing the &quot;less than or equal to&quot; relationship.
   * Tags: RSPEC-S1940
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanrecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanrecipe.md)
   * **Refaster template `PrimitiveRules.LessThan`**
   * Avoid contrived ways of expressing the &quot;less than&quot; relationship.
   * Tags: RSPEC-S1940
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampDoubleRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampdoublerecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampDoubleRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampdoublerecipe.md)
   * **Refaster template `PrimitiveRules.MathClampDouble`**
   * Prefer `Math#clamp(double, double, double)` over more verbose alternatives.
   * Tags: RSPEC-S6885
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampfloatrecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampfloatrecipe.md)
   * **Refaster template `PrimitiveRules.MathClampFloat`**
   * Prefer `Math#clamp(float, float, float)` over more verbose alternatives.
   * Tags: RSPEC-S6885
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampIntRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampintrecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampIntRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampintrecipe.md)
   * **Refaster template `PrimitiveRules.MathClampInt`**
   * Prefer `Math#clamp(long, int, int)` over more verbose alternatives.
   * Tags: RSPEC-S6885
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampLongRecipe](/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclamplongrecipe.md)
+* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampLongRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclamplongrecipe.md)
   * **Refaster template `PrimitiveRules.MathClampLong`**
   * Prefer `Math#clamp(long, long, long)` over more verbose alternatives.
   * Tags: RSPEC-S6885
-* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe](/recipes/tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe.md)
+* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe](/recipes/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe.md)
   * **Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives**
   * Additionally, for large bounds, the unnecessary floating point arithmetic prevents some  `long` values from being generated.
   * Tags: RSPEC-S1905
-* [tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe](/recipes/tech/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completabletomonorecipe.md)
+* [tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe](/recipes/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completabletomonorecipe.md)
   * **Refaster template `RxJava2AdapterRules.CompletableToMono`**
   * Use the fluent API style when using `RxJava2Adapter#completableToMono`.
   * Tags: RSPEC-S4968
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamCountRecipe](/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamcountrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamCountRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamcountrecipe.md)
   * **Refaster template `StreamRules.StreamCount`**
   * Recipe created for the following Refaster template: ```java static final class StreamCount&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     long before(Stream&lt;T&gt; stream) \{         return stream.collect(counting());     \}          @AfterTemplate     long after(Stream&lt;T&gt; stream) \{         return stream.count();     \} \} ``` .
   * Tags: RSPEC-S4266
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapCollectRecipe](/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streammapcollectrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapCollectRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streammapcollectrecipe.md)
   * **Refaster template `StreamRules.StreamMapCollect`**
   * Recipe created for the following Refaster template: ```java static final class StreamMapCollect&lt;T, U, R&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     R before(Stream&lt;T&gt; stream, Function&lt;? super T, ? extends U&gt; mapper, Collector&lt;? super U, ?, R&gt; collector) \{         return stream.collect(mapping(mapper, collector));     \}          @AfterTemplate     R after(Stream&lt;T&gt; stream, Function&lt;? super T, ? extends U&gt; mapper, Collector&lt;? super U, ?, R&gt; collector) \{         return stream.map(mapper).collect(collector);     \} \} ``` .
   * Tags: RSPEC-S4266
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMaxRecipe](/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streammaxrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMaxRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streammaxrecipe.md)
   * **Refaster template `StreamRules.StreamMax`**
   * Recipe created for the following Refaster template: ```java static final class StreamMax&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     Optional&lt;T&gt; before(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return Refaster.anyOf(stream.min(comparator.reversed()), Streams.findLast(stream.sorted(comparator)), stream.collect(maxBy(comparator)));     \}          @AfterTemplate     Optional&lt;T&gt; after(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return stream.max(comparator);     \} \} ``` .
   * Tags: RSPEC-S4266
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMinRecipe](/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamminrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMinRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamminrecipe.md)
   * **Refaster template `StreamRules.StreamMin`**
   * Recipe created for the following Refaster template: ```java static final class StreamMin&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     Optional&lt;T&gt; before(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return Refaster.anyOf(stream.max(comparator.reversed()), stream.sorted(comparator).findFirst(), stream.collect(minBy(comparator)));     \}          @AfterTemplate     Optional&lt;T&gt; after(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return stream.min(comparator);     \} \} ``` .
   * Tags: RSPEC-S4266
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOfNullableRecipe](/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamofnullablerecipe.md)
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOfNullableRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamofnullablerecipe.md)
   * **Refaster template `StreamRules.StreamOfNullable`**
   * Prefer `Stream#ofNullable(Object)` over more contrived alternatives.
   * Tags: RSPEC-S2583
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceRecipe](/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamreducerecipe.md)
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamreducerecipe.md)
   * **Refaster template `StreamRules.StreamReduce`**
   * Recipe created for the following Refaster template: ```java static final class StreamReduce&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     Optional&lt;T&gt; before(Stream&lt;T&gt; stream, BinaryOperator&lt;T&gt; accumulator) \{         return stream.collect(reducing(accumulator));     \}          @AfterTemplate     Optional&lt;T&gt; after(Stream&lt;T&gt; stream, BinaryOperator&lt;T&gt; accumulator) \{         return stream.reduce(accumulator);     \} \} ``` .
   * Tags: RSPEC-S4266
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceWithIdentityRecipe](/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamreducewithidentityrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceWithIdentityRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamreducewithidentityrecipe.md)
   * **Refaster template `StreamRules.StreamReduceWithIdentity`**
   * Recipe created for the following Refaster template: ```java static final class StreamReduceWithIdentity&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     T before(Stream&lt;T&gt; stream, T identity, BinaryOperator&lt;T&gt; accumulator) \{         return stream.collect(reducing(identity, accumulator));     \}          @AfterTemplate     T after(Stream&lt;T&gt; stream, T identity, BinaryOperator&lt;T&gt; accumulator) \{         return stream.reduce(identity, accumulator);     \} \} ``` .
   * Tags: RSPEC-S4266
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$emptystringrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$emptystringrecipe.md)
   * **Refaster template `StringRules.EmptyString`**
   * Avoid unnecessary creation of new empty `String` objects; use the empty string literal instead.
   * Tags: RSPEC-S2129
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe.md)
   * **Refaster template `StringRules.StringIdentity`**
   * Avoid unnecessary creation of new `String` objects.
   * Tags: RSPEC-S2129
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharFromIndexRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharfromindexrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharFromIndexRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharfromindexrecipe.md)
   * **Refaster template `StringRules.StringIndexOfCharFromIndex`**
   * Prefer `String#indexOf(int, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringFromIndexRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringfromindexrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringFromIndexRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringfromindexrecipe.md)
   * **Refaster template `StringRules.StringIndexOfStringFromIndex`**
   * Prefer `String#indexOf(String, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe.md)
   * **Refaster template `StringRules.StringIsEmpty`**
   * Prefer `String#isEmpty()` over alternatives that consult the string's length.
   * Tags: RSPEC-S7158
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharrecipe.md)
   * **Refaster template `StringRules.StringLastIndexOfChar`**
   * Prefer `String#lastIndexOf(int, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringrecipe.md)
   * **Refaster template `StringRules.StringLastIndexOfString`**
   * Prefer `String#lastIndexOf(String, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringStartsWithRecipe](/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringstartswithrecipe.md)
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringStartsWithRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringstartswithrecipe.md)
   * **Refaster template `StringRules.StringStartsWith`**
   * Prefer `String#startsWith(String, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualRecipe](/recipes/tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalrecipe.md)
+* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualRecipe](/recipes/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalrecipe.md)
   * **Refaster template `TestNGToAssertJRules.AssertEqual`**
   * Recipe created for the following Refaster template: ```java @SuppressWarnings(value = &quot;java:S1448&quot;) static final class AssertEqual \{          @BeforeTemplate     void before(boolean actual, boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(boolean actual, Boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Boolean actual, boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Boolean actual, Boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(byte actual, byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(byte actual, Byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Byte actual, byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Byte actual, Byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(char actual, char expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(char actual, Character expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Character actual, char expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Character actual, Character expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(short actual, short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(short actual, Short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Short actual, short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Short actual, Short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(int actual, int expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(int actual, Integer expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Integer actual, int expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Integer actual, Integer expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(long actual, long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(long actual, Long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Long actual, long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Long actual, Long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(float actual, float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(float actual, Float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Float actual, float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Float actual, Float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(double actual, double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(double actual, Double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Double actual, double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Double actual, Double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Object actual, Object expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(String actual, String expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, Map&lt;?, ?&gt; expected) \{         assertEquals(actual, expected);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Object expected) \{         assertThat(actual).isEqualTo(expected);     \} \} ``` .
   * Tags: RSPEC-S1448
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualWithMessageRecipe](/recipes/tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalwithmessagerecipe.md)
+* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualWithMessageRecipe](/recipes/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalwithmessagerecipe.md)
   * **Refaster template `TestNGToAssertJRules.AssertEqualWithMessage`**
   * Recipe created for the following Refaster template: ```java @SuppressWarnings(value = &quot;java:S1448&quot;) static final class AssertEqualWithMessage \{          @BeforeTemplate     void before(boolean actual, String message, boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(boolean actual, String message, Boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Boolean actual, String message, boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Boolean actual, String message, Boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(byte actual, String message, byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(byte actual, String message, Byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Byte actual, String message, byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Byte actual, String message, Byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(char actual, String message, char expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(char actual, String message, Character expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Character actual, String message, char expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Character actual, String message, Character expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(short actual, String message, short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(short actual, String message, Short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Short actual, String message, short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Short actual, String message, Short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(int actual, String message, int expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(int actual, String message, Integer expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Integer actual, String message, int expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Integer actual, String message, Integer expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(long actual, String message, long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(long actual, String message, Long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Long actual, String message, long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Long actual, String message, Long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(float actual, String message, float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(float actual, String message, Float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Float actual, String message, float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Float actual, String message, Float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(double actual, String message, double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(double actual, String message, Double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Double actual, String message, double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Double actual, String message, Double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Object actual, String message, Object expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(String actual, String message, String expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, String message, Map&lt;?, ?&gt; expected) \{         assertEquals(actual, expected, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, String message, Object expected) \{         assertThat(actual).withFailMessage(message).isEqualTo(expected);     \} \} ``` .
   * Tags: RSPEC-S1448
@@ -6777,115 +6777,115 @@ _2 recipes_
 
 _37 recipes_
 
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
   * **Migrate WebLogic Schemas to 14.1.2**
   * This recipe will migrate WebLogic schemas to 14.1.2
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
   * **Migrate WebLogic Schemas to 15.1.1**
   * This recipe will migrate WebLogic schemas to 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1412.md)
   * **Migrate xmlns entries in `application-client.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Application Client schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1511.md)
   * **Migrate xmlns entries in `application-client.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `application-client.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Application schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-application.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md)
   * **Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic JDBC schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1511.md)
   * **Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `*-jdbc.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1412.md)
   * **Migrate xmlns entries in `*-jms.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic JMS schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1511.md)
   * **Migrate xmlns entries in `*-jms.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `*-jms.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
   * **Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 Persistence Configuration schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1511.md)
   * **Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `persistence-configuration.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicplanxmlnamespace1412.md)
   * **Migrate xmlns entries in `plan.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Plan schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicplanxmlnamespace1511.md)
   * **Migrate xmlns entries in `plan.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `plan.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic PubSub schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Resource Adapter schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 RDBMS schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-rdbms-jar.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1412.md)
   * **Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Resource Deployment Plan schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1511.md)
   * **Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Web Services schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-webservices.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Web Service Policy Reference schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic WSEE Client Handler Chains schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic WSEE Standalone Client schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicXmlCreateIfNotExists1511](/recipes/com/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlCreateIfNotExists1511](/recipes/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md)
   * **Create `weblogic.xml` if it does not exist**
   * This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespace if it does not already exist.
-* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesJPA](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesJPA](/recipes/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
   * **Add `prefer-application-packages` for JPA in `weblogic.xml`**
   * This recipe will add a `prefer-application-packages` entry for Jakarta Persistence in `weblogic.xml` if it does not already exist.
-* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesSlf4j](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesSlf4j](/recipes/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
   * **Add `prefer-application-packages` for SLF4J in `weblogic.xml`**
   * This recipe will add a `prefer-application-packages` entry for SLF4J in `weblogic.xml` if it does not already exist.
-* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md)
   * **Migrate xmlns entries in `weblogic.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md)
   * **Migrate xmlns entries in `weblogic.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic.xml` files to WebLogic 15.1.1
 
@@ -6893,13 +6893,13 @@ _37 recipes_
 
 _3 recipes_
 
-* [software.amazon.awssdk.v2migration.AddS3EventNotificationDependency](/recipes/software/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
+* [software.amazon.awssdk.v2migration.AddS3EventNotificationDependency](/recipes/amazon/awssdk/v2migration/adds3eventnotificationdependency.md)
   * **Add AWS SDK for Java v2 S3 Event Notification dependency if needed**
   * This recipe will add the Java v2 S3 Event Notification dependency if v1 S3EventNotification is used
-* [software.amazon.awssdk.v2migration.AddTransferManagerDependency](/recipes/software/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
+* [software.amazon.awssdk.v2migration.AddTransferManagerDependency](/recipes/amazon/awssdk/v2migration/addtransfermanagerdependency.md)
   * **Add AWS SDK for Java v2 S3 Transfer Manager dependency if needed**
   * This recipe will add the Java v2 S3 Transfer Manager dependency if v1 Transfer Manager is used
-* [software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2](/recipes/software/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
+* [software.amazon.awssdk.v2migration.AwsSdkJavaV1ToV2](/recipes/amazon/awssdk/v2migration/awssdkjavav1tov2.md)
   * **Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2**
   * This recipe will apply changes required for migrating from the AWS SDK for Java v1 to the AWS SDK for Java v2.
 
@@ -6926,10 +6926,10 @@ _1 recipe_
 
 _39 recipes_
 
-* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/io/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
   * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
-* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/io/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
+* [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
   * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.apache.commons.io.RelocateApacheCommonsIo](/recipes/apache/commons/io/relocateapachecommonsio.md)
@@ -7057,7 +7057,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.AddJakartaEE9ServletDependencyIfUsingServletContext](/recipes/com/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
+* [com.oracle.weblogic.rewrite.jakarta.AddJakartaEE9ServletDependencyIfUsingServletContext](/recipes/oracle/weblogic/rewrite/jakarta/addjakartaee9servletdependencyifusingservletcontext.md)
   * **Add Jakarta EE 9 Servlet Dependency**
   * Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext
 
@@ -7559,10 +7559,10 @@ _142 recipes_
 
 _2 recipes_
 
-* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataBom](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md)
+* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataBom](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md)
   * **Upgrade Spring Data BOM to 2024.1.x**
   * Upgrade Spring Data BOM to 2024.1.x version.
-* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataJpa](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md)
+* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataJpa](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md)
   * **Upgrade Spring Data JPA to 3.4.6**
   * Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-data-bom v2024.1.x
 
@@ -7616,31 +7616,31 @@ _2 recipes_
 
 _9 recipes_
 
-* [com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager](/recipes/com/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
+* [com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager](/recipes/oracle/weblogic/rewrite/examples/spring/changecachemanagertosimplecachemanager.md)
   * **Change cacheManager to use the SimpleCacheManager**
   * Change cacheManager to use the SimpleCacheManager.
-* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/com/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
+* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
   * **Add WebLogic 15.1.1 PetClinic extras**
   * Run migration extras for migrated Spring Framework PetClinic example run on WebLogic 15.1.1.
-* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/com/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
+* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
   * **Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2**
   * Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2.
-* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataBom](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md)
+* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataBom](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md)
   * **Upgrade Spring Data BOM to 2024.1.x**
   * Upgrade Spring Data BOM to 2024.1.x version.
-* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataJpa](/recipes/com/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md)
+* [com.oracle.weblogic.rewrite.spring.data.UpgradeSpringDataJpa](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md)
   * **Upgrade Spring Data JPA to 3.4.6**
   * Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-data-bom v2024.1.x
-* [com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
+* [com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler](/recipes/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
   * **Update Default Servlet Handler for Spring Framework if empty**
   * This recipe will update Spring Framework default servlet handler if empty, as noted in the Spring Framework 6.2 [documentation](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/default-servlet-handler.html).
-* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicJtaTransactionManager](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
+* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicJtaTransactionManager](/recipes/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
   * **Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x**
   * Replace removed WebLogicJtaTransactionManager with JtaTransactionManager from Spring Framework 6.2.x.
-* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicLoadTimeWeaver](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
+* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicLoadTimeWeaver](/recipes/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
   * **Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x**
   * Replace removed WebLogicLoadTimeWeaver with LoadTimeWeaver from Spring Framework 6.2.x.
-* [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
+* [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
   * **Migrate to Spring Framework 6.2 for WebLogic 15.1.1**
   * Migrate applications to the Spring Framework 6.2 release and compatibility with WebLogic 15.1.1.
 
@@ -8058,13 +8058,13 @@ _9 recipes_
 
 _3 recipes_
 
-* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib2_1](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md)
+* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib2_1](/recipes/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md)
   * **Add implicit TLD with taglib 2.1**
   * Add `implicit.tld` file with taglib 2.1 to `src/main/webapp/WEB-INF/tags`.
-* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
+* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0](/recipes/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
   * **Add implicit TLD with taglib 3.0**
   * Add `implicit.tld` file with taglib 3.0 to `src/main/webapp/WEB-INF/tags`.
-* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxFacesTagLibraryXmlToJakartaFaces3TagLibraryXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxfacestaglibraryxmltojakartafaces3taglibraryxml.md)
   * **Migrate xmlns entries in `*taglib*.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -8072,7 +8072,7 @@ _3 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.MigrateTagLibsToJakartaEE9](/recipes/com/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
+* [com.oracle.weblogic.rewrite.jakarta.MigrateTagLibsToJakartaEE9](/recipes/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
   * **Migrate Tag Libraries to 2.0 (Jakarta EE 9)**
   * Upgrade Jakarta Standard Tag libraries to 2.0 (Jakarta EE9) versions.
 
@@ -8096,7 +8096,7 @@ _1 recipe_
 
 _5 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxTestXmlsToJakartaTestsXmls](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestxmlstojakartatestsxmls.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxTestXmlsToJakartaTestsXmls](/recipes/oracle/weblogic/rewrite/jakarta/javaxtestxmlstojakartatestsxmls.md)
   * **Migrate xmlns entries in `test-*.xml` files for Jakarta EE 9.1 using test interfaces**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation for test interfaces like arquillian.
 * [org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration](/recipes/java/spring/boot2/springboot2junit4to5migration.md)
@@ -8285,7 +8285,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxTestWebXmlToJakartaTestWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxtestwebxmltojakartatestwebxml5.md)
   * **Migrate xmlns entries in `test-web.xml` files for Jakarta Server Faces 3 using test interfaces**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation for test interfaces like arquillian.
 
@@ -8301,7 +8301,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebJspTagLibraryTldsToJakarta9WebJspTagLibraryTlds](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebjsptaglibrarytldstojakarta9webjsptaglibrarytlds.md)
   * **Migrate xmlns entries in `*.tld` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -8325,7 +8325,7 @@ _1 recipe_
 
 _3 recipes_
 
-* [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/io/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
+* [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
   * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxTransactionMigrationToJakartaTransaction](/recipes/java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
@@ -8355,7 +8355,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages](/recipes/com/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
+* [com.oracle.weblogic.rewrite.jakarta.MitigateUnaffectedNonEEJakarta9Packages](/recipes/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
   * **Mitigate Unaffected Non-EE Jakarta 9 Packages**
   * Mitigate Unaffected Non-EE Jakarta 9 Packages. Reference: [https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc](https://github.com/jakartaee/platform/blob/main/namespace/unaffected-packages.adoc)
 
@@ -8380,11 +8380,11 @@ _4 recipes_
 
 _5 recipes_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxValidationMappingXmlsToJakarta9ValidationMappingXmls](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxvalidationmappingxmlstojakarta9validationmappingxmls.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxValidationMappingXmlsToJakarta9ValidationMappingXmls](/recipes/oracle/weblogic/rewrite/jakarta/javaxvalidationmappingxmlstojakarta9validationmappingxmls.md)
   * **Migrate xmlns entries in `**/validation/*.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
   * Tags: validation-mapping
-* [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/io/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
+* [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
   * **Migrate deprecated `javax.validation` packages to `jakarta.validation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 * [org.openrewrite.java.migrate.jakarta.JavaxValidationMigrationToJakartaValidation](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
@@ -8606,31 +8606,31 @@ _57 recipes_
 
 _10 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicXmlCreateIfNotExists1511](/recipes/com/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlCreateIfNotExists1511](/recipes/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md)
   * **Create `weblogic.xml` if it does not exist**
   * This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespace if it does not already exist.
   * Tags: web-app
-* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesJPA](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesJPA](/recipes/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
   * **Add `prefer-application-packages` for JPA in `weblogic.xml`**
   * This recipe will add a `prefer-application-packages` entry for Jakarta Persistence in `weblogic.xml` if it does not already exist.
   * Tags: web-app
-* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesSlf4j](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesSlf4j](/recipes/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
   * **Add `prefer-application-packages` for SLF4J in `weblogic.xml`**
   * This recipe will add a `prefer-application-packages` entry for SLF4J in `weblogic.xml` if it does not already exist.
   * Tags: web-app
-* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md)
   * **Migrate xmlns entries in `weblogic.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic schema files to WebLogic 14.1.2
   * Tags: web-app
-* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md)
   * **Migrate xmlns entries in `weblogic.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic.xml` files to WebLogic 15.1.1
   * Tags: web-app
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebFragmentXmlToJakartaWebFragmentXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
   * **Migrate xmlns entries in `web-fragment.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
   * Tags: web-fragment
-* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxWebToJakartaWeb9](/recipes/com/oracle/weblogic/rewrite/jakarta/migratejavaxwebtojakartaweb9.md)
+* [com.oracle.weblogic.rewrite.jakarta.MigrateJavaxWebToJakartaWeb9](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxwebtojakartaweb9.md)
   * **Migrate javax.javaee-web-api to jakarta.jakartaee-web-api (Jakarta EE 9)**
   * Update Java EE Web API dependency to Jakarta EE Web Profile API 9.1
   * Tags: web-api
@@ -8656,172 +8656,172 @@ _1 recipe_
 
 _56 recipes_
 
-* [com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope](/recipes/com/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
+* [com.oracle.weblogic.rewrite.ChangeJAXBBindAPIDependencyScope](/recipes/oracle/weblogic/rewrite/changejaxbbindapidependencyscope.md)
   * **Change the jakarta.xml.bind-api dependency to scope provided when jakartaee-api 9.x is provided.**
   * This recipe will change the jakarta.xml.bind-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.xml.bind-api jar from being deployed to WebLogic which can cause class conflicts.
-* [com.oracle.weblogic.rewrite.ChangeJakartaInjectAPIDependencyScope](/recipes/com/oracle/weblogic/rewrite/changejakartainjectapidependencyscope.md)
+* [com.oracle.weblogic.rewrite.ChangeJakartaInjectAPIDependencyScope](/recipes/oracle/weblogic/rewrite/changejakartainjectapidependencyscope.md)
   * **Change the jakarta.inject-api dependency to scope provided when jakartaee-api 9.x is provided.**
   * This recipe will change the jakarta.inject-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.inject-api jar from being deployed to WebLogic which can cause class conflicts.
-* [com.oracle.weblogic.rewrite.ChangeJakartaWebServiceRSAPIDependencyScope](/recipes/com/oracle/weblogic/rewrite/changejakartawebservicersapidependencyscope.md)
+* [com.oracle.weblogic.rewrite.ChangeJakartaWebServiceRSAPIDependencyScope](/recipes/oracle/weblogic/rewrite/changejakartawebservicersapidependencyscope.md)
   * **Change the jakarta.ws.rs-api dependency to scope provided when jakartaee-api 9.x is provided.**
   * This recipe will change the jakarta.ws.rs-api dependency scope to provided when jakarta.jakartaee-api version 9.x is provided in WebLogic 15.1.1. This prevents the jakarta.ws.rs-api jar from being deployed to WebLogic which can cause class conflicts.
-* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/com/oracle/weblogic/rewrite/jakartaee9_1.md)
+* [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/oracle/weblogic/rewrite/jakartaee9_1.md)
   * **Migrate to Jakarta EE 9.1**
   * These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods.
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1412](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1412.md)
   * **Migrate WebLogic Schemas to 14.1.2**
   * This recipe will migrate WebLogic schemas to 14.1.2
-* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/com/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
+* [com.oracle.weblogic.rewrite.MigrateWebLogicSchemasTo1511](/recipes/oracle/weblogic/rewrite/migrateweblogicschemasto1511.md)
   * **Migrate WebLogic Schemas to 15.1.1**
   * This recipe will migrate WebLogic schemas to 15.1.1
-* [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
+* [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
   * **Migrate to WebLogic 14.1.1**
   * This recipe will apply changes required for migrating to WebLogic 14.1.1
-* [com.oracle.weblogic.rewrite.UpgradeTo1412](/recipes/com/oracle/weblogic/rewrite/upgradeto1412.md)
+* [com.oracle.weblogic.rewrite.UpgradeTo1412](/recipes/oracle/weblogic/rewrite/upgradeto1412.md)
   * **Migrate to WebLogic 14.1.2**
   * This recipe will apply changes required for migrating to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.UpgradeTo1511](/recipes/com/oracle/weblogic/rewrite/upgradeto1511.md)
+* [com.oracle.weblogic.rewrite.UpgradeTo1511](/recipes/oracle/weblogic/rewrite/upgradeto1511.md)
   * **Migrate to WebLogic 15.1.1**
   * This recipe will apply changes required for migrating to WebLogic 15.1.1 and Jakarta EE 9.1
-* [com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation](/recipes/com/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
+* [com.oracle.weblogic.rewrite.WebLogic1412JavaXmlBindMitigation](/recipes/oracle/weblogic/rewrite/weblogic1412javaxmlbindmitigation.md)
   * **Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1.2**
   * This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1412.md)
   * **Migrate xmlns entries in `application-client.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Application Client schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicapplicationclientxmlnamespace1511.md)
   * **Migrate xmlns entries in `application-client.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `application-client.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Application schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-application.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1412.md)
   * **Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic JDBC schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicjdbcxmlnamespace1511.md)
   * **Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `*-jdbc.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1412.md)
   * **Migrate xmlns entries in `*-jms.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic JMS schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicJmsXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicjmsxmlnamespace1511.md)
   * **Migrate xmlns entries in `*-jms.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `*-jms.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1412.md)
   * **Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 Persistence Configuration schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicpersistenceconfigurationxmlnamespace1511.md)
   * **Migrate xmlns entries in `persistence-configuration.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `persistence-configuration.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicplanxmlnamespace1412.md)
   * **Migrate xmlns entries in `plan.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Plan schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicplanxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPlanXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicplanxmlnamespace1511.md)
   * **Migrate xmlns entries in `plan.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `plan.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic PubSub schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicPubSubXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Resource Adapter schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicraxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic EJB 3.2 RDBMS schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicRdbmsJarXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicrdbmsjarxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-rdbms-jar.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-rdbms-jar.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1412.md)
   * **Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Resource Deployment Plan schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicresourcedeploymentplanxmlnamespace1511.md)
   * **Migrate xmlns entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Web Services schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-webservices.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Web Service Policy Reference schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic WSEE Client Handler Chains schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic WSEE Standalone Client schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicXmlCreateIfNotExists1511](/recipes/com/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlCreateIfNotExists1511](/recipes/oracle/weblogic/rewrite/weblogicxmlcreateifnotexists1511.md)
   * **Create `weblogic.xml` if it does not exist**
   * This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespace if it does not already exist.
-* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesJPA](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesJPA](/recipes/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesjpa.md)
   * **Add `prefer-application-packages` for JPA in `weblogic.xml`**
   * This recipe will add a `prefer-application-packages` entry for Jakarta Persistence in `weblogic.xml` if it does not already exist.
-* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesSlf4j](/recipes/com/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlPreferApplicationPackagesSlf4j](/recipes/oracle/weblogic/rewrite/weblogicxmlpreferapplicationpackagesslf4j.md)
   * **Add `prefer-application-packages` for SLF4J in `weblogic.xml`**
   * This recipe will add a `prefer-application-packages` entry for SLF4J in `weblogic.xml` if it does not already exist.
-* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1412.md)
   * **Migrate xmlns entries in `weblogic.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicxmlwebappnamespace1511.md)
   * **Migrate xmlns entries in `weblogic.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib2_1](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md)
+* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib2_1](/recipes/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib2_1.md)
   * **Add implicit TLD with taglib 2.1**
   * Add `implicit.tld` file with taglib 2.1 to `src/main/webapp/WEB-INF/tags`.
-* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0](/recipes/com/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
+* [com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0](/recipes/oracle/weblogic/rewrite/examples/addimplicittldfilewithtaglib3_0.md)
   * **Add implicit TLD with taglib 3.0**
   * Add `implicit.tld` file with taglib 3.0 to `src/main/webapp/WEB-INF/tags`.
-* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/com/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
+* [com.oracle.weblogic.rewrite.examples.spring.MigratedPetClinicExtrasFor1511](/recipes/oracle/weblogic/rewrite/examples/spring/migratedpetclinicextrasfor1511.md)
   * **Add WebLogic 15.1.1 PetClinic extras**
   * Run migration extras for migrated Spring Framework PetClinic example run on WebLogic 15.1.1.
-* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/com/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
+* [com.oracle.weblogic.rewrite.examples.spring.SetupSpringFrameworkPetClinicFor1412](/recipes/oracle/weblogic/rewrite/examples/spring/setupspringframeworkpetclinicfor1412.md)
   * **Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2**
   * Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2.
-* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaEeNamespaces9_1](/recipes/oracle/weblogic/rewrite/jakarta/jakartaeenamespaces9_1.md)
   * **Migrate from JavaX to Jakarta EE 9.1 Namespaces**
   * These recipes help with Migration From JavaX to Jakarta EE 9.1 Namespaces.
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo31](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo31](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto31.md)
   * **Update Jakarta Persistence to 3.1**
   * Update Jakarta Persistence to 3.1.
-* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo32](/recipes/com/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
+* [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPersistenceTo32](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartapersistenceto32.md)
   * **Update Jakarta Persistence to 3.2**
   * Update Jakarta Persistence to 3.2.
-* [com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler](/recipes/com/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
+* [com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler](/recipes/oracle/weblogic/rewrite/spring/framework/defaultservlethandler.md)
   * **Update Default Servlet Handler for Spring Framework if empty**
   * This recipe will update Spring Framework default servlet handler if empty, as noted in the Spring Framework 6.2 [documentation](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/default-servlet-handler.html).
-* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicJtaTransactionManager](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
+* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicJtaTransactionManager](/recipes/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
   * **Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x**
   * Replace removed WebLogicJtaTransactionManager with JtaTransactionManager from Spring Framework 6.2.x.
-* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicLoadTimeWeaver](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
+* [com.oracle.weblogic.rewrite.spring.framework.ReplaceWebLogicLoadTimeWeaver](/recipes/oracle/weblogic/rewrite/spring/framework/replaceweblogicloadtimeweaver.md)
   * **Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x to 6.2.x**
   * Replace removed WebLogicLoadTimeWeaver with LoadTimeWeaver from Spring Framework 6.2.x.
-* [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
+* [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
   * **Migrate to Spring Framework 6.2 for WebLogic 15.1.1**
   * Migrate applications to the Spring Framework 6.2 release and compatibility with WebLogic 15.1.1.
 
@@ -8829,21 +8829,21 @@ _56 recipes_
 
 _5 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Web Services schema files to WebLogic 14.1.2
-* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebServicesXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwebservicesxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-webservices.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-webservices.xml` files to WebLogic 15.1.1
-* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic Web Service Policy Reference schema files to WebLogic 14.1.2
   * Tags: webservices-policy
-* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwebservicespolicyrefxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1
   * Tags: webservices-policy
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebServicesXmlToJakarta9WebServicesXml](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebServicesXmlToJakarta9WebServicesXml](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebservicesxmltojakarta9webservicesxml.md)
   * **Migrate xmlns entries in `webservices.xml` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -8859,7 +8859,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxWebXmlToJakartaWebXml5](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
   * **Migrate xmlns entries in `web.xml` files for Jakarta Server Faces 3**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 
@@ -8875,19 +8875,19 @@ _1 recipe_
 
 _4 recipes_
 
-* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic WSEE Client Handler Chains schema files to WebLogic 14.1.2
   * Tags: wsee-clientHandlerChain
-* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeClientHandlerChainXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwseeclienthandlerchainxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-wsee-clientHandlerChain.xml` files to WebLogic 15.1.1
   * Tags: wsee-clientHandlerChain
-* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1412](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1412.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1412](/recipes/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1412.md)
   * **Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 14.1.2**
   * Migrate xmlns entries in WebLogic WSEE Standalone Client schema files to WebLogic 14.1.2
   * Tags: wsee-standaloneclient
-* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511](/recipes/com/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1511.md)
+* [com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1511](/recipes/oracle/weblogic/rewrite/weblogicwseestandaloneclientxmlnamespace1511.md)
   * **Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1**
   * This recipe will update the `xmlns` entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1
   * Tags: wsee-standaloneclient
@@ -8896,7 +8896,7 @@ _4 recipes_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/com/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
+* [com.oracle.weblogic.rewrite.jakarta.JakartaFaces3Xhtml](/recipes/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
   * **Faces XHTML migration for Jakarta EE 9**
   * Find and replace legacy JSF namespaces and javax references with Jakarta Faces values in XHTML files.
 
@@ -8904,7 +8904,7 @@ _1 recipe_
 
 _1 recipe_
 
-* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
+* [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
   * **Migrate xmlns entries in `*.xjb` files.**
   * Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 

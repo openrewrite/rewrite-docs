@@ -39,8 +39,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to Java 11](/recipes/java/migrate/java8tojava11.md)
-* [Migrate to Java 17](/recipes/io/quarkus/updates/core/quarkus37/upgradetojava17.md)
-* [Migrate to Java 17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
+* [Migrate to Java 17](/recipes/apache/camel/upgrade/upgradetojava17.md)
+* [Migrate to Java 17](/recipes/quarkus/updates/core/quarkus37/upgradetojava17.md)
 * [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
 * [Migrate to Spring Framework 6.1](/recipes/java/spring/framework/upgradespringframework_6_1.md)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
@@ -52,7 +52,7 @@ This recipe is used as part of the following composite recipes:
 * [Remove `Thread.destroy()` and `Thread.stop(Throwable)`](/recipes/java/migrate/threadstopdestroy.md)
 * [Remove `getComment` and `getVersion` methods](/recipes/java/migrate/jakarta/servletcookiebehaviorchangerfc6265.md)
 * [Remove path extension content negotiation methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/removepathextensioncontentnegotiation)
-* [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](/recipes/com/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
+* [Replace Removed WebLogicJtaTransactionManager from Spring Framework 5.3.x to 6.2.x](/recipes/oracle/weblogic/rewrite/spring/framework/replaceweblogicjtatransactionmanager.md)
 * [Resolve Deprecations in Spring Boot 3.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/resolvedeprecationsspringboot_3_3)
 
 

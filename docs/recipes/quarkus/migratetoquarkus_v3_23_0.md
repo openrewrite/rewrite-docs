@@ -40,7 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.22.0](../quarkus/migratetoquarkus_v3_22_0)
-* [io.quarkus.updates.core.quarkus323.HibernateORMSchemaManagementProperties](../io/quarkus/updates/core/quarkus323/hibernateormschemamanagementproperties)
+* [io.quarkus.updates.core.quarkus323.HibernateORMSchemaManagementProperties](../quarkus/updates/core/quarkus323/hibernateormschemamanagementproperties)
 
 </TabItem>
 

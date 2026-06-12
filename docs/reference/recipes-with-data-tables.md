@@ -4965,7 +4965,34 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 ### rewrite-third-party
 
-#### [com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1412](/recipes/com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1412.md)
+#### [ai.timefold.solver.migration.FromOptaPlannerToTimefoldSolver](/recipes/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+  * **Migrate from OptaPlanner to Timefold Solver**
+  * Replaces your method/field calls, GAVs, etc. To replace deprecated methods too, use the recipe ToLatest
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [ai.timefold.solver.migration.ToLatest](/recipes/timefold/solver/migration/tolatest.md)
+  * **Upgrade to the latest Timefold Solver**
+  * Replace all your calls to deleted/deprecated types and methods of Timefold Solver with their proper alternatives.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [ai.timefold.solver.migration.fork.TimefoldChangeDependencies](/recipes/timefold/solver/migration/fork/timefoldchangedependencies.md)
+  * **Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold**
+  * Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1412](/recipes/oracle/weblogic/rewrite/checkandcommentoutdeprecations1412.md)
   * **Report types deprecated or removed in WebLogic version 14.1.2**
   * This recipe will report Java types that have been deprecated or removed in WebLogic version 14.1.2. This is an alias to prevent breaking existing recipes.
 
@@ -4975,7 +5002,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
-#### [com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1511](/recipes/com/oracle/weblogic/rewrite/checkandcommentoutdeprecations1511.md)
+#### [com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1511](/recipes/oracle/weblogic/rewrite/checkandcommentoutdeprecations1511.md)
   * **Report types deprecated or removed in WebLogic version 15.1.1**
   * This recipe will report Java types that have been deprecated or removed in WebLogic version 15.1.1. This is an alias to prevent breaking existing recipes.
 
@@ -4985,7 +5012,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
-#### [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/com/oracle/weblogic/rewrite/jakartaee9_1.md)
+#### [com.oracle.weblogic.rewrite.JakartaEE9_1](/recipes/oracle/weblogic/rewrite/jakartaee9_1.md)
   * **Migrate to Jakarta EE 9.1**
   * These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods.
 
@@ -4994,7 +5021,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [com.oracle.weblogic.rewrite.ReportDeprecated](/recipes/com/oracle/weblogic/rewrite/reportdeprecated.md)
+#### [com.oracle.weblogic.rewrite.ReportDeprecated](/recipes/oracle/weblogic/rewrite/reportdeprecated.md)
   * **Report uses of Java types deprecated or removed in WebLogic**
   * This recipe will report uses of Java types that have been deprecated or removed in WebLogic.
 
@@ -5003,7 +5030,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
-#### [com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1412](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1412.md)
+#### [com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1412](/recipes/oracle/weblogic/rewrite/reportdeprecatedorremoved1412.md)
   * **Report types deprecated or removed in WebLogic version 14.1.2**
   * This recipe will report Java types that have been deprecated or removed in WebLogic version 14.1.2.
 
@@ -5013,7 +5040,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
-#### [com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1511](/recipes/com/oracle/weblogic/rewrite/reportdeprecatedorremoved1511.md)
+#### [com.oracle.weblogic.rewrite.ReportDeprecatedOrRemoved1511](/recipes/oracle/weblogic/rewrite/reportdeprecatedorremoved1511.md)
   * **Report types deprecated or removed in WebLogic version 15.1.1**
   * This recipe will report Java types that have been deprecated or removed in WebLogic version 15.1.1.
 
@@ -5023,7 +5050,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
-#### [com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1412](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
+#### [com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1412](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
   * **Update the WebLogic version to 14.1.2**
   * This recipe will update the WebLogic version to 14.1.2 for Maven build.
 
@@ -5032,7 +5059,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1511](/recipes/com/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
+#### [com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1511](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
   * **Update the WebLogic version to 15.1.1**
   * This recipe will update the WebLogic version to 15.1.1 for Maven build.
 
@@ -5041,7 +5068,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/com/oracle/weblogic/rewrite/upgradeto1411.md)
+#### [com.oracle.weblogic.rewrite.UpgradeTo1411](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
   * **Migrate to WebLogic 14.1.1**
   * This recipe will apply changes required for migrating to WebLogic 14.1.1
 
@@ -5050,7 +5077,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [com.oracle.weblogic.rewrite.UpgradeTo1412](/recipes/com/oracle/weblogic/rewrite/upgradeto1412.md)
+#### [com.oracle.weblogic.rewrite.UpgradeTo1412](/recipes/oracle/weblogic/rewrite/upgradeto1412.md)
   * **Migrate to WebLogic 14.1.2**
   * This recipe will apply changes required for migrating to WebLogic 14.1.2
 
@@ -5061,7 +5088,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
-#### [com.oracle.weblogic.rewrite.UpgradeTo1511](/recipes/com/oracle/weblogic/rewrite/upgradeto1511.md)
+#### [com.oracle.weblogic.rewrite.UpgradeTo1511](/recipes/oracle/weblogic/rewrite/upgradeto1511.md)
   * **Migrate to WebLogic 15.1.1**
   * This recipe will apply changes required for migrating to WebLogic 15.1.1 and Jakarta EE 9.1
 
@@ -5072,7 +5099,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.java.table.TypeUses**: *The source code of matching type uses.*
 
 
-#### [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginartifactitems.md)
+#### [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginArtifactItems](/recipes/oracle/weblogic/rewrite/jakarta/upgrademavenpluginartifactitems.md)
   * **Upgrade group, artifact ID and version of an artifactItem, of a maven plugin execution configuration**
   * Change the groupId and the artifactId of an artifactItem in the configuration section of a plugin's execution. This recipe does not perform any validation and assumes all values passed are valid.
 
@@ -5081,7 +5108,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/com/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
+#### [com.oracle.weblogic.rewrite.jakarta.UpgradeMavenPluginConfigurationArtifacts](/recipes/oracle/weblogic/rewrite/jakarta/upgrademavenpluginconfigurationartifacts.md)
   * **Change artifacts for a Maven plugin configuration**
   * Change artifacts for a Maven plugin configuration artifacts.
 
@@ -5090,7 +5117,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/com/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
+#### [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
   * **Migrate to Spring Framework 6.2 for WebLogic 15.1.1**
   * Migrate applications to the Spring Framework 6.2 release and compatibility with WebLogic 15.1.1.
 
@@ -5099,7 +5126,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.axoniq.framework.migration.Axon4ToAxoniq5Bom](/recipes/io/axoniq/framework/migration/axon4toaxoniq5bom.md)
+#### [io.axoniq.framework.migration.Axon4ToAxoniq5Bom](/recipes/axoniq/framework/migration/axon4toaxoniq5bom.md)
   * **Swap the BOM to Axoniq Framework 5 commercial**
   * Replaces the imported `org.axonframework:axon-bom` (AF4) or `org.axonframework:axon-framework-bom` (free AF5) in `&lt;dependencyManagement&gt;` with the Axoniq Framework 5 commercial BOM `io.axoniq.framework:axoniq-framework-bom`.
 
@@ -5108,7 +5135,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.axoniq.framework.migration.UpgradeAxon4ToAxoniq5](/recipes/io/axoniq/framework/migration/upgradeaxon4toaxoniq5.md)
+#### [io.axoniq.framework.migration.UpgradeAxon4ToAxoniq5](/recipes/axoniq/framework/migration/upgradeaxon4toaxoniq5.md)
   * **Upgrade to Axoniq Framework 5 (commercial)**
   * Migrates an Axon Framework 4.x application to Axoniq Framework 5 (commercial). Composes `UpgradeAxon4ToAxon5` (the free leg) and then layers commercial-only migrations: BOM swap to `io.axoniq.framework:axoniq-framework-bom`, Spring Boot starter swap to `io.axoniq.framework:axoniq-spring-boot-starter`, source rewrites and Maven adds for Axon Server connector, sequenced dead-letter queue, and distributed messaging.
 
@@ -5117,7 +5144,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.camel.camel412.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel412/camelquarkusmigrationrecipe.md)
+#### [io.quarkus.updates.camel.camel412.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel412/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.11` application to `camel 4.12`**
   * Migrates `camel 4.11` quarkus application to `camel 4.12`.
 
@@ -5126,7 +5153,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.camel.camel413.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel413/camelquarkusmigrationrecipe.md)
+#### [io.quarkus.updates.camel.camel413.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel413/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.12` application to `camel 4.13`**
   * Migrates `camel 4.12` Quarkus application to `camel 4.13`.
 
@@ -5135,7 +5162,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.camel.camel420.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
+#### [io.quarkus.updates.camel.camel420.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.18` application to `camel 4.20`**
   * Migrates `camel 4.18` Quarkus application to `camel 4.20`.
 
@@ -5144,7 +5171,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.camel.camel47.CamelQuarkusMigrationRecipe](/recipes/io/quarkus/updates/camel/camel47/camelquarkusmigrationrecipe.md)
+#### [io.quarkus.updates.camel.camel47.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel47/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.4` application to `camel 4.8`**
   * Migrates `camel 4.4` quarkus application to `camel 4.8`.
 
@@ -5153,7 +5180,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/io/quarkus/updates/core/quarkus30/additionalchanges.md)
+#### [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/quarkus/updates/core/quarkus30/additionalchanges.md)
   * **io.quarkus.updates.core.quarkus30.AdditionalChanges**
   * 
 
@@ -5162,7 +5189,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JacksonJavaxToJakarta](/recipes/io/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
+#### [io.quarkus.updates.core.quarkus30.JacksonJavaxToJakarta](/recipes/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
   * **Migrate Jackson from javax to jakarta namespace**
   * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE.
 
@@ -5171,7 +5198,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/io/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxActivationMigrationToJakartaActivation](/recipes/quarkus/updates/core/quarkus30/javaxactivationmigrationtojakartaactivation.md)
   * **Migrate deprecated `javax.activation` packages to `jakarta.activation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5180,7 +5207,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/io/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxAnnotationMigrationToJakartaAnnotation](/recipes/quarkus/updates/core/quarkus30/javaxannotationmigrationtojakartaannotation.md)
   * **Migrate deprecated `javax.annotation` packages to `jakarta.annotation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5189,7 +5216,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/io/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxAuthenticationMigrationToJakartaAuthentication](/recipes/quarkus/updates/core/quarkus30/javaxauthenticationmigrationtojakartaauthentication.md)
   * **Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5198,7 +5225,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/io/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxAuthorizationMigrationToJakartaAuthorization](/recipes/quarkus/updates/core/quarkus30/javaxauthorizationmigrationtojakartaauthorization.md)
   * **Migrate deprecated `javax.security.jacc` packages to `jakarta.security.jacc`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5207,7 +5234,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/io/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxBatchMigrationToJakartaBatch](/recipes/quarkus/updates/core/quarkus30/javaxbatchmigrationtojakartabatch.md)
   * **Migrate deprecated `javax.batch` packages to `jakarta.batch`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5216,7 +5243,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxDecoratorToJakartaDecorator](/recipes/io/quarkus/updates/core/quarkus30/javaxdecoratortojakartadecorator.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxDecoratorToJakartaDecorator](/recipes/quarkus/updates/core/quarkus30/javaxdecoratortojakartadecorator.md)
   * **Migrate deprecated `javax.decorator` packages to `jakarta.decorator`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5225,7 +5252,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxEjbToJakartaEjb](/recipes/io/quarkus/updates/core/quarkus30/javaxejbtojakartaejb.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxEjbToJakartaEjb](/recipes/quarkus/updates/core/quarkus30/javaxejbtojakartaejb.md)
   * **Migrate deprecated `javax.ejb` packages to `jakarta.ejb`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5234,7 +5261,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxElToJakartaEl](/recipes/io/quarkus/updates/core/quarkus30/javaxeltojakartael.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxElToJakartaEl](/recipes/quarkus/updates/core/quarkus30/javaxeltojakartael.md)
   * **Migrate deprecated `javax.el` packages to `jakarta.el`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5243,7 +5270,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxEnterpriseToJakartaEnterprise](/recipes/io/quarkus/updates/core/quarkus30/javaxenterprisetojakartaenterprise.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxEnterpriseToJakartaEnterprise](/recipes/quarkus/updates/core/quarkus30/javaxenterprisetojakartaenterprise.md)
   * **Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5252,7 +5279,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxFacesToJakartaFaces](/recipes/io/quarkus/updates/core/quarkus30/javaxfacestojakartafaces.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxFacesToJakartaFaces](/recipes/quarkus/updates/core/quarkus30/javaxfacestojakartafaces.md)
   * **Migrate deprecated `javax.faces` packages to `jakarta.faces`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5261,7 +5288,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/io/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxInjectMigrationToJakartaInject](/recipes/quarkus/updates/core/quarkus30/javaxinjectmigrationtojakartainject.md)
   * **Migrate deprecated `javax.inject` packages to `jakarta.inject`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5270,7 +5297,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxInterceptorToJakartaInterceptor](/recipes/io/quarkus/updates/core/quarkus30/javaxinterceptortojakartainterceptor.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxInterceptorToJakartaInterceptor](/recipes/quarkus/updates/core/quarkus30/javaxinterceptortojakartainterceptor.md)
   * **Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5279,7 +5306,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxJmsToJakartaJms](/recipes/io/quarkus/updates/core/quarkus30/javaxjmstojakartajms.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxJmsToJakartaJms](/recipes/quarkus/updates/core/quarkus30/javaxjmstojakartajms.md)
   * **Migrate deprecated `javax.jms` packages to `jakarta.jms`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5288,7 +5315,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxJsonToJakartaJson](/recipes/io/quarkus/updates/core/quarkus30/javaxjsontojakartajson.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxJsonToJakartaJson](/recipes/quarkus/updates/core/quarkus30/javaxjsontojakartajson.md)
   * **Migrate deprecated `javax.json` packages to `jakarta.json`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5297,7 +5324,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxJwsToJakartaJws](/recipes/io/quarkus/updates/core/quarkus30/javaxjwstojakartajws.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxJwsToJakartaJws](/recipes/quarkus/updates/core/quarkus30/javaxjwstojakartajws.md)
   * **Migrate deprecated `javax.jws` packages to `jakarta.jws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5306,7 +5333,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxMailToJakartaMail](/recipes/io/quarkus/updates/core/quarkus30/javaxmailtojakartamail.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxMailToJakartaMail](/recipes/quarkus/updates/core/quarkus30/javaxmailtojakartamail.md)
   * **Migrate deprecated `javax.mail` packages to `jakarta.mail`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5315,7 +5342,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxPersistenceToJakartaPersistence](/recipes/io/quarkus/updates/core/quarkus30/javaxpersistencetojakartapersistence.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxPersistenceToJakartaPersistence](/recipes/quarkus/updates/core/quarkus30/javaxpersistencetojakartapersistence.md)
   * **Migrate deprecated `javax.persistence` packages to `jakarta.persistence`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation
 
@@ -5324,7 +5351,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxResourceToJakartaResource](/recipes/io/quarkus/updates/core/quarkus30/javaxresourcetojakartaresource.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxResourceToJakartaResource](/recipes/quarkus/updates/core/quarkus30/javaxresourcetojakartaresource.md)
   * **Migrate deprecated `javax.resource` packages to `jakarta.resource`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5333,7 +5360,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxSecurityToJakartaSecurity](/recipes/io/quarkus/updates/core/quarkus30/javaxsecuritytojakartasecurity.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxSecurityToJakartaSecurity](/recipes/quarkus/updates/core/quarkus30/javaxsecuritytojakartasecurity.md)
   * **Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5342,7 +5369,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxServletToJakartaServlet](/recipes/io/quarkus/updates/core/quarkus30/javaxservlettojakartaservlet.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxServletToJakartaServlet](/recipes/quarkus/updates/core/quarkus30/javaxservlettojakartaservlet.md)
   * **Migrate deprecated `javax.servlet` packages to `jakarta.servlet`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5351,7 +5378,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/io/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxTransactionMigrationToJakartaTransaction](/recipes/quarkus/updates/core/quarkus30/javaxtransactionmigrationtojakartatransaction.md)
   * **Migrate deprecated `javax.transaction` packages to `jakarta.transaction`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5360,7 +5387,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/io/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxValidationMigrationToJakartaValidation](/recipes/quarkus/updates/core/quarkus30/javaxvalidationmigrationtojakartavalidation.md)
   * **Migrate deprecated `javax.validation` packages to `jakarta.validation`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5369,7 +5396,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxWebsocketToJakartaWebsocket](/recipes/io/quarkus/updates/core/quarkus30/javaxwebsockettojakartawebsocket.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxWebsocketToJakartaWebsocket](/recipes/quarkus/updates/core/quarkus30/javaxwebsockettojakartawebsocket.md)
   * **Migrate deprecated `javax.websocket` packages to `jakarta.websocket`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5378,7 +5405,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxWsToJakartaWs](/recipes/io/quarkus/updates/core/quarkus30/javaxwstojakartaws.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxWsToJakartaWs](/recipes/quarkus/updates/core/quarkus30/javaxwstojakartaws.md)
   * **Migrate deprecated `javax.ws` packages to `jakarta.ws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5387,7 +5414,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxXmlBindMigrationToJakartaXmlBind](/recipes/quarkus/updates/core/quarkus30/javaxxmlbindmigrationtojakartaxmlbind.md)
   * **Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5396,7 +5423,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxXmlSoapToJakartaXmlSoap](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlsoaptojakartaxmlsoap.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxXmlSoapToJakartaXmlSoap](/recipes/quarkus/updates/core/quarkus30/javaxxmlsoaptojakartaxmlsoap.md)
   * **Migrate deprecated `javax.soap` packages to `jakarta.soap`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5405,7 +5432,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/io/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
+#### [io.quarkus.updates.core.quarkus30.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/quarkus/updates/core/quarkus30/javaxxmlwsmigrationtojakartaxmlws.md)
   * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 
@@ -5414,7 +5441,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.RestAssuredJavaxToJakarta](/recipes/io/quarkus/updates/core/quarkus30/restassuredjavaxtojakarta.md)
+#### [io.quarkus.updates.core.quarkus30.RestAssuredJavaxToJakarta](/recipes/quarkus/updates/core/quarkus30/restassuredjavaxtojakarta.md)
   * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9**
   * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE.
 
@@ -5423,7 +5450,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse](/recipes/io/quarkus/updates/core/quarkus30/upgradequarkiverse.md)
+#### [io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse](/recipes/quarkus/updates/core/quarkus30/upgradequarkiverse.md)
   * **io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse**
   * 
 
@@ -5432,7 +5459,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus310.FlywayDb2](/recipes/io/quarkus/updates/core/quarkus310/flywaydb2.md)
+#### [io.quarkus.updates.core.quarkus310.FlywayDb2](/recipes/quarkus/updates/core/quarkus310/flywaydb2.md)
   * **io.quarkus.updates.core.quarkus310.FlywayDb2**
   * 
 
@@ -5441,7 +5468,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus310.FlywayDerby](/recipes/io/quarkus/updates/core/quarkus310/flywayderby.md)
+#### [io.quarkus.updates.core.quarkus310.FlywayDerby](/recipes/quarkus/updates/core/quarkus310/flywayderby.md)
   * **io.quarkus.updates.core.quarkus310.FlywayDerby**
   * 
 
@@ -5450,7 +5477,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](/recipes/io/quarkus/updates/core/quarkus310/flywaypostgresql.md)
+#### [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](/recipes/quarkus/updates/core/quarkus310/flywaypostgresql.md)
   * **io.quarkus.updates.core.quarkus310.FlywayPostgreSQL**
   * 
 
@@ -5459,7 +5486,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus310.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus310/synchibernatejpamodelgenversionwithbom.md)
+#### [io.quarkus.updates.core.quarkus310.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus310/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus310.SyncHibernateJpaModelgenVersionWithBOM**
   * 
 
@@ -5468,7 +5495,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus311/synchibernatejpamodelgenversionwithbom.md)
+#### [io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus311/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM**
   * 
 
@@ -5477,7 +5504,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus312/synchibernatejpamodelgenversionwithbom.md)
+#### [io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus312/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM**
   * 
 
@@ -5486,7 +5513,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus313.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus313/synchibernatejpamodelgenversionwithbom.md)
+#### [io.quarkus.updates.core.quarkus313.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus313/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus313.SyncHibernateJpaModelgenVersionWithBOM**
   * 
 
@@ -5495,7 +5522,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus324.ReplaceNewJpaModelgenAnnotationProcessor](/recipes/io/quarkus/updates/core/quarkus324/replacenewjpamodelgenannotationprocessor.md)
+#### [io.quarkus.updates.core.quarkus324.ReplaceNewJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus324/replacenewjpamodelgenannotationprocessor.md)
   * **io.quarkus.updates.core.quarkus324.ReplaceNewJpaModelgenAnnotationProcessor**
   * 
 
@@ -5504,7 +5531,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus324.ReplaceOldJpaModelgenAnnotationProcessor](/recipes/io/quarkus/updates/core/quarkus324/replaceoldjpamodelgenannotationprocessor.md)
+#### [io.quarkus.updates.core.quarkus324.ReplaceOldJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus324/replaceoldjpamodelgenannotationprocessor.md)
   * **io.quarkus.updates.core.quarkus324.ReplaceOldJpaModelgenAnnotationProcessor**
   * 
 
@@ -5513,7 +5540,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId](/recipes/io/quarkus/updates/core/quarkus37/changemavencompilerannotationprocessorgroupidandartifactid.md)
+#### [io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId](/recipes/quarkus/updates/core/quarkus37/changemavencompilerannotationprocessorgroupidandartifactid.md)
   * **Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version**
   * Change the groupId, artifactId and/or the version of a specified Maven Compiler plugin annotation processor.
 
@@ -5522,7 +5549,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus37.MavenPlugins](/recipes/io/quarkus/updates/core/quarkus37/mavenplugins.md)
+#### [io.quarkus.updates.core.quarkus37.MavenPlugins](/recipes/quarkus/updates/core/quarkus37/mavenplugins.md)
   * **io.quarkus.updates.core.quarkus37.MavenPlugins**
   * 
 
@@ -5531,7 +5558,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus37.ReplaceJpaModelgenAnnotationProcessor](/recipes/io/quarkus/updates/core/quarkus37/replacejpamodelgenannotationprocessor.md)
+#### [io.quarkus.updates.core.quarkus37.ReplaceJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus37/replacejpamodelgenannotationprocessor.md)
   * **io.quarkus.updates.core.quarkus37.ReplaceJpaModelgenAnnotationProcessor**
   * 
 
@@ -5540,7 +5567,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus37.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus37/synchibernatejpamodelgenversionwithbom.md)
+#### [io.quarkus.updates.core.quarkus37.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus37/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus37.SyncHibernateJpaModelgenVersionWithBOM**
   * 
 
@@ -5549,7 +5576,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion](/recipes/io/quarkus/updates/core/quarkus37/syncmavencompilerannotationprocessorversion.md)
+#### [io.quarkus.updates.core.quarkus37.SyncMavenCompilerAnnotationProcessorVersion](/recipes/quarkus/updates/core/quarkus37/syncmavencompilerannotationprocessorversion.md)
   * **Sync Maven Compiler plugin annotation processor version with the one provided by the BOM**
   * Sync Maven Compiler plugin annotation processor version with the one provided by the BOM.
 
@@ -5558,7 +5585,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus37.UpgradeToJava17](/recipes/io/quarkus/updates/core/quarkus37/upgradetojava17.md)
+#### [io.quarkus.updates.core.quarkus37.UpgradeToJava17](/recipes/quarkus/updates/core/quarkus37/upgradetojava17.md)
   * **Migrate to Java 17**
   * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
 
@@ -5567,7 +5594,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus38/synchibernatejpamodelgenversionwithbom.md)
+#### [io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus38/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM**
   * 
 
@@ -5576,7 +5603,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](/recipes/io/quarkus/updates/core/quarkus39/synchibernatejpamodelgenversionwithbom.md)
+#### [io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus39/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus39.SyncHibernateJpaModelgenVersionWithBOM**
   * 
 
@@ -5585,7 +5612,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.Camel410LTSMigrationRecipe](/recipes/org/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
+#### [org.apache.camel.upgrade.Camel410LTSMigrationRecipe](/recipes/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
   * **Migrate to 4.10.6**
   * Migrates Apache Camel application to 4.10.6.
 
@@ -5594,7 +5621,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camelmigrationrecipe.md)
+#### [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
   * **Migrate to 4.20.0**
   * Migrates Apache Camel application to 4.20.0.
 
@@ -5603,7 +5630,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.UpgradeToJava17](/recipes/org/apache/camel/upgrade/upgradetojava17.md)
+#### [org.apache.camel.upgrade.UpgradeToJava17](/recipes/apache/camel/upgrade/upgradetojava17.md)
   * **Migrate to Java 17**
   * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
 
@@ -5612,7 +5639,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel412.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel412/camelmigrationrecipe.md)
+#### [org.apache.camel.upgrade.camel412.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel412/camelmigrationrecipe.md)
   * **Migrates `camel 4.11` application to `camel 4.12`**
   * Migrates `camel 4.11` application to `camel 4.12`.
 
@@ -5621,7 +5648,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel412.scanClassesMovedMaven](/recipes/org/apache/camel/upgrade/camel412/scanclassesmovedmaven.md)
+#### [org.apache.camel.upgrade.camel412.scanClassesMovedMaven](/recipes/apache/camel/upgrade/camel412/scanclassesmovedmaven.md)
   * **The package scan classes has moved from camel-base-engine to camel-support - maven**
   * The package scan classes has moved from camel-base-engine to camel-support JAR and moved to a new package - maven.
 
@@ -5630,7 +5657,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel413.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel413/camelmigrationrecipe.md)
+#### [org.apache.camel.upgrade.camel413.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel413/camelmigrationrecipe.md)
   * **Migrates `camel 4.12` application to `camel 4.13`**
   * Migrates `camel 4.12` application to `camel 4.13`.
 
@@ -5639,7 +5666,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel413.furyDependency](/recipes/org/apache/camel/upgrade/camel413/furydependency.md)
+#### [org.apache.camel.upgrade.camel413.furyDependency](/recipes/apache/camel/upgrade/camel413/furydependency.md)
   * **Change Maven dependency example**
   * 
 
@@ -5648,7 +5675,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel419.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
+#### [org.apache.camel.upgrade.camel419.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
   * **Migrates `camel 4.18` application to `camel 4.19`**
   * Migrates `camel 4.18` application to `camel 4.19`.
 
@@ -5657,7 +5684,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel419.migrateGroovyXml](/recipes/org/apache/camel/upgrade/camel419/migrategroovyxml.md)
+#### [org.apache.camel.upgrade.camel419.migrateGroovyXml](/recipes/apache/camel/upgrade/camel419/migrategroovyxml.md)
   * **Migrate camel-groovy-xml to camel-groovy**
   * camel-groovy-xml has been removed and moved into camel-groovy. Changes the dependency from camel-groovy-xml to camel-groovy.
 
@@ -5666,7 +5693,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel46.CamelMigrationRecipe](/recipes/org/apache/camel/upgrade/camel46/camelmigrationrecipe.md)
+#### [org.apache.camel.upgrade.camel46.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel46/camelmigrationrecipe.md)
   * **Migrates `camel 4.5` application to `camel 4.6`**
   * Migrates `camel 4.5` application to `camel 4.6`.
 
@@ -5675,7 +5702,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.camel.upgrade.camel46.renamedDependencies](/recipes/org/apache/camel/upgrade/camel46/renameddependencies.md)
+#### [org.apache.camel.upgrade.camel46.renamedDependencies](/recipes/apache/camel/upgrade/camel46/renameddependencies.md)
   * **Renamed dependencies**
   * Renamed dependencies.
 
@@ -5684,7 +5711,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.wicket.BestPractices](/recipes/org/apache/wicket/bestpractices.md)
+#### [org.apache.wicket.BestPractices](/recipes/apache/wicket/bestpractices.md)
   * **Wicket best practices**
   * Applies Wicket best practices such as minimizing anonymous inner classes and upgrading to the latest version.
 
@@ -5693,7 +5720,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.apache.wicket.MigrateToWicket10](/recipes/org/apache/wicket/migratetowicket10.md)
+#### [org.apache.wicket.MigrateToWicket10](/recipes/apache/wicket/migratetowicket10.md)
   * **Migrate to Wicket 10.x**
   * Migrates Wicket 9.x to Wicket 10.x, as well as Java 17 and Jakarta.
 
@@ -5702,7 +5729,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.axonframework.migration.Axon4ToAxon5Bom](/recipes/org/axonframework/migration/axon4toaxon5bom.md)
+#### [org.axonframework.migration.Axon4ToAxon5Bom](/recipes/axonframework/migration/axon4toaxon5bom.md)
   * **Migrate the Axon Framework BOM coordinates**
   * Renames the imported `org.axonframework:axon-bom` BOM in `&lt;dependencyManagement&gt;` to `org.axonframework:axon-framework-bom` and pins the imported version to the current Axon Framework 5 release. The BOM artifactId changed between Axon Framework 4 and Axon Framework 5; the groupId is unchanged.
 
@@ -5711,7 +5738,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.axonframework.migration.UpgradeAxon4ToAxon5](/recipes/org/axonframework/migration/upgradeaxon4toaxon5.md)
+#### [org.axonframework.migration.UpgradeAxon4ToAxon5](/recipes/axonframework/migration/upgradeaxon4toaxon5.md)
   * **Upgrade to free Axon Framework 5**
   * Migrates an Axon Framework 4.x application to free (Apache 2.0) Axon Framework 5. Bumps the Axon Framework dependency versions, applies per-module rename recipes (one per core framework module), and renames Maven coordinates within the `org.axonframework.*` namespace. Does NOT touch features dropped from free AF5 (Axon Server, DLQ, DistributedCommandBus) — see `UpgradeAxon4ToAxoniq5` for the commercial path.
 
@@ -5720,7 +5747,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
-#### [org.axonframework.migration.UpgradeKotlin](/recipes/org/axonframework/migration/upgradekotlin.md)
+#### [org.axonframework.migration.UpgradeKotlin](/recipes/axonframework/migration/upgradekotlin.md)
   * **Upgrade Kotlin to 2.x for Axon Framework 5**
   * Bumps the `org.jetbrains.kotlin:*` dependency versions and the `kotlin-maven-plugin` to the configured Kotlin line (defaults to &quot;2.x&quot;, the latest Kotlin 2.x). No-op for modules already at or above the target — the underlying upgrade recipes never downgrade. Rejects targets below Kotlin 2.0.
 

@@ -41,8 +41,10 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from `@ApiParam` to `@Parameter`](/recipes/openapi/swagger/migrateapiparamtoparameter.md)
 * [Migrate from `@ApiResponses` to `@ApiResponses`](/recipes/openapi/swagger/migrateapiresponsestoapiresponses.md)
 * [Migrate to Hibernate 4.0.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate40)
+* [PlanningVariable's `nullable` is newly called `unassignedValues`](/recipes/timefold/solver/migration/v8/nullablerecipe.md)
 * [Replace `@MockBean` and `@SpyBean`](/recipes/java/spring/boot4/replacemockbeanandspybean.md)
-* [Substitute deprecated Faces Managed Beans](/recipes/com/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
+* [Substitute deprecated Faces Managed Beans](/recipes/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
+* [Use non-deprecated related sorting fields and methods](/recipes/timefold/solver/migration/v8/sortingmigrationrecipe.md)
 
 ## Example
 

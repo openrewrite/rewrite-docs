@@ -39,8 +39,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate the Axon Framework BOM coordinates](/recipes/org/axonframework/migration/axon4toaxon5bom.md)
-* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/io/axoniq/framework/migration/axon4toaxoniq5bom.md)
+* [Migrate the Axon Framework BOM coordinates](/recipes/axonframework/migration/axon4toaxon5bom.md)
+* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/axoniq/framework/migration/axon4toaxoniq5bom.md)
 
 ## Example
 

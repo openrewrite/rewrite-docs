@@ -33,13 +33,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Change dataformat fury to fury in xml/java dsl.](/recipes/org/apache/camel/upgrade/camel413/furydsl.md)
+* [Change dataformat fury to fury in xml/java dsl.](/recipes/apache/camel/upgrade/camel413/furydsl.md)
 * [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
 * [Replace global method security with method security](/recipes/java/spring/security5/replaceglobalmethodsecuritywithmethodsecurityxml.md)
 * [Replace modules with subprojects](/recipes/maven/replacemoduleswithsubprojects.md)
-* [XML DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/org/apache/camel/upgrade/camel412/xmldslbearer.md)
+* [XML DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/apache/camel/upgrade/camel412/xmldslbearer.md)
 
 ## Example
 

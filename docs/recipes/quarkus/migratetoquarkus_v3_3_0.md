@@ -40,9 +40,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.2.0](../quarkus/migratetoquarkus_v3_2_0)
-* [io.quarkus.updates.core.quarkus33.ApplicationProperties](../io/quarkus/updates/core/quarkus33/applicationproperties)
-* [io.quarkus.updates.core.quarkus33.ApplicationYml](../io/quarkus/updates/core/quarkus33/applicationyml)
-* [io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact](../io/quarkus/updates/core/quarkus33/graalvmsubstitutionsartifact)
+* [io.quarkus.updates.core.quarkus33.ApplicationProperties](../quarkus/updates/core/quarkus33/applicationproperties)
+* [io.quarkus.updates.core.quarkus33.ApplicationYml](../quarkus/updates/core/quarkus33/applicationyml)
+* [io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact](../quarkus/updates/core/quarkus33/graalvmsubstitutionsartifact)
 
 </TabItem>
 

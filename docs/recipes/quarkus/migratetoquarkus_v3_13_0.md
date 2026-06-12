@@ -40,8 +40,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.12.0](../quarkus/migratetoquarkus_v3_12_0)
-* [io.quarkus.updates.core.quarkus313.SyncHibernateJpaModelgenVersionWithBOM](../io/quarkus/updates/core/quarkus313/synchibernatejpamodelgenversionwithbom)
-* [io.quarkus.updates.core.quarkus313.UpdateTestOIDCAuthServerUrl](../io/quarkus/updates/core/quarkus313/updatetestoidcauthserverurl)
+* [io.quarkus.updates.core.quarkus313.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus313/synchibernatejpamodelgenversionwithbom)
+* [io.quarkus.updates.core.quarkus313.UpdateTestOIDCAuthServerUrl](../quarkus/updates/core/quarkus313/updatetestoidcauthserverurl)
 
 </TabItem>
 

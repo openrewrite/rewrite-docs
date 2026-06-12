@@ -60,7 +60,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `3.x`
   * onlyIfUsing: `org.junit.jupiter.api.Assertions`
   * acceptTransitive: `true`
-* [Refaster rules to replace JUnit assertions with AssertJ equivalents](../../../tech/picnic/errorprone/refasterrules/junittoassertjrulesrecipes)
+* [Refaster rules to replace JUnit assertions with AssertJ equivalents](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes)
 
 </TabItem>
 

@@ -36,8 +36,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `exactly_once` and `exactly_once_beta` to `exactly_once_v2`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/processingguaranteeexactlyoncetov2)
 * [Migrate `exactly_once` to `exactly_once_beta`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/processingguaranteeexactlyoncetobeta)
 * [Replace `String` literal](/recipes/java/migrate/replacestringliteralvalue.md)
-* [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](/recipes/io/quarkus/updates/core/quarkus37/removedlegacysunjsseprovidername.md)
 * [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](/recipes/java/migrate/removedlegacysunjsseprovidername.md)
+* [Use `SunJSSE` instead of `com.sun.net.ssl.internal.ssl.Provider`](/recipes/quarkus/updates/core/quarkus37/removedlegacysunjsseprovidername.md)
 * [Use `com.ibm.net.ssl.www2.protocol` instead of `com.sun.net.ssl.internal.www.protocol`](/recipes/java/migrate/jredonotusesunnetsslinternalwwwprotocol.md)
 
 ## Example

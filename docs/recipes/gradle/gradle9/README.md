@@ -10,6 +10,7 @@ description: Gradle9 OpenRewrite recipes.
 * [Replace spread-`all*` calls in `configurations` blocks with `configurations.all \{ \}`](./rewritespreadallinconfigurationsblock.md)
 * [Use `application \{ mainClass \}` instead of `mainClassName`](./usemainclasspropertyforapplication.md)
 * [Use `mainClass` instead of `main` for `JavaExec` tasks](./usemainclassproperty.md)
+* [Use one dependency declaration per statement](./onedependencydeclarationperstatement.md)
 * [Use `version \{ \}` closure instead of `version = \{ \}` assignment](./useversionclosure.md)
 
 

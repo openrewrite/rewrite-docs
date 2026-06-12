@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Drop prefixless expressions in POM](/recipes/maven/cleanup/prefixlessexpressions.md)
-* [Migrate from OptaPlanner to Timefold Solver](/recipes/ai/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Migrate from OptaPlanner to Timefold Solver](/recipes/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Replace removed root directory properties](/recipes/maven/replaceremovedrootdirectoryproperties.md)
 

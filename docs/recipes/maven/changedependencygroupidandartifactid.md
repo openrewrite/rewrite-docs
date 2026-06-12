@@ -39,10 +39,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Change Maven dependency example](/recipes/org/apache/camel/upgrade/camel413/furydependency.md)
-* [Migrate camel-groovy-xml to camel-groovy](/recipes/org/apache/camel/upgrade/camel419/migrategroovyxml.md)
+* [Change Maven dependency example](/recipes/apache/camel/upgrade/camel413/furydependency.md)
+* [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](/recipes/timefold/solver/migration/fork/timefoldchangedependencies.md)
+* [Migrate camel-groovy-xml to camel-groovy](/recipes/apache/camel/upgrade/camel419/migrategroovyxml.md)
 * [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
-* [Renamed dependencies](/recipes/org/apache/camel/upgrade/camel46/renameddependencies.md)
+* [Renamed dependencies](/recipes/apache/camel/upgrade/camel46/renameddependencies.md)
 * [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
 
 ## Example

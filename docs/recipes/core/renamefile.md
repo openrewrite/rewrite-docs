@@ -34,9 +34,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
-* [Rename CDI Extension to Jakarta](/recipes/com/oracle/weblogic/rewrite/jakarta/javaxtojakartacdiextensions.md)
 * [Rename CDI Extension to Jakarta](/recipes/java/migrate/jakarta/javaxtojakartacdiextensions.md)
-* [Rename a file example](/recipes/io/quarkus/updates/core/quarkus30/renamejavaxservicefiles.md)
+* [Rename CDI Extension to Jakarta](/recipes/oracle/weblogic/rewrite/jakarta/javaxtojakartacdiextensions.md)
+* [Rename a file example](/recipes/quarkus/updates/core/quarkus30/renamejavaxservicefiles.md)
 
 
 ## Usage

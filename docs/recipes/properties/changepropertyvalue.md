@@ -36,9 +36,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Camel API changes in application.properties](/recipes/org/apache/camel/upgrade/camel40/properties/rejectedpolicy.md)
+* [Camel API changes in application.properties](/recipes/apache/camel/upgrade/camel40/properties/rejectedpolicy.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
-* [io.quarkus.updates.core.quarkus313.UpdateTestOIDCAuthServerUrl](/recipes/io/quarkus/updates/core/quarkus313/updatetestoidcauthserverurl.md)
+* [io.quarkus.updates.core.quarkus313.UpdateTestOIDCAuthServerUrl](/recipes/quarkus/updates/core/quarkus313/updatetestoidcauthserverurl.md)
 
 ## Example
 

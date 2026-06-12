@@ -35,7 +35,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from tibdex/github-app-token to actions/create-github-app-token](/recipes/github/migratetibdexgithubapptokentoactions.md)
 * [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
-* [Yaml DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/org/apache/camel/upgrade/camel412/yamldslbearer.md)
+* [Yaml DSL bearer from rest/securityDefinitions is renamed to bearerToken](/recipes/apache/camel/upgrade/camel412/yamldslbearer.md)
 
 ## Example
 

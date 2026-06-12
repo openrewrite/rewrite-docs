@@ -36,8 +36,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Inline `guava` methods annotated with `@InlineMe`](/recipes/com/google/guava/inlineguavamethods.md)
-* [Inline `log4j-api-2` methods annotated with `@InlineMe`](/recipes/org/apache/logging/log4j/inlinelog4japimethods.md)
+* [Inline `guava` methods annotated with `@InlineMe`](/recipes/google/guava/inlineguavamethods.md)
+* [Inline `log4j-api-2` methods annotated with `@InlineMe`](/recipes/apache/logging/log4j/inlinelog4japimethods.md)
 * [Inline deprecated delegating methods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
 * [Inline deprecated delegating methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-java-security/inlinedeprecatedmethods)
 * [Inline deprecated delegating methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-program-analysis/inlinedeprecatedmethods)

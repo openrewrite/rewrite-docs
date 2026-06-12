@@ -44,9 +44,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Update Maven Java project properties](/recipes/java/migrate/maven/updatemavenprojectpropertyjavaversion.md)
-* [Upgrade Java version](/recipes/io/quarkus/updates/core/quarkus37/upgradejavaversion.md)
+* [Upgrade Java version](/recipes/apache/camel/upgrade/upgradejavaversion.md)
 * [Upgrade Java version](/recipes/java/migrate/upgradejavaversion.md)
-* [Upgrade Java version](/recipes/org/apache/camel/upgrade/upgradejavaversion.md)
+* [Upgrade Java version](/recipes/quarkus/updates/core/quarkus37/upgradejavaversion.md)
 
 ## Example
 

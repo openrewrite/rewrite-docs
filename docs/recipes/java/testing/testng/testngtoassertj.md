@@ -48,7 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `3.x`
   * onlyIfUsing: `org.testng.*`
   * acceptTransitive: `true`
-* [Refaster rules that replace TestNG assertions with equivalent AssertJ assertions](../../../tech/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes)
+* [Refaster rules that replace TestNG assertions with equivalent AssertJ assertions](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes)
 * [TestNG `assertEquals` to AssertJ](../../../java/testing/testng/testngassertequalstoassertthat)
 * [TestNG `assertNotEquals` to AssertJ](../../../java/testing/testng/testngassertnotequalstoassertthat)
 

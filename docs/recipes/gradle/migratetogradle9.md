@@ -35,6 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * version: `9.x`
   * addIfMissing: `false`
 * [Use `String` notation for Gradle dependency declarations](../gradle/dependencyusestringnotation)
+* [Use one dependency declaration per statement](../gradle/gradle9/onedependencydeclarationperstatement)
 * [Use `mainClass` instead of `main` for `JavaExec` tasks](../gradle/gradle9/usemainclassproperty)
 * [Use `application \{ mainClass \}` instead of `mainClassName`](../gradle/gradle9/usemainclasspropertyforapplication)
 * [Move `sourceCompatibility` and `targetCompatibility` into the `java \{ \}` extension block](../gradle/gradle9/usejavaextensionblock)
@@ -58,6 +59,7 @@ recipeList:
       version: 9.x
       addIfMissing: false
   - org.openrewrite.gradle.DependencyUseStringNotation
+  - org.openrewrite.gradle.gradle9.OneDependencyDeclarationPerStatement
   - org.openrewrite.gradle.gradle9.UseMainClassProperty
   - org.openrewrite.gradle.gradle9.UseMainClassPropertyForApplication
   - org.openrewrite.gradle.gradle9.UseJavaExtensionBlock

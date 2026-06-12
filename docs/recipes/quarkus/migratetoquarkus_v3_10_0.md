@@ -40,18 +40,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.9.0](../quarkus/migratetoquarkus_v3_9_0)
-* [io.quarkus.updates.core.quarkus310.SyncHibernateJpaModelgenVersionWithBOM](../io/quarkus/updates/core/quarkus310/synchibernatejpamodelgenversionwithbom)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackagePom](../io/quarkus/updates/core/quarkus310/updateconfigpackagepom)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeJar](../io/quarkus/updates/core/quarkus310/updateconfigpackagetypejar)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar](../io/quarkus/updates/core/quarkus310/updateconfigpackagetypefastjar)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeUberJar](../io/quarkus/updates/core/quarkus310/updateconfigpackagetypeuberjar)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar](../io/quarkus/updates/core/quarkus310/updateconfigpackagetypemutablejar)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNative](../io/quarkus/updates/core/quarkus310/updateconfigpackagetypenative)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNativeSources](../io/quarkus/updates/core/quarkus310/updateconfigpackagetypenativesources)
-* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageSimpleProperties](../io/quarkus/updates/core/quarkus310/updateconfigpackagesimpleproperties)
-* [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](../io/quarkus/updates/core/quarkus310/flywaypostgresql)
-* [io.quarkus.updates.core.quarkus310.FlywayDb2](../io/quarkus/updates/core/quarkus310/flywaydb2)
-* [io.quarkus.updates.core.quarkus310.FlywayDerby](../io/quarkus/updates/core/quarkus310/flywayderby)
+* [io.quarkus.updates.core.quarkus310.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus310/synchibernatejpamodelgenversionwithbom)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackagePom](../quarkus/updates/core/quarkus310/updateconfigpackagepom)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeJar](../quarkus/updates/core/quarkus310/updateconfigpackagetypejar)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar](../quarkus/updates/core/quarkus310/updateconfigpackagetypefastjar)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeUberJar](../quarkus/updates/core/quarkus310/updateconfigpackagetypeuberjar)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar](../quarkus/updates/core/quarkus310/updateconfigpackagetypemutablejar)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNative](../quarkus/updates/core/quarkus310/updateconfigpackagetypenative)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeNativeSources](../quarkus/updates/core/quarkus310/updateconfigpackagetypenativesources)
+* [io.quarkus.updates.core.quarkus310.UpdateConfigPackageSimpleProperties](../quarkus/updates/core/quarkus310/updateconfigpackagesimpleproperties)
+* [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](../quarkus/updates/core/quarkus310/flywaypostgresql)
+* [io.quarkus.updates.core.quarkus310.FlywayDb2](../quarkus/updates/core/quarkus310/flywaydb2)
+* [io.quarkus.updates.core.quarkus310.FlywayDerby](../quarkus/updates/core/quarkus310/flywayderby)
 
 </TabItem>
 

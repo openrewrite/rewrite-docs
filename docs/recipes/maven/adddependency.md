@@ -44,10 +44,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbindingmavendependencyonly.md)
-* [The package scan classes has moved from camel-base-engine to camel-support - maven](/recipes/org/apache/camel/upgrade/camel412/scanclassesmovedmaven.md)
-* [io.quarkus.updates.core.quarkus310.FlywayDb2](/recipes/io/quarkus/updates/core/quarkus310/flywaydb2.md)
-* [io.quarkus.updates.core.quarkus310.FlywayDerby](/recipes/io/quarkus/updates/core/quarkus310/flywayderby.md)
-* [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](/recipes/io/quarkus/updates/core/quarkus310/flywaypostgresql.md)
+* [The package scan classes has moved from camel-base-engine to camel-support - maven](/recipes/apache/camel/upgrade/camel412/scanclassesmovedmaven.md)
+* [io.quarkus.updates.core.quarkus310.FlywayDb2](/recipes/quarkus/updates/core/quarkus310/flywaydb2.md)
+* [io.quarkus.updates.core.quarkus310.FlywayDerby](/recipes/quarkus/updates/core/quarkus310/flywayderby.md)
+* [io.quarkus.updates.core.quarkus310.FlywayPostgreSQL](/recipes/quarkus/updates/core/quarkus310/flywaypostgresql.md)
 
 ## Examples
 ##### Example 1

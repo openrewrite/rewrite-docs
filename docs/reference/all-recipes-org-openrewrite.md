@@ -192,7 +192,7 @@ _18 recipes_
 
 _License: Apache License Version 2.0_
 
-_73 recipes_
+_74 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -317,6 +317,9 @@ _73 recipes_
 * [org.openrewrite.gradle.gradle8.JacocoReportDeprecations](/recipes/gradle/gradle8/jacocoreportdeprecations.md)
   * **Replace Gradle 8 introduced deprecations in JaCoCo report task**
   * Set the `enabled` to `required` and the `destination` to `outputLocation` for Reports deprecations that were removed in gradle 8. See [the gradle docs on this topic](https://docs.gradle.org/current/userguide/upgrading_version_7.html#report_and_testreport_api_cleanup).
+* [org.openrewrite.gradle.gradle9.OneDependencyDeclarationPerStatement](/recipes/gradle/gradle9/onedependencydeclarationperstatement.md)
+  * **Use one dependency declaration per statement**
+  * The Gradle Groovy DSL accepts multiple coordinates in a single configuration call (e.g. `implementation 'a:b:1.0', 'c:d:2.0'`), but the Kotlin DSL does not. Gradle's best practices recommend declaring a single dependency per statement; see the [Gradle dependency best practices](https://docs.gradle.org/current/userguide/best_practices_dependencies.html). This recipe splits multi-coordinate Groovy DSL configuration calls into one call per coordinate. Run this as a cleanup pass before other dependency-aware recipes (e.g. `UpgradeDependencyVersion`, `ChangeDependency`, `RemoveDependency`): those recipes use the `GradleDependency` trait, which only inspects the first argument of a configuration call. Coordinates in later positions are invisible to them until this recipe reshapes the source into one declaration per statement.
 * [org.openrewrite.gradle.gradle9.RewriteSpreadAllInConfigurationsBlock](/recipes/gradle/gradle9/rewritespreadallinconfigurationsblock.md)
   * **Replace spread-`all*` calls in `configurations` blocks with `configurations.all \{ \}`**
   * Gradle 9 throws `Cannot mutate the dependencies of configuration ':all' after the configuration was resolved.` when a `configurations \{ \}` closure uses Groovy's spread-dot form `all*.&lt;method&gt;(args)`. Rewrite each such call to the closure form `configurations.all \{ &lt;method&gt;(args) \}`, which preserves eager-`all` semantics but is accepted by Gradle 9. Only applied when every statement in the `configurations \{ \}` block uses the spread form; mixed blocks are left untouched for manual review.
@@ -787,7 +790,7 @@ _101 recipes_
 
 _License: Moderne Source Available License_
 
-_22 recipes_
+_18 recipes_
 
 * [org.openrewrite.javascript.AddDependency](/recipes/javascript/adddependency.md)
   * **Add npm dependency**
@@ -822,21 +825,9 @@ _22 recipes_
 * [org.openrewrite.javascript.cleanup.use-object-property-shorthand](/recipes/javascript/cleanup/use-object-property-shorthand.md)
   * **Use object property shorthand**
   * Simplifies object properties where the property name and value/variable name are the same (e.g., `\{ x: x \}` becomes `\{ x \}`). Applies to both destructuring patterns and object literals.
-* [org.openrewrite.javascript.dependencies.add-dependency](/recipes/javascript/dependencies/add-dependency.md)
-  * **Add npm dependency**
-  * Adds a new dependency to `package.json` and updates the lock file by running the package manager.
 * [org.openrewrite.javascript.dependencies.find-dependency](/recipes/javascript/dependencies/find-dependency.md)
   * **Find Node.js dependency**
   * Finds dependencies in a project's `package.json`. Can find both direct dependencies and dependencies that transitively include the target package. This recipe is commonly used as a precondition for other recipes.
-* [org.openrewrite.javascript.dependencies.remove-dependency](/recipes/javascript/dependencies/remove-dependency.md)
-  * **Remove npm dependency**
-  * Removes a dependency from `package.json` and updates the lock file by running the package manager.
-* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](/recipes/javascript/dependencies/upgrade-dependency-version.md)
-  * **Upgrade npm dependency version**
-  * Upgrades the version of a direct dependency in `package.json` and updates the lock file by running the package manager. Either `packageName` or `packagePattern` must be specified.
-* [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](/recipes/javascript/dependencies/upgrade-transitive-dependency-version.md)
-  * **Upgrade transitive npm dependency version**
-  * Upgrades the version of a transitive dependency by adding override/resolution entries to `package.json` and updates the lock file by running the package manager.
 * [org.openrewrite.javascript.format.auto-format](/recipes/javascript/format/auto-format.md)
   * **Auto-format JavaScript/TypeScript code**
   * Format JavaScript and TypeScript code using formatting rules auto-detected from the project's existing code style.

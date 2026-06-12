@@ -40,8 +40,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.17.0](../quarkus/migratetoquarkus_v3_17_0)
-* [io.quarkus.updates.core.quarkus318.RemoveFlywayCleanOnValidationError](../io/quarkus/updates/core/quarkus318/removeflywaycleanonvalidationerror)
-* [Migrates `camel 4.9` application to `camel 4.10`](../io/quarkus/updates/camel/camel410/camelquarkusmigrationrecipe)
+* [io.quarkus.updates.core.quarkus318.RemoveFlywayCleanOnValidationError](../quarkus/updates/core/quarkus318/removeflywaycleanonvalidationerror)
+* [Migrates `camel 4.9` application to `camel 4.10`](../quarkus/updates/camel/camel410/camelquarkusmigrationrecipe)
 
 </TabItem>
 

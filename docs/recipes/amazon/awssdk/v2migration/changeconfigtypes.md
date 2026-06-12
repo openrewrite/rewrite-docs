@@ -1,0 +1,426 @@
+---
+title: "Change config related classes from v1 to v2"
+sidebar_label: "Change config related classes from v1 to v2"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
+
+# Change config related classes from v1 to v2
+
+**software.amazon.awssdk.v2migration.ChangeConfigTypes**
+
+_Change config related classes from v1 to v2._
+
+## Recipe source
+
+[GitHub: search?type=code&q=software.amazon.awssdk.v2migration.ChangeConfigTypes](https://github.com/search?type=code&q=software.amazon.awssdk.v2migration.ChangeConfigTypes),
+[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration withRequestTimeout(int)`
+  * newMethodName: `withApiCallAttemptTimeout`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration setRequestTimeout(int)`
+  * newMethodName: `withApiCallAttemptTimeout`
+* [Convert the method parameter from numeric type to duration](../../../amazon/awssdk/v2migration/numbertoduration)
+  * methodPattern: `com.amazonaws.ClientConfiguration withApiCallAttemptTimeout(int)`
+  * timeUnit: `MILLISECONDS`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration withClientExecutionTimeout(int)`
+  * newMethodName: `withApiCallTimeout`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration setClientExecutionTimeout(int)`
+  * newMethodName: `withApiCallTimeout`
+* [Convert the method parameter from numeric type to duration](../../../amazon/awssdk/v2migration/numbertoduration)
+  * methodPattern: `com.amazonaws.ClientConfiguration withApiCallTimeout(int)`
+  * timeUnit: `MILLISECONDS`
+* [Convert the method parameter from numeric type to duration](../../../amazon/awssdk/v2migration/numbertoduration)
+  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionTimeout(int)`
+  * timeUnit: `MILLISECONDS`
+* [Convert the method parameter from numeric type to duration](../../../amazon/awssdk/v2migration/numbertoduration)
+  * methodPattern: `com.amazonaws.ClientConfiguration withSocketTimeout(int)`
+  * timeUnit: `MILLISECONDS`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionMaxIdleMillis(long)`
+  * newMethodName: `withConnectionMaxIdleTime`
+* [Convert the method parameter from numeric type to duration](../../../amazon/awssdk/v2migration/numbertoduration)
+  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionMaxIdleTime(long)`
+  * timeUnit: `MILLISECONDS`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionTTL(long)`
+  * newMethodName: `withConnectionTimeToLive`
+* [Convert the method parameter from numeric type to duration](../../../amazon/awssdk/v2migration/numbertoduration)
+  * methodPattern: `com.amazonaws.ClientConfiguration withConnectionTimeToLive(long)`
+  * timeUnit: `MILLISECONDS`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration withRetryMode(..)`
+  * newMethodName: `withRetryPolicy`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration setRetryMode(..)`
+  * newMethodName: `withRetryPolicy`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration withHeader(String, String)`
+  * newMethodName: `withPutHeader`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.amazonaws.ClientConfiguration setHeader(String, String)`
+  * newMethodName: `withPutHeader`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setMaxConsecutiveRetriesBeforeThrottling(int)`
+  * comment: `maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withMaxConsecutiveRetriesBeforeThrottling(int)`
+  * comment: `maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setCacheResponseMetadata(boolean)`
+  * comment: `cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withCacheResponseMetadata(boolean)`
+  * comment: `cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withDisableHostPrefixInjection(boolean)`
+  * comment: `disableHostPrefixInjection is deprecated and not supported removed in v2. Consider removing it.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setDisableHostPrefixInjection(boolean)`
+  * comment: `disableHostPrefixInjection is deprecated and not supported in v2. Consider removing it.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setDnsResolver(..)`
+  * comment: `dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withDnsResolver(..)`
+  * comment: `dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setGzip(boolean)`
+  * comment: `gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withGzip(boolean)`
+  * comment: `gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setLocalAddress(..)`
+  * comment: `localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withLocalAddress(..)`
+  * comment: `localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setSecureRandom(.*)`
+  * comment: `secureRandom is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withSecureRandom(.*)`
+  * comment: `secureRandom is supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setUseExpectContinue(boolean)`
+  * comment: `useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withUseExpectContinue(boolean)`
+  * comment: `useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withProtocol(.*)`
+  * comment: `protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setProtocol(.*)`
+  * comment: `protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withUserAgent(String)`
+  * comment: `userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setUserAgent(String)`
+  * comment: `userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withUserAgentPrefix(String)`
+  * comment: `userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setUserAgentPrefix(String)`
+  * comment: `userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration withUserAgentSuffix(String)`
+  * comment: `userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
+* [Add a comment to a method](../../../amazon/awssdk/v2migration/addcommenttomethod)
+  * methodPattern: `com.amazonaws.ClientConfiguration setUserAgentSuffix(String)`
+  * comment: `userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.ClientConfiguration`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.core.client.config.ClientOverrideConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.retry.RetryMode`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.core.retry.RetryMode`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.AmazonWebServiceClient`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.AwsClient`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.client.builder.AwsSyncClientBuilder`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.client.builder.AwsClientBuilder`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.amazonaws.client.builder.AwsAsyncClientBuilder`
+  * newFullyQualifiedTypeName: `software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: software.amazon.awssdk.v2migration.ChangeConfigTypes
+displayName: Change config related classes from v1 to v2
+description: |
+  Change config related classes from v1 to v2.
+recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration withRequestTimeout(int)
+      newMethodName: withApiCallAttemptTimeout
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration setRequestTimeout(int)
+      newMethodName: withApiCallAttemptTimeout
+  - software.amazon.awssdk.v2migration.NumberToDuration:
+      methodPattern: com.amazonaws.ClientConfiguration withApiCallAttemptTimeout(int)
+      timeUnit: MILLISECONDS
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration withClientExecutionTimeout(int)
+      newMethodName: withApiCallTimeout
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration setClientExecutionTimeout(int)
+      newMethodName: withApiCallTimeout
+  - software.amazon.awssdk.v2migration.NumberToDuration:
+      methodPattern: com.amazonaws.ClientConfiguration withApiCallTimeout(int)
+      timeUnit: MILLISECONDS
+  - software.amazon.awssdk.v2migration.NumberToDuration:
+      methodPattern: com.amazonaws.ClientConfiguration withConnectionTimeout(int)
+      timeUnit: MILLISECONDS
+  - software.amazon.awssdk.v2migration.NumberToDuration:
+      methodPattern: com.amazonaws.ClientConfiguration withSocketTimeout(int)
+      timeUnit: MILLISECONDS
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration withConnectionMaxIdleMillis(long)
+      newMethodName: withConnectionMaxIdleTime
+  - software.amazon.awssdk.v2migration.NumberToDuration:
+      methodPattern: com.amazonaws.ClientConfiguration withConnectionMaxIdleTime(long)
+      timeUnit: MILLISECONDS
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration withConnectionTTL(long)
+      newMethodName: withConnectionTimeToLive
+  - software.amazon.awssdk.v2migration.NumberToDuration:
+      methodPattern: com.amazonaws.ClientConfiguration withConnectionTimeToLive(long)
+      timeUnit: MILLISECONDS
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration withRetryMode(..)
+      newMethodName: withRetryPolicy
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration setRetryMode(..)
+      newMethodName: withRetryPolicy
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration withHeader(String, String)
+      newMethodName: withPutHeader
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.amazonaws.ClientConfiguration setHeader(String, String)
+      newMethodName: withPutHeader
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setMaxConsecutiveRetriesBeforeThrottling(int)
+      comment: maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withMaxConsecutiveRetriesBeforeThrottling(int)
+      comment: maxConsecutiveRetriesBeforeThrottling is deprecated and not supported in v2. Consider removing it or using a custom RetryPolicy.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setCacheResponseMetadata(boolean)
+      comment: cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withCacheResponseMetadata(boolean)
+      comment: cacheResponseMetadata is deprecated and not supported in v2. Consider removing it.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withDisableHostPrefixInjection(boolean)
+      comment: disableHostPrefixInjection is deprecated and not supported removed in v2. Consider removing it.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setDisableHostPrefixInjection(boolean)
+      comment: disableHostPrefixInjection is deprecated and not supported in v2. Consider removing it.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setDnsResolver(..)
+      comment: dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withDnsResolver(..)
+      comment: dnsResolver is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setGzip(boolean)
+      comment: gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withGzip(boolean)
+      comment: gzip is not supported in v2 tracking in https://github.com/aws/aws-sdk-java-v2/issues/866. Consider removing it.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setLocalAddress(..)
+      comment: localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withLocalAddress(..)
+      comment: localAddress is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setSecureRandom(.*)
+      comment: secureRandom is not supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withSecureRandom(.*)
+      comment: secureRandom is supported in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setUseExpectContinue(boolean)
+      comment: useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withUseExpectContinue(boolean)
+      comment: useExpectContinue is removed in v2. Please submit a feature request https://github.com/aws/aws-sdk-java-v2/issues
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withProtocol(.*)
+      comment: protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setProtocol(.*)
+      comment: protocol is deprecated and not supported in v2. Consider using endpointOverride to specify HTTP scheme.
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withUserAgent(String)
+      comment: userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setUserAgent(String)
+      comment: userAgent override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withUserAgentPrefix(String)
+      comment: userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setUserAgentPrefix(String)
+      comment: userAgentPrefix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration withUserAgentSuffix(String)
+      comment: userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
+  - software.amazon.awssdk.v2migration.AddCommentToMethod:
+      methodPattern: com.amazonaws.ClientConfiguration setUserAgentSuffix(String)
+      comment: userAgentSuffix override is a request-level config in v2. See https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/core/RequestOverrideConfiguration.Builder.html#addApiName(software.amazon.awssdk.core.ApiName).
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.ClientConfiguration
+      newFullyQualifiedTypeName: software.amazon.awssdk.core.client.config.ClientOverrideConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.retry.RetryMode
+      newFullyQualifiedTypeName: software.amazon.awssdk.core.retry.RetryMode
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.AmazonWebServiceClient
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.AwsClient
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.client.builder.AwsSyncClientBuilder
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.client.builder.AwsClientBuilder
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.amazonaws.client.builder.AwsAsyncClientBuilder
+      newFullyQualifiedTypeName: software.amazon.awssdk.awscore.client.builder.AwsSyncClientBuilder
+
+```
+</TabItem>
+</Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Change SDK core types from v1 to v2](/recipes/amazon/awssdk/v2migration/changesdkcoretypes.md)
+
+
+## Usage
+
+<RunRecipe
+  recipeName="software.amazon.awssdk.v2migration.ChangeConfigTypes"
+  displayName="Change config related classes from v1 to v2"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-third-party"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
+  hasDataTables
+/>
+
+## See how this recipe works across multiple open-source repositories
+
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/software.amazon.awssdk.v2migration.ChangeConfigTypes" />
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+</Tabs>

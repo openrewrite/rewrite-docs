@@ -33,11 +33,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/io/quarkus/updates/core/quarkus37/deprecatedlogrecordthreadid.md)
 * [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/java/migrate/deprecatedlogrecordthreadid.md)
-* [Change S3 types to v2.](/recipes/software/amazon/awssdk/v2migration/s3typestov2.md)
-* [Change S3EventNotification methods to v2.](/recipes/software/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
-* [Change SDK TransferManager types from v1 to v2](/recipes/software/amazon/awssdk/v2migration/changetransfermanagertypes.md)
+* [Adopt `setLongThreadID` in `java.util.logging.LogRecord`](/recipes/quarkus/updates/core/quarkus37/deprecatedlogrecordthreadid.md)
+* [Change S3 types to v2.](/recipes/amazon/awssdk/v2migration/s3typestov2.md)
+* [Change S3EventNotification methods to v2.](/recipes/amazon/awssdk/v2migration/s3eventnotificationmethodstov2.md)
+* [Change SDK TransferManager types from v1 to v2](/recipes/amazon/awssdk/v2migration/changetransfermanagertypes.md)
 * [Change method invocation return type](/recipes/java/migrate/changemethodinvocationreturntype.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
