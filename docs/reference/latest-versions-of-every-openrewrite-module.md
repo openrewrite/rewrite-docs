@@ -35,7 +35,7 @@ The use of the "bill of materials" means that a developer will only need to spec
 | [io.moderne.recipe:rewrite-jasperreports](https://github.com/moderneinc/rewrite-jasperreports/blob/main/)             | [0.6.0](https://github.com/moderneinc/rewrite-jasperreports/releases/tag/0.6.0)            | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
 | [io.moderne.recipe:rewrite-java-application-server](https://github.com/moderneinc/rewrite-java-application-server/blob/main/) | [0.7.2](https://github.com/moderneinc/rewrite-java-application-server/releases/tag/0.7.2)  | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
 | [io.moderne.recipe:rewrite-kafka](https://github.com/moderneinc/rewrite-kafka/blob/main/)                             | [0.7.0](https://github.com/moderneinc/rewrite-kafka/releases/tag/0.7.0)                    | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
-| [io.moderne.recipe:rewrite-prethink](https://github.com/moderneinc/rewrite-prethink/blob/main/)                       | [0.7.0](https://github.com/moderneinc/rewrite-prethink/releases/tag/0.7.0)                 | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
+| [io.moderne.recipe:rewrite-prethink](https://github.com/moderneinc/rewrite-prethink/blob/main/)                       | [0.7.1](https://github.com/moderneinc/rewrite-prethink/releases/tag/0.7.1)                 | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
 | [io.moderne.recipe:rewrite-program-analysis](https://github.com/moderneinc/rewrite-program-analysis/blob/main/)       | [0.12.8](https://github.com/moderneinc/rewrite-program-analysis/releases/tag/0.12.8)       | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
 | [io.moderne.recipe:rewrite-react](https://github.com/moderneinc/rewrite-react/blob/main/)                             | [0.3.1](https://github.com/moderneinc/rewrite-react/releases/tag/0.3.1)                    | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
 | [io.moderne.recipe:rewrite-release-metromap](https://github.com/moderneinc/rewrite-release-metromap/blob/main/)       | [0.3.0](https://github.com/moderneinc/rewrite-release-metromap/releases/tag/0.3.0)         | [Moderne Proprietary License](https://docs.moderne.io/licensing/overview) |
@@ -138,6 +138,8 @@ mod config recipes npm install @openrewrite/recipes-angular @openrewrite/recipes
 
 Install the latest versions of all the OpenRewrite [recipe modules into Moderne](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/importing-external-recipes#importing-recipes-via-a-graphql-api-call) using the GraphQL endpoint.
 
+The mutation below uses `installRecipesUniversal`, which installs into the universal marketplace (visible to everyone) and requires the `admin` role.
+
 <details>
 <summary>
 Show GraphQL mutation.
@@ -146,591 +148,423 @@ Show GraphQL mutation.
 ```graphql
 mutation seedOpenRewriteArtifacts {
 
-  load_io_moderne_recipe_recipes_kotlin: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "recipes-kotlin"
-    version: "LATEST"
+  load_io_moderne_recipe_recipes_kotlin: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "recipes-kotlin", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_recipes_scala: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "recipes-scala"
-    version: "LATEST"
+  load_io_moderne_recipe_recipes_scala: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "recipes-scala", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_ai: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-ai"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_ai: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-ai", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_angular: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-angular"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_angular: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-angular", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_cryptography: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-cryptography"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_cryptography: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-cryptography", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_cve_2026_22732: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-cve-2026-22732"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_cve_2026_22732: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-cve-2026-22732", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_devcenter: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-devcenter"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_devcenter: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-devcenter", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_dropwizard: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-dropwizard"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_dropwizard: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-dropwizard", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_elastic: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-elastic"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_elastic: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-elastic", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_hibernate: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-hibernate"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_hibernate: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-hibernate", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_jasperreports: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-jasperreports"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_jasperreports: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-jasperreports", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_java_application_server: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-java-application-server"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_java_application_server: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-java-application-server", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_kafka: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-kafka"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_kafka: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-kafka", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_prethink: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-prethink"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_prethink: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-prethink", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_program_analysis: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-program-analysis"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_program_analysis: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-program-analysis", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_react: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-react"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_react: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-react", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_release_metromap: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-release-metromap"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_release_metromap: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-release-metromap", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_spring: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-spring"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_spring: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-spring", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_tapestry: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-tapestry"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_tapestry: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-tapestry", version: "LATEST" } }
   ) {
     id
   }
-  load_io_moderne_recipe_rewrite_vulncheck: loadRecipesAsync(
-    groupId: "io.moderne.recipe"
-    artifactId: "rewrite-vulncheck"
-    version: "LATEST"
+  load_io_moderne_recipe_rewrite_vulncheck: installRecipesUniversal(
+    bundle: { maven: { groupId: "io.moderne.recipe", artifactId: "rewrite-vulncheck", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_cobol: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-cobol"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_cobol: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-cobol", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_core: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-core"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_core: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-core", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_csharp: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-csharp"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_csharp: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-csharp", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_docker: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-docker"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_docker: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-docker", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_gradle: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-gradle"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_gradle: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-gradle", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_groovy: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-groovy"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_groovy: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-groovy", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_hcl: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-hcl"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_hcl: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-hcl", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_java: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-java"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_java: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-java", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_javascript: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-javascript"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_javascript: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-javascript", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_json: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-json"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_json: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-json", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_kotlin: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-kotlin"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_kotlin: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-kotlin", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_maven: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-maven"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_maven: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-maven", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_polyglot: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-polyglot"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_polyglot: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-polyglot", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_properties: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-properties"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_properties: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-properties", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_protobuf: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-protobuf"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_protobuf: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-protobuf", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_python: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-python"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_python: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-python", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_templating: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-templating"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_templating: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-templating", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_toml: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-toml"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_toml: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-toml", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_xml: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-xml"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_xml: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-xml", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_rewrite_yaml: loadRecipesAsync(
-    groupId: "org.openrewrite"
-    artifactId: "rewrite-yaml"
-    version: "LATEST"
+  load_org_openrewrite_rewrite_yaml: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite", artifactId: "rewrite-yaml", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_meta_rewrite_analysis: loadRecipesAsync(
-    groupId: "org.openrewrite.meta"
-    artifactId: "rewrite-analysis"
-    version: "LATEST"
+  load_org_openrewrite_meta_rewrite_analysis: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.meta", artifactId: "rewrite-analysis", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_all: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-all"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_all: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-all", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_android: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-android"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_android: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-android", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_apache: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-apache"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_apache: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-apache", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_circleci: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-circleci"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_circleci: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-circleci", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_codemods: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-codemods"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_codemods: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-codemods", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_codemods_ng: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-codemods-ng"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_codemods_ng: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-codemods-ng", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_compiled_analysis: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-compiled-analysis"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_compiled_analysis: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-compiled-analysis", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_concourse: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-concourse"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_concourse: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-concourse", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_cucumber_jvm: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-cucumber-jvm"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_cucumber_jvm: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-cucumber-jvm", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_dotnet: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-dotnet"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_dotnet: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-dotnet", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_feature_flags: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-feature-flags"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_feature_flags: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-feature-flags", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_github_actions: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-github-actions"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_github_actions: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-github-actions", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_gitlab: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-gitlab"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_gitlab: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-gitlab", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_hibernate: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-hibernate"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_hibernate: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-hibernate", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_jackson: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-jackson"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_jackson: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-jackson", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_java_dependencies: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-java-dependencies"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_java_dependencies: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-java-dependencies", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_java_security: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-java-security"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_java_security: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-java-security", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_jenkins: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-jenkins"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_jenkins: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-jenkins", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_joda: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-joda"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_joda: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-joda", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_kubernetes: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-kubernetes"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_kubernetes: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-kubernetes", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_liberty: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-liberty"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_liberty: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-liberty", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_logging_frameworks: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-logging-frameworks"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_logging_frameworks: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-logging-frameworks", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_micrometer: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-micrometer"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_micrometer: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-micrometer", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_micronaut: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-micronaut"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_micronaut: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-micronaut", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_migrate_java: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-migrate-java"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_migrate_java: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-migrate-java", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_migrate_kotlin: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-migrate-kotlin"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_migrate_kotlin: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-migrate-kotlin", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_migrate_python: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-migrate-python"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_migrate_python: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-migrate-python", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_netty: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-netty"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_netty: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-netty", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_nodejs: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-nodejs"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_nodejs: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-nodejs", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_okhttp: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-okhttp"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_okhttp: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-okhttp", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_openapi: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-openapi"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_openapi: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-openapi", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_prethink: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-prethink"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_prethink: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-prethink", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_quarkus: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-quarkus"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_quarkus: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-quarkus", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_reactive_streams: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-reactive-streams"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_reactive_streams: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-reactive-streams", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_rewrite: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-rewrite"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_rewrite: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-rewrite", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_spring: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-spring"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_spring: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-spring", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_spring_to_quarkus: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-spring-to-quarkus"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_spring_to_quarkus: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-spring-to-quarkus", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_sql: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-sql"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_sql: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-sql", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_static_analysis: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-static-analysis"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_static_analysis: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-static-analysis", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_struts: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-struts"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_struts: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-struts", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_terraform: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-terraform"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_terraform: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-terraform", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_testing_frameworks: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-testing-frameworks"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_testing_frameworks: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-testing-frameworks", version: "LATEST" } }
   ) {
     id
   }
-  load_org_openrewrite_recipe_rewrite_third_party: loadRecipesAsync(
-    groupId: "org.openrewrite.recipe"
-    artifactId: "rewrite-third-party"
-    version: "LATEST"
+  load_org_openrewrite_recipe_rewrite_third_party: installRecipesUniversal(
+    bundle: { maven: { groupId: "org.openrewrite.recipe", artifactId: "rewrite-third-party", version: "LATEST" } }
   ) {
     id
   }
