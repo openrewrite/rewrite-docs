@@ -1926,7 +1926,7 @@ _54 recipes_
   * Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and removes the deprecated `server-url` input. See the [v7.0.0 release notes](https://github.com/astral-sh/setup-uv/releases/tag/v7.0.0) for breaking changes.
 * [org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions](/recipes/github/migratetibdexgithubapptokentoactions.md)
   * **Migrate from tibdex/github-app-token to actions/create-github-app-token**
-  * Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case.
+  * Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-github-app-token@v3`, which runs on Node.js 24 instead of the deprecated Node.js 20. Renames the `app_id`, `private_key`, and `github_api_url` inputs to their kebab-case equivalents `app-id`, `private-key`, and `github-api-url`.
 * [org.openrewrite.github.PreferBlockStyleJobDependencies](/recipes/github/preferblockstylejobdependencies.md)
   * **Prefer block style for job dependencies**
   * Convert flow-style `needs` sequences (e.g. `needs: [dep1, dep2]`) to block-style in GitHub Actions workflow jobs when a job depends on more than one other job. Block style improves readability and produces cleaner diffs in source control.
@@ -2122,7 +2122,7 @@ _22 recipes_
 
 _License: Moderne Source Available License_
 
-_24 recipes_
+_26 recipes_
 
 * [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes.md)
   * **AddScalarPreferStandardBasicTypesForHibernate5**
@@ -2178,6 +2178,12 @@ _24 recipes_
 * [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate63](/recipes/hibernate/migratetohypersistenceutilshibernate63.md)
   * **Migrate Hibernate Types to Hypersistence Utils 6.3**
   * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-62` to `io.hypersistence:hypersistence-utils-hibernate-63`.
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate70](/recipes/hibernate/migratetohypersistenceutilshibernate70.md)
+  * **Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.0**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-63` to `io.hypersistence:hypersistence-utils-hibernate-70`.
+* [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate71](/recipes/hibernate/migratetohypersistenceutilshibernate71.md)
+  * **Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.1**
+  * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-70` to `io.hypersistence:hypersistence-utils-hibernate-71`.
 * [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype.md)
   * **Migrate `UserType` to Hibernate 6**
   * With Hibernate 6 the `UserType` interface received a type parameter making it more strictly typed. This recipe applies the changes required to adhere to this change.
@@ -2201,7 +2207,7 @@ _24 recipes_
 
 _License: Apache License Version 2.0_
 
-_39 recipes_
+_42 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -2230,6 +2236,9 @@ _39 recipes_
 * [org.openrewrite.java.jackson.LombokJacksonizedConfig](/recipes/java/jackson/lombokjacksonizedconfig.md)
   * **Update `lombok.config` for Jackson 3 compatibility**
   * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion += 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
+* [org.openrewrite.java.jackson.MigrateFactorySettersToBuilder](/recipes/java/jackson/migratefactorysetterstobuilder.md)
+  * **Migrate factory setter calls to builder pattern**
+  * In Jackson 3, `JsonFactory` is immutable and `new JsonFactory()` is no longer the right entry point: the concrete factory lives at `tools.jackson.core.json.JsonFactory` and is constructed via `JsonFactory.builder()...build()`. Configuration methods like `enable`, `disable`, `configure`, `setCharacterEscapes`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
 * [org.openrewrite.java.jackson.MigrateMapperSettersToBuilder](/recipes/java/jackson/migratemappersetterstobuilder.md)
   * **Migrate mapper setter calls to builder pattern**
   * In Jackson 3, `JsonMapper` and other format-aligned mappers are immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
@@ -2284,6 +2293,9 @@ _39 recipes_
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames](/recipes/java/jackson/upgradejackson_2_3_methodrenames.md)
   * **Rename Jackson 2.x methods to 3.x equivalents**
   * Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_ModernizeJacksonCoreFeatures](/recipes/java/jackson/upgradejackson_2_3_modernizejacksoncorefeatures.md)
+  * **Modernize legacy `jackson-core` feature constants**
+  * Jackson 2.10 moved most flag constants out of `JsonParser.Feature` and `JsonGenerator.Feature` into the new `JsonReadFeature` / `JsonWriteFeature` (for JSON-specific flags) and `StreamReadFeature` / `StreamWriteFeature` (for format-agnostic flags). Jackson 3 keeps only the modern locations. This recipe rewrites every legacy constant to its Jackson 2-modern equivalent so the rest of the Jackson 2 → 3 pipeline (in particular the builder migrations) sees flags the modern API will accept.
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_ObjectNodeMethodRenames](/recipes/java/jackson/upgradejackson_2_3_objectnodemethodrenames.md)
   * **Rename Jackson 2.x methods to 3.x equivalents for ObjectNode**
   * Rename ObjectNode methods deprecated in Jackson 2 and removed in 3.x (`put(String, JsonNode)` to `set`, `putAll` to `setAll`).
@@ -2302,6 +2314,9 @@ _39 recipes_
 * [org.openrewrite.java.jackson.UseFormatAlignedObjectMappers](/recipes/java/jackson/useformatalignedobjectmappers.md)
   * **Use format alignment `ObjectMappers`**
   * Replace wrapping `ObjectMapper` calls with their format aligned implementation.
+* [org.openrewrite.java.jackson.UseJsonFactoryStaticBuilder](/recipes/java/jackson/usejsonfactorystaticbuilder.md)
+  * **Use `JsonFactory.builder()` over `new JsonFactoryBuilder()`**
+  * After the Jackson 2 → 3 migration, prefer the concrete static `JsonFactory.builder()` entry over `new JsonFactoryBuilder()` so `JsonFactory` chains read the same way as the format-aligned factories (`YAMLFactory.builder()`, `CBORFactory.builder()`, etc.). The reason `MigrateFactorySettersToBuilder` emits `new JsonFactoryBuilder()` in the first place is a Jackson 2 quirk — `JsonFactory.builder()` returned the wildcard `TSFBuilder&lt;?, ?&gt;` there. In Jackson 3 the static returns a concretely-typed `JsonFactoryBuilder`, so the constructor form no longer earns its keep.
 * [org.openrewrite.java.jackson.UseModernDateTimeSerialization](/recipes/java/jackson/usemoderndatetimeserialization.md)
   * **Use modern date/time serialization defaults**
   * Remove redundant `@JsonFormat` annotations on `java.time` types that specify ISO-8601 patterns, as Jackson 3 uses ISO-8601 as the default format (with `WRITE_DATES_AS_TIMESTAMPS` now disabled by default).
@@ -3076,7 +3091,7 @@ _39 recipes_
 
 _License: Moderne Source Available License_
 
-_458 recipes_
+_459 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
@@ -3120,6 +3135,9 @@ _458 recipes_
 * [org.openrewrite.java.migrate.AddMissingMethodImplementation](/recipes/java/migrate/addmissingmethodimplementation.md)
   * **Adds missing method implementations**
   * Check for missing methods required by interfaces and adds them.
+* [org.openrewrite.java.migrate.AddMockitoJavaAgentToMavenSurefirePlugin](/recipes/java/migrate/addmockitojavaagenttomavensurefireplugin.md)
+  * **Add Mockito Java Agent to Maven Surefire Plugin**
+  * Adds required configuration to specifically enable the Mockito/Bytebuddy Java agent in the Maven Surefire plugin for Java 21 compatibility.
 * [org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean](/recipes/java/migrate/addstaticvariableonproducersessionbean.md)
   * **Adds `static` modifier to `@Produces` fields that are in session beans**
   * Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`.
@@ -3129,9 +3147,6 @@ _458 recipes_
 * [org.openrewrite.java.migrate.AddSurefireFailsafeArgLine](/recipes/java/migrate/addsurefirefailsafeargline.md)
   * **Add `argLine` to surefire and failsafe plugins**
   * Adds the specified arguments to the `argLine` configuration of the Maven Surefire and Failsafe plugins, merging with any existing argLine value without duplicating arguments.
-* [org.openrewrite.java.migrate.AddSurefireFailsafeArgLineForMockito](/recipes/java/migrate/addsurefirefailsafearglineformockito.md)
-  * **Add surefire `--add-opens` for Mockito/ByteBuddy**
-  * Adds `--add-opens` JVM arguments required by Mockito and ByteBuddy to the Maven Surefire and Failsafe plugin `argLine` configuration. Only applied when the project depends on Mockito.
 * [org.openrewrite.java.migrate.ArrayStoreExceptionToTypeNotPresentException](/recipes/java/migrate/arraystoreexceptiontotypenotpresentexception.md)
   * **Catch `TypeNotPresentException` thrown by `Class.getAnnotation()`**
   * Replace catch blocks for `ArrayStoreException` around `Class.getAnnotation()` with `TypeNotPresentException` to ensure compatibility with Java 11+.
@@ -3336,6 +3351,9 @@ _458 recipes_
 * [org.openrewrite.java.migrate.UpgradeJavaVersion](/recipes/java/migrate/upgradejavaversion.md)
   * **Upgrade Java version**
   * Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
+* [org.openrewrite.java.migrate.UpgradeKotlinJvmTargetVersion](/recipes/java/migrate/upgradekotlinjvmtargetversion.md)
+  * **Upgrade Kotlin `jvmTarget` to match the Java version**
+  * Align the Kotlin `jvmTarget` with the project's Java version so the Kotlin compiler emits bytecode at the same level as `javac`. Covers `kotlin-maven-plugin` `&lt;jvmTarget&gt;` configuration and the Gradle `kotlinOptions \{ jvmTarget = ... \}` / `compilerOptions \{ jvmTarget = ... \}` blocks (Groovy and Kotlin DSL). Will not downgrade if the existing Kotlin target is higher than the requested version.
 * [org.openrewrite.java.migrate.UpgradePluginsForJava11](/recipes/java/migrate/upgradepluginsforjava11.md)
   * **Upgrade plugins to Java 11 compatible versions**
   * Updates plugins to version compatible with Java 11.
@@ -4605,7 +4623,7 @@ _5 recipes_
   * Generate FINOS CALM architecture diagram and update agent configuration files. This recipe expects CALM-related data tables (ServiceEndpoints, DatabaseConnections, ExternalServiceCalls, MessagingConnections, etc.) to be populated by other recipes in a composite.
 * [org.openrewrite.prethink.calm.GenerateCalmArchitecture](/recipes/prethink/calm/generatecalmarchitecture.md)
   * **Generate CALM architecture**
-  * Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections.
+  * Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections.  This recipe is not meant to be run on its own. It only reads data tables that other Prethink discovery recipes populate first, so it produces nothing useful in isolation. Run it as part of a composite such as `org.openrewrite.prethink.UpdatePrethinkContext`.
 
 ## rewrite-quarkus
 
@@ -6542,7 +6560,7 @@ _181 recipes_
 
 _License: Moderne Source Available License_
 
-_254 recipes_
+_258 recipes_
 
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
@@ -7188,7 +7206,16 @@ _254 recipes_
   * Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic as Mockito4 no longer allows this. For JUnit 4/5 &amp; TestNG: When `@Before*` is used, a `close` call is added to the corresponding `@After*` method. This change moves away from implicit bytecode manipulation for static method stubbing, making mocking behavior more explicit and scoped to avoid unintended side effects.
 * [org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith](/recipes/java/testing/mockito/powermockrunnerdelegatetorunwith.md)
   * **Replace PowerMock runner with JUnit `@RunWith`**
-  * Replaces `@RunWith(PowerMockRunner.class)`. If `@PowerMockRunnerDelegate(X.class)` is present, promotes the delegate runner to `@RunWith(X.class)`. Otherwise, removes the `@RunWith(PowerMockRunner.class)` annotation entirely.
+  * Replaces `@RunWith(PowerMockRunner.class)`. If `@PowerMockRunnerDelegate(X.class)` is present, promotes the delegate runner to `@RunWith(X.class)`. Otherwise, replaces it with `@RunWith(MockitoJUnitRunner.class)` when the class uses Mockito annotations like `@Mock`, or removes the `@RunWith(PowerMockRunner.class)` annotation entirely.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetInternalStateToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxgetinternalstatetojavareflection.md)
+  * **Replace PowerMock `Whitebox.getInternalState()` with Java reflection**
+  * Replace `Whitebox.getInternalState(Object, String)` with `java.lang.reflect.Field` access, casting to the declared result type where needed. The field lookup uses `getDeclaredField` on the target object's class, which differs from PowerMock's class-hierarchy traversal for fields inherited from a superclass.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxinvokemethodtojavareflection.md)
+  * **Replace PowerMock `Whitebox.invokeMethod()` with Java reflection**
+  * Replace `Whitebox.invokeMethod(Object, String, ..)` with `java.lang.reflect.Method` lookup and `invoke()`. Parameter types are taken from the unambiguously resolved target method, falling back to each argument's compile-time class.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxSetInternalStateToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxsetinternalstatetojavareflection.md)
+  * **Replace PowerMock `Whitebox.setInternalState()` with Java reflection**
+  * Replace `Whitebox.setInternalState(Object, String, Object)` and `Whitebox.setInternalState(Object, String, Object, Class)` with `java.lang.reflect.Field` access. The 3-arg overload looks up the field on the target's class; the 4-arg where-overload uses the supplied Class to resolve fields declared on a superclass.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
   * **Replace PowerMock `Whitebox` with Java reflection**
   * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
@@ -7276,6 +7303,9 @@ _254 recipes_
 * [org.openrewrite.java.testing.testcontainers.Testcontainers2Dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
   * **Rename Testcontainers dependencies**
   * Change Testcontainers dependencies to adopt the new consistent `testcontainers-` prefix.
+* [org.openrewrite.java.testing.testcontainers.Testcontainers2LocalStack](/recipes/java/testing/testcontainers/testcontainers2localstack.md)
+  * **Migrate removed `LocalStackContainer` members to Testcontainers 2.x**
+  * Testcontainers 2.x removed the nested `LocalStackContainer.Service` enum and the `getEndpointOverride(...)` method. Replace `LocalStackContainer.Service` constants with the equivalent service name strings and `getEndpointOverride(service)` with `getEndpoint()`, so code continues to compile against Testcontainers 2.x. This runs while the type is still `org.testcontainers.containers.localstack.LocalStackContainer`, before it is renamed.
 * [org.openrewrite.java.testing.testcontainers.Testcontainers2Migration](/recipes/java/testing/testcontainers/testcontainers2migration.md)
   * **Migrate to testcontainers-java 2.x**
   * Change dependencies and types to migrate to testcontainers-java 2.x.
@@ -7311,7 +7341,7 @@ _254 recipes_
 
 _License: Apache License Version 2.0_
 
-_1638 recipes_
+_1639 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -8092,6 +8122,9 @@ _1638 recipes_
   * 
 * [io.quarkus.updates.core.quarkus331.Testcontainers2](/recipes/quarkus/updates/core/quarkus331/testcontainers2.md)
   * **io.quarkus.updates.core.quarkus331.Testcontainers2**
+  * 
+* [io.quarkus.updates.core.quarkus337.PanacheNextRelocations](/recipes/quarkus/updates/core/quarkus337/panachenextrelocations.md)
+  * **io.quarkus.updates.core.quarkus337.PanacheNextRelocations**
   * 
 * [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](/recipes/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith.md)
   * **io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith**

@@ -75,7 +75,7 @@ _The distinct set of committers per repository._
 | ----------- | ----------- |
 | Name | The name of the committer. |
 | Email | The email of the committer. |
-| Last commit | The date of this committer's last commit. |
+| Last commit | The date of this committer's last commit. Null when only committer identities were collected, without per-day commit detail. |
 | Number of commits | The number of commits made by this committer. |
 
 </TabItem>

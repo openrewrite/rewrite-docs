@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `hypersistence-utils-hibernate-62`
   * newGroupId: `io.hypersistence`
   * newArtifactId: `hypersistence-utils-hibernate-63`
-  * newVersion: `3.8.x`
+  * newVersion: `3.15.x`
 
 </TabItem>
 
@@ -58,7 +58,7 @@ recipeList:
       oldArtifactId: hypersistence-utils-hibernate-62
       newGroupId: io.hypersistence
       newArtifactId: hypersistence-utils-hibernate-63
-      newVersion: 3.8.x
+      newVersion: 3.15.x
 
 ```
 </TabItem>

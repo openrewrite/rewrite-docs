@@ -12,6 +12,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Explicit container images and versions](./explicitcontainerimages.md)
 * [Migrate from `oracle-xe` to `oracle-free`](./migratetooraclefree.md)
+* [Migrate removed `LocalStackContainer` members to Testcontainers 2.x](./testcontainers2localstack.md)
 * [Migrate to Apache Kafka Native container](./migratetokafkanative.md)
 * [Migrate to testcontainers-java 2.x](./testcontainers2migration.md)
 * [Rename Testcontainers dependencies](./testcontainers2dependencies.md)

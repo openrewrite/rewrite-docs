@@ -77,10 +77,10 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Add `JDeprScan` Maven Plug-in](./addjdeprscanplugin.md)
+* [Add Mockito Java Agent to Maven Surefire Plugin](./addmockitojavaagenttomavensurefireplugin.md)
 * [Add `argLine` to surefire and failsafe plugins](./addsurefirefailsafeargline.md)
 * [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](./addlombokmapstructbindingmavendependencyonly.md)
 * [Add maven jar plugin to suppress illegal reflection warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
-* [Add surefire `--add-opens` for Mockito/ByteBuddy](./addsurefirefailsafearglineformockito.md)
 * [Adds missing method implementations](./addmissingmethodimplementation.md)
 * [Adds `static` modifier to `@Produces` fields that are in session beans](./addstaticvariableonproducersessionbean.md)
 * [Behavior change to bean discovery in modules with `beans.xml` file with no version specified](./beandiscovery.md)
@@ -116,6 +116,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Return String `jks` when  `KeyStore.getDefaultType()` is called](./changedefaultkeystore.md)
 * [Update SDKMan Java version](./updatesdkman.md)
 * [Upgrade Docker image Java version](./upgradedockerimageversion.md)
+* [Upgrade Kotlin `jvmTarget` to match the Java version](./upgradekotlinjvmtargetversion.md)
 * [Upgrade build to Java 11](./upgradebuildtojava11.md)
 * [Upgrade build to Java 17](./upgradebuildtojava17.md)
 * [Upgrade build to Java 21](./upgradebuildtojava21.md)

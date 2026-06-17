@@ -20,6 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](./codehaustofasterxml.md)
 * [Migrate relocated feature constants to DateTimeFeature and EnumFeature](./upgradejackson_2_3_relocatedfeatureconstants.md)
 * [Migrates from Jackson 2.x to Jackson 3.x](./upgradejackson_2_3.md)
+* [Modernize legacy `jackson-core` feature constants](./upgradejackson_2_3_modernizejacksoncorefeatures.md)
 * [Remove redundant Jackson 3 feature flag configurations](./upgradejackson_2_3_removeredundantfeatureflags.md)
 * [Rename Jackson 2.x methods to 3.x equivalents](./upgradejackson_2_3_methodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](./upgradejackson_2_3_jsongeneratormethodrenames.md)
@@ -36,6 +37,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add `@JsonCreator` to non-public constructors](./addjsoncreatortoprivateconstructors.md)
 * [Add comment to SimpleModule method calls on modules that no longer extend SimpleModule](./commentoutsimplemodulemethodcalls.md)
 * [Migrate `JSONNode` field iterator for Jackson 3](./jackson3jsonnodefielditerators.md)
+* [Migrate factory setter calls to builder pattern](./migratefactorysetterstobuilder.md)
 * [Migrate mapper setter calls to builder pattern](./migratemappersetterstobuilder.md)
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
@@ -49,6 +51,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Simplify catch clauses for Jackson exceptions](./simplifyjacksonexceptioncatch.md)
 * [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](./updateserializationinclusionconfiguration.md)
 * [Update `lombok.config` for Jackson 3 compatibility](./lombokjacksonizedconfig.md)
+* [Use `JsonFactory.builder()` over `new JsonFactoryBuilder()`](./usejsonfactorystaticbuilder.md)
 * [Use format alignment `ObjectMappers`](./useformatalignedobjectmappers.md)
 * [Use modern date/time serialization defaults](./usemoderndatetimeserialization.md)
 

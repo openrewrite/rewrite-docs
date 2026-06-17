@@ -192,7 +192,7 @@ _18 recipes_
 
 _License: Apache License Version 2.0_
 
-_74 recipes_
+_76 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -332,6 +332,12 @@ _74 recipes_
 * [org.openrewrite.gradle.gradle9.UseMainClassPropertyForApplication](/recipes/gradle/gradle9/usemainclasspropertyforapplication.md)
   * **Use `application \{ mainClass \}` instead of `mainClassName`**
   * The `mainClassName` property on the `application` extension was deprecated in Gradle 6.4 and removed in Gradle 9.0. Use `application \{ mainClass = ... \}` instead. Top-level `mainClassName` assignments are wrapped in an `application` block. See the [Gradle upgrade guide](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
+* [org.openrewrite.gradle.gradle9.UseMatchingInsteadOfFindAll](/recipes/gradle/gradle9/usematchinginsteadoffindall.md)
+  * **Use `matching(Closure)` instead of `findAll(Closure)` on Gradle container collections**
+  * Gradle 9.4 deprecates the Groovy `DomainObjectCollection.findAll(Closure)` overload on containers such as `tasks`, `configurations`, and `sourceSets`. It is replaced by the lazy `DomainObjectCollection.matching(Closure)`, which returns a live collection that only filters elements as they are needed by the build. This recipe only swaps the method name, leaving the closure argument unchanged, rewriting `findAll \{ ... \}` to `matching \{ ... \}` when the receiver is a known Gradle container collection.
+* [org.openrewrite.gradle.gradle9.UseProjectDependencyInsteadOfModuleCoordinates](/recipes/gradle/gradle9/useprojectdependencyinsteadofmodulecoordinates.md)
+  * **Use `project(...)` dependency notation instead of the current project's module coordinates**
+  * Gradle 9.3 deprecates depending on the current project by its own `group:name:version` module coordinates. In Gradle 9.x such a declaration resolves to the project's local outgoing variants, but in Gradle 10 it will instead attempt resolution from a repository. This recipe replaces a dependency declaration whose coordinates match the current project with the equivalent `project(&quot;&lt;path&gt;&quot;)` notation. Requires the `GradleProject` marker (available when parsed by the OpenRewrite Gradle plugin) to know the current project's coordinates and path.
 * [org.openrewrite.gradle.gradle9.UseVersionClosure](/recipes/gradle/gradle9/useversionclosure.md)
   * **Use `version \{ \}` closure instead of `version = \{ \}` assignment**
   * Converts `version = \{ ... \}` assignment syntax to `version \{ ... \}` closure call syntax in Gradle dependency declarations. The assignment form is not valid Gradle DSL; the closure form invokes the version spec method directly.

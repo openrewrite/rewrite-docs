@@ -48,9 +48,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Update `lombok.config` for Jackson 3 compatibility](../../java/jackson/lombokjacksonizedconfig)
 * [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](../../java/jackson/updateserializationinclusionconfiguration)
 * [Use format alignment `ObjectMappers`](../../java/jackson/useformatalignedobjectmappers)
+* [Modernize legacy `jackson-core` feature constants](../../java/jackson/upgradejackson_2_3_modernizejacksoncorefeatures)
 * [Remove redundant Jackson 3 feature flag configurations](../../java/jackson/upgradejackson_2_3_removeredundantfeatureflags)
 * [Remove registrations of modules built-in to Jackson 3](../../java/jackson/removebuiltinmoduleregistrations)
 * [Migrate mapper setter calls to builder pattern](../../java/jackson/migratemappersetterstobuilder)
+* [Migrate factory setter calls to builder pattern](../../java/jackson/migratefactorysetterstobuilder)
 * [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](../../java/jackson/updateserializationinclusionconfiguration)
 * [Replace `disable(MapperFeature.AUTO_DETECT_*)` with `changeDefaultVisibility()` for Jackson 3](../../java/jackson/updateautodetectvisibilityconfiguration)
 * [Reorder method arguments](../../java/reordermethodarguments)
@@ -67,7 +69,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldParameterNames: `[msg, cause, gen]`
 * [Add missing Jackson dataformat dependencies](../../java/jackson/addmissingjacksondependencies)
 * [Upgrade Jackson 2.x dependencies to 3.x](../../java/jackson/upgradejackson_2_3_dependencies)
-* [Update Jackson 2.x types to 3.x](../../java/jackson/upgradejackson_2_3_typechanges)
 * [Rename Jackson 2.x methods to 3.x equivalents](../../java/jackson/upgradejackson_2_3_methodrenames)
 * [Migrate relocated feature constants to DateTimeFeature and EnumFeature](../../java/jackson/upgradejackson_2_3_relocatedfeatureconstants)
 * [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
@@ -91,6 +92,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Add comment to method invocations](../../java/addcommenttomethodinvocations)
   * comment: `TODO deserializationConfig() is not to be used by application code in Jackson 3 (see https://github.com/FasterXML/jackson-databind/blob/3.x/src/main/java/tools/jackson/databind/ObjectMapper.java#L427). Consider using builder configuration instead.`
   * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper deserializationConfig()`
+* [Update Jackson 2.x types to 3.x](../../java/jackson/upgradejackson_2_3_typechanges)
+* [Use `JsonFactory.builder()` over `new JsonFactoryBuilder()`](../../java/jackson/usejsonfactorystaticbuilder)
 * [Update Jackson package names from 2.x to 3.x](../../java/jackson/upgradejackson_2_3_packagechanges)
 * [Simplify catch clauses for Jackson exceptions](../../java/jackson/simplifyjacksonexceptioncatch)
 
@@ -119,9 +122,11 @@ recipeList:
   - org.openrewrite.java.jackson.LombokJacksonizedConfig
   - org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration
   - org.openrewrite.java.jackson.UseFormatAlignedObjectMappers
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_ModernizeJacksonCoreFeatures
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags
   - org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations
   - org.openrewrite.java.jackson.MigrateMapperSettersToBuilder
+  - org.openrewrite.java.jackson.MigrateFactorySettersToBuilder
   - org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration
   - org.openrewrite.java.jackson.UpdateAutoDetectVisibilityConfiguration
   - org.openrewrite.java.ReorderMethodArguments:
@@ -152,7 +157,6 @@ recipeList:
         - gen
   - org.openrewrite.java.jackson.AddMissingJacksonDependencies
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies
-  - org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_MethodRenames
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RelocatedFeatureConstants
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
@@ -176,6 +180,8 @@ recipeList:
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO deserializationConfig() is not to be used by application code in Jackson 3 (see https://github.com/FasterXML/jackson-databind/blob/3.x/src/main/java/tools/jackson/databind/ObjectMapper.java#L427). Consider using builder configuration instead.
       methodPattern: com.fasterxml.jackson.databind.ObjectMapper deserializationConfig()
+  - org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges
+  - org.openrewrite.java.jackson.UseJsonFactoryStaticBuilder
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges
   - org.openrewrite.java.jackson.SimplifyJacksonExceptionCatch
 
@@ -320,10 +326,11 @@ class Test {
 
 ###### After
 ```java
-import tools.jackson.core.TokenStreamFactory;
+import tools.jackson.core.json.JsonFactory;
 
 class Test {
-    TokenStreamFactory factory = new TokenStreamFactory();
+    JsonFactory factory = JsonFactory.builder()
+            .build();
 }
 ```
 
@@ -333,13 +340,14 @@ class Test {
 ```diff
 @@ -1,1 +1,1 @@
 -import com.fasterxml.jackson.core.JsonFactory;
-+import tools.jackson.core.TokenStreamFactory;
++import tools.jackson.core.json.JsonFactory;
 
-@@ -4,1 +4,1 @@
+@@ -4,1 +4,2 @@
 
 class Test {
 -   JsonFactory factory = new JsonFactory();
-+   TokenStreamFactory factory = new TokenStreamFactory();
++   JsonFactory factory = JsonFactory.builder()
++           .build();
 }
 ```
 </TabItem>
@@ -930,10 +938,11 @@ class Test {
 
 ###### After
 ```java
-import tools.jackson.core.TokenStreamFactory;
+import tools.jackson.core.json.JsonFactory;
 
 class Test {
-    TokenStreamFactory factory = new TokenStreamFactory();
+    JsonFactory factory = JsonFactory.builder()
+            .build();
 }
 ```
 
@@ -943,13 +952,14 @@ class Test {
 ```diff
 @@ -1,1 +1,1 @@
 -import com.fasterxml.jackson.core.JsonFactory;
-+import tools.jackson.core.TokenStreamFactory;
++import tools.jackson.core.json.JsonFactory;
 
-@@ -4,1 +4,1 @@
+@@ -4,1 +4,2 @@
 
 class Test {
 -   JsonFactory factory = new JsonFactory();
-+   TokenStreamFactory factory = new TokenStreamFactory();
++   JsonFactory factory = JsonFactory.builder()
++           .build();
 }
 ```
 </TabItem>

@@ -13,6 +13,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Mockito 4.x upgrade](./mockito1to4migration.md)
 * [Mockito 5.x upgrade](./mockito1to5migration.md)
 * [Mockito best practices](./mockitobestpractices.md)
+* [Replace PowerMock `Whitebox` with Java reflection](./powermockwhiteboxtojavareflection.md)
 * [Replace PowerMock with raw Mockito](./replacepowermockito.md)
 
 ## Recipes
@@ -40,7 +41,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `MockitoTestExecutionListener` (JUnit Jupiter projects)](./replacemockitotestexecutionlistenerforjupiter.md)
 * [Replace `MockitoTestExecutionListener` (TestNG projects)](./replacemockitotestexecutionlistenerfortestng.md)
 * [Replace `MockitoTestExecutionListener` with the equivalent Mockito test initialization](./replacemockitotestexecutionlistener.md)
-* [Replace PowerMock `Whitebox` with Java reflection](./powermockwhiteboxtojavareflection.md)
+* [Replace PowerMock `Whitebox.getInternalState()` with Java reflection](./powermockwhiteboxgetinternalstatetojavareflection.md)
+* [Replace PowerMock `Whitebox.invokeMethod()` with Java reflection](./powermockwhiteboxinvokemethodtojavareflection.md)
+* [Replace PowerMock `Whitebox.setInternalState()` with Java reflection](./powermockwhiteboxsetinternalstatetojavareflection.md)
 * [Replace PowerMock dependencies with Mockito equivalents](./replacepowermockdependencies.md)
 * [Replace PowerMock runner with JUnit `@RunWith`](./powermockrunnerdelegatetorunwith.md)
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](./powermockitomockstatictomockito.md)

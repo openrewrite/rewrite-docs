@@ -1,80 +1,42 @@
 ---
-title: "Add surefire `--add-opens` for Mockito/ByteBuddy"
-sidebar_label: "Add surefire `--add-opens` for Mockito/ByteBuddy"
+title: "Replace PowerMock `Whitebox.invokeMethod()` with Java reflection"
+sidebar_label: "Replace PowerMock `Whitebox.invokeMethod()` with Java reflection"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Add surefire `--add-opens` for Mockito/ByteBuddy
+# Replace PowerMock `Whitebox.invokeMethod()` with Java reflection
 
-**org.openrewrite.java.migrate.AddSurefireFailsafeArgLineForMockito**
+**org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection**
 
-_Adds `--add-opens` JVM arguments required by Mockito and ByteBuddy to the Maven Surefire and Failsafe plugin `argLine` configuration. Only applied when the project depends on Mockito._
+_Replace `Whitebox.invokeMethod(Object, String, ..)` with `java.lang.reflect.Method` lookup and `invoke()`. Parameter types are taken from the unambiguously resolved target method, falling back to each argument's compile-time class._
 
 ## Recipe source
 
-[GitHub: java-version-25.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-25.yml),
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+[GitHub: PowerMockWhiteboxInvokeMethodToJavaReflection.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/PowerMockWhiteboxInvokeMethodToJavaReflection.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Module has dependency](../../java/dependencies/search/modulehasdependency)
-  * groupIdPattern: `org.mockito`
-  * artifactIdPattern: `mockito-*`
-
-**Recipes**
-
-* [Add `argLine` to surefire and failsafe plugins](../../java/migrate/addsurefirefailsafeargline)
-  * argLine: `--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/jdk.internal.misc=ALL-UNNAMED --add-opens java.base/jdk.internal.reflect=ALL-UNNAMED -Dnet.bytebuddy.experimental=true`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.AddSurefireFailsafeArgLineForMockito
-displayName: Add surefire `--add-opens` for Mockito/ByteBuddy
-description: |
-  Adds `--add-opens` JVM arguments required by Mockito and ByteBuddy to the Maven Surefire and Failsafe plugin `argLine` configuration. Only applied when the project depends on Mockito.
-preconditions:
-  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
-      groupIdPattern: org.mockito
-      artifactIdPattern: mockito-*
-recipeList:
-  - org.openrewrite.java.migrate.AddSurefireFailsafeArgLine:
-      argLine: --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/jdk.internal.misc=ALL-UNNAMED --add-opens java.base/jdk.internal.reflect=ALL-UNNAMED -Dnet.bytebuddy.experimental=true
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
+* [Replace PowerMock `Whitebox` with Java reflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.java.migrate.AddSurefireFailsafeArgLineForMockito"
-  displayName="Add surefire `--add-opens` for Mockito/ByteBuddy"
+  recipeName="org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection"
+  displayName="Replace PowerMock `Whitebox.invokeMethod()` with Java reflection"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-migrate-java"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+  artifactId="rewrite-testing-frameworks"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
   hasDataTables
 />
 
@@ -82,7 +44,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.AddSurefireFailsafeArgLineForMockito" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

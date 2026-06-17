@@ -27,13 +27,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | argLine | The arguments to add to the surefire and failsafe plugin `argLine` configuration. Individual arguments are space-separated. Arguments already present in the existing argLine are not duplicated. | `--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED` |
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Add surefire `--add-opens` for Mockito/ByteBuddy](/recipes/java/migrate/addsurefirefailsafearglineformockito.md)
-
 ## Example
 
 ###### Parameters

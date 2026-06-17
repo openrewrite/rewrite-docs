@@ -29,6 +29,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | constantName | The name of the constant field to replace. | `UTF_8` |
 | `String` | literalValue | The literal value to replace. | `UTF_8` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate removed `LocalStackContainer` members to Testcontainers 2.x](/recipes/java/testing/testcontainers/testcontainers2localstack.md)
+
 ## Example
 
 ###### Parameters

@@ -13,14 +13,54 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`._
 
+### Tags
+
+* [testing](/reference/recipes-by-tag#testing)
+* [mockito](/reference/recipes-by-tag#mockito)
+
 ## Recipe source
 
-[GitHub: PowerMockWhiteboxToJavaReflection.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/PowerMockWhiteboxToJavaReflection.java),
+[GitHub: powermockito.yml](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/powermockito.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
 
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Replace PowerMock `Whitebox.setInternalState()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxsetinternalstatetojavareflection)
+* [Replace PowerMock `Whitebox.getInternalState()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxgetinternalstatetojavareflection)
+* [Replace PowerMock `Whitebox.invokeMethod()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxinvokemethodtojavareflection)
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection
+displayName: Replace PowerMock `Whitebox` with Java reflection
+description: |
+  Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
+tags:
+  - testing
+  - mockito
+recipeList:
+  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxSetInternalStateToJavaReflection
+  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetInternalStateToJavaReflection
+  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -28,7 +68,78 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
 
-## Example
+## Examples
+##### Example 1
+`PowerMockWhiteboxToJavaReflectionTest#setInternalStateReplacedWithReflection`
+
+
+###### Unchanged
+```java
+class MyService {
+    private String name;
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.powermock.reflect.Whitebox;
+
+class MyServiceTest {
+    void testSetField() {
+        MyService service = new MyService();
+        Whitebox.setInternalState(service, "name", "expectedValue");
+    }
+}
+```
+
+###### After
+```java
+import java.lang.reflect.Field;
+
+class MyServiceTest {
+    void testSetField() throws Exception {
+        MyService service = new MyService();
+        Field nameField = service.getClass().getDeclaredField("name");
+        nameField.setAccessible(true);
+        nameField.set(service, "expectedValue");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.powermock.reflect.Whitebox;
++import java.lang.reflect.Field;
+
+@@ -4,1 +4,1 @@
+
+class MyServiceTest {
+-   void testSetField() {
++   void testSetField() throws Exception {
+        MyService service = new MyService();
+@@ -6,1 +6,3 @@
+    void testSetField() {
+        MyService service = new MyService();
+-       Whitebox.setInternalState(service, "name", "expectedValue");
++       Field nameField = service.getClass().getDeclaredField("name");
++       nameField.setAccessible(true);
++       nameField.set(service, "expectedValue");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`PowerMockWhiteboxToJavaReflectionTest#setInternalStateReplacedWithReflection`
 
 
 ###### Unchanged

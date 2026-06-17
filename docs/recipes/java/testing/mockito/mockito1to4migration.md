@@ -52,6 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `byte-buddy*`
   * newVersion: `1.12.19`
 * [Replace `MockitoAnnotations.initMocks(this)` to `MockitoAnnotations.openMocks(this)`](../../../java/testing/mockito/replaceinitmocktoopenmock)
+* [Close unclosed static mocks](../../../java/testing/mockito/closeunclosedstaticmocks)
 
 </TabItem>
 
@@ -81,6 +82,7 @@ recipeList:
       artifactId: byte-buddy*
       newVersion: 1.12.19
   - org.openrewrite.java.testing.mockito.ReplaceInitMockToOpenMock
+  - org.openrewrite.java.testing.mockito.CloseUnclosedStaticMocks
 
 ```
 </TabItem>

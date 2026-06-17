@@ -29,6 +29,14 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | scope | *Optional*. The dependency scope to remove from: `dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`, or `bundledDependencies`. If not specified, removes from all scopes. Valid options: `dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`, `bundledDependencies` | `dependencies` |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Replace `node-sass` with `sass`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
+* [Upgrade to Angular 8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular8)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.RemoveDependencyExample`.

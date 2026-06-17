@@ -41,6 +41,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Move `sourceCompatibility` and `targetCompatibility` into the `java \{ \}` extension block](../gradle/gradle9/usejavaextensionblock)
 * [Replace spread-`all*` calls in `configurations` blocks with `configurations.all \{ \}`](../gradle/gradle9/rewritespreadallinconfigurationsblock)
 * [Use `version \{ \}` closure instead of `version = \{ \}` assignment](../gradle/gradle9/useversionclosure)
+* [Use `project(...)` dependency notation instead of the current project's module coordinates](../gradle/gradle9/useprojectdependencyinsteadofmodulecoordinates)
+* [Use `matching(Closure)` instead of `findAll(Closure)` on Gradle container collections](../gradle/gradle9/usematchinginsteadoffindall)
 
 </TabItem>
 
@@ -65,6 +67,8 @@ recipeList:
   - org.openrewrite.gradle.gradle9.UseJavaExtensionBlock
   - org.openrewrite.gradle.gradle9.RewriteSpreadAllInConfigurationsBlock
   - org.openrewrite.gradle.gradle9.UseVersionClosure
+  - org.openrewrite.gradle.gradle9.UseProjectDependencyInsteadOfModuleCoordinates
+  - org.openrewrite.gradle.gradle9.UseMatchingInsteadOfFindAll
 
 ```
 </TabItem>

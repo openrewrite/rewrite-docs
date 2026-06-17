@@ -32,6 +32,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [AddScalarPreferStandardBasicTypesForHibernate5](./addscalarpreferstandardbasictypes.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.2](./migratetohypersistenceutilshibernate62.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.3](./migratetohypersistenceutilshibernate63.md)
+* [Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.0](./migratetohypersistenceutilshibernate70.md)
+* [Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.1](./migratetohypersistenceutilshibernate71.md)
 * [Migrate `UserType` to Hibernate 6](./migrateusertype.md)
 * [Migration of `ResultCheckStyle` to `Expectation`](./migrateresultcheckstyletoexpectation.md)
 * [Remove invalid `@GeneratedValue` annotation](./removeinvalidhibernategeneratedvalueannotation.md)

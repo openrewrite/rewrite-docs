@@ -79,6 +79,24 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `com.fasterxml.jackson.databind.DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE`
   * fullyQualifiedConstantName: `tools.jackson.databind.cfg.EnumFeature.READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `com.fasterxml.jackson.core.json.JsonReadFeature.ALLOW_UNQUOTED_FIELD_NAMES`
+  * fullyQualifiedConstantName: `tools.jackson.core.json.JsonReadFeature.ALLOW_UNQUOTED_PROPERTY_NAMES`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `com.fasterxml.jackson.core.json.JsonWriteFeature.QUOTE_FIELD_NAMES`
+  * fullyQualifiedConstantName: `tools.jackson.core.json.JsonWriteFeature.QUOTE_PROPERTY_NAMES`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `com.fasterxml.jackson.core.JsonFactory.Feature.INTERN_FIELD_NAMES`
+  * fullyQualifiedConstantName: `tools.jackson.core.TokenStreamFactory.Feature.INTERN_PROPERTY_NAMES`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `com.fasterxml.jackson.core.JsonFactory.Feature.CANONICALIZE_FIELD_NAMES`
+  * fullyQualifiedConstantName: `tools.jackson.core.TokenStreamFactory.Feature.CANONICALIZE_PROPERTY_NAMES`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `com.fasterxml.jackson.core.JsonFactory.Feature.FAIL_ON_SYMBOL_HASH_OVERFLOW`
+  * fullyQualifiedConstantName: `tools.jackson.core.TokenStreamFactory.Feature.FAIL_ON_SYMBOL_HASH_OVERFLOW`
+* [Replace constant with another constant](../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `com.fasterxml.jackson.core.JsonFactory.Feature.CHARSET_DETECTION`
+  * fullyQualifiedConstantName: `tools.jackson.core.TokenStreamFactory.Feature.CHARSET_DETECTION`
 
 </TabItem>
 
@@ -139,6 +157,24 @@ recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: com.fasterxml.jackson.databind.DeserializationFeature.READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE
       fullyQualifiedConstantName: tools.jackson.databind.cfg.EnumFeature.READ_UNKNOWN_ENUM_VALUES_USING_DEFAULT_VALUE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.fasterxml.jackson.core.json.JsonReadFeature.ALLOW_UNQUOTED_FIELD_NAMES
+      fullyQualifiedConstantName: tools.jackson.core.json.JsonReadFeature.ALLOW_UNQUOTED_PROPERTY_NAMES
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.fasterxml.jackson.core.json.JsonWriteFeature.QUOTE_FIELD_NAMES
+      fullyQualifiedConstantName: tools.jackson.core.json.JsonWriteFeature.QUOTE_PROPERTY_NAMES
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.fasterxml.jackson.core.JsonFactory.Feature.INTERN_FIELD_NAMES
+      fullyQualifiedConstantName: tools.jackson.core.TokenStreamFactory.Feature.INTERN_PROPERTY_NAMES
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.fasterxml.jackson.core.JsonFactory.Feature.CANONICALIZE_FIELD_NAMES
+      fullyQualifiedConstantName: tools.jackson.core.TokenStreamFactory.Feature.CANONICALIZE_PROPERTY_NAMES
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.fasterxml.jackson.core.JsonFactory.Feature.FAIL_ON_SYMBOL_HASH_OVERFLOW
+      fullyQualifiedConstantName: tools.jackson.core.TokenStreamFactory.Feature.FAIL_ON_SYMBOL_HASH_OVERFLOW
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.fasterxml.jackson.core.JsonFactory.Feature.CHARSET_DETECTION
+      fullyQualifiedConstantName: tools.jackson.core.TokenStreamFactory.Feature.CHARSET_DETECTION
 
 ```
 </TabItem>
