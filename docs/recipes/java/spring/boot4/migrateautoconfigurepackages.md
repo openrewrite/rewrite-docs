@@ -259,6 +259,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.AdditionalHealthEndpointPath`
   * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.AdditionalHealthEndpointPath`
 * [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.CompositeHealth`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.CompositeHealthDescriptor`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthComponent`
+  * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthDescriptor`
+* [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.actuate.health.HealthEndpoint`
   * newFullyQualifiedTypeName: `org.springframework.boot.health.actuate.endpoint.HealthEndpoint`
 * [Change type](../../../java/changetype)
@@ -552,6 +558,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.AdditionalHealthEndpointPath
       newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.AdditionalHealthEndpointPath
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.CompositeHealth
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.CompositeHealthDescriptor
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthComponent
+      newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthDescriptor
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.actuate.health.HealthEndpoint
       newFullyQualifiedTypeName: org.springframework.boot.health.actuate.endpoint.HealthEndpoint

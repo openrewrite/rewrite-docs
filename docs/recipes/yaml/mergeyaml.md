@@ -50,7 +50,6 @@ This recipe is used as part of the following composite recipes:
 * [Add manual workflow trigger](/recipes/github/addmanualtrigger.md)
 * [Add retry configuration](/recipes/gitlab/addretry.md)
 * [Add workflow rules](/recipes/gitlab/addworkflowrules.md)
-* [Migrate from tibdex/github-app-token to actions/create-github-app-token](/recipes/github/migratetibdexgithubapptokentoactions.md)
 
 ## Example
 

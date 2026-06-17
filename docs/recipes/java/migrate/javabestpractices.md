@@ -42,6 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Java 25](../../java/migrate/upgradetojava25)
+* [Migrate `public static void main(String[] args)` to instance `void main()`](../../java/migrate/lang/migratemainmethodtoinstancemain)
 * [Use text blocks](../../java/migrate/lang/usetextblocks)
   * convertStringsWithoutNewlines: `true`
   * avoidLineContinuations: `false`
@@ -102,6 +103,7 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava25
+  - org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain
   - org.openrewrite.java.migrate.lang.UseTextBlocks:
       convertStringsWithoutNewlines: true
       avoidLineContinuations: false

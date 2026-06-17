@@ -59,11 +59,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `mockit.integration.junit4.JMockit`
   * newFullyQualifiedTypeName: `org.mockito.junit.MockitoJUnitRunner`
+* [Adds Mockito extensions to Mockito tests](../../../java/testing/mockito/addmockitoextensionifannotationsused)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.mockito`
   * artifactId: `mockito-core`
   * version: `5.x`
   * onlyIfUsing: `org.mockito.*`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.mockito`
+  * artifactId: `mockito-junit-jupiter`
+  * version: `5.x`
+  * onlyIfUsing: `org.mockito.junit.jupiter.MockitoExtension`
   * acceptTransitive: `true`
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.jmockit`
@@ -108,11 +115,18 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: mockit.integration.junit4.JMockit
       newFullyQualifiedTypeName: org.mockito.junit.MockitoJUnitRunner
+  - org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.mockito
       artifactId: mockito-core
       version: 5.x
       onlyIfUsing: org.mockito.*
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.mockito
+      artifactId: mockito-junit-jupiter
+      version: 5.x
+      onlyIfUsing: org.mockito.junit.jupiter.MockitoExtension
       acceptTransitive: true
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.jmockit

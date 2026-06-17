@@ -48,6 +48,7 @@ This recipe is used as part of the following composite recipes:
 * [Change auth related classes from v1 to v2](/recipes/amazon/awssdk/v2migration/changeauthtypes.md)
 * [Change config related classes from v1 to v2](/recipes/amazon/awssdk/v2migration/changeconfigtypes.md)
 * [Change region related classes](/recipes/amazon/awssdk/v2migration/changeregiontypes.md)
+* [Change type](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changetype)
 * [Changed types of camel AI nested headers classes](/recipes/apache/camel/upgrade/camel415/ainestedheadersclasses.md)
 * [DataNucleus 4.0 type changes](/recipes/java/migrate/datanucleus/datanucleustypechanges_4_0.md)
 * [DataNucleus 5.0 type changes](/recipes/java/migrate/datanucleus/datanucleustypechanges_5_0.md)

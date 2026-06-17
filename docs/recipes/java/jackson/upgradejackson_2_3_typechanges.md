@@ -90,7 +90,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newFullyQualifiedTypeName: `tools.jackson.databind.DatabindException`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonFactory`
-  * newFullyQualifiedTypeName: `tools.jackson.core.TokenStreamFactory`
+  * newFullyQualifiedTypeName: `tools.jackson.core.json.JsonFactory`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonFactoryBuilder`
+  * newFullyQualifiedTypeName: `tools.jackson.core.json.JsonFactoryBuilder`
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.core.JsonStreamContext`
   * newFullyQualifiedTypeName: `tools.jackson.core.TokenStreamContext`
@@ -229,7 +232,10 @@ recipeList:
       newFullyQualifiedTypeName: tools.jackson.databind.DatabindException
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonFactory
-      newFullyQualifiedTypeName: tools.jackson.core.TokenStreamFactory
+      newFullyQualifiedTypeName: tools.jackson.core.json.JsonFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonFactoryBuilder
+      newFullyQualifiedTypeName: tools.jackson.core.json.JsonFactoryBuilder
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.core.JsonStreamContext
       newFullyQualifiedTypeName: tools.jackson.core.TokenStreamContext

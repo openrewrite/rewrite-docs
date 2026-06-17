@@ -12,33 +12,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### recipes-code-quality
 
-* [OpenRewrite.CSharp.Recipes.AddFrameworkReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/addframeworkreference)
-  * **Add framework reference**
-  * Adds a `&lt;FrameworkReference&gt;` to a .csproj if it isn't already present.
-* [OpenRewrite.CSharp.Recipes.AddNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/addnugetpackagereference)
-  * **Add NuGet package reference**
-  * Adds a `&lt;PackageReference&gt;` element to .csproj files if not already present.
-* [OpenRewrite.CSharp.Recipes.ChangeDotNetTargetFramework](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/changedotnettargetframework)
-  * **Change .NET target framework**
-  * Changes the `&lt;TargetFramework&gt;` or `&lt;TargetFrameworks&gt;` value in .csproj files. For multi-TFM projects, replaces the matching framework within the semicolon-delimited list.
-* [OpenRewrite.CSharp.Recipes.EnsureCsprojAttestation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/ensurecsprojattestation)
-  * **Ensure csproj attestation**
-  * Re-runs `dotnet restore` against each .csproj whose `MSBuildProject` marker is stale (set by any csproj-mutating recipe in the run) and refreshes the marker from the resulting `project.assets.json`. Use this at the end of a composite recipe whose csproj-mutating sub-recipes have `RegenerateMarker = false`, so reattestation happens once on the final consistent state instead of after every edit. Unmodified .csproj files incur no `dotnet restore` cost.
-* [OpenRewrite.CSharp.Recipes.FindNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/findnugetpackagereference)
-  * **Find NuGet package reference**
-  * Searches for .csproj files that reference a specific NuGet package. Intended for use as a precondition to scope other recipes.
-* [OpenRewrite.CSharp.Recipes.RemoveDotNetCliToolReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/removedotnetclitoolreference)
-  * **Remove DotNetCliToolReference**
-  * Removes a `&lt;DotNetCliToolReference&gt;` element from .csproj files. Use `*` to remove every CLI tool reference.
-* [OpenRewrite.CSharp.Recipes.RemoveMSBuildProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/removemsbuildproperty)
-  * **Remove MSBuild property**
-  * Removes an MSBuild property element (e.g. `&lt;RuntimeFrameworkVersion&gt;`) from `&lt;PropertyGroup&gt;` in .csproj files.
-* [OpenRewrite.CSharp.Recipes.RemoveNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/removenugetpackagereference)
-  * **Remove NuGet package reference**
-  * Removes a `&lt;PackageReference&gt;` element from .csproj files.
-* [OpenRewrite.CSharp.Recipes.UpgradeNuGetPackageVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/upgradenugetpackageversion)
-  * **Upgrade NuGet package version**
-  * Upgrades the version of a NuGet `&lt;PackageReference&gt;` or `&lt;PackageVersion&gt;` in .csproj and Directory.Packages.props files. Handles property references by updating the property value instead of the version attribute. Uses NuGet.Versioning for correct version semantics.
 * [OpenRewrite.Recipes.CSharp.CodeQuality.CodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/codequality-recipe)
   * **Code quality**
   * All C# code quality recipes, organized by category.
@@ -1260,12 +1233,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [OpenRewrite.Recipes.CSharp.CodeQuality.Style.ValueTypeIsNeverEqualToNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/style/valuetypeisneverequaltonull)
   * **Value type is never equal to null**
   * Replace null with default in comparisons of value types.
-* [OpenRewrite.Xml.Recipes.ChangeXmlAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/xml/recipes/changexmlattribute)
-  * **Change XML attribute value**
-  * Changes the value of attributes matching AttrName to NewValue.
-* [OpenRewrite.Xml.Recipes.ChangeXmlCharData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/xml/recipes/changexmlchardata)
-  * **Change XML CharData text**
-  * Replaces occurrences of OldText with NewText in XML CharData nodes.
 
 ### recipes-kotlin
 
@@ -4303,468 +4270,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Modernize Kotlin test code**
   * Find Kotlin-specific test patterns: mockito-kotlin usage where mockk would be idiomatic, deprecated `runBlocking` / `TestCoroutineDispatcher` patterns, Kotest assertion migration candidates, empty / assertion-less / many-assertion test bodies, snake_case test names, and Hamcrest call sites that fluent assertion libraries (AssertJ, Kotest) replace cleanly. Each match is a `SearchResult` for review — nothing is rewritten automatically. For bulk JUnit 4 → JUnit 5 annotation/assertion migration, apply `JUnit4to5Migration` from `rewrite-testing-frameworks`.
 
-### recipes-migrate-dotnet
-
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AddNuGetPackageReferenceIfTypeUsed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/addnugetpackagereferenceiftypeused)
-  * **Add NuGet package reference when namespace is used**
-  * Adds a `&lt;PackageReference&gt;` to a .csproj only when a C# source file in the same project directory has a `using` directive that starts with the trigger namespace prefix. Useful for paired add-package-when-type-is-used migrations.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNet.UpgradeAspNetFrameworkToCore](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnet/upgradeaspnetframeworktocore)
-  * **Migrate ASP.NET Framework to ASP.NET Core**
-  * Migrate ASP.NET Framework (System.Web.Mvc, System.Web.Http) types to their ASP.NET Core equivalents. Based on the .NET Upgrade Assistant's UA0002 and UA0010 diagnostics. See https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindBuildWebHost](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findbuildwebhost)
-  * **Find BuildWebHost method**
-  * Flags `BuildWebHost` method declarations that should be renamed to `CreateWebHostBuilder` and refactored for ASP.NET Core 2.1.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindIAuthenticationManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findiauthenticationmanager)
-  * **Find IAuthenticationManager usage**
-  * Flags references to `IAuthenticationManager` which was removed in ASP.NET Core 2.0. Use `HttpContext` extension methods from `Microsoft.AspNetCore.Authentication` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindLoggerFactoryAddProvider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findloggerfactoryaddprovider)
-  * **Find ILoggerFactory.Add*() calls**
-  * Flags `ILoggerFactory.AddConsole()`, `AddDebug()`, and similar extension methods. In ASP.NET Core 2.2+, logging should be configured via `ConfigureLogging` in the host builder.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindSetCompatibilityVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findsetcompatibilityversion)
-  * **Find SetCompatibilityVersion() calls**
-  * Flags `SetCompatibilityVersion` calls. This method is a no-op in ASP.NET Core 3.0+ and should be removed during migration.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindUseKestrelWithConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findusekestrelwithconfig)
-  * **Find UseKestrel() with configuration**
-  * Flags `UseKestrel` calls with configuration lambdas that should be replaced with `ConfigureKestrel` to avoid conflicts with the IIS in-process hosting model.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UpgradeToAspNetCore20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/upgradetoaspnetcore20)
-  * **Migrate to ASP.NET Core 2.0**
-  * Migrate ASP.NET Core 1.x projects to ASP.NET Core 2.0, applying authentication and Identity changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UpgradeToAspNetCore21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/upgradetoaspnetcore21)
-  * **Migrate to ASP.NET Core 2.1**
-  * Migrate ASP.NET Core 2.0 projects to ASP.NET Core 2.1, including host builder changes and obsolete API replacements. See https://learn.microsoft.com/en-us/aspnet/core/migration/20-to-21.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UpgradeToAspNetCore22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/upgradetoaspnetcore22)
-  * **Migrate to ASP.NET Core 2.2**
-  * Migrate ASP.NET Core 2.1 projects to ASP.NET Core 2.2, including Kestrel configuration and logging changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/21-to-22.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UseGetExternalAuthenticationSchemesAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/usegetexternalauthenticationschemesasync)
-  * **Use GetExternalAuthenticationSchemesAsync()**
-  * Replace `GetExternalAuthenticationSchemes()` with `GetExternalAuthenticationSchemesAsync()`. The synchronous method was removed in ASP.NET Core 2.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UseHttpContextAuthExtensions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/usehttpcontextauthextensions)
-  * **Use HttpContext authentication extensions**
-  * Replace `HttpContext.Authentication.Method(...)` calls with `HttpContext.Method(...)` extension methods. The `IAuthenticationManager` interface was removed in ASP.NET Core 2.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UseUseAuthentication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/useuseauthentication)
-  * **Replace UseIdentity() with UseAuthentication()**
-  * Replace `app.UseIdentity()` with `app.UseAuthentication()`. The `UseIdentity` method was removed in ASP.NET Core 2.0 in favor of `UseAuthentication`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindAddMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findaddmvc)
-  * **Find AddMvc() calls**
-  * Flags `AddMvc()` calls that should be replaced with more specific service registrations (`AddControllers`, `AddControllersWithViews`, or `AddRazorPages`) in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindIApplicationLifetime](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findiapplicationlifetime)
-  * **Find IApplicationLifetime usage**
-  * Flags usages of `IApplicationLifetime` which should be replaced with `IHostApplicationLifetime` in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindIHostingEnvironment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findihostingenvironment)
-  * **Find IHostingEnvironment usage**
-  * Flags usages of `IHostingEnvironment` which should be replaced with `IWebHostEnvironment` in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindNewLoggerFactory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findnewloggerfactory)
-  * **Find new LoggerFactory() calls**
-  * Flags `new LoggerFactory()` calls that should be replaced with `LoggerFactory.Create(builder =&gt; ...)` in .NET Core 3.0+.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindNewtonsoftJsonUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findnewtonsoftjsonusage)
-  * **Find Newtonsoft.Json usage in ASP.NET Core**
-  * Flags `JsonConvert` and other `Newtonsoft.Json` usage. ASP.NET Core 3.0 uses `System.Text.Json` by default.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindUseMvcOrUseSignalR](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findusemvcorusesignalr)
-  * **Find UseMvc()/UseSignalR() calls**
-  * Flags `UseMvc()` and `UseSignalR()` calls that should be replaced with endpoint routing (`UseRouting()` + `UseEndpoints()`) in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindWebHostBuilder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findwebhostbuilder)
-  * **Find WebHostBuilder usage**
-  * Flags `WebHostBuilder` and `WebHost.CreateDefaultBuilder` usage that should migrate to the Generic Host pattern in ASP.NET Core 3.0+.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.UpgradeToAspNetCore30](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/upgradetoaspnetcore30)
-  * **Migrate to ASP.NET Core 3.0**
-  * Migrate ASP.NET Core 2.2 projects to ASP.NET Core 3.0, including endpoint routing, Generic Host, and System.Text.Json changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/22-to-30.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.ChangeMethodName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/changemethodname)
-  * **Change method name**
-  * Rename a method.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.ChangeType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/changetype)
-  * **Change type**
-  * Change a type reference to another type.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.DeleteMethodArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/deletemethodargument)
-  * **Delete method argument**
-  * Delete an argument from method invocations.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.FindCsprojMarker](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/findcsprojmarker)
-  * **Find csproj MSBuildProject marker presence**
-  * Diagnostic recipe: tags csproj files based on MSBuildProject marker presence.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindActionContextAccessorObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findactioncontextaccessorobsolete)
-  * **Find obsolete `IActionContextAccessor`/`ActionContextAccessor` (ASPDEPR006)**
-  * Finds usages of `IActionContextAccessor` and `ActionContextAccessor` which are obsolete in .NET 10. Use `IHttpContextAccessor` and `HttpContext.GetEndpoint()` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindActivitySampling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findactivitysampling)
-  * **Find `ActivitySamplingResult.PropagationData` behavior change**
-  * Finds usages of `ActivitySamplingResult.PropagationData` which has changed behavior in .NET 10. Activities with a recorded parent and PropagationData sampling no longer set `Activity.Recorded = true`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindBackgroundServiceExecuteAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findbackgroundserviceexecuteasync)
-  * **Find `BackgroundService.ExecuteAsync` behavior change**
-  * Finds methods that override `ExecuteAsync` from `BackgroundService`. In .NET 10, the entire method runs on a background thread; synchronous code before the first `await` no longer blocks host startup.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindBufferedStreamWriteByte](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findbufferedstreamwritebyte)
-  * **Find `BufferedStream.WriteByte` implicit flush behavior change**
-  * Finds calls to `BufferedStream.WriteByte()` which no longer performs an implicit flush when the internal buffer is full in .NET 10. Call `Flush()` explicitly if needed.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindClipboardGetData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findclipboardgetdata)
-  * **Find obsolete `Clipboard.GetData` calls (WFDEV005)**
-  * Finds calls to `Clipboard.GetData(string)`. In .NET 10, this method is obsolete (WFDEV005). Use `Clipboard.TryGetData` methods instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindDistributedContextPropagator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/finddistributedcontextpropagator)
-  * **Find `DistributedContextPropagator` default propagator change**
-  * Finds usages of `DistributedContextPropagator.Current` and `DistributedContextPropagator.CreateDefaultPropagator()` which now default to W3C format in .NET 10. The 'baggage' header is used instead of 'Correlation-Context'.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindDllImportSearchPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/finddllimportsearchpath)
-  * **Find `DllImportSearchPath.AssemblyDirectory` behavior change**
-  * Finds usages of `DllImportSearchPath.AssemblyDirectory` which has changed behavior in .NET 10. Specifying only `AssemblyDirectory` no longer falls back to OS default search paths.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindDriveInfoDriveFormat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/finddriveinfodriveformat)
-  * **Find `DriveInfo.DriveFormat` behavior change**
-  * Finds usages of `DriveInfo.DriveFormat` which returns Linux kernel filesystem type strings instead of mapped names in .NET 10. Verify that comparisons match the new format.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindFormOnClosingObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findformonclosingobsolete)
-  * **Find obsolete `Form.OnClosing`/`OnClosed` usage (WFDEV004)**
-  * Finds usage of `Form.OnClosing`, `Form.OnClosed`, and the `Closing`/`Closed` events. In .NET 10, these are obsolete (WFDEV004). Use `OnFormClosing`/`OnFormClosed` and `FormClosing`/`FormClosed` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindGnuTarPaxTarEntry](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findgnutarpaxtarentry)
-  * **Find `GnuTarEntry`/`PaxTarEntry` default timestamp change**
-  * Finds `new GnuTarEntry(...)` and `new PaxTarEntry(...)` constructor calls. In .NET 10, these no longer set atime and ctime by default. Set `AccessTime`/`ChangeTime` explicitly if needed.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindIpNetworkObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findipnetworkobsolete)
-  * **Find obsolete `IPNetwork`/`KnownNetworks` (ASPDEPR005)**
-  * Finds usages of `Microsoft.AspNetCore.HttpOverrides.IPNetwork` and `ForwardedHeadersOptions.KnownNetworks` which are obsolete in .NET 10. Use `System.Net.IPNetwork` and `KnownIPNetworks` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindKeyedServiceAnyKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findkeyedserviceanykey)
-  * **Find `KeyedService.AnyKey` behavior change**
-  * Finds usages of `KeyedService.AnyKey` which has changed behavior in .NET 10. `GetKeyedService(AnyKey)` now throws `InvalidOperationException` and `GetKeyedServices(AnyKey)` no longer returns AnyKey registrations.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindMakeGenericSignatureType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findmakegenericsignaturetype)
-  * **Find `Type.MakeGenericSignatureType` validation change**
-  * Finds calls to `Type.MakeGenericSignatureType()` which now validates that the first argument is a generic type definition in .NET 10.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindQueryableMaxByMinByObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findqueryablemaxbyminbyobsolete)
-  * **Find obsolete `Queryable.MaxBy`/`MinBy` with `IComparer&lt;TSource&gt;` (SYSLIB0061)**
-  * Finds `Queryable.MaxBy` and `Queryable.MinBy` overloads taking `IComparer&lt;TSource&gt;` which are obsolete in .NET 10. Use the overloads taking `IComparer&lt;TKey&gt;` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindRazorRuntimeCompilationObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findrazorruntimecompilationobsolete)
-  * **Find obsolete `AddRazorRuntimeCompilation` calls (ASPDEPR003)**
-  * Finds calls to `AddRazorRuntimeCompilation` which is obsolete in .NET 10. Use Hot Reload instead for development scenarios.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindRfc2898DeriveBytesObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findrfc2898derivebytesobsolete)
-  * **Find obsolete `Rfc2898DeriveBytes` constructors (SYSLIB0060)**
-  * Finds `new Rfc2898DeriveBytes(...)` constructor calls which are obsolete in .NET 10. Use the static `Rfc2898DeriveBytes.Pbkdf2()` method instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSslAuthEnumTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsslauthenumtypes)
-  * **Find obsolete SSL authentication enum types**
-  * Finds usage of `ExchangeAlgorithmType`, `CipherAlgorithmType`, and `HashAlgorithmType` from `System.Security.Authentication`. These enum types are obsolete in .NET 10 (SYSLIB0058). Use `SslStream.NegotiatedCipherSuite` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSslStreamObsoleteProperties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsslstreamobsoleteproperties)
-  * **Find obsolete `SslStream` cipher properties (SYSLIB0058)**
-  * Finds usages of `SslStream.KeyExchangeAlgorithm`, `KeyExchangeStrength`, `CipherAlgorithm`, `CipherStrength`, `HashAlgorithm`, and `HashStrength` which are obsolete in .NET 10. Use `SslStream.NegotiatedCipherSuite` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSystemDrawingExceptionChange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsystemdrawingexceptionchange)
-  * **Find `catch (OutOfMemoryException)` that may need `ExternalException`**
-  * In .NET 10, System.Drawing GDI+ errors now throw `ExternalException` instead of `OutOfMemoryException`. This recipe finds catch blocks that catch `OutOfMemoryException` which may need to also catch `ExternalException`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSystemEventsThreadShutdownObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsystemeventsthreadshutdownobsolete)
-  * **Find obsolete `SystemEvents.EventsThreadShutdown` (SYSLIB0059)**
-  * Finds usages of `SystemEvents.EventsThreadShutdown` which is obsolete in .NET 10. Use `AppDomain.ProcessExit` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindWebHostBuilderObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findwebhostbuilderobsolete)
-  * **Find obsolete `WebHostBuilder`/`IWebHost`/`WebHost` usage (ASPDEPR004/ASPDEPR008)**
-  * Finds usages of `WebHostBuilder`, `IWebHost`, and `WebHost` which are obsolete in .NET 10. Migrate to `HostBuilder` or `WebApplicationBuilder` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindWinFormsObsoleteApis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findwinformsobsoleteapis)
-  * **Find obsolete Windows Forms APIs (WFDEV004/005/006)**
-  * Finds usages of Windows Forms APIs that are obsolete in .NET 10, including `Form.OnClosing/OnClosed` (WFDEV004), `Clipboard.GetData` (WFDEV005), and legacy controls like `ContextMenu`, `DataGrid`, `MainMenu` (WFDEV006).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindWithOpenApiDeprecated](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findwithopenapideprecated)
-  * **Find deprecated `WithOpenApi` calls (ASPDEPR002)**
-  * Finds calls to `.WithOpenApi()` which is deprecated in .NET 10. Remove the call or use `AddOpenApiOperationTransformer` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindX500DistinguishedNameValidation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findx500distinguishednamevalidation)
-  * **Find `X500DistinguishedName` string constructor stricter validation**
-  * Finds `new X500DistinguishedName(string, ...)` constructor calls which have stricter validation in .NET 10. Non-Windows environments may reject previously accepted values.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindXsltSettingsEnableScriptObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findxsltsettingsenablescriptobsolete)
-  * **Find obsolete `XsltSettings.EnableScript` (SYSLIB0062)**
-  * Finds usages of `XsltSettings.EnableScript` which is obsolete in .NET 10.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FormOnClosingRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/formonclosingrename)
-  * **Rename `Form.OnClosing/OnClosed` to `OnFormClosing/OnFormClosed` (WFDEV004)**
-  * Renames `Form.OnClosing` to `OnFormClosing` and `Form.OnClosed` to `OnFormClosed` for .NET 10 compatibility. Parameter type changes (`CancelEventArgs` → `FormClosingEventArgs`, `EventArgs` → `FormClosedEventArgs`) must be updated manually.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.InsertAdjacentElementOrientParameterRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/insertadjacentelementorientparameterrename)
-  * **Rename `orient` parameter to `orientation` in `HtmlElement.InsertAdjacentElement`**
-  * The `orient` parameter of `HtmlElement.InsertAdjacentElement` was renamed to `orientation` in .NET 10. This recipe updates named arguments in method calls to use the new parameter name.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.KnownNetworksRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/knownnetworksrename)
-  * **Rename `KnownNetworks` to `KnownIPNetworks` (ASPDEPR005)**
-  * Renames `ForwardedHeadersOptions.KnownNetworks` to `KnownIPNetworks` for .NET 10 compatibility.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.MlDsaSlhDsaSecretKeyToPrivateKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/mldsaslhdsasecretkeytoprivatekey)
-  * **Rename MLDsa/SlhDsa `SecretKey` members to `PrivateKey`**
-  * Renames `SecretKey` to `PrivateKey` in MLDsa and SlhDsa post-quantum cryptography APIs to align with .NET 10 naming conventions.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.RazorRuntimeCompilationObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/razorruntimecompilationobsolete)
-  * **Remove obsolete `AddRazorRuntimeCompilation` calls (ASPDEPR003)**
-  * Removes `AddRazorRuntimeCompilation()` calls which are obsolete in .NET 10. Use Hot Reload instead for development scenarios.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.UpgradeToDotNet10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/upgradetodotnet10)
-  * **Migrate to .NET 10**
-  * Migrate C# projects to .NET 10, applying necessary API changes. Includes all .NET 9 (and earlier) migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/10.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.WithOpenApiDeprecated](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/withopenapideprecated)
-  * **Remove deprecated `WithOpenApi` calls (ASPDEPR002)**
-  * Removes `.WithOpenApi()` calls which are deprecated in .NET 10. The call is removed from fluent method chains.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindCompactOnMemoryPressure](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findcompactonmemorypressure)
-  * **Find `CompactOnMemoryPressure` usage (removed in ASP.NET Core 3.0)**
-  * Finds usages of `CompactOnMemoryPressure` which was removed from `MemoryCacheOptions` in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindConnectionAdapter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findconnectionadapter)
-  * **Find `IConnectionAdapter` usage (removed in ASP.NET Core 3.0)**
-  * Finds usages of `IConnectionAdapter` which was removed from Kestrel in ASP.NET Core 3.0. Use Connection Middleware instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindHttpContextAuthentication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findhttpcontextauthentication)
-  * **Find `HttpContext.Authentication` usage (removed in ASP.NET Core 3.0)**
-  * Finds usages of `HttpContext.Authentication` which was removed in ASP.NET Core 3.0. Use dependency injection to get `IAuthenticationService` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindNewtonsoftJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findnewtonsoftjson)
-  * **Find Newtonsoft.Json usage**
-  * Finds usages of Newtonsoft.Json types (`JObject`, `JArray`, `JToken`, `JsonConvert`) that should be migrated to `System.Text.Json` or explicitly preserved via `Microsoft.AspNetCore.Mvc.NewtonsoftJson` in ASP.NET Core 3.0+.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindObsoleteLocalizationApis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findobsoletelocalizationapis)
-  * **Find obsolete localization APIs (ASP.NET Core 3.0)**
-  * Finds usages of `ResourceManagerWithCultureStringLocalizer` and `WithCulture()` which are obsolete in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindSpaServices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findspaservices)
-  * **Find SpaServices/NodeServices usage (obsolete in ASP.NET Core 3.0)**
-  * Finds usages of `SpaServices` and `NodeServices` which are obsolete in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindSynchronousIO](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findsynchronousio)
-  * **Find synchronous IO usage (disabled in ASP.NET Core 3.0)**
-  * Finds references to `AllowSynchronousIO` which indicates synchronous IO usage that is disabled by default in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindUseMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findusemvc)
-  * **Find `UseMvc`/`AddMvc` usage (replaced in ASP.NET Core 3.0)**
-  * Finds usages of `app.UseMvc()`, `app.UseMvcWithDefaultRoute()`, and `services.AddMvc()` which should be migrated to endpoint routing and more specific service registration in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindWebApiCompatShim](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findwebapicompatshim)
-  * **Find Web API compatibility shim usage (removed in ASP.NET Core 3.0)**
-  * Finds usages of `ApiController`, `HttpResponseMessage`, and other types from `Microsoft.AspNetCore.Mvc.WebApiCompatShim` which was removed in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindWebHostBuilder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findwebhostbuilder)
-  * **Find `WebHostBuilder`/`WebHost.CreateDefaultBuilder` usage (replaced in ASP.NET Core 3.0)**
-  * Finds usages of `WebHost.CreateDefaultBuilder()` and `new WebHostBuilder()` which should be migrated to `Host.CreateDefaultBuilder()` with `ConfigureWebHostDefaults()` in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.UpgradeToDotNet3_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/upgradetodotnet3_0)
-  * **Migrate to .NET Core 3.0**
-  * Migrate C# projects from .NET Core 2.x to .NET Core 3.0, applying necessary API changes for removed and replaced types. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.UseApiControllerBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/useapicontrollerbase)
-  * **Migrate ApiController to ControllerBase**
-  * Replace `ApiController` base class (from the removed WebApiCompatShim) with `ControllerBase` and add the `[ApiController]` attribute. The shim was removed in ASP.NET Core 3.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.UsePlatformAbstractionsReplacement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/useplatformabstractionsreplacement)
-  * **Replace `PlatformServices` with `AppContext`**
-  * Replaces `Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationBasePath` with `System.AppContext.BaseDirectory`. The PlatformAbstractions package was removed in .NET Core 3.0. Also removes the obsolete using directive.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_1.FindSameSiteNone](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_1/findsamesitenone)
-  * **Find `SameSiteMode.None` usage (behavior changed in .NET Core 3.1)**
-  * Finds usages of `SameSiteMode.None` which changed behavior in .NET Core 3.1 due to Chrome 80 SameSite cookie changes. Apps using remote authentication may need browser sniffing.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_1.UpgradeToDotNet3_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_1/upgradetodotnet3_1)
-  * **Migrate to .NET Core 3.1**
-  * Migrate C# projects from .NET Core 3.0 to .NET Core 3.1. Includes all .NET Core 3.0 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/3.1.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindCodeAccessSecurity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findcodeaccesssecurity)
-  * **Find Code Access Security usage (obsolete in .NET 5)**
-  * Finds usages of Code Access Security types (`SecurityPermission`, `PermissionSet`, etc.) which are obsolete in .NET 5+.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindPrincipalPermissionAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findprincipalpermissionattribute)
-  * **Find `PrincipalPermissionAttribute` usage (SYSLIB0003)**
-  * Finds usages of `PrincipalPermissionAttribute` which is obsolete in .NET 5+ (SYSLIB0003) and throws `NotSupportedException` at runtime.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindUtf7Encoding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findutf7encoding)
-  * **Find `Encoding.UTF7` usage (SYSLIB0001)**
-  * Finds usages of `Encoding.UTF7` and `UTF7Encoding` which are obsolete in .NET 5+ (SYSLIB0001). UTF-7 is insecure.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindWinHttpHandler](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findwinhttphandler)
-  * **Find `WinHttpHandler` usage (removed in .NET 5)**
-  * Finds usages of `WinHttpHandler` which was removed from the .NET 5 runtime. Install the `System.Net.Http.WinHttpHandler` NuGet package explicitly.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindWinRTInterop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findwinrtinterop)
-  * **Find WinRT interop usage (removed in .NET 5)**
-  * Finds usages of WinRT interop types (`WindowsRuntimeType`, `WindowsRuntimeMarshal`, etc.) which were removed in .NET 5.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.UpgradeToDotNet5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/upgradetodotnet5)
-  * **Migrate to .NET 5**
-  * Migrate C# projects from .NET Core 3.1 to .NET 5.0. Includes all .NET Core 3.0 and 3.1 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/5.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindAssemblyCodeBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findassemblycodebase)
-  * **Find `Assembly.CodeBase`/`EscapedCodeBase` usage (SYSLIB0012)**
-  * Finds usages of `Assembly.CodeBase` and `Assembly.EscapedCodeBase` which are obsolete (SYSLIB0012). Use `Assembly.Location` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindIgnoreNullValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findignorenullvalues)
-  * **Find `JsonSerializerOptions.IgnoreNullValues` usage (SYSLIB0020)**
-  * Finds usages of `JsonSerializerOptions.IgnoreNullValues` which is obsolete in .NET 6 (SYSLIB0020). Use `DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindThreadAbort](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findthreadabort)
-  * **Find `Thread.Abort` usage (SYSLIB0006)**
-  * Finds calls to `Thread.Abort()` which throws `PlatformNotSupportedException` in .NET 6+ (SYSLIB0006). Use `CancellationToken` for cooperative cancellation instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindWebRequest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findwebrequest)
-  * **Find `WebRequest`/`HttpWebRequest`/`WebClient` usage (SYSLIB0014)**
-  * Finds usages of `WebRequest`, `HttpWebRequest`, and `WebClient` which are obsolete in .NET 6 (SYSLIB0014). Use `HttpClient` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindX509PrivateKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findx509privatekey)
-  * **Find `X509Certificate2.PrivateKey` usage (SYSLIB0028)**
-  * Finds usages of `X509Certificate2.PrivateKey` which is obsolete (SYSLIB0028). Use `GetRSAPrivateKey()`, `GetECDsaPrivateKey()`, or the appropriate algorithm-specific method instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UpgradeToDotNet6](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/upgradetodotnet6)
-  * **Migrate to .NET 6**
-  * Migrate C# projects to .NET 6, applying necessary API changes for obsoleted cryptographic types and other breaking changes. Includes all .NET Core 3.0, 3.1, and .NET 5 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/6.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseCryptoFactoryMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usecryptofactorymethods)
-  * **Use factory method for abstract cryptographic types**
-  * Replace `new AbstractCryptoType()` with `AbstractCryptoType.Create()` for abstract cryptographic types like `SHA256`, `Aes`, `RandomNumberGenerator`, etc. These types are abstract and cannot be instantiated directly; callers must use the static `Create()` factory method.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseEnvironmentCurrentManagedThreadId](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/useenvironmentcurrentmanagedthreadid)
-  * **Use Environment.CurrentManagedThreadId**
-  * Replace `Thread.CurrentThread.ManagedThreadId` with `Environment.CurrentManagedThreadId` (CA1840). Available since .NET 6.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseEnvironmentProcessId](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/useenvironmentprocessid)
-  * **Use Environment.ProcessId**
-  * Replace `Process.GetCurrentProcess().Id` with `Environment.ProcessId` (CA1837). Available since .NET 6.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseEnvironmentProcessPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/useenvironmentprocesspath)
-  * **Use Environment.ProcessPath**
-  * Replace `Process.GetCurrentProcess().MainModule.FileName` with `Environment.ProcessPath` (CA1839). Available since .NET 6.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseLinqDistinctBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/uselinqdistinctby)
-  * **Use LINQ DistinctBy()**
-  * Replace `collection.GroupBy(selector).Select(g =&gt; g.First())` with `collection.DistinctBy(selector)`. Available since .NET 6.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseLinqMaxMinBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/uselinqmaxminby)
-  * **Use LINQ MaxBy() and MinBy()**
-  * Replace `collection.OrderByDescending(selector).First()` with `collection.MaxBy(selector)` and `collection.OrderBy(selector).First()` with `collection.MinBy(selector)`. Also handles `.Last()` variants (OrderBy().Last() → MaxBy, OrderByDescending().Last() → MinBy). Note: MinBy/MaxBy return default for empty reference-type sequences instead of throwing. Available since .NET 6.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseRandomShared](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/userandomshared)
-  * **Use Random.Shared**
-  * Replace `new Random().Method(...)` with `Random.Shared.Method(...)`. Available since .NET 6.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseStringContainsChar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usestringcontainschar)
-  * **Use string.Contains(char) overload**
-  * Finds calls to `string.Contains(&quot;x&quot;)` with a single-character string literal that could use the `string.Contains('x')` overload for better performance.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseStringStartsEndsWithChar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usestringstartsendswithchar)
-  * **Use string.StartsWith(char)/EndsWith(char) overload**
-  * Finds calls to `string.StartsWith(&quot;x&quot;)` and `string.EndsWith(&quot;x&quot;)` with a single-character string literal that could use the char overload for better performance.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseThrowIfNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usethrowifnull)
-  * **Use ArgumentNullException.ThrowIfNull()**
-  * Replace `if (x == null) throw new ArgumentNullException(nameof(x))` guard clauses with `ArgumentNullException.ThrowIfNull(x)` (CA1510). Handles `== null`, `is null`, reversed `null ==`, string literal param names, and braced then-blocks. Available since .NET 6.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.FindObsoleteSslProtocols](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/findobsoletesslprotocols)
-  * **Find obsolete `SslProtocols.Tls`/`Tls11` usage (SYSLIB0039)**
-  * Finds usages of `SslProtocols.Tls` and `SslProtocols.Tls11` which are obsolete in .NET 7 (SYSLIB0039). Use `SslProtocols.Tls12`, `SslProtocols.Tls13`, or `SslProtocols.None` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.FindRfc2898InsecureCtors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/findrfc2898insecurectors)
-  * **Find insecure `Rfc2898DeriveBytes` constructors (SYSLIB0041)**
-  * Finds `Rfc2898DeriveBytes` constructor calls that use default SHA1 or low iteration counts, which are obsolete in .NET 7 (SYSLIB0041). Specify `HashAlgorithmName` and at least 600,000 iterations.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UpgradeToDotNet7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/upgradetodotnet7)
-  * **Migrate to .NET 7**
-  * Migrate C# projects to .NET 7, applying necessary API changes. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseLinqOrder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/uselinqorder)
-  * **Use LINQ Order() and OrderDescending()**
-  * Replace `collection.OrderBy(x =&gt; x)` with `collection.Order()` and `collection.OrderByDescending(x =&gt; x)` with `collection.OrderDescending()`. Available since .NET 7.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseThrowIfNegative](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/usethrowifnegative)
-  * **Use ArgumentOutOfRangeException.ThrowIfNegative()**
-  * Replace `if (value &lt; 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfNegative(value)`. Also handles reversed `0 &gt; value`. Available since .NET 7.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseThrowIfNegativeOrZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/usethrowifnegativeorzero)
-  * **Use ArgumentOutOfRangeException.ThrowIfNegativeOrZero()**
-  * Replace `if (value &lt;= 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value)`. Also handles reversed `0 &gt;= value`. Available since .NET 7.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseThrowIfNullOrEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/usethrowifnullorempty)
-  * **Use ArgumentException.ThrowIfNullOrEmpty()**
-  * Replace `if (string.IsNullOrEmpty(s)) throw new ArgumentException(&quot;...&quot;, nameof(s))` guard clauses with `ArgumentException.ThrowIfNullOrEmpty(s)`. Available since .NET 7.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindAddContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findaddcontext)
-  * **Find `JsonSerializerOptions.AddContext` usage (SYSLIB0049)**
-  * Finds calls to `JsonSerializerOptions.AddContext&lt;T&gt;()` which is obsolete in .NET 8 (SYSLIB0049). Use `TypeInfoResolverChain` or `TypeInfoResolver` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindAesGcmOldConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findaesgcmoldconstructor)
-  * **Find `AesGcm` constructor without tag size (SYSLIB0053)**
-  * Finds `new AesGcm(key)` constructor calls without an explicit tag size parameter. In .NET 8, the single-argument constructor is obsolete (SYSLIB0053). Use `new AesGcm(key, tagSizeInBytes)` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindFormatterBasedSerialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findformatterbasedserialization)
-  * **Find formatter-based serialization types (SYSLIB0050/0051)**
-  * Finds usage of formatter-based serialization types (`FormatterConverter`, `IFormatter`, `ObjectIDGenerator`, `ObjectManager`, `SurrogateSelector`, `SerializationInfo`, `StreamingContext`). These are obsolete in .NET 8 (SYSLIB0050/0051).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindFrozenCollection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findfrozencollection)
-  * **Find ToImmutable*() that could use Frozen collections**
-  * Finds usages of `ToImmutableDictionary()` and `ToImmutableHashSet()`. In .NET 8+, `ToFrozenDictionary()` and `ToFrozenSet()` provide better read performance.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindRegexCompileToAssembly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findregexcompiletoassembly)
-  * **Find `Regex.CompileToAssembly` usage (SYSLIB0052)**
-  * Finds usage of `Regex.CompileToAssembly()` and `RegexCompilationInfo`. These are obsolete in .NET 8 (SYSLIB0052). Use the Regex source generator instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindSerializationConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findserializationconstructors)
-  * **Find legacy serialization constructors (SYSLIB0051)**
-  * Finds legacy serialization constructors `.ctor(SerializationInfo, StreamingContext)` which are obsolete in .NET 8 (SYSLIB0051). The `ISerializable` pattern is no longer recommended.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindTimeAbstraction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findtimeabstraction)
-  * **Find DateTime.Now/UtcNow usage (TimeProvider in .NET 8)**
-  * Finds usages of `DateTime.Now`, `DateTime.UtcNow`, `DateTimeOffset.Now`, and `DateTimeOffset.UtcNow`. In .NET 8+, `TimeProvider` is the recommended abstraction for time.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UpgradeToDotNet8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/upgradetodotnet8)
-  * **Migrate to .NET 8**
-  * Migrate C# projects to .NET 8, applying necessary API changes. Includes all .NET 7 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfGreaterThan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowifgreaterthan)
-  * **Use ArgumentOutOfRangeException.ThrowIfGreaterThan()**
-  * Replace `if (value &gt; other) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfGreaterThan(value, other)`. Also handles reversed `other &lt; value` and `&gt;=`/`ThrowIfGreaterThanOrEqual`. Available since .NET 8.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfLessThan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowiflessthan)
-  * **Use ArgumentOutOfRangeException.ThrowIfLessThan()**
-  * Replace `if (value &lt; other) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfLessThan(value, other)`. Also handles reversed `other &gt; value` and `&lt;=`/`ThrowIfLessThanOrEqual`. Available since .NET 8.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfNullOrWhiteSpace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowifnullorwhitespace)
-  * **Use ArgumentException.ThrowIfNullOrWhiteSpace()**
-  * Replace `if (string.IsNullOrWhiteSpace(s)) throw new ArgumentException(&quot;...&quot;, nameof(s))` guard clauses with `ArgumentException.ThrowIfNullOrWhiteSpace(s)`. Available since .NET 8.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowifzero)
-  * **Use ArgumentOutOfRangeException.ThrowIfZero()**
-  * Replace `if (value == 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfZero(value)`. Also handles reversed `0 == value`. Available since .NET 8.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseTimeProvider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usetimeprovider)
-  * **Use TimeProvider instead of DateTime/DateTimeOffset static properties**
-  * Replace `DateTime.UtcNow`, `DateTime.Now`, `DateTimeOffset.UtcNow`, and `DateTimeOffset.Now` with `TimeProvider.System.GetUtcNow()`/`GetLocalNow()` equivalents. TimeProvider enables testability and consistent time sources. Available since .NET 8.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindAsyncEnumerableLinqAmbiguity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findasyncenumerablelinqambiguity)
-  * **Find LINQ ambiguities introduced by .NET 9 `IAsyncEnumerable` extensions**
-  * .NET 9 added LINQ extension methods on `IAsyncEnumerable&lt;T&gt;`. Types implementing both `IQueryable&lt;T&gt;` and `IAsyncEnumerable&lt;T&gt;` (notably EF Core `DbSet&lt;T&gt;`) now produce ambiguous `Where`/`Select`/`FirstOrDefault`/etc. calls. Flags such calls for manual disambiguation (typically by inserting `.AsQueryable()`).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindAuthenticationManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findauthenticationmanager)
-  * **Find `AuthenticationManager` usage (SYSLIB0009)**
-  * Finds usages of `AuthenticationManager` which is not supported in .NET 9 (SYSLIB0009). Methods will no-op or throw `PlatformNotSupportedException`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindBinaryFormatter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findbinaryformatter)
-  * **Find `BinaryFormatter` usage (removed in .NET 9)**
-  * Finds usages of `BinaryFormatter` which always throws `NotSupportedException` in .NET 9. Migrate to a different serializer such as `System.Text.Json`, `XmlSerializer`, or `DataContractSerializer`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindBinaryReaderReadString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findbinaryreaderreadstring)
-  * **Find `BinaryReader.ReadString` behavior change**
-  * Finds calls to `BinaryReader.ReadString()` which now returns the Unicode replacement character (\uFFFD) for malformed UTF-8 byte sequences in .NET 9, instead of the previous behavior. Verify your code handles the replacement character correctly.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindDistributedCache](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/finddistributedcache)
-  * **Find IDistributedCache usage (HybridCache in .NET 9)**
-  * Finds usages of `IDistributedCache`. In .NET 9, `HybridCache` is the recommended replacement with L1/L2 caching, stampede protection, and tag-based invalidation.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindEnumConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findenumconverter)
-  * **Find `EnumConverter` constructor validation change**
-  * Finds `new EnumConverter()` constructor calls. In .NET 9, `EnumConverter` validates that the registered type is actually an enum and throws `ArgumentException` if not.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindExecuteUpdateSync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findexecuteupdatesync)
-  * **Find synchronous ExecuteUpdate/ExecuteDelete (EF Core 9)**
-  * Finds usages of synchronous `ExecuteUpdate()` and `ExecuteDelete()` which were removed in EF Core 9. Use `ExecuteUpdateAsync`/`ExecuteDeleteAsync` instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindHttpClientHandlerCast](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findhttpclienthandlercast)
-  * **Find `HttpClientHandler` usage (HttpClientFactory default change)**
-  * Finds usages of `HttpClientHandler` which may break when `HttpClientFactory` switches its default handler to `SocketsHttpHandler` in .NET 9.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindHttpListenerRequestUserAgent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findhttplistenerrequestuseragent)
-  * **Find `HttpListenerRequest.UserAgent` nullable change**
-  * Finds accesses to `HttpListenerRequest.UserAgent` which changed from `string` to `string?` in .NET 9. Code that assumes `UserAgent` is non-null may throw `NullReferenceException`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindImplicitAuthenticationDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findimplicitauthenticationdefault)
-  * **Find implicit authentication default scheme (ASP.NET Core 9)**
-  * Finds calls to `AddAuthentication()` with no arguments. In .NET 9, a single registered authentication scheme is no longer automatically used as the default.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindInMemoryDirectoryInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findinmemorydirectoryinfo)
-  * **Find `InMemoryDirectoryInfo` rootDir prepend change**
-  * Finds `new InMemoryDirectoryInfo()` constructor calls. In .NET 9, `rootDir` is prepended to file paths that don't start with the `rootDir`, which may change file matching behavior.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindIncrementingPollingCounter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findincrementingpollingcounter)
-  * **Find `IncrementingPollingCounter` async callback change**
-  * Finds `new IncrementingPollingCounter()` constructor calls. In .NET 9, the initial callback invocation is asynchronous instead of synchronous, which may change timing behavior.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindJsonDocumentNullable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findjsondocumentnullable)
-  * **Find `JsonSerializer.Deserialize` nullable `JsonDocument` change**
-  * Finds `JsonSerializer.Deserialize()` calls. In .NET 9, nullable `JsonDocument` properties now deserialize to a `JsonDocument` with `RootElement.ValueKind == JsonValueKind.Null` instead of being `null`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindJsonStringEnumConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findjsonstringenumconverter)
-  * **Find non-generic JsonStringEnumConverter**
-  * Finds usages of the non-generic `JsonStringEnumConverter`. In .NET 9, the generic `JsonStringEnumConverter&lt;TEnum&gt;` is preferred for AOT compatibility.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindRuntimeHelpersGetSubArray](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findruntimehelpersgetsubarray)
-  * **Find `RuntimeHelpers.GetSubArray` return type change**
-  * Finds calls to `RuntimeHelpers.GetSubArray()` which may return a different array type in .NET 9. Code that depends on the runtime type of the returned array may break.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindSafeEvpPKeyHandleDuplicate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findsafeevppkeyhandleduplicate)
-  * **Find `SafeEvpPKeyHandle.DuplicateHandle` up-ref change**
-  * Finds calls to `SafeEvpPKeyHandle.DuplicateHandle()`. In .NET 9, this method now increments the reference count instead of creating a deep copy, which may affect handle lifetime.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindServicePointManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findservicepointmanager)
-  * **Find `ServicePointManager` usage (SYSLIB0014)**
-  * Finds usages of `ServicePointManager` which is fully obsolete in .NET 9 (SYSLIB0014). Settings on `ServicePointManager` don't affect `SslStream` or `HttpClient`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindSwashbuckle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findswashbuckle)
-  * **Find Swashbuckle usage (ASP.NET Core 9 built-in OpenAPI)**
-  * Finds usages of Swashbuckle APIs (`AddSwaggerGen`, `UseSwagger`, `UseSwaggerUI`). .NET 9 includes built-in OpenAPI support. Consider migrating to `AddOpenApi()`/`MapOpenApi()`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindX509CertificateConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findx509certificateconstructors)
-  * **Find obsolete `X509Certificate2`/`X509Certificate` constructors (SYSLIB0057)**
-  * Finds usages of `X509Certificate2` and `X509Certificate` constructors that accept binary content or file paths, which are obsolete in .NET 9 (SYSLIB0057). Use `X509CertificateLoader` methods instead.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindZipArchiveCompressionLevel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findziparchivecompressionlevel)
-  * **Find `ZipArchive.CreateEntry` with `CompressionLevel` (bit flag change)**
-  * Finds `ZipArchive.CreateEntry()` and `ZipFileExtensions.CreateEntryFromFile()` calls with a `CompressionLevel` parameter. In .NET 9, the `CompressionLevel` value now sets general-purpose bit flags in the ZIP central directory header, which may affect interoperability.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindZipArchiveEntryEncoding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findziparchiveentryencoding)
-  * **Find `ZipArchiveEntry` name/comment UTF-8 encoding change**
-  * Finds access to `ZipArchiveEntry.Name`, `FullName`, or `Comment` properties. In .NET 9, these now respect the UTF-8 flag in ZIP entries, which may change decoded values.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.MigrateSwashbuckleToOpenApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/migrateswashbuckletoopenapi)
-  * **Migrate Swashbuckle to built-in OpenAPI**
-  * Migrate from Swashbuckle to the built-in OpenAPI support in ASP.NET Core 10+. Replaces `AddSwaggerGen()` with `AddOpenApi()`, `UseSwaggerUI()` with `MapOpenApi()`, removes `UseSwagger()`, removes Swashbuckle packages, and adds `Microsoft.AspNetCore.OpenApi`. Only fires when every project targets net10.0+ (the version that ships Microsoft.OpenApi 2.x with its flattened type namespaces).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.RemoveConfigureAwaitFalse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/removeconfigureawaitfalse)
-  * **Remove ConfigureAwait(false)**
-  * Remove `.ConfigureAwait(false)` calls that are unnecessary in ASP.NET Core and modern .NET applications (no SynchronizationContext). Do not apply to library code targeting .NET Framework.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UpgradeToDotNet9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/upgradetodotnet9)
-  * **Migrate to .NET 9**
-  * Migrate C# projects to .NET 9, applying necessary API changes. Includes all .NET 7 and .NET 8 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/9.0.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseEscapeSequenceE](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/useescapesequencee)
-  * **Use \e escape sequence**
-  * Replace `\u001b` and `\x1b` escape sequences with `\e`. C# 13 introduced `\e` as a dedicated escape sequence for the escape character (U+001B).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseFrozenCollections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usefrozencollections)
-  * **Use Frozen collections instead of Immutable**
-  * Replace `ToImmutableDictionary()` with `ToFrozenDictionary()` and `ToImmutableHashSet()` with `ToFrozenSet()`. Frozen collections (.NET 8+) provide better read performance for collections populated once and read many times.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseGuidCreateVersion7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/useguidcreateversion7)
-  * **Use Guid.CreateVersion7()**
-  * Replace `Guid.NewGuid()` with `Guid.CreateVersion7()`. Version 7 GUIDs are time-ordered and better for database primary keys, indexing, and sorting. Available since .NET 9.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLinqAggregateBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselinqaggregateby)
-  * **Use LINQ AggregateBy()**
-  * Replace `collection.GroupBy(keySelector).ToDictionary(g =&gt; g.Key, g =&gt; g.Aggregate(seed, func))` with `collection.AggregateBy(keySelector, seed, func).ToDictionary()`. Available since .NET 9.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLinqCountBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselinqcountby)
-  * **Use LINQ CountBy()**
-  * Replace `collection.GroupBy(selector).Select(g =&gt; g.Count())` with `collection.CountBy(selector)`. Available since .NET 9.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLinqIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselinqindex)
-  * **Use LINQ Index()**
-  * Replace `collection.Select((item, index) =&gt; (index, item))` with `collection.Index()`. Available since .NET 9.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLockObject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselockobject)
-  * **Use System.Threading.Lock for lock fields**
-  * Replace `object` fields initialized with `new object()` with `System.Threading.Lock` initialized with `new()`. The Lock type provides better performance with the lock statement. Available since .NET 9.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseMapStaticAssets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usemapstaticassets)
-  * **Use MapStaticAssets()**
-  * Replace `UseStaticFiles()` with `MapStaticAssets()` for ASP.NET Core 9. Only applies when the receiver supports `IEndpointRouteBuilder` (WebApplication / minimal hosting). Skips Startup.cs patterns using `IApplicationBuilder` where `MapStaticAssets` is not available.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseTaskCompletedTask](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usetaskcompletedtask)
-  * **Use Task.CompletedTask**
-  * Replace `Task.FromResult(0)`, `Task.FromResult(true)`, and `Task.FromResult(false)` with `Task.CompletedTask` when the return type is `Task` (not `Task&lt;T&gt;`).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseVolatileReadWrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usevolatilereadwrite)
-  * **Use Volatile.Read/Write (SYSLIB0054)**
-  * Replace `Thread.VolatileRead` and `Thread.VolatileWrite` with `Volatile.Read` and `Volatile.Write`. The Thread methods are obsolete in .NET 9 (SYSLIB0054).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseX509CertificateLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usex509certificateloader)
-  * **Use X509CertificateLoader (SYSLIB0057)**
-  * Replace `new X509Certificate2(path, password)` with `X509CertificateLoader.LoadPkcs12FromFile(path, password)`. The two-argument X509Certificate2 constructor is obsolete in .NET 9 (SYSLIB0057).
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.ConvertClassicCsprojToSdk](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/convertclassiccsprojtosdk)
-  * **Convert classic csproj to SDK-style (net48)**
-  * Rewrites a non-SDK .NET Framework 4.8 .csproj into SDK-style form: sets `Sdk=&quot;Microsoft.NET.Sdk&quot;`, removes the legacy MSBuild boilerplate (`&lt;Import&gt;`s, default `&lt;Compile&gt;` items, configuration-conditional `&lt;PropertyGroup&gt;` blocks, SDK-managed properties), and replaces `&lt;TargetFrameworkVersion&gt;v4.8&lt;/TargetFrameworkVersion&gt;` with `&lt;TargetFramework&gt;net48&lt;/TargetFramework&gt;`.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.MigratePackagesConfigToPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/migratepackagesconfigtopackagereference)
-  * **Migrate `packages.config` to `&lt;PackageReference&gt;` (net48)**
-  * Moves NuGet package entries from `packages.config` into `&lt;PackageReference&gt;` items in the sibling `.csproj`, drops facade packages provided transitively by `Microsoft.NETFramework.ReferenceAssemblies.Net48`, adds that reference-assemblies package, and removes the now-empty `packages.config`. Scoped to .NET Framework 4.8 projects.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.UpgradeToNetFramework48Sdk](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/upgradetonetframework48sdk)
-  * **Modernize .NET Framework 4.8 project (SDK + PackageReference)**
-  * Migrates a classic .NET Framework 4.8 csproj that uses `packages.config` to SDK-style with `&lt;PackageReference&gt;` entries. Combines `MigratePackagesConfigToPackageReference` and `ConvertClassicCsprojToSdk` so the resulting project builds with `dotnet build` on non-Windows machines via the `Microsoft.NETFramework.ReferenceAssemblies.Net48` targeting pack.
-* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.RemoveMethodInvocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/removemethodinvocations)
-  * **Remove method invocations**
-  * Remove method invocations if syntactically safe.
-
 ### recipes-scala
 
 * [org.openrewrite.scala.recipes.cleanup.AvoidEmptyCatchBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/avoidemptycatchblock)
@@ -5056,72 +4561,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Use ScalaTest matchers instead of `assert(x == y)`**
   * Finds `assert(x == y)` patterns and `assertEquals` calls. Consider using ScalaTest matchers: `x shouldBe y`.
 
-### recipes-tunit
-
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.AddAsyncToTestMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/addasynctotestmethods)
-  * **Add `async Task` to methods containing `await`**
-  * Find methods that contain `await` expressions but return `void`, and change their signature to `async Task`.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.AsyncLifetimeToBeforeAfterTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/asynclifetimetobeforeaftertest)
-  * **Find `IAsyncLifetime` needing TUnit migration**
-  * Find classes implementing `IAsyncLifetime` that should use `[Before(Test)]` and `[After(Test)]` for TUnit.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.ChangeXUnitUsings](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/changexunitusings)
-  * **Change xUnit using directives to TUnit**
-  * Replace `using Xunit;` with `using TUnit.Core;` and `using TUnit.Assertions;`.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.ClassFixtureToClassDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/classfixturetoclassdatasource)
-  * **Find `IClassFixture&lt;T&gt;` needing TUnit migration**
-  * Find classes implementing `IClassFixture&lt;T&gt;` that should use `[ClassDataSource&lt;T&gt;]` for TUnit.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.CollectionFixtureToClassDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/collectionfixturetoclassdatasource)
-  * **Replace `ICollectionFixture&lt;T&gt;` with `[ClassDataSource&lt;T&gt;]`**
-  * Migrate xUnit collection fixtures to TUnit: remove `[CollectionDefinition]` and `ICollectionFixture&lt;T&gt;` from definition classes, add `[ClassDataSource&lt;T&gt;(Shared = SharedType.Keyed)]` to test classes, and convert constructor fixture injection to primary constructors.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.CollectionToNotInParallel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/collectiontonotinparallel)
-  * **Replace `[Collection]` with `[NotInParallel]`**
-  * Replace the xUnit `[Collection(&quot;name&quot;)]` attribute with the TUnit `[NotInParallel(&quot;name&quot;)]` attribute.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.ConstructorToBeforeTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/constructortobeforetest)
-  * **Find test constructors needing `[Before(Test)]`**
-  * Find constructors in test classes that should be converted to `[Before(Test)]` methods for TUnit.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.DisposableToAfterTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/disposabletoaftertest)
-  * **Replace `IDisposable` with `[After(Test)]`**
-  * Remove `IDisposable` from the base type list and add `[After(Test)]` to the `Dispose()` method.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.FactSkipToSkipAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/factskiptoskipattribute)
-  * **Extract `Skip` into `[Skip]` attribute**
-  * Extract the `Skip` argument from `[Fact(Skip = &quot;...&quot;)]` or `[Theory(Skip = &quot;...&quot;)]` into a separate TUnit `[Skip(&quot;...&quot;)]` attribute.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.FactTimeoutToTimeoutAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/facttimeouttotimeoutattribute)
-  * **Extract `Timeout` into `[Timeout]` attribute**
-  * Extract the `Timeout` argument from `[Fact(Timeout = ...)]` or `[Theory(Timeout = ...)]` into a separate TUnit `[Timeout(...)]` attribute.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.FactToTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/facttotest)
-  * **Replace `[Fact]` with `[Test]`**
-  * Replace the xUnit `[Fact]` attribute with the TUnit `[Test]` attribute.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.InlineDataToArguments](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/inlinedatatoarguments)
-  * **Replace `[InlineData]` with `[Arguments]`**
-  * Replace the xUnit `[InlineData]` attribute with the TUnit `[Arguments]` attribute.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MemberDataToMethodDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/memberdatatomethoddatasource)
-  * **Replace `[MemberData]` with `[MethodDataSource]`**
-  * Replace the xUnit `[MemberData]` attribute with the TUnit `[MethodDataSource]` attribute. Fields and properties referenced by MemberData are converted to methods.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateFromXUnit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratefromxunit)
-  * **Migrate from xUnit to TUnit**
-  * Migrate xUnit test attributes, assertions, and lifecycle patterns to their TUnit equivalents.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateFromXUnitAttributes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratefromxunitattributes)
-  * **Migrate xUnit attributes to TUnit**
-  * Replace xUnit test attributes ([Fact], [Theory], [InlineData], etc.) with their TUnit equivalents.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateXUnitAssertions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratexunitassertions)
-  * **Migrate xUnit assertions to TUnit**
-  * Replace xUnit `Assert.*` calls with TUnit's fluent `await Assert.That(...).Is*()` assertions. Note: test methods may need to be changed to `async Task` separately.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateXUnitDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratexunitdependencies)
-  * **Migrate xUnit NuGet dependencies to TUnit**
-  * Remove xUnit NuGet package references, add TUnit, and upgrade the target framework to at least .NET 9.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TestOutputHelperToTestContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/testoutputhelpertotestcontext)
-  * **Find `ITestOutputHelper` needing TUnit migration**
-  * Find usages of xUnit's `ITestOutputHelper` that should be replaced with TUnit's `TestContext`.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TheoryToTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/theorytotest)
-  * **Replace `[Theory]` with `[Test]`**
-  * Replace the xUnit `[Theory]` attribute with the TUnit `[Test]` attribute.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TraitCategoryToCategory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/traitcategorytocategory)
-  * **Replace `[Trait(&quot;Category&quot;, ...)]` with `[Category]`**
-  * Replace xUnit `[Trait(&quot;Category&quot;, &quot;X&quot;)]` with TUnit's dedicated `[Category(&quot;X&quot;)]` attribute.
-* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TraitToProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/traittoproperty)
-  * **Replace `[Trait]` with `[Property]`**
-  * Replace the xUnit `[Trait]` attribute with the TUnit `[Property]` attribute.
-
 ### rewrite-ai
 
 * [io.moderne.ai.FindAgentsInUse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/findagentsinuse)
@@ -5136,6 +4575,48 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-angular
 
+* [org.openrewrite.angular.UpgradeToAngular10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular10)
+  * **Upgrade to Angular 10**
+  * Migrates Angular 9.x applications to Angular 10. This includes removing the deprecated `es5BrowserSupport` option from `angular.json`, renaming deprecated `validator`/`asyncValidator` to their plural forms, renaming `browserslist` to `.browserslistrc`, migrating to solution-style `tsconfig.json`, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular11](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular11)
+  * **Upgrade to Angular 11**
+  * Migrates Angular 10.x applications to Angular 11. This includes replacing `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`, removing the deprecated `extractCss` build option from `angular.json`, flagging deprecated string-based `loadChildren` and `preserveQueryParams` usage, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular12](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular12)
+  * **Upgrade to Angular 12**
+  * Migrates Angular 11.x applications to Angular 12. This includes adding `defaultConfiguration: &quot;production&quot;` to build targets in `angular.json`, replacing `node-sass` with `sass` (Dart Sass), flagging deprecated `async` test helper and View Engine APIs, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular13](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular13)
+  * **Upgrade to Angular 13**
+  * Migrates Angular 12.x applications to Angular 13. This includes updating `tsconfig.json` target to `es2017`, removing IE11 polyfills, removing `defaultProject` from `angular.json`, adding TestBed module teardown, simplifying `ComponentFactoryResolver` usage, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular14](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular14)
+  * **Upgrade to Angular 14**
+  * Migrates Angular 13.x applications to Angular 14. This includes replacing form classes with their `Untyped*` equivalents for backward compatibility with typed forms, updating deprecated `initialNavigation` router option values, removing `aotSummaries` from TestBed calls, and flagging `pathMatch` properties that may need type narrowing.
+* [org.openrewrite.angular.UpgradeToAngular15](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular15)
+  * **Upgrade to Angular 15**
+  * Migrates Angular 14.x applications to Angular 15. This includes removing the `relativeLinkResolution` option from `RouterModule.forRoot()`, removing the `enableIvy` compiler option from `tsconfig.json`, flagging the deprecated `DATE_PIPE_DEFAULT_TIMEZONE` token and `providedIn: NgModule`/`'any'` usage, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular16](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular16)
+  * **Upgrade to Angular 16**
+  * Migrates Angular 15.x applications to Angular 16. This includes removing `entryComponents` and `moduleId` from decorators, replacing `RouterLinkWithHref` with `RouterLink`, moving the `XhrFactory` import to `@angular/common`, and flagging removed APIs like `ReflectiveInjector`, `renderModuleFactory`, and `BrowserTransferStateModule`.
+* [org.openrewrite.angular.UpgradeToAngular17](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular17)
+  * **Upgrade to Angular 17**
+  * Migrates Angular 16.x applications to Angular 17. This includes updating Angular package versions, replacing legacy deep `zone.js` imports, flagging the removed `withNoDomReuse` and `setupTestingRouter` APIs, and upgrading TypeScript and `zone.js` dependencies.
+* [org.openrewrite.angular.UpgradeToAngular18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular18)
+  * **Upgrade to Angular 18**
+  * Migrates Angular 17.x applications to Angular 18. This includes replacing the deprecated `async` test helper with `waitForAsync`, migrating `HttpClientModule` to `provideHttpClient()`, moving Transfer State APIs to `@angular/core`, and flagging removed platform APIs.
+* [org.openrewrite.angular.UpgradeToAngular19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular19)
+  * **Upgrade to Angular 19**
+  * Migrates Angular 18.x applications to Angular 19. This includes updating Angular package versions, adjusting the standalone default, renaming `ExperimentalPendingTasks` to `PendingTasks`, moving the `ApplicationConfig` import to `@angular/core`, and updating `zone.js`.
+* [org.openrewrite.angular.UpgradeToAngular20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular20)
+  * **Upgrade to Angular 20**
+  * Migrates Angular 19.x applications to Angular 20. This includes running the Angular 19 migration first, then updating Angular package versions, renaming experimental APIs promoted to stable, and upgrading TypeScript to 5.8.x.
+* [org.openrewrite.angular.UpgradeToAngular21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular21)
+  * **Upgrade to Angular 21**
+  * Migrates Angular 20.x applications to Angular 21. This includes running the Angular 20 migration first, flagging Karma test runner usage for Vitest migration, deprecated NgClass, zone.js-dependent test helpers, and upgrading TypeScript to 5.9.x.
+* [org.openrewrite.angular.UpgradeToAngular8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular8)
+  * **Upgrade to Angular 8**
+  * Migrates Angular 7.x applications to Angular 8. This includes adding the now-required `static: false` to `@ViewChild` and `@ContentChild` decorators, moving the `DOCUMENT` import from `@angular/platform-browser` to `@angular/common`, removing `rxjs-compat` and flagging any remaining RxJS 5-style imports, flagging removed `@angular/http` imports, converting deprecated string-based `loadChildren` to dynamic imports, and upgrading Angular, TypeScript, and related dependency versions.
+* [org.openrewrite.angular.UpgradeToAngular9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular9)
+  * **Upgrade to Angular 9**
+  * Migrates Angular 8.x applications to Angular 9. This includes removing the now-default `static: false` from view query decorators, replacing `TestBed.get()` with `TestBed.inject()`, adding generic type parameters to `ModuleWithProviders`, enabling AOT compilation in `angular.json`, updating `tsconfig.json` module settings for Ivy, flagging removed View Engine APIs (`Renderer`, `RenderComponentType`, `RootRenderer`), and upgrading Angular, TypeScript, and related dependency versions.
 * [org.openrewrite.angular.migration.add-default-configuration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-default-configuration)
   * **Add `defaultConfiguration` to build targets**
   * Adds `&quot;defaultConfiguration&quot;: &quot;production&quot;` to build architect targets in `angular.json`. Angular 12 changed `ng build` to produce production bundles by default.
@@ -5253,6 +4734,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.migration.replace-load-children-string](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-load-children-string)
   * **Replace string-based `loadChildren` with dynamic `import()`**
   * Converts the deprecated string-based `loadChildren: 'path#Module'` syntax to dynamic imports: `loadChildren: () =&gt; import('path').then(m =&gt; m.Module)`.
+* [org.openrewrite.angular.migration.replace-node-sass-with-sass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
+  * **Replace `node-sass` with `sass`**
+  * Replaces the deprecated `node-sass` package with `sass` (Dart Sass). Angular 12 requires Dart Sass; `node-sass` is no longer supported.
 * [org.openrewrite.angular.migration.replace-router-link-with-href](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-router-link-with-href)
   * **Replace `RouterLinkWithHref` with `RouterLink`**
   * Replaces `RouterLinkWithHref` with `RouterLink` in imports and usages. `RouterLinkWithHref` was merged into `RouterLink` in Angular 16.
@@ -5457,6 +4941,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.primeng.UpgradeComponentsTo18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/upgradecomponentsto18)
   * **Upgrade PrimeNG components to 18**
   * Handles component renames, deprecations, and removals for PrimeNG 18. Renames Calendar to DatePicker, Dropdown to Select, InputSwitch to ToggleSwitch, OverlayPanel to Popover, and Sidebar to Drawer (TS imports + identifier usages + HTML selectors). Migrates the `Messages` template usage to the `&lt;p-message&gt;` + `@for` loop. Marks removed modules (Chips, TriStateCheckbox, Messages, DataViewLayoutOptions, pAnimate) with TODO stubs, marks deprecated components (TabMenu, Steps, InlineMessage, TabView, pDefer) with TODO comments on their imports, and marks deprecated CSS classes (`.p-link`, `.p-highlight`, `.p-fluid`) and `&lt;p-drawer&gt;`/`&lt;p-sidebar&gt;` `size` usages with HTML TODO comments. All marked sites are written to the `ManualMigrationSteps` data table.
+* [org.openrewrite.primeng.UpgradeTo18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/upgradeto18)
+  * **Upgrade to PrimeNG 18**
+  * Migrates PrimeNG 17.x applications to PrimeNG 18. Renames components, migrates `PrimeNGConfig` to `PrimeNG` (with signal-backed setters), comments out the obsolete `primeng/resources` style entries in `angular.json`, wires `providePrimeNG(\{ theme: \{ preset: Aura \} \})` into the root NgModule and adds `@primeng/themes` to `package.json`. Anything that can't be deterministically migrated (removed-and-no-direct-replacement components, deprecated CSS classes, structural template changes) gets a TODO comment in source plus a row in the `ManualMigrationSteps` data table for an agent or human to finish.
 
 ### rewrite-cryptography
 
@@ -5652,6 +5139,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.dropwizard.boot.annotation.AddClassAnnotationIfSuperTypeExists](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/annotation/addclassannotationifsupertypeexists)
   * **Add annotation if target supertype exists**
   * Adds an annotation to a class if it extends or implements a specified target type.
+* [io.moderne.java.dropwizard.boot.bundle.MigrateMultiPartBundle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/bundle/migratemultipartbundle)
+  * **Migrate Dropwizard `MultiPartBundle` to Spring multipart configuration**
+  * Removes `bootstrap.addBundle(new MultiPartBundle())` and its import, and adds `spring.servlet.multipart` configuration (enabled, unlimited sizes) to the module's Spring configuration, creating `application.yml` if none exists. Spring Boot enables multipart support automatically. Only modules that actually registered `MultiPartBundle` are configured.
 * [io.moderne.java.dropwizard.boot.datasource.RemoveDataSourceFactoryBuildChain](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/datasource/removedatasourcefactorybuildchain)
   * **Replace DataSourceFactory build chain with @Autowired DataSource**
   * Replaces `DataSourceFactory.build(MetricRegistry, String)` variable declarations with `@Autowired DataSource` fields. Spring Boot auto-configures the DataSource from `spring.datasource.*` properties. Note: connection pool metrics previously wired via `MetricRegistry` require `spring-boot-starter-actuator` for equivalent observability.
@@ -6230,7 +5720,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Extract project metadata (name, version, description) from Python pyproject.toml files.
 * [io.moderne.prethink.calm.FindPythonTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythontestcoverage)
   * **Find Python test coverage**
-  * Identify test methods in Python test files. Detects pytest test functions/classes and unittest.TestCase subclasses, and populates the TestMapping table.
+  * Identify test methods in Python test files. Detects pytest test functions/classes, unittest.TestCase subclasses, and behave/pytest-bdd/lettuce BDD step definitions, and populates the TestMapping table.
 * [io.moderne.prethink.calm.FindSQLAlchemyModels](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsqlalchemymodels)
   * **Find SQLAlchemy and Django ORM models**
   * Identify ORM model classes in Python applications. Detects SQLAlchemy models with DeclarativeBase inheritance, Flask-SQLAlchemy models with db.Model, and Django ORM models extending models.Model.
@@ -6642,6 +6132,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.jsf.richfaces.update45.UpdateXHTMLTags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)
   * **Migrate RichFaces tags in `xhtml` files**
   * Migrate RichFaces tags in `xhtml` files to RichFaces 4.
+* [io.moderne.java.spring.batch.AddJobRegistryToTaskExecutorJobOperator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/batch/addjobregistrytotaskexecutorjoboperator)
+  * **Add `setJobRegistry(..)` to manually configured `TaskExecutorJobOperator`**
+  * Spring Batch 6 replaced `TaskExecutorJobLauncher` with `TaskExecutorJobOperator`, which requires both `setJobRepository(..)` and `setJobRegistry(..)` to be called before `afterPropertiesSet()`. When a `TaskExecutorJobOperator` is constructed and initialized manually (typically in a `@Bean` factory method) without a `setJobRegistry(..)` call, add a `JobRegistry` parameter to the enclosing method and call `setJobRegistry(..)` so the operator is fully configured.
 * [io.moderne.java.spring.boot.AddSpringBootApplication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot/addspringbootapplication)
   * **Add `@SpringBootApplication` class**
   * Adds a `@SpringBootApplication` class containing a main method to bootify your Spring Framework application.
@@ -7152,6 +6645,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.security7.CommentOnSecurityContextAuthenticationInKotlin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/commentonsecuritycontextauthenticationinkotlin)
   * **Comment on Kotlin usages of `SecurityContext.getAuthentication()`**
   * Spring Security 7 made `SecurityContext.getAuthentication()` return `@Nullable Authentication`. In Kotlin this becomes `Authentication?`, so existing chains like `SecurityContextHolder.getContext().authentication.credentials` no longer compile. This recipe adds a TODO comment on the line above each Kotlin statement that reads the authentication — both the explicit `getAuthentication()` form and the Kotlin property form `.authentication` — so a developer can decide per call site whether to use a safe-call (`?.`) or a non-null assertion (`!!`).
+* [io.moderne.java.spring.security7.MigrateDaoAuthenticationProviderConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/migratedaoauthenticationproviderconstructor)
+  * **Use constructor injection for `DaoAuthenticationProvider`**
+  * Spring Security 7.0 removed the no-arg `DaoAuthenticationProvider()` constructor and the `setUserDetailsService(UserDetailsService)` setter; `UserDetailsService` is now a required constructor argument. This recipe folds `setUserDetailsService(x)` into the constructor (`new DaoAuthenticationProvider(x)`) and removes the setter when the provider is created with the no-arg constructor in the same block, for both Java and Kotlin sources. `setPasswordEncoder(...)` and other configuration are preserved. When the setter cannot be safely folded, a TODO comment with migration guidance is added instead.
 * [io.moderne.java.spring.security7.MigrateMvcRequestMatcher](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/migratemvcrequestmatcher)
   * **Migrate `MvcRequestMatcher` to `PathPatternRequestMatcher`**
   * In Spring Security 7.0, `MvcRequestMatcher` which depends on the deprecated `HandlerMappingIntrospector` is removed in favor of `PathPatternRequestMatcher`. This recipe migrates constructor and builder usage to the new pattern.
@@ -7448,7 +6944,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Finds dependencies in `*.csproj` and `packages.config`.
 * [org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Nuget dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-06-01T1251.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-06-15T1301.
 * [org.openrewrite.csharp.dependencies.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/upgradedependencyversion)
   * **Upgrade C# dependency versions**
   * Upgrades dependencies in `*.csproj`, `Directory.Packages.props`, and `packages.config`.
@@ -7460,7 +6956,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Maven/Gradle dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-06-01T1251.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-06-15T1301.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -7548,6 +7044,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.SecureTempFileCreation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/securetempfilecreation)
   * **Use secure temporary file creation**
   * `java.io.File.createTempFile()` has exploitable default file permissions. This recipe migrates to the more secure `java.nio.file.Files.createTempFile()`.
+* [org.openrewrite.java.security.UpgradeInadequateKeySize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/upgradeinadequatekeysize)
+  * **Upgrade inadequate cryptographic key sizes**
+  * Rewrites cryptographic key-size literals that fall below current minimums. RSA/DSA/DH &lt; 2048 bits are upgraded to 2048; EC &lt; 224 bits are upgraded to 256 (when the algorithm is resolvable from `KeyPairGenerator.getInstance(...)`); symmetric (AES) &lt; 128 bits to 128; weak named EC curves (e.g. `secp112r1`, `prime192v1`) to `secp256r1`. Companion fix recipe to `FindInadequateKeySize`. Note: changing key sizes can break interop with existing artifacts; review before applying.
 * [org.openrewrite.java.security.UseFilesCreateTempDirectory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/usefilescreatetempdirectory)
   * **Use `Files#createTempDirectory`**
   * Use `Files#createTempDirectory` when the sequence `File#createTempFile(..)`-&gt;`File#delete()`-&gt;`File#mkdir()` is used for creating a temp directory.
@@ -7569,6 +7068,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.marshalling.SecureSnakeYamlConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/marshalling/securesnakeyamlconstructor)
   * **Secure the use of SnakeYAML's constructor**
   * See the [paper](https://github.com/mbechler/marshalsec) on this subject.
+* [org.openrewrite.java.security.search.FindBeanPropertyAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findbeanpropertyassignment)
+  * **Find Apache Commons BeanUtils property assignments**
+  * Finds calls to Apache Commons BeanUtils and PropertyUtils setters and bulk-copy methods (`setProperty`, `populate`, `copyProperties`, `copyProperty`, `setNestedProperty`, `setSimpleProperty`, `setIndexedProperty`, `setMappedProperty`) — including the equivalent instance-method forms on `BeanUtilsBean` and `PropertyUtilsBean`, and on any subclass of those, regardless of how the bean instance is obtained (`getInstance()`, `new`, injected field, etc.). When the property name or value flows from an untrusted source (e.g. HTTP request parameters), these calls enable bean-injection / mass-assignment (CWE-915) — an attacker can set any settable field on the bean, including ones the application never intended to expose. Per Sonar S4512 each call site needs human review for whether the property name and value come from trusted input. Detector only; does not modify code.
 * [org.openrewrite.java.security.search.FindCommandInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findcommandinjection)
   * **Find OS command injection vectors**
   * Finds calls to `Runtime.exec(String)` which passes the command through a shell interpreter, enabling command injection via metacharacters like `;`, `|`, and `&amp;&amp;`. Use the `String[]` overload instead to avoid shell interpretation.
@@ -7586,13 +7088,16 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Finds calls to `HttpServletResponse.addHeader()`, `setHeader()`, and `addCookie()` which, when header values are derived from user input without CRLF sanitization, can allow HTTP response splitting attacks. Full taint-based detection requires rewrite-program-analysis; this recipe identifies the sink call sites for manual review.
 * [org.openrewrite.java.security.search.FindInadequateKeySize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinadequatekeysize)
   * **Find inadequate cryptographic key sizes**
-  * Finds cryptographic key generation with inadequate key sizes. RSA keys should be at least 2048 bits, DSA keys at least 2048 bits, EC keys at least 256 bits, and symmetric keys (AES) at least 128 bits. NIST recommends RSA-2048+ and AES-128+ as minimum for all new applications.
+  * Finds cryptographic key generation with inadequate key sizes. RSA and DSA keys should be at least 2048 bits, EC keys at least 224 bits, and symmetric keys (AES) at least 128 bits. Weak named EC curves (e.g. `secp112r1`, `prime192v1`) are also flagged. NIST SP 800-131A Rev 2 requires RSA/DSA 2048+, EC 224+, AES 128+.
 * [org.openrewrite.java.security.search.FindInsecureRememberMeConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinsecureremembermeconfig)
   * **Find insecure Spring Security RememberMe configuration**
   * Finds Spring Security RememberMe configurations with insecure settings: `useSecureCookie(false)` (allows cookie transmission over HTTP), `alwaysRemember(true)` (bypasses user opt-in), or `tokenValiditySeconds(...)` set longer than 30 days (extends the window in which a stolen remember-me cookie can be replayed).
 * [org.openrewrite.java.security.search.FindInsecureSessionFixationConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinsecuresessionfixationconfig)
   * **Find Spring Security configurations that disable session fixation protection**
   * Finds Spring Security configurations that disable session fixation protection by calling `sessionFixation().none()`. Without session fixation protection, an attacker who obtains a victim's session identifier before authentication can reuse it to hijack the authenticated session. Spring Security defaults to `changeSessionId()`; applications should keep that default or use `migrateSession()`.
+* [org.openrewrite.java.security.search.FindInstanceMethodStaticFieldWrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findinstancemethodstaticfieldwrite)
+  * **Find writes to static fields from instance methods**
+  * Finds assignments, compound assignments (`+=`, `-=`, ...), and `++`/`--` operators that target a `static` field from inside a non-`static` instance method. Such writes race across instances and obscure ownership of the state; per Sonar S2696 the method should be made `static` or the state guarded by a thread-safe accessor.
 * [org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findjacksondefaulttypemapping)
   * **Find Jackson default type mapping enablement**
   * `ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization.
@@ -7601,13 +7106,13 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Finds calls to `HttpSession.setMaxInactiveInterval(int)` whose integer-literal argument exceeds 30 minutes or is zero/negative (which disables session expiration). Long-lived or non-expiring sessions increase the window for session hijacking and replay (CWE-613).
 * [org.openrewrite.java.security.search.FindMissingSpringAuthorization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findmissingspringauthorization)
   * **Find Spring MVC handlers missing authorization**
-  * Flags Spring MVC (and WebFlux) controller methods reachable to anonymous users — either matched by `permitAll()` in a `SecurityFilterChain` / `SecurityWebFilterChain` bean (or in a legacy `WebSecurityConfigurerAdapter.configure(HttpSecurity)` override) or with no matching rule at all — and which do not carry an explicit authorization annotation (`@PreAuthorize`, `@PostAuthorize`, `@Secured`, `@RolesAllowed`, `@PermitAll`, `@DenyAll`), including annotations inherited from a superclass or overridden parent method. Detector only; does not modify code.
+  * Flags Spring MVC (and WebFlux) controller methods reachable to anonymous users — either matched by `permitAll()` in a `SecurityFilterChain` / `SecurityWebFilterChain` bean (or in a legacy `WebSecurityConfigurerAdapter.configure(HttpSecurity)` override) or with no matching rule at all — and which do not carry an explicit authorization annotation (`@PreAuthorize`, `@PostAuthorize`, `@Secured`, `@RolesAllowed`, `@PermitAll`, `@DenyAll`), including annotations inherited from a superclass or overridden parent method. Security rules are read from both the Java fluent API (`requestMatchers(...).permitAll()`) and the Kotlin DSL (`authorize(&quot;/path&quot;, permitAll)`). Detector only; does not modify code.
 * [org.openrewrite.java.security.search.FindPermissiveCorsConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findpermissivecorsconfiguration)
   * **Find permissive CORS configuration**
   * Finds overly permissive CORS configurations that allow all origins, which can expose the application to cross-domain attacks.
 * [org.openrewrite.java.security.search.FindPredictableSalt](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findpredictablesalt)
   * **Find predictable cryptographic salts**
-  * Finds `PBEParameterSpec` and `PBEKeySpec` constructed with hardcoded salt byte arrays. A predictable salt undermines the purpose of salting, making rainbow table and precomputation attacks feasible. Salts should be generated randomly using `SecureRandom`.
+  * Finds `PBEParameterSpec` and `PBEKeySpec` constructed with hardcoded or too-short salt byte arrays. A predictable salt undermines the purpose of salting, making rainbow table and precomputation attacks feasible; a salt shorter than 16 bytes is below the minimum strength recommended by NIST SP 800-132. Salts should be generated randomly using `SecureRandom` and at least 16 bytes long.
 * [org.openrewrite.java.security.search.FindProcessControl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findprocesscontrol)
   * **Find process control vectors**
   * Finds calls to `System.loadLibrary()`, `System.load()`, and `Runtime.load()` which, when the library path or name is derived from user input, can allow an attacker to load arbitrary native code. Ensure library names are not externally controlled.
@@ -7764,6 +7269,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.spring.RemoveEnableWebSecurityDebug](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/spring/removeenablewebsecuritydebug)
   * **Remove debug mode from Spring Security**
   * Removes the debug attribute from @EnableWebSecurity annotations to prevent sensitive security information from being logged in production.
+* [org.openrewrite.java.security.xss.FixXssVulnerability](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/xss/fixxssvulnerability)
+  * **Fix XSS vulnerabilities**
+  * Aggregates the cross-site scripting (CWE-79) fixes. Covers Java sources that flow user-controlled values into HTML output sinks (via `FixXssVulnerabilityJava`, which consumes the same taint spec as `FindXssVulnerability`), JSP scriptlets that read directly from request parameters or headers, and Thymeleaf templates that use the unescaped `th:utext` attribute.
+* [org.openrewrite.java.security.xss.FixXssVulnerabilityJsp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/xss/fixxssvulnerabilityjsp)
+  * **Replace XSS-prone JSP scriptlets with `&lt;c:out&gt;`**
+  * Replaces `&lt;%= request.getParameter(&quot;x&quot;) %&gt;` and `&lt;%= request.getHeader(&quot;x&quot;) %&gt;` scriptlets in JSP files with the equivalent escaped `&lt;c:out value=&quot;$\{param.x\}&quot;/&gt;` / `&lt;c:out value=&quot;$\{header['x']\}&quot;/&gt;` tags, and inserts the JSTL core taglib at the top of the file if not already declared. Only fires on string-literal argument forms — arbitrary expressions inside `&lt;%= ... %&gt;` are left untouched for human review. Note: `request.getParameter` returns `null` for missing parameters and prints `&quot;null&quot;`, whereas `$\{param.x\}` renders empty; review templates that rely on the literal string `&quot;null&quot;`.
+* [org.openrewrite.java.security.xss.ReplaceThymeleafUnescaped](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/xss/replacethymeleafunescaped)
+  * **Replace `th:utext` with `th:text` in Thymeleaf templates**
+  * Replaces Thymeleaf's unescaped attribute `th:utext` (and `data-th-utext`) with its escaped equivalent `th:text` (`data-th-text`) in `.html` / `.htm` template files. `th:utext` interpolates raw HTML and is the canonical Thymeleaf XSS sink. The recipe only fires on files that look like Thymeleaf templates (declare the `xmlns:th` namespace or use a `th:` / `data-th-` attribute somewhere). If you have a legitimate raw-HTML interpolation, restore it manually and rely on Thymeleaf's `[# th:utext]` block syntax or a sanitized model attribute.
 * [org.openrewrite.python.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable PyPI dependencies**
   * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source.
@@ -7974,6 +7488,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.kotlin.migrate.RemoveRedundantKotlinStdlib](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/removeredundantkotlinstdlib)
   * **Remove redundant kotlin-stdlib dependencies**
   * Remove explicit `kotlin-stdlib`, `kotlin-stdlib-jdk7`, `kotlin-stdlib-jdk8`, and `kotlin-stdlib-common` dependencies. The Kotlin Gradle plugin has automatically included the stdlib since Kotlin 1.4, making explicit declarations redundant.
+* [org.openrewrite.kotlin.migrate.RenameKotlinOptionsToCompilerOptions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/renamekotlinoptionstocompileroptions)
+  * **Rename the `kotlinOptions` block to `compilerOptions`**
+  * Rename the deprecated `kotlinOptions` DSL block to `compilerOptions` in Gradle build files (Groovy and Kotlin DSL). The `kotlinOptions` DSL was deprecated in Kotlin 2.0 and removed in Kotlin 2.2. Note: in the Kotlin DSL the assignments inside the block must also be modernized for the result to compile; see `UseJvmTargetProviderSyntax` and `UseFreeCompilerArgsAddAll`.
 * [org.openrewrite.kotlin.migrate.ReplaceDeprecatedAppendln](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replacedeprecatedappendln)
   * **Replace deprecated `appendln` with `appendLine`**
   * Replace `appendln()` with `appendLine()`. This was deprecated in Kotlin 1.4 and becomes an error in Kotlin 2.1.
@@ -7994,7 +7511,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Replace calls to `Enum.values()` with the `Enum.entries` property. The `entries` property returns an efficient immutable list instead of creating a new array on each call. Deprecated since Kotlin 1.9, recommended replacement for Kotlin 2.x.
 * [org.openrewrite.kotlin.migrate.ReplaceKotlinOptionsWithCompilerOptions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/replacekotlinoptionswithcompileroptions)
   * **Replace `kotlinOptions` with `compilerOptions` in Gradle build files**
-  * Rename the deprecated `kotlinOptions` DSL block to `compilerOptions` in Gradle build files. The `kotlinOptions` DSL was deprecated in Kotlin 2.0 and removed in Kotlin 2.2.
+  * Migrate the deprecated `kotlinOptions` DSL block to `compilerOptions` in Gradle build files (Groovy and Kotlin DSL). Renames the block and, in the Kotlin DSL, modernizes the assignments inside it to the Provider-style setters (`jvmTarget.set(JvmTarget.JVM_X)`, `freeCompilerArgs.addAll(...)`) so the result compiles against the `compilerOptions` DSL. The `kotlinOptions` DSL was deprecated in Kotlin 2.0 and removed in Kotlin 2.2.
 * [org.openrewrite.kotlin.migrate.UpgradeKotlinGradlePlugins](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlingradleplugins)
   * **Upgrade Kotlin Gradle plugins to 2.x**
   * Upgrade all `org.jetbrains.kotlin.*` Gradle plugins to Kotlin 2.x. This includes the core kotlin-jvm plugin as well as all official Kotlin Gradle plugins such as serialization, Spring, allopen, noarg, JPA, and parcelize.
@@ -8010,351 +7527,33 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.kotlin.migrate.UpgradeToKotlin2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradetokotlin2)
   * **Migrate to Kotlin 2**
   * Migrate deprecated Kotlin 1.x APIs to their Kotlin 2.x replacements and update Gradle build files for Kotlin 2.x compatibility. Deprecated APIs were deprecated in Kotlin 1.4-1.5 and become errors in Kotlin 2.1.
+* [org.openrewrite.kotlin.migrate.UseFreeCompilerArgsAddAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/usefreecompilerargsaddall)
+  * **Use `freeCompilerArgs.addAll(...)` in Kotlin `compilerOptions`**
+  * In Gradle Kotlin DSL build scripts, replace the legacy `freeCompilerArgs = listOf(...)` assignment inside a `compilerOptions` (or `kotlinOptions`) block with the modern `freeCompilerArgs.addAll(...)`, the idiomatic way to contribute arguments to the `ListProperty`.
+* [org.openrewrite.kotlin.migrate.UseJvmTargetProviderSyntax](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/usejvmtargetprovidersyntax)
+  * **Use the `jvmTarget` provider syntax in Kotlin `compilerOptions`**
+  * In Gradle Kotlin DSL build scripts, replace the legacy `jvmTarget = &quot;X&quot;` string assignment inside a `compilerOptions` (or `kotlinOptions`) block with the modern Provider-style `jvmTarget.set(JvmTarget.JVM_X)`, adding the `JvmTarget` import. The string-assignment form does not compile against the `compilerOptions` DSL, where `jvmTarget` is a `Property&lt;JvmTarget&gt;`.
 * [org.openrewrite.kotlin.replace.ReplaceKotlinMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/replace/replacekotlinmethod)
   * **Replace Kotlin method**
   * Replaces Kotlin method calls based on `@Deprecated(replaceWith=ReplaceWith(...))` annotations.
 
 ### rewrite-migrate-python
 
-* [org.openrewrite.python.codequality.AllBranchesIdentical](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/allbranchesidentical)
-  * **Remove conditional with identical branches**
-  * Replace `if`/`elif`/`else` chains where every branch has the same body with just the body, since the condition has no effect on what code executes.
-* [org.openrewrite.python.codequality.BooleanChecksNotInverted](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/booleanchecksnotinverted)
-  * **Boolean checks should not be inverted**
-  * Replace inverted boolean comparisons like `not (a == b)` with the equivalent direct operator (`a != b`), and remove double negations like `not (not x)`.
-* [org.openrewrite.python.codequality.CollapsibleIfStatements](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/collapsibleifstatements)
-  * **Merge collapsible if statements**
-  * Combine nested `if` statements that have no `else` branch into a single `if` joined with `and`.
-* [org.openrewrite.python.codequality.MergeIdenticalBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/mergeidenticalbranches)
-  * **Merge consecutive branches with identical bodies**
-  * Combine consecutive `if`/`elif` branches that have the same body into a single branch with conditions joined by `or`.
-* [org.openrewrite.python.codequality.RemoveDuplicateConditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeduplicateconditions)
-  * **Remove duplicate conditions in if/elif chains**
-  * Remove `elif` branches whose condition is identical to an earlier branch in the same `if`/`elif` chain, since the duplicate branch is dead code that can never execute.
-* [org.openrewrite.python.codequality.RemoveSelfAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeselfassignment)
-  * **Remove self-assignments**
-  * Remove statements that assign a variable to itself (`x = x`, `self.x = self.x`), since they have no effect.
-* [org.openrewrite.python.codequality.RemoveUnconditionalValueOverwrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeunconditionalvalueoverwrite)
-  * **Remove unconditional value overwrites**
-  * Remove consecutive assignments that write to the same dict key or object attribute, since the first value is immediately overwritten and never used.
-* [org.openrewrite.python.codequality.SimplifyBooleanLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/simplifybooleanliteral)
-  * **Simplify boolean literal comparisons**
-  * Replace comparisons against boolean literals (`== True`, `!= False`, `is True`, etc.) with the simpler equivalent boolean expression.
-* [org.openrewrite.python.codequality.SimplifyRedundantLogicalExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/simplifyredundantlogicalexpression)
-  * **Simplify redundant logical expressions**
-  * Replace `x and x` with `x` and `x or x` with `x`. Identical operands in a logical expression are redundant and often indicate a copy-paste mistake.
 * [org.openrewrite.python.migrate.DependencyInsight](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/dependencyinsight)
   * **Python dependency insight**
   * Find Python dependencies, including transitive dependencies, matching a package name pattern. Results include the resolved version, scope, and whether the dependency is direct or transitive.
-* [org.openrewrite.python.migrate.FindAifcModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaifcmodule)
-  * **Find deprecated `aifc` module usage**
-  * The `aifc` module was deprecated in Python 3.11 and removed in Python 3.13. Use third-party audio libraries instead.
-* [org.openrewrite.python.migrate.FindAsyncioCoroutineDecorator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findasynciocoroutinedecorator)
-  * **Find deprecated `@asyncio.coroutine` decorator**
-  * Find usage of the deprecated `@asyncio.coroutine` decorator which was removed in Python 3.11. Convert to `async def` syntax with `await` instead of `yield from`.
-* [org.openrewrite.python.migrate.FindAudioopModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaudioopmodule)
-  * **Find deprecated `audioop` module usage**
-  * The `audioop` module was deprecated in Python 3.11 and removed in Python 3.13. Use pydub, numpy, or scipy for audio operations.
-* [org.openrewrite.python.migrate.FindCgiModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgimodule)
-  * **Find deprecated `cgi` module usage**
-  * The `cgi` module was deprecated in Python 3.11 and removed in Python 3.13. Use `urllib.parse` for query string parsing, `html.escape()` for escaping, and web frameworks or `email.message` for form handling.
-* [org.openrewrite.python.migrate.FindCgitbModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgitbmodule)
-  * **Find deprecated `cgitb` module usage**
-  * The `cgitb` module was deprecated in Python 3.11 and removed in Python 3.13. Use the standard `logging` and `traceback` modules for error handling.
-* [org.openrewrite.python.migrate.FindChunkModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findchunkmodule)
-  * **Find deprecated `chunk` module usage**
-  * The `chunk` module was deprecated in Python 3.11 and removed in Python 3.13. Implement IFF chunk reading manually or use specialized libraries.
-* [org.openrewrite.python.migrate.FindCryptModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcryptmodule)
-  * **Find deprecated `crypt` module usage**
-  * The `crypt` module was deprecated in Python 3.11 and removed in Python 3.13. Use `bcrypt`, `argon2-cffi`, or `passlib` instead.
-* [org.openrewrite.python.migrate.FindDistutilsUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finddistutilsusage)
-  * **Find deprecated distutils module usage**
-  * Find imports of the deprecated `distutils` module which was removed in Python 3.12. Migrate to `setuptools` or other modern build tools.
-* [org.openrewrite.python.migrate.FindFunctoolsCmpToKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfunctoolscmptokey)
-  * **Find `functools.cmp_to_key()` usage**
-  * Find usage of `functools.cmp_to_key()` which is a Python 2 compatibility function. Consider using a key function directly.
 * [org.openrewrite.python.migrate.FindFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfutureimports)
   * **Find `__future__` imports**
   * Find `__future__` imports and add a search marker.
-* [org.openrewrite.python.migrate.FindImghdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimghdrmodule)
-  * **Find deprecated `imghdr` module usage**
-  * The `imghdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype`, `python-magic`, or `Pillow` instead.
-* [org.openrewrite.python.migrate.FindImpUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimpusage)
-  * **Find deprecated imp module usage**
-  * Find imports of the deprecated `imp` module which was removed in Python 3.12. Migrate to `importlib`.
-* [org.openrewrite.python.migrate.FindLocaleGetdefaultlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findlocalegetdefaultlocale)
-  * **Find deprecated `locale.getdefaultlocale()` usage**
-  * `locale.getdefaultlocale()` was deprecated in Python 3.11. Use `locale.setlocale()`, `locale.getlocale()`, or `locale.getpreferredencoding(False)` instead.
-* [org.openrewrite.python.migrate.FindMacpathModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmacpathmodule)
-  * **Find removed `macpath` module usage**
-  * The `macpath` module was removed in Python 3.8. Use `os.path` instead.
-* [org.openrewrite.python.migrate.FindMailcapModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmailcapmodule)
-  * **Find deprecated `mailcap` module usage**
-  * The `mailcap` module was deprecated in Python 3.11 and removed in Python 3.13. Use `mimetypes` module for MIME type handling.
 * [org.openrewrite.python.migrate.FindMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmethods)
   * **Find Python function and method usages**
   * Find function and method calls by pattern. Covers standalone functions, class methods, static methods, and constructor calls.
-* [org.openrewrite.python.migrate.FindMsilibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmsilibmodule)
-  * **Find deprecated `msilib` module usage**
-  * The `msilib` module was deprecated in Python 3.11 and removed in Python 3.13. Use platform-specific tools for MSI creation.
-* [org.openrewrite.python.migrate.FindNisModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnismodule)
-  * **Find deprecated `nis` module usage**
-  * The `nis` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
-* [org.openrewrite.python.migrate.FindNntplibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnntplibmodule)
-  * **Find deprecated `nntplib` module usage**
-  * The `nntplib` module was deprecated in Python 3.11 and removed in Python 3.13. NNTP is largely obsolete; consider alternatives if needed.
-* [org.openrewrite.python.migrate.FindOsPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findospopen)
-  * **Find deprecated `os.popen()` usage**
-  * `os.popen()` has been deprecated since Python 3.6. Use `subprocess.run()` or `subprocess.Popen()` instead for better control over process creation and output handling.
-* [org.openrewrite.python.migrate.FindOsSpawn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findosspawn)
-  * **Find deprecated `os.spawn*()` usage**
-  * The `os.spawn*()` family of functions are deprecated. Use `subprocess.run()` or `subprocess.Popen()` instead.
-* [org.openrewrite.python.migrate.FindOssaudiodevModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findossaudiodevmodule)
-  * **Find deprecated `ossaudiodev` module usage**
-  * The `ossaudiodev` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
-* [org.openrewrite.python.migrate.FindPathlibLinkTo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpathliblinkto)
-  * **Find deprecated `Path.link_to()` usage**
-  * Find usage of `Path.link_to()` which was deprecated in Python 3.10 and removed in 3.12. Use `hardlink_to()` instead (note: argument order is reversed).
-* [org.openrewrite.python.migrate.FindPipesModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpipesmodule)
-  * **Find deprecated `pipes` module usage**
-  * The `pipes` module was deprecated in Python 3.11 and removed in Python 3.13. Use subprocess with shlex.quote() for shell escaping.
-* [org.openrewrite.python.migrate.FindRemovedModules312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findremovedmodules312)
-  * **Find modules removed in Python 3.12**
-  * Find imports of modules that were removed in Python 3.12, including asynchat, asyncore, and smtpd.
-* [org.openrewrite.python.migrate.FindShutilRmtreeOnerror](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findshutilrmtreeonerror)
-  * **Find deprecated `shutil.rmtree(onerror=...)` parameter**
-  * The `onerror` parameter of `shutil.rmtree()` was deprecated in Python 3.12 in favor of `onexc`. The `onexc` callback receives the exception object directly rather than an exc_info tuple.
-* [org.openrewrite.python.migrate.FindSndhdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsndhdrmodule)
-  * **Find deprecated `sndhdr` module usage**
-  * The `sndhdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype` or audio libraries like `pydub` instead.
-* [org.openrewrite.python.migrate.FindSocketGetFQDN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsocketgetfqdn)
-  * **Find `socket.getfqdn()` usage**
-  * Find usage of `socket.getfqdn()` which can be slow and unreliable. Consider using `socket.gethostname()` instead.
-* [org.openrewrite.python.migrate.FindSpwdModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findspwdmodule)
-  * **Find deprecated `spwd` module usage**
-  * The `spwd` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
-* [org.openrewrite.python.migrate.FindSslMatchHostname](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsslmatchhostname)
-  * **Find deprecated `ssl.match_hostname()`**
-  * Find usage of the deprecated `ssl.match_hostname()` function which was removed in Python 3.12. Use `ssl.SSLContext.check_hostname` instead.
-* [org.openrewrite.python.migrate.FindSunauModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsunaumodule)
-  * **Find deprecated `sunau` module usage**
-  * The `sunau` module was deprecated in Python 3.11 and removed in Python 3.13. Use `soundfile` or `pydub` instead.
-* [org.openrewrite.python.migrate.FindSysCoroutineWrapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsyscoroutinewrapper)
-  * **Find removed `sys.set_coroutine_wrapper()` / `sys.get_coroutine_wrapper()`**
-  * `sys.set_coroutine_wrapper()` and `sys.get_coroutine_wrapper()` were deprecated in Python 3.7 and removed in Python 3.8.
-* [org.openrewrite.python.migrate.FindTelnetlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtelnetlibmodule)
-  * **Find deprecated `telnetlib` module usage**
-  * The `telnetlib` module was deprecated in Python 3.11 and removed in Python 3.13. Consider using `telnetlib3` from PyPI, direct socket usage, or SSH-based alternatives like paramiko.
-* [org.openrewrite.python.migrate.FindTempfileMktemp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtempfilemktemp)
-  * **Find deprecated `tempfile.mktemp()` usage**
-  * Find usage of `tempfile.mktemp()` which is deprecated due to security concerns (race condition). Use `mkstemp()` or `NamedTemporaryFile()` instead.
 * [org.openrewrite.python.migrate.FindTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtypes)
   * **Find Python types**
   * Find type references by name. Identifies classes matching a type pattern. In Python, all type definitions use the `class` keyword, covering regular classes, abstract base classes, protocols, enums, dataclasses, named tuples, typed dicts, and more.
-* [org.openrewrite.python.migrate.FindUrllibParseSplitFunctions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsesplitfunctions)
-  * **Find deprecated urllib.parse split functions**
-  * Find usage of deprecated urllib.parse split functions (splithost, splitport, etc.) removed in Python 3.14. Use urlparse() instead.
-* [org.openrewrite.python.migrate.FindUrllibParseToBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsetobytes)
-  * **Find deprecated `urllib.parse.to_bytes()` usage**
-  * Find usage of `urllib.parse.to_bytes()` which was deprecated in Python 3.8 and removed in 3.14. Use str.encode() directly.
-* [org.openrewrite.python.migrate.FindUuModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finduumodule)
-  * **Find deprecated `uu` module usage**
-  * The `uu` module was deprecated in Python 3.11 and removed in Python 3.13. Use `base64` module instead for encoding binary data.
-* [org.openrewrite.python.migrate.FindXdrlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findxdrlibmodule)
-  * **Find deprecated `xdrlib` module usage**
-  * The `xdrlib` module was deprecated in Python 3.11 and removed in Python 3.13. Use `struct` module for binary packing/unpacking.
-* [org.openrewrite.python.migrate.MigrateAsyncioCoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migrateasynciocoroutine)
-  * **Migrate `@asyncio.coroutine` to `async def`**
-  * Migrate functions using the deprecated `@asyncio.coroutine` decorator to use `async def` syntax. Also transforms `yield from` to `await`. The decorator was removed in Python 3.11.
 * [org.openrewrite.python.migrate.MigrateToPyprojectToml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migratetopyprojecttoml)
   * **Migrate to `pyproject.toml`**
   * Migrate Python projects from `requirements.txt` and/or `setup.cfg` to `pyproject.toml` with `hatchling` build backend.
-* [org.openrewrite.python.migrate.RemoveFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/removefutureimports)
-  * **Remove obsolete `__future__` imports**
-  * Remove `from __future__ import ...` statements for features that are enabled by default in Python 3.
-* [org.openrewrite.python.migrate.ReplaceArrayFromstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearrayfromstring)
-  * **Replace `array.fromstring()` with `array.frombytes()`**
-  * Replace `fromstring()` with `frombytes()` on array objects. The fromstring() method was deprecated in Python 3.2 and removed in 3.14.
-* [org.openrewrite.python.migrate.ReplaceArrayTostring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearraytostring)
-  * **Replace `array.tostring()` with `array.tobytes()`**
-  * Replace `tostring()` with `tobytes()` on array objects. The tostring() method was deprecated in Python 3.2 and removed in 3.14.
-* [org.openrewrite.python.migrate.ReplaceAstBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastbytes)
-  * **Replace `ast.Bytes` with `ast.Constant`**
-  * The `ast.Bytes` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, bytes)`.
-* [org.openrewrite.python.migrate.ReplaceAstEllipsis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastellipsis)
-  * **Replace `ast.Ellipsis` with `ast.Constant`**
-  * The `ast.Ellipsis` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value is ...`.
-* [org.openrewrite.python.migrate.ReplaceAstNameConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnameconstant)
-  * **Replace `ast.NameConstant` with `ast.Constant`**
-  * The `ast.NameConstant` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value in (True, False, None)`.
-* [org.openrewrite.python.migrate.ReplaceAstNum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnum)
-  * **Replace `ast.Num` with `ast.Constant`**
-  * The `ast.Num` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, (int, float, complex))`.
-* [org.openrewrite.python.migrate.ReplaceAstStr](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceaststr)
-  * **Replace `ast.Str` with `ast.Constant`**
-  * The `ast.Str` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, str)`.
-* [org.openrewrite.python.migrate.ReplaceCalendarConstants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecalendarconstants)
-  * **Replace deprecated calendar constants with uppercase**
-  * Replace deprecated mixed-case calendar constants like `calendar.January` with their uppercase equivalents like `calendar.JANUARY`. The mixed-case constants were deprecated in Python 3.12.
-* [org.openrewrite.python.migrate.ReplaceCgiParseQs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqs)
-  * **Replace `cgi.parse_qs()` with `urllib.parse.parse_qs()`**
-  * `cgi.parse_qs()` was removed in Python 3.8. Use `urllib.parse.parse_qs()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
-* [org.openrewrite.python.migrate.ReplaceCgiParseQsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqsl)
-  * **Replace `cgi.parse_qsl()` with `urllib.parse.parse_qsl()`**
-  * `cgi.parse_qsl()` was removed in Python 3.8. Use `urllib.parse.parse_qsl()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
-* [org.openrewrite.python.migrate.ReplaceCollectionsAbcImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecollectionsabcimports)
-  * **Replace `collections` ABC imports with `collections.abc`**
-  * Migrate deprecated abstract base class imports from `collections` to `collections.abc`. These imports were deprecated in Python 3.3 and removed in Python 3.10.
-* [org.openrewrite.python.migrate.ReplaceConditionNotifyAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconditionnotifyall)
-  * **Replace `Condition.notifyAll()` with `Condition.notify_all()`**
-  * Replace `notifyAll()` method calls with `notify_all()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceConfigparserReadfp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparserreadfp)
-  * **Replace `ConfigParser.readfp()` with `read_file()`**
-  * The `ConfigParser.readfp()` method was deprecated in Python 3.2 and removed in Python 3.13. Replace with `read_file()`.
-* [org.openrewrite.python.migrate.ReplaceConfigparserSafeConfigParser](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparsersafeconfigparser)
-  * **Replace `configparser.SafeConfigParser` with `ConfigParser`**
-  * The `configparser.SafeConfigParser` class was deprecated in Python 3.2 and removed in Python 3.12. Replace with `configparser.ConfigParser`.
-* [org.openrewrite.python.migrate.ReplaceDatetimeUtcFromTimestamp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcfromtimestamp)
-  * **Replace `datetime.utcfromtimestamp()` with `datetime.fromtimestamp(ts, UTC)`**
-  * The `datetime.utcfromtimestamp()` method is deprecated in Python 3.12. Replace it with `datetime.fromtimestamp(ts, datetime.UTC)` for timezone-aware datetime objects.
-* [org.openrewrite.python.migrate.ReplaceDatetimeUtcNow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcnow)
-  * **Replace `datetime.utcnow()` with `datetime.now(UTC)`**
-  * The `datetime.utcnow()` method is deprecated in Python 3.12. Replace it with `datetime.now(datetime.UTC)` for timezone-aware datetime objects.
-* [org.openrewrite.python.migrate.ReplaceDistutilsVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedistutilsversion)
-  * **Replace deprecated distutils.version usage**
-  * Detect usage of deprecated `distutils.version.LooseVersion` and `distutils.version.StrictVersion`. These should be migrated to `packaging.version.Version`. Note: Manual migration is required as `packaging.version.Version` is not a drop-in replacement.
-* [org.openrewrite.python.migrate.ReplaceElementGetchildren](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetchildren)
-  * **Replace `Element.getchildren()` with `list(element)`**
-  * Replace `getchildren()` with `list(element)` on XML Element objects. Deprecated in Python 3.9.
-* [org.openrewrite.python.migrate.ReplaceElementGetiterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetiterator)
-  * **Replace `Element.getiterator()` with `Element.iter()`**
-  * Replace `getiterator()` with `iter()` on XML Element objects. The getiterator() method was deprecated in Python 3.9.
-* [org.openrewrite.python.migrate.ReplaceEventIsSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceeventisset)
-  * **Replace `Event.isSet()` with `Event.is_set()`**
-  * Replace `isSet()` method calls with `is_set()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceGettextDeprecations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacegettextdeprecations)
-  * **Replace deprecated gettext l*gettext() functions**
-  * Replace deprecated gettext functions like `lgettext()` with their modern equivalents like `gettext()`. The l*gettext() functions were removed in Python 3.11.
-* [org.openrewrite.python.migrate.ReplaceHtmlParserUnescape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacehtmlparserunescape)
-  * **Replace `HTMLParser.unescape()` with `html.unescape()`**
-  * `HTMLParser.unescape()` was removed in Python 3.9. Use `html.unescape()` instead.
-* [org.openrewrite.python.migrate.ReplaceLocaleResetlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacelocaleresetlocale)
-  * **Replace `locale.resetlocale()` with `locale.setlocale(LC_ALL, '')`**
-  * The `locale.resetlocale()` function was deprecated in Python 3.11 and removed in Python 3.13. Replace with `locale.setlocale(locale.LC_ALL, '')`.
-* [org.openrewrite.python.migrate.ReplacePercentFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepercentformatwithfstring)
-  * **Replace `%` formatting with f-string**
-  * Replace `&quot;...&quot; % (...)` expressions with f-strings (Python 3.6+). Only converts `%s` and `%r` specifiers where the format string is a literal and the conversion is safe.
-* [org.openrewrite.python.migrate.ReplacePkgutilFindLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilfindloader)
-  * **Replace `pkgutil.find_loader()` with `importlib.util.find_spec()`**
-  * The `pkgutil.find_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
-* [org.openrewrite.python.migrate.ReplacePkgutilGetLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilgetloader)
-  * **Replace `pkgutil.get_loader()` with `importlib.util.find_spec()`**
-  * The `pkgutil.get_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
-* [org.openrewrite.python.migrate.ReplacePlatformPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceplatformpopen)
-  * **Replace `platform.popen()` with `subprocess.check_output()`**
-  * `platform.popen()` was removed in Python 3.8. Use `subprocess.check_output(cmd, shell=True)` instead. Note: this rewrites call sites but does not manage imports.
-* [org.openrewrite.python.migrate.ReplaceReTemplate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceretemplate)
-  * **Replace `re.template()` with `re.compile()` and flag `re.TEMPLATE`/`re.T`**
-  * `re.template()` was deprecated in Python 3.11 and removed in 3.13. Calls are auto-replaced with `re.compile()`. `re.TEMPLATE`/`re.T` flags have no direct replacement and are flagged for manual review.
-* [org.openrewrite.python.migrate.ReplaceStrFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacestrformatwithfstring)
-  * **Replace `str.format()` with f-string**
-  * Replace `&quot;...&quot;.format(...)` calls with f-strings (Python 3.6+). Only converts cases where the format string is a literal and the conversion is safe.
-* [org.openrewrite.python.migrate.ReplaceSysLastExcInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacesyslastexcinfo)
-  * **Replace `sys.last_type` / `sys.last_value` / `sys.last_traceback` with `sys.last_exc`**
-  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. Replace them with their `sys.last_exc`-based equivalents: `type(sys.last_exc)`, `sys.last_exc`, and `sys.last_exc.__traceback__` respectively.
-* [org.openrewrite.python.migrate.ReplaceTarfileFilemode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetarfilefilemode)
-  * **Replace `tarfile.filemode` with `stat.filemode`**
-  * `tarfile.filemode` was removed in Python 3.8. Use `stat.filemode()` instead.
-* [org.openrewrite.python.migrate.ReplaceThreadGetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadgetname)
-  * **Replace `Thread.getName()` with `Thread.name`**
-  * Replace `getName()` method calls with the `name` property. Deprecated in Python 3.10, removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceThreadIsAlive](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisalive)
-  * **Replace `Thread.isAlive()` with `Thread.is_alive()`**
-  * Replace `isAlive()` method calls with `is_alive()`. Deprecated in Python 3.1 and removed in 3.9.
-* [org.openrewrite.python.migrate.ReplaceThreadIsDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisdaemon)
-  * **Replace `Thread.isDaemon()` with `Thread.daemon`**
-  * Replace `isDaemon()` method calls with the `daemon` property. Deprecated in Python 3.10, removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceThreadSetDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetdaemon)
-  * **Replace `Thread.setDaemon()` with `Thread.daemon = ...`**
-  * Replace `setDaemon()` method calls with `daemon` property assignment. Deprecated in Python 3.10, removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceThreadSetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetname)
-  * **Replace `Thread.setName()` with `Thread.name = ...`**
-  * Replace `setName()` method calls with `name` property assignment. Deprecated in Python 3.10, removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceThreadingActiveCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingactivecount)
-  * **Replace `threading.activeCount()` with `threading.active_count()`**
-  * Replace `threading.activeCount()` with `threading.active_count()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceThreadingCurrentThread](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingcurrentthread)
-  * **Replace `threading.currentThread()` with `threading.current_thread()`**
-  * Replace `threading.currentThread()` with `threading.current_thread()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
-* [org.openrewrite.python.migrate.ReplaceTypingCallableWithCollectionsAbcCallable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcallablewithcollectionsabccallable)
-  * **Replace `typing.Callable` with `collections.abc.Callable`**
-  * PEP 585 deprecated `typing.Callable` in Python 3.9. Replace with `collections.abc.Callable` for type annotations.
-* [org.openrewrite.python.migrate.ReplaceTypingDictWithDict](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdictwithdict)
-  * **Replace `typing.Dict` with `dict`**
-  * PEP 585 deprecated `typing.Dict` in Python 3.9. Replace with the built-in `dict` type for generic annotations.
-* [org.openrewrite.python.migrate.ReplaceTypingListWithList](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypinglistwithlist)
-  * **Replace `typing.List` with `list`**
-  * PEP 585 deprecated `typing.List` in Python 3.9. Replace with the built-in `list` type for generic annotations.
-* [org.openrewrite.python.migrate.ReplaceTypingOptionalWithUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingoptionalwithunion)
-  * **Replace `typing.Optional[X]` with `X | None`**
-  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Optional[X]` with the more concise `X | None` syntax.
-* [org.openrewrite.python.migrate.ReplaceTypingSetWithSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingsetwithset)
-  * **Replace `typing.Set` with `set`**
-  * PEP 585 deprecated `typing.Set` in Python 3.9. Replace with the built-in `set` type for generic annotations.
-* [org.openrewrite.python.migrate.ReplaceTypingText](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtext)
-  * **Replace `typing.Text` with `str`**
-  * `typing.Text` is deprecated as of Python 3.11. It was an alias for `str` for Python 2/3 compatibility. Replace with `str`.
-* [org.openrewrite.python.migrate.ReplaceTypingTupleWithTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtuplewithtuple)
-  * **Replace `typing.Tuple` with `tuple`**
-  * PEP 585 deprecated `typing.Tuple` in Python 3.9. Replace with the built-in `tuple` type for generic annotations.
-* [org.openrewrite.python.migrate.ReplaceTypingUnionWithPipe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingunionwithpipe)
-  * **Replace `typing.Union[X, Y]` with `X | Y`**
-  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Union[X, Y, ...]` with the more concise `X | Y | ...` syntax.
-* [org.openrewrite.python.migrate.ReplaceUnittestDeprecatedAliases](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceunittestdeprecatedaliases)
-  * **Replace deprecated unittest method aliases**
-  * Replace deprecated unittest.TestCase method aliases like `assertEquals` with their modern equivalents like `assertEqual`. These aliases were removed in Python 3.11/3.12.
-* [org.openrewrite.python.migrate.UpgradeToPython310](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython310)
-  * **Upgrade to Python 3.10**
-  * Migrate deprecated APIs and adopt new syntax for Python 3.10 compatibility. This includes adopting PEP 604 union type syntax (`X | Y`) and other modernizations between Python 3.9 and 3.10.
-* [org.openrewrite.python.migrate.UpgradeToPython311](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython311)
-  * **Upgrade to Python 3.11**
-  * Migrate deprecated and removed APIs for Python 3.11 compatibility. This includes handling removed modules, deprecated functions, and API changes between Python 3.10 and 3.11.
-* [org.openrewrite.python.migrate.UpgradeToPython312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython312)
-  * **Upgrade to Python 3.12**
-  * Migrate deprecated and removed APIs for Python 3.12 compatibility. This includes detecting usage of the removed `imp` module and other legacy modules that were removed in Python 3.12.
-* [org.openrewrite.python.migrate.UpgradeToPython313](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython313)
-  * **Upgrade to Python 3.13**
-  * Migrate deprecated and removed APIs for Python 3.13 compatibility. This includes detecting usage of modules removed in PEP 594 ('dead batteries') and other API changes between Python 3.12 and 3.13.
-* [org.openrewrite.python.migrate.UpgradeToPython314](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython314)
-  * **Upgrade to Python 3.14**
-  * Migrate deprecated and removed APIs for Python 3.14 compatibility. This includes replacing deprecated AST node types with `ast.Constant` and other API changes between Python 3.13 and 3.14.
-* [org.openrewrite.python.migrate.UpgradeToPython38](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython38)
-  * **Upgrade to Python 3.8**
-  * Migrate deprecated APIs and detect legacy patterns for Python 3.8 compatibility.
-* [org.openrewrite.python.migrate.UpgradeToPython39](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython39)
-  * **Upgrade to Python 3.9**
-  * Migrate deprecated APIs for Python 3.9 compatibility. This includes PEP 585 built-in generics, removed base64 functions, and deprecated XML Element methods.
-* [org.openrewrite.python.migrate.langchain.FindDeprecatedLangchainAgents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/finddeprecatedlangchainagents)
-  * **Find deprecated LangChain agent patterns**
-  * Find usage of deprecated LangChain agent patterns including `initialize_agent`, `AgentExecutor`, and `LLMChain`. These were deprecated in LangChain v0.2 and removed in v1.0.
-* [org.openrewrite.python.migrate.langchain.FindLangchainCreateReactAgent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/findlangchaincreatereactagent)
-  * **Find `create_react_agent` usage (replace with `create_agent`)**
-  * Find `from langgraph.prebuilt import create_react_agent` which should be replaced with `from langchain.agents import create_agent` in LangChain v1.0.
-* [org.openrewrite.python.migrate.langchain.ReplaceLangchainClassicImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainclassicimports)
-  * **Replace `langchain` legacy imports with `langchain_classic`**
-  * Migrate legacy chain, retriever, and indexing imports from `langchain` to `langchain_classic`. These were moved in LangChain v1.0.
-* [org.openrewrite.python.migrate.langchain.ReplaceLangchainCommunityImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchaincommunityimports)
-  * **Replace `langchain` imports with `langchain_community`**
-  * Migrate third-party integration imports from `langchain` to `langchain_community`. These integrations were moved in LangChain v0.2.
-* [org.openrewrite.python.migrate.langchain.ReplaceLangchainProviderImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainproviderimports)
-  * **Replace `langchain_community` imports with provider packages**
-  * Migrate provider-specific imports from `langchain_community` to dedicated provider packages like `langchain_openai`, `langchain_anthropic`, etc.
-* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain02](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain02)
-  * **Upgrade to LangChain 0.2**
-  * Migrate to LangChain 0.2 by updating imports from `langchain` to `langchain_community` and provider-specific packages.
-* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain1)
-  * **Upgrade to LangChain 1.0**
-  * Migrate to LangChain 1.0 by applying all v0.2 migrations and then moving legacy functionality to `langchain_classic`.
 
 ### rewrite-nodejs
 
@@ -8607,270 +7806,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.sql.search.FindFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/search/findfunction)
   * **Find SQL function**
   * Find SQL functions by name.
-
-### rewrite-static-analysis-python
-
-* [org.openrewrite.python.cleanup.AssignIfExp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/assignifexp)
-  * **Use inline conditional for simple ``if``/``else`` assignment**
-  * When an ``if``/``else`` pair each assign a single value to the same variable, rewrite as a ternary expression.
-* [org.openrewrite.python.cleanup.AugAssign](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/augassign)
-  * **Shorten assignment to compound operator form**
-  * Convert ``target = target op value`` into ``target op= value`` for arithmetic operators (+, -, *, /, %).
-* [org.openrewrite.python.cleanup.BinOpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/binopidentity)
-  * **Collapse self-cancelling `^` / `-` with duplicate operands to `0`**
-  * When both operands of `^` or `-` are the same expression, reduce to `0` (the self-cancelling identity).
-* [org.openrewrite.python.cleanup.BooleanIfExpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/booleanifexpidentity)
-  * **Collapse boolean ternary to bare condition**
-  * Replace ``True if expr else False`` with ``expr`` and ``False if expr else True`` with ``not expr``, removing the redundant ternary wrapper.
-* [org.openrewrite.python.cleanup.BreakOrContinueOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/breakorcontinueoutsideloop)
-  * **Remove `break`/`continue` outside loop**
-  * Remove `break` and `continue` statements that are not inside any for or while loop.
-* [org.openrewrite.python.cleanup.ChainCompares](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/chaincompares)
-  * **Use chained comparison syntax**
-  * Merge two relational tests that share a middle operand into a single chained comparison, e.g. ``0 &lt; idx and idx &lt; size`` becomes ``0 &lt; idx &lt; size``.
-* [org.openrewrite.python.cleanup.ClassMethodFirstArgName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/classmethodfirstargname)
-  * **Standardize `@classmethod` first parameter to `cls`**
-  * Ensure that `@classmethod` methods use `cls` as their first parameter, as required by PEP 8, and update all body references.
-* [org.openrewrite.python.cleanup.CollectionBuiltinToComprehension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectionbuiltintocomprehension)
-  * **Use comprehension syntax instead of `list()`/`set()` around generators**
-  * Wrapping a generator in `list()` or `set()` is less idiomatic than the equivalent bracket/brace comprehension syntax.
-* [org.openrewrite.python.cleanup.CollectionIntoSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectionintoset)
-  * **Prefer set literals in `in` membership tests**
-  * When a list or tuple of literals appears on the right side of an `in` test, convert it to a set literal for constant-time lookup.
-* [org.openrewrite.python.cleanup.CollectionToBool](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectiontobool)
-  * **Substitute constant collection condition with boolean**
-  * When a list, tuple, dict, or set literal is used as an ``if`` or ``while`` condition, replace it with ``True`` (non-empty) or ``False`` (empty) to state the intent directly.
-* [org.openrewrite.python.cleanup.ComprehensionToGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/comprehensiontogenerator)
-  * **Use generator expression instead of list comprehension in iterable-accepting calls**
-  * Functions that consume iterables lazily (e.g. `any`, `sum`, `sorted`) do not need a list comprehension -- a generator expression suffices.
-* [org.openrewrite.python.cleanup.ConvertAnyToIn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/convertanytoin)
-  * **Rewrite `any(v == literal ...)` as `literal in collection`**
-  * An `any()` generator that tests equality against a literal value is equivalent to the `in` membership operator, which is clearer.
-* [org.openrewrite.python.cleanup.DataframeAppendToConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/dataframeappendtoconcat)
-  * **Migrate deprecated `.append()` to `pd.concat()`**
-  * `DataFrame.append()` no longer exists in pandas 2.0+. This recipe rewrites `.append(x)` calls to `pd.concat([df, x])`.
-* [org.openrewrite.python.cleanup.DeMorgan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/demorgan)
-  * **Flatten negated logic via De Morgan's identities**
-  * Use De Morgan's identities to remove double negation and to distribute ``not`` into compound conditions, e.g. ``not not finished`` becomes ``finished`` and ``not (m and n)`` becomes ``not m or not n``.
-* [org.openrewrite.python.cleanup.DefaultMutableArg](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/defaultmutablearg)
-  * **Guard mutable default arguments with `None` sentinel**
-  * Change mutable default values (`[]`, `\{\}`, `set()`) to `None` and prepend an `if arg is None: arg = &lt;original&gt;` guard so each call gets its own fresh instance.
-* [org.openrewrite.python.cleanup.DictLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/dictliteral)
-  * **Use `\{\}` literal instead of `dict()` constructor**
-  * Convert no-argument `dict()` calls to the `\{\}` literal, which is more concise and avoids a function call.
-* [org.openrewrite.python.cleanup.DoNotUseBareExcept](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/donotusebareexcept)
-  * **Narrow bare `except:` to `except Exception:`**
-  * An unqualified `except:` intercepts every exception, including `SystemExit` and `KeyboardInterrupt`. Specifying `Exception` restricts the handler to ordinary runtime errors.
-* [org.openrewrite.python.cleanup.EqualityIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/equalityidentity)
-  * **Fold same-literal `==`/`!=` comparisons to boolean constants**
-  * When both sides of `==` or `!=` are the same literal, replace the expression with `True` or `False` respectively.
-* [org.openrewrite.python.cleanup.FlipComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/flipcomparison)
-  * **Reorder comparisons to put literals on the right**
-  * Swap operands when a constant appears on the left of a comparison, e.g. ``42 == count`` becomes ``count == 42``, mirroring the relational operator as needed.
-* [org.openrewrite.python.cleanup.IdentityComprehension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/identitycomprehension)
-  * **Simplify identity comprehension to `list()`/`set()` call**
-  * A comprehension that simply passes through each element unchanged is equivalent to calling `list()` or `set()` on the iterable.
-* [org.openrewrite.python.cleanup.InstanceMethodFirstArgName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/instancemethodfirstargname)
-  * **Standardize instance method first parameter to `self`**
-  * Ensure instance methods use `self` as their first parameter per PEP 8 and rename all body references. Methods decorated with `@staticmethod` or `@classmethod` are not affected.
-* [org.openrewrite.python.cleanup.InvertAnyAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/invertanyall)
-  * **Swap `not all()`/`not any()` by negating the comparison**
-  * Apply De Morgan's law to replace `not all(cond ...)` with `any(negated_cond ...)` or `not any(cond ...)` with `all(negated_cond ...)`.
-* [org.openrewrite.python.cleanup.InvertAnyAllBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/invertanyallbody)
-  * **Apply De Morgan's law to `any(not ...)`/`all(not ...)`**
-  * When the generator body just negates the loop variable, De Morgan's law lets us eliminate the generator entirely: `any(not v for v in seq)` becomes `not all(seq)`, and the reverse.
-* [org.openrewrite.python.cleanup.ListLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/listliteral)
-  * **Use `[]` literal instead of `list()` constructor**
-  * Convert no-argument `list()` calls to the `[]` literal, which is more concise and avoids a function call.
-* [org.openrewrite.python.cleanup.MergeComparisons](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergecomparisons)
-  * **Consolidate repeated `==` with `or` into `in`**
-  * Fold ``var == a or var == b`` into ``var in [a, b]``, reducing duplication and improving readability.
-* [org.openrewrite.python.cleanup.MergeElseIfIntoElif](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergeelseifintoelif)
-  * **Convert ``else: if`` to ``elif``**
-  * When an ``else`` clause contains nothing but an ``if``, rewrite it as ``elif`` to eliminate extra nesting.
-* [org.openrewrite.python.cleanup.MergeIsinstance](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergeisinstance)
-  * **Merge `isinstance()` calls**
-  * Merge `isinstance(x, A) or isinstance(x, B)` into `isinstance(x, (A, B))` for cleaner type checking.
-* [org.openrewrite.python.cleanup.MergeNestedIfs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergenestedifs)
-  * **Collapse nested ``if`` into a single ``and`` condition**
-  * When two ``if`` statements are nested with no ``else`` on either, join their conditions with ``and`` and flatten the body.
-* [org.openrewrite.python.cleanup.NoneCompare](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/nonecompare)
-  * **Compare to `None` with identity operators (`is` / `is not`)**
-  * Switch `== None` to `is None` and `!= None` to `is not None`, following PEP 8 singleton comparison guidance.
-* [org.openrewrite.python.cleanup.OrIfExpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/orifexpidentity)
-  * **Replace self-referencing ternary with `or`**
-  * When a ternary's condition and true-branch name the same variable, rewrite ``val if val else fallback`` as ``val or fallback`` to avoid repeating the name.
-* [org.openrewrite.python.cleanup.PandasAvoidInplace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/pandasavoidinplace)
-  * **Eliminate `inplace=True` in favor of reassignment**
-  * Convert pandas operations that use `inplace=True` into reassignment form, e.g. `df.drop_duplicates(inplace=True)` becomes `df = df.drop_duplicates()`.
-* [org.openrewrite.python.cleanup.PythonBestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/pythonbestpractices)
-  * **Python cleanup suite**
-  * Run every Python cleanup recipe in one pass -- literal simplification, boolean and comparison tidying, dead code removal, naming fixes, pandas modernization, and more.
-* [org.openrewrite.python.cleanup.RaiseFromPreviousError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/raisefrompreviouserror)
-  * **Chain exceptions with `raise ... from` in except blocks**
-  * Raise statements inside except blocks should use `from` to chain the new exception to the caught one, preserving the full traceback.
-* [org.openrewrite.python.cleanup.RemoveAssertTrue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeasserttrue)
-  * **Delete no-op `assert True` statements**
-  * Delete bare `assert True` statements, which are always satisfied and have no effect. Assertions that carry a message string are preserved.
-* [org.openrewrite.python.cleanup.RemoveDictKeys](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removedictkeys)
-  * **Drop redundant `.keys()` on dict iteration**
-  * Dictionaries iterate over their keys by default, making explicit `.keys()` calls unnecessary in for-loops and `in` expressions.
-* [org.openrewrite.python.cleanup.RemoveDuplicateDictKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeduplicatedictkey)
-  * **Deduplicate repeated keys in dict literals**
-  * When a dict literal contains the same key more than once, only the final value survives at runtime. This removes the shadowed entries.
-* [org.openrewrite.python.cleanup.RemoveDuplicateSetKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeduplicatesetkey)
-  * **Deduplicate repeated elements in set literals**
-  * Set literals with repeated values have redundant entries that are discarded at runtime. This removes the duplicates, keeping the last one.
-* [org.openrewrite.python.cleanup.RemoveEmptyNestedBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeemptynestedblock)
-  * **Delete `if` blocks whose body is only `pass`**
-  * Delete `if` statements that contain nothing but `pass` and have no `else` branch. `for`/`while` loops are left alone because iterating may have side effects.
-* [org.openrewrite.python.cleanup.RemoveNoneFromDefaultGet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removenonefromdefaultget)
-  * **Remove redundant `None` default from `dict.get()`**
-  * Remove redundant `None` default argument from `dict.get()` calls since `None` is already the default return value.
-* [org.openrewrite.python.cleanup.RemovePassBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removepassbody)
-  * **Drop ``pass``-only ``if`` body by inverting the guard**
-  * When an ``if`` body contains only ``pass`` and is followed by an ``else``, flip the condition and use the else body directly.
-* [org.openrewrite.python.cleanup.RemovePassElif](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removepasselif)
-  * **Drop ``pass``-only ``elif`` by negating its condition**
-  * When an ``elif`` body is only ``pass`` and an ``else`` follows, invert the ``elif`` condition and absorb the else body.
-* [org.openrewrite.python.cleanup.RemoveRedundantBoolean](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantboolean)
-  * **Eliminate boolean literal from `and`/`or`**
-  * Strip ``True`` or ``False`` from ``and``/``or`` expressions where the literal has no effect on the result, e.g. ``True and val`` reduces to ``val`` and ``False and val`` reduces to ``False``.
-* [org.openrewrite.python.cleanup.RemoveRedundantCondition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantcondition)
-  * **Remove redundant ternary condition**
-  * When both branches of a ternary expression are identical, simplify `y if z else y` to `y`.
-* [org.openrewrite.python.cleanup.RemoveRedundantConstructorInDictUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantconstructorindictunion)
-  * **Unwrap unnecessary `dict()` from union operands**
-  * The `|` operator already produces a fresh dict, so wrapping an operand in `dict()` is redundant and can be removed.
-* [org.openrewrite.python.cleanup.RemoveRedundantContinue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantcontinue)
-  * **Strip trailing ``continue`` from loop body**
-  * Strip ``continue`` when it is the final statement in a loop body, since the loop naturally advances to the next iteration.
-* [org.openrewrite.python.cleanup.RemoveRedundantFstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantfstring)
-  * **Drop ``f`` prefix from strings without placeholders**
-  * When an f-string has no ``\{...\}`` expressions, strip the ``f`` prefix and convert it to an ordinary string literal.
-* [org.openrewrite.python.cleanup.RemoveRedundantIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantif)
-  * **Simplify negated ``elif`` to ``else``**
-  * When an ``elif`` condition is the exact negation of the preceding ``if``, replace it with ``else`` since the test is redundant.
-* [org.openrewrite.python.cleanup.RemoveRedundantPass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantpass)
-  * **Delete unnecessary ``pass`` in non-empty blocks**
-  * Delete ``pass`` when the enclosing block already contains other statements; ``pass`` is only useful as a placeholder in empty blocks.
-* [org.openrewrite.python.cleanup.RemoveRedundantPathExists](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantpathexists)
-  * **Drop ``exists()`` check before ``is_dir()``/``is_file()``**
-  * Drop ``path.exists()`` when it is ``and``-ed with ``is_dir()`` or ``is_file()``, which inherently return ``False`` for missing paths.
-* [org.openrewrite.python.cleanup.RemoveRedundantSliceIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantsliceindex)
-  * **Drop default-value slice boundaries**
-  * Omit slice start/stop when they equal ``0`` and ``len(seq)`` respectively, e.g. ``data[0:len(data)]`` becomes ``data[:]``.
-* [org.openrewrite.python.cleanup.RemoveStrFromFstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removestrfromfstring)
-  * **Strip ``str()`` from f-string placeholders**
-  * F-string placeholders convert values to strings automatically, so wrapping expressions in ``str()`` inside ``\{...\}`` is redundant.
-* [org.openrewrite.python.cleanup.RemoveStrFromPrint](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removestrfromprint)
-  * **Unwrap ``str()`` from ``print()`` arguments**
-  * ``print()`` automatically converts its arguments to strings, so an explicit ``str()`` wrapper is unnecessary and can be removed.
-* [org.openrewrite.python.cleanup.RemoveUnitStepFromRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunitstepfromrange)
-  * **Drop unnecessary step `1` argument from `range()`**
-  * Shorten `range(a, b, 1)` to `range(a, b)` because `range` already defaults to a step of one.
-* [org.openrewrite.python.cleanup.RemoveUnnecessaryElse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunnecessaryelse)
-  * **Drop ``else`` after early-exit ``if`` branch**
-  * When the ``if`` body always exits via return, raise, continue, or break, remove the ``else`` and dedent its contents.
-* [org.openrewrite.python.cleanup.RemoveUnreachableCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunreachablecode)
-  * **Strip dead code after terminal statements**
-  * Delete statements that follow a `return`, `raise`, `continue`, or `break` in the same block, since they can never execute.
-* [org.openrewrite.python.cleanup.RemoveZeroFromRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removezerofromrange)
-  * **Drop unnecessary `0` start argument from `range()`**
-  * Shorten `range(0, n)` to `range(n)` because `range` already defaults to starting at zero.
-* [org.openrewrite.python.cleanup.ReplaceApplyWithMethodCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/replaceapplywithmethodcall)
-  * **Convert `apply('name')` to a direct method invocation**
-  * When `apply()` receives a string literal like `'sum'` or `'mean'`, rewrite the call as a direct method invocation on the object.
-* [org.openrewrite.python.cleanup.ReturnOrYieldOutsideFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/returnoryieldoutsidefunction)
-  * **Remove `return`/`yield` outside function**
-  * Remove `return` and `yield` statements that are not inside any function or method definition.
-* [org.openrewrite.python.cleanup.SimplifyBooleanComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifybooleancomparison)
-  * **Remove explicit True/False comparisons**
-  * Drop unnecessary ``== True``, ``!= False``, and similar tests against boolean literals, leaving just the expression or ``not expr``.
-* [org.openrewrite.python.cleanup.SimplifyConstantSum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyconstantsum)
-  * **Simplify `sum(1 for x in items if cond)` to `sum(bool(cond) for x in items)`**
-  * Replace `sum(1 for x in items if cond)` with `sum(bool(cond) for x in items)` by moving the filter condition into a `bool()` wrapper.
-* [org.openrewrite.python.cleanup.SimplifyDictionaryUpdate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifydictionaryupdate)
-  * **Convert one-item `dict.update()` to bracket assignment**
-  * When `.update()` receives a dictionary literal containing exactly one key, rewrite it as a direct key assignment for clarity and efficiency.
-* [org.openrewrite.python.cleanup.SimplifyDivision](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifydivision)
-  * **Convert `int(a / b)` to floor division**
-  * Replace ``int(a / b)`` with Python's floor-division operator ``a // b`` for a more concise expression.
-* [org.openrewrite.python.cleanup.SimplifyEmptyCollectionComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyemptycollectioncomparison)
-  * **Use truthiness instead of empty-container equality**
-  * Convert ``== &quot;&quot;``/``== []``/``== \{\}``/``== ()`` into ``not var`` and the corresponding ``!=`` forms into ``var``, relying on Python's truthiness semantics for empty collections.
-* [org.openrewrite.python.cleanup.SimplifyFstringFormatting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyfstringformatting)
-  * **Fold constants and flatten nested f-strings**
-  * Inline constant values directly into f-string text and unwrap nested f-strings into their enclosing string.
-* [org.openrewrite.python.cleanup.SimplifyGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifygenerator)
-  * **Pass iterable directly to `any()`/`all()` instead of identity generator**
-  * An identity generator that yields every element unchanged is redundant inside `any()` or `all()` -- pass the collection directly.
-* [org.openrewrite.python.cleanup.SimplifyLenComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifylencomparison)
-  * **Replace `len()` emptiness check with truthiness**
-  * Rewrite ``len(seq) &gt; 0`` / ``len(seq) != 0`` to ``seq`` and ``len(seq) == 0`` to ``not seq``, leveraging Python's built-in truthiness for collections.
-* [org.openrewrite.python.cleanup.SimplifyNegativeIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifynegativeindex)
-  * **Use negative index instead of `len()` offset**
-  * Rewrite ``seq[len(seq) - k]`` as ``seq[-k]``, using Python's native negative-indexing support.
-* [org.openrewrite.python.cleanup.SimplifySingleExceptionTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifysingleexceptiontuple)
-  * **Unwrap one-element exception tuple in `except`**
-  * A tuple containing only one exception type is needlessly verbose. This unwraps it to the plain `except ExcType:` form.
-* [org.openrewrite.python.cleanup.SimplifyStrLenComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifystrlencomparison)
-  * **Compare string to `&quot;&quot;` instead of checking `len()`**
-  * Replace ``len(text) == 0`` with ``text == &quot;&quot;`` and ``len(text) &gt; 0`` / ``len(text) != 0`` with ``text != &quot;&quot;``, comparing the string directly rather than measuring its length.
-* [org.openrewrite.python.cleanup.SimplifySubstringSearch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifysubstringsearch)
-  * **Replace `.find()` check with `in` / `not in`**
-  * Rewrite ``.find()`` return-value checks as membership tests: ``text.find(sub) == -1`` becomes ``sub not in text`` and ``text.find(sub) != -1`` becomes ``sub in text``.
-* [org.openrewrite.python.cleanup.SquareIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/squareidentity)
-  * **Rewrite self-multiplication as `** 2`**
-  * When an expression is multiplied by itself, rewrite it using the exponentiation operator (`** 2`) for clarity.
-* [org.openrewrite.python.cleanup.StrPrefixSuffix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/strprefixsuffix)
-  * **Prefer ``startswith``/``endswith`` over slice comparison**
-  * Rewrite ``s[:N] == &quot;lit&quot;`` as ``s.startswith(&quot;lit&quot;)`` and ``s[-N:] == &quot;lit&quot;`` as ``s.endswith(&quot;lit&quot;)`` when the slice length equals the literal length.
-* [org.openrewrite.python.cleanup.SwapIfElseBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapifelsebranches)
-  * **Flip empty ``if``-body by negating the condition**
-  * When the ``if`` branch is just ``pass`` and an ``else`` exists, invert the test and promote the else body to the if body.
-* [org.openrewrite.python.cleanup.SwapIfExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapifexpression)
-  * **Swap ternary branches to drop negated condition**
-  * Flip the branches of a conditional expression whose test uses ``not``, eliminating the negation for clearer intent.
-* [org.openrewrite.python.cleanup.SwapVariable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapvariable)
-  * **Simplify temp-variable swap to tuple unpacking**
-  * Detect the three-line swap idiom (`tmp = x; x = y; y = tmp`) and condense it into `x, y = y, x` using tuple unpacking.
-* [org.openrewrite.python.cleanup.TernaryToIfExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/ternarytoifexpression)
-  * **Convert `and`/`or` ternary trick to conditional expression**
-  * Rewrite the legacy `cond and val or fallback` idiom as `val if cond else fallback` to avoid silent bugs when `val` is falsy.
-* [org.openrewrite.python.cleanup.TupleLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/tupleliteral)
-  * **Use `()` literal instead of `tuple()` constructor**
-  * Convert no-argument `tuple()` calls to the `()` literal, which is more concise and avoids a function call.
-* [org.openrewrite.python.cleanup.UnwrapIterableConstruction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/unwrapiterableconstruction)
-  * **Flatten redundant collection constructor wrapping a literal**
-  * When `tuple()`, `list()`, or `set()` wraps a single list or tuple literal, remove the constructor and use the target literal form directly.
-* [org.openrewrite.python.cleanup.UseContextlibSuppress](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usecontextlibsuppress)
-  * **Replace `try/except: pass` with `contextlib.suppress()`**
-  * When an except handler only contains `pass`, the intent is to suppress the error. `contextlib.suppress()` states this explicitly and eliminates the try/except boilerplate.
-* [org.openrewrite.python.cleanup.UseDatetimeNowNotToday](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usedatetimenownottoday)
-  * **Use `datetime.now()` instead of `datetime.today()`**
-  * Replace `datetime.today()` with `datetime.now()`. Both are equivalent, but `now()` is more explicit and supports timezone arguments.
-* [org.openrewrite.python.cleanup.UseDictionaryUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usedictionaryunion)
-  * **Use dict union operator instead of double-star unpacking**
-  * Dict literals made up entirely of `**` unpacking can be rewritten with the `|` union operator available since Python 3.9.
-* [org.openrewrite.python.cleanup.UseFileIterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usefileiterator)
-  * **Iterate over file objects directly, not via `readlines()`**
-  * File objects are iterable and yield lines on demand, so calling `.readlines()` to build an intermediate list is unnecessary.
-* [org.openrewrite.python.cleanup.UseGetitemForReMatchGroups](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usegetitemforrematchgroups)
-  * **Use bracket access for ``re.Match`` groups**
-  * Replace ``match.group(n)`` with ``match[n]`` to use the shorter subscript syntax available since Python 3.6.
-* [org.openrewrite.python.cleanup.UseIsna](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/useisna)
-  * **Use `.isna()` instead of `== np.nan` comparisons**
-  * Rewrite `== np.nan` and `== numpy.nan` equality tests as `.isna()` calls, since direct NaN comparison always evaluates to False.
-* [org.openrewrite.python.cleanup.UseStringRemoveAffix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usestringremoveaffix)
-  * **Replace string slicing with `removeprefix`/`removesuffix`**
-  * Replace `if text.startswith(s): text = text[N:]` with `text = text.removeprefix(s)` and the equivalent `endswith` pattern with `removesuffix` (Python 3.9+).
-* [org.openrewrite.python.cleanup.UselessElseOnLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/uselesselseonloop)
-  * **Flatten `for/else` when the loop has no `break`**
-  * A `for/else` where the loop body never breaks is misleading -- the `else` runs every time. This moves the else body after the loop.
-* [org.openrewrite.python.cleanup.YieldFrom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/yieldfrom)
-  * **Collapse for-yield loop into `yield from`**
-  * A for-loop that does nothing but yield the loop variable can be expressed as `yield from`, which is shorter and delegates directly.
 
 ### rewrite-struts
 

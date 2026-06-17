@@ -46,7 +46,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Upgrade build to Java 25 for Kotlin 2.3+](../../java/migrate/upgradebuildtojava25forkotlin)
 * [Upgrade plugins to Java 25 compatible versions](../../java/migrate/upgradepluginsforjava25)
 * [Migrate `System.out.print` to Java 25 IO utility class](../../java/migrate/io/replacesystemoutwithioprint)
-* [Migrate `public static void main(String[] args)` to instance `void main()`](../../java/migrate/lang/migratemainmethodtoinstancemain)
 * [Use `Process#waitFor(Duration)`](../../java/migrate/lang/migrateprocesswaitforduration)
 * [Replace unused variables with underscore](../../java/migrate/lang/replaceunusedvariableswithunderscore)
 * [Replace `Inflater` and `Deflater` `end()` calls with `close()`](../../java/migrate/util/migrateinflaterdeflatertoclose)
@@ -80,7 +79,6 @@ recipeList:
   - org.openrewrite.java.migrate.UpgradeBuildToJava25ForKotlin
   - org.openrewrite.java.migrate.UpgradePluginsForJava25
   - org.openrewrite.java.migrate.io.ReplaceSystemOutWithIOPrint
-  - org.openrewrite.java.migrate.lang.MigrateMainMethodToInstanceMain
   - org.openrewrite.java.migrate.lang.MigrateProcessWaitForDuration
   - org.openrewrite.java.migrate.lang.ReplaceUnusedVariablesWithUnderscore
   - org.openrewrite.java.migrate.util.MigrateInflaterDeflaterToClose

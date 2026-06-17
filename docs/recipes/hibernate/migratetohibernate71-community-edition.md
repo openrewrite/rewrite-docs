@@ -37,6 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Hibernate 7.0.x (Community Edition)](../hibernate/migratetohibernate70-community-edition)
+* [Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.1](../hibernate/migratetohypersistenceutilshibernate71)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
   * artifactId: `*`
@@ -57,6 +58,7 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernate70
+  - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate71
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.hibernate.orm
       artifactId: "*"

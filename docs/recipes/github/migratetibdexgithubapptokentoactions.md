@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions**
 
-_Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case._
+_Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-github-app-token@v3`, which runs on Node.js 24 instead of the deprecated Node.js 20. Renames the `app_id`, `private_key`, and `github_api_url` inputs to their kebab-case equivalents `app-id`, `private-key`, and `github-api-url`._
 
 ### Tags
 
@@ -38,17 +38,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change GitHub Action](../github/changeaction)
   * oldAction: `tibdex/github-app-token`
   * newAction: `actions/create-github-app-token`
-  * newVersion: `v2`
+  * newVersion: `v3`
 * [Change key](../yaml/changekey)
   * oldKeyPath: `$.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with.app_id`
   * newKey: `app-id`
 * [Change key](../yaml/changekey)
   * oldKeyPath: `$.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with.private_key`
   * newKey: `private-key`
-* [Merge YAML snippet](../yaml/mergeyaml)
-  * key: `$.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with`
-  * yaml: `owner: ${{ github.repository_owner }}`
-  * acceptTheirs: `false`
+* [Change key](../yaml/changekey)
+  * oldKeyPath: `$.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with.github_api_url`
+  * newKey: `github-api-url`
 
 </TabItem>
 
@@ -60,7 +59,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions
 displayName: Migrate from tibdex/github-app-token to actions/create-github-app-token
 description: |
-  Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case.
+  Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-github-app-token@v3`, which runs on Node.js 24 instead of the deprecated Node.js 20. Renames the `app_id`, `private_key`, and `github_api_url` inputs to their kebab-case equivalents `app-id`, `private-key`, and `github-api-url`.
 tags:
   - github
   - actions
@@ -68,17 +67,16 @@ recipeList:
   - org.openrewrite.github.ChangeAction:
       oldAction: tibdex/github-app-token
       newAction: actions/create-github-app-token
-      newVersion: v2
+      newVersion: v3
   - org.openrewrite.yaml.ChangeKey:
       oldKeyPath: $.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with.app_id
       newKey: app-id
   - org.openrewrite.yaml.ChangeKey:
       oldKeyPath: $.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with.private_key
       newKey: private-key
-  - org.openrewrite.yaml.MergeYaml:
-      key: $.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with
-      yaml: owner: ${{ github.repository_owner }}
-      acceptTheirs: false
+  - org.openrewrite.yaml.ChangeKey:
+      oldKeyPath: $.jobs..[?(@.uses =~ 'actions/create-github-app-token.*')].with.github_api_url
+      newKey: github-api-url
 
 ```
 </TabItem>

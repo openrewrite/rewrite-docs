@@ -47,7 +47,7 @@ _4 recipes_
   * Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and removes the deprecated `server-url` input. See the [v7.0.0 release notes](https://github.com/astral-sh/setup-uv/releases/tag/v7.0.0) for breaking changes.
 * [org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions](/recipes/github/migratetibdexgithubapptokentoactions.md)
   * **Migrate from tibdex/github-app-token to actions/create-github-app-token**
-  * Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case.
+  * Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-github-app-token@v3`, which runs on Node.js 24 instead of the deprecated Node.js 20. Renames the `app_id`, `private_key`, and `github_api_url` inputs to their kebab-case equivalents `app-id`, `private-key`, and `github-api-url`.
 * [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
   * **Pin GitHub Actions to commit SHAs**
   * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.
@@ -2444,7 +2444,7 @@ _14 recipes_
   * Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and removes the deprecated `server-url` input. See the [v7.0.0 release notes](https://github.com/astral-sh/setup-uv/releases/tag/v7.0.0) for breaking changes.
 * [org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions](/recipes/github/migratetibdexgithubapptokentoactions.md)
   * **Migrate from tibdex/github-app-token to actions/create-github-app-token**
-  * Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case.
+  * Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-github-app-token@v3`, which runs on Node.js 24 instead of the deprecated Node.js 20. Renames the `app_id`, `private_key`, and `github_api_url` inputs to their kebab-case equivalents `app-id`, `private-key`, and `github-api-url`.
 * [org.openrewrite.github.ReplaceOssrhSecretsWithSonatype](/recipes/github/replaceossrhsecretswithsonatype.md)
   * **Replace OSSRH secrets with Sonatype secrets**
   * Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite's GitHub organization.
@@ -2812,7 +2812,7 @@ _1 recipe_
 
 ## jackson
 
-_30 recipes_
+_33 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -2842,6 +2842,10 @@ _30 recipes_
   * **Jackson best practices**
   * Apply best practices for using Jackson library, including upgrade to Jackson 2.x and removing redundant annotations.
   * Tags: jackson-2
+* [org.openrewrite.java.jackson.MigrateFactorySettersToBuilder](/recipes/java/jackson/migratefactorysetterstobuilder.md)
+  * **Migrate factory setter calls to builder pattern**
+  * In Jackson 3, `JsonFactory` is immutable and `new JsonFactory()` is no longer the right entry point: the concrete factory lives at `tools.jackson.core.json.JsonFactory` and is constructed via `JsonFactory.builder()...build()`. Configuration methods like `enable`, `disable`, `configure`, `setCharacterEscapes`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
+  * Tags: jackson-3
 * [org.openrewrite.java.jackson.MigrateMapperSettersToBuilder](/recipes/java/jackson/migratemappersetterstobuilder.md)
   * **Migrate mapper setter calls to builder pattern**
   * In Jackson 3, `JsonMapper` and other format-aligned mappers are immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
@@ -2910,6 +2914,10 @@ _30 recipes_
   * **Rename Jackson 2.x methods to 3.x equivalents**
   * Rename Jackson methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
   * Tags: jackson-3
+* [org.openrewrite.java.jackson.UpgradeJackson_2_3_ModernizeJacksonCoreFeatures](/recipes/java/jackson/upgradejackson_2_3_modernizejacksoncorefeatures.md)
+  * **Modernize legacy `jackson-core` feature constants**
+  * Jackson 2.10 moved most flag constants out of `JsonParser.Feature` and `JsonGenerator.Feature` into the new `JsonReadFeature` / `JsonWriteFeature` (for JSON-specific flags) and `StreamReadFeature` / `StreamWriteFeature` (for format-agnostic flags). Jackson 3 keeps only the modern locations. This recipe rewrites every legacy constant to its Jackson 2-modern equivalent so the rest of the Jackson 2 → 3 pipeline (in particular the builder migrations) sees flags the modern API will accept.
+  * Tags: jackson-3
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_ObjectNodeMethodRenames](/recipes/java/jackson/upgradejackson_2_3_objectnodemethodrenames.md)
   * **Rename Jackson 2.x methods to 3.x equivalents for ObjectNode**
   * Rename ObjectNode methods deprecated in Jackson 2 and removed in 3.x (`put(String, JsonNode)` to `set`, `putAll` to `setAll`).
@@ -2929,6 +2937,10 @@ _30 recipes_
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges](/recipes/java/jackson/upgradejackson_2_3_typechanges.md)
   * **Update Jackson 2.x types to 3.x**
   * Update Jackson type names including exception types and core class renames.
+  * Tags: jackson-3
+* [org.openrewrite.java.jackson.UseJsonFactoryStaticBuilder](/recipes/java/jackson/usejsonfactorystaticbuilder.md)
+  * **Use `JsonFactory.builder()` over `new JsonFactoryBuilder()`**
+  * After the Jackson 2 → 3 migration, prefer the concrete static `JsonFactory.builder()` entry over `new JsonFactoryBuilder()` so `JsonFactory` chains read the same way as the format-aligned factories (`YAMLFactory.builder()`, `CBORFactory.builder()`, etc.). The reason `MigrateFactorySettersToBuilder` emits `new JsonFactoryBuilder()` in the first place is a Jackson 2 quirk — `JsonFactory.builder()` returned the wildcard `TSFBuilder&lt;?, ?&gt;` there. In Jackson 3 the static returns a concretely-typed `JsonFactoryBuilder`, so the constructor form no longer earns its keep.
   * Tags: jackson-3
 * [org.openrewrite.java.jackson.UseModernDateTimeSerialization](/recipes/java/jackson/usemoderndatetimeserialization.md)
   * **Use modern date/time serialization defaults**
@@ -4900,7 +4912,7 @@ _28 recipes_
 
 ## mockito
 
-_7 recipes_
+_8 recipes_
 
 * [org.openrewrite.java.testing.junit5.UseMockitoExtension](/recipes/java/testing/junit5/usemockitoextension.md)
   * **Use Mockito JUnit Jupiter extension**
@@ -4920,6 +4932,9 @@ _7 recipes_
 * [org.openrewrite.java.testing.mockito.MockitoBestPractices](/recipes/java/testing/mockito/mockitobestpractices.md)
   * **Mockito best practices**
   * Applies best practices for Mockito tests.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
+  * **Replace PowerMock `Whitebox` with Java reflection**
+  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
   * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.
@@ -8114,7 +8129,7 @@ _5 recipes_
 
 ## testing
 
-_52 recipes_
+_53 recipes_
 
 * [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](/recipes/cucumber/jvm/cucumberjava8tojava.md)
   * **Migrate `cucumber-java8` to `cucumber-java`**
@@ -8257,6 +8272,9 @@ _52 recipes_
 * [org.openrewrite.java.testing.mockito.MockitoBestPractices](/recipes/java/testing/mockito/mockitobestpractices.md)
   * **Mockito best practices**
   * Applies best practices for Mockito tests.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
+  * **Replace PowerMock `Whitebox` with Java reflection**
+  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
   * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.

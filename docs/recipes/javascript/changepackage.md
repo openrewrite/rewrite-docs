@@ -44,6 +44,7 @@ This recipe is used as part of the following composite recipes:
 * [Apply Axon Framework 5 serialization → conversion rename](/recipes/axonframework/migration/axon4toaxon5conversion.md)
 * [ArchUnit 0.x upgrade](/recipes/java/testing/archunit/archunit0to1migration.md)
 * [Change Tapestry 4 packages to Tapestry 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/tapestry/changetapestrypackages)
+* [Change package](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/changepackage)
 * [DataNucleus 4.0 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_4_0.md)
 * [DataNucleus 5.0 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_0.md)
 * [DataNucleus 5.2 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_2.md)

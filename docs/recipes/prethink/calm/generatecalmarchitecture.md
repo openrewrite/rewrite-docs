@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.prethink.calm.GenerateCalmArchitecture**
 
-_Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections._
+_Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections.  This recipe is not meant to be run on its own. It only reads data tables that other Prethink discovery recipes populate first, so it produces nothing useful in isolation. Run it as part of a composite such as `org.openrewrite.prethink.UpdatePrethinkContext`._
 
 ## Recipe source
 

@@ -413,7 +413,7 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * Updates .gitignore to allow committing the `.moderne/context/` directory while ignoring other files in `.moderne/`. Only modifies .gitignore when context files exist in `.moderne/context/`. Transforms `.moderne/` into `.moderne/*` with an exception for `!.moderne/context/`.
 * [org.openrewrite.prethink.calm.GenerateCalmArchitecture](/recipes/prethink/calm/generatecalmarchitecture.md)
   * **Generate CALM architecture**
-  * Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections.
+  * Generate a FINOS CALM (Common Architecture Language Model) JSON file from discovered service endpoints, database connections, external service calls, and messaging connections.  This recipe is not meant to be run on its own. It only reads data tables that other Prethink discovery recipes populate first, so it produces nothing useful in isolation. Run it as part of a composite such as `org.openrewrite.prethink.UpdatePrethinkContext`.
 
 ### rewrite-rewrite
 
