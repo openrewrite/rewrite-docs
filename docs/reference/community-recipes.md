@@ -77,3 +77,5 @@ If you want to see your project on this list - please feel free to click on the 
   * Migrates a Camunda 7 instance to Operaton.
 * [Rewrite Format SQL](https://github.com/mhagnumdw/rewrite-format-sql)
   * OpenRewrite recipes for formatting SQL code in text blocks in annotations.
+* [JDO to JPA migration](https://github.com/ecpnv-devops/jdo2jpa)
+  * Migrates a project using JDO ORM implementation to a JPA implementation. Supports DataNucleus, EclipseLink and Apache Causeway, but should also work for Hibernate.
