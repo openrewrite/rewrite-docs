@@ -6560,7 +6560,7 @@ _181 recipes_
 
 _License: Moderne Source Available License_
 
-_258 recipes_
+_267 recipes_
 
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
@@ -7207,9 +7207,18 @@ _258 recipes_
 * [org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith](/recipes/java/testing/mockito/powermockrunnerdelegatetorunwith.md)
   * **Replace PowerMock runner with JUnit `@RunWith`**
   * Replaces `@RunWith(PowerMockRunner.class)`. If `@PowerMockRunnerDelegate(X.class)` is present, promotes the delegate runner to `@RunWith(X.class)`. Otherwise, replaces it with `@RunWith(MockitoJUnitRunner.class)` when the class uses Mockito annotations like `@Mock`, or removes the `@RunWith(PowerMockRunner.class)` annotation entirely.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetFieldToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxgetfieldtojavareflection.md)
+  * **Replace PowerMock `Whitebox.getField()` with Java reflection**
+  * Replace `Whitebox.getField(Class, String)` with `Class.getDeclaredField(String)` plus `setAccessible(true)`. Unlike PowerMock, `getDeclaredField` does not traverse the class hierarchy for fields inherited from a superclass.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetInternalStateToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxgetinternalstatetojavareflection.md)
   * **Replace PowerMock `Whitebox.getInternalState()` with Java reflection**
   * Replace `Whitebox.getInternalState(Object, String)` with `java.lang.reflect.Field` access, casting to the declared result type where needed. The field lookup uses `getDeclaredField` on the target object's class, which differs from PowerMock's class-hierarchy traversal for fields inherited from a superclass.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetMethodToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxgetmethodtojavareflection.md)
+  * **Replace PowerMock `Whitebox.getMethod()` with Java reflection**
+  * Replace `Whitebox.getMethod(Class, String, Class...)` with `Class.getDeclaredMethod(String, Class...)` plus `setAccessible(true)`. Unlike PowerMock, `getDeclaredMethod` does not traverse the class hierarchy; calls passing an explicit `Class[]` array are left unchanged for manual migration.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeConstructorToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxinvokeconstructortojavareflection.md)
+  * **Replace PowerMock `Whitebox.invokeConstructor()` with Java reflection**
+  * Replace `Whitebox.invokeConstructor(..)` with `java.lang.reflect.Constructor` lookup and `newInstance()` on the named class. Constructor parameter types are taken from the unambiguously resolved constructor, falling back to each argument's compile-time class; arrays passed to the `Object...` varargs overload are left unchanged for manual migration.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxinvokemethodtojavareflection.md)
   * **Replace PowerMock `Whitebox.invokeMethod()` with Java reflection**
   * Replace `Whitebox.invokeMethod(Object, String, ..)` with `java.lang.reflect.Method` lookup and `invoke()`. Parameter types are taken from the unambiguously resolved target method, falling back to each argument's compile-time class.
@@ -7218,7 +7227,7 @@ _258 recipes_
   * Replace `Whitebox.setInternalState(Object, String, Object)` and `Whitebox.setInternalState(Object, String, Object, Class)` with `java.lang.reflect.Field` access. The 3-arg overload looks up the field on the target's class; the 4-arg where-overload uses the supplied Class to resolve fields declared on a superclass.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
   * **Replace PowerMock `Whitebox` with Java reflection**
-  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
+  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`, `getField`, `getMethod`, `invokeConstructor`) with plain Java reflection using `java.lang.reflect.Field`, `java.lang.reflect.Method`, and `java.lang.reflect.Constructor`.
 * [org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingToMockito](/recipes/java/testing/mockito/powermockitodostubbingtomockito.md)
   * **Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing**
   * Replaces PowerMockito's private method stubbing pattern `doNothing().when(instance, &quot;methodName&quot;, args...)` with the standard Mockito pattern `doNothing().when(instance).methodName(args...)`.
@@ -7309,12 +7318,30 @@ _258 recipes_
 * [org.openrewrite.java.testing.testcontainers.Testcontainers2Migration](/recipes/java/testing/testcontainers/testcontainers2migration.md)
   * **Migrate to testcontainers-java 2.x**
   * Change dependencies and types to migrate to testcontainers-java 2.x.
+* [org.openrewrite.java.testing.testng.TestNgAssertEqualsDeepToAssertThat](/recipes/java/testing/testng/testngassertequalsdeeptoassertthat.md)
+  * **TestNG `assertEqualsDeep`/`assertNotEqualsDeep` to AssertJ**
+  * Convert TestNG-style `assertEqualsDeep()` and `assertNotEqualsDeep()` to AssertJ's `assertThat().usingRecursiveComparison().isEqualTo()` / `.isNotEqualTo()`, which performs a deep, recursive comparison of the `Map`/`Set` contents.
+* [org.openrewrite.java.testing.testng.TestNgAssertEqualsNoOrderToAssertThat](/recipes/java/testing/testng/testngassertequalsnoordertoassertthat.md)
+  * **TestNG `assertEqualsNoOrder` to AssertJ**
+  * Convert TestNG-style `assertEqualsNoOrder()` to AssertJ's `assertThat().containsExactlyInAnyOrder()` (arrays) or `assertThat().containsExactlyInAnyOrderElementsOf()` (collections).
 * [org.openrewrite.java.testing.testng.TestNgAssertEqualsToAssertThat](/recipes/java/testing/testng/testngassertequalstoassertthat.md)
   * **TestNG `assertEquals` to AssertJ**
-  * Convert TestNG-style `assertEquals()` to AssertJ's `assertThat().isEqualTo()`.
+  * Convert TestNG-style `assertEquals()` to AssertJ's `assertThat().isEqualTo()`, using element-wise assertions (`containsExactly`/`containsExactlyElementsOf`) for arrays and collections.
+* [org.openrewrite.java.testing.testng.TestNgAssertListToAssertThat](/recipes/java/testing/testng/testngassertlisttoassertthat.md)
+  * **TestNG `assertList*` to AssertJ**
+  * Convert TestNG-style `assertListContainsObject`/`assertListNotContainsObject` to AssertJ's `assertThat().contains()`/`.doesNotContain()`, and `assertListContains`/`assertListNotContains` (predicate-based) to `.anyMatch()`/`.noneMatch()`.
 * [org.openrewrite.java.testing.testng.TestNgAssertNotEqualsToAssertThat](/recipes/java/testing/testng/testngassertnotequalstoassertthat.md)
   * **TestNG `assertNotEquals` to AssertJ**
   * Convert TestNG-style `assertNotEquals()` to AssertJ's `assertThat().isNotEqualTo()`.
+* [org.openrewrite.java.testing.testng.TestNgAssertNotSameToAssertThat](/recipes/java/testing/testng/testngassertnotsametoassertthat.md)
+  * **TestNG `assertNotSame` to AssertJ**
+  * Convert TestNG-style `assertNotSame()` to AssertJ's `assertThat().isNotSameAs()`.
+* [org.openrewrite.java.testing.testng.TestNgAssertSameToAssertThat](/recipes/java/testing/testng/testngassertsametoassertthat.md)
+  * **TestNG `assertSame` to AssertJ**
+  * Convert TestNG-style `assertSame()` to AssertJ's `assertThat().isSameAs()`.
+* [org.openrewrite.java.testing.testng.TestNgAssertThrowsToAssertThat](/recipes/java/testing/testng/testngassertthrowstoassertthat.md)
+  * **TestNG `assertThrows`/`expectThrows` to AssertJ**
+  * Convert TestNG-style `assertThrows()` and `expectThrows()` to AssertJ's `assertThatExceptionOfType().isThrownBy()` (or `assertThatThrownBy()` when no exception type is given) to allow for chained assertions on the thrown exception.
 * [org.openrewrite.java.testing.testng.TestNgToAssertj](/recipes/java/testing/testng/testngtoassertj.md)
   * **Migrate TestNG assertions to AssertJ**
   * Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions`.
@@ -7341,7 +7368,7 @@ _258 recipes_
 
 _License: Apache License Version 2.0_
 
-_1639 recipes_
+_1588 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -7739,30 +7766,6 @@ _1639 recipes_
 * [com.oracle.weblogic.rewrite.spring.framework.UpgradeToSpringFramework_6_2](/recipes/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
   * **Migrate to Spring Framework 6.2 for WebLogic 15.1.1**
   * Migrate applications to the Spring Framework 6.2 release and compatibility with WebLogic 15.1.1.
-* [io.axoniq.framework.migration.Axon4ToAxoniq5AxonServerConnector](/recipes/axoniq/framework/migration/axon4toaxoniq5axonserverconnector.md)
-  * **Migrate the Axon Server connector to Axoniq Framework 5**
-  * Relocates the Axon Server connector from `org.axonframework.axonserver.connector` to `io.axoniq.framework.axonserver.connector`. The connector now lives in the Axoniq commercial offering (`io.axoniq.framework:axon-server-connector`). Class names are mostly preserved.
-* [io.axoniq.framework.migration.Axon4ToAxoniq5Bom](/recipes/axoniq/framework/migration/axon4toaxoniq5bom.md)
-  * **Swap the BOM to Axoniq Framework 5 commercial**
-  * Replaces the imported `org.axonframework:axon-bom` (AF4) or `org.axonframework:axon-framework-bom` (free AF5) in `&lt;dependencyManagement&gt;` with the Axoniq Framework 5 commercial BOM `io.axoniq.framework:axoniq-framework-bom`.
-* [io.axoniq.framework.migration.Axon4ToAxoniq5DeadLetter](/recipes/axoniq/framework/migration/axon4toaxoniq5deadletter.md)
-  * **Migrate the Sequenced Dead-Letter Queue to Axoniq Framework 5**
-  * Relocates the Sequenced Dead-Letter Queue (DLQ) types from the open-source `axon-messaging` module to the Axoniq commercial `axoniq-dead-letter` module (`io.axoniq.framework:axoniq-dead-letter`). Class names — including `SequencedDeadLetterQueue`, `JpaSequencedDeadLetterQueue`, `JdbcSequencedDeadLetterQueue`, `DeadLetteredEventProcessingTask`, `EnqueuePolicy`, `Decisions`, `ThrowableCause` — are preserved.
-* [io.axoniq.framework.migration.Axon4ToAxoniq5DistributedMessaging](/recipes/axoniq/framework/migration/axon4toaxoniq5distributedmessaging.md)
-  * **Migrate distributed messaging components to Axoniq Framework 5**
-  * Relocates the distributed command-bus components (DistributedCommandBus, CommandBusConnector) from the AF4 open-source `axon-messaging` module into the Axoniq commercial `axoniq-distributed-messaging` module (`io.axoniq.framework.messaging.commandhandling.distributed`). Each AF4 fully-qualified name is mapped directly to its final Axoniq location, so this recipe is order-independent relative to the open-source messaging package rename.
-* [io.axoniq.framework.migration.Axon4ToAxoniq5EventStreaming](/recipes/axoniq/framework/migration/axon4toaxoniq5eventstreaming.md)
-  * **Migrate to Axoniq event streaming (placeholder)**
-  * Placeholder. The Axoniq event streaming module (`io.axoniq.framework:axoniq-event-streaming`) consolidates multi-stream event consumption that lived in `MultiStreamableMessageSource` (available since Axon Framework 4.2) into a dedicated module in Axoniq Framework 5. AF4 applications using `MultiStreamableMessageSource` should migrate to `axoniq-event-streaming` once they adopt Axoniq Framework 5; this recipe will gain class-level mappings as that migration becomes deterministic.
-* [io.axoniq.framework.migration.Axon4ToAxoniq5SpringBoot](/recipes/axoniq/framework/migration/axon4toaxoniq5springboot.md)
-  * **Swap the Spring Boot starter to Axoniq Framework 5 commercial**
-  * Swaps the Spring Boot starter dependency to the Axoniq commercial variant (`io.axoniq.framework:axoniq-spring-boot-starter`). Accepts both the AF4 raw coordinate (`org.axonframework:axon-spring-boot-starter`) and the post-`Axon4ToAxon5SpringBootExtension` coordinate (`org.axonframework.extensions.spring:axon-spring-boot-starter`). Class-level mappings for the Axoniq autoconfig package `io.axoniq.framework.springboot.*` are not yet implemented.
-* [io.axoniq.framework.migration.Axon4ToAxoniq5Testcontainer](/recipes/axoniq/framework/migration/axon4toaxoniq5testcontainer.md)
-  * **Migrate the Axon Server Testcontainer to Axoniq Framework 5**
-  * Relocates the Axon Server Testcontainer types from the AF4 `axon-test` package `org.axonframework.test.server` to the dedicated Axoniq commercial artifact `io.axoniq.framework:axoniq-testcontainer` under `io.axoniq.framework.testcontainer`. The Enterprise (`AxonServerEEContainer`) and Standard (`AxonServerSEContainer`) edition variants both collapse into the unified `AxonServerContainer` in Axoniq 5.
-* [io.axoniq.framework.migration.UpgradeAxon4ToAxoniq5](/recipes/axoniq/framework/migration/upgradeaxon4toaxoniq5.md)
-  * **Upgrade to Axoniq Framework 5 (commercial)**
-  * Migrates an Axon Framework 4.x application to Axoniq Framework 5 (commercial). Composes `UpgradeAxon4ToAxon5` (the free leg) and then layers commercial-only migrations: BOM swap to `io.axoniq.framework:axoniq-framework-bom`, Spring Boot starter swap to `io.axoniq.framework:axoniq-spring-boot-starter`, source rewrites and Maven adds for Axon Server connector, sequenced dead-letter queue, and distributed messaging.
 * [io.quarkus.updates.camel.camel40.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel40/camelquarkusmigrationrecipe.md)
   * **Migrate `camel3` application to `camel4.`**
   * Migrate `camel3` quarkus application to `camel4` quarkus.
@@ -8579,141 +8582,12 @@ _1639 recipes_
 * [org.apache.wicket.MigrateToWicket10](/recipes/apache/wicket/migratetowicket10.md)
   * **Migrate to Wicket 10.x**
   * Migrates Wicket 9.x to Wicket 10.x, as well as Java 17 and Jakarta.
-* [org.axonframework.migration.AddAxonTestFixtureTearDown](/recipes/axonframework/migration/addaxontestfixtureteardown.md)
-  * **Add @AfterEach tearDown() that stops the AxonTestFixture**
-  * Adds an `@AfterEach tearDown()` method calling `stop()` on the `AxonTestFixture` field, when the test class has such a field but no existing `@AfterEach` method (and no method named `tearDown`). Pairs with `MigrateAggregateTestFixtureSetup` which produces the field; the tear-down step was previously left for manual migration. Java sources only.
-* [org.axonframework.migration.AddCommandAnnotation](/recipes/axonframework/migration/addcommandannotation.md)
-  * **Add @Command to command payload classes**
-  * Scans @CommandHandler methods and annotates their command parameter types with @Command. Also migrates @RoutingKey on a field to @Command(routingKey = &quot;fieldName&quot;) on the class, removing the @RoutingKey field annotation.
-* [org.axonframework.migration.AddEntityCreatorAnnotation](/recipes/axonframework/migration/addentitycreatorannotation.md)
-  * **Add @EntityCreator to no-arg constructors of event-sourced entities**
-  * Annotates existing no-arg constructors with `@EntityCreator` for any class annotated with `@EventSourcedEntity` or the Spring `@EventSourced` stereotype. Required by AF5 — the framework uses this annotation to instantiate the entity before applying events. Idempotent: skips constructors that are already annotated.
-* [org.axonframework.migration.AddEventAnnotation](/recipes/axonframework/migration/addeventannotation.md)
-  * **Add @Event to event payload classes**
-  * Scans @EventSourcingHandler methods and annotates their event parameter types with @Event. Migrates @Revision(&quot;x&quot;) on the class to @Event(version = &quot;x&quot;), removing the now-obsolete @Revision annotation.
-* [org.axonframework.migration.AddEventTagAnnotation](/recipes/axonframework/migration/addeventtagannotation.md)
-  * **Add @EventTag to the aggregate-identifier field of event payload classes**
-  * Scans event-sourced entity classes for their @AggregateIdentifier field and the event types used in @EventSourcingHandler methods, then annotates the corresponding field in each event class with @EventTag(key = &quot;&lt;EntitySimpleName&gt;&quot;).
-* [org.axonframework.migration.AnnotateObsoleteSequencingPolicyProperty](/recipes/axonframework/migration/annotateobsoletesequencingpolicyproperty.md)
-  * **Annotate obsolete `axon.eventhandling.processors.&lt;group&gt;.sequencing-policy` properties**
-  * Inserts a one-line `# TODO(axon4to5): ...` comment above any `axon.eventhandling.processors.&lt;group&gt;.sequencing-policy` entry in `application.properties` / `application.yml`. AF5 moves the decision onto the handler class via `@SequencingPolicy`; deleting the property here would race the per-construct skill that drives the source-side annotation, so this recipe only annotates. Idempotent.
-* [org.axonframework.migration.Axon4ToAxon5AmqpExtension](/recipes/axonframework/migration/axon4toaxon5amqpextension.md)
-  * **Migrate the AMQP extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the AMQP extension migration. The AMQP extension lives at `org.axonframework.extensions.amqp` in AF4 and does not yet have a finalized Axon Framework 5 equivalent. Update this recipe once the AF5 AMQP integration ships.
-* [org.axonframework.migration.Axon4ToAxon5Bom](/recipes/axonframework/migration/axon4toaxon5bom.md)
-  * **Migrate the Axon Framework BOM coordinates**
-  * Renames the imported `org.axonframework:axon-bom` BOM in `&lt;dependencyManagement&gt;` to `org.axonframework:axon-framework-bom` and pins the imported version to the current Axon Framework 5 release. The BOM artifactId changed between Axon Framework 4 and Axon Framework 5; the groupId is unchanged.
-* [org.axonframework.migration.Axon4ToAxon5CdiExtension](/recipes/axonframework/migration/axon4toaxon5cdiextension.md)
-  * **Migrate the CDI extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the CDI extension migration. The extension lives at `org.axonframework.extensions.cdi` in AF4 and does not yet have a finalized Axon Framework 5 equivalent. Update this recipe once the AF5 CDI integration ships.
-* [org.axonframework.migration.Axon4ToAxon5Common](/recipes/axonframework/migration/axon4toaxon5common.md)
-  * **Apply Axon Framework 5 common module renames**
-  * Migrates `org.axonframework.config` to `org.axonframework.common.configuration`, renames `ConfigurerModule` to `ConfigurationEnhancer`, `ModuleConfiguration` to `Module`, `LifecycleOperations` to `LifecycleRegistry`, relocates `EventProcessingConfigurer` under the messaging.eventhandling namespace, and swaps `@ProcessingGroup` for the AF5 `@Namespace` annotation.
-* [org.axonframework.migration.Axon4ToAxon5Conversion](/recipes/axonframework/migration/axon4toaxon5conversion.md)
-  * **Apply Axon Framework 5 serialization → conversion rename**
-  * Migrates the Serializer-based `org.axonframework.serialization` namespace to the new Converter-based `org.axonframework.conversion` namespace. Note: this is a package rename; concrete renames such as `JacksonSerializer` to `JacksonConverter` are NOT applied here and must be handled separately.
-* [org.axonframework.migration.Axon4ToAxon5EventSourcing](/recipes/axonframework/migration/axon4toaxon5eventsourcing.md)
-  * **Apply Axon Framework 5 event-sourcing module renames**
-  * Relocates the `@EventSourcingHandler` annotation into `eventsourcing.annotation`, relocates `Snapshotter` into the new `eventsourcing.snapshot.api` API package, ensures the `org.axonframework:axon-eventsourcing` dependency is present when the app uses event-sourcing types (the AF5 Spring Boot starter no longer pulls it transitively, so apps not using the BOM need it added explicitly — it transitively brings `axon-modelling` and `axon-messaging`), and applies the source-level aggregate→entity rewrites — annotating no-arg constructors with the now-mandatory `@EntityCreator` and replacing `AggregateLifecycle.apply(...)` with an injected `EventAppender#append(...)`.
-* [org.axonframework.migration.Axon4ToAxon5JGroupsExtension](/recipes/axonframework/migration/axon4toaxon5jgroupsextension.md)
-  * **Migrate the JGroups extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the JGroups extension migration. The JGroups extension at `org.axonframework.extensions.jgroups` provided distributed command bus routing in AF4. In Axon Framework 5 the distributed command bus has moved into the AxonIQ commercial offering (`io.axoniq.framework:axoniq-distributed-messaging`). Code using `JGroupsConnector` must be replaced with the AxonIQ commercial distributed messaging APIs.
-* [org.axonframework.migration.Axon4ToAxon5KafkaExtension](/recipes/axonframework/migration/axon4toaxon5kafkaextension.md)
-  * **Migrate the Kafka extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the Kafka extension migration. The Kafka extension lives at `org.axonframework.extensions.kafka` in AF4 and does not yet have a finalized Axon Framework 5 equivalent. Update this recipe once the AF5 Kafka integration ships.
-* [org.axonframework.migration.Axon4ToAxon5Messaging](/recipes/axonframework/migration/axon4toaxon5messaging.md)
-  * **Apply Axon Framework 5 messaging module renames**
-  * Migrates the messaging core (command, event, query handling) from `org.axonframework.\{command,event,query\}handling` into the `org.axonframework.messaging.*` namespace, relocates handler &amp; interceptor annotations into their `.annotation.*` subpackages, renames `EventBus` to `EventSink`, fixes `MetaData` casing to `Metadata`, relocates the top-level messaging API (`Message`, `Metadata`, `UnitOfWork`, `MessageHandlerInterceptor`, `MessageHandlerInterceptorChain`, `correlation.*`) into `messaging.core.*`, moves the sequencing policy package out of `eventhandling.async` into `messaging.core.sequencing`, relocates `tokenstore` and the replay/reset annotations under their AF5 subpackages, and moves `QueryGateway` into its own gateway subpackage.
-* [org.axonframework.migration.Axon4ToAxon5MetricsDropwizardExtension](/recipes/axonframework/migration/axon4toaxon5metricsdropwizardextension.md)
-  * **Migrate the Dropwizard Metrics extension to Axon Framework 5**
-  * Relocates `org.axonframework.metrics` to `org.axonframework.extension.metrics.dropwizard`, reflecting the move from a flat `metrics` namespace to a per-provider layout under `extension.metrics.*`.
-* [org.axonframework.migration.Axon4ToAxon5MetricsMicrometerExtension](/recipes/axonframework/migration/axon4toaxon5metricsmicrometerextension.md)
-  * **Migrate the Micrometer Metrics extension to Axon Framework 5**
-  * Relocates `org.axonframework.micrometer` to `org.axonframework.extension.metrics.micrometer`, reflecting the move into the per-provider `extension.metrics.*` layout.
-* [org.axonframework.migration.Axon4ToAxon5Modelling](/recipes/axonframework/migration/axon4toaxon5modelling.md)
-  * **Apply Axon Framework 5 modelling module renames**
-  * Migrates the modelling layer from the `aggregate` vocabulary to the `entity` vocabulary: relocates `org.axonframework.modelling.command` to `org.axonframework.modelling.entity`, renames `TargetAggregateIdentifier` to `TargetEntityId`, `AggregateMember` to `EntityMember`, `Repository` into `modelling.repository`, and `CommandTargetResolver` to `EntityIdResolver`. Strips AF4-only modelling annotations (`@AggregateIdentifier`, `@CreationPolicy`) that have no AF5 successor — id resolution moved onto commands via `@TargetEntityId`, and the AF4 creation-policy semantics map onto static command handlers in AF5 (a manual rewrite the recipe cannot infer beyond removing the annotation itself).
-* [org.axonframework.migration.Axon4ToAxon5MongoExtension](/recipes/axonframework/migration/axon4toaxon5mongoextension.md)
-  * **Migrate the Mongo extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the Mongo extension migration. The Mongo extension lives at `org.axonframework.extensions.mongo` in AF4 and does not yet have a finalized Axon Framework 5 equivalent. Update this recipe once the AF5 Mongo integration ships.
-* [org.axonframework.migration.Axon4ToAxon5MultitenancyExtension](/recipes/axonframework/migration/axon4toaxon5multitenancyextension.md)
-  * **Migrate the Multitenancy extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the Multitenancy extension migration. The extension lives at `org.axonframework.extensions.multitenancy` in AF4 and does not yet have a finalized Axon Framework 5 equivalent. Update this recipe once the AF5 multitenancy story ships.
-* [org.axonframework.migration.Axon4ToAxon5QueryResponseTypes](/recipes/axonframework/migration/axon4toaxon5queryresponsetypes.md)
-  * **Unwrap ResponseTypes wrappers on AF5-shape QueryGateway.query(...) calls**
-  * On two-argument `queryGateway.query(payload, ResponseType)` calls, unwraps the AF4 `ResponseTypes.instanceOf(...)` / `optionalInstanceOf(...)` / `multipleInstancesOf(...)` wrapper to the plain `Class&lt;R&gt;` form AF5 expects, and renames `query(payload, multipleInstancesOf(R.class))` to `queryMany(payload, R.class)`. Three-argument `query(String, Object, ...)` forms, `subscriptionQuery(...)`, and `streamingQuery(...)` are left untouched so the per-construct migration skill keeps the AF4 fingerprints it needs for design decisions. Removes `ResponseType` / `ResponseTypes` imports only when no references remain.
-* [org.axonframework.migration.Axon4ToAxon5ReactorExtension](/recipes/axonframework/migration/axon4toaxon5reactorextension.md)
-  * **Migrate the Reactor extension to Axon Framework 5**
-  * Relocates `org.axonframework.extensions.reactor.*` to `org.axonframework.extension.reactor.*` (singular `extension`) and inserts the `messaging.` segment in front of the `commandhandling`, `eventhandling`, and `queryhandling` subpackages. The bare `extensions.reactor.messaging.*` package (which holds `ReactorMessageDispatchInterceptor` and the interceptor chain) is moved under `extension.reactor.messaging.core.*`.
-* [org.axonframework.migration.Axon4ToAxon5SpringAotExtension](/recipes/axonframework/migration/axon4toaxon5springaotextension.md)
-  * **Remove the unported axon-spring-aot extension**
-  * The `org.axonframework.extensions.spring-aot:axon-spring-aot` extension has no Axon Framework 5 port. Removes the dependency so the project compiles against AF5. Projects that need Spring AOT / native-image support against AF5 must reintroduce equivalent functionality manually — there is no drop-in replacement.
-* [org.axonframework.migration.Axon4ToAxon5SpringBootActuatorExtension](/recipes/axonframework/migration/axon4toaxon5springbootactuatorextension.md)
-  * **Migrate the Spring Boot Actuator extension to Axon Framework 5**
-  * Relocates `org.axonframework.actuator` to `org.axonframework.extension.springboot.actuator`. The Actuator support is now nested under the Spring Boot extension namespace.
-* [org.axonframework.migration.Axon4ToAxon5SpringBootExtension](/recipes/axonframework/migration/axon4toaxon5springbootextension.md)
-  * **Migrate the Spring Boot extension to Axon Framework 5**
-  * Relocates `org.axonframework.springboot` to `org.axonframework.extension.springboot`, matching the Maven groupId move to `org.axonframework.extensions.spring`. Covers both the autoconfigure and starter artifacts (apps depend on the starter, which transitively pulls autoconfigure). Also rewrites Spring Boot configuration property keys whose binding class moved or was renamed in AF5.
-* [org.axonframework.migration.Axon4ToAxon5SpringCloudExtension](/recipes/axonframework/migration/axon4toaxon5springcloudextension.md)
-  * **Migrate the Spring Cloud extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the Spring Cloud extension migration. The Spring Cloud extension at `org.axonframework.extensions.springcloud` provided distributed command bus routing in AF4. In Axon Framework 5 the distributed command bus has moved into the AxonIQ commercial offering (`io.axoniq.framework:axoniq-distributed-messaging`). Code using `SpringCloudCommandRouter` must be replaced with the AxonIQ commercial distributed messaging APIs.
-* [org.axonframework.migration.Axon4ToAxon5SpringExtension](/recipes/axonframework/migration/axon4toaxon5springextension.md)
-  * **Migrate the Spring extension to Axon Framework 5**
-  * Relocates `org.axonframework.spring` to `org.axonframework.extension.spring` and renames the Spring stereotype `@Aggregate` to `@EventSourced`. The stereotype rename is mapped from both the AF4 location and the post-package- move location, so the recipe is order-independent.
-* [org.axonframework.migration.Axon4ToAxon5Test](/recipes/axonframework/migration/axon4toaxon5test.md)
-  * **Apply Axon Framework 5 test module renames**
-  * Renames `AggregateTestFixture` and `SagaTestFixture` to the unified `AxonTestFixture` introduced in Axon Framework 5, and rewrites AF4-style flat fixture call chains (`fixture.given(...).when(...).expectEvents(...)`) to the AF5 fluent given/when/then API (`fixture.given().events(...).when().command(...).then().events(...)`). Also generates an `@AfterEach tearDown()` calling `fixture.stop()` on test classes that declare an `AxonTestFixture` field but have no existing `@AfterEach`. Targets the `axon-test` Maven artifact. Hamcrest matcher conversions and Kotlin `@AfterEach` insertion remain manual.
-* [org.axonframework.migration.Axon4ToAxon5TracingOpenTelemetryExtension](/recipes/axonframework/migration/axon4toaxon5tracingopentelemetryextension.md)
-  * **Migrate the OpenTelemetry tracing extension to Axon Framework 5 (placeholder)**
-  * Placeholder for the OpenTelemetry tracing extension migration. Revisioning of the distributed tracing extension for Axon Framework 5 is slated for a later release (see issue #3594). Update this recipe once the AF5 OpenTelemetry tracing integration ships.
-* [org.axonframework.migration.Axon4ToAxon5TracingOpenTracingExtension](/recipes/axonframework/migration/axon4toaxon5tracingopentracingextension.md)
-  * **Migrate the OpenTracing tracing extension to Axon Framework 5 (placeholder)**
-  * Placeholder. The OpenTracing tracing extension at `org.axonframework.extensions.tracing` is superseded by the OpenTelemetry tracing extension in Axon Framework 5 (see `Axon4ToAxon5TracingOpenTelemetryExtension`). Code using OpenTracing must be migrated to OpenTelemetry manually.
-* [org.axonframework.migration.ConfigureEventSourcedAnnotation](/recipes/axonframework/migration/configureeventsourcedannotation.md)
-  * **Add explicit tagKey and idType to @EventSourced**
-  * Adds explicit tagKey = &quot;&lt;EntitySimpleName&gt;&quot; and idType = &lt;ResolvedType&gt;.class to @EventSourced annotations that have no tagKey set. The tagKey is derived from the class simple name (matching the AF5 default). The idType is deduced from the type of the field annotated with @AggregateIdentifier in AF4. When that field is absent (e.g. POJO aggregate without an explicit identifier field) the idType falls back to Object.class and is flagged with a TODO(axon4to5): comment.
-* [org.axonframework.migration.ConvertCommandHandlerConstructorToCompanionObject](/recipes/axonframework/migration/convertcommandhandlerconstructortocompanionobject.md)
-  * **Convert Kotlin @CommandHandler constructors to a companion-object handle method**
-  * Rewrites Kotlin `@CommandHandler constructor(...)` declarations into `companion object \{ @JvmStatic @CommandHandler fun handle(...) \}` on the same class, matching the AF5 contract where `@CommandHandler` no longer targets constructors. Parameter list and method body are preserved.
-* [org.axonframework.migration.ConvertCommandHandlerConstructorToStaticMethod](/recipes/axonframework/migration/convertcommandhandlerconstructortostaticmethod.md)
-  * **Convert @CommandHandler constructors to static handle methods**
-  * Rewrites Axon Framework 4 `@CommandHandler` constructors into `public static void handle(...)` methods, matching the AF5 contract where `@CommandHandler` no longer targets constructors. Parameter list and method body are preserved.
-* [org.axonframework.migration.MigrateAggregateTestFixtureSetup](/recipes/axonframework/migration/migrateaggregatetestfixturesetup.md)
-  * **Migrate AggregateTestFixture setup to AxonTestFixture.with(EventSourcingConfigurer...)**
-  * Rewrites `new AggregateTestFixture&lt;X&gt;(X.class)` (the AF4 aggregate-fixture constructor) to AF5's `AxonTestFixture.with(EventSourcingConfigurer.create().registerEntity(EventSourcedEntityModule.autodetected(&lt;IdType&gt;.class, X.class)))`. The aggregate type X is read from the class-literal constructor argument; the id type is looked up via the cross-recipe map populated by AddEventTagAnnotation (while @AggregateIdentifier is still on the source). Only matches the AF4 AggregateTestFixture FQN — SagaTestFixture setups are left for manual migration.
-* [org.axonframework.migration.MigrateAxonTestFixtureFluentApi](/recipes/axonframework/migration/migrateaxontestfixturefluentapi.md)
-  * **Migrate AggregateTestFixture calls to the AxonTestFixture fluent API**
-  * Rewrites the flat AF4 `fixture.given(...).when(...).expectEvents(...)` call shape to the AF5 fluent `fixture.given().events(...).when().command(...).then().events(...)` shape, including the leaf-method renames (`expectNoEvents` → `noEvents`, `expectSuccessfulHandlerExecution` → `success`, `expectException` + `expectExceptionMessage` → single `exception(cls, msg)`, etc.). The fixture setup migration (constructor → `AxonTestFixture.with(configurer)`, `@AfterEach stop()`) and Hamcrest matcher conversions stay manual.
-* [org.axonframework.migration.MigrateCommandGatewayInEventHandler](/recipes/axonframework/migration/migratecommandgatewayineventhandler.md)
-  * **Replace class-level CommandGateway with method-parameter CommandDispatcher in @EventHandler methods**
-  * Inside every `@EventHandler` method in the class, rewrites calls of the form `commandGateway.send(...)` / `commandGateway.sendAndWait(...)` (where `commandGateway` is a class-level `CommandGateway` field) to `commandDispatcher.send(...)` on a method-level `CommandDispatcher` parameter — adding the parameter when missing. For `void` handlers whose body is a single dispatch expression or a single try/catch with one dispatch per branch, the return type is widened to `CompletableFuture&lt;?&gt;` and the dispatch is converted to `return ... .getResultMessage();`. Once no other references to the gateway field remain, the field, its constructor parameter, and the matching assignment are removed.
-* [org.axonframework.migration.MigrateKotlinDslBomImport](/recipes/axonframework/migration/migratekotlindslbomimport.md)
-  * **Migrate Kotlin DSL `mavenBom(...)` import (with property indirection)**
-  * Swaps the `groupId:artifactId` prefix of a Spring Dependency Management `mavenBom(&quot;g:a:$\{property(&quot;...&quot;)\}&quot;)` call in a `build.gradle.kts` script, leaving the `$\{property(...)\}` indirection in place. Optionally updates the literal value of the matching `extra[&quot;...&quot;]` declaration so the version follows the new BOM. Targets a gap in `gradle.ChangeManagedDependency` where the Kotlin string-template variant of `property(...)` is not recognized.
-* [org.axonframework.migration.MigrateMessageInterceptorSignatures](/recipes/axonframework/migration/migratemessageinterceptorsignatures.md)
-  * **Migrate MessageHandlerInterceptor / MessageDispatchInterceptor signatures to AF5**
-  * Rewrites the method signatures of `MessageHandlerInterceptor` and `MessageDispatchInterceptor` implementations to their AF5 shape: `handle(UnitOfWork, InterceptorChain) -&gt; Object` becomes `interceptOnHandle(M, ProcessingContext, MessageHandlerInterceptorChain&lt;M&gt;) -&gt; MessageStream&lt;?&gt;` (and similarly for the dispatch interceptor). The method **body is left untouched** — the dropped `unitOfWork` / `interceptorChain` references become compile errors, surfacing every call site that needs review. A class-level `// TODO(axon4to5):` comment points to the migration path doc. The message type `M` is read from the `implements` clause; raw implementations fall back to `Message`. Runs after the AF4 -&gt; AF5 FQN renames.
-* [org.axonframework.migration.MigrateSequencingPolicyLambda](/recipes/axonframework/migration/migratesequencingpolicylambda.md)
-  * **Migrate SequencingPolicy lambdas to the AF5 two-arg, Optional-returning shape**
-  * Rewrites single-argument `SequencingPolicy` lambdas (`e -&gt; body`) to the AF5 shape `(e, ctx) -&gt; Optional.ofNullable(body)`. The AF5 `SequencingPolicy.sequenceIdentifierFor` method takes both a message and a `ProcessingContext`, and returns `Optional&lt;Object&gt;` instead of a nullable `Object`. Adds the `java.util.Optional` import. Leaves block-body lambdas, multi-parameter lambdas, and anonymous inner classes alone — those need manual rewriting since the AF4 method name (`getSequenceIdentifierFor`) and the AF5 method name (`sequenceIdentifierFor`) differ.
-* [org.axonframework.migration.MigrateSnapshotTriggerDefinitionToAnnotation](/recipes/axonframework/migration/migratesnapshottriggerdefinitiontoannotation.md)
-  * **Migrate SnapshotTriggerDefinition @Bean to @Snapshotting**
-  * Replaces AF4 Spring Boot @Bean methods returning SnapshotTriggerDefinition with the AF5 @Snapshotting annotation on the corresponding aggregate class. EventCountSnapshotTriggerDefinition maps to afterEvents; AggregateLoadTimeSnapshotTriggerDefinition maps to afterSourcingTime. Custom implementations leave a TODO comment for manual review.
-* [org.axonframework.migration.RemoveTypeArguments](/recipes/axonframework/migration/removetypearguments.md)
-  * **Remove type arguments from a specific type**
-  * Removes the generic type arguments (`&lt;...&gt;`) from any usage of the configured fully-qualified type. Preserves the underlying type reference and its surrounding context (variables, parameters, return types, generic bounds, etc.).
-* [org.axonframework.migration.ReplaceAggregateLifecycleApply](/recipes/axonframework/migration/replaceaggregatelifecycleapply.md)
-  * **Replace AggregateLifecycle.apply(...) with EventAppender.append(...)**
-  * Replaces every `AggregateLifecycle.apply(X)` (statically imported or via the class) with `eventAppender.append(X)`, injecting an `EventAppender eventAppender` parameter into the enclosing method when one is not already declared. Drops the static `apply` import once no usages remain.
-* [org.axonframework.migration.UpgradeAxon4ToAxon5](/recipes/axonframework/migration/upgradeaxon4toaxon5.md)
-  * **Upgrade to free Axon Framework 5**
-  * Migrates an Axon Framework 4.x application to free (Apache 2.0) Axon Framework 5. Bumps the Axon Framework dependency versions, applies per-module rename recipes (one per core framework module), and renames Maven coordinates within the `org.axonframework.*` namespace. Does NOT touch features dropped from free AF5 (Axon Server, DLQ, DistributedCommandBus) — see `UpgradeAxon4ToAxoniq5` for the commercial path.
-* [org.axonframework.migration.UpgradeJava](/recipes/axonframework/migration/upgradejava.md)
-  * **Upgrade Java compiler target for Axon Framework 5**
-  * Bumps the Java compiler target in pom.xml/build.gradle to the configured LTS (defaults to 21, the Axon Framework 5 minimum). No-op for modules already at or above the target — projects already on a higher Java release are left untouched.
-* [org.axonframework.migration.UpgradeKotlin](/recipes/axonframework/migration/upgradekotlin.md)
-  * **Upgrade Kotlin to 2.x for Axon Framework 5**
-  * Bumps the `org.jetbrains.kotlin:*` dependency versions and the `kotlin-maven-plugin` to the configured Kotlin line (defaults to &quot;2.x&quot;, the latest Kotlin 2.x). No-op for modules already at or above the target — the underlying upgrade recipes never downgrade. Rejects targets below Kotlin 2.0.
+* [org.axonframework.migration.UpgradeAxonFramework_4_Jakarta](/recipes/axonframework/migration/upgradeaxonframework_4_jakarta.md)
+  * **Upgrade to Axonframework 4.x Jakarta**
+  * Migration file to upgrade from an Axon Framework Javax-specific project to Jakarta.
+* [org.axonframework.migration.UpgradeAxonFramework_4_Javax](/recipes/axonframework/migration/upgradeaxonframework_4_javax.md)
+  * **Upgrade to Axonframework 4.x Javax**
+  * Migration file to upgrade an Axon Framework Javax-specific project and remain on Javax.
 * [org.openrewrite.java.camel.migrate.removedExtensions](/recipes/java/camel/migrate/removedextensions.md)
   * **Remove non existing camel-quarkus extensions**
   * Removal of maven dependencies for extension, which are no longer part of Camel 3.x.

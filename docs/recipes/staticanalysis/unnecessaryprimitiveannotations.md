@@ -31,6 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Standardize nullability annotations to JSpecify](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/migrate/standardizenullabilityannotationstojspecify)
 
 ## Example
 

@@ -68,6 +68,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](../../../java/testing/mockito/powermockitomockstatictomockito)
 * [Replace `PowerMockito.whenNew` with Mockito counterpart](../../../java/testing/mockito/powermockitowhennewtomockito)
 * [Replace PowerMock `Whitebox` with Java reflection](../../../java/testing/mockito/powermockwhiteboxtojavareflection)
+* [Add comment to method invocations](../../../java/addcommenttomethodinvocations)
+  * comment: ` PowerMock `Whitebox` call could not be automatically migrated to reflection; migrate manually `
+  * methodPattern: `org.powermock.reflect.Whitebox *(..)`
 * [Cleanup PowerMock imports](../../../java/testing/mockito/cleanuppowermockimports)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.powermock`
@@ -120,6 +123,9 @@ recipeList:
   - org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito
   - org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito
   - org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection
+  - org.openrewrite.java.AddCommentToMethodInvocations:
+      comment:  PowerMock `Whitebox` call could not be automatically migrated to reflection; migrate manually 
+      methodPattern: org.powermock.reflect.Whitebox *(..)
   - org.openrewrite.java.testing.mockito.CleanupPowerMockImports
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.powermock

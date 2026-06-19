@@ -504,21 +504,3 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions](/recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
   * **Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`**
   * Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version &lt; 3.x.
-
-### rewrite-third-party
-
-* [org.axonframework.migration.AddCommandAnnotation](/recipes/axonframework/migration/addcommandannotation.md)
-  * **Add @Command to command payload classes**
-  * Scans @CommandHandler methods and annotates their command parameter types with @Command. Also migrates @RoutingKey on a field to @Command(routingKey = &quot;fieldName&quot;) on the class, removing the @RoutingKey field annotation.
-* [org.axonframework.migration.AddEventAnnotation](/recipes/axonframework/migration/addeventannotation.md)
-  * **Add @Event to event payload classes**
-  * Scans @EventSourcingHandler methods and annotates their event parameter types with @Event. Migrates @Revision(&quot;x&quot;) on the class to @Event(version = &quot;x&quot;), removing the now-obsolete @Revision annotation.
-* [org.axonframework.migration.AddEventTagAnnotation](/recipes/axonframework/migration/addeventtagannotation.md)
-  * **Add @EventTag to the aggregate-identifier field of event payload classes**
-  * Scans event-sourced entity classes for their @AggregateIdentifier field and the event types used in @EventSourcingHandler methods, then annotates the corresponding field in each event class with @EventTag(key = &quot;&lt;EntitySimpleName&gt;&quot;).
-* [org.axonframework.migration.ConfigureEventSourcedAnnotation](/recipes/axonframework/migration/configureeventsourcedannotation.md)
-  * **Add explicit tagKey and idType to @EventSourced**
-  * Adds explicit tagKey = &quot;&lt;EntitySimpleName&gt;&quot; and idType = &lt;ResolvedType&gt;.class to @EventSourced annotations that have no tagKey set. The tagKey is derived from the class simple name (matching the AF5 default). The idType is deduced from the type of the field annotated with @AggregateIdentifier in AF4. When that field is absent (e.g. POJO aggregate without an explicit identifier field) the idType falls back to Object.class and is flagged with a TODO(axon4to5): comment.
-* [org.axonframework.migration.MigrateSnapshotTriggerDefinitionToAnnotation](/recipes/axonframework/migration/migratesnapshottriggerdefinitiontoannotation.md)
-  * **Migrate SnapshotTriggerDefinition @Bean to @Snapshotting**
-  * Replaces AF4 Spring Boot @Bean methods returning SnapshotTriggerDefinition with the AF5 @Snapshotting annotation on the corresponding aggregate class. EventCountSnapshotTriggerDefinition maps to afterEvents; AggregateLoadTimeSnapshotTriggerDefinition maps to afterSourcingTime. Custom implementations leave a TODO comment for manual review.

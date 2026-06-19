@@ -51,6 +51,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Refaster rules that replace TestNG assertions with equivalent AssertJ assertions](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes)
 * [TestNG `assertEquals` to AssertJ](../../../java/testing/testng/testngassertequalstoassertthat)
 * [TestNG `assertNotEquals` to AssertJ](../../../java/testing/testng/testngassertnotequalstoassertthat)
+* [TestNG `assertEqualsNoOrder` to AssertJ](../../../java/testing/testng/testngassertequalsnoordertoassertthat)
+* [TestNG `assertEqualsDeep`/`assertNotEqualsDeep` to AssertJ](../../../java/testing/testng/testngassertequalsdeeptoassertthat)
+* [TestNG `assertSame` to AssertJ](../../../java/testing/testng/testngassertsametoassertthat)
+* [TestNG `assertNotSame` to AssertJ](../../../java/testing/testng/testngassertnotsametoassertthat)
+* [TestNG `assertThrows`/`expectThrows` to AssertJ](../../../java/testing/testng/testngassertthrowstoassertthat)
+* [TestNG `assertList*` to AssertJ](../../../java/testing/testng/testngassertlisttoassertthat)
 
 </TabItem>
 
@@ -79,6 +85,12 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes
   - org.openrewrite.java.testing.testng.TestNgAssertEqualsToAssertThat
   - org.openrewrite.java.testing.testng.TestNgAssertNotEqualsToAssertThat
+  - org.openrewrite.java.testing.testng.TestNgAssertEqualsNoOrderToAssertThat
+  - org.openrewrite.java.testing.testng.TestNgAssertEqualsDeepToAssertThat
+  - org.openrewrite.java.testing.testng.TestNgAssertSameToAssertThat
+  - org.openrewrite.java.testing.testng.TestNgAssertNotSameToAssertThat
+  - org.openrewrite.java.testing.testng.TestNgAssertThrowsToAssertThat
+  - org.openrewrite.java.testing.testng.TestNgAssertListToAssertThat
 
 ```
 </TabItem>

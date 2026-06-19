@@ -28,6 +28,7 @@ This recipe is used as part of the following composite recipes:
 
 * [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
 * [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
+* [Standardize nullability annotations to JSpecify](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/migrate/standardizenullabilityannotationstojspecify)
 
 ## Example
 

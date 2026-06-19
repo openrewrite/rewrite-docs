@@ -4934,7 +4934,7 @@ _8 recipes_
   * Applies best practices for Mockito tests.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
   * **Replace PowerMock `Whitebox` with Java reflection**
-  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
+  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`, `getField`, `getMethod`, `invokeConstructor`) with plain Java reflection using `java.lang.reflect.Field`, `java.lang.reflect.Method`, and `java.lang.reflect.Constructor`.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
   * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.
@@ -8274,7 +8274,7 @@ _53 recipes_
   * Applies best practices for Mockito tests.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
   * **Replace PowerMock `Whitebox` with Java reflection**
-  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
+  * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`, `getField`, `getMethod`, `invokeConstructor`) with plain Java reflection using `java.lang.reflect.Field`, `java.lang.reflect.Method`, and `java.lang.reflect.Constructor`.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
   * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.

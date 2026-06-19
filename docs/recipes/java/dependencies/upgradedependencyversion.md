@@ -215,7 +215,6 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Hibernate to 6.6](/recipes/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
 * [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
-* [Upgrade Kotlin to 2.x for Axon Framework 5](/recipes/axonframework/migration/upgradekotlin.md)
 * [Upgrade Log4j 2.x dependency version](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
 * [Upgrade MyBatis to Spring Boot 2.0](/recipes/java/spring/boot3/upgrademybatistospringboot_2_0.md)
 * [Upgrade MyBatis to Spring Boot 2.1](/recipes/java/spring/boot3/upgrademybatistospringboot_2_1.md)
@@ -241,7 +240,6 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade dependencies to Spring Cloud 2025](/recipes/java/spring/cloud2025/dependencyupgrades.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
 * [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
-* [Upgrade to Axoniq Framework 5 (commercial)](/recipes/axoniq/framework/migration/upgradeaxon4toaxoniq5.md)
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
 * [Upgrade to JUnit 5.13](/recipes/java/testing/junit5/upgradetojunit513.md)
 * [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
@@ -255,7 +253,6 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade to SpringDoc 3.0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
 * [Upgrade to `kotlinx-coroutines` 1.10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxcoroutines_1_10)
 * [Upgrade to `kotlinx-serialization` 1.8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxserialization_1_8)
-* [Upgrade to free Axon Framework 5](/recipes/axonframework/migration/upgradeaxon4toaxon5.md)
 * [Use wiremock extension](/recipes/java/testing/junit5/usewiremockextension.md)
 
 ## Example

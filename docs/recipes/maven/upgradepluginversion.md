@@ -73,7 +73,6 @@ This recipe is used as part of the following composite recipes:
 * [Update the WebLogic version to 15.1.1](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
 * [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
 * [Upgrade Java to 17+ for Kafka broker/tools](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkabroker)
-* [Upgrade Kotlin to 2.x for Axon Framework 5](/recipes/axonframework/migration/upgradekotlin.md)
 * [Upgrade plugins to Java 11 compatible versions](/recipes/java/migrate/upgradepluginsforjava11.md)
 * [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)

@@ -5530,6 +5530,102 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Remove `PartitionGrouper` configuration**
   * Starting with Kafka Streams 2.4, the `PartitionGrouper` API was deprecated and partition grouping is now fully handled internally by the library. This recipe removes the deprecated `PARTITION_GROUPER_CLASS_CONFIG` configuration.
 
+### rewrite-nullability
+
+* [io.moderne.nullability.ApplyNullAwayFindingsFromReport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/applynullawayfindingsfromreport)
+  * **Apply NullAway findings from a WARN report**
+  * Applies sound, behavior-preserving fixes for the NullAway findings in a WARN-level compile report at /tmp/nullaway-report.txt (requireNonNull at dereferences, @MonotonicNonNull on uninitialized fields, @Nullable on nullable returns/field-assignments). Run iteratively: compile, regenerate the report, re-run, until no findings remain.
+* [io.moderne.nullability.PrepareForNullAway](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/preparefornullaway)
+  * **Prepare a codebase for NullAway**
+  * The end-to-end, code-level preparation for enabling [NullAway](https://github.com/uber/NullAway): standardize nullability annotations to JSpecify, infer and add `@Nullable` everywhere a value is provably nullable, and apply the null-safety code refactors (lazily-initialized fields get `@MonotonicNonNull`; nullable field reads are hoisted into locals so the checker can refine them). This covers the safe, automatic transformations. The deliberately-gated rollout steps — marking `@NullMarked` scopes (`io.moderne.nullability.scope.*`) and wiring NullAway into the build (`io.moderne.nullability.build.*`) — are intentionally NOT included here; run them per module once `io.moderne.nullability.search.NullAwayReadinessReport` shows that module is clean.
+* [io.moderne.nullability.PrepareForNullAwayWithBaseline](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/preparefornullawaywithbaseline)
+  * **Prepare a codebase for NullAway, baselining the remaining findings**
+  * Runs the full code-level `io.moderne.nullability.PrepareForNullAway` inference, then carries the pre-existing NullAway findings of the classes listed in the baseline file as a `@SuppressWarnings(&quot;NullAway&quot;)` baseline. This lets a codebase enable NullAway at ERROR immediately — every clean class and every new file is checked, while the listed classes' existing debt is snapshotted to be burned down over time. The baseline file is produced from a NullAway WARN-level build report of the inference output (one fully-qualified top-level class name per line).
+* [io.moderne.nullability.cleanup.HoistNullableFieldReadIntoLocal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/cleanup/hoistnullablefieldreadintolocal)
+  * **Hoist a guarded `@Nullable` field read into a local variable**
+  * NullAway cannot refine a `@Nullable` field across a dereference, because the field could be mutated between the null check and the use, so `if (this.f != null) \{ this.f.foo(); \}` is rejected. This recipe reads the field into a local once — `String f = this.f; if (f != null) \{ f.foo(); \}` — which NullAway can refine. It matches an `if` whose condition is `&lt;field&gt; != null` (or `null != &lt;field&gt;`) for an instance field declared with a nullability annotation, and whose then-block dereferences the field, then introduces a local of the field's type before the `if` and replaces the field reads in the condition and then-block with that local. The else-block is left untouched (the field is still nullable there). Conservative by design: it skips locals (which NullAway already refines), non-`@Nullable` fields, fields reassigned inside the then-block, and cases where the chosen local name would collide with an in-scope name. Only Java sources are modified.
+* [io.moderne.nullability.cleanup.MoveNullableToTypeUsePosition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/cleanup/movenullabletotypeuseposition)
+  * **Move a leading `@Nullable` to the type-use position**
+  * Relocates a leading (declaration-position) JSpecify `@Nullable` to immediately before the type when modifiers separate them, turning `@Nullable private final String f` into `private final @Nullable String f` (and the same for method returns). JSpecify `@Nullable` is a `TYPE_USE` annotation, so the type-use position is the precise, conventional placement; the leading form compiles and means the same but reads less clearly. Only the `Nullable` simple name is moved (declaration-only flavors like `@CheckForNull` are left alone), the existing annotation is reused, and it only acts when a modifier precedes the type.
+* [io.moderne.nullability.cleanup.RelocateNullableToArrayReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/cleanup/relocatenullabletoarrayreference)
+  * **Relocate a misplaced leading `@Nullable` on a primitive array to the array reference**
+  * Turns `@Nullable long[] x` into `long @Nullable [] x`. On a primitive-element array a leading type-use `@Nullable` binds to the (impossible-to-be-null) element type, so NullAway still treats the array reference as `@NonNull` and flags `null` assignments; moving the annotation to the array-reference position (which NullAway reads) fixes that without changing intent. Only primitive-element arrays with a leading nullable annotation are changed; object-element arrays (where a leading `@Nullable` legitimately means nullable elements) are left untouched.
+* [io.moderne.nullability.cleanup.RemoveRedundantNullableOnMethodReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/cleanup/removeredundantnullableonmethodreturn)
+  * **Remove a redundant declaration-position `@Nullable` on a method return**
+  * When a method return type already carries a TYPE_USE `@Nullable` (for example `&lt;T&gt; @Nullable T` or `pkg.@Nullable Type`), a second `@Nullable` in the leading (declaration) position or before the type parameters (`@Nullable &lt;T&gt; @Nullable T`) is redundant — and on generic, qualified, or nested return types it is rejected by `javac` (&quot;Nullable is not a repeatable annotation interface&quot; / &quot;scoping construct cannot be annotated with type-use annotation&quot;). This removes that duplicate so the JSpecify annotation survives in the single, valid TYPE_USE position. It only ever removes an annotation that is provably duplicated by one on the return type itself, so it never changes a method's nullability.
+* [io.moderne.nullability.cleanup.UseMonotonicNonNullForLazyInitializedField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/cleanup/usemonotonicnonnullforlazyinitializedfield)
+  * **Use `@MonotonicNonNull` for lazily-initialized fields**
+  * Annotates a lazily-initialized field with the Checker Framework `@org.checkerframework.checker.nullness.qual.MonotonicNonNull` annotation, which NullAway recognises as the idiomatic contract for a field that is set the first time it is needed and never reset to null afterward. NullAway flags a non-null instance field that is not assigned in the constructor; for such a lazily-initialized field `@MonotonicNonNull` is the correct fix rather than `@Nullable`, because the field is non-null after first use, so readers should not be forced to handle null. A field qualifies when at least one assignment to it is guarded by a `f == null` (or `this.f == null`) check, it is never assigned null anywhere except an explicit `= null` declaration initializer, and it is not assigned a non-null value at its declaration or unconditionally in a constructor. Conservative by design: it skips primitive, `final`, `static`, and already-annotated fields, fields assigned null outside their initializer (genuinely `@Nullable` — left for `AddNullableToField`), and fields assigned non-null unconditionally. Kotlin and Groovy express field nullability in the type system, which their compilers already enforce, so those sources are generally left unchanged.
+* [io.moderne.nullability.fix.ApplyNullAwayFindings](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/fix/applynullawayfindings)
+  * **Apply sound fixes for NullAway findings**
+  * Applies behavior-preserving fixes for the findings in a NullAway WARN-level compile report, driven by the exact `file:line` locations NullAway reported. Dereferences of a `@Nullable` value, `@Nullable` values that are unboxed, `@Nullable` arguments passed where a `@NonNull` parameter is required, and `@Nullable` `switch` selectors are all wrapped in `requireNonNull(...)` (statically imported from `java.util.Objects`, which throws exactly when the original code already would). Uninitialized `@NonNull` fields (instance or `static`) are annotated `@MonotonicNonNull`, methods that return a `@Nullable` value get a JSpecify `@Nullable` return type, fields assigned a `@Nullable` value get a JSpecify `@Nullable` (which takes precedence over `@MonotonicNonNull`), and a parameter that an override declares `@NonNull` while its supertype declares it `@Nullable` gets a JSpecify `@Nullable`. No warnings are suppressed and runtime behavior is unchanged. The recipe is idempotent and conservative: for an `@Override` it resolves the overridden supertype method's return nullability from the type model and acts covariantly (widen to `@Nullable` only when the overridden return is `@Nullable`; otherwise assert `@NonNull` with `requireNonNull`, or leave it alone when the contract is unknown), and it never emits invalid Java — on qualified/nested types it places the annotation in the type-use position (`Outer.@MonotonicNonNull Inner`). Only Java sources are modified.
+* [io.moderne.nullability.infer.AddNullableBoundToPassthroughTypeParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/addnullableboundtopassthroughtypeparameter)
+  * **Add a `@Nullable` upper bound to a pass-through type parameter fed a null-returning lambda**
+  * When a `null`-returning lambda is passed to a generic method whose single, unbounded type parameter is also its return type (a value pass-through such as `&lt;T&gt; T record(String, Supplier&lt;T&gt;)`), widen the declaration to `&lt;T extends @Nullable Object&gt;` so returning `null` through it is legal under JSpecify/NullAway. Relaxing the upper bound is sound (it never rejects previously-valid code) and is the standard JSpecify idiom for a type variable that passes a value through; the method's return correctly becomes `@Nullable` at the null-returning call sites. Only methods declared in the working set, with exactly one unbounded type parameter that is the return type, are changed.
+* [io.moderne.nullability.infer.AddNullableToArrayElementType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/addnullabletoarrayelementtype)
+  * **Add `@Nullable` to array element types that can hold null**
+  * Adds the JSpecify `@Nullable` annotation to the element type of a Java array whose elements are provably nullable, placing it on the component type to produce `@Nullable String[]` (the array's *elements* may be null) rather than `String @Nullable []` (the array *reference* may be null). NullAway in JSpecify mode checks this position. An array declaration (field, local, parameter, or return type) is annotated when its initializer is an array literal containing a `null` element (`String[] a = \{null\}`, `new String[]\{x, null\}`) or when an element is assigned a provably-null value in the same method body (`arr[i] = null`). Conservative by design: it skips primitive-element arrays (whose elements can never be null), arrays whose element type already carries a nullability annotation, and non-Java sources (Kotlin and Groovy express element nullability in the type system, which their compilers already enforce).
+* [io.moderne.nullability.infer.AddNullableToField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/addnullabletofield)
+  * **Add `@Nullable` to fields that can hold null**
+  * Adds the JSpecify `@Nullable` annotation to a Java field when that field is provably assigned a nullable value somewhere in the project: a declaration initializer or an assignment (`f = expr`, `this.f = expr`, or `obj.f = expr`) whose value is the `null` literal (directly, through a cast or parentheses, or via either branch of a ternary), or a call to a method whose return is itself nullable. Nullability therefore propagates from every assignment site to the field's declaration across the whole project. This prepares the code for NullAway. Conservative by design: it skips primitive fields, `final` fields with a non-null initializer, record components, fields that already carry a nullability annotation, and fields with a dependency-injection annotation (`@Inject`, `@Autowired`, `@Resource`, `@Mock`, `@Value`, `@Bean`) that are initialized externally. Kotlin and Groovy express field nullability in the type system (`T?`), which the compiler already enforces, so those sources are generally left unchanged.
+* [io.moderne.nullability.infer.AddNullableToFunctionalReturnArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/addnullabletofunctionalreturnargument)
+  * **Add `@Nullable` to a functional-interface return type argument fed a null-returning lambda**
+  * When a `null`-returning lambda is passed for a functional-interface parameter (such as `Function&lt;R, T&gt;`) of a method that consumes the produced value in a null-tolerant way, annotate that interface's return type argument `@Nullable` (`Function&lt;R, @Nullable T&gt;`) so returning `null` through the callback is legal under JSpecify/NullAway. This is the correct JSpecify expression of &quot;the callback may return null&quot;; it is distinct from widening a pass-through type-parameter bound (handled separately) and a de-overlap guard keeps the two from both firing. Only parameters of recognized functional interfaces, on methods declared in the working set, are changed; already-`@Nullable` and wildcard/raw arguments are left untouched.
+* [io.moderne.nullability.infer.AddNullableToParameterCrossFile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/addnullabletoparametercrossfile)
+  * **Add `@Nullable` to method parameters that can receive null**
+  * Adds the JSpecify `@Nullable` annotation to a Java method parameter when some call site anywhere in the project provably passes a nullable argument in that position: the `null` literal (directly, through a cast or parentheses, or via either branch of a ternary), or a call to a method whose return is itself nullable. Nullability therefore propagates from the call site to the callee's declaration across the whole project. This prepares the code for NullAway. Conservative by design: it skips primitive parameters, parameters that already carry a nullability annotation, varargs parameters, and `@Override` methods (where widening a parameter would break override consistency). Kotlin and Groovy express parameter nullability in the type system (`T?`), which the compiler already enforces, so those sources are generally left unchanged.
+* [io.moderne.nullability.infer.AddNullableToReturnType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/addnullabletoreturntype)
+  * **Add `@Nullable` to methods that can return null**
+  * Adds the JSpecify `@Nullable` annotation to the return type of Java methods whose body returns a provably-nullable value: an explicit `return null` (directly, through a cast or parentheses, or via either branch of a ternary), or a call to a method whose return is itself nullable. Nullability propagates from callee to caller across the whole project. This prepares the code for NullAway. Conservative by design: it skips primitive and `void` returns, methods that already carry a nullability annotation, and `@Override` methods (where annotating the return could violate the supertype contract). Kotlin and Groovy express return nullability in the type system (`T?`), which the compiler already enforces, so those sources are generally left unchanged.
+* [io.moderne.nullability.infer.AddNullableToTypeArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/addnullabletotypeargument)
+  * **Add `@Nullable` to collection and map type arguments that hold null elements**
+  * Places the JSpecify `@Nullable` annotation on a collection or map type argument when its elements or values are provably nullable, producing `List&lt;@Nullable String&gt;` or `Map&lt;String, @Nullable String&gt;`. JSpecify distinguishes `List&lt;@Nullable String&gt;` (the list may hold `null` elements) from `@Nullable List&lt;String&gt;` (the list reference may be `null`); this recipe annotates the type argument, which NullAway enforces in JSpecify mode. A type argument is annotated when `Collection.add(...)` is called with a provably-null element, `Map.put(...)` is called with a provably-null value, or the declaration's initializer is a `List.of(...)`/`Set.of(...)`/`Arrays.asList(...)` containing a `null`. The receiver is resolved to its declaration within the same compilation unit (cross-file declarations are not handled). Conservative by design: it skips wildcard (`?`) and raw type arguments, and arguments that are already `@Nullable`, so it is idempotent.
+* [io.moderne.nullability.infer.ComposeJSpecifyBestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/composejspecifybestpractices)
+  * **Compose JSpecify best practices (intra-body nullability inference)**
+  * The intra-body nullability inference pass. After [StandardizeNullabilityAnnotationsToJSpecify](https://docs.openrewrite.org) has normalized every annotation flavor onto a single [JSpecify](https://jspecify.dev) form, this recipe runs the OpenRewrite static-analysis inference recipes that derive nullability from signals *inside* each method body: methods whose bodies can return `null` (including standard library awareness such as `Map.get`/`Queue.poll`) and parameters that are null-checked in the body. These complement the cross-file inference recipes (`AddNullableToReturnType`, `AddNullableToParameterCrossFile`, `AddNullableToField`, `PropagateNullableAcrossOverrides`) which reason across files; this pass should run AFTER `StandardizeNullabilityAnnotationsToJSpecify` and alongside those cross-file inference recipes. All annotations are emitted as JSpecify (`org.jspecify.annotations.@Nullable` / `@NonNull`).
+* [io.moderne.nullability.infer.InferJavaNullabilityFromKotlinCallSites](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/inferjavanullabilityfromkotlincallsites)
+  * **Infer Java `@Nullable` return types from Kotlin call sites**
+  * Adds the JSpecify `@Nullable` annotation to the return type of **Java** methods based on how those methods are used in **Kotlin** code. A Java method returning a reference type appears to Kotlin as a platform type (`String!`) of unknown nullability; Kotlin call sites that treat the result as possibly null reveal the intended contract. This recipe scans Kotlin sources for such usage — a safe call (`call()?.x`), an elvis operand (`call() ?: fallback`), a not-null assertion (`call()!!`), or a comparison to `null` — and writes `@Nullable` onto the matching Java method declaration, resolving the platform-type ambiguity. Only Java sources are modified; Kotlin sources are read for evidence and left unchanged. Conservative by design: it skips primitive and `void` returns, methods that already carry a nullability annotation, and `@Override` methods (where annotating the return could violate the supertype contract).
+* [io.moderne.nullability.infer.InferNullability](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/infernullability)
+  * **Infer and add `@Nullable` annotations**
+  * Infer where reference values can be null and add JSpecify `@Nullable` accordingly — across method return types, parameters, fields, override hierarchies, Kotlin call sites, and generic/array element types — together with OpenRewrite's static-analysis intra-body inference. Run after `io.moderne.nullability.migrate.MigrateNullabilityToJSpecify` so existing annotations are already in JSpecify form. Nullability propagates across files and converges over successive recipe cycles.
+* [io.moderne.nullability.infer.PropagateNullableAcrossOverrides](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/propagatenullableacrossoverrides)
+  * **Propagate `@Nullable` across override relationships**
+  * Enforces NullAway override consistency by propagating existing JSpecify `@Nullable` annotations through `@Override` relationships. Because return types are covariant, a `@Nullable` return on an overriding method is propagated up to the supertype method it overrides. Because parameters are contravariant, a `@Nullable` parameter on a supertype method is propagated down to the corresponding parameter of every overriding method. Methods are matched across files by their erased signature `name(paramTypes)` plus a declaring-type subtype relationship. Conservative by design: it never widens a legal covariant return narrowing (a `@Nullable` supertype return overridden by a non-null return is left alone), skips primitive and `void` returns and already-annotated positions, and does nothing when a participating type cannot be resolved. Multi-hop hierarchies converge over successive recipe cycles. Only Java sources are modified; Kotlin and Groovy express nullability in the type system, which their compilers already enforce.
+* [io.moderne.nullability.infer.UpgradeLazilyInitializedFieldToMonotonicNonNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/upgradelazilyinitializedfieldtomonotonicnonnull)
+  * **Upgrade a lazily-initialized `@Nullable` field to `@MonotonicNonNull`**
+  * Upgrades a `private`, non-`final` JSpecify `@Nullable` reference field to the Checker Framework `@org.checkerframework.checker.nullness.qual.MonotonicNonNull` annotation when it is genuinely a lazily-initialized-non-null field, so NullAway treats reads of it as non-null and the `requireNonNull` noise a plain `@Nullable` would force at every read disappears. A field qualifies only if it is `private` and non-`final`, its declaration declares exactly one reference-typed variable, there is at least one assignment to it, EVERY assignment has a provably-non-null right-hand side (`new`, an array creation, a non-null literal, `this`, or a call to a method whose return is resolved and not `@Nullable`), at least one assignment is outside a constructor (the lazy signal), and EVERY null-observation of the field (`f == null`/`f != null`/`f instanceof X`) is a lazy-init guard — the condition of an `if` whose then-branch assigns the field. Conservative and sound by design: `private` bounds the analysis to the declaring class so it is complete, and the absence of any null-handling use means the upgrade is runtime-NPE-preserving — it only removes the `@Nullable` signal where `null` would already crash. Any field whose `null` is handled gracefully anywhere, or any condition that cannot be proven, leaves the field unchanged. Only Java sources are modified.
+* [io.moderne.nullability.migrate.MigrateNonNullApiToNullMarked](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/migrate/migratenonnullapitonullmarked)
+  * **Migrate `@NonNullApi`/`ParametersAreNonnullByDefault` to JSpecify `@NullMarked`**
+  * Migrates an existing package-level &quot;non-null by default&quot; convention to the JSpecify `@org.jspecify.annotations.NullMarked` annotation so that NullAway and other JSpecify-aware checkers recognize the null-marked scope. Replaces `@org.springframework.lang.NonNullApi`, `@org.springframework.lang.NonNullFields`, `@javax.annotation.ParametersAreNonnullByDefault`, and `@jakarta.annotation.ParametersAreNonnullByDefault` (on `package-info.java` package declarations and on type declarations) with a single `@NullMarked`, removing the old annotations and their imports and adding the `@NullMarked` import. When both Spring `@NonNullApi` and `@NonNullFields` are present they collapse to one `@NullMarked` rather than two. Idempotent and conservative: a scope already marked `@NullMarked` and unrelated packages or types are left unchanged. Java only.
+* [io.moderne.nullability.migrate.MigrateNullabilityToJSpecify](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/migrate/migratenullabilitytojspecify)
+  * **Migrate existing nullability annotations to JSpecify**
+  * Convert a codebase's existing nullability annotations and conventions onto [JSpecify](https://jspecify.dev) so that NullAway and the inference recipes have a single, consistent vocabulary to reason about. Runs every migration sub-recipe: standardize the per-element `@Nullable`/`@NonNull` flavors (JSR-305, JetBrains, Checker, Android, Eclipse, SpotBugs, ...), and convert package-level &quot;non-null by default&quot; conventions (Spring `@NonNullApi`/`@NonNullFields`, JSR-305/Jakarta `@ParametersAreNonnullByDefault`) to `@NullMarked`.
+* [io.moderne.nullability.migrate.StandardizeNullabilityAnnotationsToJSpecify](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/migrate/standardizenullabilityannotationstojspecify)
+  * **Standardize nullability annotations to JSpecify**
+  * Normalize the many nullability annotation flavors found across a codebase onto [JSpecify](https://jspecify.dev) (`org.jspecify.annotations.@Nullable` / `@NonNull`), placing `@Nullable` in the `TYPE_USE` position on method return types and removing redundant annotations on primitives. This is the annotation standardization pre-pass that nullability inference recipes depend on, giving downstream analyses a single, consistent annotation flavor to reason about.
+* [io.moderne.nullability.scope.AddNullMarkedToCleanPackages](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/scope/addnullmarkedtocleanpackages)
+  * **Add `@NullMarked` to packages that are ready for NullAway**
+  * Automatically adds the JSpecify `@NullMarked` annotation to a package — by annotating its existing `package-info.java` or generating one — but only when every Java class in the package is &quot;ready&quot;, i.e. would not produce a fresh NullAway error once the scope is marked. A package fails the readiness gate (and is left unmarked) if any class in it has: (1) an uninitialized non-null instance field (the `FindUninitializedNonNullField` condition: non-`@Nullable`, non-`final`, non-`static`, reference-typed, no initializer, not assigned in every constructor, not dependency-injection-annotated); (2) a method whose body can return a provably-null value but whose return type is not `@Nullable`; or (3) a field initialized to a provably-null value that is not `@Nullable`. An `@Override` method that returns null without `@Nullable` is also treated as a blocker. Packages whose sources live under a generated marker path (`/generated/`, `/build/generated`, `/generated-sources/`) or whose classes carry a `@Generated` annotation are skipped. The recipe is idempotent and operates per leaf package; it never marks parent packages transitively. Java sources only.
+* [io.moderne.nullability.scope.AddNullMarkedToPackageInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/scope/addnullmarkedtopackageinfo)
+  * **Add `@NullMarked` to `package-info.java` for an allowlist of packages**
+  * Adds the JSpecify `@NullMarked` annotation to the `package-info.java` of an explicit allowlist of packages, for a controlled, package-at-a-time rollout toward NullAway. The allowlist supports exact package names and a trailing `.*` prefix wildcard; an empty allowlist is a no-op for safety. When `generateMissing` is enabled, an allowlisted package that has Java sources but no `package-info.java` gets one generated with `@NullMarked`. Idempotent and never double-marks. Only Java sources are considered. Pair with `AddNullMarkedToCleanPackages` for automatic gating.
+* [io.moderne.nullability.scope.SuppressNullAwayInBaselineClasses](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/scope/suppressnullawayinbaselineclasses)
+  * **Suppress NullAway in baseline classes**
+  * Adds `@SuppressWarnings(&quot;NullAway&quot;)` to each top-level class whose fully-qualified name is listed in the baseline file, carrying those classes' pre-existing NullAway findings as a baseline so the check can be enabled at ERROR immediately while every other class and every new file stays checked.
+* [io.moderne.nullability.search.FindInconsistentOverrideNullability](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/search/findinconsistentoverridenullability)
+  * **Find inconsistent `@Nullable` override declarations**
+  * Reports methods whose declared nullability is inconsistent with the method they override, a contract violation under [NullAway](https://github.com/uber/NullAway). Because return types are covariant, an overriding method that declares a `@Nullable` return while the overridden supertype method returns a non-null value is flagged on its return. Because parameters are contravariant, an overriding method whose parameter is non-null while the overridden supertype method declares the corresponding parameter `@Nullable` is flagged on that parameter. Methods are matched across files by their erased signature `name(paramTypes)` plus a declaring-type subtype relationship. Conservative by design: legal covariant return narrowing and contravariant parameter widening are never flagged, and nothing is reported when a participating type cannot be resolved. Only Java sources are inspected; Kotlin and Groovy express nullability in the type system, which their compilers already enforce.
+* [io.moderne.nullability.search.FindNullableToNonNullArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/search/findnullabletononnullargument)
+  * **Find nullable values passed to non-null parameters**
+  * Marks call arguments where a provably-nullable value is passed to a callee parameter that is not declared `@Nullable`. Inside a null-marked scope NullAway treats every unannotated parameter as non-null, so such a call is a NullAway error. A value is considered provably nullable when it is the `null` literal (directly, through a cast or parentheses, or via either branch of a ternary), a call to a method whose return is itself nullable, or a reference to a variable or field declared `@Nullable`. This is a search recipe: it only marks the offending arguments and does not modify the code. It is conservative — when the invoked method type cannot be resolved, the argument is left unmarked (a false negative rather than a false positive).
+* [io.moderne.nullability.search.FindUninitializedNonNullField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/search/finduninitializednonnullfield)
+  * **Find uninitialized `@NonNull` fields (NullAway field-init)**
+  * Marks instance fields that would trigger NullAway's &quot;@NonNull field not initialized&quot; error: a non-static, non-primitive field that does not carry a nullability annotation, has no initializer, is not `final`, is not a dependency-injection / framework field (`@Inject`, `@Autowired`, `@Resource`, `@Mock`, `@Value`, `@Bean`, `@EJB`, `@PersistenceContext`, `@Spy`, `@InjectMocks`, `@Captor`), and is not unconditionally assigned in every declared constructor. A class with no constructors leaves such a field definitely unassigned. &quot;Unconditionally assigned&quot; is approximated as a `this.f = ...` or `f = ...` statement at the top level of a constructor body (not nested in an `if`, loop, `try`, `switch`, or lambda). Java sources only; Kotlin and Groovy express field initialization in the type system.
+* [io.moderne.nullability.search.NullAwayReadinessReport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/search/nullawayreadinessreport)
+  * **NullAway readiness scorecard**
+  * Produces a per-class readiness scorecard for a NullAway rollout as a data table, without modifying any source. For every Java class (top-level and nested) it counts the methods, fields, and parameters that already carry a `@Nullable` annotation, the instance fields that are non-null but uninitialized (the residual field-initialization risk NullAway flags once a scope is marked), and whether the class or its enclosing `package-info` is already `@NullMarked`. A consumer can use these numbers to compute annotation coverage and weigh it against field-init risk, then prioritize which packages or modules to mark `@NullMarked` first. This is a triage report, not a transformation: the recipe emits no source changes.
+
 ### rewrite-prethink
 
 * [io.moderne.prethink.ComprehendCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/comprehendcode)
@@ -7539,21 +7635,387 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-migrate-python
 
+* [org.openrewrite.python.codequality.AllBranchesIdentical](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/allbranchesidentical)
+  * **Remove conditional with identical branches**
+  * Replace `if`/`elif`/`else` chains where every branch has the same body with just the body, since the condition has no effect on what code executes.
+* [org.openrewrite.python.codequality.BooleanChecksNotInverted](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/booleanchecksnotinverted)
+  * **Boolean checks should not be inverted**
+  * Replace inverted boolean comparisons like `not (a == b)` with the equivalent direct operator (`a != b`), and remove double negations like `not (not x)`.
+* [org.openrewrite.python.codequality.CollapsibleIfStatements](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/collapsibleifstatements)
+  * **Merge collapsible if statements**
+  * Combine nested `if` statements that have no `else` branch into a single `if` joined with `and`.
+* [org.openrewrite.python.codequality.MergeIdenticalBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/mergeidenticalbranches)
+  * **Merge consecutive branches with identical bodies**
+  * Combine consecutive `if`/`elif` branches that have the same body into a single branch with conditions joined by `or`.
+* [org.openrewrite.python.codequality.RemoveDuplicateConditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeduplicateconditions)
+  * **Remove duplicate conditions in if/elif chains**
+  * Remove `elif` branches whose condition is identical to an earlier branch in the same `if`/`elif` chain, since the duplicate branch is dead code that can never execute.
+* [org.openrewrite.python.codequality.RemoveSelfAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeselfassignment)
+  * **Remove self-assignments**
+  * Remove statements that assign a variable to itself (`x = x`, `self.x = self.x`), since they have no effect.
+* [org.openrewrite.python.codequality.RemoveUnconditionalValueOverwrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeunconditionalvalueoverwrite)
+  * **Remove unconditional value overwrites**
+  * Remove consecutive assignments that write to the same dict key or object attribute, since the first value is immediately overwritten and never used.
+* [org.openrewrite.python.codequality.SimplifyBooleanLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/simplifybooleanliteral)
+  * **Simplify boolean literal comparisons**
+  * Replace comparisons against boolean literals (`== True`, `!= False`, `is True`, etc.) with the simpler equivalent boolean expression.
+* [org.openrewrite.python.codequality.SimplifyRedundantLogicalExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/simplifyredundantlogicalexpression)
+  * **Simplify redundant logical expressions**
+  * Replace `x and x` with `x` and `x or x` with `x`. Identical operands in a logical expression are redundant and often indicate a copy-paste mistake.
 * [org.openrewrite.python.migrate.DependencyInsight](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/dependencyinsight)
   * **Python dependency insight**
   * Find Python dependencies, including transitive dependencies, matching a package name pattern. Results include the resolved version, scope, and whether the dependency is direct or transitive.
+* [org.openrewrite.python.migrate.FindAifcModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaifcmodule)
+  * **Find deprecated `aifc` module usage**
+  * The `aifc` module was deprecated in Python 3.11 and removed in Python 3.13. Use third-party audio libraries instead.
+* [org.openrewrite.python.migrate.FindAsyncioCoroutineDecorator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findasynciocoroutinedecorator)
+  * **Find deprecated `@asyncio.coroutine` decorator**
+  * Find usage of the deprecated `@asyncio.coroutine` decorator which was removed in Python 3.11. Convert to `async def` syntax with `await` instead of `yield from`.
+* [org.openrewrite.python.migrate.FindAudioopModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaudioopmodule)
+  * **Find deprecated `audioop` module usage**
+  * The `audioop` module was deprecated in Python 3.11 and removed in Python 3.13. Use pydub, numpy, or scipy for audio operations.
+* [org.openrewrite.python.migrate.FindCgiModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgimodule)
+  * **Find deprecated `cgi` module usage**
+  * The `cgi` module was deprecated in Python 3.11 and removed in Python 3.13. Use `urllib.parse` for query string parsing, `html.escape()` for escaping, and web frameworks or `email.message` for form handling.
+* [org.openrewrite.python.migrate.FindCgitbModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgitbmodule)
+  * **Find deprecated `cgitb` module usage**
+  * The `cgitb` module was deprecated in Python 3.11 and removed in Python 3.13. Use the standard `logging` and `traceback` modules for error handling.
+* [org.openrewrite.python.migrate.FindChunkModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findchunkmodule)
+  * **Find deprecated `chunk` module usage**
+  * The `chunk` module was deprecated in Python 3.11 and removed in Python 3.13. Implement IFF chunk reading manually or use specialized libraries.
+* [org.openrewrite.python.migrate.FindCryptModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcryptmodule)
+  * **Find deprecated `crypt` module usage**
+  * The `crypt` module was deprecated in Python 3.11 and removed in Python 3.13. Use `bcrypt`, `argon2-cffi`, or `passlib` instead.
+* [org.openrewrite.python.migrate.FindDistutilsUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finddistutilsusage)
+  * **Find deprecated distutils module usage**
+  * Find imports of the deprecated `distutils` module which was removed in Python 3.12. Migrate to `setuptools` or other modern build tools.
+* [org.openrewrite.python.migrate.FindFunctoolsCmpToKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfunctoolscmptokey)
+  * **Find `functools.cmp_to_key()` usage**
+  * Find usage of `functools.cmp_to_key()` which is a Python 2 compatibility function. Consider using a key function directly.
 * [org.openrewrite.python.migrate.FindFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfutureimports)
   * **Find `__future__` imports**
   * Find `__future__` imports and add a search marker.
+* [org.openrewrite.python.migrate.FindImghdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimghdrmodule)
+  * **Find deprecated `imghdr` module usage**
+  * The `imghdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype`, `python-magic`, or `Pillow` instead.
+* [org.openrewrite.python.migrate.FindImpUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimpusage)
+  * **Find deprecated imp module usage**
+  * Find imports of the deprecated `imp` module which was removed in Python 3.12. Migrate to `importlib`.
+* [org.openrewrite.python.migrate.FindLocaleGetdefaultlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findlocalegetdefaultlocale)
+  * **Find deprecated `locale.getdefaultlocale()` usage**
+  * `locale.getdefaultlocale()` was deprecated in Python 3.11. Use `locale.setlocale()`, `locale.getlocale()`, or `locale.getpreferredencoding(False)` instead.
+* [org.openrewrite.python.migrate.FindMacpathModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmacpathmodule)
+  * **Find removed `macpath` module usage**
+  * The `macpath` module was removed in Python 3.8. Use `os.path` instead.
+* [org.openrewrite.python.migrate.FindMailcapModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmailcapmodule)
+  * **Find deprecated `mailcap` module usage**
+  * The `mailcap` module was deprecated in Python 3.11 and removed in Python 3.13. Use `mimetypes` module for MIME type handling.
 * [org.openrewrite.python.migrate.FindMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmethods)
   * **Find Python function and method usages**
   * Find function and method calls by pattern. Covers standalone functions, class methods, static methods, and constructor calls.
+* [org.openrewrite.python.migrate.FindMsilibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmsilibmodule)
+  * **Find deprecated `msilib` module usage**
+  * The `msilib` module was deprecated in Python 3.11 and removed in Python 3.13. Use platform-specific tools for MSI creation.
+* [org.openrewrite.python.migrate.FindNisModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnismodule)
+  * **Find deprecated `nis` module usage**
+  * The `nis` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindNntplibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnntplibmodule)
+  * **Find deprecated `nntplib` module usage**
+  * The `nntplib` module was deprecated in Python 3.11 and removed in Python 3.13. NNTP is largely obsolete; consider alternatives if needed.
+* [org.openrewrite.python.migrate.FindOsPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findospopen)
+  * **Find deprecated `os.popen()` usage**
+  * `os.popen()` has been deprecated since Python 3.6. Use `subprocess.run()` or `subprocess.Popen()` instead for better control over process creation and output handling.
+* [org.openrewrite.python.migrate.FindOsSpawn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findosspawn)
+  * **Find deprecated `os.spawn*()` usage**
+  * The `os.spawn*()` family of functions are deprecated. Use `subprocess.run()` or `subprocess.Popen()` instead.
+* [org.openrewrite.python.migrate.FindOssaudiodevModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findossaudiodevmodule)
+  * **Find deprecated `ossaudiodev` module usage**
+  * The `ossaudiodev` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindPathlibLinkTo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpathliblinkto)
+  * **Find deprecated `Path.link_to()` usage**
+  * Find usage of `Path.link_to()` which was deprecated in Python 3.10 and removed in 3.12. Use `hardlink_to()` instead (note: argument order is reversed).
+* [org.openrewrite.python.migrate.FindPipesModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpipesmodule)
+  * **Find deprecated `pipes` module usage**
+  * The `pipes` module was deprecated in Python 3.11 and removed in Python 3.13. Use subprocess with shlex.quote() for shell escaping.
+* [org.openrewrite.python.migrate.FindRemovedModules312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findremovedmodules312)
+  * **Find modules removed in Python 3.12**
+  * Find imports of modules that were removed in Python 3.12, including asynchat, asyncore, and smtpd.
+* [org.openrewrite.python.migrate.FindShutilRmtreeOnerror](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findshutilrmtreeonerror)
+  * **Find deprecated `shutil.rmtree(onerror=...)` parameter**
+  * The `onerror` parameter of `shutil.rmtree()` was deprecated in Python 3.12 in favor of `onexc`. The `onexc` callback receives the exception object directly rather than an exc_info tuple.
+* [org.openrewrite.python.migrate.FindSndhdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsndhdrmodule)
+  * **Find deprecated `sndhdr` module usage**
+  * The `sndhdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype` or audio libraries like `pydub` instead.
+* [org.openrewrite.python.migrate.FindSocketGetFQDN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsocketgetfqdn)
+  * **Find `socket.getfqdn()` usage**
+  * Find usage of `socket.getfqdn()` which can be slow and unreliable. Consider using `socket.gethostname()` instead.
+* [org.openrewrite.python.migrate.FindSpwdModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findspwdmodule)
+  * **Find deprecated `spwd` module usage**
+  * The `spwd` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindSslMatchHostname](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsslmatchhostname)
+  * **Find deprecated `ssl.match_hostname()`**
+  * Find usage of the deprecated `ssl.match_hostname()` function which was removed in Python 3.12. Use `ssl.SSLContext.check_hostname` instead.
+* [org.openrewrite.python.migrate.FindSunauModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsunaumodule)
+  * **Find deprecated `sunau` module usage**
+  * The `sunau` module was deprecated in Python 3.11 and removed in Python 3.13. Use `soundfile` or `pydub` instead.
+* [org.openrewrite.python.migrate.FindSysCoroutineWrapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsyscoroutinewrapper)
+  * **Find removed `sys.set_coroutine_wrapper()` / `sys.get_coroutine_wrapper()`**
+  * `sys.set_coroutine_wrapper()` and `sys.get_coroutine_wrapper()` were deprecated in Python 3.7 and removed in Python 3.8.
+* [org.openrewrite.python.migrate.FindTelnetlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtelnetlibmodule)
+  * **Find deprecated `telnetlib` module usage**
+  * The `telnetlib` module was deprecated in Python 3.11 and removed in Python 3.13. Consider using `telnetlib3` from PyPI, direct socket usage, or SSH-based alternatives like paramiko.
+* [org.openrewrite.python.migrate.FindTempfileMktemp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtempfilemktemp)
+  * **Find deprecated `tempfile.mktemp()` usage**
+  * Find usage of `tempfile.mktemp()` which is deprecated due to security concerns (race condition). Use `mkstemp()` or `NamedTemporaryFile()` instead.
 * [org.openrewrite.python.migrate.FindTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtypes)
   * **Find Python types**
   * Find type references by name. Identifies classes matching a type pattern. In Python, all type definitions use the `class` keyword, covering regular classes, abstract base classes, protocols, enums, dataclasses, named tuples, typed dicts, and more.
+* [org.openrewrite.python.migrate.FindUrllibParseSplitFunctions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsesplitfunctions)
+  * **Find deprecated urllib.parse split functions**
+  * Find usage of deprecated urllib.parse split functions (splithost, splitport, etc.) removed in Python 3.14. Use urlparse() instead.
+* [org.openrewrite.python.migrate.FindUrllibParseToBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsetobytes)
+  * **Find deprecated `urllib.parse.to_bytes()` usage**
+  * Find usage of `urllib.parse.to_bytes()` which was deprecated in Python 3.8 and removed in 3.14. Use str.encode() directly.
+* [org.openrewrite.python.migrate.FindUuModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finduumodule)
+  * **Find deprecated `uu` module usage**
+  * The `uu` module was deprecated in Python 3.11 and removed in Python 3.13. Use `base64` module instead for encoding binary data.
+* [org.openrewrite.python.migrate.FindXdrlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findxdrlibmodule)
+  * **Find deprecated `xdrlib` module usage**
+  * The `xdrlib` module was deprecated in Python 3.11 and removed in Python 3.13. Use `struct` module for binary packing/unpacking.
+* [org.openrewrite.python.migrate.MigrateAsyncioCoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migrateasynciocoroutine)
+  * **Migrate `@asyncio.coroutine` to `async def`**
+  * Migrate functions using the deprecated `@asyncio.coroutine` decorator to use `async def` syntax. Also transforms `yield from` to `await`. The decorator was removed in Python 3.11.
 * [org.openrewrite.python.migrate.MigrateToPyprojectToml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migratetopyprojecttoml)
   * **Migrate to `pyproject.toml`**
   * Migrate Python projects from `requirements.txt` and/or `setup.cfg` to `pyproject.toml` with `hatchling` build backend.
+* [org.openrewrite.python.migrate.RemoveFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/removefutureimports)
+  * **Remove obsolete `__future__` imports**
+  * Remove `from __future__ import ...` statements for features that are enabled by default in Python 3.
+* [org.openrewrite.python.migrate.ReplaceArrayFromstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearrayfromstring)
+  * **Replace `array.fromstring()` with `array.frombytes()`**
+  * Replace `fromstring()` with `frombytes()` on array objects. The fromstring() method was deprecated in Python 3.2 and removed in 3.14.
+* [org.openrewrite.python.migrate.ReplaceArrayTostring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearraytostring)
+  * **Replace `array.tostring()` with `array.tobytes()`**
+  * Replace `tostring()` with `tobytes()` on array objects. The tostring() method was deprecated in Python 3.2 and removed in 3.14.
+* [org.openrewrite.python.migrate.ReplaceAstBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastbytes)
+  * **Replace `ast.Bytes` with `ast.Constant`**
+  * The `ast.Bytes` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, bytes)`.
+* [org.openrewrite.python.migrate.ReplaceAstEllipsis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastellipsis)
+  * **Replace `ast.Ellipsis` with `ast.Constant`**
+  * The `ast.Ellipsis` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value is ...`.
+* [org.openrewrite.python.migrate.ReplaceAstNameConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnameconstant)
+  * **Replace `ast.NameConstant` with `ast.Constant`**
+  * The `ast.NameConstant` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value in (True, False, None)`.
+* [org.openrewrite.python.migrate.ReplaceAstNum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnum)
+  * **Replace `ast.Num` with `ast.Constant`**
+  * The `ast.Num` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, (int, float, complex))`.
+* [org.openrewrite.python.migrate.ReplaceAstStr](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceaststr)
+  * **Replace `ast.Str` with `ast.Constant`**
+  * The `ast.Str` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, str)`.
+* [org.openrewrite.python.migrate.ReplaceCalendarConstants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecalendarconstants)
+  * **Replace deprecated calendar constants with uppercase**
+  * Replace deprecated mixed-case calendar constants like `calendar.January` with their uppercase equivalents like `calendar.JANUARY`. The mixed-case constants were deprecated in Python 3.12.
+* [org.openrewrite.python.migrate.ReplaceCgiParseQs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqs)
+  * **Replace `cgi.parse_qs()` with `urllib.parse.parse_qs()`**
+  * `cgi.parse_qs()` was removed in Python 3.8. Use `urllib.parse.parse_qs()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
+* [org.openrewrite.python.migrate.ReplaceCgiParseQsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqsl)
+  * **Replace `cgi.parse_qsl()` with `urllib.parse.parse_qsl()`**
+  * `cgi.parse_qsl()` was removed in Python 3.8. Use `urllib.parse.parse_qsl()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
+* [org.openrewrite.python.migrate.ReplaceCollectionsAbcImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecollectionsabcimports)
+  * **Replace `collections` ABC imports with `collections.abc`**
+  * Migrate deprecated abstract base class imports from `collections` to `collections.abc`. These imports were deprecated in Python 3.3 and removed in Python 3.10.
+* [org.openrewrite.python.migrate.ReplaceConditionNotifyAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconditionnotifyall)
+  * **Replace `Condition.notifyAll()` with `Condition.notify_all()`**
+  * Replace `notifyAll()` method calls with `notify_all()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceConfigparserReadfp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparserreadfp)
+  * **Replace `ConfigParser.readfp()` with `read_file()`**
+  * The `ConfigParser.readfp()` method was deprecated in Python 3.2 and removed in Python 3.13. Replace with `read_file()`.
+* [org.openrewrite.python.migrate.ReplaceConfigparserSafeConfigParser](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparsersafeconfigparser)
+  * **Replace `configparser.SafeConfigParser` with `ConfigParser`**
+  * The `configparser.SafeConfigParser` class was deprecated in Python 3.2 and removed in Python 3.12. Replace with `configparser.ConfigParser`.
+* [org.openrewrite.python.migrate.ReplaceDatetimeUtcFromTimestamp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcfromtimestamp)
+  * **Replace `datetime.utcfromtimestamp()` with `datetime.fromtimestamp(ts, UTC)`**
+  * The `datetime.utcfromtimestamp()` method is deprecated in Python 3.12. Replace it with `datetime.fromtimestamp(ts, datetime.UTC)` for timezone-aware datetime objects.
+* [org.openrewrite.python.migrate.ReplaceDatetimeUtcNow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcnow)
+  * **Replace `datetime.utcnow()` with `datetime.now(UTC)`**
+  * The `datetime.utcnow()` method is deprecated in Python 3.12. Replace it with `datetime.now(datetime.UTC)` for timezone-aware datetime objects.
+* [org.openrewrite.python.migrate.ReplaceDistutilsVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedistutilsversion)
+  * **Replace deprecated distutils.version usage**
+  * Detect usage of deprecated `distutils.version.LooseVersion` and `distutils.version.StrictVersion`. These should be migrated to `packaging.version.Version`. Note: Manual migration is required as `packaging.version.Version` is not a drop-in replacement.
+* [org.openrewrite.python.migrate.ReplaceElementGetchildren](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetchildren)
+  * **Replace `Element.getchildren()` with `list(element)`**
+  * Replace `getchildren()` with `list(element)` on XML Element objects. Deprecated in Python 3.9.
+* [org.openrewrite.python.migrate.ReplaceElementGetiterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetiterator)
+  * **Replace `Element.getiterator()` with `Element.iter()`**
+  * Replace `getiterator()` with `iter()` on XML Element objects. The getiterator() method was deprecated in Python 3.9.
+* [org.openrewrite.python.migrate.ReplaceEventIsSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceeventisset)
+  * **Replace `Event.isSet()` with `Event.is_set()`**
+  * Replace `isSet()` method calls with `is_set()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceGettextDeprecations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacegettextdeprecations)
+  * **Replace deprecated gettext l*gettext() functions**
+  * Replace deprecated gettext functions like `lgettext()` with their modern equivalents like `gettext()`. The l*gettext() functions were removed in Python 3.11.
+* [org.openrewrite.python.migrate.ReplaceHtmlParserUnescape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacehtmlparserunescape)
+  * **Replace `HTMLParser.unescape()` with `html.unescape()`**
+  * `HTMLParser.unescape()` was removed in Python 3.9. Use `html.unescape()` instead.
+* [org.openrewrite.python.migrate.ReplaceLocaleResetlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacelocaleresetlocale)
+  * **Replace `locale.resetlocale()` with `locale.setlocale(LC_ALL, '')`**
+  * The `locale.resetlocale()` function was deprecated in Python 3.11 and removed in Python 3.13. Replace with `locale.setlocale(locale.LC_ALL, '')`.
+* [org.openrewrite.python.migrate.ReplacePercentFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepercentformatwithfstring)
+  * **Replace `%` formatting with f-string**
+  * Replace `&quot;...&quot; % (...)` expressions with f-strings (Python 3.6+). Only converts `%s` and `%r` specifiers where the format string is a literal and the conversion is safe.
+* [org.openrewrite.python.migrate.ReplacePkgutilFindLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilfindloader)
+  * **Replace `pkgutil.find_loader()` with `importlib.util.find_spec()`**
+  * The `pkgutil.find_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
+* [org.openrewrite.python.migrate.ReplacePkgutilGetLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilgetloader)
+  * **Replace `pkgutil.get_loader()` with `importlib.util.find_spec()`**
+  * The `pkgutil.get_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
+* [org.openrewrite.python.migrate.ReplacePlatformPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceplatformpopen)
+  * **Replace `platform.popen()` with `subprocess.check_output()`**
+  * `platform.popen()` was removed in Python 3.8. Use `subprocess.check_output(cmd, shell=True)` instead. Note: this rewrites call sites but does not manage imports.
+* [org.openrewrite.python.migrate.ReplaceReTemplate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceretemplate)
+  * **Replace `re.template()` with `re.compile()` and flag `re.TEMPLATE`/`re.T`**
+  * `re.template()` was deprecated in Python 3.11 and removed in 3.13. Calls are auto-replaced with `re.compile()`. `re.TEMPLATE`/`re.T` flags have no direct replacement and are flagged for manual review.
+* [org.openrewrite.python.migrate.ReplaceStrFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacestrformatwithfstring)
+  * **Replace `str.format()` with f-string**
+  * Replace `&quot;...&quot;.format(...)` calls with f-strings (Python 3.6+). Only converts cases where the format string is a literal and the conversion is safe.
+* [org.openrewrite.python.migrate.ReplaceSysLastExcInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacesyslastexcinfo)
+  * **Replace `sys.last_type` / `sys.last_value` / `sys.last_traceback` with `sys.last_exc`**
+  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. Replace them with their `sys.last_exc`-based equivalents: `type(sys.last_exc)`, `sys.last_exc`, and `sys.last_exc.__traceback__` respectively.
+* [org.openrewrite.python.migrate.ReplaceTarfileFilemode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetarfilefilemode)
+  * **Replace `tarfile.filemode` with `stat.filemode`**
+  * `tarfile.filemode` was removed in Python 3.8. Use `stat.filemode()` instead.
+* [org.openrewrite.python.migrate.ReplaceThreadGetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadgetname)
+  * **Replace `Thread.getName()` with `Thread.name`**
+  * Replace `getName()` method calls with the `name` property. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadIsAlive](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisalive)
+  * **Replace `Thread.isAlive()` with `Thread.is_alive()`**
+  * Replace `isAlive()` method calls with `is_alive()`. Deprecated in Python 3.1 and removed in 3.9.
+* [org.openrewrite.python.migrate.ReplaceThreadIsDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisdaemon)
+  * **Replace `Thread.isDaemon()` with `Thread.daemon`**
+  * Replace `isDaemon()` method calls with the `daemon` property. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadSetDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetdaemon)
+  * **Replace `Thread.setDaemon()` with `Thread.daemon = ...`**
+  * Replace `setDaemon()` method calls with `daemon` property assignment. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadSetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetname)
+  * **Replace `Thread.setName()` with `Thread.name = ...`**
+  * Replace `setName()` method calls with `name` property assignment. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadingActiveCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingactivecount)
+  * **Replace `threading.activeCount()` with `threading.active_count()`**
+  * Replace `threading.activeCount()` with `threading.active_count()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadingCurrentThread](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingcurrentthread)
+  * **Replace `threading.currentThread()` with `threading.current_thread()`**
+  * Replace `threading.currentThread()` with `threading.current_thread()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceTypingCallableWithCollectionsAbcCallable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcallablewithcollectionsabccallable)
+  * **Replace `typing.Callable` with `collections.abc.Callable`**
+  * PEP 585 deprecated `typing.Callable` in Python 3.9. Replace with `collections.abc.Callable` for type annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingDictWithDict](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdictwithdict)
+  * **Replace `typing.Dict` with `dict`**
+  * PEP 585 deprecated `typing.Dict` in Python 3.9. Replace with the built-in `dict` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingListWithList](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypinglistwithlist)
+  * **Replace `typing.List` with `list`**
+  * PEP 585 deprecated `typing.List` in Python 3.9. Replace with the built-in `list` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingOptionalWithUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingoptionalwithunion)
+  * **Replace `typing.Optional[X]` with `X | None`**
+  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Optional[X]` with the more concise `X | None` syntax.
+* [org.openrewrite.python.migrate.ReplaceTypingSetWithSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingsetwithset)
+  * **Replace `typing.Set` with `set`**
+  * PEP 585 deprecated `typing.Set` in Python 3.9. Replace with the built-in `set` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingText](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtext)
+  * **Replace `typing.Text` with `str`**
+  * `typing.Text` is deprecated as of Python 3.11. It was an alias for `str` for Python 2/3 compatibility. Replace with `str`.
+* [org.openrewrite.python.migrate.ReplaceTypingTupleWithTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtuplewithtuple)
+  * **Replace `typing.Tuple` with `tuple`**
+  * PEP 585 deprecated `typing.Tuple` in Python 3.9. Replace with the built-in `tuple` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingUnionWithPipe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingunionwithpipe)
+  * **Replace `typing.Union[X, Y]` with `X | Y`**
+  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Union[X, Y, ...]` with the more concise `X | Y | ...` syntax.
+* [org.openrewrite.python.migrate.ReplaceUnittestDeprecatedAliases](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceunittestdeprecatedaliases)
+  * **Replace deprecated unittest method aliases**
+  * Replace deprecated unittest.TestCase method aliases like `assertEquals` with their modern equivalents like `assertEqual`. These aliases were removed in Python 3.11/3.12.
+* [org.openrewrite.python.migrate.UpgradeToPython310](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython310)
+  * **Upgrade to Python 3.10**
+  * Migrate deprecated APIs and adopt new syntax for Python 3.10 compatibility. This includes adopting PEP 604 union type syntax (`X | Y`) and other modernizations between Python 3.9 and 3.10.
+* [org.openrewrite.python.migrate.UpgradeToPython311](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython311)
+  * **Upgrade to Python 3.11**
+  * Migrate deprecated and removed APIs for Python 3.11 compatibility. This includes handling removed modules, deprecated functions, and API changes between Python 3.10 and 3.11.
+* [org.openrewrite.python.migrate.UpgradeToPython312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython312)
+  * **Upgrade to Python 3.12**
+  * Migrate deprecated and removed APIs for Python 3.12 compatibility. This includes detecting usage of the removed `imp` module and other legacy modules that were removed in Python 3.12.
+* [org.openrewrite.python.migrate.UpgradeToPython313](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython313)
+  * **Upgrade to Python 3.13**
+  * Migrate deprecated and removed APIs for Python 3.13 compatibility. This includes detecting usage of modules removed in PEP 594 ('dead batteries') and other API changes between Python 3.12 and 3.13.
+* [org.openrewrite.python.migrate.UpgradeToPython314](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython314)
+  * **Upgrade to Python 3.14**
+  * Migrate deprecated and removed APIs for Python 3.14 compatibility. This includes replacing deprecated AST node types with `ast.Constant` and other API changes between Python 3.13 and 3.14.
+* [org.openrewrite.python.migrate.UpgradeToPython38](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython38)
+  * **Upgrade to Python 3.8**
+  * Migrate deprecated APIs and detect legacy patterns for Python 3.8 compatibility.
+* [org.openrewrite.python.migrate.UpgradeToPython39](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython39)
+  * **Upgrade to Python 3.9**
+  * Migrate deprecated APIs for Python 3.9 compatibility. This includes PEP 585 built-in generics, removed base64 functions, and deprecated XML Element methods.
+* [org.openrewrite.python.migrate.langchain.FindDeprecatedLangchainAgents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/finddeprecatedlangchainagents)
+  * **Find deprecated LangChain agent patterns**
+  * Find usage of deprecated LangChain agent patterns including `initialize_agent`, `AgentExecutor`, and `LLMChain`. These were deprecated in LangChain v0.2 and removed in v1.0.
+* [org.openrewrite.python.migrate.langchain.FindLangchainCreateReactAgent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/findlangchaincreatereactagent)
+  * **Find `create_react_agent` usage (replace with `create_agent`)**
+  * Find `from langgraph.prebuilt import create_react_agent` which should be replaced with `from langchain.agents import create_agent` in LangChain v1.0.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainClassicImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainclassicimports)
+  * **Replace `langchain` legacy imports with `langchain_classic`**
+  * Migrate legacy chain, retriever, and indexing imports from `langchain` to `langchain_classic`. These were moved in LangChain v1.0.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainCommunityImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchaincommunityimports)
+  * **Replace `langchain` imports with `langchain_community`**
+  * Migrate third-party integration imports from `langchain` to `langchain_community`. These integrations were moved in LangChain v0.2.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainProviderImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainproviderimports)
+  * **Replace `langchain_community` imports with provider packages**
+  * Migrate provider-specific imports from `langchain_community` to dedicated provider packages like `langchain_openai`, `langchain_anthropic`, etc.
+* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain02](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain02)
+  * **Upgrade to LangChain 0.2**
+  * Migrate to LangChain 0.2 by updating imports from `langchain` to `langchain_community` and provider-specific packages.
+* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain1)
+  * **Upgrade to LangChain 1.0**
+  * Migrate to LangChain 1.0 by applying all v0.2 migrations and then moving legacy functionality to `langchain_classic`.
+* [org.openrewrite.python.migrate.pydantic.FindDeprecatedJsonEncoders](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/finddeprecatedjsonencoders)
+  * **Find deprecated `json_encoders` config option**
+  * Pydantic deprecated the `json_encoders` option in `ConfigDict`. Its replacements (`@field_serializer` / `@model_serializer` or `Annotated[..., PlainSerializer(...)]`) require restructuring, so this recipe flags its use for review.
+* [org.openrewrite.python.migrate.pydantic.FindDeprecatedSchemaGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/finddeprecatedschemagenerator)
+  * **Find deprecated `schema_generator` config option**
+  * Pydantic 2.10 deprecated the `schema_generator` option in `ConfigDict`. It has no public replacement yet, so this recipe flags its use for review.
+* [org.openrewrite.python.migrate.pydantic.FindEvalTypeBackportUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/findevaltypebackportusage)
+  * **Find `eval_type_backport` usage removed in Pydantic 2.14**
+  * Pydantic 2.14 removed its support for the `eval_type_backport` package. With the Python 3.10 minimum it is no longer needed. This recipe flags `import eval_type_backport` and `from eval_type_backport import ...` for review.
+* [org.openrewrite.python.migrate.pydantic.FindModelValidatorAfterClassmethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/findmodelvalidatorafterclassmethod)
+  * **Find `@model_validator(mode='after')` on a classmethod**
+  * Pydantic 2.12 deprecated `@model_validator` with `mode='after'` on a classmethod; the implicit classmethod conversion for `after` model validators is removed in V3. Such validators should be instance methods (`self`, no `@classmethod`). This recipe flags the decorator for review, since the rewrite is not safe to mechanize. `field_validator` is unaffected.
+* [org.openrewrite.python.migrate.pydantic.FindSerializeAsAnyUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/findserializeasanyusage)
+  * **Find `serialize_as_any` usage affected by the Pydantic 2.12 unification**
+  * Pydantic 2.12 unified the `serialize_as_any` flag with the `SerializeAsAny` annotation, which can change serialization output versus 2.11. This recipe flags `serialize_as_any=` on `model_dump` / `model_dump_json` (and `TypeAdapter.dump_python` / `dump_json`) for review, since there is no safe mechanical rewrite.
+* [org.openrewrite.python.migrate.pydantic.RemoveEllipsisFromField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/removeellipsisfromfield)
+  * **Remove `...` (Ellipsis) from `Field()`**
+  * Pydantic 2.10 recommends against using `Ellipsis` (`...`) with `Field` to mark a field as required, as it does not play well with static type checkers. Rewrite `Field(...)` to `Field()` (and `Field(..., x=y)` to `Field(x=y)`), keeping the remaining arguments. Only calls resolving to `pydantic.fields.Field` are rewritten.
+* [org.openrewrite.python.migrate.pydantic.ReplaceFinalFieldWithClassVar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/replacefinalfieldwithclassvar)
+  * **Replace `Final` model fields with a default with `ClassVar`**
+  * Pydantic 2.11 deprecates annotating a model field as `Final` with a default value (such fields were treated as class variables). Replace `Final[X] = default` with `ClassVar[X] = default`, which preserves the existing class-variable behavior and is the replacement Pydantic recommends.
+* [org.openrewrite.python.migrate.pydantic.ReplaceModelFieldsInstanceAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/replacemodelfieldsinstanceaccess)
+  * **Replace instance access of `model_fields` / `model_computed_fields`**
+  * Pydantic 2.11 deprecated accessing `model_fields` and `model_computed_fields` on a model instance; these are removed in Pydantic 3.0. Replace `&lt;instance&gt;.model_fields` with `type(&lt;instance&gt;).model_fields` (and likewise for `model_computed_fields`) when the receiver resolves to a Pydantic model, so the attribute is accessed on the class. Class access and `cls` access are left untouched.
+* [org.openrewrite.python.migrate.pydantic.ReplacePopulateByNameWithValidateByName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/replacepopulatebynamewithvalidatebyname)
+  * **Replace `populate_by_name` with `validate_by_name`**
+  * Pydantic 2.11 introduced `validate_by_name` as the equivalent of `populate_by_name`, which is pending deprecation in Pydantic V3. Rename `ConfigDict(populate_by_name=...)` to `ConfigDict(validate_by_name=...)`. This is behavior-preserving (`validate_by_alias` defaults to `True`) and future-proofs the configuration.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic210](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic210)
+  * **Upgrade to Pydantic 2.10**
+  * Flag and migrate code affected by deprecations introduced in Pydantic 2.10, such as the deprecated `schema_generator` config option and the discouraged `Field(...)` Ellipsis form. Also flags the deprecated `json_encoders` config option.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic211](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic211)
+  * **Upgrade to Pydantic 2.11**
+  * Migrate code affected by deprecations introduced in Pydantic 2.11 (and 2.10). Rewrites instance access of `model_fields` / `model_computed_fields` to class access, rewrites `Final` model fields with default values to `ClassVar`, and renames `populate_by_name` to `validate_by_name`.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic212](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic212)
+  * **Upgrade to Pydantic 2.12**
+  * Migrate code affected by changes introduced in Pydantic 2.12 (and 2.10/2.11). Flags `serialize_as_any` usage affected by the 2.12 unification with the `SerializeAsAny` annotation.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic213](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic213)
+  * **Upgrade to Pydantic 2.13**
+  * Migrate code for Pydantic 2.13. Pydantic 2.13 introduced no new deprecations (an additive release), so this applies all Pydantic 2.12 migrations (which chain back to 2.10).
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic214](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic214)
+  * **Upgrade to Pydantic 2.14**
+  * Migrate code affected by changes introduced in Pydantic 2.14 (and 2.10-2.13). Flags `eval_type_backport` usage, whose support 2.14 removed. Note: 2.14 is in prerelease; verify against the 2.14.0 GA release.
 
 ### rewrite-nodejs
 
@@ -7806,6 +8268,270 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.sql.search.FindFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/search/findfunction)
   * **Find SQL function**
   * Find SQL functions by name.
+
+### rewrite-static-analysis-python
+
+* [org.openrewrite.python.cleanup.AssignIfExp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/assignifexp)
+  * **Use inline conditional for simple ``if``/``else`` assignment**
+  * When an ``if``/``else`` pair each assign a single value to the same variable, rewrite as a ternary expression.
+* [org.openrewrite.python.cleanup.AugAssign](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/augassign)
+  * **Shorten assignment to compound operator form**
+  * Convert ``target = target op value`` into ``target op= value`` for arithmetic operators (+, -, *, /, %).
+* [org.openrewrite.python.cleanup.BinOpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/binopidentity)
+  * **Collapse self-cancelling `^` / `-` with duplicate operands to `0`**
+  * When both operands of `^` or `-` are the same expression, reduce to `0` (the self-cancelling identity).
+* [org.openrewrite.python.cleanup.BooleanIfExpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/booleanifexpidentity)
+  * **Collapse boolean ternary to bare condition**
+  * Replace ``True if expr else False`` with ``expr`` and ``False if expr else True`` with ``not expr``, removing the redundant ternary wrapper.
+* [org.openrewrite.python.cleanup.BreakOrContinueOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/breakorcontinueoutsideloop)
+  * **Remove `break`/`continue` outside loop**
+  * Remove `break` and `continue` statements that are not inside any for or while loop.
+* [org.openrewrite.python.cleanup.ChainCompares](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/chaincompares)
+  * **Use chained comparison syntax**
+  * Merge two relational tests that share a middle operand into a single chained comparison, e.g. ``0 &lt; idx and idx &lt; size`` becomes ``0 &lt; idx &lt; size``.
+* [org.openrewrite.python.cleanup.ClassMethodFirstArgName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/classmethodfirstargname)
+  * **Standardize `@classmethod` first parameter to `cls`**
+  * Ensure that `@classmethod` methods use `cls` as their first parameter, as required by PEP 8, and update all body references.
+* [org.openrewrite.python.cleanup.CollectionBuiltinToComprehension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectionbuiltintocomprehension)
+  * **Use comprehension syntax instead of `list()`/`set()` around generators**
+  * Wrapping a generator in `list()` or `set()` is less idiomatic than the equivalent bracket/brace comprehension syntax.
+* [org.openrewrite.python.cleanup.CollectionIntoSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectionintoset)
+  * **Prefer set literals in `in` membership tests**
+  * When a list or tuple of literals appears on the right side of an `in` test, convert it to a set literal for constant-time lookup.
+* [org.openrewrite.python.cleanup.CollectionToBool](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectiontobool)
+  * **Substitute constant collection condition with boolean**
+  * When a list, tuple, dict, or set literal is used as an ``if`` or ``while`` condition, replace it with ``True`` (non-empty) or ``False`` (empty) to state the intent directly.
+* [org.openrewrite.python.cleanup.ComprehensionToGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/comprehensiontogenerator)
+  * **Use generator expression instead of list comprehension in iterable-accepting calls**
+  * Functions that consume iterables lazily (e.g. `any`, `sum`, `sorted`) do not need a list comprehension -- a generator expression suffices.
+* [org.openrewrite.python.cleanup.ConvertAnyToIn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/convertanytoin)
+  * **Rewrite `any(v == literal ...)` as `literal in collection`**
+  * An `any()` generator that tests equality against a literal value is equivalent to the `in` membership operator, which is clearer.
+* [org.openrewrite.python.cleanup.DataframeAppendToConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/dataframeappendtoconcat)
+  * **Migrate deprecated `.append()` to `pd.concat()`**
+  * `DataFrame.append()` no longer exists in pandas 2.0+. This recipe rewrites `.append(x)` calls to `pd.concat([df, x])`.
+* [org.openrewrite.python.cleanup.DeMorgan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/demorgan)
+  * **Flatten negated logic via De Morgan's identities**
+  * Use De Morgan's identities to remove double negation and to distribute ``not`` into compound conditions, e.g. ``not not finished`` becomes ``finished`` and ``not (m and n)`` becomes ``not m or not n``.
+* [org.openrewrite.python.cleanup.DefaultMutableArg](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/defaultmutablearg)
+  * **Guard mutable default arguments with `None` sentinel**
+  * Change mutable default values (`[]`, `\{\}`, `set()`) to `None` and prepend an `if arg is None: arg = &lt;original&gt;` guard so each call gets its own fresh instance.
+* [org.openrewrite.python.cleanup.DictLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/dictliteral)
+  * **Use `\{\}` literal instead of `dict()` constructor**
+  * Convert no-argument `dict()` calls to the `\{\}` literal, which is more concise and avoids a function call.
+* [org.openrewrite.python.cleanup.DoNotUseBareExcept](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/donotusebareexcept)
+  * **Narrow bare `except:` to `except Exception:`**
+  * An unqualified `except:` intercepts every exception, including `SystemExit` and `KeyboardInterrupt`. Specifying `Exception` restricts the handler to ordinary runtime errors.
+* [org.openrewrite.python.cleanup.EqualityIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/equalityidentity)
+  * **Fold same-literal `==`/`!=` comparisons to boolean constants**
+  * When both sides of `==` or `!=` are the same literal, replace the expression with `True` or `False` respectively.
+* [org.openrewrite.python.cleanup.FlipComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/flipcomparison)
+  * **Reorder comparisons to put literals on the right**
+  * Swap operands when a constant appears on the left of a comparison, e.g. ``42 == count`` becomes ``count == 42``, mirroring the relational operator as needed.
+* [org.openrewrite.python.cleanup.IdentityComprehension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/identitycomprehension)
+  * **Simplify identity comprehension to `list()`/`set()` call**
+  * A comprehension that simply passes through each element unchanged is equivalent to calling `list()` or `set()` on the iterable.
+* [org.openrewrite.python.cleanup.InstanceMethodFirstArgName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/instancemethodfirstargname)
+  * **Standardize instance method first parameter to `self`**
+  * Ensure instance methods use `self` as their first parameter per PEP 8 and rename all body references. Methods decorated with `@staticmethod` or `@classmethod` are not affected.
+* [org.openrewrite.python.cleanup.InvertAnyAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/invertanyall)
+  * **Swap `not all()`/`not any()` by negating the comparison**
+  * Apply De Morgan's law to replace `not all(cond ...)` with `any(negated_cond ...)` or `not any(cond ...)` with `all(negated_cond ...)`.
+* [org.openrewrite.python.cleanup.InvertAnyAllBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/invertanyallbody)
+  * **Apply De Morgan's law to `any(not ...)`/`all(not ...)`**
+  * When the generator body just negates the loop variable, De Morgan's law lets us eliminate the generator entirely: `any(not v for v in seq)` becomes `not all(seq)`, and the reverse.
+* [org.openrewrite.python.cleanup.ListLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/listliteral)
+  * **Use `[]` literal instead of `list()` constructor**
+  * Convert no-argument `list()` calls to the `[]` literal, which is more concise and avoids a function call.
+* [org.openrewrite.python.cleanup.MergeComparisons](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergecomparisons)
+  * **Consolidate repeated `==` with `or` into `in`**
+  * Fold ``var == a or var == b`` into ``var in [a, b]``, reducing duplication and improving readability.
+* [org.openrewrite.python.cleanup.MergeElseIfIntoElif](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergeelseifintoelif)
+  * **Convert ``else: if`` to ``elif``**
+  * When an ``else`` clause contains nothing but an ``if``, rewrite it as ``elif`` to eliminate extra nesting.
+* [org.openrewrite.python.cleanup.MergeIsinstance](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergeisinstance)
+  * **Merge `isinstance()` calls**
+  * Merge `isinstance(x, A) or isinstance(x, B)` into `isinstance(x, (A, B))` for cleaner type checking.
+* [org.openrewrite.python.cleanup.MergeNestedIfs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergenestedifs)
+  * **Collapse nested ``if`` into a single ``and`` condition**
+  * When two ``if`` statements are nested with no ``else`` on either, join their conditions with ``and`` and flatten the body.
+* [org.openrewrite.python.cleanup.NoneCompare](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/nonecompare)
+  * **Compare to `None` with identity operators (`is` / `is not`)**
+  * Switch `== None` to `is None` and `!= None` to `is not None`, following PEP 8 singleton comparison guidance.
+* [org.openrewrite.python.cleanup.OrIfExpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/orifexpidentity)
+  * **Replace self-referencing ternary with `or`**
+  * When a ternary's condition and true-branch name the same variable, rewrite ``val if val else fallback`` as ``val or fallback`` to avoid repeating the name.
+* [org.openrewrite.python.cleanup.PandasAvoidInplace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/pandasavoidinplace)
+  * **Eliminate `inplace=True` in favor of reassignment**
+  * Convert pandas operations that use `inplace=True` into reassignment form, e.g. `df.drop_duplicates(inplace=True)` becomes `df = df.drop_duplicates()`.
+* [org.openrewrite.python.cleanup.PythonBestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/pythonbestpractices)
+  * **Python cleanup suite**
+  * Run every Python cleanup recipe in one pass -- literal simplification, boolean and comparison tidying, dead code removal, naming fixes, pandas modernization, and more.
+* [org.openrewrite.python.cleanup.RaiseFromPreviousError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/raisefrompreviouserror)
+  * **Chain exceptions with `raise ... from` in except blocks**
+  * Raise statements inside except blocks should use `from` to chain the new exception to the caught one, preserving the full traceback.
+* [org.openrewrite.python.cleanup.RemoveAssertTrue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeasserttrue)
+  * **Delete no-op `assert True` statements**
+  * Delete bare `assert True` statements, which are always satisfied and have no effect. Assertions that carry a message string are preserved.
+* [org.openrewrite.python.cleanup.RemoveDictKeys](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removedictkeys)
+  * **Drop redundant `.keys()` on dict iteration**
+  * Dictionaries iterate over their keys by default, making explicit `.keys()` calls unnecessary in for-loops and `in` expressions.
+* [org.openrewrite.python.cleanup.RemoveDuplicateDictKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeduplicatedictkey)
+  * **Deduplicate repeated keys in dict literals**
+  * When a dict literal contains the same key more than once, only the final value survives at runtime. This removes the shadowed entries.
+* [org.openrewrite.python.cleanup.RemoveDuplicateSetKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeduplicatesetkey)
+  * **Deduplicate repeated elements in set literals**
+  * Set literals with repeated values have redundant entries that are discarded at runtime. This removes the duplicates, keeping the last one.
+* [org.openrewrite.python.cleanup.RemoveEmptyNestedBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeemptynestedblock)
+  * **Delete `if` blocks whose body is only `pass`**
+  * Delete `if` statements that contain nothing but `pass` and have no `else` branch. `for`/`while` loops are left alone because iterating may have side effects.
+* [org.openrewrite.python.cleanup.RemoveNoneFromDefaultGet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removenonefromdefaultget)
+  * **Remove redundant `None` default from `dict.get()`**
+  * Remove redundant `None` default argument from `dict.get()` calls since `None` is already the default return value.
+* [org.openrewrite.python.cleanup.RemovePassBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removepassbody)
+  * **Drop ``pass``-only ``if`` body by inverting the guard**
+  * When an ``if`` body contains only ``pass`` and is followed by an ``else``, flip the condition and use the else body directly.
+* [org.openrewrite.python.cleanup.RemovePassElif](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removepasselif)
+  * **Drop ``pass``-only ``elif`` by negating its condition**
+  * When an ``elif`` body is only ``pass`` and an ``else`` follows, invert the ``elif`` condition and absorb the else body.
+* [org.openrewrite.python.cleanup.RemoveRedundantBoolean](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantboolean)
+  * **Eliminate boolean literal from `and`/`or`**
+  * Strip ``True`` or ``False`` from ``and``/``or`` expressions where the literal has no effect on the result, e.g. ``True and val`` reduces to ``val`` and ``False and val`` reduces to ``False``.
+* [org.openrewrite.python.cleanup.RemoveRedundantCondition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantcondition)
+  * **Remove redundant ternary condition**
+  * When both branches of a ternary expression are identical, simplify `y if z else y` to `y`.
+* [org.openrewrite.python.cleanup.RemoveRedundantConstructorInDictUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantconstructorindictunion)
+  * **Unwrap unnecessary `dict()` from union operands**
+  * The `|` operator already produces a fresh dict, so wrapping an operand in `dict()` is redundant and can be removed.
+* [org.openrewrite.python.cleanup.RemoveRedundantContinue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantcontinue)
+  * **Strip trailing ``continue`` from loop body**
+  * Strip ``continue`` when it is the final statement in a loop body, since the loop naturally advances to the next iteration.
+* [org.openrewrite.python.cleanup.RemoveRedundantFstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantfstring)
+  * **Drop ``f`` prefix from strings without placeholders**
+  * When an f-string has no ``\{...\}`` expressions, strip the ``f`` prefix and convert it to an ordinary string literal.
+* [org.openrewrite.python.cleanup.RemoveRedundantIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantif)
+  * **Simplify negated ``elif`` to ``else``**
+  * When an ``elif`` condition is the exact negation of the preceding ``if``, replace it with ``else`` since the test is redundant.
+* [org.openrewrite.python.cleanup.RemoveRedundantPass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantpass)
+  * **Delete unnecessary ``pass`` in non-empty blocks**
+  * Delete ``pass`` when the enclosing block already contains other statements; ``pass`` is only useful as a placeholder in empty blocks.
+* [org.openrewrite.python.cleanup.RemoveRedundantPathExists](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantpathexists)
+  * **Drop ``exists()`` check before ``is_dir()``/``is_file()``**
+  * Drop ``path.exists()`` when it is ``and``-ed with ``is_dir()`` or ``is_file()``, which inherently return ``False`` for missing paths.
+* [org.openrewrite.python.cleanup.RemoveRedundantSliceIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantsliceindex)
+  * **Drop default-value slice boundaries**
+  * Omit slice start/stop when they equal ``0`` and ``len(seq)`` respectively, e.g. ``data[0:len(data)]`` becomes ``data[:]``.
+* [org.openrewrite.python.cleanup.RemoveStrFromFstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removestrfromfstring)
+  * **Strip ``str()`` from f-string placeholders**
+  * F-string placeholders convert values to strings automatically, so wrapping expressions in ``str()`` inside ``\{...\}`` is redundant.
+* [org.openrewrite.python.cleanup.RemoveStrFromPrint](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removestrfromprint)
+  * **Unwrap ``str()`` from ``print()`` arguments**
+  * ``print()`` automatically converts its arguments to strings, so an explicit ``str()`` wrapper is unnecessary and can be removed.
+* [org.openrewrite.python.cleanup.RemoveUnitStepFromRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunitstepfromrange)
+  * **Drop unnecessary step `1` argument from `range()`**
+  * Shorten `range(a, b, 1)` to `range(a, b)` because `range` already defaults to a step of one.
+* [org.openrewrite.python.cleanup.RemoveUnnecessaryElse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunnecessaryelse)
+  * **Drop ``else`` after early-exit ``if`` branch**
+  * When the ``if`` body always exits via return, raise, continue, or break, remove the ``else`` and dedent its contents.
+* [org.openrewrite.python.cleanup.RemoveUnreachableCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunreachablecode)
+  * **Strip dead code after terminal statements**
+  * Delete statements that follow a `return`, `raise`, `continue`, or `break` in the same block, since they can never execute.
+* [org.openrewrite.python.cleanup.RemoveZeroFromRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removezerofromrange)
+  * **Drop unnecessary `0` start argument from `range()`**
+  * Shorten `range(0, n)` to `range(n)` because `range` already defaults to starting at zero.
+* [org.openrewrite.python.cleanup.ReplaceApplyWithMethodCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/replaceapplywithmethodcall)
+  * **Convert `apply('name')` to a direct method invocation**
+  * When `apply()` receives a string literal like `'sum'` or `'mean'`, rewrite the call as a direct method invocation on the object.
+* [org.openrewrite.python.cleanup.ReturnOrYieldOutsideFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/returnoryieldoutsidefunction)
+  * **Remove `return`/`yield` outside function**
+  * Remove `return` and `yield` statements that are not inside any function or method definition.
+* [org.openrewrite.python.cleanup.SimplifyBooleanComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifybooleancomparison)
+  * **Remove explicit True/False comparisons**
+  * Drop unnecessary ``== True``, ``!= False``, and similar tests against boolean literals, leaving just the expression or ``not expr``.
+* [org.openrewrite.python.cleanup.SimplifyConstantSum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyconstantsum)
+  * **Simplify `sum(1 for x in items if cond)` to `sum(bool(cond) for x in items)`**
+  * Replace `sum(1 for x in items if cond)` with `sum(bool(cond) for x in items)` by moving the filter condition into a `bool()` wrapper.
+* [org.openrewrite.python.cleanup.SimplifyDictionaryUpdate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifydictionaryupdate)
+  * **Convert one-item `dict.update()` to bracket assignment**
+  * When `.update()` receives a dictionary literal containing exactly one key, rewrite it as a direct key assignment for clarity and efficiency.
+* [org.openrewrite.python.cleanup.SimplifyDivision](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifydivision)
+  * **Convert `int(a / b)` to floor division**
+  * Replace ``int(a / b)`` with Python's floor-division operator ``a // b`` for a more concise expression.
+* [org.openrewrite.python.cleanup.SimplifyEmptyCollectionComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyemptycollectioncomparison)
+  * **Use truthiness instead of empty-container equality**
+  * Convert ``== &quot;&quot;``/``== []``/``== \{\}``/``== ()`` into ``not var`` and the corresponding ``!=`` forms into ``var``, relying on Python's truthiness semantics for empty collections.
+* [org.openrewrite.python.cleanup.SimplifyFstringFormatting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyfstringformatting)
+  * **Fold constants and flatten nested f-strings**
+  * Inline constant values directly into f-string text and unwrap nested f-strings into their enclosing string.
+* [org.openrewrite.python.cleanup.SimplifyGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifygenerator)
+  * **Pass iterable directly to `any()`/`all()` instead of identity generator**
+  * An identity generator that yields every element unchanged is redundant inside `any()` or `all()` -- pass the collection directly.
+* [org.openrewrite.python.cleanup.SimplifyLenComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifylencomparison)
+  * **Replace `len()` emptiness check with truthiness**
+  * Rewrite ``len(seq) &gt; 0`` / ``len(seq) != 0`` to ``seq`` and ``len(seq) == 0`` to ``not seq``, leveraging Python's built-in truthiness for collections.
+* [org.openrewrite.python.cleanup.SimplifyNegativeIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifynegativeindex)
+  * **Use negative index instead of `len()` offset**
+  * Rewrite ``seq[len(seq) - k]`` as ``seq[-k]``, using Python's native negative-indexing support.
+* [org.openrewrite.python.cleanup.SimplifySingleExceptionTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifysingleexceptiontuple)
+  * **Unwrap one-element exception tuple in `except`**
+  * A tuple containing only one exception type is needlessly verbose. This unwraps it to the plain `except ExcType:` form.
+* [org.openrewrite.python.cleanup.SimplifyStrLenComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifystrlencomparison)
+  * **Compare string to `&quot;&quot;` instead of checking `len()`**
+  * Replace ``len(text) == 0`` with ``text == &quot;&quot;`` and ``len(text) &gt; 0`` / ``len(text) != 0`` with ``text != &quot;&quot;``, comparing the string directly rather than measuring its length.
+* [org.openrewrite.python.cleanup.SimplifySubstringSearch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifysubstringsearch)
+  * **Replace `.find()` check with `in` / `not in`**
+  * Rewrite ``.find()`` return-value checks as membership tests: ``text.find(sub) == -1`` becomes ``sub not in text`` and ``text.find(sub) != -1`` becomes ``sub in text``.
+* [org.openrewrite.python.cleanup.SquareIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/squareidentity)
+  * **Rewrite self-multiplication as `** 2`**
+  * When an expression is multiplied by itself, rewrite it using the exponentiation operator (`** 2`) for clarity.
+* [org.openrewrite.python.cleanup.StrPrefixSuffix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/strprefixsuffix)
+  * **Prefer ``startswith``/``endswith`` over slice comparison**
+  * Rewrite ``s[:N] == &quot;lit&quot;`` as ``s.startswith(&quot;lit&quot;)`` and ``s[-N:] == &quot;lit&quot;`` as ``s.endswith(&quot;lit&quot;)`` when the slice length equals the literal length.
+* [org.openrewrite.python.cleanup.SwapIfElseBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapifelsebranches)
+  * **Flip empty ``if``-body by negating the condition**
+  * When the ``if`` branch is just ``pass`` and an ``else`` exists, invert the test and promote the else body to the if body.
+* [org.openrewrite.python.cleanup.SwapIfExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapifexpression)
+  * **Swap ternary branches to drop negated condition**
+  * Flip the branches of a conditional expression whose test uses ``not``, eliminating the negation for clearer intent.
+* [org.openrewrite.python.cleanup.SwapVariable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapvariable)
+  * **Simplify temp-variable swap to tuple unpacking**
+  * Detect the three-line swap idiom (`tmp = x; x = y; y = tmp`) and condense it into `x, y = y, x` using tuple unpacking.
+* [org.openrewrite.python.cleanup.TernaryToIfExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/ternarytoifexpression)
+  * **Convert `and`/`or` ternary trick to conditional expression**
+  * Rewrite the legacy `cond and val or fallback` idiom as `val if cond else fallback` to avoid silent bugs when `val` is falsy.
+* [org.openrewrite.python.cleanup.TupleLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/tupleliteral)
+  * **Use `()` literal instead of `tuple()` constructor**
+  * Convert no-argument `tuple()` calls to the `()` literal, which is more concise and avoids a function call.
+* [org.openrewrite.python.cleanup.UnwrapIterableConstruction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/unwrapiterableconstruction)
+  * **Flatten redundant collection constructor wrapping a literal**
+  * When `tuple()`, `list()`, or `set()` wraps a single list or tuple literal, remove the constructor and use the target literal form directly.
+* [org.openrewrite.python.cleanup.UseContextlibSuppress](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usecontextlibsuppress)
+  * **Replace `try/except: pass` with `contextlib.suppress()`**
+  * When an except handler only contains `pass`, the intent is to suppress the error. `contextlib.suppress()` states this explicitly and eliminates the try/except boilerplate.
+* [org.openrewrite.python.cleanup.UseDatetimeNowNotToday](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usedatetimenownottoday)
+  * **Use `datetime.now()` instead of `datetime.today()`**
+  * Replace `datetime.today()` with `datetime.now()`. Both are equivalent, but `now()` is more explicit and supports timezone arguments.
+* [org.openrewrite.python.cleanup.UseDictionaryUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usedictionaryunion)
+  * **Use dict union operator instead of double-star unpacking**
+  * Dict literals made up entirely of `**` unpacking can be rewritten with the `|` union operator available since Python 3.9.
+* [org.openrewrite.python.cleanup.UseFileIterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usefileiterator)
+  * **Iterate over file objects directly, not via `readlines()`**
+  * File objects are iterable and yield lines on demand, so calling `.readlines()` to build an intermediate list is unnecessary.
+* [org.openrewrite.python.cleanup.UseGetitemForReMatchGroups](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usegetitemforrematchgroups)
+  * **Use bracket access for ``re.Match`` groups**
+  * Replace ``match.group(n)`` with ``match[n]`` to use the shorter subscript syntax available since Python 3.6.
+* [org.openrewrite.python.cleanup.UseIsna](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/useisna)
+  * **Use `.isna()` instead of `== np.nan` comparisons**
+  * Rewrite `== np.nan` and `== numpy.nan` equality tests as `.isna()` calls, since direct NaN comparison always evaluates to False.
+* [org.openrewrite.python.cleanup.UseStringRemoveAffix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usestringremoveaffix)
+  * **Replace string slicing with `removeprefix`/`removesuffix`**
+  * Replace `if text.startswith(s): text = text[N:]` with `text = text.removeprefix(s)` and the equivalent `endswith` pattern with `removesuffix` (Python 3.9+).
+* [org.openrewrite.python.cleanup.UselessElseOnLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/uselesselseonloop)
+  * **Flatten `for/else` when the loop has no `break`**
+  * A `for/else` where the loop body never breaks is misleading -- the `else` runs every time. This moves the else body after the loop.
+* [org.openrewrite.python.cleanup.YieldFrom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/yieldfrom)
+  * **Collapse for-yield loop into `yield from`**
+  * A for-loop that does nothing but yield the loop variable can be expressed as `yield from`, which is shorter and delegates directly.
 
 ### rewrite-struts
 

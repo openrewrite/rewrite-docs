@@ -62,7 +62,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud properties to 2025.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud20251/springcloudproperties_2025_1)
 * [Migrate Spring Cloud properties to 2025](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2025/springcloudproperties_2025)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
-* [Migrate the Spring Boot extension to Axon Framework 5](/recipes/axonframework/migration/axon4toaxon5springbootextension.md)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](/recipes/java/spring/boot3/migratemaxhttpheadersize.md)
 * [Update OpenTelemetry resource attributes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/updateopentelemetryresourceattributes)
 

@@ -83,7 +83,6 @@ This recipe is used as part of the following composite recipes:
 * [Remove Spring Pulsar Reactive support](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringpulsarreactive)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](/recipes/java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot.md)
 * [Remove spring-jcl dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/removespringjcl)
-* [Remove the unported axon-spring-aot extension](/recipes/axonframework/migration/axon4toaxon5springaotextension.md)
 * [Remove unnecessary dependencies](/recipes/java/micronaut/removeunnecessarydependencies.md)
 * [Replace Derby test driver with Quarkus JDBC Derby (test scope)](/recipes/quarkus/spring/derbytestdrivertoquarkus.md)
 * [Replace H2 test driver with Quarkus JDBC H2 (test scope)](/recipes/quarkus/spring/h2testdrivertoquarkus.md)

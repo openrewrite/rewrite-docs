@@ -42,8 +42,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/quarkus/updates/core/quarkus30/jacksonjavaxtojakarta.md)
 * [Migrate all Maven and Gradle groupIds and artifactIds from OptaPlanner to Timefold](/recipes/timefold/solver/migration/fork/timefoldchangedependencies.md)
-* [Migrate the Axon Framework BOM coordinates](/recipes/axonframework/migration/axon4toaxon5bom.md)
-* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/axoniq/framework/migration/axon4toaxoniq5bom.md)
 
 ## Example
 

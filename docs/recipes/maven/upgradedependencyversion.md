@@ -72,6 +72,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to Struts 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/migratestruts7)
 * [Migrate to Wicket 10.x](/recipes/apache/wicket/migratetowicket10.md)
+* [Upgrade to Axonframework 4.x Jakarta](/recipes/axonframework/migration/upgradeaxonframework_4_jakarta.md)
+* [Upgrade to Axonframework 4.x Javax](/recipes/axonframework/migration/upgradeaxonframework_4_javax.md)
 * [Upgrade to Quarkus 3.26](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgradequarkus3_x)
 * [io.quarkus.updates.core.quarkus30.UpgradeQuarkiverse](/recipes/quarkus/updates/core/quarkus30/upgradequarkiverse.md)
 

@@ -34,14 +34,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | overrideManagedVersion | *Optional*. If the old dependency has a managed version, this flag can be used to explicitly set the version on the new dependency. WARNING: No check is done on the NEW dependency to verify if it is managed, it relies on whether the OLD dependency had a managed version. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Migrate the Axon Framework BOM coordinates](/recipes/axonframework/migration/axon4toaxon5bom.md)
-* [Swap the BOM to Axoniq Framework 5 commercial](/recipes/axoniq/framework/migration/axon4toaxoniq5bom.md)
-
 ## Example
 
 ###### Parameters

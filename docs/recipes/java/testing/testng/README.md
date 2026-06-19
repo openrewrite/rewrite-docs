@@ -15,6 +15,12 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [TestNG `assertEquals` to AssertJ](./testngassertequalstoassertthat.md)
+* [TestNG `assertEqualsDeep`/`assertNotEqualsDeep` to AssertJ](./testngassertequalsdeeptoassertthat.md)
+* [TestNG `assertEqualsNoOrder` to AssertJ](./testngassertequalsnoordertoassertthat.md)
+* [TestNG `assertList*` to AssertJ](./testngassertlisttoassertthat.md)
 * [TestNG `assertNotEquals` to AssertJ](./testngassertnotequalstoassertthat.md)
+* [TestNG `assertNotSame` to AssertJ](./testngassertnotsametoassertthat.md)
+* [TestNG `assertSame` to AssertJ](./testngassertsametoassertthat.md)
+* [TestNG `assertThrows`/`expectThrows` to AssertJ](./testngassertthrowstoassertthat.md)
 
 

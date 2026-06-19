@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection**
 
-_Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`._
+_Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`, `getField`, `getMethod`, `invokeConstructor`) with plain Java reflection using `java.lang.reflect.Field`, `java.lang.reflect.Method`, and `java.lang.reflect.Constructor`._
 
 ### Tags
 
@@ -38,6 +38,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace PowerMock `Whitebox.setInternalState()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxsetinternalstatetojavareflection)
 * [Replace PowerMock `Whitebox.getInternalState()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxgetinternalstatetojavareflection)
 * [Replace PowerMock `Whitebox.invokeMethod()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxinvokemethodtojavareflection)
+* [Replace PowerMock `Whitebox.getField()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxgetfieldtojavareflection)
+* [Replace PowerMock `Whitebox.getMethod()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxgetmethodtojavareflection)
+* [Replace PowerMock `Whitebox.invokeConstructor()` with Java reflection](../../../java/testing/mockito/powermockwhiteboxinvokeconstructortojavareflection)
 
 </TabItem>
 
@@ -49,7 +52,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection
 displayName: Replace PowerMock `Whitebox` with Java reflection
 description: |
-  Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`) with plain Java reflection using `java.lang.reflect.Field` and `java.lang.reflect.Method`.
+  Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`, `getField`, `getMethod`, `invokeConstructor`) with plain Java reflection using `java.lang.reflect.Field`, `java.lang.reflect.Method`, and `java.lang.reflect.Constructor`.
 tags:
   - testing
   - mockito
@@ -57,6 +60,9 @@ recipeList:
   - org.openrewrite.java.testing.mockito.PowerMockWhiteboxSetInternalStateToJavaReflection
   - org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetInternalStateToJavaReflection
   - org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection
+  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetFieldToJavaReflection
+  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetMethodToJavaReflection
+  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeConstructorToJavaReflection
 
 ```
 </TabItem>

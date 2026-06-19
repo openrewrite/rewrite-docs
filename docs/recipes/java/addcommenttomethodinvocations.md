@@ -41,6 +41,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `RestTemplate` to `RestClient`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migrateresttemplatetorestclient)
 * [Migrate from SpringFox Swagger to SpringDoc and OpenAPI](/recipes/java/springdoc/springfoxtospringdoc.md)
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
+* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
 * [Replace deprecated RequestMatcherProvider with new API](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedrequestmatcherprovider)
 * [Spring Security 7 modularization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/modularizespringsecurity7)
 
