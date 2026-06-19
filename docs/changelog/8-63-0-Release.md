@@ -13,7 +13,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 ## Corresponding CLI version
 
 * Stable CLI version `v3.48.8`
-* Staging CLI version: `v3.49.0`
+* Staging CLI version `v3.49.0`
 
 ## New Artifacts
 
