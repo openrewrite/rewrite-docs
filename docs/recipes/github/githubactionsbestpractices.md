@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.GitHubActionsBestPractices**
 
-_Applies best practices to GitHub Actions workflows, including enabling dependency caching, using cached distributions, finding missing timeouts, removing unused inputs, and preferring block-style job dependencies._
+_Applies best practices to GitHub Actions workflows, including enabling dependency caching, using cached distributions, finding missing timeouts, removing unused inputs, preferring block-style job dependencies, and upgrading official actions to their latest versions._
 
 ### Tags
 
@@ -40,6 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use `actions/setup-java` `temurin` distribution as they are cached in hosted runners](../github/prefertemurindistributions)
 * [Remove unused workflow dispatch inputs](../github/removeunusedworkflowdispatchinputs)
 * [Setup Java dependency caching](../github/setupjavacaching)
+* [Upgrade official GitHub Actions to their latest versions](../github/upgradeofficialgithubactions)
 
 </TabItem>
 
@@ -51,7 +52,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.github.GitHubActionsBestPractices
 displayName: GitHub Actions best practices
 description: |
-  Applies best practices to GitHub Actions workflows, including enabling dependency caching, using cached distributions, finding missing timeouts, removing unused inputs, and preferring block-style job dependencies.
+  Applies best practices to GitHub Actions workflows, including enabling dependency caching, using cached distributions, finding missing timeouts, removing unused inputs, preferring block-style job dependencies, and upgrading official actions to their latest versions.
 tags:
   - github
   - actions
@@ -61,6 +62,7 @@ recipeList:
   - org.openrewrite.github.PreferTemurinDistributions
   - org.openrewrite.github.RemoveUnusedWorkflowDispatchInputs
   - org.openrewrite.github.SetupJavaCaching
+  - org.openrewrite.github.UpgradeOfficialGitHubActions
 
 ```
 </TabItem>

@@ -37,6 +37,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add `@JsonCreator` to non-public constructors](./addjsoncreatortoprivateconstructors.md)
 * [Add comment to SimpleModule method calls on modules that no longer extend SimpleModule](./commentoutsimplemodulemethodcalls.md)
 * [Migrate `JSONNode` field iterator for Jackson 3](./jackson3jsonnodefielditerators.md)
+* [Migrate `ObjectMapper.readValue(URL, ...)` to use `openStream()`](./readvalueurltoopenstream.md)
+* [Migrate deprecated `@JsonSerialize(include = ...)` to `@JsonInclude`](./jsonserializeincludetojsoninclude.md)
 * [Migrate factory setter calls to builder pattern](./migratefactorysetterstobuilder.md)
 * [Migrate mapper setter calls to builder pattern](./migratemappersetterstobuilder.md)
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)

@@ -109,6 +109,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `org.springframework.boot.actuate.autoconfigure.metrics.orm.jpa`
   * newPackageName: `org.springframework.boot.hibernate.autoconfigure.metrics`
   * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager`
+  * newFullyQualifiedTypeName: `org.springframework.boot.jpa.test.autoconfigure.AutoConfigureTestEntityManager`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager`
+  * newFullyQualifiedTypeName: `org.springframework.boot.jpa.test.autoconfigure.TestEntityManager`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.jpa.test.autoconfigure.TestEntityManagerAutoConfiguration`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.test.autoconfigure.orm.jpa`
   * newPackageName: `org.springframework.boot.data.jpa.test.autoconfigure`
@@ -409,6 +418,15 @@ recipeList:
       oldPackageName: org.springframework.boot.actuate.autoconfigure.metrics.orm.jpa
       newPackageName: org.springframework.boot.hibernate.autoconfigure.metrics
       recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager
+      newFullyQualifiedTypeName: org.springframework.boot.jpa.test.autoconfigure.AutoConfigureTestEntityManager
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
+      newFullyQualifiedTypeName: org.springframework.boot.jpa.test.autoconfigure.TestEntityManager
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManagerAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.jpa.test.autoconfigure.TestEntityManagerAutoConfiguration
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.test.autoconfigure.orm.jpa
       newPackageName: org.springframework.boot.data.jpa.test.autoconfigure

@@ -42,6 +42,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Boot Actuator to Quarkus Health and Metrics](/recipes/quarkus/spring/migratespringactuator.md)
 * [Migrate Spring Cloud Config Client to Quarkus Config](/recipes/quarkus/spring/migratespringcloudconfig.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
 * [Quarkus 1.13 migration from Quarkus 1.11](/recipes/quarkus/quarkus1to1_13migration.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
 * [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](/recipes/apache/camel/upgrade/camel45/traceproperties.md)

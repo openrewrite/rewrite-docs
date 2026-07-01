@@ -133,6 +133,16 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `error-handling-spring-boot-starter`
   * newVersion: `5.0.x`
   * overrideManagedVersion: `true`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.jobrunr`
+  * oldArtifactId: `jobrunr-spring-boot-3-starter`
+  * newArtifactId: `jobrunr-spring-boot-4-starter`
+  * newVersion: `8.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.jobrunr`
+  * artifactId: `*`
+  * newVersion: `8.x`
+  * overrideManagedVersion: `true`
 * [Add `@AutoConfigureTestRestTemplate` if necessary](../../../java/spring/boot4/addautoconfiguretestresttemplate)
 * [Add `@AutoConfigureWebTestClient` if necessary](../../../java/spring/boot4/addautoconfigurewebtestclient)
 
@@ -244,6 +254,16 @@ recipeList:
       groupId: io.github.wimdeblauwe
       artifactId: error-handling-spring-boot-starter
       newVersion: 5.0.x
+      overrideManagedVersion: true
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jobrunr
+      oldArtifactId: jobrunr-spring-boot-3-starter
+      newArtifactId: jobrunr-spring-boot-4-starter
+      newVersion: 8.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.jobrunr
+      artifactId: "*"
+      newVersion: 8.x
       overrideManagedVersion: true
   - org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate
   - org.openrewrite.java.spring.boot4.AddAutoConfigureWebTestClient

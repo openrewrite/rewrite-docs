@@ -74,6 +74,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `jakarta.enterprise.cdi-api`
   * newVersion: `4.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `jakarta.enterprise.concurrent`
+  * artifactId: `jakarta.enterprise.concurrent-api`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.el`
   * artifactId: `jakarta.el-api`
   * newVersion: `5.0.x`
@@ -179,6 +183,10 @@ recipeList:
       groupId: jakarta.enterprise
       artifactId: jakarta.enterprise.cdi-api
       newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: jakarta.enterprise.concurrent
+      artifactId: jakarta.enterprise.concurrent-api
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.el
       artifactId: jakarta.el-api

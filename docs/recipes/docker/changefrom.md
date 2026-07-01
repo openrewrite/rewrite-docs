@@ -27,7 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | oldImageName | Glob pattern to match image names (without tag/digest). | `ubuntu` |
 | `String` | oldTag | *Optional*. Only match images with tags matching this glob pattern. If null, matches any tag or no tag. | `20.*` |
-| `String` | oldDigest | *Optional*. Only match images with digests matching this glob pattern. If null, matches any digest or no digest. | `sha256:*` |
+| `String` | oldDigest | *Optional*. Only match images with digests matching this glob pattern. If null, matches any digest or no digest. If empty (`""`), matches only images that have no digest, which is useful for skipping digest-pinned `FROM`s so deliberate pins are left untouched. | `sha256:*` |
 | `String` | oldPlatform | *Optional*. Only change images with this platform. If null, matches any platform. | `linux/amd64` |
 | `String` | newImageName | *Optional*. The new image name. If null, preserves the existing name. | `ubuntu` |
 | `String` | newTag | *Optional*. The new tag. If null, preserves the existing tag. If empty, removes the tag. | `22.04` |

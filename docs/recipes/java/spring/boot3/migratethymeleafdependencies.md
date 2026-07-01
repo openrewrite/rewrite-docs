@@ -50,10 +50,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.thymeleaf`
   * oldArtifactId: `thymeleaf-spring5`
   * newArtifactId: `thymeleaf-spring6`
+  * newVersion: `3.1.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.thymeleaf.extras`
   * oldArtifactId: `thymeleaf-extras-springsecurity5`
   * newArtifactId: `thymeleaf-extras-springsecurity6`
+  * newVersion: `3.1.x`
 
 </TabItem>
 
@@ -81,10 +83,12 @@ recipeList:
       oldGroupId: org.thymeleaf
       oldArtifactId: thymeleaf-spring5
       newArtifactId: thymeleaf-spring6
+      newVersion: 3.1.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.thymeleaf.extras
       oldArtifactId: thymeleaf-extras-springsecurity5
       newArtifactId: thymeleaf-extras-springsecurity6
+      newVersion: 3.1.x
 
 ```
 </TabItem>

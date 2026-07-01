@@ -11,7 +11,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.util.UseListOf**
 
-_Prefer `List.of(..)` instead of using `java.util.List#add(..)` in anonymous ArrayList initializers in Java 10 or higher. This recipe will not modify code where the List is later mutated since `List.of` returns an immutable list._
+Prefer `List.of(..)` in Java 10 or higher. Two input shapes are recognised:
+
+- Anonymous-class initialization (`new ArrayList<>() {{ add("a"); add("b"); }}`), which is replaced wholesale with `List.of("a", "b")` (immutable result, matching the anonymous-class idiom's typical intent).
+- A `new ArrayList<>()` declaration followed by a chain of `target.add(..)` statements, which is collapsed to `new ArrayList<>(List.of(..))` (preserving the mutable `ArrayList`).
 
 ## Recipe source
 

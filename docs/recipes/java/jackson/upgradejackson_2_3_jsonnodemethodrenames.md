@@ -52,7 +52,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * matchOverrides: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode textValue()`
-  * newMethodName: `asString`
+  * newMethodName: `stringValue`
   * matchOverrides: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.databind.JsonNode with(..)`
@@ -92,7 +92,7 @@ recipeList:
       matchOverrides: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode textValue()
-      newMethodName: asString
+      newMethodName: stringValue
       matchOverrides: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.databind.JsonNode with(..)

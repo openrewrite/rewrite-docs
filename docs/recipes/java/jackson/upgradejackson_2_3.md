@@ -37,6 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](../../java/jackson/codehaustofasterxml)
 * [Replace `IOException` with `JacksonException` in catch clauses](../../java/jackson/ioexceptiontojacksonexception)
 * [Remove elements from a method declaration `throws` clause](../../java/removemethodthrows)
   * methodPattern: `com.fasterxml.jackson.databind.JsonSerializer serialize(..)`
@@ -46,7 +47,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * exceptionTypePattern: `java.io.IOException`
 * [Replace `null` type in `StdDeserializer` constructor with actual type](../../java/jackson/stddeserializernullconstructor)
 * [Update `lombok.config` for Jackson 3 compatibility](../../java/jackson/lombokjacksonizedconfig)
-* [Update configuration of serialization inclusion in `ObjectMapper` for Jackson 3](../../java/jackson/updateserializationinclusionconfiguration)
 * [Use format alignment `ObjectMappers`](../../java/jackson/useformatalignedobjectmappers)
 * [Modernize legacy `jackson-core` feature constants](../../java/jackson/upgradejackson_2_3_modernizejacksoncorefeatures)
 * [Remove redundant Jackson 3 feature flag configurations](../../java/jackson/upgradejackson_2_3_removeredundantfeatureflags)
@@ -94,6 +94,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * methodPattern: `com.fasterxml.jackson.databind.ObjectMapper deserializationConfig()`
 * [Update Jackson 2.x types to 3.x](../../java/jackson/upgradejackson_2_3_typechanges)
 * [Use `JsonFactory.builder()` over `new JsonFactoryBuilder()`](../../java/jackson/usejsonfactorystaticbuilder)
+* [Migrate deprecated `@JsonSerialize(include = ...)` to `@JsonInclude`](../../java/jackson/jsonserializeincludetojsoninclude)
+* [Migrate `ObjectMapper.readValue(URL, ...)` to use `openStream()`](../../java/jackson/readvalueurltoopenstream)
 * [Update Jackson package names from 2.x to 3.x](../../java/jackson/upgradejackson_2_3_packagechanges)
 * [Simplify catch clauses for Jackson exceptions](../../java/jackson/simplifyjacksonexceptioncatch)
 
@@ -111,6 +113,7 @@ description: |
 tags:
   - jackson-3
 recipeList:
+  - org.openrewrite.java.jackson.CodehausToFasterXML
   - org.openrewrite.java.jackson.IOExceptionToJacksonException
   - org.openrewrite.java.RemoveMethodThrows:
       methodPattern: com.fasterxml.jackson.databind.JsonSerializer serialize(..)
@@ -120,7 +123,6 @@ recipeList:
       exceptionTypePattern: java.io.IOException
   - org.openrewrite.java.jackson.StdDeserializerNullConstructor
   - org.openrewrite.java.jackson.LombokJacksonizedConfig
-  - org.openrewrite.java.jackson.UpdateSerializationInclusionConfiguration
   - org.openrewrite.java.jackson.UseFormatAlignedObjectMappers
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_ModernizeJacksonCoreFeatures
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags
@@ -182,6 +184,8 @@ recipeList:
       methodPattern: com.fasterxml.jackson.databind.ObjectMapper deserializationConfig()
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_TypeChanges
   - org.openrewrite.java.jackson.UseJsonFactoryStaticBuilder
+  - org.openrewrite.java.jackson.JsonSerializeIncludeToJsonInclude
+  - org.openrewrite.java.jackson.ReadValueUrlToOpenStream
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges
   - org.openrewrite.java.jackson.SimplifyJacksonExceptionCatch
 

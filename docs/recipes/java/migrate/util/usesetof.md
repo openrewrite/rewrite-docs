@@ -11,7 +11,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.util.UseSetOf**
 
-_Prefer `Set.of(..)` instead of using `java.util.Set#add(..)` in anonymous HashSet initializers in Java 10 or higher. This recipe will not modify code where the Set is later mutated since `Set.of` returns an immutable set._
+Prefer `Set.of(..)` in Java 10 or higher. Two input shapes are recognised:
+
+- Anonymous-class initialization (`new HashSet<>() {{ add("a"); add("b"); }}`), which is replaced wholesale with `Set.of("a", "b")` (immutable result, matching the anonymous-class idiom's typical intent).
+- A `new HashSet<>()` declaration followed by a chain of `target.add(..)` statements, which is collapsed to `new HashSet<>(Set.of(..))` (preserving the mutable `HashSet`).
 
 ## Recipe source
 

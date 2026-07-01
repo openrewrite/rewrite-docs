@@ -41,13 +41,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to Java 21](../../java/migrate/upgradetojava21)
-* [Upgrade build to Java 24 for Kotlin pre-2.3](../../java/migrate/upgradebuildtojava24)
+* [Upgrade Kotlin to 2.3 for Java 25 compatibility](../../java/migrate/upgradekotlinforjava25)
+* [Upgrade build to Java 24 for Kotlin 1.x](../../java/migrate/upgradebuildtojava24forkotlin1x)
 * [Upgrade build to Java 25 (non-Kotlin)](../../java/migrate/upgradebuildtojava25)
 * [Upgrade build to Java 25 for Kotlin 2.3+](../../java/migrate/upgradebuildtojava25forkotlin)
 * [Upgrade plugins to Java 25 compatible versions](../../java/migrate/upgradepluginsforjava25)
 * [Migrate `System.out.print` to Java 25 IO utility class](../../java/migrate/io/replacesystemoutwithioprint)
 * [Use `Process#waitFor(Duration)`](../../java/migrate/lang/migrateprocesswaitforduration)
-* [Replace unused variables with underscore](../../java/migrate/lang/replaceunusedvariableswithunderscore)
 * [Replace `Inflater` and `Deflater` `end()` calls with `close()`](../../java/migrate/util/migrateinflaterdeflatertoclose)
 * [Use `Reader.of(CharSequence)` for non-synchronized readers](../../java/migrate/util/migratestringreadertoreaderof)
 * [Remove Security AccessController](../../java/migrate/accesscontroller)
@@ -56,6 +56,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `System.getSecurityManager()` with `null`](../../java/migrate/systemgetsecuritymanagertonull)
 * [Use `ZipException` instead of `ZipError`](../../java/migrate/migrateziperrortozipexception)
 * [Migrate GraalVM resource-config.json to glob patterns](../../java/migrate/migrategraalvmresourceconfig)
+* [Comment Kotlin modules capped at Java 24](../../java/migrate/commentkotlinmodulescappedatjava24)
 
 </TabItem>
 
@@ -74,13 +75,13 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.UpgradeToJava21
-  - org.openrewrite.java.migrate.UpgradeBuildToJava24
+  - org.openrewrite.java.migrate.UpgradeKotlinForJava25
+  - org.openrewrite.java.migrate.UpgradeBuildToJava24ForKotlin1x
   - org.openrewrite.java.migrate.UpgradeBuildToJava25
   - org.openrewrite.java.migrate.UpgradeBuildToJava25ForKotlin
   - org.openrewrite.java.migrate.UpgradePluginsForJava25
   - org.openrewrite.java.migrate.io.ReplaceSystemOutWithIOPrint
   - org.openrewrite.java.migrate.lang.MigrateProcessWaitForDuration
-  - org.openrewrite.java.migrate.lang.ReplaceUnusedVariablesWithUnderscore
   - org.openrewrite.java.migrate.util.MigrateInflaterDeflaterToClose
   - org.openrewrite.java.migrate.util.MigrateStringReaderToReaderOf
   - org.openrewrite.java.migrate.AccessController
@@ -89,6 +90,7 @@ recipeList:
   - org.openrewrite.java.migrate.SystemGetSecurityManagerToNull
   - org.openrewrite.java.migrate.MigrateZipErrorToZipException
   - org.openrewrite.java.migrate.MigrateGraalVMResourceConfig
+  - org.openrewrite.java.migrate.CommentKotlinModulesCappedAtJava24
 
 ```
 </TabItem>

@@ -11,7 +11,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.util.UseMapOf**
 
-_Prefer `Map.of(..)` instead of using `java.util.Map#put(..)` in Java 10 or higher._
+Prefer `Map.of(..)` instead of using `java.util.Map#put(..)` in Java 10 or higher. Two input shapes are recognised:
+
+- Anonymous-class initialization (`new HashMap<>() {{ put(k, v); ... }}`), which is replaced wholesale with `Map.of(k, v, ...)` (or `Map.ofEntries(...)` past ten entries) — immutable result.
+- A `new HashMap<>()` declaration followed by a chain of `target.put(k, v)` statements, which is collapsed to `new HashMap<>(Map.of(..))` (or `new HashMap<>(Map.ofEntries(..))`) — preserving the mutable `HashMap`.
 
 ## Recipe source
 

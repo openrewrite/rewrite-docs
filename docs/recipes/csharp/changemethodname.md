@@ -85,6 +85,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate from Java Faker to Datafaker](/recipes/java/testing/datafaker/javafakertodatafaker.md)
+* [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](/recipes/java/springdoc/migratespringdoccommon.md)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)

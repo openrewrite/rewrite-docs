@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 * [OpenRewrite recipe best practices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
 * [Statically import AssertJ's `assertThat`](/recipes/java/testing/assertj/staticimports.md)

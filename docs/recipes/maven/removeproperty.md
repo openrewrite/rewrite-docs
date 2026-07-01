@@ -35,6 +35,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
 * [Modernize a Jenkins plugin to the latest versions supported by Java 8](/recipes/jenkins/modernizepluginforjava8.md)
+* [Remove the orphaned Spring Retry version pin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringretryversionpin)
 
 ## Example
 

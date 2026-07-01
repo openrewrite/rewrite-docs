@@ -42,6 +42,7 @@ This recipe is used as part of the following composite recipes:
 * [Faces XHTML migration for Jakarta EE 10](/recipes/java/migrate/jakarta/jakartafacesxhtmlee10.md)
 * [Faces XHTML migration for Jakarta EE 9](/recipes/java/migrate/jakarta/jakartafacesxhtmlee9.md)
 * [Faces XHTML migration for Jakarta EE 9](/recipes/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
+* [Migrate .NET install URLs from retiring Azure CDN domains](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/dotnet/migratedotnetinstallurls)
 * [Migrate JSF values inside EcmaScript files](/recipes/java/migrate/jakarta/jakartafacesecmascript.md)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)

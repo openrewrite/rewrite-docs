@@ -36,6 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate to Jackson `@JsonInclude`](../../java/jackson/codehaus/jsonincludeannotation)
 * [Migrate serialization annotation processor](../../java/jackson/codehaus/replaceserializationconfigannotationintrospector)
+* [Remove Codehaus Jackson annotations if doubly annotated](../../java/jackson/codehaus/removedoublyannotatedcodehausannotations)
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.codehaus.jackson.map.JsonSerializer`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.databind.JsonSerializer`
@@ -81,7 +82,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * oldPackageName: `org.codehaus.jackson.map.ser`
   * newPackageName: `com.fasterxml.jackson.databind.ser`
   * recursive: `true`
-* [Add imports for fully qualified references to types](../../java/shortenfullyqualifiedtypereferences)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ tags:
 recipeList:
   - org.openrewrite.java.jackson.codehaus.JsonIncludeAnnotation
   - org.openrewrite.java.jackson.codehaus.ReplaceSerializationConfigAnnotationIntrospector
+  - org.openrewrite.java.jackson.codehaus.RemoveDoublyAnnotatedCodehausAnnotations
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.codehaus.jackson.map.JsonSerializer
       newFullyQualifiedTypeName: com.fasterxml.jackson.databind.JsonSerializer
@@ -144,7 +145,6 @@ recipeList:
       oldPackageName: org.codehaus.jackson.map.ser
       newPackageName: com.fasterxml.jackson.databind.ser
       recursive: true
-  - org.openrewrite.java.ShortenFullyQualifiedTypeReferences
 
 ```
 </TabItem>

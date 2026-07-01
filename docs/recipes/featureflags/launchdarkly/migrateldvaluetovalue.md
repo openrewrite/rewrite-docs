@@ -1,84 +1,42 @@
 ---
-title: "Upgrade build to Java 24 for Kotlin pre-2.3"
-sidebar_label: "Upgrade build to Java 24 for Kotlin pre-2.3"
+title: "Migrate LaunchDarkly `LDValue` and `jsonValueVariation` to OpenFeature"
+sidebar_label: "Migrate LaunchDarkly `LDValue` and `jsonValueVariation` to OpenFeature"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Upgrade build to Java 24 for Kotlin pre-2.3
+# Migrate LaunchDarkly `LDValue` and `jsonValueVariation` to OpenFeature
 
-**org.openrewrite.java.migrate.UpgradeBuildToJava24**
+**org.openrewrite.featureflags.launchdarkly.MigrateLDValueToValue**
 
-_Kotlin versions before 2.3 only support up to Java 24. Applies only to modules that actually compile Kotlin (i.e. contain `.kt` source files), so transitive `kotlin-stdlib` dependencies do not trigger the cap._
+_Migrate `jsonValueVariation`/`jsonValueVariationDetail` to OpenFeature's `getObjectValue`/`getObjectDetails` (reordering the context argument to last) and convert scalar `LDValue.of(...)` and `LDValue.ofNull()` defaults to `dev.openfeature.sdk.Value`. To keep the result compilable, this recipe is skipped for files that use the structured builders `LDValue.buildObject()`, `LDValue.buildArray()`, `LDValue.parse(...)` or `LDValue.of(long)`, which require manual migration to `Structure`/`List<Value>`._
 
 ## Recipe source
 
-[GitHub: java-version-25.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/java-version-25.yml),
-[Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+[GitHub: MigrateLDValueToValue.java](https://github.com/openrewrite/rewrite-feature-flags/blob/main/src/main/java/org/openrewrite/featureflags/launchdarkly/MigrateLDValueToValue.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-feature-flags/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-feature-flags/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Module has Kotlin source files](../../java/migrate/search/modulehaskotlinsource)
-* [Module has dependency](../../java/dependencies/search/modulehasdependency)
-  * groupIdPattern: `org.jetbrains.kotlin`
-  * artifactIdPattern: `kotlin-stdlib*`
-  * version: `[0,2.3)`
-
-**Recipes**
-
-* [Upgrade Java version](../../java/migrate/upgradejavaversion)
-  * version: `24`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.migrate.UpgradeBuildToJava24
-displayName: Upgrade build to Java 24 for Kotlin pre-2.3
-description: |
-  Kotlin versions before 2.3 only support up to Java 24. Applies only to modules that actually compile Kotlin (i.e. contain `.kt` source files), so transitive `kotlin-stdlib` dependencies do not trigger the cap.
-preconditions:
-  - org.openrewrite.java.migrate.search.ModuleHasKotlinSource
-  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
-      groupIdPattern: org.jetbrains.kotlin
-      artifactIdPattern: kotlin-stdlib*
-      version: [0,2.3)
-recipeList:
-  - org.openrewrite.java.migrate.UpgradeJavaVersion:
-      version: 24
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
+* [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.java.migrate.UpgradeBuildToJava24"
-  displayName="Upgrade build to Java 24 for Kotlin pre-2.3"
+  recipeName="org.openrewrite.featureflags.launchdarkly.MigrateLDValueToValue"
+  displayName="Migrate LaunchDarkly `LDValue` and `jsonValueVariation` to OpenFeature"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-migrate-java"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+  artifactId="rewrite-feature-flags"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS"
   hasDataTables
 />
 
@@ -86,7 +44,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.migrate.UpgradeBuildToJava24" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.featureflags.launchdarkly.MigrateLDValueToValue" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

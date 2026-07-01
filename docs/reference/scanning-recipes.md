@@ -267,6 +267,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ### rewrite-github-actions
 
+* [org.openrewrite.github.UpgradeOfficialGitHubActions](/recipes/github/upgradeofficialgithubactions.md)
+  * **Upgrade official GitHub Actions to their latest versions**
+  * Upgrades actions from the official `actions` and `github` organizations to the newest known version, working entirely offline. Each reference is upgraded while preserving its existing precision: a major version (`v4`) moves to the newest major, a full version (`v4.1.2`) to the newest full version, and a commit SHA to the latest known commit. Actions that are not official, not known, or already up to date are left untouched.
 * [org.openrewrite.github.security.PinGitHubActionsToSha](/recipes/github/security/pingithubactionstosha.md)
   * **Pin GitHub Actions to commit SHAs**
   * Replaces mutable tag or branch references in GitHub Actions `uses:` declarations with immutable commit SHAs. A static mapping of well-known actions is checked first; if the action is not found, the GitHub API is used to resolve the reference at recipe run time. By default only third-party actions are pinned; set `pinOfficialActions` to include actions from the `actions` and `github` organizations. To pin only a specific allow-list of actions, set `includedActions`.

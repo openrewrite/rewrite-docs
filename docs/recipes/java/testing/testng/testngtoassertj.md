@@ -57,6 +57,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [TestNG `assertNotSame` to AssertJ](../../../java/testing/testng/testngassertnotsametoassertthat)
 * [TestNG `assertThrows`/`expectThrows` to AssertJ](../../../java/testing/testng/testngassertthrowstoassertthat)
 * [TestNG `assertList*` to AssertJ](../../../java/testing/testng/testngassertlisttoassertthat)
+* [Use static import](../../../java/usestaticimport)
+  * methodPattern: `org.assertj.core.api.Assertions *(..)`
 
 </TabItem>
 
@@ -91,6 +93,8 @@ recipeList:
   - org.openrewrite.java.testing.testng.TestNgAssertNotSameToAssertThat
   - org.openrewrite.java.testing.testng.TestNgAssertThrowsToAssertThat
   - org.openrewrite.java.testing.testng.TestNgAssertListToAssertThat
+  - org.openrewrite.java.UseStaticImport:
+      methodPattern: org.assertj.core.api.Assertions *(..)
 
 ```
 </TabItem>
