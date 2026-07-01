@@ -45,6 +45,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Setup Java dependency caching](./setupjavacaching.md)
 * [Upgrade `actions/setup-java` `java-version`](./setupjavaupgradejavaversion.md)
 * [Upgrade `actions/setup-node` `node-version`](./setupnodeupgradenodeversion.md)
+* [Upgrade official GitHub Actions to their latest versions](./upgradeofficialgithubactions.md)
 * [Upgrade `slackapi/slack-github-action`](./upgradeslacknotificationversion2.md)
 * [Use `actions/setup-java` IBM `semeru` distribution](./setupjavaadoptopenj9tosemeru.md)
 * [Use `actions/setup-java` `temurin` distribution](./setupjavaadoptopenjdktotemurin.md)

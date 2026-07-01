@@ -43,7 +43,9 @@ This recipe is used as part of the following composite recipes:
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
+* [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
 * [Remove JUnit Jupiter migrationsupport](/recipes/java/testing/junit/removejupitermigrationsupport.md)
+* [Remove the orphaned Spring Retry version pin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringretryversionpin)
 * [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
 
 ## Example

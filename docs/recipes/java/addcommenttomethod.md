@@ -35,6 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Comment deprecated methods in Spring 3.4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/commentdeprecations)
+* [Flag deprecated `ChunkListener` callbacks for manual migration to `ChunkListener&lt;I, O&gt;`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/batch/flagchunklistenerformanualmigration)
 
 ## Example
 

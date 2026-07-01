@@ -26,6 +26,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Convert assigning Switch statements to Switch expressions](./switchcaseassignmentstoswitchexpression.md)
 * [Convert switch cases where every case returns into a returned switch expression](./switchcasereturnstoswitchexpression.md)
 * [Convert switch expression yield to arrow](./switchexpressionyieldtoarrow.md)
+* [Extract complex `super(..)` and `this(..)` arguments into local variables](./extractexplicitconstructorinvocationarguments.md)
 * [If-else-if-else to switch](./ifelseifconstructtoswitch.md)
 * [Migrate `public static void main(String[] args)` to instance `void main()`](./migratemainmethodtoinstancemain.md)
 * [Prefer `String.formatted(Object...)`](./stringformatted.md)

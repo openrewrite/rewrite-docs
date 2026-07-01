@@ -26,6 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 * [Migrate to LaunchDarkly 6.x](/recipes/featureflags/launchdarkly/upgradelaunchdarkly6.md)
 
 ## Example

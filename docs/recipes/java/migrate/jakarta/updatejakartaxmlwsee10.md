@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Replace `jakarta.jws-api` with `jakarta.xml.ws-api`](../../../java/migrate/jakarta/replacejakartajwswithjakartaxmlws)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
@@ -67,6 +68,7 @@ description: |
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.jakarta.ReplaceJakartaJwsWithJakartaXmlWs
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api

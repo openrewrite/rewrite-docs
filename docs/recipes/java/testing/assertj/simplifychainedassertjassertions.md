@@ -42,6 +42,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertion)
+  * chainedAssertion: `compareTo`
+  * assertToReplace: `isZero`
+  * dedicatedAssertion: `isEqualByComparingTo`
+  * requiredType: `java.math.BigDecimal`
+* [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertion)
   * chainedAssertion: `isEmpty`
   * assertToReplace: `isTrue`
   * dedicatedAssertion: `isEmpty`
@@ -369,6 +374,11 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion:
+      chainedAssertion: compareTo
+      assertToReplace: isZero
+      dedicatedAssertion: isEqualByComparingTo
+      requiredType: java.math.BigDecimal
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion:
       chainedAssertion: isEmpty
       assertToReplace: isTrue

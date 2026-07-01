@@ -44,7 +44,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.cloud.gateway`
   * newPropertyKey: `spring.cloud.gateway.server.webflux`
-  * except: `[proxy]`
+  * except: `[proxy, mvc, server]`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `spring.cloud.gateway.mvc`
   * newPropertyKey: `spring.cloud.gateway.server.webmvc`
@@ -69,7 +69,7 @@ recipeList:
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.cloud.gateway
       newPropertyKey: spring.cloud.gateway.server.webflux
-      except: [proxy]
+      except: [proxy, mvc, server]
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: spring.cloud.gateway.mvc
       newPropertyKey: spring.cloud.gateway.server.webmvc

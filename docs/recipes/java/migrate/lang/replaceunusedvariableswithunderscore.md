@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
+* [Java best practices](/recipes/java/migrate/javabestpractices.md)
 
 ## Example
 

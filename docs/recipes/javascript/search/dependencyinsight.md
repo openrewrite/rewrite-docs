@@ -34,8 +34,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Javascript UI library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/uiinsights)
+* [Javascript database interaction library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/databaseinteractioninsights)
+* [Javascript form handling library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/formhandlinginsights)
+* [Javascript linting &amp; formatting library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/lintingformattinginsights)
+* [Javascript real-time communication library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/realtimecommunicationinsights)
+* [Javascript security library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/securityinsights)
+* [Javascript server-side frameworks insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/serversideframeworksinsights)
+* [Javascript state management library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/statemanagementinsights)
+* [Javascript task runners &amp; build tools insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/taskrunnersbuildtoolsinsights)
+* [Javascript testing library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/testinginsights)
+* [Javascript utility library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/utilityinsights)
 * [Update Prethink context (no AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
-* [Update Prethink context (with AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
 
 ## Example
 

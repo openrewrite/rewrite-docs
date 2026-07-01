@@ -106,6 +106,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate tests to Java 21](/recipes/java/recipes/upgradeteststojava21.md)
 * [Migrate to Java 25](/recipes/java/migrate/upgradetojava25.md)
+* [Upgrade to Java 21 when using jOOQ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradetojava21whenusingjooq)
 
 ## Examples
 ##### Example 1

@@ -55,6 +55,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 * [Update Micronaut Gradle build plugins to 5.x](/recipes/java/micronaut/updatebuildplugins5.md)
 * [Upgrade Kotlin Gradle plugins to 2.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlingradleplugins)
+* [Upgrade Kotlin to 2.3 for Java 25 compatibility](/recipes/java/migrate/upgradekotlinforjava25.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 
 ## Example

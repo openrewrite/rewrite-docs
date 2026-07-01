@@ -4218,6 +4218,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.migrate.UpgradeKotlinForJava25](/recipes/java/migrate/upgradekotlinforjava25.md)
+  * **Upgrade Kotlin to 2.3 for Java 25 compatibility**
+  * Only Kotlin 2.3 and later can target Java 25 bytecode, so modules on an older Kotlin are otherwise capped at Java 24. This recipe upgrades modules that compile Kotlin (i.e. contain `.kt` source files) and are already on Kotlin 2.0, 2.1, or 2.2 up to the latest Kotlin 2.3, so they can subsequently be migrated to Java 25. Modules on Kotlin 1.x are left untouched, as crossing the K2 compiler default introduced in Kotlin 2.0 is a source-breaking change that should not be applied automatically. As a safety net the module is also floored at Java 24: if the Kotlin upgrade cannot be applied (for instance because the version is managed externally by a parent or BOM), the module still lands on Java 24 rather than being left behind, and is raised the rest of the way to Java 25 only once it actually reaches Kotlin 2.3.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.UpgradePluginsForJava11](/recipes/java/migrate/upgradepluginsforjava11.md)
   * **Upgrade plugins to Java 11 compatible versions**
   * Updates plugins to version compatible with Java 11.
@@ -4353,6 +4362,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.migrate.jakarta.JavaxEjbToJakartaEjb](/recipes/java/migrate/jakarta/javaxejbtojakartaejb.md)
+  * **Migrate deprecated `javax.ejb` packages to `jakarta.ejb`**
+  * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
   * **Migrate to Jakarta EE 9**
   * Jakarta EE 9 is the first version of Jakarta EE that uses the new `jakarta` namespace.
@@ -4374,6 +4392,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta10](/recipes/java/migrate/jakarta/migratepluginsforjakarta10.md)
   * **Update Plugins for Jakarta EE 10**
   * Update plugin to be compatible with Jakarta EE 10.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta11](/recipes/java/migrate/jakarta/migratepluginsforjakarta11.md)
+  * **Update Plugins for Jakarta EE 11**
+  * Update plugins to be compatible with Jakarta EE 11.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta9](/recipes/java/migrate/jakarta/migratepluginsforjakarta9.md)
+  * **Update Plugins for Jakarta EE 9**
+  * Update plugins to be compatible with Jakarta EE 9.
 
 ##### Data tables:
 

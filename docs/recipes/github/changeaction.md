@@ -26,6 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | oldAction | Name of the action to match. | `gradle/wrapper-validation-action` |
+| `String` | oldSha | *Optional*. Restricts the change by the existing `uses:` ref. When omitted, the action is changed regardless of how it is pinned (the default; commit SHA pins are rewritten). When set to an empty string, only references that are **not** pinned to a 40-character commit SHA are changed, leaving deliberate SHA pins on the original action untouched. When set to a specific commit SHA, only references pinned to exactly that SHA are changed. | `8f4b7f84864484a7bf31766abe9204da3cbe65b3` |
 | `String` | newAction | Name of the action to use instead. | `gradle/actions/wrapper-validation` |
 | `String` | newVersion | New version to use. | `v3` |
 
@@ -44,8 +45,9 @@ This recipe is used as part of the following composite recipes:
 | Parameter | Value |
 | --- | --- |
 |oldAction|`gradle/wrapper-validation-action`|
-|newAction|`gradle/actions/wrapper-validation`|
-|newVersion|`v3`|
+|oldSha|`gradle/actions/wrapper-validation`|
+|newAction|`v3`|
+|newVersion||
 
 
 <Tabs groupId="beforeAfter">
@@ -105,6 +107,7 @@ displayName: Change GitHub Action example
 recipeList:
   - org.openrewrite.github.ChangeAction:
       oldAction: gradle/wrapper-validation-action
+      oldSha: 8f4b7f84864484a7bf31766abe9204da3cbe65b3
       newAction: gradle/actions/wrapper-validation
       newVersion: v3
 ```
@@ -116,7 +119,7 @@ recipeList:
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldAction=gradle/wrapper-validation-action" --recipe-option "newAction=gradle/actions/wrapper-validation" --recipe-option "newVersion=v3"'}
+  cliOptions={' --recipe-option "oldAction=gradle/wrapper-validation-action" --recipe-option "oldSha=8f4b7f84864484a7bf31766abe9204da3cbe65b3" --recipe-option "newAction=gradle/actions/wrapper-validation" --recipe-option "newVersion=v3"'}
   hasDataTables
 />
 

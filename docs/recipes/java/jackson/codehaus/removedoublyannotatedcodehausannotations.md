@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehaustofasterxml.md)
+* [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
 
 ## Example
 

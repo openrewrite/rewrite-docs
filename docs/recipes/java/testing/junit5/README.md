@@ -47,6 +47,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit 5 inner test classes should be annotated with `@Nested`](./addmissingnested.md)
 * [JUnit TestName @Rule to JUnit Jupiter TestInfo](./testruletotestinfo.md)
 * [Make `@TempDir` fields non final](./tempdirnonfinal.md)
+* [Make implausibly long `@Timeout` values explicit in minutes](./implausibletimeouttominutes.md)
 * [Make lifecycle methods non private](./lifecyclenonprivate.md)
 * [Migrate JUnit 4 `@Test` annotations to JUnit 5](./updatetestannotation.md)
 * [Migrate JUnit 4 `TestCase` to JUnit Jupiter](./migratejunittestcase.md)

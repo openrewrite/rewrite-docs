@@ -82,10 +82,11 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Java 8](/recipes/java/migrate/upgradetojava8.md)
 * [Upgrade Java to 11+ for Kafka clients](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkaclients)
 * [Upgrade Java to 17+ for Kafka broker/tools](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkabroker)
+* [Upgrade Kotlin to 2.3 for Java 25 compatibility](/recipes/java/migrate/upgradekotlinforjava25.md)
 * [Upgrade build to Java 11](/recipes/java/migrate/upgradebuildtojava11.md)
 * [Upgrade build to Java 17](/recipes/java/migrate/upgradebuildtojava17.md)
 * [Upgrade build to Java 21](/recipes/java/migrate/upgradebuildtojava21.md)
-* [Upgrade build to Java 24 for Kotlin pre-2.3](/recipes/java/migrate/upgradebuildtojava24.md)
+* [Upgrade build to Java 24 for Kotlin 1.x](/recipes/java/migrate/upgradebuildtojava24forkotlin1x.md)
 * [Upgrade build to Java 25 (non-Kotlin)](/recipes/java/migrate/upgradebuildtojava25.md)
 * [Upgrade build to Java 25 for Kotlin 2.3+](/recipes/java/migrate/upgradebuildtojava25forkotlin.md)
 

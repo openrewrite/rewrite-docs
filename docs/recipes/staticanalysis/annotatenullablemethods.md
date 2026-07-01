@@ -32,7 +32,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Compose JSpecify best practices (intra-body nullability inference)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/infer/composejspecifybestpractices)
+* [Compose JSpecify best practices (intra-body nullability inference)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nullability/composejspecifybestpractices)
 * [JSpecify best practices](/recipes/java/jspecify/jspecifybestpractices.md)
 * [Recipe nullability best practices](/recipes/java/recipes/recipenullabilitybestpractices.md)
 

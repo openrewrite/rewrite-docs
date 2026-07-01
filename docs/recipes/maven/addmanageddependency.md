@@ -45,6 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Add Spring Cloud dependencies BOM](/recipes/java/spring/cloud2025/addspringclouddependenciesbom.md)
 * [Migrate JavaEE Maven Dependencies to Quarkus 2](/recipes/quarkus/migrate/javaee/addquarkus2mavenplugins.md)
 * [Migrate Spring Boot to Quarkus](/recipes/quarkus/spring/springboottoquarkus.md)
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 
 ## Example
 

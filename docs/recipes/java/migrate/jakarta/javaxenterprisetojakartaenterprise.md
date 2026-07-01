@@ -41,10 +41,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `javax.enterprise.concurrent-api`
   * newGroupId: `jakarta.enterprise.concurrent`
   * newArtifactId: `jakarta.enterprise.concurrent-api`
+  * newVersion: `2.0.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.enterprise.concurrent`
   * artifactId: `jakarta.enterprise.concurrent-api`
-  * newVersion: `3.0.x`
+  * newVersion: `2.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.enterprise`
   * oldArtifactId: `cdi-api`
@@ -85,10 +86,11 @@ recipeList:
       oldArtifactId: javax.enterprise.concurrent-api
       newGroupId: jakarta.enterprise.concurrent
       newArtifactId: jakarta.enterprise.concurrent-api
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.enterprise.concurrent
       artifactId: jakarta.enterprise.concurrent-api
-      newVersion: 3.0.x
+      newVersion: 2.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.enterprise
       oldArtifactId: cdi-api

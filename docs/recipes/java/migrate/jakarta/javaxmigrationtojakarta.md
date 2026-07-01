@@ -84,6 +84,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](../../../java/migrate/jakarta/javaxeeapitojakarta)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](../../../java/migrate/jakarta/removejakartaannotationdependencywhenmanagedbyspringboot)
 * [Update RestLet to 2.6.0](../../../java/migrate/jakarta/updaterestlet2_6)
+* [Update Plugins for Jakarta EE 9](../../../java/migrate/jakarta/migratepluginsforjakarta9)
 
 </TabItem>
 
@@ -145,6 +146,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxEEApiToJakarta
   - org.openrewrite.java.migrate.jakarta.RemoveJakartaAnnotationDependencyWhenManagedBySpringBoot
   - org.openrewrite.java.migrate.jakarta.UpdateRestLet2_6
+  - org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta9
 
 ```
 </TabItem>

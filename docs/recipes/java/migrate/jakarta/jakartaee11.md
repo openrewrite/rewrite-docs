@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Jakarta EE 10](../../../java/migrate/jakarta/jakartaee10)
 * [Jakarta Faces 4.0 to 4.1](../../../java/migrate/jakarta/faces4xmigrationtofaces41x)
 * [Update Jakarta EE Platform Dependencies to 11.0.x](../../../java/migrate/jakarta/updatejakartaplatform11)
+* [Update Plugins for Jakarta EE 11](../../../java/migrate/jakarta/migratepluginsforjakarta11)
 
 </TabItem>
 
@@ -63,6 +64,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JakartaEE10
   - org.openrewrite.java.migrate.jakarta.Faces4xMigrationToFaces41x
   - org.openrewrite.java.migrate.jakarta.UpdateJakartaPlatform11
+  - org.openrewrite.java.migrate.jakarta.MigratePluginsForJakarta11
 
 ```
 </TabItem>

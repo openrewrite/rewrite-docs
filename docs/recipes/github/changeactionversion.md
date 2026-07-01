@@ -27,6 +27,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | action | Name of the action to update. | `actions/setup-java` |
 | `String` | version | Version to use. | `v4` |
+| `String` | oldSha | *Optional*. Restricts the change by the existing `uses:` ref. When omitted, the version is changed regardless of how the action is pinned (the default; commit SHA pins are rewritten). When set to an empty string, only references that are **not** pinned to a 40-character commit SHA are changed, preserving deliberate SHA pins. When set to a specific commit SHA, only references pinned to exactly that SHA are changed. | `8f4b7f84864484a7bf31766abe9204da3cbe65b3` |
 
 
 ## Used by
@@ -42,6 +43,7 @@ This recipe is used as part of the following composite recipes:
 | --- | --- |
 |action|`actions/setup-java`|
 |version|`v4`|
+|oldSha||
 
 
 <Tabs groupId="beforeAfter">
@@ -98,6 +100,7 @@ recipeList:
   - org.openrewrite.github.ChangeActionVersion:
       action: actions/setup-java
       version: v4
+      oldSha: 8f4b7f84864484a7bf31766abe9204da3cbe65b3
 ```
 
 <RunRecipe
@@ -107,7 +110,7 @@ recipeList:
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
   requiresConfiguration
-  cliOptions={' --recipe-option "action=actions/setup-java" --recipe-option "version=v4"'}
+  cliOptions={' --recipe-option "action=actions/setup-java" --recipe-option "version=v4" --recipe-option "oldSha=8f4b7f84864484a7bf31766abe9204da3cbe65b3"'}
   hasDataTables
 />
 

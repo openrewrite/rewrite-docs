@@ -34,7 +34,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Remove Codehaus Jackson annotations if doubly annotated](../../java/jackson/codehaus/removedoublyannotatedcodehausannotations)
 * [Transfer @JsonSerialize arguments from Codehaus to FasterXML](../../java/jackson/codehaus/transferjsonserializeargumentsfromcodehaustofasterxml)
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](../../java/jackson/codehausclassestofasterxml)
 * [Migrate dependencies from Jackson Codehaus (legacy) to FasterXML](../../java/jackson/codehaus/codehausdependencytofasterxml)
@@ -54,7 +53,6 @@ description: |
 tags:
   - jackson-2
 recipeList:
-  - org.openrewrite.java.jackson.codehaus.RemoveDoublyAnnotatedCodehausAnnotations
   - org.openrewrite.java.jackson.codehaus.TransferJsonSerializeArgumentsFromCodehausToFasterXML
   - org.openrewrite.java.jackson.CodehausClassesToFasterXML
   - org.openrewrite.java.jackson.codehaus.CodehausDependencyToFasterXML:
@@ -63,6 +61,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
+
 ## Examples
 ##### Example 1
 `CodehausToFasterXMLTest#onlyJsonSerializeInclusion`

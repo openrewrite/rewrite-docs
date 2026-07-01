@@ -60,6 +60,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Make lifecycle methods non private](../../../java/testing/junit5/lifecyclenonprivate)
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](../../../java/testing/junit5/assertthrowsonlaststatement)
 * [`assertTrue(x instanceof y)` to `assertInstanceOf(y.class, x)`](../../../java/testing/junit5/asserttrueinstanceoftoassertinstanceof)
+* [Make implausibly long `@Timeout` values explicit in minutes](../../../java/testing/junit5/implausibletimeouttominutes)
 * [Use JUnit5's `assertSame` or `assertNotSame` instead of `assertTrue(... == ...)`](../../../java/testing/junit5/useassertsame)
 * [Remove JUnit Jupiter migrationsupport](../../../java/testing/junit/removejupitermigrationsupport)
 
@@ -99,6 +100,7 @@ recipeList:
   - org.openrewrite.java.testing.junit5.LifecycleNonPrivate
   - org.openrewrite.java.testing.junit5.AssertThrowsOnLastStatement
   - org.openrewrite.java.testing.junit5.AssertTrueInstanceofToAssertInstanceOf
+  - org.openrewrite.java.testing.junit5.ImplausibleTimeoutToMinutes
   - org.openrewrite.java.testing.junit5.UseAssertSame
   - org.openrewrite.java.testing.junit.RemoveJupiterMigrationSupport
 
