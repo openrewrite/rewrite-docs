@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFindAnyIsEmptyRecipe**
 
-_In order to test whether a stream has any element, simply try to find one._
+_Prefer `Stream#findAny()` over less efficient alternatives._
 
 ## Recipe source
 

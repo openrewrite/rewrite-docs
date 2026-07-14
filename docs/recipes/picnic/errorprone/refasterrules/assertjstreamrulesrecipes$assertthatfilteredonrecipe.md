@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatFilteredOnRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatFilteredOn<T> {
-    
-    @BeforeTemplate
-    ListAssert<T> before(Stream<T> stream, Predicate<? super T> predicate) {
-        return assertThat(stream.filter(predicate));
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    ListAssert<T> after(Stream<T> stream, Predicate<? super T> predicate) {
-        return assertThat(stream).filteredOn(predicate);
-    }
-}
-```
-.
+_Prefer `assertThat(stream).filteredOn(predicate)` over more contrived alternatives._
 
 ## Recipe source
 

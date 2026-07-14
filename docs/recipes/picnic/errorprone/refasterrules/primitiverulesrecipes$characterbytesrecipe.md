@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterBytesRecipe**
 
-_Prefer `Character#BYTES` over the Guava alternative._
+_Prefer `Character#BYTES` over non-JDK alternatives._
 
 ## Recipe source
 

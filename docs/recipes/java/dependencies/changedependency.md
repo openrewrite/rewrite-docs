@@ -39,6 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Add Spring Boot 4.0 modular starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmodularstarters)
 * [Add explicit Common Annotations dependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
 * [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)

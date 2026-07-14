@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Web Service Policy Reference schema files to 
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [webservices-policy](/reference/recipes-by-tag#webservices)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrate xmlns entries in `weblogic-webservices-policy.xml` files to
 description: |
   Migrate xmlns entries in WebLogic Web Service Policy Reference schema files to WebLogic 14.1.2
 tags:
+  - weblogic
   - webservices-policy
   - schemas
-  - weblogic
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/weblogic-webservices-policy.xml

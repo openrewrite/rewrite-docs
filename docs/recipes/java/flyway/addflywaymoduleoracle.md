@@ -15,8 +15,8 @@ _Database modules for Flyway 10 have been split out into separate modules for ma
 
 ### Tags
 
-* [oracle](/reference/recipes-by-tag#oracle)
 * [flyway](/reference/recipes-by-tag#flyway)
+* [oracle](/reference/recipes-by-tag#oracle)
 
 ## Recipe source
 
@@ -61,8 +61,8 @@ displayName: Add missing Flyway module for Oracle
 description: |
   Database modules for Flyway 10 have been split out into separate modules for maintainability. Add the `flyway-database-oracle` dependency if you are using Oracle with Flyway 10, as detailed on https://github.com/flyway/flyway/issues/3780.
 tags:
-  - oracle
   - flyway
+  - oracle
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.flywaydb

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPatchRecipe**
 
-_Prefer `WebClient#patch()` over `WebClient#method(HttpMethod)` with `HttpMethod#PATCH`._
+_Prefer `WebClient#patch()` over less idiomatic alternatives._
 
 ## Recipe source
 

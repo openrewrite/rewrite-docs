@@ -30,12 +30,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `RandomGeneratorRules.RandomGeneratorNextDouble`](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublerecipe)
-* [Refaster template `RandomGeneratorRules.RandomGeneratorNextDoubleWithOrigin`](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublewithoriginrecipe)
+* [Prefer `RandomGenerator#nextDouble(double)` over more fragile alternatives](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublerecipe)
+* [Prefer `RandomGenerator#nextDouble(double origin, double bound)` over more fragile alternatives](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoubleplusrecipe)
 * [Refaster template `RandomGeneratorRules.RandomGeneratorNextInt`](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintrecipe)
-* [Refaster template `RandomGeneratorRules.RandomGeneratorNextIntWithOrigin`](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintwithoriginrecipe)
+* [Prefer `RandomGenerator#nextInt(int origin, int bound)` over more fragile alternatives](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintplusrecipe)
 * [Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe)
-* [Refaster template `RandomGeneratorRules.RandomGeneratorNextLongWithOrigin`](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongwithoriginrecipe)
+* [Prefer `RandomGenerator#nextLong(long origin, long bound)` over more fragile alternatives](../../../picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongplusrecipe)
 
 </TabItem>
 
@@ -50,11 +50,11 @@ description: |
   Refaster rules related to expressions dealing with `RandomGenerator` instances. [Source](https://error-prone.picnic.tech/refasterrules/RandomGeneratorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe
-  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleWithOriginRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoublePlusRecipe
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntRecipe
-  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntWithOriginRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntPlusRecipe
   - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe
-  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongWithOriginRecipe
+  - tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongPlusRecipe
 
 ```
 </TabItem>

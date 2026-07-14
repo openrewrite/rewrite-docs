@@ -15,9 +15,9 @@ _This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespac
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [web-app](/reference/recipes-by-tag#web)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -49,9 +49,9 @@ displayName: Create `weblogic.xml` if it does not exist
 description: |
   This recipe will create a `weblogic.xml` file with the WebLogic 15.1.1 namespace if it does not already exist.
 tags:
+  - weblogic
   - web-app
   - schemas
-  - weblogic
 recipeList:
   - org.openrewrite.xml.CreateXmlFile:
       relativeFileName: src/main/webapp/WEB-INF/weblogic.xml

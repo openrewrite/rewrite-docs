@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AssertThatThrownByIsInstanceOfRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatThrownByIsInstanceOf<T extends Throwable> {
-    
-    @BeforeTemplate
-    void before(ThrowingCallable throwingCallable, Class<T> exceptionType) {
-        Refaster.anyOf(assertThatThrownBy(throwingCallable).asInstanceOf(throwable(exceptionType)), assertThatThrownBy(throwingCallable).asInstanceOf(type(exceptionType)));
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(ThrowingCallable throwingCallable, Class<T> exceptionType) {
-        assertThatThrownBy(throwingCallable).isInstanceOf(exceptionType);
-    }
-}
-```
-.
+_Prefer `org.assertj.core.api.AbstractAssert#isInstanceOf` over more contrived alternatives._
 
 ## Recipe source
 

@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc indexes per-module recipe lists. Click a groupId to see its recipes._
 
-Total recipes: 4455
+Total recipes: 4461
 
 
 ## org.openrewrite
@@ -14,6 +14,7 @@ Total recipes: 4455
 * [rewrite-cobol](all-recipes-org-openrewrite.md#rewrite-cobol)
 * [rewrite-core](all-recipes-org-openrewrite.md#rewrite-core)
 * [rewrite-docker](all-recipes-org-openrewrite.md#rewrite-docker)
+* [rewrite-go](all-recipes-org-openrewrite.md#rewrite-go)
 * [rewrite-gradle](all-recipes-org-openrewrite.md#rewrite-gradle)
 * [rewrite-groovy](all-recipes-org-openrewrite.md#rewrite-groovy)
 * [rewrite-hcl](all-recipes-org-openrewrite.md#rewrite-hcl)

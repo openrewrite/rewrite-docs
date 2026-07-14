@@ -31,10 +31,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ImmutableTableRules.ImmutableTableBuilder`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderrecipe)
-* [Refaster template `ImmutableTableRules.ImmutableTableBuilderBuildOrThrow`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderbuildorthrowrecipe)
-* [Refaster template `ImmutableTableRules.CellToImmutableTable`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$celltoimmutabletablerecipe)
+* [Refaster template `ImmutableTableRules.BuilderBuildOrThrow`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$builderbuildorthrowrecipe)
+* [Refaster template `ImmutableTableRules.ImmutableTableOfCellGetRowKeyCellGetColumnKeyCellGetValue`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletableofcellgetrowkeycellgetcolumnkeycellgetvaluerecipe)
 * [Refaster template `ImmutableTableRules.ImmutableTableOf`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletableofrecipe)
-* [Refaster template `ImmutableTableRules.ImmutableTableBuilderPut`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$immutabletablebuilderputrecipe)
+* [Refaster template `ImmutableTableRules.BuilderPut`](../../../picnic/errorprone/refasterrules/immutabletablerulesrecipes$builderputrecipe)
 
 </TabItem>
 
@@ -49,10 +49,10 @@ description: |
   Refaster rules related to expressions dealing with `ImmutableTable`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableTableRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderBuildOrThrowRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$CellToImmutableTableRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$BuilderBuildOrThrowRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableOfCellGetRowKeyCellGetColumnKeyCellGetValueRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableOfRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableBuilderPutRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$BuilderPutRecipe
 
 ```
 </TabItem>

@@ -15,10 +15,10 @@ _Migrate xmlns entries in WebLogic Resource Adapter schema files to WebLogic 14.
 
 ### Tags
 
-* [connector](/reference/recipes-by-tag#connector)
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
+* [connector](/reference/recipes-by-tag#connector)
 * [ra](/reference/recipes-by-tag#ra)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -69,10 +69,10 @@ displayName: Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 14.1.2
 description: |
   Migrate xmlns entries in WebLogic Resource Adapter schema files to WebLogic 14.1.2
 tags:
-  - connector
-  - schemas
   - weblogic
+  - connector
   - ra
+  - schemas
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/weblogic-ra.xml

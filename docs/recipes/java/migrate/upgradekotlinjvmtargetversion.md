@@ -34,6 +34,84 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade Java version](/recipes/java/migrate/upgradejavaversion.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|version|`21`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>1.9.24</version>
+                <configuration>
+                    <jvmTarget>11</jvmTarget>
+                    <args>
+                        <arg>-Xjsr305=strict</arg>
+                    </args>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>1.9.24</version>
+                <configuration>
+                    <jvmTarget>21</jvmTarget>
+                    <args>
+                        <arg>-Xjsr305=strict</arg>
+                    </args>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -13,1 +13,1 @@
+                <version>1.9.24</version>
+                <configuration>
+-                   <jvmTarget>11</jvmTarget>
++                   <jvmTarget>21</jvmTarget>
+                    <args>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

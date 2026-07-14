@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerParseUnsignedIntRecipe**
 
-_Prefer JDK's `Integer#parseUnsignedInt(String)` over third-party or more verbose alternatives._
+_Prefer `Integer#parseUnsignedInt(String)` over non-JDK or more verbose alternatives._
 
 ## Recipe source
 

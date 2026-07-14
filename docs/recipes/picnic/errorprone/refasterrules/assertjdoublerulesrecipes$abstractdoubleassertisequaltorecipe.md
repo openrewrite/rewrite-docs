@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractDoubleAssertIsEqualTo {
-    
-    @BeforeTemplate
-    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> doubleAssert, double n) {
-        return Refaster.anyOf(doubleAssert.isCloseTo(n, offset(0.0)), doubleAssert.isCloseTo(n, withPercentage(0.0)));
-    }
-    
-    @AfterTemplate
-    AbstractDoubleAssert<?> after(AbstractDoubleAssert<?> doubleAssert, double n) {
-        return doubleAssert.isEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractDoubleAssert#isEqualTo(double)` over more contrived alternatives._
 
 ## Recipe source
 

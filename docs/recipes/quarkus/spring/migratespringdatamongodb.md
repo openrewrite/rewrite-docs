@@ -16,10 +16,10 @@ _Migrates Spring Data MongoDB repositories to Quarkus MongoDB with Panache. Conv
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [panache](/reference/recipes-by-tag#panache)
 * [migration](/reference/recipes-by-tag#migration)
 * [mongodb](/reference/recipes-by-tag#mongodb)
+* [quarkus](/reference/recipes-by-tag#quarkus)
+* [panache](/reference/recipes-by-tag#panache)
 
 ## Recipe source
 
@@ -65,10 +65,10 @@ description: |
   Migrates Spring Data MongoDB repositories to Quarkus MongoDB with Panache. Converts MongoRepository interfaces to PanacheMongoRepository pattern.
 tags:
   - spring
-  - quarkus
-  - panache
   - migration
   - mongodb
+  - quarkus
+  - panache
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot

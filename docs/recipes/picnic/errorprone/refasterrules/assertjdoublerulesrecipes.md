@@ -30,12 +30,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsCloseToWithOffset`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisclosetowithoffsetrecipe)
+* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsCloseTo`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisclosetorecipe)
 * [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisequaltorecipe)
 * [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisnotequaltorecipe)
-* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsZero`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertiszerorecipe)
-* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsNotZero`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisnotzerorecipe)
-* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsOne`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisonerecipe)
+* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsEqualToZero`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisequaltozerorecipe)
+* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsNotEqualToZero`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisnotequaltozerorecipe)
+* [Refaster template `AssertJDoubleRules.AbstractDoubleAssertIsEqualToOne`](../../../picnic/errorprone/refasterrules/assertjdoublerulesrecipes$abstractdoubleassertisequaltoonerecipe)
 
 </TabItem>
 
@@ -49,12 +49,12 @@ displayName: `AssertJDoubleRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ assertions over `double`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDoubleRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToWithOffsetRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsCloseToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsNotEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsNotZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsOneRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsNotEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsEqualToOneRecipe
 
 ```
 </TabItem>

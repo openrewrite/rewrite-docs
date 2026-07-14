@@ -15,8 +15,8 @@ _Change type of classes in the `javax.annotation.sql` package to jakarta._
 
 ### Tags
 
-* [javax](/reference/recipes-by-tag#javax)
 * [batch](/reference/recipes-by-tag#batch)
+* [javax](/reference/recipes-by-tag#javax)
 * [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
@@ -55,8 +55,8 @@ displayName: Migrate deprecated `javax.annotation.sql` packages to `jakarta.anno
 description: |
   Change type of classes in the `javax.annotation.sql` package to jakarta.
 tags:
-  - javax
   - batch
+  - javax
   - jakarta
 recipeList:
   - org.openrewrite.java.ChangeType:

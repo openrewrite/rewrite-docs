@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenEmptyRecipe**
 
-_Avoid vacuous invocations of `Mono#ignoreElement()`._
+_Prefer `Mono#thenEmpty(Publisher)` over vacuously invoking `Mono#ignoreElement()`._
 
 ## Recipe source
 

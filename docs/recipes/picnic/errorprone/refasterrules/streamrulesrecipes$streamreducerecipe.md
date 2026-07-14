@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamReduce<T> {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4266")
-    Optional<T> before(Stream<T> stream, BinaryOperator<T> accumulator) {
-        return stream.collect(reducing(accumulator));
-    }
-    
-    @AfterTemplate
-    Optional<T> after(Stream<T> stream, BinaryOperator<T> accumulator) {
-        return stream.reduce(accumulator);
-    }
-}
-```
-.
+_Prefer `Stream#reduce(BinaryOperator)` over less efficient alternatives._
 
 ### Tags
 

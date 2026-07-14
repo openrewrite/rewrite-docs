@@ -60,7 +60,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v4.6.0
         name: Upload coverage
 ```
 
@@ -72,7 +72,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4
+      - uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4.6.0
         name: Upload coverage
 ```
 
@@ -85,8 +85,8 @@ jobs:
 @@ -7,1 +7,1 @@
     runs-on: ubuntu-latest
     steps:
--     - uses: codecov/codecov-action@v4
-+     - uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4
+-     - uses: codecov/codecov-action@v4.6.0
++     - uses: codecov/codecov-action@b9fd7d16f6d7d1b5d2bec1a2887e65ceed900238 # v4.6.0
         name: Upload coverage
 ```
 </TabItem>

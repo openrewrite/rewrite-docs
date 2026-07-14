@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamTakeWhileRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleStreamTakeWhile {
-    
-    @BeforeTemplate
-    DoubleStream before(DoubleStream stream, DoublePredicate predicate) {
-        return stream.takeWhile(predicate).filter(predicate);
-    }
-    
-    @AfterTemplate
-    DoubleStream after(DoubleStream stream, DoublePredicate predicate) {
-        return stream.takeWhile(predicate);
-    }
-}
-```
-.
+_Prefer `DoubleStream#takeWhile(DoublePredicate)` over more verbose alternatives._
 
 ## Recipe source
 

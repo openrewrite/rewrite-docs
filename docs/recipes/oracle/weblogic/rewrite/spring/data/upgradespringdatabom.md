@@ -15,8 +15,8 @@ _Upgrade Spring Data BOM to 2024.1.x version._
 
 ### Tags
 
-* [springdata](/reference/recipes-by-tag#springdata)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [springdata](/reference/recipes-by-tag#springdata)
 
 ## Recipe source
 
@@ -48,8 +48,8 @@ displayName: Upgrade Spring Data BOM to 2024.1.x
 description: |
   Upgrade Spring Data BOM to 2024.1.x version.
 tags:
-  - springdata
   - springframework
+  - springdata
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.data

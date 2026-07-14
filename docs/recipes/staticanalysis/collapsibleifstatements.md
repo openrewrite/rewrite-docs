@@ -25,6 +25,55 @@ _When an `if` statement body contains only another `if` with no `else`, the two 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test(boolean a, boolean b) {
+        if (a) {
+            if (b) {
+                System.out.println();
+            }
+        }
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test(boolean a, boolean b) {
+        if (a && b) {
+            System.out.println();
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,4 +3,2 @@
+class Test {
+    void test(boolean a, boolean b) {
+-       if (a) {
+-           if (b) {
+-               System.out.println();
+-           }
++       if (a && b) {
++           System.out.println();
+        }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -15,9 +15,9 @@ _Migrates Byteman JUnit 4 to JUnit 5._
 
 ### Tags
 
+* [byteman](/reference/recipes-by-tag#byteman)
 * [junit](/reference/recipes-by-tag#junit)
 * [testing](/reference/recipes-by-tag#testing)
-* [byteman](/reference/recipes-by-tag#byteman)
 
 ## Recipe source
 
@@ -65,9 +65,9 @@ displayName: Use Byteman JUnit 5 dependency
 description: |
   Migrates Byteman JUnit 4 to JUnit 5.
 tags:
+  - byteman
   - junit
   - testing
-  - byteman
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

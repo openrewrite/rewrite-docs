@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Resource Deployment Plan schema files to WebL
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [resource-deployment-plan](/reference/recipes-by-tag#resource)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrate xmlns entries in `resource-deployment-plan.xml` files to We
 description: |
   Migrate xmlns entries in WebLogic Resource Deployment Plan schema files to WebLogic 14.1.2
 tags:
+  - weblogic
   - resource-deployment-plan
   - schemas
-  - weblogic
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/resource-deployment-plan.xml

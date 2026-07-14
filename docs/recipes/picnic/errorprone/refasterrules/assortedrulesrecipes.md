@@ -30,12 +30,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssortedRules.CheckIndex`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$checkindexrecipe)
-* [Refaster template `AssortedRules.IteratorGetNextOrDefault`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$iteratorgetnextordefaultrecipe)
-* [Refaster template `AssortedRules.LogicalImplication`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe)
-* [Refaster template `AssortedRules.UnboundedSingleElementStream`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$unboundedsingleelementstreamrecipe)
-* [Refaster template `AssortedRules.IterableIsEmpty`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$iterableisemptyrecipe)
-* [Refaster template `AssortedRules.SplitToStream`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$splittostreamrecipe)
+* [Refaster template `AssortedRules.CheckIndexExpression`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$checkindexexpressionrecipe)
+* [Refaster template `AssortedRules.IteratorsGetNext`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$iteratorsgetnextrecipe)
+* [Refaster template `AssortedRules.Or`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$orrecipe)
+* [Refaster template `AssortedRules.StreamGenerate`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$streamgeneraterecipe)
+* [Refaster template `AssortedRules.IterablesIsEmpty`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$iterablesisemptyrecipe)
+* [Refaster template `AssortedRules.SplitterSplitToStream`](../../../picnic/errorprone/refasterrules/assortedrulesrecipes$splittersplittostreamrecipe)
 
 </TabItem>
 
@@ -49,12 +49,12 @@ displayName: `AssortedRules` Refaster recipes
 description: |
   Assorted Refaster rules that do not (yet) belong in one of the other classes with more topical Refaster rules. [Source](https://error-prone.picnic.tech/refasterrules/AssortedRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexRecipe
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IteratorGetNextOrDefaultRecipe
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$UnboundedSingleElementStreamRecipe
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IterableIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$SplitToStreamRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$CheckIndexExpressionRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IteratorsGetNextRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$OrRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$StreamGenerateRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$IterablesIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$SplitterSplitToStreamRecipe
 
 ```
 </TabItem>

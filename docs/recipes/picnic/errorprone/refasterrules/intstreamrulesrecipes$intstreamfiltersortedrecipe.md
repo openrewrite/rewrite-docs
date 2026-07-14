@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamFilterSortedRecipe**
 
-_Apply `IntStream#filter(IntPredicate)` before `IntStream#sorted()` to reduce the number of elements to sort._
+_Prefer `IntStream#filter(IntPredicate)` before `IntStream#sorted()` over less efficient alternatives._
 
 ## Recipe source
 

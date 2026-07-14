@@ -16,8 +16,8 @@ _Apply local variable type inference (`var`) for primitives and objects. These r
 ### Tags
 
 * [refactoring](/reference/recipes-by-tag#refactoring)
-* [var](/reference/recipes-by-tag#var)
 * [java10](/reference/recipes-by-tag#java10)
+* [var](/reference/recipes-by-tag#var)
 
 ## Recipe source
 
@@ -62,8 +62,8 @@ description: |
   Apply local variable type inference (`var`) for primitives and objects. These recipes can cause unused imports, be advised to run `org.openrewrite.java.RemoveUnusedImports afterwards.
 tags:
   - refactoring
-  - var
   - java10
+  - var
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

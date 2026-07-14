@@ -11,28 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatAnyMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatAnyMatch<T> {
-    
-    @BeforeTemplate
-    ListAssert<T> before(Stream<T> stream, Predicate<? super T> predicate) {
-        return assertThat(stream).filteredOn(predicate).isNotEmpty();
-    }
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before2(Stream<T> stream, Predicate<? super T> predicate) {
-        return Refaster.anyOf(assertThat(stream.anyMatch(predicate)).isTrue(), assertThat(stream.noneMatch(predicate)).isFalse());
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    ListAssert<T> after(Stream<T> stream, Predicate<? super T> predicate) {
-        return assertThat(stream).anyMatch(predicate);
-    }
-}
-```
-.
+_Prefer `assertThat(stream).anyMatch(predicate)` over more contrived alternatives._
 
 ## Recipe source
 

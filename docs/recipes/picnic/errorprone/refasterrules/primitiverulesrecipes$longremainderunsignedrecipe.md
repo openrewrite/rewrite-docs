@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongRemainderUnsignedRecipe**
 
-_Prefer JDK's `Long#remainderUnsigned(long, long)` over third-party alternatives._
+_Prefer `Long#remainderUnsigned(long, long)` over non-JDK alternatives._
 
 ## Recipe source
 

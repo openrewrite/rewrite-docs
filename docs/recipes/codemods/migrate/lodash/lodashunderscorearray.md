@@ -23,8 +23,8 @@ import RunRecipe from '@site/src/components/RunRecipe';
 ### Tags
 
 * [codemods](/reference/recipes-by-tag#codemods)
-* [lodash](/reference/recipes-by-tag#lodash)
 * [underscore](/reference/recipes-by-tag#underscore)
+* [lodash](/reference/recipes-by-tag#lodash)
 
 ## Recipe source
 
@@ -55,8 +55,8 @@ description: |
   - `_.head(x)` -&gt; `x[0]` - `_.head(x, n)` -&gt; `x.slice(n)` - `_.first` (alias for `_.head`) - `_.tail(x)` -&gt; `x.slice(1)` - `_.tail(x, n)` -&gt; `x.slice(n)` - `_.rest` (alias for `_.tail`) - `_.last(x)` -&gt; `x[x.length - 1]` - `_.last(x, n)` -&gt; `x.slice(x.length - n)`.
 tags:
   - codemods
-  - lodash
   - underscore
+  - lodash
 recipeList:
   - org.openrewrite.codemods.ApplyCodemod:
       transform: @kevinbarabash/codemods/transforms/array.js

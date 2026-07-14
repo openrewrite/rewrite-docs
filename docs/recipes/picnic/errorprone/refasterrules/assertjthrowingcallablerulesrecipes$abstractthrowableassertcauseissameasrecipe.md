@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AbstractThrowableAssertCauseIsSameAsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractThrowableAssertCauseIsSameAs {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "deprecation")
-    AbstractThrowableAssert<?, ? extends Throwable> before(AbstractThrowableAssert<?, ? extends Throwable> throwableAssert, Throwable expected) {
-        return throwableAssert.hasCauseReference(expected);
-    }
-    
-    @AfterTemplate
-    AbstractThrowableAssert<?, ? extends Throwable> after(AbstractThrowableAssert<?, ? extends Throwable> throwableAssert, Throwable expected) {
-        return throwableAssert.cause().isSameAs(expected);
-    }
-}
-```
-.
+_Prefer `throwableAssert.cause().isSameAs(expected)` over deprecated alternatives._
 
 ## Recipe source
 

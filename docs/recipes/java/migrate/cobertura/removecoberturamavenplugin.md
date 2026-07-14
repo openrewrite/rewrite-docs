@@ -15,8 +15,8 @@ _This recipe will remove Cobertura, as it is not compatible with Java 11._
 
 ### Tags
 
-* [cobertura](/reference/recipes-by-tag#cobertura)
 * [java11](/reference/recipes-by-tag#java11)
+* [cobertura](/reference/recipes-by-tag#cobertura)
 
 ## Recipe source
 
@@ -53,8 +53,8 @@ displayName: Remove Cobertura Maven plugin
 description: |
   This recipe will remove Cobertura, as it is not compatible with Java 11.
 tags:
-  - cobertura
   - java11
+  - cobertura
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

@@ -250,6 +250,105 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to testcontainers-java 2.x](/recipes/java/testing/testcontainers/testcontainers2migration.md)
 
+## Examples
+##### Example 1
+`Testcontainers2LocalStackTest#getEndpointOverrideToGetEndpoint`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.testcontainers.containers.localstack.LocalStackContainer;
+
+import java.net.URI;
+
+class A {
+    URI endpoint(LocalStackContainer localStackContainer) {
+        return localStackContainer.getEndpointOverride(LocalStackContainer.Service.SQS);
+    }
+}
+```
+
+###### After
+```java
+import org.testcontainers.containers.localstack.LocalStackContainer;
+
+import java.net.URI;
+
+class A {
+    URI endpoint(LocalStackContainer localStackContainer) {
+        return localStackContainer.getEndpoint();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+class A {
+    URI endpoint(LocalStackContainer localStackContainer) {
+-       return localStackContainer.getEndpointOverride(LocalStackContainer.Service.SQS);
++       return localStackContainer.getEndpoint();
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`Testcontainers2LocalStackTest#getEndpointOverrideToGetEndpoint`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.testcontainers.containers.localstack.LocalStackContainer;
+
+import java.net.URI;
+
+class A {
+    URI endpoint(LocalStackContainer localStackContainer) {
+        return localStackContainer.getEndpointOverride(LocalStackContainer.Service.SQS);
+    }
+}
+```
+
+###### After
+```java
+import org.testcontainers.containers.localstack.LocalStackContainer;
+
+import java.net.URI;
+
+class A {
+    URI endpoint(LocalStackContainer localStackContainer) {
+        return localStackContainer.getEndpoint();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+class A {
+    URI endpoint(LocalStackContainer localStackContainer) {
+-       return localStackContainer.getEndpointOverride(LocalStackContainer.Service.SQS);
++       return localStackContainer.getEndpoint();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -1,0 +1,193 @@
+---
+title: "Convert auto-configuration `exclude` to `excludeName`"
+sidebar_label: "Convert auto-configuration `exclude` to `excludeName`"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
+
+# Convert auto-configuration `exclude` to `excludeName`
+
+**org.openrewrite.java.spring.ConvertAutoConfigurationExcludeToExcludeName**
+
+_Rewrite a class literal in the `exclude` attribute of `@SpringBootApplication` or `@EnableAutoConfiguration` to a string literal in the `excludeName` attribute. Useful when the excluded auto-configuration is not on the compile classpath (for example because it became package-private in a newer version of its library). If the target was the last entry in `exclude`, that attribute is removed. If `excludeName` already contains the value, no duplicate is added._
+
+## Recipe source
+
+[GitHub: ConvertAutoConfigurationExcludeToExcludeName.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/ConvertAutoConfigurationExcludeToExcludeName.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | fullyQualifiedName | The fully qualified name of the auto-configuration class to move from the `exclude` attribute (as a class literal) to the `excludeName` attribute (as a string literal). | `org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration` |
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
+
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|fullyQualifiedName|`org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
+
+@SpringBootApplication(exclude = SolrAutoConfiguration.class)
+class Application {
+}
+```
+
+###### After
+```java
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication(excludeName = "org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration")
+class Application {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+-import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
+
+@@ -4,1 +3,1 @@
+import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
+
+-@SpringBootApplication(exclude = SolrAutoConfiguration.class)
++@SpringBootApplication(excludeName = "org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration")
+class Application {
+```
+</TabItem>
+</Tabs>
+
+
+## Usage
+
+This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ConvertAutoConfigurationExcludeToExcludeNameExample`.
+Here's how you can define and customize such a recipe within your rewrite.yml:
+```yaml title="rewrite.yml"
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.ConvertAutoConfigurationExcludeToExcludeNameExample
+displayName: Convert auto-configuration `exclude` to `excludeName` example
+recipeList:
+  - org.openrewrite.java.spring.ConvertAutoConfigurationExcludeToExcludeName:
+      fullyQualifiedName: org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration
+```
+
+<RunRecipe
+  recipeName="org.openrewrite.java.spring.ConvertAutoConfigurationExcludeToExcludeName"
+  displayName="Convert auto-configuration `exclude` to `excludeName`"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-spring"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
+  requiresConfiguration
+  cliOptions={' --recipe-option "fullyQualifiedName=org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration"'}
+  hasDataTables
+/>
+
+## See how this recipe works across multiple open-source repositories
+
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.ConvertAutoConfigurationExcludeToExcludeName" />
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+</Tabs>

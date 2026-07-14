@@ -31,27 +31,27 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ReactorRules.MonoEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoemptyrecipe)
-* [Refaster template `ReactorRules.MonoTimeoutDurationMonoEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutdurationmonoemptyrecipe)
-* [Refaster template `ReactorRules.MonoTimeoutDurationMonoJust`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutdurationmonojustrecipe)
-* [Refaster template `ReactorRules.MonoTimeoutDuration`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutdurationrecipe)
-* [Refaster template `ReactorRules.MonoTimeoutPublisherMonoEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutpublishermonoemptyrecipe)
-* [Refaster template `ReactorRules.MonoTimeoutPublisherMonoJust`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutpublishermonojustrecipe)
-* [Refaster template `ReactorRules.MonoTimeoutPublisher`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutpublisherrecipe)
+* [Prefer `Mono#timeout(Duration, Mono)` over more contrived or less efficient alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutmonoemptydurationrecipe)
+* [Prefer `Mono#timeout(Duration, Mono)` over more contrived or less efficient alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutmonojustdurationrecipe)
+* [Prefer `Mono#timeout(Duration, Mono)` over more contrived or less efficient alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutdurationrecipe)
+* [Prefer `Mono#timeout(Publisher, Mono)` over more contrived or less efficient alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutmonoemptypublisherrecipe)
+* [Prefer `Mono#timeout(Publisher, Mono)` over more contrived or less efficient alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutmonojustpublisherrecipe)
+* [Prefer `Mono#timeout(Publisher, Mono)` over more contrived or less efficient alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monotimeoutpublisherrecipe)
 * [Refaster template `ReactorRules.MonoJust`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monojustrecipe)
 * [Refaster template `ReactorRules.MonoJustOrEmptyObject`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monojustoremptyobjectrecipe)
 * [Refaster template `ReactorRules.MonoJustOrEmptyOptional`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monojustoremptyoptionalrecipe)
 * [Refaster template `ReactorRules.MonoDeferMonoJustOrEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monodefermonojustoremptyrecipe)
 * [Refaster template `ReactorRules.OptionalMapMonoJust`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$optionalmapmonojustrecipe)
-* [Prefer a `Mono#justOrEmpty(Optional)` and `Mono#switchIfEmpty(Mono)` chain over more contrived alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromoptionalswitchifemptyrecipe)
+* [Prefer a `Mono#justOrEmpty(Optional)` and `Mono#switchIfEmpty(Mono)` chain over more contrived alternatives](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monojustoremptyswitchifemptyrecipe)
 * [Refaster template `ReactorRules.MonoZip`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoziprecipe)
-* [Refaster template `ReactorRules.MonoZipWithCombinator`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monozipwithcombinatorrecipe)
+* [Refaster template `ReactorRules.MonoZipMapFunction`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monozipmapfunctionrecipe)
 * [Refaster template `ReactorRules.FluxZip`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxziprecipe)
-* [Refaster template `ReactorRules.FluxZipWithCombinator`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxzipwithcombinatorrecipe)
+* [Refaster template `ReactorRules.FluxZipMapFunction`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxzipmapfunctionrecipe)
 * [Refaster template `ReactorRules.FluxZipWithIterable`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxzipwithiterablerecipe)
-* [Refaster template `ReactorRules.FluxZipWithIterableBiFunction`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxzipwithiterablebifunctionrecipe)
+* [Refaster template `ReactorRules.FluxZipWithIterableWithBiFunction`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxzipwithiterablewithbifunctionrecipe)
 * [Refaster template `ReactorRules.FluxZipWithIterableMapFunction`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxzipwithiterablemapfunctionrecipe)
-* [Refaster template `ReactorRules.MonoDeferredError`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monodeferrederrorrecipe)
-* [Refaster template `ReactorRules.FluxDeferredError`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxdeferrederrorrecipe)
+* [Refaster template `ReactorRules.MonoErrorThrowable`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoerrorthrowablerecipe)
+* [Refaster template `ReactorRules.FluxErrorThrowable`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxerrorthrowablerecipe)
 * [Refaster template `ReactorRules.MonoErrorSupplier`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoerrorsupplierrecipe)
 * [Refaster template `ReactorRules.FluxErrorSupplier`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxerrorsupplierrecipe)
 * [Refaster template `ReactorRules.MonoThenReturn`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenreturnrecipe)
@@ -60,34 +60,34 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ReactorRules.FluxDefaultIfEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxdefaultifemptyrecipe)
 * [Refaster template `ReactorRules.FluxTimeoutFluxEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtimeoutfluxemptyrecipe)
 * [Refaster template `ReactorRules.FluxJust`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxjustrecipe)
-* [Refaster template `ReactorRules.FluxJustArray`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxjustarrayrecipe)
+* [Refaster template `ReactorRules.FluxJustVarargs`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxjustvarargsrecipe)
 * [Refaster template `ReactorRules.MonoIdentity`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoidentityrecipe)
 * [Refaster template `ReactorRules.MonoSingle`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monosinglerecipe)
-* [Refaster template `ReactorRules.FluxSwitchIfEmptyOfEmptyPublisher`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxswitchifemptyofemptypublisherrecipe)
+* [Refaster template `ReactorRules.FluxIdentity`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxidentityrecipe)
 * [Refaster template `ReactorRules.MonoFlatMapIterableIdentity`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoflatmapiterableidentityrecipe)
-* [Refaster template `ReactorRules.FluxMapNotNullOrElse`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxmapnotnullorelserecipe)
+* [Refaster template `ReactorRules.FluxMapNotNullOptionalOrElseNull`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxmapnotnulloptionalorelsenullrecipe)
 * [Refaster template `ReactorRules.MonoFlux`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofluxrecipe)
 * [Refaster template `ReactorRules.MonoThen`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenrecipe)
 * [Refaster template `ReactorRules.FluxThen`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenrecipe)
 * [Refaster template `ReactorRules.MonoThenEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenemptyrecipe)
 * [Refaster template `ReactorRules.FluxThenEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenemptyrecipe)
 * [Refaster template `ReactorRules.MonoThenMany`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenmanyrecipe)
-* [Refaster template `ReactorRules.MonoThenMonoFlux`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenmonofluxrecipe)
+* [Refaster template `ReactorRules.MonoThenFlux`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenfluxrecipe)
 * [Refaster template `ReactorRules.FluxThenMany`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenmanyrecipe)
-* [Refaster template `ReactorRules.MonoThenMono`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenmonorecipe)
-* [Refaster template `ReactorRules.FluxThenMono`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenmonorecipe)
+* [Refaster template `ReactorRules.MonoThenWithMono`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monothenwithmonorecipe)
+* [Refaster template `ReactorRules.FluxThenWithMono`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxthenwithmonorecipe)
 * [Refaster template `ReactorRules.MonoSingleOptional`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monosingleoptionalrecipe)
 * [Refaster template `ReactorRules.MonoOfType`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monooftyperecipe)
 * [Refaster template `ReactorRules.FluxOfType`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxoftyperecipe)
-* [Refaster template `ReactorRules.ConcatMapIterableIdentity`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$concatmapiterableidentityrecipe)
-* [Refaster template `ReactorRules.ConcatMapIterableIdentityWithPrefetch`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$concatmapiterableidentitywithprefetchrecipe)
+* [Refaster template `ReactorRules.FluxConcatMapIterableIdentity`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxconcatmapiterableidentityrecipe)
+* [Refaster template `ReactorRules.FluxConcatMapIterableIdentityWithInt`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxconcatmapiterableidentitywithintrecipe)
 * [Refaster template `ReactorRules.FluxFromIterable`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxfromiterablerecipe)
 * [Refaster template `ReactorRules.MonoDoOnError`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monodoonerrorrecipe)
 * [Refaster template `ReactorRules.FluxDoOnError`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxdoonerrorrecipe)
 * [Refaster template `ReactorRules.MonoOnErrorComplete`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoonerrorcompleterecipe)
-* [Refaster template `ReactorRules.MonoOnErrorCompleteClass`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoonerrorcompleteclassrecipe)
-* [Refaster template `ReactorRules.MonoOnErrorCompletePredicate`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoonerrorcompletepredicaterecipe)
-* [Refaster template `ReactorRules.FluxOnErrorCompletePredicate`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxonerrorcompletepredicaterecipe)
+* [Refaster template `ReactorRules.MonoOnErrorCompleteWithClass`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoonerrorcompletewithclassrecipe)
+* [Refaster template `ReactorRules.MonoOnErrorCompleteWithPredicate`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoonerrorcompletewithpredicaterecipe)
+* [Refaster template `ReactorRules.FluxOnErrorCompleteWithPredicate`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxonerrorcompletewithpredicaterecipe)
 * [Refaster template `ReactorRules.MonoOnErrorContinue`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoonerrorcontinuerecipe)
 * [Refaster template `ReactorRules.FluxOnErrorContinue`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxonerrorcontinuerecipe)
 * [Refaster template `ReactorRules.MonoOnErrorMap`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoonerrormaprecipe)
@@ -104,10 +104,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ReactorRules.FluxCollectToImmutableList`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxcollecttoimmutablelistrecipe)
 * [Refaster template `ReactorRules.FluxCollectToImmutableSet`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxcollecttoimmutablesetrecipe)
 * [Refaster template `ReactorRules.FluxSort`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxsortrecipe)
-* [Refaster template `ReactorRules.FluxTransformMin`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformminrecipe)
-* [Refaster template `ReactorRules.FluxTransformMinWithComparator`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformminwithcomparatorrecipe)
-* [Refaster template `ReactorRules.FluxTransformMax`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformmaxrecipe)
-* [Refaster template `ReactorRules.FluxTransformMaxWithComparator`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformmaxwithcomparatorrecipe)
+* [Refaster template `ReactorRules.FluxTransformMathFluxMinSingleOrEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformmathfluxminsingleoremptyrecipe)
+* [Refaster template `ReactorRules.FluxTransformMathFluxMinSingleOrEmptyWithComparator`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformmathfluxminsingleoremptywithcomparatorrecipe)
+* [Refaster template `ReactorRules.FluxTransformMathFluxMaxSingleOrEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformmathfluxmaxsingleoremptyrecipe)
+* [Refaster template `ReactorRules.FluxTransformMathFluxMaxSingleOrEmptyWithComparator`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxtransformmathfluxmaxsingleoremptywithcomparatorrecipe)
 * [Refaster template `ReactorRules.MathFluxMin`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$mathfluxminrecipe)
 * [Refaster template `ReactorRules.MathFluxMax`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$mathfluxmaxrecipe)
 * [Refaster template `ReactorRules.PublisherProbeEmpty`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$publisherprobeemptyrecipe)
@@ -117,26 +117,26 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `ReactorRules.PublisherProbeAssertWasNotCancelled`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$publisherprobeassertwasnotcancelledrecipe)
 * [Refaster template `ReactorRules.PublisherProbeAssertWasRequested`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$publisherprobeassertwasrequestedrecipe)
 * [Refaster template `ReactorRules.PublisherProbeAssertWasNotRequested`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$publisherprobeassertwasnotrequestedrecipe)
-* [Refaster template `ReactorRules.StepVerifierFromMono`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierfrommonorecipe)
-* [Refaster template `ReactorRules.StepVerifierFromFlux`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierfromfluxrecipe)
+* [Refaster template `ReactorRules.MonoAsStepVerifierCreate`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monoasstepverifiercreaterecipe)
+* [Refaster template `ReactorRules.FluxAsStepVerifierCreate`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxasstepverifiercreaterecipe)
 * [Refaster template `ReactorRules.StepVerifierVerify`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierverifyrecipe)
-* [Refaster template `ReactorRules.StepVerifierVerifyDuration`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierverifydurationrecipe)
+* [Refaster template `ReactorRules.StepVerifierVerifyWithDuration`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierverifywithdurationrecipe)
 * [Refaster template `ReactorRules.StepVerifierVerifyLater`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierverifylaterrecipe)
-* [Refaster template `ReactorRules.StepVerifierStepExpectNext`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierstepexpectnextrecipe)
-* [Refaster template `ReactorRules.FluxAsStepVerifierExpectNext`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxasstepverifierexpectnextrecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyComplete`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifycompleterecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyError`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorrecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorClass`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorclassrecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMatches`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrormatchesrecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorSatisfies`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorsatisfiesrecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorSatisfiesAssertJ`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrorsatisfiesassertjrecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyErrorMessage`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifyerrormessagerecipe)
-* [Refaster template `ReactorRules.StepVerifierLastStepVerifyTimeout`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepverifierlaststepverifytimeoutrecipe)
-* [Refaster template `ReactorRules.MonoFromFutureSupplier`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfuturesupplierrecipe)
-* [Refaster template `ReactorRules.MonoFromFutureSupplierBoolean`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfuturesupplierbooleanrecipe)
-* [Refaster template `ReactorRules.MonoFromFutureAsyncLoadingCacheGet`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfutureasyncloadingcachegetrecipe)
-* [Refaster template `ReactorRules.MonoFromFutureAsyncLoadingCacheGetAll`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfutureasyncloadingcachegetallrecipe)
-* [Refaster template `ReactorRules.FluxFromStreamSupplier`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxfromstreamsupplierrecipe)
+* [Refaster template `ReactorRules.StepExpectNext`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$stepexpectnextrecipe)
+* [Refaster template `ReactorRules.FluxAsStepVerifierCreateExpectNext`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxasstepverifiercreateexpectnextrecipe)
+* [Refaster template `ReactorRules.LastStepVerifyComplete`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifycompleterecipe)
+* [Refaster template `ReactorRules.LastStepVerifyError`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifyerrorrecipe)
+* [Refaster template `ReactorRules.LastStepVerifyErrorWithClass`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifyerrorwithclassrecipe)
+* [Refaster template `ReactorRules.LastStepVerifyErrorMatches`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifyerrormatchesrecipe)
+* [Refaster template `ReactorRules.LastStepVerifyErrorSatisfies`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifyerrorsatisfiesrecipe)
+* [Refaster template `ReactorRules.LastStepVerifyErrorSatisfiesAssertThatIsInstanceOfHasMessage`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifyerrorsatisfiesassertthatisinstanceofhasmessagerecipe)
+* [Refaster template `ReactorRules.LastStepVerifyErrorMessage`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifyerrormessagerecipe)
+* [Refaster template `ReactorRules.LastStepVerifyTimeout`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$laststepverifytimeoutrecipe)
+* [Refaster template `ReactorRules.MonoFromFuture`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfuturerecipe)
+* [Refaster template `ReactorRules.MonoFromFutureWithBoolean`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfuturewithbooleanrecipe)
+* [Prefer suppressing `Mono` cancellations to upstream cache value computations over propagating them, as completion of such computations may benefit concurrent or subsequent cache usages](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfutureasyncloadingcachegettruerecipe)
+* [Prefer suppressing `Mono` cancellations to upstream cache value computations over propagating them, as completion of such computations may benefit concurrent or subsequent cache usages](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$monofromfutureasyncloadingcachegetalltruerecipe)
+* [Refaster template `ReactorRules.FluxFromStream`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxfromstreamrecipe)
 * [Refaster template `ReactorRules.FluxNext`](../../../picnic/errorprone/refasterrules/reactorrulesrecipes$fluxnextrecipe)
 
 </TabItem>
@@ -152,27 +152,27 @@ description: |
   Refaster rules related to Reactor expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/ReactorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationMonoEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationMonoJustRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutMonoEmptyDurationRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutMonoJustDurationRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutPublisherMonoEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutPublisherMonoJustRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutMonoEmptyPublisherRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutMonoJustPublisherRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutPublisherRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustOrEmptyObjectRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustOrEmptyOptionalRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoDeferMonoJustOrEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$OptionalMapMonoJustRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromOptionalSwitchIfEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoJustOrEmptySwitchIfEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoZipRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoZipWithCombinatorRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoZipMapFunctionRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxZipRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxZipWithCombinatorRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxZipMapFunctionRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxZipWithIterableRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxZipWithIterableBiFunctionRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxZipWithIterableWithBiFunctionRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxZipWithIterableMapFunctionRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoDeferredErrorRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxDeferredErrorRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoErrorThrowableRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxErrorThrowableRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoErrorSupplierRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxErrorSupplierRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenReturnRecipe
@@ -181,34 +181,34 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxDefaultIfEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTimeoutFluxEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxJustRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxJustArrayRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxJustVarargsRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoIdentityRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoSingleRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxSwitchIfEmptyOfEmptyPublisherRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxIdentityRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFlatMapIterableIdentityRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxMapNotNullOrElseRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxMapNotNullOptionalOrElseNullRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFluxRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenEmptyRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenManyRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenMonoFluxRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenFluxRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenManyRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenMonoRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenMonoRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenWithMonoRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenWithMonoRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoSingleOptionalRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOfTypeRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxOfTypeRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$ConcatMapIterableIdentityRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$ConcatMapIterableIdentityWithPrefetchRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxConcatMapIterableIdentityRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxConcatMapIterableIdentityWithIntRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxFromIterableRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoDoOnErrorRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxDoOnErrorRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorCompleteRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorCompleteClassRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorCompletePredicateRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxOnErrorCompletePredicateRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorCompleteWithClassRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorCompleteWithPredicateRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxOnErrorCompleteWithPredicateRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorContinueRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxOnErrorContinueRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoOnErrorMapRecipe
@@ -225,10 +225,10 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxCollectToImmutableListRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxCollectToImmutableSetRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxSortRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMinRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMinWithComparatorRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMaxRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMaxWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMathFluxMinSingleOrEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMathFluxMinSingleOrEmptyWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMathFluxMaxSingleOrEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTransformMathFluxMaxSingleOrEmptyWithComparatorRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MathFluxMinRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MathFluxMaxRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$PublisherProbeEmptyRecipe
@@ -238,26 +238,26 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$PublisherProbeAssertWasNotCancelledRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$PublisherProbeAssertWasRequestedRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$PublisherProbeAssertWasNotRequestedRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierFromMonoRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierFromFluxRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoAsStepVerifierCreateRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxAsStepVerifierCreateRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyDurationRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyWithDurationRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyLaterRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierStepExpectNextRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxAsStepVerifierExpectNextRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyCompleteRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorClassRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorMatchesRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorSatisfiesRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorSatisfiesAssertJRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyErrorMessageRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierLastStepVerifyTimeoutRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureSupplierRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureSupplierBooleanRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureAsyncLoadingCacheGetRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureAsyncLoadingCacheGetAllRecipe
-  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxFromStreamSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepExpectNextRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxAsStepVerifierCreateExpectNextRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyCompleteRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyErrorRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyErrorWithClassRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyErrorMatchesRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyErrorSatisfiesRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyErrorSatisfiesAssertThatIsInstanceOfHasMessageRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyErrorMessageRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$LastStepVerifyTimeoutRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureWithBooleanRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureAsyncLoadingCacheGetTrueRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFromFutureAsyncLoadingCacheGetAllTrueRecipe
+  - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxFromStreamRecipe
   - tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxNextRecipe
 
 ```

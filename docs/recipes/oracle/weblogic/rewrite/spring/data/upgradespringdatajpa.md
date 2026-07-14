@@ -15,8 +15,8 @@ _Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-d
 
 ### Tags
 
-* [springdata](/reference/recipes-by-tag#springdata)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [springdata](/reference/recipes-by-tag#springdata)
 
 ## Recipe source
 
@@ -48,8 +48,8 @@ displayName: Upgrade Spring Data JPA to 3.4.6
 description: |
   Upgrade Spring Data JPA to 3.4.6 version, which is the version used by spring-data-bom v2024.1.x
 tags:
-  - springdata
   - springframework
+  - springdata
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.data

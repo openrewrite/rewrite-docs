@@ -82,6 +82,9 @@ class A {
         Assertions.assertThat(d).isEqualTo(0);
         Assertions.assertThat(d).isEqualTo(0.0);
         Assertions.assertThat(d).isEqualTo(0d);
+        Assertions.assertThat(d).isSameAs(0);
+        Assertions.assertThat(d).isSameAs(0.0);
+        Assertions.assertThat(d).isSameAs(0d);
     }
 }
 ```
@@ -95,6 +98,9 @@ class A {
         Assertions.assertThat(d).isZero();
         Assertions.assertThat(d).isZero();
         Assertions.assertThat(d).isZero();
+        Assertions.assertThat(d).isZero();
+        Assertions.assertThat(d).isZero();
+        Assertions.assertThat(d).isZero();
     }
 }
 ```
@@ -103,12 +109,18 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,3 +5,3 @@
+@@ -5,6 +5,6 @@
 class A {
     public void test(double d) {
 -       Assertions.assertThat(d).isEqualTo(0);
 -       Assertions.assertThat(d).isEqualTo(0.0);
 -       Assertions.assertThat(d).isEqualTo(0d);
+-       Assertions.assertThat(d).isSameAs(0);
+-       Assertions.assertThat(d).isSameAs(0.0);
+-       Assertions.assertThat(d).isSameAs(0d);
++       Assertions.assertThat(d).isZero();
++       Assertions.assertThat(d).isZero();
++       Assertions.assertThat(d).isZero();
 +       Assertions.assertThat(d).isZero();
 +       Assertions.assertThat(d).isZero();
 +       Assertions.assertThat(d).isZero();

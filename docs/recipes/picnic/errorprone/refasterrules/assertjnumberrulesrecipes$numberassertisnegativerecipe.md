@@ -11,57 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsNegativeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class NumberAssertIsNegative {
-    
-    @BeforeTemplate
-    AbstractByteAssert<?> before(AbstractByteAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isLessThan((byte)0), numberAssert.isLessThanOrEqualTo((byte)-1));
-    }
-    
-    @BeforeTemplate
-    AbstractShortAssert<?> before(AbstractShortAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isLessThan((short)0), numberAssert.isLessThanOrEqualTo((short)-1));
-    }
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(AbstractIntegerAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));
-    }
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(AbstractLongAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isLessThan(0), numberAssert.isLessThanOrEqualTo(-1));
-    }
-    
-    @BeforeTemplate
-    AbstractFloatAssert<?> before(AbstractFloatAssert<?> numberAssert) {
-        return numberAssert.isLessThan(0);
-    }
-    
-    @BeforeTemplate
-    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> numberAssert) {
-        return numberAssert.isLessThan(0);
-    }
-    
-    @BeforeTemplate
-    AbstractBigIntegerAssert<?> before(AbstractBigIntegerAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isLessThan(BigInteger.ZERO), numberAssert.isLessThanOrEqualTo(BigInteger.valueOf(-1)));
-    }
-    
-    @BeforeTemplate
-    AbstractBigDecimalAssert<?> before(AbstractBigDecimalAssert<?> numberAssert) {
-        return numberAssert.isLessThan(BigDecimal.ZERO);
-    }
-    
-    @AfterTemplate
-    NumberAssert<?, ?> after(NumberAssert<?, ?> numberAssert) {
-        return numberAssert.isNegative();
-    }
-}
-```
-.
+_Prefer `NumberAssert#isNegative()` over less explicit alternatives._
 
 ## Recipe source
 

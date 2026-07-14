@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasSameHashCodeAsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasSameHashCodeAs<T> {
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(T object1, T object2) {
-        return assertThat(object1.hashCode()).isEqualTo(object2.hashCode());
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    ObjectAssert<T> after(T object1, T object2) {
-        return assertThat(object1).hasSameHashCodeAs(object2);
-    }
-}
-```
-.
+_Prefer `ObjectAssert#hasSameHashCodeAs(Object)` over more contrived alternatives._
 
 ## Recipe source
 

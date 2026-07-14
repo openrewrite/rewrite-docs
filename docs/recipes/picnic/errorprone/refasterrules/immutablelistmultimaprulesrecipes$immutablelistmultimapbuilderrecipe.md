@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableListMultimapRulesRecipes$ImmutableListMultimapBuilderRecipe**
 
-_Prefer `ImmutableListMultimap#builder()` over the associated constructor on constructions that produce a less-specific type._
+_Prefer `ImmutableListMultimap#builder()` over the associated constructor or imprecisely typed alternatives._
 
 ## Recipe source
 

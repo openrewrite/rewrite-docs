@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsInstanceOfRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsInstanceOf<T> {
-    
-    @BeforeTemplate
-    void before(Object actual, Class<T> clazz) {
-        assertInstanceOf(clazz, actual);
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(Object actual, Class<T> clazz) {
-        assertThat(actual).isInstanceOf(clazz);
-    }
-}
-```
-.
+_Prefer `AbstractAssert#isInstanceOf(Class)` over non-AssertJ alternatives._
 
 ## Recipe source
 
@@ -42,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules to replace JUnit assertions with AssertJ equivalents](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes.md)
+* [Refaster rules that replace JUnit APIs with AssertJ equivalents](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes.md)
 
 
 ## Usage

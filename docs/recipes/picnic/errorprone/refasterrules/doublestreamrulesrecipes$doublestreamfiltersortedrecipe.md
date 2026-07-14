@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamFilterSortedRecipe**
 
-_Apply `DoubleStream#filter(DoublePredicate)` before `DoubleStream#sorted()` to reduce the number of elements to sort._
+_Prefer `DoubleStream#filter(DoublePredicate)` before `DoubleStream#sorted()` over less efficient alternatives._
 
 ## Recipe source
 

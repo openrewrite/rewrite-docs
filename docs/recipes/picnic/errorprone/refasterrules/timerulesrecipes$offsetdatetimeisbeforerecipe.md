@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeIsBeforeRecipe**
 
-_Prefer `OffsetDateTime#isBefore(OffsetDateTime)` over explicit comparison, as it yields more readable code._
+_Prefer `OffsetDateTime#isBefore(OffsetDateTime)` over less explicit alternatives._
 
 ## Recipe source
 

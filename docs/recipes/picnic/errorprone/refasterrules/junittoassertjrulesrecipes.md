@@ -1,17 +1,22 @@
 ---
-title: "Refaster rules to replace JUnit assertions with AssertJ equivalents"
-sidebar_label: "Refaster rules to replace JUnit assertions with AssertJ equivalents"
+title: "Refaster rules that replace JUnit APIs with AssertJ equivalents"
+sidebar_label: "Refaster rules that replace JUnit APIs with AssertJ equivalents"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster rules to replace JUnit assertions with AssertJ equivalents
+# Refaster rules that replace JUnit APIs with AssertJ equivalents
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes**
 
-_Note that, while both libraries throw an `AssertionError` in case of an assertion  failure, the exact subtype used generally differs. [Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules)._
+```
+<strong>Warning:</strong> while both libraries throw an `AssertionError` in case of an
+ assertion failure, the exact subtype used generally differs.
+[Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules).
+```
+
 
 ## Recipe source
 
@@ -30,73 +35,64 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `JUnitToAssertJRules.AssertThatBooleanArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbooleanarraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatBooleanArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbooleanarraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatBooleanArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbooleanarraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatByteArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbytearraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatByteArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbytearraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatByteArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbytearraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatCharArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatchararraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatCharArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatchararraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatCharArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatchararraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatShortArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatshortarraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatShortArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatshortarraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatShortArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatshortarraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatIntArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatintarraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatIntArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatintarraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatIntArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatintarraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatLongArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatlongarraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatLongArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatlongarraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatLongArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatlongarraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatFloatArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatFloatArrayContainsExactlyWithOffset`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraycontainsexactlywithoffsetrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageContainsExactlyWithOffset`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagecontainsexactlywithoffsetrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffset`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlywithoffsetrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayContainsExactlyWithOffset`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraycontainsexactlywithoffsetrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageContainsExactlyWithOffset`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagecontainsexactlywithoffsetrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffset`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlywithoffsetrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatObjectArrayContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatobjectarraycontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatObjectArrayWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatobjectarraywithfailmessagecontainsexactlyrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatObjectArrayWithFailMessageSupplierContainsExactly`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatobjectarraywithfailmessagesuppliercontainsexactlyrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyBoolean`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlybooleanrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyBooleanString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlybooleanstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyBooleanSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlybooleansupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyByte`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlybyterecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyByteString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlybytestringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyByteSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlybytesupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyChar`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlycharrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyCharString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlycharstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyCharSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlycharsupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyShort`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlyshortrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyShortString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyshortstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyShortSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyshortsupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyInt`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlyintrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyIntString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyintstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyIntSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyintsupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyLong`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlylongrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyLongString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlylongstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyLongSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlylongsupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyFloat`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlyfloatrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyFloatString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyfloatstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyFloatSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyfloatsupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyOffsetFloat`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlyoffsetfloatrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetFloatString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetfloatstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetFloatSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetfloatsupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyDouble`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlydoublerecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyDoubleString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlydoublestringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyDoubleSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlydoublesupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyOffsetDouble`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlyoffsetdoublerecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetDoubleString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetdoublestringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetDoubleSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetdoublesupplierrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatContainsExactlyObject`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcontainsexactlyobjectrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyObjectString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyobjectstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyObjectSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyobjectsupplierrecipe)
 * [Refaster template `JUnitToAssertJRules.Fail`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$failrecipe)
-* [Refaster template `JUnitToAssertJRules.FailWithMessage`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$failwithmessagerecipe)
-* [Refaster template `JUnitToAssertJRules.FailWithMessageAndThrowable`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$failwithmessageandthrowablerecipe)
+* [Refaster template `JUnitToAssertJRules.FailWithString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$failwithstringrecipe)
+* [Refaster template `JUnitToAssertJRules.FailWithStringAndThrowable`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$failwithstringandthrowablerecipe)
 * [Refaster template `JUnitToAssertJRules.FailWithThrowable`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$failwiththrowablerecipe)
 * [Refaster template `JUnitToAssertJRules.AssertThatIsTrue`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatistruerecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsTrue`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagestringistruerecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsTrue`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplieristruerecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsTrueString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageistruestringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsTrueSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageistruesupplierrecipe)
 * [Refaster template `JUnitToAssertJRules.AssertThatIsFalse`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatisfalserecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsFalse`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagestringisfalserecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsFalse`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisfalserecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsFalseString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisfalsestringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsFalseSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisfalsesupplierrecipe)
 * [Refaster template `JUnitToAssertJRules.AssertThatIsNull`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatisnullrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsNull`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagestringisnullrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNull`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnullrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNullString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnullstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNullSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnullsupplierrecipe)
 * [Refaster template `JUnitToAssertJRules.AssertThatIsNotNull`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatisnotnullrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsNotNull`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagestringisnotnullrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNotNull`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotnullrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNotNullString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnotnullstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNotNullSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnotnullsupplierrecipe)
 * [Refaster template `JUnitToAssertJRules.AssertThatIsSameAs`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatissameasrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsSameAs`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagestringissameasrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsSameAs`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierissameasrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsSameAsString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageissameasstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsSameAsSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageissameassupplierrecipe)
 * [Refaster template `JUnitToAssertJRules.AssertThatIsNotSameAs`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatisnotsameasrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsNotSameAs`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagestringisnotsameasrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNotSameAs`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotsameasrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatThrownByIsExactlyInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbyisexactlyinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageStringIsExactlyInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagestringisexactlyinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisexactlyinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatThrownByIsInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbyisinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageStringIsInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagestringisinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageSupplierIsInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatCodeDoesNotThrowAnyException`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcodedoesnotthrowanyexceptionrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatCodeWithFailMessageStringDoesNotThrowAnyException`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcodewithfailmessagestringdoesnotthrowanyexceptionrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcodewithfailmessagesupplierdoesnotthrowanyexceptionrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNotSameAsString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnotsameasstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNotSameAsSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnotsameassupplierrecipe)
 * [Refaster template `JUnitToAssertJRules.AssertThatIsInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatisinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageStringIsInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagestringisinstanceofrecipe)
-* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsInstanceOf`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisinstanceofrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsInstanceOfString`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisinstanceofstringrecipe)
+* [Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsInstanceOfSupplier`](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisinstanceofsupplierrecipe)
 
 </TabItem>
 
@@ -106,77 +102,68 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes
-displayName: Refaster rules to replace JUnit assertions with AssertJ equivalents
+displayName: Refaster rules that replace JUnit APIs with AssertJ equivalents
 description: |
-  Note that, while both libraries throw an `AssertionError` in case of an assertion  failure, the exact subtype used generally differs. [Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules).
+  &lt;strong&gt;Warning:&lt;/strong&gt; while both libraries throw an `AssertionError` in case of an  assertion failure, the exact subtype used generally differs. [Source](https://error-prone.picnic.tech/refasterrules/JUnitToAssertJRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayContainsExactlyWithOffsetRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageContainsExactlyWithOffsetRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayContainsExactlyWithOffsetRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageContainsExactlyWithOffsetRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyBooleanRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyBooleanStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyBooleanSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyByteRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyByteStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyByteSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyCharRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyCharStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyCharSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyShortRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyShortStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyShortSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyIntRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyIntStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyIntSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyLongRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyLongStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyLongSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyFloatRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyFloatStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyFloatSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyOffsetFloatRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetFloatStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetFloatSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyDoubleStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyDoubleSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyOffsetDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetDoubleStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetDoubleSupplierRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatContainsExactlyObjectRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyObjectStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyObjectSupplierRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$FailRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$FailWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$FailWithMessageAndThrowableRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$FailWithStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$FailWithStringAndThrowableRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$FailWithThrowableRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsTrueRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsTrueRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsTrueRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsTrueStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsTrueSupplierRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsFalseRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsFalseRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsFalseRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsFalseStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsFalseSupplierRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsNullRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsNullRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNullRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNullStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNullSupplierRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsNotNullRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsNotNullRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotNullRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNotNullStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNotNullSupplierRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsSameAsRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsSameAsRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsSameAsRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsSameAsStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsSameAsSupplierRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsNotSameAsRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsNotSameAsRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotSameAsRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByIsExactlyInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageStringIsExactlyInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByIsInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageStringIsInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeDoesNotThrowAnyExceptionRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageStringDoesNotThrowAnyExceptionRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyExceptionRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNotSameAsStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNotSameAsSupplierRecipe
   - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIsInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageStringIsInstanceOfRecipe
-  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsInstanceOfRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsInstanceOfStringRecipe
+  - tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsInstanceOfSupplierRecipe
 
 ```
 </TabItem>
@@ -194,7 +181,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes"
-  displayName="Refaster rules to replace JUnit assertions with AssertJ equivalents"
+  displayName="Refaster rules that replace JUnit APIs with AssertJ equivalents"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

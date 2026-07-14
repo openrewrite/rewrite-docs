@@ -15,9 +15,9 @@ _Migrate WireMock dependencies from the old `com.github.tomakehurst` coordinates
 
 ### Tags
 
+* [wiremock](/reference/recipes-by-tag#wiremock)
 * [security](/reference/recipes-by-tag#security)
 * [testing](/reference/recipes-by-tag#testing)
-* [wiremock](/reference/recipes-by-tag#wiremock)
 
 ## Recipe source
 
@@ -79,9 +79,9 @@ displayName: Upgrade WireMock to 3.x
 description: |
   Migrate WireMock dependencies from the old `com.github.tomakehurst` coordinates to the new `org.wiremock` coordinates. WireMock 3.x changed its Maven coordinates and requires Java 11 or higher. Old 2.x versions contain CVE-2023-44487.
 tags:
+  - wiremock
   - security
   - testing
-  - wiremock
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

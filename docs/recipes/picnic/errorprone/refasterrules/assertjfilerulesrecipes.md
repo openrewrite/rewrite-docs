@@ -1,17 +1,17 @@
 ---
-title: "Refaster rules related to AssertJ assertions over `File`s"
-sidebar_label: "Refaster rules related to AssertJ assertions over `File`s"
+title: "`AssertJFileRules` Refaster recipes"
+sidebar_label: "`AssertJFileRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster rules related to AssertJ assertions over `File`s
+# `AssertJFileRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes**
 
-_These rules simplify and improve the readability of tests by using `File`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFileRules)._
+_Refaster rules related to AssertJ assertions over `File`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFileRules)._
 
 ## Recipe source
 
@@ -52,9 +52,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes
-displayName: Refaster rules related to AssertJ assertions over `File`s
+displayName: `AssertJFileRules` Refaster recipes
 description: |
-  These rules simplify and improve the readability of tests by using `File`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFileRules).
+  Refaster rules related to AssertJ assertions over `File`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFileRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatExistsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatDoesNotExistRecipe
@@ -85,7 +85,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes"
-  displayName="Refaster rules related to AssertJ assertions over `File`s"
+  displayName="`AssertJFileRules` Refaster recipes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

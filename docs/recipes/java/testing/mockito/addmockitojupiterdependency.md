@@ -21,6 +21,78 @@ _Adds `org.mockito:mockito-junit-jupiter` dependency if `@ExtendWith(MockitoExte
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+repositories {
+    mavenCentral()
+}
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
+    testImplementation "org.mockito:mockito-junit-jupiter:3.12.4"
+}
+test {
+    useJUnitPlatform()
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,0 +10,1 @@
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.11.4")
+    testImplementation("org.mockito:mockito-core:3.12.4")
++   testImplementation "org.mockito:mockito-junit-jupiter:3.12.4"
+}
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```java
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+class MyTest {
+    @Mock
+    Object myMock;
+
+    @Test
+    void someTest() {
+    }
+}
+```
+
 
 ## Usage
 

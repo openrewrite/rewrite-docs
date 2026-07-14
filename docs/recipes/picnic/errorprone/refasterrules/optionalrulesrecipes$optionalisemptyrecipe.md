@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalIsEmptyRecipe**
 
-_Prefer `Optional#isEmpty()` over the more verbose alternative._
+_Prefer `Optional#isEmpty()` over more verbose alternatives._
 
 ## Recipe source
 

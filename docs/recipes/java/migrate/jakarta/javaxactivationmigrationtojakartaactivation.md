@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
-* [javax](/reference/recipes-by-tag#javax)
 * [activation](/reference/recipes-by-tag#activation)
+* [javax](/reference/recipes-by-tag#javax)
 * [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
@@ -79,8 +79,8 @@ displayName: Migrate deprecated `javax.activation` packages to `jakarta.activati
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
-  - javax
   - activation
+  - javax
   - jakarta
 preconditions:
   - org.openrewrite.Singleton

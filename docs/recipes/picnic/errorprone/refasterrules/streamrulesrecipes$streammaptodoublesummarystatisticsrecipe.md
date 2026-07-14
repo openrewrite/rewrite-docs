@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapToDoubleSummaryStatisticsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamMapToDoubleSummaryStatistics<T> {
-    
-    @BeforeTemplate
-    DoubleSummaryStatistics before(Stream<T> stream, ToDoubleFunction<T> mapper) {
-        return stream.collect(summarizingDouble(mapper));
-    }
-    
-    @AfterTemplate
-    DoubleSummaryStatistics after(Stream<T> stream, ToDoubleFunction<T> mapper) {
-        return stream.mapToDouble(mapper).summaryStatistics();
-    }
-}
-```
-.
+_Prefer `stream.mapToDouble(mapper).summaryStatistics()` over less efficient alternatives._
 
 ## Recipe source
 

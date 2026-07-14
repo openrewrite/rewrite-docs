@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionContainsRecipe**
 
-_Don't call `ImmutableCollection#asList()` if `Collection#contains(Object)` is called on the result; call it directly._
+_Prefer `ImmutableCollection#contains(Object)` over more verbose alternatives._
 
 ## Recipe source
 

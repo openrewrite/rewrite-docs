@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ReverseOrderRecipe**
 
-_Prefer `Comparator#reverseOrder()` over more complicated constructs._
+_Prefer `Comparator#reverseOrder()` over less explicit, more verbose, or more contrived alternatives._
 
 ## Recipe source
 

@@ -45,9 +45,9 @@ This recipe is used as part of the following composite recipes:
 | Parameter | Value |
 | --- | --- |
 |oldAction|`gradle/wrapper-validation-action`|
-|oldSha|`gradle/actions/wrapper-validation`|
-|newAction|`v3`|
-|newVersion||
+|oldSha|`null`|
+|newAction|`gradle/actions/wrapper-validation`|
+|newVersion|`v3`|
 
 
 <Tabs groupId="beforeAfter">

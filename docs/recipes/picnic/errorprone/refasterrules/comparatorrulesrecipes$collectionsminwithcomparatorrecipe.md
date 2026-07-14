@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMinWithComparatorRecipe**
 
-_Avoid unnecessary creation of a `Stream` to determine the minimum of a known collection of values._
+_Prefer `Collections#min(Collection, Comparator)` over less efficient alternatives._
 
 ## Recipe source
 

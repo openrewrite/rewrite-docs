@@ -22,7 +22,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`](./replacevalidatenotnullhavingsingleargwithobjectsrequirenonnull.md)
 * [Simplify ternary expressions](./simplifyternaryrecipes.md)
 * [URL Equals and Hash Code](./urlequalshashcoderecipes.md)
-* [Use `String.CASE_INSENSITIVE_ORDER`](./usestringcaseinsensitiveorderrecipes.md)
 
 ## Recipes
 
@@ -181,8 +180,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Use Empty Array for `Collection.toArray()`](./replacecollectiontoarrayargwithemptyarray.md)
 * [Use `Map#containsKey`](./usemapcontainskey.md)
 * [Use `StandardCharset` constants](./usestandardcharset.md)
-* [Use `String.CASE_INSENSITIVE_ORDER` instead of `String::compareToIgnoreCase`](./usestringcaseinsensitiveorderrecipes$frommethodreferencerecipe.md)
-* [Use `String.CASE_INSENSITIVE_ORDER` instead of a lambda](./usestringcaseinsensitiveorderrecipes$fromlambdarecipe.md)
+* [Use `String.CASE_INSENSITIVE_ORDER`](./usestringcaseinsensitiveorderrecipe.md)
 * [Use `String.contentEquals(CharSequence)` instead of `String.equals(CharSequence.toString())`](./equalstocontentequals.md)
 * [Use `String.equals()` on `String` literals](./stringliteralequality.md)
 * [Use `String::replace()` when first parameter is not a real regular expression](./usestringreplace.md)

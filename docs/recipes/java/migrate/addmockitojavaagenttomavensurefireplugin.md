@@ -28,6 +28,142 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 
+## Example
+
+
+###### Unchanged
+```mavenProject
+test-project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>test</artifactId>
+  <version>${revision}</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.4</version>
+    <relativePath/>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.sample</groupId>
+  <artifactId>test</artifactId>
+  <version>${revision}</version>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.4</version>
+    <relativePath/>
+  </parent>
+  <properties>
+    <argLine></argLine>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!--suppress MavenModelInspection -->
+          <argLine>@{argLine} -javaagent:mockito-core:jar</argLine>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -13,0 +13,3 @@
+    <relativePath/>
+  </parent>
++ <properties>
++   <argLine></argLine>
++ </properties>
+
+@@ -26,0 +29,7 @@
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
++       <executions>
++         <execution>
++           <goals>
++             <goal>properties</goal>
++           </goals>
++         </execution>
++       </executions>
+      </plugin>
+@@ -30,0 +40,4 @@
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
++       <configuration>
++         <!--suppress MavenModelInspection -->
++         <argLine>@{argLine} -javaagent:mockito-core:jar</argLine>
++       </configuration>
+      </plugin>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

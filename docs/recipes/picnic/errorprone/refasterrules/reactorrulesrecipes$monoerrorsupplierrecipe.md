@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoErrorSupplierRecipe**
 
-_Don't unnecessarily pass `Mono#error(Supplier)` a method reference or lambda expression._
+_Prefer passing `Mono#error(Supplier)` a direct supplier reference over a lambda or method reference that invokes another supplier._
 
 ## Recipe source
 

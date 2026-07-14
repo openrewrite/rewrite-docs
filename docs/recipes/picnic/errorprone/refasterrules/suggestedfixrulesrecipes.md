@@ -32,9 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `SuggestedFixRules.SuggestedFixToBuilder`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixtobuilderrecipe)
 * [Refaster template `SuggestedFixRules.SuggestedFixDelete`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixdeleterecipe)
-* [Refaster template `SuggestedFixRules.SuggestedFixReplaceTree`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacetreerecipe)
-* [Refaster template `SuggestedFixRules.SuggestedFixReplaceStartEnd`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacestartendrecipe)
-* [Refaster template `SuggestedFixRules.SuggestedFixReplaceTreeStartEnd`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplacetreestartendrecipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixReplace2`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplace2recipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixReplace3`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplace3recipe)
+* [Refaster template `SuggestedFixRules.SuggestedFixReplace4`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixreplace4recipe)
 * [Refaster template `SuggestedFixRules.SuggestedFixSwap`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixswaprecipe)
 * [Refaster template `SuggestedFixRules.SuggestedFixPrefixWith`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixprefixwithrecipe)
 * [Refaster template `SuggestedFixRules.SuggestedFixPostfixWith`](../../../picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixpostfixwithrecipe)
@@ -53,9 +53,9 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixToBuilderRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixDeleteRecipe
-  - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceTreeRecipe
-  - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceStartEndRecipe
-  - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplaceTreeStartEndRecipe
+  - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplace2Recipe
+  - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplace3Recipe
+  - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixReplace4Recipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixSwapRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixPrefixWithRecipe
   - tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixPostfixWithRecipe

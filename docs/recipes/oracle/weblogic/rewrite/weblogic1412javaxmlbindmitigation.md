@@ -15,9 +15,9 @@ _This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic
 
 ### Tags
 
-* [java](/reference/recipes-by-tag#java)
-* [javax](/reference/recipes-by-tag#javax)
 * [weblogic](/reference/recipes-by-tag#weblogic)
+* [javax](/reference/recipes-by-tag#javax)
+* [java](/reference/recipes-by-tag#java)
 
 ## Recipe source
 
@@ -73,9 +73,9 @@ displayName: Mitigation of Java XML Bind Deprecation in Java 11 vs WebLogic 14.1
 description: |
   This recipe will mitigate the Javax XML Bind deprecation in Java 11 vs WebLogic 14.1.2
 tags:
-  - java
-  - javax
   - weblogic
+  - javax
+  - java
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: jakarta.inject

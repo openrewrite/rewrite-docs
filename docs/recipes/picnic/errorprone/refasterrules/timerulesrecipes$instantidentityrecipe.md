@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIdentityRecipe**
 
-_Don't unnecessarily transform an `Instant` to an equivalent instance._
+_Prefer using `Instant`s as-is over less efficient alternatives._
 
 ## Recipe source
 

@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasNanosRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasNanos {
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(Duration duration, long nanos) {
-        return assertThat(duration.toNanos()).isEqualTo(nanos);
-    }
-    
-    @AfterTemplate
-    AbstractDurationAssert<?> after(Duration duration, long nanos) {
-        return assertThat(duration).hasNanos(nanos);
-    }
-}
-```
-.
+_Prefer `AbstractDurationAssert#hasNanos(long)` over less explicit alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Duration`s](/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes.md)
+* [`AssertJDurationRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes.md)
 
 
 ## Usage

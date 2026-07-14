@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractFloatAssertIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractFloatAssert<?> before(AbstractFloatAssert<?> floatAssert, float n) {
-        return Refaster.anyOf(floatAssert.isNotCloseTo(n, offset(0.0F)), floatAssert.isNotCloseTo(n, withPercentage(0)));
-    }
-    
-    @AfterTemplate
-    AbstractFloatAssert<?> after(AbstractFloatAssert<?> floatAssert, float n) {
-        return floatAssert.isNotEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractFloatAssert#isNotEqualTo(float)` over more contrived alternatives._
 
 ## Recipe source
 

@@ -1,17 +1,21 @@
 ---
-title: "Refaster template `FileRules.FilesNewBufferedReader`"
-sidebar_label: "Refaster template `FileRules.FilesNewBufferedReader`"
+title: "Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives"
+sidebar_label: "Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `FileRules.FilesNewBufferedReader`
+# Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderRecipe**
 
-_Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives._
+```
+<strong>Warning:</strong> this rewrite changes behavior when no charset is specified: the
+ original code uses the default charset, while the replacement always uses UTF-8.
+```
+
 
 ### Tags
 
@@ -38,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderRecipe"
-  displayName="Refaster template `FileRules.FilesNewBufferedReader`"
+  displayName="Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

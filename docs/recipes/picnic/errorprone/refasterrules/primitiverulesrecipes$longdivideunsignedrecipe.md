@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongDivideUnsignedRecipe**
 
-_Prefer JDK's `Long#divideUnsigned(long, long)` over third-party alternatives._
+_Prefer `Long#divideUnsigned(long, long)` over non-JDK alternatives._
 
 ## Recipe source
 

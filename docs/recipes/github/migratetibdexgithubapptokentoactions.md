@@ -15,8 +15,8 @@ _Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-gi
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
 * [actions](/reference/recipes-by-tag#actions)
+* [github](/reference/recipes-by-tag#github)
 
 ## Recipe source
 
@@ -61,8 +61,8 @@ displayName: Migrate from tibdex/github-app-token to actions/create-github-app-t
 description: |
   Migrates from the deprecated `tibdex/github-app-token@v2` to `actions/create-github-app-token@v3`, which runs on Node.js 24 instead of the deprecated Node.js 20. Renames the `app_id`, `private_key`, and `github_api_url` inputs to their kebab-case equivalents `app-id`, `private-key`, and `github-api-url`.
 tags:
-  - github
   - actions
+  - github
 recipeList:
   - org.openrewrite.github.ChangeAction:
       oldAction: tibdex/github-app-token
@@ -81,6 +81,125 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`MigrateTibdexGitHubAppTokenToActionsTest#migratesActionAndRenamesInputs`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value=".github/workflows/ci.yml" label=".github/workflows/ci.yml">
+
+
+###### Before
+```yaml title=".github/workflows/ci.yml"
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    steps:
+      - id: create_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+```
+
+###### After
+```yaml title=".github/workflows/ci.yml"
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    steps:
+      - id: create_token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- .github/workflows/ci.yml
++++ .github/workflows/ci.yml
+@@ -6,1 +6,1 @@
+    steps:
+      - id: create_token
+-       uses: tibdex/github-app-token@v2
++       uses: actions/create-github-app-token@v3
+        with:
+@@ -8,2 +8,2 @@
+        uses: tibdex/github-app-token@v2
+        with:
+-         app_id: ${{ secrets.APP_ID }}
+-         private_key: ${{ secrets.APP_PRIVATE_KEY }}
++         app-id: ${{ secrets.APP_ID }}
++         private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateTibdexGitHubAppTokenToActionsTest#migratesActionAndRenamesInputs`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value=".github/workflows/ci.yml" label=".github/workflows/ci.yml">
+
+
+###### Before
+```yaml title=".github/workflows/ci.yml"
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    steps:
+      - id: create_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+```
+
+###### After
+```yaml title=".github/workflows/ci.yml"
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    steps:
+      - id: create_token
+        uses: actions/create-github-app-token@v3
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- .github/workflows/ci.yml
++++ .github/workflows/ci.yml
+@@ -6,1 +6,1 @@
+    steps:
+      - id: create_token
+-       uses: tibdex/github-app-token@v2
++       uses: actions/create-github-app-token@v3
+        with:
+@@ -8,2 +8,2 @@
+        uses: tibdex/github-app-token@v2
+        with:
+-         app_id: ${{ secrets.APP_ID }}
+-         private_key: ${{ secrets.APP_PRIVATE_KEY }}
++         app-id: ${{ secrets.APP_ID }}
++         private-key: ${{ secrets.APP_PRIVATE_KEY }}
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

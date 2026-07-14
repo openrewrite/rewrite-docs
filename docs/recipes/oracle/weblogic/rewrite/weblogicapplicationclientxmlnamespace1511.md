@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `application-client.xml` files t
 
 ### Tags
 
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [application-client](/reference/recipes-by-tag#application)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `application-client.xml` files to WebLogic
 description: |
   This recipe will update the `xmlns` entries in `application-client.xml` files to WebLogic 15.1.1
 tags:
-  - schemas
   - weblogic
   - application-client
+  - schemas
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicApplicationClientXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

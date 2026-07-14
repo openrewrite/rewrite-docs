@@ -1,17 +1,17 @@
 ---
-title: "Find the oldest Java version in use"
-sidebar_label: "Find the oldest Java version in use"
+title: "Has minimum Java version"
+sidebar_label: "Has minimum Java version"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Find the oldest Java version in use
+# Has minimum Java version
 
 **org.openrewrite.java.search.HasMinimumJavaVersion**
 
-_The oldest Java version in use is the lowest Java version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Java 8, but a test source set uses Java 17. In this case, the oldest Java version in use is Java 8._
+_Finds source files when the oldest Java version in use meets the supplied minimum version. Java version is attributed per source set (for example `src/main/java` and `src/test/java`), so the oldest Java version in use is the lowest version across every source set of every subproject in a repository. For example, the main source set of a project may use Java 8 while its test source set uses Java 17; in that case the oldest Java version in use is Java 8._
 
 ## Recipe source
 
@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | version | An exact version number or node-style semver selector used to select the version number. | `17.X` |
+| `String` | version | A minimum version number or a node-style semver selector. Plain values like `17` or `17.0.1` match that version or higher. To match an exact version, use `HasJavaVersion` instead. | `17` |
 | `Boolean` | checkTargetCompatibility | *Optional*. The source and target compatibility versions can be different. This option allows you to check against the target compatibility version instead of the source compatibility version. | `17.X` |
 
 ## Example
@@ -80,22 +80,22 @@ Here's how you can define and customize such a recipe within your rewrite.yml:
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: com.yourorg.HasMinimumJavaVersionExample
-displayName: Find the oldest Java version in use example
+displayName: Has minimum Java version example
 recipeList:
   - org.openrewrite.java.search.HasMinimumJavaVersion:
-      version: 17.X
+      version: 17
       checkTargetCompatibility: 17.X
 ```
 
 <RunRecipe
   recipeName="org.openrewrite.java.search.HasMinimumJavaVersion"
-  displayName="Find the oldest Java version in use"
+  displayName="Has minimum Java version"
   groupId="org.openrewrite"
   artifactId="rewrite-java"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "version=17.X" --recipe-option "checkTargetCompatibility=17.X"'}
+  cliOptions={' --recipe-option "version=17" --recipe-option "checkTargetCompatibility=17.X"'}
   hasDataTables
 />
 

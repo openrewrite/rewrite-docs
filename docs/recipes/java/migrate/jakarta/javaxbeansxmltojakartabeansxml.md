@@ -15,9 +15,9 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [beans](/reference/recipes-by-tag#beans)
 * [cdi](/reference/recipes-by-tag#cdi)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [beans](/reference/recipes-by-tag#beans)
 
 ## Recipe source
 
@@ -69,9 +69,9 @@ displayName: Migrate xmlns entries in `beans.xml` files
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
-  - beans
   - cdi
   - jakarta
+  - beans
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/beans.xml

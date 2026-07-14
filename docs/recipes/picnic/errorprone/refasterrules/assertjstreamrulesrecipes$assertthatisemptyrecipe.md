@@ -11,58 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatIsEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsEmpty<T, S> {
-    
-    @BeforeTemplate
-    void before(Stream<T> stream) {
-        assertThat(stream.findAny()).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before2(Stream<T> stream) {
-        assertThat(stream.findFirst()).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before3(Stream<T> stream) {
-        assertThat(stream.toArray()).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before4(Stream<T> stream, IntFunction<S[]> generator) {
-        assertThat(stream.toArray(generator)).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before5(Stream<T> stream) {
-        assertThat(stream.toList()).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before6(Stream<T> stream, Collector<T, ?, ? extends Iterable<S>> collector) {
-        assertThat(stream.collect(collector)).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before7(Stream<T> stream, Collector<T, ?, ? extends Collection<S>> collector) {
-        assertThat(stream.collect(collector)).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before8(Stream<T> stream, Collector<T, ?, ? extends List<S>> collector) {
-        assertThat(stream.collect(collector)).isEmpty();
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(Stream<T> stream) {
-        assertThat(stream).isEmpty();
-    }
-}
-```
-.
+_Prefer `assertThat(stream).isEmpty()` over less efficient alternatives._
 
 ## Recipe source
 

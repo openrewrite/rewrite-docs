@@ -32,6 +32,53 @@ This recipe is used as part of the following composite recipes:
 
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class A {
+    void foo(Object error) {
+        assertThat(error instanceof RuntimeException).isTrue();
+        assertThat(error instanceof RuntimeException).isFalse();
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class A {
+    void foo(Object error) {
+        assertThat(error).isInstanceOf(RuntimeException.class);
+        assertThat(error).isNotInstanceOf(RuntimeException.class);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+class A {
+    void foo(Object error) {
+-       assertThat(error instanceof RuntimeException).isTrue();
+-       assertThat(error instanceof RuntimeException).isFalse();
++       assertThat(error).isInstanceOf(RuntimeException.class);
++       assertThat(error).isNotInstanceOf(RuntimeException.class);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatHasSizeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasSize<T> {
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(Stream<T> stream, int size) {
-        return assertThat(stream.count()).isEqualTo(size);
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    ListAssert<T> after(Stream<T> stream, int size) {
-        return assertThat(stream).hasSize(size);
-    }
-}
-```
-.
+_Prefer `assertThat(stream).hasSize(size)` over more contrived alternatives._
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _This recipe will add a `prefer-application-packages` entry for SLF4J in `weblog
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [web-app](/reference/recipes-by-tag#web)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Add `prefer-application-packages` for SLF4J in `weblogic.xml`
 description: |
   This recipe will add a `prefer-application-packages` entry for SLF4J in `weblogic.xml` if it does not already exist.
 tags:
+  - weblogic
   - web-app
   - schemas
-  - weblogic
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/weblogic.xml

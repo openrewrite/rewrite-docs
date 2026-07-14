@@ -15,8 +15,8 @@ _AssertJ deprecated `AssertionsForClassTypes` and `AssertionsForInterfaceTypes` 
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -61,8 +61,8 @@ displayName: Migrate `AssertionsForClassTypes` and `AssertionsForInterfaceTypes`
 description: |
   AssertJ deprecated `AssertionsForClassTypes` and `AssertionsForInterfaceTypes` in favor of the unified `Assertions` entry point. This recipe retargets their static methods to `Assertions`, using `assertThatObject` where a plain `assertThat` would otherwise re-bind to a more specific overload and stop compiling (see https://github.com/openrewrite/rewrite-testing-frameworks/issues/664).
 tags:
-  - testing
   - assertj
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

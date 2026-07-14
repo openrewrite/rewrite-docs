@@ -35,6 +35,7 @@ This recipe is used as part of the following composite recipes:
 * [DevCenter Kotlin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterkotlin)
 * [DevCenter for Angular](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterangularstarter)
 * [DevCenter for C#](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentercsharpstarter)
+* [DevCenter for Go](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentergostarter)
 * [DevCenter for Node.js](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenternodestarter)
 * [DevCenter for Python](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterpythonstarter)
 * [DevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterstarter)

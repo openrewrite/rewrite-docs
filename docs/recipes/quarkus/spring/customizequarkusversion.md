@@ -16,10 +16,10 @@ _Allows customization of the Quarkus BOM version used in the migration. By defau
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [bom](/reference/recipes-by-tag#bom)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
+* [bom](/reference/recipes-by-tag#bom)
 * [version](/reference/recipes-by-tag#version)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -60,10 +60,10 @@ description: |
   Allows customization of the Quarkus BOM version used in the migration. By default uses 3.x (latest 3.x version), but can be configured to use a specific version.
 tags:
   - spring
-  - bom
-  - quarkus
   - migration
+  - bom
   - version
+  - quarkus
 recipeList:
   - org.openrewrite.maven.UpgradeDependencyVersion:
       groupId: io.quarkus.platform

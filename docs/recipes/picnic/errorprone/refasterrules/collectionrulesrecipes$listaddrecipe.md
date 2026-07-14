@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ListAddRecipe**
 
-_Prefer `List#add(Object)` over less idiomatic alternatives._
+_Prefer `List#add(Object)` over less idiomatic or more verbose alternatives._
 
 ## Recipe source
 

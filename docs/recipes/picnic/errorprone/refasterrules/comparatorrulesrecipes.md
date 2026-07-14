@@ -31,33 +31,33 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ComparatorRules.ReverseOrder`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$reverseorderrecipe)
-* [Refaster template `ComparatorRules.ThenComparing`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparingrecipe)
-* [Refaster template `ComparatorRules.ThenComparingReversed`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparingreversedrecipe)
-* [Refaster template `ComparatorRules.ThenComparingCustom`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparingcustomrecipe)
-* [Refaster template `ComparatorRules.ThenComparingCustomReversed`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparingcustomreversedrecipe)
-* [Refaster template `ComparatorRules.ThenComparingDouble`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparingdoublerecipe)
-* [Refaster template `ComparatorRules.ThenComparingInt`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparingintrecipe)
-* [Refaster template `ComparatorRules.ThenComparingLong`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$thencomparinglongrecipe)
-* [Refaster template `ComparatorRules.CompareTo`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparetorecipe)
+* [Refaster template `ComparatorRules.ComparatorThenComparing`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorthencomparingrecipe)
+* [Refaster template `ComparatorRules.ComparatorThenComparingReverseOrder`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorthencomparingreverseorderrecipe)
+* [Refaster template `ComparatorRules.ComparatorThenComparingWithComparator`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorthencomparingwithcomparatorrecipe)
+* [Refaster template `ComparatorRules.ComparatorThenComparingComparatorReversed`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorthencomparingcomparatorreversedrecipe)
+* [Refaster template `ComparatorRules.ComparatorThenComparingDouble`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorthencomparingdoublerecipe)
+* [Refaster template `ComparatorRules.ComparatorThenComparingInt`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorthencomparingintrecipe)
+* [Refaster template `ComparatorRules.ComparatorThenComparingLong`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorthencomparinglongrecipe)
+* [Refaster template `ComparatorRules.ComparableCompareTo`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparablecomparetorecipe)
 * [Refaster template `ComparatorRules.CollectionsSort`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionssortrecipe)
 * [Refaster template `ComparatorRules.CollectionsMin`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsminrecipe)
-* [Refaster template `ComparatorRules.MinOfArray`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$minofarrayrecipe)
+* [Refaster template `ComparatorRules.CollectionsMinArraysAsList`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsminarraysaslistrecipe)
 * [Refaster template `ComparatorRules.CollectionsMinWithComparator`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsminwithcomparatorrecipe)
-* [Refaster template `ComparatorRules.MinOfVarargs`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$minofvarargsrecipe)
+* [Refaster template `ComparatorRules.CollectionsMinArraysAsListVarargs`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsminarraysaslistvarargsrecipe)
 * [Refaster template `ComparatorRules.CollectionsMax`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxrecipe)
-* [Refaster template `ComparatorRules.MaxOfArray`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$maxofarrayrecipe)
+* [Refaster template `ComparatorRules.CollectionsMaxArraysAsList`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxarraysaslistrecipe)
 * [Refaster template `ComparatorRules.CollectionsMaxWithComparator`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxwithcomparatorrecipe)
-* [Refaster template `ComparatorRules.MaxOfVarargs`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$maxofvarargsrecipe)
+* [Refaster template `ComparatorRules.CollectionsMaxArraysAsListVarargs`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$collectionsmaxarraysaslistvarargsrecipe)
 * [Refaster template `ComparatorRules.Least`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$leastrecipe)
 * [Refaster template `ComparatorRules.Greatest`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$greatestrecipe)
 * [Refaster template `ComparatorRules.LeastNaturalOrder`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$leastnaturalorderrecipe)
 * [Refaster template `ComparatorRules.GreatestNaturalOrder`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$greatestnaturalorderrecipe)
-* [Refaster template `ComparatorRules.ComparatorsMin`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsminrecipe)
-* [Refaster template `ComparatorRules.ComparatorsMax`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsmaxrecipe)
+* [Refaster template `ComparatorRules.ComparatorsMin0`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsmin0recipe)
+* [Refaster template `ComparatorRules.ComparatorsMax0`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsmax0recipe)
 * [Refaster template `ComparatorRules.MinByNaturalOrder`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$minbynaturalorderrecipe)
 * [Refaster template `ComparatorRules.MaxByNaturalOrder`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$maxbynaturalorderrecipe)
-* [Refaster template `ComparatorRules.IsLessThan`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$islessthanrecipe)
-* [Refaster template `ComparatorRules.IsLessThanOrEqualTo`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$islessthanorequaltorecipe)
+* [Refaster template `ComparatorRules.EnumIsLessThan`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$enumislessthanrecipe)
+* [Refaster template `ComparatorRules.EnumIsLessThanOrEqualTo`](../../../picnic/errorprone/refasterrules/comparatorrulesrecipes$enumislessthanorequaltorecipe)
 
 </TabItem>
 
@@ -72,33 +72,33 @@ description: |
   Refaster rules related to expressions dealing with `Comparator`s. [Source](https://error-prone.picnic.tech/refasterrules/ComparatorRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ReverseOrderRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingReversedRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingCustomRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingCustomReversedRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingDoubleRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingIntRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ThenComparingLongRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CompareToRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorThenComparingRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorThenComparingReverseOrderRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorThenComparingWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorThenComparingComparatorReversedRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorThenComparingDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorThenComparingIntRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorThenComparingLongRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparableCompareToRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsSortRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMinRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MinOfArrayRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMinArraysAsListRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMinWithComparatorRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MinOfVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMinArraysAsListVarargsRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxOfArrayRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxArraysAsListRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxWithComparatorRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxOfVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$CollectionsMaxArraysAsListVarargsRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$LeastRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$GreatestRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$LeastNaturalOrderRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$GreatestNaturalOrderRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMinRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMaxRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMin0Recipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMax0Recipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MinByNaturalOrderRecipe
   - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxByNaturalOrderRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$IsLessThanRecipe
-  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$IsLessThanOrEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$EnumIsLessThanRecipe
+  - tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$EnumIsLessThanOrEqualToRecipe
 
 ```
 </TabItem>

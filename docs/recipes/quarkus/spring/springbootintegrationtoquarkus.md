@@ -16,9 +16,9 @@ _Migrates `spring-boot-starter-integration` to `camel-quarkus-core`._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [integration](/reference/recipes-by-tag#integration)
 * [camel](/reference/recipes-by-tag#camel)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [integration](/reference/recipes-by-tag#integration)
 
 ## Recipe source
 
@@ -66,9 +66,9 @@ description: |
   Migrates `spring-boot-starter-integration` to `camel-quarkus-core`.
 tags:
   - spring
+  - integration
   - camel
   - quarkus
-  - integration
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

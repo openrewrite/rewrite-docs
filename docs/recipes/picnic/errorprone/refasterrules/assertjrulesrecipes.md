@@ -30,44 +30,44 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJRules.AssertThatOptionalDouble`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatoptionaldoublerecipe)
-* [Refaster template `AssertJRules.AssertThatOptionalInt`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatoptionalintrecipe)
-* [Refaster template `AssertJRules.AssertThatOptionalLong`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatoptionallongrecipe)
-* [Refaster template `AssertJRules.ObjectEnumerableContainsOneElement`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$objectenumerablecontainsoneelementrecipe)
-* [Refaster template `AssertJRules.ObjectEnumerableDoesNotContainOneElement`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$objectenumerabledoesnotcontainoneelementrecipe)
-* [Refaster template `AssertJRules.AssertThatSetContainsExactlyOneElement`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatsetcontainsexactlyoneelementrecipe)
-* [Refaster template `AssertJRules.AssertThatListsAreEqual`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatlistsareequalrecipe)
-* [Refaster template `AssertJRules.AssertThatSetsAreEqual`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatsetsareequalrecipe)
-* [Refaster template `AssertJRules.AssertThatMultisetsAreEqual`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatmultisetsareequalrecipe)
-* [Refaster template `AssertJRules.AssertThatMapContainsEntry`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatmapcontainsentryrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsAnyElementsOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsanyelementsofrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsAnyOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsanyofrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsAnyOfVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsanyofvarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsAll`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsallrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContains`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsvarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyElementsOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyelementsofrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsExactly`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyvarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyInAnyOrderElementsOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyinanyorderelementsofrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyInAnyOrder`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyinanyorderrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsExactlyInAnyOrderVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsexactlyinanyordervarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsSequence`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainssequencerecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsSequenceVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainssequencevarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsSubsequence`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainssubsequencerecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsSubsequenceVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainssubsequencevarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamDoesNotContainAnyElementsOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainanyelementsofrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamDoesNotContain`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamDoesNotContainVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainvarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamDoesNotContainSequence`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainsequencerecipe)
-* [Refaster template `AssertJRules.AssertThatStreamDoesNotContainSequenceVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamdoesnotcontainsequencevarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamHasSameElementsAs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamhassameelementsasrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsOnly`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsonlyrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamContainsOnlyVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamcontainsonlyvarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamIsSubsetOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamissubsetofrecipe)
-* [Refaster template `AssertJRules.AssertThatStreamIsSubsetOfVarArgs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatstreamissubsetofvarargsrecipe)
-* [Refaster template `AssertJRules.AssertThatPredicateAccepts`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatpredicateacceptsrecipe)
-* [Refaster template `AssertJRules.AssertThatPredicateRejects`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatpredicaterejectsrecipe)
+* [Refaster template `AssertJRules.AssertThatHasValueOptionalDouble`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthathasvalueoptionaldoublerecipe)
+* [Refaster template `AssertJRules.AssertThatHasValueOptionalInt`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthathasvalueoptionalintrecipe)
+* [Refaster template `AssertJRules.AssertThatHasValueOptionalLong`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthathasvalueoptionallongrecipe)
+* [Refaster template `AssertJRules.ObjectEnumerableAssertContains`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$objectenumerableassertcontainsrecipe)
+* [Refaster template `AssertJRules.ObjectEnumerableAssertDoesNotContain`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$objectenumerableassertdoesnotcontainrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsExactlySet`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlysetrecipe)
+* [Prefer `ListAssert#containsExactlyElementsOf(Iterable)` over less explicit alternatives](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlyelementsoflistrecipe)
+* [Prefer `AbstractCollectionAssert#hasSameElementsAs(Iterable)` over less explicit or more contrived alternatives](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthathassameelementsassetrecipe)
+* [Prefer `AbstractCollectionAssert#containsExactlyInAnyOrderElementsOf(Iterable)` over less explicit alternatives](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlyinanyorderelementsofmultisetrecipe)
+* [Prefer `MapAssert#containsEntry(Object, Object)` over more contrived alternatives](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsentryrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsAnyElementsOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsanyelementsofrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsAnyOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsanyofrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsAnyOfVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsanyofvarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsAll`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsallrecipe)
+* [Refaster template `AssertJRules.AssertThatContains`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsvarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsExactlyElementsOfStream`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlyelementsofstreamrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsExactlyStream`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlystreamrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsExactlyVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlyvarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsExactlyInAnyOrderElementsOfStream`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlyinanyorderelementsofstreamrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsExactlyInAnyOrder`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlyinanyorderrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsExactlyInAnyOrderVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsexactlyinanyordervarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsSequence`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainssequencerecipe)
+* [Refaster template `AssertJRules.AssertThatContainsSequenceVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainssequencevarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsSubsequence`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainssubsequencerecipe)
+* [Refaster template `AssertJRules.AssertThatContainsSubsequenceVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainssubsequencevarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatDoesNotContainAnyElementsOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatdoesnotcontainanyelementsofrecipe)
+* [Refaster template `AssertJRules.AssertThatDoesNotContain`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatdoesnotcontainrecipe)
+* [Refaster template `AssertJRules.AssertThatDoesNotContainVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatdoesnotcontainvarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatDoesNotContainSequence`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatdoesnotcontainsequencerecipe)
+* [Refaster template `AssertJRules.AssertThatDoesNotContainSequenceVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatdoesnotcontainsequencevarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatHasSameElementsAsStream`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthathassameelementsasstreamrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsOnly`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsonlyrecipe)
+* [Refaster template `AssertJRules.AssertThatContainsOnlyVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatcontainsonlyvarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatIsSubsetOf`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatissubsetofrecipe)
+* [Refaster template `AssertJRules.AssertThatIsSubsetOfVarargs`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatissubsetofvarargsrecipe)
+* [Refaster template `AssertJRules.AssertThatAccepts`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatacceptsrecipe)
+* [Refaster template `AssertJRules.AssertThatRejects`](../../../picnic/errorprone/refasterrules/assertjrulesrecipes$assertthatrejectsrecipe)
 
 </TabItem>
 
@@ -81,44 +81,44 @@ displayName: `AssertJRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/AssertJRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalDoubleRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalIntRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatOptionalLongRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$ObjectEnumerableContainsOneElementRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$ObjectEnumerableDoesNotContainOneElementRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatSetContainsExactlyOneElementRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatListsAreEqualRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatSetsAreEqualRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatMultisetsAreEqualRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatMapContainsEntryRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAnyElementsOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAnyOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAnyOfVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsAllRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyElementsOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyVarargsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyInAnyOrderElementsOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyInAnyOrderRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsExactlyInAnyOrderVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsSequenceRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsSequenceVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsSubsequenceRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsSubsequenceVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainAnyElementsOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainSequenceRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamDoesNotContainSequenceVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamHasSameElementsAsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsOnlyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamContainsOnlyVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsSubsetOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatStreamIsSubsetOfVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatPredicateAcceptsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatPredicateRejectsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatHasValueOptionalDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatHasValueOptionalIntRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatHasValueOptionalLongRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$ObjectEnumerableAssertContainsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$ObjectEnumerableAssertDoesNotContainRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlySetRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyElementsOfListRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatHasSameElementsAsSetRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyInAnyOrderElementsOfMultisetRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsEntryRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsAnyElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsAnyOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsAnyOfVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsAllRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyElementsOfStreamRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyStreamRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyInAnyOrderElementsOfStreamRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyInAnyOrderRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsExactlyInAnyOrderVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsSequenceRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsSequenceVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsSubsequenceRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsSubsequenceVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatDoesNotContainAnyElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatDoesNotContainRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatDoesNotContainVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatDoesNotContainSequenceRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatDoesNotContainSequenceVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatHasSameElementsAsStreamRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsOnlyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatContainsOnlyVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatIsSubsetOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatIsSubsetOfVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatAcceptsRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJRulesRecipes$AssertThatRejectsRecipe
 
 ```
 </TabItem>

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.CommentOutSpringPropertyKey**
 
-_Add comment to specified Spring properties, and comment out the property._
+_Add comment to specified Spring properties, and optionally comment out the property._
 
 ## Recipe source
 
@@ -27,6 +27,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | propertyKey | The name of the property key to comment out. | `management.metrics.binders.files.enabled` |
 | `String` | comment | Comment to replace the property key. | `This property is deprecated and no longer applicable starting from Spring Boot 3.0.x` |
+| `Boolean` | commentOutProperty | *Optional*. If `false` the property is kept and only the comment is added. Defaults to `true`. |  |
 
 
 ## Used by
@@ -64,6 +65,7 @@ This recipe is used as part of the following composite recipes:
 | --- | --- |
 |propertyKey|`server.port`|
 |comment|`This property has been removed.`|
+|commentOutProperty|`null`|
 
 
 ###### Unchanged

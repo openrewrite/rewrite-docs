@@ -15,9 +15,9 @@ _Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. The
 
 ### Tags
 
-* [search](/reference/recipes-by-tag#search)
-* [ci](/reference/recipes-by-tag#ci)
 * [gitlab](/reference/recipes-by-tag#gitlab)
+* [ci](/reference/recipes-by-tag#ci)
+* [search](/reference/recipes-by-tag#search)
 
 ## Recipe source
 
@@ -51,9 +51,9 @@ displayName: Find deprecated GitLab CI syntax
 description: |
   Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. These keywords are deprecated in favor of `rules`.
 tags:
-  - search
-  - ci
   - gitlab
+  - ci
+  - search
 recipeList:
   - org.openrewrite.gitlab.search.FindDeprecatedOnly
   - org.openrewrite.gitlab.search.FindDeprecatedExcept

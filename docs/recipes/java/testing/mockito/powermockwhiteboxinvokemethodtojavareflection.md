@@ -28,6 +28,72 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock `Whitebox` with Java reflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
 
+## Example
+
+
+###### Unchanged
+```java
+class MyService {
+    private String compute() { return "result"; }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.powermock.reflect.Whitebox;
+
+class MyServiceTest {
+    void testInvoke() {
+        MyService service = new MyService();
+        String result = Whitebox.invokeMethod(service, "compute");
+    }
+}
+```
+
+###### After
+```java
+import java.lang.reflect.Method;
+
+class MyServiceTest {
+    void testInvoke() throws Exception {
+        MyService service = new MyService();
+        Method computeMethod = service.getClass().getDeclaredMethod("compute");
+        computeMethod.setAccessible(true);
+        String result = (String) computeMethod.invoke(service);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.powermock.reflect.Whitebox;
++import java.lang.reflect.Method;
+
+@@ -4,1 +4,1 @@
+
+class MyServiceTest {
+-   void testInvoke() {
++   void testInvoke() throws Exception {
+        MyService service = new MyService();
+@@ -6,1 +6,3 @@
+    void testInvoke() {
+        MyService service = new MyService();
+-       String result = Whitebox.invokeMethod(service, "compute");
++       Method computeMethod = service.getClass().getDeclaredMethod("compute");
++       computeMethod.setAccessible(true);
++       String result = (String) computeMethod.invoke(service);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

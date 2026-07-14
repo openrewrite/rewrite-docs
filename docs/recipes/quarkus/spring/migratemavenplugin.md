@@ -16,10 +16,10 @@ _Remove Spring Boot Maven plugin if present and add Quarkus Maven plugin using t
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [migration](/reference/recipes-by-tag#migration)
 * [build](/reference/recipes-by-tag#build)
 * [maven](/reference/recipes-by-tag#maven)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [migration](/reference/recipes-by-tag#migration)
 
 ## Recipe source
 
@@ -56,10 +56,10 @@ description: |
   Remove Spring Boot Maven plugin if present and add Quarkus Maven plugin using the same version as the quarkus-bom.
 tags:
   - spring
+  - migration
   - build
   - maven
   - quarkus
-  - migration
 recipeList:
   - org.openrewrite.maven.RemovePlugin:
       groupId: org.springframework.boot

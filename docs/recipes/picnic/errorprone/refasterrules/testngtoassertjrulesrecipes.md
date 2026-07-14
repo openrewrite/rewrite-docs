@@ -1,13 +1,13 @@
 ---
-title: "Refaster rules that replace TestNG assertions with equivalent AssertJ assertions"
-sidebar_label: "Refaster rules that replace TestNG assertions with equivalent AssertJ assertions"
+title: "Refaster rules that replace TestNG APIs with AssertJ equivalents"
+sidebar_label: "Refaster rules that replace TestNG APIs with AssertJ equivalents"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster rules that replace TestNG assertions with equivalent AssertJ assertions
+# Refaster rules that replace TestNG APIs with AssertJ equivalents
 
 **tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes**
 
@@ -26,7 +26,10 @@ Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard
  List<Map<String, Object>> myMaps = new ArrayList<>();
  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));
  ```
-.
+
+
+ <strong>Warning:</strong> while both libraries throw an `AssertionError` in case of an
+ assertion failure, the exact subtype used generally differs.
 [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 
 ## Recipe source
@@ -47,48 +50,46 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `TestNGToAssertJRules.Fail`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$failrecipe)
-* [Refaster template `TestNGToAssertJRules.FailWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$failwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.FailWithMessageAndThrowable`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$failwithmessageandthrowablerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertTrue`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$asserttruerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertTrueWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$asserttruewithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertFalse`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertfalserecipe)
-* [Refaster template `TestNGToAssertJRules.AssertFalseWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertfalsewithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertNull`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertnullrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertNullWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertnullwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertNotNull`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertnotnullrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertNotNullWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertnotnullwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertSame`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertsamerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertSameWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertsamewithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertNotSame`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertnotsamerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertNotSameWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertnotsamewithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqual`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualFloatsWithDelta`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalfloatswithdeltarecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualFloatsWithDeltaWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalfloatswithdeltawithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualDoublesWithDelta`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaldoubleswithdeltarecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualDoublesWithDeltaWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaldoubleswithdeltawithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualArrayIterationOrder`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalarrayiterationorderrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualArrayIterationOrderWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalarrayiterationorderwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualFloatArraysWithDelta`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalfloatarrayswithdeltarecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualFloatArraysWithDeltaWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalfloatarrayswithdeltawithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualDoubleArraysWithDelta`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaldoublearrayswithdeltarecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualDoubleArraysWithDeltaWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaldoublearrayswithdeltawithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualArraysIrrespectiveOfOrder`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalarraysirrespectiveoforderrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualArraysIrrespectiveOfOrderWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalarraysirrespectiveoforderwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualIteratorIterationOrder`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaliteratoriterationorderrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualIteratorIterationOrderWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaliteratoriterationorderwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualIterableIterationOrder`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaliterableiterationorderrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualIterableIterationOrderWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequaliterableiterationorderwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualSets`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalsetsrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertEqualSetsWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalsetswithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertUnequal`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertunequalrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertUnequalWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertunequalwithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertUnequalFloatsWithDelta`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertunequalfloatswithdeltarecipe)
-* [Refaster template `TestNGToAssertJRules.AssertUnequalFloatsWithDeltaWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertunequalfloatswithdeltawithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertUnequalDoublesWithDelta`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertunequaldoubleswithdeltarecipe)
-* [Refaster template `TestNGToAssertJRules.AssertUnequalDoublesWithDeltaWithMessage`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertunequaldoubleswithdeltawithmessagerecipe)
-* [Refaster template `TestNGToAssertJRules.AssertThrows`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthrowsrecipe)
-* [Refaster template `TestNGToAssertJRules.AssertThrowsWithType`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthrowswithtyperecipe)
+* [Refaster template `TestNGToAssertJRules.FailWithString`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$failwithstringrecipe)
+* [Refaster template `TestNGToAssertJRules.FailWithStringAndThrowable`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$failwithstringandthrowablerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsTrue`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatistruerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsTrue`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageistruerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsFalse`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisfalserecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsFalse`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisfalserecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsNull`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisnullrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsNull`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisnullrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsNotNull`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisnotnullrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsNotNull`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisnotnullrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsSameAs`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatissameasrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsSameAs`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageissameasrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsNotSameAs`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisnotsameasrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsNotSameAs`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisnotsameasrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsEqualTo`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisequaltorecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsEqualTo`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisequaltorecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsCloseToOffsetFloat`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisclosetooffsetfloatrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsCloseToOffsetFloat`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisclosetooffsetfloatrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsCloseToOffsetDouble`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisclosetooffsetdoublerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsCloseToOffsetDouble`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisclosetooffsetdoublerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatContainsExactly`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatcontainsexactlyrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageContainsExactly`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatContainsExactlyOffsetFloat`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatcontainsexactlyoffsetfloatrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetFloat`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetfloatrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatContainsExactlyOffsetDouble`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatcontainsexactlyoffsetdoublerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetDouble`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetdoublerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatContainsExactlyInAnyOrder`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatcontainsexactlyinanyorderrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageContainsExactlyInAnyOrder`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyinanyorderrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatToIterableContainsExactlyElementsOfImmutableListCopyOf`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthattoiterablecontainsexactlyelementsofimmutablelistcopyofrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatToIterableWithFailMessageContainsExactlyElementsOfImmutableListCopyOf`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthattoiterablewithfailmessagecontainsexactlyelementsofimmutablelistcopyofrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatContainsExactlyElementsOf`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatcontainsexactlyelementsofrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageContainsExactlyElementsOf`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyelementsofrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatHasSameElementsAs`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthathassameelementsasrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageHasSameElementsAs`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessagehassameelementsasrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsNotEqualTo`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisnotequaltorecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsNotEqualTo`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisnotequaltorecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsNotCloseToOffsetFloat`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisnotclosetooffsetfloatrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsNotCloseToOffsetFloat`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisnotclosetooffsetfloatrecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatIsNotCloseToOffsetDouble`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisnotclosetooffsetdoublerecipe)
+* [Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsNotCloseToOffsetDouble`](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisnotclosetooffsetdoublerecipe)
 
 </TabItem>
 
@@ -98,53 +99,51 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes
-displayName: Refaster rules that replace TestNG assertions with equivalent AssertJ assertions
+displayName: Refaster rules that replace TestNG APIs with AssertJ equivalents
 description: |
-  Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type  bounds (`&lt;?&gt;`), while the associated AssertJ `@AfterTemplate`s reference stricter  type bounds. This introduces the risk of producing invalid code. We do this anyway, because  TestNG's wildcard types can cause javac to infer less specific types than AssertJ requires, while  the appropriate (more specific) types _will_ be inferred properly when plugged into AssertJ's  API.   The following is an example of a TestNG statement, which would not be rewritten if it weren't  for the wildcard matching (note that the type parameters of the map on the right-hand side will  be inferred to be `&lt;Object, Object&gt;` rather than `&lt;String, Object&gt;`).   ```java  List&lt;Map&lt;String, Object&gt;&gt; myMaps = new ArrayList&lt;&gt;();  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));  ``` . [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
+  Some of the classes below have TestNG `@BeforeTemplate`s that reference wildcard type  bounds (`&lt;?&gt;`), while the associated AssertJ `@AfterTemplate`s reference stricter  type bounds. This introduces the risk of producing invalid code. We do this anyway, because  TestNG's wildcard types can cause javac to infer less specific types than AssertJ requires, while  the appropriate (more specific) types _will_ be inferred properly when plugged into AssertJ's  API.   The following is an example of a TestNG statement, which would not be rewritten if it weren't  for the wildcard matching (note that the type parameters of the map on the right-hand side will  be inferred to be `&lt;Object, Object&gt;` rather than `&lt;String, Object&gt;`).   ```java  List&lt;Map&lt;String, Object&gt;&gt; myMaps = new ArrayList&lt;&gt;();  assertEquals(myMaps, ImmutableList.of(ImmutableMap.of()));  ```    &lt;strong&gt;Warning:&lt;/strong&gt; while both libraries throw an `AssertionError` in case of an  assertion failure, the exact subtype used generally differs. [Source](https://error-prone.picnic.tech/refasterrules/TestNGToAssertJRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailWithMessageAndThrowableRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertTrueRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertTrueWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertFalseRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertFalseWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNullRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNullWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNotNullRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNotNullWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertSameRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertSameWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNotSameRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertNotSameWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatsWithDeltaRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatsWithDeltaWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoublesWithDeltaRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoublesWithDeltaWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArrayIterationOrderRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArrayIterationOrderWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatArraysWithDeltaRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualFloatArraysWithDeltaWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoubleArraysWithDeltaRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualDoubleArraysWithDeltaWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArraysIrrespectiveOfOrderRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualArraysIrrespectiveOfOrderWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualIteratorIterationOrderRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualIteratorIterationOrderWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualIterableIterationOrderRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualIterableIterationOrderWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualSetsRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualSetsWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalFloatsWithDeltaRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalFloatsWithDeltaWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalDoublesWithDeltaRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertUnequalDoublesWithDeltaWithMessageRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThrowsRecipe
-  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThrowsWithTypeRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailWithStringRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$FailWithStringAndThrowableRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsTrueRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsTrueRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsFalseRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsFalseRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsNullRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsNullRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsNotNullRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsNotNullRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsSameAsRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsSameAsRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsNotSameAsRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsNotSameAsRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsCloseToOffsetFloatRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsCloseToOffsetFloatRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsCloseToOffsetDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsCloseToOffsetDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatContainsExactlyRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatContainsExactlyOffsetFloatRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetFloatRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatContainsExactlyOffsetDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatContainsExactlyInAnyOrderRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyInAnyOrderRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatToIterableContainsExactlyElementsOfImmutableListCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatToIterableWithFailMessageContainsExactlyElementsOfImmutableListCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatContainsExactlyElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyElementsOfRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatHasSameElementsAsRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageHasSameElementsAsRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsNotEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsNotEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsNotCloseToOffsetFloatRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsNotCloseToOffsetFloatRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsNotCloseToOffsetDoubleRecipe
+  - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsNotCloseToOffsetDoubleRecipe
 
 ```
 </TabItem>
@@ -162,7 +161,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes"
-  displayName="Refaster rules that replace TestNG assertions with equivalent AssertJ assertions"
+  displayName="Refaster rules that replace TestNG APIs with AssertJ equivalents"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

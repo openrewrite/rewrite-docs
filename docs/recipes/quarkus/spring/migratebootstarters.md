@@ -16,8 +16,8 @@ _Migrates Spring Boot starter dependencies to their Quarkus equivalents, removin
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 * [dependencies](/reference/recipes-by-tag#dependencies)
 
 ## Recipe source
@@ -81,8 +81,8 @@ description: |
   Migrates Spring Boot starter dependencies to their Quarkus equivalents, removing version tags as Quarkus manages versions through its BOM.
 tags:
   - spring
-  - quarkus
   - migration
+  - quarkus
   - dependencies
 recipeList:
   - org.openrewrite.quarkus.spring.SpringBootWebToQuarkusReactive

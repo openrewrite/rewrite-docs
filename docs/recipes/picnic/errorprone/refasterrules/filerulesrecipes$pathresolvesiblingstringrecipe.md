@@ -1,17 +1,22 @@
 ---
-title: "Refaster template `FileRules.PathResolveSiblingString`"
-sidebar_label: "Refaster template `FileRules.PathResolveSiblingString`"
+title: "Prefer `Path#resolveSibling(String)` over more fragile or more verbose alternatives"
+sidebar_label: "Prefer `Path#resolveSibling(String)` over more fragile or more verbose alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `FileRules.PathResolveSiblingString`
+# Prefer `Path#resolveSibling(String)` over more fragile or more verbose alternatives
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathResolveSiblingStringRecipe**
 
-_Prefer `Path#resolveSibling(String)` over the more verbose alternatives._
+```
+<strong>Warning:</strong> this rewrite changes behavior when `path` has no parent: the
+ original code throws a `NullPointerException`, while the replacement handles this case
+ gracefully.
+```
+
 
 ## Recipe source
 
@@ -33,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathResolveSiblingStringRecipe"
-  displayName="Refaster template `FileRules.PathResolveSiblingString`"
+  displayName="Prefer `Path#resolveSibling(String)` over more fragile or more verbose alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

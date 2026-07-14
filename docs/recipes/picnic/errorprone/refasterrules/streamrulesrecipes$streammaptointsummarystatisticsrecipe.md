@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapToIntSummaryStatisticsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamMapToIntSummaryStatistics<T> {
-    
-    @BeforeTemplate
-    IntSummaryStatistics before(Stream<T> stream, ToIntFunction<T> mapper) {
-        return stream.collect(summarizingInt(mapper));
-    }
-    
-    @AfterTemplate
-    IntSummaryStatistics after(Stream<T> stream, ToIntFunction<T> mapper) {
-        return stream.mapToInt(mapper).summaryStatistics();
-    }
-}
-```
-.
+_Prefer `stream.mapToInt(mapper).summaryStatistics()` over less efficient alternatives._
 
 ## Recipe source
 

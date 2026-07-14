@@ -32,9 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisequaltorecipe)
 * [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisnotequaltorecipe)
-* [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsZero`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertiszerorecipe)
-* [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsNotZero`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisnotzerorecipe)
-* [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsOne`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisonerecipe)
+* [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsEqualToZero`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisequaltozerorecipe)
+* [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsNotEqualToZero`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisnotequaltozerorecipe)
+* [Refaster template `AssertJIntegerRules.AbstractIntegerAssertIsEqualToOne`](../../../picnic/errorprone/refasterrules/assertjintegerrulesrecipes$abstractintegerassertisequaltoonerecipe)
 
 </TabItem>
 
@@ -50,9 +50,9 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsNotEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsNotZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsOneRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsNotEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsEqualToOneRecipe
 
 ```
 </TabItem>

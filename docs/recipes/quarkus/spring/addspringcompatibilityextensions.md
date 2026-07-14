@@ -16,8 +16,8 @@ _Adds Quarkus Spring compatibility extensions when Spring annotations are detect
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [compatibility](/reference/recipes-by-tag#compatibility)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -70,8 +70,8 @@ description: |
   Adds Quarkus Spring compatibility extensions when Spring annotations are detected in the codebase.
 tags:
   - spring
-  - quarkus
   - compatibility
+  - quarkus
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.quarkus

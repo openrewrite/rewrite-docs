@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic JMS schema files to WebLogic 14.1.2_
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [jms](/reference/recipes-by-tag#jms)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrate xmlns entries in `*-jms.xml` files to WebLogic 14.1.2
 description: |
   Migrate xmlns entries in WebLogic JMS schema files to WebLogic 14.1.2
 tags:
+  - weblogic
   - jms
   - schemas
-  - weblogic
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/*-jms.xml

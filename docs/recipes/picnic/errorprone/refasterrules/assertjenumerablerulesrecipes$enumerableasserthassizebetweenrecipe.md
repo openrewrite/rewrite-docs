@@ -11,27 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSizeBetweenRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class EnumerableAssertHasSizeBetween<E> {
-    
-    @BeforeTemplate
-    AbstractIterableAssert<?, ?, E, ?> before(AbstractIterableAssert<?, ?, E, ?> enumAssert, int lower, int upper) {
-        return enumAssert.size().isBetween(lower, upper).returnToIterable();
-    }
-    
-    @BeforeTemplate
-    AbstractIterableSizeAssert<?, ?, E, ?> before2(AbstractIterableAssert<?, ?, E, ?> enumAssert, int lower, int upper) {
-        return enumAssert.size().isBetween(lower, upper);
-    }
-    
-    @AfterTemplate
-    EnumerableAssert<?, E> after(EnumerableAssert<?, E> enumAssert, int lower, int upper) {
-        return enumAssert.hasSizeBetween(lower, upper);
-    }
-}
-```
-.
+_Prefer `EnumerableAssert#hasSizeBetween(int, int)` over more verbose alternatives._
 
 ## Recipe source
 

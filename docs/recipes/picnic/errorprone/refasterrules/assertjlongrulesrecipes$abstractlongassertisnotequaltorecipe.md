@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractLongAssertIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(AbstractLongAssert<?> longAssert, long n) {
-        return Refaster.anyOf(longAssert.isNotCloseTo(n, offset(0L)), longAssert.isNotCloseTo(n, withPercentage(0)));
-    }
-    
-    @AfterTemplate
-    AbstractLongAssert<?> after(AbstractLongAssert<?> longAssert, long n) {
-        return longAssert.isNotEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractLongAssert#isNotEqualTo(long)` over more contrived alternatives._
 
 ## Recipe source
 

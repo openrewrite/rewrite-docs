@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamMinRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongStreamMin {
-    
-    @BeforeTemplate
-    OptionalLong before(LongStream stream) {
-        return stream.sorted().findFirst();
-    }
-    
-    @AfterTemplate
-    OptionalLong after(LongStream stream) {
-        return stream.min();
-    }
-}
-```
-.
+_Prefer `LongStream#min()` over less efficient alternatives._
 
 ## Recipe source
 

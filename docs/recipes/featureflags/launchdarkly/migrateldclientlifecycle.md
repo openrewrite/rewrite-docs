@@ -28,6 +28,54 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.server.LDClient;
+
+class A {
+    void shutdown(LDClient client) {
+        client.close();
+    }
+}
+```
+
+###### After
+```java
+import com.launchdarkly.sdk.server.LDClient;
+import dev.openfeature.sdk.OpenFeatureAPI;
+
+class A {
+    void shutdown(LDClient client) {
+        OpenFeatureAPI.getInstance().shutdown();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import com.launchdarkly.sdk.server.LDClient;
++import dev.openfeature.sdk.OpenFeatureAPI;
+
+@@ -5,1 +6,1 @@
+class A {
+    void shutdown(LDClient client) {
+-       client.close();
++       OpenFeatureAPI.getInstance().shutdown();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

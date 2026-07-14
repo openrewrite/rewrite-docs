@@ -11,10 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$PublisherProbeEmptyRecipe**
 
-```
-Prefer `PublisherProbe#empty()`} over more verbose alternatives.
-```
-
+_Prefer `PublisherProbe#empty()` over more verbose alternatives._
 
 ## Recipe source
 

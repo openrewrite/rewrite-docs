@@ -22,8 +22,8 @@ import RunRecipe from '@site/src/components/RunRecipe';
 ### Tags
 
 * [codemods](/reference/recipes-by-tag#codemods)
-* [lodash](/reference/recipes-by-tag#lodash)
 * [underscore](/reference/recipes-by-tag#underscore)
+* [lodash](/reference/recipes-by-tag#lodash)
 
 ## Recipe source
 
@@ -54,8 +54,8 @@ description: |
   - `_.isArray(x)` -&gt; `Array.isArray(x)` - `_.isBoolean(x)` -&gt; `typeof(x) === 'boolean'` - `_.isFinite(x)` -&gt; `Number.isFinite(x)` - `_.isFunction(x)` -&gt; `typeof(x) === 'function'` - `_.isNull(x)` -&gt; `x === null` - `_.isString(x)` -&gt; `typeof(x) === 'string'` - `_.isUndefined(x)` -&gt; `typeof(x) === 'undefined'`.
 tags:
   - codemods
-  - lodash
   - underscore
+  - lodash
 recipeList:
   - org.openrewrite.codemods.ApplyCodemod:
       transform: @kevinbarabash/codemods/transforms/util.js

@@ -15,8 +15,8 @@ _Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and rem
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
 * [actions](/reference/recipes-by-tag#actions)
+* [github](/reference/recipes-by-tag#github)
 
 ## Recipe source
 
@@ -53,8 +53,8 @@ displayName: Migrate `astral-sh/setup-uv` from v6 to v7
 description: |
   Migrates `astral-sh/setup-uv` from v6 to v7. Updates the action version and removes the deprecated `server-url` input. See the [v7.0.0 release notes](https://github.com/astral-sh/setup-uv/releases/tag/v7.0.0) for breaking changes.
 tags:
-  - github
   - actions
+  - github
 recipeList:
   - org.openrewrite.github.ChangeActionVersion:
       action: astral-sh/setup-uv

@@ -28,6 +28,55 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDValue;
+
+class A {
+    LDValue flag() {
+        return LDValue.of("on");
+    }
+}
+```
+
+###### After
+```java
+import dev.openfeature.sdk.Value;
+
+class A {
+    Value flag() {
+        return new Value("on");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.launchdarkly.sdk.LDValue;
++import dev.openfeature.sdk.Value;
+
+@@ -4,2 +4,2 @@
+
+class A {
+-   LDValue flag() {
+-       return LDValue.of("on");
++   Value flag() {
++       return new Value("on");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

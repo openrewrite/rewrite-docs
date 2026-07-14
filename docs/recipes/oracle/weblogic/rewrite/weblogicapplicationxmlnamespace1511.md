@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `weblogic-application.xml` files
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [application](/reference/recipes-by-tag#application)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `weblogic-application.xml` files to WebLog
 description: |
   This recipe will update the `xmlns` entries in `weblogic-application.xml` files to WebLogic 15.1.1
 tags:
+  - weblogic
   - application
   - schemas
-  - weblogic
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicApplicationXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

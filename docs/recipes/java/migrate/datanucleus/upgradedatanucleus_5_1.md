@@ -15,8 +15,8 @@ _Migrate DataNucleus applications to 5.1. This recipe first applies the 5.0 migr
 
 ### Tags
 
-* [datanucleus](/reference/recipes-by-tag#datanucleus)
 * [jdo](/reference/recipes-by-tag#jdo)
+* [datanucleus](/reference/recipes-by-tag#datanucleus)
 * [jpa](/reference/recipes-by-tag#jpa)
 
 ## Recipe source
@@ -55,8 +55,8 @@ displayName: Migrate to DataNucleus 5.1
 description: |
   Migrate DataNucleus applications to 5.1. This recipe first applies the 5.0 migration, then handles the transaction namespace reorganization and other property renames introduced in 5.1.
 tags:
-  - datanucleus
   - jdo
+  - datanucleus
   - jpa
 recipeList:
   - org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_5_0

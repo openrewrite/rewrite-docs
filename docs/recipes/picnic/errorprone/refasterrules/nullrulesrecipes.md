@@ -30,12 +30,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `NullRules.IsNull`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$isnullrecipe)
-* [Refaster template `NullRules.IsNotNull`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$isnotnullrecipe)
+* [Refaster template `NullRules.EqualToNull`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$equaltonullrecipe)
+* [Refaster template `NullRules.NotEqualToNull`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$notequaltonullrecipe)
 * [Refaster template `NullRules.RequireNonNullElse`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$requirenonnullelserecipe)
 * [Refaster template `NullRules.RequireNonNullElseGet`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$requirenonnullelsegetrecipe)
-* [Refaster template `NullRules.IsNullFunction`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$isnullfunctionrecipe)
-* [Refaster template `NullRules.NonNullFunction`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$nonnullfunctionrecipe)
+* [Refaster template `NullRules.ObjectsIsNull`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$objectsisnullrecipe)
+* [Refaster template `NullRules.ObjectsNonNull`](../../../picnic/errorprone/refasterrules/nullrulesrecipes$objectsnonnullrecipe)
 
 </TabItem>
 
@@ -49,12 +49,12 @@ displayName: `NullRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with (possibly) null values. [Source](https://error-prone.picnic.tech/refasterrules/NullRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullRecipe
-  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNotNullRecipe
+  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$EqualToNullRecipe
+  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$NotEqualToNullRecipe
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$RequireNonNullElseRecipe
   - tech.picnic.errorprone.refasterrules.NullRulesRecipes$RequireNonNullElseGetRecipe
-  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullFunctionRecipe
-  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$NonNullFunctionRecipe
+  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$ObjectsIsNullRecipe
+  - tech.picnic.errorprone.refasterrules.NullRulesRecipes$ObjectsNonNullRecipe
 
 ```
 </TabItem>

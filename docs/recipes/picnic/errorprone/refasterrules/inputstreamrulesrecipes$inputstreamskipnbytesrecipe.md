@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamSkipNBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class InputStreamSkipNBytes {
-    
-    @BeforeTemplate
-    void before(InputStream in, long n) throws IOException {
-        ByteStreams.skipFully(in, n);
-    }
-    
-    @AfterTemplate
-    void after(InputStream in, long n) throws IOException {
-        in.skipNBytes(n);
-    }
-}
-```
-.
+_Prefer `InputStream#skipNBytes(long)` over non-JDK alternatives._
 
 ## Recipe source
 

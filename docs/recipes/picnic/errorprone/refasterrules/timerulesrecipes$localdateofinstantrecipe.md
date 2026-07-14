@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateOfInstantRecipe**
 
-_Prefer `LocalDate#ofInstant(Instant, ZoneId)` over more indirect alternatives._
+_Prefer `LocalDate#ofInstant(Instant, ZoneId)` over more contrived alternatives._
 
 ## Recipe source
 

@@ -17,8 +17,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 * [jaxb](/reference/recipes-by-tag#jaxb)
 * [xjb](/reference/recipes-by-tag#xjb)
-* [bindings](/reference/recipes-by-tag#bindings)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [bindings](/reference/recipes-by-tag#bindings)
 
 ## Recipe source
 
@@ -103,8 +103,8 @@ description: |
 tags:
   - jaxb
   - xjb
-  - bindings
   - jakarta
+  - bindings
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/*.xjb

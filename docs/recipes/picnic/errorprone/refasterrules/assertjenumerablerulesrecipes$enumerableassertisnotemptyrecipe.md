@@ -11,32 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertIsNotEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class EnumerableAssertIsNotEmpty<E> {
-    
-    @BeforeTemplate
-    EnumerableAssert<?, E> before(EnumerableAssert<?, E> enumAssert) {
-        return Refaster.anyOf(enumAssert.hasSizeGreaterThan(0), enumAssert.hasSizeGreaterThanOrEqualTo(1));
-    }
-    
-    @BeforeTemplate
-    AbstractIterableAssert<?, ?, E, ?> before(AbstractIterableAssert<?, ?, E, ?> enumAssert) {
-        return Refaster.anyOf(enumAssert.size().isNotEqualTo(0).returnToIterable(), enumAssert.size().isPositive().returnToIterable());
-    }
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before2(AbstractIterableAssert<?, ?, E, ?> enumAssert) {
-        return Refaster.anyOf(enumAssert.size().isNotEqualTo(0), enumAssert.size().isPositive());
-    }
-    
-    @AfterTemplate
-    EnumerableAssert<?, E> after(EnumerableAssert<?, E> enumAssert) {
-        return enumAssert.isNotEmpty();
-    }
-}
-```
-.
+_Prefer `EnumerableAssert#isNotEmpty()` over more contrived alternatives._
 
 ## Recipe source
 

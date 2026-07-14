@@ -16,8 +16,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 ### Tags
 
 * [persistence](/reference/recipes-by-tag#persistence)
-* [orm](/reference/recipes-by-tag#orm)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [orm](/reference/recipes-by-tag#orm)
 
 ## Recipe source
 
@@ -70,8 +70,8 @@ description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
   - persistence
-  - orm
   - jakarta
+  - orm
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/*orm.xml

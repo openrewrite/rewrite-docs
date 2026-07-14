@@ -11,10 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$NeverRecipe**
 
-```
-Prefer `Mockito#never()`} over explicitly specifying that the associated invocation must happen precisely zero times.
-```
-
+_Prefer `Mockito#never()` over less explicit alternatives._
 
 ## Recipe source
 

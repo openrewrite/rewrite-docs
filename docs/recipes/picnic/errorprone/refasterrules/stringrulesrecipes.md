@@ -32,31 +32,31 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `StringRules.EmptyString`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$emptystringrecipe)
 * [Refaster template `StringRules.StringIdentity`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe)
+* [Refaster template `StringRules.StringIsEmptyWithString`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptywithstringrecipe)
 * [Refaster template `StringRules.StringIsEmpty`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe)
-* [Refaster template `StringRules.StringIsEmptyPredicate`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptypredicaterecipe)
-* [Refaster template `StringRules.StringIsNotEmptyPredicate`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringisnotemptypredicaterecipe)
-* [Refaster template `StringRules.StringIsNullOrEmpty`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringisnulloremptyrecipe)
-* [Refaster template `StringRules.StringIsBlank`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringisblankrecipe)
-* [Refaster template `StringRules.OptionalNonEmptyString`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$optionalnonemptystringrecipe)
-* [Refaster template `StringRules.FilterEmptyString`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$filteremptystringrecipe)
-* [Refaster template `StringRules.JoinStrings`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$joinstringsrecipe)
-* [Refaster template `StringRules.StringJoinDelimiterVarargs`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringjoindelimitervarargsrecipe)
+* [Refaster template `StringRules.NotStringIsEmpty`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$notstringisemptyrecipe)
+* [Refaster template `StringRules.StringsIsNullOrEmpty`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringsisnulloremptyrecipe)
+* [Prefer `String#isBlank()` over less efficient alternatives](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringisblankrecipe)
+* [Refaster template `StringRules.OptionalOfNullableFilterNotStringIsEmpty`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$optionalofnullablefilternotstringisemptyrecipe)
+* [Refaster template `StringRules.OptionalFilterNotStringIsEmpty`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$optionalfilternotstringisemptyrecipe)
+* [Refaster template `StringRules.StringJoin`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringjoinrecipe)
+* [Refaster template `StringRules.StringJoinVarargs`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringjoinvarargsrecipe)
+* [Refaster template `StringRules.StringValueOfWithObject`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofwithobjectrecipe)
+* [Refaster template `StringRules.NewString3`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$newstring3recipe)
+* [Refaster template `StringRules.NewString1`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$newstring1recipe)
 * [Refaster template `StringRules.StringValueOf`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofrecipe)
-* [Refaster template `StringRules.NewStringFromCharArraySubSequence`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararraysubsequencerecipe)
-* [Refaster template `StringRules.NewStringFromCharArray`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$newstringfromchararrayrecipe)
-* [Refaster template `StringRules.StringValueOfMethodReference`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofmethodreferencerecipe)
-* [Refaster template `StringRules.SubstringRemainder`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$substringremainderrecipe)
+* [Refaster template `StringRules.StringSubstring`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringsubstringrecipe)
 * [Refaster template `StringRules.Utf8EncodedLength`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$utf8encodedlengthrecipe)
-* [Refaster template `StringRules.StringIndexOfCharFromIndex`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharfromindexrecipe)
-* [Refaster template `StringRules.StringIndexOfCharBetweenIndices`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharbetweenindicesrecipe)
-* [Refaster template `StringRules.StringIndexOfStringFromIndex`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringfromindexrecipe)
-* [Refaster template `StringRules.StringIndexOfStringBetweenIndices`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringbetweenindicesrecipe)
-* [Refaster template `StringRules.StringLastIndexOfChar`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharrecipe)
-* [Refaster template `StringRules.StringLastIndexOfString`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringrecipe)
-* [Refaster template `StringRules.StringLastIndexOfCharWithIndex`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharwithindexrecipe)
-* [Refaster template `StringRules.StringLastIndexOfStringWithIndex`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringwithindexrecipe)
+* [Refaster template `StringRules.MathMaxNegativeOneStringIndexOfMinusInt`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringindexofminusintrecipe)
+* [Refaster template `StringRules.MathMaxNegativeOneStringIndexOfMinusIntWithInt`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringindexofminusintwithintrecipe)
+* [Refaster template `StringRules.MathMaxNegativeOneStringIndexOfMinusString`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringindexofminusstringrecipe)
+* [Refaster template `StringRules.MathMaxNegativeOneStringIndexOfMinusStringWithInt`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringindexofminusstringwithintrecipe)
+* [Refaster template `StringRules.MathMaxNegativeOneStringLastIndexOfMinusInt`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringlastindexofminusintrecipe)
+* [Refaster template `StringRules.MathMaxNegativeOneStringLastIndexOfMinusString`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringlastindexofminusstringrecipe)
+* [Refaster template `StringRules.StringLastIndexOfMinusOneInt`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofminusoneintrecipe)
+* [Prefer `String#lastIndexOf(String, int)` over less efficient alternatives](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofminusonestringrecipe)
 * [Refaster template `StringRules.StringStartsWith`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringstartswithrecipe)
-* [Refaster template `StringRules.StringFormatted`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$stringformattedrecipe)
+* [Refaster template `StringRules.Formatted`](../../../picnic/errorprone/refasterrules/stringrulesrecipes$formattedrecipe)
 
 </TabItem>
 
@@ -72,31 +72,31 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyWithStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyPredicateRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNotEmptyPredicateRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNullOrEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NotStringIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringsIsNullOrEmptyRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsBlankRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalNonEmptyStringRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$FilterEmptyStringRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$JoinStringsRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringJoinDelimiterVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalOfNullableFilterNotStringIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$OptionalFilterNotStringIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringJoinRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringJoinVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfWithObjectRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewString3Recipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewString1Recipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArraySubSequenceRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$NewStringFromCharArrayRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfMethodReferenceRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$SubstringRemainderRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringSubstringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$Utf8EncodedLengthRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharFromIndexRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharBetweenIndicesRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringFromIndexRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringBetweenIndicesRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharWithIndexRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringWithIndexRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringIndexOfMinusIntRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringIndexOfMinusIntWithIntRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringIndexOfMinusStringRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringIndexOfMinusStringWithIntRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringLastIndexOfMinusIntRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringLastIndexOfMinusStringRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfMinusOneIntRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfMinusOneStringRecipe
   - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringStartsWithRecipe
-  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringFormattedRecipe
+  - tech.picnic.errorprone.refasterrules.StringRulesRecipes$FormattedRecipe
 
 ```
 </TabItem>

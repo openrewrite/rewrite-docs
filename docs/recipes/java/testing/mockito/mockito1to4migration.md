@@ -15,8 +15,8 @@ _Upgrade Mockito from 1.x to 4.x._
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [mockito](/reference/recipes-by-tag#mockito)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -66,8 +66,8 @@ displayName: Mockito 4.x upgrade
 description: |
   Upgrade Mockito from 1.x to 4.x.
 tags:
-  - testing
   - mockito
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

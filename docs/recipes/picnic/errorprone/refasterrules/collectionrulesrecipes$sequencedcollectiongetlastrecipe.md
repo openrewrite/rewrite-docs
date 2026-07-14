@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SequencedCollectionGetLastRecipe**
 
-_Prefer `SequencedCollection#getLast()` over less idiomatic alternatives._
+_Prefer `SequencedCollection#getLast()` over less idiomatic or more verbose alternatives._
 
 ## Recipe source
 

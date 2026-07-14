@@ -32,9 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssertJShortRules.AbstractShortAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisequaltorecipe)
 * [Refaster template `AssertJShortRules.AbstractShortAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisnotequaltorecipe)
-* [Refaster template `AssertJShortRules.AbstractShortAssertIsZero`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertiszerorecipe)
-* [Refaster template `AssertJShortRules.AbstractShortAssertIsNotZero`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisnotzerorecipe)
-* [Refaster template `AssertJShortRules.AbstractShortAssertIsOne`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisonerecipe)
+* [Refaster template `AssertJShortRules.AbstractShortAssertIsEqualToZero`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisequaltozerorecipe)
+* [Refaster template `AssertJShortRules.AbstractShortAssertIsNotEqualToZero`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisnotequaltozerorecipe)
+* [Refaster template `AssertJShortRules.AbstractShortAssertIsEqualToOne`](../../../picnic/errorprone/refasterrules/assertjshortrulesrecipes$abstractshortassertisequaltoonerecipe)
 
 </TabItem>
 
@@ -50,9 +50,9 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsNotEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsNotZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsOneRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsNotEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsEqualToOneRecipe
 
 ```
 </TabItem>

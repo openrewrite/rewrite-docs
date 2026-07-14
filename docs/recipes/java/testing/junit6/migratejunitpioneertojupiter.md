@@ -15,10 +15,10 @@ _Migrates `@DefaultLocale`, `@DefaultTimeZone`, `@SetSystemProperty`, `@ClearSys
 
 ### Tags
 
-* [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
 * [junit-pioneer](/reference/recipes-by-tag#junit)
+* [junit](/reference/recipes-by-tag#junit)
 * [jupiter](/reference/recipes-by-tag#jupiter)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -77,10 +77,10 @@ displayName: Migrate JUnit Pioneer extensions to native JUnit Jupiter equivalent
 description: |
   Migrates `@DefaultLocale`, `@DefaultTimeZone`, `@SetSystemProperty`, `@ClearSystemProperty`, `@RestoreSystemProperties` (and their `@Reads.../@Writes...` companions) from JUnit Pioneer to the native equivalents added in JUnit Jupiter 6.1. The `junit-pioneer` dependency is not removed since other Pioneer features (e.g. `@RetryingTest`, `@CartesianTest`) have no Jupiter equivalent.
 tags:
-  - junit
-  - testing
   - junit-pioneer
+  - junit
   - jupiter
+  - testing
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.junitpioneer.jupiter.DefaultLocale

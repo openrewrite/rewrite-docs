@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [validation-mapping](/reference/recipes-by-tag#validation)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [validation-mapping](/reference/recipes-by-tag#validation)
 
 ## Recipe source
 
@@ -75,8 +75,8 @@ displayName: Migrate xmlns entries in `**/validation/*.xml` files.
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
-  - validation-mapping
   - jakarta
+  - validation-mapping
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/validation/*.xml

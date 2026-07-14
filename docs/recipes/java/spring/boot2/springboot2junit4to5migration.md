@@ -17,8 +17,8 @@ _This recipe will migrate a Spring Boot application's tests from JUnit 4 to JUni
 
 * [spring](/reference/recipes-by-tag#spring)
 * [junit](/reference/recipes-by-tag#junit)
-* [test](/reference/recipes-by-tag#test)
 * [jupiter](/reference/recipes-by-tag#jupiter)
+* [test](/reference/recipes-by-tag#test)
 * [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
@@ -71,8 +71,8 @@ description: |
 tags:
   - spring
   - junit
-  - test
   - jupiter
+  - test
   - boot
 preconditions:
   - org.openrewrite.Singleton

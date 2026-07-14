@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Application schema files to WebLogic 14.1.2_
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [application](/reference/recipes-by-tag#application)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrate xmlns entries in `weblogic-application.xml` files to WebLog
 description: |
   Migrate xmlns entries in WebLogic Application schema files to WebLogic 14.1.2
 tags:
+  - weblogic
   - application
   - schemas
-  - weblogic
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/weblogic-application.xml

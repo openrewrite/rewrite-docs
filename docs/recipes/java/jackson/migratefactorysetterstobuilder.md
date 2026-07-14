@@ -51,9 +51,10 @@ class A {
 ###### After
 ```java
 import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonFactoryBuilder;
 
 class A {
-    JsonFactory factory = JsonFactory.builder()
+    JsonFactory factory = new JsonFactoryBuilder()
             .build();
 }
 ```
@@ -62,11 +63,15 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -4,1 +4,2 @@
+@@ -2,0 +2,1 @@
+import com.fasterxml.jackson.core.JsonFactory;
++import com.fasterxml.jackson.core.JsonFactoryBuilder;
+
+@@ -4,1 +5,2 @@
 
 class A {
 -   JsonFactory factory = new JsonFactory();
-+   JsonFactory factory = JsonFactory.builder()
++   JsonFactory factory = new JsonFactoryBuilder()
 +           .build();
 }
 ```

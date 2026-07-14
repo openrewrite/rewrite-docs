@@ -330,6 +330,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newMethodName: `health`
   * matchOverrides: `true`
   * ignoreDefinition: `false`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.jackson.autoconfigure.JacksonAutoConfiguration`
 
 </TabItem>
 
@@ -639,6 +642,9 @@ recipeList:
       newMethodName: health
       matchOverrides: true
       ignoreDefinition: false
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.jackson.autoconfigure.JacksonAutoConfiguration
 
 ```
 </TabItem>

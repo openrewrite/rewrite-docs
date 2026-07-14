@@ -15,10 +15,10 @@ _This recipe will migrate WebLogic schemas to 15.1.1_
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [descriptors](/reference/recipes-by-tag#descriptors)
 * [java](/reference/recipes-by-tag#java)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -66,10 +66,10 @@ displayName: Migrate WebLogic Schemas to 15.1.1
 description: |
   This recipe will migrate WebLogic schemas to 15.1.1
 tags:
+  - weblogic
   - descriptors
   - java
   - schemas
-  - weblogic
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicXmlWebAppNamespace1511
   - com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1511

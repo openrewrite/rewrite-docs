@@ -15,8 +15,8 @@ _Replace AssertJ assertions where a dedicated assertion is available for the sam
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -94,8 +94,8 @@ displayName: Shorten AssertJ assertions
 description: |
   Replace AssertJ assertions where a dedicated assertion is available for the same actual value.
 tags:
-  - testing
   - assertj
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

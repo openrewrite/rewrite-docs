@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamFilterSortedRecipe**
 
-_Apply `LongStream#filter(LongPredicate)` before `LongStream#sorted()` to reduce the number of elements to sort._
+_Prefer `LongStream#filter(LongPredicate)` before `LongStream#sorted()` over less efficient alternatives._
 
 ## Recipe source
 

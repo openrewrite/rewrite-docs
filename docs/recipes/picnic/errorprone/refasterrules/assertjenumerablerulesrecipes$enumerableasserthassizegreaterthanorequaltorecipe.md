@@ -11,27 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSizeGreaterThanOrEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class EnumerableAssertHasSizeGreaterThanOrEqualTo<E> {
-    
-    @BeforeTemplate
-    AbstractIterableAssert<?, ?, E, ?> before(AbstractIterableAssert<?, ?, E, ?> enumAssert, int size) {
-        return enumAssert.size().isGreaterThanOrEqualTo(size).returnToIterable();
-    }
-    
-    @BeforeTemplate
-    AbstractIterableSizeAssert<?, ?, E, ?> before2(AbstractIterableAssert<?, ?, E, ?> enumAssert, int size) {
-        return enumAssert.size().isGreaterThanOrEqualTo(size);
-    }
-    
-    @AfterTemplate
-    EnumerableAssert<?, E> after(EnumerableAssert<?, E> enumAssert, int size) {
-        return enumAssert.hasSizeGreaterThanOrEqualTo(size);
-    }
-}
-```
-.
+_Prefer `EnumerableAssert#hasSizeGreaterThanOrEqualTo(int)` over more verbose alternatives._
 
 ## Recipe source
 

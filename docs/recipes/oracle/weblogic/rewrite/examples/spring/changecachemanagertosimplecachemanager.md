@@ -15,8 +15,8 @@ _Change cacheManager to use the SimpleCacheManager._
 
 ### Tags
 
-* [examples](/reference/recipes-by-tag#examples)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [examples](/reference/recipes-by-tag#examples)
 * [cacheManager](/reference/recipes-by-tag#cachemanager)
 
 ## Recipe source
@@ -68,8 +68,8 @@ displayName: Change cacheManager to use the SimpleCacheManager
 description: |
   Change cacheManager to use the SimpleCacheManager.
 tags:
-  - examples
   - springframework
+  - examples
   - cacheManager
 preconditions:
   - org.openrewrite.FindSourceFiles:

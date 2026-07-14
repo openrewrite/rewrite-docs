@@ -16,8 +16,8 @@ _Migrates `spring-boot-starter-validation` to `quarkus-hibernate-validator`._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [validation](/reference/recipes-by-tag#validation)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -65,8 +65,8 @@ description: |
   Migrates `spring-boot-starter-validation` to `quarkus-hibernate-validator`.
 tags:
   - spring
-  - quarkus
   - validation
+  - quarkus
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

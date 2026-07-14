@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsNegativeRecipe**
 
-_Prefer a `BigDecimal#signum()` comparison to -1 over more contrived or less idiomatic alternatives._
+_Prefer a `BigDecimal#signum()` comparison to 0 over less efficient or less explicit alternatives._
 
 ## Recipe source
 

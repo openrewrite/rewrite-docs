@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxErrorSupplierRecipe**
 
-_Don't unnecessarily pass `Flux#error(Supplier)` a method reference or lambda expression._
+_Prefer passing `Flux#error(Supplier)` a direct supplier reference over a lambda or method reference that invokes another supplier._
 
 ## Recipe source
 

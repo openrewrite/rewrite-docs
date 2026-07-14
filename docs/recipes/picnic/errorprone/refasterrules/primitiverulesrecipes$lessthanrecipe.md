@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe**
 
-_Avoid contrived ways of expressing the "less than" relationship._
+_Prefer `a < b` over less explicit alternatives._
 
 ### Tags
 

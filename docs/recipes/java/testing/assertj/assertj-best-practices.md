@@ -15,8 +15,8 @@ _Migrates JUnit asserts to AssertJ and applies best practices to assertions._
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -75,9 +75,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJComparableRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjcomparablerulesrecipes)
 * [Adopt AssertJ Double Assertions](../../../java/testing/assertj/assertjdoublerulesrecipes)
 * [`AssertJEnumerableRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjenumerablerulesrecipes)
-* [Refaster rules related to AssertJ assertions over `Duration`s](../../../picnic/errorprone/refasterrules/assertjdurationrulesrecipes)
+* [`AssertJDurationRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjdurationrulesrecipes)
 * [Adopt AssertJ Float Assertions](../../../java/testing/assertj/assertjfloatrulesrecipes)
-* [Refaster rules related to AssertJ assertions over `Instant`s](../../../picnic/errorprone/refasterrules/assertjinstantrulesrecipes)
+* [`AssertJInstantRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjinstantrulesrecipes)
 * [Adopt AssertJ Integer Assertions](../../../java/testing/assertj/assertjintegerrulesrecipes)
 * [`AssertJIterableRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes)
 * [`AssertJIteratorRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjiteratorrulesrecipes)
@@ -86,7 +86,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [`AssertJNumberRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjnumberrulesrecipes)
 * [`AssertJObjectRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes)
 * [`AssertJOptionalRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes)
-* [Refaster rules related to AssertJ assertions over `Path`s](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes)
+* [`AssertJPathRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes)
 * [Adopt AssertJ Short Assertions](../../../java/testing/assertj/assertjshortrulesrecipes)
 * [`AssertJPrimitiveRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjprimitiverulesrecipes)
 * [`AssertJRules` Refaster recipes](../../../picnic/errorprone/refasterrules/assertjrulesrecipes)
@@ -110,8 +110,8 @@ displayName: AssertJ best practices
 description: |
   Migrates JUnit asserts to AssertJ and applies best practices to assertions.
 tags:
-  - testing
   - assertj
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

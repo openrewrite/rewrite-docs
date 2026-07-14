@@ -15,8 +15,8 @@ _Upgrade Jakarta Model-View-Controller libraries to 2.0 (Jakarta EE9) versions._
 
 ### Tags
 
-* [mvc](/reference/recipes-by-tag#mvc)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [mvc](/reference/recipes-by-tag#mvc)
 
 ## Recipe source
 
@@ -58,8 +58,8 @@ displayName: Migrate javax.mvc to 2.0 (Jakarta EE 9)
 description: |
   Upgrade Jakarta Model-View-Controller libraries to 2.0 (Jakarta EE9) versions.
 tags:
-  - mvc
   - jakarta
+  - mvc
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.mvc

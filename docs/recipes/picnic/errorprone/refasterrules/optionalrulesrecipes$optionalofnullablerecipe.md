@@ -11,24 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOfNullableRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class OptionalOfNullable<T> {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "TernaryOperatorOptionalNegativeFiltering")
-    Optional<T> before(@Nullable
-    T object) {
-        return object == null ? Optional.empty() : Optional.of(object);
-    }
-    
-    @AfterTemplate
-    Optional<T> after(T object) {
-        return Optional.ofNullable(object);
-    }
-}
-```
-.
+_Prefer `Optional#ofNullable(Object)` over more contrived alternatives._
 
 ## Recipe source
 

@@ -28,6 +28,61 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:30.0-jre', 'org.apache.commons:commons-lang3:3.12.0'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:30.0-jre'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -10,1 +10,2 @@
+
+dependencies {
+-   implementation 'com.google.guava:guava:30.0-jre', 'org.apache.commons:commons-lang3:3.12.0'
++   implementation 'com.google.guava:guava:30.0-jre'
++   implementation 'org.apache.commons:commons-lang3:3.12.0'
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -39,13 +39,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Migrate from Jackson Codehaus (legacy) to Jackson FasterXML](../../java/jackson/codehaustofasterxml)
 * [Replace `IOException` with `JacksonException` in catch clauses](../../java/jackson/ioexceptiontojacksonexception)
-* [Remove elements from a method declaration `throws` clause](../../java/removemethodthrows)
-  * methodPattern: `com.fasterxml.jackson.databind.JsonSerializer serialize(..)`
-  * exceptionTypePattern: `java.io.IOException`
-* [Remove elements from a method declaration `throws` clause](../../java/removemethodthrows)
-  * methodPattern: `com.fasterxml.jackson.databind.JsonDeserializer deserialize(..)`
-  * exceptionTypePattern: `java.io.IOException`
+* [Replace `throw new IOException(..)` inside Jackson serializer / deserializer overrides](../../java/jackson/replaceioexceptionthrowinjacksonoverrides)
 * [Replace `null` type in `StdDeserializer` constructor with actual type](../../java/jackson/stddeserializernullconstructor)
+* [Use `DeserializationContext.readTreeAsValue()` instead of `ObjectCodec.treeToValue()`](../../java/jackson/usereadtreeasvalueindeserializer)
 * [Update `lombok.config` for Jackson 3 compatibility](../../java/jackson/lombokjacksonizedconfig)
 * [Use format alignment `ObjectMappers`](../../java/jackson/useformatalignedobjectmappers)
 * [Modernize legacy `jackson-core` feature constants](../../java/jackson/upgradejackson_2_3_modernizejacksoncorefeatures)
@@ -115,13 +111,9 @@ tags:
 recipeList:
   - org.openrewrite.java.jackson.CodehausToFasterXML
   - org.openrewrite.java.jackson.IOExceptionToJacksonException
-  - org.openrewrite.java.RemoveMethodThrows:
-      methodPattern: com.fasterxml.jackson.databind.JsonSerializer serialize(..)
-      exceptionTypePattern: java.io.IOException
-  - org.openrewrite.java.RemoveMethodThrows:
-      methodPattern: com.fasterxml.jackson.databind.JsonDeserializer deserialize(..)
-      exceptionTypePattern: java.io.IOException
+  - org.openrewrite.java.jackson.ReplaceIOExceptionThrowInJacksonOverrides
   - org.openrewrite.java.jackson.StdDeserializerNullConstructor
+  - org.openrewrite.java.jackson.UseReadTreeAsValueInDeserializer
   - org.openrewrite.java.jackson.LombokJacksonizedConfig
   - org.openrewrite.java.jackson.UseFormatAlignedObjectMappers
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_ModernizeJacksonCoreFeatures
@@ -730,9 +722,8 @@ class Test {
 ###### After
 ```java
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tools.jackson.core.JsonFactoryBuilder;
 import tools.jackson.databind.ObjectMapper;
-import tools.jackson.core.TokenStreamFactory;
+import tools.jackson.core.json.JsonFactory;
 
 class Test {
     public String foo(@JsonProperty("foo") String foo) {
@@ -741,7 +732,7 @@ class Test {
 
     static void helloJackson() {
         Object[] input = new Object[] { "one", "two" };
-        TokenStreamFactory factory = new JsonFactoryBuilder().build();
+        JsonFactory factory = JsonFactory.builder().build();
     }
 }
 ```
@@ -750,20 +741,19 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -2,3 +2,3 @@
+@@ -2,3 +2,2 @@
 import com.fasterxml.jackson.annotation.JsonProperty;
 -import com.fasterxml.jackson.core.JsonFactory;
 -import com.fasterxml.jackson.core.JsonFactoryBuilder;
 -import com.fasterxml.jackson.databind.ObjectMapper;
-+import tools.jackson.core.JsonFactoryBuilder;
 +import tools.jackson.databind.ObjectMapper;
-+import tools.jackson.core.TokenStreamFactory;
++import tools.jackson.core.json.JsonFactory;
 
-@@ -13,1 +13,1 @@
+@@ -13,1 +12,1 @@
     static void helloJackson() {
         Object[] input = new Object[] { "one", "two" };
 -       JsonFactory factory = new JsonFactoryBuilder().build();
-+       TokenStreamFactory factory = new JsonFactoryBuilder().build();
++       JsonFactory factory = JsonFactory.builder().build();
     }
 ```
 </TabItem>
@@ -1342,9 +1332,8 @@ class Test {
 ###### After
 ```java
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tools.jackson.core.JsonFactoryBuilder;
 import tools.jackson.databind.ObjectMapper;
-import tools.jackson.core.TokenStreamFactory;
+import tools.jackson.core.json.JsonFactory;
 
 class Test {
     public String foo(@JsonProperty("foo") String foo) {
@@ -1353,7 +1342,7 @@ class Test {
 
     static void helloJackson() {
         Object[] input = new Object[] { "one", "two" };
-        TokenStreamFactory factory = new JsonFactoryBuilder().build();
+        JsonFactory factory = JsonFactory.builder().build();
     }
 }
 ```
@@ -1362,20 +1351,19 @@ class Test {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -2,3 +2,3 @@
+@@ -2,3 +2,2 @@
 import com.fasterxml.jackson.annotation.JsonProperty;
 -import com.fasterxml.jackson.core.JsonFactory;
 -import com.fasterxml.jackson.core.JsonFactoryBuilder;
 -import com.fasterxml.jackson.databind.ObjectMapper;
-+import tools.jackson.core.JsonFactoryBuilder;
 +import tools.jackson.databind.ObjectMapper;
-+import tools.jackson.core.TokenStreamFactory;
++import tools.jackson.core.json.JsonFactory;
 
-@@ -13,1 +13,1 @@
+@@ -13,1 +12,1 @@
     static void helloJackson() {
         Object[] input = new Object[] { "one", "two" };
 -       JsonFactory factory = new JsonFactoryBuilder().build();
-+       TokenStreamFactory factory = new JsonFactoryBuilder().build();
++       JsonFactory factory = JsonFactory.builder().build();
     }
 ```
 </TabItem>

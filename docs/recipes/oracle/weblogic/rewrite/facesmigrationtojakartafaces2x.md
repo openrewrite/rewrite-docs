@@ -15,11 +15,11 @@ _Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespa
 
 ### Tags
 
-* [javax](/reference/recipes-by-tag#javax)
-* [jakartaee](/reference/recipes-by-tag#jakartaee)
 * [faces](/reference/recipes-by-tag#faces)
 * [jsf](/reference/recipes-by-tag#jsf)
+* [javax](/reference/recipes-by-tag#javax)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [jakartaee](/reference/recipes-by-tag#jakartaee)
 
 ## Recipe source
 
@@ -48,11 +48,11 @@ displayName: JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older
 description: |
   Jakarta EE 8 uses Faces 2.3 a major upgrade to Jakarta packages and XML namespaces. This recipe will migrate JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older.
 tags:
-  - javax
-  - jakartaee
   - faces
   - jsf
+  - javax
   - jakarta
+  - jakartaee
 recipeList:
   - com.oracle.weblogic.rewrite.jakarta.UpgradeFacesOpenSourceLibraries2
 

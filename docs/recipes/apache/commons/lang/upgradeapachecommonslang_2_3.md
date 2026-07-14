@@ -15,9 +15,9 @@ _Migrate applications to the latest Apache Commons Lang 3.x release. This recipe
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [lang](/reference/recipes-by-tag#lang)
 * [commons](/reference/recipes-by-tag#commons)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrates to Apache Commons Lang 3.x
 description: |
   Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
 tags:
-  - apache
   - lang
   - commons
+  - apache
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: commons-lang

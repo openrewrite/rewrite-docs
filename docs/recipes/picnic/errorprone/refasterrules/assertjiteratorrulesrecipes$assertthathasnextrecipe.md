@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes$AssertThatHasNextRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasNext<T> {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(Iterator<T> iterator) {
-        return assertThat(iterator.hasNext()).isTrue();
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    IteratorAssert<T> after(Iterator<T> iterator) {
-        return assertThat(iterator).hasNext();
-    }
-}
-```
-.
+_Prefer `IteratorAssert#hasNext()` over more contrived alternatives._
 
 ## Recipe source
 

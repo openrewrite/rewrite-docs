@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringRecipe**
 
-_Prefer JDK's `Long#toUnsignedString(long)` over third-party or more verbose alternatives._
+_Prefer `Long#toUnsignedString(long)` over non-JDK or more verbose alternatives._
 
 ## Recipe source
 

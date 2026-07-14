@@ -1,21 +1,21 @@
 ---
-title: "Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarArgs`"
-sidebar_label: "Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarArgs`"
+title: "Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarargs`"
+sidebar_label: "Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarargs`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarArgs`
+# Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarargs`
 
-**tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarArgsRecipe**
+**tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarargsRecipe**
 
-_Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`._
+_Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives._
 
 ## Recipe source
 
-[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarArgsRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarArgsRecipe),
+[GitHub: search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarargsRecipe](https://github.com/search?type=code&q=tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarargsRecipe),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
 
@@ -32,8 +32,8 @@ This recipe is used as part of the following composite recipes:
 ## Usage
 
 <RunRecipe
-  recipeName="tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarArgsRecipe"
-  displayName="Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarArgs`"
+  recipeName="tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarargsRecipe"
+  displayName="Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarargs`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
@@ -44,7 +44,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarArgsRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarargsRecipe" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

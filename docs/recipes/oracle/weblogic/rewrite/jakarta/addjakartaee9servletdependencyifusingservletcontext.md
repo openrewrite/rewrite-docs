@@ -15,8 +15,8 @@ _Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext_
 
 ### Tags
 
-* [servlet](/reference/recipes-by-tag#servlet)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [servlet](/reference/recipes-by-tag#servlet)
 
 ## Recipe source
 
@@ -50,8 +50,8 @@ displayName: Add Jakarta EE 9 Servlet Dependency
 description: |
   Add Jakarta EE 9 Servlet Dependency if using jakarta.servlet.ServletContext
 tags:
-  - servlet
   - jakarta
+  - servlet
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: jakarta.servlet

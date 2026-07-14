@@ -78,6 +78,7 @@ import org.assertj.core.api.Assertions;
 class A {
     public void test(int i) {
         Assertions.assertThat(i).isEqualTo(0);
+        Assertions.assertThat(i).isSameAs(0);
     }
 }
 ```
@@ -89,6 +90,7 @@ import org.assertj.core.api.Assertions;
 class A {
     public void test(int i) {
         Assertions.assertThat(i).isZero();
+        Assertions.assertThat(i).isZero();
     }
 }
 ```
@@ -97,10 +99,12 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,1 +5,1 @@
+@@ -5,2 +5,2 @@
 class A {
     public void test(int i) {
 -       Assertions.assertThat(i).isEqualTo(0);
+-       Assertions.assertThat(i).isSameAs(0);
++       Assertions.assertThat(i).isZero();
 +       Assertions.assertThat(i).isZero();
     }
 ```

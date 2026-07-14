@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerCompareUnsignedRecipe**
 
-_Prefer JDK's `Integer#compareUnsigned(int, int)` over third-party alternatives._
+_Prefer `Integer#compareUnsigned(int, int)` over non-JDK alternatives._
 
 ## Recipe source
 

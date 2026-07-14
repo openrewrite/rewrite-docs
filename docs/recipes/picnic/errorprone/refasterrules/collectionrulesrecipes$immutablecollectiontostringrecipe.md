@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionToStringRecipe**
 
-_Don't call `ImmutableCollection#asList()` if `ImmutableCollection#toString()` is called on the result; call it directly._
+_Prefer `ImmutableCollection#toString()` over more verbose alternatives._
 
 ## Recipe source
 

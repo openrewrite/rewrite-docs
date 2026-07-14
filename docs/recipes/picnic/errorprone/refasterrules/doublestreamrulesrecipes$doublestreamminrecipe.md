@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamMinRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class DoubleStreamMin {
-    
-    @BeforeTemplate
-    OptionalDouble before(DoubleStream stream) {
-        return stream.sorted().findFirst();
-    }
-    
-    @AfterTemplate
-    OptionalDouble after(DoubleStream stream) {
-        return stream.min();
-    }
-}
-```
-.
+_Prefer `DoubleStream#min()` over less efficient alternatives._
 
 ## Recipe source
 

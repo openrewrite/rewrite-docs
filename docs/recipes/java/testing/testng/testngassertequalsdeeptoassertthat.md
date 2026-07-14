@@ -28,6 +28,63 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Map;
+
+import static org.testng.Assert.assertEqualsDeep;
+
+class Test {
+    void test(Map<String, Object> actual, Map<String, Object> expected) {
+        assertEqualsDeep(actual, expected);
+        assertEqualsDeep(actual, expected, "foo");
+    }
+}
+```
+
+###### After
+```java
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class Test {
+    void test(Map<String, Object> actual, Map<String, Object> expected) {
+        assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
+        assertThat(actual).as("foo").usingRecursiveComparison().isEqualTo(expected);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import java.util.Map;
+
+-import static org.testng.Assert.assertEqualsDeep;
++import static org.assertj.core.api.Assertions.assertThat;
+
+@@ -7,2 +7,2 @@
+class Test {
+    void test(Map<String, Object> actual, Map<String, Object> expected) {
+-       assertEqualsDeep(actual, expected);
+-       assertEqualsDeep(actual, expected, "foo");
++       assertThat(actual).usingRecursiveComparison().isEqualTo(expected);
++       assertThat(actual).as("foo").usingRecursiveComparison().isEqualTo(expected);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

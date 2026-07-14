@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIsEmptyRecipe**
 
-_Prefer `Collection#isEmpty()` over alternatives that consult the collection's size or are otherwise more contrived._
+_Prefer `Collection#isEmpty()` over non-JDK, less efficient, or more verbose alternatives._
 
 ### Tags
 

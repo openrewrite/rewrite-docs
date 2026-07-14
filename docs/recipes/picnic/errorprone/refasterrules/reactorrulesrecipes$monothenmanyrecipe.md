@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoThenManyRecipe**
 
-_Avoid vacuous operations prior to invocation of `Mono#thenMany(Publisher)`._
+_Prefer `Mono#thenMany(Publisher)` over applying vacuous operations first._
 
 ## Recipe source
 

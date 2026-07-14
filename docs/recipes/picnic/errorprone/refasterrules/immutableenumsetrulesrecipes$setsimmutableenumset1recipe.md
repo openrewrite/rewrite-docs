@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet1Recipe**
 
-_Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`._
+_Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives._
 
 ## Recipe source
 

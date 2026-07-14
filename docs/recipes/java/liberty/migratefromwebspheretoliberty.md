@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Removes invalid JNDI properties](../../java/liberty/removewas2libertynonportablejndilookup)
+* [Replace `WSPrincipal.getCredential()` with `WSSubject` lookup](../../java/liberty/replacewsprincipalgetcredential)
 * [Use `getProperty(&quot;wlp.server.name&quot;)`](../../java/liberty/servername)
 * [Use `getSSOCookieFromSSOToken` and `logout`](../../java/liberty/websphereunavailablessomethods)
 * [Use correct application namespace values](../../xml/liberty/appddnamespacerule)
@@ -53,6 +54,7 @@ description: |
   Use this category of rules to identify code changes needed when migrating from WebSphere Application Server traditional to Liberty.
 recipeList:
   - org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup
+  - org.openrewrite.java.liberty.ReplaceWSPrincipalGetCredential
   - org.openrewrite.java.liberty.ServerName
   - org.openrewrite.java.liberty.WebSphereUnavailableSSOMethods
   - org.openrewrite.xml.liberty.AppDDNamespaceRule

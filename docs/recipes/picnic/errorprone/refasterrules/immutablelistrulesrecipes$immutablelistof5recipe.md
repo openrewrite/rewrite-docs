@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListOf5Recipe**
 
-_Prefer `ImmutableList#of(Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting list at the type level._
+_Prefer `ImmutableList#of(Object, Object, Object, Object, Object)` over imprecisely typed alternatives._
 
 ## Recipe source
 

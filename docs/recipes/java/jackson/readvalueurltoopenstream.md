@@ -28,6 +28,53 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.net.URL;
+
+class Test {
+    Object load(ObjectMapper mapper, URL url) throws IOException {
+        return mapper.readValue(url, Object.class);
+    }
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
+import java.net.URL;
+
+class Test {
+    Object load(ObjectMapper mapper, URL url) throws IOException {
+        return mapper.readValue(url.openStream(), Object.class);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,1 @@
+class Test {
+    Object load(ObjectMapper mapper, URL url) throws IOException {
+-       return mapper.readValue(url, Object.class);
++       return mapper.readValue(url.openStream(), Object.class);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

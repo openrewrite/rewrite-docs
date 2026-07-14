@@ -11,57 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJNumberRulesRecipes$NumberAssertIsPositiveRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class NumberAssertIsPositive {
-    
-    @BeforeTemplate
-    AbstractByteAssert<?> before(AbstractByteAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isGreaterThan((byte)0), numberAssert.isGreaterThanOrEqualTo((byte)1));
-    }
-    
-    @BeforeTemplate
-    AbstractShortAssert<?> before(AbstractShortAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isGreaterThan((short)0), numberAssert.isGreaterThanOrEqualTo((short)1));
-    }
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(AbstractIntegerAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isGreaterThan(0), numberAssert.isGreaterThanOrEqualTo(1));
-    }
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(AbstractLongAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isGreaterThan(0), numberAssert.isGreaterThanOrEqualTo(1));
-    }
-    
-    @BeforeTemplate
-    AbstractFloatAssert<?> before(AbstractFloatAssert<?> numberAssert) {
-        return numberAssert.isGreaterThan(0);
-    }
-    
-    @BeforeTemplate
-    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> numberAssert) {
-        return numberAssert.isGreaterThan(0);
-    }
-    
-    @BeforeTemplate
-    AbstractBigIntegerAssert<?> before(AbstractBigIntegerAssert<?> numberAssert) {
-        return Refaster.anyOf(numberAssert.isGreaterThan(BigInteger.ZERO), numberAssert.isGreaterThanOrEqualTo(BigInteger.valueOf(1)));
-    }
-    
-    @BeforeTemplate
-    AbstractBigDecimalAssert<?> before(AbstractBigDecimalAssert<?> numberAssert) {
-        return numberAssert.isGreaterThan(BigDecimal.ZERO);
-    }
-    
-    @AfterTemplate
-    NumberAssert<?, ?> after(NumberAssert<?, ?> numberAssert) {
-        return numberAssert.isPositive();
-    }
-}
-```
-.
+_Prefer `NumberAssert#isPositive()` over less explicit alternatives._
 
 ## Recipe source
 

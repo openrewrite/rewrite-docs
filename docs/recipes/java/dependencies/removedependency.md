@@ -78,6 +78,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Struts 2.x from Struts 1.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratestruts2)
 * [Migrates to Apache POI 5.x](/recipes/apache/poi/upgradeapachepoi_5.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+* [Modularize legacy raw Spring Data Redis dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modularizelegacyrawspringdataredis)
 * [Remove JUnit Jupiter migrationsupport](/recipes/java/testing/junit/removejupitermigrationsupport.md)
 * [Remove JavaEE dependencies](/recipes/quarkus/migrate/javaee/removejavaeedependencies.md)
 * [Remove Spring Boot DevTools](/recipes/quarkus/spring/migratespringbootdevtools.md)

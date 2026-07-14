@@ -15,8 +15,8 @@ _Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponen
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [httpclient](/reference/recipes-by-tag#httpclient)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -64,8 +64,8 @@ displayName: Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency
 description: |
   Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio`.
 tags:
-  - apache
   - httpclient
+  - apache
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.apache.httpcomponents

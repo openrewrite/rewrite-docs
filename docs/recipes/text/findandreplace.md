@@ -77,7 +77,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate xmlns entries in `web-fragment.xml` files for Jakarta Server Faces 3](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebfragmentxmltojakartawebfragmentxml5.md)
 * [Migrate xmlns entries in `web-fragment.xml` files](/recipes/java/migrate/jakarta/javaxwebfragmentxmltojakartawebfragmentxml.md)
 * [Migrate xmlns entries in `web.xml` files for Jakarta Server Faces 3](/recipes/oracle/weblogic/rewrite/jakarta/javaxwebxmltojakartawebxml5.md)
-* [Migrate xmlns entries in `web.xml` files](/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml.md)
 * [Migrate xmlns entries in `weblogic-application.xml` files to WebLogic 15.1.1](/recipes/oracle/weblogic/rewrite/weblogicapplicationxmlnamespace1511.md)
 * [Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1](/recipes/oracle/weblogic/rewrite/weblogicejbjar32xmlnamespace1511.md)
 * [Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 15.1.1](/recipes/oracle/weblogic/rewrite/weblogicpubsubxmlnamespace1511.md)

@@ -1,17 +1,17 @@
 ---
-title: "Refaster rules related to AssertJ assertions over `Instant`s"
-sidebar_label: "Refaster rules related to AssertJ assertions over `Instant`s"
+title: "`AssertJInstantRules` Refaster recipes"
+sidebar_label: "`AssertJInstantRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster rules related to AssertJ assertions over `Instant`s
+# `AssertJInstantRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes**
 
-_These rules simplify and improve the readability of tests by using `Instant`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJInstantRules)._
+_Refaster rules related to AssertJ assertions over `Instant`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJInstantRules)._
 
 ## Recipe source
 
@@ -45,9 +45,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes
-displayName: Refaster rules related to AssertJ assertions over `Instant`s
+displayName: `AssertJInstantRules` Refaster recipes
 description: |
-  These rules simplify and improve the readability of tests by using `Instant`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJInstantRules).
+  Refaster rules related to AssertJ assertions over `Instant`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJInstantRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsAfterRecipe
   - tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBeforeOrEqualToRecipe
@@ -72,7 +72,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes"
-  displayName="Refaster rules related to AssertJ assertions over `Instant`s"
+  displayName="`AssertJInstantRules` Refaster recipes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

@@ -15,8 +15,8 @@ _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over thi
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [commons](/reference/recipes-by-tag#commons)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -66,8 +66,8 @@ displayName: Prefer `java.nio.charset.StandardCharsets`
 description: |
   Prefer the Java standard library's `java.nio.charset.StandardCharsets` over third-party usage of apache's `org.apache.commons.io.Charsets`.
 tags:
-  - apache
   - commons
+  - apache
 recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.apache.commons.io.Charsets.ISO_8859_1

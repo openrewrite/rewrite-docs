@@ -30,16 +30,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJMapRules.AssertThatMapIsEmpty`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapisemptyrecipe)
+* [Refaster template `AssertJMapRules.AssertThatIsEmpty`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatisemptyrecipe)
 * [Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyInAnyOrderEntriesOf`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$abstractmapassertcontainsexactlyinanyorderentriesofrecipe)
-* [Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyEntriesOf`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$abstractmapassertcontainsexactlyentriesofrecipe)
+* [Refaster template `AssertJMapRules.AbstractMapAssertContainsExactlyEntriesOfImmutableMapOf`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$abstractmapassertcontainsexactlyentriesofimmutablemapofrecipe)
 * [Refaster template `AssertJMapRules.AbstractMapAssertHasSameSizeAs`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$abstractmapasserthassamesizeasrecipe)
-* [Refaster template `AssertJMapRules.AssertThatMapContainsKey`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainskeyrecipe)
-* [Refaster template `AssertJMapRules.AssertThatMapDoesNotContainKey`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapdoesnotcontainkeyrecipe)
-* [Refaster template `AssertJMapRules.AssertThatMapContainsOnlyKey`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainsonlykeyrecipe)
-* [Refaster template `AssertJMapRules.AssertThatMapContainsOnlyKeys`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainsonlykeysrecipe)
-* [Refaster template `AssertJMapRules.AssertThatMapContainsValue`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainsvaluerecipe)
-* [Refaster template `AssertJMapRules.AssertThatMapDoesNotContainValue`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapdoesnotcontainvaluerecipe)
+* [Refaster template `AssertJMapRules.AssertThatContainsKey`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatcontainskeyrecipe)
+* [Refaster template `AssertJMapRules.AssertThatDoesNotContainKey`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatdoesnotcontainkeyrecipe)
+* [Refaster template `AssertJMapRules.AssertThatContainsOnlyKeysObject`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatcontainsonlykeysobjectrecipe)
+* [Refaster template `AssertJMapRules.AssertThatContainsOnlyKeysIterable`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatcontainsonlykeysiterablerecipe)
+* [Refaster template `AssertJMapRules.AssertThatContainsValue`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatcontainsvaluerecipe)
+* [Refaster template `AssertJMapRules.AssertThatDoesNotContainValue`](../../../picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatdoesnotcontainvaluerecipe)
 
 </TabItem>
 
@@ -53,16 +53,16 @@ displayName: `AssertJMapRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ assertions over `Map`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJMapRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertContainsExactlyInAnyOrderEntriesOfRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertContainsExactlyEntriesOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertContainsExactlyEntriesOfImmutableMapOfRecipe
   - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertHasSameSizeAsRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsKeyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapDoesNotContainKeyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsOnlyKeyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsOnlyKeysRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsValueRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapDoesNotContainValueRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatContainsKeyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatDoesNotContainKeyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatContainsOnlyKeysObjectRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatContainsOnlyKeysIterableRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatContainsValueRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatDoesNotContainValueRecipe
 
 ```
 </TabItem>

@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractBigIntegerAssertIsEqualTo {
-    
-    @BeforeTemplate
-    AbstractBigIntegerAssert<?> before(AbstractBigIntegerAssert<?> bigIntegerAssert, BigInteger n) {
-        return Refaster.anyOf(bigIntegerAssert.isCloseTo(n, offset(BigInteger.ZERO)), bigIntegerAssert.isCloseTo(n, withPercentage(0)));
-    }
-    
-    @AfterTemplate
-    AbstractBigIntegerAssert<?> after(AbstractBigIntegerAssert<?> bigIntegerAssert, BigInteger n) {
-        return bigIntegerAssert.isEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractBigIntegerAssert#isEqualTo(Object)` over more contrived alternatives._
 
 ## Recipe source
 

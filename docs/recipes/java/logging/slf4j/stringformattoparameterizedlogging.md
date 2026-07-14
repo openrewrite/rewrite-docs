@@ -73,6 +73,8 @@ class Test {
         LOGGER.info(String.format("Boolean: %b", true));
         LOGGER.info(String.format("Char: %c", 'x'));
 
+        LOGGER.info(String.format("Just a plain message"));
+
         LOGGER.info(MARKER, String.format("Message %s", message));
         LOGGER.error(String.format("Failed: %s", message), exception);
         LOGGER.error(MARKER, String.format("Failed: %s", message), exception);
@@ -120,6 +122,8 @@ class Test {
         LOGGER.info("Float: {}", value);
         LOGGER.info("Boolean: {}", true);
         LOGGER.info("Char: {}", 'x');
+
+        LOGGER.info("Just a plain message");
 
         LOGGER.info(MARKER, "Message {}", message);
         LOGGER.error("Failed: {}", message, exception);
@@ -180,8 +184,14 @@ class Test {
 +       LOGGER.info("Boolean: {}", true);
 +       LOGGER.info("Char: {}", 'x');
 
-@@ -32,3 +32,3 @@
+@@ -32,1 +32,1 @@
         LOGGER.info(String.format("Char: %c", 'x'));
+
+-       LOGGER.info(String.format("Just a plain message"));
++       LOGGER.info("Just a plain message");
+
+@@ -34,3 +34,3 @@
+        LOGGER.info(String.format("Just a plain message"));
 
 -       LOGGER.info(MARKER, String.format("Message %s", message));
 -       LOGGER.error(String.format("Failed: %s", message), exception);
@@ -190,7 +200,7 @@ class Test {
 +       LOGGER.error("Failed: {}", message, exception);
 +       LOGGER.error(MARKER, "Failed: {}", message, exception);
 
-@@ -36,7 +36,3 @@
+@@ -38,7 +38,3 @@
         LOGGER.error(MARKER, String.format("Failed: %s", message), exception);
 
 -       LOGGER.info(String.format("User %s"

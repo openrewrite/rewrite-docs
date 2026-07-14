@@ -17,8 +17,8 @@ import RunRecipe from '@site/src/components/RunRecipe';
 ### Tags
 
 * [codemods](/reference/recipes-by-tag#codemods)
-* [lodash](/reference/recipes-by-tag#lodash)
 * [underscore](/reference/recipes-by-tag#underscore)
+* [lodash](/reference/recipes-by-tag#lodash)
 
 ## Recipe source
 
@@ -49,8 +49,8 @@ description: |
   - `_.bind(fn, obj, ...x)` -&gt; `fn.bind(obj, ...x)` - `_.partial(fn, a, b);` -&gt; `(...args) =&gt; fn(a, b, ...args)`.
 tags:
   - codemods
-  - lodash
   - underscore
+  - lodash
 recipeList:
   - org.openrewrite.codemods.ApplyCodemod:
       transform: @kevinbarabash/codemods/transforms/function.js

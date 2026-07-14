@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionContainsRecipe**
 
-_Prefer `Collection#contains(Object)` over more contrived alternatives._
+_Prefer `Collection#contains(Object)` over less efficient alternatives._
 
 ## Recipe source
 

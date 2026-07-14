@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamSortedRecipe**
 
-_Prefer `Stream#sorted()` over more contrived alternatives._
+_Prefer `Stream#sorted()` over more verbose alternatives._
 
 ## Recipe source
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerDivideUnsignedRecipe**
 
-_Prefer JDK's `Integer#divideUnsigned(int, int)` over third-party alternatives._
+_Prefer `Integer#divideUnsigned(int, int)` over non-JDK alternatives._
 
 ## Recipe source
 

@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic WSEE Client Handler Chains schema files to We
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [wsee-clientHandlerChain](/reference/recipes-by-tag#wsee)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrate xmlns entries in `weblogic-wsee-clientHandlerChain.xml` fil
 description: |
   Migrate xmlns entries in WebLogic WSEE Client Handler Chains schema files to WebLogic 14.1.2
 tags:
+  - weblogic
   - wsee-clientHandlerChain
   - schemas
-  - weblogic
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/weblogic-wsee-clientHandlerChain.xml

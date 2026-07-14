@@ -11,27 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSizeRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class EnumerableAssertHasSize<E> {
-    
-    @BeforeTemplate
-    AbstractIterableAssert<?, ?, E, ?> before(AbstractIterableAssert<?, ?, E, ?> enumAssert, int size) {
-        return enumAssert.size().isEqualTo(size).returnToIterable();
-    }
-    
-    @BeforeTemplate
-    AbstractIterableSizeAssert<?, ?, E, ?> before2(AbstractIterableAssert<?, ?, E, ?> enumAssert, int size) {
-        return enumAssert.size().isEqualTo(size);
-    }
-    
-    @AfterTemplate
-    EnumerableAssert<?, E> after(EnumerableAssert<?, E> enumAssert, int size) {
-        return enumAssert.hasSize(size);
-    }
-}
-```
-.
+_Prefer `EnumerableAssert#hasSize(int)` over more verbose alternatives._
 
 ## Recipe source
 

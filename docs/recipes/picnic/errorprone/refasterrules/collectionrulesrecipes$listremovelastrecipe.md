@@ -1,18 +1,19 @@
 ---
-title: "Refaster template `CollectionRules.ListRemoveLast`"
-sidebar_label: "Refaster template `CollectionRules.ListRemoveLast`"
+title: "Prefer `List#removeLast()` over less idiomatic alternatives"
+sidebar_label: "Prefer `List#removeLast()` over less idiomatic alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `CollectionRules.ListRemoveLast`
+# Prefer `List#removeLast()` over less idiomatic alternatives
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ListRemoveLastRecipe**
 
 ```
-Prefer `List#removeLast()`} over less idiomatic alternatives.
+<strong>Warning:</strong> this rewrite changes the exception thrown for empty lists from
+ `IndexOutOfBoundsException` to `NoSuchElementException`.
 ```
 
 
@@ -36,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ListRemoveLastRecipe"
-  displayName="Refaster template `CollectionRules.ListRemoveLast`"
+  displayName="Prefer `List#removeLast()` over less idiomatic alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

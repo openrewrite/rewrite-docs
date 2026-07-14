@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalZeroRecipe**
 
-_Prefer using the constant `BigDecimal#ZERO` when possible._
+_Prefer `BigDecimal#ZERO` over less efficient alternatives._
 
 ## Recipe source
 

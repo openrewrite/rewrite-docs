@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamTakeWhileRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntStreamTakeWhile {
-    
-    @BeforeTemplate
-    IntStream before(IntStream stream, IntPredicate predicate) {
-        return stream.takeWhile(predicate).filter(predicate);
-    }
-    
-    @AfterTemplate
-    IntStream after(IntStream stream, IntPredicate predicate) {
-        return stream.takeWhile(predicate);
-    }
-}
-```
-.
+_Prefer `IntStream#takeWhile(IntPredicate)` over more verbose alternatives._
 
 ## Recipe source
 

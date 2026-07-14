@@ -32,9 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssertJLongRules.AbstractLongAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisequaltorecipe)
 * [Refaster template `AssertJLongRules.AbstractLongAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisnotequaltorecipe)
-* [Refaster template `AssertJLongRules.AbstractLongAssertIsZero`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertiszerorecipe)
-* [Refaster template `AssertJLongRules.AbstractLongAssertIsNotZero`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisnotzerorecipe)
-* [Refaster template `AssertJLongRules.AbstractLongAssertIsOne`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisonerecipe)
+* [Refaster template `AssertJLongRules.AbstractLongAssertIsEqualToZero`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisequaltozerorecipe)
+* [Refaster template `AssertJLongRules.AbstractLongAssertIsNotEqualToZero`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisnotequaltozerorecipe)
+* [Refaster template `AssertJLongRules.AbstractLongAssertIsEqualToOne`](../../../picnic/errorprone/refasterrules/assertjlongrulesrecipes$abstractlongassertisequaltoonerecipe)
 
 </TabItem>
 
@@ -50,9 +50,9 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsNotEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsNotZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsOneRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsNotEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJLongRulesRecipes$AbstractLongAssertIsEqualToOneRecipe
 
 ```
 </TabItem>

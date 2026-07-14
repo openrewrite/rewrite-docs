@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `*-jdbc.xml` files to WebLogic 1
 
 ### Tags
 
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [jdbc](/reference/recipes-by-tag#jdbc)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 15.1.1
 description: |
   This recipe will update the `xmlns` entries in `*-jdbc.xml` files to WebLogic 15.1.1
 tags:
-  - schemas
   - weblogic
   - jdbc
+  - schemas
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicJdbcXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

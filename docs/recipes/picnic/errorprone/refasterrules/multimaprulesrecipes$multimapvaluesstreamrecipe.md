@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.MultimapRulesRecipes$MultimapValuesStreamRecipe**
 
-_Don't unnecessarily use `Multimap#entries()`._
+_Prefer `multimap.values().stream()` over more contrived alternatives._
 
 ## Recipe source
 

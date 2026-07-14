@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatExistsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatExists {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(Path actual) {
-        return assertThat(Files.exists(actual)).isTrue();
-    }
-    
-    @AfterTemplate
-    AbstractPathAssert<?> after(Path actual) {
-        return assertThat(actual).exists();
-    }
-}
-```
-.
+_Prefer `AbstractPathAssert#exists()` over more contrived alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Path`s](/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes.md)
+* [`AssertJPathRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes.md)
 
 
 ## Usage

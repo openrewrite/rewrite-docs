@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertHasValueRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractOptionalAssertHasValue<T> {
-    
-    @BeforeTemplate
-    AbstractAssert<?, ?> before(AbstractOptionalAssert<?, T> optionalAssert, T value) {
-        return Refaster.anyOf(optionalAssert.get().isEqualTo(value), optionalAssert.isEqualTo(Optional.of(value)), optionalAssert.contains(value), optionalAssert.isPresent().hasValue(value));
-    }
-    
-    @AfterTemplate
-    AbstractOptionalAssert<?, T> after(AbstractOptionalAssert<?, T> optionalAssert, T value) {
-        return optionalAssert.hasValue(value);
-    }
-}
-```
-.
+_Prefer `AbstractOptionalAssert#hasValue(Object)` over more contrived alternatives._
 
 ## Recipe source
 

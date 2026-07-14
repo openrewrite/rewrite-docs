@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasNoParentRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasNoParent {
-    
-    @BeforeTemplate
-    void before(File actual) {
-        assertThat(actual.getParent()).isNull();
-    }
-    
-    @AfterTemplate
-    void after(File actual) {
-        assertThat(actual).hasNoParent();
-    }
-}
-```
-.
+_Prefer `AbstractFileAssert#hasNoParent()` over more verbose alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `File`s](/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes.md)
+* [`AssertJFileRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes.md)
 
 
 ## Usage

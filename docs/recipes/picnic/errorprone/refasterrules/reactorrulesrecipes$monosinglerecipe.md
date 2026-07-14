@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoSingleRecipe**
 
-_Don't unnecessarily transform a `Mono` to a `Flux` to expect exactly one item._
+_Prefer using `Mono#single()` or `Mono#singleOptional()` over unnecessarily transforming a `Mono` to a `Flux`._
 
 ## Recipe source
 

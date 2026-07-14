@@ -32,9 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisequaltorecipe)
 * [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisnotequaltorecipe)
-* [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsZero`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertiszerorecipe)
-* [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsNotZero`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisnotzerorecipe)
-* [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsOne`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisonerecipe)
+* [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsEqualToZero`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisequaltozerorecipe)
+* [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsNotEqualToZero`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisnotequaltozerorecipe)
+* [Refaster template `AssertJBigIntegerRules.AbstractBigIntegerAssertIsEqualToOne`](../../../picnic/errorprone/refasterrules/assertjbigintegerrulesrecipes$abstractbigintegerassertisequaltoonerecipe)
 
 </TabItem>
 
@@ -50,9 +50,9 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsOneRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsNotEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJBigIntegerRulesRecipes$AbstractBigIntegerAssertIsEqualToOneRecipe
 
 ```
 </TabItem>

@@ -1,32 +1,21 @@
 ---
-title: "Refaster template `AssertJPathRules.AssertThatHasParentRaw`"
-sidebar_label: "Refaster template `AssertJPathRules.AssertThatHasParentRaw`"
+title: "Prefer `AbstractPathAssert#hasParentRaw(Path)` over more contrived alternatives"
+sidebar_label: "Prefer `AbstractPathAssert#hasParentRaw(Path)` over more contrived alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `AssertJPathRules.AssertThatHasParentRaw`
+# Prefer `AbstractPathAssert#hasParentRaw(Path)` over more contrived alternatives
 
 **tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasParentRawRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasParentRaw {
-    
-    @BeforeTemplate
-    AbstractPathAssert<?> before(Path actual, Path expected) {
-        return assertThat(actual.getParent()).isEqualTo(expected);
-    }
-    
-    @AfterTemplate
-    AbstractPathAssert<?> after(Path actual, Path expected) {
-        return assertThat(actual).hasParentRaw(expected);
-    }
-}
 ```
-.
+<strong>Warning:</strong> this rewrite changes the `Path` against which subsequent
+ assertions are made.
+```
+
 
 ## Recipe source
 
@@ -41,14 +30,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Path`s](/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes.md)
+* [`AssertJPathRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes.md)
 
 
 ## Usage
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasParentRawRecipe"
-  displayName="Refaster template `AssertJPathRules.AssertThatHasParentRaw`"
+  displayName="Prefer `AbstractPathAssert#hasParentRaw(Path)` over more contrived alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

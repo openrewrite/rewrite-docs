@@ -15,8 +15,8 @@ _This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta
 
 ### Tags
 
-* [persistence](/reference/recipes-by-tag#persistence)
 * [hibernate](/reference/recipes-by-tag#hibernate)
+* [persistence](/reference/recipes-by-tag#persistence)
 
 ## Recipe source
 
@@ -63,8 +63,8 @@ displayName: Upgrade Hibernate to 6.6
 description: |
   This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta EE 10 and JPA 3.1. It also upgrades a few of the commonly used Hibernate add-ons.
 tags:
-  - persistence
   - hibernate
+  - persistence
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernate66
   - org.openrewrite.java.dependencies.ChangeDependency:

@@ -86,6 +86,51 @@ This recipe is used as part of the following composite recipes:
 
 * [Update Jakarta EE XML Web Services Dependencies for EE 10](/recipes/java/migrate/jakarta/updatejakartaxmlwsee10.md)
 
+## Examples
+##### Example 1
+`ReplaceJakartaJwsWithJakartaXmlWsTest#replacesJakartaJwsApiInPlaceWithJakartaXmlWsApi`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.jws</groupId>
+            <artifactId>jakarta.jws-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`ReplaceJakartaJwsWithJakartaXmlWsTest#replacesJakartaJwsApiInPlaceWithJakartaXmlWsApi`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.jws</groupId>
+            <artifactId>jakarta.jws-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
 
 ## Usage
 

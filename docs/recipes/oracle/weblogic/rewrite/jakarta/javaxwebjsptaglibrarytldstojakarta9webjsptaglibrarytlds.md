@@ -15,10 +15,10 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [jsp](/reference/recipes-by-tag#jsp)
 * [jsptaglibrary](/reference/recipes-by-tag#jsptaglibrary)
 * [tld](/reference/recipes-by-tag#tld)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [jsp](/reference/recipes-by-tag#jsp)
 
 ## Recipe source
 
@@ -77,10 +77,10 @@ displayName: Migrate xmlns entries in `*.tld` files.
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
-  - jsp
   - jsptaglibrary
   - tld
   - jakarta
+  - jsp
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/*.tld

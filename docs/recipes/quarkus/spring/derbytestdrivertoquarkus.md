@@ -16,10 +16,10 @@ _Migrates `org.apache.derby:derby` with test scope to `io.quarkus:quarkus-jdbc-d
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [derby](/reference/recipes-by-tag#derby)
 * [database](/reference/recipes-by-tag#database)
 * [test](/reference/recipes-by-tag#test)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [derby](/reference/recipes-by-tag#derby)
 
 ## Recipe source
 
@@ -74,10 +74,10 @@ description: |
   Migrates `org.apache.derby:derby` with test scope to `io.quarkus:quarkus-jdbc-derby` with test scope.
 tags:
   - spring
+  - derby
   - database
   - test
   - quarkus
-  - derby
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.apache.derby

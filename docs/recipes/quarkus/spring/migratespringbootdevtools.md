@@ -16,9 +16,9 @@ _Removes Spring Boot DevTools dependency and configuration. Quarkus has built-in
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
 * [devtools](/reference/recipes-by-tag#devtools)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ description: |
   Removes Spring Boot DevTools dependency and configuration. Quarkus has built-in dev mode with hot reload that replaces DevTools functionality.
 tags:
   - spring
-  - quarkus
   - migration
   - devtools
+  - quarkus
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.springframework.boot

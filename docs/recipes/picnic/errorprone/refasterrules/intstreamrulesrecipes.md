@@ -30,16 +30,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `IntStreamRules.IntStreamClosedOpenRange`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamclosedopenrangerecipe)
-* [Refaster template `IntStreamRules.ConcatOneIntStream`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$concatoneintstreamrecipe)
-* [Refaster template `IntStreamRules.ConcatTwoIntStreams`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$concattwointstreamsrecipe)
+* [Prefer `IntStream#range(int, int)` over more verbose alternatives](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamrangerecipe)
+* [Refaster template `IntStreamRules.IntStreamIdentity`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamidentityrecipe)
+* [Refaster template `IntStreamRules.IntStreamConcat`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamconcatrecipe)
 * [Refaster template `IntStreamRules.IntStreamFilterSorted`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamfiltersortedrecipe)
-* [Refaster template `IntStreamRules.IntStreamIsEmpty`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamisemptyrecipe)
-* [Refaster template `IntStreamRules.IntStreamIsNotEmpty`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamisnotemptyrecipe)
+* [Refaster template `IntStreamRules.IntStreamFindAnyIsEmpty`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamfindanyisemptyrecipe)
+* [Refaster template `IntStreamRules.IntStreamFindAnyIsPresent`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamfindanyispresentrecipe)
 * [Refaster template `IntStreamRules.IntStreamMin`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamminrecipe)
-* [Refaster template `IntStreamRules.IntStreamNoneMatch`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamnonematchrecipe)
+* [Refaster template `IntStreamRules.IntStreamNoneMatchWithIntPredicate`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamnonematchwithintpredicaterecipe)
 * [Refaster template `IntStreamRules.IntStreamAnyMatch`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamanymatchrecipe)
-* [Refaster template `IntStreamRules.IntStreamAllMatch`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamallmatchrecipe)
+* [Refaster template `IntStreamRules.IntStreamAllMatchWithIntPredicate`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamallmatchwithintpredicaterecipe)
 * [Refaster template `IntStreamRules.IntStreamTakeWhile`](../../../picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamtakewhilerecipe)
 
 </TabItem>
@@ -54,16 +54,16 @@ displayName: `IntStreamRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `IntStream`s. [Source](https://error-prone.picnic.tech/refasterrules/IntStreamRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamClosedOpenRangeRecipe
-  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatOneIntStreamRecipe
-  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$ConcatTwoIntStreamsRecipe
+  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamRangeRecipe
+  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamIdentityRecipe
+  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamConcatRecipe
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamFilterSortedRecipe
-  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamFindAnyIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamFindAnyIsPresentRecipe
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamMinRecipe
-  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamNoneMatchRecipe
+  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamNoneMatchWithIntPredicateRecipe
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAnyMatchRecipe
-  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAllMatchRecipe
+  - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAllMatchWithIntPredicateRecipe
   - tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamTakeWhileRecipe
 
 ```

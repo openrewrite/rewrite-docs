@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableTableRulesRecipes$ImmutableTableOfRecipe**
 
-_Prefer `ImmutableTable#of()` over more contrived alternatives ._
+_Prefer `ImmutableTable#of()` over less efficient alternatives._
 
 ## Recipe source
 

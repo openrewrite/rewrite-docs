@@ -30,9 +30,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJCharSequenceRules.AssertThatCharSequenceIsEmpty`](../../../picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes$assertthatcharsequenceisemptyrecipe)
-* [Refaster template `AssertJCharSequenceRules.AssertThatCharSequenceIsNotEmpty`](../../../picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes$assertthatcharsequenceisnotemptyrecipe)
-* [Refaster template `AssertJCharSequenceRules.AssertThatCharSequenceHasSize`](../../../picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes$assertthatcharsequencehassizerecipe)
+* [Refaster template `AssertJCharSequenceRules.AssertThatIsEmpty`](../../../picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes$assertthatisemptyrecipe)
+* [Refaster template `AssertJCharSequenceRules.AssertThatIsNotEmpty`](../../../picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes$assertthatisnotemptyrecipe)
+* [Refaster template `AssertJCharSequenceRules.AssertThatHasSize`](../../../picnic/errorprone/refasterrules/assertjcharsequencerulesrecipes$assertthathassizerecipe)
 
 </TabItem>
 
@@ -46,9 +46,9 @@ displayName: `AssertJCharSequenceRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ assertions over `CharSequence`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJCharSequenceRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceIsNotEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatCharSequenceHasSizeRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJCharSequenceRulesRecipes$AssertThatHasSizeRecipe
 
 ```
 </TabItem>

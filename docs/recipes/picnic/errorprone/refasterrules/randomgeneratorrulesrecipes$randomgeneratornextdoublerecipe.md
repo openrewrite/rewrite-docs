@@ -1,17 +1,21 @@
 ---
-title: "Refaster template `RandomGeneratorRules.RandomGeneratorNextDouble`"
-sidebar_label: "Refaster template `RandomGeneratorRules.RandomGeneratorNextDouble`"
+title: "Prefer `RandomGenerator#nextDouble(double)` over more fragile alternatives"
+sidebar_label: "Prefer `RandomGenerator#nextDouble(double)` over more fragile alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `RandomGeneratorRules.RandomGeneratorNextDouble`
+# Prefer `RandomGenerator#nextDouble(double)` over more fragile alternatives
 
 **tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe**
 
-_Prefer `RandomGenerator#nextDouble(double)` over alternatives that yield a smaller domain of values and may result in `Double#isInfinite() inifinity`._
+```
+<strong>Warning:</strong> this rewrite may change the domain of generated values; in
+ particular, the before-template can yield values outside `[0, bound)` or even `Double#isInfinite() infinity`.
+```
+
 
 ## Recipe source
 
@@ -33,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe"
-  displayName="Refaster template `RandomGeneratorRules.RandomGeneratorNextDouble`"
+  displayName="Prefer `RandomGenerator#nextDouble(double)` over more fragile alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

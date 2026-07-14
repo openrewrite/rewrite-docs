@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic JDBC schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [jdbc](/reference/recipes-by-tag#jdbc)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -76,9 +76,9 @@ displayName: Migrate xmlns entries in `*-jdbc.xml` files to WebLogic 14.1.2
 description: |
   Migrate xmlns entries in WebLogic JDBC schema files to WebLogic 14.1.2
 tags:
-  - schemas
   - weblogic
   - jdbc
+  - schemas
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/*-jdbc.xml

@@ -16,8 +16,8 @@ _Migrate thymeleaf dependencies to the new artifactId, since these are changed w
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [thymeleaf](/reference/recipes-by-tag#thymeleaf)
 * [boot](/reference/recipes-by-tag#boot)
+* [thymeleaf](/reference/recipes-by-tag#thymeleaf)
 
 ## Recipe source
 
@@ -70,8 +70,8 @@ description: |
   Migrate thymeleaf dependencies to the new artifactId, since these are changed with Spring Boot 3.
 tags:
   - spring
-  - thymeleaf
   - boot
+  - thymeleaf
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -99,6 +99,51 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.0 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
+
+## Examples
+##### Example 1
+`MigrateThymeleafDependenciesTest#migrateThymeleafSpring5ToSpring6WithResolvableVersion`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring5</artifactId>
+      <version>3.0.15.RELEASE</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`MigrateThymeleafDependenciesTest#migrateThymeleafSpring5ToSpring6WithResolvableVersion`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring5</artifactId>
+      <version>3.0.15.RELEASE</version>
+    </dependency>
+  </dependencies>
+</project>
+```
 
 
 ## Usage

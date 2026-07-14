@@ -30,13 +30,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJIterableRules.AssertThatIterableIsEmpty`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterableisemptyrecipe)
-* [Refaster template `AssertJIterableRules.AssertThatIterableIsNotEmpty`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterableisnotemptyrecipe)
-* [Refaster template `AssertJIterableRules.AssertThatIterableSize`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterablesizerecipe)
+* [Refaster template `AssertJIterableRules.AssertThatIsEmpty`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatisemptyrecipe)
+* [Refaster template `AssertJIterableRules.AssertThatIsNotEmpty`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatisnotemptyrecipe)
+* [Refaster template `AssertJIterableRules.AssertThatSize`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatsizerecipe)
 * [Refaster template `AssertJIterableRules.AssertThatContains`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatcontainsrecipe)
 * [Refaster template `AssertJIterableRules.AssertThatDoesNotContain`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatdoesnotcontainrecipe)
 * [Refaster template `AssertJIterableRules.AssertThatContainsAll`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatcontainsallrecipe)
-* [Refaster template `AssertJIterableRules.AssertThatIterableHasOneElementEqualTo`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatiterablehasoneelementequaltorecipe)
+* [Refaster template `AssertJIterableRules.AssertThatContainsExactly`](../../../picnic/errorprone/refasterrules/assertjiterablerulesrecipes$assertthatcontainsexactlyrecipe)
 
 </TabItem>
 
@@ -50,13 +50,13 @@ displayName: `AssertJIterableRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ assertions over `Iterable`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJIterableRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableIsNotEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableSizeRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatSizeRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatContainsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatDoesNotContainRecipe
   - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatContainsAllRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatIterableHasOneElementEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJIterableRulesRecipes$AssertThatContainsExactlyRecipe
 
 ```
 </TabItem>

@@ -28,6 +28,63 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+
+import static org.testng.Assert.assertEquals;
+
+class Test {
+    void test(List<String> actual, List<String> expected) {
+        assertEquals(actual, expected);
+        assertEquals(actual, expected, "foo");
+    }
+}
+```
+
+###### After
+```java
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class Test {
+    void test(List<String> actual, List<String> expected) {
+        assertThat(actual).containsExactlyElementsOf(expected);
+        assertThat(actual).as("foo").containsExactlyElementsOf(expected);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+import java.util.List;
+
+-import static org.testng.Assert.assertEquals;
++import static org.assertj.core.api.Assertions.assertThat;
+
+@@ -7,2 +7,2 @@
+class Test {
+    void test(List<String> actual, List<String> expected) {
+-       assertEquals(actual, expected);
+-       assertEquals(actual, expected, "foo");
++       assertThat(actual).containsExactlyElementsOf(expected);
++       assertThat(actual).as("foo").containsExactlyElementsOf(expected);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

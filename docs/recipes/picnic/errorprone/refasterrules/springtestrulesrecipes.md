@@ -30,8 +30,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `SpringTestRules.BodyContentSpecJsonLenient`](../../../picnic/errorprone/refasterrules/springtestrulesrecipes$bodycontentspecjsonlenientrecipe)
-* [Refaster template `SpringTestRules.BodyContentSpecJsonStrict`](../../../picnic/errorprone/refasterrules/springtestrulesrecipes$bodycontentspecjsonstrictrecipe)
+* [Refaster template `SpringTestRules.BodyContentSpecJsonJsonCompareModeLenient`](../../../picnic/errorprone/refasterrules/springtestrulesrecipes$bodycontentspecjsonjsoncomparemodelenientrecipe)
+* [Refaster template `SpringTestRules.BodyContentSpecJsonJsonCompareModeStrict`](../../../picnic/errorprone/refasterrules/springtestrulesrecipes$bodycontentspecjsonjsoncomparemodestrictrecipe)
 
 </TabItem>
 
@@ -45,8 +45,8 @@ displayName: `SpringTestRules` Refaster recipes
 description: |
   Refaster rules related to Spring Test expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/SpringTestRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.SpringTestRulesRecipes$BodyContentSpecJsonLenientRecipe
-  - tech.picnic.errorprone.refasterrules.SpringTestRulesRecipes$BodyContentSpecJsonStrictRecipe
+  - tech.picnic.errorprone.refasterrules.SpringTestRulesRecipes$BodyContentSpecJsonJsonCompareModeLenientRecipe
+  - tech.picnic.errorprone.refasterrules.SpringTestRulesRecipes$BodyContentSpecJsonJsonCompareModeStrictRecipe
 
 ```
 </TabItem>

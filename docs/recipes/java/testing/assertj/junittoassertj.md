@@ -15,8 +15,8 @@ _AssertJ provides a rich set of assertions, truly helpful error messages, improv
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -60,7 +60,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `3.x`
   * onlyIfUsing: `org.junit.jupiter.api.Assertions`
   * acceptTransitive: `true`
-* [Refaster rules to replace JUnit assertions with AssertJ equivalents](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes)
+* [Refaster rules that replace JUnit APIs with AssertJ equivalents](../../../picnic/errorprone/refasterrules/junittoassertjrulesrecipes)
 
 </TabItem>
 
@@ -74,8 +74,8 @@ displayName: Migrate JUnit asserts to AssertJ
 description: |
   AssertJ provides a rich set of assertions, truly helpful error messages, improves test code readability. Converts assertions from `org.junit.jupiter.api.Assertions` to `org.assertj.core.api.Assertions`. Will convert JUnit 4 to JUnit Jupiter if necessary to match and modify assertions.
 tags:
-  - testing
   - assertj
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

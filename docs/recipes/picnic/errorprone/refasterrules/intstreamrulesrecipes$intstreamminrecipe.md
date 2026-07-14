@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamMinRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class IntStreamMin {
-    
-    @BeforeTemplate
-    OptionalInt before(IntStream stream) {
-        return stream.sorted().findFirst();
-    }
-    
-    @AfterTemplate
-    OptionalInt after(IntStream stream) {
-        return stream.min();
-    }
-}
-```
-.
+_Prefer `IntStream#min()` over less efficient alternatives._
 
 ## Recipe source
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes**
 
-_Refaster rules related to expressions dealing with `com.google.common.collect.ImmutableEnumSet`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableEnumSetRules)._
+_Refaster rules related to expressions dealing with `ImmutableSet`s of enums. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableEnumSetRules)._
 
 ## Recipe source
 
@@ -30,16 +30,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `Sets#immutableEnumSet(Iterable)` for enum collections to take advantage of the internally used `EnumSet`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumsetiterablerecipe)
-* [Prefer `Sets#immutableEnumSet(Iterable)` for enum collections to take advantage of the internally used `EnumSet`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumsetarraysaslistrecipe)
+* [Prefer `Sets#immutableEnumSet(Iterable)` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumsetiterablerecipe)
+* [Prefer `Sets.immutableEnumSet(Arrays.asList(array))` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumsetarraysaslistrecipe)
 * [Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSet1`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset1recipe)
-* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset2recipe)
-* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset3recipe)
-* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset4recipe)
-* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset5recipe)
-* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset6recipe)
-* [Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarArgs`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumsetvarargsrecipe)
-* [Use `Sets#toImmutableEnumSet()` when possible, as it is more efficient than `ImmutableSet#toImmutableSet()` and produces a more compact object](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$streamtoimmutableenumsetrecipe)
+* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset2recipe)
+* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset3recipe)
+* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset4recipe)
+* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset5recipe)
+* [Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumset6recipe)
+* [Refaster template `ImmutableEnumSetRules.SetsImmutableEnumSetVarargs`](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$setsimmutableenumsetvarargsrecipe)
+* [Prefer `Sets#toImmutableEnumSet()` over less efficient alternatives](../../../picnic/errorprone/refasterrules/immutableenumsetrulesrecipes$streamcollecttoimmutableenumsetrecipe)
 
 </TabItem>
 
@@ -51,7 +51,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes
 displayName: `ImmutableEnumSetRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with `com.google.common.collect.ImmutableEnumSet`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableEnumSetRules).
+  Refaster rules related to expressions dealing with `ImmutableSet`s of enums. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableEnumSetRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetIterableRecipe
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetArraysAsListRecipe
@@ -61,8 +61,8 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet4Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet5Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet6Recipe
-  - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarArgsRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$StreamToImmutableEnumSetRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSetVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$StreamCollectToImmutableEnumSetRecipe
 
 ```
 </TabItem>

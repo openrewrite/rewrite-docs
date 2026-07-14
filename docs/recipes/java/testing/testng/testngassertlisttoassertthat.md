@@ -28,6 +28,65 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.List;
+
+import static org.testng.Assert.assertListContainsObject;
+import static org.testng.Assert.assertListNotContainsObject;
+
+class Test {
+    void test(List<String> list, String value) {
+        assertListContainsObject(list, value, "foo");
+        assertListNotContainsObject(list, value, "bar");
+    }
+}
+```
+
+###### After
+```java
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class Test {
+    void test(List<String> list, String value) {
+        assertThat(list).as("foo").contains(value);
+        assertThat(list).as("bar").doesNotContain(value);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,1 @@
+import java.util.List;
+
+-import static org.testng.Assert.assertListContainsObject;
+-import static org.testng.Assert.assertListNotContainsObject;
++import static org.assertj.core.api.Assertions.assertThat;
+
+@@ -8,2 +7,2 @@
+class Test {
+    void test(List<String> list, String value) {
+-       assertListContainsObject(list, value, "foo");
+-       assertListNotContainsObject(list, value, "bar");
++       assertThat(list).as("foo").contains(value);
++       assertThat(list).as("bar").doesNotContain(value);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

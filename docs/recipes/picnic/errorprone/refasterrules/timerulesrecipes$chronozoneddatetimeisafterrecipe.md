@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoZonedDateTimeIsAfterRecipe**
 
-_Prefer `ChronoZonedDateTime#isBefore(ChronoZonedDateTime)` over explicit comparison, as it yields more readable code._
+_Prefer `ChronoZonedDateTime#isAfter(ChronoZonedDateTime)` over less explicit alternatives._
 
 ## Recipe source
 

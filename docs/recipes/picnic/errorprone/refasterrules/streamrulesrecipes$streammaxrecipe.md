@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMaxRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamMax<T> {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4266")
-    Optional<T> before(Stream<T> stream, Comparator<? super T> comparator) {
-        return Refaster.anyOf(stream.min(comparator.reversed()), Streams.findLast(stream.sorted(comparator)), stream.collect(maxBy(comparator)));
-    }
-    
-    @AfterTemplate
-    Optional<T> after(Stream<T> stream, Comparator<? super T> comparator) {
-        return stream.max(comparator);
-    }
-}
-```
-.
+_Prefer `Stream#max(Comparator)` over less efficient alternatives._
 
 ### Tags
 

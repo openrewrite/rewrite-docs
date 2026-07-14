@@ -15,8 +15,8 @@ _Apply GitLab CI/CD best practices to `.gitlab-ci.yml`. This includes adding `wo
 
 ### Tags
 
-* [ci](/reference/recipes-by-tag#ci)
 * [gitlab](/reference/recipes-by-tag#gitlab)
+* [ci](/reference/recipes-by-tag#ci)
 
 ## Recipe source
 
@@ -59,8 +59,8 @@ displayName: GitLab CI best practices
 description: |
   Apply GitLab CI/CD best practices to `.gitlab-ci.yml`. This includes adding `workflow:rules` to prevent duplicate pipelines, setting `interruptible: true` and `retry` in the `default` section, configuring `artifacts:expire_in`, and setting a job `timeout`.
 tags:
-  - ci
   - gitlab
+  - ci
 recipeList:
   - org.openrewrite.gitlab.MigrateToRules
   - org.openrewrite.gitlab.AddWorkflowRules:

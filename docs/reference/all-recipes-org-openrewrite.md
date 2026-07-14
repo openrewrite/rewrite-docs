@@ -188,11 +188,21 @@ _18 recipes_
   * **Find unpinned base images**
   * Finds FROM instructions that use unpinned base images (CIS Docker Benchmark 4.2). Images without an explicit tag default to 'latest', which is not reproducible. Images pinned by digest are considered acceptable.
 
+## rewrite-go
+
+_License: Moderne Source Available License_
+
+_1 recipe_
+
+* [org.openrewrite.golang.RegenerateGoSum](/recipes/golang/regenerategosum.md)
+  * **Regenerate `go.sum`**
+  * Regenerate a Go module's `go.sum` from its `go.mod` by running `go mod download`, recomputing checksums for the whole module graph, including creating it when absent. Useful after a dependency version change to bring `go.sum` back in sync. Requires the `go` toolchain to be installed; otherwise `go.sum` is left unchanged.
+
 ## rewrite-gradle
 
 _License: Apache License Version 2.0_
 
-_76 recipes_
+_77 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -272,6 +282,9 @@ _76 recipes_
 * [org.openrewrite.gradle.MigrateToGradle9](/recipes/gradle/migratetogradle9.md)
   * **Migrate to Gradle 9 from Gradle 8**
   * Migrate to version 9.x. See the Gradle upgrade guide from [version 8.x to 9.0](https://docs.gradle.org/9.0.0/userguide/upgrading_major_version_9.html) for more information.
+* [org.openrewrite.gradle.RemoveBomManagedDirectDependencies](/recipes/gradle/removebommanageddirectdependencies.md)
+  * **Remove direct dependencies that are managed by a BOM with incompatible versions**
+  * Removes directly declared dependencies when they have a version that is incompatible with the version managed by an imported BOM (platform or enforcedPlatform). This is useful during framework upgrades (e.g., Spring Boot) where transitive dependencies receive major version bumps and explicitly declared older versions should be removed to use the BOM-managed versions instead. A dependency is only removed when it would still be reachable transitively through another direct dependency in every configuration where it is declared, so the BOM-managed version takes its place rather than the dependency disappearing from the classpath.
 * [org.openrewrite.gradle.RemoveDependency](/recipes/gradle/removedependency.md)
   * **Remove a Gradle dependency**
   * Removes a single dependency from the dependencies section of the `build.gradle`.
@@ -768,8 +781,8 @@ _101 recipes_
   * **Find files that have at least one use of a method**
   * Marks files that have at least one occurrence of a method matching a pattern.
 * [org.openrewrite.java.search.HasMinimumJavaVersion](/recipes/java/search/hasminimumjavaversion.md)
-  * **Find the oldest Java version in use**
-  * The oldest Java version in use is the lowest Java version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Java 8, but a test source set uses Java 17. In this case, the oldest Java version in use is Java 8.
+  * **Has minimum Java version**
+  * Finds source files when the oldest Java version in use meets the supplied minimum version. Java version is attributed per source set (for example `src/main/java` and `src/test/java`), so the oldest Java version in use is the lowest version across every source set of every subproject in a repository. For example, the main source set of a project may use Java 8 while its test source set uses Java 17; in that case the oldest Java version in use is Java 8.
 * [org.openrewrite.java.search.HasSourceSet](/recipes/java/search/hassourceset.md)
   * **Find files in a source set**
   * Source sets are a way to organize your source code into logical groups. For example, Java projects commonly have a `main` source set for application code and a `test` source set for test code. This recipe will find all files in a given source set.
@@ -934,7 +947,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_90 recipes_
+_92 recipes_
 
 * [org.openrewrite.maven.AddAnnotationProcessor](/recipes/maven/addannotationprocessor.md)
   * **Add an annotation processor to `maven-compiler-plugin`**
@@ -1023,6 +1036,9 @@ _90 recipes_
 * [org.openrewrite.maven.ExcludeDependency](/recipes/maven/excludedependency.md)
   * **Exclude Maven dependency**
   * Exclude specified dependency from any dependency that transitively includes it.
+* [org.openrewrite.maven.ExtractVersionsAsProperties](/recipes/maven/extractversionsasproperties.md)
+  * **Extract Maven dependency versions as properties**
+  * Extracts inlined dependency versions into the `&lt;properties&gt;` section and replaces them with `$\{property\}` references.
 * [org.openrewrite.maven.IncrementProjectVersion](/recipes/maven/incrementprojectversion.md)
   * **Increment Maven project version**
   * Increase Maven project version by incrementing either the major, minor, or patch version as defined by [semver](https://semver.org/). Other versioning schemes are not supported.
@@ -1041,6 +1057,9 @@ _90 recipes_
 * [org.openrewrite.maven.OrderPomElements](/recipes/maven/orderpomelements.md)
   * **Order POM elements**
   * Order POM elements according to the [recommended](https://maven.apache.org/developers/conventions/code.html#pom-code-convention) order.
+* [org.openrewrite.maven.RemoveBomManagedDirectDependencies](/recipes/maven/removebommanageddirectdependencies.md)
+  * **Remove direct dependencies that are managed by a BOM with incompatible versions**
+  * Removes directly declared dependencies when they have a version that is incompatible with the version managed by an imported BOM. This is useful during framework upgrades (e.g., Spring Boot) where transitive dependencies receive major version bumps and explicitly declared older versions should be removed to use the BOM-managed versions instead. A dependency is only removed when it would still be reachable transitively through another direct dependency, so the BOM-managed version takes its place rather than the dependency disappearing from the classpath.
 * [org.openrewrite.maven.RemoveDependency](/recipes/maven/removedependency.md)
   * **Remove Maven dependency**
   * Removes a single dependency from the &lt;dependencies&gt; section of the pom.xml. Does not remove usage of the dependency classes, nor guard against the resulting compilation errors.

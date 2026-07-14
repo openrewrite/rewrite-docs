@@ -15,9 +15,9 @@ _Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
-* [assertj](/reference/recipes-by-tag#assertj)
 * [testng](/reference/recipes-by-tag#testng)
+* [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -48,7 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * version: `3.x`
   * onlyIfUsing: `org.testng.*`
   * acceptTransitive: `true`
-* [Refaster rules that replace TestNG assertions with equivalent AssertJ assertions](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes)
+* [Refaster rules that replace TestNG APIs with AssertJ equivalents](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes)
 * [TestNG `assertEquals` to AssertJ](../../../java/testing/testng/testngassertequalstoassertthat)
 * [TestNG `assertNotEquals` to AssertJ](../../../java/testing/testng/testngassertnotequalstoassertthat)
 * [TestNG `assertEqualsNoOrder` to AssertJ](../../../java/testing/testng/testngassertequalsnoordertoassertthat)
@@ -72,9 +72,9 @@ displayName: Migrate TestNG assertions to AssertJ
 description: |
   Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions`.
 tags:
-  - testing
-  - assertj
   - testng
+  - assertj
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

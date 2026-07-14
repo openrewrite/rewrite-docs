@@ -33,9 +33,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$abstractbooleanassertisequaltorecipe)
 * [Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$abstractbooleanassertisnotequaltorecipe)
 * [Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsTrue`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$abstractbooleanassertistruerecipe)
-* [Refaster template `AssertJBooleanRules.AssertThatBooleanIsTrue`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$assertthatbooleanistruerecipe)
+* [Refaster template `AssertJBooleanRules.AssertThatIsTrue`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$assertthatistruerecipe)
 * [Refaster template `AssertJBooleanRules.AbstractBooleanAssertIsFalse`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$abstractbooleanassertisfalserecipe)
-* [Refaster template `AssertJBooleanRules.AssertThatBooleanIsFalse`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$assertthatbooleanisfalserecipe)
+* [Refaster template `AssertJBooleanRules.AssertThatIsFalse`](../../../picnic/errorprone/refasterrules/assertjbooleanrulesrecipes$assertthatisfalserecipe)
 
 </TabItem>
 
@@ -52,9 +52,9 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsNotEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsTrueRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AssertThatBooleanIsTrueRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AssertThatIsTrueRecipe
   - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsFalseRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AssertThatBooleanIsFalseRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AssertThatIsFalseRecipe
 
 ```
 </TabItem>

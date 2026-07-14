@@ -36,6 +36,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
 * [Migrate JCL to Log4j 2.x API](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
+* [Migrate `RestTemplate` to `RestClient`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migrateresttemplatetorestclient)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](/recipes/apache/httpclient5/statusline.md)
 * [Use `Map#containsKey`](/recipes/staticanalysis/usemapcontainskey.md)
 

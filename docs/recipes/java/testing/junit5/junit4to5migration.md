@@ -429,19 +429,25 @@ public class MockitoTests {
 ```java
 package org.openrewrite.java.testing.junit5;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoAnnotations;
 
 import java.util.List;
 
 import static org.mockito.Mockito.verify;
 
-@ExtendWith(MockitoExtension.class)
 public class MockitoTests {
+    private AutoCloseable mocks;
     @Mock
     List<String> mockedList;
+
+    @BeforeEach
+    public void initMocks() {
+        mocks = MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     public void usingAnnotationBasedMock() {
@@ -452,6 +458,11 @@ public class MockitoTests {
         verify(mockedList).add("one");
         verify(mockedList).clear();
     }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        mocks.close();
+    }
 }
 ```
 
@@ -459,34 +470,41 @@ public class MockitoTests {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,2 +3,2 @@
+@@ -3,2 +3,3 @@
 package org.openrewrite.java.testing.junit5;
 
 -import org.junit.Before;
 -import org.junit.Test;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
-+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-@@ -6,1 +6,1 @@
-import org.junit.Test;
-import org.mockito.Mock;
--import org.mockito.MockitoAnnotations;
-+import org.mockito.junit.jupiter.MockitoExtension;
+@@ -13,0 +14,1 @@
 
-@@ -12,0 +12,1 @@
-import static org.mockito.Mockito.verify;
-
-+@ExtendWith(MockitoExtension.class)
 public class MockitoTests {
-@@ -16,5 +17,0 @@
++   private AutoCloseable mocks;
+    @Mock
+@@ -16,1 +18,1 @@
     List<String> mockedList;
 
 -   @Before
--   public void initMocks() {
++   @BeforeEach
+    public void initMocks() {
+@@ -18,1 +20,1 @@
+    @Before
+    public void initMocks() {
 -       MockitoAnnotations.initMocks(this);
--   }
--
-    @Test
++       mocks = MockitoAnnotations.openMocks(this);
+    }
+@@ -30,0 +32,5 @@
+        verify(mockedList).clear();
+    }
++
++   @AfterEach
++   void tearDown() throws Exception {
++       mocks.close();
++   }
+}
 ```
 </TabItem>
 </Tabs>
@@ -677,19 +695,25 @@ public class MockitoTests {
 ```java
 package org.openrewrite.java.testing.junit5;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.mockito.MockitoAnnotations;
 
 import java.util.List;
 
 import static org.mockito.Mockito.verify;
 
-@ExtendWith(MockitoExtension.class)
 public class MockitoTests {
+    private AutoCloseable mocks;
     @Mock
     List<String> mockedList;
+
+    @BeforeEach
+    public void initMocks() {
+        mocks = MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     public void usingAnnotationBasedMock() {
@@ -700,6 +724,11 @@ public class MockitoTests {
         verify(mockedList).add("one");
         verify(mockedList).clear();
     }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        mocks.close();
+    }
 }
 ```
 
@@ -707,34 +736,41 @@ public class MockitoTests {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,2 +3,2 @@
+@@ -3,2 +3,3 @@
 package org.openrewrite.java.testing.junit5;
 
 -import org.junit.Before;
 -import org.junit.Test;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
-+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-@@ -6,1 +6,1 @@
-import org.junit.Test;
-import org.mockito.Mock;
--import org.mockito.MockitoAnnotations;
-+import org.mockito.junit.jupiter.MockitoExtension;
+@@ -13,0 +14,1 @@
 
-@@ -12,0 +12,1 @@
-import static org.mockito.Mockito.verify;
-
-+@ExtendWith(MockitoExtension.class)
 public class MockitoTests {
-@@ -16,5 +17,0 @@
++   private AutoCloseable mocks;
+    @Mock
+@@ -16,1 +18,1 @@
     List<String> mockedList;
 
 -   @Before
--   public void initMocks() {
++   @BeforeEach
+    public void initMocks() {
+@@ -18,1 +20,1 @@
+    @Before
+    public void initMocks() {
 -       MockitoAnnotations.initMocks(this);
--   }
--
-    @Test
++       mocks = MockitoAnnotations.openMocks(this);
+    }
+@@ -30,0 +32,5 @@
+        verify(mockedList).clear();
+    }
++
++   @AfterEach
++   void tearDown() throws Exception {
++       mocks.close();
++   }
+}
 ```
 </TabItem>
 </Tabs>

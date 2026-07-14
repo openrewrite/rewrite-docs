@@ -11,7 +11,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe**
 
-_Additionally, for large bounds, the unnecessary floating point arithmetic prevents some  `long` values from being generated._
+```
+<strong>Warning:</strong> for large bounds, the before-template's floating point arithmetic
+ prevents some `long` values from being generated.
+```
+
 
 ### Tags
 

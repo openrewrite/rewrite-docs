@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic Application Client schema files to WebLogic 1
 
 ### Tags
 
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [application-client](/reference/recipes-by-tag#application)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrate xmlns entries in `application-client.xml` files to WebLogic
 description: |
   Migrate xmlns entries in WebLogic Application Client schema files to WebLogic 14.1.2
 tags:
-  - schemas
   - weblogic
   - application-client
+  - schemas
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/application-client.xml

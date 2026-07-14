@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ClassRulesRecipes**
 
-_Refaster rules related to expressions dealing with classes. [Source](https://error-prone.picnic.tech/refasterrules/ClassRules)._
+_Refaster rules related to expressions dealing with `Class`es. [Source](https://error-prone.picnic.tech/refasterrules/ClassRules)._
 
 ## Recipe source
 
@@ -30,9 +30,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `ClassRules.ClassIsInstance`](../../../picnic/errorprone/refasterrules/classrulesrecipes$classisinstancerecipe)
-* [Refaster template `ClassRules.ClassReferenceIsInstancePredicate`](../../../picnic/errorprone/refasterrules/classrulesrecipes$classreferenceisinstancepredicaterecipe)
-* [Refaster template `ClassRules.ClassReferenceCast`](../../../picnic/errorprone/refasterrules/classrulesrecipes$classreferencecastrecipe)
+* [Refaster template `ClassRules.ClassIsInstanceWithClassAndObject`](../../../picnic/errorprone/refasterrules/classrulesrecipes$classisinstancewithclassandobjectrecipe)
+* [Refaster template `ClassRules.ClassIsInstanceWithClass`](../../../picnic/errorprone/refasterrules/classrulesrecipes$classisinstancewithclassrecipe)
+* [Refaster template `ClassRules.ClassCast`](../../../picnic/errorprone/refasterrules/classrulesrecipes$classcastrecipe)
 
 </TabItem>
 
@@ -44,11 +44,11 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.ClassRulesRecipes
 displayName: `ClassRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with classes. [Source](https://error-prone.picnic.tech/refasterrules/ClassRules).
+  Refaster rules related to expressions dealing with `Class`es. [Source](https://error-prone.picnic.tech/refasterrules/ClassRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassIsInstanceRecipe
-  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceIsInstancePredicateRecipe
-  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceCastRecipe
+  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassIsInstanceWithClassAndObjectRecipe
+  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassIsInstanceWithClassRecipe
+  - tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassCastRecipe
 
 ```
 </TabItem>

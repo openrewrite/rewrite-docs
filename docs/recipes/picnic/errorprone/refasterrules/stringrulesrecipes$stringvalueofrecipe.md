@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfRecipe**
 
-_Prefer direct invocation of `String#valueOf(Object)` over the indirection introduced by `Objects#toString(Object)`._
+_Prefer `String#valueOf(Object)` over more contrived alternatives._
 
 ## Recipe source
 

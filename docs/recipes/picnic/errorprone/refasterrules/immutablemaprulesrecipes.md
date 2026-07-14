@@ -31,17 +31,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ImmutableMapRules.ImmutableMapBuilder`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapbuilderrecipe)
-* [Refaster template `ImmutableMapRules.ImmutableMapBuilderBuildOrThrow`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapbuilderbuildorthrowrecipe)
-* [Refaster template `ImmutableMapRules.EntryToImmutableMap`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$entrytoimmutablemaprecipe)
-* [Refaster template `ImmutableMapRules.EntryIterableToImmutableMap`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$entryiterabletoimmutablemaprecipe)
-* [Refaster template `ImmutableMapRules.ImmutableMapOf`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapofrecipe)
-* [Refaster template `ImmutableMapRules.ImmutableMapOf1`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof1recipe)
+* [Refaster template `ImmutableMapRules.BuilderBuildOrThrow`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$builderbuildorthrowrecipe)
+* [Refaster template `ImmutableMapRules.ImmutableMapOfEntryGetKeyEntryGetValue`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapofentrygetkeyentrygetvaluerecipe)
+* [Refaster template `ImmutableMapRules.ImmutableMapCopyOf`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapcopyofrecipe)
+* [Refaster template `ImmutableMapRules.ImmutableMapOf0`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof0recipe)
 * [Refaster template `ImmutableMapRules.ImmutableMapOf2`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof2recipe)
-* [Refaster template `ImmutableMapRules.ImmutableMapOf3`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof3recipe)
 * [Refaster template `ImmutableMapRules.ImmutableMapOf4`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof4recipe)
-* [Refaster template `ImmutableMapRules.ImmutableMapOf5`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof5recipe)
+* [Refaster template `ImmutableMapRules.ImmutableMapOf6`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof6recipe)
+* [Refaster template `ImmutableMapRules.ImmutableMapOf8`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof8recipe)
+* [Refaster template `ImmutableMapRules.ImmutableMapOf10`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof10recipe)
 * [Refaster template `ImmutableMapRules.ImmutableMapOfEntries`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapofentriesrecipe)
-* [Refaster template `ImmutableMapRules.ImmutableMapBuilderPut`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapbuilderputrecipe)
+* [Refaster template `ImmutableMapRules.BuilderPut`](../../../picnic/errorprone/refasterrules/immutablemaprulesrecipes$builderputrecipe)
 
 </TabItem>
 
@@ -56,17 +56,17 @@ description: |
   Refaster rules related to expressions dealing with `ImmutableMap`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableMapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderBuildOrThrowRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$EntryToImmutableMapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$EntryIterableToImmutableMapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOfRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf1Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$BuilderBuildOrThrowRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOfEntryGetKeyEntryGetValueRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf0Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf2Recipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf3Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf4Recipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf5Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf6Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf8Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf10Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOfEntriesRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapBuilderPutRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$BuilderPutRecipe
 
 ```
 </TabItem>

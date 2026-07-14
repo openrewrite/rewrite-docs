@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$FailRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class Fail<T> {
-    
-    @BeforeTemplate
-    T before() {
-        return Assertions.fail();
-    }
-    
-    @AfterTemplate
-    @DoNotCall
-    T after() {
-        return fail();
-    }
-}
-```
-.
+_Prefer `org.assertj.core.api.Assertions#fail()` over non-AssertJ alternatives._
 
 ## Recipe source
 
@@ -42,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules to replace JUnit assertions with AssertJ equivalents](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes.md)
+* [Refaster rules that replace JUnit APIs with AssertJ equivalents](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes.md)
 
 
 ## Usage

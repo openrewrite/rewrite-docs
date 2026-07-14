@@ -30,12 +30,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsCloseToWithOffset`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisclosetowithoffsetrecipe)
+* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsCloseTo`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisclosetorecipe)
 * [Refaster template `AssertJFloatRules.AbstractFloatAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisequaltorecipe)
 * [Refaster template `AssertJFloatRules.AbstractFloatAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisnotequaltorecipe)
-* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsZero`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertiszerorecipe)
-* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsNotZero`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisnotzerorecipe)
-* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsOne`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisonerecipe)
+* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsEqualToZero`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisequaltozerorecipe)
+* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsNotEqualToZero`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisnotequaltozerorecipe)
+* [Refaster template `AssertJFloatRules.AbstractFloatAssertIsEqualToOne`](../../../picnic/errorprone/refasterrules/assertjfloatrulesrecipes$abstractfloatassertisequaltoonerecipe)
 
 </TabItem>
 
@@ -49,12 +49,12 @@ displayName: `AssertJFloatRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ assertions over `float`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJFloatRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToWithOffsetRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsCloseToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsNotEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsNotZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsOneRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsNotEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJFloatRulesRecipes$AbstractFloatAssertIsEqualToOneRecipe
 
 ```
 </TabItem>

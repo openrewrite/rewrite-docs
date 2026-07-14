@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxTimeoutFluxEmptyRecipe**
 
-_Prefer `Flux#timeout(Duration, Publisher)` over more contrived or less performant alternatives._
+_Prefer `Flux#timeout(Duration, Publisher)` over more contrived or less efficient alternatives._
 
 ## Recipe source
 

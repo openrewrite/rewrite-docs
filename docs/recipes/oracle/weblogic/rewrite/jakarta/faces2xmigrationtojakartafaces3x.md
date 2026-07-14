@@ -15,10 +15,10 @@ _Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespa
 
 ### Tags
 
-* [jakartaee](/reference/recipes-by-tag#jakartaee)
 * [faces](/reference/recipes-by-tag#faces)
 * [jsf](/reference/recipes-by-tag#jsf)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [jakartaee](/reference/recipes-by-tag#jakartaee)
 
 ## Recipe source
 
@@ -65,10 +65,10 @@ displayName: JSF 2.x to Jakarta Server Faces 3.x
 description: |
   Jakarta EE 9 uses Faces 3.0 a major upgrade to Jakarta packages and XML namespaces.
 tags:
-  - jakartaee
   - faces
   - jsf
   - jakarta
+  - jakartaee
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JakartaFacesEcmaScript
   - org.openrewrite.java.migrate.jakarta.RemovedUIComponentConstant

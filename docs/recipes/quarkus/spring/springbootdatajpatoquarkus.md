@@ -16,9 +16,9 @@ _Migrates `spring-boot-starter-data-jpa` to `quarkus-hibernate-orm-panache`._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [jpa](/reference/recipes-by-tag#jpa)
 * [data](/reference/recipes-by-tag#data)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [jpa](/reference/recipes-by-tag#jpa)
 
 ## Recipe source
 
@@ -66,9 +66,9 @@ description: |
   Migrates `spring-boot-starter-data-jpa` to `quarkus-hibernate-orm-panache`.
 tags:
   - spring
+  - jpa
   - data
   - quarkus
-  - jpa
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

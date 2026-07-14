@@ -33,9 +33,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `Jackson3Rules.JsonNodeOptionalInt`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$jsonnodeoptionalintrecipe)
 * [Refaster template `Jackson3Rules.JsonNodeOptionalString`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$jsonnodeoptionalstringrecipe)
 * [Refaster template `Jackson3Rules.ObjectMapperValueToTree`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$objectmappervaluetotreerecipe)
-* [Refaster template `Jackson3Rules.ObjectMapperConvertValueWithClass`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$objectmapperconvertvaluewithclassrecipe)
-* [Refaster template `Jackson3Rules.ObjectMapperConvertValueWithJavaType`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$objectmapperconvertvaluewithjavatyperecipe)
-* [Refaster template `Jackson3Rules.ObjectMapperConvertValueWithTypeReference`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$objectmapperconvertvaluewithtypereferencerecipe)
+* [Refaster template `Jackson3Rules.ObjectMapperConvertValueClass`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$objectmapperconvertvalueclassrecipe)
+* [Refaster template `Jackson3Rules.ObjectMapperConvertValueJavaType`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$objectmapperconvertvaluejavatyperecipe)
+* [Refaster template `Jackson3Rules.ObjectMapperConvertValueTypeReference`](../../../picnic/errorprone/refasterrules/jackson3rulesrecipes$objectmapperconvertvaluetypereferencerecipe)
 
 </TabItem>
 
@@ -52,9 +52,9 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$JsonNodeOptionalIntRecipe
   - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$JsonNodeOptionalStringRecipe
   - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$ObjectMapperValueToTreeRecipe
-  - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$ObjectMapperConvertValueWithClassRecipe
-  - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$ObjectMapperConvertValueWithJavaTypeRecipe
-  - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$ObjectMapperConvertValueWithTypeReferenceRecipe
+  - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$ObjectMapperConvertValueClassRecipe
+  - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$ObjectMapperConvertValueJavaTypeRecipe
+  - tech.picnic.errorprone.refasterrules.Jackson3RulesRecipes$ObjectMapperConvertValueTypeReferenceRecipe
 
 ```
 </TabItem>

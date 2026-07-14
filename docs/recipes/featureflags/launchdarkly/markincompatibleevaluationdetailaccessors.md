@@ -28,6 +28,53 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.EvaluationDetail;
+
+class A {
+    void inspect(EvaluationDetail<Boolean> detail) {
+        int index = detail.getVariationIndex();
+        boolean isDefault = detail.isDefaultValue();
+    }
+}
+```
+
+###### After
+```java
+import com.launchdarkly.sdk.EvaluationDetail;
+
+class A {
+    void inspect(EvaluationDetail<Boolean> detail) {
+        int index = /* TODO OpenFeature migration: `getVariationIndex()` has no OpenFeature equivalent; `FlagEvaluationDetails` exposes `getVariant()` (a String) instead */ detail.getVariationIndex();
+        boolean isDefault = /* TODO OpenFeature migration: `isDefaultValue()` has no OpenFeature equivalent; inspect `getReason()` / `getErrorCode()` instead */ detail.isDefaultValue();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+class A {
+    void inspect(EvaluationDetail<Boolean> detail) {
+-       int index = detail.getVariationIndex();
+-       boolean isDefault = detail.isDefaultValue();
++       int index = /* TODO OpenFeature migration: `getVariationIndex()` has no OpenFeature equivalent; `FlagEvaluationDetails` exposes `getVariant()` (a String) instead */ detail.getVariationIndex();
++       boolean isDefault = /* TODO OpenFeature migration: `isDefaultValue()` has no OpenFeature equivalent; inspect `getReason()` / `getErrorCode()` instead */ detail.isDefaultValue();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

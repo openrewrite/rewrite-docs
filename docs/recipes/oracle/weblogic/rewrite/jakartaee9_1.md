@@ -15,10 +15,10 @@ _These recipes help with Migration to Jakarta EE 9.1, flagging and updating depr
 
 ### Tags
 
-* [jakartaee](/reference/recipes-by-tag#jakartaee)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [migration](/reference/recipes-by-tag#migration)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [jakartaee](/reference/recipes-by-tag#jakartaee)
 
 ## Recipe source
 
@@ -66,10 +66,10 @@ displayName: Migrate to Jakarta EE 9.1
 description: |
   These recipes help with Migration to Jakarta EE 9.1, flagging and updating deprecated methods.
 tags:
-  - jakartaee
   - weblogic
   - migration
   - jakarta
+  - jakartaee
 recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
   - com.oracle.weblogic.rewrite.jakarta.Faces2xMigrationToJakartaFaces3x

@@ -15,8 +15,8 @@ _Migrate applications to the latest Apache HttpClient 5.x release. This recipe w
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [httpclient](/reference/recipes-by-tag#httpclient)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -74,8 +74,8 @@ displayName: Migrate to ApacheHttpClient 5.x
 description: |
   Migrate applications to the latest Apache HttpClient 5.x release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs, and migrate configuration settings that have changes between versions.
 tags:
-  - apache
   - httpclient
+  - apache
 recipeList:
   - org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies

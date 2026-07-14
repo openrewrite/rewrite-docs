@@ -1,17 +1,22 @@
 ---
-title: "Refaster template `BigDecimalRules.BigDecimalValueOf`"
-sidebar_label: "Refaster template `BigDecimalRules.BigDecimalValueOf`"
+title: "Prefer `BigDecimal#valueOf(double)` over the associated constructor"
+sidebar_label: "Prefer `BigDecimal#valueOf(double)` over the associated constructor"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `BigDecimalRules.BigDecimalValueOf`
+# Prefer `BigDecimal#valueOf(double)` over the associated constructor
 
 **tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe**
 
-_Prefer `BigDecimal#valueOf(double)` over the associated constructor._
+```
+<strong>Warning:</strong> this rewrite changes the `BigDecimal` value created, as
+ `BigDecimal#valueOf(double)` uses the double's canonical string representation, while
+ `BigDecimal#BigDecimal(double)` uses the exact binary floating-point value.
+```
+
 
 ### Tags
 
@@ -37,7 +42,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe"
-  displayName="Refaster template `BigDecimalRules.BigDecimalValueOf`"
+  displayName="Prefer `BigDecimal#valueOf(double)` over the associated constructor"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

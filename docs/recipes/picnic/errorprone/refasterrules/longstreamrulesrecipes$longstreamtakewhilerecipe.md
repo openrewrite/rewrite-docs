@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamTakeWhileRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class LongStreamTakeWhile {
-    
-    @BeforeTemplate
-    LongStream before(LongStream stream, LongPredicate predicate) {
-        return stream.takeWhile(predicate).filter(predicate);
-    }
-    
-    @AfterTemplate
-    LongStream after(LongStream stream, LongPredicate predicate) {
-        return stream.takeWhile(predicate);
-    }
-}
-```
-.
+_Prefer `LongStream#takeWhile(LongPredicate)` over more verbose alternatives._
 
 ## Recipe source
 

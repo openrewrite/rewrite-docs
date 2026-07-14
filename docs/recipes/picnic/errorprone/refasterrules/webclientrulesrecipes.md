@@ -30,7 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `WebClientRules.BodyValue`](../../../picnic/errorprone/refasterrules/webclientrulesrecipes$bodyvaluerecipe)
+* [Refaster template `WebClientRules.RequestBodySpecBodyValue`](../../../picnic/errorprone/refasterrules/webclientrulesrecipes$requestbodyspecbodyvaluerecipe)
 * [Refaster template `WebClientRules.WebClientGet`](../../../picnic/errorprone/refasterrules/webclientrulesrecipes$webclientgetrecipe)
 * [Refaster template `WebClientRules.WebClientHead`](../../../picnic/errorprone/refasterrules/webclientrulesrecipes$webclientheadrecipe)
 * [Refaster template `WebClientRules.WebClientOptions`](../../../picnic/errorprone/refasterrules/webclientrulesrecipes$webclientoptionsrecipe)
@@ -51,7 +51,7 @@ displayName: `WebClientRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `org.springframework.web.reactive.function.client.WebClient` and related types. [Source](https://error-prone.picnic.tech/refasterrules/WebClientRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$BodyValueRecipe
+  - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$RequestBodySpecBodyValueRecipe
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientGetRecipe
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientHeadRecipe
   - tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientOptionsRecipe

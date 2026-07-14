@@ -15,9 +15,9 @@ _Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [L
 
 ### Tags
 
+* [logging](/reference/recipes-by-tag#logging)
 * [security](/reference/recipes-by-tag#security)
 * [log4shell](/reference/recipes-by-tag#log4shell)
-* [logging](/reference/recipes-by-tag#logging)
 * [CVE-2021-44228](/reference/recipes-by-tag#cve)
 * [log4j](/reference/recipes-by-tag#log4j)
 
@@ -58,9 +58,9 @@ displayName: Upgrade Log4j 2.x dependency version
 description: |
   Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a).
 tags:
+  - logging
   - security
   - log4shell
-  - logging
   - CVE-2021-44228
   - log4j
 preconditions:

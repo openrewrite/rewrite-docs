@@ -15,9 +15,9 @@ _JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and rem
 
 ### Tags
 
+* [hamcrest](/reference/recipes-by-tag#hamcrest)
 * [junit](/reference/recipes-by-tag#junit)
 * [testing](/reference/recipes-by-tag#testing)
-* [hamcrest](/reference/recipes-by-tag#hamcrest)
 
 ## Recipe source
 
@@ -60,9 +60,9 @@ displayName: Use `MatcherAssert#assertThat(..)`
 description: |
   JUnit 4's `Assert#assertThat(..)` This method was deprecated in JUnit 4 and removed in JUnit Jupiter.
 tags:
+  - hamcrest
   - junit
   - testing
-  - hamcrest
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionAsListRecipe**
 
-_Prefer `ImmutableCollection#asList()` over the more verbose alternative._
+_Prefer `ImmutableCollection#asList()` over more verbose alternatives._
 
 ## Recipe source
 

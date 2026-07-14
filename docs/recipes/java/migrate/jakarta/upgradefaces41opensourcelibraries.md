@@ -15,11 +15,11 @@ _Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions._
 
 ### Tags
 
-* [myfaces](/reference/recipes-by-tag#myfaces)
 * [faces](/reference/recipes-by-tag#faces)
 * [jsf](/reference/recipes-by-tag#jsf)
 * [omnifaces](/reference/recipes-by-tag#omnifaces)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [myfaces](/reference/recipes-by-tag#myfaces)
 
 ## Recipe source
 
@@ -73,11 +73,11 @@ displayName: Upgrade Faces open source libraries
 description: |
   Upgrade OmniFaces and MyFaces/Mojarra libraries to Jakarta EE11 versions.
 tags:
-  - myfaces
   - faces
   - jsf
   - omnifaces
   - jakarta
+  - myfaces
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

@@ -38,7 +38,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `PrimitiveRules.MathClampLong`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$mathclamplongrecipe)
 * [Refaster template `PrimitiveRules.MathClampFloat`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampfloatrecipe)
 * [Refaster template `PrimitiveRules.MathClampDouble`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampdoublerecipe)
-* [Refaster template `PrimitiveRules.LongToIntExact`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longtointexactrecipe)
+* [Refaster template `PrimitiveRules.MathToIntExact`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$mathtointexactrecipe)
 * [Refaster template `PrimitiveRules.CharacterBytes`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$characterbytesrecipe)
 * [Refaster template `PrimitiveRules.ShortBytes`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$shortbytesrecipe)
 * [Refaster template `PrimitiveRules.IntegerBytes`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$integerbytesrecipe)
@@ -57,15 +57,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `PrimitiveRules.LongRemainderUnsigned`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longremainderunsignedrecipe)
 * [Refaster template `PrimitiveRules.IntegerParseUnsignedInt`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintrecipe)
 * [Refaster template `PrimitiveRules.LongParseUnsignedLong`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongrecipe)
-* [Refaster template `PrimitiveRules.IntegerParseUnsignedIntWithRadix`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintwithradixrecipe)
-* [Refaster template `PrimitiveRules.LongParseUnsignedLongWithRadix`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongwithradixrecipe)
+* [Refaster template `PrimitiveRules.IntegerParseUnsignedIntWithInt`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$integerparseunsignedintwithintrecipe)
+* [Refaster template `PrimitiveRules.LongParseUnsignedLongWithInt`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longparseunsignedlongwithintrecipe)
 * [Refaster template `PrimitiveRules.IntegerToUnsignedString`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringrecipe)
 * [Refaster template `PrimitiveRules.LongToUnsignedString`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringrecipe)
-* [Refaster template `PrimitiveRules.IntegerToUnsignedStringWithRadix`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringwithradixrecipe)
-* [Refaster template `PrimitiveRules.LongToUnsignedStringWithRadix`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringwithradixrecipe)
-* [Refaster template `PrimitiveRules.ArraysCompareUnsignedBytes`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedbytesrecipe)
-* [Refaster template `PrimitiveRules.ArraysCompareUnsignedInts`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedintsrecipe)
-* [Refaster template `PrimitiveRules.ArraysCompareUnsignedLongs`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedlongsrecipe)
+* [Refaster template `PrimitiveRules.IntegerToUnsignedStringWithInt`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$integertounsignedstringwithintrecipe)
+* [Refaster template `PrimitiveRules.LongToUnsignedStringWithInt`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$longtounsignedstringwithintrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedByte`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedbyterecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedInt`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedintrecipe)
+* [Refaster template `PrimitiveRules.ArraysCompareUnsignedLong`](../../../picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedlongrecipe)
 
 </TabItem>
 
@@ -87,7 +87,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampLongRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampDoubleRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToIntExactRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathToIntExactRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$CharacterBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ShortBytesRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerBytesRecipe
@@ -106,15 +106,15 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongRemainderUnsignedRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerParseUnsignedIntRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongParseUnsignedLongRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerParseUnsignedIntWithRadixRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongParseUnsignedLongWithRadixRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerParseUnsignedIntWithIntRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongParseUnsignedLongWithIntRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringRecipe
   - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringWithRadixRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringWithRadixRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedBytesRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedIntsRecipe
-  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedLongsRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerToUnsignedStringWithIntRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongToUnsignedStringWithIntRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedByteRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedIntRecipe
+  - tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedLongRecipe
 
 ```
 </TabItem>

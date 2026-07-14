@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$RequestHeadersUriSpecUriRecipe**
 
-_Don't unnecessarily use `RequestHeadersUriSpec#uri(Function)`._
+_Prefer `RequestHeadersUriSpec#uri(String, Object...)` over more contrived alternatives._
 
 ## Recipe source
 

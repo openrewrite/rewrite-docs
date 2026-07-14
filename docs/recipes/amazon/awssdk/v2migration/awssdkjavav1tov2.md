@@ -15,8 +15,8 @@ _This recipe will apply changes required for migrating from the AWS SDK for Java
 
 ### Tags
 
-* [sdk](/reference/recipes-by-tag#sdk)
 * [aws](/reference/recipes-by-tag#aws)
+* [sdk](/reference/recipes-by-tag#sdk)
 
 ## Recipe source
 
@@ -84,8 +84,8 @@ displayName: Migrate from the AWS SDK for Java v1 to the AWS SDK for Java v2
 description: |
   This recipe will apply changes required for migrating from the AWS SDK for Java v1 to the AWS SDK for Java v2.
 tags:
-  - sdk
   - aws
+  - sdk
 recipeList:
   - software.amazon.awssdk.v2migration.AddTransferManagerDependency
   - software.amazon.awssdk.v2migration.AddS3EventNotificationDependency

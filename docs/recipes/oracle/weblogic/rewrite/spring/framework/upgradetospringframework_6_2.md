@@ -15,8 +15,8 @@ _Migrate applications to the Spring Framework 6.2 release and compatibility with
 
 ### Tags
 
-* [weblogic](/reference/recipes-by-tag#weblogic)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -58,8 +58,8 @@ displayName: Migrate to Spring Framework 6.2 for WebLogic 15.1.1
 description: |
   Migrate applications to the Spring Framework 6.2 release and compatibility with WebLogic 15.1.1.
 tags:
-  - weblogic
   - springframework
+  - weblogic
 recipeList:
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_6_1
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

@@ -124,6 +124,75 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Jakarta EE 9](/recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)
 
+## Examples
+##### Example 1
+`JavaxEjbToJakartaEjbTest#upgradeMavenEjbPlugin`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <groupId>com.example</groupId>
+  <artifactId>my-ejb</artifactId>
+  <version>1.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>javax.ejb</groupId>
+      <artifactId>javax.ejb-api</artifactId>
+      <version>3.2.2</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <ejbVersion>3.0</ejbVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+---
+
+##### Example 2
+`JavaxEjbToJakartaEjbTest#upgradeMavenEjbPlugin`
+
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+  <groupId>com.example</groupId>
+  <artifactId>my-ejb</artifactId>
+  <version>1.0</version>
+  <dependencies>
+    <dependency>
+      <groupId>javax.ejb</groupId>
+      <artifactId>javax.ejb-api</artifactId>
+      <version>3.2.2</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <ejbVersion>3.0</ejbVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
 
 ## Usage
 
