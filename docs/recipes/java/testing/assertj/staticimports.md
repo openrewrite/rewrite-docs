@@ -15,8 +15,8 @@ _Consistently use a static import rather than inlining the `Assertions` class na
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -59,8 +59,8 @@ displayName: Statically import AssertJ's `assertThat`
 description: |
   Consistently use a static import rather than inlining the `Assertions` class name in tests.
 tags:
-  - testing
   - assertj
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

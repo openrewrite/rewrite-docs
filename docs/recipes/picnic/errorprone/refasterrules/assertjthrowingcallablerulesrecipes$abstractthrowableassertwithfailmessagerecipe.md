@@ -11,24 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AbstractThrowableAssertWithFailMessageRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractThrowableAssertWithFailMessage {
-    
-    @BeforeTemplate
-    AbstractThrowableAssert<?, ? extends Throwable> before(AbstractThrowableAssert<?, ? extends Throwable> abstractThrowableAssert, String message, @Repeated
-    Object args) {
-        return abstractThrowableAssert.withFailMessage(message.formatted(args));
-    }
-    
-    @AfterTemplate
-    AbstractThrowableAssert<?, ? extends Throwable> after(AbstractThrowableAssert<?, ? extends Throwable> abstractThrowableAssert, String message, @Repeated
-    Object args) {
-        return abstractThrowableAssert.withFailMessage(message, args);
-    }
-}
-```
-.
+_Prefer `AbstractThrowableAssert#withFailMessage(String, Object...)` over less efficient alternatives._
 
 ## Recipe source
 

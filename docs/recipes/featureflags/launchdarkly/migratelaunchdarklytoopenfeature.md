@@ -263,6 +263,149 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`MigrateLaunchDarklyToOpenFeatureTest#migrateBooleanEvaluationWithContext`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+
+class FeatureFlags {
+    boolean newCheckout(LDClient client, String userKey) {
+        LDContext context = LDContext.builder(userKey)
+                .name("Sandy")
+                .set("email", "sandy@example.com")
+                .build();
+        return client.boolVariation("new-checkout", context, false);
+    }
+}
+```
+
+###### After
+```java
+import dev.openfeature.sdk.Client;
+import dev.openfeature.sdk.EvaluationContext;
+import dev.openfeature.sdk.MutableContext;
+
+class FeatureFlags {
+    boolean newCheckout(Client client, String userKey) {
+        EvaluationContext context = new MutableContext(userKey)
+                .add("name", "Sandy")
+                .add("email", "sandy@example.com");
+        return client.getBooleanValue("new-checkout", false, context);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import com.launchdarkly.sdk.LDContext;
+-import com.launchdarkly.sdk.server.LDClient;
++import dev.openfeature.sdk.Client;
++import dev.openfeature.sdk.EvaluationContext;
++import dev.openfeature.sdk.MutableContext;
+
+@@ -5,6 +6,5 @@
+
+class FeatureFlags {
+-   boolean newCheckout(LDClient client, String userKey) {
+-       LDContext context = LDContext.builder(userKey)
+-               .name("Sandy")
+-               .set("email", "sandy@example.com")
+-               .build();
+-       return client.boolVariation("new-checkout", context, false);
++   boolean newCheckout(Client client, String userKey) {
++       EvaluationContext context = new MutableContext(userKey)
++               .add("name", "Sandy")
++               .add("email", "sandy@example.com");
++       return client.getBooleanValue("new-checkout", false, context);
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateLaunchDarklyToOpenFeatureTest#migrateBooleanEvaluationWithContext`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDContext;
+import com.launchdarkly.sdk.server.LDClient;
+
+class FeatureFlags {
+    boolean newCheckout(LDClient client, String userKey) {
+        LDContext context = LDContext.builder(userKey)
+                .name("Sandy")
+                .set("email", "sandy@example.com")
+                .build();
+        return client.boolVariation("new-checkout", context, false);
+    }
+}
+```
+
+###### After
+```java
+import dev.openfeature.sdk.Client;
+import dev.openfeature.sdk.EvaluationContext;
+import dev.openfeature.sdk.MutableContext;
+
+class FeatureFlags {
+    boolean newCheckout(Client client, String userKey) {
+        EvaluationContext context = new MutableContext(userKey)
+                .add("name", "Sandy")
+                .add("email", "sandy@example.com");
+        return client.getBooleanValue("new-checkout", false, context);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,3 @@
+-import com.launchdarkly.sdk.LDContext;
+-import com.launchdarkly.sdk.server.LDClient;
++import dev.openfeature.sdk.Client;
++import dev.openfeature.sdk.EvaluationContext;
++import dev.openfeature.sdk.MutableContext;
+
+@@ -5,6 +6,5 @@
+
+class FeatureFlags {
+-   boolean newCheckout(LDClient client, String userKey) {
+-       LDContext context = LDContext.builder(userKey)
+-               .name("Sandy")
+-               .set("email", "sandy@example.com")
+-               .build();
+-       return client.boolVariation("new-checkout", context, false);
++   boolean newCheckout(Client client, String userKey) {
++       EvaluationContext context = new MutableContext(userKey)
++               .add("name", "Sandy")
++               .add("email", "sandy@example.com");
++       return client.getBooleanValue("new-checkout", false, context);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

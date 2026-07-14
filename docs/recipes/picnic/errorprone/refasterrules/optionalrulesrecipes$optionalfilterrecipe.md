@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFilterRecipe**
 
-_Avoid unnecessary `Optional` to `Stream` conversion when filtering a value of the former type._
+_Prefer `Optional#filter(Predicate)` over more contrived alternatives._
 
 ## Recipe source
 

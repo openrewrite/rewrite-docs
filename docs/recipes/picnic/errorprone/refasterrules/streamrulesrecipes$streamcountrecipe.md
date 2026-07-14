@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamCountRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamCount<T> {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4266")
-    long before(Stream<T> stream) {
-        return stream.collect(counting());
-    }
-    
-    @AfterTemplate
-    long after(Stream<T> stream) {
-        return stream.count();
-    }
-}
-```
-.
+_Prefer `Stream#count()` over less efficient alternatives._
 
 ### Tags
 

@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [permissions](/reference/recipes-by-tag#permissions)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [permissions](/reference/recipes-by-tag#permissions)
 
 ## Recipe source
 
@@ -75,8 +75,8 @@ displayName: Migrate xmlns entries in `permissions.xml` files.
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
-  - permissions
   - jakarta
+  - permissions
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/permissions.xml

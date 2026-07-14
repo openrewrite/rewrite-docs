@@ -1,17 +1,22 @@
 ---
-title: "Refaster template `ReactorRules.MonoTimeoutDuration`"
-sidebar_label: "Refaster template `ReactorRules.MonoTimeoutDuration`"
+title: "Prefer `Mono#timeout(Duration, Mono)` over more contrived or less efficient alternatives"
+sidebar_label: "Prefer `Mono#timeout(Duration, Mono)` over more contrived or less efficient alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `ReactorRules.MonoTimeoutDuration`
+# Prefer `Mono#timeout(Duration, Mono)` over more contrived or less efficient alternatives
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationRecipe**
 
-_Prefer `Mono#timeout(Duration, Mono)` over more contrived or less performant alternatives._
+```
+<strong>Warning:</strong> this rewrite changes behavior if the source can emit or propagate
+ a `TimeoutException`: the original code suppresses any such signal, while the replacement
+ only handles the one emitted by the `timeout` operator itself.
+```
+
 
 ## Recipe source
 
@@ -33,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoTimeoutDurationRecipe"
-  displayName="Refaster template `ReactorRules.MonoTimeoutDuration`"
+  displayName="Prefer `Mono#timeout(Duration, Mono)` over more contrived or less efficient alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

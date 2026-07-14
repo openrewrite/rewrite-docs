@@ -28,6 +28,65 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock `Whitebox` with Java reflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
 
+## Example
+
+
+###### Unchanged
+```java
+class MyService {
+    private String greet(String name) { return "Hello " + name; }
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.lang.reflect.Method;
+import org.powermock.reflect.Whitebox;
+
+class MyServiceTest {
+    void test() {
+        Method m = Whitebox.getMethod(MyService.class, "greet", String.class);
+    }
+}
+```
+
+###### After
+```java
+import java.lang.reflect.Method;
+
+class MyServiceTest {
+    void test() throws Exception {
+        Method m = MyService.class.getDeclaredMethod("greet", String.class);
+        m.setAccessible(true);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import java.lang.reflect.Method;
+-import org.powermock.reflect.Whitebox;
+
+@@ -5,2 +4,3 @@
+
+class MyServiceTest {
+-   void test() {
+-       Method m = Whitebox.getMethod(MyService.class, "greet", String.class);
++   void test() throws Exception {
++       Method m = MyService.class.getDeclaredMethod("greet", String.class);
++       m.setAccessible(true);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

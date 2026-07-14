@@ -1,13 +1,13 @@
 ---
-title: "Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`"
-sidebar_label: "Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`"
+title: "Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives"
+sidebar_label: "Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`
+# Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives
 
 **tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet4Recipe**
 
@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.ImmutableEnumSetRulesRecipes$SetsImmutableEnumSet4Recipe"
-  displayName="Prefer `Sets#immutableEnumSet(Enum, Enum[])` for enum collections to take advantage of the internally used `EnumSet`"
+  displayName="Prefer `Sets#immutableEnumSet(Enum, Enum[])` over less efficient alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

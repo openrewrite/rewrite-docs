@@ -15,9 +15,9 @@ _Replace removed WebLogicLoadTimeWeaver with LoadTimeWeaver from Spring Framewor
 
 ### Tags
 
-* [LoadTimeWeaver](/reference/recipes-by-tag#loadtimeweaver)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [LoadTimeWeaver](/reference/recipes-by-tag#loadtimeweaver)
 
 ## Recipe source
 
@@ -48,9 +48,9 @@ displayName: Replace Removed WebLogicLoadTimeWeaver from Spring Framework 5.3.x 
 description: |
   Replace removed WebLogicLoadTimeWeaver with LoadTimeWeaver from Spring Framework 6.2.x.
 tags:
-  - LoadTimeWeaver
-  - weblogic
   - springframework
+  - weblogic
+  - LoadTimeWeaver
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.instrument.classloading.weblogic.WebLogicLoadTimeWeaver

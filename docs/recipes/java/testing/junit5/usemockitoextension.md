@@ -15,9 +15,9 @@ _Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) 
 
 ### Tags
 
+* [mockito](/reference/recipes-by-tag#mockito)
 * [junit](/reference/recipes-by-tag#junit)
 * [testing](/reference/recipes-by-tag#testing)
-* [mockito](/reference/recipes-by-tag#mockito)
 
 ## Recipe source
 
@@ -64,9 +64,9 @@ displayName: Use Mockito JUnit Jupiter extension
 description: |
   Migrate uses of `@RunWith(MockitoJUnitRunner.class)` (and similar annotations) to `@ExtendWith(MockitoExtension.class)`.
 tags:
+  - mockito
   - junit
   - testing
-  - mockito
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

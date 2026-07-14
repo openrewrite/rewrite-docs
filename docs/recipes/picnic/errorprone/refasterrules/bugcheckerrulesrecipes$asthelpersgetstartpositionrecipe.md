@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$ASTHelpersGetStartPositionRecipe**
 
-_Prefer `ASTHelpers#getStartPosition(Tree)` over alternatives that require casting._
+_Prefer `ASTHelpers#getStartPosition(Tree)` over more fragile alternatives._
 
 ## Recipe source
 

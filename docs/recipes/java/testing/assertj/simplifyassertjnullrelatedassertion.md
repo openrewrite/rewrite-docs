@@ -32,6 +32,53 @@ This recipe is used as part of the following composite recipes:
 
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class A {
+    void foo(Object a) {
+        assertThat(null == a).isTrue();
+        assertThat(a == null).isTrue();
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class A {
+    void foo(Object a) {
+        assertThat(a).isNull();
+        assertThat(a).isNull();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,2 @@
+class A {
+    void foo(Object a) {
+-       assertThat(null == a).isTrue();
+-       assertThat(a == null).isTrue();
++       assertThat(a).isNull();
++       assertThat(a).isNull();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

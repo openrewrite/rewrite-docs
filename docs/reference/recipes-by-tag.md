@@ -2818,7 +2818,7 @@ _1 recipe_
 
 ## jackson
 
-_33 recipes_
+_35 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -2868,6 +2868,10 @@ _33 recipes_
   * **Remove redundant `@JsonProperty` argument**
   * Remove `@JsonProperty` annotation or value attribute when the value matches the argument name.
   * Tags: jackson-2
+* [org.openrewrite.java.jackson.ReplaceIOExceptionThrowInJacksonOverrides](/recipes/java/jackson/replaceioexceptionthrowinjacksonoverrides.md)
+  * **Replace `throw new IOException(..)` inside Jackson serializer / deserializer overrides**
+  * In Jackson 3, `serialize()` and `deserialize()` methods no longer declare `throws IOException`. This recipe removes the `throws IOException` declaration from overrides of `JsonSerializer.serialize`, `JsonSerializer.serializeWithType`, `JsonDeserializer.deserialize`, and `JsonDeserializer.deserializeWithType`, and rewrites `throw new IOException(msg[, cause])` inside those overrides to `JsonMappingException.from(&lt;generator|parser&gt;, msg[, cause])`. A companion type change later migrates `JsonMappingException` to `tools.jackson.databind.DatabindException`.
+  * Tags: jackson-3
 * [org.openrewrite.java.jackson.ReplaceJsonIgnoreWithJsonSetter](/recipes/java/jackson/replacejsonignorewithjsonsetter.md)
   * **Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields**
   * In Jackson 3, `@JsonIgnore` on fields initialized with empty collections causes the field value to become `null` instead of maintaining the empty collection. This recipe replaces `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on `Map` and `Collection` fields that have an empty collection initializer.
@@ -2951,6 +2955,10 @@ _33 recipes_
 * [org.openrewrite.java.jackson.UseModernDateTimeSerialization](/recipes/java/jackson/usemoderndatetimeserialization.md)
   * **Use modern date/time serialization defaults**
   * Remove redundant `@JsonFormat` annotations on `java.time` types that specify ISO-8601 patterns, as Jackson 3 uses ISO-8601 as the default format (with `WRITE_DATES_AS_TIMESTAMPS` now disabled by default).
+  * Tags: jackson-3
+* [org.openrewrite.java.jackson.UseReadTreeAsValueInDeserializer](/recipes/java/jackson/usereadtreeasvalueindeserializer.md)
+  * **Use `DeserializationContext.readTreeAsValue()` instead of `ObjectCodec.treeToValue()`**
+  * In Jackson 3, `ObjectCodec` is replaced by `ObjectReadContext`, which does not expose `treeToValue`. The equivalent method is `readTreeAsValue(JsonNode, Class)` on `DeserializationContext`. This recipe rewrites `parser.getCodec().treeToValue(node, Foo.class)` to `ctxt.readTreeAsValue(node, Foo.class)` inside methods that have a `DeserializationContext` parameter (typically `JsonDeserializer.deserialize`).
   * Tags: jackson-3
 
 ## jacoco
@@ -4318,7 +4326,7 @@ _4 recipes_
 
 ## log4j
 
-_10 recipes_
+_13 recipes_
 
 * [org.openrewrite.java.logging.log4j.CommonsLoggingToLog4j](/recipes/java/logging/log4j/commonsloggingtolog4j.md)
   * **Migrate JCL to Log4j 2.x API**
@@ -4341,15 +4349,24 @@ _10 recipes_
 * [org.openrewrite.java.logging.logback.Log4jToLogback](/recipes/java/logging/logback/log4jtologback.md)
   * **Migrate Log4j 2.x to Logback**
   * Migrates usage of Apache Log4j 2.x to using `logback` as an SLF4J implementation directly. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.Log4j1MdcGetContextToCopyOfContextMap](/recipes/java/logging/slf4j/log4j1mdcgetcontexttocopyofcontextmap.md)
+  * **Convert Log4j 1.x `MDC.getContext()` to `getCopyOfContextMap()`**
+  * Renames Log4j 1.x `org.apache.log4j.MDC.getContext()` (returns `Hashtable`) to `getCopyOfContextMap()` (returns `Map`) at every call site, and retypes any `Hashtable` declaration — local variable, field, method parameter, or method return type — that receives the result, whether initialized directly from the call, directly assigned it in a later statement, or returning it, to `Map&lt;String, String&gt;`, since `Map` is not assignable to `Hashtable`. Retyping a parameter or return type changes the method's signature; overriding methods are left unchanged to avoid breaking the override, so they need a manual fix. Does not change the `org.apache.log4j.MDC` type; compose with a `ChangeType` to complete the migration.
 * [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
   * **Migrate Log4j 1.x to SLF4J 1.x**
   * Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4jMdc](/recipes/java/logging/slf4j/log4j1toslf4jmdc.md)
+  * **Migrate Log4j 1.x MDC to SLF4J MDC**
+  * Migrates `org.apache.log4j.MDC` to `org.slf4j.MDC`, wrapping non-`String` `put` values in `String.valueOf(...)` and converting `getContext()` to `getCopyOfContextMap()`.
 * [org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1](/recipes/java/logging/slf4j/log4j2toslf4j1.md)
   * **Migrate Log4j 2.x to SLF4J 1.x**
   * Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
 * [org.openrewrite.java.logging.slf4j.Log4jToSlf4j](/recipes/java/logging/slf4j/log4jtoslf4j.md)
   * **Migrate Log4j to SLF4J**
   * Migrates usage of Apache Log4j to using SLF4J directly. Use of the traditional Log4j to SLF4J bridge can result in loss of performance, as the Log4j messages must be formatted before they can be passed to SLF4J. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.WrapLog4j1MdcPutValueInStringValueOf](/recipes/java/logging/slf4j/wraplog4j1mdcputvalueinstringvalueof.md)
+  * **Wrap Log4j 1.x `MDC.put` values in `String.valueOf(...)`**
+  * SLF4J `MDC.put(String, String)` requires a `String` value, but Log4j 1.x `MDC.put(String, Object)` accepts any object. Wrap non-`String` values in `String.valueOf(...)`, skipping values already typed `String`, `null` literals, and existing `String.valueOf(...)` calls. Does not change the `org.apache.log4j.MDC` type; compose with a `ChangeType` to complete the migration to `org.slf4j.MDC`.
 
 ## log4shell
 
@@ -4369,7 +4386,7 @@ _1 recipe_
 
 ## logging
 
-_24 recipes_
+_27 recipes_
 
 * [org.openrewrite.java.logging.jboss.JBossLoggingBestPractices](/recipes/java/logging/jboss/jbossloggingbestpractices.md)
   * **JBoss Logging Best Practices**
@@ -4407,9 +4424,15 @@ _24 recipes_
 * [org.openrewrite.java.logging.slf4j.JulToSlf4j](/recipes/java/logging/slf4j/jultoslf4j.md)
   * **Migrate JUL to SLF4J**
   * Migrates usage of Java Util Logging (JUL) to using SLF4J directly.
+* [org.openrewrite.java.logging.slf4j.Log4j1MdcGetContextToCopyOfContextMap](/recipes/java/logging/slf4j/log4j1mdcgetcontexttocopyofcontextmap.md)
+  * **Convert Log4j 1.x `MDC.getContext()` to `getCopyOfContextMap()`**
+  * Renames Log4j 1.x `org.apache.log4j.MDC.getContext()` (returns `Hashtable`) to `getCopyOfContextMap()` (returns `Map`) at every call site, and retypes any `Hashtable` declaration — local variable, field, method parameter, or method return type — that receives the result, whether initialized directly from the call, directly assigned it in a later statement, or returning it, to `Map&lt;String, String&gt;`, since `Map` is not assignable to `Hashtable`. Retyping a parameter or return type changes the method's signature; overriding methods are left unchanged to avoid breaking the override, so they need a manual fix. Does not change the `org.apache.log4j.MDC` type; compose with a `ChangeType` to complete the migration.
 * [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
   * **Migrate Log4j 1.x to SLF4J 1.x**
   * Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4jMdc](/recipes/java/logging/slf4j/log4j1toslf4jmdc.md)
+  * **Migrate Log4j 1.x MDC to SLF4J MDC**
+  * Migrates `org.apache.log4j.MDC` to `org.slf4j.MDC`, wrapping non-`String` `put` values in `String.valueOf(...)` and converting `getContext()` to `getCopyOfContextMap()`.
 * [org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1](/recipes/java/logging/slf4j/log4j2toslf4j1.md)
   * **Migrate Log4j 2.x to SLF4J 1.x**
   * Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
@@ -4437,6 +4460,9 @@ _24 recipes_
 * [org.openrewrite.java.logging.slf4j.StringFormatToParameterizedLogging](/recipes/java/logging/slf4j/stringformattoparameterizedlogging.md)
   * **`String.format()` in logging statements should use SLF4J parameterized logging**
   * Replace `String.format()` calls in SLF4J logging statements with parameterized placeholders for improved performance.
+* [org.openrewrite.java.logging.slf4j.WrapLog4j1MdcPutValueInStringValueOf](/recipes/java/logging/slf4j/wraplog4j1mdcputvalueinstringvalueof.md)
+  * **Wrap Log4j 1.x `MDC.put` values in `String.valueOf(...)`**
+  * SLF4J `MDC.put(String, String)` requires a `String` value, but Log4j 1.x `MDC.put(String, Object)` accepts any object. Wrap non-`String` values in `String.valueOf(...)`, skipping values already typed `String`, `null` literals, and existing `String.valueOf(...)` calls. Does not change the `org.apache.log4j.MDC` type; compose with a `ChangeType` to complete the migration to `org.slf4j.MDC`.
 * [org.openrewrite.java.migrate.logging.JavaLoggingAPIs](/recipes/java/migrate/logging/javaloggingapis.md)
   * **Use modernized `java.util.logging` APIs**
   * Certain Java logging APIs have become deprecated and their usages changed, necessitating usage changes.
@@ -5921,7 +5947,7 @@ _1 recipe_
 
 ## RSPEC
 
-_225 recipes_
+_222 recipes_
 
 * [org.openrewrite.cobol.cleanup.RemoveWithDebuggingMode](/recipes/cobol/cleanup/removewithdebuggingmode.md)
   * **Remove with debugging mode**
@@ -6555,221 +6581,209 @@ _225 recipes_
   * **Write octal values as decimal**
   * Developers may not recognize octal values as such, mistaking them instead for decimal values. Because a leading zero silently switches the literal to base-8, what looks like `010` actually represents `8`, which is a common source of subtle numeric bugs.
   * Tags: RSPEC-S1314
-* [tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$LogicalImplicationRecipe](/recipes/picnic/errorprone/refasterrules/assortedrulesrecipes$logicalimplicationrecipe.md)
-  * **Refaster template `AssortedRules.LogicalImplication`**
-  * Don't unnecessarily repeat boolean expressions.
+* [tech.picnic.errorprone.refasterrules.AssortedRulesRecipes$OrRecipe](/recipes/picnic/errorprone/refasterrules/assortedrulesrecipes$orrecipe.md)
+  * **Refaster template `AssortedRules.Or`**
+  * Prefer `firstTest || secondTest` over more contrived alternatives.
   * Tags: RSPEC-S2589
 * [tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe](/recipes/picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe.md)
-  * **Refaster template `BigDecimalRules.BigDecimalValueOf`**
-  * Prefer `BigDecimal#valueOf(double)` over the associated constructor.
+  * **Prefer `BigDecimal#valueOf(double)` over the associated constructor**
+  * &lt;strong&gt;Warning:&lt;/strong&gt; this rewrite changes the `BigDecimal` value created, as  `BigDecimal#valueOf(double)` uses the double's canonical string representation, while  `BigDecimal#BigDecimal(double)` uses the exact binary floating-point value.
   * Tags: RSPEC-S2111
 * [tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes$CharSequenceIsEmptyRecipe](/recipes/picnic/errorprone/refasterrules/charsequencerulesrecipes$charsequenceisemptyrecipe.md)
   * **Refaster template `CharSequenceRules.CharSequenceIsEmpty`**
-  * Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequence's length.
+  * Prefer `CharSequence#isEmpty()` over less explicit alternatives.
   * Tags: RSPEC-S7158
 * [tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIsEmptyRecipe](/recipes/picnic/errorprone/refasterrules/collectionrulesrecipes$collectionisemptyrecipe.md)
   * **Refaster template `CollectionRules.CollectionIsEmpty`**
-  * Prefer `Collection#isEmpty()` over alternatives that consult the collection's size or are otherwise more contrived.
+  * Prefer `Collection#isEmpty()` over non-JDK, less efficient, or more verbose alternatives.
   * Tags: RSPEC-S1155
 * [tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAnyMatchRecipe](/recipes/picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamanymatchrecipe.md)
   * **Refaster template `DoubleStreamRules.DoubleStreamAnyMatch`**
   * Prefer `DoubleStream#anyMatch(DoublePredicate)` over more contrived alternatives.
   * Tags: RSPEC-S4034
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe.md)
-  * **Refaster template `EqualityRules.DoubleNegation`**
-  * Avoid double negations; this is not Javascript.
+* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$BooleanIdentityRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$booleanidentityrecipe.md)
+  * **Refaster template `EqualityRules.BooleanIdentity`**
+  * Prefer using the boolean expression as-is over more contrived alternatives.
   * Tags: RSPEC-S2761
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$IndirectDoubleNegationRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe.md)
-  * **Refaster template `EqualityRules.IndirectDoubleNegation`**
-  * Don't negate an inequality test or use the ternary operator to compare two booleans; directly test for equality instead.
+* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualToWithBooleanRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$equaltowithbooleanrecipe.md)
+  * **Refaster template `EqualityRules.EqualToWithBoolean`**
+  * Prefer `==` over more contrived alternatives.
   * Tags: RSPEC-S1244, RSPEC-S1940
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe.md)
-  * **Refaster template `EqualityRules.Negation`**
-  * Don't negate an equality test or use the ternary operator to compare two booleans; directly test for inequality instead.
+* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NotEqualToRecipe](/recipes/picnic/errorprone/refasterrules/equalityrulesrecipes$notequaltorecipe.md)
+  * **Refaster template `EqualityRules.NotEqualTo`**
+  * Prefer `!=` over more contrived alternatives.
   * Tags: RSPEC-S1244, RSPEC-S1940
 * [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfiletofilerecipe.md)
-  * **Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions**
+  * **Prefer `Files#createTempFile(String, String, FileAttribute[])` over less secure alternatives**
   * Note that `File#createTempFile` treats the given prefix as a path, and ignores all but  its file name. That is, the actual prefix used is derived from all characters following the  final file separator (if any). This is not the case with `Files#createTempFile`, which  will instead throw an `IllegalArgumentException` if the prefix contains any file  separators.
   * Tags: RSPEC-S5443
 * [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderrecipe.md)
-  * **Refaster template `FileRules.FilesNewBufferedReader`**
-  * Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives.
+  * **Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives**
+  * &lt;strong&gt;Warning:&lt;/strong&gt; this rewrite changes behavior when no charset is specified: the  original code uses the default charset, while the replacement always uses UTF-8.
   * Tags: RSPEC-S1943, RSPEC-S2095
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamFileToPathRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreamfiletopathrecipe.md)
+  * **Refaster template `FileRules.FilesNewInputStreamFileToPath`**
+  * Prefer `Files#newInputStream(Path, OpenOption...)` over less idiomatic alternatives.
+  * Tags: RSPEC-S2095
 * [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamPathOfRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreampathofrecipe.md)
   * **Refaster template `FileRules.FilesNewInputStreamPathOf`**
   * Prefer `Files#newInputStream(Path, OpenOption...)` over less idiomatic alternatives.
   * Tags: RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamToPathRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreamtopathrecipe.md)
-  * **Refaster template `FileRules.FilesNewInputStreamToPath`**
-  * Prefer `Files#newInputStream(Path, OpenOption...)` over less idiomatic alternatives.
+* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamFileToPathRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreamfiletopathrecipe.md)
+  * **Refaster template `FileRules.FilesNewOutputStreamFileToPath`**
+  * Prefer `Files#newOutputStream(Path, OpenOption...)` over less idiomatic alternatives.
   * Tags: RSPEC-S2095
 * [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamPathOfRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreampathofrecipe.md)
   * **Refaster template `FileRules.FilesNewOutputStreamPathOf`**
   * Prefer `Files#newOutputStream(Path, OpenOption...)` over less idiomatic alternatives.
   * Tags: RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamToPathRecipe](/recipes/picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreamtopathrecipe.md)
-  * **Refaster template `FileRules.FilesNewOutputStreamToPath`**
-  * Prefer `Files#newOutputStream(Path, OpenOption...)` over less idiomatic alternatives.
-  * Tags: RSPEC-S2095
-* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf4Recipe](/recipes/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof4recipe.md)
-  * **Refaster template `ImmutableMapRules.ImmutableMapOf4`**
-  * Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level.
+* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf10Recipe](/recipes/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof10recipe.md)
+  * **Refaster template `ImmutableMapRules.ImmutableMapOf10`**
+  * Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object, Object, Object)` over more verbose or imprecisely typed alternatives.
   * Tags: RSPEC-S107
-* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf5Recipe](/recipes/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof5recipe.md)
-  * **Refaster template `ImmutableMapRules.ImmutableMapOf5`**
-  * Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level.
+* [tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf8Recipe](/recipes/picnic/errorprone/refasterrules/immutablemaprulesrecipes$immutablemapof8recipe.md)
+  * **Refaster template `ImmutableMapRules.ImmutableMapOf8`**
+  * Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object)` over more verbose or imprecisely typed alternatives.
   * Tags: RSPEC-S107
 * [tech.picnic.errorprone.refasterrules.IntStreamRulesRecipes$IntStreamAnyMatchRecipe](/recipes/picnic/errorprone/refasterrules/intstreamrulesrecipes$intstreamanymatchrecipe.md)
   * **Refaster template `IntStreamRules.IntStreamAnyMatch`**
   * Prefer `IntStream#anyMatch(IntPredicate)` over more contrived alternatives.
   * Tags: RSPEC-S4034
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatBooleanArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbooleanarraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatBooleanArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatBooleanArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(boolean[] actual, Supplier&lt;@Nullable String&gt; message, boolean[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean[] actual, Supplier&lt;@Nullable String&gt; message, boolean[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyBooleanSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlybooleansupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyBooleanSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatByteArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatbytearraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatByteArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatByteArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(byte[] actual, Supplier&lt;@Nullable String&gt; message, byte[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(byte[] actual, Supplier&lt;@Nullable String&gt; message, byte[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyByteSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlybytesupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyByteSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCharArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatchararraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatCharArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatCharArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(char[] actual, Supplier&lt;@Nullable String&gt; message, char[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(char[] actual, Supplier&lt;@Nullable String&gt; message, char[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyCharSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlycharsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyCharSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyExceptionRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatcodewithfailmessagesupplierdoesnotthrowanyexceptionrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatCodeWithFailMessageSupplierDoesNotThrowAnyException \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Executable throwingCallable, Supplier&lt;@Nullable String&gt; supplier) \{         assertDoesNotThrow(throwingCallable, supplier);     \}          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(ThrowingSupplier&lt;?&gt; throwingCallable, Supplier&lt;@Nullable String&gt; supplier) \{         assertDoesNotThrow(throwingCallable, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, Supplier&lt;@Nullable String&gt; supplier) \{         assertThatCode(throwingCallable).withFailMessage(supplier).doesNotThrowAnyException();     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyDoubleSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlydoublesupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyDoubleSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(double[] actual, Supplier&lt;@Nullable String&gt; message, double[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(double[] actual, Supplier&lt;@Nullable String&gt; message, double[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyFloatSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyfloatsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyFloatSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatdoublearraywithfailmessagesuppliercontainsexactlywithoffsetrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffset`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatDoubleArrayWithFailMessageSupplierContainsExactlyWithOffset \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(double[] actual, Supplier&lt;@Nullable String&gt; messageSupplier, double[] expected, double delta) \{         assertArrayEquals(expected, actual, delta, messageSupplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(double[] actual, Supplier&lt;@Nullable String&gt; messageSupplier, double[] expected, double delta) \{         assertThat(actual).withFailMessage(messageSupplier).containsExactly(expected, offset(delta));     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyIntSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyintsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyIntSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyLongSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlylongsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyLongSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffsetRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatfloatarraywithfailmessagesuppliercontainsexactlywithoffsetrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffset`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatFloatArrayWithFailMessageSupplierContainsExactlyWithOffset \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected, float delta) \{         assertArrayEquals(expected, actual, delta, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(float[] actual, Supplier&lt;@Nullable String&gt; message, float[] expected, float delta) \{         assertThat(actual).withFailMessage(message).containsExactly(expected, offset(delta));     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyObjectSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyobjectsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyObjectSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatIntArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatintarraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatIntArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatIntArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(int[] actual, Supplier&lt;@Nullable String&gt; message, int[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(int[] actual, Supplier&lt;@Nullable String&gt; message, int[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetDoubleSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetdoublesupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetDoubleSupplier`**
+  * Prefer `assertThat(...).containsExactly(..., offset(...))` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatLongArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatlongarraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatLongArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatLongArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(long[] actual, Supplier&lt;@Nullable String&gt; message, long[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(long[] actual, Supplier&lt;@Nullable String&gt; message, long[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyOffsetFloatSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyoffsetfloatsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyOffsetFloatSupplier`**
+  * Prefer `assertThat(...).containsExactly(..., offset(...))` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatObjectArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatobjectarraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatObjectArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatObjectArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object[] actual, Supplier&lt;@Nullable String&gt; message, Object[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object[] actual, Supplier&lt;@Nullable String&gt; message, Object[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageContainsExactlyShortSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagecontainsexactlyshortsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageContainsExactlyShortSupplier`**
+  * Prefer `assertThat(...).containsExactly(...)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatShortArrayWithFailMessageSupplierContainsExactlyRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatshortarraywithfailmessagesuppliercontainsexactlyrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatShortArrayWithFailMessageSupplierContainsExactly`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatShortArrayWithFailMessageSupplierContainsExactly \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(short[] actual, Supplier&lt;@Nullable String&gt; message, short[] expected) \{         assertArrayEquals(expected, actual, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(short[] actual, Supplier&lt;@Nullable String&gt; message, short[] expected) \{         assertThat(actual).withFailMessage(message).containsExactly(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsFalseSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisfalsesupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsFalseSupplier`**
+  * Prefer `AbstractBooleanAssert#isFalse()` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOfRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisexactlyinstanceofrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOf`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatThrownByWithFailMessageSupplierIsExactlyInstanceOf&lt;T extends Throwable&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Executable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThrowsExactly(clazz, throwingCallable, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThatThrownBy(throwingCallable).withFailMessage(supplier).isExactlyInstanceOf(clazz);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsInstanceOfSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisinstanceofsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsInstanceOfSupplier`**
+  * Prefer `AbstractAssert#isInstanceOf(Class)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatThrownByWithFailMessageSupplierIsInstanceOfRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatthrownbywithfailmessagesupplierisinstanceofrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatThrownByWithFailMessageSupplierIsInstanceOf`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatThrownByWithFailMessageSupplierIsInstanceOf&lt;T extends Throwable&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Executable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThrows(clazz, throwingCallable, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(ThrowingCallable throwingCallable, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThatThrownBy(throwingCallable).withFailMessage(supplier).isInstanceOf(clazz);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNotNullSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnotnullsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNotNullSupplier`**
+  * Prefer `AbstractAssert#isNotNull()` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsFalseRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisfalserecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsFalse`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsFalse \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertFalse(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isFalse();     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNotSameAsSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnotsameassupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNotSameAsSupplier`**
+  * Prefer `AbstractAssert#isNotSameAs(Object)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsInstanceOfRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisinstanceofrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsInstanceOf`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsInstanceOf&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertInstanceOf(clazz, actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier, Class&lt;T&gt; clazz) \{         assertThat(actual).withFailMessage(supplier).isInstanceOf(clazz);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsNullSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageisnullsupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsNullSupplier`**
+  * Prefer `AbstractAssert#isNull()` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotNullRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotnullrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNotNull`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsNotNull \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertNotNull(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isNotNull();     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsSameAsSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageissameassupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsSameAsSupplier`**
+  * Prefer `AbstractAssert#isSameAs(Object)` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNotSameAsRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnotsameasrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNotSameAs`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsNotSameAs \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertNotSame(expected, actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertThat(actual).withFailMessage(supplier).isNotSameAs(expected);     \} \} ``` .
-  * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsNullRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierisnullrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsNull`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsNull \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertNull(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isNull();     \} \} ``` .
-  * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsSameAsRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplierissameasrecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsSameAs`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsSameAs \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertSame(expected, actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Supplier&lt;@Nullable String&gt; supplier, Object expected) \{         assertThat(actual).withFailMessage(supplier).isSameAs(expected);     \} \} ``` .
-  * Tags: RSPEC-S4449
-* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageSupplierIsTrueRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessagesupplieristruerecipe.md)
-  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageSupplierIsTrue`**
-  * Recipe created for the following Refaster template: ```java static final class AssertThatWithFailMessageSupplierIsTrue \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4449&quot;)     void before(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertTrue(actual, supplier);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(boolean actual, Supplier&lt;@Nullable String&gt; supplier) \{         assertThat(actual).withFailMessage(supplier).isTrue();     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.JUnitToAssertJRulesRecipes$AssertThatWithFailMessageIsTrueSupplierRecipe](/recipes/picnic/errorprone/refasterrules/junittoassertjrulesrecipes$assertthatwithfailmessageistruesupplierrecipe.md)
+  * **Refaster template `JUnitToAssertJRules.AssertThatWithFailMessageIsTrueSupplier`**
+  * Prefer `AbstractBooleanAssert#isTrue()` over non-AssertJ alternatives.
   * Tags: RSPEC-S4449
 * [tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamAnyMatchRecipe](/recipes/picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamanymatchrecipe.md)
   * **Refaster template `LongStreamRules.LongStreamAnyMatch`**
   * Prefer `LongStream#anyMatch(LongPredicate)` over more contrived alternatives.
   * Tags: RSPEC-S4034
-* [tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowRecipe](/recipes/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowrecipe.md)
-  * **Refaster template `OptionalRules.OptionalOrElseThrow`**
+* [tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowWithOptionalRecipe](/recipes/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowwithoptionalrecipe.md)
+  * **Refaster template `OptionalRules.OptionalOrElseThrowWithOptional`**
   * Prefer `Optional#orElseThrow()` over the less explicit `Optional#get()`.
   * Tags: RSPEC-S3655
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanOrEqualToRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanorequaltorecipe.md)
   * **Refaster template `PrimitiveRules.GreaterThanOrEqualTo`**
-  * Avoid contrived ways of expressing the &quot;greater than or equal to&quot; relationship.
+  * Prefer `a &gt;= b` over less explicit alternatives.
   * Tags: RSPEC-S1940
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$GreaterThanRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$greaterthanrecipe.md)
   * **Refaster template `PrimitiveRules.GreaterThan`**
-  * Avoid contrived ways of expressing the &quot;greater than&quot; relationship.
+  * Prefer `a &gt; b` over less explicit alternatives.
   * Tags: RSPEC-S1940
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanOrEqualToRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanorequaltorecipe.md)
   * **Refaster template `PrimitiveRules.LessThanOrEqualTo`**
-  * Avoid contrived ways of expressing the &quot;less than or equal to&quot; relationship.
+  * Prefer `a &lt;= b` over less explicit alternatives.
   * Tags: RSPEC-S1940
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LessThanRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$lessthanrecipe.md)
   * **Refaster template `PrimitiveRules.LessThan`**
-  * Avoid contrived ways of expressing the &quot;less than&quot; relationship.
+  * Prefer `a &lt; b` over less explicit alternatives.
   * Tags: RSPEC-S1940
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampDoubleRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampdoublerecipe.md)
   * **Refaster template `PrimitiveRules.MathClampDouble`**
-  * Prefer `Math#clamp(double, double, double)` over more verbose alternatives.
+  * Prefer `Math#clamp(double, double, double)` over non-JDK or more verbose alternatives.
   * Tags: RSPEC-S6885
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampfloatrecipe.md)
   * **Refaster template `PrimitiveRules.MathClampFloat`**
-  * Prefer `Math#clamp(float, float, float)` over more verbose alternatives.
+  * Prefer `Math#clamp(float, float, float)` over non-JDK or more verbose alternatives.
   * Tags: RSPEC-S6885
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampIntRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclampintrecipe.md)
   * **Refaster template `PrimitiveRules.MathClampInt`**
-  * Prefer `Math#clamp(long, int, int)` over more verbose alternatives.
+  * Prefer `Math#clamp(long, int, int)` over non-JDK or more verbose alternatives.
   * Tags: RSPEC-S6885
 * [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampLongRecipe](/recipes/picnic/errorprone/refasterrules/primitiverulesrecipes$mathclamplongrecipe.md)
   * **Refaster template `PrimitiveRules.MathClampLong`**
-  * Prefer `Math#clamp(long, long, long)` over more verbose alternatives.
+  * Prefer `Math#clamp(long, long, long)` over non-JDK or more verbose alternatives.
   * Tags: RSPEC-S6885
 * [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe](/recipes/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe.md)
   * **Prefer `RandomGenerator#nextLong(long)` over more contrived alternatives**
-  * Additionally, for large bounds, the unnecessary floating point arithmetic prevents some  `long` values from being generated.
+  * &lt;strong&gt;Warning:&lt;/strong&gt; for large bounds, the before-template's floating point arithmetic  prevents some `long` values from being generated.
   * Tags: RSPEC-S1905
-* [tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe](/recipes/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completabletomonorecipe.md)
-  * **Refaster template `RxJava2AdapterRules.CompletableToMono`**
-  * Use the fluent API style when using `RxJava2Adapter#completableToMono`.
+* [tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableAsRxJava2AdapterCompletableToMonoRecipe](/recipes/picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completableasrxjava2adaptercompletabletomonorecipe.md)
+  * **Refaster template `RxJava2AdapterRules.CompletableAsRxJava2AdapterCompletableToMono`**
+  * Prefer `RxJava2Adapter#completableToMono(Completable)` over less idiomatic alternatives.
   * Tags: RSPEC-S4968
 * [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamCountRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamcountrecipe.md)
   * **Refaster template `StreamRules.StreamCount`**
-  * Recipe created for the following Refaster template: ```java static final class StreamCount&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     long before(Stream&lt;T&gt; stream) \{         return stream.collect(counting());     \}          @AfterTemplate     long after(Stream&lt;T&gt; stream) \{         return stream.count();     \} \} ``` .
+  * Prefer `Stream#count()` over less efficient alternatives.
   * Tags: RSPEC-S4266
 * [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapCollectRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streammapcollectrecipe.md)
   * **Refaster template `StreamRules.StreamMapCollect`**
-  * Recipe created for the following Refaster template: ```java static final class StreamMapCollect&lt;T, U, R&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     R before(Stream&lt;T&gt; stream, Function&lt;? super T, ? extends U&gt; mapper, Collector&lt;? super U, ?, R&gt; collector) \{         return stream.collect(mapping(mapper, collector));     \}          @AfterTemplate     R after(Stream&lt;T&gt; stream, Function&lt;? super T, ? extends U&gt; mapper, Collector&lt;? super U, ?, R&gt; collector) \{         return stream.map(mapper).collect(collector);     \} \} ``` .
+  * Prefer `Stream#map(Function)` over more contrived alternatives.
   * Tags: RSPEC-S4266
 * [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMaxRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streammaxrecipe.md)
   * **Refaster template `StreamRules.StreamMax`**
-  * Recipe created for the following Refaster template: ```java static final class StreamMax&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     Optional&lt;T&gt; before(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return Refaster.anyOf(stream.min(comparator.reversed()), Streams.findLast(stream.sorted(comparator)), stream.collect(maxBy(comparator)));     \}          @AfterTemplate     Optional&lt;T&gt; after(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return stream.max(comparator);     \} \} ``` .
+  * Prefer `Stream#max(Comparator)` over less efficient alternatives.
   * Tags: RSPEC-S4266
 * [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMinRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamminrecipe.md)
   * **Refaster template `StreamRules.StreamMin`**
-  * Recipe created for the following Refaster template: ```java static final class StreamMin&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     Optional&lt;T&gt; before(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return Refaster.anyOf(stream.max(comparator.reversed()), stream.sorted(comparator).findFirst(), stream.collect(minBy(comparator)));     \}          @AfterTemplate     Optional&lt;T&gt; after(Stream&lt;T&gt; stream, Comparator&lt;? super T&gt; comparator) \{         return stream.min(comparator);     \} \} ``` .
+  * Prefer `Stream#min(Comparator)` over less efficient alternatives.
   * Tags: RSPEC-S4266
 * [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamOfNullableRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamofnullablerecipe.md)
   * **Refaster template `StreamRules.StreamOfNullable`**
@@ -6777,51 +6791,51 @@ _225 recipes_
   * Tags: RSPEC-S2583
 * [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamreducerecipe.md)
   * **Refaster template `StreamRules.StreamReduce`**
-  * Recipe created for the following Refaster template: ```java static final class StreamReduce&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     Optional&lt;T&gt; before(Stream&lt;T&gt; stream, BinaryOperator&lt;T&gt; accumulator) \{         return stream.collect(reducing(accumulator));     \}          @AfterTemplate     Optional&lt;T&gt; after(Stream&lt;T&gt; stream, BinaryOperator&lt;T&gt; accumulator) \{         return stream.reduce(accumulator);     \} \} ``` .
+  * Prefer `Stream#reduce(BinaryOperator)` over less efficient alternatives.
   * Tags: RSPEC-S4266
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceWithIdentityRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamreducewithidentityrecipe.md)
-  * **Refaster template `StreamRules.StreamReduceWithIdentity`**
-  * Recipe created for the following Refaster template: ```java static final class StreamReduceWithIdentity&lt;T&gt; \{          @BeforeTemplate     @SuppressWarnings(value = &quot;java:S4266&quot;)     T before(Stream&lt;T&gt; stream, T identity, BinaryOperator&lt;T&gt; accumulator) \{         return stream.collect(reducing(identity, accumulator));     \}          @AfterTemplate     T after(Stream&lt;T&gt; stream, T identity, BinaryOperator&lt;T&gt; accumulator) \{         return stream.reduce(identity, accumulator);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamReduceWithObjectRecipe](/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamreducewithobjectrecipe.md)
+  * **Refaster template `StreamRules.StreamReduceWithObject`**
+  * Prefer `Stream#reduce(Object, BinaryOperator)` over less efficient alternatives.
   * Tags: RSPEC-S4266
 * [tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$emptystringrecipe.md)
   * **Refaster template `StringRules.EmptyString`**
-  * Avoid unnecessary creation of new empty `String` objects; use the empty string literal instead.
+  * Prefer `&quot;&quot;` over less efficient or less explicit alternatives.
   * Tags: RSPEC-S2129
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe.md)
-  * **Refaster template `StringRules.StringIdentity`**
-  * Avoid unnecessary creation of new `String` objects.
-  * Tags: RSPEC-S2129
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfCharFromIndexRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofcharfromindexrecipe.md)
-  * **Refaster template `StringRules.StringIndexOfCharFromIndex`**
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringIndexOfMinusIntRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringindexofminusintrecipe.md)
+  * **Refaster template `StringRules.MathMaxNegativeOneStringIndexOfMinusInt`**
   * Prefer `String#indexOf(int, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIndexOfStringFromIndexRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringindexofstringfromindexrecipe.md)
-  * **Refaster template `StringRules.StringIndexOfStringFromIndex`**
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringIndexOfMinusStringRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringindexofminusstringrecipe.md)
+  * **Refaster template `StringRules.MathMaxNegativeOneStringIndexOfMinusString`**
   * Prefer `String#indexOf(String, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptyrecipe.md)
-  * **Refaster template `StringRules.StringIsEmpty`**
-  * Prefer `String#isEmpty()` over alternatives that consult the string's length.
-  * Tags: RSPEC-S7158
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfCharRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofcharrecipe.md)
-  * **Refaster template `StringRules.StringLastIndexOfChar`**
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringLastIndexOfMinusIntRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringlastindexofminusintrecipe.md)
+  * **Refaster template `StringRules.MathMaxNegativeOneStringLastIndexOfMinusInt`**
   * Prefer `String#lastIndexOf(int, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringLastIndexOfStringRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringlastindexofstringrecipe.md)
-  * **Refaster template `StringRules.StringLastIndexOfString`**
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$MathMaxNegativeOneStringLastIndexOfMinusStringRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$mathmaxnegativeonestringlastindexofminusstringrecipe.md)
+  * **Refaster template `StringRules.MathMaxNegativeOneStringLastIndexOfMinusString`**
   * Prefer `String#lastIndexOf(String, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe.md)
+  * **Refaster template `StringRules.StringIdentity`**
+  * Prefer using `String`s as-is over less efficient alternatives.
+  * Tags: RSPEC-S2129
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyWithStringRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptywithstringrecipe.md)
+  * **Refaster template `StringRules.StringIsEmptyWithString`**
+  * Prefer `String#isEmpty()` over less explicit alternatives.
+  * Tags: RSPEC-S7158
 * [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringStartsWithRecipe](/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringstartswithrecipe.md)
   * **Refaster template `StringRules.StringStartsWith`**
   * Prefer `String#startsWith(String, int)` over less efficient alternatives.
   * Tags: RSPEC-S4635
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualRecipe](/recipes/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalrecipe.md)
-  * **Refaster template `TestNGToAssertJRules.AssertEqual`**
-  * Recipe created for the following Refaster template: ```java @SuppressWarnings(value = &quot;java:S1448&quot;) static final class AssertEqual \{          @BeforeTemplate     void before(boolean actual, boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(boolean actual, Boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Boolean actual, boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Boolean actual, Boolean expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(byte actual, byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(byte actual, Byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Byte actual, byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Byte actual, Byte expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(char actual, char expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(char actual, Character expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Character actual, char expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Character actual, Character expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(short actual, short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(short actual, Short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Short actual, short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Short actual, Short expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(int actual, int expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(int actual, Integer expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Integer actual, int expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Integer actual, Integer expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(long actual, long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(long actual, Long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Long actual, long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Long actual, Long expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(float actual, float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(float actual, Float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Float actual, float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Float actual, Float expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(double actual, double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(double actual, Double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Double actual, double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Double actual, Double expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Object actual, Object expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(String actual, String expected) \{         assertEquals(actual, expected);     \}          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, Map&lt;?, ?&gt; expected) \{         assertEquals(actual, expected);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, Object expected) \{         assertThat(actual).isEqualTo(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatIsEqualToRecipe](/recipes/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatisequaltorecipe.md)
+  * **Refaster template `TestNGToAssertJRules.AssertThatIsEqualTo`**
+  * Prefer `AbstractAssert#isEqualTo(Object)` over non-AssertJ alternatives.
   * Tags: RSPEC-S1448
-* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertEqualWithMessageRecipe](/recipes/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertequalwithmessagerecipe.md)
-  * **Refaster template `TestNGToAssertJRules.AssertEqualWithMessage`**
-  * Recipe created for the following Refaster template: ```java @SuppressWarnings(value = &quot;java:S1448&quot;) static final class AssertEqualWithMessage \{          @BeforeTemplate     void before(boolean actual, String message, boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(boolean actual, String message, Boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Boolean actual, String message, boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Boolean actual, String message, Boolean expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(byte actual, String message, byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(byte actual, String message, Byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Byte actual, String message, byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Byte actual, String message, Byte expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(char actual, String message, char expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(char actual, String message, Character expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Character actual, String message, char expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Character actual, String message, Character expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(short actual, String message, short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(short actual, String message, Short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Short actual, String message, short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Short actual, String message, Short expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(int actual, String message, int expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(int actual, String message, Integer expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Integer actual, String message, int expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Integer actual, String message, Integer expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(long actual, String message, long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(long actual, String message, Long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Long actual, String message, long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Long actual, String message, Long expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(float actual, String message, float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(float actual, String message, Float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Float actual, String message, float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Float actual, String message, Float expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(double actual, String message, double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(double actual, String message, Double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Double actual, String message, double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Double actual, String message, Double expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Object actual, String message, Object expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(String actual, String message, String expected) \{         assertEquals(actual, expected, message);     \}          @BeforeTemplate     void before(Map&lt;?, ?&gt; actual, String message, Map&lt;?, ?&gt; expected) \{         assertEquals(actual, expected, message);     \}          @AfterTemplate     @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)     void after(Object actual, String message, Object expected) \{         assertThat(actual).withFailMessage(message).isEqualTo(expected);     \} \} ``` .
+* [tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes$AssertThatWithFailMessageIsEqualToRecipe](/recipes/picnic/errorprone/refasterrules/testngtoassertjrulesrecipes$assertthatwithfailmessageisequaltorecipe.md)
+  * **Refaster template `TestNGToAssertJRules.AssertThatWithFailMessageIsEqualTo`**
+  * Prefer `AbstractAssert#isEqualTo(Object)` over non-AssertJ alternatives.
   * Tags: RSPEC-S1448
 
 ## sap
@@ -7152,7 +7166,7 @@ _2 recipes_
 
 ## slf4j
 
-_15 recipes_
+_18 recipes_
 
 * [org.openrewrite.java.logging.log4j.Slf4jToLog4j](/recipes/java/logging/log4j/slf4jtolog4j.md)
   * **Migrate SLF4J to Log4j 2.x API**
@@ -7169,9 +7183,15 @@ _15 recipes_
 * [org.openrewrite.java.logging.slf4j.JulToSlf4j](/recipes/java/logging/slf4j/jultoslf4j.md)
   * **Migrate JUL to SLF4J**
   * Migrates usage of Java Util Logging (JUL) to using SLF4J directly.
+* [org.openrewrite.java.logging.slf4j.Log4j1MdcGetContextToCopyOfContextMap](/recipes/java/logging/slf4j/log4j1mdcgetcontexttocopyofcontextmap.md)
+  * **Convert Log4j 1.x `MDC.getContext()` to `getCopyOfContextMap()`**
+  * Renames Log4j 1.x `org.apache.log4j.MDC.getContext()` (returns `Hashtable`) to `getCopyOfContextMap()` (returns `Map`) at every call site, and retypes any `Hashtable` declaration — local variable, field, method parameter, or method return type — that receives the result, whether initialized directly from the call, directly assigned it in a later statement, or returning it, to `Map&lt;String, String&gt;`, since `Map` is not assignable to `Hashtable`. Retyping a parameter or return type changes the method's signature; overriding methods are left unchanged to avoid breaking the override, so they need a manual fix. Does not change the `org.apache.log4j.MDC` type; compose with a `ChangeType` to complete the migration.
 * [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4j1](/recipes/java/logging/slf4j/log4j1toslf4j1.md)
   * **Migrate Log4j 1.x to SLF4J 1.x**
   * Transforms usages of Log4j 1.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
+* [org.openrewrite.java.logging.slf4j.Log4j1ToSlf4jMdc](/recipes/java/logging/slf4j/log4j1toslf4jmdc.md)
+  * **Migrate Log4j 1.x MDC to SLF4J MDC**
+  * Migrates `org.apache.log4j.MDC` to `org.slf4j.MDC`, wrapping non-`String` `put` values in `String.valueOf(...)` and converting `getContext()` to `getCopyOfContextMap()`.
 * [org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1](/recipes/java/logging/slf4j/log4j2toslf4j1.md)
   * **Migrate Log4j 2.x to SLF4J 1.x**
   * Transforms usages of Log4j 2.x to leveraging SLF4J 1.x directly. Note, this currently does not modify `log4j.properties` files.
@@ -7199,6 +7219,9 @@ _15 recipes_
 * [org.openrewrite.java.logging.slf4j.StringFormatToParameterizedLogging](/recipes/java/logging/slf4j/stringformattoparameterizedlogging.md)
   * **`String.format()` in logging statements should use SLF4J parameterized logging**
   * Replace `String.format()` calls in SLF4J logging statements with parameterized placeholders for improved performance.
+* [org.openrewrite.java.logging.slf4j.WrapLog4j1MdcPutValueInStringValueOf](/recipes/java/logging/slf4j/wraplog4j1mdcputvalueinstringvalueof.md)
+  * **Wrap Log4j 1.x `MDC.put` values in `String.valueOf(...)`**
+  * SLF4J `MDC.put(String, String)` requires a `String` value, but Log4j 1.x `MDC.put(String, Object)` accepts any object. Wrap non-`String` values in `String.valueOf(...)`, skipping values already typed `String`, `null` literals, and existing `String.valueOf(...)` calls. Does not change the `org.apache.log4j.MDC` type; compose with a `ChangeType` to complete the migration to `org.slf4j.MDC`.
 
 ## spring
 

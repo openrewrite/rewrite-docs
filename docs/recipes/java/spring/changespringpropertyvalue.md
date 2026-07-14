@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Co-exclude `UserDetailsServiceAutoConfiguration` where `SecurityAutoConfiguration` is excluded](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/adduserdetailsserviceautoconfigurationexclusion)
 * [Migrate Enabled to Access Spring Boot Properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate Spring Boot properties to 4.0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)

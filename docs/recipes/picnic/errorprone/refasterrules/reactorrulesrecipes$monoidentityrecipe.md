@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoIdentityRecipe**
 
-_Don't unnecessarily transform a `Mono` to an equivalent instance._
+_Prefer using `Mono`s as-is over less efficient transformations to equivalent instances._
 
 ## Recipe source
 

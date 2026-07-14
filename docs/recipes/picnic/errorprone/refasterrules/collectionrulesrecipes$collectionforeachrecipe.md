@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionForEachRecipe**
 
-_Prefer `Collection#forEach(Consumer)` over more contrived alternatives._
+_Prefer `Collection#forEach(Consumer)` over less efficient alternatives._
 
 ## Recipe source
 

@@ -15,8 +15,8 @@ _Upgrade Mockito from 1.x to 3.x._
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [mockito](/reference/recipes-by-tag#mockito)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -126,7 +126,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldGroupId: `org.mockito`
   * oldArtifactId: `mockito-all`
   * newArtifactId: `mockito-core`
-  * newVersion: `3.x`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
   * artifactId: `*`
@@ -151,8 +150,8 @@ displayName: Mockito 3.x migration from 1.x
 description: |
   Upgrade Mockito from 1.x to 3.x.
 tags:
-  - testing
   - mockito
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -245,7 +244,6 @@ recipeList:
       oldGroupId: org.mockito
       oldArtifactId: mockito-all
       newArtifactId: mockito-core
-      newVersion: 3.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: "*"
@@ -368,16 +366,13 @@ class MyTest {
 ```java
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
 class MyTest {
     @Mock
     Object objectMock;
@@ -400,17 +395,7 @@ class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,0 +3,1 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-+import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-@@ -4,0 +5,1 @@
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-+import org.mockito.junit.jupiter.MockitoExtension;
-
-@@ -5,3 +7,3 @@
+@@ -5,3 +5,3 @@
 import org.mockito.Mock;
 
 -import static org.mockito.Matchers.anyListOf;
@@ -420,12 +405,7 @@ import org.mockito.Mock;
 +import static org.mockito.ArgumentMatchers.any;
 +import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
-@@ -10,0 +12,1 @@
-import static org.mockito.Mockito.when;
-
-+@ExtendWith(MockitoExtension.class)
-class MyTest {
-@@ -23,1 +26,1 @@
+@@ -23,1 +23,1 @@
     @Test
     void someTest() {
 -       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);
@@ -712,16 +692,13 @@ class MyTest {
 ```java
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
 class MyTest {
     @Mock
     Object objectMock;
@@ -744,17 +721,7 @@ class MyTest {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -3,0 +3,1 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-+import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-@@ -4,0 +5,1 @@
-import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-+import org.mockito.junit.jupiter.MockitoExtension;
-
-@@ -5,3 +7,3 @@
+@@ -5,3 +5,3 @@
 import org.mockito.Mock;
 
 -import static org.mockito.Matchers.anyListOf;
@@ -764,12 +731,7 @@ import org.mockito.Mock;
 +import static org.mockito.ArgumentMatchers.any;
 +import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
-@@ -10,0 +12,1 @@
-import static org.mockito.Mockito.when;
-
-+@ExtendWith(MockitoExtension.class)
-class MyTest {
-@@ -23,1 +26,1 @@
+@@ -23,1 +23,1 @@
     @Test
     void someTest() {
 -       when(subject.someMethod(anyObject(), anyString(), anyListOf(String.class))).thenReturn(false);

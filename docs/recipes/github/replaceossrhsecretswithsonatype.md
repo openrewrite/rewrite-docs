@@ -15,8 +15,8 @@ _Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Action
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
 * [secrets](/reference/recipes-by-tag#secrets)
+* [github](/reference/recipes-by-tag#github)
 
 ## Recipe source
 
@@ -60,8 +60,8 @@ displayName: Replace OSSRH secrets with Sonatype secrets
 description: |
   Replace deprecated OSSRH_S01 secrets with new Sonatype secrets in GitHub Actions workflows. This is an example use of the `ReplaceSecrets` and `ReplaceSecretKeys` recipes combined used to update the Maven publishing secrets in OpenRewrite's GitHub organization.
 tags:
-  - github
   - secrets
+  - github
 recipeList:
   - org.openrewrite.github.ReplaceSecrets:
       oldSecretName: OSSRH_S01_USERNAME

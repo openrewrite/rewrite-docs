@@ -16,8 +16,8 @@ _This recipe will migrate the necessary dependencies and annotations from DbRide
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [testing](/reference/recipes-by-tag#testing)
 * [dbrider](/reference/recipes-by-tag#dbrider)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -62,8 +62,8 @@ description: |
   This recipe will migrate the necessary dependencies and annotations from DbRider with JUnit4 to JUnit5 in a Spring application.
 tags:
   - spring
-  - testing
   - dbrider
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

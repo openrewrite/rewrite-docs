@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongSignumIsPositiveRecipe**
 
-_Prefer an `Long#signum(long)` comparison to 0 over less idiomatic alternatives._
+_Prefer `Long.signum(i) > 0` over less idiomatic alternatives._
 
 ## Recipe source
 

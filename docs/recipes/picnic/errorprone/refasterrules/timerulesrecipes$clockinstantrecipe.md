@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ClockInstantRecipe**
 
-_Prefer `Clock#instant()` over `Instant#now(Clock)`, as it is more concise and more "OOP-py"._
+_Prefer `Clock#instant()` over more verbose alternatives._
 
 ## Recipe source
 

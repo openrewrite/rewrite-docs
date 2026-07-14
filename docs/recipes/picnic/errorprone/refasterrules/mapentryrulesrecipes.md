@@ -30,11 +30,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Prefer `Map#entry(Object, Object)` over alternative ways to create an immutable map entry](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$mapentryrecipe)
-* [Refaster template `MapEntryRules.MapEntryComparingByKey`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$mapentrycomparingbykeyrecipe)
-* [Refaster template `MapEntryRules.MapEntryComparingByKeyWithCustomComparator`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$mapentrycomparingbykeywithcustomcomparatorrecipe)
-* [Refaster template `MapEntryRules.MapEntryComparingByValue`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$mapentrycomparingbyvaluerecipe)
-* [Refaster template `MapEntryRules.MapEntryComparingByValueWithCustomComparator`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$mapentrycomparingbyvaluewithcustomcomparatorrecipe)
+* [Prefer `Map#entry(Object, Object)` over non-JDK alternatives or the associated constructor](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$mapentryrecipe)
+* [Refaster template `MapEntryRules.ComparingByKey`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$comparingbykeyrecipe)
+* [Refaster template `MapEntryRules.ComparingByKeyWithComparator`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$comparingbykeywithcomparatorrecipe)
+* [Refaster template `MapEntryRules.ComparingByValue`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$comparingbyvaluerecipe)
+* [Refaster template `MapEntryRules.ComparingByValueWithComparator`](../../../picnic/errorprone/refasterrules/mapentryrulesrecipes$comparingbyvaluewithcomparatorrecipe)
 
 </TabItem>
 
@@ -49,10 +49,10 @@ description: |
   Refaster rules related to expressions dealing with `Map.Entry` instances. [Source](https://error-prone.picnic.tech/refasterrules/MapEntryRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$MapEntryRecipe
-  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$MapEntryComparingByKeyRecipe
-  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$MapEntryComparingByKeyWithCustomComparatorRecipe
-  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$MapEntryComparingByValueRecipe
-  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$MapEntryComparingByValueWithCustomComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$ComparingByKeyRecipe
+  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$ComparingByKeyWithComparatorRecipe
+  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$ComparingByValueRecipe
+  - tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$ComparingByValueWithComparatorRecipe
 
 ```
 </TabItem>

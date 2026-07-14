@@ -38,6 +38,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Remove redundant security resolution rules](../gradle/removeredundantsecurityresolutionrules)
 * [Sort Gradle dependencies](../gradle/sortdependencies)
 * [Use HTTPS for repositories](../gradle/security/usehttpsforrepositories)
+* [Use `=` assignment syntax for Gradle properties](../gradle/usepropertyassignmentsyntax)
+  * propertyName: `distributionUrl`
 
 </TabItem>
 
@@ -59,6 +61,8 @@ recipeList:
   - org.openrewrite.gradle.RemoveRedundantSecurityResolutionRules
   - org.openrewrite.gradle.SortDependencies
   - org.openrewrite.gradle.security.UseHttpsForRepositories
+  - org.openrewrite.gradle.UsePropertyAssignmentSyntax:
+      propertyName: distributionUrl
 
 ```
 </TabItem>

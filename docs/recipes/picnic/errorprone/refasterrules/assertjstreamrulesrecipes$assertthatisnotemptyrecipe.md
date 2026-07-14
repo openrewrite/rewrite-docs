@@ -11,63 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatIsNotEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsNotEmpty<T, S> {
-    
-    @BeforeTemplate
-    void before(Stream<T> stream) {
-        assertThat(stream.count()).isNotEqualTo(0);
-    }
-    
-    @BeforeTemplate
-    void before2(Stream<T> stream) {
-        assertThat(stream.findAny()).isPresent();
-    }
-    
-    @BeforeTemplate
-    void before3(Stream<T> stream) {
-        assertThat(stream.findFirst()).isPresent();
-    }
-    
-    @BeforeTemplate
-    void before4(Stream<T> stream) {
-        assertThat(stream.toArray()).isNotEmpty();
-    }
-    
-    @BeforeTemplate
-    void before5(Stream<T> stream, IntFunction<S[]> generator) {
-        assertThat(stream.toArray(generator)).isNotEmpty();
-    }
-    
-    @BeforeTemplate
-    void before6(Stream<T> stream) {
-        assertThat(stream.toList()).isNotEmpty();
-    }
-    
-    @BeforeTemplate
-    void before7(Stream<T> stream, Collector<? super T, ?, ? extends Iterable<S>> collector) {
-        assertThat(stream.collect(collector)).isNotEmpty();
-    }
-    
-    @BeforeTemplate
-    void before8(Stream<T> stream, Collector<? super T, ?, ? extends Collection<S>> collector) {
-        assertThat(stream.collect(collector)).isNotEmpty();
-    }
-    
-    @BeforeTemplate
-    void before9(Stream<T> stream, Collector<? super T, ?, ? extends List<S>> collector) {
-        assertThat(stream.collect(collector)).isNotEmpty();
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(Stream<T> stream) {
-        assertThat(stream).isNotEmpty();
-    }
-}
-```
-.
+_Prefer `assertThat(stream).isNotEmpty()` over less efficient alternatives._
 
 ## Recipe source
 

@@ -16,9 +16,9 @@ _Migrate from Spring Cloud Sleuth to OpenTelemetry. [Spring Cloud Sleuth has bee
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [sleuth](/reference/recipes-by-tag#sleuth)
 * [migration](/reference/recipes-by-tag#migration)
 * [opentelemetry](/reference/recipes-by-tag#opentelemetry)
+* [sleuth](/reference/recipes-by-tag#sleuth)
 * [boot](/reference/recipes-by-tag#boot)
 * [observability](/reference/recipes-by-tag#observability)
 
@@ -144,9 +144,9 @@ description: |
   Migrate from Spring Cloud Sleuth to OpenTelemetry. [Spring Cloud Sleuth has been deprecated](https://github.com/spring-cloud/spring-cloud-sleuth#spring-cloud-sleuth) and is replaced by Micrometer Tracing with OpenTelemetry as a backend. This recipe removes Sleuth dependencies and adds OpenTelemetry instrumentation.
 tags:
   - spring
-  - sleuth
   - migration
   - opentelemetry
+  - sleuth
   - boot
   - observability
 preconditions:

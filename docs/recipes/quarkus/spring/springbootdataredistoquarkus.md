@@ -17,8 +17,8 @@ _Migrates `spring-boot-starter-data-redis` to `quarkus-redis-client`._
 
 * [spring](/reference/recipes-by-tag#spring)
 * [data](/reference/recipes-by-tag#data)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [redis](/reference/recipes-by-tag#redis)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -67,8 +67,8 @@ description: |
 tags:
   - spring
   - data
-  - quarkus
   - redis
+  - quarkus
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

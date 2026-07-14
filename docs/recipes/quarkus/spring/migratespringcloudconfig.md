@@ -17,9 +17,9 @@ _Migrates Spring Cloud Config Client to Quarkus configuration sources. Converts 
 
 * [spring](/reference/recipes-by-tag#spring)
 * [cloud](/reference/recipes-by-tag#cloud)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
 * [config](/reference/recipes-by-tag#config)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -69,9 +69,9 @@ description: |
 tags:
   - spring
   - cloud
-  - quarkus
   - migration
   - config
+  - quarkus
 recipeList:
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: org.springframework.cloud

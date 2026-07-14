@@ -16,8 +16,8 @@ _Migrates Arquillian JUnit 4 to JUnit 5._
 ### Tags
 
 * [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
 * [arquillian](/reference/recipes-by-tag#arquillian)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -70,8 +70,8 @@ description: |
   Migrates Arquillian JUnit 4 to JUnit 5.
 tags:
   - junit
-  - testing
   - arquillian
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

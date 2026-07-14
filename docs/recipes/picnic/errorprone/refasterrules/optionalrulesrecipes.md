@@ -34,16 +34,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `OptionalRules.OptionalOfNullable`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalofnullablerecipe)
 * [Refaster template `OptionalRules.OptionalIsEmpty`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalisemptyrecipe)
 * [Refaster template `OptionalRules.OptionalIsPresent`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalispresentrecipe)
+* [Refaster template `OptionalRules.OptionalOrElseThrowWithOptional`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowwithoptionalrecipe)
 * [Refaster template `OptionalRules.OptionalOrElseThrow`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowrecipe)
-* [Refaster template `OptionalRules.OptionalOrElseThrowMethodReference`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowmethodreferencerecipe)
-* [Refaster template `OptionalRules.OptionalEqualsOptional`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalequalsoptionalrecipe)
-* [Refaster template `OptionalRules.OptionalFirstIteratorElement`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalfirstiteratorelementrecipe)
-* [Refaster template `OptionalRules.MapOptionalToBoolean`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$mapoptionaltobooleanrecipe)
-* [Refaster template `OptionalRules.OrOrElseThrow`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$ororelsethrowrecipe)
-* [Refaster template `OptionalRules.StreamFlatMapOptional`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$streamflatmapoptionalrecipe)
-* [Refaster template `OptionalRules.OptionalOrOtherOptional`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorotheroptionalrecipe)
+* [Refaster template `OptionalRules.OptionalEqualsOptionalOf`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalequalsoptionalofrecipe)
+* [Refaster template `OptionalRules.StreamsStreamFindFirst`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$streamsstreamfindfirstrecipe)
+* [Refaster template `OptionalRules.OptionalFilterIsPresent`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalfilterispresentrecipe)
+* [Refaster template `OptionalRules.OptionalOrOrElseThrow`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalororelsethrowrecipe)
+* [Refaster template `OptionalRules.StreamFlatMapOptionalStream`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$streamflatmapoptionalstreamrecipe)
+* [Refaster template `OptionalRules.OptionalOr`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorrecipe)
 * [Refaster template `OptionalRules.OptionalFilter`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalfilterrecipe)
-* [Refaster template `OptionalRules.OptionalMap`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalmaprecipe)
+* [Refaster template `OptionalRules.OptionalMapWithFunction`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalmapwithfunctionrecipe)
 * [Refaster template `OptionalRules.OptionalStream`](../../../picnic/errorprone/refasterrules/optionalrulesrecipes$optionalstreamrecipe)
 
 </TabItem>
@@ -62,16 +62,16 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOfNullableRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalIsPresentRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowWithOptionalRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowMethodReferenceRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalEqualsOptionalRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFirstIteratorElementRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$MapOptionalToBooleanRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OrOrElseThrowRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$StreamFlatMapOptionalRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrOtherOptionalRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalEqualsOptionalOfRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$StreamsStreamFindFirstRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFilterIsPresentRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrOrElseThrowRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$StreamFlatMapOptionalStreamRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalFilterRecipe
-  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalMapRecipe
+  - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalMapWithFunctionRecipe
   - tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalStreamRecipe
 
 ```

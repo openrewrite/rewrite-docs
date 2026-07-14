@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
-* [javax](/reference/recipes-by-tag#javax)
 * [inject](/reference/recipes-by-tag#inject)
+* [javax](/reference/recipes-by-tag#javax)
 * [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
@@ -63,8 +63,8 @@ displayName: Migrate deprecated `javax.inject` packages to `jakarta.inject`
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
-  - javax
   - inject
+  - javax
   - jakarta
 recipeList:
   - org.openrewrite.maven.UpgradeDependencyVersion:

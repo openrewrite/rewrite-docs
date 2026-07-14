@@ -15,8 +15,8 @@ _Change maven.compiler.source and maven.compiler.target values to 17._
 
 ### Tags
 
-* [java17](/reference/recipes-by-tag#java17)
 * [compiler](/reference/recipes-by-tag#compiler)
+* [java17](/reference/recipes-by-tag#java17)
 
 ## Recipe source
 
@@ -52,8 +52,8 @@ displayName: Change Maven and Gradle Java version property values to 17
 description: |
   Change maven.compiler.source and maven.compiler.target values to 17.
 tags:
-  - java17
   - compiler
+  - java17
 recipeList:
   - io.quarkus.updates.core.quarkus37.UpgradeJavaVersion:
       version: 17

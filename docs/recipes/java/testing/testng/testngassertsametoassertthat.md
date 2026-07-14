@@ -28,6 +28,57 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.testng.Assert.assertSame;
+
+class Test {
+    void test(Object actual, Object expected) {
+        assertSame(actual, expected);
+        assertSame(actual, expected, "foo");
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class Test {
+    void test(Object actual, Object expected) {
+        assertThat(actual).isSameAs(expected);
+        assertThat(actual).as("foo").isSameAs(expected);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import static org.testng.Assert.assertSame;
++import static org.assertj.core.api.Assertions.assertThat;
+
+@@ -5,2 +5,2 @@
+class Test {
+    void test(Object actual, Object expected) {
+-       assertSame(actual, expected);
+-       assertSame(actual, expected, "foo");
++       assertThat(actual).isSameAs(expected);
++       assertThat(actual).as("foo").isSameAs(expected);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

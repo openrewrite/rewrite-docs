@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes$AssertThatIsLessThanRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsLessThan<T extends Comparable<? super T>> {
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(T actual, T expected) {
-        return assertThat(actual.compareTo(expected)).isNegative();
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    AbstractComparableAssert<?, ?> after(T actual, T expected) {
-        return assertThat(actual).isLessThan(expected);
-    }
-}
-```
-.
+_Prefer `AbstractComparableAssert#isLessThan(Comparable)` over more contrived alternatives._
 
 ## Recipe source
 

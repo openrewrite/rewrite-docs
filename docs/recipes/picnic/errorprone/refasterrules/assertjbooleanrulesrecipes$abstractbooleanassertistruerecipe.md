@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsTrueRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractBooleanAssertIsTrue {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(AbstractBooleanAssert<?> boolAssert) {
-        return Refaster.anyOf(boolAssert.isEqualTo(true), boolAssert.isNotEqualTo(false));
-    }
-    
-    @AfterTemplate
-    AbstractBooleanAssert<?> after(AbstractBooleanAssert<?> boolAssert) {
-        return boolAssert.isTrue();
-    }
-}
-```
-.
+_Prefer `AbstractBooleanAssert#isTrue()` over less explicit alternatives._
 
 ## Recipe source
 

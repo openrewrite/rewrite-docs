@@ -16,9 +16,9 @@ _Migrates `spring-boot-starter-webflux` to `quarkus-rest-client-jackson` when re
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [webflux](/reference/recipes-by-tag#webflux)
 * [reactive](/reference/recipes-by-tag#reactive)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [webflux](/reference/recipes-by-tag#webflux)
 
 ## Recipe source
 
@@ -69,9 +69,9 @@ description: |
   Migrates `spring-boot-starter-webflux` to `quarkus-rest-client-jackson` when reactor dependencies are present.
 tags:
   - spring
+  - webflux
   - reactive
   - quarkus
-  - webflux
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

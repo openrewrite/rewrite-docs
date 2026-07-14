@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsBetween {
-    
-    @BeforeTemplate
-    AbstractInstantAssert<?> before(Instant actual, Instant start, Instant end) {
-        return Refaster.anyOf(assertThat(actual).isAfterOrEqualTo(start).isBeforeOrEqualTo(end), assertThat(actual).isBeforeOrEqualTo(end).isAfterOrEqualTo(start));
-    }
-    
-    @AfterTemplate
-    AbstractInstantAssert<?> after(Instant actual, Instant start, Instant end) {
-        return assertThat(actual).isBetween(start, end);
-    }
-}
-```
-.
+_Prefer `AbstractInstantAssert#isBetween(Instant, Instant)` over more verbose alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Instant`s](/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes.md)
+* [`AssertJInstantRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes.md)
 
 
 ## Usage

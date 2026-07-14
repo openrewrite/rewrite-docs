@@ -30,13 +30,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `EqualityRules.EnumReferenceEquality`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$enumreferenceequalityrecipe)
-* [Refaster template `EqualityRules.EnumReferenceEqualityLambda`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$enumreferenceequalitylambdarecipe)
-* [Refaster template `EqualityRules.EqualsPredicate`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$equalspredicaterecipe)
-* [Refaster template `EqualityRules.DoubleNegation`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$doublenegationrecipe)
-* [Refaster template `EqualityRules.Negation`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$negationrecipe)
-* [Refaster template `EqualityRules.IndirectDoubleNegation`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$indirectdoublenegationrecipe)
-* [Refaster template `EqualityRules.Equals`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$equalsrecipe)
+* [Refaster template `EqualityRules.EqualToWithEnum`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$equaltowithenumrecipe)
+* [Refaster template `EqualityRules.EqualTo`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$equaltorecipe)
+* [Refaster template `EqualityRules.ObjectEquals`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$objectequalsrecipe)
+* [Refaster template `EqualityRules.BooleanIdentity`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$booleanidentityrecipe)
+* [Refaster template `EqualityRules.NotEqualTo`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$notequaltorecipe)
+* [Refaster template `EqualityRules.EqualToWithBoolean`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$equaltowithbooleanrecipe)
+* [Refaster template `EqualityRules.ObjectEqualsWithObject`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$objectequalswithobjectrecipe)
 * [Refaster template `EqualityRules.ObjectsEquals`](../../../picnic/errorprone/refasterrules/equalityrulesrecipes$objectsequalsrecipe)
 
 </TabItem>
@@ -51,13 +51,13 @@ displayName: `EqualityRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with (in)equalities. [Source](https://error-prone.picnic.tech/refasterrules/EqualityRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityRecipe
-  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityLambdaRecipe
-  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualsPredicateRecipe
-  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$DoubleNegationRecipe
-  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NegationRecipe
-  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$IndirectDoubleNegationRecipe
-  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualsRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualToWithEnumRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualToRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$ObjectEqualsRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$BooleanIdentityRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$NotEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualToWithBooleanRecipe
+  - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$ObjectEqualsWithObjectRecipe
   - tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$ObjectsEqualsRecipe
 
 ```

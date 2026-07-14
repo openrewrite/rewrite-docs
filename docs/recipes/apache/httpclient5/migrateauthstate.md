@@ -15,8 +15,8 @@ _Migrate Apache HttpClient 4.x `AuthState` and related types to the HttpClient 5
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [httpclient](/reference/recipes-by-tag#httpclient)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -73,8 +73,8 @@ displayName: Migrate `AuthState` to `AuthExchange`
 description: |
   Migrate Apache HttpClient 4.x `AuthState` and related types to the HttpClient 5.x `AuthExchange` API, including the `AuthProtocolState` enum, `AuthOption` queue elements, and credential-handling call sites.
 tags:
-  - apache
   - httpclient
+  - apache
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.hc.client5.http.auth.AuthState

@@ -15,9 +15,9 @@ _Add `implicit.tld` file with taglib 2.1 to `src/main/webapp/WEB-INF/tags`._
 
 ### Tags
 
-* [taglib](/reference/recipes-by-tag#taglib)
-* [examples](/reference/recipes-by-tag#examples)
 * [weblogic](/reference/recipes-by-tag#weblogic)
+* [examples](/reference/recipes-by-tag#examples)
+* [taglib](/reference/recipes-by-tag#taglib)
 
 ## Recipe source
 
@@ -48,9 +48,9 @@ displayName: Add implicit TLD with taglib 2.1
 description: |
   Add `implicit.tld` file with taglib 2.1 to `src/main/webapp/WEB-INF/tags`.
 tags:
-  - taglib
-  - examples
   - weblogic
+  - examples
+  - taglib
 recipeList:
   - org.openrewrite.xml.CreateXmlFile:
       relativeFileName: src/main/webapp/WEB-INF/tags/implicit.tld

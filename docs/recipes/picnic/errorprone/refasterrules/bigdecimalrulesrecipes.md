@@ -34,8 +34,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `BigDecimalRules.BigDecimalOne`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalonerecipe)
 * [Refaster template `BigDecimalRules.BigDecimalTwo`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimaltworecipe)
 * [Refaster template `BigDecimalRules.BigDecimalTen`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimaltenrecipe)
-* [Refaster template `BigDecimalRules.BigDecimalValueOf`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe)
-* [Refaster template `BigDecimalRules.BigDecimalSignumIsZero`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumiszerorecipe)
+* [Prefer `BigDecimal#valueOf(double)` over the associated constructor](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalvalueofrecipe)
+* [Refaster template `BigDecimalRules.BigDecimalSignumEqualToZero`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumequaltozerorecipe)
 * [Refaster template `BigDecimalRules.BigDecimalSignumIsPositive`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumispositiverecipe)
 * [Refaster template `BigDecimalRules.BigDecimalSignumIsNegative`](../../../picnic/errorprone/refasterrules/bigdecimalrulesrecipes$bigdecimalsignumisnegativerecipe)
 
@@ -56,7 +56,7 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalTwoRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalTenRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalValueOfRecipe
-  - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsZeroRecipe
+  - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumEqualToZeroRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsPositiveRecipe
   - tech.picnic.errorprone.refasterrules.BigDecimalRulesRecipes$BigDecimalSignumIsNegativeRecipe
 

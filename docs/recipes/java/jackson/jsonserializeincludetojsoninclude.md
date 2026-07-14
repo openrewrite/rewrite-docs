@@ -28,6 +28,60 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.JsonSerializer.None;
+import static com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion.NON_NULL;
+
+@JsonSerialize(include = NON_NULL, using = None.class)
+class Test {
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.JsonSerializer.None;
+
+@JsonInclude(value = JsonInclude.Include.NON_NULL)
+@JsonSerialize(using = None.class)
+class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,0 +2,1 @@
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
++import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.JsonSerializer.None;
+@@ -3,1 +4,0 @@
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.JsonSerializer.None;
+-import static com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion.NON_NULL;
+
+@@ -5,1 +5,2 @@
+import static com.fasterxml.jackson.databind.annotation.JsonSerialize.Inclusion.NON_NULL;
+
+-@JsonSerialize(include = NON_NULL, using = None.class)
++@JsonInclude(value = JsonInclude.Include.NON_NULL)
++@JsonSerialize(using = None.class)
+class Test {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

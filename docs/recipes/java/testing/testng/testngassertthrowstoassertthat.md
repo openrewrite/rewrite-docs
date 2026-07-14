@@ -28,6 +28,57 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.testng.Assert.assertThrows;
+
+class Test {
+    void test() {
+        assertThrows(RuntimeException.class, () -> {
+            throw new RuntimeException();
+        });
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+class Test {
+    void test() {
+        assertThatExceptionOfType(RuntimeException.class).isThrownBy(() -> {
+            throw new RuntimeException();
+        });
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import static org.testng.Assert.assertThrows;
++import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+
+@@ -5,1 +5,1 @@
+class Test {
+    void test() {
+-       assertThrows(RuntimeException.class, () -> {
++       assertThatExceptionOfType(RuntimeException.class).isThrownBy(() -> {
+            throw new RuntimeException();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

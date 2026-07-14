@@ -16,9 +16,9 @@ _Migrates `spring-boot-starter-jdbc` to `quarkus-agroal`._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [jdbc](/reference/recipes-by-tag#jdbc)
 * [datasource](/reference/recipes-by-tag#datasource)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [jdbc](/reference/recipes-by-tag#jdbc)
 
 ## Recipe source
 
@@ -66,9 +66,9 @@ description: |
   Migrates `spring-boot-starter-jdbc` to `quarkus-agroal`.
 tags:
   - spring
+  - jdbc
   - datasource
   - quarkus
-  - jdbc
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperAddInputLinesExpectUnchangedRecipe**
 
-_Prefer `BugCheckerRefactoringTestHelper.ExpectOutput#expectUnchanged()` over repeating the input._
+_Prefer `BugCheckerRefactoringTestHelper.ExpectOutput#expectUnchanged()` over more verbose alternatives._
 
 ## Recipe source
 

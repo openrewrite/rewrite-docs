@@ -17,8 +17,8 @@ _Migrates `spring-boot-starter-quartz` to `quarkus-quartz`._
 
 * [spring](/reference/recipes-by-tag#spring)
 * [scheduler](/reference/recipes-by-tag#scheduler)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [quartz](/reference/recipes-by-tag#quartz)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -67,8 +67,8 @@ description: |
 tags:
   - spring
   - scheduler
-  - quarkus
   - quartz
+  - quarkus
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

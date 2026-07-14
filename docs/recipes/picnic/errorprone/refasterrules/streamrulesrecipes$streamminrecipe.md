@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMinRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamMin<T> {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "java:S4266")
-    Optional<T> before(Stream<T> stream, Comparator<? super T> comparator) {
-        return Refaster.anyOf(stream.max(comparator.reversed()), stream.sorted(comparator).findFirst(), stream.collect(minBy(comparator)));
-    }
-    
-    @AfterTemplate
-    Optional<T> after(Stream<T> stream, Comparator<? super T> comparator) {
-        return stream.min(comparator);
-    }
-}
-```
-.
+_Prefer `Stream#min(Comparator)` over less efficient alternatives._
 
 ### Tags
 

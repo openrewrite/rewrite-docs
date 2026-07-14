@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$FloatBytesRecipe**
 
-_Prefer `Float#BYTES` over the Guava alternative._
+_Prefer `Float#BYTES` over non-JDK alternatives._
 
 ## Recipe source
 

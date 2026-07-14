@@ -25,6 +25,45 @@ _When the same expression appears on both sides of `&&`, `||`, `&`, or `|`, the 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    boolean test(boolean a) {
+        return a && a;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    boolean test(boolean a) {
+        return a;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class Test {
+    boolean test(boolean a) {
+-       return a && a;
++       return a;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

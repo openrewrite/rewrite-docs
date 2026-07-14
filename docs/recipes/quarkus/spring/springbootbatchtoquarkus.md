@@ -16,9 +16,9 @@ _Migrates `spring-boot-starter-batch` to `quarkus-scheduler`._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [batch](/reference/recipes-by-tag#batch)
 * [scheduler](/reference/recipes-by-tag#scheduler)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [batch](/reference/recipes-by-tag#batch)
 
 ## Recipe source
 
@@ -66,9 +66,9 @@ description: |
   Migrates `spring-boot-starter-batch` to `quarkus-scheduler`.
 tags:
   - spring
+  - batch
   - scheduler
   - quarkus
-  - batch
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

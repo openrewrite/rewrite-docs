@@ -1,17 +1,17 @@
 ---
-title: "Refaster rules related to AssertJ assertions over `Duration`s"
-sidebar_label: "Refaster rules related to AssertJ assertions over `Duration`s"
+title: "`AssertJDurationRules` Refaster recipes"
+sidebar_label: "`AssertJDurationRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster rules related to AssertJ assertions over `Duration`s
+# `AssertJDurationRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes**
 
-_These rules simplify and improve the readability of tests by using `Duration`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDurationRules)._
+_Refaster rules related to AssertJ assertions over `Duration`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDurationRules)._
 
 ## Recipe source
 
@@ -48,9 +48,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes
-displayName: Refaster rules related to AssertJ assertions over `Duration`s
+displayName: `AssertJDurationRules` Refaster recipes
 description: |
-  These rules simplify and improve the readability of tests by using `Duration`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDurationRules).
+  Refaster rules related to AssertJ assertions over `Duration`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJDurationRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasNanosRecipe
   - tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasMillisRecipe
@@ -78,7 +78,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes"
-  displayName="Refaster rules related to AssertJ assertions over `Duration`s"
+  displayName="`AssertJDurationRules` Refaster recipes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

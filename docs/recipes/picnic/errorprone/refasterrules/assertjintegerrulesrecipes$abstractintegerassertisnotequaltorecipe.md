@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJIntegerRulesRecipes$AbstractIntegerAssertIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractIntegerAssertIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(AbstractIntegerAssert<?> intAssert, int n) {
-        return Refaster.anyOf(intAssert.isNotCloseTo(n, offset(0)), intAssert.isNotCloseTo(n, withPercentage(0)));
-    }
-    
-    @AfterTemplate
-    AbstractIntegerAssert<?> after(AbstractIntegerAssert<?> intAssert, int n) {
-        return intAssert.isNotEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractIntegerAssert#isNotEqualTo(int)` over more contrived alternatives._
 
 ## Recipe source
 

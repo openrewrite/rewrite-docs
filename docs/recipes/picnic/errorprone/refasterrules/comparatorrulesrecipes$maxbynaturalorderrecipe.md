@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$MaxByNaturalOrderRecipe**
 
-_Prefer `Comparator#naturalOrder()` over `Comparator#reverseOrder()` where possible._
+_Prefer `Collectors#maxBy(Comparator)` with `Comparator#naturalOrder()` over less explicit or more contrived alternatives._
 
 ## Recipe source
 

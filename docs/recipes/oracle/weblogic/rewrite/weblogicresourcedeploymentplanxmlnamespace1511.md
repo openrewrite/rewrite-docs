@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `resource-deployment-plan.xml` f
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [resource-deployment-plan](/reference/recipes-by-tag#resource)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `resource-deployment-plan.xml` files to We
 description: |
   This recipe will update the `xmlns` entries in `resource-deployment-plan.xml` files to WebLogic 15.1.1
 tags:
+  - weblogic
   - resource-deployment-plan
   - schemas
-  - weblogic
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicResourceDeploymentPlanXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

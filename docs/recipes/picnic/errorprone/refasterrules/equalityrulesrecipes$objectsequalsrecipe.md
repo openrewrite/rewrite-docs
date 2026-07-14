@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$ObjectsEqualsRecipe**
 
-_Avoid contrived ways of handling `null` values during equality testing._
+_Prefer `Objects#equals(Object, Object)` over more contrived alternatives._
 
 ## Recipe source
 

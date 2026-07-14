@@ -38,6 +38,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
+* [Find files](../../../core/findsourcefiles)
+  * filePattern: `**/web.xml`
 * [Singleton](../../../core/singleton)
 
 **Recipes**
@@ -58,14 +60,16 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd`
   * oldValue: `(?s).*xml/ns/javaee.*`
   * regex: `true`
-* [Find and replace](../../../text/findandreplace)
-  * find: `javax.`
-  * replace: `jakarta.`
-  * filePattern: `**/web.xml`
-* [Find and replace](../../../text/findandreplace)
-  * find: `jakarta.sql.`
-  * replace: `javax.sql.`
-  * filePattern: `**/web.xml`
+* [Change XML tag value](../../../xml/changetagvalue)
+  * elementName: `//*`
+  * oldValue: `javax\.`
+  * newValue: `jakarta.`
+  * regex: `true`
+* [Change XML tag value](../../../xml/changetagvalue)
+  * elementName: `//*`
+  * oldValue: `jakarta\.sql\.`
+  * newValue: `javax.sql.`
+  * regex: `true`
 
 </TabItem>
 
@@ -83,6 +87,8 @@ tags:
   - jsf
   - jakarta
 preconditions:
+  - org.openrewrite.FindSourceFiles:
+      filePattern: **/web.xml
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:
@@ -101,14 +107,16 @@ recipeList:
       newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd
       oldValue: (?s).*xml/ns/javaee.*
       regex: true
-  - org.openrewrite.text.FindAndReplace:
-      find: javax.
-      replace: jakarta.
-      filePattern: **/web.xml
-  - org.openrewrite.text.FindAndReplace:
-      find: jakarta.sql.
-      replace: javax.sql.
-      filePattern: **/web.xml
+  - org.openrewrite.xml.ChangeTagValue:
+      elementName: //*
+      oldValue: javax\.
+      newValue: jakarta.
+      regex: true
+  - org.openrewrite.xml.ChangeTagValue:
+      elementName: //*
+      oldValue: jakarta\.sql\.
+      newValue: javax.sql.
+      regex: true
 
 ```
 </TabItem>

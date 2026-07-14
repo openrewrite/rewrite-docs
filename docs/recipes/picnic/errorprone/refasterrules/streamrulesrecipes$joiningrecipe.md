@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$JoiningRecipe**
 
-_Prefer `Collectors#joining()` over `Collectors#joining(CharSequence)` with an empty delimiter string._
+_Prefer `Collectors#joining()` over more verbose alternatives._
 
 ## Recipe source
 

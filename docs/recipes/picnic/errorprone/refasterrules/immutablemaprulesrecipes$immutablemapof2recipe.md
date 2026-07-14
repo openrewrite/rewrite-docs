@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf2Recipe**
 
-_Prefer `ImmutableMap#of(Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level._
+_Prefer `ImmutableMap#of(Object, Object)` over more verbose or imprecisely typed alternatives._
 
 ## Recipe source
 

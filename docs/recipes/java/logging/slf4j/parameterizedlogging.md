@@ -16,8 +16,8 @@ _Use SLF4J's parameterized logging, which can significantly boost performance fo
 ### Tags
 
 * [slf4j](/reference/recipes-by-tag#slf4j)
-* [RSPEC-S2629](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2629&open=java%3AS2629)
 * [logging](/reference/recipes-by-tag#logging)
+* [RSPEC-S2629](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S2629&open=java%3AS2629)
 
 ## Recipe source
 
@@ -66,8 +66,8 @@ description: |
   Use SLF4J's parameterized logging, which can significantly boost performance for messages that otherwise would be assembled with String concatenation. Particularly impactful when the log level is not enabled, as no work is done to assemble the message.
 tags:
   - slf4j
-  - RSPEC-S2629
   - logging
+  - RSPEC-S2629
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

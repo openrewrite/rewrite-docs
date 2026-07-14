@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasParentFileRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasParentFile {
-    
-    @BeforeTemplate
-    AbstractFileAssert<?> before(File actual, File expected) {
-        return assertThat(actual.getParentFile()).isEqualTo(expected);
-    }
-    
-    @AfterTemplate
-    AbstractFileAssert<?> after(File actual, File expected) {
-        return assertThat(actual).hasParent(expected);
-    }
-}
-```
-.
+_Prefer `AbstractFileAssert#hasParent(File)` over more verbose alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `File`s](/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes.md)
+* [`AssertJFileRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes.md)
 
 
 ## Usage

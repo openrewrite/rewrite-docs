@@ -15,9 +15,9 @@ _Migrate xmlns entries in WebLogic PubSub schema files to WebLogic 14.1.2_
 
 ### Tags
 
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [pubsub](/reference/recipes-by-tag#pubsub)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Migrate xmlns entries in `weblogic-pubsub.xml` files to WebLogic 14
 description: |
   Migrate xmlns entries in WebLogic PubSub schema files to WebLogic 14.1.2
 tags:
-  - schemas
   - weblogic
   - pubsub
+  - schemas
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/weblogic-pubsub.xml

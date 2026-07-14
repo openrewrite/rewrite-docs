@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerRemainderUnsignedRecipe**
 
-_Prefer JDK's `Integer#remainderUnsigned(int, int)` over third-party alternatives._
+_Prefer `Integer#remainderUnsigned(int, int)` over non-JDK alternatives._
 
 ## Recipe source
 

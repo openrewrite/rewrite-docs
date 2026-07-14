@@ -28,6 +28,72 @@ This recipe is used as part of the following composite recipes:
 
 * [Replace PowerMock `Whitebox` with Java reflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
 
+## Example
+
+
+###### Unchanged
+```java
+class MyService {
+    private String name;
+}
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.powermock.reflect.Whitebox;
+
+class MyServiceTest {
+    void testSetField() {
+        MyService service = new MyService();
+        Whitebox.setInternalState(service, "name", "expectedValue");
+    }
+}
+```
+
+###### After
+```java
+import java.lang.reflect.Field;
+
+class MyServiceTest {
+    void testSetField() throws Exception {
+        MyService service = new MyService();
+        Field nameField = service.getClass().getDeclaredField("name");
+        nameField.setAccessible(true);
+        nameField.set(service, "expectedValue");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.powermock.reflect.Whitebox;
++import java.lang.reflect.Field;
+
+@@ -4,1 +4,1 @@
+
+class MyServiceTest {
+-   void testSetField() {
++   void testSetField() throws Exception {
+        MyService service = new MyService();
+@@ -6,1 +6,3 @@
+    void testSetField() {
+        MyService service = new MyService();
+-       Whitebox.setInternalState(service, "name", "expectedValue");
++       Field nameField = service.getClass().getDeclaredField("name");
++       nameField.setAccessible(true);
++       nameField.set(service, "expectedValue");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

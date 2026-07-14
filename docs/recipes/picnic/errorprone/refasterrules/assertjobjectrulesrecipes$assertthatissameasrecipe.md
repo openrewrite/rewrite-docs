@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsSameAsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsSameAs<T> {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(T object1, T object2) {
-        return Refaster.anyOf(assertThat(object1 == object2).isTrue(), assertThat(object1 != object2).isFalse());
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    ObjectAssert<T> after(T object1, T object2) {
-        return assertThat(object1).isSameAs(object2);
-    }
-}
-```
-.
+_Prefer `ObjectAssert#isSameAs(Object)` over more contrived alternatives._
 
 ## Recipe source
 

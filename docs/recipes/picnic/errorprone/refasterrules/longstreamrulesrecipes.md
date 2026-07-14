@@ -30,16 +30,16 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `LongStreamRules.LongStreamClosedOpenRange`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamclosedopenrangerecipe)
-* [Refaster template `LongStreamRules.ConcatOneLongStream`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$concatonelongstreamrecipe)
-* [Refaster template `LongStreamRules.ConcatTwoLongStreams`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$concattwolongstreamsrecipe)
+* [Prefer `LongStream#range(long, long)` over more verbose alternatives](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamrangerecipe)
+* [Refaster template `LongStreamRules.LongStreamIdentity`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamidentityrecipe)
+* [Refaster template `LongStreamRules.LongStreamConcat`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamconcatrecipe)
 * [Refaster template `LongStreamRules.LongStreamFilterSorted`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamfiltersortedrecipe)
-* [Refaster template `LongStreamRules.LongStreamIsEmpty`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamisemptyrecipe)
-* [Refaster template `LongStreamRules.LongStreamIsNotEmpty`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamisnotemptyrecipe)
+* [Refaster template `LongStreamRules.LongStreamFindAnyIsEmpty`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamfindanyisemptyrecipe)
+* [Refaster template `LongStreamRules.LongStreamFindAnyIsPresent`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamfindanyispresentrecipe)
 * [Refaster template `LongStreamRules.LongStreamMin`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamminrecipe)
-* [Refaster template `LongStreamRules.LongStreamNoneMatch`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamnonematchrecipe)
+* [Refaster template `LongStreamRules.LongStreamNoneMatchWithLongPredicate`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamnonematchwithlongpredicaterecipe)
 * [Refaster template `LongStreamRules.LongStreamAnyMatch`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamanymatchrecipe)
-* [Refaster template `LongStreamRules.LongStreamAllMatch`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamallmatchrecipe)
+* [Refaster template `LongStreamRules.LongStreamAllMatchWithLongPredicate`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamallmatchwithlongpredicaterecipe)
 * [Refaster template `LongStreamRules.LongStreamTakeWhile`](../../../picnic/errorprone/refasterrules/longstreamrulesrecipes$longstreamtakewhilerecipe)
 
 </TabItem>
@@ -54,16 +54,16 @@ displayName: `LongStreamRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `LongStream`s. [Source](https://error-prone.picnic.tech/refasterrules/LongStreamRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamClosedOpenRangeRecipe
-  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$ConcatOneLongStreamRecipe
-  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$ConcatTwoLongStreamsRecipe
+  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamRangeRecipe
+  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamIdentityRecipe
+  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamConcatRecipe
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamFilterSortedRecipe
-  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamFindAnyIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamFindAnyIsPresentRecipe
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamMinRecipe
-  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamNoneMatchRecipe
+  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamNoneMatchWithLongPredicateRecipe
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamAnyMatchRecipe
-  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamAllMatchRecipe
+  - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamAllMatchWithLongPredicateRecipe
   - tech.picnic.errorprone.refasterrules.LongStreamRulesRecipes$LongStreamTakeWhileRecipe
 
 ```

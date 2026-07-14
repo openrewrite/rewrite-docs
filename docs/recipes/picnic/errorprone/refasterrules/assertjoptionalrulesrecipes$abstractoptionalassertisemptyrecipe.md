@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertIsEmptyRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractOptionalAssertIsEmpty<T> {
-    
-    @BeforeTemplate
-    AbstractAssert<?, ?> before(AbstractOptionalAssert<?, T> optionalAssert) {
-        return Refaster.anyOf(optionalAssert.isNotPresent(), optionalAssert.isEqualTo(Optional.empty()));
-    }
-    
-    @AfterTemplate
-    AbstractOptionalAssert<?, T> after(AbstractOptionalAssert<?, T> optionalAssert) {
-        return optionalAssert.isEmpty();
-    }
-}
-```
-.
+_Prefer `AbstractOptionalAssert#isEmpty()` over more contrived alternatives._
 
 ## Recipe source
 

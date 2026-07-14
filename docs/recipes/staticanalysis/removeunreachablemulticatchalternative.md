@@ -21,6 +21,63 @@ _When an earlier `catch` clause already covers a type, any later `catch` (includ
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+class A {
+    void m() {
+        try {
+            throw new FileNotFoundException();
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        } catch (FileNotFoundException | IOException e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+class A {
+    void m() {
+        try {
+            throw new FileNotFoundException();
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,1 +10,1 @@
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+-       } catch (FileNotFoundException | IOException e) {
++       } catch (IOException e) {
+            System.out.println(e);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

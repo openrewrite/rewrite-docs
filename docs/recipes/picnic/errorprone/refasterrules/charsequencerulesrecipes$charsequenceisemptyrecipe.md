@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CharSequenceRulesRecipes$CharSequenceIsEmptyRecipe**
 
-_Prefer `CharSequence#isEmpty()` over alternatives that consult the char sequence's length._
+_Prefer `CharSequence#isEmpty()` over less explicit alternatives._
 
 ### Tags
 

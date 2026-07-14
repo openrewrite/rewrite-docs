@@ -30,13 +30,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapBuilder`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapbuilderrecipe)
-* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapNaturalOrderBuilder`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapnaturalorderbuilderrecipe)
-* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapReverseOrderBuilder`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapreverseorderbuilderrecipe)
-* [Refaster template `ImmutableSortedMapRules.EmptyImmutableSortedMap`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$emptyimmutablesortedmaprecipe)
-* [Refaster template `ImmutableSortedMapRules.PairToImmutableSortedMap`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$pairtoimmutablesortedmaprecipe)
-* [Refaster template `ImmutableSortedMapRules.EntryToImmutableSortedMap`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$entrytoimmutablesortedmaprecipe)
-* [Refaster template `ImmutableSortedMapRules.IterableToImmutableSortedMap`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$iterabletoimmutablesortedmaprecipe)
+* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapOrderedBy`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmaporderedbyrecipe)
+* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapNaturalOrder`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapnaturalorderrecipe)
+* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapReverseOrder`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapreverseorderrecipe)
+* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapOf`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapofrecipe)
+* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapOfWithComparableAndObject`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapofwithcomparableandobjectrecipe)
+* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapOfEntryGetKeyEntryGetValue`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapofentrygetkeyentrygetvaluerecipe)
+* [Refaster template `ImmutableSortedMapRules.ImmutableSortedMapCopyOf`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$immutablesortedmapcopyofrecipe)
+* [Refaster template `ImmutableSortedMapRules.ToImmutableSortedMap`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$toimmutablesortedmaprecipe)
+* [Refaster template `ImmutableSortedMapRules.ToImmutableSortedMapWithBinaryOperator`](../../../picnic/errorprone/refasterrules/immutablesortedmaprulesrecipes$toimmutablesortedmapwithbinaryoperatorrecipe)
 
 </TabItem>
 
@@ -50,13 +52,15 @@ displayName: `ImmutableSortedMapRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `ImmutableSortedMap`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedMapRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapNaturalOrderBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapReverseOrderBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$EmptyImmutableSortedMapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$PairToImmutableSortedMapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$EntryToImmutableSortedMapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$IterableToImmutableSortedMapRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapOrderedByRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapNaturalOrderRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapReverseOrderRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapOfWithComparableAndObjectRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapOfEntryGetKeyEntryGetValueRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ImmutableSortedMapCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ToImmutableSortedMapRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedMapRulesRecipes$ToImmutableSortedMapWithBinaryOperatorRecipe
 
 ```
 </TabItem>

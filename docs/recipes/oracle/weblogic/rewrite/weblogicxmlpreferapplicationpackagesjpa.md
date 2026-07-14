@@ -15,9 +15,9 @@ _This recipe will add a `prefer-application-packages` entry for Jakarta Persiste
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [web-app](/reference/recipes-by-tag#web)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -68,9 +68,9 @@ displayName: Add `prefer-application-packages` for JPA in `weblogic.xml`
 description: |
   This recipe will add a `prefer-application-packages` entry for Jakarta Persistence in `weblogic.xml` if it does not already exist.
 tags:
+  - weblogic
   - web-app
   - schemas
-  - weblogic
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/weblogic.xml

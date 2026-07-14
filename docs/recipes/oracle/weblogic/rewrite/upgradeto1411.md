@@ -15,8 +15,8 @@ _This recipe will apply changes required for migrating to WebLogic 14.1.1_
 
 ### Tags
 
-* [java](/reference/recipes-by-tag#java)
 * [weblogic](/reference/recipes-by-tag#weblogic)
+* [java](/reference/recipes-by-tag#java)
 
 ## Recipe source
 
@@ -76,8 +76,8 @@ displayName: Migrate to WebLogic 14.1.1
 description: |
   This recipe will apply changes required for migrating to WebLogic 14.1.1
 tags:
-  - java
   - weblogic
+  - java
 recipeList:
   - org.openrewrite.java.migrate.Java8toJava11
   - org.openrewrite.maven.ChangePropertyValue:

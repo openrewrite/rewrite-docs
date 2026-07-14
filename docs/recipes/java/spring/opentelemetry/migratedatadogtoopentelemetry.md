@@ -16,10 +16,10 @@ _Migrate from Datadog Java tracing annotations to OpenTelemetry annotations. Rep
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [datadog](/reference/recipes-by-tag#datadog)
 * [migration](/reference/recipes-by-tag#migration)
 * [opentelemetry](/reference/recipes-by-tag#opentelemetry)
 * [boot](/reference/recipes-by-tag#boot)
+* [datadog](/reference/recipes-by-tag#datadog)
 
 ## Recipe source
 
@@ -103,10 +103,10 @@ description: |
   Migrate from Datadog Java tracing annotations to OpenTelemetry annotations. Replace Datadog @Trace annotations with @WithSpan annotations.
 tags:
   - spring
-  - datadog
   - migration
   - opentelemetry
   - boot
+  - datadog
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

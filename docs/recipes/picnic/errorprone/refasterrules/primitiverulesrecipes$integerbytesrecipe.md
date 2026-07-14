@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$IntegerBytesRecipe**
 
-_Prefer `Integer#BYTES` over the Guava alternative._
+_Prefer `Integer#BYTES` over non-JDK alternatives._
 
 ## Recipe source
 

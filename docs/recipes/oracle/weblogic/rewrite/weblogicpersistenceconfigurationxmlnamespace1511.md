@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `persistence-configuration.xml` 
 
 ### Tags
 
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [persistence-configuration](/reference/recipes-by-tag#persistence)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `persistence-configuration.xml` files to W
 description: |
   This recipe will update the `xmlns` entries in `persistence-configuration.xml` files to WebLogic 15.1.1
 tags:
-  - schemas
   - weblogic
   - persistence-configuration
+  - schemas
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicPersistenceConfigurationXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

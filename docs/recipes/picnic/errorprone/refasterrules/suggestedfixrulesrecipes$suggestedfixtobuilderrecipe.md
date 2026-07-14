@@ -11,10 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixToBuilderRecipe**
 
-```
-Prefer `SuggestedFix#toBuilder()`} over more contrived alternatives.
-```
-
+_Prefer `SuggestedFix#toBuilder()` over more contrived alternatives._
 
 ## Recipe source
 

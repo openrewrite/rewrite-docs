@@ -1,20 +1,19 @@
 ---
-title: "Prefer `Map#entry(Object, Object)` over alternative ways to create an immutable map entry"
-sidebar_label: "Prefer `Map#entry(Object, Object)` over alternative ways to create an immutable map entry"
+title: "Prefer `Map#entry(Object, Object)` over non-JDK alternatives or the associated constructor"
+sidebar_label: "Prefer `Map#entry(Object, Object)` over non-JDK alternatives or the associated constructor"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `Map#entry(Object, Object)` over alternative ways to create an immutable map entry
+# Prefer `Map#entry(Object, Object)` over non-JDK alternatives or the associated constructor
 
 **tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$MapEntryRecipe**
 
 ```
-<strong>Warning:</strong> while both `Maps#immutableEntry(Object, Object)` and `AbstractMap.SimpleImmutableEntry` allow `null` keys and values, the preferred @link
- Map#entry(Object, Object)} variant does not. Moreover, the `Map.Entry` instances produced
- by the former approaches is `java.io.Serializable`, while this does not hold for the
+<strong>Warning:</strong> while both `Maps#immutableEntry(Object, Object)` and `AbstractMap.SimpleImmutableEntry` allow `null` keys and values, the preferred `Map#entry(Object, Object)` variant does not. Moreover, the `Map.Entry` instances produced
+ by the former approaches are `java.io.Serializable`, while this does not hold for the
  object returned by the preferred approach.
 ```
 
@@ -39,7 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.MapEntryRulesRecipes$MapEntryRecipe"
-  displayName="Prefer `Map#entry(Object, Object)` over alternative ways to create an immutable map entry"
+  displayName="Prefer `Map#entry(Object, Object)` over non-JDK alternatives or the associated constructor"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

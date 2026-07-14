@@ -11,24 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotNullRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsNotNull<T> {
-    
-    @BeforeTemplate
-    @SuppressWarnings(value = "AssertThatIsNotSameAs")
-    AbstractBooleanAssert<? extends AbstractBooleanAssert<?>> before(T object) {
-        return Refaster.anyOf(assertThat(object == null).isFalse(), assertThat(object != null).isTrue());
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    ObjectAssert<T> after(T object) {
-        return assertThat(object).isNotNull();
-    }
-}
-```
-.
+_Prefer `ObjectAssert#isNotNull()` over more contrived alternatives._
 
 ## Recipe source
 

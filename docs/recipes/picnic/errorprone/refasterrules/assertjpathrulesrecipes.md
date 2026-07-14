@@ -1,17 +1,17 @@
 ---
-title: "Refaster rules related to AssertJ assertions over `Path`s"
-sidebar_label: "Refaster rules related to AssertJ assertions over `Path`s"
+title: "`AssertJPathRules` Refaster recipes"
+sidebar_label: "`AssertJPathRules` Refaster recipes"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster rules related to AssertJ assertions over `Path`s
+# `AssertJPathRules` Refaster recipes
 
 **tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes**
 
-_These rules simplify and improve the readability of tests by using `Path`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPathRules)._
+_Refaster rules related to AssertJ assertions over `Path`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPathRules)._
 
 ## Recipe source
 
@@ -40,8 +40,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJPathRules.AssertThatIsReadable`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisreadablerecipe)
 * [Refaster template `AssertJPathRules.AssertThatIsWritable`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatiswritablerecipe)
 * [Refaster template `AssertJPathRules.AssertThatIsExecutable`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisexecutablerecipe)
-* [Refaster template `AssertJPathRules.AssertThatHasFileName`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasfilenamerecipe)
-* [Refaster template `AssertJPathRules.AssertThatHasParentRaw`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasparentrawrecipe)
+* [Prefer `AbstractPathAssert#hasFileName(String)` over more contrived alternatives](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasfilenamerecipe)
+* [Prefer `AbstractPathAssert#hasParentRaw(Path)` over more contrived alternatives](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasparentrawrecipe)
 * [Refaster template `AssertJPathRules.AssertThatHasNoParent`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasnoparentrecipe)
 * [Refaster template `AssertJPathRules.AssertThatStartsWithRaw`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatstartswithrawrecipe)
 * [Refaster template `AssertJPathRules.AssertThatEndsWithRaw`](../../../picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatendswithrawrecipe)
@@ -54,9 +54,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes
-displayName: Refaster rules related to AssertJ assertions over `Path`s
+displayName: `AssertJPathRules` Refaster recipes
 description: |
-  These rules simplify and improve the readability of tests by using `Path`-specific  AssertJ assertion methods instead of generic assertions. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPathRules).
+  Refaster rules related to AssertJ assertions over `Path`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJPathRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatExistsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatDoesNotExistRecipe
@@ -90,7 +90,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes"
-  displayName="Refaster rules related to AssertJ assertions over `Path`s"
+  displayName="`AssertJPathRules` Refaster recipes"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

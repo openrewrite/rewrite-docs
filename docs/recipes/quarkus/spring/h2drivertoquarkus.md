@@ -17,8 +17,8 @@ _Migrates `com.h2database:h2` to `io.quarkus:quarkus-jdbc-h2` (excludes test sco
 
 * [spring](/reference/recipes-by-tag#spring)
 * [database](/reference/recipes-by-tag#database)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [h2](/reference/recipes-by-tag#h2)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -70,8 +70,8 @@ description: |
 tags:
   - spring
   - database
-  - quarkus
   - h2
+  - quarkus
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: com.h2database

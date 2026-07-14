@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatMatchesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatMatches {
-    
-    @BeforeTemplate
-    AbstractAssert<?, ?> before(String string, String regex) {
-        return assertThat(string.matches(regex)).isTrue();
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    AbstractAssert<?, ?> after(String string, String regex) {
-        return assertThat(string).matches(regex);
-    }
-}
-```
-.
+_Prefer `AbstractStringAssert#matches(CharSequence)` over more contrived alternatives._
 
 ## Recipe source
 

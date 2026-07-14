@@ -16,10 +16,10 @@ _Adds configuration and dependencies required for Quarkus native image compilati
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [migration](/reference/recipes-by-tag#migration)
 * [native](/reference/recipes-by-tag#native)
 * [graalvm](/reference/recipes-by-tag#graalvm)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [migration](/reference/recipes-by-tag#migration)
 
 ## Recipe source
 
@@ -57,10 +57,10 @@ description: |
   Adds configuration and dependencies required for Quarkus native image compilation with GraalVM. Includes native profile configuration and reflection hints where needed.
 tags:
   - spring
+  - migration
   - native
   - graalvm
   - quarkus
-  - migration
 recipeList:
   - org.openrewrite.maven.AddProfile:
       id: native

@@ -16,10 +16,10 @@ _Migrate Java code using OpenTracing API to OpenTelemetry API. OpenTracing has b
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [opentracing](/reference/recipes-by-tag#opentracing)
 * [migration](/reference/recipes-by-tag#migration)
 * [opentelemetry](/reference/recipes-by-tag#opentelemetry)
 * [boot](/reference/recipes-by-tag#boot)
+* [opentracing](/reference/recipes-by-tag#opentracing)
 
 ## Recipe source
 
@@ -98,10 +98,10 @@ description: |
   Migrate Java code using OpenTracing API to OpenTelemetry API. OpenTracing has been superseded by OpenTelemetry and is no longer actively maintained.
 tags:
   - spring
-  - opentracing
   - migration
   - opentelemetry
   - boot
+  - opentracing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

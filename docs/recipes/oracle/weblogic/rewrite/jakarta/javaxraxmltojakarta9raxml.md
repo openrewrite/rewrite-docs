@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [connectors](/reference/recipes-by-tag#connectors)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [connectors](/reference/recipes-by-tag#connectors)
 * [ra](/reference/recipes-by-tag#ra)
 
 ## Recipe source
@@ -76,8 +76,8 @@ displayName: Migrate xmlns entries in `ra.xml` files (Connectors).
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
-  - connectors
   - jakarta
+  - connectors
   - ra
 preconditions:
   - org.openrewrite.FindSourceFiles:

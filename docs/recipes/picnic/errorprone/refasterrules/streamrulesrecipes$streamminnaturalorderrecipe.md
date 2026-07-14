@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMinNaturalOrderRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamMinNaturalOrder<T extends Comparable<? super T>> {
-    
-    @BeforeTemplate
-    Optional<T> before(Stream<T> stream) {
-        return Refaster.anyOf(stream.max(reverseOrder()), stream.sorted().findFirst());
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    Optional<T> after(Stream<T> stream) {
-        return stream.min(naturalOrder());
-    }
-}
-```
-.
+_Prefer `Stream#min(Comparator)` over less efficient alternatives._
 
 ## Recipe source
 

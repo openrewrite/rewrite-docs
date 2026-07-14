@@ -25,6 +25,53 @@ _When every branch of an `if`/`else` chain executes the same code, the condition
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test(boolean a) {
+        if (a) {
+            System.out.println("hello");
+        } else {
+            System.out.println("hello");
+        }
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test(boolean a) {
+        System.out.println("hello");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,5 +3,1 @@
+class Test {
+    void test(boolean a) {
+-       if (a) {
+-           System.out.println("hello");
+-       } else {
+-           System.out.println("hello");
+-       }
++       System.out.println("hello");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

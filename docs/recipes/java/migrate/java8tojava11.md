@@ -16,10 +16,10 @@ _This recipe will apply changes commonly needed when upgrading to Java 11. Speci
 ### Tags
 
 * [jaxb](/reference/recipes-by-tag#jaxb)
-* [deprecated](/reference/recipes-by-tag#deprecated)
 * [java11](/reference/recipes-by-tag#java11)
 * [jaxws](/reference/recipes-by-tag#jaxws)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [deprecated](/reference/recipes-by-tag#deprecated)
 
 ## Recipe source
 
@@ -67,6 +67,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Lombok to a Java 11 compatible version](../../java/migrate/lombok/updatelomboktojava11)
 * [Use modernized `java.net` APIs](../../java/migrate/net/javanetapis)
 * [Replace `Paths.get` with `Path.of`](../../java/migrate/nio/file/pathsgettopathof)
+* [Remove redundant `StandardCharsets.UTF_8` from `java.nio.file.Files` method calls](../../java/migrate/nio/file/redundantutf8charset)
 * [Use modernized `java.sql` APIs](../../java/migrate/sql/javasqlapis)
 * [Use modernized `javax.lang.model.util` APIs](../../java/migrate/javax/javaxlangmodelutil)
 * [Use modernized `javax.management.monitor` APIs](../../java/migrate/javax/javaxmanagementmonitorapis)
@@ -115,10 +116,10 @@ description: |
   This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
 tags:
   - jaxb
-  - deprecated
   - java11
   - jaxws
   - jakarta
+  - deprecated
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -145,6 +146,7 @@ recipeList:
   - org.openrewrite.java.migrate.lombok.UpdateLombokToJava11
   - org.openrewrite.java.migrate.net.JavaNetAPIs
   - org.openrewrite.java.migrate.nio.file.PathsGetToPathOf
+  - org.openrewrite.java.migrate.nio.file.RedundantUtf8Charset
   - org.openrewrite.java.migrate.sql.JavaSqlAPIs
   - org.openrewrite.java.migrate.javax.JavaxLangModelUtil
   - org.openrewrite.java.migrate.javax.JavaxManagementMonitorAPIs

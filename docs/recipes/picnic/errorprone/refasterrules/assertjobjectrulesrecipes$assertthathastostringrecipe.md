@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasToStringRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasToString<T> {
-    
-    @BeforeTemplate
-    AbstractStringAssert<?> before(T object, String str) {
-        return assertThat(object.toString()).isEqualTo(str);
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    ObjectAssert<T> after(T object, String str) {
-        return assertThat(object).hasToString(str);
-    }
-}
-```
-.
+_Prefer `ObjectAssert#hasToString(String)` over more contrived alternatives._
 
 ## Recipe source
 

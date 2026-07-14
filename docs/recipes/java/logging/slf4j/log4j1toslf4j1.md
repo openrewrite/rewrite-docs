@@ -42,9 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Change type](../../../java/changetype)
-  * oldFullyQualifiedTypeName: `org.apache.log4j.MDC`
-  * newFullyQualifiedTypeName: `org.slf4j.MDC`
+* [Migrate Log4j 1.x MDC to SLF4J MDC](../../../java/logging/slf4j/log4j1toslf4jmdc)
 * [Migrate Log4j 1.x to Log4j 2.x](../../../java/logging/log4j/log4j1tolog4j2)
 * [Migrate Log4j 2.x to SLF4J 1.x](../../../java/logging/slf4j/log4j2toslf4j1)
 
@@ -66,9 +64,7 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: org.apache.log4j.MDC
-      newFullyQualifiedTypeName: org.slf4j.MDC
+  - org.openrewrite.java.logging.slf4j.Log4j1ToSlf4jMdc
   - org.openrewrite.java.logging.log4j.Log4j1ToLog4j2
   - org.openrewrite.java.logging.slf4j.Log4j2ToSlf4j1
 

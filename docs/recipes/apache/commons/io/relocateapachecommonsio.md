@@ -15,9 +15,9 @@ _The deployment of `org.apache.commons:commons-io` [was a publishing mistake aro
 
 ### Tags
 
+* [commons](/reference/recipes-by-tag#commons)
 * [security](/reference/recipes-by-tag#security)
 * [apache](/reference/recipes-by-tag#apache)
-* [commons](/reference/recipes-by-tag#commons)
 
 ## Recipe source
 
@@ -50,9 +50,9 @@ displayName: Relocate `org.apache.commons:commons-io` to `commons-io:commons-io`
 description: |
   The deployment of `org.apache.commons:commons-io` [was a publishing mistake around 2012](https://issues.sonatype.org/browse/MVNCENTRAL-244) which was corrected by changing the deployment GAV to be located under `commons-io:commons-io`.
 tags:
+  - commons
   - security
   - apache
-  - commons
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.commons

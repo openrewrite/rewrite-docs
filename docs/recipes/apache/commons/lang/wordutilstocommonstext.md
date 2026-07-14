@@ -15,8 +15,8 @@ _Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUti
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [commons](/reference/recipes-by-tag#commons)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -67,8 +67,8 @@ displayName: Migrate `WordUtils` to Apache Commons Text
 description: |
   Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUtils` and add the Commons Text dependency.
 tags:
-  - apache
   - commons
+  - apache
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.apache.commons

@@ -16,10 +16,10 @@ _Migrate from Zipkin tracing to OpenTelemetry OTLP. This recipe replaces Zipkin 
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [zipkin](/reference/recipes-by-tag#zipkin)
 * [migration](/reference/recipes-by-tag#migration)
 * [opentelemetry](/reference/recipes-by-tag#opentelemetry)
 * [boot](/reference/recipes-by-tag#boot)
+* [zipkin](/reference/recipes-by-tag#zipkin)
 
 ## Recipe source
 
@@ -66,10 +66,10 @@ description: |
   Migrate from Zipkin tracing to OpenTelemetry OTLP. This recipe replaces Zipkin dependencies with OpenTelemetry OTLP exporter and updates the related configuration properties.
 tags:
   - spring
-  - zipkin
   - migration
   - opentelemetry
   - boot
+  - zipkin
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

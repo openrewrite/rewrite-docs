@@ -34,6 +34,62 @@ This recipe is used as part of the following composite recipes:
 
 * [JUnit Jupiter best practices](/recipes/java/testing/junit/jupiterbestpractices.md)
 
+## Example
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|thresholdSeconds|`null`|
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.junit.jupiter.api.Timeout;
+
+class MyTest {
+    @Timeout(10000)
+    void test() {
+    }
+}
+```
+
+###### After
+```java
+import org.junit.jupiter.api.Timeout;
+
+import java.util.concurrent.TimeUnit;
+
+class MyTest {
+    @Timeout(value = 167, unit = TimeUnit.MINUTES)
+    void test() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,2 @@
+import org.junit.jupiter.api.Timeout;
+
++import java.util.concurrent.TimeUnit;
++
+class MyTest {
+@@ -4,1 +6,1 @@
+
+class MyTest {
+-   @Timeout(10000)
++   @Timeout(value = 167, unit = TimeUnit.MINUTES)
+    void test() {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

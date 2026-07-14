@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.DequeRulesRecipes$DequeOfferLastRecipe**
 
-_Prefer `Deque#offerLast(Object)` over less clear alternatives._
+_Prefer `Deque#offerLast(Object)` over less explicit alternatives._
 
 ## Recipe source
 

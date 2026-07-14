@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes**
 
-_Refaster rules related to expressions dealing with (arbitrary) collections. [Source](https://error-prone.picnic.tech/refasterrules/CollectionRules)._
+_Refaster rules related to expressions dealing with `Collection`s. [Source](https://error-prone.picnic.tech/refasterrules/CollectionRules)._
 
 ## Recipe source
 
@@ -33,31 +33,31 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `CollectionRules.CollectionIsEmpty`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionisemptyrecipe)
 * [Refaster template `CollectionRules.CollectionSize`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionsizerecipe)
 * [Refaster template `CollectionRules.CollectionContains`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectioncontainsrecipe)
-* [Refaster template `CollectionRules.CollectionsDisjoint`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionsdisjointrecipe)
-* [Refaster template `CollectionRules.CollectionAddAllToCollectionExpression`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionaddalltocollectionexpressionrecipe)
-* [Refaster template `CollectionRules.CollectionRemoveAllFromCollectionExpression`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionremoveallfromcollectionexpressionrecipe)
+* [Refaster template `CollectionRules.Disjoint`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$disjointrecipe)
+* [Refaster template `CollectionRules.CollectionAddAllExpression`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionaddallexpressionrecipe)
+* [Refaster template `CollectionRules.CollectionRemoveAllExpression`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionremoveallexpressionrecipe)
 * [Refaster template `CollectionRules.SetStream`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$setstreamrecipe)
-* [Refaster template `CollectionRules.SetOfVarargs`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$setofvarargsrecipe)
-* [Refaster template `CollectionRules.NewArrayListFromCollection`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$newarraylistfromcollectionrecipe)
+* [Refaster template `CollectionRules.SetOf`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$setofrecipe)
+* [Refaster template `CollectionRules.NewArrayList`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$newarraylistrecipe)
 * [Refaster template `CollectionRules.ImmutableCollectionAsList`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectionaslistrecipe)
 * [Refaster template `CollectionRules.ImmutableCollectionStream`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectionstreamrecipe)
 * [Refaster template `CollectionRules.ImmutableCollectionContains`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectioncontainsrecipe)
 * [Refaster template `CollectionRules.ImmutableCollectionParallelStream`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectionparallelstreamrecipe)
 * [Refaster template `CollectionRules.ImmutableCollectionToString`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectiontostringrecipe)
 * [Refaster template `CollectionRules.CollectionToArray`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectiontoarrayrecipe)
-* [Refaster template `CollectionRules.ImmutableCollectionToArrayWithArray`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectiontoarraywitharrayrecipe)
-* [Refaster template `CollectionRules.ImmutableCollectionToArrayWithGenerator`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectiontoarraywithgeneratorrecipe)
+* [Refaster template `CollectionRules.ImmutableCollectionToArrayObject`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectiontoarrayobjectrecipe)
+* [Refaster template `CollectionRules.ImmutableCollectionToArrayIntFunction`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$immutablecollectiontoarrayintfunctionrecipe)
 * [Refaster template `CollectionRules.CollectionIterator`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectioniteratorrecipe)
-* [Refaster template `CollectionRules.OptionalFirstCollectionElement`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$optionalfirstcollectionelementrecipe)
-* [Refaster template `CollectionRules.RemoveOptionalFirstNavigableSetElement`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$removeoptionalfirstnavigablesetelementrecipe)
+* [Refaster template `CollectionRules.CollectionStreamFindFirst`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionstreamfindfirstrecipe)
+* [Refaster template `CollectionRules.OptionalOfNullableNavigableSetPollFirst`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$optionalofnullablenavigablesetpollfirstrecipe)
 * [Refaster template `CollectionRules.CollectionForEach`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectionforeachrecipe)
 * [Refaster template `CollectionRules.CollectionIteratorNext`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$collectioniteratornextrecipe)
 * [Refaster template `CollectionRules.SequencedCollectionGetFirst`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$sequencedcollectiongetfirstrecipe)
 * [Refaster template `CollectionRules.SequencedCollectionGetLast`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$sequencedcollectiongetlastrecipe)
 * [Refaster template `CollectionRules.ListAddFirst`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$listaddfirstrecipe)
 * [Refaster template `CollectionRules.ListAdd`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$listaddrecipe)
-* [Refaster template `CollectionRules.ListRemoveFirst`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$listremovefirstrecipe)
-* [Refaster template `CollectionRules.ListRemoveLast`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$listremovelastrecipe)
+* [Prefer `List#removeFirst()` over less idiomatic alternatives](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$listremovefirstrecipe)
+* [Prefer `List#removeLast()` over less idiomatic alternatives](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$listremovelastrecipe)
 * [Refaster template `CollectionRules.SortedSetFirst`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$sortedsetfirstrecipe)
 * [Refaster template `CollectionRules.SortedSetLast`](../../../picnic/errorprone/refasterrules/collectionrulesrecipes$sortedsetlastrecipe)
 
@@ -71,28 +71,28 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.CollectionRulesRecipes
 displayName: `CollectionRules` Refaster recipes
 description: |
-  Refaster rules related to expressions dealing with (arbitrary) collections. [Source](https://error-prone.picnic.tech/refasterrules/CollectionRules).
+  Refaster rules related to expressions dealing with `Collection`s. [Source](https://error-prone.picnic.tech/refasterrules/CollectionRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionSizeRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionContainsRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionsDisjointRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllToCollectionExpressionRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllFromCollectionExpressionRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$DisjointRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionAddAllExpressionRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionRemoveAllExpressionRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SetStreamRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SetOfVarargsRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$NewArrayListFromCollectionRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SetOfRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$NewArrayListRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionAsListRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionStreamRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionContainsRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionParallelStreamRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionToStringRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionToArrayRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionToArrayWithArrayRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionToArrayWithGeneratorRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionToArrayObjectRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionToArrayIntFunctionRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIteratorRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$OptionalFirstCollectionElementRecipe
-  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$RemoveOptionalFirstNavigableSetElementRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionStreamFindFirstRecipe
+  - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$OptionalOfNullableNavigableSetPollFirstRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionForEachRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIteratorNextRecipe
   - tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SequencedCollectionGetFirstRecipe

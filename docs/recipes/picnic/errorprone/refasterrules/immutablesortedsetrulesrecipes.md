@@ -30,12 +30,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetBuilder`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetbuilderrecipe)
-* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetNaturalOrderBuilder`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetnaturalorderbuilderrecipe)
-* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetReverseOrderBuilder`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetreverseorderbuilderrecipe)
-* [Refaster template `ImmutableSortedSetRules.EmptyImmutableSortedSet`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$emptyimmutablesortedsetrecipe)
-* [Refaster template `ImmutableSortedSetRules.IterableToImmutableSortedSet`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$iterabletoimmutablesortedsetrecipe)
-* [Refaster template `ImmutableSortedSetRules.StreamToImmutableSortedSet`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$streamtoimmutablesortedsetrecipe)
+* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetOrderedBy`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetorderedbyrecipe)
+* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetNaturalOrder`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetnaturalorderrecipe)
+* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetReverseOrder`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetreverseorderrecipe)
+* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetOf`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetofrecipe)
+* [Refaster template `ImmutableSortedSetRules.ImmutableSortedSetCopyOf`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$immutablesortedsetcopyofrecipe)
+* [Refaster template `ImmutableSortedSetRules.StreamCollectToImmutableSortedSetNaturalOrder`](../../../picnic/errorprone/refasterrules/immutablesortedsetrulesrecipes$streamcollecttoimmutablesortedsetnaturalorderrecipe)
 
 </TabItem>
 
@@ -49,12 +49,12 @@ displayName: `ImmutableSortedSetRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `ImmutableSortedSet`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSortedSetRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetNaturalOrderBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetReverseOrderBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$EmptyImmutableSortedSetRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$IterableToImmutableSortedSetRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$StreamToImmutableSortedSetRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetOrderedByRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetNaturalOrderRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetReverseOrderRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$ImmutableSortedSetCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSortedSetRulesRecipes$StreamCollectToImmutableSortedSetNaturalOrderRecipe
 
 ```
 </TabItem>

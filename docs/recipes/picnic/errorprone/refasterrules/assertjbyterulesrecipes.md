@@ -32,9 +32,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `AssertJByteRules.AbstractByteAssertIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisequaltorecipe)
 * [Refaster template `AssertJByteRules.AbstractByteAssertIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisnotequaltorecipe)
-* [Refaster template `AssertJByteRules.AbstractByteAssertIsZero`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertiszerorecipe)
-* [Refaster template `AssertJByteRules.AbstractByteAssertIsNotZero`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisnotzerorecipe)
-* [Refaster template `AssertJByteRules.AbstractByteAssertIsOne`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisonerecipe)
+* [Refaster template `AssertJByteRules.AbstractByteAssertIsEqualToZero`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisequaltozerorecipe)
+* [Refaster template `AssertJByteRules.AbstractByteAssertIsNotEqualToZero`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisnotequaltozerorecipe)
+* [Refaster template `AssertJByteRules.AbstractByteAssertIsEqualToOne`](../../../picnic/errorprone/refasterrules/assertjbyterulesrecipes$abstractbyteassertisequaltoonerecipe)
 
 </TabItem>
 
@@ -50,9 +50,9 @@ description: |
 recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotZeroRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsOneRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToZeroRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsEqualToOneRecipe
 
 ```
 </TabItem>

@@ -30,22 +30,22 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `FileRules.PathOfUri`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathofurirecipe)
-* [Refaster template `FileRules.PathOfString`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathofstringrecipe)
-* [Refaster template `FileRules.PathInstance`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathinstancerecipe)
-* [Refaster template `FileRules.PathResolveSiblingPath`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathresolvesiblingpathrecipe)
-* [Refaster template `FileRules.PathResolveSiblingString`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathresolvesiblingstringrecipe)
+* [Refaster template `FileRules.PathOf`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathofrecipe)
+* [Refaster template `FileRules.PathOfVarargs`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathofvarargsrecipe)
+* [Refaster template `FileRules.PathIdentity`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathidentityrecipe)
+* [Prefer `Path#resolveSibling(Path)` over more fragile or more verbose alternatives](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathresolvesiblingpathrecipe)
+* [Prefer `Path#resolveSibling(String)` over more fragile or more verbose alternatives](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathresolvesiblingstringrecipe)
 * [Refaster template `FileRules.FilesReadStringWithCharset`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesreadstringwithcharsetrecipe)
 * [Refaster template `FileRules.FilesReadString`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesreadstringrecipe)
-* [Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](../../../picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfiletofilerecipe)
-* [Prefer `Files#createTempFile(Path, String, String, FileAttribute[])` over alternatives that create files with more liberal permissions](../../../picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfileincustomdirectorytofilerecipe)
-* [Refaster template `FileRules.PathToFileMkDirsFilesExists`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathtofilemkdirsfilesexistsrecipe)
-* [Refaster template `FileRules.FileMkDirsFileExists`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filemkdirsfileexistsrecipe)
+* [Prefer `Files#createTempFile(String, String, FileAttribute[])` over less secure alternatives](../../../picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfiletofilerecipe)
+* [Prefer `Files#createTempFile(Path, String, String, FileAttribute[])` over less secure alternatives](../../../picnic/errorprone/refasterrules/filerulesrecipes$filescreatetempfilefiletopathtofilerecipe)
+* [Refaster template `FileRules.PathToFileMkdirsOrFilesExists`](../../../picnic/errorprone/refasterrules/filerulesrecipes$pathtofilemkdirsorfilesexistsrecipe)
+* [Refaster template `FileRules.FileMkdirsOrFileExists`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filemkdirsorfileexistsrecipe)
 * [Refaster template `FileRules.FilesNewInputStreamPathOf`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreampathofrecipe)
-* [Refaster template `FileRules.FilesNewInputStreamToPath`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreamtopathrecipe)
+* [Refaster template `FileRules.FilesNewInputStreamFileToPath`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewinputstreamfiletopathrecipe)
 * [Refaster template `FileRules.FilesNewOutputStreamPathOf`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreampathofrecipe)
-* [Refaster template `FileRules.FilesNewOutputStreamToPath`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreamtopathrecipe)
-* [Refaster template `FileRules.FilesNewBufferedReader`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderrecipe)
+* [Refaster template `FileRules.FilesNewOutputStreamFileToPath`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewoutputstreamfiletopathrecipe)
+* [Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderrecipe)
 * [Refaster template `FileRules.FilesNewBufferedReaderWithCharset`](../../../picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderwithcharsetrecipe)
 
 </TabItem>
@@ -60,21 +60,21 @@ displayName: `FileRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with files. [Source](https://error-prone.picnic.tech/refasterrules/FileRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfUriRecipe
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfStringRecipe
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathInstanceRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathOfVarargsRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathIdentityRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathResolveSiblingPathRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathResolveSiblingStringRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesReadStringWithCharsetRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesReadStringRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileInCustomDirectoryToFileRecipe
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathToFileMkDirsFilesExistsRecipe
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileFileToPathToFileRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathToFileMkdirsOrFilesExistsRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkdirsOrFileExistsRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamPathOfRecipe
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamToPathRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewInputStreamFileToPathRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamPathOfRecipe
-  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamToPathRecipe
+  - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewOutputStreamFileToPathRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderRecipe
   - tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderWithCharsetRecipe
 

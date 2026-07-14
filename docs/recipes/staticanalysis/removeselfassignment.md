@@ -25,6 +25,43 @@ _Self-assignments such as `x = x` have no effect and indicate a copy-paste error
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test(int x) {
+        x = x;
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test(int x) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+class Test {
+    void test(int x) {
+-       x = x;
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

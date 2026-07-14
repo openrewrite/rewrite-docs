@@ -32,6 +32,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Apply Gradle best practices](/recipes/gradle/gradlebestpractices.md)
 * [Use `=` assignment syntax for well-known Gradle properties](/recipes/gradle/useassignmentforpropertysyntax.md)
 
 ## Example

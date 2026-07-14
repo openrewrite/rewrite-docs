@@ -28,6 +28,61 @@ This recipe is used as part of the following composite recipes:
 
 * [Java best practices](/recipes/java/migrate/javabestpractices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Objects;
+
+class Parent {
+    Parent(String name) {
+    }
+}
+
+class Child extends Parent {
+    Child(String name) {
+        super(Objects.requireNonNull(name));
+    }
+}
+```
+
+###### After
+```java
+import java.util.Objects;
+
+class Parent {
+    Parent(String name) {
+    }
+}
+
+class Child extends Parent {
+    Child(String name) {
+        String name1 = Objects.requireNonNull(name);
+        super(name1);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -10,1 +10,2 @@
+class Child extends Parent {
+    Child(String name) {
+-       super(Objects.requireNonNull(name));
++       String name1 = Objects.requireNonNull(name);
++       super(name1);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

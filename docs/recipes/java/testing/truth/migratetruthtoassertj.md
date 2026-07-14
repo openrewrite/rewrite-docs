@@ -15,9 +15,9 @@ _Migrate Google Truth assertions to AssertJ assertions._
 
 ### Tags
 
-* [truth](/reference/recipes-by-tag#truth)
-* [testing](/reference/recipes-by-tag#testing)
 * [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
+* [truth](/reference/recipes-by-tag#truth)
 
 ## Recipe source
 
@@ -215,9 +215,9 @@ displayName: Migrate Google Truth to AssertJ
 description: |
   Migrate Google Truth assertions to AssertJ assertions.
 tags:
-  - truth
-  - testing
   - assertj
+  - testing
+  - truth
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

@@ -15,8 +15,8 @@ _Migrate DataNucleus 3.x applications to 4.0. This recipe handles package reloca
 
 ### Tags
 
-* [datanucleus](/reference/recipes-by-tag#datanucleus)
 * [jdo](/reference/recipes-by-tag#jdo)
+* [datanucleus](/reference/recipes-by-tag#datanucleus)
 * [jpa](/reference/recipes-by-tag#jpa)
 
 ## Recipe source
@@ -59,8 +59,8 @@ displayName: Migrate to DataNucleus 4.0
 description: |
   Migrate DataNucleus 3.x applications to 4.0. This recipe handles package relocations, type renames, property key changes, and dependency updates introduced in AccessPlatform 4.0.
 tags:
-  - datanucleus
   - jdo
+  - datanucleus
   - jpa
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

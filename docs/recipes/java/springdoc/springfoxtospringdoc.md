@@ -15,9 +15,9 @@ _Migrate from SpringFox Swagger to SpringDoc and OpenAPI._
 
 ### Tags
 
+* [springdoc](/reference/recipes-by-tag#springdoc)
 * [springfox](/reference/recipes-by-tag#springfox)
 * [openapi](/reference/recipes-by-tag#openapi)
-* [springdoc](/reference/recipes-by-tag#springdoc)
 * [swagger](/reference/recipes-by-tag#swagger)
 
 ## Recipe source
@@ -69,9 +69,9 @@ displayName: Migrate from SpringFox Swagger to SpringDoc and OpenAPI
 description: |
   Migrate from SpringFox Swagger to SpringDoc and OpenAPI.
 tags:
+  - springdoc
   - springfox
   - openapi
-  - springdoc
   - swagger
 preconditions:
   - org.openrewrite.Singleton

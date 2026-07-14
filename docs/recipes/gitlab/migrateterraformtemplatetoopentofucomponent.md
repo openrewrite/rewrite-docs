@@ -15,9 +15,9 @@ _Replace the deprecated `Terraform/Base.latest.gitlab-ci.yml` template include w
 
 ### Tags
 
-* [ci](/reference/recipes-by-tag#ci)
 * [gitlab](/reference/recipes-by-tag#gitlab)
 * [terraform](/reference/recipes-by-tag#terraform)
+* [ci](/reference/recipes-by-tag#ci)
 * [opentofu](/reference/recipes-by-tag#opentofu)
 
 ## Recipe source
@@ -51,9 +51,9 @@ displayName: Migrate GitLab Terraform template to OpenTofu component
 description: |
   Replace the deprecated `Terraform/Base.latest.gitlab-ci.yml` template include with the OpenTofu CI/CD component, per the GitLab catalog migration guide.
 tags:
-  - ci
   - gitlab
   - terraform
+  - ci
   - opentofu
 recipeList:
   - org.openrewrite.gitlab.MigrateTemplateToComponent:

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.BugCheckerRulesRecipes$BugCheckerRefactoringTestHelperIdentityRecipe**
 
-_Avoid calling `BugCheckerRefactoringTestHelper#setFixChooser(FixChooser)` or `BugCheckerRefactoringTestHelper#setImportOrder(String)` with their respective default values._
+_Prefer the `BugCheckerRefactoringTestHelper` as-is over more verbose alternatives._
 
 ## Recipe source
 

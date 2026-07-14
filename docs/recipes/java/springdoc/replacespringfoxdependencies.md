@@ -15,8 +15,8 @@ _Replace SpringFox Dependencies._
 
 ### Tags
 
-* [springfox](/reference/recipes-by-tag#springfox)
 * [springdoc](/reference/recipes-by-tag#springdoc)
+* [springfox](/reference/recipes-by-tag#springfox)
 
 ## Recipe source
 
@@ -64,8 +64,8 @@ displayName: Replace SpringFox Dependencies
 description: |
   Replace SpringFox Dependencies.
 tags:
-  - springfox
   - springdoc
+  - springfox
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: io.springfox

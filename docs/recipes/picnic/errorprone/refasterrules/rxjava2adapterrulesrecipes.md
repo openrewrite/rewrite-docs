@@ -30,17 +30,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `RxJava2AdapterRules.CompletableToMono`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completabletomonorecipe)
-* [Refaster template `RxJava2AdapterRules.FlowableToFlux`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$flowabletofluxrecipe)
-* [Refaster template `RxJava2AdapterRules.FluxToFlowable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$fluxtoflowablerecipe)
-* [Refaster template `RxJava2AdapterRules.FluxToObservable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$fluxtoobservablerecipe)
-* [Refaster template `RxJava2AdapterRules.MaybeToMono`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$maybetomonorecipe)
-* [Refaster template `RxJava2AdapterRules.MonoToCompletable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monotocompletablerecipe)
-* [Refaster template `RxJava2AdapterRules.MonoToFlowable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monotoflowablerecipe)
-* [Refaster template `RxJava2AdapterRules.MonoToMaybe`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monotomayberecipe)
-* [Refaster template `RxJava2AdapterRules.MonoToSingle`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monotosinglerecipe)
-* [Refaster template `RxJava2AdapterRules.ObservableToFlux`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$observabletofluxrecipe)
-* [Refaster template `RxJava2AdapterRules.SingleToMono`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$singletomonorecipe)
+* [Refaster template `RxJava2AdapterRules.CompletableAsRxJava2AdapterCompletableToMono`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$completableasrxjava2adaptercompletabletomonorecipe)
+* [Refaster template `RxJava2AdapterRules.FlowableAsRxJava2AdapterFlowableToFlux`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$flowableasrxjava2adapterflowabletofluxrecipe)
+* [Refaster template `RxJava2AdapterRules.FluxAsRxJava2AdapterFluxToFlowable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$fluxasrxjava2adapterfluxtoflowablerecipe)
+* [Refaster template `RxJava2AdapterRules.FluxAsRxJava2AdapterFluxToObservable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$fluxasrxjava2adapterfluxtoobservablerecipe)
+* [Refaster template `RxJava2AdapterRules.MaybeAsRxJava2AdapterMaybeToMono`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$maybeasrxjava2adaptermaybetomonorecipe)
+* [Refaster template `RxJava2AdapterRules.MonoAsRxJava2AdapterMonoToCompletable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monoasrxjava2adaptermonotocompletablerecipe)
+* [Refaster template `RxJava2AdapterRules.MonoAsRxJava2AdapterMonoToFlowable`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monoasrxjava2adaptermonotoflowablerecipe)
+* [Refaster template `RxJava2AdapterRules.MonoAsRxJava2AdapterMonoToMaybe`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monoasrxjava2adaptermonotomayberecipe)
+* [Refaster template `RxJava2AdapterRules.MonoAsRxJava2AdapterMonoToSingle`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$monoasrxjava2adaptermonotosinglerecipe)
+* [Refaster template `RxJava2AdapterRules.ObservableToFlowableAsRxJava2AdapterFlowableToFlux`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$observabletoflowableasrxjava2adapterflowabletofluxrecipe)
+* [Refaster template `RxJava2AdapterRules.SingleAsRxJava2AdapterSingleToMono`](../../../picnic/errorprone/refasterrules/rxjava2adapterrulesrecipes$singleasrxjava2adaptersingletomonorecipe)
 
 </TabItem>
 
@@ -54,17 +54,17 @@ displayName: `RxJava2AdapterRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `RxJava2Adapter`. [Source](https://error-prone.picnic.tech/refasterrules/RxJava2AdapterRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableToMonoRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$FlowableToFluxRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$FluxToFlowableRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$FluxToObservableRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MaybeToMonoRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoToCompletableRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoToFlowableRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoToMaybeRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoToSingleRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$ObservableToFluxRecipe
-  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$SingleToMonoRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$CompletableAsRxJava2AdapterCompletableToMonoRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$FlowableAsRxJava2AdapterFlowableToFluxRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$FluxAsRxJava2AdapterFluxToFlowableRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$FluxAsRxJava2AdapterFluxToObservableRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MaybeAsRxJava2AdapterMaybeToMonoRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoAsRxJava2AdapterMonoToCompletableRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoAsRxJava2AdapterMonoToFlowableRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoAsRxJava2AdapterMonoToMaybeRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$MonoAsRxJava2AdapterMonoToSingleRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$ObservableToFlowableAsRxJava2AdapterFlowableToFluxRecipe
+  - tech.picnic.errorprone.refasterrules.RxJava2AdapterRulesRecipes$SingleAsRxJava2AdapterSingleToMonoRecipe
 
 ```
 </TabItem>

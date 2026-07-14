@@ -31,19 +31,19 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `TimeRules.ClockInstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$clockinstantrecipe)
-* [Refaster template `TimeRules.UtcConstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$utcconstantrecipe)
+* [Refaster template `TimeRules.Utc`](../../../picnic/errorprone/refasterrules/timerulesrecipes$utcrecipe)
 * [Refaster template `TimeRules.LocalDateOfInstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$localdateofinstantrecipe)
 * [Refaster template `TimeRules.LocalDateTimeOfInstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$localdatetimeofinstantrecipe)
 * [Refaster template `TimeRules.LocalTimeOfInstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$localtimeofinstantrecipe)
 * [Refaster template `TimeRules.OffsetDateTimeOfInstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeofinstantrecipe)
 * [Refaster template `TimeRules.InstantIdentity`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instantidentityrecipe)
-* [Prefer `Instant#truncatedTo(TemporalUnit)` over less obvious alternatives](../../../picnic/errorprone/refasterrules/timerulesrecipes$instanttruncatedtomillisecondsrecipe)
-* [Refaster template `TimeRules.InstantTruncatedToSeconds`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instanttruncatedtosecondsrecipe)
+* [Prefer `Instant#truncatedTo(TemporalUnit)` over less efficient alternatives](../../../picnic/errorprone/refasterrules/timerulesrecipes$instanttruncatedtochronounitmillisrecipe)
+* [Refaster template `TimeRules.InstantTruncatedToChronoUnitSeconds`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instanttruncatedtochronounitsecondsrecipe)
 * [Refaster template `TimeRules.InstantAtOffset`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instantatoffsetrecipe)
 * [Refaster template `TimeRules.OffsetTimeOfInstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$offsettimeofinstantrecipe)
 * [Refaster template `TimeRules.InstantAtZone`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instantatzonerecipe)
-* [Refaster template `TimeRules.UtcClock`](../../../picnic/errorprone/refasterrules/timerulesrecipes$utcclockrecipe)
-* [Refaster template `TimeRules.EpochInstant`](../../../picnic/errorprone/refasterrules/timerulesrecipes$epochinstantrecipe)
+* [Refaster template `TimeRules.ClockSystemUTC`](../../../picnic/errorprone/refasterrules/timerulesrecipes$clocksystemutcrecipe)
+* [Refaster template `TimeRules.InstantEpoch`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instantepochrecipe)
 * [Refaster template `TimeRules.InstantIsBefore`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instantisbeforerecipe)
 * [Refaster template `TimeRules.InstantIsAfter`](../../../picnic/errorprone/refasterrules/timerulesrecipes$instantisafterrecipe)
 * [Refaster template `TimeRules.LocalTimeMin`](../../../picnic/errorprone/refasterrules/timerulesrecipes$localtimeminrecipe)
@@ -56,17 +56,17 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `TimeRules.ChronoZonedDateTimeIsAfter`](../../../picnic/errorprone/refasterrules/timerulesrecipes$chronozoneddatetimeisafterrecipe)
 * [Refaster template `TimeRules.OffsetDateTimeIsBefore`](../../../picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeisbeforerecipe)
 * [Refaster template `TimeRules.OffsetDateTimeIsAfter`](../../../picnic/errorprone/refasterrules/timerulesrecipes$offsetdatetimeisafterrecipe)
-* [Refaster template `TimeRules.ZeroDuration`](../../../picnic/errorprone/refasterrules/timerulesrecipes$zerodurationrecipe)
+* [Refaster template `TimeRules.DurationZero`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationzerorecipe)
 * [Refaster template `TimeRules.DurationOfDays`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationofdaysrecipe)
 * [Refaster template `TimeRules.DurationOfHours`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationofhoursrecipe)
 * [Refaster template `TimeRules.DurationOfMillis`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationofmillisrecipe)
 * [Refaster template `TimeRules.DurationOfMinutes`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationofminutesrecipe)
 * [Refaster template `TimeRules.DurationOfNanos`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationofnanosrecipe)
 * [Refaster template `TimeRules.DurationOfSeconds`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationofsecondsrecipe)
-* [Refaster template `TimeRules.DurationBetweenInstants`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationbetweeninstantsrecipe)
-* [Refaster template `TimeRules.DurationBetweenOffsetDateTimes`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationbetweenoffsetdatetimesrecipe)
+* [Prefer `Duration#between` over less efficient alternatives](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationbetweeninstantrecipe)
+* [Prefer `Duration#between` over less efficient alternatives](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationbetweenoffsetdatetimerecipe)
 * [Refaster template `TimeRules.DurationIsZero`](../../../picnic/errorprone/refasterrules/timerulesrecipes$durationiszerorecipe)
-* [Refaster template `TimeRules.ZeroPeriod`](../../../picnic/errorprone/refasterrules/timerulesrecipes$zeroperiodrecipe)
+* [Refaster template `TimeRules.PeriodZero`](../../../picnic/errorprone/refasterrules/timerulesrecipes$periodzerorecipe)
 * [Refaster template `TimeRules.LocalDatePlusDays`](../../../picnic/errorprone/refasterrules/timerulesrecipes$localdateplusdaysrecipe)
 * [Refaster template `TimeRules.LocalDatePlusWeeks`](../../../picnic/errorprone/refasterrules/timerulesrecipes$localdateplusweeksrecipe)
 * [Refaster template `TimeRules.LocalDatePlusMonths`](../../../picnic/errorprone/refasterrules/timerulesrecipes$localdateplusmonthsrecipe)
@@ -153,19 +153,19 @@ description: |
   Refaster rules related to expressions dealing with time. [Source](https://error-prone.picnic.tech/refasterrules/TimeRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ClockInstantRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcConstantRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDateTimeOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIdentityRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToMillisecondsRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToSecondsRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToChronoUnitMillisRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantTruncatedToChronoUnitSecondsRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantAtOffsetRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetTimeOfInstantRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantAtZoneRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$UtcClockRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$EpochInstantRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ClockSystemUTCRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantEpochRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIsBeforeRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIsAfterRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinRecipe
@@ -178,17 +178,17 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoZonedDateTimeIsAfterRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeIsBeforeRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$OffsetDateTimeIsAfterRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZeroDurationRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationZeroRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfDaysRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfHoursRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfMillisRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfMinutesRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfNanosRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationOfSecondsRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenInstantsRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenOffsetDateTimesRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenInstantRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationBetweenOffsetDateTimeRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$DurationIsZeroRecipe
-  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ZeroPeriodRecipe
+  - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$PeriodZeroRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusDaysRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusWeeksRecipe
   - tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalDatePlusMonthsRecipe

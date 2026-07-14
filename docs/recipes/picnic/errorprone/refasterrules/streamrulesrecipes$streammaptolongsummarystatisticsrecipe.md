@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamMapToLongSummaryStatisticsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamMapToLongSummaryStatistics<T> {
-    
-    @BeforeTemplate
-    LongSummaryStatistics before(Stream<T> stream, ToLongFunction<T> mapper) {
-        return stream.collect(summarizingLong(mapper));
-    }
-    
-    @AfterTemplate
-    LongSummaryStatistics after(Stream<T> stream, ToLongFunction<T> mapper) {
-        return stream.mapToLong(mapper).summaryStatistics();
-    }
-}
-```
-.
+_Prefer `stream.mapToLong(mapper).summaryStatistics()` over less efficient alternatives._
 
 ## Recipe source
 

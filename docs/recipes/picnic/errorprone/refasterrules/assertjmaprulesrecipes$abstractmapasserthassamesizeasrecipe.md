@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertHasSameSizeAsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractMapAssertHasSameSizeAs<K, V> {
-    
-    @BeforeTemplate
-    AbstractMapAssert<?, ?, K, V> before(AbstractMapAssert<?, ?, K, V> mapAssert, Map<?, ?> map) {
-        return mapAssert.hasSize(map.size());
-    }
-    
-    @AfterTemplate
-    AbstractMapAssert<?, ?, K, V> after(AbstractMapAssert<?, ?, K, V> mapAssert, Map<?, ?> map) {
-        return mapAssert.hasSameSizeAs(map);
-    }
-}
-```
-.
+_Prefer `AbstractMapAssert#hasSameSizeAs(Map)` over more contrived alternatives._
 
 ## Recipe source
 

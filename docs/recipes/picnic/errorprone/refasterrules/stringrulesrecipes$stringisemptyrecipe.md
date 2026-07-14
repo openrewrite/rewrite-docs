@@ -11,11 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyRecipe**
 
-_Prefer `String#isEmpty()` over alternatives that consult the string's length._
-
-### Tags
-
-* [RSPEC-S7158](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S7158&open=java%3AS7158)
+_Prefer `String#isEmpty()` over more verbose alternatives._
 
 ## Recipe source
 

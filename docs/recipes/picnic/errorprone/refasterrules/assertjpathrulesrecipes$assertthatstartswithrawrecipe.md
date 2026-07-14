@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatStartsWithRawRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatStartsWithRaw {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(Path actual, Path other) {
-        return assertThat(actual.startsWith(other)).isTrue();
-    }
-    
-    @AfterTemplate
-    AbstractPathAssert<?> after(Path actual, Path other) {
-        return assertThat(actual).startsWithRaw(other);
-    }
-}
-```
-.
+_Prefer `AbstractPathAssert#startsWithRaw(Path)` over more contrived alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Path`s](/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes.md)
+* [`AssertJPathRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes.md)
 
 
 ## Usage

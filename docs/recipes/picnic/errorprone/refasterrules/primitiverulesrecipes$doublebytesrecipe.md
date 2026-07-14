@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$DoubleBytesRecipe**
 
-_Prefer `Double#BYTES` over the Guava alternative._
+_Prefer `Double#BYTES` over non-JDK alternatives._
 
 ## Recipe source
 

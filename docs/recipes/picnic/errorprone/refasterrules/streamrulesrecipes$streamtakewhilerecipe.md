@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamTakeWhileRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamTakeWhile<T> {
-    
-    @BeforeTemplate
-    Stream<T> before(Stream<T> stream, Predicate<? super T> predicate) {
-        return stream.takeWhile(predicate).filter(predicate);
-    }
-    
-    @AfterTemplate
-    Stream<T> after(Stream<T> stream, Predicate<? super T> predicate) {
-        return stream.takeWhile(predicate);
-    }
-}
-```
-.
+_Prefer `Stream#takeWhile(Predicate)` over more verbose alternatives._
 
 ## Recipe source
 

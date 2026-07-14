@@ -15,9 +15,9 @@ _The Security Manager API is unsupported in Java 24. This recipe will remove the
 
 ### Tags
 
-* [security](/reference/recipes-by-tag#security)
-* [java25](/reference/recipes-by-tag#java25)
 * [deprecation](/reference/recipes-by-tag#deprecation)
+* [java25](/reference/recipes-by-tag#java25)
+* [security](/reference/recipes-by-tag#security)
 
 ## Recipe source
 
@@ -65,9 +65,9 @@ displayName: Remove Security SecurityManager
 description: |
   The Security Manager API is unsupported in Java 24. This recipe will remove the usage of `java.security.SecurityManager`.
 tags:
-  - security
-  - java25
   - deprecation
+  - java25
+  - security
 preconditions:
   - org.openrewrite.java.search.HasJavaVersion:
       version: [25,)

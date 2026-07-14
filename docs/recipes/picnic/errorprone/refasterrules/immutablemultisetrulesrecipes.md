@@ -31,9 +31,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ImmutableMultisetRules.ImmutableMultisetBuilder`](../../../picnic/errorprone/refasterrules/immutablemultisetrulesrecipes$immutablemultisetbuilderrecipe)
-* [Refaster template `ImmutableMultisetRules.EmptyImmutableMultiset`](../../../picnic/errorprone/refasterrules/immutablemultisetrulesrecipes$emptyimmutablemultisetrecipe)
-* [Refaster template `ImmutableMultisetRules.IterableToImmutableMultiset`](../../../picnic/errorprone/refasterrules/immutablemultisetrulesrecipes$iterabletoimmutablemultisetrecipe)
-* [Refaster template `ImmutableMultisetRules.StreamToImmutableMultiset`](../../../picnic/errorprone/refasterrules/immutablemultisetrulesrecipes$streamtoimmutablemultisetrecipe)
+* [Refaster template `ImmutableMultisetRules.ImmutableMultisetOf`](../../../picnic/errorprone/refasterrules/immutablemultisetrulesrecipes$immutablemultisetofrecipe)
+* [Refaster template `ImmutableMultisetRules.ImmutableMultisetCopyOf`](../../../picnic/errorprone/refasterrules/immutablemultisetrulesrecipes$immutablemultisetcopyofrecipe)
+* [Refaster template `ImmutableMultisetRules.StreamCollectToImmutableMultiset`](../../../picnic/errorprone/refasterrules/immutablemultisetrulesrecipes$streamcollecttoimmutablemultisetrecipe)
 
 </TabItem>
 
@@ -48,9 +48,9 @@ description: |
   Refaster rules related to expressions dealing with `ImmutableMultiset`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableMultisetRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$ImmutableMultisetBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$EmptyImmutableMultisetRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$IterableToImmutableMultisetRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$StreamToImmutableMultisetRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$ImmutableMultisetOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$ImmutableMultisetCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableMultisetRulesRecipes$StreamCollectToImmutableMultisetRecipe
 
 ```
 </TabItem>

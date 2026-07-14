@@ -28,6 +28,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.server.LDClient;
+
+class A {
+    void init() {
+        LDClient client = new LDClient("sdk-key-123abc");
+    }
+}
+```
+
+###### After
+```java
+import com.launchdarkly.openfeature.serverprovider.Provider;
+import dev.openfeature.sdk.Client;
+import dev.openfeature.sdk.OpenFeatureAPI;
+
+class A {
+    void init() {
+        OpenFeatureAPI.getInstance().setProviderAndWait(new Provider("sdk-key-123abc"));
+        Client client = OpenFeatureAPI.getInstance().getClient();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,3 @@
+-import com.launchdarkly.sdk.server.LDClient;
++import com.launchdarkly.openfeature.serverprovider.Provider;
++import dev.openfeature.sdk.Client;
++import dev.openfeature.sdk.OpenFeatureAPI;
+
+@@ -5,1 +7,2 @@
+class A {
+    void init() {
+-       LDClient client = new LDClient("sdk-key-123abc");
++       OpenFeatureAPI.getInstance().setProviderAndWait(new Provider("sdk-key-123abc"));
++       Client client = OpenFeatureAPI.getInstance().getClient();
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

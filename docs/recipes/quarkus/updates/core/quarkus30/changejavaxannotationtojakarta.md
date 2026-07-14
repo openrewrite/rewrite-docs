@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation. E
 
 ### Tags
 
-* [javax](/reference/recipes-by-tag#javax)
 * [batch](/reference/recipes-by-tag#batch)
+* [javax](/reference/recipes-by-tag#javax)
 * [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
@@ -52,8 +52,8 @@ displayName: Migrate deprecated `javax.annotation` packages to `jakarta.annotati
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating a package relocation. Excludes `javax.annotation.processing`.
 tags:
-  - javax
   - batch
+  - javax
   - jakarta
 recipeList:
   - io.quarkus.updates.core.quarkus30.JavaxAnnotationPackageToJakarta

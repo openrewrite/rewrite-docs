@@ -11,10 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$MonoFluxRecipe**
 
-```
-Prefer `Mono#flux()`} over more contrived alternatives.
-```
-
+_Prefer `Mono#flux()` over more contrived alternatives._
 
 ## Recipe source
 

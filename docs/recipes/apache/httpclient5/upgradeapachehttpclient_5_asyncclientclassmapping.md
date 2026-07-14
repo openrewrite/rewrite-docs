@@ -15,8 +15,8 @@ _Migrates classes from Apache HttpAsyncClient 4.x `httpasyncclient` to their equ
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [httpclient](/reference/recipes-by-tag#httpclient)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -73,8 +73,8 @@ displayName: Migrate Apache HttpAsyncClient 4.x classes to HttpClient 5.x
 description: |
   Migrates classes from Apache HttpAsyncClient 4.x `httpasyncclient` to their equivalents in HttpClient 5.x.
 tags:
-  - apache
   - httpclient
+  - apache
 recipeList:
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO: `PoolingNHttpClientConnectionManager` with `NHttpConnectionFactory` - the connection factory configuration is lost in migration. Configure via `PoolingAsyncClientConnectionManagerBuilder` if needed.

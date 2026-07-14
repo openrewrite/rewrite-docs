@@ -16,9 +16,9 @@ _Migrates `spring-boot-starter-actuator` to `quarkus-smallrye-health`._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [health](/reference/recipes-by-tag#health)
 * [actuator](/reference/recipes-by-tag#actuator)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [health](/reference/recipes-by-tag#health)
 
 ## Recipe source
 
@@ -66,9 +66,9 @@ description: |
   Migrates `spring-boot-starter-actuator` to `quarkus-smallrye-health`.
 tags:
   - spring
+  - health
   - actuator
   - quarkus
-  - health
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

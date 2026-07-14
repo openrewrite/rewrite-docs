@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientPostRecipe**
 
-_Prefer `WebClient#post()` over `WebClient#method(HttpMethod)` with `HttpMethod#POST`._
+_Prefer `WebClient#post()` over less idiomatic alternatives._
 
 ## Recipe source
 

@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AbstractMapAssertContainsExactlyInAnyOrderEntriesOfRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractMapAssertContainsExactlyInAnyOrderEntriesOf<K, V> {
-    
-    @BeforeTemplate
-    AbstractMapAssert<?, ?, K, V> before(AbstractMapAssert<?, ?, K, V> mapAssert, Map<? extends K, ? extends V> map) {
-        return mapAssert.isEqualTo(map);
-    }
-    
-    @AfterTemplate
-    AbstractMapAssert<?, ?, K, V> after(AbstractMapAssert<?, ?, K, V> mapAssert, Map<? extends K, ? extends V> map) {
-        return mapAssert.containsExactlyInAnyOrderEntriesOf(map);
-    }
-}
-```
-.
+_Prefer `AbstractMapAssert#containsExactlyInAnyOrderEntriesOf(Map)` over less explicit alternatives._
 
 ## Recipe source
 

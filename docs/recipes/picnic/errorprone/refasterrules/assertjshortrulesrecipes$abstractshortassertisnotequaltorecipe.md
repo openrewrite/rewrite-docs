@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJShortRulesRecipes$AbstractShortAssertIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractShortAssertIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractShortAssert<?> before(AbstractShortAssert<?> shortAssert, short n) {
-        return Refaster.anyOf(shortAssert.isNotCloseTo(n, offset((short)0)), shortAssert.isNotCloseTo(n, withPercentage(0)));
-    }
-    
-    @AfterTemplate
-    AbstractShortAssert<?> after(AbstractShortAssert<?> shortAssert, short n) {
-        return shortAssert.isNotEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractShortAssert#isNotEqualTo(short)` over less explicit alternatives._
 
 ## Recipe source
 

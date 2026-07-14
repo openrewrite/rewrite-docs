@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampFloatRecipe**
 
-_Prefer `Math#clamp(float, float, float)` over more verbose alternatives._
+_Prefer `Math#clamp(float, float, float)` over non-JDK or more verbose alternatives._
 
 ### Tags
 

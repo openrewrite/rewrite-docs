@@ -1234,6 +1234,45 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Value type is never equal to null**
   * Replace null with default in comparisons of value types.
 
+### recipes-csharp-core
+
+* [OpenRewrite.CSharp.Recipes.AddFrameworkReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/addframeworkreference)
+  * **Add framework reference**
+  * Adds a `&lt;FrameworkReference&gt;` to a .csproj if it isn't already present.
+* [OpenRewrite.CSharp.Recipes.AddNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/addnugetpackagereference)
+  * **Add NuGet package reference**
+  * Adds a `&lt;PackageReference&gt;` element to .csproj files if not already present.
+* [OpenRewrite.CSharp.Recipes.ChangeDotNetTargetFramework](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/changedotnettargetframework)
+  * **Change .NET target framework**
+  * Changes the `&lt;TargetFramework&gt;` or `&lt;TargetFrameworks&gt;` value in .csproj files. For multi-TFM projects, replaces the matching framework within the semicolon-delimited list.
+* [OpenRewrite.CSharp.Recipes.EnsureCsprojAttestation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/ensurecsprojattestation)
+  * **Ensure csproj attestation**
+  * Re-runs `dotnet restore` against each .csproj whose `MSBuildProject` marker is stale (set by any csproj-mutating recipe in the run) and refreshes the marker from the resulting `project.assets.json`. Use this at the end of a composite recipe whose csproj-mutating sub-recipes have `RegenerateMarker = false`, so reattestation happens once on the final consistent state instead of after every edit. Unmodified .csproj files incur no `dotnet restore` cost.
+* [OpenRewrite.CSharp.Recipes.FindNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/findnugetpackagereference)
+  * **Find NuGet package reference**
+  * Searches for .csproj files that reference a specific NuGet package. Intended for use as a precondition to scope other recipes.
+* [OpenRewrite.CSharp.Recipes.ListDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/listdependencies)
+  * **List .NET dependencies (SBOM)**
+  * Records every dependency of each .NET project — NuGet packages, assembly references, and project references — into the `Dependencies in use` data table, forming a Software Bill of Materials. Reports the resolved dependency graph when the `MSBuildProject` marker is available and falls back to the raw `.csproj` XML otherwise, so it works for both .NET (Core) and .NET Framework projects.
+* [OpenRewrite.CSharp.Recipes.RemoveDotNetCliToolReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/removedotnetclitoolreference)
+  * **Remove DotNetCliToolReference**
+  * Removes a `&lt;DotNetCliToolReference&gt;` element from .csproj files. Use `*` to remove every CLI tool reference.
+* [OpenRewrite.CSharp.Recipes.RemoveMSBuildProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/removemsbuildproperty)
+  * **Remove MSBuild property**
+  * Removes an MSBuild property element (e.g. `&lt;RuntimeFrameworkVersion&gt;`) from `&lt;PropertyGroup&gt;` in .csproj files.
+* [OpenRewrite.CSharp.Recipes.RemoveNuGetPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/removenugetpackagereference)
+  * **Remove NuGet package reference**
+  * Removes a `&lt;PackageReference&gt;` element from .csproj files.
+* [OpenRewrite.CSharp.Recipes.UpgradeNuGetPackageVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/csharp/recipes/upgradenugetpackageversion)
+  * **Upgrade NuGet package version**
+  * Upgrades the version of a NuGet `&lt;PackageReference&gt;` or `&lt;PackageVersion&gt;` in .csproj and Directory.Packages.props files. Handles property references by updating the property value instead of the version attribute. Uses NuGet.Versioning for correct version semantics.
+* [OpenRewrite.Xml.Recipes.ChangeXmlAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/xml/recipes/changexmlattribute)
+  * **Change XML attribute value**
+  * Changes the value of attributes matching AttrName to NewValue.
+* [OpenRewrite.Xml.Recipes.ChangeXmlCharData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/xml/recipes/changexmlchardata)
+  * **Change XML CharData text**
+  * Replaces occurrences of OldText with NewText in XML CharData nodes.
+
 ### recipes-kotlin
 
 * [org.openrewrite.kotlin.android.Android$KtRecipe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/android/android$ktrecipe)
@@ -4270,6 +4309,585 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Modernize Kotlin test code**
   * Find Kotlin-specific test patterns: mockito-kotlin usage where mockk would be idiomatic, deprecated `runBlocking` / `TestCoroutineDispatcher` patterns, Kotest assertion migration candidates, empty / assertion-less / many-assertion test bodies, snake_case test names, and Hamcrest call sites that fluent assertion libraries (AssertJ, Kotest) replace cleanly. Each match is a `SearchResult` for review — nothing is rewritten automatically. For bulk JUnit 4 → JUnit 5 annotation/assertion migration, apply `JUnit4to5Migration` from `rewrite-testing-frameworks`.
 
+### recipes-migrate-dotnet
+
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AddNuGetPackageReferenceIfTypeUsed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/addnugetpackagereferenceiftypeused)
+  * **Add NuGet package reference when namespace is used**
+  * Adds a `&lt;PackageReference&gt;` to a .csproj only when a C# source file in the same project directory has a `using` directive that starts with the trigger namespace prefix. Useful for paired add-package-when-type-is-used migrations.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNet.UpgradeAspNetFrameworkToCore](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnet/upgradeaspnetframeworktocore)
+  * **Migrate ASP.NET Framework to ASP.NET Core**
+  * Migrate ASP.NET Framework (System.Web.Mvc, System.Web.Http) types to their ASP.NET Core equivalents. Based on the .NET Upgrade Assistant's UA0002 and UA0010 diagnostics. See https://learn.microsoft.com/en-us/aspnet/core/migration/proper-to-2x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindBuildWebHost](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findbuildwebhost)
+  * **Find BuildWebHost method**
+  * Flags `BuildWebHost` method declarations that should be renamed to `CreateWebHostBuilder` and refactored for ASP.NET Core 2.1.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindIAuthenticationManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findiauthenticationmanager)
+  * **Find IAuthenticationManager usage**
+  * Flags references to `IAuthenticationManager` which was removed in ASP.NET Core 2.0. Use `HttpContext` extension methods from `Microsoft.AspNetCore.Authentication` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindSetCompatibilityVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findsetcompatibilityversion)
+  * **Find SetCompatibilityVersion() calls**
+  * Flags `SetCompatibilityVersion` calls. This method is a no-op in ASP.NET Core 3.0+ and should be removed during migration.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.FindUseKestrelWithConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/findusekestrelwithconfig)
+  * **Find UseKestrel() with configuration**
+  * Flags `UseKestrel` calls with configuration lambdas that should be replaced with `ConfigureKestrel` to avoid conflicts with the IIS in-process hosting model.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UpgradeToAspNetCore20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/upgradetoaspnetcore20)
+  * **Migrate to ASP.NET Core 2.0**
+  * Migrate ASP.NET Core 1.x projects to ASP.NET Core 2.0, applying authentication and Identity changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UpgradeToAspNetCore21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/upgradetoaspnetcore21)
+  * **Migrate to ASP.NET Core 2.1**
+  * Migrate ASP.NET Core 2.0 projects to ASP.NET Core 2.1, including host builder changes and obsolete API replacements. See https://learn.microsoft.com/en-us/aspnet/core/migration/20-to-21.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UpgradeToAspNetCore22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/upgradetoaspnetcore22)
+  * **Migrate to ASP.NET Core 2.2**
+  * Migrate ASP.NET Core 2.1 projects to ASP.NET Core 2.2, including Kestrel configuration and logging changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/21-to-22.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UseGetExternalAuthenticationSchemesAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/usegetexternalauthenticationschemesasync)
+  * **Use GetExternalAuthenticationSchemesAsync()**
+  * Replace `GetExternalAuthenticationSchemes()` with `GetExternalAuthenticationSchemesAsync()`. The synchronous method was removed in ASP.NET Core 2.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UseHttpContextAuthExtensions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/usehttpcontextauthextensions)
+  * **Use HttpContext authentication extensions**
+  * Replace `HttpContext.Authentication.Method(...)` calls with `HttpContext.Method(...)` extension methods. The `IAuthenticationManager` interface was removed in ASP.NET Core 2.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore2.UseUseAuthentication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore2/useuseauthentication)
+  * **Replace UseIdentity() with UseAuthentication()**
+  * Replace `app.UseIdentity()` with `app.UseAuthentication()`. The `UseIdentity` method was removed in ASP.NET Core 2.0 in favor of `UseAuthentication`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindAddMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findaddmvc)
+  * **Find AddMvc() calls**
+  * Flags `AddMvc()` calls that should be replaced with more specific service registrations (`AddControllers`, `AddControllersWithViews`, or `AddRazorPages`) in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindIApplicationLifetime](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findiapplicationlifetime)
+  * **Find IApplicationLifetime usage**
+  * Flags usages of `IApplicationLifetime` which should be replaced with `IHostApplicationLifetime` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindIHostingEnvironment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findihostingenvironment)
+  * **Find IHostingEnvironment usage**
+  * Flags usages of `IHostingEnvironment` which should be replaced with `IWebHostEnvironment` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindNewtonsoftJsonUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findnewtonsoftjsonusage)
+  * **Find Newtonsoft.Json usage in ASP.NET Core**
+  * Flags `JsonConvert` and other `Newtonsoft.Json` usage. ASP.NET Core 3.0 uses `System.Text.Json` by default.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindUseMvcOrUseSignalR](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findusemvcorusesignalr)
+  * **Find UseMvc()/UseSignalR() calls**
+  * Flags `UseMvc()` and `UseSignalR()` calls that should be replaced with endpoint routing (`UseRouting()` + `UseEndpoints()`) in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.FindWebHostBuilder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/findwebhostbuilder)
+  * **Find WebHostBuilder usage**
+  * Flags `WebHostBuilder` and `WebHost.CreateDefaultBuilder` usage that should migrate to the Generic Host pattern in ASP.NET Core 3.0+.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.UpgradeToAspNetCore30](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/upgradetoaspnetcore30)
+  * **Migrate to ASP.NET Core 3.0**
+  * Migrate ASP.NET Core 2.2 projects to ASP.NET Core 3.0, including endpoint routing, Generic Host, and System.Text.Json changes. See https://learn.microsoft.com/en-us/aspnet/core/migration/22-to-30.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.AspNetCore3.UseLoggerFactoryCreate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/aspnetcore3/useloggerfactorycreate)
+  * **Use `LoggerFactory.Create(...)` instead of `new LoggerFactory()`**
+  * Rewrites the obsolete `new LoggerFactory()` plus `ILoggerFactory.Add*()` provider configuration to `LoggerFactory.Create(builder =&gt; ...)`, moving each provider registration onto the `ILoggingBuilder`. Handles both the chained form and the form where registration calls follow the declaration as separate statements. Argument shapes with no `ILoggingBuilder` equivalent are left in place and flagged for manual migration.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.ChangeMethodName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/changemethodname)
+  * **Change method name**
+  * Rename a method.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.ChangeType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/changetype)
+  * **Change type**
+  * Change a type reference to another type.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.DeleteMethodArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/deletemethodargument)
+  * **Delete method argument**
+  * Delete an argument from method invocations.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.FindCsprojMarker](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/findcsprojmarker)
+  * **Find csproj MSBuildProject marker presence**
+  * Diagnostic recipe: tags csproj files based on MSBuildProject marker presence.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindActionContextAccessorObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findactioncontextaccessorobsolete)
+  * **Find obsolete `IActionContextAccessor`/`ActionContextAccessor` (ASPDEPR006)**
+  * Finds usages of `IActionContextAccessor` and `ActionContextAccessor` which are obsolete in .NET 10. Use `IHttpContextAccessor` and `HttpContext.GetEndpoint()` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindActivitySampling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findactivitysampling)
+  * **Find `ActivitySamplingResult.PropagationData` behavior change**
+  * Finds usages of `ActivitySamplingResult.PropagationData` which has changed behavior in .NET 10. Activities with a recorded parent and PropagationData sampling no longer set `Activity.Recorded = true`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindBackgroundServiceExecuteAsync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findbackgroundserviceexecuteasync)
+  * **Find `BackgroundService.ExecuteAsync` behavior change**
+  * Finds methods that override `ExecuteAsync` from `BackgroundService`. In .NET 10, the entire method runs on a background thread; synchronous code before the first `await` no longer blocks host startup.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindBufferedStreamWriteByte](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findbufferedstreamwritebyte)
+  * **Find `BufferedStream.WriteByte` implicit flush behavior change**
+  * Finds calls to `BufferedStream.WriteByte()` which no longer performs an implicit flush when the internal buffer is full in .NET 10. Call `Flush()` explicitly if needed.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindClipboardGetData](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findclipboardgetdata)
+  * **Find obsolete `Clipboard.GetData` calls (WFDEV005)**
+  * Finds calls to `Clipboard.GetData(string)`. In .NET 10, this method is obsolete (WFDEV005). Use `Clipboard.TryGetData` methods instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindDistributedContextPropagator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/finddistributedcontextpropagator)
+  * **Find `DistributedContextPropagator` default propagator change**
+  * Finds usages of `DistributedContextPropagator.Current` and `DistributedContextPropagator.CreateDefaultPropagator()` which now default to W3C format in .NET 10. The 'baggage' header is used instead of 'Correlation-Context'.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindDllImportSearchPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/finddllimportsearchpath)
+  * **Find `DllImportSearchPath.AssemblyDirectory` behavior change**
+  * Finds usages of `DllImportSearchPath.AssemblyDirectory` which has changed behavior in .NET 10. Specifying only `AssemblyDirectory` no longer falls back to OS default search paths.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindDriveInfoDriveFormat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/finddriveinfodriveformat)
+  * **Find `DriveInfo.DriveFormat` behavior change**
+  * Finds usages of `DriveInfo.DriveFormat` which returns Linux kernel filesystem type strings instead of mapped names in .NET 10. Verify that comparisons match the new format.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindFormOnClosingObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findformonclosingobsolete)
+  * **Find obsolete `Form.OnClosing`/`OnClosed` usage (WFDEV004)**
+  * Finds usage of `Form.OnClosing`, `Form.OnClosed`, and the `Closing`/`Closed` events. In .NET 10, these are obsolete (WFDEV004). Use `OnFormClosing`/`OnFormClosed` and `FormClosing`/`FormClosed` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindGnuTarPaxTarEntry](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findgnutarpaxtarentry)
+  * **Find `GnuTarEntry`/`PaxTarEntry` default timestamp change**
+  * Finds `new GnuTarEntry(...)` and `new PaxTarEntry(...)` constructor calls. In .NET 10, these no longer set atime and ctime by default. Set `AccessTime`/`ChangeTime` explicitly if needed.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindIpNetworkObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findipnetworkobsolete)
+  * **Find obsolete `IPNetwork`/`KnownNetworks` (ASPDEPR005)**
+  * Finds usages of `Microsoft.AspNetCore.HttpOverrides.IPNetwork` and `ForwardedHeadersOptions.KnownNetworks` which are obsolete in .NET 10. Use `System.Net.IPNetwork` and `KnownIPNetworks` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindKeyedServiceAnyKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findkeyedserviceanykey)
+  * **Find `KeyedService.AnyKey` behavior change**
+  * Finds usages of `KeyedService.AnyKey` which has changed behavior in .NET 10. `GetKeyedService(AnyKey)` now throws `InvalidOperationException` and `GetKeyedServices(AnyKey)` no longer returns AnyKey registrations.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindMakeGenericSignatureType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findmakegenericsignaturetype)
+  * **Find `Type.MakeGenericSignatureType` validation change**
+  * Finds calls to `Type.MakeGenericSignatureType()` which now validates that the first argument is a generic type definition in .NET 10.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindQueryableMaxByMinByObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findqueryablemaxbyminbyobsolete)
+  * **Find obsolete `Queryable.MaxBy`/`MinBy` with `IComparer&lt;TSource&gt;` (SYSLIB0061)**
+  * Finds `Queryable.MaxBy` and `Queryable.MinBy` overloads taking `IComparer&lt;TSource&gt;` which are obsolete in .NET 10. Use the overloads taking `IComparer&lt;TKey&gt;` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindRazorRuntimeCompilationObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findrazorruntimecompilationobsolete)
+  * **Find obsolete `AddRazorRuntimeCompilation` calls (ASPDEPR003)**
+  * Finds calls to `AddRazorRuntimeCompilation` which is obsolete in .NET 10. Use Hot Reload instead for development scenarios.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindRfc2898DeriveBytesObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findrfc2898derivebytesobsolete)
+  * **Find obsolete `Rfc2898DeriveBytes` constructors (SYSLIB0060)**
+  * Finds `new Rfc2898DeriveBytes(...)` constructor calls which are obsolete in .NET 10. Use the static `Rfc2898DeriveBytes.Pbkdf2()` method instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSslAuthEnumTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsslauthenumtypes)
+  * **Find obsolete SSL authentication enum types**
+  * Finds usage of `ExchangeAlgorithmType`, `CipherAlgorithmType`, and `HashAlgorithmType` from `System.Security.Authentication`. These enum types are obsolete in .NET 10 (SYSLIB0058). Use `SslStream.NegotiatedCipherSuite` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSslStreamObsoleteProperties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsslstreamobsoleteproperties)
+  * **Find obsolete `SslStream` cipher properties (SYSLIB0058)**
+  * Finds usages of `SslStream.KeyExchangeAlgorithm`, `KeyExchangeStrength`, `CipherAlgorithm`, `CipherStrength`, `HashAlgorithm`, and `HashStrength` which are obsolete in .NET 10. Use `SslStream.NegotiatedCipherSuite` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSystemDrawingExceptionChange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsystemdrawingexceptionchange)
+  * **Find `catch (OutOfMemoryException)` that may need `ExternalException`**
+  * In .NET 10, System.Drawing GDI+ errors now throw `ExternalException` instead of `OutOfMemoryException`. This recipe finds catch blocks that catch `OutOfMemoryException` which may need to also catch `ExternalException`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindSystemEventsThreadShutdownObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findsystemeventsthreadshutdownobsolete)
+  * **Find obsolete `SystemEvents.EventsThreadShutdown` (SYSLIB0059)**
+  * Finds usages of `SystemEvents.EventsThreadShutdown` which is obsolete in .NET 10. Use `AppDomain.ProcessExit` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindWebHostBuilderObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findwebhostbuilderobsolete)
+  * **Find obsolete `WebHostBuilder`/`IWebHost`/`WebHost` usage (ASPDEPR004/ASPDEPR008)**
+  * Finds usages of `WebHostBuilder`, `IWebHost`, and `WebHost` which are obsolete in .NET 10. Migrate to `HostBuilder` or `WebApplicationBuilder` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindWinFormsObsoleteApis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findwinformsobsoleteapis)
+  * **Find obsolete Windows Forms APIs (WFDEV004/005/006)**
+  * Finds usages of Windows Forms APIs that are obsolete in .NET 10, including `Form.OnClosing/OnClosed` (WFDEV004), `Clipboard.GetData` (WFDEV005), and legacy controls like `ContextMenu`, `DataGrid`, `MainMenu` (WFDEV006).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindWithOpenApiDeprecated](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findwithopenapideprecated)
+  * **Find deprecated `WithOpenApi` calls (ASPDEPR002)**
+  * Finds calls to `.WithOpenApi()` which is deprecated in .NET 10. Remove the call or use `AddOpenApiOperationTransformer` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindX500DistinguishedNameValidation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findx500distinguishednamevalidation)
+  * **Find `X500DistinguishedName` string constructor stricter validation**
+  * Finds `new X500DistinguishedName(string, ...)` constructor calls which have stricter validation in .NET 10. Non-Windows environments may reject previously accepted values.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FindXsltSettingsEnableScriptObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/findxsltsettingsenablescriptobsolete)
+  * **Find obsolete `XsltSettings.EnableScript` (SYSLIB0062)**
+  * Finds usages of `XsltSettings.EnableScript` which is obsolete in .NET 10.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.FormOnClosingRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/formonclosingrename)
+  * **Rename `Form.OnClosing/OnClosed` to `OnFormClosing/OnFormClosed` (WFDEV004)**
+  * Renames `Form.OnClosing` to `OnFormClosing` and `Form.OnClosed` to `OnFormClosed` for .NET 10 compatibility. Parameter type changes (`CancelEventArgs` → `FormClosingEventArgs`, `EventArgs` → `FormClosedEventArgs`) must be updated manually.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.InsertAdjacentElementOrientParameterRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/insertadjacentelementorientparameterrename)
+  * **Rename `orient` parameter to `orientation` in `HtmlElement.InsertAdjacentElement`**
+  * The `orient` parameter of `HtmlElement.InsertAdjacentElement` was renamed to `orientation` in .NET 10. This recipe updates named arguments in method calls to use the new parameter name.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.KnownNetworksRename](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/knownnetworksrename)
+  * **Rename `KnownNetworks` to `KnownIPNetworks` (ASPDEPR005)**
+  * Renames `ForwardedHeadersOptions.KnownNetworks` to `KnownIPNetworks` for .NET 10 compatibility.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.MlDsaSlhDsaSecretKeyToPrivateKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/mldsaslhdsasecretkeytoprivatekey)
+  * **Rename MLDsa/SlhDsa `SecretKey` members to `PrivateKey`**
+  * Renames `SecretKey` to `PrivateKey` in MLDsa and SlhDsa post-quantum cryptography APIs to align with .NET 10 naming conventions.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.RazorRuntimeCompilationObsolete](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/razorruntimecompilationobsolete)
+  * **Remove obsolete `AddRazorRuntimeCompilation` calls (ASPDEPR003)**
+  * Removes `AddRazorRuntimeCompilation()` calls which are obsolete in .NET 10. Use Hot Reload instead for development scenarios.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.UpgradeToDotNet10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/upgradetodotnet10)
+  * **Migrate to .NET 10**
+  * Migrate C# projects to .NET 10, applying necessary API changes. Includes all .NET 9 (and earlier) migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/10.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net10.WithOpenApiDeprecated](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net10/withopenapideprecated)
+  * **Remove deprecated `WithOpenApi` calls (ASPDEPR002)**
+  * Removes `.WithOpenApi()` calls which are deprecated in .NET 10. The call is removed from fluent method chains.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindCompactOnMemoryPressure](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findcompactonmemorypressure)
+  * **Find `CompactOnMemoryPressure` usage (removed in ASP.NET Core 3.0)**
+  * Finds usages of `CompactOnMemoryPressure` which was removed from `MemoryCacheOptions` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindConnectionAdapter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findconnectionadapter)
+  * **Find `IConnectionAdapter` usage (removed in ASP.NET Core 3.0)**
+  * Finds usages of `IConnectionAdapter` which was removed from Kestrel in ASP.NET Core 3.0. Use Connection Middleware instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindHttpContextAuthentication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findhttpcontextauthentication)
+  * **Find `HttpContext.Authentication` usage (removed in ASP.NET Core 3.0)**
+  * Finds usages of `HttpContext.Authentication` which was removed in ASP.NET Core 3.0. Use dependency injection to get `IAuthenticationService` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindNewtonsoftJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findnewtonsoftjson)
+  * **Find Newtonsoft.Json usage**
+  * Finds usages of Newtonsoft.Json types (`JObject`, `JArray`, `JToken`, `JsonConvert`) that should be migrated to `System.Text.Json` or explicitly preserved via `Microsoft.AspNetCore.Mvc.NewtonsoftJson` in ASP.NET Core 3.0+.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindObsoleteLocalizationApis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findobsoletelocalizationapis)
+  * **Find obsolete localization APIs (ASP.NET Core 3.0)**
+  * Finds usages of `ResourceManagerWithCultureStringLocalizer` and `WithCulture()` which are obsolete in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindSpaServices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findspaservices)
+  * **Find SpaServices/NodeServices usage (obsolete in ASP.NET Core 3.0)**
+  * Finds usages of `SpaServices` and `NodeServices` which are obsolete in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindSynchronousIO](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findsynchronousio)
+  * **Find synchronous IO usage (disabled in ASP.NET Core 3.0)**
+  * Finds references to `AllowSynchronousIO` which indicates synchronous IO usage that is disabled by default in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindUseMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findusemvc)
+  * **Find `UseMvc`/`AddMvc` usage (replaced in ASP.NET Core 3.0)**
+  * Finds usages of `app.UseMvc()`, `app.UseMvcWithDefaultRoute()`, and `services.AddMvc()` which should be migrated to endpoint routing and more specific service registration in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.FindWebHostBuilder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/findwebhostbuilder)
+  * **Find `WebHostBuilder`/`WebHost.CreateDefaultBuilder` usage (replaced in ASP.NET Core 3.0)**
+  * Finds usages of `WebHost.CreateDefaultBuilder()` and `new WebHostBuilder()` which should be migrated to `Host.CreateDefaultBuilder()` with `ConfigureWebHostDefaults()` in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.UpgradeToDotNet3_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/upgradetodotnet3_0)
+  * **Migrate to .NET Core 3.0**
+  * Migrate C# projects from .NET Core 2.x to .NET Core 3.0, applying necessary API changes for removed and replaced types. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.UseApiControllerBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/useapicontrollerbase)
+  * **Migrate ApiController to ControllerBase**
+  * Replace `ApiController` base class (from the removed WebApiCompatShim) with `ControllerBase` and add the `[ApiController]` attribute. The shim was removed in ASP.NET Core 3.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_0.UsePlatformAbstractionsReplacement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_0/useplatformabstractionsreplacement)
+  * **Replace `PlatformServices` with `AppContext`**
+  * Replaces `Microsoft.Extensions.PlatformAbstractions.PlatformServices.Default.Application.ApplicationBasePath` with `System.AppContext.BaseDirectory`. The PlatformAbstractions package was removed in .NET Core 3.0. Also removes the obsolete using directive.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_1.FindSameSiteNone](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_1/findsamesitenone)
+  * **Find `SameSiteMode.None` usage (behavior changed in .NET Core 3.1)**
+  * Finds usages of `SameSiteMode.None` which changed behavior in .NET Core 3.1 due to Chrome 80 SameSite cookie changes. Apps using remote authentication may need browser sniffing.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net3_1.UpgradeToDotNet3_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net3_1/upgradetodotnet3_1)
+  * **Migrate to .NET Core 3.1**
+  * Migrate C# projects from .NET Core 3.0 to .NET Core 3.1. Includes all .NET Core 3.0 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/3.1.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.ConvertMainToTopLevelStatements](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/convertmaintotoplevelstatements)
+  * **Convert `static Main` entry point to top-level statements**
+  * Converts a `class Program \{ static Main(...) \{ ... \} \}` entry point to C# 9 top-level statements: the body of `Main` is lifted to the file level and the `Program` class and any enclosing namespace are removed. Scoped to the unambiguous single-type/single-`Main` case.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindCodeAccessSecurity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findcodeaccesssecurity)
+  * **Find Code Access Security usage (obsolete in .NET 5)**
+  * Finds usages of Code Access Security types (`SecurityPermission`, `PermissionSet`, etc.) which are obsolete in .NET 5+.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindPrincipalPermissionAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findprincipalpermissionattribute)
+  * **Find `PrincipalPermissionAttribute` usage (SYSLIB0003)**
+  * Finds usages of `PrincipalPermissionAttribute` which is obsolete in .NET 5+ (SYSLIB0003) and throws `NotSupportedException` at runtime.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindUtf7Encoding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findutf7encoding)
+  * **Find `Encoding.UTF7` usage (SYSLIB0001)**
+  * Finds usages of `Encoding.UTF7` and `UTF7Encoding` which are obsolete in .NET 5+ (SYSLIB0001). UTF-7 is insecure.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindWinHttpHandler](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findwinhttphandler)
+  * **Find `WinHttpHandler` usage (removed in .NET 5)**
+  * Finds usages of `WinHttpHandler` which was removed from the .NET 5 runtime. Install the `System.Net.Http.WinHttpHandler` NuGet package explicitly.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.FindWinRTInterop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/findwinrtinterop)
+  * **Find WinRT interop usage (removed in .NET 5)**
+  * Finds usages of WinRT interop types (`WindowsRuntimeType`, `WindowsRuntimeMarshal`, etc.) which were removed in .NET 5.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net5.UpgradeToDotNet5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net5/upgradetodotnet5)
+  * **Migrate to .NET 5**
+  * Migrate C# projects from .NET Core 3.1 to .NET 5.0. Includes all .NET Core 3.0 and 3.1 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/5.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.CastRedisValueForJsonDeserialize](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/castredisvalueforjsondeserialize)
+  * **Cast `RedisValue` to `string` for `JsonSerializer.Deserialize`**
+  * `JsonSerializer.Deserialize&lt;T&gt;(RedisValue)` is an ambiguous call (CS0121) because StackExchange.Redis `RedisValue` implicitly converts to both `string` and `ReadOnlySpan&lt;byte&gt;`. Add an explicit `(string)` cast to disambiguate.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindAssemblyCodeBase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findassemblycodebase)
+  * **Find `Assembly.CodeBase`/`EscapedCodeBase` usage (SYSLIB0012)**
+  * Finds usages of `Assembly.CodeBase` and `Assembly.EscapedCodeBase` which are obsolete (SYSLIB0012). Use `Assembly.Location` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindIgnoreNullValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findignorenullvalues)
+  * **Find `JsonSerializerOptions.IgnoreNullValues` usage (SYSLIB0020)**
+  * Finds usages of `JsonSerializerOptions.IgnoreNullValues` which is obsolete in .NET 6 (SYSLIB0020). Use `DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindThreadAbort](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findthreadabort)
+  * **Find `Thread.Abort` usage (SYSLIB0006)**
+  * Finds calls to `Thread.Abort()` which throws `PlatformNotSupportedException` in .NET 6+ (SYSLIB0006). Use `CancellationToken` for cooperative cancellation instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindWebRequest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findwebrequest)
+  * **Find `WebRequest`/`HttpWebRequest`/`WebClient` usage (SYSLIB0014)**
+  * Finds usages of `WebRequest`, `HttpWebRequest`, and `WebClient` which are obsolete in .NET 6 (SYSLIB0014). Use `HttpClient` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.FindX509PrivateKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/findx509privatekey)
+  * **Find `X509Certificate2.PrivateKey` usage (SYSLIB0028)**
+  * Finds usages of `X509Certificate2.PrivateKey` which is obsolete (SYSLIB0028). Use `GetRSAPrivateKey()`, `GetECDsaPrivateKey()`, or the appropriate algorithm-specific method instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.ReplaceFormattedLogValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/replaceformattedlogvalues)
+  * **Replace internal `FormattedLogValues` with a type alias**
+  * `Microsoft.Extensions.Logging.Internal.FormattedLogValues` was made internal in .NET 6+. Replace the now-dead `using Microsoft.Extensions.Logging.Internal;` with a `FormattedLogValues` type alias for `IReadOnlyList&lt;KeyValuePair&lt;string, object&gt;&gt;` (the public interface it implements) so existing references keep compiling.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UpgradeToDotNet6](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/upgradetodotnet6)
+  * **Migrate to .NET 6**
+  * Migrate C# projects to .NET 6, applying necessary API changes for obsoleted cryptographic types and other breaking changes. Includes all .NET Core 3.0, 3.1, and .NET 5 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/6.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseCryptoFactoryMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usecryptofactorymethods)
+  * **Use factory method for abstract cryptographic types**
+  * Replace `new AbstractCryptoType()` with `AbstractCryptoType.Create()` for abstract cryptographic types like `SHA256`, `Aes`, `RandomNumberGenerator`, etc. These types are abstract and cannot be instantiated directly; callers must use the static `Create()` factory method.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseEnvironmentCurrentManagedThreadId](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/useenvironmentcurrentmanagedthreadid)
+  * **Use Environment.CurrentManagedThreadId**
+  * Replace `Thread.CurrentThread.ManagedThreadId` with `Environment.CurrentManagedThreadId` (CA1840). Available since .NET 6.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseEnvironmentProcessId](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/useenvironmentprocessid)
+  * **Use Environment.ProcessId**
+  * Replace `Process.GetCurrentProcess().Id` with `Environment.ProcessId` (CA1837). Available since .NET 6.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseEnvironmentProcessPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/useenvironmentprocesspath)
+  * **Use Environment.ProcessPath**
+  * Replace `Process.GetCurrentProcess().MainModule.FileName` with `Environment.ProcessPath` (CA1839). Available since .NET 6.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseLinqDistinctBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/uselinqdistinctby)
+  * **Use LINQ DistinctBy()**
+  * Replace `collection.GroupBy(selector).Select(g =&gt; g.First())` with `collection.DistinctBy(selector)`. Available since .NET 6.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseLinqMaxMinBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/uselinqmaxminby)
+  * **Use LINQ MaxBy() and MinBy()**
+  * Replace `collection.OrderByDescending(selector).First()` with `collection.MaxBy(selector)` and `collection.OrderBy(selector).First()` with `collection.MinBy(selector)`. Also handles `.Last()` variants (OrderBy().Last() → MaxBy, OrderByDescending().Last() → MinBy). Note: MinBy/MaxBy return default for empty reference-type sequences instead of throwing. Available since .NET 6.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseRandomShared](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/userandomshared)
+  * **Use Random.Shared**
+  * Replace `new Random().Method(...)` with `Random.Shared.Method(...)`. Available since .NET 6.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseStringContainsChar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usestringcontainschar)
+  * **Use string.Contains(char) overload**
+  * Finds calls to `string.Contains(&quot;x&quot;)` with a single-character string literal that could use the `string.Contains('x')` overload for better performance.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseStringStartsEndsWithChar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usestringstartsendswithchar)
+  * **Use string.StartsWith(char)/EndsWith(char) overload**
+  * Finds calls to `string.StartsWith(&quot;x&quot;)` and `string.EndsWith(&quot;x&quot;)` with a single-character string literal that could use the char overload for better performance.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net6.UseThrowIfNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net6/usethrowifnull)
+  * **Use ArgumentNullException.ThrowIfNull()**
+  * Replace `if (x == null) throw new ArgumentNullException(nameof(x))` guard clauses with `ArgumentNullException.ThrowIfNull(x)` (CA1510). Handles `== null`, `is null`, reversed `null ==`, string literal param names, and braced then-blocks. Available since .NET 6.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.FindObsoleteSslProtocols](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/findobsoletesslprotocols)
+  * **Find obsolete `SslProtocols.Tls`/`Tls11` usage (SYSLIB0039)**
+  * Finds usages of `SslProtocols.Tls` and `SslProtocols.Tls11` which are obsolete in .NET 7 (SYSLIB0039). Use `SslProtocols.Tls12`, `SslProtocols.Tls13`, or `SslProtocols.None` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.FindRfc2898InsecureCtors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/findrfc2898insecurectors)
+  * **Find insecure `Rfc2898DeriveBytes` constructors (SYSLIB0041)**
+  * Finds `Rfc2898DeriveBytes` constructor calls that use default SHA1 or low iteration counts, which are obsolete in .NET 7 (SYSLIB0041). Specify `HashAlgorithmName` and at least 600,000 iterations.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UpgradeToDotNet7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/upgradetodotnet7)
+  * **Migrate to .NET 7**
+  * Migrate C# projects to .NET 7, applying necessary API changes. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/7.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseLinqOrder](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/uselinqorder)
+  * **Use LINQ Order() and OrderDescending()**
+  * Replace `collection.OrderBy(x =&gt; x)` with `collection.Order()` and `collection.OrderByDescending(x =&gt; x)` with `collection.OrderDescending()`. Available since .NET 7.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseThrowIfNegative](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/usethrowifnegative)
+  * **Use ArgumentOutOfRangeException.ThrowIfNegative()**
+  * Replace `if (value &lt; 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfNegative(value)`. Also handles reversed `0 &gt; value`. Available since .NET 7.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseThrowIfNegativeOrZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/usethrowifnegativeorzero)
+  * **Use ArgumentOutOfRangeException.ThrowIfNegativeOrZero()**
+  * Replace `if (value &lt;= 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfNegativeOrZero(value)`. Also handles reversed `0 &gt;= value`. Available since .NET 7.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net7.UseThrowIfNullOrEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net7/usethrowifnullorempty)
+  * **Use ArgumentException.ThrowIfNullOrEmpty()**
+  * Replace `if (string.IsNullOrEmpty(s)) throw new ArgumentException(&quot;...&quot;, nameof(s))` guard clauses with `ArgumentException.ThrowIfNullOrEmpty(s)`. Available since .NET 7.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindAddContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findaddcontext)
+  * **Find `JsonSerializerOptions.AddContext` usage (SYSLIB0049)**
+  * Finds calls to `JsonSerializerOptions.AddContext&lt;T&gt;()` which is obsolete in .NET 8 (SYSLIB0049). Use `TypeInfoResolverChain` or `TypeInfoResolver` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindAesGcmOldConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findaesgcmoldconstructor)
+  * **Find `AesGcm` constructor without tag size (SYSLIB0053)**
+  * Finds `new AesGcm(key)` constructor calls without an explicit tag size parameter. In .NET 8, the single-argument constructor is obsolete (SYSLIB0053). Use `new AesGcm(key, tagSizeInBytes)` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindFormatterBasedSerialization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findformatterbasedserialization)
+  * **Find formatter-based serialization types (SYSLIB0050/0051)**
+  * Finds usage of formatter-based serialization types (`FormatterConverter`, `IFormatter`, `ObjectIDGenerator`, `ObjectManager`, `SurrogateSelector`, `SerializationInfo`, `StreamingContext`). These are obsolete in .NET 8 (SYSLIB0050/0051).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindFrozenCollection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findfrozencollection)
+  * **Find ToImmutable*() that could use Frozen collections**
+  * Finds usages of `ToImmutableDictionary()` and `ToImmutableHashSet()`. In .NET 8+, `ToFrozenDictionary()` and `ToFrozenSet()` provide better read performance.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindRegexCompileToAssembly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findregexcompiletoassembly)
+  * **Find `Regex.CompileToAssembly` usage (SYSLIB0052)**
+  * Finds usage of `Regex.CompileToAssembly()` and `RegexCompilationInfo`. These are obsolete in .NET 8 (SYSLIB0052). Use the Regex source generator instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindSerializationConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findserializationconstructors)
+  * **Find legacy serialization constructors (SYSLIB0051)**
+  * Finds legacy serialization constructors `.ctor(SerializationInfo, StreamingContext)` which are obsolete in .NET 8 (SYSLIB0051). The `ISerializable` pattern is no longer recommended.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.FindTimeAbstraction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/findtimeabstraction)
+  * **Find DateTime.Now/UtcNow usage (TimeProvider in .NET 8)**
+  * Finds usages of `DateTime.Now`, `DateTime.UtcNow`, `DateTimeOffset.Now`, and `DateTimeOffset.UtcNow`. In .NET 8+, `TimeProvider` is the recommended abstraction for time.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UpgradeToDotNet8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/upgradetodotnet8)
+  * **Migrate to .NET 8**
+  * Migrate C# projects to .NET 8, applying necessary API changes. Includes all .NET 7 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/8.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfGreaterThan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowifgreaterthan)
+  * **Use ArgumentOutOfRangeException.ThrowIfGreaterThan()**
+  * Replace `if (value &gt; other) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfGreaterThan(value, other)`. Also handles reversed `other &lt; value` and `&gt;=`/`ThrowIfGreaterThanOrEqual`. Available since .NET 8.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfLessThan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowiflessthan)
+  * **Use ArgumentOutOfRangeException.ThrowIfLessThan()**
+  * Replace `if (value &lt; other) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfLessThan(value, other)`. Also handles reversed `other &gt; value` and `&lt;=`/`ThrowIfLessThanOrEqual`. Available since .NET 8.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfNullOrWhiteSpace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowifnullorwhitespace)
+  * **Use ArgumentException.ThrowIfNullOrWhiteSpace()**
+  * Replace `if (string.IsNullOrWhiteSpace(s)) throw new ArgumentException(&quot;...&quot;, nameof(s))` guard clauses with `ArgumentException.ThrowIfNullOrWhiteSpace(s)`. Available since .NET 8.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseThrowIfZero](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usethrowifzero)
+  * **Use ArgumentOutOfRangeException.ThrowIfZero()**
+  * Replace `if (value == 0) throw new ArgumentOutOfRangeException(nameof(value))` guard clauses with `ArgumentOutOfRangeException.ThrowIfZero(value)`. Also handles reversed `0 == value`. Available since .NET 8.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net8.UseTimeProvider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net8/usetimeprovider)
+  * **Use TimeProvider instead of DateTime/DateTimeOffset static properties**
+  * Replace `DateTime.UtcNow`, `DateTime.Now`, `DateTimeOffset.UtcNow`, and `DateTimeOffset.Now` with `TimeProvider.System.GetUtcNow()`/`GetLocalNow()` equivalents. TimeProvider enables testability and consistent time sources. Available since .NET 8.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindAsyncEnumerableLinqAmbiguity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findasyncenumerablelinqambiguity)
+  * **Find LINQ ambiguities introduced by .NET 9 `IAsyncEnumerable` extensions**
+  * .NET 9 added LINQ extension methods on `IAsyncEnumerable&lt;T&gt;`. Types implementing both `IQueryable&lt;T&gt;` and `IAsyncEnumerable&lt;T&gt;` (notably EF Core `DbSet&lt;T&gt;`) now produce ambiguous `Where`/`Select`/`FirstOrDefault`/etc. calls. Flags such calls for manual disambiguation (typically by inserting `.AsQueryable()`).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindAuthenticationManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findauthenticationmanager)
+  * **Find `AuthenticationManager` usage (SYSLIB0009)**
+  * Finds usages of `AuthenticationManager` which is not supported in .NET 9 (SYSLIB0009). Methods will no-op or throw `PlatformNotSupportedException`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindBinaryFormatter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findbinaryformatter)
+  * **Find `BinaryFormatter` usage (removed in .NET 9)**
+  * Finds usages of `BinaryFormatter` which always throws `NotSupportedException` in .NET 9. Migrate to a different serializer such as `System.Text.Json`, `XmlSerializer`, or `DataContractSerializer`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindBinaryReaderReadString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findbinaryreaderreadstring)
+  * **Find `BinaryReader.ReadString` behavior change**
+  * Finds calls to `BinaryReader.ReadString()` which now returns the Unicode replacement character (\uFFFD) for malformed UTF-8 byte sequences in .NET 9, instead of the previous behavior. Verify your code handles the replacement character correctly.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindDistributedCache](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/finddistributedcache)
+  * **Find IDistributedCache usage (HybridCache in .NET 9)**
+  * Finds usages of `IDistributedCache`. In .NET 9, `HybridCache` is the recommended replacement with L1/L2 caching, stampede protection, and tag-based invalidation.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindEnumConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findenumconverter)
+  * **Find `EnumConverter` constructor validation change**
+  * Finds `new EnumConverter()` constructor calls. In .NET 9, `EnumConverter` validates that the registered type is actually an enum and throws `ArgumentException` if not.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindExecuteUpdateSync](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findexecuteupdatesync)
+  * **Find synchronous ExecuteUpdate/ExecuteDelete (EF Core 9)**
+  * Finds usages of synchronous `ExecuteUpdate()` and `ExecuteDelete()` which were removed in EF Core 9. Use `ExecuteUpdateAsync`/`ExecuteDeleteAsync` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindHttpClientHandlerCast](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findhttpclienthandlercast)
+  * **Find `HttpClientHandler` usage (HttpClientFactory default change)**
+  * Finds usages of `HttpClientHandler` which may break when `HttpClientFactory` switches its default handler to `SocketsHttpHandler` in .NET 9.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindHttpListenerRequestUserAgent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findhttplistenerrequestuseragent)
+  * **Find `HttpListenerRequest.UserAgent` nullable change**
+  * Finds accesses to `HttpListenerRequest.UserAgent` which changed from `string` to `string?` in .NET 9. Code that assumes `UserAgent` is non-null may throw `NullReferenceException`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindImplicitAuthenticationDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findimplicitauthenticationdefault)
+  * **Find implicit authentication default scheme (ASP.NET Core 9)**
+  * Finds calls to `AddAuthentication()` with no arguments. In .NET 9, a single registered authentication scheme is no longer automatically used as the default.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindInMemoryDirectoryInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findinmemorydirectoryinfo)
+  * **Find `InMemoryDirectoryInfo` rootDir prepend change**
+  * Finds `new InMemoryDirectoryInfo()` constructor calls. In .NET 9, `rootDir` is prepended to file paths that don't start with the `rootDir`, which may change file matching behavior.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindIncrementingPollingCounter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findincrementingpollingcounter)
+  * **Find `IncrementingPollingCounter` async callback change**
+  * Finds `new IncrementingPollingCounter()` constructor calls. In .NET 9, the initial callback invocation is asynchronous instead of synchronous, which may change timing behavior.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindJsonDocumentNullable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findjsondocumentnullable)
+  * **Find `JsonSerializer.Deserialize` nullable `JsonDocument` change**
+  * Finds `JsonSerializer.Deserialize()` calls. In .NET 9, nullable `JsonDocument` properties now deserialize to a `JsonDocument` with `RootElement.ValueKind == JsonValueKind.Null` instead of being `null`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindJsonStringEnumConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findjsonstringenumconverter)
+  * **Find non-generic JsonStringEnumConverter**
+  * Finds usages of the non-generic `JsonStringEnumConverter`. In .NET 9, the generic `JsonStringEnumConverter&lt;TEnum&gt;` is preferred for AOT compatibility.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindRuntimeHelpersGetSubArray](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findruntimehelpersgetsubarray)
+  * **Find `RuntimeHelpers.GetSubArray` return type change**
+  * Finds calls to `RuntimeHelpers.GetSubArray()` which may return a different array type in .NET 9. Code that depends on the runtime type of the returned array may break.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindSafeEvpPKeyHandleDuplicate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findsafeevppkeyhandleduplicate)
+  * **Find `SafeEvpPKeyHandle.DuplicateHandle` up-ref change**
+  * Finds calls to `SafeEvpPKeyHandle.DuplicateHandle()`. In .NET 9, this method now increments the reference count instead of creating a deep copy, which may affect handle lifetime.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindServicePointManager](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findservicepointmanager)
+  * **Find `ServicePointManager` usage (SYSLIB0014)**
+  * Finds usages of `ServicePointManager` which is fully obsolete in .NET 9 (SYSLIB0014). Settings on `ServicePointManager` don't affect `SslStream` or `HttpClient`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindSwashbuckle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findswashbuckle)
+  * **Find Swashbuckle usage (ASP.NET Core 9 built-in OpenAPI)**
+  * Finds usages of Swashbuckle APIs (`AddSwaggerGen`, `UseSwagger`, `UseSwaggerUI`). .NET 9 includes built-in OpenAPI support. Consider migrating to `AddOpenApi()`/`MapOpenApi()`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindX509CertificateConstructors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findx509certificateconstructors)
+  * **Find obsolete `X509Certificate2`/`X509Certificate` constructors (SYSLIB0057)**
+  * Finds usages of `X509Certificate2` and `X509Certificate` constructors that accept binary content or file paths, which are obsolete in .NET 9 (SYSLIB0057). Use `X509CertificateLoader` methods instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindZipArchiveCompressionLevel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findziparchivecompressionlevel)
+  * **Find `ZipArchive.CreateEntry` with `CompressionLevel` (bit flag change)**
+  * Finds `ZipArchive.CreateEntry()` and `ZipFileExtensions.CreateEntryFromFile()` calls with a `CompressionLevel` parameter. In .NET 9, the `CompressionLevel` value now sets general-purpose bit flags in the ZIP central directory header, which may affect interoperability.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.FindZipArchiveEntryEncoding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/findziparchiveentryencoding)
+  * **Find `ZipArchiveEntry` name/comment UTF-8 encoding change**
+  * Finds access to `ZipArchiveEntry.Name`, `FullName`, or `Comment` properties. In .NET 9, these now respect the UTF-8 flag in ZIP entries, which may change decoded values.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.MigrateSwashbuckleToOpenApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/migrateswashbuckletoopenapi)
+  * **Migrate Swashbuckle to built-in OpenAPI**
+  * Migrate from Swashbuckle to the built-in OpenAPI support in ASP.NET Core 10+. Replaces `AddSwaggerGen()` with `AddOpenApi()`, `UseSwaggerUI()` with `MapOpenApi()`, removes `UseSwagger()`, removes Swashbuckle packages, and adds `Microsoft.AspNetCore.OpenApi`. Only fires when every project targets net10.0+ (the version that ships Microsoft.OpenApi 2.x with its flattened type namespaces).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.RemoveConfigureAwaitFalse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/removeconfigureawaitfalse)
+  * **Remove ConfigureAwait(false)**
+  * Remove `.ConfigureAwait(false)` calls that are unnecessary in ASP.NET Core and modern .NET applications (no SynchronizationContext). Do not apply to library code targeting .NET Framework.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UpgradeToDotNet9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/upgradetodotnet9)
+  * **Migrate to .NET 9**
+  * Migrate C# projects to .NET 9, applying necessary API changes. Includes all .NET 7 and .NET 8 migration steps. See https://learn.microsoft.com/en-us/dotnet/core/compatibility/9.0.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseEscapeSequenceE](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/useescapesequencee)
+  * **Use \e escape sequence**
+  * Replace `\u001b` and `\x1b` escape sequences with `\e`. C# 13 introduced `\e` as a dedicated escape sequence for the escape character (U+001B).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseFrozenCollections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usefrozencollections)
+  * **Use Frozen collections instead of Immutable**
+  * Replace `ToImmutableDictionary()` with `ToFrozenDictionary()` and `ToImmutableHashSet()` with `ToFrozenSet()`. Frozen collections (.NET 8+) provide better read performance for collections populated once and read many times.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseGuidCreateVersion7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/useguidcreateversion7)
+  * **Use Guid.CreateVersion7()**
+  * Replace `Guid.NewGuid()` with `Guid.CreateVersion7()`. Version 7 GUIDs are time-ordered and better for database primary keys, indexing, and sorting. Available since .NET 9.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLinqAggregateBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselinqaggregateby)
+  * **Use LINQ AggregateBy()**
+  * Replace `collection.GroupBy(keySelector).ToDictionary(g =&gt; g.Key, g =&gt; g.Aggregate(seed, func))` with `collection.AggregateBy(keySelector, seed, func).ToDictionary()`. Available since .NET 9.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLinqCountBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselinqcountby)
+  * **Use LINQ CountBy()**
+  * Replace `collection.GroupBy(selector).Select(g =&gt; g.Count())` with `collection.CountBy(selector)`. Available since .NET 9.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLinqIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselinqindex)
+  * **Use LINQ Index()**
+  * Replace `collection.Select((item, index) =&gt; (index, item))` with `collection.Index()`. Available since .NET 9.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseLockObject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/uselockobject)
+  * **Use System.Threading.Lock for lock fields**
+  * Replace `object` fields initialized with `new object()` with `System.Threading.Lock` initialized with `new()`. The Lock type provides better performance with the lock statement. Available since .NET 9.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseMapStaticAssets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usemapstaticassets)
+  * **Use MapStaticAssets()**
+  * Replace `UseStaticFiles()` with `MapStaticAssets()` for ASP.NET Core 9. Only applies when the receiver supports `IEndpointRouteBuilder` (WebApplication / minimal hosting). Skips Startup.cs patterns using `IApplicationBuilder` where `MapStaticAssets` is not available.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseTaskCompletedTask](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usetaskcompletedtask)
+  * **Use Task.CompletedTask**
+  * Replace `Task.FromResult(0)`, `Task.FromResult(true)`, and `Task.FromResult(false)` with `Task.CompletedTask` when the return type is `Task` (not `Task&lt;T&gt;`).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseVolatileReadWrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usevolatilereadwrite)
+  * **Use Volatile.Read/Write (SYSLIB0054)**
+  * Replace `Thread.VolatileRead` and `Thread.VolatileWrite` with `Volatile.Read` and `Volatile.Write`. The Thread methods are obsolete in .NET 9 (SYSLIB0054).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.Net9.UseX509CertificateLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/net9/usex509certificateloader)
+  * **Use X509CertificateLoader (SYSLIB0057)**
+  * Replace `new X509Certificate2(path, password)` with `X509CertificateLoader.LoadPkcs12FromFile(path, password)`. The two-argument X509Certificate2 constructor is obsolete in .NET 9 (SYSLIB0057).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.AddOverrideToDbParameterPrecisionScale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/addoverridetodbparameterprecisionscale)
+  * **Add `override` to `DbParameter.Precision`/`Scale`**
+  * As of .NET Framework 4.5.1, `DbParameter.Precision` and `DbParameter.Scale` are public virtual properties. Adds the `override` modifier to `Precision`/`Scale` properties declared on a `DbParameter` subclass so the provider compiles against the new target.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindAsyncCurrentCultureFlow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findasynccurrentcultureflow)
+  * **Find `CurrentCulture`/`CurrentUICulture` async flow change**
+  * Finds uses of `CurrentCulture`/`CurrentUICulture`, which flow across async tasks (via `ExecutionContext`) when retargeting to .NET Framework 4.6 (`Switch.System.Globalization.NoAsyncCurrentCulture` to revert). Review code that sets the culture and relies on it NOT propagating to async continuations.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindClaimsIdentityActorClone](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findclaimsidentityactorclone)
+  * **Find `ClaimsIdentity` Actor clone-on-copy change**
+  * Finds `ClaimsIdentity(IIdentity, ...)` constructions, which clone the `Actor` instead of attaching it by reference when retargeting to .NET Framework 4.6.2 (`Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity` to revert).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindDataContractJsonSerializerEscaping](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/finddatacontractjsonserializerescaping)
+  * **Find `DataContractJsonSerializer` usage (control-char escaping change)**
+  * DataContractJsonSerializer control-character escaping becomes ECMAScript V6/V8-compatible when retargeting to .NET Framework 4.7 (Switch.System.Runtime.Serialization.DoNotUseECMAScriptV6EscapeControlCharacter to revert). Review consumers that depend on the old escaping.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindDataObjectGetDataHtml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/finddataobjectgetdatahtml)
+  * **Find `DataObject` usage (HTML clipboard now UTF-8)**
+  * DataObject.GetData retrieves HTML-format clipboard data as UTF-8 instead of ASCII when retargeting to .NET Framework 4.5.2. Remove any manual UTF-8 conversion workaround.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindDeflateStreamNativeDecompression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/finddeflatestreamnativedecompression)
+  * **Find `DeflateStream`/`GZipStream` usage (native decompression)**
+  * Flag usages of `DeflateStream` and `GZipStream`, whose decompression switches to native Windows APIs when retargeting to .NET Framework 4.7.2.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindFipsManagedCryptoThrow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findfipsmanagedcryptothrow)
+  * **Find managed crypto classes (FIPS mode behavior change)**
+  * Flag usages of managed cryptography classes whose FIPS-enforced-mode throwing behavior changes when retargeting to .NET Framework 4.8.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindHttpRuntimeAppDomainAppPath](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findhttpruntimeappdomainapppath)
+  * **Find `HttpRuntime.AppDomainAppPath` (exception type change)**
+  * HttpRuntime.AppDomainAppPath throws NullReferenceException (instead of ArgumentNullException) for paths with null characters when retargeting to .NET Framework 4.6.2; this reverts to ArgumentNullException at 4.7. Review exception handling.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindIconToBitmapPngFrames](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findicontobitmappngframes)
+  * **Find `Icon.ToBitmap` usage (PNG-frame behavior change)**
+  * Icon.ToBitmap succeeds on icons containing PNG frames when retargeting to .NET Framework 4.6 (previously threw ArgumentOutOfRangeException; Switch.System.Drawing.DontSupportPngFramesInIcons to restore throwing). Review Icon.ToBitmap usage.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindListForEachDuringMutation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findlistforeachduringmutation)
+  * **Find `List&lt;T&gt;.ForEach` modification-during-enumeration change**
+  * Finds calls to `List&lt;T&gt;.ForEach`, which throws `InvalidOperationException` if the collection is modified during enumeration when retargeting to .NET Framework 4.5 (previously the modification was silently ignored).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindObsoleteEncoderParameterCtor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findobsoleteencoderparameterctor)
+  * **Find obsolete 5-argument `EncoderParameter` constructor**
+  * Finds uses of the obsolete `EncoderParameter(Encoder, int, int, int, int)` constructor (obsolete as of .NET Framework 4.5). Use the `EncoderParameter(Encoder, int, EncoderParameterValueType, IntPtr)` overload instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindObsoleteMachineKeyEncryption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findobsoletemachinekeyencryption)
+  * **Find obsolete `MachineKey.Encode`/`Decode`**
+  * Finds references to `System.Web.Security.MachineKey`, whose `Encode`/`Decode` methods are obsolete as of .NET Framework 4.5. Use `MachineKey.Protect`/`MachineKey.Unprotect` instead.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindObsoleteWorkflowTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findobsoleteworkflowtypes)
+  * **Find obsolete `System.Workflow.*` (WF 3.x) usage**
+  * Finds `using System.Workflow.*` directives. Windows Workflow Foundation 3.x is obsolete as of .NET Framework 4.5; migrate to the WF 4 model under `System.Activities.*`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindPathNormalizationChange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findpathnormalizationchange)
+  * **Find `System.IO.Path` normalization change**
+  * Finds uses of `System.IO.Path`, whose normalization defers to the OS and supports long (&gt;260 char) paths when retargeting to .NET Framework 4.6.2 (`Switch.System.IO.UseLegacyPathHandling` / `Switch.System.IO.BlockLongPaths` to revert). Review path handling and `PathTooLongException` assumptions.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindRSACngImportParameters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findrsacngimportparameters)
+  * **Find `RSACng` usage (non-standard key size behavior)**
+  * Flag usages of `RSACng`, whose handling of non-standard RSA key sizes changes when retargeting to .NET Framework 4.6.2.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindSerialPortThreadException](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findserialportthreadexception)
+  * **Find `SerialPort` usage (background-thread exception behavior)**
+  * SerialPort no longer terminates the process when its background thread hits an OS exception when retargeting to .NET Framework 4.7.1 (Switch.System.IO.Ports.DoNotCatchSerialStreamThreadExceptions to revert). Review SerialPort error handling.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindServiceBaseRunOnStart](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findservicebaserunonstart)
+  * **Find `ServiceBase.Run` usage (OnStart exception propagation)**
+  * ServiceBase.Run now propagates exceptions thrown from OnStart when retargeting to .NET Framework 4.7.1 (Switch.System.ServiceProcess.DontThrowExceptionsOnStart to revert). Review service startup error handling.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindServicePointManagerSecurityProtocol](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findservicepointmanagersecurityprotocol)
+  * **Find `ServicePointManager` TLS configuration**
+  * Finds usages of `System.Net.ServicePointManager` whose TLS behavior changes when retargeting to .NET Framework 4.6+ (SchUseStrongCrypto) and 4.7+ (SystemDefault protocol). The opt-out switches are `Switch.System.Net.DontEnableSchUseStrongCrypto` and `Switch.System.Net.DontEnableSystemDefaultTlsVersions`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindSignedXmlDefaultHash](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findsignedxmldefaulthash)
+  * **Find `SignedXml`/`CmsSigner` usage (default hash SHA-1 → SHA-256)**
+  * Flag usages of `SignedXml` and `CmsSigner`, whose default hash algorithm changes from SHA-1 to SHA-256 when retargeting to .NET Framework 4.7.1.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindSslStreamTlsAlerts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findsslstreamtlsalerts)
+  * **Find `SslStream` usage (TLS alert behavior change)**
+  * Flag usages of `SslStream`, whose TLS alert handling behavior changes when retargeting to .NET Framework 4.7.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindUriParsingChange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/finduriparsingchange)
+  * **Find `System.Uri` construction (RFC 3986/3987 parsing change)**
+  * Finds `System.Uri` construction whose parsing changed when retargeting to .NET Framework 4.5 (RFC 3987) and 4.7.2 (RFC 3986 reserved-character handling and Unicode bidi characters). Review URI construction and normalization for behavior differences.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindWpfGridStarAllocation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findwpfgridstarallocation)
+  * **Find WPF `Grid` usage (star-column allocation change)**
+  * The WPF Grid star-column space allocation algorithm was replaced when retargeting to .NET Framework 4.7 (Switch.System.Windows.Controls.Grid.StarDefinitionsCanExceedAvailableSpace=true restores the old algorithm). Review layouts that depend on the previous star-sizing behavior.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindXmlWriterInvalidSurrogate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findxmlwriterinvalidsurrogate)
+  * **Find `XmlWriter` invalid-surrogate-pair change**
+  * Finds `XmlWriter` usage. The `Write*` methods throw `ArgumentException` on invalid surrogate pairs when retargeting to .NET Framework 4.6 (previously they were written through). Review XmlWriter usage that may emit lone surrogates.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.FindZipFileEntrySeparator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/findzipfileentryseparator)
+  * **Find `ZipFile`/`ZipArchiveEntry` usage (path separator change)**
+  * Flag usages of `ZipFile` and `ZipArchiveEntry`, whose entry path separator changes when retargeting to .NET Framework 4.6.1.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework45](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework45)
+  * **Retarget .NET Framework 4.0 to 4.5**
+  * Retargets a .NET Framework 4.0 project to 4.5. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.5` (legacy csproj), `&lt;TargetFramework&gt;` to `net45` (SDK-style csproj), the `&lt;supportedRuntime sku&gt;` in app.config, and the `targetFramework` attribute in web.config. Retargeting to 4.5 enables RFC 3987 `System.Uri` parsing (stricter normalization/validation), C# 5 per-iteration `foreach` variable scoping, and obsoletes `MachineKey.Encode`/`Decode` (use `MachineKey.Protect`/`Unprotect`) and the `System.Workflow.*` (WF 3.x) types (use `System.Activities.*`). See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.5.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework451](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework451)
+  * **Retarget .NET Framework 4.5 to 4.5.1**
+  * Retargets a .NET Framework 4.5 project to 4.5.1. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.5.1`, `&lt;TargetFramework&gt;` to `net451`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.5). Notable retargeting changes at 4.5.1: rebuilt ADO.NET providers must add `override` to `DbParameter.Precision`/`Scale`; WPF two-way binding to a non-public setter now throws `InvalidOperationException`. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.5.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework452](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework452)
+  * **Retarget .NET Framework 4.5.1 to 4.5.2**
+  * Retargets a .NET Framework 4.5.1 project to 4.5.2. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.5.2`, `&lt;TargetFramework&gt;` to `net452`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.5.1). Notable retargeting changes at 4.5.2: `DataObject.GetData` retrieves HTML-format data as UTF-8 (remove any manual UTF-8 workaround); VB.NET partially-qualified `System.Windows.*` names are no longer resolved (fully qualify them). No AppContext compatibility switches exist before 4.6. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.5.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework46](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework46)
+  * **Retarget .NET Framework 4.5.2 to 4.6**
+  * Retargets a .NET Framework 4.5.2 project to 4.6. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.6`, `&lt;TargetFramework&gt;` to `net46`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.5.2). 4.6 is where `&lt;AppContextSwitchOverrides&gt;` is introduced. Notable retargeting changes: TLS now restricts to 1.0/1.1/1.2 and drops SSL3/RC4 (opt out via `Switch.System.Net.DontEnableSchUseStrongCrypto=true`); certificate EKU validation is added; `CurrentCulture`/`CurrentUICulture` flow across async tasks (`Switch.System.Globalization.NoAsyncCurrentCulture=true`); the 64-bit RyuJIT replaces the legacy JIT (`&lt;useLegacyJit enabled=&quot;1&quot;/&gt;` to revert); `XmlWriter` throws on invalid surrogate pairs. The accompanying `Find` recipe flags `ServicePointManager`/TLS code for review. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.6.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework461](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework461)
+  * **Retarget .NET Framework 4.6 to 4.6.1**
+  * Retargets a .NET Framework 4.6 project to 4.6.1. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.6.1`, `&lt;TargetFramework&gt;` to `net461`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.6). Notable retargeting changes at 4.6.1: `ZipArchiveEntry.FullName` uses `/` separators (`Switch.System.IO.Compression.ZipFile.UseBackslash=true` to revert); WCF transport security supports CNG-stored certificates; `X509CertificateClaimSet.FindClaims` matches all SAN DNS entries (`Switch.System.IdentityModel.DisableMultipleDNSEntriesInSANCertificate=true`). See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.6.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework462](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework462)
+  * **Retarget .NET Framework 4.6.1 to 4.6.2**
+  * Retargets a .NET Framework 4.6.1 project to 4.6.2. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.6.2`, `&lt;TargetFramework&gt;` to `net462`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.6.1). Notable retargeting changes at 4.6.2: path normalization defers to the OS and supports long (&gt;260 char) paths (`Switch.System.IO.UseLegacyPathHandling=true` / `Switch.System.IO.BlockLongPaths=true` to revert); `ClaimsIdentity` ctors clone the `Actor` (`Switch.System.Security.ClaimsIdentity.SetActorAsReferenceWhenCopyingClaimsIdentity=true`); `RSACng` accepts non-standard key sizes and `SignedXml.GetPublicKey` returns `RSACng`. Two changes need manual review (no switch): `HttpRuntime.AppDomainAppPath` may throw `NullReferenceException`, and `RSACng.ImportParameters` no longer throws on odd key sizes. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.6.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework47](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework47)
+  * **Retarget .NET Framework 4.6.2 to 4.7**
+  * Retargets a .NET Framework 4.6.2 project to 4.7. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.7`, `&lt;TargetFramework&gt;` to `net47`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.6.2). Notable retargeting changes at 4.7: `ServicePointManager.SecurityProtocol` defaults to `SystemDefault`, inheriting the OS TLS configuration (`Switch.System.Net.DontEnableSystemDefaultTlsVersions=true` to revert); `SslStream` surfaces TLS alerts as `IOException`/`Win32Exception` instead of timing out (`Switch.System.Net.DontEnableTlsAlerts=true`); the WPF `Grid` star-column allocation algorithm is replaced (`Switch.System.Windows.Controls.Grid.StarDefinitionsCanExceedAvailableSpace=true`); `DataContractJsonSerializer` control-character escaping becomes ECMAScript-compatible. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.7.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework471](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework471)
+  * **Retarget .NET Framework 4.7 to 4.7.1**
+  * Retargets a .NET Framework 4.7 project to 4.7.1. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.7.1`, `&lt;TargetFramework&gt;` to `net471`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.7). Notable retargeting changes at 4.7.1: accessibility/UIA improvements across WinForms, WPF, and ASP.NET controls turn on by default (`Switch.UseLegacyAccessibilityFeatures=true` to keep legacy behavior); SignedXml/SignedCms and `PackageDigitalSignatureManager` default hash algorithms move from SHA-1 to SHA-256 (`Switch.System.Security.Cryptography.Xml.UseInsecureHashAlgorithms=true` etc. to revert); `ServiceBase.Run` now propagates exceptions thrown from `OnStart`. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.7.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework472](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework472)
+  * **Retarget .NET Framework 4.7.1 to 4.7.2**
+  * Retargets a .NET Framework 4.7.1 project to 4.7.2. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.7.2`, `&lt;TargetFramework&gt;` to `net472`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. Includes all earlier steps (4.0 -&gt; 4.7.1). Notable retargeting changes at 4.7.2: second wave of accessibility/UIA improvements (requires both `Switch.UseLegacyAccessibilityFeatures=true` and `Switch.UseLegacyAccessibilityFeatures.2=true` to keep legacy behavior); `System.Uri` keeps Unicode bidi control characters and applies a consistent RFC 3986 reserved-character set (`Switch.System.Uri.DontKeepUnicodeBidiFormattingCharacters=true` / `Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets=true` to revert); `DeflateStream`/`GZipStream` use native Windows decompression. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.7.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework48](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework48)
+  * **Retarget to .NET Framework 4.8**
+  * Retargets a .NET Framework project to 4.8, the recommended modern target. Applies every intermediate minor-version step in order (4.0 -&gt; 4.5 -&gt; 4.5.1 -&gt; 4.5.2 -&gt; 4.6 -&gt; 4.6.1 -&gt; 4.6.2 -&gt; 4.7 -&gt; 4.7.1 -&gt; 4.7.2 -&gt; 4.8), updating `&lt;TargetFrameworkVersion&gt;` and `&lt;TargetFramework&gt;` in legacy and SDK-style csproj files, the `&lt;supportedRuntime sku&gt;` in app.config, and the `targetFramework` attribute in web.config at each step, and flagging affected source for review. Notable retargeting changes when reaching 4.8: managed crypto classes no longer throw in FIPS mode (`Switch.System.Security.Cryptography.UseLegacyFipsThrow=true` to revert); a third wave of accessibility improvements applies (keep legacy with all of `Switch.UseLegacyAccessibilityFeatures`, `.2`, and `.3`); `HwndHost` resizes correctly under per-monitor DPI; several WF/WPF checksum/hash defaults move to SHA-256. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.8.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework.UpgradeToNetFramework481](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework/upgradetonetframework481)
+  * **Retarget to .NET Framework 4.8.1**
+  * Retargets a .NET Framework project to 4.8.1, applying the full 4.0 -&gt; 4.8 chain and then bumping to 4.8.1. Updates `&lt;TargetFrameworkVersion&gt;` to `v4.8.1`, `&lt;TargetFramework&gt;` to `net481`, the app.config `&lt;supportedRuntime sku&gt;`, and the web.config `targetFramework`. .NET Framework 4.8.1 introduced no application-compatibility (retargeting) changes, so this step is purely the version bump. **Compatibility caveat:** 4.8.1 requires Windows 11 (21H2+) or Windows Server 2022+ at runtime and Visual Studio 2022 17.3+ to build, and is the only 4.x release with native Arm64 support. If any target machine runs Windows 10 or older Windows Server, stop at `UpgradeToNetFramework48` instead. See https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/retargeting/4.8.x.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.ConvertClassicCsprojToSdk](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/convertclassiccsprojtosdk)
+  * **Convert classic csproj to SDK-style (net48)**
+  * Rewrites a non-SDK .NET Framework 4.8 .csproj into SDK-style form: sets `Sdk=&quot;Microsoft.NET.Sdk&quot;`, removes the legacy MSBuild boilerplate (`&lt;Import&gt;`s, default `&lt;Compile&gt;` items, configuration-conditional `&lt;PropertyGroup&gt;` blocks, SDK-managed properties), and replaces `&lt;TargetFrameworkVersion&gt;v4.8&lt;/TargetFrameworkVersion&gt;` with `&lt;TargetFramework&gt;net48&lt;/TargetFramework&gt;`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.FindEntityFramework](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/findentityframework)
+  * **Find Entity Framework usage**
+  * Finds projects that use Entity Framework (EF6 or EF Core). Detects attested `System.Data.Entity.*`/`Microsoft.EntityFrameworkCore.*` usage in C# source, `EntityFramework`/`Microsoft.EntityFrameworkCore.*` NuGet packages, and GAC `&lt;Reference Include=&quot;EntityFramework…&quot;&gt;` assembly references used by `packages.config` projects.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.FindWcf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/findwcf)
+  * **Find WCF (`System.ServiceModel`) usage**
+  * Finds projects that use Windows Communication Foundation (WCF). Detects attested `System.ServiceModel.*` usage in C# source, `System.ServiceModel.*`/`CoreWCF.*` NuGet packages, GAC `&lt;Reference Include=&quot;System.ServiceModel…&quot;&gt;` assembly references, and `.svc` service files referenced from the `.csproj`.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.FindWebForms](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/findwebforms)
+  * **Find ASP.NET Web Forms usage**
+  * Finds projects that use ASP.NET Web Forms. Detects attested `System.Web.UI.*` usage in C# code-behind, `.aspx`/`.ascx`/`.asax`/`.master` files referenced from the `.csproj`, and ASP.NET web-application signals (`System.Web` reference, `Microsoft.WebApplication.targets` import, web `ProjectTypeGuids`, `UseIISExpress`/`MvcBuildViews`).
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.MigratePackagesConfigToPackageReference](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/migratepackagesconfigtopackagereference)
+  * **Migrate `packages.config` to `&lt;PackageReference&gt;` (net48)**
+  * Moves NuGet package entries from `packages.config` into `&lt;PackageReference&gt;` items in the sibling `.csproj`, drops facade packages provided transitively by `Microsoft.NETFramework.ReferenceAssemblies.Net48`, adds that reference-assemblies package, and removes the now-empty `packages.config`. Scoped to .NET Framework 4.8 projects.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.NetFramework48.UpgradeToNetFramework48Sdk](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/netframework48/upgradetonetframework48sdk)
+  * **Modernize .NET Framework 4.8 project (SDK + PackageReference)**
+  * Migrates a classic .NET Framework 4.8 csproj that uses `packages.config` to SDK-style with `&lt;PackageReference&gt;` entries. Combines `MigratePackagesConfigToPackageReference` and `ConvertClassicCsprojToSdk` so the resulting project builds with `dotnet build` on non-Windows machines via the `Microsoft.NETFramework.ReferenceAssemblies.Net48` targeting pack.
+* [OpenRewrite.Recipes.CSharp.Migration.Dotnet.RemoveMethodInvocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/dotnet/removemethodinvocations)
+  * **Remove method invocations**
+  * Remove method invocations if syntactically safe.
+
 ### recipes-scala
 
 * [org.openrewrite.scala.recipes.cleanup.AvoidEmptyCatchBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/avoidemptycatchblock)
@@ -4359,6 +4977,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.scala.recipes.cleanup.SimplifyBooleanExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/simplifybooleanexpression)
   * **Simplify boolean expression**
   * Simplifies redundant boolean comparisons such as `x == true` to `x` and `x == false` to `!x`.
+* [org.openrewrite.scala.recipes.cleanup.SimplifyOptionMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/simplifyoptionmatch)
+  * **Replace `Option` pattern matching with combinators**
+  * Rewrites `option match \{ case Some(x) =&gt; ...; case None =&gt; ... \}` into the equivalent `map`, `flatMap`, or `getOrElse` combinator. Matches whose `None` branch yields `None` become `map` (when the `Some` branch wraps its result in `Some`) or `flatMap`; matches whose `Some` branch returns the bound value unchanged become `getOrElse`, which also covers a `None` branch that throws (its by-name argument keeps the throw lazy).
 * [org.openrewrite.scala.recipes.cleanup.UseCollectionConverters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/usecollectionconverters)
   * **Replace `JavaConverters` with `CollectionConverters`**
   * `scala.collection.JavaConverters` was deprecated in Scala 2.13 in favor of `scala.jdk.CollectionConverters`. This recipe replaces the import automatically.
@@ -4560,6 +5181,72 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.scala.recipes.testing.UseScalaTestMatchers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/testing/usescalatestmatchers)
   * **Use ScalaTest matchers instead of `assert(x == y)`**
   * Finds `assert(x == y)` patterns and `assertEquals` calls. Consider using ScalaTest matchers: `x shouldBe y`.
+
+### recipes-tunit
+
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.AddAsyncToTestMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/addasynctotestmethods)
+  * **Add `async Task` to methods containing `await`**
+  * Find methods that contain `await` expressions but return `void`, and change their signature to `async Task`.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.AsyncLifetimeToBeforeAfterTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/asynclifetimetobeforeaftertest)
+  * **Find `IAsyncLifetime` needing TUnit migration**
+  * Find classes implementing `IAsyncLifetime` that should use `[Before(Test)]` and `[After(Test)]` for TUnit.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.ChangeXUnitUsings](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/changexunitusings)
+  * **Change xUnit using directives to TUnit**
+  * Replace `using Xunit;` with `using TUnit.Core;` and `using TUnit.Assertions;`.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.ClassFixtureToClassDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/classfixturetoclassdatasource)
+  * **Find `IClassFixture&lt;T&gt;` needing TUnit migration**
+  * Find classes implementing `IClassFixture&lt;T&gt;` that should use `[ClassDataSource&lt;T&gt;]` for TUnit.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.CollectionFixtureToClassDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/collectionfixturetoclassdatasource)
+  * **Replace `ICollectionFixture&lt;T&gt;` with `[ClassDataSource&lt;T&gt;]`**
+  * Migrate xUnit collection fixtures to TUnit: remove `[CollectionDefinition]` and `ICollectionFixture&lt;T&gt;` from definition classes, add `[ClassDataSource&lt;T&gt;(Shared = SharedType.Keyed)]` to test classes, and convert constructor fixture injection to primary constructors.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.CollectionToNotInParallel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/collectiontonotinparallel)
+  * **Replace `[Collection]` with `[NotInParallel]`**
+  * Replace the xUnit `[Collection(&quot;name&quot;)]` attribute with the TUnit `[NotInParallel(&quot;name&quot;)]` attribute.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.ConstructorToBeforeTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/constructortobeforetest)
+  * **Find test constructors needing `[Before(Test)]`**
+  * Find constructors in test classes that should be converted to `[Before(Test)]` methods for TUnit.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.DisposableToAfterTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/disposabletoaftertest)
+  * **Replace `IDisposable` with `[After(Test)]`**
+  * Remove `IDisposable` from the base type list and add `[After(Test)]` to the `Dispose()` method.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.FactSkipToSkipAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/factskiptoskipattribute)
+  * **Extract `Skip` into `[Skip]` attribute**
+  * Extract the `Skip` argument from `[Fact(Skip = &quot;...&quot;)]` or `[Theory(Skip = &quot;...&quot;)]` into a separate TUnit `[Skip(&quot;...&quot;)]` attribute.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.FactTimeoutToTimeoutAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/facttimeouttotimeoutattribute)
+  * **Extract `Timeout` into `[Timeout]` attribute**
+  * Extract the `Timeout` argument from `[Fact(Timeout = ...)]` or `[Theory(Timeout = ...)]` into a separate TUnit `[Timeout(...)]` attribute.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.FactToTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/facttotest)
+  * **Replace `[Fact]` with `[Test]`**
+  * Replace the xUnit `[Fact]` attribute with the TUnit `[Test]` attribute.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.InlineDataToArguments](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/inlinedatatoarguments)
+  * **Replace `[InlineData]` with `[Arguments]`**
+  * Replace the xUnit `[InlineData]` attribute with the TUnit `[Arguments]` attribute.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MemberDataToMethodDataSource](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/memberdatatomethoddatasource)
+  * **Replace `[MemberData]` with `[MethodDataSource]`**
+  * Replace the xUnit `[MemberData]` attribute with the TUnit `[MethodDataSource]` attribute. Fields and properties referenced by MemberData are converted to methods.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateFromXUnit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratefromxunit)
+  * **Migrate from xUnit to TUnit**
+  * Migrate xUnit test attributes, assertions, and lifecycle patterns to their TUnit equivalents.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateFromXUnitAttributes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratefromxunitattributes)
+  * **Migrate xUnit attributes to TUnit**
+  * Replace xUnit test attributes ([Fact], [Theory], [InlineData], etc.) with their TUnit equivalents.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateXUnitAssertions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratexunitassertions)
+  * **Migrate xUnit assertions to TUnit**
+  * Replace xUnit `Assert.*` calls with TUnit's fluent `await Assert.That(...).Is*()` assertions. Note: test methods may need to be changed to `async Task` separately.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.MigrateXUnitDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/migratexunitdependencies)
+  * **Migrate xUnit NuGet dependencies to TUnit**
+  * Remove xUnit NuGet package references, add TUnit, and upgrade the target framework to at least .NET 9.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TestOutputHelperToTestContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/testoutputhelpertotestcontext)
+  * **Find `ITestOutputHelper` needing TUnit migration**
+  * Find usages of xUnit's `ITestOutputHelper` that should be replaced with TUnit's `TestContext`.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TheoryToTest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/theorytotest)
+  * **Replace `[Theory]` with `[Test]`**
+  * Replace the xUnit `[Theory]` attribute with the TUnit `[Test]` attribute.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TraitCategoryToCategory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/traitcategorytocategory)
+  * **Replace `[Trait(&quot;Category&quot;, ...)]` with `[Category]`**
+  * Replace xUnit `[Trait(&quot;Category&quot;, &quot;X&quot;)]` with TUnit's dedicated `[Category(&quot;X&quot;)]` attribute.
+* [OpenRewrite.Recipes.CSharp.Migration.TUnit.FromXUnit.TraitToProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/migration/tunit/fromxunit/traittoproperty)
+  * **Replace `[Trait]` with `[Property]`**
+  * Replace the xUnit `[Trait]` attribute with the TUnit `[Property]` attribute.
 
 ### rewrite-ai
 
@@ -5049,6 +5736,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.devcenter.DevCenterCSharpStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentercsharpstarter)
   * **DevCenter for C#**
   * A default DevCenter configuration for C# repositories. Track .NET version adoption across your organization.
+* [io.moderne.devcenter.DevCenterGoStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentergostarter)
+  * **DevCenter for Go**
+  * A default DevCenter configuration for Go repositories. Track Go version adoption across your organization.
 * [io.moderne.devcenter.DevCenterKotlin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterkotlin)
   * **DevCenter Kotlin**
   * This is a DevCenter helping you to track general Kotlin Modernisations.
@@ -5064,6 +5754,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.devcenter.FindOrganizationStatistics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/findorganizationstatistics)
   * **Find organization statistics**
   * Counts lines of code per repository for organization-level statistics.
+* [io.moderne.devcenter.GoVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/goversionupgrade)
+  * **Move to a later Go version**
+  * Determine the current state of a repository relative to a desired Go version upgrade.
 * [io.moderne.devcenter.GroovyVersionUpgrade](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/groovyversionupgrade)
   * **Move to a later Groovy version**
   * Determine the current state of a repository relative to a desired Groovy version upgrade.
@@ -5684,7 +6377,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Detect Go error-handling idioms: error returns, fmt.Errorf %w wrapping, errors.Is/As, panic/recover, and sentinel error variables.
 * [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
   * **Update Prethink context (no AI)**
-  * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams. This recipe does not require an LLM provider.
+  * Deprecated alias for `io.moderne.prethink.UpdatePrethinkContextStarter`, retained for backward compatibility with references to the former recipe name. Prethink no longer has an AI-based variant, so the &quot;(no AI)&quot; distinction is unnecessary. Use `io.moderne.prethink.UpdatePrethinkContextStarter` instead.
+* [io.moderne.prethink.UpdatePrethinkContextStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
+  * **Update Prethink context**
+  * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams.
 * [io.moderne.prethink.calm.FindAspNetCoreEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findaspnetcoreendpoints)
   * **Find ASP.NET Core endpoints**
   * Identify HTTP endpoints declared via ASP.NET Core controllers ([ApiController], [Route], [HttpGet/Post/...]) and Minimal APIs (app.MapGet/MapPost/MapPut/MapDelete/MapPatch).
@@ -5756,13 +6452,13 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Extract per-endpoint request body, response body (per status code), and parameter details from Spring/JAX-RS/Micronaut handlers to support OpenAPI 3.0.3 spec generation and consumer/provider contract-test generation. Walks interface inheritance for OpenAPI-codegen-first projects.
 * [io.moderne.prethink.calm.FindEndpointSecurity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findendpointsecurity)
   * **Find endpoint security**
-  * Per-endpoint security requirements (roles, scopes, raw expressions) extracted from @PreAuthorize/@Secured/@RolesAllowed/@PermitAll annotations at method or class level. Joins to service-endpoints.csv via endpointId.
+  * Per-endpoint security requirements (roles, scopes, raw expressions) extracted from Spring Security (@PreAuthorize/@PostAuthorize/@Secured) and JAX-RS/Jakarta EE (@RolesAllowed/@PermitAll/@DenyAll, jakarta + javax) annotations at method or class level. Joins to service-endpoints.csv via endpointId.
 * [io.moderne.prethink.calm.FindEntityFrameworkConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findentityframeworkconnections)
   * **Find Entity Framework / Dapper / ADO.NET database access**
   * Detect Entity Framework Core DbContext subclasses, DbSet&lt;T&gt; properties, [Table]/[Column]/[Key] annotated entity classes, Dapper Query/Execute calls, and raw SqlConnection usage.
 * [io.moderne.prethink.calm.FindExceptionHandlers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findexceptionhandlers)
   * **Find exception handlers**
-  * Capture @ControllerAdvice and controller-local @ExceptionHandler methods so that OpenAPI 3.0.3 specs include non-2xx response branches. Emits one row per (scope, exception type, status) triple.
+  * Capture @ControllerAdvice and controller-local @ExceptionHandler methods, plus JAX-RS/Jakarta EE ExceptionMapper implementations, so that OpenAPI 3.0.3 specs include non-2xx response branches. Emits one row per (scope, exception type, status) triple.
 * [io.moderne.prethink.calm.FindExpressEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findexpressendpoints)
   * **Find Express endpoints**
   * Identify REST/HTTP endpoints in Express and Fastify applications. Detects app.get(), router.post(), and similar route definition patterns.
@@ -5807,7 +6503,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Identify gRPC service implementations in the application. Detects classes extending generated ImplBase classes and @GrpcService annotations.
 * [io.moderne.prethink.calm.FindMessagingConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmessagingconnections)
   * **Find messaging connections**
-  * Identify message queue producers and consumers. Detects Kafka, RabbitMQ, JMS, Spring Cloud Stream, AWS SQS, and SmallRye Reactive Messaging.
+  * Identify message queue producers and consumers. Detects Kafka (Spring and raw kafka-clients), RabbitMQ, JMS, Spring Cloud Stream, AWS SQS (annotation and raw SDK), Redis pub/sub, EJB message-driven beans, and SmallRye Reactive Messaging.
 * [io.moderne.prethink.calm.FindMongooseSchemas](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmongooseschemas)
   * **Find Mongoose schemas**
   * Identify Mongoose models and schemas in Node.js applications. Detects mongoose.model() calls and populates the DatabaseConnections table.
@@ -5838,6 +6534,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findprojectmetadata)
   * **Find project metadata**
   * Extract project metadata (artifact ID, group ID, name, description) from Maven pom.xml files.
+* [io.moderne.prethink.calm.FindPythonGrpcServices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythongrpcservices)
+  * **Find Python gRPC services**
+  * Detect gRPC service implementations in Python by classes subclassing generated *Servicer base classes (grpcio), emitting one endpoint per RPC handler method.
 * [io.moderne.prethink.calm.FindPythonProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythonprojectmetadata)
   * **Find Python project metadata**
   * Extract project metadata (name, version, description) from Python pyproject.toml files.
@@ -5849,7 +6548,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Identify ORM model classes in Python applications. Detects SQLAlchemy models with DeclarativeBase inheritance, Flask-SQLAlchemy models with db.Model, and Django ORM models extending models.Model.
 * [io.moderne.prethink.calm.FindScheduledTasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findscheduledtasks)
   * **Find scheduled tasks**
-  * Identify scheduled tasks and background jobs in the application. Supports Spring @Scheduled, Quarkus @Scheduled, Quartz Job, Jakarta/Javax EJB Timer, and JobRunr @Recurring annotations.
+  * Identify scheduled tasks and background jobs in the application. Supports Spring @Scheduled, Quarkus @Scheduled, Quartz Job, Jakarta/Javax EJB Timer, and JobRunr @Recurring annotations, as well as programmatic scheduling through java.util.concurrent.ScheduledExecutorService and Jakarta/Javax EE ManagedScheduledExecutorService.
 * [io.moderne.prethink.calm.FindSecurityConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsecurityconfiguration)
   * **Find security configuration**
   * Identify security configurations including Spring Security, OAuth2, CORS, Jakarta Security (@RolesAllowed, @PermitAll, @DenyAll), and Quarkus Security settings.
@@ -5883,6 +6582,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.quality.FindDotnetErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/finddotneterrorpatterns)
   * **Find .NET error patterns**
   * Detect .NET logging frameworks (Microsoft.Extensions.Logging, Serilog, NLog, log4net) and catch-block strategies (swallow, rethrow, log, wrap).
+* [io.moderne.prethink.quality.FindDuplicateCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findduplicatecode)
+  * **Find duplicate code**
+  * Detect duplicate and likely-duplicate code across the codebase by AST-subtree fingerprinting and MinHash/LSH method alignment (zero AI). Reports Type-1 (exact), Type-2 (renamed), and Type-3 (gapped: inserted/removed/edited statements) clone groups ranked by the volume of code that would collapse if the duplication were refactored away.
 * [io.moderne.prethink.quality.FindGoCodeSmells](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findgocodesmells)
   * **Find Go code smells**
   * Detect God Struct, Feature Envy, Large Interface, and Long Function code smells in Go. Data Class is intentionally excluded (idiomatic in Go).
@@ -5898,6 +6600,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.quality.FindPackageMetrics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findpackagemetrics)
   * **Find package quality metrics**
   * Compute per-package architectural quality metrics including afferent/efferent coupling, instability, abstractness, distance from the main sequence, and dependency cycle detection using Tarjan's strongly connected components algorithm.
+* [io.moderne.prethink.quality.FindSimilarCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findsimilarcode)
+  * **Find similar code**
+  * Detect structurally similar (but not identical) methods with MinHash/LSH near-duplicate matching over their AST shingles (zero AI), reporting an approximate similarity percentage. Complements exact duplicate detection by surfacing restructured near-duplicates worth consolidating.
 * [io.moderne.prethink.testing.coverage.FindTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/testing/coverage/findtestcoverage)
   * **Find test coverage mapping**
   * Map test methods to their corresponding implementation methods. Uses JavaType.Method matching to determine coverage relationships.
@@ -6267,6 +6972,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.batch.FlagChunkListenerForManualMigration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/batch/flagchunklistenerformanualmigration)
   * **Flag deprecated `ChunkListener` callbacks for manual migration to `ChunkListener&lt;I, O&gt;`**
   * Spring Batch 6 made `ChunkListener` generic (`ChunkListener&lt;I, O&gt;`) and deprecated the three `ChunkContext`-based callbacks for removal in Spring Batch 7. Their replacements accept the chunk of items (`beforeChunk(Chunk&lt;I&gt;)`, `afterChunk(Chunk&lt;O&gt;)`, `onChunkError(Exception, Chunk&lt;O&gt;)`), which is a disjoint API from `ChunkContext` and fires at a different point in the chunk lifecycle, so the change cannot be performed mechanically. This recipe adds a comment to each deprecated callback naming its exact replacement so the remaining body changes can be done by hand. It does not add type parameters or rewrite method bodies.
+* [io.moderne.java.spring.batch.MigrateStoredProcedureItemReaderConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/batch/migratestoredprocedureitemreaderconstructor)
+  * **Use constructor injection for `StoredProcedureItemReader`**
+  * Spring Batch 6.0 removed the no-arg `StoredProcedureItemReader()` constructor and made the `DataSource`, procedure name and `RowMapper` required constructor arguments. This recipe folds `setDataSource(..)`, `setProcedureName(..)` and `setRowMapper(..)` into the constructor (`new StoredProcedureItemReader&lt;&gt;(dataSource, procedureName, rowMapper)`) and removes those setters when the reader is created with the no-arg constructor in the same block, for both Java and Kotlin sources. Other configuration (`setParameters`, `setPreparedStatementSetter`, ...) is preserved. When the three setters cannot be safely folded, the reader is left unchanged for manual migration.
 * [io.moderne.java.spring.boot.AddSpringBootApplication](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot/addspringbootapplication)
   * **Add `@SpringBootApplication` class**
   * Adds a `@SpringBootApplication` class containing a main method to bootify your Spring Framework application.
@@ -6321,9 +7029,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot3.MigrateJmxEndpointDiscovererConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migratejmxendpointdiscovererconstructor)
   * **Migrate `JmxEndpointDiscoverer` deprecated constructor**
   * The 4-parameter constructor of `JmxEndpointDiscoverer` has been deprecated in Spring Boot 3.4. This recipe transforms it to use the new 5-parameter constructor with an additional Collection parameter.
+* [io.moderne.java.spring.boot3.MigrateRestTemplateConfigurationToRestClient](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migrateresttemplateconfigurationtorestclient)
+  * **Migrate `RestTemplate` configuration to `RestClient`**
+  * Migrates `RestTemplate` setter-based bean configuration to the immutable `RestClient.Builder` API. Folds the common configure-and-return factory pattern (`template.setErrorHandler(...); return template;`) into a `mutate()`/`builder()` chain when the mutated instance is the value returned by the method. Setters without a safe fold are left in place with a `TODO` comment. Intended to run after `RestTemplate` has been retyped to `RestClient`.
 * [io.moderne.java.spring.boot3.MigrateRestTemplateToRestClient](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migrateresttemplatetorestclient)
   * **Migrate `RestTemplate` to `RestClient`**
+  * Migrates Spring's `RestTemplate` to the modern `RestClient` API introduced in Spring Framework 6.1. `RestClient` provides a fluent, synchronous API that is the recommended approach for new development. This recipe converts constructor calls, type declarations, and common method invocations (`getForObject`, `getForEntity`, `postForObject`, `postForEntity`, `patchForObject`, `put`, `delete`, `headForHeaders`, `postForLocation`, `optionsForAllow`, `exchange`) to their `RestClient` equivalents, and then folds setter-based bean configuration (`setErrorHandler`, `setMessageConverters`, `setRequestFactory`, ...) into the immutable `RestClient.Builder` API where it is safe to do so. The configuration fold runs after the type change, so it detects setters on the already-retyped `RestClient` receiver.
+* [io.moderne.java.spring.boot3.MigrateToRestClientAPI](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migratetorestclientapi)
+  * **Migrate `RestTemplate` API calls to `RestClient`**
   * Migrates Spring's `RestTemplate` to the modern `RestClient` API introduced in Spring Framework 6.1. `RestClient` provides a fluent, synchronous API that is the recommended approach for new development. This recipe converts constructor calls, type declarations, and common method invocations (`getForObject`, `getForEntity`, `postForObject`, `postForEntity`, `patchForObject`, `put`, `delete`, `headForHeaders`, `postForLocation`, `optionsForAllow`, `exchange`) to their `RestClient` equivalents.
+* [io.moderne.java.spring.boot3.MigrateToRestClientConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migratetorestclientconstructor)
+  * **Migrate `RestTemplate` constructor calls to `RestClient.create()`**
+  * Migrates Spring's `RestTemplate` constructor invocations to the modern `RestClient` API `create()` introduced in Spring Framework 6.1. `RestClient` provides a fluent, synchronous API that is the recommended approach.
 * [io.moderne.java.spring.boot3.MigrateWebEndpointDiscovererConstructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migratewebendpointdiscovererconstructor)
   * **Migrate WebEndpointDiscoverer 6-parameter constructor to 8-parameter**
   * The 6-parameter constructor of `WebEndpointDiscoverer` has been deprecated in Spring Boot 3.3. This recipe adds two new parameters (`AdditionalPathsMapper` and `OperationFilter&lt;WebOperation&gt;`) to the constructor and updates the Bean method signature to inject them as `ObjectProvider` types.
@@ -6426,6 +7143,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.AddMssqlKerberosJaasConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmssqlkerberosjaasconfig)
   * **Add `useDefaultJaasConfig=true` to MSSQL Kerberos JDBC URLs**
   * For MSSQL JDBC connections using Kerberos authentication (`authenticationScheme=JavaKerberos` or `integratedSecurity=true`), adds `useDefaultJaasConfig=true` to the connection string. This is required for compatibility with Keycloak 26.4+ which changes JAAS configuration handling.
+* [io.moderne.java.spring.boot4.AddUserDetailsServiceAutoConfigurationExclusion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/adduserdetailsserviceautoconfigurationexclusion)
+  * **Co-exclude `UserDetailsServiceAutoConfiguration` where `SecurityAutoConfiguration` is excluded**
+  * Spring Boot 4.0 decoupled `SecurityAutoConfiguration` and `UserDetailsServiceAutoConfiguration`: only `SecurityAutoConfiguration` registers the `SecurityProperties` bean that `UserDetailsServiceAutoConfiguration` consumes, so an application that excludes only the former fails at startup. This recipe co-excludes `UserDetailsServiceAutoConfiguration` for both exclusion styles - the `exclude` / `excludeAutoConfiguration` annotation attributes and the `spring.autoconfigure.exclude` property/YAML setting. It is intended to run while the sources are still on the Spring Boot 3 namespace, before the Spring Boot 4.0 modular-starter package relocation, and it is idempotent.
+* [io.moderne.java.spring.boot4.AddUserDetailsServiceAutoConfigurationExclusionToAnnotations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/adduserdetailsserviceautoconfigurationexclusiontoannotations)
+  * **Co-exclude `UserDetailsServiceAutoConfiguration` on auto-configuration exclusion annotations**
+  * Appends `UserDetailsServiceAutoConfiguration` to any `exclude` / `excludeAutoConfiguration` annotation attribute that already excludes the servlet `SecurityAutoConfiguration` (for example on `@SpringBootApplication`, `@EnableAutoConfiguration`, or a `@WebMvcTest` slice). Boot 4.0 decoupled the two auto-configurations, and only `SecurityAutoConfiguration` registers the `SecurityProperties` bean that `UserDetailsServiceAutoConfiguration` consumes, so excluding only the former fails at startup. The Boot 3 FQN is added; the surrounding Spring Boot 4.0 migration relocates both classes into the `org.springframework.boot.security.autoconfigure` package. The change is annotation-agnostic (matched by the attribute value, not the annotation type), value-precise (it only appends where `SecurityAutoConfiguration` is actually excluded), and idempotent.
 * [io.moderne.java.spring.boot4.AddValidationStarterDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addvalidationstarterdependency)
   * **Add `spring-boot-starter-validation` dependency**
   * In Spring Boot 4, validation is no longer auto-included from the web starter. This recipe adds the `spring-boot-starter-validation` dependency when Jakarta Validation annotations are used in the project.
@@ -6498,6 +7221,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.MockMvcToMockMvcTester](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/mockmvctomockmvctester)
   * **Migrate `MockMvc` to `MockMvcTester`**
   * Converts `MockMvc` fields and initialization to `MockMvcTester`. Changes field types, renames fields from `mockMvc` to `mockMvcTester`, and converts `MockMvcBuilders.standaloneSetup().build()` to `MockMvcTester.of()` and `MockMvcBuilders.webAppContextSetup().build()` to `MockMvcTester.from()`.
+* [io.moderne.java.spring.boot4.ModularizeLegacyRawSpringDataRedis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modularizelegacyrawspringdataredis)
+  * **Modularize legacy raw Spring Data Redis dependency**
+  * In modules that directly declare `org.springframework.data:spring-data-redis`, add `spring-boot-starter-data-redis` (no-op if already present transitively — for example via `spring-boot-starter-session-data-redis` after its rename) and remove the raw dependency.
 * [io.moderne.java.spring.boot4.ModuleHasMonolithicStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulehasmonolithicstarter)
   * **Module has monolithic Spring Boot starter**
   * Precondition that matches modules with the monolithic Spring Boot starters that need to be migrated to modular starters. Matches the production monolithic spring-boot-starter and spring-boot-starter-classic, but not specific modular starters like spring-boot-starter-test or spring-boot-starter-ldap.
@@ -6510,6 +7236,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.ModuleUsesLiquibase](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/moduleusesliquibase)
   * **Module uses Liquibase**
   * Precondition that marks all files in a module if Liquibase usage is detected. Detection is based on having a Liquibase dependency, using Liquibase types, or having changelog files.
+* [io.moderne.java.spring.boot4.PreserveReactorHttpClientDefaults_4_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/preservereactorhttpclientdefaults_4_1)
+  * **Preserve system-proxy defaults on Reactor HTTP client builders**
+  * Spring Boot 4.1 no longer applies `proxyWithSystemProperties()` by default on `ReactorClientHttpRequestFactoryBuilder` and `ReactorClientHttpConnectorBuilder`. This recipe appends `.withHttpClientDefaults()` to affected builder chains to restore the previous behavior, but only while the module is still on a Spring Boot older than 4.1. Gating on the current version keeps the method from being reintroduced when a developer deliberately removes it after upgrading and later runs an upgrade to a newer 4.2+ release.
 * [io.moderne.java.spring.boot4.RemoveContentNegotiationFavorPathExtension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removecontentnegotiationfavorpathextension)
   * **Remove `ContentNegotiationConfigurer.favorPathExtension()` calls**
   * Spring Framework 7 removed `favorPathExtension()` from `ContentNegotiationConfigurer`. Path extension content negotiation is no longer supported. This recipe removes calls to `favorPathExtension()`.
@@ -6546,6 +7275,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.ReplaceDeprecatedThreadPoolTaskSchedulerBuilderApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedthreadpooltaskschedulerbuilderapi)
   * **Replace deprecated `ThreadPoolTaskSchedulerBuilder` constructor**
   * Replaces the deprecated 5-argument constructor of `ThreadPoolTaskSchedulerBuilder` with the builder pattern.
+* [io.moderne.java.spring.boot4.ReplaceRedisCacheConfigurationGetTtl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacerediscacheconfigurationgetttl)
+  * **Replace removed `RedisCacheConfiguration.getTtl()`**
+  * Spring Data Redis 4.0 removes `RedisCacheConfiguration.getTtl()`. Replaces calls with `getTtlFunction().getTimeToLive(null, null)`, which returns the same `Duration`.
 * [io.moderne.java.spring.boot4.SimplifyOptionalConfigurationPropertiesNullChecks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/simplifyoptionalconfigurationpropertiesnullchecks)
   * **Simplify null checks on `Optional` `@ConfigurationProperties` parameters**
   * Spring Boot 4.1 changes constructor-bound `@ConfigurationProperties` so that `Optional&lt;T&gt;` parameters bind to `Optional.empty()` rather than `null`. This recipe replaces `== null` / `!= null` checks against such parameters (or same-named fields in the binding constructor's class) with the constant they will always evaluate to, then runs `SimplifyConstantIfBranchExecution` to remove the dead branches.
@@ -7118,10 +7850,19 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Finds dependencies in `*.csproj` and `packages.config`.
 * [org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Nuget dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-06-29T1230.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-07-13T1200.
+* [org.openrewrite.csharp.dependencies.FindEndOfLifeDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/findendoflifedependencies)
+  * **Find end-of-life NuGet dependencies**
+  * Find NuGet packages whose upstream release is end-of-life or scheduled for end-of-life soon, using a snapshot of [endoflife.date](https://endoflife.date). Direct package references are marked in source; all matches (direct and transitive) are reported in the data table.
 * [org.openrewrite.csharp.dependencies.UpgradeDependencyVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/upgradedependencyversion)
   * **Upgrade C# dependency versions**
   * Upgrades dependencies in `*.csproj`, `Directory.Packages.props`, and `packages.config`.
+* [org.openrewrite.dependencies.endoflife.FindEndOfLifeDependenciesDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/dependencies/endoflife/findendoflifedependenciesdefault)
+  * **Find end-of-life dependencies (defaults)**
+  * Flags Maven, Gradle, npm, and NuGet dependencies whose upstream release is end-of-life or reaches end-of-life within the next 180 days, using the bundled endoflife.date snapshot. Aggregates the per-ecosystem find-end-of-life recipes with their default settings.
+* [org.openrewrite.golang.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/dependencies/dependencyvulnerabilitycheck)
+  * **Find and fix vulnerable Go dependencies**
+  * This software composition analysis (SCA) tool detects and upgrades Go module dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades `go.mod` to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government.   When a `go.sum` file is present it is regenerated to match the upgraded `go.mod` by running `go mod download`, which requires the `go` toolchain to be installed. If the toolchain is unavailable the `go.mod` change is still applied and the `go.sum` is flagged so it can be brought back in sync with `go mod tidy`. Because the module graph is not re-resolved, upgrades that introduce new indirect requirements may still need a follow-up `go mod tidy`.   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically.
 * [org.openrewrite.java.dependencies.AddExplicitTransitiveDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/addexplicittransitivedependencies)
   * **Add explicit transitive dependencies**
   * Detects when Java source code or configuration files reference types from transitive Maven dependencies and promotes those transitive dependencies to explicit direct dependencies in the pom.xml. This ensures the build is resilient against changes in transitive dependency trees of upstream libraries.
@@ -7130,13 +7871,16 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Maven/Gradle dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-06-29T1230.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-07-13T1200.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
 * [org.openrewrite.java.dependencies.SoftwareBillOfMaterials](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/softwarebillofmaterials)
   * **Software bill of materials**
   * Produces a software bill of materials (SBOM) for a project. An SBOM is a complete list of all dependencies used in a project, including transitive dependencies. The produced SBOM is in the [CycloneDX](https://cyclonedx.org/) XML format. Supports Gradle and Maven. Places a file named sbom.xml adjacent to the Gradle or Maven build file.
+* [org.openrewrite.java.dependencies.endoflife.FindEndOfLifeDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/endoflife/findendoflifedependencies)
+  * **Find end-of-life dependencies**
+  * Find Maven and Gradle dependencies whose upstream release is end-of-life or scheduled for end-of-life soon, using a snapshot of [endoflife.date](https://endoflife.date). Direct dependencies are marked in source; all matches (direct and transitive) are reported in the data table.
 * [org.openrewrite.java.security.FindTextDirectionChanges](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/findtextdirectionchanges)
   * **Find text-direction changes**
   * Finds unicode control characters which can change the direction text is displayed in. These control characters can alter how source code is presented to a human reader without affecting its interpretation by tools like compilers. So a malicious patch could pass code review while introducing vulnerabilities. Note that text direction-changing unicode control characters aren't inherently malicious. These characters can appear for legitimate reasons in code written in or dealing with right-to-left languages. See: https://trojansource.codes/ for more information.
@@ -7458,6 +8202,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.xss.ReplaceThymeleafUnescaped](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/xss/replacethymeleafunescaped)
   * **Replace `th:utext` with `th:text` in Thymeleaf templates**
   * Replaces Thymeleaf's unescaped attribute `th:utext` (and `data-th-utext`) with its escaped equivalent `th:text` (`data-th-text`) in `.html` / `.htm` template files. `th:utext` interpolates raw HTML and is the canonical Thymeleaf XSS sink. The recipe only fires on files that look like Thymeleaf templates (declare the `xmlns:th` namespace or use a `th:` / `data-th-` attribute somewhere). If you have a legitimate raw-HTML interpolation, restore it manually and rely on Thymeleaf's `[# th:utext]` block syntax or a sanitized model attribute.
+* [org.openrewrite.node.dependencies.FindEndOfLifeDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/dependencies/findendoflifedependencies)
+  * **Find end-of-life npm dependencies**
+  * Find npm dependencies whose upstream release is end-of-life or scheduled for end-of-life soon, using a snapshot of [endoflife.date](https://endoflife.date). Direct dependencies declared in `package.json` are marked in source; all matches (direct and transitive) are reported in the data table.
 * [org.openrewrite.python.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable PyPI dependencies**
   * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable.   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source.
@@ -7734,96 +8481,36 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.MigrateToPyprojectToml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migratetopyprojecttoml)
   * **Migrate to `pyproject.toml`**
   * Migrate Python projects from `requirements.txt` and/or `setup.cfg` to `pyproject.toml` with `hatchling` build backend.
+* [org.openrewrite.python.migrate.UpgradePythonDockerImage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythondockerimage)
+  * **Upgrade Python Docker base image**
+  * Update the Python version of `Dockerfile` base images (`FROM python:&lt;version&gt;`) to a target version. Tag suffixes such as `-slim` are preserved, any patch component is dropped, and an image already on a newer version is left as-is.
+* [org.openrewrite.python.migrate.UpgradePythonVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversion)
+  * **Upgrade Python version in project files**
+  * Update the Python version referenced in project metadata and packaging files to a target version. Updates `Pipfile` (`python_version` / `python_full_version`), `pyproject.toml` (`[project] requires-python` and Poetry's `[tool.poetry.dependencies] python`), `setup.cfg` (`python_requires`), and `.python-version` files. When a lock file (`uv.lock` or `Pipfile.lock`) is present and the matching package manager (`uv` or `pipenv`) is available on `PATH`, the lock file is regenerated to match. Only references older than the target are changed; a file already on a newer version is left as-is. `Dockerfile` base images are handled separately by `UpgradePythonDockerImage`, and `requirements.txt` is not modified because it pins package versions, not the interpreter version.
+* [org.openrewrite.python.migrate.UpgradePythonVersionTo310](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto310)
+  * **Upgrade Python version in project files to 3.10**
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.10.
+* [org.openrewrite.python.migrate.UpgradePythonVersionTo311](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto311)
+  * **Upgrade Python version in project files to 3.11**
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.11.
+* [org.openrewrite.python.migrate.UpgradePythonVersionTo312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto312)
+  * **Upgrade Python version in project files to 3.12**
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.12.
+* [org.openrewrite.python.migrate.UpgradePythonVersionTo313](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto313)
+  * **Upgrade Python version in project files to 3.13**
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.13.
+* [org.openrewrite.python.migrate.UpgradePythonVersionTo314](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto314)
+  * **Upgrade Python version in project files to 3.14**
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.14.
+* [org.openrewrite.python.migrate.UpgradePythonVersionTo38](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto38)
+  * **Upgrade Python version in project files to 3.8**
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.8.
+* [org.openrewrite.python.migrate.UpgradePythonVersionTo39](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto39)
+  * **Upgrade Python version in project files to 3.9**
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.9.
 
 ### rewrite-nodejs
 
-* [org.openrewrite.node.migrate.buffer.replace-deprecated-slice](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/buffer/replace-deprecated-slice)
-  * **Replace deprecated `Buffer.slice()` with `Buffer.subarray()`**
-  * Replace deprecated `buffer.slice()` calls with `buffer.subarray()` for compatibility with Uint8Array.prototype.slice().
-* [org.openrewrite.node.migrate.buffer.replace-slow-buffer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/buffer/replace-slow-buffer)
-  * **Replace deprecated `SlowBuffer` with `Buffer.allocUnsafeSlow()`**
-  * Replace deprecated `new SlowBuffer(size)` calls with `Buffer.allocUnsafeSlow(size)`. SlowBuffer was used to create un-pooled Buffer instances, but has been removed in favor of the explicit Buffer.allocUnsafeSlow() method.
-* [org.openrewrite.node.migrate.crypto.find-create-cipher](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/find-create-cipher)
-  * **Find deprecated `crypto.createCipher()` and `crypto.createDecipher()` usage**
-  * `crypto.createCipher()` and `crypto.createDecipher()` were deprecated in Node.js 10 (DEP0106) and removed in Node.js 22. Use `crypto.createCipheriv()` and `crypto.createDecipheriv()` instead.
-* [org.openrewrite.node.migrate.crypto.replace-crypto-fips](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/replace-crypto-fips)
-  * **Replace deprecated `crypto.fips` with `crypto.getFips()` and `crypto.setFips()`**
-  * Replace deprecated `crypto.fips` property access with `crypto.getFips()` for reads and `crypto.setFips(value)` for writes.
-* [org.openrewrite.node.migrate.crypto.replace-hash-constructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/replace-hash-constructor)
-  * **Replace deprecated `new crypto.Hash()` and `new crypto.Hmac()` with factory methods**
-  * Replace deprecated `new crypto.Hash(algorithm)` constructor calls with `crypto.createHash(algorithm)` and `new crypto.Hmac(algorithm, key)` with `crypto.createHmac(algorithm, key)` factory methods.
-* [org.openrewrite.node.migrate.find-process-assert](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/find-process-assert)
-  * **Find deprecated `process.assert()` usage**
-  * `process.assert()` was deprecated in Node.js 10 (DEP0100) and removed in Node.js 23. Use the `assert` module instead.
-* [org.openrewrite.node.migrate.find-punycode-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/find-punycode-usage)
-  * **Find deprecated `punycode` module usage**
-  * The `punycode` built-in module was deprecated in Node.js 21 (DEP0040). Use the userland `punycode` package from npm or `url.domainToASCII`/`url.domainToUnicode` instead.
-* [org.openrewrite.node.migrate.fs.replace-dirent-path](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-dirent-path)
-  * **Replace `dirent.path` with `dirent.parentPath`**
-  * Replaces deprecated `dirent.path` property access with `dirent.parentPath` on `fs.Dirent` instances to address DEP0178 deprecation.
-* [org.openrewrite.node.migrate.fs.replace-fs-access-constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-fs-access-constants)
-  * **Replace deprecated `fs.F_OK`, `fs.R_OK`, `fs.W_OK`, `fs.X_OK` with `fs.constants.*`**
-  * Replace deprecated file access constants (`fs.F_OK`, `fs.R_OK`, `fs.W_OK`, `fs.X_OK`) with their equivalents from `fs.constants`. These constants were removed in Node.js v24+ and should be accessed through the constants namespace.
-* [org.openrewrite.node.migrate.fs.replace-fs-truncate-fd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-fs-truncate-fd)
-  * **Replace `fs.truncate()` with file descriptor to `fs.ftruncate()`**
-  * Replace deprecated `fs.truncate(fd, ...)` and `fs.truncateSync(fd, ...)` calls with `fs.ftruncate(fd, ...)` and `fs.ftruncateSync(fd, ...)` when the first argument is a file descriptor (number).
-* [org.openrewrite.node.migrate.fs.replace-stats-constructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-stats-constructor)
-  * **Replace deprecated `fs.Stats` constructor with object literal**
-  * Replace deprecated `new fs.Stats()` constructor calls with an object literal containing Stats properties initialized to undefined.
-* [org.openrewrite.node.migrate.http.replace-outgoing-message-headers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/http/replace-outgoing-message-headers)
-  * **Replace `OutgoingMessage._headers` and `._headerNames` with public methods**
-  * Replace deprecated `OutgoingMessage.prototype._headers` with `getHeaders()`, `setHeader()`, `removeHeader()` and `OutgoingMessage.prototype._headerNames` with `getHeaderNames()` to address DEP0066 deprecation.
-* [org.openrewrite.node.migrate.increase-node-engine-version](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/increase-node-engine-version)
-  * **Increase Node.js engine version**
-  * Increases the upper bound of the `engines.node` version range in package.json to allow the specified Node.js version.
-* [org.openrewrite.node.migrate.increase-node-engine-version-in-github-actions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/increase-node-engine-version-in-github-actions)
-  * **Increase Node.js version in GitHub Actions**
-  * Increases `node-version` in `actions/setup-node` steps in GitHub Actions workflows. Only modifies plain major version values (e.g. `20`) and x-ranges (e.g. `20.x`). Never decreases the version.
-* [org.openrewrite.node.migrate.net.remove-set-simultaneous-accepts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/net/remove-set-simultaneous-accepts)
-  * **Remove deprecated `net._setSimultaneousAccepts()`**
-  * Remove calls to deprecated `net._setSimultaneousAccepts()` which was an undocumented internal function that is no longer necessary.
-* [org.openrewrite.node.migrate.process.coerce-process-exit-code](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/process/coerce-process-exit-code)
-  * **Coerce `process.exit()` and `process.exitCode` to integer**
-  * Wraps non-integer values passed to `process.exit()` or assigned to `process.exitCode` with `Math.trunc()` to avoid the DEP0164 deprecation warning about implicit coercion to integer.
-* [org.openrewrite.node.migrate.process.remove-usage-of-features-tls-underscore_constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/process/remove-usage-of-features-tls-underscore_constants)
-  * **Remove usage of deprecated `process.features.tls_*` properties**
-  * Remove references to deprecated `process.features.tls_*` properties, replace with `process.features.tls`.
-* [org.openrewrite.node.migrate.stream.replace-internal-modules](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/stream/replace-internal-modules)
-  * **Replace deprecated `node:_stream_*` with `node:stream`**
-  * Replace deprecated internal stream module imports like `require('node:_stream_readable')` with the public `node:stream` module.
-* [org.openrewrite.node.migrate.timers.find-timers-active](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/timers/find-timers-active)
-  * **Find deprecated `timers.active()` and `timers._unrefActive()` usage**
-  * `timers.active()` (DEP0126) and `timers._unrefActive()` (DEP0127) were deprecated and removed in Node.js 24. Use `timeout.refresh()` instead.
-* [org.openrewrite.node.migrate.tls.find-tls-secure-pair](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/tls/find-tls-secure-pair)
-  * **Find deprecated `tls.SecurePair` and `tls.createSecurePair()` usage**
-  * `tls.SecurePair` (DEP0043) and `tls.createSecurePair()` (DEP0064) were deprecated and removed in Node.js 24. Use `tls.TLSSocket` instead.
-* [org.openrewrite.node.migrate.tls.replace-internal-modules](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/tls/replace-internal-modules)
-  * **Replace deprecated `node:_tls_common` and `node:_tls_wrap` with `node:tls`**
-  * Replace deprecated internal TLS module imports `require('node:_tls_common')` and `require('node:_tls_wrap')` with the public `node:tls` module.
-* [org.openrewrite.node.migrate.upgrade-node-22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/upgrade-node-22)
-  * **Upgrade to Node.js 22**
-  * Migrate deprecated APIs for Node.js 22 compatibility. Addresses Node 22 runtime deprecations and deprecations from earlier versions.
-* [org.openrewrite.node.migrate.upgrade-node-24](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/upgrade-node-24)
-  * **Upgrade to Node.js 24**
-  * Migrate deprecated APIs for Node.js 24 compatibility. Includes all migrations from Node.js 22, plus Node 23 and Node 24 deprecations.
-* [org.openrewrite.node.migrate.util.remove-promisify-on-promise](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/remove-promisify-on-promise)
-  * **Remove unnecessary `util.promisify()` on Promise-returning functions**
-  * Removes `util.promisify()` calls on functions that already return a Promise. Since Node.js v17.0.0, calling promisify on a function that returns a Promise emits a runtime deprecation warning (DEP0174).
-* [org.openrewrite.node.migrate.util.replace-is-webassembly-compiled-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-is-webassembly-compiled-module)
-  * **Replace deprecated `util.types.isWebAssemblyCompiledModule()`**
-  * Replace `util.types.isWebAssemblyCompiledModule(value)` with `value instanceof WebAssembly.Module`.
-* [org.openrewrite.node.migrate.util.replace-util-extend](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-util-extend)
-  * **Replace deprecated `util._extend()` with `Object.assign()`**
-  * Replace deprecated `util._extend(target, source)` calls with `Object.assign(target, source)` which preserves the mutation behavior.
-* [org.openrewrite.node.migrate.util.replace-util-log](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-util-log)
-  * **Replace deprecated `util.log()` with `console.log()`**
-  * Replace deprecated `util.log()` calls with `console.log()`. Note: `util.log()` included timestamps, but `console.log()` does not.
-* [org.openrewrite.node.migrate.util.use-native-type-checking-methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/use-native-type-checking-methods)
-  * **Replace deprecated `util.isX()` methods with native JavaScript**
-  * The `util` module's type-checking methods have been removed in Node 22.
-* [org.openrewrite.node.migrate.zlib.replace-bytes-read](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/zlib/replace-bytes-read)
-  * **Replace deprecated `zlib.bytesRead` with `zlib.bytesWritten`**
-  * Replace deprecated `bytesRead` property on zlib streams with `bytesWritten`.
 * [org.openrewrite.nodejs.search.DatabaseInteractionInsights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/databaseinteractioninsights)
   * **Javascript database interaction library insights**
   * Discover which popular javascript database interaction libraries (Sequelize, TypeORM, Mongoose, etc.) are being used in your projects.
@@ -7977,9 +8664,78 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.sql.MigrateSqlServerToPostgres](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/migratesqlservertopostgres)
   * **Migrate SQL Server to PostgreSQL**
   * Converts Microsoft SQL Server-specific SQL syntax and functions to PostgreSQL equivalents.
+* [org.openrewrite.sql.antipattern.FindCartesianJoin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findcartesianjoin)
+  * **Find cartesian joins**
+  * Joins that lack a real linking predicate multiply row counts instead of matching related rows: an `ON` condition comparing a column to itself is always true, and comma-separated tables with no `WHERE` predicate relating them pair every row with every row. Explicit `CROSS JOIN` and `NATURAL` joins are treated as intentional and are not flagged.
+* [org.openrewrite.sql.antipattern.FindConstantPredicate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findconstantpredicate)
+  * **Find constant predicates that are always true or always false**
+  * A comparison whose operands are both constant, such as `1 = 1` or `1 = 0`, evaluates the same for every row regardless of the data. Combined with `OR` an always-true constant makes the whole condition always true, so every row matches and the other filters are ignored; an always-false constant used as a filter can never be satisfied, so the query returns nothing. An always-true constant on its own or joined with `AND`, a common query-builder idiom, is not flagged.
+* [org.openrewrite.sql.antipattern.FindCorrelatedAggregateSubquery](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findcorrelatedaggregatesubquery)
+  * **Find correlated aggregate subqueries in `WHERE`**
+  * A scalar subquery that computes an aggregate like `MAX` while referencing the outer query runs once per outer row on engines that cannot decorrelate it. A window function or a join to a pre-aggregated derived table computes every group in a single pass. Uncorrelated aggregate subqueries and `EXISTS` or `IN` subqueries are not flagged.
+* [org.openrewrite.sql.antipattern.FindCountAsExistenceCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findcountasexistencecheck)
+  * **Find `COUNT` subqueries used as existence checks**
+  * A scalar `COUNT` subquery compared to `0` or `1` tallies every matching row even though the outcome is decided by the first one. `EXISTS` or `NOT EXISTS` lets the engine stop as soon as a match is found. Comparisons against other values, such as `&gt; 5`, express a genuine cardinality requirement and are not flagged.
+* [org.openrewrite.sql.antipattern.FindDistinctWithJoin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/finddistinctwithjoin)
+  * **Find `DISTINCT` masking join fan-out**
+  * `DISTINCT` paired with a `JOIN` frequently compensates for row multiplication that a correct join condition or an `EXISTS` test would avoid, and `DISTINCT` alongside `GROUP BY` is redundant because grouping already collapses duplicate rows. A `DISTINCT` on a single-table query without `GROUP BY` is not flagged.
+* [org.openrewrite.sql.antipattern.FindDmlWithoutWhere](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/finddmlwithoutwhere)
+  * **Find `UPDATE` and `DELETE` statements without a `WHERE` clause**
+  * An `UPDATE` or `DELETE` with no `WHERE` clause touches every row in the table, holding locks for the duration, flooding replication, and risking unintended data loss if the missing predicate was an oversight.
+* [org.openrewrite.sql.antipattern.FindHavingWithoutAggregate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findhavingwithoutaggregate)
+  * **Find `HAVING` conditions that use no aggregate**
+  * A `HAVING` condition that references no aggregate forces the database to build every group before throwing unwanted ones away. The same condition in `WHERE` filters rows before grouping, doing strictly less work.
+* [org.openrewrite.sql.antipattern.FindInsertWithoutColumns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findinsertwithoutcolumns)
+  * **Find `INSERT ... VALUES` statements that omit the column list**
+  * An `INSERT ... VALUES` with no column list binds each value to a column by position, so adding, dropping, or reordering a column silently shifts values into the wrong columns or breaks the statement; naming the target columns keeps it correct across schema changes. `INSERT ... SELECT` is left alone, since its projection makes the column correspondence explicit.
+* [org.openrewrite.sql.antipattern.FindLeadingWildcardLike](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findleadingwildcardlike)
+  * **Find `LIKE` patterns starting with a wildcard**
+  * A `LIKE` pattern whose first character is `%` or `_` gives the database no prefix to seek in a B-tree index, so every row must be inspected. When a prefix search is not possible, a trigram or full-text index can serve the query instead. Parameter placeholders and patterns with only trailing wildcards are not flagged.
+* [org.openrewrite.sql.antipattern.FindLimitWithoutOrderBy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findlimitwithoutorderby)
+  * **Find row limiters without an `ORDER BY`**
+  * A `LIMIT`, `OFFSET`, `FETCH`, or `TOP` clause selects a subset of rows, but without an `ORDER BY` the engine is free to return any rows in any order, so the result is arbitrary and can differ from one execution to the next. Queries that can only ever produce a single row, such as a bare aggregate with no `GROUP BY`, and limiters inside an `EXISTS` subquery, where order does not matter, are not flagged.
+* [org.openrewrite.sql.antipattern.FindNonSargablePredicate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findnonsargablepredicate)
+  * **Find non-sargable predicates**
+  * A comparison that wraps a column in a function, `CAST`, or arithmetic must evaluate the expression for every row, so an index on the bare column cannot be used for a range scan. Keeping the column alone on one side, e.g. `amount &gt; 100 - 1` rather than `amount + 1 &gt; 100`, keeps the predicate index-eligible.
+* [org.openrewrite.sql.antipattern.FindNotInSubquery](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findnotinsubquery)
+  * **Find `NOT IN` with a subquery**
+  * When the subquery can return a `NULL`, `NOT IN` evaluates to unknown for every row and the outer query silently returns nothing. Many planners also fail to rewrite `NOT IN` as an efficient anti-join. `NOT EXISTS` avoids both problems. `NOT IN` over a literal list is not flagged.
+* [org.openrewrite.sql.antipattern.FindOffsetPagination](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findoffsetpagination)
+  * **Find `OFFSET`-based pagination**
+  * `OFFSET n` reads and throws away `n` rows before returning any, so each later page costs linearly more than the one before it. Parameterized offsets and large literal offsets are flagged; keyset pagination (`WHERE key &gt; last-seen ORDER BY key`) reads only the requested page. Small literal offsets are not flagged.
+* [org.openrewrite.sql.antipattern.FindOptionalParameterOr](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findoptionalparameteror)
+  * **Find optional filters written as `OR` parameter `IS NULL`**
+  * The `col = ? OR ? IS NULL` pattern turns a filter on and off at runtime, so the planner must settle on one generic plan that works for every parameter combination instead of an index-driven plan for the filtered case. An `IS NULL` test on a column inside an `OR` is ordinary SQL and is not flagged.
+* [org.openrewrite.sql.antipattern.FindOrderByRandom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findorderbyrandom)
+  * **Find `ORDER BY` on a random function**
+  * Sorting by `RAND()`, `RANDOM()`, `NEWID()`, or `DBMS_RANDOM` computes a random value for every row and sorts the entire table just to keep a few rows. Sample by a key range or use the dialect's table sampling instead.
+* [org.openrewrite.sql.antipattern.FindOversizedInList](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findoversizedinlist)
+  * **Find oversized `IN` lists**
+  * A very long `IN` list is parsed and planned on every execution, tends to pollute the statement cache, and some databases hard-cap the number of elements it may contain. Loading the values into a temporary table and joining against it scales far better. `IN` with a subquery is not flagged.
+* [org.openrewrite.sql.antipattern.FindScalarSubqueryInSelect](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findscalarsubqueryinselect)
+  * **Find scalar subqueries in the `SELECT` list**
+  * A subquery used as an expression in the `SELECT` list may execute once per result row, turning a single scan into N+1 queries. A `JOIN` (or `LATERAL` join) produces the same values in one pass. Subqueries in `WHERE`, `FROM`, or `JOIN` conditions are not flagged.
+* [org.openrewrite.sql.antipattern.FindSelectStar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findselectstar)
+  * **Find `SELECT *` queries**
+  * Wildcard projections fetch columns the code does not use, defeat covering indexes, and change behavior when the schema changes. `SELECT *` under `EXISTS (...)` or inside aggregate functions like `COUNT(*)` is not flagged because no columns are materialized there.
+* [org.openrewrite.sql.antipattern.FindUnionInsteadOfUnionAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/findunioninsteadofunionall)
+  * **Find `UNION` where `UNION ALL` may suffice**
+  * Plain `UNION` de-duplicates the combined rows, forcing a sort or hash over the entire result even when the branches cannot overlap. `UNION ALL` skips that work. `UNION` inside a `WITH` item is not flagged because recursive CTEs rely on plain `UNION` semantics to terminate.
+* [org.openrewrite.sql.antipattern.RemoveOrderByInSubquery](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/removeorderbyinsubquery)
+  * **Remove redundant `ORDER BY` from subqueries**
+  * An `ORDER BY` inside a subquery or CTE without a `LIMIT`, `OFFSET`, or `FETCH` does not affect the rows the outer query returns, so the database either discards the sort or pays for ordering that nothing observes. Remove the clause, leaving the rest of the statement untouched. Sort in the outermost query if a specific order is required.
+* [org.openrewrite.sql.antipattern.ReplaceNullComparisonWithIsNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/replacenullcomparisonwithisnull)
+  * **Replace `= NULL` and `&lt;&gt; NULL` with `IS NULL` and `IS NOT NULL`**
+  * Under three-valued logic a comparison with `NULL` evaluates to UNKNOWN rather than true, so `col = NULL` and `col &lt;&gt; NULL` match no rows. Rewrite them to the intended `col IS NULL` and `col IS NOT NULL`, changing only the compared operator so the rest of the statement is left untouched.
+* [org.openrewrite.sql.antipattern.SqlAntiPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/antipattern/sqlantipatterns)
+  * **Find and fix SQL performance anti-patterns**
+  * Analyzes SQL found in code and resource files for statically detectable performance anti-patterns such as `SELECT *`, `COUNT(*)` used as an existence check, scalar subqueries in the `SELECT` list, non-sargable predicates, and missing join conditions. Every occurrence is reported to the `SqlAntiPatterns` data table with a severity and suggested remediation, then fixed in place where a safe rewrite exists or marked in source otherwise.
 * [org.openrewrite.sql.search.FindFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/search/findfunction)
   * **Find SQL function**
   * Find SQL functions by name.
+* [org.openrewrite.sql.search.FindStoredProcedureCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/search/findstoredprocedurecall)
+  * **Find stored procedure calls**
+  * Find stored procedures invoked from SQL via `EXEC`, `EXECUTE`, or `CALL`. Useful for taking inventory of the stored procedures a codebase depends on when planning a database migration.
 
 ### rewrite-struts
 

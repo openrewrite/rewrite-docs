@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamReadNBytesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class InputStreamReadNBytes {
-    
-    @BeforeTemplate
-    byte[] before(InputStream in, int n) throws IOException {
-        return ByteStreams.limit(in, n).readAllBytes();
-    }
-    
-    @AfterTemplate
-    byte[] after(InputStream in, int n) throws IOException {
-        return in.readNBytes(n);
-    }
-}
-```
-.
+_Prefer `InputStream#readNBytes(int)` over non-JDK alternatives._
 
 ## Recipe source
 

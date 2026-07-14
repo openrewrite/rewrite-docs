@@ -11,58 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsEqualTo {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(boolean actual, boolean expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractByteAssert<?> before(byte actual, byte expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractCharacterAssert<?> before(char actual, char expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractShortAssert<?> before(short actual, short expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(int actual, int expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(long actual, long expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractFloatAssert<?> before(float actual, float expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractDoubleAssert<?> before(double actual, double expected) {
-        return Refaster.anyOf(assertThat(actual).isSameAs(expected), assertThat(actual).isSameAs(expected));
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    AbstractBooleanAssert<?> after(boolean actual, boolean expected) {
-        return assertThat(actual).isEqualTo(expected);
-    }
-}
-```
-.
+_Prefer `AbstractBooleanAssert#isEqualTo` over less idiomatic alternatives._
 
 ## Recipe source
 

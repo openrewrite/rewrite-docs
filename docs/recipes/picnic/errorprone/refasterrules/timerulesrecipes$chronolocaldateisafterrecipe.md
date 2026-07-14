@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$ChronoLocalDateIsAfterRecipe**
 
-_Prefer `ChronoLocalDate#isBefore(ChronoLocalDate)` over explicit comparison, as it yields more readable code._
+_Prefer `ChronoLocalDate#isAfter(ChronoLocalDate)` over less explicit alternatives._
 
 ## Recipe source
 

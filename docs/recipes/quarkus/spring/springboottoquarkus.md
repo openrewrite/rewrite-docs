@@ -16,9 +16,9 @@ _Replace Spring Boot with Quarkus._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [migration](/reference/recipes-by-tag#migration)
 * [bom](/reference/recipes-by-tag#bom)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [migration](/reference/recipes-by-tag#migration)
 
 ## Recipe source
 
@@ -92,9 +92,9 @@ description: |
   Replace Spring Boot with Quarkus.
 tags:
   - spring
+  - migration
   - bom
   - quarkus
-  - migration
 preconditions:
   - org.openrewrite.java.dependencies.search.ModuleHasDependency:
       groupIdPattern: org.springframework.boot

@@ -35,8 +35,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Refaster template `AssertJStreamRules.AssertThatHasSize`](../../../picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthathassizerecipe)
 * [Refaster template `AssertJStreamRules.AssertThatFilteredOn`](../../../picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatfilteredonrecipe)
 * [Refaster template `AssertJStreamRules.AssertThatNoneMatch`](../../../picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatnonematchrecipe)
+* [Refaster template `AssertJStreamRules.AssertThatAllMatch`](../../../picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatallmatchrecipe)
 * [Refaster template `AssertJStreamRules.AssertThatAnyMatch`](../../../picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatanymatchrecipe)
-* [Refaster template `AssertJStreamRules.AssertThatCollection`](../../../picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatcollectionrecipe)
+* [Refaster template `AssertJStreamRules.AssertThat`](../../../picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatrecipe)
 
 </TabItem>
 
@@ -55,8 +56,9 @@ recipeList:
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatHasSizeRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatFilteredOnRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatNoneMatchRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatAllMatchRecipe
   - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatAnyMatchRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatCollectionRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatRecipe
 
 ```
 </TabItem>

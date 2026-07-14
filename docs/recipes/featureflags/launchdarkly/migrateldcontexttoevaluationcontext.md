@@ -28,6 +28,67 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.launchdarkly.sdk.LDContext;
+
+class A {
+    LDContext context() {
+        return LDContext.builder("user-key-123abc")
+                .name("Sandy")
+                .set("email", "sandy@example.com")
+                .build();
+    }
+}
+```
+
+###### After
+```java
+import dev.openfeature.sdk.EvaluationContext;
+import dev.openfeature.sdk.MutableContext;
+
+class A {
+    EvaluationContext context() {
+        return new MutableContext("user-key-123abc")
+                .add("name", "Sandy")
+                .add("email", "sandy@example.com");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,2 @@
+-import com.launchdarkly.sdk.LDContext;
++import dev.openfeature.sdk.EvaluationContext;
++import dev.openfeature.sdk.MutableContext;
+
+@@ -4,5 +5,4 @@
+
+class A {
+-   LDContext context() {
+-       return LDContext.builder("user-key-123abc")
+-               .name("Sandy")
+-               .set("email", "sandy@example.com")
+-               .build();
++   EvaluationContext context() {
++       return new MutableContext("user-key-123abc")
++               .add("name", "Sandy")
++               .add("email", "sandy@example.com");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

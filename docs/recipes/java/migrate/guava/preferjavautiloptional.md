@@ -15,8 +15,8 @@ _Prefer `java.util.Optional` instead of using `com.google.common.base.Optional`.
 
 ### Tags
 
-* [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4738&open=java%3AS4738)
 * [guava](/reference/recipes-by-tag#guava)
+* [RSPEC-S4738](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S4738&open=java%3AS4738)
 
 ## Recipe source
 
@@ -77,8 +77,8 @@ displayName: Prefer `java.util.Optional`
 description: |
   Prefer `java.util.Optional` instead of using `com.google.common.base.Optional`.
 tags:
-  - RSPEC-S4738
   - guava
+  - RSPEC-S4738
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

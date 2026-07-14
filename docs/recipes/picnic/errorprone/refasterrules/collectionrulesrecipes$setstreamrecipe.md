@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SetStreamRecipe**
 
-_Don't unnecessarily call `Stream#distinct()` on an already-unique stream of elements._
+_Prefer `Set#stream()` over less efficient alternatives._
 
 ## Recipe source
 

@@ -16,9 +16,9 @@ _Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarku
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
 * [validation](/reference/recipes-by-tag#validation)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -71,9 +71,9 @@ description: |
   Migrates Spring Boot validation to Quarkus Hibernate Validator. Adds the quarkus-hibernate-validator dependency and handles validation annotation imports.
 tags:
   - spring
-  - quarkus
   - migration
   - validation
+  - quarkus
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot

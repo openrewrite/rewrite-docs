@@ -45,7 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Javascript task runners &amp; build tools insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/taskrunnersbuildtoolsinsights)
 * [Javascript testing library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/testinginsights)
 * [Javascript utility library insights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/utilityinsights)
-* [Update Prethink context (no AI)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
+* [Update Prethink context](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
 
 ## Example
 

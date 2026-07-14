@@ -25,6 +25,61 @@ _When two consecutive branches of an `if`/`else if` chain execute the same code,
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test(boolean a, boolean b) {
+        if (a) {
+            System.out.println("same");
+        } else if (b) {
+            System.out.println("same");
+        } else {
+            System.out.println("different");
+        }
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test(boolean a, boolean b) {
+        if (a || b) {
+            System.out.println("same");
+        } else {
+            System.out.println("different");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class Test {
+    void test(boolean a, boolean b) {
+-       if (a) {
++       if (a || b) {
+            System.out.println("same");
+@@ -5,2 +5,0 @@
+        if (a) {
+            System.out.println("same");
+-       } else if (b) {
+-           System.out.println("same");
+        } else {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

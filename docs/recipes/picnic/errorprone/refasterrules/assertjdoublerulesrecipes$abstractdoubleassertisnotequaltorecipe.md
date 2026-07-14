@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJDoubleRulesRecipes$AbstractDoubleAssertIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractDoubleAssertIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractDoubleAssert<?> before(AbstractDoubleAssert<?> doubleAssert, double n) {
-        return Refaster.anyOf(doubleAssert.isNotCloseTo(n, offset(0.0)), doubleAssert.isNotCloseTo(n, withPercentage(0.0)));
-    }
-    
-    @AfterTemplate
-    AbstractDoubleAssert<?> after(AbstractDoubleAssert<?> doubleAssert, double n) {
-        return doubleAssert.isNotEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractDoubleAssert#isNotEqualTo(double)` over more contrived alternatives._
 
 ## Recipe source
 

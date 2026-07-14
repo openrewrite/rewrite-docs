@@ -15,8 +15,8 @@ _This recipe will apply changes required for migrating to WebLogic 15.1.1 and Ja
 
 ### Tags
 
-* [java](/reference/recipes-by-tag#java)
 * [weblogic](/reference/recipes-by-tag#weblogic)
+* [java](/reference/recipes-by-tag#java)
 
 ## Recipe source
 
@@ -55,8 +55,8 @@ displayName: Migrate to WebLogic 15.1.1
 description: |
   This recipe will apply changes required for migrating to WebLogic 15.1.1 and Jakarta EE 9.1
 tags:
-  - java
   - weblogic
+  - java
 recipeList:
   - com.oracle.weblogic.rewrite.OutputRecipeVersion
   - com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1511

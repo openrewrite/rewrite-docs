@@ -15,10 +15,10 @@ _Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2._
 
 ### Tags
 
-* [examples](/reference/recipes-by-tag#examples)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [petclinic](/reference/recipes-by-tag#petclinic)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [examples](/reference/recipes-by-tag#examples)
 
 ## Recipe source
 
@@ -52,10 +52,10 @@ displayName: Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2
 description: |
   Setup Spring Framework 5.3.x PetClinic for WebLogic 14.1.2.
 tags:
-  - examples
   - weblogic
   - petclinic
   - springframework
+  - examples
 recipeList:
   - com.oracle.weblogic.rewrite.spring.framework.DefaultServletHandler
   - com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib2_1

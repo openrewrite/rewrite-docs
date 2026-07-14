@@ -15,10 +15,10 @@ _Migrate xmlns entries in WebLogic EJB 3.2 Persistence Configuration schema file
 
 ### Tags
 
-* [ejb-3.2](/reference/recipes-by-tag#ejb)
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [persistence-configuration](/reference/recipes-by-tag#persistence)
+* [ejb-3.2](/reference/recipes-by-tag#ejb)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -69,10 +69,10 @@ displayName: Migrate xmlns entries in `persistence-configuration.xml` files to W
 description: |
   Migrate xmlns entries in WebLogic EJB 3.2 Persistence Configuration schema files to WebLogic 14.1.2
 tags:
-  - ejb-3.2
-  - schemas
   - weblogic
   - persistence-configuration
+  - ejb-3.2
+  - schemas
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/persistence-configuration.xml

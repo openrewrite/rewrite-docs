@@ -16,10 +16,10 @@ _Removes Spring `@EnableXyz` annotations and adds the corresponding Quarkus exte
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [application](/reference/recipes-by-tag#application)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
 * [annotations](/reference/recipes-by-tag#annotations)
+* [application](/reference/recipes-by-tag#application)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -87,10 +87,10 @@ description: |
   Removes Spring `@EnableXyz` annotations and adds the corresponding Quarkus extensions as dependencies.
 tags:
   - spring
-  - application
-  - quarkus
   - migration
   - annotations
+  - application
+  - quarkus
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.quarkus

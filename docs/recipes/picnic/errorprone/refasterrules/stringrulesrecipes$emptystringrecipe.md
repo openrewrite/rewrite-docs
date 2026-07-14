@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe**
 
-_Avoid unnecessary creation of new empty `String` objects; use the empty string literal instead._
+_Prefer `""` over less efficient or less explicit alternatives._
 
 ### Tags
 

@@ -16,9 +16,9 @@ _Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [derby](/reference/recipes-by-tag#derby)
 * [database](/reference/recipes-by-tag#database)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [derby](/reference/recipes-by-tag#derby)
 
 ## Recipe source
 
@@ -74,9 +74,9 @@ description: |
   Migrates `org.apache.derby:derby` or `derbyclient` to `io.quarkus:quarkus-jdbc-derby` (excludes test scope).
 tags:
   - spring
+  - derby
   - database
   - quarkus
-  - derby
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.apache.derby

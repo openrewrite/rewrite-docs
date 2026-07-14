@@ -32,6 +32,50 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrates from Jackson 2.x to Jackson 3.x](/recipes/java/jackson/upgradejackson_2_3.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import tools.jackson.core.json.JsonFactory;
+import tools.jackson.core.json.JsonFactoryBuilder;
+
+class A {
+    JsonFactory factory = new JsonFactoryBuilder().build();
+}
+```
+
+###### After
+```java
+import tools.jackson.core.json.JsonFactory;
+
+class A {
+    JsonFactory factory = JsonFactory.builder().build();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -2,1 +2,0 @@
+import tools.jackson.core.json.JsonFactory;
+-import tools.jackson.core.json.JsonFactoryBuilder;
+
+@@ -5,1 +4,1 @@
+
+class A {
+-   JsonFactory factory = new JsonFactoryBuilder().build();
++   JsonFactory factory = JsonFactory.builder().build();
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$InstantIsBeforeRecipe**
 
-_Prefer `Instant#isBefore(Instant)` over explicit comparison, as it yields more readable code._
+_Prefer `Instant#isBefore(Instant)` over less explicit alternatives._
 
 ## Recipe source
 

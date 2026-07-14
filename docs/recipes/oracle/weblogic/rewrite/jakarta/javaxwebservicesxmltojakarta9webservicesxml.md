@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating an XML namespace reloca
 
 ### Tags
 
-* [webservices](/reference/recipes-by-tag#webservices)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [webservices](/reference/recipes-by-tag#webservices)
 
 ## Recipe source
 
@@ -75,8 +75,8 @@ displayName: Migrate xmlns entries in `webservices.xml` files.
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 tags:
-  - webservices
   - jakarta
+  - webservices
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/webservices.xml

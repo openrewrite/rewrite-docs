@@ -11,11 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableMapRulesRecipes$ImmutableMapOf4Recipe**
 
-_Prefer `ImmutableMap#of(Object, Object, Object, Object, Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting map at the type level._
-
-### Tags
-
-* [RSPEC-S107](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S107&open=java%3AS107)
+_Prefer `ImmutableMap#of(Object, Object, Object, Object)` over more verbose or imprecisely typed alternatives._
 
 ## Recipe source
 

@@ -11,28 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatNoneMatchRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatNoneMatch<T> {
-    
-    @BeforeTemplate
-    void before(Stream<T> stream, Predicate<? super T> predicate) {
-        assertThat(stream).filteredOn(predicate).isEmpty();
-    }
-    
-    @BeforeTemplate
-    void before2(Stream<T> stream, Predicate<? super T> predicate) {
-        Refaster.anyOf(assertThat(stream.anyMatch(predicate)).isFalse(), assertThat(stream.noneMatch(predicate)).isTrue());
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    void after(Stream<T> stream, Predicate<? super T> predicate) {
-        assertThat(stream).noneMatch(predicate);
-    }
-}
-```
-.
+_Prefer `assertThat(stream).noneMatch(predicate)` over more contrived alternatives._
 
 ## Recipe source
 

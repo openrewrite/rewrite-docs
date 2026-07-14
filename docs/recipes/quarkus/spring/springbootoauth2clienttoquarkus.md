@@ -17,8 +17,8 @@ _Migrates spring-boot-starter-oauth2-client` to `quarkus-oidc-client`._
 
 * [spring](/reference/recipes-by-tag#spring)
 * [security](/reference/recipes-by-tag#security)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [oauth2](/reference/recipes-by-tag#oauth2)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -67,8 +67,8 @@ description: |
 tags:
   - spring
   - security
-  - quarkus
   - oauth2
+  - quarkus
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

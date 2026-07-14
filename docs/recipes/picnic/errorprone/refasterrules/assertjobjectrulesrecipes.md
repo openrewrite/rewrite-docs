@@ -30,9 +30,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJObjectRules.AssertThatIsInstanceOf2`](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisinstanceof2recipe)
-* [Refaster template `AssertJObjectRules.AssertThatIsIsEqualTo`](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisisequaltorecipe)
-* [Refaster template `AssertJObjectRules.AssertThatIsIsNotEqualTo`](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisisnotequaltorecipe)
+* [Refaster template `AssertJObjectRules.AssertThatIsInstanceOf`](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisinstanceofrecipe)
+* [Prefer `ObjectAssert#isEqualTo(Object)` over more contrived alternatives](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisequaltorecipe)
+* [Prefer `ObjectAssert#isNotEqualTo(Object)` over more contrived alternatives](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotequaltorecipe)
 * [Refaster template `AssertJObjectRules.AssertThatHasToString`](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthathastostringrecipe)
 * [Refaster template `AssertJObjectRules.AssertThatIsSameAs`](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatissameasrecipe)
 * [Refaster template `AssertJObjectRules.AssertThatIsNotSameAs`](../../../picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotsameasrecipe)
@@ -52,9 +52,9 @@ displayName: `AssertJObjectRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ assertions over arbitrary objects. [Source](https://error-prone.picnic.tech/refasterrules/AssertJObjectRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsInstanceOf2Recipe
-  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsIsEqualToRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsIsNotEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsInstanceOfRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsEqualToRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotEqualToRecipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasToStringRecipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsSameAsRecipe
   - tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotSameAsRecipe

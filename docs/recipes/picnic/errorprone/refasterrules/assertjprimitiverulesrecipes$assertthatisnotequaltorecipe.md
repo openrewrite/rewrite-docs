@@ -11,58 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJPrimitiveRulesRecipes$AssertThatIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(boolean actual, boolean expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractByteAssert<?> before(byte actual, byte expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractCharacterAssert<?> before(char actual, char expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractShortAssert<?> before(short actual, short expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(int actual, int expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(long actual, long expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractFloatAssert<?> before(float actual, float expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @BeforeTemplate
-    AbstractDoubleAssert<? extends AbstractDoubleAssert<?>> before(double actual, double expected) {
-        return Refaster.anyOf(assertThat(actual).isNotSameAs(expected), assertThat(actual).isNotSameAs(expected));
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    AbstractBooleanAssert<?> after(boolean actual, boolean expected) {
-        return assertThat(actual).isNotEqualTo(expected);
-    }
-}
-```
-.
+_Prefer `AbstractBooleanAssert#isNotEqualTo` over less idiomatic alternatives._
 
 ## Recipe source
 

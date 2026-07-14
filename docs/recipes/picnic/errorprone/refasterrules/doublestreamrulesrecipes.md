@@ -30,15 +30,15 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `DoubleStreamRules.ConcatOneDoubleStream`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$concatonedoublestreamrecipe)
-* [Refaster template `DoubleStreamRules.ConcatTwoDoubleStreams`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$concattwodoublestreamsrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamIdentity`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamidentityrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamConcat`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamconcatrecipe)
 * [Refaster template `DoubleStreamRules.DoubleStreamFilterSorted`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamfiltersortedrecipe)
-* [Refaster template `DoubleStreamRules.DoubleStreamIsEmpty`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamisemptyrecipe)
-* [Refaster template `DoubleStreamRules.DoubleStreamIsNotEmpty`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamisnotemptyrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamFindAnyIsEmpty`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamfindanyisemptyrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamFindAnyIsPresent`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamfindanyispresentrecipe)
 * [Refaster template `DoubleStreamRules.DoubleStreamMin`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamminrecipe)
-* [Refaster template `DoubleStreamRules.DoubleStreamNoneMatch`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamnonematchrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamNoneMatchWithDoublePredicate`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamnonematchwithdoublepredicaterecipe)
 * [Refaster template `DoubleStreamRules.DoubleStreamAnyMatch`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamanymatchrecipe)
-* [Refaster template `DoubleStreamRules.DoubleStreamAllMatch`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamallmatchrecipe)
+* [Refaster template `DoubleStreamRules.DoubleStreamAllMatchWithDoublePredicate`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamallmatchwithdoublepredicaterecipe)
 * [Refaster template `DoubleStreamRules.DoubleStreamTakeWhile`](../../../picnic/errorprone/refasterrules/doublestreamrulesrecipes$doublestreamtakewhilerecipe)
 
 </TabItem>
@@ -53,15 +53,15 @@ displayName: `DoubleStreamRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `DoubleStream`s. [Source](https://error-prone.picnic.tech/refasterrules/DoubleStreamRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatOneDoubleStreamRecipe
-  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$ConcatTwoDoubleStreamsRecipe
+  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamIdentityRecipe
+  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamConcatRecipe
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamFilterSortedRecipe
-  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamIsNotEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamFindAnyIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamFindAnyIsPresentRecipe
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamMinRecipe
-  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamNoneMatchRecipe
+  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamNoneMatchWithDoublePredicateRecipe
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAnyMatchRecipe
-  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAllMatchRecipe
+  - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamAllMatchWithDoublePredicateRecipe
   - tech.picnic.errorprone.refasterrules.DoubleStreamRulesRecipes$DoubleStreamTakeWhileRecipe
 
 ```

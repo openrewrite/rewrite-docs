@@ -25,7 +25,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | targetConfigFile | *Optional*. Which agent config file to update. If not specified, updates all found files. | `CLAUDE.md` |
+| `List` | targetConfigFiles | *Optional*. Which agent config files to update, creating any that do not exist yet. If not specified, updates all found files, creating `CLAUDE.md` when none exist. | `CLAUDE.md` |
+| `String` | template | *Optional*. The template used to generate the context section. The `{{CONTEXT_TABLE}}` placeholder is replaced with the generated context table. If not specified, a bundled default template is used. | <pre>## Available Context<br /><br />\{\{CONTEXT_TABLE\}\}</pre> |
 
 
 ## Used by

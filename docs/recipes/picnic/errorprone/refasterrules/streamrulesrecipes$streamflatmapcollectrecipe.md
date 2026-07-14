@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFlatMapCollectRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamFlatMapCollect<T, U, R> {
-    
-    @BeforeTemplate
-    R before(Stream<T> stream, Function<? super T, ? extends Stream<? extends U>> mapper, Collector<? super U, ?, R> collector) {
-        return stream.collect(flatMapping(mapper, collector));
-    }
-    
-    @AfterTemplate
-    R after(Stream<T> stream, Function<? super T, ? extends Stream<? extends U>> mapper, Collector<? super U, ?, R> collector) {
-        return stream.flatMap(mapper).collect(collector);
-    }
-}
-```
-.
+_Prefer `Stream#flatMap(Function)` over more contrived alternatives._
 
 ## Recipe source
 

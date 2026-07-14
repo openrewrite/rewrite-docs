@@ -15,8 +15,8 @@ _Transforms code written using `java.util.logging` to use Log4j 2.x API._
 
 ### Tags
 
-* [java-util-logging](/reference/recipes-by-tag#java)
 * [logging](/reference/recipes-by-tag#logging)
+* [java-util-logging](/reference/recipes-by-tag#java)
 * [log4j](/reference/recipes-by-tag#log4j)
 
 ## Recipe source
@@ -84,8 +84,8 @@ displayName: Migrate JUL to Log4j 2.x API
 description: |
   Transforms code written using `java.util.logging` to use Log4j 2.x API.
 tags:
-  - java-util-logging
   - logging
+  - java-util-logging
   - log4j
 preconditions:
   - org.openrewrite.Singleton

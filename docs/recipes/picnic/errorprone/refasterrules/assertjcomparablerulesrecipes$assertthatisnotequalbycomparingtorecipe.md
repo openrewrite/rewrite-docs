@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJComparableRulesRecipes$AssertThatIsNotEqualByComparingToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsNotEqualByComparingTo<T extends Comparable<? super T>> {
-    
-    @BeforeTemplate
-    AbstractIntegerAssert<?> before(T actual, T expected) {
-        return assertThat(actual.compareTo(expected)).isNotEqualTo(0);
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    AbstractComparableAssert<?, ?> after(T actual, T expected) {
-        return assertThat(actual).isNotEqualByComparingTo(expected);
-    }
-}
-```
-.
+_Prefer `AbstractComparableAssert#isNotEqualByComparingTo(Comparable)` over more contrived alternatives._
 
 ## Recipe source
 

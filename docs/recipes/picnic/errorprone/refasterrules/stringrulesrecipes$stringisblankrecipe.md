@@ -1,17 +1,21 @@
 ---
-title: "Refaster template `StringRules.StringIsBlank`"
-sidebar_label: "Refaster template `StringRules.StringIsBlank`"
+title: "Prefer `String#isBlank()` over less efficient alternatives"
+sidebar_label: "Prefer `String#isBlank()` over less efficient alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `StringRules.StringIsBlank`
+# Prefer `String#isBlank()` over less efficient alternatives
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsBlankRecipe**
 
-_Prefer `String#isBlank()` over less efficient alternatives._
+```
+<strong>Warning:</strong> this rewrite changes the behavior for strings containing
+ whitespace characters beyond U+0020, as `String#isBlank()` considers those, while `String#trim()` does not.
+```
+
 
 ## Recipe source
 
@@ -33,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsBlankRecipe"
-  displayName="Refaster template `StringRules.StringIsBlank`"
+  displayName="Prefer `String#isBlank()` over less efficient alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

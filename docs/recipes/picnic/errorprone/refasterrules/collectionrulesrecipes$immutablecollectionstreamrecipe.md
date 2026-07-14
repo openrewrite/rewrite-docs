@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$ImmutableCollectionStreamRecipe**
 
-_Don't call `ImmutableCollection#asList()` if the result is going to be streamed; stream directly._
+_Prefer `ImmutableCollection#stream()` over more verbose alternatives._
 
 ## Recipe source
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionSizeRecipe**
 
-_Prefer `Collection#size()` over more contrived alternatives._
+_Prefer `Collection#size()` over non-JDK or more verbose alternatives._
 
 ## Recipe source
 

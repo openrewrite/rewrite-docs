@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableListRulesRecipes$ImmutableListSortedCopyOfRecipe**
 
-_Prefer `ImmutableList#sortedCopyOf(Iterable)` over more contrived alternatives._
+_Prefer `ImmutableList#sortedCopyOf(Iterable)` over more verbose or less efficient alternatives._
 
 ## Recipe source
 

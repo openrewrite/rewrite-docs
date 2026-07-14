@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionToArrayRecipe**
 
-_Prefer calling `Collection#toArray()` over more contrived alternatives._
+_Prefer `Collection#toArray()` over less efficient or more verbose alternatives._
 
 ## Recipe source
 

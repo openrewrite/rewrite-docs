@@ -16,9 +16,9 @@ _Migrates Spring Boot test annotations and utilities to Quarkus test equivalents
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [migration](/reference/recipes-by-tag#migration)
 * [quarkus](/reference/recipes-by-tag#quarkus)
 * [testing](/reference/recipes-by-tag#testing)
-* [migration](/reference/recipes-by-tag#migration)
 
 ## Recipe source
 
@@ -82,9 +82,9 @@ description: |
   Migrates Spring Boot test annotations and utilities to Quarkus test equivalents. Converts @SpringBootTest to @QuarkusTest, @MockBean to @InjectMock, etc.
 tags:
   - spring
+  - migration
   - quarkus
   - testing
-  - migration
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot

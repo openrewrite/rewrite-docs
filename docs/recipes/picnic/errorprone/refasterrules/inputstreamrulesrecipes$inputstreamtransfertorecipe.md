@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes$InputStreamTransferToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class InputStreamTransferTo {
-    
-    @BeforeTemplate
-    long before(InputStream in, OutputStream out) throws IOException {
-        return ByteStreams.copy(in, out);
-    }
-    
-    @AfterTemplate
-    long after(InputStream in, OutputStream out) throws IOException {
-        return in.transferTo(out);
-    }
-}
-```
-.
+_Prefer `InputStream#transferTo(OutputStream)` over non-JDK alternatives._
 
 ## Recipe source
 

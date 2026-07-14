@@ -15,8 +15,8 @@ _This recipe will apply changes required for migrating to WebLogic 14.1.2_
 
 ### Tags
 
-* [java](/reference/recipes-by-tag#java)
 * [weblogic](/reference/recipes-by-tag#weblogic)
+* [java](/reference/recipes-by-tag#java)
 
 ## Recipe source
 
@@ -53,8 +53,8 @@ displayName: Migrate to WebLogic 14.1.2
 description: |
   This recipe will apply changes required for migrating to WebLogic 14.1.2
 tags:
-  - java
   - weblogic
+  - java
 recipeList:
   - com.oracle.weblogic.rewrite.UpdateBuildToWebLogic1412
   - com.oracle.weblogic.rewrite.CheckAndCommentOutDeprecations1412

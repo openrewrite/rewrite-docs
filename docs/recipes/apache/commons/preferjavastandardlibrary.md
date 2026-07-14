@@ -15,8 +15,8 @@ _Prefer the Java standard library instead of Apache Commons. These recipes repla
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [commons](/reference/recipes-by-tag#commons)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -58,8 +58,8 @@ displayName: Prefer the Java standard library instead of Apache Commons
 description: |
   Prefer the Java standard library instead of Apache Commons. These recipes replace various Apache Commons utilities with their JDK equivalents, where available in Java 11+.
 tags:
-  - apache
   - commons
+  - apache
 recipeList:
   - org.openrewrite.apache.commons.codec.ApacheBase64ToJavaBase64
   - org.openrewrite.apache.commons.io.ApacheCommonsFileUtilsRecipes

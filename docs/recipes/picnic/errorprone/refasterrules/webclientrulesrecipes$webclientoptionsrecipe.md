@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.WebClientRulesRecipes$WebClientOptionsRecipe**
 
-_Prefer `WebClient#options()` over `WebClient#method(HttpMethod)` with `HttpMethod#OPTIONS`._
+_Prefer `WebClient#options()` over less idiomatic alternatives._
 
 ## Recipe source
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.MicrometerRulesRecipes$TagsOf1Recipe**
 
-_Prefer using `Tags` over other immutable collections._
+_Prefer `Tags#of(Tag...)` over less idiomatic alternatives._
 
 ## Recipe source
 

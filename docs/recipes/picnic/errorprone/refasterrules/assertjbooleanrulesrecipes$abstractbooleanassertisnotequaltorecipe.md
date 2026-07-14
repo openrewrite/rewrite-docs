@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJBooleanRulesRecipes$AbstractBooleanAssertIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractBooleanAssertIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(AbstractBooleanAssert<?> boolAssert, boolean other) {
-        return boolAssert.isEqualTo(!other);
-    }
-    
-    @AfterTemplate
-    AbstractBooleanAssert<?> after(AbstractBooleanAssert<?> boolAssert, boolean other) {
-        return boolAssert.isNotEqualTo(other);
-    }
-}
-```
-.
+_Prefer `AbstractBooleanAssert#isNotEqualTo(Object)` over more contrived alternatives._
 
 ## Recipe source
 

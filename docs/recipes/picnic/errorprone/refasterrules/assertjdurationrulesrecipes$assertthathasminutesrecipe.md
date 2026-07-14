@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasMinutesRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatHasMinutes {
-    
-    @BeforeTemplate
-    AbstractLongAssert<?> before(Duration duration, long minutes) {
-        return assertThat(duration.toMinutes()).isEqualTo(minutes);
-    }
-    
-    @AfterTemplate
-    AbstractDurationAssert<?> after(Duration duration, long minutes) {
-        return assertThat(duration).hasMinutes(minutes);
-    }
-}
-```
-.
+_Prefer `AbstractDurationAssert#hasMinutes(long)` over less explicit alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Duration`s](/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes.md)
+* [`AssertJDurationRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes.md)
 
 
 ## Usage

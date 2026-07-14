@@ -16,9 +16,9 @@ _Migrates Spring's @Transactional annotation to Jakarta's @Transactional. Maps p
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
 * [transaction](/reference/recipes-by-tag#transaction)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -62,9 +62,9 @@ description: |
   Migrates Spring's @Transactional annotation to Jakarta's @Transactional. Maps propagation attributes to TxType and removes Spring-specific attributes.
 tags:
   - spring
-  - quarkus
   - migration
   - transaction
+  - quarkus
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.quarkus

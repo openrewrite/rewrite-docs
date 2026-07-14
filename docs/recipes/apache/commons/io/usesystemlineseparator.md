@@ -15,8 +15,8 @@ _Prefer the Java standard library's `System.lineSeparator()` over third-party us
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [commons](/reference/recipes-by-tag#commons)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -49,8 +49,8 @@ displayName: Prefer `System.lineSeparator()`
 description: |
   Prefer the Java standard library's `System.lineSeparator()` over third-party usage of apache's `IOUtils.LINE_SEPARATOR`.
 tags:
-  - apache
   - commons
+  - apache
 recipeList:
   - org.openrewrite.java.ChangeStaticFieldToMethod:
       oldClassName: org.apache.commons.io.IOUtils

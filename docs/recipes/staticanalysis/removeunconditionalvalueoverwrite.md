@@ -25,6 +25,53 @@ _When `map.put(key, value)` is called twice in a row with the same key, the firs
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+class Test {
+    void test() {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("key", 1);
+        map.put("key", 2);
+    }
+}
+```
+
+###### After
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+class Test {
+    void test() {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("key", 2);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -7,1 +7,0 @@
+    void test() {
+        Map<String, Integer> map = new HashMap<>();
+-       map.put("key", 1);
+        map.put("key", 2);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

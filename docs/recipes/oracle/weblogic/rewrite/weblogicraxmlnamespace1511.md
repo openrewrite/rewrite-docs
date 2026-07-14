@@ -15,10 +15,10 @@ _This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLo
 
 ### Tags
 
-* [connector](/reference/recipes-by-tag#connector)
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
+* [connector](/reference/recipes-by-tag#connector)
 * [ra](/reference/recipes-by-tag#ra)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -55,10 +55,10 @@ displayName: Migrate xmlns entries in `weblogic-ra.xml` files to WebLogic 15.1.1
 description: |
   This recipe will update the `xmlns` entries in `weblogic-ra.xml` files to WebLogic 15.1.1
 tags:
-  - connector
-  - schemas
   - weblogic
+  - connector
   - ra
+  - schemas
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicRaXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

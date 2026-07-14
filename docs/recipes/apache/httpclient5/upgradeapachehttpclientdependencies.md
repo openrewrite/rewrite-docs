@@ -15,8 +15,8 @@ _Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomp
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [httpclient](/reference/recipes-by-tag#httpclient)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -66,8 +66,8 @@ displayName: Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x depe
 description: |
   Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents`.
 tags:
-  - apache
   - httpclient
+  - apache
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.apache.httpcomponents.client5

@@ -15,9 +15,9 @@ _Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUn
 
 ### Tags
 
+* [hamcrest](/reference/recipes-by-tag#hamcrest)
 * [junit](/reference/recipes-by-tag#junit)
 * [testing](/reference/recipes-by-tag#testing)
-* [hamcrest](/reference/recipes-by-tag#hamcrest)
 
 ## Recipe source
 
@@ -66,9 +66,9 @@ displayName: Use `Assertions#assume*(..)` and Hamcrest's `MatcherAssume#assume*(
 description: |
   Many of JUnit 4's `Assume#assume(..)` methods have no direct counterpart in JUnit 5 and require Hamcrest JUnit's `MatcherAssume`.
 tags:
+  - hamcrest
   - junit
   - testing
-  - hamcrest
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

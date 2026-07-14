@@ -15,10 +15,10 @@ _Run migration extras for migrated Spring Framework PetClinic example run on Web
 
 ### Tags
 
-* [examples](/reference/recipes-by-tag#examples)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [petclinic](/reference/recipes-by-tag#petclinic)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [examples](/reference/recipes-by-tag#examples)
 
 ## Recipe source
 
@@ -52,10 +52,10 @@ displayName: Add WebLogic 15.1.1 PetClinic extras
 description: |
   Run migration extras for migrated Spring Framework PetClinic example run on WebLogic 15.1.1.
 tags:
-  - examples
   - weblogic
   - petclinic
   - springframework
+  - examples
 recipeList:
   - com.oracle.weblogic.rewrite.examples.spring.ChangeCacheManagerToSimpleCacheManager
   - com.oracle.weblogic.rewrite.examples.AddImplicitTldFileWithTaglib3_0

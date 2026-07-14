@@ -16,8 +16,8 @@ _Migrates `spring-boot-starter-thymeleaf` to `quarkus-qute`._
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [templating](/reference/recipes-by-tag#templating)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -65,8 +65,8 @@ description: |
   Migrates `spring-boot-starter-thymeleaf` to `quarkus-qute`.
 tags:
   - spring
-  - quarkus
   - templating
+  - quarkus
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

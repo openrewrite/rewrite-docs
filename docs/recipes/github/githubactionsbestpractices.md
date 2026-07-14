@@ -15,8 +15,8 @@ _Applies best practices to GitHub Actions workflows, including enabling dependen
 
 ### Tags
 
-* [github](/reference/recipes-by-tag#github)
 * [actions](/reference/recipes-by-tag#actions)
+* [github](/reference/recipes-by-tag#github)
 
 ## Recipe source
 
@@ -54,8 +54,8 @@ displayName: GitHub Actions best practices
 description: |
   Applies best practices to GitHub Actions workflows, including enabling dependency caching, using cached distributions, finding missing timeouts, removing unused inputs, preferring block-style job dependencies, and upgrading official actions to their latest versions.
 tags:
-  - github
   - actions
+  - github
 recipeList:
   - org.openrewrite.github.FindMissingTimeout
   - org.openrewrite.github.PreferBlockStyleJobDependencies

@@ -1,17 +1,21 @@
 ---
-title: "Refaster template `MapRules.MapGetOrDefault`"
-sidebar_label: "Refaster template `MapRules.MapGetOrDefault`"
+title: "Prefer `Map#getOrDefault(Object, Object)` over more contrived alternatives"
+sidebar_label: "Prefer `Map#getOrDefault(Object, Object)` over more contrived alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Refaster template `MapRules.MapGetOrDefault`
+# Prefer `Map#getOrDefault(Object, Object)` over more contrived alternatives
 
 **tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapGetOrDefaultRecipe**
 
-_Prefer `Map#getOrDefault(Object, Object)` over more contrived alternatives._
+```
+<strong>Warning:</strong> this rewrite changes behavior if `defaultValue` is `null`: `java.util.Objects#requireNonNullElse` throws a `NullPointerException` in
+ that case, while `Map#getOrDefault(Object, Object)` does not.
+```
+
 
 ## Recipe source
 
@@ -33,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapGetOrDefaultRecipe"
-  displayName="Refaster template `MapRules.MapGetOrDefault`"
+  displayName="Prefer `Map#getOrDefault(Object, Object)` over more contrived alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

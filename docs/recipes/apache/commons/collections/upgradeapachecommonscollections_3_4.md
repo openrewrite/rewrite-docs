@@ -15,9 +15,9 @@ _Migrate applications to the latest Apache Commons Collections 4.x release. This
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [collections](/reference/recipes-by-tag#collections)
 * [commons](/reference/recipes-by-tag#commons)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -75,9 +75,9 @@ displayName: Migrates to Apache Commons Collections 4.x
 description: |
   Migrate applications to the latest Apache Commons Collections 4.x release. This recipe modifies application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
 tags:
-  - apache
   - collections
   - commons
+  - apache
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: commons-collections

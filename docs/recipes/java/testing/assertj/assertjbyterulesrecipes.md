@@ -78,6 +78,7 @@ import org.assertj.core.api.Assertions;
 class A {
     public void test(byte b) {
         Assertions.assertThat(b).isEqualTo((byte)0);
+        Assertions.assertThat(b).isSameAs((byte)0);
     }
 }
 ```
@@ -89,6 +90,7 @@ import org.assertj.core.api.Assertions;
 class A {
     public void test(byte b) {
         Assertions.assertThat(b).isZero();
+        Assertions.assertThat(b).isZero();
     }
 }
 ```
@@ -97,10 +99,12 @@ class A {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,1 +5,1 @@
+@@ -5,2 +5,2 @@
 class A {
     public void test(byte b) {
 -       Assertions.assertThat(b).isEqualTo((byte)0);
+-       Assertions.assertThat(b).isSameAs((byte)0);
++       Assertions.assertThat(b).isZero();
 +       Assertions.assertThat(b).isZero();
     }
 ```

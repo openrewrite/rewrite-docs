@@ -11,23 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJIteratorRulesRecipes$AssertThatIsExhaustedRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsExhausted<T> {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(Iterator<T> iterator) {
-        return assertThat(iterator.hasNext()).isFalse();
-    }
-    
-    @AfterTemplate
-    @UseImportPolicy(value = STATIC_IMPORT_ALWAYS)
-    IteratorAssert<T> after(Iterator<T> iterator) {
-        return assertThat(iterator).isExhausted();
-    }
-}
-```
-.
+_Prefer `IteratorAssert#isExhausted()` over more contrived alternatives._
 
 ## Recipe source
 

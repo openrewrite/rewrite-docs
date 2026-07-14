@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.Jackson2RulesRecipes$ObjectMapperValueToTreeRecipe**
 
-_Prefer `ObjectMapper#valueToTree(Object)` over more contrived and less efficient alternatives._
+_Prefer `ObjectMapper#valueToTree(Object)` over less efficient alternatives._
 
 ## Recipe source
 

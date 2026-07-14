@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.TimeRulesRecipes$LocalTimeMinRecipe**
 
-_Prefer the `LocalTime#MIN` over alternative representations._
+_Prefer `LocalTime#MIN` over less explicit alternatives._
 
 ## Recipe source
 

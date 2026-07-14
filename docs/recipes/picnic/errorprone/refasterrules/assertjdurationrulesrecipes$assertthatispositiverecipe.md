@@ -11,27 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsPositiveRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsPositive {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(Duration duration) {
-        return assertThat(duration.isPositive()).isTrue();
-    }
-    
-    @BeforeTemplate
-    AbstractDurationAssert<?> before2(Duration duration) {
-        return assertThat(duration).isGreaterThan(Duration.ZERO);
-    }
-    
-    @AfterTemplate
-    AbstractDurationAssert<?> after(Duration duration) {
-        return assertThat(duration).isPositive();
-    }
-}
-```
-.
+_Prefer `AbstractDurationAssert#isPositive()` over less explicit alternatives._
 
 ## Recipe source
 
@@ -46,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Duration`s](/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes.md)
+* [`AssertJDurationRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes.md)
 
 
 ## Usage

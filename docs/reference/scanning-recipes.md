@@ -43,6 +43,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Create text file**
   * Creates a new plain text file.
 
+### rewrite-go
+
+* [org.openrewrite.golang.RegenerateGoSum](/recipes/golang/regenerategosum.md)
+  * **Regenerate `go.sum`**
+  * Regenerate a Go module's `go.sum` from its `go.mod` by running `go mod download`, recomputing checksums for the whole module graph, including creating it when absent. Useful after a dependency version change to bring `go.sum` back in sync. Requires the `go` toolchain to be installed; otherwise `go.sum` is left unchanged.
+
 ### rewrite-gradle
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
@@ -100,8 +106,8 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Find type mappings**
   * Study the frequency of `J` types and their `JavaType` type attribution.
 * [org.openrewrite.java.search.HasMinimumJavaVersion](/recipes/java/search/hasminimumjavaversion.md)
-  * **Find the oldest Java version in use**
-  * The oldest Java version in use is the lowest Java version in use in any source set of any subproject of a repository. It is possible that, for example, the main source set of a project uses Java 8, but a test source set uses Java 17. In this case, the oldest Java version in use is Java 8.
+  * **Has minimum Java version**
+  * Finds source files when the oldest Java version in use meets the supplied minimum version. Java version is attributed per source set (for example `src/main/java` and `src/test/java`), so the oldest Java version in use is the lowest version across every source set of every subproject in a repository. For example, the main source set of a project may use Java 8 while its test source set uses Java 17; in that case the oldest Java version in use is Java 8.
 * [org.openrewrite.java.search.ModuleContainsFile](/recipes/java/search/modulecontainsfile.md)
   * **Module contains file**
   * Intended to be used primarily as a precondition for other recipes, this recipe checks if a module contains a specific file or files matching a pattern. Only files belonging to modules containing the specified file are marked with a `SearchResult` marker. This is more specific than `RepositoryContainsFile` which marks all files in the repository if any file matches.
@@ -299,7 +305,7 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the pom.xml.
 * [org.openrewrite.java.dependencies.RemoveRedundantDependencies](/recipes/java/dependencies/removeredundantdependencies.md)
   * **Remove redundant explicit dependencies**
-  * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared.
+  * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared. A direct dependency is only removed when the transitive one provides it at the exact same scope and with the same exclusions, so that removing it does not change the effective classpath.
 * [org.openrewrite.java.dependencies.UpgradeDependencyVersion](/recipes/java/dependencies/upgradedependencyversion.md)
   * **Upgrade Gradle or Maven dependency versions**
   * For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.

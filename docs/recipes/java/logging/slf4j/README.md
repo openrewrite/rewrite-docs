@@ -13,6 +13,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](./commonslogging1toslf4j1.md)
 * [Migrate JBoss Logging to SLF4J](./jbossloggingtoslf4j.md)
 * [Migrate JUL to SLF4J](./jultoslf4j.md)
+* [Migrate Log4j 1.x MDC to SLF4J MDC](./log4j1toslf4jmdc.md)
 * [Migrate Log4j 1.x to SLF4J 1.x](./log4j1toslf4j1.md)
 * [Migrate Log4j 2.x to SLF4J 1.x](./log4j2toslf4j1.md)
 * [Migrate Log4j to SLF4J](./log4jtoslf4j.md)
@@ -28,6 +29,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add JBoss LogManager's SLF4J provider](./addjbosslogmanagerslf4jproviderdependency.md)
 * [Change SLF4J log level](./changeloglevel.md)
+* [Convert Log4j 1.x `MDC.getContext()` to `getCopyOfContextMap()`](./log4j1mdcgetcontexttocopyofcontextmap.md)
 * [Enhances logging of exceptions by including the full stack trace in addition to the exception message](./completeexceptionlogging.md)
 * [Loggers should be named for their enclosing classes](./loggersnamedforenclosingclass.md)
 * [Match `if (is*Enabled())` with logging statements](./matchisloglevelenabledwithlogstatements.md)
@@ -84,5 +86,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [SLF4J logging statements should begin with constants](./slf4jlogshouldbeconstant.md)
 * [`String.format()` in logging statements should use SLF4J parameterized logging](./stringformattoparameterizedlogging.md)
 * [Strip `toString()` from arguments](./striptostringfromarguments.md)
+* [Wrap Log4j 1.x `MDC.put` values in `String.valueOf(...)`](./wraplog4j1mdcputvalueinstringvalueof.md)
 
 

@@ -15,12 +15,40 @@ _`setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7
 
 ## Recipe source
 
-[GitHub: HttpComponentsClientHttpRequestFactoryConnectTimeout.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/framework/HttpComponentsClientHttpRequestFactoryConnectTimeout.java),
+[GitHub: spring-framework-62.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-62.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Add comment to method invocations](../../../java/addcommenttomethodinvocations)
+  * comment: `TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748`
+  * methodPattern: `org.springframework.http.client.HttpComponentsClientHttpRequestFactory setConnectTimeout(..)`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryConnectTimeout
+displayName: Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`
+description: |
+  `setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7.0. This recipe adds a comment directing users to migrate to `ConnectionConfig.setConnectTimeout()` on the `PoolingHttpClientConnectionManager`.
+recipeList:
+  - org.openrewrite.java.AddCommentToMethodInvocations:
+      comment: TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748
+      methodPattern: org.springframework.http.client.HttpComponentsClientHttpRequestFactory setConnectTimeout(..)
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -28,7 +56,9 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 
-## Example
+## Examples
+##### Example 1
+`HttpComponentsClientHttpRequestFactoryConnectTimeoutTest#addsCommentToSetConnectTimeoutOnly`
 
 
 <Tabs groupId="beforeAfter">
@@ -54,7 +84,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 class Example {
     void configure() {
         HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-        // Manual migration to `ConnectionConfig.Builder.setConnectTimeout(Timeout)` necessary; see: https://github.com/spring-projects/spring-framework/issues/35748
+        /* TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748 */
         factory.setConnectTimeout(5000);
     }
 }
@@ -67,7 +97,55 @@ class Example {
 @@ -6,0 +6,1 @@
     void configure() {
         HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-+       // Manual migration to `ConnectionConfig.Builder.setConnectTimeout(Timeout)` necessary; see: https://github.com/spring-projects/spring-framework/issues/35748
++       /* TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748 */
+        factory.setConnectTimeout(5000);
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`HttpComponentsClientHttpRequestFactoryConnectTimeoutTest#addsCommentToSetConnectTimeoutOnly`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+
+class Example {
+    void configure() {
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        factory.setConnectTimeout(5000);
+    }
+}
+```
+
+###### After
+```java
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+
+class Example {
+    void configure() {
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        /* TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748 */
+        factory.setConnectTimeout(5000);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,0 +6,1 @@
+    void configure() {
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
++       /* TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748 */
         factory.setConnectTimeout(5000);
 ```
 </TabItem>

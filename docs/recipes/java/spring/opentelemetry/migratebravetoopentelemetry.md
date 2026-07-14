@@ -16,11 +16,11 @@ _Migrate Java code using Brave (Zipkin) tracing API to OpenTelemetry API. This r
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [zipkin](/reference/recipes-by-tag#zipkin)
 * [migration](/reference/recipes-by-tag#migration)
 * [brave](/reference/recipes-by-tag#brave)
 * [opentelemetry](/reference/recipes-by-tag#opentelemetry)
 * [boot](/reference/recipes-by-tag#boot)
+* [zipkin](/reference/recipes-by-tag#zipkin)
 
 ## Recipe source
 
@@ -89,11 +89,11 @@ description: |
   Migrate Java code using Brave (Zipkin) tracing API to OpenTelemetry API. This recipe handles the migration of Brave Tracer, Span, and related classes to OpenTelemetry equivalents.
 tags:
   - spring
-  - zipkin
   - migration
   - brave
   - opentelemetry
   - boot
+  - zipkin
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

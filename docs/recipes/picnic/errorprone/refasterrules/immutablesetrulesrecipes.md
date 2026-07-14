@@ -31,22 +31,22 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ImmutableSetRules.ImmutableSetBuilder`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetbuilderrecipe)
-* [Refaster template `ImmutableSetRules.IterableToImmutableSet`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$iterabletoimmutablesetrecipe)
-* [Refaster template `ImmutableSetRules.StreamToImmutableSet`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$streamtoimmutablesetrecipe)
-* [Refaster template `ImmutableSetRules.ImmutableSetCopyOfSetView`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetcopyofsetviewrecipe)
-* [Refaster template `ImmutableSetRules.ImmutableSetOf`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetofrecipe)
+* [Refaster template `ImmutableSetRules.ImmutableSetCopyOf`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetcopyofrecipe)
+* [Refaster template `ImmutableSetRules.StreamCollectToImmutableSet`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$streamcollecttoimmutablesetrecipe)
+* [Refaster template `ImmutableSetRules.SetViewImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setviewimmutablecopyrecipe)
+* [Refaster template `ImmutableSetRules.ImmutableSetOf0`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetof0recipe)
 * [Refaster template `ImmutableSetRules.ImmutableSetOf1`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetof1recipe)
 * [Refaster template `ImmutableSetRules.ImmutableSetOf2`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetof2recipe)
 * [Refaster template `ImmutableSetRules.ImmutableSetOf3`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetof3recipe)
 * [Refaster template `ImmutableSetRules.ImmutableSetOf4`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetof4recipe)
 * [Refaster template `ImmutableSetRules.ImmutableSetOf5`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$immutablesetof5recipe)
-* [Refaster template `ImmutableSetRules.SetsDifference`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsdifferencerecipe)
-* [Refaster template `ImmutableSetRules.SetsDifferenceMap`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsdifferencemaprecipe)
-* [Refaster template `ImmutableSetRules.SetsDifferenceMultimap`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsdifferencemultimaprecipe)
-* [Refaster template `ImmutableSetRules.SetsIntersection`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsintersectionrecipe)
-* [Refaster template `ImmutableSetRules.SetsIntersectionMap`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsintersectionmaprecipe)
-* [Refaster template `ImmutableSetRules.SetsIntersectionMultimap`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsintersectionmultimaprecipe)
-* [Refaster template `ImmutableSetRules.SetsUnion`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsunionrecipe)
+* [Refaster template `ImmutableSetRules.SetsDifferenceImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsdifferenceimmutablecopyrecipe)
+* [Refaster template `ImmutableSetRules.SetsDifferenceMapKeySetImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsdifferencemapkeysetimmutablecopyrecipe)
+* [Refaster template `ImmutableSetRules.SetsDifferenceMultimapKeySetImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsdifferencemultimapkeysetimmutablecopyrecipe)
+* [Refaster template `ImmutableSetRules.SetsIntersectionImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsintersectionimmutablecopyrecipe)
+* [Refaster template `ImmutableSetRules.SetsIntersectionMapKeySetImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsintersectionmapkeysetimmutablecopyrecipe)
+* [Refaster template `ImmutableSetRules.SetsIntersectionMultimapKeySetImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsintersectionmultimapkeysetimmutablecopyrecipe)
+* [Refaster template `ImmutableSetRules.SetsUnionImmutableCopy`](../../../picnic/errorprone/refasterrules/immutablesetrulesrecipes$setsunionimmutablecopyrecipe)
 
 </TabItem>
 
@@ -61,22 +61,22 @@ description: |
   Refaster rules related to expressions dealing with `ImmutableSet`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSetRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$IterableToImmutableSetRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$StreamToImmutableSetRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetCopyOfSetViewRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$StreamCollectToImmutableSetRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetViewImmutableCopyRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOf0Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOf1Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOf2Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOf3Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOf4Recipe
   - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOf5Recipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsDifferenceRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsDifferenceMapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsDifferenceMultimapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsIntersectionRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsIntersectionMapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsIntersectionMultimapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsUnionRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsDifferenceImmutableCopyRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsDifferenceMapKeySetImmutableCopyRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsDifferenceMultimapKeySetImmutableCopyRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsIntersectionImmutableCopyRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsIntersectionMapKeySetImmutableCopyRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsIntersectionMultimapKeySetImmutableCopyRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$SetsUnionImmutableCopyRecipe
 
 ```
 </TabItem>

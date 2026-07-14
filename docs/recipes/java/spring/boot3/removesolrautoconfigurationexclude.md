@@ -15,12 +15,38 @@ _`SolrAutoConfiguration` was removed in Spring Boot 3; remove references to it f
 
 ## Recipe source
 
-[GitHub: RemoveSolrAutoConfigurationExclude.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/boot3/RemoveSolrAutoConfigurationExclude.java),
+[GitHub: spring-boot-30.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-30.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Remove auto-configuration exclude](../../../java/spring/removeautoconfigurationexclude)
+  * fullyQualifiedName: `org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot3.RemoveSolrAutoConfigurationExclude
+displayName: Remove `SolrAutoConfiguration`
+description: |
+  `SolrAutoConfiguration` was removed in Spring Boot 3; remove references to it from exclusions on annotations.
+recipeList:
+  - org.openrewrite.java.spring.RemoveAutoConfigurationExclude:
+      fullyQualifiedName: org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
@@ -28,7 +54,9 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 3.0 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
 
-## Example
+## Examples
+##### Example 1
+`RemoveSolrAutoConfigurationExcludeTest#removeFromArray`
 
 
 <Tabs groupId="beforeAfter">
@@ -51,7 +79,7 @@ public class Application {
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class Application {
 }
 ```
@@ -69,7 +97,57 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
 
 -@SpringBootApplication(exclude = { SecurityAutoConfiguration.class, SolrAutoConfiguration.class })
-+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
++@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+public class Application {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RemoveSolrAutoConfigurationExcludeTest#removeFromArray`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
+
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class, SolrAutoConfiguration.class })
+public class Application {
+}
+```
+
+###### After
+```java
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+public class Application {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,0 @@
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+-import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
+
+@@ -5,1 +4,1 @@
+import org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration;
+
+-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class, SolrAutoConfiguration.class })
++@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class Application {
 ```
 </TabItem>

@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsAbsoluteRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsAbsolute {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(File actual) {
-        return assertThat(actual.isAbsolute()).isTrue();
-    }
-    
-    @AfterTemplate
-    AbstractFileAssert<?> after(File actual) {
-        return assertThat(actual).isAbsolute();
-    }
-}
-```
-.
+_Prefer `AbstractFileAssert#isAbsolute()` over more verbose alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `File`s](/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes.md)
+* [`AssertJFileRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes.md)
 
 
 ## Usage

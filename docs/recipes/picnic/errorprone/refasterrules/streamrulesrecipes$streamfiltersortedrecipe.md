@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterSortedRecipe**
 
-_Apply `Stream#filter(Predicate)` before `Stream#sorted()` to reduce the number of elements to sort._
+_Prefer `Stream#filter(Predicate)` before `Stream#sorted()` over less efficient alternatives._
 
 ## Recipe source
 

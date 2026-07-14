@@ -16,10 +16,10 @@ _Migrates additional Spring Web parameter annotations not covered by the main We
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [migration](/reference/recipes-by-tag#migration)
 * [jaxrs](/reference/recipes-by-tag#jaxrs)
 * [web](/reference/recipes-by-tag#web)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [migration](/reference/recipes-by-tag#migration)
 
 ## Recipe source
 
@@ -62,10 +62,10 @@ description: |
   Migrates additional Spring Web parameter annotations not covered by the main WebToJaxRs recipe. Includes @MatrixVariable, @CookieValue, and other edge cases.
 tags:
   - spring
+  - migration
   - jaxrs
   - web
   - quarkus
-  - migration
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.web.bind.annotation.MatrixVariable

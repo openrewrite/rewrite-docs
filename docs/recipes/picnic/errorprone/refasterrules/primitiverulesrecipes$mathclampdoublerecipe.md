@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$MathClampDoubleRecipe**
 
-_Prefer `Math#clamp(double, double, double)` over more verbose alternatives._
+_Prefer `Math#clamp(double, double, double)` over non-JDK or more verbose alternatives._
 
 ### Tags
 

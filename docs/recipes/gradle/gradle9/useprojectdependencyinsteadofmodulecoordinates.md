@@ -28,6 +28,42 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Gradle 9 from Gradle 8](/recipes/gradle/migratetogradle9.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="build.gradle" label="build.gradle">
+
+
+###### Before
+```groovy title="build.gradle"
+dependencies {
+    implementation 'com.example:my-project:1.0.0'
+}
+```
+
+###### After
+```groovy title="build.gradle"
+dependencies {
+    implementation project(':my-project')
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- build.gradle
++++ build.gradle
+@@ -2,1 +2,1 @@
+dependencies {
+-   implementation 'com.example:my-project:1.0.0'
++   implementation project(':my-project')
+}
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

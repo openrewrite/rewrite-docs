@@ -15,8 +15,8 @@ _PowerMockito with raw Mockito; best executed as part of a Mockito upgrade._
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [mockito](/reference/recipes-by-tag#mockito)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -91,8 +91,8 @@ displayName: Replace PowerMock with raw Mockito
 description: |
   PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.
 tags:
-  - testing
   - mockito
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

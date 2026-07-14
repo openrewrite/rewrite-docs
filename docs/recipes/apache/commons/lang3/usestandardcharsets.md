@@ -15,8 +15,8 @@ _Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `or
 
 ### Tags
 
-* [apache](/reference/recipes-by-tag#apache)
 * [commons](/reference/recipes-by-tag#commons)
+* [apache](/reference/recipes-by-tag#apache)
 
 ## Recipe source
 
@@ -84,8 +84,8 @@ displayName: Prefer `java.nio.charset.StandardCharsets`
 description: |
   Prefer the Java standard library's `java.nio.charset.StandardCharsets` over `org.apache.commons.lang3.CharEncoding`.
 tags:
-  - apache
   - commons
+  - apache
 recipeList:
   - org.openrewrite.java.ChangeStaticFieldToMethod:
       oldClassName: org.apache.commons.lang3.CharEncoding

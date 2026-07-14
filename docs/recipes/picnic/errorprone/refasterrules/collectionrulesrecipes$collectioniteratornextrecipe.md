@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$CollectionIteratorNextRecipe**
 
-_Prefer `collection.iterator().next()` over more contrived alternatives._
+_Prefer `collection.iterator().next()` over less efficient alternatives._
 
 ## Recipe source
 

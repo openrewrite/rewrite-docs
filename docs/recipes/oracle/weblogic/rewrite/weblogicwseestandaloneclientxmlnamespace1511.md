@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `weblogic-wsee-standaloneclient.
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [wsee-standaloneclient](/reference/recipes-by-tag#wsee)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `weblogic-wsee-standaloneclient.xml` files
 description: |
   This recipe will update the `xmlns` entries in `weblogic-wsee-standaloneclient.xml` files to WebLogic 15.1.1
 tags:
+  - weblogic
   - wsee-standaloneclient
   - schemas
-  - weblogic
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicWseeStandaloneClientXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

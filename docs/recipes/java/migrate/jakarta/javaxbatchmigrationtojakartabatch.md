@@ -15,8 +15,8 @@ _Java EE has been rebranded to Jakarta EE, necessitating a package relocation._
 
 ### Tags
 
-* [javax](/reference/recipes-by-tag#javax)
 * [batch](/reference/recipes-by-tag#batch)
+* [javax](/reference/recipes-by-tag#javax)
 * [jakarta](/reference/recipes-by-tag#jakarta)
 
 ## Recipe source
@@ -75,8 +75,8 @@ displayName: Migrate deprecated `javax.batch` packages to `jakarta.batch`
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
 tags:
-  - javax
   - batch
+  - javax
   - jakarta
 preconditions:
   - org.openrewrite.Singleton

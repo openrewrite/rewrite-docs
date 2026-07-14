@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFindAnyIsPresentRecipe**
 
-_Prefer `Stream#findAny()` over `Stream#findFirst()` if one only cares whether the stream is nonempty._
+_Prefer `Stream#findAny()` over less efficient alternatives._
 
 ## Recipe source
 

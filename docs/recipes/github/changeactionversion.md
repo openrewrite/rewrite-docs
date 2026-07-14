@@ -43,7 +43,7 @@ This recipe is used as part of the following composite recipes:
 | --- | --- |
 |action|`actions/setup-java`|
 |version|`v4`|
-|oldSha||
+|oldSha|`null`|
 
 
 <Tabs groupId="beforeAfter">

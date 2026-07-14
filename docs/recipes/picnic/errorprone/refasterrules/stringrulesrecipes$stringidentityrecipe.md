@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe**
 
-_Avoid unnecessary creation of new `String` objects._
+_Prefer using `String`s as-is over less efficient alternatives._
 
 ### Tags
 

@@ -16,11 +16,11 @@ _Migrates Spring Boot Actuator to Quarkus SmallRye Health and Metrics extensions
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [actuator](/reference/recipes-by-tag#actuator)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
 * [health](/reference/recipes-by-tag#health)
+* [actuator](/reference/recipes-by-tag#actuator)
 * [metrics](/reference/recipes-by-tag#metrics)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -77,11 +77,11 @@ description: |
   Migrates Spring Boot Actuator to Quarkus SmallRye Health and Metrics extensions. Converts HealthIndicator implementations to Quarkus HealthCheck pattern.
 tags:
   - spring
-  - actuator
-  - quarkus
   - migration
   - health
+  - actuator
   - metrics
+  - quarkus
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.boot

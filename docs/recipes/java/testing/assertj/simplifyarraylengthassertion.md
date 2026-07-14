@@ -28,6 +28,49 @@ This recipe is used as part of the following composite recipes:
 
 * [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class MyTest {
+    void testMethod(String[] array) {
+        assertThat(array.length).isEqualTo(7);
+    }
+}
+```
+
+###### After
+```java
+import static org.assertj.core.api.Assertions.assertThat;
+
+class MyTest {
+    void testMethod(String[] array) {
+        assertThat(array).hasSize(7);
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+class MyTest {
+    void testMethod(String[] array) {
+-       assertThat(array.length).isEqualTo(7);
++       assertThat(array).hasSize(7);
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

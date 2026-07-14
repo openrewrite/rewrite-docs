@@ -31,12 +31,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapBuilder`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapbuilderrecipe)
-* [Refaster template `ImmutableSetMultimapRules.EmptyImmutableSetMultimap`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$emptyimmutablesetmultimaprecipe)
-* [Refaster template `ImmutableSetMultimapRules.PairToImmutableSetMultimap`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$pairtoimmutablesetmultimaprecipe)
-* [Refaster template `ImmutableSetMultimapRules.EntryToImmutableSetMultimap`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$entrytoimmutablesetmultimaprecipe)
-* [Refaster template `ImmutableSetMultimapRules.IterableToImmutableSetMultimap`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$iterabletoimmutablesetmultimaprecipe)
-* [Refaster template `ImmutableSetMultimapRules.TransformMultimapValuesToImmutableSetMultimap2`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$transformmultimapvaluestoimmutablesetmultimap2recipe)
-* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapBuilderPut`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapbuilderputrecipe)
+* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapOf0`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapof0recipe)
+* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapOf2`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapof2recipe)
+* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapOfEntryGetKeyEntryGetValue`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapofentrygetkeyentrygetvaluerecipe)
+* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapCopyOf`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapcopyofrecipe)
+* [Refaster template `ImmutableSetMultimapRules.ImmutableSetMultimapCopyOfMultimapsTransformValuesWithFunction`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$immutablesetmultimapcopyofmultimapstransformvalueswithfunctionrecipe)
+* [Refaster template `ImmutableSetMultimapRules.BuilderPut`](../../../picnic/errorprone/refasterrules/immutablesetmultimaprulesrecipes$builderputrecipe)
 
 </TabItem>
 
@@ -51,12 +51,12 @@ description: |
   Refaster rules related to expressions dealing with `ImmutableSetMultimap`s. [Source](https://error-prone.picnic.tech/refasterrules/ImmutableSetMultimapRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapBuilderRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$EmptyImmutableSetMultimapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$PairToImmutableSetMultimapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$EntryToImmutableSetMultimapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$IterableToImmutableSetMultimapRecipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$TransformMultimapValuesToImmutableSetMultimap2Recipe
-  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapBuilderPutRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapOf0Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapOf2Recipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapOfEntryGetKeyEntryGetValueRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapCopyOfRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$ImmutableSetMultimapCopyOfMultimapsTransformValuesWithFunctionRecipe
+  - tech.picnic.errorprone.refasterrules.ImmutableSetMultimapRulesRecipes$BuilderPutRecipe
 
 ```
 </TabItem>

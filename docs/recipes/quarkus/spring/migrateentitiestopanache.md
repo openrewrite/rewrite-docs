@@ -16,10 +16,10 @@ _Converts standard JPA entities to Quarkus Panache entities using the Active Rec
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
-* [panache](/reference/recipes-by-tag#panache)
 * [migration](/reference/recipes-by-tag#migration)
 * [jpa](/reference/recipes-by-tag#jpa)
+* [quarkus](/reference/recipes-by-tag#quarkus)
+* [panache](/reference/recipes-by-tag#panache)
 
 ## Recipe source
 
@@ -58,10 +58,10 @@ description: |
   Converts standard JPA entities to Quarkus Panache entities using the Active Record pattern. Entities will extend PanacheEntity and gain built-in CRUD operations.
 tags:
   - spring
-  - quarkus
-  - panache
   - migration
   - jpa
+  - quarkus
+  - panache
 recipeList:
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: io.quarkus

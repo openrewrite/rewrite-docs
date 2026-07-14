@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJByteRulesRecipes$AbstractByteAssertIsNotEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AbstractByteAssertIsNotEqualTo {
-    
-    @BeforeTemplate
-    AbstractByteAssert<?> before(AbstractByteAssert<?> byteAssert, byte n) {
-        return Refaster.anyOf(byteAssert.isNotCloseTo(n, offset((byte)0)), byteAssert.isNotCloseTo(n, withPercentage(0)));
-    }
-    
-    @AfterTemplate
-    AbstractByteAssert<?> after(AbstractByteAssert<?> byteAssert, byte n) {
-        return byteAssert.isNotEqualTo(n);
-    }
-}
-```
-.
+_Prefer `AbstractByteAssert#isNotEqualTo(byte)` over more contrived alternatives._
 
 ## Recipe source
 

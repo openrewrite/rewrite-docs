@@ -15,12 +15,12 @@ _Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions._
 
 ### Tags
 
-* [myfaces](/reference/recipes-by-tag#myfaces)
-* [primefaces](/reference/recipes-by-tag#primefaces)
 * [faces](/reference/recipes-by-tag#faces)
 * [jsf](/reference/recipes-by-tag#jsf)
 * [omnifaces](/reference/recipes-by-tag#omnifaces)
 * [jakarta](/reference/recipes-by-tag#jakarta)
+* [myfaces](/reference/recipes-by-tag#myfaces)
+* [primefaces](/reference/recipes-by-tag#primefaces)
 
 ## Recipe source
 
@@ -80,12 +80,12 @@ displayName: Upgrade Faces open source libraries
 description: |
   Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE9 versions.
 tags:
-  - myfaces
-  - primefaces
   - faces
   - jsf
   - omnifaces
   - jakarta
+  - myfaces
+  - primefaces
 recipeList:
   - org.openrewrite.maven.ChangeDependencyClassifier:
       groupId: org.primefaces

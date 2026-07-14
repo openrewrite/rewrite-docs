@@ -11,37 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJEnumerableRulesRecipes$EnumerableAssertHasSameSizeAsRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class EnumerableAssertHasSameSizeAs<S, E> {
-    
-    @BeforeTemplate
-    EnumerableAssert<?, S> before(EnumerableAssert<?, S> enumAssert, Iterable<E> iterable) {
-        return enumAssert.hasSize(Iterables.size(iterable));
-    }
-    
-    @BeforeTemplate
-    EnumerableAssert<?, S> before(EnumerableAssert<?, S> enumAssert, Collection<E> iterable) {
-        return enumAssert.hasSize(iterable.size());
-    }
-    
-    @BeforeTemplate
-    EnumerableAssert<?, S> before(EnumerableAssert<?, S> enumAssert, E[] iterable) {
-        return enumAssert.hasSize(iterable.length);
-    }
-    
-    @BeforeTemplate
-    EnumerableAssert<?, S> before(EnumerableAssert<?, S> enumAssert, CharSequence iterable) {
-        return enumAssert.hasSize(iterable.length());
-    }
-    
-    @AfterTemplate
-    EnumerableAssert<?, S> after(EnumerableAssert<?, S> enumAssert, Iterable<E> iterable) {
-        return enumAssert.hasSameSizeAs(iterable);
-    }
-}
-```
-.
+_Prefer `EnumerableAssert#hasSameSizeAs(Iterable)` over more verbose alternatives._
 
 ## Recipe source
 

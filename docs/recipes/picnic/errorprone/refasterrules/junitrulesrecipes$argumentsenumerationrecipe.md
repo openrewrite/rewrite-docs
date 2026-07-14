@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.JUnitRulesRecipes$ArgumentsEnumerationRecipe**
 
-_Prefer statically imported `Arguments#arguments` over `Arguments#of` calls._
+_Prefer `Arguments#arguments(Object...)` over less idiomatic alternatives._
 
 ## Recipe source
 

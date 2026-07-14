@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxThenEmptyRecipe**
 
-_Avoid vacuous invocations of `Flux#ignoreElements()`._
+_Prefer `Flux#thenEmpty(Publisher)` over vacuously invoking `Flux#ignoreElements()`._
 
 ## Recipe source
 

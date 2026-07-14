@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalIsPresentRecipe**
 
-_Prefer `Optional#isPresent()` over the inverted alternative._
+_Prefer `Optional#isPresent()` over more verbose alternatives._
 
 ## Recipe source
 

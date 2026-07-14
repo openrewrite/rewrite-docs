@@ -15,9 +15,9 @@ _Migrate applications to the latest Apache Commons Math 3.x release. This recipe
 
 ### Tags
 
+* [commons](/reference/recipes-by-tag#commons)
 * [apache](/reference/recipes-by-tag#apache)
 * [math](/reference/recipes-by-tag#math)
-* [commons](/reference/recipes-by-tag#commons)
 
 ## Recipe source
 
@@ -64,9 +64,9 @@ displayName: Migrates to Apache Commons Math 3.x
 description: |
   Migrate applications to the latest Apache Commons Math 3.x release. This recipe modifies  application's build files, make changes to deprecated/preferred APIs, and migrates configuration settings that have changes between versions.
 tags:
+  - commons
   - apache
   - math
-  - commons
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.commons

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$LongCompareUnsignedRecipe**
 
-_Prefer JDK's `Long#compareUnsigned(long, long)` over third-party alternatives._
+_Prefer `Long#compareUnsigned(long, long)` over non-JDK alternatives._
 
 ## Recipe source
 

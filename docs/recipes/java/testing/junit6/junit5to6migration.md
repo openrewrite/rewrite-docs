@@ -16,8 +16,8 @@ _Migrates JUnit 5.x tests to JUnit 6.x._
 ### Tags
 
 * [junit](/reference/recipes-by-tag#junit)
-* [testing](/reference/recipes-by-tag#testing)
 * [jupiter](/reference/recipes-by-tag#jupiter)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -42,7 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Check whether a type is **not** in use](../../../java/search/doesnotusetype)
   * fullyQualifiedTypeName: `org.testng..*`
   * includeImplicit: `true`
-* [Find the oldest Java version in use](../../../java/search/hasminimumjavaversion)
+* [Has minimum Java version](../../../java/search/hasminimumjavaversion)
   * version: `17`
 
 **Recipes**
@@ -123,8 +123,8 @@ description: |
   Migrates JUnit 5.x tests to JUnit 6.x.
 tags:
   - junit
-  - testing
   - jupiter
+  - testing
 preconditions:
   - org.openrewrite.Singleton
   - org.openrewrite.java.search.DoesNotUseType:

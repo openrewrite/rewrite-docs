@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ImmutableSetRulesRecipes$ImmutableSetOf4Recipe**
 
-_Prefer `ImmutableSet#of(Object, Object, Object, Object)` over alternatives that don't communicate the immutability of the resulting set at the type level._
+_Prefer `ImmutableSet#of(Object, Object, Object, Object)` over imprecisely typed alternatives._
 
 ## Recipe source
 

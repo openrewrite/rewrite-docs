@@ -16,11 +16,11 @@ _Allows customization of Quarkus Maven plugin goals. Adds or modifies the execut
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
+* [migration](/reference/recipes-by-tag#migration)
 * [plugin](/reference/recipes-by-tag#plugin)
 * [build](/reference/recipes-by-tag#build)
 * [maven](/reference/recipes-by-tag#maven)
 * [quarkus](/reference/recipes-by-tag#quarkus)
-* [migration](/reference/recipes-by-tag#migration)
 
 ## Recipe source
 
@@ -61,11 +61,11 @@ description: |
   Allows customization of Quarkus Maven plugin goals. Adds or modifies the executions and goals for the quarkus-maven-plugin.
 tags:
   - spring
+  - migration
   - plugin
   - build
   - maven
   - quarkus
-  - migration
 recipeList:
   - org.openrewrite.maven.AddProfile:
       id: native

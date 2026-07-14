@@ -31,8 +31,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Refaster template `MockitoRules.Never`](../../../picnic/errorprone/refasterrules/mockitorulesrecipes$neverrecipe)
-* [Refaster template `MockitoRules.VerifyOnce`](../../../picnic/errorprone/refasterrules/mockitorulesrecipes$verifyoncerecipe)
-* [Refaster template `MockitoRules.InvocationOnMockGetArguments`](../../../picnic/errorprone/refasterrules/mockitorulesrecipes$invocationonmockgetargumentsrecipe)
+* [Refaster template `MockitoRules.Verify`](../../../picnic/errorprone/refasterrules/mockitorulesrecipes$verifyrecipe)
+* [Refaster template `MockitoRules.InvocationOnMockGetArgument`](../../../picnic/errorprone/refasterrules/mockitorulesrecipes$invocationonmockgetargumentrecipe)
 
 </TabItem>
 
@@ -47,8 +47,8 @@ description: |
   Refaster rules related to Mockito expressions and statements. [Source](https://error-prone.picnic.tech/refasterrules/MockitoRules).
 recipeList:
   - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$NeverRecipe
-  - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$VerifyOnceRecipe
-  - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$InvocationOnMockGetArgumentsRecipe
+  - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$VerifyRecipe
+  - tech.picnic.errorprone.refasterrules.MockitoRulesRecipes$InvocationOnMockGetArgumentRecipe
 
 ```
 </TabItem>

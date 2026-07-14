@@ -15,9 +15,9 @@ _Update Jakarta Persistence to 3.1._
 
 ### Tags
 
-* [jakartaee](/reference/recipes-by-tag#jakartaee)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [persistence](/reference/recipes-by-tag#persistence)
+* [jakartaee](/reference/recipes-by-tag#jakartaee)
 
 ## Recipe source
 
@@ -49,9 +49,9 @@ displayName: Update Jakarta Persistence to 3.1
 description: |
   Update Jakarta Persistence to 3.1.
 tags:
-  - jakartaee
   - weblogic
   - persistence
+  - jakartaee
 recipeList:
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.persistence

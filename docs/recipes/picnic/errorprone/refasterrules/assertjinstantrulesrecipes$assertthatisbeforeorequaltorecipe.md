@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBeforeOrEqualToRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class AssertThatIsBeforeOrEqualTo {
-    
-    @BeforeTemplate
-    AbstractBooleanAssert<?> before(Instant actual, Instant other) {
-        return assertThat(actual.isAfter(other)).isFalse();
-    }
-    
-    @AfterTemplate
-    AbstractInstantAssert<?> after(Instant actual, Instant other) {
-        return assertThat(actual).isBeforeOrEqualTo(other);
-    }
-}
-```
-.
+_Prefer `AbstractInstantAssert#isBeforeOrEqualTo(Instant)` over less explicit alternatives._
 
 ## Recipe source
 
@@ -41,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Refaster rules related to AssertJ assertions over `Instant`s](/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes.md)
+* [`AssertJInstantRules` Refaster recipes](/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes.md)
 
 
 ## Usage

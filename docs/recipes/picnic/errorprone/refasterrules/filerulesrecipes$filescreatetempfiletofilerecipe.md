@@ -1,13 +1,13 @@
 ---
-title: "Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions"
-sidebar_label: "Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions"
+title: "Prefer `Files#createTempFile(String, String, FileAttribute[])` over less secure alternatives"
+sidebar_label: "Prefer `Files#createTempFile(String, String, FileAttribute[])` over less secure alternatives"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions
+# Prefer `Files#createTempFile(String, String, FileAttribute[])` over less secure alternatives
 
 **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe**
 
@@ -37,7 +37,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesCreateTempFileToFileRecipe"
-  displayName="Prefer `Files#createTempFile(String, String, FileAttribute[])` over alternatives that create files with more liberal permissions"
+  displayName="Prefer `Files#createTempFile(String, String, FileAttribute[])` over less secure alternatives"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"

@@ -15,8 +15,8 @@ _Replace AssertJ assertions where a method is called on the actual value with a 
 
 ### Tags
 
-* [testing](/reference/recipes-by-tag#testing)
 * [assertj](/reference/recipes-by-tag#assertj)
+* [testing](/reference/recipes-by-tag#testing)
 
 ## Recipe source
 
@@ -369,8 +369,8 @@ displayName: Simplify AssertJ chained assertions
 description: |
   Replace AssertJ assertions where a method is called on the actual value with a dedicated assertion.
 tags:
-  - testing
   - assertj
+  - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:

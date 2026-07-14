@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `weblogic-ejb-jar.xml` files to 
 
 ### Tags
 
-* [schemas](/reference/recipes-by-tag#schemas)
 * [weblogic](/reference/recipes-by-tag#weblogic)
 * [ejb-jar](/reference/recipes-by-tag#ejb)
+* [schemas](/reference/recipes-by-tag#schemas)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `weblogic-ejb-jar.xml` files to WebLogic 1
 description: |
   This recipe will update the `xmlns` entries in `weblogic-ejb-jar.xml` files to WebLogic 15.1.1
 tags:
-  - schemas
   - weblogic
   - ejb-jar
+  - schemas
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicEjbJar32XmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

@@ -16,9 +16,9 @@ _Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [sap](/reference/recipes-by-tag#sap)
 * [cloudfoundry](/reference/recipes-by-tag#cloudfoundry)
 * [logging](/reference/recipes-by-tag#logging)
+* [sap](/reference/recipes-by-tag#sap)
 * [boot](/reference/recipes-by-tag#boot)
 
 ## Recipe source
@@ -59,9 +59,9 @@ description: |
   Migrate SAP cloud foundry logging support from `cf-java-logging-support-servlet` to `cf-java-logging-support-servlet-jakarta`, to use Jakarta with Spring Boot 3.
 tags:
   - spring
-  - sap
   - cloudfoundry
   - logging
+  - sap
   - boot
 preconditions:
   - org.openrewrite.Singleton

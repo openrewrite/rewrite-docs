@@ -15,8 +15,8 @@ _Migrate DataNucleus 4.x applications to 5.0. This recipe handles package reloca
 
 ### Tags
 
-* [datanucleus](/reference/recipes-by-tag#datanucleus)
 * [jdo](/reference/recipes-by-tag#jdo)
+* [datanucleus](/reference/recipes-by-tag#datanucleus)
 * [jpa](/reference/recipes-by-tag#jpa)
 
 ## Recipe source
@@ -63,8 +63,8 @@ displayName: Migrate to DataNucleus 5.0
 description: |
   Migrate DataNucleus 4.x applications to 5.0. This recipe handles package relocations, type renames, property key changes, and dependency updates.
 tags:
-  - datanucleus
   - jdo
+  - datanucleus
   - jpa
 recipeList:
   - org.openrewrite.java.migrate.datanucleus.UpgradeDataNucleus_4_0

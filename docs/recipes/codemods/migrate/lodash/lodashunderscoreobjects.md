@@ -21,8 +21,8 @@ import RunRecipe from '@site/src/components/RunRecipe';
 ### Tags
 
 * [codemods](/reference/recipes-by-tag#codemods)
-* [lodash](/reference/recipes-by-tag#lodash)
 * [underscore](/reference/recipes-by-tag#underscore)
+* [lodash](/reference/recipes-by-tag#lodash)
 
 ## Recipe source
 
@@ -53,8 +53,8 @@ description: |
   - `_.clone(x)` -&gt; `{ ...x }` - `_.extend({}, x, y)` -&gt; `{ ...x, ...y }` - `_.extend(obj, x, y)` -&gt; `Object.assign(obj, x, y)` - `_.keys(x)` -&gt; `Object.keys(x)` - `_.pairs(x)` -&gt; `Object.entries(x)` - `_.values(x)` -&gt; `Object.values(x)`.
 tags:
   - codemods
-  - lodash
   - underscore
+  - lodash
 recipeList:
   - org.openrewrite.codemods.ApplyCodemod:
       transform: @kevinbarabash/codemods/transforms/object.js

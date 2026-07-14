@@ -16,10 +16,10 @@ _Migrates Spring's event mechanism to CDI events. Converts ApplicationEventPubli
 ### Tags
 
 * [spring](/reference/recipes-by-tag#spring)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [migration](/reference/recipes-by-tag#migration)
 * [cdi](/reference/recipes-by-tag#cdi)
 * [events](/reference/recipes-by-tag#events)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -59,10 +59,10 @@ description: |
   Migrates Spring's event mechanism to CDI events. Converts ApplicationEventPublisher to CDI Event and @EventListener to @Observes.
 tags:
   - spring
-  - quarkus
   - migration
   - cdi
   - events
+  - quarkus
 recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.context.ApplicationEventPublisher

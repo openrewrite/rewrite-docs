@@ -30,14 +30,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `AssertJOptionalRules.AssertThatOptional`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatoptionalrecipe)
+* [Refaster template `AssertJOptionalRules.AssertThatGet`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatgetrecipe)
 * [Refaster template `AssertJOptionalRules.AbstractOptionalAssertIsPresent`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$abstractoptionalassertispresentrecipe)
-* [Refaster template `AssertJOptionalRules.AssertThatOptionalIsPresent`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatoptionalispresentrecipe)
+* [Refaster template `AssertJOptionalRules.AssertThatIsPresent`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatispresentrecipe)
 * [Refaster template `AssertJOptionalRules.AbstractOptionalAssertIsEmpty`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$abstractoptionalassertisemptyrecipe)
-* [Refaster template `AssertJOptionalRules.AssertThatOptionalIsEmpty`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatoptionalisemptyrecipe)
+* [Refaster template `AssertJOptionalRules.AssertThatIsEmpty`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatisemptyrecipe)
 * [Refaster template `AssertJOptionalRules.AbstractOptionalAssertHasValue`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$abstractoptionalasserthasvaluerecipe)
 * [Refaster template `AssertJOptionalRules.AbstractOptionalAssertContainsSame`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$abstractoptionalassertcontainssamerecipe)
-* [Refaster template `AssertJOptionalRules.AssertThatOptionalHasValueMatching`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatoptionalhasvaluematchingrecipe)
+* [Refaster template `AssertJOptionalRules.AssertThatGetMatches`](../../../picnic/errorprone/refasterrules/assertjoptionalrulesrecipes$assertthatgetmatchesrecipe)
 
 </TabItem>
 
@@ -51,14 +51,14 @@ displayName: `AssertJOptionalRules` Refaster recipes
 description: |
   Refaster rules related to AssertJ assertions over `Optional`s. [Source](https://error-prone.picnic.tech/refasterrules/AssertJOptionalRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatOptionalRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatGetRecipe
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertIsPresentRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatOptionalIsPresentRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatIsPresentRecipe
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertIsEmptyRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatOptionalIsEmptyRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertHasValueRecipe
   - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AbstractOptionalAssertContainsSameRecipe
-  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatOptionalHasValueMatchingRecipe
+  - tech.picnic.errorprone.refasterrules.AssertJOptionalRulesRecipes$AssertThatGetMatchesRecipe
 
 ```
 </TabItem>

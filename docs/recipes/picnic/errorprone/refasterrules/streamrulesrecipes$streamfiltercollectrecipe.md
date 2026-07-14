@@ -11,22 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamFilterCollectRecipe**
 
-Recipe created for the following Refaster template:
-```java
-static final class StreamFilterCollect<T, R> {
-    
-    @BeforeTemplate
-    R before(Stream<T> stream, Predicate<? super T> predicate, Collector<? super T, ?, R> collector) {
-        return stream.collect(filtering(predicate, collector));
-    }
-    
-    @AfterTemplate
-    R after(Stream<T> stream, Predicate<? super T> predicate, Collector<? super T, ?, R> collector) {
-        return stream.filter(predicate).collect(collector);
-    }
-}
-```
-.
+_Prefer `Stream#filter(Predicate)` over more contrived alternatives._
 
 ## Recipe source
 

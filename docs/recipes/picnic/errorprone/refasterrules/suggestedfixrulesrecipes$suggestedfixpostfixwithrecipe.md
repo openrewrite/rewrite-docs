@@ -11,10 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixPostfixWithRecipe**
 
-```
-Prefer `SuggestedFix#postfixWith(Tree, String)`} over more contrived alternatives.
-```
-
+_Prefer `SuggestedFix#postfixWith(Tree, String)` over more contrived alternatives._
 
 ## Recipe source
 

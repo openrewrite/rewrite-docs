@@ -30,14 +30,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `MapRules.MapGetOrNull`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapgetornullrecipe)
-* [Refaster template `MapRules.MapGetOrDefault`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapgetordefaultrecipe)
+* [Refaster template `MapRules.MapGet`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapgetrecipe)
+* [Prefer `Map#getOrDefault(Object, Object)` over more contrived alternatives](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapgetordefaultrecipe)
 * [Refaster template `MapRules.MapIsEmpty`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapisemptyrecipe)
 * [Refaster template `MapRules.MapSize`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapsizerecipe)
 * [Refaster template `MapRules.MapContainsKey`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapcontainskeyrecipe)
 * [Refaster template `MapRules.MapContainsValue`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapcontainsvaluerecipe)
-* [Refaster template `MapRules.MapKeyStream`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapkeystreamrecipe)
-* [Refaster template `MapRules.MapValueStream`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapvaluestreamrecipe)
+* [Refaster template `MapRules.MapKeySetStream`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapkeysetstreamrecipe)
+* [Refaster template `MapRules.MapValuesStream`](../../../picnic/errorprone/refasterrules/maprulesrecipes$mapvaluesstreamrecipe)
 
 </TabItem>
 
@@ -51,14 +51,14 @@ displayName: `MapRules` Refaster recipes
 description: |
   Refaster rules related to expressions dealing with `Map` instances. [Source](https://error-prone.picnic.tech/refasterrules/MapRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapGetOrNullRecipe
+  - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapGetRecipe
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapGetOrDefaultRecipe
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapIsEmptyRecipe
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapSizeRecipe
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapContainsKeyRecipe
   - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapContainsValueRecipe
-  - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapKeyStreamRecipe
-  - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapValueStreamRecipe
+  - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapKeySetStreamRecipe
+  - tech.picnic.errorprone.refasterrules.MapRulesRecipes$MapValuesStreamRecipe
 
 ```
 </TabItem>

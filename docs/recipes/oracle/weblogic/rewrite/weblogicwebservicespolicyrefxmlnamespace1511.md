@@ -15,9 +15,9 @@ _This recipe will update the `xmlns` entries in `weblogic-webservices-policy.xml
 
 ### Tags
 
+* [weblogic](/reference/recipes-by-tag#weblogic)
 * [webservices-policy](/reference/recipes-by-tag#webservices)
 * [schemas](/reference/recipes-by-tag#schemas)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 
 ## Recipe source
 
@@ -54,9 +54,9 @@ displayName: Migrate xmlns entries in `weblogic-webservices-policy.xml` files to
 description: |
   This recipe will update the `xmlns` entries in `weblogic-webservices-policy.xml` files to WebLogic 15.1.1
 tags:
+  - weblogic
   - webservices-policy
   - schemas
-  - weblogic
 recipeList:
   - com.oracle.weblogic.rewrite.WebLogicWebservicesPolicyRefXmlNamespace1412
   - org.openrewrite.text.FindAndReplace:

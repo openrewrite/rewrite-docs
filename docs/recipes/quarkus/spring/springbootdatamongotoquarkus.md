@@ -17,8 +17,8 @@ _Migrates `spring-boot-starter-data-mongodb` to `quarkus-mongodb-panache`._
 
 * [spring](/reference/recipes-by-tag#spring)
 * [data](/reference/recipes-by-tag#data)
-* [quarkus](/reference/recipes-by-tag#quarkus)
 * [mongodb](/reference/recipes-by-tag#mongodb)
+* [quarkus](/reference/recipes-by-tag#quarkus)
 
 ## Recipe source
 
@@ -67,8 +67,8 @@ description: |
 tags:
   - spring
   - data
-  - quarkus
   - mongodb
+  - quarkus
 preconditions:
   - org.openrewrite.java.dependencies.DependencyInsight:
       groupIdPattern: org.springframework.boot

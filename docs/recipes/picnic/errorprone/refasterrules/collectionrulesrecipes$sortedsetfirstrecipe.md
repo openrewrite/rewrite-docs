@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.CollectionRulesRecipes$SortedSetFirstRecipe**
 
-_Prefer `SortedSet#first()` over more verbose alternatives._
+_Prefer `SortedSet#first()` over less idiomatic alternatives._
 
 ## Recipe source
 

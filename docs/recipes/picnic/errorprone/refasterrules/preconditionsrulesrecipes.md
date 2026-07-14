@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes**
 
-_Refaster templates related to statements dealing with `Preconditions`. [Source](https://error-prone.picnic.tech/refasterrules/PreconditionsRules)._
+_Refaster rules related to expressions dealing with `Preconditions`. [Source](https://error-prone.picnic.tech/refasterrules/PreconditionsRules)._
 
 ## Recipe source
 
@@ -30,8 +30,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Refaster template `PreconditionsRules.RequireNonNull`](../../../picnic/errorprone/refasterrules/preconditionsrulesrecipes$requirenonnullrecipe)
-* [Refaster template `PreconditionsRules.RequireNonNullWithMessage`](../../../picnic/errorprone/refasterrules/preconditionsrulesrecipes$requirenonnullwithmessagerecipe)
+* [Refaster template `PreconditionsRules.RequireNonNullExpression`](../../../picnic/errorprone/refasterrules/preconditionsrulesrecipes$requirenonnullexpressionrecipe)
+* [Refaster template `PreconditionsRules.RequireNonNullWithStringExpression`](../../../picnic/errorprone/refasterrules/preconditionsrulesrecipes$requirenonnullwithstringexpressionrecipe)
 
 </TabItem>
 
@@ -43,10 +43,10 @@ type: specs.openrewrite.org/v1beta/recipe
 name: tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes
 displayName: `PreconditionsRules` Refaster recipes
 description: |
-  Refaster templates related to statements dealing with `Preconditions`. [Source](https://error-prone.picnic.tech/refasterrules/PreconditionsRules).
+  Refaster rules related to expressions dealing with `Preconditions`. [Source](https://error-prone.picnic.tech/refasterrules/PreconditionsRules).
 recipeList:
-  - tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes$RequireNonNullRecipe
-  - tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes$RequireNonNullWithMessageRecipe
+  - tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes$RequireNonNullExpressionRecipe
+  - tech.picnic.errorprone.refasterrules.PreconditionsRulesRecipes$RequireNonNullWithStringExpressionRecipe
 
 ```
 </TabItem>

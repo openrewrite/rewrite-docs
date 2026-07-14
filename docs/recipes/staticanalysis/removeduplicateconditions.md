@@ -25,6 +25,55 @@ _When an `if`/`else if` chain contains the same condition more than once, the se
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    void test(int x) {
+        if (x > 0) {
+            System.out.println("positive");
+        } else if (x > 0) {
+            System.out.println("also positive");
+        } else {
+            System.out.println("non-positive");
+        }
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    void test(int x) {
+        if (x > 0) {
+            System.out.println("positive");
+        } else {
+            System.out.println("non-positive");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,2 +5,0 @@
+        if (x > 0) {
+            System.out.println("positive");
+-       } else if (x > 0) {
+-           System.out.println("also positive");
+        } else {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

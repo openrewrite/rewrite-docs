@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$StepVerifierVerifyLaterRecipe**
 
-_Don't unnecessarily invoke `StepVerifier#verifyLater()` multiple times._
+_Prefer invoking `StepVerifier#verifyLater()` once over multiple invocations._
 
 ## Recipe source
 

@@ -71,12 +71,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.http.impl.nio.reactor.DefaultConnectingIOReactor`
   * newFullyQualifiedTypeName: `org.apache.hc.core5.reactor.DefaultConnectingIOReactor`
-* [Add comment to import statement](../../java/addcommenttoimport)
-  * comment: `NByteArrayEntity replaced with BasicAsyncEntityProducer - constructor and usage differs, manual migration required`
-  * typePattern: `org.apache.http.nio.entity.NByteArrayEntity`
-* [Add comment to import statement](../../java/addcommenttoimport)
-  * comment: `NStringEntity replaced with StringAsyncEntityProducer - constructor and usage differs, manual migration required`
-  * typePattern: `org.apache.http.nio.entity.NStringEntity`
+* [Migrate `HttpAsyncMethods` factory calls to HttpClient 5.x](../../apache/httpclient5/migratehttpasyncmethods)
+* [Inline hoisted locals used by `new BasicAsyncRequestProducer(...)`](../../apache/httpclient5/inlinebasicasyncrequestproducerlocals)
+* [Migrate `BasicAsyncRequestProducer` to `AsyncRequestBuilder`](../../apache/httpclient5/migratebasicasyncrequestproducer)
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.nio.entity.NStringEntity`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.entity.StringEntity`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.nio.entity.NByteArrayEntity`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.entity.ByteArrayEntity`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.http.nio.entity.NFileEntity`
+  * newFullyQualifiedTypeName: `org.apache.hc.core5.http.io.entity.FileEntity`
 
 </TabItem>
 
@@ -131,12 +137,18 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.http.impl.nio.reactor.DefaultConnectingIOReactor
       newFullyQualifiedTypeName: org.apache.hc.core5.reactor.DefaultConnectingIOReactor
-  - org.openrewrite.java.AddCommentToImport:
-      comment: NByteArrayEntity replaced with BasicAsyncEntityProducer - constructor and usage differs, manual migration required
-      typePattern: org.apache.http.nio.entity.NByteArrayEntity
-  - org.openrewrite.java.AddCommentToImport:
-      comment: NStringEntity replaced with StringAsyncEntityProducer - constructor and usage differs, manual migration required
-      typePattern: org.apache.http.nio.entity.NStringEntity
+  - org.openrewrite.apache.httpclient5.MigrateHttpAsyncMethods
+  - org.openrewrite.apache.httpclient5.InlineBasicAsyncRequestProducerLocals
+  - org.openrewrite.apache.httpclient5.MigrateBasicAsyncRequestProducer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.nio.entity.NStringEntity
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.entity.StringEntity
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.nio.entity.NByteArrayEntity
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.entity.ByteArrayEntity
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.http.nio.entity.NFileEntity
+      newFullyQualifiedTypeName: org.apache.hc.core5.http.io.entity.FileEntity
 
 ```
 </TabItem>

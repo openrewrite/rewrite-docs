@@ -15,9 +15,9 @@ _This recipe will update Spring Framework default servlet handler if empty, as n
 
 ### Tags
 
-* [default-servlet-handler](/reference/recipes-by-tag#default)
-* [weblogic](/reference/recipes-by-tag#weblogic)
 * [springframework](/reference/recipes-by-tag#springframework)
+* [weblogic](/reference/recipes-by-tag#weblogic)
+* [default-servlet-handler](/reference/recipes-by-tag#default)
 
 ## Recipe source
 
@@ -63,9 +63,9 @@ displayName: Update Default Servlet Handler for Spring Framework if empty
 description: |
   This recipe will update Spring Framework default servlet handler if empty, as noted in the Spring Framework 6.2 [documentation](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-config/default-servlet-handler.html).
 tags:
-  - default-servlet-handler
-  - weblogic
   - springframework
+  - weblogic
+  - default-servlet-handler
 preconditions:
   - org.openrewrite.FindSourceFiles:
       filePattern: **/mvc-core-config.xml
