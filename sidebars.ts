@@ -73,7 +73,6 @@ const sidebars: SidebarsConfig = {
         'authoring-recipes/recipe-testing',
         'authoring-recipes/recipe-conventions-and-best-practices',
         'authoring-recipes/modifying-methods-with-javatemplate',
-        'authoring-recipes/recipe-with-npm-dependency',
         'authoring-recipes/data-tables',
         'authoring-recipes/automate-breaking-changes',
         'authoring-recipes/multiple-visitors',
