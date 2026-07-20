@@ -70,6 +70,7 @@ _Lists all Gradle and Maven dependencies_
 | Column Name | Description |
 | ----------- | ----------- |
 | Build tool | The build tool used to manage dependencies (Gradle or Maven). |
+| Path | Path to the build file declaring the dependency |
 | Group id | The Group ID of the Gradle project or Maven module requesting the dependency. |
 | Artifact id | The Artifact ID of the Gradle project or Maven module requesting the dependency. |
 | Version | The version of Gradle project or Maven module requesting the dependency. |

@@ -36,12 +36,16 @@ This recipe is used as part of the following composite recipes:
 * [Find Expression Language injection vectors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findexpressionlanguageinjection)
 * [Find HTTP response splitting vectors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findhttpresponsesplitting)
 * [Find Jackson default type mapping enablement](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findjacksondefaulttypemapping)
+* [Find SQL injection vectors in Go](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findsqlinjection)
 * [Find Virtual Thread opportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
 * [Find XPath injection vectors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findxpathinjection)
+* [Find command execution vectors in Go](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findcommandinjection)
 * [Find non-virtual `ExecutorService` creation](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
 * [Find process control vectors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findprocesscontrol)
 * [Find script engine code injection vectors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findscriptengineinjection)
 * [Find unsafe reflection vectors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findunsafereflection)
+* [Find use of insecure random number generation in Go](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findinsecurerandom)
+* [Find use of weak cryptographic algorithms in Go](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findweakcryptoalgorithm)
 * [Finds uses of `Encryptors.queryableText()`](/recipes/java/spring/security5/search/findencryptorsqueryabletextuses.md)
 
 ## Example

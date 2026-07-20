@@ -6375,6 +6375,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.FindGoErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findgoerrorpatterns)
   * **Find Go error handling patterns**
   * Detect Go error-handling idioms: error returns, fmt.Errorf %w wrapping, errors.Is/As, panic/recover, and sentinel error variables.
+* [io.moderne.prethink.PythonDependencyReport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/pythondependencyreport)
+  * **Python dependency report**
+  * Read the dependency graph attached to Python manifests (pyproject.toml, Pipfile, requirements.txt, setup.cfg) by the parser and emit rows into the shared dependency-list-report table, mirroring the JVM dependency inventory. Includes declared (direct) dependencies and, when a lock file resolved them, transitive dependencies with concrete versions.
 * [io.moderne.prethink.UpdatePrethinkContextNoAiStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextnoaistarter)
   * **Update Prethink context (no AI)**
   * Deprecated alias for `io.moderne.prethink.UpdatePrethinkContextStarter`, retained for backward compatibility with references to the former recipe name. Prethink no longer has an AI-based variant, so the &quot;(no AI)&quot; distinction is unnecessary. Use `io.moderne.prethink.UpdatePrethinkContextStarter` instead.
@@ -6384,6 +6387,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindAspNetCoreEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findaspnetcoreendpoints)
   * **Find ASP.NET Core endpoints**
   * Identify HTTP endpoints declared via ASP.NET Core controllers ([ApiController], [Route], [HttpGet/Post/...]) and Minimal APIs (app.MapGet/MapPost/MapPut/MapDelete/MapPatch).
+* [io.moderne.prethink.calm.FindAspNetFrameworkEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findaspnetframeworkendpoints)
+  * **Find ASP.NET Framework endpoints (Web API 2 and MVC 5)**
+  * Identify HTTP endpoints declared in classic .NET Framework web applications: ASP.NET Web API 2 controllers (System.Web.Http.ApiController) and ASP.NET MVC 5 controllers (System.Web.Mvc.Controller), covering both attribute routing ([Route], [RoutePrefix], [HttpGet/Post/...], [AcceptVerbs]) and the default convention-based routes.
 * [io.moderne.prethink.calm.FindCalmRelationships](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findcalmrelationships)
   * **Find CALM relationships**
   * Discover method call relationships within the repository for building interaction diagrams. Captures all method-to-method calls between in-repo classes. Entity IDs are resolved by GenerateCalmArchitecture when building CALM relationships.
@@ -6554,10 +6560,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Identify security configurations including Spring Security, OAuth2, CORS, Jakarta Security (@RolesAllowed, @PermitAll, @DenyAll), and Quarkus Security settings.
 * [io.moderne.prethink.calm.FindServerConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findserverconfiguration)
   * **Find server configuration**
-  * Extract server configuration (port, SSL, context path) from application.properties and application.yml files.
+  * Extract server configuration (port, SSL, context path) from Spring Boot application.properties and application.yml files. Non-Spring server descriptors such as web.xml, jboss-web.xml, or JBoss standalone.xml are not currently supported.
 * [io.moderne.prethink.calm.FindServiceComponents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findservicecomponents)
   * **Find service components**
-  * Identify service layer components (@Service, @Component, @Named) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
+  * Identify service layer components across Spring (@Service, @Component), Jakarta/Javax CDI (@Named, @Singleton), Jakarta/Javax EJB (@Stateless, @Stateful), and Micronaut (@Bean) in the application. Excludes controllers and repositories which are handled by dedicated recipes.
 * [io.moderne.prethink.calm.FindServiceEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findserviceendpoints)
   * **Find service endpoints**
   * Identify all REST/HTTP service endpoints exposed by the application. Supports Spring MVC, JAX-RS, Micronaut, and Quarkus REST endpoints. Also walks interface inheritance to detect endpoints in OpenAPI-codegen-first projects where @GetMapping etc. live on the interface methods.
@@ -6567,6 +6573,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindTypeORMEntities](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findtypeormentities)
   * **Find TypeORM entities**
   * Identify TypeORM entities in Node.js applications. Detects @Entity() decorator on classes and populates the DatabaseConnections table.
+* [io.moderne.prethink.calm.FindWcfEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findwcfendpoints)
+  * **Find WCF service endpoints**
+  * Identify WCF service operations declared via [ServiceContract] and [OperationContract] (System.ServiceModel), including REST-style webHttpBinding operations declared via [WebGet] and [WebInvoke] (System.ServiceModel.Web) with their UriTemplate routes.
+* [io.moderne.prethink.calm.FindWebFormsEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findwebformsendpoints)
+  * **Find ASP.NET Web Forms endpoints**
+  * Identify endpoints in classic ASP.NET (System.Web) applications: Web Forms pages (code-behind classes deriving from System.Web.UI.Page), ASMX web service operations ([WebMethod]), and generic HTTP handlers (IHttpHandler implementations).
 * [io.moderne.prethink.calm.FindWebSocketEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findwebsocketendpoints)
   * **Find WebSocket endpoints**
   * Identify WebSocket endpoints in the application. Supports Spring WebSocket, Spring STOMP messaging, and Jakarta/Javax WebSocket.
@@ -7762,33 +7774,6 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Update CircleCI image**
   * See the list of [pre-built CircleCI images](https://circleci.com/docs/2.0/circleci-images/).
 
-### rewrite-codemods-ng
-
-* [org.openrewrite.codemods.migrate.angular.ApplyAngularCLI](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/applyangularcli)
-  * **Upgrade Angular versions**
-  * Run `ng update` to upgrade Angular CLI and Angular Core to the specified version.
-* [org.openrewrite.codemods.migrate.angular.v15](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/v15)
-  * **Update to Angular v15**
-  * Upgrade to Angular v15 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v16](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/v16)
-  * **Update to Angular v16**
-  * Upgrade to Angular v16 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v17](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/v17)
-  * **Update to Angular v17**
-  * Upgrade to Angular v17 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/v18)
-  * **Update to Angular v18**
-  * Upgrade to Angular v18 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/v19)
-  * **Update to Angular v19**
-  * Upgrade to Angular v19 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/v20)
-  * **Update to Angular v20**
-  * Upgrade to Angular v20 through `ApplyAngularCLI`.
-* [org.openrewrite.codemods.migrate.angular.v21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/codemods/migrate/angular/v21)
-  * **Update to Angular v21**
-  * Upgrade to Angular v21 through `ApplyAngularCLI`.
-
 ### rewrite-compiled-analysis
 
 * [io.moderne.compiled.verification.ChangeListMethodAndVerify](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/compiled/verification/changelistmethodandverify)
@@ -7863,6 +7848,24 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Go dependencies**
   * This software composition analysis (SCA) tool detects and upgrades Go module dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades `go.mod` to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government.   When a `go.sum` file is present it is regenerated to match the upgraded `go.mod` by running `go mod download`, which requires the `go` toolchain to be installed. If the toolchain is unavailable the `go.mod` change is still applied and the `go.sum` is flagged so it can be brought back in sync with `go mod tidy`. Because the module graph is not re-resolved, upgrades that introduce new indirect requirements may still need a follow-up `go mod tidy`.   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically.
+* [org.openrewrite.golang.security.GoSecurityBestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/gosecuritybestpractices)
+  * **Go security best practices**
+  * Locates common security vulnerabilities in Go code, mirroring the checks performed by `gosec`.
+* [org.openrewrite.golang.security.search.FindCommandInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findcommandinjection)
+  * **Find command execution vectors in Go**
+  * Finds Go calls into `os/exec` (`Command`, `CommandContext`). When any part of the command or its arguments is derived from user input, these calls can allow OS command injection. Review each call site to ensure the executable and its arguments are not externally controlled.
+* [org.openrewrite.golang.security.search.FindInsecureRandom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findinsecurerandom)
+  * **Find use of insecure random number generation in Go**
+  * Finds Go calls into `math/rand` and `math/rand/v2`. These generators are not cryptographically secure and must not be used to produce secrets, tokens, nonces, salts, or any other security-sensitive value. Use `crypto/rand` instead.
+* [org.openrewrite.golang.security.search.FindInsecureTlsConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findinsecuretlsconfig)
+  * **Find insecure TLS configuration in Go**
+  * Finds `tls.Config` literals that disable certificate verification by setting `InsecureSkipVerify: true`. This makes the connection vulnerable to man-in-the-middle attacks. Remove the field or set it to `false` and configure a proper certificate chain.
+* [org.openrewrite.golang.security.search.FindSqlInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findsqlinjection)
+  * **Find SQL injection vectors in Go**
+  * Finds query-executing methods on `database/sql` types (`DB`, `Tx`, `Conn`, `Stmt`). When a query string is built by concatenating user input rather than using bind parameters (`?` / `$1` placeholders), these calls can allow SQL injection. Review each call site to ensure queries are parameterized.
+* [org.openrewrite.golang.security.search.FindWeakCryptoAlgorithm](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/security/search/findweakcryptoalgorithm)
+  * **Find use of weak cryptographic algorithms in Go**
+  * Finds Go calls into `crypto/md5`, `crypto/sha1`, `crypto/des`, and `crypto/rc4`. These algorithms are cryptographically broken and should not be used for security-sensitive purposes such as hashing passwords, generating signatures, or encrypting data. Prefer SHA-256 or stronger (`crypto/sha256`, `crypto/sha512`) and AES (`crypto/aes`).
 * [org.openrewrite.java.dependencies.AddExplicitTransitiveDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/addexplicittransitivedependencies)
   * **Add explicit transitive dependencies**
   * Detects when Java source code or configuration files reference types from transitive Maven dependencies and promotes those transitive dependencies to explicit direct dependencies in the pom.xml. This ensures the build is resilient against changes in transitive dependency trees of upstream libraries.
@@ -8466,48 +8469,423 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-migrate-python
 
+* [org.openrewrite.python.codequality.AllBranchesIdentical](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/allbranchesidentical)
+  * **Remove conditional with identical branches**
+  * Replace `if`/`elif`/`else` chains where every branch has the same body with just the body, since the condition has no effect on what code executes.
+* [org.openrewrite.python.codequality.BooleanChecksNotInverted](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/booleanchecksnotinverted)
+  * **Boolean checks should not be inverted**
+  * Replace inverted boolean comparisons like `not (a == b)` with the equivalent direct operator (`a != b`), and remove double negations like `not (not x)`.
+* [org.openrewrite.python.codequality.CollapsibleIfStatements](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/collapsibleifstatements)
+  * **Merge collapsible if statements**
+  * Combine nested `if` statements that have no `else` branch into a single `if` joined with `and`.
+* [org.openrewrite.python.codequality.MergeIdenticalBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/mergeidenticalbranches)
+  * **Merge consecutive branches with identical bodies**
+  * Combine consecutive `if`/`elif` branches that have the same body into a single branch with conditions joined by `or`.
+* [org.openrewrite.python.codequality.RemoveDuplicateConditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeduplicateconditions)
+  * **Remove duplicate conditions in if/elif chains**
+  * Remove `elif` branches whose condition is identical to an earlier branch in the same `if`/`elif` chain, since the duplicate branch is dead code that can never execute.
+* [org.openrewrite.python.codequality.RemoveSelfAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeselfassignment)
+  * **Remove self-assignments**
+  * Remove statements that assign a variable to itself (`x = x`, `self.x = self.x`), since they have no effect.
+* [org.openrewrite.python.codequality.RemoveUnconditionalValueOverwrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/removeunconditionalvalueoverwrite)
+  * **Remove unconditional value overwrites**
+  * Remove consecutive assignments that write to the same dict key or object attribute, since the first value is immediately overwritten and never used.
+* [org.openrewrite.python.codequality.SimplifyBooleanLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/simplifybooleanliteral)
+  * **Simplify boolean literal comparisons**
+  * Replace comparisons against boolean literals (`== True`, `!= False`, `is True`, etc.) with the simpler equivalent boolean expression.
+* [org.openrewrite.python.codequality.SimplifyRedundantLogicalExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/simplifyredundantlogicalexpression)
+  * **Simplify redundant logical expressions**
+  * Replace `x and x` with `x` and `x or x` with `x`. Identical operands in a logical expression are redundant and often indicate a copy-paste mistake.
 * [org.openrewrite.python.migrate.DependencyInsight](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/dependencyinsight)
   * **Python dependency insight**
   * Find Python dependencies, including transitive dependencies, matching a package name pattern. Results include the resolved version, scope, and whether the dependency is direct or transitive.
+* [org.openrewrite.python.migrate.FindAifcModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaifcmodule)
+  * **Find deprecated `aifc` module usage**
+  * The `aifc` module was deprecated in Python 3.11 and removed in Python 3.13. Use third-party audio libraries instead.
+* [org.openrewrite.python.migrate.FindAsyncioCoroutineDecorator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findasynciocoroutinedecorator)
+  * **Find deprecated `@asyncio.coroutine` decorator**
+  * Find usage of the deprecated `@asyncio.coroutine` decorator which was removed in Python 3.11. Convert to `async def` syntax with `await` instead of `yield from`.
+* [org.openrewrite.python.migrate.FindAudioopModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findaudioopmodule)
+  * **Find deprecated `audioop` module usage**
+  * The `audioop` module was deprecated in Python 3.11 and removed in Python 3.13. Use pydub, numpy, or scipy for audio operations.
+* [org.openrewrite.python.migrate.FindCgiModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgimodule)
+  * **Find deprecated `cgi` module usage**
+  * The `cgi` module was deprecated in Python 3.11 and removed in Python 3.13. Use `urllib.parse` for query string parsing, `html.escape()` for escaping, and web frameworks or `email.message` for form handling.
+* [org.openrewrite.python.migrate.FindCgitbModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcgitbmodule)
+  * **Find deprecated `cgitb` module usage**
+  * The `cgitb` module was deprecated in Python 3.11 and removed in Python 3.13. Use the standard `logging` and `traceback` modules for error handling.
+* [org.openrewrite.python.migrate.FindChunkModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findchunkmodule)
+  * **Find deprecated `chunk` module usage**
+  * The `chunk` module was deprecated in Python 3.11 and removed in Python 3.13. Implement IFF chunk reading manually or use specialized libraries.
+* [org.openrewrite.python.migrate.FindCryptModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findcryptmodule)
+  * **Find deprecated `crypt` module usage**
+  * The `crypt` module was deprecated in Python 3.11 and removed in Python 3.13. Use `bcrypt`, `argon2-cffi`, or `passlib` instead.
+* [org.openrewrite.python.migrate.FindDistutilsUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finddistutilsusage)
+  * **Find deprecated distutils module usage**
+  * Find imports of the deprecated `distutils` module which was removed in Python 3.12. Migrate to `setuptools` or other modern build tools.
+* [org.openrewrite.python.migrate.FindFunctoolsCmpToKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfunctoolscmptokey)
+  * **Find `functools.cmp_to_key()` usage**
+  * Find usage of `functools.cmp_to_key()` which is a Python 2 compatibility function. Consider using a key function directly.
 * [org.openrewrite.python.migrate.FindFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfutureimports)
   * **Find `__future__` imports**
   * Find `__future__` imports and add a search marker.
+* [org.openrewrite.python.migrate.FindImghdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimghdrmodule)
+  * **Find deprecated `imghdr` module usage**
+  * The `imghdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype`, `python-magic`, or `Pillow` instead.
+* [org.openrewrite.python.migrate.FindImpUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimpusage)
+  * **Find deprecated imp module usage**
+  * Find imports of the deprecated `imp` module which was removed in Python 3.12. Migrate to `importlib`.
+* [org.openrewrite.python.migrate.FindLocaleGetdefaultlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findlocalegetdefaultlocale)
+  * **Find deprecated `locale.getdefaultlocale()` usage**
+  * `locale.getdefaultlocale()` was deprecated in Python 3.11. Use `locale.setlocale()`, `locale.getlocale()`, or `locale.getpreferredencoding(False)` instead.
+* [org.openrewrite.python.migrate.FindMacpathModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmacpathmodule)
+  * **Find removed `macpath` module usage**
+  * The `macpath` module was removed in Python 3.8. Use `os.path` instead.
+* [org.openrewrite.python.migrate.FindMailcapModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmailcapmodule)
+  * **Find deprecated `mailcap` module usage**
+  * The `mailcap` module was deprecated in Python 3.11 and removed in Python 3.13. Use `mimetypes` module for MIME type handling.
 * [org.openrewrite.python.migrate.FindMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmethods)
   * **Find Python function and method usages**
   * Find function and method calls by pattern. Covers standalone functions, class methods, static methods, and constructor calls.
+* [org.openrewrite.python.migrate.FindMsilibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findmsilibmodule)
+  * **Find deprecated `msilib` module usage**
+  * The `msilib` module was deprecated in Python 3.11 and removed in Python 3.13. Use platform-specific tools for MSI creation.
+* [org.openrewrite.python.migrate.FindNisModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnismodule)
+  * **Find deprecated `nis` module usage**
+  * The `nis` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindNntplibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findnntplibmodule)
+  * **Find deprecated `nntplib` module usage**
+  * The `nntplib` module was deprecated in Python 3.11 and removed in Python 3.13. NNTP is largely obsolete; consider alternatives if needed.
+* [org.openrewrite.python.migrate.FindOsPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findospopen)
+  * **Find deprecated `os.popen()` usage**
+  * `os.popen()` has been deprecated since Python 3.6. Use `subprocess.run()` or `subprocess.Popen()` instead for better control over process creation and output handling.
+* [org.openrewrite.python.migrate.FindOsSpawn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findosspawn)
+  * **Find deprecated `os.spawn*()` usage**
+  * The `os.spawn*()` family of functions are deprecated. Use `subprocess.run()` or `subprocess.Popen()` instead.
+* [org.openrewrite.python.migrate.FindOssaudiodevModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findossaudiodevmodule)
+  * **Find deprecated `ossaudiodev` module usage**
+  * The `ossaudiodev` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindPathlibLinkTo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpathliblinkto)
+  * **Find deprecated `Path.link_to()` usage**
+  * Find usage of `Path.link_to()` which was deprecated in Python 3.10 and removed in 3.12. Use `hardlink_to()` instead (note: argument order is reversed).
+* [org.openrewrite.python.migrate.FindPipesModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findpipesmodule)
+  * **Find deprecated `pipes` module usage**
+  * The `pipes` module was deprecated in Python 3.11 and removed in Python 3.13. Use subprocess with shlex.quote() for shell escaping.
+* [org.openrewrite.python.migrate.FindRemovedModules312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findremovedmodules312)
+  * **Find modules removed in Python 3.12**
+  * Find imports of modules that were removed in Python 3.12, including asynchat, asyncore, and smtpd.
+* [org.openrewrite.python.migrate.FindShutilRmtreeOnerror](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findshutilrmtreeonerror)
+  * **Find deprecated `shutil.rmtree(onerror=...)` parameter**
+  * The `onerror` parameter of `shutil.rmtree()` was deprecated in Python 3.12 in favor of `onexc`. The `onexc` callback receives the exception object directly rather than an exc_info tuple.
+* [org.openrewrite.python.migrate.FindSndhdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsndhdrmodule)
+  * **Find deprecated `sndhdr` module usage**
+  * The `sndhdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype` or audio libraries like `pydub` instead.
+* [org.openrewrite.python.migrate.FindSocketGetFQDN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsocketgetfqdn)
+  * **Find `socket.getfqdn()` usage**
+  * Find usage of `socket.getfqdn()` which can be slow and unreliable. Consider using `socket.gethostname()` instead.
+* [org.openrewrite.python.migrate.FindSpwdModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findspwdmodule)
+  * **Find deprecated `spwd` module usage**
+  * The `spwd` module was deprecated in Python 3.11 and removed in Python 3.13. There is no direct replacement.
+* [org.openrewrite.python.migrate.FindSslMatchHostname](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsslmatchhostname)
+  * **Find deprecated `ssl.match_hostname()`**
+  * Find usage of the deprecated `ssl.match_hostname()` function which was removed in Python 3.12. Use `ssl.SSLContext.check_hostname` instead.
+* [org.openrewrite.python.migrate.FindSunauModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsunaumodule)
+  * **Find deprecated `sunau` module usage**
+  * The `sunau` module was deprecated in Python 3.11 and removed in Python 3.13. Use `soundfile` or `pydub` instead.
+* [org.openrewrite.python.migrate.FindSysCoroutineWrapper](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findsyscoroutinewrapper)
+  * **Find removed `sys.set_coroutine_wrapper()` / `sys.get_coroutine_wrapper()`**
+  * `sys.set_coroutine_wrapper()` and `sys.get_coroutine_wrapper()` were deprecated in Python 3.7 and removed in Python 3.8.
+* [org.openrewrite.python.migrate.FindTelnetlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtelnetlibmodule)
+  * **Find deprecated `telnetlib` module usage**
+  * The `telnetlib` module was deprecated in Python 3.11 and removed in Python 3.13. Consider using `telnetlib3` from PyPI, direct socket usage, or SSH-based alternatives like paramiko.
+* [org.openrewrite.python.migrate.FindTempfileMktemp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtempfilemktemp)
+  * **Find deprecated `tempfile.mktemp()` usage**
+  * Find usage of `tempfile.mktemp()` which is deprecated due to security concerns (race condition). Use `mkstemp()` or `NamedTemporaryFile()` instead.
 * [org.openrewrite.python.migrate.FindTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findtypes)
   * **Find Python types**
   * Find type references by name. Identifies classes matching a type pattern. In Python, all type definitions use the `class` keyword, covering regular classes, abstract base classes, protocols, enums, dataclasses, named tuples, typed dicts, and more.
+* [org.openrewrite.python.migrate.FindUrllibParseSplitFunctions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsesplitfunctions)
+  * **Find deprecated urllib.parse split functions**
+  * Find usage of deprecated urllib.parse split functions (splithost, splitport, etc.) removed in Python 3.14. Use urlparse() instead.
+* [org.openrewrite.python.migrate.FindUrllibParseToBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findurllibparsetobytes)
+  * **Find deprecated `urllib.parse.to_bytes()` usage**
+  * Find usage of `urllib.parse.to_bytes()` which was deprecated in Python 3.8 and removed in 3.14. Use str.encode() directly.
+* [org.openrewrite.python.migrate.FindUuModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/finduumodule)
+  * **Find deprecated `uu` module usage**
+  * The `uu` module was deprecated in Python 3.11 and removed in Python 3.13. Use `base64` module instead for encoding binary data.
+* [org.openrewrite.python.migrate.FindXdrlibModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findxdrlibmodule)
+  * **Find deprecated `xdrlib` module usage**
+  * The `xdrlib` module was deprecated in Python 3.11 and removed in Python 3.13. Use `struct` module for binary packing/unpacking.
+* [org.openrewrite.python.migrate.MigrateAsyncioCoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migrateasynciocoroutine)
+  * **Migrate `@asyncio.coroutine` to `async def`**
+  * Migrate functions using the deprecated `@asyncio.coroutine` decorator to use `async def` syntax. Also transforms `yield from` to `await`. The decorator was removed in Python 3.11.
+* [org.openrewrite.python.migrate.MigrateAvroPython3ToAvro](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migrateavropython3toavro)
+  * **Migrate the deprecated `avro-python3` package to `avro`**
+  * Replace the deprecated `avro-python3` distribution with its maintained successor, Apache `avro`. Both install the same top-level `avro` import package, so module imports are unchanged, but `avro-python3`'s `avro.schema.Parse` was renamed to the lowercase `avro.schema.parse` (and `Parse` removed) in `avro` 1.11+, so that reference is rewritten. The dependency swap is applied by `org.openrewrite.python.ChangeDependency`.
 * [org.openrewrite.python.migrate.MigrateToPyprojectToml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/migratetopyprojecttoml)
   * **Migrate to `pyproject.toml`**
   * Migrate Python projects from `requirements.txt` and/or `setup.cfg` to `pyproject.toml` with `hatchling` build backend.
+* [org.openrewrite.python.migrate.RemoveFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/removefutureimports)
+  * **Remove obsolete `__future__` imports**
+  * Remove `from __future__ import ...` statements for features that are enabled by default in Python 3.
+* [org.openrewrite.python.migrate.ReplaceArrayFromstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearrayfromstring)
+  * **Replace `array.fromstring()` with `array.frombytes()`**
+  * Replace `fromstring()` with `frombytes()` on array objects. The fromstring() method was deprecated in Python 3.2 and removed in 3.14.
+* [org.openrewrite.python.migrate.ReplaceArrayTostring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearraytostring)
+  * **Replace `array.tostring()` with `array.tobytes()`**
+  * Replace `tostring()` with `tobytes()` on array objects. The tostring() method was deprecated in Python 3.2 and removed in 3.14.
+* [org.openrewrite.python.migrate.ReplaceAstBytes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastbytes)
+  * **Replace `ast.Bytes` with `ast.Constant`**
+  * The `ast.Bytes` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, bytes)`.
+* [org.openrewrite.python.migrate.ReplaceAstEllipsis](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastellipsis)
+  * **Replace `ast.Ellipsis` with `ast.Constant`**
+  * The `ast.Ellipsis` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value is ...`.
+* [org.openrewrite.python.migrate.ReplaceAstNameConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnameconstant)
+  * **Replace `ast.NameConstant` with `ast.Constant`**
+  * The `ast.NameConstant` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `node.value in (True, False, None)`.
+* [org.openrewrite.python.migrate.ReplaceAstNum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceastnum)
+  * **Replace `ast.Num` with `ast.Constant`**
+  * The `ast.Num` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, (int, float, complex))`.
+* [org.openrewrite.python.migrate.ReplaceAstStr](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceaststr)
+  * **Replace `ast.Str` with `ast.Constant`**
+  * The `ast.Str` node type was deprecated in Python 3.8 and removed in Python 3.14. Replace with `ast.Constant` and check `isinstance(node.value, str)`.
+* [org.openrewrite.python.migrate.ReplaceCalendarConstants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecalendarconstants)
+  * **Replace deprecated calendar constants with uppercase**
+  * Replace deprecated mixed-case calendar constants like `calendar.January` with their uppercase equivalents like `calendar.JANUARY`. The mixed-case constants were deprecated in Python 3.12.
+* [org.openrewrite.python.migrate.ReplaceCgiParseQs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqs)
+  * **Replace `cgi.parse_qs()` with `urllib.parse.parse_qs()`**
+  * `cgi.parse_qs()` was removed in Python 3.8. Use `urllib.parse.parse_qs()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
+* [org.openrewrite.python.migrate.ReplaceCgiParseQsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecgiparseqsl)
+  * **Replace `cgi.parse_qsl()` with `urllib.parse.parse_qsl()`**
+  * `cgi.parse_qsl()` was removed in Python 3.8. Use `urllib.parse.parse_qsl()` instead. Note: this rewrites call sites but does not manage imports. Use with `ChangeImport` in a composite recipe to update `from` imports.
+* [org.openrewrite.python.migrate.ReplaceCollectionsAbcImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacecollectionsabcimports)
+  * **Replace `collections` ABC imports with `collections.abc`**
+  * Migrate deprecated abstract base class imports from `collections` to `collections.abc`. These imports were deprecated in Python 3.3 and removed in Python 3.10.
+* [org.openrewrite.python.migrate.ReplaceConditionNotifyAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconditionnotifyall)
+  * **Replace `Condition.notifyAll()` with `Condition.notify_all()`**
+  * Replace `notifyAll()` method calls with `notify_all()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceConfigparserReadfp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparserreadfp)
+  * **Replace `ConfigParser.readfp()` with `read_file()`**
+  * The `ConfigParser.readfp()` method was deprecated in Python 3.2 and removed in Python 3.13. Replace with `read_file()`.
+* [org.openrewrite.python.migrate.ReplaceConfigparserSafeConfigParser](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceconfigparsersafeconfigparser)
+  * **Replace `configparser.SafeConfigParser` with `ConfigParser`**
+  * The `configparser.SafeConfigParser` class was deprecated in Python 3.2 and removed in Python 3.12. Replace with `configparser.ConfigParser`.
+* [org.openrewrite.python.migrate.ReplaceDatetimeUtcFromTimestamp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcfromtimestamp)
+  * **Replace `datetime.utcfromtimestamp()` with `datetime.fromtimestamp(ts, UTC)`**
+  * The `datetime.utcfromtimestamp()` method is deprecated in Python 3.12. Replace it with `datetime.fromtimestamp(ts, datetime.UTC)` for timezone-aware datetime objects.
+* [org.openrewrite.python.migrate.ReplaceDatetimeUtcNow](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedatetimeutcnow)
+  * **Replace `datetime.utcnow()` with `datetime.now(UTC)`**
+  * The `datetime.utcnow()` method is deprecated in Python 3.12. Replace it with `datetime.now(datetime.UTC)` for timezone-aware datetime objects.
+* [org.openrewrite.python.migrate.ReplaceDistutilsVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacedistutilsversion)
+  * **Replace deprecated distutils.version usage**
+  * Detect usage of deprecated `distutils.version.LooseVersion` and `distutils.version.StrictVersion`. These should be migrated to `packaging.version.Version`. Note: Manual migration is required as `packaging.version.Version` is not a drop-in replacement.
+* [org.openrewrite.python.migrate.ReplaceElementGetchildren](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetchildren)
+  * **Replace `Element.getchildren()` with `list(element)`**
+  * Replace `getchildren()` with `list(element)` on XML Element objects. Deprecated in Python 3.9.
+* [org.openrewrite.python.migrate.ReplaceElementGetiterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceelementgetiterator)
+  * **Replace `Element.getiterator()` with `Element.iter()`**
+  * Replace `getiterator()` with `iter()` on XML Element objects. The getiterator() method was deprecated in Python 3.9.
+* [org.openrewrite.python.migrate.ReplaceEventIsSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceeventisset)
+  * **Replace `Event.isSet()` with `Event.is_set()`**
+  * Replace `isSet()` method calls with `is_set()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceGettextDeprecations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacegettextdeprecations)
+  * **Replace deprecated gettext l*gettext() functions**
+  * Replace deprecated gettext functions like `lgettext()` with their modern equivalents like `gettext()`. The l*gettext() functions were removed in Python 3.11.
+* [org.openrewrite.python.migrate.ReplaceHtmlParserUnescape](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacehtmlparserunescape)
+  * **Replace `HTMLParser.unescape()` with `html.unescape()`**
+  * `HTMLParser.unescape()` was removed in Python 3.9. Use `html.unescape()` instead.
+* [org.openrewrite.python.migrate.ReplaceLocaleResetlocale](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacelocaleresetlocale)
+  * **Replace `locale.resetlocale()` with `locale.setlocale(LC_ALL, '')`**
+  * The `locale.resetlocale()` function was deprecated in Python 3.11 and removed in Python 3.13. Replace with `locale.setlocale(locale.LC_ALL, '')`.
+* [org.openrewrite.python.migrate.ReplacePercentFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepercentformatwithfstring)
+  * **Replace `%` formatting with f-string**
+  * Replace `&quot;...&quot; % (...)` expressions with f-strings (Python 3.6+). Only converts `%s` and `%r` specifiers where the format string is a literal and the conversion is safe.
+* [org.openrewrite.python.migrate.ReplacePkgutilFindLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilfindloader)
+  * **Replace `pkgutil.find_loader()` with `importlib.util.find_spec()`**
+  * The `pkgutil.find_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
+* [org.openrewrite.python.migrate.ReplacePkgutilGetLoader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacepkgutilgetloader)
+  * **Replace `pkgutil.get_loader()` with `importlib.util.find_spec()`**
+  * The `pkgutil.get_loader()` function was deprecated in Python 3.12. Replace with `importlib.util.find_spec()`. Note: returns ModuleSpec, use .loader for loader.
+* [org.openrewrite.python.migrate.ReplacePlatformPopen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceplatformpopen)
+  * **Replace `platform.popen()` with `subprocess.check_output()`**
+  * `platform.popen()` was removed in Python 3.8. Use `subprocess.check_output(cmd, shell=True)` instead. Note: this rewrites call sites but does not manage imports.
+* [org.openrewrite.python.migrate.ReplaceReTemplate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceretemplate)
+  * **Replace `re.template()` with `re.compile()` and flag `re.TEMPLATE`/`re.T`**
+  * `re.template()` was deprecated in Python 3.11 and removed in 3.13. Calls are auto-replaced with `re.compile()`. `re.TEMPLATE`/`re.T` flags have no direct replacement and are flagged for manual review.
+* [org.openrewrite.python.migrate.ReplaceStrFormatWithFString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacestrformatwithfstring)
+  * **Replace `str.format()` with f-string**
+  * Replace `&quot;...&quot;.format(...)` calls with f-strings (Python 3.6+). Only converts cases where the format string is a literal and the conversion is safe.
+* [org.openrewrite.python.migrate.ReplaceSysLastExcInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacesyslastexcinfo)
+  * **Replace `sys.last_type` / `sys.last_value` / `sys.last_traceback` with `sys.last_exc`**
+  * `sys.last_type`, `sys.last_value`, and `sys.last_traceback` were deprecated in Python 3.12. Replace them with their `sys.last_exc`-based equivalents: `type(sys.last_exc)`, `sys.last_exc`, and `sys.last_exc.__traceback__` respectively.
+* [org.openrewrite.python.migrate.ReplaceTarfileFilemode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetarfilefilemode)
+  * **Replace `tarfile.filemode` with `stat.filemode`**
+  * `tarfile.filemode` was removed in Python 3.8. Use `stat.filemode()` instead.
+* [org.openrewrite.python.migrate.ReplaceThreadGetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadgetname)
+  * **Replace `Thread.getName()` with `Thread.name`**
+  * Replace `getName()` method calls with the `name` property. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadIsAlive](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisalive)
+  * **Replace `Thread.isAlive()` with `Thread.is_alive()`**
+  * Replace `isAlive()` method calls with `is_alive()`. Deprecated in Python 3.1 and removed in 3.9.
+* [org.openrewrite.python.migrate.ReplaceThreadIsDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadisdaemon)
+  * **Replace `Thread.isDaemon()` with `Thread.daemon`**
+  * Replace `isDaemon()` method calls with the `daemon` property. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadSetDaemon](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetdaemon)
+  * **Replace `Thread.setDaemon()` with `Thread.daemon = ...`**
+  * Replace `setDaemon()` method calls with `daemon` property assignment. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadSetName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadsetname)
+  * **Replace `Thread.setName()` with `Thread.name = ...`**
+  * Replace `setName()` method calls with `name` property assignment. Deprecated in Python 3.10, removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadingActiveCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingactivecount)
+  * **Replace `threading.activeCount()` with `threading.active_count()`**
+  * Replace `threading.activeCount()` with `threading.active_count()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceThreadingCurrentThread](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacethreadingcurrentthread)
+  * **Replace `threading.currentThread()` with `threading.current_thread()`**
+  * Replace `threading.currentThread()` with `threading.current_thread()`. The camelCase version was deprecated in Python 3.10 and removed in 3.12.
+* [org.openrewrite.python.migrate.ReplaceTypingCallableWithCollectionsAbcCallable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingcallablewithcollectionsabccallable)
+  * **Replace `typing.Callable` with `collections.abc.Callable`**
+  * PEP 585 deprecated `typing.Callable` in Python 3.9. Replace with `collections.abc.Callable` for type annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingDictWithDict](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdictwithdict)
+  * **Replace `typing.Dict` with `dict`**
+  * PEP 585 deprecated `typing.Dict` in Python 3.9. Replace with the built-in `dict` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingListWithList](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypinglistwithlist)
+  * **Replace `typing.List` with `list`**
+  * PEP 585 deprecated `typing.List` in Python 3.9. Replace with the built-in `list` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingOptionalWithUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingoptionalwithunion)
+  * **Replace `typing.Optional[X]` with `X | None`**
+  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Optional[X]` with the more concise `X | None` syntax.
+* [org.openrewrite.python.migrate.ReplaceTypingSetWithSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingsetwithset)
+  * **Replace `typing.Set` with `set`**
+  * PEP 585 deprecated `typing.Set` in Python 3.9. Replace with the built-in `set` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingText](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtext)
+  * **Replace `typing.Text` with `str`**
+  * `typing.Text` is deprecated as of Python 3.11. It was an alias for `str` for Python 2/3 compatibility. Replace with `str`.
+* [org.openrewrite.python.migrate.ReplaceTypingTupleWithTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtuplewithtuple)
+  * **Replace `typing.Tuple` with `tuple`**
+  * PEP 585 deprecated `typing.Tuple` in Python 3.9. Replace with the built-in `tuple` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingUnionWithPipe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingunionwithpipe)
+  * **Replace `typing.Union[X, Y]` with `X | Y`**
+  * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Union[X, Y, ...]` with the more concise `X | Y | ...` syntax.
+* [org.openrewrite.python.migrate.ReplaceUnittestDeprecatedAliases](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replaceunittestdeprecatedaliases)
+  * **Replace deprecated unittest method aliases**
+  * Replace deprecated unittest.TestCase method aliases like `assertEquals` with their modern equivalents like `assertEqual`. These aliases were removed in Python 3.11/3.12.
+* [org.openrewrite.python.migrate.UpgradePythonCloudFormationRuntime](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythoncloudformationruntime)
+  * **Upgrade Python runtime in CloudFormation templates**
+  * Update Python Lambda runtimes in CloudFormation and SAM templates to a target version. Bumps `Runtime: python3.x` properties (`AWS::Lambda::Function`, `AWS::Serverless::Function`, and the SAM `Globals` section) and `python3.x` entries in `CompatibleRuntimes` lists of Lambda layer versions. Indirection is followed: a YAML anchor aliased from a runtime value is bumped where it is defined, and a parameter referenced from a runtime value (`!Ref` or `Ref:`) has its `Default` and any `AllowedValues` bumped. Templates are recognized by content — `AWSTemplateFormatVersion`, an `AWS::` `Transform`, or `Resources` with `AWS::` resource types — so any YAML template is updated regardless of its file name or location. Only runtimes older than the target are changed; a runtime already on a newer version is left as-is.
 * [org.openrewrite.python.migrate.UpgradePythonDockerImage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythondockerimage)
   * **Upgrade Python Docker base image**
-  * Update the Python version of `Dockerfile` base images (`FROM python:&lt;version&gt;`) to a target version. Tag suffixes such as `-slim` are preserved, any patch component is dropped, and an image already on a newer version is left as-is.
+  * Update the Python version of Python images in Dockerfiles to a target version: `FROM python:&lt;version&gt;` base images and `COPY --from=&lt;python image&gt;` / `ADD --from=&lt;python image&gt;` stage references (e.g. `COPY --from=registry.example.com/approved-images/python:3.10-ubuntu22.04 /usr /usr`). Tag suffixes such as `-slim` are preserved, any patch component is dropped, and an image already on a newer version is left as-is. `--from` references to named build stages are not image references and are left untouched.
 * [org.openrewrite.python.migrate.UpgradePythonVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversion)
   * **Upgrade Python version in project files**
-  * Update the Python version referenced in project metadata and packaging files to a target version. Updates `Pipfile` (`python_version` / `python_full_version`), `pyproject.toml` (`[project] requires-python` and Poetry's `[tool.poetry.dependencies] python`), `setup.cfg` (`python_requires`), and `.python-version` files. When a lock file (`uv.lock` or `Pipfile.lock`) is present and the matching package manager (`uv` or `pipenv`) is available on `PATH`, the lock file is regenerated to match. Only references older than the target are changed; a file already on a newer version is left as-is. `Dockerfile` base images are handled separately by `UpgradePythonDockerImage`, and `requirements.txt` is not modified because it pins package versions, not the interpreter version.
+  * Update the Python version referenced in project metadata and packaging files to a target version. Updates `Pipfile` (`python_version` / `python_full_version`), `pyproject.toml` (`[project] requires-python` and Poetry's `[tool.poetry.dependencies] python`), `setup.cfg` (`python_requires`), and `.python-version` files. When a lock file (`uv.lock` or `Pipfile.lock`) is present and the matching package manager (`uv` or `pipenv`) is available on `PATH`, the lock file is regenerated to match. Only references older than the target are changed; a file already on a newer version is left as-is. `Dockerfile` base images are handled separately by `UpgradePythonDockerImage`, CloudFormation/SAM templates by `UpgradePythonCloudFormationRuntime`, Mend `.whitesource` files by `UpgradePythonWhitesourceConfig`, and `requirements.txt` is not modified because it pins package versions, not the interpreter version.
 * [org.openrewrite.python.migrate.UpgradePythonVersionTo310](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto310)
   * **Upgrade Python version in project files to 3.10**
-  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.10.
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, `Dockerfile` base images, CloudFormation/SAM template runtimes, and Mend `.whitesource` files to 3.10.
 * [org.openrewrite.python.migrate.UpgradePythonVersionTo311](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto311)
   * **Upgrade Python version in project files to 3.11**
-  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.11.
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, `Dockerfile` base images, CloudFormation/SAM template runtimes, and Mend `.whitesource` files to 3.11.
 * [org.openrewrite.python.migrate.UpgradePythonVersionTo312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto312)
   * **Upgrade Python version in project files to 3.12**
-  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.12.
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, `Dockerfile` base images, CloudFormation/SAM template runtimes, and Mend `.whitesource` files to 3.12.
 * [org.openrewrite.python.migrate.UpgradePythonVersionTo313](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto313)
   * **Upgrade Python version in project files to 3.13**
-  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.13.
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, `Dockerfile` base images, CloudFormation/SAM template runtimes, and Mend `.whitesource` files to 3.13.
 * [org.openrewrite.python.migrate.UpgradePythonVersionTo314](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto314)
   * **Upgrade Python version in project files to 3.14**
-  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.14.
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, `Dockerfile` base images, CloudFormation/SAM template runtimes, and Mend `.whitesource` files to 3.14.
 * [org.openrewrite.python.migrate.UpgradePythonVersionTo38](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto38)
   * **Upgrade Python version in project files to 3.8**
-  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.8.
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, `Dockerfile` base images, CloudFormation/SAM template runtimes, and Mend `.whitesource` files to 3.8.
 * [org.openrewrite.python.migrate.UpgradePythonVersionTo39](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonversionto39)
   * **Upgrade Python version in project files to 3.9**
-  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, and `Dockerfile` base images to 3.9.
+  * Update the Python version referenced in `pyproject.toml`, `Pipfile`, `setup.cfg`, `.python-version`, `Dockerfile` base images, CloudFormation/SAM template runtimes, and Mend `.whitesource` files to 3.9.
+* [org.openrewrite.python.migrate.UpgradePythonWhitesourceConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradepythonwhitesourceconfig)
+  * **Upgrade Python version in Mend `.whitesource` files**
+  * Update Python version references in Mend (formerly WhiteSource) `.whitesource` repository configuration files to a target version. Bumps `python&lt;MAJOR&gt;&lt;MINOR&gt;` and `python&lt;MAJOR&gt;.&lt;MINOR&gt;` tokens in the `settingsInheritedFrom` value (e.g. `&quot;org/whitesource-config@python310&quot;` -&gt; `...@python312`) and in the `python.path` scan setting (a Unified Agent parameter, so both bare executable names such as `python3.9` and full paths such as `/usr/bin/python3.9` are covered). Only versions older than the target are changed; a version already newer is left as-is.
+* [org.openrewrite.python.migrate.UpgradeToPython310](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython310)
+  * **Upgrade to Python 3.10**
+  * Migrate deprecated APIs and adopt new syntax for Python 3.10 compatibility. This includes adopting PEP 604 union type syntax (`X | Y`) and other modernizations between Python 3.9 and 3.10.
+* [org.openrewrite.python.migrate.UpgradeToPython311](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython311)
+  * **Upgrade to Python 3.11**
+  * Migrate deprecated and removed APIs for Python 3.11 compatibility. This includes handling removed modules, deprecated functions, and API changes between Python 3.10 and 3.11.
+* [org.openrewrite.python.migrate.UpgradeToPython312](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython312)
+  * **Upgrade to Python 3.12**
+  * Migrate deprecated and removed APIs for Python 3.12 compatibility. This includes detecting usage of the removed `imp` module and other legacy modules that were removed in Python 3.12.
+* [org.openrewrite.python.migrate.UpgradeToPython313](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython313)
+  * **Upgrade to Python 3.13**
+  * Migrate deprecated and removed APIs for Python 3.13 compatibility. This includes detecting usage of modules removed in PEP 594 ('dead batteries'), other API changes between Python 3.12 and 3.13, and bumping third-party dependencies (`ruff`, `avro-python3`) whose pinned releases do not install cleanly on Python 3.13.
+* [org.openrewrite.python.migrate.UpgradeToPython314](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython314)
+  * **Upgrade to Python 3.14**
+  * Migrate deprecated and removed APIs for Python 3.14 compatibility. This includes replacing deprecated AST node types with `ast.Constant` and other API changes between Python 3.13 and 3.14.
+* [org.openrewrite.python.migrate.UpgradeToPython38](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython38)
+  * **Upgrade to Python 3.8**
+  * Migrate deprecated APIs and detect legacy patterns for Python 3.8 compatibility.
+* [org.openrewrite.python.migrate.UpgradeToPython39](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/upgradetopython39)
+  * **Upgrade to Python 3.9**
+  * Migrate deprecated APIs for Python 3.9 compatibility. This includes PEP 585 built-in generics, removed base64 functions, and deprecated XML Element methods.
+* [org.openrewrite.python.migrate.langchain.FindDeprecatedLangchainAgents](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/finddeprecatedlangchainagents)
+  * **Find deprecated LangChain agent patterns**
+  * Find usage of deprecated LangChain agent patterns including `initialize_agent`, `AgentExecutor`, and `LLMChain`. These were deprecated in LangChain v0.2 and removed in v1.0.
+* [org.openrewrite.python.migrate.langchain.FindLangchainCreateReactAgent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/findlangchaincreatereactagent)
+  * **Find `create_react_agent` usage (replace with `create_agent`)**
+  * Find `from langgraph.prebuilt import create_react_agent` which should be replaced with `from langchain.agents import create_agent` in LangChain v1.0.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainClassicImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainclassicimports)
+  * **Replace `langchain` legacy imports with `langchain_classic`**
+  * Migrate legacy chain, retriever, and indexing imports from `langchain` to `langchain_classic`. These were moved in LangChain v1.0.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainCommunityImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchaincommunityimports)
+  * **Replace `langchain` imports with `langchain_community`**
+  * Migrate third-party integration imports from `langchain` to `langchain_community`. These integrations were moved in LangChain v0.2.
+* [org.openrewrite.python.migrate.langchain.ReplaceLangchainProviderImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/replacelangchainproviderimports)
+  * **Replace `langchain_community` imports with provider packages**
+  * Migrate provider-specific imports from `langchain_community` to dedicated provider packages like `langchain_openai`, `langchain_anthropic`, etc.
+* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain02](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain02)
+  * **Upgrade to LangChain 0.2**
+  * Migrate to LangChain 0.2 by updating imports from `langchain` to `langchain_community` and provider-specific packages.
+* [org.openrewrite.python.migrate.langchain.UpgradeToLangChain1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/langchain/upgradetolangchain1)
+  * **Upgrade to LangChain 1.0**
+  * Migrate to LangChain 1.0 by applying all v0.2 migrations and then moving legacy functionality to `langchain_classic`.
+* [org.openrewrite.python.migrate.pydantic.FindDeprecatedJsonEncoders](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/finddeprecatedjsonencoders)
+  * **Find deprecated `json_encoders` config option**
+  * Pydantic deprecated the `json_encoders` option in `ConfigDict`. Its replacements (`@field_serializer` / `@model_serializer` or `Annotated[..., PlainSerializer(...)]`) require restructuring, so this recipe flags its use for review.
+* [org.openrewrite.python.migrate.pydantic.FindDeprecatedSchemaGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/finddeprecatedschemagenerator)
+  * **Find deprecated `schema_generator` config option**
+  * Pydantic 2.10 deprecated the `schema_generator` option in `ConfigDict`. It has no public replacement yet, so this recipe flags its use for review.
+* [org.openrewrite.python.migrate.pydantic.FindEvalTypeBackportUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/findevaltypebackportusage)
+  * **Find `eval_type_backport` usage removed in Pydantic 2.14**
+  * Pydantic 2.14 removed its support for the `eval_type_backport` package. With the Python 3.10 minimum it is no longer needed. This recipe flags `import eval_type_backport` and `from eval_type_backport import ...` for review.
+* [org.openrewrite.python.migrate.pydantic.FindModelValidatorAfterClassmethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/findmodelvalidatorafterclassmethod)
+  * **Find `@model_validator(mode='after')` on a classmethod**
+  * Pydantic 2.12 deprecated `@model_validator` with `mode='after'` on a classmethod; the implicit classmethod conversion for `after` model validators is removed in V3. Such validators should be instance methods (`self`, no `@classmethod`). This recipe flags the decorator for review, since the rewrite is not safe to mechanize. `field_validator` is unaffected.
+* [org.openrewrite.python.migrate.pydantic.FindSerializeAsAnyUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/findserializeasanyusage)
+  * **Find `serialize_as_any` usage affected by the Pydantic 2.12 unification**
+  * Pydantic 2.12 unified the `serialize_as_any` flag with the `SerializeAsAny` annotation, which can change serialization output versus 2.11. This recipe flags `serialize_as_any=` on `model_dump` / `model_dump_json` (and `TypeAdapter.dump_python` / `dump_json`) for review, since there is no safe mechanical rewrite.
+* [org.openrewrite.python.migrate.pydantic.RemoveEllipsisFromField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/removeellipsisfromfield)
+  * **Remove `...` (Ellipsis) from `Field()`**
+  * Pydantic 2.10 recommends against using `Ellipsis` (`...`) with `Field` to mark a field as required, as it does not play well with static type checkers. Rewrite `Field(...)` to `Field()` (and `Field(..., x=y)` to `Field(x=y)`), keeping the remaining arguments. Only calls resolving to `pydantic.fields.Field` are rewritten.
+* [org.openrewrite.python.migrate.pydantic.ReplaceFinalFieldWithClassVar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/replacefinalfieldwithclassvar)
+  * **Replace `Final` model fields with a default with `ClassVar`**
+  * Pydantic 2.11 deprecates annotating a model field as `Final` with a default value (such fields were treated as class variables). Replace `Final[X] = default` with `ClassVar[X] = default`, which preserves the existing class-variable behavior and is the replacement Pydantic recommends.
+* [org.openrewrite.python.migrate.pydantic.ReplaceModelFieldsInstanceAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/replacemodelfieldsinstanceaccess)
+  * **Replace instance access of `model_fields` / `model_computed_fields`**
+  * Pydantic 2.11 deprecated accessing `model_fields` and `model_computed_fields` on a model instance; these are removed in Pydantic 3.0. Replace `&lt;instance&gt;.model_fields` with `type(&lt;instance&gt;).model_fields` (and likewise for `model_computed_fields`) when the receiver resolves to a Pydantic model, so the attribute is accessed on the class. Class access and `cls` access are left untouched.
+* [org.openrewrite.python.migrate.pydantic.ReplacePopulateByNameWithValidateByName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/replacepopulatebynamewithvalidatebyname)
+  * **Replace `populate_by_name` with `validate_by_name`**
+  * Pydantic 2.11 introduced `validate_by_name` as the equivalent of `populate_by_name`, which is pending deprecation in Pydantic V3. Rename `ConfigDict(populate_by_name=...)` to `ConfigDict(validate_by_name=...)`. This is behavior-preserving (`validate_by_alias` defaults to `True`) and future-proofs the configuration.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic210](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic210)
+  * **Upgrade to Pydantic 2.10**
+  * Flag and migrate code affected by deprecations introduced in Pydantic 2.10, such as the deprecated `schema_generator` config option and the discouraged `Field(...)` Ellipsis form. Also flags the deprecated `json_encoders` config option.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic211](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic211)
+  * **Upgrade to Pydantic 2.11**
+  * Migrate code affected by deprecations introduced in Pydantic 2.11 (and 2.10). Rewrites instance access of `model_fields` / `model_computed_fields` to class access, rewrites `Final` model fields with default values to `ClassVar`, and renames `populate_by_name` to `validate_by_name`.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic212](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic212)
+  * **Upgrade to Pydantic 2.12**
+  * Migrate code affected by changes introduced in Pydantic 2.12 (and 2.10/2.11). Flags `serialize_as_any` usage affected by the 2.12 unification with the `SerializeAsAny` annotation.
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic213](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic213)
+  * **Upgrade to Pydantic 2.13**
+  * Migrate code for Pydantic 2.13. Pydantic 2.13 introduced no new deprecations (an additive release), so this applies all Pydantic 2.12 migrations (which chain back to 2.10).
+* [org.openrewrite.python.migrate.pydantic.UpgradeToPydantic214](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/pydantic/upgradetopydantic214)
+  * **Upgrade to Pydantic 2.14**
+  * Migrate code affected by changes introduced in Pydantic 2.14 (and 2.10-2.13). Flags `eval_type_backport` usage, whose support 2.14 removed. Note: 2.14 is in prerelease; verify against the 2.14.0 GA release.
 
 ### rewrite-nodejs
 
@@ -8736,6 +9114,270 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.sql.search.FindStoredProcedureCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/sql/search/findstoredprocedurecall)
   * **Find stored procedure calls**
   * Find stored procedures invoked from SQL via `EXEC`, `EXECUTE`, or `CALL`. Useful for taking inventory of the stored procedures a codebase depends on when planning a database migration.
+
+### rewrite-static-analysis-python
+
+* [org.openrewrite.python.cleanup.AssignIfExp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/assignifexp)
+  * **Use inline conditional for simple ``if``/``else`` assignment**
+  * When an ``if``/``else`` pair each assign a single value to the same variable, rewrite as a ternary expression.
+* [org.openrewrite.python.cleanup.AugAssign](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/augassign)
+  * **Shorten assignment to compound operator form**
+  * Convert ``target = target op value`` into ``target op= value`` for arithmetic operators (+, -, *, /, %).
+* [org.openrewrite.python.cleanup.BinOpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/binopidentity)
+  * **Collapse self-cancelling `^` / `-` with duplicate operands to `0`**
+  * When both operands of `^` or `-` are the same expression, reduce to `0` (the self-cancelling identity).
+* [org.openrewrite.python.cleanup.BooleanIfExpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/booleanifexpidentity)
+  * **Collapse boolean ternary to bare condition**
+  * Replace ``True if expr else False`` with ``expr`` and ``False if expr else True`` with ``not expr``, removing the redundant ternary wrapper.
+* [org.openrewrite.python.cleanup.BreakOrContinueOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/breakorcontinueoutsideloop)
+  * **Remove `break`/`continue` outside loop**
+  * Remove `break` and `continue` statements that are not inside any for or while loop.
+* [org.openrewrite.python.cleanup.ChainCompares](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/chaincompares)
+  * **Use chained comparison syntax**
+  * Merge two relational tests that share a middle operand into a single chained comparison, e.g. ``0 &lt; idx and idx &lt; size`` becomes ``0 &lt; idx &lt; size``.
+* [org.openrewrite.python.cleanup.ClassMethodFirstArgName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/classmethodfirstargname)
+  * **Standardize `@classmethod` first parameter to `cls`**
+  * Ensure that `@classmethod` methods use `cls` as their first parameter, as required by PEP 8, and update all body references.
+* [org.openrewrite.python.cleanup.CollectionBuiltinToComprehension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectionbuiltintocomprehension)
+  * **Use comprehension syntax instead of `list()`/`set()` around generators**
+  * Wrapping a generator in `list()` or `set()` is less idiomatic than the equivalent bracket/brace comprehension syntax.
+* [org.openrewrite.python.cleanup.CollectionIntoSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectionintoset)
+  * **Prefer set literals in `in` membership tests**
+  * When a list or tuple of literals appears on the right side of an `in` test, convert it to a set literal for constant-time lookup.
+* [org.openrewrite.python.cleanup.CollectionToBool](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/collectiontobool)
+  * **Substitute constant collection condition with boolean**
+  * When a list, tuple, dict, or set literal is used as an ``if`` or ``while`` condition, replace it with ``True`` (non-empty) or ``False`` (empty) to state the intent directly.
+* [org.openrewrite.python.cleanup.ComprehensionToGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/comprehensiontogenerator)
+  * **Use generator expression instead of list comprehension in iterable-accepting calls**
+  * Functions that consume iterables lazily (e.g. `any`, `sum`, `sorted`) do not need a list comprehension -- a generator expression suffices.
+* [org.openrewrite.python.cleanup.ConvertAnyToIn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/convertanytoin)
+  * **Rewrite `any(v == literal ...)` as `literal in collection`**
+  * An `any()` generator that tests equality against a literal value is equivalent to the `in` membership operator, which is clearer.
+* [org.openrewrite.python.cleanup.DataframeAppendToConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/dataframeappendtoconcat)
+  * **Migrate deprecated `.append()` to `pd.concat()`**
+  * `DataFrame.append()` no longer exists in pandas 2.0+. This recipe rewrites `.append(x)` calls to `pd.concat([df, x])`.
+* [org.openrewrite.python.cleanup.DeMorgan](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/demorgan)
+  * **Flatten negated logic via De Morgan's identities**
+  * Use De Morgan's identities to remove double negation and to distribute ``not`` into compound conditions, e.g. ``not not finished`` becomes ``finished`` and ``not (m and n)`` becomes ``not m or not n``.
+* [org.openrewrite.python.cleanup.DefaultMutableArg](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/defaultmutablearg)
+  * **Guard mutable default arguments with `None` sentinel**
+  * Change mutable default values (`[]`, `\{\}`, `set()`) to `None` and prepend an `if arg is None: arg = &lt;original&gt;` guard so each call gets its own fresh instance.
+* [org.openrewrite.python.cleanup.DictLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/dictliteral)
+  * **Use `\{\}` literal instead of `dict()` constructor**
+  * Convert no-argument `dict()` calls to the `\{\}` literal, which is more concise and avoids a function call.
+* [org.openrewrite.python.cleanup.DoNotUseBareExcept](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/donotusebareexcept)
+  * **Narrow bare `except:` to `except Exception:`**
+  * An unqualified `except:` intercepts every exception, including `SystemExit` and `KeyboardInterrupt`. Specifying `Exception` restricts the handler to ordinary runtime errors.
+* [org.openrewrite.python.cleanup.EqualityIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/equalityidentity)
+  * **Fold same-literal `==`/`!=` comparisons to boolean constants**
+  * When both sides of `==` or `!=` are the same literal, replace the expression with `True` or `False` respectively.
+* [org.openrewrite.python.cleanup.FlipComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/flipcomparison)
+  * **Reorder comparisons to put literals on the right**
+  * Swap operands when a constant appears on the left of a comparison, e.g. ``42 == count`` becomes ``count == 42``, mirroring the relational operator as needed.
+* [org.openrewrite.python.cleanup.IdentityComprehension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/identitycomprehension)
+  * **Simplify identity comprehension to `list()`/`set()` call**
+  * A comprehension that simply passes through each element unchanged is equivalent to calling `list()` or `set()` on the iterable.
+* [org.openrewrite.python.cleanup.InstanceMethodFirstArgName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/instancemethodfirstargname)
+  * **Standardize instance method first parameter to `self`**
+  * Ensure instance methods use `self` as their first parameter per PEP 8 and rename all body references. Methods decorated with `@staticmethod` or `@classmethod` are not affected.
+* [org.openrewrite.python.cleanup.InvertAnyAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/invertanyall)
+  * **Swap `not all()`/`not any()` by negating the comparison**
+  * Apply De Morgan's law to replace `not all(cond ...)` with `any(negated_cond ...)` or `not any(cond ...)` with `all(negated_cond ...)`.
+* [org.openrewrite.python.cleanup.InvertAnyAllBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/invertanyallbody)
+  * **Apply De Morgan's law to `any(not ...)`/`all(not ...)`**
+  * When the generator body just negates the loop variable, De Morgan's law lets us eliminate the generator entirely: `any(not v for v in seq)` becomes `not all(seq)`, and the reverse.
+* [org.openrewrite.python.cleanup.ListLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/listliteral)
+  * **Use `[]` literal instead of `list()` constructor**
+  * Convert no-argument `list()` calls to the `[]` literal, which is more concise and avoids a function call.
+* [org.openrewrite.python.cleanup.MergeComparisons](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergecomparisons)
+  * **Consolidate repeated `==` with `or` into `in`**
+  * Fold ``var == a or var == b`` into ``var in [a, b]``, reducing duplication and improving readability.
+* [org.openrewrite.python.cleanup.MergeElseIfIntoElif](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergeelseifintoelif)
+  * **Convert ``else: if`` to ``elif``**
+  * When an ``else`` clause contains nothing but an ``if``, rewrite it as ``elif`` to eliminate extra nesting.
+* [org.openrewrite.python.cleanup.MergeIsinstance](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergeisinstance)
+  * **Merge `isinstance()` calls**
+  * Merge `isinstance(x, A) or isinstance(x, B)` into `isinstance(x, (A, B))` for cleaner type checking.
+* [org.openrewrite.python.cleanup.MergeNestedIfs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/mergenestedifs)
+  * **Collapse nested ``if`` into a single ``and`` condition**
+  * When two ``if`` statements are nested with no ``else`` on either, join their conditions with ``and`` and flatten the body.
+* [org.openrewrite.python.cleanup.NoneCompare](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/nonecompare)
+  * **Compare to `None` with identity operators (`is` / `is not`)**
+  * Switch `== None` to `is None` and `!= None` to `is not None`, following PEP 8 singleton comparison guidance.
+* [org.openrewrite.python.cleanup.OrIfExpIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/orifexpidentity)
+  * **Replace self-referencing ternary with `or`**
+  * When a ternary's condition and true-branch name the same variable, rewrite ``val if val else fallback`` as ``val or fallback`` to avoid repeating the name.
+* [org.openrewrite.python.cleanup.PandasAvoidInplace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/pandasavoidinplace)
+  * **Eliminate `inplace=True` in favor of reassignment**
+  * Convert pandas operations that use `inplace=True` into reassignment form, e.g. `df.drop_duplicates(inplace=True)` becomes `df = df.drop_duplicates()`.
+* [org.openrewrite.python.cleanup.PythonBestPractices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/pythonbestpractices)
+  * **Python cleanup suite**
+  * Run every Python cleanup recipe in one pass -- literal simplification, boolean and comparison tidying, dead code removal, naming fixes, pandas modernization, and more.
+* [org.openrewrite.python.cleanup.RaiseFromPreviousError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/raisefrompreviouserror)
+  * **Chain exceptions with `raise ... from` in except blocks**
+  * Raise statements inside except blocks should use `from` to chain the new exception to the caught one, preserving the full traceback.
+* [org.openrewrite.python.cleanup.RemoveAssertTrue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeasserttrue)
+  * **Delete no-op `assert True` statements**
+  * Delete bare `assert True` statements, which are always satisfied and have no effect. Assertions that carry a message string are preserved.
+* [org.openrewrite.python.cleanup.RemoveDictKeys](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removedictkeys)
+  * **Drop redundant `.keys()` on dict iteration**
+  * Dictionaries iterate over their keys by default, making explicit `.keys()` calls unnecessary in for-loops and `in` expressions.
+* [org.openrewrite.python.cleanup.RemoveDuplicateDictKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeduplicatedictkey)
+  * **Deduplicate repeated keys in dict literals**
+  * When a dict literal contains the same key more than once, only the final value survives at runtime. This removes the shadowed entries.
+* [org.openrewrite.python.cleanup.RemoveDuplicateSetKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeduplicatesetkey)
+  * **Deduplicate repeated elements in set literals**
+  * Set literals with repeated values have redundant entries that are discarded at runtime. This removes the duplicates, keeping the last one.
+* [org.openrewrite.python.cleanup.RemoveEmptyNestedBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeemptynestedblock)
+  * **Delete `if` blocks whose body is only `pass`**
+  * Delete `if` statements that contain nothing but `pass` and have no `else` branch. `for`/`while` loops are left alone because iterating may have side effects.
+* [org.openrewrite.python.cleanup.RemoveNoneFromDefaultGet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removenonefromdefaultget)
+  * **Remove redundant `None` default from `dict.get()`**
+  * Remove redundant `None` default argument from `dict.get()` calls since `None` is already the default return value.
+* [org.openrewrite.python.cleanup.RemovePassBody](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removepassbody)
+  * **Drop ``pass``-only ``if`` body by inverting the guard**
+  * When an ``if`` body contains only ``pass`` and is followed by an ``else``, flip the condition and use the else body directly.
+* [org.openrewrite.python.cleanup.RemovePassElif](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removepasselif)
+  * **Drop ``pass``-only ``elif`` by negating its condition**
+  * When an ``elif`` body is only ``pass`` and an ``else`` follows, invert the ``elif`` condition and absorb the else body.
+* [org.openrewrite.python.cleanup.RemoveRedundantBoolean](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantboolean)
+  * **Eliminate boolean literal from `and`/`or`**
+  * Strip ``True`` or ``False`` from ``and``/``or`` expressions where the literal has no effect on the result, e.g. ``True and val`` reduces to ``val`` and ``False and val`` reduces to ``False``.
+* [org.openrewrite.python.cleanup.RemoveRedundantCondition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantcondition)
+  * **Remove redundant ternary condition**
+  * When both branches of a ternary expression are identical, simplify `y if z else y` to `y`.
+* [org.openrewrite.python.cleanup.RemoveRedundantConstructorInDictUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantconstructorindictunion)
+  * **Unwrap unnecessary `dict()` from union operands**
+  * The `|` operator already produces a fresh dict, so wrapping an operand in `dict()` is redundant and can be removed.
+* [org.openrewrite.python.cleanup.RemoveRedundantContinue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantcontinue)
+  * **Strip trailing ``continue`` from loop body**
+  * Strip ``continue`` when it is the final statement in a loop body, since the loop naturally advances to the next iteration.
+* [org.openrewrite.python.cleanup.RemoveRedundantFstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantfstring)
+  * **Drop ``f`` prefix from strings without placeholders**
+  * When an f-string has no ``\{...\}`` expressions, strip the ``f`` prefix and convert it to an ordinary string literal.
+* [org.openrewrite.python.cleanup.RemoveRedundantIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantif)
+  * **Simplify negated ``elif`` to ``else``**
+  * When an ``elif`` condition is the exact negation of the preceding ``if``, replace it with ``else`` since the test is redundant.
+* [org.openrewrite.python.cleanup.RemoveRedundantPass](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantpass)
+  * **Delete unnecessary ``pass`` in non-empty blocks**
+  * Delete ``pass`` when the enclosing block already contains other statements; ``pass`` is only useful as a placeholder in empty blocks.
+* [org.openrewrite.python.cleanup.RemoveRedundantPathExists](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantpathexists)
+  * **Drop ``exists()`` check before ``is_dir()``/``is_file()``**
+  * Drop ``path.exists()`` when it is ``and``-ed with ``is_dir()`` or ``is_file()``, which inherently return ``False`` for missing paths.
+* [org.openrewrite.python.cleanup.RemoveRedundantSliceIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeredundantsliceindex)
+  * **Drop default-value slice boundaries**
+  * Omit slice start/stop when they equal ``0`` and ``len(seq)`` respectively, e.g. ``data[0:len(data)]`` becomes ``data[:]``.
+* [org.openrewrite.python.cleanup.RemoveStrFromFstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removestrfromfstring)
+  * **Strip ``str()`` from f-string placeholders**
+  * F-string placeholders convert values to strings automatically, so wrapping expressions in ``str()`` inside ``\{...\}`` is redundant.
+* [org.openrewrite.python.cleanup.RemoveStrFromPrint](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removestrfromprint)
+  * **Unwrap ``str()`` from ``print()`` arguments**
+  * ``print()`` automatically converts its arguments to strings, so an explicit ``str()`` wrapper is unnecessary and can be removed.
+* [org.openrewrite.python.cleanup.RemoveUnitStepFromRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunitstepfromrange)
+  * **Drop unnecessary step `1` argument from `range()`**
+  * Shorten `range(a, b, 1)` to `range(a, b)` because `range` already defaults to a step of one.
+* [org.openrewrite.python.cleanup.RemoveUnnecessaryElse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunnecessaryelse)
+  * **Drop ``else`` after early-exit ``if`` branch**
+  * When the ``if`` body always exits via return, raise, continue, or break, remove the ``else`` and dedent its contents.
+* [org.openrewrite.python.cleanup.RemoveUnreachableCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removeunreachablecode)
+  * **Strip dead code after terminal statements**
+  * Delete statements that follow a `return`, `raise`, `continue`, or `break` in the same block, since they can never execute.
+* [org.openrewrite.python.cleanup.RemoveZeroFromRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/removezerofromrange)
+  * **Drop unnecessary `0` start argument from `range()`**
+  * Shorten `range(0, n)` to `range(n)` because `range` already defaults to starting at zero.
+* [org.openrewrite.python.cleanup.ReplaceApplyWithMethodCall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/replaceapplywithmethodcall)
+  * **Convert `apply('name')` to a direct method invocation**
+  * When `apply()` receives a string literal like `'sum'` or `'mean'`, rewrite the call as a direct method invocation on the object.
+* [org.openrewrite.python.cleanup.ReturnOrYieldOutsideFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/returnoryieldoutsidefunction)
+  * **Remove `return`/`yield` outside function**
+  * Remove `return` and `yield` statements that are not inside any function or method definition.
+* [org.openrewrite.python.cleanup.SimplifyBooleanComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifybooleancomparison)
+  * **Remove explicit True/False comparisons**
+  * Drop unnecessary ``== True``, ``!= False``, and similar tests against boolean literals, leaving just the expression or ``not expr``.
+* [org.openrewrite.python.cleanup.SimplifyConstantSum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyconstantsum)
+  * **Simplify `sum(1 for x in items if cond)` to `sum(bool(cond) for x in items)`**
+  * Replace `sum(1 for x in items if cond)` with `sum(bool(cond) for x in items)` by moving the filter condition into a `bool()` wrapper.
+* [org.openrewrite.python.cleanup.SimplifyDictionaryUpdate](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifydictionaryupdate)
+  * **Convert one-item `dict.update()` to bracket assignment**
+  * When `.update()` receives a dictionary literal containing exactly one key, rewrite it as a direct key assignment for clarity and efficiency.
+* [org.openrewrite.python.cleanup.SimplifyDivision](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifydivision)
+  * **Convert `int(a / b)` to floor division**
+  * Replace ``int(a / b)`` with Python's floor-division operator ``a // b`` for a more concise expression.
+* [org.openrewrite.python.cleanup.SimplifyEmptyCollectionComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyemptycollectioncomparison)
+  * **Use truthiness instead of empty-container equality**
+  * Convert ``== &quot;&quot;``/``== []``/``== \{\}``/``== ()`` into ``not var`` and the corresponding ``!=`` forms into ``var``, relying on Python's truthiness semantics for empty collections.
+* [org.openrewrite.python.cleanup.SimplifyFstringFormatting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifyfstringformatting)
+  * **Fold constants and flatten nested f-strings**
+  * Inline constant values directly into f-string text and unwrap nested f-strings into their enclosing string.
+* [org.openrewrite.python.cleanup.SimplifyGenerator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifygenerator)
+  * **Pass iterable directly to `any()`/`all()` instead of identity generator**
+  * An identity generator that yields every element unchanged is redundant inside `any()` or `all()` -- pass the collection directly.
+* [org.openrewrite.python.cleanup.SimplifyLenComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifylencomparison)
+  * **Replace `len()` emptiness check with truthiness**
+  * Rewrite ``len(seq) &gt; 0`` / ``len(seq) != 0`` to ``seq`` and ``len(seq) == 0`` to ``not seq``, leveraging Python's built-in truthiness for collections.
+* [org.openrewrite.python.cleanup.SimplifyNegativeIndex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifynegativeindex)
+  * **Use negative index instead of `len()` offset**
+  * Rewrite ``seq[len(seq) - k]`` as ``seq[-k]``, using Python's native negative-indexing support.
+* [org.openrewrite.python.cleanup.SimplifySingleExceptionTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifysingleexceptiontuple)
+  * **Unwrap one-element exception tuple in `except`**
+  * A tuple containing only one exception type is needlessly verbose. This unwraps it to the plain `except ExcType:` form.
+* [org.openrewrite.python.cleanup.SimplifyStrLenComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifystrlencomparison)
+  * **Compare string to `&quot;&quot;` instead of checking `len()`**
+  * Replace ``len(text) == 0`` with ``text == &quot;&quot;`` and ``len(text) &gt; 0`` / ``len(text) != 0`` with ``text != &quot;&quot;``, comparing the string directly rather than measuring its length.
+* [org.openrewrite.python.cleanup.SimplifySubstringSearch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/simplifysubstringsearch)
+  * **Replace `.find()` check with `in` / `not in`**
+  * Rewrite ``.find()`` return-value checks as membership tests: ``text.find(sub) == -1`` becomes ``sub not in text`` and ``text.find(sub) != -1`` becomes ``sub in text``.
+* [org.openrewrite.python.cleanup.SquareIdentity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/squareidentity)
+  * **Rewrite self-multiplication as `** 2`**
+  * When an expression is multiplied by itself, rewrite it using the exponentiation operator (`** 2`) for clarity.
+* [org.openrewrite.python.cleanup.StrPrefixSuffix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/strprefixsuffix)
+  * **Prefer ``startswith``/``endswith`` over slice comparison**
+  * Rewrite ``s[:N] == &quot;lit&quot;`` as ``s.startswith(&quot;lit&quot;)`` and ``s[-N:] == &quot;lit&quot;`` as ``s.endswith(&quot;lit&quot;)`` when the slice length equals the literal length.
+* [org.openrewrite.python.cleanup.SwapIfElseBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapifelsebranches)
+  * **Flip empty ``if``-body by negating the condition**
+  * When the ``if`` branch is just ``pass`` and an ``else`` exists, invert the test and promote the else body to the if body.
+* [org.openrewrite.python.cleanup.SwapIfExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapifexpression)
+  * **Swap ternary branches to drop negated condition**
+  * Flip the branches of a conditional expression whose test uses ``not``, eliminating the negation for clearer intent.
+* [org.openrewrite.python.cleanup.SwapVariable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/swapvariable)
+  * **Simplify temp-variable swap to tuple unpacking**
+  * Detect the three-line swap idiom (`tmp = x; x = y; y = tmp`) and condense it into `x, y = y, x` using tuple unpacking.
+* [org.openrewrite.python.cleanup.TernaryToIfExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/ternarytoifexpression)
+  * **Convert `and`/`or` ternary trick to conditional expression**
+  * Rewrite the legacy `cond and val or fallback` idiom as `val if cond else fallback` to avoid silent bugs when `val` is falsy.
+* [org.openrewrite.python.cleanup.TupleLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/tupleliteral)
+  * **Use `()` literal instead of `tuple()` constructor**
+  * Convert no-argument `tuple()` calls to the `()` literal, which is more concise and avoids a function call.
+* [org.openrewrite.python.cleanup.UnwrapIterableConstruction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/unwrapiterableconstruction)
+  * **Flatten redundant collection constructor wrapping a literal**
+  * When `tuple()`, `list()`, or `set()` wraps a single list or tuple literal, remove the constructor and use the target literal form directly.
+* [org.openrewrite.python.cleanup.UseContextlibSuppress](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usecontextlibsuppress)
+  * **Replace `try/except: pass` with `contextlib.suppress()`**
+  * When an except handler only contains `pass`, the intent is to suppress the error. `contextlib.suppress()` states this explicitly and eliminates the try/except boilerplate.
+* [org.openrewrite.python.cleanup.UseDatetimeNowNotToday](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usedatetimenownottoday)
+  * **Use `datetime.now()` instead of `datetime.today()`**
+  * Replace `datetime.today()` with `datetime.now()`. Both are equivalent, but `now()` is more explicit and supports timezone arguments.
+* [org.openrewrite.python.cleanup.UseDictionaryUnion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usedictionaryunion)
+  * **Use dict union operator instead of double-star unpacking**
+  * Dict literals made up entirely of `**` unpacking can be rewritten with the `|` union operator available since Python 3.9.
+* [org.openrewrite.python.cleanup.UseFileIterator](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usefileiterator)
+  * **Iterate over file objects directly, not via `readlines()`**
+  * File objects are iterable and yield lines on demand, so calling `.readlines()` to build an intermediate list is unnecessary.
+* [org.openrewrite.python.cleanup.UseGetitemForReMatchGroups](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usegetitemforrematchgroups)
+  * **Use bracket access for ``re.Match`` groups**
+  * Replace ``match.group(n)`` with ``match[n]`` to use the shorter subscript syntax available since Python 3.6.
+* [org.openrewrite.python.cleanup.UseIsna](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/useisna)
+  * **Use `.isna()` instead of `== np.nan` comparisons**
+  * Rewrite `== np.nan` and `== numpy.nan` equality tests as `.isna()` calls, since direct NaN comparison always evaluates to False.
+* [org.openrewrite.python.cleanup.UseStringRemoveAffix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/usestringremoveaffix)
+  * **Replace string slicing with `removeprefix`/`removesuffix`**
+  * Replace `if text.startswith(s): text = text[N:]` with `text = text.removeprefix(s)` and the equivalent `endswith` pattern with `removesuffix` (Python 3.9+).
+* [org.openrewrite.python.cleanup.UselessElseOnLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/uselesselseonloop)
+  * **Flatten `for/else` when the loop has no `break`**
+  * A `for/else` where the loop body never breaks is misleading -- the `else` runs every time. This moves the else body after the loop.
+* [org.openrewrite.python.cleanup.YieldFrom](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/cleanup/yieldfrom)
+  * **Collapse for-yield loop into `yield from`**
+  * A for-loop that does nothing but yield the loop variable can be expressed as `yield from`, which is shorter and delegates directly.
 
 ### rewrite-struts
 
