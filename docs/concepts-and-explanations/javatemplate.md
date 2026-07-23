@@ -312,3 +312,83 @@ Prerequisite: To use this feature, make sure your project is set up for Refaster
 :::
 
 Since the Semantics class is functionally equivalent to defining a JavaTemplate manually, while offering compile-time safety and slightly less boilerplate, it is well-suited for cases where your template is just beyond what Refaster can express easily. It provides a convenient middle ground between Refaster and fully custom JavaTemplate logic.
+
+## KotlinTemplate
+
+Kotlin sources are parsed into their own [LST](../concepts-and-explanations/lossless-semantic-trees.md) elements, so `JavaTemplate` — which parses snippets with a `JavaParser` — cannot generate or match them. For Kotlin, `rewrite-kotlin` provides [`KotlinTemplate`](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/KotlinTemplate.java), which `extends JavaTemplate` and swaps in a `KotlinParser` behind the scenes.
+
+Because it's a subclass, everything covered above still applies: the same `builder(...)` API, the same positional `#{}` / `#{any(<type>)}` [substitution indicators](#code-snippets-and-parameters), the same `apply(cursor, coordinates, parameters...)` [usage](#usage), the same [coordinates](#coordinates), and the same ability to [match existing code](#using-javatemplates-to-match-existing-code). Only the parts listed below change.
+
+### What differs from JavaTemplate
+
+* **Where it's used.** Build `KotlinTemplate` inside a `KotlinVisitor`/`KotlinIsoVisitor` (from `rewrite-kotlin`), the same way `JavaTemplate` is built inside a `JavaVisitor`.
+* **Snippet syntax is Kotlin.** The code snippet must be syntactically valid _Kotlin_, not Java — for example `val #{} = #{any()}`, `fun foo() {}`, or `@ExtendWith(MockitoExtension::class)`. Type names inside indicators are Kotlin fully-qualified names, e.g. `#{any(kotlin.String)}`.
+* **Imports use Kotlin syntax.** `KotlinTemplate.Builder.imports(...)` still takes bare fully-qualified names (`"java.time.Duration"`), but they are emitted as Kotlin `import` statements. The builder _rejects_ names that include an `import ` prefix or a trailing `;`/newline. As with `JavaTemplate`, declaring an import to the template does not add it to the file — use `KotlinVisitor.maybeAddImport()` for that.
+* **Static shortcuts.** `KotlinTemplate` exposes `KotlinTemplate.apply(template, scope, coordinates, parameters...)` and `KotlinTemplate.matches(template, cursor)` for the common one-line case where you don't need to hold onto a reusable template instance.
+
+:::info
+The public `KotlinTemplate.Builder` does not currently expose `contextSensitive()` or a way to supply a custom `KotlinParser` (the `.javaParser(...)` / `.contextSensitive()` levers on `JavaTemplate` have no public Kotlin equivalent yet). In practice most Kotlin templates are simple, context-free snippets applied via the static `apply(...)` shortcut.
+:::
+
+Here is a minimal, self-contained example from [`ReplaceCharToIntWithCode`](https://github.com/openrewrite/rewrite/blob/main/rewrite-kotlin/src/main/java/org/openrewrite/kotlin/cleanup/ReplaceCharToIntWithCode.java) in `rewrite-kotlin`:
+
+```java
+return Preconditions.check(new UsesMethod<>(CHAR_TO_INT_METHOD_MATCHER), new KotlinVisitor<ExecutionContext>() {
+    @Override
+    public J visitMethodInvocation(J.MethodInvocation method, ExecutionContext ctx) {
+        if (CHAR_TO_INT_METHOD_MATCHER.matches(method) && method.getSelect() != null) {
+            return KotlinTemplate.builder("#{any()}.code")
+                    .build()
+                    .apply(getCursor(), method.getCoordinates().replace(), method.getSelect())
+                    .withPrefix(method.getPrefix());
+        }
+        return super.visitMethodInvocation(method, ctx);
+    }
+});
+```
+
+### Alternating between Java and Kotlin in one recipe
+
+A single recipe often needs to transform both Java and Kotlin sources. Because the two languages express the "same" change with different syntax, you pick `JavaTemplate` or `KotlinTemplate` — and a language-appropriate snippet — based on the compilation unit being visited. The tell is whether the tree is enclosed in a `K.CompilationUnit` (Kotlin) or a `J.CompilationUnit` (Java). Two patterns show up in the wild.
+
+#### Pattern 1: branch on the compilation unit inside one visitor
+
+When the surrounding visitor logic is identical and only the emitted snippet differs, keep one visitor and branch at the point where the template is applied. [`ReplaceInitMockToOpenMock`](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/ReplaceInitMockToOpenMock.java) does this with `getCursor().firstEnclosing(K.CompilationUnit.class)`:
+
+```java
+if (getCursor().firstEnclosing(K.CompilationUnit.class) != null) {
+    // Kotlin: `val`/`lateinit var`, no trailing semicolon
+    return KotlinTemplate.apply("private lateinit var " + variableName + ": AutoCloseable",
+            getCursor(), cd.getBody().getCoordinates().firstStatement());
+}
+// Java: typed field declaration, trailing semicolon
+J.ClassDeclaration after = JavaTemplate.apply("private AutoCloseable " + variableName + ";",
+        getCursor(), cd.getBody().getCoordinates().firstStatement());
+return maybeAutoFormat(cd, after, ctx);
+```
+
+Note the syntactic differences the two snippets have to account for: Kotlin uses `lateinit var name: Type` where Java uses `Type name;`, and Kotlin statements omit the trailing `;`. This recipe also skips `maybeAutoFormat` on the Kotlin branch on purpose, because auto-formatting the whole class would reformat unrelated Kotlin code.
+
+#### Pattern 2: dispatch to per-language visitors
+
+When the transformations diverge more substantially, split into dedicated Java and Kotlin visitors and dispatch to them from a top-level `preVisit`. [`AddMockitoExtensionIfAnnotationsUsed`](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/mockito/AddMockitoExtensionIfAnnotationsUsed.java) selects the visitor by compilation-unit type:
+
+```java
+@Override
+public @Nullable Tree preVisit(Tree tree, ExecutionContext ctx) {
+    stopAfterPreVisit();
+    if (tree instanceof J.CompilationUnit) {
+        return getJavaVisitor().visit(tree, ctx);
+    }
+    if (tree instanceof K.CompilationUnit) {
+        return getKotlinVisitor().visit(tree, ctx);
+    }
+    return tree;
+}
+```
+
+Each visitor then builds its own template with language-appropriate syntax. The Java visitor annotates with `JavaTemplate.builder("@ExtendWith(MockitoExtension.class)")`, while the Kotlin visitor uses `KotlinTemplate.builder("@ExtendWith(MockitoExtension::class)")` — the difference between Java's `.class` literal and Kotlin's `::class` reference. Both add the same imports (`maybeAddImport("org.mockito.junit.jupiter.MockitoExtension")` and `org.junit.jupiter.api.extension.ExtendWith`), since the fully-qualified type names are identical across languages.
+
+:::tip
+When authoring a dual-language template, the snippet differences are exactly the ordinary Java-vs-Kotlin syntax differences: `void`/`throws` methods become `fun`, field declarations become `val`/`var`, `X.class` becomes `X::class`, and trailing semicolons disappear. Everything else — coordinates, substitution indicators, `maybeAddImport` — works identically on both `JavaTemplate` and `KotlinTemplate`.
+:::
