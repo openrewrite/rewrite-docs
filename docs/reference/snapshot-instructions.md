@@ -85,8 +85,8 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 ```
 
 * You can look up the latest released versions via
-  - [Latest rewrite-maven-plugin version](https://central.sonatype.com/artifact/org.openrewrite.maven/rewrite-maven-plugin/versions)
-  - [Latest rewrite recipe module versions](https://central.sonatype.com/namespace/org.openrewrite.recipe)
+  - [Latest rewrite-maven-plugin version](https://artifacts.codegenomeproject.org/maven/org/openrewrite/maven/rewrite-maven-plugin/)
+  - [Latest rewrite recipe module versions](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/)
 
 ## Maven Command Line instructions
 

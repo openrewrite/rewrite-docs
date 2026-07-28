@@ -67,6 +67,15 @@ plugins {
 
 repositories {
     mavenCentral()
+    // OpenRewrite artifacts are distributed through the Code Genome Project.
+    // Use the email or username you signed in with, plus a download token as the password.
+    maven {
+        url = uri("https://artifacts.codegenomeproject.org/maven")
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 
 dependencies {

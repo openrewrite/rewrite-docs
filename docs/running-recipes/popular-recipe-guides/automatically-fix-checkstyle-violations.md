@@ -13,6 +13,10 @@ Most programmers agree that having consistent formatting across a code base make
 
 How you configure Checkstyle integration depends on whether or not your build also applies a Checkstyle plugin. For Gradle builds this means the built-in plugin named [Checkstyle Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html). For Maven builds this means [maven-checkstyle-plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/).
 
+:::info
+OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. In the Gradle snippets below, replace `USERNAME` and `TOKEN` with your own credentials. See the [quickstart guide](../getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token and on configuring the repository and credentials for Maven.
+:::
+
 ### With Checkstyle Plugin
 
 If your build uses either the Gradle or Maven checkstyle plugins, then good news, the OpenRewrite build plugins will detect that and automatically match their configuration. All that remains is to activate the [Code cleanup](../../recipes/staticanalysis/codecleanup.md) recipe:
@@ -68,7 +72,15 @@ rewrite {
 }
 
 repositories {
-    mavenCentral() // rewrite is published to Maven Central
+    mavenCentral()
+    // rewrite is published to the Code Genome Project
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 
 dependencies {
@@ -104,7 +116,15 @@ rewrite {
 }
 
 repositories {
-  mavenCentral() // rewrite is published to Maven Central
+  mavenCentral()
+  // rewrite is published to the Code Genome Project
+  maven {
+    url = "https://artifacts.codegenomeproject.org/maven"
+    credentials {
+      username = "USERNAME"
+      password = "TOKEN"
+    }
+  }
 }
 
 dependencies {
@@ -171,7 +191,15 @@ rewrite {
 }
 
 repositories {
-    mavenCentral() // rewrite is published to Maven Central
+    mavenCentral()
+    // rewrite is published to the Code Genome Project
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 
 dependencies {

@@ -377,6 +377,15 @@ plugins {
 repositories {
     mavenLocal()
     mavenCentral()
+    // The rewrite core libraries are distributed through the Code Genome Project.
+    // Use the email or username you signed in with, plus a download token as the password.
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 
 dependencies {
