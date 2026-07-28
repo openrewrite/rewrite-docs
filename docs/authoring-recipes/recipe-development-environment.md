@@ -423,6 +423,19 @@ If you run into errors when trying to publish and read your recipe locally, try 
 <TabItem value="maven" label="Maven">
 ```xml title="pom.xml"
 <project>
+    <!-- The rewrite core libraries are distributed through the Code Genome Project. -->
+    <repositories>
+        <repository>
+            <id>codegenome</id>
+            <url>https://artifacts.codegenomeproject.org/maven</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>codegenome</id>
+            <url>https://artifacts.codegenomeproject.org/maven</url>
+        </pluginRepository>
+    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
@@ -445,6 +458,20 @@ If you run into errors when trying to publish and read your recipe locally, try 
         </plugins>
     </build>
 </project>
+```
+
+Then add your Code Genome Project credentials to your Maven `settings.xml` file (typically at `~/.m2/settings.xml`), using the email or username you signed in with and a download token as the password:
+
+```xml title="settings.xml"
+<settings>
+    <servers>
+        <server>
+            <id>codegenome</id>
+            <username>USERNAME</username>
+            <password>TOKEN</password>
+        </server>
+    </servers>
+</settings>
 ```
 
 :::info

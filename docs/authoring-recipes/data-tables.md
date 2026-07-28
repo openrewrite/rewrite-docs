@@ -274,7 +274,7 @@ By default, OpenRewrite recipes will **not** produce a data table. In order for 
 2. Next, you will either need to update build file or modify your command for running a recipe:
 
 :::info
-OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. In the Gradle snippet below, replace `USERNAME` and `TOKEN` with your own credentials. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token and on configuring the repository and credentials for Maven.
+OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. In the snippets below, replace `USERNAME` with the email or username you signed in with and `TOKEN` with a download token. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
 :::
 
 <Tabs>
@@ -340,6 +340,37 @@ Add `<exportDatatables>true</exportDatatables>` to your `pom.xml` file such as i
         </dependency>
     </dependencies>
 </plugin>
+```
+
+Since the plugin and recipe modules are resolved from the Code Genome Project, add the repository to your `pom.xml` as well:
+
+```xml
+<repositories>
+    <repository>
+        <id>codegenome</id>
+        <url>https://artifacts.codegenomeproject.org/maven</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>codegenome</id>
+        <url>https://artifacts.codegenomeproject.org/maven</url>
+    </pluginRepository>
+</pluginRepositories>
+```
+
+Then add your credentials to your Maven `settings.xml` file (typically at `~/.m2/settings.xml`):
+
+```xml title="settings.xml"
+<settings>
+    <servers>
+        <server>
+            <id>codegenome</id>
+            <username>USERNAME</username>
+            <password>TOKEN</password>
+        </server>
+    </servers>
+</settings>
 ```
 </TabItem>
 

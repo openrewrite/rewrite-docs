@@ -14,8 +14,22 @@ Most programmers agree that having consistent formatting across a code base make
 How you configure Checkstyle integration depends on whether or not your build also applies a Checkstyle plugin. For Gradle builds this means the built-in plugin named [Checkstyle Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html). For Maven builds this means [maven-checkstyle-plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/).
 
 :::info
-OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. In the Gradle snippets below, replace `USERNAME` and `TOKEN` with your own credentials. See the [quickstart guide](../getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token and on configuring the repository and credentials for Maven.
+OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. In the snippets below, replace `USERNAME` with the email or username you signed in with and `TOKEN` with a download token. See the [quickstart guide](../getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
 :::
+
+The Gradle snippets below carry those credentials inline. For Maven, they go in your `settings.xml` file instead (typically at `~/.m2/settings.xml`):
+
+```xml title="settings.xml"
+<settings>
+  <servers>
+    <server>
+      <id>codegenome</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
+</settings>
+```
 
 ### With Checkstyle Plugin
 
@@ -25,6 +39,18 @@ If your build uses either the Gradle or Maven checkstyle plugins, then good news
 	<TabItem value="maven" label="Maven">
 ```xml title="pom.xml"
 <project>
+  <repositories>
+    <repository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
@@ -136,6 +162,18 @@ dependencies {
 <TabItem value="maven" label="Maven">
 ```xml title="pom.xml"
 <project>
+<repositories>
+  <repository>
+    <id>codegenome</id>
+    <url>https://artifacts.codegenomeproject.org/maven</url>
+  </repository>
+</repositories>
+<pluginRepositories>
+  <pluginRepository>
+    <id>codegenome</id>
+    <url>https://artifacts.codegenomeproject.org/maven</url>
+  </pluginRepository>
+</pluginRepositories>
 <build>
   <plugins>
     <plugin>
@@ -221,6 +259,18 @@ In Maven, the ordering of goals depends first on which phase of the [Build Lifec
 
 ```xml title="pom.xml"
 <project>
+  <repositories>
+    <repository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
