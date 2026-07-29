@@ -5750,7 +5750,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * A default DevCenter configuration for Python repositories. Track Python version adoption across your organization.
 * [io.moderne.devcenter.DevCenterStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterstarter)
   * **DevCenter**
-  * This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
+  * This is a default DevCenter configuration that can be used as a starting point for your own DevCenter configuration. It includes a combination of upgrades, migrations, and security fixes. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter/).
 * [io.moderne.devcenter.FindOrganizationStatistics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/findorganizationstatistics)
   * **Find organization statistics**
   * Counts lines of code per repository for organization-level statistics.
@@ -5792,7 +5792,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Determine the current state of a repository relative to a desired Scala version upgrade.
 * [io.moderne.devcenter.SecurityStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/securitystarter)
   * **OWASP top ten**
-  * This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter-beta/).
+  * This recipe is a starter card to reveal common OWASP Top 10 issues in your source code. You can customize this configuration to suit your needs. For more information on how to customize your DevCenter configuration, see the [DevCenter documentation](https://docs.moderne.io/administrator-documentation/moderne-platform/how-to-guides/recipe-based-devcenter/).
 * [io.moderne.devcenter.UpgradeApacheParent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgradeapacheparent)
   * **Upgrade Apache Parent POM**
   * Upgrades the Apache parent POM to the latest version.
@@ -6509,7 +6509,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Identify gRPC service implementations in the application. Detects classes extending generated ImplBase classes and @GrpcService annotations.
 * [io.moderne.prethink.calm.FindMessagingConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmessagingconnections)
   * **Find messaging connections**
-  * Identify message queue producers and consumers. Detects Kafka (Spring and raw kafka-clients), RabbitMQ, JMS, Spring Cloud Stream, AWS SQS (annotation and raw SDK), Redis pub/sub, EJB message-driven beans, and SmallRye Reactive Messaging.
+  * Identify message queue producers and consumers. Detects Kafka (Spring and raw kafka-clients), RabbitMQ, JMS, Spring Cloud Stream, AWS SQS (annotation and raw SDK), Redis pub/sub (Spring Data Redis, Jedis, and Redisson), EJB message-driven beans, and SmallRye Reactive Messaging.
 * [io.moderne.prethink.calm.FindMongooseSchemas](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findmongooseschemas)
   * **Find Mongoose schemas**
   * Identify Mongoose models and schemas in Node.js applications. Detects mongoose.model() calls and populates the DatabaseConnections table.
@@ -7674,6 +7674,648 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ## org.openrewrite.recipe
 
+
+### recipes-go
+
+* [org.openrewrite.golang.AddImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/addimport)
+  * **Add import**
+  * Add an `import` statement to a Go compilation unit. No-op if the import is already present in a compatible form.
+* [org.openrewrite.golang.ChangeMethodName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/changemethodname)
+  * **Change method name**
+  * Rename method invocations matching a method pattern.
+* [org.openrewrite.golang.ChangeType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/changetype)
+  * **Change type**
+  * Change a Go type reference from one fully qualified name to another.
+* [org.openrewrite.golang.OrderImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/orderimports)
+  * **Order imports**
+  * Sort `import` lines into stdlib / third-party / local groups. Within each group, entries are alphabetized; non-empty groups are separated by a blank line. Mirrors `goimports -w`. Local detection uses the sibling go.mod's module path.
+* [org.openrewrite.golang.RemoveImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/removeimport)
+  * **Remove import**
+  * Remove an `import` statement from a Go compilation unit. Matches by import path; any form (regular, aliased, dot, blank) is removed.
+* [org.openrewrite.golang.RemoveUnusedImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/removeunusedimports)
+  * **Remove unused imports**
+  * Remove imports for packages that are not referenced by any identifier in the file. Blank (`_`) imports are preserved.
+* [org.openrewrite.golang.RenamePackage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/renamepackage)
+  * **Rename package**
+  * Rename a Go package across a project — rewrites the `package` declaration in files that own the package, and rewrites import paths in every file that references it.
+* [org.openrewrite.golang.codequality.AddExportedFuncComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/addexportedfunccomment)
+  * **Add exported func comment**
+  * Add a stub doc comment to exported functions and methods that lack one.
+* [org.openrewrite.golang.codequality.AllBranchesIdentical](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/allbranchesidentical)
+  * **Remove if/else with identical branches**
+  * Replace an if/else chain where every branch has the same body with just the body, since the conditions have no effect on the outcome.
+* [org.openrewrite.golang.codequality.AllocateMapOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/allocatemapoutsideloop)
+  * **Allocate map outside loop**
+  * Hoist `make(map[...]...)` calls out of for/range loops and clear the map each iteration.
+* [org.openrewrite.golang.codequality.AllocateOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/allocateoutsideloop)
+  * **Allocate outside loop**
+  * Find `new()` calls inside for/range loops. Repeated heap allocations in loops add GC pressure; consider reusing the object.
+* [org.openrewrite.golang.codequality.AuditChannelClose](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditchannelclose)
+  * **Audit channel close**
+  * Find calls to the built-in `close()` function. Channels should only be closed by the sender, and double-closing causes a panic.
+* [org.openrewrite.golang.codequality.AuditContextBackground](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditcontextbackground)
+  * **Audit context.Background**
+  * Find calls to `context.Background()`. Consider using a context passed from the caller instead.
+* [org.openrewrite.golang.codequality.AuditExecCommand](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditexeccommand)
+  * **Audit exec.Command calls**
+  * Find calls to `exec.Command()`. If arguments come from user input, this is a potential command injection vulnerability.
+* [org.openrewrite.golang.codequality.AuditGoroutineClosure](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditgoroutineclosure)
+  * **Audit goroutine closure**
+  * Find `go func() \{ ... \}()` patterns. Goroutines with closures can inadvertently capture loop variables.
+* [org.openrewrite.golang.codequality.AuditHttpRedirect](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/audithttpredirect)
+  * **Audit HTTP redirect**
+  * Find calls to `http.Redirect`. Review redirect targets to ensure they are validated and status codes are appropriate.
+* [org.openrewrite.golang.codequality.AuditJsonNumber](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditjsonnumber)
+  * **Audit json.Number**
+  * Find usage of `json.Number`. json.Number should be used carefully as it can lead to unexpected behavior when converting between numeric types.
+* [org.openrewrite.golang.codequality.AuditJsonRawMessage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditjsonrawmessage)
+  * **Audit json.RawMessage**
+  * Find usage of `json.RawMessage`. RawMessage defers JSON parsing and should be reviewed to ensure deferred parsing is handled correctly.
+* [org.openrewrite.golang.codequality.AuditMultipleErrorWraps](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditmultipleerrorwraps)
+  * **Replace extra %w verbs with %v in fmt.Errorf**
+  * Replace all but the first `%w` with `%v` in `fmt.Errorf` format strings. Multiple error wrapping is invalid in Go &lt; 1.20 and rare in later versions.
+* [org.openrewrite.golang.codequality.AuditMustFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditmustfunction)
+  * **Audit Must* function calls**
+  * Find calls to functions named `Must*` or `must*`, which typically panic on error.
+* [org.openrewrite.golang.codequality.AuditRecover](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditrecover)
+  * **Audit recover() calls**
+  * Find calls to the built-in `recover()` function, which catches panics and signals unusual control flow.
+* [org.openrewrite.golang.codequality.AuditTestFatal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/audittestfatal)
+  * **Audit test fatal**
+  * Find `t.Fatal()` and `t.Fatalf()` calls. These abort the test immediately and panic when called from a goroutine other than the test function's goroutine.
+* [org.openrewrite.golang.codequality.AuditTestMain](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/audittestmain)
+  * **Audit TestMain**
+  * Find `func TestMain(m *testing.M)` declarations. TestMain overrides the default test execution for the entire package.
+* [org.openrewrite.golang.codequality.AuditYamlUnmarshal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/audityamlunmarshal)
+  * **Audit yaml.Unmarshal**
+  * Find calls to `yaml.Unmarshal()`. YAML parsing should validate input carefully to avoid unexpected behavior from untrusted data.
+* [org.openrewrite.golang.codequality.AvoidChannelLenCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidchannellencheck)
+  * **Avoid channel length check**
+  * Find comparisons on channel length such as `len(ch) == 0`. These are almost always racy because the length can change between the check and the next operation.
+* [org.openrewrite.golang.codequality.AvoidContextWithValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidcontextwithvalue)
+  * **Avoid context.WithValue**
+  * Find calls to `context.WithValue()`. Context values are an anti-pattern for passing dependencies; prefer explicit function parameters.
+* [org.openrewrite.golang.codequality.AvoidDeferInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoiddeferinloop)
+  * **Avoid defer in loop**
+  * Wrap loop bodies containing `defer` in an immediately-invoked function literal so deferred calls run per iteration.
+* [org.openrewrite.golang.codequality.AvoidDotImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoiddotimport)
+  * **Avoid dot imports**
+  * Remove the dot alias from `import . &quot;pkg&quot;`, converting to a normal import.
+* [org.openrewrite.golang.codequality.AvoidEmptyInterfaceParam](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidemptyinterfaceparam)
+  * **Avoid empty interface parameters**
+  * Replace `interface\{\}` parameter types with `any` (Go 1.18+).
+* [org.openrewrite.golang.codequality.AvoidFmtInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidfmtinloop)
+  * **Avoid fmt in loop**
+  * Find `fmt.Sprintf`, `fmt.Sprint`, or `fmt.Fprintf` calls inside for/range loops. These allocate on every call; prefer direct string operations or strconv.
+* [org.openrewrite.golang.codequality.AvoidFormatStringVariable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidformatstringvariable)
+  * **Avoid format string variable**
+  * Find calls like `fmt.Sprintf(variable)` where the format string is not a literal. This is a potential format string vulnerability.
+* [org.openrewrite.golang.codequality.AvoidGlobalVariable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidglobalvariable)
+  * **Avoid global variables**
+  * Find package-level `var` declarations. Mutable global state makes code harder to test and reason about.
+* [org.openrewrite.golang.codequality.AvoidHardcodedCredentials](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidhardcodedcredentials)
+  * **Avoid hardcoded credentials**
+  * Replace hardcoded credential string literals with `os.Getenv(&quot;VAR_NAME&quot;)` calls.
+* [org.openrewrite.golang.codequality.AvoidInitFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidinitfunction)
+  * **Avoid init functions**
+  * Find `func init()` declarations. Init functions make testing harder and have implicit ordering dependencies.
+* [org.openrewrite.golang.codequality.AvoidLockInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidlockinloop)
+  * **Avoid lock in loop**
+  * Find `Lock()` or `RLock()` calls inside for/range loops. Acquiring locks in tight loops can cause contention; consider locking once outside the loop.
+* [org.openrewrite.golang.codequality.AvoidLogFatal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidlogfatal)
+  * **Avoid log.Fatal**
+  * Replace `log.Fatal`, `log.Fatalf`, and `log.Fatalln` with their non-exiting equivalents (`log.Println`, `log.Printf`, `log.Println`).
+* [org.openrewrite.golang.codequality.AvoidNestedGoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidnestedgoroutine)
+  * **Avoid nested goroutine**
+  * Find goroutines launched inside other goroutines. Nested goroutines create hard-to-track concurrency.
+* [org.openrewrite.golang.codequality.AvoidOsExit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidosexit)
+  * **Avoid os.Exit**
+  * Remove `os.Exit(0)` calls and flag non-zero `os.Exit(n)` which bypass deferred functions and cleanup.
+* [org.openrewrite.golang.codequality.AvoidPanic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidpanic)
+  * **Avoid panic**
+  * Find calls to the built-in `panic()` function, which crashes the program.
+* [org.openrewrite.golang.codequality.AvoidReflection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidreflection)
+  * **Avoid reflection**
+  * Find `reflect.TypeOf()` and `reflect.ValueOf()` calls. Reflection is slow and should be avoided in performance-sensitive code.
+* [org.openrewrite.golang.codequality.AvoidSqlStringConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidsqlstringconcat)
+  * **Avoid SQL string concatenation**
+  * Find string concatenation where the left operand contains SQL keywords. Use parameterized queries to avoid SQL injection.
+* [org.openrewrite.golang.codequality.AvoidTimeSleep](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidtimesleep)
+  * **Avoid time.Sleep**
+  * Find calls to `time.Sleep()`. In production code, sleeping is often a code smell — consider using tickers, timers, or context-based synchronization.
+* [org.openrewrite.golang.codequality.AvoidUnsafePackage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidunsafepackage)
+  * **Avoid unsafe package**
+  * Find any usage of the `unsafe` package. The unsafe package bypasses Go's type safety guarantees and should be avoided unless absolutely necessary.
+* [org.openrewrite.golang.codequality.CheckCloseError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/checkcloseerror)
+  * **Check Close() error**
+  * Replace bare `f.Close()` with `_ = f.Close()` to explicitly mark the discarded error.
+* [org.openrewrite.golang.codequality.CheckContextError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/checkcontexterror)
+  * **Check context error**
+  * Find `ctx.Err()` calls. The context error should be inspected to distinguish between cancellation and deadline exceeded.
+* [org.openrewrite.golang.codequality.CheckTemplateExecuteError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/checktemplateexecuteerror)
+  * **Check template execute error**
+  * Wrap bare calls to `Execute` and `ExecuteTemplate` on templates in an if-init error check so the returned error is not silently ignored.
+* [org.openrewrite.golang.codequality.CompileRegexOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/compileregexoutsideloop)
+  * **Compile regex outside loop**
+  * Find `regexp.Compile()` or `regexp.MustCompile()` calls inside for/range loops. Compile the regex once outside the loop for better performance.
+* [org.openrewrite.golang.codequality.CreateChannelOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/createchanneloutsideloop)
+  * **Create channel outside loop**
+  * Find `make(chan ...)` calls inside for/range loops. Channel creation in loops suggests the channel should be created once before the loop.
+* [org.openrewrite.golang.codequality.EnsureFileClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensurefileclosed)
+  * **Ensure file closed**
+  * Find calls to `os.Open`, `os.Create`, and `os.OpenFile`. Ensure the returned file is closed to avoid resource leaks.
+* [org.openrewrite.golang.codequality.EnsureSqlConnectionClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensuresqlconnectionclosed)
+  * **Ensure SQL connection closed**
+  * Find calls to `sql.Open`. Database connections should be managed carefully and closed when no longer needed.
+* [org.openrewrite.golang.codequality.FindDeprecatedAtomicFunctions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/finddeprecatedatomicfunctions)
+  * **Find deprecated `sync/atomic` functions**
+  * Find deprecated `sync/atomic` free-function calls (e.g. `atomic.AddInt32`) that should be migrated to the type-safe atomic types introduced in Go 1.19 (e.g. `atomic.Int32`).
+* [org.openrewrite.golang.codequality.FindEmptyFmtSprintf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/findemptyfmtsprintf)
+  * **Remove empty fmt.Sprintf**
+  * Replace `fmt.Sprintf(&quot;&quot;)` calls with an empty format string and no args with `&quot;&quot;`.
+* [org.openrewrite.golang.codequality.FindMapRangeClear](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/findmaprangeclear)
+  * **Replace map range-delete with clear()**
+  * Replace `for k := range m \{ delete(m, k) \}` with `clear(m)` (Go 1.21+).
+* [org.openrewrite.golang.codequality.HandleCheckedError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/handlecheckederror)
+  * **Handle checked error**
+  * Replace `if err != nil \{ \}` with `if err != nil \{ return err \}` so the error is propagated.
+* [org.openrewrite.golang.codequality.HandleDeferredCloseError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/handledeferredcloseerror)
+  * **Handle deferred Close() error**
+  * Wrap `defer x.Close()` in a closure to explicitly handle the error: `defer func() \{ _ = x.Close() \}()`.
+* [org.openrewrite.golang.codequality.HandleErrorReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/handleerrorreturn)
+  * **Handle error return value**
+  * Replace discarded `_` error return values with `err` to capture the error.
+* [org.openrewrite.golang.codequality.HandleSwallowedError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/handleswallowederror)
+  * **Handle swallowed error**
+  * Replace `if err != nil \{ return \}` with `if err != nil \{ return err \}` so the error is propagated.
+* [org.openrewrite.golang.codequality.KeepFunctionsShort](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/keepfunctionsshort)
+  * **Keep functions short**
+  * Find functions with more than 20 statements. Long functions are harder to understand and maintain.
+* [org.openrewrite.golang.codequality.KeepInterfacesSmall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/keepinterfacessmall)
+  * **Keep interfaces small**
+  * Find interfaces with more than 5 methods. Large interfaces violate the Interface Segregation Principle.
+* [org.openrewrite.golang.codequality.LimitFunctionParameters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/limitfunctionparameters)
+  * **Limit function parameters**
+  * Find functions with more than 5 parameters. Consider grouping parameters into a struct.
+* [org.openrewrite.golang.codequality.LimitGoroutinesInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/limitgoroutinesinloop)
+  * **Limit goroutines in loop**
+  * Find `go` statements inside for/range loops. Unbounded goroutine creation can cause resource exhaustion; consider using a worker pool.
+* [org.openrewrite.golang.codequality.LimitReturnValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/limitreturnvalues)
+  * **Limit return values**
+  * Find functions with more than 3 return values. Consider returning a struct instead.
+* [org.openrewrite.golang.codequality.MergeCollapsibleIf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/mergecollapsibleif)
+  * **Merge collapsible if statements**
+  * Merge nested `if` statements into a single `if` with `&amp;&amp;` when neither has an else clause and the outer body contains only the inner `if`.
+* [org.openrewrite.golang.codequality.MergeIdenticalBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/mergeidenticalbranches)
+  * **Merge identical branches**
+  * Merge consecutive if/else-if branches that have identical bodies by combining their conditions with `||`.
+* [org.openrewrite.golang.codequality.PreallocateSlice](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preallocateslice)
+  * **Preallocate slice**
+  * Find `append()` calls inside for/range loops where the slice could be preallocated.
+* [org.openrewrite.golang.codequality.PreferBytesBufferString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferbytesbufferstring)
+  * **Prefer buf.String() over string(buf.Bytes())**
+  * Replace `string(buf.Bytes())` with `buf.String()` for better performance and readability.
+* [org.openrewrite.golang.codequality.PreferBytesContains](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferbytescontains)
+  * **Prefer bytes.Contains over bytes.Index comparison**
+  * Replace `bytes.Index(b, sub) != -1` and similar patterns with `bytes.Contains(b, sub)`.
+* [org.openrewrite.golang.codequality.PreferBytesContainsAny](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferbytescontainsany)
+  * **Prefer bytes.ContainsAny**
+  * Replace `bytes.IndexAny(b, chars) != -1` with `bytes.ContainsAny(b, chars)` and `bytes.IndexAny(b, chars) == -1` with `!bytes.ContainsAny(b, chars)`.
+* [org.openrewrite.golang.codequality.PreferBytesContainsRune](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferbytescontainsrune)
+  * **Prefer bytes.ContainsRune**
+  * Replace `bytes.IndexRune(b, r) != -1` with `bytes.ContainsRune(b, r)` and `bytes.IndexRune(b, r) == -1` with `!bytes.ContainsRune(b, r)`.
+* [org.openrewrite.golang.codequality.PreferBytesEqual](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferbytesequal)
+  * **Prefer bytes.Equal**
+  * Replace `bytes.Compare(a, b) == 0` with `bytes.Equal(a, b)` and `bytes.Compare(a, b) != 0` with `!bytes.Equal(a, b)`.
+* [org.openrewrite.golang.codequality.PreferBytesHasPrefix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferbyteshasprefix)
+  * **Prefer bytes.HasPrefix**
+  * Replace `bytes.Index(b, prefix) == 0` with `bytes.HasPrefix(b, prefix)` and `bytes.Index(b, prefix) != 0` with `!bytes.HasPrefix(b, prefix)`.
+* [org.openrewrite.golang.codequality.PreferCopyString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefercopystring)
+  * **Prefer copy from string**
+  * Replace `copy(dst, []byte(src))` with `copy(dst, src)` since copy accepts a string source.
+* [org.openrewrite.golang.codequality.PreferEmptyStringCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferemptystringcheck)
+  * **Prefer empty string check**
+  * Replace `len(s) == 0` with `s == &quot;&quot;` and `len(s) != 0` with `s != &quot;&quot;`.
+* [org.openrewrite.golang.codequality.PreferErrorfWrapVerb](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorfwrapverb)
+  * **Prefer %w over %s in fmt.Errorf for error wrapping**
+  * Replace `%s` with `%w` in `fmt.Errorf` format strings when the corresponding argument is an error, to preserve the error chain.
+* [org.openrewrite.golang.codequality.PreferErrorsIsContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsiscontext)
+  * **Prefer errors.Is for context error comparison**
+  * Replace `err == context.Canceled` and `err == context.DeadlineExceeded` with `errors.Is` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.PreferErrorsIsEOF](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsiseof)
+  * **Prefer errors.Is for io.EOF comparison**
+  * Replace `err == io.EOF` with `errors.Is(err, io.EOF)` and `err != io.EOF` with `!errors.Is(err, io.EOF)` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.PreferErrorsIsForFieldAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisforfieldaccess)
+  * **Prefer errors.Is for package-qualified sentinel comparison**
+  * Replace `err == sentinel` with `errors.Is(err, sentinel)` where the sentinel is a package-qualified value (e.g., `sql.ErrNoRows`). Use `errors.Is` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.PreferErrorsIsForOsCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisforoscheck)
+  * **Prefer errors.Is for os existence checks**
+  * Replace deprecated `os.IsNotExist(err)` with `errors.Is(err, fs.ErrNotExist)` and `os.IsExist(err)` with `errors.Is(err, fs.ErrExist)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferErrorsIsForPermission](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisforpermission)
+  * **Prefer errors.Is for os permission checks**
+  * Replace deprecated `os.IsPermission(err)` with `errors.Is(err, fs.ErrPermission)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferErrorsIsOverEquality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisoverequality)
+  * **Prefer errors.Is over == for error comparison**
+  * Replace `err == ErrFoo` with `errors.Is(err, ErrFoo)` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.PreferFilepathClean](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferfilepathclean)
+  * **Prefer filepath.Clean over redundant filepath.Join**
+  * Replace `filepath.Join(filepath.Clean(p))` with `filepath.Clean(p)` since Join with a single already-cleaned argument is redundant.
+* [org.openrewrite.golang.codequality.PreferHexEncoding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferhexencoding)
+  * **Prefer hex.EncodeToString over fmt.Sprintf**
+  * Replace `fmt.Sprintf(&quot;%x&quot;, data)` with `hex.EncodeToString(data)` for clearer intent and better performance.
+* [org.openrewrite.golang.codequality.PreferIoDiscard](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferiodiscard)
+  * **Prefer io.Discard**
+  * Replace deprecated `ioutil.Discard` with `io.Discard` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferIoNopCloser](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferionopcloser)
+  * **Prefer io.NopCloser**
+  * Replace deprecated `ioutil.NopCloser(r)` with `io.NopCloser(r)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferIoReadAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferioreadall)
+  * **Prefer io.ReadAll**
+  * Replace deprecated `ioutil.ReadAll(r)` with `io.ReadAll(r)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferIoWriteString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferiowritestring)
+  * **Prefer io.WriteString**
+  * Replace `fmt.Fprintf(w, &quot;%s&quot;, s)` with `io.WriteString(w, s)`.
+* [org.openrewrite.golang.codequality.PreferLenCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferlencheck)
+  * **Prefer canonical len check**
+  * Normalize `len(s) &gt;= 1` to `len(s) &gt; 0` and `len(s) &lt; 1` to `len(s) == 0`.
+* [org.openrewrite.golang.codequality.PreferMakeForEmptyMap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefermakeforemptymap)
+  * **Prefer make() for empty maps**
+  * Replace empty map literal `map[K]V\{\}` with `make(map[K]V)` for clarity.
+* [org.openrewrite.golang.codequality.PreferMinMaxBuiltin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferminmaxbuiltin)
+  * **Prefer min/max builtins**
+  * Replace `math.Min(a, b)` with `min(a, b)` and `math.Max(a, b)` with `max(a, b)` (Go 1.21+).
+* [org.openrewrite.golang.codequality.PreferOsCreateTemp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferoscreatetemp)
+  * **Prefer os.CreateTemp**
+  * Replace deprecated `ioutil.TempFile(dir, pattern)` with `os.CreateTemp(dir, pattern)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferOsIsTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferosistimeout)
+  * **Prefer errors.Is for os timeout checks**
+  * Replace deprecated `os.IsTimeout(err)` with `errors.Is(err, os.ErrDeadlineExceeded)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferOsMkdirTemp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferosmkdirtemp)
+  * **Prefer os.MkdirTemp**
+  * Replace deprecated `ioutil.TempDir(dir, pattern)` with `os.MkdirTemp(dir, pattern)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferOsReadDir](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferosreaddir)
+  * **Prefer os.ReadDir**
+  * Replace deprecated `ioutil.ReadDir(name)` with `os.ReadDir(name)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferOsReadFile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferosreadfile)
+  * **Prefer os.ReadFile**
+  * Replace deprecated `ioutil.ReadFile(name)` with `os.ReadFile(name)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferOsWriteFile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferoswritefile)
+  * **Prefer os.WriteFile**
+  * Replace deprecated `ioutil.WriteFile(name, data, perm)` with `os.WriteFile(name, data, perm)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferRawStringForRegex](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferrawstringforregex)
+  * **Prefer raw string literals for regex patterns**
+  * Replace interpreted string literals containing backslash escapes with raw string literals in `regexp.Compile` or `regexp.MustCompile` calls.
+* [org.openrewrite.golang.codequality.PreferRegexpMustCompile](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferregexpmustcompile)
+  * **Prefer regexp.MustCompile for unchecked patterns**
+  * Collapse `x, err := regexp.Compile(p)` followed by an `if err != nil` guard into `x := regexp.MustCompile(p)`.
+* [org.openrewrite.golang.codequality.PreferSlicesSort](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferslicessort)
+  * **Prefer slices.Sort over sort type helpers**
+  * Replace deprecated `sort.Ints`, `sort.Strings`, and `sort.Float64s` with `slices.Sort` (Go 1.21+).
+* [org.openrewrite.golang.codequality.PreferSortInts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefersortints)
+  * **Prefer sort.Ints over sort.Sort(sort.IntSlice)**
+  * Replace `sort.Sort(sort.IntSlice(s))` with `sort.Ints(s)`.
+* [org.openrewrite.golang.codequality.PreferStrconvAtoi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstrconvatoi)
+  * **Prefer strconv.Atoi**
+  * Replace `strconv.ParseInt(s, 10, 0)` with `strconv.Atoi(s)`.
+* [org.openrewrite.golang.codequality.PreferStrconvFormatBool](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstrconvformatbool)
+  * **Prefer strconv.FormatBool over fmt.Sprintf**
+  * Replace `fmt.Sprintf(&quot;%t&quot;, b)` with `strconv.FormatBool(b)` for better performance.
+* [org.openrewrite.golang.codequality.PreferStrconvItoa](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstrconvitoa)
+  * **Prefer strconv.Itoa over fmt.Sprintf**
+  * Replace `fmt.Sprintf(&quot;%d&quot;, n)` with `strconv.Itoa(n)` for better performance.
+* [org.openrewrite.golang.codequality.PreferStrconvQuote](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstrconvquote)
+  * **Prefer strconv.Quote over fmt.Sprintf**
+  * Replace `fmt.Sprintf(&quot;%q&quot;, s)` with `strconv.Quote(s)` for clearer intent when quoting strings.
+* [org.openrewrite.golang.codequality.PreferStringsBuilderWriteString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringsbuilderwritestring)
+  * **Prefer strings.Builder WriteString**
+  * Replace `fmt.Fprintf(&amp;b, &quot;%s&quot;, s)` with `b.WriteString(s)` for more efficient string building.
+* [org.openrewrite.golang.codequality.PreferStringsContains](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringscontains)
+  * **Prefer strings.Contains over strings.Index comparison**
+  * Replace `strings.Index(s, sub) != -1` and similar patterns with `strings.Contains(s, sub)`.
+* [org.openrewrite.golang.codequality.PreferStringsContainsAny](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringscontainsany)
+  * **Prefer strings.ContainsAny**
+  * Replace `strings.IndexAny(s, chars) != -1` with `strings.ContainsAny(s, chars)` and `strings.IndexAny(s, chars) == -1` with `!strings.ContainsAny(s, chars)`.
+* [org.openrewrite.golang.codequality.PreferStringsContainsOverCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringscontainsovercount)
+  * **Prefer strings.Contains over strings.Count**
+  * Replace `strings.Count(s, sub) &gt; 0` with `strings.Contains(s, sub)` and `strings.Count(s, sub) == 0` with `!strings.Contains(s, sub)`.
+* [org.openrewrite.golang.codequality.PreferStringsContainsRune](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringscontainsrune)
+  * **Prefer strings.ContainsRune**
+  * Replace `strings.IndexRune(s, r) != -1` with `strings.ContainsRune(s, r)` and `strings.IndexRune(s, r) == -1` with `!strings.ContainsRune(s, r)`.
+* [org.openrewrite.golang.codequality.PreferStringsEqualFold](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringsequalfold)
+  * **Prefer strings.EqualFold**
+  * Replace `strings.ToLower(s) == strings.ToLower(n)` with `strings.EqualFold(s, n)`.
+* [org.openrewrite.golang.codequality.PreferStringsEqualFoldSingle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringsequalfoldsingle)
+  * **Prefer strings.EqualFold (single-sided)**
+  * Replace `strings.ToLower(s) == t` and `strings.ToUpper(s) == t` with `strings.EqualFold(s, t)`.
+* [org.openrewrite.golang.codequality.PreferStringsHasPrefix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringshasprefix)
+  * **Prefer strings.HasPrefix**
+  * Replace `strings.Index(s, prefix) == 0` with `strings.HasPrefix(s, prefix)`.
+* [org.openrewrite.golang.codequality.PreferStringsNewReader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringsnewreader)
+  * **Prefer strings.NewReader**
+  * Replace `bytes.NewReader([]byte(s))` with `strings.NewReader(s)` to avoid an unnecessary string-to-byte-slice conversion.
+* [org.openrewrite.golang.codequality.ReduceErrorCheckNesting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/reduceerrorchecknesting)
+  * **Reduce error check nesting**
+  * Invert `if err == nil \{ body \}` to `if err != nil \{ return err \}` followed by the body, reducing nesting in error-handling code.
+* [org.openrewrite.golang.codequality.ReduceNestingDepth](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/reducenestingdepth)
+  * **Reduce nesting depth**
+  * Invert `if err == nil \{ body \}` to `if err != nil \{ return \}` followed by the body, reducing nesting by one level.
+* [org.openrewrite.golang.codequality.RemoveConstantCondition](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeconstantcondition)
+  * **Remove constant if condition**
+  * Remove `if true \{ ... \}` (inline body) and `if false \{ ... \}` (remove dead code).
+* [org.openrewrite.golang.codequality.RemoveDebugPrint](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removedebugprint)
+  * **Remove debug print statements**
+  * Remove calls to `fmt.Println`, `fmt.Printf`, `fmt.Print`, `println`, and `print`.
+* [org.openrewrite.golang.codequality.RemoveDoubleDeref](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removedoublederef)
+  * **Remove redundant *&amp; (deref of address-of)**
+  * Remove `*&amp;x` where taking the address and immediately dereferencing is a no-op.
+* [org.openrewrite.golang.codequality.RemoveDuplicateConditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeduplicateconditions)
+  * **Remove duplicate conditions**
+  * Remove else-if branches whose condition duplicates an earlier branch in the same if/else-if chain, since the later branch is dead code.
+* [org.openrewrite.golang.codequality.RemoveEmptyDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeemptydefault)
+  * **Remove empty default case**
+  * Remove `default:` cases with empty bodies from switch statements.
+* [org.openrewrite.golang.codequality.RemoveEmptyFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeemptyfunction)
+  * **Remove empty functions**
+  * Remove free functions with empty bodies and no return type. Methods with receivers are preserved because they may implement an interface.
+* [org.openrewrite.golang.codequality.RemoveEmptyGoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeemptygoroutine)
+  * **Remove empty goroutine**
+  * Remove `go func() \{\}()` patterns where the goroutine body is empty.
+* [org.openrewrite.golang.codequality.RemoveEmptyLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeemptyloop)
+  * **Remove empty for loop**
+  * Remove `for` loops with empty bodies that spin without doing useful work.
+* [org.openrewrite.golang.codequality.RemoveEmptySwitch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeemptyswitch)
+  * **Remove empty switch**
+  * Remove `switch` statements with no case clauses. An empty switch body is dead code.
+* [org.openrewrite.golang.codequality.RemoveGetterPrefix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removegetterprefix)
+  * **Remove getter prefix**
+  * Remove the &quot;Get&quot; prefix from method names. Go convention is that getters should not have the &quot;Get&quot; prefix. Callers of this method will need to be updated separately.
+* [org.openrewrite.golang.codequality.RemovePackagePrefixFromName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removepackageprefixfromname)
+  * **Remove package prefix from name**
+  * Find exported identifiers whose name starts with the package name. Go convention discourages repeating the package name in exported identifiers.
+* [org.openrewrite.golang.codequality.RemoveRedundantBreak](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundantbreak)
+  * **Remove redundant break**
+  * Remove trailing `break` in switch case clauses. Go switch cases do not fall through by default.
+* [org.openrewrite.golang.codequality.RemoveRedundantBreakInSelect](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundantbreakinselect)
+  * **Remove redundant break in select**
+  * Remove trailing `break` in select communication clauses. Go select cases do not fall through.
+* [org.openrewrite.golang.codequality.RemoveRedundantElse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundantelse)
+  * **Remove redundant else after return**
+  * Remove `if ... \{ return \} else \{ ... \}` where the else is redundant because the if block ends with a return.
+* [org.openrewrite.golang.codequality.RemoveRedundantInterfaceAssertion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundantinterfaceassertion)
+  * **Remove redundant type assertion to empty interface**
+  * Remove type assertions to `any` or `interface\{\}` which are always true and redundant.
+* [org.openrewrite.golang.codequality.RemoveRedundantRangeBlank](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundantrangeblank)
+  * **Remove redundant range blank**
+  * Remove the blank identifier from `for i, _ := range s` loops. Use `for i := range s` instead.
+* [org.openrewrite.golang.codequality.RemoveRedundantReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundantreturn)
+  * **Remove redundant return**
+  * Remove bare `return` at the end of functions with no return values.
+* [org.openrewrite.golang.codequality.RemoveRedundantSprintf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundantsprintf)
+  * **Remove redundant fmt.Sprintf**
+  * Replace `fmt.Sprintf(&quot;%s&quot;, s)` with `s` when the format string is a single %s.
+* [org.openrewrite.golang.codequality.RemoveRedundantTypeConversion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundanttypeconversion)
+  * **Find potentially redundant type conversion**
+  * Find type conversions like `int(x)` that may be redundant if x is already the target type. Requires type attribution for full accuracy.
+* [org.openrewrite.golang.codequality.RemoveSelfAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeselfassignment)
+  * **Remove self-assignment**
+  * Remove `x = x` self-assignments which are redundant and may indicate a bug.
+* [org.openrewrite.golang.codequality.RemoveSwitchTrueTag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeswitchtruetag)
+  * **Remove switch true tag**
+  * Remove redundant `true` tag from `switch true \{ ... \}` statements. Use a tagless switch instead.
+* [org.openrewrite.golang.codequality.RemoveUnconditionalValueOverwrite](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeunconditionalvalueoverwrite)
+  * **Remove unconditional value overwrite**
+  * Remove consecutive assignments to the same collection key or index where the first value is immediately overwritten and never read.
+* [org.openrewrite.golang.codequality.RemoveUnreachableCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeunreachablecode)
+  * **Remove unreachable code**
+  * Remove statements after a `return` in the same block which are unreachable.
+* [org.openrewrite.golang.codequality.ReplaceTimeSinceWithSince](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/replacetimesincewithsince)
+  * **Replace time.Now().Sub(t) with time.Since(t)**
+  * Replace `time.Now().Sub(t)` with `time.Since(t)` for clarity.
+* [org.openrewrite.golang.codequality.ReplaceTimeUntilWithUntil](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/replacetimeuntilwithuntil)
+  * **Replace t.Sub(time.Now()) with time.Until(t)**
+  * Replace `t.Sub(time.Now())` with `time.Until(t)` for clarity.
+* [org.openrewrite.golang.codequality.ResolveContextTodo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/resolvecontexttodo)
+  * **Resolve context.TODO**
+  * Replace `context.TODO()` with `context.Background()`. These are placeholders that should be replaced with a real context.
+* [org.openrewrite.golang.codequality.ReuseJsonCodecInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/reusejsoncodecinloop)
+  * **Reuse JSON codec in loop**
+  * Find `json.Marshal()` or `json.Unmarshal()` calls inside for/range loops. Consider using a pre-allocated encoder/decoder for better performance.
+* [org.openrewrite.golang.codequality.SimplifyBooleanExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifybooleanexpression)
+  * **Simplify boolean expression**
+  * Simplify boolean comparisons like `x == true` to `x` and `x == false` to `!x`.
+* [org.openrewrite.golang.codequality.SimplifyBytesBufferRoundtrip](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifybytesbufferroundtrip)
+  * **Simplify bytes.NewBuffer roundtrip**
+  * Replace `bytes.NewBuffer(b).Bytes()` with `b` since wrapping a byte slice in a buffer only to extract it is a no-op.
+* [org.openrewrite.golang.codequality.SimplifyBytesEqualNil](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifybytesequalnil)
+  * **Simplify bytes.Equal nil check**
+  * Replace `bytes.Equal(b, nil)` and `bytes.Equal(nil, b)` with `len(b) == 0`.
+* [org.openrewrite.golang.codequality.SimplifyBytesSplitN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifybytessplitn)
+  * **Simplify bytes.SplitN with -1**
+  * Replace `bytes.SplitN(b, sep, -1)` with `bytes.Split(b, sep)` since -1 means split all.
+* [org.openrewrite.golang.codequality.SimplifyDoubleNegation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifydoublenegation)
+  * **Simplify double negation**
+  * Replace `!!x` with `x` to remove redundant double boolean negation.
+* [org.openrewrite.golang.codequality.SimplifyErrorsIsNil](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyerrorsisnil)
+  * **Simplify errors.Is nil check**
+  * Replace redundant `errors.Is(err, nil)` with `err == nil`.
+* [org.openrewrite.golang.codequality.SimplifyFmtSprintf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyfmtsprintf)
+  * **Simplify fmt.Sprintf with %%v**
+  * Replace `fmt.Sprintf(&quot;%v&quot;, x)` with `fmt.Sprint(x)`.
+* [org.openrewrite.golang.codequality.SimplifyGoroutineClosure](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifygoroutineclosure)
+  * **Simplify goroutine closure**
+  * Simplify `go func() \{ f() \}()` to `go f()` where the closure wraps a single function call.
+* [org.openrewrite.golang.codequality.SimplifyIfReturnBool](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyifreturnbool)
+  * **Simplify if-return-bool**
+  * Replace `if cond \{ return true \}; return false` with `return cond`, and vice versa.
+* [org.openrewrite.golang.codequality.SimplifyNilCheckBeforeClose](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifynilcheckbeforeclose)
+  * **Simplify nil check before Close**
+  * Replace `if x != nil \{ x.Close() \}` with `x.Close()` where the nil check is redundant.
+* [org.openrewrite.golang.codequality.SimplifyRedundantBytesTrimSpace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyredundantbytestrimspace)
+  * **Simplify redundant bytes.TrimSpace**
+  * Replace `bytes.TrimSpace(bytes.TrimSpace(b))` with `bytes.TrimSpace(b)` since TrimSpace is idempotent.
+* [org.openrewrite.golang.codequality.SimplifyRedundantErrorWrap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyredundanterrorwrap)
+  * **Simplify redundant error wrap**
+  * Replace `fmt.Errorf(&quot;%w&quot;, err)` with `err` when wrapping adds no context.
+* [org.openrewrite.golang.codequality.SimplifyRedundantLenBeforeRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyredundantlenbeforerange)
+  * **Simplify redundant len check before range**
+  * Remove `if len(s) &gt; 0 \{ for ... range s \}` where the len check is redundant because range over nil/empty produces zero iterations.
+* [org.openrewrite.golang.codequality.SimplifyRedundantLogicalExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyredundantlogicalexpression)
+  * **Simplify redundant logical expression**
+  * Simplify `x &amp;&amp; x` to `x`, `x || x` to `x`, and similarly for `&amp;` and `|`, where both sides of a logical or bitwise operator are identical.
+* [org.openrewrite.golang.codequality.SimplifyRedundantNilCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyredundantnilcheck)
+  * **Simplify redundant nil check**
+  * Simplify `x != nil &amp;&amp; len(x) &gt; 0` to `len(x) &gt; 0` for slices and maps.
+* [org.openrewrite.golang.codequality.SimplifyRedundantTrimSpace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyredundanttrimspace)
+  * **Simplify redundant TrimSpace**
+  * Replace `strings.TrimSpace(strings.TrimSpace(s))` with `strings.TrimSpace(s)`.
+* [org.openrewrite.golang.codequality.SimplifySelectDefaultOnly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyselectdefaultonly)
+  * **Simplify select default only**
+  * Replace `select \{ default: ... \}` with the body statements when the select has only a default case and no communication cases.
+* [org.openrewrite.golang.codequality.SimplifySingleCaseSelect](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifysinglecaseselect)
+  * **Simplify single-case select**
+  * Replace `select` statements with a single case and no default with the channel operation directly.
+* [org.openrewrite.golang.codequality.SimplifySliceRange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifyslicerange)
+  * **Simplify slice range**
+  * Replace `s[0:len(s)]` with `s[:]`.
+* [org.openrewrite.golang.codequality.SimplifySplitN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifysplitn)
+  * **Simplify strings.SplitN with -1**
+  * Replace `strings.SplitN(s, sep, -1)` with `strings.Split(s, sep)` since -1 means split all.
+* [org.openrewrite.golang.codequality.SimplifySprintfChar](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifysprintfchar)
+  * **Simplify fmt.Sprintf %c to string conversion**
+  * Replace `fmt.Sprintf(&quot;%c&quot;, r)` with `string(r)` for better performance.
+* [org.openrewrite.golang.codequality.SimplifySprintfConcat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifysprintfconcat)
+  * **Simplify fmt.Sprintf string concat**
+  * Replace `fmt.Sprintf(&quot;%s%s&quot;, a, b)` with `a + b` for simple string concatenation.
+* [org.openrewrite.golang.codequality.SimplifyTrimLeftNoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifytrimleftnoop)
+  * **Simplify no-op TrimLeft/TrimRight**
+  * Replace `strings.TrimLeft(s, &quot;&quot;)` and `strings.TrimRight(s, &quot;&quot;)` with `s` since trimming with an empty cutset is a no-op.
+* [org.openrewrite.golang.codequality.UseBufferedChannel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usebufferedchannel)
+  * **Use buffered channel**
+  * Find `make(chan T)` calls without a buffer size. Unbuffered channels block until both sender and receiver are ready.
+* [org.openrewrite.golang.codequality.UseBytesReplaceAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usebytesreplaceall)
+  * **Use bytes.ReplaceAll**
+  * Replace `bytes.Replace(b, old, new, -1)` with `bytes.ReplaceAll(b, old, new)`.
+* [org.openrewrite.golang.codequality.UseCommaOkTypeAssertion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usecommaoktypeassertion)
+  * **Use comma-ok type assertion**
+  * Transform bare type assertions `v := x.(T)` into `v, ok := x.(T)` with `_ = ok` to avoid panics on assertion failure.
+* [org.openrewrite.golang.codequality.UseCryptoRand](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usecryptorand)
+  * **Use crypto/rand**
+  * Find usage of `math/rand` functions. Consider using `crypto/rand` for security-sensitive randomness.
+* [org.openrewrite.golang.codequality.UseCtxForContextParam](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usectxforcontextparam)
+  * **Use ctx for context.Context parameter**
+  * Rename function parameters of type context.Context that are not named &quot;ctx&quot; to &quot;ctx&quot;, including all usages in the function body.
+* [org.openrewrite.golang.codequality.UseCustomHttpClient](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usecustomhttpclient)
+  * **Use custom HTTP client**
+  * Replace `http.Get`, `http.Post`, `http.Head`, and `http.PostForm` with `http.DefaultClient` equivalents to make the default client explicit.
+* [org.openrewrite.golang.codequality.UseDescriptivePackageName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usedescriptivepackagename)
+  * **Use descriptive package name**
+  * Find packages named util, utils, common, shared, misc, or helpers which are anti-patterns in Go.
+* [org.openrewrite.golang.codequality.UseDescriptiveVarNames](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usedescriptivevarnames)
+  * **Use descriptive variable names**
+  * Find variable declarations with single-letter names that are not conventional short names (i, j, k, n, x, y, r, w, t, s, b, v).
+* [org.openrewrite.golang.codequality.UseDocumentedBlankImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usedocumentedblankimport)
+  * **Use documented blank imports**
+  * Find blank imports (`import _ &quot;pkg&quot;`). Blank imports are used for side effects and should be documented.
+* [org.openrewrite.golang.codequality.UseErrPrefixForErrors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useerrprefixforerrors)
+  * **Use Err prefix for errors**
+  * Find package-level error variables not following the `ErrFoo` naming convention. Go convention is to prefix sentinel errors with &quot;Err&quot;.
+* [org.openrewrite.golang.codequality.UseErrorMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useerrormethod)
+  * **Use .Error() method**
+  * Replace `fmt.Sprint(err)` with `err.Error()` for clarity.
+* [org.openrewrite.golang.codequality.UseErrorsAs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useerrorsas)
+  * **Use errors.As**
+  * Replace `if myErr, ok := err.(*MyError); ok \{ ... \}` with `var myErr *MyError; if errors.As(err, &amp;myErr) \{ ... \}` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.UseErrorsIsOverStringComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useerrorsisoverstringcomparison)
+  * **Use errors.Is over string comparison**
+  * Find `err.Error() == &quot;string&quot;` comparisons. Comparing error messages by string is fragile; use `errors.Is` or `errors.As` instead.
+* [org.openrewrite.golang.codequality.UseErrorsNewForSimpleErrors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useerrorsnewforsimpleerrors)
+  * **Use errors.New for simple errors**
+  * Replace `fmt.Errorf(&quot;static message&quot;)` with `errors.New(&quot;static message&quot;)` when there are no format verbs.
+* [org.openrewrite.golang.codequality.UseHttpNewRequestWithContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usehttpnewrequestwithcontext)
+  * **Use http.NewRequestWithContext**
+  * Replace deprecated `http.NewRequest(method, url, body)` with `http.NewRequestWithContext(context.TODO(), method, url, body)`.
+* [org.openrewrite.golang.codequality.UseHttpServerWithTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usehttpserverwithtimeout)
+  * **Use http.Server with timeouts**
+  * Replace `http.ListenAndServe(addr, handler)` with an explicit `http.Server` with read/write timeouts.
+* [org.openrewrite.golang.codequality.UseMeaningfulReturnValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usemeaningfulreturnvalues)
+  * **Use meaningful return values**
+  * Find `return nil, nil` where all returned values are nil, which may indicate a missing error or result.
+* [org.openrewrite.golang.codequality.UseMixedCaps](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usemixedcaps)
+  * **Use MixedCaps**
+  * Find exported functions using underscores instead of camelCase. Go convention is to use MixedCaps or mixedCaps.
+* [org.openrewrite.golang.codequality.UseMixedCapsForConstants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usemixedcapsforconstants)
+  * **Use MixedCaps for constants**
+  * Find constant or variable names using ALL_CAPS_WITH_UNDERSCORES. Go convention is to use MixedCaps, not ALL_CAPS.
+* [org.openrewrite.golang.codequality.UseNamedConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usenamedconstant)
+  * **Use named constants**
+  * Find numeric literals (other than 0 and 1) that should be named constants.
+* [org.openrewrite.golang.codequality.UsePackageLevelErrorSentinel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usepackagelevelerrorsentinel)
+  * **Use package-level error sentinel**
+  * Move inline `errors.New(&quot;...&quot;)` calls to package-level sentinel variables so they can be compared with `errors.Is`.
+* [org.openrewrite.golang.codequality.UseShortReceiverName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useshortreceivername)
+  * **Use short receiver name**
+  * Rename method receivers longer than 2 characters to the first lowercase letter of the type name.
+* [org.openrewrite.golang.codequality.UseSkipWithReason](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useskipwithreason)
+  * **Use skip with reason**
+  * Add a placeholder reason to bare `t.Skip()` calls. Tests should document why they are skipped.
+* [org.openrewrite.golang.codequality.UseStringsBuilderInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usestringsbuilderinloop)
+  * **Use strings.Builder in loop**
+  * Find `s += expr` inside for/range loops. Repeated string concatenation in loops is inefficient; rewrite to use strings.Builder.
+* [org.openrewrite.golang.codequality.UseStringsReplaceAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usestringsreplaceall)
+  * **Use strings.ReplaceAll**
+  * Replace `strings.Replace(s, old, new, -1)` with `strings.ReplaceAll(s, old, new)`.
+* [org.openrewrite.golang.codequality.UseStructuredLogging](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usestructuredlogging)
+  * **Use structured logging**
+  * Find calls to the standard `log` package (`log.Print*`, `log.Fatal*`). Consider migrating to `log/slog` for structured logging (Go 1.21+).
+* [org.openrewrite.golang.codequality.UseTlsForHttp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usetlsforhttp)
+  * **Use TLS for HTTP**
+  * Replace `http.ListenAndServe(addr, handler)` with `http.ListenAndServeTLS(addr, &quot;cert.pem&quot;, &quot;key.pem&quot;, handler)` to encrypt traffic in transit.
+* [org.openrewrite.golang.codequality.WrapErrorBeforeReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/wraperrorbeforereturn)
+  * **Wrap error before return**
+  * Replace `return nil, err` with `return nil, fmt.Errorf(&quot;funcName: %%w&quot;, err)` using the enclosing function name as context.
+* [org.openrewrite.golang.codequality.WrapErrorWithContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/wraperrorwithcontext)
+  * **Wrap error with context**
+  * Replace bare `return err` with `return fmt.Errorf(&quot;funcName: %%w&quot;, err)` using the enclosing function name as context.
+* [org.openrewrite.golang.migration.AddMissingGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/addmissinggomodrequires)
+  * **Add missing go.mod requirements**
+  * Add `require` directives for modules the resolved build list needs but go.mod does not declare, at their resolved versions and with the `// indirect` marker the toolchain assigned. Mirrors what `go mod tidy` adds, using the module graph resolved at parse time.
+* [org.openrewrite.golang.migration.ChangeGoVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/changegoversion)
+  * **Change the `go` directive version**
+  * Rewrites the `go` directive in go.mod to a new version.
+* [org.openrewrite.golang.migration.FindMissingGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/findmissinggomodrequires)
+  * **Find missing go.mod requirements**
+  * Find imports of third-party packages that are not covered by any `require` directive in the module's go.mod. These are the requirements `go mod tidy` would add; adding them automatically is not possible offline because it requires resolving module versions over the network.
+* [org.openrewrite.golang.migration.FindUnusedGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/findunusedgomodrequires)
+  * **Find unused go.mod requirements**
+  * Find direct `require` directives in go.mod that no package in the module imports. A direct requirement is only justified by a direct import, so these are candidates `go mod tidy` would remove or demote to `// indirect`. They are reported rather than removed because deciding whether a module is still needed transitively requires the module graph, which is not available offline.
+* [org.openrewrite.golang.migration.FixGoModIndirectMarkers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/fixgomodindirectmarkers)
+  * **Fix go.mod `// indirect` markers**
+  * Correct the `// indirect` markers on `require` directives in go.mod: a requirement is direct when a package in the module imports it and indirect otherwise. Requirements are never removed, so the change is always build-safe; a genuinely unused requirement is marked `// indirect` rather than removed.
+* [org.openrewrite.golang.migration.FormatGoMod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/formatgomod)
+  * **Format go.mod**
+  * Sort the entries of each factored `require ( … )` block in go.mod by module path, matching `go mod tidy` ordering. Versions and `// indirect` markers travel with their entry; only the ordering changes.
+* [org.openrewrite.golang.migration.GoModTidy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/gomodtidy)
+  * **Tidy go.mod**
+  * Apply `go mod tidy` behavior to go.mod: add missing requirements at their resolved versions, remove unused ones, correct the `// indirect` markers, and sort require blocks. Adding and removing require the module graph resolved at parse time, and are no-ops without it. It does not sync go.sum; the `RegenerateGoSum` recipe covers that.
+* [org.openrewrite.golang.migration.RemoveUnusedGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/removeunusedgomodrequires)
+  * **Remove unused go.mod requirements**
+  * Remove `require` directives whose module provides no imported package and is unreachable through the module graph from any module that does. Uses the package→module map and module graph resolved at parse time; a no-op when that resolution did not run. Modules that pin a transitive version are kept, so the removal is build-safe.
+* [org.openrewrite.golang.migration.UpgradeGoTo118](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto118)
+  * **Upgrade Go to 1.18**
+  * Raise the `go` directive in go.mod to Go 1.18, unless it already targets 1.18 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo119](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto119)
+  * **Upgrade Go to 1.19**
+  * Raise the `go` directive in go.mod to Go 1.19, unless it already targets 1.19 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo120](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto120)
+  * **Upgrade Go to 1.20**
+  * Raise the `go` directive in go.mod to Go 1.20, unless it already targets 1.20 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo121](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto121)
+  * **Upgrade Go to 1.21**
+  * Raise the `go` directive in go.mod to Go 1.21, unless it already targets 1.21 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo122](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto122)
+  * **Upgrade Go to 1.22**
+  * Raise the `go` directive in go.mod to Go 1.22, unless it already targets 1.22 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo123](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto123)
+  * **Upgrade Go to 1.23**
+  * Raise the `go` directive in go.mod to Go 1.23, unless it already targets 1.23 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo124](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto124)
+  * **Upgrade Go to 1.24**
+  * Raise the `go` directive in go.mod to Go 1.24, unless it already targets 1.24 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo125](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto125)
+  * **Upgrade Go to 1.25**
+  * Raise the `go` directive in go.mod to Go 1.25, unless it already targets 1.25 or newer.
+* [org.openrewrite.golang.migration.UpgradeGoTo126](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/upgradegoto126)
+  * **Upgrade Go to 1.26**
+  * Raise the `go` directive in go.mod to Go 1.26, unless it already targets 1.26 or newer.
+* [org.openrewrite.golang.search.FindMethods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/search/findmethods)
+  * **Find methods**
+  * Find all method invocations matching a method pattern.
+* [org.openrewrite.golang.search.FindTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/search/findtypes)
+  * **Find types**
+  * Find all references to a given type.
+* [org.openrewrite.golang.test.RenameXToFlag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/test/renamextoflag)
+  * **Rename x to flag (test)**
+  * Test recipe that renames identifier x to flag.
 
 ### rewrite-android
 
@@ -8889,6 +9531,93 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-nodejs
 
+* [org.openrewrite.node.migrate.buffer.replace-deprecated-slice](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/buffer/replace-deprecated-slice)
+  * **Replace deprecated `Buffer.slice()` with `Buffer.subarray()`**
+  * Replace deprecated `buffer.slice()` calls with `buffer.subarray()` for compatibility with Uint8Array.prototype.slice().
+* [org.openrewrite.node.migrate.buffer.replace-slow-buffer](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/buffer/replace-slow-buffer)
+  * **Replace deprecated `SlowBuffer` with `Buffer.allocUnsafeSlow()`**
+  * Replace deprecated `new SlowBuffer(size)` calls with `Buffer.allocUnsafeSlow(size)`. SlowBuffer was used to create un-pooled Buffer instances, but has been removed in favor of the explicit Buffer.allocUnsafeSlow() method.
+* [org.openrewrite.node.migrate.crypto.find-create-cipher](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/find-create-cipher)
+  * **Find deprecated `crypto.createCipher()` and `crypto.createDecipher()` usage**
+  * `crypto.createCipher()` and `crypto.createDecipher()` were deprecated in Node.js 10 (DEP0106) and removed in Node.js 22. Use `crypto.createCipheriv()` and `crypto.createDecipheriv()` instead.
+* [org.openrewrite.node.migrate.crypto.replace-crypto-fips](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/replace-crypto-fips)
+  * **Replace deprecated `crypto.fips` with `crypto.getFips()` and `crypto.setFips()`**
+  * Replace deprecated `crypto.fips` property access with `crypto.getFips()` for reads and `crypto.setFips(value)` for writes.
+* [org.openrewrite.node.migrate.crypto.replace-hash-constructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/crypto/replace-hash-constructor)
+  * **Replace deprecated `new crypto.Hash()` and `new crypto.Hmac()` with factory methods**
+  * Replace deprecated `new crypto.Hash(algorithm)` constructor calls with `crypto.createHash(algorithm)` and `new crypto.Hmac(algorithm, key)` with `crypto.createHmac(algorithm, key)` factory methods.
+* [org.openrewrite.node.migrate.find-process-assert](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/find-process-assert)
+  * **Find deprecated `process.assert()` usage**
+  * `process.assert()` was deprecated in Node.js 10 (DEP0100) and removed in Node.js 23. Use the `assert` module instead.
+* [org.openrewrite.node.migrate.find-punycode-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/find-punycode-usage)
+  * **Find deprecated `punycode` module usage**
+  * The `punycode` built-in module was deprecated in Node.js 21 (DEP0040). Use the userland `punycode` package from npm or `url.domainToASCII`/`url.domainToUnicode` instead.
+* [org.openrewrite.node.migrate.fs.replace-dirent-path](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-dirent-path)
+  * **Replace `dirent.path` with `dirent.parentPath`**
+  * Replaces deprecated `dirent.path` property access with `dirent.parentPath` on `fs.Dirent` instances to address DEP0178 deprecation.
+* [org.openrewrite.node.migrate.fs.replace-fs-access-constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-fs-access-constants)
+  * **Replace deprecated `fs.F_OK`, `fs.R_OK`, `fs.W_OK`, `fs.X_OK` with `fs.constants.*`**
+  * Replace deprecated file access constants (`fs.F_OK`, `fs.R_OK`, `fs.W_OK`, `fs.X_OK`) with their equivalents from `fs.constants`. These constants were removed in Node.js v24+ and should be accessed through the constants namespace.
+* [org.openrewrite.node.migrate.fs.replace-fs-truncate-fd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-fs-truncate-fd)
+  * **Replace `fs.truncate()` with file descriptor to `fs.ftruncate()`**
+  * Replace deprecated `fs.truncate(fd, ...)` and `fs.truncateSync(fd, ...)` calls with `fs.ftruncate(fd, ...)` and `fs.ftruncateSync(fd, ...)` when the first argument is a file descriptor (number).
+* [org.openrewrite.node.migrate.fs.replace-stats-constructor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs/replace-stats-constructor)
+  * **Replace deprecated `fs.Stats` constructor with object literal**
+  * Replace deprecated `new fs.Stats()` constructor calls with an object literal containing Stats properties initialized to undefined.
+* [org.openrewrite.node.migrate.http.replace-outgoing-message-headers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/http/replace-outgoing-message-headers)
+  * **Replace `OutgoingMessage._headers` and `._headerNames` with public methods**
+  * Replace deprecated `OutgoingMessage.prototype._headers` with `getHeaders()`, `setHeader()`, `removeHeader()` and `OutgoingMessage.prototype._headerNames` with `getHeaderNames()` to address DEP0066 deprecation.
+* [org.openrewrite.node.migrate.increase-node-engine-version](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/increase-node-engine-version)
+  * **Increase Node.js engine version**
+  * Raises the lower bound of the `engines.node` version range in package.json to the specified Node.js version, performing a hard cutover that drops support for older, end-of-life versions (`22.x` → `24.x`, `&gt;= 22` → `&gt;= 24`). The original constraint style is preserved where possible and the version is never lowered.
+* [org.openrewrite.node.migrate.increase-node-engine-version-in-github-actions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/increase-node-engine-version-in-github-actions)
+  * **Increase Node.js version in GitHub Actions**
+  * Increases `node-version` in `actions/setup-node` steps in GitHub Actions workflows. Only modifies plain major version values (e.g. `20`) and x-ranges (e.g. `20.x`). Never decreases the version.
+* [org.openrewrite.node.migrate.net.remove-set-simultaneous-accepts](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/net/remove-set-simultaneous-accepts)
+  * **Remove deprecated `net._setSimultaneousAccepts()`**
+  * Remove calls to deprecated `net._setSimultaneousAccepts()` which was an undocumented internal function that is no longer necessary.
+* [org.openrewrite.node.migrate.process.coerce-process-exit-code](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/process/coerce-process-exit-code)
+  * **Coerce `process.exit()` and `process.exitCode` to integer**
+  * Wraps non-integer values passed to `process.exit()` or assigned to `process.exitCode` with `Math.trunc()` to avoid the DEP0164 deprecation warning about implicit coercion to integer.
+* [org.openrewrite.node.migrate.process.remove-usage-of-features-tls-underscore_constants](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/process/remove-usage-of-features-tls-underscore_constants)
+  * **Remove usage of deprecated `process.features.tls_*` properties**
+  * Remove references to deprecated `process.features.tls_*` properties, replace with `process.features.tls`.
+* [org.openrewrite.node.migrate.stream.replace-internal-modules](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/stream/replace-internal-modules)
+  * **Replace deprecated `node:_stream_*` with `node:stream`**
+  * Replace deprecated internal stream module imports like `require('node:_stream_readable')` with the public `node:stream` module.
+* [org.openrewrite.node.migrate.timers.find-timers-active](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/timers/find-timers-active)
+  * **Find deprecated `timers.active()` and `timers._unrefActive()` usage**
+  * `timers.active()` (DEP0126) and `timers._unrefActive()` (DEP0127) were deprecated and removed in Node.js 24. Use `timeout.refresh()` instead.
+* [org.openrewrite.node.migrate.tls.find-tls-secure-pair](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/tls/find-tls-secure-pair)
+  * **Find deprecated `tls.SecurePair` and `tls.createSecurePair()` usage**
+  * `tls.SecurePair` (DEP0043) and `tls.createSecurePair()` (DEP0064) were deprecated and removed in Node.js 24. Use `tls.TLSSocket` instead.
+* [org.openrewrite.node.migrate.tls.replace-internal-modules](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/tls/replace-internal-modules)
+  * **Replace deprecated `node:_tls_common` and `node:_tls_wrap` with `node:tls`**
+  * Replace deprecated internal TLS module imports `require('node:_tls_common')` and `require('node:_tls_wrap')` with the public `node:tls` module.
+* [org.openrewrite.node.migrate.upgrade-node-22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/upgrade-node-22)
+  * **Upgrade to Node.js 22**
+  * Migrate deprecated APIs for Node.js 22 compatibility. Addresses Node 22 runtime deprecations and deprecations from earlier versions.
+* [org.openrewrite.node.migrate.upgrade-node-24](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/upgrade-node-24)
+  * **Upgrade to Node.js 24**
+  * Migrate deprecated APIs for Node.js 24 compatibility. Includes all migrations from Node.js 22, plus Node 23 and Node 24 deprecations.
+* [org.openrewrite.node.migrate.util.remove-promisify-on-promise](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/remove-promisify-on-promise)
+  * **Remove unnecessary `util.promisify()` on Promise-returning functions**
+  * Removes `util.promisify()` calls on functions that already return a Promise. Since Node.js v17.0.0, calling promisify on a function that returns a Promise emits a runtime deprecation warning (DEP0174).
+* [org.openrewrite.node.migrate.util.replace-is-webassembly-compiled-module](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-is-webassembly-compiled-module)
+  * **Replace deprecated `util.types.isWebAssemblyCompiledModule()`**
+  * Replace `util.types.isWebAssemblyCompiledModule(value)` with `value instanceof WebAssembly.Module`.
+* [org.openrewrite.node.migrate.util.replace-util-extend](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-util-extend)
+  * **Replace deprecated `util._extend()` with `Object.assign()`**
+  * Replace deprecated `util._extend(target, source)` calls with `Object.assign(target, source)` which preserves the mutation behavior.
+* [org.openrewrite.node.migrate.util.replace-util-log](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/replace-util-log)
+  * **Replace deprecated `util.log()` with `console.log()`**
+  * Replace deprecated `util.log()` calls with `console.log()`. Note: `util.log()` included timestamps, but `console.log()` does not.
+* [org.openrewrite.node.migrate.util.use-native-type-checking-methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/util/use-native-type-checking-methods)
+  * **Replace deprecated `util.isX()` methods with native JavaScript**
+  * The `util` module's type-checking methods have been removed in Node 22.
+* [org.openrewrite.node.migrate.zlib.replace-bytes-read](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/zlib/replace-bytes-read)
+  * **Replace deprecated `zlib.bytesRead` with `zlib.bytesWritten`**
+  * Replace deprecated `bytesRead` property on zlib streams with `bytesWritten`.
 * [org.openrewrite.nodejs.search.DatabaseInteractionInsights](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/search/databaseinteractioninsights)
   * **Javascript database interaction library insights**
   * Discover which popular javascript database interaction libraries (Sequelize, TypeORM, Mongoose, etc.) are being used in your projects.

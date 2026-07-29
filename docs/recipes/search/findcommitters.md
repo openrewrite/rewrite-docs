@@ -32,12 +32,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Class cohesion DevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/classcohesiondevcenter)
 * [DevCenter Kotlin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterkotlin)
 * [DevCenter for Angular](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterangularstarter)
+* [DevCenter for Apache Maven](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachemavendevcenter)
+* [DevCenter for Apache](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/apachedevcenter)
 * [DevCenter for C#](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentercsharpstarter)
 * [DevCenter for Go](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcentergostarter)
+* [DevCenter for Gradle and Maven](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/buildtoolstarter)
 * [DevCenter for Node.js](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenternodestarter)
 * [DevCenter for Python](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterpythonstarter)
+* [DevCenter for Quarkus](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/quarkusdevcenter)
+* [DevCenter for Vulnerability Management](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/vulnerabilitiesdevcenter)
 * [DevCenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/devcenterstarter)
 
 

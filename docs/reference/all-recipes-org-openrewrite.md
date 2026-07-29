@@ -202,7 +202,7 @@ _1 recipe_
 
 _License: Apache License Version 2.0_
 
-_77 recipes_
+_79 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -387,6 +387,12 @@ _77 recipes_
 * [org.openrewrite.gradle.plugins.RemoveSettingsPlugin](/recipes/gradle/plugins/removesettingsplugin.md)
   * **Remove Gradle settings plugin**
   * Remove plugin from Gradle settings file `plugins` block by id.
+* [org.openrewrite.gradle.plugins.SetDevelocityProjectId](/recipes/gradle/plugins/setdevelocityprojectid.md)
+  * **Set the Develocity `projectId`**
+  * Sets the `projectId` in the `develocity` block of a Gradle settings file, adding it after the `server` assignment when absent or updating it when it differs. The `projectId` is used by newer Develocity servers to associate build scans with a project.
+* [org.openrewrite.gradle.plugins.SetDevelocityServer](/recipes/gradle/plugins/setdevelocityserver.md)
+  * **Set the Develocity `server`**
+  * Sets the `server` in the `develocity` block of a Gradle settings file, adding it as the first statement when absent or updating it when it differs. Use this to point builds at a different Develocity server, for example when migrating between servers.
 * [org.openrewrite.gradle.plugins.UpgradePluginVersion](/recipes/gradle/plugins/upgradepluginversion.md)
   * **Update a Gradle plugin by id**
   * Update a Gradle plugin by id to a later version defined by the plugins DSL. To upgrade a plugin dependency defined by `buildscript.dependencies`, use the `UpgradeDependencyVersion` recipe instead.

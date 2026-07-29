@@ -22,6 +22,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate from Gradle Enterprise to Develocity](./migrategradleenterprisetodevelocity.md)
 * [Remove Gradle plugin](./removebuildplugin.md)
 * [Remove Gradle settings plugin](./removesettingsplugin.md)
+* [Set the Develocity `projectId`](./setdevelocityprojectid.md)
+* [Set the Develocity `server`](./setdevelocityserver.md)
 * [Update a Gradle plugin by id](./upgradepluginversion.md)
 
 
