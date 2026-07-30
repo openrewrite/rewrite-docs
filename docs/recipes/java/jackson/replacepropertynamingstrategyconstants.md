@@ -131,6 +131,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Jackson best practices](/recipes/java/jackson/jacksonbestpractices.md)
+* [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 
 ## Examples
 ##### Example 1

@@ -47,6 +47,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `spring-boot-dependencies`
   * newVersion: `2.7.x`
   * overrideManagedVersion: `true`
+* [Remove stale `mockito.version` property predating the Mockito BOM](../../../java/spring/boot2/removestalemockitoversionproperty)
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-maven-plugin`
@@ -116,6 +117,7 @@ recipeList:
       artifactId: spring-boot-dependencies
       newVersion: 2.7.x
       overrideManagedVersion: true
+  - org.openrewrite.java.spring.boot2.RemoveStaleMockitoVersionProperty
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-maven-plugin

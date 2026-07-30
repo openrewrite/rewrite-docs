@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned**
 
-_Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide` or `com.google.common.primitives.UnsignedInts#divideUnsigned`._
+_Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide`._
 
 ### Tags
 
@@ -41,10 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `com.google.common.primitives.UnsignedInts divide(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedInts divide(..)`
   * newMethodName: `divideUnsigned`
 * [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `com.google.common.primitives.UnsignedInts divideUnsigned(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedInts divideUnsigned(..)`
   * fullyQualifiedTargetTypeName: `java.lang.Integer`
 
 </TabItem>
@@ -57,17 +57,17 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned
 displayName: Prefer `Integer#divideUnsigned`
 description: |
-  Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide` or `com.google.common.primitives.UnsignedInts#divideUnsigned`.
+  Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide`.
 tags:
   - guava
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.google.common.primitives.UnsignedInts divide(int, int)
+      methodPattern: com.google.common.primitives.UnsignedInts divide(..)
       newMethodName: divideUnsigned
   - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: com.google.common.primitives.UnsignedInts divideUnsigned(int, int)
+      methodPattern: com.google.common.primitives.UnsignedInts divideUnsigned(..)
       fullyQualifiedTargetTypeName: java.lang.Integer
 
 ```

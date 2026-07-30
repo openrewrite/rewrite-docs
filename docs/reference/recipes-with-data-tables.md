@@ -667,7 +667,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.maven.UpgradeTransitiveDependencyVersion](/recipes/maven/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Maven dependencies**
-  * Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+  * Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. When the transitive dependency's version is already governed by a plain `&lt;dependencyManagement&gt;` entry in the project, that entry is upgraded in place rather than adding a duplicate; otherwise (including a version supplied by an imported BOM) a new managed dependency is added. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
 
 ##### Data tables:
 
@@ -1657,6 +1657,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.java.spring.boot4.MigrateJsonschema2PojoToSpringBoot4](/recipes/java/spring/boot4/migratejsonschema2pojotospringboot4.md)
+  * **Migrate jsonschema2pojo configuration to Spring Boot 4**
+  * Update `jsonschema2pojo-maven-plugin` to generate Jackson 3 and Jakarta Validation annotations compatible with Spring Boot 4. The `jackson3` annotation style was introduced in jsonschema2pojo 1.3.0, so the plugin is upgraded to at least that version first.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.java.spring.boot4.MigrateOpenApiGeneratorToSpringBoot4](/recipes/java/spring/boot4/migrateopenapigeneratortospringboot4.md)
+  * **Migrate OpenAPI Generator `spring` configuration to Spring Boot 4**
+  * Update `openapi-generator-maven-plugin` executions using the `spring` generator to generate Spring Boot 4 and Jackson 3 sources. Replaces the deprecated `useSpringBoot3` option with `useSpringBoot4` and enables `useJackson3`, matching the Jackson 3 baseline of Spring Boot 4. Enabling `useSpringBoot4` also enables `useJakartaEe`, so it is left implicit. The `useSpringBoot4`/`useJackson3` options were introduced in OpenAPI Generator 7.16.0, so the plugin is upgraded to at least that version first.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
   * **Migrate to Spring Boot 4.0 (Community Edition)**
   * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
@@ -1795,6 +1813,63 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
+### rewrite-static-analysis
+
+#### [org.openrewrite.staticanalysis.FindMissingJavadocOnPublicMethods](/recipes/staticanalysis/findmissingjavadoconpublicmethods.md)
+  * **Find public methods missing Javadoc**
+  * Locates `public` method declarations that are not documented with a Javadoc comment, marks them with a search result, and records them in a data table.
+
+##### Data tables:
+
+  * **org.openrewrite.staticanalysis.table.MissingJavadocOnPublicMethods**: *Public method declarations that are not documented with a Javadoc comment.*
+
+
+#### [org.openrewrite.staticanalysis.FindNewExceptionWithoutCause](/recipes/staticanalysis/findnewexceptionwithoutcause.md)
+  * **Find new exceptions thrown without the caught exception**
+  * Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Data flow (taint) tracking is used to establish whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule.
+
+##### Data tables:
+
+  * **org.openrewrite.staticanalysis.table.ExceptionsWithoutCause**: *New exceptions thrown from a `catch` block that do not reference the caught exception.*
+
+
+#### [org.openrewrite.staticanalysis.ModernizeCollections](/recipes/staticanalysis/modernizecollections.md)
+  * **Modernize collections**
+  * Replace the legacy synchronized types `Hashtable`, `Vector`, `Stack`, and `StringBuffer` with their modern unsynchronized counterparts `HashMap`, `ArrayList`, `Deque`/`ArrayDeque`, and `StringBuilder`. Each replacement is only applied when data flow analysis can prove the instance is a local variable that never escapes its method, so the synchronization it provided is redundant.
+
+##### Data tables:
+
+  * **org.openrewrite.staticanalysis.table.LegacySynchronizedTypesNotMigrated**: *Instances of a legacy synchronized type (`Hashtable`, `Vector`, `Stack`, `StringBuffer`) that were found but left unchanged because they could not be proven safe to modernize.*
+
+
+#### [org.openrewrite.staticanalysis.ReplaceHashtableWithHashMap](/recipes/staticanalysis/replacehashtablewithhashmap.md)
+  * **Replace `java.util.Hashtable` with `java.util.HashMap`**
+  * `Hashtable` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Hashtable` with a `HashMap` when data flow analysis can prove the `Hashtable` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, and `Hashtable`-specific method usages (`contains`, `elements`, `keys`) are left untouched. `HashMap` permits `null` keys and values, so it accepts every input `Hashtable` did.
+
+##### Data tables:
+
+  * **org.openrewrite.staticanalysis.table.LegacySynchronizedTypesNotMigrated**: *Instances of a legacy synchronized type (`Hashtable`, `Vector`, `Stack`, `StringBuffer`) that were found but left unchanged because they could not be proven safe to modernize.*
+
+
+#### [org.openrewrite.staticanalysis.ReplaceStringBufferWithStringBuilder](/recipes/staticanalysis/replacestringbufferwithstringbuilder.md)
+  * **Replace `java.lang.StringBuffer` with `java.lang.StringBuilder`**
+  * `StringBuffer` synchronizes every operation, which adds overhead in the common single-threaded case. `StringBuilder` exposes the identical API without the synchronization. This recipe replaces a local `StringBuffer` with a `StringBuilder` when data flow analysis can prove the `StringBuffer` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields and escaping variables are left untouched.
+
+##### Data tables:
+
+  * **org.openrewrite.staticanalysis.table.LegacySynchronizedTypesNotMigrated**: *Instances of a legacy synchronized type (`Hashtable`, `Vector`, `Stack`, `StringBuffer`) that were found but left unchanged because they could not be proven safe to modernize.*
+
+
+#### [org.openrewrite.staticanalysis.ReplaceVectorWithArrayList](/recipes/staticanalysis/replacevectorwitharraylist.md)
+  * **Replace `java.util.Vector` with `java.util.ArrayList`**
+  * `Vector` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Vector` with an `ArrayList` when data flow analysis can prove the `Vector` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, `Vector`-specific method usages (like `elementAt` or `addElement`), and the `Vector(int, int)` constructor are left untouched.
+
+##### Data tables:
+
+  * **org.openrewrite.staticanalysis.table.LegacySynchronizedTypesNotMigrated**: *Instances of a legacy synchronized type (`Hashtable`, `Vector`, `Stack`, `StringBuffer`) that were found but left unchanged because they could not be proven safe to modernize.*
 
 
 
@@ -2495,9 +2570,18 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.apache.camel.upgrade.Camel418LTSMigrationRecipe](/recipes/apache/camel/upgrade/camel418ltsmigrationrecipe.md)
+  * **Migrate to Camel 4.18LTS**
+  * Migrates Apache Camel application to 4.18 LTS. This recipe aggregates all migration steps from 4.0 to 4.18.3.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.20.0**
-  * Migrates Apache Camel application to 4.20.0.
+  * **Migrate to 4.21.0**
+  * Migrates Apache Camel application to 4.21.0.
 
 ##### Data tables:
 
@@ -2828,9 +2912,27 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v3_33_1](/recipes/quarkus/migratetoquarkus_v3_33_1.md)
+  * **Quarkus Updates Aggregate 3.33.1**
+  * Quarkus update recipes to upgrade your application to 3.33.1.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.quarkus.MigrateToQuarkus_v3_37_0](/recipes/quarkus/migratetoquarkus_v3_37_0.md)
   * **Quarkus Updates Aggregate 3.37.0**
   * Quarkus update recipes to upgrade your application to 3.37.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v3_38_0](/recipes/quarkus/migratetoquarkus_v3_38_0.md)
+  * **Quarkus Updates Aggregate 3.38.0**
+  * Quarkus update recipes to upgrade your application to 3.38.0.
 
 ##### Data tables:
 

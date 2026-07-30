@@ -1,17 +1,17 @@
 ---
-title: "Prefer `Long#parseUnsignedInt`"
-sidebar_label: "Prefer `Long#parseUnsignedInt`"
+title: "Prefer `Long#parseUnsignedLong`"
+sidebar_label: "Prefer `Long#parseUnsignedLong`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Prefer `Long#parseUnsignedInt`
+# Prefer `Long#parseUnsignedLong`
 
 **org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong**
 
-_Prefer `java.lang.Long#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedInt`._
+_Prefer `java.lang.Long#parseUnsignedLong` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedLong`._
 
 ### Tags
 
@@ -37,7 +37,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `com.google.common.primitives.UnsignedInts parseUnsignedLong(String, ..)`
+  * methodPattern: `com.google.common.primitives.UnsignedLongs parseUnsignedLong(String, ..)`
   * fullyQualifiedTargetTypeName: `java.lang.Long`
 
 </TabItem>
@@ -48,16 +48,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong
-displayName: Prefer `Long#parseUnsignedInt`
+displayName: Prefer `Long#parseUnsignedLong`
 description: |
-  Prefer `java.lang.Long#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedInt`.
+  Prefer `java.lang.Long#parseUnsignedLong` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedLong`.
 tags:
   - guava
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: com.google.common.primitives.UnsignedInts parseUnsignedLong(String, ..)
+      methodPattern: com.google.common.primitives.UnsignedLongs parseUnsignedLong(String, ..)
       fullyQualifiedTargetTypeName: java.lang.Long
 
 ```
@@ -75,7 +75,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong"
-  displayName="Prefer `Long#parseUnsignedInt`"
+  displayName="Prefer `Long#parseUnsignedLong`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

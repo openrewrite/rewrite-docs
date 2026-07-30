@@ -15,6 +15,7 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Change `KafkaOperations.send*` return type to `CompletableFuture`](./kafkaoperationssendreturntype.md)
+* [Move `DefaultErrorHandler.setBackOff(BackOff)` to the constructor](./defaulterrorhandlersetbackofftoconstructor.md)
 * [Remove `KafkaOperations.usingCompletableFuture()`](./removeusingcompletablefuture.md)
 * [Use `Duration` in `KafkaTestUtils`](./kafkatestutilsduration.md)
 

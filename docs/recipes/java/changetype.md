@@ -97,6 +97,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Struts 1 Action to Struts 2 ActionSupport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migrateactionclass)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migrateawareinterfaces)
 * [Migrate TaskMetadata and ThreadMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/migratetaskandthreadmetadata)
+* [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 * [Migrate `AbstractClientHttpResponse` to `ClientHttpResponse`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migrateabstractclienthttpresponse)
 * [Migrate `Admin.listConsumerGroups()` to `listGroups()`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migrateadminlistconsumergroups)
 * [Migrate `ApiInfoBuilder` to `Info`](/recipes/java/spring/doc/apiinfobuildertoinfo.md)
@@ -109,6 +110,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
 * [Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoresetcredentials.md)
+* [Migrate camel-aws2-s3 listObjects to V2 API](/recipes/apache/camel/upgrade/camel421/migrateaws2s3listobjectsapi.md)
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
 * [Migrate deprecated APIs removed in Spring Framework 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratedeprecatedapis)
 * [Migrate deprecated `javax.annotation.security` packages to `jakarta.annotation.security`](/recipes/quarkus/updates/core/quarkus30/javaxannotationsecuritypackagetojakarta.md)
@@ -191,6 +193,7 @@ This recipe is used as part of the following composite recipes:
 * [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
 * [Recommended Fit API becomes Assignment Recommendation API](/recipes/timefold/solver/migration/v8/solutionmanagerrecommendassignmentrecipe.md)
+* [Relocate Spring Boot web server classes to their Spring Boot 4.0 packages](/recipes/java/spring/boot4/relocatewebserverclasses.md)
 * [Rename OpenSymphony / XWork classes to Struts 7 packages](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/renameopensymphonytostruts2)
 * [Rename `JavaTypeDescriptor` and `SqlTypeDescriptor` to `JavaType` and `SqlType`](/recipes/hibernate/typedescriptortotype.md)
 * [Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer](/recipes/apache/camel/upgrade/camel413/authenticationhttpclientconfigurer.md)
@@ -277,6 +280,7 @@ This recipe is used as part of the following composite recipes:
 * [io.quarkus.updates.core.quarkus324.MigrateFromHibernateValidatorNotBlank](/recipes/quarkus/updates/core/quarkus324/migratefromhibernatevalidatornotblank.md)
 * [io.quarkus.updates.core.quarkus324.MigrateFromIndexColumn](/recipes/quarkus/updates/core/quarkus324/migratefromindexcolumn.md)
 * [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](/recipes/quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix.md)
+* [io.quarkus.updates.core.quarkus338.ElasticsearchRestClientMigration](/recipes/quarkus/updates/core/quarkus338/elasticsearchrestclientmigration.md)
 
 ## Example
 

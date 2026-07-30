@@ -58,7 +58,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * elementName: `web-app`
   * attributeName: `xsi:schemaLocation`
   * newValue: `https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd`
-  * oldValue: `(?s).*xml/ns/javaee.*`
+  * oldValue: `(?s).*xml/ns/(j2ee|javaee).*`
   * regex: `true`
 * [Change XML tag value](../../../xml/changetagvalue)
   * elementName: `//*`
@@ -105,7 +105,7 @@ recipeList:
       elementName: web-app
       attributeName: xsi:schemaLocation
       newValue: https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd
-      oldValue: (?s).*xml/ns/javaee.*
+      oldValue: (?s).*xml/ns/(j2ee|javaee).*
       regex: true
   - org.openrewrite.xml.ChangeTagValue:
       elementName: //*

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.PreferMathMultiplyExact**
 
-_Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.primitives.IntMath#checkedMultiply` or `com.google.common.primitives.IntMath#multiplyExact`._
+_Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.math.IntMath#checkedMultiply`._
 
 ### Tags
 
@@ -57,7 +57,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferMathMultiplyExact
 displayName: Prefer `Math#multiplyExact`
 description: |
-  Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.primitives.IntMath#checkedMultiply` or `com.google.common.primitives.IntMath#multiplyExact`.
+  Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.math.IntMath#checkedMultiply`.
 tags:
   - guava
 preconditions:

@@ -65,6 +65,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newReturnType: `org.springframework.http.HttpStatusCode`
 * [Migrate to Spring Data 3.0](../../../java/spring/data/upgradespringdata_3_0)
 * [Convert `JdbcTemplate.queryForLong(..)` to `queryForObject(..)`](../../../java/spring/data/jdbctemplatequeryforlongmigration)
+* [Migrate `ListenableFuture` to `CompletableFuture`](../../../java/spring/util/concurrent/listenabletocompletablefuture)
 
 </TabItem>
 
@@ -109,6 +110,7 @@ recipeList:
       newReturnType: org.springframework.http.HttpStatusCode
   - org.openrewrite.java.spring.data.UpgradeSpringData_3_0
   - org.openrewrite.java.spring.data.JdbcTemplateQueryForLongMigration
+  - org.openrewrite.java.spring.util.concurrent.ListenableToCompletableFuture
 
 ```
 </TabItem>

@@ -39,6 +39,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change type](../../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.eclipse.tahu.host.api.HostApplicationEventHandler`
   * newFullyQualifiedTypeName: `org.eclipse.tahu.host.api.MultiHostApplicationEventHandler`
+* [Migrate camel-kafka headers](../../../../apache/camel/upgrade/camel418/upgradekafkarecipes)
+* [Migrate camel-dns header constants to new naming convention](../../../../apache/camel/upgrade/camel418/upgradednsheaders)
+* [Migrate camel-salesforce header constants to new naming convention](../../../../apache/camel/upgrade/camel418/upgradesalesforceheaders)
 
 </TabItem>
 
@@ -61,6 +64,9 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.eclipse.tahu.host.api.HostApplicationEventHandler
       newFullyQualifiedTypeName: org.eclipse.tahu.host.api.MultiHostApplicationEventHandler
+  - org.apache.camel.upgrade.camel418.upgradeKafkaRecipes
+  - org.apache.camel.upgrade.camel418.upgradeDnsHeaders
+  - org.apache.camel.upgrade.camel418.upgradeSalesforceHeaders
 
 ```
 </TabItem>
@@ -70,7 +76,8 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.20.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to Camel 4.18LTS](/recipes/apache/camel/upgrade/camel418ltsmigrationrecipe.md)
 * [Migrates `camel 4.17` application to `camel 4.18`](/recipes/quarkus/updates/camel/camel418/camelquarkusmigrationrecipe.md)
 
 

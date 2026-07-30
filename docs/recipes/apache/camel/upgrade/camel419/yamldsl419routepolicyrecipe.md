@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrates `camel 4.18` application to `camel 4.19`](/recipes/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
+* [Renamed routePolicy to routePolicyRef on the route node](/recipes/apache/camel/upgrade/camel418_1/routepolicy.md)
 
 
 ## Usage

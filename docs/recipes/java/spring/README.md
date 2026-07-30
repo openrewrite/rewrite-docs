@@ -30,6 +30,7 @@ _Recipes for upgrading and patching [Spring](https://spring.io/) applications._
 * [Spring Security 5.x](/recipes/java/spring/security5)
 * [Spring Security 6.x](/recipes/java/spring/security6)
 * [Test](/recipes/java/spring/test)
+* [Util](/recipes/java/spring/util)
 * [Ws](/recipes/java/spring/ws)
 
 ## Composite Recipes

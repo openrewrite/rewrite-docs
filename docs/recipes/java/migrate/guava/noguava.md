@@ -81,10 +81,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Integer#compareUnsigned`](../../../java/migrate/guava/preferintegercompareunsigned)
 * [Prefer `Integer#divideUnsigned`](../../../java/migrate/guava/preferintegerdivideunsigned)
 * [Prefer `Integer#parseUnsignedInt`](../../../java/migrate/guava/preferintegerparseunsignedint)
+* [Prefer `Integer#remainderUnsigned`](../../../java/migrate/guava/preferintegerremainderunsigned)
 * [Prefer `String#join()` over Guava `Joiner#join()`](../../../java/migrate/guava/preferjavastringjoin)
 * [Prefer `Long#compareUnsigned`](../../../java/migrate/guava/preferlongcompareunsigned)
 * [Prefer `Long#divideUnsigned`](../../../java/migrate/guava/preferlongdivideunsigned)
-* [Prefer `Long#parseUnsignedInt`](../../../java/migrate/guava/preferlongparseunsignedlong)
+* [Prefer `Long#parseUnsignedLong`](../../../java/migrate/guava/preferlongparseunsignedlong)
 * [Prefer `Long#remainderUnsigned`](../../../java/migrate/guava/preferlongremainderunsigned)
 * [Prefer `Math#addExact`](../../../java/migrate/guava/prefermathaddexact)
 * [Prefer `Math#subtractExact`](../../../java/migrate/guava/prefermathsubtractexact)
@@ -149,6 +150,7 @@ recipeList:
   - org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned
   - org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned
   - org.openrewrite.java.migrate.guava.PreferIntegerParseUnsignedInt
+  - org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned
   - org.openrewrite.java.migrate.guava.PreferJavaStringJoin
   - org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned
   - org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned

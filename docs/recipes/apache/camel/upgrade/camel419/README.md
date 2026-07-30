@@ -13,8 +13,6 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
-* [Camel XML DSL Saga EIP restructuring](./xmldsl419sagarecipe.md)
-* [Camel YAML DSL Saga EIP restructuring](./yamldsl419sagarecipe.md)
 * [Camel YAML DSL routePolicy renaming](./yamldsl419routepolicyrecipe.md)
 * [Migrate camel-groovy-xml to camel-groovy](./migrategroovyxml.md)
 * [Remove test-jar type from camel-test-infra dependencies](./pom419testinfrarecipe.md)

@@ -142,9 +142,41 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `org.springframework.boot.autoconfigure.graphql`
   * newPackageName: `org.springframework.boot.graphql.autoconfigure`
   * recursive: `true`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.data.mongodb.autoconfigure.DataMongoAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.mongo.MongoReactiveDataAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.data.mongodb.autoconfigure.DataMongoReactiveAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.data.mongodb.autoconfigure.DataMongoRepositoriesAutoConfiguration`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.data.mongo.MongoReactiveRepositoriesAutoConfiguration`
+  * newFullyQualifiedTypeName: `org.springframework.boot.data.mongodb.autoconfigure.DataMongoReactiveRepositoriesAutoConfiguration`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.autoconfigure.data.mongo`
+  * newPackageName: `org.springframework.boot.data.mongodb.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.test.autoconfigure.data.mongo`
+  * newPackageName: `org.springframework.boot.data.mongodb.test.autoconfigure`
+  * recursive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.autoconfigure.mongo`
   * newPackageName: `org.springframework.boot.mongodb.autoconfigure`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.actuate.autoconfigure.data.mongo`
+  * newPackageName: `org.springframework.boot.mongodb.autoconfigure.health`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.actuate.autoconfigure.metrics.mongo`
+  * newPackageName: `org.springframework.boot.mongodb.autoconfigure.metrics`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.springframework.boot.actuate.data.mongo`
+  * newPackageName: `org.springframework.boot.mongodb.health`
   * recursive: `true`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.kafka.StreamsBuilderFactoryBeanCustomizer`
@@ -454,9 +486,41 @@ recipeList:
       oldPackageName: org.springframework.boot.autoconfigure.graphql
       newPackageName: org.springframework.boot.graphql.autoconfigure
       recursive: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.data.mongodb.autoconfigure.DataMongoAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.mongo.MongoReactiveDataAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.data.mongodb.autoconfigure.DataMongoReactiveAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.data.mongodb.autoconfigure.DataMongoRepositoriesAutoConfiguration
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.data.mongo.MongoReactiveRepositoriesAutoConfiguration
+      newFullyQualifiedTypeName: org.springframework.boot.data.mongodb.autoconfigure.DataMongoReactiveRepositoriesAutoConfiguration
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.autoconfigure.data.mongo
+      newPackageName: org.springframework.boot.data.mongodb.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.test.autoconfigure.data.mongo
+      newPackageName: org.springframework.boot.data.mongodb.test.autoconfigure
+      recursive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.autoconfigure.mongo
       newPackageName: org.springframework.boot.mongodb.autoconfigure
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.actuate.autoconfigure.data.mongo
+      newPackageName: org.springframework.boot.mongodb.autoconfigure.health
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.actuate.autoconfigure.metrics.mongo
+      newPackageName: org.springframework.boot.mongodb.autoconfigure.metrics
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.springframework.boot.actuate.data.mongo
+      newPackageName: org.springframework.boot.mongodb.health
       recursive: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.kafka.StreamsBuilderFactoryBeanCustomizer

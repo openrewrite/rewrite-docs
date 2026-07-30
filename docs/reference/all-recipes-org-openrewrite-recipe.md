@@ -1047,7 +1047,7 @@ _18 recipes_
   * For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the pom.xml.
 * [org.openrewrite.java.dependencies.RemoveRedundantDependencies](/recipes/java/dependencies/removeredundantdependencies.md)
   * **Remove redundant explicit dependencies**
-  * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared. A direct dependency is only removed when the transitive one provides it at the exact same scope and with the same exclusions, so that removing it does not change the effective classpath.
+  * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared. A direct dependency is only removed when the transitive one provides it at the exact same scope and with the same declared exclusions, so that removing it does not change the effective classpath.
 * [org.openrewrite.java.dependencies.UpgradeDependencyVersion](/recipes/java/dependencies/upgradedependencyversion.md)
   * **Upgrade Gradle or Maven dependency versions**
   * For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
@@ -1776,7 +1776,7 @@ _39 recipes_
 
 _License: Moderne Source Available License_
 
-_468 recipes_
+_470 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
@@ -1817,6 +1817,9 @@ _468 recipes_
 * [org.openrewrite.java.migrate.AddLombokMapstructBindingMavenDependencyOnly](/recipes/java/migrate/addlombokmapstructbindingmavendependencyonly.md)
   * **Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used**
   * Add the `lombok-mapstruct-binding` when both MapStruct and Lombok are used, and the dependency does not already exist. Only to be called from `org.openrewrite.java.migrate.AddLombokMapstructBinding` to reduce redundant checks.
+* [org.openrewrite.java.migrate.AddMapstructAnnotationProcessorPath](/recipes/java/migrate/addmapstructannotationprocessorpath.md)
+  * **Add `mapstruct-processor` to the `maven-compiler-plugin` annotation processor paths**
+  * Add the `mapstruct-processor` annotation processor path, matching the version of the `mapstruct` dependency, so that MapStruct mappers are generated when annotation processing is configured explicitly.
 * [org.openrewrite.java.migrate.AddMissingMethodImplementation](/recipes/java/migrate/addmissingmethodimplementation.md)
   * **Adds missing method implementations**
   * Check for missing methods required by interfaces and adds them.
@@ -2281,16 +2284,16 @@ _468 recipes_
   * Prefer `java.lang.Integer#compare` instead of using `com.google.common.primitives.Ints#compare`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
   * **Prefer `Integer#compareUnsigned`**
-  * Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare` or `com.google.common.primitives.UnsignedInts#compareUnsigned`.
+  * Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
   * **Prefer `Integer#divideUnsigned`**
-  * Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide` or `com.google.common.primitives.UnsignedInts#divideUnsigned`.
+  * Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerParseUnsignedInt](/recipes/java/migrate/guava/preferintegerparseunsignedint.md)
   * **Prefer `Integer#parseUnsignedInt`**
   * Prefer `java.lang.Integer#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedInts#parseUnsignedInt`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned](/recipes/java/migrate/guava/preferintegerremainderunsigned.md)
   * **Prefer `Integer#remainderUnsigned`**
-  * Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainderUnsigned`.
+  * Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainder`.
 * [org.openrewrite.java.migrate.guava.PreferJavaNioCharsetStandardCharsets](/recipes/java/migrate/guava/preferjavaniocharsetstandardcharsets.md)
   * **Prefer `java.nio.charset.StandardCharsets`**
   * Prefer `java.nio.charset.StandardCharsets` instead of using `com.google.common.base.Charsets`.
@@ -2335,28 +2338,28 @@ _468 recipes_
   * Prefer `java.lang.Long#compare` instead of using `com.google.common.primitives.Longs#compare`.
 * [org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
   * **Prefer `Long#compareUnsigned`**
-  * Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare` or `com.google.common.primitives.UnsignedLongs#compareUnsigned`.
+  * Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare`.
 * [org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned](/recipes/java/migrate/guava/preferlongdivideunsigned.md)
   * **Prefer `Long#divideUnsigned`**
-  * Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide` or `com.google.common.primitives.UnsignedLongs#divideUnsigned`.
+  * Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide`.
 * [org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
-  * **Prefer `Long#parseUnsignedInt`**
-  * Prefer `java.lang.Long#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedInt`.
+  * **Prefer `Long#parseUnsignedLong`**
+  * Prefer `java.lang.Long#parseUnsignedLong` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedLong`.
 * [org.openrewrite.java.migrate.guava.PreferLongRemainderUnsigned](/recipes/java/migrate/guava/preferlongremainderunsigned.md)
   * **Prefer `Long#remainderUnsigned`**
-  * Prefer `java.lang.Long#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#remainderUnsigned`.
+  * Prefer `java.lang.Long#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#remainder`.
 * [org.openrewrite.java.migrate.guava.PreferMathAddExact](/recipes/java/migrate/guava/prefermathaddexact.md)
   * **Prefer `Math#addExact`**
-  * Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd` or `com.google.common.math.IntMath#addExact`.
+  * Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd`.
 * [org.openrewrite.java.migrate.guava.PreferMathClamp](/recipes/java/migrate/guava/prefermathclamp.md)
   * **Prefer `Math#clamp`**
   * Prefer `java.lang.Math#clamp` instead of using `com.google.common.primitives.*#constrainToRange`.
 * [org.openrewrite.java.migrate.guava.PreferMathMultiplyExact](/recipes/java/migrate/guava/prefermathmultiplyexact.md)
   * **Prefer `Math#multiplyExact`**
-  * Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.primitives.IntMath#checkedMultiply` or `com.google.common.primitives.IntMath#multiplyExact`.
+  * Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.math.IntMath#checkedMultiply`.
 * [org.openrewrite.java.migrate.guava.PreferMathSubtractExact](/recipes/java/migrate/guava/prefermathsubtractexact.md)
   * **Prefer `Math#subtractExact`**
-  * Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.primitives.IntMath#checkedSubtract` or `com.google.common.primitives.IntMath#subtractExact`.
+  * Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.math.IntMath#checkedSubtract`.
 * [org.openrewrite.java.migrate.guava.PreferShortCompare](/recipes/java/migrate/guava/prefershortcompare.md)
   * **Prefer `Short#compare`**
   * Prefer `java.lang.Short#compare` instead of using `com.google.common.primitives.Shorts#compare`.
@@ -2708,6 +2711,9 @@ _468 recipes_
 * [org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider](/recipes/java/migrate/javaee8/apachedefaultprovider.md)
   * **Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references**
   * This recipe flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references in validation.xml deployment descriptors. Bean Validation 2.0 and later use the Hibernate Validator implementation instead of the Apache BVal implementation which was used for Bean Validation 1.0 and 1.1.
+* [org.openrewrite.java.migrate.javaee8.MigrateToServlet3x](/recipes/java/migrate/javaee8/migratetoservlet3x.md)
+  * **Update Java EE Servlet Dependencies to 3.x**
+  * Update Java EE Servlet Dependencies to 3.x.
 * [org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL](/recipes/java/migrate/javaee8/servletisrequestedsessionidfromurl.md)
   * **Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`**
   * The  method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in JavaEE8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
@@ -3550,7 +3556,7 @@ _41 recipes_
 
 _License: Moderne Source Available License_
 
-_321 recipes_
+_333 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -3804,6 +3810,9 @@ _321 recipes_
 * [org.openrewrite.java.spring.boot2.RemoveObsoleteSpringRunners](/recipes/java/spring/boot2/removeobsoletespringrunners.md)
   * **Remove obsolete Spring JUnit runners**
   * Remove obsolete classpath runners.
+* [org.openrewrite.java.spring.boot2.RemoveStaleMockitoVersionProperty](/recipes/java/spring/boot2/removestalemockitoversionproperty.md)
+  * **Remove stale `mockito.version` property predating the Mockito BOM**
+  * Spring Boot 2.7 switched to importing `org.mockito:mockito-bom:$\{mockito.version\}`. A stale `mockito.version` override predating the Mockito BOM (before 4.3.0) resolves to a non-existent POM, which breaks dependency resolution and silently stalls later upgrades such as Spring Cloud. Only remove the property when it still points at such an older Mockito version, so that deliberate overrides on newer versions are preserved when this recipe is chained into later Spring Boot upgrades.
 * [org.openrewrite.java.spring.boot2.ReplaceDeprecatedEnvironmentTestUtils](/recipes/java/spring/boot2/replacedeprecatedenvironmenttestutils.md)
   * **Replace `EnvironmentTestUtils` with `TestPropertyValues`**
   * Replaces any references to the deprecated `EnvironmentTestUtils` with `TestPropertyValues` and the appropriate functionality.
@@ -4059,15 +4068,33 @@ _321 recipes_
 * [org.openrewrite.java.spring.boot4.AddAutoConfigureWebTestClient](/recipes/java/spring/boot4/addautoconfigurewebtestclient.md)
   * **Add `@AutoConfigureWebTestClient` if necessary**
   * Adds `@AutoConfigureWebTestClient` to test classes annotated with `@SpringBootTest` that use `WebTestClient` since this bean is no longer auto-configured as described in the [Spring Boot 4 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#using-webclient-or-testresttemplate-and-springboottest).
+* [org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbReactiveTest](/recipes/java/spring/boot4/addspringbootstarterdatamongodbreactivetest.md)
+  * **Add `spring-boot-starter-data-mongodb-reactive-test` for reactive MongoDB tests**
+  * Adds the dedicated Spring Boot 4.0 reactive Spring Data MongoDB test starter when the application directly uses the reactive Spring Data MongoDB starter and MongoDB test slices.
+* [org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbTest](/recipes/java/spring/boot4/addspringbootstarterdatamongodbtest.md)
+  * **Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests**
+  * Adds the dedicated Spring Boot 4.0 imperative Spring Data MongoDB test starter when the application directly uses the imperative Spring Data MongoDB starter and MongoDB test slices.
 * [org.openrewrite.java.spring.boot4.AddSpringBootStarterFlyway](/recipes/java/spring/boot4/addspringbootstarterflyway.md)
   * **Add `spring-boot-starter-flyway` if using Flyway**
   * Adds the necessary Spring Boot 4.0 Flyway starter for autoconfiguration based on dependency usage.
 * [org.openrewrite.java.spring.boot4.MigrateAutoconfigurePackages](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
   * **Migrate packages to modular starters**
   * Migrate to new packages used for autoconfiguration by Spring Boot 4.0 modules.
+* [org.openrewrite.java.spring.boot4.MigrateJacksonBomProperty](/recipes/java/spring/boot4/migratejacksonbomproperty.md)
+  * **Migrate a Spring Boot 3 `jackson-bom.version` override to `jackson-2-bom.version`**
+  * In Spring Boot 4 `jackson-bom.version` controls the Jackson 3 (`tools.jackson`) BOM, while the Jackson 2 BOM is controlled by `jackson-2-bom.version`. A Spring Boot 3 override pins a Jackson 2 version, so rename it to keep managing Jackson 2. Gated on a Spring Boot 3 parent so a deliberate Jackson 3 override on an already-Spring-Boot-4 project is left untouched.
+* [org.openrewrite.java.spring.boot4.MigrateJsonschema2PojoToSpringBoot4](/recipes/java/spring/boot4/migratejsonschema2pojotospringboot4.md)
+  * **Migrate jsonschema2pojo configuration to Spring Boot 4**
+  * Update `jsonschema2pojo-maven-plugin` to generate Jackson 3 and Jakarta Validation annotations compatible with Spring Boot 4. The `jackson3` annotation style was introduced in jsonschema2pojo 1.3.0, so the plugin is upgraded to at least that version first.
+* [org.openrewrite.java.spring.boot4.MigrateOpenApiGeneratorToSpringBoot4](/recipes/java/spring/boot4/migrateopenapigeneratortospringboot4.md)
+  * **Migrate OpenAPI Generator `spring` configuration to Spring Boot 4**
+  * Update `openapi-generator-maven-plugin` executions using the `spring` generator to generate Spring Boot 4 and Jackson 3 sources. Replaces the deprecated `useSpringBoot3` option with `useSpringBoot4` and enables `useJackson3`, matching the Jackson 3 baseline of Spring Boot 4. Enabling `useSpringBoot4` also enables `useJakartaEe`, so it is left implicit. The `useSpringBoot4`/`useJackson3` options were introduced in OpenAPI Generator 7.16.0, so the plugin is upgraded to at least that version first.
 * [org.openrewrite.java.spring.boot4.MigrateToModularStarters](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
   * **Migrate to Spring Boot 4.0 modular starters (Community Edition)**
   * Adds the necessary Spring Boot 4.0 starter dependencies based on package usage. Spring Boot 4.0 has a modular design requiring explicit starters for each feature. This recipe detects feature usage via package imports and adds the appropriate starters. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
+* [org.openrewrite.java.spring.boot4.RelocateWebServerClasses](/recipes/java/spring/boot4/relocatewebserverclasses.md)
+  * **Relocate Spring Boot web server classes to their Spring Boot 4.0 packages**
+  * Spring Boot 4.0 relocated the embedded web server (Tomcat, Jetty) and web server application context classes into dedicated modular packages. This recipe updates references to the relocated classes' new fully-qualified names, including the servlet and reactive `WebServerFactory` variants, which moved into `servlet` and `reactive` subpackages. Undertow support was removed in Spring Boot 4.0 and is intentionally not handled here.
 * [org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions](/recipes/java/spring/boot4/renamedeprecatedstartersmanagedversions.md)
   * **Rename Spring Boot 4.0 starters with managed versions**
   * Renames deprecated Spring Boot starters to their new names without adding explicit versions, for use in projects where the `io.spring.dependency-management` plugin manages versions via BOM.
@@ -4076,6 +4103,9 @@ _321 recipes_
   * Replaces `@MockBean` and `@SpyBean` annotations with `@MockitoBean` and `@MockitoSpyBean`.
 * [org.openrewrite.java.spring.boot4.SpringBootProperties_4_0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
   * **Migrate Spring Boot properties to 4.0**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot4.SpringBootProperties_4_1](/recipes/java/spring/boot4/springbootproperties_4_1-community-edition.md)
+  * **Migrate Spring Boot properties to 4.1 (Community Edition)**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot4.UnwrapMockAndSpyBeanContainers](/recipes/java/spring/boot4/unwrapmockandspybeancontainers.md)
   * **Unwrap `@MockBeans` and `@SpyBeans` container annotations**
@@ -4164,6 +4194,9 @@ _321 recipes_
 * [org.openrewrite.java.spring.data.RefactorSimpleMongoDbFactory](/recipes/java/spring/data/refactorsimplemongodbfactory.md)
   * **Use `new SimpleMongoClientDbFactory(String)`**
   * Replace usage of deprecated `new SimpleMongoDbFactory(new MongoClientURI(String))` with `new SimpleMongoClientDbFactory(String)`.
+* [org.openrewrite.java.spring.data.UpgradeSpringDataMongoDb_5_0](/recipes/java/spring/data/upgradespringdatamongodb_5_0.md)
+  * **Migrate to Spring Data MongoDB 5.0**
+  * Align explicitly versioned Spring Data MongoDB and supported MongoDB JVM driver dependencies with Spring Data MongoDB 5.0. Managed, versionless dependencies remain managed.
 * [org.openrewrite.java.spring.data.UpgradeSpringData_2_3](/recipes/java/spring/data/upgradespringdata_2_3.md)
   * **Migrate to Spring Data 2.3**
   * Migrate applications to the latest Spring Data 2.3 release.
@@ -4179,6 +4212,9 @@ _321 recipes_
 * [org.openrewrite.java.spring.data.UpgradeSpringData_3_4](/recipes/java/spring/data/upgradespringdata_3_4.md)
   * **Migrate to Spring Data JPA 3.4**
   * Migrate applications to the latest Spring Data JPA 3.4 release.
+* [org.openrewrite.java.spring.data.UpgradeSpringData_4_0](/recipes/java/spring/data/upgradespringdata_4_0.md)
+  * **Migrate to Spring Data 4.0**
+  * Migrate applications to the Spring Data 2025.1 release train. Datastore-specific migration support is added incrementally.
 * [org.openrewrite.java.spring.data.UseTlsJdbcConnectionString](/recipes/java/spring/data/usetlsjdbcconnectionstring.md)
   * **Use TLS for JDBC connection strings**
   * Increasingly, for compliance reasons (e.g. [NACHA](https://www.nacha.org/sites/default/files/2022-06/End_User_Briefing_Supplementing_Data_Security_UPDATED_FINAL.pdf)), JDBC connection strings should be TLS-enabled. This recipe will update the port and optionally add a connection attribute to indicate that the connection is TLS-enabled.
@@ -4308,6 +4344,9 @@ _321 recipes_
 * [org.openrewrite.java.spring.http.SpringWebDependency](/recipes/java/spring/http/springwebdependency.md)
   * **Find Spring Web dependency**
   * Find compile scoped Spring Web dependency for Maven and Gradle, both direct and transitive.
+* [org.openrewrite.java.spring.kafka.DefaultErrorHandlerSetBackOffToConstructor](/recipes/java/spring/kafka/defaulterrorhandlersetbackofftoconstructor.md)
+  * **Move `DefaultErrorHandler.setBackOff(BackOff)` to the constructor**
+  * `DefaultErrorHandler` does not have a `setBackOff(BackOff)` method; pass the `BackOff` to the constructor instead.
 * [org.openrewrite.java.spring.kafka.KafkaOperationsSendReturnType](/recipes/java/spring/kafka/kafkaoperationssendreturntype.md)
   * **Change `KafkaOperations.send*` return type to `CompletableFuture`**
   * Send operations used to return a `ListenableFuture` but as of 3.0 return a `CompletableFuture`. Adjust the usage to use `CompletableFuture` instead.
@@ -4473,6 +4512,9 @@ _321 recipes_
 * [org.openrewrite.java.spring.test.SpringRulesToJUnitExtension](/recipes/java/spring/test/springrulestojunitextension.md)
   * **Replace `SpringClassRule` and `SpringMethodRule` with JUnit 5 `SpringExtension`**
   * Replace JUnit 4's `SpringClassRule` and `SpringMethodRule` with JUnit 5's `SpringExtension` or rely on an existing `@SpringBootTest`.
+* [org.openrewrite.java.spring.util.concurrent.ListenableToCompletableFuture](/recipes/java/spring/util/concurrent/listenabletocompletablefuture.md)
+  * **Migrate `ListenableFuture` to `CompletableFuture`**
+  * Spring Framework 6.0 removed `org.springframework.util.concurrent.ListenableFuture` in favor of `java.util.concurrent.CompletableFuture`. This recipe migrates `ListenableFuture` types, along with their `addCallback` invocations and `ListenableFutureCallback` implementations, to `CompletableFuture`.
 * [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
   * **Migrate Spring WS Axiom to SAAJ**
   * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
@@ -4728,7 +4770,7 @@ _67 recipes_
 
 _License: Moderne Source Available License_
 
-_190 recipes_
+_196 recipes_
 
 * [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
   * **Inline deprecated delegating methods**
@@ -4865,6 +4907,12 @@ _190 recipes_
 * [org.openrewrite.staticanalysis.FinalizePrivateFields](/recipes/staticanalysis/finalizeprivatefields.md)
   * **Finalize private fields**
   * Adds the `final` modifier keyword to private instance variables which are not reassigned.
+* [org.openrewrite.staticanalysis.FindMissingJavadocOnPublicMethods](/recipes/staticanalysis/findmissingjavadoconpublicmethods.md)
+  * **Find public methods missing Javadoc**
+  * Locates `public` method declarations that are not documented with a Javadoc comment, marks them with a search result, and records them in a data table.
+* [org.openrewrite.staticanalysis.FindNewExceptionWithoutCause](/recipes/staticanalysis/findnewexceptionwithoutcause.md)
+  * **Find new exceptions thrown without the caught exception**
+  * Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Data flow (taint) tracking is used to establish whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule.
 * [org.openrewrite.staticanalysis.FixStringFormatExpressions](/recipes/staticanalysis/fixstringformatexpressions.md)
   * **Fix `String#format` and `String#formatted` expressions**
   * Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. Using `%n` ensures the correct platform-specific line separator, and removing unused arguments eliminates dead code that may mask a mismatch between the format string and its parameters.
@@ -4928,6 +4976,9 @@ _190 recipes_
 * [org.openrewrite.staticanalysis.MissingOverrideAnnotation](/recipes/staticanalysis/missingoverrideannotation.md)
   * **Add missing `@Override` to overriding and implementing methods**
   * Adds `@Override` to methods overriding superclass methods or implementing interface methods. Annotating methods improves readability by showing the author's intent to override. Additionally, when annotated, the compiler will emit an error when a signature of the overridden method does not match the superclass method.
+* [org.openrewrite.staticanalysis.ModernizeCollections](/recipes/staticanalysis/modernizecollections.md)
+  * **Modernize collections**
+  * Replace the legacy synchronized types `Hashtable`, `Vector`, `Stack`, and `StringBuffer` with their modern unsynchronized counterparts `HashMap`, `ArrayList`, `Deque`/`ArrayDeque`, and `StringBuilder`. Each replacement is only applied when data flow analysis can prove the instance is a local variable that never escapes its method, so the synchronization it provided is redundant.
 * [org.openrewrite.staticanalysis.ModifierOrder](/recipes/staticanalysis/modifierorder.md)
   * **Modifier order**
   * Modifiers should be declared in the correct order as recommended by the JLS. Ordering modifiers consistently reduces cognitive load for developers who are accustomed to the standard sequence.
@@ -5105,6 +5156,9 @@ _190 recipes_
 * [org.openrewrite.staticanalysis.ReplaceDuplicateStringLiterals](/recipes/staticanalysis/replaceduplicatestringliterals.md)
   * **Replace duplicate `String` literals**
   * Replaces `String` literals with a length of 5 or greater repeated a minimum of 3 times. Qualified `String` literals include final Strings, method invocations, and new class invocations. Adds a new `private static final String` or uses an existing equivalent class field. A new variable name will be generated based on the literal value if an existing field does not exist. The generated name will append a numeric value to the variable name if a name already exists in the compilation unit. Centralizing repeated string values into constants makes refactoring safer and reduces the risk of inconsistent updates.
+* [org.openrewrite.staticanalysis.ReplaceHashtableWithHashMap](/recipes/staticanalysis/replacehashtablewithhashmap.md)
+  * **Replace `java.util.Hashtable` with `java.util.HashMap`**
+  * `Hashtable` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Hashtable` with a `HashMap` when data flow analysis can prove the `Hashtable` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, and `Hashtable`-specific method usages (`contains`, `elements`, `keys`) are left untouched. `HashMap` permits `null` keys and values, so it accepts every input `Hashtable` did.
 * [org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference](/recipes/staticanalysis/replacelambdawithmethodreference.md)
   * **Use method references in lambda**
   * Replaces the single statement lambdas `o -&gt; o instanceOf X`, `o -&gt; (A) o`, `o -&gt; System.out.println(o)`, `o -&gt; o != null`, `o -&gt; o == null` with the equivalent method reference. Method references are often more concise and readable than their lambda equivalents, making the code's intent clearer at a glance.
@@ -5117,6 +5171,9 @@ _190 recipes_
 * [org.openrewrite.staticanalysis.ReplaceStackWithDeque](/recipes/staticanalysis/replacestackwithdeque.md)
   * **Replace `java.util.Stack` with `java.util.Deque`**
   * From the Javadoc of `Stack`: &gt; A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class.  `Stack` inherits from `Vector`, which carries unnecessary synchronization overhead in single-threaded contexts and exposes non-stack operations like random index access.
+* [org.openrewrite.staticanalysis.ReplaceStringBufferWithStringBuilder](/recipes/staticanalysis/replacestringbufferwithstringbuilder.md)
+  * **Replace `java.lang.StringBuffer` with `java.lang.StringBuilder`**
+  * `StringBuffer` synchronizes every operation, which adds overhead in the common single-threaded case. `StringBuilder` exposes the identical API without the synchronization. This recipe replaces a local `StringBuffer` with a `StringBuilder` when data flow analysis can prove the `StringBuffer` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields and escaping variables are left untouched.
 * [org.openrewrite.staticanalysis.ReplaceStringBuilderWithString](/recipes/staticanalysis/replacestringbuilderwithstring.md)
   * **Replace `StringBuilder#append` with `String`**
   * Replace `StringBuilder.append()` with String if you are only concatenating a small number of strings and the code is simple and easy to read, as the compiler can optimize simple string concatenation expressions into a single String object, which can be more efficient than using StringBuilder.
@@ -5135,6 +5192,9 @@ _190 recipes_
 * [org.openrewrite.staticanalysis.ReplaceValidateNotNullHavingVarargsWithObjectsRequireNonNull](/recipes/staticanalysis/replacevalidatenotnullhavingvarargswithobjectsrequirenonnull.md)
   * **Replace `org.apache.commons.lang3.Validate#notNull` with `Objects#requireNonNull`**
   * Replace `org.apache.commons.lang3.Validate.notNull(Object, String, Object[])` with `Objects.requireNonNull(Object, String)`.
+* [org.openrewrite.staticanalysis.ReplaceVectorWithArrayList](/recipes/staticanalysis/replacevectorwitharraylist.md)
+  * **Replace `java.util.Vector` with `java.util.ArrayList`**
+  * `Vector` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Vector` with an `ArrayList` when data flow analysis can prove the `Vector` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, `Vector`-specific method usages (like `elementAt` or `addElement`), and the `Vector(int, int)` constructor are left untouched.
 * [org.openrewrite.staticanalysis.ReplaceWeekYearWithYear](/recipes/staticanalysis/replaceweekyearwithyear.md)
   * **Week Year (YYYY) should not be used for date formatting**
   * For most dates Week Year (YYYY) and Year (yyyy) yield the same results. However, on the last week of December and the first week of January, Week Year could produce unexpected results. This is a common source of off-by-one-year bugs that typically only manifest around New Year's Eve, making them difficult to catch during development and testing.
@@ -5233,7 +5293,7 @@ _190 recipes_
   * Removes `return` from a `void` method if it's the last statement. A trailing `return` in a void method has no effect on control flow and is just noise that distracts from the meaningful logic.
 * [org.openrewrite.staticanalysis.UnnecessaryThrows](/recipes/staticanalysis/unnecessarythrows.md)
   * **Unnecessary throws**
-  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` or `protected` and the exception is not documented via a JavaDoc as a `@throws` tag.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
+  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` and the exception is not documented via a JavaDoc as a `@throws` tag.  The `throws` declaration is retained on overridable methods (package-private and `protected` methods on non-`final` classes), and on `public` methods overridden within the same source file, so that a subclass override which does throw the exception keeps compiling. Overrides in other source files cannot be detected without a scanning recipe and are therefore not accounted for.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
 * [org.openrewrite.staticanalysis.UnwrapElseAfterReturn](/recipes/staticanalysis/unwrapelseafterreturn.md)
   * **Unwrap else block after return or throw statement**
   * Unwraps the else block when the if block ends with a return or throw statement, reducing nesting and improving code readability.
@@ -5305,7 +5365,7 @@ _190 recipes_
 
 _License: Moderne Source Available License_
 
-_273 recipes_
+_275 recipes_
 
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
@@ -5523,12 +5583,12 @@ _273 recipes_
 * [org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions](/recipes/java/testing/assertj/simplifyassertjassertions.md)
   * **Shorten AssertJ assertions**
   * Replace AssertJ assertions where a dedicated assertion is available for the same actual value.
+* [org.openrewrite.java.testing.assertj.SimplifyAssertJEqualityAssertion](/recipes/java/testing/assertj/simplifyassertjequalityassertion.md)
+  * **Simplify AssertJ assertions on `==` and `!=` comparisons**
+  * Replace `assertThat(x == y).isTrue()` and its variants with the dedicated assertion for whatever `==` actually compares: `assertThat(x).isNull()` against the `null` literal, `assertThat(x).isEqualTo(y)` when either operand is a primitive and the comparison is therefore by value, and `assertThat(x).isSameAs(y)` when both operands are reference types. Floating point operands are left alone, as `==` and `isEqualTo` disagree on `NaN` and `-0.0`.
 * [org.openrewrite.java.testing.assertj.SimplifyAssertJInstanceOfAssertion](/recipes/java/testing/assertj/simplifyassertjinstanceofassertion.md)
   * **Simplify AssertJ assertions on `instanceof` expressions**
   * Replace `assertThat(x instanceof Type).isTrue()` with the dedicated `assertThat(x).isInstanceOf(Type.class)`, and the negated and `isFalse()` variants with `isNotInstanceOf`, so failures describe the actual type rather than just `expected true but was false`.
-* [org.openrewrite.java.testing.assertj.SimplifyAssertJNullRelatedAssertion](/recipes/java/testing/assertj/simplifyassertjnullrelatedassertion.md)
-  * **Simplify AssertJ assertions on `null` reference comparisons**
-  * Replace `assertThat(x == null).isTrue()` and its variants with the dedicated `assertThat(x).isNull()` / `assertThat(x).isNotNull()`. Beyond being more expressive, this avoids the compilation error that results when the `null` literal ends up as the `assertThat` argument (e.g. `assertThat(null == x).isTrue()` becoming `assertThat(null).isSameAs(x)`).
 * [org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion](/recipes/java/testing/assertj/simplifychainedassertjassertion.md)
   * **Simplify AssertJ chained assertions**
   * Many AssertJ chained assertions have dedicated assertions that function the same. It is best to use the dedicated assertions.
@@ -6105,6 +6165,12 @@ _273 recipes_
 * [org.openrewrite.java.testing.testng.TestNgAssertThrowsToAssertThat](/recipes/java/testing/testng/testngassertthrowstoassertthat.md)
   * **TestNG `assertThrows`/`expectThrows` to AssertJ**
   * Convert TestNG-style `assertThrows()` and `expectThrows()` to AssertJ's `assertThatExceptionOfType().isThrownBy()` (or `assertThatThrownBy()` when no exception type is given) to allow for chained assertions on the thrown exception.
+* [org.openrewrite.java.testing.testng.TestNgAssertionToAssertJ](/recipes/java/testing/testng/testngassertiontoassertj.md)
+  * **TestNG `Assertion` to AssertJ**
+  * Convert TestNG-style hard assertions on `org.testng.asserts.Assertion` instances to static AssertJ `assertThat(...)`, removing the now-unused local `Assertion` instance.
+* [org.openrewrite.java.testing.testng.TestNgSoftAssertToAssertJ](/recipes/java/testing/testng/testngsoftasserttoassertj.md)
+  * **TestNG `SoftAssert` to AssertJ `SoftAssertions`**
+  * Convert TestNG-style soft assertions (`org.testng.asserts.SoftAssert`) to AssertJ soft assertions (`org.assertj.core.api.SoftAssertions`).
 * [org.openrewrite.java.testing.testng.TestNgToAssertj](/recipes/java/testing/testng/testngtoassertj.md)
   * **Migrate TestNG assertions to AssertJ**
   * Convert assertions from `org.testng.Assert` to `org.assertj.core.api.Assertions`.
@@ -6131,7 +6197,7 @@ _273 recipes_
 
 _License: Apache License Version 2.0_
 
-_1580 recipes_
+_1639 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -6562,9 +6628,15 @@ _1580 recipes_
 * [io.quarkus.updates.camel.camel418.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel418/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.17` application to `camel 4.18`**
   * Migrates `camel 4.17` Quarkus application to `camel 4.18`.
+* [io.quarkus.updates.camel.camel418_3.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel418_3/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.18` application to `camel 4.18.3`**
+  * Migrates `camel 4.18` Quarkus application to `camel 4.18.3`.
 * [io.quarkus.updates.camel.camel420.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.18` application to `camel 4.20`**
   * Migrates `camel 4.18` Quarkus application to `camel 4.20`.
+* [io.quarkus.updates.camel.camel421.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel421/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.20` application to `camel 4.21`**
+  * Migrates `camel 4.20` Quarkus application to `camel 4.21`.
 * [io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.0` application to `camel 4.4`**
   * Migrates `camel 4.0` quarkus application to `camel 4.4`.
@@ -6892,6 +6964,9 @@ _1580 recipes_
 * [io.quarkus.updates.core.quarkus337.PanacheNextRelocations](/recipes/quarkus/updates/core/quarkus337/panachenextrelocations.md)
   * **io.quarkus.updates.core.quarkus337.PanacheNextRelocations**
   * 
+* [io.quarkus.updates.core.quarkus338.ElasticsearchRestClientMigration](/recipes/quarkus/updates/core/quarkus338/elasticsearchrestclientmigration.md)
+  * **io.quarkus.updates.core.quarkus338.ElasticsearchRestClientMigration**
+  * Migrate Elasticsearch low-level REST client from org.elasticsearch.client to co.elastic.clients.transport.rest5_client.low_level.
 * [io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith](/recipes/quarkus/updates/core/quarkus35/mutinyuniandgroupcombinedwith.md)
   * **io.quarkus.updates.core.quarkus35.MutinyUniAndGroupCombinedWith**
   * 
@@ -6994,9 +7069,12 @@ _1580 recipes_
 * [org.apache.camel.upgrade.Camel410LTSMigrationRecipe](/recipes/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
   * **Migrate to 4.10.6**
   * Migrates Apache Camel application to 4.10.6.
+* [org.apache.camel.upgrade.Camel418LTSMigrationRecipe](/recipes/apache/camel/upgrade/camel418ltsmigrationrecipe.md)
+  * **Migrate to Camel 4.18LTS**
+  * Migrates Apache Camel application to 4.18 LTS. This recipe aggregates all migration steps from 4.0 to 4.18.3.
 * [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.20.0**
-  * Migrates Apache Camel application to 4.20.0.
+  * **Migrate to 4.21.0**
+  * Migrates Apache Camel application to 4.21.0.
 * [org.apache.camel.upgrade.JavaVersion17](/recipes/apache/camel/upgrade/javaversion17.md)
   * **Change Maven Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
@@ -7171,21 +7249,108 @@ _1580 recipes_
 * [org.apache.camel.upgrade.camel418.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel418/camelmigrationrecipe.md)
   * **Migrates `camel 4.17` application to `camel 4.18`**
   * Migrates `camel 4.17` application to `camel 4.18`.
+* [org.apache.camel.upgrade.camel418.upgradeDnsHeaders](/recipes/apache/camel/upgrade/camel418/upgradednsheaders.md)
+  * **Migrate camel-dns header constants to new naming convention**
+  * Renames DNS header constants from dns.* pattern to CamelDns* pattern only if camel-dns dependency is present.
+* [org.apache.camel.upgrade.camel418.upgradeKafkaRecipes](/recipes/apache/camel/upgrade/camel418/upgradekafkarecipes.md)
+  * **Migrate camel-kafka headers**
+  * Renames Kafka header constants only if camel-kafka dependency is present.
+* [org.apache.camel.upgrade.camel418.upgradeSalesforceHeaders](/recipes/apache/camel/upgrade/camel418/upgradesalesforceheaders.md)
+  * **Migrate camel-salesforce header constants to new naming convention**
+  * Renames Salesforce-specific header constants to CamelSalesforce* pattern when camel-salesforce is present. Only migrates headers with Salesforce-specific terminology (sObject*, apex*, pkChunking*) to minimize false positives. Generic headers like 'limit', 'contentType', 'jobId' are excluded as they could conflict with other components.
+* [org.apache.camel.upgrade.camel418_1.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel418_1/camelmigrationrecipe.md)
+  * **Migrates `camel 4.18.0` application to `camel 4.18.1`**
+  * Migrates `camel 4.18.0` application to `camel 4.18.1`.
+* [org.apache.camel.upgrade.camel418_1.XmlDsl418_1SagaRecipe](/recipes/apache/camel/upgrade/camel418_1/xmldsl418_1sagarecipe.md)
+  * **Camel XML DSL Saga EIP restructuring**
+  * Apache Camel XML DSL migration from version 4.18 to 4.19. Converts saga compensation and completion child elements to attributes.
+* [org.apache.camel.upgrade.camel418_1.YamlDsl418_1SagaRecipe](/recipes/apache/camel/upgrade/camel418_1/yamldsl418_1sagarecipe.md)
+  * **Camel YAML DSL Saga EIP restructuring**
+  * Apache Camel YAML DSL migration from version 4.18 to 4.19. Flattens saga compensation and completion nested uri to direct values.
+* [org.apache.camel.upgrade.camel418_1.routePolicy](/recipes/apache/camel/upgrade/camel418_1/routepolicy.md)
+  * **Renamed routePolicy to routePolicyRef on the route node**
+  * Renamed routePolicy to routePolicyRef on the route node.
+* [org.apache.camel.upgrade.camel418_1.saga](/recipes/apache/camel/upgrade/camel418_1/saga.md)
+  * **Migrate camel-sage model configuration**
+  * The Saga EIP has fixed the model for how to configure completion and compensation URIs.
+* [org.apache.camel.upgrade.camel418_3.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel418_3/camelmigrationrecipe.md)
+  * **Migrates `camel 4.18.1` application to `camel 4.18.3`**
+  * Migrates `camel 4.18.1` application to `camel 4.18.3`.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderInJavaMethod](/recipes/apache/camel/upgrade/camel418_3/renameheaderinjavamethod.md)
+  * **Rename header in .setHeader()/.getHeader() calls**
+  * Renames header references in Message.setHeader() and Message.getHeader() method calls. Only migrates string literals in safe contexts. Does NOT migrate dynamic header names or Map.get() calls.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderInSimpleExpression](/recipes/apache/camel/upgrade/camel418_3/renameheaderinsimpleexpression.md)
+  * **Rename header in Simple expressions**
+  * Renames header references in Simple expressions like $\{header.oldName\} → $\{header.newName\}. Only migrates expressions inside simple() method calls.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderInXmlDsl](/recipes/apache/camel/upgrade/camel418_3/renameheaderinxmldsl.md)
+  * **Rename header in XML DSL**
+  * Renames header references in XML DSL &lt;setHeader name=&quot;...&quot;&gt;, &lt;header name=&quot;...&quot;&gt;, and &lt;removeHeader name=&quot;...&quot;&gt; elements.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderInYamlDsl](/recipes/apache/camel/upgrade/camel418_3/renameheaderinyamldsl.md)
+  * **Rename header in YAML DSL**
+  * Renames header references in YAML DSL setHeader.name, header.name, and removeHeader.name entries.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderPrefixInJavaMethod](/recipes/apache/camel/upgrade/camel418_3/renameheaderprefixinjavamethod.md)
+  * **Rename header prefix in .setHeader()/.getHeader() calls**
+  * Renames header prefixes in Message.setHeader() and Message.getHeader() method calls. Only migrates string literals in safe contexts. Does NOT migrate dynamic header names or Map.get() calls.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderPrefixInSimpleExpression](/recipes/apache/camel/upgrade/camel418_3/renameheaderprefixinsimpleexpression.md)
+  * **Rename header prefix in Simple expressions**
+  * Renames header prefixes in Simple expressions like $\{header.SolrField.id\} → $\{header.CamelSolrField.id\}. Only migrates expressions inside simple() method calls.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderPrefixInXmlDsl](/recipes/apache/camel/upgrade/camel418_3/renameheaderprefixinxmldsl.md)
+  * **Rename header prefix in XML DSL**
+  * Renames header prefixes in XML DSL &lt;setHeader name=&quot;...&quot;&gt;, &lt;header name=&quot;...&quot;&gt;, and &lt;removeHeader name=&quot;...&quot;&gt; elements.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderPrefixInYamlDsl](/recipes/apache/camel/upgrade/camel418_3/renameheaderprefixinyamldsl.md)
+  * **Rename header prefix in YAML DSL**
+  * Renames header prefixes in YAML DSL setHeader.name, header.name, and removeHeader.name entries.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaderPrefixes](/recipes/apache/camel/upgrade/camel418_3/renameheaderprefixes.md)
+  * **Rename Camel header prefixes across all DSLs**
+  * Renames Camel header prefixes across all DSL types: Java method calls (.setHeader, .getHeader), Simple expressions ($\{header.name\}), XML DSL (&lt;setHeader name=&quot;...&quot;&gt;), and YAML DSL (setHeader.name). Any header starting with an old prefix gets that prefix replaced with the new prefix. Only migrates safe contexts to avoid false positives.
+* [org.apache.camel.upgrade.camel418_3.RenameHeaders](/recipes/apache/camel/upgrade/camel418_3/renameheaders.md)
+  * **Rename Camel header(s) across all DSLs**
+  * Renames Camel header(s) from old name(s) to new name(s) across all DSL types: Java method calls (.setHeader, .getHeader), Simple expressions ($\{header.name\}), XML DSL (&lt;setHeader name=&quot;...&quot;&gt;), and YAML DSL (setHeader.name). Supports both single header rename (oldHeaderName/newHeaderName) and bulk rename (headerMappings). Only migrates safe contexts to avoid false positives.
+* [org.apache.camel.upgrade.camel418_3.upgradeGitHub2Headers](/recipes/apache/camel/upgrade/camel418_3/upgradegithub2headers.md)
+  * **Migrate camel-github2 producer header constants to new naming convention**
+  * Renames GitHub2 producer header constants to CamelGitHub* pattern only if camel-github dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeGoogleCloudHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradegooglecloudheaders.md)
+  * **Migrate camel-google-cloud header constants to new naming convention**
+  * Renames Google Cloud header constants to CamelGoogleCloud* pattern only if camel-google-functions dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeGoogleSecretManagerHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradegooglesecretmanagerheaders.md)
+  * **Migrate camel-google-secret-manager header constants to new naming convention**
+  * Renames Google Secret Manager header constants to CamelGoogleSecretManager* pattern only if camel-google-secret-manager dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeJGroupsHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradejgroupsheaders.md)
+  * **Migrate camel-jgroups header constants to new naming convention**
+  * Renames JGroups header constants from JGROUPS_* to CamelJGroups* pattern only if camel-jgroups dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeJGroupsRaftHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradejgroupsraftheaders.md)
+  * **Migrate camel-jgroups-raft header constants to new naming convention**
+  * Renames JGroups Raft header constants from JGROUPSRAFT_* to CamelJGroupsRaft* pattern only if camel-jgroups-raft dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeJiraHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradejiraheaders.md)
+  * **Migrate camel-jira header constants to new naming convention**
+  * Renames JIRA header constants to CamelJira* pattern only if camel-jira dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeLuceneHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradeluceneheaders.md)
+  * **Migrate camel-lucene header constants to new naming convention**
+  * Renames Lucene-specific header constants to CamelLucene* pattern only if camel-lucene dependency is present. Generic header 'QUERY' is excluded to prevent false positives. Note - DSL accessor methods (returnLuceneDocs() → luceneReturnLuceneDocs()) are NOT migrated and require manual update.
+* [org.apache.camel.upgrade.camel418_3.upgradeMongoDbGridFsHeaders](/recipes/apache/camel/upgrade/camel418_3/upgrademongodbgridfsheaders.md)
+  * **Migrate camel-mongodb-gridfs header constants to new naming convention**
+  * Renames MongoDB GridFS header constants to CamelGridFs* pattern only if camel-mongodb-gridfs dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeOpenstackHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradeopenstackheaders.md)
+  * **Migrate camel-openstack header constants to new naming convention**
+  * Renames OpenStack-specific header constants to CamelOpenstack* pattern only if camel-openstack dependency is present. Generic headers (*Id, *Name, containerName, objectName, imageRef, interfaceType, ipVersion) are excluded to prevent false positives.
+* [org.apache.camel.upgrade.camel418_3.upgradeShiroHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradeshiroheaders.md)
+  * **Migrate camel-shiro security header constants to new naming convention**
+  * Renames Shiro security header constants from SHIRO_SECURITY_* to CamelShiroSecurity* pattern only if camel-shiro dependency is present.
+* [org.apache.camel.upgrade.camel418_3.upgradeSolrHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradesolrheaders.md)
+  * **Migrate camel-solr header prefixes to new naming convention**
+  * Renames Solr header prefixes SolrField. and SolrParam. to CamelSolrField. and CamelSolrParam. when camel-solr dependency is present. Routes that reference constants symbolically continue to work without changes. Note - Because the renamed prefixes now begin with Camel, they are stripped by HeaderFilterStrategy when crossing transport boundaries. Routes that bridge external transports and want to drive Solr fields/params from headers must carry values in non-Camel-prefixed headers and map them in the route.
+* [org.apache.camel.upgrade.camel418_3.upgradeWeb3jHeaders](/recipes/apache/camel/upgrade/camel418_3/upgradeweb3jheaders.md)
+  * **Migrate camel-web3j header constants to new naming convention**
+  * Renames Web3j-specific header constants to CamelWeb3j* pattern only if camel-web3j dependency is present. Generic headers without clear blockchain context (ADDRESS, ADDRESSES, POSITION, SOURCE_CODE, DATABASE_NAME, KEY_NAME, CLIENT_ID, PRIORITY, TTL, ERROR_CODE, ERROR_DATA, ERROR_MESSAGE, TOPICS, FILTER_ID) are excluded to prevent false positives. Note - DSL accessor renames and operation semantics still require manual review.
 * [org.apache.camel.upgrade.camel419.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
   * **Migrates `camel 4.18` application to `camel 4.19`**
   * Migrates `camel 4.18` application to `camel 4.19`.
 * [org.apache.camel.upgrade.camel419.Pom419TestInfraRecipe](/recipes/apache/camel/upgrade/camel419/pom419testinfrarecipe.md)
   * **Remove test-jar type from camel-test-infra dependencies**
   * Removes &lt;type&gt;test-jar&lt;/type&gt; from camel-test-infra-* dependencies as they no longer produce separate test-JAR artifacts.
-* [org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe](/recipes/apache/camel/upgrade/camel419/xmldsl419sagarecipe.md)
-  * **Camel XML DSL Saga EIP restructuring**
-  * Apache Camel XML DSL migration from version 4.18 to 4.19. Converts saga compensation and completion child elements to attributes.
 * [org.apache.camel.upgrade.camel419.YamlDsl419RoutePolicyRecipe](/recipes/apache/camel/upgrade/camel419/yamldsl419routepolicyrecipe.md)
   * **Camel YAML DSL routePolicy renaming**
   * Apache Camel YAML DSL migration from version 4.18 to 4.19. Renames routePolicy to routePolicyRef.
-* [org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe](/recipes/apache/camel/upgrade/camel419/yamldsl419sagarecipe.md)
-  * **Camel YAML DSL Saga EIP restructuring**
-  * Apache Camel YAML DSL migration from version 4.18 to 4.19. Flattens saga compensation and completion nested uri to direct values.
 * [org.apache.camel.upgrade.camel419.migrateGroovyXml](/recipes/apache/camel/upgrade/camel419/migrategroovyxml.md)
   * **Migrate camel-groovy-xml to camel-groovy**
   * camel-groovy-xml has been removed and moved into camel-groovy. Changes the dependency from camel-groovy-xml to camel-groovy.
@@ -7204,6 +7369,78 @@ _1580 recipes_
 * [org.apache.camel.upgrade.camel420.migratePulsarUris](/recipes/apache/camel/upgrade/camel420/migratepulsaruris.md)
   * **Migrate Pulsar component URIs from V1 to V2 format**
   * Apache Pulsar client upgraded from 4.1.3 to 4.2.0. Per PIP-457, V1 topic names are no longer supported. Migrates from V1 format (persistent://tenant/cluster/namespace/topic) to V2 format (persistent://tenant/namespace/topic). Removes the cluster segment. Only transforms URIs where the topic name does NOT contain slashes. URIs with slashes in topic names are left unchanged to avoid ambiguity between V1 and V2 formats. Works across Java, XML DSL, and YAML DSL.
+* [org.apache.camel.upgrade.camel421.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel421/camelmigrationrecipe.md)
+  * **Migrates `camel 4.20` application to `camel 4.21`**
+  * Migrates `camel 4.20` application to `camel 4.21`.
+* [org.apache.camel.upgrade.camel421.migrateAws2S3ListObjectsApi](/recipes/apache/camel/upgrade/camel421/migrateaws2s3listobjectsapi.md)
+  * **Migrate camel-aws2-s3 listObjects to V2 API**
+  * Migrates ListObjectsRequest/Response to ListObjectsV2Request/Response for the listObjects operation (pojoRequest=true only).
+* [org.apache.camel.upgrade.camel421.migrateErrorRegistryProperties](/recipes/apache/camel/upgrade/camel421/migrateerrorregistryproperties.md)
+  * **Migrate Error Registry configuration properties**
+  * Migrates Error Registry configuration from camel.main.errorRegistryXxx to camel.errorRegistry.* pattern in .properties files. Note - errorRegistryStackTraceEnabled is removed (always captures full exception now). YAML files require manual migration.
+* [org.apache.camel.upgrade.camel421.removeCamelAwsXrayDependency](/recipes/apache/camel/upgrade/camel421/removecamelawsxraydependency.md)
+  * **Remove camel-aws-xray dependency**
+  * Removes the camel-aws-xray dependency which was removed in Camel 4.21 (deprecated since 4.17, AWS X-Ray service in maintenance mode).
+* [org.apache.camel.upgrade.camel421.removeCamelElytronDependency](/recipes/apache/camel/upgrade/camel421/removecamelelytrondependency.md)
+  * **Remove camel-elytron dependency**
+  * Removes the camel-elytron dependency which was removed in Camel 4.21 (deprecated since 4.0).
+* [org.apache.camel.upgrade.camel421.removeCamelGithubDependency](/recipes/apache/camel/upgrade/camel421/removecamelgithubdependency.md)
+  * **Remove camel-github dependency**
+  * Removes the camel-github dependency which was removed in Camel 4.21 (deprecated in 4.18, replaced by camel-github2).
+* [org.apache.camel.upgrade.camel421.removeCamelGrapeDependency](/recipes/apache/camel/upgrade/camel421/removecamelgrapedependency.md)
+  * **Remove camel-grape dependency**
+  * Removes the camel-grape dependency which was removed in Camel 4.21 (deprecated since 4.1).
+* [org.apache.camel.upgrade.camel421.removeCamelGuavaEventbusDependency](/recipes/apache/camel/upgrade/camel421/removecamelguavaeventbusdependency.md)
+  * **Remove camel-guava-eventbus dependency**
+  * Removes the camel-guava-eventbus dependency which was removed in Camel 4.21 (deprecated since 4.6).
+* [org.apache.camel.upgrade.camel421.removeCamelStompDependency](/recipes/apache/camel/upgrade/camel421/removecamelstompdependency.md)
+  * **Remove camel-stomp dependency**
+  * Removes the camel-stomp dependency which was removed in Camel 4.21 (deprecated since 4.17).
+* [org.apache.camel.upgrade.camel421.upgradeArangoDbHeaders](/recipes/apache/camel/upgrade/camel421/upgradearangodbheaders.md)
+  * **Migrate camel-arangodb header constants to new naming convention**
+  * Renames ArangoDB header constants to CamelArangoDb* pattern only if camel-arangodb dependency is present. Note - DSL accessor methods (key() → arangoDbKey(), resultClassType() → arangoDbResultClassType()) are NOT migrated and require manual update.
+* [org.apache.camel.upgrade.camel421.upgradeCouchbaseHeaders](/recipes/apache/camel/upgrade/camel421/upgradecouchbaseheaders.md)
+  * **Migrate camel-couchbase header constants to new naming convention**
+  * Renames Couchbase header constants to CamelCouchbase* pattern only if camel-couchbase dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeCouchdbHeaders](/recipes/apache/camel/upgrade/camel421/upgradecouchdbheaders.md)
+  * **Migrate camel-couchdb header constants to new naming convention**
+  * Renames CouchDB header constants to CamelCouchDb* pattern only if camel-couchdb dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeDnsHeaders](/recipes/apache/camel/upgrade/camel421/upgradednsheaders.md)
+  * **Migrate camel-dns header constants to new naming convention**
+  * Renames DNS header constants from dns.* pattern to CamelDns* pattern only if camel-dns dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeGitHub2Headers](/recipes/apache/camel/upgrade/camel421/upgradegithub2headers.md)
+  * **Migrate camel-github2 producer header constants to new naming convention**
+  * Renames GitHub2 producer header constants to CamelGitHub* pattern only if camel-github dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeGoogleCloudSpeechToTextHeaders](/recipes/apache/camel/upgrade/camel421/upgradegooglecloudspeechtotextheaders.md)
+  * **Migrate camel-google-speech-to-text header constants to new naming convention**
+  * Renames Google Vision header constants to CamelGoogleCloud* pattern only if camel-google-functions dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeGoogleCloudTextToSpeechHeaders](/recipes/apache/camel/upgrade/camel421/upgradegooglecloudtexttospeechheaders.md)
+  * **Migrate camel-google-test-to-spech header constants to new naming convention**
+  * Renames Google Vision header constants to CamelGoogleCloud* pattern only if camel-google-functions dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeGoogleCloudVisionHeaders](/recipes/apache/camel/upgrade/camel421/upgradegooglecloudvisionheaders.md)
+  * **Migrate camel-google-vision header constants to new naming convention**
+  * Renames Google Vision header constants to CamelGoogleCloud* pattern only if camel-google-functions dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeIrcHeaders](/recipes/apache/camel/upgrade/camel421/upgradeircheaders.md)
+  * **Migrate camel-irc header constants to new naming convention**
+  * Renames IRC header constants from irc.* to CamelIrc* pattern only if camel-irc dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeJt400Headers](/recipes/apache/camel/upgrade/camel421/upgradejt400headers.md)
+  * **Migrate camel-jt400 header constants to new naming convention**
+  * Renames JT400 header constants to CamelJt400* pattern only if camel-jt400 dependency is present. Note - DSL accessor methods (kEY() → jt400Key(), senderInformation() → jt400SenderInformation()) are NOT migrated and require manual update.
+* [org.apache.camel.upgrade.camel421.upgradeKafkaRecipes](/recipes/apache/camel/upgrade/camel421/upgradekafkarecipes.md)
+  * **Migrate camel-kafka headers**
+  * Renames Kafka header constants only if camel-kafka dependency is present.
+* [org.apache.camel.upgrade.camel421.upgradeMailHeaders](/recipes/apache/camel/upgrade/camel421/upgrademailheaders.md)
+  * **Migrate camel-mail consumer dispatch header constants to new naming convention**
+  * Renames Mail consumer dispatch header constants to CamelMail* pattern only if camel-mail dependency is present. Note - DSL accessor methods (copyTo() → mailCopyTo(), moveTo() → mailMoveTo(), delete() → mailDelete()) are NOT migrated and require manual update.
+* [org.apache.camel.upgrade.camel421.upgradeMiloHeaders](/recipes/apache/camel/upgrade/camel421/upgrademiloheaders.md)
+  * **Migrate camel-milo header constants to new naming convention**
+  * Renames Milo header constants to CamelMilo* pattern only if camel-milo dependency is present. Note - DSL accessor method (await() → miloAwait()) is NOT migrated and requires manual update.
+* [org.apache.camel.upgrade.camel421.upgradeOpensearchHeaders](/recipes/apache/camel/upgrade/camel421/upgradeopensearchheaders.md)
+  * **Migrate camel-opensearch header constants to new naming convention**
+  * Renames OpenSearch header constants to CamelOpensearch* pattern only if camel-opensearch dependency is present. Note - DSL accessor methods (operation() → opensearchOperation(), indexId() → opensearchIndexId(), etc.) are NOT migrated and require manual update.
+* [org.apache.camel.upgrade.camel421.upgradePdfHeaders](/recipes/apache/camel/upgrade/camel421/upgradepdfheaders.md)
+  * **Migrate camel-pdf header constants to new naming convention**
+  * Renames PDF header constants to CamelPdf* pattern only if camel-pdf dependency is present. Note - DSL accessor methods (protectionPolicy() → pdfProtectionPolicy(), etc.) are NOT migrated and require manual update.
 * [org.apache.camel.upgrade.camel43.CamelResequenceEIPXmlRecipe](/recipes/apache/camel/upgrade/camel43/camelresequenceeipxmlrecipe.md)
   * **Camel Resequence DSL changes**
   * Batch and stream attributes were renamed in Resequence EIP XML DSL.
@@ -7423,9 +7660,15 @@ _1580 recipes_
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_33_0](/recipes/quarkus/migratetoquarkus_v3_33_0.md)
   * **Quarkus Updates Aggregate 3.33.0**
   * Quarkus update recipes to upgrade your application to 3.33.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_33_1](/recipes/quarkus/migratetoquarkus_v3_33_1.md)
+  * **Quarkus Updates Aggregate 3.33.1**
+  * Quarkus update recipes to upgrade your application to 3.33.1.
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_37_0](/recipes/quarkus/migratetoquarkus_v3_37_0.md)
   * **Quarkus Updates Aggregate 3.37.0**
   * Quarkus update recipes to upgrade your application to 3.37.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_38_0](/recipes/quarkus/migratetoquarkus_v3_38_0.md)
+  * **Quarkus Updates Aggregate 3.38.0**
+  * Quarkus update recipes to upgrade your application to 3.38.0.
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
   * **Quarkus Updates Aggregate 3.3.0**
   * Quarkus update recipes to upgrade your application to 3.3.0.

@@ -80,6 +80,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.ResourceProperties`
   * newFullyQualifiedTypeName: `org.springframework.boot.autoconfigure.web.WebProperties$Resources`
+* [Replace deprecated `PropertyNamingStrategy` inner classes and constants](../../../java/jackson/replacepropertynamingstrategyconstants)
 * [Migrate Spring Boot properties to 2.5](../../../java/spring/boot2/springbootproperties_2_5)
 * [Adds `@DependsOnDatabaseInitialization` to Spring Beans and Components depending on `javax.sql.DataSource`](../../../java/spring/boot2/databasecomponentandbeaninitializationordering)
 * [Upgrade MyBatis to Spring Boot 2.5](../../../java/spring/boot3/upgrademybatistospringboot_2_5)
@@ -142,6 +143,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.ResourceProperties
       newFullyQualifiedTypeName: org.springframework.boot.autoconfigure.web.WebProperties$Resources
+  - org.openrewrite.java.jackson.ReplacePropertyNamingStrategyConstants
   - org.openrewrite.java.spring.boot2.SpringBootProperties_2_5
   - org.openrewrite.java.spring.boot2.DatabaseComponentAndBeanInitializationOrdering
   - org.openrewrite.java.spring.boot3.UpgradeMyBatisToSpringBoot_2_5

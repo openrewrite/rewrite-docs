@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.PreferMathAddExact**
 
-_Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd` or `com.google.common.math.IntMath#addExact`._
+_Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd`._
 
 ### Tags
 
@@ -57,7 +57,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferMathAddExact
 displayName: Prefer `Math#addExact`
 description: |
-  Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd` or `com.google.common.math.IntMath#addExact`.
+  Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd`.
 tags:
   - guava
 preconditions:

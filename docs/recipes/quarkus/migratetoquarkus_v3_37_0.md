@@ -39,7 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 **Recipes**
 
-* [Quarkus Updates Aggregate 3.33.0](../quarkus/migratetoquarkus_v3_33_0)
+* [Quarkus Updates Aggregate 3.33.1](../quarkus/migratetoquarkus_v3_33_1)
 * [io.quarkus.updates.core.quarkus337.PanacheNextRelocations](../quarkus/updates/core/quarkus337/panachenextrelocations)
 
 </TabItem>
@@ -59,12 +59,19 @@ preconditions:
       artifactIdPattern: quarkus-core
       version: (,3.37.0)
 recipeList:
-  - org.openrewrite.quarkus.MigrateToQuarkus_v3_33_0
+  - org.openrewrite.quarkus.MigrateToQuarkus_v3_33_1
   - io.quarkus.updates.core.quarkus337.PanacheNextRelocations
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Quarkus Updates Aggregate 3.38.0](/recipes/quarkus/migratetoquarkus_v3_38_0.md)
+
 
 ## Usage
 

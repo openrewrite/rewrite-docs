@@ -10,9 +10,11 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Migrate to Spring Data 2.3](./upgradespringdata_2_3.md)
 * [Migrate to Spring Data 3.0](./upgradespringdata_3_0.md)
+* [Migrate to Spring Data 4.0](./upgradespringdata_4_0.md)
 * [Migrate to Spring Data JPA 2.5](./upgradespringdata_2_5.md)
 * [Migrate to Spring Data JPA 2.7](./upgradespringdata_2_7.md)
 * [Migrate to Spring Data JPA 3.4](./upgradespringdata_3_4.md)
+* [Migrate to Spring Data MongoDB 5.0](./upgradespringdatamongodb_5_0.md)
 
 ## Recipes
 

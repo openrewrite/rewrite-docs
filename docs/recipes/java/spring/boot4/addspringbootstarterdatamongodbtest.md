@@ -1,42 +1,110 @@
 ---
-title: "Camel XML DSL Saga EIP restructuring"
-sidebar_label: "Camel XML DSL Saga EIP restructuring"
+title: "Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests"
+sidebar_label: "Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Camel XML DSL Saga EIP restructuring
+# Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests
 
-**org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe**
+**org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbTest**
 
-_Apache Camel XML DSL migration from version 4.18 to 4.19. Converts saga compensation and completion child elements to attributes._
+_Adds the dedicated Spring Boot 4.0 imperative Spring Data MongoDB test starter when the application directly uses the imperative Spring Data MongoDB starter and MongoDB test slices._
 
 ## Recipe source
 
-[GitHub: search?type=code&q=org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub: spring-boot-40-modular-starters.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-boot-40-modular-starters.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find Maven and Gradle dependencies](../../../java/dependencies/finddependency)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-data-mongodb`
+* [Singleton](../../../core/singleton)
+
+**Recipes**
+
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-data-mongodb-test`
+  * version: `4.0.x`
+  * onlyIfUsing: `org.springframework.boot.test.autoconfigure.data.mongo.*`
+  * scope: `test`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-data-mongodb-test`
+  * version: `4.0.x`
+  * onlyIfUsing: `org.springframework.boot.data.mongodb.test.autoconfigure.*`
+  * scope: `test`
+  * acceptTransitive: `true`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbTest
+displayName: Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests
+description: |
+  Adds the dedicated Spring Boot 4.0 imperative Spring Data MongoDB test starter when the application directly uses the imperative Spring Data MongoDB starter and MongoDB test slices.
+preconditions:
+  - org.openrewrite.java.dependencies.FindDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-data-mongodb
+  - org.openrewrite.Singleton
+recipeList:
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-data-mongodb-test
+      version: 4.0.x
+      onlyIfUsing: org.springframework.boot.test.autoconfigure.data.mongo.*
+      scope: test
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-data-mongodb-test
+      version: 4.0.x
+      onlyIfUsing: org.springframework.boot.data.mongodb.test.autoconfigure.*
+      scope: test
+      acceptTransitive: true
+
+```
+</TabItem>
+</Tabs>
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrates `camel 4.18` application to `camel 4.19`](/recipes/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
+* [Migrate to Spring Boot 4.0 modular starters (Community Edition)](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe"
-  displayName="Camel XML DSL Saga EIP restructuring"
+  recipeName="org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbTest"
+  displayName="Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-third-party"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
+  artifactId="rewrite-spring"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
   hasDataTables
 />
 
@@ -44,7 +112,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbTest" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

@@ -48,6 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate to Spring Batch 6.0 from 5.2](../../../java/spring/batch/springbatch5to6migration)
 * [Migrate Spring Boot properties to 4.0](../../../java/spring/boot4/springbootproperties_4_0)
 * [Replace `@MockBean` and `@SpyBean`](../../../java/spring/boot4/replacemockbeanandspybean)
+* [Relocate Spring Boot web server classes to their Spring Boot 4.0 packages](../../../java/spring/boot4/relocatewebserverclasses)
 * [Migrate to Hibernate 7.1.x (Community Edition)](../../../hibernate/migratetohibernate71-community-edition)
 * [Migrate to testcontainers-java 2.x](../../../java/testing/testcontainers/testcontainers2migration)
 * [Upgrade to SpringDoc 3.0](../../../java/springdoc/upgradespringdoc_3_0)
@@ -65,10 +66,16 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-maven-plugin`
   * newVersion: `4.0.x`
+* [Migrate a Spring Boot 3 `jackson-bom.version` override to `jackson-2-bom.version`](../../../java/spring/boot4/migratejacksonbomproperty)
 * [Upgrade Maven parent project version](../../../maven/upgradeparentversion)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-parent`
   * newVersion: `4.0.x`
+* [Remove redundant explicit dependency and plugin versions](../../../maven/removeredundantdependencyversions)
+  * groupPattern: `tools.jackson*`
+  * onlyIfManagedVersionIs: `ANY`
+* [Remove redundant explicit dependency and plugin versions](../../../maven/removeredundantdependencyversions)
+  * onlyIfManagedVersionIs: `GTE`
 * [Update a Gradle plugin by id](../../../gradle/plugins/upgradepluginversion)
   * pluginIdPattern: `org.springframework.boot`
   * newVersion: `4.0.x`
@@ -145,6 +152,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * overrideManagedVersion: `true`
 * [Add `@AutoConfigureTestRestTemplate` if necessary](../../../java/spring/boot4/addautoconfiguretestresttemplate)
 * [Add `@AutoConfigureWebTestClient` if necessary](../../../java/spring/boot4/addautoconfigurewebtestclient)
+* [Migrate OpenAPI Generator `spring` configuration to Spring Boot 4](../../../java/spring/boot4/migrateopenapigeneratortospringboot4)
+* [Migrate jsonschema2pojo configuration to Spring Boot 4](../../../java/spring/boot4/migratejsonschema2pojotospringboot4)
 
 </TabItem>
 
@@ -170,6 +179,7 @@ recipeList:
   - org.openrewrite.java.spring.batch.SpringBatch5To6Migration
   - org.openrewrite.java.spring.boot4.SpringBootProperties_4_0
   - org.openrewrite.java.spring.boot4.ReplaceMockBeanAndSpyBean
+  - org.openrewrite.java.spring.boot4.RelocateWebServerClasses
   - org.openrewrite.hibernate.MigrateToHibernate71
   - org.openrewrite.java.testing.testcontainers.Testcontainers2Migration
   - org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0
@@ -187,10 +197,16 @@ recipeList:
       groupId: org.springframework.boot
       artifactId: spring-boot-maven-plugin
       newVersion: 4.0.x
+  - org.openrewrite.java.spring.boot4.MigrateJacksonBomProperty
   - org.openrewrite.maven.UpgradeParentVersion:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-parent
       newVersion: 4.0.x
+  - org.openrewrite.maven.RemoveRedundantDependencyVersions:
+      groupPattern: tools.jackson*
+      onlyIfManagedVersionIs: ANY
+  - org.openrewrite.maven.RemoveRedundantDependencyVersions:
+      onlyIfManagedVersionIs: GTE
   - org.openrewrite.gradle.plugins.UpgradePluginVersion:
       pluginIdPattern: org.springframework.boot
       newVersion: 4.0.x
@@ -267,10 +283,181 @@ recipeList:
       overrideManagedVersion: true
   - org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate
   - org.openrewrite.java.spring.boot4.AddAutoConfigureWebTestClient
+  - org.openrewrite.java.spring.boot4.MigrateOpenApiGeneratorToSpringBoot4
+  - org.openrewrite.java.spring.boot4.MigrateJsonschema2PojoToSpringBoot4
 
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`UpgradeSpringBoot_4_0Test#removeRedundantVersionAlreadyOnBoot4`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.7</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>redundant-version-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <commons-lang3-override.version>3.18.0</commons-lang3-override.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3-override.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.7</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>redundant-version-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,3 +12,0 @@
+    <artifactId>redundant-version-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+-   <properties>
+-       <commons-lang3-override.version>3.18.0</commons-lang3-override.version>
+-   </properties>
+    <dependencies>
+@@ -19,1 +16,0 @@
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+-           <version>${commons-lang3-override.version}</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeSpringBoot_4_0Test#removeRedundantVersionAlreadyOnBoot4`
+
+
+###### Unchanged
+```mavenProject
+project
+```
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.7</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>redundant-version-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <commons-lang3-override.version>3.18.0</commons-lang3-override.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3-override.version}</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.0.7</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>redundant-version-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -12,3 +12,0 @@
+    <artifactId>redundant-version-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+-   <properties>
+-       <commons-lang3-override.version>3.18.0</commons-lang3-override.version>
+-   </properties>
+    <dependencies>
+@@ -19,1 +16,0 @@
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+-           <version>${commons-lang3-override.version}</version>
+        </dependency>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 
