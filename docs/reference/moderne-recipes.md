@@ -7587,6 +7587,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.security7.ModularizeSpringSecurity7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/modularizespringsecurity7)
   * **Spring Security 7 modularization**
   * Spring Security Core was modularized in version 7, deprecated classes that are still a crucial part of some applications are moved to `spring-security-access`.
+* [io.moderne.java.spring.ws.MigrateAxiomToSaaj](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
+  * **Migrate Spring WS Axiom to SAAJ**
+  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
+* [io.moderne.java.spring.ws.UpgradeSpringWs_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/upgradespringws_4_0)
+  * **Migrate to Spring WS 4.0**
+  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 
 ### rewrite-tapestry
 

@@ -3556,7 +3556,7 @@ _41 recipes_
 
 _License: Moderne Source Available License_
 
-_333 recipes_
+_331 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -4515,12 +4515,6 @@ _333 recipes_
 * [org.openrewrite.java.spring.util.concurrent.ListenableToCompletableFuture](/recipes/java/spring/util/concurrent/listenabletocompletablefuture.md)
   * **Migrate `ListenableFuture` to `CompletableFuture`**
   * Spring Framework 6.0 removed `org.springframework.util.concurrent.ListenableFuture` in favor of `java.util.concurrent.CompletableFuture`. This recipe migrates `ListenableFuture` types, along with their `addCallback` invocations and `ListenableFutureCallback` implementations, to `CompletableFuture`.
-* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
-  * **Migrate Spring WS Axiom to SAAJ**
-  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
-* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
-  * **Migrate to Spring WS 4.0**
-  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 * [org.openrewrite.java.springdoc.CleanupRemainingSpringfox](/recipes/java/springdoc/cleanupremainingspringfox.md)
   * **Remove remaining Springfox dead code**
   * Removes unused private methods left behind after SpringFoxToSpringDoc migration. When Docket beans are removed, private helper methods (e.g., `appInfo()`) become dead code but are not cleaned up, causing compilation errors.

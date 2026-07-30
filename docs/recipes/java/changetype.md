@@ -93,7 +93,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Data MongoDB to Quarkus Panache MongoDB](/recipes/quarkus/spring/migratespringdatamongodb.md)
 * [Migrate Spring Events to CDI Events](/recipes/quarkus/spring/migratespringevents.md)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
-* [Migrate Spring WS Axiom to SAAJ](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
+* [Migrate Spring WS Axiom to SAAJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
 * [Migrate Struts 1 Action to Struts 2 ActionSupport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migrateactionclass)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migrateawareinterfaces)
 * [Migrate TaskMetadata and ThreadMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/migratetaskandthreadmetadata)
