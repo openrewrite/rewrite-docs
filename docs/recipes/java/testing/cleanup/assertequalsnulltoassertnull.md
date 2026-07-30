@@ -28,6 +28,65 @@ This recipe is used as part of the following composite recipes:
 
 * [Clean Up Assertions](/recipes/java/testing/junit5/cleanupassertions.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+import org.junit.jupiter.api.Assertions.assertEquals
+
+class FooTest {
+    fun test(values: List<String?>) {
+        assertEquals(values[0], null)
+        assertEquals(null, values[0])
+        assertEquals(values[0], null, "message")
+        assertEquals(null, values[0], "message")
+    }
+}
+```
+
+###### After
+```kotlin
+import org.junit.jupiter.api.Assertions.assertNull
+
+class FooTest {
+    fun test(values: List<String?>) {
+        assertNull(values[0])
+        assertNull(values[0])
+        assertNull(values[0], "message")
+        assertNull(values[0], "message")
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.jupiter.api.Assertions.assertEquals
++import org.junit.jupiter.api.Assertions.assertNull
+
+@@ -5,4 +5,4 @@
+class FooTest {
+    fun test(values: List<String?>) {
+-       assertEquals(values[0], null)
+-       assertEquals(null, values[0])
+-       assertEquals(values[0], null, "message")
+-       assertEquals(null, values[0], "message")
++       assertNull(values[0])
++       assertNull(values[0])
++       assertNull(values[0], "message")
++       assertNull(values[0], "message")
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

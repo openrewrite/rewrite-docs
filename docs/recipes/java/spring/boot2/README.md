@@ -59,6 +59,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Move SAML relying party identity provider property to asserting party](./samlrelyingpartypropertyapplicationpropertiesmove.md)
 * [Remove `@SpringExtension`](./unnecessaryspringextension.md)
 * [Remove obsolete Spring JUnit runners](./removeobsoletespringrunners.md)
+* [Remove stale `mockito.version` property predating the Mockito BOM](./removestalemockitoversionproperty.md)
 * [Remove unnecessary Spring `@RunWith`](./unnecessaryspringrunwith.md)
 * [Replace `@ExtendWith` and `@ContextConfiguration` with `@SpringJunitConfig`](./replaceextendwithandcontextconfiguration.md)
 * [Replace `EnvironmentTestUtils` with `TestPropertyValues`](./replacedeprecatedenvironmenttestutils.md)

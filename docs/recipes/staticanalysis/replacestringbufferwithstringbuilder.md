@@ -1,42 +1,46 @@
 ---
-title: "Camel YAML DSL Saga EIP restructuring"
-sidebar_label: "Camel YAML DSL Saga EIP restructuring"
+title: "Replace `java.lang.StringBuffer` with `java.lang.StringBuilder`"
+sidebar_label: "Replace `java.lang.StringBuffer` with `java.lang.StringBuilder`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Camel YAML DSL Saga EIP restructuring
+# Replace `java.lang.StringBuffer` with `java.lang.StringBuilder`
 
-**org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe**
+**org.openrewrite.staticanalysis.ReplaceStringBufferWithStringBuilder**
 
-_Apache Camel YAML DSL migration from version 4.18 to 4.19. Flattens saga compensation and completion nested uri to direct values._
+_`StringBuffer` synchronizes every operation, which adds overhead in the common single-threaded case. `StringBuilder` exposes the identical API without the synchronization. This recipe replaces a local `StringBuffer` with a `StringBuilder` when data flow analysis can prove the `StringBuffer` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields and escaping variables are left untouched._
+
+### Tags
+
+* [RSPEC-S1149](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S1149&open=java%3AS1149)
 
 ## Recipe source
 
-[GitHub: search?type=code&q=org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe),
-[Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[GitHub: ReplaceStringBufferWithStringBuilder.java](https://github.com/openrewrite/rewrite-static-analysis/blob/main/src/main/java/org/openrewrite/staticanalysis/ReplaceStringBufferWithStringBuilder.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-static-analysis/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-static-analysis/)
 
-This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 
 ## Used by
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrates `camel 4.18` application to `camel 4.19`](/recipes/apache/camel/upgrade/camel419/camelmigrationrecipe.md)
+* [Modernize collections](/recipes/staticanalysis/modernizecollections.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe"
-  displayName="Camel YAML DSL Saga EIP restructuring"
+  recipeName="org.openrewrite.staticanalysis.ReplaceStringBufferWithStringBuilder"
+  displayName="Replace `java.lang.StringBuffer` with `java.lang.StringBuilder`"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-third-party"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
+  artifactId="rewrite-static-analysis"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
   hasDataTables
 />
 
@@ -44,7 +48,7 @@ This recipe is used as part of the following composite recipes:
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.staticanalysis.ReplaceStringBufferWithStringBuilder" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 
@@ -52,6 +56,22 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.staticanalysis.table.LegacySynchronizedTypesNotMigrated" label="LegacySynchronizedTypesNotMigrated">
+
+### Legacy synchronized types not migrated
+**org.openrewrite.staticanalysis.table.LegacySynchronizedTypesNotMigrated**
+
+_Instances of a legacy synchronized type (`Hashtable`, `Vector`, `Stack`, `StringBuffer`) that were found but left unchanged because they could not be proven safe to modernize._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path to the source file containing the unmigrated reference. |
+| Class | The fully qualified name of the class containing the reference. |
+| Unmigrated type | The fully qualified name of the legacy synchronized type that was found but not migrated. |
+| Reason | Why the instance was left unchanged. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

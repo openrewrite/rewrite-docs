@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned**
 
-_Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide` or `com.google.common.primitives.UnsignedLongs#divideUnsigned`._
+_Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide`._
 
 ### Tags
 
@@ -41,10 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `com.google.common.primitives.UnsignedLongs divide(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedLongs divide(..)`
   * newMethodName: `divideUnsigned`
 * [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `com.google.common.primitives.UnsignedLongs divideUnsigned(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedLongs divideUnsigned(..)`
   * fullyQualifiedTargetTypeName: `java.lang.Long`
 
 </TabItem>
@@ -57,17 +57,17 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned
 displayName: Prefer `Long#divideUnsigned`
 description: |
-  Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide` or `com.google.common.primitives.UnsignedLongs#divideUnsigned`.
+  Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide`.
 tags:
   - guava
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.google.common.primitives.UnsignedLongs divide(int, int)
+      methodPattern: com.google.common.primitives.UnsignedLongs divide(..)
       newMethodName: divideUnsigned
   - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: com.google.common.primitives.UnsignedLongs divideUnsigned(int, int)
+      methodPattern: com.google.common.primitives.UnsignedLongs divideUnsigned(..)
       fullyQualifiedTargetTypeName: java.lang.Long
 
 ```

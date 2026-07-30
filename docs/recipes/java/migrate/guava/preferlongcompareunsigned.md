@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned**
 
-_Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare` or `com.google.common.primitives.UnsignedLongs#compareUnsigned`._
+_Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare`._
 
 ### Tags
 
@@ -41,10 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `com.google.common.primitives.UnsignedLongs compare(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedLongs compare(..)`
   * newMethodName: `compareUnsigned`
 * [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `com.google.common.primitives.UnsignedLongs compareUnsigned(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedLongs compareUnsigned(..)`
   * fullyQualifiedTargetTypeName: `java.lang.Long`
 
 </TabItem>
@@ -57,17 +57,17 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned
 displayName: Prefer `Long#compareUnsigned`
 description: |
-  Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare` or `com.google.common.primitives.UnsignedLongs#compareUnsigned`.
+  Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare`.
 tags:
   - guava
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.google.common.primitives.UnsignedLongs compare(int, int)
+      methodPattern: com.google.common.primitives.UnsignedLongs compare(..)
       newMethodName: compareUnsigned
   - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: com.google.common.primitives.UnsignedLongs compareUnsigned(int, int)
+      methodPattern: com.google.common.primitives.UnsignedLongs compareUnsigned(..)
       fullyQualifiedTargetTypeName: java.lang.Long
 
 ```

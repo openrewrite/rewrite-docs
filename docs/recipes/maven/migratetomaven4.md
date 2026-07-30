@@ -36,7 +36,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Remove duplicate plugin declarations](../maven/removeduplicateplugindeclarations)
 * [Upgrade to Maven model version 4.1.0](../maven/upgradetomodelversion410)
 * [Replace modules with subprojects](../maven/replacemoduleswithsubprojects)
-* [Use Maven 4 parent inference](../maven/useparentinference)
 
 </TabItem>
 
@@ -56,7 +55,6 @@ recipeList:
   - org.openrewrite.maven.RemoveDuplicatePluginDeclarations
   - org.openrewrite.maven.UpgradeToModelVersion410
   - org.openrewrite.maven.ReplaceModulesWithSubprojects
-  - org.openrewrite.maven.UseParentInference
 
 ```
 </TabItem>

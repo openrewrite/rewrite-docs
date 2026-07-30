@@ -61,7 +61,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Simplify AssertJ chained assertions](../../../java/testing/assertj/simplifychainedassertjassertions)
 * [Shorten AssertJ assertions](../../../java/testing/assertj/simplifyassertjassertions)
 * [Simplify AssertJ assertions on `instanceof` expressions](../../../java/testing/assertj/simplifyassertjinstanceofassertion)
-* [Simplify AssertJ assertions on `null` reference comparisons](../../../java/testing/assertj/simplifyassertjnullrelatedassertion)
+* [Simplify AssertJ assertions on `==` and `!=` comparisons](../../../java/testing/assertj/simplifyassertjequalityassertion)
 * [Simplify AssertJ assertions with `hasSize` argument](../../../java/testing/assertj/simplifyhassizeassertion)
 * [Simplify literal-first AssertJ size assertions to `hasSize`](../../../java/testing/assertj/simplifyhassizefromisequaltoassertion)
 * [Simplify AssertJ assertions on an array's `length`](../../../java/testing/assertj/simplifyarraylengthassertion)
@@ -135,7 +135,7 @@ recipeList:
   - org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyAssertJAssertions
   - org.openrewrite.java.testing.assertj.SimplifyAssertJInstanceOfAssertion
-  - org.openrewrite.java.testing.assertj.SimplifyAssertJNullRelatedAssertion
+  - org.openrewrite.java.testing.assertj.SimplifyAssertJEqualityAssertion
   - org.openrewrite.java.testing.assertj.SimplifyHasSizeAssertion
   - org.openrewrite.java.testing.assertj.SimplifyHasSizeFromIsEqualToAssertion
   - org.openrewrite.java.testing.assertj.SimplifyArrayLengthAssertion

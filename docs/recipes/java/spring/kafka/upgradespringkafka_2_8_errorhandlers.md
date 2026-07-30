@@ -50,6 +50,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.kafka.listener.SeekToCurrentErrorHandler`
   * newFullyQualifiedTypeName: `org.springframework.kafka.listener.DefaultErrorHandler`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.kafka.listener.SeekToCurrentBatchErrorHandler`
+  * newFullyQualifiedTypeName: `org.springframework.kafka.listener.DefaultErrorHandler`
+* [Move `DefaultErrorHandler.setBackOff(BackOff)` to the constructor](../../../java/spring/kafka/defaulterrorhandlersetbackofftoconstructor)
 
 </TabItem>
 
@@ -77,6 +81,10 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.kafka.listener.SeekToCurrentErrorHandler
       newFullyQualifiedTypeName: org.springframework.kafka.listener.DefaultErrorHandler
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.kafka.listener.SeekToCurrentBatchErrorHandler
+      newFullyQualifiedTypeName: org.springframework.kafka.listener.DefaultErrorHandler
+  - org.openrewrite.java.spring.kafka.DefaultErrorHandlerSetBackOffToConstructor
 
 ```
 </TabItem>

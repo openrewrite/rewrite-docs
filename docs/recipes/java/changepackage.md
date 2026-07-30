@@ -139,6 +139,7 @@ This recipe is used as part of the following composite recipes:
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
 * [OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`](/recipes/java/testing/junit5/updatemockwebservermockresponse.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Relocate Spring Boot web server classes to their Spring Boot 4.0 packages](/recipes/java/spring/boot4/relocatewebserverclasses.md)
 * [Rename OpenSymphony / XWork classes to Struts 7 packages](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate7/renameopensymphonytostruts2)
 * [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
 * [Replace `com.sun.net.ssl` package](/recipes/java/migrate/sunnetsslpackageunavailable.md)

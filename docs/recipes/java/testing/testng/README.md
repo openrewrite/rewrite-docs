@@ -14,6 +14,8 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [TestNG `Assertion` to AssertJ](./testngassertiontoassertj.md)
+* [TestNG `SoftAssert` to AssertJ `SoftAssertions`](./testngsoftasserttoassertj.md)
 * [TestNG `assertEquals` to AssertJ](./testngassertequalstoassertthat.md)
 * [TestNG `assertEqualsDeep`/`assertNotEqualsDeep` to AssertJ](./testngassertequalsdeeptoassertthat.md)
 * [TestNG `assertEqualsNoOrder` to AssertJ](./testngassertequalsnoordertoassertthat.md)

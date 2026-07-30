@@ -30,12 +30,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Migrate camel-sage model configuration](../../../../apache/camel/upgrade/camel418_1/saga)
+* [Renamed routePolicy to routePolicyRef on the route node](../../../../apache/camel/upgrade/camel418_1/routepolicy)
 * [The camel-test module has been removed from camel-bom](../../../../apache/camel/upgrade/camel419/removedcomponents)
 * [Migrate camel-groovy-xml to camel-groovy](../../../../apache/camel/upgrade/camel419/migrategroovyxml)
-* [Camel XML DSL Saga EIP restructuring](../../../../apache/camel/upgrade/camel419/xmldsl419sagarecipe)
-* [Camel YAML DSL Saga EIP restructuring](../../../../apache/camel/upgrade/camel419/yamldsl419sagarecipe)
 * [Remove test-jar type from camel-test-infra dependencies](../../../../apache/camel/upgrade/camel419/pom419testinfrarecipe)
-* [Camel YAML DSL routePolicy renaming](../../../../apache/camel/upgrade/camel419/yamldsl419routepolicyrecipe)
 
 </TabItem>
 
@@ -49,12 +48,11 @@ displayName: Migrates `camel 4.18` application to `camel 4.19`
 description: |
   Migrates `camel 4.18` application to `camel 4.19`.
 recipeList:
+  - org.apache.camel.upgrade.camel418_1.saga
+  - org.apache.camel.upgrade.camel418_1.routePolicy
   - org.apache.camel.upgrade.camel419.removedComponents
   - org.apache.camel.upgrade.camel419.migrateGroovyXml
-  - org.apache.camel.upgrade.camel419.XmlDsl419SagaRecipe
-  - org.apache.camel.upgrade.camel419.YamlDsl419SagaRecipe
   - org.apache.camel.upgrade.camel419.Pom419TestInfraRecipe
-  - org.apache.camel.upgrade.camel419.YamlDsl419RoutePolicyRecipe
 
 ```
 </TabItem>
@@ -64,7 +62,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.20.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrates `camel 4.18` application to `camel 4.20`](/recipes/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
 
 

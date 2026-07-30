@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned**
 
-_Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare` or `com.google.common.primitives.UnsignedInts#compareUnsigned`._
+_Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare`._
 
 ### Tags
 
@@ -41,10 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `com.google.common.primitives.UnsignedInts compare(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedInts compare(..)`
   * newMethodName: `compareUnsigned`
 * [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `com.google.common.primitives.UnsignedInts compareUnsigned(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedInts compareUnsigned(..)`
   * fullyQualifiedTargetTypeName: `java.lang.Integer`
 
 </TabItem>
@@ -57,17 +57,17 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned
 displayName: Prefer `Integer#compareUnsigned`
 description: |
-  Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare` or `com.google.common.primitives.UnsignedInts#compareUnsigned`.
+  Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare`.
 tags:
   - guava
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: com.google.common.primitives.UnsignedInts compare(int, int)
+      methodPattern: com.google.common.primitives.UnsignedInts compare(..)
       newMethodName: compareUnsigned
   - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: com.google.common.primitives.UnsignedInts compareUnsigned(int, int)
+      methodPattern: com.google.common.primitives.UnsignedInts compareUnsigned(..)
       fullyQualifiedTargetTypeName: java.lang.Integer
 
 ```

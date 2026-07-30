@@ -55,7 +55,7 @@ This recipe is used as part of the following composite recipes:
 * [Prefer `Long#compareUnsigned`](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
 * [Prefer `Long#compare`](/recipes/java/migrate/guava/preferlongcompare.md)
 * [Prefer `Long#divideUnsigned`](/recipes/java/migrate/guava/preferlongdivideunsigned.md)
-* [Prefer `Long#parseUnsignedInt`](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
+* [Prefer `Long#parseUnsignedLong`](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
 * [Prefer `Long#remainderUnsigned`](/recipes/java/migrate/guava/preferlongremainderunsigned.md)
 * [Prefer `Math#addExact`](/recipes/java/migrate/guava/prefermathaddexact.md)
 * [Prefer `Math#clamp`](/recipes/java/migrate/guava/prefermathclamp.md)

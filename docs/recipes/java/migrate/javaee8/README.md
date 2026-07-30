@@ -15,5 +15,6 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`](./servletisrequestedsessionidfromurl.md)
+* [Update Java EE Servlet Dependencies to 3.x](./migratetoservlet3x.md)
 
 

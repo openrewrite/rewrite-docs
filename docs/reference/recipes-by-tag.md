@@ -391,7 +391,7 @@ _2 recipes_
 
 ## boot
 
-_49 recipes_
+_51 recipes_
 
 * [org.openrewrite.java.spring.boot2.SpringBoot2BestPractices](/recipes/java/spring/boot2/springboot2bestpractices.md)
   * **Spring Boot 2.x best practices**
@@ -513,8 +513,14 @@ _49 recipes_
 * [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
   * **Migrate to Spring Boot 3.5 (Community Edition)**
   * Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
+* [org.openrewrite.java.spring.boot4.RelocateWebServerClasses](/recipes/java/spring/boot4/relocatewebserverclasses.md)
+  * **Relocate Spring Boot web server classes to their Spring Boot 4.0 packages**
+  * Spring Boot 4.0 relocated the embedded web server (Tomcat, Jetty) and web server application context classes into dedicated modular packages. This recipe updates references to the relocated classes' new fully-qualified names, including the servlet and reactive `WebServerFactory` variants, which moved into `servlet` and `reactive` subpackages. Undertow support was removed in Spring Boot 4.0 and is intentionally not handled here.
 * [org.openrewrite.java.spring.boot4.SpringBootProperties_4_0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
   * **Migrate Spring Boot properties to 4.0**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot4.SpringBootProperties_4_1](/recipes/java/spring/boot4/springbootproperties_4_1-community-edition.md)
+  * **Migrate Spring Boot properties to 4.1 (Community Edition)**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
   * **Migrate to Spring Boot 4.0 (Community Edition)**
@@ -1594,16 +1600,16 @@ _56 recipes_
   * Prefer `java.lang.Integer#compare` instead of using `com.google.common.primitives.Ints#compare`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerCompareUnsigned](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
   * **Prefer `Integer#compareUnsigned`**
-  * Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare` or `com.google.common.primitives.UnsignedInts#compareUnsigned`.
+  * Prefer `java.lang.Integer#compareUnsigned` instead of using `com.google.common.primitives.UnsignedInts#compare`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerDivideUnsigned](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
   * **Prefer `Integer#divideUnsigned`**
-  * Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide` or `com.google.common.primitives.UnsignedInts#divideUnsigned`.
+  * Prefer `java.lang.Integer#divideUnsigned` instead of using `com.google.common.primitives.UnsignedInts#divide`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerParseUnsignedInt](/recipes/java/migrate/guava/preferintegerparseunsignedint.md)
   * **Prefer `Integer#parseUnsignedInt`**
   * Prefer `java.lang.Integer#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedInts#parseUnsignedInt`.
 * [org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned](/recipes/java/migrate/guava/preferintegerremainderunsigned.md)
   * **Prefer `Integer#remainderUnsigned`**
-  * Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainderUnsigned`.
+  * Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainder`.
 * [org.openrewrite.java.migrate.guava.PreferJavaNioCharsetStandardCharsets](/recipes/java/migrate/guava/preferjavaniocharsetstandardcharsets.md)
   * **Prefer `java.nio.charset.StandardCharsets`**
   * Prefer `java.nio.charset.StandardCharsets` instead of using `com.google.common.base.Charsets`.
@@ -1648,28 +1654,28 @@ _56 recipes_
   * Prefer `java.lang.Long#compare` instead of using `com.google.common.primitives.Longs#compare`.
 * [org.openrewrite.java.migrate.guava.PreferLongCompareUnsigned](/recipes/java/migrate/guava/preferlongcompareunsigned.md)
   * **Prefer `Long#compareUnsigned`**
-  * Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare` or `com.google.common.primitives.UnsignedLongs#compareUnsigned`.
+  * Prefer `java.lang.Long#compareUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#compare`.
 * [org.openrewrite.java.migrate.guava.PreferLongDivideUnsigned](/recipes/java/migrate/guava/preferlongdivideunsigned.md)
   * **Prefer `Long#divideUnsigned`**
-  * Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide` or `com.google.common.primitives.UnsignedLongs#divideUnsigned`.
+  * Prefer `java.lang.Long#divideUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#divide`.
 * [org.openrewrite.java.migrate.guava.PreferLongParseUnsignedLong](/recipes/java/migrate/guava/preferlongparseunsignedlong.md)
-  * **Prefer `Long#parseUnsignedInt`**
-  * Prefer `java.lang.Long#parseUnsignedInt` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedInt`.
+  * **Prefer `Long#parseUnsignedLong`**
+  * Prefer `java.lang.Long#parseUnsignedLong` instead of using `com.google.common.primitives.UnsignedLongs#parseUnsignedLong`.
 * [org.openrewrite.java.migrate.guava.PreferLongRemainderUnsigned](/recipes/java/migrate/guava/preferlongremainderunsigned.md)
   * **Prefer `Long#remainderUnsigned`**
-  * Prefer `java.lang.Long#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#remainderUnsigned`.
+  * Prefer `java.lang.Long#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedLongs#remainder`.
 * [org.openrewrite.java.migrate.guava.PreferMathAddExact](/recipes/java/migrate/guava/prefermathaddexact.md)
   * **Prefer `Math#addExact`**
-  * Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd` or `com.google.common.math.IntMath#addExact`.
+  * Prefer `java.lang.Math#addExact` instead of using `com.google.common.math.IntMath#checkedAdd`.
 * [org.openrewrite.java.migrate.guava.PreferMathClamp](/recipes/java/migrate/guava/prefermathclamp.md)
   * **Prefer `Math#clamp`**
   * Prefer `java.lang.Math#clamp` instead of using `com.google.common.primitives.*#constrainToRange`.
 * [org.openrewrite.java.migrate.guava.PreferMathMultiplyExact](/recipes/java/migrate/guava/prefermathmultiplyexact.md)
   * **Prefer `Math#multiplyExact`**
-  * Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.primitives.IntMath#checkedMultiply` or `com.google.common.primitives.IntMath#multiplyExact`.
+  * Prefer `java.lang.Math#multiplyExact` instead of using `com.google.common.math.IntMath#checkedMultiply`.
 * [org.openrewrite.java.migrate.guava.PreferMathSubtractExact](/recipes/java/migrate/guava/prefermathsubtractexact.md)
   * **Prefer `Math#subtractExact`**
-  * Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.primitives.IntMath#checkedSubtract` or `com.google.common.primitives.IntMath#subtractExact`.
+  * Prefer `java.lang.Math#subtractExact` instead of using `com.google.common.math.IntMath#checkedSubtract`.
 * [org.openrewrite.java.migrate.guava.PreferShortCompare](/recipes/java/migrate/guava/prefershortcompare.md)
   * **Prefer `Short#compare`**
   * Prefer `java.lang.Short#compare` instead of using `com.google.common.primitives.Shorts#compare`.
@@ -4261,7 +4267,7 @@ _1 recipe_
 
 ## RSPEC
 
-_222 recipes_
+_226 recipes_
 
 * [org.openrewrite.cobol.cleanup.RemoveWithDebuggingMode](/recipes/cobol/cleanup/removewithdebuggingmode.md)
   * **Remove with debugging mode**
@@ -4351,13 +4357,13 @@ _222 recipes_
   * **Decompose `assertThat` on conjunctions into separate assertions**
   * Split `assertThat(a &amp;&amp; b).isTrue()` into separate `assertThat(a).isTrue()` and `assertThat(b).isTrue()` statements, so each condition is asserted (and reported) on its own. This lets the dedicated assertion recipes simplify each conjunct, and `CollapseConsecutiveAssertThatStatements` fuse them back into a single chain when the actual is a plain expression. Only the direct `assertThat(...).isTrue()` form is decomposed; `isFalse()` is left alone, as negating a conjunction is not equivalent to negating each conjunct.
   * Tags: RSPEC-S5838
+* [org.openrewrite.java.testing.assertj.SimplifyAssertJEqualityAssertion](/recipes/java/testing/assertj/simplifyassertjequalityassertion.md)
+  * **Simplify AssertJ assertions on `==` and `!=` comparisons**
+  * Replace `assertThat(x == y).isTrue()` and its variants with the dedicated assertion for whatever `==` actually compares: `assertThat(x).isNull()` against the `null` literal, `assertThat(x).isEqualTo(y)` when either operand is a primitive and the comparison is therefore by value, and `assertThat(x).isSameAs(y)` when both operands are reference types. Floating point operands are left alone, as `==` and `isEqualTo` disagree on `NaN` and `-0.0`.
+  * Tags: RSPEC-S5838
 * [org.openrewrite.java.testing.assertj.SimplifyAssertJInstanceOfAssertion](/recipes/java/testing/assertj/simplifyassertjinstanceofassertion.md)
   * **Simplify AssertJ assertions on `instanceof` expressions**
   * Replace `assertThat(x instanceof Type).isTrue()` with the dedicated `assertThat(x).isInstanceOf(Type.class)`, and the negated and `isFalse()` variants with `isNotInstanceOf`, so failures describe the actual type rather than just `expected true but was false`.
-  * Tags: RSPEC-S5838
-* [org.openrewrite.java.testing.assertj.SimplifyAssertJNullRelatedAssertion](/recipes/java/testing/assertj/simplifyassertjnullrelatedassertion.md)
-  * **Simplify AssertJ assertions on `null` reference comparisons**
-  * Replace `assertThat(x == null).isTrue()` and its variants with the dedicated `assertThat(x).isNull()` / `assertThat(x).isNotNull()`. Beyond being more expressive, this avoids the compilation error that results when the `null` literal ends up as the `assertThat` argument (e.g. `assertThat(null == x).isTrue()` becoming `assertThat(null).isSameAs(x)`).
   * Tags: RSPEC-S5838
 * [org.openrewrite.java.testing.assertj.SimplifyChainedAssertJAssertion](/recipes/java/testing/assertj/simplifychainedassertjassertion.md)
   * **Simplify AssertJ chained assertions**
@@ -4583,6 +4589,10 @@ _222 recipes_
   * **Add missing `@Override` to overriding and implementing methods**
   * Adds `@Override` to methods overriding superclass methods or implementing interface methods. Annotating methods improves readability by showing the author's intent to override. Additionally, when annotated, the compiler will emit an error when a signature of the overridden method does not match the superclass method.
   * Tags: RSPEC-S1161
+* [org.openrewrite.staticanalysis.ModernizeCollections](/recipes/staticanalysis/modernizecollections.md)
+  * **Modernize collections**
+  * Replace the legacy synchronized types `Hashtable`, `Vector`, `Stack`, and `StringBuffer` with their modern unsynchronized counterparts `HashMap`, `ArrayList`, `Deque`/`ArrayDeque`, and `StringBuilder`. Each replacement is only applied when data flow analysis can prove the instance is a local variable that never escapes its method, so the synchronization it provided is redundant.
+  * Tags: RSPEC-S1149
 * [org.openrewrite.staticanalysis.ModifierOrder](/recipes/staticanalysis/modifierorder.md)
   * **Modifier order**
   * Modifiers should be declared in the correct order as recommended by the JLS. Ordering modifiers consistently reduces cognitive load for developers who are accustomed to the standard sequence.
@@ -4739,6 +4749,10 @@ _222 recipes_
   * **Replace duplicate `String` literals**
   * Replaces `String` literals with a length of 5 or greater repeated a minimum of 3 times. Qualified `String` literals include final Strings, method invocations, and new class invocations. Adds a new `private static final String` or uses an existing equivalent class field. A new variable name will be generated based on the literal value if an existing field does not exist. The generated name will append a numeric value to the variable name if a name already exists in the compilation unit. Centralizing repeated string values into constants makes refactoring safer and reduces the risk of inconsistent updates.
   * Tags: RSPEC-S1192, RSPEC-S1889
+* [org.openrewrite.staticanalysis.ReplaceHashtableWithHashMap](/recipes/staticanalysis/replacehashtablewithhashmap.md)
+  * **Replace `java.util.Hashtable` with `java.util.HashMap`**
+  * `Hashtable` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Hashtable` with a `HashMap` when data flow analysis can prove the `Hashtable` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, and `Hashtable`-specific method usages (`contains`, `elements`, `keys`) are left untouched. `HashMap` permits `null` keys and values, so it accepts every input `Hashtable` did.
+  * Tags: RSPEC-S1149
 * [org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference](/recipes/staticanalysis/replacelambdawithmethodreference.md)
   * **Use method references in lambda**
   * Replaces the single statement lambdas `o -&gt; o instanceOf X`, `o -&gt; (A) o`, `o -&gt; System.out.println(o)`, `o -&gt; o != null`, `o -&gt; o == null` with the equivalent method reference. Method references are often more concise and readable than their lambda equivalents, making the code's intent clearer at a glance.
@@ -4746,6 +4760,10 @@ _222 recipes_
 * [org.openrewrite.staticanalysis.ReplaceStackWithDeque](/recipes/staticanalysis/replacestackwithdeque.md)
   * **Replace `java.util.Stack` with `java.util.Deque`**
   * From the Javadoc of `Stack`: &gt; A more complete and consistent set of LIFO stack operations is provided by the Deque interface and its implementations, which should be used in preference to this class.  `Stack` inherits from `Vector`, which carries unnecessary synchronization overhead in single-threaded contexts and exposes non-stack operations like random index access.
+  * Tags: RSPEC-S1149
+* [org.openrewrite.staticanalysis.ReplaceStringBufferWithStringBuilder](/recipes/staticanalysis/replacestringbufferwithstringbuilder.md)
+  * **Replace `java.lang.StringBuffer` with `java.lang.StringBuilder`**
+  * `StringBuffer` synchronizes every operation, which adds overhead in the common single-threaded case. `StringBuilder` exposes the identical API without the synchronization. This recipe replaces a local `StringBuffer` with a `StringBuilder` when data flow analysis can prove the `StringBuffer` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields and escaping variables are left untouched.
   * Tags: RSPEC-S1149
 * [org.openrewrite.staticanalysis.ReplaceStringConcatenationWithStringValueOf](/recipes/staticanalysis/replacestringconcatenationwithstringvalueof.md)
   * **Replace String concatenation with `String.valueOf()`**
@@ -4759,6 +4777,10 @@ _222 recipes_
   * **Replace calls to `Thread.run()` with `Thread.start()`**
   * `Thread.run()` should not be called directly.
   * Tags: RSPEC-S1217
+* [org.openrewrite.staticanalysis.ReplaceVectorWithArrayList](/recipes/staticanalysis/replacevectorwitharraylist.md)
+  * **Replace `java.util.Vector` with `java.util.ArrayList`**
+  * `Vector` synchronizes every operation, which adds overhead in the common single-threaded case. This recipe replaces a local `Vector` with an `ArrayList` when data flow analysis can prove the `Vector` never escapes its method (it is not returned, assigned to a field, or passed as an argument), so no other thread can observe it and the synchronization is redundant. Fields, escaping variables, `Vector`-specific method usages (like `elementAt` or `addElement`), and the `Vector(int, int)` constructor are left untouched.
+  * Tags: RSPEC-S1149
 * [org.openrewrite.staticanalysis.ReplaceWeekYearWithYear](/recipes/staticanalysis/replaceweekyearwithyear.md)
   * **Week Year (YYYY) should not be used for date formatting**
   * For most dates Week Year (YYYY) and Year (yyyy) yield the same results. However, on the last week of December and the first week of January, Week Year could produce unexpected results. This is a common source of off-by-one-year bugs that typically only manifest around New Year's Eve, making them difficult to catch during development and testing.
@@ -4841,7 +4863,7 @@ _222 recipes_
   * Tags: RSPEC-S3626
 * [org.openrewrite.staticanalysis.UnnecessaryThrows](/recipes/staticanalysis/unnecessarythrows.md)
   * **Unnecessary throws**
-  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` or `protected` and the exception is not documented via a JavaDoc as a `@throws` tag.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
+  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` and the exception is not documented via a JavaDoc as a `@throws` tag.  The `throws` declaration is retained on overridable methods (package-private and `protected` methods on non-`final` classes), and on `public` methods overridden within the same source file, so that a subclass override which does throw the exception keeps compiling. Overrides in other source files cannot be detected without a scanning recipe and are therefore not accounted for.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
   * Tags: RSPEC-S1130
 * [org.openrewrite.staticanalysis.UnwrapRepeatableAnnotations](/recipes/staticanalysis/unwraprepeatableannotations.md)
   * **Unwrap `@Repeatable` annotations**
@@ -5539,7 +5561,7 @@ _18 recipes_
 
 ## spring
 
-_142 recipes_
+_144 recipes_
 
 * [org.openrewrite.java.spring.batch.SpringBatch4To5Migration](/recipes/java/spring/batch/springbatch4to5migration.md)
   * **Migrate to Spring Batch 5.0 from 4.3**
@@ -5667,8 +5689,14 @@ _142 recipes_
 * [org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5](/recipes/java/spring/boot3/upgradespringboot_3_5-community-edition.md)
   * **Migrate to Spring Boot 3.5 (Community Edition)**
   * Migrate applications to the latest Spring Boot 3.5 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
+* [org.openrewrite.java.spring.boot4.RelocateWebServerClasses](/recipes/java/spring/boot4/relocatewebserverclasses.md)
+  * **Relocate Spring Boot web server classes to their Spring Boot 4.0 packages**
+  * Spring Boot 4.0 relocated the embedded web server (Tomcat, Jetty) and web server application context classes into dedicated modular packages. This recipe updates references to the relocated classes' new fully-qualified names, including the servlet and reactive `WebServerFactory` variants, which moved into `servlet` and `reactive` subpackages. Undertow support was removed in Spring Boot 4.0 and is intentionally not handled here.
 * [org.openrewrite.java.spring.boot4.SpringBootProperties_4_0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
   * **Migrate Spring Boot properties to 4.0**
+  * Migrate properties found in `application.properties` and `application.yml`.
+* [org.openrewrite.java.spring.boot4.SpringBootProperties_4_1](/recipes/java/spring/boot4/springbootproperties_4_1-community-edition.md)
+  * **Migrate Spring Boot properties to 4.1 (Community Edition)**
   * Migrate properties found in `application.properties` and `application.yml`.
 * [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
   * **Migrate to Spring Boot 4.0 (Community Edition)**

@@ -49,6 +49,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove an enabled Gradle preview feature](./removeenablefeaturepreview.md)
 * [Remove build extension by name](./removeextension.md)
 * [Remove direct dependencies that are managed by a BOM with incompatible versions](./removebommanageddirectdependencies.md)
+* [Remove empty `buildscript` block](./removeemptybuildscriptblock.md)
 * [Remove redundant explicit dependencies and versions](./removeredundantdependencyversions.md)
 * [Remove redundant security resolution rules](./removeredundantsecurityresolutionrules.md)
 * [Remove repository](./removerepository.md)

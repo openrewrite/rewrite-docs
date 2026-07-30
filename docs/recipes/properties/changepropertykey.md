@@ -39,6 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [DataNucleus 5.0 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_0.md)
 * [DataNucleus 5.1 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_1.md)
 * [DataNucleus 5.2 property migrations](/recipes/java/migrate/datanucleus/datanucleusproperties_5_2.md)
+* [Migrate Error Registry configuration properties](/recipes/apache/camel/upgrade/camel421/migrateerrorregistryproperties.md)
 * [Migrate Spring Boot Actuator to Quarkus Health and Metrics](/recipes/quarkus/spring/migratespringactuator.md)
 * [Migrate Spring Cloud Config Client to Quarkus Config](/recipes/quarkus/spring/migratespringcloudconfig.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)

@@ -202,7 +202,7 @@ _1 recipe_
 
 _License: Apache License Version 2.0_
 
-_79 recipes_
+_80 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -288,6 +288,9 @@ _79 recipes_
 * [org.openrewrite.gradle.RemoveDependency](/recipes/gradle/removedependency.md)
   * **Remove a Gradle dependency**
   * Removes a single dependency from the dependencies section of the `build.gradle`.
+* [org.openrewrite.gradle.RemoveEmptyBuildscriptBlock](/recipes/gradle/removeemptybuildscriptblock.md)
+  * **Remove empty `buildscript` block**
+  * Removes a `buildscript` block from `build.gradle(.kts)` or `settings.gradle(.kts)` when it contributes nothing to the build. A block containing only other empty blocks, such as an empty `dependencies` or `repositories` block, is also considered empty. A block containing a comment is left alone, so that no comment is silently deleted.
 * [org.openrewrite.gradle.RemoveEnableFeaturePreview](/recipes/gradle/removeenablefeaturepreview.md)
   * **Remove an enabled Gradle preview feature**
   * Remove an enabled Gradle preview feature from `settings.gradle`.
@@ -1146,7 +1149,7 @@ _92 recipes_
   * Upgrades Maven POMs from model version 4.0.0 to 4.1.0, enabling new Maven 4 features like `&lt;subprojects&gt;`, `bom` packaging, and automatic version inference. This recipe updates the `&lt;modelVersion&gt;` element, `xmlns` namespace, and `xsi:schemaLocation` from 4.0.0 to 4.1.0.
 * [org.openrewrite.maven.UpgradeTransitiveDependencyVersion](/recipes/maven/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Maven dependencies**
-  * Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
+  * Upgrades the version of a transitive dependency in a Maven pom file. Leaves direct dependencies unmodified. When the transitive dependency's version is already governed by a plain `&lt;dependencyManagement&gt;` entry in the project, that entry is upgraded in place rather than adding a duplicate; otherwise (including a version supplied by an imported BOM) a new managed dependency is added. Can be paired with the regular Upgrade Dependency Version recipe to upgrade a dependency everywhere, regardless of whether it is direct or transitive.
 * [org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration](/recipes/maven/usemavencompilerpluginreleaseconfiguration.md)
   * **Use Maven compiler plugin release configuration**
   * Replaces any explicit `source` or `target` configuration (if present) on the `maven-compiler-plugin` with `release`, and updates the `release` value if needed. When `testSource` or `testTarget` differ from the main version, introduces `testRelease`. Will not downgrade the Java version if the current version is higher. Also removes stale `maven.compiler.source`, `maven.compiler.target`, `maven.compiler.testSource`, and `maven.compiler.testTarget` properties that are no longer referenced.

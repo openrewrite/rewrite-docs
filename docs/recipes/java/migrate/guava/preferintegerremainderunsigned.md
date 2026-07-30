@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned**
 
-_Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainderUnsigned`._
+_Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainder`._
 
 ### Tags
 
@@ -22,6 +22,10 @@ _Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.commo
 [GitHub: no-guava.yml](https://github.com/openrewrite/rewrite-migrate-java/blob/main/src/main/resources/META-INF/rewrite/no-guava.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-migrate-java/issues),
 [Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-migrate-java/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -36,8 +40,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `com.google.common.primitives.UnsignedInts remainder(..)`
+  * newMethodName: `remainderUnsigned`
 * [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `com.google.common.primitives.UnsignedInts remainderUnsigned(int, int)`
+  * methodPattern: `com.google.common.primitives.UnsignedInts remainderUnsigned(..)`
   * fullyQualifiedTargetTypeName: `java.lang.Integer`
 
 </TabItem>
@@ -50,19 +57,29 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.guava.PreferIntegerRemainderUnsigned
 displayName: Prefer `Integer#remainderUnsigned`
 description: |
-  Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainderUnsigned`.
+  Prefer `java.lang.Integer#remainderUnsigned` instead of using `com.google.common.primitives.UnsignedInts#remainder`.
 tags:
   - guava
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.google.common.primitives.UnsignedInts remainder(..)
+      newMethodName: remainderUnsigned
   - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: com.google.common.primitives.UnsignedInts remainderUnsigned(int, int)
+      methodPattern: com.google.common.primitives.UnsignedInts remainderUnsigned(..)
       fullyQualifiedTargetTypeName: java.lang.Integer
 
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
+
 
 ## Usage
 

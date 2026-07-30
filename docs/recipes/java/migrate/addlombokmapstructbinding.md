@@ -57,6 +57,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.projectlombok`
   * artifactId: `lombok-mapstruct-binding`
   * version: `0.2.0`
+* [Add `mapstruct-processor` to the `maven-compiler-plugin` annotation processor paths](../../java/migrate/addmapstructannotationprocessorpath)
 
 </TabItem>
 
@@ -91,6 +92,7 @@ recipeList:
       groupId: org.projectlombok
       artifactId: lombok-mapstruct-binding
       version: 0.2.0
+  - org.openrewrite.java.migrate.AddMapstructAnnotationProcessorPath
 
 ```
 </TabItem>

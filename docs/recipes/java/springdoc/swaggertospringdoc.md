@@ -46,6 +46,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Removes @Import(BeanValidatorPluginsConfiguration.class)](../../java/spring/doc/removebeanvalidatorpluginsconfiguration)
 * [Remove annotation](../../java/removeannotation)
   * annotationPattern: `@springfox.documentation.swagger2.annotations.EnableSwagger2`
+* [Remove annotation](../../java/removeannotation)
+  * annotationPattern: `@springfox.documentation.oas.annotations.EnableOpenApi`
 * [Migrate `Docket` to `GroupedOpenAPI`](../../java/spring/doc/migratedocketbeantogroupedopenapibean)
 
 </TabItem>
@@ -70,6 +72,8 @@ recipeList:
   - org.openrewrite.java.spring.doc.RemoveBeanValidatorPluginsConfiguration
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @springfox.documentation.swagger2.annotations.EnableSwagger2
+  - org.openrewrite.java.RemoveAnnotation:
+      annotationPattern: @springfox.documentation.oas.annotations.EnableOpenApi
   - org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean
 
 ```

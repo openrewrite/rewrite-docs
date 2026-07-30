@@ -36,7 +36,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Change the Timefold version](/recipes/timefold/solver/migration/changeversion.md)
-* [Migrate to 4.20.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to Camel 4.18LTS](/recipes/apache/camel/upgrade/camel418ltsmigrationrecipe.md)
 * [Migrate to WebLogic 14.1.1](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
 * [Update the WebLogic version to 14.1.2](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
 * [Update the WebLogic version to 15.1.1](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)

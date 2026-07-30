@@ -57,6 +57,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * onlyIfUsing: `org.springframework.boot.test.autoconfigure.orm.jpa.*`
   * scope: `test`
   * acceptTransitive: `true`
+* [Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests](../../../java/spring/boot4/addspringbootstarterdatamongodbtest)
+* [Add `spring-boot-starter-data-mongodb-reactive-test` for reactive MongoDB tests](../../../java/spring/boot4/addspringbootstarterdatamongodbreactivetest)
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-jdbc-test`
@@ -122,6 +124,18 @@ This recipe is available under the [Moderne Source Available License](https://do
   * onlyIfUsing: `org.springframework.boot.test.web.client.*`
   * scope: `test`
   * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-starter-jdbc`
+  * version: `4.0.x`
+  * onlyIfUsing: `org.springframework.boot.autoconfigure.jdbc.*`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.springframework.boot`
+  * artifactId: `spring-boot-hibernate`
+  * version: `4.0.x`
+  * onlyIfUsing: `org.springframework.boot.autoconfigure.orm.jpa.*`
+  * acceptTransitive: `true`
 * [Migrate packages to modular starters](../../../java/spring/boot4/migrateautoconfigurepackages)
 
 </TabItem>
@@ -159,6 +173,8 @@ recipeList:
       onlyIfUsing: org.springframework.boot.test.autoconfigure.orm.jpa.*
       scope: test
       acceptTransitive: true
+  - org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbTest
+  - org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbReactiveTest
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-jdbc-test
@@ -224,6 +240,18 @@ recipeList:
       onlyIfUsing: org.springframework.boot.test.web.client.*
       scope: test
       acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-starter-jdbc
+      version: 4.0.x
+      onlyIfUsing: org.springframework.boot.autoconfigure.jdbc.*
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.springframework.boot
+      artifactId: spring-boot-hibernate
+      version: 4.0.x
+      onlyIfUsing: org.springframework.boot.autoconfigure.orm.jpa.*
+      acceptTransitive: true
   - org.openrewrite.java.spring.boot4.MigrateAutoconfigurePackages
 
 ```
@@ -239,6 +267,68 @@ This recipe is used as part of the following composite recipes:
 
 ## Examples
 ##### Example 1
+`MigrateMongoDbModularStartersTest#addImperativeMongoDbTestStarter`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+
+@DataMongoTest
+class RepositoryTest {
+}
+```
+
+###### After
+```java
+import org.springframework.boot.data.mongodb.test.autoconfigure.DataMongoTest;
+
+@DataMongoTest
+class RepositoryTest {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
++import org.springframework.boot.data.mongodb.test.autoconfigure.DataMongoTest;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>3.5.14</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
 `MigrateToModularStartersTest#migrateLiquibaseToStarterInMaven`
 
 
@@ -261,7 +351,69 @@ This recipe is used as part of the following composite recipes:
 
 ---
 
-##### Example 2
+##### Example 3
+`MigrateMongoDbModularStartersTest#addImperativeMongoDbTestStarter`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+
+@DataMongoTest
+class RepositoryTest {
+}
+```
+
+###### After
+```java
+import org.springframework.boot.data.mongodb.test.autoconfigure.DataMongoTest;
+
+@DataMongoTest
+class RepositoryTest {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
++import org.springframework.boot.data.mongodb.test.autoconfigure.DataMongoTest;
+
+```
+</TabItem>
+</Tabs>
+
+###### Unchanged
+```mavenProject
+project
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>3.5.14</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 4
 `MigrateToModularStartersTest#migrateLiquibaseToStarterInMaven`
 
 

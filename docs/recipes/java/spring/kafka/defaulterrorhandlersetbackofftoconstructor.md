@@ -1,27 +1,23 @@
 ---
-title: "Simplify AssertJ assertions on `null` reference comparisons"
-sidebar_label: "Simplify AssertJ assertions on `null` reference comparisons"
+title: "Move `DefaultErrorHandler.setBackOff(BackOff)` to the constructor"
+sidebar_label: "Move `DefaultErrorHandler.setBackOff(BackOff)` to the constructor"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Simplify AssertJ assertions on `null` reference comparisons
+# Move `DefaultErrorHandler.setBackOff(BackOff)` to the constructor
 
-**org.openrewrite.java.testing.assertj.SimplifyAssertJNullRelatedAssertion**
+**org.openrewrite.java.spring.kafka.DefaultErrorHandlerSetBackOffToConstructor**
 
-_Replace `assertThat(x == null).isTrue()` and its variants with the dedicated `assertThat(x).isNull()` / `assertThat(x).isNotNull()`. Beyond being more expressive, this avoids the compilation error that results when the `null` literal ends up as the `assertThat` argument (e.g. `assertThat(null == x).isTrue()` becoming `assertThat(null).isSameAs(x)`)._
-
-### Tags
-
-* [RSPEC-S5838](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S5838&open=java%3AS5838)
+_`DefaultErrorHandler` does not have a `setBackOff(BackOff)` method; pass the `BackOff` to the constructor instead._
 
 ## Recipe source
 
-[GitHub: SimplifyAssertJNullRelatedAssertion.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/assertj/SimplifyAssertJNullRelatedAssertion.java),
-[Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-testing-frameworks/)
+[GitHub: DefaultErrorHandlerSetBackOffToConstructor.java](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/java/org/openrewrite/java/spring/kafka/DefaultErrorHandlerSetBackOffToConstructor.java),
+[Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
+[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-spring/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
@@ -30,64 +26,17 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [AssertJ best practices](/recipes/java/testing/assertj/assertj-best-practices.md)
-
-## Example
-
-
-<Tabs groupId="beforeAfter">
-<TabItem value="java" label="java">
-
-
-###### Before
-```java
-import static org.assertj.core.api.Assertions.assertThat;
-
-class A {
-    void foo(Object a) {
-        assertThat(null == a).isTrue();
-        assertThat(a == null).isTrue();
-    }
-}
-```
-
-###### After
-```java
-import static org.assertj.core.api.Assertions.assertThat;
-
-class A {
-    void foo(Object a) {
-        assertThat(a).isNull();
-        assertThat(a).isNull();
-    }
-}
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
-@@ -5,2 +5,2 @@
-class A {
-    void foo(Object a) {
--       assertThat(null == a).isTrue();
--       assertThat(a == null).isTrue();
-+       assertThat(a).isNull();
-+       assertThat(a).isNull();
-    }
-```
-</TabItem>
-</Tabs>
+* [Migrates Spring Kafka deprecated error handlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
 
 
 ## Usage
 
 <RunRecipe
-  recipeName="org.openrewrite.java.testing.assertj.SimplifyAssertJNullRelatedAssertion"
-  displayName="Simplify AssertJ assertions on `null` reference comparisons"
+  recipeName="org.openrewrite.java.spring.kafka.DefaultErrorHandlerSetBackOffToConstructor"
+  displayName="Move `DefaultErrorHandler.setBackOff(BackOff)` to the constructor"
   groupId="org.openrewrite.recipe"
-  artifactId="rewrite-testing-frameworks"
-  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
+  artifactId="rewrite-spring"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
   hasDataTables
 />
 
@@ -95,7 +44,7 @@ class A {
 
 import RecipeCallout from '@site/src/components/ModerneLink';
 
-<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.testing.assertj.SimplifyAssertJNullRelatedAssertion" />
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.java.spring.kafka.DefaultErrorHandlerSetBackOffToConstructor" />
 
 The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
 

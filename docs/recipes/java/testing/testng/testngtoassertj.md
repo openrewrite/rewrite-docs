@@ -46,7 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.assertj`
   * artifactId: `assertj-core`
   * version: `3.x`
-  * onlyIfUsing: `org.testng.*`
+  * onlyIfUsing: `org.testng..*`
   * acceptTransitive: `true`
 * [Refaster rules that replace TestNG APIs with AssertJ equivalents](../../../picnic/errorprone/refasterrules/testngtoassertjrulesrecipes)
 * [TestNG `assertEquals` to AssertJ](../../../java/testing/testng/testngassertequalstoassertthat)
@@ -57,6 +57,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [TestNG `assertNotSame` to AssertJ](../../../java/testing/testng/testngassertnotsametoassertthat)
 * [TestNG `assertThrows`/`expectThrows` to AssertJ](../../../java/testing/testng/testngassertthrowstoassertthat)
 * [TestNG `assertList*` to AssertJ](../../../java/testing/testng/testngassertlisttoassertthat)
+* [TestNG `Assertion` to AssertJ](../../../java/testing/testng/testngassertiontoassertj)
+* [TestNG `SoftAssert` to AssertJ `SoftAssertions`](../../../java/testing/testng/testngsoftasserttoassertj)
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.testng.asserts.SoftAssert`
+  * newFullyQualifiedTypeName: `org.assertj.core.api.SoftAssertions`
 * [Use static import](../../../java/usestaticimport)
   * methodPattern: `org.assertj.core.api.Assertions *(..)`
 
@@ -82,7 +87,7 @@ recipeList:
       groupId: org.assertj
       artifactId: assertj-core
       version: 3.x
-      onlyIfUsing: org.testng.*
+      onlyIfUsing: org.testng..*
       acceptTransitive: true
   - tech.picnic.errorprone.refasterrules.TestNGToAssertJRulesRecipes
   - org.openrewrite.java.testing.testng.TestNgAssertEqualsToAssertThat
@@ -93,6 +98,11 @@ recipeList:
   - org.openrewrite.java.testing.testng.TestNgAssertNotSameToAssertThat
   - org.openrewrite.java.testing.testng.TestNgAssertThrowsToAssertThat
   - org.openrewrite.java.testing.testng.TestNgAssertListToAssertThat
+  - org.openrewrite.java.testing.testng.TestNgAssertionToAssertJ
+  - org.openrewrite.java.testing.testng.TestNgSoftAssertToAssertJ
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.testng.asserts.SoftAssert
+      newFullyQualifiedTypeName: org.assertj.core.api.SoftAssertions
   - org.openrewrite.java.UseStaticImport:
       methodPattern: org.assertj.core.api.Assertions *(..)
 

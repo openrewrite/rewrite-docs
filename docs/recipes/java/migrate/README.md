@@ -81,6 +81,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add Mockito Java Agent to Maven Surefire Plugin](./addmockitojavaagenttomavensurefireplugin.md)
 * [Add `argLine` to surefire and failsafe plugins](./addsurefirefailsafeargline.md)
 * [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](./addlombokmapstructbindingmavendependencyonly.md)
+* [Add `mapstruct-processor` to the `maven-compiler-plugin` annotation processor paths](./addmapstructannotationprocessorpath.md)
 * [Add maven jar plugin to suppress illegal reflection warnings](./addsuppressionforillegalreflectionwarningsplugin.md)
 * [Adds missing method implementations](./addmissingmethodimplementation.md)
 * [Adds `static` modifier to `@Produces` fields that are in session beans](./addstaticvariableonproducersessionbean.md)

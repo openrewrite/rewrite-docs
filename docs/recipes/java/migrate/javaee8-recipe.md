@@ -41,13 +41,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `javax.servlet`
-  * oldArtifactId: `servlet-api`
-  * newGroupId: `javax.servlet`
-  * newArtifactId: `javax.servlet-api`
-  * newVersion: `3.x`
 * [Migrate to JavaEE7](../../java/migrate/javaee7-recipe)
+* [Update Java EE Servlet Dependencies to 3.x](../../java/migrate/javaee8/migratetoservlet3x)
 * [Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`](../../java/migrate/javaee8/servletisrequestedsessionidfromurl)
 * [Flags any `org.apache.bval.jsr*` (bval 1.1) and `org.apache.bval.jsr303*` (bval 1.0) package references](../../java/migrate/javaee8/apachedefaultprovider)
 
@@ -68,13 +63,8 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: javax.servlet
-      oldArtifactId: servlet-api
-      newGroupId: javax.servlet
-      newArtifactId: javax.servlet-api
-      newVersion: 3.x
   - org.openrewrite.java.migrate.javaee7
+  - org.openrewrite.java.migrate.javaee8.MigrateToServlet3x
   - org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL
   - org.openrewrite.java.migrate.javaee8.ApacheDefaultProvider
 

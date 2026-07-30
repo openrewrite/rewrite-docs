@@ -30,6 +30,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Set the Develocity `server`](../../gradle/plugins/setdevelocityserver)
+  * server: `https://community.develocity.cloud/`
+* [Set the Develocity `projectId`](../../gradle/plugins/setdevelocityprojectid)
+  * projectId: `openrewrite`
 * [Inline methods annotated with `@InlineMe`](../../recipes/rewrite/inlinemethods)
 * [Generate `InlineMethodCalls` recipes for deprecated delegating methods](../../java/recipes/generatedeprecatedmethodrecipes)
 * [Java Recipe best practices](../../java/recipes/javarecipebestpractices)
@@ -92,6 +96,10 @@ displayName: OpenRewrite recipe best practices
 description: |
   Best practices for OpenRewrite recipe development.
 recipeList:
+  - org.openrewrite.gradle.plugins.SetDevelocityServer:
+      server: https://community.develocity.cloud/
+  - org.openrewrite.gradle.plugins.SetDevelocityProjectId:
+      projectId: openrewrite
   - org.openrewrite.recipes.rewrite.InlineMethods
   - org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes
   - org.openrewrite.java.recipes.JavaRecipeBestPractices

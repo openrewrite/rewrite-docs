@@ -31,7 +31,11 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change method name](../../../../java/changemethodname)
-  * methodPattern: `org.apache.camel.model.ProcessorDefinition#transform(..)`
+  * methodPattern: `org.apache.camel.model.ProcessorDefinition transform(org.apache.camel.spi.DataType)`
+  * newMethodName: `transformDataType`
+  * matchOverrides: `true`
+* [Change method name](../../../../java/changemethodname)
+  * methodPattern: `org.apache.camel.model.ProcessorDefinition transform(org.apache.camel.spi.DataType, org.apache.camel.spi.DataType)`
   * newMethodName: `transformDataType`
   * matchOverrides: `true`
 * [Camel YML transform changes](../../../../apache/camel/upgrade/camel417/yamltransform417recipe)
@@ -49,7 +53,11 @@ description: |
   Migrates `camel 4.16` application to `camel 4.17`.
 recipeList:
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.apache.camel.model.ProcessorDefinition#transform(..)
+      methodPattern: org.apache.camel.model.ProcessorDefinition transform(org.apache.camel.spi.DataType)
+      newMethodName: transformDataType
+      matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.camel.model.ProcessorDefinition transform(org.apache.camel.spi.DataType, org.apache.camel.spi.DataType)
       newMethodName: transformDataType
       matchOverrides: true
   - org.apache.camel.upgrade.camel417.YamlTransform417Recipe
@@ -62,7 +70,8 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.20.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to Camel 4.18LTS](/recipes/apache/camel/upgrade/camel418ltsmigrationrecipe.md)
 * [Migrates `camel 4.16` application to `camel 4.17`](/recipes/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
 
 

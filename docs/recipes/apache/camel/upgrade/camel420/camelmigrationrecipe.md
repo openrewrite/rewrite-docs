@@ -50,7 +50,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.20.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrates `camel 4.18` application to `camel 4.20`](/recipes/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
 
 

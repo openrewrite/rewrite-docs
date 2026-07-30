@@ -40,6 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Use HTTPS for repositories](../gradle/security/usehttpsforrepositories)
 * [Use `=` assignment syntax for Gradle properties](../gradle/usepropertyassignmentsyntax)
   * propertyName: `distributionUrl`
+* [Remove empty `buildscript` block](../gradle/removeemptybuildscriptblock)
 
 </TabItem>
 
@@ -63,6 +64,7 @@ recipeList:
   - org.openrewrite.gradle.security.UseHttpsForRepositories
   - org.openrewrite.gradle.UsePropertyAssignmentSyntax:
       propertyName: distributionUrl
+  - org.openrewrite.gradle.RemoveEmptyBuildscriptBlock
 
 ```
 </TabItem>

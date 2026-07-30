@@ -14,6 +14,8 @@ const ALLOWED_FILENAMES = new Set([
   '.editorconfig', '.prettierignore', '.eslintignore',
 ]);
 
+const GENERATED_HTML_PREFIX = 'static/recipes/';
+
 const baseRef = process.env.BASE_REF;
 if (!baseRef) {
   console.error('BASE_REF environment variable is required.');
@@ -44,6 +46,7 @@ for (const file of files) {
 
   if (ALLOWED_FILENAMES.has(basename)) continue;
   if (ext && ALLOWED_EXTENSIONS.has(ext)) continue;
+  if (ext === '.html' && file.startsWith(GENERATED_HTML_PREFIX)) continue;
 
   violations.push(file);
 }
