@@ -30,9 +30,11 @@ jobs:
           java-version: 21
       - uses: gradle/actions/setup-gradle@v5
       - uses: actions/setup-go@v6
+        if: ${{ env.LATEST_VERSIONS_ONLY != 'true' }}
         with:
           go-version: '1.25'        # recipes-go and rewrite-go both require go 1.25 (their go.mod)
       - name: Build the rewrite-go-rpc server
+        if: ${{ env.LATEST_VERSIONS_ONLY != 'true' }}
         run: |
           # Pin GOROOT to the toolchain setup-go just put on PATH. Otherwise GoRewriteRpc discovers
           # GOROOT via GoExecutor.find(), which prefers /usr/bin/go (the runner image's older default

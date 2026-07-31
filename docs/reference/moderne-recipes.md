@@ -7639,6 +7639,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 ## org.openrewrite
 
 
+### rewrite-go
+
+* [org.openrewrite.golang.RegenerateGoSum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/regenerategosum)
+  * **Regenerate `go.sum`**
+  * Regenerate a Go module's `go.sum` from its `go.mod` by running `go mod download`, recomputing checksums for the whole module graph, including creating it when absent. Useful after a dependency version change to bring `go.sum` back in sync. Requires the `go` toolchain to be installed; otherwise `go.sum` is left unchanged.
+
 ### rewrite-python
 
 * [org.openrewrite.python.AddDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/adddependency)
