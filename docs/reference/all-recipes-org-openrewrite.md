@@ -188,16 +188,6 @@ _18 recipes_
   * **Find unpinned base images**
   * Finds FROM instructions that use unpinned base images (CIS Docker Benchmark 4.2). Images without an explicit tag default to 'latest', which is not reproducible. Images pinned by digest are considered acceptable.
 
-## rewrite-go
-
-_License: Moderne Source Available License_
-
-_1 recipe_
-
-* [org.openrewrite.golang.RegenerateGoSum](/recipes/golang/regenerategosum.md)
-  * **Regenerate `go.sum`**
-  * Regenerate a Go module's `go.sum` from its `go.mod` by running `go mod download`, recomputing checksums for the whole module graph, including creating it when absent. Useful after a dependency version change to bring `go.sum` back in sync. Requires the `go` toolchain to be installed; otherwise `go.sum` is left unchanged.
-
 ## rewrite-gradle
 
 _License: Apache License Version 2.0_

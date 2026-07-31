@@ -14,7 +14,6 @@ Total recipes: 4091
 * [rewrite-cobol](all-recipes-org-openrewrite.md#rewrite-cobol)
 * [rewrite-core](all-recipes-org-openrewrite.md#rewrite-core)
 * [rewrite-docker](all-recipes-org-openrewrite.md#rewrite-docker)
-* [rewrite-go](all-recipes-org-openrewrite.md#rewrite-go)
 * [rewrite-gradle](all-recipes-org-openrewrite.md#rewrite-gradle)
 * [rewrite-groovy](all-recipes-org-openrewrite.md#rewrite-groovy)
 * [rewrite-hcl](all-recipes-org-openrewrite.md#rewrite-hcl)

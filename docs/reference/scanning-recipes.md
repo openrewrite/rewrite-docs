@@ -43,12 +43,6 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Create text file**
   * Creates a new plain text file.
 
-### rewrite-go
-
-* [org.openrewrite.golang.RegenerateGoSum](/recipes/golang/regenerategosum.md)
-  * **Regenerate `go.sum`**
-  * Regenerate a Go module's `go.sum` from its `go.mod` by running `go mod download`, recomputing checksums for the whole module graph, including creating it when absent. Useful after a dependency version change to bring `go.sum` back in sync. Requires the `go` toolchain to be installed; otherwise `go.sum` is left unchanged.
-
 ### rewrite-gradle
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)

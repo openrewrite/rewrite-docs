@@ -126,12 +126,6 @@ Total standalone recipes: 555
   * **Find exposed ports**
   * Find all `EXPOSE` instructions in Dockerfiles and report the exposed ports.
 
-### rewrite-go
-
-* [org.openrewrite.golang.RegenerateGoSum](/recipes/golang/regenerategosum.md)
-  * **Regenerate `go.sum`**
-  * Regenerate a Go module's `go.sum` from its `go.mod` by running `go mod download`, recomputing checksums for the whole module graph, including creating it when absent. Useful after a dependency version change to bring `go.sum` back in sync. Requires the `go` toolchain to be installed; otherwise `go.sum` is left unchanged.
-
 ### rewrite-gradle
 
 * [org.openrewrite.gradle.AddPlatformDependency](/recipes/gradle/addplatformdependency.md)
