@@ -5,7 +5,9 @@
 .announcementBar {
   display: flex;
   align-items: center;
-  height: var(--docusaurus-announcement-bar-height);
+  /* min-height, not height: wrapped text grows the bar instead of spilling out
+     of it and colliding with the navbar. */
+  min-height: var(--docusaurus-announcement-bar-height);
   background-color: var(--ifm-color-announcement-bar-bg);
   color: var(--ifm-color-announcement-bar-text);
 
@@ -27,30 +29,34 @@ html[data-announcement-bar-initially-dismissed='true'] .announcementBar {
 /*
 Mirrors .announcementBar, but kept as a separate class so the recipe-catalog
 bar's dismissal (data-announcement-bar-initially-dismissed) never hides the
-event bar. Its own attribute is set by the inline head script for no flash.
+notice bar. Its own attribute is set by the inline head script for no flash.
 */
-.eventBar {
+.noticeBar {
   display: flex;
   align-items: center;
-  height: var(--docusaurus-announcement-bar-height);
+  /* min-height, not height: wrapped text grows the bar instead of spilling out
+     of it and colliding with the navbar. */
+  min-height: var(--docusaurus-announcement-bar-height);
   background-color: var(--ifm-color-announcement-bar-bg);
   color: var(--ifm-color-announcement-bar-text);
   border-bottom: 1px solid var(--ifm-color-emphasis-100);
 }
 
-html[data-event-bar-dismissed='true'] .eventBar {
+html[data-notice-bar-dismissed='true'] .noticeBar {
   display: none;
 }
 
-/* Matches AnnouncementBar/Content's .content so the event bar reads the same. */
-.eventBarContent {
+/* Matches AnnouncementBar/Content's .content so the notice bar reads the same,
+   plus a tighter line-height so a two-line wrap stays compact. */
+.noticeBarContent {
   flex: 1 1 auto;
   font-size: 85%;
+  line-height: 1.4;
   text-align: center;
   padding: 5px 0;
 }
 
-.eventBarContent a {
+.noticeBarContent a {
   color: inherit;
   text-decoration: underline;
 }
@@ -70,7 +76,7 @@ html[data-event-bar-dismissed='true'] .eventBar {
 
 @media print {
   .announcementBar,
-  .eventBar {
+  .noticeBar {
     display: none;
   }
 }

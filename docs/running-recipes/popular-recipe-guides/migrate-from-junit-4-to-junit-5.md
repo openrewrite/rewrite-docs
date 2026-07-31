@@ -6,10 +6,13 @@ description: How to automatically migrate from JUnit 4 to JUnit Jupiter.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Migrate to JUnit Jupiter from JUnit 4
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from the venerable [JUnit 4](https://junit.org/junit4/) testing framework to its successor [JUnit Jupiter](https://junit.org/junit5/). JUnit is a popular tool that many other libraries and frameworks interact with. OpenRewrite supports some of the popular integrations, such as Mockito and Spring-Boot, out of the box.
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-spring" />
 
 ## Example Configuration
 

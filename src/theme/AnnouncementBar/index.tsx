@@ -1,4 +1,5 @@
 import React, {useCallback, useState} from 'react';
+import Link from '@docusaurus/Link';
 import {useLocation} from '@docusaurus/router';
 import {useThemeConfig} from '@docusaurus/theme-common';
 import {useAnnouncementBar} from '@docusaurus/theme-common/internal';
@@ -7,10 +8,11 @@ import AnnouncementBarContent from '@theme/AnnouncementBar/Content';
 import styles from './styles.module.css';
 
 // Kept in sync with the inline head script in docusaurus.config.ts, which sets
-// the matching <html> attribute before hydration so the event bar doesn't flash
-// for visitors who have already dismissed it.
-const EVENT_BAR_STORAGE_KEY = 'code-remix-summer-announcement-dismissed';
-const EVENT_BAR_DISMISSED_ATTRIBUTE = 'data-event-bar-dismissed';
+// the matching <html> attribute before hydration so the notice bar doesn't flash
+// for visitors who have already dismissed it. The storage key is specific to the
+// current notice, so replacing the message re-shows the bar to everyone.
+const NOTICE_BAR_STORAGE_KEY = 'code-genome-project-announcement-dismissed';
+const NOTICE_BAR_DISMISSED_ATTRIBUTE = 'data-notice-bar-dismissed';
 
 export default function AnnouncementBar(): JSX.Element | null {
   const {pathname} = useLocation();
@@ -18,9 +20,10 @@ export default function AnnouncementBar(): JSX.Element | null {
   const {isActive, close} = useAnnouncementBar();
 
   // The recipe-catalog bar only belongs on /recipes pages; everywhere else we
-  // promote the Code Remix Summer event instead.
+  // surface the Code Genome Project notice instead. Recipe pages already carry
+  // the same guidance inline in each usage snippet (see components/RunRecipe).
   if (!pathname.startsWith('/recipes')) {
-    return <EventAnnouncementBar />;
+    return <NoticeAnnouncementBar />;
   }
 
   if (!isActive) {
@@ -45,14 +48,14 @@ export default function AnnouncementBar(): JSX.Element | null {
 // Independent of Docusaurus's single-bar dismissal state so closing it never
 // hides the recipe-catalog bar (and vice versa). Dismissal is persisted to
 // localStorage; the inline head script reads it on the next load for no flash.
-function EventAnnouncementBar(): JSX.Element | null {
+function NoticeAnnouncementBar(): JSX.Element | null {
   const [closed, setClosed] = useState(false);
 
   const handleClose = useCallback(() => {
     try {
-      localStorage.setItem(EVENT_BAR_STORAGE_KEY, 'true');
+      localStorage.setItem(NOTICE_BAR_STORAGE_KEY, 'true');
       document.documentElement.setAttribute(
-        EVENT_BAR_DISMISSED_ATTRIBUTE,
+        NOTICE_BAR_DISMISSED_ATTRIBUTE,
         'true',
       );
     } catch {
@@ -66,17 +69,15 @@ function EventAnnouncementBar(): JSX.Element | null {
   }
 
   return (
-    <div className={styles.eventBar} role="banner">
+    <div className={styles.noticeBar} role="banner">
       <div className={styles.announcementBarPlaceholder} />
-      <div className={styles.eventBarContent}>
-        <strong>Code Remix Summer</strong> is here — 10 live sessions,
-        Jun&nbsp;12–Aug&nbsp;21.{' '}
-        <a
-          href="https://www.moderne.ai/events/code-remix-summer"
-          target="_blank"
-          rel="noopener">
-          Register for the broadcasts →
-        </a>
+      <div className={styles.noticeBarContent}>
+        <strong>Recipes are moving from Maven Central to the Code Genome
+        Project.</strong>{' '}
+        <Link to="/running-recipes/getting-started#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project">
+          Configure access
+        </Link>{' '}
+        to keep releases resolving.
       </div>
       <AnnouncementBarCloseButton
         onClick={handleClose}

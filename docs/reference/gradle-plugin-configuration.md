@@ -122,7 +122,9 @@ rewrite {
 ## Activating OpenRewrite recipes
 
 :::info
-OpenRewrite libraries and modules are published to the Code Genome Project. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there, or from an internal repository that mirrors it.
+OpenRewrite libraries and modules are published to the Code Genome Project. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there, or from an internal repository that mirrors it. Keep `mavenCentral()` alongside it: the Code Genome Project hosts only OpenRewrite and Moderne artifacts, not the third-party libraries they depend on.
+
+Access depends on your account. OpenRewrite's Apache-licensed recipes are available to any authenticated user, while [source-available](/licensing/openrewrite-licensing#moderne-source-available-license) and proprietary recipes require a Moderne subscription.
 :::
 
 No recipe is ever run on your codebase without being explicitly activated in the plugin's configuration. To make pre-packaged OpenRewrite recipes available for activation, add Rewrite's bill of materials along with the specific `rewrite` dependencies:

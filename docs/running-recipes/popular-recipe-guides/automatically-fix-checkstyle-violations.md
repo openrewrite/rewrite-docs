@@ -4,10 +4,13 @@ description: How to automatically fix checkstyle violations.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Automatically fix Checkstyle violations
 
 Most programmers agree that having consistent formatting across a code base makes it easier to work with. Tools like [Checkstyle](https://checkstyle.sourceforge.io/) provide automated enforcement of these policies. But it's never fun to have your workflow interrupted by complaints about formatting. This guide will show you how to configure OpenRewrite to automate the remediation of Checkstyle policy violations.
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-static-analysis" />
 
 ## Example Configuration
 

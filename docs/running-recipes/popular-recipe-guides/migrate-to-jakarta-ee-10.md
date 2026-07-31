@@ -5,10 +5,13 @@ description: How to migrate to Jakarta EE 10.0.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Migrate to Jakarta EE 10.0
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration to [Jakarta EE 10](https://jakarta.ee/release/10/). Jakarta EE 10 is packed with new features for building modernized, simplified, and lightweight cloud native Java applications. This new innovative community-driven release is designed for organizations looking to start developing new enterprise Java applications or advancing their existing ones.
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-migrate-java" />
 
 ## Configuration
 

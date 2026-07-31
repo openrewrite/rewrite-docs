@@ -51,7 +51,11 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 
 Once you've checked out your project, the next step is to add the OpenRewrite plugin to Maven or Gradle.
 
-OpenRewrite artifacts are distributed through the Code Genome Project repository (`https://artifacts.codegenomeproject.org/maven`), which requires authentication. To get access, sign in to the Code Genome Project and create a download token. Your build then authenticates with the email or username you signed in with, plus that token as the password. The snippets below use `USERNAME` and `TOKEN` as placeholders for these credentials.
+OpenRewrite releases are published to the Code Genome Project repository (`https://artifacts.codegenomeproject.org/maven`), which requires authentication. To get access, sign in to the Code Genome Project and create a download token. Your build then authenticates with the email or username you signed in with, plus that token as the password. The snippets below use `USERNAME` and `TOKEN` as placeholders for these credentials.
+
+What you can download depends on your account: OpenRewrite's Apache-licensed recipes and the Moderne CLI are available to any authenticated user, while [source-available](/licensing/openrewrite-licensing#moderne-source-available-license) and proprietary recipes require a Moderne subscription.
+
+Keep `mavenCentral()` in your build alongside the Code Genome Project. Earlier OpenRewrite releases remain on Maven Central, and more importantly the Code Genome Project hosts only OpenRewrite and Moderne artifacts, so your project's own dependencies, and the third-party libraries OpenRewrite itself depends on, still resolve from Maven Central.
 
 Please follow the instructions in the Maven or Gradle tab to configure your project:
 
@@ -409,7 +413,7 @@ After doing that, your `pom.xml` file should look similar to this:
         </dependencies>
       </plugin>
   </plugins>
-<build>
+</build>
 ```
 
 To double-check that everything is working, run the command `mvn rewrite:run`. Your project should be upgraded to Spring Boot 2 and all of the test classes should be updated to JUnit 5. Your `pom.xml` file will also have had its Spring dependencies updated, the JUnit 4 dependency removed, and the JUnit 5 dependency added.

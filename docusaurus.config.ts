@@ -41,15 +41,15 @@ const config: Config = {
       },
       innerHTML: JSON.stringify(structuredData),
     },
-    // Hide the Code Remix Summer event bar before hydration for visitors who
-    // already dismissed it (no flash). The storage key and attribute must match
+    // Hide the site-wide notice bar before hydration for visitors who already
+    // dismissed it (no flash). The storage key and attribute must match
     // src/theme/AnnouncementBar/index.tsx.
     {
       tagName: 'script',
       attributes: {},
       innerHTML: `try {
-  if (window.localStorage.getItem('code-remix-summer-announcement-dismissed') === 'true') {
-    document.documentElement.setAttribute('data-event-bar-dismissed', 'true');
+  if (window.localStorage.getItem('code-genome-project-announcement-dismissed') === 'true') {
+    document.documentElement.setAttribute('data-notice-bar-dismissed', 'true');
   }
 } catch (e) {}`,
     },

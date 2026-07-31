@@ -4,10 +4,13 @@ description: How to automatically migrate from Java 17 to 21.
 ---
 
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Migrate to Java 21
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from Java 17 to Java 21. While this recipe _will_ upgrade your Java 8 or Java 11 projects to Java 21, this guide won't cover the changes that occur from those versions to Java 21. For information on migrating to Java 17 from those versions, check out our [migrate to Java 17 guide](./migrate-to-java-17.md).
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-migrate-java" />
 
 ## Example Configuration
 

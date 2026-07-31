@@ -4,10 +4,13 @@ description: How to automatically migrate from Java 21 to 25.
 ---
 
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Migrate to Java 25
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from Java 21 to Java 25. While this recipe _will_ upgrade your Java 8, 11, or 17 projects to Java 25, this guide won't cover the changes that occur from those versions to Java 25. For information on migrating to Java 21 from those versions, check out our [migrate to Java 21 guide](./migrate-to-java-21.md).
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-migrate-java" />
 
 ## Example Configuration
 
