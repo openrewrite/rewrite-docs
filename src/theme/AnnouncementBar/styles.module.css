@@ -83,7 +83,18 @@ html[data-notice-bar-dismissed='true'] .noticeBar {
 
 @media (min-width: 997px) {
   :root {
-    --docusaurus-announcement-bar-height: 30px;
+    /* Must equal the navbar offset in custom.css: smaller and the navbar overlaps the
+       bar, larger and a gap opens. Holds one line of copy; two would need ~48px. */
+    --docusaurus-announcement-bar-height: 40px;
+  }
+
+  /* Pin the bar instead of letting it scroll away. Desktop only: below the breakpoint
+     the height is content-driven, so there's no fixed value for the navbar to clear. */
+  .announcementBar,
+  .noticeBar {
+    position: sticky;
+    top: 0;
+    z-index: calc(var(--ifm-z-index-fixed) + 1);
   }
 
   .announcementBarPlaceholder,

@@ -1,9 +1,5 @@
-/*
-Admonition titles inherit --ifm-heading-font-weight, which this site sets to 300.
-At the small uppercase size Docusaurus uses for the title, that reads lighter than
-the body text below it. Bold just this notice's title rather than restyling every
-heading on the site.
-*/
+/* Admonition titles inherit --ifm-heading-font-weight, which this site sets to 300 -
+   lighter than the body text beneath. Bold this title only, not every heading. */
 .title {
   font-weight: var(--ifm-font-weight-bold);
 }

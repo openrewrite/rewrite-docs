@@ -436,3 +436,11 @@ html[data-theme='dark'] {
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 calc(var(--ifm-pre-padding) - 3px) 0 var(--ifm-pre-padding);
 }
+
+/* The announcement bar is pinned, so the sticky navbar has to clear it by exactly the
+   bar's height. data-bar-visible is maintained in src/theme/AnnouncementBar/index.tsx. */
+@media (min-width: 997px) {
+  html[data-bar-visible='true'] .navbar--fixed-top {
+    top: var(--docusaurus-announcement-bar-height);
+  }
+}
