@@ -17,9 +17,9 @@ _Changes an import from one module/member to another, updating all type attribut
 
 [GitHub: rewrite+org.openrewrite.javascript.change-import](https://github.com/search?type=code&q=repo:openrewrite/rewrite+org.openrewrite.javascript.change-import),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-javascript/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-javascript/)
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 ## Options
 
@@ -44,9 +44,6 @@ This recipe is used as part of the following composite recipes:
 * [Rename `Message` interface to `ToastMessageOptions`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamemessageinterface)
 * [Rename `OverlayPanel` to `Popover`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renameoverlaypaneltopopover)
 * [Rename `Sidebar` to `Drawer`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/primeng/renamesidebartodrawer)
-* [Upgrade to Angular 16](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular16)
-* [Upgrade to Angular 18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular18)
-* [Upgrade to Angular 19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular19)
 
 
 ## Usage

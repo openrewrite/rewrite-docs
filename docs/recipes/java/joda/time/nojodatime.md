@@ -21,13 +21,13 @@ _Before Java 8, Java lacked a robust date and time library, leading to the wides
 
 [GitHub: no-joda-time.yml](https://github.com/openrewrite/rewrite-joda/blob/main/src/main/resources/META-INF/rewrite/no-joda-time.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-joda/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-joda/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-joda/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
 ## Definition

@@ -17,7 +17,7 @@ _Change a given type to another._
 
 [GitHub: ChangeType.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangeType.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -49,6 +49,7 @@ This recipe is used as part of the following composite recipes:
 * [DataNucleus 5.0 type changes](/recipes/java/migrate/datanucleus/datanucleustypechanges_5_0.md)
 * [Different java type for ServerCertificateValidator in camel-milo](/recipes/apache/camel/upgrade/camel416/camelmilocertificate.md)
 * [Each camel-debezium module has its own subpackage corresponding to the database type](/recipes/apache/camel/upgrade/camel49/debeziumchangetypes.md)
+* [Fix the Telugu language code](/recipes/cucumber/jvm/fixtelugulanguagecode.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Maps deprecated classes from Apache HttpClient 4.5.x to suggested replacements](/recipes/apache/httpclient4/mappingdeprecatedclasses.md)
@@ -93,7 +94,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Data MongoDB to Quarkus Panache MongoDB](/recipes/quarkus/spring/migratespringdatamongodb.md)
 * [Migrate Spring Events to CDI Events](/recipes/quarkus/spring/migratespringevents.md)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
-* [Migrate Spring WS Axiom to SAAJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
+* [Migrate Spring WS Axiom to SAAJ](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
 * [Migrate Struts 1 Action to Struts 2 ActionSupport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migrateactionclass)
 * [Migrate Struts 2.0 interceptors to action &quot;aware&quot; interfaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/migrateawareinterfaces)
 * [Migrate TaskMetadata and ThreadMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/migratetaskandthreadmetadata)
@@ -107,6 +108,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `RestTemplate` to `RestClient`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/migrateresttemplatetorestclient)
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `clear` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoreclear.md)
+* [Migrate `cucumber.api.CucumberOptions` to `io.cucumber.testng.CucumberOptions`](/recipes/cucumber/jvm/cucumberoptionstotestngcucumberoptions.md)
+* [Migrate `cucumber.api` to `io.cucumber`](/recipes/cucumber/jvm/cucumberapitoiocucumber.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
 * [Migrate `setCredentials` to ApacheHttpClient 5.x `CredentialsStore`](/recipes/apache/httpclient5/credentialsstoresetcredentials.md)

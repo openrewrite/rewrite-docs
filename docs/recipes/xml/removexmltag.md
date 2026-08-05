@@ -17,7 +17,7 @@ _Removes XML tags matching the provided expression._
 
 [GitHub: RemoveXmlTag.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-xml/src/main/java/org/openrewrite/xml/RemoveXmlTag.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-xml/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-xml/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

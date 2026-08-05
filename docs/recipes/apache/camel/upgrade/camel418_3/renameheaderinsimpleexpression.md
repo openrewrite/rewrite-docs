@@ -20,7 +20,7 @@ Renames header references in Simple expressions like ${header.oldName} → ${hea
 
 [GitHub: search?type=code&q=org.apache.camel.upgrade.camel418_3.RenameHeaderInSimpleExpression](https://github.com/search?type=code&q=org.apache.camel.upgrade.camel418_3.RenameHeaderInSimpleExpression),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-third-party/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

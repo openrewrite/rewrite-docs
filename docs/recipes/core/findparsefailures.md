@@ -17,7 +17,7 @@ _This recipe explores parse failures after an LST is produced for classifying th
 
 [GitHub: FindParseFailures.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/FindParseFailures.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-core/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

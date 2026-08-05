@@ -21,7 +21,7 @@ _After the Jackson 2 → 3 migration, prefer the concrete static `JsonFactory.bu
 
 [GitHub: UseJsonFactoryStaticBuilder.java](https://github.com/openrewrite/rewrite-jackson/blob/main/src/main/java/org/openrewrite/java/jackson/UseJsonFactoryStaticBuilder.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-jackson/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-jackson/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-jackson/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

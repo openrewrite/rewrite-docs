@@ -17,7 +17,7 @@ _Adds `buildCache` configuration to `develocity` where not yet present._
 
 [GitHub: EnableDevelocityBuildCache.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/EnableDevelocityBuildCache.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-gradle/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-gradle/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

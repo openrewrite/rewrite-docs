@@ -17,7 +17,7 @@ _A recipe that will rename a package name in package statements, imports, and fu
 
 [GitHub: ChangePackage.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/ChangePackage.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-java/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-java/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -40,6 +40,7 @@ This recipe is used as part of the following composite recipes:
 * [DataNucleus 4.0 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_4_0.md)
 * [DataNucleus 5.0 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_0.md)
 * [DataNucleus 5.2 package moves](/recipes/java/migrate/datanucleus/datanucleuspackagemoves_5_2.md)
+* [Fix the Telugu language code](/recipes/cucumber/jvm/fixtelugulanguagecode.md)
 * [Migrate Fest 2.x to AssertJ](/recipes/java/testing/assertj/festtoassertj.md)
 * [Migrate Hibernate Types to Hypersistence Utils 6.0](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
 * [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
@@ -51,6 +52,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Validation to Quarkus](/recipes/quarkus/spring/migratespringvalidation.md)
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
 * [Migrate `cucumber-java8` to `cucumber-java`](/recipes/cucumber/jvm/cucumberjava8tojava.md)
+* [Migrate `cucumber.api` to `io.cucumber`](/recipes/cucumber/jvm/cucumberapitoiocucumber.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
 * [Migrate classes from Jackson Codehaus (legacy) to Jackson FasterXML](/recipes/java/jackson/codehausclassestofasterxml.md)
@@ -155,7 +157,6 @@ This recipe is used as part of the following composite recipes:
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/axonframework/migration/upgradeaxonframework_4_jakarta.md)
 * [Upgrade to Axonframework 4.x Javax](/recipes/axonframework/migration/upgradeaxonframework_4_javax.md)
-* [Upgrade to Cucumber-JVM 5.x](/recipes/cucumber/jvm/upgradecucumber5x.md)
 * [Use Arquillian JUnit 5 Extension](/recipes/java/testing/arquillian/arquillianjunit4toarquillianjunit5.md)
 * [Use `com.sun.xml.bind.*` instead of `com.sun.xml.internal.bind.*`](/recipes/java/migrate/internalbindpackages.md)
 * [Use `java.security.cert` instead of `javax.security.cert`](/recipes/java/migrate/deprecatedjavaxsecuritycert.md)

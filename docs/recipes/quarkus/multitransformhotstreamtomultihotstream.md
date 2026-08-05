@@ -17,7 +17,7 @@ _Replace Mutiny API usages of `multi.transform().toHotStream()` with `multi.toHo
 
 [GitHub: MultiTransformHotStreamToMultiHotStream.java](https://github.com/openrewrite/rewrite-quarkus/blob/main/src/main/java/org/openrewrite/quarkus/MultiTransformHotStreamToMultiHotStream.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-quarkus/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-quarkus/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-quarkus/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

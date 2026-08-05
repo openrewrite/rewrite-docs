@@ -17,7 +17,7 @@ _As of Micronaut 3.x It is no longer possible to inject the internal implementat
 
 [GitHub: SubclassesReturnedFromFactoriesNotInjectable.java](https://github.com/openrewrite/rewrite-micronaut/blob/main/src/main/java/org/openrewrite/java/micronaut/SubclassesReturnedFromFactoriesNotInjectable.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-micronaut/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-micronaut/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-micronaut/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

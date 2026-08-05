@@ -21,7 +21,7 @@ _Migrate applications to the latest Netty 4.1.x release._
 
 [GitHub: netty-3_2_to_4_1.yml](https://github.com/openrewrite/rewrite-netty/blob/main/src/main/resources/META-INF/rewrite/netty-3_2_to_4_1.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-netty/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-netty/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-netty/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

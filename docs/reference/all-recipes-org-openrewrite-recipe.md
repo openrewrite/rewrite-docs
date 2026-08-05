@@ -395,11 +395,17 @@ _121 recipes_
 
 _License: Moderne Source Available License_
 
-_10 recipes_
+_20 recipes_
 
+* [org.openrewrite.cucumber.jvm.CollapseCucumberOptionsTags](/recipes/cucumber/jvm/collapsecucumberoptionstags.md)
+  * **Collapse `@CucumberOptions` tags into a single tag expression**
+  * Cucumber-JVM 6.0.0 narrowed `@CucumberOptions#tags` from `String[]` to a single `String`. The elements of the array were combined with `and`, such that `tags = \{&quot;@a&quot;, &quot;@b&quot;\}` becomes `tags = &quot;(@a) and (@b)&quot;`.
 * [org.openrewrite.cucumber.jvm.CucumberAnnotationToSuite](/recipes/cucumber/jvm/cucumberannotationtosuite.md)
   * **Replace `@Cucumber` with `@Suite`**
   * Replace `@Cucumber` with `@Suite` and `@SelectClasspathResource(&quot;cucumber/annotated/class/package&quot;)`.
+* [org.openrewrite.cucumber.jvm.CucumberApiToIoCucumber](/recipes/cucumber/jvm/cucumberapitoiocucumber.md)
+  * **Migrate `cucumber.api` to `io.cucumber`**
+  * Cucumber-JVM 5.0.0 moved the `cucumber.api` types to `io.cucumber`, but not as a single package rename: types were spread over `io.cucumber.java`, `io.cucumber.junit`, `io.cucumber.testng`, `io.cucumber.plugin` and `io.cucumber.core`. This recipe maps each `cucumber.api` type onto the package it actually moved to.
 * [org.openrewrite.cucumber.jvm.CucumberJava8HookDefinitionToCucumberJava](/recipes/cucumber/jvm/cucumberjava8hookdefinitiontocucumberjava.md)
   * **Replace `cucumber-java8` hook definition with `cucumber-java`**
   * Replace `LambdaGlue` hook definitions with new annotated methods with the same body.
@@ -409,21 +415,45 @@ _10 recipes_
 * [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](/recipes/cucumber/jvm/cucumberjava8tojava.md)
   * **Migrate `cucumber-java8` to `cucumber-java`**
   * Migrates `cucumber-java8` step definitions and `LambdaGlue` hooks to `cucumber-java` annotated methods.
+* [org.openrewrite.cucumber.jvm.CucumberOptionsPropertyToIndividualProperties](/recipes/cucumber/jvm/cucumberoptionspropertytoindividualproperties.md)
+  * **Migrate the `cucumber.options` property**
+  * Cucumber-JVM 6.0.0 removed `cucumber.options`, which passed command line options as a single string, in favour of an individual property per option. This recipe splits the property into its replacements, both in `.properties` files and in Maven Surefire or Failsafe `systemPropertyVariables`. Options without a property equivalent, such as `--threads`, have no migration path; there the property is left untouched, with a `TODO` comment added above it.
+* [org.openrewrite.cucumber.jvm.CucumberOptionsToTestNgCucumberOptions](/recipes/cucumber/jvm/cucumberoptionstotestngcucumberoptions.md)
+  * **Migrate `cucumber.api.CucumberOptions` to `io.cucumber.testng.CucumberOptions`**
+  * Replace `cucumber.api.CucumberOptions` with the TestNG variant in source files that run through a TestNG runner.
 * [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
   * **Cucumber to JUnit test `@Suite`**
   * Migrates Cucumber tests to JUnit test `@Suite`.
+* [org.openrewrite.cucumber.jvm.DropStrictOption](/recipes/cucumber/jvm/dropstrictoption.md)
+  * **Drop the `strict` option**
+  * Cucumber-JVM 7.0.0 removed the `strict` option, as scenarios are now always executed in strict mode.
 * [org.openrewrite.cucumber.jvm.DropSummaryPrinter](/recipes/cucumber/jvm/dropsummaryprinter.md)
   * **Drop `SummaryPrinter`**
   * Replace `SummaryPrinter` with `Plugin`, if not already present.
+* [org.openrewrite.cucumber.jvm.DropTimeoutAttribute](/recipes/cucumber/jvm/droptimeoutattribute.md)
+  * **Drop the `timeout` attribute**
+  * Cucumber-JVM 5.0.0 removed the `timeout` attribute from step definition and hook annotations, in favor of asserting on the duration from within the step definition itself.
+* [org.openrewrite.cucumber.jvm.FixTeluguLanguageCode](/recipes/cucumber/jvm/fixtelugulanguagecode.md)
+  * **Fix the Telugu language code**
+  * Cucumber-JVM 7.0.0 removed the incorrect ISO 639-1 code `tl` for Telugu, which is now consistently `te`.
+* [org.openrewrite.cucumber.jvm.MigrateScenarioWriteAndEmbed](/recipes/cucumber/jvm/migratescenariowriteandembed.md)
+  * **Migrate `Scenario.write` and `Scenario.embed`**
+  * Cucumber-JVM 6.0.0 removed `Scenario.write(String)` and `Scenario.embed(byte[], String)` along with `Scenario.embed(byte[], String, String)`, in favor of `Scenario.log(String)` and `Scenario.attach(byte[], String, String)`. The two argument `embed` emitted an attachment without a name, which `attach` expresses as a `null` name.
 * [org.openrewrite.cucumber.jvm.RegexToCucumberExpression](/recipes/cucumber/jvm/regextocucumberexpression.md)
   * **Replace `cucumber-java` step definition regexes with Cucumber expressions**
   * Strip regex prefix and suffix from step annotation expressions arguments where possible.
+* [org.openrewrite.cucumber.jvm.TypeRegistryConfigurerToAnnotations](/recipes/cucumber/jvm/typeregistryconfigurertoannotations.md)
+  * **Replace `TypeRegistryConfigurer` with cucumber-java annotations**
+  * Cucumber-JVM 7.0.0 removed `TypeRegistryConfigurer`; replace implementations with `@ParameterType`, `@DataTableType` and `@DocStringType` annotated glue methods. Classes whose `configureTypeRegistry` method cannot be converted in full are left untouched.
 * [org.openrewrite.cucumber.jvm.UpgradeCucumber2x](/recipes/cucumber/jvm/upgradecucumber2x.md)
   * **Upgrade to Cucumber-JVM 2.x**
   * Upgrade to Cucumber-JVM 2.x from any previous version.
 * [org.openrewrite.cucumber.jvm.UpgradeCucumber5x](/recipes/cucumber/jvm/upgradecucumber5x.md)
   * **Upgrade to Cucumber-JVM 5.x**
   * Upgrade to Cucumber-JVM 5.x from any previous version.
+* [org.openrewrite.cucumber.jvm.UpgradeCucumber6x](/recipes/cucumber/jvm/upgradecucumber6x.md)
+  * **Upgrade to Cucumber-JVM 6.x**
+  * Upgrade to Cucumber-JVM 6.x from any previous version.
 * [org.openrewrite.cucumber.jvm.UpgradeCucumber7x](/recipes/cucumber/jvm/upgradecucumber7x.md)
   * **Upgrade to Cucumber-JVM 7.x**
   * Upgrade to Cucumber-JVM 7.x from any previous version.
@@ -3556,7 +3586,7 @@ _41 recipes_
 
 _License: Moderne Source Available License_
 
-_331 recipes_
+_333 recipes_
 
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
@@ -4515,6 +4545,12 @@ _331 recipes_
 * [org.openrewrite.java.spring.util.concurrent.ListenableToCompletableFuture](/recipes/java/spring/util/concurrent/listenabletocompletablefuture.md)
   * **Migrate `ListenableFuture` to `CompletableFuture`**
   * Spring Framework 6.0 removed `org.springframework.util.concurrent.ListenableFuture` in favor of `java.util.concurrent.CompletableFuture`. This recipe migrates `ListenableFuture` types, along with their `addCallback` invocations and `ListenableFutureCallback` implementations, to `CompletableFuture`.
+* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
+  * **Migrate Spring WS Axiom to SAAJ**
+  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
+* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
+  * **Migrate to Spring WS 4.0**
+  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 * [org.openrewrite.java.springdoc.CleanupRemainingSpringfox](/recipes/java/springdoc/cleanupremainingspringfox.md)
   * **Remove remaining Springfox dead code**
   * Removes unused private methods left behind after SpringFoxToSpringDoc migration. When Docket beans are removed, private helper methods (e.g., `appInfo()`) become dead code but are not cleaned up, causing compilation errors.

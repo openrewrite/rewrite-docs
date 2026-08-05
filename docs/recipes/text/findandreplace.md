@@ -17,7 +17,7 @@ _Textual find and replace, optionally interpreting the search query as a Regular
 
 [GitHub: FindAndReplace.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/text/FindAndReplace.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-core/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-core/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -42,6 +42,7 @@ This recipe is used as part of the following composite recipes:
 * [Faces XHTML migration for Jakarta EE 10](/recipes/java/migrate/jakarta/jakartafacesxhtmlee10.md)
 * [Faces XHTML migration for Jakarta EE 9](/recipes/java/migrate/jakarta/jakartafacesxhtmlee9.md)
 * [Faces XHTML migration for Jakarta EE 9](/recipes/oracle/weblogic/rewrite/jakarta/jakartafaces3xhtml.md)
+* [Fix the Telugu language code](/recipes/cucumber/jvm/fixtelugulanguagecode.md)
 * [Migrate .NET install URLs from retiring Azure CDN domains](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/dotnet/migratedotnetinstallurls)
 * [Migrate JSF values inside EcmaScript files](/recipes/java/migrate/jakarta/jakartafacesecmascript.md)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)

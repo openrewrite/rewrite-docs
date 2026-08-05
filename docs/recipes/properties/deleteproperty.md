@@ -17,7 +17,7 @@ _Deletes key/value pairs from properties files, as well as any comments that imm
 
 [GitHub: DeleteProperty.java](https://github.com/openrewrite/rewrite/blob/main/rewrite-properties/src/main/java/org/openrewrite/properties/DeleteProperty.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite/rewrite-properties/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/rewrite-properties/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Drop the `strict` option](/recipes/cucumber/jvm/dropstrictoption.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
 * [Migrate Error Registry configuration properties](/recipes/apache/camel/upgrade/camel421/migrateerrorregistryproperties.md)
 * [Migrate Spring Boot Actuator to Quarkus Health and Metrics](/recipes/quarkus/spring/migratespringactuator.md)

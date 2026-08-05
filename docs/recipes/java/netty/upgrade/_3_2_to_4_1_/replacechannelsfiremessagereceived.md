@@ -17,7 +17,7 @@ _Replaces Netty 3 Channels.fireMessageReceived(channel, message) with Netty 4 ct
 
 [GitHub: ReplaceChannelsFireMessageReceived.java](https://github.com/openrewrite/rewrite-netty/blob/main/src/main/java/org/openrewrite/java/netty/upgrade/_3_2_to_4_1_/ReplaceChannelsFireMessageReceived.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-netty/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-netty/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-netty/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 

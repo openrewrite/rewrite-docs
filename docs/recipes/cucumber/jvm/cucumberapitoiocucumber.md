@@ -1,0 +1,354 @@
+---
+title: "Migrate `cucumber.api` to `io.cucumber`"
+sidebar_label: "Migrate `cucumber.api` to `io.cucumber`"
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RunRecipe from '@site/src/components/RunRecipe';
+
+# Migrate `cucumber.api` to `io.cucumber`
+
+**org.openrewrite.cucumber.jvm.CucumberApiToIoCucumber**
+
+_Cucumber-JVM 5.0.0 moved the `cucumber.api` types to `io.cucumber`, but not as a single package rename: types were spread over `io.cucumber.java`, `io.cucumber.junit`, `io.cucumber.testng`, `io.cucumber.plugin` and `io.cucumber.core`. This recipe maps each `cucumber.api` type onto the package it actually moved to._
+
+### Tags
+
+* [cucumber](/reference/recipes-by-tag#cucumber)
+* [testing](/reference/recipes-by-tag#testing)
+
+## Recipe source
+
+[GitHub: cucumber.yml](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml),
+[Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues),
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-cucumber-jvm/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
+
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
+
+
+## Definition
+
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Migrate `cucumber.api.CucumberOptions` to `io.cucumber.testng.CucumberOptions`](../../cucumber/jvm/cucumberoptionstotestngcucumberoptions)
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.java.ObjectFactory`
+  * newFullyQualifiedTypeName: `io.cucumber.core.backend.ObjectFactory`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.event.EventListener`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.EventListener`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.event.ConcurrentEventListener`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.ConcurrentEventListener`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.event.CanonicalEventOrder`
+  * newFullyQualifiedTypeName: `io.cucumber.core.plugin.CanonicalEventOrder`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `cucumber.api.event`
+  * newPackageName: `io.cucumber.plugin.event`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.formatter.AnsiEscapes`
+  * newFullyQualifiedTypeName: `io.cucumber.core.plugin.AnsiEscapes`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.formatter.ColorAware`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.ColorAware`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.formatter.NiceAppendable`
+  * newFullyQualifiedTypeName: `io.cucumber.core.plugin.NiceAppendable`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.formatter.StrictAware`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.StrictAware`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.Argument`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.event.Argument`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.CucumberOptions`
+  * newFullyQualifiedTypeName: `io.cucumber.junit.CucumberOptions`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.DataTable`
+  * newFullyQualifiedTypeName: `io.cucumber.datatable.DataTable`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.HookTestStep`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.event.HookTestStep`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.HookType`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.event.HookType`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.Pending`
+  * newFullyQualifiedTypeName: `io.cucumber.core.backend.Pending`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.PendingException`
+  * newFullyQualifiedTypeName: `io.cucumber.java.PendingException`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.PickleStepTestStep`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.event.PickleStepTestStep`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.Plugin`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.Plugin`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.Result`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.event.Result`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.Scenario`
+  * newFullyQualifiedTypeName: `io.cucumber.java.Scenario`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.SnippetType`
+  * newFullyQualifiedTypeName: `io.cucumber.junit.CucumberOptions$SnippetType`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.SummaryPrinter`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.SummaryPrinter`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.TestCase`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.event.TestCase`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.TestStep`
+  * newFullyQualifiedTypeName: `io.cucumber.plugin.event.TestStep`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.Transpose`
+  * newFullyQualifiedTypeName: `io.cucumber.java.Transpose`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.TypeRegistry`
+  * newFullyQualifiedTypeName: `io.cucumber.core.api.TypeRegistry`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.TypeRegistryConfigurer`
+  * newFullyQualifiedTypeName: `io.cucumber.core.api.TypeRegistryConfigurer`
+* [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `cucumber.api.cli.Main`
+  * newFullyQualifiedTypeName: `io.cucumber.core.cli.Main`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `cucumber.api.java8`
+  * newPackageName: `io.cucumber.java8`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `cucumber.api.java`
+  * newPackageName: `io.cucumber.java`
+  * recursive: `true`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `cucumber.api.junit`
+  * newPackageName: `io.cucumber.junit`
+* [Rename package name](../../java/changepackage)
+  * oldPackageName: `cucumber.api.testng`
+  * newPackageName: `io.cucumber.testng`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.cucumber.jvm.CucumberApiToIoCucumber
+displayName: Migrate `cucumber.api` to `io.cucumber`
+description: |
+  Cucumber-JVM 5.0.0 moved the `cucumber.api` types to `io.cucumber`, but not as a single package rename: types were spread over `io.cucumber.java`, `io.cucumber.junit`, `io.cucumber.testng`, `io.cucumber.plugin` and `io.cucumber.core`. This recipe maps each `cucumber.api` type onto the package it actually moved to.
+tags:
+  - cucumber
+  - testing
+recipeList:
+  - org.openrewrite.cucumber.jvm.CucumberOptionsToTestNgCucumberOptions
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.java.ObjectFactory
+      newFullyQualifiedTypeName: io.cucumber.core.backend.ObjectFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.event.EventListener
+      newFullyQualifiedTypeName: io.cucumber.plugin.EventListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.event.ConcurrentEventListener
+      newFullyQualifiedTypeName: io.cucumber.plugin.ConcurrentEventListener
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.event.CanonicalEventOrder
+      newFullyQualifiedTypeName: io.cucumber.core.plugin.CanonicalEventOrder
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: cucumber.api.event
+      newPackageName: io.cucumber.plugin.event
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.formatter.AnsiEscapes
+      newFullyQualifiedTypeName: io.cucumber.core.plugin.AnsiEscapes
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.formatter.ColorAware
+      newFullyQualifiedTypeName: io.cucumber.plugin.ColorAware
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.formatter.NiceAppendable
+      newFullyQualifiedTypeName: io.cucumber.core.plugin.NiceAppendable
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.formatter.StrictAware
+      newFullyQualifiedTypeName: io.cucumber.plugin.StrictAware
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.Argument
+      newFullyQualifiedTypeName: io.cucumber.plugin.event.Argument
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.CucumberOptions
+      newFullyQualifiedTypeName: io.cucumber.junit.CucumberOptions
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.DataTable
+      newFullyQualifiedTypeName: io.cucumber.datatable.DataTable
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.HookTestStep
+      newFullyQualifiedTypeName: io.cucumber.plugin.event.HookTestStep
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.HookType
+      newFullyQualifiedTypeName: io.cucumber.plugin.event.HookType
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.Pending
+      newFullyQualifiedTypeName: io.cucumber.core.backend.Pending
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.PendingException
+      newFullyQualifiedTypeName: io.cucumber.java.PendingException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.PickleStepTestStep
+      newFullyQualifiedTypeName: io.cucumber.plugin.event.PickleStepTestStep
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.Plugin
+      newFullyQualifiedTypeName: io.cucumber.plugin.Plugin
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.Result
+      newFullyQualifiedTypeName: io.cucumber.plugin.event.Result
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.Scenario
+      newFullyQualifiedTypeName: io.cucumber.java.Scenario
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.SnippetType
+      newFullyQualifiedTypeName: io.cucumber.junit.CucumberOptions$SnippetType
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.SummaryPrinter
+      newFullyQualifiedTypeName: io.cucumber.plugin.SummaryPrinter
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.TestCase
+      newFullyQualifiedTypeName: io.cucumber.plugin.event.TestCase
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.TestStep
+      newFullyQualifiedTypeName: io.cucumber.plugin.event.TestStep
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.Transpose
+      newFullyQualifiedTypeName: io.cucumber.java.Transpose
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.TypeRegistry
+      newFullyQualifiedTypeName: io.cucumber.core.api.TypeRegistry
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.TypeRegistryConfigurer
+      newFullyQualifiedTypeName: io.cucumber.core.api.TypeRegistryConfigurer
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: cucumber.api.cli.Main
+      newFullyQualifiedTypeName: io.cucumber.core.cli.Main
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: cucumber.api.java8
+      newPackageName: io.cucumber.java8
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: cucumber.api.java
+      newPackageName: io.cucumber.java
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: cucumber.api.junit
+      newPackageName: io.cucumber.junit
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: cucumber.api.testng
+      newPackageName: io.cucumber.testng
+
+```
+</TabItem>
+</Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade to Cucumber-JVM 5.x](/recipes/cucumber/jvm/upgradecucumber5x.md)
+
+
+## Usage
+
+<RunRecipe
+  recipeName="org.openrewrite.cucumber.jvm.CucumberApiToIoCucumber"
+  displayName="Migrate `cucumber.api` to `io.cucumber`"
+  groupId="org.openrewrite.recipe"
+  artifactId="rewrite-cucumber-jvm"
+  versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_CUCUMBER_JVM"
+  hasDataTables
+/>
+
+## See how this recipe works across multiple open-source repositories
+
+import RecipeCallout from '@site/src/components/ModerneLink';
+
+<RecipeCallout link="https://app.moderne.io/recipes/org.openrewrite.cucumber.jvm.CucumberApiToIoCucumber" />
+
+The community edition of the Moderne platform enables you to easily run recipes across thousands of open-source repositories.
+
+Please [contact Moderne](https://moderne.io/product) for more information about safely running the recipes on your own codebase in a private SaaS.
+## Data Tables
+
+<Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
+
+### Source files that had results
+**org.openrewrite.table.SourcesFileResults**
+
+_Source files that were modified by the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path before the run | The source path of the file before the run. `null` when a source file was created during the run. |
+| Source path after the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Parent of the recipe that made changes | In a hierarchical recipe, the parent of the recipe that made a change. Empty if this is the root of a hierarchy or if the recipe is not hierarchical at all. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Estimated time saving | An estimated effort that a developer to fix manually instead of using this recipe, in unit of seconds. |
+| Cycle | The recipe cycle in which the change was made. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SearchResults" label="SearchResults">
+
+### Source files that had search results
+**org.openrewrite.table.SearchResults**
+
+_Search results that were found during the recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path of search result before the run | The source path of the file with the search result markers present. |
+| Source path of search result after run the run | A recipe may modify the source path. This is the path after the run. `null` when a source file was deleted during the run. |
+| Result | The trimmed printed tree of the LST element that the marker is attached to. |
+| Description | The content of the description of the marker. |
+| Recipe that added the search marker | The specific recipe that added the Search marker. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.SourcesFileErrors" label="SourcesFileErrors">
+
+### Source files that errored on a recipe
+**org.openrewrite.table.SourcesFileErrors**
+
+_The details of all errors produced by a recipe run._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The file that failed to parse. |
+| Recipe that made changes | The specific recipe that made a change. |
+| Stack trace | The stack trace of the failure. |
+
+</TabItem>
+
+<TabItem value="org.openrewrite.table.RecipeRunStats" label="RecipeRunStats">
+
+### Recipe performance
+**org.openrewrite.table.RecipeRunStats**
+
+_Statistics used in analyzing the performance of recipes._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| The recipe | The recipe whose stats are being measured both individually and cumulatively. |
+| Source file count | The number of source files the recipe ran over. |
+| Source file changed count | The number of source files which were changed in the recipe run. Includes files created, deleted, and edited. |
+| Cumulative scanning time (ns) | The total time spent across the scanning phase of this recipe. |
+| Max scanning time (ns) | The max time scanning any one source file. |
+| Cumulative edit time (ns) | The total time spent across the editing phase of this recipe. |
+| Max edit time (ns) | The max time editing any one source file. |
+
+</TabItem>
+
+</Tabs>

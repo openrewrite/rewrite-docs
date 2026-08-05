@@ -22,13 +22,13 @@ _Upgrade to Cucumber-JVM 5.x from any previous version._
 
 [GitHub: cucumber.yml](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-cucumber-jvm/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
 ## Definition
@@ -36,9 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Upgrade to Cucumber-JVM 2.x](../../cucumber/jvm/upgradecucumber2x)
-* [Rename package name](../../java/changepackage)
-  * oldPackageName: `cucumber.api`
-  * newPackageName: `io.cucumber`
+* [Migrate `cucumber.api` to `io.cucumber`](../../cucumber/jvm/cucumberapitoiocucumber)
+* [Drop the `timeout` attribute](../../cucumber/jvm/droptimeoutattribute)
 
 </TabItem>
 
@@ -56,9 +55,8 @@ tags:
   - testing
 recipeList:
   - org.openrewrite.cucumber.jvm.UpgradeCucumber2x
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: cucumber.api
-      newPackageName: io.cucumber
+  - org.openrewrite.cucumber.jvm.CucumberApiToIoCucumber
+  - org.openrewrite.cucumber.jvm.DropTimeoutAttribute
 
 ```
 </TabItem>
@@ -68,7 +66,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
+* [Upgrade to Cucumber-JVM 6.x](/recipes/cucumber/jvm/upgradecucumber6x.md)
 
 
 ## Usage

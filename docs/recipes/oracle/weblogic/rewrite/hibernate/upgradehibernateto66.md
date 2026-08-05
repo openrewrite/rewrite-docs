@@ -22,7 +22,7 @@ _This recipe upgrades Hibernate to version 6.6, which is compatible with Jakarta
 
 [GitHub: search?type=code&q=com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66](https://github.com/search?type=code&q=com.oracle.weblogic.rewrite.hibernate.UpgradeHibernateTo66),
 [Issue Tracker](https://github.com/openrewrite/rewrite-third-party/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-third-party/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-third-party/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.

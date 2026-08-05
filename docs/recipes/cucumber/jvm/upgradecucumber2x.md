@@ -22,13 +22,13 @@ _Upgrade to Cucumber-JVM 2.x from any previous version._
 
 [GitHub: cucumber.yml](https://github.com/openrewrite/rewrite-cucumber-jvm/blob/main/src/main/resources/META-INF/rewrite/cucumber.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-cucumber-jvm/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-cucumber-jvm/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-cucumber-jvm/)
 
 :::info
 This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
 :::
 
-This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
+This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
 
 ## Definition
@@ -37,14 +37,136 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-android`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-android`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-clojure`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-clojure`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-core`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-core`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-gosu`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-gosu`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-groovy`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-groovy`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-guice`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-guice`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
   * oldArtifactId: `cucumber-java`
   * newGroupId: `io.cucumber`
   * newArtifactId: `cucumber-java`
+  * newVersion: `2.x`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `info.cukes`
   * oldArtifactId: `cucumber-java8`
   * newGroupId: `io.cucumber`
   * newArtifactId: `cucumber-java8`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-jruby`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-jruby`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-junit`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-junit`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-jython`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-jython`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-needle`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-needle`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-openejb`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-openejb`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-osgi`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-osgi`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-picocontainer`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-picocontainer`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-rhino`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-rhino`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-scala_2.10`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-scala_2.10`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-scala_2.11`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-scala_2.11`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-scala_2.12`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-scala_2.12`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-spring`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-spring`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-testng`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-testng`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `info.cukes`
+  * oldArtifactId: `cucumber-weld`
+  * newGroupId: `io.cucumber`
+  * newArtifactId: `cucumber-weld`
+  * newVersion: `2.x`
 
 </TabItem>
 
@@ -63,14 +185,136 @@ tags:
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: info.cukes
+      oldArtifactId: cucumber-android
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-android
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-clojure
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-clojure
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-core
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-core
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-gosu
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-gosu
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-groovy
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-groovy
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-guice
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-guice
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
       oldArtifactId: cucumber-java
       newGroupId: io.cucumber
       newArtifactId: cucumber-java
+      newVersion: 2.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: info.cukes
       oldArtifactId: cucumber-java8
       newGroupId: io.cucumber
       newArtifactId: cucumber-java8
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-jruby
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-jruby
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-junit
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-junit
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-jython
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-jython
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-needle
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-needle
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-openejb
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-openejb
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-osgi
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-osgi
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-picocontainer
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-picocontainer
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-rhino
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-rhino
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-scala_2.10
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-scala_2.10
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-scala_2.11
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-scala_2.11
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-scala_2.12
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-scala_2.12
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-spring
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-spring
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-testng
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-testng
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: info.cukes
+      oldArtifactId: cucumber-weld
+      newGroupId: io.cucumber
+      newArtifactId: cucumber-weld
+      newVersion: 2.x
 
 ```
 </TabItem>

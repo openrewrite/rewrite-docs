@@ -22,7 +22,7 @@ _Replace `new NioEventLoopGroup()` with `new MultiThreadIoEventLoopGroup(NioIoHa
 
 [GitHub: EventLoopGroupToMultiThreadIoEventLoopGroup.java](https://github.com/openrewrite/rewrite-netty/blob/main/src/main/java/org/openrewrite/java/netty/EventLoopGroupToMultiThreadIoEventLoopGroup.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-netty/issues),
-[Maven Central](https://central.sonatype.com/artifact/org.openrewrite.recipe/rewrite-netty/)
+[Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-netty/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
