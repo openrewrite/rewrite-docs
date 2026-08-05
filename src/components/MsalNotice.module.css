@@ -1,0 +1,5 @@
+/* Admonition titles inherit --ifm-heading-font-weight, which this site sets to 300 -
+   lighter than the body text beneath. Bold this title only, not every heading. */
+.title {
+  font-weight: var(--ifm-font-weight-bold);
+}

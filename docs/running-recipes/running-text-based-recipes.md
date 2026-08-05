@@ -54,6 +54,10 @@ recipeList:
 
 Now that we have the recipe defined in our `rewrite.yml` file, we can update our `build.gradle` or `pom.xml` file to tell OpenRewrite to use the recipe we defined above:
 
+:::info
+OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. In the snippets below, replace `USERNAME` with the email or username you signed in with and `TOKEN` with a download token. See the [quickstart guide](./getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
+:::
+
 <Tabs>
 <TabItem value="build.gradle" label="build.gradle">
 ```groovy
@@ -67,6 +71,13 @@ rewrite {
 
 repositories {
     mavenCentral()
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 ```
 </TabItem>
@@ -74,6 +85,18 @@ repositories {
 <TabItem value="pom.xml" label="pom.xml">
 ```xml
 <project>
+  <repositories>
+    <repository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
@@ -89,6 +112,20 @@ repositories {
     </plugins>
   </build>
 </project>
+```
+
+Your Code Genome Project credentials go in your Maven `settings.xml` file (typically at `~/.m2/settings.xml`):
+
+```xml title="settings.xml"
+<settings>
+  <servers>
+    <server>
+      <id>codegenome</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
+</settings>
 ```
 </TabItem>
 </Tabs>

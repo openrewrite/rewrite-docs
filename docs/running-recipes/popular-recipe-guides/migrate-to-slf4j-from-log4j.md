@@ -6,10 +6,13 @@ description: How to automatically migrate from Log4j to SLF4J.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Migrate to SLF4J from Log4j
 
 In this guide, we'll use OpenRewrite to perform an automated migration from Apache `Log4j` (handling both [log4j `1.x`](https://logging.apache.org/log4j/1.2/) or [log4j `2.x`](https://logging.apache.org/log4j/2.x/)) to [the Simple Logging Facade for Java (`SLF4J`)](http://www.slf4j.org).
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-logging-frameworks" />
 
 ## Example Configuration
 

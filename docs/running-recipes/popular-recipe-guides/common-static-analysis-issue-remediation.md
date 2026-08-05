@@ -5,10 +5,13 @@ description: How to automatically resolve common static analysis issues.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Common static analysis issue remediation
 
 In this guide we'll look at using OpenRewrite to perform an automated remediation for many issues identified by common static analysis tools.
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-static-analysis" />
 
 ### Example configuration
 

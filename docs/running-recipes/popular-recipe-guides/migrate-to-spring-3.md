@@ -6,10 +6,13 @@ description: How to automatically migrate from Spring Boot 2.x to Spring Boot 3.
 
 import ReactPlayer from 'react-player';
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Migrate to Spring Boot 3 from Spring Boot 2
 
 In this tutorial, we'll use OpenRewrite to perform an automated migration from Spring Boot 2.x to Spring Boot 3.5.
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-spring" />
 
 ## Configuration
 

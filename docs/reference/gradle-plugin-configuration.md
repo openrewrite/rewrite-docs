@@ -22,9 +22,20 @@ rewrite {
 
 // Ensure a repository is declared that the rewrite core libraries can be resolved from
 repositories {
-    mavenCentral() 
+    mavenCentral()
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 ```
+
+:::info
+OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. Sign in to the Code Genome Project to create a download token, then replace `USERNAME` with the email or username you signed in with and `TOKEN` with that token. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
+:::
 
 With the plugin applied, the `rewrite` DSL is available for configuration.
 
@@ -32,11 +43,18 @@ With the plugin applied, the `rewrite` DSL is available for configuration.
 
 When applied to a multi-project build, plugin behavior differs depending on whether the plugin is applied to the root project or to a sub-project. Applied to the root project, the plugin will parse and refactor all sources from all projects. Applied to any project other than the root project, the plugin will parse and refactor only sources from that project.
 
-The rewrite Gradle plugin resolves the rewrite core libraries and any recipe modules added to the `rewrite` configuration at runtime. It will attempt to resolve them from whatever repositories are available to the project. This is accomplished by adding Maven Central, or a mirror of it, to your project's repositories:
+The rewrite Gradle plugin resolves the rewrite core libraries and any recipe modules added to the `rewrite` configuration at runtime. It will attempt to resolve them from whatever repositories are available to the project. This is accomplished by adding the Code Genome Project repository, or an internal repository that mirrors it, to your project's repositories:
 
 ```groovy
 repositories {
     mavenCentral()
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 ```
 
@@ -73,6 +91,13 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 
 rewrite {
@@ -97,7 +122,9 @@ rewrite {
 ## Activating OpenRewrite recipes
 
 :::info
-All OpenRewrite libraries and modules are published to MavenCentral. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there or one of its mirrors.
+OpenRewrite libraries and modules are published to the Code Genome Project. Use the `repositories` Gradle DSL to ensure that your build can resolve dependencies from there, or from an internal repository that mirrors it. Keep `mavenCentral()` alongside it: the Code Genome Project hosts only OpenRewrite and Moderne artifacts, not the third-party libraries they depend on.
+
+Access depends on your account. OpenRewrite's Apache-licensed recipes are available to any authenticated user, while [source-available](/licensing/openrewrite-licensing#moderne-source-available-license) and proprietary recipes require a Moderne subscription.
 :::
 
 No recipe is ever run on your codebase without being explicitly activated in the plugin's configuration. To make pre-packaged OpenRewrite recipes available for activation, add Rewrite's bill of materials along with the specific `rewrite` dependencies:
@@ -119,6 +146,13 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 
 dependencies {

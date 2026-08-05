@@ -6,10 +6,13 @@ description: How to automatically migrate from Spring Boot 1 to Spring Boot 2.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Migrate to Spring Boot 2 from Spring Boot 1
 
 In this guide we'll look at using OpenRewrite to perform an automated migration from Spring Boot 1 to Spring Boot 2.
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-spring" />
 
 ## Example Configuration
 

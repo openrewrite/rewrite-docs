@@ -120,6 +120,13 @@ rewrite {
 
 repositories {
     mavenCentral()
+    maven {
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = "USERNAME"
+            password = "TOKEN"
+        }
+    }
 }
 ${needsDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${version}")\n}\n` : ''}`;
 
@@ -142,6 +149,15 @@ rootProject {
         if (repositories.isEmpty()) {
             repositories {
                 mavenCentral()
+            }
+        }
+        repositories {
+            maven {
+                url = "https://artifacts.codegenomeproject.org/maven"
+                credentials {
+                    username = "USERNAME"
+                    password = "TOKEN"
+                }
             }
         }
     }
@@ -168,11 +184,32 @@ rootProject {
                 mavenCentral()
             }
         }
+        repositories {
+            maven {
+                url = uri("https://artifacts.codegenomeproject.org/maven")
+                credentials {
+                    username = "USERNAME"
+                    password = "TOKEN"
+                }
+            }
+        }
     }
 }`;
 
   // Maven POM snippet
   const mavenPom = `<project>
+  <repositories>
+    <repository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>codegenome</id>
+      <url>https://artifacts.codegenomeproject.org/maven</url>
+    </pluginRepository>
+  </pluginRepositories>
   <build>
     <plugins>
       <plugin>
@@ -199,6 +236,30 @@ rootProject {
   // Maven CLI snippet
   const mavenCli = `mvn -U org.openrewrite.maven:rewrite-maven-plugin:run${needsDependency ? ` --define rewrite.recipeArtifactCoordinates=${groupId}:${artifactId}:RELEASE` : ''} --define rewrite.activeRecipes=${activeRecipeName}${dataTableCliFlag}`;
 
+  // Maven settings.xml snippet with Code Genome Project credentials
+  const mavenSettings = `<settings>
+  <servers>
+    <server>
+      <id>codegenome</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
+</settings>`;
+
+  const cgpAuthNote = (
+    <p>
+      OpenRewrite artifacts are distributed through the Code Genome Project repository
+      (<code>https://artifacts.codegenomeproject.org/maven</code>), which requires authentication. Sign in to the Code
+      Genome Project to create a download token, then in the snippets below replace <code>USERNAME</code> with the
+      email or username you signed in with and <code>TOKEN</code> with that token. See the{' '}
+      <a href="/running-recipes/getting-started#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project">
+        quickstart guide
+      </a>{' '}
+      for details.
+    </p>
+  );
+
   return (
     <>
       {introText && <p>{introText}</p>}
@@ -213,6 +274,7 @@ rootProject {
           Now that <code>{wrapperRecipeName(recipeName)}</code> has been defined, activate it in your build file:
         </p>
       )}
+      {cgpAuthNote}
       <Tabs groupId="projectType">
         {showGradle && (
           <TabItem value="gradle" label="Gradle">
@@ -267,6 +329,13 @@ rootProject {
           <TabItem value="maven" label="Maven POM">
             <ol>
               <li>
+                Add the Code Genome Project credentials to your Maven <code>settings.xml</code> file (typically at{' '}
+                <code>~/.m2/settings.xml</code>):
+                <CodeBlock language="xml" title="settings.xml">
+                  {mavenSettings}
+                </CodeBlock>
+              </li>
+              <li>
                 Add the following to your <code>pom.xml</code> file:
                 <CodeBlock language="xml" title="pom.xml">
                   {mavenPom}
@@ -280,7 +349,8 @@ rootProject {
           <TabItem value="maven-command-line" label="Maven Command Line">
             <p>
               You will need to have <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your machine
-              before you can run the following command.
+              before you can run the following command. You will also need the Code Genome Project repository and
+              credentials configured, as described in the Maven POM tab.
             </p>
             <CodeBlock language="shell" title="shell">
               {mavenCli}

@@ -5,10 +5,13 @@ description: How to automatically refactor logging statements to use SLF4J param
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
+import MsalNotice from '@site/src/components/MsalNotice';
 
 # Use SLF4J Parameterized Logging
 
 In this guide we'll look at using OpenRewrite to automatically refactor logging statements to take advantage of [performance improvements offered by using `slf4j` parameterized logging](http://www.slf4j.org/faq.html#logging\_performance) over String concatenation.
+
+<MsalNotice module="org.openrewrite.recipe:rewrite-logging-frameworks" />
 
 ## Example Configuration
 
