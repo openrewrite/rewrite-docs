@@ -22,6 +22,10 @@ jobs:
     timeout-minutes: 30
     env:
       LATEST_VERSIONS_ONLY: ${{ github.event_name != 'workflow_dispatch' || inputs.latest-versions-only }}
+      # OpenRewrite and Moderne artifacts resolve from the Code Genome Project repository, which requires
+      # authentication; the generator's build reads these as the codegenome repository credentials.
+      ORG_GRADLE_PROJECT_codegenomeUsername: ${{ secrets.CGP_ARTIFACTS_MAVEN_USERNAME }}
+      ORG_GRADLE_PROJECT_codegenomePassword: ${{ secrets.CGP_ARTIFACTS_MAVEN_TOKEN }}
     steps:
       # Shared setup
       - uses: actions/setup-java@v5
