@@ -22,6 +22,10 @@ jobs:
     timeout-minutes: 30
     env:
       LATEST_VERSIONS_ONLY: ${{ github.event_name != 'workflow_dispatch' || inputs.latest-versions-only }}
+      # OpenRewrite and Moderne artifacts resolve from the Code Genome Project repository, which requires
+      # authentication; the generator's build reads these as the codegenome repository credentials.
+      ORG_GRADLE_PROJECT_codegenomeUsername: ${{ secrets.CGP_ARTIFACTS_MAVEN_USERNAME }}
+      ORG_GRADLE_PROJECT_codegenomePassword: ${{ secrets.CGP_ARTIFACTS_MAVEN_TOKEN }}
     steps:
       # Shared setup
       - uses: actions/setup-java@v5
@@ -36,15 +40,13 @@ jobs:
       - name: Build the rewrite-go-rpc server
         if: ${{ env.LATEST_VERSIONS_ONLY != 'true' }}
         run: |
-          # Pin GOROOT to the toolchain setup-go just put on PATH. Otherwise GoRewriteRpc discovers
-          # GOROOT via GoExecutor.find(), which prefers /usr/bin/go (the runner image's older default
-          # Go) over PATH, and hands the RPC server a GOROOT from a different release than the `go` it
-          # shells out to: `compile: version "go1.24.13" does not match go tool version "go1.25.12"`.
+          # GoExecutor.find() checks GOROOT first, so this keeps the RPC server on the toolchain
+          # setup-go put on PATH. Redundant once openrewrite/rewrite#8337 is released, since that
+          # makes PATH beat the runner image's older /usr/bin/go.
           echo "GOROOT=$(go env GOROOT)" >> "$GITHUB_ENV"
 
-          # The generator's Go loader launches `rewrite-go-rpc` from PATH. It isn't published as a
-          # binary, so build it from source. `go install` names the binary after its package dir (`rpc`),
-          # so symlink it to the name the loader expects, and expose it to later steps via $GITHUB_PATH.
+          # rewrite-go-rpc isn't published as a binary, so build it from source. `go install` names it
+          # after its package dir (`rpc`), but the loader launches `rewrite-go-rpc` from PATH.
           go install github.com/openrewrite/rewrite/rewrite-go/cmd/rpc@latest
           ln -sf "$(go env GOPATH)/bin/rpc" "$(go env GOPATH)/bin/rewrite-go-rpc"
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
