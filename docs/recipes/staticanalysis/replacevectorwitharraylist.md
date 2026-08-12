@@ -32,6 +32,59 @@ This recipe is used as part of the following composite recipes:
 
 * [Modernize collections](/recipes/staticanalysis/modernizecollections.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Vector;
+
+class Test {
+    int test() {
+        Vector<Integer> v = new Vector<>();
+        v.add(1);
+        v.add(2);
+        return v.size();
+    }
+}
+```
+
+###### After
+```java
+import java.util.ArrayList;
+
+class Test {
+    int test() {
+        ArrayList<Integer> v = new ArrayList<>();
+        v.add(1);
+        v.add(2);
+        return v.size();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.Vector;
++import java.util.ArrayList;
+
+@@ -5,1 +5,1 @@
+class Test {
+    int test() {
+-       Vector<Integer> v = new Vector<>();
++       ArrayList<Integer> v = new ArrayList<>();
+        v.add(1);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

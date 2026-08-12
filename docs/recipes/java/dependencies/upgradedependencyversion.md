@@ -111,6 +111,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Hibernate 7.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate70-moderne-edition)
 * [Migrate to Hibernate 7.1.x (Community Edition)](/recipes/hibernate/migratetohibernate71-community-edition.md)
 * [Migrate to Hibernate 7.2.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate72)
+* [Migrate to Hibernate Validator 9.1.x](/recipes/hibernate/validator/hibernatevalidator_9_1.md)
 * [Migrate to Hibernate for Jakarta EE 9](/recipes/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
 * [Migrate to JSF 2.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/migratetojsf_2_3)
 * [Migrate to JasperReports 5.6.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/jasperreports/upgradetojasperreports5)

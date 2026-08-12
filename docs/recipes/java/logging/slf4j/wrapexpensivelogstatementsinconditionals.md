@@ -21,6 +21,12 @@ _When trace, debug and info log statements use methods for constructing log mess
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Options
+
+| Type | Name | Description | Example |
+| --- | --- | --- | --- |
+| `String` | messageMethod | *Optional*. The SLF4J 2.0+ fluent API method that takes the message template: `SET_MESSAGE` passes it to `setMessage(..)` ahead of the arguments, `LOG` passes it to `log(..)` after the arguments. Defaults to `LOG`. Valid options: `SET_MESSAGE`, `LOG` |  |
+
 
 ## Used by
 
@@ -31,6 +37,11 @@ This recipe is used as part of the following composite recipes:
 ## Examples
 ##### Example 1
 `WrapExpensiveLogStatementsInConditionalsSlf4j2Test#convertToFluentApiWithExpensiveArgument`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|messageMethod|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -97,6 +108,11 @@ class A {
 
 ##### Example 2
 `WrapExpensiveLogStatementsInConditionalsTest#documentationExample`
+
+###### Parameters
+| Parameter | Value |
+| --- | --- |
+|messageMethod|`null`|
 
 
 <Tabs groupId="beforeAfter">

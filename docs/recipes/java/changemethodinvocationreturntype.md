@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | methodPattern | A [method pattern](https://docs.openrewrite.org/reference/method-patterns) is used to find matching method invocations. For example, to find all method invocations in the Guava library, use the pattern: `com.google.common..*#*(..)`.<br/><br/>The pattern format is `<PACKAGE>#<METHOD_NAME>(<ARGS>)`. <br/><br/>`..*` includes all subpackages of `com.google.common`. <br/>`*(..)` matches any method name with any number of arguments. <br/><br/>For more specific queries, like Guava's `ImmutableMap`, use `com.google.common.collect.ImmutableMap#*(..)` to narrow down the results. | `org.mockito.Matchers anyVararg()` |
-| `String` | newReturnType | The fully qualified new return type of method invocation. Parameterized types like `java.util.Set<java.lang.String>` are supported; `java.lang` type arguments may use their simple name, e.g. `java.util.List<String>`. | `long` |
+| `String` | newReturnType | The fully qualified new return type of method invocation. Parameterized types like `java.util.Set<java.lang.String>` are supported; `java.lang` type arguments may use their simple name, e.g. `java.util.List<String>`. Nested types may be written with a `$` separator, e.g. `mockwebserver3.MockResponse$Builder`; dots also work, e.g. `mockwebserver3.MockResponse.Builder`, in which case the first segment that is followed only by segments starting with an uppercase letter is taken to be the outermost type. | `long` |
 
 
 ## Used by
@@ -43,6 +43,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
 * [OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`](/recipes/java/testing/junit5/updatemockwebservermockresponse.md)
+* [Use `ASN1*String` for the result of `DER*String.getInstance(..)`](/recipes/java/migrate/bouncycastlederstringgetinstancereturntype.md)
 
 ## Example
 

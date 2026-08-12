@@ -69,6 +69,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.gradle.UpgradeTransitiveDependencyVersion](/recipes/gradle/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Gradle dependencies**
   * Upgrades the version of a transitive dependency in a Gradle build file. There are many ways to do this in Gradle, so the mechanism for upgrading a transitive dependency must be considered carefully depending on your style of dependency management.
+* [org.openrewrite.gradle.plugins.AddDevelocityGradlePlugin](/recipes/gradle/plugins/adddevelocitygradleplugin.md)
+  * **Add the Develocity Gradle plugin**
+  * Add the Develocity Gradle plugin to settings.gradle files.
 * [org.openrewrite.gradle.plugins.UpgradePluginVersion](/recipes/gradle/plugins/upgradepluginversion.md)
   * **Update a Gradle plugin by id**
   * Update a Gradle plugin by id to a later version defined by the plugins DSL. To upgrade a plugin dependency defined by `buildscript.dependencies`, use the `UpgradeDependencyVersion` recipe instead.
@@ -243,6 +246,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.LanguageComposition](/recipes/core/languagecomposition.md)
   * **Language composition report**
   * Counts the number of lines of the various kinds of source code and data formats parsed by OpenRewrite. Comments are not included in line counts. This recipe emits its results as two data tables, making no changes to any source file. One data table is per-file, the other is per-repository.
+
+### rewrite-cucumber-jvm
+
+* [org.openrewrite.cucumber.jvm.RemoveCucumberJava8Dependency](/recipes/cucumber/jvm/removecucumberjava8dependency.md)
+  * **Remove `cucumber-java8` once nothing is left needing it**
+  * Removes the `cucumber-java8` dependency where every `LambdaGlue` call migrates to `cucumber-java`, and retains it wherever one is left behind. Read from the glue as it stands before the migration, as what the migration leaves behind only becomes visible to a scanning recipe in the cycle after, which a build tool run never reaches. Glue left anywhere retains the dependency everywhere, an unused dependency being the one outcome here that still compiles.
 
 ### rewrite-github-actions
 

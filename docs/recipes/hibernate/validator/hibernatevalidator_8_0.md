@@ -61,16 +61,19 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Hibernate Validator 9.1.x](/recipes/hibernate/validator/hibernatevalidator_9_1.md)
+
 ## Examples
 ##### Example 1
 `HibernateValidator80Test#changeDependency`
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -88,47 +91,6 @@ recipeList:
   </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator</artifactId>
-      <version>8.0.4.Final</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -10,1 +10,1 @@
-  <dependencies>
-    <dependency>
--     <groupId>org.hibernate</groupId>
-+     <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator</artifactId>
-@@ -12,1 +12,1 @@
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-validator</artifactId>
--     <version>7.0.5.Final</version>
-+     <version>8.0.4.Final</version>
-    </dependency>
-```
-</TabItem>
-</Tabs>
 
 ---
 
@@ -136,11 +98,7 @@ recipeList:
 `HibernateValidator80Test#changeDependency`
 
 
-<Tabs groupId="beforeAfter">
-<TabItem value="pom.xml" label="pom.xml">
-
-
-###### Before
+###### Unchanged
 ```xml title="pom.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -158,47 +116,6 @@ recipeList:
   </dependencies>
 </project>
 ```
-
-###### After
-```xml title="pom.xml"
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example</groupId>
-  <artifactId>demo</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator</artifactId>
-      <version>8.0.4.Final</version>
-    </dependency>
-  </dependencies>
-</project>
-```
-
-</TabItem>
-<TabItem value="diff" label="Diff" >
-
-```diff
---- pom.xml
-+++ pom.xml
-@@ -10,1 +10,1 @@
-  <dependencies>
-    <dependency>
--     <groupId>org.hibernate</groupId>
-+     <groupId>org.hibernate.validator</groupId>
-      <artifactId>hibernate-validator</artifactId>
-@@ -12,1 +12,1 @@
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-validator</artifactId>
--     <version>7.0.5.Final</version>
-+     <version>8.0.4.Final</version>
-    </dependency>
-```
-</TabItem>
-</Tabs>
 
 
 ## Usage

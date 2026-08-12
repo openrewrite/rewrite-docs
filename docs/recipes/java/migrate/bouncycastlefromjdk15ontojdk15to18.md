@@ -1,18 +1,18 @@
 ---
-title: "Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8"
-sidebar_label: "Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8"
+title: "Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8"
+sidebar_label: "Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8
+# Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8
 
 **org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18**
 
 ```
-This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java < 8.
+This recipe replaces the Bouncy Castle artifacts from any of the legacy artifact suffixes `-jdk12`, `-jdk14`, `-jdk15`, `-jdk15+`, `-jdk16` or `-jdk15on` to `-jdk15to18`. Those artifacts aren't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement for Java < 8. The `bctsp` artifacts map onto `bcpkix`, which absorbed the time stamp protocol support in 1.47.
 ```
 
 
@@ -50,6 +50,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `latest.release`
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-ext-jdk15on`
+  * newArtifactId: `bcprov-ext-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
   * oldArtifactId: `bcutil-jdk15on`
   * newArtifactId: `bcutil-jdk15to18`
   * newVersion: `latest.release`
@@ -78,6 +83,131 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldArtifactId: `bctls-jdk15on`
   * newArtifactId: `bctls-jdk15to18`
   * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-jdk16`
+  * newArtifactId: `bcprov-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-ext-jdk16`
+  * newArtifactId: `bcprov-ext-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcmail-jdk16`
+  * newArtifactId: `bcmail-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpg-jdk16`
+  * newArtifactId: `bcpg-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-jdk15+`
+  * newArtifactId: `bcprov-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcmail-jdk15+`
+  * newArtifactId: `bcmail-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpg-jdk15+`
+  * newArtifactId: `bcpg-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-jdk15`
+  * newArtifactId: `bcprov-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-ext-jdk15`
+  * newArtifactId: `bcprov-ext-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcmail-jdk15`
+  * newArtifactId: `bcmail-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpg-jdk15`
+  * newArtifactId: `bcpg-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-jdk14`
+  * newArtifactId: `bcprov-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-ext-jdk14`
+  * newArtifactId: `bcprov-ext-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcutil-jdk14`
+  * newArtifactId: `bcutil-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpkix-jdk14`
+  * newArtifactId: `bcpkix-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcmail-jdk14`
+  * newArtifactId: `bcmail-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpg-jdk14`
+  * newArtifactId: `bcpg-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bctls-jdk14`
+  * newArtifactId: `bctls-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcprov-jdk12`
+  * newArtifactId: `bcprov-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bcpg-jdk12`
+  * newArtifactId: `bcpg-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bctsp-jdk15on`
+  * newArtifactId: `bcpkix-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bctsp-jdk16`
+  * newArtifactId: `bcpkix-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bctsp-jdk15+`
+  * newArtifactId: `bcpkix-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bctsp-jdk15`
+  * newArtifactId: `bcpkix-jdk15to18`
+  * newVersion: `latest.release`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.bouncycastle`
+  * oldArtifactId: `bctsp-jdk14`
+  * newArtifactId: `bcpkix-jdk15to18`
+  * newVersion: `latest.release`
 
 </TabItem>
 
@@ -87,9 +217,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18
-displayName: Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8
+displayName: Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8
 description: |
-  This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8.
+  This recipe replaces the Bouncy Castle artifacts from any of the legacy artifact suffixes `-jdk12`, `-jdk14`, `-jdk15`, `-jdk15+`, `-jdk16` or `-jdk15on` to `-jdk15to18`. Those artifacts aren't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement for Java &lt; 8. The `bctsp` artifacts map onto `bcpkix`, which absorbed the time stamp protocol support in 1.47.
 tags:
   - bouncycastle
 preconditions:
@@ -99,6 +229,11 @@ recipeList:
       oldGroupId: org.bouncycastle
       oldArtifactId: bcprov-jdk15on
       newArtifactId: bcprov-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-ext-jdk15on
+      newArtifactId: bcprov-ext-jdk15to18
       newVersion: latest.release
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.bouncycastle
@@ -130,6 +265,131 @@ recipeList:
       oldArtifactId: bctls-jdk15on
       newArtifactId: bctls-jdk15to18
       newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-jdk16
+      newArtifactId: bcprov-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-ext-jdk16
+      newArtifactId: bcprov-ext-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcmail-jdk16
+      newArtifactId: bcmail-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpg-jdk16
+      newArtifactId: bcpg-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-jdk15+
+      newArtifactId: bcprov-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcmail-jdk15+
+      newArtifactId: bcmail-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpg-jdk15+
+      newArtifactId: bcpg-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-jdk15
+      newArtifactId: bcprov-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-ext-jdk15
+      newArtifactId: bcprov-ext-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcmail-jdk15
+      newArtifactId: bcmail-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpg-jdk15
+      newArtifactId: bcpg-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-jdk14
+      newArtifactId: bcprov-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-ext-jdk14
+      newArtifactId: bcprov-ext-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcutil-jdk14
+      newArtifactId: bcutil-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpkix-jdk14
+      newArtifactId: bcpkix-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcmail-jdk14
+      newArtifactId: bcmail-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpg-jdk14
+      newArtifactId: bcpg-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bctls-jdk14
+      newArtifactId: bctls-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcprov-jdk12
+      newArtifactId: bcprov-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bcpg-jdk12
+      newArtifactId: bcpg-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bctsp-jdk15on
+      newArtifactId: bcpkix-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bctsp-jdk16
+      newArtifactId: bcpkix-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bctsp-jdk15+
+      newArtifactId: bcpkix-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bctsp-jdk15
+      newArtifactId: bcpkix-jdk15to18
+      newVersion: latest.release
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.bouncycastle
+      oldArtifactId: bctsp-jdk14
+      newArtifactId: bcpkix-jdk15to18
+      newVersion: latest.release
 
 ```
 </TabItem>
@@ -146,7 +406,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18"
-  displayName="Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8"
+  displayName="Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"

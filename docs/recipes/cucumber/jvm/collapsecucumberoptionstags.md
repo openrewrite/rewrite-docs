@@ -28,6 +28,49 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 6.x](/recipes/cucumber/jvm/upgradecucumber6x.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.junit.CucumberOptions;
+
+@CucumberOptions(features = "src/test/resources/features", tags = {"@smoke", "not @wip"})
+public class RunCucumberTest {
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.junit.CucumberOptions;
+
+@CucumberOptions(features = "src/test/resources/features", tags = "(@smoke) and (not @wip)")
+public class RunCucumberTest {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+import io.cucumber.junit.CucumberOptions;
+
+-@CucumberOptions(features = "src/test/resources/features", tags = {"@smoke", "not @wip"})
++@CucumberOptions(features = "src/test/resources/features", tags = "(@smoke) and (not @wip)")
+public class RunCucumberTest {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

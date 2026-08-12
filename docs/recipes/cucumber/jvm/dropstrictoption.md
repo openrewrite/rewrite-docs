@@ -80,6 +80,97 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
 
+## Examples
+##### Example 1
+`DropStrictOptionTest#dropStrictFromJUnitCucumberOptions`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.junit.CucumberOptions;
+
+@CucumberOptions(strict = true, features = "src/test/resources/features")
+public class RunCucumberTest {
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.junit.CucumberOptions;
+
+@CucumberOptions(features = "src/test/resources/features")
+public class RunCucumberTest {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+import io.cucumber.junit.CucumberOptions;
+
+-@CucumberOptions(strict = true, features = "src/test/resources/features")
++@CucumberOptions(features = "src/test/resources/features")
+public class RunCucumberTest {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`DropStrictOptionTest#dropStrictFromJUnitCucumberOptions`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.junit.CucumberOptions;
+
+@CucumberOptions(strict = true, features = "src/test/resources/features")
+public class RunCucumberTest {
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.junit.CucumberOptions;
+
+@CucumberOptions(features = "src/test/resources/features")
+public class RunCucumberTest {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -5,1 +5,1 @@
+import io.cucumber.junit.CucumberOptions;
+
+-@CucumberOptions(strict = true, features = "src/test/resources/features")
++@CucumberOptions(features = "src/test/resources/features")
+public class RunCucumberTest {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

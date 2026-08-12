@@ -95,6 +95,22 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.javascript.table.NodeLockRegenerationFailures" label="NodeLockRegenerationFailures">
+
+### Node.js lock regeneration failures
+**org.openrewrite.javascript.table.NodeLockRegenerationFailures**
+
+_Lock files that could not be regenerated after a dependency edit, and why._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path of the package.json whose lock could not be regenerated. |
+| Package name | The package that caused the failure, when attributable to one. |
+| Reason | The structured failure reason, e.g. REGISTRY_UNREACHABLE or RESOLUTION_REQUIRED. Absent for unstructured failures. |
+| Detail | A human-readable description of the failure. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

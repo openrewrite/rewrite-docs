@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.cucumber.jvm.CucumberJava8ToJava**
 
-_Migrates `cucumber-java8` step definitions and `LambdaGlue` hooks to `cucumber-java` annotated methods._
+_Migrates `cucumber-java8` step definitions, `LambdaGlue` hooks and `LambdaGlue` type registrations to `cucumber-java` annotated methods._
 
 ### Tags
 
@@ -37,14 +37,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Replace `cucumber-java8` hook definition with `cucumber-java`](../../cucumber/jvm/cucumberjava8hookdefinitiontocucumberjava)
 * [Replace `cucumber-java8` step definitions with `cucumber-java`](../../cucumber/jvm/cucumberjava8stepdefinitiontocucumberjava)
-* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
-  * oldGroupId: `io.cucumber`
-  * oldArtifactId: `cucumber-java8`
-  * newGroupId: `io.cucumber`
-  * newArtifactId: `cucumber-java`
-* [Rename package name](../../java/changepackage)
-  * oldPackageName: `io.cucumber.java8`
-  * newPackageName: `io.cucumber.java`
+* [Replace `cucumber-java8` type definitions with `cucumber-java`](../../cucumber/jvm/cucumberjava8typedefinitiontocucumberjava)
+* [Migrate `io.cucumber.java8.Scenario` and `io.cucumber.java8.Status`](../../cucumber/jvm/migratecucumberjava8scenarioandstatus)
+* [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
+  * groupId: `io.cucumber`
+  * artifactId: `cucumber-java`
+  * version: `7.x`
+  * onlyIfUsing: `io.cucumber.java8..*`
+  * familyPattern: `io.cucumber*`
+  * acceptTransitive: `true`
+* [Remove `cucumber-java8` once nothing is left needing it](../../cucumber/jvm/removecucumberjava8dependency)
 
 </TabItem>
 
@@ -56,21 +58,23 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.cucumber.jvm.CucumberJava8ToJava
 displayName: Migrate `cucumber-java8` to `cucumber-java`
 description: |
-  Migrates `cucumber-java8` step definitions and `LambdaGlue` hooks to `cucumber-java` annotated methods.
+  Migrates `cucumber-java8` step definitions, `LambdaGlue` hooks and `LambdaGlue` type registrations to `cucumber-java` annotated methods.
 tags:
   - cucumber
   - testing
 recipeList:
   - org.openrewrite.cucumber.jvm.CucumberJava8HookDefinitionToCucumberJava
   - org.openrewrite.cucumber.jvm.CucumberJava8StepDefinitionToCucumberJava
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: io.cucumber
-      oldArtifactId: cucumber-java8
-      newGroupId: io.cucumber
-      newArtifactId: cucumber-java
-  - org.openrewrite.java.ChangePackage:
-      oldPackageName: io.cucumber.java8
-      newPackageName: io.cucumber.java
+  - org.openrewrite.cucumber.jvm.CucumberJava8TypeDefinitionToCucumberJava
+  - org.openrewrite.cucumber.jvm.MigrateCucumberJava8ScenarioAndStatus
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: io.cucumber
+      artifactId: cucumber-java
+      version: 7.x
+      onlyIfUsing: io.cucumber.java8..*
+      familyPattern: io.cucumber*
+      acceptTransitive: true
+  - org.openrewrite.cucumber.jvm.RemoveCucumberJava8Dependency
 
 ```
 </TabItem>
@@ -131,10 +135,10 @@ package com.example.app;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -148,7 +152,7 @@ public class CucumberJava8Definitions {
     }
 
     @After
-    public void after(io.cucumber.java.Scenario scn) {
+    public void after(Scenario scn) {
         if (scn.getStatus() == Status.FAILED) {
             scn.log("failed");
         }
@@ -179,10 +183,10 @@ package com.example.app;
 -import io.cucumber.java8.Status;
 +import io.cucumber.java.After;
 +import io.cucumber.java.Before;
-+import io.cucumber.java.en.Then;
-+import io.cucumber.java.en.When;
 +import io.cucumber.java.Scenario;
 +import io.cucumber.java.Status;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
 
 @@ -9,1 +12,1 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -215,7 +219,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 -           }
 -       });
 +   @After
-+   public void after(io.cucumber.java.Scenario scn) {
++   public void after(Scenario scn) {
 +       if (scn.getStatus() == Status.FAILED) {
 +           scn.log("failed");
 +       }
@@ -295,10 +299,10 @@ package com.example.app;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -312,7 +316,7 @@ public class CucumberJava8Definitions {
     }
 
     @After
-    public void after(io.cucumber.java.Scenario scn) {
+    public void after(Scenario scn) {
         if (scn.getStatus() == Status.FAILED) {
             scn.log("failed");
         }
@@ -343,10 +347,10 @@ package com.example.app;
 -import io.cucumber.java8.Status;
 +import io.cucumber.java.After;
 +import io.cucumber.java.Before;
-+import io.cucumber.java.en.Then;
-+import io.cucumber.java.en.When;
 +import io.cucumber.java.Scenario;
 +import io.cucumber.java.Status;
++import io.cucumber.java.en.Then;
++import io.cucumber.java.en.When;
 
 @@ -9,1 +12,1 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -379,7 +383,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 -           }
 -       });
 +   @After
-+   public void after(io.cucumber.java.Scenario scn) {
++   public void after(Scenario scn) {
 +       if (scn.getStatus() == Status.FAILED) {
 +           scn.log("failed");
 +       }

@@ -1233,6 +1233,264 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [OpenRewrite.Recipes.CSharp.CodeQuality.Style.ValueTypeIsNeverEqualToNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/style/valuetypeisneverequaltonull)
   * **Value type is never equal to null**
   * Replace null with default in comparisons of value types.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.AddAttachedPropertyBrowsableForTypeAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/addattachedpropertybrowsablefortypeattribute)
+  * **Add [AttachedPropertyBrowsableForType]**
+  * The static `Get` accessor of an attached property should be annotated with `[AttachedPropertyBrowsableForType(typeof(T))]` so the XAML designer offers the property on elements of type `T`. Adds the attribute naming the accessor's parameter type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.AddConstructorArgumentAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/addconstructorargumentattribute)
+  * **Add [ConstructorArgument]**
+  * A `MarkupExtension` property assigned from a constructor parameter should be annotated with `[ConstructorArgument(&quot;parameterName&quot;)]` so XAML can round-trip the positional and the named form of the extension. Adds the missing attribute.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.AddDefaultFieldToValueConverter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/adddefaultfieldtovalueconverter)
+  * **Add default field to converter**
+  * A stateless `IValueConverter` or `IMultiValueConverter` should expose a `Default` instance rather than being constructed per binding. Adds `static readonly T Default = new T();` and seals the converter.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.AddMarkupExtensionReturnTypeAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/addmarkupextensionreturntypeattribute)
+  * **Add MarkupExtensionReturnType attribute**
+  * A `MarkupExtension` that overrides `ProvideValue` should be annotated with `[MarkupExtensionReturnType(typeof(T))]` so XAML tooling knows what the extension yields. Adds the attribute when the returned type can be determined from `ProvideValue`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.AddTemplatePartAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/addtemplatepartattribute)
+  * **Add [TemplatePart] for a looked-up template part**
+  * A `GetTemplateChild(&quot;PART_X&quot;)` call in `OnApplyTemplate` is an undeclared dependency on the control template. Adds `[TemplatePart(Name = ..., Type = ...)]` to the control for every part it looks up but neither it nor a base control declares.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.AddValueConversionAttribute](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/addvalueconversionattribute)
+  * **Add ValueConversion attribute**
+  * An `IValueConverter` should be annotated with `[ValueConversion(typeof(source), typeof(target))]` so XAML tooling knows the types it converts between. Adds the attribute when both types can be determined from `Convert`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.AddXmlnsDefinitionForUnmappedNamespaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/addxmlnsdefinitionforunmappednamespaces)
+  * **XmlnsDefinitions should map all namespaces with public types**
+  * Adds an `[assembly: XmlnsDefinition]` for every namespace that declares a public type but is not exported to XAML, copying the XAML namespace URL from the existing mappings.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.CastSenderToContainingType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/castsendertocontainingtype)
+  * **Cast the sender of a dependency property callback to the containing type**
+  * A direct cast of the sender in a `PropertyChangedCallback` or `CoerceValueCallback` should name the type that registered the property rather than a base type, so that the cast documents what the sender really is.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.CastSenderToCorrectType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/castsendertocorrecttype)
+  * **Cast the sender of a dependency property callback to the correct type**
+  * The `DependencyObject` passed to a `PropertyChangedCallback` or `CoerceValueCallback` is the type that registered the property. Replaces a cast, `as`, `is` or `case` conversion naming a type the sender can never be with the registering type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.CastValueToCorrectType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/castvaluetocorrecttype)
+  * **Cast the value of a dependency property callback to the correct type**
+  * The value a `PropertyChangedCallback`, `CoerceValueCallback` or `ValidateValueCallback` receives is the type the property was registered with. Replaces a cast, `as`, `is` or `case` conversion naming a type the value can never be with the registered type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.CastValueToExactType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/castvaluetoexacttype)
+  * **Cast the value of a dependency property callback to the exact type**
+  * A direct cast of the value in a dependency property callback should name the type the property was registered with rather than a base type, so that the cast documents what the value really is.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.ConvertAutoPropertyToDependencyProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/convertautopropertytodependencyproperty)
+  * **Convert an auto-property to a dependency property**
+  * An auto-property on a `DependencyObject` cannot be bound, styled or animated. Registers a `DependencyProperty` for it and rewrites the property to `get =&gt; (T)GetValue(XProperty);` / `set =&gt; SetValue(XProperty, value);`, keeping any initializer as the metadata default. A setter that is not public — or a get-only property — produces the read-only `DependencyPropertyKey` pattern instead.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.ConvertDependencyPropertyToReadOnly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/convertdependencypropertytoreadonly)
+  * **Convert a dependency property to a read-only dependency property**
+  * Rewrites `DependencyProperty.Register` to `RegisterReadOnly`, holding the result in a private `DependencyPropertyKey` and exposing `&lt;key&gt;.DependencyProperty` under the original name. Every `SetValue` on the property inside the declaring type is moved onto the key, which is the only way a read-only dependency property can be written.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.ConvertEventToRoutedEvent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/converteventtoroutedevent)
+  * **Convert a CLR event to a routed event**
+  * A CLR event on an element cannot be routed through the element tree or handled by a parent. Registers a `RoutedEvent` for it with `EventManager.RegisterRoutedEvent` and rewrites the event to `add`/`remove` accessors calling `AddHandler`/`RemoveHandler`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.ConvertTrivialCallbackToLambda](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/converttrivialcallbacktolambda)
+  * **Convert a trivial dependency property callback to a lambda**
+  * A `PropertyChangedCallback`, `CoerceValueCallback` or `ValidateValueCallback` whose body is a single expression is inlined as a lambda at the registration, so the callback sits next to the property it belongs to. The method is removed when nothing else used it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.DeclareDependencyPropertyKeyBeforeProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/declaredependencypropertykeybeforeproperty)
+  * **DependencyPropertyKey member must be declared before DependencyProperty member**
+  * A `DependencyProperty` initialized from `&lt;key&gt;.DependencyProperty` must be declared after that `DependencyPropertyKey`, because static initializers run in declaration order and the key would otherwise still be null. Moves the key above the property.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.DocumentAttachedPropertyAccessor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/documentattachedpropertyaccessor)
+  * **Accessor method for attached property should have standard documentation text**
+  * The static `GetBar`/`SetBar` accessors of an attached property should be documented with the standard summary, `&lt;param&gt;` and `&lt;returns&gt;` text naming the backing member and the registered name. Adds the documentation when it is missing and corrects it when it says something else.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.DocumentDependencyPropertyBackingMember](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/documentdependencypropertybackingmember)
+  * **Backing member for DependencyProperty should have standard documentation text**
+  * The member backing a `DependencyProperty` should be documented with `&lt;summary&gt;Identifies the &lt;see cref=&quot;Bar&quot;/&gt; dependency property.&lt;/summary&gt;`, citing the registered name. Adds the summary when it is missing and corrects it when it says something else.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.DocumentPropertyChangedCallback](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/documentpropertychangedcallback)
+  * **Property changed callback should have standard documentation text**
+  * The virtual method invoked from a dependency property's `PropertyChangedCallback` should be documented with `&lt;summary&gt;This method is invoked when the &lt;see cref=&quot;BarProperty&quot;/&gt; changes.&lt;/summary&gt;` and a `&lt;param&gt;` describing each of its old- and new-value parameters. Adds the documentation when it is missing and corrects it when it says something else.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.DocumentRoutedEventBackingMember](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/documentroutedeventbackingmember)
+  * **Backing member for RoutedEvent should have standard documentation text**
+  * The member backing a `RoutedEvent` should be documented with `&lt;summary&gt;Identifies the &lt;see cref=&quot;ValueChanged&quot;/&gt; routed event.&lt;/summary&gt;`, citing the registered name. Adds the summary when it is missing and corrects it when it says something else.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindDefaultStyleKeyOverrideMetadataArgument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/finddefaultstylekeyoverridemetadataargument)
+  * **Use containing type**
+  * `DefaultStyleKeyProperty.OverrideMetadata` must be given the containing type as the default style key, or the control picks up another type's default template. Flags a `FrameworkPropertyMetadata` constructed with a different type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindDefaultValueTypeMismatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/finddefaultvaluetypemismatch)
+  * **Default value type must match registered type**
+  * A `DependencyProperty` is registered with a type and its metadata carries a default value typed `object`, so the compiler cannot check one against the other. Flags a default value whose type does not fit the registered type, which throws at run time.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindDependsOnTargetMissing](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/finddependsontargetmissing)
+  * **Target of [DependsOn] should exist**
+  * `[DependsOn(name)]` names its target as a string, so a missing property is only discovered when XAML is loaded — and then only as an ordering that quietly does not happen. Flags the attribute when no property of that name is reachable on the type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindEventAddAccessorNotCallingAddHandler](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findeventaddaccessornotcallingaddhandler)
+  * **Call AddHandler in add**
+  * The `add` accessor of an event backed by a `RoutedEvent` must call `AddHandler`. Flags an accessor that calls `RemoveHandler` instead, which would silently discard subscriptions.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindEventDeclarationAddRemoveMismatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findeventdeclarationaddremovemismatch)
+  * **Use same event in add and remove**
+  * The `add` and `remove` accessors of an event must pass the same `RoutedEvent` to `AddHandler` and `RemoveHandler`. Flags a declaration whose accessors disagree, which leaves subscribers attached after they unsubscribe.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindEventDeclarationHandlerTypeMismatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findeventdeclarationhandlertypemismatch)
+  * **Use the registered handler type**
+  * An event backed by a `RoutedEvent` must be declared with the handler type passed to `EventManager.RegisterRoutedEvent`. Flags a declaration whose type differs, which throws when a handler is added.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindEventRemoveAccessorNotCallingRemoveHandler](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findeventremoveaccessornotcallingremovehandler)
+  * **Call RemoveHandler in remove**
+  * The `remove` accessor of an event backed by a `RoutedEvent` must call `RemoveHandler`. Flags an accessor that calls `AddHandler` instead, which subscribes a second time rather than unsubscribing.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindMissingContentPropertyTarget](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findmissingcontentpropertytarget)
+  * **ContentProperty should name an existing property**
+  * Flags a `[ContentProperty(&quot;X&quot;)]` whose target property the attributed type does not declare, which XAML only discovers when the content is parsed.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindMissingStyleTypedProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findmissingstyletypedproperty)
+  * **StyleTypedProperty should be specified for a Style property**
+  * A `DependencyProperty` registered as `typeof(Style)` needs a matching `[StyleTypedProperty]` on its owning type for the designer to know what the style targets. Flags the backing member; the target type has to be chosen by hand.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindOverrideMetadataTypeMismatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findoverridemetadatatypemismatch)
+  * **Metadata must be of the same type or a super type**
+  * `OverrideMetadata` merges the new metadata into what the `DependencyProperty` was registered with, and throws when the override cannot represent it. Flags an override whose metadata type is not assignable to the registered metadata type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindRegisteredOwnerNotDependencyObject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findregisteredownernotdependencyobject)
+  * **Registered owner type must inherit DependencyObject**
+  * `DependencyProperty.Register` stores the owner type for run-time lookups and requires it to be a `DependencyObject`. Flags a registration whose owner is not, which throws when the property is used; an attached property should use `RegisterAttached` instead.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindSetValueTypeMismatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findsetvaluetypemismatch)
+  * **SetValue must use the registered type**
+  * `SetValue` and `SetCurrentValue` take the value as `object`, so the compiler cannot check it against the type the `DependencyProperty` was registered with. Flags a call whose value does not fit the registered type, which throws at run time.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindSharedReferenceTypeDefaultValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findsharedreferencetypedefaultvalue)
+  * **Default value is a shared reference type**
+  * A reference type constructed as a `DependencyProperty` default value is shared by every instance of the owner, so a mutation through one instance is seen by all of them. Flags such a default value.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindSideEffectsInAttachedPropertyAccessor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findsideeffectsinattachedpropertyaccessor)
+  * **Avoid side effects in attached property CLR accessors**
+  * XAML bypasses the CLR `Get`/`Set` methods of an attached property and calls `GetValue`/`SetValue` directly, so any other work an accessor does runs only when the property is set from code. Flags the offending statement.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindSideEffectsInClrAccessors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findsideeffectsinclraccessors)
+  * **Avoid side effects in CLR accessors**
+  * The `get` and `set` accessors of a CLR property wrapping a dependency property must only call `GetValue`/`SetValue`, because the property system bypasses them entirely. Flags any other statement in an accessor body.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindValueConverterWithUnknownConversionTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findvalueconverterwithunknownconversiontypes)
+  * **Add ValueConversion attribute (unknown types)**
+  * An `IValueConverter` should be annotated with `[ValueConversion]`. Flags a converter that needs one but whose source and target types cannot be read off its `Convert` method.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindXmlnsDefinitionForMissingNamespace](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findxmlnsdefinitionformissingnamespace)
+  * **XmlnsDefinition must map to an existing namespace**
+  * Flags an `[assembly: XmlnsDefinition]` whose `clrNamespace` argument names a namespace that no source file declares, so the mapping exports nothing.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.FindXmlnsPrefixDefinitionMismatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/findxmlnsprefixdefinitionmismatch)
+  * **XmlnsPrefix must map to the same url as XmlnsDefinition**
+  * Flags an `[assembly: XmlnsPrefix]` with no `[assembly: XmlnsDefinition]` for the same XAML namespace URL, and the other way round. The two attributes are correlated across the whole assembly rather than within a single file.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.MakeCallbackParameterNullable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/makecallbackparameternullable)
+  * **Declare the coerce and validate callback value parameter nullable**
+  * WPF calls a `CoerceValueCallback` and a `ValidateValueCallback` with a null value, so the value parameter should be declared `object?`. Only applies where nullable reference types are enabled, whether by a `#nullable` directive or by `&lt;Nullable&gt;` in the project.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.MakeDependencyPropertyBackingMemberStaticReadonly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/makedependencypropertybackingmemberstaticreadonly)
+  * **Backing member for a DependencyProperty should be static and readonly**
+  * A `DependencyProperty` or `DependencyPropertyKey` is registered once per owner type, so its backing field or property must be `static readonly`. Adds the missing modifiers.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.MakeRoutedCommandBackingMemberStaticReadonly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/makeroutedcommandbackingmemberstaticreadonly)
+  * **Backing member for a RoutedCommand should be static and readonly**
+  * A `RoutedCommand` is a shared singleton, so its backing field or property must be `static readonly`. Adds the missing modifiers.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.MakeRoutedEventBackingMemberStaticReadonly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/makeroutedeventbackingmemberstaticreadonly)
+  * **Backing member for a RoutedEvent should be static and readonly**
+  * A `RoutedEvent` is registered once per owner type, so its backing field or property must be `static readonly`. Adds the missing modifiers.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RegisterContainingTypeAsRoutedEventOwner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/registercontainingtypeasroutedeventowner)
+  * **Containing type should be used as registered owner**
+  * A `RoutedEvent` must name the type that declares it as owner in its `EventManager.RegisterRoutedEvent` call. Replaces the `typeof(...)` owner argument with the containing type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RegisterRoutedCommandNameAndOwner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/registerroutedcommandnameandowner)
+  * **Register a name and an owning type for a RoutedCommand**
+  * A `RoutedCommand` or `RoutedUICommand` created with the parameterless constructor has no name and no owner type. Registers the containing member and the containing type; for a `RoutedUICommand` the display text is filled in with `&quot;PLACEHOLDER TEXT&quot;`, matching WpfAnalyzers, because the source contains nothing to derive it from.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameAddRemoveHandlerCallbackToMatchEvent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renameaddremovehandlercallbacktomatchevent)
+  * **Name the AddHandler/RemoveHandler callback OnEventName**
+  * The callback passed to `AddHandler` or `RemoveHandler` should be named after the routed event it handles — `OnSizeChanged` for `SizeChangedEvent`. Renames the method and all references to it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameClrAccessorMethodToMatchRegisteredName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renameclraccessormethodtomatchregisteredname)
+  * **CLR method for a DependencyProperty must match registered name**
+  * The static accessor methods for an attached property must be named `Get&lt;RegisteredName&gt;` and `Set&lt;RegisteredName&gt;`, which is how the XAML designer pairs them with the registration. Renames the methods and all calls to them.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameClrPropertyToMatchRegisteredName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renameclrpropertytomatchregisteredname)
+  * **CLR property for a DependencyProperty should match registered name**
+  * The CLR property wrapping a `DependencyProperty` must be named after the name the property was registered with, because XAML resolves it by that name. Renames the property and all references to it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameCoerceValueCallbackToMatchRegisteredName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renamecoercevaluecallbacktomatchregisteredname)
+  * **Name the CoerceValueCallback CoerceName**
+  * The `CoerceValueCallback` passed to a dependency property's `PropertyMetadata` should be named after the registered property — `CoerceValue` for a property registered as `Value`. Renames the method and all references to it, in every file.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameDependencyPropertyBackingMember](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renamedependencypropertybackingmember)
+  * **Backing member for a DependencyProperty should match registered name**
+  * A `DependencyProperty` backing member must be named `&lt;RegisteredName&gt;Property` so that the registration and the member agree. Renames the member and all references to it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameDependencyPropertyKeyBackingMember](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renamedependencypropertykeybackingmember)
+  * **Backing member for a DependencyPropertyKey should match registered name**
+  * A `DependencyPropertyKey` backing member must be named `&lt;RegisteredName&gt;PropertyKey`. Renames the member and all references to it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameEventDeclarationToMatchRegisteredName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renameeventdeclarationtomatchregisteredname)
+  * **Name of the event should match registered name**
+  * An event backed by a `RoutedEvent` must be named exactly as the event was registered with `EventManager.RegisterRoutedEvent`. Renames the event and all references to it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenamePropertyChangedCallbackToMatchRegisteredName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renamepropertychangedcallbacktomatchregisteredname)
+  * **Name the PropertyChangedCallback OnNameChanged**
+  * The `PropertyChangedCallback` passed to a dependency property's `PropertyMetadata` should be named after the registered property — `OnValueChanged` for a property registered as `Value`. Renames the method and all references to it, in every file.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameRegisterClassHandlerCallbackToMatchEvent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renameregisterclasshandlercallbacktomatchevent)
+  * **Name the RegisterClassHandler callback OnEventName**
+  * The callback registered with `EventManager.RegisterClassHandler` should be named after the routed event it handles — `OnSizeChanged` for `SizeChangedEvent`. Renames the method and all references to it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameRoutedEventBackingMember](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renameroutedeventbackingmember)
+  * **Backing member for a RoutedEvent should match registered name**
+  * A `RoutedEvent` backing member must be named `&lt;RegisteredName&gt;Event`. Renames the member and all references to it.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RenameValidateValueCallbackToMatchRegisteredName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/renamevalidatevaluecallbacktomatchregisteredname)
+  * **Name the ValidateValueCallback ValidateName**
+  * The `ValidateValueCallback` passed to `DependencyProperty.Register` should be named after the registered property — `ValidateValue` for a property registered as `Value`. Renames the method and all references to it, in every file.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireCorrectTemplatePartType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requirecorrecttemplateparttype)
+  * **Use the declared [TemplatePart] type**
+  * Flags a `GetTemplateChild` result cast to a type that contradicts the `Type` of the `[TemplatePart]` declaring that part, including the case where the attribute declares no type at all.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireExistingStyleTypedProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requireexistingstyletypedproperty)
+  * **StyleTypedProperty.Property must exist**
+  * `[StyleTypedProperty(Property = ...)]` names the `Style`-typed property it describes. Flags an attribute whose `Property` matches no member of the attributed type or its bases.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequirePartPrefixInTemplatePartName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requirepartprefixintemplatepartname)
+  * **Use the PART_ prefix for template part names**
+  * Flags a `[TemplatePart(Name = ...)]` whose name does not start with `PART_`, the WPF convention for elements a control looks up in its template.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireSameDependencyPropertyInGetAndSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requiresamedependencypropertyingetandset)
+  * **Use same dependency property in get and set**
+  * The `get` and `set` accessors of a CLR property wrapping a dependency property must pass the same dependency property to `GetValue` and `SetValue`. Flags a property whose accessors disagree, including the read-only case where the setter must use the `DependencyPropertyKey` paired with the getter's `DependencyProperty`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireStyleTypedPropertyOfStyleType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requirestyletypedpropertyofstyletype)
+  * **StyleTypedProperty.Property should name a Style property**
+  * `[StyleTypedProperty(Property = ...)]` describes the target type of a `Style`-typed property. Flags an attribute whose `Property` names a member of some other type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireStyleTypedPropertyProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requirestyletypedpropertyproperty)
+  * **StyleTypedProperty.Property should be specified**
+  * `[StyleTypedProperty]` is meaningless without a `Property` argument naming the `Style`-typed property it describes.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireStyleTypedPropertyStyleTargetType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requirestyletypedpropertystyletargettype)
+  * **StyleTypedProperty.StyleTargetType should be specified**
+  * `[StyleTypedProperty]` without a `StyleTargetType` argument tells the designer nothing about which type the style is applied to.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireStyleTypedPropertyStyleTargetTypeToSupportStyle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requirestyletypedpropertystyletargettypetosupportstyle)
+  * **StyleTypedProperty.StyleTargetType should support styling**
+  * `StyleTargetType` names the type the style is applied to, so it must be a type that has a `Style` property — a `FrameworkElement` or `FrameworkContentElement`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.RequireUniqueStyleTypedProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/requireuniquestyletypedproperty)
+  * **StyleTypedProperty.Property should be specified only once**
+  * Two `[StyleTypedProperty]` attributes naming the same `Property` contradict each other. Flags every attribute in such a group.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseContainingMemberAsRoutedCommandName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecontainingmemberasroutedcommandname)
+  * **Register the containing member as the name for a RoutedCommand**
+  * A `RoutedCommand` or `RoutedUICommand` should be registered with the name of the member that holds it. Replaces a name that does not match with `nameof(&lt;member&gt;)`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseContainingMemberForComponentResourceKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecontainingmemberforcomponentresourcekey)
+  * **Use the containing member as the key when creating a ComponentResourceKey**
+  * The `resourceId` of a `ComponentResourceKey` should identify the member that holds the key. Replaces an id that names something else with `nameof(&lt;member&gt;)`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseContainingTypeAsRegisteredOwner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecontainingtypeasregisteredowner)
+  * **Containing type should be used as registered owner**
+  * A `DependencyProperty` must name the type that declares it as owner, otherwise WPF cannot resolve it for that type. Replaces the `typeof(...)` owner argument with the containing type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseContainingTypeAsRoutedCommandOwner](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecontainingtypeasroutedcommandowner)
+  * **Register the containing type as the owner for a RoutedCommand**
+  * A `RoutedCommand` or `RoutedUICommand` should be registered with the type that declares it as its owner type. Replaces a mismatched `typeof(...)` with the containing type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseContainingTypeForComponentResourceKey](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecontainingtypeforcomponentresourcekey)
+  * **Use the containing type when creating a ComponentResourceKey**
+  * A `ComponentResourceKey` should name the type that declares it as its `typeInTargetAssembly`, because that is what tells WPF which assembly holds the resource. Corrects a mismatched `typeof(...)`, and supplies the containing type and member when the key is created with no arguments at all.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseContainingTypeForConverterDefault](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecontainingtypeforconverterdefault)
+  * **Use containing type**
+  * A value converter's shared `Default` member should hold an instance of the converter that declares it. Flags an initializer that constructs a different converter.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseCorrectAttachedPropertyBrowsableForType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecorrectattachedpropertybrowsablefortype)
+  * **Use correct argument for [AttachedPropertyBrowsableForType]**
+  * `[AttachedPropertyBrowsableForType(typeof(T))]` on the CLR getter of an attached property must name a type assignable to the getter's parameter. Replaces a type the parameter cannot accept with the parameter's own type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseCorrectConstructorArgumentName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecorrectconstructorargumentname)
+  * **[ConstructorArgument] must match**
+  * `[ConstructorArgument]` must name the constructor parameter assigned to the property. Replaces a mismatched name with the parameter's actual name.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseCorrectMarkupExtensionReturnType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecorrectmarkupextensionreturntype)
+  * **MarkupExtensionReturnType must use correct return type**
+  * `[MarkupExtensionReturnType]` must name a type that `ProvideValue` actually returns, or a base of it. Replaces a type the returned value is not assignable to.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseCorrectValueConversionTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usecorrectvalueconversiontypes)
+  * **ValueConversion must use correct types**
+  * `[ValueConversion(typeof(source), typeof(target))]` must name the types the converter's `Convert` method reads and produces. Replaces an argument that names a different type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseDependencyPropertyKeyToSetValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usedependencypropertykeytosetvalue)
+  * **Set a readonly DependencyProperty using its DependencyPropertyKey**
+  * A read-only `DependencyProperty` can only be written through the `DependencyPropertyKey` it was registered with; passing the exposed `DependencyProperty` to `SetValue` or `SetCurrentValue` throws at run time. Replaces the call with `SetValue(&lt;Name&gt;PropertyKey, ...)`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseNameofInsteadOfConstant](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usenameofinsteadofconstant)
+  * **Use nameof() instead of a constant**
+  * Registering a `DependencyProperty`, `RoutedEvent` or `RoutedCommand` with a `const string` silently breaks when the corresponding member is renamed. Replaces the constant with `nameof(...)` when the constant's value names a member of the containing type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseNameofInsteadOfLiteral](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usenameofinsteadofliteral)
+  * **Use nameof() instead of a string literal**
+  * Registering a `DependencyProperty`, `RoutedEvent` or `RoutedCommand` with a string literal silently breaks when the corresponding member is renamed. Replaces the literal with `nameof(...)` when a member of that name exists on the containing type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseRegisteredRoutedEventHandlerType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/useregisteredroutedeventhandlertype)
+  * **Use the registered routed event handler type**
+  * A handler passed to `EventManager.RegisterClassHandler`, `AddHandler` or `RemoveHandler` must be constructed with the delegate type the `RoutedEvent` was registered with; WPF rejects any other at run time. Replaces the wrong delegate type with the registered one.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseRegisteredTypeForClrAccessorMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/useregisteredtypeforclraccessormethod)
+  * **CLR accessor for attached property must match registered type**
+  * The static `Get`/`Set` accessors of an attached property must use the type the property was registered with, otherwise reading or writing it throws at run time. Corrects the return type, the value parameter type and the cast in the getter.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseRegisteredTypeForClrProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/useregisteredtypeforclrproperty)
+  * **CLR property type should match registered type**
+  * The CLR property wrapping a `DependencyProperty` must be declared with the type the property was registered with, otherwise reading it throws at run time. Corrects the property type and the cast in its getter.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseSetCurrentValueForMutableProperty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usesetcurrentvalueformutableproperty)
+  * **Set a mutable dependency property using SetCurrentValue**
+  * Assigning a dependency property's CLR property, or calling `SetValue`, writes the local value and permanently outranks any binding, style, trigger or animation on that property. Replaces both with `SetCurrentValue`, which sets the effective value without changing the value source.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseSetValueForDataContextAndStyle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usesetvaluefordatacontextandstyle)
+  * **Do not set DataContext or Style using SetCurrentValue**
+  * `DataContext` and `Style` are inherited through the visual tree, so a value written with `SetCurrentValue` is discarded as soon as the inherited value changes. Replaces the call with `SetValue`.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.UseSetValueInClrPropertySetter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/usesetvalueinclrpropertysetter)
+  * **Use SetValue in setter**
+  * The `set` accessor of a CLR property wrapping a dependency property must call `SetValue` so the assignment becomes a local value. Replaces `SetCurrentValue`, substituting the `DependencyPropertyKey` when the dependency property is read-only.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.WpfCodeQuality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/wpfcodequality)
+  * **WPF code quality**
+  * Correctness rules for WPF dependency properties, routed events, routed commands, value converters, markup extensions, template parts, styles and XML documentation, ported from the WpfAnalyzers Roslyn analyzers.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.XamlSetMarkupExtensionTargetShouldExist](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/xamlsetmarkupextensiontargetshouldexist)
+  * **Target of [XamlSetMarkupExtension] should exist and have correct signature**
+  * `[XamlSetMarkupExtension]` names its handler as a string, so a missing method or a wrong signature is only discovered when XAML is loaded. Flags the attribute when no `void Handler(object, XamlSetMarkupExtensionEventArgs)` is reachable on the type.
+* [OpenRewrite.Recipes.CSharp.CodeQuality.Wpf.XamlSetTypeConverterTargetShouldExist](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/recipes/csharp/codequality/wpf/xamlsettypeconvertertargetshouldexist)
+  * **Target of [XamlSetTypeConverter] should exist and have correct signature**
+  * `[XamlSetTypeConverter]` names its handler as a string, so a missing method or a wrong signature is only discovered when XAML is loaded. Flags the attribute when no `void Handler(object, XamlSetTypeConverterEventArgs)` is reachable on the type.
 
 ### recipes-csharp-core
 
@@ -5324,10 +5582,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Adds `\{ teardown: \{ destroyAfterEach: true \} \}` as the third argument to `TestBed.initTestEnvironment()` calls. Angular 13 changed the default teardown behavior, and this ensures explicit opt-in for module teardown after each test.
 * [org.openrewrite.angular.migration.enable-aot-build](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/enable-aot-build)
   * **Enable AOT compilation in `angular.json`**
-  * Adds `&quot;aot&quot;: true` to build options in `angular.json`. Angular 9 made AOT compilation the default, and projects upgrading from Angular 8 should enable it explicitly.
+  * Adds `&quot;aot&quot;: true` to build options in `angular.json`. Angular 9 made AOT compilation the default, and projects upgrading from Angular 8 should enable it explicitly. Build targets using a builder that already defaults `aot` to `true` (`@angular/build:application`, `@angular-devkit/build-angular:application`, `@angular-devkit/build-angular:browser-esbuild`) are left untouched.
 * [org.openrewrite.angular.migration.explicit-standalone-flag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/explicit-standalone-flag)
   * **Make standalone flag explicit**
-  * Adds `standalone: false` to non-standalone Angular components, directives, and pipes, and removes redundant `standalone: true` since it became the default in Angular 19.
+  * Adds `standalone: false` to Angular components, directives, and pipes that are declared in an `@NgModule`, and removes redundant `standalone: true` from the rest, since standalone became the default in Angular 19. Classes that are not declared in any `@NgModule` are left alone, because they are already standalone under the new default.
 * [org.openrewrite.angular.migration.migrate-constructor-to-inject](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-constructor-to-inject)
   * **Migrate constructor injection to `inject()`**
   * Converts constructor parameter properties in Angular classes to field declarations using the `inject()` function. For example, `constructor(private svc: MyService) \{\}` becomes `private svc = inject(MyService);`.
@@ -5688,6 +5946,69 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.cryptography.PostQuantumCryptography](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/postquantumcryptography)
   * **Post quantum cryptography**
   * This recipe searches for instances in code that may be impacted by post quantum cryptography. Applications may need to support larger key sizes, different algorithms, or use crypto agility to handle the migration. The recipe includes detection of hardcoded values that affect behavior in a post-quantum world, programmatic configuration that may prevent algorithm changes, and general cryptographic usage patterns that should be reviewed.
+* [io.moderne.cryptography.agilesec.BuildCipherInventory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/agilesec/buildcipherinventory)
+  * **Build cryptographic cipher inventory**
+  * Builds a cipher inventory for Keyfactor AgileSec by detecting insecure cryptographic algorithm usages across Java (JCA/JCE and BouncyCastle), C# (.NET) and C/C++ (OpenSSL) sources. Every detection is recorded in the shared cipher inventory data table with the algorithm, its function, the library and language, the precise source location, and repository provenance. Phase 1 covers DES, 3DES, RC2, RC4, Blowfish, MD2, MD4, MD5, SHA1 and HMAC-SHA1.
+* [io.moderne.cryptography.agilesec.FindInsecureCSharpCryptography](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/agilesec/findinsecurecsharpcryptography)
+  * **Find insecure C# cryptography**
+  * Detects insecure .NET (System.Security.Cryptography) algorithm usages and records them in a cipher inventory data table.
+* [io.moderne.cryptography.agilesec.FindInsecureJavaCryptography](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/agilesec/findinsecurejavacryptography)
+  * **Find insecure Java cryptography**
+  * Detects insecure JCA/JCE and BouncyCastle cryptographic algorithm usages and records them in a cipher inventory data table.
+* [io.moderne.cryptography.agilesec.FindInsecureNativeCryptography](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/agilesec/findinsecurenativecryptography)
+  * **Find insecure C/C++ cryptography**
+  * Detects insecure OpenSSL EVP_* algorithm usages in C/C++ source (scanned as plain text) and records them in a cipher inventory data table.
+* [io.moderne.cryptography.pqc.AddHybridTlsNamedGroup](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/addhybridtlsnamedgroup)
+  * **Offer a hybrid ML-KEM key exchange group first**
+  * Prepends an ML-KEM hybrid key-exchange group to explicitly configured named-group lists, so that a connection whose groups are pinned can still negotiate post-quantum key exchange. Covers `SSLParameters.setNamedGroups` and `BCSSLParameters.setNamedGroups` with a literal array or a same-class private array constant, and `System.setProperty(&quot;jdk.tls.namedGroups&quot;, ...)` with a literal value. The group goes first because first means most preferred, which is where JDK 27 puts it by default and where BouncyCastle 1.81 does not — BCJSSE enables the hybrid last, so an explicit hybrid-first list still changes the key share that is offered. Sites that already name any ML-KEM group are left alone silently and produce no row: `setNamedGroups` throws on a duplicate element, so re-running this recipe has to be a no-op rather than a reordering. Code that configures no named groups at all is deliberately not touched — on JDK 27 that absence is the good state, and inserting a literal list would freeze today's defaults forever. `-D` flags in shell scripts, Dockerfiles and orchestration manifests are outside a source scan and need a manual audit.
+* [io.moderne.cryptography.pqc.AddHybridTlsNamedGroupToProperties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/addhybridtlsnamedgrouptoproperties)
+  * **Offer a hybrid ML-KEM key exchange group first in properties files**
+  * Prepends an ML-KEM hybrid key-exchange group to a `jdk.tls.namedGroups` value in a `.properties` file, under either the bare key or Gradle's `systemProp.` prefix. The group goes first because first means most preferred. An entry that already names any ML-KEM group is left alone silently and produces no row: the JSSE API throws on a duplicate group, so re-running this recipe has to be a no-op. A repository with no such entry is deliberately not given one — on JDK 27 the absence of a pin is the good state.
+* [io.moderne.cryptography.pqc.BuildPqcReadinessInventory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/buildpqcreadinessinventory)
+  * **Build post-quantum TLS readiness inventory**
+  * The single discovery entry point for post-quantum TLS readiness. Answers the three questions that decide whether a connection can negotiate a hybrid ML-KEM key exchange: does the module run on a runtime that offers one (JDK 27, or BouncyCastle 1.81 and later), can it still negotiate TLS 1.3 at all, and does it pin its key-exchange groups to classical curves. Changes nothing; every finding lands in one of four data tables.
+* [io.moderne.cryptography.pqc.BuildTlsConfigurationInventory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/buildtlsconfigurationinventory)
+  * **Build TLS protocol configuration inventory**
+  * Inventories every place a codebase decides which TLS protocol versions and cipher suites may be negotiated — Java sources and Spring Boot `.properties`/`.yaml` files — and classifies each by whether TLS 1.3, the only version JEP 527 hybrid key exchange exists for, remains reachable. A pinned cipher list with no RFC 8446 suite blocks TLS 1.3 even when the protocol floor allows it. Deliberately excludes the taint-tracking discovery recipes that overlap this surface (`FindHardcodedProtocolChoice`, `FindDirectSSLConfigurationEditing`, `FindSSLContextSetDefault`): they answer &quot;is this value hardcoded?&quot;, this answers &quot;is TLS 1.3 still reachable?&quot;, and running both doubles every finding.
+* [io.moderne.cryptography.pqc.BuildTlsKeyExchangeInventory](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/buildtlskeyexchangeinventory)
+  * **Build TLS key exchange inventory**
+  * Inventories every place a codebase decides which TLS key-exchange groups it offers, and classifies each by whether an ML-KEM hybrid group is among them. Where a repository configures named groups nowhere, each TLS-using file is reported as ready-on-upgrade rather than left silent.
+* [io.moderne.cryptography.pqc.EnableHybridTlsKeyExchange](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/enablehybridtlskeyexchange)
+  * **Enable hybrid TLS key exchange**
+  * Prepends an ML-KEM hybrid key-exchange group to explicitly configured named-group lists in Java and `.properties` sources, and reports the sites that cannot be rewritten safely. Code that configures no named groups is deliberately left alone: on JDK 27 and BouncyCastle 1.81 the provider default already offers a hybrid group, so inserting a literal list there would freeze today's defaults forever.
+* [io.moderne.cryptography.pqc.EnforceTls13](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/enforcetls13)
+  * **Enforce a TLS 1.3 floor**
+  * Rewrites JSSE, BouncyCastle and Spring Boot protocol configuration to a TLS 1.3 floor across Java, `.properties` and YAML sources, so that JEP 527 hybrid key exchange — which exists for TLS 1.3 only — can negotiate. Surfaces that cannot be rewritten safely are recorded as `Report only` rows rather than changed.
+* [io.moderne.cryptography.pqc.EnforceTls13Java](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/enforcetls13java)
+  * **Enforce a TLS 1.3 floor in Java sources**
+  * Rewrites JSSE and BouncyCastle protocol configuration to a TLS 1.3 floor, so that JEP 527 hybrid key exchange — which exists for TLS 1.3 only — can negotiate. Covers `SSLContext.getInstance` algorithm literals, the `setEnabledProtocols`/`setProtocols` sinks including `BCSSLParameters`, same-file protocol array constants whose only readers are those sinks, the `jdk.tls.client.protocols`, `jdk.tls.server.protocols` and `https.protocols` system properties, and `getSupportedVersions` overrides on BouncyCastle `TlsPeer` subclasses. Surfaces that cannot be rewritten safely — an array constant shared with non-TLS code, or a `Security.setProperty(&quot;jdk.tls.disabledAlgorithms&quot;, ...)` call that replaces rather than extends the JDK default list — are marked and recorded as `Report only` rows instead of being changed. Protocol values that are not statically resolvable are left alone without a row: finding those is the discovery recipes' job, and reporting them here would duplicate their findings. Test sources are skipped by default, because a protocol test usually enables a legacy version on purpose in order to assert that it is refused. One shape deserves review before the diff is merged: a protocol list that was deliberately *widened* to work around a handshake failure against a legacy peer looks exactly like an unmaintained legacy floor, and narrowing it will re-break that peer. Every rewrite is recorded in the enforcement data table with its before and after protocols, and `retainTls12In` scopes the exception once such a site is identified.
+* [io.moderne.cryptography.pqc.EnforceTls13Properties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/enforcetls13properties)
+  * **Enforce a TLS 1.3 floor in properties files**
+  * Rewrites TLS protocol configuration in `.properties` files to a TLS 1.3 floor, so that JEP 527 hybrid key exchange — which exists for TLS 1.3 only — can negotiate. Covers `server.ssl.enabled-protocols`, the `jdk.tls.client.protocols`, `jdk.tls.server.protocols` and `https.protocols` keys, `server.ssl.protocol` under `strictAlgorithmName`, and any key named in `additionalPropertyKeys`. Keys are matched with Spring relaxed binding, so `enabled-protocols`, `enabledProtocols` and `ENABLED_PROTOCOLS` all match. Configuration a source scan cannot see — config servers, `ConfigMap` overlays, environment variables — is out of scope, so an unchanged repository is not evidence of an enforced floor.
+* [io.moderne.cryptography.pqc.EnforceTls13Yaml](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/enforcetls13yaml)
+  * **Enforce a TLS 1.3 floor in YAML files**
+  * Rewrites TLS protocol configuration in YAML files to a TLS 1.3 floor, so that JEP 527 hybrid key exchange — which exists for TLS 1.3 only — can negotiate. Covers `server.ssl.enabled-protocols`, the `jdk.tls.client.protocols`, `jdk.tls.server.protocols` and `https.protocols` keys, `server.ssl.protocol` under `strictAlgorithmName`, and any key named in `additionalPropertyKeys`. Values may be a single scalar, a comma-separated scalar, or a sequence in flow or block style; a sequence is rewritten in place, reusing its existing entries so indentation and comments survive. Configuration a source scan cannot see — config servers, `ConfigMap` overlays, environment variables — is out of scope, so an unchanged repository is not evidence of an enforced floor.
+* [io.moderne.cryptography.pqc.FindMissingHybridTlsNamedGroups](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/findmissinghybridtlsnamedgroups)
+  * **Find TLS key exchange sites that cannot be made hybrid automatically**
+  * Reports the named-group sites a transformation recipe deliberately leaves alone, so that an empty diff is not mistaken for an empty problem. Three kinds: a `setNamedGroups` call whose argument is a runtime value, which no source rewrite can reach; a `getSupportedGroups` override on a BouncyCastle `AbstractTlsClient` subclass naming no ML-KEM group, where generated code referencing `NamedGroup.X25519MLKEM768` would only compile against bctls 1.81 or later and so must ride with a dependency upgrade; and optionally SSL parameters applied without any named-groups configuration, whose remediation is a JDK 27 or BouncyCastle 1.81 upgrade rather than an edit.
+* [io.moderne.cryptography.pqc.FindTlsNamedGroupsConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/findtlsnamedgroupsconfiguration)
+  * **Find TLS key exchange (named groups) configuration**
+  * Inventories every place a codebase decides which TLS key-exchange groups it offers, and classifies each by whether an ML-KEM hybrid group — the thing JEP 527 and BouncyCastle 1.81 add — is among them. Covers `SSLParameters.setNamedGroups` and `BCSSLParameters.setNamedGroups`, the `jdk.tls.namedGroups` system property set in code or embedded as a `-D` flag in checked-in YAML and `.properties` files, `getSupportedGroups` overrides on BouncyCastle `AbstractTlsClient` subclasses, BCJSSE provider registration, and `jdk.tls.disabledAlgorithms` values that disable a hybrid group. When the repository configures named groups nowhere, each TLS-using file gets one `A` row: that code is post-quantum ready as soon as it runs on JDK 27 or BouncyCastle 1.81, with no source change. `-D` flags in shell scripts, Dockerfiles and orchestration manifests outside the repository are invisible, so an absent row is not proof that no group pin exists.
+* [io.moderne.cryptography.pqc.FindTlsPropertyConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/findtlspropertyconfiguration)
+  * **Find TLS protocol configuration in properties and YAML**
+  * Inventories Spring Boot configuration files that set an embedded server's TLS protocol floor or cipher suites — `server.ssl.enabled-protocols`, `server.ssl.protocol` and `server.ssl.ciphers`, plus any key named in `additionalPropertyKeys` — and classifies each value by whether TLS 1.3, and therefore JEP 527 hybrid key exchange, remains reachable. A pinned `server.ssl.ciphers` list with no RFC 8446 suite blocks TLS 1.3 even when the protocol floor allows it. Rows land in the same TLS configuration inventory data table as the Java surface. Keys are matched with relaxed binding, so `enabled-protocols`, `enabledProtocols` and `ENABLED_PROTOCOLS` all match; values may be a single token, a comma-separated string, or a YAML sequence in either flow or block style. Configuration a source scan cannot see — config servers, `ConfigMap` overlays, environment variables — is out of scope, so an absent row is not evidence of a modern floor.
+* [io.moderne.cryptography.pqc.FindTlsProtocolConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/findtlsprotocolconfiguration)
+  * **Find TLS protocol configuration**
+  * Inventories every place a Java source decides which TLS protocol versions and cipher suites may be negotiated, and classifies each by whether TLS 1.3 — the only version JEP 527 hybrid key exchange exists for — remains reachable. Covers `SSLContext.getInstance` (whose algorithm name is a *ceiling*, never a floor), the `setProtocols`/`setEnabledProtocols` and `setCipherSuites`/`setEnabledCipherSuites` sinks, the `jdk.tls.client.protocols`, `jdk.tls.server.protocols`, `https.protocols`, `jdk.tls.client.cipherSuites` and `jdk.tls.server.cipherSuites` system properties, BouncyCastle `getSupportedVersions` and `getSupportedCipherSuites` overrides, and default-acquisition sites that configure no floor at all. A pinned cipher list with no RFC 8446 suite blocks TLS 1.3 even when the protocol floor allows it. Findings land in the TLS configuration inventory data table. Scope is JSSE and BouncyCastle: Netty, OkHttp, Apache HttpClient and servlet-container configuration are not scanned, and `-D` flags in build files and launch scripts are invisible, so an absent row is not evidence of a modern floor.
+* [io.moderne.cryptography.pqc.PqcReadinessAudit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/pqcreadinessaudit)
+  * **Audit post-quantum TLS readiness of build files**
+  * Reports how far each Maven and Gradle module is from post-quantum TLS by joining its JDK level with the BouncyCastle artifacts it resolves. Modules with no BouncyCastle get a row too, so absence is reported rather than inferred from an empty table.
+* [io.moderne.cryptography.pqc.PqcReadinessReport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/pqcreadinessreport)
+  * **Post-quantum TLS readiness report**
+  * Classifies every Maven and Gradle module by how far it is from post-quantum TLS, joining the module's JDK level with the BouncyCastle artifacts it resolves, and records one row per module per BouncyCastle artifact in a data table. Modules with no BouncyCastle at all get exactly one row, so absence is reported rather than inferred from silence. Direct `org.bouncycastle` declarations in modules that have a gap are marked. `bcutil` and everything reachable only through it is pruned from the graph walk: it is an internal support artifact that declares BouncyCastle with version ranges, which would otherwise make the reported versions drift with every patch release. Only BouncyCastle that appears in a resolved dependency graph is seen: jars vendored into the repository and wired up with Gradle `fileTree`/`flatDir` or Maven `system` scope, and BouncyCastle shaded into a fat jar, carry no coordinates and therefore report as `no-bc`. Modules whose build tool did not run are reported as `build-file-not-resolved` rather than being dropped, so that gap is visible instead of silent.
+* [io.moderne.cryptography.pqc.UpgradeToPqcReadyTls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/upgradetopqcreadytls)
+  * **Upgrade to post-quantum ready TLS**
+  * The single transformation entry point for post-quantum TLS readiness. Moves a repository off the end-of-life `jdk15on` BouncyCastle artifacts onto a hybrid-capable `bctls`, raises the protocol floor to TLS 1.3, and offers an ML-KEM hybrid key-exchange group first wherever groups are pinned. Run `BuildPqcReadinessInventory` first: this recipe cannot reach configuration held outside the repository, and the sites it deliberately skips are visible only in its data tables. It also cannot upgrade the runtime, which is the other half of the job — JEP 527 hybrid key exchange exists on JDK 27 and later only.
 
 ### rewrite-cve-2026-22732
 
@@ -6375,12 +6696,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.ExtractGoDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extractgodependencies)
   * **Extract Go dependencies and usage**
   * Scan go.mod and Go source imports to produce a DependencyUsage entry per actually-imported module, including file-count and sample imports.
+* [io.moderne.prethink.ExtractNodeDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extractnodedependencies)
+  * **Extract Node.js dependencies and usage**
+  * Scan package.json and JavaScript/TypeScript imports to produce a DependencyUsage entry per actually-imported npm package, including the symbols imported from it, the import styles in use, and how many files import it.
 * [io.moderne.prethink.FindGoCodingConventions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findgocodingconventions)
   * **Find Go coding conventions**
   * Detect Go naming patterns (package names, exported vs unexported, interface -er suffix, error variable prefix, test prefix).
 * [io.moderne.prethink.FindGoErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findgoerrorpatterns)
   * **Find Go error handling patterns**
   * Detect Go error-handling idioms: error returns, fmt.Errorf %w wrapping, errors.Is/As, panic/recover, and sentinel error variables.
+* [io.moderne.prethink.FindNodeCodingConventions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findnodecodingconventions)
+  * **Find JavaScript and TypeScript coding conventions**
+  * Detect JavaScript/TypeScript conventions the Java convention extractor cannot see: import styles (default, named, namespace, type-only, side-effect, path-alias), React hook and component naming, the Props suffix for prop types, UPPER_SNAKE_CASE constants, and JSDoc comments.
 * [io.moderne.prethink.PythonDependencyReport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/pythondependencyreport)
   * **Python dependency report**
   * Read the dependency graph attached to Python manifests (pyproject.toml, Pipfile, requirements.txt, setup.cfg) by the parser and emit rows into the shared dependency-list-report table, mirroring the JVM dependency inventory. Includes declared (direct) dependencies and, when a lock file resolved them, transitive dependencies with concrete versions.
@@ -6486,6 +6813,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindFlaskEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findflaskendpoints)
   * **Find Flask endpoints**
   * Identify REST/HTTP endpoints in Flask applications. Detects @app.route(), @blueprint.route(), and Flask 2.0+ shortcut decorators like @app.get() and @app.post().
+* [io.moderne.prethink.calm.FindGoDataAssets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgodataassets)
+  * **Find Go data assets**
+  * Identify Go structs that carry the data model, classified as entities, documents, or DTOs based on their struct tags (`gorm:`, `db:`, `bson:`, `json:`) and naming.
 * [io.moderne.prethink.calm.FindGoDatabaseConnections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgodatabaseconnections)
   * **Find Go database connections**
   * Detect database/sql, GORM, sqlx, pgx, and ent usage in Go source.
@@ -6501,6 +6831,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindGoProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgoprojectmetadata)
   * **Find Go project metadata**
   * Extract project metadata (module path, go version) from Go go.mod files.
+* [io.moderne.prethink.calm.FindGoScheduledTasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgoscheduledtasks)
+  * **Find Go scheduled tasks**
+  * Detect background work scheduled through robfig/cron, go-co-op/gocron, `time.NewTicker`/`time.Tick`, and `time.AfterFunc` in Go source.
 * [io.moderne.prethink.calm.FindGoServiceEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgoserviceendpoints)
   * **Find Go service endpoints**
   * Detect HTTP endpoints registered via net/http, gin, echo, chi, gorilla/mux, and fiber routers.
@@ -6524,7 +6857,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Identify REST/HTTP endpoints in NestJS controllers. Detects @Controller, @Get, @Post, @Put, @Delete, and @Patch decorators and populates the ServiceEndpoints data table.
 * [io.moderne.prethink.calm.FindNodeErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodeerrorpatterns)
   * **Find Node.js error patterns**
-  * Identify error handling patterns in Node.js applications. Detects try/catch blocks and identifies logging frameworks used.
+  * Identify error handling patterns in Node.js applications. Detects try/catch blocks, infers the handling strategy and log level, and identifies the logging framework from ES imports and require() bindings, reporting console when a catch logs through it.
 * [io.moderne.prethink.calm.FindNodeHttpClients](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findnodehttpclients)
   * **Find Node.js HTTP clients**
   * Identify HTTP client usage in Node.js applications. Detects axios, fetch, got, and superagent call patterns.
@@ -6576,6 +6909,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindSignalRHubs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsignalrhubs)
   * **Find ASP.NET Core SignalR hubs**
   * Detect SignalR Hub subclasses, their methods (with optional [HubMethodName]), and MapHub&lt;T&gt; registrations.
+* [io.moderne.prethink.calm.FindSqlUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsqlusage)
+  * **Find SQL usage**
+  * Locate SQL statements in code and resources, and attribute the physical tables and columns each touches to the class and method that issues it. Emits one row per statement per table, joining `sql-anti-patterns.csv` on source path and line number, and `method-quality-metrics.csv` and `test-gaps.csv` on class name and method signature.
 * [io.moderne.prethink.calm.FindTypeORMEntities](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findtypeormentities)
   * **Find TypeORM entities**
   * Identify TypeORM entities in Node.js applications. Detects @Entity() decorator on classes and populates the DatabaseConnections table.
@@ -7137,8 +7473,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot3.UpgradeSpringKafka_3_3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringkafka_3_3)
   * **Migrate to Spring Kafka 3.3**
   * Migrate applications to the latest Spring Kafka 3.3 release.
-* [io.moderne.java.spring.boot4.AddAutoConfigureMockMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addautoconfiguremockmvc)
-  * **Add `@AutoConfigureMockMvc` to `@SpringBootTest` classes using `MockMvc`**
+* [io.moderne.java.spring.boot4.AddAutoConfigureMockMvc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addautoconfiguremockmvc-moderne-edition)
+  * **Add `@AutoConfigureMockMvc` to `@SpringBootTest` classes using `MockMvc` (Moderne Edition)**
   * Adds `@AutoConfigureMockMvc` annotation to classes annotated with `@SpringBootTest` that use `MockMvc`.
 * [io.moderne.java.spring.boot4.AddFlywayStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addflywaystarters)
   * **Add Flyway starters**
@@ -7587,6 +7923,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.security7.ModularizeSpringSecurity7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/modularizespringsecurity7)
   * **Spring Security 7 modularization**
   * Spring Security Core was modularized in version 7, deprecated classes that are still a crucial part of some applications are moved to `spring-security-access`.
+* [io.moderne.java.spring.ws.MigrateAxiomToSaaj](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
+  * **Migrate Spring WS Axiom to SAAJ**
+  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
+* [io.moderne.java.spring.ws.UpgradeSpringWs_4_0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/upgradespringws_4_0)
+  * **Migrate to Spring WS 4.0**
+  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 
 ### rewrite-tapestry
 
@@ -7728,12 +8070,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.AllocateOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/allocateoutsideloop)
   * **Allocate outside loop**
   * Find `new()` calls inside for/range loops. Repeated heap allocations in loops add GC pressure; consider reusing the object.
+* [org.openrewrite.golang.codequality.AuditBindAllInterfaces](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditbindallinterfaces)
+  * **Audit binding to all interfaces**
+  * Find network listeners bound to all interfaces (e.g. `:8080`, `0.0.0.0`, `[::]`). This exposes the service beyond loopback and may be unintended; prefer an explicit host such as `127.0.0.1` (gosec G102).
 * [org.openrewrite.golang.codequality.AuditChannelClose](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditchannelclose)
   * **Audit channel close**
   * Find calls to the built-in `close()` function. Channels should only be closed by the sender, and double-closing causes a panic.
 * [org.openrewrite.golang.codequality.AuditContextBackground](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditcontextbackground)
   * **Audit context.Background**
   * Find calls to `context.Background()`. Consider using a context passed from the caller instead.
+* [org.openrewrite.golang.codequality.AuditErrorStringFormat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditerrorstringformat)
+  * **Audit error string format**
+  * Find `errors.New` and `fmt.Errorf` messages that are capitalized or end with punctuation. Error strings are often embedded in a larger message, so they should not be capitalized or end with punctuation (staticcheck ST1005).
 * [org.openrewrite.golang.codequality.AuditExecCommand](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/auditexeccommand)
   * **Audit exec.Command calls**
   * Find calls to `exec.Command()`. If arguments come from user input, this is a potential command injection vulnerability.
@@ -7778,7 +8126,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Wrap loop bodies containing `defer` in an immediately-invoked function literal so deferred calls run per iteration.
 * [org.openrewrite.golang.codequality.AvoidDotImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoiddotimport)
   * **Avoid dot imports**
-  * Remove the dot alias from `import . &quot;pkg&quot;`, converting to a normal import.
+  * Remove the dot alias from `import . &quot;pkg&quot;`, converting to a normal import and re-qualifying references (e.g. `Println` to `fmt.Println`).
 * [org.openrewrite.golang.codequality.AvoidEmptyInterfaceParam](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidemptyinterfaceparam)
   * **Avoid empty interface parameters**
   * Replace `interface\{\}` parameter types with `any` (Go 1.18+).
@@ -7932,9 +8280,21 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.PreferErrorsIsForPermission](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisforpermission)
   * **Prefer errors.Is for os permission checks**
   * Replace deprecated `os.IsPermission(err)` with `errors.Is(err, fs.ErrPermission)` (Go 1.16+).
+* [org.openrewrite.golang.codequality.PreferErrorsIsHttpServerClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsishttpserverclosed)
+  * **Prefer errors.Is for http.ErrServerClosed comparison**
+  * Replace `err == http.ErrServerClosed` with `errors.Is(err, http.ErrServerClosed)` and `err != http.ErrServerClosed` with `!errors.Is(err, http.ErrServerClosed)` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.PreferErrorsIsNetClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisnetclosed)
+  * **Prefer errors.Is for net.ErrClosed comparison**
+  * Replace `err == net.ErrClosed` with `errors.Is(err, net.ErrClosed)` and `err != net.ErrClosed` with `!errors.Is(err, net.ErrClosed)` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.PreferErrorsIsOsInvalid](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisosinvalid)
+  * **Prefer errors.Is for os.ErrInvalid comparison**
+  * Replace `err == os.ErrInvalid` with `errors.Is(err, os.ErrInvalid)` for correct wrapped error handling.
 * [org.openrewrite.golang.codequality.PreferErrorsIsOverEquality](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsisoverequality)
   * **Prefer errors.Is over == for error comparison**
   * Replace `err == ErrFoo` with `errors.Is(err, ErrFoo)` for correct wrapped error handling.
+* [org.openrewrite.golang.codequality.PreferErrorsIsSqlNoRows](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/prefererrorsissqlnorows)
+  * **Prefer errors.Is for sql.ErrNoRows comparison**
+  * Replace `err == sql.ErrNoRows` with `errors.Is(err, sql.ErrNoRows)` and `err != sql.ErrNoRows` with `!errors.Is(err, sql.ErrNoRows)` for correct wrapped error handling.
 * [org.openrewrite.golang.codequality.PreferFilepathClean](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferfilepathclean)
   * **Prefer filepath.Clean over redundant filepath.Join**
   * Replace `filepath.Join(filepath.Clean(p))` with `filepath.Clean(p)` since Join with a single already-cleaned argument is redundant.
@@ -8262,6 +8622,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.UseStringsReplaceAll](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usestringsreplaceall)
   * **Use strings.ReplaceAll**
   * Replace `strings.Replace(s, old, new, -1)` with `strings.ReplaceAll(s, old, new)`.
+* [org.openrewrite.golang.codequality.UseStrongHash](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usestronghash)
+  * **Use strong hash functions**
+  * Replace weak hash constructors (md5.New, sha1.New) with sha256.New.
 * [org.openrewrite.golang.codequality.UseStructuredLogging](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usestructuredlogging)
   * **Use structured logging**
   * Find calls to the standard `log` package (`log.Print*`, `log.Fatal*`). Consider migrating to `log/slog` for structured logging (Go 1.21+).
@@ -8280,6 +8643,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.migration.ChangeGoVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/changegoversion)
   * **Change the `go` directive version**
   * Rewrites the `go` directive in go.mod to a new version.
+* [org.openrewrite.golang.migration.FindEncodingJsonUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/findencodingjsonusage)
+  * **Find `encoding/json` usage for the v2 migration**
+  * Inventory every `encoding/json` (v1) touchpoint that an `encoding/json/v2` migration must address: the import, package functions, `Encoder`/`Decoder` and other type methods (resolved through the type system, so receivers reached via variables, parameters, or fields are all found), exported types, `[N]byte`/`time.Duration` struct fields, `omitempty` tags classified by field type, and custom `MarshalJSON`/`UnmarshalJSON` implementations. Findings populate a data table categorized as import, rewrite, review, or modernize. This recipe reports only and does not modify code.
 * [org.openrewrite.golang.migration.FindMissingGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/findmissinggomodrequires)
   * **Find missing go.mod requirements**
   * Find imports of third-party packages that are not covered by any `require` directive in the module's go.mod. These are the requirements `go mod tidy` would add; adding them automatically is not possible offline because it requires resolving module versions over the network.
@@ -8440,8 +8806,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Change `List#add` to `List#plus` and verify**
   * We know this won't compile.
 * [io.moderne.compiled.verification.VerifyCompilation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/compiled/verification/verifycompilation)
-  * **Verify compilation**
-  * This is a task that runs after another recipe to verify that the changes made by that recipe would result in a successful compilation.
+  * **Verify compilation of changes made earlier in the same run**
+  * Recompile the source files that **earlier recipes in this same recipe run** changed, and mark the elements that no longer compile. This recipe examines only files carrying a `RecipesThatMadeChanges` marker, so running it on its own reports nothing at all, no matter how badly broken the code in the repository is. It is a verification step for a migration, not a standalone compiler. Compose it after the recipe whose output you want to verify: ```yaml type: specs.openrewrite.org/v1beta/recipe name: com.yourorg.MigrateAndVerify displayName: Migrate and verify description: Rename a method and verify that the result still compiles. recipeList:   - org.openrewrite.java.ChangeMethodName:       methodPattern: java.util.List add(..)       newMethodName: plus   - io.moderne.compiled.verification.VerifyCompilation ``` Failures appear as inline warnings on the offending elements, so a run that produces no warnings either verified everything successfully or had nothing to verify.
 
 ### rewrite-concourse
 
@@ -8495,7 +8861,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Finds dependencies in `*.csproj` and `packages.config`.
 * [org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Nuget dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-07-27T1204.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-08-10T1122.
 * [org.openrewrite.csharp.dependencies.FindEndOfLifeDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/findendoflifedependencies)
   * **Find end-of-life NuGet dependencies**
   * Find NuGet packages whose upstream release is end-of-life or scheduled for end-of-life soon, using a snapshot of [endoflife.date](https://endoflife.date). Direct package references are marked in source; all matches (direct and transitive) are reported in the data table.
@@ -8534,7 +8900,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Maven/Gradle dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-07-27T1204.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-08-10T1122.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -9191,7 +9557,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Find usage of `functools.cmp_to_key()` which is a Python 2 compatibility function. Consider using a key function directly.
 * [org.openrewrite.python.migrate.FindFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findfutureimports)
   * **Find `__future__` imports**
-  * Find `__future__` imports and add a search marker.
+  * Find `__future__` imports and add a search marker. The `RemoveFutureImports` recipe automatically removes the imports that are obsolete in Python 3.
 * [org.openrewrite.python.migrate.FindImghdrModule](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/findimghdrmodule)
   * **Find deprecated `imghdr` module usage**
   * The `imghdr` module was deprecated in Python 3.11 and removed in Python 3.13. Use `filetype`, `python-magic`, or `Pillow` instead.
@@ -9290,7 +9656,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Migrate Python projects from `requirements.txt` and/or `setup.cfg` to `pyproject.toml` with `hatchling` build backend.
 * [org.openrewrite.python.migrate.RemoveFutureImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/removefutureimports)
   * **Remove obsolete `__future__` imports**
-  * Remove `from __future__ import ...` statements for features that are enabled by default in Python 3.
+  * Remove `from __future__ import ...` statements for features that are enabled by default in Python 3. The search-only `FindFutureImports` recipe reports all `__future__` imports, including `annotations`, which this recipe keeps.
 * [org.openrewrite.python.migrate.ReplaceArrayFromstring](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacearrayfromstring)
   * **Replace `array.fromstring()` with `array.frombytes()`**
   * Replace `fromstring()` with `frombytes()` on array objects. The fromstring() method was deprecated in Python 3.2 and removed in 3.14.
@@ -9411,6 +9777,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.ReplaceTypingDictWithDict](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingdictwithdict)
   * **Replace `typing.Dict` with `dict`**
   * PEP 585 deprecated `typing.Dict` in Python 3.9. Replace with the built-in `dict` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingFrozenSetWithFrozenset](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingfrozensetwithfrozenset)
+  * **Replace `typing.FrozenSet` with `frozenset`**
+  * PEP 585 deprecated `typing.FrozenSet` in Python 3.9. Replace with the built-in `frozenset` type for generic annotations.
 * [org.openrewrite.python.migrate.ReplaceTypingListWithList](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypinglistwithlist)
   * **Replace `typing.List` with `list`**
   * PEP 585 deprecated `typing.List` in Python 3.9. Replace with the built-in `list` type for generic annotations.
@@ -9426,6 +9795,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.migrate.ReplaceTypingTupleWithTuple](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtuplewithtuple)
   * **Replace `typing.Tuple` with `tuple`**
   * PEP 585 deprecated `typing.Tuple` in Python 3.9. Replace with the built-in `tuple` type for generic annotations.
+* [org.openrewrite.python.migrate.ReplaceTypingTypeWithType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingtypewithtype)
+  * **Replace `typing.Type` with `type`**
+  * PEP 585 deprecated `typing.Type` in Python 3.9. Replace with the built-in `type` type for generic annotations.
 * [org.openrewrite.python.migrate.ReplaceTypingUnionWithPipe](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/migrate/replacetypingunionwithpipe)
   * **Replace `typing.Union[X, Y]` with `X | Y`**
   * PEP 604 introduced the `|` operator for union types in Python 3.10. Replace `Union[X, Y, ...]` with the more concise `X | Y | ...` syntax.
@@ -9680,7 +10052,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest patch version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the GitHub Security Advisory Database, which aggregates vulnerability data from several public databases.  ## Customizing Vulnerability Data  Extend this recipe and override `baselineVulnerabilities(ctx)` to replace the bundled advisory database, or override `supplementalVulnerabilities(ctx)` to add organisation-specific advisories alongside the bundled data.
 * [org.openrewrite.nodejs.security.RemoveRedundantOverrides](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/nodejs/security/removeredundantoverrides)
   * **Remove redundant dependency overrides**
-  * Removes overrides/resolutions from `package.json` that are redundant because the dependency tree already resolves to the overridden version (or higher) without the override. For each project, the recipe re-runs the package manager's lock-file generation with all overrides stripped and compares the resolved versions against the original override pins. Overrides matching or below the natural resolution are dropped along with any parallel `//overrides`, `//resolutions`, or `//pnpm.overrides` comment entries.
+  * Removes overrides/resolutions from `package.json` that are redundant because the dependency tree already resolves to the overridden version (or higher) without the override. For each project, the recipe resolves the dependency closure with all overrides stripped and compares the resolved versions against the original override pins. Overrides matching or below the natural resolution are dropped along with any parallel `//overrides`, `//resolutions`, or `//pnpm.overrides` comment entries.
 
 ### rewrite-reactive-streams
 

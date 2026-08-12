@@ -258,6 +258,141 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 5.x](/recipes/cucumber/jvm/upgradecucumber5x.md)
 
+## Examples
+##### Example 1
+`CucumberApiToIoCucumberTest#typeRegistryConfigurerMovesToCoreApi`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import cucumber.api.TypeRegistry;
+import cucumber.api.TypeRegistryConfigurer;
+
+import java.util.Locale;
+
+public class DataTableConfigurer implements TypeRegistryConfigurer {
+    @Override
+    public Locale locale() {
+        return Locale.ENGLISH;
+    }
+
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
+
+import java.util.Locale;
+
+public class DataTableConfigurer implements TypeRegistryConfigurer {
+    @Override
+    public Locale locale() {
+        return Locale.ENGLISH;
+    }
+
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,2 @@
+package com.example.app;
+
+-import cucumber.api.TypeRegistry;
+-import cucumber.api.TypeRegistryConfigurer;
++import io.cucumber.core.api.TypeRegistry;
++import io.cucumber.core.api.TypeRegistryConfigurer;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`CucumberApiToIoCucumberTest#typeRegistryConfigurerMovesToCoreApi`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import cucumber.api.TypeRegistry;
+import cucumber.api.TypeRegistryConfigurer;
+
+import java.util.Locale;
+
+public class DataTableConfigurer implements TypeRegistryConfigurer {
+    @Override
+    public Locale locale() {
+        return Locale.ENGLISH;
+    }
+
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
+
+import java.util.Locale;
+
+public class DataTableConfigurer implements TypeRegistryConfigurer {
+    @Override
+    public Locale locale() {
+        return Locale.ENGLISH;
+    }
+
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,2 +3,2 @@
+package com.example.app;
+
+-import cucumber.api.TypeRegistry;
+-import cucumber.api.TypeRegistryConfigurer;
++import io.cucumber.core.api.TypeRegistry;
++import io.cucumber.core.api.TypeRegistryConfigurer;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -43,6 +43,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Use `version \{ \}` closure instead of `version = \{ \}` assignment](../gradle/gradle9/useversionclosure)
 * [Use `project(...)` dependency notation instead of the current project's module coordinates](../gradle/gradle9/useprojectdependencyinsteadofmodulecoordinates)
 * [Use `matching(Closure)` instead of `findAll(Closure)` on Gradle container collections](../gradle/gradle9/usematchinginsteadoffindall)
+* [Update a Gradle plugin by id](../gradle/plugins/upgradepluginversion)
+  * pluginIdPattern: `com.gradle.develocity`
+  * newVersion: `4.x`
+* [Remove the deprecated PMD `targetJdk` property](../gradle/gradle9/removepmdtargetjdk)
+* [Remove the deprecated `exitEnvironmentVar` start script property](../gradle/gradle9/removeexitenvironmentvar)
+* [Use the `Action` overloads of `flatDir` and `mavenCentral`](../gradle/gradle9/userepositoryhandleractionoverloads)
+* [Rename the incubating `org.gradle.unsafe.isolated-projects` properties](../gradle/gradle9/migrateisolatedprojectsproperties)
 
 </TabItem>
 
@@ -69,6 +76,13 @@ recipeList:
   - org.openrewrite.gradle.gradle9.UseVersionClosure
   - org.openrewrite.gradle.gradle9.UseProjectDependencyInsteadOfModuleCoordinates
   - org.openrewrite.gradle.gradle9.UseMatchingInsteadOfFindAll
+  - org.openrewrite.gradle.plugins.UpgradePluginVersion:
+      pluginIdPattern: com.gradle.develocity
+      newVersion: 4.x
+  - org.openrewrite.gradle.gradle9.RemovePmdTargetJdk
+  - org.openrewrite.gradle.gradle9.RemoveExitEnvironmentVar
+  - org.openrewrite.gradle.gradle9.UseRepositoryHandlerActionOverloads
+  - org.openrewrite.gradle.gradle9.MigrateIsolatedProjectsProperties
 
 ```
 </TabItem>

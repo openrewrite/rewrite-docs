@@ -21,6 +21,57 @@ _Finds `catch` blocks that throw a newly created exception without referencing t
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.io.IOException;
+class A {
+    void risky() throws IOException {}
+    void foo() {
+        try {
+            risky();
+        } catch (IOException e) {
+            throw new RuntimeException("Failed");
+        }
+    }
+}
+```
+
+###### After
+```java
+import java.io.IOException;
+class A {
+    void risky() throws IOException {}
+    void foo() {
+        try {
+            risky();
+        } catch (IOException e) {
+            throw /*~~>*/new RuntimeException("Failed");
+        }
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -8,1 +8,1 @@
+            risky();
+        } catch (IOException e) {
+-           throw new RuntimeException("Failed");
++           throw /*~~>*/new RuntimeException("Failed");
+        }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

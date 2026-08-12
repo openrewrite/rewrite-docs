@@ -147,6 +147,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `com.fasterxml.jackson.jaxrs.json`
   * newPackageName: `com.fasterxml.jackson.jakarta.rs.json`
+  * recursive: `true`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule`
   * newFullyQualifiedTypeName: `com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule`
@@ -279,6 +280,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.fasterxml.jackson.jaxrs.json
       newPackageName: com.fasterxml.jackson.jakarta.rs.json
+      recursive: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.module.jaxb.JaxbAnnotationModule
       newFullyQualifiedTypeName: com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationModule

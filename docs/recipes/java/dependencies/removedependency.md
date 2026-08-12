@@ -58,7 +58,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud Service Discovery to Quarkus](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
-* [Migrate Spring WS Axiom to SAAJ](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
+* [Migrate Spring WS Axiom to SAAJ](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/ws/migrateaxiomtosaaj)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate from Elasticsearch 8 to 9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/elastic/elastic9/migratetoelasticsearch9)
 * [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)

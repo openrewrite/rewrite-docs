@@ -93,6 +93,101 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`SpringBoot41PropertiesTest#migrateProperties`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+logging.file.clean-history-on-start=true
+logging.file.max-history=7
+logging.file.max-size=10MB
+logging.file.total-size-cap=1GB
+logging.pattern.rolling-file-name=app-%d.log
+```
+
+###### After
+```properties
+logging.logback.rollingpolicy.clean-history-on-start=true
+logging.logback.rollingpolicy.max-history=7
+logging.logback.rollingpolicy.max-file-size=10MB
+logging.logback.rollingpolicy.total-size-cap=1GB
+logging.logback.rollingpolicy.file-name-pattern=app-%d.log
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-logging.file.clean-history-on-start=true
+-logging.file.max-history=7
+-logging.file.max-size=10MB
+-logging.file.total-size-cap=1GB
+-logging.pattern.rolling-file-name=app-%d.log
++logging.logback.rollingpolicy.clean-history-on-start=true
++logging.logback.rollingpolicy.max-history=7
++logging.logback.rollingpolicy.max-file-size=10MB
++logging.logback.rollingpolicy.total-size-cap=1GB
++logging.logback.rollingpolicy.file-name-pattern=app-%d.log
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`SpringBoot41PropertiesTest#migrateProperties`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="properties" label="properties">
+
+
+###### Before
+```properties
+logging.file.clean-history-on-start=true
+logging.file.max-history=7
+logging.file.max-size=10MB
+logging.file.total-size-cap=1GB
+logging.pattern.rolling-file-name=app-%d.log
+```
+
+###### After
+```properties
+logging.logback.rollingpolicy.clean-history-on-start=true
+logging.logback.rollingpolicy.max-history=7
+logging.logback.rollingpolicy.max-file-size=10MB
+logging.logback.rollingpolicy.total-size-cap=1GB
+logging.logback.rollingpolicy.file-name-pattern=app-%d.log
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,5 +1,5 @@
+-logging.file.clean-history-on-start=true
+-logging.file.max-history=7
+-logging.file.max-size=10MB
+-logging.file.total-size-cap=1GB
+-logging.pattern.rolling-file-name=app-%d.log
++logging.logback.rollingpolicy.clean-history-on-start=true
++logging.logback.rollingpolicy.max-history=7
++logging.logback.rollingpolicy.max-file-size=10MB
++logging.logback.rollingpolicy.total-size-cap=1GB
++logging.logback.rollingpolicy.file-name-pattern=app-%d.log
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

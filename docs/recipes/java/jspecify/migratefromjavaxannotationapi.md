@@ -49,6 +49,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
   * ignoreDefinition: `true`
 * [Change type](../../java/changetype)
+  * oldFullyQualifiedTypeName: `javax.annotation.CheckForNull`
+  * newFullyQualifiedTypeName: `org.jspecify.annotations.Nullable`
+  * ignoreDefinition: `true`
+* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `javax.annotation.Nonnull`
   * newFullyQualifiedTypeName: `org.jspecify.annotations.NonNull`
   * ignoreDefinition: `true`
@@ -83,6 +87,10 @@ recipeList:
       annotationType: javax.annotation.*ull*
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: javax.annotation.Nullable
+      newFullyQualifiedTypeName: org.jspecify.annotations.Nullable
+      ignoreDefinition: true
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: javax.annotation.CheckForNull
       newFullyQualifiedTypeName: org.jspecify.annotations.Nullable
       ignoreDefinition: true
   - org.openrewrite.java.ChangeType:

@@ -152,6 +152,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * overrideManagedVersion: `true`
 * [Add `@AutoConfigureTestRestTemplate` if necessary](../../../java/spring/boot4/addautoconfiguretestresttemplate)
 * [Add `@AutoConfigureWebTestClient` if necessary](../../../java/spring/boot4/addautoconfigurewebtestclient)
+* [Add `@AutoConfigureMockMvc` if necessary (Community Edition)](../../../java/spring/boot4/addautoconfiguremockmvc-community-edition)
 * [Migrate OpenAPI Generator `spring` configuration to Spring Boot 4](../../../java/spring/boot4/migrateopenapigeneratortospringboot4)
 * [Migrate jsonschema2pojo configuration to Spring Boot 4](../../../java/spring/boot4/migratejsonschema2pojotospringboot4)
 
@@ -283,6 +284,7 @@ recipeList:
       overrideManagedVersion: true
   - org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate
   - org.openrewrite.java.spring.boot4.AddAutoConfigureWebTestClient
+  - org.openrewrite.java.spring.boot4.AddAutoConfigureMockMvc
   - org.openrewrite.java.spring.boot4.MigrateOpenApiGeneratorToSpringBoot4
   - org.openrewrite.java.spring.boot4.MigrateJsonschema2PojoToSpringBoot4
 

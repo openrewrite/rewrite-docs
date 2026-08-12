@@ -326,6 +326,185 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 5.x](/recipes/cucumber/jvm/upgradecucumber5x.md)
 
+## Examples
+##### Example 1
+`UpgradeCucumber2xTest#changeRunnerAndGlueArtifacts`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>2.4.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>2.4.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,1 +7,1 @@
+    <dependencies>
+        <dependency>
+-           <groupId>info.cukes</groupId>
++           <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+@@ -9,1 +9,1 @@
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+-           <version>1.2.5</version>
++           <version>2.4.0</version>
+            <scope>test</scope>
+@@ -13,1 +13,1 @@
+        </dependency>
+        <dependency>
+-           <groupId>info.cukes</groupId>
++           <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+@@ -15,1 +15,1 @@
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-spring</artifactId>
+-           <version>1.2.5</version>
++           <version>2.4.0</version>
+            <scope>test</scope>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeCucumber2xTest#changeRunnerAndGlueArtifacts`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="pom.xml" label="pom.xml">
+
+
+###### Before
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+###### After
+```xml title="pom.xml"
+<project>
+    <groupId>com.example</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>2.4.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>2.4.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- pom.xml
++++ pom.xml
+@@ -7,1 +7,1 @@
+    <dependencies>
+        <dependency>
+-           <groupId>info.cukes</groupId>
++           <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+@@ -9,1 +9,1 @@
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+-           <version>1.2.5</version>
++           <version>2.4.0</version>
+            <scope>test</scope>
+@@ -13,1 +13,1 @@
+        </dependency>
+        <dependency>
+-           <groupId>info.cukes</groupId>
++           <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+@@ -15,1 +15,1 @@
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-spring</artifactId>
+-           <version>1.2.5</version>
++           <version>2.4.0</version>
+            <scope>test</scope>
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

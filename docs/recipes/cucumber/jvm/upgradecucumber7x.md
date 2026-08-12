@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `cucumber-java8` to `cucumber-java`](../../cucumber/jvm/cucumberjava8tojava)
 * [Drop the `strict` option](../../cucumber/jvm/dropstrictoption)
 * [Drop `SummaryPrinter`](../../cucumber/jvm/dropsummaryprinter)
+* [Migrate `RuntimeOptionsBuilder`](../../cucumber/jvm/migrateruntimeoptionsbuilder)
 * [Replace `cucumber-java` step definition regexes with Cucumber expressions](../../cucumber/jvm/regextocucumberexpression)
 * [Cucumber to JUnit test `@Suite`](../../cucumber/jvm/cucumbertojunitplatformsuite)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
@@ -69,6 +70,7 @@ recipeList:
   - org.openrewrite.cucumber.jvm.CucumberJava8ToJava
   - org.openrewrite.cucumber.jvm.DropStrictOption
   - org.openrewrite.cucumber.jvm.DropSummaryPrinter
+  - org.openrewrite.cucumber.jvm.MigrateRuntimeOptionsBuilder
   - org.openrewrite.cucumber.jvm.RegexToCucumberExpression
   - org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:

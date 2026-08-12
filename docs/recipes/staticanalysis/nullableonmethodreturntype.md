@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.NullableOnMethodReturnType**
 
-_This is the way the cool kids do it._
+_This is the way the cool kids do it. Only annotations declared with `@Target(ElementType.TYPE_USE)` are moved, as the return type is a type context; declaration annotations such as `javax.annotation.Nullable` are left on the method._
 
 ## Recipe source
 

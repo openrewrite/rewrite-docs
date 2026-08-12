@@ -48,6 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `com.github.javafaker`
   * newPackageName: `net.datafaker`
+  * recursive: `true`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.github.javafaker`
   * oldArtifactId: `javafaker`
@@ -80,6 +81,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: com.github.javafaker
       newPackageName: net.datafaker
+      recursive: true
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.github.javafaker
       oldArtifactId: javafaker

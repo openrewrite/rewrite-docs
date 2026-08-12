@@ -80,6 +80,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade JaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
 * [Upgrade Java to 17+ for Kafka broker/tools](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/upgradejavaforkafkabroker)
 * [Upgrade Kotlin to 2.3 for Java 25 compatibility](/recipes/java/migrate/upgradekotlinforjava25.md)
+* [Upgrade plugins that are incompatible with Maven 4](/recipes/maven/upgradepluginsformaven4.md)
 * [Upgrade plugins to Java 11 compatible versions](/recipes/java/migrate/upgradepluginsforjava11.md)
 * [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)

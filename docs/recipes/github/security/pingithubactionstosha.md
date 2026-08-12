@@ -33,7 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `Boolean` | pinOfficialActions | *Optional*. When set to `true`, also pins actions from official GitHub organizations (e.g., `actions/*`, `github/*`). Defaults to `false`, meaning only third-party actions are pinned. |  |
-| `String` | githubApiToken | *Optional*. A GitHub personal access token used to resolve tags/branches to commit SHAs via the GitHub API. Only needed for actions not found in the built-in static mapping. Without a token, unauthenticated requests are rate-limited to 60/hour. | `TODO Provide a usage example for the docs` |
+| `String` | githubApiToken | *Optional*. A GitHub personal access token used to resolve tags/branches to commit SHAs via the GitHub API. Only needed for actions not found in the built-in static mapping. Without a token, unauthenticated requests are rate-limited to 60/hour. | `ghp_exampleTokenNotARealToken` |
 | `List` | trustedOwners | *Optional*. Optional list of trusted owners/organizations, actions that belong to these organizations will not be pinned. This option overrides the 'Included actions' list. | `my-organization, my-other-organization` |
 | `List` | includedActions | *Optional*. Optional allow-list of actions to pin. When provided, only `uses:` references matching one of these patterns are pinned; all other actions are left untouched. Patterns may be `owner/repo` (exact match), `owner/*` (any repo in an org), or `owner/repo/subpath` (exact match including a subpath). When omitted or empty, all third-party actions (and optionally official actions, per `pinOfficialActions`) are pinned. | `codecov/codecov-action` |
 

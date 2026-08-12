@@ -96,6 +96,24 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.staticanalysis.table.AnonymousFunctionalInterfaceImplementations" label="AnonymousFunctionalInterfaceImplementations">
+
+### Anonymous functional interface implementations
+**org.openrewrite.staticanalysis.table.AnonymousFunctionalInterfaceImplementations**
+
+_Every anonymous class that implements a functional interface, whether or not it could be rewritten to a lambda, plus the sites that could not be decided either way because the supertype carries incomplete type attribution. Sites that were not rewritten carry the reason why._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path to the source file containing the anonymous class. |
+| Class | The fully qualified name of the class containing the anonymous class. |
+| Functional interface | The fully qualified name of the functional interface being implemented, or the supertype as written at the site when it did not resolve. |
+| Method | The name of the interface's single abstract method, or empty when type attribution was too incomplete to identify one. |
+| Convertible to lambda | Whether the anonymous class could be rewritten to a lambda automatically. |
+| Reason | Why the anonymous class was not rewritten, or empty when it was. Reasons naming missing type information mark sites the recipe is blind to rather than sites that are genuinely unconvertible, which usually means the LST was built without the dependencies those types come from. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

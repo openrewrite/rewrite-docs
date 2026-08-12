@@ -28,6 +28,41 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 6.x](/recipes/cucumber/jvm/upgradecucumber6x.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/test/resources/cucumber.properties" label="src/test/resources/cucumber.properties">
+
+
+###### Before
+```properties title="src/test/resources/cucumber.properties"
+cucumber.options=--glue com.example.app --plugin pretty --tags "@integration and not @wip"
+```
+
+###### After
+```properties title="src/test/resources/cucumber.properties"
+cucumber.filter.tags=@integration and not @wip
+cucumber.glue=com.example.app
+cucumber.plugin=pretty
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/test/resources/cucumber.properties
++++ src/test/resources/cucumber.properties
+@@ -1,1 +1,3 @@
+-cucumber.options=--glue com.example.app --plugin pretty --tags "@integration and not @wip"
++cucumber.filter.tags=@integration and not @wip
++cucumber.glue=com.example.app
++cucumber.plugin=pretty
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -74,6 +74,105 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 5.x](/recipes/cucumber/jvm/upgradecucumber5x.md)
 
+## Examples
+##### Example 1
+`DropTimeoutAttributeTest#dropTimeoutFromStepDefinition`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given(value = "a step", timeout = 1000)
+    void aStep() {
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+
+class StepDefinitions {
+-   @Given(value = "a step", timeout = 1000)
++   @Given("a step")
+    void aStep() {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`DropTimeoutAttributeTest#dropTimeoutFromStepDefinition`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given(value = "a step", timeout = 1000)
+    void aStep() {
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -6,1 +6,1 @@
+
+class StepDefinitions {
+-   @Given(value = "a step", timeout = 1000)
++   @Given("a step")
+    void aStep() {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

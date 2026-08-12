@@ -35,6 +35,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Module has dependency](../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `io.rest-assured`
+  * artifactIdPattern: `rest-assured`
+  * scope: `compile`
+  * invertMarking: `true`
+
+**Recipes**
+
 * [Migrates to ApacheHttpClient 4.5.x](../../apache/httpclient4/upgradeapachehttpclient_4_5)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](../../apache/httpclient5/upgradeapachehttpclientdependencies)
 * [Migrate Apache HttpAsyncClient 4.x classes to HttpClient 5.x](../../apache/httpclient5/upgradeapachehttpclient_5_asyncclientclassmapping)
@@ -76,6 +86,12 @@ description: |
 tags:
   - httpclient
   - apache
+preconditions:
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: io.rest-assured
+      artifactIdPattern: rest-assured
+      scope: compile
+      invertMarking: true
 recipeList:
   - org.openrewrite.apache.httpclient4.UpgradeApacheHttpClient_4_5
   - org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies

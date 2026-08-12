@@ -27,7 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | oldPackageName | The package name to replace. | `com.yourorg.foo` |
 | `String` | newPackageName | New package name to replace the old package name with. | `com.yourorg.bar` |
-| `Boolean` | recursive | *Optional*. Recursively change subpackage names |  |
+| `Boolean` | recursive | *Optional*. Recursively change subpackage names. Defaults to `false`, renaming only types directly in `oldPackageName`; set to `true` to also rename types in its subpackages. |  |
 
 
 ## Used by
@@ -51,7 +51,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Session Hazelcast to Hazelcast Spring Session](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratehazelcastspringsession)
 * [Migrate Spring Validation to Quarkus](/recipes/quarkus/spring/migratespringvalidation.md)
 * [Migrate `WordUtils` to Apache Commons Text](/recipes/apache/commons/lang/wordutilstocommonstext.md)
-* [Migrate `cucumber-java8` to `cucumber-java`](/recipes/cucumber/jvm/cucumberjava8tojava.md)
 * [Migrate `cucumber.api` to `io.cucumber`](/recipes/cucumber/jvm/cucumberapitoiocucumber.md)
 * [Migrate `javax.annotations` to SpotBugs annotations](/recipes/jenkins/javaxannotationstospotbugs.md)
 * [Migrate `org.apache.ws.security` and `org.apache.ws.security.components.crypto` packages to  `org.apache.wss4j.common.ext` and `org.apache.wss4j.common.crypto` packages](/recipes/java/migrate/jakarta/updateapachewssecuritypackages.md)
@@ -139,6 +138,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrates to Apache Commons Math 3.x](/recipes/apache/commons/math/upgradeapachecommonsmath_2_3.md)
 * [Mitigate Unaffected Non-EE Jakarta 9 Packages](/recipes/oracle/weblogic/rewrite/jakarta/mitigateunaffectednoneejakarta9packages.md)
 * [Modernize a Jenkins plugin to the latest recommended versions](/recipes/jenkins/modernizeplugin.md)
+* [Move Bouncy Castle SPHINCS+ classes to `pqc.legacy`](/recipes/java/migrate/bouncycastlesphincsplustopqclegacy.md)
 * [OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`](/recipes/java/testing/junit5/updatemockwebservermockresponse.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
 * [Relocate Spring Boot web server classes to their Spring Boot 4.0 packages](/recipes/java/spring/boot4/relocatewebserverclasses.md)

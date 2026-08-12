@@ -206,6 +206,85 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 
+## Examples
+##### Example 1
+`RelocateWebServerClassesTest#movesEmbeddedTomcatClasses`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
+
+class A {
+    Class<?> type = TomcatWebServer.class;
+}
+```
+
+###### After
+```java
+import org.springframework.boot.tomcat.TomcatWebServer;
+
+class A {
+    Class<?> type = TomcatWebServer.class;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
++import org.springframework.boot.tomcat.TomcatWebServer;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`RelocateWebServerClassesTest#movesEmbeddedTomcatClasses`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
+
+class A {
+    Class<?> type = TomcatWebServer.class;
+}
+```
+
+###### After
+```java
+import org.springframework.boot.tomcat.TomcatWebServer;
+
+class A {
+    Class<?> type = TomcatWebServer.class;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
++import org.springframework.boot.tomcat.TomcatWebServer;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

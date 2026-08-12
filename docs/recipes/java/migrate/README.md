@@ -46,7 +46,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Do not package `java.xml.ws` module in WebSphere Liberty applications](./removedjavaxmlwsmoduleprovided.md)
 * [Enable Lombok annotation processor](./enablelombokannotationprocessor.md)
 * [Java best practices](./javabestpractices.md)
-* [Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8](./bouncycastlefromjdk15ontojdk15to18.md)
+* [Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8](./bouncycastlefromjdk15ontojdk15to18.md)
 * [Migrate Bouncy Castle to `jdk18on`](./bouncecastlefromjdk15ontojdk18on.md)
 * [Migrate to IBM Semeru Runtimes](./ibmsemeru.md)
 * [Migrate to Java 11](./java8tojava11.md)
@@ -73,6 +73,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Upgrade plugins to Java 17 compatible versions](./upgradepluginsforjava17.md)
 * [Upgrade plugins to Java 21 compatible versions](./upgradepluginsforjava21.md)
 * [Upgrade plugins to Java 25 compatible versions](./upgradepluginsforjava25.md)
+* [Use `ASN1*String` for the result of `DER*String.getInstance(..)`](./bouncycastlederstringgetinstancereturntype.md)
 * [Use `com.ibm.jsse2` instead of `com.sun.net.ssl.internal.ssl`](./jredonotusesunnetsslinternalsslprovider.md)
 
 ## Recipes
@@ -100,6 +101,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate com.intellij:annotations to org.jetbrains:annotations](./comintellijannotationstoorgjetbrainsannotations.md)
 * [Migrate from IBM Runtimes to Oracle Runtimes](./ibmjdktooraclejdk.md)
 * [Migrate to JavaEE6](./javaee6.md)
+* [Move Bouncy Castle SPHINCS+ classes to `pqc.legacy`](./bouncycastlesphincsplustopqclegacy.md)
 * [Prefer `java.util.Base64` instead of `sun.misc`](./usejavautilbase64.md)
 * [Remove `Thread.countStackFrames()` method](./deprecatedcountstackframesmethod.md)
 * [Remove explicit casts on `Arrays.asList(..).toArray()`](./castarraysaslisttolist.md)

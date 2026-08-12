@@ -25,6 +25,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace deprecated lifecycle phases](./replacedeprecatedlifecyclephases.md)
 * [Replace modules with subprojects](./replacemoduleswithsubprojects.md)
 * [Replace removed root directory properties](./replaceremovedrootdirectoryproperties.md)
+* [Upgrade plugins that are incompatible with Maven 4](./upgradepluginsformaven4.md)
 * [Upgrade to Maven model version 4.1.0](./upgradetomodelversion410.md)
 
 ## Recipes
@@ -66,6 +67,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove Maven managed dependency](./removemanageddependency.md)
 * [Remove Maven plugin](./removeplugin.md)
 * [Remove Maven plugin dependency](./removeplugindependency.md)
+* [Remove Maven plugin goal](./removeplugingoal.md)
 * [Remove Maven project property](./removeproperty.md)
 * [Remove direct dependencies that are managed by a BOM with incompatible versions](./removebommanageddirectdependencies.md)
 * [Remove duplicate Maven dependencies](./removeduplicatedependencies.md)

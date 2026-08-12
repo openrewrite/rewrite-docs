@@ -35,6 +35,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
+* [Remove dead `throws` declarations for unchecked Jackson exceptions](/recipes/java/jackson/removedeadjacksonthrows.md)
 * [Remove throws exception in `SecurityConfigurer` methods `init` and `configure`](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
 * [Replace `throw new IOException(..)` inside Jackson serializer / deserializer overrides](/recipes/java/jackson/replaceioexceptionthrowinjacksonoverrides.md)
 

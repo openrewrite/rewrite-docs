@@ -59,6 +59,105 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`UpgradeSpringData_4_0Test#chainsSpringData34Migration`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.data.jpa.repository.Query;
+
+interface Repository {
+
+    @Query(value = "select * from foo", nativeQuery = true)
+    void customQuery();
+}
+```
+
+###### After
+```java
+import org.springframework.data.jpa.repository.NativeQuery;
+
+interface Repository {
+
+    @NativeQuery("select * from foo")
+    void customQuery();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.data.jpa.repository.Query;
++import org.springframework.data.jpa.repository.NativeQuery;
+
+@@ -5,1 +5,1 @@
+interface Repository {
+
+-   @Query(value = "select * from foo", nativeQuery = true)
++   @NativeQuery("select * from foo")
+    void customQuery();
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeSpringData_4_0Test#chainsSpringData34Migration`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.data.jpa.repository.Query;
+
+interface Repository {
+
+    @Query(value = "select * from foo", nativeQuery = true)
+    void customQuery();
+}
+```
+
+###### After
+```java
+import org.springframework.data.jpa.repository.NativeQuery;
+
+interface Repository {
+
+    @NativeQuery("select * from foo")
+    void customQuery();
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.springframework.data.jpa.repository.Query;
++import org.springframework.data.jpa.repository.NativeQuery;
+
+@@ -5,1 +5,1 @@
+interface Repository {
+
+-   @Query(value = "select * from foo", nativeQuery = true)
++   @NativeQuery("select * from foo")
+    void customQuery();
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

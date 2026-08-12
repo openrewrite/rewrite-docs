@@ -57,6 +57,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `io.micronaut.configuration.security.ldap`
   * newPackageName: `io.micronaut.security.ldap`
+  * recursive: `true`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `io.micronaut.context.ApplicationContext build(..)`
   * newMethodName: `builder`
@@ -187,6 +188,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: io.micronaut.configuration.security.ldap
       newPackageName: io.micronaut.security.ldap
+      recursive: true
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: io.micronaut.context.ApplicationContext build(..)
       newMethodName: builder
@@ -281,6 +283,85 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`Micronaut2to3PackageMigrationTest#migrateLdapType`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.configuration.security.ldap.LdapAuthenticationProvider;
+
+class A {
+    LdapAuthenticationProvider provider;
+}
+```
+
+###### After
+```java
+import io.micronaut.security.ldap.LdapAuthenticationProvider;
+
+class A {
+    LdapAuthenticationProvider provider;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.micronaut.configuration.security.ldap.LdapAuthenticationProvider;
++import io.micronaut.security.ldap.LdapAuthenticationProvider;
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`Micronaut2to3PackageMigrationTest#migrateLdapType`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import io.micronaut.configuration.security.ldap.LdapAuthenticationProvider;
+
+class A {
+    LdapAuthenticationProvider provider;
+}
+```
+
+###### After
+```java
+import io.micronaut.security.ldap.LdapAuthenticationProvider;
+
+class A {
+    LdapAuthenticationProvider provider;
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import io.micronaut.configuration.security.ldap.LdapAuthenticationProvider;
++import io.micronaut.security.ldap.LdapAuthenticationProvider;
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

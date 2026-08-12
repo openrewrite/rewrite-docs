@@ -106,6 +106,129 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 6.x](/recipes/cucumber/jvm/upgradecucumber6x.md)
 
+## Examples
+##### Example 1
+`MigrateScenarioWriteAndEmbedTest#writeToLogAndEmbedToAttach`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep(Scenario scenario) {
+        scenario.write("a message");
+        scenario.embed(new byte[0], "image/png");
+        scenario.embed(new byte[0], "image/png", "a name");
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep(Scenario scenario) {
+        scenario.log("a message");
+        scenario.attach(new byte[0], "image/png", null);
+        scenario.attach(new byte[0], "image/png", "a name");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,3 +9,3 @@
+    @Given("a step")
+    void aStep(Scenario scenario) {
+-       scenario.write("a message");
+-       scenario.embed(new byte[0], "image/png");
+-       scenario.embed(new byte[0], "image/png", "a name");
++       scenario.log("a message");
++       scenario.attach(new byte[0], "image/png", null);
++       scenario.attach(new byte[0], "image/png", "a name");
+    }
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateScenarioWriteAndEmbedTest#writeToLogAndEmbedToAttach`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep(Scenario scenario) {
+        scenario.write("a message");
+        scenario.embed(new byte[0], "image/png");
+        scenario.embed(new byte[0], "image/png", "a name");
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep(Scenario scenario) {
+        scenario.log("a message");
+        scenario.attach(new byte[0], "image/png", null);
+        scenario.attach(new byte[0], "image/png", "a name");
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -9,3 +9,3 @@
+    @Given("a step")
+    void aStep(Scenario scenario) {
+-       scenario.write("a message");
+-       scenario.embed(new byte[0], "image/png");
+-       scenario.embed(new byte[0], "image/png", "a name");
++       scenario.log("a message");
++       scenario.attach(new byte[0], "image/png", null);
++       scenario.attach(new byte[0], "image/png", "a name");
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

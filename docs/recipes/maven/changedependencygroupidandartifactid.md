@@ -46,6 +46,7 @@ This recipe is used as part of the following composite recipes:
 * [Renamed dependencies](/recipes/apache/camel/upgrade/camel46/renameddependencies.md)
 * [Update the Micronaut Session support](/recipes/java/micronaut/updatemicronautsession.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/axonframework/migration/upgradeaxonframework_4_jakarta.md)
+* [Upgrade to post-quantum ready TLS](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/upgradetopqcreadytls)
 
 ## Example
 

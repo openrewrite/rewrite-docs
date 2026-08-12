@@ -125,17 +125,19 @@ server:
 ###### After
 ```yaml
 server:
-  servlet.path: /tmp/my-server-path
+  servlet:
+    path: /tmp/my-server-path
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -2,1 +2,1 @@
+@@ -2,1 +2,2 @@
 server:
 - servlet-path: /tmp/my-server-path
-+ servlet.path: /tmp/my-server-path
++ servlet:
++   path: /tmp/my-server-path
 
 ```
 </TabItem>

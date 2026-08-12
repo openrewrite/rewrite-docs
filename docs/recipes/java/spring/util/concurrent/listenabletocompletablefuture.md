@@ -28,6 +28,85 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.util.concurrent.ListenableFutureCallback;
+class A {
+    void test(ListenableFuture<String> future) {
+        future.addCallback(new ListenableFutureCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                System.out.println(result);
+            }
+
+            @Override
+            public void onFailure(Throwable ex) {
+                System.err.println(ex.getMessage());
+            }
+        });
+    }
+}
+```
+
+###### After
+```java
+import java.util.concurrent.CompletableFuture;
+
+class A {
+    void test(CompletableFuture<String> future) {
+        future.whenComplete((String result, Throwable ex) -> {
+            if (ex == null) {
+                System.out.println(result);
+            } else {
+                System.err.println(ex.getMessage());
+            }
+        });
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,2 @@
+-import org.springframework.util.concurrent.ListenableFuture;
+-import org.springframework.util.concurrent.ListenableFutureCallback;
++import java.util.concurrent.CompletableFuture;
++
+class A {
+@@ -4,4 +4,3 @@
+import org.springframework.util.concurrent.ListenableFutureCallback;
+class A {
+-   void test(ListenableFuture<String> future) {
+-       future.addCallback(new ListenableFutureCallback<String>() {
+-           @Override
+-           public void onSuccess(String result) {
++   void test(CompletableFuture<String> future) {
++       future.whenComplete((String result, Throwable ex) -> {
++           if (ex == null) {
+                System.out.println(result);
+@@ -9,4 +8,1 @@
+            public void onSuccess(String result) {
+                System.out.println(result);
+-           }
+-
+-           @Override
+-           public void onFailure(Throwable ex) {
++           } else {
+                System.err.println(ex.getMessage());
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -21,6 +21,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate relocated feature constants to DateTimeFeature and EnumFeature](./upgradejackson_2_3_relocatedfeatureconstants.md)
 * [Migrates from Jackson 2.x to Jackson 3.x](./upgradejackson_2_3.md)
 * [Modernize legacy `jackson-core` feature constants](./upgradejackson_2_3_modernizejacksoncorefeatures.md)
+* [Remove dead `throws` declarations for unchecked Jackson exceptions](./removedeadjacksonthrows.md)
 * [Remove redundant Jackson 3 feature flag configurations](./upgradejackson_2_3_removeredundantfeatureflags.md)
 * [Rename Jackson 2.x methods to 3.x equivalents](./upgradejackson_2_3_methodrenames.md)
 * [Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator](./upgradejackson_2_3_jsongeneratormethodrenames.md)
@@ -37,6 +38,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Add `@JsonCreator` to non-public constructors](./addjsoncreatortoprivateconstructors.md)
 * [Add comment to SimpleModule method calls on modules that no longer extend SimpleModule](./commentoutsimplemodulemethodcalls.md)
+* [Find `@JsonSetter(nulls = Nulls.AS_EMPTY)` on empty collection fields](./findjsonsetternullsasemptycollections.md)
 * [Migrate `JSONNode` field iterator for Jackson 3](./jackson3jsonnodefielditerators.md)
 * [Migrate `ObjectMapper.readValue(URL, ...)` to use `openStream()`](./readvalueurltoopenstream.md)
 * [Migrate deprecated `@JsonSerialize(include = ...)` to `@JsonInclude`](./jsonserializeincludetojsoninclude.md)
@@ -45,7 +47,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Remove redundant `@JsonProperty` argument](./removeredundantjsonpropertyvalue.md)
 * [Remove redundant Jackson 3 feature flag configurations](./removeredundantfeatureflags.md)
 * [Remove registrations of modules built-in to Jackson 3](./removebuiltinmoduleregistrations.md)
-* [Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields](./replacejsonignorewithjsonsetter.md)
 * [Replace `IOException` with `JacksonException` in catch clauses](./ioexceptiontojacksonexception.md)
 * [Replace `ObjectMapper.copy()` with `rebuild().build()`](./replaceobjectmappercopy.md)
 * [Replace `disable(MapperFeature.AUTO_DETECT_*)` with `changeDefaultVisibility()` for Jackson 3](./updateautodetectvisibilityconfiguration.md)

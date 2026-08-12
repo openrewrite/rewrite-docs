@@ -56,6 +56,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.fest.assertions.api`
   * newPackageName: `org.assertj.core.api`
+  * recursive: `true`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.fest.assertions.core.Condition`
   * newFullyQualifiedTypeName: `org.assertj.core.api.Condition`
@@ -104,6 +105,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.fest.assertions.api
       newPackageName: org.assertj.core.api
+      recursive: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.fest.assertions.core.Condition
       newFullyQualifiedTypeName: org.assertj.core.api.Condition

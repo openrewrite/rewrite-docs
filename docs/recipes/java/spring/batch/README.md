@@ -23,6 +23,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `JobBuilderFactory` to `JobBuilder`](./migratejobbuilderfactory.md)
 * [Migrate `StepBuilderFactory` to `StepBuilder`](./migratestepbuilderfactory.md)
 * [Migrate method when it annotated by Spring Batch API](./migratemethodannotatedbybatchapi.md)
+* [Migrate to the new chunk-oriented step model](./migratetochunkorientedstepbuilder.md)
 * [Migration invocation of JobParameter.toString to JobParameter.getValue.toString](./jobparametertostring.md)
 * [Remove `DefaultBatchConfigurer`](./removedefaultbatchconfigurer.md)
 * [Transform classes that extend a given Class to implement the given Interface instead](./replacesupportclasswithitsinterface.md)

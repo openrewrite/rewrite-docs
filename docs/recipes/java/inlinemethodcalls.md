@@ -41,7 +41,6 @@ This recipe is used as part of the following composite recipes:
 * [Inline deprecated delegating methods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
 * [Inline deprecated delegating methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-java-security/inlinedeprecatedmethods)
 * [Inline deprecated delegating methods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/recipe/rewrite-program-analysis/inlinedeprecatedmethods)
-* [Inline methods annotated with `@InlineMe`](/recipes/recipes/rewrite/inlinemethods.md)
 
 ## Example
 

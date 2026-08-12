@@ -43,6 +43,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `6.1.x`
 * [Remove method invocations](../../../java/removemethodinvocations)
   * methodPattern: `org.springframework.http.client.SimpleClientHttpRequestFactory setOutputStreaming(boolean)`
+* [Add `-parameters` compiler flag for Spring in Maven](../../../maven/spring/addparameterscompilerflagtomaven)
+* [Add `-parameters` compiler flag for Spring in Gradle](../../../gradle/spring/addparameterscompilerflagtogradle)
 
 </TabItem>
 
@@ -65,6 +67,8 @@ recipeList:
       newVersion: 6.1.x
   - org.openrewrite.java.RemoveMethodInvocations:
       methodPattern: org.springframework.http.client.SimpleClientHttpRequestFactory setOutputStreaming(boolean)
+  - org.openrewrite.maven.spring.AddParametersCompilerFlagToMaven
+  - org.openrewrite.gradle.spring.AddParametersCompilerFlagToGradle
 
 ```
 </TabItem>

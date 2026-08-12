@@ -288,6 +288,54 @@ dependencies {
 ---
 
 ##### Example 3
+`MigrateJacksonPropertyNamingStrategyTest#replaceSnakeCaseStrategyInJsonNamingAnnotation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+class Test {
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(SnakeCaseStrategy.class)
+class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
++import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+@@ -4,1 +4,1 @@
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
++@JsonNaming(SnakeCaseStrategy.class)
+class Test {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 4
 `Gradle#switchArtifactIdAndUpdateVersionNumber`
 
 
@@ -349,7 +397,7 @@ dependencies {
 
 ---
 
-##### Example 4
+##### Example 5
 `Maven#switchArtifactIdAndUpdateVersionNumber`
 
 
@@ -409,6 +457,54 @@ dependencies {
 +     <artifactId>mysql-connector-j</artifactId>
 +     <version>8.0.33</version>
       <scope>runtime</scope>
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
+`MigrateJacksonPropertyNamingStrategyTest#replaceSnakeCaseStrategyInJsonNamingAnnotation`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+class Test {
+}
+```
+
+###### After
+```java
+import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(SnakeCaseStrategy.class)
+class Test {
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
++import com.fasterxml.jackson.databind.PropertyNamingStrategies.SnakeCaseStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+@@ -4,1 +4,1 @@
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
++@JsonNaming(SnakeCaseStrategy.class)
+class Test {
 ```
 </TabItem>
 </Tabs>

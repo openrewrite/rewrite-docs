@@ -398,7 +398,11 @@ spring:
 
 ###### After
 ```yaml title="src/main/resources/application.yml"
-management.tracing.baggage.correlation.enabled: true
+management:
+  tracing:
+    baggage:
+      correlation:
+        enabled: true
 ```
 
 </TabItem>
@@ -407,12 +411,16 @@ management.tracing.baggage.correlation.enabled: true
 ```diff
 --- src/main/resources/application.yml
 +++ src/main/resources/application.yml
-@@ -1,4 +1,1 @@
+@@ -1,4 +1,5 @@
 -spring:
 -   sleuth:
 -       baggage:
 -           correlation-enabled: true
-+management.tracing.baggage.correlation.enabled: true
++management:
++ tracing:
++   baggage:
++     correlation:
++       enabled: true
 
 ```
 </TabItem>
@@ -527,7 +535,11 @@ spring:
 
 ###### After
 ```yaml title="src/main/resources/application.yml"
-management.tracing.baggage.correlation.enabled: true
+management:
+  tracing:
+    baggage:
+      correlation:
+        enabled: true
 ```
 
 </TabItem>
@@ -536,12 +548,16 @@ management.tracing.baggage.correlation.enabled: true
 ```diff
 --- src/main/resources/application.yml
 +++ src/main/resources/application.yml
-@@ -1,4 +1,1 @@
+@@ -1,4 +1,5 @@
 -spring:
 -   sleuth:
 -       baggage:
 -           correlation-enabled: true
-+management.tracing.baggage.correlation.enabled: true
++management:
++ tracing:
++   baggage:
++     correlation:
++       enabled: true
 
 ```
 </TabItem>

@@ -50,6 +50,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Inline calls to deprecated OpenRewrite methods](/recipes/recipes/rewrite/inlinemethods.md)
+
+
 ## Usage
 
 <RunRecipe

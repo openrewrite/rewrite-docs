@@ -21,6 +21,45 @@ _Locates `public` method declarations that are not documented with a Javadoc com
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example;
+class A {
+    public void foo(String s, int i) {
+    }
+}
+```
+
+###### After
+```java
+package com.example;
+class A {
+    public void /*~~>*/foo(String s, int i) {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package com.example;
+class A {
+-   public void foo(String s, int i) {
++   public void /*~~>*/foo(String s, int i) {
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

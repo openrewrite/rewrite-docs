@@ -192,7 +192,7 @@ _18 recipes_
 
 _License: Apache License Version 2.0_
 
-_80 recipes_
+_84 recipes_
 
 * [org.openrewrite.gradle.AddDependency](/recipes/gradle/adddependency.md)
   * **Add Gradle dependency**
@@ -323,9 +323,18 @@ _80 recipes_
 * [org.openrewrite.gradle.gradle8.JacocoReportDeprecations](/recipes/gradle/gradle8/jacocoreportdeprecations.md)
   * **Replace Gradle 8 introduced deprecations in JaCoCo report task**
   * Set the `enabled` to `required` and the `destination` to `outputLocation` for Reports deprecations that were removed in gradle 8. See [the gradle docs on this topic](https://docs.gradle.org/current/userguide/upgrading_version_7.html#report_and_testreport_api_cleanup).
+* [org.openrewrite.gradle.gradle9.MigrateIsolatedProjectsProperties](/recipes/gradle/gradle9/migrateisolatedprojectsproperties.md)
+  * **Rename the incubating `org.gradle.unsafe.isolated-projects` properties**
+  * Gradle 9.7 promotes the Isolated Projects feature flags out of the `unsafe` namespace and deprecates the legacy property names. `org.gradle.unsafe.isolated-projects` becomes `org.gradle.isolated-projects`, `org.gradle.unsafe.isolated-projects.diagnostics` becomes `org.gradle.isolated-projects.diagnostics` and `org.gradle.unsafe.isolated-projects.dangerously-ignore-problems` becomes `org.gradle.isolated-projects.dangerously-ignore-problems`. The legacy names still work as aliases, but will be removed in a future release.
 * [org.openrewrite.gradle.gradle9.OneDependencyDeclarationPerStatement](/recipes/gradle/gradle9/onedependencydeclarationperstatement.md)
   * **Use one dependency declaration per statement**
   * The Gradle Groovy DSL accepts multiple coordinates in a single configuration call (e.g. `implementation 'a:b:1.0', 'c:d:2.0'`), but the Kotlin DSL does not. Gradle's best practices recommend declaring a single dependency per statement; see the [Gradle dependency best practices](https://docs.gradle.org/current/userguide/best_practices_dependencies.html). This recipe splits multi-coordinate Groovy DSL configuration calls into one call per coordinate. Run this as a cleanup pass before other dependency-aware recipes (e.g. `UpgradeDependencyVersion`, `ChangeDependency`, `RemoveDependency`): those recipes use the `GradleDependency` trait, which only inspects the first argument of a configuration call. Coordinates in later positions are invisible to them until this recipe reshapes the source into one declaration per statement.
+* [org.openrewrite.gradle.gradle9.RemoveExitEnvironmentVar](/recipes/gradle/gradle9/removeexitenvironmentvar.md)
+  * **Remove the deprecated `exitEnvironmentVar` start script property**
+  * Gradle 9.5 reworked the Windows start script template so that `CreateStartScripts.getExitEnvironmentVar()` and `setExitEnvironmentVar(String)` no longer affect the generated scripts, and Gradle 9.6 deprecates them. This recipe removes `exitEnvironmentVar` configuration from `CreateStartScripts` task configuration, and drops a configuration block that is left empty as a result. Custom start script templates that still reference the variable need to be updated by hand.
+* [org.openrewrite.gradle.gradle9.RemovePmdTargetJdk](/recipes/gradle/gradle9/removepmdtargetjdk.md)
+  * **Remove the deprecated PMD `targetJdk` property**
+  * Gradle 9.6 deprecates `Pmd.getTargetJdk()`, `PmdExtension.getTargetJdk()`, their setters, and the `TargetJdk` enum, with no replacement: PMD selects a parser based on the source set's Java version instead. This recipe removes `targetJdk` configuration from `pmd \{ \}` extension blocks and from `Pmd` task configuration, and drops a configuration block that is left empty as a result.
 * [org.openrewrite.gradle.gradle9.RewriteSpreadAllInConfigurationsBlock](/recipes/gradle/gradle9/rewritespreadallinconfigurationsblock.md)
   * **Replace spread-`all*` calls in `configurations` blocks with `configurations.all \{ \}`**
   * Gradle 9 throws `Cannot mutate the dependencies of configuration ':all' after the configuration was resolved.` when a `configurations \{ \}` closure uses Groovy's spread-dot form `all*.&lt;method&gt;(args)`. Rewrite each such call to the closure form `configurations.all \{ &lt;method&gt;(args) \}`, which preserves eager-`all` semantics but is accepted by Gradle 9. Only applied when every statement in the `configurations \{ \}` block uses the spread form; mixed blocks are left untouched for manual review.
@@ -344,6 +353,9 @@ _80 recipes_
 * [org.openrewrite.gradle.gradle9.UseProjectDependencyInsteadOfModuleCoordinates](/recipes/gradle/gradle9/useprojectdependencyinsteadofmodulecoordinates.md)
   * **Use `project(...)` dependency notation instead of the current project's module coordinates**
   * Gradle 9.3 deprecates depending on the current project by its own `group:name:version` module coordinates. In Gradle 9.x such a declaration resolves to the project's local outgoing variants, but in Gradle 10 it will instead attempt resolution from a repository. This recipe replaces a dependency declaration whose coordinates match the current project with the equivalent `project(&quot;&lt;path&gt;&quot;)` notation. Requires the `GradleProject` marker (available when parsed by the OpenRewrite Gradle plugin) to know the current project's coordinates and path.
+* [org.openrewrite.gradle.gradle9.UseRepositoryHandlerActionOverloads](/recipes/gradle/gradle9/userepositoryhandleractionoverloads.md)
+  * **Use the `Action` overloads of `flatDir` and `mavenCentral`**
+  * Gradle 9.6 deprecates `RepositoryHandler.flatDir(Map)` and `RepositoryHandler.mavenCentral(Map)` in favor of the `Action` overloads that configure the repository through its own API. This recipe rewrites `flatDir dirs: 'libs'` to `flatDir \{ dirs 'libs' \}` and `mavenCentral name: 'central2'` to `mavenCentral \{ name = 'central2' \}`. Map notation carrying keys with no straightforward equivalent, such as the separately deprecated `artifactUrls`, is left alone.
 * [org.openrewrite.gradle.gradle9.UseVersionClosure](/recipes/gradle/gradle9/useversionclosure.md)
   * **Use `version \{ \}` closure instead of `version = \{ \}` assignment**
   * Converts `version = \{ ... \}` assignment syntax to `version \{ ... \}` closure call syntax in Gradle dependency declarations. The assignment form is not valid Gradle DSL; the closure form invokes the version spec method directly.
@@ -946,7 +958,7 @@ _11 recipes_
 
 _License: Apache License Version 2.0_
 
-_92 recipes_
+_94 recipes_
 
 * [org.openrewrite.maven.AddAnnotationProcessor](/recipes/maven/addannotationprocessor.md)
   * **Add an annotation processor to `maven-compiler-plugin`**
@@ -1049,7 +1061,7 @@ _92 recipes_
   * This recipe processes Maven POMs, converting all `&lt;dependencyManagement&gt;` entries into runtime scoped `&lt;dependencies&gt;` entries. Import scoped BOMs (like jackson-bom) are left unmodified in `&lt;dependencyManagement&gt;`. Some style guidelines prefer that `&lt;dependencyManagement&gt;` be used only for BOMs. This maintain that style while avoiding introducing new symbols onto the compile classpath unintentionally.
 * [org.openrewrite.maven.MigrateToMaven4](/recipes/maven/migratetomaven4.md)
   * **Migrate to Maven 4**
-  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, lifecycle phases, removes duplicate plugin declarations, and replaces removed properties to ensure compatibility with Maven 4.
+  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, lifecycle phases, removes duplicate plugin and dependency declarations, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4.
 * [org.openrewrite.maven.ModernizeObsoletePoms](/recipes/maven/modernizeobsoletepoms.md)
   * **Modernize obsolete Maven poms**
   * Very old Maven poms are no longer supported by current versions of Maven. This recipe updates poms with `&lt;pomVersion&gt;3&lt;/pomVersion&gt;` to `&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;` of the Maven pom schema. This does not attempt to upgrade old dependencies or plugins and is best regarded as the starting point of a migration rather than an end-point.
@@ -1083,6 +1095,9 @@ _92 recipes_
 * [org.openrewrite.maven.RemovePluginDependency](/recipes/maven/removeplugindependency.md)
   * **Remove Maven plugin dependency**
   * Removes a dependency from the &lt;dependencies&gt; section of a plugin in the pom.xml.
+* [org.openrewrite.maven.RemovePluginGoal](/recipes/maven/removeplugingoal.md)
+  * **Remove Maven plugin goal**
+  * Removes a goal from a Maven plugin wherever it is declared: directly under a `&lt;plugin&gt;`, inside `&lt;executions&gt;`, and within `&lt;build&gt;`, `&lt;pluginManagement&gt;`, or `&lt;profiles&gt;`. If removing the goal leaves an `&lt;execution&gt;` with no remaining goals, the execution is removed. If all executions are removed, the `&lt;executions&gt;` element is also removed.
 * [org.openrewrite.maven.RemoveProperty](/recipes/maven/removeproperty.md)
   * **Remove Maven project property**
   * Removes the specified Maven project property from the pom.xml.
@@ -1134,6 +1149,9 @@ _92 recipes_
 * [org.openrewrite.maven.UpgradePluginVersion](/recipes/maven/upgradepluginversion.md)
   * **Upgrade Maven plugin version**
   * Upgrade the version of a plugin using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.
+* [org.openrewrite.maven.UpgradePluginsForMaven4](/recipes/maven/upgradepluginsformaven4.md)
+  * **Upgrade plugins that are incompatible with Maven 4**
+  * Upgrades plugins that are known to fail under Maven 4, using the minimum working versions applied by Apache's own [`mvnup upgrade --plugins`](https://maven.apache.org/tools/mvnup.html) as a floor while accepting any newer release within the same major version. Plugins already at or above that floor are upgraded to the latest such release; plugins that declare no version are left alone. `quarkus-maven-plugin` is held at its floor, as its version is coupled to the Quarkus platform BOM. Plugin dependencies known to break Maven 4 are upgraded as well.
 * [org.openrewrite.maven.UpgradeToModelVersion410](/recipes/maven/upgradetomodelversion410.md)
   * **Upgrade to Maven model version 4.1.0**
   * Upgrades Maven POMs from model version 4.0.0 to 4.1.0, enabling new Maven 4 features like `&lt;subprojects&gt;`, `bom` packaging, and automatic version inference. This recipe updates the `&lt;modelVersion&gt;` element, `xmlns` namespace, and `xsi:schemaLocation` from 4.0.0 to 4.1.0.

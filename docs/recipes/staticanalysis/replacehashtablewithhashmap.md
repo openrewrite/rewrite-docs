@@ -32,6 +32,57 @@ This recipe is used as part of the following composite recipes:
 
 * [Modernize collections](/recipes/staticanalysis/modernizecollections.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import java.util.Hashtable;
+
+class Test {
+    int test() {
+        Hashtable<String, Integer> table = new Hashtable<>();
+        table.put("a", 1);
+        return table.size();
+    }
+}
+```
+
+###### After
+```java
+import java.util.HashMap;
+
+class Test {
+    int test() {
+        HashMap<String, Integer> table = new HashMap<>();
+        table.put("a", 1);
+        return table.size();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import java.util.Hashtable;
++import java.util.HashMap;
+
+@@ -5,1 +5,1 @@
+class Test {
+    int test() {
+-       Hashtable<String, Integer> table = new Hashtable<>();
++       HashMap<String, Integer> table = new HashMap<>();
+        table.put("a", 1);
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

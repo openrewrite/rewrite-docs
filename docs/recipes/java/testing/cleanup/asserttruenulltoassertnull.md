@@ -28,6 +28,61 @@ This recipe is used as part of the following composite recipes:
 
 * [Clean Up Assertions](/recipes/java/testing/junit5/cleanupassertions.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+import org.junit.jupiter.api.Assertions.assertTrue
+
+class FooTest {
+    fun test(foundCreditLine: Any?) {
+        assertTrue(foundCreditLine == null)
+        assertTrue(foundCreditLine == null, "message")
+        assertTrue(null == foundCreditLine)
+    }
+}
+```
+
+###### After
+```kotlin
+import org.junit.jupiter.api.Assertions.assertNull
+
+class FooTest {
+    fun test(foundCreditLine: Any?) {
+        assertNull(foundCreditLine)
+        assertNull(foundCreditLine, "message")
+        assertNull(foundCreditLine)
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.jupiter.api.Assertions.assertTrue
++import org.junit.jupiter.api.Assertions.assertNull
+
+@@ -5,3 +5,3 @@
+class FooTest {
+    fun test(foundCreditLine: Any?) {
+-       assertTrue(foundCreditLine == null)
+-       assertTrue(foundCreditLine == null, "message")
+-       assertTrue(null == foundCreditLine)
++       assertNull(foundCreditLine)
++       assertNull(foundCreditLine, "message")
++       assertNull(foundCreditLine)
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

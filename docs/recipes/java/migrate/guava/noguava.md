@@ -387,6 +387,62 @@ class A {
 ---
 
 ##### Example 5
+`NoGuavaUnsignedTest#unsignedInts`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.primitives.UnsignedInts;
+
+class Test {
+    int compare = UnsignedInts.compare(1, 2);
+    int divide = UnsignedInts.divide(6, 3);
+    int remainder = UnsignedInts.remainder(7, 3);
+    int parse = UnsignedInts.parseUnsignedInt("42");
+}
+```
+
+###### After
+```java
+class Test {
+    int compare = Integer.compareUnsigned(1, 2);
+    int divide = Integer.divideUnsigned(6, 3);
+    int remainder = Integer.remainderUnsigned(7, 3);
+    int parse = Integer.parseUnsignedInt("42");
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import com.google.common.primitives.UnsignedInts;
+-
+class Test {
+@@ -4,4 +2,4 @@
+
+class Test {
+-   int compare = UnsignedInts.compare(1, 2);
+-   int divide = UnsignedInts.divide(6, 3);
+-   int remainder = UnsignedInts.remainder(7, 3);
+-   int parse = UnsignedInts.parseUnsignedInt("42");
++   int compare = Integer.compareUnsigned(1, 2);
++   int divide = Integer.divideUnsigned(6, 3);
++   int remainder = Integer.remainderUnsigned(7, 3);
++   int parse = Integer.parseUnsignedInt("42");
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 6
 `NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 
@@ -444,7 +500,7 @@ class A {
 
 ---
 
-##### Example 6
+##### Example 7
 `PreferJavaUtilOptionalTest#absentToEmpty`
 
 
@@ -494,7 +550,7 @@ class A {
 
 ---
 
-##### Example 7
+##### Example 8
 `NoGuavaJava21Test#preferMathClampForDouble`
 
 
@@ -542,7 +598,7 @@ class Test {
 
 ---
 
-##### Example 8
+##### Example 9
 `NoGuavaPredicatesEqualToTest#predicatesEqualToToPredicateIsEqual`
 
 
@@ -594,7 +650,7 @@ class A {
 
 ---
 
-##### Example 9
+##### Example 10
 `NoGuavaSetsFilterTest#replaceSetsFilter`
 
 
@@ -657,7 +713,7 @@ class Test {
 
 ---
 
-##### Example 10
+##### Example 11
 `NoGuavaTest#moreObjectsFirstNonNullToObjectsRequireNonNullElse`
 
 
@@ -707,7 +763,63 @@ class A {
 
 ---
 
-##### Example 11
+##### Example 12
+`NoGuavaUnsignedTest#unsignedInts`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import com.google.common.primitives.UnsignedInts;
+
+class Test {
+    int compare = UnsignedInts.compare(1, 2);
+    int divide = UnsignedInts.divide(6, 3);
+    int remainder = UnsignedInts.remainder(7, 3);
+    int parse = UnsignedInts.parseUnsignedInt("42");
+}
+```
+
+###### After
+```java
+class Test {
+    int compare = Integer.compareUnsigned(1, 2);
+    int divide = Integer.divideUnsigned(6, 3);
+    int remainder = Integer.remainderUnsigned(7, 3);
+    int parse = Integer.parseUnsignedInt("42");
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,2 +1,0 @@
+-import com.google.common.primitives.UnsignedInts;
+-
+class Test {
+@@ -4,4 +2,4 @@
+
+class Test {
+-   int compare = UnsignedInts.compare(1, 2);
+-   int divide = UnsignedInts.divide(6, 3);
+-   int remainder = UnsignedInts.remainder(7, 3);
+-   int parse = UnsignedInts.parseUnsignedInt("42");
++   int compare = Integer.compareUnsigned(1, 2);
++   int divide = Integer.divideUnsigned(6, 3);
++   int remainder = Integer.remainderUnsigned(7, 3);
++   int parse = Integer.parseUnsignedInt("42");
+}
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 13
 `NotYetImplemented#getCatchIllegalStateExceptionToNoSuchElementException`
 
 
@@ -765,7 +877,7 @@ class A {
 
 ---
 
-##### Example 12
+##### Example 14
 `PreferJavaUtilOptionalTest#absentToEmpty`
 
 

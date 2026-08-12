@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.recipes.MissingOptionExample**
 
-_Find `@Option` annotations that are missing `example` values for documentation._
+_Find `@Option` annotations that are missing `example` values for documentation, and add a TODO comment._
 
 ## Recipe source
 
@@ -61,7 +61,8 @@ import org.openrewrite.Option;
 import org.openrewrite.Recipe;
 
 class SomeRecipe extends Recipe {
-    @Option(example = "TODO Provide a usage example for the docs", displayName = "Test", description = "Test")
+    // TODO Provide a usage example for the docs
+    @Option(displayName = "Test", description = "Test")
     private String test;
 
     @Override
@@ -79,12 +80,11 @@ class SomeRecipe extends Recipe {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -5,1 +5,1 @@
+@@ -5,0 +5,1 @@
 
 class SomeRecipe extends Recipe {
--   @Option(displayName = "Test", description = "Test")
-+   @Option(example = "TODO Provide a usage example for the docs", displayName = "Test", description = "Test")
-    private String test;
++   // TODO Provide a usage example for the docs
+    @Option(displayName = "Test", description = "Test")
 ```
 </TabItem>
 </Tabs>

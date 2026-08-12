@@ -395,7 +395,7 @@ _121 recipes_
 
 _License: Moderne Source Available License_
 
-_20 recipes_
+_24 recipes_
 
 * [org.openrewrite.cucumber.jvm.CollapseCucumberOptionsTags](/recipes/cucumber/jvm/collapsecucumberoptionstags.md)
   * **Collapse `@CucumberOptions` tags into a single tag expression**
@@ -408,13 +408,16 @@ _20 recipes_
   * Cucumber-JVM 5.0.0 moved the `cucumber.api` types to `io.cucumber`, but not as a single package rename: types were spread over `io.cucumber.java`, `io.cucumber.junit`, `io.cucumber.testng`, `io.cucumber.plugin` and `io.cucumber.core`. This recipe maps each `cucumber.api` type onto the package it actually moved to.
 * [org.openrewrite.cucumber.jvm.CucumberJava8HookDefinitionToCucumberJava](/recipes/cucumber/jvm/cucumberjava8hookdefinitiontocucumberjava.md)
   * **Replace `cucumber-java8` hook definition with `cucumber-java`**
-  * Replace `LambdaGlue` hook definitions with new annotated methods with the same body.
+  * Replace `LambdaGlue` hook definitions with new annotated methods with the same body, or, for a method reference, with a body calling the method it refers to.
 * [org.openrewrite.cucumber.jvm.CucumberJava8StepDefinitionToCucumberJava](/recipes/cucumber/jvm/cucumberjava8stepdefinitiontocucumberjava.md)
   * **Replace `cucumber-java8` step definitions with `cucumber-java`**
-  * Replace `StepDefinitionBody` methods with `StepDefinitionAnnotations` on new methods with the same body.
+  * Replace `StepDefinitionBody` methods with `StepDefinitionAnnotations` on new methods with the same body, or, for a method reference, with a body calling the method it refers to.
 * [org.openrewrite.cucumber.jvm.CucumberJava8ToJava](/recipes/cucumber/jvm/cucumberjava8tojava.md)
   * **Migrate `cucumber-java8` to `cucumber-java`**
-  * Migrates `cucumber-java8` step definitions and `LambdaGlue` hooks to `cucumber-java` annotated methods.
+  * Migrates `cucumber-java8` step definitions, `LambdaGlue` hooks and `LambdaGlue` type registrations to `cucumber-java` annotated methods.
+* [org.openrewrite.cucumber.jvm.CucumberJava8TypeDefinitionToCucumberJava](/recipes/cucumber/jvm/cucumberjava8typedefinitiontocucumberjava.md)
+  * **Replace `cucumber-java8` type definitions with `cucumber-java`**
+  * Replace `LambdaGlue` `DataTableType`, `ParameterType`, `DocStringType` and `Default*Transformer` registrations with `cucumber-java` annotated methods with the same body.
 * [org.openrewrite.cucumber.jvm.CucumberOptionsPropertyToIndividualProperties](/recipes/cucumber/jvm/cucumberoptionspropertytoindividualproperties.md)
   * **Migrate the `cucumber.options` property**
   * Cucumber-JVM 6.0.0 removed `cucumber.options`, which passed command line options as a single string, in favour of an individual property per option. This recipe splits the property into its replacements, both in `.properties` files and in Maven Surefire or Failsafe `systemPropertyVariables`. Options without a property equivalent, such as `--threads`, have no migration path; there the property is left untouched, with a `TODO` comment added above it.
@@ -436,15 +439,24 @@ _20 recipes_
 * [org.openrewrite.cucumber.jvm.FixTeluguLanguageCode](/recipes/cucumber/jvm/fixtelugulanguagecode.md)
   * **Fix the Telugu language code**
   * Cucumber-JVM 7.0.0 removed the incorrect ISO 639-1 code `tl` for Telugu, which is now consistently `te`.
+* [org.openrewrite.cucumber.jvm.MigrateCucumberJava8ScenarioAndStatus](/recipes/cucumber/jvm/migratecucumberjava8scenarioandstatus.md)
+  * **Migrate `io.cucumber.java8.Scenario` and `io.cucumber.java8.Status`**
+  * `Scenario` and `Status` are the only `io.cucumber.java8` types with an `io.cucumber.java` counterpart; the language interfaces such as `En` and the `LambdaGlue` body types have none, so renaming the package wholesale would point whatever the migration could not convert at a type that does not exist. Where such a body type does survive it also still expects the `cucumber-java8` `Scenario`, as in an anonymous `HookBody`, so leave both types be until the last of the lambda glue is gone.
+* [org.openrewrite.cucumber.jvm.MigrateRuntimeOptionsBuilder](/recipes/cucumber/jvm/migrateruntimeoptionsbuilder.md)
+  * **Migrate `RuntimeOptionsBuilder`**
+  * Cucumber-JVM 7.0.0 dropped `RuntimeOptionsBuilder.addDefaultFormatterIfAbsent()`, as no formatter is added implicitly any more, and renamed `addDefaultSummaryPrinterIfAbsent()` to `addDefaultSummaryPrinterIfNotDisabled()`, which defers to the new `setNoSummary()`. Mirrors the change Cucumber-JVM made to its own `io.cucumber.core.cli.Main`, which projects that run Cucumber programmatically tend to have copied.
 * [org.openrewrite.cucumber.jvm.MigrateScenarioWriteAndEmbed](/recipes/cucumber/jvm/migratescenariowriteandembed.md)
   * **Migrate `Scenario.write` and `Scenario.embed`**
   * Cucumber-JVM 6.0.0 removed `Scenario.write(String)` and `Scenario.embed(byte[], String)` along with `Scenario.embed(byte[], String, String)`, in favor of `Scenario.log(String)` and `Scenario.attach(byte[], String, String)`. The two argument `embed` emitted an attachment without a name, which `attach` expresses as a `null` name.
 * [org.openrewrite.cucumber.jvm.RegexToCucumberExpression](/recipes/cucumber/jvm/regextocucumberexpression.md)
   * **Replace `cucumber-java` step definition regexes with Cucumber expressions**
   * Strip regex prefix and suffix from step annotation expressions arguments where possible.
+* [org.openrewrite.cucumber.jvm.RemoveCucumberJava8Dependency](/recipes/cucumber/jvm/removecucumberjava8dependency.md)
+  * **Remove `cucumber-java8` once nothing is left needing it**
+  * Removes the `cucumber-java8` dependency where every `LambdaGlue` call migrates to `cucumber-java`, and retains it wherever one is left behind. Read from the glue as it stands before the migration, as what the migration leaves behind only becomes visible to a scanning recipe in the cycle after, which a build tool run never reaches. Glue left anywhere retains the dependency everywhere, an unused dependency being the one outcome here that still compiles.
 * [org.openrewrite.cucumber.jvm.TypeRegistryConfigurerToAnnotations](/recipes/cucumber/jvm/typeregistryconfigurertoannotations.md)
   * **Replace `TypeRegistryConfigurer` with cucumber-java annotations**
-  * Cucumber-JVM 7.0.0 removed `TypeRegistryConfigurer`; replace implementations with `@ParameterType`, `@DataTableType` and `@DocStringType` annotated glue methods. Classes whose `configureTypeRegistry` method cannot be converted in full are left untouched.
+  * Cucumber-JVM 7.0.0 removed `TypeRegistryConfigurer`; replace implementations with `@ParameterType`, `@DataTableType`, `@DocStringType` and `@Default*Transformer` annotated glue methods. Classes whose `configureTypeRegistry` method cannot be converted in full are left untouched, with a `TODO` comment added above the registration that could not be converted.
 * [org.openrewrite.cucumber.jvm.UpgradeCucumber2x](/recipes/cucumber/jvm/upgradecucumber2x.md)
   * **Upgrade to Cucumber-JVM 2.x**
   * Upgrade to Cucumber-JVM 2.x from any previous version.
@@ -816,7 +828,7 @@ _22 recipes_
 
 _License: Moderne Source Available License_
 
-_26 recipes_
+_28 recipes_
 
 * [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes.md)
   * **AddScalarPreferStandardBasicTypesForHibernate5**
@@ -896,12 +908,18 @@ _26 recipes_
 * [org.openrewrite.hibernate.validator.HibernateValidator_8_0](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
   * **Migrate to Hibernate Validator 8.0.x**
   * This recipe will apply changes commonly needed when migrating to Hibernate Validator 8.0.x.
+* [org.openrewrite.hibernate.validator.HibernateValidator_9_1](/recipes/hibernate/validator/hibernatevalidator_9_1.md)
+  * **Migrate to Hibernate Validator 9.1.x**
+  * This recipe will apply changes commonly needed when migrating to Hibernate Validator 9.1.x.
+* [org.openrewrite.hibernate.validator.MoveValidToContainerElement](/recipes/hibernate/validator/movevalidtocontainerelement.md)
+  * **Move `@Valid` from the container to its element type**
+  * Hibernate Validator 9.1 deprecates requesting cascaded validation at the container level, and warns while building the metadata for declarations such as `@Valid List&lt;Order&gt; orders`. Rewrites those to the type argument form `List&lt;@Valid Order&gt; orders` that has been available since Bean Validation 2.0. The element type argument is annotated for `Iterable` and `Optional` containers, and the value type argument for `Map`, matching where the built-in value extractors cascade to. `@Valid` on anything other than one of those containers is left alone, as are wildcard, raw, qualified and array type arguments.
 
 ## rewrite-jackson
 
 _License: Apache License Version 2.0_
 
-_46 recipes_
+_47 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -918,6 +936,9 @@ _46 recipes_
 * [org.openrewrite.java.jackson.CommentOutSimpleModuleMethodCalls](/recipes/java/jackson/commentoutsimplemodulemethodcalls.md)
   * **Add comment to SimpleModule method calls on modules that no longer extend SimpleModule**
   * In Jackson 3, some modules (e.g. `JodaModule`) no longer extend `SimpleModule` and instead extend `JacksonModule` directly. This means methods like `addSerializer()` and `addDeserializer()` are no longer available on these types. This recipe adds a TODO comment to flag these call sites for manual migration.
+* [org.openrewrite.java.jackson.FindJsonSetterNullsAsEmptyCollections](/recipes/java/jackson/findjsonsetternullsasemptycollections.md)
+  * **Find `@JsonSetter(nulls = Nulls.AS_EMPTY)` on empty collection fields**
+  * Find `Map` and `Collection` fields that carry `@JsonSetter(nulls = Nulls.AS_EMPTY)`, are initialized with an empty collection, and are no longer hidden by `@JsonIgnore` on the field or its getter, or by a class level `@JsonIgnoreProperties`. In rewrite-jackson 1.17.0 through 1.28.0 the Jackson 2 to 3 migration replaced `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on exactly these fields, which starts serializing properties that were deliberately hidden wherever the field is otherwise visible, such as through a getter. Run this recipe to audit repositories migrated with those versions; every match that should stay out of the JSON output needs `@JsonIgnore` restored, which the `addJsonIgnore` option does for you.
 * [org.openrewrite.java.jackson.IOExceptionToJacksonException](/recipes/java/jackson/ioexceptiontojacksonexception.md)
   * **Replace `IOException` with `JacksonException` in catch clauses**
   * In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`.
@@ -945,6 +966,9 @@ _46 recipes_
 * [org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations](/recipes/java/jackson/removebuiltinmoduleregistrations.md)
   * **Remove registrations of modules built-in to Jackson 3**
   * In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules.
+* [org.openrewrite.java.jackson.RemoveDeadJacksonThrows](/recipes/java/jackson/removedeadjacksonthrows.md)
+  * **Remove dead `throws` declarations for unchecked Jackson exceptions**
+  * In Jackson 3 the exception hierarchy is rerooted under `JacksonException`, which extends `RuntimeException`. Any surviving `throws` for a Jackson exception type is dead: callers are not required to handle it, and the declaration misleads readers into thinking checked-exception handling is needed. Removes `throws` for `JacksonException` and its subtypes (e.g. `DatabindException`) from both methods and constructors. Assumes the Jackson 2 to 3 package changes have already run, so all Jackson exception types live under `tools.jackson`. Does not touch `throws IOException` (still a checked exception) or non-Jackson exception types.
 * [org.openrewrite.java.jackson.RemoveRedundantFeatureFlags](/recipes/java/jackson/removeredundantfeatureflags.md)
   * **Remove redundant Jackson 3 feature flag configurations**
   * Remove `ObjectMapper` feature flag configurations that set values to their new Jackson 3 defaults. For example, `disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)` and `configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)` are redundant since this is now disabled by default in Jackson 3.
@@ -954,9 +978,6 @@ _46 recipes_
 * [org.openrewrite.java.jackson.ReplaceIOExceptionThrowInJacksonOverrides](/recipes/java/jackson/replaceioexceptionthrowinjacksonoverrides.md)
   * **Replace `throw new IOException(..)` inside Jackson serializer / deserializer overrides**
   * In Jackson 3, `serialize()` and `deserialize()` methods no longer declare `throws IOException`. This recipe removes the `throws IOException` declaration from overrides of `JsonSerializer.serialize`, `JsonSerializer.serializeWithType`, `JsonDeserializer.deserialize`, and `JsonDeserializer.deserializeWithType`, and rewrites `throw new IOException(msg[, cause])` inside those overrides to `JsonMappingException.from(&lt;generator|parser&gt;, msg[, cause])`. A companion type change later migrates `JsonMappingException` to `tools.jackson.databind.DatabindException`.
-* [org.openrewrite.java.jackson.ReplaceJsonIgnoreWithJsonSetter](/recipes/java/jackson/replacejsonignorewithjsonsetter.md)
-  * **Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields**
-  * In Jackson 3, `@JsonIgnore` on fields initialized with empty collections causes the field value to become `null` instead of maintaining the empty collection. This recipe replaces `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on `Map` and `Collection` fields that have an empty collection initializer.
 * [org.openrewrite.java.jackson.ReplaceObjectMapperCopy](/recipes/java/jackson/replaceobjectmappercopy.md)
   * **Replace `ObjectMapper.copy()` with `rebuild().build()`**
   * In Jackson 3, `ObjectMapper.copy()` was removed. Use `mapper.rebuild().build()` instead.
@@ -1806,7 +1827,7 @@ _39 recipes_
 
 _License: Moderne Source Available License_
 
-_470 recipes_
+_472 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
@@ -1855,7 +1876,7 @@ _470 recipes_
   * Check for missing methods required by interfaces and adds them.
 * [org.openrewrite.java.migrate.AddMockitoJavaAgentToMavenSurefirePlugin](/recipes/java/migrate/addmockitojavaagenttomavensurefireplugin.md)
   * **Add Mockito Java Agent to Maven Surefire Plugin**
-  * Adds required configuration to specifically enable the Mockito/Bytebuddy Java agent in the Maven Surefire plugin for Java 21 compatibility.
+  * Mockito attaches its Byte Buddy agent to the running JVM at test time, which the JDK has warned about since Java 21 and intends to disallow. This recipe instead loads the agent up front through the Maven Surefire plugin, adding the `maven-dependency-plugin` `properties` goal to resolve the agent jar path, to silence the warning and stay ahead of the JDK change.
 * [org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean](/recipes/java/migrate/addstaticvariableonproducersessionbean.md)
   * **Adds `static` modifier to `@Produces` fields that are in session beans**
   * Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`.
@@ -1876,10 +1897,16 @@ _470 recipes_
   * Set the `schemaLocation` that corresponds to the `xmlns` set in `beans.xml` files.
 * [org.openrewrite.java.migrate.BounceCastleFromJdk15OntoJdk18On](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md)
   * **Migrate Bouncy Castle to `jdk18on`**
-  * This recipe will upgrade Bouncy Castle dependencies from `-jdk15on` or `-jdk15to18` to `-jdk18on`.
+  * This recipe will upgrade Bouncy Castle dependencies from any of the legacy artifact suffixes `-jdk12`, `-jdk14`, `-jdk15`, `-jdk15+`, `-jdk16`, `-jdk15on` or `-jdk15to18` to `-jdk18on`. The `bctsp` artifacts map onto `bcpkix`, which absorbed the time stamp protocol support in 1.47.
+* [org.openrewrite.java.migrate.BouncyCastleDerStringGetInstanceReturnType](/recipes/java/migrate/bouncycastlederstringgetinstancereturntype.md)
+  * **Use `ASN1*String` for the result of `DER*String.getInstance(..)`**
+  * In Bouncy Castle 1.71 the `getInstance(..)` methods on the `DER*String` ASN.1 types were pulled up to their `ASN1*String` supertypes, widening their return type. The call itself still compiles, as static methods are inherited, but assigning the result to a `DER*String` variable or field no longer does. This recipe widens those declared types to the matching `ASN1*String`, which compiles against both the `-jdk15on` and `-jdk18on` artifacts, and can therefore safely be applied ahead of the upgrade.
 * [org.openrewrite.java.migrate.BouncyCastleFromJdk15OnToJdk15to18](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md)
-  * **Migrate Bouncy Castle from `jdk15on` to `jdk15to18` for Java &lt; 8**
-  * This recipe replaces the Bouncy Castle artifacts from `jdk15on` to `jdk15to18`. `jdk15on` isn't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement of the unmaintained `jdk15on` for Java &lt; 8.
+  * **Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8**
+  * This recipe replaces the Bouncy Castle artifacts from any of the legacy artifact suffixes `-jdk12`, `-jdk14`, `-jdk15`, `-jdk15+`, `-jdk16` or `-jdk15on` to `-jdk15to18`. Those artifacts aren't maintained anymore and `jdk18on` is only for Java 8 and above. The `jdk15to18` artifact is the up-to-date replacement for Java &lt; 8. The `bctsp` artifacts map onto `bcpkix`, which absorbed the time stamp protocol support in 1.47.
+* [org.openrewrite.java.migrate.BouncyCastleSphincsPlusToPqcLegacy](/recipes/java/migrate/bouncycastlesphincsplustopqclegacy.md)
+  * **Move Bouncy Castle SPHINCS+ classes to `pqc.legacy`**
+  * Bouncy Castle 1.78 moved the pre-standardization SPHINCS+ implementation from `org.bouncycastle.pqc.crypto.sphincsplus` to `org.bouncycastle.pqc.legacy.sphincsplus`, to free up the original package for the FIPS 205 SLH-DSA implementation. All types moved unchanged, so this is a straight package rename.
 * [org.openrewrite.java.migrate.CastArraysAsListToList](/recipes/java/migrate/castarraysaslisttolist.md)
   * **Remove explicit casts on `Arrays.asList(..).toArray()`**
   * Convert code like `(Integer[]) Arrays.asList(1, 2, 3).toArray()` to `Arrays.asList(1, 2, 3).toArray(new Integer[0])`.
@@ -3456,7 +3483,7 @@ _24 recipes_
 
 _License: Moderne Source Available License_
 
-_41 recipes_
+_42 recipes_
 
 * [org.openrewrite.java.jspecify.MigrateFromOpenRewriteAnnotations](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
   * **Migrate from OpenRewrite annotations to JSpecify**
@@ -3464,6 +3491,9 @@ _41 recipes_
 * [org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations](/recipes/java/recipes/blanklinesaroundfieldswithannotations.md)
   * **Add a blank line around fields with annotations**
   * Fields with annotations should have a blank line before them to clearly separate them from the field above. If another field follows, it should also have a blank line after so that the field with the annotation has space on either side of it, visually distinguishing it from its neighbors.
+* [org.openrewrite.java.recipes.ClasspathArgumentsOnePerLine](/recipes/java/recipes/classpathargumentsoneperline.md)
+  * **One classpath argument per line**
+  * Put each argument of `classpath` and `classpathFromResources` on its own line when there are four or more arguments, such that classpath entries are easier to read, and adding or removing an entry shows up as a single line change.
 * [org.openrewrite.java.recipes.CorrectlySpacedDescriptions](/recipes/java/recipes/correctlyspaceddescriptions.md)
   * **Correctly spaced descriptions**
   * Recipe descriptions should be cleanly formatted. This recipe forces correct spacing in multiline descriptions. In a multi line description the lines should not start with whitespace and end with a single space except for the last line which should end with a &quot;.&quot; (e.g. ```   return &quot;This is a correct &quot; +    &quot;multi line description&quot;; ``` ).
@@ -3490,7 +3520,7 @@ _41 recipes_
   * Best practices for Java recipe development.
 * [org.openrewrite.java.recipes.MissingOptionExample](/recipes/java/recipes/missingoptionexample.md)
   * **Find missing `@Option` `example` values**
-  * Find `@Option` annotations that are missing `example` values for documentation.
+  * Find `@Option` annotations that are missing `example` values for documentation, and add a TODO comment.
 * [org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes](/recipes/java/recipes/nomutablestaticfieldsinrecipes.md)
   * **Recipe classes should not have mutable `static` fields**
   * Add the `final` keyword to mutable static fields in Recipe classes.
@@ -3576,8 +3606,8 @@ _41 recipes_
   * **Use `visit` with parent cursor when calling from another visitor**
   * When calling another visitor from within a visitor, use the generic `visit(tree, ctx, getCursor().getParentTreeCursor())` method instead of a specific `visit*` method like `visitMethodInvocation`. The specific visit methods bypass the visitor lifecycle, including cursor setup, pre/post visit hooks, and observer notifications.
 * [org.openrewrite.recipes.rewrite.InlineMethods](/recipes/recipes/rewrite/inlinemethods.md)
-  * **Inline methods annotated with `@InlineMe`**
-  * Automatically generated recipes to inline method calls based on `@InlineMe` annotations discovered in the type table.
+  * **Inline calls to deprecated OpenRewrite methods**
+  * Inline calls to deprecated OpenRewrite methods that delegate to their replacement, composing the `InlineDeprecatedMethods` recipes that individual recipe modules generate and publish themselves.
 * [org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices](/recipes/recipes/rewrite/openrewriterecipebestpractices.md)
   * **OpenRewrite recipe best practices**
   * Best practices for OpenRewrite recipe development.
@@ -3586,8 +3616,11 @@ _41 recipes_
 
 _License: Moderne Source Available License_
 
-_333 recipes_
+_335 recipes_
 
+* [org.openrewrite.gradle.spring.AddParametersCompilerFlagToGradle](/recipes/gradle/spring/addparameterscompilerflagtogradle.md)
+  * **Add `-parameters` compiler flag for Spring in Gradle**
+  * Adds `options.compilerArgs.add(&quot;-parameters&quot;)` to `JavaCompile` tasks and, when the Kotlin Gradle Plugin version can be determined from this file's `plugins \{\}` block, the matching `javaParameters` flag (`compilerOptions.javaParameters` on 1.8+, `kotlinOptions.javaParameters` on older versions) to Kotlin compile tasks. Spring uses parameter name retention for dependency injection. Projects using the Spring Boot Gradle plugin already have both flags configured and are not modified. When the Kotlin plugin's version can't be determined from this file (version catalogs, convention plugins, buildscript classpath declarations) the Kotlin flag is left alone rather than risk emitting a form the applied plugin doesn't support.
 * [org.openrewrite.gradle.spring.AddSpringDependencyManagementPlugin](/recipes/gradle/spring/addspringdependencymanagementplugin.md)
   * **Add `io.spring.dependency-management` plugin, if in use**
   * Prior to Spring Boot 2.0 the dependency management plugin was applied automatically as part of the overall spring boot plugin. Afterwards the dependency-management plugin must be applied explicitly, or Gradle's `platform()` feature may be used instead. This recipe makes usage of io-spring.dependency-management explicit in anticipation of upgrade to Spring Boot 2.0 or later.
@@ -3705,6 +3738,9 @@ _333 recipes_
 * [org.openrewrite.java.spring.batch.MigrateStepExecutionTimestampTypes](/recipes/java/spring/batch/migratestepexecutiontimestamptypes.md)
   * **Migrate `Date` to `LocalDateTime` for Spring Batch timestamp methods**
   * In Spring Batch 5.0, `StepExecution` and `JobExecution` timestamp methods (`getStartTime()`, `getEndTime()`, `getCreateTime()`, `getLastUpdated()`) return `java.time.LocalDateTime` instead of `java.util.Date`. This recipe updates variable declarations accordingly.
+* [org.openrewrite.java.spring.batch.MigrateToChunkOrientedStepBuilder](/recipes/java/spring/batch/migratetochunkorientedstepbuilder.md)
+  * **Migrate to the new chunk-oriented step model**
+  * Spring Batch 6.0 deprecates `StepBuilder.chunk(int, PlatformTransactionManager)` in favor of a new chunk-oriented model, where the transaction manager is configured through `ChunkOrientedStepBuilder.transactionManager(PlatformTransactionManager)`. Replaces `chunk(chunkSize, transactionManager)` with `chunk(chunkSize).transactionManager(transactionManager)`, but only where every other method in the builder chain has an equivalent on `ChunkOrientedStepBuilder`. The new model dropped the Spring Retry based chunk and retry APIs without a drop-in replacement, so chains calling `backOffPolicy`, `retryPolicy`, `retryContextCache`, `keyGenerator`, `noRetry`, `noRollback`, `noSkip`, `processorNonTransactional`, `readerIsTransactionalQueue`, `chunkOperations`, `stepOperations`, `exceptionHandler`, `listener(RetryListener)`, `chunk(CompletionPolicy, PlatformTransactionManager)` or `taskExecutor(TaskExecutor)` with a non-async executor are left untouched, and remain a manual migration step. See the [Spring Batch 6.0 migration guide](https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-6.0-Migration-Guide#new-chunk-oriented-model-implementation).
 * [org.openrewrite.java.spring.batch.RemoveDefaultBatchConfigurer](/recipes/java/spring/batch/removedefaultbatchconfigurer.md)
   * **Remove `DefaultBatchConfigurer`**
   * Remove `extends DefaultBatchConfigurer` and `@Override` from associated methods.
@@ -4092,6 +4128,9 @@ _333 recipes_
 * [org.openrewrite.java.spring.boot3.UseRfc6265CookieProcessor](/recipes/java/spring/boot3/userfc6265cookieprocessor.md)
   * **Use `Rfc6265CookieProcessor` instead of `LegacyCookieProcessor`**
   * Replace the legacy Tomcat `LegacyCookieProcessor` with the RFC 6265 compliant `Rfc6265CookieProcessor`, both in Java references and in the `&lt;CookieProcessor className=&quot;…&quot;/&gt;` attribute of Tomcat configuration files such as `context.xml` and `server.xml`. `Rfc6265CookieProcessor` has been the default cookie processor since Tomcat 8.5; `LegacyCookieProcessor` exists only for backwards compatibility. RFC 6265 parsing is stricter than the legacy behavior, so review applications relying on legacy cookie handling before applying this recipe.
+* [org.openrewrite.java.spring.boot4.AddAutoConfigureMockMvc](/recipes/java/spring/boot4/addautoconfiguremockmvc-community-edition.md)
+  * **Add `@AutoConfigureMockMvc` if necessary (Community Edition)**
+  * Adds `@AutoConfigureMockMvc` to `@SpringBootTest` classes that use `MockMvc` because Spring Boot 4 no longer auto-configures this bean.
 * [org.openrewrite.java.spring.boot4.AddAutoConfigureTestRestTemplate](/recipes/java/spring/boot4/addautoconfiguretestresttemplate.md)
   * **Add `@AutoConfigureTestRestTemplate` if necessary**
   * Adds `@AutoConfigureTestRestTemplate` to test classes annotated with `@SpringBootTest` that use `TestRestTemplate` since this bean is no longer auto-configured as described in the [Spring Boot 4 migration guide](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-4.0-Migration-Guide#using-webclient-or-testresttemplate-and-springboottest).
@@ -4545,12 +4584,6 @@ _333 recipes_
 * [org.openrewrite.java.spring.util.concurrent.ListenableToCompletableFuture](/recipes/java/spring/util/concurrent/listenabletocompletablefuture.md)
   * **Migrate `ListenableFuture` to `CompletableFuture`**
   * Spring Framework 6.0 removed `org.springframework.util.concurrent.ListenableFuture` in favor of `java.util.concurrent.CompletableFuture`. This recipe migrates `ListenableFuture` types, along with their `addCallback` invocations and `ListenableFutureCallback` implementations, to `CompletableFuture`.
-* [org.openrewrite.java.spring.ws.MigrateAxiomToSaaj](/recipes/java/spring/ws/migrateaxiomtosaaj.md)
-  * **Migrate Spring WS Axiom to SAAJ**
-  * Migrate from Apache Axiom SOAP message handling to SAAJ (SOAP with Attachments API for Java). Spring WS 4.0.x removed support for Apache Axiom because Axiom did not support Jakarta EE at the time. This recipe changes Axiom types to their SAAJ equivalents.
-* [org.openrewrite.java.spring.ws.UpgradeSpringWs_4_0](/recipes/java/spring/ws/upgradespringws_4_0.md)
-  * **Migrate to Spring WS 4.0**
-  * Migrate applications to Spring WS 4.0. This recipe handles the removal of Apache Axiom support in Spring WS 4.0.x by migrating Axiom-based SOAP message handling to SAAJ (SOAP with Attachments API for Java). Note that Spring WS 4.1+ restores Axiom support if upgrading to that version is preferred.
 * [org.openrewrite.java.springdoc.CleanupRemainingSpringfox](/recipes/java/springdoc/cleanupremainingspringfox.md)
   * **Remove remaining Springfox dead code**
   * Removes unused private methods left behind after SpringFoxToSpringDoc migration. When Docket beans are removed, private helper methods (e.g., `appInfo()`) become dead code but are not cleaned up, causing compilation errors.
@@ -4584,6 +4617,9 @@ _333 recipes_
 * [org.openrewrite.java.springdoc.UpgradeSpringDoc_3_0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
   * **Upgrade to SpringDoc 3.0**
   * Upgrade to SpringDoc v3.0.
+* [org.openrewrite.maven.spring.AddParametersCompilerFlagToMaven](/recipes/maven/spring/addparameterscompilerflagtomaven.md)
+  * **Add `-parameters` compiler flag for Spring in Maven**
+  * Sets the `maven.compiler.parameters` property to `true` and, when `kotlin-maven-plugin` is declared, configures its `javaParameters` option. Spring uses parameter name retention for dependency injection. Projects whose effective build already decides parameter name retention — through their own configuration or any parent such as `spring-boot-starter-parent` — are not modified.
 * [org.openrewrite.maven.spring.UpgradeExplicitSpringBootDependencies](/recipes/maven/spring/upgradeexplicitspringbootdependencies.md)
   * **Upgrade Spring dependencies**
   * Upgrades dependencies according to the specified version of spring boot. Spring boot has many direct and transitive dependencies. When a module has an explicit dependency on one of these it may also need to be upgraded to match the version used by spring boot.
@@ -5056,7 +5092,7 @@ _196 recipes_
   * Replace unnecessary `String#valueOf(..)` method invocations with the argument directly. This occurs when the argument to `String#valueOf(arg)` is a string literal, such as `String.valueOf(&quot;example&quot;)`. Or, when the `String#valueOf(..)` invocation is used in a concatenation, such as `&quot;example&quot; + String.valueOf(&quot;example&quot;)`. The wrapping call is redundant since Java already performs the conversion implicitly in these contexts.
 * [org.openrewrite.staticanalysis.NullableOnMethodReturnType](/recipes/staticanalysis/nullableonmethodreturntype.md)
   * **Move `@Nullable` method annotations to the return type**
-  * This is the way the cool kids do it.
+  * This is the way the cool kids do it. Only annotations declared with `@Target(ElementType.TYPE_USE)` are moved, as the return type is a type context; declaration annotations such as `javax.annotation.Nullable` are left on the method.
 * [org.openrewrite.staticanalysis.ObjectFinalizeCallsSuper](/recipes/staticanalysis/objectfinalizecallssuper.md)
   * **`finalize()` calls super**
   * Overrides of `Object#finalize()` should call super. Skipping the super call can prevent parent classes from releasing critical system resources during garbage collection.
@@ -5810,7 +5846,7 @@ _275 recipes_
   * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present.
 * [org.openrewrite.java.testing.junit5.AddMissingNested](/recipes/java/testing/junit5/addmissingnested.md)
   * **JUnit 5 inner test classes should be annotated with `@Nested`**
-  * Adds `@Nested` to inner classes that contain JUnit 5 tests.
+  * Adds `@Nested` to inner classes that contain JUnit 5 tests and removes `static` from them. Before Java 16 an inner class may not declare static members other than constant variables, so a static nested class that declares any other static member is marked as needing manual migration instead; sources without a known Java version are assumed to support static members.
 * [org.openrewrite.java.testing.junit5.AddMissingTestBeforeAfterAnnotations](/recipes/java/testing/junit5/addmissingtestbeforeafterannotations.md)
   * **Add missing `@BeforeEach`, `@AfterEach`, `@Test` to overriding methods**
   * Adds `@BeforeEach`, `@AfterEach`, `@Test` to methods overriding superclass methods if the annotations are present on the superclass method.

@@ -32,6 +32,49 @@ This recipe is used as part of the following composite recipes:
 
 * [Modernize collections](/recipes/staticanalysis/modernizecollections.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+class Test {
+    String test() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("a").append("b");
+        return sb.toString();
+    }
+}
+```
+
+###### After
+```java
+class Test {
+    String test() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("a").append("b");
+        return sb.toString();
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+class Test {
+    String test() {
+-       StringBuffer sb = new StringBuffer();
++       StringBuilder sb = new StringBuilder();
+        sb.append("a").append("b");
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

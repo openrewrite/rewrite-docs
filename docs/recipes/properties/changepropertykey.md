@@ -46,6 +46,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
 * [Quarkus 1.13 migration from Quarkus 1.11](/recipes/quarkus/quarkus1to1_13migration.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
+* [Rename the incubating `org.gradle.unsafe.isolated-projects` properties](/recipes/gradle/gradle9/migrateisolatedprojectsproperties.md)
 * [Replace 'camel.main.backlogTracing' with `camel.trace.enabled'](/recipes/apache/camel/upgrade/camel45/traceproperties.md)
 * [Replace 'camel.main.routeController' with `camel.routecontroller'](/recipes/apache/camel/upgrade/camel44/routecontrollerproperties.md)
 * [The option camel.main.debugger has been renamed](/recipes/apache/camel/upgrade/camel42/camelmaindebugger.md)

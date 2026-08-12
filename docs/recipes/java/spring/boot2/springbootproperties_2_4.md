@@ -389,18 +389,22 @@ spring:
     active: dev
 ---
 spring:
-  config.activate.on-profile: prod
+  config:
+    activate:
+      on-profile: prod
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -7,1 +7,1 @@
+@@ -7,1 +7,3 @@
 ---
 spring:
 - profiles: prod
-+ config.activate.on-profile: prod
++ config:
++   activate:
++     on-profile: prod
 
 ```
 </TabItem>
@@ -472,18 +476,22 @@ spring:
     active: dev
 ---
 spring:
-  config.activate.on-profile: prod
+  config:
+    activate:
+      on-profile: prod
 ```
 
 </TabItem>
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -7,1 +7,1 @@
+@@ -7,1 +7,3 @@
 ---
 spring:
 - profiles: prod
-+ config.activate.on-profile: prod
++ config:
++   activate:
++     on-profile: prod
 
 ```
 </TabItem>

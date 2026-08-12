@@ -131,6 +131,7 @@ package org.openrewrite.example;
 ```java
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.CheckForNull;
 
 public class Test {
     @Nonnull
@@ -139,6 +140,8 @@ public class Test {
     public String field2;
     @Nullable
     public Foo.Bar foobar;
+    @CheckForNull
+    public String checked;
 }
 
 interface Foo {
@@ -160,6 +163,8 @@ public class Test {
     @Nullable
     public String field2;
     public Foo.@Nullable Bar foobar;
+    @Nullable
+    public String checked;
 }
 
 interface Foo {
@@ -174,26 +179,31 @@ interface Foo {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,2 +1,2 @@
+@@ -1,3 +1,2 @@
 -import javax.annotation.Nonnull;
 -import javax.annotation.Nullable;
+-import javax.annotation.CheckForNull;
 +import org.jspecify.annotations.NonNull;
 +import org.jspecify.annotations.Nullable;
 
-@@ -5,1 +5,1 @@
+@@ -6,1 +5,1 @@
 
 public class Test {
 -   @Nonnull
 +   @NonNull
     public String field1;
-@@ -9,2 +9,1 @@
+@@ -10,0 +9,1 @@
     @Nullable
     public String field2;
--   @Nullable
--   public Foo.Bar foobar;
 +   public Foo.@Nullable Bar foobar;
-}
-@@ -15,1 +14,1 @@
+    @Nullable
+@@ -11,2 +11,0 @@
+    public String field2;
+    @Nullable
+-   public Foo.Bar foobar;
+-   @CheckForNull
+    public String checked;
+@@ -18,1 +16,1 @@
 interface Foo {
   class Bar {
 -   @Nonnull
@@ -324,6 +334,7 @@ package org.openrewrite.example;
 ```java
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import javax.annotation.CheckForNull;
 
 public class Test {
     @Nonnull
@@ -332,6 +343,8 @@ public class Test {
     public String field2;
     @Nullable
     public Foo.Bar foobar;
+    @CheckForNull
+    public String checked;
 }
 
 interface Foo {
@@ -353,6 +366,8 @@ public class Test {
     @Nullable
     public String field2;
     public Foo.@Nullable Bar foobar;
+    @Nullable
+    public String checked;
 }
 
 interface Foo {
@@ -367,26 +382,31 @@ interface Foo {
 <TabItem value="diff" label="Diff" >
 
 ```diff
-@@ -1,2 +1,2 @@
+@@ -1,3 +1,2 @@
 -import javax.annotation.Nonnull;
 -import javax.annotation.Nullable;
+-import javax.annotation.CheckForNull;
 +import org.jspecify.annotations.NonNull;
 +import org.jspecify.annotations.Nullable;
 
-@@ -5,1 +5,1 @@
+@@ -6,1 +5,1 @@
 
 public class Test {
 -   @Nonnull
 +   @NonNull
     public String field1;
-@@ -9,2 +9,1 @@
+@@ -10,0 +9,1 @@
     @Nullable
     public String field2;
--   @Nullable
--   public Foo.Bar foobar;
 +   public Foo.@Nullable Bar foobar;
-}
-@@ -15,1 +14,1 @@
+    @Nullable
+@@ -11,2 +11,0 @@
+    public String field2;
+    @Nullable
+-   public Foo.Bar foobar;
+-   @CheckForNull
+    public String checked;
+@@ -18,1 +16,1 @@
 interface Foo {
   class Bar {
 -   @Nonnull

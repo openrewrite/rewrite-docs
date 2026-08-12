@@ -38,6 +38,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Add Micronaut build plugins to 4.x](/recipes/java/micronaut/updatebuildplugins.md)
 * [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
+* [Upgrade plugins that are incompatible with Maven 4](/recipes/maven/upgradepluginsformaven4.md)
 * [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/quarkus/updates/core/quarkus30/additionalchanges.md)
 
 ## Example

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.cucumber.jvm.TypeRegistryConfigurerToAnnotations**
 
-_Cucumber-JVM 7.0.0 removed `TypeRegistryConfigurer`; replace implementations with `@ParameterType`, `@DataTableType` and `@DocStringType` annotated glue methods. Classes whose `configureTypeRegistry` method cannot be converted in full are left untouched._
+_Cucumber-JVM 7.0.0 removed `TypeRegistryConfigurer`; replace implementations with `@ParameterType`, `@DataTableType`, `@DocStringType` and `@Default*Transformer` annotated glue methods. Classes whose `configureTypeRegistry` method cannot be converted in full are left untouched, with a `TODO` comment added above the registration that could not be converted._
 
 ## Recipe source
 
@@ -27,6 +27,111 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
+
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import io.cucumber.core.api.TypeRegistry;
+import io.cucumber.core.api.TypeRegistryConfigurer;
+import io.cucumber.cucumberexpressions.ParameterType;
+import io.cucumber.datatable.DataTableType;
+
+import java.util.Locale;
+import java.util.Map;
+
+public class DataTableConfigurer implements TypeRegistryConfigurer {
+    @Override
+    public Locale locale() {
+        return Locale.ENGLISH;
+    }
+
+    @Override
+    public void configureTypeRegistry(TypeRegistry typeRegistry) {
+        typeRegistry.defineParameterType(new ParameterType<>(
+                "author", "[A-Z][a-z]+", Author.class, (String name) -> new Author(name)));
+        typeRegistry.defineDataTableType(new DataTableType(
+                Author.class, (Map<String, String> entry) -> new Author(entry.get("name"))));
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.java.DataTableType;
+import io.cucumber.java.ParameterType;
+
+import java.util.Map;
+
+public class DataTableConfigurer {
+    @ParameterType("[A-Z][a-z]+")
+    public Author author(String name) {
+        return new Author(name);
+    }
+
+    @DataTableType
+    public Author author2(Map<String, String> entry) {
+        return new Author(entry.get("name"));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,4 +3,2 @@
+package com.example.app;
+
+-import io.cucumber.core.api.TypeRegistry;
+-import io.cucumber.core.api.TypeRegistryConfigurer;
+-import io.cucumber.cucumberexpressions.ParameterType;
+-import io.cucumber.datatable.DataTableType;
++import io.cucumber.java.DataTableType;
++import io.cucumber.java.ParameterType;
+
+@@ -8,1 +6,0 @@
+import io.cucumber.datatable.DataTableType;
+
+-import java.util.Locale;
+import java.util.Map;
+@@ -11,4 +8,4 @@
+import java.util.Map;
+
+-public class DataTableConfigurer implements TypeRegistryConfigurer {
+-   @Override
+-   public Locale locale() {
+-       return Locale.ENGLISH;
++public class DataTableConfigurer {
++   @ParameterType("[A-Z][a-z]+")
++   public Author author(String name) {
++       return new Author(name);
+    }
+@@ -17,6 +14,3 @@
+    }
+
+-   @Override
+-   public void configureTypeRegistry(TypeRegistry typeRegistry) {
+-       typeRegistry.defineParameterType(new ParameterType<>(
+-               "author", "[A-Z][a-z]+", Author.class, (String name) -> new Author(name)));
+-       typeRegistry.defineDataTableType(new DataTableType(
+-               Author.class, (Map<String, String> entry) -> new Author(entry.get("name"))));
++   @DataTableType
++   public Author author2(Map<String, String> entry) {
++       return new Author(entry.get("name"));
+    }
+```
+</TabItem>
+</Tabs>
 
 
 ## Usage

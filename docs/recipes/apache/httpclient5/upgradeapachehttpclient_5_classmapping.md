@@ -163,6 +163,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.hc.core5.http.io.entity.mime`
   * newPackageName: `org.apache.hc.client5.http.entity.mime`
+  * recursive: `true`
 * [Rename package name](../../java/changepackage)
   * oldPackageName: `org.apache.hc.client5.http.entity.mime.content`
   * newPackageName: `org.apache.hc.client5.http.entity.mime`
@@ -597,6 +598,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.hc.core5.http.io.entity.mime
       newPackageName: org.apache.hc.client5.http.entity.mime
+      recursive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.hc.client5.http.entity.mime.content
       newPackageName: org.apache.hc.client5.http.entity.mime

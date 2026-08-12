@@ -40,6 +40,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`](../../java/migrate/util/replacestreamcollectwithtolist)
   * convertToList: `true`
+* [One classpath argument per line](../../java/recipes/classpathargumentsoneperline)
 * [RewriteTest classes should not be public](../../java/recipes/rewritetestclassesshouldnotbepublic)
 * [Automatically select recipe examples from the unit test cases of a recipe](../../java/recipes/selectrecipeexamples)
 * [Single `@DocumentExample` per test class](../../java/recipes/singledocumentexample)
@@ -92,6 +93,7 @@ preconditions:
 recipeList:
   - org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList:
       convertToList: true
+  - org.openrewrite.java.recipes.ClasspathArgumentsOnePerLine
   - org.openrewrite.java.recipes.RewriteTestClassesShouldNotBePublic
   - org.openrewrite.java.recipes.SelectRecipeExamples
   - org.openrewrite.java.recipes.SingleDocumentExample

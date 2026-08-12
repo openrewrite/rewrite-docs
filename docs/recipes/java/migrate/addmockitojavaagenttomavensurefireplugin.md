@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.AddMockitoJavaAgentToMavenSurefirePlugin**
 
-_Adds required configuration to specifically enable the Mockito/Bytebuddy Java agent in the Maven Surefire plugin for Java 21 compatibility._
+_Mockito attaches its Byte Buddy agent to the running JVM at test time, which the JDK has warned about since Java 21 and intends to disallow. This recipe instead loads the agent up front through the Maven Surefire plugin, adding the `maven-dependency-plugin` `properties` goal to resolve the agent jar path, to silence the warning and stay ahead of the JDK change._
 
 ## Recipe source
 
@@ -91,9 +91,6 @@ test-project
     <version>3.5.4</version>
     <relativePath/>
   </parent>
-  <properties>
-    <argLine></argLine>
-  </properties>
 
   <dependencies>
     <dependency>
@@ -109,6 +106,7 @@ test-project
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
+            <id>get-mockito-agent-path</id>
             <goals>
               <goal>properties</goal>
             </goals>
@@ -120,7 +118,7 @@ test-project
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <!--suppress MavenModelInspection -->
-          <argLine>@{argLine} -javaagent:mockito-core:jar</argLine>
+          <argLine>-javaagent:mockito-core:jar</argLine>
         </configuration>
       </plugin>
     </plugins>
@@ -134,30 +132,24 @@ test-project
 ```diff
 --- pom.xml
 +++ pom.xml
-@@ -13,0 +13,3 @@
-    <relativePath/>
-  </parent>
-+ <properties>
-+   <argLine></argLine>
-+ </properties>
-
-@@ -26,0 +29,7 @@
+@@ -26,0 +26,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
 +       <executions>
 +         <execution>
++           <id>get-mockito-agent-path</id>
 +           <goals>
 +             <goal>properties</goal>
 +           </goals>
 +         </execution>
 +       </executions>
       </plugin>
-@@ -30,0 +40,4 @@
+@@ -30,0 +38,4 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
 +       <configuration>
 +         <!--suppress MavenModelInspection -->
-+         <argLine>@{argLine} -javaagent:mockito-core:jar</argLine>
++         <argLine>-javaagent:mockito-core:jar</argLine>
 +       </configuration>
       </plugin>
 ```

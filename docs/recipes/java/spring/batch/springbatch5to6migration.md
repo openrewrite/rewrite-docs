@@ -232,6 +232,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.batch.core.repository.explore.JobExplorer`
   * newFullyQualifiedTypeName: `org.springframework.batch.core.repository.JobRepository`
+* [Migrate to the new chunk-oriented step model](../../../java/spring/batch/migratetochunkorientedstepbuilder)
 
 </TabItem>
 
@@ -441,6 +442,7 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.batch.core.repository.explore.JobExplorer
       newFullyQualifiedTypeName: org.springframework.batch.core.repository.JobRepository
+  - org.openrewrite.java.spring.batch.MigrateToChunkOrientedStepBuilder
 
 ```
 </TabItem>

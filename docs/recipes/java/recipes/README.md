@@ -26,6 +26,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate tests to Java 21](./upgradeteststojava21.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)
 * [New line at the end of `SourceSpecs` text blocks](./sourcespectextblocknewline.md)
+* [One classpath argument per line](./classpathargumentsoneperline.md)
 * [Recipe classes should be public](./recipeclassesshouldbepublic.md)
 * [Recipe classes should not have mutable `static` fields](./nomutablestaticfieldsinrecipes.md)
 * [Refactor RewriteTest to use defaults method](./userewritetestdefaults.md)

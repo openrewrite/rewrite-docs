@@ -73,7 +73,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Replace `ObjectMapper.copy()` with `rebuild().build()`](../../java/jackson/replaceobjectmappercopy)
 * [Use modern date/time serialization defaults](../../java/jackson/usemoderndatetimeserialization)
 * [Replace removed `JsonGenerator` capability methods with `StreamWriteCapability`](../../java/jackson/replacestreamwritecapability)
-* [Replace `@JsonIgnore` with `@JsonSetter` on empty collection fields](../../java/jackson/replacejsonignorewithjsonsetter)
 * [Add `@JsonCreator` to non-public constructors](../../java/jackson/addjsoncreatortoprivateconstructors)
 * [Add comment to method invocations](../../java/addcommenttomethodinvocations)
   * comment: `TODO canSerialize was removed in Jackson 3 with no replacement (see https://github.com/FasterXML/jackson-databind/issues/1917). Attempt serialization/deserialization and catch exceptions instead.`
@@ -93,6 +92,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate deprecated `@JsonSerialize(include = ...)` to `@JsonInclude`](../../java/jackson/jsonserializeincludetojsoninclude)
 * [Migrate `ObjectMapper.readValue(URL, ...)` to use `openStream()`](../../java/jackson/readvalueurltoopenstream)
 * [Update Jackson package names from 2.x to 3.x](../../java/jackson/upgradejackson_2_3_packagechanges)
+* [Remove dead `throws` declarations for unchecked Jackson exceptions](../../java/jackson/removedeadjacksonthrows)
 * [Simplify catch clauses for Jackson exceptions](../../java/jackson/simplifyjacksonexceptioncatch)
 
 </TabItem>
@@ -159,7 +159,6 @@ recipeList:
   - org.openrewrite.java.jackson.ReplaceObjectMapperCopy
   - org.openrewrite.java.jackson.UseModernDateTimeSerialization
   - org.openrewrite.java.jackson.ReplaceStreamWriteCapability
-  - org.openrewrite.java.jackson.ReplaceJsonIgnoreWithJsonSetter
   - org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO canSerialize was removed in Jackson 3 with no replacement (see https://github.com/FasterXML/jackson-databind/issues/1917). Attempt serialization/deserialization and catch exceptions instead.
@@ -179,6 +178,7 @@ recipeList:
   - org.openrewrite.java.jackson.JsonSerializeIncludeToJsonInclude
   - org.openrewrite.java.jackson.ReadValueUrlToOpenStream
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_PackageChanges
+  - org.openrewrite.java.jackson.RemoveDeadJacksonThrows
   - org.openrewrite.java.jackson.SimplifyJacksonExceptionCatch
 
 ```

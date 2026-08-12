@@ -6,6 +6,7 @@ description: Spring OpenRewrite recipes.
 
 ## Recipes
 
+* [Add `-parameters` compiler flag for Spring in Maven](./addparameterscompilerflagtomaven.md)
 * [Upgrade Spring dependencies](./upgradeexplicitspringbootdependencies.md)
 
 

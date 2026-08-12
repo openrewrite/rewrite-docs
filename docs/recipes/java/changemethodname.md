@@ -78,6 +78,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `AuthState` to `AuthExchange`](/recipes/apache/httpclient5/migrateauthstate.md)
 * [Migrate `ConsumerGroupState` to `GroupState`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/migrateconsumergroupstatetogroupstate)
 * [Migrate `Joined.named()` to `Joined.as()`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kafka/streams/migratejoinednamemethod)
+* [Migrate `RuntimeOptionsBuilder`](/recipes/cucumber/jvm/migrateruntimeoptionsbuilder.md)
 * [Migrate `Scenario.write` and `Scenario.embed`](/recipes/cucumber/jvm/migratescenariowriteandembed.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)

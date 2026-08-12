@@ -158,6 +158,71 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Spring Data 4.0](/recipes/java/spring/data/upgradespringdata_4_0.md)
 
+## Examples
+##### Example 1
+`UpgradeSpringDataMongoDb_5_0Test#upgradesExplicitSpringDataMongoDbDependency`
+
+
+###### Unchanged
+```java
+class Application {}
+```
+
+###### Unchanged
+```mavenProject
+spring-data-mongodb
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>4.5.13</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+---
+
+##### Example 2
+`UpgradeSpringDataMongoDb_5_0Test#upgradesExplicitSpringDataMongoDbDependency`
+
+
+###### Unchanged
+```java
+class Application {}
+```
+
+###### Unchanged
+```mavenProject
+spring-data-mongodb
+```
+
+###### Unchanged
+```xml title="pom.xml"
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>example</artifactId>
+    <version>1.0.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>4.5.13</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
 
 ## Usage
 

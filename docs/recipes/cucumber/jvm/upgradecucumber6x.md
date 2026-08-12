@@ -70,6 +70,117 @@ This recipe is used as part of the following composite recipes:
 
 * [Upgrade to Cucumber-JVM 7.x](/recipes/cucumber/jvm/upgradecucumber7x.md)
 
+## Examples
+##### Example 1
+`UpgradeCucumber6xTest#dropTimeoutAlongsideThePackageRename`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import cucumber.api.java.en.Given;
+
+class StepDefinitions {
+    @Given(value = "a step", timeout = 1000)
+    void aStep() {
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package com.example.app;
+
+-import cucumber.api.java.en.Given;
++import io.cucumber.java.en.Given;
+
+@@ -6,1 +6,1 @@
+
+class StepDefinitions {
+-   @Given(value = "a step", timeout = 1000)
++   @Given("a step")
+    void aStep() {
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`UpgradeCucumber6xTest#dropTimeoutAlongsideThePackageRename`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+package com.example.app;
+
+import cucumber.api.java.en.Given;
+
+class StepDefinitions {
+    @Given(value = "a step", timeout = 1000)
+    void aStep() {
+    }
+}
+```
+
+###### After
+```java
+package com.example.app;
+
+import io.cucumber.java.en.Given;
+
+class StepDefinitions {
+    @Given("a step")
+    void aStep() {
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,1 +3,1 @@
+package com.example.app;
+
+-import cucumber.api.java.en.Given;
++import io.cucumber.java.en.Given;
+
+@@ -6,1 +6,1 @@
+
+class StepDefinitions {
+-   @Given(value = "a step", timeout = 1000)
++   @Given("a step")
+    void aStep() {
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

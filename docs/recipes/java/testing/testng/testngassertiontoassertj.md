@@ -28,6 +28,79 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="java" label="java">
+
+
+###### Before
+```java
+import org.testng.asserts.Assertion;
+
+class Test {
+    void test(Assertion assertion) {
+        assertion.assertEquals("a", "b");
+        assertion.assertEquals("a", "b", "msg");
+        assertion.assertEquals(1.0, 2.0, 0.1);
+        assertion.assertEquals(1.0, 2.0, 0.1, "msg");
+        assertion.assertNotEquals(3, 4);
+        assertion.assertNotEquals(1.0, 2.0, 0.1);
+    }
+}
+```
+
+###### After
+```java
+import org.testng.asserts.Assertion;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
+
+class Test {
+    void test(Assertion assertion) {
+        assertThat("a").isEqualTo("b");
+        assertThat("a").as("msg").isEqualTo("b");
+        assertThat(1.0).isCloseTo(2.0, within(0.1));
+        assertThat(1.0).as("msg").isCloseTo(2.0, within(0.1));
+        assertThat(3).isNotEqualTo(4);
+        assertThat(1.0).isNotCloseTo(2.0, within(0.1));
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -3,0 +3,3 @@
+import org.testng.asserts.Assertion;
+
++import static org.assertj.core.api.Assertions.assertThat;
++import static org.assertj.core.api.Assertions.within;
++
+class Test {
+@@ -5,6 +8,6 @@
+class Test {
+    void test(Assertion assertion) {
+-       assertion.assertEquals("a", "b");
+-       assertion.assertEquals("a", "b", "msg");
+-       assertion.assertEquals(1.0, 2.0, 0.1);
+-       assertion.assertEquals(1.0, 2.0, 0.1, "msg");
+-       assertion.assertNotEquals(3, 4);
+-       assertion.assertNotEquals(1.0, 2.0, 0.1);
++       assertThat("a").isEqualTo("b");
++       assertThat("a").as("msg").isEqualTo("b");
++       assertThat(1.0).isCloseTo(2.0, within(0.1));
++       assertThat(1.0).as("msg").isCloseTo(2.0, within(0.1));
++       assertThat(3).isNotEqualTo(4);
++       assertThat(1.0).isNotCloseTo(2.0, within(0.1));
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

@@ -28,6 +28,57 @@ This recipe is used as part of the following composite recipes:
 
 * [Clean Up Assertions](/recipes/java/testing/junit5/cleanupassertions.md)
 
+## Example
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="kotlin" label="kotlin">
+
+
+###### Before
+```kotlin
+import org.junit.jupiter.api.Assertions.assertTrue
+
+class FooTest {
+    fun test(values: List<String?>) {
+        assertTrue(!values[0].isNullOrEmpty())
+        assertTrue(!values[0].isNullOrEmpty(), "message")
+    }
+}
+```
+
+###### After
+```kotlin
+import org.junit.jupiter.api.Assertions.assertFalse
+
+class FooTest {
+    fun test(values: List<String?>) {
+        assertFalse(values[0].isNullOrEmpty())
+        assertFalse(values[0].isNullOrEmpty(), "message")
+    }
+}
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+@@ -1,1 +1,1 @@
+-import org.junit.jupiter.api.Assertions.assertTrue
++import org.junit.jupiter.api.Assertions.assertFalse
+
+@@ -5,2 +5,2 @@
+class FooTest {
+    fun test(values: List<String?>) {
+-       assertTrue(!values[0].isNullOrEmpty())
+-       assertTrue(!values[0].isNullOrEmpty(), "message")
++       assertFalse(values[0].isNullOrEmpty())
++       assertFalse(values[0].isNullOrEmpty(), "message")
+    }
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

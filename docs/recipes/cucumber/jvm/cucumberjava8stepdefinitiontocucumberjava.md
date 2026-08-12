@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.cucumber.jvm.CucumberJava8StepDefinitionToCucumberJava**
 
-_Replace `StepDefinitionBody` methods with `StepDefinitionAnnotations` on new methods with the same body._
+_Replace `StepDefinitionBody` methods with `StepDefinitionAnnotations` on new methods with the same body, or, for a method reference, with a body calling the method it refers to._
 
 ## Recipe source
 

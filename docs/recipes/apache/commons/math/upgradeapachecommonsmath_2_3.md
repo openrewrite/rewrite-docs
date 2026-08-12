@@ -51,6 +51,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.commons.math`
   * newPackageName: `org.apache.commons.math3`
+  * recursive: `true`
 
 </TabItem>
 
@@ -83,6 +84,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.commons.math
       newPackageName: org.apache.commons.math3
+      recursive: true
 
 ```
 </TabItem>

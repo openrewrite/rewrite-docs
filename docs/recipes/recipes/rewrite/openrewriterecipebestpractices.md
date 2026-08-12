@@ -30,11 +30,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Check whether a type is **not** in use](../../java/search/doesnotusetype)
+  * fullyQualifiedTypeName: `com.google.errorprone.refaster.annotation.BeforeTemplate`
+  * includeImplicit: `true`
+
+**Recipes**
+
 * [Set the Develocity `server`](../../gradle/plugins/setdevelocityserver)
   * server: `https://community.develocity.cloud/`
 * [Set the Develocity `projectId`](../../gradle/plugins/setdevelocityprojectid)
   * projectId: `openrewrite`
-* [Inline methods annotated with `@InlineMe`](../../recipes/rewrite/inlinemethods)
+* [Inline calls to deprecated OpenRewrite methods](../../recipes/rewrite/inlinemethods)
 * [Generate `InlineMethodCalls` recipes for deprecated delegating methods](../../java/recipes/generatedeprecatedmethodrecipes)
 * [Java Recipe best practices](../../java/recipes/javarecipebestpractices)
 * [Recipe testing best practices](../../java/recipes/recipetestingbestpractices)
@@ -95,6 +103,10 @@ name: org.openrewrite.recipes.rewrite.OpenRewriteRecipeBestPractices
 displayName: OpenRewrite recipe best practices
 description: |
   Best practices for OpenRewrite recipe development.
+preconditions:
+  - org.openrewrite.java.search.DoesNotUseType:
+      fullyQualifiedTypeName: com.google.errorprone.refaster.annotation.BeforeTemplate
+      includeImplicit: true
 recipeList:
   - org.openrewrite.gradle.plugins.SetDevelocityServer:
       server: https://community.develocity.cloud/
