@@ -43,6 +43,10 @@ assertTrue(condition);
 
 ## Get started
 
+:::info[Free Course]
+New to OpenRewrite? Start with the free, self-paced [Intro to OpenRewrite course](https://www.moderne.ai/training/intro-to-openrewrite-course) to learn the fundamentals, set up the CLI, and run your first recipes.
+:::
+
 * If you want to jump right in and run recipes on some sample code, check out our [quickstart guide](./running-recipes/getting-started.md).
 * If you want to learn how to create your own recipes, start with the [Recipe Development Environment guide](./authoring-recipes/recipe-development-environment.md) and then work through the [Writing a Java Refactoring Recipe guide](./authoring-recipes/writing-a-java-refactoring-recipe.md).
 * If you have questions, join us in [Slack](https://join.slack.com/t/rewriteoss/shared_invite/zt-nj42n3ea-b~62rIHzb3Vo0E1APKCXEA) or [Discord](https://discord.gg/xk3ZKrhWAb). We're happy to answer your questions directly.
