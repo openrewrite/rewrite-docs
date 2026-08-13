@@ -6,6 +6,12 @@ description: Training resources for learning OpenRewrite and Moderne.
 
 Whether you're brand new to OpenRewrite or looking to sharpen advanced skills, these resources will help you learn to run, write, and reason about recipes.
 
+## Intro to OpenRewrite course
+
+New to OpenRewrite? This free, self-paced course walks you through the fundamentals: core concepts like Lossless Semantic Trees and recipes, setting up the CLI, running and customizing existing recipes, and analyzing your results. No prior experience required.
+
+[Start the Intro to OpenRewrite course](https://www.moderne.ai/training/intro-to-openrewrite-course)
+
 ## Hands-on learning workshops
 
 These interactive, self-paced workshops take you from running your first recipe all the way through writing your own. Along the way you'll cover the fundamentals of recipe development, advanced recipe development, how to prepare for a Spring Boot migration, and AI-assisted recipe authoring.
@@ -23,12 +29,6 @@ If you want to understand the techniques behind OpenRewrite's most sophisticated
 Every week, the Moderne team hosts a live Code Remix session where they talk through the latest changes, answer community questions, and dig into specific topics. Each session is archived with a summary and the key links so you can catch up on anything you missed.
 
 [Browse Code Remix sessions](https://www.youtube.com/@Moderne-and-OpenRewrite/streams)
-
-## Live OpenRewrite training
-
-If you'd rather learn directly from the team, Moderne runs scheduled live OpenRewrite training sessions where you can ask questions in real time.
-
-[See upcoming live training](https://www.moderne.ai/moderne-openrewrite-training-hub)
 
 ## Automated Software Refactoring with OpenRewrite and Generative AI
 
