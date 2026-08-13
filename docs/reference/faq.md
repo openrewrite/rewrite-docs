@@ -262,10 +262,12 @@ If you're using the [rewrite-maven-plugin](https://github.com/openrewrite/rewrit
 Using the below command you remove an argument plugin without modifying a `rewrite.yml` or `pom.xml` file:
 
 ```shell
-mvn org.openrewrite.maven:rewrite-maven-plugin:run \
+mvn org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN}}:run \
   -Drewrite.activeRecipes=org.openrewrite.maven.RemovePlugin \
   -Drewrite.options=groupId=org.springframework.boot,artifactId=spring-boot-maven-plugin
 ```
+
+Since this command doesn't modify your `pom.xml`, the Code Genome Project repository has to be declared in your Maven `settings.xml` file as a `pluginRepository`, as described in [running Rewrite without modifying the build](/running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build#configure-the-code-genome-project-repository).
 
 Note that this approach does not scale well; each recipe invocation would build up the Lossless Semantic Tree (LST) from scratch, which can be slow for larger projects.
 
