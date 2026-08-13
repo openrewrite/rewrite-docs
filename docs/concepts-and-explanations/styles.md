@@ -199,11 +199,13 @@ Update your `pom.xml` file to include an `<activeStyles>` such as in:
 Add a `-Drewrite.activeStyles` parameter to your Maven command in the terminal such as in:
 
 ```bash
-mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN}}:run \
   -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE \
   -Drewrite.activeRecipes=org.openrewrite.staticanalysis.CommonStaticAnalysis \
   -Drewrite.activeStyles=org.some.style.name
 ```
+
+Since this command doesn't modify your `pom.xml`, the Code Genome Project repository has to be declared in your Maven `settings.xml` file as both a `pluginRepository` and a `repository`, as described in [running Rewrite without modifying the build](/running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build#configure-the-code-genome-project-repository).
 </TabItem>
 </Tabs>
 

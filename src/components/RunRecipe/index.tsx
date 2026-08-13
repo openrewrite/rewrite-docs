@@ -234,7 +234,7 @@ rootProject {
 </project>`;
 
   // Maven CLI snippet
-  const mavenCli = `mvn -U org.openrewrite.maven:rewrite-maven-plugin:run${needsDependency ? ` --define rewrite.recipeArtifactCoordinates=${groupId}:${artifactId}:RELEASE` : ''} --define rewrite.activeRecipes=${activeRecipeName}${dataTableCliFlag}`;
+  const mavenCli = `mvn -U org.openrewrite.maven:rewrite-maven-plugin:${mavenPluginVersion}:run${needsDependency ? ` --define rewrite.recipeArtifactCoordinates=${groupId}:${artifactId}:RELEASE` : ''} --define rewrite.activeRecipes=${activeRecipeName}${dataTableCliFlag}`;
 
   // Maven settings.xml snippet with Code Genome Project credentials
   const mavenSettings = `<settings>
@@ -245,6 +245,37 @@ rootProject {
       <password>TOKEN</password>
     </server>
   </servers>
+</settings>`;
+
+  // Maven settings.xml snippet for command line usage, where the pom.xml is left untouched
+  const mavenCliSettings = `<settings>
+  <servers>
+    <server>
+      <id>codegenome</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <id>codegenome</id>
+      <repositories>
+        <repository>
+          <id>codegenome</id>
+          <url>https://artifacts.codegenomeproject.org/maven</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>codegenome</id>
+          <url>https://artifacts.codegenomeproject.org/maven</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>codegenome</activeProfile>
+  </activeProfiles>
 </settings>`;
 
   const cgpAuthNote = (
@@ -349,9 +380,16 @@ rootProject {
           <TabItem value="maven-command-line" label="Maven Command Line">
             <p>
               You will need to have <a href="https://maven.apache.org/download.cgi">Maven</a> installed on your machine
-              before you can run the following command. You will also need the Code Genome Project repository and
-              credentials configured, as described in the Maven POM tab.
+              before you can run the following command. Since this approach leaves your <code>pom.xml</code> untouched,
+              the Code Genome Project repository has to be declared in your Maven <code>settings.xml</code> file
+              (typically at <code>~/.m2/settings.xml</code>) instead: as a <code>pluginRepository</code> so that{' '}
+              <code>rewrite-maven-plugin</code> itself can be resolved, and as a <code>repository</code> so that recipe
+              artifacts passed to <code>rewrite.recipeArtifactCoordinates</code> can be resolved.
             </p>
+            <CodeBlock language="xml" title="settings.xml">
+              {mavenCliSettings}
+            </CodeBlock>
+            <p>With those credentials in place you can run the recipe:</p>
             <CodeBlock language="shell" title="shell">
               {mavenCli}
             </CodeBlock>
