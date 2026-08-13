@@ -8,9 +8,11 @@ Whether you're brand new to OpenRewrite or looking to sharpen advanced skills, t
 
 ## Intro to OpenRewrite course
 
+:::info[Free Course]
 New to OpenRewrite? This free, self-paced course walks you through the fundamentals: core concepts like Lossless Semantic Trees and recipes, setting up the CLI, running and customizing existing recipes, and analyzing your results. No prior experience required.
 
 [Start the Intro to OpenRewrite course](https://www.moderne.ai/training/intro-to-openrewrite-course)
+:::
 
 ## Hands-on learning workshops
 
