@@ -14,10 +14,6 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 * CLI version `4.5.2`
 
-## Removed Artifacts
-
-* rewrite-go
-
 ## New Recipes
 
 * [org.openrewrite.cucumber.jvm.CollapseCucumberOptionsTags](https://docs.openrewrite.org/recipes/cucumber/jvm/collapsecucumberoptionstags): Cucumber-JVM 6.0.0 narrowed `@CucumberOptions#tags` from `String[]` to a single `String`. The elements of the array were combined with `and`, such that `tags = {"@a", "@b"}` becomes `tags = "(@a) and (@b)"`. 
