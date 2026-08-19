@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Writing Kotlin recipes
 
-Most refactorings you want to apply to a Kotlin codebase are pattern-shaped: this expression should look like that expression. Writing a visitor by hand for each one means the boilerplate dwarfs the rewrite itself.
+Most refactorings you want to apply to a codebase are pattern-shaped: this expression should look like that expression. Writing a visitor by hand for each one means the boilerplate dwarfs the rewrite itself.
 
 The **Kotlin recipe domain-specific language (DSL)** removes that boilerplate. It is a [K2 compiler plugin](https://kotlinlang.org/docs/whatsnew20.html) shipped inside `rewrite-kotlin` that reads a before/after pair of Kotlin lambdas and synthesizes a `Recipe` subclass at compile time – the same way [Refaster's annotation processor](./refaster-recipes.md) does for Java.
 
