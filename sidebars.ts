@@ -69,6 +69,7 @@ const sidebars: SidebarsConfig = {
         'authoring-recipes/types-of-recipes',
         'authoring-recipes/writing-a-java-refactoring-recipe',
         'authoring-recipes/writing-a-javascript-refactoring-recipe',
+        'authoring-recipes/writing-kotlin-recipes',
         'authoring-recipes/refaster-recipes',
         'authoring-recipes/recipe-testing',
         'authoring-recipes/recipe-conventions-and-best-practices',
