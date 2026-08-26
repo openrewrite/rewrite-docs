@@ -22,6 +22,8 @@ The Java version is determined by several project properties, including:
  * `maven.compiler.release`
  * `release.version`
 
+Properties of any other name are updated too when the `maven-compiler-plugin` `source`, `target` or `release` configuration of this pom, or of a pom it inherits from, resolves to them.
+
 If none of these properties are in use and the maven compiler plugin is not otherwise configured, adds the `maven.compiler.release` property.
 
 ## Recipe source

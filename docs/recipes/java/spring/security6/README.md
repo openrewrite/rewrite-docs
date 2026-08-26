@@ -4,9 +4,11 @@ description: Spring Security 6.x OpenRewrite recipes.
 
 # Spring Security 6.x
 
+_Recipes for migrating to [Spring Security 6](https://spring.io/projects/spring-security)._
+
 ## Categories
 
-* [Oauth2](/recipes/java/spring/security6/oauth2)
+* [OAuth2](/recipes/java/spring/security6/oauth2)
 
 ## Composite Recipes
 

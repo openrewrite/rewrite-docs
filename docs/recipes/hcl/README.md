@@ -1,8 +1,10 @@
 ---
-description: Hcl OpenRewrite recipes.
+description: HCL OpenRewrite recipes.
 ---
 
-# Hcl
+# HCL
+
+_Recipes to search and transform [HashiCorp Configuration Language](https://github.com/hashicorp/hcl), the format used by Terraform._
 
 ## Categories
 

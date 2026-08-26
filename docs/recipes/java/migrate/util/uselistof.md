@@ -14,7 +14,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 Prefer `List.of(..)` in Java 10 or higher. Two input shapes are recognised:
 
 - Anonymous-class initialization (`new ArrayList<>() {{ add("a"); add("b"); }}`), which is replaced wholesale with `List.of("a", "b")` (immutable result, matching the anonymous-class idiom's typical intent).
-- A `new ArrayList<>()` declaration followed by a chain of `target.add(..)` statements, which is collapsed to `new ArrayList<>(List.of(..))` (preserving the mutable `ArrayList`).
+- A `new ArrayList<>()` or `new LinkedHashSet<>()` declaration followed by a chain of `target.add(..)` statements, which is collapsed to `new ArrayList<>(List.of(..))` or `new LinkedHashSet<>(List.of(..))` (preserving both the mutable collection and its iteration order).
 
 ## Recipe source
 

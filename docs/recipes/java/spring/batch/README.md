@@ -4,6 +4,8 @@ description: Spring Batch OpenRewrite recipes.
 
 # Spring Batch
 
+_Recipes for migrating [Spring Batch](https://spring.io/projects/spring-batch) jobs, steps, and readers._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

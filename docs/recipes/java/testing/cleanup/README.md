@@ -1,8 +1,10 @@
 ---
-description: Cleanup OpenRewrite recipes.
+description: Test cleanup OpenRewrite recipes.
 ---
 
-# Cleanup
+# Test cleanup
+
+_Recipes to simplify assertions and clean up test code._
 
 ## Composite Recipes
 

@@ -4,12 +4,15 @@ description: Spring Framework OpenRewrite recipes.
 
 # Spring Framework
 
+_Recipes for migrating between [Spring Framework](https://spring.io/projects/spring-framework) versions._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrate breaking changes in `ResponseStatusException`](./migrateresponsestatusexception.md)
 * [Migrate removed Spring `Assert` methods](./migratespringassert.md)
+* [Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`](./httpcomponentsclienthttprequestfactoryconnecttimeout.md)
 * [Migrate to Spring Framework 5.0 (Community Edition)](./upgradespringframework_5_0-community-edition.md)
 * [Migrate to Spring Framework 5.1](./upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 5.2](./upgradespringframework_5_2.md)
@@ -35,8 +38,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate deprecated `UriComponentsBuilder` methods](./migrateuricomponentsbuildermethods.md)
 * [Migrate `org.springframework.util.Base64Utils` to `java.io.Base64`](./migratebase64utils.md)
 * [Migrate `org.springframework.web.reactive.HandlerResult.setExceptionHandler` method](./migratehandlerresultsetexceptionhandlermethod.md)
-* [Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`](./httpcomponentsclienthttprequestfactoryconnecttimeout.md)
 * [Migrate `setReadTimeout(java.lang.int)` to SocketConfig `setSoTimeout(..)`](./httpcomponentsclienthttprequestfactoryreadtimeout.md)
+* [Move `setConnectTimeout(int)` to a locally wired `ConnectionConfig`](./moveconnecttimeouttoconnectionconfig.md)
 * [Remove `public` from `@Bean` methods](./beanmethodsnotpublic.md)
 * [Replace `WebMvcConfigurerAdapter` with `WebMvcConfigurer`](./migratewebmvcconfigureradapter.md)
 * [Replaces deprecated `ClientHttpResponse#getRawStatusCode()`](./migrateclienthttpresponsegetrawstatuscodemethod.md)

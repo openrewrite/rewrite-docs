@@ -56,6 +56,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace `System.getSecurityManager()` with `null`](../../java/migrate/systemgetsecuritymanagertonull)
 * [Use `ZipException` instead of `ZipError`](../../java/migrate/migrateziperrortozipexception)
 * [Migrate GraalVM resource-config.json to glob patterns](../../java/migrate/migrategraalvmresourceconfig)
+* [Turn dangling documentation comments into block comments](../../java/migrate/danglingdoccommenttoblockcomment)
 * [Comment Kotlin modules capped at Java 24](../../java/migrate/commentkotlinmodulescappedatjava24)
 
 </TabItem>
@@ -90,6 +91,7 @@ recipeList:
   - org.openrewrite.java.migrate.SystemGetSecurityManagerToNull
   - org.openrewrite.java.migrate.MigrateZipErrorToZipException
   - org.openrewrite.java.migrate.MigrateGraalVMResourceConfig
+  - org.openrewrite.java.migrate.DanglingDocCommentToBlockComment
   - org.openrewrite.java.migrate.CommentKotlinModulesCappedAtJava24
 
 ```

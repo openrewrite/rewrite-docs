@@ -90,7 +90,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Math#addExact`](../../../java/migrate/guava/prefermathaddexact)
 * [Prefer `Math#subtractExact`](../../../java/migrate/guava/prefermathsubtractexact)
 * [Prefer `Math#multiplyExact`](../../../java/migrate/guava/prefermathmultiplyexact)
-* [Prefer `new AtomicReference&lt;&gt;()`](../../../java/migrate/guava/noguavaatomicsnewreference)
 * [`InputStreamRules` Refaster recipes](../../../picnic/errorprone/refasterrules/inputstreamrulesrecipes)
 
 </TabItem>
@@ -159,7 +158,6 @@ recipeList:
   - org.openrewrite.java.migrate.guava.PreferMathAddExact
   - org.openrewrite.java.migrate.guava.PreferMathSubtractExact
   - org.openrewrite.java.migrate.guava.PreferMathMultiplyExact
-  - org.openrewrite.java.migrate.guava.NoGuavaAtomicsNewReference
   - tech.picnic.errorprone.refasterrules.InputStreamRulesRecipes
 
 ```

@@ -37,6 +37,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate Dropwizard to Spring Boot 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dropwizard/boot/migratedropwizardtospringboot3)
+* [Migrate deprecated Stub Runner property prefix to the canonical one](/recipes/sh/stubborn/contract/migration/migratestubrunnerproperties.md)
+* [Migrate deprecated Verifier property prefix to the canonical one](/recipes/sh/stubborn/contract/migration/migrateverifierproperties.md)
 * [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
 * [Migrate to Kubernetes API v1.29](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_29)
 * [Renamed streamCaching to streamCache on the route](/recipes/apache/camel/upgrade/camel46/yamstreamcaching.md)

@@ -1,13 +1,16 @@
 ---
-description: Boot4 OpenRewrite recipes.
+description: Spring Boot 4.x OpenRewrite recipes.
 ---
 
-# Boot4
+# Spring Boot 4.x
+
+_Recipes for migrating to [Spring Boot 4](https://spring.io/projects/spring-boot)._
 
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add Spring Boot 4.0 modular starter dependencies](./addmodularstarterdependencies.md)
 * [Add `spring-boot-starter-data-mongodb-reactive-test` for reactive MongoDB tests](./addspringbootstarterdatamongodbreactivetest.md)
 * [Add `spring-boot-starter-data-mongodb-test` for imperative MongoDB tests](./addspringbootstarterdatamongodbtest.md)
 * [Migrate Spring Boot properties to 4.0](./springbootproperties_4_0.md)

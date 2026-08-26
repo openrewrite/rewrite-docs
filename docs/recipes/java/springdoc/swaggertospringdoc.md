@@ -48,6 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * annotationPattern: `@springfox.documentation.swagger2.annotations.EnableSwagger2`
 * [Remove annotation](../../java/removeannotation)
   * annotationPattern: `@springfox.documentation.oas.annotations.EnableOpenApi`
+* [Rewrite safe `PathSelectors.regex(...)` calls as `PathSelectors.ant(...)`](../../java/spring/doc/normalizespringfoxpathselectorsregextoant)
 * [Migrate `Docket` to `GroupedOpenAPI`](../../java/spring/doc/migratedocketbeantogroupedopenapibean)
 
 </TabItem>
@@ -74,6 +75,7 @@ recipeList:
       annotationPattern: @springfox.documentation.swagger2.annotations.EnableSwagger2
   - org.openrewrite.java.RemoveAnnotation:
       annotationPattern: @springfox.documentation.oas.annotations.EnableOpenApi
+  - org.openrewrite.java.spring.doc.NormalizeSpringfoxPathSelectorsRegexToAnt
   - org.openrewrite.java.spring.doc.MigrateDocketBeanToGroupedOpenApiBean
 
 ```

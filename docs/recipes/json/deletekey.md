@@ -26,7 +26,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | keyPath | A [JsonPath](https://docs.openrewrite.org/reference/jsonpath-and-jsonpathmatcher-reference) expression to locate a JSON entry. | `$.subjects.kind` |
-| `Boolean` | deleteEmptyParents | *Optional*. Delete objects and arrays that become empty as a result of deleting the key, applied recursively so that a chain of containers which only held the deleted key is removed entirely. For example, deleting `$.engines.node` from `{"engines": {"node": "20"}}` also deletes `engines`. Containers that were already empty before this recipe ran are left alone. Defaults to `false`. |  |
 
 ## Example
 
@@ -34,7 +33,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Parameter | Value |
 | --- | --- |
 |keyPath|`$.metadata.name`|
-|deleteEmptyParents|`null`|
 
 
 <Tabs groupId="beforeAfter">

@@ -19,5 +19,6 @@ _Basic building blocks for transforming JSON._
 * [Copy JSON value](./copyvalue.md)
 * [Create JSON file](./createjsonfile.md)
 * [Delete key](./deletekey.md)
+* [Remove empty keys](./removeemptykeys.md)
 
 

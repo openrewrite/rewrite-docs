@@ -42,6 +42,7 @@ This recipe is used as part of the following composite recipes:
 * [Add GitLab component](/recipes/gitlab/addcomponent.md)
 * [Add GitLab stages](/recipes/gitlab/addstages.md)
 * [Add GitLab template](/recipes/gitlab/addtemplate.md)
+* [Add `merge_group` workflow trigger](/recipes/github/addmergegrouptrigger.md)
 * [Add artifacts expire_in](/recipes/gitlab/addartifactsexpirein.md)
 * [Add cache configuration](/recipes/gitlab/addcache.md)
 * [Add default keyword](/recipes/gitlab/adddefaultkeyword.md)
@@ -50,6 +51,7 @@ This recipe is used as part of the following composite recipes:
 * [Add manual workflow trigger](/recipes/github/addmanualtrigger.md)
 * [Add retry configuration](/recipes/gitlab/addretry.md)
 * [Add workflow rules](/recipes/gitlab/addworkflowrules.md)
+* [Cancel in-progress workflow when it is triggered again](/recipes/github/autocancelinprogressworkflow.md)
 
 ## Example
 

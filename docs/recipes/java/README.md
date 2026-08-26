@@ -16,15 +16,15 @@ _Basic building blocks for transforming Java code._
 * [JSpecify](/recipes/java/jspecify)
 * [Jackson](/recipes/java/jackson)
 * [Joda](/recipes/java/joda)
-* [Liberty](/recipes/java/liberty)
 * [Logging](/recipes/java/logging)
 * [Micronaut](/recipes/java/micronaut)
 * [Modernize](/recipes/java/migrate)
 * [Netty](/recipes/java/netty)
+* [Open Liberty](/recipes/java/liberty)
 * [Recipes](/recipes/java/recipes)
 * [Search](/recipes/java/search)
 * [Spring](/recipes/java/spring)
-* [Springdoc](/recipes/java/springdoc)
+* [SpringDoc](/recipes/java/springdoc)
 * [Testing](/recipes/java/testing)
 
 ## Recipes

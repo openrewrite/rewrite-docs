@@ -4,6 +4,8 @@ description: Spring Security 5.x OpenRewrite recipes.
 
 # Spring Security 5.x
 
+_Recipes for migrating to [Spring Security 5](https://spring.io/projects/spring-security)._
+
 ## Categories
 
 * [Search](/recipes/java/spring/security5/search)

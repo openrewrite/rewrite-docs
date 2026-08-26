@@ -1,8 +1,10 @@
 ---
-description: Http OpenRewrite recipes.
+description: Spring HTTP OpenRewrite recipes.
 ---
 
-# Http
+# Spring HTTP
+
+_Recipes for [Spring's HTTP](https://docs.spring.io/spring-framework/reference/integration/rest-clients.html) client and server types._
 
 ## Composite Recipes
 

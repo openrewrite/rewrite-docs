@@ -54,6 +54,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * ignoreDefinition: `true`
 * [Move annotation to type instead of field](../../staticanalysis/java/movefieldannotationtotype)
   * annotationType: `org.jspecify.annotations.*`
+* [Remove duplicate annotations](../../staticanalysis/removeduplicateannotations)
+  * annotationType: `org.jspecify.annotations.*`
 
 </TabItem>
 
@@ -86,6 +88,8 @@ recipeList:
       newFullyQualifiedTypeName: org.jspecify.annotations.NonNull
       ignoreDefinition: true
   - org.openrewrite.staticanalysis.java.MoveFieldAnnotationToType:
+      annotationType: org.jspecify.annotations.*
+  - org.openrewrite.staticanalysis.RemoveDuplicateAnnotations:
       annotationType: org.jspecify.annotations.*
 
 ```

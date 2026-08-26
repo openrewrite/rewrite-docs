@@ -1,11 +1,13 @@
 ---
-description: Util OpenRewrite recipes.
+description: Spring Utilities OpenRewrite recipes.
 ---
 
-# Util
+# Spring Utilities
+
+_Recipes for the [Spring utility](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/util/package-summary.html) classes._
 
 ## Categories
 
-* [Concurrent](/recipes/java/spring/util/concurrent)
+* [Spring Concurrency](/recipes/java/spring/util/concurrent)
 
 

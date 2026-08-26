@@ -45,6 +45,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate xmlns entries in `web.xml` files](/recipes/java/migrate/jakarta/javaxwebxmltojakartawebxml.md)
 * [Removed OpenJPA providers in the persistence.xml file](/recipes/java/migrate/javaee7/openjpapersistenceprovider.md)
 * [Replace deprecated lifecycle phases](/recipes/maven/replacedeprecatedlifecyclephases.md)
+* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 * [Upgrade to Maven model version 4.1.0](/recipes/maven/upgradetomodelversion410.md)
 
 ## Example

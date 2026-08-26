@@ -76,6 +76,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apache Commons best practices](/recipes/apache/commons/apachecommonsbestpractices.md)
+
+
 ## Usage
 
 <RunRecipe

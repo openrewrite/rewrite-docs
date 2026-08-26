@@ -34,6 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Rename package name](../../../../java/changepackage)
   * oldPackageName: `org.apache.camel.test.junit5`
   * newPackageName: `org.apache.camel.test.junit6`
+  * recursive: `true`
 * [Change Gradle or Maven dependency](../../../../java/dependencies/changedependency)
   * oldGroupId: `org.apache.camel.quarkus`
   * oldArtifactId: `camel-quarkus-junit5`
@@ -55,6 +56,7 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.camel.test.junit5
       newPackageName: org.apache.camel.test.junit6
+      recursive: true
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.apache.camel.quarkus
       oldArtifactId: camel-quarkus-junit5

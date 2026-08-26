@@ -9,7 +9,7 @@ _Basic building blocks for transforming XML._
 ## Categories
 
 * [Format](/recipes/xml/format)
-* [Liberty](/recipes/xml/liberty)
+* [Open Liberty](/recipes/xml/liberty)
 * [Search](/recipes/xml/search)
 * [Security](/recipes/xml/security)
 * [Style](/recipes/xml/style)

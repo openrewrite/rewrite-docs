@@ -226,15 +226,6 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * **Create YAML file**
   * Create a new YAML file.
 
-## org.openrewrite.meta
-
-
-### rewrite-analysis
-
-* [org.openrewrite.analysis.search.FindFlowBetweenMethods](/recipes/analysis/search/findflowbetweenmethods.md)
-  * **Finds flow between two methods**
-  * Takes two patterns for the start/end methods to find flow between.
-
 ## org.openrewrite.recipe
 
 
@@ -255,6 +246,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ### rewrite-github-actions
 
+* [org.openrewrite.github.ReplaceDependabotReviewersWithCodeowners](/recipes/github/replacedependabotreviewerswithcodeowners.md)
+  * **Replace Dependabot `reviewers` with `CODEOWNERS`**
+  * Replaces the [removed](https://github.blog/changelog/2025-04-29-dependabot-reviewers-configuration-option-being-replaced-by-code-owners/) `reviewers` option in `.github/dependabot.yml` with equivalent `CODEOWNERS` entries. Each reviewer is mapped onto the manifest files Dependabot updates for that `package-ecosystem` and `directory`, so ownership stays as narrow as the Dependabot configuration was. Update entries whose `package-ecosystem` has no known manifests are left untouched.
 * [org.openrewrite.github.UpgradeOfficialGitHubActions](/recipes/github/upgradeofficialgithubactions.md)
   * **Upgrade official GitHub Actions to their latest versions**
   * Upgrades actions from the official `actions` and `github` organizations to the newest known version, working entirely offline. Each reference is upgraded while preserving its existing precision: a major version (`v4`) moves to the newest major, a full version (`v4.1.2`) to the newest full version, and a commit SHA to the latest known commit. Actions that are not official, not known, or already up to date are left untouched.
@@ -287,7 +281,7 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * For Gradle project, removes a single dependency from the dependencies section of the `build.gradle`. For Maven project, removes a single dependency from the `&lt;dependencies&gt;` section of the pom.xml.
 * [org.openrewrite.java.dependencies.RemoveRedundantDependencies](/recipes/java/dependencies/removeredundantdependencies.md)
   * **Remove redundant explicit dependencies**
-  * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared. A direct dependency is only removed when the transitive one provides it at the exact same scope and with the same declared exclusions, so that removing it does not change the effective classpath.
+  * Remove explicit dependencies that are already provided transitively by a specified dependency. This recipe downloads and resolves the parent dependency's POM to determine its true transitive dependencies, allowing it to detect redundancies even when both dependencies are explicitly declared. A direct dependency is only removed when the transitive one provides it at the exact same scope and with the same declared exclusions, so that removing it does not change the effective classpath. Declarations that constrain resolution through a version range or dynamic version, such as a Gradle `version \{ strictly ... \}` block, are never removed.
 * [org.openrewrite.java.dependencies.UpgradeDependencyVersion](/recipes/java/dependencies/upgradedependencyversion.md)
   * **Upgrade Gradle or Maven dependency versions**
   * For Gradle projects, upgrade the version of a dependency in a `build.gradle` file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` It is possible to update version numbers which are defined earlier in the same file in variable declarations.  For Maven projects, upgrade the version of a dependency by specifying a group ID and (optionally) an artifact ID using Node Semver advanced range selectors, allowing more precise control over version updates to patch or minor releases.

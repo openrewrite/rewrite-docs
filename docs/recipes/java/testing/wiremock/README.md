@@ -1,8 +1,10 @@
 ---
-description: Wiremock OpenRewrite recipes.
+description: WireMock OpenRewrite recipes.
 ---
 
-# Wiremock
+# WireMock
+
+_Recipes for [WireMock](https://wiremock.org/) HTTP service mocking._
 
 ## Composite Recipes
 

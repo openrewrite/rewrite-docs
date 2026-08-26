@@ -42,6 +42,9 @@ This recipe is used as part of the following composite recipes:
 
 * [io.quarkus.updates.core.quarkus324.ReplaceNewJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus324/replacenewjpamodelgenannotationprocessor.md)
 * [io.quarkus.updates.core.quarkus324.ReplaceOldJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus324/replaceoldjpamodelgenannotationprocessor.md)
+* [io.quarkus.updates.core.quarkus339.ReplaceHibernateProcessorAnnotationProcessor](/recipes/quarkus/updates/core/quarkus339/replacehibernateprocessorannotationprocessor.md)
+* [io.quarkus.updates.core.quarkus339.ReplaceNewJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus339/replacenewjpamodelgenannotationprocessor.md)
+* [io.quarkus.updates.core.quarkus339.ReplaceOldJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus339/replaceoldjpamodelgenannotationprocessor.md)
 * [io.quarkus.updates.core.quarkus37.ReplaceJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus37/replacejpamodelgenannotationprocessor.md)
 
 

@@ -4,6 +4,8 @@ description: Spring Kafka OpenRewrite recipes.
 
 # Spring Kafka
 
+_Recipes for [Spring for Apache Kafka](https://spring.io/projects/spring-kafka) producers, consumers, and listeners._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

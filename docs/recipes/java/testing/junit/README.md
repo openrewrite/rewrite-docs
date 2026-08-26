@@ -1,8 +1,10 @@
 ---
-description: Junit OpenRewrite recipes.
+description: JUnit OpenRewrite recipes.
 ---
 
-# Junit
+# JUnit
+
+_Best practices that apply across [JUnit](https://junit.org/) versions._
 
 ## Composite Recipes
 

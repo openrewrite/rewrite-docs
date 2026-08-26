@@ -1,8 +1,10 @@
 ---
-description: Mvc OpenRewrite recipes.
+description: Spring MVC OpenRewrite recipes.
 ---
 
-# Mvc
+# Spring MVC
+
+_Recipes for [Spring MVC](https://docs.spring.io/spring-framework/reference/web/webmvc.html) web applications._
 
 ## Composite Recipes
 

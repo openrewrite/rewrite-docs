@@ -77,11 +77,17 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.mockito.ArgumentMatchers anyMap(java.lang.Class)`
   * argumentIndex: `0`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyCollectionOf()`
+  * methodPattern: `org.mockito.ArgumentMatchers anyCollectionOf(java.lang.Class)`
   * newMethodName: `anyCollection`
+* [Delete method argument](../../../java/deletemethodargument)
+  * methodPattern: `org.mockito.ArgumentMatchers anyCollection(java.lang.Class)`
+  * argumentIndex: `0`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyIterableOf()`
+  * methodPattern: `org.mockito.ArgumentMatchers anyIterableOf(java.lang.Class)`
   * newMethodName: `anyIterable`
+* [Delete method argument](../../../java/deletemethodargument)
+  * methodPattern: `org.mockito.ArgumentMatchers anyIterable(java.lang.Class)`
+  * argumentIndex: `0`
 * [Delete method argument](../../../java/deletemethodargument)
   * methodPattern: `org.mockito.ArgumentMatchers isNull(java.lang.Class)`
   * argumentIndex: `0`
@@ -191,11 +197,17 @@ recipeList:
       methodPattern: org.mockito.ArgumentMatchers anyMap(java.lang.Class)
       argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyCollectionOf()
+      methodPattern: org.mockito.ArgumentMatchers anyCollectionOf(java.lang.Class)
       newMethodName: anyCollection
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.ArgumentMatchers anyCollection(java.lang.Class)
+      argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyIterableOf()
+      methodPattern: org.mockito.ArgumentMatchers anyIterableOf(java.lang.Class)
       newMethodName: anyIterable
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.ArgumentMatchers anyIterable(java.lang.Class)
+      argumentIndex: 0
   - org.openrewrite.java.DeleteMethodArgument:
       methodPattern: org.mockito.ArgumentMatchers isNull(java.lang.Class)
       argumentIndex: 0

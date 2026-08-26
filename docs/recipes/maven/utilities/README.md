@@ -1,8 +1,10 @@
 ---
-description: Utilities OpenRewrite recipes.
+description: Maven Utilities OpenRewrite recipes.
 ---
 
-# Utilities
+# Maven Utilities
+
+_Recipes that report on a Maven build rather than change it._
 
 ## Recipes
 

@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Add a blank line around fields with annotations](../../java/recipes/blanklinesaroundfieldswithannotations)
 * [Correctly spaced descriptions](../../java/recipes/correctlyspaceddescriptions)
 * [Use a standard name for `ExecutionContext`](../../java/recipes/executioncontextparametername)
+* [Inline nested visitor classes into the returning method](../../java/recipes/inlinenestedvisitorclass)
 * [Use `J.Literal.isLiteralValue(expression, null)`](../../java/recipes/isliteralnullrecipe)
 * [Find missing `@Option` `example` values](../../java/recipes/missingoptionexample)
 * [Recipe classes should not have mutable `static` fields](../../java/recipes/nomutablestaticfieldsinrecipes)
@@ -77,6 +78,7 @@ recipeList:
   - org.openrewrite.java.recipes.BlankLinesAroundFieldsWithAnnotations
   - org.openrewrite.java.recipes.CorrectlySpacedDescriptions
   - org.openrewrite.java.recipes.ExecutionContextParameterName
+  - org.openrewrite.java.recipes.InlineNestedVisitorClass
   - org.openrewrite.java.recipes.IsLiteralNullRecipe
   - org.openrewrite.java.recipes.MissingOptionExample
   - org.openrewrite.java.recipes.NoMutableStaticFieldsInRecipes

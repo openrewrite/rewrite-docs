@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.ChangeDependabotScheduleInterval**
 
-_Change the schedule interval for a given package-ecosystem in a `dependabot.yml` configuration file. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates)._
+_Change the schedule interval and optionally the day, time, and time zone for a given package-ecosystem in a `dependabot.yml` configuration file. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates)._
 
 ### Tags
 
@@ -33,6 +33,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | packageEcosystem | The package-ecosystem to make updates on. | `maven` |
 | `String` | interval | The schedule interval value the package-ecosystem should use. Valid options: `daily`, `weekly`, `monthly` | `weekly` |
+| `String` | day | *Optional*. The day of the week to run updates when the schedule interval is `weekly`. | `monday` |
+| `String` | time | *Optional*. The time of day to run updates, in `HH:mm` format. Defaults to UTC unless `timezone` is set. | `09:00` |
+| `String` | timezone | *Optional*. The IANA time zone identifier for the configured schedule time. | `Asia/Tokyo` |
 
 
 ## Used by
@@ -49,6 +52,9 @@ This recipe is used as part of the following composite recipes:
 | --- | --- |
 |packageEcosystem|`github-actions`|
 |interval|`weekly`|
+|day||
+|time||
+|timezone||
 
 
 <Tabs groupId="beforeAfter">
@@ -121,6 +127,9 @@ recipeList:
   - org.openrewrite.github.ChangeDependabotScheduleInterval:
       packageEcosystem: maven
       interval: weekly
+      day: monday
+      time: 09:00
+      timezone: Asia/Tokyo
 ```
 
 <RunRecipe
@@ -130,7 +139,7 @@ recipeList:
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
   requiresConfiguration
-  cliOptions={' --recipe-option "packageEcosystem=maven" --recipe-option "interval=weekly"'}
+  cliOptions={' --recipe-option "packageEcosystem=maven" --recipe-option "interval=weekly" --recipe-option "day=monday" --recipe-option "time=09:00" --recipe-option "timezone=Asia/Tokyo"'}
   hasDataTables
 />
 

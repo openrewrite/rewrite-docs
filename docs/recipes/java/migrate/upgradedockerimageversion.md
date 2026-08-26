@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.UpgradeDockerImageVersion**
 
-_Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin. Uses a single `ChangeFrom` glob capture per (image, oldVersion) to preserve any tag suffix._
+_Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin, preserving any tag suffix such as `-jre-alpine`. When a `FROM` is built from a build argument, the default value of the corresponding global `ARG` is upgraded instead, such that `ARG java_version=17` used as `FROM eclipse-temurin:${java_version}` becomes `ARG java_version=25`. Image references built from arguments without a default value are left untouched, as their value can not be determined statically. A digest pin is dropped when the tag is upgraded, as the stale digest would otherwise keep resolving to the old image._
 
 ## Recipe source
 

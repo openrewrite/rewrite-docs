@@ -128,6 +128,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Apache best practices](/recipes/apache/apachebestpractices.md)
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 
 ## Examples

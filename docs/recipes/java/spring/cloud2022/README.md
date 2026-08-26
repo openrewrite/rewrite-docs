@@ -4,6 +4,8 @@ description: Spring Cloud 2022 OpenRewrite recipes.
 
 # Spring Cloud 2022
 
+_Recipes for migrating to Spring Cloud 2022._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

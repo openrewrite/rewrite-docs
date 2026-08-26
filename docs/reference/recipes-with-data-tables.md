@@ -676,7 +676,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.maven.ChangePluginGroupIdAndArtifactId](/recipes/maven/changeplugingroupidandartifactid.md)
   * **Change Maven plugin group and artifact ID**
-  * Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version. This recipe does not perform any validation and assumes all values passed are valid.
+  * Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version, which may be given as an exact version or as a node-style semver selector resolved against the new plugin's available versions.
 
 ##### Data tables:
 
@@ -838,21 +838,6 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.xml.table.XmlStyleReport**: *Records style information about XML documents. Used for debugging style auto-detection issues.*
-
-
-
-## org.openrewrite.meta
-
-
-### rewrite-analysis
-
-#### [org.openrewrite.analysis.search.FindMethods](/recipes/analysis/search/findmethods.md)
-  * **Find method usages**
-  * Find method usages by pattern.
-
-##### Data tables:
-
-  * **org.openrewrite.java.table.MethodCalls**: *The text of matching method invocations.*
 
 
 
@@ -1944,6 +1929,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.staticanalysis.table.AnonymousFunctionalInterfaceImplementations**: *Every anonymous class that implements a functional interface, whether or not it could be rewritten to a lambda, plus the sites that could not be decided either way because the supertype carries incomplete type attribution. Sites that were not rewritten carry the reason why.*
 
 
+#### [org.openrewrite.staticanalysis.UseMapEntrySetIteration](/recipes/staticanalysis/usemapentrysetiteration.md)
+  * **Iterate a `Map`'s `entrySet()` rather than its `keySet()`**
+  * A loop over `map.keySet()` that calls `map.get(key)` hashes and probes the map again for every element, which on a `TreeMap` costs an extra `O(log n)` lookup per iteration. Iterating `map.entrySet()` instead hands the loop both the key and the value. The loop is only rewritten when:  - The map is a simple reference that is neither modified nor reassigned inside the loop.  - `get` is called only with the loop variable.  - The loop variable is neither reassigned nor captured by a lambda or anonymous class.  Every candidate loop, converted or not, is recorded in a data table along with the reason it was left alone.
+
+##### Data tables:
+
+  * **org.openrewrite.staticanalysis.table.MapKeySetIterations**: *Loops that iterate a map's `keySet()` and look the value up again with `get(key)`, and whether they were converted to `entrySet()` iteration.*
+
+
 
 ### rewrite-testing-frameworks
 
@@ -2561,6 +2555,33 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.core.quarkus339.ReplaceHibernateProcessorAnnotationProcessor](/recipes/quarkus/updates/core/quarkus339/replacehibernateprocessorannotationprocessor.md)
+  * **io.quarkus.updates.core.quarkus339.ReplaceHibernateProcessorAnnotationProcessor**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus339.ReplaceNewJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus339/replacenewjpamodelgenannotationprocessor.md)
+  * **io.quarkus.updates.core.quarkus339.ReplaceNewJpaModelgenAnnotationProcessor**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.core.quarkus339.ReplaceOldJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus339/replaceoldjpamodelgenannotationprocessor.md)
+  * **io.quarkus.updates.core.quarkus339.ReplaceOldJpaModelgenAnnotationProcessor**
+  * 
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.core.quarkus37.ChangeMavenCompilerAnnotationProcessorGroupIdAndArtifactId](/recipes/quarkus/updates/core/quarkus37/changemavencompilerannotationprocessorgroupidandartifactid.md)
   * **Change Maven Compiler plugin annotation processor groupId, artifactId and/or the version**
   * Change the groupId, artifactId and/or the version of a specified Maven Compiler plugin annotation processor.
@@ -3011,6 +3032,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v3_39_0](/recipes/quarkus/migratetoquarkus_v3_39_0.md)
+  * **Quarkus Updates Aggregate 3.39.0**
+  * Quarkus update recipes to upgrade your application to 3.39.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.quarkus.MigrateToQuarkus_v3_3_0](/recipes/quarkus/migratetoquarkus_v3_3_0.md)
   * **Quarkus Updates Aggregate 3.3.0**
   * Quarkus update recipes to upgrade your application to 3.3.0.
@@ -3068,6 +3098,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.quarkus.MigrateToQuarkus_v3_9_0](/recipes/quarkus/migratetoquarkus_v3_9_0.md)
   * **Quarkus Updates Aggregate 3.9.0**
   * Quarkus update recipes to upgrade your application to 3.9.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [sh.stubborn.contract.migration.MigrateFromSpringCloudContract](/recipes/sh/stubborn/contract/migration/migratefromspringcloudcontract.md)
+  * **Migrate from Spring Cloud Contract to Stubborn Contract**
+  * Composite recipe that updates Maven/Gradle coordinates, Java package names, and drops JUnit 4 StubRunner / Verifier usage. Run this after adding stubborn-contract-migration to your build's rewrite plugin configuration.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [sh.stubborn.contract.migration.UpdateDependencies](/recipes/sh/stubborn/contract/migration/updatedependencies.md)
+  * **Update Spring Cloud Contract coordinates to Stubborn Contract**
+  * Replaces org.springframework.cloud:spring-cloud-contract-* GAVs with sh.stubborn:stubborn-* equivalents, migrates the spring-cloud-contract-dependencies BOM, and swaps both build plugins, in Maven and Gradle builds alike. The com.toomuchcoding JSON/XML assertion coordinates are swapped alongside the sh.stubborn.jsonassert / sh.stubborn.xmlassert package renames. Every coordinate is repinned to latest.release.
 
 ##### Data tables:
 

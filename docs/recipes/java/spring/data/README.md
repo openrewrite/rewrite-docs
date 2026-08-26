@@ -4,6 +4,8 @@ description: Spring Data OpenRewrite recipes.
 
 # Spring Data
 
+_Recipes for [Spring Data](https://spring.io/projects/spring-data) repositories and query methods._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

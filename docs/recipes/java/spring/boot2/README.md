@@ -4,6 +4,8 @@ description: Spring Boot 2.x OpenRewrite recipes.
 
 # Spring Boot 2.x
 
+_Recipes for migrating to [Spring Boot 2](https://spring.io/projects/spring-boot)._
+
 ## Categories
 
 * [Search](/recipes/java/spring/boot2/search)

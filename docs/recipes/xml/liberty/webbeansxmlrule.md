@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _This Recipe replaces OpenWebBeans schema in every beans.xml with the standard CDI schema._
 
+### Tags
+
+* [liberty](/reference/recipes-by-tag#liberty)
+
 ## Recipe source
 
 [GitHub: WebBeansXmlRule.java](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/xml/liberty/WebBeansXmlRule.java),
@@ -20,6 +24,13 @@ _This Recipe replaces OpenWebBeans schema in every beans.xml with the standard C
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-liberty/)
 
 This recipe is available under the [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate from WebSphere traditional to Liberty](/recipes/java/liberty/migratefromwebspheretoliberty.md)
 
 ## Example
 

@@ -4,6 +4,8 @@ description: Plexus OpenRewrite recipes.
 
 # Plexus
 
+_Recipes for replacing [Plexus](https://codehaus-plexus.github.io/) utilities with Java standard library and SLF4J equivalents._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

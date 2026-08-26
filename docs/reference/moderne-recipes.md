@@ -5151,295 +5151,295 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### recipes-scala
 
-* [org.openrewrite.scala.recipes.cleanup.AvoidEmptyCatchBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/avoidemptycatchblock)
+* [org.openrewrite.scala.cleanup.AvoidEmptyCatchBlock](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/avoidemptycatchblock)
   * **Avoid empty catch blocks**
   * Finds catch blocks that contain no statements, which silently swallow exceptions.
-* [org.openrewrite.scala.recipes.cleanup.AvoidSystemExit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/avoidsystemexit)
+* [org.openrewrite.scala.cleanup.AvoidSystemExit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/avoidsystemexit)
   * **Avoid `System.exit` in library code**
   * Finds `System.exit` and `sys.exit` calls which terminate the JVM. Avoid using these in library code; prefer exceptions or controlled shutdown.
-* [org.openrewrite.scala.recipes.cleanup.EncapsulateField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/encapsulatefield)
+* [org.openrewrite.scala.cleanup.EncapsulateField](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/encapsulatefield)
   * **Encapsulate public mutable fields**
   * Finds public `var` fields in classes. Public mutable fields break encapsulation; consider using a private var with accessor methods.
-* [org.openrewrite.scala.recipes.cleanup.ExternalizeCredentials](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/externalizecredentials)
+* [org.openrewrite.scala.cleanup.ExternalizeCredentials](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/externalizecredentials)
   * **Externalize hardcoded credentials**
   * Finds variable declarations whose name contains credential-related keywords (password, secret, token, apikey, api_key) with a non-empty string literal initializer. Hardcoded credentials are a security risk.
-* [org.openrewrite.scala.recipes.cleanup.ExternalizeTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/externalizetimeout)
+* [org.openrewrite.scala.cleanup.ExternalizeTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/externalizetimeout)
   * **Externalize hardcoded timeouts**
   * Finds hardcoded timeout values such as `Duration(5, ...)`, `5.seconds`, or `Timeout(...)` with numeric literals. Consider making timeouts configurable.
-* [org.openrewrite.scala.recipes.cleanup.ExtractMagicNumber](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/extractmagicnumber)
+* [org.openrewrite.scala.cleanup.ExtractMagicNumber](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/extractmagicnumber)
   * **Extract magic numbers to named constants**
   * Finds magic numbers (literal integers other than -1, 0, 1, 2) used in expressions or method arguments. Consider extracting them to named constants.
-* [org.openrewrite.scala.recipes.cleanup.InventoryScalaLogging](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/inventoryscalalogging)
+* [org.openrewrite.scala.cleanup.InventoryScalaLogging](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/inventoryscalalogging)
   * **Inventory scala-logging usage**
   * Finds imports of the Typesafe scala-logging library (`com.typesafe.scalalogging`). Use this recipe to inventory logging framework usage across a codebase.
-* [org.openrewrite.scala.recipes.cleanup.InventoryTypesafeConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/inventorytypesafeconfig)
+* [org.openrewrite.scala.cleanup.InventoryTypesafeConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/inventorytypesafeconfig)
   * **Inventory Typesafe Config usage**
   * Finds imports of the Typesafe Config library (`com.typesafe.config`). Use this recipe to inventory configuration library usage across a codebase.
-* [org.openrewrite.scala.recipes.cleanup.KeepClassesSmall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/keepclassessmall)
+* [org.openrewrite.scala.cleanup.KeepClassesSmall](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/keepclassessmall)
   * **Keep classes small (max 30 members)**
   * Finds classes with more than 30 members. Large classes are harder to maintain; consider splitting into smaller classes.
-* [org.openrewrite.scala.recipes.cleanup.KeepMethodsShort](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/keepmethodsshort)
+* [org.openrewrite.scala.cleanup.KeepMethodsShort](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/keepmethodsshort)
   * **Keep methods short (max 20 statements)**
   * Finds methods with more than 20 statements. Long methods are harder to understand and maintain; consider refactoring.
-* [org.openrewrite.scala.recipes.cleanup.PatchLog4j](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/patchlog4j)
+* [org.openrewrite.scala.cleanup.PatchLog4j](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/patchlog4j)
   * **Ensure Log4j is patched against CVE-2021-44228**
   * Finds imports of Log4j 1.x (`org.apache.log4j`) or Log4j 2.x (`org.apache.logging.log4j`). Ensure your Log4j version is patched against CVE-2021-44228.
-* [org.openrewrite.scala.recipes.cleanup.PreferExplicitImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferexplicitimports)
+* [org.openrewrite.scala.cleanup.PreferExplicitImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferexplicitimports)
   * **Prefer explicit imports over wildcards**
   * Finds wildcard imports (`import foo._` or `import foo.*`). Explicit imports are generally preferred for clarity.
-* [org.openrewrite.scala.recipes.cleanup.PreferImmutableCollections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferimmutablecollections)
+* [org.openrewrite.scala.cleanup.PreferImmutableCollections](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferimmutablecollections)
   * **Prefer immutable collections**
   * Replaces imports of `scala.collection.mutable.*` with `scala.collection.immutable.*`. Idiomatic Scala prefers immutable collections.
-* [org.openrewrite.scala.recipes.cleanup.PreferImmutableVal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferimmutableval)
+* [org.openrewrite.scala.cleanup.PreferImmutableVal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferimmutableval)
   * **Prefer `val` over `var`**
   * Finds mutable `var` declarations in Scala code. Idiomatic Scala prefers immutable `val` over mutable `var`.
-* [org.openrewrite.scala.recipes.cleanup.PreferOption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferoption)
+* [org.openrewrite.scala.cleanup.PreferOption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferoption)
   * **Prefer `Option` over `null`**
   * Replaces `null` literal with `None`. Idiomatic Scala uses `Option` instead of null.
-* [org.openrewrite.scala.recipes.cleanup.PreferPatternMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferpatternmatch)
+* [org.openrewrite.scala.cleanup.PreferPatternMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferpatternmatch)
   * **Prefer pattern matching over `asInstanceOf` casts**
   * Finds `.asInstanceOf[T]` type casts that should be replaced with pattern matching. Idiomatic Scala prefers pattern matching over explicit casts.
-* [org.openrewrite.scala.recipes.cleanup.PreferPatternMatchOverInstanceOf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferpatternmatchoverinstanceof)
+* [org.openrewrite.scala.cleanup.PreferPatternMatchOverInstanceOf](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferpatternmatchoverinstanceof)
   * **Prefer pattern matching over `isInstanceOf`/`asInstanceOf` chains**
   * Finds `if` statements that check `isInstanceOf` in the condition and use `asInstanceOf` in the then-part. Replace with pattern matching for idiomatic Scala.
-* [org.openrewrite.scala.recipes.cleanup.PreferScalaPropertyAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferscalapropertyaccess)
+* [org.openrewrite.scala.cleanup.PreferScalaPropertyAccess](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferscalapropertyaccess)
   * **Prefer Scala-style property access over Java getters**
   * Finds Java-style getter methods (`getName`, `getValue`, etc.) that could be replaced with Scala-style property access.
-* [org.openrewrite.scala.recipes.cleanup.PreferSpecificTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferspecifictypes)
+* [org.openrewrite.scala.cleanup.PreferSpecificTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferspecifictypes)
   * **Prefer specific types over `Any`**
   * Finds variable declarations whose type expression contains `Any`. Type `Any` is the Scala equivalent of `Object` and is usually too broad.
-* [org.openrewrite.scala.recipes.cleanup.PreferStringInterpolation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/preferstringinterpolation)
+* [org.openrewrite.scala.cleanup.PreferStringInterpolation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/preferstringinterpolation)
   * **Prefer string interpolation over concatenation**
   * Finds string concatenation using the `+` operator. Idiomatic Scala prefers string interpolation (e.g., `s&quot;hello $name&quot;`) over concatenation with `+`.
-* [org.openrewrite.scala.recipes.cleanup.ReduceNesting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/reducenesting)
+* [org.openrewrite.scala.cleanup.ReduceNesting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/reducenesting)
   * **Reduce deep nesting by extracting methods**
   * Finds `def` methods with deeply nested code (5+ indentation levels). Deeply nested code is hard to follow; consider extracting methods.
-* [org.openrewrite.scala.recipes.cleanup.ReduceParameterCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/reduceparametercount)
+* [org.openrewrite.scala.cleanup.ReduceParameterCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/reduceparametercount)
   * **Reduce parameter count (max 5 parameters)**
   * Finds `def` methods with more than 5 parameters. Long parameter lists hurt readability; consider using a case class.
-* [org.openrewrite.scala.recipes.cleanup.RemoveExplicitReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/removeexplicitreturn)
+* [org.openrewrite.scala.cleanup.RemoveExplicitReturn](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/removeexplicitreturn)
   * **Remove explicit `return` statements**
   * Removes explicit `return` statements in Scala code. In Scala, the last expression in a method is automatically the return value, so explicit `return` is not idiomatic.
-* [org.openrewrite.scala.recipes.cleanup.RemoveRedundantToString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/removeredundanttostring)
+* [org.openrewrite.scala.cleanup.RemoveRedundantToString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/removeredundanttostring)
   * **Remove redundant `toString` on `String`**
   * Removes calls to `.toString` on expressions that are already of type `String`. Such calls are redundant.
-* [org.openrewrite.scala.recipes.cleanup.RemoveUnitReturnType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/removeunitreturntype)
+* [org.openrewrite.scala.cleanup.RemoveUnitReturnType](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/removeunitreturntype)
   * **Remove unnecessary `: Unit` return type**
   * Removes the explicit `Unit` return type annotation from Scala methods. In Scala, methods returning `Unit` do not need the `: Unit` annotation.
-* [org.openrewrite.scala.recipes.cleanup.RemoveUnusedBinding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/removeunusedbinding)
+* [org.openrewrite.scala.cleanup.RemoveUnusedBinding](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/removeunusedbinding)
   * **Remove unused variable bindings**
   * Removes variable declarations whose name starts with `_` (underscore-prefixed binding). This removes unused variables that represent dead code.
-* [org.openrewrite.scala.recipes.cleanup.ResolveTodoComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/resolvetodocomment)
+* [org.openrewrite.scala.cleanup.ResolveTodoComment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/resolvetodocomment)
   * **Resolve TODO/FIXME comments**
   * Finds comments containing TODO, FIXME, HACK, or XXX. These indicate incomplete work that should be tracked and resolved.
-* [org.openrewrite.scala.recipes.cleanup.ReviewDeprecatedApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/reviewdeprecatedapi)
+* [org.openrewrite.scala.cleanup.ReviewDeprecatedApi](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/reviewdeprecatedapi)
   * **Review deprecated API declarations**
   * Finds declarations annotated with `@deprecated` in Scala code. Deprecated APIs should be reviewed for removal or migration.
-* [org.openrewrite.scala.recipes.cleanup.SimplifyBooleanExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/simplifybooleanexpression)
+* [org.openrewrite.scala.cleanup.SimplifyBooleanExpression](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/simplifybooleanexpression)
   * **Simplify boolean expression**
   * Simplifies redundant boolean comparisons such as `x == true` to `x` and `x == false` to `!x`.
-* [org.openrewrite.scala.recipes.cleanup.SimplifyOptionMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/simplifyoptionmatch)
+* [org.openrewrite.scala.cleanup.SimplifyOptionMatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/simplifyoptionmatch)
   * **Replace `Option` pattern matching with combinators**
   * Rewrites `option match \{ case Some(x) =&gt; ...; case None =&gt; ... \}` into the equivalent `map`, `flatMap`, or `getOrElse` combinator. Matches whose `None` branch yields `None` become `map` (when the `Some` branch wraps its result in `Some`) or `flatMap`; matches whose `Some` branch returns the bound value unchanged become `getOrElse`, which also covers a `None` branch that throws (its by-name argument keeps the throw lazy).
-* [org.openrewrite.scala.recipes.cleanup.UseCollectionConverters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/usecollectionconverters)
+* [org.openrewrite.scala.cleanup.UseCollectionConverters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/usecollectionconverters)
   * **Replace `JavaConverters` with `CollectionConverters`**
   * `scala.collection.JavaConverters` was deprecated in Scala 2.13 in favor of `scala.jdk.CollectionConverters`. This recipe replaces the import automatically.
-* [org.openrewrite.scala.recipes.cleanup.UseDirectToSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/usedirecttoset)
+* [org.openrewrite.scala.cleanup.UseDirectToSet](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/usedirecttoset)
   * **Replace unnecessary intermediate collection before `.toSet`**
   * Replaces patterns like `.toList.toSet` or `.toSeq.toSet` with `.toSet` to avoid creating an unnecessary intermediate collection.
-* [org.openrewrite.scala.recipes.cleanup.UseLogger](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/uselogger)
+* [org.openrewrite.scala.cleanup.UseLogger](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/uselogger)
   * **Use logging framework instead of `println`**
   * Finds `println` calls in Scala code. Using `println` directly is not suitable for production; use a logging framework instead.
-* [org.openrewrite.scala.recipes.cleanup.UseLoggerForExceptions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/useloggerforexceptions)
+* [org.openrewrite.scala.cleanup.UseLoggerForExceptions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/useloggerforexceptions)
   * **Use logging framework instead of `printStackTrace`**
   * Finds `.printStackTrace` calls. Use a logging framework instead of writing directly to `System.err`.
-* [org.openrewrite.scala.recipes.cleanup.UseOptionSafely](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/useoptionsafely)
+* [org.openrewrite.scala.cleanup.UseOptionSafely](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/useoptionsafely)
   * **Use `Option` safely**
   * Finds calls to `.get` on `Option` values. Calling `.get` on `Option` can throw `NoSuchElementException`; prefer `getOrElse`, `map`, `fold`, or pattern matching.
-* [org.openrewrite.scala.recipes.cleanup.UseOrNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/cleanup/useornull)
+* [org.openrewrite.scala.cleanup.UseOrNull](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/cleanup/useornull)
   * **Replace `.getOrElse(null)` with `.orNull`**
   * Replaces `.getOrElse(null)` on `Option` values with `.orNull` for a cleaner, idiomatic alternative.
-* [org.openrewrite.scala.recipes.concurrency.AvoidBlockingCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/concurrency/avoidblockingcalls)
+* [org.openrewrite.scala.concurrency.AvoidBlockingCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/concurrency/avoidblockingcalls)
   * **Avoid blocking calls (`Await.result`/`Await.ready`)**
   * Finds `Await.result` and `Await.ready` calls which block the current thread. Consider using non-blocking Future composition with map, flatMap, or for-comprehensions.
-* [org.openrewrite.scala.recipes.concurrency.AvoidThreadSleep](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/concurrency/avoidthreadsleep)
+* [org.openrewrite.scala.concurrency.AvoidThreadSleep](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/concurrency/avoidthreadsleep)
   * **Avoid `Thread.sleep`**
   * Finds `Thread.sleep` calls which block the current thread. Consider using scheduled executors or akka scheduler instead.
-* [org.openrewrite.scala.recipes.concurrency.PreferCustomExecutionContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/concurrency/prefercustomexecutioncontext)
+* [org.openrewrite.scala.concurrency.PreferCustomExecutionContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/concurrency/prefercustomexecutioncontext)
   * **Prefer custom `ExecutionContext` over global**
   * Finds imports of `scala.concurrent.ExecutionContext.Implicits.global`. The global ExecutionContext may not be appropriate for blocking I/O operations; prefer a custom ExecutionContext backed by a dedicated thread pool.
-* [org.openrewrite.scala.recipes.concurrency.SynchronizeMutableState](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/concurrency/synchronizemutablestate)
+* [org.openrewrite.scala.concurrency.SynchronizeMutableState](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/concurrency/synchronizemutablestate)
   * **Synchronize mutable shared state**
   * Finds `var` declarations at class level that lack `@volatile` or other synchronization annotations. Mutable shared state without synchronization is a common source of concurrency bugs.
-* [org.openrewrite.scala.recipes.errorhandling.PreferDirectEitherOps](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/errorhandling/preferdirecteitherops)
+* [org.openrewrite.scala.errorhandling.PreferDirectEitherOps](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/errorhandling/preferdirecteitherops)
   * **Prefer direct `Either` operations over projections**
   * Finds usages of `.left` and `.right` projections on `Either`. Since Scala 2.13, `Either` is right-biased so `map`/`flatMap` work directly. Use `swap` to operate on the `Left` side instead of `.left`.
-* [org.openrewrite.scala.recipes.errorhandling.PreferFunctionalErrorHandling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/errorhandling/preferfunctionalerrorhandling)
+* [org.openrewrite.scala.errorhandling.PreferFunctionalErrorHandling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/errorhandling/preferfunctionalerrorhandling)
   * **Prefer functional error handling over `throw` expressions**
   * Finds `throw` expressions inside method bodies that should use functional error handling. Throwing exceptions breaks referential transparency; prefer returning `Try`, `Either`, or `Option`.
-* [org.openrewrite.scala.recipes.errorhandling.UseNonFatalMatcher](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/errorhandling/usenonfatalmatcher)
+* [org.openrewrite.scala.errorhandling.UseNonFatalMatcher](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/errorhandling/usenonfatalmatcher)
   * **Use `NonFatal` matcher for broad catch patterns**
   * Finds catch blocks using broad patterns like `case e: Exception =&gt;` or `case _ =&gt;` that should use `scala.util.control.NonFatal` to catch all non-fatal exceptions while allowing fatal errors to propagate.
-* [org.openrewrite.scala.recipes.errorhandling.UseTrySafely](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/errorhandling/usetrysafely)
+* [org.openrewrite.scala.errorhandling.UseTrySafely](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/errorhandling/usetrysafely)
   * **Use `Try` safely without calling `.get`**
   * Finds calls to `.get` on `scala.util.Try` values that should use safer alternatives. Calling `.get` on a `Failure` throws the contained exception; prefer `getOrElse`, `map`, or pattern matching.
-* [org.openrewrite.scala.recipes.migrate.MigrateImplicitToGivenUsing](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/migrateimplicittogivenusing)
+* [org.openrewrite.scala.migrate.MigrateImplicitToGivenUsing](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/migrateimplicittogivenusing)
   * **Migrate `implicit` to `given`/`using` (Scala 3)**
   * Finds `implicit` keyword usage on methods and parameters. In Scala 3, `implicit` is replaced with `given`/`using`.
-* [org.openrewrite.scala.recipes.migrate.MigrateProcedureSyntax](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/migrateproceduresyntax)
+* [org.openrewrite.scala.migrate.MigrateProcedureSyntax](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/migrateproceduresyntax)
   * **Migrate deprecated procedure syntax**
   * Finds method declarations that use deprecated Scala procedure syntax (methods with a body block but no explicit return type or `=` sign). Procedure syntax was deprecated in Scala 2.13 and removed in Scala 3.
-* [org.openrewrite.scala.recipes.migrate.RemoveAny2StringAdd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/removeany2stringadd)
+* [org.openrewrite.scala.migrate.RemoveAny2StringAdd](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/removeany2stringadd)
   * **Remove deprecated `any2stringadd` usage**
   * Finds expressions like `1 + &quot;string&quot;` that rely on the deprecated `any2stringadd` implicit conversion. This was deprecated in Scala 2.13 and removed in Scala 3. Use string interpolation or `.toString` instead.
-* [org.openrewrite.scala.recipes.migrate.RemoveExistentialTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/removeexistentialtypes)
+* [org.openrewrite.scala.migrate.RemoveExistentialTypes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/removeexistentialtypes)
   * **Remove existential types (removed in Scala 3)**
   * Finds existential types using `forSome` syntax. Existential types were removed in Scala 3 and must be rewritten.
-* [org.openrewrite.scala.recipes.migrate.RemoveSymbolLiterals](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/removesymbolliterals)
+* [org.openrewrite.scala.migrate.RemoveSymbolLiterals](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/removesymbolliterals)
   * **Remove deprecated symbol literals**
   * Finds symbol literals like `'foo` which were deprecated in Scala 2.13 and removed in Scala 3. Use `Symbol(&quot;foo&quot;)` instead.
-* [org.openrewrite.scala.recipes.migrate.ReviewAbstractOverride](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/reviewabstractoverride)
+* [org.openrewrite.scala.migrate.ReviewAbstractOverride](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/reviewabstractoverride)
   * **Review abstract override for Scala 3**
   * Finds methods or fields with both `abstract` and `override` modifiers. The stackable trait pattern using `abstract override` may need review for Scala 3.
-* [org.openrewrite.scala.recipes.migrate.ReviewTraitVarInit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/reviewtraitvarinit)
+* [org.openrewrite.scala.migrate.ReviewTraitVarInit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/reviewtraitvarinit)
   * **Review trait var initialization for Scala 3**
   * Finds traits that have initialized `var` fields. In Scala 3, trait initialization semantics changed and these may need review.
-* [org.openrewrite.scala.recipes.migrate.UpgradeSbtVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/upgradesbtversion)
+* [org.openrewrite.scala.migrate.UpgradeSbtVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/upgradesbtversion)
   * **Upgrade sbt version**
   * Update the `sbt.version` property in `project/build.properties` to the specified version. Only modifies files at `**/project/build.properties`.
-* [org.openrewrite.scala.recipes.migrate.UseQuestionMarkWildcard](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/usequestionmarkwildcard)
+* [org.openrewrite.scala.migrate.UseQuestionMarkWildcard](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/usequestionmarkwildcard)
   * **Use `?` instead of `_` for wildcard types (Scala 3)**
   * Finds usage of `_` as a wildcard type in type parameters (e.g., `List[_]`). In Scala 3, the wildcard type syntax changed from `_` to `?`.
-* [org.openrewrite.scala.recipes.migrate.akka.MigrateActorRefTell](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/akka/migrateactorreftell)
+* [org.openrewrite.scala.migrate.akka.MigrateActorRefTell](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/akka/migrateactorreftell)
   * **Migrate classic actor tell to typed ActorRef**
   * Finds classic Akka actor messaging patterns (`actorRef ! msg` or `actorRef.tell(msg)`). Consider migrating to typed `ActorRef` messaging.
-* [org.openrewrite.scala.recipes.migrate.akka.MigrateToTypedActor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/akka/migratetotypedactor)
+* [org.openrewrite.scala.migrate.akka.MigrateToTypedActor](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/akka/migratetotypedactor)
   * **Migrate classic Actor to Akka Typed Behavior**
   * Removes `akka.actor.Actor` imports and marks classes extending `Actor` or `UntypedActor` from classic Akka for migration to Akka Typed `Behavior`.
-* [org.openrewrite.scala.recipes.migrate.akka.MigrateToTypedActorSystem](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/akka/migratetotypedactorsystem)
+* [org.openrewrite.scala.migrate.akka.MigrateToTypedActorSystem](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/akka/migratetotypedactorsystem)
   * **Migrate `akka.actor.ActorSystem` to `akka.actor.typed.ActorSystem`**
   * Replaces the import `akka.actor.ActorSystem` with `akka.actor.typed.ActorSystem` to migrate from the classic untyped actor system to Akka Typed.
-* [org.openrewrite.scala.recipes.migrate.akka.RemoveDeprecatedAkkaImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/akka/removedeprecatedakkaimports)
+* [org.openrewrite.scala.migrate.akka.RemoveDeprecatedAkkaImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/akka/removedeprecatedakkaimports)
   * **Remove deprecated Akka imports**
   * Removes imports of deprecated Akka APIs such as `akka.pattern.ask` (old ask pattern) and `akka.actor.PoisonPill`. These have no direct drop-in replacement and should be replaced with their modern Akka Typed equivalents.
-* [org.openrewrite.scala.recipes.migrate.database.MigrateAnorm](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/database/migrateanorm)
+* [org.openrewrite.scala.migrate.database.MigrateAnorm](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/database/migrateanorm)
   * **Migrate Anorm to Doobie, Quill, or Skunk**
   * Removes imports of the Anorm SQL library (`anorm.*`). Consider evaluating modern alternatives such as Doobie, Quill, or Skunk.
-* [org.openrewrite.scala.recipes.migrate.database.MigratePhantomDsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/database/migratephantomdsl)
+* [org.openrewrite.scala.migrate.database.MigratePhantomDsl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/database/migratephantomdsl)
   * **Migrate Phantom DSL to Datastax driver or quill-cassandra**
   * Removes imports of the Phantom DSL library (`com.outworkers.phantom.*`). Consider migrating to the direct Datastax driver or quill-cassandra.
-* [org.openrewrite.scala.recipes.migrate.database.MigrateScalikeJdbc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/database/migratescalikejdbc)
+* [org.openrewrite.scala.migrate.database.MigrateScalikeJdbc](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/database/migratescalikejdbc)
   * **Migrate ScalikeJDBC to Doobie or Quill**
   * Removes imports of the ScalikeJDBC library (`scalikejdbc.*`). Consider evaluating modern alternatives such as Doobie or Quill.
-* [org.openrewrite.scala.recipes.migrate.database.SecureSqlQueries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/database/securesqlqueries)
+* [org.openrewrite.scala.migrate.database.SecureSqlQueries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/database/securesqlqueries)
   * **Ensure parameterized SQL queries**
   * Finds raw SQL string patterns such as `sql&quot;...&quot;`, `SQL(...)`, or `s&quot;SELECT...&quot;`. Ensure parameterized queries are used to prevent SQL injection.
-* [org.openrewrite.scala.recipes.migrate.ecosystem.AvoidBlockingSlick](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/ecosystem/avoidblockingslick)
+* [org.openrewrite.scala.migrate.ecosystem.AvoidBlockingSlick](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/ecosystem/avoidblockingslick)
   * **Avoid blocking Slick database calls**
   * Finds methods that combine `Await.result` with `db.run`, indicating a blocking Slick database call. Use streaming or async patterns instead.
-* [org.openrewrite.scala.recipes.migrate.ecosystem.MigrateCatsEffect2To3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/ecosystem/migratecatseffect2to3)
+* [org.openrewrite.scala.migrate.ecosystem.MigrateCatsEffect2To3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/ecosystem/migratecatseffect2to3)
   * **Migrate Cats Effect 2 to Cats Effect 3**
   * Finds Cats Effect 2 imports by detecting `cats.effect.IO` without `cats.effect.unsafe`, or CE2-specific types like `ContextShift` and `Timer`. Consider migrating to Cats Effect 3.
-* [org.openrewrite.scala.recipes.migrate.ecosystem.MigrateScalazToCats](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/ecosystem/migratescalaztocats)
+* [org.openrewrite.scala.migrate.ecosystem.MigrateScalazToCats](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/ecosystem/migratescalaztocats)
   * **Migrate Scalaz to Cats**
   * Removes imports of `scalaz.` packages. Scalaz is a legacy FP library; consider migrating to Cats or ZIO.
-* [org.openrewrite.scala.recipes.migrate.ecosystem.UseCirceDerivation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/ecosystem/usecircederivation)
+* [org.openrewrite.scala.migrate.ecosystem.UseCirceDerivation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/ecosystem/usecircederivation)
   * **Use circe `derives` for Scala 3**
   * Finds imports of `io.circe.generic.auto` which uses Shapeless-based automatic derivation. In Scala 3, consider using `derives` syntax for codec derivation instead.
-* [org.openrewrite.scala.recipes.migrate.http.MigrateAkkaHttpToPekko](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/http/migrateakkahttptopekko)
+* [org.openrewrite.scala.migrate.http.MigrateAkkaHttpToPekko](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/http/migrateakkahttptopekko)
   * **Find Akka HTTP imports to migrate to Apache Pekko**
   * Finds imports starting with `akka.http`. Akka HTTP should be migrated to Apache Pekko HTTP (`org.apache.pekko.http`), the community-maintained fork.
-* [org.openrewrite.scala.recipes.migrate.http.MigrateDispatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/http/migratedispatch)
+* [org.openrewrite.scala.migrate.http.MigrateDispatch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/http/migratedispatch)
   * **Migrate Dispatch to sttp or http4s-client**
   * Removes imports starting with `dispatch.`. Dispatch is an unmaintained HTTP client library; consider using sttp, http4s-client, or requests-scala.
-* [org.openrewrite.scala.recipes.migrate.http.MigrateFinagle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/http/migratefinagle)
+* [org.openrewrite.scala.migrate.http.MigrateFinagle](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/http/migratefinagle)
   * **Migrate Finagle to http4s, tapir, or pekko-http**
   * Removes imports starting with `com.twitter.finagle`. Finagle is a legacy RPC framework; consider evaluating http4s, tapir, or pekko-http as alternatives.
-* [org.openrewrite.scala.recipes.migrate.http.MigrateScalatra](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/http/migratescalatra)
+* [org.openrewrite.scala.migrate.http.MigrateScalatra](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/http/migratescalatra)
   * **Migrate Scalatra to http4s, tapir, or Play**
   * Removes imports starting with `org.scalatra`. Scalatra is a servlet-based framework with declining activity; consider migrating to http4s, tapir, or Play Framework.
-* [org.openrewrite.scala.recipes.migrate.json.MigrateJacksonScala](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/json/migratejacksonscala)
+* [org.openrewrite.scala.migrate.json.MigrateJacksonScala](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/json/migratejacksonscala)
   * **Remove Jackson Scala module imports**
   * Removes imports of the Jackson Scala module (`com.fasterxml.jackson.module.scala.*`). Jackson is a Java-centric library and its Scala module can cause issues with Scala types. Consider using a Scala-native JSON library such as circe or zio-json. Removing the imports causes the compiler to highlight all usage sites that need updating.
-* [org.openrewrite.scala.recipes.migrate.json.MigrateJson4s](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/json/migratejson4s)
+* [org.openrewrite.scala.migrate.json.MigrateJson4s](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/json/migratejson4s)
   * **Remove json4s imports**
   * Removes imports of the json4s library (`org.json4s.*`). json4s has known performance and maintenance concerns and should be replaced with a modern Scala JSON library such as circe or zio-json. Removing the imports causes the compiler to highlight all usage sites that need updating.
-* [org.openrewrite.scala.recipes.migrate.json.MigrateLiftJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/json/migrateliftjson)
+* [org.openrewrite.scala.migrate.json.MigrateLiftJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/json/migrateliftjson)
   * **Remove lift-json imports**
   * Removes imports of the lift-json library (`net.liftweb.json.*`). lift-json is tightly coupled to the Lift framework and should be replaced with a standalone Scala JSON library such as circe or play-json. Removing the imports causes the compiler to highlight all usage sites that need updating.
-* [org.openrewrite.scala.recipes.migrate.json.MigrateSprayJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/json/migratesprayjson)
+* [org.openrewrite.scala.migrate.json.MigrateSprayJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/json/migratesprayjson)
   * **Remove spray-json imports**
   * Removes imports of the spray-json library (`spray.json.*`). spray-json is no longer actively maintained and should be replaced with a modern Scala JSON library such as circe, play-json, or zio-json. Removing the imports causes the compiler to highlight all usage sites that need updating.
-* [org.openrewrite.scala.recipes.migrate.play.InjectWsClient](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/play/injectwsclient)
+* [org.openrewrite.scala.migrate.play.InjectWsClient](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/play/injectwsclient)
   * **Inject `WSClient` instead of using deprecated `WS`**
   * Finds imports of the deprecated `play.api.libs.ws.WS` object. In Play 2.6+, `WS` was deprecated; inject `WSClient` instead.
-* [org.openrewrite.scala.recipes.migrate.play.MigratePlayGlobalSettings](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/play/migrateplayglobalsettings)
+* [org.openrewrite.scala.migrate.play.MigratePlayGlobalSettings](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/play/migrateplayglobalsettings)
   * **Migrate `GlobalSettings` to dependency injection (Play 2.6+)**
   * Finds classes extending `GlobalSettings` and imports of `play.api.GlobalSettings`. GlobalSettings is deprecated in Play 2.6+; use dependency injection instead.
-* [org.openrewrite.scala.recipes.migrate.play.UseAsyncPlayAction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/play/useasyncplayaction)
+* [org.openrewrite.scala.migrate.play.UseAsyncPlayAction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/play/useasyncplayaction)
   * **Use `Action.async` with `Future` instead of blocking**
   * Finds Play controller actions (`Action \{` or `Action.async \{`) that contain `Await.result` blocking calls. Blocking inside Play Actions can exhaust the thread pool; use `Action.async` with `Future` instead.
-* [org.openrewrite.scala.recipes.migrate.play.UsePlayJsonDirectly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/play/useplayjsondirectly)
+* [org.openrewrite.scala.migrate.play.UsePlayJsonDirectly](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/play/useplayjsondirectly)
   * **Use Play JSON `JsValue` directly**
   * Finds imports of `play.api.libs.json.Json` and usages of `Json.parse` or `Json.toJson` that may rely on deprecated implicit conversions. Consider using `play.api.libs.json.JsValue` directly.
-* [org.openrewrite.scala.recipes.migrate.scala3.MigrateDelayedInit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/scala3/migratedelayedinit)
+* [org.openrewrite.scala.migrate.scala3.MigrateDelayedInit](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/scala3/migratedelayedinit)
   * **Migrate from `DelayedInit`/`App` to `@main`**
   * Finds classes or objects extending `DelayedInit` or `App`. The `DelayedInit` trait was deprecated in Scala 2.13 and removed in Scala 3. Use `@main` annotation instead.
-* [org.openrewrite.scala.recipes.migrate.scala3.MigrateXmlLiterals](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/scala3/migratexmlliterals)
+* [org.openrewrite.scala.migrate.scala3.MigrateXmlLiterals](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/scala3/migratexmlliterals)
   * **Migrate XML literals to scala-xml interpolation**
   * Finds XML literal usage in Scala code. XML literals were removed in Scala 3; use scala-xml library string interpolation instead.
-* [org.openrewrite.scala.recipes.migrate.scala3.RemoveAutoTupling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/scala3/removeautotupling)
+* [org.openrewrite.scala.migrate.scala3.RemoveAutoTupling](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/scala3/removeautotupling)
   * **Remove auto-tupling (not available in Scala 3)**
   * Finds imports of `scala.language.autoTupling`. Auto-tupling is not available in Scala 3 and code relying on it must be rewritten.
-* [org.openrewrite.scala.recipes.migrate.scala3.ReplaceDoWhileLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/migrate/scala3/replacedowhileloop)
+* [org.openrewrite.scala.migrate.scala3.ReplaceDoWhileLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/migrate/scala3/replacedowhileloop)
   * **Replace do-while loops (removed in Scala 3)**
   * Finds `do-while` loops which were removed in Scala 3. Rewrite using a `while` loop with initial execution of the loop body.
-* [org.openrewrite.scala.recipes.performance.PreferVectorOrPrepend](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/prefervectororprepend)
+* [org.openrewrite.scala.performance.PreferVectorOrPrepend](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/prefervectororprepend)
   * **Prefer Vector or prepend for append-heavy workloads**
   * Finds usage of the `:+` operator to append to a List, which is O(n). Prefer Vector for append-heavy workloads or prepend with `::` instead.
-* [org.openrewrite.scala.recipes.performance.PreferViewMapValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/preferviewmapvalues)
+* [org.openrewrite.scala.performance.PreferViewMapValues](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/preferviewmapvalues)
   * **Prefer `.view.mapValues` for Scala 2.13+**
   * Finds calls to `.mapValues` which is deprecated in Scala 2.13+ and returns a lazy view instead of a strict Map. Use `.view.mapValues(...).toMap` instead.
-* [org.openrewrite.scala.recipes.performance.UseCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/usecount)
+* [org.openrewrite.scala.performance.UseCount](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/usecount)
   * **Replace `filter` then `size` with `count`**
   * Replaces `.filter(f).size` or `.filter(f).length` chains with `.count(f)` to avoid creating an unnecessary intermediate collection.
-* [org.openrewrite.scala.recipes.performance.UseFlatMap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/useflatmap)
+* [org.openrewrite.scala.performance.UseFlatMap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/useflatmap)
   * **Replace `map` then `flatten` with `flatMap`**
   * Replaces `.map(f).flatten` chains with `.flatMap(f)` for clarity and to avoid creating an unnecessary intermediate collection.
-* [org.openrewrite.scala.recipes.performance.UseHeadOption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/useheadoption)
+* [org.openrewrite.scala.performance.UseHeadOption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/useheadoption)
   * **Replace `.head` with `.headOption`**
   * Replaces `.head` calls on collections with `.headOption` to avoid `NoSuchElementException` on empty collections.
-* [org.openrewrite.scala.recipes.performance.UseIsEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/useisempty)
+* [org.openrewrite.scala.performance.UseIsEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/useisempty)
   * **Use `isEmpty` instead of `size == 0`**
   * Replaces `collection.size == 0` with `collection.isEmpty` for clarity and potential performance benefits.
-* [org.openrewrite.scala.recipes.performance.UseLastOption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/uselastoption)
+* [org.openrewrite.scala.performance.UseLastOption](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/uselastoption)
   * **Replace `.last` with `.lastOption`**
   * Replaces `.last` calls on collections with `.lastOption` to avoid `NoSuchElementException` on empty collections.
-* [org.openrewrite.scala.recipes.performance.UseNonEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/performance/usenonempty)
+* [org.openrewrite.scala.performance.UseNonEmpty](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/performance/usenonempty)
   * **Use `nonEmpty` instead of `size &gt; 0`**
   * Replaces `collection.size &gt; 0` with `collection.nonEmpty` for clarity and potential performance benefits.
-* [org.openrewrite.scala.recipes.safety.AvoidThrowInFinally](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/safety/avoidthrowinfinally)
+* [org.openrewrite.scala.safety.AvoidThrowInFinally](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/safety/avoidthrowinfinally)
   * **Avoid throwing in finally blocks**
   * Finds `throw` statements inside `finally` blocks. Throwing in a `finally` block can mask the original exception, making debugging harder.
-* [org.openrewrite.scala.recipes.safety.NarrowCatchClause](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/safety/narrowcatchclause)
+* [org.openrewrite.scala.safety.NarrowCatchClause](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/safety/narrowcatchclause)
   * **Narrow catch clauses that catch `Throwable`**
   * Finds catch blocks that catch `Throwable` and should be narrowed to specific exception types. Catching `Throwable` also catches fatal errors like `OutOfMemoryError` and `StackOverflowError`. Prefer catching specific exception types.
-* [org.openrewrite.scala.recipes.safety.PreferConcurrentUtils](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/safety/preferconcurrentutils)
+* [org.openrewrite.scala.safety.PreferConcurrentUtils](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/safety/preferconcurrentutils)
   * **Prefer `java.util.concurrent` over `synchronized`**
   * Finds `synchronized` blocks in Scala code. Consider using `java.util.concurrent` alternatives for better performance and composability.
-* [org.openrewrite.scala.recipes.safety.RemoveUnusedImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/safety/removeunusedimport)
+* [org.openrewrite.scala.safety.RemoveUnusedImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/safety/removeunusedimport)
   * **Remove potentially unused imports (heuristic)**
   * Removes imports where the imported simple name does not appear in the rest of the file. This is an approximate heuristic and may produce false positives.
-* [org.openrewrite.scala.recipes.testing.MigrateSpecs2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/testing/migratespecs2)
+* [org.openrewrite.scala.testing.MigrateSpecs2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/testing/migratespecs2)
   * **Migrate specs2 to ScalaTest or MUnit**
   * Finds imports of `org.specs2`. Consider migrating to ScalaTest or MUnit.
-* [org.openrewrite.scala.recipes.testing.MigrateToAnyFlatSpec](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/testing/migratetoanyflatspec)
+* [org.openrewrite.scala.testing.MigrateToAnyFlatSpec](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/testing/migratetoanyflatspec)
   * **Migrate from `FlatSpec` to `AnyFlatSpec`**
   * Renames `FlatSpec` to `AnyFlatSpec` in extends clauses and updates the import from `org.scalatest.FlatSpec` to `org.scalatest.flatspec.AnyFlatSpec` (ScalaTest 3.x).
-* [org.openrewrite.scala.recipes.testing.UseNewScalaTestMatchers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/testing/usenewscalatestmatchers)
+* [org.openrewrite.scala.testing.UseNewScalaTestMatchers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/testing/usenewscalatestmatchers)
   * **Migrate to `org.scalatest.matchers.should.Matchers`**
   * Replaces imports of `org.scalatest.Matchers` or `org.scalatest.ShouldMatchers` with `org.scalatest.matchers.should.Matchers`.
-* [org.openrewrite.scala.recipes.testing.UseScalaTestMatchers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/recipes/testing/usescalatestmatchers)
+* [org.openrewrite.scala.testing.UseScalaTestMatchers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/scala/testing/usescalatestmatchers)
   * **Use ScalaTest matchers instead of `assert(x == y)`**
   * Finds `assert(x == y)` patterns and `assertEquals` calls. Consider using ScalaTest matchers: `x shouldBe y`.
 
@@ -5559,6 +5559,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.UpgradeToAngular21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular21)
   * **Upgrade to Angular 21**
   * Migrates Angular 20.x applications to Angular 21. This includes running the Angular 20 migration first, flagging Karma test runner usage for Vitest migration, deprecated NgClass, zone.js-dependent test helpers, and upgrading TypeScript to 5.9.x.
+* [org.openrewrite.angular.UpgradeToAngular22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular22)
+  * **Upgrade to Angular 22**
+  * Migrates Angular 21.x applications to Angular 22. This includes running the Angular 21 migration first, making the pre-existing change detection, `HttpClient` backend, incremental hydration, strict template, and safe navigation diagnostic defaults explicit, replacing APIs removed in Angular 22, flagging the router behavior changes for review, and upgrading TypeScript to 6.0.x.
 * [org.openrewrite.angular.UpgradeToAngular8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/upgradetoangular8)
   * **Upgrade to Angular 8**
   * Migrates Angular 7.x applications to Angular 8. This includes adding the now-required `static: false` to `@ViewChild` and `@ContentChild` decorators, moving the `DOCUMENT` import from `@angular/platform-browser` to `@angular/common`, removing `rxjs-compat` and flagging any remaining RxJS 5-style imports, flagging removed `@angular/http` imports, converting deprecated string-based `loadChildren` to dynamic imports, and upgrading Angular, TypeScript, and related dependency versions.
@@ -5568,18 +5571,36 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.migration.add-default-configuration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-default-configuration)
   * **Add `defaultConfiguration` to build targets**
   * Adds `&quot;defaultConfiguration&quot;: &quot;production&quot;` to build architect targets in `angular.json`. Angular 12 changed `ng build` to produce production bundles by default.
+* [org.openrewrite.angular.migration.add-eager-change-detection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-eager-change-detection)
+  * **Add `ChangeDetectionStrategy.Eager` to components**
+  * Adds `changeDetection: ChangeDetectionStrategy.Eager` to `@Component` decorators that do not specify a change detection strategy. Angular 22 changed the default for such components to `ChangeDetectionStrategy.OnPush`; making the previous check-always behavior explicit keeps them working unchanged.
+* [org.openrewrite.angular.migration.add-istanbul-instrumenter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-istanbul-instrumenter)
+  * **Add `istanbul-lib-instrument` for Karma code coverage**
+  * Adds `istanbul-lib-instrument` to `devDependencies` of projects that still depend on Karma. Angular 22 stopped bundling the instrumenter, so Karma code coverage fails without it. Run an install afterwards to refresh the lock file.
 * [org.openrewrite.angular.migration.add-localize-polyfill](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-localize-polyfill)
   * **Add `@angular/localize/init` polyfill import**
   * Adds `import '@angular/localize/init'` to `polyfills.ts`. Angular 9 introduced the `$localize` runtime API for i18n. Projects using internationalization must import this polyfill or the application will fail at runtime with `$localize is not defined`. The `@angular/localize` package must also be added as a dependency.
 * [org.openrewrite.angular.migration.add-module-with-providers-generic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-module-with-providers-generic)
   * **Add generic type to `ModuleWithProviders`**
   * Adds the required generic type parameter to bare `ModuleWithProviders` return types. Angular 10 requires `ModuleWithProviders&lt;T&gt;` where `T` is the NgModule type. The module type is inferred from the `ngModule` property in the return statement.
+* [org.openrewrite.angular.migration.add-no-incremental-hydration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-no-incremental-hydration)
+  * **Add `withNoIncrementalHydration()` to `provideClientHydration()`**
+  * Adds the `withNoIncrementalHydration()` opt out to `provideClientHydration()` calls that do not already configure incremental hydration. Angular 22 enables incremental hydration by default; the opt out retains the previous behavior.
 * [org.openrewrite.angular.migration.add-static-false-to-view-queries](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-static-false-to-view-queries)
   * **Add `static: false` to view queries**
   * Adds `static: false` to `@ViewChild` and `@ContentChild` decorators that don't have the `static` property. Angular 8 requires an explicit `static` flag for view query decorators. Using `static: false` preserves the Angular 7 default behavior (queries resolved after change detection).
+* [org.openrewrite.angular.migration.add-strict-templates-false](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-strict-templates-false)
+  * **Add `strictTemplates: false` to `tsconfig.json`**
+  * Adds `&quot;strictTemplates&quot;: false` to `angularCompilerOptions` in `tsconfig.json` when the option is not set. Angular 22 turned strict template type checking on by default; setting it explicitly avoids new compilation errors.
 * [org.openrewrite.angular.migration.add-testbed-teardown](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-testbed-teardown)
   * **Add TestBed module teardown**
   * Adds `\{ teardown: \{ destroyAfterEach: true \} \}` as the third argument to `TestBed.initTestEnvironment()` calls. Angular 13 changed the default teardown behavior, and this ensures explicit opt-in for module teardown after each test.
+* [org.openrewrite.angular.migration.add-trust-proxy-headers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-trust-proxy-headers)
+  * **Add `trustProxyHeaders` to the Angular app engine**
+  * Adds `trustProxyHeaders: ['x-forwarded-host', 'x-forwarded-proto']` to `new AngularNodeAppEngine()` and `new AngularAppEngine()`. Angular 22 stopped trusting forwarded headers by default; the option restores the previous behavior and carries a TODO to remove it when the server does not sit behind a trusted proxy.
+* [org.openrewrite.angular.migration.add-with-xhr](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/add-with-xhr)
+  * **Add `withXhr()` to `provideHttpClient()`**
+  * Adds `withXhr()` to `provideHttpClient()` calls that select neither a `withFetch()` nor a `withXhr()` backend. Angular 22 made `FetchBackend` the default `HttpBackend`; `withXhr()` keeps the previous `XMLHttpRequest` based backend, which is also the only one that reports upload progress.
 * [org.openrewrite.angular.migration.enable-aot-build](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/enable-aot-build)
   * **Enable AOT compilation in `angular.json`**
   * Adds `&quot;aot&quot;: true` to build options in `angular.json`. Angular 9 made AOT compilation the default, and projects upgrading from Angular 8 should enable it explicitly. Build targets using a builder that already defaults `aot` to `true` (`@angular/build:application`, `@angular-devkit/build-angular:application`, `@angular-devkit/build-angular:browser-esbuild`) are left untouched.
@@ -5592,6 +5613,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.migration.migrate-input-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-input-to-signal)
   * **Migrate `@Input()` to signal-based `input()`**
   * Converts `@Input()` decorated properties in Angular classes to signal-based `input()` declarations. For example, `@Input() name: string` becomes `name = input&lt;string&gt;()`, and `@Input(\{ required: true \}) name!: string` becomes `name = input.required&lt;string&gt;()`.
+* [org.openrewrite.angular.migration.migrate-model-with-output](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-model-with-output)
+  * **Split a `model()` that has a matching explicit output**
+  * Rewrites `foo = model()` to `fooInput = input(\{alias: 'foo'\})` plus `foo = linkedSignal(this.fooInput)` when the same class also declares a `fooChange` output. `model()` already contributes a `fooChange` output, and Angular 22 rejects the resulting duplicate.
 * [org.openrewrite.angular.migration.migrate-output-to-signal](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/migrate-output-to-signal)
   * **Migrate `@Output()` to signal-based `output()`**
   * Converts `@Output()` decorated properties using `EventEmitter` in Angular classes to signal-based `output()` declarations. For example, `@Output() clicked = new EventEmitter&lt;void&gt;()` becomes `clicked = output&lt;void&gt;()`.
@@ -5646,27 +5670,42 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.migration.remove-static-false](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-static-false)
   * **Remove `static: false` from view queries**
   * Removes `static: false` from `@ViewChild`, `@ContentChild`, `@ViewChildren`, and `@ContentChildren` decorators. In Angular 9 with Ivy, `static: false` became the default behavior, making the explicit option unnecessary.
+* [org.openrewrite.angular.migration.remove-with-fetch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-with-fetch)
+  * **Remove `withFetch()` from `provideHttpClient()`**
+  * Removes the `withFetch()` feature from `provideHttpClient()` calls. Angular 22 uses the Fetch API by default and deprecated `withFetch()`, which can be safely removed.
 * [org.openrewrite.angular.migration.remove-zone-js-polyfill](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/remove-zone-js-polyfill)
   * **Remove zone.js polyfill from angular.json**
   * Removes zone.js entries from the `polyfills` array in `angular.json`. Angular 20 supports zoneless change detection via `provideZonelessChangeDetection()`, making the zone.js polyfill unnecessary.
 * [org.openrewrite.angular.migration.rename-after-render](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-after-render)
   * **Rename `afterRender` to `afterEveryRender`**
   * Renames `afterRender` to `afterEveryRender` in imports and usages. The `afterRender` function was renamed to `afterEveryRender` in Angular 20, and Angular provides no migration schematic for this change.
+* [org.openrewrite.angular.migration.rename-angular-js-globals](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-angular-js-globals)
+  * **Rename `getAngularLib`/`setAngularLib` to `getAngularJSGlobal`/`setAngularJSGlobal`**
+  * Renames the `getAngularLib` and `setAngularLib` functions from `@angular/upgrade` to `getAngularJSGlobal` and `setAngularJSGlobal`. The deprecated aliases were removed in Angular 22.
 * [org.openrewrite.angular.migration.rename-check-no-changes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-check-no-changes)
   * **Rename `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug`**
   * Renames `provideExperimentalCheckNoChangesForDebug` to `provideCheckNoChangesForDebug` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
+* [org.openrewrite.angular.migration.rename-default-change-detection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-default-change-detection)
+  * **Rename `ChangeDetectionStrategy.Default` to `ChangeDetectionStrategy.Eager`**
+  * Renames the deprecated `ChangeDetectionStrategy.Default` enum member to its Angular 22 replacement `ChangeDetectionStrategy.Eager`. Both members have the same value, so the change is behavior preserving.
 * [org.openrewrite.angular.migration.rename-file](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-file)
   * **Rename file**
   * Renames files matching a glob pattern to a new file name, preserving the directory.
 * [org.openrewrite.angular.migration.rename-pending-tasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-pending-tasks)
   * **Rename `ExperimentalPendingTasks` to `PendingTasks`**
   * Renames `ExperimentalPendingTasks` to `PendingTasks` in imports and usages. `ExperimentalPendingTasks` was renamed in Angular 19.
+* [org.openrewrite.angular.migration.rename-ssr-experimental-platform](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-ssr-experimental-platform)
+  * **Rename `ssr.experimentalPlatform` to `ssr.platform` in `angular.json`**
+  * Angular 22 renamed the `ssr.experimentalPlatform` builder option to `ssr.platform` on the `application` and `build-application` builders. Matches the `update-workspace-config` schematic.
 * [org.openrewrite.angular.migration.rename-zoneless-provider](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/rename-zoneless-provider)
   * **Rename `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection`**
   * Renames `provideExperimentalZonelessChangeDetection` to `provideZonelessChangeDetection` in imports and usages. The experimental API was promoted to developer preview in Angular 20.
 * [org.openrewrite.angular.migration.replace-async-with-wait-for-async](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-async-with-wait-for-async)
   * **Replace `async` with `waitForAsync`**
   * Replaces the removed `async` test helper from `@angular/core/testing` with `waitForAsync`. The `async` function was deprecated in Angular 11 and removed in Angular 18.
+* [org.openrewrite.angular.migration.replace-create-ng-module-ref](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-create-ng-module-ref)
+  * **Replace `createNgModuleRef` with `createNgModule`**
+  * Renames `createNgModuleRef` to `createNgModule` in imports and usages. The deprecated `createNgModuleRef` alias was removed in Angular 22.
 * [org.openrewrite.angular.migration.replace-deep-zone-js-imports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-deep-zone-js-imports)
   * **Replace deep `zone.js` imports**
   * Replaces legacy deep imports from `zone.js` such as `zone.js/dist/zone` or `zone.js/bundles/zone-testing.js` with the standard `zone.js` or `zone.js/testing` imports, in both TypeScript files and `angular.json` polyfills. Deep imports are no longer allowed in Angular 17.
@@ -5700,6 +5739,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.migration.replace-view-encapsulation-native](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-view-encapsulation-native)
   * **Replace `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`**
   * Replaces `ViewEncapsulation.Native` with `ViewEncapsulation.ShadowDom`. `ViewEncapsulation.Native` was deprecated in Angular 6 and removed in Angular 11.
+* [org.openrewrite.angular.migration.suppress-safe-navigation-diagnostics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/suppress-safe-navigation-diagnostics)
+  * **Suppress the safe navigation extended diagnostics**
+  * Sets the `nullishCoalescingNotNullable` and `optionalChainNotNullable` extended diagnostics to `suppress` in `angularCompilerOptions` in `tsconfig.json`. Angular 22 narrows types across safe navigation and nullish coalescing in templates, which makes both diagnostics fire on templates that previously compiled cleanly.
 * [org.openrewrite.angular.migration.update-component-template-url](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/update-component-template-url)
   * **Update component `templateUrl`**
   * Updates the `templateUrl` property value in Angular `@Component` decorators. Useful for refactoring template file paths or standardizing path conventions.
@@ -5733,6 +5775,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.search.find-browser-transfer-state-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-browser-transfer-state-module-usage)
   * **Find `BrowserTransferStateModule` usage**
   * Finds usages of `BrowserTransferStateModule` from `@angular/platform-browser` which was removed in Angular 16. `TransferState` can be used directly without this module.
+* [org.openrewrite.angular.search.find-can-match-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-can-match-usage)
+  * **Find two argument `canMatch` guard calls**
+  * Finds calls to a `canMatch` guard that pass only a route and its segments. Angular 22 made the `currentSnapshot` parameter of `CanMatch` and `CanMatchFn` required, so those calls no longer compile. Guards that declare fewer parameters keep working and are not reported.
+* [org.openrewrite.angular.search.find-check-no-changes-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-check-no-changes-usage)
+  * **Find `ChangeDetectorRef.checkNoChanges` usage**
+  * Finds calls to `checkNoChanges()`, which was removed from `ChangeDetectorRef` in Angular 22. In tests, use `fixture.detectChanges()` instead.
 * [org.openrewrite.angular.search.find-common-module-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-common-module-usage)
   * **Find `CommonModule` usage**
   * Finds imports of `CommonModule` from `@angular/common`. Since Angular 19, standalone components are the default and `CommonModule` is no longer needed in component `imports` arrays. Built-in directives and pipes are available automatically.
@@ -5754,9 +5802,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.search.find-hammer-js-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-hammer-js-usage)
   * **Find HammerJS usage**
   * Finds `HammerModule` imports and HammerJS references. Angular has deprecated HammerJS support and it will be removed in Angular 21.
+* [org.openrewrite.angular.search.find-http-xhr-backend-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-http-xhr-backend-usage)
+  * **Find `HttpXhrBackend` usage**
+  * Finds imports of `HttpXhrBackend` from `@angular/common/http`. Angular 22 uses the Fetch API by default; add `withXhr()` to `provideHttpClient()` to keep using `XMLHttpRequest`, which is also required for upload progress reports.
 * [org.openrewrite.angular.search.find-i18n-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-i18n-usage)
   * **Find i18n usage**
   * Finds i18n usage indicators: legacy i18n configuration in `angular.json` (`i18nLocale`, `i18nFile`, `i18nFormat`, `i18nMissingTranslation`), `$localize` tagged template literals, and `@angular/localize` imports. Projects with these markers need `@angular/localize` installed and `import '@angular/localize/init'` in `polyfills.ts` for Angular 9+.
+* [org.openrewrite.angular.search.find-implicit-params-inheritance](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-implicit-params-inheritance)
+  * **Find router configuration relying on the default `paramsInheritanceStrategy`**
+  * Finds `provideRouter()` and `RouterModule.forRoot()` calls that do not set `paramsInheritanceStrategy`. Angular 22 changed the default from `emptyOnly` to `always`, so route parameters and data are now inherited from all parent routes.
 * [org.openrewrite.angular.search.find-karma-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-karma-usage)
   * **Find Karma test runner usage**
   * Finds Karma test runner configuration in package.json dependencies and angular.json test builder. Angular 21 replaces Karma with Vitest as the default test runner.
@@ -5790,6 +5844,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.search.find-preserve-query-params-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-preserve-query-params-usage)
   * **Find deprecated `preserveQueryParams` usage**
   * Finds usages of the deprecated `preserveQueryParams` navigation option. `preserveQueryParams` was deprecated in Angular 4 and removed in Angular 11. Use `queryParamsHandling: 'preserve'` instead.
+* [org.openrewrite.angular.search.find-provide-routes-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-provide-routes-usage)
+  * **Find `provideRoutes` usage**
+  * Finds imports of `provideRoutes` from `@angular/router`, which was removed in Angular 22. Use `provideRouter()`, or provide the `ROUTES` multi token directly.
 * [org.openrewrite.angular.search.find-provided-in-deprecated-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-provided-in-deprecated-usage)
   * **Find deprecated `providedIn` values**
   * Finds usages of `providedIn: 'any'` and `providedIn: NgModule` in `@Injectable` and `InjectionToken` declarations. These were deprecated in Angular 15. Use `providedIn: 'root'` or add the service to `NgModule.providers` instead.
@@ -5823,6 +5880,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.angular.search.find-setup-testing-router-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-setup-testing-router-usage)
   * **Find `setupTestingRouter` usage**
   * Finds usages of the removed `setupTestingRouter` function from `@angular/router/testing`. This function was removed in Angular 17. Use `RouterModule.forRoot` or `provideRouter` to set up the Router for tests instead.
+* [org.openrewrite.angular.search.find-template-safe-navigation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-template-safe-navigation)
+  * **Find safe navigation in Angular templates**
+  * Finds `?.` in HTML templates and in inline `template` metadata. Angular 22 changed safe navigation in templates to return `undefined` instead of `null`, which changes bindings that tell the two apart. Angular ships a `$safeNavigationMigration()` wrapper for this; this recipe reports the templates to review rather than rewriting the expressions.
 * [org.openrewrite.angular.search.find-testability-pending-request-usage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/search/find-testability-pending-request-usage)
   * **Find removed Testability pending request methods**
   * Finds imports of `Testability` from `@angular/core`, which had `increasePendingRequestCount`, `decreasePendingRequestCount`, and `getPendingRequestCount` removed in Angular 18. These are now tracked with zones.
@@ -6327,6 +6387,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.hibernate.update70.MigrateIntegratorMethod](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migrateintegratormethod)
   * **Migrate Hibernate `Integrator#integrate` method**
   * Migrate Hibernate `Integrator#integrate` method from deprecated signature to Hibernate 7 compatible signature. Changes `integrate(Metadata, SessionFactoryImplementor, SessionFactoryServiceRegistry)` to `integrate(Metadata, BootstrapContext, SessionFactoryImplementor)`.
+* [io.moderne.hibernate.update70.MigrateJacksonDatatypeHibernate6To7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejacksondatatypehibernate6to7)
+  * **Migrate `jackson-datatype-hibernate6` to `jackson-datatype-hibernate7`**
+  * Swaps the `jackson-datatype-hibernate6` dependency for `jackson-datatype-hibernate7`, along with the types it provides. Both the Jackson 2 (`com.fasterxml.jackson.datatype`) and Jackson 3 (`tools.jackson.datatype`) coordinates are handled, such that this recipe is applicable both before and after a migration to Jackson 3.
 * [io.moderne.hibernate.update70.MigrateJdbcTypeToJdbcTypeCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejdbctypetojdbctypecode)
   * **Migrate `@JdbcType` and legacy `@Type` to `@JdbcTypeCode`**
   * In Hibernate 7.0, various JDBC types were moved to internal packages. Use `@JdbcTypeCode` with `SqlTypes` constants instead of `@JdbcType` with specific classes. Also rewrites `@Type(LegacyType.class)` references to deprecated Hibernate basic types (e.g. `MaterializedBlobType`, `ImageType`) into the equivalent `@JdbcTypeCode(SqlTypes.X)`.
@@ -6699,6 +6762,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.ExtractNodeDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extractnodedependencies)
   * **Extract Node.js dependencies and usage**
   * Scan package.json and JavaScript/TypeScript imports to produce a DependencyUsage entry per actually-imported npm package, including the symbols imported from it, the import styles in use, and how many files import it.
+* [io.moderne.prethink.ExtractRubyDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/extractrubydependencies)
+  * **Extract Ruby dependencies**
+  * Read Gemfile, gemspec and Gemfile.lock manifests and emit rows into the shared dependency-list-report table, mirroring the JVM dependency inventory. Records the Bundler group a gem was declared in and whether it comes from a git or path source rather than RubyGems, and joins the resolved versions in Gemfile.lock, including transitive gems, onto the gems the Gemfile and gemspec declare.
 * [io.moderne.prethink.FindGoCodingConventions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findgocodingconventions)
   * **Find Go coding conventions**
   * Detect Go naming patterns (package names, exported vs unexported, interface -er suffix, error variable prefix, test prefix).
@@ -6708,6 +6774,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.FindNodeCodingConventions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findnodecodingconventions)
   * **Find JavaScript and TypeScript coding conventions**
   * Detect JavaScript/TypeScript conventions the Java convention extractor cannot see: import styles (default, named, namespace, type-only, side-effect, path-alias), React hook and component naming, the Props suffix for prop types, UPPER_SNAKE_CASE constants, and JSDoc comments.
+* [io.moderne.prethink.FindRubyCodingConventions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findrubycodingconventions)
+  * **Find Ruby coding conventions**
+  * Detect Ruby conventions the Java convention extractor cannot see: snake_case method names, the `?` and `!` method suffixes, the `frozen_string_literal` magic comment, `require` versus `require_relative`, module namespacing depth, and whether visibility is declared as a section or per method.
+* [io.moderne.prethink.FindRubyErrorPatterns](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/findrubyerrorpatterns)
+  * **Find Ruby error handling patterns**
+  * Detect Ruby error-handling idioms: bare, bound and typed `rescue` clauses, the `rescue` modifier, `ensure`, `retry`, `raise` with a class versus a string, custom error classes, and whether rescues log through `Rails.logger` or a bare `logger`.
 * [io.moderne.prethink.PythonDependencyReport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/pythondependencyreport)
   * **Python dependency report**
   * Read the dependency graph attached to Python manifests (pyproject.toml, Pipfile, requirements.txt, setup.cfg) by the parser and emit rows into the shared dependency-list-report table, mirroring the JVM dependency inventory. Includes declared (direct) dependencies and, when a lock file resolved them, transitive dependencies with concrete versions.
@@ -6717,6 +6789,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.UpdatePrethinkContextStarter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/updateprethinkcontextstarter)
   * **Update Prethink context**
   * Generate Moderne Prethink context files with architectural discovery, test coverage mapping, dependency inventory, and FINOS CALM architecture diagrams.
+* [io.moderne.prethink.calm.FindActiveRecordModels](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findactiverecordmodels)
+  * **Find ActiveRecord models**
+  * Identify ActiveRecord model classes in Ruby on Rails applications. Detects classes whose superclass chain reaches `ApplicationRecord` or `ActiveRecord::Base`, taking the table name from an explicit `self.table_name`, from the single-table inheritance parent that owns the table, or by pluralizing the class name, and skipping abstract classes. Also detects `connects_to` and `establish_connection` connections and Mongoid documents, and joins the database type from the `adapter:` of `config/database.yml`.
 * [io.moderne.prethink.calm.FindAspNetCoreEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findaspnetcoreendpoints)
   * **Find ASP.NET Core endpoints**
   * Identify HTTP endpoints declared via ASP.NET Core controllers ([ApiController], [Route], [HttpGet/Post/...]) and Minimal APIs (app.MapGet/MapPost/MapPut/MapDelete/MapPatch).
@@ -6834,6 +6909,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindGoScheduledTasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgoscheduledtasks)
   * **Find Go scheduled tasks**
   * Detect background work scheduled through robfig/cron, go-co-op/gocron, `time.NewTicker`/`time.Tick`, and `time.AfterFunc` in Go source.
+* [io.moderne.prethink.calm.FindGoSecurityConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgosecurityconfiguration)
+  * **Find Go security configuration**
+  * Identify security configuration in Go applications: CORS middleware, JWT / basic / OAuth2 authentication, CSRF protection, security headers, rate limiting, and TLS termination.
 * [io.moderne.prethink.calm.FindGoServiceEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findgoserviceendpoints)
   * **Find Go service endpoints**
   * Detect HTTP endpoints registered via net/http, gin, echo, chi, gorilla/mux, and fiber routers.
@@ -6888,6 +6966,33 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.calm.FindPythonTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findpythontestcoverage)
   * **Find Python test coverage**
   * Identify test methods in Python test files. Detects pytest test functions/classes, unittest.TestCase subclasses, and behave/pytest-bdd/lettuce BDD step definitions, and populates the TestMapping table.
+* [io.moderne.prethink.calm.FindRailsDataAssets](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrailsdataassets)
+  * **Find Rails data assets**
+  * Identify ActiveRecord entities and their columns from `db/schema.rb`, or from `db/migrate/*.rb` when no schema dump is checked in. Association macros declared in `app/models` enrich the entity they belong to.
+* [io.moderne.prethink.calm.FindRailsEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrailsendpoints)
+  * **Find Rails endpoints**
+  * Identify HTTP endpoints declared in a Rails router. Expands `resources` and `resource` into their canonical actions, composes paths through `namespace`, `scope`, `member`, `collection` and `concern` nesting, expands `devise_for`, and reconciles every route against the controllers under `app/controllers`.
+* [io.moderne.prethink.calm.FindRubyHttpClients](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrubyhttpclients)
+  * **Find Ruby HTTP clients**
+  * Detect outbound HTTP calls made through Net::HTTP, Faraday, HTTParty, RestClient, http.rb, Typhoeus, or ActiveResource.
+* [io.moderne.prethink.calm.FindRubyMessaging](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrubymessaging)
+  * **Find Ruby messaging**
+  * Identify messaging patterns in Ruby applications. Detects Sidekiq, ActiveJob, Resque, ActionCable, Karafka, Racecar, and Shoryuken consumers, including those that reach their framework through a base class of the application's own, along with the call sites that enqueue to them.
+* [io.moderne.prethink.calm.FindRubyMicroframeworkEndpoints](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrubymicroframeworkendpoints)
+  * **Find Sinatra and Grape endpoints**
+  * Detect HTTP endpoints declared as verb calls with a block in Sinatra and Grape applications, composing Grape paths through `namespace`, `resource` and `route_param` nesting.
+* [io.moderne.prethink.calm.FindRubyProjectMetadata](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrubyprojectmetadata)
+  * **Find Ruby project metadata**
+  * Extract project metadata (name, version, summary) from Ruby gemspecs, from the Rails application module declared in config/application.rb, or failing both from the directory holding a Gemfile. Only the most specific of the three sources present contributes rows, so a repository resolves to one identity.
+* [io.moderne.prethink.calm.FindRubyScheduledTasks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrubyscheduledtasks)
+  * **Find Ruby scheduled tasks**
+  * Identify recurring background work in Ruby applications. Detects whenever schedules in `config/schedule.rb`, sidekiq-cron jobs created through `Sidekiq::Cron::Job.create` or declared under `:schedule:` in `config/sidekiq.yml`, clockwork `every` declarations in `clock.rb`, and rufus-scheduler `cron`/`every`/`in`/`at` calls.
+* [io.moderne.prethink.calm.FindRubySecurityConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrubysecurityconfiguration)
+  * **Find Ruby security configuration**
+  * Detect Rails authentication, authorization, CSRF, and transport security mechanisms: `before_action`/`skip_before_action` authentication filters, `protect_from_forgery`, Devise model configuration, Pundit, CanCanCan, `config.force_ssl`, and `has_secure_password`.
+* [io.moderne.prethink.calm.FindRubyTestCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findrubytestcoverage)
+  * **Find Ruby test coverage**
+  * Identify RSpec examples and Minitest tests in Ruby test files and record them in the test mapping table. Joins each test to the class it exercises by Rails naming convention: the constant its `describe` names, its own class name minus the `Test` suffix, or the path of the spec, accepted only when a Ruby file declaring that class was scanned.
 * [io.moderne.prethink.calm.FindSQLAlchemyModels](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/calm/findsqlalchemymodels)
   * **Find SQLAlchemy and Django ORM models**
   * Identify ORM model classes in Python applications. Detects SQLAlchemy models with DeclarativeBase inheritance, Flask-SQLAlchemy models with db.Model, and Django ORM models extending models.Model.
@@ -6954,6 +7059,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.prethink.quality.FindPackageMetrics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findpackagemetrics)
   * **Find package quality metrics**
   * Compute per-package architectural quality metrics including afferent/efferent coupling, instability, abstractness, distance from the main sequence, and dependency cycle detection using Tarjan's strongly connected components algorithm.
+* [io.moderne.prethink.quality.FindRubyMethodComplexity](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findrubymethodcomplexity)
+  * **Find Ruby method complexity**
+  * Compute per-method code quality metrics for Ruby including cyclomatic complexity, cognitive complexity, max nesting depth, line count, parameter count, ABC metric, and Halstead measures.
+* [io.moderne.prethink.quality.FindRubyPackageMetrics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findrubypackagemetrics)
+  * **Find Ruby package quality metrics**
+  * Per-directory architectural metrics for Ruby: afferent/efferent coupling, instability, abstractness (module ratio), distance from main sequence, and cycle detection.
+* [io.moderne.prethink.quality.FindRubyTypeMetrics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findrubytypemetrics)
+  * **Find Ruby type quality metrics**
+  * Compute per-class code quality metrics for Ruby including WMC, LCOM4, TCC, CBO, and maintainability index. Aggregates classes and modules of the same name across files.
 * [io.moderne.prethink.quality.FindSimilarCode](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/prethink/quality/findsimilarcode)
   * **Find similar code**
   * Detect structurally similar (but not identical) methods with MinHash/LSH near-duplicate matching over their AST shingles (zero AI), reporting an approximate similarity percentage. Complements exact duplicate detection by surfacing restructured near-duplicates worth consolidating.
@@ -7478,7 +7592,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Adds `@AutoConfigureMockMvc` annotation to classes annotated with `@SpringBootTest` that use `MockMvc`.
 * [io.moderne.java.spring.boot4.AddFlywayStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addflywaystarters)
   * **Add Flyway starters**
-  * Adds spring-boot-starter-flyway and spring-boot-starter-flyway-test dependencies when Flyway usage is detected in the module.
+  * Adds the spring-boot-starter-flyway dependency when Flyway usage is detected in the module.
 * [io.moderne.java.spring.boot4.AddJackson2ForJerseyJson](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addjackson2forjerseyjson)
   * **Add Jackson2 for Jersey using JSON**
   * Check whether a module uses Jersey on combination with JSON and adds the needed `spring-boot-jackson` dependency and conditionally `spring-boot-jackson2` dependency.
@@ -7487,10 +7601,10 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * When migrating from `@MockBean` to `@MockitoBean`, the implicit LENIENT Mockito strictness from Spring Boot's `MockitoPostProcessor` is lost. If `@ExtendWith(MockitoExtension.class)` is present, Mockito enforces STRICT_STUBS by default, causing `UnnecessaryStubbingException` for tests with unused stubs. This recipe adds `@MockitoSettings(strictness = Strictness.LENIENT)` to preserve the original behavior.
 * [io.moderne.java.spring.boot4.AddLiquibaseStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addliquibasestarters)
   * **Add Liquibase starters**
-  * Adds spring-boot-starter-liquibase and spring-boot-starter-liquibase-test dependencies when Liquibase usage is detected in the module.
+  * Adds the spring-boot-starter-liquibase dependency when Liquibase usage is detected in the module.
 * [io.moderne.java.spring.boot4.AddModularStarters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmodularstarters)
   * **Add Spring Boot 4.0 modular starters**
-  * Add Spring Boot 4.0 starter dependencies based on package usage. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology.
+  * Add Spring Boot 4.0 starter dependencies based on package usage. Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology. A `-test` starter is only added when the module actually uses the test support it provides, such as a test slice annotation like `@DataJpaTest`. Production usage alone does not pull one in, so `-test` starters without a matching test-side trigger are skipped.
 * [io.moderne.java.spring.boot4.AddMongoDbRepresentationProperties](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmongodbrepresentationproperties)
   * **Add MongoDB representation properties for UUID and BigDecimal**
   * Adds the 'spring.mongodb.representation.uuid' property with value 'standard' and the 'spring.data.mongodb.representation.big-decimal' property with the value 'decimal128' to Spring configuration files when a MongoDB dependency is detected.
@@ -7593,6 +7707,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.PreserveReactorHttpClientDefaults_4_1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/preservereactorhttpclientdefaults_4_1)
   * **Preserve system-proxy defaults on Reactor HTTP client builders**
   * Spring Boot 4.1 no longer applies `proxyWithSystemProperties()` by default on `ReactorClientHttpRequestFactoryBuilder` and `ReactorClientHttpConnectorBuilder`. This recipe appends `.withHttpClientDefaults()` to affected builder chains to restore the previous behavior, but only while the module is still on a Spring Boot older than 4.1. Gating on the current version keeps the method from being reintroduced when a developer deliberately removes it after upgrading and later runs an upgrade to a newer 4.2+ release.
+* [io.moderne.java.spring.boot4.RelocateAutoConfigurationExcludes](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/relocateautoconfigurationexcludes)
+  * **Expand split `spring.autoconfigure.exclude` entries for Spring Boot 4.0**
+  * Spring Boot 4.0 split several auto-configurations across per-technology modules, so that what one class configured in 3.5 is now configured by two or more independently activating classes. An application excluding the old class keeps only part of it disabled after the upgrade. One-to-one relocations need no recipe of their own: `ChangeType` and `ChangePackage` already rewrite fully qualified names in `application.properties` and `application.yaml` through `org.openrewrite.trait.Reference`. A `Reference` renames to a single name, however, so one-to-many splits are out of its reach. This recipe expands them into all of their successors, as derived from the `AutoConfiguration.imports` files of Spring Boot 3.5 and 4.0. Excluding a class that is not on the classpath is ignored by Spring Boot, so successors that an application does not use are harmless.
 * [io.moderne.java.spring.boot4.RemoveContentNegotiationFavorPathExtension](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removecontentnegotiationfavorpathextension)
   * **Remove `ContentNegotiationConfigurer.favorPathExtension()` calls**
   * Spring Framework 7 removed `favorPathExtension()` from `ContentNegotiationConfigurer`. Path extension content negotiation is no longer supported. This recipe removes calls to `favorPathExtension()`.
@@ -7605,6 +7722,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.RemoveHttpMessageConvertersAutoConfigurationReferences](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removehttpmessageconvertersautoconfigurationreferences)
   * **Remove `HttpMessageConvertersAutoConfiguration` references**
   * Removes references to the deprecated `HttpMessageConvertersAutoConfiguration` class which was removed in Spring Boot 4.0. For `@AutoConfigureAfter` and `@AutoConfigureBefore` annotations, the reference is removed. For `@Import` annotations, a TODO comment is added since manual migration may be required.
+* [io.moderne.java.spring.boot4.RemoveJacksonBuiltInModuleBeans](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removejacksonbuiltinmodulebeans)
+  * **Remove `@Bean` methods for modules built-in to Jackson 3**
+  * In Jackson 3 `ParameterNamesModule`, `Jdk8Module` and `JavaTimeModule` are built into `jackson-databind`, and the classes themselves are gone, so a `@Bean` method producing one fails to compile after the Jackson 2 to 3 package migration. Removes `@Bean` methods that merely instantiate such a module, and flags those that customize one. Run this before the Jackson 2 to 3 package migration, while the module types still resolve.
 * [io.moderne.java.spring.boot4.RemoveKafkaPropertiesSslBundlesParameter](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removekafkapropertiessslbundlesparameter)
   * **Remove `SslBundles` parameter from `KafkaProperties` build methods**
   * In Spring Boot 4.0, the `SslBundles` parameter was removed from `KafkaProperties.buildProducerProperties`, `buildConsumerProperties`, `buildAdminProperties`, and `buildStreamsProperties`. This recipe removes the argument from method calls.
@@ -7632,6 +7752,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.boot4.ReplaceRedisCacheConfigurationGetTtl](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacerediscacheconfigurationgetttl)
   * **Replace removed `RedisCacheConfiguration.getTtl()`**
   * Spring Data Redis 4.0 removes `RedisCacheConfiguration.getTtl()`. Replaces calls with `getTtlFunction().getTimeToLive(null, null)`, which returns the same `Duration`.
+* [io.moderne.java.spring.boot4.ReplaceServletWebServerFactoryGetters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replaceservletwebserverfactorygetters)
+  * **Read servlet web server factory settings through `getSettings()`**
+  * Spring Boot 4.0 moved the servlet web server factory getters onto `ServletWebServerSettings`, reachable through `ConfigurableServletWebServerFactory.getSettings()`. Calls such as `factory.getMimeMappings()` become `factory.getSettings().getMimeMappings()`. The setters and `getContextPath()` remain on the factory, and are left alone.
 * [io.moderne.java.spring.boot4.SimplifyOptionalConfigurationPropertiesNullChecks](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/simplifyoptionalconfigurationpropertiesnullchecks)
   * **Simplify null checks on `Optional` `@ConfigurationProperties` parameters**
   * Spring Boot 4.1 changes constructor-bound `@ConfigurationProperties` so that `Optional&lt;T&gt;` parameters bind to `Optional.empty()` rather than `null`. This recipe replaces `== null` / `!= null` checks against such parameters (or same-named fields in the binding constructor's class) with the constant they will always evaluate to, then runs `SimplifyConstantIfBranchExecution` to remove the dead branches.
@@ -7815,9 +7938,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [io.moderne.java.spring.framework7.MigrateAbstractClientHttpResponse](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migrateabstractclienthttpresponse)
   * **Migrate `AbstractClientHttpResponse` to `ClientHttpResponse`**
   * Spring Framework 6.0 removed `org.springframework.http.client.AbstractClientHttpResponse`. This recipe rewrites `extends AbstractClientHttpResponse` to `implements ClientHttpResponse`, flags any `super.*()` calls inside the converted class with a TODO comment (those calls no longer compile), and renames remaining type references (variables, parameters, fields, casts, generics, return types) to the `ClientHttpResponse` interface.
+* [io.moderne.java.spring.framework7.MigrateCookieLocaleResolverCookieMaxAge](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratecookielocaleresolvercookiemaxage)
+  * **Migrate `CookieLocaleResolver#setCookieMaxAge(Integer)` to `Duration`**
+  * `CookieLocaleResolver#setCookieMaxAge(Integer)` was deprecated in Spring Framework 6.0 and removed in Spring Framework 7.0, leaving only the `Duration` overload. This recipe wraps the seconds argument in `Duration.ofSeconds(..)`.
+* [io.moderne.java.spring.framework7.MigrateCookieLocaleResolverCookieName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratecookielocaleresolvercookiename)
+  * **Migrate `CookieLocaleResolver#setCookieName(String)` to the constructor**
+  * `CookieLocaleResolver#setCookieName(String)` was deprecated in Spring Framework 6.0 and removed in Spring Framework 7.0. This recipe moves the cookie name into the `CookieLocaleResolver(String)` constructor and removes the setter call.
 * [io.moderne.java.spring.framework7.MigrateDeprecatedAPIs](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratedeprecatedapis)
   * **Migrate deprecated APIs removed in Spring Framework 7.0**
-  * Migrates deprecated APIs that were removed in Spring Framework 7.0. This includes ListenableFuture to CompletableFuture migration, ContentCachingRequestWrapper constructor changes, and NestedServletException to ServletException type migration.
+  * Migrates deprecated APIs that were removed in Spring Framework 7.0. This includes ListenableFuture to CompletableFuture migration, ContentCachingRequestWrapper constructor changes, CookieLocaleResolver cookie name and max age configuration, and NestedServletException to ServletException type migration.
 * [io.moderne.java.spring.framework7.MigrateHttpStatusToRfc9110](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratehttpstatustorfc9110)
   * **Migrate `HttpStatus` enum values to RFC 9110 names**
   * Spring Framework 7.0 aligns HttpStatus enum values with RFC 9110. This recipe replaces deprecated status code constants with their RFC 9110 equivalents: `PAYLOAD_TOO_LARGE` becomes `CONTENT_TOO_LARGE` and `UNPROCESSABLE_ENTITY` becomes `UNPROCESSABLE_CONTENT`.
@@ -7980,6 +8109,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.RegenerateGoSum](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/regenerategosum)
   * **Regenerate `go.sum`**
   * Regenerate a Go module's `go.sum` from its `go.mod` by running `go mod download`, recomputing checksums for the whole module graph, including creating it when absent. Useful after a dependency version change to bring `go.sum` back in sync. Requires the `go` toolchain to be installed; otherwise `go.sum` is left unchanged.
+* [org.openrewrite.golang.search.DependencyInsight](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/search/dependencyinsight)
+  * **Go dependency insight**
+  * Find direct and transitive Go module dependencies matching a module path pattern. Results include dependencies that either directly match or transitively include a matching dependency.
 
 ### rewrite-python
 
@@ -8051,7 +8183,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Sort `import` lines into stdlib / third-party / local groups. Within each group, entries are alphabetized; non-empty groups are separated by a blank line. Mirrors `goimports -w`. Local detection uses the sibling go.mod's module path.
 * [org.openrewrite.golang.RemoveImport](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/removeimport)
   * **Remove import**
-  * Remove an `import` statement from a Go compilation unit. Matches by import path; any form (regular, aliased, dot, blank) is removed.
+  * Remove an `import` statement from a Go compilation unit. Matches by import path, in any form (regular, aliased, dot, blank). Unless `force` is set, an import that the file still references is kept, as are blank (`_`) and dot (`.`) imports.
 * [org.openrewrite.golang.RemoveUnusedImports](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/removeunusedimports)
   * **Remove unused imports**
   * Remove imports for packages that are not referenced by any identifier in the file. Blank (`_`) imports are preserved.
@@ -8130,6 +8262,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.AvoidEmptyInterfaceParam](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidemptyinterfaceparam)
   * **Avoid empty interface parameters**
   * Replace `interface\{\}` parameter types with `any` (Go 1.18+).
+* [org.openrewrite.golang.codequality.AvoidFallthrough](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidfallthrough)
+  * **Avoid fallthrough**
+  * Find fallthrough statements in switch cases. Fallthrough is rarely used in Go and can be confusing.
 * [org.openrewrite.golang.codequality.AvoidFmtInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidfmtinloop)
   * **Avoid fmt in loop**
   * Find `fmt.Sprintf`, `fmt.Sprint`, or `fmt.Fprintf` calls inside for/range loops. These allocate on every call; prefer direct string operations or strconv.
@@ -8139,12 +8274,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.AvoidGlobalVariable](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidglobalvariable)
   * **Avoid global variables**
   * Find package-level `var` declarations. Mutable global state makes code harder to test and reason about.
+* [org.openrewrite.golang.codequality.AvoidGoto](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidgoto)
+  * **Avoid goto**
+  * Find goto statements. Goto makes control flow hard to follow and should be restructured.
 * [org.openrewrite.golang.codequality.AvoidHardcodedCredentials](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidhardcodedcredentials)
   * **Avoid hardcoded credentials**
   * Replace hardcoded credential string literals with `os.Getenv(&quot;VAR_NAME&quot;)` calls.
 * [org.openrewrite.golang.codequality.AvoidInitFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidinitfunction)
   * **Avoid init functions**
   * Find `func init()` declarations. Init functions make testing harder and have implicit ordering dependencies.
+* [org.openrewrite.golang.codequality.AvoidLabel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidlabel)
+  * **Avoid label**
+  * Find labeled statements. Labels are rarely needed and indicate complex control flow.
 * [org.openrewrite.golang.codequality.AvoidLockInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidlockinloop)
   * **Avoid lock in loop**
   * Find `Lock()` or `RLock()` calls inside for/range loops. Acquiring locks in tight loops can cause contention; consider locking once outside the loop.
@@ -8160,6 +8301,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.AvoidPanic](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidpanic)
   * **Avoid panic**
   * Find calls to the built-in `panic()` function, which crashes the program.
+* [org.openrewrite.golang.codequality.AvoidReadAllInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidreadallinloop)
+  * **Avoid ReadAll in loop**
+  * Find `io.ReadAll()` or `ioutil.ReadAll()` calls inside for/range loops. These read entire content into memory on each iteration.
 * [org.openrewrite.golang.codequality.AvoidReflection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidreflection)
   * **Avoid reflection**
   * Find `reflect.TypeOf()` and `reflect.ValueOf()` calls. Reflection is slow and should be avoided in performance-sensitive code.
@@ -8172,6 +8316,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.AvoidUnsafePackage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/avoidunsafepackage)
   * **Avoid unsafe package**
   * Find any usage of the `unsafe` package. The unsafe package bypasses Go's type safety guarantees and should be avoided unless absolutely necessary.
+* [org.openrewrite.golang.codequality.BatchHttpCalls](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/batchhttpcalls)
+  * **Batch HTTP calls**
+  * Find `http.Get()` or `http.Post()` calls inside for/range loops. Making HTTP requests in tight loops can be slow.
 * [org.openrewrite.golang.codequality.CheckCloseError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/checkcloseerror)
   * **Check Close() error**
   * Replace bare `f.Close()` with `_ = f.Close()` to explicitly mark the discarded error.
@@ -8187,12 +8334,36 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.CreateChannelOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/createchanneloutsideloop)
   * **Create channel outside loop**
   * Find `make(chan ...)` calls inside for/range loops. Channel creation in loops suggests the channel should be created once before the loop.
+* [org.openrewrite.golang.codequality.EnforceTlsVerification](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/enforcetlsverification)
+  * **Enforce TLS verification**
+  * Replace `InsecureSkipVerify: true` with `false` in TLS config. Disabling certificate verification makes connections vulnerable to man-in-the-middle attacks.
 * [org.openrewrite.golang.codequality.EnsureFileClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensurefileclosed)
   * **Ensure file closed**
   * Find calls to `os.Open`, `os.Create`, and `os.OpenFile`. Ensure the returned file is closed to avoid resource leaks.
+* [org.openrewrite.golang.codequality.EnsureHttpBodyClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensurehttpbodyclosed)
+  * **Ensure HTTP body closed**
+  * Find assignments of a `*http.Response`, as returned by `http.Get`, `http.Post`, `http.Head` or `client.Do`. Its body must be closed to avoid resource leaks.
+* [org.openrewrite.golang.codequality.EnsurePreparedStatementClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensurepreparedstatementclosed)
+  * **Ensure prepared statement closed**
+  * Find calls to `db.Prepare`. The returned prepared statement must be closed to avoid resource leaks.
 * [org.openrewrite.golang.codequality.EnsureSqlConnectionClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensuresqlconnectionclosed)
   * **Ensure SQL connection closed**
   * Find calls to `sql.Open`. Database connections should be managed carefully and closed when no longer needed.
+* [org.openrewrite.golang.codequality.EnsureSqlRowsClosed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensuresqlrowsclosed)
+  * **Ensure SQL rows closed**
+  * Find assignments of a `*sql.Rows`, as returned by `db.Query`. The rows must be closed with `defer rows.Close()` to avoid connection leaks.
+* [org.openrewrite.golang.codequality.EnsureTempCleanedUp](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensuretempcleanedup)
+  * **Ensure temp cleaned up**
+  * Find calls to `os.CreateTemp`. Temporary files should be cleaned up when no longer needed.
+* [org.openrewrite.golang.codequality.EnsureTickerStopped](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensuretickerstopped)
+  * **Ensure ticker stopped**
+  * Find calls to `time.NewTicker`. Tickers must be stopped when no longer needed to avoid goroutine leaks.
+* [org.openrewrite.golang.codequality.EnsureTimerStopped](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensuretimerstopped)
+  * **Ensure timer stopped**
+  * Find calls to `time.NewTimer`. Timers should be stopped when no longer needed to release resources.
+* [org.openrewrite.golang.codequality.EnsureTransactionFinalized](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/ensuretransactionfinalized)
+  * **Ensure transaction finalized**
+  * Find calls to `db.Begin`. Transactions must be committed or rolled back to avoid holding database locks.
 * [org.openrewrite.golang.codequality.FindDeprecatedAtomicFunctions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/finddeprecatedatomicfunctions)
   * **Find deprecated `sync/atomic` functions**
   * Find deprecated `sync/atomic` free-function calls (e.g. `atomic.AddInt32`) that should be migrated to the type-safe atomic types introduced in Go 1.19 (e.g. `atomic.Int32`).
@@ -8202,6 +8373,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.FindMapRangeClear](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/findmaprangeclear)
   * **Replace map range-delete with clear()**
   * Replace `for k := range m \{ delete(m, k) \}` with `clear(m)` (Go 1.21+).
+* [org.openrewrite.golang.codequality.FixErrorStringFormat](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/fixerrorstringformat)
+  * **Fix error string format**
+  * Lowercase the leading word of `errors.New` and `fmt.Errorf` messages and remove trailing punctuation, so the message reads correctly when a caller wraps it in a larger one (staticcheck ST1005).
 * [org.openrewrite.golang.codequality.HandleCheckedError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/handlecheckederror)
   * **Handle checked error**
   * Replace `if err != nil \{ \}` with `if err != nil \{ return err \}` so the error is propagated.
@@ -8235,9 +8409,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.MergeIdenticalBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/mergeidenticalbranches)
   * **Merge identical branches**
   * Merge consecutive if/else-if branches that have identical bodies by combining their conditions with `||`.
+* [org.openrewrite.golang.codequality.OpenFileOutsideLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/openfileoutsideloop)
+  * **Open file outside loop**
+  * Find `os.Open()` or `os.Create()` calls inside for/range loops. Opening files in tight loops should use a single open outside the loop.
+* [org.openrewrite.golang.codequality.OptimizeCopyInLoop](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/optimizecopyinloop)
+  * **Optimize copy in loop**
+  * Find `copy()` calls inside for/range loops. Repeated copying in loops may indicate a buffer reuse opportunity.
 * [org.openrewrite.golang.codequality.PreallocateSlice](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preallocateslice)
   * **Preallocate slice**
-  * Find `append()` calls inside for/range loops where the slice could be preallocated.
+  * Add a capacity to a slice made empty and then filled by appending over a range, so `out := make([]int, 0)` before `for _, x := range xs` becomes `make([]int, 0, len(xs))`. The capacity is a hint, so only the allocation changes.
 * [org.openrewrite.golang.codequality.PreferBytesBufferString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferbytesbufferstring)
   * **Prefer buf.String() over string(buf.Bytes())**
   * Replace `string(buf.Bytes())` with `buf.String()` for better performance and readability.
@@ -8364,6 +8544,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.PreferStrconvQuote](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstrconvquote)
   * **Prefer strconv.Quote over fmt.Sprintf**
   * Replace `fmt.Sprintf(&quot;%q&quot;, s)` with `strconv.Quote(s)` for clearer intent when quoting strings.
+* [org.openrewrite.golang.codequality.PreferStringComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringcomparison)
+  * **Prefer string comparison operators**
+  * Replace `strings.Compare(a, b) == 0` with `a == b`, `strings.Compare(a, b) != 0` with `a != b`, `strings.Compare(a, b) &lt; 0` with `a &lt; b`, and `strings.Compare(a, b) &gt; 0` with `a &gt; b`.
 * [org.openrewrite.golang.codequality.PreferStringsBuilderWriteString](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringsbuilderwritestring)
   * **Prefer strings.Builder WriteString**
   * Replace `fmt.Fprintf(&amp;b, &quot;%s&quot;, s)` with `b.WriteString(s)` for more efficient string building.
@@ -8391,6 +8574,12 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.PreferStringsNewReader](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringsnewreader)
   * **Prefer strings.NewReader**
   * Replace `bytes.NewReader([]byte(s))` with `strings.NewReader(s)` to avoid an unnecessary string-to-byte-slice conversion.
+* [org.openrewrite.golang.codequality.PreferStringsToLowerMap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringstolowermap)
+  * **Prefer strings.ToLower over strings.Map**
+  * Replace `strings.Map(unicode.ToLower, s)` with `strings.ToLower(s)`.
+* [org.openrewrite.golang.codequality.PreferStringsToUpperMap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/preferstringstouppermap)
+  * **Prefer strings.ToUpper over strings.Map**
+  * Replace `strings.Map(unicode.ToUpper, s)` with `strings.ToUpper(s)`.
 * [org.openrewrite.golang.codequality.ReduceErrorCheckNesting](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/reduceerrorchecknesting)
   * **Reduce error check nesting**
   * Invert `if err == nil \{ body \}` to `if err != nil \{ return err \}` followed by the body, reducing nesting in error-handling code.
@@ -8403,6 +8592,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.RemoveDebugPrint](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removedebugprint)
   * **Remove debug print statements**
   * Remove calls to `fmt.Println`, `fmt.Printf`, `fmt.Print`, `println`, and `print`.
+* [org.openrewrite.golang.codequality.RemoveDeprecatedRandSeed](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removedeprecatedrandseed)
+  * **Remove deprecated rand.Seed**
+  * Remove calls to `rand.Seed()`. Deprecated since Go 1.20; automatic seeding is used.
 * [org.openrewrite.golang.codequality.RemoveDoubleDeref](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removedoublederef)
   * **Remove redundant *&amp; (deref of address-of)**
   * Remove `*&amp;x` where taking the address and immediately dereferencing is a no-op.
@@ -8414,7 +8606,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Remove `default:` cases with empty bodies from switch statements.
 * [org.openrewrite.golang.codequality.RemoveEmptyFunction](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeemptyfunction)
   * **Remove empty functions**
-  * Remove free functions with empty bodies and no return type. Methods with receivers are preserved because they may implement an interface.
+  * Remove unexported free functions with empty bodies and no return type. `main` in `package main` and `init` are preserved because the runtime invokes them rather than other code. Methods with receivers are preserved because they may implement an interface. Exported functions are preserved because removing one breaks importers.
 * [org.openrewrite.golang.codequality.RemoveEmptyGoroutine](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeemptygoroutine)
   * **Remove empty goroutine**
   * Remove `go func() \{\}()` patterns where the goroutine body is empty.
@@ -8452,8 +8644,8 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * **Remove redundant fmt.Sprintf**
   * Replace `fmt.Sprintf(&quot;%s&quot;, s)` with `s` when the format string is a single %s.
 * [org.openrewrite.golang.codequality.RemoveRedundantTypeConversion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeredundanttypeconversion)
-  * **Find potentially redundant type conversion**
-  * Find type conversions like `int(x)` that may be redundant if x is already the target type. Requires type attribution for full accuracy.
+  * **Remove redundant type conversion**
+  * Remove a conversion whose operand already has the target type, such as `string(s)` where `s` is a `string`. `byte` and `uint8` name one type, as do `rune` and `int32`, so a conversion between either pair is removed too. A conversion of an untyped constant is what gives the constant its type, so it stays.
 * [org.openrewrite.golang.codequality.RemoveSelfAssignment](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/removeselfassignment)
   * **Remove self-assignment**
   * Remove `x = x` self-assignments which are redundant and may indicate a bug.
@@ -8490,6 +8682,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.codequality.SimplifyBytesSplitN](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifybytessplitn)
   * **Simplify bytes.SplitN with -1**
   * Replace `bytes.SplitN(b, sep, -1)` with `bytes.Split(b, sep)` since -1 means split all.
+* [org.openrewrite.golang.codequality.SimplifyComplexSwitch](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifycomplexswitch)
+  * **Simplify complex switch**
+  * Find switch statements with more than 10 cases. Consider using a map or strategy pattern.
 * [org.openrewrite.golang.codequality.SimplifyDoubleNegation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/simplifydoublenegation)
   * **Simplify double negation**
   * Replace `!!x` with `x` to remove redundant double boolean negation.
@@ -8609,10 +8804,16 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Find numeric literals (other than 0 and 1) that should be named constants.
 * [org.openrewrite.golang.codequality.UsePackageLevelErrorSentinel](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/usepackagelevelerrorsentinel)
   * **Use package-level error sentinel**
-  * Move inline `errors.New(&quot;...&quot;)` calls to package-level sentinel variables so they can be compared with `errors.Is`.
+  * Move inline `errors.New(&quot;...&quot;)` calls to package-level sentinel variables so they can be compared with `errors.Is`. Each distinct message becomes one sentinel per package, declared in the first file that uses it and referenced from every other.
+* [org.openrewrite.golang.codequality.UseParameterizedSqlQuery](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useparameterizedsqlquery)
+  * **Use parameterized SQL queries**
+  * Find SQL queries built with string concatenation via db.Query, db.QueryRow, or db.Exec. Use parameterized queries to avoid SQL injection.
+* [org.openrewrite.golang.codequality.UseRestrictiveFilePermissions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/userestrictivefilepermissions)
+  * **Use restrictive file permissions**
+  * Replace `0777` with `0755` in `os.Chmod`, `os.MkdirAll` and `os.Mkdir`, and with `0644` in `os.WriteFile`. Overly permissive file permissions are a security risk.
 * [org.openrewrite.golang.codequality.UseShortReceiverName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useshortreceivername)
   * **Use short receiver name**
-  * Rename method receivers longer than 2 characters to the first lowercase letter of the type name.
+  * Rename method receivers longer than 2 characters to the first lowercase letter of the type name, unless that name is already bound in the method.
 * [org.openrewrite.golang.codequality.UseSkipWithReason](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/codequality/useskipwithreason)
   * **Use skip with reason**
   * Add a placeholder reason to bare `t.Skip()` calls. Tests should document why they are skipped.
@@ -8640,12 +8841,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.migration.AddMissingGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/addmissinggomodrequires)
   * **Add missing go.mod requirements**
   * Add `require` directives for modules the resolved build list needs but go.mod does not declare, at their resolved versions and with the `// indirect` marker the toolchain assigned. Mirrors what `go mod tidy` adds, using the module graph resolved at parse time.
+* [org.openrewrite.golang.migration.AddV1FormatTags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/addv1formattags)
+  * **Add v1-preserving `format` tags to `time.Duration` and `[N]byte` fields**
+  * Add `json:&quot;,format:nano&quot;` to `time.Duration` struct fields and `json:&quot;,format:array&quot;` to fixed `[N]byte` array struct fields, whose default `encoding/json/v2` encoding otherwise diverges from v1 (a duration string rather than a nanosecond number, and a base64 string rather than a number array). With the tag the field encodes identically under `encoding/json` and `encoding/json/v2`, so `MigrateToJSONV2` migrates the file on its default path rather than leaving it for review. An existing `json` tag gains the option while its name and other options are kept, and a field that already pins a `format` is left unchanged.
 * [org.openrewrite.golang.migration.ChangeGoVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/changegoversion)
   * **Change the `go` directive version**
   * Rewrites the `go` directive in go.mod to a new version.
 * [org.openrewrite.golang.migration.FindEncodingJsonUsage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/findencodingjsonusage)
   * **Find `encoding/json` usage for the v2 migration**
-  * Inventory every `encoding/json` (v1) touchpoint that an `encoding/json/v2` migration must address: the import, package functions, `Encoder`/`Decoder` and other type methods (resolved through the type system, so receivers reached via variables, parameters, or fields are all found), exported types, `[N]byte`/`time.Duration` struct fields, `omitempty` tags classified by field type, and custom `MarshalJSON`/`UnmarshalJSON` implementations. Findings populate a data table categorized as import, rewrite, review, or modernize. This recipe reports only and does not modify code.
+  * Inventory every `encoding/json` (v1) touchpoint that an `encoding/json/v2` migration must address: the import, package functions, `Encoder`/`Decoder` and other type methods (resolved through the type system, so receivers reached via variables, parameters, or fields are all found), exported types, `[N]byte`/`time.Duration` struct fields, `omitempty` and `,string` tags, and custom `MarshalJSON`/`UnmarshalJSON` implementations. Findings populate a data table categorized as import, rewrite, review, or modernize. This recipe reports only and does not modify code.
 * [org.openrewrite.golang.migration.FindMissingGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/findmissinggomodrequires)
   * **Find missing go.mod requirements**
   * Find imports of third-party packages that are not covered by any `require` directive in the module's go.mod. These are the requirements `go mod tidy` would add; adding them automatically is not possible offline because it requires resolving module versions over the network.
@@ -8661,6 +8865,15 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.migration.GoModTidy](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/gomodtidy)
   * **Tidy go.mod**
   * Apply `go mod tidy` behavior to go.mod: add missing requirements at their resolved versions, remove unused ones, correct the `// indirect` markers, and sort require blocks. Adding and removing require the module graph resolved at parse time, and are no-ops without it. It does not sync go.sum; the `RegenerateGoSum` recipe covers that.
+* [org.openrewrite.golang.migration.MigrateToJSONV2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/migratetojsonv2)
+  * **Migrate `encoding/json` to `encoding/json/v2` (all mechanical rewrites)**
+  * Migrate the mechanical `encoding/json` idioms to `encoding/json/v2` by composing the streaming, `MarshalIndent`, function-local `Encoder`/`Decoder`, and `RawMessage` rewrites plus an import-only swap for files whose usage already exists in v2, adopting v2 semantics. To keep v1 output byte-identical instead, run the opt-in `PreserveV1Semantics` recipe afterwards.
+* [org.openrewrite.golang.migration.MigrateToJSONV2PreservingV1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/migratetojsonv2preservingv1)
+  * **Migrate `encoding/json` to `encoding/json/v2`, preserving v1 semantics**
+  * Migrate `encoding/json` to `encoding/json/v2` while preserving v1 behavior, by composing `MigrateToJSONV2` and `PreserveV1Semantics`. Use it instead of `MigrateToJSONV2` for a low-disruption migration.
+* [org.openrewrite.golang.migration.PreserveV1Semantics](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/preservev1semantics)
+  * **Preserve v1 semantics on `encoding/json/v2` calls**
+  * Append `jsonv1.DefaultOptionsV1()` to `encoding/json/v2` marshal and unmarshal calls, adding the `jsonv1 &quot;encoding/json&quot;` import, to re-enable the v1 defaults that v2 changed. `DefaultOptionsV1` is the v1 compatibility bundle from the `encoding/json` package.
 * [org.openrewrite.golang.migration.RemoveUnusedGoModRequires](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/migration/removeunusedgomodrequires)
   * **Remove unused go.mod requirements**
   * Remove `require` directives whose module provides no imported package and is unreachable through the module graph from any module that does. Uses the package→module map and module graph resolved at parse time; a no-op when that resolution did not run. Modules that pin a transitive version are kept, so the removal is build-safe.
@@ -8700,6 +8913,51 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.golang.test.RenameXToFlag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/test/renamextoflag)
   * **Rename x to flag (test)**
   * Test recipe that renames identifier x to flag.
+* [org.openrewrite.golang.test.WrapErrorWithContext](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/test/wraperrorwithcontext)
+  * **Wrap error with context (test)**
+  * Test recipe that replaces `return err` with `return fmt.Errorf(&quot;funcName: %w&quot;, err)`.
+* [org.openrewrite.golang.testify.AddTestifyDependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/addtestifydependency)
+  * **Add the testify dependency to go.mod**
+  * Add a `require github.com/stretchr/testify` directive to go.mod when a package in the module imports testify but go.mod does not yet require it. Does not sync go.sum or add transitive dependencies; a `go mod tidy` is still needed to complete resolution.
+* [org.openrewrite.golang.testify.AdoptTestify](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestify)
+  * **Adopt stretchr/testify**
+  * Migrate hand-written test assertions to the `github.com/stretchr/testify` library and add the dependency to go.mod. Converts error guards to `require`/`assert` `NoError`/`Error`, length checks to `Len`, equality checks to `Equal`/`NotEqual`, nil checks to `Nil`/`NotNil`, and boolean checks to `True`/`False`, then adds the testify require. Does not sync go.sum; a `go mod tidy` is still needed to complete resolution.
+* [org.openrewrite.golang.testify.AdoptTestifyAssertEqual](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyassertequal)
+  * **Adopt testify assert.Equal**
+  * Replace `if got != want \{ t.Error(...) \}` and `if got == want \{ t.Error(...) \}` comparison guards in tests with `assert.Equal(t, want, got)` / `assert.NotEqual(t, want, got)` from `github.com/stretchr/testify/assert`.
+* [org.openrewrite.golang.testify.AdoptTestifyAssertError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyasserterror)
+  * **Adopt testify assert.Error**
+  * Replace `if err == nil \{ t.Error(&quot;...&quot;) \}` guards in tests with `assert.Error(t, err)` from `github.com/stretchr/testify/assert`.
+* [org.openrewrite.golang.testify.AdoptTestifyAssertLen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyassertlen)
+  * **Adopt testify assert.Len**
+  * Replace `if len(x) != n \{ t.Error(...) \}` with `assert.Len(t, x, n)` from `github.com/stretchr/testify/assert`.
+* [org.openrewrite.golang.testify.AdoptTestifyAssertNil](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyassertnil)
+  * **Adopt testify assert.Nil**
+  * Replace `if x != nil \{ t.Error(...) \}` with `assert.Nil(t, x)` and `if x == nil \{ t.Error(...) \}` with `assert.NotNil(t, x)` from `github.com/stretchr/testify/assert`, for non-error operands. Error operands are handled by the NoError / Error recipes.
+* [org.openrewrite.golang.testify.AdoptTestifyAssertNoError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyassertnoerror)
+  * **Adopt testify assert.NoError**
+  * Replace `if err != nil \{ t.Error(err) \}` guards in tests with `assert.NoError(t, err)` from `github.com/stretchr/testify/assert`.
+* [org.openrewrite.golang.testify.AdoptTestifyAssertTrue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyasserttrue)
+  * **Adopt testify assert.True**
+  * Replace `if !cond \{ t.Error(...) \}` with `assert.True(t, cond)` and `if cond \{ t.Error(...) \}` with `assert.False(t, cond)` from `github.com/stretchr/testify/assert`. Comparison conditions are left to the Equal / Nil / Len recipes.
+* [org.openrewrite.golang.testify.AdoptTestifyRequireEqual](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyrequireequal)
+  * **Adopt testify require.Equal**
+  * Replace `if got != want \{ t.Fatal(...) \}` and `if got == want \{ t.Fatal(...) \}` comparison guards in tests with `require.Equal(t, want, got)` / `require.NotEqual(t, want, got)` from `github.com/stretchr/testify/require`.
+* [org.openrewrite.golang.testify.AdoptTestifyRequireError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyrequireerror)
+  * **Adopt testify require.Error**
+  * Replace `if err == nil \{ t.Fatal(&quot;...&quot;) \}` guards in tests with `require.Error(t, err)` from `github.com/stretchr/testify/require`.
+* [org.openrewrite.golang.testify.AdoptTestifyRequireLen](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyrequirelen)
+  * **Adopt testify require.Len**
+  * Replace `if len(x) != n \{ t.Fatal(...) \}` with `require.Len(t, x, n)` from `github.com/stretchr/testify/require`.
+* [org.openrewrite.golang.testify.AdoptTestifyRequireNil](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyrequirenil)
+  * **Adopt testify require.Nil**
+  * Replace `if x != nil \{ t.Fatal(...) \}` with `require.Nil(t, x)` and `if x == nil \{ t.Fatal(...) \}` with `require.NotNil(t, x)` from `github.com/stretchr/testify/require`, for non-error operands. Error operands are handled by the NoError / Error recipes.
+* [org.openrewrite.golang.testify.AdoptTestifyRequireNoError](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyrequirenoerror)
+  * **Adopt testify require.NoError**
+  * Replace `if err != nil \{ t.Fatal(err) \}` guards in tests with `require.NoError(t, err)` from `github.com/stretchr/testify/require`.
+* [org.openrewrite.golang.testify.AdoptTestifyRequireTrue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/golang/testify/adopttestifyrequiretrue)
+  * **Adopt testify require.True**
+  * Replace `if !cond \{ t.Fatal(...) \}` with `require.True(t, cond)` and `if cond \{ t.Fatal(...) \}` with `require.False(t, cond)` from `github.com/stretchr/testify/require`. Comparison conditions are left to the Equal / Nil / Len recipes.
 
 ### rewrite-android
 
@@ -8856,12 +9114,30 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-java-security
 
+* [org.openrewrite.ai.security.FindMissingStructuredOutput](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/security/findmissingstructuredoutput)
+  * **Find LLM freeform output flowing into a structured parser (OWASP LLM01)**
+  * Find code where the plain-text output of an LLM chat call flows into a structured parser (`ObjectMapper.readValue`/`readTree`, `Gson.fromJson`). Model output is read through the LangChain4j, Spring AI, OpenAI, Anthropic, and Azure AI Inference Java SDKs. The caller expects JSON but nothing enforced structured output on the model call — an attacker who influences the prompt (any LLM01 vector) can break parsing or steer downstream logic by producing content the parser accepts as valid but that carries injected instructions. Fix by switching to a schema-enforcing call: LangChain4j structured output APIs, Spring AI `.entity(...)`, or provider-native JSON mode / tool use. Taint tracking follows the value through user-defined transformations between the model call and the parser.
+* [org.openrewrite.ai.security.FindPromptInjection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/security/findpromptinjection)
+  * **Find prompt injection (OWASP LLM01)**
+  * Find HTTP request data that flows into an LLM prompt without intermediate validation. Sources are servlet request accessors (`getParameter`, `getHeader`, `getReader`, `getInputStream`), Spring `WebRequest` accessors, and Spring MVC handler parameters bound with `@RequestParam`, `@PathVariable`, `@RequestHeader`, `@RequestBody`, `@RequestPart`, `@CookieValue`, or `@MatrixVariable`; sinks are the message-content methods of the OpenAI, Anthropic, Azure AI Inference, LangChain4j, and Spring AI Java SDKs. A hit means the untrusted string reaches the model text without leaving the method and warrants a guardrail (allowlist, structured input, or provider-side guardrail).
+* [org.openrewrite.ai.security.FindUnguardedRagInput](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/security/findunguardedraginput)
+  * **Find unguarded RAG content flowing into an LLM prompt (OWASP LLM01)**
+  * Find external content (HTTP responses, file reads, `RestTemplate` calls) that flows into an LLM prompt. This is the indirect-injection shape of OWASP LLM01: an attacker who can plant text in a fetched document or endpoint response steers the model through content the developer implicitly trusts. Taint tracking follows the value through user-defined transformations, none of which are assumed to sanitize, so review each hit for an existing guardrail (sanitizer, structured input, or provider-side guardrail).
+* [org.openrewrite.ai.security.FindUnrestrictedPromptSelection](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/security/findunrestrictedpromptselection)
+  * **Find unrestricted prompt selection (OWASP LLM01)**
+  * Find code where untrusted input picks which LLM prompt template runs. Concretely, an HTTP request value — a servlet or Spring `WebRequest` accessor, or a Spring MVC handler parameter bound with `@RequestParam`, `@PathVariable`, `@RequestHeader`, `@RequestBody`, `@RequestPart`, `@CookieValue`, or `@MatrixVariable` — flows into a `Map.get(...)` key argument, and the value returned by that map lookup flows into an LLM prompt sink. This is the OWASP LLM01 shape where an attacker can jailbreak or escalate by switching to a system prompt they shouldn't be able to reach (tenant-prompt escape, admin templates, etc.). Taint tracking follows both legs of the flow through user-defined transformations.
+* [org.openrewrite.ai.security.OwaspLlm01](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/security/owaspllm01)
+  * **OWASP LLM01 — Prompt Injection**
+  * OWASP [LLM01](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) covers user or external input manipulating an LLM's behavior — overriding system prompts, exfiltrating data, or driving unsafe tool calls. This composite aggregates the individual detections that surface code shapes which let a prompt injection reach a model.
+* [org.openrewrite.ai.security.OwaspLlmTop10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/ai/security/owaspllmtop10)
+  * **Remediate the OWASP Top 10 for LLM Applications**
+  * [OWASP](https://genai.owasp.org/llm-top-10/) publishes a Top 10 for Large Language Model Applications describing the most impactful risks in LLM-integrated code. This umbrella recipe aggregates the per-category composites so customers can run the full sweep in one shot.
 * [org.openrewrite.csharp.dependencies.DependencyInsight](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/dependencyinsight)
   * **Dependency insight for C#**
   * Finds dependencies in `*.csproj` and `packages.config`.
 * [org.openrewrite.csharp.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Nuget dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-08-10T1122.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version. If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Dependencies following [Semantic Versioning](https://semver.org/) will see their _patch_ version updated where applicable. Last updated: 2026-08-24T1108.
 * [org.openrewrite.csharp.dependencies.FindEndOfLifeDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/csharp/dependencies/findendoflifedependencies)
   * **Find end-of-life NuGet dependencies**
   * Find NuGet packages whose upstream release is end-of-life or scheduled for end-of-life soon, using a snapshot of [endoflife.date](https://endoflife.date). Direct package references are marked in source; all matches (direct and transitive) are reported in the data table.
@@ -8900,7 +9176,7 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
   * Locates and reports on all licenses in use.
 * [org.openrewrite.java.dependencies.DependencyVulnerabilityCheck](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/dependencyvulnerabilitycheck)
   * **Find and fix vulnerable Maven/Gradle dependencies**
-  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-08-10T1122.
+  * This software composition analysis (SCA) tool detects and upgrades dependencies with publicly disclosed vulnerabilities. This recipe both generates a report of vulnerable dependencies and upgrades to newer versions with fixes. This recipe by default only upgrades to the latest **patch** version.  If a minor or major upgrade is required to reach the fixed version, this can be controlled using the `maximumUpgradeDelta` option. Vulnerability information comes from the [GitHub Security Advisory Database](https://docs.github.com/en/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database), which aggregates vulnerability data from several public databases, including the [National Vulnerability Database](https://nvd.nist.gov/) maintained by the United States government. Upgrades dependencies versioned according to [Semantic Versioning](https://semver.org/).   ## Customizing Vulnerability Data  This recipe can be customized by extending `DependencyVulnerabilityCheckBase` and overriding the vulnerability data sources:   - **`baselineVulnerabilities(ExecutionContext ctx)`**: Provides the default set of known vulnerabilities. The base implementation loads vulnerability data from the GitHub Security Advisory Database CSV file using `ResourceUtils.parseResourceAsCsv()`. Override this method to replace the entire vulnerability dataset with your own curated list.   - **`supplementalVulnerabilities(ExecutionContext ctx)`**: Allows adding custom vulnerability data beyond the baseline. The base implementation returns an empty list. Override this method to add organization-specific vulnerabilities, internal security advisories, or vulnerabilities from additional sources while retaining the baseline GitHub Advisory Database.  Both methods return `List&lt;Vulnerability&gt;` objects. Vulnerability data can be loaded from CSV files using `ResourceUtils.parseResourceAsCsv(path, Vulnerability.class, consumer)` or constructed programmatically. To customize, extend `DependencyVulnerabilityCheckBase` and override one or both methods depending on your needs. For example, override `supplementalVulnerabilities()` to add custom CVEs while keeping the standard vulnerability database, or override `baselineVulnerabilities()` to use an entirely different vulnerability data source. Last updated: 2026-08-24T1108.
 * [org.openrewrite.java.dependencies.RemoveUnusedDependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/dependencies/removeunuseddependencies)
   * **Remove unused dependencies**
   * Scans through source code collecting references to types and methods, removing any dependencies that are not used from Maven or Gradle build files. This is best effort and not guaranteed to work well in all cases; false positives are still possible.  This recipe takes reflective access into account: - When reflective access to a class is made unambiguously via a string literal, such as: `Class.forName(&quot;java.util.List&quot;)` that is counted correctly. - When reflective access to a class is made ambiguously via anything other than a string literal no dependencies will be removed.  This recipe takes transitive dependencies into account: - When a direct dependency is not used but a transitive dependency it brings in _is_ in use the direct dependency is not removed.
@@ -9057,6 +9333,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindJacksonDefaultTypeMapping](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findjacksondefaulttypemapping)
   * **Find Jackson default type mapping enablement**
   * `ObjectMapper#enableTypeMapping(..)` can lead to vulnerable deserialization.
+* [org.openrewrite.java.security.search.FindJdbcEmptyPassword](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findjdbcemptypassword)
+  * **Find JDBC connections with empty passwords**
+  * Finds `DriverManager.getConnection(...)` calls whose password argument is empty or whitespace-only, or whose URL embeds a `password=` query parameter with no value. Connecting to a database without a password grants unauthenticated access; the password should be sourced from configuration or a secret manager instead.
 * [org.openrewrite.java.security.search.FindLongSessionTimeout](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findlongsessiontimeout)
   * **Find long or disabled HTTP session timeout**
   * Finds calls to `HttpSession.setMaxInactiveInterval(int)` whose integer-literal argument exceeds 30 minutes or is zero/negative (which disables session expiration). Long-lived or non-expiring sessions increase the window for session hijacking and replay (CWE-613).
@@ -9099,6 +9378,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.java.security.search.FindVulnerableJacksonJsonTypeInfo](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findvulnerablejacksonjsontypeinfo)
   * **Find vulnerable uses of Jackson `@JsonTypeInfo`**
   * Identify where attackers can deserialize gadgets into a target field.
+* [org.openrewrite.java.security.search.FindWaitNotifyOnThread](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findwaitnotifyonthread)
+  * **Find `wait`/`notify`/`notifyAll` called on a Thread instance**
+  * Finds invocations of `Object.wait(...)`, `Object.notify()`, or `Object.notifyAll()` whose receiver is a `java.lang.Thread` (or subtype), including bare invocations inside a `Thread` subclass method that implicitly target `this`. The JVM uses a `Thread` instance's monitor internally to change thread state (`BLOCKED`, `WAITING`, etc.); calling these methods on a Thread can corrupt that state. Use a dedicated lock object as the monitor instead.
 * [org.openrewrite.java.security.search.FindWeakCryptoAlgorithm](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/search/findweakcryptoalgorithm)
   * **Find weak cryptographic algorithms**
   * Finds uses of broken or risky cryptographic algorithms such as MD5, SHA-1, DES, DESede (3DES), RC2, RC4, and Blowfish in calls to `Cipher.getInstance()`, `MessageDigest.getInstance()`, `Mac.getInstance()`, `KeyGenerator.getInstance()`, and `SecretKeyFactory.getInstance()`. Also flags instantiation of `javax.crypto.NullCipher`, which performs no encryption.
@@ -9255,9 +9537,51 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 
 ### rewrite-kubernetes
 
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindBgpPeeringMigrationBlockers](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/findbgppeeringmigrationblockers)
+  * **Find what blocks a Das Schiff `BGPPeering` from moving to the Sylva network connector API**
+  * Report what a human has to decide before a Das Schiff `BGPPeering` can move to the `network-connector.sylvaproject.org` group. Nothing is rewritten: the legacy `spec.export` is a reject-by-default prefix filter and the intent one is accept-by-default BGP communities, so a peering moved as it stands would advertise the whole VRF table.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindDasSchiffMigrationWork](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/finddasschiffmigrationwork)
+  * **Find Das Schiff resources that have to move to Sylva**
+  * Inventory every Das Schiff resource the Sylva intent group replaces and report, per kind, whether it moves automatically or what has to be decided first. All eight legacy kinds are marked, the three the operator generates included, so a kind that goes unmentioned is one this catalogue does not know about. A repository partway through the move also reports where the intent resources it already holds no longer say what the legacy ones do. Reports only; nothing is rewritten.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindIntentMigrationDrift](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/findintentmigrationdrift)
+  * **Find drift between Das Schiff and Sylva intent network resources**
+  * Compare the `network.t-caas.telekom.com` resources in a repository against the `network-connector.sylvaproject.org` resources meant to replace them, and report every field the two no longer agree on. They are paired by VRF name and VLAN id, so a hand written translation is checked as readily as a generated one.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindLegacyTCaasNetworkResources](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/findlegacytcaasnetworkresources)
+  * **Find legacy T-CaaS network resources**
+  * Find resources still on the legacy `network.t-caas.telekom.com` group and report what supersedes each in `network-connector.sylvaproject.org`. No kind moves on `apiVersion` alone, not even `BGPPeering`, which exists in both groups under the same name but shares only four fields.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindLowLevelNetworkConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/findlowlevelnetworkconfig)
+  * **Find `VRFRouteConfiguration` and `Layer2NetworkConfiguration` to migrate**
+  * Find the Das Schiff `VRFRouteConfiguration` and `Layer2NetworkConfiguration` resources the Sylva intent group replaces, and report for each whether it moves automatically or why it has to be moved by hand. Resources that do move also report the fields the intent group derives rather than stores, which are the ones worth re-reading in review.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindMirrorConfig](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/findmirrorconfig)
+  * **Find Das Schiff traffic mirror configuration**
+  * Find the Das Schiff `MirrorTarget` and `MirrorSelector` resources the Sylva `Collector` and `TrafficMirror` replace, and report for each whether it moves automatically or why it has to be moved by hand. Reports only; nothing is rewritten.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindNetworkOperatorConfigMap](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/findnetworkoperatorconfigmap)
+  * **Find Das Schiff network operator `ConfigMap`s**
+  * Inventory the `ConfigMap`s that configure Das Schiff's network operator, reporting for each `data` key how the value is written and how large it is. Each key is a whole embedded document the operator hands to its node agents as a file, not a setting. Nothing here reads those documents, so the report holds for any version of them.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.FindUnclassifiedExportRanges](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/findunclassifiedexportranges)
+  * **Find unclassified Das Schiff export ranges**
+  * Report every `VRFRouteConfiguration.spec.export` range that has to be classified as a load balancer pool or an egress NAT pool before an `Inbound` or `Outbound` can be generated for it. Nothing in the legacy group tells the two apart.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.GenerateInboundAndOutboundFromExportRanges](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/generateinboundandoutboundfromexportranges)
+  * **Generate `Inbound` and `Outbound` from export ranges**
+  * Generate a Sylva `Inbound` or `Outbound` for each `VRFRouteConfiguration.spec.export` range the `classifications` option names as a load balancer pool or an egress NAT pool. Nothing in the legacy group tells the two apart, so an unclassified range is reported and left alone rather than guessed at.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.MigrateLowLevelNetworkConfigToIntent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/migratelowlevelnetworkconfigtointent)
+  * **Migrate `VRFRouteConfiguration` and `Layer2NetworkConfiguration` to Sylva**
+  * Rewrite Das Schiff `VRFRouteConfiguration` and `Layer2NetworkConfiguration` resources into the `network-connector.sylvaproject.org` intent resources that replace them. Each becomes two: a `VRF` and a `Destination`, or a `Network` and a `Layer2Attachment`. Both kinds move here rather than in a recipe each, because a VRF moves whole or not at all. A resource whose meaning would change is reported rather than approximated.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.MigrateMirrorConfigToIntent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/migratemirrorconfigtointent)
+  * **Migrate Das Schiff traffic mirror configuration to intent resources**
+  * Rewrite Das Schiff `MirrorTarget` and `MirrorSelector` resources into the `Collector` and `TrafficMirror` that replace them. A `Collector` repeats its loopback's subnet inline, so a target whose mirror VRF is not declared in the same manifest is reported rather than moved.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.MigrateTCaasToSylvaNetworkConnector](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/migratetcaastosylvanetworkconnector)
+  * **Migrate T-CaaS network resources to the Sylva network connector API**
+  * Move what can be moved without a decision from Das Schiff's low level `network.t-caas.telekom.com` group onto the `network-connector.sylvaproject.org` intent group. Four of the eight legacy kinds move: `VRFRouteConfiguration` and `Layer2NetworkConfiguration` together rather than one at a time, because a VRF whose attachment stays behind stops advertising that attachment's subnet, and `MirrorTarget` and `MirrorSelector` likewise, because a selector without its collector points at nothing. `BGPPeering` is report-only. `NodeNetworkConfig`, `NodeNetplanConfig` and `NetworkConfigRevision` are operator output rather than input — the first two are named after a node and owned by it, the third by a hash of its own spec — so their absence is not a gap.
+* [io.moderne.kubernetes.sylva.migrate.dasschiff.MigrateVrfRouteConfigurationCommunityToCommunities](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/sylva/migrate/dasschiff/migratevrfrouteconfigurationcommunitytocommunities)
+  * **Migrate `VRFRouteConfiguration` `community` to `communities`**
+  * Promote the deprecated scalar `spec.community` of a Das Schiff `VRFRouteConfiguration` to the `spec.communities` sequence that replaces it. The operator's webhook rejects a resource that sets both, so one that already does is reported rather than merged.
 * [org.openrewrite.kubernetes.AddConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/addconfiguration)
   * **Add Kubernetes configuration**
   * Add default required configuration when it is missing.
+* [org.openrewrite.kubernetes.AddPodSpecConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/addpodspecconfiguration)
+  * **Add Kubernetes pod spec configuration**
+  * Add default required configuration to a workload's pod spec when it is missing. The pod spec is located by kind, so a `Deployment`, `StatefulSet`, `DaemonSet`, `ReplicaSet`, `ReplicationController`, `Job` or `CronJob` is configured as well as a bare `Pod`.
 * [org.openrewrite.kubernetes.ChangeApiVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/changeapiversion)
   * **Change Kubernetes API version**
   * Change the Kubernetes API version in a resource.
@@ -9315,12 +9639,108 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.kubernetes.UpdateContainerImageName](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/updatecontainerimagename)
   * **Update image name**
   * Search for image names that match patterns and replace the components of the name with new values.
+* [org.openrewrite.kubernetes.clusterapi.MigrateAwsProviderToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migrateawsprovidertov1beta2)
+  * **Migrate Cluster API Provider AWS resources to `v1beta2`**
+  * Change the `apiVersion` of the resources served by Cluster API Provider AWS to `v1beta2`, across the `infrastructure`, `bootstrap` and `controlplane` groups it contributes to. `ROSA*` and `Nodeadm*` are absent because they were introduced at `v1beta2` and never had a `v1beta1`. This recipe changes `apiVersion` only. Whatever else this provider reshaped in `v1beta2` is defined by the provider rather than by the Cluster API contract, so review the resources it touches against the provider's own migration notes.
+* [org.openrewrite.kubernetes.clusterapi.MigrateClusterApiCoreResourceToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migrateclusterapicoreresourcetov1beta2)
+  * **Migrate the Cluster API core group to `v1beta2`**
+  * Rewrite `cluster.x-k8s.io/v1beta1` resources into their `v1beta2` form, fields and `apiVersion` together. `v1beta1` has been deprecated since Cluster API v1.11 and stops being served in v1.16. A resource moves as a whole or not at all: where `v1beta2` dropped a field outright, or a duration cannot be read exactly, it stays on `v1beta1` and the reason is reported.
+* [org.openrewrite.kubernetes.clusterapi.MigrateClusterApiCoreToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migrateclusterapicoretov1beta2)
+  * **Migrate the Cluster API core group to `v1beta2`**
+  * Rewrite every `cluster.x-k8s.io/v1beta1` resource Cluster API owns into its `v1beta2` form, fields and `apiVersion` together. `v1beta1` has been deprecated since Cluster API v1.11 and stops being served in v1.16. To migrate a subset, compose your own list from the per-kind recipes below.
+* [org.openrewrite.kubernetes.clusterapi.MigrateClusterClassToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migrateclusterclasstov1beta2)
+  * **Migrate `ClusterClass` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `ClusterClass` into its `v1beta2` form. Templates are named through `templateRef` without the `template` wrapper. A `templateRef` still carries an `apiVersion`, so which are safe to re-point belongs to the provider serving each kind and is reported rather than guessed.
+* [org.openrewrite.kubernetes.clusterapi.MigrateClusterToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migrateclustertov1beta2)
+  * **Migrate `Cluster` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `Cluster` into its `v1beta2` form. `spec.topology.class` becomes `spec.topology.classRef.name`, and a `spec.topology.rolloutAfter` is reported rather than dropped.
+* [org.openrewrite.kubernetes.clusterapi.MigrateMachineDeploymentToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratemachinedeploymenttov1beta2)
+  * **Migrate `MachineDeployment` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `MachineDeployment` into its `v1beta2` form. `spec.strategy` splits into `rollout.strategy`, `deletion.order` and `remediation`, and `spec.minReadySeconds` moves onto the machines it creates. `spec.progressDeadlineSeconds` and `spec.revisionHistoryLimit` are gone, so a resource setting either is reported rather than silently losing them.
+* [org.openrewrite.kubernetes.clusterapi.MigrateMachineDrainRuleToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratemachinedrainruletov1beta2)
+  * **Migrate `MachineDrainRule` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `MachineDrainRule` into its `v1beta2` form.
+* [org.openrewrite.kubernetes.clusterapi.MigrateMachineHealthCheckToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratemachinehealthchecktov1beta2)
+  * **Migrate `MachineHealthCheck` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `MachineHealthCheck` into its `v1beta2` form. Its checks and remediation are regrouped, and `nodeStartupTimeout` becomes `checks.nodeStartupTimeoutSeconds` rather than moving under `deletion` with the other durations.
+* [org.openrewrite.kubernetes.clusterapi.MigrateMachinePoolToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratemachinepooltov1beta2)
+  * **Migrate `MachinePool` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `MachinePool` into its `v1beta2` form. `spec.minReadySeconds` moves onto the machines it creates, since `MachinePoolSpec` no longer holds it.
+* [org.openrewrite.kubernetes.clusterapi.MigrateMachineSetToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratemachinesettov1beta2)
+  * **Migrate `MachineSet` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `MachineSet` into its `v1beta2` form. `spec.minReadySeconds` moves onto the machines it creates, since `MachineSetSpec` no longer holds it.
+* [org.openrewrite.kubernetes.clusterapi.MigrateMachineToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratemachinetov1beta2)
+  * **Migrate `Machine` to `cluster.x-k8s.io/v1beta2`**
+  * Rewrite a `Machine` into its `v1beta2` form. References name an API group rather than an `apiVersion`, and each `metav1.Duration` becomes whole seconds under `deletion`.
+* [org.openrewrite.kubernetes.clusterapi.MigrateMetal3ProviderToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratemetal3providertov1beta2)
+  * **Migrate Cluster API Provider Metal3 resources to `v1beta2`**
+  * Change the `apiVersion` of the resources served by Cluster API Provider Metal3 to `v1beta2`. Check first that the Metal3 release you run serves `v1beta2` at all: as late as provider `v1.10.1`, `api/v1beta1` is still the hub version and no `v1beta2` package is shipped, and an `apiVersion` naming a version the CRD does not serve is rejected on apply. This recipe changes `apiVersion` only. Whatever else this provider reshaped in `v1beta2` is defined by the provider rather than by the Cluster API contract, so review the resources it touches against the provider's own migration notes.
+* [org.openrewrite.kubernetes.clusterapi.MigrateOpenStackProviderToV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migrateopenstackprovidertov1beta2)
+  * **Migrate Cluster API Provider OpenStack resources to `v1beta2`**
+  * Change the `apiVersion` of the `OpenStackCluster`, `OpenStackClusterTemplate`, `OpenStackMachine` and `OpenStackMachineTemplate` resources served by Cluster API Provider OpenStack to `v1beta2`. `OpenStackServer`, `OpenStackClusterIdentity` and `OpenStackFloatingIPPool` are still on `v1alpha1` and are left alone. This recipe changes `apiVersion` only. Whatever else this provider reshaped in `v1beta2` is defined by the provider rather than by the Cluster API contract, so review the resources it touches against the provider's own migration notes.
+* [org.openrewrite.kubernetes.clusterapi.MigrateToClusterApiV1beta2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/clusterapi/migratetoclusterapiv1beta2)
+  * **Migrate Cluster API resources to `v1beta2`**
+  * Migrate every custom resource Cluster API owns to `v1beta2`. `v1beta1` has been deprecated since v1.11 and stops being served in v1.16. The `cluster.x-k8s.io` kinds move fields and `apiVersion` together; `addons` and `ipam` change `apiVersion` only, because those kinds are the same shape under a new name. Two things are deliberately left behind. The four `Kubeadm*` kinds are not migrated at all: `extraArgs` changes from a map to a list throughout the embedded kubeadm configuration and the control plane regroups half its spec, so a bare swap is either rejected outright or accepted while the apiserver prunes what moved. And `infrastructure.cluster.x-k8s.io` is out of scope, because that group belongs to the providers, each of which decides for itself what `v1beta2` means. Both have to be migrated by hand.
+* [org.openrewrite.kubernetes.crd.FindCustomResourcesUsingDeprecatedCrdFields](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/crd/findcustomresourcesusingdeprecatedcrdfields)
+  * **Find custom resources using deprecated CRD fields**
+  * Find custom resources that set a field which a CustomResourceDefinition in this repository marks deprecated, or that are on a version the CustomResourceDefinition deprecates. `controller-gen` copies Go doc comments verbatim into a CRD's OpenAPI schema `description`, so a field deprecated in Go ships its own deprecation notice inside the CRD and no per-CRD configuration is needed.
+* [org.openrewrite.kubernetes.helm.ChangeChartVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/helm/changechartversion)
+  * **Change Helm chart version**
+  * Propagate a Helm chart version across every file that restates it: the chart's own `Chart.yaml`, the `dependencies` of the charts that consume it, Flux `HelmRelease` resources, k0rdent `ClusterTemplate`, `ProviderTemplate` and `ServiceTemplate` resources, and optionally files whose name encodes the version. `dependencies[].version` is a range, so by default a range that the new version already satisfies is left alone rather than pinned. `Chart.lock` is never edited, because its digest cannot be recomputed here; it is reported instead. Files under a chart's `templates` directory are Go template text and are left alone.  A k0rdent template's `metadata.name` also encodes the chart version, but a name is an identity that `ClusterDeployment`, `Release` and `*TemplateChain` resources point at. Renaming it here would leave those references dangling, so this recipe changes only version fields; `org.openrewrite.kubernetes.k0rdent.ChangeTemplateVersion` moves the name and everything that references it together.
+* [org.openrewrite.kubernetes.k0rdent.ChangeTemplateVersion](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/k0rdent/changetemplateversion)
+  * **Change k0rdent template version**
+  * Move a k0rdent `ClusterTemplate`, `ProviderTemplate` or `ServiceTemplate` to a new chart version, taking its name and everything that points at that name along with it.  k0rdent encodes the chart version in the template's `metadata.name`, so a version bump renames the resource: `aws-standalone-cp-1-0-42` becomes `aws-standalone-cp-1-0-43`. That name is referenced from `ClusterDeployment.spec.template`, from `services[].template` on a `ClusterDeployment` or `MultiClusterService`, from `Release.spec.kcm.template`, `spec.regional.template`, `spec.capi.template` and `spec.providers[].template`, from `spec.core.kcm.template`, `spec.core.capi.template` and `spec.providers[].template` on a `Management` or `Region`, and from the `supportedTemplates` of a `ClusterTemplateChain` or `ServiceTemplateChain`. All of them move together here, along with any file whose name encodes the template name, because a rename that misses one of them leaves a reference the controller cannot resolve.  A template in a file that renders through a template engine is reported and left alone, and so are its referrers: its name is whatever the engine produces, so nothing can be moved without stranding the rest.  This changes the template's own `spec.helm.chartSpec.version` too, but not the chart it points at. Run `org.openrewrite.kubernetes.helm.ChangeChartVersion` alongside it to move the chart's own `Chart.yaml`, the charts that depend on it, and any Flux `HelmRelease`.
+* [org.openrewrite.kubernetes.k0rdent.MigrateDeprecatedServiceSpecFields](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/k0rdent/migratedeprecatedservicespecfields)
+  * **Migrate deprecated k0rdent `serviceSpec` fields**
+  * Move the fields k0rdent deprecated on `spec.serviceSpec` into the `spec.serviceSpec.provider.config` blob that supersedes them, on `ClusterDeployment` and `MultiClusterService`. The nine that move are `syncMode`, `templateResourceRefs`, `policyRefs`, `driftIgnore`, `driftExclusions`, `priority`, `stopOnConflict`, `reload` and `continueOnError`, plus `createNamespace` and `replace` on each service's `helmOptions`, which move into `helmOptions.installOptions`.  `reload` is renamed to `reloader` on the way, because that is the key the state management provider unmarshals; a hand migration that keeps the old spelling produces a manifest the apiserver accepts and the controller ignores.  Fields are left where they are, and reported in a data table, when the move would change what the resource does: the document renders through Helm, so what is written is not what is applied; `provider.name` or `provider.config` is already set, in which case the controller is already ignoring the deprecated fields and moving them would switch settings on; `installOptions` already declares a different value; or the resource is declared against `k0rdent.mirantis.com/v1alpha1`, whose schema has no `provider` field at all, so the apiserver would prune whatever was written there.  The `provider.name` case is the subtle one. `StateManagementProviderConfigFromServiceSpec` folds the deprecated fields into a config blob only when neither `provider.name` nor `provider.config` is set; name it, and every deprecated field is discarded. Moving them into `provider.config` would hand a named provider a `syncMode`, `priority` or `reloader` it is not acting on today.
+* [org.openrewrite.kubernetes.kustomize.UpdateImageTag](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/kustomize/updateimagetag)
+  * **Update kustomize image**
+  * Update the `newName`, `newTag` or `digest` of an entry in a kustomization's `images` block, which is where `kustomize edit set image` and the `sed`, `yq` and Python scripts that stand in for it write an image pin. Only an entry that is already there is updated; an image the kustomization does not already override is left alone rather than added. A commented out entry stays a comment.
+* [org.openrewrite.kubernetes.metallb.MetalLB](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/metallb/metallb-recipe)
+  * **Migrate to current MetalLB `Service` configuration**
+  * Bring the `Service` side of a [MetalLB](https://metallb.io) installation up to date: annotations move off the deprecated `metallb.universe.tf` domain onto `metallb.io`, and an address pinned in the deprecated `spec.loadBalancerIP` moves into the `metallb.io/loadBalancerIPs` annotation that replaced it. These are MetalLB's own conventions rather than Kubernetes API migrations. Nothing here applies to a cluster whose `LoadBalancer` services are served by a cloud provider or by another bare metal load balancer, so scope the run to the manifests MetalLB serves. The domain rename runs first, so that a service already carrying `metallb.universe.tf/loadBalancerIPs` is compared against its migrated name.
+* [org.openrewrite.kubernetes.metallb.MigrateLoadBalancerIpToMetalLbAnnotation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/metallb/migrateloadbalanceriptometallbannotation)
+  * **Migrate `Service` `spec.loadBalancerIP` to the MetalLB annotation**
+  * Move the address a `type: LoadBalancer` `Service` pins in `spec.loadBalancerIP`, deprecated in Kubernetes 1.24, into the `metallb.io/loadBalancerIPs` annotation [MetalLB](https://metallb.io) reads in its place. `spec.loadBalancerIP` holds a single address, so a dual stack service can name only one of its two families there and silently takes whatever MetalLB allocates for the other; the annotation takes a comma separated list and is the only way to pin both.  MetalLB refuses to allocate at all for a service that sets both the annotation and `spec.loadBalancerIP`. Where the annotation is already present this therefore drops `spec.loadBalancerIP` when the two agree, and reports it when they disagree rather than picking an address on the author's behalf.  This annotation means nothing to a cloud provider's load balancer controller, so run it only against manifests MetalLB serves.
+* [org.openrewrite.kubernetes.metallb.MigrateMetalLbAnnotationPrefix](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/metallb/migratemetallbannotationprefix)
+  * **Migrate MetalLB annotations to the `metallb.io` domain**
+  * Rename the [MetalLB](https://metallb.io) `Service` annotations that moved from the `metallb.universe.tf` domain to `metallb.io` in MetalLB 0.14.9. The old domain still works, but the controller now raises a `deprecatedAnnotation` event against every service using it and the release notes reserve the right to drop the compatibility shim. Only the four annotations that genuinely moved are renamed — `address-pool`, `loadBalancerIPs`, `allow-shared-ip` and the controller-written `ip-allocated-from-pool` — so an unrelated `metallb.universe.tf` key keeps its domain.  MetalLB prefers the `metallb.io` spelling wherever both are present, which makes the deprecated twin dead weight. Such a twin is dropped when it carries the same value and reported otherwise, rather than renamed into a duplicate key.  This is MetalLB's own annotation domain, not a Kubernetes API migration; a cluster load balanced by anything else is unaffected.
+* [org.openrewrite.kubernetes.migrate.MigrateHorizontalPodAutoscalerToV2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratehorizontalpodautoscalertov2)
+  * **Migrate `HorizontalPodAutoscaler` to `autoscaling/v2`**
+  * Move `HorizontalPodAutoscaler` off the `autoscaling` beta APIs — `v2beta1`, removed in Kubernetes v1.25, and `v2beta2`, removed in v1.26 — onto `autoscaling/v2`, restructuring the metric targets `v2beta1` wrote inline.  `v2beta2` is `autoscaling/v2` under another name, so those resources only change version. A `v2beta1` resource is rewritten the way the apiserver itself converted it: `targetAverageUtilization` becomes `target.averageUtilization` under `target.type: Utilization` and `targetAverageValue` becomes `target.averageValue` under `target.type: AverageValue`; `metricName` and its selector become the `metric` identifier; and for an `object` metric the `target` naming the described object becomes `describedObject`, freeing `target` for the metric target built from `targetValue` and `averageValue`.  A metric that sets a combination `autoscaling/v2` validation rejects — a resource metric targeting both a utilization and a raw value, or an external metric targeting both a total and a per-pod value — is left on its old API version and marked with the reason.
+* [org.openrewrite.kubernetes.migrate.MigrateIngressToNetworkingV1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migrateingresstonetworkingv1)
+  * **Migrate `Ingress` to `networking.k8s.io/v1`**
+  * Move `Ingress` from `extensions/v1beta1` and `networking.k8s.io/v1beta1`, both removed in Kubernetes v1.22, to `networking.k8s.io/v1`, restructuring the body the new version requires. `spec.backend` becomes `spec.defaultBackend`, every `backend.serviceName` and `backend.servicePort` pair becomes `backend.service.name` and `backend.service.port`, and every path gains the explicit `pathType: ImplementationSpecific` that `v1beta1` used to default to.  `servicePort` is an int-or-string, so how it is written decides where it lands: an unquoted `8080` is the port number and becomes `port.number`, while a quoted `&quot;8080&quot;` or a bare `http` is the port's name and becomes `port.name`.  An Ingress the restructuring cannot carry over in full is left on its old API version and marked with the reason, rather than being handed to the apiserver in a shape it rejects.
+* [org.openrewrite.kubernetes.migrate.MigratePodDisruptionBudgetToV1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratepoddisruptionbudgettov1)
+  * **Migrate `PodDisruptionBudget` to `policy/v1`**
+  * Move `PodDisruptionBudget` from `policy/v1beta1`, removed in Kubernetes 1.25, to `policy/v1`, adjusting an empty `spec.selector` so the budget goes on covering the same pods. Under `policy/v1beta1` an empty selector (`\{\}`) selected *no* pods; under `policy/v1` it selects *every* pod in the namespace, so changing only the API version would silently turn a budget that did nothing into one that blocks every eviction in its namespace. An unset selector means &quot;no pods&quot; in both versions, so the empty selector is dropped rather than carried over.
 * [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_16](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_16)
   * **Migrate to Kubernetes API v1.16**
   * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.16.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_17](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_17)
+  * **Migrate to Kubernetes API v1.17**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.17. Kubernetes v1.17 removed no API version, so this is an alias for the v1.16 migration.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_18](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_18)
+  * **Migrate to Kubernetes API v1.18**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.18. Kubernetes v1.18 removed no API version, so this is an alias for the v1.16 migration.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_19](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_19)
+  * **Migrate to Kubernetes API v1.19**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.19. Kubernetes v1.19 removed no API version, so this is an alias for the v1.16 migration.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_20](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_20)
+  * **Migrate to Kubernetes API v1.20**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.20. Kubernetes v1.20 removed no API version, so this is an alias for the v1.16 migration.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_21](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_21)
+  * **Migrate to Kubernetes API v1.21**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.21. Kubernetes v1.21 removed no API version, so this is an alias for the v1.16 migration.
 * [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_22](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_22)
   * **Migrate to Kubernetes API v1.22**
   * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.22.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_23](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_23)
+  * **Migrate to Kubernetes API v1.23**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.23. Kubernetes v1.23 removed no API version, so this is an alias for the v1.22 migration.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_24](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_24)
+  * **Migrate to Kubernetes API v1.24**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.24. Kubernetes v1.24 removed no API version, so this is an alias for the v1.22 migration.
 * [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_25](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_25)
   * **Migrate to Kubernetes API v1.25**
   * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.25.
@@ -9330,9 +9750,18 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_27](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_27)
   * **Migrate to Kubernetes API v1.27**
   * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.27.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_28](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_28)
+  * **Migrate to Kubernetes API v1.28**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.28. Kubernetes v1.28 removed no API version, so this is an alias for the v1.27 migration.
 * [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_29](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_29)
   * **Migrate to Kubernetes API v1.29**
   * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.29.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_30](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_30)
+  * **Migrate to Kubernetes API v1.30**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.30. Kubernetes v1.30 removed no API version, so this is an alias for the v1.29 migration.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_31](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_31)
+  * **Migrate to Kubernetes API v1.31**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.31. Kubernetes v1.31 removed no API version, so this is an alias for the v1.29 migration.
 * [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_32](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_32)
   * **Migrate to Kubernetes API v1.32**
   * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.32.
@@ -9345,6 +9774,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_35](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_35)
   * **Migrate to Kubernetes API v1.35**
   * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.35.
+* [org.openrewrite.kubernetes.migrate.MigrateToAPIv1_36](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/migrate/migratetoapiv1_36)
+  * **Migrate to Kubernetes API v1.36**
+  * This recipe will apply changes commonly needed when migrating to Kubernetes API v1.36. Kubernetes v1.36 removed no API version, so this is an alias for the v1.35 migration.
 * [org.openrewrite.kubernetes.rbac.AddRuleToRole](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/rbac/addruletorole)
   * **Add RBAC rules**
   * Add RBAC rules to ClusterRoles or namespaced Roles.
@@ -9357,18 +9789,48 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.kubernetes.resource.FindExceedsResourceValue](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/resource/findexceedsresourcevalue)
   * **Find exceeds resource limit**
   * Find resource manifests that have limits set beyond a specific maximum.
+* [org.openrewrite.kubernetes.search.FindAdmissionWebhookV1beta1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findadmissionwebhookv1beta1)
+  * **Find `admissionregistration.k8s.io/v1beta1` webhook configurations**
+  * Find `MutatingWebhookConfiguration` and `ValidatingWebhookConfiguration` resources still on the `admissionregistration.k8s.io/v1beta1` API removed in Kubernetes v1.22. Moving to `admissionregistration.k8s.io/v1` is not a version swap: every webhook must declare `admissionReviewVersions` and `sideEffects`, both of which have no default in `v1`, and the `v1beta1` defaults of `failurePolicy: Ignore`, `matchPolicy: Exact` and `timeoutSeconds: 30` change to `Fail`, `Equivalent` and `10`.
 * [org.openrewrite.kubernetes.search.FindAnnotation](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findannotation)
   * **Find annotation**
   * Find annotations that optionally match a given regex.
+* [org.openrewrite.kubernetes.search.FindContainerMissingConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findcontainermissingconfiguration)
+  * **Find containers with missing configuration**
+  * Find containers of a Kubernetes workload that are missing a given piece of configuration. Every container is evaluated on its own, so a sidecar that omits the configuration is reported even when the application container next to it sets it.
+* [org.openrewrite.kubernetes.search.FindContainerResourceCoverage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findcontainerresourcecoverage)
+  * **Find container resource coverage**
+  * Profile the compute resources and probes every container of every workload declares. Quantities are reported both as written and normalized to millicores and bytes, and each row carries the quality of service class the kubelet would give the pod the container belongs to.
+* [org.openrewrite.kubernetes.search.FindCustomResourceDefinitionV1beta1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findcustomresourcedefinitionv1beta1)
+  * **Find `apiextensions.k8s.io/v1beta1` CustomResourceDefinitions**
+  * Find `CustomResourceDefinition` resources still on the `apiextensions.k8s.io/v1beta1` API removed in Kubernetes v1.22. Moving to `apiextensions.k8s.io/v1` is not a version swap: `spec.validation`, `spec.subresources` and `spec.additionalPrinterColumns` move under each entry of `spec.versions`, `spec.version` is dropped in favour of `spec.versions`, a structural schema and an explicit `spec.preserveUnknownFields: false` become mandatory, and `spec.conversion.webhookClientConfig` moves to `spec.conversion.webhook.clientConfig` alongside a required `spec.conversion.webhook.conversionReviewVersions`.
+* [org.openrewrite.kubernetes.search.FindDanglingResourceReferences](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/finddanglingresourcereferences)
+  * **Find dangling Kubernetes resource references**
+  * Find resources that refer by name to a ConfigMap, Secret, ServiceAccount, Service, PersistentVolumeClaim, Role, ClusterRole, PriorityClass or scale target that this repository declares nowhere. There is no safe automated fix for a dangling reference — the name is either a typo, a leftover, or satisfied out of band — so this only reports. Namespace is ignored when resolving, a kustomization's `namePrefix` and `nameSuffix` are replayed so that the name a cluster sees resolves as well as the one on disk, and references whose value is templated, whose target kind appears nowhere in the repository, or whose target kind has a name some template computes are all left alone.
 * [org.openrewrite.kubernetes.search.FindDisallowedImageTags](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/finddisallowedimagetags)
   * **Find disallowed image tags**
   * The set of image tags to find which are considered disallowed.
 * [org.openrewrite.kubernetes.search.FindHarcodedIPAddresses](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findharcodedipaddresses)
   * **Find hardcoded IP addresses**
   * Find hardcoded IP address anywhere in text-based files.
+* [org.openrewrite.kubernetes.search.FindHorizontalPodAutoscalerV2beta](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findhorizontalpodautoscalerv2beta)
+  * **Find `autoscaling/v2beta1` and `autoscaling/v2beta2` HorizontalPodAutoscalers**
+  * Find `HorizontalPodAutoscaler` resources still on an `autoscaling` beta API; `v2beta1` was removed in Kubernetes v1.25 and `v2beta2` in v1.26. Moving to `autoscaling/v2` is not a version swap: each entry of `spec.metrics` carries a `target` object, so `targetAverageUtilization` becomes `target.averageUtilization` with `target.type: Utilization` and `targetAverageValue` becomes `target.averageValue` with `target.type: AverageValue`.
 * [org.openrewrite.kubernetes.search.FindImage](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findimage)
   * **Find image by name**
   * The image name to search for in containers and initContainers.
+* [org.openrewrite.kubernetes.search.FindIngressV1beta1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findingressv1beta1)
+  * **Find `networking.k8s.io/v1beta1` Ingresses**
+  * Find `Ingress` resources still on the `networking.k8s.io/v1beta1` API removed in Kubernetes v1.22. Moving to `networking.k8s.io/v1` is not a version swap: `backend.serviceName` and `backend.servicePort` become `backend.service.name` and `backend.service.port`, `spec.backend` becomes `spec.defaultBackend`, and every path needs an explicit `pathType`.
+* [org.openrewrite.kubernetes.search.FindKubernetesResources](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findkubernetesresources)
+  * **Find Kubernetes resources**
+  * An inventory of every Kubernetes resource in a repository, one row per YAML document. The pod spec path column reports where each kind keeps its containers, so the workloads this module cannot reach are counted rather than quietly skipped.
+* [org.openrewrite.kubernetes.search.FindKustomizeImages](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findkustomizeimages)
+  * **Find kustomize images**
+  * An inventory of every image a kustomization overrides. The `images` block is where a repository's image pins actually live once kustomize is in play, and it is rewritten by `kustomize edit set image`, `sed`, `yq` and hand edits alike, so it is worth knowing where they all are.
+* [org.openrewrite.kubernetes.search.FindManifestFlavors](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findmanifestflavors)
+  * **Find Kubernetes manifest flavors**
+  * Classify every YAML file in a repository by what it actually is — a manifest, a Helm chart template, a kustomization, something else entirely — and by whether an edit to it would mean what it appears to mean. This is the denominator every other Kubernetes report is a fraction of.
 * [org.openrewrite.kubernetes.search.FindMissingDigest](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findmissingdigest)
   * **Find missing image digest**
   * Find instances of a container name that fails to specify a digest.
@@ -9381,6 +9843,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.kubernetes.search.FindNonTlsIngress](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findnontlsingress)
   * **Find non-TLS Ingresses**
   * Find Ingress resources that don't disallow HTTP or don't have TLS configured.
+* [org.openrewrite.kubernetes.search.FindPodDisruptionBudgetsSelectingAllPods](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findpoddisruptionbudgetsselectingallpods)
+  * **Find `PodDisruptionBudget` resources selecting every pod**
+  * Find `policy/v1` `PodDisruptionBudget` resources whose `spec.selector` is empty (`\{\}`), which selects every pod in the namespace and so can block all evictions in it — stalling node drains and cluster upgrades. This is occasionally deliberate, but it is also what a naive version bump from `policy/v1beta1` produces, because there the same empty selector selected no pods at all.
 * [org.openrewrite.kubernetes.search.FindResourceMissingConfiguration](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kubernetes/search/findresourcemissingconfiguration)
   * **Find missing configuration**
   * Find Kubernetes resources with missing configuration.
@@ -9507,6 +9972,9 @@ This doc includes every recipe that is exclusive to users of Moderne. For a full
 * [org.openrewrite.python.codequality.CollapsibleIfStatements](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/collapsibleifstatements)
   * **Merge collapsible if statements**
   * Combine nested `if` statements that have no `else` branch into a single `if` joined with `and`.
+* [org.openrewrite.python.codequality.FindSuspiciousChainedComparison](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/findsuspiciouschainedcomparison)
+  * **Find suspicious chained comparisons**
+  * Find chained comparisons that mix `&lt;`/`&lt;=` with `&gt;`/`&gt;=` (for example `0 &lt;= x &gt;= 10`), where the links point in opposite directions and the chain is almost always a mistake.
 * [org.openrewrite.python.codequality.MergeIdenticalBranches](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/codequality/mergeidenticalbranches)
   * **Merge consecutive branches with identical bodies**
   * Combine consecutive `if`/`elif` branches that have the same body into a single branch with conditions joined by `or`.

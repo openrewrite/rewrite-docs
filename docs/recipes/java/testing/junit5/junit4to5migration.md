@@ -126,6 +126,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use Arquillian JUnit 5 Extension](../../../java/testing/arquillian/arquillianjunit4toarquillianjunit5)
 * [Use Byteman JUnit 5 dependency](../../../java/testing/byteman/bytemanjunit4tobytemanjunit5)
 * [Migrate rider-spring (JUnit4) to rider-junit5 (JUnit5)](../../../java/testing/dbrider/migratedbriderspringtodbriderjunit5)
+* [AssertJ `@Rule` soft assertions to `SoftAssertionsExtension`](../../../java/testing/junit5/junitsoftassertionstosoftassertionsextension)
 * [Handle the usage of ExternalResourceRule fields using @ExtendWith(ExternalResourceSupport.class)](../../../java/testing/junit5/handleexternalresourcerules)
 
 </TabItem>
@@ -230,6 +231,7 @@ recipeList:
   - org.openrewrite.java.testing.arquillian.ArquillianJUnit4ToArquillianJUnit5
   - org.openrewrite.java.testing.byteman.BytemanJUnit4ToBytemanJUnit5
   - org.openrewrite.java.testing.dbrider.MigrateDbRiderSpringToDbRiderJUnit5
+  - org.openrewrite.java.testing.junit5.JUnitSoftAssertionsToSoftAssertionsExtension
   - org.openrewrite.java.testing.junit5.HandleExternalResourceRules
 
 ```

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.ChangePluginGroupIdAndArtifactId**
 
-_Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version. This recipe does not perform any validation and assumes all values passed are valid._
+_Change the groupId and/or the artifactId of a specified Maven plugin. Optionally update the plugin version, which may be given as an exact version or as a node-style semver selector resolved against the new plugin's available versions._
 
 ## Recipe source
 
@@ -29,7 +29,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldArtifactId | The old artifactId to replace. The artifact ID is the second part of a plugin coordinate 'com.google.guava:guava:VERSION'. Supports glob expressions. | `my-deprecated-maven-plugin` |
 | `String` | newGroupId | *Optional*. The new group ID to use. | `corp.internal.openrewrite.recipe` |
 | `String` | newArtifactId | *Optional*. The new artifact ID to use. | `my-new-maven-plugin` |
-| `String` | newVersion | *Optional*. An exact version number. | `29.0` |
+| `String` | newVersion | *Optional*. An exact version number or node-style semver selector used to select the version number. You can also use `latest.release` for the latest available version and `latest.patch` if the current version is a valid semantic version. For more details, you can look at the documentation page of [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) | `29.X` |
 
 
 ## Used by
@@ -38,7 +38,9 @@ This recipe is used as part of the following composite recipes:
 
 * [Add Micronaut build plugins to 4.x](/recipes/java/micronaut/updatebuildplugins.md)
 * [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
+* [Update Spring Cloud Contract coordinates to Stubborn Contract](/recipes/sh/stubborn/contract/migration/updatedependencies.md)
 * [Upgrade plugins that are incompatible with Maven 4](/recipes/maven/upgradepluginsformaven4.md)
+* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 * [io.quarkus.updates.core.quarkus30.AdditionalChanges](/recipes/quarkus/updates/core/quarkus30/additionalchanges.md)
 
 ## Example
@@ -161,7 +163,7 @@ recipeList:
       oldArtifactId: my-deprecated-maven-plugin
       newGroupId: corp.internal.openrewrite.recipe
       newArtifactId: my-new-maven-plugin
-      newVersion: 29.0
+      newVersion: 29.X
 ```
 
 <RunRecipe
@@ -172,7 +174,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newVersion=29.0"'}
+  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newVersion=29.X"'}
   showGradle={false}
   hasDataTables
 />

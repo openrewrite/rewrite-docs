@@ -6,6 +6,6 @@ description: Maven OpenRewrite recipes.
 
 ## Categories
 
-* [Shared](/recipes/apache/maven/shared)
+* [Maven Shared Utils](/recipes/apache/maven/shared)
 
 

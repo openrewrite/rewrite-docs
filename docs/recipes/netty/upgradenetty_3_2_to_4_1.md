@@ -43,10 +43,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Change method name](../java/changemethodname)
   * methodPattern: `*..* messageReceived(org.jboss.netty.channel.ChannelHandlerContext, org.jboss.netty.channel.MessageEvent)`
   * newMethodName: `channelRead`
-* [Change parameter type for a method declaration](../java/spring/changemethodparameter)
-  * methodPattern: `*..* channelRead(org.jboss.netty.channel.ChannelHandlerContext, org.jboss.netty.channel.MessageEvent)`
-  * parameterType: `java.lang.Object`
-  * parameterIndex: `1`
+* [Change `MessageEvent` parameter of `channelRead` to `Object`](../java/netty/upgrade/_3_2_to_4_1_/changemessageeventparametertoobject)
 * [Change method name](../java/changemethodname)
   * methodPattern: `org.jboss.netty.channel.ChannelHandlerContext getChannel()`
   * newMethodName: `channel`
@@ -147,10 +144,7 @@ recipeList:
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: *..* messageReceived(org.jboss.netty.channel.ChannelHandlerContext, org.jboss.netty.channel.MessageEvent)
       newMethodName: channelRead
-  - org.openrewrite.java.spring.ChangeMethodParameter:
-      methodPattern: *..* channelRead(org.jboss.netty.channel.ChannelHandlerContext, org.jboss.netty.channel.MessageEvent)
-      parameterType: java.lang.Object
-      parameterIndex: 1
+  - org.openrewrite.java.netty.upgrade._3_2_to_4_1_.ChangeMessageEventParameterToObject
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.jboss.netty.channel.ChannelHandlerContext getChannel()
       newMethodName: channel

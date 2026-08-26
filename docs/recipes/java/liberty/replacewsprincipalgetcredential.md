@@ -13,6 +13,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Replaces `WSCredential credential = WSPrincipal.getCredential();` with a `null` initializer + `try/catch` lookup._
 
+### Tags
+
+* [websphere](/reference/recipes-by-tag#websphere)
+* [liberty](/reference/recipes-by-tag#liberty)
+
 ## Recipe source
 
 [GitHub: ReplaceWSPrincipalGetCredential.java](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/ReplaceWSPrincipalGetCredential.java),

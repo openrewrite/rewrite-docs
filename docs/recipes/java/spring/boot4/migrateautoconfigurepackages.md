@@ -257,6 +257,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPackageName: `org.springframework.boot.webmvc.test.autoconfigure`
   * recursive: `true`
 * [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest`
+  * newFullyQualifiedTypeName: `org.springframework.boot.webflux.test.autoconfigure.WebFluxTest`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebFlux`
+  * newFullyQualifiedTypeName: `org.springframework.boot.webflux.test.autoconfigure.AutoConfigureWebFlux`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTypeExcludeFilter`
+  * newFullyQualifiedTypeName: `org.springframework.boot.webflux.test.autoconfigure.WebFluxTypeExcludeFilter`
+* [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient`
   * newFullyQualifiedTypeName: `org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient`
 * [Change type](../../../java/changetype)
@@ -601,6 +610,15 @@ recipeList:
       newPackageName: org.springframework.boot.webmvc.test.autoconfigure
       recursive: true
   - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest
+      newFullyQualifiedTypeName: org.springframework.boot.webflux.test.autoconfigure.WebFluxTest
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebFlux
+      newFullyQualifiedTypeName: org.springframework.boot.webflux.test.autoconfigure.AutoConfigureWebFlux
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTypeExcludeFilter
+      newFullyQualifiedTypeName: org.springframework.boot.webflux.test.autoconfigure.WebFluxTypeExcludeFilter
+  - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
       newFullyQualifiedTypeName: org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient
   - org.openrewrite.java.ChangeType:
@@ -718,6 +736,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Boot 4.0 modular starters (Community Edition)](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
 
 

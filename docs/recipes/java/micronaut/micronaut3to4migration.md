@@ -49,7 +49,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Update the Micronaut Security library](../../java/micronaut/updatemicronautsecurity)
 * [Update the Micronaut Data library](../../java/micronaut/updatemicronautdata)
 * [Remove withJansi Logback configuration](../../java/micronaut/removewithjansilogbackconfiguration)
-* [Remove unnecessary dependencies](../../java/micronaut/removeunnecessarydependencies)
+* [Remove a Gradle or Maven dependency](../../java/dependencies/removedependency)
+  * groupId: `io.micronaut`
+  * artifactId: `micronaut-runtime`
 * [Add `HttpRequest` type parameter for implemented interfaces](../../java/micronaut/addhttprequesttypeparameter)
 * [Update the version of core annotation processors](../../java/micronaut/updatemavenannotationprocessors)
 * [Add `micronaut-test-resources-client` if needed](../../java/micronaut/addtestresourcesclientdependencyifneeded)
@@ -85,7 +87,9 @@ recipeList:
   - org.openrewrite.java.micronaut.UpdateMicronautSecurity
   - org.openrewrite.java.micronaut.UpdateMicronautData
   - org.openrewrite.java.micronaut.RemoveWithJansiLogbackConfiguration
-  - org.openrewrite.java.micronaut.RemoveUnnecessaryDependencies
+  - org.openrewrite.java.dependencies.RemoveDependency:
+      groupId: io.micronaut
+      artifactId: micronaut-runtime
   - org.openrewrite.java.micronaut.AddHttpRequestTypeParameter
   - org.openrewrite.java.micronaut.UpdateMavenAnnotationProcessors
   - org.openrewrite.java.micronaut.AddTestResourcesClientDependencyIfNeeded

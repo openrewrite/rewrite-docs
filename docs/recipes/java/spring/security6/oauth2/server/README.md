@@ -1,11 +1,13 @@
 ---
-description: Server OpenRewrite recipes.
+description: OAuth2 Server OpenRewrite recipes.
 ---
 
-# Server
+# OAuth2 Server
+
+_Recipes for the [OAuth2 authorization server](https://docs.spring.io/spring-authorization-server/reference/index.html) in Spring Security._
 
 ## Categories
 
-* [Resource](/recipes/java/spring/security6/oauth2/server/resource)
+* [OAuth2 Resource Server](/recipes/java/spring/security6/oauth2/server/resource)
 
 

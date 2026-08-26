@@ -1,8 +1,10 @@
 ---
-description: Cloud2025 OpenRewrite recipes.
+description: Spring Cloud 2025 OpenRewrite recipes.
 ---
 
-# Cloud2025
+# Spring Cloud 2025
+
+_Recipes for migrating to Spring Cloud 2025._
 
 ## Composite Recipes
 

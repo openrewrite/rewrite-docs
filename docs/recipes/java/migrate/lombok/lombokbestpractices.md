@@ -55,6 +55,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.projectlombok`
   * artifactId: `lombok`
 * [Enable Lombok annotation processor](../../../java/migrate/enablelombokannotationprocessor)
+* [Append to text file](../../../text/appendtotextfile)
+  * relativeFileName: `{,**/}lombok.config`
+  * content: `lombok.checkReturnValueAnnotation += lombok`
+  * existingFileStrategy: `Merge`
 
 </TabItem>
 
@@ -89,6 +93,10 @@ recipeList:
       groupId: org.projectlombok
       artifactId: lombok
   - org.openrewrite.java.migrate.EnableLombokAnnotationProcessor
+  - org.openrewrite.text.AppendToTextFile:
+      relativeFileName: {,**/}lombok.config
+      content: lombok.checkReturnValueAnnotation += lombok
+      existingFileStrategy: Merge
 
 ```
 </TabItem>

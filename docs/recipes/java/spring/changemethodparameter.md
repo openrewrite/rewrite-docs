@@ -36,7 +36,6 @@ This recipe is used as part of the following composite recipes:
 
 * [Change the type of `skipCount` parameter in `SkipPolicy` from `int` to `long`](/recipes/java/spring/batch/upgradeskippolicyparametertype.md)
 * [Migrate to Spring Boot 3.4 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_4-moderne-edition)
-* [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
 
 ## Example
 

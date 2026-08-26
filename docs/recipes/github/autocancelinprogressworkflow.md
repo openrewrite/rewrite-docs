@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.github.AutoCancelInProgressWorkflow**
 
-_When a workflow is already running and would be triggered again, cancel the existing workflow. See [`styfle/cancel-workflow-action`](https://github.com/styfle/cancel-workflow-action) for details._
+_When a workflow is already running and would be triggered again, cancel the existing workflow, through the native [`concurrency`](https://docs.github.com/en/actions/using-jobs/using-concurrency) property. Runs on the default branch are not cancelled._
 
 ## Recipe source
 
@@ -21,18 +21,45 @@ _When a workflow is already running and would be triggered again, cancel the exi
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-## Options
 
-| Type | Name | Description | Example |
-| --- | --- | --- | --- |
-| `String` | accessToken | *Optional*. Optionally provide the key name of a repository or organization secret that contains a GitHub personal access token with permission to cancel workflows. | `WORKFLOWS_ACCESS_TOKEN` |
+## Definition
 
+<Tabs groupId="recipeType">
+<TabItem value="recipe-list" label="Recipe List" >
+* [Merge YAML snippet](../yaml/mergeyaml)
+  * key: `$`
+  * yaml: `concurrency:   group: ${{ github.workflow }}-${{ github.ref }}   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}`
+  * acceptTheirs: `true`
+  * filePattern: `.github/workflows/*.{yml,yaml}`
+  * insertMode: `Before`
+  * insertProperty: `jobs`
+
+</TabItem>
+
+<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: org.openrewrite.github.AutoCancelInProgressWorkflow
+displayName: Cancel in-progress workflow when it is triggered again
+description: |
+  When a workflow is already running and would be triggered again, cancel the existing workflow, through the native [`concurrency`](https://docs.github.com/en/actions/using-jobs/using-concurrency) property. Runs on the default branch are not cancelled.
+recipeList:
+  - org.openrewrite.yaml.MergeYaml:
+      key: $
+      yaml: concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+      acceptTheirs: true
+      filePattern: .github/workflows/*.{yml,yaml}
+      insertMode: Before
+      insertProperty: jobs
+
+```
+</TabItem>
+</Tabs>
 ## Example
-
-###### Parameters
-| Parameter | Value |
-| --- | --- |
-|accessToken|`null`|
 
 
 <Tabs groupId="beforeAfter">
@@ -41,23 +68,31 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 ###### Before
 ```yaml title=".github/workflows/ci.yml"
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: linux
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 ```
 
 ###### After
 ```yaml title=".github/workflows/ci.yml"
+on:
+  push:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 jobs:
   build:
     runs-on: linux
     steps:
-      - uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ github.token }}
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 ```
 
 </TabItem>
@@ -67,12 +102,12 @@ jobs:
 --- .github/workflows/ci.yml
 +++ .github/workflows/ci.yml
 @@ -5,0 +5,3 @@
-    runs-on: linux
-    steps:
-+     - uses: styfle/cancel-workflow-action@0.9.1
-+       with:
-+         access_token: ${{ github.token }}
-      - uses: actions/checkout@v2
+    branches:
+      - main
++concurrency:
++ group: ${{ github.workflow }}-${{ github.ref }}
++ cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+jobs:
 ```
 </TabItem>
 </Tabs>
