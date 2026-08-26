@@ -210,7 +210,7 @@ As you've seen previously in this doc, JavaTemplates can be used to "generate" c
 
 We extensively use this functionality in our [Refaster template recipes](../authoring-recipes/types-of-recipes.md#refaster-template-recipes). It can also be quite useful for tests.
 
-To help make this clearer, let's take a look at the [SimplifyTernary recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/SimplifyTernary.java#L46-L62):
+To help make this clearer, let's take a look at the [SimplifyTernary recipe](https://github.com/moderneinc/rewrite-recipe-starter/blob/main/src/main/java/com/yourorg/SimplifyTernary.java#L46-L61):
 
 ```java
 @RecipeDescriptor(
@@ -226,8 +226,7 @@ public static class SimplifyTernaryFalseTrue {
 
     @AfterTemplate
     boolean after(boolean expr) {
-        // We wrap the expression in parentheses as the input expression might be a complex expression
-        return !(expr);
+        return !expr;
     }
 }
 ```
@@ -235,39 +234,64 @@ public static class SimplifyTernaryFalseTrue {
 Behind the scenes, that recipe gets translated into the following code. Notice how we create JavaTemplates but only use them for _matching_.
 
 ```java
+/**
+ * OpenRewrite recipe created for Refaster template {@code SimplifyTernary.SimplifyTernaryFalseTrue}.
+ */
+@SuppressWarnings("all")
 @NullMarked
 public static class SimplifyTernaryFalseTrueRecipe extends Recipe {
 
+    /**
+     * Instantiates a new instance.
+     */
+    public SimplifyTernaryFalseTrueRecipe() {}
+
     @Override
     public String getDisplayName() {
+        //language=markdown
         return "Replace `booleanExpression ? false : true` with `!booleanExpression`";
     }
 
     @Override
     public String getDescription() {
+        //language=markdown
         return "Replace ternary expressions like `booleanExpression ? false : true` with `!booleanExpression`.";
     }
 
     @Override
     public TreeVisitor<?, ExecutionContext> getVisitor() {
-        return new AbstractRefasterJavaVisitor() {
-            final JavaTemplate before = JavaTemplate.builder("#{expr:any(boolean)} ? false : true").build();
-            final JavaTemplate after = JavaTemplate.builder("!(#{expr:any(boolean)})").build();
+        JavaVisitor<ExecutionContext> javaVisitor = new AbstractRefasterJavaVisitor() {
+            JavaTemplate before;
+            JavaTemplate after;
 
             @Override
             public J visitTernary(J.Ternary elem, ExecutionContext ctx) {
                 JavaTemplate.Matcher matcher;
+                if (before == null) {
+                    before = JavaTemplate.builder("#{expr:any(boolean)} ? false : true").build();
+                }
                 if ((matcher = before.matcher(getCursor())).find()) {
+                    if (after == null) {
+                        after = JavaTemplate.builder("!#{expr:any(boolean)}").build();
+                    }
                     return embed(
                             after.apply(getCursor(), elem.getCoordinates().replace(), matcher.parameter(0)),
                             getCursor(),
                             ctx,
-                            REMOVE_PARENS, SHORTEN_NAMES, SIMPLIFY_BOOLEANS
+                            SHORTEN_NAMES, SIMPLIFY_BOOLEANS
                     );
                 }
                 return super.visitTernary(elem, ctx);
             }
+
         };
+        return Preconditions.check(
+                Preconditions.and(
+                        Preconditions.not(new UsesType<>("com.google.errorprone.refaster.annotation.BeforeTemplate", true)),
+                        Preconditions.not(new UsesType<>("org.openrewrite.java.template.Semantics", true))
+                ),
+                javaVisitor
+        );
     }
 }
 ```

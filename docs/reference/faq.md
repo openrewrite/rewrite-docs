@@ -253,7 +253,7 @@ Also make sure that these dependencies are available to the build plugin that ru
 This is a challenging problem for a couple of reasons:
 
 * Some recipes can be composed of other recipes, which could in turn include other recipes, and so on.
-* Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.6/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L140-L160).
+* Some recipes can be used multiple times in one recipe with different parameters such as in [this example](https://github.com/openrewrite/rewrite-migrate-java/blob/v3.42.1/src/main/resources/META-INF/rewrite/jakarta-ee-9.yml#L146-L157).
 * The [rewrite-gradle-plugin](https://github.com/openrewrite/rewrite-gradle-plugin) requires you to either change your build file, or add an `init.gradle` script to run recipes.
 
 We generally recommend using a `rewrite.yml` file to configure recipes. This avoids ambiguity about which recipe instances are being configured and ensures the setup is portable across the different tools that run OpenRewrite recipes.

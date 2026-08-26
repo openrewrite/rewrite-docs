@@ -53,19 +53,19 @@ reporting:
 
 ### Documents
 
-The [Documents LST](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L65-L129) is the root of the YAML LST. In order for an LST to represent valid YAML, all other elements must be contained inside of this. It is composed of one or more [Document LSTs](#document).
+The [Documents LST](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L68-L160) is the root of the YAML LST. In order for an LST to represent valid YAML, all other elements must be contained inside of this. It is composed of one or more [Document LSTs](#document).
 
 ![Documents Example](./assets/Documents.png)
 
 ### Document
 
-The [Document LST](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L134-L187) contains all of the YAML in a single document. A YAML file can have more than one document - with each document being separated by a line containing the triple-dash separator `---`.
+The [Document LST](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L162-L232) contains all of the YAML in a single document. A YAML file can have more than one document - with each document being separated by a line containing the triple-dash separator `---`.
 
 ![Document Example](./assets/Document.png)
 
 ### Mapping
 
-A [Mapping](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L232-L305) consists of 1 or more [Mapping Entries](#mapping-entry) (key-value pairs). Most YAML files will contain at least one Mapping.
+A [Mapping](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L343-L434) consists of 1 or more [Mapping Entries](#mapping-entry) (key-value pairs). Most YAML files will contain at least one Mapping.
 
 :::info
 The `module` lines in the `reporting` section of the second document are not part of the same `Mapping` as each line is a [Sequence Entry](#sequence-entry). In contrast, the `url` and `method` lines in the `requests` section of the first document _are_ part of the same mapping as, together, they make up one Sequence Entry.
@@ -75,7 +75,7 @@ The `module` lines in the `reporting` section of the second document are not par
 
 ### Mapping Entry
 
-A [Mapping Entry](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L281-L304) is a key-value pair. The key is usually a [Scalar](#scalar). The value, on the other hand, can be most LSTs such as a [Mapping](#mapping), a [Sequence](#sequence), or a [Scalar](#scalar).
+A [Mapping Entry](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L407-L433) is a key-value pair. The key is usually a [Scalar](#scalar). The value, on the other hand, can be most LSTs such as a [Mapping](#mapping), a [Sequence](#sequence), or a [Scalar](#scalar).
 
 For example, the second entry in the first doc (`jedis-list`) has a [Scalar](#scalar) key. The value for that entry is a [Sequence](#sequence) that contains a list of all the Jedi.
 
@@ -83,19 +83,19 @@ For example, the second entry in the first doc (`jedis-list`) has a [Scalar](#sc
 
 ### Sequence
 
-A [Sequence](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L311-L405) is an ordered list of 1 or more [Sequence Entries](#sequence-entry).
+A [Sequence](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L436-L547) is an ordered list of 1 or more [Sequence Entries](#sequence-entry).
 
 ![Sequence Example](./assets/Sequence.png)
 
 ### Sequence Entry
 
-A [Sequence Entry](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L361-L404) is one item in a [Sequence](#sequence). You can think of each sequence entry as the value in a key-value pair. This value can be most other LSTs, such as a [Mapping](#mapping) or a [Scalar](#scalar). Unlike [Mapping Entries](#mapping-entry), Sequence Entries do not have a key.
+A [Sequence Entry](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L501-L546) is one item in a [Sequence](#sequence). You can think of each sequence entry as the value in a key-value pair. This value can be most other LSTs, such as a [Mapping](#mapping) or a [Scalar](#scalar). Unlike [Mapping Entries](#mapping-entry), Sequence Entries do not have a key.
 
 ![Sequence Entry Example](./assets/SequenceEntry.png)
 
 ### Scalar
 
-A [Scalar](https://github.com/openrewrite/rewrite/blob/v7.35.0/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L192-L226) is a YAML value such as a string, a number, or a boolean.
+A [Scalar](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-yaml/src/main/java/org/openrewrite/yaml/tree/Yaml.java#L293-L341) is a YAML value such as a string, a number, or a boolean.
 
 ![Scalar Example](./assets/Scalar.png)
 

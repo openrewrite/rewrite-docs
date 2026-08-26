@@ -4,7 +4,7 @@ description: A technical overview of the markers and how to configure/use them.
 
 # Markers
 
-Markers annotate [LST](./lossless-semantic-trees.md) elements with metadata. [Visitors](./visitors.md) can read or attach any type implementing the [Marker](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/Marker.java) interface to any LST element's [Markers](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java). Markers can be used to identify search results or to communicate between Recipes during OpenRewrite execution. When an LST is printed back to source code most markers, being metadata, have no textual representation within the source. The exception is [SearchResult](#searchresult) Markers which are printed as comments that indicate the result of a search. OpenRewrite attaches [framework provided markers](../reference/framework-provided-markers.md) to LSTs.
+Markers annotate [LST](./lossless-semantic-trees.md) elements with metadata. [Visitors](./visitors.md) can read or attach any type implementing the [Marker](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Marker.java) interface to any LST element's [Markers](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java). Markers can be used to identify search results or to communicate between Recipes during OpenRewrite execution. When an LST is printed back to source code most markers, being metadata, have no textual representation within the source. The exception is [SearchResult](#searchresult) Markers which are printed as comments that indicate the result of a search. OpenRewrite attaches [framework provided markers](../reference/framework-provided-markers.md) to LSTs.
 
 ## Usage
 
@@ -17,12 +17,12 @@ LST implementations providing Markers have at least two methods to add Markers. 
 Markers getMarkers();
 
 // Fully replaces any existing Markers
-<M extends Markable> M withMarkers(Markers markers);
+<T extends Tree> T withMarkers(Markers markers);
 ```
 
 ### Reading Markers from an LST Element
 
-The [Markers](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java) class provides several convenience methods.
+The [Markers](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Markers.java) class provides several convenience methods.
 
 ```java title="Markers.java"
 // Returns the first Marker of the specified type.
@@ -47,7 +47,7 @@ The most common form of Marker in a typical Recipe is a [SearchResult](https://g
 
 ### Adding a Search Result to an LST
 
-In this example, the search recipe [FindAnnotations](https://github.com/openrewrite/rewrite/blob/master/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java) adds a `SearchResult` indicating that it found a matching Annotation.
+In this example, the search recipe [FindAnnotations](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindAnnotations.java) adds a `SearchResult` indicating that it found a matching Annotation.
 
 ```java title="FindAnnotations.java"
 public J.Annotation visitAnnotation(J.Annotation annotation, ExecutionContext ctx) {
@@ -65,8 +65,8 @@ public J.Annotation visitAnnotation(J.Annotation annotation, ExecutionContext ct
 ```java title="FindMissingTypes.java"
 public J.Identifier visitIdentifier(J.Identifier identifier, ExecutionContext ctx) {
     J.Identifier ident = super.visitIdentifier(identifier, ctx);
-    if (isNullType(ident.getType()) && !isAllowedToHaveNullType(ident)) {
-        ident = ident.withMarkers(ident.getMarkers().searchResult("Identifier type is null"));
+    if (!isWellFormedType(ident.getType(), seenTypes) && !isAllowedToHaveNullType(ident)) {
+        ident = SearchResult.found(ident, "Identifier type is missing or malformed");
     }
     return ident;
 }

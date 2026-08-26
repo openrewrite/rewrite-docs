@@ -15,7 +15,7 @@ The root LST element varies by language, but they all implement the `SourceFile`
 From anywhere in a [Visitor](../concepts-and-explanations/visitors.md) the cursor can be used to access the markers on the root element like so:
 
 ```java
-class SomeVisitor implements JavaVisitor<ExecutionContext> {
+class SomeVisitor extends JavaVisitor<ExecutionContext> {
 
     @Override
     public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext ctx) {
@@ -58,12 +58,34 @@ Supported CI environments:
 * [Drone](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/DroneBuildEnvironment.java)
 * [CircleCi](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/CircleCiBuildEnvironment.java)
 * [Travis](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/TravisBuildEnvironment.java)
+* [Bitbucket](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/BitbucketBuildEnvironment.java)
+* [Teamcity](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/TeamcityBuildEnvironment.java)
+* [Custom](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/ci/CustomBuildEnvironment.java), for CI systems configured by environment variable
 
 ### GitProvenance
 
-The [GitProvenance](https://github.com/openrewrite/rewrite/blob/master/rewrite-core/src/main/java/org/openrewrite/marker/GitProvenance.java#L34)
+The [GitProvenance](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/GitProvenance.java)
 marker records Git branch, origin, and change hash.  
 Available on all LSTs produced from a Git repository. 
+
+### Generated
+
+The [Generated](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Generated.java)
+marker indicates that a source file was produced by a code generator rather than written by hand.
+Recipes commonly check for it so that they leave generated code alone.
+
+### LstProvenance
+
+The [LstProvenance](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/LstProvenance.java)
+marker records what built the LST — the build tool, its version, and the timestamp.
+Useful when a recipe needs to behave differently depending on how the LST was produced.
+
+### Markup
+
+[Markup](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/marker/Markup.java)
+attaches a warning, error, info, or debug message to an LST element. Unlike most markers it *is* rendered when the
+LST is printed, as a comment. `Markup.warn(tree, throwable)` is the usual way for a recipe to surface a problem
+on a specific element rather than failing the whole run.
 
 ## Java Markers
 
@@ -104,4 +126,22 @@ These markers are available on Maven pom.xml sources.
 ### MavenResolutionResult
 [MavenResolutionResult](https://github.com/openrewrite/rewrite/blob/main/rewrite-maven/src/main/java/org/openrewrite/maven/tree/MavenResolutionResult.java)
 contains a rich data model of a pom.xml, including full dependency resolution information.
+
+## Gradle markers
+
+These are the Gradle counterparts to `MavenResolutionResult`. Any recipe that reads or edits Gradle
+dependencies, plugins, or repositories works through them.
+
+### GradleProject
+[GradleProject](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/marker/GradleProject.java)
+contains a rich data model of a Gradle subproject: its group, name, version, and path; the plugins it applies;
+its declared Maven repositories; and a map of configuration name to `GradleDependencyConfiguration`, which carries
+full dependency resolution information.
+Available on `build.gradle`/`build.gradle.kts` sources.
+
+### GradleSettings
+[GradleSettings](https://github.com/openrewrite/rewrite/blob/main/rewrite-gradle/src/main/java/org/openrewrite/gradle/marker/GradleSettings.java)
+records settings-level configuration: the plugins applied in `settings.gradle`, enabled feature previews, and the
+settings buildscript.
+Available on `settings.gradle`/`settings.gradle.kts` sources.
 

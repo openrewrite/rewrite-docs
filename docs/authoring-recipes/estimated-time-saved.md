@@ -24,9 +24,46 @@ public class MyCustomRecipe extends Recipe {
 
 You can decide to return a static value or a dynamic value based on the context of the recipe. For example, you could return a different value based on the size of the codebase or the number of files that will be modified by the recipe.
 
-:::warning
-Many OpenRewrite recipes use the `@Value` Lombok annotation – which adds the `final` modifier to the class declaration. Therefore, the method `Recipe#getEstimatedEffortPerOccurrence` cannot be overridden and the [default estimated time saved value](#default-estimated-time-saved) will be used.
-:::
+### Overriding on a Lombok `@Value` recipe
+
+Many OpenRewrite recipes use the `@Value` Lombok annotation, which adds the `final` modifier to the class declaration. That `final` only prevents the class from being *subclassed* – it does not stop the class from overriding a method it inherits from `Recipe`. So the override works the same way on a `@Value` recipe:
+
+```java
+@Value
+@EqualsAndHashCode(callSuper = false)
+public class MyCustomRecipe extends Recipe {
+
+    String displayName = "My custom recipe";
+    String description = "Does something useful.";
+
+    @Override
+    public Duration getEstimatedEffortPerOccurrence() {
+        return Duration.ofMinutes(10);
+    }
+
+    // ...
+}
+```
+
+If you want the duration to be configurable rather than fixed, you can return a field instead. Bear in mind that on a `@Value` class, adding a field also adds a parameter to the generated constructor:
+
+```java
+@Value
+@EqualsAndHashCode(callSuper = false)
+public class MyCustomRecipe extends Recipe {
+
+    Duration estimatedEffort;
+
+    @Override
+    public Duration getEstimatedEffortPerOccurrence() {
+        return estimatedEffort;
+    }
+
+    // ...
+}
+```
+
+Only fields annotated with `@Option` are exposed as configurable recipe options, so a plain field like this one will not show up as an option in the recipe catalog.
 
 ## Default estimated time saved
 

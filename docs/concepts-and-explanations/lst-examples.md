@@ -4,7 +4,7 @@ description: Diagrams and explanations of the various Java LST components.
 
 # Java LST examples
 
-When building recipes, it's important to understand how OpenRewrite [Lossless Semantic Trees](./lossless-semantic-trees.md) (LSTs) correspond to code. You couldn't, for example, properly rename a variable with a recipe unless you knew that [J.Identifier](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2310-L2343) is the class used to represent a variable.
+When building recipes, it's important to understand how OpenRewrite [Lossless Semantic Trees](./lossless-semantic-trees.md) (LSTs) correspond to code. You couldn't, for example, properly rename a variable with a recipe unless you knew that [J.Identifier](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2638-L2690) is the class used to represent a variable.
 
 To help you get started on working with Java LSTs and OpenRewrite, this guide will:
 
@@ -64,19 +64,19 @@ public class A {
 
 ### Binary
 
-A [Binary](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L597-L705) is an [Expression](#expression) with a left and right side, separated by an operator. Examples of operators include `+`, `-`, `||`, `&&`, and more.
+A [Binary](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L663-L777) is an [Expression](#expression) with a left and right side, separated by an operator. Examples of operators include `+`, `-`, `||`, `&&`, and more.
 
 ![Binary Example](./assets/Binary.png)
 
 ### Block
 
-A [Block](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L712-L851) is a pair of curly braces and the [Statements](#statement) contained within. Blocks can be nested inside of each other.
+A [Block](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L779-L942) is a pair of curly braces and the [Statements](#statement) contained within. Blocks can be nested inside of each other.
 
 ![Block Example](./assets/Block.png)
 
 ### ClassDeclaration
 
-A [ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1062-L1336) contains all of the code for any Java class. Please note that a `ClassDeclaration` can be nested inside of another class such as with:
+A [ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1221-L1511) contains all of the code for any Java class. Please note that a `ClassDeclaration` can be nested inside of another class such as with:
 
 ```java
 public class A {
@@ -91,13 +91,13 @@ public class A {
 
 ### CompilationUnit
 
-A [CompilationUnit](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1342-L1545) is the root of the Java LST. In order for an LST to represent valid Java code, all other elements must be contained inside of this.
+A [CompilationUnit](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1513-L1733) is the root of the Java LST. In order for an LST to represent valid Java code, all other elements must be contained inside of this.
 
 ![CompilationUnit Example](./assets/CompilationUnit.png)
 
 ### Expression
 
-An [Expression](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Expression.java) is anything that returns a value. `MethodInvocation`, `Identifier`, and `Binary` are all examples of expressions. Please note that some LSTs such as `MethodInvocation` are both a [Statement](#statement) and an Expression.
+An [Expression](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/Expression.java) is anything that returns a value. `MethodInvocation`, `Identifier`, and `Binary` are all examples of expressions. Please note that some LSTs such as `MethodInvocation` are both a [Statement](#statement) and an Expression.
 
 In the below code, only some of the expressions are highlighted as expressions can often have many expressions inside of them and it would be too difficult to read if all of them were highlighted. For instance, `import java.util.ArrayList` is many expressions (`java`, `util`, `ArrayList`, `java.util`, and `java.util.ArrayList`).
 
@@ -105,13 +105,13 @@ In the below code, only some of the expressions are highlighted as expressions c
 
 ### FieldAccess
 
-A [FieldAccess](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1827-L1953) is any fully qualified name. Often times, these are package or import statements, but they can also appear in code as something like: `this.foo`.
+A [FieldAccess](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2060-L2206) is any fully qualified name. Often times, these are package or import statements, but they can also appear in code as something like: `this.foo`.
 
 ![FieldAccess Example](./assets/FieldAccess.png)
 
 ### Identifier
 
-An [Identifier](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2310-L2343) is any name in the code (class names, variable names, method names, etc).
+An [Identifier](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L2638-L2690) is any name in the code (class names, variable names, method names, etc).
 
 You can use `J.Identifier.getFieldType()` to tell what class the identifier is a field on. If `null` is returned, then that means the identifier it is not a field.
 
@@ -119,13 +119,13 @@ You can use `J.Identifier.getFieldType()` to tell what class the identifier is a
 
 ### MethodDeclaration
 
-A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3223-L3517) is the annotations, modifiers, return type, name, argument list, and body which together define a method on a [Class](#classdeclaration).
+A [MethodDeclaration](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3895-L4228) is the annotations, modifiers, return type, name, argument list, and body which together define a method on a [Class](#classdeclaration).
 
 ![MethodDeclaration Example](./assets/MethodDeclaration.png)
 
 ### MethodInvocation
 
-A [MethodInvocation](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3523-L3694) consists of a select expression, any defined type parameters, the method name, and its arguments. Method invocations have a somewhat surprising structure where the highest-level LST element consists of the select expression (everything to the left of the last dot) and the name on the right. Let's use the below code as an example to clarify this further.
+A [MethodInvocation](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L4230-L4404) consists of a select expression, any defined type parameters, the method name, and its arguments. Method invocations have a somewhat surprising structure where the highest-level LST element consists of the select expression (everything to the left of the last dot) and the name on the right. Let's use the below code as an example to clarify this further.
 
 ![MethodInvocation Example](./assets/MethodInvocation.png)
 
@@ -148,13 +148,13 @@ A [MethodInvocation](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite
 
 ### NewClass
 
-A [NewClass](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L3996-L4158) is when an object is created via its constructors and the `new` keyword.
+A [NewClass](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L4729-L4894) is when an object is created via its constructors and the `new` keyword.
 
 ![NewClass Example](./assets/NewClass.png)
 
 ### Statement
 
-A [Statement](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/Statement.java) is anything that appears on its own line within a block. Statement elements are usually terminated with a semicolon. `if`, `while`, `try`, `Block`, `return`, and `MethodInvocation` are all examples of statements. Please note that some LST elements such as `MethodInvocation` are both Statements and [Expressions](#expression).
+A [Statement](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/Statement.java) is anything that appears on its own line within a block. Statement elements are usually terminated with a semicolon. `if`, `while`, `try`, `Block`, `return`, and `MethodInvocation` are all examples of statements. Please note that some LST elements such as `MethodInvocation` are both Statements and [Expressions](#expression).
 
 In the below code, only some of the statements are highlighted as statements will often have many sub-statements and the diagram would become too difficult to read. For instance, `List<Integer> a = new ArrayList<>()` is a statement as well as `new ArrayList<>()`.
 
@@ -162,7 +162,7 @@ In the below code, only some of the statements are highlighted as statements wil
 
 ### VariableDeclarations
 
-A [VariableDeclarations](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L5318-L5526) contains the declaration of one or more variables of the same type, with or without initializing expressions for each variable.
+A [VariableDeclarations](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L6197-L6485) contains the declaration of one or more variables of the same type, with or without initializing expressions for each variable.
 
 ![VariableDeclarations Example](./assets/VariableDeclarations.png)
 
@@ -238,12 +238,12 @@ Let's use the example code from above as an example. You can make a simple recip
 Once you have that recipe and test class created, there are two main places where you'll want to add breakpoints:
 
 * Inside of the `visitCompilationUnit` method in your recipe class OR
-* Inside of the [JavaVisitor.java class itself](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java).
+* Inside of the [JavaVisitor.java class itself](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java).
 
 If you add a breakpoint in the `visitCompilationUnit` method, you'll find that the entire LST is defined in a variable called `cu`. In there, you can see things like `classes` which is an `ArrayList` of `ClassDeclaration` elements. You could then expand the `classes` element and find a `body` that contains `statements` that contain `VariableDeclaration` and `MethodDeclaration` elements and so on:
 
 ![Debugger Example](./assets/DebuggerExample.png)
 
-If you add a breakpoint in the `JavaVisitor.java` class instead, you can pick which LST type you want to explore. For instance, if you wanted to see what a `ClassDeclaration` LST is in your code, you could add a breakpoint in the [visitClassDeclaration method](https://github.com/openrewrite/rewrite/blob/v7.33.0/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L410-L453). You'll now find that the LST begins with a `ClassDeclaration` instead of `CompilationUnit`. You can step through the tree in the same way as before and you'll find everything else is the same. The benefit of this approach is that you can continue to resume the program and it'll stop at every point in the LST that a `ClassDeclaration` is visited.
+If you add a breakpoint in the `JavaVisitor.java` class instead, you can pick which LST type you want to explore. For instance, if you wanted to see what a `ClassDeclaration` LST is in your code, you could add a breakpoint in the [visitClassDeclaration method](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L467-L510). You'll now find that the LST begins with a `ClassDeclaration` instead of `CompilationUnit`. You can step through the tree in the same way as before and you'll find everything else is the same. The benefit of this approach is that you can continue to resume the program and it'll stop at every point in the LST that a `ClassDeclaration` is visited.
 
 ![ClassDeclaration Debugger Example](./assets/ClassDeclarationDebugger.png)

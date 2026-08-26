@@ -268,7 +268,7 @@ Before we begin writing any code, it's a good idea to figure out which LSTs cont
 
 For our use case, we care about reading class names and, potentially, changing methods inside of the class.
 
-If we take a look at the [LST Examples doc](../concepts-and-explanations/lst-examples.md), we can see that a [J.ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v7.34.0/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1062-L1336) has the information we need. It has a `FullyQualified` type that we can use to ensure we're only making changes on the specified class, and it contains a `Block` that includes `Statements` that may be `MethodDeclarations`, so we can check for a `hello()` method and potentially add one if it doesn't exist.
+If we take a look at the [LST Examples doc](../concepts-and-explanations/lst-examples.md), we can see that a [J.ClassDeclaration](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/tree/J.java#L1221-L1511) has the information we need. It has a `FullyQualified` type that we can use to ensure we're only making changes on the specified class, and it contains a `Block` that includes `Statements` that may be `MethodDeclarations`, so we can check for a `hello()` method and potentially add one if it doesn't exist.
 
 ### Override the visitor
 

@@ -67,7 +67,7 @@ For Maven projects, we've updated the [rewrite-maven-plugin](https://github.com/
                 <plugin>
                     <groupId>org.openrewrite.maven</groupId>
                     <artifactId>rewrite-maven-plugin</artifactId>
-                    <version>6.9.0-SNAPSHOT</version>
+                    <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
                     <executions>
                         <execution>
                             <goals>

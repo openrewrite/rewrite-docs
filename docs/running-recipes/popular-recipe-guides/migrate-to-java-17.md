@@ -203,10 +203,6 @@ The above example class demonstrates the two most common code migration tasks wh
 The JAXB and JAX-WS dependencies will only be added to the project if types from those projects are detected.
 :::
 
-:::info
-Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
-:::
-
 ## Known Limitations
 
 The following is a list of known limitations/issues:

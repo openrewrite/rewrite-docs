@@ -59,7 +59,7 @@ Consider this non-exhaustive list of steps required to migrate a project from JU
 * Remove public visibility from test classes and methods that no longer need to be `public` in JUnit 5
 * Modify the Maven `pom.xml` to include dependencies on JUnit 5, and remove dependencies on JUnit 4
 
-No one recipe should be responsible for implementing all of these different responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes can add other recipes to the execution pipeline by overriding the `List<Recipe> getRecipeList()` function and returning an array of recipes that should be run.
+No one recipe should be responsible for implementing all of these different responsibilities. Instead, each responsibility is handled by its own recipe and those recipes are aggregated together into a single "Migrate JUnit 4 to 5" recipe. The migration recipe has no behavior of its own except to invoke each of the building blocks. Recipes can add other recipes to the execution pipeline by overriding the `List<Recipe> getRecipeList()` function and returning the list of recipes that should be run.
 
 In our above example, the "Migrate to JUnit 5" recipe could look similar to the following:
 
@@ -82,10 +82,12 @@ public class JUnit5Migration extends Recipe {
 }
 ```
 
-Note that this recipe does not have an associated visitor of its own, instead relying on a group of other recipes to achieve the desired result. For a real recipe that uses this feature, check out the [UpdateMovedRecipe](https://github.com/openrewrite/rewrite/blob/v8.1.15/rewrite-java/src/main/java/org/openrewrite/java/recipes/UpdateMovedRecipe.java).
+Note that this recipe does not have an associated visitor of its own, instead relying on a group of other recipes to achieve the desired result. For a real recipe that uses this feature, check out [FindDeprecatedUses](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/search/FindDeprecatedUses.java), which composes `FindDeprecatedMethods`, `FindDeprecatedClasses`, and `FindDeprecatedFields`.
 
 :::info
-If you have a recipe that makes changes and you want to call another recipe, you can use the `doAfterVisit` method inside of your visitor. This will schedule another visit on the _current_ source file being visited with the recipe you specified. This is particularly useful for things like adding imports (which are at the top of the file) when you are deep in the file editing some method body.
+If you have a recipe that makes changes and you want to run another visitor over the same file, you can use the `TreeVisitor.doAfterVisit(TreeVisitor)` method inside of your visitor. This schedules another visit on the _current_ source file being visited with the visitor you specified. This is particularly useful for things like adding imports (which are at the top of the file) when you are deep in the file editing some method body.
+
+To delegate to another *recipe* this way, pass its visitor: `doAfterVisit(new SomeOtherRecipe(...).getVisitor())`.
 
 For an example of a recipe that does this, check out the [AddManagedDependency recipe](https://github.com/openrewrite/rewrite/blob/v8.1.15/rewrite-maven/src/main/java/org/openrewrite/maven/AddManagedDependency.java#L202).
 :::
@@ -168,7 +170,7 @@ There are a few recommended best practices when defining metadata for a recipe:
 ## Scanning Recipes
 
 If a recipe needs to generate new source files or needs to see all source files before making changes, it must be a `ScanningRecipe`.
-A `ScanningRecipe` extends the normal `Recipe` and adds two key objects: an [accumulator](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L88-L90) and a [scanner](https://github.com/openrewrite/rewrite/blob/v8.1.1/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L53). 
+A `ScanningRecipe` extends the normal `Recipe` and adds two key objects: an [accumulator](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L47) (seeded by `getInitialValue`) and a [scanner](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java#L59). 
 The `accumulator` object is a custom data structure defined by the recipe itself to store any information the recipe needs to function.
 The `scanner` object is a `visitor` which populates the `accumulator` with data.
 
@@ -339,15 +341,21 @@ Using the same "Migrate JUnit 5" recipe as an example, the flow through the pipe
 
 ### Execution Context
 
-The initiation of the execution pipeline requires the creation of an execution context. There are overloaded versions of `Recipe.run()` that will implicitly create an execution context if one is not provided. The execution context is a mechanism for sharing state across recipes (and their underlying visitors). `ExecutionContext` provides the ability to add and poll messages in a thread-safe manner.
+The initiation of the execution pipeline requires an execution context. Every overload of `Recipe.run()` takes one as an argument; `InMemoryExecutionContext` is the usual implementation to pass. The execution context is a mechanism for sharing state across recipes (and their underlying visitors). `ExecutionContext` provides the ability to add and poll messages in a thread-safe manner.
 
 ### Execution Cycles
 
-The recipes in the execution pipeline may produce changes that in turn cause another recipe to do further work. As a result, the pipeline may perform multiple passes (or cycles) over all the recipes in the pipeline again until either no changes are made in a pass or some maximum number of passes is reached (by default 3). This allows recipes to respond to changes made by other recipes which execute after them in the pipeline.
+The recipes in the execution pipeline may produce changes that in turn cause another recipe to do further work. As a result, the pipeline can perform multiple passes (or cycles) over all the recipes in the pipeline. This allows recipes to respond to changes made by other recipes which execute after them in the pipeline.
 
-As an example, let's assume that two recipes are added to the execution pipeline. The first recipe performs whitespace formatting on an LST and the second recipe generates additional code that is added to the same LST. Those two recipes are executed in order, so the formatting recipe is applied before the second recipe adds its generated code. The execution pipeline detects that changes have been made and executes a second pass through the recipes. During the second pass, the formatting recipe will now properly format the generated code that was added as a result of the first cycle through the execution pipeline.
+Another cycle runs when a recipe changed something during the cycle and at least one of the recipes that changed something returns `true` from `Recipe.causesAnotherCycle()`. Cycles are capped (by default the cap is 3).
 
-When large recipes are applied to large repositories, the performance impact of additional cycles can be substantial. Whenever possible recipes should complete all of their own work within a single cycle, rather than spreading it out over multiple cycles. Whenever a recipe requires more than a single cycle to complete its work, it must return `true` from `Recipe.causesAnotherCycle()` for another cycle to be added.
+:::warning
+Making a change is not by itself enough to earn another cycle. If every recipe that changed something reports `false` from `causesAnotherCycle()` - which is the default - the pipeline stops after the current cycle, even though changes were made.
+:::
+
+As an example, let's assume that two recipes are added to the execution pipeline. The first recipe performs whitespace formatting on an LST and the second recipe generates additional code that is added to the same LST. Those two recipes are executed in order, so the formatting recipe is applied before the second recipe adds its generated code. For the formatting recipe to get a second pass in which it can format the generated code, the code-generating recipe must declare that it causes another cycle. Without that declaration the generated code is left unformatted.
+
+When large recipes are applied to large repositories, the performance impact of additional cycles can be substantial. Whenever possible recipes should complete all of their own work within a single cycle, rather than spreading it out over multiple cycles.
 
 If a [Declarative Recipe](#declarative-recipes) needs to cause another cycle but none of its constituent recipes return `true` from `Recipe.causesAnotherCycle()`, the declarative recipe can set the property in yaml:
 
@@ -363,16 +371,16 @@ recipeList:
 ```
 
 :::tip
-Calling `Recipe.doAfterVisit()` during the execution of a recipe/visitor schedules that recipe to execute immediately after the current recipe during the current cycle. `Recipe.doAfterVisit()` does not cause an extra cycle to execute or be required.
+Calling `TreeVisitor.doAfterVisit()` during the execution of a visitor schedules that visitor to run immediately after the current one, on the current source file, within the current cycle. `doAfterVisit()` does not cause an extra cycle to execute or be required.
 :::
 
 ### Result Set
 
-The successful completion of a recipe's execution pipeline produces a collection of `Result` instances. Each result represents the changes made to a specific source file and provides access to the following information:
+The successful completion of a recipe's execution pipeline produces a `RecipeRun`. Its `getChangeset()` method returns a `Changeset`, and `Changeset.getAllResults()` returns the `Result` instances. Each result represents the changes made to a specific source file and provides access to the following information:
 
-| Method                        | Description                                                                     |
-| ----------------------------- | ------------------------------------------------------------------------------- |
-| `getBefore()`                 | The original `SourceFile`, or null if the change represents a new file.         |
-| `getAfter()`                  | The modified `SourceFile`, or null if the change represents a file deletion.    |
-| `getRecipesThatMadeChanges()` | The recipe names that made the changes to the source file.                      |
-| `diff()`/`diff(Path)`         | A git-style diff (with an optional path to relativize file paths in the output) |
+| Method                                  | Description                                                                     |
+|-----------------------------------------|---------------------------------------------------------------------------------|
+| `getBefore()`                           | The original `SourceFile`, or null if the change represents a new file.         |
+| `getAfter()`                            | The modified `SourceFile`, or null if the change represents a file deletion.    |
+| `getRecipeDescriptorsThatMadeChanges()` | The recipes that made the changes to the source file.                           |
+| `diff()`/`diff(Path)`                   | A git-style diff (with an optional path to relativize file paths in the output) |

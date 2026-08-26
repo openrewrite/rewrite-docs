@@ -37,7 +37,7 @@ If you want to distribute a style and apply it to other projects, you'll need to
 Regardless of where you define the style, the style must adhere to the following format:
 
 :::info
-[The full style schema can be found in rewrite-core](https://github.com/openrewrite/rewrite/blob/241e146a8996a917a8a460b27d17136108b3d50a/rewrite-core/openrewrite.json#L126-L153).
+[The full style schema can be found in rewrite-core](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json).
 :::
 
 | Key          | Type             | Description                                                       |
@@ -90,7 +90,7 @@ Let's take a look at one of the more complicated style configs: `ImportLayoutSty
 |-----------------------------|------------------|------------------|--------------------------------------------------------------------------------------------------------|
 | `classCountToUseStarImport` | int              | 5                | How many imports from the same package must be present before collapsing into a star import            |
 | `nameCountToUseStarImport`  | int              | 3                | How many static imports from the same type must be present before collapsing into a static star import |
-| `layout`                    | array of strings | [IntelliJ default](https://github.com/openrewrite/rewrite/blob/main/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java#L62-L71) | An ordered list defining how imports should be grouped and ordered                                     |
+| `layout`                    | array of strings | [IntelliJ default](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java#L61-L70) | An ordered list defining how imports should be grouped and ordered                                     |
 | `packagesToFold`            | array of strings | empty            | Packages that should always use star imports when 1 or more types are in use                           |
 
 **Layout syntax**
@@ -147,7 +147,7 @@ This configuration will:
 
 When you go to [specify a style to use](#using-styles), the style needs to be a `NamedStyles`. A `NamedStyles` contains one or more `Style` objects.
 
-If you want to make a style in Java, you will need to extend the `NamedStyles` class such as in our [IntelliJ style](https://github.com/openrewrite/rewrite/blob/v8.8.4/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java#L28). You'll then need to make sure that your style class returns [a collection of these Style objects](https://github.com/openrewrite/rewrite/blob/v8.8.4/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java#L40-L44).
+If you want to make a style in Java, you will need to extend the `NamedStyles` class such as in our [IntelliJ style](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java#L30). You'll then need to make sure that your style class returns [a collection of these Style objects](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/style/IntelliJ.java#L56-L59).
 
 When a user goes to activate your style, all of the styles provided by your style will be merged together and given precedence over any auto-detected styles. If your style does not specify a particular way to handle something, the default detected style will be used.
 
