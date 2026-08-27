@@ -8,13 +8,31 @@ Right now, OpenRewrite does a full release once every 2-4 weeks. Between those r
 
 This guide will provide you with instructions on how to configure your project to access these "snapshot versions" so you can get updates in real time.
 
-Snapshots are published to the same [Code Genome Project](https://artifacts.codegenomeproject.org/maven) repository as releases, and downloads from it require authentication. The snippets below use `USERNAME` and `TOKEN` as placeholders for the email or username you signed in to the Code Genome Project with and a download token created there. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
+Snapshots are published to the same [Code Genome Project](https://artifacts.codegenomeproject.org/maven) repository as releases, and downloads from it require authentication. Gradle builds read the credentials from `codeGenomeUsername` and `codeGenomeToken` in `~/.gradle/gradle.properties`; Maven builds read them from `settings.xml`, where `USERNAME` and `TOKEN` below stand in for the email or username you signed in to the Code Genome Project with and a download token created there. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
 
 ## Gradle instructions
 
-To utilize snapshot versions in Gradle projects, you'll need to make the following changes to your `build.gradle` file:
+To utilize snapshot versions in Gradle projects, you'll need to make the following changes:
 
-* Update your `repositories` section to include the location of the OpenRewrite snapshots:
+* Allow snapshots from the Code Genome Project in the `pluginManagement` block of your `settings.gradle` file, so that a snapshot of the plugin itself can be resolved:
+
+```groovy title="settings.gradle"
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
+
+* Do the same in the `repositories` section of your `build.gradle` file, so that snapshots of the rewrite core libraries and recipe modules can be resolved:
 
 ```groovy title="build.gradle"
 repositories {
@@ -22,7 +40,11 @@ repositories {
     // ...
 
     maven {
-        url = uri("https://central.sonatype.com/repository/maven-snapshots/")
+        url = "https://artifacts.codegenomeproject.org/maven"
+        credentials {
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
+        }
     }
 }
 ```

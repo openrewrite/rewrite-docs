@@ -35,7 +35,13 @@ Create an init script file. It does not need to be in the project directory itse
 ```groovy title="init.gradle"
 initscript {
     repositories {
-        maven { url "https://plugins.gradle.org/m2" }
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = System.getenv("CODE_GENOME_USERNAME")
+                password = System.getenv("CODE_GENOME_TOKEN")
+            }
+        }
     }
     dependencies {
         classpath("org.openrewrite:plugin:latest.release")
@@ -58,8 +64,8 @@ rootProject {
             maven {
                 url = "https://artifacts.codegenomeproject.org/maven"
                 credentials {
-                    username = "USERNAME"
-                    password = "TOKEN"
+                    username = System.getenv("CODE_GENOME_USERNAME")
+                    password = System.getenv("CODE_GENOME_TOKEN")
                 }
             }
         }
@@ -73,7 +79,13 @@ rootProject {
 ```kotlin title="init.gradle.kts"
 initscript {
     repositories {
-        maven { url = uri("https://plugins.gradle.org/m2") }
+        maven {
+            url = uri("https://artifacts.codegenomeproject.org/maven")
+            credentials {
+                username = System.getenv("CODE_GENOME_USERNAME")
+                password = System.getenv("CODE_GENOME_TOKEN")
+            }
+        }
     }
     dependencies {
         classpath("org.openrewrite:plugin:latest.release")
@@ -96,8 +108,8 @@ rootProject {
             maven {
                 url = uri("https://artifacts.codegenomeproject.org/maven")
                 credentials {
-                    username = "USERNAME"
-                    password = "TOKEN"
+                    username = System.getenv("CODE_GENOME_USERNAME")
+                    password = System.getenv("CODE_GENOME_TOKEN")
                 }
             }
         }
@@ -110,7 +122,16 @@ rootProject {
 
 In the `rootProject` block, we specify a dependency that contains OpenRewrite Spring recipes (`rewrite-spring`). If you wanted, you could also define a `rewrite` section inside of the `rootProject` that has elements like `activeRecipe` or `activeStyle`. In general, though, it's better to [use the command line to specify the recipes or styles](#step-4-run-the-recipe) so that you can keep your init script fairly generic.
 
-The `afterEvaluate` block adds the Code Genome Project repository, which OpenRewrite artifacts are distributed through. Sign in to the Code Genome Project to create a download token, then replace `USERNAME` with the email or username you signed in with and `TOKEN` with that token. See the [quickstart guide](./getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
+The Code Genome Project repository appears twice, because two separate resolutions need it. The `initscript` block resolves the Gradle plugin itself, which is distributed through the Code Genome Project rather than the Gradle Plugin Portal. The `afterEvaluate` block adds the same repository to the project, so that the rewrite core libraries and any recipe artifacts can be resolved once the plugin runs.
+
+Init scripts run before any project is configured, so they cannot read `gradle.properties`. Export your credentials as environment variables instead:
+
+```bash
+export CODE_GENOME_USERNAME='you@example.com'
+export CODE_GENOME_TOKEN='your-download-token'
+```
+
+Sign in to the Code Genome Project to create a download token. See the [quickstart guide](./getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
 
 For a full range of options available, please see our [Gradle plugin configuration doc](../reference/gradle-plugin-configuration.md)
 

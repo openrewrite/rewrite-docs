@@ -109,6 +109,21 @@ export default function RunRecipe({
   const gradlePluginVersion = resolveVersions('{{VERSION_REWRITE_GRADLE_PLUGIN}}');
   const mavenPluginVersion = resolveVersions('{{VERSION_REWRITE_MAVEN_PLUGIN}}');
 
+  // Gradle settings.gradle snippet, needed to resolve the plugin itself
+  const gradleSettings = `pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}`;
+
   // Gradle build.gradle snippet
   const gradleBuild = `plugins {
     id("org.openrewrite.rewrite") version("latest.release")
@@ -123,8 +138,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }
@@ -133,7 +148,13 @@ ${needsDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${v
   // Gradle init script snippet
   const gradleInit = `initscript {
     repositories {
-        maven { url "https://plugins.gradle.org/m2" }
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = System.getenv("CODE_GENOME_USERNAME")
+                password = System.getenv("CODE_GENOME_TOKEN")
+            }
+        }
     }
     dependencies { classpath("org.openrewrite:plugin:${gradlePluginVersion}") }
 }
@@ -155,8 +176,8 @@ rootProject {
             maven {
                 url = "https://artifacts.codegenomeproject.org/maven"
                 credentials {
-                    username = "USERNAME"
-                    password = "TOKEN"
+                    username = System.getenv("CODE_GENOME_USERNAME")
+                    password = System.getenv("CODE_GENOME_TOKEN")
                 }
             }
         }
@@ -166,7 +187,13 @@ rootProject {
   // Gradle init script snippet (Kotlin)
   const gradleInitKts = `initscript {
     repositories {
-        maven { url = uri("https://plugins.gradle.org/m2") }
+        maven {
+            url = uri("https://artifacts.codegenomeproject.org/maven")
+            credentials {
+                username = System.getenv("CODE_GENOME_USERNAME")
+                password = System.getenv("CODE_GENOME_TOKEN")
+            }
+        }
     }
     dependencies { classpath("org.openrewrite:plugin:${gradlePluginVersion}") }
 }
@@ -188,8 +215,8 @@ rootProject {
             maven {
                 url = uri("https://artifacts.codegenomeproject.org/maven")
                 credentials {
-                    username = "USERNAME"
-                    password = "TOKEN"
+                    username = System.getenv("CODE_GENOME_USERNAME")
+                    password = System.getenv("CODE_GENOME_TOKEN")
                 }
             }
         }
@@ -278,12 +305,15 @@ rootProject {
   </activeProfiles>
 </settings>`;
 
+  const gradleProperties = `codeGenomeUsername=you@example.com
+codeGenomeToken=your-download-token`;
+
   const cgpAuthNote = (
     <p>
-      OpenRewrite artifacts are distributed through the Code Genome Project repository
-      (<code>https://artifacts.codegenomeproject.org/maven</code>), which requires authentication. Sign in to the Code
-      Genome Project to create a download token, then in the snippets below replace <code>USERNAME</code> with the
-      email or username you signed in with and <code>TOKEN</code> with that token. See the{' '}
+      OpenRewrite artifacts, including the Maven and Gradle plugins themselves, are distributed through the Code Genome
+      Project repository (<code>https://artifacts.codegenomeproject.org/maven</code>), which requires authentication.
+      Sign in to the Code Genome Project to create a download token; your build authenticates with the email or username
+      you signed in with, plus that token as the password. See the{' '}
       <a href="/running-recipes/getting-started#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project">
         quickstart guide
       </a>{' '}
@@ -311,6 +341,20 @@ rootProject {
           <TabItem value="gradle" label="Gradle">
             <ol>
               <li>
+                Put your Code Genome Project credentials in <code>~/.gradle/gradle.properties</code>, so that they are
+                not committed alongside your build:
+                <CodeBlock language="properties" title="~/.gradle/gradle.properties">
+                  {gradleProperties}
+                </CodeBlock>
+              </li>
+              <li>
+                Add the Code Genome Project repository to your <code>settings.gradle</code> file, so that the plugin
+                itself can be resolved:
+                <CodeBlock language="groovy" title="settings.gradle">
+                  {gradleSettings}
+                </CodeBlock>
+              </li>
+              <li>
                 Add the following to your <code>build.gradle</code> file:
                 <CodeBlock language="groovy" title="build.gradle">
                   {gradleBuild}
@@ -323,6 +367,13 @@ rootProject {
         {showGradle && !requiresConfiguration && (
           <TabItem value="gradle-init-script" label="Gradle init script">
             <ol>
+              <li>
+                Export your Code Genome Project credentials. Init scripts run before any project is configured, so they
+                cannot read <code>gradle.properties</code>:
+                <CodeBlock language="shell" title="shell">
+                  {`export CODE_GENOME_USERNAME='you@example.com'\nexport CODE_GENOME_TOKEN='your-download-token'`}
+                </CodeBlock>
+              </li>
               <li>
                 Create a file named <code>init.gradle</code> in the root of your project.
                 <CodeBlock language="groovy" title="init.gradle">
@@ -341,6 +392,13 @@ rootProject {
         {showGradle && !requiresConfiguration && (
           <TabItem value="gradle-init-script-kts" label="Gradle init script (Kotlin)">
             <ol>
+              <li>
+                Export your Code Genome Project credentials. Init scripts run before any project is configured, so they
+                cannot read <code>gradle.properties</code>:
+                <CodeBlock language="shell" title="shell">
+                  {`export CODE_GENOME_USERNAME='you@example.com'\nexport CODE_GENOME_TOKEN='your-download-token'`}
+                </CodeBlock>
+              </li>
               <li>
                 Create a file named <code>init.gradle.kts</code> in the root of your project.
                 <CodeBlock language="kotlin" title="init.gradle.kts">
@@ -361,7 +419,8 @@ rootProject {
             <ol>
               <li>
                 Add the Code Genome Project credentials to your Maven <code>settings.xml</code> file (typically at{' '}
-                <code>~/.m2/settings.xml</code>):
+                <code>~/.m2/settings.xml</code>), replacing <code>USERNAME</code> and <code>TOKEN</code> with your
+                own:
                 <CodeBlock language="xml" title="settings.xml">
                   {mavenSettings}
                 </CodeBlock>

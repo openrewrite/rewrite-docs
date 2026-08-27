@@ -67,13 +67,15 @@ plugins {
 
 repositories {
     mavenCentral()
-    // OpenRewrite artifacts are distributed through the Code Genome Project.
-    // Use the email or username you signed in with, plus a download token as the password.
+    // The rewrite core libraries and recipe artifacts are distributed through the
+    // Code Genome Project. Set codeGenomeUsername and codeGenomeToken in
+    // ~/.gradle/gradle.properties to the email or username you signed in with and a
+    // download token created there.
     maven {
         url = uri("https://artifacts.codegenomeproject.org/maven")
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }
@@ -86,6 +88,22 @@ dependencies {
 ```
 
 ```kotlin title="settings.gradle.kts"
+pluginManagement {
+    repositories {
+        // The plugin itself is distributed through the Code Genome Project too,
+        // and plugins are resolved before any project is evaluated.
+        maven {
+            url = uri("https://artifacts.codegenomeproject.org/maven")
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+
 rootProject.name = "hcl-migrations"
 ```
 
