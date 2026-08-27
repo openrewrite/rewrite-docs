@@ -54,6 +54,10 @@ That being said, there may be some cases where you want to use this task – suc
 
 For Maven projects, we've updated the [rewrite-maven-plugin](https://github.com/openrewrite/rewrite-maven-plugin) to include support for multiple versions of a library and TypeTables. You can get this functionality by updating your `pom.xml` and adding a section like:
 
+:::info
+`rewrite-maven-plugin` is distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. The snippet below assumes you have already declared that repository as a `<pluginRepository>` and added your credentials to `settings.xml`, as described in the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
+:::
+
 ```xml title="pom.xml"
 <profiles>
     <!--

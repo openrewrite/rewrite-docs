@@ -8,6 +8,8 @@ Right now, OpenRewrite does a full release once every 2-4 weeks. Between those r
 
 This guide will provide you with instructions on how to configure your project to access these "snapshot versions" so you can get updates in real time.
 
+Snapshots are published to the same [Code Genome Project](https://artifacts.codegenomeproject.org/maven) repository as releases, and downloads from it require authentication. The snippets below use `USERNAME` and `TOKEN` as placeholders for the email or username you signed in to the Code Genome Project with and a download token created there. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
+
 ## Gradle instructions
 
 To utilize snapshot versions in Gradle projects, you'll need to make the following changes to your `build.gradle` file:
@@ -44,16 +46,36 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
     <!-- Possibly other repositories -->
     <!-- ... -->
     <repository>
-        <id>rewrite-snapshots</id>
-        <url>https://central.sonatype.com/repository/maven-snapshots</url>
+        <id>codegenome</id>
+        <url>https://artifacts.codegenomeproject.org/maven</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
     </repository>
 </repositories>
 <pluginRepositories>
     <pluginRepository>
-        <id>rewrite-snapshots</id>
-        <url>https://central.sonatype.com/repository/maven-snapshots</url>
+        <id>codegenome</id>
+        <url>https://artifacts.codegenomeproject.org/maven</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
     </pluginRepository>
 </pluginRepositories>
+```
+
+* Add your Code Genome Project credentials to your Maven `settings.xml` file (typically at `~/.m2/settings.xml`), matched to the repository by `id`:
+
+```xml title="settings.xml"
+<settings>
+  <servers>
+    <server>
+      <id>codegenome</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
+</settings>
 ```
 
 * Update the version numbers of the `rewrite-maven-plugin` and all of its dependencies to use the latest snapshot versions.
@@ -92,23 +114,44 @@ To utilize snapshot versions in Maven projects, you'll need to make the followin
 
 To use snapshot versions via the Maven command line, follow the same logic as in the above `Maven instructions` for the rewrite-maven-plugin and the recipe versions.
 
-The first step is to update your `pom.xml` file by modifying the `repositories` section to include the location of the OpenRewrite snapshots:
+Since this approach leaves your `pom.xml` untouched, the Code Genome Project repository has to be declared in your Maven `settings.xml` file (typically at `~/.m2/settings.xml`) instead: as a `pluginRepository` so that `rewrite-maven-plugin` itself can be resolved, and as a `repository` so that recipe artifacts passed to `rewrite.recipeArtifactCoordinates` can be resolved. Snapshots have to be enabled on both:
 
-```xml title="pom.xml"
-<repositories>
-    <!-- Possibly other repositories -->
-    <!-- ... -->
-    <repository>
-        <id>rewrite-snapshots</id>
-        <url>https://central.sonatype.com/repository/maven-snapshots</url>
-    </repository>
-</repositories>
-<pluginRepositories>
-    <pluginRepository>
-        <id>rewrite-snapshots</id>
-        <url>https://central.sonatype.com/repository/maven-snapshots</url>
-    </pluginRepository>
-</pluginRepositories>
+```xml title="settings.xml"
+<settings>
+  <servers>
+    <server>
+      <id>codegenome</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <id>codegenome</id>
+      <repositories>
+        <repository>
+          <id>codegenome</id>
+          <url>https://artifacts.codegenomeproject.org/maven</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>codegenome</id>
+          <url>https://artifacts.codegenomeproject.org/maven</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>codegenome</activeProfile>
+  </activeProfiles>
+</settings>
 ```
 
 Next, you have to update the version numbers specified in the command line.

@@ -436,6 +436,10 @@ Publish the recipe module locally:
 ./gradlew publishToMavenLocal
 ```
 
+:::info
+The OpenRewrite build plugins and the rewrite core libraries are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. The snippets below only show the recipe configuration; see the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for the repository and credential setup they assume.
+:::
+
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
