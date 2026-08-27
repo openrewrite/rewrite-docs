@@ -274,7 +274,7 @@ By default, OpenRewrite recipes will **not** produce a data table. In order for 
 2. Next, you will either need to update build file or modify your command for running a recipe:
 
 :::info
-OpenRewrite artifacts, including the build plugins themselves, are distributed through the Code Genome Project repository, which requires authentication. Gradle builds read those credentials from `gradle.properties` (`codeGenomeUsername` and `codeGenomeToken`); Maven builds read them from `settings.xml`, where `USERNAME` and `TOKEN` below stand in for the email or username you signed in with and a download token. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token and where to put it.
+OpenRewrite artifacts, including the build plugins, are distributed through the Code Genome Project repository, which requires authentication. Gradle builds read the `codeGenomeUsername` and `codeGenomeToken` credentials from `gradle.properties`. Maven builds read the same credentials from `settings.xml`, where the `USERNAME` and `TOKEN` placeholders below stand in for the email or username you signed in with and a download token. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for how to create a token and where to put it.
 
 Gradle also needs that repository declared in `pluginManagement` in `settings.gradle`, because the plugin itself is distributed through the Code Genome Project rather than the Gradle Plugin Portal, and Gradle resolves plugins before it evaluates any project:
 
