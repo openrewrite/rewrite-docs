@@ -34,6 +34,10 @@ recipeList:
 
 Now that a recipe named `com.yourorg.FooToBar` has been created, set that recipe as active in your build plugin's configuration:
 
+:::info
+The OpenRewrite build plugins and recipe artifacts are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. The snippets below only show the recipe configuration; see the [quickstart guide](../getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for the repository and credential setup they assume, including the `pluginManagement` block Gradle needs in `settings.gradle`.
+:::
+
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 

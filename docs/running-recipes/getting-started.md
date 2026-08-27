@@ -51,7 +51,16 @@ git clone https://github.com/openrewrite/spring-petclinic-migration.git
 
 Once you've checked out your project, the next step is to add the OpenRewrite plugin to Maven or Gradle.
 
-OpenRewrite releases are published to the Code Genome Project repository (`https://artifacts.codegenomeproject.org/maven`), which requires authentication. To get access, sign in to the Code Genome Project and create a download token. Your build then authenticates with the email or username you signed in with, plus that token as the password. The snippets below use `USERNAME` and `TOKEN` as placeholders for these credentials.
+OpenRewrite releases, including the Maven and Gradle plugins themselves, are published to the Code Genome Project repository (`https://artifacts.codegenomeproject.org/maven`), which requires authentication. To get access, sign in to the Code Genome Project and create a download token. Your build then authenticates with the email or username you signed in with, plus that token as the password.
+
+Gradle builds read those credentials from `gradle.properties`. Put them in `~/.gradle/gradle.properties` rather than the copy in your repository, so they are never committed:
+
+```properties title="~/.gradle/gradle.properties"
+codeGenomeUsername=you@example.com
+codeGenomeToken=your-download-token
+```
+
+In CI, set the `ORG_GRADLE_PROJECT_codeGenomeUsername` and `ORG_GRADLE_PROJECT_codeGenomeToken` environment variables instead. Maven builds keep the same credentials in `settings.xml`, where the snippets below use `USERNAME` and `TOKEN` as placeholders.
 
 What you can download depends on your account: OpenRewrite's Apache-licensed recipes and the Moderne CLI are available to any authenticated user, while [source-available](/licensing/openrewrite-licensing#moderne-source-available-license) and proprietary recipes require a Moderne subscription.
 
@@ -61,11 +70,28 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
 
 <Tabs groupId="projectType">
 <TabItem value="gradle-groovy" label="Gradle (Groovy)">
+    * Add the Code Genome Project repository to `pluginManagement` in your `settings.gradle` file, so that the plugin itself can be resolved
     * Add the OpenRewrite plugin to the `plugins` section of your `build.gradle` file
-    * Add the Code Genome Project repository to the `repositories` section (keep `mavenCentral()` there for your project's other dependencies)
+    * Add the Code Genome Project repository to the `repositories` section too (keep `mavenCentral()` there for your project's other dependencies)
     * Add a `rewrite` section that will be filled in later
 
-    Your file should look similar to:
+    Your files should look similar to:
+
+    ```groovy title="settings.gradle"
+    pluginManagement {
+      repositories {
+        maven {
+          url = 'https://artifacts.codegenomeproject.org/maven'
+          credentials {
+            username = providers.gradleProperty('codeGenomeUsername').get()
+            password = providers.gradleProperty('codeGenomeToken').get()
+          }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+      }
+    }
+    ```
 
     ```groovy title="build.gradle"
     plugins {
@@ -81,8 +107,8 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
       maven {
         url = 'https://artifacts.codegenomeproject.org/maven'
         credentials {
-          username = 'USERNAME'
-          password = 'TOKEN'
+          username = providers.gradleProperty('codeGenomeUsername').get()
+          password = providers.gradleProperty('codeGenomeToken').get()
         }
       }
     }
@@ -95,11 +121,28 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
     ```
   </TabItem>
   <TabItem value="gradle-kotlin" label="Gradle (Kotlin)">
+    * Add the Code Genome Project repository to `pluginManagement` in your `settings.gradle.kts` file, so that the plugin itself can be resolved
     * Add the OpenRewrite plugin to the `plugins` section of your `build.gradle.kts` file
-    * Add the Code Genome Project repository to the `repositories` section (keep `mavenCentral()` there for your project's other dependencies)
+    * Add the Code Genome Project repository to the `repositories` section too (keep `mavenCentral()` there for your project's other dependencies)
     * Add a `rewrite` section that will be filled in later
 
-    Your file should look similar to:
+    Your files should look similar to:
+
+    ```kotlin title="settings.gradle.kts"
+    pluginManagement {
+      repositories {
+        maven {
+          url = uri("https://artifacts.codegenomeproject.org/maven")
+          credentials {
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
+          }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+      }
+    }
+    ```
 
     ```kotlin title="build.gradle.kts"
     plugins {
@@ -115,8 +158,8 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
       maven {
         url = uri("https://artifacts.codegenomeproject.org/maven")
         credentials {
-          username = "USERNAME"
-          password = "TOKEN"
+          username = providers.gradleProperty("codeGenomeUsername").get()
+          password = providers.gradleProperty("codeGenomeToken").get()
         }
       }
     }

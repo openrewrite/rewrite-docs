@@ -55,7 +55,25 @@ recipeList:
 Now that we have the recipe defined in our `rewrite.yml` file, we can update our `build.gradle` or `pom.xml` file to tell OpenRewrite to use the recipe we defined above:
 
 :::info
-OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. In the snippets below, replace `USERNAME` with the email or username you signed in with and `TOKEN` with a download token. See the [quickstart guide](./getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
+OpenRewrite artifacts, including the build plugins themselves, are distributed through the Code Genome Project repository, which requires authentication. Gradle builds read those credentials from `gradle.properties` (`codeGenomeUsername` and `codeGenomeToken`); Maven builds read them from `settings.xml`, where `USERNAME` and `TOKEN` below stand in for the email or username you signed in with and a download token. See the [quickstart guide](./getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token and where to put it.
+
+Gradle also needs that repository declared in `pluginManagement` in `settings.gradle`, because the plugin itself is distributed through the Code Genome Project rather than the Gradle Plugin Portal, and Gradle resolves plugins before it evaluates any project:
+
+```groovy title="settings.gradle"
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
 :::
 
 <Tabs>
@@ -74,8 +92,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }

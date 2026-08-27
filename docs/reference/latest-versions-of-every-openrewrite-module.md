@@ -11,7 +11,7 @@ OpenRewrite's modules are distributed through the [Code Genome Project](https://
 Downloads require authentication, so add the repository and credentials to your build to resolve them. See [Configure the Code Genome Project repository](#configure-the-code-genome-project-repository) below.
 Keep Maven Central configured alongside it, since OpenRewrite's transitive dependencies still resolve from there.
 Each time a release is made, a bill of materials artifact is also published to correctly align and manage the versions of all published artifacts.
-The Gradle plugin is published to the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.openrewrite.rewrite).
+The Maven and Gradle plugins are distributed through the Code Genome Project as well, so Gradle builds need it declared in `pluginManagement` in addition to the project's `repositories`.
 
 It is highly recommended that developers use the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-recipe-bom)
 to align the versions of Rewrite's modules to ensure compatibility.
@@ -115,8 +115,36 @@ repository by `id`:
 </TabItem>
 <TabItem value="gradle" label="Gradle">
 
-Keep Maven Central alongside it. The Code Genome Project hosts only `org/openrewrite` and
-`io/moderne`, so OpenRewrite's own transitive dependencies still resolve from Maven Central.
+Declare the repository in `pluginManagement` so that the Gradle plugin itself can be resolved.
+Gradle resolves plugins before it evaluates any project, so this belongs in `settings.gradle`:
+
+```groovy title="settings.gradle"
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
+
+Declare it in the project's `repositories` too, so that the rewrite core libraries and recipe
+modules can be resolved at runtime. Keep Maven Central alongside it: the Code Genome Project
+hosts only `org/openrewrite` and `io/moderne`, so OpenRewrite's own transitive dependencies
+still resolve from Maven Central.
+
+Put your credentials in `~/.gradle/gradle.properties` so they are not committed:
+
+```properties title="~/.gradle/gradle.properties"
+codeGenomeUsername=you@example.com
+codeGenomeToken=your-download-token
+```
 
 ```kotlin title="build.gradle.kts"
 repositories {
@@ -124,8 +152,8 @@ repositories {
     maven {
         url = uri("https://artifacts.codegenomeproject.org/maven")
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }
@@ -137,8 +165,8 @@ repositories {
     maven {
         url = 'https://artifacts.codegenomeproject.org/maven'
         credentials {
-            username = 'USERNAME'
-            password = 'TOKEN'
+            username = providers.gradleProperty('codeGenomeUsername').get()
+            password = providers.gradleProperty('codeGenomeToken').get()
         }
     }
 }

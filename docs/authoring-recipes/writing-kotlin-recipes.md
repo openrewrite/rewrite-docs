@@ -436,12 +436,44 @@ Publish the recipe module locally:
 ./gradlew publishToMavenLocal
 ```
 
+:::info
+The OpenRewrite build plugins and the rewrite core libraries are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. Gradle reads the credentials from `codeGenomeUsername` and `codeGenomeToken` in `~/.gradle/gradle.properties`; see the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
+:::
+
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
+
+```kotlin title="settings.gradle.kts"
+pluginManagement {
+    repositories {
+        maven {
+            url = uri("https://artifacts.codegenomeproject.org/maven")
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
 
 ```kotlin title="build.gradle.kts"
 plugins {
     id("org.openrewrite.rewrite") version("latest.release")
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = uri("https://artifacts.codegenomeproject.org/maven")
+        credentials {
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
+        }
+    }
 }
 
 rewrite {

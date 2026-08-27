@@ -8,7 +8,25 @@ The OpenRewrite Gradle Plugin is the fastest way to apply OpenRewrite recipes to
 
 ## Plugin configuration
 
-Apply the `org.openrewrite.rewrite` plugin to your build.
+The Gradle plugin is distributed through the Code Genome Project rather than the Gradle Plugin Portal, so start by declaring that repository in `pluginManagement`. Gradle resolves plugins before it evaluates any project, which is why this belongs in `settings.gradle` rather than `build.gradle`.
+
+```groovy title="settings.gradle"
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
+
+Then apply the `org.openrewrite.rewrite` plugin to your build. The `repositories` block is separate and still required: the plugin resolves the rewrite core libraries and any recipe modules at runtime from the project's repositories.
 
 ```groovy title="build.gradle"
 plugins {
@@ -26,15 +44,22 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }
 ```
 
 :::info
-OpenRewrite artifacts are distributed through the Code Genome Project repository, which requires authentication. Sign in to the Code Genome Project to create a download token, then replace `USERNAME` with the email or username you signed in with and `TOKEN` with that token. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
+The Gradle plugin, the rewrite core libraries, and recipe modules are all distributed through the Code Genome Project repository, which requires authentication. Sign in there to create a download token, then put your credentials in `~/.gradle/gradle.properties` so they are not committed alongside your build:
+
+```properties title="~/.gradle/gradle.properties"
+codeGenomeUsername=you@example.com
+codeGenomeToken=your-download-token
+```
+
+In CI, set the `ORG_GRADLE_PROJECT_codeGenomeUsername` and `ORG_GRADLE_PROJECT_codeGenomeToken` environment variables instead. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
 :::
 
 With the plugin applied, the `rewrite` DSL is available for configuration.
@@ -51,8 +76,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }
@@ -94,8 +119,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }
@@ -149,8 +174,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codeGenomeUsername").get()
+            password = providers.gradleProperty("codeGenomeToken").get()
         }
     }
 }
@@ -232,5 +257,4 @@ Execute `gradle rewriteDiscover` to list the recipes available on your classpath
 
 * [GitHub project](https://github.com/openrewrite/rewrite-gradle-plugin)
 * [Issue Tracker](https://github.com/openrewrite/rewrite-gradle-plugin/issues)
-* [Gradle Plugin Portal Listing](https://plugins.gradle.org/plugin/org.openrewrite.rewrite)
 * [Javadoc](https://openrewrite.github.io/rewrite-gradle-plugin/apidocs/)

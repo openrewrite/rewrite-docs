@@ -35,7 +35,7 @@ After this succeeds, please re-run the build. You should no longer see the error
 
 ## Building within Secure/Isolated environments
 
-OpenRewrite typically accesses the Maven Central artifact repository to download necessary dependencies. If organizational security policy or network configuration forbids this, then you can use a Gradle [init script](https://docs.gradle.org/current/userguide/init\_scripts.html) to forcibly reconfigure the OpenRewrite build to use a different repository.
+OpenRewrite typically accesses the Maven Central and Code Genome Project artifact repositories to download necessary dependencies. If organizational security policy or network configuration forbids this, then you can use a Gradle [init script](https://docs.gradle.org/current/userguide/init\_scripts.html) to forcibly reconfigure the OpenRewrite build to use a different repository.
 
 Copy this script to a file named `init.gradle.kts` into the `/.gradle` directory. Modify the `enterpriseRepository` value as appropriate for your situation.
 
@@ -51,11 +51,14 @@ import org.gradle.api.internal.artifacts.repositories.DefaultMavenLocalArtifactR
 val mavenCentralMirror = "https://repo.maven.apache.org/maven2/"
 // Replace with your organization's artifact repository which mirrors the contents of the Gradle Plugin portal
 val gradlePluginPortalMirror = "https://plugins.gradle.org/m2"
+// Replace with your organization's artifact repository which mirrors the Code Genome Project,
+// which OpenRewrite's own modules and build plugins are distributed through
+val codeGenomeMirror = "https://artifacts.codegenomeproject.org/maven"
 // Replace with your organization's artifact repository which mirrors the contents of Gradle's 
 // This one is required only for building the rewrite-gradle project
 val gradleLibsRelease = "https://repo.gradle.org/gradle/libs-releases-local/"
 
-val allowedRepos = listOf(mavenCentralMirror, gradlePluginPortalMirror, gradleLibsRelease)
+val allowedRepos = listOf(mavenCentralMirror, gradlePluginPortalMirror, codeGenomeMirror, gradleLibsRelease)
 
 // Fill out as appropriate if your repository requires authentication
 // Consider using system properties to fill these in for better security

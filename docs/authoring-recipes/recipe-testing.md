@@ -35,6 +35,10 @@ Before you can go about writing tests, you'll want to add some dependencies to y
 
 You may need to include additional dependencies depending on the type of recipes you want to create. For instance, [Refaster template recipes](./types-of-recipes.md#refaster-template-recipes) will need a few more dependencies (included below with comments).
 
+:::info
+The rewrite modules below are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. If you haven't already, declare that repository and your `gradle.properties` credentials as described in the [recipe development environment guide](./recipe-development-environment.md#dependencies--dependency-management).
+:::
+
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
