@@ -65,6 +65,10 @@ Rewrite provides a bill of materials (BOM) that, when imported into your build, 
 
 You can import the bill of materials into either Gradle or Maven and then include concrete dependencies on the various rewrite libraries without specifying their version.
 
+:::info
+The rewrite modules your recipe module compiles against are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. Declare that repository in your build before adding the dependencies below, as shown in [Running your Recipes](#running-your-recipes) and the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
+:::
+
 <Tabs groupId="projectType">
 <TabItem value="gradle" label="Gradle">
 
@@ -116,6 +120,13 @@ dependencies {
 <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 </properties>
+
+<repositories>
+  <repository>
+    <id>codegenome</id>
+    <url>https://artifacts.codegenomeproject.org/maven</url>
+  </repository>
+</repositories>
 
 <dependencyManagement>
   <dependencies>

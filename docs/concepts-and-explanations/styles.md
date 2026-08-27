@@ -174,6 +174,10 @@ rewrite {
 
 Update your `pom.xml` file to include an `<activeStyles>` such as in:
 
+:::info
+`rewrite-maven-plugin` is distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. The snippet below assumes you have already declared that repository and added your credentials, as described in the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
+:::
+
 ```xml title="pom.xml"
 <plugins>
   <plugin>
