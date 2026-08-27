@@ -56,6 +56,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * addVersionIfMissing: `true`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
+  * artifactId: `maven-pmd-plugin`
+  * newVersion: `3.x`
+* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
+  * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-war-plugin`
   * newVersion: `3.x`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
@@ -97,6 +101,10 @@ recipeList:
       artifactId: maven-compiler-plugin
       newVersion: 3.x
       addVersionIfMissing: true
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: org.apache.maven.plugins
+      artifactId: maven-pmd-plugin
+      newVersion: 3.x
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-war-plugin

@@ -69,6 +69,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springdoc`
   * artifactId: `*`
   * newVersion: `1.8.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.springframework.cloud`
+  * artifactId: `spring-cloud-stream-dependencies`
+  * newVersion: `3.2.x`
+  * overrideManagedVersion: `false`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.server.LocalServerPort`
   * newFullyQualifiedTypeName: `org.springframework.boot.test.web.server.LocalServerPort`
@@ -139,6 +144,11 @@ recipeList:
       groupId: org.springdoc
       artifactId: "*"
       newVersion: 1.8.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.springframework.cloud
+      artifactId: spring-cloud-stream-dependencies
+      newVersion: 3.2.x
+      overrideManagedVersion: false
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.web.server.LocalServerPort
       newFullyQualifiedTypeName: org.springframework.boot.test.web.server.LocalServerPort

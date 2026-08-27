@@ -1,8 +1,10 @@
 ---
-description: Javascript OpenRewrite recipes.
+description: JavaScript OpenRewrite recipes.
 ---
 
-# Javascript
+# JavaScript
+
+_Recipes to search and transform JavaScript and TypeScript._
 
 ## Categories
 

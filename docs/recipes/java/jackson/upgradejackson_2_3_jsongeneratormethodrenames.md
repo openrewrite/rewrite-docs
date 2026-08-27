@@ -81,7 +81,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   * newMethodName: `writeNumberProperty`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeObjectField(..)`
-  * newMethodName: `writeObjectProperty`
+  * newMethodName: `writePOJOProperty`
 * [Change method name](../../java/changemethodname)
   * methodPattern: `com.fasterxml.jackson.core.JsonGenerator writeObjectFieldStart(..)`
   * newMethodName: `writeObjectPropertyStart`
@@ -156,7 +156,7 @@ recipeList:
       newMethodName: writeNumberProperty
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.core.JsonGenerator writeObjectField(..)
-      newMethodName: writeObjectProperty
+      newMethodName: writePOJOProperty
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: com.fasterxml.jackson.core.JsonGenerator writeObjectFieldStart(..)
       newMethodName: writeObjectPropertyStart

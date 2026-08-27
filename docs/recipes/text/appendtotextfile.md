@@ -32,6 +32,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Strategy` | existingFileStrategy | *Optional*. Determines behavior if a file exists at this location prior to Rewrite execution.<br /><br />- `Continue`: append new content to existing file contents. If existing file is not plaintext, recipe does nothing.<br />- `Replace`: remove existing content from file.<br />- `Leave`: *(default)* do nothing. Existing file is fully preserved.<br />- `Merge`: append only lines from new content that are not already present in the file. Lines are compared line-by-line after trimming whitespace. Preserves existing line order.<br /><br />Note: this only affects the first interaction with the specified file per Rewrite execution.<br />Subsequent instances of this recipe in the same Rewrite execution will always append. Valid options: `Continue`, `Replace`, `Leave`, `Merge` |  |
 
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
+
+
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.AppendToTextFileExample`.

@@ -32,6 +32,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add missing `@BeforeEach`, `@AfterEach`, `@Test` to overriding methods](./addmissingtestbeforeafterannotations.md)
 * [Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`](./addparameterizedtestannotation.md)
 * [Applies JUnit 5 `assertThrows` on last statement in lambda block only](./assertthrowsonlaststatement.md)
+* [AssertJ `@Rule` soft assertions to `SoftAssertionsExtension`](./junitsoftassertionstosoftassertionsextension.md)
 * [Cleanup JUnit imports](./cleanupjunitimports.md)
 * [Exclude JUnit 4, unless Testcontainers is used](./excludejunit4unlessusingtestcontainers.md)
 * [Gradle `Test` use JUnit Jupiter](./gradleusejunitjupiter.md)

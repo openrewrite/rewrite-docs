@@ -13,6 +13,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _This recipes moves persistence.xml files into the root META-INF directory in source folder._
 
+### Tags
+
+* [websphere](/reference/recipes-by-tag#websphere)
+* [liberty](/reference/recipes-by-tag#liberty)
+
 ## Recipe source
 
 [GitHub: PersistenceXmlLocationRule.java](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/xml/liberty/PersistenceXmlLocationRule.java),

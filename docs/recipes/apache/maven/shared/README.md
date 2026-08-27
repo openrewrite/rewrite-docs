@@ -1,8 +1,10 @@
 ---
-description: Shared OpenRewrite recipes.
+description: Maven Shared Utils OpenRewrite recipes.
 ---
 
-# Shared
+# Maven Shared Utils
+
+_Recipes for replacing [Maven Shared Utils](https://maven.apache.org/shared/maven-shared-utils/) APIs with Java standard library equivalents._
 
 ## Composite Recipes
 

@@ -31,6 +31,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
 * [Migrate to Maven 4](/recipes/maven/migratetomaven4.md)
 * [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
+* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 
 ## Example
 

@@ -110,6 +110,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Apache Commons best practices](/recipes/apache/commons/apachecommonsbestpractices.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 
 ## Examples

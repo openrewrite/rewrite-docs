@@ -1,8 +1,10 @@
 ---
-description: Security OpenRewrite recipes.
+description: Spring Security OpenRewrite recipes.
 ---
 
-# Security
+# Spring Security
+
+_Recipes for [Spring Security](https://spring.io/projects/spring-security)._
 
 ## Composite Recipes
 

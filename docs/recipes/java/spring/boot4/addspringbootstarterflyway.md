@@ -74,7 +74,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to Spring Boot 4.0 modular starters (Community Edition)](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
+* [Add Spring Boot 4.0 modular starter dependencies](/recipes/java/spring/boot4/addmodularstarterdependencies.md)
 
 
 ## Usage

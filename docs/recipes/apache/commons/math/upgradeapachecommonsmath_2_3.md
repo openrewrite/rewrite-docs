@@ -89,6 +89,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apache Commons best practices](/recipes/apache/commons/apachecommonsbestpractices.md)
+
 ## Examples
 ##### Example 1
 `UpgradeApacheCommonsMath_2_3Test#apacheCommonsMath`

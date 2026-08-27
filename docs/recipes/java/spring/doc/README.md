@@ -1,8 +1,10 @@
 ---
-description: Doc OpenRewrite recipes.
+description: SpringDoc OpenRewrite recipes.
 ---
 
-# Doc
+# SpringDoc
+
+_Recipes for migrating from SpringFox to [springdoc-openapi](https://springdoc.org/)._
 
 ## Composite Recipes
 
@@ -16,5 +18,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate `Docket` to `GroupedOpenAPI`](./migratedocketbeantogroupedopenapibean.md)
 * [Migrate SpringFox `SecurityConfiguration` bean to Springdoc Swagger UI properties](./migratespringfoxsecurityconfiguration.md)
 * [Removes @Import(BeanValidatorPluginsConfiguration.class)](./removebeanvalidatorpluginsconfiguration.md)
+* [Rewrite safe `PathSelectors.regex(...)` calls as `PathSelectors.ant(...)`](./normalizespringfoxpathselectorsregextoant.md)
 
 

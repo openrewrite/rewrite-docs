@@ -1,8 +1,10 @@
 ---
-description: Gradle8 OpenRewrite recipes.
+description: Gradle 8 OpenRewrite recipes.
 ---
 
-# Gradle8
+# Gradle 8
+
+_Recipes to migrate to [Gradle 8](https://docs.gradle.org/8.0/release-notes.html)._
 
 ## Recipes
 

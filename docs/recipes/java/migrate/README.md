@@ -120,6 +120,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `java.lang.ref.Reference.clone()` with constructor call](./referenceclonemethod.md)
 * [Replace `javax.security.auth.Policy` with `java.security.Policy`](./removedpolicy.md)
 * [Return String `jks` when  `KeyStore.getDefaultType()` is called](./changedefaultkeystore.md)
+* [Turn dangling documentation comments into block comments](./danglingdoccommenttoblockcomment.md)
 * [Update SDKMan Java version](./updatesdkman.md)
 * [Upgrade Docker image Java version](./upgradedockerimageversion.md)
 * [Upgrade Kotlin `jvmTarget` to match the Java version](./upgradekotlinjvmtargetversion.md)

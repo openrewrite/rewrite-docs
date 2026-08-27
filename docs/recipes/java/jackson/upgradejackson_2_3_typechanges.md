@@ -138,9 +138,6 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Remove interface implementations](../../java/removeimplements)
   * interfaceType: `com.fasterxml.jackson.databind.ser.ContextualSerializer`
 * [Change type](../../java/changetype)
-  * oldFullyQualifiedTypeName: `com.fasterxml.jackson.module.afterburner.AfterburnerModule`
-  * newFullyQualifiedTypeName: `tools.jackson.module.blackbird.BlackbirdModule`
-* [Change type](../../java/changetype)
   * oldFullyQualifiedTypeName: `com.fasterxml.jackson.databind.PropertyNamingStrategy`
   * newFullyQualifiedTypeName: `tools.jackson.databind.PropertyNamingStrategies`
 * [Change type](../../java/changetype)
@@ -279,9 +276,6 @@ recipeList:
       interfaceType: com.fasterxml.jackson.databind.deser.ContextualDeserializer
   - org.openrewrite.java.RemoveImplements:
       interfaceType: com.fasterxml.jackson.databind.ser.ContextualSerializer
-  - org.openrewrite.java.ChangeType:
-      oldFullyQualifiedTypeName: com.fasterxml.jackson.module.afterburner.AfterburnerModule
-      newFullyQualifiedTypeName: tools.jackson.module.blackbird.BlackbirdModule
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: com.fasterxml.jackson.databind.PropertyNamingStrategy
       newFullyQualifiedTypeName: tools.jackson.databind.PropertyNamingStrategies

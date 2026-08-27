@@ -95,6 +95,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apache best practices](/recipes/apache/apachebestpractices.md)
+
 ## Examples
 ##### Example 1
 `UpgradeApachePoi_5Test#upgradePoiOoxmlSchemasDependency`

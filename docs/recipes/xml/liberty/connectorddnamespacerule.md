@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Namespace values in ra.xml must be consistent with the descriptor version._
 
+### Tags
+
+* [liberty](/reference/recipes-by-tag#liberty)
+
 ## Recipe source
 
 [GitHub: was-to-liberty.yml](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml),
@@ -57,6 +61,8 @@ name: org.openrewrite.xml.liberty.ConnectorDDNamespaceRule
 displayName: Use correct connector namespace values
 description: |
   Namespace values in ra.xml must be consistent with the descriptor version.
+tags:
+  - liberty
 recipeList:
   - org.openrewrite.xml.ChangeNamespaceValue:
       elementName: connector

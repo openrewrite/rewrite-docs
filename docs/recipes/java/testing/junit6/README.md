@@ -1,8 +1,10 @@
 ---
-description: Junit6 OpenRewrite recipes.
+description: JUnit 6 OpenRewrite recipes.
 ---
 
-# Junit6
+# JUnit 6
+
+_Recipes for migrating to [JUnit 6](https://junit.org/)._
 
 ## Composite Recipes
 

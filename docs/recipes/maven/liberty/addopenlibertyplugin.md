@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _This recipe adds the Liberty Maven plugin, which provides several goals for managing a Liberty server and applications._
 
+### Tags
+
+* [liberty](/reference/recipes-by-tag#liberty)
+
 ## Recipe source
 
 [GitHub: was-to-liberty.yml](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml),
@@ -42,6 +46,8 @@ name: org.openrewrite.maven.liberty.AddOpenLibertyPlugin
 displayName: Add Liberty Maven plugin
 description: |
   This recipe adds the Liberty Maven plugin, which provides several goals for managing a Liberty server and applications.
+tags:
+  - liberty
 recipeList:
   - org.openrewrite.maven.AddPlugin:
       groupId: io.openliberty.tools

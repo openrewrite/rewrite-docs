@@ -1,8 +1,10 @@
 ---
-description: Math OpenRewrite recipes.
+description: Commons Math OpenRewrite recipes.
 ---
 
-# Math
+# Commons Math
+
+_Recipes for [Apache Commons Math](https://commons.apache.org/proper/commons-math/) migrations._
 
 ## Composite Recipes
 

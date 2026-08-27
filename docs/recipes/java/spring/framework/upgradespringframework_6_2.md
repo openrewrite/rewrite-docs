@@ -48,7 +48,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `ResourceHttpMessageWriter.addHeaders`](../../../java/spring/framework/migrateresourcehttpmessagewriteraddheadersmethod)
 * [Migrate deprecated `UriComponentsBuilder` methods](../../../java/spring/framework/migrateuricomponentsbuildermethods)
 * [Migrate `WebExchangeBindException.resolveErrorMessages`](../../../java/spring/framework/migratewebexchangebindexceptionresolveerrormethod)
-* [Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryconnecttimeout)
+* [Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`](../../../java/spring/framework/httpcomponentsclienthttprequestfactoryconnecttimeout)
 * [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.HighCardinalityKeyNames.CLIENT_NAME`
   * fullyQualifiedConstantName: `org.springframework.http.client.observation.ClientHttpObservationDocumentation.LowCardinalityKeyNames.CLIENT_NAME`

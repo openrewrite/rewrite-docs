@@ -61,6 +61,10 @@ _Relationships between different COBOL resources._
 | Dependency type | The resource type of the resource that is exercised or linked to. |
 | Dependency missing | Indicates whether the dependency is a known resource. |
 | Action metadata | Additional data about the action. |
+| Dependent path | The source file the dependent's statement was written in, or null when the dependent is a name that has no source here. |
+| Dependent line | The one-based line the dependent's statement was written on, or null when it has no source here. |
+| Dependency path | The source file the dependency was written in, or null when the dependency is a name that has no source here, such as a vendor copybook. |
+| Dependency line | The one-based line the dependency's statement was written on, or null when the dependency is a whole file rather than a statement within one. |
 
 </TabItem>
 

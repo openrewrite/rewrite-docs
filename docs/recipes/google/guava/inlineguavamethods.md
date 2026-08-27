@@ -98,11 +98,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * replacement: `optional.stream()`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
-  * methodPattern: `com.google.common.collect.Range apply(java.lang.Comparable)`
+  * methodPattern: `com.google.common.collect.Range apply(*)`
   * replacement: `this.contains(input)`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
-  * methodPattern: `com.google.common.collect.Range test(java.lang.Comparable)`
+  * methodPattern: `com.google.common.collect.Range test(*)`
   * replacement: `this.contains(input)`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
@@ -148,7 +148,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
-  * methodPattern: `com.google.common.collect.Ordering binarySearch(java.util.List, java.lang.Object)`
+  * methodPattern: `com.google.common.collect.Ordering binarySearch(java.util.List, *)`
   * replacement: `Collections.binarySearch(sortedList, key, this)`
   * imports: `[java.util.Collections]`
   * classpathFromResources: `[guava-33]`
@@ -172,7 +172,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
-  * methodPattern: `com.google.common.base.Equivalence test(java.lang.Object, java.lang.Object)`
+  * methodPattern: `com.google.common.base.Equivalence test(*, *)`
   * replacement: `this.equivalent(t, u)`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
@@ -190,11 +190,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * replacement: `string.repeat(count)`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
-  * methodPattern: `com.google.common.hash.BloomFilter apply(java.lang.Object)`
+  * methodPattern: `com.google.common.hash.BloomFilter apply(*)`
   * replacement: `this.mightContain(input)`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
-  * methodPattern: `com.google.common.hash.BloomFilter test(java.lang.Object)`
+  * methodPattern: `com.google.common.hash.BloomFilter test(*)`
   * replacement: `this.mightContain(input)`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
@@ -255,7 +255,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * staticImports: `[com.google.common.base.Preconditions.checkNotNull]`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
-  * methodPattern: `com.google.common.base.Converter apply(java.lang.Object)`
+  * methodPattern: `com.google.common.base.Converter apply(*)`
   * replacement: `this.convert(a)`
   * classpathFromResources: `[guava-33]`
 * [Inline method calls](../../java/inlinemethodcalls)
@@ -320,6 +320,26 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Inline method calls](../../java/inlinemethodcalls)
   * methodPattern: `com.google.common.math.IntMath checkedMultiply(int, int)`
   * replacement: `Math.multiplyExact(a, b)`
+  * classpathFromResources: `[guava-33]`
+* [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.util.concurrent.Atomics newReference()`
+  * replacement: `new AtomicReference<>()`
+  * imports: `[java.util.concurrent.atomic.AtomicReference]`
+  * classpathFromResources: `[guava-33]`
+* [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.util.concurrent.Atomics newReference(*)`
+  * replacement: `new AtomicReference<>(initialValue)`
+  * imports: `[java.util.concurrent.atomic.AtomicReference]`
+  * classpathFromResources: `[guava-33]`
+* [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.util.concurrent.Atomics newReferenceArray(int)`
+  * replacement: `new AtomicReferenceArray<>(length)`
+  * imports: `[java.util.concurrent.atomic.AtomicReferenceArray]`
+  * classpathFromResources: `[guava-33]`
+* [Inline method calls](../../java/inlinemethodcalls)
+  * methodPattern: `com.google.common.util.concurrent.Atomics newReferenceArray(*[])`
+  * replacement: `new AtomicReferenceArray<>(array)`
+  * imports: `[java.util.concurrent.atomic.AtomicReferenceArray]`
   * classpathFromResources: `[guava-33]`
 
 </TabItem>
@@ -398,11 +418,11 @@ recipeList:
       replacement: optional.stream()
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.collect.Range apply(java.lang.Comparable)
+      methodPattern: com.google.common.collect.Range apply(*)
       replacement: this.contains(input)
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.collect.Range test(java.lang.Comparable)
+      methodPattern: com.google.common.collect.Range test(*)
       replacement: this.contains(input)
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
@@ -448,7 +468,7 @@ recipeList:
       staticImports: [com.google.common.base.Preconditions.checkNotNull]
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.collect.Ordering binarySearch(java.util.List, java.lang.Object)
+      methodPattern: com.google.common.collect.Ordering binarySearch(java.util.List, *)
       replacement: Collections.binarySearch(sortedList, key, this)
       imports: [java.util.Collections]
       classpathFromResources: [guava-33]
@@ -472,7 +492,7 @@ recipeList:
       staticImports: [com.google.common.base.Preconditions.checkNotNull]
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.base.Equivalence test(java.lang.Object, java.lang.Object)
+      methodPattern: com.google.common.base.Equivalence test(*, *)
       replacement: this.equivalent(t, u)
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
@@ -490,11 +510,11 @@ recipeList:
       replacement: string.repeat(count)
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.hash.BloomFilter apply(java.lang.Object)
+      methodPattern: com.google.common.hash.BloomFilter apply(*)
       replacement: this.mightContain(input)
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.hash.BloomFilter test(java.lang.Object)
+      methodPattern: com.google.common.hash.BloomFilter test(*)
       replacement: this.mightContain(input)
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
@@ -555,7 +575,7 @@ recipeList:
       staticImports: [com.google.common.base.Preconditions.checkNotNull]
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
-      methodPattern: com.google.common.base.Converter apply(java.lang.Object)
+      methodPattern: com.google.common.base.Converter apply(*)
       replacement: this.convert(a)
       classpathFromResources: [guava-33]
   - org.openrewrite.java.InlineMethodCalls:
@@ -620,6 +640,26 @@ recipeList:
   - org.openrewrite.java.InlineMethodCalls:
       methodPattern: com.google.common.math.IntMath checkedMultiply(int, int)
       replacement: Math.multiplyExact(a, b)
+      classpathFromResources: [guava-33]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.util.concurrent.Atomics newReference()
+      replacement: new AtomicReference<>()
+      imports: [java.util.concurrent.atomic.AtomicReference]
+      classpathFromResources: [guava-33]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.util.concurrent.Atomics newReference(*)
+      replacement: new AtomicReference<>(initialValue)
+      imports: [java.util.concurrent.atomic.AtomicReference]
+      classpathFromResources: [guava-33]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.util.concurrent.Atomics newReferenceArray(int)
+      replacement: new AtomicReferenceArray<>(length)
+      imports: [java.util.concurrent.atomic.AtomicReferenceArray]
+      classpathFromResources: [guava-33]
+  - org.openrewrite.java.InlineMethodCalls:
+      methodPattern: com.google.common.util.concurrent.Atomics newReferenceArray(*[])
+      replacement: new AtomicReferenceArray<>(array)
+      imports: [java.util.concurrent.atomic.AtomicReferenceArray]
       classpathFromResources: [guava-33]
 
 ```

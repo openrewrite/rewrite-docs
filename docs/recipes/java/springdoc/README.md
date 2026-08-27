@@ -1,8 +1,10 @@
 ---
-description: Springdoc OpenRewrite recipes.
+description: SpringDoc OpenRewrite recipes.
 ---
 
-# Springdoc
+# SpringDoc
+
+_Recipes for migrating from SpringFox and Swagger to [springdoc-openapi](https://springdoc.org/)._
 
 ## Composite Recipes
 

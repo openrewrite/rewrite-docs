@@ -1,8 +1,10 @@
 ---
-description: Security7 OpenRewrite recipes.
+description: Spring Security 7.x OpenRewrite recipes.
 ---
 
-# Security7
+# Spring Security 7.x
+
+_Recipes for migrating to [Spring Security 7](https://spring.io/projects/spring-security)._
 
 ## Composite Recipes
 

@@ -22,6 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find OpenRewrite recipes](./findrecipes.md)
 * [Find missing `@Option` `example` values](./missingoptionexample.md)
 * [Generate `InlineMethodCalls` recipes for deprecated delegating methods](./generatedeprecatedmethodrecipes.md)
+* [Inline nested visitor classes into the returning method](./inlinenestedvisitorclass.md)
 * [Make declarative recipes singletons](./declarativesingleton.md)
 * [Migrate tests to Java 21](./upgradeteststojava21.md)
 * [Minimal indentation for `SourceSpecs` text blocks](./sourcespectextblockindentation.md)

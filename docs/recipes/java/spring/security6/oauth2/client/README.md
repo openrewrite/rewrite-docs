@@ -1,8 +1,10 @@
 ---
-description: Client OpenRewrite recipes.
+description: OAuth2 Client OpenRewrite recipes.
 ---
 
-# Client
+# OAuth2 Client
+
+_Recipes for the [OAuth2 client](https://docs.spring.io/spring-security/reference/servlet/oauth2/client/index.html) in Spring Security._
 
 ## Recipes
 

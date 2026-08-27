@@ -4,6 +4,8 @@ description: Spring Boot 3.x OpenRewrite recipes.
 
 # Spring Boot 3.x
 
+_Recipes for migrating to [Spring Boot 3](https://spring.io/projects/spring-boot)._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

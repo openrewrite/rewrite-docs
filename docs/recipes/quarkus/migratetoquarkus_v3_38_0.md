@@ -68,6 +68,13 @@ recipeList:
 </TabItem>
 </Tabs>
 
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Quarkus Updates Aggregate 3.39.0](/recipes/quarkus/migratetoquarkus_v3_39_0.md)
+
+
 ## Usage
 
 <RunRecipe

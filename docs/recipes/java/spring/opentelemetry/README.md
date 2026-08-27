@@ -1,8 +1,10 @@
 ---
-description: Opentelemetry OpenRewrite recipes.
+description: OpenTelemetry OpenRewrite recipes.
 ---
 
-# Opentelemetry
+# OpenTelemetry
+
+_Recipes for migrating Spring observability to [OpenTelemetry](https://opentelemetry.io/)._
 
 ## Composite Recipes
 

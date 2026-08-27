@@ -13,6 +13,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Remove the use of invalid JNDI properties from Hashtable._
 
+### Tags
+
+* [websphere](/reference/recipes-by-tag#websphere)
+* [liberty](/reference/recipes-by-tag#liberty)
+
 ## Recipe source
 
 [GitHub: RemoveWas2LibertyNonPortableJndiLookup.java](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/java/org/openrewrite/java/liberty/RemoveWas2LibertyNonPortableJndiLookup.java),

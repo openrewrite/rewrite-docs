@@ -1,8 +1,10 @@
 ---
-description: Liberty OpenRewrite recipes.
+description: Open Liberty OpenRewrite recipes.
 ---
 
-# Liberty
+# Open Liberty
+
+_Recipes to perform [Open Liberty](https://openliberty.io/) migration tasks._
 
 ## Composite Recipes
 

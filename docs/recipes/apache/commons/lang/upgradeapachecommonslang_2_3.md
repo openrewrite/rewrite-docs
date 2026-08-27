@@ -100,6 +100,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Apache Commons best practices](/recipes/apache/commons/apachecommonsbestpractices.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
 
 ## Examples

@@ -82,6 +82,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Use primitive wrapper `valueOf` method](../staticanalysis/primitivewrapperclassconstructortovalueof)
 * [Redundant file creation](../staticanalysis/redundantfilecreation)
 * [Remove extra semicolons](../staticanalysis/removeextrasemicolons)
+* [Remove no argument `super()` constructor calls](../staticanalysis/removenoargumentsuperconstructorcall)
 * [Remove redundant null checks before instanceof](../staticanalysis/removeredundantnullcheckbeforeinstanceof)
 * [Remove redundant null checks before literal equals](../staticanalysis/removeredundantnullcheckbeforeliteralequals)
 * [Rename methods named `hashcode`, `equal`, or `tostring`](../staticanalysis/renamemethodsnamedhashcodeequalortostring)
@@ -170,6 +171,7 @@ recipeList:
   - org.openrewrite.staticanalysis.PrimitiveWrapperClassConstructorToValueOf
   - org.openrewrite.staticanalysis.RedundantFileCreation
   - org.openrewrite.staticanalysis.RemoveExtraSemicolons
+  - org.openrewrite.staticanalysis.RemoveNoArgumentSuperConstructorCall
   - org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeInstanceof
   - org.openrewrite.staticanalysis.RemoveRedundantNullCheckBeforeLiteralEquals
   - org.openrewrite.staticanalysis.RenameMethodsNamedHashcodeEqualOrToString

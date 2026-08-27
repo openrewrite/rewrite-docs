@@ -39,6 +39,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Add Spring Boot 4.0 modular starter dependencies](/recipes/java/spring/boot4/addmodularstarterdependencies.md)
 * [Add Spring Boot 4.0 modular starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/addmodularstarters)
 * [Add explicit Common Annotations dependencies](/recipes/java/migrate/javax/addcommonannotationsdependencies.md)
 * [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
@@ -71,6 +72,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Session Hazelcast to Hazelcast Spring Session](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratehazelcastspringsession)
 * [Migrate Spring Validation to Quarkus](/recipes/quarkus/spring/migratespringvalidation.md)
 * [Migrate Tag Libraries to 2.0 (Jakarta EE 9)](/recipes/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
+* [Migrate `jackson-datatype-hibernate6` to `jackson-datatype-hibernate7`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejacksondatatypehibernate6to7)
 * [Migrate com.intellij:annotations to org.jetbrains:annotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
 * [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
 * [Migrate dependencies from Jackson Codehaus (legacy) to FasterXML](/recipes/java/jackson/codehaus/codehausdependencytofasterxml.md)
@@ -160,7 +162,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.4 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_4-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
-* [Migrate to Spring Boot 4.0 modular starters (Community Edition)](/recipes/java/spring/boot4/migratetomodularstarters-community-edition.md)
 * [Migrate to Spring Boot 4.0 modular starters (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratetomodularstarters-moderne-edition)
 * [Migrates `camel 4.16` application to `camel 4.17`](/recipes/quarkus/updates/camel/camel417/camelquarkusmigrationrecipe.md)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
@@ -191,12 +192,14 @@ This recipe is used as part of the following composite recipes:
 * [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
 * [Update Prometheus Pushgateway Dependency Coordinates](/recipes/java/spring/boot3/updateprometheuspushgateway.md)
 * [Update RestLet to 2.6.0](/recipes/java/migrate/jakarta/updaterestlet2_6.md)
+* [Update Spring Cloud Contract coordinates to Stubborn Contract](/recipes/sh/stubborn/contract/migration/updatedependencies.md)
 * [Update Tapestry dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/tapestry/updatetapestrydependencies)
 * [Upgrade Hibernate to 6.6](/recipes/oracle/weblogic/rewrite/hibernate/upgradehibernateto66.md)
 * [Upgrade Jackson 2.x dependencies to 3.x](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
 * [Upgrade Struts 6.0 dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/upgradestruts6dependencies)
 * [Upgrade WireMock to 3.x](/recipes/java/testing/wiremock/upgradewiremockdependencyversion.md)
 * [Upgrade dependencies to Spring Cloud 2022](/recipes/java/spring/cloud2022/dependencyupgrades.md)
+* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
 * [Upgrade to Cucumber-JVM 2.x](/recipes/cucumber/jvm/upgradecucumber2x.md)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)

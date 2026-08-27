@@ -41,6 +41,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.springframework`
   * artifactId: `*`
   * newVersion: `7.0.x`
+* [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY`
+  * fullyQualifiedConstantName: `org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT`
 * [JUnit 6 migration from JUnit 5.x](../../../java/testing/junit6/junit5to6migration)
 * [Migrates from Jackson 2.x to Jackson 3.x](../../../java/jackson/upgradejackson_2_3)
 * [Migrate to Spring Kafka 4.0](../../../java/spring/kafka/upgradespringkafka_4_0)
@@ -65,6 +68,9 @@ recipeList:
       groupId: org.springframework
       artifactId: "*"
       newVersion: 7.0.x
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY
+      fullyQualifiedConstantName: org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT
   - org.openrewrite.java.testing.junit6.JUnit5to6Migration
   - org.openrewrite.java.jackson.UpgradeJackson_2_3
   - org.openrewrite.java.spring.kafka.UpgradeSpringKafka_4_0

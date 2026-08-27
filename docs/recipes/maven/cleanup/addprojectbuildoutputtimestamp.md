@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | timestamp | *Optional*. ISO 8601 timestamp, integer seconds since the epoch, or property reference such as `${git.commit.author.time}`. Defaults to `1980-01-01T00:00:00Z`, the earliest value the ZIP format can represent. | `2024-01-01T00:00:00Z` |
+| `String` | timestamp | *Optional*. ISO 8601 timestamp, integer seconds since the epoch, or property reference such as `${git.commit.author.time}`. Defaults to `1980-01-01T00:00:02Z`, the earliest value accepted by Maven's ZIP-producing toolchain. | `2024-01-01T00:00:00Z` |
 
 
 ## Definition
@@ -34,7 +34,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <TabItem value="recipe-list" label="Recipe List" >
 * [Add Maven project property](../../maven/addproperty)
   * key: `project.build.outputTimestamp`
-  * value: `1980-01-01T00:00:00Z`
+  * value: `1980-01-01T00:00:02Z`
   * preserveExistingValue: `true`
   * trustParent: `false`
 
@@ -53,7 +53,7 @@ description: |
 recipeList:
   - org.openrewrite.maven.AddProperty:
       key: project.build.outputTimestamp
-      value: 1980-01-01T00:00:00Z
+      value: 1980-01-01T00:00:02Z
       preserveExistingValue: true
       trustParent: false
 
@@ -95,7 +95,7 @@ This recipe is used as part of the following composite recipes:
   <artifactId>my-app</artifactId>
   <version>1</version>
   <properties>
-    <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1980-01-01T00:00:02Z</project.build.outputTimestamp>
   </properties>
 </project>
 ```
@@ -110,7 +110,7 @@ This recipe is used as part of the following composite recipes:
   <artifactId>my-app</artifactId>
   <version>1</version>
 + <properties>
-+   <project.build.outputTimestamp>1980-01-01T00:00:00Z</project.build.outputTimestamp>
++   <project.build.outputTimestamp>1980-01-01T00:00:02Z</project.build.outputTimestamp>
 + </properties>
 </project>
 ```

@@ -13,6 +13,11 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Use this category of rules to identify code changes needed when migrating from WebSphere Application Server traditional to Liberty._
 
+### Tags
+
+* [websphere](/reference/recipes-by-tag#websphere)
+* [liberty](/reference/recipes-by-tag#liberty)
+
 ## Recipe source
 
 [GitHub: was-to-liberty.yml](https://github.com/openrewrite/rewrite-liberty/blob/main/src/main/resources/META-INF/rewrite/was-to-liberty.yml),
@@ -38,6 +43,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Use correct connector namespace values](../../xml/liberty/connectorddnamespacerule)
 * [Use correct ejb-jar namespace values](../../xml/liberty/ejbddnamespacerule)
 * [Move persistence.xml file](../../xml/liberty/persistencexmllocationrule)
+* [Replace beans.xml file](../../xml/liberty/webbeansxmlrule)
 * [Use correct web-app namespace values](../../xml/liberty/webddnamespacerule)
 * [Add Liberty Maven plugin](../../maven/liberty/addopenlibertyplugin)
 
@@ -52,6 +58,9 @@ name: org.openrewrite.java.liberty.MigrateFromWebSphereToLiberty
 displayName: Migrate from WebSphere traditional to Liberty
 description: |
   Use this category of rules to identify code changes needed when migrating from WebSphere Application Server traditional to Liberty.
+tags:
+  - websphere
+  - liberty
 recipeList:
   - org.openrewrite.java.liberty.RemoveWas2LibertyNonPortableJndiLookup
   - org.openrewrite.java.liberty.ReplaceWSPrincipalGetCredential
@@ -61,12 +70,124 @@ recipeList:
   - org.openrewrite.xml.liberty.ConnectorDDNamespaceRule
   - org.openrewrite.xml.liberty.EJBDDNamespaceRule
   - org.openrewrite.xml.liberty.PersistenceXmlLocationRule
+  - org.openrewrite.xml.liberty.WebBeansXmlRule
   - org.openrewrite.xml.liberty.WebDDNamespaceRule
   - org.openrewrite.maven.liberty.AddOpenLibertyPlugin
 
 ```
 </TabItem>
 </Tabs>
+## Examples
+##### Example 1
+`MigrateFromWebSphereToLibertyTest#replacesOpenWebBeansSchema`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/META-INF/beans.xml" label="src/main/resources/META-INF/beans.xml">
+
+
+###### Before
+```xml title="src/main/resources/META-INF/beans.xml"
+<WebBeans xmlns="urn:java:ee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="
+              urn:java:ee http://java.sun.com/jee/beans-1.0.xsd">
+  <!-- some beans here -->
+</WebBeans>
+```
+
+###### After
+```xml title="src/main/resources/META-INF/beans.xml"
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
+  <!-- some beans here -->
+</beans>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/META-INF/beans.xml
++++ src/main/resources/META-INF/beans.xml
+@@ -1,1 +1,1 @@
+-<WebBeans xmlns="urn:java:ee"
++<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -3,2 +3,1 @@
+<WebBeans xmlns="urn:java:ee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-         xsi:schemaLocation="
+-             urn:java:ee http://java.sun.com/jee/beans-1.0.xsd">
++         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
+  <!-- some beans here -->
+@@ -6,1 +5,1 @@
+              urn:java:ee http://java.sun.com/jee/beans-1.0.xsd">
+  <!-- some beans here -->
+-</WebBeans>
++</beans>
+
+```
+</TabItem>
+</Tabs>
+
+---
+
+##### Example 2
+`MigrateFromWebSphereToLibertyTest#replacesOpenWebBeansSchema`
+
+
+<Tabs groupId="beforeAfter">
+<TabItem value="src/main/resources/META-INF/beans.xml" label="src/main/resources/META-INF/beans.xml">
+
+
+###### Before
+```xml title="src/main/resources/META-INF/beans.xml"
+<WebBeans xmlns="urn:java:ee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="
+              urn:java:ee http://java.sun.com/jee/beans-1.0.xsd">
+  <!-- some beans here -->
+</WebBeans>
+```
+
+###### After
+```xml title="src/main/resources/META-INF/beans.xml"
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
+  <!-- some beans here -->
+</beans>
+```
+
+</TabItem>
+<TabItem value="diff" label="Diff" >
+
+```diff
+--- src/main/resources/META-INF/beans.xml
++++ src/main/resources/META-INF/beans.xml
+@@ -1,1 +1,1 @@
+-<WebBeans xmlns="urn:java:ee"
++<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+@@ -3,2 +3,1 @@
+<WebBeans xmlns="urn:java:ee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-         xsi:schemaLocation="
+-             urn:java:ee http://java.sun.com/jee/beans-1.0.xsd">
++         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd">
+  <!-- some beans here -->
+@@ -6,1 +5,1 @@
+              urn:java:ee http://java.sun.com/jee/beans-1.0.xsd">
+  <!-- some beans here -->
+-</WebBeans>
++</beans>
+
+```
+</TabItem>
+</Tabs>
+
 
 ## Usage
 

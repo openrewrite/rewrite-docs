@@ -32,6 +32,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 | --- | --- | --- | --- |
 | `String` | encoding | *Optional*. The default encoding to use, must be a standard charset. | `UTF_8` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Apache Commons best practices](/recipes/apache/commons/apachecommonsbestpractices.md)
+
 ## Example
 
 ###### Parameters

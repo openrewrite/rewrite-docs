@@ -4,15 +4,17 @@ description: Maven OpenRewrite recipes.
 
 # Maven
 
+_Recipes to search and transform [Apache Maven](https://maven.apache.org/) POMs._
+
 ## Categories
 
 * [Cleanup](/recipes/maven/cleanup)
-* [Liberty](/recipes/maven/liberty)
-* [Plugin](/recipes/maven/plugin)
+* [Maven Plugins](/recipes/maven/plugin)
+* [Maven Utilities](/recipes/maven/utilities)
+* [Open Liberty](/recipes/maven/liberty)
 * [Search](/recipes/maven/search)
 * [Security](/recipes/maven/security)
 * [Spring](/recipes/maven/spring)
-* [Utilities](/recipes/maven/utilities)
 
 ## Composite Recipes
 

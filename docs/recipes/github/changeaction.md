@@ -28,7 +28,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | oldAction | Name of the action to match. | `gradle/wrapper-validation-action` |
 | `String` | oldSha | *Optional*. Restricts the change by the existing `uses:` ref. When omitted, the action is changed regardless of how it is pinned (the default; commit SHA pins are rewritten). When set to an empty string, only references that are **not** pinned to a 40-character commit SHA are changed, leaving deliberate SHA pins on the original action untouched. When set to a specific commit SHA, only references pinned to exactly that SHA are changed. | `8f4b7f84864484a7bf31766abe9204da3cbe65b3` |
 | `String` | newAction | Name of the action to use instead. | `gradle/actions/wrapper-validation` |
-| `String` | newVersion | New version to use. | `v3` |
+| `String` | newVersion | *Optional*. New version to use. When omitted, preserve the existing ref. | `v3` |
 
 
 ## Used by

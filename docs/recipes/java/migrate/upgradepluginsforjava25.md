@@ -58,14 +58,33 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-failsafe-plugin`
   * newVersion: `3.5.x`
-* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
-  * groupId: `org.apache.maven.plugins`
-  * artifactId: `maven-pmd-plugin`
-  * newVersion: `3.28.x`
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `net.bytebuddy`
   * artifactId: `byte-buddy*`
   * newVersion: `1.17.x`
+* [Change Maven plugin group and artifact ID](../../maven/changeplugingroupidandartifactid)
+  * oldGroupId: `org.codehaus.mojo`
+  * oldArtifactId: `aspectj-maven-plugin`
+  * newGroupId: `dev.aspectj`
+  * newVersion: `1.14.x`
+* [Add Maven plugin dependencies](../../maven/addplugindependency)
+  * pluginGroupId: `dev.aspectj`
+  * pluginArtifactId: `aspectj-maven-plugin`
+  * groupId: `org.aspectj`
+  * artifactId: `aspectjtools`
+  * version: `1.9.25.1`
+* [Change XML tag value](../../xml/changetagvalue)
+  * elementName: `//plugin[artifactId='aspectj-maven-plugin']/configuration/complianceLevel`
+  * newValue: `25`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.aspectj`
+  * artifactId: `aspectj*`
+  * newVersion: `1.9.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.mockito`
+  * oldArtifactId: `mockito-inline`
+  * newArtifactId: `mockito-core`
+* [Remove duplicate Maven dependencies](../../maven/removeduplicatedependencies)
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mockito`
   * artifactId: `mockito-*`
@@ -106,14 +125,33 @@ recipeList:
       groupId: org.apache.maven.plugins
       artifactId: maven-failsafe-plugin
       newVersion: 3.5.x
-  - org.openrewrite.maven.UpgradePluginVersion:
-      groupId: org.apache.maven.plugins
-      artifactId: maven-pmd-plugin
-      newVersion: 3.28.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: net.bytebuddy
       artifactId: byte-buddy*
       newVersion: 1.17.x
+  - org.openrewrite.maven.ChangePluginGroupIdAndArtifactId:
+      oldGroupId: org.codehaus.mojo
+      oldArtifactId: aspectj-maven-plugin
+      newGroupId: dev.aspectj
+      newVersion: 1.14.x
+  - org.openrewrite.maven.AddPluginDependency:
+      pluginGroupId: dev.aspectj
+      pluginArtifactId: aspectj-maven-plugin
+      groupId: org.aspectj
+      artifactId: aspectjtools
+      version: 1.9.25.1
+  - org.openrewrite.xml.ChangeTagValue:
+      elementName: //plugin[artifactId='aspectj-maven-plugin']/configuration/complianceLevel
+      newValue: 25
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.aspectj
+      artifactId: aspectj*
+      newVersion: 1.9.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.mockito
+      oldArtifactId: mockito-inline
+      newArtifactId: mockito-core
+  - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mockito
       artifactId: mockito-*

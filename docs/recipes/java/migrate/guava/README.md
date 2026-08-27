@@ -71,7 +71,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Prefer `java.util.function.Function`](./preferjavautilfunction.md)
 * [Prefer `java.util.function.Supplier`](./preferjavautilsupplier.md)
 * [Prefer `new ArrayList&lt;&gt;()`](./noguavalistsnewarraylist.md)
-* [Prefer `new AtomicReference&lt;&gt;()`](./noguavaatomicsnewreference.md)
 * [Prefer `new ConcurrentHashMap&lt;&gt;()`](./noguavasetsnewconcurrenthashset.md)
 * [Prefer `new CopyOnWriteArrayList&lt;&gt;()`](./noguavalistsnewcopyonwritearraylist.md)
 * [Prefer `new HashMap&lt;&gt;()`](./noguavamapsnewhashmap.md)

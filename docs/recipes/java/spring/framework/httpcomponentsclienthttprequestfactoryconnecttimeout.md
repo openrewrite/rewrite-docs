@@ -1,23 +1,27 @@
 ---
-title: "Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`"
-sidebar_label: "Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`"
+title: "Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`"
+sidebar_label: "Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`
+# Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`
 
 **org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryConnectTimeout**
 
-_`setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7.0. This recipe adds a comment directing users to migrate to `ConnectionConfig.setConnectTimeout()` on the `PoolingHttpClientConnectionManager`._
+_`setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7.0. This recipe migrates local `PoolingHttpClientConnectionManager` instances that are wired into the request factory, and adds a comment when the configuration is not safe to migrate automatically._
 
 ## Recipe source
 
 [GitHub: spring-framework-62.yml](https://github.com/openrewrite/rewrite-spring/blob/main/src/main/resources/META-INF/rewrite/spring-framework-62.yml),
 [Issue Tracker](https://github.com/openrewrite/rewrite-spring/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-spring/)
+
+:::info
+This recipe is composed of more than one recipe. If you want to customize the set of recipes this is composed of, you can find and copy the GitHub source for the recipe from the link above.
+:::
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
@@ -26,6 +30,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+* [Move `setConnectTimeout(int)` to a locally wired `ConnectionConfig`](../../../java/spring/framework/moveconnecttimeouttoconnectionconfig)
 * [Add comment to method invocations](../../../java/addcommenttomethodinvocations)
   * comment: `TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748`
   * methodPattern: `org.springframework.http.client.HttpComponentsClientHttpRequestFactory setConnectTimeout(..)`
@@ -38,10 +43,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryConnectTimeout
-displayName: Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`
+displayName: Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`
 description: |
-  `setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7.0. This recipe adds a comment directing users to migrate to `ConnectionConfig.setConnectTimeout()` on the `PoolingHttpClientConnectionManager`.
+  `setConnectTimeout(..)` was deprecated in Spring Framework 6.2 and removed in 7.0. This recipe migrates local `PoolingHttpClientConnectionManager` instances that are wired into the request factory, and adds a comment when the configuration is not safe to migrate automatically.
 recipeList:
+  - org.openrewrite.java.spring.framework.MoveConnectTimeoutToConnectionConfig
   - org.openrewrite.java.AddCommentToMethodInvocations:
       comment: TODO: `setConnectTimeout` was removed in Spring Framework 7.0. Set `ConnectionConfig.Builder.setConnectTimeout(Timeout)` on the connection manager when building the HttpClient; see https://hc.apache.org/httpcomponents-client-5.6.x/migration-guide/migration-to-classic.html and https://github.com/spring-projects/spring-framework/issues/35748
       methodPattern: org.springframework.http.client.HttpComponentsClientHttpRequestFactory setConnectTimeout(..)
@@ -156,7 +162,7 @@ class Example {
 
 <RunRecipe
   recipeName="org.openrewrite.java.spring.framework.HttpComponentsClientHttpRequestFactoryConnectTimeout"
-  displayName="Migrate `setConnectTimeout(..)` to ConnectionConfig `setConnectTimeout(..)`"
+  displayName="Migrate `setConnectTimeout(int)` to ConnectionConfig `setConnectTimeout(..)`"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"

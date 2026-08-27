@@ -1,8 +1,10 @@
 ---
-description: Plugins OpenRewrite recipes.
+description: Gradle Plugins OpenRewrite recipes.
 ---
 
-# Plugins
+# Gradle Plugins
+
+_Recipes to add, remove, and upgrade [Gradle plugins](https://docs.gradle.org/current/userguide/plugins.html)._
 
 ## Composite Recipes
 

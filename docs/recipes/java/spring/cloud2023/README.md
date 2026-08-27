@@ -4,6 +4,8 @@ description: Spring Cloud 2023 OpenRewrite recipes.
 
 # Spring Cloud 2023
 
+_Recipes for migrating to Spring Cloud 2023._
+
 ## Composite Recipes
 
 _Recipes that include further recipes, often including the individual recipes below._

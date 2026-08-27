@@ -42,7 +42,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate the use of TaskExecutors with blocking IO](./updateblockingtaskexecutors.md)
 * [`Provider` implementation beans to Micronaut `@Factory`](./providerimplementationstomicronautfactories.md)
 * [Remove Maven annotation processor path](./removeannotationprocessorpath.md)
-* [Remove unnecessary dependencies](./removeunnecessarydependencies.md)
 * [Remove unused YAML keys in config files](./removeunusedinconfigfiles.md)
 * [Remove withJansi Logback configuration](./removewithjansilogbackconfiguration.md)
 * [Update relocated Micronaut Security config properties](./updatesecuritypropertiesifneeded.md)

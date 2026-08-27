@@ -1,8 +1,10 @@
 ---
-description: Gradle9 OpenRewrite recipes.
+description: Gradle 9 OpenRewrite recipes.
 ---
 
-# Gradle9
+# Gradle 9
+
+_Recipes to migrate to [Gradle 9](https://docs.gradle.org/9.0.0/release-notes.html)._
 
 ## Composite Recipes
 
