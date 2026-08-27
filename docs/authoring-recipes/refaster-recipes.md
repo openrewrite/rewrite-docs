@@ -80,7 +80,7 @@ Moderne provides a [starter recipe repository](https://github.com/moderneinc/rew
 The first thing you'll need to do is update your dependencies and add an annotation processor. Below are the minimum recommended dependencies to include in your project:
 
 :::info
-The rewrite modules below are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. If you haven't already, declare that repository and your `gradle.properties` credentials as described in the [recipe development environment guide](./recipe-development-environment.md#dependencies--dependency-management).
+The rewrite modules below are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. If you haven't already, declare that repository and your credentials as described in the [recipe development environment guide](./recipe-development-environment.md#dependencies--dependency-management).
 :::
 
 <Tabs groupId="projectType">

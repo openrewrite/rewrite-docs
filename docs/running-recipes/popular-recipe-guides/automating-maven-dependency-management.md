@@ -12,6 +12,7 @@ OpenRewrite can help. In this tutorial, we'll learn how to automate common depen
 
 1. Clone our fork of [spring-petclinic](https://github.com/openrewrite/spring-petclinic-migration), or select your own project.
 2. Familiarize yourself with the basics of applying the `rewrite-maven-plugin` as described in our [quickstart guide](../getting-started.md).
+3. Declare the [Code Genome Project](https://artifacts.codegenomeproject.org/maven) repository that `rewrite-maven-plugin` and the recipe artifacts are distributed through, and add your credentials to `settings.xml`. See [step 2 of the quickstart guide](../getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for the exact snippets.
 
 :::warning
 The sample `spring-petclinic` project is based on an older version of the project that requires a JDK version 1.8 to build. Newer JDK versions will not work. Get OpenJDK 8 [here](https://adoptopenjdk.net/) if you do not already have one.
@@ -98,7 +99,7 @@ And set the `com.yourorg.UseSlf4jSimple` recipe as active in your `pom.xml`:
 <plugin>
     <groupId>org.openrewrite.maven</groupId>
     <artifactId>rewrite-maven-plugin</artifactId>
-    <version>5.41.0</version>
+    <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
     <configuration>
         <activeRecipes>
             <recipe>com.yourorg.UseSlf4jSimple</recipe>
