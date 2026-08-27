@@ -36,19 +36,20 @@ Please keep these conventions in mind when you're creating OpenRewrite YAML file
 ### Format
 
 :::info
-You can find the full recipe schema [here](https://github.com/openrewrite/rewrite/blob/241e146a8996a917a8a460b27d17136108b3d50a/rewrite-core/openrewrite.json#L32-L75).
+You can find the full schema for every resource type in [rewrite-core/openrewrite.json](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json).
 :::
 
-| Key                                                | Type                                                                                                        | Description                                                             |
-|----------------------------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| type                                               | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                       |
-| name                                               | string                                                                                                      | A fully qualified, unique name for this recipe                          |
-| displayName                                        | string                                                                                                      | A human-readable name for this recipe (does not end with a period)      |
-| description                                        | string                                                                                                      | A human-readable description for this recipe (ends with a period)       |
-| tags                                               | array of strings                                                                                            | A list of strings that help categorize this recipe                      |
-| estimatedEffortPerOccurrence                       | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something |
-| causesAnotherCycle                                 | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)  |
-| [recipeList](#recipe-list) | array of recipes                                                                                            | The list of recipes which comprise this recipe                          |
+| Key                             | Type                                                                                                        | Description                                                             |
+|---------------------------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| type                            | const                                                                                                       | A constant: `specs.openrewrite.org/v1beta/recipe`                       |
+| name                            | string                                                                                                      | A fully qualified, unique name for this recipe (**required**)           |
+| displayName                     | string                                                                                                      | A human-readable name for this recipe (does not end with a period)      |
+| description                     | string                                                                                                      | A human-readable description for this recipe (ends with a period)       |
+| tags                            | array of strings                                                                                            | A list of strings that help categorize this recipe                      |
+| estimatedEffortPerOccurrence    | [duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html#parse-java.lang.CharSequence-) | The expected amount of time saved each time this recipe fixes something |
+| causesAnotherCycle              | boolean                                                                                                     | Whether or not this recipe can cause another cycle (defaults to false)  |
+| [preconditions](#preconditions) | array of recipes                                                                                            | Recipes that gate which source files this recipe may edit               |
+| [recipeList](#recipe-list)      | array of recipes                                                                                            | The list of recipes which comprise this recipe                          |
 
 ### Preconditions
 
@@ -255,13 +256,13 @@ If you wanted to run this recipe (but not distribute it to others), you would:
 ### Format
 
 :::info
-You can find the full style schema [here](https://github.com/openrewrite/rewrite/blob/241e146a8996a917a8a460b27d17136108b3d50a/rewrite-core/openrewrite.json#L126-L153).
+You can find the full style schema in [rewrite-core/openrewrite.json](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/openrewrite.json).
 :::
 
 | Key          | Type             | Description                                                       |
 |--------------|------------------|-------------------------------------------------------------------|
 | type         | const            | A constant: `specs.openrewrite.org/v1beta/style`                  |
-| name         | string           | A fully qualified, unique name for this style                     |
+| name         | string           | A fully qualified, unique name for this style (**required**)      |
 | displayName  | string           | A human-readable name for this style (does not end with a period) |
 | description  | string           | A human-readable description for this style (ends with a period)  |
 | tags         | array of strings | A list of strings that help categorize this style                 |
@@ -288,6 +289,88 @@ To put this style in effect for any formatting performed by OpenRewrite within t
 2. Configure the [gradle plugin](gradle-plugin-configuration.md) or [maven plugin](rewrite-maven-plugin.md) with `com.yourorg.YesTabsNoStarImports` listed as the active style
 
 The next time any OpenRewrite recipe is run in that project, any formatting it performs will take these styles into account.
+
+## Categories
+
+Categories control how recipes are grouped, named, and described in the recipe catalog. Every OpenRewrite language module ships one (for example `rewrite-yaml`'s `yaml-categories.yml`), and you can define your own so that your recipes are presented sensibly alongside them.
+
+### Format
+
+| Key         | Type             | Description                                                                     |
+|-------------|------------------|---------------------------------------------------------------------------------|
+| type        | const            | A constant: `specs.openrewrite.org/v1beta/category`                             |
+| packageName | string           | The package this category describes, e.g. `org.openrewrite.yaml` (**required**) |
+| name        | string           | A human-readable name for the category                                          |
+| description | string           | A human-readable description for the category (ends with a period)              |
+| tags        | array of strings | A list of strings that help categorize this category                            |
+| root        | boolean          | Whether this category is displayed as a top-level entry (defaults to false)     |
+| priority    | integer          | Sort order relative to sibling categories; lower sorts first (defaults to 0)    |
+
+### Category example
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/category
+name: Java
+packageName: com.yourorg.java
+description: Recipes for your organization's Java code.
+priority: 1
+```
+
+## Examples
+
+Examples attach before/after snippets to a recipe so that the generated recipe documentation can show what the recipe does. These are normally **generated** into a module's `META-INF/rewrite/examples.yml` from tests annotated with `@DocumentExample`, rather than written by hand — but it is useful to be able to read them.
+
+### Format
+
+| Key        | Type              | Description                                                       |
+|------------|-------------------|-------------------------------------------------------------------|
+| type       | const             | A constant: `specs.openrewrite.org/v1beta/example`                |
+| recipeName | string            | The fully qualified name of the recipe these examples demonstrate |
+| examples   | array of examples | One or more examples for that recipe                              |
+
+Each entry in `examples` accepts:
+
+| Key         | Type             | Description                                                                  |
+|-------------|------------------|------------------------------------------------------------------------------|
+| description | string           | A human-readable description, usually the originating test's name            |
+| parameters  | array of strings | The recipe options used, in declaration order, for recipes that take options |
+| sources     | array of sources | The source files the example operates on                                     |
+
+And each entry in `sources` accepts:
+
+| Key      | Type   | Description                                                               |
+|----------|--------|---------------------------------------------------------------------------|
+| before   | string | The source code before the recipe is run                                  |
+| after    | string | The source code after the recipe is run; omit it if the file is unchanged |
+| path     | string | The source file's path, where the recipe depends on it                    |
+| language | string | The source language, e.g. `java`, `yaml`, `xml`                           |
+
+### Example
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/example
+recipeName: org.openrewrite.yaml.AddCommentToProperty
+examples:
+- description: '`AddCommentToPropertyTest#addCommentToNestedProperty`'
+  parameters:
+  - management.metrics.enabled
+  - This property is deprecated
+  - 'null'
+  - 'null'
+  sources:
+  - before: |
+      management:
+        metrics:
+          enabled: true
+    after: |
+      management:
+        metrics:
+          # This property is deprecated
+          enabled: true
+    language: yaml
+```
 
 ## Testing
 

@@ -94,36 +94,32 @@ Refaster template recipes can also be used as a starting point for more complex 
 If you want to learn more about Refaster, in general, check out the [Error Prone Refaster docs](https://errorprone.info/docs/refaster). Please note, though, that not all annotations available in those docs are available in Moderne.
 :::
 
-A variety of refaster templates can be found in the [StringRules](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.1.1/src/main/java/org/openrewrite/java/migrate/lang/StringRules.java#L23-L48) class in `rewrite-migrate-java`:
+A variety of refaster templates can be found in the [StringRules](https://github.com/openrewrite/rewrite-migrate-java/blob/v3.42.1/src/main/java/org/openrewrite/java/migrate/lang/StringRules.java#L77-L96) class in `rewrite-migrate-java`:
 
 ```java
 @RecipeDescriptor(
-        name = "Replace redundant `String` method calls with self",
-        description = "Replace redundant `substring(..)` and `toString()` method calls with the `String` self."
-)
+        name = "Replace lower and upper case `String` comparisons with `String.equalsIgnoreCase(String)`",
+        description = "Replace `String` equality comparisons involving `.toLowerCase()` or `.toUpperCase()` with `String.equalsIgnoreCase(String anotherString)`.")
 @SuppressWarnings("StringOperationCanBeSimplified")
-public static class RedundantCall {
+public static class UseEqualsIgnoreCase {
     @BeforeTemplate
-    public String start(String string) {
-        return string.substring(0, string.length());
+    public boolean bothLowerCase(String string, String test) {
+        return string.toLowerCase().equals(test.toLowerCase());
     }
 
     @BeforeTemplate
-    public String startAndEnd(String string) {
-        return string.substring(0);
-    }
-
-    @BeforeTemplate
-    public String toString(String string) {
-        return string.toString();
+    public boolean bothUpperCase(String string, String test) {
+        return string.toUpperCase().equals(test.toUpperCase());
     }
 
     @AfterTemplate
-    public String self(String string) {
-        return string;
+    public boolean equalsIgnoreCase(String string, String test) {
+        return string.equalsIgnoreCase(test);
     }
 }
 ```
+
+A single template class can declare more than one `@BeforeTemplate`, as above - any of them matching will be replaced by the one `@AfterTemplate`.
 
 ## Imperative recipes
 

@@ -7,13 +7,13 @@ description: How to create recipes that examine many different types of files.
 
 When creating new recipes, you may find it desirable to examine multiple source files, potentially of different types, to make key decisions in your visitor. For example, you may want to look for a particular condition to be present in a Maven POM file and, if that condition is met, alter an application property in a YAML file.
 
-In situations like that, you should create a [ScanningRecipe](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java). In there, you'll then make an `accumulator` which visitors can read from and write to as needed. For a more thorough explanation of scanning recipes, please see [our recipe concepts doc](../concepts-and-explanations/recipes.md#scanning-recipes)
+In situations like that, you should create a [ScanningRecipe](https://github.com/openrewrite/rewrite/blob/main/rewrite-core/src/main/java/org/openrewrite/ScanningRecipe.java). In there, you'll then make an `accumulator` which visitors can read from and write to as needed. For a more thorough explanation of scanning recipes, please see [our recipe concepts doc](../concepts-and-explanations/recipes.md#scanning-recipes)
 
 Below you can find an example of a `ScanningRecipe` that does what we described earlier:
 
 ```java
 import org.openrewrite.*;
-import org.openrewrite.internal.lang.Nullable;
+import org.jspecify.annotations.Nullable;
 import org.openrewrite.yaml.YamlVisitor;
 
 public class MavenYamlRecipe extends ScanningRecipe<MavenYamlRecipe.Accumulator> {

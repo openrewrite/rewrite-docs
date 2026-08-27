@@ -55,18 +55,15 @@ try(InputStream rewriteInputStream = new FileInputStream(rewriteYml)) {
     System.getProperties()
   );
 
-  Iterable<Path> classpath = ...
-
-  // any manually built visitors
-  Iterable<? extends RefactorVisitor<?>> visitors = ...
-
   Environment env = Environment.builder()
     .load(rewriteYmlLoader) // can be called more than once for multiple files
-    .scanClasspath(classpath) // classpath scans for META-INF/rewrite/*.yml
-    .scanUserHome() // looks for `~/.rewrite/rewrite.yml
+    .scanRuntimeClasspath() // scans the runtime classpath for recipes and META-INF/rewrite/*.yml
+    .scanUserHome() // looks for `~/.rewrite/rewrite.yml`
     .build();
 }
 ```
+
+`scanRuntimeClasspath()` optionally accepts package names to restrict the scan. To load recipes from a JAR that is not on the runtime classpath, use `scanJar(Path jar, Collection<Path> dependencies, ClassLoader classLoader)` instead.
 
 Once an instance of the `Environment` has been created, it can be interrogated to list all available recipes and styles. There are also facilities for retrieving the recipe descriptions which provides a description of the recipe and its available options.
 

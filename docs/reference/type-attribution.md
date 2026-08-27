@@ -22,9 +22,9 @@ While these classes originate in the Java type system, OpenRewrite re-uses these
 
 ### JavaType.FullyQualified
 
-Many JavaType implementations share a common interface: `JavaType.FullyQualified`. This interface is implemented by `Annotation`, `Class`, `Parameterized`, `ShallowClass`, and `Unknown`.
+Many JavaType implementations share a common abstract base class: `JavaType.FullyQualified`. It is extended by `Annotation`, `Class`, `Parameterized`, `ShallowClass` (itself a subclass of `Class`), and `Unknown`.
 
-All implementations of this interface provide a fully qualified name of the class (e.g., `"java.util.List"`). Also, except for `ShallowClass` and `Unknown`, the other implementations further provide access to the type's supertype, interfaces, methods, fields, and other metadata.
+All subclasses provide a fully qualified name of the class (e.g., `"java.util.List"`). Also, except for `ShallowClass` and `Unknown`, the others further provide access to the type's supertype, interfaces, methods, fields, and other metadata.
 
 When working with types it is common to check if a type is a `FullyQualified` instance before accessing its fully qualified name or other structural information.
 
@@ -213,7 +213,7 @@ public J.MethodInvocation visitMethodInvocation(J.MethodInvocation method, Execu
         "get".equals(methodType.getName()) &&
         methodType.getDeclaringType().isAssignableTo("java.util.List") &&
         methodType.getParameterTypes().size() == 1 &&
-        TypeUtils.isOfTypePrimitive(JavaType.Primitive.Int, methodType.getParameterTypes().get(0))) {
+        TypeUtils.isOfType(JavaType.Primitive.Int, methodType.getParameterTypes().get(0))) {
         // This is a call to List.get(int)
     }
     return method;
@@ -302,7 +302,7 @@ void myRecipeTest() {
                 private static final Logger logger = LoggerFactory.getLogger(MyClass.class);
             
                 void doSomething() {
-                    log.info("Hello, world!");
+                    logger.info("Hello, world!");
                 }
             }
             """

@@ -24,9 +24,22 @@ public class MyCustomRecipe extends Recipe {
 
 You can decide to return a static value or a dynamic value based on the context of the recipe. For example, you could return a different value based on the size of the codebase or the number of files that will be modified by the recipe.
 
-:::warning
-Many OpenRewrite recipes use the `@Value` Lombok annotation – which adds the `final` modifier to the class declaration. Therefore, the method `Recipe#getEstimatedEffortPerOccurrence` cannot be overridden and the [default estimated time saved value](#default-estimated-time-saved) will be used.
-:::
+### Setting the effort on a Lombok `@Value` recipe
+
+Many OpenRewrite recipes use the `@Value` Lombok annotation, which generates a getter for every field. Rather than writing the override by hand, declare an initialized `estimatedEffortPerOccurrence` field and let Lombok generate the `getEstimatedEffortPerOccurrence()` method that satisfies the `Recipe` contract – the same way `displayName` and `description` are declared:
+
+```java
+@Value
+@EqualsAndHashCode(callSuper = false)
+public class MyCustomRecipe extends Recipe {
+
+    String displayName = "My custom recipe";
+    String description = "Does something useful.";
+    Duration estimatedEffortPerOccurrence = Duration.ofMinutes(10);
+
+    // ...
+}
+```
 
 ## Default estimated time saved
 

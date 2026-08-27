@@ -162,6 +162,41 @@ ChangeMethodName cmn = new ChangeMethodName("org..* existingName(..)", "someNewN
 MethodMatcher mm = new MethodMatcher("org.mockito.Matchers existingName()");
 ```
 
+### Matching overrides
+
+By default, a `MethodMatcher` matches only the method on the type named in the pattern. An override of that method on a subclass will not match.
+
+Pass `true` as a second constructor argument to also match overrides on subtypes. Given these two classes:
+
+```java
+package com.abc;
+
+class Parent {
+    public void method(String s) {
+    }
+}
+
+class Test extends Parent {
+    @Override
+    public void method(String s) {
+    }
+}
+```
+
+the two matchers below behave differently:
+
+```java
+// Matches only Parent.method(String)
+MethodMatcher exact = new MethodMatcher("com.abc.Parent method(String)");
+
+// Matches both Parent.method(String) and the override in Test
+MethodMatcher withOverrides = new MethodMatcher("com.abc.Parent method(String)", true);
+```
+
+:::tip
+If your pattern names an interface or a superclass and you want the recipe to act on implementations of it too, set `matchOverrides` to `true`.
+:::
+
 `MethodMatcher.matches()` has overloads that accept method declarations, method invocations, and constructor invocations. `matches()` returns `true` if the argument matches the method pattern the matcher was initialized with. They are frequently used by visitors to avoid making changes to LST elements other than those indicated by the method pattern.
 
 ```java

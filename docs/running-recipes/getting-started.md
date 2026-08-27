@@ -488,11 +488,7 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
 
 To check that everything worked correctly, run the command `gradle rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5.
 
-Please note, though, that your `build.gradle(.kts)` file _will not_ be updated as part of this. You will manually have to change the Spring and JUnit dependencies to reflect the appropriate versions.
-
-:::info
-Dependency management for Gradle is not yet available but this feature is on OpenRewrite's roadmap.
-:::
+OpenRewrite edits Gradle build files as well as source code, so your `build.gradle(.kts)` should have had its Spring and JUnit dependencies updated too. Recipes such as [AddDependency](../recipes/gradle/adddependency.md), [ChangeDependency](../recipes/gradle/changedependency.md), and [UpgradeDependencyVersion](../recipes/gradle/upgradedependencyversion.md) handle this, and migration recipes compose them.
 
 ## Next steps
 

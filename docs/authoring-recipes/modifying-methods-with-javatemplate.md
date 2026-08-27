@@ -278,7 +278,7 @@ public JavaIsoVisitor<ExecutionContext> getVisitor() {
 :::info
 Note: When building a template, if you use a type that's not a base Java type, you will need to specify what package that type comes from. In our case, since we're adding a `Date` to the `MethodDeclaration`, we need to specify that this is a `java.util.Date` and not some other type of date. You can do that by adding an `imports` function with the packages for the types used in the template.
 
-If your import is _not_ part of the JDK itself, you will need to specify a classpath so that the recipe will know where the function you're adding is coming from. You can do this via the `classpathFromResources` method such as in the [Migrate Hamcrest assertThat recipe](https://github.com/openrewrite/rewrite-testing-frameworks/blob/v2.0.9/src/main/java/org/openrewrite/java/testing/hamcrest/AssertThatBooleanToAssertJ.java#L55). 
+If your import is _not_ part of the JDK itself, you will need to specify a classpath so that the recipe will know where the function you're adding is coming from. You can do this via the `classpathFromResources` method such as in the [Migrate Hamcrest assertThat recipe](https://github.com/openrewrite/rewrite-testing-frameworks/blob/v3.44.0/src/main/java/org/openrewrite/java/testing/hamcrest/AssertThatBooleanToAssertJ.java#L49-L51). 
 
 Please note that you'll need to update your `build.gradle` or `pom.xml` file as described in the [using multiple versions of a library in a project guide](multiple-versions.md) to support this functionality.
 :::
@@ -370,7 +370,7 @@ public void setCustomerInfo(Date dateOfBirth, String firstName, String lastName)
 
 When making changes in a recipe, OpenRewrite tries to keep the existing styles as much as possible. However, there are times when that styling either doesn't exist (such as in our case) or when the style doesn't match what you want.
 
-To address this, you can use the [maybeAutoFormat function](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L69-L82). This function takes in a before and after state as well as the execution context. The before state is the current `methodDeclaration` and the after state is what we already defined above with the template.
+To address this, you can use the [maybeAutoFormat function](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-java/src/main/java/org/openrewrite/java/JavaVisitor.java#L66-L79). This function takes in a before and after state as well as the execution context. The before state is the current `methodDeclaration` and the after state is what we already defined above with the template.
 
 Using that function, we can change our visitor to fix the formatting of the body:
 

@@ -296,10 +296,6 @@ public class ExampleJunitTestClass {
 </TabItem>
 </Tabs>
 
-:::info
-Dependency management for Gradle is not currently available but this feature is on OpenRewrite's roadmap.
-:::
-
 ## Known Limitations
 
 Not every JUnit 4 feature or library has a direct JUnit Jupiter equivalent. In these cases, manual changes will be required after the automation has run. This list is not exhaustive. See the rewrite-testing-frameworks [issue tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues).

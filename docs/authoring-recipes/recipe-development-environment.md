@@ -82,6 +82,8 @@ dependencies {
     runtimeOnly("org.openrewrite:rewrite-java-8")
     runtimeOnly("org.openrewrite:rewrite-java-11")
     runtimeOnly("org.openrewrite:rewrite-java-17")
+    runtimeOnly("org.openrewrite:rewrite-java-21")
+    runtimeOnly("org.openrewrite:rewrite-java-25")
 
     // rewrite-maven dependency only necessary for Maven Recipe development
     implementation("org.openrewrite:rewrite-maven")
@@ -165,6 +167,16 @@ dependencies {
         <artifactId>rewrite-java-17</artifactId>
         <scope>runtime</scope>
     </dependency>
+    <dependency>
+        <groupId>org.openrewrite</groupId>
+        <artifactId>rewrite-java-21</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.openrewrite</groupId>
+        <artifactId>rewrite-java-25</artifactId>
+        <scope>runtime</scope>
+    </dependency>
 
     <!-- rewrite-maven dependency only necessary for Maven Recipe development -->
     <dependency>
@@ -239,7 +251,7 @@ rewrite-test uses [JUnit 5](https://junit.org/junit5/).
 :::
 
 :::tip
-rewrite-java-17, rewrite-java-11 and rewrite-java-8 can happily coexist on the same classpath. At runtime, the appropriate module for the current JDK will be selected.
+rewrite-java-8, rewrite-java-11, rewrite-java-17, rewrite-java-21, and rewrite-java-25 can happily coexist on the same classpath. At runtime, the appropriate module for the current JDK will be selected.
 :::
 
 ### Set Language Level and Bytecode Level

@@ -75,11 +75,11 @@ Most recipes are not universally applicable to every source file. For instance, 
 
 Instead of running your recipe on every file, you can have your recipe provide some context on when it should be run. By doing so, you'll not only make it so your recipe can be run on more files more quickly, but you'll also enhance the readability of your recipe. That, in turn, simplifies debugging and maintenance and leads to better recipes.
 
-To do this, you'll want to utilize the [Preconditions.check() method](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L30).
+To do this, you'll want to utilize the [Preconditions.check() method](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L26).
 
-For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/v2.0.4/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java#L44-L45), we add a check that ensures the Java version is 9 and that the file contains a `singleton` method. We can be confident that this recipe won't make changes if those preconditions do not apply.
+For instance, in the [MigrateCollectionsSingletonSet recipe](https://github.com/openrewrite/rewrite-migrate-java/blob/v3.42.1/src/main/java/org/openrewrite/java/migrate/util/MigrateCollectionsSingletonSet.java#L45-L48), we add a check that ensures the Java version is 9 and that the file contains a `singleton` method. We can be confident that this recipe won't make changes if those preconditions do not apply.
 
-You can use [Preconditions.and(), Preconditions.or(), and Preconditions.not()](https://github.com/openrewrite/rewrite/blob/v8.1.2/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L79-L123) to create more complex applicability criteria from simple building blocks.
+You can use [Preconditions.and(), Preconditions.or(), and Preconditions.not()](https://github.com/openrewrite/rewrite/blob/v8.90.4/rewrite-core/src/main/java/org/openrewrite/Preconditions.java#L41-L56) to create more complex applicability criteria from simple building blocks.
 
 :::tip
 Preconditions benefit recipe execution performance when they efficiently prevent unnecessary execution of a more computationally expensive visitor.
@@ -127,7 +127,7 @@ Visitors can remove LST elements by returning `null` when visiting the element t
 
 Conversely, visiting an LST and returning a copy whose fields are all identical to the original LST looks to OpenRewrite like a change when no change has been made. Typical consequences include excessive recipe execution time due to wasted computation, test failures, and empty patches/diffs. The most common way this happens is that a recipe author instantiates collections of LST elements directly, uses Java `streams`, Kotlin `sequences`, or similar methods. OpenRewrite provides the `ListUtils` class which includes referential-equality conscious data access and manipulation faculties that avoid unnecessary memory allocations.
 
-For instance, in the [UnnecessaryCatch recipe](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryCatch.java), we [utilize ListUtils.flatMap](https://github.com/openrewrite/rewrite/blob/v7.34.3/rewrite-java/src/main/java/org/openrewrite/java/cleanup/UnnecessaryCatch.java#L50-L57) to flatten all of the statements in a block down to one level. We then make changes if that statement matches a `J.Try` with `ListUtils.map`. If this usage of `ListUtils` were replaced with a superficially equivalent Java `stream().map().collect()`, it would always allocate a new list and trigger OpenRewrite to detect and misreport an empty change where no real change was intended.
+For instance, in the [UnnecessaryCatch recipe](https://github.com/openrewrite/rewrite-static-analysis/blob/v2.41.1/src/main/java/org/openrewrite/staticanalysis/UnnecessaryCatch.java), we [utilize ListUtils.flatMap](https://github.com/openrewrite/rewrite-static-analysis/blob/v2.41.1/src/main/java/org/openrewrite/staticanalysis/UnnecessaryCatch.java#L64-L73) to flatten all of the statements in a block down to one level. We then make changes if that statement matches a `J.Try` with `ListUtils.map`. If this usage of `ListUtils` were replaced with a superficially equivalent Java `stream().map().collect()`, it would always allocate a new list and trigger OpenRewrite to detect and misreport an empty change where no real change was intended.
 
 :::tip
 No recipe/visitor should ever mutate any part of the LST passed into it.
