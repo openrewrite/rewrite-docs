@@ -303,7 +303,7 @@ Categories control how recipes are grouped, named, and described in the recipe c
 | name        | string           | A human-readable name for the category                                          |
 | description | string           | A human-readable description for the category (ends with a period)              |
 | tags        | array of strings | A list of strings that help categorize this category                            |
-| root        | boolean          | Whether this category is displayed as a top-level entry (defaults to false)     |
+| root        | boolean          | Whether this package is only a naming prefix; see [root categories](#root-categories) (defaults to false) |
 | priority    | integer          | Sort order relative to sibling categories; lower sorts first (defaults to 0)    |
 
 ### Category example
@@ -316,6 +316,47 @@ packageName: com.yourorg.java
 description: Recipes for your organization's Java code.
 priority: 1
 ```
+
+### How recipes are placed in categories
+
+A recipe's position in the catalog comes from its name: every package segment ahead of the final class name becomes one level of nesting. `com.yourorg.java.MigrateToSpringBoot3` sits under `com` > `yourorg` > `java`.
+
+For each of those levels OpenRewrite looks for a category whose `packageName` matches the package *up to and including* that segment. Where one exists, its `name`, `description`, and `priority` are used; where none exists, a category is synthesized from the segment with its first letter capitalized. That is why an undeclared package shows up in the catalog as **Yourorg** rather than something readable.
+
+Matching is against the whole partial package, never a bare segment: a category for `com.yourorg` describes `com.yourorg` only, and does not apply to a `yourorg` segment appearing anywhere else.
+
+### Root categories
+
+`root: true` marks a package as a naming prefix rather than a category. A root category is not displayed at all; its subcategories are lifted into its parent, which for a top-level prefix means the top of the catalog. This is what keeps `org.openrewrite.java` recipes under **Java** instead of burying them under **Org** > **Openrewrite** > **Java**.
+
+`rewrite-core` ships root categories for the reverse DNS prefixes it knows about — `com`, `org`, `io`, `ai`, `tech`, and `software`. Newer versions also root common generic and country code top-level domains, such as `uk`, `uk.co`, `de`, and `nl`.
+
+Two things are worth knowing if you publish under a prefix that is not rooted:
+
+* Each level needs its own root category. For `uk.co.acme`, rooting only `uk` promotes **Co** to the top level; you need roots for both `uk` and `uk.co`.
+* Declaring a root category that `rewrite-core` already provides does no harm, so when in doubt, declare it.
+
+```yaml
+---
+type: specs.openrewrite.org/v1beta/category
+packageName: uk
+root: true
+---
+type: specs.openrewrite.org/v1beta/category
+packageName: uk.co
+root: true
+---
+type: specs.openrewrite.org/v1beta/category
+name: Acme
+packageName: uk.co.acme
+description: Recipes for Acme's codebases.
+```
+
+Recipes named `uk.co.acme.*` are now presented under a single top-level **Acme** category, rather than under **Uk** > **Co** > **Acme**.
+
+:::info
+`packageName` values are subject to YAML interpretation, so a segment such as `no` or `on` has to be quoted to keep it from being read as a boolean.
+:::
 
 ## Examples
 
