@@ -58,9 +58,9 @@
      Taller than the 37px docs.moderne.io uses, because this site's chrome is
      bigger: a 33px logo and a 38px search field, against their smaller lockup.
      At 37px the search overflowed the bar and the logo sat 2.5px under the
-     announcement bar. 56px leaves ~9px around the search and ~11px around the
-     logo. */
-  --ifm-navbar-height: var(--mod-spacing_7);
+     announcement bar. The row centres its contents, so this height sets the
+     clearance on both sides: ~20px around the logo, ~17px around the search. */
+  --ifm-navbar-height: var(--mod-spacing_9);
 
   /* System fallbacks in case the webfont fails to load. */
   --ifm-font-family-base: var(--mod-font-family-body), system-ui, sans-serif;
