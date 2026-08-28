@@ -41,25 +41,15 @@ const config: Config = {
       },
       innerHTML: JSON.stringify(structuredData),
     },
-    // Runs before hydration so neither the bar nor the navbar offset flashes.
-    // Hides the notice bar for visitors who already dismissed it, and records whether
-    // a bar is showing on this route so custom.css can offset the sticky navbar.
-    // Which bar applies depends on the path, but the dismissal flags are global, hence
-    // the route check. Keys and attributes must match src/theme/AnnouncementBar/index.tsx.
+    // Runs before hydration so the notice bar does not flash for visitors who
+    // already dismissed it. The key and attribute must match
+    // src/theme/AnnouncementBar/index.tsx.
     {
       tagName: 'script',
       attributes: {},
       innerHTML: `try {
-  var noticeDismissed = window.localStorage.getItem('code-genome-project-announcement-dismissed') === 'true';
-  if (noticeDismissed) {
+  if (window.localStorage.getItem('code-genome-project-announcement-dismissed') === 'true') {
     document.documentElement.setAttribute('data-notice-bar-dismissed', 'true');
-  }
-  var onRecipes = window.location.pathname.indexOf('/recipes') === 0;
-  var dismissed = onRecipes
-    ? window.localStorage.getItem('docusaurus.announcement.dismiss') === 'true'
-    : noticeDismissed;
-  if (!dismissed) {
-    document.documentElement.setAttribute('data-bar-visible', 'true');
   }
 } catch (e) {}`,
     },
@@ -84,7 +74,7 @@ const config: Config = {
       tagName: 'link',
       attributes: {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,300..700;1,300..700&family=Geist+Mono:ital,wght@0,400;0,500;1,400&display=swap',
       },
     },
 
@@ -136,7 +126,13 @@ const config: Config = {
           trackingID: "G-Y67JVX3WB7",
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          // Order matters: the design-system tokens define every --mod-* the
+          // site references, and custom.css is the Infima bridge, so it must
+          // load second for its --ifm-* mappings to win.
+          customCss: [
+            require.resolve("@moderneinc/design-system-tokens/moderne.css"),
+            "./src/css/custom.css",
+          ],
         },
       } satisfies Preset.Options,
     ],

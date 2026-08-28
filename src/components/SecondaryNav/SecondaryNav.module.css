@@ -1,0 +1,100 @@
+/**
+ * Section navigation, below the primary navbar. Desktop only: on mobile the
+ * sidebar still lists every section, so this bar would only repeat it.
+ */
+
+.secondaryNav {
+  display: none;
+  height: var(--ifm-secondary-nav-height);
+  padding: 0 var(--mod-spacing_4);
+  align-items: center;
+  justify-content: space-between;
+  /* Hairline that defines the header's lower edge. */
+  border-bottom: 1px solid var(--mod-color-border-primary);
+}
+
+@media (min-width: 997px) {
+  .secondaryNav {
+    display: flex;
+  }
+}
+
+.sections {
+  display: flex;
+  align-items: center;
+  gap: var(--mod-spacing_3);
+  min-width: 0;
+}
+
+.section {
+  font-size: var(--mod-font-size-default);
+  font-weight: var(--mod-font-weight-medium);
+  color: var(--mod-color-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.section:hover {
+  color: var(--mod-color-action-default);
+  text-decoration: none;
+}
+
+/* Both active states take the same colour; custom.css owns the light/dark pair. */
+.sectionActive,
+.sectionActive:hover,
+.dropdownItemActive,
+.dropdownItemActive:hover {
+  color: var(--docs-color-active);
+}
+
+.more {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.moreButton {
+  display: flex;
+  align-items: center;
+  gap: var(--mod-spacing_1_2);
+  padding: var(--mod-spacing_1) 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  padding: var(--mod-spacing_1) 0;
+  background-color: var(--mod-color-surface-raised);
+  border: 1px solid var(--mod-color-border-primary);
+  border-radius: var(--mod-border-radius-input);
+  box-shadow: var(--docs-shadow-dropdown);
+  z-index: var(--ifm-z-index-dropdown);
+}
+
+.dropdownItem {
+  display: block;
+  padding: var(--mod-spacing_1) var(--mod-spacing_2);
+  font-size: var(--mod-font-size-default);
+  color: var(--mod-color-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdownItem:hover {
+  background-color: var(--mod-color-surface-row-hover);
+  color: var(--mod-color-text-primary);
+  text-decoration: none;
+}

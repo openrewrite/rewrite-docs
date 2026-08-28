@@ -1,58 +1,114 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Design-system Infima bridge.
+ *
+ * Maps Docusaurus/Infima variables (--ifm-*) onto design-system tokens
+ * (--mod-*, from @moderneinc/design-system-tokens). Most --mod-* tokens are
+ * mode-aware, so a single :root declaration covers light and dark; the
+ * html[data-theme='dark'] block below only restates the vars Infima also
+ * defines in its own dark block, which out-specifies :root.
+ *
+ * Guidelines:
+ * - Reference var(--mod-*) without fallbacks so a missing token fails visibly
+ *   rather than silently rendering transparent.
+ * - Add brand values here, never as one-off literals in components.
  */
-
-@font-face {
-    font-family: 'Beausite';
-    src: url('https://cdn.prod.website-files.com/664e62fe66f5b31edc6c3aeb/664e7a833d9ad9fa2febd048_BeausiteSlickWeb-Light.woff2') format('woff2'), url('https://cdn.prod.website-files.com/664e62fe66f5b31edc6c3aeb/664e7a830c62d5d188a8f45a_BeausiteSlickWeb-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-background-color: #F8F8FF;
+  --ifm-background-color: var(--mod-color-surface-page);
+
+  /* Mint accent. No design-system token maps to it: the mark is OpenRewrite's
+     and the system has it only as the raw palette entry digitalGreen.300, which
+     has no semantic tier. Kept as a brand literal, matching how docs.moderne.io
+     preserves the same accent. */
   --ifm-color-mint: #85FE99;
-  --ifm-color-primary: #4169e1;
-  --ifm-color-primary-dark: #2855dd;
-  --ifm-color-primary-darker: #224ed5;
-  --ifm-color-primary-darkest: #1c41af;
-  --ifm-color-primary-light: #5a7de5;
-  --ifm-color-primary-lighter: #6787e7;
-  --ifm-color-primary-lightest: #8ca4ed;
-  --ifm-color-border: #D9D9D9;
+
+  /* Primary accent. The system has no blue ramp, so the derived Infima tiers
+     collapse onto the two action tokens that exist. */
+  --ifm-color-primary: var(--mod-color-action-default);
+  --ifm-color-primary-dark: var(--mod-color-action-navy);
+  --ifm-color-primary-darker: var(--mod-color-action-navy);
+  --ifm-color-primary-darkest: var(--mod-color-action-navy);
+  --ifm-color-primary-light: var(--mod-color-action-default);
+  --ifm-color-primary-lighter: var(--mod-color-action-default);
+  --ifm-color-primary-lightest: var(--mod-color-action-default);
+
+  --ifm-color-border: var(--mod-color-border-primary);
   --ifm-code-font-size: 95%;
-  --ifm-color-base: rgba(4, 24, 52);
+  --ifm-color-base: var(--mod-color-text-primary);
   --ifm-color-content: var(--ifm-color-base);
   --ifm-color-announcement-bar-bg: var(--ifm-color-mint);
-  --ifm-color-announcement-bar-text: #041834;
-  --ifm-navbar-background-color: var(--ifm-background-color);
-  --ifm-navbar-padding-vertical: 36px;
+
+  /* Deliberately not mode-aware: the bar ground is always mint, so text that
+     followed the colour mode would go near-white on green in dark. --mod-ink-800
+     is defined only in the package's :root block, never in its dark block, which
+     is exactly the property needed here. */
+  --ifm-color-announcement-bar-text: var(--mod-ink-800);
+
+  /* Transparent: the fixed wrapper in Navbar/Layout paints the header ground,
+     so the navbar painting its own would double up. */
+  --ifm-navbar-background-color: transparent;
+  --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-item-padding-horizontal: 1.4rem;
-  --ifm-navbar-height: 116px;
-  --ifm-font-family-base: "Inter", sans-serif;
-  --ifm-heading-font-weight: 400;
+
+  /* The header is two rows: this navbar and the section nav below it. Infima
+     only knows about the first; --ifm-secondary-nav-height is declared with the
+     header offsets near the end of this file, where it is used.
+
+     Taller than the 37px docs.moderne.io uses, because this site's chrome is
+     bigger: a 33px logo and a 38px search field, against their smaller lockup.
+     At 37px the search overflowed the bar and the logo sat 2.5px under the
+     announcement bar. 56px leaves ~9px around the search and ~11px around the
+     logo. */
+  --ifm-navbar-height: var(--mod-spacing_7);
+
+  /* System fallbacks in case the webfont fails to load. */
+  --ifm-font-family-base: var(--mod-font-family-body), system-ui, sans-serif;
+  --ifm-font-family-monospace: var(--mod-font-family-code), ui-monospace, monospace;
+
+  --ifm-heading-font-weight: var(--mod-font-weight-regular);
   --ifm-heading-line-height: 1.25;
-  --ifm-heading-color: #041834;
-  --ifm-font-weight-bold: 600;
+  --ifm-heading-color: var(--mod-color-text-primary);
+  --ifm-font-weight-bold: var(--mod-font-weight-semi-bold);
   --ifm-footer-padding-vertical: 2.375rem;
   --ifm-footer-background-color: transparent;
-  --ifm-breadcrumb-separator: url("data:image/svg+xml, %3Csvg%20width=%228%22%20height=%2213%22%20viewBox=%220%200%208%2013%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M1%2012L7%206.5L1%201%22%20stroke=%22%23415067%22%20stroke-width=%221.25%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-  --ifm-breadcrumb-item-background-active: #FFF;
+
+  /* Chevron drawn with mask-image rather than a data-URI background, so the
+     colour comes from a token instead of a hex baked inside the URL. */
+  --ifm-breadcrumb-separator: none;
+  --ifm-breadcrumb-item-background-active: var(--mod-color-surface-raised);
   --ifm-breadcrumb-spacing: 0.875rem;
+
   --ifm-menu-color-background-hover: transparent;
   --ifm-menu-color-background-active: transparent;
-  --ifm-link-color: #283AF7;
-  --ifm-link-hover-color: var(--ifm-color-content);
-  --ifm-menu-color: rgba(4, 24, 52);
+  --ifm-link-color: var(--mod-color-action-default);
+  --ifm-link-hover-color: var(--mod-color-action-navy);
+  --ifm-menu-color: var(--mod-color-text-tertiary);
   --ifm-menu-color-active: var(--ifm-link-color);
   --ifm-navbar-link-color: var(--ifm-heading-color);
   --ifm-navbar-shadow: none;
   --ifm-toc-border-color: transparent;
-  --ifm-section-divider-color: rgba(4, 24, 52, 0.3);
+  --ifm-section-divider-color: var(--mod-color-border-primary);
+
+  /* Colour marking the current section, in the section nav and above the scoped
+     sidebar. Blue in light; mint is the brand accent but measures 1.11:1 on the
+     light ground, against 14.54:1 on the dark one, so it is used only there. */
+  --docs-color-active: var(--mod-color-action-default);
+
+  /* Card/dropdown shadow. Geometry is local because the package's
+     --mod-shadow-dropdown is a different shape (0 8px 15px); the colour is the
+     package's mode-aware shadow token, so this needs no light/dark pair. */
+  --docs-shadow-dropdown: 0 var(--mod-spacing_1_1_2) var(--mod-spacing_3_1_2)
+    var(--mod-color-surface-shadow-neutral);
+
+  /* Icon geometry, shared by the breadcrumb separator, the sidebar caret and the
+     pagination arrows. Used only as masks, so the stroke colour in each URL is
+     irrelevant — a mask reads alpha, and the colour comes from whatever applies
+     it. That is the point: a hex inside a data-URI cannot be themed. */
+  --docs-chevron: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='8'%20height='13'%20viewBox='0%200%208%2013'%3E%3Cpath%20d='M1%2012L7%206.5L1%201'%20fill='none'%20stroke='%23000'%20stroke-width='1.25'%2F%3E%3C%2Fsvg%3E");
+  --docs-chevron-down: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='12'%20height='8'%20viewBox='0%200%2012%208'%3E%3Cpath%20d='M0.5%200.5L6%206.5L11.5%200.5'%20fill='none'%20stroke='%23000'%20stroke-width='1.25'%2F%3E%3C%2Fsvg%3E");
+  --docs-arrow-left: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='43'%20height='16'%20viewBox='0%200%2043%2016'%3E%3Cpath%20d='M0.292892%207.2929C-0.0976296%207.68342%20-0.0976295%208.31659%200.292893%208.70711L6.65685%2015.0711C7.04738%2015.4616%207.68054%2015.4616%208.07107%2015.0711C8.46159%2014.6805%208.46159%2014.0474%208.07107%2013.6569L2.41422%208L8.07107%202.34315C8.46159%201.95262%208.46159%201.31946%208.07107%200.928935C7.68054%200.538411%207.04738%200.538411%206.65685%200.928935L0.292892%207.2929ZM43%207L1%207L1%209L43%209L43%207Z'%20fill='%23000'%2F%3E%3C%2Fsvg%3E");
+  --docs-arrow-right: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='43'%20height='16'%20viewBox='0%200%2043%2016'%3E%3Cpath%20d='M42.7071%208.70711C43.0976%208.31659%2043.0976%207.68343%2042.7071%207.2929L36.3431%200.928939C35.9526%200.538414%2035.3195%200.538414%2034.9289%200.928938C34.5384%201.31946%2034.5384%201.95263%2034.9289%202.34315L40.5858%208.00001L34.9289%2013.6569C34.5384%2014.0474%2034.5384%2014.6805%2034.9289%2015.0711C35.3195%2015.4616%2035.9526%2015.4616%2036.3431%2015.0711L42.7071%208.70711ZM0%209L42%209.00001L42%207.00001L0%207L0%209Z'%20fill='%23000'%2F%3E%3C%2Fsvg%3E");
 }
 
 /* Use selector for specificity */
@@ -62,27 +118,29 @@ html.docs-wrapper {
 
 /* Use selector for specificity */
 html[data-theme=light] {
-  --docsearch-searchbox-background: #fff;
-  --docsearch-muted-color: rgba(4, 24, 52, 0.75);
+  --docsearch-searchbox-background: var(--mod-color-surface-search-input);
+  --docsearch-muted-color: var(--mod-color-text-tertiary);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Restates only the bridge vars Infima also defines in its own
+   [data-theme='dark'] block: that selector out-specifies :root, so the
+   mode-aware tokens have to be repeated here at matching specificity to win.
+   Vars Infima leaves alone in dark — links, primary, headings — resolve
+   correctly from :root and are deliberately omitted. */
 html[data-theme='dark'] {
-  --ifm-background-color: #041834;
-  --ifm-color-primary: #7e9bd2;
-  --ifm-color-primary-dark: #6588c9;
-  --ifm-color-primary-darker: #597ec5;
-  --ifm-color-primary-darkest: #3d64ae;
-  --ifm-color-primary-light: #97aedb;
-  --ifm-color-primary-lighter: #a3b8df;
-  --ifm-color-primary-lightest: #c9d5ec;
-  --ifm-color-base: #fff;
-  --ifm-heading-color: #fff;
-  --ifm-menu-color: #fff;
-  --ifm-link-color: #85fe99;
+  --ifm-background-color: var(--mod-color-surface-page);
+  --ifm-color-base: var(--mod-color-text-primary);
+  --ifm-color-content: var(--mod-color-text-primary);
+
+  /* The one bridge var that wants a different token per mode: muted tertiary
+     in light, primary in dark, where tertiary loses too much contrast. */
+  --ifm-menu-color: var(--mod-color-text-primary);
+
   --ifm-toc-border-color: transparent;
-  --ifm-section-divider-color: #d9d9d9;
-  --ifm-card-background-color: #fff;
+  --ifm-section-divider-color: var(--mod-color-border-primary);
+  --ifm-card-background-color: var(--mod-color-surface-raised);
+  --docs-color-active: var(--ifm-color-mint);
   --ifm-heading-line-height: 1.25;
   .theme-code-block {
     border: 1.5px solid var(--ifm-color-border);
@@ -116,10 +174,6 @@ figure figcaption {
   overflow: clip;
 }
 
-.navbar {
-  border-bottom: 1px solid var(--ifm-section-divider-color);
-}
-
 .navbar .navbar__link {
   font-weight: 400;
 }
@@ -137,10 +191,15 @@ figure figcaption {
   color: var(--ifm-heading-color);
 }
 
+/* Carets are masked, not painted: the SVG supplies the shape and the token
+   supplies the colour, so both themes are covered by one rule and neither
+   caret carries a hex the theme cannot reach. */
 .theme-doc-sidebar-menu .menu__caret:before {
-  background-image: url("data:image/svg+xml, %3Csvg%20width=%228%22%20height=%2213%22%20viewBox=%220%200%208%2013%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M1%2012L7%206.5L1%201%22%20stroke=%22%23415067%22%20stroke-width=%221.25%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-image: none;
+  background-color: var(--mod-color-text-tertiary);
+  mask-image: var(--docs-chevron);
+  mask-repeat: no-repeat;
+  mask-size: 100%;
   width: 8px;
   height: 12px;
   transform: rotate(90deg);
@@ -151,12 +210,9 @@ figure figcaption {
   transform: rotate(0);
 }
 
-html[data-theme=dark] .theme-doc-sidebar-menu .menu__caret:before {
-  background-image: url("data:image/svg+xml, %3Csvg%20width=%228%22%20height=%2213%22%20viewBox=%220%200%208%2013%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M1%2012L7%206.5L1%201%22%20stroke=%22%23D9D9D9%22%20stroke-width=%221.25%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-}
-
 .theme-doc-sidebar-menu .menu__link--active + .menu__caret:before {
-  background-image: url("data:image/svg+xml, %3Csvg%20width=%2212%22%20height=%228%22%20viewBox=%220%200%2012%208%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M0.500001%200.499999L6%206.5L11.5%200.5%22%20stroke=%22%23283AF7%22%20stroke-width=%221.25%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-color: var(--mod-color-action-default);
+  mask-image: var(--docs-chevron-down);
   width: 12px;
   height: 8px;
   transform: rotate(0);
@@ -164,10 +220,6 @@ html[data-theme=dark] .theme-doc-sidebar-menu .menu__caret:before {
 
 .theme-doc-sidebar-menu .menu__list-item--collapsed .menu__link--active + .menu__caret:before {
   transform: rotate(-90deg);
-}
-
-html[data-theme=dark] .theme-doc-sidebar-menu .menu__link--active + .menu__caret:before {
-  background-image: url("data:image/svg+xml, %3Csvg%20width=%2212%22%20height=%228%22%20viewBox=%220%200%2012%208%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M0.500001%200.499999L6%206.5L11.5%200.5%22%20stroke=%22%2385FE99%22%20stroke-width=%221.25%22%2F%3E%0A%3C%2Fsvg%3E%0A");
 }
 
 .reactPlayer + p {
@@ -186,25 +238,31 @@ html[data-theme=dark] .theme-doc-sidebar-menu .menu__link--active + .menu__caret
   color: var(--ifm-heading-color);
 }
 
-html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
-  --ifm-heading-color: #041834;
-}
-
+/* Separator drawn as a mask so it takes a token colour. --ifm-breadcrumb-separator
+   is set to none in :root because Infima paints it as a background-image, which
+   would fight the mask. */
 [class^=docMainContainer_] .breadcrumbs__item:not(:last-child):after {
   opacity: 1;
   margin-left: 0.1rem;
+  background-color: var(--mod-color-text-tertiary);
+  mask-image: var(--docs-chevron);
+  mask-repeat: no-repeat;
+  /* contain, not 100%: the separator box is square but the chevron is 8x13, and
+     stretching it to fill would flatten the glyph. */
+  mask-size: contain;
+  mask-position: center;
 }
 
+/* The active crumb is a raised chip; both ground and text now invert with the
+   theme, where the old pairing pinned navy text on a #FFF ground. */
 [class^=docMainContainer_] .breadcrumbs__item--active .breadcrumbs__link {
-  --ifm-heading-color: #041834;
-
   border: 1px solid var(--ifm-color-border);
 }
 
 [class^=docMainContainer_] h1 {
-  --ifm-heading-font-weight: 300;
-  --ifm-heading-font-family: "Beausite", sans-serif;
-  --ifm-h1-font-size: 3.75rem;
+  --ifm-heading-font-weight: var(--mod-font-weight-semi-bold);
+  --ifm-heading-font-family: var(--mod-font-family-heading), sans-serif;
+  --ifm-h1-font-size: 2.25rem;
   --ifm-leading: 1;
 
   margin-bottom: 1.25rem;
@@ -236,13 +294,9 @@ html[data-theme=dark] [class^=docMainContainer_] .breadcrumbs__link:hover {
   margin-bottom: 2.5rem !important;
 }
 
-html[data-theme='dark'] [class^=docMainContainer_] .card {
-  --ifm-heading-color: #041834;
-}
-
 .markdown {
-  --ifm-heading-font-family: "Beausite", sans-serif;
-  --ifm-heading-font-weight: 300;
+  --ifm-heading-font-family: var(--mod-font-family-heading), sans-serif;
+  --ifm-heading-font-weight: var(--mod-font-weight-medium);
   --ifm-link-decoration: underline;
 }
 
@@ -256,15 +310,13 @@ html[data-theme='dark'] [class^=docMainContainer_] .card {
 }
 
 [class^=docMainContainer_] .pagination-nav {
-  --ifm-heading-color: #041834;
   justify-content: center;
 }
 
 [class^=docMainContainer_] .pagination-nav__link {
-  background: var(--ifm-color-white);
+  background: var(--mod-color-surface-raised);
   border-radius: 50px;
   border: 1px solid var(--ifm-color-border);
-  backdrop-filter: blur(15px);
   flex-basis: 50%;
 }
 
@@ -276,12 +328,12 @@ html[data-theme='dark'] [class^=docMainContainer_] .card {
 }
 
 [class^=docMainContainer_] .pagination-nav__link--prev .pagination-nav__sublabel {
-  background-image: url("data:image/svg+xml, %3Csvg%20width=%2243%22%20height=%2216%22%20viewBox=%220%200%2043%2016%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M0.292892%207.2929C-0.0976296%207.68342%20-0.0976295%208.31659%200.292893%208.70711L6.65685%2015.0711C7.04738%2015.4616%207.68054%2015.4616%208.07107%2015.0711C8.46159%2014.6805%208.46159%2014.0474%208.07107%2013.6569L2.41422%208L8.07107%202.34315C8.46159%201.95262%208.46159%201.31946%208.07107%200.928935C7.68054%200.538411%207.04738%200.538411%206.65685%200.928935L0.292892%207.2929ZM43%207L1%207L1%209L43%209L43%207Z%22%20fill=%22%23041834%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-  background-repeat: no-repeat;
+  background-color: var(--mod-color-text-primary);
+  mask-image: var(--docs-arrow-left);
+  mask-repeat: no-repeat;
   width: 42px;
   height: 16px;
   flex: 0 0 42px;
-
 }
 
 [class^=docMainContainer_] .pagination-nav__link--prev:hover .pagination-nav__sublabel {
@@ -294,9 +346,10 @@ html[data-theme='dark'] [class^=docMainContainer_] .card {
 }
 
 [class^=docMainContainer_] .pagination-nav__link--next .pagination-nav__sublabel {
-background-image: url("data:image/svg+xml, %3Csvg%20width=%2243%22%20height=%2216%22%20viewBox=%220%200%2043%2016%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M42.7071%208.70711C43.0976%208.31659%2043.0976%207.68343%2042.7071%207.2929L36.3431%200.928939C35.9526%200.538414%2035.3195%200.538414%2034.9289%200.928938C34.5384%201.31946%2034.5384%201.95263%2034.9289%202.34315L40.5858%208.00001L34.9289%2013.6569C34.5384%2014.0474%2034.5384%2014.6805%2034.9289%2015.0711C35.3195%2015.4616%2035.9526%2015.4616%2036.3431%2015.0711L42.7071%208.70711ZM-1.74846e-07%209L42%209.00001L42%207.00001L1.74846e-07%207L-1.74846e-07%209Z%22%20fill=%22%23041834%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-background-repeat: no-repeat;
-  background-position: 100% 0;
+  background-color: var(--mod-color-text-primary);
+  mask-image: var(--docs-arrow-right);
+  mask-repeat: no-repeat;
+  mask-position: 100% 0;
   width: 100%;
   height: 16px;
   flex: 0 0 42px;
@@ -342,15 +395,15 @@ background-repeat: no-repeat;
 .footer .footer__bottom::before {
   width: 47px;
   height: 48px;
-  background-image: url("data:image/svg+xml, %3Csvg%20width=%2247%22%20height=%2248%22%20viewBox=%220%200%2047%2048%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M46.2205%200.092002C45.777%20-0.0920021%2045.2677%200.00862519%2044.9272%200.350758L24.4951%2020.8816C23.1532%209.14558%2013.2189%200%201.18742%200C0.872678%200%200.572248%200.126503%200.349071%200.350758C0.125895%200.575013%200%200.876894%200%201.19315V23.5899V45.9895C0%2046.0097%200.00858372%2046.0269%200.00858372%2046.047C0.00858372%2046.1045%200.0228899%2046.1592%200.0343349%2046.2167C0.0457799%2046.277%200.0572248%2046.3374%200.0772535%2046.3949C0.082976%2046.4122%200.082976%2046.4294%200.0886985%2046.4467C0.103005%2046.4812%200.128756%2046.507%200.145923%2046.5415C0.174536%2046.5962%200.203148%2046.6508%200.240344%2046.6997C0.274679%2046.7457%200.311875%2046.7859%200.351933%2046.8262C0.39199%2046.8664%200.432047%2046.9067%200.480688%2046.9412C0.52933%2046.9786%200.580832%2047.0073%200.635195%2047.0361C0.66953%2047.0533%200.695282%2047.0792%200.729616%2047.0936C0.743923%2047.0993%200.758229%2047.0964%200.772535%2047.1022C0.901291%2047.1511%201.03863%2047.1856%201.18455%2047.1856H45.7627C46.4179%2047.1856%2046.9501%2046.6508%2046.9501%2045.9924V1.19315C46.9501%200.710141%2046.6611%200.276006%2046.2176%200.092002H46.2205ZM44.5781%204.07109V22.3968H26.3406L44.5781%204.07109ZM44.5781%2033.5951H24.661V24.7802H44.5781V33.5951ZM2.37483%2043.1087V24.7831H20.6124L11.4936%2033.9459L2.37483%2043.1087ZM2.37483%202.41793C13.0673%203.01594%2021.6625%2011.6526%2022.2576%2022.3968H2.37483V2.41793ZM13.1703%2035.6335L22.2891%2026.4707V44.7964H4.05152L13.1703%2035.6335ZM24.6639%2044.7964V35.9814H44.581V44.7964H24.6639Z%22%20fill=%22%23041834%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-  background-repeat: no-repeat;
+  /* The mark is masked, not painted, so it takes the theme's text colour. The
+     artwork is the existing path verbatim — same glyph, retinted, which is why
+     the dark-mode duplicate below is no longer needed. */
+  background-color: var(--mod-color-text-primary);
+  mask-image: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='47'%20height='48'%20viewBox='0%200%2047%2048'%3E%3Cpath%20d='M46.2205%200.092002C45.777%20-0.0920021%2045.2677%200.00862519%2044.9272%200.350758L24.4951%2020.8816C23.1532%209.14558%2013.2189%200%201.18742%200C0.872678%200%200.572248%200.126503%200.349071%200.350758C0.125895%200.575013%200%200.876894%200%201.19315V23.5899V45.9895C0%2046.0097%200.00858372%2046.0269%200.00858372%2046.047C0.00858372%2046.1045%200.0228899%2046.1592%200.0343349%2046.2167C0.0457799%2046.277%200.0572248%2046.3374%200.0772535%2046.3949C0.082976%2046.4122%200.082976%2046.4294%200.0886985%2046.4467C0.103005%2046.4812%200.128756%2046.507%200.145923%2046.5415C0.174536%2046.5962%200.203148%2046.6508%200.240344%2046.6997C0.274679%2046.7457%200.311875%2046.7859%200.351933%2046.8262C0.39199%2046.8664%200.432047%2046.9067%200.480688%2046.9412C0.52933%2046.9786%200.580832%2047.0073%200.635195%2047.0361C0.66953%2047.0533%200.695282%2047.0792%200.729616%2047.0936C0.743923%2047.0993%200.758229%2047.0964%200.772535%2047.1022C0.901291%2047.1511%201.03863%2047.1856%201.18455%2047.1856H45.7627C46.4179%2047.1856%2046.9501%2046.6508%2046.9501%2045.9924V1.19315C46.9501%200.710141%2046.6611%200.276006%2046.2176%200.092002H46.2205ZM44.5781%204.07109V22.3968H26.3406L44.5781%204.07109ZM44.5781%2033.5951H24.661V24.7802H44.5781V33.5951ZM2.37483%2043.1087V24.7831H20.6124L11.4936%2033.9459L2.37483%2043.1087ZM2.37483%202.41793C13.0673%203.01594%2021.6625%2011.6526%2022.2576%2022.3968H2.37483V2.41793ZM13.1703%2035.6335L22.2891%2026.4707V44.7964H4.05152L13.1703%2035.6335ZM24.6639%2044.7964V35.9814H44.581V44.7964H24.6639Z'%20fill='%23000'%2F%3E%3C%2Fsvg%3E");
+  mask-repeat: no-repeat;
   content: '';
 }
 
-html[data-theme='dark'] .footer .footer__bottom::before {
-  background-image: url("data:image/svg+xml, %3Csvg%20width=%2247%22%20height=%2248%22%20viewBox=%220%200%2047%2048%22%20fill=%22none%22%20xmlns=%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d=%22M46.2205%200.092002C45.777%20-0.0920021%2045.2677%200.00862519%2044.9272%200.350758L24.4951%2020.8816C23.1532%209.14558%2013.2189%200%201.18742%200C0.872678%200%200.572248%200.126503%200.349071%200.350758C0.125895%200.575013%200%200.876894%200%201.19315V23.5899V45.9895C0%2046.0097%200.00858372%2046.0269%200.00858372%2046.047C0.00858372%2046.1045%200.0228899%2046.1592%200.0343349%2046.2167C0.0457799%2046.277%200.0572248%2046.3374%200.0772535%2046.3949C0.082976%2046.4122%200.082976%2046.4294%200.0886985%2046.4467C0.103005%2046.4812%200.128756%2046.507%200.145923%2046.5415C0.174536%2046.5962%200.203148%2046.6508%200.240344%2046.6997C0.274679%2046.7457%200.311875%2046.7859%200.351933%2046.8262C0.39199%2046.8664%200.432047%2046.9067%200.480688%2046.9412C0.52933%2046.9786%200.580832%2047.0073%200.635195%2047.0361C0.66953%2047.0533%200.695282%2047.0792%200.729616%2047.0936C0.743923%2047.0993%200.758229%2047.0964%200.772535%2047.1022C0.901291%2047.1511%201.03863%2047.1856%201.18455%2047.1856H45.7627C46.4179%2047.1856%2046.9501%2046.6508%2046.9501%2045.9924V1.19315C46.9501%200.710141%2046.6611%200.276006%2046.2176%200.092002H46.2205ZM44.5781%204.07109V22.3968H26.3406L44.5781%204.07109ZM44.5781%2033.5951H24.661V24.7802H44.5781V33.5951ZM2.37483%2043.1087V24.7831H20.6124L11.4936%2033.9459L2.37483%2043.1087ZM2.37483%202.41793C13.0673%203.01594%2021.6625%2011.6526%2022.2576%2022.3968H2.37483V2.41793ZM13.1703%2035.6335L22.2891%2026.4707V44.7964H4.05152L13.1703%2035.6335ZM24.6639%2044.7964V35.9814H44.581V44.7964H24.6639Z%22%20fill=%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A");
-
-}
 
 .footer .footer__copyright {
   font-size: 0.875rem;
@@ -437,10 +490,168 @@ html[data-theme='dark'] {
   padding: 0 calc(var(--ifm-pre-padding) - 3px) 0 var(--ifm-pre-padding);
 }
 
-/* The announcement bar is pinned, so the sticky navbar has to clear it by exactly the
-   bar's height. data-bar-visible is maintained in src/theme/AnnouncementBar/index.tsx. */
-@media (min-width: 997px) {
-  html[data-bar-visible='true'] .navbar--fixed-top {
-    top: var(--docusaurus-announcement-bar-height);
-  }
+/* ---------------------------------------------------------------------------
+   Fixed header offsets.
+
+   Navbar/Layout puts the announcement bar, the navbar and the section nav in
+   one fixed block, so nothing below it is pushed down automatically. These
+   rules reserve exactly that block's height. Previously a single rule nudged
+   the sticky navbar clear of the bar; a fixed two-row header needs the whole
+   stack accounted for instead.
+   --------------------------------------------------------------------------- */
+
+/* Height of the section nav row. The row is desktop-only (see
+   SecondaryNav.module.css); below the breakpoint it is display:none, so this
+   value simply does not apply. */
+:root {
+  --ifm-secondary-nav-height: var(--mod-spacing_6);
+
+  /* First-paint default only: 40px bar + 56px navbar + 48px section nav, i.e.
+     a desktop viewport with a one-line announcement bar. Navbar/Layout measures
+     the real header on mount and overwrites this, which is what makes mobile —
+     where the bar wraps to two or three lines — correct. Being wrong for one
+     frame beats being wrong permanently.
+
+     A literal rather than a calc over --docusaurus-announcement-bar-height:
+     that property is `auto` below the breakpoint, and `auto` inside calc()
+     invalidates the whole expression, taking every offset below with it. */
+  --docs-header-height: 144px;
+}
+
+/* Anchor targets land below the header rather than behind it. */
+html {
+  scroll-padding-top: calc(var(--docs-header-height) + var(--mod-spacing_2));
+}
+
+.main-wrapper {
+  margin-top: var(--docs-header-height);
+  min-height: calc(100vh - var(--docs-header-height));
+}
+
+.theme-doc-sidebar-container {
+  position: sticky;
+  top: var(--docs-header-height);
+  height: calc(100vh - var(--docs-header-height));
+  align-self: flex-start;
+}
+
+/* Section name above the scoped sidebar (the html item added in
+   DocSidebarItems/filterUtils.ts). */
+.theme-doc-sidebar-menu > li > strong {
+  display: block;
+  padding: var(--mod-spacing_1) 0 var(--mod-spacing_1_2);
+  font-size: var(--mod-font-size-default);
+  font-weight: var(--mod-font-weight-semi-bold);
+  color: var(--docs-color-active);
+}
+
+/* Antialiased rendering. Without this, WebKit renders light-on-dark and
+   dark-on-light text at different apparent weights, so Geist headings look
+   inconsistent between modes. Grayscale AA normalises it. */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Admonitions: rounded, hairline border all round, icon inline with the text.
+   Replaces Infima's thick coloured left stripe, matching docs.moderne.io.
+   With a title (`:::info[My title]`) the container stacks so the heading row
+   sits above the content. */
+.theme-admonition {
+  border: 1px solid;
+  border-radius: var(--mod-border-radius-card);
+  /* Hairline only, no elevation: Infima's .alert shadow reads wrong against
+     the warm canvas. */
+  box-shadow: none;
+  padding: var(--mod-spacing_2);
+  display: flex;
+  flex-direction: row;
+  gap: var(--mod-spacing_1);
+  align-items: flex-start;
+  margin-top: var(--mod-spacing_3);
+  margin-bottom: var(--mod-spacing_3);
+}
+
+.theme-admonition:has([class*='admonitionTitle_']) {
+  flex-direction: column;
+  gap: var(--mod-spacing_1_2);
+}
+
+.theme-admonition [class*='admonitionHeading_'] {
+  margin: 0;
+  line-height: 1;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mod-spacing_1);
+  text-transform: none;
+}
+
+.theme-admonition [class*='admonitionHeading_'] [class*='admonitionIcon_'] {
+  margin-right: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.theme-admonition [class*='admonitionHeading_'] [class*='admonitionIcon_'] svg {
+  fill: none;
+  stroke: currentColor;
+}
+
+.theme-admonition [class*='admonitionTitle_'] {
+  font-weight: var(--mod-font-weight-semi-bold);
+  font-size: var(--mod-font-size-h5);
+  line-height: 1.3;
+}
+
+.theme-admonition [class*='admonitionContent_'] {
+  flex: 1;
+  /* Let the content column shrink below its intrinsic width so nested blocks
+     (code blocks especially) scroll inside the box instead of overflowing. */
+  min-width: 0;
+}
+
+.theme-admonition [class*='admonitionContent_'] > p:first-child {
+  margin-top: 0;
+}
+
+.theme-admonition [class*='admonitionContent_'] > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Per-type admonition tints. The status tokens are mode-aware, so one rule per
+   type covers both light and dark. The accent drives border, icon (the icon
+   inherits currentColor) and heading; body copy stays neutral. Caution shares
+   the warning tint, Summary shares info — matching docs.moderne.io. */
+.theme-admonition-note {
+  background-color: var(--mod-color-status-neutral-bg);
+  border-color: var(--mod-color-text-tertiary);
+  color: var(--mod-color-text-tertiary);
+}
+.theme-admonition-tip {
+  background-color: var(--mod-color-feedback-success-bg);
+  border-color: var(--mod-color-feedback-success-fg);
+  color: var(--mod-color-feedback-success-fg);
+}
+.theme-admonition-info,
+.theme-admonition-summary {
+  background-color: var(--mod-color-feedback-info-bg);
+  border-color: var(--mod-toast-info-fg);
+  color: var(--mod-toast-info-fg);
+}
+.theme-admonition-warning,
+.theme-admonition-caution {
+  background-color: var(--mod-color-feedback-warning-bg);
+  border-color: var(--mod-color-feedback-warning-fg);
+  color: var(--mod-color-feedback-warning-fg);
+}
+.theme-admonition-danger {
+  background-color: var(--mod-color-feedback-error-bg);
+  border-color: var(--mod-color-feedback-error-fg);
+  color: var(--mod-color-feedback-error-fg);
+}
+
+/* Body copy stays neutral; only the heading and icon carry the accent. */
+.theme-admonition [class*='admonitionContent_'] {
+  color: var(--mod-color-text-primary);
 }
