@@ -502,6 +502,22 @@ html {
   align-self: flex-start;
 }
 
+/* theme-classic pulls the sidebar container up by the navbar height and pads
+   the sidebar back down by the same amount, so the menu clears a navbar the
+   container sits beneath. The rule above positions the container below the
+   whole fixed header instead, which makes both halves of that trick dead
+   weight — and leaves the padding showing as a navbar-height gap above the
+   first item. */
+.theme-doc-sidebar-container {
+  margin-top: 0;
+}
+
+/* Matches sidebar_<hash> only: docSidebarContainer_ and sidebarViewport_ both
+   differ in case or the following character. */
+.theme-doc-sidebar-container [class*='sidebar_'] {
+  padding-top: 0;
+}
+
 /* Section name above the scoped sidebar (the html item added in
    DocSidebarItems/filterUtils.ts). */
 .theme-doc-sidebar-menu > li > strong {
