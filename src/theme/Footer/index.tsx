@@ -38,8 +38,6 @@ const SOCIAL = [
 ];
 
 const LINKS = [
-  { label: 'Terms', href: 'https://www.moderne.io/terms-of-service' },
-  { label: 'Privacy', href: 'https://www.moderne.io/privacy-policy' },
   { label: 'Contact us', href: 'mailto:support@moderne.io' },
   { label: 'Licensing', to: '/licensing/openrewrite-licensing' },
 ];
