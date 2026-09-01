@@ -241,6 +241,11 @@ const config: Config = {
       ],
     },
     footer: {
+      // Reference material rather than a reading path, so it sits here instead
+      // of in the nav — the same place docs.moderne.io keeps Licensing.
+      links: [
+        { label: "Licensing", to: "/licensing/openrewrite-licensing" },
+      ],
       copyright: `© Moderne, ${new Date().getFullYear()}`,
     },
     prism: {

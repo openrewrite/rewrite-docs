@@ -619,6 +619,36 @@ body {
   margin-bottom: 0;
 }
 
+/* ---------------------------------------------------------------------------
+   Introduction page (/).
+
+   The entry point reads as a landing page. Its sidebar is removed natively by
+   `displayed_sidebar: null` in the doc's front matter, which also releases the
+   width Docusaurus reserves for the column — nothing to do here for that.
+
+   data-route comes from src/theme/Root.tsx. Docusaurus's own docs-doc-id-*
+   classes exist only in a production build, so they cannot style a page
+   consistently between `yarn start` and `yarn build`.
+   --------------------------------------------------------------------------- */
+
+/* Green accent in place of the site's blue. No single green clears AA against
+   both grounds — every one in the palette is light-usable or dark-usable — so
+   this is a mode-aware pair, the same shape as --docs-color-active. mint-700 is
+   5.12:1 on the light ground; the brand mint is 14.54:1 on the dark ground and
+   1.11:1 on the light, which is why it appears only in the dark block. */
+html[data-route='/'] {
+  --docs-intro-accent: var(--mod-mint-700);
+  --docs-intro-accent-hover: var(--mod-mint-800);
+  --ifm-link-color: var(--docs-intro-accent);
+  --ifm-link-hover-color: var(--docs-intro-accent-hover);
+  --ifm-color-primary: var(--docs-intro-accent);
+}
+
+html[data-route='/'][data-theme='dark'] {
+  --docs-intro-accent: var(--ifm-color-mint);
+  --docs-intro-accent-hover: var(--mod-mint-400);
+}
+
 /* Per-type admonition tints. The status tokens are mode-aware, so one rule per
    type covers both light and dark. The accent drives border, icon (the icon
    inherits currentColor) and heading; body copy stays neutral. Caution shares

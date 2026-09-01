@@ -1,8 +1,8 @@
 import type { PropSidebarItem, PropSidebarItemCategory } from '@docusaurus/plugin-content-docs';
-import { moreSections, primarySections, type NavSection } from '@site/src/config/navSections';
+import { selectableSections, type NavSection } from '@site/src/config/navSections';
 
-/** Every section the secondary nav can select, with hrefs normalised once. */
-const allSections: NavSection[] = [...primarySections, ...moreSections].map((section) => ({
+/** Every section that can scope a sidebar, with hrefs normalised once. */
+const allSections: NavSection[] = selectableSections.map((section) => ({
   ...section,
   href: section.href.toLowerCase().replace(/\/$/, ''),
 }));

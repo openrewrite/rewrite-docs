@@ -10,9 +10,9 @@ export type SecondaryNavProps = {
   /** Sections rendered as direct links, left-aligned. */
   sections: NavSection[];
   /** Label for the right-aligned dropdown. */
-  moreLabel: string;
+  menuLabel: string;
   /** Items inside that dropdown. */
-  moreItems: NavSection[];
+  menuItems: NavSection[];
 };
 
 /** Chevron for the dropdown. Inline rather than an icon package: it is the only
@@ -39,17 +39,17 @@ const Chevron: FunctionComponent<{ open: boolean }> = ({ open }) => (
  */
 export const SecondaryNav: FunctionComponent<SecondaryNavProps> = ({
   sections,
-  moreLabel,
-  moreItems,
+  menuLabel,
+  menuItems,
 }) => {
   const [open, setOpen] = useState(false);
-  const moreRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   // Same matcher the sidebar filter uses, so the highlighted section and the
   // scoped sidebar can never disagree.
   const activeHref = findSection(location.pathname)?.href;
-  const isMoreActive = moreItems.some((item) => item.href === activeHref);
+  const isMenuActive = menuItems.some((item) => item.href === activeHref);
 
   const close = useCallback(() => setOpen(false), []);
 
@@ -62,7 +62,7 @@ export const SecondaryNav: FunctionComponent<SecondaryNavProps> = ({
     // DropdownNavbarItem listens on; mousedown alone leaves the menu open on a
     // touch tap and when focus moves away by keyboard.
     const onOutside = (event: MouseEvent | TouchEvent | FocusEvent) => {
-      if (moreRef.current && !moreRef.current.contains(event.target as Node)) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         close();
       }
     };
@@ -101,20 +101,20 @@ export const SecondaryNav: FunctionComponent<SecondaryNavProps> = ({
         })}
       </div>
 
-      <div className={styles.more} ref={moreRef}>
+      <div className={styles.menu} ref={menuRef}>
         <button
           type="button"
-          className={clsx(styles.section, styles.moreButton, isMoreActive && styles.sectionActive)}
+          className={clsx(styles.section, styles.menuButton, isMenuActive && styles.sectionActive)}
           onClick={() => setOpen((prev) => !prev)}
           aria-expanded={open}
           aria-haspopup="true"
         >
-          {moreLabel}
+          {menuLabel}
           <Chevron open={open} />
         </button>
         {open && (
           <div className={styles.dropdown} role="menu">
-            {moreItems.map((item) => (
+            {menuItems.map((item) => (
               <Link
                 key={item.href}
                 to={item.href}

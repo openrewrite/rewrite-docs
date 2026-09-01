@@ -3,6 +3,10 @@ title: OpenRewrite by Moderne | Large Scale Automated Refactoring
 keywords: [OpenRewrite, Moderne, refactoring, Java, Spring Boot Migration, auto-remediation, SAST, SCA]
 description: Large-scale automated source code refactoring
 slug: /
+# The entry point reads as a landing page rather than a doc, so it shows no
+# sidebar. Detaching here rather than hiding the column in CSS also releases the
+# width Docusaurus reserves for it.
+displayed_sidebar: null
 ---
 
 import ReactPlayer from 'react-player'

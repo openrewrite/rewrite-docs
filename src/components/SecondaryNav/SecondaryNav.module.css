@@ -48,12 +48,12 @@
   color: var(--docs-color-active);
 }
 
-.more {
+.menu {
   position: relative;
   flex-shrink: 0;
 }
 
-.moreButton {
+.menuButton {
   display: flex;
   align-items: center;
   gap: var(--mod-spacing_1_2);

@@ -21,7 +21,7 @@ import type { Props } from '@theme/Navbar/Layout';
 // module declaration, which only knows about the default export.
 import { AnnouncementBarInline } from '@site/src/theme/AnnouncementBar';
 import { SecondaryNav } from '@site/src/components/SecondaryNav';
-import { primarySections, moreSections } from '@site/src/config/navSections';
+import { primarySections, releaseSections } from '@site/src/config/navSections';
 import styles from './styles.module.css';
 
 function NavbarBackdrop(props: ComponentProps<'div'>) {
@@ -100,7 +100,7 @@ const NavbarLayout: FunctionComponent<NavbarLayoutProps> = ({ children, classNam
         <NavbarBackdrop onClick={mobileSidebar.toggle} />
         <NavbarMobileSidebar />
       </nav>
-      <SecondaryNav sections={primarySections} moreLabel="More" moreItems={moreSections} />
+      <SecondaryNav sections={primarySections} menuLabel="Releases" menuItems={releaseSections} />
     </div>
   );
 };
