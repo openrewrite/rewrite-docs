@@ -1,0 +1,77 @@
+.footer {
+  background-color: var(--ifm-background-color);
+  /* Hairline between page content and the footer, matching the one under the
+     section nav at the top of the page. */
+  border-top: 1px solid var(--mod-color-border-primary);
+  padding: var(--ifm-footer-padding-vertical) var(--mod-spacing_4);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mod-spacing_4);
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--mod-spacing_2_1_2);
+  font-size: var(--mod-font-size-caption);
+  white-space: nowrap;
+}
+
+/* The copyright is the only non-link here, and reads as metadata rather than
+   something to act on. */
+.links span {
+  color: var(--mod-color-text-tertiary);
+}
+
+.links a {
+  color: var(--mod-color-text-primary);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--mod-color-text-primary);
+  text-decoration: underline;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: var(--mod-spacing_2);
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  color: var(--mod-color-text-primary);
+  transition: opacity 0.2s ease;
+}
+
+.social a:hover {
+  opacity: 0.7;
+}
+
+.social svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Stack below the breakpoint: the two groups together need more width than a
+   phone has, and wrapping them mid-row reads as a broken line. */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: var(--mod-spacing_3);
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

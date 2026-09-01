@@ -240,14 +240,8 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      // Reference material rather than a reading path, so it sits here instead
-      // of in the nav — the same place docs.moderne.io keeps Licensing.
-      links: [
-        { label: "Licensing", to: "/licensing/openrewrite-licensing" },
-      ],
-      copyright: `© Moderne, ${new Date().getFullYear()}`,
-    },
+    // The footer is swizzled (src/theme/Footer), which owns its own links and
+    // copyright, so there is nothing to configure here.
     prism: {
       theme: prismThemes.vsDark,
       darkTheme: prismThemes.vsDark,
