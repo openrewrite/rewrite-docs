@@ -1,5 +1,6 @@
 ---
 description: An explanation of how LSTs are stored and used.
+sidebar_custom_props: { group: Lossless Semantic Trees }
 ---
 
 # How LSTs are handled locally

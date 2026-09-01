@@ -333,22 +333,6 @@ figure figcaption {
   margin-bottom: 1.25rem;
 }
 
-[class^=docMainContainer_] [class^=generatedIndexPage_] {
-  --ifm-spacing-horizontal: 1.625rem;
-}
-
-[class^=docMainContainer_] [class^=generatedIndexPage_] .row[class*=list_] > .col {
-  display: flex;
-}
-
-[class^=docMainContainer_] [class^=generatedIndexPage_] .margin-top--lg {
-  margin-top: 4.5rem !important;
-}
-
-[class^=docMainContainer_] [class^=generatedIndexPage_] .margin-bottom--lg {
-  margin-bottom: 2.5rem !important;
-}
-
 .markdown {
   --ifm-heading-font-family: var(--mod-font-family-heading), sans-serif;
   --ifm-heading-font-weight: var(--mod-font-weight-medium);
@@ -369,10 +353,6 @@ figure figcaption {
 @media(min-width: 997px) {
   .navbar {
     --ifm-navbar-padding-horizontal: 2.5rem;
-  }
-
-  [class^=docMainContainer_] [class^=generatedIndexPage_] {
-    max-width: 83% !important;
   }
 
   .menu[class*=menu_] {
@@ -596,6 +576,22 @@ html[data-route='/'] {
 html[data-route='/'][data-theme='dark'] {
   --docs-intro-accent: var(--ifm-color-mint);
   --docs-intro-accent-hover: var(--mod-mint-400);
+}
+
+/* Category index pages hide the section sidebar — the page is that list, in a
+   grouped and described form, so showing both repeats every destination in one
+   viewport. data-index-page is set by src/theme/DocCategoryGeneratedIndexPage
+   while such a page is mounted, and removed when a doc opens.
+
+   The max-width reset is required, not cosmetic: Docusaurus caps the content
+   area at calc(100% - var(--doc-sidebar-width)) whether or not the sidebar
+   renders, so hiding it alone would leave the reserved column as dead space. */
+html[data-index-page] .theme-doc-sidebar-container {
+  display: none;
+}
+
+html[data-index-page] [class*='docMainContainer'] {
+  max-width: none;
 }
 
 /* Per-type admonition tints. The status tokens are mode-aware, so one rule per

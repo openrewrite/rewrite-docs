@@ -1,0 +1,137 @@
+/**
+ * Category index: a grouped description list.
+ *
+ * Sizing is deliberately narrower than the content column allows. These pages
+ * are scanned, not read, and a title/description pair set to a 900px measure
+ * makes the eye travel much further per item than the decision needs.
+ */
+
+.generatedIndexPage {
+  max-width: 720px;
+  /* Centred because the sidebar is hidden on these pages (see
+     useHiddenSidebar), so there is no column to sit inside. */
+  margin-inline: auto;
+}
+
+.title {
+  --ifm-h1-font-size: 2.25rem;
+  margin-bottom: var(--mod-spacing_1_1_2);
+}
+
+.description {
+  color: var(--mod-color-text-secondary);
+  margin-bottom: 0;
+}
+
+.body {
+  margin-top: var(--mod-spacing_5);
+}
+
+/* The entry point, lifted above the list. Marked by a tinted ground rather than
+   a heavier weight, so it reads as "begin here" without competing with the H1. */
+.startHere {
+  margin-bottom: var(--mod-spacing_5);
+  padding: var(--mod-spacing_2) var(--mod-spacing_3);
+  background-color: var(--mod-color-action-tint);
+  border-radius: var(--mod-border-radius-card);
+}
+
+.startHereLabel {
+  margin: 0 0 var(--mod-spacing_1_2);
+  font-size: var(--mod-font-size-xs);
+  font-weight: var(--mod-font-weight-semi-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mod-color-action-default);
+}
+
+/* The tinted ground already separates the row, so drop the divider it would
+   otherwise inherit. */
+.startHere .row {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.startHere .row:first-child {
+  padding-top: 0;
+}
+
+.group + .group {
+  margin-top: var(--mod-spacing_5);
+}
+
+.groupHeading {
+  --ifm-h2-font-size: 1.125rem;
+  margin-bottom: var(--mod-spacing_1);
+  padding-bottom: var(--mod-spacing_1_2);
+  border-bottom: 1px solid var(--mod-color-border-primary);
+  color: var(--mod-color-text-secondary);
+  font-weight: var(--mod-font-weight-semi-bold);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Hairline between rows rather than a card each: the separation a scanning eye
+   needs is a line, not a box. */
+.row + .row {
+  border-top: 1px solid var(--mod-color-border-subtle);
+}
+
+.rowLink {
+  display: block;
+  padding: var(--mod-spacing_1_1_2) 0;
+  text-decoration: none;
+  /* Full-row target. At this padding the row clears 44px even on a
+     single-line title with no description. */
+  min-height: 44px;
+}
+
+.rowLink:hover {
+  text-decoration: none;
+}
+
+.rowTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--mod-spacing_1_2);
+  font-size: var(--mod-font-size-default);
+  font-weight: var(--mod-font-weight-semi-bold);
+  color: var(--mod-color-text-primary);
+}
+
+.rowLink:hover .rowTitle {
+  color: var(--mod-color-action-default);
+}
+
+:global(html[data-theme='dark']) .rowLink:hover .rowTitle {
+  color: var(--ifm-color-mint);
+}
+
+/* Secondary colour, and never clamped. The description is the one thing this
+   page adds over the sidebar, so hiding the end of it removed the page's only
+   reason to exist. */
+.rowDescription {
+  display: block;
+  margin-top: var(--mod-spacing_1_4);
+  font-size: var(--mod-font-size-sm);
+  line-height: 1.5;
+  color: var(--mod-color-text-secondary);
+}
+
+/* Says a row leads to another index rather than an article. */
+.rowMeta {
+  display: block;
+  margin-top: var(--mod-spacing_1_4);
+  font-size: var(--mod-font-size-xs);
+  color: var(--mod-color-text-tertiary);
+}
+
+.footer {
+  margin-top: var(--mod-spacing_6);
+}

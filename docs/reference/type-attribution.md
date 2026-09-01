@@ -1,5 +1,6 @@
 ---
 description: A detailed, technical look into type attribution and how to use it in OpenRewrite recipes.
+sidebar_custom_props: { group: Languages and types }
 ---
 
 # Type attribution for recipe authors

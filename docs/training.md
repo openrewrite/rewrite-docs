@@ -1,5 +1,6 @@
 ---
 description: Training resources for learning OpenRewrite and Moderne.
+sidebar_custom_props: { group: Learn and contribute }
 ---
 
 # Training

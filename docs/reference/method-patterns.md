@@ -1,5 +1,6 @@
 ---
 description: How to create and use type-aware method patterns.
+sidebar_custom_props: { group: Recipe syntax }
 ---
 
 import ReactPlayer from 'react-player';

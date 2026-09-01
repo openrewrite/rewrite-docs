@@ -1,5 +1,6 @@
 ---
 description: A technical overview of visitors and related concepts.
+sidebar_custom_props: { group: Recipes and visitors }
 ---
 
 import ReactPlayer from 'react-player';

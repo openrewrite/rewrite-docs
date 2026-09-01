@@ -1,5 +1,6 @@
 ---
 description: A technical overview of what JavaTemplates are and how to use them.
+sidebar_custom_props: { group: Recipes and visitors }
 ---
 
 # JavaTemplate

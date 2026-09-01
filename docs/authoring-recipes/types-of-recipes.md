@@ -1,5 +1,6 @@
 ---
 description: Describes what the three types of recipes are, and what their advantages/disadvantages are.
+sidebar_custom_props: { group: Write a recipe }
 ---
 
 # Types of recipes

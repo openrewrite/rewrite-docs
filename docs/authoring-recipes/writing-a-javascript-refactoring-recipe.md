@@ -1,5 +1,6 @@
 ---
 description: A step-by-step guide to creating imperative JavaScript/TypeScript recipes and their corresponding tests.
+sidebar_custom_props: { group: Write a recipe }
 ---
 
 import ReactPlayer from 'react-player';

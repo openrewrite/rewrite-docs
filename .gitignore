@@ -26,3 +26,5 @@ yarn-error.log*
 .claude/settings.local.json 
 
 .context/
+# Impeccable design-skill artifacts (critique snapshots, local config)
+.impeccable/

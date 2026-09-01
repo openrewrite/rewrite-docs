@@ -1,6 +1,7 @@
 ---
 sidebar_label: Multiple source file types
 description: How to create recipes that examine many different types of files.
+sidebar_custom_props: { group: Advanced techniques }
 ---
 
 # Writing recipes over multiple source file types

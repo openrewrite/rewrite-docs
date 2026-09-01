@@ -1,5 +1,6 @@
 ---
 description: Frequently asked questions about OpenRewrite, Moderne, and recipe development.
+sidebar_custom_props: { startHere: true }
 ---
 
 import ReactPlayer from 'react-player';

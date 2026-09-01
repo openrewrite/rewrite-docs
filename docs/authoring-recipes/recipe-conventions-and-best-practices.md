@@ -1,5 +1,6 @@
 ---
 description: A list of important conventions and best practices to keep in mind when writing OpenRewrite recipes.
+sidebar_custom_props: { group: Test and refine }
 ---
 
 # Recipe conventions and best practices

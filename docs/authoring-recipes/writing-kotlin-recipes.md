@@ -1,6 +1,7 @@
 ---
 sidebar_label: Writing Kotlin recipes
 description: How to write, test, and run Kotlin recipes with the OpenRewrite Kotlin recipe DSL.
+sidebar_custom_props: { group: Write a recipe }
 ---
 
 import Tabs from '@theme/Tabs';
