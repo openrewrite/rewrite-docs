@@ -34,7 +34,7 @@ const YouTubeIcon: FunctionComponent = () => (
 const SOCIAL = [
   { label: 'X', href: 'https://x.com/moderneinc', Icon: XIcon },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/moderneinc', Icon: LinkedInIcon },
-  { label: 'YouTube', href: 'https://www.youtube.com/@moderneinc', Icon: YouTubeIcon },
+  { label: 'YouTube', href: 'https://www.youtube.com/@moderne-and-openrewrite', Icon: YouTubeIcon },
 ];
 
 const LINKS = [
