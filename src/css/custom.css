@@ -116,10 +116,53 @@ html.docs-wrapper {
   --doc-sidebar-width: 370px;
 }
 
-/* Use selector for specificity */
-html[data-theme=light] {
+/* ---------------------------------------------------------------------------
+   Algolia DocSearch.
+
+   Bound to design-system tokens rather than left on the package defaults,
+   which are a fixed blue-violet set (rgba(0,0,0,.65) ground, #36395a keys)
+   that reads as a foreign component beside the warm/ink palette. Matches the
+   treatment on docs.moderne.io.
+
+   One block, no light/dark pair: every token below is mode-aware, so they
+   invert on their own.
+   --------------------------------------------------------------------------- */
+:root {
+  /* Trigger button in the navbar */
   --docsearch-searchbox-background: var(--mod-color-surface-search-input);
+  --docsearch-subtle-color: var(--mod-color-border-primary);
   --docsearch-muted-color: var(--mod-color-text-tertiary);
+  --docsearch-key-background: var(--mod-color-surface-sunken);
+  --docsearch-key-color: var(--mod-color-text-secondary);
+
+  /* Modal. Themed alongside the button because they share these variables —
+     leaving it on the defaults would open a differently-coloured product. */
+  --docsearch-primary-color: var(--mod-color-action-default);
+  --docsearch-highlight-color: var(--mod-color-action-default);
+  --docsearch-text-color: var(--mod-color-text-primary);
+  --docsearch-modal-background: var(--mod-color-surface-raised);
+  --docsearch-container-background: var(--mod-color-surface-scrim);
+  --docsearch-footer-background: var(--mod-color-surface-raised);
+  --docsearch-hit-background: var(--mod-color-surface-page);
+  --docsearch-hit-color: var(--mod-color-text-primary);
+  --docsearch-icon-color: var(--mod-color-text-tertiary);
+}
+
+/* The package hard-codes 4px; the reference rounds to 8px and the site's other
+   inputs use the same step. */
+.DocSearch-Button {
+  border-radius: var(--mod-border-radius-s);
+}
+
+.DocSearch-Button:hover {
+  border-color: var(--mod-color-action-border);
+  box-shadow: none;
+}
+
+/* Keys sit on the button's own ground, so they need their own edge to read as
+   keys rather than as a darker patch of it. */
+.DocSearch-Button-Key {
+  border: 1px solid var(--mod-color-border-primary);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
