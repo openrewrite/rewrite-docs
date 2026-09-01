@@ -1,0 +1,43 @@
+/**
+ * Previous/next links: plain text with an inline arrow, no ground and no
+ * border. They are a way out of the page, not a call to action, so they sit
+ * below the content in the muted text colour rather than as pill buttons.
+ */
+
+.paginationNav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--mod-spacing_4);
+  margin-top: var(--mod-spacing_4);
+  padding: 0;
+}
+
+.paginationLink {
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-size: var(--mod-font-size-sm);
+  font-weight: var(--mod-font-weight-medium);
+  line-height: 1;
+  color: var(--mod-color-text-tertiary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.paginationLink:hover {
+  color: var(--mod-color-text-primary);
+  text-decoration: none;
+}
+
+.prev {
+  text-align: left;
+}
+
+.next {
+  text-align: right;
+}
+
+/* Inherits the link colour, including on hover. */
+.arrow {
+  color: inherit;
+}

@@ -76,7 +76,9 @@
   /* Chevron drawn with mask-image rather than a data-URI background, so the
      colour comes from a token instead of a hex baked inside the URL. */
   --ifm-breadcrumb-separator: none;
-  --ifm-breadcrumb-item-background-active: var(--mod-color-surface-raised);
+  /* No ground on the active crumb: breadcrumbs are a position indicator, not a
+     control, so they read as text. */
+  --ifm-breadcrumb-item-background-active: transparent;
   --ifm-breadcrumb-spacing: 0.875rem;
 
   --ifm-menu-color-background-hover: transparent;
@@ -101,14 +103,12 @@
   --docs-shadow-dropdown: 0 var(--mod-spacing_1_1_2) var(--mod-spacing_3_1_2)
     var(--mod-color-surface-shadow-neutral);
 
-  /* Icon geometry, shared by the breadcrumb separator, the sidebar caret and the
-     pagination arrows. Used only as masks, so the stroke colour in each URL is
-     irrelevant — a mask reads alpha, and the colour comes from whatever applies
-     it. That is the point: a hex inside a data-URI cannot be themed. */
+  /* Icon geometry, shared by the breadcrumb separator and the sidebar caret.
+     Used only as masks, so the stroke colour in each URL is irrelevant — a mask
+     reads alpha, and the colour comes from whatever applies it. That is the
+     point: a hex inside a data-URI cannot be themed. */
   --docs-chevron: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='8'%20height='13'%20viewBox='0%200%208%2013'%3E%3Cpath%20d='M1%2012L7%206.5L1%201'%20fill='none'%20stroke='%23000'%20stroke-width='1.25'%2F%3E%3C%2Fsvg%3E");
   --docs-chevron-down: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='12'%20height='8'%20viewBox='0%200%2012%208'%3E%3Cpath%20d='M0.5%200.5L6%206.5L11.5%200.5'%20fill='none'%20stroke='%23000'%20stroke-width='1.25'%2F%3E%3C%2Fsvg%3E");
-  --docs-arrow-left: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='43'%20height='16'%20viewBox='0%200%2043%2016'%3E%3Cpath%20d='M0.292892%207.2929C-0.0976296%207.68342%20-0.0976295%208.31659%200.292893%208.70711L6.65685%2015.0711C7.04738%2015.4616%207.68054%2015.4616%208.07107%2015.0711C8.46159%2014.6805%208.46159%2014.0474%208.07107%2013.6569L2.41422%208L8.07107%202.34315C8.46159%201.95262%208.46159%201.31946%208.07107%200.928935C7.68054%200.538411%207.04738%200.538411%206.65685%200.928935L0.292892%207.2929ZM43%207L1%207L1%209L43%209L43%207Z'%20fill='%23000'%2F%3E%3C%2Fsvg%3E");
-  --docs-arrow-right: url("data:image/svg+xml,%3Csvg%20xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width='43'%20height='16'%20viewBox='0%200%2043%2016'%3E%3Cpath%20d='M42.7071%208.70711C43.0976%208.31659%2043.0976%207.68343%2042.7071%207.2929L36.3431%200.928939C35.9526%200.538414%2035.3195%200.538414%2034.9289%200.928938C34.5384%201.31946%2034.5384%201.95263%2034.9289%202.34315L40.5858%208.00001L34.9289%2013.6569C34.5384%2014.0474%2034.5384%2014.6805%2034.9289%2015.0711C35.3195%2015.4616%2035.9526%2015.4616%2036.3431%2015.0711L42.7071%208.70711ZM0%209L42%209.00001L42%207.00001L0%207L0%209Z'%20fill='%23000'%2F%3E%3C%2Fsvg%3E");
 }
 
 /* Use selector for specificity */
@@ -253,10 +253,11 @@ figure figcaption {
   mask-position: center;
 }
 
-/* The active crumb is a raised chip; both ground and text now invert with the
-   theme, where the old pairing pinned navy text on a #FFF ground. */
+/* The active crumb is the current page: no border, and the muted colour that
+   marks it as context rather than a link. */
 [class^=docMainContainer_] .breadcrumbs__item--active .breadcrumbs__link {
-  border: 1px solid var(--ifm-color-border);
+  border: none;
+  color: var(--mod-color-text-tertiary);
 }
 
 [class^=docMainContainer_] h1 {
@@ -270,16 +271,6 @@ figure figcaption {
 
 [class^=docMainContainer_] [class^=generatedIndexPage_] {
   --ifm-spacing-horizontal: 1.625rem;
-  position: relative;
-}
-
-[class^=docMainContainer_] [class^=generatedIndexPage_]::before {
-  position: absolute;
-  background: url(/img/gems-bg.webp) no-repeat 0 0;
-  width: 1322px;
-  height: 1070px;
-  z-index: -1;
-  content: '';
 }
 
 [class^=docMainContainer_] [class^=generatedIndexPage_] .row[class*=list_] > .col {
@@ -309,71 +300,6 @@ figure figcaption {
   font-size: 0.875rem;
 }
 
-[class^=docMainContainer_] .pagination-nav {
-  justify-content: center;
-}
-
-[class^=docMainContainer_] .pagination-nav__link {
-  background: var(--mod-color-surface-raised);
-  border-radius: 50px;
-  border: 1px solid var(--ifm-color-border);
-  flex-basis: 50%;
-}
-
-[class^=docMainContainer_] .pagination-nav__link--prev {
-  padding-inline: 27px 38px;
-}
-[class^=docMainContainer_] .pagination-nav__link .pagination-nav__sublabel {
-  transition: transform .25s ease-in-out; 
-}
-
-[class^=docMainContainer_] .pagination-nav__link--prev .pagination-nav__sublabel {
-  background-color: var(--mod-color-text-primary);
-  mask-image: var(--docs-arrow-left);
-  mask-repeat: no-repeat;
-  width: 42px;
-  height: 16px;
-  flex: 0 0 42px;
-}
-
-[class^=docMainContainer_] .pagination-nav__link--prev:hover .pagination-nav__sublabel {
-  transform: translateX(-20%);
-}
-
-[class^=docMainContainer_] .pagination-nav__link--next {
-  padding-inline: 38px 27px;
-  text-align: right;
-}
-
-[class^=docMainContainer_] .pagination-nav__link--next .pagination-nav__sublabel {
-  background-color: var(--mod-color-text-primary);
-  mask-image: var(--docs-arrow-right);
-  mask-repeat: no-repeat;
-  mask-position: 100% 0;
-  width: 100%;
-  height: 16px;
-  flex: 0 0 42px;
-}
-
-[class^=docMainContainer_] .pagination-nav__link--next:hover .pagination-nav__sublabel {
-  transform: translateX(20%);
-}
-
-[class^=docMainContainer_] .pagination-nav__sublabel {
-  font-size: 0;
-  color: transparent;
-}
-[class^=docMainContainer_] .pagination-nav__label {
-  font-weight: 500;
-  color: var(--ifm-heading-color);
-  line-height: 1.375;
-  flex-grow: 1;
-}
-
-[class^=docMainContainer_] .pagination-nav__label::before,
-[class^=docMainContainer_] .pagination-nav__label::after {
-  content: none;
-}
 
 
 @media(min-width: 997px) {
@@ -394,25 +320,6 @@ figure figcaption {
     --ifm-toc-border-color: var(--ifm-section-divider-color);
   }
 
-  [class^=docMainContainer_] .pagination-nav {
-    gap: calc(2 * var(--ifm-spacing-horizontal));
-    margin-right: var(--ifm-spacing-horizontal);
-    display: flex;
-  }
-
-  [class^=docMainContainer_] .pagination-nav__link {
-    width: 22.625rem;
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    gap: 1rem;
-    height: auto;
-  }
-
-  [class^=docMainContainer_] .pagination-nav__link--next .pagination-nav__sublabel {
-    order: 99;
-    width: 42px;
-  }
 }
 
 /* Custom styles for desktop (screens wider than 768px) */
