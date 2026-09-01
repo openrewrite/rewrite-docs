@@ -1,5 +1,6 @@
 ---
 description: Diagrams and explanations of the various Java LST components.
+sidebar_custom_props: { group: Lossless Semantic Trees }
 ---
 
 # Java LST examples

@@ -1,5 +1,6 @@
 ---
 description: A list of what languages, formats, build tools, and frameworks supported by OpenRewrite.
+sidebar_custom_props: { group: Languages and types }
 ---
 
 # Supported languages

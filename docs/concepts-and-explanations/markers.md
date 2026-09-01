@@ -1,5 +1,6 @@
 ---
 description: A technical overview of the markers and how to configure/use them.
+sidebar_custom_props: { group: Metadata and conventions }
 ---
 
 # Markers

@@ -1,5 +1,6 @@
 ---
 description: A reference doc that explains what LST metadata is available to recipe authors.
+sidebar_custom_props: { group: Languages and types }
 ---
 
 # Framework provided markers

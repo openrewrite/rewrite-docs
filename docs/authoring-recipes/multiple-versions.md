@@ -1,6 +1,7 @@
 ---
 sidebar_label: Multiple versions of a library
 description: How to add and use multiple versions of a library in a recipe.
+sidebar_custom_props: { group: Advanced techniques }
 ---
 
 # Using multiple versions of a library in a project
