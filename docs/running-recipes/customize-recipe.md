@@ -3,6 +3,8 @@ sidebar_label: Customizing recipes
 description: How to customize recipes to meet your needs.
 ---
 
+import MsalNotice from '@site/src/components/MsalNotice';
+
 # How to customize recipes to meet your needs
 
 OpenRewrite recipes are **opinionated** – meaning that they encourage certain conventions, patterns, or practices. The idea behind this is to provide sensible defaults that work for _most_ people _most_ of the time without requiring any fiddling. 
@@ -12,6 +14,12 @@ However, what if you run into a situation where you would like recipes to behave
 Fortunately, in many cases, recipes can be easily modified, broken apart, or combined – without needing to write any code.
 
 In this guide, we'll walk you through how to do this.
+
+<MsalNotice module={[
+  'org.openrewrite.recipe:rewrite-static-analysis',
+  'org.openrewrite.recipe:rewrite-spring',
+  'org.openrewrite.recipe:rewrite-migrate-java',
+]} />
 
 ## Customizing a recipe
 
