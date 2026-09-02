@@ -1,7 +1,3 @@
-/**
- * The navbar-items list is from @docusaurus/theme-classic's PrimaryMenu, MIT,
- * Copyright (c) Facebook, Inc. and its affiliates.
- */
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
 import clsx from 'clsx';
