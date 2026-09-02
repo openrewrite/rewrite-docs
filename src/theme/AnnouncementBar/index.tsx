@@ -12,10 +12,22 @@ import styles from './styles.module.css';
 // the bar to everyone.
 const NOTICE_BAR_STORAGE_KEY = 'code-genome-project-announcement-dismissed';
 const NOTICE_BAR_DISMISSED_ATTRIBUTE = 'data-notice-bar-dismissed';
-// Read by custom.css to offset the sticky navbar while a bar is showing.
-const BAR_VISIBLE_ATTRIBUTE = 'data-bar-visible';
 
+/**
+ * Renders nothing in Docusaurus's default slot.
+ *
+ * The header — bar, navbar, section nav — is one fixed block built in
+ * Navbar/Layout, and the bar is rendered there by AnnouncementBarInline. If
+ * this also rendered, two bars would mount: they would overlap at the top of
+ * the page while the default one still occupied its height in the document
+ * flow, leaving a gap the height of the bar below the header.
+ */
 export default function AnnouncementBar(): JSX.Element | null {
+  return null;
+}
+
+/** The bar itself, mounted inside the fixed header stack by Navbar/Layout. */
+export function AnnouncementBarInline(): JSX.Element | null {
   const {pathname} = useLocation();
   const {announcementBar} = useThemeConfig();
   const {isActive, close} = useAnnouncementBar();
@@ -24,7 +36,6 @@ export default function AnnouncementBar(): JSX.Element | null {
   // The recipe-catalog bar only belongs on /recipes; elsewhere we show the Code Genome
   // Project notice. Recipe pages already carry that guidance inline (see RunRecipe).
   const onRecipes = pathname.startsWith('/recipes');
-  const barVisible = onRecipes ? isActive : !noticeClosed;
 
   // The server can't read localStorage, so a previous dismissal is picked up after
   // mount. Until then the head script's attribute keeps the first paint correct.
@@ -37,17 +48,6 @@ export default function AnnouncementBar(): JSX.Element | null {
       // localStorage may be unavailable (e.g. private mode); ignore.
     }
   }, []);
-
-  // Client-side navigation doesn't re-run the head script, and the two bars live on
-  // different routes, so the navbar offset has to be re-evaluated on every route change.
-  useEffect(() => {
-    const html = document.documentElement;
-    if (barVisible) {
-      html.setAttribute(BAR_VISIBLE_ATTRIBUTE, 'true');
-    } else {
-      html.removeAttribute(BAR_VISIBLE_ATTRIBUTE);
-    }
-  }, [barVisible]);
 
   const closeNotice = useCallback(() => {
     try {

@@ -1,10 +1,12 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid #2546F0;
-  padding: 30px;
+  border: 1px solid var(--mod-color-border-primary);
+  padding: var(--mod-spacing_3_3_4);
+  /* 15px is off the spacing scale (14 and 16 are the neighbours). Left as a
+     literal rather than silently shifting the layout by a pixel. */
   gap: 15px;
-  margin: 16px 0;
+  margin: var(--mod-spacing_2) 0;
 }
 
 .subContainer {
@@ -14,27 +16,31 @@
 }
 
 .heading {
-  font-weight: 500;
-  font-size: 18px;
+  font-weight: var(--mod-font-weight-medium);
+  font-size: var(--mod-font-size-h5);
   line-height: 23px;
-  /* color: #FBFDFF; */
 }
 
+/* Primary action: the design system's primary button is a high-contrast
+   neutral, not a blue fill. It inverts between themes (navy on cream, cream on
+   near-black), so it stays the strongest element in either mode. */
 .link {
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: var(--mod-font-weight-regular);
+  font-size: var(--mod-font-size-default);
   line-height: 23px;
-  background-color: #2546F0;
-  padding: 8px;
+  background-color: var(--mod-button-primary-bg);
+  padding: var(--mod-spacing_1);
   align-items: center;
-  border-radius: 6px;
-  color: #FBFDFF;
+  border-radius: var(--mod-border-radius-button);
+  color: var(--mod-color-text-on-primary);
   display: inline-flex;
-  gap: 8px;
+  gap: var(--mod-spacing_1);
 }
 
+/* Pin the text colour: rendered as an <a>, Infima's global a:hover would
+   otherwise repaint it with the link colour. */
 .link:hover {
-  background-color: #2546F080;
-  color: #FBFDFF;
+  background-color: var(--mod-button-primary-bg-hover);
+  color: var(--mod-color-text-on-primary);
   text-decoration: none;
 }

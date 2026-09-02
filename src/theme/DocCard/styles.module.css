@@ -1,18 +1,31 @@
 .cardContainer {
-  --ifm-link-color: var(--ifm-color-emphasis-800);
-  --ifm-link-hover-color: var(--ifm-color-emphasis-700);
+  /* The card title is a link but should read as heading text, not as an action,
+     so it takes the text tokens rather than the link colour. */
+  --ifm-link-color: var(--mod-color-text-primary);
+  --ifm-link-hover-color: var(--mod-color-text-secondary);
   --ifm-link-hover-decoration: none;
 
   box-shadow: none;
-  border: 1px solid var(--ifm-color-divider);
+  border: 1px solid var(--mod-color-border-primary);
   transition: all var(--ifm-transition-fast) ease;
   transition-property: border, box-shadow;
   width: 100%;
 }
 
+/* Mint hover is the OpenRewrite accent and has no design-system token; it comes
+   through the --ifm-color-mint brand literal declared in custom.css.
+
+   Text is pinned dark for the same reason as the announcement bar: the mint
+   ground is identical in both themes, so text that followed the colour mode
+   would go near-white on green — 1.11:1. Pinned it is 11.96:1. */
 .cardContainer:hover {
-  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--docs-shadow-dropdown);
   background-color: var(--ifm-color-mint);
+
+  --ifm-link-color: var(--mod-ink-800);
+  --ifm-link-hover-color: var(--mod-ink-800);
+  --ifm-heading-color: var(--mod-ink-800);
+  color: var(--mod-ink-800);
 }
 
 .cardContainer *:last-child {
@@ -20,15 +33,15 @@
 }
 
 .cardTitle {
-  --ifm-heading-margin-bottom: 8px;
-  font-size: 1.25rem;
-  font-weight: 600;
+  --ifm-heading-margin-bottom: var(--mod-spacing_1);
+  font-size: var(--mod-font-size-h4);
+  font-weight: var(--mod-font-weight-semi-bold);
   line-height: 1.666;
 }
 
 .cardDescription {
   color: var(--ifm-heading-color);
-  font-size: 1rem;
+  font-size: var(--mod-font-size-default);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;

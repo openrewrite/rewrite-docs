@@ -1,0 +1,35 @@
+/**
+ * Navbar layout.
+ *
+ * The whole header — announcement bar, primary navbar, section nav — is one
+ * fixed block. Making the block fixed rather than each row sticky is what lets
+ * the rows stack without any per-row `top` arithmetic; content below is pushed
+ * clear by the offsets in custom.css.
+ */
+
+.navbarWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--ifm-z-index-fixed);
+  /* Solid, so content scrolling underneath is fully occluded. The section nav's
+     bottom border draws the lower edge. */
+  background-color: var(--ifm-background-color);
+}
+
+/* Hide-on-scroll animation, from the Docusaurus original. */
+.navbarHideable {
+  transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+  transform: translate3d(0, calc(-100% - 2px), 0);
+}
+
+@media (min-width: 997px) {
+  .navbar {
+    padding-left: var(--mod-spacing_4);
+    padding-right: var(--mod-spacing_4);
+  }
+}

@@ -87,6 +87,7 @@ const sidebars: SidebarsConfig = {
           description: 'How to create and test recipes with OpenRewrite and Moderne.',
           href: 'https://docs.moderne.io/hands-on-learning/fundamentals/workshop-overview',
         },
+        'training',
       ],
     },
     {
@@ -132,7 +133,6 @@ const sidebars: SidebarsConfig = {
         'reference/building-openrewrite-from-source',
       ],
     },
-    'training',
     {
       type: 'category',
       label: 'Lists',
