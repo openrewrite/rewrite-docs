@@ -16,7 +16,6 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import SearchBar from '@theme/SearchBar';
 import NavbarLogo from '@theme/Navbar/Logo';
-import NavbarSearch from '@theme/Navbar/Search';
 import styles from './styles.module.css';
 
 /**
@@ -67,7 +66,7 @@ const NavbarContentLayout: FunctionComponent<NavbarContentLayoutProps> = ({ left
     >
       {left}
     </div>
-    <div className={styles.navbarCenter}>{center}</div>
+    {center && <div className={styles.navbarCenter}>{center}</div>}
     <div
       className={clsx(
         ThemeClassNames.layout.navbar.containerRight,
@@ -88,14 +87,12 @@ const NavbarContent: FunctionComponent = () => {
   const [, rightItems] = splitNavbarItems(items);
   const windowSize = useWindowSize();
 
-  // One SearchBar and one toggle, placed differently rather than rendered twice:
-  // each SearchBar mounts its own Algolia preconnect and window keydown listener,
-  // so a second instance makes Cmd+K fire two handlers.
+  // One instance, placed differently rather than rendered twice: each SearchBar
+  // mounts its own Cmd+K listener, so a second makes the handler fire twice. No
+  // <NavbarSearch> wrapper — its class pins the field over the toggle below 997px.
   const controls = (
     <>
-      <NavbarSearch>
-        <SearchBar />
-      </NavbarSearch>
+      <SearchBar />
       <NavbarColorModeToggle className={styles.colorModeToggle} />
     </>
   );
@@ -115,7 +112,7 @@ const NavbarContent: FunctionComponent = () => {
       right={
         <>
           <ExternalNavLinks items={rightItems} />
-          {isMobile && <div className={styles.mobileControls}>{controls}</div>}
+          {isMobile && controls}
         </>
       }
     />

@@ -111,10 +111,20 @@ function recentReleases(): NavSection[] {
     }));
 }
 
+/** The section the release entries belong to. */
+const ALL_RELEASES_HREF = '/changelog';
+
 /** Right-aligned dropdown, mirroring Releases on docs.moderne.io. */
 export const releaseSections: NavSection[] = [
   ...recentReleases(),
-  { name: 'All releases', href: '/changelog' },
+  { name: 'All releases', href: ALL_RELEASES_HREF },
+];
+
+/** The drawer's sections, where the secondary nav is hidden: the same links, with
+ *  the Releases dropdown flattened to its index page. */
+export const mobileSections: NavSection[] = [
+  ...primarySections,
+  { name: 'Releases', href: ALL_RELEASES_HREF },
 ];
 
 /** Sections the secondary nav can mark active. The release entries are
@@ -122,6 +132,6 @@ export const releaseSections: NavSection[] = [
  *  /changelog itself scopes a sidebar. */
 export const selectableSections: NavSection[] = [
   ...primarySections,
-  { name: 'Changelog', href: '/changelog' },
+  { name: 'Changelog', href: ALL_RELEASES_HREF },
   { name: 'Licensing', href: '/licensing/openrewrite-licensing' },
 ];

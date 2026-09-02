@@ -1,0 +1,30 @@
+.sectionLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mod-spacing_2);
+}
+
+/* The colour the secondary nav marks its current section with. */
+.sectionLinkActive,
+.sectionLinkActive:hover {
+  color: var(--docs-color-active);
+}
+
+/* Masked like the sidebar caret, so currentColor carries it to the active row. */
+.chevron {
+  width: 8px;
+  height: 12px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: var(--docs-chevron);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+}
+
+.offSiteLinks {
+  margin-top: var(--mod-spacing_2);
+  padding-top: var(--mod-spacing_2);
+  border-top: 1px solid var(--mod-color-border-primary);
+}
