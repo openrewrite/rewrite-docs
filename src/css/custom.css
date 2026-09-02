@@ -206,6 +206,14 @@ html[data-theme='dark'] {
   object-fit: contain;
 }
 
+/* The navbar's ground is transparent because the fixed wrapper in Navbar/Layout
+   paints the header, and Infima's drawer reads that same variable — so the menu
+   opened see-through (#541). Re-pointed rather than overridden, so anything else
+   in the drawer reads the same ground. */
+.navbar-sidebar {
+  --ifm-navbar-background-color: var(--ifm-background-color);
+}
+
 figure img {
   display: block;
   margin-left: auto;
