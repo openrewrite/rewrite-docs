@@ -160,6 +160,10 @@ To enable a style so that it is used for any formatting performed by an OpenRewr
 
 Update your `build.gradle` file to include an `activeStyle` such as in:
 
+:::info
+`rewrite-jackson` is distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. The snippet below assumes you have already declared that repository and added your credentials, as described in the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project).
+:::
+
 ```groovy title="build.gradle"
 rewrite {
   activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3")
