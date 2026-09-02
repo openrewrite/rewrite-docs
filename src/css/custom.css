@@ -224,8 +224,13 @@ figure figcaption {
   text-align: center;
 }
 
+/* react-player writes its size inline (640x360), which ran off the side of a
+   phone. Cap the width and let the ratio set the height. */
 .reactPlayer {
   margin: auto;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto !important;
 }
 
 /* Zoomed image background */
