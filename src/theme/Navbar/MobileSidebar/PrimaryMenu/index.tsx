@@ -20,20 +20,14 @@ import { mobileSections } from '@site/src/config/navSections';
 import { findSection } from '@site/src/theme/DocSidebarItems/filterUtils';
 import styles from './styles.module.css';
 
-/**
- * First level of the mobile drawer.
- *
- * Upstream lists the navbar items alone, which here is four off-site links: the
- * section nav is hidden below 997px and the drawer's second level only exists on
- * pages with a sidebar, so off a doc page nothing led into the docs.
- */
+/** Sections above the navbar items: the section nav is hidden below 997px, and the
+ *  drawer's second level only exists on pages that have a sidebar. */
 const NavbarMobilePrimaryMenu: FunctionComponent = () => {
   const mobileSidebar = useNavbarMobileSidebar();
   // TODO from upstream theme-classic: temporary casting until ThemeConfig improves.
   const items = useThemeConfig().navbar.items as NavbarItemConfig[];
   const location = useLocation();
-  // The matcher the secondary nav and the sidebar filter use, so the three
-  // cannot disagree about which section the reader is in.
+  // Same matcher as the secondary nav and the sidebar filter, so they can't disagree.
   const activeHref = findSection(location.pathname)?.href;
   const close = () => mobileSidebar.toggle();
 

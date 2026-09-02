@@ -120,8 +120,8 @@ export const releaseSections: NavSection[] = [
   { name: 'All releases', href: ALL_RELEASES_HREF },
 ];
 
-/** Sections listed in the mobile drawer, where the secondary nav is hidden: the
- *  same links, with the Releases dropdown flattened to its index page. */
+/** The drawer's sections, where the secondary nav is hidden: the same links, with
+ *  the Releases dropdown flattened to its index page. */
 export const mobileSections: NavSection[] = [
   ...primarySections,
   { name: 'Releases', href: ALL_RELEASES_HREF },

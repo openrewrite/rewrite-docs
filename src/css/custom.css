@@ -190,10 +190,8 @@ html[data-theme='dark'] {
   }
 }
 
-/* The wordmark is what gives when the navbar row runs short. Infima pins it to
-   flex: 0 0 auto, so the old fixed widths (312px, 220px below 768px) pushed the
-   search button and colour-mode toggle off the edge of a phone instead. 312x33
-   is its natural size; object-fit holds the ratio as flex shrinks the box. */
+/* Elastic, so the row can't overflow: Infima pins this to flex: 0 0 auto, and the
+   fixed widths it replaces (312px, 220px under 768px) ran off the edge of a phone. */
 .navbar__logo {
   flex: 0 1 auto;
   min-width: 0;
@@ -206,10 +204,8 @@ html[data-theme='dark'] {
   object-fit: contain;
 }
 
-/* The navbar's ground is transparent because the fixed wrapper in Navbar/Layout
-   paints the header, and Infima's drawer reads that same variable — so the menu
-   opened see-through (#541). Re-pointed rather than overridden, so anything else
-   in the drawer reads the same ground. */
+/* NOTE: the navbar's ground is transparent — Navbar/Layout's fixed wrapper paints
+   the header — and Infima's drawer reads the same variable, so it opened see-through. */
 .navbar-sidebar {
   --ifm-navbar-background-color: var(--ifm-background-color);
 }
@@ -224,8 +220,8 @@ figure figcaption {
   text-align: center;
 }
 
-/* react-player writes its size inline (640x360), which ran off the side of a
-   phone. Cap the width and let the ratio set the height. */
+/* HACK: !important is the only way past react-player's inline 640x360, which ran
+   off the side of a phone. */
 .reactPlayer {
   margin: auto;
   max-width: 100%;

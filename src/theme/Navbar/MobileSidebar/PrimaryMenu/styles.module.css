@@ -1,7 +1,3 @@
-/**
- * Sections at the top of the mobile drawer, above the off-site links.
- */
-
 .sectionLink {
   display: flex;
   align-items: center;
@@ -9,14 +5,13 @@
   gap: var(--mod-spacing_2);
 }
 
-/* Same colour the secondary nav marks the current section with. */
+/* The colour the secondary nav marks its current section with. */
 .sectionLinkActive,
 .sectionLinkActive:hover {
   color: var(--docs-color-active);
 }
 
-/* Masked like the sidebar caret: the SVG supplies the shape and currentColor the
-   colour, so the chevron follows its row. */
+/* Masked like the sidebar caret, so currentColor carries it to the active row. */
 .chevron {
   width: 8px;
   height: 12px;
@@ -28,7 +23,6 @@
   mask-position: center;
 }
 
-/* Divider: above it the site's own sections, below it links that leave it. */
 .offSiteLinks {
   margin-top: var(--mod-spacing_2);
   padding-top: var(--mod-spacing_2);

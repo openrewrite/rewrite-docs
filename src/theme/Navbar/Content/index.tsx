@@ -87,14 +87,9 @@ const NavbarContent: FunctionComponent = () => {
   const [, rightItems] = splitNavbarItems(items);
   const windowSize = useWindowSize();
 
-  // One SearchBar and one toggle, placed differently rather than rendered twice:
-  // each SearchBar mounts its own Algolia preconnect and window keydown listener,
-  // so a second instance makes Cmd+K fire two handlers.
-  //
-  // Rendered without theme-classic's <NavbarSearch> wrapper: its only job is a
-  // class that pins the field to the navbar's right edge below 997px, where the
-  // default navbar has nowhere in flow to put it. In this row that dropped it on
-  // top of the colour-mode toggle.
+  // One instance, placed differently rather than rendered twice: each SearchBar
+  // mounts its own Cmd+K listener, so a second makes the handler fire twice. No
+  // <NavbarSearch> wrapper — its class pins the field over the toggle below 997px.
   const controls = (
     <>
       <SearchBar />

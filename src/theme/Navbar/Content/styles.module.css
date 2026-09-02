@@ -1,11 +1,6 @@
 /**
- * Navbar content: three zones, logo left, search centred, external links right.
- *
- * The side zones share the leftover width equally (flex: 1), which lands the
- * centre zone on the page's midline while leaving it in flow. Centred absolutely
- * it sat on the same midline, but the side zones kept their full half of the row
- * and the links ran under the search field from 997px to about 1180px. In flow
- * the links hold their width and the wordmark gives (see custom.css).
+ * Logo left, controls centred, links right. Equal side zones land the centre on
+ * the midline in flow; centred absolutely, the links ran under it below ~1180px.
  */
 
 .navbarInner {
@@ -24,8 +19,7 @@
 }
 
 .navbarRight {
-  /* Nothing to balance below the breakpoint: take what the controls need and
-     leave the rest to the wordmark. */
+  /* Nothing to balance below the breakpoint; the wordmark keeps the rest. */
   flex: 0 0 auto;
   display: flex;
   align-items: center;
@@ -34,18 +28,14 @@
 }
 
 @media (min-width: 997px) {
-  /* An equal share with the left zone puts the centre on the midline. min-width
-     beats Infima's min-width: 0 on .navbar__items, which let this zone shrink
-     past the links and spill them over the search field; held at content width
-     it pushes the centre off the midline instead. */
+  /* min-width beats Infima's min-width: 0 on .navbar__items, which let this zone
+     shrink past the links and spill them over the search field. */
   .navbarRight {
     flex: 1;
     min-width: max-content;
   }
 }
 
-/* Holds the controls above the breakpoint; below it they render in the right
-   zone, which carries the same gap. */
 .navbarCenter {
   flex: 0 0 auto;
   display: flex;
