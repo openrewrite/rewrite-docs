@@ -27,6 +27,62 @@ export const primarySections: NavSection[] = [
   { name: 'Lists', href: '/lists' },
 ];
 
+/**
+ * Route -> section href, derived from the sidebar tree.
+ *
+ * A section cannot be identified by URL prefix alone. Two cases break it:
+ * Concepts & explanations is served at /concepts-explanations but its documents
+ * live under /concepts-and-explanations, and Lists owns seven documents under
+ * /reference — the same prefix Reference uses for its own thirteen. Walking the
+ * tree is the only thing that knows which section a document belongs to.
+ *
+ * Safe to build from doc ids because routeBasePath is "/" and no document in a
+ * section overrides its slug, so the route is always "/" + id.
+ */
+function buildRouteOwners(): Map<string, string> {
+  const owners = new Map<string, string>();
+
+  const collect = (items: unknown[], sectionHref: string): void => {
+    items.forEach((item) => {
+      if (typeof item === 'string') {
+        owners.set(`/${item}`.toLowerCase(), sectionHref);
+        return;
+      }
+      if (typeof item !== 'object' || item === null) {
+        return;
+      }
+      const node = item as { type?: string; id?: string; items?: unknown[] };
+      if (node.type === 'doc' && node.id) {
+        owners.set(`/${node.id}`.toLowerCase(), sectionHref);
+      }
+      if (Array.isArray(node.items)) {
+        collect(node.items, sectionHref);
+      }
+    });
+  };
+
+  ((sidebars.docs ?? []) as unknown[]).forEach((item) => {
+    if (typeof item !== 'object' || item === null) {
+      return;
+    }
+    const node = item as { type?: string; link?: { slug?: string }; items?: unknown[] };
+    const slug = node.link?.slug;
+    if (node.type !== 'category' || !slug || !Array.isArray(node.items)) {
+      return;
+    }
+    collect(node.items, slug.toLowerCase());
+  });
+
+  return owners;
+}
+
+const routeOwners = buildRouteOwners();
+
+/** The section href owning this exact route, if the tree claims one. */
+export function ownerOf(pathname: string): string | undefined {
+  return routeOwners.get(pathname.toLowerCase().replace(/\/$/, ''));
+}
+
 /** How many releases the Releases dropdown lists before "More releases". */
 const RECENT_RELEASE_COUNT = 3;
 

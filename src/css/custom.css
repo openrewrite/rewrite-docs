@@ -507,26 +507,26 @@ body {
      the warm canvas. */
   box-shadow: none;
   padding: var(--mod-spacing_2);
+  /* Always stacked, whether or not a custom title was given. Laid out as a row,
+     an untitled admonition ran its body beside the type label, so every line
+     after the first was indented to a depth set by the width of the word
+     "info". The heading is a heading; the body starts on the next line. */
   display: flex;
-  flex-direction: row;
-  gap: var(--mod-spacing_1);
-  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--mod-spacing_1_2);
   margin-top: var(--mod-spacing_3);
   margin-bottom: var(--mod-spacing_3);
 }
 
-.theme-admonition:has([class*='admonitionTitle_']) {
-  flex-direction: column;
-  gap: var(--mod-spacing_1_2);
-}
-
+/* Icon and label on one line, at the size of the heading they are. */
 .theme-admonition [class*='admonitionHeading_'] {
   margin: 0;
-  line-height: 1;
-  flex-shrink: 0;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: var(--mod-spacing_1);
+  font-size: var(--mod-font-size-h5);
+  font-weight: var(--mod-font-weight-semi-bold);
+  line-height: 1.3;
   text-transform: none;
 }
 
@@ -534,23 +534,24 @@ body {
   margin-right: 0;
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
+/* These icons are drawn as filled paths (fill-rule="evenodd"); forcing
+   fill:none + stroke turned each one into a hollow outline of its own edge. */
 .theme-admonition [class*='admonitionHeading_'] [class*='admonitionIcon_'] svg {
-  fill: none;
-  stroke: currentColor;
+  fill: currentColor;
+  stroke: none;
+  width: 1em;
+  height: 1em;
 }
 
-.theme-admonition [class*='admonitionTitle_'] {
-  font-weight: var(--mod-font-weight-semi-bold);
-  font-size: var(--mod-font-size-h5);
-  line-height: 1.3;
-}
+/* A custom title lands inside the heading, so it inherits the size and weight
+   above and needs nothing of its own. */
 
 .theme-admonition [class*='admonitionContent_'] {
-  flex: 1;
-  /* Let the content column shrink below its intrinsic width so nested blocks
-     (code blocks especially) scroll inside the box instead of overflowing. */
+  /* Shrink below intrinsic width so nested blocks (code blocks especially)
+     scroll inside the box instead of overflowing it. */
   min-width: 0;
 }
 

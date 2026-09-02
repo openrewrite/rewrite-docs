@@ -1,5 +1,5 @@
 import type { PropSidebarItem, PropSidebarItemCategory } from '@docusaurus/plugin-content-docs';
-import { selectableSections, type NavSection } from '@site/src/config/navSections';
+import { ownerOf, selectableSections, type NavSection } from '@site/src/config/navSections';
 
 /** Every section that can scope a sidebar, with hrefs normalised once. */
 const allSections: NavSection[] = selectableSections.map((section) => ({
@@ -7,10 +7,24 @@ const allSections: NavSection[] = selectableSections.map((section) => ({
   href: section.href.toLowerCase().replace(/\/$/, ''),
 }));
 
-/** The section the current path belongs to, or null at the root. Shared with
- *  SecondaryNav so the highlight and the scoped sidebar cannot disagree. No
- *  section href prefixes another, so the first match is the only match. */
+/**
+ * The section the current path belongs to, or null at the root. Shared with
+ * SecondaryNav so the highlight and the scoped sidebar cannot disagree.
+ *
+ * The sidebar tree is asked first, because a prefix cannot answer this: Lists
+ * and Reference both serve documents from /reference, and Concepts is served at
+ * /concepts-explanations while its documents live at /concepts-and-explanations.
+ * The prefix pass that follows is what matches the index pages themselves.
+ */
 export function findSection(pathname: string): NavSection | null {
+  const owner = ownerOf(pathname);
+  if (owner) {
+    const owned = allSections.find((section) => section.href === owner);
+    if (owned) {
+      return owned;
+    }
+  }
+
   const path = pathname.toLowerCase();
   return allSections.find((section) => path.startsWith(section.href)) ?? null;
 }
