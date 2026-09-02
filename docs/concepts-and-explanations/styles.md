@@ -162,10 +162,15 @@ Update your `build.gradle` file to include an `activeStyle` such as in:
 
 ```groovy title="build.gradle"
 rewrite {
-  activeRecipe("someRecipe")
+  activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3")
 
   // This style is made up to have an example.
   activeStyle("com.yourorg.YesTabsNoStarImports")
+}
+
+dependencies {
+  rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
+  rewrite("org.openrewrite.recipe:rewrite-jackson")
 }
 ```
 </TabItem>
@@ -186,13 +191,20 @@ Update your `pom.xml` file to include an `<activeStyles>` such as in:
     <version>{{VERSION_REWRITE_MAVEN_PLUGIN}}</version>
     <configuration>
       <activeRecipes>
-        <!-- Recipes here -->
+        <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3</recipe>
       </activeRecipes>
       <activeStyles>
         <!-- This style is made up to have an example. It isn't packaged with OpenRewrite -->
         <style>com.yourorg.YesTabsNoStarImports</style>
       </activeStyles>
     </configuration>
+    <dependencies>
+      <dependency>
+        <groupId>org.openrewrite.recipe</groupId>
+        <artifactId>rewrite-jackson</artifactId>
+        <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
+      </dependency>
+    </dependencies>
   </plugin>
 </plugins>
 ```
@@ -204,9 +216,9 @@ Add a `-Drewrite.activeStyles` parameter to your Maven command in the terminal s
 
 ```bash
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN}}:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-static-analysis:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.staticanalysis.CommonStaticAnalysis \
-  -Drewrite.activeStyles=org.some.style.name
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE \
+  -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3 \
+  -Drewrite.activeStyles=com.yourorg.YesTabsNoStarImports
 ```
 
 Since this command doesn't modify your `pom.xml`, the Code Genome Project repository has to be declared in your Maven `settings.xml` file as both a `pluginRepository` and a `repository`, as described in [running Rewrite without modifying the build](/running-recipes/running-rewrite-on-a-maven-project-without-modifying-the-build#configure-the-code-genome-project-repository).
