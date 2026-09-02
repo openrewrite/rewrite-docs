@@ -190,8 +190,20 @@ html[data-theme='dark'] {
   }
 }
 
-.navbar__logo img {
+/* The wordmark is what gives when the navbar row runs short. Infima pins it to
+   flex: 0 0 auto, so the old fixed widths (312px, 220px below 768px) pushed the
+   search button and colour-mode toggle off the edge of a phone instead. 312x33
+   is its natural size; object-fit holds the ratio as flex shrinks the box. */
+.navbar__logo {
+  flex: 0 1 auto;
+  min-width: 0;
+  width: 312px;
   height: 33px;
+}
+
+.navbar__logo img {
+  width: 100%;
+  object-fit: contain;
 }
 
 figure img {
@@ -363,22 +375,6 @@ figure figcaption {
     --ifm-toc-border-color: var(--ifm-section-divider-color);
   }
 
-}
-
-/* Custom styles for desktop (screens wider than 768px) */
-@media (min-width: 768px) {
-  .navbar__logo {
-    width: 312px; /* Larger logo for desktop */
-    margin-right: 20px;
-  }
-}
-
-/* Custom styles for mobile (screens smaller than 768px) */
-@media (max-width: 767px) {
-  .navbar__logo {
-    width: 220px; /* Smaller logo for mobile */
-    margin-right: 10px;
-  }
 }
 
 h1, .markdown h2, .markdown h3, .markdown h4 {

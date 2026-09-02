@@ -1,17 +1,18 @@
 /**
  * Navbar content: three zones, logo left, search centred, external links right.
  *
- * The centre zone is absolutely positioned on desktop so the search field sits
- * on the page's midline rather than the midpoint of whatever space the two side
- * zones happen to leave.
+ * The side zones share the leftover width equally (flex: 1), which lands the
+ * centre zone on the page's midline while leaving it in flow. Centred absolutely
+ * it sat on the same midline, but the side zones kept their full half of the row
+ * and the links ran under the search field from 997px to about 1180px. In flow
+ * the links hold their width and the wordmark gives (see custom.css).
  */
 
 .navbarInner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--mod-spacing_3);
   width: 100%;
-  position: relative;
 }
 
 .navbarLeft {
@@ -23,40 +24,40 @@
 }
 
 .navbarRight {
-  flex: 1;
+  /* Nothing to balance below the breakpoint: take what the controls need and
+     leave the rest to the wordmark. */
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: var(--mod-spacing_2);
+  gap: var(--mod-spacing_1);
 }
 
+@media (min-width: 997px) {
+  /* An equal share with the left zone puts the centre on the midline. min-width
+     beats Infima's min-width: 0 on .navbar__items, which let this zone shrink
+     past the links and spill them over the search field; held at content width
+     it pushes the centre off the midline instead. */
+  .navbarRight {
+    flex: 1;
+    min-width: max-content;
+  }
+}
+
+/* Holds the controls above the breakpoint; below it they render in the right
+   zone, which carries the same gap. */
 .navbarCenter {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-}
-
-@media (min-width: 997px) {
-  .navbarCenter {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: var(--mod-spacing_1);
-  }
+  gap: var(--mod-spacing_1);
 }
 
 .logoGroup {
   display: flex;
   align-items: center;
   gap: var(--mod-spacing_2);
-}
-
-/* Search and toggle move here below the breakpoint, where the absolutely
-   centred zone has no room. Rendered in one place or the other, never both. */
-.mobileControls {
-  display: flex;
-  align-items: center;
-  gap: var(--mod-spacing_1);
+  min-width: 0;
 }
 
 .externalLinks {

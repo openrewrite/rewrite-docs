@@ -16,7 +16,6 @@ import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import SearchBar from '@theme/SearchBar';
 import NavbarLogo from '@theme/Navbar/Logo';
-import NavbarSearch from '@theme/Navbar/Search';
 import styles from './styles.module.css';
 
 /**
@@ -67,7 +66,7 @@ const NavbarContentLayout: FunctionComponent<NavbarContentLayoutProps> = ({ left
     >
       {left}
     </div>
-    <div className={styles.navbarCenter}>{center}</div>
+    {center && <div className={styles.navbarCenter}>{center}</div>}
     <div
       className={clsx(
         ThemeClassNames.layout.navbar.containerRight,
@@ -91,11 +90,14 @@ const NavbarContent: FunctionComponent = () => {
   // One SearchBar and one toggle, placed differently rather than rendered twice:
   // each SearchBar mounts its own Algolia preconnect and window keydown listener,
   // so a second instance makes Cmd+K fire two handlers.
+  //
+  // Rendered without theme-classic's <NavbarSearch> wrapper: its only job is a
+  // class that pins the field to the navbar's right edge below 997px, where the
+  // default navbar has nowhere in flow to put it. In this row that dropped it on
+  // top of the colour-mode toggle.
   const controls = (
     <>
-      <NavbarSearch>
-        <SearchBar />
-      </NavbarSearch>
+      <SearchBar />
       <NavbarColorModeToggle className={styles.colorModeToggle} />
     </>
   );
@@ -115,7 +117,7 @@ const NavbarContent: FunctionComponent = () => {
       right={
         <>
           <ExternalNavLinks items={rightItems} />
-          {isMobile && <div className={styles.mobileControls}>{controls}</div>}
+          {isMobile && controls}
         </>
       }
     />
