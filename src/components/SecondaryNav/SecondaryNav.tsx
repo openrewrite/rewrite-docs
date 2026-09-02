@@ -15,19 +15,11 @@ export type SecondaryNavProps = {
   menuItems: NavSection[];
 };
 
-/** Chevron for the dropdown. Inline rather than an icon package: it is the only
- *  glyph this component needs, and it inherits currentColor for free. */
+/** Chevron for the dropdown. Masked from --docs-chevron-down rather than
+ *  inlined, so this glyph has one definition shared with the sidebar caret. The
+ *  mask takes its colour from currentColor, as an inline SVG would. */
 const Chevron: FunctionComponent<{ open: boolean }> = ({ open }) => (
-  <svg
-    className={clsx(styles.chevron, open && styles.chevronOpen)}
-    width="10"
-    height="6"
-    viewBox="0 0 10 6"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
+  <span className={clsx(styles.chevron, open && styles.chevronOpen)} aria-hidden="true" />
 );
 
 /**

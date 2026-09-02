@@ -2261,10 +2261,10 @@
   dependencies:
     langium "3.3.1"
 
-"@moderneinc/design-system-tokens@7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@moderneinc/design-system-tokens/-/design-system-tokens-7.3.0.tgz#bf20c0a0344724d212cad591c6a250b371584510"
-  integrity sha512-iapUz2bRivt/cno/amWmRDqABsQXlk5AgL0zLTyd7KbowkMpC/nndjpZMvixBw03SDoPg9HsVBFUNtCTUTRSwA==
+"@moderneinc/design-system-tokens@7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@moderneinc/design-system-tokens/-/design-system-tokens-7.4.0.tgz#3aec47d9d4fa645ebb8dd9f67e99c04b16ce5b36"
+  integrity sha512-iBehSXP2053dshQk59dh78+af3/YZEHgTsgK4P14QrHPq9BAKAMF2C4v1EC3T8bJi0fY+KHwOdgzbkoCE9of1Q==
 
 "@module-federation/error-codes@0.18.0":
   version "0.18.0"

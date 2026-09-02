@@ -63,7 +63,17 @@
   cursor: pointer;
 }
 
+/* One definition of this glyph, shared with the sidebar caret in custom.css.
+   background-color + mask means it follows currentColor like an inline SVG. */
 .chevron {
+  width: 10px;
+  height: 6px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-image: var(--docs-chevron-down);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
   transition: transform 0.2s ease;
 }
 

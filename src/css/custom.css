@@ -445,6 +445,16 @@ html {
   min-height: calc(100vh - var(--docs-header-height));
 }
 
+/* The table of contents sticks, but theme-classic derives its offset from
+   --ifm-navbar-height alone, which here is only the first of the header's three
+   rows. That put its top 72px behind the fixed header — entries slid under the
+   header on scroll — and made its max-height overshoot the viewport by the same
+   amount. Both are re-derived from the measured header instead. */
+.theme-doc-toc-desktop {
+  top: calc(var(--docs-header-height) + var(--mod-spacing_2));
+  max-height: calc(100vh - var(--docs-header-height) - var(--mod-spacing_4));
+}
+
 .theme-doc-sidebar-container {
   position: sticky;
   top: var(--docs-header-height);
