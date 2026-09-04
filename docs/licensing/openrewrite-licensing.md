@@ -12,7 +12,7 @@ The OpenRewrite ecosystem is a marketplace of both free and proprietary recipes.
 
 ### Apache License Version 2.0
 
-Core OpenRewrite technology and language libraries in general are fully open sourced under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0). This includes the entirety of [openrewrite/rewrite](https://github.com/openrewrite/rewrite), including rewrite-core and many of the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, Terraform, etc.). It also includes the building-block core recipes like `ChangeMethodName`, `ChangeType`, etc. and recipe repositories that are primarily committed to by third parties. Lastly, this includes the Maven and Gradle plugins themselves. This means that framework/library authors can supply OSS migrations to their consumers.
+Core OpenRewrite technology and language libraries in general are fully open sourced under the [Apache license](https://www.apache.org/licenses/LICENSE-2.0). This includes most of [openrewrite/rewrite](https://github.com/openrewrite/rewrite), including rewrite-core and the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, HCL, etc.). The newer language modules in that repository, such as those for JavaScript and TypeScript, C#, Python, Go, Ruby, Scala, and Android, are under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) instead. It also includes the building-block core recipes like `ChangeMethodName`, `ChangeType`, etc. and recipe repositories that are primarily committed to by third parties. Lastly, this includes the Maven and Gradle plugins themselves. This means that framework/library authors can supply OSS migrations to their consumers.
 
 ### Moderne Source Available License
 
@@ -29,21 +29,31 @@ That being said, if you work at a company and you want to run these recipes on y
 
 ### Moderne Proprietary License
 
-There is a [group of OpenRewrite recipes that are created by Moderne](../reference/moderne-recipes) specifically for multi-repo code analysis and transformation on our platform, including those designed for large-scale impact analysis and security remediation, as well as those that leverage AI tool calling. These recipes are under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview).
+Moderne's proprietary recipes pick up where the open-source and source-available recipes leave off - addressing the latest and most pressing needs of enterprise codebases. These recipes fall into five groups:
 
-This proprietary license also includes some additional coverage for framework migrations such as Spring Boot.
+* **More languages:** Migrate and modernize JavaScript and TypeScript, C# and .NET, Python, Go, Kotlin, Scala, and COBOL, along with infrastructure code such as Terraform and Kubernetes.
+* **The newest Java frameworks:** Upgrade to the latest Spring Boot, Spring Framework, and Hibernate releases, or migrate away from older frameworks and application servers.
+* **Security remediation:** Fix [OWASP Top Ten](https://owasp.org/www-project-top-ten/) vulnerabilities, remove hardcoded secrets, upgrade vulnerable dependencies, and prepare your cryptography for the post-quantum era.
+* **Context for AI coding agents:** Generate verified context about your architecture, dependencies, tests, and code quality with [Moderne Prethink](https://docs.moderne.io/user-documentation/agent-tools/prethink), so agents read facts instead of guessing.
+* **Analysis at scale:** Trace data flow and measure impact across every repository in an organization, with verification that changed code still compiles.
+
+These proprietary recipes are available to Moderne customers under the [Moderne Proprietary License](https://docs.moderne.io/licensing/overview). The [Moderne recipes](../reference/moderne-recipes) page lists every recipe in the set.
 
 ## FAQ
 
 ### Is OpenRewrite open source software (OSS)?
 
-**Yes!** OpenRewrite is OSS. Core OpenRewrite technology and language libraries in general are fully open sourced under the Apache license. This includes the entirety of openrewrite/rewrite, including rewrite-core and many of the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, Terraform, etc.). In addition, building-block recipes, and those created by third parties are fully open sourced.
+**Yes!** OpenRewrite is OSS. Core OpenRewrite technology and language libraries in general are fully open sourced under the Apache license. This includes most of openrewrite/rewrite, including rewrite-core and the original language bindings (Java, Groovy, Kotlin, XML, Properties, YAML, HCL, etc.). The newer language modules in that repository are source available. In addition, building-block recipes, and those created by third parties are fully open sourced.
 
 ### Can end users and individual companies use source available recipes on private code?
 
 Yes. Recipes are available to individual users and companies to consume and apply on their own code both under the Apache License Version 2.0 License and the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license).
 
 The foundational purpose of OpenRewrite is to enable developers to more easily update, upgrade, and improve their code with the help of recipes developed by OSS maintainers and the community. 
+
+### Which recipes can open-source projects run?
+
+Open-source projects can run the Apache-licensed recipes and the Moderne Source Available recipes on their own code. They can do so with the OpenRewrite Maven and Gradle plugins or with the [Moderne CLI](https://docs.moderne.io/user-documentation/moderne-cli/getting-started/cli-intro), which does not require a license for open-source repositories.
 
 ### How does this impact those companies that are selling OpenRewrite recipes as part of their solutions?
 
