@@ -598,6 +598,12 @@ html[data-route='/'][data-theme='dark'] {
   --docs-intro-accent-hover: var(--mod-mint-400);
 }
 
+/* Nothing else caps the measure on this page; 830px matches a doc-page article. */
+html[data-route='/'] article {
+  max-width: 830px;
+  margin-inline: auto;
+}
+
 /* Per-type admonition tints. The status tokens are mode-aware, so one rule per
    type covers both light and dark. The accent drives border, icon (the icon
    inherits currentColor) and heading; body copy stays neutral. Caution shares
