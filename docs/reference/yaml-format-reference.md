@@ -170,24 +170,24 @@ In this example, if a file matches `**/my.json` OR `**/your.json*` OR `**/our.js
 
 A common mistake new users make is to assume that if a precondition matches any file, then the recipe will apply to the entire repository.
 
-For example, you might be tempted to use `FindPlugins` as a precondition for `CommonStaticAnalysis` with the idea that you only want static analysis fixes on Gradle projects that apply a specific plugin.
+For example, you might be tempted to use `FindPlugins` as a precondition for `RemoveUnusedImports` with the idea that you only want unused imports removed on Gradle projects that apply a specific plugin.
 
-However, if you were to do this, you wouldn't get the results you expected as the `FindPlugins` recipe flags the plugin in `build.gradle` files. In other words, the `CommonStaticAnalysis` recipe would only be run against those `build.gradle` files.
+However, if you were to do this, you wouldn't get the results you expected as the `FindPlugins` recipe flags the plugin in `build.gradle` files. In other words, the `RemoveUnusedImports` recipe would only be run against those `build.gradle` files.
 
 Fortunately, there are recipes that _can_ be used in this type of situation. For instance, the `ModuleHasPlugin` recipe will mark _all_ files within a project if a specific plugin is found:
 
 ```yaml
 type: specs.openrewrite.org/v1beta/recipe
-name: org.sample.FixedSonarStaticAnalysis
-displayName: Fix sonar issues 
-description: >- 
-  This recipe applies common static analysis issues only to gradle projects that apply the sonar plugin. 
+name: org.sample.CleanUpSonarProjects
+displayName: Remove unused imports in sonar projects
+description: >-
+  This recipe removes unused imports only in gradle projects that apply the sonar plugin.
   This works because ModuleHasPlugin will mark all files within a project that applies the plugin.
 preconditions:
   - org.openrewrite.gradle.search.ModuleHasPlugin:
       pluginId: org.sonarqube
 recipeList:
-  - org.openrewrite.staticanalysis.CommonStaticAnalysis
+  - org.openrewrite.java.RemoveUnusedImports
 ```
 
 It isn't obvious from just the names of the recipes that `FindPlugins` and `ModuleHasPlugin` behave differently. Because of that, the best way for you to know whether a particular recipe is suitable as a precondition or not is to run that recipe on its own.

@@ -157,11 +157,11 @@ No recipe is ever run on your codebase without being explicitly activated in the
 ```groovy title="build.gradle"
 dependencies {
     rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-    rewrite("org.openrewrite.recipe:rewrite-spring")
+    rewrite("org.openrewrite.recipe:rewrite-jackson")
 }
 ```
 
-Once a pre-packaged recipe has been added to the `rewrite` dependency configuration, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.testing.junit5.JUnit5BestPractices` recipe that comes with `rewrite-testing-frameworks` in a single-project Gradle build:
+Once a pre-packaged recipe has been added to the `rewrite` dependency configuration, you can tell the Gradle plugin to activate it the `rewrite` DSL. For example, here is how you would activate the `org.openrewrite.java.jackson.UpgradeJackson_2_3` recipe that comes with `rewrite-jackson` in a single-project Gradle build:
 
 ```groovy title="build.gradle"
 plugins {
@@ -181,13 +181,13 @@ repositories {
 }
 
 dependencies {
-    testImplementation("junit:junit:4.13")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.18.2")
     rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-    rewrite("org.openrewrite.recipe:rewrite-testing-frameworks")
+    rewrite("org.openrewrite.recipe:rewrite-jackson")
 }
 
 rewrite {
-    activeRecipe("org.openrewrite.java.testing.junit5.JUnit5BestPractices")
+    activeRecipe("org.openrewrite.java.jackson.UpgradeJackson_2_3")
 }
 ```
 

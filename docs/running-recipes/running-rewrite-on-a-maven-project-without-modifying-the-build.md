@@ -63,12 +63,12 @@ mvn -U org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN
   -Drewrite.activeRecipes=org.openrewrite.java.RemoveUnusedImports
 ```
 
-If the recipe comes from a different library (such as with [Migrate to Jakarta EE 9](../recipes/java/migrate/jakarta/javaxmigrationtojakarta.md)) then you can run the following command and replace `org.openrewrite.recipe:rewrite-migrate-java:RELEASE` with the artifact coordinates of your recipe and `org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta` with the path to the recipe you're wanting to run:
+If the recipe comes from a different library (such as with [Migrate from Jackson 2.x to Jackson 3.x](../recipes/java/jackson/upgradejackson_2_3.md)) then you can run the following command and replace `org.openrewrite.recipe:rewrite-jackson:RELEASE` with the artifact coordinates of your recipe and `org.openrewrite.java.jackson.UpgradeJackson_2_3` with the path to the recipe you're wanting to run:
 
 ```shell
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:{{VERSION_REWRITE_MAVEN_PLUGIN}}:run \
-  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-migrate-java:RELEASE \
-  -Drewrite.activeRecipes=org.openrewrite.java.migrate.jakarta.JavaxMigrationToJakarta
+  -Drewrite.recipeArtifactCoordinates=org.openrewrite.recipe:rewrite-jackson:RELEASE \
+  -Drewrite.activeRecipes=org.openrewrite.java.jackson.UpgradeJackson_2_3
 ```
 
 ## Running a recipe with configuration parameters

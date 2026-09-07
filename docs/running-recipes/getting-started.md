@@ -413,13 +413,13 @@ From there, you can confirm that everything still builds and passes its tests by
 
 ## Step 6: Running Recipes from External Modules
 
-At this point, you know how to configure and run any recipe included in OpenRewrite itself. However, many recipes are not bundled into the core library. For example, all of the Spring, Mockito, JUnit, and AssertJ-related recipes maintained by the OpenRewrite team live in the [rewrite-spring repository](https://github.com/openrewrite/rewrite-spring).
+At this point, you know how to configure and run any recipe included in OpenRewrite itself. However, many recipes are not bundled into the core library. For example, the Jackson recipes maintained by the OpenRewrite team live in the [rewrite-jackson repository](https://github.com/openrewrite/rewrite-jackson), the testing ones in [rewrite-testing-frameworks](https://github.com/openrewrite/rewrite-testing-frameworks), and the Spring ones in [rewrite-spring](https://github.com/openrewrite/rewrite-spring).
 
 :::info
 You can search through all of the recipes in the [OpenRewrite docs](/recipes). Each recipe page has instructions for how to import the recipe and what parameters (if any) need to be included.
 :::
 
-Let's pretend that you want to migrate JUnit 4 to JUnit 5 in a Spring project you have. If you take a look at the [Usage section](../recipes/java/spring/boot2/springboot2junit4to5migration.md#usage) in the [JUnit 4 to 5 migration recipe](../recipes/java/spring/boot2/springboot2junit4to5migration.md), you'll see what you need to include in your `build.gradle(.kts)` or `pom.xml` file in order to use this recipe.
+Let's pretend that you want to migrate a project from Jackson 2.x to Jackson 3.x. If you take a look at the [Usage section](../recipes/java/jackson/upgradejackson_2_3.md#usage) in the [Jackson 2.x to 3.x migration recipe](../recipes/java/jackson/upgradejackson_2_3.md), you'll see what you need to include in your `build.gradle(.kts)` or `pom.xml` file in order to use this recipe.
 
 Below, we'll walk through the [Maven](#maven--external-modules) and [Gradle](#gradle--external-modules) changes and provide some additional context around said changes.
 
@@ -428,8 +428,8 @@ Below, we'll walk through the [Maven](#maven--external-modules) and [Gradle](#gr
 For Maven projects, you'll need to:
 
 * Add the recipe to the `activeRecipes` list
-* Add a dependency on the library where the desired recipe lives (JUnit 4 to 5 lives in the [rewrite-spring](https://github.com/openrewrite/rewrite-spring) repository)
-* Specify a version of `rewrite-spring` to use
+* Add a dependency on the library where the desired recipe lives (the Jackson migration lives in the [rewrite-jackson](https://github.com/openrewrite/rewrite-jackson) repository)
+* Specify a version of `rewrite-jackson` to use
 
 After doing that, your `pom.xml` file should look similar to this:
 
@@ -444,14 +444,14 @@ After doing that, your `pom.xml` file should look similar to this:
           <activeRecipes>
             <recipe>org.openrewrite.java.OrderImports</recipe>
             <recipe>com.yourorg.VetToVeterinary</recipe>
-            <recipe>org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration</recipe>
+            <recipe>org.openrewrite.java.jackson.UpgradeJackson_2_3</recipe>
           </activeRecipes>
         </configuration>
         <dependencies>
           <dependency>
             <groupId>org.openrewrite.recipe</groupId>
-            <artifactId>rewrite-spring</artifactId>
-            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING}}</version>
+            <artifactId>rewrite-jackson</artifactId>
+            <version>{{VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON}}</version>
           </dependency>
         </dependencies>
       </plugin>
@@ -459,7 +459,7 @@ After doing that, your `pom.xml` file should look similar to this:
 </build>
 ```
 
-To double-check that everything is working, run the command `mvn rewrite:run`. Your project should be upgraded to Spring Boot 2 and all of the test classes should be updated to JUnit 5. Your `pom.xml` file will also have had its Spring dependencies updated, the JUnit 4 dependency removed, and the JUnit 5 dependency added.
+To double-check that everything is working, run the command `mvn rewrite:run`. Your project's Jackson imports and API usages should be migrated from 2.x to 3.x. Your `pom.xml` file will also have had its Jackson dependencies updated to the 3.x coordinates.
 
 :::info
 Maven does not currently support using a bill of materials (BOM) to specify plugin versions or dependencies. This means that you will have to specify the versions of each plugin by hand, unlike in the Gradle section below.
@@ -470,7 +470,7 @@ Maven does not currently support using a bill of materials (BOM) to specify plug
 Unlike Maven projects, Gradle projects have two options for specifying recipe versions. You can:
 
 1. Add `rewrite-recipe-bom` as a [bill of materials (BOM) dependency](https://docs.gradle.org/current/userguide/platforms.html#sub:bom\_import)
-2. Add the specific dependency and version that you want (in this case `rewrite-spring`)
+2. Add the specific dependency and version that you want (in this case `rewrite-jackson`)
 
 If you choose to use the `rewrite-recipe-bom`, you won't have to worry about specifying versions for your OpenRewrite recipes as all of the recipes you include in your `dependencies` section will have an appropriate version specified in the bill of materials (BOM). **For Gradle projects, this is the recommended approach.**
 
@@ -491,13 +491,13 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
       activeRecipe(
           'org.openrewrite.java.OrderImports',
           'com.yourorg.VetToVeterinary',
-          'org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration'
+          'org.openrewrite.java.jackson.UpgradeJackson_2_3'
       )
     }
 
     dependencies {
       rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:latest.release')
-      rewrite('org.openrewrite.recipe:rewrite-spring')
+      rewrite('org.openrewrite.recipe:rewrite-jackson')
 
       // Other project dependencies
     }
@@ -515,13 +515,13 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
       activeRecipe(
           "org.openrewrite.java.OrderImports",
           "com.yourorg.VetToVeterinary",
-          "org.openrewrite.java.spring.boot2.SpringBoot2JUnit4to5Migration"
+          "org.openrewrite.java.jackson.UpgradeJackson_2_3"
       )
     }
 
     dependencies {
       rewrite(platform("org.openrewrite.recipe:rewrite-recipe-bom:latest.release"))
-      rewrite("org.openrewrite.recipe:rewrite-spring")
+      rewrite("org.openrewrite.recipe:rewrite-jackson")
 
       // Other project dependencies
     }
@@ -529,9 +529,9 @@ Presuming you chose to use the `rewrite-recipe-bom`, your Gradle setup should lo
   </TabItem>
 </Tabs>
 
-To check that everything worked correctly, run the command `gradle rewriteRun`. You should see that the project has been upgraded to Spring Boot 2 and all of the test classes have been updated to JUnit 5.
+To check that everything worked correctly, run the command `gradle rewriteRun`. You should see that the project's Jackson imports and API usages have been migrated from 2.x to 3.x.
 
-OpenRewrite edits Gradle build files as well as source code, so your `build.gradle(.kts)` should have had its Spring and JUnit dependencies updated too. Recipes such as [AddDependency](../recipes/gradle/adddependency.md), [ChangeDependency](../recipes/gradle/changedependency.md), and [UpgradeDependencyVersion](../recipes/gradle/upgradedependencyversion.md) handle this, and migration recipes compose them.
+OpenRewrite edits Gradle build files as well as source code, so your `build.gradle(.kts)` should have had its Jackson dependencies updated too. Recipes such as [AddDependency](../recipes/gradle/adddependency.md), [ChangeDependency](../recipes/gradle/changedependency.md), and [UpgradeDependencyVersion](../recipes/gradle/upgradedependencyversion.md) handle this, and migration recipes compose them.
 
 ## Next steps
 
