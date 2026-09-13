@@ -1,5 +1,6 @@
 ---
 description: An overview of the OpenRewrite Gradle Plugin, including its tasks and how to configure them.
+sidebar_custom_props: { group: Build tool plugins }
 ---
 
 # Gradle plugin configuration

@@ -1,6 +1,7 @@
 ---
 sidebar_label: Estimated time saved
 description: Describes how estimated time saved works and how to define a custom number.
+sidebar_custom_props: { group: Advanced techniques }
 ---
 
 # Estimated time saved when running recipes

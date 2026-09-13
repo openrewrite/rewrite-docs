@@ -1,5 +1,6 @@
 ---
 description: Examples and explanations of the various JavaScript/TypeScript LST components.
+sidebar_custom_props: { group: Lossless Semantic Trees }
 ---
 
 # JavaScript LST examples

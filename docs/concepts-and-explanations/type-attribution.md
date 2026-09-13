@@ -1,5 +1,6 @@
 ---
 description: Understanding how OpenRewrite enriches code with type information for accurate transformations
+sidebar_custom_props: { group: Lossless Semantic Trees }
 ---
 
 # Type attribution

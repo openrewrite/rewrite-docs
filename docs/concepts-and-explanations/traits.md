@@ -1,6 +1,7 @@
 ---
 sidebar_label: Traits
 description: A technical overview of traits along with real-world examples of their uses.
+sidebar_custom_props: { group: Metadata and conventions }
 ---
 
 import ReactPlayer from 'react-player';

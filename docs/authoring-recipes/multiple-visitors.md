@@ -1,6 +1,7 @@
 ---
 sidebar_label: Multiple visitors in one recipe
 description: How to create recipes that contain and use multiple visitors.
+sidebar_custom_props: { group: Advanced techniques }
 ---
 
 # Creating multiple visitors in one recipe

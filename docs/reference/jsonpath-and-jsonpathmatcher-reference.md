@@ -1,5 +1,6 @@
 ---
 description: An explanation of what JsonPath/JsonPathMatcher are and how to use them.
+sidebar_custom_props: { group: Recipe syntax }
 ---
 
 import Tabs from '@theme/Tabs';

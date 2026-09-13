@@ -1,6 +1,7 @@
 ---
 sidebar_label: Creating Refaster template recipes
 description: A step-by-step guide to creating Refaster template recipes and their corresponding tests.
+sidebar_custom_props: { group: Write a recipe }
 ---
 
 import ReactPlayer from 'react-player';
