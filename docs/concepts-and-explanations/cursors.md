@@ -1,6 +1,7 @@
 ---
 sidebar_label: Cursors
 description: A comprehensive guide to the Cursor API, tree navigation, and inter-visitor messaging in OpenRewrite.
+sidebar_custom_props: { group: Recipes and visitors }
 ---
 
 # Cursors

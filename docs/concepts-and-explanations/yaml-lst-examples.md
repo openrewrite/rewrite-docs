@@ -1,5 +1,6 @@
 ---
 description: Diagrams and explanations of the various YAML LST components.
+sidebar_custom_props: { group: Lossless Semantic Trees }
 ---
 
 # YAML LST examples

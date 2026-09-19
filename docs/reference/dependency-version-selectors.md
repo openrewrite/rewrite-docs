@@ -1,5 +1,6 @@
 ---
 description: A look into the various ways you can specify versions of dependencies.
+sidebar_custom_props: { group: Recipe syntax }
 ---
 
 # Dependency version selectors

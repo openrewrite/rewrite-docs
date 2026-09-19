@@ -1,5 +1,6 @@
 ---
 description: How to create a recipe that produces a data table.
+sidebar_custom_props: { group: Advanced techniques }
 ---
 
 import Tabs from '@theme/Tabs';

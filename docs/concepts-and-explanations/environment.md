@@ -1,5 +1,6 @@
 ---
 description: A technical overview of the OpenRewrite Environment abstraction.
+sidebar_custom_props: { group: Recipes and visitors }
 ---
 
 # Environment

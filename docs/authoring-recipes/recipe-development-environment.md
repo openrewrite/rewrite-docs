@@ -1,5 +1,6 @@
 ---
 description: Instructions for setting up your local development environment to create OpenRewrite recipes.
+sidebar_custom_props: { startHere: true }
 ---
 
 import ReactPlayer from 'react-player';

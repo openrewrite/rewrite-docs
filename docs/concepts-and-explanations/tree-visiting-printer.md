@@ -1,5 +1,6 @@
 ---
 description: Demonstrates how to programmatically print out an LST to better understand what an LST looks like.
+sidebar_custom_props: { group: Lossless Semantic Trees }
 ---
 
 # TreeVisitingPrinter

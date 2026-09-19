@@ -1,5 +1,6 @@
 ---
 description: How to configure your project to access snapshot versions of OpenRewrite.
+sidebar_custom_props: { group: Build tool plugins }
 ---
 
 # How to use snapshot versions
