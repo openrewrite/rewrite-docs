@@ -12,7 +12,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## Corresponding CLI version
 
-* CLI version `4.7.4`
+* CLI version `4.8.8`
 
 ## New Artifacts
 
