@@ -4,7 +4,7 @@ description: What's changed in OpenRewrite version 8.92.8.
 
 # 8.92.8 release (2026-09-24)
 
-_Total recipe count: 4184_
+_Total recipe count: 4183_
 
 :::info
 This changelog only shows what recipes have been added, removed, or changed. OpenRewrite may do releases that do not include these types of changes. To see these changes, please go to the [releases page](https://github.com/openrewrite/rewrite/releases).
@@ -14,13 +14,8 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 * CLI version `4.8.8`
 
-## New Artifacts
-
-* rewrite-csharp
-
 ## New Recipes
 
-* [org.openrewrite.csharp.msbuild.AlignPathCasing](https://docs.openrewrite.org/recipes/csharp/msbuild/alignpathcasing): MSBuild resolves paths case-insensitively on Windows, so a solution can reference `assemblies/WPFToolkit/WPFToolkit.csproj` while the directory committed to git is actually named `assemblies/Wpftoolkit`. The same reference fails with `MSB3202` or `Project file not found` on a case-sensitive file system. This recipe rewrites path references in `.sln`, `.slnx`, `.csproj`, `.props`, and `.targets` files so that every segment matches the casing of the file or directory that is actually in the repository. References that already resolve exactly, that cannot be resolved at all, or whose casing is ambiguous — because two files or directories differ only by case — are left untouched. 
 * [org.openrewrite.github.AddDependabotOpenPullRequestsLimit](https://docs.openrewrite.org/recipes/github/adddependabotopenpullrequestslimit): Adds an `open-pull-requests-limit` to each update configuration in Dependabot files, and replaces an existing value when it differs. The option caps the number of version update pull requests Dependabot keeps open; setting it to `0` temporarily disables version updates for that `package-ecosystem`. Security update pull requests are not subject to this limit and do not count towards it. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#open-pull-requests-limit). 
 * [org.openrewrite.java.logging.logback.ConditionAttributeToConditionElement](https://docs.openrewrite.org/recipes/java/logging/logback/conditionattributetoconditionelement): Logback 1.5.37 removed the Janino based `<if condition="...">` attribute that 1.5.20 deprecated, so configuration files still using it fail to select the intended appenders. Replaces the attribute with the `<condition class="..."/>` element that precedes `<if>`, using the conditions shipped in `ch.qos.logback.core.boolex`. Conditions that require custom Java logic are left unchanged and reported in a data table. 
 * [org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies](https://docs.openrewrite.org/recipes/java/migrate/javax/migrateonegfwjaxbdependencies): The `one.gfw` group republishes unmodified copies of the JAXB API and runtime artifacts under its own group ID. This recipe replaces them with the official artifacts they were copied from, so that subsequent JAXB and Jakarta migrations recognize them. 
