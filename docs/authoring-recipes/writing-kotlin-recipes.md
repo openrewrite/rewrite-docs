@@ -56,7 +56,7 @@ plugins {
     id("org.openrewrite.build.recipe-library-base") version "latest.release"
 
     // The Kotlin recipe DSL is authored in Kotlin and compiled by the K2 compiler.
-    kotlin("jvm") version "2.3.20"
+    kotlin("jvm") version "2.4.20"
 }
 
 group = "com.yourorg"
