@@ -1,5 +1,6 @@
 ---
 description: An explanation of what an LST is and why it's critical for large-scale automatic refactoring.
+sidebar_custom_props: { startHere: true }
 ---
 
 # Lossless Semantic Trees (LST)

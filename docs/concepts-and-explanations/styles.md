@@ -1,5 +1,6 @@
 ---
 description: A technical overview of styles – including when to use them and how to configure them.
+sidebar_custom_props: { group: Metadata and conventions }
 ---
 
 import Tabs from '@theme/Tabs';
