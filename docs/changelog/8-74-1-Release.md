@@ -22,8 +22,8 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 ## New Recipes
 
 * [io.moderne.devcenter.FindOrganizationStatistics](https://docs.openrewrite.org/recipes/devcenter/findorganizationstatistics): Counts lines of code per repository for organization-level statistics. 
-* [io.quarkus.updates.camel.camel418.CamelQuarkusMigrationRecipe](https://docs.openrewrite.org/recipes/io/quarkus/updates/camel/camel418/camelquarkusmigrationrecipe): Migrates `camel 4.17` Quarkus application to `camel 4.18`. 
-* [org.apache.camel.upgrade.camel418.CamelMigrationRecipe](https://docs.openrewrite.org/recipes/org/apache/camel/upgrade/camel418/camelmigrationrecipe): Migrates `camel 4.17` application to `camel 4.18`. 
+* [io.quarkus.updates.camel.camel418.CamelQuarkusMigrationRecipe](https://docs.openrewrite.org/recipes/quarkus/updates/camel/camel418/camelquarkusmigrationrecipe): Migrates `camel 4.17` Quarkus application to `camel 4.18`. 
+* [org.apache.camel.upgrade.camel418.CamelMigrationRecipe](https://docs.openrewrite.org/recipes/apache/camel/upgrade/camel418/camelmigrationrecipe): Migrates `camel 4.17` application to `camel 4.18`. 
 * [org.openrewrite.apache.poi.UpgradeApachePoi_4_1](https://docs.openrewrite.org/recipes/apache/poi/upgradeapachepoi_4_1): Migrates to the last Apache POI 4.x release. This recipe modifies build files and makes changes to deprecated/preferred APIs that have changed between versions. 
 * [org.openrewrite.apache.poi.UpgradeApachePoi_5](https://docs.openrewrite.org/recipes/apache/poi/upgradeapachepoi_5): Migrates to the latest Apache POI 5.x release. This recipe modifies build files to account for artifact renames and upgrades dependency versions. It also chains the 4.1 recipe to handle all prior API migrations. 
 * [org.openrewrite.cobol.cleanup.RemoveWithDebuggingMode](https://docs.openrewrite.org/recipes/cobol/cleanup/removewithdebuggingmode): Remove debugging mode from SOURCE-COMPUTER paragraphs. 
@@ -35,12 +35,12 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.gitlab.search.FindDeprecatedExcept](https://docs.openrewrite.org/recipes/gitlab/search/finddeprecatedexcept): Find usages of the deprecated `except` keyword in `.gitlab-ci.yml`. The `except` keyword is deprecated in favor of `rules`. 
 * [org.openrewrite.gitlab.search.FindDeprecatedOnly](https://docs.openrewrite.org/recipes/gitlab/search/finddeprecatedonly): Find usages of the deprecated `only` keyword in `.gitlab-ci.yml`. The `only` keyword is deprecated in favor of `rules`. 
 * [org.openrewrite.gitlab.search.FindDeprecatedSyntax](https://docs.openrewrite.org/recipes/gitlab/search/finddeprecatedsyntax): Find usages of deprecated `only` and `except` keywords in `.gitlab-ci.yml`. These keywords are deprecated in favor of `rules`. 
-* [org.openrewrite.java.dropwizard.test.DropwizardRulesJUnit4ToSpringBoot](https://docs.openrewrite.org/recipes/java/dropwizard/test/dropwizardrulesjunit4tospringboot): Remove Dropwizard JUnit4 rules and add Spring Boot test annotations and extensions. 
-* [org.openrewrite.java.dropwizard.test.MethodLambdaExtractor](https://docs.openrewrite.org/recipes/java/dropwizard/test/methodlambdaextractor): Extracts the body of lambda expressions and inlines them into the surrounding code. 
-* [org.openrewrite.java.dropwizard.test.MockitoVariableToMockBean](https://docs.openrewrite.org/recipes/java/dropwizard/test/mockitovariabletomockbean): Converts static final Mockito mock fields to Spring Boot @MockBean fields. 
-* [org.openrewrite.java.dropwizard.test.TransformDropwizardRuleInvocations](https://docs.openrewrite.org/recipes/java/dropwizard/test/transformdropwizardruleinvocations): Transforms Dropwizard AppRule testing calls to their equivalent RestTemplate calls. 
+* **org.openrewrite.java.dropwizard.test.DropwizardRulesJUnit4ToSpringBoot**: Remove Dropwizard JUnit4 rules and add Spring Boot test annotations and extensions. 
+* **org.openrewrite.java.dropwizard.test.MethodLambdaExtractor**: Extracts the body of lambda expressions and inlines them into the surrounding code. 
+* **org.openrewrite.java.dropwizard.test.MockitoVariableToMockBean**: Converts static final Mockito mock fields to Spring Boot @MockBean fields. 
+* **org.openrewrite.java.dropwizard.test.TransformDropwizardRuleInvocations**: Transforms Dropwizard AppRule testing calls to their equivalent RestTemplate calls. 
 * [org.openrewrite.java.jackson.IOExceptionToJacksonException](https://docs.openrewrite.org/recipes/java/jackson/ioexceptiontojacksonexception): In Jackson 3, `ObjectMapper` and related classes no longer throw `IOException`. This recipe replaces `catch (IOException e)` with `catch (JacksonException e)` when the try block contains Jackson API calls. When the try block also contains non-Jackson code that throws `IOException`, the catch is changed to a multi-catch `catch (JacksonException | IOException e)`. 
-* [org.openrewrite.java.jackson.ReplaceJsonIgnoreWithJsonSetter](https://docs.openrewrite.org/recipes/java/jackson/replacejsonignorewithjsonsetter): In Jackson 3, `@JsonIgnore` on fields initialized with empty collections causes the field value to become `null` instead of maintaining the empty collection. This recipe replaces `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on `Map` and `Collection` fields that have an empty collection initializer. 
+* **org.openrewrite.java.jackson.ReplaceJsonIgnoreWithJsonSetter**: In Jackson 3, `@JsonIgnore` on fields initialized with empty collections causes the field value to become `null` instead of maintaining the empty collection. This recipe replaces `@JsonIgnore` with `@JsonSetter(nulls = Nulls.AS_EMPTY)` on `Map` and `Collection` fields that have an empty collection initializer. 
 * [org.openrewrite.java.joda.time.JodaAbstractInstantToJavaTime](https://docs.openrewrite.org/recipes/java/joda/time/jodaabstractinstanttojavatime): Migrates Joda-Time `AbstractInstant` method calls to their Java time equivalents. 
 * [org.openrewrite.java.joda.time.JodaDateMidnightToJavaTime](https://docs.openrewrite.org/recipes/java/joda/time/jodadatemidnighttojavatime): Migrates `org.joda.time.DateMidnight` constructor and `now()` calls to `java.time.LocalDate.now().atStartOfDay(...)`. 
 * [org.openrewrite.java.joda.time.JodaDateTimeToJavaTime](https://docs.openrewrite.org/recipes/java/joda/time/jodadatetimetojavatime): Migrates Joda-Time `DateTime` constructors and instance methods to the equivalent `java.time.ZonedDateTime` calls. 
@@ -84,7 +84,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.quarkus.spring.SpringEventListenerToObserves](https://docs.openrewrite.org/recipes/quarkus/spring/springeventlistenertoobserves): Transforms Spring's @EventListener method annotation to CDI's @Observes parameter annotation pattern. 
 * [org.openrewrite.quarkus.spring.SpringHealthIndicatorToQuarkus](https://docs.openrewrite.org/recipes/quarkus/spring/springhealthindicatortoquarkus): Transforms Spring Boot Actuator `HealthIndicator` implementations to MicroProfile Health `HealthCheck` pattern used by Quarkus. 
 * [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](https://docs.openrewrite.org/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods): Automatically generated recipes to inline deprecated method calls that delegate to other methods in the same class. 
-* [org.openrewrite.staticanalysis.RemoveTrailingWhitespace](https://docs.openrewrite.org/recipes/staticanalysis/removetrailingwhitespace): Remove trailing whitespace from the end of each line. Trailing whitespace is simply useless and should not stay in code. It may generate noise when comparing different versions of the same file. 
+* **org.openrewrite.staticanalysis.RemoveTrailingWhitespace**: Remove trailing whitespace from the end of each line. Trailing whitespace is simply useless and should not stay in code. It may generate noise when comparing different versions of the same file. 
 * [org.openrewrite.staticanalysis.SimplifyForLoopBoundaryComparison](https://docs.openrewrite.org/recipes/staticanalysis/simplifyforloopboundarycomparison): Replace `<=` with `<` in for loop conditions by adjusting the comparison operands. For example, `i <= n - 1` simplifies to `i < n`, and `i <= n` becomes `i < n + 1`. 
 
 ## Removed Recipes
@@ -132,7 +132,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `newModule: { type: String, required: true }`
     * `oldMember: { type: String, required: true }`
     * `oldModule: { type: String, required: true }`
-* [org.openrewrite.javascript.dependencies.add-dependency](https://docs.openrewrite.org/recipes/javascript/dependencies/add-dependency) was changed:
+* **org.openrewrite.javascript.dependencies.add-dependency** was changed:
   * Old Options:
     * `None`
   * New Options:
@@ -146,13 +146,13 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `onlyDirect: { type: String, required: false }`
     * `packageName: { type: String, required: true }`
     * `version: { type: String, required: false }`
-* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](https://docs.openrewrite.org/recipes/javascript/dependencies/upgrade-dependency-version) was changed:
+* **org.openrewrite.javascript.dependencies.upgrade-dependency-version** was changed:
   * Old Options:
     * `None`
   * New Options:
     * `newVersion: { type: String, required: true }`
     * `packageName: { type: String, required: true }`
-* [org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version](https://docs.openrewrite.org/recipes/javascript/dependencies/upgrade-transitive-dependency-version) was changed:
+* **org.openrewrite.javascript.dependencies.upgrade-transitive-dependency-version** was changed:
   * Old Options:
     * `None`
   * New Options:
@@ -164,7 +164,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `None`
   * New Options:
     * `useUnicodeEscapes: { type: String, required: false }`
-* [org.openrewrite.node.dependency-vulnerability-check](https://docs.openrewrite.org/recipes/node/dependency-vulnerability-check) was changed:
+* **org.openrewrite.node.dependency-vulnerability-check** was changed:
   * Old Options:
     * `None`
   * New Options:
@@ -176,7 +176,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
     * `preferDirectUpgrade: { type: String, required: false }`
     * `scope: { type: String, required: false }`
     * `transitiveFixStrategy: { type: String, required: false }`
-* [org.openrewrite.node.security.remove-redundant-overrides](https://docs.openrewrite.org/recipes/node/security/remove-redundant-overrides) was changed:
+* **org.openrewrite.node.security.remove-redundant-overrides** was changed:
   * Old Options:
     * `None`
   * New Options:

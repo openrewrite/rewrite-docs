@@ -13,7 +13,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 ## New Recipes
 
 * [io.moderne.hibernate.update70.MigrateSessionInterface](https://docs.openrewrite.org/recipes/hibernate/update70/migratesessioninterface): Migrates code using deprecated Session interface methods to their Hibernate 7.0 replacements. 
-* [io.moderne.hibernate.update70.MigrateSessionSaveUpdateDelete](https://docs.openrewrite.org/recipes/hibernate/update70/migratesessionsaveupdatedelete): Migrates code using deprecated Session save/update/delete methods to their Hibernate 7.0 replacements. Session#save -> Session#persist, Session#update -> Session#merge, Session#saveOrUpdate -> Session#persist or Session#merge, Session#delete -> Session#remove. 
+* **io.moderne.hibernate.update70.MigrateSessionSaveUpdateDelete**: Migrates code using deprecated Session save/update/delete methods to their Hibernate 7.0 replacements. Session#save -> Session#persist, Session#update -> Session#merge, Session#saveOrUpdate -> Session#persist or Session#merge, Session#delete -> Session#remove. 
 * [org.openrewrite.apache.httpclient5.UpgradeApacheHttpClientDependencies](https://docs.openrewrite.org/recipes/apache/httpclient5/upgradeapachehttpclientdependencies): Adopt `org.apache.httpcomponents.client5:httpclient5` from `org.apache.httpcomponents` 
 * [org.openrewrite.apache.httpclient5.UpgradeApacheHttpCoreNioDependencies](https://docs.openrewrite.org/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies): Adopt `org.apache.httpcomponents.core5:httpcore5` from `org.apache.httpcomponents:httpcore-nio` 
 * [org.openrewrite.gradle.search.DoesNotIncludeDependency](https://docs.openrewrite.org/recipes/gradle/search/doesnotincludedependency): A precondition which returns false if visiting a Gradle file which includes the specified dependency in the classpath of some scope. For compatibility with multimodule projects, this should most often be applied as a precondition. 
@@ -74,10 +74,10 @@ static class WithoutMessage {
 * [org.openrewrite.staticanalysis.OnlyCatchDeclaredExceptions](https://docs.openrewrite.org/recipes/staticanalysis/onlycatchdeclaredexceptions): Replaces `catch(Exception e)` blocks with a multi-catch block (`catch (SpecificException1 | SpecificException2 e)`) containing only the exceptions declared thrown by method or constructor invocations within the `try` block that are not already caught by more specific `catch` clauses. 
 * [org.openrewrite.staticanalysis.UnwrapElseAfterReturn](https://docs.openrewrite.org/recipes/staticanalysis/unwrapelseafterreturn): Unwraps the else block when the if block ends with a return or throw statement, reducing nesting and improving code readability. 
 * [org.openrewrite.text.FindHardcodedLoopbackAddresses](https://docs.openrewrite.org/recipes/text/findhardcodedloopbackaddresses): Locates mentions of hard-coded IPv4 addresses from the loopback IP range. The loopback IP range includes `127.0.0.0` to `127.255.255.255`. This detects the entire localhost/loopback subnet range, not just the commonly used `127.0.0.1`. 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes): These rules simplify and improve the readability of tests by using `Duration`-specific
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes): These rules simplify and improve the readability of tests by using `Duration`-specific
  AssertJ assertion methods instead of generic assertions.
 [Source](https://error-prone.picnic.tech/refasterrules/AssertJDurationRules). 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasDaysRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasdaysrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasDaysRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasdaysrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasDays {
     
@@ -93,7 +93,7 @@ static final class AssertThatHasDays {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasHoursRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathashoursrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasHoursRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathashoursrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasHours {
     
@@ -109,7 +109,7 @@ static final class AssertThatHasHours {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasMillisRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasmillisrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasMillisRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasmillisrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasMillis {
     
@@ -125,7 +125,7 @@ static final class AssertThatHasMillis {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasMinutesRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasminutesrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasMinutesRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasminutesrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasMinutes {
     
@@ -141,7 +141,7 @@ static final class AssertThatHasMinutes {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasNanosRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasnanosrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasNanosRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathasnanosrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasNanos {
     
@@ -157,7 +157,7 @@ static final class AssertThatHasNanos {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasSecondsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathassecondsrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatHasSecondsRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthathassecondsrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasSeconds {
     
@@ -173,7 +173,7 @@ static final class AssertThatHasSeconds {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsNegativeRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthatisnegativerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsNegativeRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthatisnegativerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsNegative {
     
@@ -194,7 +194,7 @@ static final class AssertThatIsNegative {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsPositiveRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthatispositiverecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsPositiveRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthatispositiverecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsPositive {
     
@@ -210,7 +210,7 @@ static final class AssertThatIsPositive {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsZeroRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthatiszerorecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJDurationRulesRecipes$AssertThatIsZeroRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjdurationrulesrecipes$assertthatiszerorecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsZero {
     
@@ -231,10 +231,10 @@ static final class AssertThatIsZero {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes): These rules simplify and improve the readability of tests by using `Instant`-specific
+* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes): These rules simplify and improve the readability of tests by using `Instant`-specific
  AssertJ assertion methods instead of generic assertions.
 [Source](https://error-prone.picnic.tech/refasterrules/AssertJInstantRules). 
-* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsAfterOrEqualToRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisafterorequaltorecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsAfterOrEqualToRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisafterorequaltorecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsAfterOrEqualTo {
     
@@ -250,7 +250,7 @@ static final class AssertThatIsAfterOrEqualTo {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsAfterRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisafterrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsAfterRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisafterrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsAfter {
     
@@ -266,7 +266,7 @@ static final class AssertThatIsAfter {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBeforeOrEqualToRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisbeforeorequaltorecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBeforeOrEqualToRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisbeforeorequaltorecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsBeforeOrEqualTo {
     
@@ -282,7 +282,7 @@ static final class AssertThatIsBeforeOrEqualTo {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBeforeRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisbeforerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBeforeRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisbeforerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsBefore {
     
@@ -298,7 +298,7 @@ static final class AssertThatIsBefore {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisbetweenrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsBetweenRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisbetweenrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsBetween {
     
@@ -314,7 +314,7 @@ static final class AssertThatIsBetween {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsStrictlyBetweenRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisstrictlybetweenrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJInstantRulesRecipes$AssertThatIsStrictlyBetweenRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjinstantrulesrecipes$assertthatisstrictlybetweenrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsStrictlyBetween {
     
@@ -330,7 +330,7 @@ static final class AssertThatIsStrictlyBetween {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsOnlyKeyRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjmaprulesrecipes$assertthatmapcontainsonlykeyrecipe): Recipe created for the following Refaster template:
+* **tech.picnic.errorprone.refasterrules.AssertJMapRulesRecipes$AssertThatMapContainsOnlyKeyRecipe**: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatMapContainsOnlyKey<K, V> {
     
@@ -347,7 +347,7 @@ static final class AssertThatMapContainsOnlyKey<K, V> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasSameHashCodeAsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthathassamehashcodeasrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatHasSameHashCodeAsRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthathassamehashcodeasrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasSameHashCodeAs<T> {
     
@@ -364,7 +364,7 @@ static final class AssertThatHasSameHashCodeAs<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsInstanceOf2Recipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisinstanceof2recipe): Recipe created for the following Refaster template:
+* **tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsInstanceOf2Recipe**: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsInstanceOf2<S, T> {
     
@@ -381,7 +381,7 @@ static final class AssertThatIsInstanceOf2<S, T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotNullRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotnullrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotNullRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotnullrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsNotNull<T> {
     
@@ -399,7 +399,7 @@ static final class AssertThatIsNotNull<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotSameAsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotsameasrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNotSameAsRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnotsameasrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsNotSameAs<T> {
     
@@ -416,7 +416,7 @@ static final class AssertThatIsNotSameAs<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNullRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnullrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsNullRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatisnullrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsNull<T> {
     
@@ -440,7 +440,7 @@ static final class AssertThatIsNull<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsSameAsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatissameasrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJObjectRulesRecipes$AssertThatIsSameAsRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjobjectrulesrecipes$assertthatissameasrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsSameAs<T> {
     
@@ -457,10 +457,10 @@ static final class AssertThatIsSameAs<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes): These rules simplify and improve the readability of tests by using `Path`-specific
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes): These rules simplify and improve the readability of tests by using `Path`-specific
  AssertJ assertion methods instead of generic assertions.
 [Source](https://error-prone.picnic.tech/refasterrules/AssertJPathRules). 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatDoesNotExistRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatdoesnotexistrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatDoesNotExistRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatdoesnotexistrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoesNotExist {
     
@@ -476,7 +476,7 @@ static final class AssertThatDoesNotExist {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatEndsWithRawRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatendswithrawrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatEndsWithRawRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatendswithrawrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatEndsWithRaw {
     
@@ -492,7 +492,7 @@ static final class AssertThatEndsWithRaw {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatExistsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatexistsrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatExistsRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatexistsrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatExists {
     
@@ -508,7 +508,7 @@ static final class AssertThatExists {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasFileNameRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasfilenamerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasFileNameRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasfilenamerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasFileName {
     
@@ -524,7 +524,7 @@ static final class AssertThatHasFileName {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasNoParentRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasnoparentrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasNoParentRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasnoparentrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasNoParent {
     
@@ -540,7 +540,7 @@ static final class AssertThatHasNoParent {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasParentRawRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasparentrawrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatHasParentRawRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthathasparentrawrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasParentRaw {
     
@@ -556,7 +556,7 @@ static final class AssertThatHasParentRaw {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsAbsoluteRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisabsoluterecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsAbsoluteRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisabsoluterecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsAbsolute {
     
@@ -572,7 +572,7 @@ static final class AssertThatIsAbsolute {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsDirectoryRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisdirectoryrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsDirectoryRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisdirectoryrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsDirectory {
     
@@ -588,7 +588,7 @@ static final class AssertThatIsDirectory {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsExecutableRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisexecutablerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsExecutableRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisexecutablerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsExecutable {
     
@@ -604,7 +604,7 @@ static final class AssertThatIsExecutable {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsReadableRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisreadablerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsReadableRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisreadablerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsReadable {
     
@@ -620,7 +620,7 @@ static final class AssertThatIsReadable {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsRegularFileRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisregularfilerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsRegularFileRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisregularfilerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsRegularFile {
     
@@ -636,7 +636,7 @@ static final class AssertThatIsRegularFile {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsRelativeRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisrelativerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsRelativeRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatisrelativerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsRelative {
     
@@ -652,7 +652,7 @@ static final class AssertThatIsRelative {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsSymbolicLinkRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatissymboliclinkrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsSymbolicLinkRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatissymboliclinkrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsSymbolicLink {
     
@@ -668,7 +668,7 @@ static final class AssertThatIsSymbolicLink {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsWritableRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatiswritablerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatIsWritableRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatiswritablerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsWritable {
     
@@ -684,7 +684,7 @@ static final class AssertThatIsWritable {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatStartsWithRawRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatstartswithrawrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJPathRulesRecipes$AssertThatStartsWithRawRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjpathrulesrecipes$assertthatstartswithrawrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatStartsWithRaw {
     
@@ -700,7 +700,7 @@ static final class AssertThatStartsWithRaw {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotEndWithRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringdoesnotendwithrecipe): Recipe created for the following Refaster template:
+* **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotEndWithRecipe**: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatStringDoesNotEndWith {
     
@@ -717,7 +717,7 @@ static final class AssertThatStringDoesNotEndWith {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotStartWithRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringdoesnotstartwithrecipe): Recipe created for the following Refaster template:
+* **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringDoesNotStartWithRecipe**: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatStringDoesNotStartWith {
     
@@ -734,7 +734,7 @@ static final class AssertThatStringDoesNotStartWith {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringEndsWithRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringendswithrecipe): Recipe created for the following Refaster template:
+* **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringEndsWithRecipe**: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatStringEndsWith {
     
@@ -751,7 +751,7 @@ static final class AssertThatStringEndsWith {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstringrulesrecipes$assertthatstringstartswithrecipe): Recipe created for the following Refaster template:
+* **tech.picnic.errorprone.refasterrules.AssertJStringRulesRecipes$AssertThatStringStartsWithRecipe**: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatStringStartsWith {
     
@@ -768,7 +768,7 @@ static final class AssertThatStringStartsWith {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AbstractThrowableAssertCauseIsSameAsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes$abstractthrowableassertcauseissameasrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJThrowingCallableRulesRecipes$AbstractThrowableAssertCauseIsSameAsRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjthrowingcallablerulesrecipes$abstractthrowableassertcauseissameasrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AbstractThrowableAssertCauseIsSameAs {
     
@@ -785,35 +785,35 @@ static final class AbstractThrowableAssertCauseIsSameAs {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceCastRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/classrulesrecipes$classreferencecastrecipe): Prefer `Class#cast(Object)` method references over lambda expressions that require naming a variable. 
-* [tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceIsInstancePredicateRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/classrulesrecipes$classreferenceisinstancepredicaterecipe): Prefer `Class#isInstance(Object)` method references over lambda expressions that require naming a variable. 
-* [tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMaxRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsmaxrecipe): Prefer a method reference to `Comparators#max(Comparable, Comparable)` over calling `BinaryOperator#minBy(Comparator)` with `Comparator#naturalOrder()`. 
-* [tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMinRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/comparatorrulesrecipes$comparatorsminrecipe): Prefer a method reference to `Comparators#min(Comparable, Comparable)` over calling `BinaryOperator#minBy(Comparator)` with `Comparator#naturalOrder()`. 
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityLambdaRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$enumreferenceequalitylambdarecipe): Prefer reference-based equality for enums. 
-* [tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualsPredicateRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/equalityrulesrecipes$equalspredicaterecipe): Prefer `Object#equals(Object)` over the equivalent lambda function. 
-* [tech.picnic.errorprone.refasterrules.JacksonRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/jacksonrulesrecipes): Refaster rules related to Jackson expressions and statements.
+* **tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceCastRecipe**: Prefer `Class#cast(Object)` method references over lambda expressions that require naming a variable. 
+* **tech.picnic.errorprone.refasterrules.ClassRulesRecipes$ClassReferenceIsInstancePredicateRecipe**: Prefer `Class#isInstance(Object)` method references over lambda expressions that require naming a variable. 
+* **tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMaxRecipe**: Prefer a method reference to `Comparators#max(Comparable, Comparable)` over calling `BinaryOperator#minBy(Comparator)` with `Comparator#naturalOrder()`. 
+* **tech.picnic.errorprone.refasterrules.ComparatorRulesRecipes$ComparatorsMinRecipe**: Prefer a method reference to `Comparators#min(Comparable, Comparable)` over calling `BinaryOperator#minBy(Comparator)` with `Comparator#naturalOrder()`. 
+* **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EnumReferenceEqualityLambdaRecipe**: Prefer reference-based equality for enums. 
+* **tech.picnic.errorprone.refasterrules.EqualityRulesRecipes$EqualsPredicateRecipe**: Prefer `Object#equals(Object)` over the equivalent lambda function. 
+* **tech.picnic.errorprone.refasterrules.JacksonRulesRecipes**: Refaster rules related to Jackson expressions and statements.
 [Source](https://error-prone.picnic.tech/refasterrules/JacksonRules). 
-* [tech.picnic.errorprone.refasterrules.JacksonRulesRecipes$JsonNodeOptionalIntRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/jacksonrulesrecipes$jsonnodeoptionalintrecipe): Prefer `JsonNode#optional(int)` over more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.JacksonRulesRecipes$JsonNodeOptionalStringRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/jacksonrulesrecipes$jsonnodeoptionalstringrecipe): Prefer `JsonNode#optional(String)` over more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullFunctionRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/nullrulesrecipes$isnullfunctionrecipe): Prefer `Objects#isNull(Object)` over the equivalent lambda function or more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.NullRulesRecipes$NonNullFunctionRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/nullrulesrecipes$nonnullfunctionrecipe): Prefer `Objects#nonNull(Object)` over the equivalent lambda function or more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowMethodReferenceRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/optionalrulesrecipes$optionalorelsethrowmethodreferencerecipe): Prefer `Optional#orElseThrow()` over the less explicit `Optional#get()`. 
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedBytesRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedbytesrecipe): Prefer JDK's `Arrays#compareUnsigned(byte[], byte[])` over third-party alternatives. 
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedIntsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedintsrecipe): Prefer JDK's `Arrays#compareUnsigned(int[], int[])` over third-party alternatives. 
-* [tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedLongsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/primitiverulesrecipes$arrayscompareunsignedlongsrecipe): Prefer JDK's `Arrays#compareUnsigned(long[], long[])` over third-party alternatives. 
-* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes): Refaster rules related to expressions dealing with `RandomGenerator` instances.
+* **tech.picnic.errorprone.refasterrules.JacksonRulesRecipes$JsonNodeOptionalIntRecipe**: Prefer `JsonNode#optional(int)` over more contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.JacksonRulesRecipes$JsonNodeOptionalStringRecipe**: Prefer `JsonNode#optional(String)` over more contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.NullRulesRecipes$IsNullFunctionRecipe**: Prefer `Objects#isNull(Object)` over the equivalent lambda function or more contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.NullRulesRecipes$NonNullFunctionRecipe**: Prefer `Objects#nonNull(Object)` over the equivalent lambda function or more contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.OptionalRulesRecipes$OptionalOrElseThrowMethodReferenceRecipe**: Prefer `Optional#orElseThrow()` over the less explicit `Optional#get()`. 
+* **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedBytesRecipe**: Prefer JDK's `Arrays#compareUnsigned(byte[], byte[])` over third-party alternatives. 
+* **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedIntsRecipe**: Prefer JDK's `Arrays#compareUnsigned(int[], int[])` over third-party alternatives. 
+* **tech.picnic.errorprone.refasterrules.PrimitiveRulesRecipes$ArraysCompareUnsignedLongsRecipe**: Prefer JDK's `Arrays#compareUnsigned(long[], long[])` over third-party alternatives. 
+* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes): Refaster rules related to expressions dealing with `RandomGenerator` instances.
 [Source](https://error-prone.picnic.tech/refasterrules/RandomGeneratorRules). 
-* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublerecipe): Prefer `RandomGenerator#nextDouble(double)` over alternatives that yield a smaller domain of values and may result in `Double#isInfinite() inifinity`. 
-* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintrecipe): Prefer `RandomGenerator#nextInt(int)` over more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe): Additionally, for large bounds, the unnecessary floating point arithmetic prevents some
+* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextDoubleRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextdoublerecipe): Prefer `RandomGenerator#nextDouble(double)` over alternatives that yield a smaller domain of values and may result in `Double#isInfinite() inifinity`. 
+* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextIntRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextintrecipe): Prefer `RandomGenerator#nextInt(int)` over more contrived alternatives. 
+* [tech.picnic.errorprone.refasterrules.RandomGeneratorRulesRecipes$RandomGeneratorNextLongRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/randomgeneratorrulesrecipes$randomgeneratornextlongrecipe): Additionally, for large bounds, the unnecessary floating point arithmetic prevents some
  `long` values from being generated. 
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$emptystringrecipe): Avoid unnecessary creation of new empty `String` objects; use the empty string literal instead. 
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe): Avoid unnecessary creation of new `String` objects. 
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsBlankRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisblankrecipe): Prefer `String#isBlank()` over less efficient alternatives. 
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyPredicateRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisemptypredicaterecipe): Prefer a method reference to `String#isEmpty()` over the equivalent lambda function. 
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNotEmptyPredicateRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringisnotemptypredicaterecipe): Prefer a method reference to `String#isEmpty()` over the equivalent lambda function. 
-* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfMethodReferenceRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/stringrulesrecipes$stringvalueofmethodreferencerecipe): Prefer direct delegation to `String#valueOf(Object)` over the indirection introduced by `Objects#toString(Object)`. 
-* [tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixToBuilderRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixtobuilderrecipe): Prefer `SuggestedFix#toBuilder()`} over more contrived alternatives. 
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$EmptyStringRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$emptystringrecipe): Avoid unnecessary creation of new empty `String` objects; use the empty string literal instead. 
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIdentityRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringidentityrecipe): Avoid unnecessary creation of new `String` objects. 
+* [tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsBlankRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/stringrulesrecipes$stringisblankrecipe): Prefer `String#isBlank()` over less efficient alternatives. 
+* **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsEmptyPredicateRecipe**: Prefer a method reference to `String#isEmpty()` over the equivalent lambda function. 
+* **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringIsNotEmptyPredicateRecipe**: Prefer a method reference to `String#isEmpty()` over the equivalent lambda function. 
+* **tech.picnic.errorprone.refasterrules.StringRulesRecipes$StringValueOfMethodReferenceRecipe**: Prefer direct delegation to `String#valueOf(Object)` over the indirection introduced by `Objects#toString(Object)`. 
+* [tech.picnic.errorprone.refasterrules.SuggestedFixRulesRecipes$SuggestedFixToBuilderRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/suggestedfixrulesrecipes$suggestedfixtobuilderrecipe): Prefer `SuggestedFix#toBuilder()`} over more contrived alternatives. 
 
 ## Removed Recipes
 

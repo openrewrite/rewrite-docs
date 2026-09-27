@@ -21,7 +21,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [io.moderne.hibernate.MigrateToHibernate72](https://docs.openrewrite.org/recipes/hibernate/migratetohibernate72-moderne-edition): This recipe will apply changes commonly needed when migrating to Hibernate 7.2.x. 
+* [io.moderne.hibernate.MigrateToHibernate72](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate72): This recipe will apply changes commonly needed when migrating to Hibernate 7.2.x. 
 * [io.moderne.java.spring.boot4.AddModularStarters](https://docs.openrewrite.org/recipes/java/spring/boot4/addmodularstarters): Add Spring Boot 4.0 starter dependencies based on package usage.
 Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc) transitively, so only the highest-level detected starter is added for each technology. 
 * [io.moderne.java.spring.cloud20251.SpringCloudProperties_2025_1](https://docs.openrewrite.org/recipes/java/spring/cloud20251/springcloudproperties_2025_1): Migrate properties found in `application.properties` and `application.yml` for Spring Cloud 2025.1 (Oakwood). This includes the stubrunner property prefix migration from `stubrunner.` to `spring.cloud.contract.stubrunner.`. 
@@ -72,7 +72,7 @@ Note: Higher-level starters (like data-jpa) include lower-level ones (like jdbc)
     * `keyPath: { type: String, required: true }`
     * `prepend: { type: Boolean, required: false }`
     * `value: { type: String, required: true }`
-* [org.openrewrite.nodejs.DependencyVulnerabilityCheck](https://docs.openrewrite.org/recipes/nodejs/dependencyvulnerabilitycheck) was changed:
+* **org.openrewrite.nodejs.DependencyVulnerabilityCheck** was changed:
   * Old Options:
     * `addMarkers: { type: Boolean, required: false }`
   * New Options:
