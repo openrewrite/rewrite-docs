@@ -40,6 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.30.0](../quarkus/migratetoquarkus_v3_30_0)
+* [Migrate quarkus-cxf to 3.31](../quarkus/updates/cxf/cxf331/updateall)
 * [io.quarkus.updates.core.quarkus331.CoreUpdate331](../quarkus/updates/core/quarkus331/coreupdate331)
 * [io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix](../quarkus/updates/core/quarkus331/oidcclientfiltersplitpackagesfix)
 * [io.quarkus.updates.core.quarkus331.JUnitRelocations](../quarkus/updates/core/quarkus331/junitrelocations)
@@ -65,6 +66,7 @@ preconditions:
       version: (,3.31.0)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_30_0
+  - io.quarkus.updates.cxf.cxf331.UpdateAll
   - io.quarkus.updates.core.quarkus331.CoreUpdate331
   - io.quarkus.updates.core.quarkus331.OidcClientFilterSplitPackagesFix
   - io.quarkus.updates.core.quarkus331.JUnitRelocations

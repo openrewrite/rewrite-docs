@@ -61,6 +61,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Java security best practices](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/javasecuritybestpractices)
+* [Remediate OWASP A10:2025 Mishandling of exceptional conditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a10)
 
 ## Example
 

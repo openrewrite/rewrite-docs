@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.apache.camel.upgrade.customRecipes.ReplacePropertyInComponentYaml**
 
-_ARenames property of the component._
+_Renames a property of the component in the YAML DSL, both in the parameters mapping and when the property is inlined in the endpoint uri._
 
 ## Recipe source
 
@@ -25,9 +25,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | component | Component name. | `TODO Provide a usage example for the docs` |
-| `String` | oldPropertyKey | The property key to rename. | `TODO Provide a usage example for the docs` |
-| `String` | newPropertyKey | The prefix to be replaced with. | `TODO Provide a usage example for the docs` |
+| `String` | component | Component name. | `netty` |
+| `String` | oldPropertyKey | The property key to rename. | `keyStoreFile` |
+| `String` | newPropertyKey | The property key to be replaced with. | `keyStoreResource` |
 | `String` | valuePrefix | *Optional*. This value is appended before the current value of the modified method. | `file:` |
 
 
@@ -49,9 +49,9 @@ name: com.yourorg.ReplacePropertyInComponentYamlExample
 displayName: Renames property of the component example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.ReplacePropertyInComponentYaml:
-      component: TODO Provide a usage example for the docs
-      oldPropertyKey: TODO Provide a usage example for the docs
-      newPropertyKey: TODO Provide a usage example for the docs
+      component: netty
+      oldPropertyKey: keyStoreFile
+      newPropertyKey: keyStoreResource
       valuePrefix: file:
 ```
 
@@ -62,7 +62,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "component=TODO Provide a usage example for the docs" --recipe-option "oldPropertyKey=TODO Provide a usage example for the docs" --recipe-option "newPropertyKey=TODO Provide a usage example for the docs" --recipe-option "valuePrefix=file:"'}
+  cliOptions={' --recipe-option "component=netty" --recipe-option "oldPropertyKey=keyStoreFile" --recipe-option "newPropertyKey=keyStoreResource" --recipe-option "valuePrefix=file:"'}
   hasDataTables
 />
 

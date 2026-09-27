@@ -13,6 +13,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 _Applies JUnit 5 `assertThrows` on last statement in lambda block only. In rare cases may cause compilation errors if the lambda uses effectively non final variables. In some cases, tests might fail if earlier statements in the lambda block throw exceptions._
 
+### Tags
+
+* [RSPEC-S5783](https://next.sonarqube.com/sonarqube/coding_rules?languages=java&q=S5783&open=java%3AS5783)
+
 ## Recipe source
 
 [GitHub: AssertThrowsOnLastStatement.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/junit5/AssertThrowsOnLastStatement.java),

@@ -25,8 +25,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | oldPropertyKey | The property key to rename. | `TODO Provide a usage example for the docs` |
-| `String` | newPrefix | The prefix to be replaced with. | `TODO Provide a usage example for the docs` |
+| `String` | oldPropertyKey | The property key to rename. | `camel.main.routeController(.*)` |
+| `String` | newPrefix | The prefix to be replaced with. | `camel.routeController.` |
 | `List` | exclusions | Regexp for exclusions | `camel.springboot.main-run-controller` |
 
 
@@ -48,8 +48,8 @@ name: com.yourorg.ChangePropertyKeyWithCaseChangeExample
 displayName: Change prefix of property with Camel case example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange:
-      oldPropertyKey: TODO Provide a usage example for the docs
-      newPrefix: TODO Provide a usage example for the docs
+      oldPropertyKey: camel.main.routeController(.*)
+      newPrefix: camel.routeController.
       exclusions:
         - camel.springboot.main-run-controller
 ```
@@ -61,7 +61,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldPropertyKey=TODO Provide a usage example for the docs" --recipe-option "newPrefix=TODO Provide a usage example for the docs" --recipe-option "exclusions=camel.springboot.main-run-controller"'}
+  cliOptions={' --recipe-option "oldPropertyKey=camel.main.routeController(.*)" --recipe-option "newPrefix=camel.routeController." --recipe-option "exclusions=camel.springboot.main-run-controller"'}
   hasDataTables
 />
 

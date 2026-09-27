@@ -31,6 +31,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | uriPattern | Regular expression to match the component URI. Use capturing groups for parts to preserve. | `^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$` |
 | `String` | replacement | Replacement string using `${1}`, `${2}`, etc. to reference capturing groups from the pattern. | `pulsar:${2}://${3}/${5}/${6}` |
+| `Boolean` | consumerOnly | *Optional*. When true, only consumer endpoints (from) are transformed; producer endpoints (to) are left unchanged. | `true` |
 
 
 ## Definition
@@ -54,6 +55,7 @@ description: |
   Transforms component URIs using regular expressions with capturing groups. Automatically handles Java, XML DSL, and YAML DSL.
 
 
+
 recipeList:
   - org.apache.camel.upgrade.customRecipes.internal.ChangeJavaComponentUriRecipe
   - org.apache.camel.upgrade.customRecipes.internal.ChangeXmlComponentUriRecipe
@@ -68,6 +70,8 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Migrate Pulsar component URIs from V1 to V2 format](/recipes/apache/camel/upgrade/camel420/migratepulsaruris.md)
+* [Migrate langchain4j-tools endpoint URIs to ai-tool](/recipes/apache/camel/upgrade/camel422/migratelangchain4jtoolsuris.md)
+* [Migrate spring-ai-tools endpoint URIs to ai-tool](/recipes/apache/camel/upgrade/camel422/migratespringaitoolsuris.md)
 
 
 ## Usage
@@ -83,6 +87,7 @@ recipeList:
   - org.apache.camel.upgrade.customRecipes.ChangeComponentUriRecipe:
       uriPattern: ^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$
       replacement: pulsar:${2}://${3}/${5}/${6}
+      consumerOnly: true
 ```
 
 <RunRecipe
@@ -92,7 +97,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "uriPattern=^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$" --recipe-option "replacement=pulsar:${2}://${3}/${5}/${6}"'}
+  cliOptions={' --recipe-option "uriPattern=^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$" --recipe-option "replacement=pulsar:${2}://${3}/${5}/${6}" --recipe-option "consumerOnly=true"'}
   hasDataTables
 />
 

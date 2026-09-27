@@ -36,6 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate quarkus-cxf to 3.22](/recipes/quarkus/updates/cxf/cxf322/updateall.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeFastJar](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypefastjar.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeJar](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypejar.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageTypeMutableJar](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagetypemutablejar.md)

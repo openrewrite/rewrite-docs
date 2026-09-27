@@ -40,9 +40,10 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.7.0](../quarkus/migratetoquarkus_v3_7_0)
+* [Migrate quarkus-cxf to 3.8](../quarkus/updates/cxf/cxf38/updateall)
+* [io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus38/synchibernatejpamodelgenversionwithbom)
 * [Migrates `camel 4.0` application to `camel 4.4`](../quarkus/updates/camel/camel44/camelquarkusmigrationrecipe)
 * [io.quarkus.updates.minio.minio38.UpdateAll](../quarkus/updates/minio/minio38/updateall)
-* [io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus38/synchibernatejpamodelgenversionwithbom)
 
 </TabItem>
 
@@ -62,9 +63,10 @@ preconditions:
       version: (,3.8.0)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_7_0
+  - io.quarkus.updates.cxf.cxf38.UpdateAll
+  - io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM
   - io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe
   - io.quarkus.updates.minio.minio38.UpdateAll
-  - io.quarkus.updates.core.quarkus38.SyncHibernateJpaModelgenVersionWithBOM
 
 ```
 </TabItem>

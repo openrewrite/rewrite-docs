@@ -21,6 +21,7 @@ _Basic building blocks for transforming Java code._
 * [Modernize](/recipes/java/migrate)
 * [Netty](/recipes/java/netty)
 * [Open Liberty](/recipes/java/liberty)
+* [PMD](/recipes/java/pmd)
 * [Recipes](/recipes/java/recipes)
 * [Search](/recipes/java/search)
 * [Spring](/recipes/java/spring)

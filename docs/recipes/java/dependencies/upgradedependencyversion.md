@@ -61,6 +61,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
 * [Migrate RichFaces 3.x to 4.5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/migraterichfaces_4_5)
 * [Migrate Spring Cloud AWS (awspring) to 4.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradeawspringcloud_4_0)
+* [Migrate Spring Cloud Azure to 6.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringcloudazure_6)
+* [Migrate Spring Cloud Azure to 7.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringcloudazure_7)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
 * [Migrate `jackson-datatype-hibernate6` to `jackson-datatype-hibernate7`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejacksondatatypehibernate6to7)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)

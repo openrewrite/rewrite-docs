@@ -74,7 +74,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Quarkus Updates Aggregate 3.20.1](/recipes/quarkus/migratetoquarkus_v3_20_1.md)
+* [Quarkus Updates Aggregate 3.20.0](/recipes/quarkus/migratetoquarkus_v3_20_0.md)
 
 
 ## Usage

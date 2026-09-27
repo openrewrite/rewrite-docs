@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.apache.camel.upgrade.camel418\_3.RenameHeaderInJavaMethod**
 
-_Renames header references in Message.setHeader() and Message.getHeader() method calls. Only migrates string literals in safe contexts. Does NOT migrate dynamic header names or Map.get() calls._
+_Renames header references in Message.setHeader(), Message.getHeader(), and in the setHeader(), removeHeader() and header() DSL methods. Only migrates string literals in safe contexts. Does NOT migrate dynamic header names or Map.get() calls._
 
 ## Recipe source
 

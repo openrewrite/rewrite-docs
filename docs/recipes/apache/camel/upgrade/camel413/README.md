@@ -8,6 +8,7 @@ description: Camel413 OpenRewrite recipes.
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Change dataformat fury to fory in xml dsl.](./furyxmldsl.md)
 * [Change dataformat fury to fury in xml/java dsl.](./furydsl.md)
 * [Migrates `camel 4.12` application to `camel 4.13`](./camelmigrationrecipe.md)
 

@@ -40,8 +40,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.37.0](../quarkus/migratetoquarkus_v3_37_0)
-* [io.quarkus.updates.core.quarkus338.ElasticsearchRestClientMigration](../quarkus/updates/core/quarkus338/elasticsearchrestclientmigration)
 * [Migrates `camel 4.20` application to `camel 4.21`](../quarkus/updates/camel/camel421/camelquarkusmigrationrecipe)
+* [io.quarkus.updates.core.quarkus338.ElasticsearchRestClientMigration](../quarkus/updates/core/quarkus338/elasticsearchrestclientmigration)
 
 </TabItem>
 
@@ -61,8 +61,8 @@ preconditions:
       version: (,3.38.0)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_37_0
-  - io.quarkus.updates.core.quarkus338.ElasticsearchRestClientMigration
   - io.quarkus.updates.camel.camel421.CamelQuarkusMigrationRecipe
+  - io.quarkus.updates.core.quarkus338.ElasticsearchRestClientMigration
 
 ```
 </TabItem>

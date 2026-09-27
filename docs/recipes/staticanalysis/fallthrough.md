@@ -32,6 +32,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Code cleanup](/recipes/staticanalysis/codecleanup.md)
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Remediate OWASP A10:2025 Mishandling of exceptional conditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a10)
 
 ## Example
 

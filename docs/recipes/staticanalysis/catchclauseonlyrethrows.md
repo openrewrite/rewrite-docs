@@ -31,6 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Common static analysis issues](/recipes/staticanalysis/commonstaticanalysis.md)
+* [Remediate OWASP A10:2025 Mishandling of exceptional conditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a10)
 
 ## Examples
 ##### Example 1

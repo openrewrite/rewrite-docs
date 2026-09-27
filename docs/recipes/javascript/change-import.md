@@ -25,11 +25,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `null` | oldModule | The module to change imports from | `react-dom/test-utils` |
-| `null` | oldMember | The member to change (or 'default' for default imports, '*' for namespace imports) | `act` |
-| `null` | newModule | The module to change imports to | `react` |
-| `null` | newMember | *Optional*. The new member name. If not specified, keeps the same member name. | `act` |
-| `null` | newAlias | *Optional*. Optional alias for the new import. Required when newMember is 'default' or '*'. |  |
+| `String` | oldModule | The module to change imports from | `react-dom/test-utils` |
+| `String` | oldMember | The member to change (or 'default' for default imports, '*' for namespace imports) | `act` |
+| `String` | newModule | The module to change imports to | `react` |
+| `String` | newMember | *Optional*. The new member name. If not specified, keeps the same member name. | `act` |
+| `String` | newAlias | *Optional*. The local name to bind the new member under. Defaults to the alias the import already had, or to the new member name where it had none. | `act` |
 
 
 ## Used by

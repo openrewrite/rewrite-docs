@@ -17,5 +17,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Configure logback logger level](./configureloggerlevel.md)
 * [Migrate Log4j 2.x Appender to logback-classic equivalents](./log4jappendertologback.md)
 * [Migrate Log4j 2.x Layout to logback-classic equivalents](./log4jlayouttologback.md)
+* [Replace the Logback `condition` attribute with the `condition` element](./conditionattributetoconditionelement.md)
 
 

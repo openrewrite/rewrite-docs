@@ -19,9 +19,12 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Add `config.stopBubbling` to the root `lombok.config`](./addstopbubblingtolombokconfig.md)
+* [Consolidate `lombok.config` files](./consolidatelombokconfig.md)
 * [Convert `@lombok.Value` class to Record](./lombokvaluetorecord.md)
 * [Convert getter methods to annotations](./uselombokgetter.md)
 * [Convert setter methods to annotations](./uselomboksetter.md)
+* [Flag usage of a Lombok feature](./flagusage.md)
 * [Migrate Lombok's `@__` syntax to `onX_` for Java 8+](./lombokonxtoonx_.md)
 * [Prefer `final var` over `lombok.val`](./lombokvaltofinalvar.md)
 * [Rename getter methods to fit Lombok](./adoptlombokgettermethodnames.md)

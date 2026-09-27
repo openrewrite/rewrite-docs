@@ -181,6 +181,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace H2 driver with Quarkus JDBC H2](/recipes/quarkus/spring/h2drivertoquarkus.md)
 * [Replace Spring Framework dependencies with Spring Boot starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot/replacespringframeworkdepswithbootstarters)
 * [Replace `jakarta.jws-api` with `jakarta.xml.ws-api`](/recipes/java/migrate/jakarta/replacejakartajwswithjakartaxmlws.md)
+* [Replace `one.gfw` JAXB artifacts with their official coordinates](/recipes/java/migrate/javax/migrateonegfwjaxbdependencies.md)
 * [Split the Spring gRPC test starter into server-test and client-test starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/splitspringgrpccombinedteststarter)
 * [Split the combined Spring gRPC starter into server and client starters](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/splitspringgrpccombinedstarter)
 * [Update Apache Commons Email to Email2 for Jakarta](/recipes/java/migrate/jakarta/updateapachecommonsemaildependencies.md)

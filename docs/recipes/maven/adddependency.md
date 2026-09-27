@@ -44,6 +44,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Add `lombok-mapstruct-binding` dependency for Maven when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbindingmavendependencyonly.md)
+* [Add quarkus-jackson if Jackson is used](/recipes/quarkus/updates/cxf/cxf339/addquarkusjacksonifused.md)
+* [Migrate langchain4j-tools endpoint URIs to ai-tool](/recipes/apache/camel/upgrade/camel422/migratelangchain4jtoolsuris.md)
 * [The package scan classes has moved from camel-base-engine to camel-support - maven](/recipes/apache/camel/upgrade/camel412/scanclassesmovedmaven.md)
 * [io.quarkus.updates.core.quarkus310.FlywayDb2](/recipes/quarkus/updates/core/quarkus310/flywaydb2.md)
 * [io.quarkus.updates.core.quarkus310.FlywayDerby](/recipes/quarkus/updates/core/quarkus310/flywayderby.md)

@@ -40,6 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 **Recipes**
 
 * [Quarkus Updates Aggregate 3.21.0](../quarkus/migratetoquarkus_v3_21_0)
+* [Migrate quarkus-cxf to 3.22](../quarkus/updates/cxf/cxf322/updateall)
 * [Migrates `camel 4.10` application to `camel 4.11`](../quarkus/updates/camel/camel411/camelquarkusmigrationrecipe)
 
 </TabItem>
@@ -60,6 +61,7 @@ preconditions:
       version: (,3.22.0)
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_21_0
+  - io.quarkus.updates.cxf.cxf322.UpdateAll
   - io.quarkus.updates.camel.camel411.CamelQuarkusMigrationRecipe
 
 ```

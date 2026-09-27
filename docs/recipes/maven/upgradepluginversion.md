@@ -48,7 +48,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
 * [Migrate jsonschema2pojo configuration to Spring Boot 4](/recipes/java/spring/boot4/migratejsonschema2pojotospringboot4.md)
 * [Migrate to 4.10.6](/recipes/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
-* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.22.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrate to Camel 4.18LTS](/recipes/apache/camel/upgrade/camel418ltsmigrationrecipe.md)
 * [Migrate to Java 17](/recipes/apache/camel/upgrade/upgradetojava17.md)
 * [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)

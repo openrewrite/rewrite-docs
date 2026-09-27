@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Replace `one.gfw` JAXB artifacts with their official coordinates](../../../java/migrate/javax/migrateonegfwjaxbdependencies)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `com.sun.xml.bind`
   * artifactId: `jaxb-core`
@@ -99,6 +100,7 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies
   - org.openrewrite.java.dependencies.RemoveDependency:
       groupId: com.sun.xml.bind
       artifactId: jaxb-core

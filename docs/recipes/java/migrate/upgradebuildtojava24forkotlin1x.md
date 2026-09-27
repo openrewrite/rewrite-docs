@@ -31,7 +31,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Module has Kotlin source files](../../java/migrate/search/modulehaskotlinsource)
 * [Module has dependency](../../java/dependencies/search/modulehasdependency)
   * groupIdPattern: `org.jetbrains.kotlin`
-  * artifactIdPattern: `kotlin-stdlib*`
+  * artifactIdPattern: `kotlin-stdlib`
   * version: `[0,2.0)`
 
 **Recipes**
@@ -54,7 +54,7 @@ preconditions:
   - org.openrewrite.java.migrate.search.ModuleHasKotlinSource
   - org.openrewrite.java.dependencies.search.ModuleHasDependency:
       groupIdPattern: org.jetbrains.kotlin
-      artifactIdPattern: kotlin-stdlib*
+      artifactIdPattern: kotlin-stdlib
       version: [0,2.0)
 recipeList:
   - org.openrewrite.java.migrate.UpgradeJavaVersion:

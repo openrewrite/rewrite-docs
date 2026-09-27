@@ -34,6 +34,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Remediate OWASP A09:2025 Security logging and alerting failures](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a09)
 * [Use logger instead of system print statements](/recipes/java/logging/systemprinttologging.md)
 
 ## Example

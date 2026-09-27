@@ -33,7 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Change dataformat fury to fury in xml/java dsl.](/recipes/apache/camel/upgrade/camel413/furydsl.md)
+* [Change dataformat fury to fory in xml dsl.](/recipes/apache/camel/upgrade/camel413/furyxmldsl.md)
 * [Migrate JAXB-WS Plugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
 * [Migrate JSF variable-resolver to el-resolver](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/jsf23/migratefacesconfig)
 * [Migrate RichFaces tags in `xhtml` files](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/richfaces/update45/updatexhtmltags)

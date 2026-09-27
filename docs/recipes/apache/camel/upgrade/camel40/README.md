@@ -16,6 +16,8 @@ description: Camel40 OpenRewrite recipes.
 _Recipes that include further recipes, often including the individual recipes below._
 
 * [Migrate `camel3` application to `camel4.`](./camelmigrationrecipe.md)
+* [Remove Camel 3.x dependencies that have been removed in Camel 4.0 with no direct replacement](./removeddependencies.md)
+* [Rename removed Camel 3.x dependencies to their Camel 4.0 replacements](./renameddependencies.md)
 * [Replace context.getExtension(ExtendedCamelContext.class).get* with PluginHelper.get*(context)](./usepluginhelperforcontextgetters.md)
 
 ## Recipes

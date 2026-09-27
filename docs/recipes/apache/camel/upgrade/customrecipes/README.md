@@ -20,6 +20,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Camel XMl DSL changes](./replacepropertyindataformatxml.md)
 * [Camel XMl DSL changes](./replacepropertyincomponentxml.md)
 * [Change prefix of property with Camel case](./changepropertykeywithcasechange.md)
+* [Find Camel XML DSL documents](./findcamelxmldsl.md)
 * [Move getter from context to ExtendedCamelContext.](./movegettertoextendedcamelcontext.md)
 * [Move getter from context to PluginHelper.](./movegettertopluginhelper.md)
 * [Renames property of the component](./replacepropertyindataformatyaml.md)

@@ -25,7 +25,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `null` | useUnicodeEscapes | *Optional*. Use Unicode escape sequences (`\uXXXX`) instead of hex escape sequences (`\xXX`). Default is `false`. | `true` |
+| `String` | useUnicodeEscapes | *Optional*. Use Unicode escape sequences (`\uXXXX`) instead of hex escape sequences (`\xXX`). Default is `false`. | `true` |
 
 
 ## Usage

@@ -11,7 +11,10 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.apache.camel.upgrade.camel418\_3.RenameHeaderInYamlDsl**
 
-_Renames header references in YAML DSL setHeader.name, header.name, and removeHeader.name entries._
+```
+Renames header references in YAML DSL setHeader.name, header.name, and removeHeader.name entries, and the ${header.oldName} placeholder wherever it appears in a scalar value.
+```
+
 
 ## Recipe source
 

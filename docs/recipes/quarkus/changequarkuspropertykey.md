@@ -36,6 +36,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate quarkus-cxf to 3.20](/recipes/quarkus/updates/cxf/cxf320/updateall.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageSimpleProperties](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagesimpleproperties.md)
 * [io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange](/recipes/quarkus/updates/core/quarkus319/configurationpropertieschange.md)
 * [io.quarkus.updates.core.quarkus319.HibernateORMValidationMode](/recipes/quarkus/updates/core/quarkus319/hibernateormvalidationmode.md)

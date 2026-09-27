@@ -28,8 +28,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | regexp | Regexp for matching a literal. | `TODO Provide a usage example for the docs` |
-| `String` | replacement | Replacement to use. | `TODO Provide a usage example for the docs` |
+| `String` | regexp | Regexp for matching a literal. | `(\{\{aws:[^/]+)/([^/]+}})` |
+| `String` | replacement | Replacement to use. | `${1}#${2}` |
 
 
 ## Used by
@@ -53,8 +53,8 @@ name: com.yourorg.LiteralRegexpConverterRecipeExample
 displayName: Replaces a literal matching an expression example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.LiteralRegexpConverterRecipe:
-      regexp: TODO Provide a usage example for the docs
-      replacement: TODO Provide a usage example for the docs
+      regexp: (\{\{aws:[^/]+)/([^/]+}})
+      replacement: ${1}#${2}
 ```
 
 <RunRecipe
@@ -64,7 +64,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "regexp=TODO Provide a usage example for the docs" --recipe-option "replacement=TODO Provide a usage example for the docs"'}
+  cliOptions={' --recipe-option "regexp=(\\{\\{aws:[^/]+)/([^/]+}})" --recipe-option "replacement=${1}#${2}"'}
   hasDataTables
 />
 

@@ -6,7 +6,7 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc indexes per-module recipe lists. Click a groupId to see its recipes._
 
-Total recipes: 4142
+Total recipes: 4183
 
 
 ## org.openrewrite
@@ -48,6 +48,7 @@ Total recipes: 4142
 * [rewrite-netty](all-recipes-org-openrewrite-recipe.md#rewrite-netty)
 * [rewrite-okhttp](all-recipes-org-openrewrite-recipe.md#rewrite-okhttp)
 * [rewrite-openapi](all-recipes-org-openrewrite-recipe.md#rewrite-openapi)
+* [rewrite-pmd](all-recipes-org-openrewrite-recipe.md#rewrite-pmd)
 * [rewrite-prethink](all-recipes-org-openrewrite-recipe.md#rewrite-prethink)
 * [rewrite-quarkus](all-recipes-org-openrewrite-recipe.md#rewrite-quarkus)
 * [rewrite-rewrite](all-recipes-org-openrewrite-recipe.md#rewrite-rewrite)

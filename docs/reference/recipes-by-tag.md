@@ -1067,11 +1067,14 @@ _2 recipes_
 
 ## dependabot
 
-_5 recipes_
+_6 recipes_
 
 * [org.openrewrite.github.AddDependabotCooldown](/recipes/github/adddependabotcooldown.md)
   * **Add cooldown periods to Dependabot configuration**
   * Adds a `cooldown` section to each update configuration in Dependabot files. Supports `default-days`, `semver-major-days`, `semver-minor-days`, `semver-patch-days`, `include`, and `exclude` options. This implements a security best practice where dependencies are not immediately adopted upon release, allowing time for security vendors to identify potential supply chain compromises. Cooldown applies only to version updates, not security updates. [Read more about dependency cooldowns](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns). [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
+* [org.openrewrite.github.AddDependabotOpenPullRequestsLimit](/recipes/github/adddependabotopenpullrequestslimit.md)
+  * **Add `open-pull-requests-limit` to Dependabot configuration**
+  * Adds an `open-pull-requests-limit` to each update configuration in Dependabot files, and replaces an existing value when it differs. The option caps the number of version update pull requests Dependabot keeps open; setting it to `0` temporarily disables version updates for that `package-ecosystem`. Security update pull requests are not subject to this limit and do not count towards it. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#open-pull-requests-limit).
 * [org.openrewrite.github.ChangeDependabotScheduleInterval](/recipes/github/changedependabotscheduleinterval.md)
   * **Change dependabot schedule interval**
   * Change the schedule interval and optionally the day, time, and time zone for a given package-ecosystem in a `dependabot.yml` configuration file. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
@@ -1087,7 +1090,7 @@ _5 recipes_
 
 ## dependencies
 
-_8 recipes_
+_9 recipes_
 
 * [com.oracle.weblogic.rewrite.jakarta.UpdateJakartaPlatform9_1](/recipes/oracle/weblogic/rewrite/jakarta/updatejakartaplatform9_1.md)
   * **Update Jakarta EE Platform Dependencies to 9.1.0**
@@ -1098,6 +1101,9 @@ _8 recipes_
 * [org.openrewrite.github.AddDependabotCooldown](/recipes/github/adddependabotcooldown.md)
   * **Add cooldown periods to Dependabot configuration**
   * Adds a `cooldown` section to each update configuration in Dependabot files. Supports `default-days`, `semver-major-days`, `semver-minor-days`, `semver-patch-days`, `include`, and `exclude` options. This implements a security best practice where dependencies are not immediately adopted upon release, allowing time for security vendors to identify potential supply chain compromises. Cooldown applies only to version updates, not security updates. [Read more about dependency cooldowns](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns). [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
+* [org.openrewrite.github.AddDependabotOpenPullRequestsLimit](/recipes/github/adddependabotopenpullrequestslimit.md)
+  * **Add `open-pull-requests-limit` to Dependabot configuration**
+  * Adds an `open-pull-requests-limit` to each update configuration in Dependabot files, and replaces an existing value when it differs. The option caps the number of version update pull requests Dependabot keeps open; setting it to `0` temporarily disables version updates for that `package-ecosystem`. Security update pull requests are not subject to this limit and do not count towards it. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#open-pull-requests-limit).
 * [org.openrewrite.github.ChangeDependabotScheduleInterval](/recipes/github/changedependabotscheduleinterval.md)
   * **Change dependabot schedule interval**
   * Change the schedule interval and optionally the day, time, and time zone for a given package-ecosystem in a `dependabot.yml` configuration file. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
@@ -1463,11 +1469,14 @@ _1 recipe_
 
 ## github
 
-_18 recipes_
+_19 recipes_
 
 * [org.openrewrite.github.AddDependabotCooldown](/recipes/github/adddependabotcooldown.md)
   * **Add cooldown periods to Dependabot configuration**
   * Adds a `cooldown` section to each update configuration in Dependabot files. Supports `default-days`, `semver-major-days`, `semver-minor-days`, `semver-patch-days`, `include`, and `exclude` options. This implements a security best practice where dependencies are not immediately adopted upon release, allowing time for security vendors to identify potential supply chain compromises. Cooldown applies only to version updates, not security updates. [Read more about dependency cooldowns](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns). [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
+* [org.openrewrite.github.AddDependabotOpenPullRequestsLimit](/recipes/github/adddependabotopenpullrequestslimit.md)
+  * **Add `open-pull-requests-limit` to Dependabot configuration**
+  * Adds an `open-pull-requests-limit` to each update configuration in Dependabot files, and replaces an existing value when it differs. The option caps the number of version update pull requests Dependabot keeps open; setting it to `0` temporarily disables version updates for that `package-ecosystem`. Security update pull requests are not subject to this limit and do not count towards it. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#open-pull-requests-limit).
 * [org.openrewrite.github.AddManualTrigger](/recipes/github/addmanualtrigger.md)
   * **Add manual workflow trigger**
   * You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event.
@@ -2025,7 +2034,7 @@ _1 recipe_
 
 ## jakarta
 
-_102 recipes_
+_103 recipes_
 
 * [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
@@ -2330,6 +2339,9 @@ _102 recipes_
 * [org.openrewrite.java.migrate.javax.AddJaxwsRuntime](/recipes/java/migrate/javax/addjaxwsruntime.md)
   * **Use the latest JAX-WS API and runtime for Jakarta EE 8**
   * Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+* [org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies](/recipes/java/migrate/javax/migrateonegfwjaxbdependencies.md)
+  * **Replace `one.gfw` JAXB artifacts with their official coordinates**
+  * The `one.gfw` group republishes unmodified copies of the JAXB API and runtime artifacts under its own group ID. This recipe replaces them with the official artifacts they were copied from, so that subsequent JAXB and Jakarta migrations recognize them.
 * [org.openrewrite.openapi.swagger.UseJakartaSwaggerArtifacts](/recipes/openapi/swagger/usejakartaswaggerartifacts.md)
   * **Use Jakarta Swagger Artifacts**
   * Migrate from javax Swagger artifacts to Jakarta versions.
@@ -2710,7 +2722,7 @@ _1 recipe_
 
 ## javax
 
-_37 recipes_
+_38 recipes_
 
 * [com.oracle.weblogic.rewrite.FacesMigrationToJakartaFaces2x](/recipes/oracle/weblogic/rewrite/facesmigrationtojakartafaces2x.md)
   * **JSF 1.x to Jakarta Server Faces 2.3 on WebLogic 14.1.2 or older**
@@ -2823,10 +2835,13 @@ _37 recipes_
 * [org.openrewrite.java.migrate.javax.AddJaxwsRuntime](/recipes/java/migrate/javax/addjaxwsruntime.md)
   * **Use the latest JAX-WS API and runtime for Jakarta EE 8**
   * Update build files to use the latest JAX-WS runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAX-WS run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAX-WS API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
+* [org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies](/recipes/java/migrate/javax/migrateonegfwjaxbdependencies.md)
+  * **Replace `one.gfw` JAXB artifacts with their official coordinates**
+  * The `one.gfw` group republishes unmodified copies of the JAXB API and runtime artifacts under its own group ID. This recipe replaces them with the official artifacts they were copied from, so that subsequent JAXB and Jakarta migrations recognize them.
 
 ## jaxb
 
-_12 recipes_
+_13 recipes_
 
 * [com.oracle.weblogic.rewrite.jakarta.JavaxBindingsSchemaXjbsToJakarta9BindingsSchemaXjbs](/recipes/oracle/weblogic/rewrite/jakarta/javaxbindingsschemaxjbstojakarta9bindingsschemaxjbs.md)
   * **Migrate xmlns entries in `*.xjb` files.**
@@ -2864,6 +2879,9 @@ _12 recipes_
 * [org.openrewrite.java.migrate.javax.AddJaxwsDependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
   * **Add explicit JAX-WS dependencies**
   * This recipe will add explicit dependencies for Jakarta EE 8 when a Java 8 application is using JAX-WS. Any existing dependencies will be upgraded to the latest version of Jakarta EE 8. The artifacts are moved to Jakarta EE 8 but the application can continue to use the `javax.xml.bind` namespace.
+* [org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies](/recipes/java/migrate/javax/migrateonegfwjaxbdependencies.md)
+  * **Replace `one.gfw` JAXB artifacts with their official coordinates**
+  * The `one.gfw` group republishes unmodified copies of the JAXB API and runtime artifacts under its own group ID. This recipe replaces them with the official artifacts they were copied from, so that subsequent JAXB and Jakarta migrations recognize them.
 
 ## jaxrs
 
@@ -4413,7 +4431,7 @@ _1 recipe_
 
 ## RSPEC
 
-_228 recipes_
+_233 recipes_
 
 * [org.openrewrite.cobol.cleanup.RemoveWithDebuggingMode](/recipes/cobol/cleanup/removewithdebuggingmode.md)
   * **Remove with debugging mode**
@@ -4479,6 +4497,10 @@ _228 recipes_
   * **Prefer `java.util.function.Supplier`**
   * Prefer `java.util.function.Supplier` instead of using `com.google.common.base.Supplier`.
   * Tags: RSPEC-S4738
+* [org.openrewrite.java.migrate.lang.FindThreadStartInConstructor](/recipes/java/migrate/lang/findthreadstartinconstructor.md)
+  * **Find `Thread.start()` calls made during construction of a non-final class**
+  * Finds `Thread.start()` invocations reached during construction of a non-`final` class — from a constructor body, an instance field initializer, or an instance initializer block. Starting a thread before construction completes lets the new thread observe a partially-initialised object; the problem is compounded when a subclass extends the class, because the superclass constructor starts the thread before the subclass' own fields have been initialised. Move the `start()` call to a separate method callers invoke after construction, or declare the class `final`.
+  * Tags: RSPEC-S2693
 * [org.openrewrite.java.migrate.util.ReplaceStreamCollectWithToList](/recipes/java/migrate/util/replacestreamcollectwithtolist.md)
   * **Replace `Stream.collect(Collectors.toUnmodifiableList())` with `Stream.toList()`**
   * Replace `Stream.collect(Collectors.toUnmodifiableList())` with Java 16+ `Stream.toList()`. Also replaces `Stream.collect(Collectors.toList())` if `convertToList` is set to `true`.
@@ -4535,6 +4557,10 @@ _228 recipes_
   * **JUnit 5 inner test classes should be annotated with `@Nested`**
   * Adds `@Nested` to inner classes that contain JUnit 5 tests and removes `static` from them. Before Java 16 an inner class may not declare static members other than constant variables, so a static nested class that declares any other static member is marked as needing manual migration instead; sources without a known Java version are assumed to support static members.
   * Tags: RSPEC-S5790
+* [org.openrewrite.java.testing.junit5.AssertThrowsOnLastStatement](/recipes/java/testing/junit5/assertthrowsonlaststatement.md)
+  * **Applies JUnit 5 `assertThrows` on last statement in lambda block only**
+  * Applies JUnit 5 `assertThrows` on last statement in lambda block only. In rare cases may cause compilation errors if the lambda uses effectively non final variables. In some cases, tests might fail if earlier statements in the lambda block throw exceptions.
+  * Tags: RSPEC-S5783
 * [org.openrewrite.java.testing.junit5.RemoveTryCatchFailBlocks](/recipes/java/testing/junit5/removetrycatchfailblocks.md)
   * **Replace `fail()` in `try-catch` blocks with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`**
   * Replace `try-catch` blocks where `catch` merely contains a `fail()` for `fail(String)` statement with `Assertions.assertDoesNotThrow(() -&gt; \{ ... \})`.
@@ -4663,6 +4689,18 @@ _228 recipes_
   * **Finalize classes with private constructors**
   * Adds the `final` modifier to classes that expose no public or package-private constructors. If a class cannot be instantiated from the outside, marking it `final` communicates that it was not designed for inheritance and prevents accidental subclassing.
   * Tags: RSPEC-S2974
+* [org.openrewrite.staticanalysis.FindSystemAndRuntimeExitCalls](/recipes/staticanalysis/findsystemandruntimeexitcalls.md)
+  * **Find JVM exit calls**
+  * Marks calls to `System.exit(int)`, `Runtime.exit(int)`, and `Runtime.halt(int)`. Terminating the JVM from library or application code is rarely correct: it bypasses the normal shutdown flow, prevents `finally` blocks from running in other threads, and can leave file, socket, and database resources in an inconsistent state. `Runtime.halt` is particularly dangerous because it also skips shutdown hooks.
+  * Tags: RSPEC-S1147
+* [org.openrewrite.staticanalysis.FindThreadGroupUsages](/recipes/staticanalysis/findthreadgroupusages.md)
+  * **Find `ThreadGroup` usages**
+  * Marks uses of `java.lang.ThreadGroup`. `ThreadGroup` was originally intended to help with thread management but its API has serious design flaws (most methods are either deprecated or unsafe) and it has been superseded by `java.util.concurrent.ExecutorService`. Sites flagged include `new ThreadGroup(...)` constructor calls, calls to `Thread.getThreadGroup()`, and method invocations on `ThreadGroup` receivers.
+  * Tags: RSPEC-S3014
+* [org.openrewrite.staticanalysis.FindWaitWithMultipleLocksHeld](/recipes/staticanalysis/findwaitwithmultiplelocksheld.md)
+  * **Find `Object.wait()` calls made while holding multiple monitors**
+  * Finds zero-argument `Object.wait()` invocations whose enclosing method holds two or more monitors — either through nested `synchronized (...)` blocks, or a `synchronized` method combined with a nested `synchronized` block. `wait()` releases only the monitor of its receiver, so other held monitors continue to block their waiters and can deadlock. Timed waits (`wait(long)`, `wait(long, int)`) are intentionally excluded — sonar-java's S3046 does the same, since timed waits are self-releasing and less likely to cause the failure mode.
+  * Tags: RSPEC-S3046
 * [org.openrewrite.staticanalysis.FixStringFormatExpressions](/recipes/staticanalysis/fixstringformatexpressions.md)
   * **Fix `String#format` and `String#formatted` expressions**
   * Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. Using `%n` ensures the correct platform-specific line separator, and removing unused arguments eliminates dead code that may mask a mismatch between the format string and its parameters.
@@ -5013,7 +5051,7 @@ _228 recipes_
   * Tags: RSPEC-S3626
 * [org.openrewrite.staticanalysis.UnnecessaryThrows](/recipes/staticanalysis/unnecessarythrows.md)
   * **Unnecessary throws**
-  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` and the exception is not documented via a JavaDoc as a `@throws` tag.  The `throws` declaration is retained on overridable methods (package-private and `protected` methods on non-`final` classes), and on `public` methods overridden within the same source file, so that a subclass override which does throw the exception keeps compiling. Overrides in other source files cannot be detected without a scanning recipe and are therefore not accounted for.  When a `throws` declaration is removed, any `@throws` or `@exception` JavaDoc tag documenting that exception is removed along with it, so that the documentation does not describe an exception the method no longer declares.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
+  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` and the exception is not documented via a JavaDoc as a `@throws` tag.  The `throws` declaration is retained on overridable methods (package-private and `protected` methods on non-`final` classes), and on `public` methods overridden within the same source file, so that a subclass override which does throw the exception keeps compiling. Overrides in other source files cannot be detected without a scanning recipe and are therefore not accounted for.  A `throws` declaration is also retained when the method body contains a call whose type does not fully resolve, because such a call may throw the exception.  When a `throws` declaration is removed, any `@throws` or `@exception` JavaDoc tag documenting that exception is removed along with it, so that the documentation does not describe an exception the method no longer declares.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
   * Tags: RSPEC-S1130
 * [org.openrewrite.staticanalysis.UnwrapRepeatableAnnotations](/recipes/staticanalysis/unwraprepeatableannotations.md)
   * **Unwrap `@Repeatable` annotations**

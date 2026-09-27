@@ -25,9 +25,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | component | Component name. | `TODO Provide a usage example for the docs` |
-| `String` | oldPropertyKey | The property key to rename. | `TODO Provide a usage example for the docs` |
-| `String` | newPropertyKey | The prefix to be replaced with. | `TODO Provide a usage example for the docs` |
+| `String` | component | Component name. | `crypto` |
+| `String` | oldPropertyKey | The property key to rename. | `algorithmParameterRef` |
+| `String` | newPropertyKey | The property key to be replaced with. | `algorithmParameterSpec` |
 
 
 ## Used by
@@ -48,9 +48,9 @@ name: com.yourorg.ReplacePropertyInDataFormatYamlExample
 displayName: Renames property of the component example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.ReplacePropertyInDataFormatYaml:
-      component: TODO Provide a usage example for the docs
-      oldPropertyKey: TODO Provide a usage example for the docs
-      newPropertyKey: TODO Provide a usage example for the docs
+      component: crypto
+      oldPropertyKey: algorithmParameterRef
+      newPropertyKey: algorithmParameterSpec
 ```
 
 <RunRecipe
@@ -60,7 +60,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "component=TODO Provide a usage example for the docs" --recipe-option "oldPropertyKey=TODO Provide a usage example for the docs" --recipe-option "newPropertyKey=TODO Provide a usage example for the docs"'}
+  cliOptions={' --recipe-option "component=crypto" --recipe-option "oldPropertyKey=algorithmParameterRef" --recipe-option "newPropertyKey=algorithmParameterSpec"'}
   hasDataTables
 />
 

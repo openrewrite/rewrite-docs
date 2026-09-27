@@ -39,11 +39,13 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate to Wicket 10.x](/recipes/apache/wicket/migratetowicket10.md)
 * [Moved the camel-cloudevents api into camel-api and removed the camel-cloudevents](/recipes/apache/camel/upgrade/camel47/removeddependencies.md)
+* [Remove Camel 3.x dependencies that have been removed in Camel 4.0 with no direct replacement](/recipes/apache/camel/upgrade/camel40/removeddependencies.md)
 * [Remove camel-aws-xray dependency](/recipes/apache/camel/upgrade/camel421/removecamelawsxraydependency.md)
 * [Remove camel-elytron dependency](/recipes/apache/camel/upgrade/camel421/removecamelelytrondependency.md)
 * [Remove camel-github dependency](/recipes/apache/camel/upgrade/camel421/removecamelgithubdependency.md)
 * [Remove camel-grape dependency](/recipes/apache/camel/upgrade/camel421/removecamelgrapedependency.md)
 * [Remove camel-guava-eventbus dependency](/recipes/apache/camel/upgrade/camel421/removecamelguavaeventbusdependency.md)
+* [Remove camel-reactive-executor-tomcat dependency](/recipes/apache/camel/upgrade/camel422/removecamelreactiveexecutortomcatdependency.md)
 * [Remove camel-stomp dependency](/recipes/apache/camel/upgrade/camel421/removecamelstompdependency.md)
 * [Remove non existing camel-quarkus extensions](/recipes/java/camel/migrate/removedextensions.md)
 * [Removed deprecated components](/recipes/apache/camel/upgrade/camel411/removeddependencies.md)

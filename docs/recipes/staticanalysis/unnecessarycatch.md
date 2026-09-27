@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Remediate OWASP A10:2025 Mishandling of exceptional conditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a10)
 * [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
 * [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
 * [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)

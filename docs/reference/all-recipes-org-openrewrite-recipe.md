@@ -586,7 +586,7 @@ _33 recipes_
 
 _License: Moderne Source Available License_
 
-_61 recipes_
+_62 recipes_
 
 * [org.openrewrite.github.AddCronTrigger](/recipes/github/addcrontrigger.md)
   * **Add cron workflow trigger**
@@ -594,6 +594,9 @@ _61 recipes_
 * [org.openrewrite.github.AddDependabotCooldown](/recipes/github/adddependabotcooldown.md)
   * **Add cooldown periods to Dependabot configuration**
   * Adds a `cooldown` section to each update configuration in Dependabot files. Supports `default-days`, `semver-major-days`, `semver-minor-days`, `semver-patch-days`, `include`, and `exclude` options. This implements a security best practice where dependencies are not immediately adopted upon release, allowing time for security vendors to identify potential supply chain compromises. Cooldown applies only to version updates, not security updates. [Read more about dependency cooldowns](https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns). [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates).
+* [org.openrewrite.github.AddDependabotOpenPullRequestsLimit](/recipes/github/adddependabotopenpullrequestslimit.md)
+  * **Add `open-pull-requests-limit` to Dependabot configuration**
+  * Adds an `open-pull-requests-limit` to each update configuration in Dependabot files, and replaces an existing value when it differs. The option caps the number of version update pull requests Dependabot keeps open; setting it to `0` temporarily disables version updates for that `package-ecosystem`. Security update pull requests are not subject to this limit and do not count towards it. [The available configuration options for dependabot are listed on GitHub](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#open-pull-requests-limit).
 * [org.openrewrite.github.AddManualTrigger](/recipes/github/addmanualtrigger.md)
   * **Add manual workflow trigger**
   * You can manually trigger workflow runs. To trigger specific workflows in a repository, use the `workflow_dispatch` event.
@@ -1302,7 +1305,7 @@ _13 recipes_
 
 _License: Moderne Source Available License_
 
-_129 recipes_
+_130 recipes_
 
 * [org.apache.logging.log4j.InlineLog4jApiMethods](/recipes/apache/logging/log4j/inlinelog4japimethods.md)
   * **Inline `log4j-api-2` methods annotated with `@InlineMe`**
@@ -1457,6 +1460,9 @@ _129 recipes_
 * [org.openrewrite.java.logging.log4j.UpgradeLog4J2DependencyVersion](/recipes/java/logging/log4j/upgradelog4j2dependencyversion.md)
   * **Upgrade Log4j 2.x dependency version**
   * Upgrades the Log4j 2.x dependencies to the latest 2.x version. Mitigates the [Log4Shell and other Log4j2-related vulnerabilities](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-356a).
+* [org.openrewrite.java.logging.logback.ConditionAttributeToConditionElement](/recipes/java/logging/logback/conditionattributetoconditionelement.md)
+  * **Replace the Logback `condition` attribute with the `condition` element**
+  * Logback 1.5.37 removed the Janino based `&lt;if condition=&quot;...&quot;&gt;` attribute that 1.5.20 deprecated, so configuration files still using it fail to select the intended appenders. Replaces the attribute with the `&lt;condition class=&quot;...&quot;/&gt;` element that precedes `&lt;if&gt;`, using the conditions shipped in `ch.qos.logback.core.boolex`. Conditions that require custom Java logic are left unchanged and reported in a data table.
 * [org.openrewrite.java.logging.logback.ConfigureLoggerLevel](/recipes/java/logging/logback/configureloggerlevel.md)
   * **Configure logback logger level**
   * Within logback.xml configuration files sets the specified log level for a particular class. Will not create a logback.xml if one does not already exist.
@@ -1845,7 +1851,7 @@ _38 recipes_
 
 _License: Moderne Source Available License_
 
-_472 recipes_
+_477 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
@@ -1939,7 +1945,7 @@ _472 recipes_
   * This recipe will upgrade old dependency of com.intellij:annotations to the newer org.jetbrains:annotations.
 * [org.openrewrite.java.migrate.CommentJava24KotlinCap](/recipes/java/migrate/commentjava24kotlincap.md)
   * **Explain why the Java version was capped at 24 for Kotlin modules**
-  * Adds an explanatory comment to Maven `pom.xml` files in modules that were held at Java 24 because they compile Kotlin and depend on `kotlin-stdlib` older than 2.3, which cannot target Java 25 bytecode. The comment names the `kotlin-stdlib` version found and the next step needed to reach Java 25. Self-healing: the comment is added while the module is at Java 24 and removed again once the module reaches a higher Java version (for instance after its Kotlin was upgraded to 2.3), so it only ever remains on modules that truly stay at Java 24 — whether a Kotlin 1.x cap or a 2.0-2.2 module whose Kotlin upgrade could not be applied. Intended to run last, scoped to modules that compile Kotlin.
+  * Adds an explanatory comment to Maven `pom.xml` files in modules that were held at Java 24 because they compile Kotlin and depend on `kotlin-stdlib` older than 2.3, which cannot target Java 25 bytecode. Only modules whose resolved `kotlin-stdlib` is older than 2.3 are commented; the comment names that `kotlin-stdlib` version and the next step needed to reach Java 25. Self-healing: the comment is added while the module is at Java 24 and removed again once the module reaches a higher Java version (for instance after its Kotlin was upgraded to 2.3), so it only ever remains on modules that truly stay at Java 24 — whether a Kotlin 1.x cap or a 2.0-2.2 module whose Kotlin upgrade could not be applied. Intended to run last, scoped to modules that compile Kotlin.
 * [org.openrewrite.java.migrate.CommentKotlinModulesCappedAtJava24](/recipes/java/migrate/commentkotlinmodulescappedatjava24.md)
   * **Comment Kotlin modules capped at Java 24**
   * Adds an explanatory comment to Kotlin modules that remain at Java 24 after the Java 25 migration, because Kotlin before 2.3 cannot target Java 25 bytecode. This covers both a Kotlin 1.x cap (which cannot be upgraded automatically) and a Kotlin 2.0-2.2 module whose upgrade to 2.3 could not be applied. Scoped to modules that actually compile Kotlin (i.e. contain `.kt` source files); the comment is self-healing, so a module that does reach Java 25 has it removed.
@@ -2876,6 +2882,9 @@ _472 recipes_
 * [org.openrewrite.java.migrate.javax.MigrateJaxBWSPlugin](/recipes/java/migrate/javax/migratejaxbwsplugin.md)
   * **Migrate JAXB-WS Plugin**
   * Upgrade the JAXB-WS Maven plugin to be compatible with Java 11.
+* [org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies](/recipes/java/migrate/javax/migrateonegfwjaxbdependencies.md)
+  * **Replace `one.gfw` JAXB artifacts with their official coordinates**
+  * The `one.gfw` group republishes unmodified copies of the JAXB API and runtime artifacts under its own group ID. This recipe replaces them with the official artifacts they were copied from, so that subsequent JAXB and Jakarta migrations recognize them.
 * [org.openrewrite.java.migrate.javax.MigrateSimpleAnnotationValueVisitor6To9](/recipes/java/migrate/javax/migratesimpleannotationvaluevisitor6to9.md)
   * **Use `javax.lang.model.util.SimpleAnnotationValueVisitor9`**
   * Use `javax.lang.model.util.SimpleAnnotationValueVisitor9` instead of the deprecated `javax.lang.model.util.SimpleAnnotationValueVisitor6` in Java 9 or higher.
@@ -2921,6 +2930,9 @@ _472 recipes_
 * [org.openrewrite.java.migrate.lang.FindNonVirtualExecutors](/recipes/java/migrate/lang/findnonvirtualexecutors.md)
   * **Find non-virtual `ExecutorService` creation**
   * Find all places where static `java.util.concurrent.Executors` method creates a non-virtual `java.util.concurrent.ExecutorService`. This recipe can be used to search fro `ExecutorService` that can be replaced by Virtual Thread executor.
+* [org.openrewrite.java.migrate.lang.FindThreadStartInConstructor](/recipes/java/migrate/lang/findthreadstartinconstructor.md)
+  * **Find `Thread.start()` calls made during construction of a non-final class**
+  * Finds `Thread.start()` invocations reached during construction of a non-`final` class — from a constructor body, an instance field initializer, or an instance initializer block. Starting a thread before construction completes lets the new thread observe a partially-initialised object; the problem is compounded when a subclass extends the class, because the superclass constructor starts the thread before the subclass' own fields have been initialised. Move the `start()` call to a separate method callers invoke after construction, or declare the class `final`.
 * [org.openrewrite.java.migrate.lang.FindVirtualThreadOpportunities](/recipes/java/migrate/lang/findvirtualthreadopportunities.md)
   * **Find Virtual Thread opportunities**
   * Find opportunities to convert existing code to use Virtual Threads.
@@ -3056,12 +3068,21 @@ _472 recipes_
 * [org.openrewrite.java.migrate.logging.MigrateLoggerLogrbToUseResourceBundle](/recipes/java/migrate/logging/migrateloggerlogrbtouseresourcebundle.md)
   * **Use `Logger#logrb(.., ResourceBundle bundleName, ..)`**
   * Use `Logger#logrb(.., ResourceBundle bundleName, ..)` instead of the deprecated `java.util.logging.Logger#logrb(.., String bundleName, ..)` in Java 8 or higher.
+* [org.openrewrite.java.migrate.lombok.AddStopBubblingToLombokConfig](/recipes/java/migrate/lombok/addstopbubblingtolombokconfig.md)
+  * **Add `config.stopBubbling` to the root `lombok.config`**
+  * Append `config.stopBubbling = true` to the root `lombok.config`, so that Lombok reads the project's configuration and nothing else. Lombok resolves a key by walking up from the directory of the Java file it is compiling and does not stop at the project, so without this key a `lombok.config` in a parent directory of the checkout takes part in the build. Note that this cuts the project off from such a file whether or not it was meant to be read. Nothing is added when the key is already declared, whatever value it is assigned or whether the root file declares it or imports it.
 * [org.openrewrite.java.migrate.lombok.AdoptLombokGetterMethodNames](/recipes/java/migrate/lombok/adoptlombokgettermethodnames.md)
   * **Rename getter methods to fit Lombok**
   * Rename methods that are effectively getter to the name Lombok would give them.  Limitations:  - If two methods in a class are effectively the same getter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() \{ return ba; \} int getBa() \{ return foo; \}` stays as it is.
 * [org.openrewrite.java.migrate.lombok.AdoptLombokSetterMethodNames](/recipes/java/migrate/lombok/adoptlomboksettermethodnames.md)
   * **Rename setter methods to fit Lombok**
   * Rename methods that are effectively setter to the name Lombok would give them. Limitations:  - If two methods in a class are effectively the same setter then one's name will be corrected and the others name will be left as it is.  - If the correct name for a method is already taken by another method then the name will not be corrected.  - Method name swaps or circular renaming within a class cannot be performed because the names block each other. E.g. `int getFoo() \{ return ba; \} int getBa() \{ return foo; \}` stays as it is.
+* [org.openrewrite.java.migrate.lombok.ConsolidateLombokConfig](/recipes/java/migrate/lombok/consolidatelombokconfig.md)
+  * **Consolidate `lombok.config` files**
+  * Merge the directives of every nested `lombok.config` into the root `lombok.config` and delete the nested files, so that a project has a single place where Lombok is configured. A root `lombok.config` is created when the project has none. Directives are appended to the root file; what it already declares, itself or through an `import`, is left as written and not repeated. Note that hoisting a directive widens its scope from the directory that declared it to the whole project, so a directive only some directories can satisfy, such as `lombok.val.flagUsage = error`, will start to apply to all of them. A nested file is left in place when moving its directives would change what Lombok does: when it declares `config.stopBubbling`, `import`, `clear` or `-=`, when a `lombok.config` between it and the root would outrank the root once the directive moved there, when another `lombok.config` imports it, or when no Java source sits at or below it. No changes are made at all when two files assign conflicting values to the same key, or when the root imports a file that is not among the sources.
+* [org.openrewrite.java.migrate.lombok.FlagUsage](/recipes/java/migrate/lombok/flagusage.md)
+  * **Flag usage of a Lombok feature**
+  * Assign `lombok.&lt;featureName&gt;.flagUsage` in every `lombok.config`, so that Lombok fails the build, or warns, where the feature is used. Nested configs are written to as well, as those have the last word on the directories below them.
 * [org.openrewrite.java.migrate.lombok.LombokBestPractices](/recipes/java/migrate/lombok/lombokbestpractices.md)
   * **Lombok Best Practices**
   * Applies all recipes that enforce best practices for using Lombok.
@@ -3398,6 +3419,31 @@ _17 recipes_
 * [org.openrewrite.openapi.swagger.UseJakartaSwaggerArtifacts](/recipes/openapi/swagger/usejakartaswaggerartifacts.md)
   * **Use Jakarta Swagger Artifacts**
   * Migrate from javax Swagger artifacts to Jakarta versions.
+
+## rewrite-pmd
+
+_License: Moderne Source Available License_
+
+_6 recipes_
+
+* [org.openrewrite.java.pmd.AddPmdRule](/recipes/java/pmd/addpmdrule.md)
+  * **Add a PMD rule to a ruleset**
+  * Adds a `&lt;rule ref=&quot;...&quot;/&gt;` reference to PMD ruleset XML files that do not have one yet. When the ruleset already pulls in the whole ruleset file the rule lives in, the rule is enabled by removing the `&lt;exclude name=&quot;...&quot;/&gt;` that was keeping it out rather than by adding a second reference to it.
+* [org.openrewrite.java.pmd.ModernizePmd](/recipes/java/pmd/modernizepmd.md)
+  * **Modernize a PMD ruleset**
+  * Bring a PMD ruleset XML file up to date with current PMD, by updating the `&lt;rule&gt;` references and `&lt;exclude&gt;` elements to name each rule as PMD knows it today. This runs both the PMD 6 to 7 migration, which replaces the rules PMD 7 deleted and drops the ones deleted without a successor, and the PMD 7 rule renames, which adopt the current name of each rule PMD renamed within the PMD 7 line. Rules whose replacement requires a judgement call, either because PMD split one rule across several successors or because the successor reports something different, are left alone. The result requires PMD 7.27.0 or later; an earlier PMD 7 fails to load a name that its version does not know yet.
+* [org.openrewrite.java.pmd.Pmd6to7Migration](/recipes/java/pmd/pmd6to7migration.md)
+  * **Migrate a PMD 6 ruleset to PMD 7**
+  * PMD 7 deleted the rules that had been deprecated throughout the PMD 6 line, and PMD refuses to load a ruleset that references a rule it does not know. Update the `&lt;rule&gt;` references and `&lt;exclude&gt;` elements in PMD ruleset XML files to name each deleted rule's successor, and drop the references to rules that were deleted without one. Rules whose behaviour PMD split across several successors, such as `VariableNamingConventions` and the primitive wrapper `*Instantiation` rules, are left alone because picking a single replacement for them requires a judgement call.
+* [org.openrewrite.java.pmd.Pmd7RuleRenames](/recipes/java/pmd/pmd7rulerenames.md)
+  * **Rename PMD rules that were renamed within the PMD 7 line**
+  * PMD renamed a number of rules during the PMD 7 line, keeping the old name as a deprecated alias that PMD still loads but warns about. Update the `&lt;rule&gt;` references and `&lt;exclude&gt;` elements in PMD ruleset XML files to name each rule's current name, so the ruleset stops emitting deprecation warnings and keeps loading once PMD 8 drops the aliases. Only true renames are applied, meaning the cases where PMD kept the old name as an alias pointing at the new one. Rules PMD deprecated in favour of a *different* rule, such as `AvoidCatchingNPE` in favour of the configurable `AvoidCatchingGenericException`, `GenericsNaming` in favour of `TypeParameterNamingConventions`, `UnnecessaryLocalBeforeReturn` in favour of `VariableCanBeInlined`, `UseObjectForClearerAPI` in favour of `ExcessiveParameterList`, and `CheckSkipResult`, `AvoidLosingExceptionInformation` and `UselessOperationOnImmutable` in favour of `UnusedReturnValue`, are left alone, because the successor reports different things and adopting it is a judgement call rather than a rename. The new names require PMD 7.27.0 or later; a ruleset for an earlier PMD 7 fails to load a name that its version does not know yet.
+* [org.openrewrite.java.pmd.RemovePmdRule](/recipes/java/pmd/removepmdrule.md)
+  * **Remove a PMD rule from a ruleset**
+  * Removes both `&lt;rule ref=&quot;...&quot;/&gt;` references to a rule and `&lt;exclude name=&quot;...&quot;/&gt;` elements naming it from PMD ruleset XML files. Intended for rules that PMD deleted without offering a replacement, since PMD fails to load a ruleset that references a rule it does not know.
+* [org.openrewrite.java.pmd.ReplacePmdRule](/recipes/java/pmd/replacepmdrule.md)
+  * **Replace a PMD rule in a ruleset**
+  * Updates `&lt;rule ref=&quot;...&quot;/&gt;` references and `&lt;exclude name=&quot;...&quot;/&gt;` elements in PMD ruleset XML files to name a rule's replacement. An `&lt;exclude&gt;` is only renamed when the replacement lives in the same ruleset file, because an exclusion can only name a rule from the ruleset its enclosing `&lt;rule&gt;` refers to; when the replacement moved to another ruleset file the exclusion no longer names a rule PMD knows, so it is removed instead.
 
 ## rewrite-prethink
 
@@ -4869,7 +4915,7 @@ _67 recipes_
 
 _License: Moderne Source Available License_
 
-_199 recipes_
+_203 recipes_
 
 * [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
   * **Inline deprecated delegating methods**
@@ -5011,7 +5057,16 @@ _199 recipes_
   * Locates `public` method declarations that are not documented with a Javadoc comment, marks them with a search result, and records them in a data table.
 * [org.openrewrite.staticanalysis.FindNewExceptionWithoutCause](/recipes/staticanalysis/findnewexceptionwithoutcause.md)
   * **Find new exceptions thrown without the caught exception**
-  * Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Data flow (taint) tracking is used to establish whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule.
+  * Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Taint tracking over the local variables of the `catch` block establishes whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables, helper calls and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule.
+* [org.openrewrite.staticanalysis.FindSystemAndRuntimeExitCalls](/recipes/staticanalysis/findsystemandruntimeexitcalls.md)
+  * **Find JVM exit calls**
+  * Marks calls to `System.exit(int)`, `Runtime.exit(int)`, and `Runtime.halt(int)`. Terminating the JVM from library or application code is rarely correct: it bypasses the normal shutdown flow, prevents `finally` blocks from running in other threads, and can leave file, socket, and database resources in an inconsistent state. `Runtime.halt` is particularly dangerous because it also skips shutdown hooks.
+* [org.openrewrite.staticanalysis.FindThreadGroupUsages](/recipes/staticanalysis/findthreadgroupusages.md)
+  * **Find `ThreadGroup` usages**
+  * Marks uses of `java.lang.ThreadGroup`. `ThreadGroup` was originally intended to help with thread management but its API has serious design flaws (most methods are either deprecated or unsafe) and it has been superseded by `java.util.concurrent.ExecutorService`. Sites flagged include `new ThreadGroup(...)` constructor calls, calls to `Thread.getThreadGroup()`, and method invocations on `ThreadGroup` receivers.
+* [org.openrewrite.staticanalysis.FindWaitWithMultipleLocksHeld](/recipes/staticanalysis/findwaitwithmultiplelocksheld.md)
+  * **Find `Object.wait()` calls made while holding multiple monitors**
+  * Finds zero-argument `Object.wait()` invocations whose enclosing method holds two or more monitors — either through nested `synchronized (...)` blocks, or a `synchronized` method combined with a nested `synchronized` block. `wait()` releases only the monitor of its receiver, so other held monitors continue to block their waiters and can deadlock. Timed waits (`wait(long)`, `wait(long, int)`) are intentionally excluded — sonar-java's S3046 does the same, since timed waits are self-releasing and less likely to cause the failure mode.
 * [org.openrewrite.staticanalysis.FixStringFormatExpressions](/recipes/staticanalysis/fixstringformatexpressions.md)
   * **Fix `String#format` and `String#formatted` expressions**
   * Fix `String#format` and `String#formatted` expressions by replacing `\n` newline characters with `%n` and removing any unused arguments. Note this recipe is scoped to only transform format expressions which do not specify the argument index. Using `%n` ensures the correct platform-specific line separator, and removing unused arguments eliminates dead code that may mask a mismatch between the format string and its parameters.
@@ -5387,6 +5442,9 @@ _199 recipes_
 * [org.openrewrite.staticanalysis.UnnecessaryExplicitTypeArguments](/recipes/staticanalysis/unnecessaryexplicittypearguments.md)
   * **Unnecessary explicit type arguments**
   * When explicit type arguments are inferable by the compiler, they may be removed.
+* [org.openrewrite.staticanalysis.UnnecessaryFinalInTryWithResources](/recipes/staticanalysis/unnecessaryfinalintrywithresources.md)
+  * **Unnecessary `final` in try-with-resources**
+  * Remove the redundant `final` modifier from resources declared in a try-with-resources statement. Such resources are implicitly final, so the modifier adds no meaning.
 * [org.openrewrite.staticanalysis.UnnecessaryParentheses](/recipes/staticanalysis/unnecessaryparentheses.md)
   * **Remove unnecessary parentheses**
   * Removes unnecessary parentheses from code where extra parentheses pairs are redundant. Redundant parentheses add visual noise and can obscure the actual structure of an expression, making code harder to read at a glance.
@@ -5398,7 +5456,7 @@ _199 recipes_
   * Removes `return` from a `void` method if it's the last statement. A trailing `return` in a void method has no effect on control flow and is just noise that distracts from the meaningful logic.
 * [org.openrewrite.staticanalysis.UnnecessaryThrows](/recipes/staticanalysis/unnecessarythrows.md)
   * **Unnecessary throws**
-  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` and the exception is not documented via a JavaDoc as a `@throws` tag.  The `throws` declaration is retained on overridable methods (package-private and `protected` methods on non-`final` classes), and on `public` methods overridden within the same source file, so that a subclass override which does throw the exception keeps compiling. Overrides in other source files cannot be detected without a scanning recipe and are therefore not accounted for.  When a `throws` declaration is removed, any `@throws` or `@exception` JavaDoc tag documenting that exception is removed along with it, so that the documentation does not describe an exception the method no longer declares.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
+  * Remove unnecessary `throws` declarations. This recipe will only remove unused, checked exceptions if:   - The declaring class or the method declaration is `final`.  - The method declaration is `static` or `private`.  - The method overrides a method declaration in a super class and the super class does not throw the exception.  - The method is `public` and the exception is not documented via a JavaDoc as a `@throws` tag.  The `throws` declaration is retained on overridable methods (package-private and `protected` methods on non-`final` classes), and on `public` methods overridden within the same source file, so that a subclass override which does throw the exception keeps compiling. Overrides in other source files cannot be detected without a scanning recipe and are therefore not accounted for.  A `throws` declaration is also retained when the method body contains a call whose type does not fully resolve, because such a call may throw the exception.  When a `throws` declaration is removed, any `@throws` or `@exception` JavaDoc tag documenting that exception is removed along with it, so that the documentation does not describe an exception the method no longer declares.  Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
 * [org.openrewrite.staticanalysis.UnwrapElseAfterReturn](/recipes/staticanalysis/unwrapelseafterreturn.md)
   * **Unwrap else block after return or throw statement**
   * Unwraps the else block when the if block ends with a return or throw statement, reducing nesting and improving code readability.
@@ -6308,7 +6366,7 @@ _276 recipes_
 
 _License: Apache License Version 2.0_
 
-_1651 recipes_
+_1675 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -6748,6 +6806,9 @@ _1651 recipes_
 * [io.quarkus.updates.camel.camel421.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel421/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.20` application to `camel 4.21`**
   * Migrates `camel 4.20` Quarkus application to `camel 4.21`.
+* [io.quarkus.updates.camel.camel422.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel422/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.21` application to `camel 4.22`**
+  * Migrates `camel 4.21` Quarkus application to `camel 4.22`.
 * [io.quarkus.updates.camel.camel44.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel44/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.0` application to `camel 4.4`**
   * Migrates `camel 4.0` quarkus application to `camel 4.4`.
@@ -7183,12 +7244,36 @@ _1651 recipes_
 * [io.quarkus.updates.core.quarkus39.UpdateConfigRoots](/recipes/quarkus/updates/core/quarkus39/updateconfigroots.md)
   * **io.quarkus.updates.core.quarkus39.UpdateConfigRoots**
   * 
+* [io.quarkus.updates.cxf.cxf316.UpdateAll](/recipes/quarkus/updates/cxf/cxf316/updateall.md)
+  * **Migrate quarkus-cxf to 3.16**
+  * quarkus-cxf 3.16.0 switched the default HTTP conduit to the Vert.x HttpClient, where hostname-verifier fails at runtime, and deprecated the per client trust-store*/key-store* options in favor of the Quarkus TLS registry. A safe automatic rewrite is not possible for every configuration, so this recipe only adds a deprecation warning comment at the top of the affected properties files and leaves the migration to the user.
+* [io.quarkus.updates.cxf.cxf320.UpdateAll](/recipes/quarkus/updates/cxf/cxf320/updateall.md)
+  * **Migrate quarkus-cxf to 3.20**
+  * Renames the deprecated client authentication properties quarkus.cxf.client.&quot;client-name&quot;.username and quarkus.cxf.client.&quot;client-name&quot;.password to auth.username and auth.password for quarkus-cxf 3.20.0.
+* [io.quarkus.updates.cxf.cxf322.UpdateAll](/recipes/quarkus/updates/cxf/cxf322/updateall.md)
+  * **Migrate quarkus-cxf to 3.22**
+  * Removes the quarkus-cxf-rt-transports-http-hc5 extension (asynchronous mode is provided by the Vert.x HttpClient based conduit in io.quarkiverse.cxf:quarkus-cxf) and drops the removed HttpClientHTTPConduitFactory value of *.http-conduit-factory so that the default VertxHttpClientHTTPConduit takes over, for quarkus-cxf 3.22.0. Other http-conduit-factory values such as URLConnectionHTTPConduitFactory stay supported and are left untouched.
+* [io.quarkus.updates.cxf.cxf331.UpdateAll](/recipes/quarkus/updates/cxf/cxf331/updateall.md)
+  * **Migrate quarkus-cxf to 3.31**
+  * quarkus-cxf 3.31.0 deprecated the per client proxy options (proxy-server, proxy-server-port, proxy-server-type, proxy-username, proxy-password, non-proxy-hosts) in favor of the Quarkus Proxy Registry, with removal announced for 4.0.0. A safe automatic rewrite is not possible for every configuration, so this recipe only adds a deprecation warning comment at the top of the affected properties files and leaves the migration to the user.
+* [io.quarkus.updates.cxf.cxf339.AddQuarkusJacksonIfUsed](/recipes/quarkus/updates/cxf/cxf339/addquarkusjacksonifused.md)
+  * **Add quarkus-jackson if Jackson is used**
+  * Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already available directly or transitively through another extension. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
+* [io.quarkus.updates.cxf.cxf339.UpdateAll](/recipes/quarkus/updates/cxf/cxf339/updateall.md)
+  * **Migrate quarkus-cxf to 3.39**
+  * quarkus-cxf 3.39.0 no longer pulls io.quarkus:quarkus-jackson transitively. Adds an explicit quarkus-jackson dependency to applications that use Jackson classes in their sources and do not get the dependency from elsewhere.
+* [io.quarkus.updates.cxf.cxf38.UpdateAll](/recipes/quarkus/updates/cxf/cxf38/updateall.md)
+  * **Migrate quarkus-cxf to 3.8**
+  * Removes the retired logging extension (its functionality moved to io.quarkiverse.cxf:quarkus-cxf in 2.6.0, configuration properties unchanged) for quarkus-cxf 3.8.0.
 * [io.quarkus.updates.minio.minio38.UpdateAll](/recipes/quarkus/updates/minio/minio38/updateall.md)
   * **io.quarkus.updates.minio.minio38.UpdateAll**
   * 
 * [io.quarkus.updates.minio.minio38.UpdateProperties](/recipes/quarkus/updates/minio/minio38/updateproperties.md)
   * **io.quarkus.updates.minio.minio38.UpdateProperties**
   * 
+* [io.quarkus.updates.quarkiverse.cxf.CommentDeprecatedProperties](/recipes/quarkus/updates/quarkiverse/cxf/commentdeprecatedproperties.md)
+  * **Comment on deprecated properties**
+  * Adds the configured warning comment at the top of every properties file that contains a key matching the configured pattern. The configuration itself is never changed and a file already carrying the comment is left alone.
 * [io.quarkus.updates.quarkiverse.minio.minio38.AdjustURLPropertyValue](/recipes/quarkus/updates/quarkiverse/minio/minio38/adjusturlpropertyvalue.md)
   * **Adust quarkus.minio.url property key**
   * Adjust quarkus.minio.url property key to quarkus.minio.host.
@@ -7199,8 +7284,8 @@ _1651 recipes_
   * **Migrate to Camel 4.18LTS**
   * Migrates Apache Camel application to 4.18 LTS. This recipe aggregates all migration steps from 4.0 to 4.18.3.
 * [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.21.0**
-  * Migrates Apache Camel application to 4.21.0.
+  * **Migrate to 4.22.0**
+  * Migrates Apache Camel application to 4.22.0.
 * [org.apache.camel.upgrade.JavaVersion17](/recipes/apache/camel/upgrade/javaversion17.md)
   * **Change Maven Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
@@ -7246,6 +7331,12 @@ _1651 recipes_
 * [org.apache.camel.upgrade.camel40.properties.rejectedPolicy](/recipes/apache/camel/upgrade/camel40/properties/rejectedpolicy.md)
   * **Camel API changes in application.properties**
   * Apache Camel API migration from version 3.20 or higher to 4.0. Removal of deprecated APIs, which could be part of the application.properties.
+* [org.apache.camel.upgrade.camel40.removedDependencies](/recipes/apache/camel/upgrade/camel40/removeddependencies.md)
+  * **Remove Camel 3.x dependencies that have been removed in Camel 4.0 with no direct replacement**
+  * Remove Camel 3.x dependencies that have been removed in Camel 4.0 with no single direct replacement.
+* [org.apache.camel.upgrade.camel40.renamedDependencies](/recipes/apache/camel/upgrade/camel40/renameddependencies.md)
+  * **Rename removed Camel 3.x dependencies to their Camel 4.0 replacements**
+  * Rename removed Camel 3.x dependencies to their Camel 4.0 replacements.
 * [org.apache.camel.upgrade.camel40.xml.CircuitBreakerXmlDslRecipe](/recipes/apache/camel/upgrade/camel40/xml/circuitbreakerxmldslrecipe.md)
   * **Camel XMl DSL Circuit Breaker changes**
   * Apache Camel XML DSL Circuit Breaker migration from version 3.20 or higher to 4.0.
@@ -7333,6 +7424,9 @@ _1651 recipes_
 * [org.apache.camel.upgrade.camel413.furyJava](/recipes/apache/camel/upgrade/camel413/furyjava.md)
   * **Renamed BasicAuthenticationHttpClientConfigurer to  DefaultAuthenticationHttpClientConfigurer**
   * BasicAuthenticationHttpClientConfigurer is renamed to DefaultAuthenticationHttpClientConfigurer.
+* [org.apache.camel.upgrade.camel413.furyXmlDsl](/recipes/apache/camel/upgrade/camel413/furyxmldsl.md)
+  * **Change dataformat fury to fory in xml dsl.**
+  * Change dataformat fury to fory in the Camel XML DSL.
 * [org.apache.camel.upgrade.camel414.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel414/camelmigrationrecipe.md)
   * **Migrates `camel 4.13` application to `camel 4.14`**
   * Migrates `camel 4.13` application to `camel 4.14`.
@@ -7404,16 +7498,16 @@ _1651 recipes_
   * Migrates `camel 4.18.1` application to `camel 4.18.3`.
 * [org.apache.camel.upgrade.camel418_3.RenameHeaderInJavaMethod](/recipes/apache/camel/upgrade/camel418_3/renameheaderinjavamethod.md)
   * **Rename header in .setHeader()/.getHeader() calls**
-  * Renames header references in Message.setHeader() and Message.getHeader() method calls. Only migrates string literals in safe contexts. Does NOT migrate dynamic header names or Map.get() calls.
+  * Renames header references in Message.setHeader(), Message.getHeader(), and in the setHeader(), removeHeader() and header() DSL methods. Only migrates string literals in safe contexts. Does NOT migrate dynamic header names or Map.get() calls.
 * [org.apache.camel.upgrade.camel418_3.RenameHeaderInSimpleExpression](/recipes/apache/camel/upgrade/camel418_3/renameheaderinsimpleexpression.md)
   * **Rename header in Simple expressions**
-  * Renames header references in Simple expressions like $\{header.oldName\} → $\{header.newName\}. Only migrates expressions inside simple() method calls.
+  * Renames header references in Simple expressions like $\{header.oldName\} → $\{header.newName\}, in every string literal carrying a Simple expression: simple(), log(), endpoint URIs and the like. Only the complete $\{header.oldName\} placeholder is matched, so plain occurrences of the name are left alone.
 * [org.apache.camel.upgrade.camel418_3.RenameHeaderInXmlDsl](/recipes/apache/camel/upgrade/camel418_3/renameheaderinxmldsl.md)
   * **Rename header in XML DSL**
-  * Renames header references in XML DSL &lt;setHeader name=&quot;...&quot;&gt;, &lt;header name=&quot;...&quot;&gt;, and &lt;removeHeader name=&quot;...&quot;&gt; elements.
+  * Renames header references in XML DSL &lt;setHeader name=&quot;...&quot;&gt;, &lt;header name=&quot;...&quot;&gt;, and &lt;removeHeader name=&quot;...&quot;&gt; elements, and the $\{header.oldName\} placeholder wherever it appears in element text (&lt;simple&gt;) or in an attribute value.
 * [org.apache.camel.upgrade.camel418_3.RenameHeaderInYamlDsl](/recipes/apache/camel/upgrade/camel418_3/renameheaderinyamldsl.md)
   * **Rename header in YAML DSL**
-  * Renames header references in YAML DSL setHeader.name, header.name, and removeHeader.name entries.
+  * Renames header references in YAML DSL setHeader.name, header.name, and removeHeader.name entries, and the $\{header.oldName\} placeholder wherever it appears in a scalar value.
 * [org.apache.camel.upgrade.camel418_3.RenameHeaderPrefixInJavaMethod](/recipes/apache/camel/upgrade/camel418_3/renameheaderprefixinjavamethod.md)
   * **Rename header prefix in .setHeader()/.getHeader() calls**
   * Renames header prefixes in Message.setHeader() and Message.getHeader() method calls. Only migrates string literals in safe contexts. Does NOT migrate dynamic header names or Map.get() calls.
@@ -7567,6 +7661,33 @@ _1651 recipes_
 * [org.apache.camel.upgrade.camel421.upgradePdfHeaders](/recipes/apache/camel/upgrade/camel421/upgradepdfheaders.md)
   * **Migrate camel-pdf header constants to new naming convention**
   * Renames PDF header constants to CamelPdf* pattern only if camel-pdf dependency is present. Note - DSL accessor methods (protectionPolicy() → pdfProtectionPolicy(), etc.) are NOT migrated and require manual update.
+* [org.apache.camel.upgrade.camel422.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel422/camelmigrationrecipe.md)
+  * **Migrates `camel 4.21` application to `camel 4.22`**
+  * Migrates `camel 4.21` application to `camel 4.22`.
+* [org.apache.camel.upgrade.camel422.migrateAtmosphereWebsocketHeaders](/recipes/apache/camel/upgrade/camel422/migrateatmospherewebsocketheaders.md)
+  * **Migrate camel-atmosphere-websocket header values to new naming convention**
+  * Renames the atmosphere-websocket Exchange header string values from websocket.* to CamelAtmosphereWebsocket*, only when the camel-atmosphere-websocket dependency is present. Symbolic WebsocketConstants references are unaffected and need no migration.
+* [org.apache.camel.upgrade.camel422.migrateAwsApacheClient](/recipes/apache/camel/upgrade/camel422/migrateawsapacheclient.md)
+  * **Migrate AWS SDK apache-client to apache5-client**
+  * Migrates software.amazon.awssdk:apache-client to software.amazon.awssdk:apache5-client for projects using Camel AWS components. Explicit versions are set to 2.46.0, the AWS SDK release that made apache5-client the default; BOM-managed dependencies keep their managed version.
+* [org.apache.camel.upgrade.camel422.migrateAzureCredentialTypes](/recipes/apache/camel/upgrade/camel422/migrateazurecredentialtypes.md)
+  * **Migrate Azure component-specific CredentialType enums to common enum**
+  * Migrates removed component-specific CredentialType enums to the shared org.apache.camel.component.azure.common.CredentialType enum.
+* [org.apache.camel.upgrade.camel422.migrateLangchain4jToolsUris](/recipes/apache/camel/upgrade/camel422/migratelangchain4jtoolsuris.md)
+  * **Migrate langchain4j-tools endpoint URIs to ai-tool**
+  * Renames the langchain4j-tools URI scheme to ai-tool on consumer endpoints (tool definition routes) in Java, XML and YAML DSL, and adds the camel-ai-tool dependency. Producer endpoints for direct tool calling are left unchanged and must be migrated to langchain4j-agent manually.
+* [org.apache.camel.upgrade.camel422.migrateMinioTypes](/recipes/apache/camel/upgrade/camel422/migrateminiotypes.md)
+  * **Migrate Minio types for minio 9.0 upgrade**
+  * Migrates Minio types that were renamed or moved in the minio 8.x to 9.0 upgrade.
+* [org.apache.camel.upgrade.camel422.migrateSpringAiToolsDependency](/recipes/apache/camel/upgrade/camel422/migratespringaitoolsdependency.md)
+  * **Migrate camel-spring-ai-tools to camel-ai-tool**
+  * Migrates the camel-spring-ai-tools dependency, removed in Camel 4.22, to camel-ai-tool. Route URIs using the spring-ai-tools scheme must be migrated to ai-tool manually.
+* [org.apache.camel.upgrade.camel422.migrateSpringAiToolsUris](/recipes/apache/camel/upgrade/camel422/migratespringaitoolsuris.md)
+  * **Migrate spring-ai-tools endpoint URIs to ai-tool**
+  * Renames the spring-ai-tools URI scheme to ai-tool in Java, XML and YAML DSL routes, following the removal of the camel-spring-ai-tools component. Applies without a dependency precondition so that projects whose camel-spring-ai-tools dependency was already renamed (manually or by the dependency recipe) still get their routes migrated; the scheme is unique to the removed component.
+* [org.apache.camel.upgrade.camel422.removeCamelReactiveExecutorTomcatDependency](/recipes/apache/camel/upgrade/camel422/removecamelreactiveexecutortomcatdependency.md)
+  * **Remove camel-reactive-executor-tomcat dependency**
+  * Removes the camel-reactive-executor-tomcat dependency which was deprecated in Camel 4.22 (functionally identical to the built-in default reactive executor since JDK 17, Camel falls back to it automatically).
 * [org.apache.camel.upgrade.camel43.CamelResequenceEIPXmlRecipe](/recipes/apache/camel/upgrade/camel43/camelresequenceeipxmlrecipe.md)
   * **Camel Resequence DSL changes**
   * Batch and stream attributes were renamed in Resequence EIP XML DSL.
@@ -7669,6 +7790,9 @@ _1651 recipes_
 * [org.apache.camel.upgrade.customRecipes.ChangePropertyKeyWithCaseChange](/recipes/apache/camel/upgrade/customrecipes/changepropertykeywithcasechange.md)
   * **Change prefix of property with Camel case**
   * Change prefix of property with Camel case
+* [org.apache.camel.upgrade.customRecipes.FindCamelXmlDsl](/recipes/apache/camel/upgrade/customrecipes/findcamelxmldsl.md)
+  * **Find Camel XML DSL documents**
+  * Marks XML documents that belong to the Camel XML DSL, so that a recipe operating on XML is not applied to unrelated documents such as Spring bean definitions. A Camel namespace or a Camel context element anywhere in the document is conclusive; otherwise the root element decides.
 * [org.apache.camel.upgrade.customRecipes.LiteralRegexpConverterRecipe](/recipes/apache/camel/upgrade/customrecipes/literalregexpconverterrecipe.md)
   * **Replaces a literal matching an expression**
   * Replaces literal, groups from regexp can be used as $\{0\}, $\{1\}, ...
@@ -7686,7 +7810,7 @@ _1651 recipes_
   * Apache Camel XML DSL migration from version 4.9 o 4.10.
 * [org.apache.camel.upgrade.customRecipes.ReplacePropertyInComponentYaml](/recipes/apache/camel/upgrade/customrecipes/replacepropertyincomponentyaml.md)
   * **Renames property of the component**
-  * ARenames property of the component.
+  * Renames a property of the component in the YAML DSL, both in the parameters mapping and when the property is inlined in the endpoint uri.
 * [org.apache.camel.upgrade.customRecipes.ReplacePropertyInDataFormatXml](/recipes/apache/camel/upgrade/customrecipes/replacepropertyindataformatxml.md)
   * **Camel XMl DSL changes**
   * Apache Camel XML DSL migration from version 4.9 o 4.10.
@@ -7735,6 +7859,9 @@ _1651 recipes_
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_15_0](/recipes/quarkus/migratetoquarkus_v3_15_0.md)
   * **Quarkus Updates Aggregate 3.15.0**
   * Quarkus update recipes to upgrade your application to 3.15.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_16_0](/recipes/quarkus/migratetoquarkus_v3_16_0.md)
+  * **Quarkus Updates Aggregate 3.16.0**
+  * Quarkus update recipes to upgrade your application to 3.16.0.
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_17_0](/recipes/quarkus/migratetoquarkus_v3_17_0.md)
   * **Quarkus Updates Aggregate 3.17.0**
   * Quarkus update recipes to upgrade your application to 3.17.0.
@@ -7747,6 +7874,9 @@ _1651 recipes_
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0](/recipes/quarkus/migratetoquarkus_v3_1_0.md)
   * **Quarkus Updates Aggregate 3.1.0**
   * Quarkus update recipes to upgrade your application to 3.1.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v3_20_0](/recipes/quarkus/migratetoquarkus_v3_20_0.md)
+  * **Quarkus Updates Aggregate 3.20.0**
+  * Quarkus update recipes to upgrade your application to 3.20.0.
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_20_1](/recipes/quarkus/migratetoquarkus_v3_20_1.md)
   * **Quarkus Updates Aggregate 3.20.1**
   * Quarkus update recipes to upgrade your application to 3.20.1.

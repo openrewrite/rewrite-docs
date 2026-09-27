@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.staticanalysis.FindNewExceptionWithoutCause**
 
-_Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Data flow (taint) tracking is used to establish whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule._
+_Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Taint tracking over the local variables of the `catch` block establishes whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables, helper calls and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule._
 
 ## Recipe source
 
@@ -108,6 +108,10 @@ _New exceptions thrown from a `catch` block that do not reference the caught exc
 | Source path | The path to the source file containing the offending `throw`. |
 | Caught exception type | The declared type of the exception caught by the enclosing `catch` clause. |
 | Thrown exception type | The type of the new exception thrown without referencing the caught exception. |
+| Type resolved | Whether the caught and thrown types were read from type attribution. When `false` both are the names as written in the source, which may be simple rather than qualified. |
+| Line number | The line the `throw` statement begins on, counting from one. |
+| Column number | The column the `throw` statement begins at, counting from zero. |
+| Throw snippet | The `throw` statement as written, collapsed onto one line and truncated at 120 characters. |
 
 </TabItem>
 

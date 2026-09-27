@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add explicit JAXB API dependencies and runtime](./addjaxbdependencieswithruntime.md)
 * [Migrate JAXB-WS Plugin](./migratejaxbwsplugin.md)
 * [Migrate from OpenJPA to EclipseLink JPA](./openjpatoeclipselink.md)
+* [Replace `one.gfw` JAXB artifacts with their official coordinates](./migrateonegfwjaxbdependencies.md)
 * [Use modernized `javax.lang.model.util` APIs](./javaxlangmodelutil.md)
 * [Use modernized `javax.xml.stream` APIs](./javaxxmlstreamapis.md)
 * [Use the latest JAX-WS API and runtime for Jakarta EE 8](./addjaxwsruntime.md)

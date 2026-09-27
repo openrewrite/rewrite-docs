@@ -304,13 +304,13 @@ _84 recipes_
   * Downloads a BOM and compares its properties against Gradle ext properties. When the BOM defines a higher version for a property, the ext property is updated to match (or removed if `removeRedundantOverrides` is enabled).
 * [org.openrewrite.gradle.UpdateGradleWrapper](/recipes/gradle/updategradlewrapper.md)
   * **Update Gradle wrapper**
-  * Update the version of Gradle used in an existing Gradle wrapper. Queries `downloads.gradle.org` to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as `downloads.gradle.org`, then the recipe may suggest a version which is not available in your artifact repository.
+  * Update the version of Gradle used in an existing Gradle wrapper. Queries `services.gradle.org` to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as `services.gradle.org`, then the recipe may suggest a version which is not available in your artifact repository.
 * [org.openrewrite.gradle.UpdateJavaCompatibility](/recipes/gradle/updatejavacompatibility.md)
   * **Update Gradle project Java compatibility**
   * Find and updates the Java compatibility for the Gradle project.
 * [org.openrewrite.gradle.UpgradeDependencyVersion](/recipes/gradle/upgradedependencyversion.md)
   * **Upgrade Gradle dependency versions**
-  * Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations.
+  * Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations, and in a version catalog.
 * [org.openrewrite.gradle.UpgradeTransitiveDependencyVersion](/recipes/gradle/upgradetransitivedependencyversion.md)
   * **Upgrade transitive Gradle dependencies**
   * Upgrades the version of a transitive dependency in a Gradle build file. There are many ways to do this in Gradle, so the mechanism for upgrading a transitive dependency must be considered carefully depending on your style of dependency management.

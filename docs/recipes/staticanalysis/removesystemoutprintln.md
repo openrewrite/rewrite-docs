@@ -32,6 +32,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Java Recipe best practices](/recipes/java/recipes/javarecipebestpractices.md)
 * [Recipe testing best practices](/recipes/java/recipes/recipetestingbestpractices.md)
+* [Remediate OWASP A10:2025 Mishandling of exceptional conditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a10)
 
 ## Example
 

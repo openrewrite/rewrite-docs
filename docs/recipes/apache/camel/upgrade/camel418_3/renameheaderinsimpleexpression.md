@@ -12,7 +12,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 **org.apache.camel.upgrade.camel418\_3.RenameHeaderInSimpleExpression**
 
 ```
-Renames header references in Simple expressions like ${header.oldName} → ${header.newName}. Only migrates expressions inside simple() method calls.
+Renames header references in Simple expressions like ${header.oldName} → ${header.newName}, in every string literal carrying a Simple expression: simple(), log(), endpoint URIs and the like. Only the complete ${header.oldName} placeholder is matched, so plain occurrences of the name are left alone.
 ```
 
 

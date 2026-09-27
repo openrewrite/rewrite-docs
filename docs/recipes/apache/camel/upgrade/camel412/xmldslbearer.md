@@ -26,6 +26,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find Camel XML DSL documents](../../../../apache/camel/upgrade/customrecipes/findcamelxmldsl)
+
+**Recipes**
+
 * [Change XML tag name](../../../../xml/changetagname)
   * elementName: `//rest/securityDefinitions/bearer`
   * newName: `bearerToken`
@@ -41,6 +47,8 @@ name: org.apache.camel.upgrade.camel412.xmlDslBearer
 displayName: XML DSL bearer from rest/securityDefinitions is renamed to bearerToken
 description: |
   Rest definition in XML DSL with security constraints, then bearer in YAML and XML DSL has been renamed to bearerToken to be aligned with Java DSL.
+preconditions:
+  - org.apache.camel.upgrade.customRecipes.FindCamelXmlDsl
 recipeList:
   - org.openrewrite.xml.ChangeTagName:
       elementName: //rest/securityDefinitions/bearer

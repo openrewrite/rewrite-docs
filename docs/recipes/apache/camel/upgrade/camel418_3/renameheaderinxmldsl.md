@@ -12,7 +12,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 **org.apache.camel.upgrade.camel418\_3.RenameHeaderInXmlDsl**
 
 ```
-Renames header references in XML DSL <setHeader name="...">, <header name="...">, and <removeHeader name="..."> elements.
+Renames header references in XML DSL <setHeader name="...">, <header name="...">, and <removeHeader name="..."> elements, and the ${header.oldName} placeholder wherever it appears in element text (<simple>) or in an attribute value.
 ```
 
 

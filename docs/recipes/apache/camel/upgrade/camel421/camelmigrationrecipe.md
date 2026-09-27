@@ -122,7 +122,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.22.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrates `camel 4.20` application to `camel 4.21`](/recipes/quarkus/updates/camel/camel421/camelquarkusmigrationrecipe.md)
 
 

@@ -26,6 +26,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Add cron workflow trigger](./addcrontrigger.md)
 * [Add manual workflow trigger](./addmanualtrigger.md)
 * [Add `merge_group` workflow trigger](./addmergegrouptrigger.md)
+* [Add `open-pull-requests-limit` to Dependabot configuration](./adddependabotopenpullrequestslimit.md)
 * [Cancel in-progress workflow when it is triggered again](./autocancelinprogressworkflow.md)
 * [Change GitHub Action](./changeaction.md)
 * [Change GitHub Action version](./changeactionversion.md)

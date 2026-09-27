@@ -27,6 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | uriPattern | Regular expression to match the component URI. Use capturing groups for parts to preserve. | `^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$` |
 | `String` | replacement | Replacement string using `${1}`, `${2}`, etc. to reference capturing groups from the pattern. | `pulsar:${2}://${3}/${5}/${6}` |
+| `Boolean` | consumerOnly | *Optional*. When true, only from.uri endpoints are transformed; other uri fields are left unchanged. | `true` |
 
 
 ## Used by
@@ -49,6 +50,7 @@ recipeList:
   - org.apache.camel.upgrade.customRecipes.internal.ChangeYamlComponentUriRecipe:
       uriPattern: ^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$
       replacement: pulsar:${2}://${3}/${5}/${6}
+      consumerOnly: true
 ```
 
 <RunRecipe
@@ -58,7 +60,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "uriPattern=^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$" --recipe-option "replacement=pulsar:${2}://${3}/${5}/${6}"'}
+  cliOptions={' --recipe-option "uriPattern=^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$" --recipe-option "replacement=pulsar:${2}://${3}/${5}/${6}" --recipe-option "consumerOnly=true"'}
   hasDataTables
 />
 

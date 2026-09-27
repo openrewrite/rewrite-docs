@@ -20,6 +20,8 @@ Remove unnecessary `throws` declarations. This recipe will only remove unused, c
 
 The `throws` declaration is retained on overridable methods (package-private and `protected` methods on non-`final` classes), and on `public` methods overridden within the same source file, so that a subclass override which does throw the exception keeps compiling. Overrides in other source files cannot be detected without a scanning recipe and are therefore not accounted for.
 
+A `throws` declaration is also retained when the method body contains a call whose type does not fully resolve, because such a call may throw the exception.
+
 When a `throws` declaration is removed, any `@throws` or `@exception` JavaDoc tag documenting that exception is removed along with it, so that the documentation does not describe an exception the method no longer declares.
 
 Declaring exceptions that are never thrown misleads callers into writing unnecessary error-handling code and obscures the method's true behavior.
@@ -41,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Remediate OWASP A10:2025 Mishandling of exceptional conditions](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/security/owasp2025a10)
 * [Remove Security AccessController](/recipes/java/migrate/accesscontroller.md)
 * [Remove Security Policy](/recipes/java/migrate/removesecuritypolicy.md)
 * [Remove Security SecurityManager](/recipes/java/migrate/removesecuritymanager.md)

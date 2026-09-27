@@ -38,6 +38,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate camel-arangodb header constants to new naming convention](/recipes/apache/camel/upgrade/camel421/upgradearangodbheaders.md)
+* [Migrate camel-atmosphere-websocket header values to new naming convention](/recipes/apache/camel/upgrade/camel422/migrateatmospherewebsocketheaders.md)
 * [Migrate camel-couchbase header constants to new naming convention](/recipes/apache/camel/upgrade/camel421/upgradecouchbaseheaders.md)
 * [Migrate camel-couchdb header constants to new naming convention](/recipes/apache/camel/upgrade/camel421/upgradecouchdbheaders.md)
 * [Migrate camel-dns header constants to new naming convention](/recipes/apache/camel/upgrade/camel418/upgradednsheaders.md)

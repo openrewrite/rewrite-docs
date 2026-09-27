@@ -67,6 +67,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Zipkin to OpenTelemetry OTLP](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
+* [Migrate quarkus-cxf to 3.22](/recipes/quarkus/updates/cxf/cxf322/updateall.md)
+* [Migrate quarkus-cxf to 3.8](/recipes/quarkus/updates/cxf/cxf38/updateall.md)
 * [Migrate to DataNucleus 4.0](/recipes/java/migrate/datanucleus/upgradedatanucleus_4_0.md)
 * [Migrate to Hibernate 7.0.x (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/migratetohibernate70-moderne-edition)
 * [Migrate to JSF 2.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/jsf/migratetojsf_2_3)

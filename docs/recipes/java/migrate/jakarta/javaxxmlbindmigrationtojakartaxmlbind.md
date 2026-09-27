@@ -42,6 +42,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Replace `one.gfw` JAXB artifacts with their official coordinates](../../../java/migrate/javax/migrateonegfwjaxbdependencies)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.xml.bind`
   * oldArtifactId: `jaxb-api`
@@ -105,6 +106,7 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.xml.bind
       oldArtifactId: jaxb-api

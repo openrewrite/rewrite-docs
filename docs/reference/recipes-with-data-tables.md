@@ -294,7 +294,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.gradle.UpgradeDependencyVersion](/recipes/gradle/upgradedependencyversion.md)
   * **Upgrade Gradle dependency versions**
-  * Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations.
+  * Upgrade the version of a dependency in a build.gradle file. Supports updating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`   * `Map` notation: `group: 'group', name: 'artifact', version: 'version'` Can update version numbers which are defined earlier in the same file in variable declarations, and in a version catalog.
 
 ##### Data tables:
 
@@ -985,6 +985,18 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ##### Data tables:
 
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
+### rewrite-logging-frameworks
+
+#### [org.openrewrite.java.logging.logback.ConditionAttributeToConditionElement](/recipes/java/logging/logback/conditionattributetoconditionelement.md)
+  * **Replace the Logback `condition` attribute with the `condition` element**
+  * Logback 1.5.37 removed the Janino based `&lt;if condition=&quot;...&quot;&gt;` attribute that 1.5.20 deprecated, so configuration files still using it fail to select the intended appenders. Replaces the attribute with the `&lt;condition class=&quot;...&quot;/&gt;` element that precedes `&lt;if&gt;`, using the conditions shipped in `ch.qos.logback.core.boolex`. Conditions that require custom Java logic are left unchanged and reported in a data table.
+
+##### Data tables:
+
+  * **org.openrewrite.java.logging.logback.table.UnmigratedJaninoConditions**: *Janino conditions that have no equivalent among the conditions shipped with logback-core, and so have to be migrated by hand to a custom `PropertyCondition`.*
 
 
 
@@ -1877,7 +1889,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.staticanalysis.FindNewExceptionWithoutCause](/recipes/staticanalysis/findnewexceptionwithoutcause.md)
   * **Find new exceptions thrown without the caught exception**
-  * Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Data flow (taint) tracking is used to establish whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule.
+  * Finds `catch` blocks that throw a newly created exception without referencing the caught exception, which discards the original exception's stack trace and message. Taint tracking over the local variables of the `catch` block establishes whether the caught exception—or any value derived from it—reaches the thrown exception, so indirect references through local variables, helper calls and string concatenation are not falsely reported. This mirrors PMD's `PreserveStackTrace` rule.
 
 ##### Data tables:
 
@@ -2159,6 +2171,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.camel.camel40.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel40/camelquarkusmigrationrecipe.md)
+  * **Migrate `camel3` application to `camel4.`**
+  * Migrate `camel3` quarkus application to `camel4` quarkus.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [io.quarkus.updates.camel.camel412.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel412/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.11` application to `camel 4.12`**
   * Migrates `camel 4.11` quarkus application to `camel 4.12`.
@@ -2180,6 +2201,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [io.quarkus.updates.camel.camel420.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel420/camelquarkusmigrationrecipe.md)
   * **Migrates `camel 4.18` application to `camel 4.20`**
   * Migrates `camel 4.18` Quarkus application to `camel 4.20`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.camel.camel422.CamelQuarkusMigrationRecipe](/recipes/quarkus/updates/camel/camel422/camelquarkusmigrationrecipe.md)
+  * **Migrates `camel 4.21` application to `camel 4.22`**
+  * Migrates `camel 4.21` Quarkus application to `camel 4.22`.
 
 ##### Data tables:
 
@@ -2654,6 +2684,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [io.quarkus.updates.cxf.cxf339.AddQuarkusJacksonIfUsed](/recipes/quarkus/updates/cxf/cxf339/addquarkusjacksonifused.md)
+  * **Add quarkus-jackson if Jackson is used**
+  * Adds io.quarkus:quarkus-jackson to applications that use Jackson types in their sources, because quarkus-cxf stopped pulling quarkus-jackson transitively in 3.39.0. The detection is source based only: the dependency is not added when it is already available directly or transitively through another extension. The update tooling applies this recipe only to projects depending on io.quarkiverse.cxf:quarkus-cxf.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [io.quarkus.updates.cxf.cxf339.UpdateAll](/recipes/quarkus/updates/cxf/cxf339/updateall.md)
+  * **Migrate quarkus-cxf to 3.39**
+  * quarkus-cxf 3.39.0 no longer pulls io.quarkus:quarkus-jackson transitively. Adds an explicit quarkus-jackson dependency to applications that use Jackson classes in their sources and do not get the dependency from elsewhere.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.apache.camel.upgrade.Camel410LTSMigrationRecipe](/recipes/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
   * **Migrate to 4.10.6**
   * Migrates Apache Camel application to 4.10.6.
@@ -2673,8 +2721,8 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 #### [org.apache.camel.upgrade.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
-  * **Migrate to 4.21.0**
-  * Migrates Apache Camel application to 4.21.0.
+  * **Migrate to 4.22.0**
+  * Migrates Apache Camel application to 4.22.0.
 
 ##### Data tables:
 
@@ -2684,6 +2732,24 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.apache.camel.upgrade.UpgradeToJava17](/recipes/apache/camel/upgrade/upgradetojava17.md)
   * **Migrate to Java 17**
   * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel40.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel40/camelmigrationrecipe.md)
+  * **Migrate `camel3` application to `camel4.`**
+  * Migrate `camel3` application to `camel4`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel40.renamedDependencies](/recipes/apache/camel/upgrade/camel40/renameddependencies.md)
+  * **Rename removed Camel 3.x dependencies to their Camel 4.0 replacements**
+  * Rename removed Camel 3.x dependencies to their Camel 4.0 replacements.
 
 ##### Data tables:
 
@@ -2738,6 +2804,42 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.apache.camel.upgrade.camel419.migrateGroovyXml](/recipes/apache/camel/upgrade/camel419/migrategroovyxml.md)
   * **Migrate camel-groovy-xml to camel-groovy**
   * camel-groovy-xml has been removed and moved into camel-groovy. Changes the dependency from camel-groovy-xml to camel-groovy.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel422.CamelMigrationRecipe](/recipes/apache/camel/upgrade/camel422/camelmigrationrecipe.md)
+  * **Migrates `camel 4.21` application to `camel 4.22`**
+  * Migrates `camel 4.21` application to `camel 4.22`.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel422.migrateAwsApacheClient](/recipes/apache/camel/upgrade/camel422/migrateawsapacheclient.md)
+  * **Migrate AWS SDK apache-client to apache5-client**
+  * Migrates software.amazon.awssdk:apache-client to software.amazon.awssdk:apache5-client for projects using Camel AWS components. Explicit versions are set to 2.46.0, the AWS SDK release that made apache5-client the default; BOM-managed dependencies keep their managed version.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel422.migrateLangchain4jToolsUris](/recipes/apache/camel/upgrade/camel422/migratelangchain4jtoolsuris.md)
+  * **Migrate langchain4j-tools endpoint URIs to ai-tool**
+  * Renames the langchain4j-tools URI scheme to ai-tool on consumer endpoints (tool definition routes) in Java, XML and YAML DSL, and adds the camel-ai-tool dependency. Producer endpoints for direct tool calling are left unchanged and must be migrated to langchain4j-agent manually.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.apache.camel.upgrade.camel422.migrateSpringAiToolsDependency](/recipes/apache/camel/upgrade/camel422/migratespringaitoolsdependency.md)
+  * **Migrate camel-spring-ai-tools to camel-ai-tool**
+  * Migrates the camel-spring-ai-tools dependency, removed in Camel 4.22, to camel-ai-tool. Route URIs using the spring-ai-tools scheme must be migrated to ai-tool manually.
 
 ##### Data tables:
 
@@ -2852,6 +2954,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
   * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
 
 
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v3_16_0](/recipes/quarkus/migratetoquarkus_v3_16_0.md)
+  * **Quarkus Updates Aggregate 3.16.0**
+  * Quarkus update recipes to upgrade your application to 3.16.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
 #### [org.openrewrite.quarkus.MigrateToQuarkus_v3_17_0](/recipes/quarkus/migratetoquarkus_v3_17_0.md)
   * **Quarkus Updates Aggregate 3.17.0**
   * Quarkus update recipes to upgrade your application to 3.17.0.
@@ -2882,6 +2993,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.quarkus.MigrateToQuarkus_v3_1_0](/recipes/quarkus/migratetoquarkus_v3_1_0.md)
   * **Quarkus Updates Aggregate 3.1.0**
   * Quarkus update recipes to upgrade your application to 3.1.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v3_20_0](/recipes/quarkus/migratetoquarkus_v3_20_0.md)
+  * **Quarkus Updates Aggregate 3.20.0**
+  * Quarkus update recipes to upgrade your application to 3.20.0.
 
 ##### Data tables:
 

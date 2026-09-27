@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.migrate.CommentJava24KotlinCap**
 
-_Adds an explanatory comment to Maven `pom.xml` files in modules that were held at Java 24 because they compile Kotlin and depend on `kotlin-stdlib` older than 2.3, which cannot target Java 25 bytecode. The comment names the `kotlin-stdlib` version found and the next step needed to reach Java 25. Self-healing: the comment is added while the module is at Java 24 and removed again once the module reaches a higher Java version (for instance after its Kotlin was upgraded to 2.3), so it only ever remains on modules that truly stay at Java 24 — whether a Kotlin 1.x cap or a 2.0-2.2 module whose Kotlin upgrade could not be applied. Intended to run last, scoped to modules that compile Kotlin._
+_Adds an explanatory comment to Maven `pom.xml` files in modules that were held at Java 24 because they compile Kotlin and depend on `kotlin-stdlib` older than 2.3, which cannot target Java 25 bytecode. Only modules whose resolved `kotlin-stdlib` is older than 2.3 are commented; the comment names that `kotlin-stdlib` version and the next step needed to reach Java 25. Self-healing: the comment is added while the module is at Java 24 and removed again once the module reaches a higher Java version (for instance after its Kotlin was upgraded to 2.3), so it only ever remains on modules that truly stay at Java 24 — whether a Kotlin 1.x cap or a 2.0-2.2 module whose Kotlin upgrade could not be applied. Intended to run last, scoped to modules that compile Kotlin._
 
 ## Recipe source
 

@@ -29,8 +29,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | oldPropertyKey | The configuration key to rename. | `TODO Provide a usage example for the docs` |
-| `String` | newPropertyKey | The configuration to be replaced with. | `TODO Provide a usage example for the docs` |
+| `String` | oldPropertyKey | The configuration key to rename. | `camel.springboot.routeControllerSuperviseEnabled` |
+| `String` | newPropertyKey | The configuration to be replaced with. | `camel.routecontroller.enabled` |
 
 
 ## Definition
@@ -80,8 +80,8 @@ name: com.yourorg.PropertiesAndYamlKeyUpdateExample
 displayName: Update Apache Camel configurations keys example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.PropertiesAndYamlKeyUpdate:
-      oldPropertyKey: TODO Provide a usage example for the docs
-      newPropertyKey: TODO Provide a usage example for the docs
+      oldPropertyKey: camel.springboot.routeControllerSuperviseEnabled
+      newPropertyKey: camel.routecontroller.enabled
 ```
 
 <RunRecipe
@@ -91,7 +91,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldPropertyKey=TODO Provide a usage example for the docs" --recipe-option "newPropertyKey=TODO Provide a usage example for the docs"'}
+  cliOptions={' --recipe-option "oldPropertyKey=camel.springboot.routeControllerSuperviseEnabled" --recipe-option "newPropertyKey=camel.routecontroller.enabled"'}
   hasDataTables
 />
 

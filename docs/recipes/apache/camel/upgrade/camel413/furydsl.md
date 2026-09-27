@@ -30,15 +30,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
-* [Change XML tag name](../../../../xml/changetagname)
-  * elementName: `dataFormats/fury`
-  * newName: `fory`
-* [Change XML tag name](../../../../xml/changetagname)
-  * elementName: `unmarshal/fury`
-  * newName: `fory`
-* [Change XML tag name](../../../../xml/changetagname)
-  * elementName: `marshal/fury`
-  * newName: `fory`
+* [Change dataformat fury to fory in xml dsl.](../../../../apache/camel/upgrade/camel413/furyxmldsl)
 * [Change method name](../../../../java/changemethodname)
   * methodPattern: `org.apache.camel.builder.DataFormatClause fury(..)`
   * newMethodName: `fory`
@@ -55,15 +47,7 @@ displayName: Change dataformat fury to fury in xml/java dsl.
 description: |
   
 recipeList:
-  - org.openrewrite.xml.ChangeTagName:
-      elementName: dataFormats/fury
-      newName: fory
-  - org.openrewrite.xml.ChangeTagName:
-      elementName: unmarshal/fury
-      newName: fory
-  - org.openrewrite.xml.ChangeTagName:
-      elementName: marshal/fury
-      newName: fory
+  - org.apache.camel.upgrade.camel413.furyXmlDsl
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.apache.camel.builder.DataFormatClause fury(..)
       newMethodName: fory

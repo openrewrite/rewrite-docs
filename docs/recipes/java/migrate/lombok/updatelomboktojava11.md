@@ -61,6 +61,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldFullyQualifiedTypeName: `lombok.experimental.val`
   * newFullyQualifiedTypeName: `lombok.val`
 * [Prefer `final var` over `lombok.val`](../../../java/migrate/lombok/lombokvaltofinalvar)
+* [Flag usage of a Lombok feature](../../../java/migrate/lombok/flagusage)
+  * featureName: `val`
+* [Flag usage of a Lombok feature](../../../java/migrate/lombok/flagusage)
+  * featureName: `var`
 * [Migrate Lombok's `@__` syntax to `onX_` for Java 8+](../../../java/migrate/lombok/lombokonxtoonx_)
 
 </TabItem>
@@ -100,6 +104,10 @@ recipeList:
       oldFullyQualifiedTypeName: lombok.experimental.val
       newFullyQualifiedTypeName: lombok.val
   - org.openrewrite.java.migrate.lombok.LombokValToFinalVar
+  - org.openrewrite.java.migrate.lombok.FlagUsage:
+      featureName: val
+  - org.openrewrite.java.migrate.lombok.FlagUsage:
+      featureName: var
   - org.openrewrite.java.migrate.lombok.LombokOnXToOnX_
 
 ```

@@ -25,9 +25,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `null` | packageName | The name of the npm package to find. Supports glob patterns. | `lodash` |
-| `null` | version | *Optional*. An exact version number or semver selector used to select the version number. Leave empty to match any version. | `^18.0.0` |
-| `null` | onlyDirect | *Optional*. If true (default), only matches dependencies that directly match the package name. If false, also marks direct dependencies that have the target package as a transitive dependency. | `true` |
+| `String` | packageName | The name of the npm package to find. Supports glob patterns. | `lodash` |
+| `String` | version | *Optional*. An exact version number or semver selector used to select the version number. Leave empty to match any version. | `^18.0.0` |
+| `String` | onlyDirect | *Optional*. If true (default), only matches dependencies that directly match the package name. If false, also marks direct dependencies that have the target package as a transitive dependency. | `true` |
 
 
 ## Usage

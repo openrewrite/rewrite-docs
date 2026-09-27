@@ -43,6 +43,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Migrate moved types between Camel 3.x and Camel 4.x](../../../../apache/camel/upgrade/camel40/changetypes)
 * [Change of method names brought by Camel JMX API changes](../../../../apache/camel/upgrade/camel40/changemanagedchoicembeanmethodname)
 * [Change of method names brought by Camel JMX API changes](../../../../apache/camel/upgrade/camel40/changemanagedfailoverloadbalancermbeanmethodname)
+* [Rename removed Camel 3.x dependencies to their Camel 4.0 replacements](../../../../apache/camel/upgrade/camel40/renameddependencies)
+* [Remove Camel 3.x dependencies that have been removed in Camel 4.0 with no direct replacement](../../../../apache/camel/upgrade/camel40/removeddependencies)
 
 </TabItem>
 
@@ -69,6 +71,8 @@ recipeList:
   - org.apache.camel.upgrade.camel40.ChangeTypes
   - org.apache.camel.upgrade.camel40.ChangeManagedChoiceMBeanMethodName
   - org.apache.camel.upgrade.camel40.ChangeManagedFailoverLoadBalancerMBeanMethodName
+  - org.apache.camel.upgrade.camel40.renamedDependencies
+  - org.apache.camel.upgrade.camel40.removedDependencies
 
 ```
 </TabItem>
@@ -80,7 +84,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Migrate `camel3` application to `camel4.`](/recipes/quarkus/updates/camel/camel40/camelquarkusmigrationrecipe.md)
 * [Migrate to 4.10.6](/recipes/apache/camel/upgrade/camel410ltsmigrationrecipe.md)
-* [Migrate to 4.21.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
+* [Migrate to 4.22.0](/recipes/apache/camel/upgrade/camelmigrationrecipe.md)
 * [Migrate to Camel 4.18LTS](/recipes/apache/camel/upgrade/camel418ltsmigrationrecipe.md)
 
 
@@ -107,6 +111,25 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
+
+### Maven metadata failures
+**org.openrewrite.maven.table.MavenMetadataFailures**
+
+_Attempts to resolve maven metadata that failed._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Group id | The groupId of the artifact for which the metadata download failed. |
+| Artifact id | The artifactId of the artifact for which the metadata download failed. |
+| Version | The version of the artifact for which the metadata download failed. |
+| Maven repository | The URL of the Maven repository that the metadata download failed on. |
+| Snapshots | Does the repository support snapshots. |
+| Releases | Does the repository support releases. |
+| Failure | The reason the metadata download failed. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

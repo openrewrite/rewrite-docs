@@ -29,6 +29,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | artifactIdPattern | Artifact glob pattern used to match dependencies. | `jackson-module-*` |
 | `String` | version | *Optional*. Match only dependencies with the specified version. Node-style [version selectors](https://docs.openrewrite.org/reference/dependency-version-selectors) may be used.All versions are searched by default. | `1.x` |
 | `String` | configuration | *Optional*. Match dependencies with the specified scope. If not specified, all configurations will be searched. | `compileClasspath` |
+| `Boolean` | onlyDirect | *Optional*. If enabled, transitive dependencies will not be considered. All dependencies are searched by default. | `true` |
 
 ## Example
 
@@ -39,6 +40,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 |artifactIdPattern|`rewrite-spring`|
 |version|`null`|
 |configuration|`null`|
+|onlyDirect||
 
 
 <Tabs groupId="beforeAfter">
@@ -166,6 +168,7 @@ recipeList:
       artifactIdPattern: jackson-module-*
       version: 1.x
       configuration: compileClasspath
+      onlyDirect: true
 ```
 
 <RunRecipe
@@ -176,7 +179,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "version=1.x" --recipe-option "configuration=compileClasspath"'}
+  cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "version=1.x" --recipe-option "configuration=compileClasspath" --recipe-option "onlyDirect=true"'}
   showMaven={false}
   hasDataTables
 />

@@ -8,6 +8,7 @@ description: Updates OpenRewrite recipes.
 
 * [Camel](/recipes/quarkus/updates/camel)
 * [Core](/recipes/quarkus/updates/core)
+* [Cxf](/recipes/quarkus/updates/cxf)
 * [Minio](/recipes/quarkus/updates/minio)
 * [Quarkiverse](/recipes/quarkus/updates/quarkiverse)
 

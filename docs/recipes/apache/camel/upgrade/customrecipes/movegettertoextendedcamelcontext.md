@@ -25,7 +25,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
-| `String` | oldMethodName | Name of the method on external camel context. | `TODO Provide a usage example for the docs` |
+| `String` | oldMethodName | Name of the method on external camel context. | `getStartupStepRecorder` |
 
 
 ## Used by
@@ -46,7 +46,7 @@ name: com.yourorg.MoveGetterToExtendedCamelContextExample
 displayName: Move getter from context to ExtendedCamelContext. example
 recipeList:
   - org.apache.camel.upgrade.customRecipes.MoveGetterToExtendedCamelContext:
-      oldMethodName: TODO Provide a usage example for the docs
+      oldMethodName: getStartupStepRecorder
 ```
 
 <RunRecipe
@@ -56,7 +56,7 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldMethodName=TODO Provide a usage example for the docs"'}
+  cliOptions={' --recipe-option "oldMethodName=getStartupStepRecorder"'}
   hasDataTables
 />
 
