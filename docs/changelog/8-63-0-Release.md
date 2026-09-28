@@ -29,7 +29,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [io.moderne.hibernate.update70.UnboxingTransactionTimeout](https://docs.openrewrite.org/recipes/hibernate/update70/unboxingtransactiontimeout): JPA 3.2 adds `#getTimeout` but uses `Integer` whereas Hibernate has historically used `int`. Note that this raises the possibility of a `NullPointerException` during migration if, e.g., performing direct comparisons on the timeout value against an in (auto unboxing). This recipe adds ternary operators where `Transaction#getTimeout()` is used and a negative value will be used if the `getTimeout()` resulted in a null value. 
 * [org.openrewrite.apache.commons.lang.ApacheCommonsStringUtilsRecipes$StringJoinSeparatorIterableCharSequenceRecipe](https://docs.openrewrite.org/recipes/apache/commons/lang/apachecommonsstringutilsrecipes$stringjoinseparatoriterablecharsequencerecipe): Replace Apache Commons `StringUtils.join(Iterable<? extends CharSequence> iterable, String separator)` with JDK provided API. 
 * [org.openrewrite.apache.commons.lang.WordUtilsToCommonsText](https://docs.openrewrite.org/recipes/apache/commons/lang/wordutilstocommonstext): Migrate `org.apache.commons.lang.WordUtils` to `org.apache.commons.text.WordUtils` and add the Commons Text dependency. 
-* [org.openrewrite.codemods.ReactI18Next](https://docs.openrewrite.org/recipes/codemods/reacti18next): Automatically internationalizes React applications by extracting hardcoded strings and replacing them with [react-i18next](https://react.i18next.com) translation calls. Handles JSX text, attributes, and template literals with variables. Creates and updates a translation JSON file with extracted strings. 
+* **org.openrewrite.codemods.ReactI18Next**: Automatically internationalizes React applications by extracting hardcoded strings and replacing them with [react-i18next](https://react.i18next.com) translation calls. Handles JSX text, attributes, and template literals with variables. Creates and updates a translation JSON file with extracted strings. 
 * [org.openrewrite.github.MigrateTibdexGitHubAppTokenToActions](https://docs.openrewrite.org/recipes/github/migratetibdexgithubapptokentoactions): Migrates from tibdex/github-app-token@v2 to actions/create-github-app-token@v2 and updates parameter names from snake_case to kebab-case. 
 * [org.openrewrite.github.SetupNodeUpgradeNodeVersion](https://docs.openrewrite.org/recipes/github/setupnodeupgradenodeversion): Update the Node.js version used by `actions/setup-node` if it is below the expected version number. 
 * [org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations](https://docs.openrewrite.org/recipes/java/jackson/removebuiltinmoduleregistrations): In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` calls for these modules. 
@@ -111,12 +111,12 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.sql.ConvertSqlServerFunctionsToPostgres](https://docs.openrewrite.org/recipes/sql/convertsqlserverfunctionstopostgres): Replaces SQL Server-specific functions with PostgreSQL equivalents. 
 * [org.openrewrite.sql.MigrateOracleToPostgres](https://docs.openrewrite.org/recipes/sql/migrateoracletopostgres): Converts Oracle-specific SQL syntax and functions to PostgreSQL equivalents. 
 * [org.openrewrite.sql.MigrateSqlServerToPostgres](https://docs.openrewrite.org/recipes/sql/migratesqlservertopostgres): Converts Microsoft SQL Server-specific SQL syntax and functions to PostgreSQL equivalents. 
-* [software.amazon.awssdk.v2migration.S3AddImportsAndComments](https://docs.openrewrite.org/recipes/software/amazon/awssdk/v2migration/s3addimportsandcomments): Add imports and comments to unsupported S3 transforms. 
-* [software.amazon.awssdk.v2migration.TransferManagerMethodsToV2](https://docs.openrewrite.org/recipes/software/amazon/awssdk/v2migration/transfermanagermethodstov2): Transfer Manager Methods to V2 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes): These rules simplify and improve the readability of tests by using `File`-specific
+* [software.amazon.awssdk.v2migration.S3AddImportsAndComments](https://docs.openrewrite.org/recipes/amazon/awssdk/v2migration/s3addimportsandcomments): Add imports and comments to unsupported S3 transforms. 
+* [software.amazon.awssdk.v2migration.TransferManagerMethodsToV2](https://docs.openrewrite.org/recipes/amazon/awssdk/v2migration/transfermanagermethodstov2): Transfer Manager Methods to V2 
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes): These rules simplify and improve the readability of tests by using `File`-specific
  AssertJ assertion methods instead of generic assertions.
 [Source](https://error-prone.picnic.tech/refasterrules/AssertJFileRules). 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatDoesNotExistRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatdoesnotexistrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatDoesNotExistRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatdoesnotexistrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatDoesNotExist {
     
@@ -132,7 +132,7 @@ static final class AssertThatDoesNotExist {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatExistsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatexistsrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatExistsRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatexistsrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatExists {
     
@@ -148,7 +148,7 @@ static final class AssertThatExists {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasFileNameRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasfilenamerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasFileNameRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasfilenamerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasFileName {
     
@@ -164,7 +164,7 @@ static final class AssertThatHasFileName {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasNoParentRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasnoparentrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasNoParentRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasnoparentrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasNoParent {
     
@@ -180,7 +180,7 @@ static final class AssertThatHasNoParent {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasParentFileRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasparentfilerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasParentFileRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasparentfilerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasParentFile {
     
@@ -196,7 +196,7 @@ static final class AssertThatHasParentFile {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasParentStringRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasparentstringrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatHasParentStringRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthathasparentstringrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatHasParentString {
     
@@ -212,7 +212,7 @@ static final class AssertThatHasParentString {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsAbsoluteRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisabsoluterecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsAbsoluteRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisabsoluterecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsAbsolute {
     
@@ -228,7 +228,7 @@ static final class AssertThatIsAbsolute {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsDirectoryRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisdirectoryrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsDirectoryRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisdirectoryrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsDirectory {
     
@@ -244,7 +244,7 @@ static final class AssertThatIsDirectory {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsExecutableRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisexecutablerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsExecutableRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisexecutablerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsExecutable {
     
@@ -260,7 +260,7 @@ static final class AssertThatIsExecutable {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsFileRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisfilerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsFileRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisfilerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsFile {
     
@@ -276,7 +276,7 @@ static final class AssertThatIsFile {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsReadableRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisreadablerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsReadableRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisreadablerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsReadable {
     
@@ -292,7 +292,7 @@ static final class AssertThatIsReadable {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsRelativeRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisrelativerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsRelativeRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatisrelativerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsRelative {
     
@@ -308,7 +308,7 @@ static final class AssertThatIsRelative {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsWritableRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatiswritablerecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJFileRulesRecipes$AssertThatIsWritableRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjfilerulesrecipes$assertthatiswritablerecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatIsWritable {
     
@@ -324,9 +324,9 @@ static final class AssertThatIsWritable {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes): Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStreamRules`.
+* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjstreamrulesrecipes): Refaster template recipes for `tech.picnic.errorprone.refasterrules.AssertJStreamRules`.
 [Source](https://error-prone.picnic.tech/refasterrules/AssertJStreamRules). 
-* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatAnyMatchRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatanymatchrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatAnyMatchRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatanymatchrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatAnyMatch<T> {
     
@@ -348,7 +348,7 @@ static final class AssertThatAnyMatch<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatCollectionRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatcollectionrecipe): Recipe created for the following Refaster template:
+* **tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatCollectionRecipe**: Recipe created for the following Refaster template:
 ```java
 static final class AssertThatCollection<T> {
     
@@ -365,7 +365,7 @@ static final class AssertThatCollection<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatFilteredOnRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatfilteredonrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatFilteredOnRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatfilteredonrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatFilteredOn<T> {
     
@@ -382,7 +382,7 @@ static final class AssertThatFilteredOn<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatNoneMatchRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatnonematchrecipe): Recipe created for the following Refaster template:
+* [tech.picnic.errorprone.refasterrules.AssertJStreamRulesRecipes$AssertThatNoneMatchRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/assertjstreamrulesrecipes$assertthatnonematchrecipe): Recipe created for the following Refaster template:
 ```java
 static final class AssertThatNoneMatch<T> {
     
@@ -404,13 +404,13 @@ static final class AssertThatNoneMatch<T> {
 }
 ```
 . 
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderpathofrecipe): Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreaderpathofwithcharsetrecipe): Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreadertopathrecipe): Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipes$filesnewbufferedreadertopathwithcharsetrecipe): Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxNextRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxnextrecipe): Prefer fluent `Flux#next()` over less explicit alternatives. 
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$CollectionParallelStreamRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$collectionparallelstreamrecipe): Prefer `Collection#parallelStream()` over more contrived alternatives. 
-* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamsStreamRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/streamrulesrecipes$streamsstreamrecipe): Prefer `Streams#stream(Iterable)` over more contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfRecipe**: Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderPathOfWithCharsetRecipe**: Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathRecipe**: Prefer `Files#newBufferedReader(Path)` over more verbose or contrived alternatives. 
+* **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FilesNewBufferedReaderToPathWithCharsetRecipe**: Prefer `Files#newBufferedReader(Path, Charset)` over more contrived alternatives. 
+* [tech.picnic.errorprone.refasterrules.ReactorRulesRecipes$FluxNextRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/reactorrulesrecipes$fluxnextrecipe): Prefer fluent `Flux#next()` over less explicit alternatives. 
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$CollectionParallelStreamRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$collectionparallelstreamrecipe): Prefer `Collection#parallelStream()` over more contrived alternatives. 
+* [tech.picnic.errorprone.refasterrules.StreamRulesRecipes$StreamsStreamRecipe](https://docs.openrewrite.org/recipes/picnic/errorprone/refasterrules/streamrulesrecipes$streamsstreamrecipe): Prefer `Streams#stream(Iterable)` over more contrived alternatives. 
 
 ## Removed Recipes
 

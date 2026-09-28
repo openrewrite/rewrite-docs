@@ -22,7 +22,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [io.quarkus.updates.core.quarkus330.RenameEnableMetrics](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus330/renameenablemetrics):  
+* [io.quarkus.updates.core.quarkus330.RenameEnableMetrics](https://docs.openrewrite.org/recipes/quarkus/updates/core/quarkus330/renameenablemetrics):  
 * [org.openrewrite.apache.commons.lang.DefaultIfBlankToJdk](https://docs.openrewrite.org/recipes/apache/commons/lang/defaultifblanktojdk): Replace `StringUtils#defaultIfBlank(s, fallback)` with `s == null || s.isBlank() ? fallback : s`. 
 * [org.openrewrite.apache.commons.lang.IsBlankToJdk](https://docs.openrewrite.org/recipes/apache/commons/lang/isblanktojdk): Replace any `StringUtils#isBlank(String)` and `#isNotBlank(String)` with `s == null || s.isBlank()` and `s != null && !s.isBlank()`. 
 * [org.openrewrite.github.security.AnonymousJobs](https://docs.openrewrite.org/recipes/github/security/anonymousjobs): Find jobs that lack descriptive names, making them harder to identify in workflow runs. Jobs without `name` properties default to their job ID, which may not be descriptive. Based on [zizmor's anonymous-definition audit](https://github.com/woodruffw/zizmor/blob/main/crates/zizmor/src/audit/anonymous_definition.rs). 
@@ -52,7 +52,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.java.jackson.CommentOutSimpleModuleMethodCalls](https://docs.openrewrite.org/recipes/java/jackson/commentoutsimplemodulemethodcalls): In Jackson 3, some modules (e.g. `JodaModule`) no longer extend `SimpleModule` and instead extend `JacksonModule` directly. This means methods like `addSerializer()` and `addDeserializer()` are no longer available on these types. This recipe adds a TODO comment to flag these call sites for manual migration. 
 * [org.openrewrite.java.jackson.ReplacePropertyNamingStrategyConstants](https://docs.openrewrite.org/recipes/java/jackson/replacepropertynamingstrategyconstants): Replace usages of deprecated `PropertyNamingStrategy` inner classes and constants with their `PropertyNamingStrategies` equivalents, introduced in Jackson 2.12. 
 * [org.openrewrite.java.jackson.UpdateAutoDetectVisibilityConfiguration](https://docs.openrewrite.org/recipes/java/jackson/updateautodetectvisibilityconfiguration): In Jackson 3, auto-detection `MapperFeature` flags like `AUTO_DETECT_FIELDS` are removed. Use `changeDefaultVisibility()` on the builder instead. 
-* [org.openrewrite.java.migrate.UpgradeBuildToJava24](https://docs.openrewrite.org/recipes/java/migrate/upgradebuildtojava24): Kotlin versions before 2.3 only support up to Java 24. 
+* **org.openrewrite.java.migrate.UpgradeBuildToJava24**: Kotlin versions before 2.3 only support up to Java 24. 
 * [org.openrewrite.java.migrate.UpgradeBuildToJava25](https://docs.openrewrite.org/recipes/java/migrate/upgradebuildtojava25): Upgrades build files to Java 25 for projects without Kotlin \<2.3. 
 * [org.openrewrite.java.migrate.jspecify.MoveAnnotationToArrayType](https://docs.openrewrite.org/recipes/java/migrate/jspecify/moveannotationtoarraytype): When an annotation like `@Nullable` is applied to an array type in declaration position, this recipe moves it to the array brackets. For example, `@Nullable byte[]` becomes `byte @Nullable[]`. Best used before `ChangeType` in a migration pipeline, targeting the pre-migration annotation type. 
 * [org.openrewrite.java.migrate.util.MigrateCollectionsEmptyList](https://docs.openrewrite.org/recipes/java/migrate/util/migratecollectionsemptylist): Prefer `List.of()` instead of using `Collections.emptyList()` in Java 9 or higher. 
@@ -103,7 +103,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## Changed Recipes
 
-* [org.openrewrite.javascript.dependencies.upgrade-dependency-version](https://docs.openrewrite.org/recipes/javascript/dependencies/upgrade-dependency-version) was changed:
+* **org.openrewrite.javascript.dependencies.upgrade-dependency-version** was changed:
   * Old Options:
     * `newVersion: { type: String, required: true }`
     * `packageName: { type: String, required: true }`

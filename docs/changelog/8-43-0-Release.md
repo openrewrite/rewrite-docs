@@ -12,9 +12,9 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 * [io.moderne.compiled.verification.ChangeListMethodAndVerify](https://docs.openrewrite.org/recipes/compiled/verification/changelistmethodandverify): We know this won't compile.
 * [io.moderne.compiled.verification.VerifyCompilation](https://docs.openrewrite.org/recipes/compiled/verification/verifycompilation): This is a task that runs after another recipe to verify that the changes made by that recipe would result in a successful compilation.
-* [io.moderne.knowledge.ComprehendCode](https://docs.openrewrite.org/recipes/knowledge/comprehendcode): Use LLMs to add inferred knowledge to the code.
-* [io.moderne.knowledge.docs.UpdateOpenRewriteReadme](https://docs.openrewrite.org/recipes/knowledge/docs/updateopenrewritereadme): Updates the README periodically to reflect the latest contents of recipe projects.
-* [io.moderne.knowledge.docs.UpdateReadme](https://docs.openrewrite.org/recipes/knowledge/docs/updatereadme): Generate a README file for the project, containing information about the project inferred from its knowledge graph.
+* **io.moderne.knowledge.ComprehendCode**: Use LLMs to add inferred knowledge to the code.
+* **io.moderne.knowledge.docs.UpdateOpenRewriteReadme**: Updates the README periodically to reflect the latest contents of recipe projects.
+* **io.moderne.knowledge.docs.UpdateReadme**: Generate a README file for the project, containing information about the project inferred from its knowledge graph.
 * [org.openrewrite.gradle.EnableDevelocityBuildCache](https://docs.openrewrite.org/recipes/gradle/enabledevelocitybuildcache): Adds `buildCache` configuration to `develocity` where not yet present.
 * [org.openrewrite.gradle.plugins.RemoveDevelocity](https://docs.openrewrite.org/recipes/gradle/plugins/removedevelocity): Remove the Develocity plugin and configuration from the Gradle build and settings files.
 * [org.openrewrite.gradle.plugins.RemoveDevelocityConfiguration](https://docs.openrewrite.org/recipes/gradle/plugins/removedevelocityconfiguration): Remove Develocity configuration from a Gradle build.
@@ -36,7 +36,7 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.openapi.swagger.MigrateApiImplicitParam](https://docs.openrewrite.org/recipes/openapi/swagger/migrateapiimplicitparam): Migrate `@ApiImplicitParam` to `@Parameter`.
 * [org.openrewrite.openapi.swagger.MigrateApiParamDefaultValue](https://docs.openrewrite.org/recipes/openapi/swagger/migrateapiparamdefaultvalue): Migrate `@ApiParam(defaultValue)` to `@Parameter(schema = @Schema(defaultValue))`.
 * [org.openrewrite.openapi.swagger.MigrateSwaggerDefinitionToOpenAPIDefinition](https://docs.openrewrite.org/recipes/openapi/swagger/migrateswaggerdefinitiontoopenapidefinition): Migrate from `@SwaggerDefinition` to `@OpenAPIDefinition`.
-* [software.amazon.awssdk.v2migration.S3MethodsToV2](https://docs.openrewrite.org/recipes/software/amazon/awssdk/v2migration/s3methodstov2): Change S3 methods to v2.
+* [software.amazon.awssdk.v2migration.S3MethodsToV2](https://docs.openrewrite.org/recipes/amazon/awssdk/v2migration/s3methodstov2): Change S3 methods to v2.
 
 ## Removed Recipes
 

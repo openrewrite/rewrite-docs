@@ -12,10 +12,10 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 
 ## New Recipes
 
-* [io.quakus.updates.minio.minio38.UpdateAll](https://docs.openrewrite.org/recipes/io/quakus/updates/minio/minio38/updateall):  
-* [io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix](https://docs.openrewrite.org/recipes/io/quarkus/updates/core/quarkus321/tlsregistrysplitpackagesfix):  
-* [io.quarkus.updates.minio.minio38.UpdateProperties](https://docs.openrewrite.org/recipes/io/quarkus/updates/minio/minio38/updateproperties):  
-* [io.quarkus.updates.quarkiverse.minio.minio38.AdjustURLPropertyValue](https://docs.openrewrite.org/recipes/io/quarkus/updates/quarkiverse/minio/minio38/adjusturlpropertyvalue): Adjust quarkus.minio.url property key to quarkus.minio.host. 
+* **io.quakus.updates.minio.minio38.UpdateAll**:  
+* [io.quarkus.updates.core.quarkus321.TlsRegistrySplitPackagesFix](https://docs.openrewrite.org/recipes/quarkus/updates/core/quarkus321/tlsregistrysplitpackagesfix):  
+* [io.quarkus.updates.minio.minio38.UpdateProperties](https://docs.openrewrite.org/recipes/quarkus/updates/minio/minio38/updateproperties):  
+* [io.quarkus.updates.quarkiverse.minio.minio38.AdjustURLPropertyValue](https://docs.openrewrite.org/recipes/quarkus/updates/quarkiverse/minio/minio38/adjusturlpropertyvalue): Adjust quarkus.minio.url property key to quarkus.minio.host. 
 * [org.openrewrite.apache.poi.ReplaceSetBoldweightWithSetBold](https://docs.openrewrite.org/recipes/apache/poi/replacesetboldweightwithsetbold): Replace `Font.setBoldweight(short)` or equivalent with `Font.setBold(boolean)`. 
 * [org.openrewrite.apache.poi.ReplaceSetCellType](https://docs.openrewrite.org/recipes/apache/poi/replacesetcelltype): `Cell.setCellType()` can be configured with either an integer or a the `CellType` enumeration. It is clearer and less error-prone to use the `CellType` enumeration, so this recipe converts all `setCellType()` calls to use it. 
 * [org.openrewrite.java.logging.CatchBlockLogLevel](https://docs.openrewrite.org/recipes/java/logging/catchblockloglevel): Sometimes exceptions are caught and logged at the wrong log level. This will set the log level of logging statements within a catch block not containing an exception to "warn", and the log level of logging statements containing an exception to "error". This supports SLF4J, Log4J1, Log4j2, and Logback. 
@@ -28,10 +28,10 @@ This changelog only shows what recipes have been added, removed, or changed. Ope
 * [org.openrewrite.java.migrate.jakarta.UpdateYassonDependencies](https://docs.openrewrite.org/recipes/java/migrate/jakarta/updateyassondependencies): Update Eclipse Yasson Dependencies to 3.0.x. 
 * [org.openrewrite.java.spring.boot3.SpringBoot33BestPractices](https://docs.openrewrite.org/recipes/java/spring/boot3/springboot33bestpractices): Applies best practices to Spring Boot 3 applications. 
 * [org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito](https://docs.openrewrite.org/recipes/java/testing/mockito/powermockitowhennewtomockito): Replaces `PowerMockito.whenNew` calls with respective `Mockito.whenConstructed` calls. 
-* [software.amazon.awssdk.v2migration.DateToInstant](https://docs.openrewrite.org/recipes/software/amazon/awssdk/v2migration/datetoinstant): Convert Date to Instant by calling Date#toInstant 
-* [software.amazon.awssdk.v2migration.S3PutObjectRequestToV2](https://docs.openrewrite.org/recipes/software/amazon/awssdk/v2migration/s3putobjectrequesttov2): Transform V1 S3 PutObjectRequest to V2, as well as methods that take it as an argument. 
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipesusdfilemkdirsfileexistsrecipe): Invoke `File#mkdirs()` before `File#exists()` to avoid concurrency issues 
-* [tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathToFileMkDirsFilesExistsRecipe](https://docs.openrewrite.org/recipes/tech/picnic/errorprone/refasterrules/filerulesrecipesusdpathtofilemkdirsfilesexistsrecipe): Invoke `File#mkdirs()` before `Files#exists(Path, LinkOption...)` to avoid concurrency issues 
+* [software.amazon.awssdk.v2migration.DateToInstant](https://docs.openrewrite.org/recipes/amazon/awssdk/v2migration/datetoinstant): Convert Date to Instant by calling Date#toInstant 
+* [software.amazon.awssdk.v2migration.S3PutObjectRequestToV2](https://docs.openrewrite.org/recipes/amazon/awssdk/v2migration/s3putobjectrequesttov2): Transform V1 S3 PutObjectRequest to V2, as well as methods that take it as an argument. 
+* **tech.picnic.errorprone.refasterrules.FileRulesRecipes$FileMkDirsFileExistsRecipe**: Invoke `File#mkdirs()` before `File#exists()` to avoid concurrency issues 
+* **tech.picnic.errorprone.refasterrules.FileRulesRecipes$PathToFileMkDirsFilesExistsRecipe**: Invoke `File#mkdirs()` before `Files#exists(Path, LinkOption...)` to avoid concurrency issues 
 
 ## Removed Recipes
 
