@@ -27,7 +27,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | uriPattern | Regular expression to match the component URI. Use capturing groups for parts to preserve. | `^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$` |
 | `String` | replacement | Replacement string using `${1}`, `${2}`, etc. to reference capturing groups from the pattern. | `pulsar:${2}://${3}/${5}/${6}` |
-| `Boolean` | consumerOnly | *Optional*. When true, only <from> endpoints are transformed; <to> endpoints are left unchanged. | `true` |
+| `Boolean` | consumerOnly | *Optional*. When true, only &lt;from> endpoints are transformed; &lt;to> endpoints are left unchanged. | `true` |
 
 
 ## Used by
