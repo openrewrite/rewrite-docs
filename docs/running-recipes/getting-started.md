@@ -1,5 +1,6 @@
 ---
 description: This guide covers configuring OpenRewrite with Maven or Gradle and using it to run refactoring recipes.
+sidebar_custom_props: { startHere: true }
 ---
 
 import Tabs from '@theme/Tabs';

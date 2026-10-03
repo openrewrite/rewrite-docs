@@ -1,5 +1,6 @@
 ---
 description: A brief explanation of a Quark.
+sidebar_custom_props: { group: Metadata and conventions }
 ---
 
 # Quarks

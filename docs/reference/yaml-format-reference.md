@@ -1,5 +1,6 @@
 ---
 description: How to create and configure a recipe using YAML.
+sidebar_custom_props: { group: Recipe syntax }
 ---
 
 # Declarative YAML format

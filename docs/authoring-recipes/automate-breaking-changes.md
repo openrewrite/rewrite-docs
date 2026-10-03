@@ -1,6 +1,7 @@
 ---
 sidebar_label: Automating breaking changes
 description: How to create a recipe that automates breaking changes.
+sidebar_custom_props: { group: Advanced techniques }
 ---
 
 import Tabs from '@theme/Tabs';

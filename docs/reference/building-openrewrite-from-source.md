@@ -1,5 +1,6 @@
 ---
 description: How to build and develop OpenRewrite – including IDE tips and OS caveats.
+sidebar_custom_props: { group: Contributing }
 ---
 
 # Building and developing OpenRewrite

@@ -1,6 +1,7 @@
 ---
 sidebar_label: Contributing to OpenRewrite
 description: How to contribute back to the OpenRewrite community
+sidebar_custom_props: { group: Learn and contribute }
 ---
 
 # Contributing to OpenRewrite

@@ -1,5 +1,6 @@
 ---
 description: An overview of the OpenRewrite Maven Plugin, including its goals and how to configure them.
+sidebar_custom_props: { group: Build tool plugins }
 ---
 
 # Maven plugin configuration

@@ -1,6 +1,7 @@
 ---
 sidebar_label: Testing recipes
 description: A deep, technical look into how to effectively write tests for OpenRewrite recipes.
+sidebar_custom_props: { group: Test and refine }
 ---
 
 import ReactPlayer from 'react-player';

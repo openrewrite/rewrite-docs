@@ -23,6 +23,10 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Popular recipe guides',
+          // Also set here, not only inside `link`: the docs plugin drops `link`
+          // when it builds client props, so a description that lives only there
+          // never reaches the card and it falls back to "18 items".
+          description: 'Popular recipes you may want to run.',
           link: {
             type: 'generated-index',
             title: 'Popular recipe guides',
@@ -86,6 +90,7 @@ const sidebars: SidebarsConfig = {
           label: 'Recipe authoring workshop',
           description: 'How to create and test recipes with OpenRewrite and Moderne.',
           href: 'https://docs.moderne.io/hands-on-learning/fundamentals/workshop-overview',
+          customProps: { group: 'Learn and contribute' },
         },
         'training',
       ],

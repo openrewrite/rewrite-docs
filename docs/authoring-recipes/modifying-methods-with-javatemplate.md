@@ -1,5 +1,6 @@
 ---
 description: A deeper look into how you can use JavaTemplates to refactor/modify methods.
+sidebar_custom_props: { group: Advanced techniques }
 ---
 
 # Modifying methods with JavaTemplates

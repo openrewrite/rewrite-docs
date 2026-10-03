@@ -1,5 +1,6 @@
 ---
 description: A technical overview of recipes and the lifecycle surrounding them. Includes example code and diagrams.
+sidebar_custom_props: { group: Recipes and visitors }
 ---
 
 import ReactPlayer from 'react-player'

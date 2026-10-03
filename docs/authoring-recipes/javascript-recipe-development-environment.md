@@ -1,5 +1,6 @@
 ---
 description: Instructions for setting up your local development environment to create OpenRewrite recipes for JavaScript and TypeScript.
+sidebar_custom_props: { group: Write a recipe }
 ---
 
 import Tabs from '@theme/Tabs';
