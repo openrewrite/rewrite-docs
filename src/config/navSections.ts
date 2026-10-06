@@ -5,9 +5,9 @@ import sidebars from '@site/sidebars';
  * Sections shown in the secondary nav.
  *
  * `href` must match a top-level category's generated-index slug in sidebars.ts —
- * that is how a section resolves to its sidebar subtree, and nothing checks it
- * at build time. An href matching no category still links, but its pages fall
- * back to the full sidebar.
+ * that is how a section resolves to its sidebar subtree. An href matching no
+ * category still links, but its pages fall back to the full sidebar, so
+ * scripts/check-orphaned-pages.js fails CI on one.
  */
 
 export type NavSection = {
@@ -133,5 +133,4 @@ export const mobileSections: NavSection[] = [
 export const selectableSections: NavSection[] = [
   ...primarySections,
   { name: 'Changelog', href: ALL_RELEASES_HREF },
-  { name: 'Licensing', href: '/licensing/openrewrite-licensing' },
 ];
