@@ -33,6 +33,9 @@ jobs:
       - name: TypeScript type check
         run: yarn typecheck
 
+      - name: Check for orphaned pages
+        run: node scripts/check-orphaned-pages.js
+
   build:
     name: Build
     runs-on: ubuntu-latest

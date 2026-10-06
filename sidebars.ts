@@ -119,6 +119,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'reference/faq',
+        'licensing/openrewrite-licensing',
         'reference/latest-versions-of-every-openrewrite-module',
         'reference/rewrite-maven-plugin',
         'reference/gradle-plugin-configuration',
@@ -326,7 +327,6 @@ const sidebars: SidebarsConfig = {
         },
       ],
     },
-    'licensing/openrewrite-licensing',
   ],
 };
 
