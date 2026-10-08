@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito**
 
-_Replaces `PowerMockito.whenNew` calls with respective `Mockito.whenConstructed` calls._
+_Replaces `PowerMockito.whenNew(Type.class).with...().thenReturn(instance)` with `Mockito.mockConstructionWithAnswer(Type.class, delegatesTo(instance))`, assigned to a field that is closed after each test. Every `Type` constructed while the mock is active delegates to `instance`, so stubbing and verification on `instance` keep working. Constructor argument matchers are not retained, and when the same type is stubbed more than once in a method, the calls are left unchanged._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Replace PowerMock usages with Mockito](/recipes/java/testing/mockito/replacepowermockitousages.md)
 
 
 ## Usage

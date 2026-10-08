@@ -26,7 +26,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | propertyKey | The property key to add a comment to. Supports glob patterns. | `management.metrics.binders.*.enabled` |
-| `String` | comment | The comment to add to the property. | `This property is deprecated` |
+| `String` | comment | The comment to add to the property. A multi-line comment is added as one comment line per line. | `This property is deprecated` |
 | `Boolean` | relaxedBinding | *Optional*. Whether to match the `propertyKey` using [relaxed binding](https://docs.spring.io/spring-boot/docs/2.5.6/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding) rules. Defaults to `true`. If you want to use exact matching in your search, set this to `false`. |  |
 | `String` | filePattern | *Optional*. A glob expression representing a file path to search for (relative to the project root). Blank/null matches all. | `.github/workflows/*.yml` |
 

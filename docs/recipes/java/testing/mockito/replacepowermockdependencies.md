@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Swap the PowerMock dependencies for Mockito](/recipes/java/testing/mockito/removepowermockdependencies.md)
 
 
 ## Usage

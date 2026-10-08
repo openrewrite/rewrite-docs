@@ -243,6 +243,7 @@ This recipe is used as part of the following composite recipes:
 * [Update Jetty EE9 to Jetty EE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update the Micronaut Security library](/recipes/java/micronaut/updatemicronautsecurity.md)
+* [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 * [Upgrade to Axonframework 4.x Jakarta](/recipes/axonframework/migration/upgradeaxonframework_4_jakarta.md)
 * [Upgrade to Axonframework 4.x Javax](/recipes/axonframework/migration/upgradeaxonframework_4_javax.md)
 * [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)

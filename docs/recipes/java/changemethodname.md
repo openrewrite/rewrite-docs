@@ -153,6 +153,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace deprecated setters in `RestTemplateBuilder`](/recipes/java/spring/boot3/replaceresttemplatebuildermethods.md)
 * [Spring Boot 4.0 Module Starter Relocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulestarterrelocations)
 * [The header name for the List metadata has changed](/recipes/apache/camel/upgrade/camel43/kafkametadata.md)
+* [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 * [Upgrade to JUnit 5.14](/recipes/java/testing/junit5/upgradetojunit514.md)
 * [Upgrade to SpringDoc 2.1](/recipes/java/springdoc/upgradespringdoc_2.md)
 * [Upgrade to the latest Timefold Solver](/recipes/timefold/solver/migration/tolatest.md)

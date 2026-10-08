@@ -41,6 +41,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [JUnit `assertSame` to AssertJ](./junitassertsametoassertthat.md)
 * [JUnit `assertTrue` to AssertJ](./junitasserttruetoassertthat.md)
 * [JUnit fail to AssertJ](./junitfailtoassertjfail.md)
+* [Place AssertJ descriptions and failure messages before the assertion](./placeassertjdescriptionbeforeassertion.md)
 * [Replace `AbstractDateAssert#isEqualToIgnoringMillis(java.util.Date)` by `by isCloseTo(Date, long)`](./isequaltoignoringmillistoisclosetorecipe.md)
 * [Replace `isCloseTo` with `isEqualTo`](./assertjfloatrulesrecipes$abstractfloatassertisequaltorecipe.md)
 * [Replace `isCloseTo` with `isEqualTo`](./assertjintegerrulesrecipes$abstractintegerassertisequaltorecipe.md)

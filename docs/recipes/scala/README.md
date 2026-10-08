@@ -8,6 +8,7 @@ _Search and refactoring recipes for [Scala](https://www.scala-lang.org/) code, c
 
 ## Categories
 
+* [Format](/recipes/scala/format)
 * [Migrate](/recipes/scala/migrate)
 
 

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.SortDependencies**
 
-_Sort dependencies alphabetically by groupId then artifactId. Test-scoped dependencies are sorted after non-test dependencies. Applies to both `<dependencies>` and `<dependencyManagement>` sections._
+_Sort dependencies alphabetically by groupId then artifactId. Test-scoped dependencies are sorted after non-test dependencies. Imported BOMs retain their original positions. Applies to both `<dependencies>` and `<dependencyManagement>` sections._
 
 ## Recipe source
 

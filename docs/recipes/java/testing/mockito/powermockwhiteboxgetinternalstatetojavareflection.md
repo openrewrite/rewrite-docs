@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetInternalStateToJavaReflection**
 
-_Replace `Whitebox.getInternalState(Object, String)` with `java.lang.reflect.Field` access, casting to the declared result type where needed. The field lookup uses `getDeclaredField` on the target object's class, which differs from PowerMock's class-hierarchy traversal for fields inherited from a superclass._
+_Replace `Whitebox.getInternalState(Object, String)` with `java.lang.reflect.Field` access, casting to the declared result type where needed. The field is looked up on the class declaring it, found through the target's declared type and its superclasses, which also covers Mockito spies and mocks; when that class cannot be determined, the target's runtime class is used. A call nested in a larger expression is replaced by `field.get(target)`, with the `Field` declared before the enclosing statement._
 
 ## Recipe source
 
@@ -61,7 +61,7 @@ import java.lang.reflect.Field;
 class MyServiceTest {
     void testGetField() throws Exception {
         MyService service = new MyService();
-        Field nameField = service.getClass().getDeclaredField("name");
+        Field nameField = MyService.class.getDeclaredField("name");
         nameField.setAccessible(true);
         String result = (String) nameField.get(service);
     }
@@ -86,7 +86,7 @@ class MyServiceTest {
     void testGetField() {
         MyService service = new MyService();
 -       String result = Whitebox.getInternalState(service, "name");
-+       Field nameField = service.getClass().getDeclaredField("name");
++       Field nameField = MyService.class.getDeclaredField("name");
 +       nameField.setAccessible(true);
 +       String result = (String) nameField.get(service);
     }

@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection**
 
-_Replace `Whitebox.invokeMethod(Object, String, ..)` with `java.lang.reflect.Method` lookup and `invoke()`. Parameter types are taken from the unambiguously resolved target method, falling back to each argument's compile-time class._
+_Replace `Whitebox.invokeMethod(Object, String, ..)` with `java.lang.reflect.Method` lookup and `invoke()`. The method is looked up on the class declaring the unambiguously resolved target method, which also covers Mockito spies and mocks, and its parameter types are taken from that method, falling back to the target's runtime class and each argument's compile-time class. A call nested in a larger expression is replaced by `method.invoke(target, ..)`, with the `Method` declared before the enclosing statement._
 
 ## Recipe source
 
@@ -61,7 +61,7 @@ import java.lang.reflect.Method;
 class MyServiceTest {
     void testInvoke() throws Exception {
         MyService service = new MyService();
-        Method computeMethod = service.getClass().getDeclaredMethod("compute");
+        Method computeMethod = MyService.class.getDeclaredMethod("compute");
         computeMethod.setAccessible(true);
         String result = (String) computeMethod.invoke(service);
     }
@@ -86,7 +86,7 @@ class MyServiceTest {
     void testInvoke() {
         MyService service = new MyService();
 -       String result = Whitebox.invokeMethod(service, "compute");
-+       Method computeMethod = service.getClass().getDeclaredMethod("compute");
++       Method computeMethod = MyService.class.getDeclaredMethod("compute");
 +       computeMethod.setAccessible(true);
 +       String result = (String) computeMethod.invoke(service);
     }

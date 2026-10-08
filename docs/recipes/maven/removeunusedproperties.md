@@ -27,6 +27,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | propertyPattern | *Optional*. A pattern to filter properties to remove. Defaults to `.+?` to match anything | `.+\.version` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Swap the PowerMock dependencies for Mockito](/recipes/java/testing/mockito/removepowermockdependencies.md)
+
 ## Example
 
 ###### Parameters

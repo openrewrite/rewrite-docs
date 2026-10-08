@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.ReplacePowerMockito**
 
-_PowerMockito with raw Mockito; best executed as part of a Mockito upgrade._
+_PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath._
 
 ### Tags
 
@@ -41,43 +41,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Replace PowerMock dependencies with Mockito equivalents](../../../java/testing/mockito/replacepowermockdependencies)
-* [Remove annotation](../../../java/removeannotation)
-  * annotationPattern: `@org.powermock.core.classloader.annotations.PowerMockIgnore`
-* [Remove annotation](../../../java/removeannotation)
-  * annotationPattern: `@org.powermock.core.classloader.annotations.SuppressStaticInitializationFor`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.powermock.api.mockito.PowerMockito mockStatic(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-  * returnType: `org.mockito.MockedStatic`
-* [Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing](../../../java/testing/mockito/powermockitodostubbingtomockito)
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.powermock.api.mockito.PowerMockito do*(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.powermock.api.mockito.PowerMockito mock(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.powermock.api.mockito.PowerMockito spy(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-* [Change method target to static](../../../java/changemethodtargettostatic)
-  * methodPattern: `org.powermock.api.mockito.PowerMockito when(..)`
-  * fullyQualifiedTargetTypeName: `org.mockito.Mockito`
-* [Replace PowerMock runner with JUnit `@RunWith`](../../../java/testing/mockito/powermockrunnerdelegatetorunwith)
-* [Remove PowerMock class extensions](../../../java/testing/mockito/removepowermockclassextensions)
-* [Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`](../../../java/testing/mockito/powermockitomockstatictomockito)
-* [Replace `PowerMockito.whenNew` with Mockito counterpart](../../../java/testing/mockito/powermockitowhennewtomockito)
-* [Replace PowerMock `Whitebox` with Java reflection](../../../java/testing/mockito/powermockwhiteboxtojavareflection)
-* [Add comment to method invocations](../../../java/addcommenttomethodinvocations)
-  * comment: ` PowerMock `Whitebox` call could not be automatically migrated to reflection; migrate manually `
-  * methodPattern: `org.powermock.reflect.Whitebox *(..)`
-* [Cleanup PowerMock imports](../../../java/testing/mockito/cleanuppowermockimports)
-* [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
-  * groupId: `org.powermock`
-  * artifactId: `powermock*`
-* [Remove Maven managed dependency](../../../maven/removemanageddependency)
-  * groupId: `org.powermock`
-  * artifactId: `powermock*`
+* [Disable tests using PowerMock features with no Mockito equivalent](../../../java/testing/mockito/disableunsupportedpowermocktests)
+* [Replace PowerMock usages with Mockito](../../../java/testing/mockito/replacepowermockitousages)
+* [Flag PowerMock usage that cannot be migrated to Mockito](../../../java/testing/mockito/flagunsupportedpowermockusage)
+* [Swap the PowerMock dependencies for Mockito](../../../java/testing/mockito/removepowermockdependencies)
 
 </TabItem>
 
@@ -89,50 +56,17 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.mockito.ReplacePowerMockito
 displayName: Replace PowerMock with raw Mockito
 description: |
-  PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.
+  PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
 tags:
   - mockito
   - testing
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
-  - org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies
-  - org.openrewrite.java.RemoveAnnotation:
-      annotationPattern: @org.powermock.core.classloader.annotations.PowerMockIgnore
-  - org.openrewrite.java.RemoveAnnotation:
-      annotationPattern: @org.powermock.core.classloader.annotations.SuppressStaticInitializationFor
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.powermock.api.mockito.PowerMockito mockStatic(..)
-      fullyQualifiedTargetTypeName: org.mockito.Mockito
-      returnType: org.mockito.MockedStatic
-  - org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingToMockito
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.powermock.api.mockito.PowerMockito do*(..)
-      fullyQualifiedTargetTypeName: org.mockito.Mockito
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.powermock.api.mockito.PowerMockito mock(..)
-      fullyQualifiedTargetTypeName: org.mockito.Mockito
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.powermock.api.mockito.PowerMockito spy(..)
-      fullyQualifiedTargetTypeName: org.mockito.Mockito
-  - org.openrewrite.java.ChangeMethodTargetToStatic:
-      methodPattern: org.powermock.api.mockito.PowerMockito when(..)
-      fullyQualifiedTargetTypeName: org.mockito.Mockito
-  - org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith
-  - org.openrewrite.java.testing.mockito.RemovePowerMockClassExtensions
-  - org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito
-  - org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito
-  - org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection
-  - org.openrewrite.java.AddCommentToMethodInvocations:
-      comment:  PowerMock `Whitebox` call could not be automatically migrated to reflection; migrate manually 
-      methodPattern: org.powermock.reflect.Whitebox *(..)
-  - org.openrewrite.java.testing.mockito.CleanupPowerMockImports
-  - org.openrewrite.java.dependencies.RemoveDependency:
-      groupId: org.powermock
-      artifactId: powermock*
-  - org.openrewrite.maven.RemoveManagedDependency:
-      groupId: org.powermock
-      artifactId: powermock*
+  - org.openrewrite.java.testing.mockito.DisableUnsupportedPowerMockTests
+  - org.openrewrite.java.testing.mockito.ReplacePowerMockitoUsages
+  - org.openrewrite.java.testing.mockito.FlagUnsupportedPowerMockUsage
+  - org.openrewrite.java.testing.mockito.RemovePowerMockDependencies
 
 ```
 </TabItem>
@@ -491,6 +425,23 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
+
+### PowerMock tests disabled for manual migration
+**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
+
+_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path of the test source file. |
+| Test class | The test class the disabled test belongs to. |
+| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
+| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
+| Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results

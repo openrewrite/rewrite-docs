@@ -25,13 +25,6 @@ _Adds `@Nested` to inner classes that contain JUnit 5 tests and removes `static`
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
-
 ## Example
 
 

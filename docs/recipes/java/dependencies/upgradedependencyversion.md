@@ -239,6 +239,8 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Spring Data BOM to 2024.1.x](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatabom.md)
 * [Upgrade Spring Data JPA to 3.4.6](/recipes/oracle/weblogic/rewrite/spring/data/upgradespringdatajpa.md)
 * [Upgrade Struts 6.0 dependencies](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate6/upgradestruts6dependencies)
+* [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
+* [Upgrade `mockito-core` along with the Mockito that replaces PowerMock](/recipes/java/testing/mockito/upgrademockitocorereplacingpowermock.md)
 * [Upgrade dependencies to Spring Cloud 2022](/recipes/java/spring/cloud2022/dependencyupgrades.md)
 * [Upgrade dependencies to Spring Cloud 2023](/recipes/java/spring/cloud2023/dependencyupgrades.md)
 * [Upgrade dependencies to Spring Cloud 2024](/recipes/java/spring/cloud2024/dependencyupgrades.md)

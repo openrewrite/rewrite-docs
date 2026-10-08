@@ -50,49 +50,49 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `org.mockito.ArgumentMatchers`
 * [Convert `ArgumentMatcher&lt;T&gt;` anonymous class to lambda](../../../java/testing/mockito/argumentmatchertolambda)
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyVararg()`
+  * methodPattern: `org.mockito.* anyVararg()`
   * newMethodName: `any`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyObject()`
+  * methodPattern: `org.mockito.* anyObject()`
   * newMethodName: `any`
+* [Delete method argument](../../../java/deletemethodargument)
+  * methodPattern: `org.mockito.* anyListOf(java.lang.Class)`
+  * argumentIndex: `0`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyListOf(java.lang.Class)`
+  * methodPattern: `org.mockito.* anyListOf()`
   * newMethodName: `anyList`
 * [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers anyList(java.lang.Class)`
+  * methodPattern: `org.mockito.* anySetOf(java.lang.Class)`
   * argumentIndex: `0`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anySetOf(java.lang.Class)`
+  * methodPattern: `org.mockito.* anySetOf()`
   * newMethodName: `anySet`
 * [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers anySet(java.lang.Class)`
+  * methodPattern: `org.mockito.* anyMapOf(java.lang.Class, java.lang.Class)`
+  * argumentIndex: `0`
+* [Delete method argument](../../../java/deletemethodargument)
+  * methodPattern: `org.mockito.* anyMapOf(java.lang.Class)`
   * argumentIndex: `0`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyMapOf(java.lang.Class, java.lang.Class)`
+  * methodPattern: `org.mockito.* anyMapOf()`
   * newMethodName: `anyMap`
 * [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers anyMap(java.lang.Class, java.lang.Class)`
-  * argumentIndex: `0`
-* [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers anyMap(java.lang.Class)`
+  * methodPattern: `org.mockito.* anyCollectionOf(java.lang.Class)`
   * argumentIndex: `0`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyCollectionOf(java.lang.Class)`
+  * methodPattern: `org.mockito.* anyCollectionOf()`
   * newMethodName: `anyCollection`
 * [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers anyCollection(java.lang.Class)`
+  * methodPattern: `org.mockito.* anyIterableOf(java.lang.Class)`
   * argumentIndex: `0`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.ArgumentMatchers anyIterableOf(java.lang.Class)`
+  * methodPattern: `org.mockito.* anyIterableOf()`
   * newMethodName: `anyIterable`
 * [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers anyIterable(java.lang.Class)`
+  * methodPattern: `org.mockito.* isNull(java.lang.Class)`
   * argumentIndex: `0`
 * [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers isNull(java.lang.Class)`
-  * argumentIndex: `0`
-* [Delete method argument](../../../java/deletemethodargument)
-  * methodPattern: `org.mockito.ArgumentMatchers notNull(java.lang.Class)`
+  * methodPattern: `org.mockito.* notNull(java.lang.Class)`
   * argumentIndex: `0`
 * [Reorder method arguments](../../../java/reordermethodarguments)
   * methodPattern: `org.mockito.MockedStatic verify(org.mockito.verification.VerificationMode, org.mockito.MockedStatic.Verification)`
@@ -140,9 +140,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `net.bytebuddy`
   * artifactId: `byte-buddy*`
   * newVersion: `1.11.13`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.mockito.Mockito anyObject()`
-  * newMethodName: `any`
 
 </TabItem>
 
@@ -170,49 +167,49 @@ recipeList:
       newFullyQualifiedTypeName: org.mockito.ArgumentMatchers
   - org.openrewrite.java.testing.mockito.ArgumentMatcherToLambda
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyVararg()
+      methodPattern: org.mockito.* anyVararg()
       newMethodName: any
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyObject()
+      methodPattern: org.mockito.* anyObject()
       newMethodName: any
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.* anyListOf(java.lang.Class)
+      argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyListOf(java.lang.Class)
+      methodPattern: org.mockito.* anyListOf()
       newMethodName: anyList
   - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers anyList(java.lang.Class)
+      methodPattern: org.mockito.* anySetOf(java.lang.Class)
       argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anySetOf(java.lang.Class)
+      methodPattern: org.mockito.* anySetOf()
       newMethodName: anySet
   - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers anySet(java.lang.Class)
+      methodPattern: org.mockito.* anyMapOf(java.lang.Class, java.lang.Class)
+      argumentIndex: 0
+  - org.openrewrite.java.DeleteMethodArgument:
+      methodPattern: org.mockito.* anyMapOf(java.lang.Class)
       argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyMapOf(java.lang.Class, java.lang.Class)
+      methodPattern: org.mockito.* anyMapOf()
       newMethodName: anyMap
   - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers anyMap(java.lang.Class, java.lang.Class)
-      argumentIndex: 0
-  - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers anyMap(java.lang.Class)
+      methodPattern: org.mockito.* anyCollectionOf(java.lang.Class)
       argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyCollectionOf(java.lang.Class)
+      methodPattern: org.mockito.* anyCollectionOf()
       newMethodName: anyCollection
   - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers anyCollection(java.lang.Class)
+      methodPattern: org.mockito.* anyIterableOf(java.lang.Class)
       argumentIndex: 0
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.ArgumentMatchers anyIterableOf(java.lang.Class)
+      methodPattern: org.mockito.* anyIterableOf()
       newMethodName: anyIterable
   - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers anyIterable(java.lang.Class)
+      methodPattern: org.mockito.* isNull(java.lang.Class)
       argumentIndex: 0
   - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers isNull(java.lang.Class)
-      argumentIndex: 0
-  - org.openrewrite.java.DeleteMethodArgument:
-      methodPattern: org.mockito.ArgumentMatchers notNull(java.lang.Class)
+      methodPattern: org.mockito.* notNull(java.lang.Class)
       argumentIndex: 0
   - org.openrewrite.java.ReorderMethodArguments:
       methodPattern: org.mockito.MockedStatic verify(org.mockito.verification.VerificationMode, org.mockito.MockedStatic.Verification)
@@ -264,9 +261,6 @@ recipeList:
       groupId: net.bytebuddy
       artifactId: byte-buddy*
       newVersion: 1.11.13
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.mockito.Mockito anyObject()
-      newMethodName: any
 
 ```
 </TabItem>
@@ -953,6 +947,23 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
+
+### PowerMock tests disabled for manual migration
+**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
+
+_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path of the test source file. |
+| Test class | The test class the disabled test belongs to. |
+| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
+| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
+| Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.table.SourcesFileResults" label="SourcesFileResults">
 
 ### Source files that had results
