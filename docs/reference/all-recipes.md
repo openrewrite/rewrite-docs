@@ -6,12 +6,12 @@ description: A comprehensive list of all recipes organized by module.
 
 _This doc indexes per-module recipe lists. Click a groupId to see its recipes._
 
-Total recipes: 4183
+Total recipes: 4217
 
 
 ## org.openrewrite
 
-* [rewrite-cobol](all-recipes-org-openrewrite.md#rewrite-cobol)
+* [rewrite-android](all-recipes-org-openrewrite.md#rewrite-android)
 * [rewrite-core](all-recipes-org-openrewrite.md#rewrite-core)
 * [rewrite-docker](all-recipes-org-openrewrite.md#rewrite-docker)
 * [rewrite-gradle](all-recipes-org-openrewrite.md#rewrite-gradle)
@@ -21,8 +21,11 @@ Total recipes: 4183
 * [rewrite-javascript](all-recipes-org-openrewrite.md#rewrite-javascript)
 * [rewrite-json](all-recipes-org-openrewrite.md#rewrite-json)
 * [rewrite-kotlin](all-recipes-org-openrewrite.md#rewrite-kotlin)
+* [rewrite-mainframe](all-recipes-org-openrewrite.md#rewrite-mainframe)
 * [rewrite-maven](all-recipes-org-openrewrite.md#rewrite-maven)
 * [rewrite-properties](all-recipes-org-openrewrite.md#rewrite-properties)
+* [rewrite-ruby](all-recipes-org-openrewrite.md#rewrite-ruby)
+* [rewrite-scala](all-recipes-org-openrewrite.md#rewrite-scala)
 * [rewrite-toml](all-recipes-org-openrewrite.md#rewrite-toml)
 * [rewrite-xml](all-recipes-org-openrewrite.md#rewrite-xml)
 * [rewrite-yaml](all-recipes-org-openrewrite.md#rewrite-yaml)

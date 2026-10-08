@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito**
 
-_Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`. Removes the `@PrepareForTest` annotation._
+_Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`, assigning the resulting `MockedStatic` to a field that is closed after each test, so the static mock stays active for exactly the same part of the test as before. Also migrates `PowerMockito.verifyStatic()` and static stubbing, and removes the `@PrepareForTest` annotation._
 
 ## Recipe source
 
@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Replace PowerMock usages with Mockito](/recipes/java/testing/mockito/replacepowermockitousages.md)
 
 ## Example
 

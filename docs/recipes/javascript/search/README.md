@@ -6,6 +6,7 @@ description: Search OpenRewrite recipes.
 
 ## Recipes
 
+* [Find vendored or bundled JavaScript](./findvendoredorbundled.md)
 * [Node.js dependency insight](./dependencyinsight.md)
 
 

@@ -39,6 +39,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Preconditions**
 
 * [Singleton](../../../core/singleton)
+* [Module has dependency](../../../java/dependencies/search/modulehasdependency)
+  * groupIdPattern: `org.testng`
+  * artifactIdPattern: `testng*`
+  * invertMarking: `true`
 * [Check whether a type is **not** in use](../../../java/search/doesnotusetype)
   * fullyQualifiedTypeName: `org.testng..*`
   * includeImplicit: `true`
@@ -89,7 +93,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate JUnit JRE conditions](../../../java/testing/junit6/minimumjreconditions)
   * javaVersion: `17`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.junit.jupiter.api.extension.ExtensionContext.Store getOrComputeIfAbsent((..))`
+  * methodPattern: `org.junit.jupiter.api.extension.ExtensionContext.Store getOrComputeIfAbsent(..)`
   * newMethodName: `computeIfAbsent`
   * matchOverrides: `true`
   * ignoreDefinition: `true`
@@ -127,6 +131,10 @@ tags:
   - testing
 preconditions:
   - org.openrewrite.Singleton
+  - org.openrewrite.java.dependencies.search.ModuleHasDependency:
+      groupIdPattern: org.testng
+      artifactIdPattern: testng*
+      invertMarking: true
   - org.openrewrite.java.search.DoesNotUseType:
       fullyQualifiedTypeName: org.testng..*
       includeImplicit: true
@@ -175,7 +183,7 @@ recipeList:
   - org.openrewrite.java.testing.junit6.MinimumJreConditions:
       javaVersion: 17
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.junit.jupiter.api.extension.ExtensionContext.Store getOrComputeIfAbsent((..))
+      methodPattern: org.junit.jupiter.api.extension.ExtensionContext.Store getOrComputeIfAbsent(..)
       newMethodName: computeIfAbsent
       matchOverrides: true
       ignoreDefinition: true

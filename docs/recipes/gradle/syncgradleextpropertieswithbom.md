@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.gradle.SyncGradleExtPropertiesWithBom**
 
-_Downloads a BOM and compares its properties against Gradle ext properties. When the BOM defines a higher version for a property, the ext property is updated to match (or removed if `removeRedundantOverrides` is enabled)._
+_Downloads a BOM and compares its properties against Gradle ext properties. When the BOM defines a higher version for a property, the ext property is updated to match (or removed if `removeRedundantOverrides` is enabled, unless a build script reads it). With `removeRedundantOverrides`, a property whose value refers to an entry of `gradle.properties` is compared by that entry's value._
 
 ## Recipe source
 
@@ -27,8 +27,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | --- | --- | --- | --- |
 | `String` | groupId | The groupId of the BOM to sync with. | `org.springframework.boot` |
 | `String` | artifactId | The artifactId of the BOM to sync with. | `spring-boot-dependencies` |
-| `String` | version | The version of the BOM to sync with. | `3.4.0` |
-| `Boolean` | removeRedundantOverrides | *Optional*. When enabled, ext properties whose value is lower than or equal to the BOM version will be removed entirely instead of updated, since the BOM default is now sufficient. |  |
+| `String` | version | The version of the BOM to sync with. An exact version, or a selector such as `3.4.x` which resolves to the latest matching release. | `3.4.0` |
+| `Boolean` | removeRedundantOverrides | *Optional*. When enabled, ext properties whose value is lower than or equal to the BOM version will be removed entirely instead of updated, since the BOM default is now sufficient. A property that a build script reads is kept and updated instead. |  |
 
 
 ## Used by

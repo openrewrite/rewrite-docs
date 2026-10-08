@@ -72,7 +72,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
-* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Replace PowerMock usages with Mockito](/recipes/java/testing/mockito/replacepowermockitousages.md)
 
 ## Examples
 ##### Example 1
@@ -109,7 +109,7 @@ import java.lang.reflect.Field;
 class MyServiceTest {
     void testSetField() throws Exception {
         MyService service = new MyService();
-        Field nameField = service.getClass().getDeclaredField("name");
+        Field nameField = MyService.class.getDeclaredField("name");
         nameField.setAccessible(true);
         nameField.set(service, "expectedValue");
     }
@@ -134,7 +134,7 @@ class MyServiceTest {
     void testSetField() {
         MyService service = new MyService();
 -       Whitebox.setInternalState(service, "name", "expectedValue");
-+       Field nameField = service.getClass().getDeclaredField("name");
++       Field nameField = MyService.class.getDeclaredField("name");
 +       nameField.setAccessible(true);
 +       nameField.set(service, "expectedValue");
     }
@@ -178,7 +178,7 @@ import java.lang.reflect.Field;
 class MyServiceTest {
     void testSetField() throws Exception {
         MyService service = new MyService();
-        Field nameField = service.getClass().getDeclaredField("name");
+        Field nameField = MyService.class.getDeclaredField("name");
         nameField.setAccessible(true);
         nameField.set(service, "expectedValue");
     }
@@ -203,7 +203,7 @@ class MyServiceTest {
     void testSetField() {
         MyService service = new MyService();
 -       Whitebox.setInternalState(service, "name", "expectedValue");
-+       Field nameField = service.getClass().getDeclaredField("name");
++       Field nameField = MyService.class.getDeclaredField("name");
 +       nameField.setAccessible(true);
 +       nameField.set(service, "expectedValue");
     }

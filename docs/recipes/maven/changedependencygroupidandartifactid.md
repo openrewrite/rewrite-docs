@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
+| `Boolean` | changePluginDependencies | *Optional*. Also change dependencies declared inside Maven plugins. Defaults to true. |  |
 
 
 ## Used by
@@ -64,6 +65,7 @@ This recipe is used as part of the following composite recipes:
 |versionPattern|`null`|
 |overrideManagedVersion|`false`|
 |changeManagedDependency|`false`|
+|changePluginDependencies||
 
 
 <Tabs groupId="beforeAfter">

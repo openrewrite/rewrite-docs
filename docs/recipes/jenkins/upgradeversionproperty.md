@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 | Type | Name | Description | Example |
 | --- | --- | --- | --- |
 | `String` | key | The name of the property key to change. | `jenkins.version` |
-| `String` | minimumVersion | Value to apply to the matching property if < this. | `2.375.1` |
+| `String` | minimumVersion | Value to apply to the matching property if &lt; this. | `2.375.1` |
 
 
 ## Used by

@@ -1,17 +1,17 @@
 ---
-title: "Exclude JUnit 4, unless Testcontainers is used"
-sidebar_label: "Exclude JUnit 4, unless Testcontainers is used"
+title: "Exclude JUnit 4, unless a test library requires it"
+sidebar_label: "Exclude JUnit 4, unless a test library requires it"
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import RunRecipe from '@site/src/components/RunRecipe';
 
-# Exclude JUnit 4, unless Testcontainers is used
+# Exclude JUnit 4, unless a test library requires it
 
 **org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers**
 
-_Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used._
+_Excludes JUnit 4 unless Testcontainers 1.x or Guava testlib requires it at runtime, even when tests use JUnit Jupiter._
 
 ## Recipe source
 
@@ -33,6 +33,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.testcontainers`
   * artifactId: `*`
   * version: `1.x`
+* [Does not include Maven dependency](../../../maven/search/doesnotincludedependency)
+  * groupId: `com.google.guava`
+  * artifactId: `guava-testlib`
 
 **Recipes**
 
@@ -48,15 +51,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 ---
 type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers
-displayName: Exclude JUnit 4, unless Testcontainers is used
+displayName: Exclude JUnit 4, unless a test library requires it
 description: |
-  Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used.
+  Excludes JUnit 4 unless Testcontainers 1.x or Guava testlib requires it at runtime, even when tests use JUnit Jupiter.
 preconditions:
   - org.openrewrite.Singleton
   - org.openrewrite.maven.search.DoesNotIncludeDependency:
       groupId: org.testcontainers
       artifactId: "*"
       version: 1.x
+  - org.openrewrite.maven.search.DoesNotIncludeDependency:
+      groupId: com.google.guava
+      artifactId: guava-testlib
 recipeList:
   - org.openrewrite.maven.ExcludeDependency:
       groupId: junit
@@ -77,7 +83,7 @@ This recipe is used as part of the following composite recipes:
 
 <RunRecipe
   recipeName="org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers"
-  displayName="Exclude JUnit 4, unless Testcontainers is used"
+  displayName="Exclude JUnit 4, unless a test library requires it"
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"

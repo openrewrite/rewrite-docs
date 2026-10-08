@@ -10,6 +10,18 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 ## org.openrewrite
 
 
+### rewrite-android
+
+* [org.openrewrite.android.UpgradeCompileSdkVersion](/recipes/android/upgradecompilesdkversion.md)
+  * **Upgrade Android `compileSdk` version**
+  * Sets the `compileSdk` (or legacy `compileSdkVersion`) value in an Android module's `android \{ \}` block. Handles literal int, string form (`'android-N'`), extra-property reference, version-catalog reference (`libs.versions.*.toml`), and `gradle.properties` reference. Will not downgrade an already-newer value.
+* [org.openrewrite.android.UpgradeMinSdkVersion](/recipes/android/upgrademinsdkversion.md)
+  * **Upgrade Android `minSdk` version**
+  * Sets the `minSdk` (or legacy `minSdkVersion`) value in an Android module's `android \{ defaultConfig \{ \} \}` block. Handles literal int, string form (`'android-N'`), extra-property reference, version-catalog reference (`libs.versions.*.toml`), and `gradle.properties` reference. Will not downgrade an already-newer value.
+* [org.openrewrite.android.UpgradeTargetSdkVersion](/recipes/android/upgradetargetsdkversion.md)
+  * **Upgrade Android `targetSdk` version**
+  * Sets the `targetSdk` (or legacy `targetSdkVersion`) value in an Android module's `android \{ defaultConfig \{ \} \}` block. Handles literal int, string form (`'android-N'`), extra-property reference, version-catalog reference (`libs.versions.*.toml`), and `gradle.properties` reference. Will not downgrade an already-newer value, and will not upgrade past `minSdkFloor` if specified.
+
 ### rewrite-core
 
 * [org.openrewrite.AddToGitignore](/recipes/core/addtogitignore.md)
@@ -60,6 +72,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.gradle.MigrateDependenciesToVersionCatalog](/recipes/gradle/migratedependenciestoversioncatalog.md)
   * **Migrate Gradle project dependencies to version catalog**
   * Migrates Gradle project dependencies to use the [version catalog](https://docs.gradle.org/current/userguide/platforms.html) feature. Supports migrating dependency declarations of various forms:  * `String` notation: `&quot;group:artifact:version&quot;`  * `Map` notation: `group: 'group', name: 'artifact', version: 'version'`  * Property references: `&quot;group:artifact:$version&quot;` or `&quot;group:artifact:$\{version\}&quot;`  The recipe will:  * Create a `gradle/libs.versions.toml` file with version declarations  * Replace dependency declarations with catalog references (e.g., `libs.springCore`)  * Migrate version properties from `gradle.properties` to the version catalog  * Preserve project dependencies unchanged  **Note:** If a version catalog already exists, the recipe will not modify it.
+* [org.openrewrite.gradle.SyncGradleExtPropertiesWithBom](/recipes/gradle/syncgradleextpropertieswithbom.md)
+  * **Sync Gradle ext properties with BOM**
+  * Downloads a BOM and compares its properties against Gradle ext properties. When the BOM defines a higher version for a property, the ext property is updated to match (or removed if `removeRedundantOverrides` is enabled, unless a build script reads it). With `removeRedundantOverrides`, a property whose value refers to an entry of `gradle.properties` is compared by that entry's value.
 * [org.openrewrite.gradle.UpdateGradleWrapper](/recipes/gradle/updategradlewrapper.md)
   * **Update Gradle wrapper**
   * Update the version of Gradle used in an existing Gradle wrapper. Queries `services.gradle.org` to determine the available releases, but prefers the artifact repository URL which already exists within the wrapper properties file. If your artifact repository does not contain the same Gradle distributions as `services.gradle.org`, then the recipe may suggest a version which is not available in your artifact repository.
@@ -116,19 +131,19 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 * [org.openrewrite.javascript.AddDependency](/recipes/javascript/adddependency.md)
   * **Add npm dependency**
-  * Add an npm dependency to `package.json` and regenerate the lock file by running the package manager. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: invokes the package manager and publishes per-project state shared with other dependency recipes.
+  * Add an npm dependency to `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency already exists in any scope, the recipe is a no-op. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 * [org.openrewrite.javascript.ChangeDependency](/recipes/javascript/changedependency.md)
   * **Change npm dependency**
-  * Renames an npm dependency in `package.json` and optionally updates its version constraint. After modifying the package.json, the lock file is regenerated by running the package manager. Not safe to use as a precondition: invokes the package manager and publishes per-project state shared with other dependency recipes.
+  * Renames an npm dependency in `package.json` and optionally updates its version constraint. After modifying the package.json, the lock file is regenerated natively, without executing the package manager. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 * [org.openrewrite.javascript.RemoveDependency](/recipes/javascript/removedependency.md)
   * **Remove npm dependency**
-  * Remove an npm dependency from `package.json` and regenerate the lock file. If the dependency does not exist in any scope, the recipe is a no-op.
+  * Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency does not exist in any scope, the recipe is a no-op.
 * [org.openrewrite.javascript.UpgradeDependencyVersion](/recipes/javascript/upgradedependencyversion.md)
   * **Upgrade npm dependency version**
-  * Upgrades the version constraint of matching npm dependencies in `package.json` and regenerates the lock file by running the package manager. Matching is by exact package name or glob pattern. v1 uses simple string inequality for the upgrade check (always overwrites). A future version will use semver to skip already-up-to-date constraints. Not safe to use as a precondition: invokes the package manager and publishes per-project state shared with other dependency recipes.
+  * Upgrades the version constraint of matching npm dependencies in `package.json` and regenerates the lock file natively, without executing the package manager. Matching is by exact package name or glob pattern. v1 uses simple string inequality for the upgrade check (always overwrites). A future version will use semver to skip already-up-to-date constraints. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 * [org.openrewrite.javascript.UpgradeTransitiveDependencyVersion](/recipes/javascript/upgradetransitivedependencyversion.md)
   * **Upgrade transitive npm dependency**
-  * Pins or upgrades a transitive npm dependency by adding an override entry to `package.json` and regenerating the lock file. For npm and Bun, adds to the `overrides` field; for Yarn, adds to `resolutions`; for pnpm, adds to `pnpm.overrides`. The override is idempotent — if the entry already exists with the same version, no change is made. Not safe to use as a precondition: invokes the package manager and publishes per-project state shared with other dependency recipes.
+  * Pins or upgrades a transitive npm dependency by adding an override entry to `package.json` and regenerating the lock file natively, without executing the package manager. For npm and Bun, adds to the `overrides` field; for Yarn, adds to `resolutions`; for pnpm, adds to `pnpm.overrides`. The override is idempotent — if the entry already exists with the same version, no change is made. Not safe to use as a precondition: consults the package registry over the network and publishes per-project state shared with other dependency recipes.
 
 ### rewrite-json
 
@@ -138,6 +153,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.json.CreateJsonFile](/recipes/json/createjsonfile.md)
   * **Create JSON file**
   * Create a new JSON file.
+
+### rewrite-mainframe
+
+* [org.openrewrite.mainframe.cobol.search.FindRelationships](/recipes/mainframe/cobol/search/findrelationships.md)
+  * **Find COBOL relationships**
+  * Build a list of relationships for diagramming and exploration.
 
 ### rewrite-maven
 
@@ -480,18 +501,30 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.testing.cleanup.TestsShouldNotBePublic](/recipes/java/testing/cleanup/testsshouldnotbepublic.md)
   * **Remove `public` visibility of JUnit 5 tests**
   * Remove `public` and optionally `protected` modifiers from methods with `@Test`, `@ParameterizedTest`, `@RepeatedTest`, `@TestFactory`, `@BeforeEach`, `@AfterEach`, `@BeforeAll`, or `@AfterAll`. They no longer have to be public visibility to be usable by JUnit 5.
+* [org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed](/recipes/java/testing/hamcrest/addhamcrestifused.md)
+  * **Add `org.hamcrest:hamcrest` if it is used**
+  * JUnit Jupiter does not include Hamcrest as a transitive dependency. Add a direct dependency for existing Hamcrest usage or ExpectedException assertions that generate Hamcrest usage during migration.
 * [org.openrewrite.java.testing.junit5.AddHamcrestJUnitDependency](/recipes/java/testing/junit5/addhamcrestjunitdependency.md)
   * **Add Hamcrest JUnit dependency**
   * Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is used.
 * [org.openrewrite.java.testing.junit5.AddJupiterDependencies](/recipes/java/testing/junit5/addjupiterdependencies.md)
   * **Add JUnit Jupiter dependencies**
-  * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present.
+  * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present. Maven projects running dependency analysis receive explicit API, engine and, when used, parameterized-test dependencies.
+* [org.openrewrite.java.testing.junit5.AddMockitoJupiterForRules](/recipes/java/testing/junit5/addmockitojupiterforrules.md)
+  * **Add Mockito Jupiter integration for migrated Mockito rules**
+  * Adds the Mockito Jupiter dependency for annotated MockitoRule and MockitoTestRule fields, matching the project's Mockito version even when Mockito is already up to date.
+* [org.openrewrite.java.testing.junit5.SystemRulesDependencies](/recipes/java/testing/junit5/systemrulesdependencies.md)
+  * **Update dependencies for the System Rules migration**
+  * Adds System Stubs and JUnit Pioneer where the System Rules migration introduces them, upgrades JUnit Pioneer to 2.x in modules that get its `@RestoreSystemProperties`, and removes System Rules from modules that no longer use it.
 * [org.openrewrite.java.testing.mockito.AddMockitoJupiterDependency](/recipes/java/testing/mockito/addmockitojupiterdependency.md)
   * **Add mockito-junit-jupiter dependency**
   * Adds `org.mockito:mockito-junit-jupiter` dependency if `@ExtendWith(MockitoExtension.class)` will be added to any test class, i.e. when Mockito annotations are used in JUnit 5 tests without the extension already present.
 * [org.openrewrite.java.testing.mockito.AnyToNullable](/recipes/java/testing/mockito/anytonullable.md)
   * **Replace Mockito 1.x `anyString()`/`any()` with `nullable(Class)`**
   * Since Mockito 2.10 `anyString()` and `any()` no longer matches null values. Use `nullable(Class)` instead.
+* [org.openrewrite.java.testing.mockito.ModuleDoesNotDeclareJUnit4](/recipes/java/testing/mockito/moduledoesnotdeclarejunit4.md)
+  * **Module does not declare JUnit 4**
+  * Searches for the sources of modules that do not declare `junit:junit` themselves, whether or not another dependency brings it in. Meant as a precondition: adding a dependency to a Maven module that already declares it upgrades the declared version.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockDependencies](/recipes/java/testing/mockito/replacepowermockdependencies.md)
   * **Replace PowerMock dependencies with Mockito equivalents**
   * Replaces PowerMock API dependencies with `mockito-inline` when `mockStatic()`, `whenNew()`, or `@PrepareForTest` usage is detected, or `mockito-core` otherwise. PowerMock features like static mocking, constructor mocking, and final class mocking require the inline mock maker which is bundled in `mockito-inline` for Mockito 3.x/4.x.

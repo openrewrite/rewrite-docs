@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.javascript.migrate.es6.modernize-octal-escape-sequences**
 
-_Convert old-style octal escape sequences (e.g., `\0`, `\123`) to modern hex escape sequences (e.g., `\x00`, `\x53`) or Unicode escape sequences (e.g., `\u0000`, `\u0053`)._
+_Convert legacy octal escape sequences in string literals (e.g., `\1`, `\123`) to hex escape sequences (e.g., `\x01`, `\x53`) or Unicode escape sequences (e.g., `\u0001`, `\u0053`). The `\0` escape is left alone unless a digit follows it._
 
 ## Recipe source
 

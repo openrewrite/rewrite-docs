@@ -11,68 +11,22 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed**
 
-_JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency._
+_JUnit Jupiter does not include Hamcrest as a transitive dependency. Add a direct dependency for existing Hamcrest usage or ExpectedException assertions that generate Hamcrest usage during migration._
 
 ### Tags
 
-* [hamcrest](/reference/recipes-by-tag#hamcrest)
 * [junit](/reference/recipes-by-tag#junit)
 * [testing](/reference/recipes-by-tag#testing)
+* [hamcrest](/reference/recipes-by-tag#hamcrest)
 
 ## Recipe source
 
-[GitHub: hamcrest.yml](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/resources/META-INF/rewrite/hamcrest.yml),
+[GitHub: AddHamcrestIfUsed.java](https://github.com/openrewrite/rewrite-testing-frameworks/blob/main/src/main/java/org/openrewrite/java/testing/hamcrest/AddHamcrestIfUsed.java),
 [Issue Tracker](https://github.com/openrewrite/rewrite-testing-frameworks/issues),
 [Code Genome Project](https://artifacts.codegenomeproject.org/maven/org/openrewrite/recipe/rewrite-testing-frameworks/)
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
-
-## Definition
-
-<Tabs groupId="recipeType">
-<TabItem value="recipe-list" label="Recipe List" >
-**Preconditions**
-
-* [Singleton](../../../core/singleton)
-
-**Recipes**
-
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `org.hamcrest`
-  * artifactId: `hamcrest`
-  * version: `2.x`
-  * onlyIfUsing: `org.hamcrest.Matchers`
-  * acceptTransitive: `true`
-
-</TabItem>
-
-<TabItem value="yaml-recipe-list" label="Yaml Recipe List">
-
-```yaml
----
-type: specs.openrewrite.org/v1beta/recipe
-name: org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
-displayName: Add `org.hamcrest:hamcrest` if it is used
-description: |
-  JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency.
-tags:
-  - hamcrest
-  - junit
-  - testing
-preconditions:
-  - org.openrewrite.Singleton
-recipeList:
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: org.hamcrest
-      artifactId: hamcrest
-      version: 2.x
-      onlyIfUsing: org.hamcrest.Matchers
-      acceptTransitive: true
-
-```
-</TabItem>
-</Tabs>
 
 ## Used by
 

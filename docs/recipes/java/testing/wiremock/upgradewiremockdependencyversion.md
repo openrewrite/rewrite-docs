@@ -119,6 +119,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
+* [Upgrade WireMock to 4.x](/recipes/java/testing/wiremock/wiremock3to4migration.md)
 
 ## Examples
 ##### Example 1

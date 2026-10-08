@@ -26,7 +26,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+* [Migrate System Rules to System Stubs and JUnit Pioneer](/recipes/java/testing/junit5/migratesystemrules.md)
 
 ## Example
 

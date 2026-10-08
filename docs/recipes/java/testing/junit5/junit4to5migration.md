@@ -45,7 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
-* [Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension](../../../java/testing/junit5/environmentvariables)
+* [Migrate System Rules to System Stubs and JUnit Pioneer](../../../java/testing/junit5/migratesystemrules)
 * [Use wiremock extension](../../../java/testing/junit5/usewiremockextension)
 * [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled)
 * [Use JUnit Jupiter `Executable`](../../../java/testing/junit5/throwingrunnabletoexecutable)
@@ -82,7 +82,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](../../../java/testing/junit5/updatemockwebserver)
 * [Use Vert.x JUnit 5 Extension](../../../java/testing/junit5/vertxunittovertxjunit5)
 * [JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`](../../../java/testing/junit5/enclosedtonested)
-* [JUnit 5 inner test classes should be annotated with `@Nested`](../../../java/testing/junit5/addmissingnested)
 * [Use OkHttp 3 MockWebServer for JUnit 5](../../../java/testing/junit5/upgradeokhttpmockwebserver)
 * [Use Mockito JUnit Jupiter extension](../../../java/testing/junit5/usemockitoextension)
 * [Add `org.hamcrest:hamcrest` if it is used](../../../java/testing/hamcrest/addhamcrestifused)
@@ -93,7 +92,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove Maven managed dependency](../../../maven/removemanageddependency)
   * groupId: `junit`
   * artifactId: `junit`
-* [Exclude JUnit 4, unless Testcontainers is used](../../../java/testing/junit5/excludejunit4unlessusingtestcontainers)
+* [Exclude JUnit 4, unless a test library requires it](../../../java/testing/junit5/excludejunit4unlessusingtestcontainers)
 * [Remove a Gradle or Maven dependency](../../../java/dependencies/removedependency)
   * groupId: `org.junit.vintage`
   * artifactId: `junit-vintage-engine`
@@ -150,7 +149,7 @@ preconditions:
       artifactIdPattern: testng*
       invertMarking: true
 recipeList:
-  - org.openrewrite.java.testing.junit5.EnvironmentVariables
+  - org.openrewrite.java.testing.junit5.MigrateSystemRules
   - org.openrewrite.java.testing.junit5.UseWiremockExtension
   - org.openrewrite.java.testing.junit5.IgnoreToDisabled
   - org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable
@@ -187,7 +186,6 @@ recipeList:
   - org.openrewrite.java.testing.junit5.UpdateMockWebServer
   - org.openrewrite.java.testing.junit5.VertxUnitToVertxJunit5
   - org.openrewrite.java.testing.junit5.EnclosedToNested
-  - org.openrewrite.java.testing.junit5.AddMissingNested
   - org.openrewrite.java.testing.junit5.UpgradeOkHttpMockWebServer
   - org.openrewrite.java.testing.junit5.UseMockitoExtension
   - org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed
@@ -801,6 +799,23 @@ Please [contact Moderne](https://moderne.io/product) for more information about 
 ## Data Tables
 
 <Tabs groupId="data-tables">
+<TabItem value="org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled" label="PowerMockTestsDisabled">
+
+### PowerMock tests disabled for manual migration
+**org.openrewrite.java.testing.mockito.table.PowerMockTestsDisabled**
+
+_Tests disabled because they use a PowerMock feature with no Mockito equivalent. Each row is an action item: rework the test so it does not reach into private members, then re-enable it._
+
+| Column Name | Description |
+| ----------- | ----------- |
+| Source path | The path of the test source file. |
+| Test class | The test class the disabled test belongs to. |
+| Disabled element | The test method that was disabled, or the class name when the usage sits outside a test method and the whole class had to be disabled. |
+| Scope | `METHOD` when a single test was disabled, `CLASS` when the whole test class was. |
+| Reason | The PowerMock usage that cannot be migrated. |
+
+</TabItem>
+
 <TabItem value="org.openrewrite.maven.table.MavenMetadataFailures" label="MavenMetadataFailures">
 
 ### Maven metadata failures

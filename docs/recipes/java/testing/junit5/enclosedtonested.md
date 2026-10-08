@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.junit5.EnclosedToNested**
 
-_Removes the `Enclosed` specification from a class, with `Nested` added to its inner classes by `AddMissingNested`._
+_Replaces the `Enclosed` runner with `@Nested` on its inner test classes, preserving independent static test classes._
 
 ## Recipe source
 

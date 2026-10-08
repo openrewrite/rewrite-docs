@@ -5531,7 +5531,7 @@ _203 recipes_
 
 _License: Moderne Source Available License_
 
-_276 recipes_
+_303 recipes_
 
 * [org.openrewrite.java.testing.archunit.ArchUnit0to1Migration](/recipes/java/testing/archunit/archunit0to1migration.md)
   * **ArchUnit 0.x upgrade**
@@ -5737,6 +5737,9 @@ _276 recipes_
 * [org.openrewrite.java.testing.assertj.MigrateAssertionsForClassTypes](/recipes/java/testing/assertj/migrateassertionsforclasstypes.md)
   * **Use `Assertions.assertThatObject` for ambiguous `AssertionsForClassTypes.assertThat` calls**
   * The deprecated `AssertionsForClassTypes.assertThat(T)` always returns an `ObjectAssert`, while the unified `Assertions.assertThat` additionally offers more specific overloads (e.g. for `Iterable`, `Map`, `Predicate`). For arguments matching those overloads, rename `assertThat` to `assertThatObject` so that migrating to `Assertions` keeps returning an `ObjectAssert` and the code keeps compiling.
+* [org.openrewrite.java.testing.assertj.PlaceAssertJDescriptionBeforeAssertion](/recipes/java/testing/assertj/placeassertjdescriptionbeforeassertion.md)
+  * **Place AssertJ descriptions and failure messages before the assertion**
+  * AssertJ only applies `as(..)`, `describedAs(..)`, `withFailMessage(..)` and `overridingErrorMessage(..)` to assertions that run after them, so when they come last in a chain they are silently ignored. This moves them back past the assertions made on the same assert object, to directly after the call that created it, such as `assertThat(..)` or a navigation like `extracting(..)`. For `assertThatThrownBy(..)` the check that something was thrown has already run by then, so the moved message only applies to the chained checks such as `isInstanceOf(..)`. Note that a moved `withFailMessage(..)` or `overridingErrorMessage(..)` replaces AssertJ's entire failure message, including the expected and actual values.
 * [org.openrewrite.java.testing.assertj.ReturnActual](/recipes/java/testing/assertj/returnactual.md)
   * **Collapse `assertThat` followed by `return` into single statement**
   * Collapse an `assertThat` statement followed by a `return` of the same object into a single `return assertThat(...).assertions().actual()` statement.
@@ -5874,7 +5877,7 @@ _276 recipes_
   * Modify test classes by removing extends EasyMockSupport and replacing EasyMock methods with Mockito equivalents.
 * [org.openrewrite.java.testing.hamcrest.AddHamcrestIfUsed](/recipes/java/testing/hamcrest/addhamcrestifused.md)
   * **Add `org.hamcrest:hamcrest` if it is used**
-  * JUnit Jupiter does not include hamcrest as a transitive dependency. If needed, add a direct dependency.
+  * JUnit Jupiter does not include Hamcrest as a transitive dependency. Add a direct dependency for existing Hamcrest usage or ExpectedException assertions that generate Hamcrest usage during migration.
 * [org.openrewrite.java.testing.hamcrest.AssertThatBooleanToAssertJ](/recipes/java/testing/hamcrest/assertthatbooleantoassertj.md)
   * **Migrate Hamcrest `assertThat(boolean, Matcher)` to AssertJ**
   * Replace Hamcrest `assertThat(String, boolean)` with AssertJ `assertThat(boolean).as(String).isTrue()`.
@@ -5943,13 +5946,16 @@ _276 recipes_
   * Add Hamcrest JUnit dependency only if JUnit 4's `assertThat` or `assumeThat` is used.
 * [org.openrewrite.java.testing.junit5.AddJupiterDependencies](/recipes/java/testing/junit5/addjupiterdependencies.md)
   * **Add JUnit Jupiter dependencies**
-  * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present.
+  * Adds JUnit Jupiter dependencies to a Maven or Gradle project. JUnit Jupiter can be added either with the artifact `junit-jupiter`, or both of `junit-jupiter-api` and `junit-jupiter-engine`. This adds `junit-jupiter` dependency unless `junit-jupiter-api` or `junit-jupiter-engine` are already present. Maven projects running dependency analysis receive explicit API, engine and, when used, parameterized-test dependencies.
 * [org.openrewrite.java.testing.junit5.AddMissingNested](/recipes/java/testing/junit5/addmissingnested.md)
   * **JUnit 5 inner test classes should be annotated with `@Nested`**
   * Adds `@Nested` to inner classes that contain JUnit 5 tests and removes `static` from them. Before Java 16 an inner class may not declare static members other than constant variables, so a static nested class that declares any other static member is marked as needing manual migration instead; sources without a known Java version are assumed to support static members.
 * [org.openrewrite.java.testing.junit5.AddMissingTestBeforeAfterAnnotations](/recipes/java/testing/junit5/addmissingtestbeforeafterannotations.md)
   * **Add missing `@BeforeEach`, `@AfterEach`, `@Test` to overriding methods**
   * Adds `@BeforeEach`, `@AfterEach`, `@Test` to methods overriding superclass methods if the annotations are present on the superclass method.
+* [org.openrewrite.java.testing.junit5.AddMockitoJupiterForRules](/recipes/java/testing/junit5/addmockitojupiterforrules.md)
+  * **Add Mockito Jupiter integration for migrated Mockito rules**
+  * Adds the Mockito Jupiter dependency for annotated MockitoRule and MockitoTestRule fields, matching the project's Mockito version even when Mockito is already up to date.
 * [org.openrewrite.java.testing.junit5.AddParameterizedTestAnnotation](/recipes/java/testing/junit5/addparameterizedtestannotation.md)
   * **Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`**
   * Add missing `@ParameterizedTest` annotation when `@ValueSource` is used or replace `@Test` with `@ParameterizedTest`.
@@ -5988,16 +5994,19 @@ _276 recipes_
   * Replaces JUnit 5's `@CsvSource` annotation with `@ValueSource` when the parameterized test has only a single method argument.
 * [org.openrewrite.java.testing.junit5.EnclosedToNested](/recipes/java/testing/junit5/enclosedtonested.md)
   * **JUnit 4 `@RunWith(Enclosed.class)` to JUnit Jupiter `@Nested`**
-  * Removes the `Enclosed` specification from a class, with `Nested` added to its inner classes by `AddMissingNested`.
+  * Replaces the `Enclosed` runner with `@Nested` on its inner test classes, preserving independent static test classes.
 * [org.openrewrite.java.testing.junit5.EnvironmentVariables](/recipes/java/testing/junit5/environmentvariables.md)
   * **Migrate JUnit 4 environmentVariables rule to JUnit 5 system stubs extension**
   * Replaces usage of the JUnit 4 `@Rule EnvironmentVariables` with the JUnit 5-compatible `SystemStubsExtension` and `@SystemStub EnvironmentVariables` from the System Stubs library.
 * [org.openrewrite.java.testing.junit5.ExcludeJUnit4UnlessUsingTestcontainers](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
-  * **Exclude JUnit 4, unless Testcontainers is used**
-  * Excludes JUnit 4, as it ought not to be necessary in a JUnit 5 project, unless Testcontainers is used.
+  * **Exclude JUnit 4, unless a test library requires it**
+  * Excludes JUnit 4 unless Testcontainers 1.x or Guava testlib requires it at runtime, even when tests use JUnit Jupiter.
 * [org.openrewrite.java.testing.junit5.ExpectedExceptionToAssertThrows](/recipes/java/testing/junit5/expectedexceptiontoassertthrows.md)
   * **JUnit 4 `ExpectedException` To JUnit Jupiter's `assertThrows()`**
   * Replace usages of JUnit 4's `@Rule ExpectedException` with JUnit 5's `Assertions.assertThrows()`.
+* [org.openrewrite.java.testing.junit5.ExpectedSystemExitToCatchSystemExit](/recipes/java/testing/junit5/expectedsystemexittocatchsystemexit.md)
+  * **Migrate System Rules `ExpectedSystemExit` to System Stubs `catchSystemExit(..)`**
+  * Replaces System Rules' `ExpectedSystemExit` rule with System Stubs' `catchSystemExit(..)`, which runs the rest of the test in a lambda and returns the exit status for an `assertEquals(..)`. Assertions registered through `checkAssertionAfterwards(..)` are inlined after it. Rules that other classes may use, or that set expectations outside of the test method body, get a `TODO` comment instead.
 * [org.openrewrite.java.testing.junit5.GradleUseJunitJupiter](/recipes/java/testing/junit5/gradleusejunitjupiter.md)
   * **Gradle `Test` use JUnit Jupiter**
   * By default Gradle's `Test` tasks use JUnit 4. Gradle `Test` tasks must be configured with `useJUnitPlatform()` to run JUnit Jupiter tests. This recipe adds the `useJUnitPlatform()` method call to the `Test` task configuration.
@@ -6034,6 +6043,9 @@ _276 recipes_
 * [org.openrewrite.java.testing.junit5.MigrateJUnitTestCase](/recipes/java/testing/junit5/migratejunittestcase.md)
   * **Migrate JUnit 4 `TestCase` to JUnit Jupiter**
   * Convert JUnit 4 `TestCase` to JUnit Jupiter.
+* [org.openrewrite.java.testing.junit5.MigrateSystemRules](/recipes/java/testing/junit5/migratesystemrules.md)
+  * **Migrate System Rules to System Stubs and JUnit Pioneer**
+  * Migrates the JUnit 4 rules of System Rules (`com.github.stefanbirkner:system-rules`) as part of the JUnit 4 to 5 migration. System property rules that only take string literals become JUnit Pioneer annotations; the other system property, environment variable, standard stream and standard input rules become System Stubs `@SystemStub` fields, and `ExpectedSystemExit` becomes System Stubs' `catchSystemExit(..)`. Rules that can not be migrated get a `TODO` comment, and System Rules is only removed once nothing uses it.
 * [org.openrewrite.java.testing.junit5.MockitoJUnitToMockitoExtension](/recipes/java/testing/junit5/mockitojunittomockitoextension.md)
   * **JUnit 4 `MockitoJUnit` to JUnit Jupiter `MockitoExtension`**
   * Replaces `MockitoJUnit` rules with `MockitoExtension`.
@@ -6055,6 +6067,15 @@ _276 recipes_
 * [org.openrewrite.java.testing.junit5.StaticImports](/recipes/java/testing/junit5/staticimports.md)
   * **Statically import JUnit Jupiter assertions**
   * Always use a static import for assertion methods.
+* [org.openrewrite.java.testing.junit5.SystemPropertyRulesToPioneer](/recipes/java/testing/junit5/systempropertyrulestopioneer.md)
+  * **Migrate System Rules system property rules to JUnit Pioneer annotations**
+  * Replaces System Rules' `ProvideSystemProperty`, `ClearSystemProperties` and `RestoreSystemProperties` rules with JUnit Pioneer's `@SetSystemProperty`, `@ClearSystemProperty` and `@RestoreSystemProperties` class annotations. Only rules that take string literals and are not used elsewhere in the test are migrated; `SystemRulesToSystemStubs` handles the rest.
+* [org.openrewrite.java.testing.junit5.SystemRulesDependencies](/recipes/java/testing/junit5/systemrulesdependencies.md)
+  * **Update dependencies for the System Rules migration**
+  * Adds System Stubs and JUnit Pioneer where the System Rules migration introduces them, upgrades JUnit Pioneer to 2.x in modules that get its `@RestoreSystemProperties`, and removes System Rules from modules that no longer use it.
+* [org.openrewrite.java.testing.junit5.SystemRulesToSystemStubs](/recipes/java/testing/junit5/systemrulestosystemstubs.md)
+  * **Migrate System Rules to System Stubs**
+  * Replaces System Rules' `ProvideSystemProperty`, `ClearSystemProperties`, `RestoreSystemProperties`, `SystemOutRule`, `SystemErrRule`, `StandardOutputStreamLog`, `StandardErrorStreamLog`, `DisallowWriteToSystemOut`, `DisallowWriteToSystemErr` and `TextFromStandardInputStream` rules with `@SystemStub` fields of the System Stubs JUnit Jupiter extension. A rule is only migrated when every use of it has a System Stubs equivalent; other rules get a `TODO` comment.
 * [org.openrewrite.java.testing.junit5.TempDirNonFinal](/recipes/java/testing/junit5/tempdirnonfinal.md)
   * **Make `@TempDir` fields non final**
   * Make JUnit 5's `org.junit.jupiter.api.io.TempDir` fields non final.
@@ -6136,6 +6157,9 @@ _276 recipes_
 * [org.openrewrite.java.testing.junit6.RemoveJreOther](/recipes/java/testing/junit6/removejreother.md)
   * **Remove deprecated `JRE.OTHER` from `@EnabledOnJre`/`@DisabledOnJre` arrays**
   * JUnit 6.1 deprecated `JRE.OTHER` in favor of `int`/`int[]` annotation attributes. This recipe removes `JRE.OTHER` entries from `@EnabledOnJre` and `@DisabledOnJre` array values when other JRE constants remain. Lone `JRE.OTHER` usages are left untouched because they have no mechanical replacement; review them manually.
+* [org.openrewrite.java.testing.mockito.AddJUnit4ReplacingPowerMockModule](/recipes/java/testing/mockito/addjunit4replacingpowermockmodule.md)
+  * **Add JUnit 4 where the PowerMock JUnit 4 module provided it**
+  * Adds `junit:junit` to modules that use JUnit 4 and depend on `powermock-module-junit4`, which brings JUnit 4 in transitively, so that their tests still compile once the PowerMock dependencies are removed. A module that declares `junit:junit` itself is left as it is.
 * [org.openrewrite.java.testing.mockito.AddMockitoExtensionIfAnnotationsUsed](/recipes/java/testing/mockito/addmockitoextensionifannotationsused.md)
   * **Adds Mockito extensions to Mockito tests**
   * Adds `@ExtendWith(MockitoExtension.class)` to JUnit 5 tests or `@RunWith(MockitoJUnitRunner.class)` to JUnit 4 tests using Mockito annotations like `@Mock` or `@Captor`.
@@ -6166,6 +6190,15 @@ _276 recipes_
 * [org.openrewrite.java.testing.mockito.CloseUnclosedStaticMocks](/recipes/java/testing/mockito/closeunclosedstaticmocks.md)
   * **Close unclosed static mocks**
   * Ensures that all `mockStatic` calls are properly closed. If `mockStatic` is in lifecycle methods like `@BeforeEach` or `@BeforeAll`, creates a class variable and closes it in `@AfterEach` or `@AfterAll`. If `mockStatic` is inside a test method, wraps it in a try-with-resources block.
+* [org.openrewrite.java.testing.mockito.DisableUnsupportedPowerMockTests](/recipes/java/testing/mockito/disableunsupportedpowermocktests.md)
+  * **Disable tests using PowerMock features with no Mockito equivalent**
+  * Disables tests that reach into private members through PowerMock, which Mockito deliberately does not support, so that the rest of the repository can migrate. The test is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore` and recorded in a data table as an action item: rework the test not to depend on private members, then re-enable it. A usage outside a test method, such as in a setup method or a class-level annotation, disables the whole class.
+* [org.openrewrite.java.testing.mockito.ExcludeMockitoAllReplacingPowerMock](/recipes/java/testing/mockito/excludemockitoallreplacingpowermock.md)
+  * **Exclude a transitive `mockito-all` from modules that move off PowerMock**
+  * Excludes `mockito-all` from the dependencies that bring it into a module that depends on the PowerMock Mockito API. `mockito-all` is a 1.x-only uber jar with its own `org.mockito.Mockito`, which shadows the one of the Mockito 3.x that replaces PowerMock wherever it comes first on the classpath, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. The Hamcrest 1.1 and Objenesis classes bundled in `mockito-all` go with it. Only the Maven dependencies declared in the module itself are excluded from, not those it inherits from a parent that does not depend on PowerMock. Where `UpgradeMockitoCoreReplacingPowerMock` runs again in a later cycle, it pairs the exclusion with one of `mockito-core`, which is harmless as the module declares the Mockito that replaces PowerMock.
+* [org.openrewrite.java.testing.mockito.FlagUnsupportedPowerMockUsage](/recipes/java/testing/mockito/flagunsupportedpowermockusage.md)
+  * **Flag PowerMock usage that cannot be migrated to Mockito**
+  * Adds a comment to PowerMock usages that cannot be migrated to Mockito, such as `MemberModifier.suppress`, `PowerMockito.verifyNew` or stubbing private methods. Repositories with such usage are left on PowerMock by `ReplacePowerMockito`, so these need to be migrated manually first.
 * [org.openrewrite.java.testing.mockito.MockConstructionToTryWithResources](/recipes/java/testing/mockito/mockconstructiontotrywithresources.md)
   * **Wrap `MockedConstruction` in try-with-resources**
   * Wraps `MockedConstruction` variable declarations that have explicit `.close()` calls into try-with-resources blocks, removing the explicit close call. This ensures proper resource management and makes the code cleaner.
@@ -6196,15 +6229,18 @@ _276 recipes_
 * [org.openrewrite.java.testing.mockito.MockitoWhenOnStaticToMockStatic](/recipes/java/testing/mockito/mockitowhenonstatictomockstatic.md)
   * **Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic**
   * Replace `Mockito.when` on static (non mock) with try-with-resource with MockedStatic as Mockito4 no longer allows this. For JUnit 4/5 &amp; TestNG: When `@Before*` is used, a `close` call is added to the corresponding `@After*` method. This change moves away from implicit bytecode manipulation for static method stubbing, making mocking behavior more explicit and scoped to avoid unintended side effects.
+* [org.openrewrite.java.testing.mockito.ModuleDoesNotDeclareJUnit4](/recipes/java/testing/mockito/moduledoesnotdeclarejunit4.md)
+  * **Module does not declare JUnit 4**
+  * Searches for the sources of modules that do not declare `junit:junit` themselves, whether or not another dependency brings it in. Meant as a precondition: adding a dependency to a Maven module that already declares it upgrades the declared version.
 * [org.openrewrite.java.testing.mockito.PowerMockRunnerDelegateToRunWith](/recipes/java/testing/mockito/powermockrunnerdelegatetorunwith.md)
   * **Replace PowerMock runner with JUnit `@RunWith`**
-  * Replaces `@RunWith(PowerMockRunner.class)`. If `@PowerMockRunnerDelegate(X.class)` is present, promotes the delegate runner to `@RunWith(X.class)`. Otherwise, replaces it with `@RunWith(MockitoJUnitRunner.class)` when the class uses Mockito annotations like `@Mock`, or removes the `@RunWith(PowerMockRunner.class)` annotation entirely.
+  * Replaces `@RunWith(PowerMockRunner.class)`. If `@PowerMockRunnerDelegate(X.class)` is present, promotes the delegate runner to `@RunWith(X.class)`. Otherwise, replaces it with `@RunWith(MockitoJUnitRunner.Silent.class)` when the class uses Mockito annotations like `@Mock`, or removes the `@RunWith(PowerMockRunner.class)` annotation entirely.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetFieldToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxgetfieldtojavareflection.md)
   * **Replace PowerMock `Whitebox.getField()` with Java reflection**
   * Replace `Whitebox.getField(Class, String)` with `Class.getDeclaredField(String)` plus `setAccessible(true)`. Unlike PowerMock, `getDeclaredField` does not traverse the class hierarchy for fields inherited from a superclass.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetInternalStateToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxgetinternalstatetojavareflection.md)
   * **Replace PowerMock `Whitebox.getInternalState()` with Java reflection**
-  * Replace `Whitebox.getInternalState(Object, String)` with `java.lang.reflect.Field` access, casting to the declared result type where needed. The field lookup uses `getDeclaredField` on the target object's class, which differs from PowerMock's class-hierarchy traversal for fields inherited from a superclass.
+  * Replace `Whitebox.getInternalState(Object, String)` with `java.lang.reflect.Field` access, casting to the declared result type where needed. The field is looked up on the class declaring it, found through the target's declared type and its superclasses, which also covers Mockito spies and mocks; when that class cannot be determined, the target's runtime class is used. A call nested in a larger expression is replaced by `field.get(target)`, with the `Field` declared before the enclosing statement.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxGetMethodToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxgetmethodtojavareflection.md)
   * **Replace PowerMock `Whitebox.getMethod()` with Java reflection**
   * Replace `Whitebox.getMethod(Class, String, Class...)` with `Class.getDeclaredMethod(String, Class...)` plus `setAccessible(true)`. Unlike PowerMock, `getDeclaredMethod` does not traverse the class hierarchy; calls passing an explicit `Class[]` array are left unchanged for manual migration.
@@ -6213,22 +6249,28 @@ _276 recipes_
   * Replace `Whitebox.invokeConstructor(..)` with `java.lang.reflect.Constructor` lookup and `newInstance()` on the named class. Constructor parameter types are taken from the unambiguously resolved constructor, falling back to each argument's compile-time class; arrays passed to the `Object...` varargs overload are left unchanged for manual migration.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxInvokeMethodToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxinvokemethodtojavareflection.md)
   * **Replace PowerMock `Whitebox.invokeMethod()` with Java reflection**
-  * Replace `Whitebox.invokeMethod(Object, String, ..)` with `java.lang.reflect.Method` lookup and `invoke()`. Parameter types are taken from the unambiguously resolved target method, falling back to each argument's compile-time class.
+  * Replace `Whitebox.invokeMethod(Object, String, ..)` with `java.lang.reflect.Method` lookup and `invoke()`. The method is looked up on the class declaring the unambiguously resolved target method, which also covers Mockito spies and mocks, and its parameter types are taken from that method, falling back to the target's runtime class and each argument's compile-time class. A call nested in a larger expression is replaced by `method.invoke(target, ..)`, with the `Method` declared before the enclosing statement.
+* [org.openrewrite.java.testing.mockito.PowerMockWhiteboxSetInternalStateToInjectMocks](/recipes/java/testing/mockito/powermockwhiteboxsetinternalstatetoinjectmocks.md)
+  * **Replace PowerMock `Whitebox.setInternalState()` with `@InjectMocks`**
+  * Replaces `Whitebox.setInternalState(objectUnderTest, &quot;field&quot;, mock)` with Mockito's own field injection, annotating the object under test with `@InjectMocks`. Only applies when the value is a `@Mock` or `@Spy` field whose name matches the field being set, so that Mockito injects the same mock the call did; other calls are left to the reflection-based recipe.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxSetInternalStateToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxsetinternalstatetojavareflection.md)
   * **Replace PowerMock `Whitebox.setInternalState()` with Java reflection**
-  * Replace `Whitebox.setInternalState(Object, String, Object)` and `Whitebox.setInternalState(Object, String, Object, Class)` with `java.lang.reflect.Field` access. The 3-arg overload looks up the field on the target's class; the 4-arg where-overload uses the supplied Class to resolve fields declared on a superclass.
+  * Replace `Whitebox.setInternalState(Object, String, Object)` and `Whitebox.setInternalState(Object, String, Object, Class)` (and their `Object[]` overloads) with `java.lang.reflect.Field` access. The 3-arg overload looks up the field on the class declaring it, found through the target's declared type and its superclasses, falling back to the target's runtime class; the 4-arg where-overload uses the supplied Class.
 * [org.openrewrite.java.testing.mockito.PowerMockWhiteboxToJavaReflection](/recipes/java/testing/mockito/powermockwhiteboxtojavareflection.md)
   * **Replace PowerMock `Whitebox` with Java reflection**
   * Replace `org.powermock.reflect.Whitebox` calls (`setInternalState`, `getInternalState`, `invokeMethod`, `getField`, `getMethod`, `invokeConstructor`) with plain Java reflection using `java.lang.reflect.Field`, `java.lang.reflect.Method`, and `java.lang.reflect.Constructor`.
+* [org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingTargetToMockito](/recipes/java/testing/mockito/powermockitodostubbingtargettomockito.md)
+  * **Replace `PowerMockito.doX()` with `Mockito.doX()`**
+  * Retargets `PowerMockito`'s `doReturn`, `doThrow`, `doAnswer` and `doNothing` to `Mockito`, except in files that still stub a member by name. There `Stubber.when(Object, String, ...)` has no Mockito counterpart, so the whole chain has to stay on PowerMock to keep compiling.
 * [org.openrewrite.java.testing.mockito.PowerMockitoDoStubbingToMockito](/recipes/java/testing/mockito/powermockitodostubbingtomockito.md)
   * **Replace PowerMockito `doX().when(instance, &quot;method&quot;)` with Mockito-compatible stubbing**
   * Replaces PowerMockito's private method stubbing pattern `doNothing().when(instance, &quot;methodName&quot;, args...)` with the standard Mockito pattern `doNothing().when(instance).methodName(args...)`.
 * [org.openrewrite.java.testing.mockito.PowerMockitoMockStaticToMockito](/recipes/java/testing/mockito/powermockitomockstatictomockito.md)
   * **Replace `PowerMock.mockStatic()` with `Mockito.mockStatic()`**
-  * Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`. Removes the `@PrepareForTest` annotation.
+  * Replaces `PowerMockito.mockStatic()` by `Mockito.mockStatic()`, assigning the resulting `MockedStatic` to a field that is closed after each test, so the static mock stays active for exactly the same part of the test as before. Also migrates `PowerMockito.verifyStatic()` and static stubbing, and removes the `@PrepareForTest` annotation.
 * [org.openrewrite.java.testing.mockito.PowerMockitoWhenNewToMockito](/recipes/java/testing/mockito/powermockitowhennewtomockito.md)
   * **Replace `PowerMockito.whenNew` with Mockito counterpart**
-  * Replaces `PowerMockito.whenNew` calls with respective `Mockito.whenConstructed` calls.
+  * Replaces `PowerMockito.whenNew(Type.class).with...().thenReturn(instance)` with `Mockito.mockConstructionWithAnswer(Type.class, delegatesTo(instance))`, assigned to a field that is closed after each test. Every `Type` constructed while the mock is active delegates to `instance`, so stubbing and verification on `instance` keep working. Constructor argument matchers are not retained, and when the same type is stubbed more than once in a method, the calls are left unchanged.
 * [org.openrewrite.java.testing.mockito.RemoveDoNothingForDefaultMocks](/recipes/java/testing/mockito/removedonothingfordefaultmocks.md)
   * **Remove `doNothing()` for void methods on `@Mock` fields**
   * Remove unnecessary `doNothing()` stubbings for void methods on `@Mock` fields. Mockito mocks already do nothing for void methods by default, making these stubbings redundant and triggering strict stubbing violations in Mockito 3+.
@@ -6238,6 +6280,12 @@ _276 recipes_
 * [org.openrewrite.java.testing.mockito.RemovePowerMockClassExtensions](/recipes/java/testing/mockito/removepowermockclassextensions.md)
   * **Remove PowerMock class extensions**
   * Removes `extends PowerMockConfiguration` and `extends PowerMockTestCase` from test classes, as these are PowerMock-specific base classes not needed with Mockito.
+* [org.openrewrite.java.testing.mockito.RemovePowerMockDependencies](/recipes/java/testing/mockito/removepowermockdependencies.md)
+  * **Swap the PowerMock dependencies for Mockito**
+  * Replaces and then removes the PowerMock dependencies. Usage that cannot be migrated has been commented out by `DisableUnsupportedPowerMockTests`, so no code refers to PowerMock by the time this runs. Leaving PowerMock on the classpath is not an option: it registers its own `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on.
+* [org.openrewrite.java.testing.mockito.RemovePowerMockRule](/recipes/java/testing/mockito/removepowermockrule.md)
+  * **Remove `PowerMockRule` fields**
+  * Removes JUnit 4 `@Rule PowerMockRule` fields, which bootstrap PowerMock like the `PowerMockRunner` does, and are not needed with Mockito.
 * [org.openrewrite.java.testing.mockito.RemoveTimesZeroAndOne](/recipes/java/testing/mockito/removetimeszeroandone.md)
   * **Remove `Mockito.times(0)` and `Mockito.times(1)`**
   * Remove `Mockito.times(0)` and `Mockito.times(1)` from `Mockito.verify()` calls.
@@ -6261,13 +6309,19 @@ _276 recipes_
   * Replaces PowerMock API dependencies with `mockito-inline` when `mockStatic()`, `whenNew()`, or `@PrepareForTest` usage is detected, or `mockito-core` otherwise. PowerMock features like static mocking, constructor mocking, and final class mocking require the inline mock maker which is bundled in `mockito-inline` for Mockito 3.x/4.x.
 * [org.openrewrite.java.testing.mockito.ReplacePowerMockito](/recipes/java/testing/mockito/replacepowermockito.md)
   * **Replace PowerMock with raw Mockito**
-  * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.
+  * PowerMockito with raw Mockito; best executed as part of a Mockito upgrade.  Tests that mock, stub or verify private members are disabled rather than migrated. Mockito does not support reaching into private state by design, and a test that depends on it is testing an implementation detail, so the intended follow-up is a review that reworks each one to exercise the type through its public API -- not a like-for-like translation. Each disabled test keeps its original body as a comment for that review, is annotated `@Disabled`, `@Ignore` or TestNG's `@Ignore`, and is listed as an action item in the `PowerMockTestsDisabled` data table. Commenting the body out is what lets the PowerMock dependency be removed, so the rest of the repository moves off PowerMock and its tests keep running: PowerMock registers its own Mockito `MockMaker`, which cannot create the static and construction mocks the migrated tests rely on, so the two cannot share a classpath.
+* [org.openrewrite.java.testing.mockito.ReplacePowerMockitoUsages](/recipes/java/testing/mockito/replacepowermockitousages.md)
+  * **Replace PowerMock usages with Mockito**
+  * Replaces the PowerMock API, runners, rules and annotations used in Java sources with their Mockito counterparts, and PowerMock `Whitebox` with Java reflection. Build files are left unchanged.
 * [org.openrewrite.java.testing.mockito.SimplifyMockitoVerifyWhenGiven](/recipes/java/testing/mockito/simplifymockitoverifywhengiven.md)
   * **Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified**
   * Fixes Sonar issue `java:S6068`: Call to Mockito method &quot;verify&quot;, &quot;when&quot; or &quot;given&quot; should be simplified.
 * [org.openrewrite.java.testing.mockito.ThenThrowCheckedExceptionToRuntimeException](/recipes/java/testing/mockito/thenthrowcheckedexceptiontoruntimeexception.md)
   * **Replace undeclared checked exceptions in `thenThrow` with `RuntimeException`**
   * In Mockito 3+, `thenThrow()` validates that checked exceptions are declared in the mocked method's `throws` clause. This recipe replaces checked exception class literals in `thenThrow()` calls with `RuntimeException.class` when the mocked method does not declare the exception.
+* [org.openrewrite.java.testing.mockito.UpgradeMockitoCoreReplacingPowerMock](/recipes/java/testing/mockito/upgrademockitocorereplacingpowermock.md)
+  * **Upgrade `mockito-core` along with the Mockito that replaces PowerMock**
+  * Upgrades an explicitly declared `mockito-core` to at least the Mockito 3.x that replaces the PowerMock Mockito API. An older `mockito-core` would otherwise take precedence over the one `mockito-inline` depends on, so that `Mockito.mockStatic` and `MockedStatic` do not resolve. `mockito-all` is a 1.x-only uber jar with no 3.x release, so it becomes `mockito-core` first. A declared `mockito-inline` is upgraded as well, as before 3.4 it depends on a `mockito-core` without `Mockito.mockStatic`.
 * [org.openrewrite.java.testing.mockito.VerifyZeroToNoMoreInteractions](/recipes/java/testing/mockito/verifyzerotonomoreinteractions.md)
   * **Replace `verifyZeroInteractions()` with `verifyNoMoreInteractions()`**
   * Replaces `verifyZeroInteractions()` with `verifyNoMoreInteractions()` in Mockito tests when migration when using a Mockito version &lt; 3.x.
@@ -6358,9 +6412,36 @@ _276 recipes_
 * [org.openrewrite.java.testing.truth.TruthThrowableAssertions](/recipes/java/testing/truth/truththrowableassertions.md)
   * **Convert Truth Throwable assertions to AssertJ**
   * Converts Google Truth's Throwable assertion chains like `hasMessageThat().contains()` to AssertJ equivalents.
+* [org.openrewrite.java.testing.wiremock.MigrateContentTypeHeaderCharset](/recipes/java/testing/wiremock/migratecontenttypeheadercharset.md)
+  * **Preserve the UTF-8 default of `ContentTypeHeader.charset()`**
+  * WireMock 3's `ContentTypeHeader.charset()` fell back to `UTF_8` when the header was missing or carried no charset, while 4.x returns an `Optional` that is empty in those cases. Append `orElse(StandardCharsets.UTF_8)` so the value stays what it was; reaching for `get()` or `orElse(null)` instead, which is the easy way to make the compiler happy, would turn a missing charset into an exception or a null.
+* [org.openrewrite.java.testing.wiremock.MigrateRequestMethodIsOneOf](/recipes/java/testing/wiremock/migraterequestmethodisoneof.md)
+  * **Migrate `RequestMethod.isOneOf` to the matcher it became**
+  * WireMock 3's `isOneOf` was an instance method answering whether the method was one of those given. In 4.x it is static and builds a matcher instead, so `method.isOneOf(GET, POST)` quietly stops being a boolean. Rewrite it as `RequestMethod.isOneOf(GET, POST).match(method).isExactMatch()`, which asks the same question of the new API.
+* [org.openrewrite.java.testing.wiremock.MigrateStubMappingUuidToId](/recipes/java/testing/wiremock/migratestubmappinguuidtoid.md)
+  * **Migrate the `uuid` field in WireMock stub mapping files to `id`**
+  * WireMock 3 serialized a stub mapping's identifier as both `id` and `uuid`, but 4.x dropped the redundant `uuid` field. A stub that carries only `uuid` still parses under 4.x, silently getting a randomly generated identifier instead, which breaks anything addressing the stub by id such as `removeStub`, `editStub` or `PUT /__admin/mappings/\{id\}`. Rename `uuid` to `id`, or drop it where an `id` is already present. Only stub mapping files are considered, meaning JSON below a `mappings` directory holding an object with a `request` or `response` member and a `uuid` holding a UUID.
+* [org.openrewrite.java.testing.wiremock.RemoveDuplicateContentTypeHeader](/recipes/java/testing/wiremock/removeduplicatecontenttypeheader.md)
+  * **Keep a single `Content-Type` response header on WireMock stubs**
+  * WireMock 3 ran on Jetty 11, which stripped every `Content-Type` response header but the last, so a stub configured with several of them served only one. WireMock 4 returns all of them, and some clients reject a response carrying more than one. Keep only the last value, which is the one WireMock 3 actually sent. This is a 3 to 4 migration step: run against a project already on 4.x that deliberately serves more than one `Content-Type`, it would drop values that are currently reaching the client.
+* [org.openrewrite.java.testing.wiremock.RemoveDuplicateContentTypeHeaders](/recipes/java/testing/wiremock/removeduplicatecontenttypeheaders.md)
+  * **Keep a single `Content-Type` response header while still on WireMock 3**
+  * Collapse duplicate `Content-Type` response headers in both stub files and the Java DSL, but only where the module still depends on WireMock 3.x. Jetty 11 already served a single value there, so dropping the rest changes nothing; against 4.x the extra values really do reach the client, and removing them would.
+* [org.openrewrite.java.testing.wiremock.RemoveDuplicateContentTypeStubHeader](/recipes/java/testing/wiremock/removeduplicatecontenttypestubheader.md)
+  * **Keep a single `Content-Type` response header in WireMock stub files**
+  * WireMock 3 ran on Jetty 11, which stripped every `Content-Type` response header but the last, so a stub file listing several of them served only one. WireMock 4 returns all of them, and some clients reject a response carrying more than one. Keep only the last value, which is the one WireMock 3 actually sent. Only JSON below a `mappings` directory is considered, and request header matchers are untouched, since those hold matcher objects rather than plain strings. This is a 3 to 4 migration step: run against a project already on 4.x that deliberately serves more than one `Content-Type`, it would drop values that are currently reaching the client.
+* [org.openrewrite.java.testing.wiremock.ReplaceRemovedConstructors](/recipes/java/testing/wiremock/replaceremovedconstructors.md)
+  * **Replace WireMock constructors removed in 4.x**
+  * WireMock 4 made its primary domain classes immutable, leaving only the canonical all arguments constructor on each and moving everything else behind a builder. Replace the removed convenience constructors of `StubMapping`, `ResponseDefinition`, `RequestPattern` and `WireMock` with the equivalent builder call, and `RequestPattern.everything()` with `RequestPattern.ANYTHING`.
+* [org.openrewrite.java.testing.wiremock.ReplaceSettersWithTransform](/recipes/java/testing/wiremock/replacesetterswithtransform.md)
+  * **Replace WireMock setter calls with `transform()`**
+  * WireMock 4 made `StubMapping` and `ResponseDefinition` immutable, removing their setters in favour of a builder reached through `transform(Consumer&lt;Builder&gt;)`. Rewrite in place mutation such as `stubMapping.setRequest(pattern);` to `stubMapping = stubMapping.transform(builder -&gt; builder.setRequest(pattern));`, collapsing consecutive setter calls on the same receiver into a single `transform` call.
 * [org.openrewrite.java.testing.wiremock.UpgradeWiremockDependencyVersion](/recipes/java/testing/wiremock/upgradewiremockdependencyversion.md)
   * **Upgrade WireMock to 3.x**
   * Migrate WireMock dependencies from the old `com.github.tomakehurst` coordinates to the new `org.wiremock` coordinates. WireMock 3.x changed its Maven coordinates and requires Java 11 or higher. Old 2.x versions contain CVE-2023-44487.
+* [org.openrewrite.java.testing.wiremock.Wiremock3to4Migration](/recipes/java/testing/wiremock/wiremock3to4migration.md)
+  * **Upgrade WireMock to 4.x**
+  * Upgrade WireMock to 4.x, which requires Java 17, ships Jetty 12.1 by default, splits JUnit support out into separate modules and makes the primary domain classes immutable. Note that `RequestMethod.GET_OR_HEAD` is a multi method matcher in 4.x rather than a method named `GET_OR_HEAD`, so code reading a name off that particular constant needs a look.
 
 ## rewrite-third-party
 

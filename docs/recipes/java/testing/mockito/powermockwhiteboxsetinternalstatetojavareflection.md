@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.testing.mockito.PowerMockWhiteboxSetInternalStateToJavaReflection**
 
-_Replace `Whitebox.setInternalState(Object, String, Object)` and `Whitebox.setInternalState(Object, String, Object, Class)` with `java.lang.reflect.Field` access. The 3-arg overload looks up the field on the target's class; the 4-arg where-overload uses the supplied Class to resolve fields declared on a superclass._
+_Replace `Whitebox.setInternalState(Object, String, Object)` and `Whitebox.setInternalState(Object, String, Object, Class)` (and their `Object[]` overloads) with `java.lang.reflect.Field` access. The 3-arg overload looks up the field on the class declaring it, found through the target's declared type and its superclasses, falling back to the target's runtime class; the 4-arg where-overload uses the supplied Class._
 
 ## Recipe source
 
@@ -61,7 +61,7 @@ import java.lang.reflect.Field;
 class MyServiceTest {
     void testSetField() throws Exception {
         MyService service = new MyService();
-        Field nameField = service.getClass().getDeclaredField("name");
+        Field nameField = MyService.class.getDeclaredField("name");
         nameField.setAccessible(true);
         nameField.set(service, "expectedValue");
     }
@@ -86,7 +86,7 @@ class MyServiceTest {
     void testSetField() {
         MyService service = new MyService();
 -       Whitebox.setInternalState(service, "name", "expectedValue");
-+       Field nameField = service.getClass().getDeclaredField("name");
++       Field nameField = MyService.class.getDeclaredField("name");
 +       nameField.setAccessible(true);
 +       nameField.set(service, "expectedValue");
     }

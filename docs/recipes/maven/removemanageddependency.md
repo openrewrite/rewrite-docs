@@ -46,7 +46,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
 * [Remove JUnit Jupiter migrationsupport](/recipes/java/testing/junit/removejupitermigrationsupport.md)
 * [Remove the orphaned Spring Retry version pin](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/removespringretryversionpin)
-* [Replace PowerMock with raw Mockito](/recipes/java/testing/mockito/replacepowermockito.md)
+* [Swap the PowerMock dependencies for Mockito](/recipes/java/testing/mockito/removepowermockdependencies.md)
 
 ## Example
 

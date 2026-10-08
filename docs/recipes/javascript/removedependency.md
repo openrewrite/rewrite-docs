@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.javascript.RemoveDependency**
 
-_Remove an npm dependency from `package.json` and regenerate the lock file. If the dependency does not exist in any scope, the recipe is a no-op._
+_Remove an npm dependency from `package.json` and regenerate the lock file natively, without executing the package manager. If the dependency does not exist in any scope, the recipe is a no-op._
 
 ## Recipe source
 
@@ -33,6 +33,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
+* [Remove the `express-request-id` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/express-request-id/remove-unused-express-request-id-dependency)
+* [Remove the `fs-extra` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs-extra/remove-unused-fs-extra-dependency)
+* [Remove the `source-map-support` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/source-map-support/remove-unused-source-map-support-dependency)
 * [Replace `node-sass` with `sass`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
 
 

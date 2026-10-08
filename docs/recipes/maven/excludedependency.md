@@ -34,7 +34,8 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Exclude JUnit 4, unless Testcontainers is used](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
+* [Exclude JUnit 4, unless a test library requires it](/recipes/java/testing/junit5/excludejunit4unlessusingtestcontainers.md)
+* [Exclude a transitive `mockito-all` from modules that move off PowerMock](/recipes/java/testing/mockito/excludemockitoallreplacingpowermock.md)
 * [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Lombok Best Practices](/recipes/java/migrate/lombok/lombokbestpractices.md)
 * [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
