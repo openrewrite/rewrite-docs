@@ -20,6 +20,8 @@ If you want to see your project on this list - please feel free to click on the 
   * A framework for building event-driven microservice.
 * Picnic's [Error Prone Support](https://github.com/Picnicsupermarket/error-prone-support/)
   * A [Picnic](https://blog.picnic.nl/)-opinionated extension of Google's [Error Prone](https://github.com/google/error-prone).
+* [Hibernate Migration Recipes](https://github.com/hibernate/hibernate-migration-recipes)
+  * Recipes for upgrading applications across versions of [Hibernate](https://hibernate.org/) projects, starting with Hibernate ORM.
 * [Quarkus Updates](https://github.com/quarkusio/quarkus-updates)
   * Recipes used to update [Quarkus projects](https://github.com/quarkusio) to newer versions.
 * [Timefold](https://github.com/TimefoldAI/timefold-solver/tree/main/migration)
