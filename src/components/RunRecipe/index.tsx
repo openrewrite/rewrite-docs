@@ -4,6 +4,18 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 import latestVersions from '@site/src/plugins/latest-versions';
 
+/**
+ * The generator emits options as ` --recipe-option "name=value"` repeated, values unescaped. Once
+ * optional settings are added there are usually several, so each goes on its own continuation line.
+ */
+const multilineRunCommand = (recipe: string, options: string): string => {
+  const parts = options.split(/ (?=--recipe-option ")/).filter(Boolean);
+  if (parts.length < 2) {
+    return `mod run . --recipe ${recipe}${options}`;
+  }
+  return [`mod run . --recipe ${recipe}`, ...parts].join(' \\\n  ');
+};
+
 interface RunRecipeProps {
   recipeName: string;
   displayName: string;
@@ -12,6 +24,7 @@ interface RunRecipeProps {
   versionKey?: string;
   requiresConfiguration?: boolean;
   cliOptions?: string;
+  optionalCliOptions?: string;
   showGradle?: boolean;
   showMaven?: boolean;
   hasDataTables?: boolean;
@@ -29,6 +42,7 @@ export default function RunRecipe({
   versionKey,
   requiresConfiguration = false,
   cliOptions = '',
+  optionalCliOptions,
   showGradle = true,
   showMaven = true,
   hasDataTables = false,
@@ -463,6 +477,17 @@ codeGenomeToken=your-download-token`;
           <CodeBlock language="shell" title="shell">
             {`mod run . --recipe ${cliRecipeName}${cliOptions}`}
           </CodeBlock>
+          {optionalCliOptions && (
+            <>
+              <p>
+                To also set the recipe's optional settings, add them to the command. The values below are examples, not
+                recommendations; see <a href="#options">Options</a> for what each one does.
+              </p>
+              <CodeBlock language="shell" title="With optional settings (example values)">
+                {multilineRunCommand(cliRecipeName, cliOptions + optionalCliOptions)}
+              </CodeBlock>
+            </>
+          )}
           {hasDependency && (
             <>
               <p>If the recipe is not available locally, then you can install it using:</p>
