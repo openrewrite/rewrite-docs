@@ -121,6 +121,7 @@ updates:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
+  optionalCliOptions={' --recipe-option "cooldownDays=7" --recipe-option "semverMajorDays=14" --recipe-option "semverMinorDays=7" --recipe-option "semverPatchDays=3" --recipe-option "include=lodash, react*" --recipe-option "exclude=critical-security-package" --recipe-option "excludeEcosystems=github-actions"'}
   hasDataTables
 />
 

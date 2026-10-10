@@ -113,6 +113,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS"
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=org.slf4j.Logger info(..)"'}
+  optionalCliOptions={' --recipe-option "removeToString=true"'}
   hasDataTables
 />
 

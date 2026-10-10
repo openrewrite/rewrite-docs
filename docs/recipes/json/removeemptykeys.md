@@ -81,6 +81,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   artifactId="rewrite-json"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JSON"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "keys=$..devDependencies" --recipe-option "cascadeTo=$.spec"'}
   hasDataTables
 />
 

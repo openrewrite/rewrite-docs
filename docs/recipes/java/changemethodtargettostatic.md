@@ -47,6 +47,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate to ApacheHttpClient 5.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5.md)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
+* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
+* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 * [Prefer `Integer#compareUnsigned`](/recipes/java/migrate/guava/preferintegercompareunsigned.md)
 * [Prefer `Integer#compare`](/recipes/java/migrate/guava/preferintegercompare.md)
 * [Prefer `Integer#divideUnsigned`](/recipes/java/migrate/guava/preferintegerdivideunsigned.md)
@@ -103,7 +105,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=com.google.common.collect.ImmutableSet of(..)" --recipe-option "fullyQualifiedTargetTypeName=java.util.Set" --recipe-option "returnType=java.util.Set"'}
+  cliOptions={' --recipe-option "methodPattern=com.google.common.collect.ImmutableSet of(..)" --recipe-option "fullyQualifiedTargetTypeName=java.util.Set"'}
+  optionalCliOptions={' --recipe-option "returnType=java.util.Set" --recipe-option "matchOverrides=true" --recipe-option "matchUnknownTypes=true"'}
   hasDataTables
 />
 

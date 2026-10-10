@@ -56,7 +56,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginId=com.jfrog.bintray" --recipe-option "version=3.x" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "pluginId=com.jfrog.bintray"'}
+  optionalCliOptions={' --recipe-option "version=3.x" --recipe-option "versionPattern=\'-jre\'" --recipe-option "apply=true" --recipe-option "acceptTransitive=true"'}
   showMaven={false}
   hasDataTables
 />

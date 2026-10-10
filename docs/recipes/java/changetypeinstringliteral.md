@@ -28,6 +28,13 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | oldFullyQualifiedTypeName | Fully-qualified class name of the original type. | `org.junit.Assume` |
 | `String` | newFullyQualifiedTypeName | Fully-qualified class name of the replacement type, or the name of a primitive such as "int". The `OuterClassName$NestedClassName` naming convention should be used for nested classes. | `org.junit.jupiter.api.Assumptions` |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate Jakarta EE runtime type names](/recipes/java/migrate/jakarta/javaxruntimetypenamestojakarta.md)
+
 ## Example
 
 ###### Parameters

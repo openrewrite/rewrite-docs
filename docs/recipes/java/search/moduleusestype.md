@@ -142,6 +142,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fullyQualifiedTypeName=org.springframework..*"'}
+  optionalCliOptions={' --recipe-option "includeImplicit=true"'}
   hasDataTables
 />
 

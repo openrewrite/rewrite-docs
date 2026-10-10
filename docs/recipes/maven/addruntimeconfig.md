@@ -56,7 +56,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "relativeConfigFileName=maven.config" --recipe-option "flag=\'-T\'" --recipe-option "argument=3" --recipe-option "separator=="'}
+  cliOptions={' --recipe-option "relativeConfigFileName=maven.config" --recipe-option "flag=\'-T\'" --recipe-option "separator=="'}
+  optionalCliOptions={' --recipe-option "argument=3"'}
   showGradle={false}
   hasDataTables
 />

@@ -42,6 +42,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * server: `https://community.develocity.cloud/`
 * [Set the Develocity `projectId`](../../gradle/plugins/setdevelocityprojectid)
   * projectId: `openrewrite`
+* [Append to text file](../../text/appendtotextfile)
+  * relativeFileName: `{,**/}lombok.config`
+  * content: `lombok.checkReturnValueAnnotation += lombok`
+  * existingFileStrategy: `Merge`
 * [Inline calls to deprecated OpenRewrite methods](../../recipes/rewrite/inlinemethods)
 * [Generate `InlineMethodCalls` recipes for deprecated delegating methods](../../java/recipes/generatedeprecatedmethodrecipes)
 * [Java Recipe best practices](../../java/recipes/javarecipebestpractices)
@@ -71,6 +75,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Remove garbage collection invocations](../../staticanalysis/removecallstosystemgc)
 * [Remove `Object.finalize()` invocations](../../staticanalysis/removecallstoobjectfinalize)
 * [URL Equals and Hash Code](../../staticanalysis/urlequalshashcoderecipes)
+* [Find ignored results of `@CheckReturnValue` methods](../../staticanalysis/findignoredcheckreturnvalue)
+  * checkReturnValuePackages: `[org.openrewrite.tree, org.openrewrite.groovy.tree, org.openrewrite.hcl.tree, org.openrewrite.java.tree, org.openrewrite.javascript.tree, org.openrewrite.json.tree, org.openrewrite.kotlin.tree, org.openrewrite.maven.tree, org.openrewrite.properties.tree, org.openrewrite.protobuf.tree, org.openrewrite.toml.tree, org.openrewrite.xml.tree, org.openrewrite.yaml.tree]`
 * [Simplify lambda blocks to expressions](../../staticanalysis/lambdablocktoexpression)
 * [Use method references in lambda](../../staticanalysis/replacelambdawithmethodreference)
 * [Use the diamond operator](../../staticanalysis/usediamondoperator)
@@ -112,6 +118,10 @@ recipeList:
       server: https://community.develocity.cloud/
   - org.openrewrite.gradle.plugins.SetDevelocityProjectId:
       projectId: openrewrite
+  - org.openrewrite.text.AppendToTextFile:
+      relativeFileName: {,**/}lombok.config
+      content: lombok.checkReturnValueAnnotation += lombok
+      existingFileStrategy: Merge
   - org.openrewrite.recipes.rewrite.InlineMethods
   - org.openrewrite.java.recipes.GenerateDeprecatedMethodRecipes
   - org.openrewrite.java.recipes.JavaRecipeBestPractices
@@ -141,6 +151,8 @@ recipeList:
   - org.openrewrite.staticanalysis.RemoveCallsToSystemGc
   - org.openrewrite.staticanalysis.RemoveCallsToObjectFinalize
   - org.openrewrite.staticanalysis.URLEqualsHashCodeRecipes
+  - org.openrewrite.staticanalysis.FindIgnoredCheckReturnValue:
+      checkReturnValuePackages: [org.openrewrite.tree, org.openrewrite.groovy.tree, org.openrewrite.hcl.tree, org.openrewrite.java.tree, org.openrewrite.javascript.tree, org.openrewrite.json.tree, org.openrewrite.kotlin.tree, org.openrewrite.maven.tree, org.openrewrite.properties.tree, org.openrewrite.protobuf.tree, org.openrewrite.toml.tree, org.openrewrite.xml.tree, org.openrewrite.yaml.tree]
   - org.openrewrite.staticanalysis.LambdaBlockToExpression
   - org.openrewrite.staticanalysis.ReplaceLambdaWithMethodReference
   - org.openrewrite.staticanalysis.UseDiamondOperator

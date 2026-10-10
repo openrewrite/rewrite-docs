@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Parameterize raw `StrLookup` subclasses](./parameterizerawstrlookupsubclasses.md)
 * [Remove redundant null check when using `StringUtils.isNotBlank(String)`](./apachecommonsstringutilsrecipes$removeredundantnullcheckwithisnotblankrecipe.md)
 * [Replace StringUtils#defaultIfBlank(String, String) with JDK equivalent](./defaultifblanktojdk.md)
 * [Replace `StringUtils.abbreviate(String, int)` with JDK provided API](./apachecommonsstringutilsrecipes$abbreviaterecipe.md)
@@ -36,6 +37,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Replace `StringUtils.trimToEmpty(String)` with JDK provided API](./apachecommonsstringutilsrecipes$trimtoemptyrecipe.md)
 * [Replace `StringUtils.trimToNull(String)` with JDK provided API](./apachecommonsstringutilsrecipes$trimtonullrecipe.md)
 * [Replace `StringUtils.upperCase(String)` with JDK internals](./apachecommonsstringutilsrecipes$uppercaserecipe.md)
+* [Replace `SystemUtils#isJavaVersionAtLeast(float)` and `(int)` with the `JavaVersion` overload](./systemutilsisjavaversionatleasttojavaversion.md)
 * [Replace any StringUtils#isBlank(String) and #isNotBlank(String)](./isblanktojdk.md)
 * [Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)](./isnotemptytojdk.md)
 

@@ -43,6 +43,19 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.hibernate`
+  * oldArtifactId: `hibernate-validator`
+  * newGroupId: `org.hibernate.validator`
+  * newArtifactId: `hibernate-validator`
+  * newVersion: `7.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.hibernate.validator`
+  * artifactId: `hibernate-validator`
+  * newVersion: `7.0.x`
+* [Replace `String` literal](../../../java/replacestringliteralvalue)
+  * oldLiteralValue: `javax.validation:validation-api`
+  * newLiteralValue: `jakarta.validation:jakarta.validation-api`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.validation`
   * oldArtifactId: `validation-api`
   * newGroupId: `jakarta.validation`
@@ -97,6 +110,19 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.hibernate
+      oldArtifactId: hibernate-validator
+      newGroupId: org.hibernate.validator
+      newArtifactId: hibernate-validator
+      newVersion: 7.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.hibernate.validator
+      artifactId: hibernate-validator
+      newVersion: 7.0.x
+  - org.openrewrite.java.ReplaceStringLiteralValue:
+      oldLiteralValue: javax.validation:validation-api
+      newLiteralValue: jakarta.validation:jakarta.validation-api
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.validation
       oldArtifactId: validation-api

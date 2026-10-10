@@ -43,6 +43,7 @@ This recipe is used as part of the following composite recipes:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-jenkins"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JENKINS"
+  optionalCliOptions={' --recipe-option "filePattern=\'**/Jenkinsfile*\'"'}
   hasDataTables
 />
 

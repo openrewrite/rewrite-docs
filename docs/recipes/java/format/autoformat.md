@@ -151,6 +151,7 @@ class Test {
   artifactId="rewrite-java"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "style=>\n        type: specs.openrewrite.org/v1beta/style\n        name: com.yourorg.YesTabsNoStarImports\n        styleConfigs:\n          - org.openrewrite.java.style.TabsAndIndentsStyle:\n              useTabCharacter: true"'}
   hasDataTables
 />
 

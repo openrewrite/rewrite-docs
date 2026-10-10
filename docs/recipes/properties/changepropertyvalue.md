@@ -102,7 +102,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "newValue=newValue" --recipe-option "oldValue=oldValue"'}
+  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "newValue=newValue"'}
+  optionalCliOptions={' --recipe-option "oldValue=oldValue" --recipe-option "regex=true" --recipe-option "relaxedBinding=true"'}
   hasDataTables
 />
 

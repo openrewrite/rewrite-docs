@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.joda.time.JodaDateMidnightToJavaTime**
 
-_Migrates `org.joda.time.DateMidnight` constructor and `now()` calls to `java.time.LocalDate.now().atStartOfDay(...)`._
+_Migrates `org.joda.time.DateMidnight` constructors and `now()` calls to `java.time.LocalDate.atStartOfDay(...)`._
 
 ## Recipe source
 

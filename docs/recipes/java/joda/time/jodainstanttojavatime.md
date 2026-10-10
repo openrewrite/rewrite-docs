@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.joda.time.JodaInstantToJavaTime**
 
-_Migrates `org.joda.time.Instant` constructor calls to `java.time.Instant.now()`._
+_Migrates `org.joda.time.Instant` constructors and methods to `java.time.Instant`._
 
 ## Recipe source
 

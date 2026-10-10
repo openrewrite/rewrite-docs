@@ -52,6 +52,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.util.List add(..)"'}
+  optionalCliOptions={' --recipe-option "matchOverrides=true"'}
   hasDataTables
 />
 

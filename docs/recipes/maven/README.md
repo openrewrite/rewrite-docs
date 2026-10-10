@@ -22,6 +22,7 @@ _Recipes that include further recipes, often including the individual recipes be
 
 * [Apache Maven best practices](./bestpractices.md)
 * [Apache Maven reproducible builds](./reproduciblebuilds.md)
+* [Migrate to Maven 3.10](./migratetomaven3_10.md)
 * [Migrate to Maven 4](./migratetomaven4.md)
 * [Remove Maven wrapper](./removemavenwrapper.md)
 * [Replace deprecated lifecycle phases](./replacedeprecatedlifecyclephases.md)

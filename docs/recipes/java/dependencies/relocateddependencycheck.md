@@ -114,6 +114,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
+  optionalCliOptions={' --recipe-option "changeDependencies=true"'}
   hasDataTables
 />
 

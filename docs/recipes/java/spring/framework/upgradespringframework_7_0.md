@@ -44,6 +44,15 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY`
   * fullyQualifiedConstantName: `org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT`
+* [Replace constant with another constant](../../../java/replaceconstantwithanotherconstant)
+  * existingFullyQualifiedConstantName: `org.springframework.http.HttpStatus.PAYLOAD_TOO_LARGE`
+  * fullyQualifiedConstantName: `org.springframework.http.HttpStatus.CONTENT_TOO_LARGE`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.test.web.servlet.result.StatusResultMatchers isPayloadTooLarge()`
+  * newMethodName: `isContentTooLarge`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.test.web.servlet.result.StatusResultMatchers isUnprocessableEntity()`
+  * newMethodName: `isUnprocessableContent`
 * [JUnit 6 migration from JUnit 5.x](../../../java/testing/junit6/junit5to6migration)
 * [Migrates from Jackson 2.x to Jackson 3.x](../../../java/jackson/upgradejackson_2_3)
 * [Migrate to Spring Kafka 4.0](../../../java/spring/kafka/upgradespringkafka_4_0)
@@ -71,6 +80,15 @@ recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY
       fullyQualifiedConstantName: org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: org.springframework.http.HttpStatus.PAYLOAD_TOO_LARGE
+      fullyQualifiedConstantName: org.springframework.http.HttpStatus.CONTENT_TOO_LARGE
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.test.web.servlet.result.StatusResultMatchers isPayloadTooLarge()
+      newMethodName: isContentTooLarge
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.test.web.servlet.result.StatusResultMatchers isUnprocessableEntity()
+      newMethodName: isUnprocessableContent
   - org.openrewrite.java.testing.junit6.JUnit5to6Migration
   - org.openrewrite.java.jackson.UpgradeJackson_2_3
   - org.openrewrite.java.spring.kafka.UpgradeSpringKafka_4_0

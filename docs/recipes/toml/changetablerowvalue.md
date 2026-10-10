@@ -112,7 +112,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_TOML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "tableName=package.contributors" --recipe-option "identifyingKey=name" --recipe-option "identifyingValue=Alice Smith" --recipe-option "propertyKey=email" --recipe-option "newValue="alice.new@example.com""'}
+  cliOptions={' --recipe-option "tableName=package.contributors" --recipe-option "identifyingKey=name" --recipe-option "identifyingValue=Alice Smith" --recipe-option "propertyKey=email"'}
+  optionalCliOptions={' --recipe-option "useRegex=true" --recipe-option "newValue="alice.new@example.com""'}
   hasDataTables
 />
 

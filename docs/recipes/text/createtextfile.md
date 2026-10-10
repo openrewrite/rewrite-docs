@@ -62,6 +62,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fileContents=Some text." --recipe-option "relativeFileName=foo/bar/baz.txt"'}
+  optionalCliOptions={' --recipe-option "overwriteExisting=true"'}
   hasDataTables
 />
 

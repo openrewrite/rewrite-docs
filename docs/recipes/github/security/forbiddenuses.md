@@ -91,6 +91,7 @@ jobs:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
+  optionalCliOptions={' --recipe-option "additionalDangerousActions=["some-org/dangerous-action@v1", "another-org/risky-action@v2"]" --recipe-option "additionalSuspiciousPatterns=["malware", "crypto-miner", "backdoor"]"'}
   hasDataTables
 />
 

@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate Jakarta EE runtime type names](/recipes/java/migrate/jakarta/javaxruntimetypenamestojakarta.md)
 * [Migrate deprecated `javax.faces` packages to `jakarta.faces`](/recipes/java/migrate/jakarta/updatejakartafacesapi3.md)
 
 ## Example

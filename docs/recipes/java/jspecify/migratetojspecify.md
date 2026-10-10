@@ -45,6 +45,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate from JetBrains annotations to JSpecify](../../java/jspecify/migratefromjetbrainsannotations)
 * [Migrate from Micrometer annotations to JSpecify](../../java/jspecify/migratefrommicrometerannotations)
 * [Migrate from Micronaut Framework annotations to JSpecify](../../java/jspecify/migratefrommicronautannotations)
+* [Migrate from SpotBugs annotations to JSpecify](../../java/jspecify/migratefromspotbugsannotations)
 
 </TabItem>
 
@@ -67,6 +68,7 @@ recipeList:
   - org.openrewrite.java.jspecify.MigrateFromJetbrainsAnnotations
   - org.openrewrite.java.jspecify.MigrateFromMicrometerAnnotations
   - org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations
+  - org.openrewrite.java.jspecify.MigrateFromSpotBugsAnnotations
 
 ```
 </TabItem>

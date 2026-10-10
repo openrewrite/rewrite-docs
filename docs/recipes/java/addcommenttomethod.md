@@ -106,6 +106,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "comment=This is a comment." --recipe-option "methodPattern=java.util.List add*(..)"'}
+  optionalCliOptions={' --recipe-option "isMultiline=true"'}
   hasDataTables
 />
 

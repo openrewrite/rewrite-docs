@@ -122,7 +122,8 @@ recipeList:
   artifactId="rewrite-feature-flags"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS"
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=dev.openfeature.sdk.Client getBooleanValue(String, Boolean)" --recipe-option "featureKey=flag-key-123abc"'}
+  cliOptions={' --recipe-option "methodPattern=dev.openfeature.sdk.Client getBooleanValue(String, Boolean)"'}
+  optionalCliOptions={' --recipe-option "featureKey=flag-key-123abc"'}
   hasDataTables
 />
 

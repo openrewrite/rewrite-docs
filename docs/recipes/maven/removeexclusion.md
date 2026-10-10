@@ -139,6 +139,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "exclusionGroupId=com.google.guava" --recipe-option "exclusionArtifactId=guava"'}
+  optionalCliOptions={' --recipe-option "onlyIneffective=true"'}
   showGradle={false}
   hasDataTables
 />

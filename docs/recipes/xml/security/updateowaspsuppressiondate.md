@@ -108,7 +108,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "cveList=CVE-2022-1234" --recipe-option "untilDate=2023-01-01"'}
+  cliOptions={' --recipe-option "cveList=CVE-2022-1234"'}
+  optionalCliOptions={' --recipe-option "untilDate=2023-01-01"'}
   hasDataTables
 />
 

@@ -37,6 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate `Scenario.write` and `Scenario.embed`](/recipes/cucumber/jvm/migratescenariowriteandembed.md)
+* [Migrate to Spring for GraphQL 2.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringgraphql_2_0)
 * [Replace deprecated RequestMatcherProvider with new API](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/replacedeprecatedrequestmatcherprovider)
 
 ## Example
@@ -103,7 +104,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0" --recipe-option "parameterType=java.lang.String" --recipe-option "parameterName=name" --recipe-option "explicitCast=true"'}
+  cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0" --recipe-option "parameterType=java.lang.String"'}
+  optionalCliOptions={' --recipe-option "parameterName=name" --recipe-option "explicitCast=true"'}
   hasDataTables
 />
 

@@ -45,6 +45,7 @@ This recipe is used as part of the following composite recipes:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+  optionalCliOptions={' --recipe-option "convertStringsWithoutNewlines=true" --recipe-option "avoidLineContinuations=true"'}
   hasDataTables
 />
 

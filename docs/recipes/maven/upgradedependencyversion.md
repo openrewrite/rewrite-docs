@@ -273,7 +273,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "retainVersions=com.jcraft:jsch"'}
+  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X"'}
+  optionalCliOptions={' --recipe-option "versionPattern=\'-jre\'" --recipe-option "overrideManagedVersion=true" --recipe-option "retainVersions=com.jcraft:jsch"'}
   showGradle={false}
   hasDataTables
 />

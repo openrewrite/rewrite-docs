@@ -101,23 +101,8 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.joda.time.Duration getStandardSeconds()`
   * newMethodName: `getSeconds`
 * [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.joda.time.Duration toStandardDays()`
-  * newMethodName: `toDays`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.joda.time.Duration toStandardHours()`
-  * newMethodName: `toHours`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.joda.time.Duration toStandardMinutes()`
-  * newMethodName: `toMinutes`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.joda.time.Duration toStandardSeconds()`
-  * newMethodName: `getSeconds`
-* [Change method name](../../../java/changemethodname)
   * methodPattern: `org.joda.time.DateTimeZone forID(String)`
   * newMethodName: `of`
-* [Change method name](../../../java/changemethodname)
-  * methodPattern: `org.joda.time.format.DateTimeFormat forPattern(String)`
-  * newMethodName: `ofPattern`
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.joda.time.Instant getMillis()`
   * newMethodName: `toEpochMilli`
@@ -125,6 +110,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * methodPattern: `org.joda.time.base.BaseDuration getMillis()`
   * newMethodName: `toMillis`
   * matchOverrides: `true`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.joda.time.ReadableDuration getMillis()`
+  * newMethodName: `toMillis`
 * [Change method name](../../../java/changemethodname)
   * methodPattern: `org.joda.time.LocalDate getMonthOfYear()`
   * newMethodName: `getMonthValue`
@@ -156,12 +144,16 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate Joda-Time `LocalDate` to `java.time.LocalDate`](../../../java/joda/time/jodalocaldatetojavatime)
 * [Migrate Joda-Time `LocalTime` to `java.time.LocalTime`](../../../java/joda/time/jodalocaltimetojavatime)
 * [Migrate Joda-Time formatter to Java time](../../../java/joda/time/jodaformattertojavatime)
+* [Migrate Joda-Time property idioms to Java time](../../../java/joda/time/jodapropertytojavatime)
 * [Migrate Joda-Time `DateTimeZone` to Java time](../../../java/joda/time/jodadatetimezonetojavatime)
 * [Migrate Joda-Time `DateMidnight` to Java time](../../../java/joda/time/jodadatemidnighttojavatime)
 * [Migrate Joda-Time `Instant` to Java time](../../../java/joda/time/jodainstanttojavatime)
 * [Migrate Joda-Time `Days`, `Hours`, `Minutes`, `Seconds` to Java time](../../../java/joda/time/jodatimeperiodtojavatime)
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.joda.time.DateTime`
+  * newFullyQualifiedTypeName: `java.time.ZonedDateTime`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.joda.time.ReadableDateTime`
   * newFullyQualifiedTypeName: `java.time.ZonedDateTime`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.joda.time.base.BaseDateTime`
@@ -201,6 +193,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newFullyQualifiedTypeName: `java.time.Instant`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.joda.time.Interval`
+  * newFullyQualifiedTypeName: `org.threeten.extra.Interval`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.joda.time.ReadableInterval`
   * newFullyQualifiedTypeName: `org.threeten.extra.Interval`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.joda.time.base.BaseInterval`
@@ -302,23 +297,8 @@ recipeList:
       methodPattern: org.joda.time.Duration getStandardSeconds()
       newMethodName: getSeconds
   - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.joda.time.Duration toStandardDays()
-      newMethodName: toDays
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.joda.time.Duration toStandardHours()
-      newMethodName: toHours
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.joda.time.Duration toStandardMinutes()
-      newMethodName: toMinutes
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.joda.time.Duration toStandardSeconds()
-      newMethodName: getSeconds
-  - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.joda.time.DateTimeZone forID(String)
       newMethodName: of
-  - org.openrewrite.java.ChangeMethodName:
-      methodPattern: org.joda.time.format.DateTimeFormat forPattern(String)
-      newMethodName: ofPattern
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.joda.time.Instant getMillis()
       newMethodName: toEpochMilli
@@ -326,6 +306,9 @@ recipeList:
       methodPattern: org.joda.time.base.BaseDuration getMillis()
       newMethodName: toMillis
       matchOverrides: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.joda.time.ReadableDuration getMillis()
+      newMethodName: toMillis
   - org.openrewrite.java.ChangeMethodName:
       methodPattern: org.joda.time.LocalDate getMonthOfYear()
       newMethodName: getMonthValue
@@ -357,12 +340,16 @@ recipeList:
   - org.openrewrite.java.joda.time.JodaLocalDateToJavaTime
   - org.openrewrite.java.joda.time.JodaLocalTimeToJavaTime
   - org.openrewrite.java.joda.time.JodaFormatterToJavaTime
+  - org.openrewrite.java.joda.time.JodaPropertyToJavaTime
   - org.openrewrite.java.joda.time.JodaDateTimeZoneToJavaTime
   - org.openrewrite.java.joda.time.JodaDateMidnightToJavaTime
   - org.openrewrite.java.joda.time.JodaInstantToJavaTime
   - org.openrewrite.java.joda.time.JodaTimePeriodToJavaTime
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.joda.time.DateTime
+      newFullyQualifiedTypeName: java.time.ZonedDateTime
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.joda.time.ReadableDateTime
       newFullyQualifiedTypeName: java.time.ZonedDateTime
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.joda.time.base.BaseDateTime
@@ -402,6 +389,9 @@ recipeList:
       newFullyQualifiedTypeName: java.time.Instant
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.joda.time.Interval
+      newFullyQualifiedTypeName: org.threeten.extra.Interval
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.joda.time.ReadableInterval
       newFullyQualifiedTypeName: org.threeten.extra.Interval
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.joda.time.base.BaseInterval

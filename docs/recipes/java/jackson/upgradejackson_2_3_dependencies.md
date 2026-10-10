@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.jackson.UpgradeJackson\_2\_3\_Dependencies**
 
-_Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs._
+_Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs. Modules that already resolve Jackson 3 and no longer use Jackson 2 types in their sources are left as-is, as any Jackson 2 dependencies they still declare are there on purpose._
 
 ### Tags
 
@@ -34,6 +34,12 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
+**Preconditions**
+
+* [Find modules still on Jackson 2](../../java/jackson/modulestillonjackson2)
+
+**Recipes**
+
 * [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.core`
   * oldArtifactId: `jackson-core`
@@ -205,9 +211,11 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies
 displayName: Upgrade Jackson 2.x dependencies to 3.x
 description: |
-  Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs.
+  Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs. Modules that already resolve Jackson 3 and no longer use Jackson 2 types in their sources are left as-is, as any Jackson 2 dependencies they still declare are there on purpose.
 tags:
   - jackson-3
+preconditions:
+  - org.openrewrite.java.jackson.ModuleStillOnJackson2
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.core

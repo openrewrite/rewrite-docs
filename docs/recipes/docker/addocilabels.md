@@ -94,6 +94,7 @@ RUN apt-get update
   artifactId="rewrite-docker"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "title=My Application" --recipe-option "description=A containerized web application" --recipe-option "version=1.0.0" --recipe-option "created=2024-01-15T10:30:00Z" --recipe-option "revision=abc123def456" --recipe-option "source=https://github.com/myorg/myapp" --recipe-option "url=https://myapp.example.com" --recipe-option "vendor=My Organization" --recipe-option "licenses=Apache-2.0" --recipe-option "authors=maintainers@example.com"'}
   hasDataTables
 />
 

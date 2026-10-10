@@ -100,6 +100,7 @@ class Model {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-jackson"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JACKSON"
+  optionalCliOptions={' --recipe-option "addJsonIgnore=true"'}
   hasDataTables
 />
 

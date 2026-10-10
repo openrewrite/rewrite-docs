@@ -119,7 +119,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "bomGroupPattern=org.springframework.boot" --recipe-option "bomArtifactPattern=\'*-dependencies\'" --recipe-option "dependencyGroupPattern=\'*\'" --recipe-option "dependencyArtifactPattern=\'*\'"'}
+  cliOptions={' --recipe-option "bomGroupPattern=org.springframework.boot"'}
+  optionalCliOptions={' --recipe-option "bomArtifactPattern=\'*-dependencies\'" --recipe-option "dependencyGroupPattern=\'*\'" --recipe-option "dependencyArtifactPattern=\'*\'"'}
   showMaven={false}
   hasDataTables
 />

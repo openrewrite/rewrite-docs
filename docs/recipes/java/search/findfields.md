@@ -95,6 +95,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fullyQualifiedTypeName=com.fasterxml.jackson.core.json.JsonWriteFeature" --recipe-option "fieldName=QUOTE_FIELD_NAMES"'}
+  optionalCliOptions={' --recipe-option "matchInherited=true"'}
   hasDataTables
 />
 

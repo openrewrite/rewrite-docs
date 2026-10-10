@@ -103,6 +103,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "keyPath=\'$.subjects.*\' or \'$\' or \'$.x[1].y.*\' etc." --recipe-option "key=myKey" --recipe-option "value=\'`"myValue"` or `{"a": 1}` or `[ 123 ]`\'"'}
+  optionalCliOptions={' --recipe-option "prepend=true"'}
   hasDataTables
 />
 

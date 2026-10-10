@@ -54,7 +54,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVASCRIPT"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "packageName=lodash" --recipe-option "newVersion=^5.0.0" --recipe-option "dependencyPath=express>accepts"'}
+  cliOptions={' --recipe-option "packageName=lodash" --recipe-option "newVersion=^5.0.0"'}
+  optionalCliOptions={' --recipe-option "dependencyPath=express>accepts"'}
   hasDataTables
 />
 

@@ -25,5 +25,6 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate Joda-Time `LocalDate` to `java.time.LocalDate`](./jodalocaldatetojavatime.md)
 * [Migrate Joda-Time `LocalTime` to `java.time.LocalTime`](./jodalocaltimetojavatime.md)
 * [Migrate Joda-Time formatter to Java time](./jodaformattertojavatime.md)
+* [Migrate Joda-Time property idioms to Java time](./jodapropertytojavatime.md)
 
 

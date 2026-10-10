@@ -155,6 +155,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=org.mockito.Matchers anyVararg()" --recipe-option "newAccessLevel=public"'}
+  optionalCliOptions={' --recipe-option "matchOverrides=true"'}
   hasDataTables
 />
 

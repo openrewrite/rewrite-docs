@@ -45,6 +45,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Update Gradle wrapper](../../gradle/updategradlewrapper)
   * version: `7.3`
   * addIfMissing: `false`
+* [Update Maven wrapper](../../maven/updatemavenwrapper)
+  * distributionVersion: `3.9.x`
+  * addIfMissing: `false`
 * [Upgrade Maven plugin version](../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-checkstyle-plugin`
@@ -91,6 +94,9 @@ recipeList:
       minimumJavaMajorVersion: 17
   - org.openrewrite.gradle.UpdateGradleWrapper:
       version: 7.3
+      addIfMissing: false
+  - org.openrewrite.maven.UpdateMavenWrapper:
+      distributionVersion: 3.9.x
       addIfMissing: false
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins

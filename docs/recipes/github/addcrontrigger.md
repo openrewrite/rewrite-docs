@@ -51,7 +51,8 @@ recipeList:
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
   requiresConfiguration
-  cliOptions={' --recipe-option "cron=\'@daily\'" --recipe-option "workflowFileMatcher=build.yml"'}
+  cliOptions={' --recipe-option "cron=\'@daily\'"'}
+  optionalCliOptions={' --recipe-option "workflowFileMatcher=build.yml"'}
   hasDataTables
 />
 

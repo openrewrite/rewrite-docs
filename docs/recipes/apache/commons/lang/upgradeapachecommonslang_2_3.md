@@ -42,6 +42,16 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `org.apache.commons`
   * newArtifactId: `commons-lang3`
   * newVersion: `3.x`
+* [Add a literal method argument](../../../java/addliteralmethodargument)
+  * methodPattern: `org.apache.commons.lang.ClassUtils isAssignable(Class, Class)`
+  * argumentIndex: `2`
+  * literal: `false`
+  * primitiveType: `boolean`
+* [Add a literal method argument](../../../java/addliteralmethodargument)
+  * methodPattern: `org.apache.commons.lang.ClassUtils isAssignable(Class[], Class[])`
+  * argumentIndex: `2`
+  * literal: `false`
+  * primitiveType: `boolean`
 * [Migrate `WordUtils` to Apache Commons Text](../../../apache/commons/lang/wordutilstocommonstext)
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.commons.lang`
@@ -53,6 +63,46 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.commons.lang3.NullArgumentException`
   * newFullyQualifiedTypeName: `java.lang.NullPointerException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.lang3.exception.NestableException`
+  * newFullyQualifiedTypeName: `java.lang.Exception`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.lang3.exception.NestableRuntimeException`
+  * newFullyQualifiedTypeName: `java.lang.RuntimeException`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.lang3.exception.NestableError`
+  * newFullyQualifiedTypeName: `java.lang.Error`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.lang3.NumberUtils`
+  * newFullyQualifiedTypeName: `org.apache.commons.lang3.math.NumberUtils`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.apache.commons.lang3.math.RandomUtils`
+  * newFullyQualifiedTypeName: `org.apache.commons.lang3.RandomUtils`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.commons.lang3.math.NumberUtils stringToInt(..)`
+  * newMethodName: `toInt`
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `org.apache.commons.lang3.BooleanUtils toBooleanObject(boolean)`
+  * fullyQualifiedTargetTypeName: `java.lang.Boolean`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `java.lang.Boolean toBooleanObject(boolean)`
+  * newMethodName: `valueOf`
+* [Change method target to static](../../../java/changemethodtargettostatic)
+  * methodPattern: `org.apache.commons.lang3.ObjectUtils toString(Object, String)`
+  * fullyQualifiedTargetTypeName: `java.util.Objects`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.commons.lang3.StringEscapeUtils escapeHtml(String)`
+  * newMethodName: `escapeHtml4`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.commons.lang3.StringEscapeUtils unescapeHtml(String)`
+  * newMethodName: `unescapeHtml4`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.commons.lang3.StringEscapeUtils escapeJavaScript(String)`
+  * newMethodName: `escapeEcmaScript`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.apache.commons.lang3.StringEscapeUtils unescapeJavaScript(String)`
+  * newMethodName: `unescapeEcmaScript`
+* [Replace `SystemUtils#isJavaVersionAtLeast(float)` and `(int)` with the `JavaVersion` overload](../../../apache/commons/lang/systemutilsisjavaversionatleasttojavaversion)
 * [Migrate deprecated SystemUtils constants](../../../apache/commons/lang3/migratesystemutilsdeprecations)
 * [Prefer `java.nio.charset.StandardCharsets`](../../../apache/commons/lang3/usestandardcharsets)
 
@@ -78,6 +128,16 @@ recipeList:
       newGroupId: org.apache.commons
       newArtifactId: commons-lang3
       newVersion: 3.x
+  - org.openrewrite.java.AddLiteralMethodArgument:
+      methodPattern: org.apache.commons.lang.ClassUtils isAssignable(Class, Class)
+      argumentIndex: 2
+      literal: false
+      primitiveType: boolean
+  - org.openrewrite.java.AddLiteralMethodArgument:
+      methodPattern: org.apache.commons.lang.ClassUtils isAssignable(Class[], Class[])
+      argumentIndex: 2
+      literal: false
+      primitiveType: boolean
   - org.openrewrite.apache.commons.lang.WordUtilsToCommonsText
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.commons.lang
@@ -89,6 +149,46 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.commons.lang3.NullArgumentException
       newFullyQualifiedTypeName: java.lang.NullPointerException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.lang3.exception.NestableException
+      newFullyQualifiedTypeName: java.lang.Exception
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.lang3.exception.NestableRuntimeException
+      newFullyQualifiedTypeName: java.lang.RuntimeException
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.lang3.exception.NestableError
+      newFullyQualifiedTypeName: java.lang.Error
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.lang3.NumberUtils
+      newFullyQualifiedTypeName: org.apache.commons.lang3.math.NumberUtils
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.apache.commons.lang3.math.RandomUtils
+      newFullyQualifiedTypeName: org.apache.commons.lang3.RandomUtils
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.commons.lang3.math.NumberUtils stringToInt(..)
+      newMethodName: toInt
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.apache.commons.lang3.BooleanUtils toBooleanObject(boolean)
+      fullyQualifiedTargetTypeName: java.lang.Boolean
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: java.lang.Boolean toBooleanObject(boolean)
+      newMethodName: valueOf
+  - org.openrewrite.java.ChangeMethodTargetToStatic:
+      methodPattern: org.apache.commons.lang3.ObjectUtils toString(Object, String)
+      fullyQualifiedTargetTypeName: java.util.Objects
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.commons.lang3.StringEscapeUtils escapeHtml(String)
+      newMethodName: escapeHtml4
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.commons.lang3.StringEscapeUtils unescapeHtml(String)
+      newMethodName: unescapeHtml4
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.commons.lang3.StringEscapeUtils escapeJavaScript(String)
+      newMethodName: escapeEcmaScript
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.apache.commons.lang3.StringEscapeUtils unescapeJavaScript(String)
+      newMethodName: unescapeEcmaScript
+  - org.openrewrite.apache.commons.lang.SystemUtilsIsJavaVersionAtLeastToJavaVersion
   - org.openrewrite.apache.commons.lang3.MigrateSystemUtilsDeprecations
   - org.openrewrite.apache.commons.lang3.UseStandardCharsets
 

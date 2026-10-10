@@ -42,6 +42,10 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate multi-condition `@ConditionalOnBean` annotations from Boot 1.x](../../../java/spring/boot2/conditionalonbeananynestedconditionboot1)
+* [Remove auto-configuration exclude](../../../java/spring/removeautoconfigurationexclude)
+  * fullyQualifiedName: `org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration`
+* [Remove auto-configuration exclude](../../../java/spring/removeautoconfigurationexclude)
+  * fullyQualifiedName: `org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
   * artifactId: `*`
@@ -81,6 +85,15 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newVersion: `^0.35`
 * [Use `WebServerFactoryCustomizer`](../../../java/spring/boot2/migratetowebserverfactorycustomizer)
 * [Migrate to Spring Framework 5.0 (Community Edition)](../../../java/spring/framework/upgradespringframework_5_0-community-edition)
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.thymeleaf.spring4`
+  * newPackageName: `org.thymeleaf.spring5`
+  * recursive: `true`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.thymeleaf`
+  * oldArtifactId: `thymeleaf-spring4`
+  * newArtifactId: `thymeleaf-spring5`
+  * newVersion: `3.0.x`
 * [Use `org.springframework.boot.web.servlet.support.SpringBootServletInitializer`](../../../java/spring/boot2/migratespringbootservletinitializerpackagename)
 * [Use `org.springframework.boot.autoconfigure.http.HttpMessageConverters`](../../../java/spring/boot2/migratehttpmessageconverterspackagename)
 * [Use `org.springframework.boot.web.servlet.error.ErrorController`](../../../java/spring/boot2/migrateerrorcontrollerpackagename)
@@ -118,6 +131,10 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.boot2.ConditionalOnBeanAnyNestedConditionBoot1
+  - org.openrewrite.java.spring.RemoveAutoConfigurationExclude:
+      fullyQualifiedName: org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration
+  - org.openrewrite.java.spring.RemoveAutoConfigurationExclude:
+      fullyQualifiedName: org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot
       artifactId: "*"
@@ -157,6 +174,15 @@ recipeList:
       newVersion: ^0.35
   - org.openrewrite.java.spring.boot2.MigrateToWebServerFactoryCustomizer
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_5_0
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.thymeleaf.spring4
+      newPackageName: org.thymeleaf.spring5
+      recursive: true
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.thymeleaf
+      oldArtifactId: thymeleaf-spring4
+      newArtifactId: thymeleaf-spring5
+      newVersion: 3.0.x
   - org.openrewrite.java.spring.boot2.MigrateSpringBootServletInitializerPackageName
   - org.openrewrite.java.spring.boot2.MigrateHttpMessageConvertersPackageName
   - org.openrewrite.java.spring.boot2.MigrateErrorControllerPackageName

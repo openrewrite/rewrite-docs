@@ -41,6 +41,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 * [Quarkus Updates Aggregate 3.10.0](../quarkus/migratetoquarkus_v3_10_0)
 * [io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM](../quarkus/updates/core/quarkus311/synchibernatejpamodelgenversionwithbom)
+* [io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations](../quarkus/updates/core/quarkus311/webdependencylocatorrelocations)
 
 </TabItem>
 
@@ -61,6 +62,7 @@ preconditions:
 recipeList:
   - org.openrewrite.quarkus.MigrateToQuarkus_v3_10_0
   - io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM
+  - io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations
 
 ```
 </TabItem>

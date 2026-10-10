@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml**
 
-_In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency._
+_In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency. Profile-specific `bootstrap-{profile}.yml` files are also merged into their matching `application-{profile}.yml`. A bootstrap file without a matching application file is renamed instead._
 
 ## Recipe source
 

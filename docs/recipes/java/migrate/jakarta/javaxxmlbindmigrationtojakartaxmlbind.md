@@ -43,17 +43,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Replace `one.gfw` JAXB artifacts with their official coordinates](../../../java/migrate/javax/migrateonegfwjaxbdependencies)
-* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
-  * oldGroupId: `javax.xml.bind`
-  * oldArtifactId: `jaxb-api`
-  * newGroupId: `jakarta.xml.bind`
-  * newArtifactId: `jakarta.xml.bind-api`
-  * newVersion: `3.0.x`
+* [Migrate the JAXB API dependency unless Recorder still needs it](../../../java/migrate/jakarta/changejaxbapidependency)
 * [Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present](../../../java/migrate/jakarta/retainjaxbapiforjackson)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * newVersion: `3.0.x`
+* [Retain the JAXB 2 API for Arquillian Recorder 1.x](../../../java/migrate/jakarta/retainjaxbapiforarquillianrecorder)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.sun.xml.bind`
   * oldArtifactId: `jaxb-impl`
@@ -64,12 +60,22 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.glassfish.jaxb`
   * artifactId: `jaxb-runtime`
   * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.eclipse.persistence`
+  * artifactId: `org.eclipse.persistence.moxy`
+  * newVersion: `3.0.x`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
   * version: `3.0.x`
   * onlyIfUsing: `javax.xml.bind..*`
   * acceptTransitive: `true`
+* [Add an API dependency for explicit imports](../../../java/migrate/javax/addapidependencyforimports)
+  * packageName: `jakarta.xml.bind`
+  * groupId: `jakarta.xml.bind`
+  * artifactId: `jakarta.xml.bind-api`
+  * version: `3.0.x`
+* [Add a Jakarta JAXB runtime for Maven applications](../../../java/migrate/jakarta/addjakartaxmlbindruntime)
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.xml.bind`
   * newPackageName: `jakarta.xml.bind`
@@ -107,17 +113,13 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javax.MigrateOneGfwJaxbDependencies
-  - org.openrewrite.java.dependencies.ChangeDependency:
-      oldGroupId: javax.xml.bind
-      oldArtifactId: jaxb-api
-      newGroupId: jakarta.xml.bind
-      newArtifactId: jakarta.xml.bind-api
-      newVersion: 3.0.x
+  - org.openrewrite.java.migrate.jakarta.ChangeJaxbApiDependency
   - org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
       newVersion: 3.0.x
+  - org.openrewrite.java.migrate.jakarta.RetainJaxbApiForArquillianRecorder
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.sun.xml.bind
       oldArtifactId: jaxb-impl
@@ -128,12 +130,22 @@ recipeList:
       groupId: org.glassfish.jaxb
       artifactId: jaxb-runtime
       newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.eclipse.persistence
+      artifactId: org.eclipse.persistence.moxy
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api
       version: 3.0.x
       onlyIfUsing: javax.xml.bind..*
       acceptTransitive: true
+  - org.openrewrite.java.migrate.javax.AddApiDependencyForImports:
+      packageName: jakarta.xml.bind
+      groupId: jakarta.xml.bind
+      artifactId: jakarta.xml.bind-api
+      version: 3.0.x
+  - org.openrewrite.java.migrate.jakarta.AddJakartaXmlBindRuntime
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.xml.bind
       newPackageName: jakarta.xml.bind

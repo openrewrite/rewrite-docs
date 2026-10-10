@@ -97,7 +97,8 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "uriPattern=^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$" --recipe-option "replacement=pulsar:${2}://${3}/${5}/${6}" --recipe-option "consumerOnly=true"'}
+  cliOptions={' --recipe-option "uriPattern=^pulsar:((persistent|non-persistent)://([^/]+)/([^/]+)/([^/]+)/(.+))$" --recipe-option "replacement=pulsar:${2}://${3}/${5}/${6}"'}
+  optionalCliOptions={' --recipe-option "consumerOnly=true"'}
   hasDataTables
 />
 

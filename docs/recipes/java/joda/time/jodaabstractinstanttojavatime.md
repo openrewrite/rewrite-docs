@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.joda.time.JodaAbstractInstantToJavaTime**
 
-_Migrates Joda-Time `AbstractInstant` method calls to their Java time equivalents._
+_Migrates Joda-Time `AbstractInstant` method calls to their Java time equivalents, for both date times and instants._
 
 ## Recipe source
 

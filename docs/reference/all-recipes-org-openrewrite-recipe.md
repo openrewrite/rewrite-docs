@@ -25,7 +25,7 @@ _3 recipes_
 
 _License: Moderne Source Available License_
 
-_123 recipes_
+_125 recipes_
 
 * [org.openrewrite.apache.ApacheBestPractices](/recipes/apache/apachebestpractices.md)
   * **Apache best practices**
@@ -150,6 +150,12 @@ _123 recipes_
 * [org.openrewrite.apache.commons.lang.IsNotEmptyToJdk](/recipes/apache/commons/lang/isnotemptytojdk.md)
   * **Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)**
   * Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == null || s.isEmpty()` and `s != null &amp;&amp; !s.isEmpty()`.
+* [org.openrewrite.apache.commons.lang.ParameterizeRawStrLookupSubclasses](/recipes/apache/commons/lang/parameterizerawstrlookupsubclasses.md)
+  * **Parameterize raw `StrLookup` subclasses**
+  * `org.apache.commons.text.StrLookup` implements `StringLookup`, which extends `UnaryOperator&lt;String&gt;`. Extending it as a raw type erases the inherited `apply(String)` default method, leaving `Function#apply(Object)` unimplemented, so add the `String` type argument.
+* [org.openrewrite.apache.commons.lang.SystemUtilsIsJavaVersionAtLeastToJavaVersion](/recipes/apache/commons/lang/systemutilsisjavaversionatleasttojavaversion.md)
+  * **Replace `SystemUtils#isJavaVersionAtLeast(float)` and `(int)` with the `JavaVersion` overload**
+  * Commons Lang 2.x compared Java versions as a `float` such as `1.4f` or an `int` such as `140`; Commons Lang 3.x only accepts a `JavaVersion`. Calls whose argument is not a literal that names a `JavaVersion` constant are left alone.
 * [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
   * **Migrates to Apache Commons Lang 3.x**
   * Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
@@ -401,7 +407,7 @@ _123 recipes_
 
 _License: Moderne Source Available License_
 
-_24 recipes_
+_26 recipes_
 
 * [org.openrewrite.cucumber.jvm.CollapseCucumberOptionsTags](/recipes/cucumber/jvm/collapsecucumberoptionstags.md)
   * **Collapse `@CucumberOptions` tags into a single tag expression**
@@ -430,9 +436,15 @@ _24 recipes_
 * [org.openrewrite.cucumber.jvm.CucumberOptionsToTestNgCucumberOptions](/recipes/cucumber/jvm/cucumberoptionstotestngcucumberoptions.md)
   * **Migrate `cucumber.api.CucumberOptions` to `io.cucumber.testng.CucumberOptions`**
   * Replace `cucumber.api.CucumberOptions` with the TestNG variant in source files that run through a TestNG runner.
+* [org.openrewrite.cucumber.jvm.CucumberRunWithToSuite](/recipes/cucumber/jvm/cucumberrunwithtosuite.md)
+  * **Cucumber JUnit 4 `@RunWith(Cucumber.class)` to JUnit Platform `@Suite`**
+  * Replaces the Cucumber JUnit 4 runner with a JUnit Platform `@Suite` that runs the Cucumber engine. The `@CucumberOptions` become `@ConfigurationParameter` annotations, and the features become `@SelectClasspathResource` selectors where they are on the classpath. The JUnit 4 runner looks for glue in the package of the annotated class by default, and the Cucumber engine in the whole classpath, so that package becomes the explicit glue when none is configured. Class-level setup and teardown methods become `@BeforeSuite` and `@AfterSuite` methods, as a `@Suite` does not run `@BeforeClass` or `@BeforeAll`. A class that extends another class, which may contribute `@CucumberOptions`, or that has an option that cannot be carried over, such as one that refers to a constant, keeps the JUnit 4 runner, with a comment explaining why.
 * [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
   * **Cucumber to JUnit test `@Suite`**
-  * Migrates Cucumber tests to JUnit test `@Suite`.
+  * Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunWith(Cucumber.class)` runner to a JUnit Platform `@Suite`, and swaps `cucumber-junit` for `cucumber-junit-platform-engine` 7.x. Each Cucumber-JVM module depends on the `cucumber-core` of its own release, and the engine fails to run against any other, so the rest of the Cucumber-JVM dependencies move to that same 7.x.
+* [org.openrewrite.cucumber.jvm.DropStrictAware](/recipes/cucumber/jvm/dropstrictaware.md)
+  * **Drop `StrictAware`**
+  * Cucumber-JVM 8.0.0 removed `StrictAware`, which Cucumber-JVM 7 only ever called with `setStrict(true)`. Remove it from `implements` along with the `setStrict(boolean)` override, and implement `Plugin` instead when the class implements no other plugin interface.
 * [org.openrewrite.cucumber.jvm.DropStrictOption](/recipes/cucumber/jvm/dropstrictoption.md)
   * **Drop the `strict` option**
   * Cucumber-JVM 7.0.0 removed the `strict` option, as scenarios are now always executed in strict mode.
@@ -586,7 +598,7 @@ _33 recipes_
 
 _License: Moderne Source Available License_
 
-_62 recipes_
+_63 recipes_
 
 * [org.openrewrite.github.AddCronTrigger](/recipes/github/addcrontrigger.md)
   * **Add cron workflow trigger**
@@ -654,6 +666,9 @@ _62 recipes_
 * [org.openrewrite.github.RemoveAllCronTriggers](/recipes/github/removeallcrontriggers.md)
   * **Remove all cron triggers**
   * Removes all cron triggers from a workflow.
+* [org.openrewrite.github.RemoveRunner](/recipes/github/removerunner.md)
+  * **Remove a runner from a job**
+  * Removes a runner label from the `runs-on` of a job, leaving the remaining runner labels untouched. Both sequences (`runs-on: [self-hosted, linux]`) and the `labels` of a runner group are supported. The runner is never removed when it is the only one left, as a job requires at least one runner.
 * [org.openrewrite.github.RemoveUnusedWorkflowDispatchInputs](/recipes/github/removeunusedworkflowdispatchinputs.md)
   * **Remove unused workflow dispatch inputs**
   * Remove workflow_dispatch inputs that are not referenced anywhere in the workflow file.
@@ -852,7 +867,7 @@ _22 recipes_
 
 _License: Moderne Source Available License_
 
-_28 recipes_
+_30 recipes_
 
 * [org.openrewrite.hibernate.AddScalarPreferStandardBasicTypes](/recipes/hibernate/addscalarpreferstandardbasictypes.md)
   * **AddScalarPreferStandardBasicTypesForHibernate5**
@@ -865,7 +880,10 @@ _28 recipes_
   * Replaces type mapping of booleans with appropriate attribute converters.
 * [org.openrewrite.hibernate.MigrateDialect](/recipes/hibernate/migratedialect.md)
   * **Migrate Hibernate dialect to the generic dialect**
-  * Migrate all Hibernate version-specific dialect classes to their generic equivalents. Version-specific dialects were deprecated in Hibernate 6.0 and removed in Hibernate 6.2.
+  * Migrate Hibernate version-specific dialect classes removed by Hibernate 6.2 to their generic equivalents.
+* [org.openrewrite.hibernate.MigrateRemovedDialectsHibernate70](/recipes/hibernate/migrateremoveddialectshibernate70.md)
+  * **Migrate dialects removed in Hibernate 7.0 to their generic equivalents**
+  * Hibernate 7.0 removed the remaining version- and storage-specific dialect subclasses that still existed in Hibernate 6.x. The IBM-i (`DB2400*`) variants map to `DB2iDialect`, not the generic `DB2Dialect`; the HANA row/column-store variants and MariaDB 10.6 collapse into the generic `HANADialect` / `MariaDBDialect`, which autodetect behavior from the JDBC connection.
 * [org.openrewrite.hibernate.MigrateResultCheckStyleToExpectation](/recipes/hibernate/migrateresultcheckstyletoexpectation.md)
   * **Migration of `ResultCheckStyle` to `Expectation`**
   * Will migrate the usage of `org.hibernate.annotations.ResultCheckStyle` to `org.hibernate.jdbc.Expectation` in `@SQLInsert`, `@SqlUpdate`, `@SqlDelete` and `@SqlDeleteAll` annotations.
@@ -901,7 +919,7 @@ _28 recipes_
   * This recipe will migrate any existing dependencies on Hibernate 5.x to the latest 6.0.x release. This migration will include the adjustment to the new `org.hibernate.orm` group ID. It accounts for artifacts names that both do and do not include the `jakarta` suffix and it will change both dependencies and managed dependencies.
 * [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60](/recipes/hibernate/migratetohypersistenceutilshibernate60.md)
   * **Migrate Hibernate Types to Hypersistence Utils 6.0**
-  * This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
+  * This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from the `com.vladmihalcea.hibernate` and `com.vladmihalcea.spring` packages to `io.hypersistence.utils.hibernate` and `io.hypersistence.utils.spring`.
 * [org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate62](/recipes/hibernate/migratetohypersistenceutilshibernate62.md)
   * **Migrate Hibernate Types to Hypersistence Utils 6.2**
   * This recipe will migrate any existing dependencies on `io.hypersistence:hypersistence-utils-hibernate-60` to `io.hypersistence:hypersistence-utils-hibernate-62`.
@@ -917,6 +935,9 @@ _28 recipes_
 * [org.openrewrite.hibernate.MigrateUserType](/recipes/hibernate/migrateusertype.md)
   * **Migrate `UserType` to Hibernate 6**
   * With Hibernate 6 the `UserType` interface received a type parameter making it more strictly typed. This recipe applies the changes required to adhere to this change.
+* [org.openrewrite.hibernate.RemoveGeneratedValueStrategyWithGenericGenerator](/recipes/hibernate/removegeneratedvaluestrategywithgenericgenerator.md)
+  * **Remove `@GeneratedValue` strategy when a custom `@GenericGenerator` is used**
+  * Hibernate 7 rejects `@GeneratedValue(strategy = TABLE|SEQUENCE, generator = &quot;X&quot;)` when `&quot;X&quot;` resolves to a `@GenericGenerator` rather than a `@TableGenerator`/`@SequenceGenerator`, and falls back to a plain JPA generator that looks for a table named `&quot;X&quot;`. Dropping the `strategy` attribute keeps the custom generator intact and remains compatible with Hibernate 5.
 * [org.openrewrite.hibernate.RemoveInvalidHibernateGeneratedValueAnnotation](/recipes/hibernate/removeinvalidhibernategeneratedvalueannotation.md)
   * **Remove invalid `@GeneratedValue` annotation**
   * Removes `@GeneratedValue` annotation from fields that are not also annotated with `@Id`.
@@ -943,7 +964,7 @@ _28 recipes_
 
 _License: Apache License Version 2.0_
 
-_47 recipes_
+_49 recipes_
 
 * [org.openrewrite.java.jackson.AddJsonCreatorToPrivateConstructors](/recipes/java/jackson/addjsoncreatortoprivateconstructors.md)
   * **Add `@JsonCreator` to non-public constructors**
@@ -984,9 +1005,15 @@ _47 recipes_
 * [org.openrewrite.java.jackson.MigrateMapperSettersToBuilder](/recipes/java/jackson/migratemappersetterstobuilder.md)
   * **Migrate mapper setter calls to builder pattern**
   * In Jackson 3, `JsonMapper` and other format-aligned mappers are immutable. Configuration methods like `setFilterProvider`, `addMixIn`, `disable`, `enable`, etc. must be called on the builder instead. This recipe migrates setter calls to the builder pattern when safe, or adds TODO comments when automatic migration is not possible.
+* [org.openrewrite.java.jackson.ModuleStillOnJackson2](/recipes/java/jackson/modulestillonjackson2.md)
+  * **Find modules still on Jackson 2**
+  * Marks the source files of modules that either do not resolve Jackson 3 yet, or still use Jackson 2 types in their own sources or those of their child modules. Modules that already resolve Jackson 3 and no longer use Jackson 2 types are left unmarked, as any Jackson 2 dependencies they still declare are there on purpose, for instance for generated sources that are not part of the LST.
 * [org.openrewrite.java.jackson.ReadValueUrlToOpenStream](/recipes/java/jackson/readvalueurltoopenstream.md)
   * **Migrate `ObjectMapper.readValue(URL, ...)` to use `openStream()`**
   * Jackson 3.x removed every `URL`-accepting `readValue` overload from `ObjectMapper`. Rewrite call sites to feed `URL.openStream()` into the surviving `readValue(InputStream, ...)` overload, which is what `readValue(URL, ...)` did internally in Jackson 2.x. The caller's checked-exception story is unchanged: `URL.openStream()` declares `IOException`, the same checked exception the removed `readValue(URL, ...)` declared.
+* [org.openrewrite.java.jackson.RemoveBuiltInModuleBeans](/recipes/java/jackson/removebuiltinmodulebeans.md)
+  * **Remove Spring beans for modules built-in to Jackson 3**
+  * Jackson 3 includes Java time, JDK 8 and parameter name support in databind and removes their module classes. Remove Spring `@Bean` methods that only return a new default instance of one of these modules. Customized, overridden or directly referenced factories are left for manual migration.
 * [org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations](/recipes/java/jackson/removebuiltinmoduleregistrations.md)
   * **Remove registrations of modules built-in to Jackson 3**
   * In Jackson 3, `ParameterNamesModule`, `Jdk8Module`, and `JavaTimeModule` are built into `jackson-databind` and no longer need to be registered manually. This recipe removes `ObjectMapper.registerModule()` and `MapperBuilder.addModule()` calls for these modules.
@@ -1028,7 +1055,7 @@ _47 recipes_
   * Migrate applications to the latest Jackson 3.x release. This recipe handles package changes (`com.fasterxml.jackson` -&gt; `tools.jackson`), dependency updates, core class renames, exception renames, and method renames (e.g., `JsonGenerator.writeObject()` -&gt; `writePOJO()`, `JsonParser.getCurrentValue()` -&gt; `currentValue()`).
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
   * **Upgrade Jackson 2.x dependencies to 3.x**
-  * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs.
+  * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs. Modules that already resolve Jackson 3 and no longer use Jackson 2 types in their sources are left as-is, as any Jackson 2 dependencies they still declare are there on purpose.
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsongeneratormethodrenames.md)
   * **Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator**
   * Rename JsonGenerator methods that were renamed in 3.x (e.g., `writeObject()` to `writePOJO()`, `getCurrentValue()` to `currentValue()`).
@@ -1216,14 +1243,14 @@ _19 recipes_
 
 _License: Moderne Source Available License_
 
-_12 recipes_
+_13 recipes_
 
 * [org.openrewrite.java.joda.time.JodaAbstractInstantToJavaTime](/recipes/java/joda/time/jodaabstractinstanttojavatime.md)
   * **Migrate Joda-Time `AbstractInstant` to Java time**
-  * Migrates Joda-Time `AbstractInstant` method calls to their Java time equivalents.
+  * Migrates Joda-Time `AbstractInstant` method calls to their Java time equivalents, for both date times and instants.
 * [org.openrewrite.java.joda.time.JodaDateMidnightToJavaTime](/recipes/java/joda/time/jodadatemidnighttojavatime.md)
   * **Migrate Joda-Time `DateMidnight` to Java time**
-  * Migrates `org.joda.time.DateMidnight` constructor and `now()` calls to `java.time.LocalDate.now().atStartOfDay(...)`.
+  * Migrates `org.joda.time.DateMidnight` constructors and `now()` calls to `java.time.LocalDate.atStartOfDay(...)`.
 * [org.openrewrite.java.joda.time.JodaDateTimeToJavaTime](/recipes/java/joda/time/jodadatetimetojavatime.md)
   * **Migrate Joda-Time `DateTime` to `java.time.ZonedDateTime`**
   * Migrates Joda-Time `DateTime` constructors and instance methods to the equivalent `java.time.ZonedDateTime` calls.
@@ -1235,10 +1262,10 @@ _12 recipes_
   * Migrates `org.joda.time.Duration` constructor and method calls to `java.time.Duration`.
 * [org.openrewrite.java.joda.time.JodaFormatterToJavaTime](/recipes/java/joda/time/jodaformattertojavatime.md)
   * **Migrate Joda-Time formatter to Java time**
-  * Migrates Joda-Time `DateTimeFormatter` and `DateTimeFormat` method calls to their Java time equivalents.
+  * Migrates Joda-Time `DateTimeFormatter`, `DateTimeFormat` and `ISODateTimeFormat` method calls to their Java time equivalents. Patterns are translated where Joda-Time and `java.time` read a pattern letter differently, and left alone when there is no exact translation.
 * [org.openrewrite.java.joda.time.JodaInstantToJavaTime](/recipes/java/joda/time/jodainstanttojavatime.md)
   * **Migrate Joda-Time `Instant` to Java time**
-  * Migrates `org.joda.time.Instant` constructor calls to `java.time.Instant.now()`.
+  * Migrates `org.joda.time.Instant` constructors and methods to `java.time.Instant`.
 * [org.openrewrite.java.joda.time.JodaIntervalToJavaTime](/recipes/java/joda/time/jodaintervaltojavatime.md)
   * **Migrate Joda-Time `Interval` to Java time**
   * Migrates `org.joda.time.Interval` constructors and methods to their Java time equivalents using ThreeTen-Extra.
@@ -1248,6 +1275,9 @@ _12 recipes_
 * [org.openrewrite.java.joda.time.JodaLocalTimeToJavaTime](/recipes/java/joda/time/jodalocaltimetojavatime.md)
   * **Migrate Joda-Time `LocalTime` to `java.time.LocalTime`**
   * Migrates Joda-Time `LocalTime` constructors and instance methods to the equivalent `java.time.LocalTime` calls.
+* [org.openrewrite.java.joda.time.JodaPropertyToJavaTime](/recipes/java/joda/time/jodapropertytojavatime.md)
+  * **Migrate Joda-Time property idioms to Java time**
+  * Migrates the common uses of Joda-Time properties, such as `dayOfMonth().withMaximumValue()`, `hourOfDay().roundFloorCopy()` and `monthOfYear().getAsText(locale)`, to their `java.time` equivalents.
 * [org.openrewrite.java.joda.time.JodaTimePeriodToJavaTime](/recipes/java/joda/time/jodatimeperiodtojavatime.md)
   * **Migrate Joda-Time `Days`, `Hours`, `Minutes`, `Seconds` to Java time**
   * Migrates `org.joda.time.Days`, `Hours`, `Minutes`, and `Seconds` to `java.time.temporal.ChronoUnit` and `java.time.Duration`.
@@ -1730,7 +1760,7 @@ _7 recipes_
 
 _License: Apache License Version 2.0_
 
-_38 recipes_
+_40 recipes_
 
 * [org.openrewrite.java.micronaut.AddAnnotationProcessorPath](/recipes/java/micronaut/addannotationprocessorpath.md)
   * **Add Maven annotation processor path**
@@ -1741,6 +1771,12 @@ _38 recipes_
 * [org.openrewrite.java.micronaut.AddMicronautRetryDependencyIfNeeded](/recipes/java/micronaut/addmicronautretrydependencyifneeded.md)
   * **Update the Micronaut Retry support**
   * This recipe will add the explicit Micronaut Retry dependency if needed.
+* [org.openrewrite.java.micronaut.AddMicronautValidationDependencyVersion](/recipes/java/micronaut/addmicronautvalidationdependencyversion.md)
+  * **Add missing Micronaut validation dependency versions**
+  * Supply a compatible version for unmanaged Gradle validation dependencies, reusing the validation version already in use when possible.
+* [org.openrewrite.java.micronaut.AddMicronautValidationProcessor](/recipes/java/micronaut/addmicronautvalidationprocessor.md)
+  * **Add the Micronaut validation processor to Gradle source sets**
+  * Add the validation annotation processor to each source set that uses validation constraints.
 * [org.openrewrite.java.micronaut.AddMicronautWebsocketDependencyIfNeeded](/recipes/java/micronaut/addmicronautwebsocketdependencyifneeded.md)
   * **Update the Micronaut Websocket support**
   * This recipe will add the explicit Micronaut Websocket dependency if needed.
@@ -1851,7 +1887,7 @@ _38 recipes_
 
 _License: Moderne Source Available License_
 
-_477 recipes_
+_505 recipes_
 
 * [com.google.guava.InlineGuavaMethods](/recipes/google/guava/inlineguavamethods.md)
   * **Inline `guava` methods annotated with `@InlineMe`**
@@ -1874,6 +1910,9 @@ _477 recipes_
 * [org.openrewrite.java.jspecify.MigrateFromMicronautAnnotations](/recipes/java/jspecify/migratefrommicronautannotations.md)
   * **Migrate from Micronaut Framework annotations to JSpecify**
   * Migrate from Micronaut Framework annotations to JSpecify.
+* [org.openrewrite.java.jspecify.MigrateFromSpotBugsAnnotations](/recipes/java/jspecify/migratefromspotbugsannotations.md)
+  * **Migrate from SpotBugs annotations to JSpecify**
+  * Migrate from SpotBugs `edu.umd.cs.findbugs.annotations` annotations to JSpecify.
 * [org.openrewrite.java.jspecify.MigrateFromSpringFrameworkAnnotations](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
   * **Migrate from Spring Framework annotations to JSpecify**
   * Migrate from Spring Framework annotations to JSpecify.
@@ -2090,6 +2129,9 @@ _477 recipes_
 * [org.openrewrite.java.migrate.ReplaceStringLiteralValue](/recipes/java/migrate/replacestringliteralvalue.md)
   * **Replace `String` literal**
   * Replace the value of a complete `String` literal.
+* [org.openrewrite.java.migrate.SimplifySecurityManagerThreadGroup](/recipes/java/migrate/simplifysecuritymanagerthreadgroup.md)
+  * **Simplify the removed security manager's thread group fallback**
+  * Remove a null SecurityManager local used only by the immediately following thread group conditional.
 * [org.openrewrite.java.migrate.SunNetSslPackageUnavailable](/recipes/java/migrate/sunnetsslpackageunavailable.md)
   * **Replace `com.sun.net.ssl` package**
   * The internal API `com.sun.net.ssl` is removed. The package was intended for internal use only and replacement APIs can be found in the `javax.net.ssl` package.
@@ -2126,6 +2168,9 @@ _477 recipes_
 * [org.openrewrite.java.migrate.UpgradeDockerImageVersion](/recipes/java/migrate/upgradedockerimageversion.md)
   * **Upgrade Docker image Java version**
   * Upgrade Docker image tags to use the specified Java version. Updates common Java Docker images including eclipse-temurin, amazoncorretto, azul/zulu-openjdk, and others. Also migrates deprecated images (openjdk, adoptopenjdk) to eclipse-temurin, preserving any tag suffix such as `-jre-alpine`. When a `FROM` is built from a build argument, the default value of the corresponding global `ARG` is upgraded instead, such that `ARG java_version=17` used as `FROM eclipse-temurin:$\{java_version\}` becomes `ARG java_version=25`. Image references built from arguments without a default value are left untouched, as their value can not be determined statically. A digest pin is dropped when the tag is upgraded, as the stale digest would otherwise keep resolving to the old image.
+* [org.openrewrite.java.migrate.UpgradeJavaCiContainerImage](/recipes/java/migrate/upgradejavacicontainerimage.md)
+  * **Upgrade CircleCI OpenJDK job images**
+  * Upgrade cimg/openjdk job containers in GitHub Actions and CircleCI to the target Java version, preserving newer versions and unrelated service images.
 * [org.openrewrite.java.migrate.UpgradeJavaVersion](/recipes/java/migrate/upgradejavaversion.md)
   * **Upgrade Java version**
   * Upgrade build plugin configuration to use the specified Java version. This recipe changes `java.toolchain.languageVersion` in `build.gradle(.kts)` of gradle projects, or maven-compiler-plugin target version and related settings. Will not downgrade if the version is newer than the specified version.
@@ -2147,6 +2192,9 @@ _477 recipes_
 * [org.openrewrite.java.migrate.UpgradePluginsForJava25](/recipes/java/migrate/upgradepluginsforjava25.md)
   * **Upgrade plugins to Java 25 compatible versions**
   * Updates plugins and dependencies to versions compatible with Java 25.
+* [org.openrewrite.java.migrate.UpgradeSpringBootParentForJava25](/recipes/java/migrate/upgradespringbootparentforjava25.md)
+  * **Upgrade Spring Boot 3 Maven parents for Java 25**
+  * Upgrade Spring Boot 3 Maven parents to the latest 3.5 release so that Spring's bundled ASM can read Java 25 class files. Stay within Boot 3: crossing from Boot 2 requires a separate Jakarta migration, and newer Boot major versions must not be downgraded.
 * [org.openrewrite.java.migrate.UpgradeToJava17](/recipes/java/migrate/upgradetojava17.md)
   * **Migrate to Java 17**
   * This recipe will apply changes commonly needed when migrating to Java 17. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 17 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 17.
@@ -2165,6 +2213,9 @@ _477 recipes_
 * [org.openrewrite.java.migrate.UpgradeToJava8](/recipes/java/migrate/upgradetojava8.md)
   * **Migrate to Java 8**
   * This recipe will apply changes commonly needed when upgrading to Java 8. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy.
+* [org.openrewrite.java.migrate.UpgradeUnmodeledMavenJavaVersion](/recipes/java/migrate/upgradeunmodeledmavenjavaversion.md)
+  * **Upgrade Java version in alternate Maven builds**
+  * Update explicit Java version properties and compiler settings in pom.xml files parsed as XML without a Maven model, for example in a repository built with Gradle. Property references are left intact.
 * [org.openrewrite.java.migrate.UseJavaUtilBase64](/recipes/java/migrate/usejavautilbase64.md)
   * **Prefer `java.util.Base64` instead of `sun.misc`**
   * Prefer `java.util.Base64` instead of using `sun.misc` in Java 8 or higher. `sun.misc` is not exported by the Java module system and accessing this class will result in a warning in Java 11 and an error in Java 17.
@@ -2174,6 +2225,12 @@ _477 recipes_
 * [org.openrewrite.java.migrate.WasDevMvnChangeParentArtifactId](/recipes/java/migrate/wasdevmvnchangeparentartifactid.md)
   * **Change `net.wasdev.maven.parent:java8-parent` to `:parent`**
   * This recipe changes the artifactId of the `&lt;parent&gt;` tag in the `pom.xml` from `java8-parent` to `parent`.
+* [org.openrewrite.java.migrate.awt.JavaAwtAPIs](/recipes/java/migrate/awt/javaawtapis.md)
+  * **Use modernized `java.awt` APIs**
+  * Replace calls to AWT and Swing methods deprecated since JDK 1.1 with calls to the methods that replaced them, such as `Component#show()` with `Component#setVisible(true)`.
+* [org.openrewrite.java.migrate.awt.ReplaceDeprecatedAwtMethod](/recipes/java/migrate/awt/replacedeprecatedawtmethod.md)
+  * **Replace a deprecated AWT method**
+  * Replace calls to an AWT method deprecated since JDK 1.1 with calls to the method that replaced it. Declarations and `super` calls are left alone: the replacements delegate back to the deprecated methods, so a rewritten `super` call would reach overrides it used to bypass.
 * [org.openrewrite.java.migrate.cobertura.RemoveCoberturaMavenPlugin](/recipes/java/migrate/cobertura/removecoberturamavenplugin.md)
   * **Remove Cobertura Maven plugin**
   * This recipe will remove Cobertura, as it is not compatible with Java 11.
@@ -2456,12 +2513,42 @@ _477 recipes_
 * [org.openrewrite.java.migrate.jacoco.UpgradeJaCoCo](/recipes/java/migrate/jacoco/upgradejacoco.md)
   * **Upgrade JaCoCo**
   * This recipe will upgrade JaCoCo to the latest patch version, which traditionally advertises full backwards compatibility for older Java versions.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaAnnotationDependency](/recipes/java/migrate/jakarta/addjakartaannotationdependency.md)
+  * **Add the Jakarta Annotation API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaCdiDependency](/recipes/java/migrate/jakarta/addjakartacdidependency.md)
+  * **Add the Jakarta CDI API when needed**
+  * Add the Jakarta CDI API for migrated source without promoting an explicitly provided or compile-only API to a runtime dependency.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaEjbDependency](/recipes/java/migrate/jakarta/addjakartaejbdependency.md)
+  * **Add the Jakarta Ejb API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaElDependency](/recipes/java/migrate/jakarta/addjakartaeldependency.md)
+  * **Add the Jakarta El API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaInjectDependency](/recipes/java/migrate/jakarta/addjakartainjectdependency.md)
+  * **Add the jakarta.inject API when needed**
+  * Add a standalone API only when no explicitly provided API or full platform already supplies it.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaMailDependency](/recipes/java/migrate/jakarta/addjakartamaildependency.md)
+  * **Add the Jakarta Mail API when needed**
+  * Add the migrated API without promoting an explicitly provided or compile-only dependency.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaRestDependency](/recipes/java/migrate/jakarta/addjakartarestdependency.md)
+  * **Add the jakarta.ws.rs API when needed**
+  * Add a standalone API only when no explicitly provided API or full platform already supplies it.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaXmlBindRuntime](/recipes/java/migrate/jakarta/addjakartaxmlbindruntime.md)
+  * **Add a Jakarta JAXB runtime for Maven applications**
+  * Add a Jakarta JAXB 3 runtime when a Maven module calls JAXBContext.newInstance and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in javax provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency.
 * [org.openrewrite.java.migrate.jakarta.ApplicationPathWildcardNoLongerAccepted](/recipes/java/migrate/jakarta/applicationpathwildcardnolongeraccepted.md)
   * **Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values**
   * Remove trailing `/*` from `jakarta.ws.rs.ApplicationPath` values.
+* [org.openrewrite.java.migrate.jakarta.ChangeJaxbApiDependency](/recipes/java/migrate/jakarta/changejaxbapidependency.md)
+  * **Migrate the JAXB API dependency unless Recorder still needs it**
+  * Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries. Recorder modules migrated in the same reactor are excluded.
 * [org.openrewrite.java.migrate.jakarta.DeprecatedCDIAPIsRemoved40](/recipes/java/migrate/jakarta/deprecatedcdiapisremoved40.md)
   * **Remove deprecated API's not supported in CDI4.0**
   * Deprecated APIs have been removed in CDI 4.0. This recipe removes and updates the corresponding deprecated methods.
+* [org.openrewrite.java.migrate.jakarta.DoesNotHaveProvidedApiDependency](/recipes/java/migrate/jakarta/doesnothaveprovidedapidependency.md)
+  * **Build does not declare a provided API dependency**
+  * Find build files without an explicitly provided or compile-only API, so adding a compile dependency does not promote a container-provided API to runtime scope.
 * [org.openrewrite.java.migrate.jakarta.EhcacheJavaxToJakarta](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
   * **Migrate Ehcache from javax to jakarta namespace**
   * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Ehcache dependencies with their counterparts that are compatible with Jakarta EE 9.
@@ -2483,12 +2570,21 @@ _477 recipes_
 * [org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2](/recipes/java/migrate/jakarta/fileuploadtofileupload2.md)
   * **Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`**
   * Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`.
+* [org.openrewrite.java.migrate.jakarta.HasJettyDependency](/recipes/java/migrate/jakarta/hasjettydependency.md)
+  * **Build uses Jetty before version 12**
+  * Mark the source set when a Maven or Gradle module depends on servlet or WebSocket artifacts relocated by the Jetty 12 migration. This permits updating the Java baseline in parent build files as well as the module using Jetty.
 * [org.openrewrite.java.migrate.jakarta.HasNoJakartaAnnotations](/recipes/java/migrate/jakarta/hasnojakartaannotations.md)
   * **Project has no Jakarta annotations**
   * Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present.
+* [org.openrewrite.java.migrate.jakarta.InvocationContextGetConstructor](/recipes/java/migrate/jakarta/invocationcontextgetconstructor.md)
+  * **Complete InvocationContext decorators**
+  * Delegate getConstructor() when a legacy InvocationContext wrapper delegates getMethod().
 * [org.openrewrite.java.migrate.jakarta.JacksonJavaxToJakarta](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
   * **Migrate Jackson from javax to jakarta namespace**
   * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing Jackson dependencies with their counterparts that are compatible with Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.JacksonProviderOverrides](/recipes/java/migrate/jakarta/jacksonprovideroverrides.md)
+  * **Migrate Jackson provider configuration overrides**
+  * Add and forward the default view parameter required by Jakarta Jackson providers.
 * [org.openrewrite.java.migrate.jakarta.JakartaEE10](/recipes/java/migrate/jakarta/jakartaee10.md)
   * **Migrate to Jakarta EE 10**
   * These recipes help with the Migration to Jakarta EE 10, flagging and updating deprecated methods.
@@ -2597,6 +2693,9 @@ _477 recipes_
 * [org.openrewrite.java.migrate.jakarta.JavaxResourceToJakartaResource](/recipes/java/migrate/jakarta/javaxresourcetojakartaresource.md)
   * **Migrate deprecated `javax.resource` packages to `jakarta.resource`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JavaxRuntimeTypeNamesToJakarta](/recipes/java/migrate/jakarta/javaxruntimetypenamestojakarta.md)
+  * **Migrate Jakarta EE runtime type names**
+  * Migrate CDI, EJB, Servlet and resource annotation names used for reflective lookup and annotation matching while retaining Java SE type names.
 * [org.openrewrite.java.migrate.jakarta.JavaxSecurityToJakartaSecurity](/recipes/java/migrate/jakarta/javaxsecuritytojakartasecurity.md)
   * **Migrate deprecated `javax.security.enterprise` packages to `jakarta.security.enterprise`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
@@ -2636,6 +2735,12 @@ _477 recipes_
 * [org.openrewrite.java.migrate.jakarta.JavaxXmlWsMigrationToJakartaXmlWs](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
   * **Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`**
   * Java EE has been rebranded to Jakarta EE, necessitating a package relocation.
+* [org.openrewrite.java.migrate.jakarta.JerseyLoggingFilterToFeature](/recipes/java/migrate/jakarta/jerseyloggingfiltertofeature.md)
+  * **Replace Jersey logging filter with logging feature**
+  * Replace the removed Jersey `LoggingFilter(Logger, boolean)` constructor when passed directly to JAX-RS `Configurable.register`, preserving the logger and entity logging setting. Other usages require manual migration.
+* [org.openrewrite.java.migrate.jakarta.JettyConnectorGetPort](/recipes/java/migrate/jakarta/jettyconnectorgetport.md)
+  * **Access Jetty connector ports through `NetworkConnector`**
+  * Jetty 9 moved `getPort()` from `Connector` to `NetworkConnector`. Cast legacy connector receivers to the network connector interface when upgrading Jetty.
 * [org.openrewrite.java.migrate.jakarta.JettyUpgradeEE10](/recipes/java/migrate/jakarta/jettyupgradeee10.md)
   * **Update Jetty EE9 to Jetty EE10**
   * Update Jetty dependencies from EE9 to EE10, changing the groupId and artifactIds as needed.
@@ -2696,6 +2801,9 @@ _477 recipes_
 * [org.openrewrite.java.migrate.jakarta.RestAssuredJavaxToJakarta](/recipes/java/migrate/jakarta/restassuredjavaxtojakarta.md)
   * **Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9**
   * Java EE has been rebranded to Jakarta EE.  This recipe replaces existing RestAssured dependencies with their counterparts that are compatible with Jakarta EE 9.
+* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForArquillianRecorder](/recipes/java/migrate/jakarta/retainjaxbapiforarquillianrecorder.md)
+  * **Retain the JAXB 2 API for Arquillian Recorder 1.x**
+  * Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference javax.xml.bind classes after the application's Jakarta migration.
 * [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForJackson](/recipes/java/migrate/jakarta/retainjaxbapiforjackson.md)
   * **Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present**
   * When migrating from `javax.xml.bind` to `jakarta.xml.bind` 3.0+, the `javax.xml.bind:jaxb-api` dependency is normally replaced. However, if `jackson-module-jaxb-annotations` is on the classpath (and still uses the `javax.xml.bind` namespace), this recipe ensures `javax.xml.bind:jaxb-api` remains available as a runtime dependency to prevent `NoClassDefFoundError`.
@@ -2771,9 +2879,18 @@ _477 recipes_
 * [org.openrewrite.java.migrate.jakarta.UpgradeFaces4OpenSourceLibraries](/recipes/java/migrate/jakarta/upgradefaces4opensourcelibraries.md)
   * **Upgrade Faces open source libraries**
   * Upgrade PrimeFaces, OmniFaces, and MyFaces libraries to Jakarta EE10 versions.
+* [org.openrewrite.java.migrate.jakarta.UpgradeJavaForJetty12](/recipes/java/migrate/jakarta/upgradejavaforjetty12.md)
+  * **Use Java 17 for Jetty 12**
+  * Update the Java baseline of builds using Jetty to the minimum required by Jetty 12.
+* [org.openrewrite.java.migrate.jakarta.UpgradeJettyCoreDependencies](/recipes/java/migrate/jakarta/upgradejettycoredependencies.md)
+  * **Align legacy Jetty core dependencies with Jetty 12**
+  * Upgrade explicitly declared Jetty core dependencies alongside the relocated servlet dependencies.
 * [org.openrewrite.java.migrate.jakarta.UpgradeMavenEjbPluginConfiguration](/recipes/java/migrate/jakarta/upgrademavenejbpluginconfiguration.md)
   * **Set `maven-ejb-plugin` ejbVersion to 4.0**
   * Updates the `&lt;ejbVersion&gt;` configuration of `maven-ejb-plugin` to `4.0` when the current value (or its resolved Maven property) indicates EJB 3.x. Handles the common pattern where `&lt;ejbVersion&gt;` is coupled to the `javax.ejb-api` dependency version via a shared property, decoupling them after migration.
+* [org.openrewrite.java.migrate.jakarta.WeldToJakarta](/recipes/java/migrate/jakarta/weldtojakarta.md)
+  * **Migrate Weld implementations to Jakarta CDI**
+  * Replace legacy Weld core artifacts and upgrade javax-based Weld implementations to Weld 4, which implements Jakarta CDI 3.
 * [org.openrewrite.java.migrate.jakarta.WsWsocServerContainerDeprecation](/recipes/java/migrate/jakarta/wswsocservercontainerdeprecation.md)
   * **Replace `doUpgrade(..)` with `ServerContainer.upgradeHttpToWebSocket(..)`**
   * Deprecated `WsWsocServerContainer.doUpgrade(..)` is replaced by the Jakarta WebSocket 2.1 specification `ServerContainer.upgradeHttpToWebSocket(..)`.
@@ -2798,6 +2915,9 @@ _477 recipes_
 * [org.openrewrite.java.migrate.javaee8.ServletIsRequestedSessionIdFromURL](/recipes/java/migrate/javaee8/servletisrequestedsessionidfromurl.md)
   * **Replace `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` with `isRequestedSessionIdFromURL()`**
   * The  method `HttpServletRequestWrapper.isRequestedSessionIdFromUrl()` is deprecated in JavaEE8 and is replaced by `HttpServletRequestWrapper.isRequestedSessionIdFromURL()`.
+* [org.openrewrite.java.migrate.javax.AddApiDependencyForImports](/recipes/java/migrate/javax/addapidependencyforimports.md)
+  * **Add an API dependency for explicit imports**
+  * Add an API dependency to the nearest Maven module importing the package, including imports whose types could not be resolved by the parser because the JDK used to provide them. A module that already has the API in the needed scope, or from a dependency it declares as provided, is left alone.
 * [org.openrewrite.java.migrate.javax.AddColumnAnnotation](/recipes/java/migrate/javax/addcolumnannotation.md)
   * **`@ElementCollection` annotations must be accompanied by a defined `@Column` annotation**
   * When an attribute is annotated with `@ElementCollection`, a separate table is created for the attribute that includes the attribute  ID and value. In OpenJPA, the column for the annotated attribute is named element, whereas EclipseLink names the column based on  the name of the attribute. To remain compatible with tables that were created with OpenJPA, add a `@Column` annotation with the name  attribute set to element.
@@ -3686,7 +3806,7 @@ _43 recipes_
 
 _License: Moderne Source Available License_
 
-_338 recipes_
+_341 recipes_
 
 * [org.openrewrite.gradle.spring.AddParametersCompilerFlagToGradle](/recipes/gradle/spring/addparameterscompilerflagtogradle.md)
   * **Add `-parameters` compiler flag for Spring in Gradle**
@@ -3864,7 +3984,7 @@ _338 recipes_
   * Replace deprecated `micrometer-spring-legacy` with `spring-boot-starter-actuator`.
 * [org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md)
   * **Merge Spring `bootstrap.yml` with `application.yml`**
-  * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency.
+  * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency. Profile-specific `bootstrap-\{profile\}.yml` files are also merged into their matching `application-\{profile\}.yml`. A bootstrap file without a matching application file is renamed instead.
 * [org.openrewrite.java.spring.boot2.MigrateActuatorMediaTypeToApiVersion](/recipes/java/spring/boot2/migrateactuatormediatypetoapiversion.md)
   * **Migrate deprecated `ActuatorMediaType` to `ApiVersion#getProducedMimeType`**
   * Spring Boot `ActuatorMediaType` was deprecated in 2.5 in favor of `ApiVersion#getProducedMimeType()`. Replace `MediaType.parseMediaType(ActuatorMediaType.Vx_JSON)` with `MediaType.asMediaType(ApiVersion.Vx.getProducedMimeType())`.
@@ -4210,6 +4330,9 @@ _338 recipes_
 * [org.openrewrite.java.spring.boot4.AddModularStarterDependencies](/recipes/java/spring/boot4/addmodularstarterdependencies.md)
   * **Add Spring Boot 4.0 modular starter dependencies**
   * Adds the Spring Boot 4.0 modular starter dependencies implied by a module's Spring Boot 3 package usage, without relocating any source. Split out from `MigrateToModularStarters` so that it can be sequenced ahead of `MigrateAutoconfigurePackages` when composed into a larger migration.
+* [org.openrewrite.java.spring.boot4.AddSpringBootBomForTransitiveDependencyManagement](/recipes/java/spring/boot4/addspringbootbomfortransitivedependencymanagement.md)
+  * **Manage Spring Boot directly when a third-party BOM manages an older version**
+  * Import Spring Boot's BOM ahead of third-party BOMs that still manage an older Spring Boot release.
 * [org.openrewrite.java.spring.boot4.AddSpringBootStarterDataMongoDbReactiveTest](/recipes/java/spring/boot4/addspringbootstarterdatamongodbreactivetest.md)
   * **Add `spring-boot-starter-data-mongodb-reactive-test` for reactive MongoDB tests**
   * Adds the dedicated Spring Boot 4.0 reactive Spring Data MongoDB test starter when the application directly uses the reactive Spring Data MongoDB starter and MongoDB test slices.
@@ -4228,6 +4351,9 @@ _338 recipes_
 * [org.openrewrite.java.spring.boot4.MigrateJsonschema2PojoToSpringBoot4](/recipes/java/spring/boot4/migratejsonschema2pojotospringboot4.md)
   * **Migrate jsonschema2pojo configuration to Spring Boot 4**
   * Update `jsonschema2pojo-maven-plugin` to generate Jackson 3 and Jakarta Validation annotations compatible with Spring Boot 4. The `jackson3` annotation style was introduced in jsonschema2pojo 1.3.0, so the plugin is upgraded to at least that version first.
+* [org.openrewrite.java.spring.boot4.MigrateLiquibasePropertiesApi](/recipes/java/spring/boot4/migrateliquibasepropertiesapi.md)
+  * **Migrate Liquibase property values passed to SpringLiquibase**
+  * Convert the former String contexts and labels properties to comma-delimited values when passed directly to SpringLiquibase setters, and replace setLabels with setLabelFilter. Already collection-aware code is retained.
 * [org.openrewrite.java.spring.boot4.MigrateOpenApiGeneratorToSpringBoot4](/recipes/java/spring/boot4/migrateopenapigeneratortospringboot4.md)
   * **Migrate OpenAPI Generator `spring` configuration to Spring Boot 4**
   * Update `openapi-generator-maven-plugin` executions using the `spring` generator to generate Spring Boot 4 and Jackson 3 sources. Replaces the deprecated `useSpringBoot3` option with `useSpringBoot4` and enables `useJackson3`, matching the Jackson 3 baseline of Spring Boot 4. Enabling `useSpringBoot4` also enables `useJakartaEe`, so it is left implicit. The `useSpringBoot4`/`useJackson3` options were introduced in OpenAPI Generator 7.16.0, so the plugin is upgraded to at least that version first.
@@ -4255,6 +4381,9 @@ _338 recipes_
 * [org.openrewrite.java.spring.boot4.UpgradeSpringBoot_4_0](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
   * **Migrate to Spring Boot 4.0 (Community Edition)**
   * Migrate applications to the latest Spring Boot 4.0 release. This recipe will modify an application's build files, make changes to deprecated/preferred APIs.
+* [org.openrewrite.java.spring.boot4.UsesSpringBoot](/recipes/java/spring/boot4/usesspringboot.md)
+  * **Find Spring Boot repositories**
+  * Find every source file of a repository in which some build uses Spring Boot: a Spring Boot dependency, direct or transitive, the Spring Boot Gradle plugin, a Spring Boot parent POM, or an imported `spring-boot-dependencies` BOM. A repository without build files matches.
 * [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
   * **Add logging.pattern.level for traceId and spanId**
   * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
@@ -4915,7 +5044,7 @@ _67 recipes_
 
 _License: Moderne Source Available License_
 
-_203 recipes_
+_205 recipes_
 
 * [org.openrewrite.recipe.rewrite-static-analysis.InlineDeprecatedMethods](/recipes/recipe/rewrite-static-analysis/inlinedeprecatedmethods.md)
   * **Inline deprecated delegating methods**
@@ -5052,6 +5181,12 @@ _203 recipes_
 * [org.openrewrite.staticanalysis.FinalizePrivateFields](/recipes/staticanalysis/finalizeprivatefields.md)
   * **Finalize private fields**
   * Adds the `final` modifier keyword to private instance variables which are not reassigned.
+* [org.openrewrite.staticanalysis.FindIgnoredCheckReturnValue](/recipes/staticanalysis/findignoredcheckreturnvalue.md)
+  * **Find ignored results of `@CheckReturnValue` methods**
+  * Marks invocations whose result is discarded even though the method is annotated with `@CheckReturnValue`, either directly or through its enclosing class or package. Any annotation named `CheckReturnValue` is recognized, and `@CanIgnoreReturnValue` opts a method or class back out. Ignoring such a result is usually a bug, such as calling a method on an immutable object without using the returned copy. Calls expected to throw, Mockito stubbing and verification, calls on the current instance in custom AssertJ assertion constructors, and code under `@SuppressWarnings(&quot;CheckReturnValue&quot;)` are not marked.
+* [org.openrewrite.staticanalysis.FindMainWithThrowsClause](/recipes/staticanalysis/findmainwiththrowsclause.md)
+  * **Find `main` methods with a `throws` clause**
+  * Marks JVM entry-point `main` methods (`public static void main(String[])` or the varargs equivalent) that declare a `throws` clause. Uncaught exceptions from `main` propagate to the JVM's default handler, which just prints the stack trace and returns exit code 1. Handle exceptions explicitly and exit with a meaningful code.
 * [org.openrewrite.staticanalysis.FindMissingJavadocOnPublicMethods](/recipes/staticanalysis/findmissingjavadoconpublicmethods.md)
   * **Find public methods missing Javadoc**
   * Locates `public` method declarations that are not documented with a Javadoc comment, marks them with a search result, and records them in a data table.
@@ -6447,7 +6582,7 @@ _303 recipes_
 
 _License: Apache License Version 2.0_
 
-_1675 recipes_
+_1693 recipes_
 
 * [ai.timefold.solver.migration.ChangeVersion](/recipes/timefold/solver/migration/changeversion.md)
   * **Change the Timefold version**
@@ -7100,6 +7235,9 @@ _1675 recipes_
 * [io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus311/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus311.SyncHibernateJpaModelgenVersionWithBOM**
   * 
+* [io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations](/recipes/quarkus/updates/core/quarkus311/webdependencylocatorrelocations.md)
+  * **io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations**
+  * 
 * [io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM](/recipes/quarkus/updates/core/quarkus312/synchibernatejpamodelgenversionwithbom.md)
   * **io.quarkus.updates.core.quarkus312.SyncHibernateJpaModelgenVersionWithBOM**
   * 
@@ -7178,6 +7316,9 @@ _1675 recipes_
 * [io.quarkus.updates.core.quarkus324.ReplaceOldJpaModelgenAnnotationProcessor](/recipes/quarkus/updates/core/quarkus324/replaceoldjpamodelgenannotationprocessor.md)
   * **io.quarkus.updates.core.quarkus324.ReplaceOldJpaModelgenAnnotationProcessor**
   * 
+* [io.quarkus.updates.core.quarkus325.DevUiSpiRelocations](/recipes/quarkus/updates/core/quarkus325/devuispirelocations.md)
+  * **io.quarkus.updates.core.quarkus325.DevUiSpiRelocations**
+  * Rename the Dev UI SPI artifacts quarkus-vertx-http-dev-ui-spi to quarkus-devui-deployment-spi and quarkus-vertx-http-dev-ui-tests to quarkus-devui-test-spi.
 * [io.quarkus.updates.core.quarkus326.EnableEnabledConfigChanges](/recipes/quarkus/updates/core/quarkus326/enableenabledconfigchanges.md)
   * **io.quarkus.updates.core.quarkus326.EnableEnabledConfigChanges**
   * 
@@ -7325,6 +7466,51 @@ _1675 recipes_
 * [io.quarkus.updates.core.quarkus39.UpdateConfigRoots](/recipes/quarkus/updates/core/quarkus39/updateconfigroots.md)
   * **io.quarkus.updates.core.quarkus39.UpdateConfigRoots**
   * 
+* [io.quarkus.updates.core.quarkus40.HibernateORMConfigProperties](/recipes/quarkus/updates/core/quarkus40/hibernateormconfigproperties.md)
+  * **Rename deprecated Hibernate ORM configuration properties**
+  * Rename Hibernate ORM configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.HttpSslConfigProperties](/recipes/quarkus/updates/core/quarkus40/httpsslconfigproperties.md)
+  * **Rename deprecated HTTP SSL configuration properties**
+  * Rename HTTP SSL configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.InfinispanConfigProperties](/recipes/quarkus/updates/core/quarkus40/infinispanconfigproperties.md)
+  * **Rename deprecated Infinispan configuration properties**
+  * Rename Infinispan configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.Jackson3Migration](/recipes/quarkus/updates/core/quarkus40/jackson3migration.md)
+  * **Migrate Jackson from 2.x to 3.x**
+  * Jackson 3.x uses new package names (tools.jackson instead of com.fasterxml.jackson), new group IDs, and includes various API changes. This recipe applies the OpenRewrite Jackson 2 to 3 migration.
+* [io.quarkus.updates.core.quarkus40.JavaVersion21](/recipes/quarkus/updates/core/quarkus40/javaversion21.md)
+  * **Change Maven and Gradle Java version property values to 21**
+  * Change maven.compiler.source and maven.compiler.target values to 21.
+* [io.quarkus.updates.core.quarkus40.KeycloakPolicyEnforcerConfigProperties](/recipes/quarkus/updates/core/quarkus40/keycloakpolicyenforcerconfigproperties.md)
+  * **Rename deprecated Keycloak Policy Enforcer configuration properties**
+  * Rename Keycloak Policy Enforcer configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.KubernetesConfigProperties](/recipes/quarkus/updates/core/quarkus40/kubernetesconfigproperties.md)
+  * **Rename deprecated Kubernetes configuration properties**
+  * Rename Kubernetes configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.MailerConfigProperties](/recipes/quarkus/updates/core/quarkus40/mailerconfigproperties.md)
+  * **Rename deprecated Mailer configuration properties**
+  * Rename Mailer configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.MicrometerConfigProperties](/recipes/quarkus/updates/core/quarkus40/micrometerconfigproperties.md)
+  * **Rename deprecated Micrometer configuration properties**
+  * Rename Micrometer configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.MiscConfigProperties](/recipes/quarkus/updates/core/quarkus40/miscconfigproperties.md)
+  * **Rename miscellaneous deprecated configuration properties**
+  * Rename miscellaneous configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.OidcConfigProperties](/recipes/quarkus/updates/core/quarkus40/oidcconfigproperties.md)
+  * **Rename deprecated OIDC configuration properties**
+  * Rename OIDC configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.RedisCacheConfigProperties](/recipes/quarkus/updates/core/quarkus40/rediscacheconfigproperties.md)
+  * **Rename deprecated Redis Cache configuration properties**
+  * Rename Redis Cache configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.RestClientConfigProperties](/recipes/quarkus/updates/core/quarkus40/restclientconfigproperties.md)
+  * **Rename deprecated REST Client configuration properties**
+  * Rename REST Client configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.SmallRyeConfigProperties](/recipes/quarkus/updates/core/quarkus40/smallryeconfigproperties.md)
+  * **Rename deprecated SmallRye configuration properties**
+  * Rename SmallRye configuration properties that were deprecated in Quarkus 3.x and removed in Quarkus 4.0.
+* [io.quarkus.updates.core.quarkus40.UpgradeToJava21](/recipes/quarkus/updates/core/quarkus40/upgradetojava21.md)
+  * **Migrate to Java 21**
+  * This recipe will apply changes commonly needed when migrating to Java 21. Build files will be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
 * [io.quarkus.updates.cxf.cxf316.UpdateAll](/recipes/quarkus/updates/cxf/cxf316/updateall.md)
   * **Migrate quarkus-cxf to 3.16**
   * quarkus-cxf 3.16.0 switched the default HTTP conduit to the Vert.x HttpClient, where hostname-verifier fails at runtime, and deprecated the per client trust-store*/key-store* options in favor of the Quarkus TLS registry. A safe automatic rewrite is not possible for every configuration, so this recipe only adds a deprecation warning comment at the top of the affected properties files and leaves the migration to the user.
@@ -8030,6 +8216,9 @@ _1675 recipes_
 * [org.openrewrite.quarkus.MigrateToQuarkus_v3_9_0](/recipes/quarkus/migratetoquarkus_v3_9_0.md)
   * **Quarkus Updates Aggregate 3.9.0**
   * Quarkus update recipes to upgrade your application to 3.9.0.
+* [org.openrewrite.quarkus.MigrateToQuarkus_v4_0_0](/recipes/quarkus/migratetoquarkus_v4_0_0.md)
+  * **Quarkus Updates Aggregate 4.0.0**
+  * Quarkus update recipes to upgrade your application to 4.0.0.
 * [sh.stubborn.contract.migration.DropJUnit4Support](/recipes/sh/stubborn/contract/migration/dropjunit4support.md)
   * **Migrate StubRunner JUnit 4 Rule to JUnit 5 Extension**
   * Replaces @Rule StubRunnerRule / StubRunnerClassRule with @RegisterExtension StubRunnerExtension (JUnit 5). Requires JUnit 5 on the test classpath.

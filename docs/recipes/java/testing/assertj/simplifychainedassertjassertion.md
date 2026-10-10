@@ -101,6 +101,7 @@ class MyTest {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
+  optionalCliOptions={' --recipe-option "chainedAssertion=equals" --recipe-option "assertToReplace=isTrue" --recipe-option "dedicatedAssertion=isEqualTo" --recipe-option "requiredType=java.lang.String"'}
   hasDataTables
 />
 

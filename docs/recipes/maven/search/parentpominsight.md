@@ -123,7 +123,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupIdPattern=org.springframework.boot" --recipe-option "artifactIdPattern=spring-boot-starter-*" --recipe-option "version=1.x"'}
+  cliOptions={' --recipe-option "groupIdPattern=org.springframework.boot" --recipe-option "artifactIdPattern=spring-boot-starter-*"'}
+  optionalCliOptions={' --recipe-option "version=1.x" --recipe-option "recursive=true"'}
   showGradle={false}
   hasDataTables
 />

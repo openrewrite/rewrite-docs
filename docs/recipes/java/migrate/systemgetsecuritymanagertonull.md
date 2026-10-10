@@ -49,6 +49,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace method invocation with constant](../../java/replacemethodinvocationwithconstant)
   * methodPattern: `java.lang.System#getSecurityManager()`
   * replacement: `null`
+* [Simplify the removed security manager's thread group fallback](../../java/migrate/simplifysecuritymanagerthreadgroup)
 * [Simplify constant if branch execution](../../staticanalysis/simplifyconstantifbranchexecution)
 
 </TabItem>
@@ -76,6 +77,7 @@ recipeList:
   - org.openrewrite.java.ReplaceMethodInvocationWithConstant:
       methodPattern: java.lang.System#getSecurityManager()
       replacement: null
+  - org.openrewrite.java.migrate.SimplifySecurityManagerThreadGroup
   - org.openrewrite.staticanalysis.SimplifyConstantIfBranchExecution
 
 ```

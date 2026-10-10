@@ -63,6 +63,7 @@ recipeList:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-feature-flags"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_FEATURE_FLAGS"
+  optionalCliOptions={' --recipe-option "featureKey=flag-key-123abc"'}
   hasDataTables
 />
 

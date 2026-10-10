@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite**
 
-_Migrates Cucumber tests to JUnit test `@Suite`._
+_Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunWith(Cucumber.class)` runner to a JUnit Platform `@Suite`, and swaps `cucumber-junit` for `cucumber-junit-platform-engine` 7.x. Each Cucumber-JVM module depends on the `cucumber-core` of its own release, and the engine fails to run against any other, so the rest of the Cucumber-JVM dependencies move to that same 7.x._
 
 ### Tags
 
@@ -36,12 +36,55 @@ This recipe is available under the [Moderne Source Available License](https://do
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Replace `@Cucumber` with `@Suite`](../../cucumber/jvm/cucumberannotationtosuite)
+* [Cucumber JUnit 4 `@RunWith(Cucumber.class)` to JUnit Platform `@Suite`](../../cucumber/jvm/cucumberrunwithtosuite)
 * [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
   * groupId: `org.junit.platform`
   * artifactId: `junit-platform-suite`
-  * version: `1.9.x`
+  * version: `1.x`
+  * onlyIfUsing: `io.cucumber.junit.platform.engine.Cucumber`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
+  * groupId: `org.junit.platform`
+  * artifactId: `junit-platform-suite`
+  * version: `1.x`
+  * onlyIfUsing: `io.cucumber.junit.Cucumber`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
+  * groupId: `org.junit.platform`
+  * artifactId: `junit-platform-suite`
+  * version: `1.x`
+  * onlyIfUsing: `cucumber.api.junit.Cucumber`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../java/dependencies/adddependency)
+  * groupId: `org.junit.platform`
+  * artifactId: `junit-platform-suite`
+  * version: `1.x`
   * onlyIfUsing: `org.junit.platform.suite.api.*`
   * acceptTransitive: `true`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `io.cucumber`
+  * oldArtifactId: `cucumber-junit`
+  * newArtifactId: `cucumber-junit-platform-engine`
+  * newVersion: `7.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `io.cucumber`
+  * artifactId: `cucumber-*`
+  * newVersion: `7.x`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `io.cucumber`
+  * artifactId: `cucumber-*`
+  * newVersion: `7.x`
+  * overrideManagedVersion: `true`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `io.cucumber`
+  * artifactId: `datatable*`
+  * newVersion: `7.x`
+  * overrideManagedVersion: `true`
+* [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
+  * groupId: `io.cucumber`
+  * artifactId: `docstring`
+  * newVersion: `7.x`
+  * overrideManagedVersion: `true`
 
 </TabItem>
 
@@ -53,18 +96,61 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite
 displayName: Cucumber to JUnit test `@Suite`
 description: |
-  Migrates Cucumber tests to JUnit test `@Suite`.
+  Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunWith(Cucumber.class)` runner to a JUnit Platform `@Suite`, and swaps `cucumber-junit` for `cucumber-junit-platform-engine` 7.x. Each Cucumber-JVM module depends on the `cucumber-core` of its own release, and the engine fails to run against any other, so the rest of the Cucumber-JVM dependencies move to that same 7.x.
 tags:
   - cucumber
   - testing
 recipeList:
   - org.openrewrite.cucumber.jvm.CucumberAnnotationToSuite
+  - org.openrewrite.cucumber.jvm.CucumberRunWithToSuite
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.junit.platform
       artifactId: junit-platform-suite
-      version: 1.9.x
+      version: 1.x
+      onlyIfUsing: io.cucumber.junit.platform.engine.Cucumber
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.junit.platform
+      artifactId: junit-platform-suite
+      version: 1.x
+      onlyIfUsing: io.cucumber.junit.Cucumber
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.junit.platform
+      artifactId: junit-platform-suite
+      version: 1.x
+      onlyIfUsing: cucumber.api.junit.Cucumber
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.junit.platform
+      artifactId: junit-platform-suite
+      version: 1.x
       onlyIfUsing: org.junit.platform.suite.api.*
       acceptTransitive: true
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: io.cucumber
+      oldArtifactId: cucumber-junit
+      newArtifactId: cucumber-junit-platform-engine
+      newVersion: 7.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: io.cucumber
+      artifactId: cucumber-*
+      newVersion: 7.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: io.cucumber
+      artifactId: cucumber-*
+      newVersion: 7.x
+      overrideManagedVersion: true
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: io.cucumber
+      artifactId: datatable*
+      newVersion: 7.x
+      overrideManagedVersion: true
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: io.cucumber
+      artifactId: docstring
+      newVersion: 7.x
+      overrideManagedVersion: true
 
 ```
 </TabItem>

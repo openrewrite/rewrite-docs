@@ -183,6 +183,7 @@ dependencies {
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "securityPattern=(CVE-\\d|GHSA-[a-z0-9])"'}
   showMaven={false}
   hasDataTables
 />

@@ -117,6 +117,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Java Faker to Datafaker](/recipes/java/testing/datafaker/javafakertodatafaker.md)
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
 * [Migrate javax.mvc to 2.0 (Jakarta EE 9)](/recipes/oracle/weblogic/rewrite/jakarta/migratejavaxmvctojakartaee9.md)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
@@ -155,6 +156,7 @@ This recipe is used as part of the following composite recipes:
 * [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
 * [Update Fastjson for Jakarta EE 10](/recipes/java/migrate/jakarta/migratefastjsonforjakarta10.md)
 * [Update Jackson package names from 2.x to 3.x](/recipes/java/jackson/upgradejackson_2_3_packagechanges.md)
+* [Update Jetty9 to Jetty12](/recipes/java/migrate/jakarta/jettyupgradeee9.md)
 * [Update the Micronaut Data library](/recipes/java/micronaut/updatemicronautdata.md)
 * [Update to Micronaut Email 2.x](/recipes/java/micronaut/updatemicronautemail.md)
 * [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
@@ -234,6 +236,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldPackageName=com.yourorg.foo" --recipe-option "newPackageName=com.yourorg.bar"'}
+  optionalCliOptions={' --recipe-option "recursive=true"'}
   hasDataTables
 />
 

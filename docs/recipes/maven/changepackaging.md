@@ -114,7 +114,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.openrewrite.*" --recipe-option "artifactId=rewrite-*" --recipe-option "packaging=jar" --recipe-option "oldPackaging=jar"'}
+  cliOptions={' --recipe-option "groupId=org.openrewrite.*" --recipe-option "artifactId=rewrite-*" --recipe-option "packaging=jar"'}
+  optionalCliOptions={' --recipe-option "oldPackaging=jar"'}
   showGradle={false}
   hasDataTables
 />

@@ -45,7 +45,6 @@ This recipe is used as part of the following composite recipes:
 * [Add `lombok-mapstruct-binding` when both MapStruct and Lombok are used](/recipes/java/migrate/addlombokmapstructbinding.md)
 * [Enable Lombok annotation processor](/recipes/java/migrate/enablelombokannotationprocessor.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
-* [Update to Micronaut Validation 4.x](/recipes/java/micronaut/updatemicronautvalidation.md)
 
 
 ## Usage
@@ -79,7 +78,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "configuration=implementation" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "extension=jar" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"'}
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava"'}
+  optionalCliOptions={' --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "configuration=implementation" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "extension=jar" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"'}
   showMaven={false}
   hasDataTables
 />

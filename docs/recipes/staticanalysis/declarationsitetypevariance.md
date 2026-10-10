@@ -113,7 +113,8 @@ recipeList:
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
   requiresConfiguration
-  cliOptions={' --recipe-option "variantTypes=java.util.function.Function<IN, OUT>" --recipe-option "excludedBounds=java.lang.*"'}
+  cliOptions={' --recipe-option "variantTypes=java.util.function.Function<IN, OUT>"'}
+  optionalCliOptions={' --recipe-option "excludedBounds=java.lang.*" --recipe-option "excludeFinalClasses=true"'}
   hasDataTables
 />
 

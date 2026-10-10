@@ -62,7 +62,8 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "component=netty" --recipe-option "oldPropertyKey=keyStoreFile" --recipe-option "newPropertyKey=keyStoreResource" --recipe-option "valuePrefix=file:"'}
+  cliOptions={' --recipe-option "component=netty" --recipe-option "oldPropertyKey=keyStoreFile" --recipe-option "newPropertyKey=keyStoreResource"'}
+  optionalCliOptions={' --recipe-option "valuePrefix=file:"'}
   hasDataTables
 />
 

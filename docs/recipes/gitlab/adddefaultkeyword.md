@@ -105,6 +105,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
   cliOptions={' --recipe-option "keyword=image" --recipe-option "value=ruby:3.0"'}
+  optionalCliOptions={' --recipe-option "acceptTheirs=true"'}
   hasDataTables
 />
 

@@ -32,8 +32,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 **Preconditions**
 
-* [Find files](../../../core/findsourcefiles)
-  * filePattern: `**/persistence.xml`
+* [Find XML tags](../../../xml/search/findtags)
+  * xPath: `/persistence[@xmlns='http://java.sun.com/xml/ns/persistence' or @xmlns='http://xmlns.jcp.org/xml/ns/persistence']`
 * [Singleton](../../../core/singleton)
 
 **Recipes**
@@ -74,8 +74,8 @@ displayName: Migrate xmlns entries in `persistence.xml` files
 description: |
   Java EE has been rebranded to Jakarta EE, necessitating an XML namespace relocation.
 preconditions:
-  - org.openrewrite.FindSourceFiles:
-      filePattern: **/persistence.xml
+  - org.openrewrite.xml.search.FindTags:
+      xPath: /persistence[@xmlns='http://java.sun.com/xml/ns/persistence' or @xmlns='http://xmlns.jcp.org/xml/ns/persistence']
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.xml.ChangeTagAttribute:

@@ -10,6 +10,18 @@ _This doc contains all of the recipes with **unique** data tables that have been
 ## org.openrewrite
 
 
+### rewrite-android
+
+#### [org.openrewrite.android.UpgradeAndroidGradlePluginVersion](/recipes/android/upgradeandroidgradlepluginversion.md)
+  * **Upgrade Android Gradle Plugin version**
+  * Upgrade the Android Gradle Plugin (AGP) version. Handles both the legacy `buildscript \{ dependencies \{ classpath 'com.android.tools.build:gradle:...' \} \}` form (delegating to the upstream `UpgradeDependencyVersion` recipe for full DSL coverage) and the modern `plugins \{ id(&quot;com.android.application&quot;) version &quot;...&quot; \}` form.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+
 ### rewrite-core
 
 #### [org.openrewrite.FindCollidingSourceFiles](/recipes/core/findcollidingsourcefiles.md)
@@ -685,7 +697,7 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 #### [org.openrewrite.maven.MigrateToMaven4](/recipes/maven/migratetomaven4.md)
   * **Migrate to Maven 4**
-  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, lifecycle phases, removes duplicate plugin and dependency declarations, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4.
+  * Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, runs the Maven 3.10 migration (which removes duplicate plugin and dependency declarations and updates an existing Maven wrapper to Maven 3.10), updates lifecycle phases, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4.
 
 ##### Data tables:
 
@@ -1013,6 +1025,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 
 
 ### rewrite-micronaut
+
+#### [org.openrewrite.java.micronaut.AddMicronautValidationDependencyVersion](/recipes/java/micronaut/addmicronautvalidationdependencyversion.md)
+  * **Add missing Micronaut validation dependency versions**
+  * Supply a compatible version for unmanaged Gradle validation dependencies, reusing the validation version already in use when possible.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
 
 #### [org.openrewrite.java.micronaut.Micronaut2to3Migration](/recipes/java/micronaut/micronaut2to3migration.md)
   * **Migrate from Micronaut 2.x to 3.x**
@@ -3327,6 +3348,15 @@ _This doc contains all of the recipes with **unique** data tables that have been
 #### [org.openrewrite.quarkus.MigrateToQuarkus_v3_9_0](/recipes/quarkus/migratetoquarkus_v3_9_0.md)
   * **Quarkus Updates Aggregate 3.9.0**
   * Quarkus update recipes to upgrade your application to 3.9.0.
+
+##### Data tables:
+
+  * **org.openrewrite.maven.table.MavenMetadataFailures**: *Attempts to resolve maven metadata that failed.*
+
+
+#### [org.openrewrite.quarkus.MigrateToQuarkus_v4_0_0](/recipes/quarkus/migratetoquarkus_v4_0_0.md)
+  * **Quarkus Updates Aggregate 4.0.0**
+  * Quarkus update recipes to upgrade your application to 4.0.0.
 
 ##### Data tables:
 

@@ -66,6 +66,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "parentXPath=/project//plugin//configuration" --recipe-option "newChildTag=<skip>true</skip>"'}
+  optionalCliOptions={' --recipe-option "replaceExisting=true"'}
   hasDataTables
 />
 

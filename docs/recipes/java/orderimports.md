@@ -96,6 +96,7 @@ import java.util.regex.Pattern;
   artifactId="rewrite-java"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "removeUnused=true" --recipe-option "style=>\n        type: specs.openrewrite.org/v1beta/style\n        name: com.yourorg.CustomImportLayout\n        styleConfigs:\n          - org.openrewrite.java.style.ImportLayoutStyle:\n              classCountToUseStarImport: 999\n              nameCountToUseStarImport: 999\n              layout:\n                - \'import java.*\'\n                - \'import javax.*\'\n                - \'<blank line>\'\n                - \'import all other imports\'\n                - \'<blank line>\'\n                - \'import static all other imports\'\n              packagesToFold:\n                - \'import java.awt.*\'\n                - \'import static org.junit.jupiter.api.Assertions.*"'}
   hasDataTables
 />
 

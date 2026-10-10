@@ -120,7 +120,8 @@ recipeList:
   artifactId="rewrite-gitlab"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
-  cliOptions={' --recipe-option "key=$CI_COMMIT_REF_SLUG" --recipe-option "paths=.cache/,vendor/" --recipe-option "policy=pull-push" --recipe-option "jobName=build_job"'}
+  cliOptions={' --recipe-option "key=$CI_COMMIT_REF_SLUG" --recipe-option "paths=.cache/,vendor/"'}
+  optionalCliOptions={' --recipe-option "policy=pull-push" --recipe-option "jobName=build_job" --recipe-option "acceptTheirs=true"'}
   hasDataTables
 />
 

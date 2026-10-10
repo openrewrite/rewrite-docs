@@ -44,6 +44,7 @@ This recipe is used as part of the following composite recipes:
   artifactId="rewrite-core"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "fromDate=2023-01-01"'}
   hasDataTables
 />
 

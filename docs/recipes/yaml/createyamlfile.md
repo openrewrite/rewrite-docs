@@ -59,7 +59,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.yaml" --recipe-option "fileContents=>\n        a:\n          property: value\n        another:\n          property: value" --recipe-option "fileContentsUrl=http://foo.bar/baz.yaml"'}
+  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.yaml"'}
+  optionalCliOptions={' --recipe-option "fileContents=>\n        a:\n          property: value\n        another:\n          property: value" --recipe-option "fileContentsUrl=http://foo.bar/baz.yaml" --recipe-option "overwriteExisting=true"'}
   hasDataTables
 />
 

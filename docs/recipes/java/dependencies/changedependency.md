@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `String` | versionPattern | *Optional*. Allows version selection to be extended beyond the original Node Semver semantics. So for example,Setting 'version' to "25-29" can be paired with a metadata pattern of "-jre" to select Guava 29.0-jre | `-jre` |
 | `Boolean` | overrideManagedVersion | *Optional*. If the new dependency has a managed version, this flag can be used to explicitly set the version on the dependency. The default for this flag is `false`. |  |
 | `Boolean` | changeManagedDependency | *Optional*. Also update the dependency management section. The default for this flag is `true`. |  |
+| `Boolean` | changePluginDependencies | *Optional*. Also change dependencies declared inside Maven plugins. Defaults to true. Has no effect on Gradle dependencies. |  |
 
 
 ## Used by
@@ -46,6 +47,8 @@ This recipe is used as part of the following composite recipes:
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [Change `com.datastax.oss` to `org.apache.cassandra`](/recipes/java/spring/boot3/changecassandragroupid.md)
 * [Change v1 Maven/Gradle dependencies to v2](/recipes/amazon/awssdk/v2migration/upgradesdkdependencies.md)
+* [Cucumber to JUnit test `@Suite`](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Migrate Apache Commons Logging 1.x to SLF4J 1.x](/recipes/java/logging/slf4j/commonslogging1toslf4j1.md)
 * [Migrate Bouncy Castle to `jdk15to18` for Java &lt; 8](/recipes/java/migrate/bouncycastlefromjdk15ontojdk15to18.md)
 * [Migrate Bouncy Castle to `jdk18on`](/recipes/java/migrate/bouncecastlefromjdk15ontojdk18on.md)
@@ -72,6 +75,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Session Hazelcast to Hazelcast Spring Session](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratehazelcastspringsession)
 * [Migrate Spring Validation to Quarkus](/recipes/quarkus/spring/migratespringvalidation.md)
 * [Migrate Tag Libraries to 2.0 (Jakarta EE 9)](/recipes/oracle/weblogic/rewrite/jakarta/migratetaglibstojakartaee9.md)
+* [Migrate Weld implementations to Jakarta CDI](/recipes/java/migrate/jakarta/weldtojakarta.md)
 * [Migrate `jackson-datatype-hibernate6` to `jackson-datatype-hibernate7`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejacksondatatypehibernate6to7)
 * [Migrate com.intellij:annotations to org.jetbrains:annotations](/recipes/java/migrate/comintellijannotationstoorgjetbrainsannotations.md)
 * [Migrate database drivers to Quarkus JDBC extensions](/recipes/quarkus/spring/migratedatabasedrivers.md)
@@ -155,6 +159,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Hibernate Validator 8.0.x](/recipes/hibernate/validator/hibernatevalidator_8_0.md)
 * [Migrate to Hibernate for Jakarta EE 9](/recipes/oracle/weblogic/rewrite/hibernate/migratehibernatetojakartaee9.md)
 * [Migrate to HtmlUnit 3.x](/recipes/java/testing/htmlunit/upgradehtmlunit_3.md)
+* [Migrate to Java 17](/recipes/java/migrate/upgradetojava17.md)
 * [Migrate to MockWebServer3 (core module)](/recipes/okhttp/upgrademockwebserver3.md)
 * [Migrate to MockWebServer3 with JUnit 4](/recipes/okhttp/upgrademockwebserver3junit4.md)
 * [Migrate to MockWebServer3 with JUnit 5](/recipes/okhttp/upgrademockwebserver3junit5.md)
@@ -212,6 +217,8 @@ This recipe is used as part of the following composite recipes:
 * [Use OkHttp 3 MockWebServer for JUnit 5](/recipes/java/testing/junit5/upgradeokhttpmockwebserver.md)
 * [Use XMLUnit Legacy for JUnit 5](/recipes/java/testing/junit5/usexmlunitlegacy.md)
 * [io.quarkus.updates.core.quarkus30.JavaxToJakartaAdditionalMigration](/recipes/quarkus/updates/core/quarkus30/javaxtojakartaadditionalmigration.md)
+* [io.quarkus.updates.core.quarkus311.WebDependencyLocatorRelocations](/recipes/quarkus/updates/core/quarkus311/webdependencylocatorrelocations.md)
+* [io.quarkus.updates.core.quarkus325.DevUiSpiRelocations](/recipes/quarkus/updates/core/quarkus325/devuispirelocations.md)
 * [io.quarkus.updates.core.quarkus33.GraalVMSubstitutionsArtifact](/recipes/quarkus/updates/core/quarkus33/graalvmsubstitutionsartifact.md)
 * [io.quarkus.updates.core.quarkus331.JUnitRelocations](/recipes/quarkus/updates/core/quarkus331/junitrelocations.md)
 * [io.quarkus.updates.core.quarkus331.Testcontainers2](/recipes/quarkus/updates/core/quarkus331/testcontainers2.md)
@@ -236,6 +243,7 @@ This recipe is used as part of the following composite recipes:
 |versionPattern|`null`|
 |overrideManagedVersion|`null`|
 |changeManagedDependency|`null`|
+|changePluginDependencies||
 
 
 <Tabs groupId="beforeAfter">
@@ -315,7 +323,8 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=rewrite-testing-frameworks" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=rewrite-testing-frameworks" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=rewrite-testing-frameworks"'}
+  optionalCliOptions={' --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=rewrite-testing-frameworks" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "overrideManagedVersion=true" --recipe-option "changeManagedDependency=true" --recipe-option "changePluginDependencies=true"'}
   hasDataTables
 />
 

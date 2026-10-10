@@ -168,6 +168,7 @@ Add SCM section when missing
   artifactId="rewrite-maven"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "addIfMissing=true"'}
   showGradle={false}
   hasDataTables
 />

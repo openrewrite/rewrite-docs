@@ -38,9 +38,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Preconditions**
 
 * [Singleton](../../../core/singleton)
+* [Find Spring Boot repositories](../../../java/spring/boot4/usesspringboot)
 
 **Recipes**
 
+* [Manage Spring Boot directly when a third-party BOM manages an older version](../../../java/spring/boot4/addspringbootbomfortransitivedependencymanagement)
+  * newVersion: `4.0.x`
 * [Migrate to Spring Boot 3.5 (Community Edition)](../../../java/spring/boot3/upgradespringboot_3_5-community-edition)
 * [Migrate to Spring Cloud 2025.1](../../../java/spring/cloud2025/upgradespringcloud_2025_1)
 * [Migrate to Spring Framework 7.0](../../../java/spring/framework/upgradespringframework_7_0)
@@ -94,6 +97,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `*`
   * newVersion: `2.2.x`
   * overrideManagedVersion: `true`
+* [Migrate Liquibase property values passed to SpringLiquibase](../../../java/spring/boot4/migrateliquibasepropertiesapi)
 * [Migrate to Spring Boot 4.0 modular starters (Community Edition)](../../../java/spring/boot4/migratetomodularstarters-community-edition)
 * [Rename Spring Boot 4.0 starters with managed versions](../../../java/spring/boot4/renamedeprecatedstartersmanagedversions)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
@@ -172,7 +176,10 @@ tags:
   - boot
 preconditions:
   - org.openrewrite.Singleton
+  - org.openrewrite.java.spring.boot4.UsesSpringBoot
 recipeList:
+  - org.openrewrite.java.spring.boot4.AddSpringBootBomForTransitiveDependencyManagement:
+      newVersion: 4.0.x
   - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_5
   - org.openrewrite.java.spring.cloud2025.UpgradeSpringCloud_2025_1
   - org.openrewrite.java.spring.framework.UpgradeSpringFramework_7_0
@@ -226,6 +233,7 @@ recipeList:
       artifactId: "*"
       newVersion: 2.2.x
       overrideManagedVersion: true
+  - org.openrewrite.java.spring.boot4.MigrateLiquibasePropertiesApi
   - org.openrewrite.java.spring.boot4.MigrateToModularStarters
   - org.openrewrite.java.spring.boot4.RenameDeprecatedStartersManagedVersions
   - org.openrewrite.java.dependencies.ChangeDependency:

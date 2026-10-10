@@ -41,6 +41,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate `cucumber-java8` to `cucumber-java`](../../cucumber/jvm/cucumberjava8tojava)
 * [Drop the `strict` option](../../cucumber/jvm/dropstrictoption)
 * [Drop `SummaryPrinter`](../../cucumber/jvm/dropsummaryprinter)
+* [Drop `StrictAware`](../../cucumber/jvm/dropstrictaware)
 * [Migrate `RuntimeOptionsBuilder`](../../cucumber/jvm/migrateruntimeoptionsbuilder)
 * [Replace `cucumber-java` step definition regexes with Cucumber expressions](../../cucumber/jvm/regextocucumberexpression)
 * [Cucumber to JUnit test `@Suite`](../../cucumber/jvm/cucumbertojunitplatformsuite)
@@ -70,6 +71,7 @@ recipeList:
   - org.openrewrite.cucumber.jvm.CucumberJava8ToJava
   - org.openrewrite.cucumber.jvm.DropStrictOption
   - org.openrewrite.cucumber.jvm.DropSummaryPrinter
+  - org.openrewrite.cucumber.jvm.DropStrictAware
   - org.openrewrite.cucumber.jvm.MigrateRuntimeOptionsBuilder
   - org.openrewrite.cucumber.jvm.RegexToCucumberExpression
   - org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite
@@ -81,6 +83,13 @@ recipeList:
 ```
 </TabItem>
 </Tabs>
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
+
 
 ## Usage
 

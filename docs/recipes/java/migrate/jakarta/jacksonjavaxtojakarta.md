@@ -36,96 +36,94 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Migrate Jackson provider configuration overrides](../../../java/migrate/jakarta/jacksonprovideroverrides)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `com.fasterxml.jackson.module`
+  * artifactId: `jackson-module-jaxb-annotations`
+  * newVersion: `2.13.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `com.fasterxml.jackson.jaxrs`
+  * artifactId: `jackson-jaxrs-*`
+  * newVersion: `2.13.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `com.fasterxml.jackson.datatype`
+  * artifactId: `jackson-datatype-jsr353`
+  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.module`
   * oldArtifactId: `jackson-module-jaxb-annotations`
   * newGroupId: `com.fasterxml.jackson.module`
   * newArtifactId: `jackson-module-jakarta-xmlbind-annotations`
-  * newVersion: `2.13.x`
 * [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
   * oldGroupId: `com.fasterxml.jackson.module`
   * oldArtifactId: `jackson-module-jaxb-annotations`
   * newGroupId: `com.fasterxml.jackson.module`
   * newArtifactId: `jackson-module-jakarta-xmlbind-annotations`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-cbor-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-cbor-provider`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-base`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-base`
-  * newVersion: `2.13.x`
 * [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-cbor-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-cbor-provider`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-json-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-json-provider`
-  * newVersion: `2.13.x`
 * [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-json-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-json-provider`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-smile-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-smile-provider`
-  * newVersion: `2.13.x`
 * [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-smile-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-smile-provider`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-xml-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-xml-provider`
-  * newVersion: `2.13.x`
 * [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-xml-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-xml-provider`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-yaml-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-yaml-provider`
-  * newVersion: `2.13.x`
 * [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
   * oldGroupId: `com.fasterxml.jackson.jaxrs`
   * oldArtifactId: `jackson-jaxrs-yaml-provider`
   * newGroupId: `com.fasterxml.jackson.jakarta.rs`
   * newArtifactId: `jackson-jakarta-rs-yaml-provider`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-jsr353`
   * newGroupId: `com.fasterxml.jackson.datatype`
   * newArtifactId: `jackson-datatype-jakarta-jsonp`
-  * newVersion: `2.13.x`
 * [Change Maven managed dependency groupId, artifactId and optionally the version](../../../maven/changemanageddependencygroupidandartifactid)
   * oldGroupId: `com.fasterxml.jackson.datatype`
   * oldArtifactId: `jackson-datatype-jsr353`
   * newGroupId: `com.fasterxml.jackson.datatype`
   * newArtifactId: `jackson-datatype-jakarta-jsonp`
-  * newVersion: `2.13.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.glassfish`
   * oldArtifactId: `javax.json`
@@ -169,96 +167,94 @@ description: |
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.jakarta.JacksonProviderOverrides
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson.module
+      artifactId: jackson-module-jaxb-annotations
+      newVersion: 2.13.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson.jaxrs
+      artifactId: jackson-jaxrs-*
+      newVersion: 2.13.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.fasterxml.jackson.datatype
+      artifactId: jackson-datatype-jsr353
+      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.module
       oldArtifactId: jackson-module-jaxb-annotations
       newGroupId: com.fasterxml.jackson.module
       newArtifactId: jackson-module-jakarta-xmlbind-annotations
-      newVersion: 2.13.x
   - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
       oldGroupId: com.fasterxml.jackson.module
       oldArtifactId: jackson-module-jaxb-annotations
       newGroupId: com.fasterxml.jackson.module
       newArtifactId: jackson-module-jakarta-xmlbind-annotations
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-cbor-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-cbor-provider
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-base
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-base
-      newVersion: 2.13.x
   - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-cbor-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-cbor-provider
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-json-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-json-provider
-      newVersion: 2.13.x
   - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-json-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-json-provider
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-smile-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-smile-provider
-      newVersion: 2.13.x
   - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-smile-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-smile-provider
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-xml-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-xml-provider
-      newVersion: 2.13.x
   - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-xml-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-xml-provider
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-yaml-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-yaml-provider
-      newVersion: 2.13.x
   - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
       oldGroupId: com.fasterxml.jackson.jaxrs
       oldArtifactId: jackson-jaxrs-yaml-provider
       newGroupId: com.fasterxml.jackson.jakarta.rs
       newArtifactId: jackson-jakarta-rs-yaml-provider
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: com.fasterxml.jackson.datatype
       oldArtifactId: jackson-datatype-jsr353
       newGroupId: com.fasterxml.jackson.datatype
       newArtifactId: jackson-datatype-jakarta-jsonp
-      newVersion: 2.13.x
   - org.openrewrite.maven.ChangeManagedDependencyGroupIdAndArtifactId:
       oldGroupId: com.fasterxml.jackson.datatype
       oldArtifactId: jackson-datatype-jsr353
       newGroupId: com.fasterxml.jackson.datatype
       newArtifactId: jackson-datatype-jakarta-jsonp
-      newVersion: 2.13.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.glassfish
       oldArtifactId: javax.json

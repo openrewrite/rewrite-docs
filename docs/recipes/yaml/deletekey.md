@@ -102,7 +102,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "keyPath=$.source.kind" --recipe-option "filePattern=.github/workflows/*.yml"'}
+  cliOptions={' --recipe-option "keyPath=$.source.kind"'}
+  optionalCliOptions={' --recipe-option "filePattern=.github/workflows/*.yml"'}
   hasDataTables
 />
 

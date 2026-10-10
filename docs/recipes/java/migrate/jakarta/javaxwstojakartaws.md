@@ -36,6 +36,35 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Replace Jersey logging filter with logging feature](../../../java/migrate/jakarta/jerseyloggingfiltertofeature)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.jersey.core`
+  * artifactId: `*`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.jersey.inject`
+  * artifactId: `*`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.jersey.media`
+  * artifactId: `*`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.jersey.containers`
+  * artifactId: `*`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.jersey.ext`
+  * artifactId: `*`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.jersey.bundles`
+  * artifactId: `*`
+  * newVersion: `3.0.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.glassfish.jersey`
+  * artifactId: `*`
+  * newVersion: `3.0.x`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.ws.rs`
   * oldArtifactId: `javax.ws.rs-api`
@@ -46,12 +75,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.ws.rs`
   * artifactId: `jakarta.ws.rs-api`
   * newVersion: `3.0.x`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `jakarta.ws.rs`
-  * artifactId: `jakarta.ws.rs-api`
-  * version: `3.0.x`
-  * onlyIfUsing: `javax.ws.rs.core.*`
-  * acceptTransitive: `true`
+* [Add the jakarta.ws.rs API when needed](../../../java/migrate/jakarta/addjakartarestdependency)
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.ws`
   * newPackageName: `jakarta.ws`
@@ -71,6 +95,35 @@ description: |
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.jakarta.JerseyLoggingFilterToFeature
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.jersey.core
+      artifactId: "*"
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.jersey.inject
+      artifactId: "*"
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.jersey.media
+      artifactId: "*"
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.jersey.containers
+      artifactId: "*"
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.jersey.ext
+      artifactId: "*"
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.jersey.bundles
+      artifactId: "*"
+      newVersion: 3.0.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.glassfish.jersey
+      artifactId: "*"
+      newVersion: 3.0.x
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.ws.rs
       oldArtifactId: javax.ws.rs-api
@@ -81,12 +134,7 @@ recipeList:
       groupId: jakarta.ws.rs
       artifactId: jakarta.ws.rs-api
       newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: jakarta.ws.rs
-      artifactId: jakarta.ws.rs-api
-      version: 3.0.x
-      onlyIfUsing: javax.ws.rs.core.*
-      acceptTransitive: true
+  - org.openrewrite.java.migrate.jakarta.AddJakartaRestDependency
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.ws
       newPackageName: jakarta.ws

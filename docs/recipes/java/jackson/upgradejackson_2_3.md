@@ -46,6 +46,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Use format alignment `ObjectMappers`](../../java/jackson/useformatalignedobjectmappers)
 * [Modernize legacy `jackson-core` feature constants](../../java/jackson/upgradejackson_2_3_modernizejacksoncorefeatures)
 * [Remove redundant Jackson 3 feature flag configurations](../../java/jackson/upgradejackson_2_3_removeredundantfeatureflags)
+* [Remove Spring beans for modules built-in to Jackson 3](../../java/jackson/removebuiltinmodulebeans)
 * [Remove registrations of modules built-in to Jackson 3](../../java/jackson/removebuiltinmoduleregistrations)
 * [Migrate mapper setter calls to builder pattern](../../java/jackson/migratemappersetterstobuilder)
 * [Migrate factory setter calls to builder pattern](../../java/jackson/migratefactorysetterstobuilder)
@@ -118,6 +119,7 @@ recipeList:
   - org.openrewrite.java.jackson.UseFormatAlignedObjectMappers
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_ModernizeJacksonCoreFeatures
   - org.openrewrite.java.jackson.UpgradeJackson_2_3_RemoveRedundantFeatureFlags
+  - org.openrewrite.java.jackson.RemoveBuiltInModuleBeans
   - org.openrewrite.java.jackson.RemoveBuiltInModuleRegistrations
   - org.openrewrite.java.jackson.MigrateMapperSettersToBuilder
   - org.openrewrite.java.jackson.MigrateFactorySettersToBuilder
@@ -189,6 +191,7 @@ recipeList:
 
 This recipe is used as part of the following composite recipes:
 
+* [Migrate Jackson from 2.x to 3.x](/recipes/quarkus/updates/core/quarkus40/jackson3migration.md)
 * [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
 * [Migrate to Spring Framework 7.0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
 

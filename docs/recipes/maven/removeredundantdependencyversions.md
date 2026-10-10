@@ -138,6 +138,7 @@ This recipe is used as part of the following composite recipes:
   artifactId="rewrite-maven"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "groupPattern=com.google.*" --recipe-option "artifactPattern=guava*" --recipe-option "onlyIfVersionsMatch=true" --recipe-option "except=com.jcraft:jsch"'}
   showGradle={false}
   hasDataTables
 />

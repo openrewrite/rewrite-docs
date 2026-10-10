@@ -97,7 +97,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginId=\'`com.jfrog.bintray`\'" --recipe-option "pluginClass=com.jfrog.bintray.gradle.BintrayPlugin"'}
+  cliOptions={' --recipe-option "pluginId=\'`com.jfrog.bintray`\'"'}
+  optionalCliOptions={' --recipe-option "pluginClass=com.jfrog.bintray.gradle.BintrayPlugin"'}
   showMaven={false}
   hasDataTables
 />

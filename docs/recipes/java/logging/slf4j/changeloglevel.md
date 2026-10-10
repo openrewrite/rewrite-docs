@@ -109,7 +109,8 @@ recipeList:
   artifactId="rewrite-logging-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS"
   requiresConfiguration
-  cliOptions={' --recipe-option "from=INFO" --recipe-option "to=DEBUG" --recipe-option "startsWith=LaunchDarkly"'}
+  cliOptions={' --recipe-option "from=INFO" --recipe-option "to=DEBUG"'}
+  optionalCliOptions={' --recipe-option "startsWith=LaunchDarkly"'}
   hasDataTables
 />
 

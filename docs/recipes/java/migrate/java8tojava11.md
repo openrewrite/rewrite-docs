@@ -87,6 +87,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace AWT `getPeer()` method](../../java/migrate/replaceawtgetpeermethod)
   * getPeerMethodPattern: `java.awt.* getPeer()`
   * lightweightPeerFQCN: `java.awt.peer.LightweightPeer`
+* [Use modernized `java.awt` APIs](../../java/migrate/awt/javaawtapis)
 * [Migrate to Scala 2.12.+](../../scala/migrate/upgradescala_2_12)
 * [Replace `com.sun.awt.AWTUtilities` static method invocations](../../java/migrate/replacecomsunawtutilitiesmethods)
   * getAWTIsWindowsTranslucencyPattern: `com.sun.awt.AWTUtilities isTranslucencySupported(com.sun.awt.AWTUtilities.Translucency)`
@@ -166,6 +167,7 @@ recipeList:
   - org.openrewrite.java.migrate.ReplaceAWTGetPeerMethod:
       getPeerMethodPattern: java.awt.* getPeer()
       lightweightPeerFQCN: java.awt.peer.LightweightPeer
+  - org.openrewrite.java.migrate.awt.JavaAwtAPIs
   - org.openrewrite.scala.migrate.UpgradeScala_2_12
   - org.openrewrite.java.migrate.ReplaceComSunAWTUtilitiesMethods:
       getAWTIsWindowsTranslucencyPattern: com.sun.awt.AWTUtilities isTranslucencySupported(com.sun.awt.AWTUtilities.Translucency)

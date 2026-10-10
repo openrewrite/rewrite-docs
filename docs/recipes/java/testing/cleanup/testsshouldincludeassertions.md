@@ -112,6 +112,7 @@ public class AaTest {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
+  optionalCliOptions={' --recipe-option "additionalAsserts=org.foo.TestUtil, org.bar"'}
   hasDataTables
 />
 

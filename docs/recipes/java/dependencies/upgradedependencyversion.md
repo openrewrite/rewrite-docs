@@ -46,11 +46,15 @@ This recipe is used as part of the following composite recipes:
 * [Add explicit JAX-WS dependencies](/recipes/java/migrate/javax/addjaxwsdependencies.md)
 * [Add explicit JAXB API dependencies](/recipes/java/migrate/javax/addjaxbapidependencies.md)
 * [Add explicit version for REST Assured](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migraterestassured)
+* [Align legacy Jetty core dependencies with Jetty 12](/recipes/java/migrate/jakarta/upgradejettycoredependencies.md)
 * [ArchUnit 0.x upgrade](/recipes/java/testing/archunit/archunit0to1migration.md)
+* [Cucumber to JUnit test `@Suite`](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
 * [JUnit 6 migration from JUnit 5.x](/recipes/java/testing/junit6/junit5to6migration.md)
+* [JUnit Jupiter migration from JUnit 4.x](/recipes/java/testing/junit5/junit4to5migration.md)
 * [Jackson best practices](/recipes/java/jackson/jacksonbestpractices.md)
 * [Migrate Ehcache from javax to jakarta namespace](/recipes/java/migrate/jakarta/ehcachejavaxtojakarta.md)
 * [Migrate Hibernate dependencies to 6.0.x](/recipes/hibernate/migratetohibernatedependencies60.md)
+* [Migrate Jackson from javax to jakarta namespace](/recipes/java/migrate/jakarta/jacksonjavaxtojakarta.md)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](/recipes/java/migrate/jakarta/migrationtojakarta10apis.md)
 * [Migrate Johnzon from javax to jakarta namespace](/recipes/java/migrate/jakarta/johnzonjavaxtojakarta.md)
 * [Migrate Log4j to SLF4J](/recipes/java/logging/slf4j/log4jtoslf4j.md)
@@ -64,6 +68,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud Azure to 6.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringcloudazure_6)
 * [Migrate Spring Cloud Azure to 7.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringcloudazure_7)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
+* [Migrate Weld implementations to Jakarta CDI](/recipes/java/migrate/jakarta/weldtojakarta.md)
 * [Migrate `jackson-datatype-hibernate6` to `jackson-datatype-hibernate7`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/hibernate/update70/migratejacksondatatypehibernate6to7)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](/recipes/java/migrate/jakarta/javaxeeapitojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
@@ -155,6 +160,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Boot 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
+* [Migrate to Spring Boot 4.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_2)
 * [Migrate to Spring Cloud 2025.1](/recipes/java/spring/cloud2025/upgradespringcloud_2025_1.md)
 * [Migrate to Spring Data 3.0](/recipes/java/spring/data/upgradespringdata_3_0.md)
 * [Migrate to Spring Data MongoDB 5.0](/recipes/java/spring/data/upgradespringdatamongodb_5_0.md)
@@ -170,6 +176,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 6.2 for WebLogic 15.1.1](/recipes/oracle/weblogic/rewrite/spring/framework/upgradetospringframework_6_2.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
 * [Migrate to Spring Framework 7.0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
+* [Migrate to Spring HATEOAS 3.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringhateoas_3_0)
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
 * [Migrate to Spring Security 5.7](/recipes/java/spring/security5/upgradespringsecurity_5_7.md)
@@ -181,6 +188,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Migrate to Spring Security 6.5 (Community Edition)](/recipes/java/spring/security6/upgradespringsecurity_6_5-community-edition.md)
 * [Migrate to Spring Security 7.0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
+* [Migrate to Spring for GraphQL 2.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringgraphql_2_0)
 * [Migrate to `kotlinx-datetime` 0.7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxdatetime_0_7)
 * [Migrates from Netty 4.1.x to Netty 4.2.x](/recipes/netty/upgradenetty_4_1_to_4_2.md)
 * [Migrates to Apache POI 3.17](/recipes/apache/poi/upgradeapachepoi_3_17.md)
@@ -191,7 +199,7 @@ This recipe is used as part of the following composite recipes:
 * [Mockito 4 to 5.x upgrade only](/recipes/java/testing/mockito/mockito4to5only.md)
 * [Mockito 4.x upgrade](/recipes/java/testing/mockito/mockito1to4migration.md)
 * [OkHttp 3.x `MockWebServer` `@Rule` To 4.x `MockWebServer`](/recipes/java/testing/junit5/updatemockwebserver.md)
-* [Prefer the Java 11 standard library instead of Guava](/recipes/java/migrate/guava/noguavajava11.md)
+* [Prefer the Java standard library instead of Guava](/recipes/java/migrate/guava/noguava.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
 * [Rename Testcontainers dependencies](/recipes/java/testing/testcontainers/testcontainers2dependencies.md)
 * [Update Apache Shiro Dependencies to 2.0.x](/recipes/java/migrate/jakarta/updateapacheshirodependencies.md)
@@ -260,7 +268,6 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade to SpringDoc 3.0](/recipes/java/springdoc/upgradespringdoc_3_0.md)
 * [Upgrade to `kotlinx-coroutines` 1.10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxcoroutines_1_10)
 * [Upgrade to `kotlinx-serialization` 1.8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxserialization_1_8)
-* [Use wiremock extension](/recipes/java/testing/junit5/usewiremockextension.md)
 
 ## Example
 
@@ -356,7 +363,8 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "retainVersions=com.jcraft:jsch"'}
+  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X"'}
+  optionalCliOptions={' --recipe-option "versionPattern=\'-jre\'" --recipe-option "overrideManagedVersion=true" --recipe-option "retainVersions=com.jcraft:jsch"'}
   hasDataTables
 />
 

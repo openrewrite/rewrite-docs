@@ -38,6 +38,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Migrate to Hibernate 6.6.x (Community Edition)](../hibernate/migratetohibernate66-community-edition)
 * [Migrate Hibernate Types to Hypersistence Utils for Hibernate 7.0](../hibernate/migratetohypersistenceutilshibernate70)
+* [Migrate dialects removed in Hibernate 7.0 to their generic equivalents](../hibernate/migrateremoveddialectshibernate70)
 * [Upgrade Gradle or Maven dependency versions](../java/dependencies/upgradedependencyversion)
   * groupId: `org.hibernate.orm`
   * artifactId: `*`
@@ -82,6 +83,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Replace constant with another constant](../java/replaceconstantwithanotherconstant)
   * existingFullyQualifiedConstantName: `org.hibernate.annotations.CascadeType.DELETE`
   * fullyQualifiedConstantName: `org.hibernate.annotations.CascadeType.REMOVE`
+* [Remove `@GeneratedValue` strategy when a custom `@GenericGenerator` is used](../hibernate/removegeneratedvaluestrategywithgenericgenerator)
 
 </TabItem>
 
@@ -99,6 +101,7 @@ preconditions:
 recipeList:
   - org.openrewrite.hibernate.MigrateToHibernate66
   - org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate70
+  - org.openrewrite.hibernate.MigrateRemovedDialectsHibernate70
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.hibernate.orm
       artifactId: "*"
@@ -143,6 +146,7 @@ recipeList:
   - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
       existingFullyQualifiedConstantName: org.hibernate.annotations.CascadeType.DELETE
       fullyQualifiedConstantName: org.hibernate.annotations.CascadeType.REMOVE
+  - org.openrewrite.hibernate.RemoveGeneratedValueStrategyWithGenericGenerator
 
 ```
 </TabItem>

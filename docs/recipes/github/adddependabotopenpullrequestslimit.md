@@ -120,7 +120,8 @@ recipeList:
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
   requiresConfiguration
-  cliOptions={' --recipe-option "openPullRequestsLimit=5" --recipe-option "packageEcosystem=gradle"'}
+  cliOptions={' --recipe-option "openPullRequestsLimit=5"'}
+  optionalCliOptions={' --recipe-option "packageEcosystem=gradle"'}
   hasDataTables
 />
 

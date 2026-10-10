@@ -28,6 +28,8 @@ _Recipes that include further recipes, often including the individual recipes be
 ## Recipes
 
 * [Collapse `@CucumberOptions` tags into a single tag expression](./collapsecucumberoptionstags.md)
+* [Cucumber JUnit 4 `@RunWith(Cucumber.class)` to JUnit Platform `@Suite`](./cucumberrunwithtosuite.md)
+* [Drop `StrictAware`](./dropstrictaware.md)
 * [Drop `SummaryPrinter`](./dropsummaryprinter.md)
 * [Migrate the `cucumber.options` property](./cucumberoptionspropertytoindividualproperties.md)
 * [Remove `cucumber-java8` once nothing is left needing it](./removecucumberjava8dependency.md)

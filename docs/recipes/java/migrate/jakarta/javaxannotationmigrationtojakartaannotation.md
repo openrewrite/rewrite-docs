@@ -44,6 +44,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.annotation`
+  * oldArtifactId: `jsr250-api`
+  * newGroupId: `jakarta.annotation`
+  * newArtifactId: `jakarta.annotation-api`
+  * newVersion: `2.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `javax.annotation`
   * oldArtifactId: `javax.annotation-api`
   * newGroupId: `jakarta.annotation`
   * newArtifactId: `jakarta.annotation-api`
@@ -58,12 +64,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
   * newVersion: `2.0.x`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+* [Add the Jakarta Annotation API when needed](../../../java/migrate/jakarta/addjakartaannotationdependency)
+* [Add an API dependency for explicit imports](../../../java/migrate/javax/addapidependencyforimports)
+  * packageName: `jakarta.annotation`
   * groupId: `jakarta.annotation`
   * artifactId: `jakarta.annotation-api`
   * version: `2.0.x`
-  * onlyIfUsing: `javax.annotation..*`
-  * acceptTransitive: `true`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.annotation`
   * newPackageName: `jakarta.annotation`
@@ -95,6 +101,12 @@ preconditions:
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.annotation
+      oldArtifactId: jsr250-api
+      newGroupId: jakarta.annotation
+      newArtifactId: jakarta.annotation-api
+      newVersion: 2.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax.annotation
       oldArtifactId: javax.annotation-api
       newGroupId: jakarta.annotation
       newArtifactId: jakarta.annotation-api
@@ -109,12 +121,12 @@ recipeList:
       groupId: jakarta.annotation
       artifactId: jakarta.annotation-api
       newVersion: 2.0.x
-  - org.openrewrite.java.dependencies.AddDependency:
+  - org.openrewrite.java.migrate.jakarta.AddJakartaAnnotationDependency
+  - org.openrewrite.java.migrate.javax.AddApiDependencyForImports:
+      packageName: jakarta.annotation
       groupId: jakarta.annotation
       artifactId: jakarta.annotation-api
       version: 2.0.x
-      onlyIfUsing: javax.annotation..*
-      acceptTransitive: true
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.annotation
       newPackageName: jakarta.annotation

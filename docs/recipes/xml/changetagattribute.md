@@ -177,7 +177,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "elementName=property" --recipe-option "attributeName=name" --recipe-option "newValue=newfoo.bar.attribute.value.string" --recipe-option "oldValue=foo.bar.attribute.value.string"'}
+  cliOptions={' --recipe-option "elementName=property" --recipe-option "attributeName=name" --recipe-option "newValue=newfoo.bar.attribute.value.string"'}
+  optionalCliOptions={' --recipe-option "oldValue=foo.bar.attribute.value.string" --recipe-option "regex=true"'}
   hasDataTables
 />
 

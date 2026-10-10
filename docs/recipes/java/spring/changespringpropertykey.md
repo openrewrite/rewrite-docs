@@ -62,6 +62,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud properties to 2024](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2024/springcloudproperties_2024)
 * [Migrate Spring Cloud properties to 2025.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud20251/springcloudproperties_2025_1)
 * [Migrate Spring Cloud properties to 2025](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2025/springcloudproperties_2025)
+* [Migrate Spring Security OAuth clients to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthclient)
+* [Migrate Spring Security OAuth resource servers to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthresourceserver)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
 * [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
 * [Rename `server.max-http-header-size` to `server.max-http-request-header-size`](/recipes/java/spring/boot3/migratemaxhttpheadersize.md)
@@ -207,7 +209,8 @@ recipeList:
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldPropertyKey=management.metrics.binders.*.enabled" --recipe-option "newPropertyKey=management.metrics.enable.process.files" --recipe-option "except=jvm"'}
+  cliOptions={' --recipe-option "oldPropertyKey=management.metrics.binders.*.enabled" --recipe-option "newPropertyKey=management.metrics.enable.process.files"'}
+  optionalCliOptions={' --recipe-option "except=jvm"'}
   hasDataTables
 />
 

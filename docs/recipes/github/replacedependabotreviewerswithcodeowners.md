@@ -108,6 +108,7 @@ updates:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
+  optionalCliOptions={' --recipe-option "codeownersPath=CODEOWNERS"'}
   hasDataTables
 />
 

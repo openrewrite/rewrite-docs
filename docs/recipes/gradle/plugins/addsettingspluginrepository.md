@@ -74,7 +74,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "type=maven" --recipe-option "url=https://repo.spring.io"'}
+  cliOptions={' --recipe-option "type=maven"'}
+  optionalCliOptions={' --recipe-option "url=https://repo.spring.io"'}
   showMaven={false}
   hasDataTables
 />

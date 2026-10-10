@@ -46,12 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.enterprise`
   * artifactId: `jakarta.enterprise.cdi-api`
   * newVersion: `3.0.x`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `jakarta.enterprise`
-  * artifactId: `jakarta.enterprise.cdi-api`
-  * version: `3.0.x`
-  * onlyIfUsing: `javax.decorator..*`
-  * acceptTransitive: `true`
+* [Add the Jakarta CDI API when needed](../../../java/migrate/jakarta/addjakartacdidependency)
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.decorator`
   * newPackageName: `jakarta.decorator`
@@ -81,12 +76,7 @@ recipeList:
       groupId: jakarta.enterprise
       artifactId: jakarta.enterprise.cdi-api
       newVersion: 3.0.x
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: jakarta.enterprise
-      artifactId: jakarta.enterprise.cdi-api
-      version: 3.0.x
-      onlyIfUsing: javax.decorator..*
-      acceptTransitive: true
+  - org.openrewrite.java.migrate.jakarta.AddJakartaCdiDependency
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.decorator
       newPackageName: jakarta.decorator

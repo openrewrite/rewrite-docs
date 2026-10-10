@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60**
 
-_This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name._
+_This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from the `com.vladmihalcea.hibernate` and `com.vladmihalcea.spring` packages to `io.hypersistence.utils.hibernate` and `io.hypersistence.utils.spring`._
 
 ## Recipe source
 
@@ -73,8 +73,12 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newArtifactId: `hypersistence-utils-hibernate-60`
   * newVersion: `3.5.x`
 * [Rename package name](../java/changepackage)
-  * oldPackageName: `com.vladmihalcea`
-  * newPackageName: `io.hypersistence.utils`
+  * oldPackageName: `com.vladmihalcea.hibernate`
+  * newPackageName: `io.hypersistence.utils.hibernate`
+  * recursive: `true`
+* [Rename package name](../java/changepackage)
+  * oldPackageName: `com.vladmihalcea.spring`
+  * newPackageName: `io.hypersistence.utils.spring`
   * recursive: `true`
 
 </TabItem>
@@ -87,7 +91,7 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.hibernate.MigrateToHypersistenceUtilsHibernate60
 displayName: Migrate Hibernate Types to Hypersistence Utils 6.0
 description: |
-  This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from `com.vladmihalcea` to `io.hypersistence.utils` package name.
+  This recipe will migrate any existing dependencies on `com.vladmihalcea:hibernate-types` to `io.hypersistence:hypersistence-utils-hibernate-60`. This migration will include the adjustment from the `com.vladmihalcea.hibernate` and `com.vladmihalcea.spring` packages to `io.hypersistence.utils.hibernate` and `io.hypersistence.utils.spring`.
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
@@ -128,8 +132,12 @@ recipeList:
       newArtifactId: hypersistence-utils-hibernate-60
       newVersion: 3.5.x
   - org.openrewrite.java.ChangePackage:
-      oldPackageName: com.vladmihalcea
-      newPackageName: io.hypersistence.utils
+      oldPackageName: com.vladmihalcea.hibernate
+      newPackageName: io.hypersistence.utils.hibernate
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: com.vladmihalcea.spring
+      newPackageName: io.hypersistence.utils.spring
       recursive: true
 
 ```

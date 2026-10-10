@@ -97,7 +97,7 @@ _2 recipes_
 
 ## apache
 
-_26 recipes_
+_28 recipes_
 
 * [org.openrewrite.apache.ApacheBestPractices](/recipes/apache/apachebestpractices.md)
   * **Apache best practices**
@@ -138,6 +138,12 @@ _26 recipes_
 * [org.openrewrite.apache.commons.lang.IsNotEmptyToJdk](/recipes/apache/commons/lang/isnotemptytojdk.md)
   * **Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)**
   * Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == null || s.isEmpty()` and `s != null &amp;&amp; !s.isEmpty()`.
+* [org.openrewrite.apache.commons.lang.ParameterizeRawStrLookupSubclasses](/recipes/apache/commons/lang/parameterizerawstrlookupsubclasses.md)
+  * **Parameterize raw `StrLookup` subclasses**
+  * `org.apache.commons.text.StrLookup` implements `StringLookup`, which extends `UnaryOperator&lt;String&gt;`. Extending it as a raw type erases the inherited `apply(String)` default method, leaving `Function#apply(Object)` unimplemented, so add the `String` type argument.
+* [org.openrewrite.apache.commons.lang.SystemUtilsIsJavaVersionAtLeastToJavaVersion](/recipes/apache/commons/lang/systemutilsisjavaversionatleasttojavaversion.md)
+  * **Replace `SystemUtils#isJavaVersionAtLeast(float)` and `(int)` with the `JavaVersion` overload**
+  * Commons Lang 2.x compared Java versions as a `float` such as `1.4f` or an `int` such as `140`; Commons Lang 3.x only accepts a `JavaVersion`. Calls whose argument is not a literal that names a `JavaVersion` constant are left alone.
 * [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
   * **Migrates to Apache Commons Lang 3.x**
   * Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
@@ -770,7 +776,7 @@ _2 recipes_
 
 ## commons
 
-_18 recipes_
+_20 recipes_
 
 * [org.openrewrite.apache.commons.ApacheCommonsBestPractices](/recipes/apache/commons/apachecommonsbestpractices.md)
   * **Apache Commons best practices**
@@ -808,6 +814,12 @@ _18 recipes_
 * [org.openrewrite.apache.commons.lang.IsNotEmptyToJdk](/recipes/apache/commons/lang/isnotemptytojdk.md)
   * **Replace any StringUtils#isEmpty(String) and #isNotEmpty(String)**
   * Replace any `StringUtils#isEmpty(String)` and `#isNotEmpty(String)` with `s == null || s.isEmpty()` and `s != null &amp;&amp; !s.isEmpty()`.
+* [org.openrewrite.apache.commons.lang.ParameterizeRawStrLookupSubclasses](/recipes/apache/commons/lang/parameterizerawstrlookupsubclasses.md)
+  * **Parameterize raw `StrLookup` subclasses**
+  * `org.apache.commons.text.StrLookup` implements `StringLookup`, which extends `UnaryOperator&lt;String&gt;`. Extending it as a raw type erases the inherited `apply(String)` default method, leaving `Function#apply(Object)` unimplemented, so add the `String` type argument.
+* [org.openrewrite.apache.commons.lang.SystemUtilsIsJavaVersionAtLeastToJavaVersion](/recipes/apache/commons/lang/systemutilsisjavaversionatleasttojavaversion.md)
+  * **Replace `SystemUtils#isJavaVersionAtLeast(float)` and `(int)` with the `JavaVersion` overload**
+  * Commons Lang 2.x compared Java versions as a `float` such as `1.4f` or an `int` such as `140`; Commons Lang 3.x only accepts a `JavaVersion`. Calls whose argument is not a literal that names a `JavaVersion` constant are left alone.
 * [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
   * **Migrates to Apache Commons Lang 3.x**
   * Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
@@ -839,11 +851,14 @@ _1 recipe_
 
 ## compiler
 
-_2 recipes_
+_3 recipes_
 
 * [io.quarkus.updates.core.quarkus37.JavaVersion17](/recipes/quarkus/updates/core/quarkus37/javaversion17.md)
   * **Change Maven and Gradle Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
+* [io.quarkus.updates.core.quarkus40.JavaVersion21](/recipes/quarkus/updates/core/quarkus40/javaversion21.md)
+  * **Change Maven and Gradle Java version property values to 21**
+  * Change maven.compiler.source and maven.compiler.target values to 21.
 * [org.apache.camel.upgrade.JavaVersion17](/recipes/apache/camel/upgrade/javaversion17.md)
   * **Change Maven Java version property values to 17**
   * Change maven.compiler.source and maven.compiler.target values to 17.
@@ -906,7 +921,7 @@ _14 recipes_
   * Replace `cucumber.api.CucumberOptions` with the TestNG variant in source files that run through a TestNG runner.
 * [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
   * **Cucumber to JUnit test `@Suite`**
-  * Migrates Cucumber tests to JUnit test `@Suite`.
+  * Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunWith(Cucumber.class)` runner to a JUnit Platform `@Suite`, and swaps `cucumber-junit` for `cucumber-junit-platform-engine` 7.x. Each Cucumber-JVM module depends on the `cucumber-core` of its own release, and the engine fails to run against any other, so the rest of the Cucumber-JVM dependencies move to that same 7.x.
 * [org.openrewrite.cucumber.jvm.DropStrictOption](/recipes/cucumber/jvm/dropstrictoption.md)
   * **Drop the `strict` option**
   * Cucumber-JVM 7.0.0 removed the `strict` option, as scenarios are now always executed in strict mode.
@@ -1135,11 +1150,14 @@ _2 recipes_
 
 ## deprecated
 
-_17 recipes_
+_18 recipes_
 
 * [org.openrewrite.java.migrate.Java8toJava11](/recipes/java/migrate/java8tojava11.md)
   * **Migrate to Java 11**
   * This recipe will apply changes commonly needed when upgrading to Java 11. Specifically, for those applications that are built on Java 8, this recipe will update and add dependencies on J2EE libraries that are no longer directly bundled with the JDK. This recipe will also replace deprecated API with equivalents when there is a clear migration strategy. Build files will also be updated to use Java 11 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 11.
+* [org.openrewrite.java.migrate.awt.JavaAwtAPIs](/recipes/java/migrate/awt/javaawtapis.md)
+  * **Use modernized `java.awt` APIs**
+  * Replace calls to AWT and Swing methods deprecated since JDK 1.1 with calls to the methods that replaced them, such as `Component#show()` with `Component#setVisible(true)`.
 * [org.openrewrite.java.migrate.jakarta.UpdateJakartaAnnotations2](/recipes/java/migrate/jakarta/updatejakartaannotations2.md)
   * **Update Jakarta EE annotation Dependencies to 2.1.x**
   * Update Jakarta EE annotation Dependencies to 2.1.x.
@@ -1969,7 +1987,7 @@ _36 recipes_
   * Tags: jackson-3
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_Dependencies](/recipes/java/jackson/upgradejackson_2_3_dependencies.md)
   * **Upgrade Jackson 2.x dependencies to 3.x**
-  * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs.
+  * Upgrade Jackson Maven dependencies from 2.x to 3.x versions and update group IDs. Modules that already resolve Jackson 3 and no longer use Jackson 2 types in their sources are left as-is, as any Jackson 2 dependencies they still declare are there on purpose.
   * Tags: jackson-3
 * [org.openrewrite.java.jackson.UpgradeJackson_2_3_JsonGeneratorMethodRenames](/recipes/java/jackson/upgradejackson_2_3_jsongeneratormethodrenames.md)
   * **Rename Jackson 2.x methods to 3.x equivalents for JsonGenerator**
@@ -2582,8 +2600,14 @@ _23 recipes_
 
 ## java21
 
-_11 recipes_
+_13 recipes_
 
+* [io.quarkus.updates.core.quarkus40.JavaVersion21](/recipes/quarkus/updates/core/quarkus40/javaversion21.md)
+  * **Change Maven and Gradle Java version property values to 21**
+  * Change maven.compiler.source and maven.compiler.target values to 21.
+* [io.quarkus.updates.core.quarkus40.UpgradeToJava21](/recipes/quarkus/updates/core/quarkus40/upgradetojava21.md)
+  * **Migrate to Java 21**
+  * This recipe will apply changes commonly needed when migrating to Java 21. Build files will be updated to use Java 21 as the target/source and plugins will be also be upgraded to versions that are compatible with Java 21.
 * [org.openrewrite.java.migrate.DeleteDeprecatedFinalize](/recipes/java/migrate/deletedeprecatedfinalize.md)
   * **Avoid using the deprecated empty `finalize()` method in `java.desktop`**
   * The java.desktop module had a few implementations of finalize() that did nothing and have been removed. This recipe will remove these methods.
@@ -3324,8 +3348,11 @@ _2 recipes_
 
 ## lang
 
-_1 recipe_
+_2 recipes_
 
+* [org.openrewrite.apache.commons.lang.SystemUtilsIsJavaVersionAtLeastToJavaVersion](/recipes/apache/commons/lang/systemutilsisjavaversionatleasttojavaversion.md)
+  * **Replace `SystemUtils#isJavaVersionAtLeast(float)` and `(int)` with the `JavaVersion` overload**
+  * Commons Lang 2.x compared Java versions as a `float` such as `1.4f` or an `int` such as `140`; Commons Lang 3.x only accepts a `JavaVersion`. Calls whose argument is not a literal that names a `JavaVersion` constant are left alone.
 * [org.openrewrite.apache.commons.lang.UpgradeApacheCommonsLang_2_3](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
   * **Migrates to Apache Commons Lang 3.x**
   * Migrate applications to the latest Apache Commons Lang 3.x release. This recipe modifies application's build files, and changes the package as per [the migration release notes](https://commons.apache.org/proper/commons-lang/article3_0.html).
@@ -4453,7 +4480,7 @@ _1 recipe_
 
 ## RSPEC
 
-_233 recipes_
+_234 recipes_
 
 * [org.openrewrite.java.RemoveUnusedImports](/recipes/java/removeunusedimports.md)
   * **Remove unused imports**
@@ -4711,6 +4738,10 @@ _233 recipes_
   * **Finalize classes with private constructors**
   * Adds the `final` modifier to classes that expose no public or package-private constructors. If a class cannot be instantiated from the outside, marking it `final` communicates that it was not designed for inheritance and prevents accidental subclassing.
   * Tags: RSPEC-S2974
+* [org.openrewrite.staticanalysis.FindMainWithThrowsClause](/recipes/staticanalysis/findmainwiththrowsclause.md)
+  * **Find `main` methods with a `throws` clause**
+  * Marks JVM entry-point `main` methods (`public static void main(String[])` or the varargs equivalent) that declare a `throws` clause. Uncaught exceptions from `main` propagate to the JVM's default handler, which just prints the stack trace and returns exit code 1. Handle exceptions explicitly and exit with a meaningful code.
+  * Tags: RSPEC-S2096
 * [org.openrewrite.staticanalysis.FindSystemAndRuntimeExitCalls](/recipes/staticanalysis/findsystemandruntimeexitcalls.md)
   * **Find JVM exit calls**
   * Marks calls to `System.exit(int)`, `Runtime.exit(int)`, and `Runtime.halt(int)`. Terminating the JVM from library or application code is rarely correct: it bypasses the normal shutdown flow, prevents `finally` blocks from running in other threads, and can leave file, socket, and database resources in an inconsistent state. `Runtime.halt` is particularly dangerous because it also skips shutdown hooks.
@@ -6477,7 +6508,7 @@ _70 recipes_
   * Replace `cucumber.api.CucumberOptions` with the TestNG variant in source files that run through a TestNG runner.
 * [org.openrewrite.cucumber.jvm.CucumberToJunitPlatformSuite](/recipes/cucumber/jvm/cucumbertojunitplatformsuite.md)
   * **Cucumber to JUnit test `@Suite`**
-  * Migrates Cucumber tests to JUnit test `@Suite`.
+  * Migrates Cucumber tests run by the `@Cucumber` annotation or the JUnit 4 `@RunWith(Cucumber.class)` runner to a JUnit Platform `@Suite`, and swaps `cucumber-junit` for `cucumber-junit-platform-engine` 7.x. Each Cucumber-JVM module depends on the `cucumber-core` of its own release, and the engine fails to run against any other, so the rest of the Cucumber-JVM dependencies move to that same 7.x.
 * [org.openrewrite.cucumber.jvm.DropStrictOption](/recipes/cucumber/jvm/dropstrictoption.md)
   * **Drop the `strict` option**
   * Cucumber-JVM 7.0.0 removed the `strict` option, as scenarios are now always executed in strict mode.

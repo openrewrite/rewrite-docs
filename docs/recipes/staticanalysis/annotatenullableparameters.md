@@ -109,6 +109,7 @@ public class PersonBuilder {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
+  optionalCliOptions={' --recipe-option "nullableAnnotationClass=org.jspecify.annotations.Nullable" --recipe-option "additionalNullCheckingMethods=com.mycompany.utils.StringUtil isEmpty(..), com.mycompany.utils.CollectionUtil isNullOrEmpty(..)"'}
   hasDataTables
 />
 

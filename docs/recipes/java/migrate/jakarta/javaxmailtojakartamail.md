@@ -64,12 +64,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.mail`
   * artifactId: `jakarta.mail-api`
   * newVersion: `2.0.x`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `jakarta.mail`
-  * artifactId: `jakarta.mail-api`
-  * version: `2.0.x`
-  * onlyIfUsing: `javax.mail.*`
-  * acceptTransitive: `true`
+* [Add the Jakarta Mail API when needed](../../../java/migrate/jakarta/addjakartamaildependency)
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.mail`
   * newPackageName: `jakarta.mail`
@@ -117,12 +112,7 @@ recipeList:
       groupId: jakarta.mail
       artifactId: jakarta.mail-api
       newVersion: 2.0.x
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: jakarta.mail
-      artifactId: jakarta.mail-api
-      version: 2.0.x
-      onlyIfUsing: javax.mail.*
-      acceptTransitive: true
+  - org.openrewrite.java.migrate.jakarta.AddJakartaMailDependency
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.mail
       newPackageName: jakarta.mail

@@ -62,6 +62,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `jakarta.xml.bind`
   * newArtifactId: `jakarta.xml.bind-api`
   * newVersion: `2.3.x`
+* [Add an API dependency for explicit imports](../../../java/migrate/javax/addapidependencyforimports)
+  * packageName: `javax.xml.bind`
+  * groupId: `jakarta.xml.bind`
+  * artifactId: `jakarta.xml.bind-api`
+  * version: `2.3.x`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `jakarta.xml.bind`
   * artifactId: `jakarta.xml.bind-api`
@@ -119,6 +124,11 @@ recipeList:
       newGroupId: jakarta.xml.bind
       newArtifactId: jakarta.xml.bind-api
       newVersion: 2.3.x
+  - org.openrewrite.java.migrate.javax.AddApiDependencyForImports:
+      packageName: javax.xml.bind
+      groupId: jakarta.xml.bind
+      artifactId: jakarta.xml.bind-api
+      version: 2.3.x
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: jakarta.xml.bind
       artifactId: jakarta.xml.bind-api

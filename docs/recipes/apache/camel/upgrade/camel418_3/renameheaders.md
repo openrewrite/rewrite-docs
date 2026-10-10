@@ -77,6 +77,7 @@ This recipe is used as part of the following composite recipes:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
+  optionalCliOptions={' --recipe-option "headerMappings=kafka.TOPIC: CamelKafkaTopic" --recipe-option "oldHeaderName=kafka.TOPIC" --recipe-option "newHeaderName=CamelKafkaTopic"'}
   hasDataTables
 />
 

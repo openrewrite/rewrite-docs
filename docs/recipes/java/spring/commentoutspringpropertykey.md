@@ -58,6 +58,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud properties to 2023](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2023/springcloudproperties_2023)
 * [Migrate Spring Cloud properties to 2024](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2024/springcloudproperties_2024)
 * [Migrate Spring Cloud properties to 2025](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/cloud2025/springcloudproperties_2025)
+* [Migrate Spring Security OAuth clients to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthclient)
+* [Migrate Spring Security OAuth resource servers to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthresourceserver)
 
 ## Example
 
@@ -126,6 +128,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
   requiresConfiguration
   cliOptions={' --recipe-option "propertyKey=management.metrics.binders.files.enabled" --recipe-option "comment=This property is deprecated and no longer applicable starting from Spring Boot 3.0.x"'}
+  optionalCliOptions={' --recipe-option "commentOutProperty=true"'}
   hasDataTables
 />
 

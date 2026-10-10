@@ -45,6 +45,7 @@ This recipe is used as part of the following composite recipes:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
+  optionalCliOptions={' --recipe-option "scope=Compile" --recipe-option "includeTransitive=true" --recipe-option "validateResolvable=true"'}
   hasDataTables
 />
 

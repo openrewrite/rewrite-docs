@@ -81,6 +81,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "propertyKey=management.metrics.binders.files.enabled or management.metrics.*"'}
+  optionalCliOptions={' --recipe-option "relaxedBinding=true"'}
   hasDataTables
 />
 

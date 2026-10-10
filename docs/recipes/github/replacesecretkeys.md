@@ -60,7 +60,8 @@ recipeList:
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldKeyName=ossrh_username" --recipe-option "newKeyName=sonatype_username" --recipe-option "fileMatcher=.github/workflows/*.{yml,yaml}"'}
+  cliOptions={' --recipe-option "oldKeyName=ossrh_username" --recipe-option "newKeyName=sonatype_username"'}
+  optionalCliOptions={' --recipe-option "fileMatcher=.github/workflows/*.{yml,yaml}"'}
   hasDataTables
 />
 

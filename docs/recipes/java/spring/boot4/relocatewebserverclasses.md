@@ -101,6 +101,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.springframework.boot.web.embedded.jetty.JettyReactiveWebServerFactory`
   * newFullyQualifiedTypeName: `org.springframework.boot.jetty.reactive.JettyReactiveWebServerFactory`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory`
+  * newFullyQualifiedTypeName: `org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory`
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.springframework.boot.web.servlet.server.ServletWebServerFactory`
+  * newFullyQualifiedTypeName: `org.springframework.boot.web.server.servlet.ServletWebServerFactory`
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.springframework.boot.web.servlet.context`
   * newPackageName: `org.springframework.boot.web.server.servlet.context`
@@ -189,6 +195,12 @@ recipeList:
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.springframework.boot.web.embedded.jetty.JettyReactiveWebServerFactory
       newFullyQualifiedTypeName: org.springframework.boot.jetty.reactive.JettyReactiveWebServerFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory
+      newFullyQualifiedTypeName: org.springframework.boot.web.server.servlet.ConfigurableServletWebServerFactory
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.springframework.boot.web.servlet.server.ServletWebServerFactory
+      newFullyQualifiedTypeName: org.springframework.boot.web.server.servlet.ServletWebServerFactory
   - org.openrewrite.java.ChangePackage:
       oldPackageName: org.springframework.boot.web.servlet.context
       newPackageName: org.springframework.boot.web.server.servlet.context

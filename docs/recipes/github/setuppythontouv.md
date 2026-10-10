@@ -134,6 +134,7 @@ jobs:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
+  optionalCliOptions={' --recipe-option "uvVersion=v6" --recipe-option "syncStrategy=locked" --recipe-option "transformPipCommands=true" --recipe-option "enableCache=true"'}
   hasDataTables
 />
 

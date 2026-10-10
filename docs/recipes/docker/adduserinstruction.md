@@ -103,7 +103,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "userName=appuser" --recipe-option "groupName=appgroup" --recipe-option "stageName=final"'}
+  cliOptions={' --recipe-option "userName=appuser"'}
+  optionalCliOptions={' --recipe-option "groupName=appgroup" --recipe-option "stageName=final" --recipe-option "skipIfUserExists=true"'}
   hasDataTables
 />
 

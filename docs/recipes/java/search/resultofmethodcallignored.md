@@ -115,6 +115,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.io.File mkdir*()"'}
+  optionalCliOptions={' --recipe-option "matchOverrides=true"'}
   hasDataTables
 />
 

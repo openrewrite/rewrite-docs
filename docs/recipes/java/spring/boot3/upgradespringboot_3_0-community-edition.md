@@ -43,6 +43,9 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Migrate to Spring Boot 2.7](../../../java/spring/boot2/upgradespringboot_2_7)
 * [Enable Spring Batch Annotation](../../../java/spring/boot3/removeenablebatchprocessing)
+* [Change type](../../../java/changetype)
+  * oldFullyQualifiedTypeName: `org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator`
+  * newFullyQualifiedTypeName: `org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator`
 * [Migrate to Java 17](../../../java/migrate/upgradetojava17)
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `org.springframework.boot`
@@ -122,6 +125,9 @@ preconditions:
 recipeList:
   - org.openrewrite.java.spring.boot2.UpgradeSpringBoot_2_7
   - org.openrewrite.java.spring.boot3.RemoveEnableBatchProcessing
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator
+      newFullyQualifiedTypeName: org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator
   - org.openrewrite.java.migrate.UpgradeToJava17
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.springframework.boot

@@ -98,7 +98,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "comment=This property is deprecated" --recipe-option "filePattern=.github/workflows/*.yml"'}
+  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "comment=This property is deprecated"'}
+  optionalCliOptions={' --recipe-option "relaxedBinding=true" --recipe-option "filePattern=.github/workflows/*.yml"'}
   hasDataTables
 />
 

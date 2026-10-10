@@ -96,6 +96,7 @@ class Test {
   artifactId="rewrite-java"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "methodPattern=java.util.List add(..)" --recipe-option "ignoreDeprecatedScopes=true"'}
   hasDataTables
 />
 

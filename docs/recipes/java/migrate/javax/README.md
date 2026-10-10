@@ -27,6 +27,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [`@Embeddable` classes cannot have an `@Id` annotation when referenced by an `@EmbeddedId` annotation](./removeembeddableid.md)
 * [`@Entity` objects with constructors must also have a default constructor](./adddefaultconstructortoentityclass.md)
 * [`@JoinColumn` annotations must be used with relationship mappings](./usejoincolumnformapping.md)
+* [Add an API dependency for explicit imports](./addapidependencyforimports.md)
 * [Add scope annotation to injected classes](./addscopetoinjectedclass.md)
 * [Attributes with automatically generated values require configuration](./addtablegenerator.md)
 * [Private accessor methods must have a `@Transient` annotation](./addtransientannotationtoprivateaccessor.md)

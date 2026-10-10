@@ -127,6 +127,7 @@ This recipe is used as part of the following composite recipes:
   artifactId="rewrite-maven"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "timestamp=2024-01-01T00:00:00Z"'}
   showGradle={false}
   hasDataTables
 />

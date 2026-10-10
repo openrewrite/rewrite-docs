@@ -102,6 +102,7 @@ class Example {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+  optionalCliOptions={' --recipe-option "convertToList=true"'}
   hasDataTables
 />
 

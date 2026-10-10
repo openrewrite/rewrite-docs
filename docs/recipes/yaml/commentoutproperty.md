@@ -113,7 +113,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=applicability.singleSource" --recipe-option "commentText=The `foo` property is deprecated, please migrate" --recipe-option "commentOutProperty=true"'}
+  cliOptions={' --recipe-option "propertyKey=applicability.singleSource" --recipe-option "commentText=The `foo` property is deprecated, please migrate"'}
+  optionalCliOptions={' --recipe-option "commentOutProperty=true"'}
   hasDataTables
 />
 

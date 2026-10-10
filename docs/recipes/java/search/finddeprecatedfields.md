@@ -94,6 +94,7 @@ class Test {
   artifactId="rewrite-java"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "typePattern=org.springframework..*" --recipe-option "matchInherited=true" --recipe-option "ignoreDeprecatedScopes=true"'}
   hasDataTables
 />
 

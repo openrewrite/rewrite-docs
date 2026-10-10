@@ -102,7 +102,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "sequencePath=$.universe.planets" --recipe-option "value=earth" --recipe-option "existingSequenceValues=existingValue1" --recipe-option "matchExistingSequenceValuesInAnyOrder=true"'}
+  cliOptions={' --recipe-option "sequencePath=$.universe.planets" --recipe-option "value=earth"'}
+  optionalCliOptions={' --recipe-option "existingSequenceValues=existingValue1" --recipe-option "matchExistingSequenceValuesInAnyOrder=true"'}
   hasDataTables
 />
 

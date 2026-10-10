@@ -38,7 +38,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 
 This recipe is used as part of the following composite recipes:
 
-* [Upgrade Android Gradle Plugin version](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/upgradeandroidgradlepluginversion)
+* [Upgrade Android Gradle Plugin version](/recipes/android/upgradeandroidgradlepluginversion.md)
 * [Upgrade to post-quantum ready TLS](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/cryptography/pqc/upgradetopqcreadytls)
 
 ## Examples
@@ -210,7 +210,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*"'}
+  optionalCliOptions={' --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}
   hasDataTables
 />

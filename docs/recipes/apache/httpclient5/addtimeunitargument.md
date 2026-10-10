@@ -112,7 +112,8 @@ recipeList:
   artifactId="rewrite-apache"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE"
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)" --recipe-option "timeUnit=MILLISECONDS"'}
+  cliOptions={' --recipe-option "methodPattern=org.apache.http.client.config.RequestConfig.Builder setConnectionRequestTimeout(int)"'}
+  optionalCliOptions={' --recipe-option "timeUnit=MILLISECONDS"'}
   hasDataTables
 />
 

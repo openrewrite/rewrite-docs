@@ -37,6 +37,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Micrometer annotations to JSpecify](/recipes/java/jspecify/migratefrommicrometerannotations.md)
 * [Migrate from Micronaut Framework annotations to JSpecify](/recipes/java/jspecify/migratefrommicronautannotations.md)
 * [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
+* [Migrate from SpotBugs annotations to JSpecify](/recipes/java/jspecify/migratefromspotbugsannotations.md)
 * [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
 * [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
 
@@ -93,6 +94,7 @@ class Test {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
+  optionalCliOptions={' --recipe-option "annotationType=org.openrewrite..*"'}
   hasDataTables
 />
 

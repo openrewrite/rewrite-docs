@@ -102,6 +102,7 @@ class Test {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-logging-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS"
+  optionalCliOptions={' --recipe-option "addLogger=true" --recipe-option "loggerName=log"'}
   hasDataTables
 />
 

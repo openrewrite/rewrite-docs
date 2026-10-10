@@ -139,7 +139,8 @@ recipeList:
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
   requiresConfiguration
-  cliOptions={' --recipe-option "packageEcosystem=maven" --recipe-option "interval=weekly" --recipe-option "day=monday" --recipe-option "time=09:00" --recipe-option "timezone=Asia/Tokyo"'}
+  cliOptions={' --recipe-option "packageEcosystem=maven" --recipe-option "interval=weekly"'}
+  optionalCliOptions={' --recipe-option "day=monday" --recipe-option "time=09:00" --recipe-option "timezone=Asia/Tokyo"'}
   hasDataTables
 />
 

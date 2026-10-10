@@ -38,6 +38,7 @@ This recipe is used as part of the following composite recipes:
 * [Add literal method argument](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/python/addliteralmethodargument)
 * [Migrate deprecated APIs removed in Spring Framework 7.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework7/migratedeprecatedapis)
 * [Migrate removed Spring `Assert` methods](/recipes/java/spring/framework/migratespringassert.md)
+* [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 
 ## Example
 
@@ -101,7 +102,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0" --recipe-option "literal=abc" --recipe-option "primitiveType=String"'}
+  cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(int, int)" --recipe-option "argumentIndex=0" --recipe-option "literal=abc"'}
+  optionalCliOptions={' --recipe-option "primitiveType=String"'}
   hasDataTables
 />
 

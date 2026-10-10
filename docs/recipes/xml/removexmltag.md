@@ -108,7 +108,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "xPath=/project/dependencies/dependency" --recipe-option "fileMatcher=\'**/application-*.xml\'"'}
+  cliOptions={' --recipe-option "xPath=/project/dependencies/dependency"'}
+  optionalCliOptions={' --recipe-option "fileMatcher=\'**/application-*.xml\'"'}
   hasDataTables
 />
 

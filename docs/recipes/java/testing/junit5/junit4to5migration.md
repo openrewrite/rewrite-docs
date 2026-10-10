@@ -47,10 +47,26 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Migrate System Rules to System Stubs and JUnit Pioneer](../../../java/testing/junit5/migratesystemrules)
 * [Use wiremock extension](../../../java/testing/junit5/usewiremockextension)
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `com.github.tomakehurst`
+  * oldArtifactId: `wiremock`
+  * newArtifactId: `wiremock-jre8`
+  * newVersion: `2.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `com.github.tomakehurst`
+  * oldArtifactId: `wiremock-standalone`
+  * newArtifactId: `wiremock-jre8-standalone`
+  * newVersion: `2.x`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `com.github.tomakehurst`
+  * artifactId: `wiremock*`
+  * newVersion: `2.x`
+  * overrideManagedVersion: `true`
 * [Use JUnit Jupiter `@Disabled`](../../../java/testing/junit5/ignoretodisabled)
 * [Use JUnit Jupiter `Executable`](../../../java/testing/junit5/throwingrunnabletoexecutable)
 * [Remove JUnit 4 `@RunWith` annotations that do not require an `@ExtendsWith` replacement](../../../java/testing/junit5/removeobsoleterunners)
   * obsoleteRunners: `[org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]`
+* [Upgrade to Cucumber-JVM 7.x](../../../cucumber/jvm/upgradecucumber7x)
 * [Remove Maven plugin dependency](../../../maven/removeplugindependency)
   * pluginGroupId: `org.apache.maven.plugins`
   * pluginArtifactId: `maven-surefire-plugin`
@@ -151,10 +167,26 @@ preconditions:
 recipeList:
   - org.openrewrite.java.testing.junit5.MigrateSystemRules
   - org.openrewrite.java.testing.junit5.UseWiremockExtension
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.github.tomakehurst
+      oldArtifactId: wiremock
+      newArtifactId: wiremock-jre8
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: com.github.tomakehurst
+      oldArtifactId: wiremock-standalone
+      newArtifactId: wiremock-jre8-standalone
+      newVersion: 2.x
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: com.github.tomakehurst
+      artifactId: wiremock*
+      newVersion: 2.x
+      overrideManagedVersion: true
   - org.openrewrite.java.testing.junit5.IgnoreToDisabled
   - org.openrewrite.java.testing.junit5.ThrowingRunnableToExecutable
   - org.openrewrite.java.testing.junit5.RemoveObsoleteRunners:
       obsoleteRunners: [org.junit.runners.JUnit4, org.junit.runners.BlockJUnit4ClassRunner]
+  - org.openrewrite.cucumber.jvm.UpgradeCucumber7x
   - org.openrewrite.maven.RemovePluginDependency:
       pluginGroupId: org.apache.maven.plugins
       pluginArtifactId: maven-surefire-plugin

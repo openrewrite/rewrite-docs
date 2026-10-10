@@ -52,7 +52,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "version=17.X" --recipe-option "checkTargetCompatibility=17.X"'}
+  cliOptions={' --recipe-option "version=17.X"'}
+  optionalCliOptions={' --recipe-option "checkTargetCompatibility=17.X"'}
   hasDataTables
 />
 

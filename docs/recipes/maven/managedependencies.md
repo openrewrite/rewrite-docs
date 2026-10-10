@@ -139,7 +139,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupPattern=com.google.*" --recipe-option "artifactPattern=guava*"'}
+  cliOptions={' --recipe-option "groupPattern=com.google.*"'}
+  optionalCliOptions={' --recipe-option "artifactPattern=guava*" --recipe-option "addToRootPom=true" --recipe-option "skipModelUpdate=true"'}
   showGradle={false}
   hasDataTables
 />

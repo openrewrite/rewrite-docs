@@ -40,6 +40,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Upgrade Maven plugin version](../../maven/upgradepluginversion)
+  * groupId: `biz.aQute.bnd`
+  * artifactId: `bnd-maven-plugin`
+  * newVersion: `7.4.0`
+* [Use `actions/setup-java` `temurin` distribution](../../github/setupjavaadoptopenjdktotemurin)
+* [Upgrade Spring Boot 3 Maven parents for Java 25](../../java/migrate/upgradespringbootparentforjava25)
 * [Upgrade `actions/setup-java` `java-version`](../../github/setupjavaupgradejavaversion)
   * minimumJavaMajorVersion: `25`
 * [Update Gradle wrapper](../../gradle/updategradlewrapper)
@@ -107,6 +113,12 @@ tags:
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.maven.UpgradePluginVersion:
+      groupId: biz.aQute.bnd
+      artifactId: bnd-maven-plugin
+      newVersion: 7.4.0
+  - org.openrewrite.github.SetupJavaAdoptOpenJDKToTemurin
+  - org.openrewrite.java.migrate.UpgradeSpringBootParentForJava25
   - org.openrewrite.github.SetupJavaUpgradeJavaVersion:
       minimumJavaMajorVersion: 25
   - org.openrewrite.gradle.UpdateGradleWrapper:

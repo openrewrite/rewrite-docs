@@ -37,6 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   artifactId="rewrite-core"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "filePattern=.github/workflows/*.yml"'}
   hasDataTables
 />
 

@@ -50,6 +50,10 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `ehcache-transactions`
   * newClassifier: `jakarta`
   * changeManagedDependency: `true`
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `org.ehcache`
+  * artifactId: `*`
+  * newVersion: `3.10.x`
 
 </TabItem>
 
@@ -79,6 +83,10 @@ recipeList:
       artifactId: ehcache-transactions
       newClassifier: jakarta
       changeManagedDependency: true
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: org.ehcache
+      artifactId: "*"
+      newVersion: 3.10.x
 
 ```
 </TabItem>

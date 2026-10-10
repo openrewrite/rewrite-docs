@@ -33,6 +33,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 This recipe is used as part of the following composite recipes:
 
 * [Migrate from Micrometer annotations to JSpecify](/recipes/java/jspecify/migratefrommicrometerannotations.md)
+* [Migrate from SpotBugs annotations to JSpecify](/recipes/java/jspecify/migratefromspotbugsannotations.md)
 * [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
 * [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
 

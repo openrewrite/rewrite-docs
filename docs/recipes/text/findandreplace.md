@@ -125,7 +125,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_CORE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "find=blacklist" --recipe-option "replace=denylist" --recipe-option "filePattern=\'**/*.java\'"'}
+  cliOptions={' --recipe-option "find=blacklist"'}
+  optionalCliOptions={' --recipe-option "replace=denylist" --recipe-option "regex=true" --recipe-option "caseSensitive=true" --recipe-option "multiline=true" --recipe-option "dotAll=true" --recipe-option "filePattern=\'**/*.java\'" --recipe-option "plaintextOnly=true"'}
   hasDataTables
 />
 

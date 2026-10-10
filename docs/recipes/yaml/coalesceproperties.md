@@ -92,6 +92,7 @@ management:
   artifactId="rewrite-yaml"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "exclusions=$..[org.springframework.security]" --recipe-option "applyTo=$..[org.springframework.security]"'}
   hasDataTables
 />
 

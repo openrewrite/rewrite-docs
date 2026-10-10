@@ -31,13 +31,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 | `String` | scope | *Optional*. The dependency scope: `dependencies`, `devDependencies`, etc. When omitted, all scopes are searched. Valid options: `dependencies`, `devDependencies`, `peerDependencies`, `optionalDependencies`, `bundledDependencies` | `dependencies` |
 
 
-## Used by
-
-This recipe is used as part of the following composite recipes:
-
-* [Swap the `hpagent` dependency for `https-proxy-agent`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/hpagent/swap-hpagent-dependency)
-
-
 ## Usage
 
 This recipe has required configuration parameters. Recipes with required configuration parameters cannot be activated directly (unless you are running them via the Moderne CLI). To activate this recipe you must create a new recipe which fills in the required parameters. In your `rewrite.yml` create a new recipe with a unique name. For example: `com.yourorg.ChangeDependencyExample`.
@@ -63,7 +56,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVASCRIPT"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldPackageName=lodash" --recipe-option "newPackageName=lodash-es" --recipe-option "newVersion=^5.0.0" --recipe-option "scope=dependencies"'}
+  cliOptions={' --recipe-option "oldPackageName=lodash" --recipe-option "newPackageName=lodash-es"'}
+  optionalCliOptions={' --recipe-option "newVersion=^5.0.0" --recipe-option "scope=dependencies"'}
   hasDataTables
 />
 

@@ -100,7 +100,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldPropertyKey=app.source.property" --recipe-option "oldFilePath=src/main/resources/application.properties" --recipe-option "newPropertyKey=app.destination.property" --recipe-option "newFilePath=src/main/resources/application.properties"'}
+  cliOptions={' --recipe-option "oldPropertyKey=app.source.property" --recipe-option "newPropertyKey=app.destination.property"'}
+  optionalCliOptions={' --recipe-option "oldFilePath=src/main/resources/application.properties" --recipe-option "newFilePath=src/main/resources/application.properties" --recipe-option "createNewKeys=true" --recipe-option "relaxedBinding=true"'}
   hasDataTables
 />
 

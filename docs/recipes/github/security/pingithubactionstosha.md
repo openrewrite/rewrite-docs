@@ -101,6 +101,7 @@ jobs:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-github-actions"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITHUB_ACTIONS"
+  optionalCliOptions={' --recipe-option "pinOfficialActions=true" --recipe-option "githubApiToken=ghp_exampleTokenNotARealToken" --recipe-option "trustedOwners=my-organization, my-other-organization" --recipe-option "includedActions=codecov/codecov-action"'}
   hasDataTables
 />
 

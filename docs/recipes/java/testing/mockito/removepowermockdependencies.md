@@ -46,7 +46,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `powermock*`
 * [Exclude a transitive `mockito-all` from modules that move off PowerMock](../../../java/testing/mockito/excludemockitoallreplacingpowermock)
 * [Remove unused properties](../../../maven/removeunusedproperties)
-  * propertyPattern: `.*powermock.*`
+  * propertyPattern: `[\w.-]*powermock[\w.-]*`
 
 </TabItem>
 
@@ -74,7 +74,7 @@ recipeList:
       artifactId: powermock*
   - org.openrewrite.java.testing.mockito.ExcludeMockitoAllReplacingPowerMock
   - org.openrewrite.maven.RemoveUnusedProperties:
-      propertyPattern: .*powermock.*
+      propertyPattern: [\w.-]*powermock[\w.-]*
 
 ```
 </TabItem>

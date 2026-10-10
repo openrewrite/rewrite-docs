@@ -98,6 +98,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   groupId="org.openrewrite"
   artifactId="rewrite-mainframe"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAINFRAME"
+  optionalCliOptions={' --recipe-option "updateSequenceAreas=true"'}
   hasDataTables
 />
 

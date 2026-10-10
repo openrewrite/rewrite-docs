@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.java.joda.time.JodaFormatterToJavaTime**
 
-_Migrates Joda-Time `DateTimeFormatter` and `DateTimeFormat` method calls to their Java time equivalents._
+_Migrates Joda-Time `DateTimeFormatter`, `DateTimeFormat` and `ISODateTimeFormat` method calls to their Java time equivalents. Patterns are translated where Joda-Time and `java.time` read a pattern letter differently, and left alone when there is no exact translation._
 
 ## Recipe source
 

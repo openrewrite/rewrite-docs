@@ -64,7 +64,8 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=javax" --recipe-option "oldArtifactId=javax" --recipe-option "newGroupId=jakarta.platform" --recipe-option "newArtifactId=javaee-api" --recipe-option "newVersion=9.1"'}
+  cliOptions={' --recipe-option "oldGroupId=javax" --recipe-option "oldArtifactId=javax" --recipe-option "newGroupId=jakarta.platform" --recipe-option "newArtifactId=javaee-api"'}
+  optionalCliOptions={' --recipe-option "newVersion=9.1"'}
   hasDataTables
 />
 

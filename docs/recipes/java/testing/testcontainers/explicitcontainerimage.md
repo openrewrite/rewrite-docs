@@ -104,6 +104,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
   requiresConfiguration
   cliOptions={' --recipe-option "containerClass=org.testcontainers.containers.NginxContainer" --recipe-option "image=nginx:1.9.4"'}
+  optionalCliOptions={' --recipe-option "parseImage=true"'}
   hasDataTables
 />
 

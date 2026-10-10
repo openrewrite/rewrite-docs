@@ -73,7 +73,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.properties" --recipe-option "fileContents=a.property=value"'}
+  cliOptions={' --recipe-option "relativeFileName=foo/bar/baz.properties"'}
+  optionalCliOptions={' --recipe-option "fileContents=a.property=value" --recipe-option "overwriteExisting=true"'}
   hasDataTables
 />
 

@@ -122,7 +122,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPatternChain=[\'java.util.Map keySet()\', \'java.util.Set contains(..)\']" --recipe-option "newMethodName=containsKey" --recipe-option "matchOverrides=false"'}
+  cliOptions={' --recipe-option "methodPatternChain=[\'java.util.Map keySet()\', \'java.util.Set contains(..)\']" --recipe-option "newMethodName=containsKey"'}
+  optionalCliOptions={' --recipe-option "matchOverrides=false"'}
   hasDataTables
 />
 

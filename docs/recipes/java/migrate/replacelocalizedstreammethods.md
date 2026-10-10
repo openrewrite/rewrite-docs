@@ -95,6 +95,7 @@ class Test {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
+  optionalCliOptions={' --recipe-option "localizedInputStreamMethodMatcher=java.lang.Runtime getLocalizedInputStream(java.io.InputStream)" --recipe-option "localizedOutputStreamMethodMatcher=java.lang.Runtime getLocalizedOutputStream(java.io.OutputStream)"'}
   hasDataTables
 />
 

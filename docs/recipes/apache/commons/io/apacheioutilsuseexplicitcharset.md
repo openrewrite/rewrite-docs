@@ -202,6 +202,7 @@ import java.net.URL;
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-apache"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE"
+  optionalCliOptions={' --recipe-option "encoding=UTF_8"'}
   hasDataTables
 />
 

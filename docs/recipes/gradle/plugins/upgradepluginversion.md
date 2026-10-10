@@ -53,6 +53,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Boot 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
+* [Migrate to Spring Boot 4.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_2)
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 * [Update Micronaut Gradle build plugins to 5.x](/recipes/java/micronaut/updatebuildplugins5.md)
 * [Upgrade Kotlin Gradle plugins to 2.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlingradleplugins)
@@ -127,7 +128,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginIdPattern=com.jfrog.bintray" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "pluginIdPattern=com.jfrog.bintray"'}
+  optionalCliOptions={' --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}
   hasDataTables
 />

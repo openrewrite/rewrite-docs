@@ -83,7 +83,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_TOML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "relativeFileName=pyproject.toml" --recipe-option "fileContents=>\n        [tool.poetry]\n        name = "my-project"\n        version = "0.1.0"" --recipe-option "fileContentsUrl=https://raw.githubusercontent.com/example/repo/main/pyproject.toml"'}
+  cliOptions={' --recipe-option "relativeFileName=pyproject.toml"'}
+  optionalCliOptions={' --recipe-option "fileContents=>\n        [tool.poetry]\n        name = "my-project"\n        version = "0.1.0"" --recipe-option "fileContentsUrl=https://raw.githubusercontent.com/example/repo/main/pyproject.toml" --recipe-option "overwriteExisting=true"'}
   hasDataTables
 />
 

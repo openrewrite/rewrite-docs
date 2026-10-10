@@ -33,9 +33,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Remove the `express-request-id` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/express-request-id/remove-unused-express-request-id-dependency)
-* [Remove the `fs-extra` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/fs-extra/remove-unused-fs-extra-dependency)
-* [Remove the `source-map-support` dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/node/migrate/source-map-support/remove-unused-source-map-support-dependency)
 * [Replace `node-sass` with `sass`](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/angular/migration/replace-node-sass-with-sass)
 
 
@@ -62,7 +59,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVASCRIPT"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "packageName=lodash" --recipe-option "scope=dependencies"'}
+  cliOptions={' --recipe-option "packageName=lodash"'}
+  optionalCliOptions={' --recipe-option "scope=dependencies"'}
   hasDataTables
 />
 

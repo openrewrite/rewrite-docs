@@ -235,7 +235,8 @@ recipeList:
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
   requiresConfiguration
-  cliOptions={' --recipe-option "type=foo.MyType" --recipe-option "oldName=fooBean" --recipe-option "newName=barBean"'}
+  cliOptions={' --recipe-option "oldName=fooBean" --recipe-option "newName=barBean"'}
+  optionalCliOptions={' --recipe-option "type=foo.MyType"'}
   hasDataTables
 />
 

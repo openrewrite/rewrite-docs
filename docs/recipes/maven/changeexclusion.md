@@ -145,7 +145,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.springframework" --recipe-option "oldArtifactId=spring-web*" --recipe-option "newGroupId=org.springframework.boot" --recipe-option "newArtifactId=spring-boot-starter-web"'}
+  cliOptions={' --recipe-option "oldGroupId=org.springframework" --recipe-option "oldArtifactId=spring-web*"'}
+  optionalCliOptions={' --recipe-option "newGroupId=org.springframework.boot" --recipe-option "newArtifactId=spring-boot-starter-web"'}
   showGradle={false}
   hasDataTables
 />

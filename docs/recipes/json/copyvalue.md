@@ -105,7 +105,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JSON"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "sourceKeyPath=$.source.kind" --recipe-option "sourceFilePath=src/main/resources/application.json" --recipe-option "destinationKeyPath=\'$.subjects.*\' or \'$.\' or \'$.x[1].y.*\' etc." --recipe-option "destinationKey=myKey" --recipe-option "destinationFilePath=src/main/resources/application.json"'}
+  cliOptions={' --recipe-option "sourceKeyPath=$.source.kind" --recipe-option "destinationKeyPath=\'$.subjects.*\' or \'$.\' or \'$.x[1].y.*\' etc." --recipe-option "destinationKey=myKey"'}
+  optionalCliOptions={' --recipe-option "sourceFilePath=src/main/resources/application.json" --recipe-option "destinationFilePath=src/main/resources/application.json"'}
   hasDataTables
 />
 

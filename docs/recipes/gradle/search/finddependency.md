@@ -131,7 +131,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "configuration=api" --recipe-option "version=3.0.0" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava"'}
+  optionalCliOptions={' --recipe-option "configuration=api" --recipe-option "version=3.0.0" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}
   hasDataTables
 />

@@ -122,7 +122,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVASCRIPT"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "packageNamePattern=\'@types/*\'" --recipe-option "scope=dependencies" --recipe-option "onlyDirect=true"'}
+  cliOptions={' --recipe-option "packageNamePattern=\'@types/*\'"'}
+  optionalCliOptions={' --recipe-option "scope=dependencies" --recipe-option "onlyDirect=true"'}
   hasDataTables
 />
 

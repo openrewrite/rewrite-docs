@@ -98,7 +98,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldKeyPath=$.source.kind" --recipe-option "oldFilePath=src/main/resources/application.yaml" --recipe-option "newKey=$.dest.kind" --recipe-option "newFilePath=src/main/resources/application.yaml"'}
+  cliOptions={' --recipe-option "oldKeyPath=$.source.kind" --recipe-option "newKey=$.dest.kind"'}
+  optionalCliOptions={' --recipe-option "oldFilePath=src/main/resources/application.yaml" --recipe-option "newFilePath=src/main/resources/application.yaml" --recipe-option "createNewKeys=true"'}
   hasDataTables
 />
 

@@ -82,6 +82,7 @@ This recipe is used as part of the following composite recipes:
   artifactId="rewrite-java"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "typePattern=org.springframework..*" --recipe-option "matchInherited=true" --recipe-option "ignoreDeprecatedScopes=true"'}
   hasDataTables
 />
 

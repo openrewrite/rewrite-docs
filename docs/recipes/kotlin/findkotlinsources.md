@@ -71,6 +71,7 @@ class A
   artifactId="rewrite-kotlin"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_KOTLIN"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "markCompilationUnits=true"'}
   hasDataTables
 />
 

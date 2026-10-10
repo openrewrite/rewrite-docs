@@ -149,7 +149,8 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "version=1.x"'}
+  cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*"'}
+  optionalCliOptions={' --recipe-option "version=1.x"'}
   hasDataTables
 />
 

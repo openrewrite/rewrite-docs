@@ -95,6 +95,7 @@ develocity {
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "remoteEnabled=true" --recipe-option "remotePushEnabled=System.getenv("CI") != null"'}
   showMaven={false}
   hasDataTables
 />

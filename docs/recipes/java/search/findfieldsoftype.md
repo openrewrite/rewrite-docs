@@ -95,6 +95,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fullyQualifiedTypeName=org.slf4j.api.Logger"'}
+  optionalCliOptions={' --recipe-option "matchInherited=true"'}
   hasDataTables
 />
 

@@ -120,7 +120,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*" --recipe-option "version=1.x" --recipe-option "configuration=compileClasspath"'}
+  cliOptions={' --recipe-option "groupIdPattern=com.fasterxml.jackson.module" --recipe-option "artifactIdPattern=jackson-module-*"'}
+  optionalCliOptions={' --recipe-option "version=1.x" --recipe-option "configuration=compileClasspath"'}
   showMaven={false}
   hasDataTables
 />

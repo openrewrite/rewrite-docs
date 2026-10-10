@@ -37,6 +37,18 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `org.jboss.spec.javax.ejb`
+  * oldArtifactId: `jboss-ejb-api_3.1_spec`
+  * newGroupId: `jakarta.ejb`
+  * newArtifactId: `jakarta.ejb-api`
+  * newVersion: `4.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `javax.ejb`
+  * oldArtifactId: `ejb-api`
+  * newGroupId: `jakarta.ejb`
+  * newArtifactId: `jakarta.ejb-api`
+  * newVersion: `4.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.ejb`
   * oldArtifactId: `javax.ejb-api`
   * newGroupId: `jakarta.ejb`
@@ -52,12 +64,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.ejb`
   * artifactId: `jakarta.ejb-api`
   * newVersion: `4.0.x`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `jakarta.ejb`
-  * artifactId: `jakarta.ejb-api`
-  * version: `4.0.x`
-  * onlyIfUsing: `javax.ejb..*`
-  * acceptTransitive: `true`
+* [Add the Jakarta Ejb API when needed](../../../java/migrate/jakarta/addjakartaejbdependency)
 * [Upgrade Maven plugin version](../../../maven/upgradepluginversion)
   * groupId: `org.apache.maven.plugins`
   * artifactId: `maven-ejb-plugin`
@@ -83,6 +90,18 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.jboss.spec.javax.ejb
+      oldArtifactId: jboss-ejb-api_3.1_spec
+      newGroupId: jakarta.ejb
+      newArtifactId: jakarta.ejb-api
+      newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax.ejb
+      oldArtifactId: ejb-api
+      newGroupId: jakarta.ejb
+      newArtifactId: jakarta.ejb-api
+      newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.ejb
       oldArtifactId: javax.ejb-api
       newGroupId: jakarta.ejb
@@ -98,12 +117,7 @@ recipeList:
       groupId: jakarta.ejb
       artifactId: jakarta.ejb-api
       newVersion: 4.0.x
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: jakarta.ejb
-      artifactId: jakarta.ejb-api
-      version: 4.0.x
-      onlyIfUsing: javax.ejb..*
-      acceptTransitive: true
+  - org.openrewrite.java.migrate.jakarta.AddJakartaEjbDependency
   - org.openrewrite.maven.UpgradePluginVersion:
       groupId: org.apache.maven.plugins
       artifactId: maven-ejb-plugin

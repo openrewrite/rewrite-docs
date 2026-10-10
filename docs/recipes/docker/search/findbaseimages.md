@@ -79,6 +79,7 @@ RUN apt-get update
   artifactId="rewrite-docker"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "imageNamePattern=ubuntu*" --recipe-option "tagPattern=20.*" --recipe-option "digestPattern=sha256:*" --recipe-option "platformPattern=linux/amd64"'}
   hasDataTables
 />
 

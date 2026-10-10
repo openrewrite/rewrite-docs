@@ -101,7 +101,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "interfaceType=java.io.Serializable" --recipe-option "filter=com.yourorg."'}
+  cliOptions={' --recipe-option "interfaceType=java.io.Serializable"'}
+  optionalCliOptions={' --recipe-option "filter=com.yourorg."'}
   hasDataTables
 />
 

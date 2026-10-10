@@ -74,7 +74,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(String, Integer, Integer)" --recipe-option "newParameterNames=[foo, bar, baz]" --recipe-option "oldParameterNames=[baz, bar, foo]"'}
+  cliOptions={' --recipe-option "methodPattern=com.yourorg.A foo(String, Integer, Integer)" --recipe-option "newParameterNames=[foo, bar, baz]"'}
+  optionalCliOptions={' --recipe-option "oldParameterNames=[baz, bar, foo]" --recipe-option "ignoreDefinition=true" --recipe-option "matchOverrides=true"'}
   hasDataTables
 />
 

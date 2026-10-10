@@ -127,7 +127,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=com.google.common.base.Preconditions checkNotNull(..)" --recipe-option "replacement=java.util.Objects.requireNonNull(#{p0})" --recipe-option "imports=["java.util.Objects"]" --recipe-option "staticImports=["java.util.Collections.emptyList"]" --recipe-option "classpathFromResources=["guava-33.4.8-jre"]"'}
+  cliOptions={' --recipe-option "methodPattern=com.google.common.base.Preconditions checkNotNull(..)" --recipe-option "replacement=java.util.Objects.requireNonNull(#{p0})"'}
+  optionalCliOptions={' --recipe-option "imports=["java.util.Objects"]" --recipe-option "staticImports=["java.util.Collections.emptyList"]" --recipe-option "classpathFromResources=["guava-33.4.8-jre"]"'}
   hasDataTables
 />
 

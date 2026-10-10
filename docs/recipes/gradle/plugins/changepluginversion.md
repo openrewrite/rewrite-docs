@@ -109,7 +109,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginIdPattern=com.jfrog.bintray" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "pluginIdPattern=com.jfrog.bintray"'}
+  optionalCliOptions={' --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}
   hasDataTables
 />

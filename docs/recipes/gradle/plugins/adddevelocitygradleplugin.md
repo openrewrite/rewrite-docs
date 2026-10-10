@@ -42,6 +42,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "version=3.x" --recipe-option "server=https://scans.gradle.com/" --recipe-option "allowUntrustedServer=true" --recipe-option "captureTaskInputFiles=true" --recipe-option "uploadInBackground=true" --recipe-option "publishCriteria=Always"'}
   showMaven={false}
   hasDataTables
 />

@@ -43,6 +43,11 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Inline `guava` methods annotated with `@InlineMe`](../../../google/guava/inlineguavamethods)
 * [Prefer the Java 11 standard library instead of Guava](../../../java/migrate/guava/noguavajava11)
 * [Prefer the Java 21 standard library instead of Guava](../../../java/migrate/guava/noguavajava21)
+* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
+  * groupId: `io.springfox`
+  * artifactId: `springfox-swagger2`
+  * newVersion: `2.10.x`
+  * overrideManagedVersion: `true`
 * [Prefer `Files#createTempDirectory()`](../../../java/migrate/guava/noguavacreatetempdir)
 * [Prefer `Runnable::run`](../../../java/migrate/guava/noguavadirectexecutor)
 * [Prefer `Function.compose(Function)`](../../../java/migrate/guava/noguavafunctionscompose)
@@ -111,6 +116,11 @@ recipeList:
   - com.google.guava.InlineGuavaMethods
   - org.openrewrite.java.migrate.guava.NoGuavaJava11
   - org.openrewrite.java.migrate.guava.NoGuavaJava21
+  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
+      groupId: io.springfox
+      artifactId: springfox-swagger2
+      newVersion: 2.10.x
+      overrideManagedVersion: true
   - org.openrewrite.java.migrate.guava.NoGuavaCreateTempDir
   - org.openrewrite.java.migrate.guava.NoGuavaDirectExecutor
   - org.openrewrite.java.migrate.guava.NoGuavaFunctionsCompose

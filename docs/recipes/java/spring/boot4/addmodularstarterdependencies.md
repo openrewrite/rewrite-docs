@@ -72,12 +72,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `org.springframework.boot`
   * newArtifactId: `spring-boot-starter-liquibase`
   * newVersion: `4.0.x`
+  * changePluginDependencies: `false`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.flywaydb`
   * oldArtifactId: `flyway-core`
   * newGroupId: `org.springframework.boot`
   * newArtifactId: `spring-boot-starter-flyway`
   * newVersion: `4.0.x`
+  * changePluginDependencies: `false`
 * [Add `spring-boot-starter-flyway` if using Flyway](../../../java/spring/boot4/addspringbootstarterflyway)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.kafka`
@@ -85,12 +87,14 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `org.springframework.boot`
   * newArtifactId: `spring-boot-starter-kafka`
   * newVersion: `4.0.x`
+  * changePluginDependencies: `false`
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.springframework.security`
   * oldArtifactId: `spring-security-test`
   * newGroupId: `org.springframework.boot`
   * newArtifactId: `spring-boot-starter-security-test`
   * newVersion: `4.0.x`
+  * changePluginDependencies: `false`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `org.springframework.boot`
   * artifactId: `spring-boot-starter-webmvc-test`
@@ -208,12 +212,14 @@ recipeList:
       newGroupId: org.springframework.boot
       newArtifactId: spring-boot-starter-liquibase
       newVersion: 4.0.x
+      changePluginDependencies: false
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.flywaydb
       oldArtifactId: flyway-core
       newGroupId: org.springframework.boot
       newArtifactId: spring-boot-starter-flyway
       newVersion: 4.0.x
+      changePluginDependencies: false
   - org.openrewrite.java.spring.boot4.AddSpringBootStarterFlyway
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.kafka
@@ -221,12 +227,14 @@ recipeList:
       newGroupId: org.springframework.boot
       newArtifactId: spring-boot-starter-kafka
       newVersion: 4.0.x
+      changePluginDependencies: false
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.springframework.security
       oldArtifactId: spring-security-test
       newGroupId: org.springframework.boot
       newArtifactId: spring-boot-starter-security-test
       newVersion: 4.0.x
+      changePluginDependencies: false
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: org.springframework.boot
       artifactId: spring-boot-starter-webmvc-test

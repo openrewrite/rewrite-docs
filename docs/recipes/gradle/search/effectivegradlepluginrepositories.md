@@ -57,6 +57,7 @@ rootProject.name = 'my-project'
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "useMarkers=true"'}
   showMaven={false}
   hasDataTables
 />

@@ -79,7 +79,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "namespacePrefix=http://www.w3.org/2001/XMLSchema-instance" --recipe-option "xPath=/dependencies/dependency"'}
+  cliOptions={' --recipe-option "namespacePrefix=http://www.w3.org/2001/XMLSchema-instance"'}
+  optionalCliOptions={' --recipe-option "xPath=/dependencies/dependency"'}
   hasDataTables
 />
 

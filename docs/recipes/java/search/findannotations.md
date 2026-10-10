@@ -102,6 +102,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "annotationPattern=\'@java.lang.SuppressWarnings("deprecation")\'"'}
+  optionalCliOptions={' --recipe-option "matchMetaAnnotations=true"'}
   hasDataTables
 />
 

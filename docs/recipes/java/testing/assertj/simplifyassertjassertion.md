@@ -111,7 +111,8 @@ recipeList:
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
   requiresConfiguration
-  cliOptions={' --recipe-option "assertToReplace=hasSize" --recipe-option "literalArgument=0" --recipe-option "dedicatedAssertion=isEmpty" --recipe-option "requiredType=java.lang.String"'}
+  cliOptions={' --recipe-option "literalArgument=0" --recipe-option "dedicatedAssertion=isEmpty" --recipe-option "requiredType=java.lang.String"'}
+  optionalCliOptions={' --recipe-option "assertToReplace=hasSize"'}
   hasDataTables
 />
 

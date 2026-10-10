@@ -58,7 +58,8 @@ recipeList:
   artifactId="rewrite-migrate-java"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MIGRATE_JAVA"
   requiresConfiguration
-  cliOptions={' --recipe-option "featureName=val" --recipe-option "value=error"'}
+  cliOptions={' --recipe-option "featureName=val"'}
+  optionalCliOptions={' --recipe-option "value=error"'}
   hasDataTables
 />
 

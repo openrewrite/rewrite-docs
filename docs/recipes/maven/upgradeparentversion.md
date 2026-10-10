@@ -57,6 +57,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Boot 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
+* [Migrate to Spring Boot 4.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_2)
 * [Migrate to WebLogic 14.1.1](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
 * [Update the WebLogic version to 14.1.2](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1412.md)
 * [Update the WebLogic version to 15.1.1](/recipes/oracle/weblogic/rewrite/updatebuildtoweblogic1511.md)
@@ -65,6 +66,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade Maven Plugins Parent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgrademavenpluginsparent)
 * [Upgrade Maven Shared Parent](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgrademavensharedparent)
 * [Upgrade Quarkus Universe BOM](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/devcenter/upgradequarkusuniversebom)
+* [Upgrade Spring Boot 3 Maven parents for Java 25](/recipes/java/migrate/upgradespringbootparentforjava25.md)
 * [Upgrade dependencies to Spring Cloud 2022](/recipes/java/spring/cloud2022/dependencyupgrades.md)
 * [Upgrade dependencies to Spring Cloud 2023](/recipes/java/spring/cloud2023/dependencyupgrades.md)
 * [Upgrade dependencies to Spring Cloud 2024](/recipes/java/spring/cloud2024/dependencyupgrades.md)
@@ -186,7 +188,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-parent" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-parent" --recipe-option "newVersion=29.X"'}
+  optionalCliOptions={' --recipe-option "versionPattern=\'-jre\'" --recipe-option "onlyExternal=true"'}
   showGradle={false}
   hasDataTables
 />

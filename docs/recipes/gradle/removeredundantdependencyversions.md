@@ -109,6 +109,7 @@ dependencies {
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "groupPattern=com.google.*" --recipe-option "artifactPattern=guava*"'}
   showMaven={false}
   hasDataTables
 />

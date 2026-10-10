@@ -72,7 +72,8 @@ recipeList:
   artifactId="rewrite-quarkus"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS"
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy" --recipe-option "oldValue=read-sync" --recipe-option "profile=dev" --recipe-option "deleteFromAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"'}
+  cliOptions={' --recipe-option "propertyKey=quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy"'}
+  optionalCliOptions={' --recipe-option "oldValue=read-sync" --recipe-option "profile=dev" --recipe-option "deleteFromAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"'}
   hasDataTables
 />
 

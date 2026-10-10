@@ -87,6 +87,7 @@ zipStoreBase=GRADLE_USER_HOME
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "version=7.x" --recipe-option "versionPattern=\'-jre\'"'}
   showMaven={false}
   hasDataTables
 />

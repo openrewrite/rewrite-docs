@@ -116,7 +116,8 @@ recipeList:
   artifactId="rewrite-apache"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_APACHE"
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=org.apache.http.impl.nio.reactor.IOReactorConfig.Builder setSelectInterval(long)" --recipe-option "timeUnit=MILLISECONDS"'}
+  cliOptions={' --recipe-option "methodPattern=org.apache.http.impl.nio.reactor.IOReactorConfig.Builder setSelectInterval(long)"'}
+  optionalCliOptions={' --recipe-option "timeUnit=MILLISECONDS"'}
   hasDataTables
 />
 

@@ -55,6 +55,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Quarkus Updates Aggregate 3.8.0](./migratetoquarkus_v3_8_0.md)
 * [Quarkus Updates Aggregate 3.8.3](./migratetoquarkus_v3_8_3.md)
 * [Quarkus Updates Aggregate 3.9.0](./migratetoquarkus_v3_9_0.md)
+* [Quarkus Updates Aggregate 4.0.0](./migratetoquarkus_v4_0_0.md)
 
 ## Recipes
 

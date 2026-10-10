@@ -16,6 +16,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate from Micrometer annotations to JSpecify](./migratefrommicrometerannotations.md)
 * [Migrate from Micronaut Framework annotations to JSpecify](./migratefrommicronautannotations.md)
 * [Migrate from OpenRewrite annotations to JSpecify](./migratefromopenrewriteannotations.md)
+* [Migrate from SpotBugs annotations to JSpecify](./migratefromspotbugsannotations.md)
 * [Migrate from Spring Framework annotations to JSpecify](./migratefromspringframeworkannotations.md)
 * [Migrate from javax annotation API to JSpecify](./migratefromjavaxannotationapi.md)
 * [Migrate to JSpecify](./migratetojspecify.md)

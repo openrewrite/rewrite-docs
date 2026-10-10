@@ -111,7 +111,8 @@ recipeList:
   artifactId="rewrite-gitlab"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
-  cliOptions={' --recipe-option "timeout=1 hour" --recipe-option "jobName=build_job"'}
+  cliOptions={' --recipe-option "timeout=1 hour"'}
+  optionalCliOptions={' --recipe-option "jobName=build_job" --recipe-option "acceptTheirs=true"'}
   hasDataTables
 />
 

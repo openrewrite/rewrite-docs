@@ -10,6 +10,7 @@ _Recipes for migrating to [Jakarta EE](https://jakarta.ee/)._
 
 _Recipes that include further recipes, often including the individual recipes below._
 
+* [Add the Jakarta CDI API when needed](./addjakartacdidependency.md)
 * [Faces XHTML migration for Jakarta EE 10](./jakartafacesxhtmlee10.md)
 * [JNDI name `jsf/ClientSideSecretKey` has been renamed to `faces/ClientSideSecretKey`, and the `jsf/FlashSecretKey` JNDI name has been renamed to `faces/FlashSecretKey`](./facesjndinameschanged.md)
 * [JSF 2.x to Jakarta Faces 3.x](./faces2xmigrationtojakartafaces3x.md)
@@ -18,7 +19,9 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Migrate JSF values inside EcmaScript files](./jakartafacesecmascript.md)
 * [Migrate Jackson from javax to jakarta namespace](./jacksonjavaxtojakarta.md)
 * [Migrate Jakarta EE 9 api dependencies to Jakarta EE 10 versions](./migrationtojakarta10apis.md)
+* [Migrate Jakarta EE runtime type names](./javaxruntimetypenamestojakarta.md)
 * [Migrate Johnzon from javax to jakarta namespace](./johnzonjavaxtojakarta.md)
+* [Migrate Weld implementations to Jakarta CDI](./weldtojakarta.md)
 * [Migrate XJC Bindings to Jakata XML](./javaxxmltojakartaxmlxjcbinding.md)
 * [Migrate deprecated `javaee-api` dependencies to `jakarta.platform`](./javaxeeapitojakarta.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](./javaxactivationmigrationtojakartaactivation.md)
@@ -98,15 +101,31 @@ _Recipes that include further recipes, often including the individual recipes be
 
 ## Recipes
 
+* [Access Jetty connector ports through `NetworkConnector`](./jettyconnectorgetport.md)
+* [Add a Jakarta JAXB runtime for Maven applications](./addjakartaxmlbindruntime.md)
+* [Add the Jakarta Annotation API when needed](./addjakartaannotationdependency.md)
+* [Add the Jakarta Ejb API when needed](./addjakartaejbdependency.md)
+* [Add the Jakarta El API when needed](./addjakartaeldependency.md)
+* [Add the Jakarta Mail API when needed](./addjakartamaildependency.md)
+* [Add the jakarta.inject API when needed](./addjakartainjectdependency.md)
+* [Add the jakarta.ws.rs API when needed](./addjakartarestdependency.md)
+* [Align legacy Jetty core dependencies with Jetty 12](./upgradejettycoredependencies.md)
+* [Build does not declare a provided API dependency](./doesnothaveprovidedapidependency.md)
+* [Build uses Jetty before version 12](./hasjettydependency.md)
+* [Complete InvocationContext decorators](./invocationcontextgetconstructor.md)
 * [Faces XHTML migration for Jakarta EE 9](./jakartafacesxhtmlee9.md)
+* [Migrate Jackson provider configuration overrides](./jacksonprovideroverrides.md)
 * [Migrate RestAssured from javax to jakarta namespace by upgrading to a version compatible with J2EE9](./restassuredjavaxtojakarta.md)
+* [Migrate the JAXB API dependency unless Recorder still needs it](./changejaxbapidependency.md)
 * [Project has no Jakarta annotations](./hasnojakartaannotations.md)
 * [Remove `Bean.isNullable()`](./removebeanisnullable.md)
 * [Remove `jakarta.annotation-api` dependency when managed by Spring Boot](./removejakartaannotationdependencywhenmanagedbyspringboot.md)
 * [Remove trailing slash from `jakarta.ws.rs.ApplicationPath` values](./applicationpathwildcardnolongeraccepted.md)
 * [Rename CDI Extension to Jakarta](./javaxtojakartacdiextensions.md)
 * [Replace `BeforeBeanDiscovery.addAnnotatedType(AnnotatedType)` with `addAnnotatedType(AnnotatedType, String)`](./updateaddannotatedtypes.md)
+* [Replace Jersey logging filter with logging feature](./jerseyloggingfiltertofeature.md)
 * [Retain `javax.xml.bind:jaxb-api` when `jackson-module-jaxb-annotations` is present](./retainjaxbapiforjackson.md)
+* [Retain the JAXB 2 API for Arquillian Recorder 1.x](./retainjaxbapiforarquillianrecorder.md)
 * [Set `maven-ejb-plugin` ejbVersion to 4.0](./upgrademavenejbpluginconfiguration.md)
 * [Update Eclipse Yasson Dependencies to 3.0.x](./updateyassondependencies.md)
 * [Update EclipseLink Dependencies to 4.x](./updateeclipselinkdependencies.md)
@@ -119,6 +138,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Update annotation attributes using `javax` to `jakarta`](./updateannotationattributejavaxtojakarta.md)
 * [Update `fireEvent()` and `createInjectionTarget()` calls](./updatebeanmanagermethods.md)
 * [Updates `getRealPath()` to call `getContext()` followed by `getRealPath()`](./updategetrealpath.md)
+* [Use Java 17 for Jetty 12](./upgradejavaforjetty12.md)
 * [Use `isParametersProvided()`](./removedisparmetersprovidedmethod.md)
 
 

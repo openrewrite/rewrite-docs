@@ -128,7 +128,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyForConfigurations=implementation, runtimeOnly"'}
+  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*"'}
+  optionalCliOptions={' --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "because=CVE-2021-1234" --recipe-option "onlyForConfigurations=implementation, runtimeOnly"'}
   showMaven={false}
   hasDataTables
 />

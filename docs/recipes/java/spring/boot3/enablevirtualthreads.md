@@ -29,7 +29,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Preconditions**
 
 * [Find files compiled at a specific Java version](../../../java/search/hasjavaversion)
-  * version: `21.X`
+  * version: `[21,)`
 * [Singleton](../../../core/singleton)
 
 **Recipes**
@@ -51,7 +51,7 @@ description: |
   Set `spring.threads.virtual.enabled` to `true` in `application.properties` or `application.yml`.
 preconditions:
   - org.openrewrite.java.search.HasJavaVersion:
-      version: 21.X
+      version: [21,)
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.spring.AddSpringProperty:

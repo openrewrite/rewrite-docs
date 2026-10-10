@@ -246,7 +246,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.springframework.boot" --recipe-option "newGroupId=org.springframework.boot" --recipe-option "oldArtifactId=spring-boot-starter-parent" --recipe-option "newArtifactId=spring-boot-starter-parent" --recipe-option "newVersion=29.X" --recipe-option "oldRelativePath=../../pom.xml" --recipe-option "newRelativePath=../pom.xml" --recipe-option "versionPattern=\'-jre\'" --recipe-option "except=com.jcraft:jsch"'}
+  cliOptions={' --recipe-option "oldGroupId=org.springframework.boot" --recipe-option "oldArtifactId=spring-boot-starter-parent" --recipe-option "newVersion=29.X"'}
+  optionalCliOptions={' --recipe-option "newGroupId=org.springframework.boot" --recipe-option "newArtifactId=spring-boot-starter-parent" --recipe-option "oldRelativePath=../../pom.xml" --recipe-option "newRelativePath=../pom.xml" --recipe-option "versionPattern=\'-jre\'" --recipe-option "allowVersionDowngrades=true" --recipe-option "except=com.jcraft:jsch"'}
   showGradle={false}
   hasDataTables
 />

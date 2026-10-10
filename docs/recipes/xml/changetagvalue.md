@@ -115,7 +115,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_XML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "elementName=/settings/servers/server/username" --recipe-option "oldValue=user" --recipe-option "newValue=user"'}
+  cliOptions={' --recipe-option "elementName=/settings/servers/server/username" --recipe-option "newValue=user"'}
+  optionalCliOptions={' --recipe-option "oldValue=user" --recipe-option "regex=true"'}
   hasDataTables
 />
 

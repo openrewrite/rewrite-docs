@@ -74,6 +74,13 @@ This recipe is used as part of the following composite recipes:
 * [Add missing Flyway module for PostgreSQL](/recipes/java/flyway/addflywaymodulepostgresql.md)
 * [Add missing Flyway module for SQL Server](/recipes/java/flyway/addflywaymodulesqlserver.md)
 * [Add missing Jackson dataformat dependencies](/recipes/java/jackson/addmissingjacksondependencies.md)
+* [Add the Jakarta Annotation API when needed](/recipes/java/migrate/jakarta/addjakartaannotationdependency.md)
+* [Add the Jakarta CDI API when needed](/recipes/java/migrate/jakarta/addjakartacdidependency.md)
+* [Add the Jakarta Ejb API when needed](/recipes/java/migrate/jakarta/addjakartaejbdependency.md)
+* [Add the Jakarta El API when needed](/recipes/java/migrate/jakarta/addjakartaeldependency.md)
+* [Add the Jakarta Mail API when needed](/recipes/java/migrate/jakarta/addjakartamaildependency.md)
+* [Add the jakarta.inject API when needed](/recipes/java/migrate/jakarta/addjakartainjectdependency.md)
+* [Add the jakarta.ws.rs API when needed](/recipes/java/migrate/jakarta/addjakartarestdependency.md)
 * [Adopt Jackson 3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/adoptjackson3)
 * [Change v1 Maven/Gradle dependencies to v2](/recipes/amazon/awssdk/v2migration/upgradesdkdependencies.md)
 * [Complete migration to OpenTelemetry](/recipes/java/spring/opentelemetry/migratetoopentelemetry.md)
@@ -104,6 +111,8 @@ This recipe is used as part of the following composite recipes:
 * [Migrate Spring Cloud Service Discovery to Quarkus](/recipes/quarkus/spring/migratespringcloudservicediscovery.md)
 * [Migrate Spring Cloud Sleuth 3.1 to Micrometer Tracing 1.0](/recipes/java/spring/cloud2022/migratecloudsleuthtomicrometertracing.md)
 * [Migrate Spring Retry to Spring Resilience](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretry)
+* [Migrate Spring Security OAuth clients to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthclient)
+* [Migrate Spring Security OAuth resource servers to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauthresourceserver)
 * [Migrate Spring Validation to Quarkus](/recipes/quarkus/spring/migratespringvalidation.md)
 * [Migrate TestNG assertions to AssertJ](/recipes/java/testing/testng/testngtoassertj.md)
 * [Migrate `@EnableXyz` annotations to Quarkus extensions](/recipes/quarkus/spring/enableannotationstoquarkusdependencies.md)
@@ -111,19 +120,12 @@ This recipe is used as part of the following composite recipes:
 * [Migrate `cucumber-java8` to `cucumber-java`](/recipes/cucumber/jvm/cucumberjava8tojava.md)
 * [Migrate dependencies from Jackson Codehaus (legacy) to FasterXML](/recipes/java/jackson/codehaus/codehausdependencytofasterxml.md)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](/recipes/java/migrate/jakarta/javaxactivationmigrationtojakartaactivation.md)
-* [Migrate deprecated `javax.annotation` to `jakarta.annotation`](/recipes/java/migrate/jakarta/javaxannotationmigrationtojakartaannotation.md)
 * [Migrate deprecated `javax.batch` packages to `jakarta.batch`](/recipes/java/migrate/jakarta/javaxbatchmigrationtojakartabatch.md)
-* [Migrate deprecated `javax.decorator` packages to `jakarta.decorator`](/recipes/java/migrate/jakarta/javaxdecoratortojakartadecorator.md)
-* [Migrate deprecated `javax.ejb` packages to `jakarta.ejb`](/recipes/java/migrate/jakarta/javaxejbtojakartaejb.md)
-* [Migrate deprecated `javax.el` packages to `jakarta.el`](/recipes/java/migrate/jakarta/javaxeltojakartael.md)
-* [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](/recipes/java/migrate/jakarta/javaxenterprisetojakartaenterprise.md)
-* [Migrate deprecated `javax.inject` packages to `jakarta.inject`](/recipes/java/migrate/jakarta/javaxinjectmigrationtojakartainject.md)
 * [Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`](/recipes/java/migrate/jakarta/javaxinterceptortojakartainterceptor.md)
 * [Migrate deprecated `javax.jms` packages to `jakarta.jms`](/recipes/java/migrate/jakarta/javaxjmstojakartajms.md)
 * [Migrate deprecated `javax.json` packages to `jakarta.json`](/recipes/java/migrate/jakarta/javaxjsontojakartajson.md)
 * [Migrate deprecated `javax.jsp` packages to `jakarta.jsp`](/recipes/java/migrate/jakarta/javaxjsptojakartajsp.md)
 * [Migrate deprecated `javax.jws` packages to `jakarta.jws`](/recipes/java/migrate/jakarta/javaxjwstojakartajws.md)
-* [Migrate deprecated `javax.mail` packages to `jakarta.mail`](/recipes/java/migrate/jakarta/javaxmailtojakartamail.md)
 * [Migrate deprecated `javax.persistence` packages to `jakarta.persistence`](/recipes/java/migrate/jakarta/javaxpersistencetojakartapersistence.md)
 * [Migrate deprecated `javax.resource` packages to `jakarta.resource`](/recipes/java/migrate/jakarta/javaxresourcetojakartaresource.md)
 * [Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`](/recipes/java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication.md)
@@ -134,7 +136,6 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.transaction` packages to `jakarta.transaction`](/recipes/java/migrate/jakarta/javaxtransactionmigrationtojakartatransaction.md)
 * [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
 * [Migrate deprecated `javax.websocket` packages to `jakarta.websocket`](/recipes/java/migrate/jakarta/javaxwebsockettojakartawebsocket.md)
-* [Migrate deprecated `javax.ws` packages to `jakarta.ws`](/recipes/java/migrate/jakarta/javaxwstojakartaws.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
 * [Migrate deprecated `javax.xml.ws` packages to `jakarta.xml.ws`](/recipes/java/migrate/jakarta/javaxxmlwsmigrationtojakartaxmlws.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
@@ -149,6 +150,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
 * [Migrate from Micronaut Framework annotations to JSpecify](/recipes/java/jspecify/migratefrommicronautannotations.md)
 * [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
+* [Migrate from SpotBugs annotations to JSpecify](/recipes/java/jspecify/migratefromspotbugsannotations.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
 * [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
 * [Migrate from Zipkin to OpenTelemetry OTLP](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
@@ -165,6 +167,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Framework 5.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_0-moderne-edition)
 * [Migrate to Struts 2.x from Struts 1.x](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/struts/migrate2/migratestruts2)
 * [Migrate to Wicket 10.x](/recipes/apache/wicket/migratetowicket10.md)
+* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Modularize legacy raw Spring Data Redis dependency](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modularizelegacyrawspringdataredis)
 * [Prefer the Java standard library instead of Joda-Time](/recipes/java/joda/time/nojodatime.md)
 * [Rename the package name from `com.nimbusds.jose.shaded.json` to `net.minidev.json`](/recipes/java/spring/security5/renamenimbusdsjsonobjectpackagename.md)
@@ -248,7 +251,8 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "extension=jar" --recipe-option "configuration=implementation" --recipe-option "scope=runtime" --recipe-option "type=jar" --recipe-option "acceptTransitive=true"'}
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava"'}
+  optionalCliOptions={' --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "classifier=test" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "extension=jar" --recipe-option "configuration=implementation" --recipe-option "scope=runtime" --recipe-option "releasesOnly=true" --recipe-option "type=jar" --recipe-option "optional=true" --recipe-option "acceptTransitive=true"'}
   hasDataTables
 />
 

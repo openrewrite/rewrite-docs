@@ -120,7 +120,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-starter-parent" --recipe-option "version=29.X" --recipe-option "relativePath=../pom.xml" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-starter-parent" --recipe-option "version=29.X" --recipe-option "relativePath=../pom.xml"'}
+  optionalCliOptions={' --recipe-option "versionPattern=\'-jre\'"'}
   showGradle={false}
   hasDataTables
 />

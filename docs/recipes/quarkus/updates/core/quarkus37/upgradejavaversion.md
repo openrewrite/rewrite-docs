@@ -68,6 +68,7 @@ recipeList:
 This recipe is used as part of the following composite recipes:
 
 * [Change Maven and Gradle Java version property values to 17](/recipes/quarkus/updates/core/quarkus37/javaversion17.md)
+* [Change Maven and Gradle Java version property values to 21](/recipes/quarkus/updates/core/quarkus40/javaversion21.md)
 
 
 ## Usage

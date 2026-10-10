@@ -58,7 +58,8 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "methodPattern=com.amazonaws.ClientConfiguration setRequestTimeout(int)" --recipe-option "timeUnit=MILLISECONDS"'}
+  cliOptions={' --recipe-option "methodPattern=com.amazonaws.ClientConfiguration setRequestTimeout(int)"'}
+  optionalCliOptions={' --recipe-option "timeUnit=MILLISECONDS"'}
   hasDataTables
 />
 

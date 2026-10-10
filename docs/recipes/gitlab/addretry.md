@@ -122,7 +122,8 @@ recipeList:
   artifactId="rewrite-gitlab"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
-  cliOptions={' --recipe-option "max=2" --recipe-option "when=runner_system_failure,stuck_or_timeout_failure" --recipe-option "jobName=build_job"'}
+  cliOptions={' --recipe-option "max=2"'}
+  optionalCliOptions={' --recipe-option "when=runner_system_failure,stuck_or_timeout_failure" --recipe-option "jobName=build_job" --recipe-option "acceptTheirs=true"'}
   hasDataTables
 />
 

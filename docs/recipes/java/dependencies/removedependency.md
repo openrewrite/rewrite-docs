@@ -64,6 +64,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from JMockit to Mockito](/recipes/java/testing/jmockit/jmockittomockito.md)
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
+* [Migrate from Spring Security OAuth to Spring Security](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/oauth/migratespringsecurityoauth)
 * [Migrate from Zipkin to OpenTelemetry OTLP](/recipes/java/spring/opentelemetry/migratefromzipkintoopentelemetry.md)
 * [Migrate from httpcore-nio to ApacheHttpClient 5.x core dependency](/recipes/apache/httpclient5/upgradeapachehttpcoreniodependencies.md)
 * [Migrate from org.apache.httpcomponents to ApacheHttpClient 5.x dependencies](/recipes/apache/httpclient5/upgradeapachehttpclientdependencies.md)
@@ -221,7 +222,8 @@ recipeList:
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*" --recipe-option "unlessUsing=org.aspectj.lang.*" --recipe-option "configuration=api" --recipe-option "scope=compile"'}
+  cliOptions={' --recipe-option "groupId=com.fasterxml.jackson*" --recipe-option "artifactId=jackson-module*"'}
+  optionalCliOptions={' --recipe-option "unlessUsing=org.aspectj.lang.*" --recipe-option "configuration=api" --recipe-option "scope=compile"'}
   hasDataTables
 />
 

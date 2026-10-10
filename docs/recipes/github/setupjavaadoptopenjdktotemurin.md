@@ -25,6 +25,13 @@ _Adopt OpenJDK got moved to Eclipse Temurin and won't be updated anymore. It is 
 
 This recipe is available under the [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license). Moderne customers can download precompiled artifacts from The Code Genome Project. For non-commercial use you can build the artifact from source locally.
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
+
 ## Example
 
 

@@ -99,6 +99,7 @@ class MyTest {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-testing-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_TESTING_FRAMEWORKS"
+  optionalCliOptions={' --recipe-option "thresholdSeconds=1000"'}
   hasDataTables
 />
 

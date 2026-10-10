@@ -52,10 +52,6 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.xml.ws`
   * artifactId: `jakarta.xml.ws-api`
   * newVersion: `3.0.x`
-* [Change Maven dependency scope](../../../maven/changedependencyscope)
-  * groupId: `jakarta.xml.ws`
-  * artifactId: `jakarta.xml.ws-api`
-  * newScope: `provided`
 * [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
@@ -64,6 +60,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
   * newScope: `provided`
+* [Add an API dependency for explicit imports](../../../java/migrate/javax/addapidependencyforimports)
+  * packageName: `jakarta.xml.ws`
+  * groupId: `jakarta.xml.ws`
+  * artifactId: `jakarta.xml.ws-api`
+  * version: `3.0.x`
 * [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
   * groupId: `com.sun.xml.ws`
   * artifactId: `jaxws-rt`
@@ -104,10 +105,6 @@ recipeList:
       groupId: jakarta.xml.ws
       artifactId: jakarta.xml.ws-api
       newVersion: 3.0.x
-  - org.openrewrite.maven.ChangeDependencyScope:
-      groupId: jakarta.xml.ws
-      artifactId: jakarta.xml.ws-api
-      newScope: provided
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
@@ -116,6 +113,11 @@ recipeList:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt
       newScope: provided
+  - org.openrewrite.java.migrate.javax.AddApiDependencyForImports:
+      packageName: jakarta.xml.ws
+      groupId: jakarta.xml.ws
+      artifactId: jakarta.xml.ws-api
+      version: 3.0.x
   - org.openrewrite.java.dependencies.AddDependency:
       groupId: com.sun.xml.ws
       artifactId: jaxws-rt

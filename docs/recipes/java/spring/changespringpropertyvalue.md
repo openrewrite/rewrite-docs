@@ -36,7 +36,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 This recipe is used as part of the following composite recipes:
 
-* [Co-exclude `UserDetailsServiceAutoConfiguration` where `SecurityAutoConfiguration` is excluded](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/adduserdetailsserviceautoconfigurationexclusion)
 * [Migrate Enabled to Access Spring Boot Properties](/recipes/java/spring/boot3/springbootproperties_3_4_enabledtoaccess.md)
 * [Migrate Spring Boot properties to 4.0](/recipes/java/spring/boot4/springbootproperties_4_0.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
@@ -109,7 +108,8 @@ recipeList:
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.files.enabled" --recipe-option "newValue=management.metrics.enable.process.files" --recipe-option "oldValue=false"'}
+  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.files.enabled" --recipe-option "newValue=management.metrics.enable.process.files"'}
+  optionalCliOptions={' --recipe-option "oldValue=false" --recipe-option "regex=true" --recipe-option "relaxedBinding=true"'}
   hasDataTables
 />
 

@@ -78,6 +78,11 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `com.github.spotbugs`
   * artifactId: `spotbugs-maven-plugin`
   * newVersion: `4.9.x`
+* [Change Gradle or Maven dependency](../../java/dependencies/changedependency)
+  * oldGroupId: `org.mapstruct`
+  * oldArtifactId: `mapstruct-jdk8`
+  * newArtifactId: `mapstruct`
+  * newVersion: `1.6.x`
 * [Upgrade Gradle or Maven dependency versions](../../java/dependencies/upgradedependencyversion)
   * groupId: `org.mapstruct`
   * artifactId: `mapstruct*`
@@ -139,6 +144,11 @@ recipeList:
       groupId: com.github.spotbugs
       artifactId: spotbugs-maven-plugin
       newVersion: 4.9.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: org.mapstruct
+      oldArtifactId: mapstruct-jdk8
+      newArtifactId: mapstruct
+      newVersion: 1.6.x
   - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
       groupId: org.mapstruct
       artifactId: mapstruct*

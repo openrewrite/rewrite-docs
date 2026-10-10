@@ -61,7 +61,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "property=management.metrics.enable.process.files" --recipe-option "value=newPropValue" --recipe-option "comment=This is a comment" --recipe-option "delimiter=:" --recipe-option "orderedInsertion=false" --recipe-option "insertProperty=server.port"'}
+  cliOptions={' --recipe-option "property=management.metrics.enable.process.files" --recipe-option "value=newPropValue"'}
+  optionalCliOptions={' --recipe-option "comment=This is a comment" --recipe-option "delimiter=:" --recipe-option "orderedInsertion=false" --recipe-option "insertProperty=server.port"'}
   hasDataTables
 />
 

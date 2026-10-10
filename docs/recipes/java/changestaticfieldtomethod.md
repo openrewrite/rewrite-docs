@@ -68,7 +68,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldClassName=java.util.Collections" --recipe-option "oldFieldName=EMPTY_LIST" --recipe-option "newClassName=java.util.List" --recipe-option "newTarget=OK_RESPONSE" --recipe-option "newMethodName=of"'}
+  cliOptions={' --recipe-option "oldClassName=java.util.Collections" --recipe-option "oldFieldName=EMPTY_LIST" --recipe-option "newMethodName=of"'}
+  optionalCliOptions={' --recipe-option "newClassName=java.util.List" --recipe-option "newTarget=OK_RESPONSE"'}
   hasDataTables
 />
 

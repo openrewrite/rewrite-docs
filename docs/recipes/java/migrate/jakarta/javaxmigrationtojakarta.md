@@ -43,6 +43,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 **Recipes**
 
 * [Migrate to JavaEE8](../../../java/migrate/javaee8-recipe)
+* [Migrate Jakarta EE runtime type names](../../../java/migrate/jakarta/javaxruntimetypenamestojakarta)
 * [Migrate deprecated `javax.activation` packages to `jakarta.activation`](../../../java/migrate/jakarta/javaxactivationmigrationtojakartaactivation)
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](../../../java/migrate/jakarta/javaxannotationmigrationtojakartaannotation)
 * [Migrate deprecated `javax.security.auth.message` packages to `jakarta.security.auth.message`](../../../java/migrate/jakarta/javaxauthenticationmigrationtojakartaauthentication)
@@ -53,6 +54,7 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Migrate deprecated `javax.el` packages to `jakarta.el`](../../../java/migrate/jakarta/javaxeltojakartael)
 * [Migrate deprecated `org.apache.commons.fileload` packages to `org.apache.commons.fileload.core`](../../../java/migrate/jakarta/fileuploadtofileupload2)
 * [Migrate deprecated `javax.enterprise` packages to `jakarta.enterprise`](../../../java/migrate/jakarta/javaxenterprisetojakartaenterprise)
+* [Migrate Weld implementations to Jakarta CDI](../../../java/migrate/jakarta/weldtojakarta)
 * [JSF 2.x to Jakarta Faces 3.x](../../../java/migrate/jakarta/faces2xmigrationtojakartafaces3x)
 * [Migrate deprecated `javax.inject` packages to `jakarta.inject`](../../../java/migrate/jakarta/javaxinjectmigrationtojakartainject)
 * [Migrate deprecated `javax.interceptor` packages to `jakarta.interceptor`](../../../java/migrate/jakarta/javaxinterceptortojakartainterceptor)
@@ -105,6 +107,7 @@ preconditions:
   - org.openrewrite.Singleton
 recipeList:
   - org.openrewrite.java.migrate.javaee8
+  - org.openrewrite.java.migrate.jakarta.JavaxRuntimeTypeNamesToJakarta
   - org.openrewrite.java.migrate.jakarta.JavaxActivationMigrationToJakartaActivation
   - org.openrewrite.java.migrate.jakarta.JavaxAnnotationMigrationToJakartaAnnotation
   - org.openrewrite.java.migrate.jakarta.JavaxAuthenticationMigrationToJakartaAuthentication
@@ -115,6 +118,7 @@ recipeList:
   - org.openrewrite.java.migrate.jakarta.JavaxElToJakartaEl
   - org.openrewrite.java.migrate.jakarta.FileuploadToFileUpload2
   - org.openrewrite.java.migrate.jakarta.JavaxEnterpriseToJakartaEnterprise
+  - org.openrewrite.java.migrate.jakarta.WeldToJakarta
   - org.openrewrite.java.migrate.jakarta.Faces2xMigrationToJakartaFaces3x
   - org.openrewrite.java.migrate.jakarta.JavaxInjectMigrationToJakartaInject
   - org.openrewrite.java.migrate.jakarta.JavaxInterceptorToJakartaInterceptor

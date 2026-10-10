@@ -39,6 +39,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 3.5 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot3/upgradespringboot_3_5-moderne-edition)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Boot 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
+* [Migrate to Spring Boot 4.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_2)
 
 ## Example
 
@@ -105,6 +106,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.springframework.boot" --recipe-option "artifactId=spring-boot-dependencies" --recipe-option "version=3.4.0"'}
+  optionalCliOptions={' --recipe-option "removeRedundantOverrides=true"'}
   showMaven={false}
   hasDataTables
 />

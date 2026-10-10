@@ -60,7 +60,8 @@ recipeList:
   artifactId="rewrite-third-party"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_THIRD_PARTY"
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.hibernate.orm" --recipe-option "artifactId=hibernate-jpamodelgen" --recipe-option "processorClass=com.example.MyProcessor"'}
+  cliOptions={' --recipe-option "groupId=org.hibernate.orm" --recipe-option "artifactId=hibernate-jpamodelgen"'}
+  optionalCliOptions={' --recipe-option "processorClass=com.example.MyProcessor"'}
   hasDataTables
 />
 

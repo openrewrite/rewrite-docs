@@ -95,7 +95,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "propertyValue=false"'}
+  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled"'}
+  optionalCliOptions={' --recipe-option "relaxedBinding=true" --recipe-option "propertyValue=false"'}
   hasDataTables
 />
 

@@ -128,6 +128,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "key=junit.version" --recipe-option "newValue=4.13"'}
+  optionalCliOptions={' --recipe-option "addIfMissing=true" --recipe-option "trustParent=true"'}
   showGradle={false}
   hasDataTables
 />

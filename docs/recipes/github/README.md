@@ -39,6 +39,7 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Is GitHub Actions Workflow](./isgithubactionsworkflow.md)
 * [Is GitHub Actions workflow or action definition](./isgithubactionsfile.md)
 * [Prefer block style for job dependencies](./preferblockstylejobdependencies.md)
+* [Remove a runner from a job](./removerunner.md)
 * [Remove all cron triggers](./removeallcrontriggers.md)
 * [Remove unused workflow dispatch inputs](./removeunusedworkflowdispatchinputs.md)
 * [Remove workflow input argument](./removeworkflowinputargument.md)

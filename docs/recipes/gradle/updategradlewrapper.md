@@ -39,6 +39,26 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Micronaut 3.x to 4.x](/recipes/java/micronaut/micronaut3to4migration.md)
 * [Migrate from Micronaut 4.x to 5.x](/recipes/java/micronaut/micronaut4to5migration.md)
 * [Migrate from Spring Boot 1.x to 2.0](/recipes/java/spring/boot2/upgradespringboot_2_0.md)
+* [Migrate to Android Gradle Plugin 7.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_7_2)
+* [Migrate to Android Gradle Plugin 7.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_7_3)
+* [Migrate to Android Gradle Plugin 7.4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_7_4)
+* [Migrate to Android Gradle Plugin 8.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_0)
+* [Migrate to Android Gradle Plugin 8.10](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_10)
+* [Migrate to Android Gradle Plugin 8.11](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_11)
+* [Migrate to Android Gradle Plugin 8.12](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_12)
+* [Migrate to Android Gradle Plugin 8.13](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_13)
+* [Migrate to Android Gradle Plugin 8.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_1)
+* [Migrate to Android Gradle Plugin 8.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_2)
+* [Migrate to Android Gradle Plugin 8.3](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_3)
+* [Migrate to Android Gradle Plugin 8.4](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_4)
+* [Migrate to Android Gradle Plugin 8.5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_5)
+* [Migrate to Android Gradle Plugin 8.6](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_6)
+* [Migrate to Android Gradle Plugin 8.7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_7)
+* [Migrate to Android Gradle Plugin 8.8](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_8)
+* [Migrate to Android Gradle Plugin 8.9](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_8_9)
+* [Migrate to Android Gradle Plugin 9.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_9_0)
+* [Migrate to Android Gradle Plugin 9.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_9_1)
+* [Migrate to Android Gradle Plugin 9.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/migratetoandroidgradleplugin_9_2)
 * [Migrate to Gradle 5 from Gradle 4](/recipes/gradle/migratetogradle5.md)
 * [Migrate to Gradle 6 from Gradle 5](/recipes/gradle/migratetogradle6.md)
 * [Migrate to Gradle 7 from Gradle 6](/recipes/gradle/migratetogradle7.md)
@@ -53,6 +73,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
 * [Upgrade plugins to Java 21 compatible versions](/recipes/java/migrate/upgradepluginsforjava21.md)
 * [Upgrade plugins to Java 25 compatible versions](/recipes/java/migrate/upgradepluginsforjava25.md)
+* [Upgrade to Android SDK 34](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/android/upgradetoandroidsdk34)
 * [Upgrade to Spring Boot 2.5](/recipes/java/spring/boot2/upgradespringboot_2_5.md)
 
 ## Example
@@ -119,6 +140,7 @@ zipStorePath=wrapper/dists
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "version=7.x" --recipe-option "addIfMissing=true" --recipe-option "wrapperUri=https://services.gradle.org/distributions/gradle-8.5-bin.zip" --recipe-option "distributionChecksum=29e49b10984e585d8118b7d0bc452f944e386458df27371b49b4ac1dec4b7fda"'}
   showMaven={false}
   hasDataTables
 />

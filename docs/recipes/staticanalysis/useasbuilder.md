@@ -129,7 +129,8 @@ recipeList:
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
   requiresConfiguration
-  cliOptions={' --recipe-option "builderType=org.example.Buildable.Builder" --recipe-option "builderCreator=org.example.Buildable builder()"'}
+  cliOptions={' --recipe-option "builderType=org.example.Buildable.Builder"'}
+  optionalCliOptions={' --recipe-option "immutable=true" --recipe-option "builderCreator=org.example.Buildable builder()"'}
   hasDataTables
 />
 

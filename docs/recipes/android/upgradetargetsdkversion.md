@@ -99,7 +99,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_ANDROID"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "to=34" --recipe-option "minSdkFloor=33"'}
+  cliOptions={' --recipe-option "to=34"'}
+  optionalCliOptions={' --recipe-option "minSdkFloor=33"'}
   hasDataTables
 />
 

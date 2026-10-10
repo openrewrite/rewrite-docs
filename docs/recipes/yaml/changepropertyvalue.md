@@ -97,7 +97,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "newValue=newValue" --recipe-option "oldValue=oldValue" --recipe-option "filePattern=.github/workflows/*.yml"'}
+  cliOptions={' --recipe-option "propertyKey=management.metrics.binders.*.enabled" --recipe-option "newValue=newValue"'}
+  optionalCliOptions={' --recipe-option "oldValue=oldValue" --recipe-option "regex=true" --recipe-option "relaxedBinding=true" --recipe-option "filePattern=.github/workflows/*.yml"'}
   hasDataTables
 />
 

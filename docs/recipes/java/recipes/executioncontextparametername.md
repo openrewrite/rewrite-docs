@@ -85,6 +85,7 @@ class SampleRecipe extends Recipe {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-rewrite"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_REWRITE"
+  optionalCliOptions={' --recipe-option "parameterName=ctx"'}
   hasDataTables
 />
 

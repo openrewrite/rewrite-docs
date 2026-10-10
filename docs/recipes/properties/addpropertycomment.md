@@ -99,7 +99,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_PROPERTIES"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=management.metrics.binders" --recipe-option "comment=comment" --recipe-option "commentOutProperty=true"'}
+  cliOptions={' --recipe-option "propertyKey=management.metrics.binders" --recipe-option "comment=comment"'}
+  optionalCliOptions={' --recipe-option "commentOutProperty=true"'}
   hasDataTables
 />
 

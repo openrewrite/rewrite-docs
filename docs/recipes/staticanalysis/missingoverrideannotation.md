@@ -104,6 +104,7 @@ class Test {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-static-analysis"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_STATIC_ANALYSIS"
+  optionalCliOptions={' --recipe-option "ignoreAnonymousClassMethods=true"'}
   hasDataTables
 />
 

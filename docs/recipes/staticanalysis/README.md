@@ -69,6 +69,8 @@ _Recipes that include further recipes, often including the individual recipes be
 * [Find JVM exit calls](./findsystemandruntimeexitcalls.md)
 * [Find `Object.wait()` calls made while holding multiple monitors](./findwaitwithmultiplelocksheld.md)
 * [Find `ThreadGroup` usages](./findthreadgroupusages.md)
+* [Find ignored results of `@CheckReturnValue` methods](./findignoredcheckreturnvalue.md)
+* [Find `main` methods with a `throws` clause](./findmainwiththrowsclause.md)
 * [Find new exceptions thrown without the caught exception](./findnewexceptionwithoutcause.md)
 * [Find public methods missing Javadoc](./findmissingjavadoconpublicmethods.md)
 * [Fix `String#format` and `String#formatted` expressions](./fixstringformatexpressions.md)

@@ -50,11 +50,6 @@ This recipe is available under the [Moderne Source Available License](https://do
 * [Prefer `Map.copyOf(..)` in Java 10 or higher](../../../java/migrate/guava/noguavaimmutablemapcopyof)
 * [Prefer `Set.copyOf(..)` in Java 10 or higher](../../../java/migrate/guava/noguavaimmutablesetcopyof)
 * [Prefer `java.util.Objects#requireNonNullElse`](../../../java/migrate/guava/preferjavautilobjectsrequirenonnullelse)
-* [Upgrade Gradle or Maven dependency versions](../../../java/dependencies/upgradedependencyversion)
-  * groupId: `io.springfox`
-  * artifactId: `springfox-swagger2`
-  * newVersion: `2.10.x`
-  * overrideManagedVersion: `true`
 
 </TabItem>
 
@@ -82,11 +77,6 @@ recipeList:
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableMapCopyOf
   - org.openrewrite.java.migrate.guava.NoGuavaImmutableSetCopyOf
   - org.openrewrite.java.migrate.guava.PreferJavaUtilObjectsRequireNonNullElse
-  - org.openrewrite.java.dependencies.UpgradeDependencyVersion:
-      groupId: io.springfox
-      artifactId: springfox-swagger2
-      newVersion: 2.10.x
-      overrideManagedVersion: true
 
 ```
 </TabItem>

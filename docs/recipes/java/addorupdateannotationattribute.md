@@ -123,7 +123,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "annotationType=org.junit.Test" --recipe-option "attributeName=timeout" --recipe-option "attributeValue=500" --recipe-option "oldAttributeValue=400"'}
+  cliOptions={' --recipe-option "annotationType=org.junit.Test"'}
+  optionalCliOptions={' --recipe-option "attributeName=timeout" --recipe-option "attributeValue=500" --recipe-option "oldAttributeValue=400" --recipe-option "addOnly=true" --recipe-option "appendArray=true"'}
   hasDataTables
 />
 

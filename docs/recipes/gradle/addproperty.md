@@ -64,7 +64,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "key=org.gradle.caching" --recipe-option "value=true" --recipe-option "overwrite=true" --recipe-option "filePattern=\'**/*.properties\'"'}
+  cliOptions={' --recipe-option "key=org.gradle.caching" --recipe-option "value=true" --recipe-option "overwrite=true"'}
+  optionalCliOptions={' --recipe-option "filePattern=\'**/*.properties\'"'}
   showMaven={false}
   hasDataTables
 />

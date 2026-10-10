@@ -38,6 +38,7 @@ This recipe is used as part of the following composite recipes:
 * [Remove dead `throws` declarations for unchecked Jackson exceptions](/recipes/java/jackson/removedeadjacksonthrows.md)
 * [Remove throws exception in `SecurityConfigurer` methods `init` and `configure`](/recipes/java/spring/security7/securityconfigurerremovethrowsexception.md)
 * [Replace `throw new IOException(..)` inside Jackson serializer / deserializer overrides](/recipes/java/jackson/replaceioexceptionthrowinjacksonoverrides.md)
+* [Spring Security 7 modularization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/modularizespringsecurity7)
 
 ## Example
 
@@ -116,6 +117,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=java.util.List add(..)" --recipe-option "exceptionTypePattern=java.io.IOException"'}
+  optionalCliOptions={' --recipe-option "matchOverrides=true"'}
   hasDataTables
 />
 

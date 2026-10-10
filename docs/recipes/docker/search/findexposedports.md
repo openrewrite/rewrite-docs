@@ -74,6 +74,7 @@ FROM nginx:latest
   artifactId="rewrite-docker"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "portPattern=80*"'}
   hasDataTables
 />
 

@@ -44,6 +44,7 @@ This recipe is used as part of the following composite recipes:
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-prethink"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_PRETHINK"
+  optionalCliOptions={' --recipe-option "targetConfigFiles=CLAUDE.md" --recipe-option "template=>\n        ## Available Context\n        \n        {{CONTEXT_TABLE}}"'}
   hasDataTables
 />
 

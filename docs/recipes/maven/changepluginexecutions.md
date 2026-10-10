@@ -139,7 +139,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "executions=<execution><phase>validate</phase><goals><goal>dryRun</goal></goals></execution>"'}
+  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin"'}
+  optionalCliOptions={' --recipe-option "executions=<execution><phase>validate</phase><goals><goal>dryRun</goal></goals></execution>"'}
   showGradle={false}
   hasDataTables
 />

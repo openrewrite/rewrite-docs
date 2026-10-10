@@ -33,6 +33,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate to Java 17](/recipes/quarkus/updates/core/quarkus37/upgradetojava17.md)
+* [Migrate to Java 21](/recipes/quarkus/updates/core/quarkus40/upgradetojava21.md)
 
 
 ## Usage

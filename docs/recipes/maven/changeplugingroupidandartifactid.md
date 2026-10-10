@@ -174,7 +174,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newVersion=29.X"'}
+  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-maven-plugin"'}
+  optionalCliOptions={' --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-maven-plugin" --recipe-option "newVersion=29.X"'}
   showGradle={false}
   hasDataTables
 />

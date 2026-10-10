@@ -101,7 +101,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_HCL"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "find=blacklist" --recipe-option "replace=denylist"'}
+  cliOptions={' --recipe-option "find=blacklist"'}
+  optionalCliOptions={' --recipe-option "replace=denylist" --recipe-option "regex=true" --recipe-option "caseSensitive=true"'}
   hasDataTables
 />
 

@@ -132,6 +132,7 @@ parent
   artifactId="rewrite-maven"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "namePattern=\'*.version\'" --recipe-option "onlyIfValuesMatch=true"'}
   showGradle={false}
   hasDataTables
 />

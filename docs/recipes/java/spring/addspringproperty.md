@@ -134,7 +134,8 @@ recipeList:
   artifactId="rewrite-spring"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_SPRING"
   requiresConfiguration
-  cliOptions={' --recipe-option "property=management.metrics.enable.process.files" --recipe-option "value=true" --recipe-option "comment=This is a comment" --recipe-option "pathExpressions=["**/application.yml"]"'}
+  cliOptions={' --recipe-option "property=management.metrics.enable.process.files" --recipe-option "value=true"'}
+  optionalCliOptions={' --recipe-option "comment=This is a comment" --recipe-option "pathExpressions=["**/application.yml"]"'}
   hasDataTables
 />
 

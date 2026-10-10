@@ -36,6 +36,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-logging-frameworks"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_LOGGING_FRAMEWORKS"
+  optionalCliOptions={' --recipe-option "filePattern=\'**/logback-spring.xml\'"'}
   hasDataTables
 />
 

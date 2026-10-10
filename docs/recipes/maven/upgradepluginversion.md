@@ -69,6 +69,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Boot 4.0 (Community Edition)](/recipes/java/spring/boot4/upgradespringboot_4_0-community-edition.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Boot 4.1](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_1)
+* [Migrate to Spring Boot 4.2](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_2)
 * [Migrate to Spring Framework 6.0 (Community Edition)](/recipes/java/spring/framework/upgradespringframework_6_0-community-edition.md)
 * [Migrate to WebLogic 14.1.1](/recipes/oracle/weblogic/rewrite/upgradeto1411.md)
 * [Quarkus 2.x migration from Quarkus 1.x](/recipes/quarkus/quarkus2/quarkus1to2migration.md)
@@ -189,7 +190,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "newVersion=29.X" --recipe-option "versionPattern=\'-jre\'"'}
+  cliOptions={' --recipe-option "groupId=org.openrewrite.maven" --recipe-option "artifactId=rewrite-maven-plugin" --recipe-option "newVersion=29.X"'}
+  optionalCliOptions={' --recipe-option "versionPattern=\'-jre\'" --recipe-option "trustParent=true" --recipe-option "addVersionIfMissing=true"'}
   showGradle={false}
   hasDataTables
 />

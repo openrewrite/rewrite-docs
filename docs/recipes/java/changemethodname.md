@@ -86,6 +86,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from LaunchDarkly to OpenFeature](/recipes/featureflags/launchdarkly/migratelaunchdarklytoopenfeature.md)
 * [Migrate from Micronaut 2.x to 3.x](/recipes/java/micronaut/micronaut2to3migration.md)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](/recipes/java/springdoc/migratespringdoccommon.md)
+* [Migrate imperative spring-retry usage to Spring Framework 7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretryimperative)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
 * [Migrate removed `LocalStackContainer` members to Testcontainers 2.x](/recipes/java/testing/testcontainers/testcontainers2localstack.md)
 * [Migrate to ApacheHttpClient 5.x deprecated methods from 4.x](/recipes/apache/httpclient5/upgradeapachehttpclient_5_deprecatedmethods.md)
@@ -101,10 +102,13 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Data JPA 2.5](/recipes/java/spring/data/upgradespringdata_2_5.md)
 * [Migrate to Spring Data JPA 2.7](/recipes/java/spring/data/upgradespringdata_2_7.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring Framework 7.0](/recipes/java/spring/framework/upgradespringframework_7_0.md)
+* [Migrate to Spring Security 6.4](/recipes/java/spring/security6/upgradespringsecurity_6_4.md)
 * [Migrate to Spring Security 7.0](/recipes/java/spring/security7/upgradespringsecurity_7_0.md)
 * [Migrates Spring Kafka deprecated error handlers](/recipes/java/spring/kafka/upgradespringkafka_2_8_errorhandlers.md)
 * [Migrates `camel 4.16` application to `camel 4.17`](/recipes/apache/camel/upgrade/camel417/camelmigrationrecipe.md)
 * [Migrates from Netty 3.2.x to Netty 4.1.x](/recipes/netty/upgradenetty_3_2_to_4_1.md)
+* [Migrates to Apache Commons Collections 4.x](/recipes/apache/commons/collections/upgradeapachecommonscollections_3_4.md)
 * [Migrates to Apache Commons Lang 3.x](/recipes/apache/commons/lang/upgradeapachecommonslang_2_3.md)
 * [Mockito 3.x migration from 1.x](/recipes/java/testing/mockito/mockito1to3migration.md)
 * [OkHttp `MockWebServer` `MockResponse` to 5.x `MockWebServer3` `MockResponse`](/recipes/java/testing/junit5/updatemockwebservermockresponse.md)
@@ -263,6 +267,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "methodPattern=org.mockito.Matchers anyVararg()" --recipe-option "newMethodName=any"'}
+  optionalCliOptions={' --recipe-option "matchOverrides=true" --recipe-option "ignoreDefinition=true"'}
   hasDataTables
 />
 

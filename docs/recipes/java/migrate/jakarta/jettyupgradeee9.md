@@ -36,6 +36,8 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 **Recipes**
 
+* [Use Java 17 for Jetty 12](../../../java/migrate/jakarta/upgradejavaforjetty12)
+* [Access Jetty connector ports through `NetworkConnector`](../../../java/migrate/jakarta/jettyconnectorgetport)
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `org.eclipse.jetty.websocket`
   * oldArtifactId: `websocket-api`
@@ -108,6 +110,23 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newGroupId: `org.eclipse.jetty.ee9`
   * newArtifactId: `jetty-ee9-annotations`
   * newVersion: `12.0.x`
+* [Align legacy Jetty core dependencies with Jetty 12](../../../java/migrate/jakarta/upgradejettycoredependencies)
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.servlet`
+  * newPackageName: `org.eclipse.jetty.ee9.servlet`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.servlets`
+  * newPackageName: `org.eclipse.jetty.ee9.servlets`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.webapp`
+  * newPackageName: `org.eclipse.jetty.ee9.webapp`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.eclipse.jetty.annotations`
+  * newPackageName: `org.eclipse.jetty.ee9.annotations`
+  * recursive: `true`
 
 </TabItem>
 
@@ -123,6 +142,8 @@ description: |
 preconditions:
   - org.openrewrite.Singleton
 recipeList:
+  - org.openrewrite.java.migrate.jakarta.UpgradeJavaForJetty12
+  - org.openrewrite.java.migrate.jakarta.JettyConnectorGetPort
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: org.eclipse.jetty.websocket
       oldArtifactId: websocket-api
@@ -195,6 +216,23 @@ recipeList:
       newGroupId: org.eclipse.jetty.ee9
       newArtifactId: jetty-ee9-annotations
       newVersion: 12.0.x
+  - org.openrewrite.java.migrate.jakarta.UpgradeJettyCoreDependencies
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.servlet
+      newPackageName: org.eclipse.jetty.ee9.servlet
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.servlets
+      newPackageName: org.eclipse.jetty.ee9.servlets
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.webapp
+      newPackageName: org.eclipse.jetty.ee9.webapp
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.eclipse.jetty.annotations
+      newPackageName: org.eclipse.jetty.ee9.annotations
+      recursive: true
 
 ```
 </TabItem>

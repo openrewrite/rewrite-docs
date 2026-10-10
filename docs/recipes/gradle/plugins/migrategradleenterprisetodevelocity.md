@@ -132,6 +132,7 @@ plugins {
   artifactId="rewrite-gradle"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "version=3.x"'}
   showMaven={false}
   hasDataTables
 />

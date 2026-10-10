@@ -128,6 +128,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate deprecated `javax.annotation` to `jakarta.annotation`](/recipes/oracle/weblogic/rewrite/jakarta/javaxannotationmigrationtojakarta9annotation.md)
 * [Migrate deprecated `javax.validation` packages to `jakarta.validation`](/recipes/java/migrate/jakarta/javaxvalidationmigrationtojakartavalidation.md)
 * [Migrate deprecated `javax.xml.bind` packages to `jakarta.xml.bind`](/recipes/java/migrate/jakarta/javaxxmlbindmigrationtojakartaxmlbind.md)
+* [Migrate dialects removed in Hibernate 7.0 to their generic equivalents](/recipes/hibernate/migrateremoveddialectshibernate70.md)
 * [Migrate from Acegi Security 1.0.x to Spring Security 5.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security/migrateacegitospringsecurity_5_0)
 * [Migrate from EasyMock to Mockito](/recipes/java/testing/easymock/easymocktomockito.md)
 * [Migrate from Elasticsearch 8 to 9 (API renames, transport-agnostic)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/elastic/elastic9/migratetoelasticsearch9core)
@@ -143,6 +144,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from Micronaut Framework annotations to JSpecify](/recipes/java/jspecify/migratefrommicronautannotations.md)
 * [Migrate from OpenRewrite annotations to JSpecify](/recipes/java/jspecify/migratefromopenrewriteannotations.md)
 * [Migrate from OptaPlanner to Timefold Solver](/recipes/timefold/solver/migration/fromoptaplannertotimefoldsolver.md)
+* [Migrate from SpotBugs annotations to JSpecify](/recipes/java/jspecify/migratefromspotbugsannotations.md)
 * [Migrate from Spring Cloud Sleuth to OpenTelemetry](/recipes/java/spring/opentelemetry/migratesleuthtoopentelemetry.md)
 * [Migrate from Spring Framework annotations to JSpecify](/recipes/java/jspecify/migratefromspringframeworkannotations.md)
 * [Migrate from Swagger to OpenAPI](/recipes/openapi/swagger/swaggertoopenapi.md)
@@ -156,6 +158,7 @@ This recipe is used as part of the following composite recipes:
 * [Migrate from javax annotation API to JSpecify](/recipes/java/jspecify/migratefromjavaxannotationapi.md)
 * [Migrate from springdoc-openapi-common to springdoc-openapi-starter-common](/recipes/java/springdoc/migratespringdoccommon.md)
 * [Migrate from standalone Spring gRPC 1.0 to Spring Boot 4.1 (Spring gRPC 1.1)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringgrpc_1_1)
+* [Migrate imperative spring-retry usage to Spring Framework 7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/migratespringretryimperative)
 * [Migrate moved types between Camel 3.x and Camel 4.x](/recipes/apache/camel/upgrade/camel40/changetypes.md)
 * [Migrate packages to modular starters](/recipes/java/spring/boot4/migrateautoconfigurepackages.md)
 * [Migrate to Apache HttpCore Nio Classes to Apache HttpCore 5.x](/recipes/apache/httpclient5/upgradeapachehttpcore_5_nioclassmapping.md)
@@ -174,15 +177,18 @@ This recipe is used as part of the following composite recipes:
 * [Migrate to Spring Batch 6.0 from 5.2](/recipes/java/spring/batch/springbatch5to6migration.md)
 * [Migrate to Spring Boot 2.2](/recipes/java/spring/boot2/upgradespringboot_2_2.md)
 * [Migrate to Spring Boot 2.7](/recipes/java/spring/boot2/upgradespringboot_2_7.md)
+* [Migrate to Spring Boot 3.0 (Community Edition)](/recipes/java/spring/boot3/upgradespringboot_3_0-community-edition.md)
 * [Migrate to Spring Boot 3.2](/recipes/java/spring/boot3/upgradespringboot_3_2.md)
 * [Migrate to Spring Boot 4.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringboot_4_0-moderne-edition)
 * [Migrate to Spring Data 2.3](/recipes/java/spring/data/upgradespringdata_2_3.md)
 * [Migrate to Spring Framework 5.0 (Moderne Edition)](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/framework/upgradespringframework_5_0-moderne-edition)
 * [Migrate to Spring Framework 5.1](/recipes/java/spring/framework/upgradespringframework_5_1.md)
 * [Migrate to Spring Framework 6.2](/recipes/java/spring/framework/upgradespringframework_6_2.md)
+* [Migrate to Spring HATEOAS 3.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringhateoas_3_0)
 * [Migrate to Spring Kafka 3.0](/recipes/java/spring/kafka/upgradespringkafka_3_0.md)
 * [Migrate to Spring Kafka 4.0](/recipes/java/spring/kafka/upgradespringkafka_4_0.md)
 * [Migrate to Spring ORM to 5](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/orm/springorm5)
+* [Migrate to Spring for GraphQL 2.0](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/upgradespringgraphql_2_0)
 * [Migrate to Wicket 10.x](/recipes/apache/wicket/migratetowicket10.md)
 * [Migrate to `kotlinx-datetime` 0.7](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/kotlin/migrate/upgradekotlinxdatetime_0_7)
 * [Migrate to testcontainers-java 2.x](/recipes/java/testing/testcontainers/testcontainers2migration.md)
@@ -229,6 +235,7 @@ This recipe is used as part of the following composite recipes:
 * [Replace deprecated `PropertyNamingStrategy` inner classes and constants](/recipes/java/jackson/replacepropertynamingstrategyconstants.md)
 * [Replace elements of SpringFox's security with Swagger's security models](/recipes/java/spring/doc/securitycontexttosecurityscheme.md)
 * [Spring Boot 4.0 Module Starter Relocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulestarterrelocations)
+* [Spring Boot 4.1 type relocations](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/boot4/modulestarterrelocations_4_1)
 * [Spring Security 7 modularization](https://docs.moderne.io/user-documentation/recipes/recipe-catalog/java/spring/security7/modularizespringsecurity7)
 * [Substitute deprecated Faces Managed Beans](/recipes/oracle/weblogic/rewrite/jakarta/facesmanagedbeansremoved3.md)
 * [Substitute removed Faces Managed Beans](/recipes/java/migrate/jakarta/facesmanagedbeansremoved.md)
@@ -354,6 +361,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "oldFullyQualifiedTypeName=org.junit.Assume" --recipe-option "newFullyQualifiedTypeName=org.junit.jupiter.api.Assumptions"'}
+  optionalCliOptions={' --recipe-option "ignoreDefinition=true"'}
   hasDataTables
 />
 

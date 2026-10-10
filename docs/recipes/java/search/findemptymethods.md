@@ -89,6 +89,7 @@ class Test implements Collection<String> {
   artifactId="rewrite-java"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_JAVA"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "matchOverrides=true"'}
   hasDataTables
 />
 

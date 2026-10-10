@@ -115,6 +115,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "version=11"'}
+  optionalCliOptions={' --recipe-option "allowDowngrade=true" --recipe-option "addIfMissing=true"'}
   showMaven={false}
   hasDataTables
 />

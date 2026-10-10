@@ -107,7 +107,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "oldImageName=ubuntu" --recipe-option "oldTag=20.*" --recipe-option "oldDigest=sha256:*" --recipe-option "oldPlatform=linux/amd64" --recipe-option "newImageName=ubuntu" --recipe-option "newTag=22.04" --recipe-option "newDigest=sha256:abc123..." --recipe-option "newPlatform=linux/arm64"'}
+  cliOptions={' --recipe-option "oldImageName=ubuntu"'}
+  optionalCliOptions={' --recipe-option "oldTag=20.*" --recipe-option "oldDigest=sha256:*" --recipe-option "oldPlatform=linux/amd64" --recipe-option "newImageName=ubuntu" --recipe-option "newTag=22.04" --recipe-option "newDigest=sha256:abc123..." --recipe-option "newPlatform=linux/arm64"'}
   hasDataTables
 />
 

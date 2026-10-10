@@ -493,7 +493,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * newPropertyKey: `management.server.address`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.context-path`
-  * newPropertyKey: `management.server.servlet.context-path`
+  * newPropertyKey: `management.endpoints.web.base-path`
 * [Change the key of a Spring application property](../../../java/spring/changespringpropertykey)
   * oldPropertyKey: `management.port`
   * newPropertyKey: `management.server.port`
@@ -1354,7 +1354,7 @@ recipeList:
       newPropertyKey: management.server.address
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.context-path
-      newPropertyKey: management.server.servlet.context-path
+      newPropertyKey: management.endpoints.web.base-path
   - org.openrewrite.java.spring.ChangeSpringPropertyKey:
       oldPropertyKey: management.port
       newPropertyKey: management.server.port

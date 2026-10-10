@@ -119,7 +119,7 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * Study the frequency of `J` types and their `JavaType` type attribution.
 * [org.openrewrite.java.search.HasMinimumJavaVersion](/recipes/java/search/hasminimumjavaversion.md)
   * **Has minimum Java version**
-  * Finds source files when the oldest Java version in use meets the supplied minimum version. Java version is attributed per source set (for example `src/main/java` and `src/test/java`), so the oldest Java version in use is the lowest version across every source set of every subproject in a repository. For example, the main source set of a project may use Java 8 while its test source set uses Java 17; in that case the oldest Java version in use is Java 8.
+  * Finds source files when the oldest Java version in use meets the supplied minimum version. Java version is attributed per source set (for example `src/main/java` and `src/test/java`), so the oldest Java version in use is the lowest version across every source set of every subproject in a repository. For example, the main source set of a project may use Java 8 while its test source set uses Java 17; in that case the oldest Java version in use is Java 8. When the minimum is met, the source files at that oldest Java version are found, along with Gradle build scripts and every non-Java source file (such as `pom.xml`), which have no Java version of their own.
 * [org.openrewrite.java.search.ModuleContainsFile](/recipes/java/search/modulecontainsfile.md)
   * **Module contains file**
   * Intended to be used primarily as a precondition for other recipes, this recipe checks if a module contains a specific file or files matching a pattern. Only files belonging to modules containing the specified file are marked with a `SearchResult` marker. This is more specific than `RepositoryContainsFile` which marks all files in the repository if any file matches.
@@ -282,6 +282,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.jackson.LombokJacksonizedConfig](/recipes/java/jackson/lombokjacksonizedconfig.md)
   * **Update `lombok.config` for Jackson 3 compatibility**
   * When `@Jacksonized` is used, Lombok generates Jackson annotations. By default it generates Jackson 2.x annotations. This recipe adds `lombok.jacksonized.jacksonVersion += 3` to `lombok.config` so Lombok generates Jackson 3 compatible annotations.
+* [org.openrewrite.java.jackson.ModuleStillOnJackson2](/recipes/java/jackson/modulestillonjackson2.md)
+  * **Find modules still on Jackson 2**
+  * Marks the source files of modules that either do not resolve Jackson 3 yet, or still use Jackson 2 types in their own sources or those of their child modules. Modules that already resolve Jackson 3 and no longer use Jackson 2 types are left unmarked, as any Jackson 2 dependencies they still declare are there on purpose, for instance for generated sources that are not part of the LST.
+* [org.openrewrite.java.jackson.RemoveBuiltInModuleBeans](/recipes/java/jackson/removebuiltinmodulebeans.md)
+  * **Remove Spring beans for modules built-in to Jackson 3**
+  * Jackson 3 includes Java time, JDK 8 and parameter name support in databind and removes their module classes. Remove Spring `@Bean` methods that only return a new default instance of one of these modules. Customized, overridden or directly referenced factories are left for manual migration.
 
 ### rewrite-java-dependencies
 
@@ -348,6 +354,12 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.micronaut.AddAnnotationProcessorPath](/recipes/java/micronaut/addannotationprocessorpath.md)
   * **Add Maven annotation processor path**
   * Add the groupId, artifactId, version, and exclusions of a Maven annotation processor path.
+* [org.openrewrite.java.micronaut.AddMicronautValidationDependencyVersion](/recipes/java/micronaut/addmicronautvalidationdependencyversion.md)
+  * **Add missing Micronaut validation dependency versions**
+  * Supply a compatible version for unmanaged Gradle validation dependencies, reusing the validation version already in use when possible.
+* [org.openrewrite.java.micronaut.AddMicronautValidationProcessor](/recipes/java/micronaut/addmicronautvalidationprocessor.md)
+  * **Add the Micronaut validation processor to Gradle source sets**
+  * Add the validation annotation processor to each source set that uses validation constraints.
 * [org.openrewrite.java.micronaut.AddSnakeYamlDependencyIfNeeded](/recipes/java/micronaut/addsnakeyamldependencyifneeded.md)
   * **Add `snakeyaml` dependency if needed**
   * This recipe will add the `snakeyaml` dependency to a Micronaut 4 application that uses yaml configuration.
@@ -366,9 +378,24 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.migrate.AddStaticVariableOnProducerSessionBean](/recipes/java/migrate/addstaticvariableonproducersessionbean.md)
   * **Adds `static` modifier to `@Produces` fields that are in session beans**
   * Ensures that the fields annotated with `@Produces` which is inside the session bean (`@Stateless`, `@Stateful`, or `@Singleton`) are declared `static`.
+* [org.openrewrite.java.migrate.jakarta.AddJakartaXmlBindRuntime](/recipes/java/migrate/jakarta/addjakartaxmlbindruntime.md)
+  * **Add a Jakarta JAXB runtime for Maven applications**
+  * Add a Jakarta JAXB 3 runtime when a Maven module calls JAXBContext.newInstance and has no explicit JAXB provider or provided Jakarta platform. Java 8's built-in javax provider cannot serve Jakarta calls. Annotation-only modules are left alone and test-only calls receive a test dependency.
+* [org.openrewrite.java.migrate.jakarta.ChangeJaxbApiDependency](/recipes/java/migrate/jakarta/changejaxbapidependency.md)
+  * **Migrate the JAXB API dependency unless Recorder still needs it**
+  * Migrate JAXB API coordinates while preserving the legacy API needed alongside Jakarta JAXB by external Arquillian Recorder 1.x binaries. Recorder modules migrated in the same reactor are excluded.
+* [org.openrewrite.java.migrate.jakarta.HasJettyDependency](/recipes/java/migrate/jakarta/hasjettydependency.md)
+  * **Build uses Jetty before version 12**
+  * Mark the source set when a Maven or Gradle module depends on servlet or WebSocket artifacts relocated by the Jetty 12 migration. This permits updating the Java baseline in parent build files as well as the module using Jetty.
 * [org.openrewrite.java.migrate.jakarta.HasNoJakartaAnnotations](/recipes/java/migrate/jakarta/hasnojakartaannotations.md)
   * **Project has no Jakarta annotations**
   * Mark all source as found per `JavaProject` where no Jakarta annotations are found. This is useful mostly as a precondition for recipes that require Jakarta annotations to be present.
+* [org.openrewrite.java.migrate.jakarta.RetainJaxbApiForArquillianRecorder](/recipes/java/migrate/jakarta/retainjaxbapiforarquillianrecorder.md)
+  * **Retain the JAXB 2 API for Arquillian Recorder 1.x**
+  * Retain the legacy JAXB API in Maven modules using Arquillian Recorder 1.x binaries, which still reference javax.xml.bind classes after the application's Jakarta migration.
+* [org.openrewrite.java.migrate.javax.AddApiDependencyForImports](/recipes/java/migrate/javax/addapidependencyforimports.md)
+  * **Add an API dependency for explicit imports**
+  * Add an API dependency to the nearest Maven module importing the package, including imports whose types could not be resolved by the parser because the JDK used to provide them. A module that already has the API in the needed scope, or from a dependency it declares as provided, is left alone.
 * [org.openrewrite.java.migrate.javax.AddJaxbRuntime](/recipes/java/migrate/javax/addjaxbruntime.md)
   * **Use latest JAXB API and runtime for Jakarta EE 8**
   * Update build files to use the latest JAXB runtime from Jakarta EE 8 to maintain compatibility with Java version 11 or greater. The recipe will add a JAXB run-time, in Gradle `compileOnly`+`testImplementation` and Maven `provided` scope, to any project that has a transitive dependency on the JAXB API. **The resulting dependencies still use the `javax` namespace, despite the move to the Jakarta artifact**.
@@ -458,7 +485,7 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
   * Class having `@Bean` annotation over any methods but missing `@Configuration` annotation over the declaring class would have `@Configuration` annotation added. Classes referenced as scoped configuration via `.class` (e.g. `@FeignClient(configuration = X.class)`) are skipped to preserve their intended per-client scope.
 * [org.openrewrite.java.spring.boot2.MergeBootstrapYamlWithApplicationYaml](/recipes/java/spring/boot2/mergebootstrapyamlwithapplicationyaml.md)
   * **Merge Spring `bootstrap.yml` with `application.yml`**
-  * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency.
+  * In Spring Boot 2.4, the bootstrap context that loads `bootstrap.yml` is [disabled by default](https://docs.spring.io/spring-cloud-config/reference/client.html). Its properties should be merged with `application.yml` unless `spring-cloud-starter-bootstrap` is present as a dependency. Profile-specific `bootstrap-\{profile\}.yml` files are also merged into their matching `application-\{profile\}.yml`. A bootstrap file without a matching application file is renamed instead.
 * [org.openrewrite.java.spring.boot2.MoveAutoConfigurationToImportsFile](/recipes/java/spring/boot2/moveautoconfigurationtoimportsfile.md)
   * **Use `AutoConfiguration#imports`**
   * Use `AutoConfiguration#imports` instead of the deprecated entry `EnableAutoConfiguration` in `spring.factories` when defining autoconfiguration classes.
@@ -474,6 +501,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 * [org.openrewrite.java.spring.boot3.MigrateHooksToReactorContextProperty](/recipes/java/spring/boot3/migratehookstoreactorcontextproperty.md)
   * **Use `spring.reactor.context-propagation` property**
   * Replace `Hooks.enableAutomaticContextPropagation()` with `spring.reactor.context-propagation=auto`.
+* [org.openrewrite.java.spring.boot4.UsesSpringBoot](/recipes/java/spring/boot4/usesspringboot.md)
+  * **Find Spring Boot repositories**
+  * Find every source file of a repository in which some build uses Spring Boot: a Spring Boot dependency, direct or transitive, the Spring Boot Gradle plugin, a Spring Boot parent POM, or an imported `spring-boot-dependencies` BOM. A repository without build files matches.
 * [org.openrewrite.java.spring.cloud2022.AddLoggingPatternLevelForSleuth](/recipes/java/spring/cloud2022/addloggingpatternlevelforsleuth.md)
   * **Add logging.pattern.level for traceId and spanId**
   * Add `logging.pattern.level` for traceId and spanId which was previously set by default, if not already set.
@@ -489,6 +519,9 @@ _This doc contains all [scanning recipes](/concepts-and-explanations/recipes#sca
 
 ### rewrite-static-analysis
 
+* [org.openrewrite.staticanalysis.FindIgnoredCheckReturnValue](/recipes/staticanalysis/findignoredcheckreturnvalue.md)
+  * **Find ignored results of `@CheckReturnValue` methods**
+  * Marks invocations whose result is discarded even though the method is annotated with `@CheckReturnValue`, either directly or through its enclosing class or package. Any annotation named `CheckReturnValue` is recognized, and `@CanIgnoreReturnValue` opts a method or class back out. Ignoring such a result is usually a bug, such as calling a method on an immutable object without using the returned copy. Calls expected to throw, Mockito stubbing and verification, calls on the current instance in custom AssertJ assertion constructors, and code under `@SuppressWarnings(&quot;CheckReturnValue&quot;)` are not marked.
 * [org.openrewrite.staticanalysis.LowercasePackage](/recipes/staticanalysis/lowercasepackage.md)
   * **Rename packages to lowercase**
   * By convention all Java package names should contain only lowercase letters, numbers, and dashes. This recipe converts any uppercase letters in package names to be lowercase. Consistent package naming prevents confusion and potential issues on case-insensitive file systems.

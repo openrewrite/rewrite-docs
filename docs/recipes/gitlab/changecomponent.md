@@ -131,7 +131,8 @@ recipeList:
   artifactId="rewrite-gitlab"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldComponent=$CI_SERVER_FQDN/components/opentofu/full-pipeline" --recipe-option "oldComponentVersion=0.10.0" --recipe-option "newComponent=$CI_SERVER_FQDN/components/opentofu/full-pipeline" --recipe-option "newComponentVersion=0.10.0"'}
+  cliOptions={' --recipe-option "oldComponent=$CI_SERVER_FQDN/components/opentofu/full-pipeline" --recipe-option "oldComponentVersion=0.10.0" --recipe-option "newComponentVersion=0.10.0"'}
+  optionalCliOptions={' --recipe-option "newComponent=$CI_SERVER_FQDN/components/opentofu/full-pipeline"'}
   hasDataTables
 />
 

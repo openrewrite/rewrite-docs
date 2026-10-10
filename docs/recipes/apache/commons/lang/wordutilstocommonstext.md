@@ -45,15 +45,26 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `org.apache.commons`
   * artifactId: `commons-text`
   * version: `1.x`
+  * onlyIfUsing: `org.apache.commons.lang.text.*`
+  * acceptTransitive: `true`
+* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
+  * groupId: `org.apache.commons`
+  * artifactId: `commons-text`
+  * version: `1.x`
   * onlyIfUsing: `org.apache.commons.lang3.text.*`
   * acceptTransitive: `true`
 * [Change type](../../../java/changetype)
   * oldFullyQualifiedTypeName: `org.apache.commons.lang.WordUtils`
   * newFullyQualifiedTypeName: `org.apache.commons.text.WordUtils`
 * [Rename package name](../../../java/changepackage)
+  * oldPackageName: `org.apache.commons.lang.text`
+  * newPackageName: `org.apache.commons.text`
+  * recursive: `true`
+* [Rename package name](../../../java/changepackage)
   * oldPackageName: `org.apache.commons.lang3.text`
   * newPackageName: `org.apache.commons.text`
   * recursive: `true`
+* [Parameterize raw `StrLookup` subclasses](../../../apache/commons/lang/parameterizerawstrlookupsubclasses)
 
 </TabItem>
 
@@ -80,15 +91,26 @@ recipeList:
       groupId: org.apache.commons
       artifactId: commons-text
       version: 1.x
+      onlyIfUsing: org.apache.commons.lang.text.*
+      acceptTransitive: true
+  - org.openrewrite.java.dependencies.AddDependency:
+      groupId: org.apache.commons
+      artifactId: commons-text
+      version: 1.x
       onlyIfUsing: org.apache.commons.lang3.text.*
       acceptTransitive: true
   - org.openrewrite.java.ChangeType:
       oldFullyQualifiedTypeName: org.apache.commons.lang.WordUtils
       newFullyQualifiedTypeName: org.apache.commons.text.WordUtils
   - org.openrewrite.java.ChangePackage:
+      oldPackageName: org.apache.commons.lang.text
+      newPackageName: org.apache.commons.text
+      recursive: true
+  - org.openrewrite.java.ChangePackage:
       oldPackageName: org.apache.commons.lang3.text
       newPackageName: org.apache.commons.text
       recursive: true
+  - org.openrewrite.apache.commons.lang.ParameterizeRawStrLookupSubclasses
 
 ```
 </TabItem>

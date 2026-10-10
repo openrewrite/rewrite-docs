@@ -83,6 +83,7 @@ FROM ubuntu:22.04
   artifactId="rewrite-docker"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_DOCKER"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "convertEntrypoint=true" --recipe-option "convertCmd=true"'}
   hasDataTables
 />
 

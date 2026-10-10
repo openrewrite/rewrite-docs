@@ -34,6 +34,7 @@ This recipe is used as part of the following composite recipes:
 
 * [Change Maven Java version property values to 17](/recipes/apache/camel/upgrade/javaversion17.md)
 * [Change Maven and Gradle Java version property values to 17](/recipes/quarkus/updates/core/quarkus37/javaversion17.md)
+* [Change Maven and Gradle Java version property values to 21](/recipes/quarkus/updates/core/quarkus40/javaversion21.md)
 * [Upgrade Java version](/recipes/apache/camel/upgrade/upgradejavaversion.md)
 * [Upgrade Java version](/recipes/java/migrate/upgradejavaversion.md)
 * [Upgrade Java version](/recipes/quarkus/updates/core/quarkus37/upgradejavaversion.md)

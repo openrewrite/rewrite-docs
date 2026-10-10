@@ -38,11 +38,13 @@ This recipe is available under the [Moderne Source Available License](https://do
 <TabItem value="recipe-list" label="Recipe List" >
 * [Use Maven compiler plugin release configuration](../../maven/usemavencompilerpluginreleaseconfiguration)
 * [Update Maven Java project properties](../../maven/updatemavenprojectpropertyjavaversion)
+* [Upgrade Java version in alternate Maven builds](../../java/migrate/upgradeunmodeledmavenjavaversion)
 * [Upgrade jenkins java version](../../jenkins/upgradejavaversion)
 * [Update Gradle project Java compatibility](../../gradle/updatejavacompatibility)
   * allowDowngrade: `false`
 * [Update SDKMan Java version](../../java/migrate/updatesdkman)
   * newVersion: `null`
+* [Upgrade CircleCI OpenJDK job images](../../java/migrate/upgradejavacicontainerimage)
 * [Upgrade Docker image Java version](../../java/migrate/upgradedockerimageversion)
 * [Upgrade Kotlin `jvmTarget` to match the Java version](../../java/migrate/upgradekotlinjvmtargetversion)
 
@@ -61,11 +63,13 @@ description: |
 recipeList:
   - org.openrewrite.maven.UseMavenCompilerPluginReleaseConfiguration
   - org.openrewrite.maven.UpdateMavenProjectPropertyJavaVersion
+  - org.openrewrite.java.migrate.UpgradeUnmodeledMavenJavaVersion
   - org.openrewrite.jenkins.UpgradeJavaVersion
   - org.openrewrite.gradle.UpdateJavaCompatibility:
       allowDowngrade: false
   - org.openrewrite.java.migrate.UpdateSdkMan:
       newVersion: null
+  - org.openrewrite.java.migrate.UpgradeJavaCiContainerImage
   - org.openrewrite.java.migrate.UpgradeDockerImageVersion
   - org.openrewrite.java.migrate.UpgradeKotlinJvmTargetVersion
 
@@ -89,6 +93,7 @@ This recipe is used as part of the following composite recipes:
 * [Upgrade build to Java 24 for Kotlin 1.x](/recipes/java/migrate/upgradebuildtojava24forkotlin1x.md)
 * [Upgrade build to Java 25 (non-Kotlin)](/recipes/java/migrate/upgradebuildtojava25.md)
 * [Upgrade build to Java 25 for Kotlin 2.3+](/recipes/java/migrate/upgradebuildtojava25forkotlin.md)
+* [Use Java 17 for Jetty 12](/recipes/java/migrate/jakarta/upgradejavaforjetty12.md)
 
 ## Example
 

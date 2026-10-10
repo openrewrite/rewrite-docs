@@ -11,7 +11,7 @@ import RunRecipe from '@site/src/components/RunRecipe';
 
 **org.openrewrite.maven.MigrateToMaven4**
 
-_Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, lifecycle phases, removes duplicate plugin and dependency declarations, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4._
+_Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, runs the Maven 3.10 migration (which removes duplicate plugin and dependency declarations and updates an existing Maven wrapper to Maven 3.10), updates lifecycle phases, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4._
 
 ## Recipe source
 
@@ -31,10 +31,9 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 <Tabs groupId="recipeType">
 <TabItem value="recipe-list" label="Recipe List" >
 * [Drop prefixless expressions in POM](../maven/cleanup/prefixlessexpressions)
+* [Migrate to Maven 3.10](../maven/migratetomaven3_10)
 * [Replace removed root directory properties](../maven/replaceremovedrootdirectoryproperties)
 * [Replace deprecated lifecycle phases](../maven/replacedeprecatedlifecyclephases)
-* [Remove duplicate plugin declarations](../maven/removeduplicateplugindeclarations)
-* [Remove duplicate Maven dependencies](../maven/removeduplicatedependencies)
 * [Use HTTPS for repositories](../maven/security/usehttpsforrepositories)
 * [Upgrade plugins that are incompatible with Maven 4](../maven/upgradepluginsformaven4)
 * [Upgrade to Maven model version 4.1.0](../maven/upgradetomodelversion410)
@@ -50,13 +49,12 @@ type: specs.openrewrite.org/v1beta/recipe
 name: org.openrewrite.maven.MigrateToMaven4
 displayName: Migrate to Maven 4
 description: |
-  Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, lifecycle phases, removes duplicate plugin and dependency declarations, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4.
+  Migrates Maven POMs from Maven 3 to Maven 4, addressing breaking changes and deprecations. This recipe updates property expressions, runs the Maven 3.10 migration (which removes duplicate plugin and dependency declarations and updates an existing Maven wrapper to Maven 3.10), updates lifecycle phases, upgrades plugins known to fail under Maven 4, switches repository URLs to HTTPS, and replaces removed properties to ensure compatibility with Maven 4.
 recipeList:
   - org.openrewrite.maven.cleanup.PrefixlessExpressions
+  - org.openrewrite.maven.MigrateToMaven3_10
   - org.openrewrite.maven.ReplaceRemovedRootDirectoryProperties
   - org.openrewrite.maven.ReplaceDeprecatedLifecyclePhases
-  - org.openrewrite.maven.RemoveDuplicatePluginDeclarations
-  - org.openrewrite.maven.RemoveDuplicateDependencies
   - org.openrewrite.maven.security.UseHttpsForRepositories
   - org.openrewrite.maven.UpgradePluginsForMaven4
   - org.openrewrite.maven.UpgradeToModelVersion410

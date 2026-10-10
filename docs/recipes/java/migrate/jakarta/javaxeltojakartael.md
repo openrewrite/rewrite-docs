@@ -38,6 +38,12 @@ This recipe is available under the [Moderne Source Available License](https://do
 
 * [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
   * oldGroupId: `javax.el`
+  * oldArtifactId: `el-api`
+  * newGroupId: `jakarta.el`
+  * newArtifactId: `jakarta.el-api`
+  * newVersion: `4.0.x`
+* [Change Gradle or Maven dependency](../../../java/dependencies/changedependency)
+  * oldGroupId: `javax.el`
   * oldArtifactId: `javax.el-api`
   * newGroupId: `jakarta.el`
   * newArtifactId: `jakarta.el-api`
@@ -46,12 +52,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * groupId: `jakarta.el`
   * artifactId: `jakarta.el-api`
   * newVersion: `4.0.x`
-* [Add Gradle or Maven dependency](../../../java/dependencies/adddependency)
-  * groupId: `jakarta.el`
-  * artifactId: `jakarta.el-api`
-  * version: `4.0.x`
-  * onlyIfUsing: `javax.el..*`
-  * acceptTransitive: `true`
+* [Add the Jakarta El API when needed](../../../java/migrate/jakarta/addjakartaeldependency)
 * [Rename package name](../../../java/changepackage)
   * oldPackageName: `javax.el`
   * newPackageName: `jakarta.el`
@@ -73,6 +74,12 @@ preconditions:
 recipeList:
   - org.openrewrite.java.dependencies.ChangeDependency:
       oldGroupId: javax.el
+      oldArtifactId: el-api
+      newGroupId: jakarta.el
+      newArtifactId: jakarta.el-api
+      newVersion: 4.0.x
+  - org.openrewrite.java.dependencies.ChangeDependency:
+      oldGroupId: javax.el
       oldArtifactId: javax.el-api
       newGroupId: jakarta.el
       newArtifactId: jakarta.el-api
@@ -81,12 +88,7 @@ recipeList:
       groupId: jakarta.el
       artifactId: jakarta.el-api
       newVersion: 4.0.x
-  - org.openrewrite.java.dependencies.AddDependency:
-      groupId: jakarta.el
-      artifactId: jakarta.el-api
-      version: 4.0.x
-      onlyIfUsing: javax.el..*
-      acceptTransitive: true
+  - org.openrewrite.java.migrate.jakarta.AddJakartaElDependency
   - org.openrewrite.java.ChangePackage:
       oldPackageName: javax.el
       newPackageName: jakarta.el

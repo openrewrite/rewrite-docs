@@ -67,7 +67,8 @@ recipeList:
   artifactId="rewrite-micronaut"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_MICRONAUT"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-annotation-processor" --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-annotation-processor" --recipe-option "newVersion=micronaut.validation" --recipe-option "exclusions=io.micronaut:micronaut-inject"'}
+  cliOptions={' --recipe-option "oldGroupId=org.openrewrite.recipe" --recipe-option "oldArtifactId=my-deprecated-annotation-processor"'}
+  optionalCliOptions={' --recipe-option "newGroupId=corp.internal.openrewrite.recipe" --recipe-option "newArtifactId=my-new-annotation-processor" --recipe-option "newVersion=micronaut.validation" --recipe-option "exclusions=io.micronaut:micronaut-inject"'}
   hasDataTables
 />
 

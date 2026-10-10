@@ -113,6 +113,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "tableName=package.contributors" --recipe-option "identifyingKey=name" --recipe-option "identifyingValue=example-*"'}
+  optionalCliOptions={' --recipe-option "useRegex=true"'}
   hasDataTables
 />
 

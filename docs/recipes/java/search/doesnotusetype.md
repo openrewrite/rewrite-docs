@@ -52,6 +52,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "fullyQualifiedTypeName=java.util.List"'}
+  optionalCliOptions={' --recipe-option "includeImplicit=true"'}
   hasDataTables
 />
 

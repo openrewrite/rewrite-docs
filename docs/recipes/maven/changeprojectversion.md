@@ -105,6 +105,7 @@ recipeList:
   isCoreLibrary
   requiresConfiguration
   cliOptions={' --recipe-option "groupId=org.openrewrite" --recipe-option "artifactId=\'*\'" --recipe-option "newVersion=8.4.2"'}
+  optionalCliOptions={' --recipe-option "overrideParentVersion=true"'}
   showGradle={false}
   hasDataTables
 />

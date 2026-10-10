@@ -236,7 +236,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X" --recipe-option "versionPattern=\'-jre\'" --recipe-option "scope=runtime" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "type=jar" --recipe-option "classifier=test" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"'}
+  cliOptions={' --recipe-option "groupId=com.google.guava" --recipe-option "artifactId=guava" --recipe-option "version=29.X"'}
+  optionalCliOptions={' --recipe-option "versionPattern=\'-jre\'" --recipe-option "scope=runtime" --recipe-option "releasesOnly=true" --recipe-option "onlyIfUsing=org.junit.jupiter.api.*" --recipe-option "type=jar" --recipe-option "classifier=test" --recipe-option "optional=true" --recipe-option "familyPattern=com.fasterxml.jackson*" --recipe-option "acceptTransitive=true"'}
   showGradle={false}
   hasDataTables
 />

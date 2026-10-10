@@ -111,7 +111,8 @@ recipeList:
   artifactId="rewrite-gitlab"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldTemplate=Terraform/Base.latest.gitlab-ci.yml" --recipe-option "newComponent=$CI_SERVER_FQDN/components/opentofu/job-templates" --recipe-option "version=~latest" --recipe-option "inputs=opentofu_version: 1.6.0"'}
+  cliOptions={' --recipe-option "oldTemplate=Terraform/Base.latest.gitlab-ci.yml" --recipe-option "newComponent=$CI_SERVER_FQDN/components/opentofu/job-templates" --recipe-option "version=~latest"'}
+  optionalCliOptions={' --recipe-option "inputs=opentofu_version: 1.6.0"'}
   hasDataTables
 />
 

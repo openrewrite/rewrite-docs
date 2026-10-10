@@ -127,7 +127,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyPattern=guava.*" --recipe-option "valuePattern=28.*"'}
+  cliOptions={' --recipe-option "propertyPattern=guava.*"'}
+  optionalCliOptions={' --recipe-option "valuePattern=28.*"'}
   showGradle={false}
   hasDataTables
 />

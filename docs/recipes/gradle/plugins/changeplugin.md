@@ -104,7 +104,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_GRADLE"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "pluginId=org.openrewrite.rewrite" --recipe-option "newPluginId=org.openrewrite.rewrite" --recipe-option "newVersion=7.x"'}
+  cliOptions={' --recipe-option "pluginId=org.openrewrite.rewrite" --recipe-option "newPluginId=org.openrewrite.rewrite"'}
+  optionalCliOptions={' --recipe-option "newVersion=7.x"'}
   showMaven={false}
   hasDataTables
 />

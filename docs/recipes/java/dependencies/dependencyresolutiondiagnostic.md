@@ -80,6 +80,7 @@ plugins {
   groupId="org.openrewrite.recipe"
   artifactId="rewrite-java-dependencies"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_JAVA_DEPENDENCIES"
+  optionalCliOptions={' --recipe-option "groupId=com.fasterxml.jackson.core" --recipe-option "artifactId=jackson-core" --recipe-option "version=2.16.0"'}
   hasDataTables
 />
 

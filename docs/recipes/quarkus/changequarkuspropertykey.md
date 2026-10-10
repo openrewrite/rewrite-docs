@@ -37,6 +37,18 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 This recipe is used as part of the following composite recipes:
 
 * [Migrate quarkus-cxf to 3.20](/recipes/quarkus/updates/cxf/cxf320/updateall.md)
+* [Rename deprecated HTTP SSL configuration properties](/recipes/quarkus/updates/core/quarkus40/httpsslconfigproperties.md)
+* [Rename deprecated Hibernate ORM configuration properties](/recipes/quarkus/updates/core/quarkus40/hibernateormconfigproperties.md)
+* [Rename deprecated Infinispan configuration properties](/recipes/quarkus/updates/core/quarkus40/infinispanconfigproperties.md)
+* [Rename deprecated Keycloak Policy Enforcer configuration properties](/recipes/quarkus/updates/core/quarkus40/keycloakpolicyenforcerconfigproperties.md)
+* [Rename deprecated Kubernetes configuration properties](/recipes/quarkus/updates/core/quarkus40/kubernetesconfigproperties.md)
+* [Rename deprecated Mailer configuration properties](/recipes/quarkus/updates/core/quarkus40/mailerconfigproperties.md)
+* [Rename deprecated Micrometer configuration properties](/recipes/quarkus/updates/core/quarkus40/micrometerconfigproperties.md)
+* [Rename deprecated OIDC configuration properties](/recipes/quarkus/updates/core/quarkus40/oidcconfigproperties.md)
+* [Rename deprecated REST Client configuration properties](/recipes/quarkus/updates/core/quarkus40/restclientconfigproperties.md)
+* [Rename deprecated Redis Cache configuration properties](/recipes/quarkus/updates/core/quarkus40/rediscacheconfigproperties.md)
+* [Rename deprecated SmallRye configuration properties](/recipes/quarkus/updates/core/quarkus40/smallryeconfigproperties.md)
+* [Rename miscellaneous deprecated configuration properties](/recipes/quarkus/updates/core/quarkus40/miscconfigproperties.md)
 * [io.quarkus.updates.core.quarkus310.UpdateConfigPackageSimpleProperties](/recipes/quarkus/updates/core/quarkus310/updateconfigpackagesimpleproperties.md)
 * [io.quarkus.updates.core.quarkus319.ConfigurationPropertiesChange](/recipes/quarkus/updates/core/quarkus319/configurationpropertieschange.md)
 * [io.quarkus.updates.core.quarkus319.HibernateORMValidationMode](/recipes/quarkus/updates/core/quarkus319/hibernateormvalidationmode.md)
@@ -74,7 +86,8 @@ recipeList:
   artifactId="rewrite-quarkus"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS"
   requiresConfiguration
-  cliOptions={' --recipe-option "oldPropertyKey=quarkus.hibernate-search-orm.automatic-indexing.synchronization.strategy" --recipe-option "newPropertyKey=quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy" --recipe-option "profile=dev" --recipe-option "changeAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"'}
+  cliOptions={' --recipe-option "oldPropertyKey=quarkus.hibernate-search-orm.automatic-indexing.synchronization.strategy" --recipe-option "newPropertyKey=quarkus.hibernate-search-orm.indexing.plan.synchronization.strategy"'}
+  optionalCliOptions={' --recipe-option "profile=dev" --recipe-option "changeAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"'}
   hasDataTables
 />
 

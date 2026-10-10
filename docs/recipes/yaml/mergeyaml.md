@@ -143,7 +143,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_YAML"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "key=$.metadata" --recipe-option "yaml=\'labels:\n  label-one: "value-one"\'" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml" --recipe-option "insertProperty=some-key"'}
+  cliOptions={' --recipe-option "key=$.metadata" --recipe-option "yaml=\'labels:\n  label-one: "value-one"\'"'}
+  optionalCliOptions={' --recipe-option "acceptTheirs=true" --recipe-option "objectIdentifyingProperty=name" --recipe-option "filePattern=.github/workflows/*.yml" --recipe-option "insertProperty=some-key" --recipe-option "createNewKeys=true"'}
   hasDataTables
 />
 

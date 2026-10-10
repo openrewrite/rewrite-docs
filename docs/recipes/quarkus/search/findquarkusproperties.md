@@ -56,7 +56,8 @@ recipeList:
   artifactId="rewrite-quarkus"
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_QUARKUS"
   requiresConfiguration
-  cliOptions={' --recipe-option "propertyKey=quarkus.http.port" --recipe-option "profile=dev" --recipe-option "searchAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"'}
+  cliOptions={' --recipe-option "propertyKey=quarkus.http.port"'}
+  optionalCliOptions={' --recipe-option "profile=dev" --recipe-option "searchAllProfiles=false" --recipe-option "pathExpressions=["**/application.yaml"]"'}
   hasDataTables
 />
 

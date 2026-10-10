@@ -51,6 +51,9 @@ This recipe is available under the [Moderne Source Available License](https://do
   * artifactId: `spring-security-oauth2-authorization-server`
   * newVersion: `1.4.x`
   * overrideManagedVersion: `false`
+* [Change method name](../../../java/changemethodname)
+  * methodPattern: `org.springframework.security.config.annotation.web.configurers.HeadersConfigurer permissionsPolicy(org.springframework.security.config.Customizer)`
+  * newMethodName: `permissionsPolicyHeader`
 
 </TabItem>
 
@@ -79,6 +82,9 @@ recipeList:
       artifactId: spring-security-oauth2-authorization-server
       newVersion: 1.4.x
       overrideManagedVersion: false
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: org.springframework.security.config.annotation.web.configurers.HeadersConfigurer permissionsPolicy(org.springframework.security.config.Customizer)
+      newMethodName: permissionsPolicyHeader
 
 ```
 </TabItem>

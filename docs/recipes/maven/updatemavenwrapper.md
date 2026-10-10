@@ -32,6 +32,14 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 | `Boolean` | addIfMissing | *Optional*. Add a Maven wrapper, if it's missing. Defaults to `true`. |  |
 | `Boolean` | enforceWrapperChecksumVerification | *Optional*. Enforce checksum verification for the maven-wrapper.jar. Enabling this feature may sporadically result in build failures, such as [MWRAPPER-103](https://issues.apache.org/jira/browse/MWRAPPER-103). Defaults to `false`. |  |
 
+
+## Used by
+
+This recipe is used as part of the following composite recipes:
+
+* [Migrate to Maven 3.10](/recipes/maven/migratetomaven3_10.md)
+* [Upgrade plugins to Java 17 compatible versions](/recipes/java/migrate/upgradepluginsforjava17.md)
+
 ## Example
 
 ###### Parameters
@@ -64,6 +72,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
   artifactId="rewrite-maven"
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
+  optionalCliOptions={' --recipe-option "wrapperVersion=3.x" --recipe-option "distributionVersion=3.x" --recipe-option "repositoryUrl=https://repo.maven.apache.org/maven2" --recipe-option "addIfMissing=true" --recipe-option "enforceWrapperChecksumVerification=true"'}
   showGradle={false}
   hasDataTables
 />

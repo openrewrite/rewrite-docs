@@ -109,6 +109,7 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_RECIPE_REWRITE_GITLAB"
   requiresConfiguration
   cliOptions={' --recipe-option "stages=build,test,deploy"'}
+  optionalCliOptions={' --recipe-option "acceptTheirs=true"'}
   hasDataTables
 />
 

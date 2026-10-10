@@ -137,7 +137,8 @@ recipeList:
   versionKey="VERSION_ORG_OPENREWRITE_REWRITE_MAVEN"
   isCoreLibrary
   requiresConfiguration
-  cliOptions={' --recipe-option "id=repo-id" --recipe-option "url=http://myrepo.maven.com/repo"'}
+  cliOptions={' --recipe-option "url=http://myrepo.maven.com/repo"'}
+  optionalCliOptions={' --recipe-option "id=repo-id"'}
   showGradle={false}
   hasDataTables
 />

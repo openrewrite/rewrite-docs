@@ -56,6 +56,7 @@ This recipe is available under the [Moderne Source Available License](https://do
   * oldPackageName: `javax.interceptor`
   * newPackageName: `jakarta.interceptor`
   * recursive: `true`
+* [Complete InvocationContext decorators](../../../java/migrate/jakarta/invocationcontextgetconstructor)
 
 </TabItem>
 
@@ -91,6 +92,7 @@ recipeList:
       oldPackageName: javax.interceptor
       newPackageName: jakarta.interceptor
       recursive: true
+  - org.openrewrite.java.migrate.jakarta.InvocationContextGetConstructor
 
 ```
 </TabItem>

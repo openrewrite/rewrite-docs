@@ -37,6 +37,7 @@ This recipe is available under the [Apache License Version 2.0](https://www.apac
 * [Drop prefixless expressions in POM](../maven/cleanup/prefixlessexpressions)
 * [Order POM elements](../maven/orderpomelements)
 * [Remove duplicate Maven dependencies](../maven/removeduplicatedependencies)
+* [Remove duplicate plugin declarations](../maven/removeduplicateplugindeclarations)
 * [Remove redundant explicit dependency and plugin versions](../maven/removeredundantdependencyversions)
 * [Remove redundant properties](../maven/removeredundantproperties)
   * onlyIfValuesMatch: `true`
@@ -65,6 +66,7 @@ recipeList:
   - org.openrewrite.maven.cleanup.PrefixlessExpressions
   - org.openrewrite.maven.OrderPomElements
   - org.openrewrite.maven.RemoveDuplicateDependencies
+  - org.openrewrite.maven.RemoveDuplicatePluginDeclarations
   - org.openrewrite.maven.RemoveRedundantDependencyVersions
   - org.openrewrite.maven.RemoveRedundantProperties:
       onlyIfValuesMatch: true
