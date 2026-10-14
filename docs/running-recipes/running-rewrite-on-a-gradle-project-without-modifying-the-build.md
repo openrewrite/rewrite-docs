@@ -42,6 +42,7 @@ initscript {
                 password = System.getenv("CODE_GENOME_TOKEN")
             }
         }
+        mavenCentral()
     }
     dependencies {
         classpath("org.openrewrite:plugin:latest.release")
@@ -86,6 +87,7 @@ initscript {
                 password = System.getenv("CODE_GENOME_TOKEN")
             }
         }
+        mavenCentral()
     }
     dependencies {
         classpath("org.openrewrite:plugin:latest.release")
@@ -122,7 +124,7 @@ rootProject {
 
 In the `rootProject` block, we specify a dependency that contains OpenRewrite Spring recipes (`rewrite-spring`). If you wanted, you could also define a `rewrite` section inside of the `rootProject` that has elements like `activeRecipe` or `activeStyle`. In general, though, it's better to [use the command line to specify the recipes or styles](#step-4-run-the-recipe) so that you can keep your init script fairly generic.
 
-The Code Genome Project repository appears twice, because two separate resolutions need it. The `initscript` block resolves the Gradle plugin itself, which is distributed through the Code Genome Project rather than the Gradle Plugin Portal. The `afterEvaluate` block adds the same repository to the project, so that the rewrite core libraries and any recipe artifacts can be resolved once the plugin runs.
+The Code Genome Project repository appears twice, because two separate resolutions need it. The `initscript` block resolves the Gradle plugin itself, which is distributed through the Code Genome Project rather than the Gradle Plugin Portal. Keep Maven Central next to it: plugin versions up to 7.44.0 depend on `kotlin-stdlib`, which the Code Genome Project does not serve. The `afterEvaluate` block adds the same repository to the project, so that the rewrite core libraries and any recipe artifacts can be resolved once the plugin runs.
 
 Init scripts run before any project is configured, so they cannot read `gradle.properties`. Export your credentials as environment variables instead:
 

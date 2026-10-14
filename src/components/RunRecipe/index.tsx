@@ -169,6 +169,7 @@ ${needsDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${v
                 password = System.getenv("CODE_GENOME_TOKEN")
             }
         }
+        mavenCentral()
     }
     dependencies { classpath("org.openrewrite:plugin:${gradlePluginVersion}") }
 }
@@ -208,6 +209,7 @@ rootProject {
                 password = System.getenv("CODE_GENOME_TOKEN")
             }
         }
+        mavenCentral()
     }
     dependencies { classpath("org.openrewrite:plugin:${gradlePluginVersion}") }
 }
