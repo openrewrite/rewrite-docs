@@ -16,7 +16,7 @@ Core OpenRewrite technology and language libraries in general are fully open sou
 
 ### Moderne Source Available License
 
-Beyond the fully open license, additional OpenRewrite software and recipes are available broadly for users under a [source available license](https://docs.moderne.io/licensing/moderne-source-available-license). Because this license allows the right to “use, copy, distribute, make available, and prepare derivative works of the software,” it is possible for individual companies to customize recipes for their needs, such as tailoring recipes to internal APIs or removing optional idiomatic changes. 
+Beyond the fully open license, additional OpenRewrite software and recipes are available broadly for users under a [source available license](https://docs.moderne.io/licensing/moderne-source-available-license). Because this license allows the right to “use, copy, distribute, make available, and prepare derivative works of the software,” it is possible for individual companies to customize recipes for their needs, such as tailoring recipes to internal APIs or removing optional idiomatic changes. To build these modules yourself, see [building OpenRewrite from source](../reference/building-openrewrite-from-source.md).
 
 **There are two primary limitations under this license:**
 

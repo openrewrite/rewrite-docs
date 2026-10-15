@@ -1,4 +1,5 @@
 ---
+sidebar_label: Building OpenRewrite from source
 description: How to build and develop OpenRewrite – including IDE tips and OS caveats.
 ---
 
