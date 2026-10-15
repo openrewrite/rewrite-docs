@@ -11,7 +11,7 @@ OpenRewrite's modules are distributed through the [Code Genome Project](https://
 Downloads require authentication, so add the repository and credentials to your build to resolve them. See [Configure the Code Genome Project repository](#configure-the-code-genome-project-repository) below.
 Keep Maven Central configured alongside it, since OpenRewrite's transitive dependencies still resolve from there.
 Each time a release is made, a bill of materials artifact is also published to correctly align and manage the versions of all published artifacts.
-The Gradle plugin is published to the [Gradle Plugin Portal](https://plugins.gradle.org/plugin/org.openrewrite.rewrite).
+The Gradle plugin is published there too, rather than to the Gradle Plugin Portal; see the [Gradle plugin configuration](https://docs.openrewrite.org/reference/gradle-plugin-configuration) for how to resolve it.
 
 It is highly recommended that developers use the [rewrite-recipe-bom](https://github.com/openrewrite/rewrite-recipe-bom)
 to align the versions of Rewrite's modules to ensure compatibility.
@@ -21,7 +21,7 @@ The use of the "bill of materials" means that a developer will only need to spec
 |-----------------------------------------------------------------------------------------------------------------------| ---------- | ------- |
 | [**org.openrewrite:rewrite-bom**](https://github.com/openrewrite/rewrite)                                             | **[8.93.8](https://github.com/openrewrite/rewrite/releases/tag/v8.93.8)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [**org.openrewrite:rewrite-maven-plugin**](https://github.com/openrewrite/rewrite-maven-plugin)                       | **[6.50.0](https://github.com/openrewrite/rewrite-maven-plugin/releases/tag/v6.50.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[7.41.0](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v7.41.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [**org.openrewrite:rewrite-gradle-plugin**](https://github.com/openrewrite/rewrite-gradle-plugin)                     | **[7.44.1](https://github.com/openrewrite/rewrite-gradle-plugin/releases/tag/v7.44.1)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [**org.openrewrite.recipe:rewrite-recipe-bom**](https://github.com/openrewrite/rewrite-recipe-bom)                    | **[3.41.0](https://github.com/openrewrite/rewrite-recipe-bom/releases/tag/v3.41.0)** | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [org.openrewrite:rewrite-android](https://github.com/openrewrite/rewrite/blob/main/)                                  | [8.93.8](https://github.com/openrewrite/rewrite/releases/tag/8.93.8)                       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite:rewrite-core](https://github.com/openrewrite/rewrite/blob/main/)                                     | [8.93.8](https://github.com/openrewrite/rewrite/releases/tag/8.93.8)                       | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
