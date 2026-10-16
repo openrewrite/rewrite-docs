@@ -1,83 +1,59 @@
 ---
-description: A list of projects that have created OpenRewrite recipes and integrated them into their projects.
+description: A list of projects outside of OpenRewrite that publish recipes for their users.
 ---
 
 # OpenRewrite recipes created by the community
 
-This doc contains a list of projects that have created OpenRewrite recipes and integrated them into their projects to perform migrations with. 
+Many frameworks, libraries, and tools publish their own OpenRewrite recipes, most often to help their users upgrade to a new major version. This page lists the ones we know about.
 
-If you want to see your project on this list - please feel free to click on the `Edit this page` link at the bottom of this page and submit a PR.
+Projects marked with a link to the recipe catalog are also bundled in [rewrite-third-party](https://github.com/openrewrite/rewrite-third-party), so you can browse their recipes on this site and run them like any other OpenRewrite recipe.
 
-## Projects
+If you want to see your project on this list, click the `Edit this page` link at the bottom of this page and submit a pull request.
 
-* Apache's [Camel Upgrade Recipes](https://github.com/apache/camel-upgrade-recipes)
-  * Recipes that assist in the migration of Camel projects.
-* [Apache Wicket](https://github.com/apache/wicket/blob/master/wicket-migration/src/main/resources/META-INF/rewrite/wicket.yml)
-  * An open-source, Java, component-based, web application framework.
-* [AWS SDK Java v2 Migration Tool](https://github.com/aws/aws-sdk-java-v2/tree/master/v2-migration)
-  * A tool for automating migration from the AWS SDK for Java v1 to the AWS SDK for Java v2.
-* [AxonFramework](https://github.com/AxonFramework/AxonFramework/tree/master/migration)
-  * A framework for building event-driven microservice.
-* Picnic's [Error Prone Support](https://github.com/Picnicsupermarket/error-prone-support/)
-  * A [Picnic](https://blog.picnic.nl/)-opinionated extension of Google's [Error Prone](https://github.com/google/error-prone).
-* [Hibernate Migration Recipes](https://github.com/hibernate/hibernate-migration-recipes)
-  * Recipes for upgrading applications across versions of [Hibernate](https://hibernate.org/) projects, starting with Hibernate ORM.
-* [Quarkus Updates](https://github.com/quarkusio/quarkus-updates)
-  * Recipes used to update [Quarkus projects](https://github.com/quarkusio) to newer versions.
-* [Timefold](https://github.com/TimefoldAI/timefold-solver/tree/main/migration)
-  * An AI constraint solver for Java, Python, and Kotlin.
+## Framework and library upgrades
 
-* Broadcom's [Spring Tools suite](https://spring.io/tools) 
-  * Spring tooling for your favorite coding environments. 
-* Broadcom's [Spring Boot Migrator](https://github.com/spring-projects-experimental/spring-boot-migrator)
-  *  A tool for developers to upgrade or migrate to [Spring Boot](https://spring.io/projects/spring-boot) by providing recipes for automated migrations. 
+These recipes are maintained by the same people who maintain the framework or library.
 
-* RedHat's [Migration Toolkit for Applications](https://docs.redhat.com/en/documentation/migration_toolkit_for_applications/6.0/html/cli_guide/installing_and_running_the_cli#using-openrewrite-recipes_cli-guide)
-  * A tool for modernizing large-scale applications across hybrid cloud environments on Red Hat OpenShift.
-* RedHat's [Windup Rulesets](https://github.com/windup/windup-rulesets/tree/master/rules/rules-reviewed/openrewrite)
-  * Windup rules contributed by the community.
-  * [OpenRewrite recipes](https://github.com/windup/windup-rulesets/blob/f02cd0fe1f2400e906446cc7b20c13b02b598eaf/rules/rules-reviewed/openrewrite/jakarta/javax/imports/rewrite.yml)
-* RedHat's [OptaPlanner Migration](https://github.com/kiegroup/optaplanner/tree/main/optaplanner-migration)
-  * A fast, easy-to-use, open source AI constraint solver.
+* [Apache Camel](https://github.com/apache/camel-upgrade-recipes): Upgrades Camel applications across releases, including from Camel 3 to Camel 4. [Recipe catalog](/recipes/apache/camel/upgrade).
+* [Apache Wicket](https://github.com/apache/wicket/tree/master/wicket-migration): Migrates applications to Wicket 10 and Wicket 11. [Recipe catalog](/recipes/apache/wicket).
+* [Appium Java client](https://github.com/appium/java-client/blob/master/docs/v10-to-v11-migration-guide.md#automated-migration): Fixes most of the moved imports when upgrading from java-client 10 to 11.
+* [Arrow](https://github.com/arrow-kt/rewrite-arrow): Migrates Kotlin code from Arrow 1.1 to the `Raise` APIs of Arrow 1.2 and 2.x.
+* [AWS SDK for Java v2](https://github.com/aws/aws-sdk-java-v2/tree/master/v2-migration): Migrates code from the AWS SDK for Java v1 to v2. [Recipe catalog](/recipes/amazon/awssdk/v2migration).
+* [Axon Framework](https://github.com/AxonIQ/AxonFramework/tree/main/migration): Migrates Axon Framework 4 applications to Axon Framework 5. [Recipe catalog](/recipes/axonframework/migration) (Axon Framework 4 upgrades).
+* [Camunda 7 to 8](https://github.com/camunda/camunda-7-to-8-migration-tooling/tree/main/code-conversion/recipes): Converts Camunda 7 client code, `JavaDelegate`s, and external task workers to the Camunda 8 `CamundaClient` and job workers.
+* [EclipseStore](https://github.com/eclipse-store/store/tree/main/storage/embedded-tools/storage-migrator): Migrates MicroStream projects to EclipseStore, including packages, dependencies, and type dictionaries.
+* [Hibernate](https://github.com/hibernate/hibernate-migration-recipes): Upgrades applications across versions of Hibernate projects, starting with Hibernate ORM.
+* [Java Operator SDK](https://github.com/operator-framework/java-operator-sdk/tree/main/migration): Upgrades Kubernetes operators across Java Operator SDK releases, such as from 5.2 to 5.3.
+* [JDA](https://github.com/discord-jda/JDA/blob/master/src/main/resources/META-INF/rewrite/rewrite.yml): Shipped inside the JDA jar; upgrades Discord bots to JDA 6 and moves interaction components to the new Components V2 packages.
+* [Kroxylicious](https://github.com/kroxylicious/kroxylicious/tree/main/kroxylicious-proxy-core/kroxylicious-migrations): Updates filter plugin code, POMs, and proxy configuration for breaking changes in each Kroxylicious release.
+* [Micronaut](https://github.com/micronaut-projects/micronaut-openrewrite): Upgrades the Micronaut platform version, Micronaut build plugins, and build wrappers.
+* [Morphia](https://github.com/MorphiaOrg/morphia/tree/master/rewrite): Upgrades MongoDB applications that use Morphia to Morphia 3.0.
+* [Occurrent](https://github.com/johanhaleby/occurrent/tree/main/rewrite): Upgrades event-sourcing applications to each new Occurrent release.
+* [Operaton](https://github.com/operaton/migrate-from-camunda-recipe): Migrates Camunda 7 applications to Operaton, the open-source continuation of Camunda 7.
+* [Oracle WebLogic](https://github.com/oracle/rewrite-recipes): Migrates WebLogic applications to newer versions of WebLogic and Java. [Recipe catalog](/recipes/oracle/weblogic).
+* [Quarkus](https://github.com/quarkusio/quarkus-updates): The recipes behind `quarkus update`, which upgrade Quarkus applications to newer versions. [Recipe catalog](/recipes/quarkus).
+* [SAP Cloud Application Programming Model (CAP) Java](https://cap.cloud.sap/docs/java/migration#automatic-cap-java-migrations-with-openrewrite): One recipe per major release that upgrades CAP Java and rewrites deprecated APIs and configuration.
+* [Seed4J](https://github.com/seed4j/seed4j/tree/main/src/main/resources/META-INF/rewrite): Upgrades projects generated by Seed4J, formerly JHipster Lite.
+* [SmallRye Reactive Messaging](https://github.com/smallrye/smallrye-reactive-messaging/tree/main/openrewrite-recipes): Migrates Reactive Messaging connector code and dependencies from Vert.x 4 to Vert.x 5.
+* [Spring AI](https://github.com/spring-projects/spring-ai/tree/main/src/rewrite): Migrates applications to Spring AI 2.0, including the move of the Model Context Protocol (MCP) annotations and transports into Spring AI. See the [upgrade notes](https://docs.spring.io/spring-ai/reference/upgrade-notes.html).
+* [Stubborn Contract](https://github.com/stubborn-sh/stubborn-contract/tree/main/stubborn-contract-migration): Migrates from Spring Cloud Contract to Stubborn Contract, its community continuation. [Recipe catalog](/recipes/sh/stubborn/contract/migration).
+* [Timefold Solver](https://github.com/TimefoldAI/timefold-solver/tree/main/tools/migration): Upgrades Timefold Solver applications and migrates from OptaPlanner to Timefold. [Recipe catalog](/recipes/timefold/solver/migration).
+* [Weld Testing](https://github.com/weld/weld-testing/blob/main/junit-jupiter/src/main/resources/META-INF/rewrite/weld-junit-jupiter-migration.yml): Migrates tests from `weld-junit5` to the renamed `weld-junit-jupiter`.
 
-* Azure's [Spring Rewrite](https://github.com/Azure/azure-spring-rewrite)
-  * Contains recipes for upgrading Spring Boot/Spring Cloud and recipes for migrating to Azure Spring Apps.
+## Tools built on OpenRewrite
 
-* Oracle's [Rewrite Recipes](https://github.com/oracle/rewrite-recipes/)
-  * Recipes for Oracle solutions – such as upgrading Java and Weblogic.
+* [Atlassian Data Center apps](https://developer.atlassian.com/platform/marketplace/dc-apps-platform-7-openrewrite/): Recipes that help Marketplace partners adapt their apps to the breaking changes in Data Center Platform 7.
+* [Jenkins Plugin Modernizer](https://github.com/jenkins-infra/plugin-modernizer-tool): A CLI that runs OpenRewrite recipes against Jenkins plugins to keep them compatible with current Java and Jenkins versions, and opens pull requests with the results.
+* [Konveyor kantra](https://github.com/konveyor/kantra): `kantra transform openrewrite` applies the [OpenRewrite recipes from the Windup rulesets](https://github.com/windup/windup-rulesets/tree/master/rules/rules-reviewed/openrewrite), such as Jakarta EE package renames, JBoss EAP 8 configuration updates, and Spring Boot to Quarkus property conversions. Konveyor is the upstream project for Red Hat's Migration Toolkit for Applications (MTA).
 
-* Jenkins [Plugin Modernizer Tool](https://github.com/jenkinsci/plugin-modernizer-tool/)
-  * Plugin Modernizer is a generic CLI tool designed to automate the modernization of Jenkins plugins.
+## Other recipe collections
 
-* JHipster Lite's [Upgrade recipes](https://github.com/jhipster/jhipster-lite/pull/12959)
-  * JHipster Lite is a development platform to generate, develop & deploy modern web applications & microservices architecture, step by step - using Hexagonal Architecture.
-
-* [OpenAPI 3 recipes](https://github.com/desprez/rewrite-oas3)
-  * OpenRewrite recipes for migrating Java swagger2 (OAS2) annotations to Open API 3 (OAS3).
-* [Morphia](https://github.com/MorphiaOrg/morphia/blob/master/upgrading/UpgradeFrom22to23.yml)
-  * MongoDB object-document mapper in Java.
-* [devonfw-ide](https://github.com/devonfw/ide/blob/master/documentation/rewrite.asciidoc)
-  * A tool to automate development environment setup – with the ability to share the same project settings across a team.
-* [Arrow KT](https://github.com/arrow-kt/rewrite-arrow)
-  * OpenRewrite recipes for [Arrow](https://github.com/arrow-kt/arrow) (A functional companion to Kotlin's Standard Library).
-* [Spring MVC Migrator](https://github.com/omidp/spring-mvc-migrator)
-  * A tool for refactoring Spring MVC `PathVariable` and `RequestParam` annotations.
-* [Atlassian OpenRewrite Recipes](https://developer.atlassian.com/platform/marketplace/dc-apps-platform-7-openrewrite/)
-  * Recipes for migrating breaking changes in DC Platform 7.
-* [ZettSystems](https://github.com/MichaelZett/zettsystems-recipes)
-  * A recipe to switch `Collectors.toList()` to `Stream.toList()`.
-* Khairulsyamil's [Rewrite Sorter](https://github.com/khairulsyamil/rewrite-sorter)
-  * A collection of recipes for sorting JSON, `.properties` and Java class methods.
-* Philzen's [Rewrite TestNG to JUnit 5](https://github.com/Philzen/rewrite-TestNG-to-JUnit5)
-  * OpenRewrite recipes for migrating a project from TestNG to JUnit 5 (Jupiter).
-* [Langchain4j](https://github.com/langchain4j/langchain4j-openrewrite-recipes)
-* [Liftwizard](https://github.com/liftwizard/liftwizard/tree/main/liftwizard-utility/liftwizard-rewrite)
-    * Provides recipes for Eclipse Collections code transformations and general Java best practices.
-* [Morphia](https://github.com/MorphiaOrg/morphia/blob/5d750285266116bfded7ccb5acdaff3aea480811/rewrite/src/main/java/dev/morphia/rewrite/recipes/PipelineRewriteStage2.java)
-  * A MongoDB object-document mapper in Java.
-* [A migrate from Camunda recipe](https://github.com/operaton/migrate-from-camunda-recipe)
-  * Migrates a Camunda 7 instance to Operaton.
-* [Rewrite Format SQL](https://github.com/mhagnumdw/rewrite-format-sql)
-  * OpenRewrite recipes for formatting SQL code in text blocks in annotations.
-* [JDO to JPA migration](https://github.com/ecpnv-devops/jdo2jpa)
-  * Migrates a project using JDO ORM implementation to a JPA implementation. Supports DataNucleus, EclipseLink and Apache Causeway, but should also work for Hibernate.
+* [Arconia Migrations](https://github.com/arconia-io/arconia-migrations): Upgrades to Spring Boot 3 and 4, Spring Framework 6 and 7, Spring AI 1 and 2, JUnit 6, Testcontainers 2, and Arconia itself.
+* [Checkstyle](https://github.com/checkstyle/checkstyle-openrewrite-recipes): Reads a Checkstyle report and fixes common violations automatically.
+* [Error Prone Support](https://github.com/PicnicSupermarket/error-prone-support): [Picnic](https://picnic.app/)'s extensions to Google's [Error Prone](https://github.com/google/error-prone), whose Refaster rules are also published as OpenRewrite recipes. [Recipe catalog](/recipes/picnic/errorprone).
+* [JDO to JPA](https://github.com/ecpnv-devops/jdo2jpa): Migrates projects from JDO to JPA. Supports DataNucleus, EclipseLink, and Apache Causeway, and should also work with Hibernate.
+* [Liftwizard](https://github.com/liftwizard/liftwizard/tree/main/liftwizard-utility/liftwizard-rewrite): Recipes for idiomatic Eclipse Collections code and general Java best practices.
+* [Rewrite Format SQL](https://github.com/mhagnumdw/rewrite-format-sql): Formats SQL and HQL in Java text blocks and in `.sql` files.
+* [Rewrite Sorter](https://github.com/khairulsyamil/rewrite-sorter): Sorts JSON files, `.properties` files, and Java class methods.
+* [Spring MVC Migrator](https://github.com/omidp/spring-mvc-migrator): Adds explicit names to `@PathVariable` and `@RequestParam` parameters, which Spring Framework 6.1 needs when code isn't compiled with `-parameters`.
+* [TestNG to JUnit 5](https://github.com/Philzen/rewrite-TestNG-to-JUnit5): Migrates tests from TestNG to JUnit 5 (Jupiter).
