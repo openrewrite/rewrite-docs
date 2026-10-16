@@ -90,21 +90,23 @@ It generally makes sense to apply the plugin to the root `build.gradle` in a rep
 <!-- AUTO-GENERATED-GRADLE-PROPS:START - Do not edit manually; updated by update-docs workflow -->
 
 | Property | Type | Default | Description |
-|----------|------|---------|-------------|
+| ---------------- | -------- | -------- | ------------------------ |
 | `activeRecipes` | `List<String>` | Empty list | Fully qualified class names of recipes to activate. Recipes will only run when explicitly activated here or in a rewrite.yml file. |
 | `activeStyles` | `List<String>` | Empty list | Fully qualified class names of styles to activate. Styles will only be applied when explicitly activated here or in a rewrite.yml file. |
-| `configFile` | `File` | `rewrite.yml` | Path to the OpenRewrite YAML configuration file. Defaults to `rewrite.yml` in the project directory. |
+| `configFile` | `File` | `rewrite.yml` in the project directory | Path to the OpenRewrite YAML configuration file. |
 | `checkstyleConfigFile` | `File` | `null` | Optional path to a Checkstyle configuration file. When set, OpenRewrite will use it to inform Java code style decisions. If not set explicitly, the plugin will attempt to auto-detect a Checkstyle configuration from the Checkstyle Gradle plugin. |
-| `enableExperimentalGradleBuildScriptParsing` | `boolean` | `true` | Whether to parse Gradle build scripts (`build.gradle`) as part of the source set. Defaults to `true`. |
-| `exportDatatables` | `boolean` | `false` | Whether to export data tables to `<build directory>/reports/rewrite/datatables/<timestamp>`. Defaults to `false`. |
+| `enableExperimentalGradleBuildScriptParsing` | `boolean` | `true` | Whether to parse Gradle build scripts (`build.gradle`) as part of the source set. |
+| `exportDatatables` | `boolean` | `false` | Whether to export data tables to `<build directory>/reports/rewrite/datatables/<timestamp>`. |
 | `exclusions` | `List<String>` | Empty list | Glob patterns for files to exclude from processing. For example: `"src/generated/**"`. |
-| `plainTextMasks` | `List<String>` | Empty list | Glob patterns for files that should be parsed as plain text. Defaults to a comprehensive list including `**/*.md`, `**/*.sql`, `**/*.txt`, and others. Exclusions take precedence over plain text masks. |
-| `sizeThresholdMb` | `int` | `10` | Maximum file size in megabytes. Source files larger than this threshold are skipped during parsing. Defaults to `10`. |
+| `plainTextMasks` | `List<String>` | [Built-in list](https://openrewrite.github.io/rewrite-gradle-plugin/#default-plain-text-masks) | Glob patterns for files that should be parsed as plain text. Exclusions take precedence over plain text masks. |
+| `sizeThresholdMb` | `int` | `10` | Maximum file size in megabytes. Source files larger than this threshold are skipped during parsing. |
 | `rewriteVersion` | `String` | `null` | Override the version of rewrite core libraries to be used. When `null`, the version bundled with the plugin is used. |
-| `logCompilationWarningsAndErrors` | `boolean` | `false` | Whether to log Java compilation warnings and errors encountered during parsing. Defaults to `false`. |
-| `failOnInvalidActiveRecipes` | `boolean` | `false` | Whether to throw an exception if an activeRecipe fails configuration validation. This may happen if the activeRecipe is improperly configured, or any downstream recipes are improperly configured. For the time, this default is "false" to prevent one improperly configured recipe from failing the build. In the future, this default may be changed to "true" to be more restrictive. |
-| `failOnDryRunResults` | `boolean` | `false` | Whether `rewriteDryRun` should fail the build when it detects that changes would be made. Useful in CI to enforce that all recipes have already been applied. Defaults to `false`. |
-| `throwOnParseFailures` | `boolean` | `false` | Whether to throw an exception when source file parsing fails. Can also be enabled via the project property `-Prewrite.throwOnParseFailures`. Defaults to `false`. |
+| `logCompilationWarningsAndErrors` | `boolean` | `false` | Whether to log Java compilation warnings and errors encountered during parsing. |
+| `failOnInvalidActiveRecipes` | `boolean` | `false` | Whether to throw an exception if an activeRecipe fails configuration validation. This may happen if the activeRecipe is improperly configured, or any downstream recipes are improperly configured. For now, this defaults to `false` to prevent one improperly configured recipe from failing the build. In the future, the default may change to `true` to be more restrictive. |
+| `failOnDryRunResults` | `boolean` | `false` | Whether `rewriteDryRun` should fail the build when it detects that changes would be made. Useful in CI to enforce that all recipes have already been applied. |
+| `throwOnParseFailures` | `boolean` | `false` | Whether to throw an exception when source file parsing fails. Can also be enabled via the project property `-Prewrite.throwOnParseFailures`. |
+| `pomCacheEnabled` | `boolean` | `true` | Whether to cache resolved Maven POMs to a RocksDB-backed on-disk cache to speed up subsequent recipe runs. When enabled, a two-layer cache is used: an in-memory L1 cache backed by a RocksDB L2 cache. When disabled, only an in-memory cache is used. |
+| `pomCacheDirectory` | `String` | `~/.rewrite-cache` | Directory in which to store the RocksDB-backed Maven POM cache. |
 
 <!-- AUTO-GENERATED-GRADLE-PROPS:END -->
 
