@@ -23,6 +23,24 @@ plugins {
 }
 ```
 
+The OpenRewrite build plugins are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. Plugins are resolved before any project is evaluated, so declare that repository under `pluginManagement` in your `settings.gradle`, with `codegenomeUsername` and `codegenomePassword` (a download token) set in `~/.gradle/gradle.properties`:
+
+```groovy title="settings.gradle"
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
+
 With the `recipe-library` plugin added, you can then add a `recipeDependencies` section in your `build.gradle` file. In there, you can add a `parserClasspath` that specifies a dependency and its corresponding version:
 
 ```groovy

@@ -120,6 +120,8 @@ repository by `id`:
 
 Keep Maven Central alongside it. The Code Genome Project hosts only `org/openrewrite` and
 `io/moderne`, so OpenRewrite's own transitive dependencies still resolve from Maven Central.
+Set `codegenomeUsername` and `codegenomePassword` in `~/.gradle/gradle.properties` to keep the
+credentials out of your repository.
 
 ```kotlin title="build.gradle.kts"
 repositories {
@@ -127,8 +129,8 @@ repositories {
     maven {
         url = uri("https://artifacts.codegenomeproject.org/maven")
         credentials {
-            username = "USERNAME"
-            password = "TOKEN"
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
@@ -140,8 +142,8 @@ repositories {
     maven {
         url = 'https://artifacts.codegenomeproject.org/maven'
         credentials {
-            username = 'USERNAME'
-            password = 'TOKEN'
+            username = providers.gradleProperty('codegenomeUsername').get()
+            password = providers.gradleProperty('codegenomePassword').get()
         }
     }
 }

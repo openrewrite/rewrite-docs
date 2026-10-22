@@ -62,6 +62,17 @@ plugins {
 group = "com.yourorg"
 description = "OpenRewrite recipes for Kotlin, authored with the Kotlin recipe DSL."
 
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://artifacts.codegenomeproject.org/maven")
+        credentials {
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
+        }
+    }
+}
+
 dependencies {
     // The bom aligns every org.openrewrite module - including rewrite-kotlin - to one version.
     implementation(platform("org.openrewrite:rewrite-bom:latest.release"))
@@ -92,6 +103,24 @@ The `kotlinCompilerPluginClasspath("org.openrewrite:rewrite-kotlin")` line is wh
 :::
 
 Recipe libraries usually target Java 8 bytecode so they load in older rewrite runtimes, while tests exercise the JDK 21 Kotlin parser. The [`kotlin-recipe-starter` build file](https://github.com/moderneinc/kotlin-recipe-starter/blob/main/build.gradle.kts) shows how to split the two `jvmTarget` settings, along with the publishing and release plugins you'll want for a real recipe module.
+
+The `org.openrewrite.build.recipe-library-base` plugin is distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), as are the rewrite modules it depends on. Plugins are resolved before any project is evaluated, so declare that repository under `pluginManagement` in your `settings.gradle.kts`, with `codegenomeUsername` and `codegenomePassword` (a download token) set in `~/.gradle/gradle.properties`:
+
+```kotlin title="settings.gradle.kts"
+pluginManagement {
+    repositories {
+        maven {
+            url = uri("https://artifacts.codegenomeproject.org/maven")
+            credentials {
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
 
 ## Writing a pattern-shaped recipe
 
@@ -437,7 +466,7 @@ Publish the recipe module locally:
 ```
 
 :::info
-The OpenRewrite build plugins and the rewrite core libraries are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. Gradle reads the credentials from `codeGenomeUsername` and `codeGenomeToken` in `~/.gradle/gradle.properties`. The Maven snippet below only shows the recipe configuration; see the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for the repository and credential setup it assumes.
+The OpenRewrite build plugins and the rewrite core libraries are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. Gradle reads the credentials from `codegenomeUsername` and `codegenomePassword` in `~/.gradle/gradle.properties`. The Maven snippet below only shows the recipe configuration; see the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for the repository and credential setup it assumes.
 :::
 
 <Tabs groupId="projectType">
@@ -449,8 +478,8 @@ pluginManagement {
         maven {
             url = uri("https://artifacts.codegenomeproject.org/maven")
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -470,8 +499,8 @@ repositories {
     maven {
         url = uri("https://artifacts.codegenomeproject.org/maven")
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }

@@ -16,8 +16,8 @@ pluginManagement {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -44,8 +44,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
@@ -55,11 +55,11 @@ repositories {
 The Gradle plugin, the rewrite core libraries, and recipe modules are all distributed through the Code Genome Project repository, which requires authentication. Sign in there to create a download token, then put your credentials in `~/.gradle/gradle.properties` so they are not committed alongside your build:
 
 ```properties title="~/.gradle/gradle.properties"
-codeGenomeUsername=you@example.com
-codeGenomeToken=your-download-token
+codegenomeUsername=you@example.com
+codegenomePassword=your-download-token
 ```
 
-In CI, set the `ORG_GRADLE_PROJECT_codeGenomeUsername` and `ORG_GRADLE_PROJECT_codeGenomeToken` environment variables instead. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
+In CI, set the `ORG_GRADLE_PROJECT_codegenomeUsername` and `ORG_GRADLE_PROJECT_codegenomePassword` environment variables instead. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
 :::
 
 With the plugin applied, the `rewrite` DSL is available for configuration.
@@ -76,8 +76,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
@@ -121,8 +121,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
@@ -176,8 +176,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }

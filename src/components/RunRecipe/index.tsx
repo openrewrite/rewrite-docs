@@ -129,8 +129,8 @@ export default function RunRecipe({
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -152,8 +152,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
@@ -165,8 +165,8 @@ ${needsDependency ? `\ndependencies {\n    rewrite("${groupId}:${artifactId}:${v
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = System.getenv("CODE_GENOME_USERNAME")
-                password = System.getenv("CODE_GENOME_TOKEN")
+                username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
             }
         }
     }
@@ -190,8 +190,8 @@ rootProject {
             maven {
                 url = "https://artifacts.codegenomeproject.org/maven"
                 credentials {
-                    username = System.getenv("CODE_GENOME_USERNAME")
-                    password = System.getenv("CODE_GENOME_TOKEN")
+                    username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                    password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
                 }
             }
         }
@@ -204,8 +204,8 @@ rootProject {
         maven {
             url = uri("https://artifacts.codegenomeproject.org/maven")
             credentials {
-                username = System.getenv("CODE_GENOME_USERNAME")
-                password = System.getenv("CODE_GENOME_TOKEN")
+                username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
             }
         }
     }
@@ -229,8 +229,8 @@ rootProject {
             maven {
                 url = uri("https://artifacts.codegenomeproject.org/maven")
                 credentials {
-                    username = System.getenv("CODE_GENOME_USERNAME")
-                    password = System.getenv("CODE_GENOME_TOKEN")
+                    username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                    password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
                 }
             }
         }
@@ -319,8 +319,8 @@ rootProject {
   </activeProfiles>
 </settings>`;
 
-  const gradleProperties = `codeGenomeUsername=you@example.com
-codeGenomeToken=your-download-token`;
+  const gradleProperties = `codegenomeUsername=you@example.com
+codegenomePassword=your-download-token`;
 
   const cgpAuthNote = (
     <p>
@@ -385,7 +385,7 @@ codeGenomeToken=your-download-token`;
                 Export your Code Genome Project credentials. Init scripts run before any project is configured, so they
                 cannot read <code>gradle.properties</code>:
                 <CodeBlock language="shell" title="shell">
-                  {`export CODE_GENOME_USERNAME='you@example.com'\nexport CODE_GENOME_TOKEN='your-download-token'`}
+                  {`export ORG_GRADLE_PROJECT_codegenomeUsername='you@example.com'\nexport ORG_GRADLE_PROJECT_codegenomePassword='your-download-token'`}
                 </CodeBlock>
               </li>
               <li>
@@ -410,7 +410,7 @@ codeGenomeToken=your-download-token`;
                 Export your Code Genome Project credentials. Init scripts run before any project is configured, so they
                 cannot read <code>gradle.properties</code>:
                 <CodeBlock language="shell" title="shell">
-                  {`export CODE_GENOME_USERNAME='you@example.com'\nexport CODE_GENOME_TOKEN='your-download-token'`}
+                  {`export ORG_GRADLE_PROJECT_codegenomeUsername='you@example.com'\nexport ORG_GRADLE_PROJECT_codegenomePassword='your-download-token'`}
                 </CodeBlock>
               </li>
               <li>

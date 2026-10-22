@@ -56,7 +56,25 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 </Tabs>
 
 :::tip
-If you are using Gradle, it is highly-recommended that you apply the [`org.openrewrite.build.recipe-library-base` plugin](https://plugins.gradle.org/plugin/org.openrewrite.build.recipe-library-base). The plugin automatically configures the project with meaningful conventions like necessary compiler options.
+If you are using Gradle, it is highly-recommended that you apply the [`org.openrewrite.build.recipe-library-base` plugin](https://github.com/openrewrite/rewrite-build-gradle-plugin). The plugin automatically configures the project with meaningful conventions like necessary compiler options.
+
+The OpenRewrite build plugins are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), as are the rewrite modules they depend on. Plugins are resolved before any project is evaluated, so declare that repository under `pluginManagement` in your `settings.gradle`, using the credentials described below:
+
+```groovy title="settings.gradle"
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
 :::
 
 ### Dependencies & dependency management
@@ -66,7 +84,7 @@ Rewrite provides a bill of materials (BOM) that, when imported into your build, 
 You can import the bill of materials into either Gradle or Maven and then include concrete dependencies on the various rewrite libraries without specifying their version.
 
 :::info
-The rewrite modules your recipe module compiles against are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication, so the snippets below declare that repository. Gradle builds read the credentials from `codeGenomeUsername` and `codeGenomeToken` in `~/.gradle/gradle.properties`; Maven builds read them from `settings.xml`. See [Running your Recipes](#running-your-recipes) and the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
+The rewrite modules your recipe module compiles against are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication, so the snippets below declare that repository. Gradle builds read the credentials from `codegenomeUsername` and `codegenomePassword` (a download token) in `~/.gradle/gradle.properties`; Maven builds read them from `settings.xml`. See [Running your Recipes](#running-your-recipes) and the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
 :::
 
 <Tabs groupId="projectType">
@@ -78,8 +96,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
@@ -410,8 +428,8 @@ pluginManagement {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -430,13 +448,13 @@ repositories {
     mavenLocal()
     mavenCentral()
     // The rewrite core libraries are distributed through the Code Genome Project. Set
-    // codeGenomeUsername and codeGenomeToken in ~/.gradle/gradle.properties to the email
+    // codegenomeUsername and codegenomePassword in ~/.gradle/gradle.properties to the email
     // or username you signed in with and a download token created there.
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
