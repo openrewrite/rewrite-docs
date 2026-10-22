@@ -56,7 +56,25 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 </Tabs>
 
 :::tip
-If you are using Gradle, it is highly-recommended that you apply the [`org.openrewrite.build.recipe-library-base` plugin](https://plugins.gradle.org/plugin/org.openrewrite.build.recipe-library-base). The plugin automatically configures the project with meaningful conventions like necessary compiler options.
+If you are using Gradle, it is highly-recommended that you apply the [`org.openrewrite.build.recipe-library-base` plugin](https://github.com/openrewrite/rewrite-build-gradle-plugin). The plugin automatically configures the project with meaningful conventions like necessary compiler options.
+
+The OpenRewrite build plugins are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), as are the rewrite modules they depend on. Plugins are resolved before any project is evaluated, so declare that repository under `pluginManagement` in your `settings.gradle`, using the credentials described below:
+
+```groovy title="settings.gradle"
+pluginManagement {
+    repositories {
+        maven {
+            url = "https://artifacts.codegenomeproject.org/maven"
+            credentials {
+                username = providers.gradleProperty("codeGenomeUsername").get()
+                password = providers.gradleProperty("codeGenomeToken").get()
+            }
+        }
+        // Keep the portal for any other plugins your build applies
+        gradlePluginPortal()
+    }
+}
+```
 :::
 
 ### Dependencies & dependency management
