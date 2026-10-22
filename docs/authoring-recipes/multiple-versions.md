@@ -23,7 +23,7 @@ plugins {
 }
 ```
 
-The OpenRewrite build plugins are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. Plugins are resolved before any project is evaluated, so declare that repository under `pluginManagement` in your `settings.gradle`, with `codeGenomeUsername` and `codeGenomeToken` set in `~/.gradle/gradle.properties`:
+The OpenRewrite build plugins are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication. Plugins are resolved before any project is evaluated, so declare that repository under `pluginManagement` in your `settings.gradle`, with `codegenomeUsername` and `codegenomePassword` (a download token) set in `~/.gradle/gradle.properties`:
 
 ```groovy title="settings.gradle"
 pluginManagement {
@@ -31,8 +31,8 @@ pluginManagement {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies

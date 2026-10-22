@@ -66,8 +66,8 @@ pluginManagement {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -84,7 +84,7 @@ Rewrite provides a bill of materials (BOM) that, when imported into your build, 
 You can import the bill of materials into either Gradle or Maven and then include concrete dependencies on the various rewrite libraries without specifying their version.
 
 :::info
-The rewrite modules your recipe module compiles against are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication, so the snippets below declare that repository. Gradle builds read the credentials from `codeGenomeUsername` and `codeGenomeToken` in `~/.gradle/gradle.properties`; Maven builds read them from `settings.xml`. See [Running your Recipes](#running-your-recipes) and the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
+The rewrite modules your recipe module compiles against are distributed through the [Code Genome Project](https://artifacts.codegenomeproject.org/maven), which requires authentication, so the snippets below declare that repository. Gradle builds read the credentials from `codegenomeUsername` and `codegenomePassword` (a download token) in `~/.gradle/gradle.properties`; Maven builds read them from `settings.xml`. See [Running your Recipes](#running-your-recipes) and the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.
 :::
 
 <Tabs groupId="projectType">
@@ -96,8 +96,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
