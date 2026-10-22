@@ -56,11 +56,11 @@ OpenRewrite releases, including the Maven and Gradle plugins themselves, are pub
 Gradle builds read those credentials from `gradle.properties`. Put them in `~/.gradle/gradle.properties` rather than the copy in your repository, so they are never committed:
 
 ```properties title="~/.gradle/gradle.properties"
-codeGenomeUsername=you@example.com
-codeGenomeToken=your-download-token
+codegenomeUsername=you@example.com
+codegenomePassword=your-download-token
 ```
 
-In CI, set the `ORG_GRADLE_PROJECT_codeGenomeUsername` and `ORG_GRADLE_PROJECT_codeGenomeToken` environment variables instead. Maven builds keep the same credentials in `settings.xml`, where the snippets below use `USERNAME` and `TOKEN` as placeholders.
+In CI, set the `ORG_GRADLE_PROJECT_codegenomeUsername` and `ORG_GRADLE_PROJECT_codegenomePassword` environment variables instead. Maven builds keep the same credentials in `settings.xml`, where the snippets below use `USERNAME` and `TOKEN` as placeholders.
 
 What you can download depends on your account: OpenRewrite's Apache-licensed recipes and the Moderne CLI are available to any authenticated user, while [source-available](/licensing/openrewrite-licensing#moderne-source-available-license) and proprietary recipes require a Moderne subscription.
 
@@ -83,8 +83,8 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
         maven {
           url = 'https://artifacts.codegenomeproject.org/maven'
           credentials {
-            username = providers.gradleProperty('codeGenomeUsername').get()
-            password = providers.gradleProperty('codeGenomeToken').get()
+            username = providers.gradleProperty('codegenomeUsername').get()
+            password = providers.gradleProperty('codegenomePassword').get()
           }
         }
         // Keep the portal for any other plugins your build applies
@@ -107,8 +107,8 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
       maven {
         url = 'https://artifacts.codegenomeproject.org/maven'
         credentials {
-          username = providers.gradleProperty('codeGenomeUsername').get()
-          password = providers.gradleProperty('codeGenomeToken').get()
+          username = providers.gradleProperty('codegenomeUsername').get()
+          password = providers.gradleProperty('codegenomePassword').get()
         }
       }
     }
@@ -134,8 +134,8 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
         maven {
           url = uri("https://artifacts.codegenomeproject.org/maven")
           credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
           }
         }
         // Keep the portal for any other plugins your build applies
@@ -158,8 +158,8 @@ Please follow the instructions in the Maven or Gradle tab to configure your proj
       maven {
         url = uri("https://artifacts.codegenomeproject.org/maven")
         credentials {
-          username = providers.gradleProperty("codeGenomeUsername").get()
-          password = providers.gradleProperty("codeGenomeToken").get()
+          username = providers.gradleProperty("codegenomeUsername").get()
+          password = providers.gradleProperty("codegenomePassword").get()
         }
       }
     }

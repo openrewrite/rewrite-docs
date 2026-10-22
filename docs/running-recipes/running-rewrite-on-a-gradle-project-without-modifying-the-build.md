@@ -38,8 +38,8 @@ initscript {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = System.getenv("CODE_GENOME_USERNAME")
-                password = System.getenv("CODE_GENOME_TOKEN")
+                username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
             }
         }
     }
@@ -64,8 +64,8 @@ rootProject {
             maven {
                 url = "https://artifacts.codegenomeproject.org/maven"
                 credentials {
-                    username = System.getenv("CODE_GENOME_USERNAME")
-                    password = System.getenv("CODE_GENOME_TOKEN")
+                    username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                    password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
                 }
             }
         }
@@ -82,8 +82,8 @@ initscript {
         maven {
             url = uri("https://artifacts.codegenomeproject.org/maven")
             credentials {
-                username = System.getenv("CODE_GENOME_USERNAME")
-                password = System.getenv("CODE_GENOME_TOKEN")
+                username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
             }
         }
     }
@@ -108,8 +108,8 @@ rootProject {
             maven {
                 url = uri("https://artifacts.codegenomeproject.org/maven")
                 credentials {
-                    username = System.getenv("CODE_GENOME_USERNAME")
-                    password = System.getenv("CODE_GENOME_TOKEN")
+                    username = System.getenv("ORG_GRADLE_PROJECT_codegenomeUsername")
+                    password = System.getenv("ORG_GRADLE_PROJECT_codegenomePassword")
                 }
             }
         }
@@ -127,8 +127,8 @@ The Code Genome Project repository appears twice, because two separate resolutio
 Init scripts run before any project is configured, so they cannot read `gradle.properties`. Export your credentials as environment variables instead:
 
 ```bash
-export CODE_GENOME_USERNAME='you@example.com'
-export CODE_GENOME_TOKEN='your-download-token'
+export ORG_GRADLE_PROJECT_codegenomeUsername='you@example.com'
+export ORG_GRADLE_PROJECT_codegenomePassword='your-download-token'
 ```
 
 Sign in to the Code Genome Project to create a download token. See the [quickstart guide](./getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details.

@@ -428,8 +428,8 @@ pluginManagement {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -448,13 +448,13 @@ repositories {
     mavenLocal()
     mavenCentral()
     // The rewrite core libraries are distributed through the Code Genome Project. Set
-    // codeGenomeUsername and codeGenomeToken in ~/.gradle/gradle.properties to the email
+    // codegenomeUsername and codegenomePassword in ~/.gradle/gradle.properties to the email
     // or username you signed in with and a download token created there.
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }

@@ -8,7 +8,7 @@ Right now, OpenRewrite does a full release once every 2-4 weeks. Between those r
 
 This guide will provide you with instructions on how to configure your project to access these "snapshot versions" so you can get updates in real time.
 
-Snapshots are published to the same [Code Genome Project](https://artifacts.codegenomeproject.org/maven) repository as releases, and downloads from it require authentication. Gradle builds read the credentials from `codeGenomeUsername` and `codeGenomeToken` in `~/.gradle/gradle.properties`; Maven builds read them from `settings.xml`, where `USERNAME` and `TOKEN` below stand in for the email or username you signed in to the Code Genome Project with and a download token created there. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
+Snapshots are published to the same [Code Genome Project](https://artifacts.codegenomeproject.org/maven) repository as releases, and downloads from it require authentication. Gradle builds read the credentials from `codegenomeUsername` and `codegenomePassword` in `~/.gradle/gradle.properties`; Maven builds read them from `settings.xml`, where `USERNAME` and `TOKEN` below stand in for the email or username you signed in to the Code Genome Project with and a download token created there. See the [quickstart guide](../running-recipes/getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for details on creating a token.
 
 ## Gradle instructions
 
@@ -22,8 +22,8 @@ pluginManagement {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -42,8 +42,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }

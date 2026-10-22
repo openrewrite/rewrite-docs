@@ -17,7 +17,7 @@ Most programmers agree that having consistent formatting across a code base make
 How you configure Checkstyle integration depends on whether or not your build also applies a Checkstyle plugin. For Gradle builds this means the built-in plugin named [Checkstyle Plugin](https://docs.gradle.org/current/userguide/checkstyle_plugin.html). For Maven builds this means [maven-checkstyle-plugin](https://maven.apache.org/plugins/maven-checkstyle-plugin/).
 
 :::info
-OpenRewrite artifacts, including the build plugins, are distributed through the Code Genome Project repository, which requires authentication. Gradle builds read the `codeGenomeUsername` and `codeGenomeToken` credentials from `gradle.properties`. Maven builds read the same credentials from `settings.xml`, where the `USERNAME` and `TOKEN` placeholders below stand in for the email or username you signed in with and a download token. See the [quickstart guide](../getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for how to create a token and where to put it.
+OpenRewrite artifacts, including the build plugins, are distributed through the Code Genome Project repository, which requires authentication. Gradle builds read the `codegenomeUsername` and `codegenomePassword` credentials from `gradle.properties`. Maven builds read the same credentials from `settings.xml`, where the `USERNAME` and `TOKEN` placeholders below stand in for the email or username you signed in with and a download token. See the [quickstart guide](../getting-started.md#step-2-add-rewrite-maven-plugin-or-rewrite-gradle-plugin-to-your-project) for how to create a token and where to put it.
 
 Gradle also needs that repository declared in `pluginManagement` in `settings.gradle`, because the plugin itself is distributed through the Code Genome Project rather than the Gradle Plugin Portal, and Gradle resolves plugins before it evaluates any project:
 
@@ -27,8 +27,8 @@ pluginManagement {
         maven {
             url = "https://artifacts.codegenomeproject.org/maven"
             credentials {
-                username = providers.gradleProperty("codeGenomeUsername").get()
-                password = providers.gradleProperty("codeGenomeToken").get()
+                username = providers.gradleProperty("codegenomeUsername").get()
+                password = providers.gradleProperty("codegenomePassword").get()
             }
         }
         // Keep the portal for any other plugins your build applies
@@ -124,8 +124,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
@@ -168,8 +168,8 @@ repositories {
   maven {
     url = "https://artifacts.codegenomeproject.org/maven"
     credentials {
-      username = providers.gradleProperty("codeGenomeUsername").get()
-      password = providers.gradleProperty("codeGenomeToken").get()
+      username = providers.gradleProperty("codegenomeUsername").get()
+      password = providers.gradleProperty("codegenomePassword").get()
     }
   }
 }
@@ -255,8 +255,8 @@ repositories {
     maven {
         url = "https://artifacts.codegenomeproject.org/maven"
         credentials {
-            username = providers.gradleProperty("codeGenomeUsername").get()
-            password = providers.gradleProperty("codeGenomeToken").get()
+            username = providers.gradleProperty("codegenomeUsername").get()
+            password = providers.gradleProperty("codegenomePassword").get()
         }
     }
 }
