@@ -53,8 +53,8 @@ The use of the "bill of materials" means that a developer will only need to spec
 | [org.openrewrite.recipe:rewrite-github-actions](https://github.com/openrewrite/rewrite-github-actions/tree/main/)     | [3.33.0](https://github.com/openrewrite/rewrite-github-actions/releases/tag/3.33.0)        | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-gitlab](https://github.com/openrewrite/rewrite-gitlab/tree/main/)                     | [0.25.2](https://github.com/openrewrite/rewrite-gitlab/releases/tag/0.25.2)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-hibernate](https://github.com/openrewrite/rewrite-hibernate/tree/main/)               | [2.27.0](https://github.com/openrewrite/rewrite-hibernate/releases/tag/2.27.0)             | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
-| [org.openrewrite.recipe:rewrite-jackson](https://github.com/openrewrite/rewrite-jackson/tree/main/)                   | [1.31.0](https://github.com/openrewrite/rewrite-jackson/releases/tag/1.31.0)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies/tree/main/) | [1.64.0](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/1.64.0)     | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-jackson](https://github.com/openrewrite/rewrite-jackson/tree/main/)                   | [1.31.1](https://github.com/openrewrite/rewrite-jackson/releases/tag/1.31.1)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| [org.openrewrite.recipe:rewrite-java-dependencies](https://github.com/openrewrite/rewrite-java-dependencies/tree/main/) | [1.64.1](https://github.com/openrewrite/rewrite-java-dependencies/releases/tag/1.64.1)     | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | [org.openrewrite.recipe:rewrite-jenkins](https://github.com/openrewrite/rewrite-jenkins/tree/main/)                   | [0.38.2](https://github.com/openrewrite/rewrite-jenkins/releases/tag/0.38.2)               | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-joda](https://github.com/openrewrite/rewrite-joda/tree/main/)                         | [0.12.0](https://github.com/openrewrite/rewrite-joda/releases/tag/0.12.0)                  | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-liberty](https://github.com/openrewrite/rewrite-liberty/tree/main/)                   | [1.28.2](https://github.com/openrewrite/rewrite-liberty/releases/tag/1.28.2)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
@@ -68,7 +68,7 @@ The use of the "bill of materials" means that a developer will only need to spec
 | [org.openrewrite.recipe:rewrite-pmd](https://github.com/openrewrite/rewrite-pmd/tree/main/)                           | [0.1.4](https://github.com/openrewrite/rewrite-pmd/releases/tag/0.1.4)                     | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-prethink](https://github.com/openrewrite/rewrite-prethink/tree/main/)                 | [1.6.0](https://github.com/openrewrite/rewrite-prethink/releases/tag/1.6.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-quarkus](https://github.com/openrewrite/rewrite-quarkus/tree/main/)                   | [2.36.2](https://github.com/openrewrite/rewrite-quarkus/releases/tag/2.36.2)               | [Apache License Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| [org.openrewrite.recipe:rewrite-rewrite](https://github.com/openrewrite/rewrite-rewrite/tree/main/)                   | [0.34.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/0.34.0)               | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
+| [org.openrewrite.recipe:rewrite-rewrite](https://github.com/openrewrite/rewrite-rewrite/tree/main/)                   | [0.35.0](https://github.com/openrewrite/rewrite-rewrite/releases/tag/0.35.0)               | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-spring](https://github.com/openrewrite/rewrite-spring/tree/main/)                     | [6.41.0](https://github.com/openrewrite/rewrite-spring/releases/tag/6.41.0)                | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-spring-to-quarkus](https://github.com/openrewrite/rewrite-spring-to-quarkus/tree/main/) | [0.13.2](https://github.com/openrewrite/rewrite-spring-to-quarkus/releases/tag/0.13.2)     | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
 | [org.openrewrite.recipe:rewrite-static-analysis](https://github.com/openrewrite/rewrite-static-analysis/tree/main/)   | [2.45.0](https://github.com/openrewrite/rewrite-static-analysis/releases/tag/2.45.0)       | [Moderne Source Available License](https://docs.moderne.io/licensing/moderne-source-available-license) |
@@ -118,10 +118,16 @@ repository by `id`:
 </TabItem>
 <TabItem value="gradle" label="Gradle">
 
-Keep Maven Central alongside it. The Code Genome Project hosts only `org/openrewrite` and
-`io/moderne`, so OpenRewrite's own transitive dependencies still resolve from Maven Central.
-Set `codegenomeUsername` and `codegenomePassword` in `~/.gradle/gradle.properties` to keep the
-credentials out of your repository.
+Keep the credentials out of the build script by putting them in `~/.gradle/gradle.properties`:
+
+```properties title="~/.gradle/gradle.properties"
+codegenomeUsername=USERNAME
+codegenomePassword=TOKEN
+```
+
+Then declare the repository, keeping Maven Central alongside it. The Code Genome Project hosts
+only `org/openrewrite` and `io/moderne`, so OpenRewrite's own transitive dependencies still
+resolve from Maven Central.
 
 ```kotlin title="build.gradle.kts"
 repositories {
