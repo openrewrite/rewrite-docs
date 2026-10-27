@@ -3,10 +3,9 @@ name: PR validation
 on:
   pull_request:
     branches: [master]
-  workflow_dispatch: {}
 
 concurrency:
-  group: pr-validation-${{ github.head_ref || github.ref_name }}
+  group: pr-validation-${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
@@ -29,7 +28,7 @@ jobs:
       - name: Check file types
         run: node scripts/check-file-types.js
         env:
-          BASE_REF: ${{ github.event.pull_request.base.sha || 'origin/master' }}
+          BASE_REF: ${{ github.event.pull_request.base.sha }}
 
       - name: TypeScript type check
         run: yarn typecheck
